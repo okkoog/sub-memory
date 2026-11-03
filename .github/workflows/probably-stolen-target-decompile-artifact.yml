@@ -1,0 +1,34 @@
+name: Probably Stolen target decompile artifact
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-target-decompile-artifact.yml'
+  workflow_dispatch:
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install ilspycmd --tool-path .tools --version 9.1.0.7988
+      - name: Decompile representative mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifact/decompiled
+          ./.tools/ilspycmd probably-stolen/mods/3828913695/CorpPresence.dll > artifact/decompiled/CorpPresence.cs
+          ./.tools/ilspycmd probably-stolen/mods/3828910575/ProficiencyMod.dll > artifact/decompiled/ProficiencyMod.cs
+          ./.tools/ilspycmd probably-stolen/mods/3829085054/ItemStorage.dll > artifact/decompiled/ItemStorage.cs
+          ./.tools/ilspycmd probably-stolen/mods/3829413447/PCExpansion.dll > artifact/decompiled/PCExpansion.cs
+          ./.tools/ilspycmd probably-stolen/mods/3832048841/GameCardPK.dll > artifact/decompiled/GameCardPK.cs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: representative-mod-decompile
+          path: artifact/decompiled
