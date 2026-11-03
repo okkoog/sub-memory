@@ -76,12 +76,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- probably-stolen/analysis/sol-decompile &&              git diff --cached --quiet -- probably-stolen/analysis/sol-decompile; then
-            echo "No analysis changes."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add probably-stolen/analysis/sol-decompile
+          if git diff --cached --quiet -- probably-stolen/analysis/sol-decompile; then
+            echo "No analysis changes."
+            exit 0
+          fi
           git commit -m "Analyze Probably Stolen mod localization API [skip ci]"
           git push origin HEAD:probably-stolen-koreanpack-sol
