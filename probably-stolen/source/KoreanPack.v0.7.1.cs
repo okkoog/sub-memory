@@ -805,113 +805,229 @@ namespace ProbablyStolenKoreanPack
 
         private static void PatchDisplayMethodsInAssembly(Assembly assembly)
         {
-            Type[] types;
+            if (assembly == null)
+                return;
 
+            string assemblyName = assembly.GetName().Name ?? string.Empty;
+            int patched = 0;
+
+            // v0.7.1 safety rule:
+            // Never scan/patch every display-looking method in a target assembly.
+            // Harmony compiles the patched method, and that can trigger unrelated
+            // game type initializers while Unity Localization is still loading.
+            // Only the static-analysis-confirmed text boundaries below are allowed.
             try
             {
-                types = assembly.GetTypes();
-            }
-            catch (ReflectionTypeLoadException ex)
-            {
-                types = ex.Types;
+                if (assemblyName.Equals("GameCardPK", StringComparison.OrdinalIgnoreCase))
+                {
+                    patched += PatchKnownType(assembly, "GameCardPK.GameCardFactory",
+                        new KnownPatch("CreateCard", KnownPatchKind.GameItemResult),
+                        new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult),
+                        new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs));
+                    patched += PatchKnownType(assembly, "GameCardPK.SkillText",
+                        new KnownPatch("ForItem", KnownPatchKind.StringResult),
+                        new KnownPatch("ForBattle", KnownPatchKind.StringResult),
+                        new KnownPatch("PointLabel", KnownPatchKind.StringResult));
+                }
+                else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
+                {
+                    patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                    // MaidenTooltip text is translated through the official
+                    // ModHook.OnCreateTooltipLate bridge after the mod has appended it.
+                }
+                else if (assemblyName.Equals("ItemStorage", StringComparison.OrdinalIgnoreCase))
+                {
+                    patched += PatchKnownType(assembly, "ItemStorage.BoxItem",
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                    patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
+                        new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("EnsureWindow", KnownPatchKind.StaticDisplayState),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState));
+                }
+                else if (assemblyName.Equals("XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
+                {
+                    patched += PatchKnownType(assembly, "XIAOWONightAuction.AuctionText",
+                        new KnownPatch("Select", KnownPatchKind.StringResult),
+                        new KnownPatch("DisplayLog", KnownPatchKind.StringResult),
+                        new KnownPatch("Get", KnownPatchKind.StringResult));
+                    patched += PatchKnownType(assembly, "XIAOWONightAuction.AuctionExclusiveFactory",
+                        new KnownPatch("ApplyLocalizedText", KnownPatchKind.ObjectArgs));
+                    patched += PatchKnownType(assembly, "XIAOWONightAuction.AuctionPhone",
+                        new KnownPatch("CreateCard", KnownPatchKind.GameItemResult),
+                        new KnownPatch("LocalizeCard", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("BuildDialogue", KnownPatchKind.DialogueResult),
+                        new KnownPatch("BuildBookingDialogue", KnownPatchKind.DialogueResult),
+                        new KnownPatch("Ending", KnownPatchKind.DialogueResult));
+                }
+                else if (assemblyName.Equals("BrewingExpansion", StringComparison.OrdinalIgnoreCase))
+                {
+                    patched += PatchKnownType(assembly, "BrewingExpansion.Formal.Figurines",
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                }
+                else if (assemblyName.Equals("CorpPresence", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Important: patch ONLY CorpPresence.L.T.
+                    // Do not patch SilverBlood.AddLiquid or any other Corp method:
+                    // compiling AddLiquid caused Liquid..cctor to run during asset loading,
+                    // corrupting Unity Localization operation handles.
+                    patched += PatchKnownType(assembly, "CorpPresence.L",
+                        new KnownPatch("T", KnownPatchKind.LocalizerResult));
+                }
             }
             catch (Exception ex)
             {
-                Debug.LogWarning("[KoreanPack] Could not inspect target assembly " +
-                    assembly.GetName().Name + ": " + ex.Message);
-                return;
+                Debug.LogWarning("[KoreanPack] Safe target adapter failed for " +
+                    assemblyName + ": " + ex.Message);
             }
 
-            if (types == null)
-                return;
+            if (patched > 0)
+                Debug.Log("[KoreanPack] Safe target adapter: " + assemblyName +
+                    " -> " + patched + " patch(es).");
+        }
 
-            foreach (Type type in types)
+        private enum KnownPatchKind
+        {
+            StringResult,
+            LocalizerResult,
+            GameItemResult,
+            DialogueResult,
+            ObjectArgs,
+            StaticDisplayState
+        }
+
+        private sealed class KnownPatch
+        {
+            internal readonly string MethodName;
+            internal readonly KnownPatchKind Kind;
+
+            internal KnownPatch(string methodName, KnownPatchKind kind)
             {
-                if (type == null || type.IsInterface)
-                    continue;
+                MethodName = methodName;
+                Kind = kind;
+            }
+        }
 
-                MethodInfo[] methods;
-                try
-                {
-                    methods = type.GetMethods(
-                        BindingFlags.Public |
-                        BindingFlags.NonPublic |
-                        BindingFlags.Static |
-                        BindingFlags.Instance |
-                        BindingFlags.DeclaredOnly);
-                }
-                catch
-                {
+        private static int PatchKnownType(
+            Assembly assembly, string typeName, params KnownPatch[] specs)
+        {
+            if (assembly == null || specs == null || specs.Length == 0)
+                return 0;
+
+            Type type;
+            try
+            {
+                type = assembly.GetType(typeName, false);
+            }
+            catch
+            {
+                return 0;
+            }
+
+            if (type == null)
+                return 0;
+
+            MethodInfo[] methods;
+            try
+            {
+                methods = type.GetMethods(
+                    BindingFlags.Public |
+                    BindingFlags.NonPublic |
+                    BindingFlags.Static |
+                    BindingFlags.Instance |
+                    BindingFlags.DeclaredOnly);
+            }
+            catch
+            {
+                return 0;
+            }
+
+            int patched = 0;
+
+            foreach (KnownPatch spec in specs)
+            {
+                if (spec == null || string.IsNullOrEmpty(spec.MethodName))
                     continue;
-                }
 
                 foreach (MethodInfo method in methods)
                 {
                     if (method == null || method.IsAbstract ||
-                        method.ContainsGenericParameters || method.IsConstructor)
+                        method.ContainsGenericParameters || method.IsConstructor ||
+                        !string.Equals(method.Name, spec.MethodName,
+                            StringComparison.Ordinal))
                         continue;
 
                     try
                     {
-                        // Keep the original v0.7.0 narrow string boundary:
-                        // localizers and display-named string producers only.
-                        if (LooksLikeVisibleStringProducer(method))
-                            PatchDynamic(method, null,
-                                nameof(SafeStringResultPostfix), "string-result");
+                        switch (spec.Kind)
+                        {
+                            case KnownPatchKind.StringResult:
+                                if (method.ReturnType == typeof(string) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeStringResultPostfix),
+                                        "safe-string-result"))
+                                    patched++;
+                                break;
 
-                        // Some target localizers (notably CorpPresence L.T)
-                        // select whole string arrays such as tier/front-desk lines.
-                        // Keep this restricted to localizer-shaped methods only.
-                        if (method.ReturnType == typeof(string[]) &&
-                            LooksLikeLocalizer(method))
-                            PatchDynamic(method, null,
-                                nameof(SafeStringArrayResultPostfix), "string-array-result");
+                            case KnownPatchKind.LocalizerResult:
+                                if (method.ReturnType == typeof(string))
+                                {
+                                    if (PatchDynamic(method, null,
+                                        nameof(SafeStringResultPostfix),
+                                        "safe-localizer-string"))
+                                        patched++;
+                                }
+                                else if (method.ReturnType == typeof(string[]))
+                                {
+                                    if (PatchDynamic(method, null,
+                                        nameof(SafeStringArrayResultPostfix),
+                                        "safe-localizer-array"))
+                                        patched++;
+                                }
+                                break;
 
-                        if (HasVisibleStringArguments(method))
-                            PatchDynamic(method,
-                                nameof(SafeVisibleStringArgsPrefix), null, "visible-string-args");
+                            case KnownPatchKind.GameItemResult:
+                                if (method.ReturnType == typeof(GameItem) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeGameItemResultPostfix),
+                                        "safe-gameitem-result"))
+                                    patched++;
+                                break;
 
-                        bool displayCarrierMethod = LooksLikeDisplayCarrierMethod(method);
+                            case KnownPatchKind.DialogueResult:
+                                if (method.ReturnType == typeof(Dialogue) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeDialogueResultPostfix),
+                                        "safe-dialogue-result"))
+                                    patched++;
+                                break;
 
-                        // For display-oriented target methods, inspect only carrier
-                        // arguments after the method has written them. Do not mutate
-                        // the target mod's configuration objects before execution.
-                        if (displayCarrierMethod && HasObjectArguments(method))
-                            PatchDynamic(method, null,
-                                nameof(SafeObjectArgsPostfix), "display-object-args");
+                            case KnownPatchKind.ObjectArgs:
+                                if (HasObjectArguments(method) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeObjectArgsPostfix),
+                                        "safe-object-args"))
+                                    patched++;
+                                break;
 
-                        // Factories such as CreateCard/Create/CreateSkill return GameItem
-                        // after assigning name/description directly inside the method.
-                        if (method.ReturnType == typeof(GameItem))
-                            PatchDynamic(method, null,
-                                nameof(SafeGameItemResultPostfix), "gameitem-result");
-
-                        if (method.ReturnType == typeof(PixelWindow))
-                            PatchDynamic(method, null,
-                                nameof(SafePixelWindowResultPostfix), "pixelwindow-result");
-
-                        if (method.ReturnType == typeof(Dialogue))
-                            PatchDynamic(method, null,
-                                nameof(SafeDialogueResultPostfix), "dialogue-result");
-
-                        if (method.ReturnType == typeof(StoreClient))
-                            PatchDynamic(method, null,
-                                nameof(SafeStoreClientResultPostfix), "storeclient-result");
-
-                        // UI builders may retain created buttons/labels in static
-                        // dictionaries. Inspect only the declaring target type after
-                        // display-oriented methods; unrelated assemblies are untouched.
-                        if (displayCarrierMethod)
-                            PatchDynamic(method, null,
-                                nameof(SafeTargetStaticStatePostfix), "static-display-state");
+                            case KnownPatchKind.StaticDisplayState:
+                                if (PatchDynamic(method, null,
+                                    nameof(SafeTargetStaticStatePostfix),
+                                    "safe-static-display-state"))
+                                    patched++;
+                                break;
+                        }
                     }
                     catch (Exception ex)
                     {
-                        Debug.LogWarning("[KoreanPack] Target text adapter skipped: " +
-                            type.FullName + "." + method.Name + " (" + ex.Message + ")");
+                        Debug.LogWarning("[KoreanPack] Safe patch skipped: " +
+                            typeName + "." + method.Name + " (" +
+                            ex.Message + ")");
                     }
                 }
             }
+
+            return patched;
         }
 
         private static bool PatchDynamic(MethodBase method, string prefixName,
