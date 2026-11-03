@@ -1,0 +1,50 @@
+name: KoreanPack v0.6.8 binary audit
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-koreanpack-v068-binary-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build twice and compare
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet --version
+          rm -rf probably-stolen/source/bin probably-stolen/source/obj
+          dotnet build probably-stolen/source/KoreanPack.v0.6.8.csproj -c Release
+          cp probably-stolen/source/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll /tmp/build-a.dll
+          rm -rf probably-stolen/source/bin probably-stolen/source/obj
+          dotnet build probably-stolen/source/KoreanPack.v0.6.8.csproj -c Release
+          cp probably-stolen/source/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll /tmp/build-b.dll
+          echo '--- hashes ---'
+          sha256sum probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll /tmp/build-a.dll /tmp/build-b.dll
+          echo '--- build A vs B ---'
+          cmp -s /tmp/build-a.dll /tmp/build-b.dll && echo IDENTICAL || echo DIFFERENT
+          echo '--- committed vs A first differences ---'
+          cmp -l probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll /tmp/build-a.dll | head -40 || true
+          python3 - <<'PY'
+          import struct
+          for p in ['probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll','/tmp/build-a.dll','/tmp/build-b.dll']:
+              b=open(p,'rb').read()
+              pe=struct.unpack_from('<I',b,0x3c)[0]
+              ts=struct.unpack_from('<I',b,pe+8)[0]
+              print(p, 'pe_offset', pe, 'timestamp', hex(ts))
+          PY
+          echo '--- strings possibly carrying build metadata ---'
+          for p in probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll /tmp/build-a.dll /tmp/build-b.dll; do
+            echo "### $p"
+            strings -a "$p" | grep -E '1\.0\.0|Repository|Commit|Source|[0-9a-f]{40}' | tail -20 || true
+          done
