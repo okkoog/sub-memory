@@ -191,3 +191,68 @@ manifest에는 `reflection-external`만 선언. `files` / `dynamic-code` capabil
 4. 게임 정상 진입 확인.
 5. native key 기반 모드와 source-text 기반 모드 번역 적용 여부 확인.
 6. 미번역/오작동이 있으면 Player.log + 화면 기준으로 다음 범위를 좁힘.
+
+
+## 2026-11-04 — v0.7.1 직접 출력 경로 대응
+
+### 원인 분리
+인게임 미번역은 두 종류가 섞여 있었음.
+
+1. 기존 카탈로그에 번역문이 있으나 대상 모드가 Localization API를 거치지 않고 화면 문자열을 직접 대입.
+2. 실제 카탈로그에 원문/번역 행이 없는 누락.
+
+GitHub Actions + ILSpy 정적 분석으로 대표 모드의 출력 경로를 확인:
+- game_card_pk: GameCardData Name/Description -> GameItem.SetName/shortDescription 직접 대입.
+- lewd_meme: GameItem name/description 직접 대입 + RichTextBuilder.AddLine 직접 툴팁.
+- Dream_Item_Storage: MachineryButton 문자열, PixelWindow, GameItem 설명 직접 대입.
+- xiaowo_night_auction: 자체 AuctionText.Select(zh,en) + 일부 직접 GameItem 설명.
+- brewing_expansion: 위 4개보다 Localization 경로 사용 비중이 높음.
+- CorpPresence: L.T(string,string) 외에 L.T(string[],string[]) 실제 사용 확인.
+
+### v0.7.1 브리지 보강
+- 기존 ModHook.OnModAssetsLoaded 기반 구조 유지.
+- 대상 모드 assembly 내부 메서드만 제한적으로 Harmony 처리.
+- GameItem 반환 후 이름/설명 exact-source 번역.
+- PixelWindow / Dialogue / StoreClient 반환값의 표시 문자열 후처리.
+- 표시용 객체 인자 후처리 및 대상 타입의 UI static state 후처리.
+- RichTextBuilder/TextSlice 직접 출력 번역.
+- 공식 ModHook.OnCreateTooltipLate에서 MOD_ID_TAG가 catalog와 연결된 아이템의 최종 툴팁만 exact-source/template 번역.
+- CorpPresence L.T(string[], string[])용 string[] 반환 후처리 추가.
+- {{token}}, {0}, {num} 형태의 런타임 placeholder template 치환 지원.
+- 원본 타 모드 DLL/manifest는 수정하지 않음.
+
+### 출처명
+게임 ModSourceHelper.GetItemModName은 MOD_ID_TAG로 로드된 ModManifest를 찾아 ModLoader.GetModLabel(manifest)를 우선 사용하고,
+CreateTooltip에서 그 결과를 독립 TextSlice 한 줄로 AddLine한다.
+따라서 저장된 MOD_NAME_TAG나 타 모드 manifest를 바꾸지 않고 late-tooltip 단계에서 출처명만 번역 가능.
+
+추가 source-label 매핑:
+- game_card_pk: 集换式卡牌 GameCardPK
+- lewd_meme: 淫色深空：可能是触手
+- xiaowo_night_auction: 小窝竞拍之王 / Night Auction, 小窝竞拍之王
+- Dream_Item_Storage: 堆叠收纳
+- brewing_expansion: 酿酒拓展
+- CorpPresence: 公司增强 CorpPresence
+
+### 보강 catalog
+- pskb__supp_3832048841.csv
+- pskb__supp_3831837821.csv
+- pskb__supp_3829429358.csv
+- pskb__supp_3829085054.csv
+- pskb__supp_3829730904.csv
+- pskb__supp_3828913695.csv
+
+대표 추가 누락:
+- 카드: 食腐乌鸦, 破损版, 游戏卡 및 카드 버전 표시.
+- 촉수: 触手本体, 본체 설명, 동적 레벨/경험치/조교 툴팁.
+- 경매: Sterile Gauze Pack 계열 전용 아이템과 ordinary/hemostatic/Synaprest/모듈/진열 설명, 야간 경매 전용 희귀품 문구.
+- 수납: 收纳箱, 一键收纳/全箱收纳/全箱上货/一键上货, 핵심 사용 설명.
+- 양조: 피규어 4종 이름/설명.
+- Corp: source label + 기존 1784 source-text catalog를 string/string[] 로컬라이저 경로에서 활용.
+
+### 정적 검사
+최신 v0.7.1 소스 기준 게임 ModScanner:
+- CAPABILITIES=reflection-external
+- HARD_COUNT=0
+- files 없음
+- loader-target 없음
