@@ -171,3 +171,22 @@ with tempfile.TemporaryDirectory(prefix="native-game-") as native_tmp:
 extra.write_text(extra.read_text(encoding="utf-8")+"\n"+"\n".join(native_report)+"\n",encoding="utf-8")
 print("NATIVE_GAME_REPORT_LINES",len(native_report))
 print("\n".join(native_report)[:28000])
+
+
+# Verify exact ordering of mod asset loading vs mod OnEnable and exposed lifecycle events.
+for typ in ["ModLoader", "ModHook"]:
+    proc=subprocess.run([str(Path(os.environ["RUNNER_TEMP"])/"ilspy"/"ilspycmd"),
+                         "--disable-updatecheck", "-t", typ, str(native_dll)],
+                        text=True,capture_output=True)
+    if proc.returncode:
+        print("ORDERING_DECOMPILE_FAILED",typ,proc.stderr[:300])
+        continue
+    s=proc.stdout.splitlines()
+    needles=["private void Awake(","private void LoadModAssets(","private void LoadModDll(",
+             "private void LoadModAssets()", "public static void FireOnModAssetsLoaded",
+             "internal static void FireOnModAssetsLoaded", "LoadLocalization(", "SafeInvoke(\"OnModAssetsLoaded\""]
+    matches=[i for i,ln in enumerate(s) if any(token in ln for token in needles)]
+    for i in matches:
+        print("ORDERING_METHOD",typ,i+1)
+        for j in range(max(0,i-5),min(len(s),i+55)):
+            print(f"NATIVE:{typ}:{j+1}: {s[j][:240]}")
