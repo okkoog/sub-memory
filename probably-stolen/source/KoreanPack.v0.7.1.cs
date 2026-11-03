@@ -639,7 +639,7 @@ namespace ProbablyStolenKoreanPack
                 return;
 
             MatchCollection matches = Regex.Matches(source,
-                @"\{\{[^{}]+\}\}|\{\d+\}");
+                @"\{\{[^{}]+\}\}|\{(?:\d+|[A-Za-z_][A-Za-z0-9_]*)\}");
             if (matches.Count == 0)
                 return;
 
