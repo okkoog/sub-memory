@@ -1,0 +1,28 @@
+name: Probably Stolen locale helper decompile
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-lochelper-decompile.yml'
+  workflow_dispatch:
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install ilspycmd --tool-path .tools --version 9.1.0.7988
+      - name: Decompile LocHelper
+        run: |
+          mkdir -p artifact
+          ./.tools/ilspycmd -t LocHelper probably-stolen/Managed/Assembly-CSharp.dll > artifact/LocHelper.cs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LocHelper-decompile
+          path: artifact/LocHelper.cs
