@@ -68,7 +68,9 @@ focus = {
     "CorpPresence/Main.cs": [r"OnEnable", r"OnDisable", r"GameResources", r"Hooks\\.", r"Install", r"Try"],
     "CorpPresence/GameResources.cs": [r"Initialize", r"GetTableAsync", r"GetEntry", r"IsValid", r"WaitForCompletion", r"IsDone", r"Status", r"Mechanic"],
     "CorpPresence/Hooks.cs": [r"public static", r"void Install", r"Patch\\<", r"Patch\\(", r"GameResources", r"WaterFeatureHelper", r"ShowcaseHelper"],
-    "CorpPresence/L.cs": [r"GetCurrentLocaleCode", r"GetLocalized", r"LocHelper"],
+    "CorpPresence/L.cs": ["GetCurrentLocaleCode", "GetLocalized", "LocHelper", "static ", "Choose", "return "],
+    "CorpPresence/Runtime/ResourceBootstrap.cs": ["GameResources", "Poll", "Tick", "OnModItemDirectoryInit", "EnableResources", "Ready", "callback"],
+    "CorpPresence/ItemRegistry.cs": ["Install", "Activate", "OnModItemDirectoryInit", "GameResources", "Ready"],
 }
 detail_lines = ["# CorpPresence — targeted callsite context", "", "Only excerpts for relevant initialization/Harmony methods; no code was executed."]
 for rel, regexes in focus.items():
