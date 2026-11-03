@@ -116,3 +116,16 @@ flowpath = BASE / "analysis" / "CorpPresence-0.9.4-lifecycle-windows.md"
 flowpath.write_text("\n".join(flow)+"\n", encoding="utf-8")
 print(f"WINDOWS_PATH={flowpath}")
 print(flowpath.read_text(encoding="utf-8"))
+
+import subprocess
+import tempfile
+with tempfile.TemporaryDirectory() as td:
+    command = [str(Path(os.environ["RUNNER_TEMP"])/"ilspy"/"ilspycmd"),"-p","-o",td,"probably-stolen/mods/3828891515/KoreanTranslation.dll"]
+    result = subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+    print("KOREAN_TRANSLATION_STATUS",result.returncode,result.stderr[-600:])
+    if result.returncode == 0:
+        for p in sorted(Path(td).rglob("*.cs")):
+            lines = p.read_text(errors="replace").splitlines()
+            hits=[i for i,l in enumerate(lines) if any(k in l for k in ["OnEnable","SelectedLocale","StringDatabase","SharedTableData","AddLocale","LocaleIdentifier","InitializationOperation","GetTableAsync"])]
+            for i in hits[:20]:
+                print("KOREAN_LOC",p.name,i+1,":"," | ".join(lines[max(0,i-2):min(len(lines),i+5)])[:1100])
