@@ -2,7 +2,7 @@
 import os,pathlib
 root=pathlib.Path(os.environ["GAME_DECOMPILED"])
 out=pathlib.Path("probably-stolen/analysis/mod-name-tag-tooltip-trace.md")
-qs=["MOD_NAME_TAG","MOD_ID_TAG"]
+qs=["MOD_NAME_TAG","MOD_ID_TAG","GetItemModName","GetClientModName"]
 rows=["# MOD_NAME_TAG tooltip trace",""]
 for p in root.rglob("*.cs"):
     try: lines=p.read_text(encoding="utf-8",errors="ignore").splitlines()
