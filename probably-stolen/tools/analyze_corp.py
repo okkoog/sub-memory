@@ -115,3 +115,4 @@ for name, spans in windows.items():
 flowpath = BASE / "analysis" / "CorpPresence-0.9.4-lifecycle-windows.md"
 flowpath.write_text("\n".join(flow)+"\n", encoding="utf-8")
 print(f"WINDOWS_PATH={flowpath}")
+print(flowpath.read_text(encoding="utf-8"))
