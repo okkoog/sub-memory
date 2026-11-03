@@ -60,15 +60,17 @@ v0.7.0 does **not**:
 
 ## Permissions
 
-The manifest declares only:
+The game scanner requires only:
 - `reflection-external`
-- `dynamic-code`
 
-There is no `files` capability.
+There is no `files` capability and no `dynamic-code` capability declaration.
 
 ## Verification status
 
 - GitHub Actions compile: passed.
+- Actual game `ModScanner.Scan()`: **HARD_COUNT=0**.
+- Scanner capabilities: **reflection-external only**.
+- Scanner findings: target assembly `Assembly.GetTypes` / `Type.GetMethods` only.
 - Existing translation corpus converted into 16 direct Localization CSV files.
 - Runtime catalog rows: 12,804 total = 32 aliases + 495 native keys + 12,277 source mappings.
 - Converted CSV parse errors: 0.
