@@ -70,3 +70,14 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 5. DLL을 실제로 빌드하고 설치 구조를 검증한 후에만 배포. 게임 내 정상 동작은 게임 테스트 전까지 '미검증'으로 표시.
 
 이 폴더는 본 프로젝트의 GitHub 서브메모리 기준점으로 사용.
+
+
+## 2026-11-04 — CorpPresence v0.9.4 분석 결과 (우선 확인할 것)
+
+- 게임 본체 `Assembly-CSharp.dll`, `Unity.Localization.dll`, Corp v0.9.4와 기본 한글 번역 DLL까지 GitHub Actions ILSpy로 실제 분석 성공.
+- **코드상 명확한 초기화 결함**: `ModLoader.LoadModDll()`이 모든 모드의 `OnEnable`을 부른 뒤 `ModLoader.LoadModAssets()`에서 CSV 등을 로드함. 그러나 `CorpPresence.Main.OnEnable`은 `_bootstrap.Tick`을 즉시 실행해 `GameResources.Poll`의 `LocalizationSettings.InitializationOperation` 호출로 Unity Localization 초기화 작업을 미리 시작한다. 게임의 Unity.Localization DLL에서 Getter가 `ResourceManager.StartOperation`을 실제 호출함을 확인했음.
+- `GameResources.Poll`의 선택 언어 Mechanic 키 강제 확인과 `ResourceBootstrap.Tick`의 예외 시 즉시 `Abort+rethrow`가 실패를 복구 불가능하게 만듦.
+- 게임 `WaterFeatureHelper` 타입 정적 필드에 `LocHelper.GetLocalizedMechanic("mech_condition_pure_water")` 동기 호출이 있어, 다른 Harmony 모드가 정적 초기화를 앞당기면 초기화 타이밍 충돌 경로가 존재함.
+- **수정안**: Corp `OnEnable` 직후 Tick 제거, `OnModItemDirectoryInit` 즉시 Tick도 지연, Loader.Awake 자산 로딩이 끝난 첫 프레임 이후 Poll; 선택 로케일의 키 누락은 fallback/retry 및 오류 유형 분리.
+- 이것이 사용자 확인한 세 충돌 조합의 유일한 원인인지와 v0.9.4 런타임 복구 성공 여부는 **미검증**. 이전 Player(1) 로그의 Corp v0.9.1은 실제로 로딩되지 않았으므로 그 로그를 Corp 충돌 근거로 사용하지 말 것.
+- 자세한 근거/수정 지점: [CorpPresence-0.9.4-findings.md](analysis/CorpPresence-0.9.4-findings.md) 및 [callsite-context](analysis/CorpPresence-0.9.4-callsite-context.md).
