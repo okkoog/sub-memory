@@ -1,4 +1,4 @@
-# package revision: latest-v071-direct-display-tooltip-corp-array
+# package revision: latest-v071-carrier-results-final
 name: KoreanPack v0.7.1 test patch
 
 on:
@@ -31,6 +31,27 @@ jobs:
             probably-stolen/korean-pack/Localization/pskb__supp_3829730904.csv
             probably-stolen/korean-pack/Localization/pskb__supp_3828913695.csv
           sparse-checkout-cone-mode: false
+      - name: Validate overlay inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          test -s probably-stolen/korean-pack/manifest.xml
+          count=$(find probably-stolen/korean-pack/Localization -maxdepth 1 -name 'pskb__supp_*.csv' -type f | wc -l)
+          test "$count" -eq 6
+          python3 - <<'PY'
+          import csv, glob
+          files=sorted(glob.glob('probably-stolen/korean-pack/Localization/pskb__supp_*.csv'))
+          assert len(files)==6, files
+          for path in files:
+              with open(path,encoding='utf-8-sig',newline='') as f:
+                  for n,row in enumerate(csv.reader(f),1):
+                      if not row:
+                          continue
+                      assert len(row)==2, (path,n,row)
+                      assert row[0], (path,n,'empty key')
+          print('validated',len(files),'supplement catalogs')
+          PY
       - name: Assemble overlay patch
         shell: bash
         run: |
