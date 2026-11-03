@@ -1,0 +1,25 @@
+name: KoreanPack v0.6.8 fast export
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-koreanpack-v068-fast-export.yml'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-v0.6.8-committed-fast
+          path: probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
