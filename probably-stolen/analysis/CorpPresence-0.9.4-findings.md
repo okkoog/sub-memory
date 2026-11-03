@@ -84,3 +84,28 @@ SHA256: `7e34d05ad2269a0a0403fd5dcd3cea78f8b629af47f956a8366a807eea4ff668`
 3. `GameResources.Poll()`의 `Mechanic` 테이블 키 검사를 선택 로케일의 단일 키를 기준으로 무조건 실패시키지 않도록 기본 로케일 검증/fallback 또는 복구 가능한 retry 처리.
 4. `Poll()`의 초기화 실패 시 `ResourceBootstrap.Tick()`의 무조건 abort/rethrow 경로를 분리하여 영구적인 실패에서만 abort.
 5. 원본 CorpPresence DLL은 변경하지 않은 상태임. 변경 시에는 별도의 명확한 테스트 후보로 만들고 게임 내 충돌 조합을 재현해 효과를 검증할 필요가 있음.
+
+
+## 7. 실제 게임 모드 로더의 추가 확인 (2026-11-04)
+
+`ModLoader.LoadModAssets()`(본체 `Assembly-CSharp.dll` 1218줄 이후)은 활성 모드를 순회하며 **`LoadTextures(mod)` → `LoadLocalization(mod)` → `ModLootFile.Load(mod)` → `PaperBookRegistry.LoadMod(mod)`** 순서로 호출한다.
+
+`ModLoader.LoadModDll()`(1132줄 이후)의 `mod.OnEnable()` 호출(1165줄)은 이보다 앞에서 실행된다. 즉 CorpPresence의 `OnEnable` → `_bootstrap.Tick` → `GameResources.Poll`가 실행되면 **게임은 아직 모드 Localization CSV를 로드하지 않은 상태**다.
+
+유니티 `LocalizationSettings.GetInitializationOperation()` 220–232줄은 기존 핸들이 유효하지 않으면 `AddressablesInterface.ResourceManager.StartOperation(...)`으로 초기화를 실제 시작한다. 단순히 초기화 완료 여부를 검사하는 무해한 접근이 아니다.
+
+게임 `WaterFeatureHelper`는 타입 정적 필드에서 **즉시** `LocHelper.GetLocalizedMechanic("mech_condition_pure_water")`를 호출한다. 따라서 이 클래스에 Harmony detour를 설치하면서 타입 초기화가 발생하는 경우, 조기 Localization 초기화와 동기 조회가 겹칠 수 있다.
+
+### 수정 우선순위
+
+**1차 최소 변경:**
+- `Main.OnEnable`에서 `_bootstrap.Tick()`의 즉시 호출을 제거.
+- `ResourceBootstrap.Configure`의 `OnModItemDirectoryInit`에서 수행하는 즉시 `Tick()`도 제거/지연.
+- `ResourceBootstrap.Update()`에서 **첫 Unity 프레임 이후** 단계적으로 `GameResources.Poll()` 실행해 Loader의 `Awake → LoadModAssets`가 끝난 뒤 Localization을 시작.
+- `_pendingDirectory`는 기존 `ItemRegistry`가 이미 보존하므로 자산 준비 후 `ItemRegistry.Activate()` 처리 가능.
+
+**2차 안전성 변경:**
+- 선택 언어의 테이블 키가 아직 존재하지 않는다는 사유만으로 첫 실패 시 `Abort + rethrow`하지 않도록 실패 유형 분리.
+- 키/테이블이 실제로 없는 경우에는 기본 언어 확인과 제한된 재시도 후 구체적인 로그 작성.
+
+이 내용은 정적 코드 검사로 확인한 **실행 순서 문제에 대한 수정 설계**다. 수정 DLL을 빌드하거나 게임에서 시험하지 않았으며, 3개 조합의 실제 실패가 모두 이 경로에서 시작하는지까지는 정적 분석으로 확정할 수 없다.
