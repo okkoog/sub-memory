@@ -91,3 +91,27 @@ extra = BASE / "analysis" / "CorpPresence-0.9.4-callsite-context.md"
 extra.write_text("\n".join(detail_lines) + "\n", encoding="utf-8")
 print(f"CONTEXT_PATH={extra}")
 print(f"CONTEXT_BYTES={extra.stat().st_size}")
+
+# Narrow source windows for control-flow reconstruction. This is not an executable test.
+windows = {
+    "CorpPresence/Main.cs": [(29, 92)],
+    "CorpPresence/GameResources.cs": [(14, 85)],
+    "CorpPresence/Runtime/ResourceBootstrap.cs": [(1, 85)],
+    "CorpPresence/Runtime/ModRuntime.cs": [(1, 95)],
+}
+flow = ["# CorpPresence v0.9.4 — lifecycle exact line windows", "", "Reference excerpts from ILSpy (unexecuted)."]
+for name, spans in windows.items():
+    p = srcdir / name
+    flow.extend(["", f"## {name}", ""])
+    if not p.exists():
+        flow.append("Not found.")
+        continue
+    lns = p.read_text(encoding="utf-8-sig").splitlines()
+    flow.append("```text")
+    for start, end in spans:
+        for line_number in range(start, min(end, len(lns)) + 1):
+            flow.append(escape(f"{line_number}: {lns[line_number - 1][:280]}"))
+    flow.append("```")
+flowpath = BASE / "analysis" / "CorpPresence-0.9.4-lifecycle-windows.md"
+flowpath.write_text("\n".join(flow)+"\n", encoding="utf-8")
+print(f"WINDOWS_PATH={flowpath}")
