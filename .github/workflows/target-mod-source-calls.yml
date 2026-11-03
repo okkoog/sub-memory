@@ -25,7 +25,8 @@ jobs:
             probably-stolen/mods/3828913695/CorpPresence.dll
           sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
-        with: {dotnet-version: '8.0.x'}
+        with:
+          dotnet-version: '8.0.x'
       - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
       - name: Decompile
         shell: bash
@@ -40,7 +41,8 @@ jobs:
           decomp 3829730904 BrewingExpansion.dll
           decomp 3828913695 CorpPresence.dll
       - name: Trace
-        env: {DECOMPILED_ROOT: ${{ runner.temp }}/src}
+        env:
+          DECOMPILED_ROOT: ${{ runner.temp }}/src
         run: python3 probably-stolen/tools/trace_target_source_calls.py
       - name: Commit
         shell: bash
