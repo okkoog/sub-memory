@@ -17,8 +17,14 @@ if (!File.Exists(input)) throw new FileNotFoundException("Original DLL missing",
 Directory.CreateDirectory(Path.GetDirectoryName(output)!);
 Directory.CreateDirectory(Path.GetDirectoryName(reportPath)!);
 
-using var original = AssemblyDefinition.ReadAssembly(input, new ReaderParameters { ReadSymbols = false, InMemory = true });
-using var modified = AssemblyDefinition.ReadAssembly(input, new ReaderParameters { ReadSymbols = false, InMemory = true });
+var managed = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(input)!, "..", "..", "Managed"));
+if (!Directory.Exists(managed)) throw new DirectoryNotFoundException("Managed game references missing: " + managed);
+var resolver = new DefaultAssemblyResolver();
+resolver.AddSearchDirectory(managed);
+resolver.AddSearchDirectory(Path.GetDirectoryName(input)!);
+var parameters = new ReaderParameters { ReadSymbols = false, InMemory = true, AssemblyResolver = resolver };
+using var original = AssemblyDefinition.ReadAssembly(input, parameters);
+using var modified = AssemblyDefinition.ReadAssembly(input, parameters);
 
 if (original.Name.HasPublicKey) throw new InvalidOperationException("Signed assembly cannot be rewritten without signing key.");
 
@@ -70,7 +76,7 @@ MakeDeferred(callbackCalls[0].Instruction);
 modified.Write(output, new WriterParameters { WriteSymbols = false });
 
 using var result = AssemblyDefinition.ReadAssembly(output,
-    new ReaderParameters { ReadSymbols = false, InMemory = true });
+    new ReaderParameters { ReadSymbols = false, InMemory = true, AssemblyResolver = resolver });
 
 static string OperandKey(MethodDefinition method, object? obj)
 {
