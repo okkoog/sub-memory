@@ -1,0 +1,46 @@
+name: Probably Stolen extra API analysis
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-extra-api-analysis.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install ilspycmd --tool-path .tools --version 9.1.0.7988
+      - name: Decompile selected APIs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="probably-stolen/analysis/sol-decompile-extra"
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          ./.tools/ilspycmd -t ModCapability probably-stolen/Managed/Assembly-CSharp.dll > "$OUT/ModCapability.cs" 2>/dev/null || true
+          ./.tools/ilspycmd -t ModScanner probably-stolen/Managed/Assembly-CSharp.dll > "$OUT/ModScanner.cs" 2>/dev/null || true
+          ./.tools/ilspycmd probably-stolen/mods/3828913695/CorpPresence.dll > "$OUT/CorpPresence.cs" 2>/dev/null || true
+          ./.tools/ilspycmd probably-stolen/mods/3828910575/ProficiencyMod.dll > "$OUT/ProficiencyMod.cs" 2>/dev/null || true
+      - name: Commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probably-stolen/analysis/sol-decompile-extra
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Analyze extra Probably Stolen localization APIs [skip ci]"
+          git push origin HEAD:probably-stolen-koreanpack-sol
