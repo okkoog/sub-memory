@@ -132,6 +132,7 @@ namespace ProbablyStolenKoreanPack
                 _enabled = true;
 
                 ModHook.OnModAssetsLoaded += OnModAssetsLoaded;
+                ModHook.OnCreateTooltipLate += OnCreateTooltipLate;
 
                 Debug.Log("[KoreanPack] Enabled. Waiting for official ModHook.OnModAssetsLoaded.");
             }
@@ -145,6 +146,7 @@ namespace ProbablyStolenKoreanPack
 
                 _enabled = false;
                 ModHook.OnModAssetsLoaded -= OnModAssetsLoaded;
+                ModHook.OnCreateTooltipLate -= OnCreateTooltipLate;
 
                 RestoreNativeEntries();
                 UnpatchDynamic();
@@ -157,6 +159,42 @@ namespace ProbablyStolenKoreanPack
                 _catalogsReady = false;
 
                 Debug.Log("[KoreanPack] Disabled.");
+            }
+        }
+
+        private static void OnCreateTooltipLate(
+            RichTextBuilder builder, GameItem item)
+        {
+            if (!_enabled || !IsKorean() || builder == null || item == null)
+                return;
+
+            try
+            {
+                if (!item.IsTag("MOD_ID_TAG"))
+                    return;
+
+                string modId = item.GetTagReadonly("MOD_ID_TAG").GetString();
+                if (string.IsNullOrEmpty(modId))
+                    return;
+
+                Catalog catalog;
+                if (!Catalogs.TryGetValue(modId, out catalog) || catalog == null)
+                    return;
+
+                // Native source labels and base tooltip lines already exist in the
+                // builder at this official late-tooltip stage. Translate only exact
+                // entries/templates belonging to the item's own catalog.
+                HashSet<object> visited =
+                    new HashSet<object>(ReferenceComparer.Instance);
+                int budget = 320;
+                TranslateObjectGraph(catalog, builder,
+                    typeof(KoreanPack).Assembly,
+                    false, false, null, visited, 0, ref budget);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Tooltip translation skipped: " +
+                    ex.Message);
             }
         }
 
