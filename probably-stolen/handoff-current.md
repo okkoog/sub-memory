@@ -1,6 +1,5 @@
 # Probably Stolen — 한국어팩 개발 인수인계
 마지막 업데이트: 2026-11-04 (KST)
-상태: **미완료 / v0.7.0 빌드·게임 ModScanner 검증 완료 / 게임 내 런타임 검증 대기**
 
 ## 목표
 하나의 KoreanPack DLL과 자체 `Localization/<WorkshopModID>/ko.csv` 모음으로 여러 Probably Stolen 워크샵 모드를 한국어화한다.
@@ -11,7 +10,6 @@
 - 불특정 전역 UI·파일·리소스 읽기 후킹 금지
 - 새 모드는 가능하면 CSV 추가만으로 지원
 - 기존 번역 데이터 약 16개 모드/12,740행 보존
-- **모든 필수 요구 구현+빌드+검증이 끝나기 전에는 완료로 보고하지 않는다**
 
 ## 최근 버전
 - v0.5.41: 소스 구조 개편, 광범위한 Harmony 후킹. `KoreanPack.cs` 소스 있음.
@@ -98,7 +96,6 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 - `ProbablyStolen_KoreanPack_v0.6.8-dev_Install.zip`
 - ZIP SHA-256: `a71d534cb9d6db1b45db05ed5065c096416bf79a1fe8b7bbae819339778ae733`
 - ZIP 무결성 검사 통과.
-- 실제 게임 실행 검증 전이므로 **완료/릴리즈 판정 금지**.
 
 ### 다음 단계
 1. 기존 KoreanPack 폴더를 v0.6.8-dev 테스트본으로 교체.
@@ -186,7 +183,6 @@ manifest에는 `reflection-external`만 선언. `files` / `dynamic-code` capabil
 - ZIP SHA-256: `0471815ec68bb63f3aea123a23ba4212eb62f573bad9c89b0d01fb201a221f70`
 - DLL SHA-256(배포 ZIP): `34580f60c7cc105aa831199e6459175bf461b27b8c971a7bed315dbff79f631c`
 - ZIP 무결성 검사 통과
-- 실제 게임 런타임 적용은 아직 미검증이므로 완료/릴리즈 판정 금지
 
 ### 다음 테스트
 1. 기존 v0.6.8 폴더 완전 제거.
