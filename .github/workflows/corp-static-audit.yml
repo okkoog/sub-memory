@@ -1,0 +1,49 @@
+name: CorpPresence 0.9.4 static audit
+
+on:
+  push:
+    paths:
+      - ".github/workflows/corp-static-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  static-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install pinned ILSpy command-line tool
+        shell: bash
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile CorpPresence only (never execute game/mod DLL)
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/corp-decompiled"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$RUNNER_TEMP/corp-decompiled" "probably-stolen/mods/3828913695/CorpPresence.dll"
+      - name: Generate static callsite and Harmony audit
+        shell: bash
+        env:
+          CORP_DECOMPILED: ${{ runner.temp }}/corp-decompiled
+        run: python3 probably-stolen/tools/analyze_corp.py
+      - name: Commit static audit report
+        shell: bash
+        run: |
+          git add -- probably-stolen/analysis/CorpPresence-0.9.4-static-audit.md
+          if git diff --cached --quiet; then
+            echo "Audit report unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add CorpPresence 0.9.4 static audit"
+          git pull --rebase origin main
+          git push origin HEAD:main
