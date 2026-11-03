@@ -1,0 +1,28 @@
+name: KoreanPack v0.6.8 reproducibility check
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-koreanpack-v068-repro.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Compare committed DLL with fresh build
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          dotnet build probably-stolen/source/KoreanPack.v0.6.8.csproj -c Release
+          sha256sum probably-stolen/source/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll
+          cmp probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll probably-stolen/source/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll
