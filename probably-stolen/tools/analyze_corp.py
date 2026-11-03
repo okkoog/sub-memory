@@ -77,7 +77,7 @@ for rel, regexes in focus.items():
         detail_lines.extend(["", f"## {rel}", "", "Not found in decompilation."])
         continue
     textlines = p.read_text(encoding="utf-8-sig").splitlines()
-    hit = [i for i, line in enumerate(textlines) if any(re.search(exp, line, re.I) for exp in regexes)]
+    hit = [i for i, line in enumerate(textlines) if any(exp.replace(chr(92), "").lower() in line.lower() for exp in regexes)]
     selected = sorted({j for i in hit for j in range(max(0, i - 4), min(len(textlines), i + 9))})
     detail_lines.extend(["", f"## {rel}", "", f"Matching lines: {len(hit)}; displayed context lines: {len(selected)}", "", "```text"])
     for j in selected[:390]:
