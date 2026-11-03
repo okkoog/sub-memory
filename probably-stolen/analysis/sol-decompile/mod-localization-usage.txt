@@ -1,0 +1,1267 @@
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:61:			internal GameItem Item;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:155:						foreach (GameItem item in instance.FindAllItem(true))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:242:		internal static int Apply(GameItemElement element)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:246:			if (element == null || (((GameItem)element).identifier != "xiaowo_auction_container" && ((GameItem)element).identifier != "xiaowo_auction_phone_card" && !AuctionExclusiveCatalog.IsExclusive(((GameItem)element).identifier)))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:317:	[HarmonyPatch(typeof(GameItemElement), "ValidateSelect")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:320:		private static void Postfix(GameItemElement __instance)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:325:	[HarmonyPatch(typeof(GameItemElement), "Validate")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:328:		private static void Postfix(GameItemElement __instance)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:381:				ModHook.OnModItemDirectoryInit += AuctionItemRegistration.Register;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:391:				Location = ModHelper.AddAfterhourLocation("xiaowo_night_auction", "xiaowo_night_auction", (Func<string>)(() => AuctionText.Get("map_entry", "集装箱拍卖")), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:399:				AuctionNightMarket.Register();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:441:				WildeExpressEvidence.RegisterForLoadedStore();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:479:				ModHook.OnModItemDirectoryInit -= AuctionItemRegistration.Register;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:497:				RunCleanupStep("evidence service", WildeExpressEvidence.Unregister);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:500:				RunCleanupStep("night market events", AuctionNightMarket.Unregister);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:503:					ModHelper.RemoveAfterhourLocations("xiaowo_night_auction");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:531:		private string _locale;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:533:		private int _nextLocaleCheck;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:552:				if (Time.frameCount >= _nextLocaleCheck)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:554:					_nextLocaleCheck = Time.frameCount + 30;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:555:					string currentLocaleCode = AuctionText.CurrentLocaleCode;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:556:					if (!(_locale == currentLocaleCode))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:563:						_locale = currentLocaleCode;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:577:		private static bool Prefix(GameItem newItem, Vector2 mousePosition)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:596:		private static bool Prefix(GameItem newItem, Vector2 mousePosition)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:604:		internal static bool Open(GameItem item, Vector2 position)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:635:		private static void Postfix(GameGridInventory __instance, GameItem item, bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:708:		private static LoadedMod _mod;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:714:		internal static void Loaded(LoadedMod mod)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:765:		internal static void SetSprite(GameItem item, string key)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:769:			ModHelper.SetSource(item, "xiaowo_night_auction", "小窝竞拍之王");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:847:		internal static bool Restore(GameItem item, GameInventory inventory, GridShape shape)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:909:		private static bool _registered;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:917:		internal static void RegisterForLoadedStore()
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:923:			if (!_registered)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:925:				ModHelper.AddNetworkUpgrade("xiaowo_night_auction", "xiaowo_auction_express_evidence", 0, "Informant", (Func<string>)(() => AuctionText.Select("加急清证", "Express evidence cleanup")), (Func<string>)Description, (Action)null, (string)null, "xiaowo_night_auction:auction_express_cleanup", (string[])null, 0, (Func<string>)null, (Func<string>)null, false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:926:				_registered = true;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:935:		internal static void Unregister()
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:938:			if (_registered)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:940:				ModHelper.RemoveNetworkUpgrades("xiaowo_night_auction");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:942:			_registered = false;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1098:				EmporiumAudioPlayer.Instance.PlayRegister();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1376:			List<string> identifierList = DirectoryMaster.GetIdentifierList<GameItem>((string)null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1384:				List<string> identifierList2 = DirectoryMaster.GetIdentifierList<GameItem>("ModItemDirectory");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1404:					GameItem val = DirectoryMaster.Item(item2, false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1572:				GameItem obj = DirectoryMaster.Item(id, false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1771:		private static bool IsEligible(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1832:		private static bool Matches(ContainerCategory category, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1844:		private static bool HasAny(GameItem item, params string[] tags)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1858:		internal static void Register(ModItemDirectory directory)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1865:			if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey("xiaowo_auction_container") && ((Directory<GameItem>)(object)directory).Add("xiaowo_auction_container", (Func<GameItem>)(() => AuctionContainer.Create(owned: false, ContainerCategory.Engineering, 1, Array.Empty<string>()))))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1871:				if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey(key))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1874:					if (((Directory<GameItem>)(object)directory).Add(key, (Func<GameItem>)(() => AuctionExclusiveFactory.Create(captured, owned: false))))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1880:			if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey("xiaowo_auction_phone_card"))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1882:				((Directory<GameItem>)(object)directory).Add("xiaowo_auction_phone_card", (Func<GameItem>)(() => AuctionPhone.CreateCard(owned: false)));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1884:			Core.Log?.Msg("Auction item directory registered: added=" + num + " total=" + (AuctionExclusiveCatalog.Items.Count + 1) + ".");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1906:			internal readonly GameItem Container;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1920:			internal WindowView(GameItem container, PixelWindow window, GameGridInventory output, TagElement remainingLabel, TagElement hintLabel, TagElement takeOnlyLabel, ButtonElement button)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1956:			List<GameItem> list = ((instance != null) ? instance.FindAllItem(true) : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1961:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1975:		internal static GameItem Create(bool owned, ContainerCategory category, int seed, IReadOnlyList<string> contents)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1978:			GameItem obj = DirectoryMaster.Item("service_box", owned) ?? throw new InvalidOperationException("Native container template service_box is unavailable.");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:1996:			((GameItemFunc)obj).onLoaded = delegate(GameItem loaded)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2004:		internal static void Repair(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2054:		private static void ApplyLocalizedText(GameItem item, ContainerData data)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2063:		internal static void RepairForOpenIfNeeded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2080:		private static void ClearNativeLockState(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2099:		private static void ApplySprite(GameItem item, ContainerCategory category)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2104:		internal static string Describe(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2110:		internal static string NextItemId(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2120:		private static WindowView EnsureWindow(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2130:		private static WindowView BuildWindow(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2177:		internal static void OpenTransientWindow(GameItem item, Vector2 mousePosition)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2195:			List<GameItem> list = store.FindAllItem(true);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2200:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2232:			foreach (GameItem childItem in ((GameInventory)view.Output).childItems)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2299:					List<GameItem> list = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2305:							GameItem val3 = SaveManager.DecodeNodes(JsonUtility.FromJson<SaveState>(item2).saveItems);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2320:						foreach (GameItem item3 in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2357:		private static void UpdateWindow(GameItem item, WindowView view)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2401:		internal static void Dispense(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2423:					GameItem val = DirectoryMaster.Item(text, true);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2429:					GameItem val2 = val;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2486:		internal static int OutputCount(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2495:		internal static string OutputItemId(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2502:					GameItem obj = ((GameInventory)value.Output).childItems[0];
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2509:		internal static List<GameItem> OutputItemsForTest(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2511:			List<GameItem> list = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2518:						foreach (GameItem childItem in ((GameInventory)value.Output).childItems)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2532:		internal static string OutputDiagnostics(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2535:			foreach (GameItem item in OutputItemsForTest(container))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2542:		internal static void RemoveViewForTest(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2550:		internal static IntPtr WindowPointer(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2559:		internal static string OutputShape(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2568:		internal static bool RejectsManualInput(GameItem container, GameItem candidate)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2577:		internal static GameItem TakeOutputForTest(GameItem container)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2584:					GameItem val = ((GameInventory)value.Output).childItems[0];
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2601:		internal static void ClearOutputSeal(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2635:		internal static void CommitClaim(GameGridInventory output, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2703:			foreach (GameItem childItem in ((GameInventory)output).childItems)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2713:		private static ContainerData ReadData(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:2752:		private static void SetData(GameItem item, ContainerCategory category, int seed, int index, IReadOnlyList<string> contents)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:3393:			if (Core.StoreReady && ModHelper.GetCurrentAfterhourLocationId() == "xiaowo_night_auction")
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:3395:				ModHelper.ReturnFromAfterhour(false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:3545:		private static Sprite PreviewSprite(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:3568:				GameItem val = DirectoryMaster.Item(array[i], false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:4324:				GameItem val = DirectoryMaster.Item(_selected.InspectionItems[i], false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:4403:			SetStatus((lot.Withdrawn ? T("你已退出；AI竞价结束，结果已公布。", "You withdrew. AI bidding is complete; the result is shown.") : (won ? T("本箱已登记；回店取货，全部开出后揭晓盈亏。", "Lot registered. Collect it at the shop; profit appears after opening.") : T("本箱由其他竞拍者获得。", "Another bidder won this lot."))) + T("  本晚进度 ", "  Tonight ") + ResolvedAuctions + " / 3.");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:4424:			string[] array3 = ((!AuctionText.IsChinese(AuctionText.CurrentLocaleCode)) ? new string[6] { "Day / Venue", "Container", "Price", "Cargo Value", "Net Profit", "Status" } : new string[6] { "日期 / 场次", "集装箱", "成交价", "实际货值", "净收益", "状态" });
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:4683:				if (PlayerStore.Instance.FindAllItem(true).Any(delegate(GameItem val2)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:4696:				GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5336:				["xiaowo_auction_regen_core"] = ("Black Clinic Regen Core", "An unregistered tissue regeneration core of unknown origin."),
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5337:				["xiaowo_auction_organ_matrix"] = ("Unregistered Organ Matrix", "Clinical printing matrix with full organ reconstruction data."),
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5344:				["xiaowo_auction_black_diamond"] = ("Stateless Black Diamond", "A giant black diamond with no registered origin."),
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5518:		internal static bool NeedsRepair(GameItem item, AuctionExclusiveSpec spec)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5594:		internal static GameItem Create(string id, bool owned)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5600:			GameItem obj = AuctionItemLinks.CreateTemplate(value.NativeTemplate, owned);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5603:			((GameItemFunc)obj).onLoaded = delegate(GameItem loaded)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5611:		internal static void Repair(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5624:		private static void Apply(GameItem item, AuctionExclusiveSpec spec, bool newItem = false)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5719:		internal static void RefreshLocalizedText(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5730:			List<GameItem> list = ((existing != null) ? existing.FindAllItem(true) : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5735:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5741:		private static void ApplyLocalizedText(GameItem item, AuctionExclusiveSpec spec)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5747:				num = ((!AuctionText.IsChinese(AuctionText.CurrentLocaleCode)) ? 1 : 0);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5786:		private static GameItem _nativeCard;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5793:		internal static int Remaining(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5808:		internal static bool CanOpen(GameItem key, GameItem box)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5817:		internal static long ValueFor(GameItem item, int fullValue)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5822:		internal static void Ensure(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5834:				if (((GameItemFunc)_nativeCard).mayItemTargetItemFunc == null || ((GameItemFunc)_nativeCard).canItemTargetItemFunc == null || ((GameItemFunc)_nativeCard).onItemTargetItemFunc == null)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5838:				((GameItemFunc)item).mayItemTargetItemFunc = ((GameItemFunc)_nativeCard).mayItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5839:				((GameItemFunc)item).canItemTargetItemFunc = ((GameItemFunc)_nativeCard).canItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5840:				((GameItemFunc)item).onItemTargetItemFunc = ((GameItemFunc)_nativeCard).onItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5841:				((GameItemFunc)item).mayThisTargetItemFunc = ((GameItemFunc)_nativeCard).mayThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5842:				((GameItemFunc)item).canThisTargetItemFunc = ((GameItemFunc)_nativeCard).canThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5843:				((GameItemFunc)item).onThisTargetItemFunc = ((GameItemFunc)_nativeCard).onThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5844:				((GameItemFunc)item).mayItemTargetThisFunc = ((GameItemFunc)_nativeCard).mayItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5845:				((GameItemFunc)item).canItemTargetThisFunc = ((GameItemFunc)_nativeCard).canItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5846:				((GameItemFunc)item).onItemTargetThisFunc = ((GameItemFunc)_nativeCard).onItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5850:		internal static void SetCharges(GameItem item, int charges)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5864:	[HarmonyPatch(typeof(GameItem), "MayTarget")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5867:		private static bool Prefix(GameItem __instance, GameItem targetItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5877:	[HarmonyPatch(typeof(GameItem), "CanTarget")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5880:		private static bool Prefix(GameItem __instance, GameItem targetItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5893:		private static bool Prefix(GameItem key, GameItem box)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5926:		private static GameItem _pending;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5955:					if (!(fullName != "TMPLocalizer") || !(fullName != "UnityEngine.Localization.Components.LocalizeStringEvent"))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:5988:		private static bool Check(GameItem item, out PlayerStore store, out int[] amounts, out string reason)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6006:			List<GameItem> list = store.FindAllItem(true);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6010:				foreach (GameItem item2 in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6053:		internal static bool RequestUse(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6113:		internal static bool TryUse(GameItem item, out string message)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6209:		private static bool Prefix(GameItem newItem)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6232:		private static readonly Dictionary<string, GameItem> Templates = new Dictionary<string, GameItem>(StringComparer.Ordinal);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6249:		internal static bool NeedsRepair(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6258:		internal static int Remaining(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6273:		internal static long ValueFor(GameItem item, int fullValue)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6283:		internal static GameItem CreateTemplate(string nativeId, bool owned)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6285:			GameItem val = DirectoryMaster.Item((nativeId == "native:SynaprestInjector") ? "black_injector" : nativeId, owned);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6295:		internal static void Ensure(GameItem item, bool newItem = false)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6308:			((GameItemFunc)item).mayActivateSlotItemFunc = ((GameItemFunc)value).mayActivateSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6309:			((GameItemFunc)item).canActivateSlotItemFunc = ((GameItemFunc)value).canActivateSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6310:			((GameItemFunc)item).onActivateSlotItemFunc = ((GameItemFunc)value).onActivateSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6341:		private static void CopyTargetCallbacks(GameItem item, GameItem native)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6343:			((GameItemFunc)item).mayItemTargetItemFunc = ((GameItemFunc)native).mayItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6344:			((GameItemFunc)item).canItemTargetItemFunc = ((GameItemFunc)native).canItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6345:			((GameItemFunc)item).onItemTargetItemFunc = ((GameItemFunc)native).onItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6346:			((GameItemFunc)item).mayThisTargetItemFunc = ((GameItemFunc)native).mayThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6347:			((GameItemFunc)item).canThisTargetItemFunc = ((GameItemFunc)native).canThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6348:			((GameItemFunc)item).onThisTargetItemFunc = ((GameItemFunc)native).onThisTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6349:			((GameItemFunc)item).mayItemTargetThisFunc = ((GameItemFunc)native).mayItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6350:			((GameItemFunc)item).canItemTargetThisFunc = ((GameItemFunc)native).canItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6351:			((GameItemFunc)item).onItemTargetThisFunc = ((GameItemFunc)native).onItemTargetThisFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6355:		private static void EnsureModule(GameItem item, GameItem native, bool newItem)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6402:			((GameItemFunc)item).mayInventoryAddItemFunc = ((GameItemFunc)native).mayInventoryAddItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6403:			((GameItemFunc)item).mayInventoryRemoveItemFunc = ((GameItemFunc)native).mayInventoryRemoveItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6404:			((GameItemFunc)item).onSlotAddItemFunc = ((GameItemFunc)native).onSlotAddItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6405:			((GameItemFunc)item).onSlotRemoveItemFunc = ((GameItemFunc)native).onSlotRemoveItemFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6406:			((GameItemFunc)item).tooltipRichTextFunc = ((GameItemFunc)native).tooltipRichTextFunc;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6410:		private static void EnsureIndependentFeatures(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6477:		internal static void WriteInt(GameItem item, string tag, int value)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6487:		internal static void SetTag(GameItem item, string tag, bool enabled)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6509:		internal static void SetCharges(GameItem item, int value)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6516:		internal static bool Owned(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6525:		internal static bool RepairTarget(GameItem source, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6534:		internal static bool CalibrationTarget(GameItem source, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6544:		internal static void Calibrate(GameItem source, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6578:			foreach (GameItem childItem in ((GameInventory)val).childItems)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6588:	[HarmonyPatch(typeof(GameItem), "MayTarget")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6591:		private static bool Prefix(GameItem __instance, GameItem targetItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6596:	[HarmonyPatch(typeof(GameItem), "CanTarget")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6599:		private static bool Prefix(GameItem __instance, GameItem targetItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6606:		internal static bool Check(GameItem source, GameItem target, ref bool result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6623:	[HarmonyPatch(typeof(GameItem), "Target")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6626:		private static bool Prefix(GameItem __instance, GameItem targetItem)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6781:		private static GameItem[] CounterItems()
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6787:				return Array.Empty<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6795:		internal static bool AcceptsGift(ContainerCategory category, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6806:					return AuctionMerchants.BuyingTags(category).Any((string tag) => item.IsTag(tag) || item.IsGameItemType(tag));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6812:		internal static long GiftValue(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6837:		internal static bool TryGive(StoreClient client, GameItem[] items, out string message)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6840:			if (_committing || !Context(client, out var category) || items == null || items.Length == 0 || items.Select((GameItem i) => ObjectIdentity.Key(i)).Distinct().Count() != items.Length)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6850:			GameItem[] counter = CounterItems();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6851:			if (!items.All((GameItem i) => i != null && counter.Any((GameItem c) => ObjectIdentity.Key(c) == ObjectIdentity.Key(i)) && AcceptsGift(category, i)))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6861:			(GameItem, GameInventory, GridShape)[] array = items.Select((GameItem i) => (Item: i, Inventory: i.parentInventory, Shape: i.modifiedShape.Clone())).ToArray();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6862:			List<GameItem> list = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6866:				foreach (GameItem val in items)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6881:				(GameItem, GameInventory, GridShape)[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6884:					(GameItem Item, GameInventory Inventory, GridShape Shape) placement = array2[num];
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6885:					if (list.Any((GameItem i) => ObjectIdentity.Key(i) == ObjectIdentity.Key(placement.Item)))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6902:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:6986:				if (Context(client, out var _) && ((IEnumerable<GameItem>)CounterItems()).Any((Func<GameItem, bool>)client.IsClientBuyingThisItem))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7046:			GameItem[] items = CounterItems();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7048:			if (items.Length == 0 || items.Any((GameItem i) => !AcceptsGift(category, i) || GiftValue(i) <= 0))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7055:			(GameItem Item, int Count, long Value)[] snapshot = items.Select((GameItem i) => (Item: i, Count: i.unitCount, Value: GiftValue(i))).ToArray();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7057:			long value = snapshot.Sum(((GameItem Item, int Count, long Value) i) => i.Value);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7072:				GameItem[] current = CounterItems();
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7073:				if (Gifts(category) != before || current.Length != snapshot.Length || !snapshot.All(((GameItem Item, int Count, long Value) s) => current.Contains(s.Item) && s.Item.unitCount == s.Count && GiftValue(s.Item) == s.Value))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7593:		internal static bool IsMatchingExclusive(StoreClient client, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7906:		typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7911:		private static bool Prefix(StoreClient __instance, GameItem gameItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7913:			if (!AuctionMerchants.IsMatchingExclusive(__instance, gameItem))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7923:		typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7928:		private static bool Prefix(StoreClient __instance, GameItem gameItem, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:7930:			if (!AuctionMerchants.IsMatchingExclusive(__instance, gameItem))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8014:		internal static void Register()
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8021:					ModHelper.AddAfterhourEvent("xiaowo_night_auction", EventId(value), "xiaowo_night_auction", (Func<string>)(() => Title(captured)), 1, (Func<string>)(() => Description(captured)), (IEnumerable<AfterhourEffect>)(object)new AfterhourEffect[1] { ModHelper.AfterhourEffect((Func<string>)(() => Effect(captured)), (string)null, 0f, (AfterhourEffectPolarity)((value != AuctionMarketEvent.Maintenance) ? 1 : 2)) }, 0f, (AfterhourEventTone?)null, (Func<bool>)null, (Action)null, (Action)null, (IEnumerable<AfterhourWeekday>)null, false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8027:				ModHelper.AddAfterhourEvent("xiaowo_night_auction", AdvisorId(value2), "xiaowo_night_auction", (Func<string>)(() => AuctionRules.VenueName(captured2) + T("拍卖行顾问", " Advisor")), 3, (Func<string>)(() => T("已购买的情报顾问服务。", "Your purchased appraisal service.")), (IEnumerable<AfterhourEffect>)(object)new AfterhourEffect[1] { ModHelper.AfterhourEffect((Func<string>)(() => T("玩家情报费用优惠30%；与驻场优惠取较高者。", "Player intel costs 30% less; best discount applies.")), (string)null, 0f, (AfterhourEffectPolarity)1) }, 0f, (AfterhourEventTone?)null, (Func<bool>)null, (Action)null, (Action)null, (IEnumerable<AfterhourWeekday>)null, false);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8031:		internal static void Unregister()
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8033:			ModHelper.RemoveAfterhourEvents("xiaowo_night_auction");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8064:						ModHelper.StartAfterhourEvent(EventId(value), 1);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8066:					else if (ModHelper.IsAfterhourEventActive(EventId(value)))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8068:						ModHelper.EndAfterhourEvent(EventId(value));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8077:					ModHelper.StartAfterhourEvent(AdvisorId(value2), auctionAdvisorContract.Ends - AuctionCatalog.Day + 1);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8079:				else if (ModHelper.IsAfterhourEventActive(AdvisorId(value2)))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8081:					ModHelper.EndAfterhourEvent(AdvisorId(value2));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8157:				if (!ModHelper.StartAfterhourEvent(AdvisorId(venue), 3))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8176:				ModHelper.EndAfterhourEvent(AdvisorId(venue));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8622:		internal static GameItem CreateCard(bool owned)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8625:			GameItem obj = DirectoryMaster.Item("card_pharma", owned) ?? throw new InvalidOperationException("Native business card is unavailable.");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8631:			((GameItemFunc)obj).onLoaded = MonoCallbacks.Bind<Action<GameItem>>(new Action<GameItem>(LocalizeCard));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8636:		private static void LocalizeCard(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8648:			List<GameItem> list = ((instance != null) ? instance.FindAllItem(true) : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8653:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8669:			List<GameItem> list = ((instance != null) ? instance.FindAllItem(true) : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8674:			foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:8683:			GameItem val = CreateCard(owned: true);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9051:			_paper = ModHelper.CreatePaper("xiaowo_night_auction", "phone_card", "", 680f, 448f);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9094:	[HarmonyPatch(typeof(StorePhoneClient), "GetLocalizedDisplayName")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9107:	[HarmonyPatch(typeof(GameItem), "ActivateSlotItem")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9110:		private static bool Prefix(GameItem __instance)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9137:	[HarmonyPatch(typeof(LocHelper), "GetLocalizedClientName")]
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9239:		internal static void OnSale(StoreClient client, GameItem item, int paid)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9249:				bool matchesCategory = (AuctionExclusiveCatalog.Items.TryGetValue(item.identifier, out value) ? (value.Category == active.Category) : AuctionMerchants.BuyingTags(active.Category).Any((string tag) => item.IsGameItemType(tag) || item.IsTag(tag)));
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9370:			if (AuctionText.IsChinese(AuctionText.CurrentLocaleCode) || !AuctionExclusiveCatalog.English.TryGetValue(spec.Id, out (string, string) value))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9397:			foreach (GameItem item in PlayerStore.Instance.FindAllItem(true))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9557:		private static void Postfix(StoreClient storeClient, bool isPlayerSold, GameItem gameItem, int value)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9565:				AuctionCollection.Discover((gameItem != null) ? gameItem.identifier : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9566:				AuctionCommissions.OnSale(storeClient, gameItem, value);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9577:		private static void Postfix(GameItem gameItem)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9581:				AuctionCollection.Discover((gameItem != null) ? gameItem.identifier : null);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9811:			ModHelper.SetModData("xiaowo_night_auction", suffix, value);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9819:				ModHelper.RemoveModData("xiaowo_night_auction", suffix);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9838:					if (!ModHelper.HasModData("xiaowo_night_auction", text))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9840:						ModHelper.SetModData("xiaowo_night_auction", text, keyValuePair.Value);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:9842:					else if (ModHelper.GetModData("xiaowo_night_auction", text, (string)null) != keyValuePair.Value)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10542:		internal static string CurrentLocaleCode
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10548:					return LocHelper.GetCurrentLocaleCode() ?? string.Empty;
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10557:		internal static bool IsChinese(string localeCode)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10559:			if (!string.IsNullOrWhiteSpace(localeCode))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10561:				if (!localeCode.Equals("zh", StringComparison.OrdinalIgnoreCase) && !localeCode.StartsWith("zh-", StringComparison.OrdinalIgnoreCase))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10563:					return localeCode.StartsWith("zh_", StringComparison.OrdinalIgnoreCase);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10572:			return Select(CurrentLocaleCode, chinese, english);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10575:		internal static string Select(string localeCode, string chinese, string english)
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10577:			if (!IsChinese(localeCode))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10597:			if (IsChinese(CurrentLocaleCode) || string.IsNullOrEmpty(value))
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10619:			string text = ModHelper.GetLocalized("xiaowo_night_auction", key, Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10622:				text = ((IsChinese(CurrentLocaleCode) || !English.TryGetValue(key, out var value)) ? fallback : value);
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:12561:			Add(items, english, ContainerCategory.Contraband, "signal_jammer", 2100, 1, 2, 2, "black_decoder", "便携信号屏蔽器", "来源不明的信号屏蔽设备，属于受管制货物。", "Portable Signal Jammer", "An unregistered signal-blocking device traded as controlled goods.", "junk", "MODULE");
+probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:12563:			Add(items, english, ContainerCategory.Contraband, "outlaw_suppressor", 4800, 1, 3, 1, "silent_bolt", "无登记消音组件", "没有制造编号的受管制枪械组件。", "Unregistered Suppressor Assembly", "Controlled firearm components without a manufacturer serial number.", "junk", "WEAPON");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:17:using UnityEngine.Localization;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:18:using UnityEngine.Localization.Settings;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:19:using UnityEngine.Localization.Tables;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:67:			MethodInfo native = AccessTools.Method(typeof(GameItem), "SetSpriteAndShape", (Type[])null, (Type[])null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:86:		internal static GameItem SetProxyArt(GameItem proxy, string atlas, string key)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:98:						GameItemElement val = (GameItemElement)(object)((proxy is GameItemElement) ? proxy : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:223:		public static string Recipe(GameItem bottle)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:228:		public static void Mark(GameItem bottle, string id)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:240:				ModHelper.SetSource(bottle, "brewing_expansion", ModText.Get("be_mod_name"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:245:		public static GameItem Create(Definition definition)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:247:			GameItem obj = WineHelper.CreateFinishedWineForDebug(2, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:453:		public static void Refresh(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:468:			item.SetName(ModHelper.GetLocalized("brewing_expansion", id + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:469:			item.shortDescription = ModHelper.GetLocalized("brewing_expansion", id + "_description", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:480:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:486:			item.SetGameItemType("ALCOHOL");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:487:			item.SetGameItemType("SUBSTANCE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:488:			item.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:496:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:515:			internal Action<GameItem> Handler;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:518:		private static readonly ConditionalWeakTable<GameItem, Binding> Bindings = new ConditionalWeakTable<GameItem, Binding>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:520:		internal static void Attach(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:524:				Action<GameItem> onLoaded = ((GameItemFunc)item).onLoaded;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:530:			Action<GameItem> native = ((GameItemFunc)item).onLoaded;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:531:			Action<GameItem> handler = (((GameItemFunc)item).onLoaded = delegate(GameItem b)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:580:			internal State(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:588:		private static void Prefix(GameItem __0, out State __state)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:597:		private static void RestoreUnchangedSprite(GameItem item, State state)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:605:		private static void Postfix(GameItem __0, State __state, bool __runOriginal)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:628:		private static Exception Finalizer(GameItem __0, State __state, Exception __exception)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:637:	[HarmonyPatch(typeof(GameItem), "SetSprite", new Type[]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:644:		private static void Prefix(GameItem __instance, string __0, string __1)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:732:		private static readonly ConditionalWeakTable<GameItem, View> Views = new ConditionalWeakTable<GameItem, View>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:736:			return ModHelper.GetLocalized("brewing_expansion", key, args);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:739:		private static bool Live(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:743:				GameItem obj = ((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:748:				return !((GameItemElement)obj).IsDestroyed();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:753:		private static bool Owned(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:762:		public static GameGridInventory Input(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:768:		public static GameGridInventory Bottles(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:774:		public static GameGridInventory Yeast(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:780:		public static GameGridInventory Output(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:786:		public static bool EmptyBottle(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:795:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:812:			GameItem item = DirectoryMaster.Item("water_jug", false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:823:			item.RemoveAllGameItemType();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:824:			item.SetGameItemType("MACHINE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:827:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:846:			((GameInventoryFunc)val).mayInventoryAddItemFunc = (GameItem x, GameInventory _) => Owned(x) && x.identifier == "be_brewing_fruit_pulp" && FruitPulp.Remaining(x) > 0;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:847:			((GameInventoryFunc)val2).mayInventoryAddItemFunc = (GameItem x, GameInventory _) => Owned(x) && EmptyBottle(x);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:848:			((GameInventoryFunc)val3).mayInventoryAddItemFunc = (GameItem x, GameInventory _) => Owned(x) && x.IsTag("WINE_YEAST_TAG") && x.unitCount == 1;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:849:			((GameInventoryFunc)val4).mayInventoryAddItemFunc = (GameItem x, GameInventory _) => Owned(x) && WineHelper.IsFinishedWine(x);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:877:			((GameInventoryFunc)val).onSlotRemoveItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val).onSlotRemoveItemFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:881:			((GameInventoryFunc)val2).onSlotAddItemEndFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val2).onSlotAddItemEndFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:885:			((GameInventoryFunc)val2).onSlotRemoveItemEndFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val2).onSlotRemoveItemEndFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:890:			GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:891:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:896:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:906:		public static void Refresh(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:911:				bool flag = obj != null && ((IEnumerable<GameItem>)((GameInventory)obj).childItems).Any((Func<GameItem, bool>)WineHelper.IsFermentingOrFinished);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:915:				((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:926:		public static void RefreshPrintButton(GameItem barrel)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:941:		public static bool PrintLinked(GameItem barrel)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:943:			GameItem val = MachineConnections.PrinterFor(barrel);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:951:		public static void Collect(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:957:			GameItem[] array = ((GameInventory)Bottles(item)).childItems.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:958:			foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:978:			GameItem[] array = (from x in PlayerStore.Instance.FindAllItem(true)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:981:			foreach (GameItem item in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:994:		private static Dictionary<string, int> Parts(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:999:		private static bool Same(GameItem item, Dictionary<string, int> parts)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1004:		public static int Start(GameItem barrel)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1016:				if (((IEnumerable<GameItem>)((GameInventory)Bottles(barrel)).childItems).Any((Func<GameItem, bool>)WineHelper.IsFermentingOrFinished) || ((GameInventory)Output(barrel)).childItems.Count > 0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1020:				GameItem[] array = ((GameInventory)Input(barrel)).childItems.Where((GameItem p) => Owned(p) && FruitPulp.Remaining(p) > 0 && FruitPulp.FruitId(p) != null).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1026:				GameItem[] array2 = ((GameInventory)Bottles(barrel)).childItems.Where((GameItem x) => Owned(x) && EmptyBottle(x)).Take(num2).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1027:				GameItem[] array3 = ((GameInventory)Yeast(barrel)).childItems.Where((GameItem x) => Owned(x) && x.unitCount == 1 && x.IsTag("WINE_YEAST_TAG")).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1028:				GameItem val = ((IEnumerable<GameItem>)array3).FirstOrDefault((Func<GameItem, bool>)((GameItem x) => x.IsTag("WINE_YEAST_REUSABLE_TAG")));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1049:				GameItem[] array4 = array;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1050:				foreach (GameItem val2 in array4)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1084:		private static bool StartOne(PlayerStore store, GameItem barrel, GameItem[] pulps, GameItem bottle, GameItem yeast)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1091:			List<GameItem> list = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1108:					GameItem val2 = DirectoryMaster.Item(text, true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1169:				if (pulps.Where((GameItem p, int num) => FruitPulp.Remaining(p) != counts[num] - 1).Any())
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1195:						int score = (int)Math.Round((double)pulps.Sum((GameItem p) => p.GetTagReadonly("BE_PULP_BERRY_SCORE_SUM_INT").GetInt()) / 4.0, MidpointRounding.AwayFromZero);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1223:					foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1283:		private static bool Prefix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1295:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1305:		private static bool Prefix(GameItem __0, GameItem __1)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1363:		public static bool CanConcentrate(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1376:		public static GameItem Create(Definition d)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1379:			GameItem obj = ItemDirectory.CreateEmptyItem(d.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1381:			obj.SetGameItemType("FOOD");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1387:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1392:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1394:			item.SetName(ModHelper.GetLocalized("brewing_expansion", item.identifier + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1395:			string shortDescription = (item.longDescription = ModHelper.GetLocalized("brewing_expansion", item.identifier + "_description", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1446:		public static GameItem Create(Definition d)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1449:			GameItem obj = ItemDirectory.CreateEmptyItem(d.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1451:			obj.SetGameItemType("SEED");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1455:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1460:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1463:			item.SetName(ModHelper.GetLocalized("brewing_expansion", item.identifier + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1464:			string shortDescription = (item.longDescription = ModHelper.GetLocalized("brewing_expansion", item.identifier + "_description", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1469:		private static void NormalizeCategories(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1478:				if (!item.IsGameItemType("SEED") || !item.IsTag("SEED"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1480:					item.SetGameItemType("SEED");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1482:				if (item.IsGameItemType("FOOD") || item.IsTag("FOOD"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1484:					item.RemoveGameItemType("FOOD");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1486:				if (item.IsGameItemType("MATERIAL") || item.IsTag("MATERIAL"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1488:					item.RemoveGameItemType("MATERIAL");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1500:			List<GameItem> list = ((instance != null) ? instance.FindAllItem(true) : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1504:				foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1515:		public static GameItem Create(string id)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1518:			GameItem val = ItemDirectory.CreateEmptyItem(id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1520:			val.SetGameItemType("DOCUMENT");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1523:			((GameItemFunc)val).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)val).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1528:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1530:			item.SetName(ModHelper.GetLocalized("brewing_expansion", item.identifier + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1531:			string shortDescription = (item.longDescription = ModHelper.GetLocalized("brewing_expansion", item.identifier + "_description", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1548:		private static string locale;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1557:			string currentLocaleCode = LocHelper.GetCurrentLocaleCode();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1558:			if (locale != currentLocaleCode)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1561:				locale = currentLocaleCode;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1665:				GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1666:				GameItem val2 = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1669:					Check(DirectoryMaster.Has<GameItem>(figurineDefinition.Id), "catalogue " + figurineDefinition.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1673:					Check(val.name != figurineDefinition.Id && !string.IsNullOrEmpty(val.name), "localization " + figurineDefinition.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1689:					Check(Figurines.Bonus((IEnumerable<GameItem>)(object)new GameItem[2] { val2, val2 }) == 100, "duplicate non-stacking " + figurineDefinition.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1708:			ModHelper.WriteModDataFileText("brewing_expansion", "foundation-check.txt", text);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1754:		internal static GameItem Create(FigurineDefinition definition)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1757:			GameItem obj = ItemDirectory.CreateEmptyItem(definition.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1758:			obj.SetName(ModHelper.GetLocalized("brewing_expansion", definition.Id + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1761:			obj.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1763:			obj.shortDescription = ModHelper.GetLocalized("brewing_expansion", definition.Id + "_description", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1765:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(ItemHitArea.Apply));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1770:		internal static int Bonus(IEnumerable<GameItem> items)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1773:			foreach (GameItem item in items)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1940:		private static void Prefix(GameItem __0, out State __state)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1945:				List<GameItem> source = __0.FindAllChildItems();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1949:				bool flag = source.Any((GameItem i) => i.IsTag("BE_HENTAI_YEAST"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1950:				bool flag2 = source.Any((GameItem i) => i.identifier == "be_advanced_yeast_reactor");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:1983:		private static void Postfix(GameItem __0, State __state, bool __runOriginal)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2006:		private static void Postfix(GameItem __0, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2043:		internal static GameItem Create(int index)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2046:			GameItem obj = MiscItemDirectory.MusicCassette("brewing_expansion:be_music_track_" + Hash(Names[index]), Names[index], "cassette" + (index + 1), "xuxu", 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2050:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2055:		internal static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2060:				item.SetName(ModHelper.GetLocalized("brewing_expansion", item.identifier + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2061:				string shortDescription = (item.longDescription = ModHelper.GetLocalized("brewing_expansion", item.identifier + "_description", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2296:	[HarmonyPatch(typeof(StoreReputationPerk), "GetLocalizedPerkName")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2307:	[HarmonyPatch(typeof(StoreReputationPerk), "GetLocalizedDescription")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2343:					typeof(List<GameItem>),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2346:				AccessTools.Method(typeof(NegociationUIManager), "BuyMultipleItem", new Type[1] { typeof(List<GameItem>) }, (Type[])null)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2425:		private readonly HashSet<GameItem> stock = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2553:			FormalVisitors.RegisterSprites();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2600:				onItemAddedToWeighted = delegate(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2611:				onItemSold = delegate(GameItem item, int _)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2616:			ModHelper.SetClientSource(val, "brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2620:		private void RecordPurchase(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2629:					ModHelper.SetModDataInt("brewing_expansion", "flower_purchase_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2633:					ModHelper.SetModDataInt("brewing_expansion", "midautumn_purchase_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2640:			if (ModHelper.GetCurrentAfterhourLocationId() != "brewing_expansion.brew_shop")
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2644:			GameItem[] array = stock.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2645:			foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2659:				if (!purchased.Contains(id) && (!(id == "be_jeanne_moreau_fruit") || ModHelper.GetModDataInt("brewing_expansion", "flower_purchase_day", -1) != dayCounter) && (!(id == "be_midautumn_blindbox") || dayCounter - ModHelper.GetModDataInt("brewing_expansion", "midautumn_purchase_day", -999) >= 5) && (!new string[3] { "be_brewery_sign", "be_nini_card", "be_trade_perfume" }.Contains(id) || !PlayerStore.Instance.FindAllItem(true).Any((GameItem val3) => val3.identifier == id && GeneralHelper.IsItemOwned(val3))))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2663:					GameItem val2 = DirectoryMaster.Item(text, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2705:		internal static void Register()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2708:			ModHelper.AddAfterhourLocation((AfterhourLocation)(object)Instance);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2714:			ModHelper.RemoveAfterhourLocations("brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2792:		internal static void Place(GameItem item, ShelfSlot slot)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2908:		internal static bool Reveal(StoreClient client, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2911:			if (!ModEntry.Enabled || !FormalVisitors.Open || client?.identifier != "be_weekly_trader" || item == null || !GeneralHelper.IsItemOwned(item) || (!item.IsTag("CIGARETTE_TAG") && !item.IsGameItemType("CIGARETTE")))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:2967:		internal static bool BeforeSale(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3001:		private static bool Prefix(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3017:		private static void Prefix(StoreClient __instance, GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3075:		private static readonly Dictionary<string, Sprite> Registered = new Dictionary<string, Sprite>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3077:		internal static void Register()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3088:				if (!((Object)(object)modSprite == (Object)null) && (!perkIcons.TryGetValue(text, out var value) || !((Object)(object)value != (Object)null) || (Registered.TryGetValue(text, out var value2) && value == value2)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3091:					Registered[text] = modSprite;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3097:				if (val.perk != null && (Object)(object)val.icon != (Object)null && Registered.TryGetValue(val.perk.id, out var value3) && perkIcons.TryGetValue(val.perk.id, out var value4) && value4 == value3)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3107:			foreach (KeyValuePair<string, Sprite> item in Registered)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3114:			Registered.Clear();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3124:				FormalTraitIcons.Register();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3164:				foreach (GameItem item in instance.FindAllItem(true))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3177:			return ModHelper.IsStartingPerkActive(id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3180:		internal static void Register()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3187:			ModHelper.AddStartingScenario("brewing_expansion", "be_new_brewer_start", (Func<string>)(() => ModText.Get("be_brewer_start_name")), (Func<string>)(() => ModText.Get("be_brewer_start_description")), new Func<string>[1]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3195:			ModHelper.AddStartingPerk("brewing_expansion", id, cost, (StartingPerkType)(cost <= 0), (Func<string>)(() => ModText.Get(nameKey)), (Func<string>)(() => ModText.Get(descriptionKey)), "brewing_expansion:" + id, (string[])null, 0, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3202:				Grant(ModHelper.SpawnItem(id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3206:		private static void Grant(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3208:			ModHelper.MoveItemToInventory(item);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3242:		internal static void Apply(GameItem item, bool clientArea)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3257:		private static void AddFeature(GameItem item, string id, int bonus, bool owned, string display)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3278:			if (ModHelper.GetModDataInt("brewing_expansion", "drunk_loss_day", -1) == dayCounter)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3283:			ModHelper.SetModDataInt("brewing_expansion", "drunk_loss_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3284:			List<GameItem> list = ((GameInventory)instance.GetStoreInventory()).childItems.SelectMany((GameItem i) => (IEnumerable<GameItem>)((i.FindAllChildItems().Count != 0) ? ((IEnumerable)(from c in i.FindAllChildItems()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3286:				select c)) : ((IEnumerable)new GameItem[1] { i }))).Where((Func<GameItem, bool>)GeneralHelper.IsItemOwned).Distinct()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3293:				GameItem val = list[index];
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3345:				string modData = ModHelper.GetModData("brewing_expansion", "visitor_stock_resume_v1", "");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3355:			ModHelper.SetModData("brewing_expansion", "visitor_queue_v1", JsonUtility.ToJson((object)receipt));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3360:			string modData = ModHelper.GetModData("brewing_expansion", "visitor_queue_v1", "");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3371:			ModHelper.SetModData("brewing_expansion", "visitor_queue_v1", "");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3379:			bool called = ModHelper.GetModDataInt("brewing_expansion", "nini_last_call", -999) == receipt.day;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3385:				ModHelper.SetModData("brewing_expansion", "visitor_stock_resume_v1", JsonUtility.ToJson((object)receipt));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3407:			string modData = ModHelper.GetModData("brewing_expansion", "visitor_stock_resume_v1", "");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3415:				ModHelper.SetModData("brewing_expansion", "visitor_stock_resume_v1", "");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3428:				GameItem val = DirectoryMaster.Item(text, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3442:					ModHelper.SetModData("brewing_expansion", "visitor_stock_resume_v1", JsonUtility.ToJson((object)receipt));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3510:		internal static void RegisterFactories()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3526:		internal static void RegisterSprites()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3553:			RegisterFactories();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3559:			RegisterSprites();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3560:			RegisterPhone();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3596:		internal static void RegisterPhone()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3623:				if (!instance.FindAllItem(true).Any((GameItem i) => i.identifier == "be_nini_card" && GeneralHelper.IsItemOwned(i)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3672:					int num = day - ModHelper.GetModDataInt("brewing_expansion", "nini_last_call", -999);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3681:					else if (!store.FindAllItem(true).Any((GameItem i) => i.identifier == "be_nini_card" && GeneralHelper.IsItemOwned(i)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3695:				if (requested && store == PlayerStore.Instance && StoreStation.Instance.dayCounter == day && Open && day - ModHelper.GetModDataInt("brewing_expansion", "nini_last_call", -999) >= 5 && store.FindAllItem(true).Any((GameItem i) => i.identifier == "be_nini_card" && GeneralHelper.IsItemOwned(i)) && QueueNini(store.storeClientManager))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3697:					ModHelper.SetModDataInt("brewing_expansion", "nini_last_call", day);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3731:			client.onItemBought = delegate(GameItem item, int _)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3737:				RegisterSprites();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3740:			ModHelper.SetClientSource(client, "brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3764:			ModHelper.SetClientSource(val, "brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3775:			ModHelper.SetClientSource(val, "brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3782:			return (from i in ((instance != null) ? instance.FindAllItem(true) : null)?.Where((Func<GameItem, bool>)GeneralHelper.IsItemOwned)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3793:			if (PlayerStore.Instance.FindAllItem(true).Any((GameItem i) => i.identifier == "be_xuxu_badge" && GeneralHelper.IsItemOwned(i)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3802:			RegisterSprites();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3808:			if (ModHelper.GetModDataInt("brewing_expansion", "47_stock_day", -1) == dayCounter)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3815:			int num2 = ((ModHelper.GetModDataInt("brewing_expansion", "47_stock_count_day", -1) == dayCounter) ? ModHelper.GetModDataInt("brewing_expansion", "47_stock_count", 0) : 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3822:				int modDataInt = ModHelper.GetModDataInt("brewing_expansion", "longing_misses", 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3823:				int modDataInt2 = ModHelper.GetModDataInt("brewing_expansion", "afterglow_misses", 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3835:				GameItem val = DirectoryMaster.Item(BrewingSeeds.All[num5].Id, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3848:					ModHelper.SetModDataInt("brewing_expansion", "47_stock_count_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3849:					ModHelper.SetModDataInt("brewing_expansion", "47_stock_count", num2);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3850:					ModHelper.SetModDataInt("brewing_expansion", "longing_misses", (num4 < 2) ? Math.Min(1000, modDataInt + 1) : 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3851:					ModHelper.SetModDataInt("brewing_expansion", "afterglow_misses", (num4 != 3) ? Math.Min(1000, modDataInt2 + 1) : 0);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3854:			HashSet<string> owned = new HashSet<string>(from val2 in ((IEnumerable<GameItem>)instance.FindAllItem(true)).Where((Func<GameItem, bool>)GeneralHelper.IsItemOwned)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3857:			if (array.Length != 0 && ModHelper.GetModDataInt("brewing_expansion", "47_recipe_day", -1) != dayCounter)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3861:			if (!owned.Contains("be_brewing_manual") && ModHelper.GetModDataInt("brewing_expansion", "47_manual_day", -1) != dayCounter)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3867:				ModHelper.SetModDataInt("brewing_expansion", "47_stock_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3873:			GameItem val = DirectoryMaster.Item(id, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3878:				ModHelper.SetModDataInt("brewing_expansion", receipt, day);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3898:			GameItem[] array = ((GameInventory)val).childItems.Where((GameItem i) => i.IsTag("BE_47_STOCK") && !GeneralHelper.IsItemOwned(i)).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3899:			foreach (GameItem val2 in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3906:			ModHelper.SetModDataInt("brewing_expansion", "47_stock_day", StoreStation.Instance.dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3984:				ModHelper.SetModDataInt("brewing_expansion", "47_queue_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3986:			else if (allowNew && (Open || (int)store.storeState == 2) && ModHelper.GetModDataInt("brewing_expansion", "47_queue_day", -1) != dayCounter && ModHelper.GetModDataInt("brewing_expansion", "47_stock_day", -1) != dayCounter && FormalReputation.Tier > -3 && ShowcaseHelper.IsShowcaseContainItemById("be_brewery_sign"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:3991:					ModHelper.SetModDataInt("brewing_expansion", "47_queue_day", dayCounter);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4030:	[HarmonyPatch(typeof(StorePhoneClient), "GetLocalizedDisplayName")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4048:			MethodInfo methodInfo = AccessTools.DeclaredMethod(typeof(StoreClient), "IsClientBuyingThisItem", new Type[1] { typeof(GameItem) }, (Type[])null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4051:				typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4056:				throw new MissingMethodException("Unsupported StoreClient.IsClientBuyingThisItem(GameItem) interface.");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4063:					throw new MissingMethodException("Unsupported StoreClient.IsClientBuyingThisItem(GameItem,bool) interface.");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4069:		private static void Postfix(StoreClient __instance, GameItem __0, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4073:				__result = __0 != null && (__0.IsGameItemType("ALCOHOL") || __0.IsTag("CIGARETTE_TAG") || __0.IsGameItemType("CIGARETTE") || __0.IsGameItemType("TOBACCO"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4102:		public static IDisposable Register(string ownerModId, string seedId, string productId, int quantity, Func<GameItem> create)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4149:			internal readonly Func<GameItem> Create;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4151:			internal Recipe(string seed, string product, int quantity, Func<GameItem> create)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4162:			new Recipe("nutrifruit_seed", "nutrifruit", 2, (Func<GameItem>)PreBuiltItemHelper.CreateNutrifruitNormal),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4163:			new Recipe("kotton_seed", "kotton_fiber", 2, (Func<GameItem>)PreBuiltItemHelper.CreateKotton),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4166:			new Recipe("fillerweed_seed", "fillerweed", 2, (Func<GameItem>)PreBuiltItemHelper.CreateFillerweed),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4171:		internal static Recipe Find(GameItem seed)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4185:		internal static bool AcceptsProduct(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4199:		private static GameItem CreateBerry()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4201:			GameItem obj = DirectoryMaster.Item("wine_berry", true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4208:		internal static void Apply(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4229:				GameItemElement val = (GameItemElement)(object)((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4579:			WaitingForLocalization,
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4580:			WaitingForPlayerLocale,
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4589:		private static LoadedMod owner;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4595:		private static bool startupLocaleApplied;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4614:				LoadedMod val = ((IEnumerable<LoadedMod>)ModLoader.Mods).FirstOrDefault((Func<LoadedMod, bool>)((LoadedMod m) => (object)m.Instance == instance && m.IsEnabled));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4622:		private static void AssetsLoaded(LoadedMod loaded)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4635:				Status = Phase.WaitingForLocalization;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4663:		private static bool PlayerLocaleApplied(Locale selected)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4669:			if (startupLocaleApplied)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4673:			string text = LocHelper.ResolveStartupLocale();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4674:			ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4675:			Locale val = availableLocales.GetLocale(LocaleIdentifier.op_Implicit(text)) ?? availableLocales.GetLocale(LocaleIdentifier.op_Implicit("en"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4683:		private static IEnumerable<Locale> RequiredLocales(Locale selected)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4685:			HashSet<Locale> seen = new HashSet<Locale>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4686:			Queue<Locale> pending = new Queue<Locale>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4690:				Locale locale = pending.Dequeue();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4691:				if ((Object)(object)locale == (Object)null || !seen.Add(locale))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4695:				yield return locale;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4696:				foreach (Locale fallback in locale.GetFallbacks())
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4710:				AsyncOperationHandle<LocalizationSettings> init = LocalizationSettings.InitializationOperation;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4713:					Fail("Native localization initialization handle is invalid.", null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4724:				if (!Valid<LocalizationSettings>(init))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4726:					Fail("Native localization initialization did not succeed.", init.IsValid() ? init.OperationException : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4729:				AsyncOperationHandle<Locale> selection = LocalizationSettings.SelectedLocaleAsync;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4732:					Fail("Native locale selection handle is invalid.", null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4743:				if (!Valid<Locale>(selection) || (Object)(object)selection.Result == (Object)null)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4745:					Fail("Native locale selection did not succeed.", selection.IsValid() ? selection.OperationException : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4748:				Locale locale = selection.Result;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4749:				if (!PlayerLocaleApplied(locale))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4751:					Status = Phase.WaitingForPlayerLocale;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4755:				Status = Phase.WaitingForLocalization;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4757:				bool localeChanged = false;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4758:				foreach (Locale required in RequiredLocales(locale))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4760:					AsyncOperationHandle<StringTable> table = ((LocalizedDatabase<StringTable, StringTableEntry>)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), required);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4761:					LocaleIdentifier identifier;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4765:						Fail("Native Mechanic table handle is invalid for " + ((LocaleIdentifier)(ref identifier)).Code, null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4776:					if (LocalizationSettings.SelectedLocale != locale)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4778:						localeChanged = true;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4784:						Fail("Native Mechanic table did not load for " + ((LocaleIdentifier)(ref identifier)).Code, table.IsValid() ? table.OperationException : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4789:				if (localeChanged)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4793:				if (!PlayerLocaleApplied(locale))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4800:					if (!Valid<LocalizationSettings>(init) || tables.Count == 0 || tables.Any((AsyncOperationHandle<StringTable> t) => !Valid<StringTable>(t) || (Object)(object)t.Result == (Object)null))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4802:						Fail("Native localization resources became invalid before liquid adapter registration.", null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4805:					startupLocaleApplied = true;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4833:					typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4843:					typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4844:					typeof(GameItem)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4846:				MethodInfo methodInfo3 = AccessTools.Method(typeof(WaterHelper), "EmptyContainer", new Type[1] { typeof(GameItem) }, (Type[])null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4865:				LocaleIdentifier identifier = LocalizationSettings.SelectedLocale.Identifier;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4866:				obj.Log((object)("Liquid adapters ready: 3 native targets, 6 callbacks; native player locale applied=" + ((LocaleIdentifier)(ref identifier)).Code + "; localization and Mechanic tables succeeded; owner=" + harmonyInstance.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4964:			internal Action<GameItem, GameInventory, SlotMarker> ForeignCycle;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4971:		private static readonly ConditionalWeakTable<GameItem, View> Views = new ConditionalWeakTable<GameItem, View>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4973:		private static readonly HashSet<GameItem> Dirty = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4975:		private static readonly HashSet<GameItem> Completed = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4983:		public static GameSlotInventory Battery(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4989:		public static GameGridInventory Modules(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:4995:		public static GameGridInventory Storage(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5003:			return ModHelper.GetLocalized("brewing_expansion", key, args);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5006:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5017:			GameItem item = MachineWineRack.AgeWell();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5022:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5025:			Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)item).onCycleEndSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5082:			((GameItemFunc)item).onCycleEndSlotItemFunc = delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5086:			GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5087:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5133:		private static Action<GameItem, GameInventory, SlotMarker> DeferNativeRedraw(Action<GameItem, GameInventory, SlotMarker> original, string name, GameItem cabinet)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5142:						original = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Remove(original, (Action<GameItem, GameInventory, SlotMarker>)obj);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5146:			return (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(original, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5152:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5159:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5164:		private static GameItem[] Wines(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5166:			return GraphUtils.FindAllChildrenType<GameItem>((GraphNodeStorage)(object)Storage(item), (Func<GameItem, bool>)MachineWineRack.CanAgeWine, (Func<GameItem, bool>)null).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5169:		public static long TotalValue(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5172:			GameItem[] array = Wines(item);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5173:			foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5181:		public static void RefreshValue(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5205:		internal static void Request(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5234:			GameItem[] array = Dirty.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5241:			GameItem[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5242:			foreach (GameItem val2 in array2)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5291:		public static int Cycle(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5301:			GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5304:				GameItem[] array = Wines(item);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5316:							num = array.Where((GameItem w, int n) => MachineConnections.Live(w) && LiunianWineAge.Age(w) != beforeAges[n]).Count();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5357:				GameItem[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5358:				foreach (GameItem val2 in array2)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5442:		private static void Chill(GameItem cabinet)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5448:			GameItem[] array = Wines(cabinet);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5449:			foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5468:			GameItem[] array = Completed.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5470:			GameItem[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5471:			foreach (GameItem cabinet in array2)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5506:		private GameItem owner;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5517:		internal void Bind(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5549:		public static long Age(GameItem wine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5558:		public static bool Advance(GameItem wine, int days)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5645:		private static bool Prefix(GameItem __0, bool __runOriginal)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5658:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5680:			internal GameItem Source;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5682:			internal GameItem[] Barrels;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5697:		private static readonly Dictionary<GameItem, SourceName> sourceNames = new Dictionary<GameItem, SourceName>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5699:		private static Dictionary<int, GameItem> overviewItems = new Dictionary<int, GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5705:		public static bool Live(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5709:				GameItem obj = ((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5714:				return !((GameItemElement)obj).IsDestroyed();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5719:		public static bool Owned(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5728:		public static bool IsWaterSource(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5737:		public static bool IsSource(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5746:		private static int Kind(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5763:		internal static GameItem[] OwnedItems()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5769:			return Array.Empty<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5772:		private static GameItem[] Machines()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5784:		internal static string[] LinkedBarrelNames(GameItem[] items)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5790:			Dictionary<int, GameItem> dictionary = (from x in items
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5793:				select g).ToDictionary((IGrouping<int, GameItem> g) => g.Key, (IGrouping<int, GameItem> g) => g.Single());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5795:			foreach (GameItem item in dictionary.Values.Where(IsSource))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5805:		public static string DisplayName(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5820:		private static void RefreshCableDescriptions(GameItem[] items)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5823:			Dictionary<int, GameItem> unique = (from x in items
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5826:				select g).ToDictionary((IGrouping<int, GameItem> g) => g.Key, (IGrouping<int, GameItem> g) => g.Single());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5828:			overview = (from source in unique.Values.Where(IsSource).OrderBy(Kind).ThenBy((GameItem x) => x.uniqueId)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5840:			foreach (GameItem item in items.Where((GameItem x) => x.identifier == "be_xuxu_connection_pliers"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5851:		internal static void RefreshCableDescription(GameItem cable)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5869:			GameItem value = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5877:		public static int[] Targets(GameItem source)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5891:		private static void Save(GameItem source, IEnumerable<int> targets)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5899:		public static bool Toggle(GameItem source, GameItem barrel)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5906:			GameItem[] source2 = Machines();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5907:			if (source2.Count((GameItem x) => x.uniqueId == source.uniqueId) != 1 || source2.Count((GameItem x) => x.uniqueId == barrel.uniqueId) != 1)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5917:			Dictionary<GameItem, int[]> dictionary = new Dictionary<GameItem, int[]> { 
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5924:				foreach (GameItem item in source2.Where((GameItem x) => x != source && Kind(x) == Kind(source)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5933:			Dictionary<GameItem, int[]> dictionary2 = dictionary.ToDictionary((KeyValuePair<GameItem, int[]> x) => x.Key, (KeyValuePair<GameItem, int[]> x) => Targets(x.Key));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5938:				foreach (KeyValuePair<GameItem, int[]> item2 in dictionary)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5950:				GameItem[] array = OwnedItems();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5951:				RefreshNames(array.Where((GameItem x) => IsSource(x) || x.identifier == "be_large_brewing_barrel").ToArray());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5960:					foreach (KeyValuePair<GameItem, int[]> item3 in dictionary2)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5992:		public static GameItem PrinterFor(GameItem barrel)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:5998:			GameItem[] array = (from x in Machines()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6008:		public static string BarrelName(GameItem barrel, string baseName)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6018:		private static void RefreshNames(GameItem[] machines)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6020:			GameItem[] source = (from x in machines
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6028:				select x).Select((GameItem item, int index) => (uniqueId: item.uniqueId, Number: index + 1)).ToDictionary(((int uniqueId, int Number) x) => x.uniqueId, ((int uniqueId, int Number) x) => x.Number);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6029:			GameItem[] sources = source.Where((GameItem x) => IsSource(x) && Targets(x).Any(numbers.ContainsKey)).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6030:			GameItem[] array = sourceNames.Keys.Where((GameItem x) => !sources.Contains(x)).ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6031:			foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6044:			foreach (IGrouping<int, GameItem> item in sources.GroupBy(Kind))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6047:				foreach (GameItem item2 in item.OrderBy((GameItem x) => x.uniqueId))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6051:						Dictionary<GameItem, SourceName> dictionary = sourceNames;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6075:			foreach (GameItem item3 in machines.Where((GameItem x) => x.identifier == "be_large_brewing_barrel"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6086:				string text = BarrelName(item3, ModHelper.GetLocalized("brewing_expansion", "barrel_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6118:		internal static void Changed(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6154:				GameItem[] array = Machines();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6155:				Dictionary<int, GameItem> dictionary = (from x in array
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6158:					select g).ToDictionary((IGrouping<int, GameItem> g) => g.Key, (IGrouping<int, GameItem> g) => g.Single());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6160:				foreach (GameItem item in array.Where(IsSource).OrderBy(Kind).ThenBy((GameItem x) => x.uniqueId))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6194:								GameItem[] array3 = ((GameInventory)PulpConcentrator.Output(item)).childItems.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6195:								foreach (GameItem val in array3)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6254:					GameItem[] array4 = OwnedItems();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6255:					RefreshNames(array4.Where((GameItem x) => IsSource(x) || x.identifier == "be_large_brewing_barrel").ToArray());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6274:			foreach (KeyValuePair<GameItem, SourceName> sourceName in sourceNames)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6298:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6301:			GameItem obj = ItemDirectory.CreateEmptyItem("be_xuxu_connection_pliers");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6303:			obj.SetGameItemType("TOOL");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6306:			((GameItemFunc)obj).mayThisTargetItemFunc = (GameItem tool, GameItem target) => CanUse(tool, target);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6307:			((GameItemFunc)obj).canThisTargetItemFunc = (GameItem tool, GameItem target) => CanUse(tool, target);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6308:			((GameItemFunc)obj).onThisTargetItemFunc = Use;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6309:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6314:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6316:			item.SetName(ModHelper.GetLocalized("brewing_expansion", "cable_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6323:		internal static void RefreshDescription(GameItem item, GameItem selected, string[] connections)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6325:			string localized = ModHelper.GetLocalized("brewing_expansion", "cable_description", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6326:			localized = localized + "\n\n" + ((selected != null) ? ModHelper.GetLocalized("brewing_expansion", "cable_selected", new object[1] { MachineConnections.DisplayName(selected) }) : ModHelper.GetLocalized("brewing_expansion", "cable_no_selection", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6332:		internal static void Tooltip(RichTextBuilder builder, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6342:		public static bool CanUse(GameItem tool, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6355:		public static void Use(GameItem tool, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6363:			GameItem[] array = (from x in instance.FindAllItem(true)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6375:				GameItem source = (MachineConnections.IsSource(target) ? target : array[0]);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6376:				GameItem barrel = (MachineConnections.IsSource(target) ? array[0] : target);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6407:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6414:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6421:		private static void Postfix(GameItem __0, GameItem __1)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6430:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6435:	[HarmonyPatch(typeof(GameItemElement), "Destroy")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6438:		private static void Postfix(GameItemElement __instance)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6440:			MachineConnections.Changed((GameItem)(object)__instance);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6452:		internal static bool Known(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6461:		internal static GameSlotInventory Slot(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6481:		internal static void Attach(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6514:				GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6515:				((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Ensure));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6524:		internal static void Ensure(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6537:				GameItem val2 = val.childItem;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6568:					GameItem obj = val2;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6580:		internal static string Title(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6582:			return ModHelper.GetLocalized("brewing_expansion", item.identifier + "_guide_title", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6585:		internal static string Body(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6587:			string text = ModHelper.GetLocalized("brewing_expansion", item.identifier + "_guide_body", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6602:		private static void Postfix(GameItem __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6627:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6638:		private bool debugRegistered;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6640:		private readonly List<(ModItemDirectory Directory, string Id, Func<GameItem> Factory)> bindings = new List<(ModItemDirectory, string, Func<GameItem>)>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6653:			if (!Enabled || serviceType != typeof(Func<string, string, string, int, Func<GameItem>, IDisposable>))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6657:			return new Func<string, string, string, int, Func<GameItem>, IDisposable>(IncubatorRecipeRegistry.Register);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6676:			ModHook.OnModItemDirectoryInit += Register;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6685:			ModHook.OnGameLoadedEarly += FormalVisitors.RegisterFactories;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6690:			FormalVisitors.RegisterFactories();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6691:			FormalShop.Register();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6692:			FormalTraits.Register();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6696:				Register(directory);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6712:			ModHook.OnModItemDirectoryInit -= Register;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6721:			ModHook.OnGameLoadedEarly -= FormalVisitors.RegisterFactories;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6729:			ModHelper.RemoveStartingPerks("brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6730:			ModHelper.RemoveStartingScenarios("brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6731:			ModHelper.RemoveDebugFunctions("brewing_expansion");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6732:			debugRegistered = false;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6739:				if (!((Object)(object)binding.Directory == (Object)null) && ((Directory<GameItem>)(object)binding.Directory).factoryDictionary.TryGetValue(binding.Id, out var value) && (object)value == binding.Factory)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6741:					((Directory<GameItem>)(object)binding.Directory).Remove(binding.Id);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6748:		private void RegisterDebugFunctions()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6750:			if (debugRegistered || !Enabled)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6754:			debugRegistered = true;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6759:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", item.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6761:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(item.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6768:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", item2.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6770:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(item2.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6773:			ModHelper.AddDebugFunction("brewing_expansion", "Modding", ModHelper.GetLocalized("brewing_expansion", "debug_foundation_check", Array.Empty<object>()), (Action)CatalogueDiagnostics.Run, false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6774:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "water_printer_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6776:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_xuxu_water_bottle_printer"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6782:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", fruit.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6784:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(fruit.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6787:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "concentrator_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6789:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_fruit_pulp_concentrator"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6791:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "barrel_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6793:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_large_brewing_barrel"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6795:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "cable_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6797:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_xuxu_connection_pliers"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6799:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "wine_printer_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6801:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_wine_printer"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6807:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", seed.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6809:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(seed.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6816:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", text + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6818:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(certificate));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6821:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "incubator_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6823:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_incubator"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6825:			ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", "liunian_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6827:				ModHelper.MoveItemToInventory(ModHelper.SpawnItem("be_liunian_ager"));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6833:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", item3.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6835:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(item3.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6841:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", FormalMusic.Ids[index] + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6843:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(FormalMusic.Ids[index]));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6850:				ModHelper.AddDebugFunction("brewing_expansion", "Spawn", ModHelper.GetLocalized("brewing_expansion", wine.Id + "_name", Array.Empty<object>()), (Action)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6852:					ModHelper.MoveItemToInventory(ModHelper.SpawnItem(wine.Id));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6857:		private void Bind(ModItemDirectory directory, string id, Func<GameItem> factory)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6859:			Func<GameItem> create = factory;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6862:				GameItem obj = create();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6866:			if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey(id) && ((Directory<GameItem>)(object)directory).Add(id, factory))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6872:		private void Register(ModItemDirectory directory)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6874:			FormalTraitIcons.Register();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6878:				if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey(figurineDefinition.Id))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6881:					Func<GameItem> func = () => Figurines.Create(item);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6882:					if (((Directory<GameItem>)(object)directory).Add(item.Id, func))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6895:				if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey(waterContainerDefinition.Id))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6898:					Func<GameItem> func2 = () => WaterContainers.Create(item2);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6899:					if (((Directory<GameItem>)(object)directory).Add(item2.Id, func2))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6909:			if (!((Directory<GameItem>)(object)directory).factoryDictionary.ContainsKey("be_xuxu_water_bottle_printer"))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6911:				Func<GameItem> func3 = delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6913:					GameItem obj = WaterBottlePrinter.Create();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6917:				if (((Directory<GameItem>)(object)directory).Add("be_xuxu_water_bottle_printer", func3))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6968:			RegisterDebugFunctions();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6969:			log.Log((object)"Registered formal catalogue: figurines, water containers, fruits, pulp, concentrator, barrel, both printers and transmission cable.");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6976:			return ModHelper.GetLocalized("brewing_expansion", key, args);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6983:		internal static bool Rejects(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:6997:		internal static void Bind(GameItem kit)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7003:			Func<GameItem, GameItem, bool> may = ((GameItemFunc)kit).mayItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7004:			Func<GameItem, GameItem, bool> can = ((GameItemFunc)kit).canItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7005:			Action<GameItem, GameItem> use = ((GameItemFunc)kit).onItemTargetItemFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7006:			((GameItemFunc)kit).mayItemTargetItemFunc = (GameItem tool, GameItem target) => !Rejects(target) && (may == null || may(tool, target));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7007:			((GameItemFunc)kit).canItemTargetItemFunc = (GameItem tool, GameItem target) => !Rejects(target) && (can == null || can(tool, target));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7008:			((GameItemFunc)kit).onItemTargetItemFunc = delegate(GameItem tool, GameItem target)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7017:		internal static void RestoreCabinet(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7024:			if (val != null && !((GameInventory)val).childItems.Any((GameItem i) => i.modifiedShape.minX < 0 || i.modifiedShape.minY < 0 || i.modifiedShape.maxX >= 6 || i.modifiedShape.maxY >= 20))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7037:		private static void Postfix(GameItem __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7050:		internal static void Sold(GameItem item, StoreClient client)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7081:			GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7085:				for (i = 0; i < Costs.Length && ModHelper.GetModDataBool("brewing_expansion", IssuedKey(i), false); i++)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7100:					ModHelper.SetModDataBool("brewing_expansion", IssuedKey(j), true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7104:					if (!ModHelper.GetModDataBool("brewing_expansion", IssuedKey(k), false))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7110:						val = ModHelper.SpawnItem(BrewingCertificates.Ids[k]);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7128:						ModHelper.SetModDataBool("brewing_expansion", IssuedKey(k), true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7165:			long.TryParse(ModHelper.GetModData("brewing_expansion", "nini_certificate_credit", "0"), NumberStyles.Integer, CultureInfo.InvariantCulture, out var result);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7171:			ModHelper.SetModData("brewing_expansion", "nini_certificate_credit", credit.ToString(CultureInfo.InvariantCulture));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7191:		internal static readonly HashSet<GameItem> Busy = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7224:		public static string FruitId(GameItem pulp)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7245:		public static int Remaining(GameItem pulp)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7250:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7253:			GameItem obj = ItemDirectory.CreateEmptyItem("be_brewing_fruit_pulp");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7255:			obj.SetGameItemType("FOOD");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7258:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Refresh));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7263:		internal static void Configure(GameItem pulp, string id, int score, long value)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7274:		internal static void Refresh(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7278:			string text2 = ((text == "wine_berry") ? ModHelper.GetLocalized("brewing_expansion", "pulp_native_berry", Array.Empty<object>()) : ((text == null) ? null : ModHelper.GetLocalized("brewing_expansion", text + "_name", Array.Empty<object>())));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7279:			item.SetName((text == null) ? ModHelper.GetLocalized("brewing_expansion", "pulp_name", Array.Empty<object>()) : ModHelper.GetLocalized("brewing_expansion", "pulp_named", new object[1] { text2 }));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7280:			string shortDescription = (item.longDescription = ModHelper.GetLocalized("brewing_expansion", "pulp_description", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7299:		private static readonly ConditionalWeakTable<GameItem, View> Views = new ConditionalWeakTable<GameItem, View>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7301:		private static readonly Dictionary<GameItem, PlayerStore> Pending = new Dictionary<GameItem, PlayerStore>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7307:			return ModHelper.GetLocalized("brewing_expansion", key, Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7310:		private static bool Live(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7314:				GameItem obj = ((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7319:				return !((GameItemElement)obj).IsDestroyed();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7324:		private static bool Owned(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7333:		public static GameSlotInventory Battery(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7339:		public static GameGridInventory Input(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7345:		public static GameGridInventory Output(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7351:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7366:			GameItem item = ItemDirectory.CreateEmptyItem("be_fruit_pulp_concentrator");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7368:			item.SetGameItemType("MACHINE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7384:			((GameInventoryFunc)val2).mayInventoryAddItemFunc = (GameItem incoming, GameInventory _) => Owned(incoming) && BrewingFruits.CanConcentrate(incoming);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7385:			((GameInventoryFunc)val3).mayInventoryAddItemFunc = (GameItem incoming, GameInventory _) => Owned(incoming) && incoming.identifier == "be_brewing_fruit_pulp";
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7407:			((GameInventoryFunc)val2).onSlotAddItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val2).onSlotAddItemFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7411:			((GameInventoryFunc)val3).onSlotRemoveItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val3).onSlotRemoveItemFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7415:			((GameInventoryFunc)val).onSlotAddItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameInventoryFunc)val).onSlotAddItemFunc, (Action<GameItem, GameInventory, SlotMarker>)delegate
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7420:			GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7421:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7426:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7436:		private static void Status(GameItem item, string key)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7444:		internal static void Queue(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7463:			KeyValuePair<GameItem, PlayerStore>[] array = Pending.ToArray();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7465:			KeyValuePair<GameItem, PlayerStore>[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7468:				KeyValuePair<GameItem, PlayerStore> keyValuePair = array2[i];
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7486:		public static bool Concentrate(GameItem machine, bool automatic = false)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7494:			GameItem pulp = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7495:			GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7496:			GameItem[] fruits = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7508:				if (fruits.Length != 4 || fruits.Any((GameItem f) => !Owned(f) || f.unitCount != 1 || !BrewingFruits.CanConcentrate(f) || f.identifier != fruits[0].identifier))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7537:				int score = fruits.Sum(delegate(GameItem f)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7542:				FruitPulp.Configure(pulp, fruits[0].identifier, score, fruits.Sum((GameItem f) => f.unitValue));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7572:				GameItem[] array = fruits;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7573:				foreach (GameItem val3 in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7606:						return fruits.All((GameItem f) => Owned(f) && f.unitCount == 1 && (object)f.parentInventory == input);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7630:								if (GraphUtils.FindAllChildrenType<GameItem>((GraphNodeStorage)(object)pulp, (Func<GameItem, bool>)((GameItem _) => true), (Func<GameItem, bool>)null).Count == 0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7702:		private static void Postfix(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7714:			GameItem val = (GameItem)obj;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7723:		internal static void Bind(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7725:			Func<GameItem, GameInventory, SlotMarker, GridShape, TagSystem, RichTextBuilder> previous = ((GameItemFunc)item).tooltipRichTextFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7726:			((GameItemFunc)item).tooltipRichTextFunc = delegate(GameItem candidate, GameInventory inventory, SlotMarker slot, GridShape shape, TagSystem state)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7735:					if (instance == null || !instance.FindAllItem(true).Any((GameItem i) => i.identifier == candidate.identifier && GeneralHelper.IsItemOwned(i)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7749:		private static readonly HashSet<GameItem> Busy = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7771:		internal static void Bind(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7773:			((GameItemFunc)item).mayActivateSlotItemFunc = (GameItem s, GameInventory _, SlotMarker __) => CanUse(s);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7774:			((GameItemFunc)item).canActivateSlotItemFunc = (GameItem s, GameInventory _, SlotMarker __) => CanUse(s);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7775:			((GameItemFunc)item).onActivateSlotItemFunc = delegate(GameItem s, GameInventory _, SlotMarker __)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7781:		internal static bool CanUse(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7807:		internal static bool Use(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7823:					ModHelper.SetModDataBool("brewing_expansion", "nini_contact", true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7824:					FormalVisitors.RegisterPhone();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7937:		internal static bool Open(GameItem box, PlayerStore store)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7944:			List<GameItem> list = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7957:				if (!ModHelper.IsOutsideStore() && val2 != null && !list2.Contains(val2))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7968:					GameItem val3 = DirectoryMaster.Item(text, true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:7997:				if (store != PlayerStore.Instance || !MachineConnections.Owned(box) || list.Any((GameItem a) => a.parentInventory == null || !MachineConnections.Live(a)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8018:					foreach (GameItem item2 in list)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8041:		private static SlotMarker RowSlot(GameGridInventory grid, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8059:		internal static void TradeFeature(GameItem item, bool clientArea)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8096:	[HarmonyPatch(typeof(GameItem), "OnAddedToWeightedArea")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8099:		private static void Postfix(GameItem __instance)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8104:	[HarmonyPatch(typeof(GameItem), "OnAddedToClientArea")]
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8107:		private static void Postfix(GameItem __instance)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8224:			return ModHelper.GetLocalized("brewing_expansion", key, args);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8227:		internal static void Tag(GameItem item, string key, int value)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8235:		internal static GameGridInventory Grid(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8240:		internal static bool IsCollector(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8245:		internal static GameItem Create(Definition d)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8248:			GameItem val = (string.IsNullOrEmpty(d.Template) ? ItemDirectory.CreateEmptyItem(d.Id) : DirectoryMaster.Item(d.Template, false));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8264:				((GameItemFunc)val).onCycleEndEarlySlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameItemFunc)val).onCycleEndEarlySlotItemFunc, new Action<GameItem, GameInventory, SlotMarker>(RechargeBattery));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8270:				val.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8274:				((GameItemFunc)val).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameItemFunc)val).onCycleEndSlotItemFunc, new Action<GameItem, GameInventory, SlotMarker>(Recover));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8278:				((GameItemFunc)val).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(((GameItemFunc)val).onCycleEndSlotItemFunc, new Action<GameItem, GameInventory, SlotMarker>(Recover));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8302:					((GameItemFunc)val).onToggleSlotItemFunc = SwitchAppearance;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8309:					Func<GameItem, GameInventory, bool> native = ((GameInventoryFunc)item).mayInventoryAddItemFunc;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8310:					((GameInventoryFunc)item).mayInventoryAddItemFunc = (GameItem candidate, GameInventory inventory) => (native == null || native(candidate, inventory)) && Find(candidate.identifier)?.Kind == "Recipe";
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8312:				val.SetGameItemType("DOCUMENT");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8339:				foreach (string gameItemType in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8341:					val.SetGameItemType(gameItemType);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8347:				val.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8357:				val.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8361:				val.SetGameItemType("DOCUMENT");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8365:				val.SetGameItemType("LUXURY_ITEM");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8368:				val.SetGameItemType("FOOD");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8371:				val.SetGameItemType("DOCUMENT");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8378:			((GameItemFunc)val).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)val).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8383:		internal static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8397:				((GameItemFunc)item).mayToggleSlotItemFunc = WithoutTemplateSkins(((GameItemFunc)item).mayToggleSlotItemFunc);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8398:				((GameItemFunc)item).canToggleSlotItemFunc = WithoutTemplateSkins(((GameItemFunc)item).canToggleSlotItemFunc);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8399:				((GameItemFunc)item).onToggleSlotItemFunc = WithoutTemplateSkins(((GameItemFunc)item).onToggleSlotItemFunc);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8421:					((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8450:		internal static void RefreshBattery(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8460:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8463:			GameItemElement val = (GameItemElement)(object)((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8485:		private static void RechargeBattery(GameItem item, GameInventory inventory, SlotMarker slot)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8502:		private static void Recover(GameItem item, GameInventory inventory, SlotMarker slot)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8523:		private static void SwitchAppearance(GameItem item, GameInventory inventory, SlotMarker slot)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8537:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8553:		public static GameSlotInventory Battery(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8559:		public static GameGridInventory Input(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8565:		public static GameGridInventory Output(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8573:			return ModHelper.GetLocalized("brewing_expansion", key, Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8576:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8591:			GameItem val = ItemDirectory.CreateEmptyItem("be_incubator");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8593:			val.SetGameItemType("MACHINE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8609:			((GameInventoryFunc)val3).mayInventoryAddItemFunc = (GameItem item, GameInventory _) => MachineConnections.Owned(item) && IncubatorRecipes.Find(item) != null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8610:			((GameInventoryFunc)val4).mayInventoryAddItemFunc = (GameItem item, GameInventory _) => MachineConnections.Owned(item) && IncubatorRecipes.AcceptsProduct(item);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8623:			((GameItemFunc)val).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)val).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8628:		private static void Loaded(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8645:			GameItem[] array = (from x in instance.FindAllItem(true)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8648:			foreach (GameItem machine in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8665:		public static int RunNight(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8670:		private static int RunNight(GameItem machine, int quota)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8673:			GameItem battery;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8676:				GameItem obj = machine;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8696:						GameItem[] array = (from x in ((GameInventory)Input(machine)).childItems
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8699:						foreach (GameItem val in array)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8708:								List<GameItem> list = new List<GameItem>(recipe.Quantity);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8716:										GameItem val2 = recipe.Create();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8795:									if (!Ready() || list.Any((GameItem product) => !MachineConnections.Owned(product) || (object)product.parentInventory != Output(machine)))
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8808:										foreach (GameItem item in list)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8903:		private static SlotMarker FindRowSlot(GameGridInventory grid, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8924:		internal static bool Supports(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8937:		internal static MachineryTabs Tabs(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8963:		internal static void RetainHiddenPages(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:8990:		private static void Postfix(GameItem __0, ref int __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9001:		private static void Postfix(GameItem __0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9026:		private static readonly ConditionalWeakTable<GameItem, View> Views = new ConditionalWeakTable<GameItem, View>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9028:		private static readonly HashSet<GameItem> Busy = new HashSet<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9036:			return ModHelper.GetLocalized("brewing_expansion", key, args);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9039:		private static bool Live(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9043:				GameItem obj = ((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9048:				return !((GameItemElement)obj).IsDestroyed();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9053:		private static bool Owned(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9062:		public static int Components(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9067:		public static int Level(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9072:		public static GameSlotInventory Battery(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9078:		public static GameGridInventory Output(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9103:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9113:			GameItem item = ItemDirectory.CreateEmptyItem("be_xuxu_water_bottle_printer");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9114:			item.SetGameItemType("MACHINE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9127:			((GameInventoryFunc)val2).mayInventoryAddItemFunc = (GameItem incoming, GameInventory _) => Owned(incoming) && Array.IndexOf(Products, incoming.identifier) >= 0;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9157:			GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9158:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9163:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9172:		private static void Refresh(GameItem item, string message = null)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9193:		public static bool CanUpgrade(GameItem printer)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9202:		public static bool Upgrade(GameItem printer, GameItem component)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9299:		public static bool Print(GameItem printer, int choice)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9307:			GameItem product = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9308:			GameItem val = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9384:							if (GraphUtils.FindAllChildrenType<GameItem>((GraphNodeStorage)(object)product, (Func<GameItem, bool>)((GameItem child) => child != product), (Func<GameItem, bool>)null).Count == 0)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9432:		private static bool Prefix(GameItem printer, ref bool __result)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9445:		private static bool Prefix(GameItem printer, GameItem upgradeItem)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9513:		internal static WaterContainerDefinition Find(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9526:				return new WaterContainerDefinition(definition.Id, ModHelper.GetLocalized("brewing_expansion", definition.Id + "_name", Array.Empty<object>()), definition.Sprite, definition.A, definition.Price, definition.Width, definition.Height, filter: true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9531:		internal static GameItem Create(WaterContainerDefinition definition)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9534:			GameItem obj = DirectoryMaster.Item(definition.HasFilter ? "water_pitcher" : "water_jug", false);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9543:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9548:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9553:				item.SetName(ModHelper.GetLocalized("brewing_expansion", definition.Id + "_name", Array.Empty<object>()));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9554:				item.shortDescription = ModHelper.GetLocalized("brewing_expansion", definition.Id + "_description", Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9571:		internal static void Refresh(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9583:			((GameItemFunc)item).getItemSpriteModifierForItemFunc = null;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9593:			GameItemElement val = (GameItemElement)(object)((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9616:		internal static void RefreshAfterNativeChange(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9636:		internal static bool Collect(string quality, GameItem container, int volume)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9652:			GameItem val = ItemDirectory.CreateEmptyItem("be_collection_water_temporary");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9692:		private static void Postfix(GameItem gameItem)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9694:			WaterContainers.RefreshAfterNativeChange(gameItem);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9699:		private static void Postfix(GameItem waterContainer)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9707:		private static bool Prefix(string quality, GameItem container, int volume)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9728:		private static readonly ConditionalWeakTable<GameItem, MachineryText> Statuses = new ConditionalWeakTable<GameItem, MachineryText>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9732:			return ModHelper.GetLocalized("brewing_expansion", key, Array.Empty<object>());
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9735:		public static GameSlotInventory Battery(GameItem printer)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9741:		public static GameGridInventory Output(GameItem printer)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9747:		public static GameItem Create()
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9759:			GameItem item = ItemDirectory.CreateEmptyItem("be_wine_printer");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9761:			item.SetGameItemType("MACHINE");
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9773:			((GameInventoryFunc)val2).mayInventoryAddItemFunc = (GameItem incoming, GameInventory _) => MachineConnections.Owned(incoming) && BrewingBarrel.EmptyBottle(incoming);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9792:			GameItem obj = item;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9793:			((GameItemFunc)obj).onLoaded = (Action<GameItem>)Delegate.Combine(((GameItemFunc)obj).onLoaded, new Action<GameItem>(Loaded));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9798:		private static void Loaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9808:		private static void Status(GameItem item, string key)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9816:		private static bool AllowedTarget(GameItem printer, GameGridInventory target)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9826:			GameItem parentItem = ((GameInventory)target).GetParentItem();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9834:		public static bool Print(GameItem printer, GameGridInventory target)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9837:			List<GameItem> made;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9838:			GameItem battery;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9841:				GameItem obj = printer;
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9845:					made = new List<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9861:							GameItem val = DirectoryMaster.Item("wine_bottle", true);
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9921:								foreach (GameItem item in made)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9972:						return made.All((GameItem x) => MachineConnections.Live(x) && (object)x.parentInventory == target && BrewingBarrel.EmptyBottle(x));
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:9983:		internal static bool IsExpansionWine(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10001:		internal static Dictionary<string, int> Capture(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10018:		internal static void Retain(GameItem item, Dictionary<string, int> parts, bool fromBarrel = false)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10040:		internal static (double Euphoria, double Toxicity) Totals(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10053:		internal static void EnsureLoaded(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10067:		internal static void Reset(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10096:		internal static string DisplayLine(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:10111:		internal static void AppendTooltip(RichTextBuilder builder, GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:79:		private static GameItem? pending;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:90:		internal static void Queue(GameItem item, Vector2 point, float delay)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:119:			GameItem val = pending;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:130:		private static bool Prefix(ItemMouseDoubleClickHandler __instance, ISet<KeyCode> keysReleased, GameItem ___lastClickedItem, KeyCode ___lastKey, Vector2 ___pressPosition, int ___pressFrame, int ___consumedPressFrame, bool ___isDoubleClick, float ___timeDeltaSeconds)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:202:			internal GameItemElement Item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:249:		private static GameItemElement? dragged;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:269:		internal static IEnumerable<GameItem> StoredItems
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:275:					return Enumerable.Empty<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:277:				return ((GameInventory)HangingStorage.Inventory).childItems.Where((GameItem i) => i.unitCount > 0);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:281:		internal static IEnumerable<GameItem> OwnedStoredItems
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:287:					return Enumerable.Empty<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:289:				return ((GameInventory)HangingStorage.Inventory).childItems.Where((GameItem i) => i.unitCount > 0 && GeneralHelper.IsItemOwned(i));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:293:		internal static IEnumerable<GameItem> ActiveSigns
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:299:					return Enumerable.Empty<GameItem>();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:301:				return StoredItems.Where((GameItem i) => IsSign(i) && GeneralHelper.IsItemOwned(i) && IsLit(i));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:368:		internal static bool IsStored(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:377:		internal static bool IsLit(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:386:		internal static bool CanSwitchLighting(GameItem item, Vector2 point)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:392:				return RenderHandler.RaycastElement<GameItem>(point, (TreeNodeRender)null) == item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:397:		internal static void SwitchLighting(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:420:		internal static bool IsSign(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:587:				if (!DirectoryMaster.Has<GameItem>(value2.id))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:603:				Dictionary<int, GameItemElement> originals = CounterStorage.FindOriginals(placements);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:618:				if (!unavailable.ContainsKey(p.uid) && !((GameInventory)HangingStorage.Inventory).childItems.Any((GameItem i) => i.uniqueId == p.uid))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:620:					GameItemElement val = ((GameInventory)EmporiumEntry.Instance.showcaseElement).childItems.OfType<GameItemElement>().SingleOrDefault((Func<GameItemElement, bool>)((GameItemElement i) => ((GameItem)i).uniqueId == p.uid && ((GameItem)i).identifier == p.id));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:621:					if (val != null && GeneralHelper.IsItemOwned((GameItem)(object)val) && IsSign((GameItem)(object)val) && ValidArt(val) && !MoveWhole(val, HangingStorage.Inventory, p))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:641:			foreach (GameItem childItem in ((GameInventory)HangingStorage.Inventory).childItems)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:692:				GameItemElement[] array = ((GameInventory)HangingStorage.Inventory).childItems.OfType<GameItemElement>().ToArray();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:693:				foreach (GameItemElement item in array)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:945:		internal static bool ValidArt(GameItemElement item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:954:		internal static Vector2 ArtworkSize(GameItemElement item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:964:		private static (int width, int height) Size(GameItemElement item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:971:			return (width: Math.Max(((GameItem)item).shape.width, Mathf.CeilToInt(val.x / 16f)), height: Math.Max(((GameItem)item).shape.height, Mathf.CeilToInt(val.y / 16f)));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:981:				GameItemElement item = keyValuePair.Value.Item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:982:				if ((Object)(object)item.handler == (Object)null || (object)((GameItem)item).parentInventory != inventory || !GeneralHelper.IsItemOwned((GameItem)(object)item) || !records.ContainsKey(keyValuePair.Key) || !ValidArt(item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:988:			foreach (GameItemElement item2 in ((GameInventory)inventory).childItems.OfType<GameItemElement>())
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:990:				if (((GameItem)item2).uniqueId <= 0 || !records.TryGetValue(((GameItem)item2).uniqueId, out Placement value) || value.id != ((GameItem)item2).identifier || !IsSign((GameItem)(object)item2) || !GeneralHelper.IsItemOwned((GameItem)(object)item2) || !ValidArt(item2))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1001:					placement = SlotLayout.Find(((GameItem)item2).uniqueId, ((GameItem)item2).identifier, tuple.Item1, tuple.Item2, expanded, occupied, value.region);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1005:					if (mirrors.TryGetValue(((GameItem)item2).uniqueId, out BillboardMirror value2))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1008:						mirrors.Remove(((GameItem)item2).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1023:				if (mirrors.TryGetValue(((GameItem)item2).uniqueId, out BillboardMirror value3))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1029:					mirrors.Add(((GameItem)item2).uniqueId, new BillboardMirror(item2, placement, root));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1050:			if (Interactive && mirror.Visible && !((Object)(object)camera == (Object)null) && !((Object)(object)root == (Object)null) && ((Component)root).gameObject.activeInHierarchy && mirror.Item != dragged && IsStored((GameItem)(object)mirror.Item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1084:			GameItem val = RenderHandler.RaycastElement<GameItem>(Vector2.op_Implicit(Input.mousePosition), (TreeNodeRender)null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1194:		internal static bool TryToggle(GameItem item, Vector2 pointer)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1200:				GameItemElement val = (GameItemElement)(object)((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1271:		private static bool MoveWhole(GameItemElement item, GameGridInventory destination, Placement? place)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1275:			if (unavailable.ContainsKey(((GameItem)item).uniqueId))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1279:			GameInventory parentInventory = ((GameItem)item).parentInventory;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1280:			if (parentInventory == null || !((GameItem)item).MayRemove() || ((GameItem)item).MaxNumRemove() < ((GameItem)item).unitCount || !GeneralHelper.MayPlayerInsertInto((GameInventory)(object)destination))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1285:			SlotMarker val = (flag ? destination.TryFindOneValidInventorySlot((GameItem)(object)item, false) : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1286:			if (flag && (val == null || !val.IsValid() || val.targetItem != null || val.numTransfer < ((GameItem)item).unitCount))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1290:			GridShape val2 = ((GameItem)item).modifiedShape.Clone();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1291:			records.TryGetValue(((GameItem)item).uniqueId, out Placement value);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1299:			TransferReceipt.Begin((GameItem)(object)item, parentInventory, (GameInventory)(object)destination);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1305:					val.TryAcceptOnce(((GameItem)item).unitCount);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1307:				if ((object)((GameItem)item).parentInventory != destination || !((GameInventory)destination).childItems.Contains((GameItem)(object)item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1313:					records.Remove(((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1317:					records[((GameItem)item).uniqueId] = place;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1326:					records.Remove(((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1330:					records[((GameItem)item).uniqueId] = value;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1332:				if ((object)((GameItem)item).parentInventory == destination && flag)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1334:					((GameInventory)destination).Expel((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1336:				if (((GameItem)item).parentInventory == null)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1338:					((GameItem)item).modifiedShape = (GridShape)new GridShapeBuilder(val2);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1339:					parentInventory.UncheckedAccept((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1341:				if (((GameItem)item).parentInventory == parentInventory && parentInventory.childItems.Contains((GameItem)(object)item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1359:			if (place == null && mirrors.TryGetValue(((GameItem)item).uniqueId, out BillboardMirror value3))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1362:				mirrors.Remove(((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1372:		internal static void Remove(GameItem item)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1392:				GameItem item = slot.item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1393:				GameItemElement val = (GameItemElement)(object)((item is GameItemElement) ? item : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1394:				if (val != null && IsStored((GameItem)(object)val))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1399:						Source = ((GameItem)val).parentInventory,
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1400:						Shape = ((GameItem)val).modifiedShape.Clone()
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1402:					TransferReceipt.Begin((GameItem)(object)val, nativeTransfer.Source, slot.inventory ?? nativeTransfer.Source);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1414:			GameItemElement item = context.Item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1417:				if (((GameItem)item).parentInventory == null && ((GameItem)item).unitCount > 0)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1419:					((GameItem)item).modifiedShape = (GridShape)new GridShapeBuilder(context.Shape);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1420:					context.Source.UncheckedAccept((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1421:					if (((GameItem)item).parentInventory != context.Source || !context.Source.childItems.Contains((GameItem)(object)item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1426:				if (!IsStored((GameItem)(object)item) || ((GameItem)item).unitCount <= 0)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1428:					records.Remove(((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1437:			if (!IsStored((GameItem)(object)item) && mirrors.TryGetValue(((GameItem)item).uniqueId, out BillboardMirror value))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1440:				mirrors.Remove(((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1463:			GameItem currentItem = handler.GetCurrentItem();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1464:			GameItemElement val = (GameItemElement)(object)((currentItem is GameItemElement) ? currentItem : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1465:			if (val != null && !unavailable.ContainsKey(((GameItem)val).uniqueId) && Interactive && IsSign((GameItem)(object)val) && GeneralHelper.IsItemOwned((GameItem)(object)val) && !GeneralHelper.IsDisplayOnly((GameItem)(object)val) && ValidArt(val) && EnsureScene())
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1468:				if (mirrors.TryGetValue(((GameItem)val).uniqueId, out BillboardMirror value))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1505:			GameItemElement val3 = dragged;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1506:			int uniqueID = ((GameItem)val3).GetUniqueID();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1511:				id = ((GameItem)val3).identifier,
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1572:				GameItemElement item = dragged;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1574:				if (!IsStored((GameItem)(object)item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1576:					Remove((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1590:		internal readonly GameItemElement Item;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1622:				if (((GameItem)Item).shape.width == 1)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1624:					return ((GameItem)Item).shape.height == 1;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1630:		internal BillboardMirror(GameItemElement item, Placement placement, RectTransform parent)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1635:			Node = TreeNodeRender.Instantiate((PixelElement)(object)item, "Hanging billboard " + ((GameItem)item).uniqueId);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:1751:			bool flag = BillboardManager.IsLit((GameItem)(object)Item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2270:			GameItem bag = (GameItem)(object)((firstNode is GameItem) ? firstNode : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2275:			GameItem[] array = ((GameInventory)HangingStorage.Inventory).childItems.Where(BillboardManager.IsStored).ToArray();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2285:				if (val is GameItem)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2306:			GameItem[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2307:			foreach (GameItem val3 in array2)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2324:			foreach (GameItem val4 in array2)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2330:		internal static Dictionary<int, GameItemElement> FindOriginals(Dictionary<int, Placement> placements)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2332:			Dictionary<int, GameItemElement> dictionary = new Dictionary<int, GameItemElement>();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2333:			List<GameItem> allItems = EmporiumEntry.Instance.GetAllItems();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2336:				GameItem[] array = allItems.Where((GameItem i) => i.uniqueId == p.uid).ToArray();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2345:				GameItem obj = array[0];
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2346:				GameItemElement val = (GameItemElement)(object)((obj is GameItemElement) ? obj : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2347:				if ((object)((val != null) ? ((GameItem)val).parentInventory : null) == EmporiumEntry.Instance.backInvinvElement)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2350:					if (((GameItem)val).identifier != p.id || ((GameItem)val).unitCount <= 0 || !GeneralHelper.IsItemOwned((GameItem)(object)val) || !BillboardManager.IsSign((GameItem)(object)val) || !BillboardManager.ValidArt(val))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2360:		internal static void TakeOriginals(IEnumerable<GameItemElement> items)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2364:			foreach (GameItemElement item in items)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2366:				GameInventory parentInventory = ((GameItem)item).parentInventory;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2367:				GridShape val = ((GameItem)item).modifiedShape.Clone();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2370:					parentInventory.Expel((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2371:					if (!((GameInventory)HangingStorage.Inventory).UncheckedAccept((GameItem)(object)item) || (object)((GameItem)item).parentInventory != HangingStorage.Inventory || !((GameInventory)HangingStorage.Inventory).childItems.Contains((GameItem)(object)item))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2378:					if ((object)((GameItem)item).parentInventory == HangingStorage.Inventory)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2380:						((GameInventory)HangingStorage.Inventory).Expel((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2382:					if (((GameItem)item).parentInventory == null)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2384:						((GameItem)item).modifiedShape = (GridShape)new GridShapeBuilder(val);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2385:						parentInventory.UncheckedAccept((GameItem)(object)item);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2399:				return BillboardManager.ActiveSigns.Any((GameItem i) => i.identifier == id);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2404:		internal static List<GameItem> DisplayItems(GameInventory inventory)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2406:			List<GameItem> childItems = inventory.childItems;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2411:			GameItem[] array = BillboardManager.ActiveSigns.ToArray();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2416:			List<GameItem> list = new List<GameItem>(childItems);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2417:			GameItem[] array2 = array;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2418:			foreach (GameItem item in array2)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2467:		internal static List<GameItem> GetOwnedItems(EmporiumEntry entry, bool isBurglary, bool includeAfterhour)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2469:			List<GameItem> allOwnedItems = entry.GetAllOwnedItems(isBurglary, includeAfterhour);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2474:		internal static void AddOwned(List<GameItem> items)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2476:			foreach (GameItem ownedStoredItem in BillboardManager.OwnedStoredItems)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2511:		internal static StoredBillboard Capture(GameItem original)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2591:				if (val == null || val.uniqueId <= 0 || val.unitCount <= 0 || !hashSet.Add(val.uniqueId) || !placements.TryGetValue(val.uniqueId, out Placement value) || value.id != val.identifier || val.itemType != typeof(GameItemElement).FullName || val.itemState == null || val.itemShape == null || val.itemModifiedShape == null || val.childItems == null || val.childItems.Count != 0 || val.childItemInventoryNode == null || val.childItemInventoryNode.Count != 0 || item.features == null)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2607:				if (hashSet.Contains(n.uniqueId) || !DirectoryMaster.Has<GameItem>(n.identifier))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2618:			List<GameItemElement> list3 = new List<GameItemElement>();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2624:					GameItem obj = SaveManager.DecodeNodes(new List<SaveItemNode> { item });
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2625:					GameItemElement val = (GameItemElement)(object)(((obj is GameItemElement) ? obj : null) ?? throw new InvalidOperationException("独立挂位原实例类型无效。"));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2628:					if (((GameItem)val).uniqueId != item.uniqueId || ((GameItem)val).identifier != item.identifier || !BillboardManager.ValidArt(val) || !GeneralHelper.IsItemOwned((GameItem)(object)val))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2632:					((GameItem)val).itemFeatures.Clear();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2633:					((GameItem)val).itemFeatures.AddRange(list[num]);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2634:					GeneralHelper.LoadLockItem((GameItem)(object)val);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2635:					((GameItemFunc)val).onLoaded?.Invoke((GameItem)(object)val);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2636:					if (!BillboardManager.IsSign((GameItem)(object)val))
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2640:					if (!((GameInventory)Inventory).UncheckedAccept((GameItem)(object)val) || (object)((GameItem)val).parentInventory != Inventory)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2650:					GameItem tempLink = item3.item.tempLink;
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2651:					GameItemElement val2 = (GameItemElement)(object)((tempLink is GameItemElement) ? tempLink : null);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2657:				foreach (GameItemElement item4 in list3)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2659:					((GameItem)item4).Destroy();
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2882:		typeof(GameItem),
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2887:		private static bool Prefix(GameItem newItem, Vector2 mousePosition)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2920:		private static void Prefix(ItemMouseDragHandler __instance, ref GameInventory ___lastInventory, ref GameItem ___lastItem)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2996:	[HarmonyPatch(typeof(GameItemElement), "Destroy", new Type[] { })]
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:2999:		private static void Prefix(GameItemElement __instance, out bool __state)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3001:			__state = Core.Enabled && BillboardManager.IsStored((GameItem)(object)__instance);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3004:		private static void Postfix(GameItemElement __instance, bool __state)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3012:				BillboardManager.Remove((GameItem)(object)__instance);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3050:				__result = BillboardManager.ActiveSigns.Any((GameItem i) => i.identifier == id);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3061:				__result = BillboardManager.ActiveSigns.Any((GameItem i) => i.IsTag("SHOWCASE_SPECIAL_ITEM_TAG"));
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3070:			__result += BillboardManager.ActiveSigns.Count((GameItem i) => i.identifier == id);
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3076:		private static void Postfix(List<GameItem> __result)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3081:		internal static void Add(List<GameItem> items, bool ownedOnly)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3088:			foreach (GameItem storedItem in BillboardManager.StoredItems)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3134:		private static void Postfix(List<GameItem> __result)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3142:		private static void Postfix(List<GameItem> __result)
+probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3294:		internal static void Begin(GameItem original, GameInventory source, GameInventory destination)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:9:using UnityEngine.Localization;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:10:using UnityEngine.Localization.Settings;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:81:		return (manifest == null) ? key : ModHelper.GetLocalized(manifest.ID, key, args);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:84:	private static void AssetsLoaded(LoadedMod mod)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:91:				LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:97:	private static void LocaleChanged(Locale locale)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:113:			LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:124:		private readonly WeakReference<GameItem> machine;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:164:		internal Binding(GameItem machine, PixelWindow window, MachineryPanelRow row, MachineryPanel panel, MachineryRadioButton toggle)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:166:			this.machine = new WeakReference<GameItem>(machine);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:173:		internal bool TryGetMachine(out GameItem value)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:205:	private static readonly Action<GameItem, GameInventory, SlotMarker> AfterCycleHandler = AfterCycle;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:211:	private readonly List<WeakReference<GameItem>> cycleHooks = new List<WeakReference<GameItem>>();
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:267:			LoadedMod val = ModLoader.Mods.Find((LoadedMod m) => m.Manifest.ID == modId);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:275:	internal void Install(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:312:			List<GameItem> list = instance.FindAllItem(true);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:319:				GameItem val = list[i];
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:348:	private static void AfterCycle(GameItem machine, GameInventory parentInventory, SlotMarker slot)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:360:	internal static bool TryReplant(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:378:	private static bool TryReplantNow(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:406:		GameItem val = FindSeed(outputSlot);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:467:	private static GameItem FindSeed(GameGridInventory output)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:469:		List<GameItem> childItems = ((GameInventory)output).childItems;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:472:			GameItem val = childItems[i];
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:481:	internal static bool IsEnabledFor(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:486:	private static void SetEnabled(GameItem machine, bool on)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:494:	private void ToggleChanged(GameItem machine, bool on)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:515:	private static bool IsHydroponic(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:520:	private void EnsureCycleHook(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:526:		Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)machine).onCycleEndSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:534:			((GameItemFunc)machine).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(onCycleEndSlotItemFunc, AfterCycleHandler);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:536:		cycleHooks.Add(new WeakReference<GameItem>(machine));
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:539:	private bool HasCycleHookRecord(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:555:	private static bool HasAfterCycle(Action<GameItem, GameInventory, SlotMarker> callback)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:580:					Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)target).onCycleEndSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:583:						((GameItemFunc)target).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Remove(onCycleEndSlotItemFunc, AfterCycleHandler);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:595:	private void EnsureUi(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:637:		WeakReference<GameItem> machineRef = new WeakReference<GameItem>(machine);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:661:	private Binding FindBinding(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:691:	private void SyncMachine(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:767:					GameItem value4;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:822:	private static void Postfix(GameItem __result)
+probably-stolen/analysis/sol-decompile/mods/ReputationPop.cs:76:			return ModHelper.GetLocalized("reputation_pop", key, args);
