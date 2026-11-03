@@ -1,6 +1,6 @@
 # Probably Stolen — 한국어팩 개발 인수인계
-마지막 업데이트: 2026-11-03 (KST)
-상태: **미완료 / 빌드·런타임 검증 미실행**
+마지막 업데이트: 2026-11-04 (KST)
+상태: **미완료 / v0.6.8 빌드·정적 검증 완료 / 게임 내 런타임 검증 대기**
 
 ## 목표
 하나의 KoreanPack DLL과 자체 `Localization/<WorkshopModID>/ko.csv` 모음으로 여러 Probably Stolen 워크샵 모드를 한국어화한다.
@@ -70,3 +70,39 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 5. DLL을 실제로 빌드하고 설치 구조를 검증한 후에만 배포. 게임 내 정상 동작은 게임 테스트 전까지 '미검증'으로 표시.
 
 이 폴더는 본 프로젝트의 GitHub 서브메모리 기준점으로 사용.
+
+
+## 2026-11-04 — Sol 재구축 v0.6.8-dev
+
+작업 브랜치: `probably-stolen-koreanpack-sol` — `main` 미수정.
+
+### 확인 완료
+- 게임 `ModLoader` 역컴파일로 실제 순서 확인: 각 모드 `Init/OnEnable` 완료 후 `LoadModAssets -> LoadLocalization`.
+- `ModHelper.GetLocalized(string modId, string key, params object[] args)` 실제 시그니처 확인.
+- 초기 `LocHelper.GetCurrentLocaleCode()`가 `LocalizationSettings.SelectedLocale`을 읽는 것을 확인.
+- v0.6.8은 공식 `LoadLocalization` 이전에는 ES3 저장 locale만 읽고, 이후에만 SelectedLocale 접근.
+- 타 모드 생성자/.cctor 패치 없음.
+- Harmony transpiler/IL 문자열 치환 없음.
+- `AssemblyLoad` 선제 타 모드 패치 없음.
+- TMP/TextMeshPro 전역 후킹 없음.
+- File/embedded-resource 전역 후킹 없음.
+- 타 모드 메서드 패치는 `LoadLocalization` 이후, 번역 catalog가 연결된 해당 assembly에만 적용.
+- 초기 local-mod manifest-ID fallback은 게임의 private `loadingMod`을 식별용으로만 읽으며, caller assembly가 실제 loadingMod 폴더 아래일 때만 허용.
+- 기존 v0.5.44 번역 16 CSV / 12,740행 보존. CSV 파싱 오류 0. 16개 파일 SHA-256 모두 기존과 동일.
+- 대표 DLL 정적 분석: CorpPresence / ProficiencyMod / ItemStorage / PCExpansion / GameCardPK.
+- GitHub Actions v0.6.8 컴파일 성공.
+- 개발 브랜치에 게시된 DLL과 사용자 테스트 ZIP의 DLL은 동일 파일:
+  `SHA-256 c7be62021a8f1638f079f34e60180f3985d20da32824e63b932a17e3141fac86`.
+
+### 현재 테스트 패키지
+- `ProbablyStolen_KoreanPack_v0.6.8-dev_Install.zip`
+- ZIP SHA-256: `a71d534cb9d6db1b45db05ed5065c096416bf79a1fe8b7bbae819339778ae733`
+- ZIP 무결성 검사 통과.
+- 실제 게임 실행 검증 전이므로 **완료/릴리즈 판정 금지**.
+
+### 다음 단계
+1. 기존 KoreanPack 폴더를 v0.6.8-dev 테스트본으로 교체.
+2. 먼저 한국어팩 단독 로딩/게임 시작 확인.
+3. 이후 기존 충돌 조합(CorpPresence+한국어팩, CorpPresence+Proficiency, CorpPresence+PCExpansion)을 포함해 로딩 안정성 확인.
+4. native key 번역 모드와 text 기반 모드 양쪽에서 실제 한국어 적용 여부 확인.
+5. 실패 시 Player.log 기준으로 범위를 좁혀 수정. 타 모드 파일 자체는 수정하지 않는다.
