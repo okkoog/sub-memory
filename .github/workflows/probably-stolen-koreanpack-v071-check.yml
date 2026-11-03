@@ -109,7 +109,24 @@ jobs:
           CS
       - name: Run game ModScanner
         shell: bash
-        run: dotnet run --project /tmp/psscan -- "$GITHUB_WORKSPACE" | tee /tmp/scanner-result.txt
+        run: |
+          set +e
+          dotnet run --project /tmp/psscan -- "$GITHUB_WORKSPACE" | tee /tmp/scanner-result.txt
+          code=${PIPESTATUS[0]}
+          echo "SCANNER_EXIT=$code" >> /tmp/scanner-result.txt
+          exit 0
+      - name: Commit scanner result
+        shell: bash
+        run: |
+          mkdir -p probably-stolen/analysis
+          cp /tmp/scanner-result.txt probably-stolen/analysis/v0.7.1-scanner-result.txt
+          git add --sparse -- probably-stolen/analysis/v0.7.1-scanner-result.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record KoreanPack v0.7.1 scanner result"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
       - uses: actions/upload-artifact@v4
         if: always()
         with:
