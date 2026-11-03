@@ -89,3 +89,29 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 - **수정안**: Corp `OnEnable` 직후 Tick 제거, `OnModItemDirectoryInit` 즉시 Tick도 지연, Loader.Awake 자산 로딩이 끝난 첫 프레임 이후 Poll; 선택 로케일의 키 누락은 fallback/retry 및 오류 유형 분리.
 - 이것이 사용자 확인한 세 충돌 조합의 유일한 원인인지와 v0.9.4 런타임 복구 성공 여부는 **미검증**. 이전 Player(1) 로그의 Corp v0.9.1은 실제로 로딩되지 않았으므로 그 로그를 Corp 충돌 근거로 사용하지 말 것.
 - 자세한 근거/수정 지점: [CorpPresence-0.9.4-findings.md](analysis/CorpPresence-0.9.4-findings.md) 및 [callsite-context](analysis/CorpPresence-0.9.4-callsite-context.md).
+
+
+## 2026-11-04 — 인게임 미번역 재점검
+
+사용자 최신 인게임 확인에서 모드 자체는 정상 적용되고 게임 진입도 성공했다. 다만 다음 대상이 화면상 미번역 또는 부분 번역으로 남아 있음.
+
+- 화면상 사실상 미번역: game_card_pk(3832048841), lewd_meme/촉수(3831837821), xiaowo_night_auction(3829429358), Dream_Item_Storage(3829085054)
+- 부분 번역: brewing_expansion(3829730904), CorpPresence(3828913695)
+- 나머지는 아직 인게임 식별 미완료
+
+중요: 최신 설치본 ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip을 확인한 결과 위 4개 "미번역" 대상에도 이미 상당량의 번역 카탈로그가 들어 있다.
+- game_card_pk: pskb__3832048841.csv 약 410KB
+- lewd_meme: pskb__3831837821.csv 약 72KB
+- xiaowo_night_auction: pskb__3829429358.csv 약 67KB
+- Dream_Item_Storage: pskb__3829085054.csv 약 62KB
+
+따라서 이 4개는 단순 번역 데이터 부족이 주원인이 아니라, 해당 모드의 동적 아이템/툴팁 생성 경로에서 한국어팩 카탈로그가 적용되지 않는 문제로 우선 분류한다. 특히 game_card_pk의 인게임 미번역 예시 설명 "跟在队伍后面的黑鸟。它不挑食，只挑还剩气的。"은 과거 번역 데이터에 이미 "일행의 뒤를 따르는 검은 새. 먹이를 가리지는 않지만 아직 숨이 붙어 있는지만 확인합니다."로 존재한다. 즉 번역문 자체가 없어서 원문이 나온 사례가 아니다.
+
+최신 모드 ID/버전 식별:
+- game_card_pk / workshop 3832048841 / v0.9.9
+- lewd_meme / workshop 3831837821 / v1.0.3
+- xiaowo_night_auction / workshop 3829429358 / v2.1.7
+- Dream_Item_Storage / workshop 3829085054 / v1.1.7
+- brewing_expansion / workshop 3829730904 / v3.6.7.6
+
+다음 우선순위는 CSV 증량보다 먼저 위 4개 모드에서 실제 표시 문자열이 생성·대입되는 경로를 추적하고, 우리 한국어팩 내부에서 그 경로만 안전하게 수용하는 것. 타 모드 원본/DLL 수정 금지 원칙은 그대로 유지한다.
