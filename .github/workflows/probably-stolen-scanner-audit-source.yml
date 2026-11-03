@@ -1,0 +1,36 @@
+name: Probably Stolen scanner audit source
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-scanner-audit-source.yml'
+  workflow_dispatch:
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/Managed/Assembly-CSharp.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install ilspycmd --tool-path .tools --version 11.2.0.10050
+      - name: Decompile scanner
+        run: |
+          mkdir -p artifact
+          ./.tools/ilspycmd -t ModScanner probably-stolen/Managed/Assembly-CSharp.dll > artifact/ModScanner.cs
+          ./.tools/ilspycmd -t ModScanResult probably-stolen/Managed/Assembly-CSharp.dll > artifact/ModScanResult.cs || true
+          grep -n -E 'loader-target|files|reflection-external|dynamic-code|ModLoader|FileInfo|DirectoryInfo|HarmonyPatch|GetField|GetMethods|GetTypes' artifact/ModScanner.cs > artifact/relevant.txt || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen-ModScanner-audit
+          path: artifact
