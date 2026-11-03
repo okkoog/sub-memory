@@ -886,6 +886,18 @@ namespace ProbablyStolenKoreanPack
                             PatchDynamic(method, null,
                                 nameof(SafeGameItemResultPostfix), "gameitem-result");
 
+                        if (method.ReturnType == typeof(PixelWindow))
+                            PatchDynamic(method, null,
+                                nameof(SafePixelWindowResultPostfix), "pixelwindow-result");
+
+                        if (method.ReturnType == typeof(Dialogue))
+                            PatchDynamic(method, null,
+                                nameof(SafeDialogueResultPostfix), "dialogue-result");
+
+                        if (method.ReturnType == typeof(StoreClient))
+                            PatchDynamic(method, null,
+                                nameof(SafeStoreClientResultPostfix), "storeclient-result");
+
                         // UI builders may retain created buttons/labels in static
                         // dictionaries. Inspect only the declaring target type after
                         // display-oriented methods; unrelated assemblies are untouched.
@@ -1363,6 +1375,44 @@ namespace ProbablyStolenKoreanPack
                     false, false, null, visited, 0, ref budget);
         }
 
+        private static void SafePixelWindowResultPostfix(
+            MethodBase __originalMethod, PixelWindow __result)
+        {
+            TranslateCarrierResult(__originalMethod, __result);
+        }
+
+        private static void SafeDialogueResultPostfix(
+            MethodBase __originalMethod, Dialogue __result)
+        {
+            TranslateCarrierResult(__originalMethod, __result);
+        }
+
+        private static void SafeStoreClientResultPostfix(
+            MethodBase __originalMethod, StoreClient __result)
+        {
+            TranslateCarrierResult(__originalMethod, __result);
+        }
+
+        private static void TranslateCarrierResult(
+            MethodBase originalMethod, object result)
+        {
+            if (!_enabled || !IsKorean() || result == null ||
+                originalMethod == null || originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            HashSet<object> visited =
+                new HashSet<object>(ReferenceComparer.Instance);
+            int budget = 240;
+            TranslateObjectGraph(catalog, result,
+                originalMethod.DeclaringType.Assembly,
+                false, false, null, visited, 0, ref budget);
+        }
+
         private static void SafeGameItemResultPostfix(
             MethodBase __originalMethod, GameItem __result)
         {
@@ -1670,6 +1720,8 @@ namespace ProbablyStolenKoreanPack
                    name.Contains("tooltip") ||
                    name.Contains("dialog") ||
                    name.Contains("pixelelement") ||
+                   name.Contains("pixelwindow") ||
+                   name.Contains("storeclient") ||
                    name.Contains("textmesh") ||
                    name.EndsWith(".text", StringComparison.Ordinal) ||
                    name.Contains("uielement");
