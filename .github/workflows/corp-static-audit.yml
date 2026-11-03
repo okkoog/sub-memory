@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - ".github/workflows/corp-static-audit.yml"
+      - "probably-stolen/tools/analyze_corp.py"
+      - "probably-stolen/mods/3828913695/**"
   workflow_dispatch:
 
 permissions:
@@ -37,7 +39,7 @@ jobs:
       - name: Commit static audit report
         shell: bash
         run: |
-          git add -- probably-stolen/analysis/CorpPresence-0.9.4-static-audit.md
+          git add -- probably-stolen/analysis/CorpPresence-0.9.4-static-audit.md probably-stolen/analysis/CorpPresence-0.9.4-callsite-context.md
           if git diff --cached --quiet; then
             echo "Audit report unchanged"
             exit 0
