@@ -23,6 +23,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/tools/analyze_localization_paths.py
+            probably-stolen/mods/3832048841/GameCardPK.dll
+            probably-stolen/mods/3831837821/MidnightPawn.dll
+            probably-stolen/mods/3829429358/XIAOWONightAuction.dll
+            probably-stolen/mods/3829085054/ItemStorage.dll
+            probably-stolen/mods/3829730904/BrewingExpansion.dll
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
