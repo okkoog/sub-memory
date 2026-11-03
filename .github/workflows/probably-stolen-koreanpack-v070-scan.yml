@@ -64,7 +64,7 @@ jobs:
                   object result = scan.Invoke(null, new object?[]
                   {
                       new string[] { dll },
-                      new string[] { "0Harmony" },
+                      new string[] { "0Harmony", "netstandard", "Assembly-CSharp", "UnityEngine.CoreModule" },
                       null,
                       false
                   })!;
