@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Manifest>
   <ID>probably_stolen_korean_pack</ID>
-  <Name>Korean Mod Localization Bridge</Name>
-  <Author>Korean Translation Project</Author>
-  <ModVersion>0.6.0-dev</ModVersion>
-  <Description>Provides Korean localization data for other Probably Stolen mods from one translation pack.</Description>
+  <Name>Probably Stolen Korean Pack (Generic Localization Bridge)</Name>
+  <Author>Community Korean localization project</Author>
+  <ModVersion>0.6.4-dev</ModVersion>
+  <Description>Generic Korean localization bridge: native localization injection plus mod-scoped display-data adapters. No target mod files are modified.</Description>
   <GameVersions />
   <Prerequisites />
   <Assemblies>
     <Assembly>ProbablyStolenKoreanPack.dll</Assembly>
   </Assemblies>
   <Capabilities>
+    <Capability>files</Capability>
     <Capability>reflection-external</Capability>
+    <Capability>dynamic-code</Capability>
   </Capabilities>
 </Manifest>
