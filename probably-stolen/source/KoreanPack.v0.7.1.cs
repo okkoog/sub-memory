@@ -360,27 +360,54 @@ namespace ProbablyStolenKoreanPack
             }
         }
 
-        private static void MergeCatalog(Catalog target, Catalog supplement)
+        private static void MergeCatalog(Catalog target, Catalog incoming)
         {
-            if (target == null || supplement == null ||
-                ReferenceEquals(target, supplement))
+            if (target == null || incoming == null ||
+                ReferenceEquals(target, incoming))
                 return;
 
-            foreach (string alias in supplement.Aliases)
+            foreach (string alias in incoming.Aliases)
                 target.Aliases.Add(alias);
 
-            foreach (KeyValuePair<string, string> pair in supplement.ByKey)
+            bool targetIsSupplement = IsSupplementCatalog(target);
+            bool incomingIsSupplement = IsSupplementCatalog(incoming);
+            bool incomingWins = incomingIsSupplement && !targetIsSupplement;
+
+            foreach (KeyValuePair<string, string> pair in incoming.ByKey)
             {
                 string existing;
-                if (!target.ByKey.TryGetValue(pair.Key, out existing))
+                if (!target.ByKey.TryGetValue(pair.Key, out existing) || incomingWins)
                     target.ByKey[pair.Key] = pair.Value;
-                else if (!string.Equals(existing, pair.Value, StringComparison.Ordinal))
-                    Debug.LogWarning("[KoreanPack] Supplemental key conflict kept existing: " +
-                        pair.Key);
             }
 
-            foreach (KeyValuePair<string, string> pair in supplement.ExplicitBySource)
-                AddExplicitSource(target, pair.Key, pair.Value);
+            foreach (KeyValuePair<string, string> pair in incoming.ExplicitBySource)
+            {
+                string existing;
+                if (!target.ExplicitBySource.TryGetValue(pair.Key, out existing))
+                    target.ExplicitBySource[pair.Key] = pair.Value;
+                else if (incomingWins)
+                    target.ExplicitBySource[pair.Key] = pair.Value;
+            }
+
+            // If the catalog that was registered first is itself the supplement,
+            // its values already have priority; the base catalog only fills gaps.
+            target.AmbiguousExplicitSources.Clear();
+            RebuildExplicitTemplates(target);
+        }
+
+        private static bool IsSupplementCatalog(Catalog catalog)
+        {
+            return catalog != null &&
+                !string.IsNullOrEmpty(catalog.PrimaryId) &&
+                catalog.PrimaryId.StartsWith("supp_", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static void RebuildExplicitTemplates(Catalog catalog)
+        {
+            if (catalog == null) return;
+            catalog.ExplicitTemplates.Clear();
+            foreach (KeyValuePair<string, string> pair in catalog.ExplicitBySource)
+                AddTemplateRule(catalog.ExplicitTemplates, pair.Key, pair.Value);
         }
 
         private static string DecodeBase64Url(string encoded)
