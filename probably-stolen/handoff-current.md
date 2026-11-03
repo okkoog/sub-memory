@@ -1,6 +1,6 @@
 # Probably Stolen — 한국어팩 개발 인수인계
 마지막 업데이트: 2026-11-04 (KST)
-상태: **미완료 / v0.6.8 빌드·정적 검증 완료 / 게임 내 런타임 검증 대기**
+상태: **미완료 / v0.7.0 빌드·게임 ModScanner 검증 완료 / 게임 내 런타임 검증 대기**
 
 ## 목표
 하나의 KoreanPack DLL과 자체 `Localization/<WorkshopModID>/ko.csv` 모음으로 여러 Probably Stolen 워크샵 모드를 한국어화한다.
@@ -106,3 +106,92 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 3. 이후 기존 충돌 조합(CorpPresence+한국어팩, CorpPresence+Proficiency, CorpPresence+PCExpansion)을 포함해 로딩 안정성 확인.
 4. native key 번역 모드와 text 기반 모드 양쪽에서 실제 한국어 적용 여부 확인.
 5. 실패 시 Player.log 기준으로 범위를 좁혀 수정. 타 모드 파일 자체는 수정하지 않는다.
+
+
+## 2026-11-04 — v0.6.8 폐기 및 v0.7.0-dev 재설계
+
+### v0.6.8 폐기 사유
+사용자 실게임 Modding 화면에서 v0.6.8이 스캐너에 의해 거부됨.
+
+실제 하드 플래그:
+- `loader-target`: `ModLoader` 대상 Harmony/Reflection
+- `files`: `FileInfo` / `DirectoryInfo` 기반 대상 모드 경로 탐색
+
+따라서 v0.6.8 설치 ZIP은 **폐기**. 재사용/재배포 금지.
+
+### v0.7.0 구조
+- `ModLoader` 참조/Reflection/Harmony patch: **0**
+- `loadingMod` private reflection: **0**
+- 런타임 `File/Directory/FileInfo/DirectoryInfo` 사용: **0**
+- `AssemblyLoad` 선제 개입: **0**
+- 생성자/.cctor patch: **0**
+- IL transpiler/string rewrite: **0**
+- 전역 TMP/TextMeshPro/File/resource hook: **0**
+- 공식 `ModHook.OnModAssetsLoaded(LoadedMod)` 이벤트만 진입점으로 사용.
+- 대상 식별은 이벤트로 받은 `LoadedMod.Manifest.ID / WorkshopId / ShadowedWorkshopId`만 사용.
+- target native key 번역은 해당 `LoadedMod.Localization["ko"] / ["ko-KR"]`에 병합.
+- hard-coded 원문 번역은 공식 assets-loaded 이후, 해당 `LoadedMod.Assembly` 내부의 표시/로컬라이저 후보 메서드만 제한적으로 reflection/Harmony 처리.
+- 치환은 해당 catalog의 **정확한 원문 일치**일 때만 수행.
+
+### Localization 구조 변경
+런타임 파일 읽기를 없애기 위해, 게임 기본 Localization 로더가 한국어팩의 catalog CSV를 먼저 읽게 함.
+
+```
+Localization/
+  pskb__<WorkshopID-or-catalog-id>.csv
+```
+
+행 형식:
+- `M|<ManifestID>,"1"`
+- `W|<WorkshopID>,"1"`
+- `K|<native_key>,"한국어"`
+- `K64|<base64url_key>,"한국어"`
+- `S|<source>,"한국어"`
+- `S64|<base64url_source>,"한국어"`
+
+기존 v0.5.44 번역 16개 파일을 이 구조로 변환:
+- catalog 파일: 16개
+- 런타임 행: 12,804
+  - alias 32
+  - native key 495
+  - source mapping 12,277
+- 변환 CSV 파싱 오류: 0
+
+### 실제 게임 ModScanner 검증
+GitHub Actions에서 게임 `Assembly-CSharp.dll`의 실제 `ModScanner.Scan()`을 v0.7.0 DLL에 직접 실행.
+
+결과:
+- `HARD_COUNT=0`
+- `files`: 없음
+- `loader-target`: 없음
+- capability: `reflection-external`만 검출
+- finding:
+  - target assembly `Assembly.GetTypes`
+  - target type `Type.GetMethods`
+
+manifest에는 `reflection-external`만 선언. `files` / `dynamic-code` capability 선언 제거.
+
+### 빌드
+- GitHub Actions v0.7.0 compile: 성공
+- 개발 브랜치 DLL 게시: 성공
+- 브랜치 DLL 바이너리 확인:
+  - `ModLoader` 문자열 참조 없음
+  - `FileInfo` 없음
+  - `DirectoryInfo` 없음
+  - `AssemblyLoad` 없음
+  - `OnModAssetsLoaded` 존재
+
+### 현재 테스트 패키지
+- `ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip`
+- ZIP SHA-256: `0471815ec68bb63f3aea123a23ba4212eb62f573bad9c89b0d01fb201a221f70`
+- DLL SHA-256(배포 ZIP): `34580f60c7cc105aa831199e6459175bf461b27b8c971a7bed315dbff79f631c`
+- ZIP 무결성 검사 통과
+- 실제 게임 런타임 적용은 아직 미검증이므로 완료/릴리즈 판정 금지
+
+### 다음 테스트
+1. 기존 v0.6.8 폴더 완전 제거.
+2. v0.7.0-dev만 설치.
+3. Modding 화면에서 loader-target/files 경고가 사라지는지 확인.
+4. 게임 정상 진입 확인.
+5. native key 기반 모드와 source-text 기반 모드 번역 적용 여부 확인.
+6. 미번역/오작동이 있으면 Player.log + 화면 기준으로 다음 범위를 좁힘.
