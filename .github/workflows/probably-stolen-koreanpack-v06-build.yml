@@ -1,0 +1,18 @@
+name: KoreanPack v0.6 build
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build v0.6
+        run: dotnet build probably-stolen/source/KoreanPack.v0.6.csproj -c Release
