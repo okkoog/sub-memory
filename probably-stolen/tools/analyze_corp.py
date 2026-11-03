@@ -61,3 +61,31 @@ out.write_text("\n".join(lines), encoding="utf-8")
 print(f"REPORT_PATH={out}")
 print(f"REPORT_BYTES={out.stat().st_size}")
 print(json.dumps(counts, ensure_ascii=False))
+
+# Targeted initialization and patch-install callsite context. Only limited excerpts
+# are saved; full third-party decompiled source is not committed.
+focus = {
+    "CorpPresence/Main.cs": [r"OnEnable", r"OnDisable", r"GameResources", r"Hooks\\.", r"Install", r"Try"],
+    "CorpPresence/GameResources.cs": [r"Initialize", r"GetTableAsync", r"GetEntry", r"IsValid", r"WaitForCompletion", r"IsDone", r"Status", r"Mechanic"],
+    "CorpPresence/Hooks.cs": [r"public static", r"void Install", r"Patch\\<", r"Patch\\(", r"GameResources", r"WaterFeatureHelper", r"ShowcaseHelper"],
+    "CorpPresence/L.cs": [r"GetCurrentLocaleCode", r"GetLocalized", r"LocHelper"],
+}
+detail_lines = ["# CorpPresence — targeted callsite context", "", "Only excerpts for relevant initialization/Harmony methods; no code was executed."]
+for rel, regexes in focus.items():
+    p = srcdir / rel
+    if not p.is_file():
+        detail_lines.extend(["", f"## {rel}", "", "Not found in decompilation."])
+        continue
+    textlines = p.read_text(encoding="utf-8-sig").splitlines()
+    hit = [i for i, line in enumerate(textlines) if any(re.search(exp, line, re.I) for exp in regexes)]
+    selected = sorted({j for i in hit for j in range(max(0, i - 4), min(len(textlines), i + 9))})
+    detail_lines.extend(["", f"## {rel}", "", f"Matching lines: {len(hit)}; displayed context lines: {len(selected)}", "", "```text"])
+    for j in selected[:390]:
+        detail_lines.append(escape(f"{j + 1}: {textlines[j][:250]}"))
+    if len(selected) > 390:
+        detail_lines.append(f"... {len(selected) - 390} further context lines not shown")
+    detail_lines.append("```")
+extra = BASE / "analysis" / "CorpPresence-0.9.4-callsite-context.md"
+extra.write_text("\n".join(detail_lines) + "\n", encoding="utf-8")
+print(f"CONTEXT_PATH={extra}")
+print(f"CONTEXT_BYTES={extra.stat().st_size}")
