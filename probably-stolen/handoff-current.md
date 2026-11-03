@@ -256,3 +256,34 @@ CreateTooltip에서 그 결과를 독립 TextSlice 한 줄로 AddLine한다.
 - HARD_COUNT=0
 - files 없음
 - loader-target 없음
+
+
+## 2026-11-04 — v0.7.2 안전 화이트리스트 전환
+
+Player(4).log에서 v0.7.1의 광범위 Harmony 메서드 패치가 CorpPresence.SilverBlood.AddLiquid 컴파일 중 게임 Liquid..cctor를 조기 실행시키고,
+Unity Localization이 로딩 중인 상태에서 LocHelper.GetLocalizedMechanic("liquid_water")를 호출하여
+"Attempting to use an invalid operation handle" 예외를 유발하는 것을 확인.
+
+수정:
+- assembly 전체 메서드 스캔 후 display-like 메서드 자동 패치 방식 제거.
+- 확인된 타입/메서드만 PatchKnownType 화이트리스트로 패치.
+- CorpPresence는 CorpPresence.L.T(string,string) / T(string[],string[])만 허용.
+- CorpPresence.SilverBlood.AddLiquid 및 기타 Corp 메서드는 패치하지 않음.
+- GameCardPK: GameCardFactory CreateCard/CreateSkill/ApplySkillData, SkillText ForItem/ForBattle/PointLabel.
+- MidnightPawn: TentacleBody.Create만 직접 패치. MaidenTooltip은 공식 OnCreateTooltipLate에서 후처리.
+- ItemStorage: BoxItem.Create, BoxWindow UpdateTooltip/EnsureWindow/RefreshButtons.
+- XIAOWONightAuction: AuctionText Select/DisplayLog/Get, AuctionExclusiveFactory.ApplyLocalizedText, AuctionPhone CreateCard/LocalizeCard/BuildDialogue/BuildBookingDialogue/Ending.
+- BrewingExpansion: Figurines.Create.
+- 기존 공식 OnCreateTooltipLate 후처리와 supplement catalog는 유지.
+
+화이트리스트 소스 커밋: 2096b93be4eacbe116a868c81057bdff03fea458
+게시 DLL 커밋: f1d6a96d00b9...
+버전 표시: v0.7.2-dev
+
+정적 검사:
+- build 성공
+- game ModScanner 성공
+- CAPABILITIES=reflection-external
+- HARD_COUNT=0
+- files 없음
+- loader-target 없음
