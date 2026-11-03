@@ -1,0 +1,53 @@
+name: KoreanPack v0.7.1 test patch
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - 'probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll'
+      - 'probably-stolen/korean-pack/manifest.xml'
+      - 'probably-stolen/korean-pack/Localization/pskb__supp_*.csv'
+      - '.github/workflows/probably-stolen-koreanpack-v071-patch.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+            probably-stolen/korean-pack/manifest.xml
+            probably-stolen/korean-pack/Localization/pskb__supp_3832048841.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3831837821.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829085054.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829429358.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829730904.csv
+          sparse-checkout-cone-mode: false
+      - name: Assemble overlay patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p patch/Localization
+          cp probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll patch/
+          cp probably-stolen/korean-pack/manifest.xml patch/
+          cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv patch/Localization/
+          cat > patch/README_PATCH.txt <<'EOF'
+          Probably Stolen Korean Pack v0.7.1-dev overlay patch
+
+          Apply this over the existing v0.7.0-dev Korean Pack folder.
+          Replace ProbablyStolenKoreanPack.dll and manifest.xml, then merge the Localization folder.
+          Existing Localization files must remain; the pskb__supp_*.csv files are additions.
+          No third-party mod files are replaced by this patch.
+          EOF
+          find patch -type f -maxdepth 2 -print | sort
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen_KoreanPack_v0.7.1-dev_Overlay
+          path: patch/
+          if-no-files-found: error
