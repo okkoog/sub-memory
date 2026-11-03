@@ -372,9 +372,33 @@ Matching lines: 83; displayed context lines: 228
 
 ## CorpPresence/L.cs
 
-Matching lines: 1; displayed context lines: 13
+Matching lines: 15; displayed context lines: 57
 
 ```text
+2: using UnityEngine;
+3: 
+4: namespace CorpPresence;
+5: 
+6: internal static class L
+7: {
+8: 	private static int _frame = -1;
+9: 
+10: 	private static bool _en;
+11: 
+12: 	private static bool _ready;
+13: 
+14: 	public static bool En
+15: 	{
+16: 		get
+17: 		{
+18: 			if (_frame == Time.frameCount)
+19: 			{
+20: 				return _en;
+21: 			}
+22: 			_frame = Time.frameCount;
+23: 			if (!_ready && (Object)(object)FontLoader.Instance == (Object)null)
+24: 			{
+25: 				return _en = false;
 26: 			}
 27: 			_ready = true;
 28: 			try
@@ -388,4 +412,134 @@ Matching lines: 1; displayed context lines: 13
 36: 			}
 37: 			return _en;
 38: 		}
+39: 	}
+40: 
+41: 	public static string T(string zh, string en)
+42: 	{
+43: 		if (!En)
+44: 		{
+45: 			return zh;
+46: 		}
+47: 		return en;
+48: 	}
+49: 
+50: 	public static string[] T(string[] zh, string[] en)
+51: 	{
+52: 		if (!En)
+53: 		{
+54: 			return zh;
+55: 		}
+56: 		return en;
+57: 	}
+58: }
+```
+
+## CorpPresence/Runtime/ResourceBootstrap.cs
+
+Matching lines: 6; displayed context lines: 42
+
+```text
+16: 		_complete = complete;
+17: 		_abort = abort;
+18: 		_directory = delegate
+19: 		{
+20: 			Tick();
+21: 		};
+22: 		ModHook.OnModItemDirectoryInit += _directory;
+23: 	}
+24: 
+25: 	public void Detach()
+26: 	{
+27: 		if (_directory != null)
+28: 		{
+29: 			ModHook.OnModItemDirectoryInit -= _directory;
+30: 		}
+31: 		_directory = null;
+32: 		_complete = null;
+33: 		_abort = null;
+34: 	}
+35: 
+36: 	private void Update()
+37: 	{
+38: 		Tick();
+39: 	}
+40: 
+41: 	public void Tick()
+42: 	{
+43: 		if (_complete == null)
+44: 		{
+45: 			return;
+46: 		}
+47: 		try
+48: 		{
+49: 			if (GameResources.Poll())
+50: 			{
+51: 				Action complete = _complete;
+52: 				_complete = null;
+53: 				complete();
+54: 			}
+55: 		}
+56: 		catch
+57: 		{
+```
+
+## CorpPresence/ItemRegistry.cs
+
+Matching lines: 7; displayed context lines: 54
+
+```text
+17: 	private static ModItemDirectory _pendingDirectory;
+18: 
+19: 	private static Action&lt;ModItemDirectory&gt; _onInit;
+20: 
+21: 	public static void Install()
+22: 	{
+23: 		if (_onInit == null)
+24: 		{
+25: 			_onInit = Register;
+26: 			ModHook.OnModItemDirectoryInit += _onInit;
+27: 		}
+28: 	}
+29: 
+30: 	public static void Uninstall()
+31: 	{
+32: 		if (_onInit != null)
+33: 		{
+34: 			ModHook.OnModItemDirectoryInit -= _onInit;
+35: 			_onInit = null;
+36: 		}
+37: 		if ((Object)(object)_directory != (Object)null)
+38: 		{
+39: 			foreach (string item in Registered)
+40: 			{
+41: 				if (Factories.TryGetValue(item, out var value) && ((Directory&lt;GameItem&gt;)(object)_directory).factoryDictionary.TryGetValue(item, out var value2) && (object)value == value2)
+42: 				{
+48: 		_directory = null;
+49: 		_pendingDirectory = null;
+50: 	}
+51: 
+52: 	public static void Activate()
+53: 	{
+54: 		if (!GameResources.Ready)
+55: 		{
+56: 			throw new InvalidOperationException("公司物品资源尚未就绪");
+57: 		}
+58: 		ModItemDirectory pendingDirectory = _pendingDirectory;
+59: 		_pendingDirectory = null;
+60: 		if ((Object)(object)pendingDirectory != (Object)null)
+61: 		{
+62: 			Register(pendingDirectory);
+73: 		if ((Object)(object)directory == (Object)null)
+74: 		{
+75: 			return;
+76: 		}
+77: 		if (!GameResources.Ready)
+78: 		{
+79: 			_pendingDirectory = directory;
+80: 			return;
+81: 		}
+82: 		if (_directory != directory)
+83: 		{
+84: 			_directory = directory;
+85: 			Registered.Clear();
 ```
