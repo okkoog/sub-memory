@@ -135,3 +135,39 @@ with tempfile.TemporaryDirectory() as td:
             hits=[i for i,l in enumerate(lines) if any(k in l for k in ["OnEnable","SelectedLocale","StringDatabase","SharedTableData","AddLocale","LocaleIdentifier","InitializationOperation","GetTableAsync"])]
             for i in hits[:20]:
                 print("KOREAN_LOC",p.name,i+1,":"," | ".join(lines[max(0,i-2):min(len(lines),i+5)])[:1100])
+
+
+# Native game and localization API cross-check; no game code execution.
+native_dll = BASE / "Managed" / "Assembly-CSharp.dll"
+unity_locale_dll = BASE / "Managed" / "Unity.Localization.dll"
+analyzers = [
+    (native_dll, "ModLoader", ["LoadMod", "LoadLocalization", "OnEnable", "OnModAssetsLoaded", "Localization", "LoadedMod"]),
+    (native_dll, "WaterFeatureHelper", ["GetLocalizedMechanic", "mech_condition_pure_water", "static WaterFeatureHelper", "UpdateWaterFeature"]),
+    (native_dll, "LocHelper", ["GetLocalizedMechanic", "GetCurrentLocaleCode", "GetLocalized"]),
+    (native_dll, "ModHook", ["OnModAssetsLoaded", "OnGameLoadedNormal", "OnModItemDirectoryInit"]),
+    (native_dll, "ModHelper", ["GetLocalized", "LoadLocalization"]),
+    (unity_locale_dll, "UnityEngine.Localization.Settings.LocalizationSettings", ["InitializationOperation", "SelectedLocale", "Initialize", "GetInstance"]),
+]
+native_report=["", "## Native game class cross-check", "",
+               "Static ILSpy output from user's uploaded Managed assemblies; no runtime behavior asserted unless code supports it."]
+with tempfile.TemporaryDirectory(prefix="native-game-") as native_tmp:
+    binary = str(Path(os.environ["RUNNER_TEMP"]) / "ilspy" / "ilspycmd")
+    for assembly, type_name, needles in analyzers:
+        result=subprocess.run([binary,"--disable-updatecheck","-t",type_name,str(assembly)],text=True,capture_output=True)
+        native_report.extend(["", "### "+assembly.name+" / "+type_name, "", "- Exit: "+str(result.returncode)])
+        if result.returncode:
+            native_report.append("Error: "+result.stderr[:300])
+            continue
+        rows=result.stdout.splitlines()
+        indices=[i for i,line in enumerate(rows) if any(w in line for w in needles)]
+        selected=sorted({j for i in indices[:150] for j in range(max(0,i-6),min(len(rows),i+11))})
+        native_report.append("Total lines: "+str(len(rows))+", matching lines: "+str(len(indices)))
+        native_report.append("~~~text")
+        for j in selected[:420]:
+            native_report.append(escape(f"{j+1}: {rows[j][:250]}"))
+        if len(selected)>420:
+            native_report.append("...trimmed...")
+        native_report.append("~~~")
+extra.write_text(extra.read_text(encoding="utf-8")+"\n"+"\n".join(native_report)+"\n",encoding="utf-8")
+print("NATIVE_GAME_REPORT_LINES",len(native_report))
+print("\n".join(native_report)[:28000])
