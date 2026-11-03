@@ -1,0 +1,52 @@
+name: KoreanPack v0.7.1 publish DLL
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - 'probably-stolen/source/KoreanPack.v0.7.1.cs'
+      - 'probably-stolen/source/KoreanPack.v0.7.1.csproj'
+      - '.github/workflows/probably-stolen-koreanpack-v071-publish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/source/KoreanPack.v0.7.1.cs
+            probably-stolen/source/KoreanPack.v0.7.1.csproj
+            probably-stolen/Managed/Assembly-CSharp.dll
+            probably-stolen/Managed/0Harmony.dll
+            probably-stolen/Managed/UnityEngine.CoreModule.dll
+            probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build
+        run: dotnet build probably-stolen/source/KoreanPack.v0.7.1.csproj -c Release
+      - name: Publish committed DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp probably-stolen/source/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          if git diff --cached --quiet; then
+            echo "DLL already current."
+            exit 0
+          fi
+          git commit -m "Publish KoreanPack v0.7.1 DLL [skip ci]"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
