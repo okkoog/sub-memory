@@ -1,5 +1,5 @@
-# package revision: latest-v071-carrier-results-final
-name: KoreanPack v0.7.1 test patch
+# package revision: v072-safe-whitelist
+name: KoreanPack v0.7.2 safe-whitelist patch
 
 on:
   push:
@@ -61,7 +61,7 @@ jobs:
           cp probably-stolen/korean-pack/manifest.xml patch/
           cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv patch/Localization/
           cat > patch/README_PATCH.txt <<'EOF'
-          Probably Stolen Korean Pack v0.7.1-dev overlay patch
+          Probably Stolen Korean Pack v0.7.2-dev safe-whitelist overlay patch
 
           Apply this over the existing v0.7.0-dev Korean Pack folder.
           Replace ProbablyStolenKoreanPack.dll and manifest.xml, then merge the Localization folder.
@@ -71,6 +71,6 @@ jobs:
           find patch -type f -maxdepth 2 -print | sort
       - uses: actions/upload-artifact@v4
         with:
-          name: ProbablyStolen_KoreanPack_v0.7.1-dev_Overlay
+          name: ProbablyStolen_KoreanPack_v0.7.2-dev_SafeWhitelist_Overlay
           path: patch/
           if-no-files-found: error
