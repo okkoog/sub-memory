@@ -1,0 +1,122 @@
+name: KoreanPack v0.7.0 game scanner check
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - 'probably-stolen/source/KoreanPack.v0.7.0.cs'
+      - 'probably-stolen/source/KoreanPack.v0.7.0.csproj'
+      - '.github/workflows/probably-stolen-koreanpack-v070-scan.yml'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/source/KoreanPack.v0.7.0.cs
+            probably-stolen/source/KoreanPack.v0.7.0.csproj
+            probably-stolen/Managed
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build KoreanPack
+        run: dotnet build probably-stolen/source/KoreanPack.v0.7.0.csproj -c Release
+      - name: Create scanner runner
+        shell: bash
+        run: |
+          mkdir -p /tmp/psscan
+          cd /tmp/psscan
+          dotnet new console --framework net8.0 --force >/dev/null
+          cat > Program.cs <<'CS'
+          using System;
+          using System.Collections;
+          using System.IO;
+          using System.Linq;
+          using System.Reflection;
+          using System.Runtime.Loader;
+
+          static class Program
+          {
+              static int Main(string[] args)
+              {
+                  string repo = Path.GetFullPath(args[0]);
+                  string managed = Path.Combine(repo, "probably-stolen", "Managed");
+                  string dll = Path.Combine(repo, "probably-stolen", "source", "bin", "Release", "netstandard2.1", "ProbablyStolenKoreanPack.dll");
+
+                  AssemblyLoadContext.Default.Resolving += (ctx, name) =>
+                  {
+                      string path = Path.Combine(managed, name.Name + ".dll");
+                      return File.Exists(path) ? ctx.LoadFromAssemblyPath(path) : null;
+                  };
+
+                  Assembly game = AssemblyLoadContext.Default.LoadFromAssemblyPath(
+                      Path.Combine(managed, "Assembly-CSharp.dll"));
+                  Type scanner = game.GetType("ModScanner", throwOnError: true)!;
+                  MethodInfo scan = scanner.GetMethod("Scan", BindingFlags.Public | BindingFlags.Static)!;
+
+                  object result = scan.Invoke(null, new object?[]
+                  {
+                      new string[] { dll },
+                      new string[] { "0Harmony" },
+                      null,
+                      false
+                  })!;
+
+                  Type rt = result.GetType();
+                  object capsObj = rt.GetProperty("Capabilities")?.GetValue(result)
+                      ?? rt.GetField("Capabilities")?.GetValue(result)!;
+                  object hardObj = rt.GetProperty("HardFlags")?.GetValue(result)
+                      ?? rt.GetField("HardFlags")?.GetValue(result)!;
+                  object findingsObj = rt.GetProperty("Findings")?.GetValue(result)
+                      ?? rt.GetField("Findings")?.GetValue(result)!;
+
+                  var caps = ((IEnumerable)capsObj).Cast<object>()
+                      .Select(x => x?.ToString() ?? "").Where(x => x.Length > 0).OrderBy(x => x).ToArray();
+                  var hard = ((IEnumerable)hardObj).Cast<object>().ToArray();
+                  var findings = ((IEnumerable)findingsObj).Cast<object>().ToArray();
+
+                  Console.WriteLine("CAPABILITIES=" + string.Join(",", caps));
+                  Console.WriteLine("HARD_COUNT=" + hard.Length);
+
+                  foreach (object h in hard)
+                      Console.WriteLine("HARD " + Describe(h));
+
+                  foreach (object f in findings)
+                      Console.WriteLine("FINDING " + Describe(f));
+
+                  bool badFiles = caps.Any(x => string.Equals(x, "files", StringComparison.OrdinalIgnoreCase));
+                  bool badLoader = hard.Any(x => Describe(x).Contains("loader-target", StringComparison.OrdinalIgnoreCase));
+
+                  if (hard.Length != 0 || badFiles || badLoader)
+                      return 2;
+
+                  return 0;
+              }
+
+              static string Describe(object item)
+              {
+                  Type t = item.GetType();
+                  string Read(string name)
+                  {
+                      object? v = t.GetProperty(name)?.GetValue(item) ?? t.GetField(name)?.GetValue(item);
+                      return v?.ToString() ?? "";
+                  }
+                  return $"Kind={Read("Kind")} Location={Read("Location")} Target={Read("Target")} Hard={Read("IsHardFlag")}";
+              }
+          }
+          CS
+      - name: Run game ModScanner
+        shell: bash
+        run: dotnet run --project /tmp/psscan -- "$GITHUB_WORKSPACE" | tee /tmp/scanner-result.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: KoreanPack-v0.7.0-scanner-result
+          path: /tmp/scanner-result.txt
