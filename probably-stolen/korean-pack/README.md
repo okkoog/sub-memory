@@ -1,8 +1,10 @@
-# Probably Stolen Korean Mod Localization Bridge
+# Probably Stolen Korean Mod Localization Bridge — v0.6.4-dev
 
-## Translation layout
+This branch is the development rewrite of the generic Korean localization bridge.
 
-Put target-mod translations under this mod:
+## Goal
+
+Translations live only in this mod. Target Workshop mods are not edited.
 
 ```
 Localization/
@@ -10,26 +12,42 @@ Localization/
     ko.csv
 ```
 
-Normal rows are native Probably Stolen localization keys:
+Adding a new translation should normally require only a new/updated `ko.csv`, not a DLL code change.
+
+## Supported CSV formats
+
+The bridge accepts the existing four-column corpus without migration:
+
+```csv
+key,source,ko,mode
+some_native_key,Original text,한국어,key
+,Hard-coded source,한국어,text
+some_native_key,Original text,한국어,both
+```
+
+It also accepts native two-column rows:
 
 ```csv
 some_key,한국어 번역
-formatted_key,가격: {0}
 ```
 
-The bridge injects these rows into the target mod's own `LoadedMod.Localization` after its native CSVs are loaded. Pack translations intentionally override the target mod's Korean row when the same key exists.
-
-## Hard-coded source strings
-
-For mods that use their own language helper instead of native localization, the same `ko.csv` can contain source-string rows:
+and explicit source rows:
 
 ```csv
 "@source:Auction Feed",경매 중계
-"@source:Choose a container.",컨테이너를 선택하세요.
 ```
 
-If the source text contains a comma, quote the whole first field. Double a quote inside a quoted field.
+Quoted commas, escaped quotes, and physical newlines inside quoted CSV fields are supported.
 
-The bridge only patches methods that look like localization helpers (for example `T`, `L`, `Text`, `Select`, `Translate`, `GetLocalized`) inside the target mod's own assemblies. It does not patch arbitrary constructors/static constructors, global UI text setters, global file APIs, or rewrite IL string constants.
+## Runtime strategy
 
-When a target mod already has `en.csv`, `zh.csv`, etc., normal key rows also build source aliases automatically by matching the same key across those native locale dictionaries.
+1. Inject Korean key translations into the target mod's own `LoadedMod.Localization`.
+2. Patch target-mod localization/display helper methods only after the assembly is identified as belonging to a translated mod.
+3. Translate only exact source-string matches from that target mod's catalog.
+4. Adapt persistent/display-data paths such as `GameItem` metadata, `ModHelper` registration calls, and notifications when the calling target mod is identifiable.
+
+The implementation deliberately does **not** patch constructors or static constructors, does not globally intercept TMP/TextMeshPro rendering, does not hook global File/embedded-resource reads, and does not use IL string rewriting/transpilers.
+
+## Status
+
+GitHub Actions compilation is verified. The existing 16-file / 12,740-row translation corpus parses successfully with the new reader. Actual in-game runtime validation is still required before this is treated as a completed release.
