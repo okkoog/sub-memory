@@ -1,65 +1,77 @@
-# Probably Stolen Korean Mod Localization Bridge — v0.6.8-dev
+# Probably Stolen Korean Mod Localization Bridge — v0.7.0-dev
 
 ## Goal
 
 Translations live only in this mod. Target Workshop mods are not edited.
 
+v0.7.0 uses only the game's official `ModHook.OnModAssetsLoaded(LoadedMod)` lifecycle as its entry point.
+
+## Localization layout
+
+The game itself loads this mod's CSV files first:
+
 ```
 Localization/
-  <WorkshopID-or-ManifestID>/
-    ko.csv
+  pskb__3828910575.csv
+  pskb__3828913695.csv
+  pskb__<WorkshopID-or-catalog-id>.csv
 ```
 
-Adding a new translation should normally require only a new/updated `ko.csv`, not a DLL code change.
+The bridge reads those already-loaded dictionaries from its own `LoadedMod.Localization`. It does **not** open files or walk directories at runtime.
 
-## Supported CSV formats
-
-The bridge accepts the existing four-column corpus without migration:
+Rows:
 
 ```csv
-key,source,ko,mode
-some_native_key,Original text,한국어,key
-,Hard-coded source,한국어,text
-some_native_key,Original text,한국어,both
+M|manifest.id,"1"
+W|3828910575,"1"
+K|native.localization.key,"한국어 번역"
+S64|<base64url encoded source string>,"한국어 번역"
 ```
 
-It also accepts native two-column rows and explicit `@source:` rows. Quoted commas, escaped quotes, and physical newlines inside quoted CSV fields are supported.
+Supported row types:
+- `M|`: manifest ID alias.
+- `W|`: Workshop ID alias.
+- `K|`: native localization key.
+- `K64|`: base64url native key when the key itself needs encoding.
+- `S|`: hard-coded source text when it contains no comma/newline.
+- `S64|`: base64url hard-coded source text; recommended for source-text translations.
+
+Adding support for another mod requires translation CSV data only; the DLL does not contain a hard-coded target-mod list.
 
 ## Runtime strategy
 
-1. Inject Korean key translations into the target mod's own `LoadedMod.Localization`.
-2. Before the game's official `LoadLocalization` phase, do **not** patch target-mod assemblies.
-3. Early translation through game-owned registration/model APIs identifies the caller by assembly path; local mods whose folder name differs from manifest ID may additionally use the game's current private `loadingMod` tuple for identification.
-4. That manifest-ID fallback is accepted only when the caller assembly is physically inside the current `loadingMod` folder.
-5. After `ModLoader.LoadLocalization` begins, target-mod localization/display helper methods may be patched, but only for the translated target assembly.
-6. Replace only exact source-string matches from that target mod's catalog.
-7. Identifier-like parameters such as IDs, keys, paths, resources, assets and prefab names are excluded.
-
-## Startup safety
-
-Before `ModLoader.LoadLocalization`, locale detection reads the game's persisted ES3 locale key instead of `LocalizationSettings.SelectedLocale`.
-
-After the official localization phase begins, the bridge may use the game's selected locale normally.
+1. `OnEnable` subscribes to `ModHook.OnModAssetsLoaded`.
+2. When this Korean pack receives its own assets-loaded event, it builds catalogs only from its already-loaded `LoadedMod.Localization`.
+3. Target mods are identified only from the `LoadedMod` passed by the game: `Manifest.ID`, `WorkshopId`, or `ShadowedWorkshopId`.
+4. Native key translations are merged into the target's `LoadedMod.Localization["ko"]` and `["ko-KR"]`.
+5. For hard-coded text, only the target's own `LoadedMod.Assembly` is inspected after the official assets-loaded event.
+6. Candidate display/localizer methods are Harmony-patched only in that target assembly, and replacement occurs only on exact source-string matches.
 
 ## Deliberately excluded
 
-The rewrite does **not**:
-
+v0.7.0 does **not**:
+- reference, reflect on, or Harmony-patch `ModLoader`,
+- use `loadingMod`,
+- read or enumerate runtime files/directories,
+- use `AssemblyLoad` interception,
 - patch constructors or static constructors,
 - use IL string rewriting/transpilers,
-- subscribe to `AssemblyLoad` to pre-patch target mods,
-- globally intercept TMP/TextMeshPro rendering,
-- hook global File reads,
-- hook embedded-resource reads.
+- globally patch TMP/TextMeshPro, game UI, File, or embedded-resource APIs.
+
+## Permissions
+
+The manifest declares only:
+- `reflection-external`
+- `dynamic-code`
+
+There is no `files` capability.
 
 ## Verification status
 
-- GitHub Actions compile: **passed** for v0.6.8.
-- Build metadata note: repeated builds are stable within one job, but different GitHub Actions runs can still produce different PE metadata. The distributed test ZIP therefore uses the exact DLL snapshot committed on the development branch.
-- Existing translation corpus: **16 CSV files / 12,740 rows**.
-- CSV parse errors: **0**.
-- Existing translation CSV hashes compared with v0.5.44 package: **all 16 identical**.
-- Representative DLL static audit performed for CorpPresence, Proficiency, ItemStorage, PCExpansion and GameCardPK.
-- Actual in-game runtime validation: **not yet completed**.
+- GitHub Actions compile: passed.
+- Existing translation corpus converted into 16 direct Localization CSV files.
+- Runtime catalog rows: 12,804 total = 32 aliases + 495 native keys + 12,277 source mappings.
+- Converted CSV parse errors: 0.
+- Actual in-game runtime validation: not yet completed.
 
-Do not treat this development build as a completed release until the in-game tests pass.
+Do not treat this development build as a completed release until in-game tests pass.
