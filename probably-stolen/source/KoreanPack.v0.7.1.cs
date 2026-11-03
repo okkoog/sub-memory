@@ -599,27 +599,24 @@ namespace ProbablyStolenKoreanPack
 
                     try
                     {
-                        // Exact-source replacement makes it safe to cover every string
-                        // producer in the target assembly. Identifiers are never rewritten
-                        // unless the catalog explicitly contains that exact runtime value.
-                        if (method.ReturnType == typeof(string))
+                        // Keep the original v0.7.0 narrow string boundary:
+                        // localizers and display-named string producers only.
+                        if (LooksLikeVisibleStringProducer(method))
                             PatchDynamic(method, null,
                                 nameof(SafeStringResultPostfix), "string-result");
 
-                        if (HasStringArguments(method))
+                        if (HasVisibleStringArguments(method))
                             PatchDynamic(method,
-                                nameof(SafeStringArgsPrefix), null, "string-args");
+                                nameof(SafeVisibleStringArgsPrefix), null, "visible-string-args");
 
-                        // Temporarily translate visible fields on mod-owned config/data
-                        // arguments while the target method copies them into game objects.
-                        // The original config is restored in the paired postfix.
-                        if (HasObjectArguments(method))
-                        {
-                            PatchDynamic(method,
-                                nameof(SafeObjectArgsPrefix), null, "object-args-prefix");
+                        bool displayCarrierMethod = LooksLikeDisplayCarrierMethod(method);
+
+                        // For display-oriented target methods, inspect only carrier
+                        // arguments after the method has written them. Do not mutate
+                        // the target mod's configuration objects before execution.
+                        if (displayCarrierMethod && HasObjectArguments(method))
                             PatchDynamic(method, null,
-                                nameof(SafeObjectArgsPostfix), "object-args-postfix");
-                        }
+                                nameof(SafeObjectArgsPostfix), "display-object-args");
 
                         // Factories such as CreateCard/Create/CreateSkill return GameItem
                         // after assigning name/description directly inside the method.
@@ -627,10 +624,10 @@ namespace ProbablyStolenKoreanPack
                             PatchDynamic(method, null,
                                 nameof(SafeGameItemResultPostfix), "gameitem-result");
 
-                        // Display builders often keep created buttons/labels in static
-                        // dictionaries. Scan only the declaring target type after a
-                        // display-like method has run; this never touches unrelated mods.
-                        if (LooksLikeDisplayCarrierMethod(method))
+                        // UI builders may retain created buttons/labels in static
+                        // dictionaries. Inspect only the declaring target type after
+                        // display-oriented methods; unrelated assemblies are untouched.
+                        if (displayCarrierMethod)
                             PatchDynamic(method, null,
                                 nameof(SafeTargetStaticStatePostfix), "static-display-state");
                     }
