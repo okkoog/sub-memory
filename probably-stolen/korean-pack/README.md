@@ -1,6 +1,4 @@
-# Probably Stolen Korean Mod Localization Bridge — v0.6.6-dev
-
-This branch contains the current development rewrite of the generic Korean localization bridge.
+# Probably Stolen Korean Mod Localization Bridge — v0.6.8-dev
 
 ## Goal
 
@@ -16,7 +14,7 @@ Adding a new translation should normally require only a new/updated `ko.csv`, no
 
 ## Supported CSV formats
 
-Existing four-column translation files are supported without migration:
+The bridge accepts the existing four-column corpus without migration:
 
 ```csv
 key,source,ko,mode
@@ -25,33 +23,23 @@ some_native_key,Original text,한국어,key
 some_native_key,Original text,한국어,both
 ```
 
-Native two-column rows are also accepted:
-
-```csv
-some_key,한국어 번역
-```
-
-Explicit source rows are also accepted:
-
-```csv
-"@source:Auction Feed",경매 중계
-```
-
-Quoted commas, escaped quotes, and physical newlines inside quoted CSV fields are supported.
+It also accepts native two-column rows and explicit `@source:` rows. Quoted commas, escaped quotes, and physical newlines inside quoted CSV fields are supported.
 
 ## Runtime strategy
 
 1. Inject Korean key translations into the target mod's own `LoadedMod.Localization`.
-2. Before the game's official `LoadLocalization` phase, do not patch target-mod assemblies. Early translation through game-owned registration/model APIs identifies the caller by assembly path only.
-3. After `ModLoader.LoadLocalization` begins, target-mod localization/display helper methods may be patched, but only for translated mod assemblies.
-4. Replace only exact source-string matches from that target mod's catalog.
-5. Ignore identifier-like string parameters such as IDs, keys, paths, resources, assets, prefab names and similar technical strings.
+2. Before the game's official `LoadLocalization` phase, do **not** patch target-mod assemblies.
+3. Early translation through game-owned registration/model APIs identifies the caller by assembly path; local mods whose folder name differs from manifest ID may additionally use the game's current private `loadingMod` tuple for identification.
+4. That manifest-ID fallback is accepted only when the caller assembly is physically inside the current `loadingMod` folder.
+5. After `ModLoader.LoadLocalization` begins, target-mod localization/display helper methods may be patched, but only for the translated target assembly.
+6. Replace only exact source-string matches from that target mod's catalog.
+7. Identifier-like parameters such as IDs, keys, paths, resources, assets and prefab names are excluded.
 
 ## Startup safety
 
 Before `ModLoader.LoadLocalization`, locale detection reads the game's persisted ES3 locale key instead of `LocalizationSettings.SelectedLocale`.
 
-This avoids touching Unity Localization/Addressables during another mod's `OnEnable` startup window. After the official localization phase begins, the bridge may use the game's current selected locale normally.
+After the official localization phase begins, the bridge may use the game's selected locale normally.
 
 ## Deliberately excluded
 
@@ -59,17 +47,19 @@ The rewrite does **not**:
 
 - patch constructors or static constructors,
 - use IL string rewriting/transpilers,
+- subscribe to `AssemblyLoad` to pre-patch target mods,
 - globally intercept TMP/TextMeshPro rendering,
 - hook global File reads,
-- hook embedded-resource reads,
-- patch target-mod assemblies from `AssemblyLoad` before the official localization lifecycle.
+- hook embedded-resource reads.
 
 ## Verification status
 
-- GitHub Actions compile: **passed** for v0.6.6.
+- GitHub Actions compile: **passed** for v0.6.8.
+- Build reproducibility: source revision is excluded from AssemblyInformationalVersion.
 - Existing translation corpus: **16 CSV files / 12,740 rows**.
 - CSV parse errors: **0**.
 - Existing translation CSV hashes compared with v0.5.44 package: **all 16 identical**.
+- Representative DLL static audit performed for CorpPresence, Proficiency, ItemStorage, PCExpansion and GameCardPK.
 - Actual in-game runtime validation: **not yet completed**.
 
 Do not treat this development build as a completed release until the in-game tests pass.
