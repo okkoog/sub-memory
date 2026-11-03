@@ -14,6 +14,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using HarmonyLib;
 using UnityEngine;
 
@@ -40,6 +41,18 @@ namespace ProbablyStolenKoreanPack
                 new Dictionary<string, string>(StringComparer.Ordinal);
             internal readonly HashSet<string> AmbiguousDerivedSources =
                 new HashSet<string>(StringComparer.Ordinal);
+            internal readonly List<TemplateRule> ExplicitTemplates =
+                new List<TemplateRule>();
+            internal readonly List<TemplateRule> DerivedTemplates =
+                new List<TemplateRule>();
+        }
+
+        private sealed class TemplateRule
+        {
+            internal string Source;
+            internal string Korean;
+            internal string[] Literals;
+            internal string[] Tokens;
         }
 
         private sealed class SavedValue
@@ -292,7 +305,40 @@ namespace ProbablyStolenKoreanPack
 
         private static void RegisterCatalogAliases(Catalog catalog)
         {
-            foreach (string alias in catalog.Aliases)
+            if (catalog == null) return;
+
+            string[] incomingAliases = catalog.Aliases.ToArray();
+            Catalog target = null;
+
+            foreach (string alias in incomingAliases)
+            {
+                if (string.IsNullOrWhiteSpace(alias) ||
+                    AmbiguousAliases.Contains(alias))
+                    continue;
+
+                Catalog existing;
+                if (!Catalogs.TryGetValue(alias, out existing))
+                    continue;
+
+                if (target == null)
+                    target = existing;
+                else if (!ReferenceEquals(target, existing))
+                {
+                    // One supplement accidentally points at two already-distinct
+                    // targets. Keep the targets separate and ignore that alias.
+                    Catalogs.Remove(alias);
+                    AmbiguousAliases.Add(alias);
+                    Debug.LogWarning("[KoreanPack] Ambiguous catalog alias ignored: " + alias);
+                }
+            }
+
+            if (target != null && !ReferenceEquals(target, catalog))
+            {
+                MergeCatalog(target, catalog);
+                catalog = target;
+            }
+
+            foreach (string alias in catalog.Aliases.ToArray())
             {
                 if (string.IsNullOrWhiteSpace(alias) ||
                     AmbiguousAliases.Contains(alias))
@@ -312,6 +358,29 @@ namespace ProbablyStolenKoreanPack
                     Debug.LogWarning("[KoreanPack] Ambiguous catalog alias ignored: " + alias);
                 }
             }
+        }
+
+        private static void MergeCatalog(Catalog target, Catalog supplement)
+        {
+            if (target == null || supplement == null ||
+                ReferenceEquals(target, supplement))
+                return;
+
+            foreach (string alias in supplement.Aliases)
+                target.Aliases.Add(alias);
+
+            foreach (KeyValuePair<string, string> pair in supplement.ByKey)
+            {
+                string existing;
+                if (!target.ByKey.TryGetValue(pair.Key, out existing))
+                    target.ByKey[pair.Key] = pair.Value;
+                else if (!string.Equals(existing, pair.Value, StringComparison.Ordinal))
+                    Debug.LogWarning("[KoreanPack] Supplemental key conflict kept existing: " +
+                        pair.Key);
+            }
+
+            foreach (KeyValuePair<string, string> pair in supplement.ExplicitBySource)
+                AddExplicitSource(target, pair.Key, pair.Value);
         }
 
         private static string DecodeBase64Url(string encoded)
@@ -449,6 +518,7 @@ namespace ProbablyStolenKoreanPack
         {
             catalog.DerivedBySource.Clear();
             catalog.AmbiguousDerivedSources.Clear();
+            catalog.DerivedTemplates.Clear();
 
             if (loaded.Localization == null)
                 return;
@@ -483,6 +553,7 @@ namespace ProbablyStolenKoreanPack
             if (!catalog.ExplicitBySource.TryGetValue(source, out existing))
             {
                 catalog.ExplicitBySource[source] = korean;
+                AddTemplateRule(catalog.ExplicitTemplates, source, korean);
                 return;
             }
 
@@ -503,6 +574,7 @@ namespace ProbablyStolenKoreanPack
             if (!catalog.DerivedBySource.TryGetValue(source, out existing))
             {
                 catalog.DerivedBySource[source] = korean;
+                AddTemplateRule(catalog.DerivedTemplates, source, korean);
                 return;
             }
 
@@ -523,7 +595,124 @@ namespace ProbablyStolenKoreanPack
             if (catalog.ExplicitBySource.TryGetValue(source, out translated))
                 return true;
 
-            return catalog.DerivedBySource.TryGetValue(source, out translated);
+            if (TryTranslateTemplate(catalog.ExplicitTemplates, source, out translated))
+                return true;
+
+            if (catalog.DerivedBySource.TryGetValue(source, out translated))
+                return true;
+
+            return TryTranslateTemplate(catalog.DerivedTemplates, source, out translated);
+        }
+
+        private static void AddTemplateRule(List<TemplateRule> rules,
+            string source, string korean)
+        {
+            if (rules == null || string.IsNullOrEmpty(source) ||
+                string.IsNullOrEmpty(korean))
+                return;
+
+            MatchCollection matches = Regex.Matches(source,
+                @"\{\{[^{}]+\}\}|\{\d+\}");
+            if (matches.Count == 0)
+                return;
+
+            var literals = new List<string>();
+            var tokens = new List<string>();
+            int position = 0;
+
+            foreach (Match match in matches)
+            {
+                literals.Add(source.Substring(position, match.Index - position));
+                tokens.Add(match.Value);
+                position = match.Index + match.Length;
+            }
+            literals.Add(source.Substring(position));
+
+            // Consecutive placeholders have no stable boundary at runtime.
+            for (int i = 1; i < literals.Count - 1; i++)
+                if (literals[i].Length == 0)
+                    return;
+
+            rules.Add(new TemplateRule
+            {
+                Source = source,
+                Korean = korean,
+                Literals = literals.ToArray(),
+                Tokens = tokens.ToArray()
+            });
+        }
+
+        private static bool TryTranslateTemplate(List<TemplateRule> rules,
+            string source, out string translated)
+        {
+            translated = null;
+            if (rules == null || string.IsNullOrEmpty(source))
+                return false;
+
+            foreach (TemplateRule rule in rules)
+            {
+                if (rule == null || rule.Literals == null ||
+                    rule.Tokens == null || rule.Literals.Length != rule.Tokens.Length + 1)
+                    continue;
+
+                string first = rule.Literals[0] ?? string.Empty;
+                if (!source.StartsWith(first, StringComparison.Ordinal))
+                    continue;
+
+                int position = first.Length;
+                var captures = new Dictionary<string, string>(StringComparer.Ordinal);
+                bool matched = true;
+
+                for (int i = 0; i < rule.Tokens.Length; i++)
+                {
+                    string nextLiteral = rule.Literals[i + 1] ?? string.Empty;
+                    int next;
+
+                    if (nextLiteral.Length == 0)
+                    {
+                        if (i != rule.Tokens.Length - 1)
+                        {
+                            matched = false;
+                            break;
+                        }
+                        next = source.Length;
+                    }
+                    else
+                    {
+                        next = source.IndexOf(nextLiteral, position,
+                            StringComparison.Ordinal);
+                        if (next < 0)
+                        {
+                            matched = false;
+                            break;
+                        }
+                    }
+
+                    string captured = source.Substring(position, next - position);
+                    string previous;
+                    if (captures.TryGetValue(rule.Tokens[i], out previous) &&
+                        !string.Equals(previous, captured, StringComparison.Ordinal))
+                    {
+                        matched = false;
+                        break;
+                    }
+
+                    captures[rule.Tokens[i]] = captured;
+                    position = next + nextLiteral.Length;
+                }
+
+                if (!matched || position != source.Length)
+                    continue;
+
+                string result = rule.Korean;
+                foreach (KeyValuePair<string, string> capture in captures)
+                    result = result.Replace(capture.Key, capture.Value);
+
+                translated = result;
+                return !string.Equals(source, translated, StringComparison.Ordinal);
+            }
+
+            return false;
         }
 
         private static void PatchTargetAssembly(LoadedMod loaded, Catalog catalog)
