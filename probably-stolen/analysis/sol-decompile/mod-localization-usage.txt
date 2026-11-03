@@ -1,45 +1,3 @@
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:9:using UnityEngine.Localization;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:10:using UnityEngine.Localization.Settings;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:81:		return (manifest == null) ? key : ModHelper.GetLocalized(manifest.ID, key, args);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:84:	private static void AssetsLoaded(LoadedMod mod)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:91:				LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:97:	private static void LocaleChanged(Locale locale)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:113:			LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:124:		private readonly WeakReference<GameItem> machine;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:164:		internal Binding(GameItem machine, PixelWindow window, MachineryPanelRow row, MachineryPanel panel, MachineryRadioButton toggle)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:166:			this.machine = new WeakReference<GameItem>(machine);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:173:		internal bool TryGetMachine(out GameItem value)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:205:	private static readonly Action<GameItem, GameInventory, SlotMarker> AfterCycleHandler = AfterCycle;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:211:	private readonly List<WeakReference<GameItem>> cycleHooks = new List<WeakReference<GameItem>>();
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:267:			LoadedMod val = ModLoader.Mods.Find((LoadedMod m) => m.Manifest.ID == modId);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:275:	internal void Install(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:312:			List<GameItem> list = instance.FindAllItem(true);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:319:				GameItem val = list[i];
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:348:	private static void AfterCycle(GameItem machine, GameInventory parentInventory, SlotMarker slot)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:360:	internal static bool TryReplant(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:378:	private static bool TryReplantNow(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:406:		GameItem val = FindSeed(outputSlot);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:467:	private static GameItem FindSeed(GameGridInventory output)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:469:		List<GameItem> childItems = ((GameInventory)output).childItems;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:472:			GameItem val = childItems[i];
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:481:	internal static bool IsEnabledFor(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:486:	private static void SetEnabled(GameItem machine, bool on)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:494:	private void ToggleChanged(GameItem machine, bool on)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:515:	private static bool IsHydroponic(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:520:	private void EnsureCycleHook(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:526:		Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)machine).onCycleEndSlotItemFunc;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:534:			((GameItemFunc)machine).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(onCycleEndSlotItemFunc, AfterCycleHandler);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:536:		cycleHooks.Add(new WeakReference<GameItem>(machine));
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:539:	private bool HasCycleHookRecord(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:555:	private static bool HasAfterCycle(Action<GameItem, GameInventory, SlotMarker> callback)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:580:					Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)target).onCycleEndSlotItemFunc;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:583:						((GameItemFunc)target).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Remove(onCycleEndSlotItemFunc, AfterCycleHandler);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:595:	private void EnsureUi(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:637:		WeakReference<GameItem> machineRef = new WeakReference<GameItem>(machine);
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:661:	private Binding FindBinding(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:691:	private void SyncMachine(GameItem machine)
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:767:					GameItem value4;
-probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:822:	private static void Postfix(GameItem __result)
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:61:			internal GameItem Item;
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:155:						foreach (GameItem item in instance.FindAllItem(true))
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:242:		internal static int Apply(GameItemElement element)
@@ -321,7 +279,6 @@ probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10619:			strin
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:10622:				text = ((IsChinese(CurrentLocaleCode) || !English.TryGetValue(key, out var value)) ? fallback : value);
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:12561:			Add(items, english, ContainerCategory.Contraband, "signal_jammer", 2100, 1, 2, 2, "black_decoder", "便携信号屏蔽器", "来源不明的信号屏蔽设备，属于受管制货物。", "Portable Signal Jammer", "An unregistered signal-blocking device traded as controlled goods.", "junk", "MODULE");
 probably-stolen/analysis/sol-decompile/mods/XIAOWONightAuction.cs:12563:			Add(items, english, ContainerCategory.Contraband, "outlaw_suppressor", 4800, 1, 3, 1, "silent_bolt", "无登记消音组件", "没有制造编号的受管制枪械组件。", "Unregistered Suppressor Assembly", "Controlled firearm components without a manufacturer serial number.", "junk", "WEAPON");
-probably-stolen/analysis/sol-decompile/mods/ReputationPop.cs:76:			return ModHelper.GetLocalized("reputation_pop", key, args);
 probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:17:using UnityEngine.Localization;
 probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:18:using UnityEngine.Localization.Settings;
 probably-stolen/analysis/sol-decompile/mods/BrewingExpansion.cs:19:using UnityEngine.Localization.Tables;
@@ -1265,3 +1222,46 @@ probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3088:			fo
 probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3134:		private static void Postfix(List<GameItem> __result)
 probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3142:		private static void Postfix(List<GameItem> __result)
 probably-stolen/analysis/sol-decompile/mods/PawnshopBillboards.Mod.cs:3294:		internal static void Begin(GameItem original, GameInventory source, GameInventory destination)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:9:using UnityEngine.Localization;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:10:using UnityEngine.Localization.Settings;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:81:		return (manifest == null) ? key : ModHelper.GetLocalized(manifest.ID, key, args);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:84:	private static void AssetsLoaded(LoadedMod mod)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:91:				LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:97:	private static void LocaleChanged(Locale locale)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:113:			LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:124:		private readonly WeakReference<GameItem> machine;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:164:		internal Binding(GameItem machine, PixelWindow window, MachineryPanelRow row, MachineryPanel panel, MachineryRadioButton toggle)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:166:			this.machine = new WeakReference<GameItem>(machine);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:173:		internal bool TryGetMachine(out GameItem value)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:205:	private static readonly Action<GameItem, GameInventory, SlotMarker> AfterCycleHandler = AfterCycle;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:211:	private readonly List<WeakReference<GameItem>> cycleHooks = new List<WeakReference<GameItem>>();
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:267:			LoadedMod val = ModLoader.Mods.Find((LoadedMod m) => m.Manifest.ID == modId);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:275:	internal void Install(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:312:			List<GameItem> list = instance.FindAllItem(true);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:319:				GameItem val = list[i];
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:348:	private static void AfterCycle(GameItem machine, GameInventory parentInventory, SlotMarker slot)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:360:	internal static bool TryReplant(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:378:	private static bool TryReplantNow(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:406:		GameItem val = FindSeed(outputSlot);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:467:	private static GameItem FindSeed(GameGridInventory output)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:469:		List<GameItem> childItems = ((GameInventory)output).childItems;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:472:			GameItem val = childItems[i];
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:481:	internal static bool IsEnabledFor(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:486:	private static void SetEnabled(GameItem machine, bool on)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:494:	private void ToggleChanged(GameItem machine, bool on)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:515:	private static bool IsHydroponic(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:520:	private void EnsureCycleHook(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:526:		Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)machine).onCycleEndSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:534:			((GameItemFunc)machine).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Combine(onCycleEndSlotItemFunc, AfterCycleHandler);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:536:		cycleHooks.Add(new WeakReference<GameItem>(machine));
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:539:	private bool HasCycleHookRecord(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:555:	private static bool HasAfterCycle(Action<GameItem, GameInventory, SlotMarker> callback)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:580:					Action<GameItem, GameInventory, SlotMarker> onCycleEndSlotItemFunc = ((GameItemFunc)target).onCycleEndSlotItemFunc;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:583:						((GameItemFunc)target).onCycleEndSlotItemFunc = (Action<GameItem, GameInventory, SlotMarker>)Delegate.Remove(onCycleEndSlotItemFunc, AfterCycleHandler);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:595:	private void EnsureUi(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:637:		WeakReference<GameItem> machineRef = new WeakReference<GameItem>(machine);
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:661:	private Binding FindBinding(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:691:	private void SyncMachine(GameItem machine)
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:767:					GameItem value4;
+probably-stolen/analysis/sol-decompile/mods/HydroponicAutoReplant.cs:822:	private static void Postfix(GameItem __result)
+probably-stolen/analysis/sol-decompile/mods/ReputationPop.cs:76:			return ModHelper.GetLocalized("reputation_pop", key, args);
