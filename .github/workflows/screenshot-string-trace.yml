@@ -1,0 +1,60 @@
+name: Probably Stolen screenshot string trace
+
+on:
+  push:
+    paths:
+      - ".github/workflows/screenshot-string-trace.yml"
+      - "probably-stolen/tools/trace_screenshot_strings.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/tools/trace_screenshot_strings.py
+            probably-stolen/mods/3832048841/GameCardPK.dll
+            probably-stolen/mods/3831837821/MidnightPawn.dll
+            probably-stolen/mods/3829429358/XIAOWONightAuction.dll
+            probably-stolen/mods/3829085054/ItemStorage.dll
+            probably-stolen/mods/3829730904/BrewingExpansion.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$RUNNER_TEMP/trace"
+          mkdir -p "$ROOT"
+          decomp(){ id="$1"; dll="$2"; mkdir -p "$ROOT/$id"; "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$ROOT/$id" "probably-stolen/mods/$id/$dll"; }
+          decomp 3832048841 GameCardPK.dll
+          decomp 3831837821 MidnightPawn.dll
+          decomp 3829429358 XIAOWONightAuction.dll
+          decomp 3829085054 ItemStorage.dll
+          decomp 3829730904 BrewingExpansion.dll
+      - name: Trace strings
+        env:
+          DECOMPILED_ROOT: ${{ runner.temp }}/trace
+        run: python3 probably-stolen/tools/trace_screenshot_strings.py
+      - name: Commit trace
+        shell: bash
+        run: |
+          git add --sparse -- probably-stolen/analysis/screenshot-string-trace.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Trace in-game untranslated screenshot strings"
+          git pull --rebase origin main
+          git push origin HEAD:main
