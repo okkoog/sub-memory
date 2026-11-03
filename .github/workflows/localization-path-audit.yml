@@ -1,0 +1,65 @@
+name: Probably Stolen localization path audit
+
+on:
+  push:
+    paths:
+      - ".github/workflows/localization-path-audit.yml"
+      - "probably-stolen/tools/analyze_localization_paths.py"
+      - "probably-stolen/mods/3832048841/**"
+      - "probably-stolen/mods/3831837821/**"
+      - "probably-stolen/mods/3829429358/**"
+      - "probably-stolen/mods/3829085054/**"
+      - "probably-stolen/mods/3829730904/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        shell: bash
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile target mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$RUNNER_TEMP/loc-decompiled"
+          mkdir -p "$ROOT"
+          decomp () {
+            id="$1"; dll="$2"
+            mkdir -p "$ROOT/$id"
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$ROOT/$id" "probably-stolen/mods/$id/$dll"
+          }
+          decomp 3832048841 GameCardPK.dll
+          decomp 3831837821 MidnightPawn.dll
+          decomp 3829429358 XIAOWONightAuction.dll
+          decomp 3829085054 ItemStorage.dll
+          decomp 3829730904 BrewingExpansion.dll
+      - name: Analyze localization paths
+        shell: bash
+        env:
+          DECOMPILED_ROOT: ${{ runner.temp }}/loc-decompiled
+        run: python3 probably-stolen/tools/analyze_localization_paths.py
+      - name: Commit audit report
+        shell: bash
+        run: |
+          git add -- probably-stolen/analysis/localization-path-audit.md
+          if git diff --cached --quiet; then
+            echo "Audit unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Audit mod localization paths"
+          git pull --rebase origin main
+          git push origin HEAD:main
