@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  正式版（Mono）官方 ModLoader 的清单文件 —— 手写维护，构建与部署原样使用。
+
+  ★ ID 必须与代码里的 ItemConfigInjector.ModId 一致（game_card_pk）：
+    它是掉落表 sourceModId、贴图 key 前缀（game_card_pk:<file>）、mod data 命名空间、
+    以及 ModHelper 所有 API 第一个参数的唯一来源。
+  ★ ModVersion 是发布版本真源（package.ps1 从这里读），
+    并且必须与 src/Core.cs 的 AssemblyVersion / AssemblyFileVersion 一致。
+  ★ Assemblies 必须列出 mod 目录里的每一个 dll；加载器只加载清单里列出的程序集。
+  ★ Name / Author / Description 可以写中文：UTF-8 即可，模组菜单能正常显示中文，
+    Description 里的换行和空行也会保留（实证：创意工坊「深空串门」3828909239 的清单就是
+    中文名 + 多行段落）。之前「必须 ASCII」的结论是错的。
+  ★ Name 用中文（2026-11-02 用户定：`集换式卡牌 GameCardPK`）。代价：ModLog 每条日志前缀
+    `[Name]`，控制台的缺字告警会随日志行数成比例变多 —— 那是控制台字体，玩家界面不受影响。
+  ★ 刷屏的 "The character with Unicode value \uXXXX was not found ..." 来自 **F8 控制台**：
+    它用 OfficeCodePro-Regular SDF（纯拉丁字体），模组自己打的中文日志会每字告警一条，
+    跟清单和模组菜单都无关，也影响不了玩家看到的界面。
+  ★ <Capabilities> 目前为空。加新功能后跑一次 `mod-scan game_card_pk`，
+    确认 detected 仍为空再发布。
+-->
+<Manifest>
+  <ID>game_card_pk</ID>
+  <Name>集换式卡牌 GameCardPK</Name>
+  <Author>Dongling</Author>
+  <ModVersion>0.9.9</ModVersion>
+  <Description>在王尔德处解锁集换式卡牌玩法：
+收购各种卡包，有概率获得多种不同效果的闪卡、版本。
+你可以通过切技能、贴纸等强化卡牌，
+也可以与摆上柜台的游戏卡对战。
+
+若有 bug，欢迎前往 bilibili「冬灵水瓶」提出反馈。</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>GameCardPK.dll</Assembly>
+  </Assemblies>
+  <Capabilities />
+</Manifest>
