@@ -125,6 +125,12 @@ with tempfile.TemporaryDirectory() as td:
     print("KOREAN_TRANSLATION_STATUS",result.returncode,result.stderr[-600:])
     if result.returncode == 0:
         for p in sorted(Path(td).rglob("*.cs")):
+            if p.name in ["GetEntryPatch.cs", "ModEntry.cs"]:
+                print("START_SOURCE",p.name)
+                for i,line in enumerate(p.read_text(errors="replace").splitlines()[:180],1):
+                    print(f"{p.name}:{i}: {line[:220]}")
+                print("END_SOURCE",p.name)
+        for p in sorted(Path(td).rglob("*.cs")):
             lines = p.read_text(errors="replace").splitlines()
             hits=[i for i,l in enumerate(lines) if any(k in l for k in ["OnEnable","SelectedLocale","StringDatabase","SharedTableData","AddLocale","LocaleIdentifier","InitializationOperation","GetTableAsync"])]
             for i in hits[:20]:
