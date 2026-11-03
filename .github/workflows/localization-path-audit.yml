@@ -62,7 +62,7 @@ jobs:
       - name: Commit audit report
         shell: bash
         run: |
-          git add -- probably-stolen/analysis/localization-path-audit.md
+          git add --sparse -- probably-stolen/analysis/localization-path-audit.md
           if git diff --cached --quiet; then
             echo "Audit unchanged"
             exit 0
