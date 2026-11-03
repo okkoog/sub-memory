@@ -58,3 +58,29 @@ SHA256: `7e34d05ad2269a0a0403fd5dcd3cea78f8b629af47f956a8366a807eea4ff668`
 **미확정:** 실제 게임에서 `Mechanic`의 `mech_condition_pure_water`가 왜 누락되는가. 다른 모드 및 한국어팩과의 공통 Harmony 패치 충돌 메서드. 0.9.4가 사용자 확인 충돌을 해결했는가. 정적 분석만으로 결론 불가.
 
 이 문서는 CorpPresence 단독 분석이며, 다른 모드의 DLL/코드는 대조하지 않았다.
+
+
+## 6. 게임 본체 DLL 대조 후 확정한 조기 초기화 결함
+
+2026-11-04: `Managed/Assembly-CSharp.dll`과 `Managed/Unity.Localization.dll`을 추가로 ILSpy 역컴파일하여 Corp 코드 경로를 확인함.
+
+- `ModLoader.Awake()`: `LoadAllMods()` → `LoadWorkshopMods()` → `ApplySavedOrder()` → `ValidatePrerequisites()` → `LoadModAssets()`.
+- `ModLoader.LoadModDll()`: 모드 `Init()`과 `OnEnable()`을 **LoadModAssets 이전**에 호출.
+- `CorpPresence.Main.OnEnable()`: `_runtime.Start(EnableCore)`에 성공하면 **즉시** `_bootstrap.Tick()` 실행.
+- `ResourceBootstrap.Tick()` → `GameResources.Poll()` → `LocalizationSettings.InitializationOperation`.
+- 실제 게임의 `Unity.Localization.dll`에서 `InitializationOperation` getter는 `Instance.GetInitializationOperation()`을 호출하고, 기존 핸들이 없으면 **`ResourceManager.StartOperation(...)`으로 새 로컬라이제이션 초기화 작업을 시작**함. 따라서 단순한 준비 상태 조회가 아니라 초기화 자체를 앞당기는 호출임.
+- `GameResources.Poll()`은 그 뒤 선택 언어의 `Mechanic` 테이블을 로드하고 `mech_condition_pure_water`의 존재를 검증.
+- `ResourceBootstrap.Tick()`은 폴링 중 예외가 나면 `Detach` + abort 콜백을 실행하고 **예외를 다시 던짐**. 일시적인 테이블/키 문제에서도 자체적인 재시도가 없음.
+- 게임 `WaterFeatureHelper`의 첫 정적 필드가 `LocHelper.GetLocalizedMechanic("mech_condition_pure_water")` 호출. 다른 모드의 Harmony 패치가 이 타입의 정적 초기화를 조기에 실행하면 게임 쪽은 동기 `GetLocalizedString`을 호출하여 아직 초기화되지 않은 로컬라이제이션 작업과 충돌할 수 있음.
+
+**확정한 설계상 원인:** CorpPresence가 **모드 자산 로딩 전** Unity Localization 초기화 작업을 시작시키는 코드 경로가 존재하며, 테이블 키 검사가 일시적으로 실패해도 해당 모드 로딩을 예외로 종료하는 취약성이 있음. 앞서 추측한 수준의 단순 `SelectedLocale` 접근 문제가 아니라, 실제 Unity DLL에서 초기화 작업 생성까지 확인함.
+
+**여전히 구별해야 할 항목:** 사용자 실험의 세 조합에서 충돌이 모두 해당 순서 문제로 *실제로 발생했는지*는 실행 중 CorpPresence가 로드된 로그 없이는 확정할 수 없음. 기존 `Player(1).log`의 CorpPresence 0.9.1은 로드 거부돼 해당 오류와 인과관계가 없음.
+
+### 필요한 해결 변경
+
+1. `OnEnable()`에서 `_bootstrap.Tick()` 즉시 실행 제거; `ResourceBootstrap`의 초기 준비 검사를 **모드 자산 로딩이 끝난 이후** 시작.
+2. `OnModItemDirectoryInit` 콜백에서도 조기 `Poll()` 진입을 허용하지 않도록 이벤트 순서 및 별도의 시작 플래그 보장.
+3. `GameResources.Poll()`의 `Mechanic` 테이블 키 검사를 선택 로케일의 단일 키를 기준으로 무조건 실패시키지 않도록 기본 로케일 검증/fallback 또는 복구 가능한 retry 처리.
+4. `Poll()`의 초기화 실패 시 `ResourceBootstrap.Tick()`의 무조건 abort/rethrow 경로를 분리하여 영구적인 실패에서만 abort.
+5. 원본 CorpPresence DLL은 변경하지 않은 상태임. 변경 시에는 별도의 명확한 테스트 후보로 만들고 게임 내 충돌 조합을 재현해 효과를 검증할 필요가 있음.
