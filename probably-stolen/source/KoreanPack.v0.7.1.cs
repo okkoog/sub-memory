@@ -821,6 +821,14 @@ namespace ProbablyStolenKoreanPack
                             PatchDynamic(method, null,
                                 nameof(SafeStringResultPostfix), "string-result");
 
+                        // Some target localizers (notably CorpPresence L.T)
+                        // select whole string arrays such as tier/front-desk lines.
+                        // Keep this restricted to localizer-shaped methods only.
+                        if (method.ReturnType == typeof(string[]) &&
+                            LooksLikeLocalizer(method))
+                            PatchDynamic(method, null,
+                                nameof(SafeStringArrayResultPostfix), "string-array-result");
+
                         if (HasVisibleStringArguments(method))
                             PatchDynamic(method,
                                 nameof(SafeVisibleStringArgsPrefix), null, "visible-string-args");
@@ -1627,6 +1635,32 @@ namespace ProbablyStolenKoreanPack
                    name.Contains("textmesh") ||
                    name.EndsWith(".text", StringComparison.Ordinal) ||
                    name.Contains("uielement");
+        }
+
+        private static void SafeStringArrayResultPostfix(
+            MethodBase __originalMethod, ref string[] __result)
+        {
+            if (!_enabled || !IsKorean() ||
+                __originalMethod == null ||
+                __originalMethod.DeclaringType == null ||
+                __result == null || __result.Length == 0)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            for (int i = 0; i < __result.Length; i++)
+            {
+                string original = __result[i];
+                if (string.IsNullOrEmpty(original))
+                    continue;
+
+                string translated;
+                if (TryTranslateSource(catalog, original, out translated))
+                    __result[i] = translated;
+            }
         }
 
         private static void SafeStringResultPostfix(
