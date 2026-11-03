@@ -55,7 +55,7 @@ The rewrite does **not**:
 ## Verification status
 
 - GitHub Actions compile: **passed** for v0.6.8.
-- Build reproducibility: source revision is excluded from AssemblyInformationalVersion.
+- Build metadata note: repeated builds are stable within one job, but different GitHub Actions runs can still produce different PE metadata. The distributed test ZIP therefore uses the exact DLL snapshot committed on the development branch.
 - Existing translation corpus: **16 CSV files / 12,740 rows**.
 - CSV parse errors: **0**.
 - Existing translation CSV hashes compared with v0.5.44 package: **all 16 identical**.
