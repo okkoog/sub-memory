@@ -1,0 +1,21 @@
+name: KoreanPack v0.6.8 export committed DLL
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - '.github/workflows/probably-stolen-koreanpack-v068-export.yml'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-v0.6.8-committed
+          path: probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
