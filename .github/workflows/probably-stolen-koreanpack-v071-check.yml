@@ -27,6 +27,7 @@ jobs:
             probably-stolen/Managed/UnityEngine.CoreModule.dll
             probably-stolen/Managed/UnityEngine.IMGUIModule.dll
             probably-stolen/Managed/Unity.TextMeshPro.dll
+            probably-stolen/Managed/UnityEngine.UI.dll
             probably-stolen/Managed/DseCecil.dll
           sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
@@ -70,7 +71,7 @@ jobs:
                   object result = scan.Invoke(null, new object?[]
                   {
                       new string[] { dll },
-                      new string[] { "0Harmony", "netstandard", "Assembly-CSharp", "UnityEngine.CoreModule", "UnityEngine.IMGUIModule", "Unity.TextMeshPro" },
+                      new string[] { "0Harmony", "netstandard", "Assembly-CSharp", "UnityEngine.CoreModule", "UnityEngine.IMGUIModule", "Unity.TextMeshPro", "UnityEngine.UI" },
                       null,
                       false
                   })!;
