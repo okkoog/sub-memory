@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 BASE = Path(__file__).resolve().parents[1]
 dll = BASE / "mods" / "3828913695" / "CorpPresence.dll"
 srcdir = Path(os.environ.get("CORP_DECOMPILED", "/tmp/corp-decompiled"))
-out = BASE / "analysis" / "CorpPresence-0.9.4-static-audit.md"
+out = BASE / "analysis" / "CorpPresence-0.9.5-static-audit.md"
 out.parent.mkdir(parents=True, exist_ok=True)
 
 patterns = {
@@ -27,7 +27,7 @@ def escape(x):
 
 files = sorted(srcdir.rglob("*.cs"))
 lines = [
-    "# CorpPresence 0.9.4 — static ILSpy audit",
+    "# CorpPresence 0.9.5 — static ILSpy audit",
     "",
     f"- DLL: `{dll.as_posix()}`",
     f"- Size: {dll.stat().st_size} bytes",
@@ -87,7 +87,7 @@ for rel, regexes in focus.items():
     if len(selected) > 390:
         detail_lines.append(f"... {len(selected) - 390} further context lines not shown")
     detail_lines.append("```")
-extra = BASE / "analysis" / "CorpPresence-0.9.4-callsite-context.md"
+extra = BASE / "analysis" / "CorpPresence-0.9.5-callsite-context.md"
 extra.write_text("\n".join(detail_lines) + "\n", encoding="utf-8")
 print(f"CONTEXT_PATH={extra}")
 print(f"CONTEXT_BYTES={extra.stat().st_size}")
@@ -99,7 +99,7 @@ windows = {
     "CorpPresence/Runtime/ResourceBootstrap.cs": [(1, 85)],
     "CorpPresence/Runtime/ModRuntime.cs": [(1, 95)],
 }
-flow = ["# CorpPresence v0.9.4 — lifecycle exact line windows", "", "Reference excerpts from ILSpy (unexecuted)."]
+flow = ["# CorpPresence v0.9.5 — lifecycle exact line windows", "", "Reference excerpts from ILSpy (unexecuted)."]
 for name, spans in windows.items():
     p = srcdir / name
     flow.extend(["", f"## {name}", ""])
@@ -112,7 +112,7 @@ for name, spans in windows.items():
         for line_number in range(start, min(end, len(lns)) + 1):
             flow.append(escape(f"{line_number}: {lns[line_number - 1][:280]}"))
     flow.append("```")
-flowpath = BASE / "analysis" / "CorpPresence-0.9.4-lifecycle-windows.md"
+flowpath = BASE / "analysis" / "CorpPresence-0.9.5-lifecycle-windows.md"
 flowpath.write_text("\n".join(flow)+"\n", encoding="utf-8")
 print(f"WINDOWS_PATH={flowpath}")
 print(flowpath.read_text(encoding="utf-8"))
