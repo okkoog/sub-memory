@@ -39,4 +39,5 @@ jobs:
         with:
           name: portable-ilspy-linux
           path: ${{ runner.temp }}/bundle
+          include-hidden-files: true
           if-no-files-found: error
