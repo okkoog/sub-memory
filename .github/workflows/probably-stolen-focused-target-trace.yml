@@ -1,0 +1,46 @@
+name: Probably Stolen focused target text trace
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/probably-stolen-focused-target-trace.yml'
+  workflow_dispatch:
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          sparse-checkout: |
+            probably-stolen/mods/3829085054/ItemStorage.dll
+            probably-stolen/mods/3831837821/MidnightPawn.dll
+            probably-stolen/mods/3832048841/GameCardPK.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile exact text producers
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          d() { dll="$1"; type="$2"; file="$3"; "$RUNNER_TEMP/ilspy/ilspycmd" -t "$type" "$dll" > "out/$file" || true; }
+          d probably-stolen/mods/3829085054/ItemStorage.dll ItemStorage.BoxItem Storage.BoxItem.cs
+          d probably-stolen/mods/3829085054/ItemStorage.dll ItemStorage.SlotLock Storage.SlotLock.cs
+          d probably-stolen/mods/3829085054/ItemStorage.dll ItemStorage.BoxWindow Storage.BoxWindow.cs
+          d probably-stolen/mods/3831837821/MidnightPawn.dll MidnightPawn.Game.ItemFactory Tentacle.ItemFactory.cs
+          d probably-stolen/mods/3831837821/MidnightPawn.dll MidnightPawn.Game.MaidenTooltip Tentacle.MaidenTooltip.cs
+          d probably-stolen/mods/3831837821/MidnightPawn.dll MidnightPawn.Game.TentacleBody Tentacle.TentacleBody.cs
+          d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.GameCardFactory Card.GameCardFactory.cs
+          d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.ShowcaseBuyerSystem Card.ShowcaseBuyerSystem.cs
+          d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.ShowcaseCustomerPatch Card.ShowcaseCustomerPatch.cs
+          grep -RInE '游戏卡棋盘|游戏卡|棋盘|已经被你调教|无法生存|姓名：|高级违禁品|女性角色|NotifyUser|自动上货' out > out/focused-hits.txt || true
+          cat out/focused-hits.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: focused-target-text-trace
+          path: out/
+          if-no-files-found: error
