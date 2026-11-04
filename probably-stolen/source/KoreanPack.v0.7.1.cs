@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.5.3 (display-boundary refinement)
+// Probably Stolen - generic Korean localization bridge v0.7.5.4 (remaining-output refinement)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -16,6 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using HarmonyLib;
+using TMPro;
 using UnityEngine;
 
 namespace ProbablyStolenKoreanPack
@@ -124,6 +125,7 @@ namespace ProbablyStolenKoreanPack
         private static Harmony _dynamicHarmony;
         private static bool _enabled;
         private static bool _catalogsReady;
+        private static TMP_FontAsset _koreanTmpFont;
 
         public void Init(ModManifest manifest)
         {
@@ -149,6 +151,7 @@ namespace ProbablyStolenKoreanPack
                 PendingMods.Clear();
 
                 _dynamicHarmony = new Harmony(DynamicHarmonyId);
+                _koreanTmpFont = null;
                 _catalogsReady = false;
                 _enabled = true;
 
@@ -181,6 +184,7 @@ namespace ProbablyStolenKoreanPack
                 PatchedMethods.Clear();
                 PendingMods.Clear();
                 _catalogsReady = false;
+                _koreanTmpFont = null;
 
                 Debug.Log("[KoreanPack] Disabled.");
             }
@@ -661,6 +665,354 @@ namespace ProbablyStolenKoreanPack
                 Debug.LogWarning("[KoreanPack] Type display-name bridge failed: " +
                     ex.Message);
             }
+
+            try
+            {
+                MethodInfo clientele = typeof(ClienteleUIManager).GetMethod(
+                    "RefreshUI",
+                    BindingFlags.Public | BindingFlags.Instance,
+                    null,
+                    Type.EmptyTypes,
+                    null);
+
+                if (clientele != null &&
+                    PatchDynamic(clientele, null,
+                        nameof(SafeClienteleRefreshPostfix),
+                        "shared-clientele-display"))
+                {
+                    Debug.Log("[KoreanPack] Clientele display bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Clientele display bridge failed: " +
+                    ex.Message);
+            }
+
+            try
+            {
+                MethodInfo recorder = typeof(RecorderUIManager).GetMethod(
+                    "RefreshUI",
+                    BindingFlags.Public | BindingFlags.Instance,
+                    null,
+                    Type.EmptyTypes,
+                    null);
+
+                if (recorder != null &&
+                    PatchDynamic(recorder, null,
+                        nameof(SafeRecorderRefreshPostfix),
+                        "shared-recorder-display"))
+                {
+                    Debug.Log("[KoreanPack] Recorder display bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Recorder display bridge failed: " +
+                    ex.Message);
+            }
+
+            try
+            {
+                MethodInfo displayClient = typeof(DialogUIManager).GetMethod(
+                    "DisplayClientText",
+                    BindingFlags.Public | BindingFlags.Instance,
+                    null,
+                    new Type[] { typeof(Dialogue) },
+                    null);
+
+                if (displayClient != null &&
+                    PatchDynamic(displayClient,
+                        nameof(SafeClientDialogueDisplayPrefix),
+                        null,
+                        "shared-client-dialogue-display"))
+                {
+                    Debug.Log("[KoreanPack] Client dialogue display bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Client dialogue display bridge failed: " +
+                    ex.Message);
+            }
+
+            try
+            {
+                MethodInfo customWindow = typeof(CustomUIManager).GetMethod(
+                    "Window",
+                    BindingFlags.Public | BindingFlags.Static,
+                    null,
+                    new Type[] { typeof(string), typeof(string), typeof(string) },
+                    null);
+
+                if (customWindow != null)
+                    PatchDynamic(customWindow,
+                        nameof(SafeCustomUiWindowArgsPrefix),
+                        null,
+                        "tentacle-night-window-title");
+
+                Type builderType = typeof(CustomUIManager).Assembly.GetType(
+                    "CustomUIBuilder", false);
+                if (builderType != null)
+                {
+                    MethodInfo[] builderMethods = builderType.GetMethods(
+                        BindingFlags.Public | BindingFlags.Instance);
+                    foreach (MethodInfo method in builderMethods)
+                    {
+                        if (!string.Equals(method.Name, "AddButton",
+                                StringComparison.Ordinal))
+                            continue;
+
+                        ParameterInfo[] parameters = method.GetParameters();
+                        if (parameters.Length == 0 ||
+                            parameters[0].ParameterType != typeof(string))
+                            continue;
+
+                        PatchDynamic(method,
+                            nameof(SafeCustomUiButtonArgsPrefix),
+                            null,
+                            "tentacle-night-window-button");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Custom UI display bridge failed: " +
+                    ex.Message);
+            }
+        }
+
+        private static void SafeClienteleRefreshPostfix(
+            ClienteleUIManager __instance)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __instance == null)
+                return;
+
+            string typeName =
+                TranslateKnownCatalogText("game_card_pk", "游戏卡");
+            if (string.IsNullOrEmpty(typeName) ||
+                string.Equals(typeName, "游戏卡", StringComparison.Ordinal))
+                return;
+
+            TextMeshProUGUI[] targets =
+            {
+                __instance.merchandiseCustomerTMP,
+                __instance.normalCustomerTMP
+            };
+
+            foreach (TextMeshProUGUI target in targets)
+            {
+                if ((UnityEngine.Object)target == null)
+                    continue;
+
+                string text = ((TMP_Text)target).text;
+                if (!string.IsNullOrEmpty(text) &&
+                    text.IndexOf("游戏卡", StringComparison.Ordinal) >= 0)
+                {
+                    ((TMP_Text)target).text =
+                        text.Replace("游戏卡", typeName);
+                }
+            }
+        }
+
+        private static void SafeClientDialogueDisplayPrefix(
+            Dialogue dialogue)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                dialogue == null)
+                return;
+
+            StoreClient client = null;
+            try
+            {
+                if (PlayerStore.Instance != null &&
+                    PlayerStore.Instance.currentClientInstance != null)
+                {
+                    client = PlayerStore.Instance.currentClientInstance
+                        .GetClientBlueprint();
+                }
+            }
+            catch
+            {
+            }
+
+            string alias = null;
+            if (client != null)
+            {
+                string source = client.sourceModId ?? string.Empty;
+                string id = client.identifier ?? string.Empty;
+
+                if (string.Equals(source, "game_card_pk",
+                        StringComparison.OrdinalIgnoreCase) ||
+                    id.StartsWith("card_", StringComparison.OrdinalIgnoreCase))
+                    alias = "game_card_pk";
+                else if (id.StartsWith("corp_",
+                        StringComparison.OrdinalIgnoreCase))
+                    alias = "CorpPresence";
+            }
+
+            if (string.IsNullOrEmpty(alias))
+                return;
+
+            if (client != null && !string.IsNullOrEmpty(client.displayName))
+            {
+                string translatedName =
+                    TranslateKnownCatalogText(alias, client.displayName);
+                if (!string.IsNullOrEmpty(translatedName))
+                    client.displayName = translatedName;
+            }
+
+            if (!string.IsNullOrEmpty(dialogue.plainText))
+            {
+                string translatedText =
+                    TranslateKnownCatalogText(alias, dialogue.plainText);
+                if (!string.IsNullOrEmpty(translatedText))
+                    dialogue.plainText = translatedText;
+            }
+
+            if (!string.IsNullOrEmpty(dialogue.title) &&
+                !string.Equals(dialogue.title, "PLAYER",
+                    StringComparison.Ordinal) &&
+                !string.Equals(dialogue.title, "SEC",
+                    StringComparison.Ordinal))
+            {
+                string translatedTitle =
+                    TranslateKnownCatalogText(alias, dialogue.title);
+                if (!string.IsNullOrEmpty(translatedTitle))
+                    dialogue.title = translatedTitle;
+            }
+        }
+
+        private static void SafeRecorderRefreshPostfix(
+            RecorderUIManager __instance)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __instance == null ||
+                (UnityEngine.Object)__instance.ScrollViewContent == null)
+                return;
+
+            try
+            {
+                TextMeshProUGUI[] texts =
+                    __instance.ScrollViewContent
+                        .GetComponentsInChildren<TextMeshProUGUI>(true);
+
+                foreach (TextMeshProUGUI tmp in texts)
+                {
+                    if ((UnityEngine.Object)tmp == null)
+                        continue;
+
+                    string original = ((TMP_Text)tmp).text;
+                    if (string.IsNullOrEmpty(original) ||
+                        string.Equals(original, "---",
+                            StringComparison.Ordinal))
+                        continue;
+
+                    string translated = TranslateRecorderLine(original);
+                    if (!string.Equals(original, translated,
+                            StringComparison.Ordinal))
+                        ((TMP_Text)tmp).text = translated;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Recorder display translation skipped: " +
+                    ex.Message);
+            }
+        }
+
+        private static string TranslateRecorderLine(string source)
+        {
+            if (string.IsNullOrEmpty(source))
+                return source;
+
+            int leadingCount = 0;
+            while (leadingCount < source.Length &&
+                   char.IsWhiteSpace(source[leadingCount]))
+                leadingCount++;
+
+            string leading = source.Substring(0, leadingCount);
+            string core = source.Substring(leadingCount);
+
+            string whole = TranslateAcrossKnownDialogCatalogs(core);
+            if (!string.Equals(core, whole, StringComparison.Ordinal))
+                return leading + whole;
+
+            int separator = core.IndexOf(": ", StringComparison.Ordinal);
+            if (separator <= 0)
+                return source;
+
+            string speaker = core.Substring(0, separator);
+            string body = core.Substring(separator + 2);
+
+            string speakerKo = TranslateAcrossKnownDialogCatalogs(speaker);
+            string bodyKo = TranslateAcrossKnownDialogCatalogs(body);
+
+            if (string.Equals(speaker, speakerKo, StringComparison.Ordinal) &&
+                string.Equals(body, bodyKo, StringComparison.Ordinal))
+                return source;
+
+            return leading + speakerKo + ": " + bodyKo;
+        }
+
+        private static string TranslateAcrossKnownDialogCatalogs(string source)
+        {
+            if (string.IsNullOrEmpty(source))
+                return source;
+
+            string[] aliases =
+            {
+                "CorpPresence",
+                "game_card_pk",
+                "brewing_expansion",
+                "lewd_meme"
+            };
+
+            foreach (string alias in aliases)
+            {
+                string translated = TranslateKnownCatalogText(alias, source);
+                if (!string.Equals(source, translated,
+                        StringComparison.Ordinal))
+                    return translated;
+            }
+
+            return source;
+        }
+
+        private static void SafeCustomUiWindowArgsPrefix(object[] __args)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __args == null || __args.Length < 2)
+                return;
+
+            string id = __args[0] as string;
+            string title = __args[1] as string;
+            if (!string.Equals(id, "lewd_meme.nightreport",
+                    StringComparison.Ordinal) ||
+                string.IsNullOrEmpty(title))
+                return;
+
+            string translated =
+                TranslateKnownCatalogText("lewd_meme", title);
+            if (!string.IsNullOrEmpty(translated))
+                __args[1] = translated;
+        }
+
+        private static void SafeCustomUiButtonArgsPrefix(object[] __args)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __args == null || __args.Length == 0)
+                return;
+
+            string text = __args[0] as string;
+            if (!string.Equals(text, "知道了", StringComparison.Ordinal))
+                return;
+
+            string translated =
+                TranslateKnownCatalogText("lewd_meme", text);
+            if (!string.IsNullOrEmpty(translated))
+                __args[0] = translated;
         }
 
         private static void SafeGameItemDisplayNamePostfix(
@@ -1270,13 +1622,16 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("ForItem", KnownPatchKind.StringResult),
                         new KnownPatch("ForBattle", KnownPatchKind.StringResult),
                         new KnownPatch("PointLabel", KnownPatchKind.StringResult));
+                    patched += PatchKnownType(assembly, "GameCardPK.CardNPC",
+                        new KnownPatch("BuildClient", KnownPatchKind.StoreClientResult));
                 }
                 else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
                         new KnownPatch("Create", KnownPatchKind.GameItemResult),
                         new KnownPatch("Create", KnownPatchKind.GameItemWindowResult),
-                        new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult));
+                        new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult),
+                        new KnownPatch("DelayReport", KnownPatchKind.TentacleNightReportArgs));
                     // MaidenTooltip text is translated through the official
                     // ModHook.OnCreateTooltipLate bridge after the mod has appended it.
                 }
@@ -1345,7 +1700,10 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("DrawSolana", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawSolanaVip", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawSolanaLab", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawSolanaGift", KnownPatchKind.GuiLabelTranspiler));
+                        new KnownPatch("DrawSolanaGift", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSpacerMutual", KnownPatchKind.GuiLabelTranspiler));
+                    patched += PatchKnownType(assembly, "CorpPresence.CompanyVisitors",
+                        new KnownPatch("Courier", KnownPatchKind.StoreClientResult));
                 }
             }
             catch (Exception ex)
@@ -1373,6 +1731,7 @@ namespace ProbablyStolenKoreanPack
             GameItemWindowArgs,
             BuyerTypeListArgs,
             StorageBoxLabelState,
+            TentacleNightReportArgs,
             DialogueResult,
             ObjectArgs,
             StaticDisplayState
@@ -1553,6 +1912,16 @@ namespace ProbablyStolenKoreanPack
                                 if (PatchDynamic(method, null,
                                     nameof(SafeStorageBoxLabelStatePostfix),
                                     "safe-storage-box-label"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.TentacleNightReportArgs:
+                                if (method.GetParameters().Any(p =>
+                                        p.ParameterType == typeof(string)) &&
+                                    PatchDynamic(method,
+                                        nameof(SafeTentacleNightReportArgsPrefix),
+                                        null,
+                                        "tentacle-night-report"))
                                     patched++;
                                 break;
 
@@ -2453,6 +2822,162 @@ namespace ProbablyStolenKoreanPack
             }
         }
 
+        private static void SafeTentacleNightReportArgsPrefix(
+            object[] __args)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __args == null || __args.Length == 0)
+                return;
+
+            Catalog catalog;
+            if ((!RuntimeCatalogs.TryGetValue("lewd_meme", out catalog) &&
+                 !Catalogs.TryGetValue("lewd_meme", out catalog)) ||
+                catalog == null)
+                return;
+
+            for (int i = 0; i < __args.Length; i++)
+            {
+                string source = __args[i] as string;
+                if (string.IsNullOrEmpty(source))
+                    continue;
+
+                string translated = BuildTentacleNightReport(catalog, source);
+                if (!string.Equals(source, translated,
+                        StringComparison.Ordinal))
+                    __args[i] = translated;
+            }
+        }
+
+        private static string BuildTentacleNightReport(
+            Catalog catalog, string source)
+        {
+            if (catalog == null || string.IsNullOrEmpty(source))
+                return source;
+
+            try
+            {
+                int bodyIndex = source.IndexOf(
+                    "在【触手本体】内被你的触手调教了一夜",
+                    StringComparison.Ordinal);
+                bool wriggleOnly = source.StartsWith(
+                    "触手本体蠕动了整夜", StringComparison.Ordinal);
+
+                if (bodyIndex < 0 && !wriggleOnly)
+                    return source;
+
+                string outputMarker = "，产出了 ";
+                string noOutputMarker = "，什么也没产出";
+                int outputIndex = source.IndexOf(
+                    outputMarker, StringComparison.Ordinal);
+                bool noOutput = source.EndsWith(
+                    noOutputMarker, StringComparison.Ordinal);
+
+                var maidParts = new List<string>();
+                if (bodyIndex >= 0)
+                {
+                    string maidSource = source.Substring(0, bodyIndex);
+                    MatchCollection maids = Regex.Matches(
+                        maidSource, @"(\d+)个【([^】]+)】");
+                    foreach (Match match in maids)
+                    {
+                        string count = match.Groups[1].Value;
+                        string type = match.Groups[2].Value;
+                        string typeKo;
+                        if (!TryTranslateTooltipSlice(
+                                catalog, type, out typeKo))
+                            typeKo = type;
+
+                        string format;
+                        if (!catalog.ByKey.TryGetValue(
+                                "pskb_night_report_maid",
+                                out format) ||
+                            string.IsNullOrEmpty(format))
+                            format = "{count}명 【{type}】";
+
+                        maidParts.Add(format
+                            .Replace("{count}", count)
+                            .Replace("{type}", typeKo));
+                    }
+                }
+
+                var outputParts = new List<string>();
+                if (outputIndex >= 0)
+                {
+                    string outputs = source.Substring(
+                        outputIndex + outputMarker.Length);
+                    MatchCollection products = Regex.Matches(
+                        outputs, @"【([^】]+)】\*(\d+)");
+                    foreach (Match match in products)
+                    {
+                        string product = match.Groups[1].Value;
+                        string count = match.Groups[2].Value;
+                        string productKo;
+                        if (!TryTranslateTooltipSlice(
+                                catalog, product, out productKo))
+                            productKo = product;
+
+                        string format;
+                        if (!catalog.ByKey.TryGetValue(
+                                "pskb_night_report_output",
+                                out format) ||
+                            string.IsNullOrEmpty(format))
+                            format = "【{product}】 ×{count}";
+
+                        outputParts.Add(format
+                            .Replace("{product}", productKo)
+                            .Replace("{count}", count));
+                    }
+                }
+
+                string bodyTemplate;
+                if (wriggleOnly)
+                {
+                    if (!catalog.ByKey.TryGetValue(
+                            "pskb_night_report_body_empty",
+                            out bodyTemplate) ||
+                        string.IsNullOrEmpty(bodyTemplate))
+                        return source;
+                }
+                else
+                {
+                    if (!catalog.ByKey.TryGetValue(
+                            "pskb_night_report_body",
+                            out bodyTemplate) ||
+                        string.IsNullOrEmpty(bodyTemplate))
+                        return source;
+                }
+
+                string result = bodyTemplate.Replace(
+                    "{maids}", string.Join(", ", maidParts.ToArray()));
+
+                string outputText;
+                if (noOutput || outputParts.Count == 0)
+                {
+                    if (!catalog.ByKey.TryGetValue(
+                            "pskb_night_report_no_output",
+                            out outputText))
+                        outputText = string.Empty;
+                }
+                else
+                {
+                    if (!catalog.ByKey.TryGetValue(
+                            "pskb_night_report_outputs",
+                            out outputText))
+                        outputText = "{outputs}";
+                    outputText = outputText.Replace(
+                        "{outputs}",
+                        string.Join(", ", outputParts.ToArray()));
+                }
+
+                return result.Replace("{output_clause}",
+                    outputText ?? string.Empty);
+            }
+            catch
+            {
+                return source;
+            }
+        }
+
         private static void SafeStorageBoxLabelStatePostfix(
             MethodBase __originalMethod)
         {
@@ -2511,19 +3036,26 @@ namespace ProbablyStolenKoreanPack
                         continue;
 
                     string translated;
-                    if (!TryTranslateTooltipSlice(
-                            catalog, baseName, out translated) ||
-                        string.Equals(baseName, translated,
-                            StringComparison.Ordinal))
+                    string displayBase = baseName;
+                    bool translatedNow = TryTranslateTooltipSlice(
+                        catalog, baseName, out translated) &&
+                        !string.Equals(baseName, translated,
+                            StringComparison.Ordinal);
+
+                    if (translatedNow)
+                    {
+                        displayBase = translated;
+                        if (string.Equals(baseName, "收纳箱",
+                                StringComparison.Ordinal) &&
+                            !string.IsNullOrEmpty(shortDefault))
+                            displayBase = shortDefault;
+
+                        baseNameField.SetValue(entry, displayBase);
+                    }
+                    else if (!ContainsHangulText(baseName))
+                    {
                         continue;
-
-                    string displayBase = translated;
-                    if (string.Equals(baseName, "收纳箱",
-                            StringComparison.Ordinal) &&
-                        !string.IsNullOrEmpty(shortDefault))
-                        displayBase = shortDefault;
-
-                    baseNameField.SetValue(entry, displayBase);
+                    }
 
                     object label = labelField.GetValue(entry);
                     if (label == null)
@@ -2556,6 +3088,15 @@ namespace ProbablyStolenKoreanPack
                                 .Select(c => c.ToString())
                                 .ToArray());
 
+                    TMP_Text tmpLabel = label as TMP_Text;
+                    if ((UnityEngine.Object)tmpLabel != null &&
+                        ContainsHangulText(shown))
+                    {
+                        TMP_FontAsset koreanFont = FindKoreanTmpFont(tmpLabel);
+                        if ((UnityEngine.Object)koreanFont != null)
+                            tmpLabel.font = koreanFont;
+                    }
+
                     textProperty.SetValue(label, shown, null);
                 }
             }
@@ -2564,6 +3105,68 @@ namespace ProbablyStolenKoreanPack
                 Debug.LogWarning("[KoreanPack] Storage box-label output translation skipped: " +
                     ex.Message);
             }
+        }
+
+        private static bool ContainsHangulText(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return false;
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                char c = value[i];
+                if (c >= '\uac00' && c <= '\ud7a3')
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static TMP_FontAsset FindKoreanTmpFont(TMP_Text exclude)
+        {
+            if ((UnityEngine.Object)_koreanTmpFont != null)
+                return _koreanTmpFont;
+
+            try
+            {
+                TextMeshProUGUI[] all =
+                    Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
+
+                foreach (TextMeshProUGUI candidate in all)
+                {
+                    if ((UnityEngine.Object)candidate == null ||
+                        (UnityEngine.Object)candidate ==
+                            (UnityEngine.Object)exclude ||
+                        (UnityEngine.Object)candidate.font == null)
+                        continue;
+
+                    string objectName = string.Empty;
+                    try
+                    {
+                        objectName = ((UnityEngine.Object)
+                            candidate.gameObject).name ?? string.Empty;
+                    }
+                    catch
+                    {
+                    }
+
+                    if (objectName.IndexOf("Dream_BoxLabel",
+                            StringComparison.OrdinalIgnoreCase) >= 0)
+                        continue;
+
+                    string text = ((TMP_Text)candidate).text;
+                    if (!ContainsHangulText(text))
+                        continue;
+
+                    _koreanTmpFont = candidate.font;
+                    return _koreanTmpFont;
+                }
+            }
+            catch
+            {
+            }
+
+            return null;
         }
 
         private static void SafeGameItemResultPostfix(
