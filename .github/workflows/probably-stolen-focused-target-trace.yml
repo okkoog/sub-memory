@@ -57,7 +57,7 @@ jobs:
           "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/corp probably-stolen/mods/3828913695/CorpPresence.dll >/tmp/corp.log 2>&1 || true
 
           grep -RInE 'Request a home visit|End call|Hello\?|Nini|PhoneDialogue|tobacco and alcohol' out/brewing --include='*.cs' > out/brewing-hits.txt || true
-          grep -RInE 'Regular rebate|Upper Levels clientele|VIP introduction|Solana|Pastel|DrawSolana|DrawPastel|paid back by the courier|Membership' out/corp --include='*.cs' > out/corp-hits.txt || true
+          grep -RInE 'Regular rebate|Upper Levels clientele|VIP introduction|Solana|Pastel|DrawSolana|DrawPastel|paid back by the courier|Membership|Story requirements|guide reveals this company|view guide|Cancel / back|hidden requirements|side stories' out/corp --include='*.cs' > out/corp-hits.txt || true
 
           echo '--- focused ---'
           cat out/focused-hits.txt
