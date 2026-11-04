@@ -17,6 +17,8 @@ jobs:
             probably-stolen/mods/3829085054/ItemStorage.dll
             probably-stolen/mods/3831837821/MidnightPawn.dll
             probably-stolen/mods/3832048841/GameCardPK.dll
+            probably-stolen/mods/3828913695/CorpPresence.dll
+            probably-stolen/mods/3829730904/BrewingExpansion.dll
           sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
         with:
@@ -38,7 +40,20 @@ jobs:
           d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.ShowcaseBuyerSystem Card.ShowcaseBuyerSystem.cs
           d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.ShowcaseCustomerPatch Card.ShowcaseCustomerPatch.cs
           grep -RInE '游戏卡棋盘|游戏卡|棋盘|已经被你调教|无法生存|姓名：|高级违禁品|女性角色|NotifyUser|自动上货' out > out/focused-hits.txt || true
+
+          mkdir -p out/brewing out/corp
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/brewing probably-stolen/mods/3829730904/BrewingExpansion.dll >/tmp/brew.log 2>&1 || true
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/corp probably-stolen/mods/3828913695/CorpPresence.dll >/tmp/corp.log 2>&1 || true
+
+          grep -RInE 'Request a home visit|End call|Hello\?|Nini|PhoneDialogue|tobacco and alcohol' out/brewing --include='*.cs' > out/brewing-hits.txt || true
+          grep -RInE 'Regular rebate|Upper Levels clientele|VIP introduction|Solana|Pastel|DrawSolana|DrawPastel|paid back by the courier|Membership' out/corp --include='*.cs' > out/corp-hits.txt || true
+
+          echo '--- focused ---'
           cat out/focused-hits.txt
+          echo '--- brewing ---'
+          cat out/brewing-hits.txt
+          echo '--- corp ---'
+          cat out/corp-hits.txt
       - uses: actions/upload-artifact@v4
         with:
           name: focused-target-text-trace
