@@ -94,6 +94,7 @@ public sealed class KoreanPack : IMod
 		StringArrayResult,
 		BilingualResult,
 		VisibleStringArgs,
+		StringArgs,
 		GuiLabelTranspiler,
 		LocalizerResult,
 		GameItemResult,
