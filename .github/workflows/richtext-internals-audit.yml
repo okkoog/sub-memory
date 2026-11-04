@@ -1,0 +1,57 @@
+name: Probably Stolen richtext internals audit
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/richtext-internals-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/Managed/Assembly-CSharp.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile game
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/game"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$RUNNER_TEMP/game" probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Extract RichText internals
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=probably-stolen/analysis/richtext-internals.md
+          mkdir -p probably-stolen/analysis
+          : > "$out"
+          for name in RichTextBuilder.cs RichText.cs TextSlice.cs ModSourceHelper.cs; do
+            file=$(find "$RUNNER_TEMP/game" -type f -name "$name" | head -n1 || true)
+            if [ -n "$file" ]; then
+              echo "## $name" >> "$out"
+              echo '~~~csharp' >> "$out"
+              cat "$file" >> "$out"
+              echo '~~~' >> "$out"
+              echo >> "$out"
+            fi
+          done
+      - name: Commit report
+        shell: bash
+        run: |
+          git add --sparse -- probably-stolen/analysis/richtext-internals.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Audit RichText internals for final tooltip bridge"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
