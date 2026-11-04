@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import os, pathlib, re
 root=pathlib.Path(os.environ["CORP_DECOMPILED"])
-out=pathlib.Path("probably-stolen/analysis/CorpPresence-0.9.4-localization-paths.md")
-rows=["# CorpPresence 0.9.4 localization paths",""]
+out=pathlib.Path("probably-stolen/analysis/CorpPresence-0.9.5-localization-paths.md")
+rows=["# CorpPresence 0.9.5 localization paths",""]
 for p in root.rglob("*.cs"):
     try: lines=p.read_text(encoding="utf-8",errors="ignore").splitlines()
     except: continue
