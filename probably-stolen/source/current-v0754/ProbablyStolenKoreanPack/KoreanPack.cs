@@ -829,7 +829,7 @@ public sealed class KoreanPack : IMod
 				}
 				catch
 				{
-					return original();
+					return string.Empty;
 				}
 				return TranslateKnownCatalogText("game_card_pk", text2);
 			});
@@ -1552,9 +1552,9 @@ public sealed class KoreanPack : IMod
 				num += PatchKnownType(assembly, "GameCardPK.SkillText", new KnownPatch("ForItem", KnownPatchKind.StringResult), new KnownPatch("ForBattle", KnownPatchKind.StringResult), new KnownPatch("PointLabel", KnownPatchKind.StringResult));
 				num += PatchKnownType(assembly, "GameCardPK.CardNPC", new KnownPatch("BuildClient", KnownPatchKind.StoreClientResult));
 				num += PatchKnownType(assembly, "GameCardPK.CardClubLocationData", new KnownPatch("get_ButtonLabel", KnownPatchKind.StringResult));
-				num += PatchKnownType(assembly, "GameCardPK.UI.UiKit", new KnownPatch("Text", KnownPatchKind.VisibleStringArgs), new KnownPatch("TextMuted", KnownPatchKind.VisibleStringArgs), new KnownPatch("Button", KnownPatchKind.VisibleStringArgs), new KnownPatch("ButtonPrimary", KnownPatchKind.VisibleStringArgs));
-				num += PatchKnownType(assembly, "GameCardPK.UI.PanelHost", new KnownPatch("OpenPanel", KnownPatchKind.VisibleStringArgs), new KnownPatch("set_Message", KnownPatchKind.StringArgs));
-				num += PatchKnownType(assembly, "GameCardPK.UI.BattlePanel", new KnownPatch("RegisterHover", KnownPatchKind.VisibleStringArgs));
+				num += PatchKnownType(assembly, "GameCardPK.UI.UiKit", new KnownPatch("Text", KnownPatchKind.StringArgs), new KnownPatch("TextMuted", KnownPatchKind.StringArgs), new KnownPatch("Button", KnownPatchKind.StringArgs), new KnownPatch("ButtonPrimary", KnownPatchKind.StringArgs));
+				num += PatchKnownType(assembly, "GameCardPK.UI.PanelHost", new KnownPatch("OpenPanel", KnownPatchKind.StringArgs), new KnownPatch("set_Message", KnownPatchKind.StringArgs));
+				num += PatchKnownType(assembly, "GameCardPK.UI.BattlePanel", new KnownPatch("RegisterHover", KnownPatchKind.StringArgs));
 			}
 			else if (text.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
 			{
@@ -1673,7 +1673,7 @@ public sealed class KoreanPack : IMod
 						}
 						break;
 					case KnownPatchKind.StringArgs:
-						if (methodInfo.GetParameters().Any((ParameterInfo p) => p.ParameterType == typeof(string)) && PatchDynamic(methodInfo, "SafeStringArgsPrefix", null, "safe-string-args"))
+						if (methodInfo.GetParameters().Any((ParameterInfo p) => p.ParameterType == typeof(string)) && PatchDynamic(methodInfo, "SafeDisplayStringArgsPrefix", null, "safe-display-string-args"))
 						{
 							num++;
 						}
@@ -2187,6 +2187,39 @@ public sealed class KoreanPack : IMod
 			"factory", "create", "build", "register", "refresh", "update", "apply", "localize", "catalog", "phone",
 			"shop", "machine", "ui"
 		}.Any(text2.Contains);
+	}
+
+	private static void SafeDisplayStringArgsPrefix(MethodBase __originalMethod, object[] __args)
+	{
+		if (!_enabled || !IsKorean() || __originalMethod == null || __originalMethod.DeclaringType == null || __args == null || !AssemblyCatalogs.TryGetValue(__originalMethod.DeclaringType.Assembly, out var value))
+		{
+			return;
+		}
+		ParameterInfo[] parameters;
+		try
+		{
+			parameters = __originalMethod.GetParameters();
+		}
+		catch
+		{
+			return;
+		}
+		for (int i = 0; i < parameters.Length && i < __args.Length; i++)
+		{
+			if (parameters[i].ParameterType != typeof(string) || IsProtectedName(NormalizeName(parameters[i].Name)))
+			{
+				continue;
+			}
+			string text = __args[i] as string;
+			if (string.IsNullOrEmpty(text) || (!IsVisibleArgumentName(parameters[i].Name, __originalMethod.Name) && !LooksLikeHumanText(text)))
+			{
+				continue;
+			}
+			if (TryTranslateTooltipSlice(value, text, out var translated) && !string.Equals(text, translated, StringComparison.Ordinal))
+			{
+				__args[i] = translated;
+			}
+		}
 	}
 
 	private static void SafeStringArgsPrefix(MethodBase __originalMethod, object[] __args)
