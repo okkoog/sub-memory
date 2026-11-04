@@ -1,5 +1,5 @@
-# package revision: v074-factory-owner
-name: KoreanPack v0.7.4 factory-owner patch
+# package revision: v075-audited-ui
+name: KoreanPack v0.7.5 audited-ui patch
 
 on:
   push:
@@ -61,7 +61,7 @@ jobs:
           cp probably-stolen/korean-pack/manifest.xml patch/
           cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv patch/Localization/
           cat > patch/README_PATCH.txt <<'EOF'
-          Probably Stolen Korean Pack v0.7.4-dev factory-owner overlay patch
+          Probably Stolen Korean Pack v0.7.5-dev audited-ui overlay patch
 
           Apply this over the existing v0.7.0-dev Korean Pack folder.
           Replace ProbablyStolenKoreanPack.dll and manifest.xml, then merge the Localization folder.
@@ -71,6 +71,6 @@ jobs:
           find patch -type f -maxdepth 2 -print | sort
       - uses: actions/upload-artifact@v4
         with:
-          name: ProbablyStolen_KoreanPack_v0.7.4-dev_FactoryOwner_Overlay
+          name: ProbablyStolen_KoreanPack_v0.7.5-dev_AuditedUI_Overlay
           path: patch/
           if-no-files-found: error
