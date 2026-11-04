@@ -41,6 +41,22 @@ jobs:
         env:
           DECOMPILED_ROOT: ${{ runner.temp }}/visible
         run: python3 probably-stolen/tools/audit_visible_strings.py
+      - name: Upload ItemStorage UI source
+        uses: actions/upload-artifact@v4
+        with:
+          name: itemstorage-decompiled-ui
+          path: |
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/AutoStow.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxItem.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxRestock.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxStowAll.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxTooltip.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxTransfer.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/BoxWindow.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/GearPanel.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/SlotLock.cs
+            ${{ runner.temp }}/visible/3829085054/ItemStorage/StoragePatch.cs
+          if-no-files-found: error
       - name: Commit report
         shell: bash
         run: |
