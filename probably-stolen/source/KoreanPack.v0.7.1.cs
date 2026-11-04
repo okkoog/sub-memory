@@ -1732,6 +1732,7 @@ namespace ProbablyStolenKoreanPack
             BuyerTypeListArgs,
             StorageBoxLabelState,
             TentacleNightReportArgs,
+            StoreClientResult,
             DialogueResult,
             ObjectArgs,
             StaticDisplayState
@@ -1922,6 +1923,14 @@ namespace ProbablyStolenKoreanPack
                                         nameof(SafeTentacleNightReportArgsPrefix),
                                         null,
                                         "tentacle-night-report"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.StoreClientResult:
+                                if (method.ReturnType == typeof(StoreClient) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeStoreClientResultPostfix),
+                                        "safe-storeclient-result"))
                                     patched++;
                                 break;
 
