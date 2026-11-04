@@ -1,0 +1,92 @@
+name: KoreanPack v0.7.3 full install
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - 'probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip'
+      - 'probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll'
+      - 'probably-stolen/korean-pack/manifest.xml'
+      - 'probably-stolen/korean-pack/Localization/pskb__supp_*.csv'
+      - '.github/workflows/probably-stolen-koreanpack-v073-full.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip
+            probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+            probably-stolen/korean-pack/manifest.xml
+            probably-stolen/korean-pack/Localization/pskb__supp_3832048841.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3831837821.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829085054.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829429358.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3829730904.csv
+            probably-stolen/korean-pack/Localization/pskb__supp_3828913695.csv
+          sparse-checkout-cone-mode: false
+
+      - name: Validate inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip
+          test -s probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
+          test -s probably-stolen/korean-pack/manifest.xml
+          grep -q '<ModVersion>0.7.3-dev</ModVersion>' probably-stolen/korean-pack/manifest.xml
+          count=$(find probably-stolen/korean-pack/Localization -maxdepth 1 -name 'pskb__supp_*.csv' -type f | wc -l)
+          test "$count" -eq 6
+
+      - name: Assemble full install
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work out
+          mkdir -p work out
+          unzip -q probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip -d work
+
+          dll=$(find work -type f -name ProbablyStolenKoreanPack.dll -print -quit)
+          test -n "$dll"
+          root=$(dirname "$dll")
+
+          cp probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll "$root/ProbablyStolenKoreanPack.dll"
+          cp probably-stolen/korean-pack/manifest.xml "$root/manifest.xml"
+          mkdir -p "$root/Localization"
+          cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv "$root/Localization/"
+
+          base_count=$(find "$root/Localization" -maxdepth 1 -name 'pskb__*.csv' ! -name 'pskb__supp_*.csv' -type f | wc -l)
+          supp_count=$(find "$root/Localization" -maxdepth 1 -name 'pskb__supp_*.csv' -type f | wc -l)
+          test "$base_count" -ge 16
+          test "$supp_count" -eq 6
+
+          cat > "$root/README_FULL_INSTALL.txt" <<'EOF'
+          Probably Stolen Korean Pack v0.7.3-dev Full Install
+
+          Complete installation package.
+          Delete the old Korean Pack folder, then install this package fresh.
+
+          Includes:
+          - the complete v0.7.0 catalog set
+          - v0.7.3 final-tooltip bridge DLL
+          - v0.7.3 manifest
+          - six latest supplemental localization catalogs
+
+          No third-party mod files are modified by KoreanPack.
+          EOF
+
+          (cd work && zip -qr ../out/ProbablyStolen_KoreanPack_v0.7.3-dev_Full_Install.zip .)
+          unzip -t out/ProbablyStolen_KoreanPack_v0.7.3-dev_Full_Install.zip
+          sha256sum out/ProbablyStolen_KoreanPack_v0.7.3-dev_Full_Install.zip | tee out/SHA256.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen_KoreanPack_v0.7.3-dev_Full_Install
+          path: out/
+          if-no-files-found: error
