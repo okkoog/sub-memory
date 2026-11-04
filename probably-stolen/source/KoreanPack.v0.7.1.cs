@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.6
+// Probably Stolen - generic Korean localization bridge v0.7.7 (v0.7.5-safe-base)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -12,7 +12,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -1161,12 +1160,14 @@ namespace ProbablyStolenKoreanPack
                 {
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
                         new KnownPatch("Create", KnownPatchKind.GameItemResult),
-                        new KnownPatch("BuildWindow", KnownPatchKind.LiteralStrings),
-                        new KnownPatch("ShowReport", KnownPatchKind.LiteralStrings));
+                        new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult),
+                        new KnownPatch("DelayReport", KnownPatchKind.VisibleStringArgs));
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.MaidenTooltip",
-                        new KnownPatch("OnTooltip", KnownPatchKind.LiteralStrings));
+                        new KnownPatch("OnTooltip", KnownPatchKind.ObjectArgs));
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.ItemFactory",
-                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.LiteralStrings));
+                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.ObjectArgs));
+                    patched += PatchKnownType(assembly, "MidnightPawn.Game.MaidenTooltip");
+                    patched += PatchKnownType(assembly, "MidnightPawn.Game.ItemFactory");
                 }
                 else if (assemblyName.Equals("ItemStorage", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1174,9 +1175,12 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("Create", KnownPatchKind.GameItemResult));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
-                        new KnownPatch("EnsureWindow", KnownPatchKind.LiteralStrings),
-                        new KnownPatch("EnsureWindow", KnownPatchKind.StaticDisplayState),
-                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState));
+                        new KnownPatch("EnsureWindow", KnownPatchKind.StaticVisibleState),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticVisibleState));
+                    patched += PatchKnownType(assembly, "ItemStorage.BoxLabel",
+                        new KnownPatch("Apply", KnownPatchKind.StaticVisibleState),
+                        new KnownPatch("Tick", KnownPatchKind.StaticVisibleState),
+                        new KnownPatch("OnItemRenamed", KnownPatchKind.StaticVisibleState));
                 }
                 else if (assemblyName.Equals("XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1199,7 +1203,7 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("Create", KnownPatchKind.GameItemResult));
                     patched += PatchKnownType(assembly, "BrewingExpansion.Formal.FormalVisitors",
                         new KnownPatch("PhoneDialogue", KnownPatchKind.DialogueResult),
-                        new KnownPatch("Nini", KnownPatchKind.ObjectArgs));
+                        new KnownPatch("Nini", KnownPatchKind.StoreClientResult));
                 }
                 else if (assemblyName.Equals("CorpPresence", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1218,21 +1222,15 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("DrawPastel", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawPastelOrder", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("PastelBribeCell", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("PastelBribeCell", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelDealer", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawPastelDealer", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelTraffic", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawPastelTraffic", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelFooter", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawPastelFooter", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawDavre", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreOrder", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreLeviathan", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawSpacer", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawSpacer", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawSpacerMutual", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawSpacerMutual", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawSpacerCredits", KnownPatchKind.GuiLabelTranspiler));
                 }
             }
@@ -1254,13 +1252,15 @@ namespace ProbablyStolenKoreanPack
             BilingualResult,
             VisibleStringArgs,
             GuiLabelTranspiler,
-            LiteralStrings,
             LocalizerResult,
             GameItemResult,
             DialogueResult,
+            PixelWindowResult,
+            StoreClientResult,
             ObjectArgs,
             TupleListArgs,
-            StaticDisplayState
+            StaticDisplayState,
+            StaticVisibleState
         }
 
         private sealed class KnownPatch
@@ -1377,13 +1377,6 @@ namespace ProbablyStolenKoreanPack
                                     patched++;
                                 break;
 
-                            case KnownPatchKind.LiteralStrings:
-                                if (PatchDynamicTranspiler(method,
-                                    nameof(SafeKnownLiteralTranspiler),
-                                    "safe-known-literals"))
-                                    patched++;
-                                break;
-
                             case KnownPatchKind.LocalizerResult:
                                 if (method.ReturnType == typeof(string))
                                 {
@@ -1417,6 +1410,22 @@ namespace ProbablyStolenKoreanPack
                                     patched++;
                                 break;
 
+                            case KnownPatchKind.PixelWindowResult:
+                                if (method.ReturnType == typeof(PixelWindow) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafePixelWindowResultPostfix),
+                                        "safe-pixelwindow-result"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.StoreClientResult:
+                                if (method.ReturnType == typeof(StoreClient) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeStoreClientResultPostfix),
+                                        "safe-storeclient-result"))
+                                    patched++;
+                                break;
+
                             case KnownPatchKind.ObjectArgs:
                                 if (HasObjectArguments(method) &&
                                     PatchDynamic(method, null,
@@ -1436,6 +1445,13 @@ namespace ProbablyStolenKoreanPack
                                 if (PatchDynamic(method, null,
                                     nameof(SafeTargetStaticStatePostfix),
                                     "safe-static-display-state"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.StaticVisibleState:
+                                if (PatchDynamic(method, null,
+                                    nameof(SafeTargetVisibleStaticStatePostfix),
+                                    "safe-static-visible-state"))
                                     patched++;
                                 break;
                         }
@@ -1511,56 +1527,6 @@ namespace ProbablyStolenKoreanPack
             _dynamicHarmony.Patch(method, transpiler: transpiler);
             PatchedMethods.Add(id);
             return true;
-        }
-
-        private static IEnumerable<CodeInstruction> SafeKnownLiteralTranspiler(
-            IEnumerable<CodeInstruction> instructions,
-            MethodBase __originalMethod)
-        {
-            Catalog catalog = null;
-            string alias = null;
-
-            if (__originalMethod != null &&
-                __originalMethod.DeclaringType != null)
-            {
-                AssemblyCatalogs.TryGetValue(
-                    __originalMethod.DeclaringType.Assembly, out catalog);
-                if (catalog != null)
-                    alias = catalog.PrimaryId;
-            }
-
-            MethodInfo wrapper = typeof(KoreanPack).GetMethod(
-                nameof(TranslateKnownCatalogLiteral),
-                BindingFlags.Static | BindingFlags.NonPublic);
-
-            foreach (CodeInstruction instruction in instructions)
-            {
-                yield return instruction;
-
-                if (catalog == null || string.IsNullOrEmpty(alias) ||
-                    wrapper == null || instruction.opcode != OpCodes.Ldstr)
-                    continue;
-
-                string source = instruction.operand as string;
-                string probe;
-                if (string.IsNullOrEmpty(source) ||
-                    !TryTranslateSource(catalog, source, out probe) ||
-                    string.Equals(source, probe, StringComparison.Ordinal))
-                    continue;
-
-                // The original literal remains untouched in IL. At runtime we
-                // pass only known display literals through the Korean catalog.
-                // Internal IDs/tags are never wrapped unless explicitly present
-                // as a source translation.
-                yield return new CodeInstruction(OpCodes.Ldstr, alias);
-                yield return new CodeInstruction(OpCodes.Call, wrapper);
-            }
-        }
-
-        private static string TranslateKnownCatalogLiteral(
-            string source, string alias)
-        {
-            return TranslateKnownCatalogText(alias, source);
         }
 
         private static IEnumerable<CodeInstruction> SafeCorpGuiLabelTranspiler(
@@ -2229,6 +2195,52 @@ namespace ProbablyStolenKoreanPack
 
                 TranslateObjectGraph(catalog, value, type.Assembly,
                     false, false, null, visited, 0, ref budget);
+            }
+        }
+
+        private static void SafeTargetVisibleStaticStatePostfix(
+            MethodBase __originalMethod)
+        {
+            if (!_enabled || !IsKorean() || __originalMethod == null ||
+                __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            Type type = __originalMethod.DeclaringType;
+            FieldInfo[] fields;
+            try
+            {
+                fields = type.GetFields(BindingFlags.Static |
+                    BindingFlags.Public | BindingFlags.NonPublic |
+                    BindingFlags.DeclaredOnly);
+            }
+            catch
+            {
+                return;
+            }
+
+            HashSet<object> visited =
+                new HashSet<object>(ReferenceComparer.Instance);
+            int budget = 260;
+
+            foreach (FieldInfo field in fields)
+            {
+                if (budget <= 0 || field == null || field.IsLiteral)
+                    break;
+
+                object value;
+                try { value = field.GetValue(null); }
+                catch { continue; }
+
+                // v0.7.5-safe rebuild:
+                // only explicitly whitelisted UI-holder types use permanent
+                // visible-string translation. No IL literal replacement.
+                TranslateObjectGraph(catalog, value, type.Assembly,
+                    true, false, null, visited, 0, ref budget);
             }
         }
 
