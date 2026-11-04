@@ -1,3 +1,22 @@
+# CURRENT BASELINE — 2026-11-04 Work-improved package
+
+**Use this as the current project baseline before any older source/build.**
+
+- Korean Pack version: **0.7.5.12-dev**
+- Current baseline metadata: `probably-stolen/current-v07512/README.md`
+- Current manifest: `probably-stolen/current-v07512/manifest.xml`
+- Exact user-tested/improved package SHA-256: `7386fee70300ec0969d83c0154cbe47e2efa54c3d1a6253f8b7bba999bdf568b`
+- Exact DLL size: **84,992 bytes**
+- Exact DLL SHA-256: `834be6542920c335f812368e1d86318a06736a16b0a66f87907453c6defa8466`
+- Previous 0.7.5.4 / 58,880-byte DLL is retained only as an older rollback/reference baseline.
+- Work-improved notes are under `probably-stolen/current-v07512/README_*_KO.txt`.
+- Third-party mod files remain unmodified.
+- Do **not** treat `probably-stolen/source/current-v0754` or older `KoreanPack.v0.5.41.cs` as the current implementation.
+
+Important: the exact 0.7.5.12 DLL was recovered/decompiled in the working session, but the repository currently records its authoritative package/DLL hashes and Work change notes; do not rebuild/replace the user-tested DLL from older source unless the 0.7.5.12 recovered source has first been synchronized and verified.
+
+---
+
 ## 최우선 작업 경계 — 2026-11-04 재확인
 
 **사용자가 허용한 수정 대상은 우리 한국어팩뿐이다.** CorpPresence·Proficiency·PCExpansion·기본 한국어 번역 모드·게임 DLL은 비교 및 역컴파일로 분석만 허용된다. 제3자 모드의 패치 DLL 생성, 별도 테스트 빌드, 재배포, 원본 변경 모두 금지. 충돌 해결책은 우리 한국어팩의 소스와 DLL에서만 구현할 것.
