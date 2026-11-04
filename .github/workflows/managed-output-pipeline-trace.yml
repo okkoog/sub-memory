@@ -36,13 +36,22 @@ jobs:
           set -euo pipefail
           dll=probably-stolen/Managed/Assembly-CSharp.dll
           mkdir -p out
-          for t in MachineryButton MachineryLabel PixelWindow PixelElement GameItemElement Dialogue LocHelper ModSourceHelper ModInternal DirectoryMaster ModItemDirectory ItemTooltipHandler TooltipManager DialogueHandler DialoguePhoneUIManager StoreClient StoreClientManager StoreClientList StorePhoneClient PhoneUIManager DialogUIManager MachineryContainerUtils MachineryContainer MachineryPanel MachineryPanelRow AdvButtonElement MachineHelper CustomUIManager CustomUIWindow ShowcaseHelper ShowcaseDisplayUI ShowcaseUI ShowcasePanel ShowcaseCustomerUI ShowcaseWindow; do
+          for t in MachineryButton MachineryLabel PixelWindow PixelElement GameItemElement Dialogue LocHelper ModSourceHelper ModInternal DirectoryMaster ModItemDirectory ItemTooltipHandler TooltipManager DialogueHandler DialoguePhoneUIManager StoreClient StoreClientManager StoreClientList StorePhoneClient PhoneUIManager DialogUIManager MachineryContainerUtils MachineryContainer MachineryPanel MachineryPanelRow AdvButtonElement MachineHelper CustomUIManager CustomUIWindow ShowcaseHelper TypeHelper EmporiumEntry StoreStationUI StoreInfoUI StoreInfoPanel ShowcaseDisplayUI ShowcaseUI ShowcasePanel ShowcaseCustomerUI ShowcaseWindow; do
             if grep -Fxq "Class $t" "$RUNNER_TEMP/types.txt"; then
               "$RUNNER_TEMP/ilspy/ilspycmd" -t "$t" "$dll" > "out/$t.cs" || true
             fi
           done
           cp "$RUNNER_TEMP/relevant-types.txt" out/relevant-types.txt
           find out -maxdepth 1 -type f -print | sort
+      - name: Find all managed callers of Showcase customer data
+        shell: bash
+        run: |
+          set -euo pipefail
+          dll=probably-stolen/Managed/Assembly-CSharp.dll
+          mkdir -p /tmp/allmanaged
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o /tmp/allmanaged "$dll" >/tmp/decompile-all.log 2>&1 || true
+          grep -RInE 'GetDisplayCaseCustomer\(|GetDisplayCaseType\(|attractedType|expected.*customer|Expected.*Customer' /tmp/allmanaged --include='*.cs' > out/showcase-callers.txt || true
+          head -n 400 out/showcase-callers.txt
       - uses: actions/upload-artifact@v4
         with:
           name: managed-output-pipeline-trace
