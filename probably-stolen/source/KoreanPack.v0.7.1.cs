@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.5
+// Probably Stolen - generic Korean localization bridge v0.7.6
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
