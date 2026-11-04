@@ -36,7 +36,7 @@ jobs:
           set -euo pipefail
           dll=probably-stolen/Managed/Assembly-CSharp.dll
           mkdir -p out
-          for t in MachineryButton MachineryLabel PixelWindow PixelElement GameItemElement Dialogue LocHelper ModSourceHelper ModInternal DirectoryMaster ModItemDirectory ItemTooltipHandler TooltipManager DialogueHandler DialoguePhoneUIManager StoreClient StoreClientManager StoreClientList StorePhoneClient PhoneUIManager DialogUIManager MachineryContainerUtils MachineryContainer MachineryPanel MachineryPanelRow AdvButtonElement MachineHelper CustomUIManager CustomUIWindow ShowcaseHelper TypeHelper ClienteleUIManager NegociationUIManager EmporiumEntry StoreStationUI StoreInfoUI StoreInfoPanel ShowcaseDisplayUI ShowcaseUI ShowcasePanel ShowcaseCustomerUI ShowcaseWindow; do
+          for t in MachineryButton MachineryLabel PixelWindow PixelElement GameItemElement Dialogue LocHelper ModSourceHelper ModInternal DirectoryMaster ModItemDirectory ItemTooltipHandler TooltipManager DialogueHandler DialoguePhoneUIManager StoreClient StoreClientManager StoreClientList StorePhoneClient PhoneUIManager DialogUIManager MachineryContainerUtils MachineryContainer MachineryPanel MachineryPanelRow AdvButtonElement MachineHelper CustomUIManager CustomUIWindow ShowcaseHelper TypeHelper ClienteleUIManager NegociationUIManager RecorderUIManager StoreRecorder RecordUIManager LogUIManager NightLog EmporiumEntry StoreStationUI StoreInfoUI StoreInfoPanel ShowcaseDisplayUI ShowcaseUI ShowcasePanel ShowcaseCustomerUI ShowcaseWindow; do
             if grep -Fxq "Class $t" "$RUNNER_TEMP/types.txt"; then
               "$RUNNER_TEMP/ilspy/ilspycmd" -t "$t" "$dll" > "out/$t.cs" || true
             fi
