@@ -1,4 +1,4 @@
-name: CorpPresence 0.9.4 static audit
+name: CorpPresence 0.9.5 static audit
 
 on:
   push:
@@ -39,13 +39,13 @@ jobs:
       - name: Commit static audit report
         shell: bash
         run: |
-          git add -- probably-stolen/analysis/CorpPresence-0.9.4-static-audit.md probably-stolen/analysis/CorpPresence-0.9.4-callsite-context.md
+          git add -- probably-stolen/analysis/CorpPresence-0.9.5-static-audit.md probably-stolen/analysis/CorpPresence-0.9.5-callsite-context.md
           if git diff --cached --quiet; then
             echo "Audit report unchanged"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Add CorpPresence 0.9.4 static audit"
+          git commit -m "Add CorpPresence 0.9.5 static audit"
           git pull --rebase origin main
           git push origin HEAD:main
