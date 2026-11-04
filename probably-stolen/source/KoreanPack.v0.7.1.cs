@@ -12,6 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -1156,9 +1157,13 @@ namespace ProbablyStolenKoreanPack
                 else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
-                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
-                    // MaidenTooltip text is translated through the official
-                    // ModHook.OnCreateTooltipLate bridge after the mod has appended it.
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult),
+                        new KnownPatch("BuildWindow", KnownPatchKind.LiteralStrings),
+                        new KnownPatch("ShowReport", KnownPatchKind.LiteralStrings));
+                    patched += PatchKnownType(assembly, "MidnightPawn.Game.MaidenTooltip",
+                        new KnownPatch("OnTooltip", KnownPatchKind.LiteralStrings));
+                    patched += PatchKnownType(assembly, "MidnightPawn.Game.ItemFactory",
+                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.LiteralStrings));
                 }
                 else if (assemblyName.Equals("ItemStorage", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1166,6 +1171,7 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("Create", KnownPatchKind.GameItemResult));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("EnsureWindow", KnownPatchKind.LiteralStrings),
                         new KnownPatch("EnsureWindow", KnownPatchKind.StaticDisplayState),
                         new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState));
                 }
@@ -1233,6 +1239,7 @@ namespace ProbablyStolenKoreanPack
             BilingualResult,
             VisibleStringArgs,
             GuiLabelTranspiler,
+            LiteralStrings,
             LocalizerResult,
             GameItemResult,
             DialogueResult,
@@ -1351,6 +1358,13 @@ namespace ProbablyStolenKoreanPack
                                 if (PatchDynamicTranspiler(method,
                                     nameof(SafeCorpGuiLabelTranspiler),
                                     "safe-corp-gui-label"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.LiteralStrings:
+                                if (PatchDynamicTranspiler(method,
+                                    nameof(SafeKnownLiteralTranspiler),
+                                    "safe-known-literals"))
                                     patched++;
                                 break;
 
@@ -1474,6 +1488,56 @@ namespace ProbablyStolenKoreanPack
             _dynamicHarmony.Patch(method, transpiler: transpiler);
             PatchedMethods.Add(id);
             return true;
+        }
+
+        private static IEnumerable<CodeInstruction> SafeKnownLiteralTranspiler(
+            IEnumerable<CodeInstruction> instructions,
+            MethodBase __originalMethod)
+        {
+            Catalog catalog = null;
+            string alias = null;
+
+            if (__originalMethod != null &&
+                __originalMethod.DeclaringType != null)
+            {
+                AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog);
+                if (catalog != null)
+                    alias = catalog.PrimaryId;
+            }
+
+            MethodInfo wrapper = typeof(KoreanPack).GetMethod(
+                nameof(TranslateKnownCatalogLiteral),
+                BindingFlags.Static | BindingFlags.NonPublic);
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                yield return instruction;
+
+                if (catalog == null || string.IsNullOrEmpty(alias) ||
+                    wrapper == null || instruction.opcode != OpCodes.Ldstr)
+                    continue;
+
+                string source = instruction.operand as string;
+                string probe;
+                if (string.IsNullOrEmpty(source) ||
+                    !TryTranslateSource(catalog, source, out probe) ||
+                    string.Equals(source, probe, StringComparison.Ordinal))
+                    continue;
+
+                // The original literal remains untouched in IL. At runtime we
+                // pass only known display literals through the Korean catalog.
+                // Internal IDs/tags are never wrapped unless explicitly present
+                // as a source translation.
+                yield return new CodeInstruction(OpCodes.Ldstr, alias);
+                yield return new CodeInstruction(OpCodes.Call, wrapper);
+            }
+        }
+
+        private static string TranslateKnownCatalogLiteral(
+            string source, string alias)
+        {
+            return TranslateKnownCatalogText(alias, source);
         }
 
         private static IEnumerable<CodeInstruction> SafeCorpGuiLabelTranspiler(
