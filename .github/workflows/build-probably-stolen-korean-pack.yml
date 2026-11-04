@@ -3,7 +3,7 @@ name: Build Probably Stolen Korean Pack
 on:
   push:
     paths:
-      - "probably-stolen/source/KoreanPack.v0.5.41.cs"
+      - "probably-stolen/source/current-v0754/ProbablyStolenKoreanPack/KoreanPack.cs"
       - "probably-stolen/build/KoreanPack.csproj"
       - ".github/workflows/build-probably-stolen-korean-pack.yml"
   workflow_dispatch:
@@ -26,6 +26,12 @@ jobs:
         run: |
           mkdir -p probably-stolen/build/out
           cp probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll probably-stolen/build/out/ProbablyStolenKoreanPack.dll
+      - name: Upload DLL artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolenKoreanPack-build
+          path: probably-stolen/build/out/ProbablyStolenKoreanPack.dll
+          if-no-files-found: error
       - name: Commit DLL
         run: |
           git add probably-stolen/build/out/ProbablyStolenKoreanPack.dll
