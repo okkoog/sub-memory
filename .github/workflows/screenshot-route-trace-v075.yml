@@ -1,0 +1,86 @@
+name: Probably Stolen screenshot route trace v075
+on:
+  workflow_dispatch:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/screenshot-route-trace-v075.yml'
+permissions:
+  contents: write
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/mods/3829085054/ItemStorage.dll
+            probably-stolen/mods/3831837821/MidnightPawn.dll
+            probably-stolen/mods/3828913695/CorpPresence.dll
+            probably-stolen/mods/3829730904/BrewingExpansion.dll
+            probably-stolen/mods/3832048841/GameCardPK.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile targets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for spec in             "storage:probably-stolen/mods/3829085054/ItemStorage.dll"             "tentacle:probably-stolen/mods/3831837821/MidnightPawn.dll"             "corp:probably-stolen/mods/3828913695/CorpPresence.dll"             "brewing:probably-stolen/mods/3829730904/BrewingExpansion.dll"             "card:probably-stolen/mods/3832048841/GameCardPK.dll"; do
+            name="${spec%%:*}"
+            dll="${spec#*:}"
+            mkdir -p "$RUNNER_TEMP/$name"
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$RUNNER_TEMP/$name" "$dll"
+          done
+      - name: Trace screenshot strings
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          root=Path(os.environ['RUNNER_TEMP'])
+          queries={
+            'storage':['收纳箱','一键收纳','全箱收纳','全箱上货','一键上货'],
+            'tentacle':['昨晚','调教了','苗床','产出','下层区少女','泌乳','口交','性交','肛交'],
+            'corp':['Request a home visit to buy tobacco and alcohol','End Call','Spacers at the docks are short on food','Regular rebate','Dealer for ','Expected rebate','Canning Equipment'],
+            'brewing':['Nini','Hello?','Goodbye.','telephone','Dialogue','Phone'],
+            'card':['游戏卡','买家','Buyer','客户层','顾客层','expected buyer','Expected buyer','Target Buyer']
+          }
+          out=Path('probably-stolen/analysis/screenshot-route-v075.md')
+          rows=['# Screenshot route trace v0.7.5','']
+          for name,terms in queries.items():
+            base=root/name
+            rows += [f'## {name}','']
+            for p in sorted(base.rglob('*.cs')):
+              lines=p.read_text(encoding='utf-8',errors='ignore').splitlines()
+              hits=[i for i,l in enumerate(lines) if any(t in l for t in terms)]
+              if not hits: continue
+              rows += [f'### {p.relative_to(base)}','']
+              spans=[]
+              for i in hits:
+                a=max(0,i-45); b=min(len(lines),i+90)
+                if spans and a<=spans[-1][1]:
+                  spans[-1]=(spans[-1][0],max(spans[-1][1],b))
+                else:
+                  spans.append((a,b))
+              for a,b in spans:
+                rows += ['~~~csharp']+[f'{j+1:05d}: {lines[j]}' for j in range(a,b)]+['~~~','']
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text('\n'.join(rows),encoding='utf-8')
+          print(out)
+          PY
+      - name: Commit report
+        shell: bash
+        run: |
+          git add --sparse -- probably-stolen/analysis/screenshot-route-v075.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Trace v0.7.5 screenshot localization routes"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
