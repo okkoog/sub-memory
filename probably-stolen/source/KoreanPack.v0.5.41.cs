@@ -6,7 +6,7 @@
 //   * The game-native LoadedMod.Localization dictionary receives the pack's entries.
 //   * Mod-independent registration adapters translate display metadata at assignment time.
 //   * No fixed list of target mods, no verified-methods.csv, no global UI-render interception,
-//     no IL ldstr rewrite, and no patching of the mod's own DLL on disk.
+//     no global IL string sweep, and no patching of the mod's own DLL on disk.
 //
 // The bridge is designed for the actual ModLoader/LoadedMod/ModHelper/GameItem
 // signatures in the user-provided Probably Stolen Managed assemblies.
@@ -1189,6 +1189,21 @@ namespace ProbablyStolenKoreanPack
             for (int index = 0; index < source.Count; index++)
             {
                 CodeInstruction code = source[index];
+
+                // This method was selected only because it contains a recognized
+                // display sink. Translate exact CSV-backed literal fragments at
+                // patch time, before string concatenation/formatting combines them
+                // with runtime values. This is an in-memory IL rewrite performed
+                // once when the mod is loaded; it is not a global renderer hook and
+                // adds no per-frame/runtime text replacement cost.
+                if (code.opcode == OpCodes.Ldstr && code.operand is string)
+                {
+                    string literal = (string)code.operand;
+                    string localizedLiteral = TranslateAssignment(catalog, literal);
+                    if (!string.Equals(literal, localizedLiteral, StringComparison.Ordinal))
+                        code.operand = localizedLiteral;
+                }
+
                 FieldInfo field = code.operand as FieldInfo;
                 bool fieldWrite = (code.opcode == OpCodes.Stfld ||
                     code.opcode == OpCodes.Stsfld) && IsDisplayField(field);
