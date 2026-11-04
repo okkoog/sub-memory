@@ -28,6 +28,55 @@
 ~~~
 
 ### 游戏卡
+- \`GameCardPK/SlotAdmission.cs:195\`
+~~~csharp
+0192: 
+0193: 	internal static string Describe()
+0194: 	{
+0195: 		return "槽位准入（官方钩子 mayInventoryAddItemFunc）：技能槽只收技能条（核心槽不许放）/ battle_card_slot 只收自己的、装过芯片且耐久够的卡 / repair_slot 只收自己的游戏卡 / 贴纸打印机的蓝图槽只收贴纸蓝图、投入格只收废纸";
+0196: 	}
+0197: }
+~~~
+- \`GameCardPK/JunkPressCycle.cs:159\`
+~~~csharp
+0156: 		List<GameItem> list2 = Collect(JunkPressWindow.Grid(press, output: true), IsPlayerGameCard);
+0157: 		if (list2.Count == 0)
+0158: 		{
+0159: 			Core.Debug("[垃圾] 产出格没有游戏卡，本夜不结算（不扣电不扣料）。");
+0160: 			return "产出格没有游戏卡";
+0161: 		}
+0162: 		int num2 = 0;
+~~~
+- \`GameCardPK/JunkPressCycle.cs:160\`
+~~~csharp
+0157: 		if (list2.Count == 0)
+0158: 		{
+0159: 			Core.Debug("[垃圾] 产出格没有游戏卡，本夜不结算（不扣电不扣料）。");
+0160: 			return "产出格没有游戏卡";
+0161: 		}
+0162: 		int num2 = 0;
+0163: 		if (pressSpec.PowerCost > 0)
+~~~
+- \`GameCardPK/ChipSystem.cs:92\`
+~~~csharp
+0089: 			}
+0090: 			else if (!GameCardFactory.IsCard(card))
+0091: 			{
+0092: 				text = "落点不是游戏卡（没有 game_card tag）";
+0093: 			}
+0094: 			else if (!ItemOwnership.IsPlayerOwned(card, "卡牌", log: false))
+0095: 			{
+~~~
+- \`GameCardPK/ChipSystem.cs:221\`
+~~~csharp
+0218: 		string text = Core.Clean(card.name);
+0219: 		if (!GameCardFactory.IsCard(card))
+0220: 		{
+0221: 			Trace("install-notcard|" + Describe(card), "TryInstall：落点不是游戏卡：" + Core.Clean(card.identifier));
+0222: 			return false;
+0223: 		}
+0224: 		if (!ItemOwnership.IsPlayerOwned(card, "卡牌"))
+~~~
 - \`GameCardPK/CardDatabase.cs:379\`
 ~~~csharp
 0376: 		return new GameCardData
@@ -58,55 +107,6 @@
 0080: 		}
 0081: 		if (!AuxEffectTable.IsUsable(byItemId))
 ~~~
-- \`GameCardPK/JunkPressCycle.cs:159\`
-~~~csharp
-0156: 		List<GameItem> list2 = Collect(JunkPressWindow.Grid(press, output: true), IsPlayerGameCard);
-0157: 		if (list2.Count == 0)
-0158: 		{
-0159: 			Core.Debug("[垃圾] 产出格没有游戏卡，本夜不结算（不扣电不扣料）。");
-0160: 			return "产出格没有游戏卡";
-0161: 		}
-0162: 		int num2 = 0;
-~~~
-- \`GameCardPK/JunkPressCycle.cs:160\`
-~~~csharp
-0157: 		if (list2.Count == 0)
-0158: 		{
-0159: 			Core.Debug("[垃圾] 产出格没有游戏卡，本夜不结算（不扣电不扣料）。");
-0160: 			return "产出格没有游戏卡";
-0161: 		}
-0162: 		int num2 = 0;
-0163: 		if (pressSpec.PowerCost > 0)
-~~~
-- \`GameCardPK/SlotAdmission.cs:195\`
-~~~csharp
-0192: 
-0193: 	internal static string Describe()
-0194: 	{
-0195: 		return "槽位准入（官方钩子 mayInventoryAddItemFunc）：技能槽只收技能条（核心槽不许放）/ battle_card_slot 只收自己的、装过芯片且耐久够的卡 / repair_slot 只收自己的游戏卡 / 贴纸打印机的蓝图槽只收贴纸蓝图、投入格只收废纸";
-0196: 	}
-0197: }
-~~~
-- \`GameCardPK/ChipSystem.cs:92\`
-~~~csharp
-0089: 			}
-0090: 			else if (!GameCardFactory.IsCard(card))
-0091: 			{
-0092: 				text = "落点不是游戏卡（没有 game_card tag）";
-0093: 			}
-0094: 			else if (!ItemOwnership.IsPlayerOwned(card, "卡牌", log: false))
-0095: 			{
-~~~
-- \`GameCardPK/ChipSystem.cs:221\`
-~~~csharp
-0218: 		string text = Core.Clean(card.name);
-0219: 		if (!GameCardFactory.IsCard(card))
-0220: 		{
-0221: 			Trace("install-notcard|" + Describe(card), "TryInstall：落点不是游戏卡：" + Core.Clean(card.identifier));
-0222: 			return false;
-0223: 		}
-0224: 		if (!ItemOwnership.IsPlayerOwned(card, "卡牌"))
-~~~
 
 ### 集换式卡牌
 - \`GameCardPK/CardClubUnlockData.cs:7\`
@@ -118,16 +118,6 @@
 0008: 
 0009: 	public string Subtitle { get; set; } = "推荐";
 0010: 
-~~~
-- \`GameCardPK/CardFactoryUnlockData.cs:11\`
-~~~csharp
-0008: 
-0009: 	public string Title { get; set; } = "卡牌厂";
-0010: 
-0011: 	public string Subtitle { get; set; } = "集换式卡牌";
-0012: 
-0013: 	public string Description { get; set; } = string.Empty;
-0014: 
 ~~~
 - \`GameCardPK/CardFactoryConfig.cs:48\`
 ~~~csharp
@@ -149,6 +139,16 @@
 0051: 			if (cardFactoryFile.Unlock.Cost < 0)
 0052: 			{
 ~~~
+- \`GameCardPK/CardFactoryUnlockData.cs:11\`
+~~~csharp
+0008: 
+0009: 	public string Title { get; set; } = "卡牌厂";
+0010: 
+0011: 	public string Subtitle { get; set; } = "集换式卡牌";
+0012: 
+0013: 	public string Description { get; set; } = string.Empty;
+0014: 
+~~~
 
 ### 跟在队伍后面的黑鸟
 - not found in decompiled C#
@@ -165,6 +165,36 @@
 0037: 			{
 0038: 				GameItem val = ModHelper.SpawnItem("tentacle_body");
 0039: 				if (val != null)
+~~~
+- \`MidnightPawn/Game/LootHook.cs:29\`
+~~~csharp
+0026: 			if (Random.value < num)
+0027: 			{
+0028: 				ctx.itemId = "maiden_lower";
+0029: 				ModCtx.Log("拾荒：携带触手本体，捕获到一个少女 (Lv." + bodyLevel + " 概率 " + num.ToString("P0") + ")");
+0030: 			}
+0031: 			else if (Random.value < 0.08f)
+0032: 			{
+~~~
+- \`MidnightPawn/Game/Perks.cs:14\`
+~~~csharp
+0011: 	{
+0012: 		try
+0013: 		{
+0014: 			ModHelper.AddStartingPerk("lewd_meme", "lewd_meme.tentacle_origin", 0, (StartingPerkType)0, (Func<string>)(() => "触手起源"), (Func<string>)(() => "你生来就不是人。开局获得【触手本体】，额外获得 3 个特性槽位，每日拾荒次数 +3，且每天会有一位女性顾客被你的气味吸引而来。"), "lewd_meme:tentacle_perk", (string[])null, 3, false);
+0015: 			ModHook.OnNewGameStarted += OnNewGameStarted;
+0016: 			ModHook.OnWakingUpLate += OnNewDay;
+0017: 			ModCtx.Log("起始天赋已注册: 触手起源");
+~~~
+- \`MidnightPawn/Game/Perks.cs:36\`
+~~~csharp
+0033: 				{
+0034: 					ModHelper.SetItemOwnerShip(val, true);
+0035: 					ModHelper.MoveItemToInventory(val);
+0036: 					ModCtx.Log("触手起源：开局获得触手本体");
+0037: 				}
+0038: 			}
+0039: 		}
 ~~~
 - \`MidnightPawn/Game/MaidenTooltip.cs:32\`
 ~~~csharp
@@ -185,16 +215,6 @@
 0044: 				return;
 0045: 			}
 0046: 		}
-~~~
-- \`MidnightPawn/Game/LootHook.cs:29\`
-~~~csharp
-0026: 			if (Random.value < num)
-0027: 			{
-0028: 				ctx.itemId = "maiden_lower";
-0029: 				ModCtx.Log("拾荒：携带触手本体，捕获到一个少女 (Lv." + bodyLevel + " 概率 " + num.ToString("P0") + ")");
-0030: 			}
-0031: 			else if (Random.value < 0.08f)
-0032: 			{
 ~~~
 - \`MidnightPawn/Game/TentacleBody.cs:59\`
 ~~~csharp
@@ -256,38 +276,8 @@
 0734: 		if (num > num3)
 0735: 		{
 ~~~
-- \`MidnightPawn/Game/Perks.cs:14\`
-~~~csharp
-0011: 	{
-0012: 		try
-0013: 		{
-0014: 			ModHelper.AddStartingPerk("lewd_meme", "lewd_meme.tentacle_origin", 0, (StartingPerkType)0, (Func<string>)(() => "触手起源"), (Func<string>)(() => "你生来就不是人。开局获得【触手本体】，额外获得 3 个特性槽位，每日拾荒次数 +3，且每天会有一位女性顾客被你的气味吸引而来。"), "lewd_meme:tentacle_perk", (string[])null, 3, false);
-0015: 			ModHook.OnNewGameStarted += OnNewGameStarted;
-0016: 			ModHook.OnWakingUpLate += OnNewDay;
-0017: 			ModCtx.Log("起始天赋已注册: 触手起源");
-~~~
-- \`MidnightPawn/Game/Perks.cs:36\`
-~~~csharp
-0033: 				{
-0034: 					ModHelper.SetItemOwnerShip(val, true);
-0035: 					ModHelper.MoveItemToInventory(val);
-0036: 					ModCtx.Log("触手起源：开局获得触手本体");
-0037: 				}
-0038: 			}
-0039: 		}
-~~~
 
 ### 调教值
-- \`MidnightPawn/Game/MaidenTooltip.cs:103\`
-~~~csharp
-0100: 			int num3 = ItemFactory.GetInt(item, "ORAL_COUNT");
-0101: 			int num4 = ItemFactory.GetInt(item, "SEX_COUNT");
-0102: 			int num5 = ItemFactory.GetInt(item, "ANAL_COUNT");
-0103: 			builder.AddLine($"调教值 {num}  泌乳等级 {num2}", false, (ColorPalette)12615037, false, false, false, false, (ColorPalette)(-1), (ColorPalette)(-1), (ColorPalette)(-1));
-0104: 			builder.AddLine($"口交 {num3} 次 · 性交 {num4} 次 · 肛交 {num5} 次", false, (ColorPalette)12092762, false, false, false, false, (ColorPalette)(-1), (ColorPalette)(-1), (ColorPalette)(-1));
-0105: 			if (item.IsTag("MAIDEN_OVULATING"))
-0106: 			{
-~~~
 - \`MidnightPawn/Game/ItemFactory.cs:237\`
 ~~~csharp
 0234: 				}, false);
@@ -297,6 +287,16 @@
 0238: 				ModHelper.PlaySound("lewd_meme", "semen_apply");
 0239: 				self.Destroy();
 0240: 			}
+~~~
+- \`MidnightPawn/Game/MaidenTooltip.cs:103\`
+~~~csharp
+0100: 			int num3 = ItemFactory.GetInt(item, "ORAL_COUNT");
+0101: 			int num4 = ItemFactory.GetInt(item, "SEX_COUNT");
+0102: 			int num5 = ItemFactory.GetInt(item, "ANAL_COUNT");
+0103: 			builder.AddLine($"调教值 {num}  泌乳等级 {num2}", false, (ColorPalette)12615037, false, false, false, false, (ColorPalette)(-1), (ColorPalette)(-1), (ColorPalette)(-1));
+0104: 			builder.AddLine($"口交 {num3} 次 · 性交 {num4} 次 · 肛交 {num5} 次", false, (ColorPalette)12092762, false, false, false, false, (ColorPalette)(-1), (ColorPalette)(-1), (ColorPalette)(-1));
+0105: 			if (item.IsTag("MAIDEN_OVULATING"))
+0106: 			{
 ~~~
 
 ### 泌乳等级
@@ -334,15 +334,15 @@
 ~~~
 
 ### 触手精液
-- \`MidnightPawn/Game/TentacleBody.cs:182\`
+- \`MidnightPawn/Game/ItemFactory.cs:150\`
 ~~~csharp
-0179: 		}
-0180: 		if (ReportSemen > 0)
-0181: 		{
-0182: 			list.Add("【触手精液】*" + ReportSemen);
-0183: 		}
-0184: 		if (list.Count > 0)
-0185: 		{
+0147: 	private static GameItem CreateSemen()
+0148: 	{
+0149: 		GameItem val = ItemDirectory.CreateEmptyItem("tentacle_semen");
+0150: 		val.name = "触手精液";
+0151: 		val.shortDescription = "黏糊糊的浊白精液混杂了些许的女性爱液，充满了触手的信息素，对女性充满了吸引力，但是男性闻起来却是作呕的腥臭味。";
+0152: 		val.flavorText = "别问里面有什么，问就是模因。";
+0153: 		val.unitValue = 90L;
 ~~~
 - \`MidnightPawn/Game/TentacleEffects.cs:43\`
 ~~~csharp
@@ -404,16 +404,6 @@
 0118: 		}
 0119: 	}
 ~~~
-- \`MidnightPawn/Game/ItemFactory.cs:150\`
-~~~csharp
-0147: 	private static GameItem CreateSemen()
-0148: 	{
-0149: 		GameItem val = ItemDirectory.CreateEmptyItem("tentacle_semen");
-0150: 		val.name = "触手精液";
-0151: 		val.shortDescription = "黏糊糊的浊白精液混杂了些许的女性爱液，充满了触手的信息素，对女性充满了吸引力，但是男性闻起来却是作呕的腥臭味。";
-0152: 		val.flavorText = "别问里面有什么，问就是模因。";
-0153: 		val.unitValue = 90L;
-~~~
 - \`MidnightPawn/Game/PatchClientArea.cs:49\`
 ~~~csharp
 0046: 		}
@@ -423,6 +413,16 @@
 0050: 		}
 0051: 	}
 0052: }
+~~~
+- \`MidnightPawn/Game/TentacleBody.cs:182\`
+~~~csharp
+0179: 		}
+0180: 		if (ReportSemen > 0)
+0181: 		{
+0182: 			list.Add("【触手精液】*" + ReportSemen);
+0183: 		}
+0184: 		if (list.Count > 0)
+0185: 		{
 ~~~
 
 ### 淫色深空
@@ -547,46 +547,6 @@
 ~~~
 
 ### Night Auction
-- \`XIAOWONightAuction/AuctionMerchants.cs:189\`
-~~~csharp
-0186: 	{
-0187: 		return category switch
-0188: 		{
-0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
-0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
-0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
-0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
-~~~
-- \`XIAOWONightAuction/AuctionMerchants.cs:190\`
-~~~csharp
-0187: 		return category switch
-0188: 		{
-0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
-0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
-0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
-0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
-0193: 		};
-~~~
-- \`XIAOWONightAuction/AuctionMerchants.cs:191\`
-~~~csharp
-0188: 		{
-0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
-0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
-0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
-0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
-0193: 		};
-0194: 	}
-~~~
-- \`XIAOWONightAuction/AuctionMerchants.cs:192\`
-~~~csharp
-0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
-0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
-0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
-0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
-0193: 		};
-0194: 	}
-0195: 
-~~~
 - \`XIAOWONightAuction/AuctionPhone.cs:30\`
 ~~~csharp
 0027: 
@@ -637,6 +597,46 @@
 0536: 			DeliverCard();
 0537: 		})).SetNextDialogue(regular);
 ~~~
+- \`XIAOWONightAuction/AuctionMerchants.cs:189\`
+~~~csharp
+0186: 	{
+0187: 		return category switch
+0188: 		{
+0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
+0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
+0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
+0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
+~~~
+- \`XIAOWONightAuction/AuctionMerchants.cs:190\`
+~~~csharp
+0187: 		return category switch
+0188: 		{
+0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
+0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
+0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
+0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
+0193: 		};
+~~~
+- \`XIAOWONightAuction/AuctionMerchants.cs:191\`
+~~~csharp
+0188: 		{
+0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
+0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
+0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
+0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
+0193: 		};
+0194: 	}
+~~~
+- \`XIAOWONightAuction/AuctionMerchants.cs:192\`
+~~~csharp
+0189: 			ContainerCategory.Medical => AuctionText.Select("夜拍医疗采购员", "Night Auction Medic"), 
+0190: 			ContainerCategory.Luxury => AuctionText.Select("夜拍藏品经纪", "Night Auction Curator"), 
+0191: 			ContainerCategory.Contraband => AuctionText.Select("夜拍黑市掮客", "Night Auction Broker"), 
+0192: 			_ => AuctionText.Select("夜拍工程承包商", "Night Auction Engineer"), 
+0193: 		};
+0194: 	}
+0195: 
+~~~
 
 ### Industrial Calibrator
 - \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:43\`
@@ -651,6 +651,36 @@
 ~~~
 
 ### xiaowo_auction_calibrator
+- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:43\`
+~~~csharp
+0040: 			["xiaowo_auction_coilgun"] = ("Silent Coilgun Prototype", "An unproduced prototype of a low-noise coil weapon."),
+0041: 			["xiaowo_auction_master_key"] = ("Military Master Key", "A core key capable of forging military access credentials."),
+0042: 			["xiaowo_auction_bearing_set"] = ("High-Density Bearings", "Precision bearings for heavy industrial equipment."),
+0043: 			["xiaowo_auction_calibrator"] = ("Industrial Calibrator", "A portable instrument for precision machine calibration."),
+0044: 			["xiaowo_auction_supercoil"] = ("Superconducting Coil", "A fully sealed industrial superconducting coil."),
+0045: 			["xiaowo_auction_control_core"] = ("Prototype Control Core", "An unreleased automation control core."),
+0046: 			["xiaowo_auction_fabricator_core"] = ("Self-Calibrating Fabricator", "A fabrication core that corrects its own machining errors."),
+~~~
+- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:74\`
+~~~csharp
+0071: 			["xiaowo_auction_coilgun"] = Spec("xiaowo_auction_coilgun", ContainerCategory.Contraband, 2, 30000, "静默线圈枪原型", "没有量产记录的低噪声线圈武器原型。", "CONTRABAND_ITEM_TAG", "WEAPON", "FIREARM"),
+0072: 			["xiaowo_auction_master_key"] = Spec("xiaowo_auction_master_key", ContainerCategory.Contraband, 3, 65000, "军用权限母钥", "能够伪造多级军用通行凭证的核心密钥。", "CONTRABAND_ITEM_TAG"),
+0073: 			["xiaowo_auction_bearing_set"] = Spec("xiaowo_auction_bearing_set", ContainerCategory.Engineering, 1, 1100, "高密度轴承组", "适用于重型设备的高密度精密轴承。", "MATERIAL"),
+0074: 			["xiaowo_auction_calibrator"] = Spec("xiaowo_auction_calibrator", ContainerCategory.Engineering, 1, 2500, "工业校准仪", "用于校准精密生产设备的便携仪器。", "TOOL"),
+0075: 			["xiaowo_auction_supercoil"] = Spec("xiaowo_auction_supercoil", ContainerCategory.Engineering, 1, 4100, "超导线圈", "封装完好的工业级超导线圈。", "MATERIAL", "MODULE"),
+0076: 			["xiaowo_auction_control_core"] = Spec("xiaowo_auction_control_core", ContainerCategory.Engineering, 1, 5700, "原型控制核心", "尚未量产的自动化设备控制核心。", "MODULE", "MACHINE"),
+0077: 			["xiaowo_auction_fabricator_core"] = Spec("xiaowo_auction_fabricator_core", ContainerCategory.Engineering, 1, 8500, "自校准制造核心", "能够自行修正加工误差的制造设备核心。", "MODULE"),
+~~~
+- \`XIAOWONightAuction/AuctionItemLinksTargetPatch.cs:10\`
+~~~csharp
+0007: {
+0008: 	private static bool Prefix(GameItem __instance, GameItem targetItem)
+0009: 	{
+0010: 		if (((__instance != null) ? __instance.identifier : null) == "xiaowo_auction_calibrator")
+0011: 		{
+0012: 			AuctionItemLinks.Calibrate(__instance, targetItem);
+0013: 			return false;
+~~~
 - \`XIAOWONightAuction/AuctionItemLinksTargetGate.cs:7\`
 ~~~csharp
 0004: {
@@ -660,6 +690,16 @@
 0008: 		{
 0009: 			result = AuctionItemLinks.CalibrationTarget(source, target);
 0010: 		}
+~~~
+- \`XIAOWONightAuction/AuctionExclusiveFactory.cs:281\`
+~~~csharp
+0278: 		{
+0279: 			text3 = string.Format(text3, AuctionForgedPass.Remaining(item));
+0280: 		}
+0281: 		if (spec.Id == "xiaowo_auction_calibrator")
+0282: 		{
+0283: 			text3 = string.Format(text3, AuctionItemLinks.Remaining(item));
+0284: 		}
 ~~~
 - \`XIAOWONightAuction/AuctionItemLinks.cs:58\`
 ~~~csharp
@@ -680,46 +720,6 @@
 0119: 		{
 0120: 			SetCharges(item, 3);
 0121: 		}
-~~~
-- \`XIAOWONightAuction/AuctionExclusiveFactory.cs:281\`
-~~~csharp
-0278: 		{
-0279: 			text3 = string.Format(text3, AuctionForgedPass.Remaining(item));
-0280: 		}
-0281: 		if (spec.Id == "xiaowo_auction_calibrator")
-0282: 		{
-0283: 			text3 = string.Format(text3, AuctionItemLinks.Remaining(item));
-0284: 		}
-~~~
-- \`XIAOWONightAuction/AuctionItemLinksTargetPatch.cs:10\`
-~~~csharp
-0007: {
-0008: 	private static bool Prefix(GameItem __instance, GameItem targetItem)
-0009: 	{
-0010: 		if (((__instance != null) ? __instance.identifier : null) == "xiaowo_auction_calibrator")
-0011: 		{
-0012: 			AuctionItemLinks.Calibrate(__instance, targetItem);
-0013: 			return false;
-~~~
-- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:43\`
-~~~csharp
-0040: 			["xiaowo_auction_coilgun"] = ("Silent Coilgun Prototype", "An unproduced prototype of a low-noise coil weapon."),
-0041: 			["xiaowo_auction_master_key"] = ("Military Master Key", "A core key capable of forging military access credentials."),
-0042: 			["xiaowo_auction_bearing_set"] = ("High-Density Bearings", "Precision bearings for heavy industrial equipment."),
-0043: 			["xiaowo_auction_calibrator"] = ("Industrial Calibrator", "A portable instrument for precision machine calibration."),
-0044: 			["xiaowo_auction_supercoil"] = ("Superconducting Coil", "A fully sealed industrial superconducting coil."),
-0045: 			["xiaowo_auction_control_core"] = ("Prototype Control Core", "An unreleased automation control core."),
-0046: 			["xiaowo_auction_fabricator_core"] = ("Self-Calibrating Fabricator", "A fabrication core that corrects its own machining errors."),
-~~~
-- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:74\`
-~~~csharp
-0071: 			["xiaowo_auction_coilgun"] = Spec("xiaowo_auction_coilgun", ContainerCategory.Contraband, 2, 30000, "静默线圈枪原型", "没有量产记录的低噪声线圈武器原型。", "CONTRABAND_ITEM_TAG", "WEAPON", "FIREARM"),
-0072: 			["xiaowo_auction_master_key"] = Spec("xiaowo_auction_master_key", ContainerCategory.Contraband, 3, 65000, "军用权限母钥", "能够伪造多级军用通行凭证的核心密钥。", "CONTRABAND_ITEM_TAG"),
-0073: 			["xiaowo_auction_bearing_set"] = Spec("xiaowo_auction_bearing_set", ContainerCategory.Engineering, 1, 1100, "高密度轴承组", "适用于重型设备的高密度精密轴承。", "MATERIAL"),
-0074: 			["xiaowo_auction_calibrator"] = Spec("xiaowo_auction_calibrator", ContainerCategory.Engineering, 1, 2500, "工业校准仪", "用于校准精密生产设备的便携仪器。", "TOOL"),
-0075: 			["xiaowo_auction_supercoil"] = Spec("xiaowo_auction_supercoil", ContainerCategory.Engineering, 1, 4100, "超导线圈", "封装完好的工业级超导线圈。", "MATERIAL", "MODULE"),
-0076: 			["xiaowo_auction_control_core"] = Spec("xiaowo_auction_control_core", ContainerCategory.Engineering, 1, 5700, "原型控制核心", "尚未量产的自动化设备控制核心。", "MODULE", "MACHINE"),
-0077: 			["xiaowo_auction_fabricator_core"] = Spec("xiaowo_auction_fabricator_core", ContainerCategory.Engineering, 1, 8500, "自校准制造核心", "能够自行修正加工误差的制造设备核心。", "MODULE"),
 ~~~
 - \`XIAOWONightAuction/AuctionItemLinkRules.cs:8\`
 ~~~csharp
@@ -752,6 +752,124 @@
 0044: 			["xiaowo_auction_supercoil"] = ("Superconducting Coil", "A fully sealed industrial superconducting coil."),
 0045: 			["xiaowo_auction_control_core"] = ("Prototype Control Core", "An unreleased automation control core."),
 0046: 			["xiaowo_auction_fabricator_core"] = ("Self-Calibrating Fabricator", "A fabrication core that corrects its own machining errors."),
+~~~
+
+### private static void ApplyLocalizedText
+- \`XIAOWONightAuction/AuctionContainer.cs:179\`
+~~~csharp
+0159: 				}
+0160: 				goto IL_012d;
+0161: 			}
+0162: 		}
+0163: 		num = 1;
+0164: 		goto IL_0102;
+0165: 		IL_012d:
+0166: 		ClearNativeLockState(item);
+0167: 		item.SetContentWindow((PixelWindow)null);
+0168: 		if (num != 0)
+0169: 		{
+0170: 			item.ValidateShapeState();
+0171: 		}
+0172: 		return;
+0173: 		IL_0102:
+0174: 		item.shape = new GridShapeBuilder(2, 2).SetDataFill(2, 2, (byte)1).Build();
+0175: 		item.modifiedShape = item.shape.Clone();
+0176: 		goto IL_012d;
+0177: 	}
+0178: 
+0179: 	private static void ApplyLocalizedText(GameItem item, ContainerData data)
+0180: 	{
+0181: 		string name = (item.identifierName = AuctionCatalog.CategoryName(data.Category));
+0182: 		item.name = name;
+0183: 		item.shortDescription = ((data.Index >= data.Contents.Count) ? AuctionText.Get("container_empty", "这个拍卖集装箱已经取空。") : AuctionText.Get("container_remaining", "密封集装箱，剩余 {0} 件。只能取出，不能存入。", data.Contents.Count - data.Index));
+0184: 		item.longDescription = item.shortDescription;
+0185: 		item.flavorText = AuctionText.Get("container_flavor", "箱门只认拍卖行内部封签。");
+0186: 	}
+0187: 
+0188: 	internal static void RepairForOpenIfNeeded(GameItem item)
+0189: 	{
+0190: 		if (item != null)
+0191: 		{
+0192: 			GridShape shape = item.shape;
+0193: 			if (((shape != null) ? new int?(shape.width) : ((int?)null)) == 2 && item.shape.height == 2)
+0194: 			{
+0195: 				GridShape modifiedShape = item.modifiedShape;
+0196: 				if (modifiedShape != null && modifiedShape.width == 2 && item.modifiedShape.height == 2 && !item.IsTag("SUPPLY_CRATE") && !item.IsTag("LOCKED_CONTAINER_TAG") && item.contentWindow == null && !(item.spriteAtlasPath != "xiaowo_night_auction"))
+0197: 				{
+0198: 					return;
+0199: 				}
+0200: 			}
+0201: 		}
+0202: 		Repair(item);
+0203: 	}
+0204: 
+0205: 	private static void ClearNativeLockState(GameItem item)
+0206: 	{
+0207: 		string[] nativeLockTags = NativeLockTags;
+0208: 		foreach (string text in nativeLockTags)
+0209: 		{
+0210: 			item.DisableTag(text, true);
+0211: 			TagSystem state = item.state;
+0212: 			if (state != null)
+0213: 			{
+~~~
+- \`XIAOWONightAuction/AuctionExclusiveFactory.cs:255\`
+~~~csharp
+0235: 		if (item != null && AuctionExclusiveCatalog.Items.TryGetValue(item.identifier, out var value))
+0236: 		{
+0237: 			ApplyLocalizedText(item, value);
+0238: 		}
+0239: 	}
+0240: 
+0241: 	internal static void RefreshOwnedText()
+0242: 	{
+0243: 		PlayerStore existing = NativeStore.Existing;
+0244: 		List<GameItem> list = ((existing != null) ? existing.FindAllItem(true) : null);
+0245: 		if (list == null)
+0246: 		{
+0247: 			return;
+0248: 		}
+0249: 		foreach (GameItem item in list)
+0250: 		{
+0251: 			RefreshLocalizedText(item);
+0252: 		}
+0253: 	}
+0254: 
+0255: 	private static void ApplyLocalizedText(GameItem item, AuctionExclusiveSpec spec)
+0256: 	{
+0257: 		int num;
+0258: 		string text;
+0259: 		if (AuctionExclusiveCatalog.English.TryGetValue(spec.Id, out (string, string) value))
+0260: 		{
+0261: 			num = ((!AuctionText.IsChinese(AuctionText.CurrentLocaleCode)) ? 1 : 0);
+0262: 			if (num != 0)
+0263: 			{
+0264: 				(text, _) = value;
+0265: 				goto IL_0035;
+0266: 			}
+0267: 		}
+0268: 		else
+0269: 		{
+0270: 			num = 0;
+0271: 		}
+0272: 		text = spec.Name;
+0273: 		goto IL_0035;
+0274: 		IL_0035:
+0275: 		string text2 = text;
+0276: 		string text3 = ((num != 0) ? value.Item2 : spec.Description);
+0277: 		if (spec.Id == "xiaowo_auction_forged_pass")
+0278: 		{
+0279: 			text3 = string.Format(text3, AuctionForgedPass.Remaining(item));
+0280: 		}
+0281: 		if (spec.Id == "xiaowo_auction_calibrator")
+0282: 		{
+0283: 			text3 = string.Format(text3, AuctionItemLinks.Remaining(item));
+0284: 		}
+0285: 		item.identifierName = text2;
+0286: 		item.name = text2;
+0287: 		item.shortDescription = text3;
+0288: 		item.longDescription = text3;
+0289: 		item.flavorText = AuctionText.Select("只在夜间集装箱拍卖中流通的稀有货物。", "Rare goods traded only at the night container auction.");
 ~~~
 
 ## 3829085054
@@ -949,55 +1067,55 @@
 1074: 		}
 1075: 		default:
 ~~~
-- \`ItemStorage/BoxWindow.cs:348\`
+- \`ItemStorage/AutoStow.cs:26\`
 ~~~csharp
-0345: 					{
-0346: 					}
-0347: 				});
-0348: 				PixelElement val14 = (PixelElement)new MachineryButton("一键收纳", action, 48, 24);
-0349: 				if (val14 == null)
-0350: 				{
-0351: 					Core.Log?.Warning("收纳箱[" + context + "] 一键收纳按钮非 PixelElement");
+0023: 		}
+0024: 		if (!BoxTransfer.IsInStore())
+0025: 		{
+0026: 			Core.Debug("收纳箱[" + context + "] 一键收纳：玩家不在店内，忽略。");
+0027: 			BoxItem.NotifyUser("请回到店内再收纳");
+0028: 			return;
+0029: 		}
 ~~~
-- \`ItemStorage/BoxWindow.cs:351\`
+- \`ItemStorage/AutoStow.cs:38\`
 ~~~csharp
-0348: 				PixelElement val14 = (PixelElement)new MachineryButton("一键收纳", action, 48, 24);
-0349: 				if (val14 == null)
-0350: 				{
-0351: 					Core.Log?.Warning("收纳箱[" + context + "] 一键收纳按钮非 PixelElement");
-0352: 				}
-0353: 				else if (!val6.Attach(val14, 3, 4, 48, 24))
-0354: 				{
+0035: 		}
+0036: 		if (dictionary.Count == 0)
+0037: 		{
+0038: 			Core.Debug("收纳箱[" + context + "] 一键收纳：盒子里没有物品，不工作。");
+0039: 			BoxItem.NotifyUser("没有可收纳的物品");
+0040: 			return;
+0041: 		}
 ~~~
-- \`ItemStorage/BoxWindow.cs:355\`
+- \`ItemStorage/AutoStow.cs:75\`
 ~~~csharp
-0352: 				}
-0353: 				else if (!val6.Attach(val14, 3, 4, 48, 24))
-0354: 				{
-0355: 					Core.Log?.Warning("收纳箱[" + context + "] attach 一键收纳按钮失败");
-0356: 				}
-0357: 			}
-0358: 			catch (Exception ex4)
+0072: 		{
+0073: 			Core.Log?.Warning("收纳箱[" + context + "] 箱间联动异常：" + ex.Message);
+0074: 		}
+0075: 		Core.Debug("收纳箱[" + context + "] 一键收纳耗时 " + stopwatch.ElapsedMilliseconds + " ms（收 " + num + " 叠 / 候选 " + list.Count + " 件）。");
+0076: 		if (num > 0 || num5 > 0)
+0077: 		{
+0078: 			try
 ~~~
-- \`ItemStorage/BoxWindow.cs:360\`
+- \`ItemStorage/AutoStow.cs:96\`
 ~~~csharp
-0357: 			}
-0358: 			catch (Exception ex4)
-0359: 			{
-0360: 				Core.Log?.Warning("收纳箱[" + context + "] 一键收纳按钮构建失败：" + ex4.Message);
-0361: 			}
-0362: 			try
-0363: 			{
+0093: 			catch
+0094: 			{
+0095: 			}
+0096: 			Core.Log?.Msg("收纳箱[" + context + "] 一键收纳完成：收进 " + num + " 叠共 " + num2 + " 件" + ((num5 > 0) ? ("，箱间归拢 " + num5 + " 格") : "") + ((num3 > 0) ? ("，" + num3 + " 叠放不下或不可收，跳过") : "") + ((num4 > 0) ? ("，" + num4 + " 件销毁走裸销毁兜底") : "") + "。");
+0097: 		}
+0098: 		else
+0099: 		{
 ~~~
-- \`ItemStorage/BoxWindow.cs:470\`
+- \`ItemStorage/AutoStow.cs:100\`
 ~~~csharp
-0467: 			}
-0468: 			RefreshButtons(pack);
-0469: 			QueueIconRefresh(pack);
-0470: 			Core.Debug("收纳箱[" + context + "]：窗口构建完成（4×4 十六槽全满 + 网格下方横排一键收纳按钮 48×24）");
-0471: 			return true;
-0472: 		}
-0473: 		catch (Exception ex8)
+0097: 		}
+0098: 		else
+0099: 		{
+0100: 			Core.Log?.Msg("收纳箱[" + context + "] 一键收纳：店里没有能收进来的物品" + ((num3 > 0) ? ("（" + num3 + " 叠空间不足或不可收，跳过）") : "") + ((num5 > 0) ? ("；从其他收纳箱归拢 " + num5 + " 格") : "") + "。");
+0101: 		}
+0102: 		if (num2 > 0)
+0103: 		{
 ~~~
 
 ### 全箱收纳
@@ -1183,6 +1301,46 @@
 1056: 		case CaptureMode.Single:
 1057: 		case CaptureMode.RestockSingle:
 ~~~
+- \`ItemStorage/BoxWindow.cs:400\`
+~~~csharp
+0397: 					{
+0398: 					}
+0399: 				});
+0400: 				PixelElement val16 = (PixelElement)new MachineryButton("全箱上货", action3, 48, 24);
+0401: 				if (val16 == null)
+0402: 				{
+0403: 					Core.Log?.Warning("收纳箱[" + context + "] 全箱上货按钮非 PixelElement");
+~~~
+- \`ItemStorage/BoxWindow.cs:403\`
+~~~csharp
+0400: 				PixelElement val16 = (PixelElement)new MachineryButton("全箱上货", action3, 48, 24);
+0401: 				if (val16 == null)
+0402: 				{
+0403: 					Core.Log?.Warning("收纳箱[" + context + "] 全箱上货按钮非 PixelElement");
+0404: 				}
+0405: 				else if (!val6.Attach(val16, 1, 4, 48, 24))
+0406: 				{
+~~~
+- \`ItemStorage/BoxWindow.cs:407\`
+~~~csharp
+0404: 				}
+0405: 				else if (!val6.Attach(val16, 1, 4, 48, 24))
+0406: 				{
+0407: 					Core.Log?.Warning("收纳箱[" + context + "] attach 全箱上货按钮失败");
+0408: 				}
+0409: 			}
+0410: 			catch (Exception ex6)
+~~~
+- \`ItemStorage/BoxWindow.cs:412\`
+~~~csharp
+0409: 			}
+0410: 			catch (Exception ex6)
+0411: 			{
+0412: 				Core.Log?.Warning("收纳箱[" + context + "] 全箱上货按钮构建失败：" + ex6.Message);
+0413: 			}
+0414: 			try
+0415: 			{
+~~~
 - \`ItemStorage/BoxRestock.cs:119\`
 ~~~csharp
 0116: 		}
@@ -1202,46 +1360,6 @@
 0145: 	}
 0146: 
 0147: 	internal static void UnbindManually()
-~~~
-- \`ItemStorage/BoxRestock.cs:161\`
-~~~csharp
-0158: 
-0159: 	internal static void OnAllBoxesDestroyed()
-0160: 	{
-0161: 		ClearKey("玩家拥有的收纳箱已全部被系统销毁，释放全箱上货键");
-0162: 	}
-0163: 
-0164: 	internal unsafe static void Tick()
-~~~
-- \`ItemStorage/BoxRestock.cs:216\`
-~~~csharp
-0213: 		{
-0214: 			return;
-0215: 		}
-0216: 		Core.Debug("全箱上货快捷键 " + ((object)(*(KeyCode*)(&key))/*cast due to .constrained prefix*/).ToString() + " 触发。");
-0217: 		BoxItem.ClickSound();
-0218: 		try
-0219: 		{
-~~~
-- \`ItemStorage/BoxRestock.cs:224\`
-~~~csharp
-0221: 		}
-0222: 		catch (Exception ex)
-0223: 		{
-0224: 			Core.Log?.Warning("全箱上货执行异常：" + ex.Message);
-0225: 		}
-0226: 	}
-0227: 
-~~~
-- \`ItemStorage/BoxRestock.cs:251\`
-~~~csharp
-0248: 		}
-0249: 		catch (Exception ex)
-0250: 		{
-0251: 			Core.Log?.Warning("全箱上货[" + context + "] 扫描箱子失败：" + ex.Message);
-0252: 			return;
-0253: 		}
-0254: 		if (list.Count == 0)
 ~~~
 
 ### 一键上货
@@ -1315,55 +1433,55 @@
 1074: 		}
 1075: 		default:
 ~~~
-- \`ItemStorage/BoxRestock.cs:313\`
+- \`ItemStorage/BoxHotkey.cs:72\`
 ~~~csharp
-0310: 		}
-0311: 		if (!BoxTransfer.IsInStore())
-0312: 		{
-0313: 			Core.Debug("一键上货[" + context + "]：玩家不在店内，忽略。");
-0314: 			BoxItem.NotifyUser("请回到店内再上货");
-0315: 			return;
-0316: 		}
+0069: 					if (boxOption2 != 0 && (!BoundKeys.TryGetValue(boxOption2, out var value2) || !value2.Restock || ResolveBox(value2.Uid) == null))
+0070: 					{
+0071: 						BoundKeys[boxOption2] = new HotkeyEntry(num2, restock: true);
+0072: 						Core.Debug("快捷键自愈：恢复 " + ((object)(KeyCode)boxOption2/*cast due to .constrained prefix*/).ToString() + " → 箱 uid " + num2 + "（一键上货）" + ((value2.Uid != 0L && value2.Uid != num2) ? ("（旧 uid " + value2.Uid + " 已失效，覆盖）") : "") + "。");
+0073: 					}
+0074: 				}
+0075: 				catch
 ~~~
-- \`ItemStorage/BoxRestock.cs:324\`
+- \`ItemStorage/BoxHotkey.cs:176\`
 ~~~csharp
-0321: 			val2 = PlayerStore.Instance?.currentClientInstance;
-0322: 			if (val2 == null)
-0323: 			{
-0324: 				BoxItem.NotifyUser("必须有顾客在场时才能一键上货");
-0325: 				return;
-0326: 			}
-0327: 			val = val2.GetClientBlueprint();
+0173: 			}
+0174: 			if (list.Count > 0)
+0175: 			{
+0176: 				Core.Log?.Msg("快捷键映射：箱 uid " + uid + " 的" + (restock ? "一键上货键" : "一键收纳键") + "已由玩家主动解绑（Esc），释放 " + list.Count + " 个键。");
+0177: 			}
+0178: 			return list.Count > 0;
+0179: 		}
 ~~~
-- \`ItemStorage/BoxRestock.cs:330\`
+- \`ItemStorage/BoxHotkey.cs:294\`
 ~~~csharp
-0327: 			val = val2.GetClientBlueprint();
-0328: 			if (val == null)
-0329: 			{
-0330: 				BoxItem.NotifyUser("必须有顾客在场时才能一键上货");
-0331: 				return;
-0332: 			}
-0333: 			try
+0291: 			}
+0292: 			else if (boundKey.Value.Restock)
+0293: 			{
+0294: 				Core.Debug("收纳箱快捷键 " + ((object)(KeyCode)boundKey.Key/*cast due to .constrained prefix*/).ToString() + " 触发一键上货。");
+0295: 				BoxItem.ClickSound();
+0296: 				BoxRestock.RunOne(val, "快捷键");
+0297: 			}
 ~~~
-- \`ItemStorage/BoxRestock.cs:337\`
+- \`ItemStorage/BoxWindow.cs:426\`
 ~~~csharp
-0334: 			{
-0335: 				if ((int)val.clientIntent != 1)
-0336: 				{
-0337: 					BoxItem.NotifyUser("该顾客不是来购物的，不支持一键上货");
-0338: 					return;
-0339: 				}
-0340: 			}
+0423: 					{
+0424: 					}
+0425: 				});
+0426: 				PixelElement val17 = (PixelElement)new MachineryButton("一键上货", action4, 48, 24);
+0427: 				if (val17 == null)
+0428: 				{
+0429: 					Core.Log?.Warning("收纳箱[" + context + "] 一键上货按钮非 PixelElement");
 ~~~
-- \`ItemStorage/BoxRestock.cs:346\`
+- \`ItemStorage/BoxWindow.cs:429\`
 ~~~csharp
-0343: 			}
-0344: 			if (!val.useClientBudget || val.GetBudget() <= 0)
-0345: 			{
-0346: 				BoxItem.NotifyUser("该顾客没有预算，不支持一键上货");
-0347: 				return;
-0348: 			}
-0349: 		}
+0426: 				PixelElement val17 = (PixelElement)new MachineryButton("一键上货", action4, 48, 24);
+0427: 				if (val17 == null)
+0428: 				{
+0429: 					Core.Log?.Warning("收纳箱[" + context + "] 一键上货按钮非 PixelElement");
+0430: 				}
+0431: 				else if (!val6.Attach(val17, 2, 4, 48, 24))
+0432: 				{
 ~~~
 
 ### 拖动物品到收纳箱上
