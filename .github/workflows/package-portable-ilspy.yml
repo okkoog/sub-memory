@@ -1,0 +1,42 @@
+name: Package portable ILSpy for local audit
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-portable-ilspy.yml"
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Install ILSpy tool
+        run: |
+          mkdir -p "$RUNNER_TEMP/ilspy"
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Install local .NET runtime
+        shell: bash
+        run: |
+          curl -fsSL https://dot.net/v1/dotnet-install.sh -o "$RUNNER_TEMP/dotnet-install.sh"
+          bash "$RUNNER_TEMP/dotnet-install.sh" --runtime dotnet --channel 8.0 --install-dir "$RUNNER_TEMP/dotnet"
+      - name: Bundle portable audit tool
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/bundle"
+          cp -a "$RUNNER_TEMP/ilspy" "$RUNNER_TEMP/bundle/"
+          cp -a "$RUNNER_TEMP/dotnet" "$RUNNER_TEMP/bundle/"
+          cat > "$RUNNER_TEMP/bundle/run-ilspy.sh" <<'EOS'
+          #!/usr/bin/env bash
+          DIR="$(cd "$(dirname "$0")" && pwd)"
+          exec "$DIR/dotnet/dotnet" "$DIR/ilspy/.store/ilspycmd/9.1.0.7988/ilspycmd/9.1.0.7988/tools/net8.0/any/ilspycmd.dll" "$@"
+          EOS
+          chmod +x "$RUNNER_TEMP/bundle/run-ilspy.sh"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portable-ilspy-linux
+          path: ${{ runner.temp }}/bundle
+          if-no-files-found: error
