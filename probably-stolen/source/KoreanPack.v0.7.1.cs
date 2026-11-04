@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.7 (v0.7.5-safe-base)
+// Probably Stolen - generic Korean localization bridge v0.7.8 (v0.7.5-safe-base locale fix)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -118,6 +118,9 @@ namespace ProbablyStolenKoreanPack
         private static readonly HashSet<string> PatchedMethods =
             new HashSet<string>(StringComparer.Ordinal);
 
+        private static readonly HashSet<string> DiagnosticOnce =
+            new HashSet<string>(StringComparer.Ordinal);
+
         private static readonly List<LoadedMod> PendingMods =
             new List<LoadedMod>();
 
@@ -146,6 +149,7 @@ namespace ProbablyStolenKoreanPack
                 _richTextSlicesField = null;
                 SavedValues.Clear();
                 PatchedMethods.Clear();
+                DiagnosticOnce.Clear();
                 PendingMods.Clear();
 
                 _dynamicHarmony = new Harmony(DynamicHarmonyId);
@@ -178,6 +182,7 @@ namespace ProbablyStolenKoreanPack
                 FinalTooltipHitLogged.Clear();
                 FinalTooltipMissLogged.Clear();
                 PatchedMethods.Clear();
+                DiagnosticOnce.Clear();
                 PendingMods.Clear();
                 _catalogsReady = false;
 
@@ -199,6 +204,15 @@ namespace ProbablyStolenKoreanPack
                     {
                         BuildCatalogsFromOwnLocalization(loaded);
                         _catalogsReady = true;
+                        try
+                        {
+                            Debug.Log("[KoreanPack] Active locale code: '" +
+                                (LocHelper.GetCurrentLocaleCode() ?? "<null>") + "'.");
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.LogWarning("[KoreanPack] Locale probe failed: " + ex.Message);
+                        }
 
                         if (PendingMods.Count > 0)
                         {
@@ -860,6 +874,18 @@ namespace ProbablyStolenKoreanPack
 
             MergeLocale(loaded, catalog, saved, "ko");
             MergeLocale(loaded, catalog, saved, "ko-KR");
+            MergeLocale(loaded, catalog, saved, "kr");
+            MergeLocale(loaded, catalog, saved, "kr-KR");
+
+            try
+            {
+                string current = LocHelper.GetCurrentLocaleCode();
+                if (!string.IsNullOrWhiteSpace(current))
+                    MergeLocale(loaded, catalog, saved, current.Trim());
+            }
+            catch
+            {
+            }
         }
 
         private static void MergeLocale(LoadedMod loaded, Catalog catalog,
@@ -1178,6 +1204,8 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("EnsureWindow", KnownPatchKind.StaticVisibleState),
                         new KnownPatch("RefreshButtons", KnownPatchKind.StaticVisibleState));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxLabel",
+                        new KnownPatch("BaseNameOf", KnownPatchKind.StringResult),
+                        new KnownPatch("FormatText", KnownPatchKind.StringResult),
                         new KnownPatch("Apply", KnownPatchKind.StaticVisibleState),
                         new KnownPatch("Tick", KnownPatchKind.StaticVisibleState),
                         new KnownPatch("OnItemRenamed", KnownPatchKind.StaticVisibleState));
@@ -2018,6 +2046,8 @@ namespace ProbablyStolenKoreanPack
         private static void SafeTupleListArgsPostfix(
             MethodBase __originalMethod, object[] __args)
         {
+            LogPatchHit(__originalMethod);
+
             if (!_enabled || !IsKorean() || __originalMethod == null ||
                 __originalMethod.DeclaringType == null || __args == null)
                 return;
@@ -2118,6 +2148,8 @@ namespace ProbablyStolenKoreanPack
         private static void TranslateCarrierResult(
             MethodBase originalMethod, object result)
         {
+            LogPatchHit(originalMethod);
+
             if (!_enabled || !IsKorean() || result == null ||
                 originalMethod == null || originalMethod.DeclaringType == null)
                 return;
@@ -2138,6 +2170,8 @@ namespace ProbablyStolenKoreanPack
         private static void SafeGameItemResultPostfix(
             MethodBase __originalMethod, GameItem __result)
         {
+            LogPatchHit(__originalMethod);
+
             if (!_enabled || !IsKorean() || __result == null ||
                 __originalMethod == null || __originalMethod.DeclaringType == null)
                 return;
@@ -2201,6 +2235,8 @@ namespace ProbablyStolenKoreanPack
         private static void SafeTargetVisibleStaticStatePostfix(
             MethodBase __originalMethod)
         {
+            LogPatchHit(__originalMethod);
+
             if (!_enabled || !IsKorean() || __originalMethod == null ||
                 __originalMethod.DeclaringType == null)
                 return;
@@ -2605,6 +2641,8 @@ namespace ProbablyStolenKoreanPack
         private static void SafeStringResultPostfix(
             MethodBase __originalMethod, ref string __result)
         {
+            LogPatchHit(__originalMethod);
+
             if (!_enabled || !IsKorean() ||
                 __originalMethod == null ||
                 __originalMethod.DeclaringType == null ||
@@ -2662,6 +2700,23 @@ namespace ProbablyStolenKoreanPack
             }
         }
 
+        private static void LogPatchHit(MethodBase method)
+        {
+            if (method == null || method.DeclaringType == null)
+                return;
+
+            string key = method.DeclaringType.FullName + "." + method.Name;
+            if (!DiagnosticOnce.Add(key))
+                return;
+
+            string locale = "<unknown>";
+            try { locale = LocHelper.GetCurrentLocaleCode() ?? "<null>"; }
+            catch { }
+
+            Debug.Log("[KoreanPack] Patch hit: " + key +
+                " locale='" + locale + "' korean=" + IsKoreanCode(locale));
+        }
+
         private static bool IsKorean()
         {
             try
@@ -2684,6 +2739,12 @@ namespace ProbablyStolenKoreanPack
                    code.StartsWith("ko-",
                        StringComparison.OrdinalIgnoreCase) ||
                    code.StartsWith("ko_",
+                       StringComparison.OrdinalIgnoreCase) ||
+                   string.Equals(code, "kr",
+                       StringComparison.OrdinalIgnoreCase) ||
+                   code.StartsWith("kr-",
+                       StringComparison.OrdinalIgnoreCase) ||
+                   code.StartsWith("kr_",
                        StringComparison.OrdinalIgnoreCase);
         }
 
