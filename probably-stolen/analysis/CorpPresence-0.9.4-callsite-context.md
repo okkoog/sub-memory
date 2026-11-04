@@ -4,7 +4,7 @@ Only excerpts for relevant initialization/Harmony methods; no code was executed.
 
 ## CorpPresence/Main.cs
 
-Matching lines: 10; displayed context lines: 56
+Matching lines: 12; displayed context lines: 67
 
 ```text
 34: 		_harmony = new Harmony("mod." + manifest.ID);
@@ -13,56 +13,67 @@ Matching lines: 10; displayed context lines: 56
 37: 
 38: 	public void OnEnable()
 39: 	{
-40: 		if (_runtime.Start(EnableCore))
-41: 		{
-42: 			_bootstrap.Tick();
-43: 		}
-44: 	}
-45: 
-46: 	private void EnableCore()
-47: 	{
-48: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
-49: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
-50: 		_runtime.Own(delegate
-51: 		{
-52: 			Hooks.InstallCore(_harmony);
-53: 		}, delegate
-54: 		{
-55: 			Harmony harmony = _harmony;
-56: 			if (harmony != null)
-57: 			{
-58: 				harmony.UnpatchAll(_harmony.Id);
-59: 			}
-60: 		});
-68: 	}
-69: 
-70: 	private void EnableResources()
-71: 	{
-72: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
-73: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
-74: 		Hooks.InstallResources(_harmony);
-75: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
-76: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
-77: 		ItemRegistry.Activate();
-78: 		_runtime.Own(Noop, Tex.ReleaseUi);
-79: 		_runtime.Own(Noop, Theme.ResetCachedFont);
-80: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
-81: 		_runtime.Own(Noop, Notebook.Destroy);
-82: 		_runtime.Own(Noop, InputShield.Destroy);
-83: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
-84: 		_runtime.Own(CreateHost, DestroyHost);
-85: 		ModLog.Info("公司增强 0.9.4 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
-86: 	}
-87: 
-88: 	public void OnDisable()
-89: 	{
-90: 		_runtime.Stop();
-91: 	}
-92: 
-93: 	private static void Noop()
-94: 	{
-95: 	}
-96: 
+40: 		bool flag;
+41: 		try
+42: 		{
+43: 			flag = _runtime.Start(EnableCore);
+44: 		}
+45: 		catch (Exception error)
+46: 		{
+47: 			ReportStartupRollback(error);
+48: 			throw;
+49: 		}
+54: 	}
+55: 
+56: 	private void EnableCore()
+57: 	{
+58: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
+59: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
+60: 		_runtime.Own(delegate
+61: 		{
+62: 			Hooks.InstallCore(_harmony);
+63: 		}, delegate
+64: 		{
+65: 			Harmony harmony = _harmony;
+66: 			if (harmony != null)
+67: 			{
+68: 				harmony.UnpatchAll(_harmony.Id);
+69: 			}
+70: 		});
+78: 	}
+79: 
+80: 	private void EnableResources()
+81: 	{
+82: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
+83: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
+84: 		_runtime.Own(delegate
+85: 		{
+86: 			Hooks.InstallResources(_harmony, ReportWaterRollback);
+87: 		}, WaterHooks.Uninstall);
+88: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
+89: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
+90: 		_runtime.Own(Noop, CatalogPricing.Reset);
+91: 		_runtime.Own(Noop, Crates.Reset);
+92: 		ItemRegistry.Activate();
+93: 		_runtime.Own(Noop, Tex.ReleaseUi);
+94: 		_runtime.Own(Noop, Theme.ResetCachedFont);
+95: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
+96: 		_runtime.Own(Noop, Notebook.Destroy);
+97: 		_runtime.Own(Noop, InputShield.Destroy);
+98: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
+99: 		_runtime.Own(CreateHost, DestroyHost);
+100: 		ModLog.Info("公司增强 0.9.5 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
+101: 	}
+102: 
+103: 	public void OnDisable()
+104: 	{
+105: 		_runtime.Stop();
+106: 	}
+107: 
+108: 	private static void ReportWaterRollback(Exception error)
+109: 	{
+110: 		ModLog.Warn("[水质身份兼容] 安装失败，已尝试撤销本轮水质补丁。公司物品注册保留：" + error);
+111: 		RollbackNotice.Queue(fullRollback: false);
 ```
 
 ## CorpPresence/GameResources.cs
@@ -137,7 +148,7 @@ Matching lines: 12; displayed context lines: 63
 
 ## CorpPresence/Hooks.cs
 
-Matching lines: 83; displayed context lines: 228
+Matching lines: 80; displayed context lines: 213
 
 ```text
 16: 	private static string _reportedId;
@@ -152,8 +163,8 @@ Matching lines: 83; displayed context lines: 228
 25: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeof(ItemTags), null, "AfterDecode", new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
 26: 		Patch&lt;SaveManager&gt;(h, "EncodeNode", typeFromHandle2, "BeforeEncode", null, new Type[1] { typeof(GameItem) });
 27: 		Patch&lt;PlayerStore&gt;(h, "SaveGame", typeFromHandle, "BeforeSave");
-28: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, null, "ResetState");
-29: 		Patch&lt;PlayerStore&gt;(h, "StartNewGame", typeFromHandle, null, "ResetState");
+28: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, "BeforeStoreTransition", "ResetState");
+29: 		Patch&lt;PlayerStore&gt;(h, "StartNewGame", typeFromHandle, "BeforeStoreTransition", "ResetState");
 30: 	}
 31: 
 32: 	private static void InstallGameplay(Harmony h)
@@ -292,82 +303,67 @@ Matching lines: 83; displayed context lines: 228
 165: 		});
 166: 	}
 167: 
-168: 	public static void InstallResources(Harmony h)
+168: 	public static void InstallResources(Harmony h, Action&lt;Exception&gt; waterFailure)
 169: 	{
 170: 		if (!GameResources.Ready)
 171: 		{
 172: 			throw new InvalidOperationException("液体补丁资源尚未就绪");
 173: 		}
 174: 		InstallGameplay(h);
-175: 		Patch&lt;WaterFeatureHelper&gt;(h, "UpdateWaterFeature", typeof(SilverBlood), null, "AfterUpdateWaterFeature", new Type[2]
-176: 		{
-177: 			typeof(GameItem),
-178: 			typeof(bool)
-179: 		});
-180: 		Patch&lt;WaterFeatureHelper&gt;(h, "OnLiquidChanged", typeof(SilverBlood), null, "AfterLiquidChanged", new Type[2]
-181: 		{
-182: 			typeof(GameItem),
-183: 			typeof(bool)
-184: 		});
-185: 		Patch&lt;WaterFeatureHelper&gt;(h, "OnLiquidContainerPourInto", typeof(SilverBlood), null, "AfterPourInto", new Type[3]
-186: 		{
-187: 			typeof(GameItem),
-188: 			typeof(GameItem),
-189: 			typeof(bool)
-190: 		});
-191: 	}
-192: 
-193: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
-194: 	{
-195: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
-196: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
-197: 		Type[] array = args ?? Type.EmptyTypes;
-198: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
-199: 		if (methodInfo == null)
-200: 		{
-201: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
-202: 		}
-203: 		else
-204: 		{
-205: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
-206: 		}
-207: 	}
-208: 
-209: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
-210: 	{
-211: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
-212: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
-213: 		if (original == null)
-214: 		{
-215: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
-216: 		}
-217: 		else
-218: 		{
-219: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
-220: 		}
-221: 	}
-222: 
-223: 	public static void InstallEvents()
-224: 	{
-225: 		if (_nightly == null)
-226: 		{
-227: 			_nightly = delegate
-228: 			{
-229: 				Guard("每晚服务", Services.OnNightlyServices);
-230: 			};
-231: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
-232: 		}
-233: 	}
-234: 
-235: 	public static void UninstallEvents()
-236: 	{
-237: 		if (_nightly != null)
-238: 		{
-239: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
-240: 			_nightly = null;
-241: 		}
-242: 	}
-243: 
+175: 		WaterHooks.Install(h.Id, waterFailure);
+176: 	}
+177: 
+178: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
+179: 	{
+180: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
+181: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
+182: 		Type[] array = args ?? Type.EmptyTypes;
+183: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
+184: 		if (methodInfo == null)
+185: 		{
+186: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
+187: 		}
+188: 		else
+189: 		{
+190: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
+191: 		}
+192: 	}
+193: 
+194: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
+195: 	{
+196: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
+197: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
+198: 		if (original == null)
+199: 		{
+200: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
+201: 		}
+202: 		else
+203: 		{
+204: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
+205: 		}
+206: 	}
+207: 
+208: 	public static void InstallEvents()
+209: 	{
+210: 		if (_nightly == null)
+211: 		{
+212: 			_nightly = delegate
+213: 			{
+214: 				Guard("每晚服务", Services.OnNightlyServices);
+215: 			};
+216: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
+217: 		}
+218: 	}
+219: 
+220: 	public static void UninstallEvents()
+221: 	{
+222: 		if (_nightly != null)
+223: 		{
+224: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
+225: 			_nightly = null;
+226: 		}
+227: 	}
+228: 
 ```
 
 ## CorpPresence/L.cs
@@ -479,7 +475,7 @@ Matching lines: 6; displayed context lines: 42
 53: 				complete();
 54: 			}
 55: 		}
-56: 		catch
+56: 		catch (Exception obj)
 57: 		{
 ```
 
@@ -488,60 +484,60 @@ Matching lines: 6; displayed context lines: 42
 Matching lines: 7; displayed context lines: 54
 
 ```text
-17: 	private static ModItemDirectory _pendingDirectory;
-18: 
-19: 	private static Action&lt;ModItemDirectory&gt; _onInit;
-20: 
-21: 	public static void Install()
-22: 	{
-23: 		if (_onInit == null)
-24: 		{
-25: 			_onInit = Register;
-26: 			ModHook.OnModItemDirectoryInit += _onInit;
-27: 		}
-28: 	}
-29: 
-30: 	public static void Uninstall()
-31: 	{
-32: 		if (_onInit != null)
-33: 		{
-34: 			ModHook.OnModItemDirectoryInit -= _onInit;
-35: 			_onInit = null;
-36: 		}
-37: 		if ((Object)(object)_directory != (Object)null)
-38: 		{
-39: 			foreach (string item in Registered)
-40: 			{
-41: 				if (Factories.TryGetValue(item, out var value) && ((Directory&lt;GameItem&gt;)(object)_directory).factoryDictionary.TryGetValue(item, out var value2) && (object)value == value2)
-42: 				{
-48: 		_directory = null;
-49: 		_pendingDirectory = null;
-50: 	}
-51: 
-52: 	public static void Activate()
-53: 	{
-54: 		if (!GameResources.Ready)
-55: 		{
-56: 			throw new InvalidOperationException("公司物品资源尚未就绪");
-57: 		}
-58: 		ModItemDirectory pendingDirectory = _pendingDirectory;
-59: 		_pendingDirectory = null;
-60: 		if ((Object)(object)pendingDirectory != (Object)null)
-61: 		{
-62: 			Register(pendingDirectory);
-73: 		if ((Object)(object)directory == (Object)null)
-74: 		{
-75: 			return;
-76: 		}
-77: 		if (!GameResources.Ready)
-78: 		{
-79: 			_pendingDirectory = directory;
-80: 			return;
-81: 		}
-82: 		if (_directory != directory)
-83: 		{
-84: 			_directory = directory;
-85: 			Registered.Clear();
+72: 		Warn("create:" + id, "物品工厂返回了不匹配的身份：" + id);
+73: 		return null;
+74: 	}
+75: 
+76: 	public static void Install()
+77: 	{
+78: 		if (_onInit == null)
+79: 		{
+80: 			_onInit = Register;
+81: 			ModHook.OnModItemDirectoryInit += _onInit;
+82: 		}
+83: 	}
+84: 
+85: 	public static void Uninstall()
+86: 	{
+87: 		if (_onInit != null)
+88: 		{
+89: 			ModHook.OnModItemDirectoryInit -= _onInit;
+90: 			_onInit = null;
+91: 		}
+92: 		if ((Object)(object)_directory != (Object)null)
+93: 		{
+94: 			foreach (string item in Registered)
+95: 			{
+96: 				if (Factories.TryGetValue(item, out var value) && ((Directory&lt;GameItem&gt;)(object)_directory).factoryDictionary.TryGetValue(item, out var value2) && (object)value == value2)
+97: 				{
+105: 		Reported.Clear();
+106: 		_hasReportedSummary = false;
+107: 	}
+108: 
+109: 	public static void Activate()
+110: 	{
+111: 		if (!GameResources.Ready)
+112: 		{
+113: 			throw new InvalidOperationException("公司物品资源尚未就绪");
+114: 		}
+115: 		ModItemDirectory pendingDirectory = _pendingDirectory;
+116: 		_pendingDirectory = null;
+117: 		if ((Object)(object)pendingDirectory != (Object)null)
+118: 		{
+119: 			Register(pendingDirectory);
+130: 		if ((Object)(object)directory == (Object)null)
+131: 		{
+132: 			return;
+133: 		}
+134: 		if (!GameResources.Ready)
+135: 		{
+136: 			_pendingDirectory = directory;
+137: 			return;
+138: 		}
+139: 		if (_directory != directory)
+140: 		{
+141: 			_directory = directory;
+142: 			Registered.Clear();
 ```
 
 
