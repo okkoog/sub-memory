@@ -2,7 +2,7 @@
 import os,pathlib
 root=pathlib.Path(os.environ["GAME_DECOMPILED"])
 out=pathlib.Path("probably-stolen/analysis/tooltip-call-order.md")
-terms=["FireOnCreateTooltipEarly","FireOnCreateTooltipLate","OnCreateTooltipLate","ModSourceHelper.CreateTooltip","new RichTextBuilder","Build()"]
+terms=["FireOnCreateTooltipEarly","FireOnCreateTooltipLate","OnCreateTooltipLate","ModInternal.CreateTooltipEarly","ModInternal.CreateTooltipLate","CreateTooltipLate(","ModSourceHelper.CreateTooltip","new RichTextBuilder","Build()"]
 rows=["# Tooltip call-order trace",""]
 for p in root.rglob("*.cs"):
     try: lines=p.read_text(encoding="utf-8",errors="ignore").splitlines()
