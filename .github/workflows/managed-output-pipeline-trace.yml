@@ -1,0 +1,50 @@
+name: Probably Stolen managed output pipeline trace
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/managed-output-pipeline-trace.yml'
+  workflow_dispatch:
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/Managed/Assembly-CSharp.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: List relevant managed types
+        shell: bash
+        run: |
+          set -euo pipefail
+          dll=probably-stolen/Managed/Assembly-CSharp.dll
+          "$RUNNER_TEMP/ilspy/ilspycmd" -l c "$dll" > "$RUNNER_TEMP/types.txt"
+          grep -Ei 'Machinery(Button|Label)|Pixel(Window|Element)|Tooltip|RichText|GameItemElement|Dialogue|LocHelper|Localization' "$RUNNER_TEMP/types.txt" > "$RUNNER_TEMP/relevant-types.txt" || true
+          cat "$RUNNER_TEMP/relevant-types.txt"
+      - name: Decompile confirmed output types
+        shell: bash
+        run: |
+          set -euo pipefail
+          dll=probably-stolen/Managed/Assembly-CSharp.dll
+          mkdir -p out
+          for t in MachineryButton MachineryLabel PixelWindow PixelElement GameItemElement Dialogue LocHelper TooltipHelper TooltipHandler; do
+            if grep -Fxq "Class $t" "$RUNNER_TEMP/types.txt"; then
+              "$RUNNER_TEMP/ilspy/ilspycmd" -t "$t" "$dll" > "out/$t.cs" || true
+            fi
+          done
+          cp "$RUNNER_TEMP/relevant-types.txt" out/relevant-types.txt
+          find out -maxdepth 1 -type f -print | sort
+      - uses: actions/upload-artifact@v4
+        with:
+          name: managed-output-pipeline-trace
+          path: out/
+          if-no-files-found: error
