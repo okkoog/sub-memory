@@ -1,0 +1,64 @@
+name: Import Probably Stolen Korean Pack v0.7.5.12
+
+on:
+  push:
+    paths:
+      - "probably-stolen/staging/v07512/READY"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Reconstruct package and recovered source
+        shell: bash
+        run: |
+          set -euo pipefail
+          STAGE="probably-stolen/staging/v07512"
+          cat "$STAGE"/package.part* | tr -d '\r\n' | base64 -d | gzip -d > "$RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip"
+          echo "7386fee70300ec0969d83c0154cbe47e2efa54c3d1a6253f8b7bba999bdf568b  $RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip" | sha256sum -c -
+          mkdir -p probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack
+          cat "$STAGE"/source.part* | tr -d '\r\n' | base64 -d | gzip -d > probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack/KoreanPack.cs
+          echo "24e13f49fbf013ba006719c1e702e3747aae5e44e0ca21afe63f740f6bc8f276  probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack/KoreanPack.cs" | sha256sum -c -
+      - name: Expand exact current package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf probably-stolen/current-package
+          mkdir -p probably-stolen/current-package probably-stolen/releases probably-stolen/build/out
+          unzip -q "$RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip" -d probably-stolen/current-package
+          cp "$RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip" probably-stolen/releases/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip
+          cp probably-stolen/current-package/ProbablyStolenKoreanPack.dll probably-stolen/build/out/ProbablyStolenKoreanPack.dll
+          echo "834be6542920c335f812368e1d86318a06736a16b0a66f87907453c6defa8466  probably-stolen/build/out/ProbablyStolenKoreanPack.dll" | sha256sum -c -
+      - name: Write recovered-source note
+        shell: bash
+        run: |
+          cat > probably-stolen/source/current-v07512-recovered/README.md <<'EOF'
+          # v0.7.5.12-dev recovered source
+
+          This source was recovered by decompiling the exact user-tested Work-improved DLL contained in
+          `ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip`.
+
+          - Package SHA-256: `7386fee70300ec0969d83c0154cbe47e2efa54c3d1a6253f8b7bba999bdf568b`
+          - DLL SHA-256: `834be6542920c335f812368e1d86318a06736a16b0a66f87907453c6defa8466`
+          - Recovered KoreanPack.cs SHA-256: `24e13f49fbf013ba006719c1e702e3747aae5e44e0ca21afe63f740f6bc8f276`
+
+          The exact DLL/package is authoritative. This recovered source is a reference snapshot until it is independently rebuilt and verified byte/behavior-equivalent.
+          EOF
+      - name: Commit imported current state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add probably-stolen/current-package probably-stolen/releases probably-stolen/build/out/ProbablyStolenKoreanPack.dll probably-stolen/source/current-v07512-recovered
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Import Probably Stolen Korean Pack v0.7.5.12 current state"
+          git pull --rebase origin main
+          git push origin HEAD:main
