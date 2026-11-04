@@ -58,6 +58,11 @@ jobs:
 
           grep -RInE 'Request a home visit|End call|Hello\?|Nini|PhoneDialogue|tobacco and alcohol' out/brewing --include='*.cs' > out/brewing-hits.txt || true
           grep -RInE 'Regular rebate|Upper Levels clientele|VIP introduction|Solana|Pastel|DrawSolana|DrawPastel|paid back by the courier|Membership|Story requirements|guide reveals this company|view guide|Cancel / back|hidden requirements|side stories' out/corp --include='*.cs' > out/corp-hits.txt || true
+          {
+            strings probably-stolen/mods/3828913695/CorpPresence.dll || true
+            strings -el probably-stolen/mods/3828913695/CorpPresence.dll || true
+          } > out/corp-binary-strings.txt
+          grep -inE 'Story requirements|guide reveals|view guide|Cancel / back|hidden requirements|side stories|spoilers|advance the story' out/corp-binary-strings.txt > out/corp-story-string-hits.txt || true
 
           echo '--- focused ---'
           cat out/focused-hits.txt
@@ -71,6 +76,8 @@ jobs:
           cat out/brewing-hits.txt
           echo '--- corp ---'
           cat out/corp-hits.txt
+          echo '--- corp story binary strings ---'
+          cat out/corp-story-string-hits.txt
       - uses: actions/upload-artifact@v4
         with:
           name: focused-target-text-trace
