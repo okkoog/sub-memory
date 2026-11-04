@@ -321,6 +321,132 @@
 ~~~
 
 ~~~csharp
+01224: 		if (GeneralHelper.IsItemLocked(this))
+01225: 		{
+01226: 			richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_locked"), ignoreEmpty: true, RenderHandler.ColorPalette.Red);
+01227: 		}
+01228: 		long value = GetValue(new List<GameCharacterItem>(), OverlayHandler.current.currentBarterCharacter);
+01229: 		long value2 = GetValue(new List<GameCharacterItem>(), OverlayHandler.current.currentBarterCharacter, singleValue: true);
+01230: 		int num2 = GetTagReadonly("BOUGHT_PRICE_TAG").GetInt();
+01231: 		if (GetCurrentValue(useRetailMarkup: false, withChild: true, includeEvents: true, forceMarkup: false, 0L) != 0L)
+01232: 		{
+01233: 			if (value != value2)
+01234: 			{
+01235: 				richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_unit_barter", value2), ignoreEmpty: true, RenderHandler.ColorPalette.LightTurquoise);
+01236: 				richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_total_barter", value), ignoreEmpty: true, RenderHandler.ColorPalette.LightTurquoise);
+01237: 			}
+01238: 			else if (GetCurrentValue(useRetailMarkup: false, withChild: true, includeEvents: true, forceMarkup: false, 0L) != 0L)
+01239: 			{
+01240: 				richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_est_value", GetCurrentValue(useRetailMarkup: false, withChild: true, includeEvents: true, forceMarkup: false, 0L), GetBaseValue()), ignoreEmpty: true, RenderHandler.ColorPalette.LightTurquoise);
+01241: 			}
+01242: 			if (num2 != 0)
+01243: 			{
+01244: 				richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_bought_at", num2), ignoreEmpty: true, RenderHandler.ColorPalette.LightTurquoise);
+01245: 			}
+01246: 			BarterHelper.CreateDiscountedBarteringItemTooltip(richTextBuilder, this);
+01247: 			BarterHelper.CreateTaggedItemAsPaymentTooltip(richTextBuilder, this);
+01248: 		}
+01249: 		ModInternal.CreateTooltipEarly(richTextBuilder, this);
+01250: 		if (PlayerStore.Instance.devMode)
+01251: 		{
+01252: 			ModInternal.CreateDevTooltipEarly(richTextBuilder, this);
+01253: 		}
+01254: 		AppraisalHelper.CreateAppraisalTooltip(richTextBuilder, this);
+01255: 		AppraisalRankHelper.CreateCertificateTooltip(richTextBuilder, this);
+01256: 		PowerHelper.CreatePowerSourceItemTooltip(richTextBuilder, this);
+01257: 		EquipmentHelper.CreateEquipmentTooltip(richTextBuilder, this);
+01258: 		InspectableHelper.CreateInspectableTooltip(richTextBuilder, this);
+01259: 		InsCigaretteHelper.CreateDebugTooltip(richTextBuilder, this);
+01260: 		InsStampHelper.CreateDebugTooltip(richTextBuilder, this);
+01261: 		InsInjectorHelper.CreateDebugTooltip(richTextBuilder, this);
+01262: 		RibwichHelper.CreateDebugTooltip(richTextBuilder, this);
+01263: 		AppHandHelper.CreateDebugTooltip(richTextBuilder, this);
+01264: 		TechnicianBackpackHelper.CreateComplexeEquipmentTooltip(richTextBuilder, this);
+01265: 		TechnicianBackpackHelper.CreateComplexeModuleTooltip(richTextBuilder, this);
+01266: 		TechnicianBackpackHelper.CreateComplexeSystemTooltip(richTextBuilder, this);
+01267: 		UseCountHelper.CreateUseCountItemTooltip(richTextBuilder, this);
+01268: 		ToolboxHelper.CreateToolboxTooltip(richTextBuilder, this);
+01269: 		DebrisHelper.CreateTooltip(richTextBuilder, this);
+01270: 		ReactorHelper.CreateTooltip(richTextBuilder, this);
+01271: 		StorageExpansionHelper.CreateTooltip(richTextBuilder, this);
+01272: 		MachineStorageCoordinator.CreateTooltip(richTextBuilder, this);
+01273: 		HopperHelper.CreateTooltip(richTextBuilder, this);
+01274: 		OrganHelper.CreateOrganItemTooltip(richTextBuilder, this);
+01275: 		MachineDesequencer.CreateMachineDesequencerTooltip(richTextBuilder, this);
+01276: 		MachineBlender.CreateTooltip(richTextBuilder, this);
+01277: 		MachineHeatingPlate.CreateTooltip(richTextBuilder, this);
+01278: 		MachineChemFinisher.CreateTooltip(richTextBuilder, this);
+01279: 		MachineAlarm.CreateAlarmTooltip(richTextBuilder, this);
+01280: 		MachineProjector.CreateProjectorTooltip(richTextBuilder, this);
+01281: 		MachineDealMaker.CreateTooltip(richTextBuilder, this);
+01282: 		MachineMoistureFarm.CreateTooltip(richTextBuilder, this);
+01283: 		MachinePurifier.CreateTooltip(richTextBuilder, this);
+~~~
+
+~~~csharp
+01308: 		SecuredContainerHelper.CreateKeyItemTip(richTextBuilder, this);
+01309: 		SecuredContainerHelper.CreateSecuredContainerToolTip(richTextBuilder, this);
+01310: 		HydroponicHelper.CreateSeedItemTooltip(richTextBuilder, this);
+01311: 		PlantGeneticsHelper.CreateSeedGeneticsTooltip(richTextBuilder, this);
+01312: 		PlantGeneticsHelper.CreateDiskTooltip(richTextBuilder, this);
+01313: 		MachineProgressHelper.CreateSourceItemDefaultTooltip(richTextBuilder, this);
+01314: 		LabelerHelper.CreateLabeledItemTooltip(richTextBuilder, this);
+01315: 		ModuleHelper.CreateModuleTooltip(richTextBuilder, this);
+01316: 		HusbandryHelper.CreateItemTooltip(richTextBuilder, this);
+01317: 		HusbandryHelper.CreateButcherTallyTooltip(richTextBuilder, this);
+01318: 		LotteryHelper.CreateGamblersCoinTooltip(richTextBuilder, this);
+01319: 		AnimalMarkHelper.CreateTooltip(richTextBuilder, this);
+01320: 		IngesterHelper.CreateIngesterTooltip(richTextBuilder, this);
+01321: 		FoodItemHelper.CreateFoodItemTooltip(richTextBuilder, this);
+01322: 		AnimalCage.CreateTooltip(richTextBuilder, this);
+01323: 		MachineFridge.CreateTooltip(richTextBuilder, this);
+01324: 		MachineFeedDispenser.CreateTooltip(richTextBuilder, this);
+01325: 		MachineAutoButcher.CreateTooltip(richTextBuilder, this);
+01326: 		AquacultureHelper.CreateTooltip(richTextBuilder, this);
+01327: 		MachineRAS.CreateTooltip(richTextBuilder, this);
+01328: 		GutterflowPelletHelper.CreateTooltip(richTextBuilder, this);
+01329: 		IndustrialFishFeedHelper.CreateTooltip(richTextBuilder, this);
+01330: 		AugScanner.CreateTooltip(richTextBuilder, this);
+01331: 		WineHelper.CreateTooltip(richTextBuilder, this);
+01332: 		BlackLampHelper.CreateBlackLampTooltip(richTextBuilder, this);
+01333: 		ModInternal.CreateTooltipLate(richTextBuilder, this);
+01334: 		if (PlayerStore.Instance.devMode)
+01335: 		{
+01336: 			ModInternal.CreateDevTooltipLate(richTextBuilder, this);
+01337: 		}
+01338: 		if (!base.shortDescription.Equals(""))
+01339: 		{
+01340: 			richTextBuilder.AddLine(base.shortDescription, ignoreEmpty: true, RenderHandler.ColorPalette.White);
+01341: 		}
+01342: 		if (!base.flavorText.Equals(""))
+01343: 		{
+01344: 			richTextBuilder.AddLine(" " + base.flavorText, ignoreEmpty: true, RenderHandler.ColorPalette.Gray, bold: false, italic: true);
+01345: 		}
+01346: 		ContainerHelper.CreateContainerTooltip(richTextBuilder, this);
+01347: 		ScratcherHelper.CreateScratcherTooltip(richTextBuilder, this);
+01348: 		LotteryHelper.CreateLotteryRedeemTooltip(richTextBuilder, this);
+01349: 		if (base.identifier.Equals("food_stamp"))
+01350: 		{
+01351: 			richTextBuilder.AddLine(LocHelper.GetLocalizedMechanic("mech_tooltip_food_stamp"), ignoreEmpty: true, RenderHandler.ColorPalette.LightBlue);
+01352: 		}
+01353: 		if (IsTag("IS_ITEM_TOGGLE_ON_TAG"))
+01354: 		{
+01355: 			richTextBuilder.AddLine(LocHelper.GetLocalizedUI("ui_rep_active"), ignoreEmpty: true, RenderHandler.ColorPalette.LightGreen);
+01356: 		}
+01357: 		return richTextBuilder;
+01358: 	}
+01359: 
+01360: 	public virtual RichText GetTooltip()
+01361: 	{
+01362: 		RichTextBuilder richTextBuilder = GetTooltipBasic();
+01363: 		if (base.parentInventory != null && base.tooltipRichTextFunc != null)
+01364: 		{
+01365: 			richTextBuilder = base.tooltipRichTextFunc(this, base.parentInventory, base.parentInventory.GetIncompleteItemInventorySlot(this), base.modifiedShape, base.modifiedState) ?? richTextBuilder;
+01366: 		}
+01367: 		ModSourceHelper.CreateTooltip(richTextBuilder, this);
+~~~
+
+~~~csharp
 01342: 		if (!base.flavorText.Equals(""))
 01343: 		{
 01344: 			richTextBuilder.AddLine(" " + base.flavorText, ignoreEmpty: true, RenderHandler.ColorPalette.Gray, bold: false, italic: true);
