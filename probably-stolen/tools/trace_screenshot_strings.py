@@ -5,7 +5,7 @@ OUT=pathlib.Path("probably-stolen/analysis/screenshot-string-trace.md")
 queries={
  "3832048841":["食腐乌鸦","破损版","游戏卡","集换式卡牌","跟在队伍后面的黑鸟"],
  "3831837821":["触手本体","调教值","泌乳等级","口交","触手精液","淫色深空","可能是触手"],
- "3829429358":["Sterile Gauze Pack","Double-click to treat wounds","Rare goods traded only at the night container auction","Night Auction"],
+ "3829429358":["Sterile Gauze Pack","Double-click to treat wounds","Rare goods traded only at the night container auction","Night Auction","Industrial Calibrator","industrial_calibrator","A portable instrument for precision machine calibration."],
  "3829085054":["收纳箱","一键收纳","全箱收纳","全箱上货","一键上货","拖动物品到收纳箱上"],
  "3829730904":["Uryu Ishida","Ichigo Kurosaki","Rukia Kuchiki"]
 }
