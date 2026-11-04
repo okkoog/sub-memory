@@ -719,6 +719,34 @@ public sealed class KoreanPack : IMod
 		}
 		try
 		{
+			int num = 0;
+			foreach (MethodInfo method6 in typeof(ModHelper).GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+			{
+				if (!string.Equals(method6.Name, "AddAfterhourLocation", StringComparison.Ordinal))
+				{
+					continue;
+				}
+				ParameterInfo[] parameters = method6.GetParameters();
+				if (!parameters.Any((ParameterInfo p) => p.ParameterType == typeof(Func<string>)))
+				{
+					continue;
+				}
+				if (PatchDynamic(method6, "SafeAfterhourLocationArgsPrefix", null, "game-card-afterhour-label"))
+				{
+					num++;
+				}
+			}
+			if (num > 0)
+			{
+				Debug.Log("[KoreanPack] GameCardPK after-hours label bridge enabled.");
+			}
+		}
+		catch (Exception ex6)
+		{
+			Debug.LogWarning("[KoreanPack] GameCardPK after-hours label bridge failed: " + ex6.Message);
+		}
+		try
+		{
 			MethodInfo method6 = typeof(CustomUIManager).GetMethod("Window", BindingFlags.Static | BindingFlags.Public, null, new Type[3]
 			{
 				typeof(string),
@@ -747,9 +775,64 @@ public sealed class KoreanPack : IMod
 				}
 			}
 		}
-		catch (Exception ex6)
+		catch (Exception ex7)
 		{
-			Debug.LogWarning("[KoreanPack] Custom UI display bridge failed: " + ex6.Message);
+			Debug.LogWarning("[KoreanPack] Custom UI display bridge failed: " + ex7.Message);
+		}
+	}
+
+	private static void SafeAfterhourLocationArgsPrefix(MethodBase __originalMethod, object[] __args)
+	{
+		if (!_enabled || __originalMethod == null || __args == null)
+		{
+			return;
+		}
+		ParameterInfo[] parameters;
+		try
+		{
+			parameters = __originalMethod.GetParameters();
+		}
+		catch
+		{
+			return;
+		}
+		string text = null;
+		for (int i = 0; i < parameters.Length && i < __args.Length; i++)
+		{
+			if (parameters[i].ParameterType == typeof(string) && string.Equals(NormalizeName(parameters[i].Name), "modid", StringComparison.Ordinal))
+			{
+				text = __args[i] as string;
+				break;
+			}
+		}
+		if (string.IsNullOrEmpty(text) && __args.Length > 0)
+		{
+			text = __args[0] as string;
+		}
+		if (!string.Equals(text, "game_card_pk", StringComparison.OrdinalIgnoreCase))
+		{
+			return;
+		}
+		for (int j = 0; j < parameters.Length && j < __args.Length; j++)
+		{
+			if (parameters[j].ParameterType != typeof(Func<string>) || !(__args[j] is Func<string> func))
+			{
+				continue;
+			}
+			Func<string> original = func;
+			__args[j] = new Func<string>(delegate
+			{
+				string text2;
+				try
+				{
+					text2 = original();
+				}
+				catch
+				{
+					return original();
+				}
+				return TranslateKnownCatalogText("game_card_pk", text2);
+			});
 		}
 	}
 
@@ -1468,6 +1551,10 @@ public sealed class KoreanPack : IMod
 				num += PatchKnownType(assembly, "GameCardPK.GameCardFactory", new KnownPatch("CreateCard", KnownPatchKind.GameItemResult), new KnownPatch("CreateCard", KnownPatchKind.GameItemWindowResult), new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult), new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs), new KnownPatch("AttachChessBoardWindow", KnownPatchKind.GameItemWindowArgs));
 				num += PatchKnownType(assembly, "GameCardPK.SkillText", new KnownPatch("ForItem", KnownPatchKind.StringResult), new KnownPatch("ForBattle", KnownPatchKind.StringResult), new KnownPatch("PointLabel", KnownPatchKind.StringResult));
 				num += PatchKnownType(assembly, "GameCardPK.CardNPC", new KnownPatch("BuildClient", KnownPatchKind.StoreClientResult));
+				num += PatchKnownType(assembly, "GameCardPK.CardClubLocationData", new KnownPatch("get_ButtonLabel", KnownPatchKind.StringResult));
+				num += PatchKnownType(assembly, "GameCardPK.UI.UiKit", new KnownPatch("Text", KnownPatchKind.VisibleStringArgs), new KnownPatch("TextMuted", KnownPatchKind.VisibleStringArgs), new KnownPatch("Button", KnownPatchKind.VisibleStringArgs), new KnownPatch("ButtonPrimary", KnownPatchKind.VisibleStringArgs));
+				num += PatchKnownType(assembly, "GameCardPK.UI.PanelHost", new KnownPatch("OpenPanel", KnownPatchKind.VisibleStringArgs), new KnownPatch("set_Message", KnownPatchKind.StringArgs));
+				num += PatchKnownType(assembly, "GameCardPK.UI.BattlePanel", new KnownPatch("RegisterHover", KnownPatchKind.VisibleStringArgs));
 			}
 			else if (text.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
 			{
@@ -1581,6 +1668,12 @@ public sealed class KoreanPack : IMod
 						break;
 					case KnownPatchKind.VisibleStringArgs:
 						if (HasVisibleStringArguments(methodInfo) && PatchDynamic(methodInfo, "SafeVisibleStringArgsPrefix", null, "safe-visible-string-args"))
+						{
+							num++;
+						}
+						break;
+					case KnownPatchKind.StringArgs:
+						if (methodInfo.GetParameters().Any((ParameterInfo p) => p.ParameterType == typeof(string)) && PatchDynamic(methodInfo, "SafeStringArgsPrefix", null, "safe-string-args"))
 						{
 							num++;
 						}
