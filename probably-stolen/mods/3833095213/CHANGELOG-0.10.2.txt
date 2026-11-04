@@ -1,0 +1,5 @@
+0.10.2 — Mod-list visibility hotfix
+Fixed an invalid XML encoding declaration in manifest.xml that caused the game to skip Neon Undertow entirely during mod discovery.
+Validated the corrected manifest with the installed game's own ModLoader.ParseManifestForTools method.
+All gameplay DLLs and textures are identical to 0.10.1. This patch does not include the unfinished drink or backroom work, change dependencies, or alter saves.
+Let Steam download the update, then restart Probably Stolen and open Mods. Enable Brewing Expansion and Tobacco Expansion alongside Neon Undertow.
