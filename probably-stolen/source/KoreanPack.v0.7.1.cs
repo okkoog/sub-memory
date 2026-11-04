@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.5
+// Probably Stolen - generic Korean localization bridge v0.7.5.1 (storage-label isolated test)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -1168,6 +1168,8 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
                         new KnownPatch("EnsureWindow", KnownPatchKind.StaticDisplayState),
                         new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState));
+                    patched += PatchKnownType(assembly, "ItemStorage.BoxLabel",
+                        new KnownPatch("Tick", KnownPatchKind.StorageBoxLabelTick));
                 }
                 else if (assemblyName.Equals("XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1237,7 +1239,8 @@ namespace ProbablyStolenKoreanPack
             GameItemResult,
             DialogueResult,
             ObjectArgs,
-            StaticDisplayState
+            StaticDisplayState,
+            StorageBoxLabelTick
         }
 
         private sealed class KnownPatch
@@ -1399,6 +1402,13 @@ namespace ProbablyStolenKoreanPack
                                 if (PatchDynamic(method, null,
                                     nameof(SafeTargetStaticStatePostfix),
                                     "safe-static-display-state"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.StorageBoxLabelTick:
+                                if (PatchDynamic(method, null,
+                                    nameof(StorageBoxLabelTickPostfix),
+                                    "storage-box-label-tick"))
                                     patched++;
                                 break;
                         }
@@ -2504,6 +2514,85 @@ namespace ProbablyStolenKoreanPack
                        StringComparison.OrdinalIgnoreCase) ||
                    code.StartsWith("ko_",
                        StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static void StorageBoxLabelTickPostfix(
+            MethodBase __originalMethod)
+        {
+            if (!_enabled || !IsKorean() || __originalMethod == null ||
+                __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog) ||
+                catalog == null)
+                return;
+
+            string shortLabel;
+            if (!catalog.ByKey.TryGetValue("pskb_box_label_short", out shortLabel) ||
+                string.IsNullOrEmpty(shortLabel))
+                return;
+
+            try
+            {
+                Type boxLabelType = __originalMethod.DeclaringType;
+                FieldInfo entriesField = boxLabelType.GetField("Entries",
+                    BindingFlags.Static | BindingFlags.NonPublic |
+                    BindingFlags.Public);
+                if (entriesField == null)
+                    return;
+
+                IDictionary entries = entriesField.GetValue(null) as IDictionary;
+                if (entries == null)
+                    return;
+
+                foreach (DictionaryEntry pair in entries)
+                {
+                    object entry = pair.Value;
+                    if (entry == null)
+                        continue;
+
+                    Type entryType = entry.GetType();
+                    FieldInfo labelField = entryType.GetField("Label",
+                        BindingFlags.Instance | BindingFlags.NonPublic |
+                        BindingFlags.Public);
+                    if (labelField == null)
+                        continue;
+
+                    object label = labelField.GetValue(entry);
+                    if (label == null)
+                        continue;
+
+                    PropertyInfo textProperty = label.GetType().GetProperty("text",
+                        BindingFlags.Instance | BindingFlags.Public);
+                    if (textProperty == null ||
+                        !textProperty.CanRead || !textProperty.CanWrite ||
+                        textProperty.PropertyType != typeof(string))
+                        continue;
+
+                    string current = textProperty.GetValue(label, null) as string;
+                    if (string.IsNullOrEmpty(current))
+                        continue;
+
+                    string compact = current.Replace("\r", "").Replace("\n", "");
+                    if (!string.Equals(compact, "收纳箱",
+                            StringComparison.Ordinal))
+                        continue;
+
+                    string replacement = current.IndexOf('\n') >= 0
+                        ? string.Join("\n", shortLabel.ToCharArray()
+                            .Select(c => c.ToString()).ToArray())
+                        : shortLabel;
+
+                    textProperty.SetValue(label, replacement, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Storage label isolated fix skipped: " +
+                    ex.Message);
+            }
         }
 
         private static void RestoreNativeEntries()
