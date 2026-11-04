@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.1
+// Probably Stolen - generic Korean localization bridge v0.7.3
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -97,6 +97,21 @@ namespace ProbablyStolenKoreanPack
         private static readonly Dictionary<Assembly, Catalog> AssemblyCatalogs =
             new Dictionary<Assembly, Catalog>();
 
+        private static readonly Dictionary<string, Catalog> RuntimeCatalogs =
+            new Dictionary<string, Catalog>(StringComparer.OrdinalIgnoreCase);
+
+        private static readonly HashSet<string> FinalTooltipHitLogged =
+            new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        private static readonly HashSet<string> FinalTooltipMissLogged =
+            new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        private static FieldInfo _richTextSlicesField;
+        private static readonly Dictionary<Type, FieldInfo> SliceTextFields =
+            new Dictionary<Type, FieldInfo>();
+        private static readonly Dictionary<Type, FieldInfo> SliceLengthFields =
+            new Dictionary<Type, FieldInfo>();
+
         private static readonly Dictionary<LoadedMod, List<SavedValue>> SavedValues =
             new Dictionary<LoadedMod, List<SavedValue>>();
 
@@ -123,6 +138,12 @@ namespace ProbablyStolenKoreanPack
                 Catalogs.Clear();
                 AmbiguousAliases.Clear();
                 AssemblyCatalogs.Clear();
+                RuntimeCatalogs.Clear();
+                FinalTooltipHitLogged.Clear();
+                FinalTooltipMissLogged.Clear();
+                SliceTextFields.Clear();
+                SliceLengthFields.Clear();
+                _richTextSlicesField = null;
                 SavedValues.Clear();
                 PatchedMethods.Clear();
                 PendingMods.Clear();
@@ -132,7 +153,7 @@ namespace ProbablyStolenKoreanPack
                 _enabled = true;
 
                 ModHook.OnModAssetsLoaded += OnModAssetsLoaded;
-                ModHook.OnCreateTooltipLate += OnCreateTooltipLate;
+                PatchFinalTooltipBridge();
 
                 Debug.Log("[KoreanPack] Enabled. Waiting for official ModHook.OnModAssetsLoaded.");
             }
@@ -146,7 +167,6 @@ namespace ProbablyStolenKoreanPack
 
                 _enabled = false;
                 ModHook.OnModAssetsLoaded -= OnModAssetsLoaded;
-                ModHook.OnCreateTooltipLate -= OnCreateTooltipLate;
 
                 RestoreNativeEntries();
                 UnpatchDynamic();
@@ -154,47 +174,14 @@ namespace ProbablyStolenKoreanPack
                 Catalogs.Clear();
                 AmbiguousAliases.Clear();
                 AssemblyCatalogs.Clear();
+                RuntimeCatalogs.Clear();
+                FinalTooltipHitLogged.Clear();
+                FinalTooltipMissLogged.Clear();
                 PatchedMethods.Clear();
                 PendingMods.Clear();
                 _catalogsReady = false;
 
                 Debug.Log("[KoreanPack] Disabled.");
-            }
-        }
-
-        private static void OnCreateTooltipLate(
-            RichTextBuilder builder, GameItem item)
-        {
-            if (!_enabled || !IsKorean() || builder == null || item == null)
-                return;
-
-            try
-            {
-                if (!item.IsTag("MOD_ID_TAG"))
-                    return;
-
-                string modId = item.GetTagReadonly("MOD_ID_TAG").GetString();
-                if (string.IsNullOrEmpty(modId))
-                    return;
-
-                Catalog catalog;
-                if (!Catalogs.TryGetValue(modId, out catalog) || catalog == null)
-                    return;
-
-                // Native source labels and base tooltip lines already exist in the
-                // builder at this official late-tooltip stage. Translate only exact
-                // entries/templates belonging to the item's own catalog.
-                HashSet<object> visited =
-                    new HashSet<object>(ReferenceComparer.Instance);
-                int budget = 320;
-                TranslateObjectGraph(catalog, builder,
-                    typeof(KoreanPack).Assembly,
-                    false, false, null, visited, 0, ref budget);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogWarning("[KoreanPack] Tooltip translation skipped: " +
-                    ex.Message);
             }
         }
 
@@ -481,6 +468,7 @@ namespace ProbablyStolenKoreanPack
             if (catalog == null)
                 return;
 
+            RegisterRuntimeCatalogAliases(loaded, catalog);
             MergeNativeEntries(loaded, catalog);
             RebuildDerivedSourceMap(loaded, catalog);
             PatchTargetAssembly(loaded, catalog);
@@ -489,6 +477,271 @@ namespace ProbablyStolenKoreanPack
                 ": " + catalog.ByKey.Count + " key(s), " +
                 (catalog.ExplicitBySource.Count + catalog.DerivedBySource.Count) +
                 " source mapping(s).");
+        }
+
+
+        private static void RegisterRuntimeCatalogAliases(
+            LoadedMod loaded, Catalog catalog)
+        {
+            if (loaded == null || loaded.Manifest == null || catalog == null)
+                return;
+
+            Action<string> add = alias =>
+            {
+                if (string.IsNullOrWhiteSpace(alias))
+                    return;
+                RuntimeCatalogs[alias.Trim()] = catalog;
+            };
+
+            add(loaded.Manifest.ID);
+            add(loaded.Manifest.Name);
+            if (loaded.WorkshopId != 0)
+                add(loaded.WorkshopId.ToString());
+            if (loaded.ShadowedWorkshopId != 0)
+                add(loaded.ShadowedWorkshopId.ToString());
+        }
+
+        private static Catalog LocateCatalogForItem(GameItem item, out string runtimeId)
+        {
+            runtimeId = string.Empty;
+            if (item == null)
+                return null;
+
+            try
+            {
+                if (item.IsTag("MOD_ID_TAG"))
+                {
+                    runtimeId = item.GetTagReadonly("MOD_ID_TAG").GetString() ?? string.Empty;
+                    Catalog catalog;
+                    if (!string.IsNullOrWhiteSpace(runtimeId))
+                    {
+                        if (RuntimeCatalogs.TryGetValue(runtimeId, out catalog))
+                            return catalog;
+                        if (Catalogs.TryGetValue(runtimeId, out catalog))
+                            return catalog;
+                    }
+                }
+
+                if (item.IsTag("MOD_NAME_TAG"))
+                {
+                    string modName = item.GetTagReadonly("MOD_NAME_TAG").GetString();
+                    Catalog catalog;
+                    if (!string.IsNullOrWhiteSpace(modName) &&
+                        RuntimeCatalogs.TryGetValue(modName, out catalog))
+                    {
+                        if (string.IsNullOrEmpty(runtimeId))
+                            runtimeId = modName;
+                        return catalog;
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return null;
+        }
+
+        private static void PatchFinalTooltipBridge()
+        {
+            try
+            {
+                MethodInfo method = typeof(ModSourceHelper).GetMethod(
+                    "CreateTooltip",
+                    BindingFlags.Public | BindingFlags.Static,
+                    null,
+                    new Type[] { typeof(RichTextBuilder), typeof(GameItem) },
+                    null);
+
+                if (method == null)
+                {
+                    Debug.LogWarning("[KoreanPack] Final tooltip bridge target not found.");
+                    return;
+                }
+
+                if (PatchDynamic(method, null,
+                    nameof(SafeFinalItemTooltipPostfix),
+                    "final-item-tooltip"))
+                {
+                    Debug.Log("[KoreanPack] Final item tooltip bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Final tooltip bridge failed: " +
+                    ex.Message);
+            }
+        }
+
+        private static void SafeFinalItemTooltipPostfix(
+            RichTextBuilder builder, GameItem item)
+        {
+            if (!_enabled || !IsKorean() || builder == null || item == null)
+                return;
+
+            string runtimeId;
+            Catalog catalog = LocateCatalogForItem(item, out runtimeId);
+            if (catalog == null)
+            {
+                if (!string.IsNullOrEmpty(runtimeId) &&
+                    FinalTooltipMissLogged.Add(runtimeId))
+                {
+                    Debug.LogWarning("[KoreanPack] Final tooltip catalog miss: " +
+                        runtimeId);
+                }
+                return;
+            }
+
+            int translated = TranslateFinalTooltipSlices(catalog, builder);
+            if (translated > 0)
+            {
+                string key = string.IsNullOrEmpty(runtimeId)
+                    ? catalog.PrimaryId
+                    : runtimeId;
+                if (FinalTooltipHitLogged.Add(key))
+                {
+                    Debug.Log("[KoreanPack] Final tooltip translation active: " +
+                        key + " (" + translated + " slice(s) on first hit).");
+                }
+            }
+        }
+
+        private static int TranslateFinalTooltipSlices(
+            Catalog catalog, RichTextBuilder builder)
+        {
+            if (catalog == null || builder == null)
+                return 0;
+
+            try
+            {
+                if (_richTextSlicesField == null)
+                {
+                    _richTextSlicesField = typeof(RichTextBuilder).GetField(
+                        "slices",
+                        BindingFlags.Instance | BindingFlags.NonPublic);
+                }
+
+                if (_richTextSlicesField == null)
+                    return 0;
+
+                IEnumerable slices = _richTextSlicesField.GetValue(builder)
+                    as IEnumerable;
+                if (slices == null)
+                    return 0;
+
+                int changed = 0;
+                foreach (object slice in slices)
+                {
+                    if (slice == null)
+                        continue;
+
+                    Type type = slice.GetType();
+                    FieldInfo textField;
+                    if (!SliceTextFields.TryGetValue(type, out textField))
+                    {
+                        textField = type.GetField("text",
+                            BindingFlags.Instance |
+                            BindingFlags.Public |
+                            BindingFlags.NonPublic);
+                        SliceTextFields[type] = textField;
+                    }
+
+                    if (textField == null || textField.FieldType != typeof(string))
+                        continue;
+
+                    string original = textField.GetValue(slice) as string;
+                    string translated;
+                    if (!TryTranslateTooltipSlice(
+                            catalog, original, out translated))
+                        continue;
+
+                    if (string.Equals(original, translated,
+                        StringComparison.Ordinal))
+                        continue;
+
+                    textField.SetValue(slice, translated);
+
+                    FieldInfo lengthField;
+                    if (!SliceLengthFields.TryGetValue(type, out lengthField))
+                    {
+                        lengthField = type.GetField("length",
+                            BindingFlags.Instance |
+                            BindingFlags.NonPublic);
+                        SliceLengthFields[type] = lengthField;
+                    }
+
+                    if (lengthField != null &&
+                        lengthField.FieldType == typeof(int))
+                    {
+                        lengthField.SetValue(slice, -1);
+                    }
+
+                    changed++;
+                }
+
+                return changed;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Final tooltip translation skipped: " +
+                    ex.Message);
+                return 0;
+            }
+        }
+
+        private static bool TryTranslateTooltipSlice(
+            Catalog catalog, string source, out string translated)
+        {
+            translated = source;
+            if (catalog == null || string.IsNullOrEmpty(source))
+                return false;
+
+            if (TryTranslateSource(catalog, source, out translated))
+                return true;
+
+            int begin = 0;
+            int end = source.Length;
+            while (begin < end && char.IsWhiteSpace(source[begin])) begin++;
+            while (end > begin && char.IsWhiteSpace(source[end - 1])) end--;
+
+            if (begin > 0 || end < source.Length)
+            {
+                string core = source.Substring(begin, end - begin);
+                string korean;
+                if (TryTranslateSource(catalog, core, out korean))
+                {
+                    translated = source.Substring(0, begin) +
+                        korean + source.Substring(end);
+                    return true;
+                }
+            }
+
+            // Composite tooltip lines such as "生命值：148" or
+            // "[游戏卡][错版卡]" keep values/punctuation around short CJK labels.
+            // Replace only exact catalog entries inside contiguous CJK runs.
+            bool changed = false;
+            string composite = Regex.Replace(source,
+                @"[\u3400-\u9fff]+",
+                match =>
+                {
+                    string korean;
+                    if (TryTranslateSource(catalog, match.Value, out korean) &&
+                        !string.Equals(korean, match.Value,
+                            StringComparison.Ordinal))
+                    {
+                        changed = true;
+                        return korean;
+                    }
+                    return match.Value;
+                });
+
+            if (changed)
+            {
+                translated = composite;
+                return true;
+            }
+
+            return false;
         }
 
         private static Catalog LocateCatalog(LoadedMod loaded)
