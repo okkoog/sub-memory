@@ -23,11 +23,25 @@ LOG_HINTS = ("Core.Log", "Core.Debug", "Trace(", "Debug(", "Warning(", "Error(")
 string_re = re.compile(r'"((?:\\.|[^"\\])*)"')
 
 def unescape_csharp(s: str) -> str:
-    # enough for localization literals; preserve unknown escapes literally
-    try:
-        return bytes(s, "utf-8").decode("unicode_escape")
-    except Exception:
-        return s.replace(r'\n', '\n').replace(r'\r','\r').replace(r'\t','\t').replace(r'\\"','"').replace(r'\\\\','\\')
+    # Preserve non-ASCII source text exactly. Decode only common C# escape
+    # sequences; never route UTF-8 bytes through unicode_escape.
+    out = []
+    i = 0
+    while i < len(s):
+        ch = s[i]
+        if ch != "\\\\" or i + 1 >= len(s):
+            out.append(ch)
+            i += 1
+            continue
+        nxt = s[i + 1]
+        mapping = {"n":"\\n","r":"\\r","t":"\\t","\\\\":"\\\\","\\\"":"\\\"","0":"\\0"}
+        if nxt in mapping:
+            out.append(mapping[nxt])
+            i += 2
+            continue
+        out.append("\\\\")
+        i += 1
+    return "".join(out)
 
 rows = ["mod_id\tfile\tline\tcontext\tsource_b64"]
 for mod_id, root_name in TARGETS.items():
