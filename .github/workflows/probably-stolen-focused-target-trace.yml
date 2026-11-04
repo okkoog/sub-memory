@@ -43,6 +43,15 @@ jobs:
           d probably-stolen/mods/3832048841/GameCardPK.dll GameCardPK.ShowcaseCustomerPatch Card.ShowcaseCustomerPatch.cs
           grep -RInE '游戏卡棋盘|游戏卡|棋盘|已经被你调教|无法生存|姓名：|高级违禁品|女性角色|NotifyUser|自动上货' out > out/focused-hits.txt || true
 
+          mkdir -p out/brewing out/corp out/itemstorage-full out/card-full out/tentacle-full
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/itemstorage-full probably-stolen/mods/3829085054/ItemStorage.dll >/tmp/itemstorage.log 2>&1 || true
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/card-full probably-stolen/mods/3832048841/GameCardPK.dll >/tmp/card.log 2>&1 || true
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/tentacle-full probably-stolen/mods/3831837821/MidnightPawn.dll >/tmp/tentacle.log 2>&1 || true
+
+          grep -RInE '必须有顾客|顾客在场|一键上货|收纳箱' out/itemstorage-full --include='*.cs' > out/itemstorage-all-hits.txt || true
+          grep -RInE '卡牌爱好者|买不起|看不懂|游戏卡|集换式卡牌|客户|顾客|buyer|Buyer' out/card-full --include='*.cs' > out/card-all-hits.txt || true
+          grep -RInE '夜间报告|昨晚|弹窗|ShowReport|CustomUIManager.Window' out/tentacle-full --include='*.cs' > out/tentacle-all-hits.txt || true
+
           mkdir -p out/brewing out/corp
           "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/brewing probably-stolen/mods/3829730904/BrewingExpansion.dll >/tmp/brew.log 2>&1 || true
           "$RUNNER_TEMP/ilspy/ilspycmd" -p -o out/corp probably-stolen/mods/3828913695/CorpPresence.dll >/tmp/corp.log 2>&1 || true
@@ -52,6 +61,12 @@ jobs:
 
           echo '--- focused ---'
           cat out/focused-hits.txt
+          echo '--- itemstorage all ---'
+          head -n 300 out/itemstorage-all-hits.txt
+          echo '--- card all ---'
+          head -n 500 out/card-all-hits.txt
+          echo '--- tentacle all ---'
+          head -n 300 out/tentacle-all-hits.txt
           echo '--- brewing ---'
           cat out/brewing-hits.txt
           echo '--- corp ---'
