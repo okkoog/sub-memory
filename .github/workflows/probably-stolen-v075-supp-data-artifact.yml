@@ -1,0 +1,45 @@
+name: KoreanPack corrected supplemental data artifact
+
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - 'probably-stolen/korean-pack/Localization/pskb__supp_*.csv'
+      - '.github/workflows/probably-stolen-v075-supp-data-artifact.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+      - name: Validate actual game loader format
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          files=sorted(Path('probably-stolen/korean-pack/Localization').glob('pskb__supp_*.csv'))
+          assert len(files)==6
+          total=0
+          for p in files:
+              directives=skipped=quoted=0
+              for line in p.read_text(encoding='utf-8-sig').splitlines():
+                  if not line.strip() or line.lstrip().startswith('#'): continue
+                  i=line.find(',')
+                  if i<0: skipped+=1; continue
+                  key=line[:i].strip()
+                  quoted += key.startswith('"')
+                  directives += bool(re.match(r'^(M|W|K|K64|S|S64)\|', key))
+              print(p.name,directives,skipped,quoted)
+              assert directives>0 and skipped==0 and quoted==0
+              total += directives
+          print('TOTAL_DIRECTIVES',total)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-v075-corrected-supplemental-csv
+          path: probably-stolen/korean-pack/Localization/pskb__supp_*.csv
+          if-no-files-found: error
