@@ -287,3 +287,116 @@ Unity Localization이 로딩 중인 상태에서 LocHelper.GetLocalizedMechanic(
 - HARD_COUNT=0
 - files 없음
 - loader-target 없음
+
+
+## 2026-11-04 — v0.7.3 최종 툴팁 후처리
+
+### v0.7.2 인게임 결과
+사용자 스크린샷에서 카드 / 촉수 / Night Auction / Brewing 피규어가 그대로 미번역.
+즉 v0.7.2는 안정성은 개선했지만 번역 적용에는 실패.
+
+### 확정 원인
+게임 역컴파일로 GameItemElement.GetTooltipBasic/GetTooltip/GetTooltipAdvanced의 실제 순서를 확인.
+
+GetTooltipBasic:
+- 기본 툴팁/이름/가치 등
+- ModInternal.CreateTooltipEarly
+- 각종 게임 툴팁 helper
+- ModInternal.CreateTooltipLate
+- 그 뒤에 shortDescription
+- 그 뒤에 flavorText
+- container/scratcher/lottery 등 추가
+
+GetTooltip/GetTooltipAdvanced:
+- GetTooltipBasic
+- item.tooltipRichTextFunc
+- ModSourceHelper.CreateTooltip (모드 출처명)
+- RichTextBuilder.Build
+
+따라서 ModHook.OnCreateTooltipLate는 이름과 달리 실제 최종 단계가 아니며,
+v0.7.2의 late-tooltip 번역은 shortDescription/flavorText/모드 출처명보다 먼저 실행돼 이후 추가된 문자열을 잡을 수 없었음.
+
+### v0.7.3 수정
+- ModHook.OnCreateTooltipLate 번역 의존 제거.
+- game method ModSourceHelper.CreateTooltip(RichTextBuilder, GameItem)에 단일 postfix 설치.
+- 이 메서드가 모드 출처명을 추가한 직후, Build() 전에 RichTextBuilder.slices를 후처리.
+- item MOD_ID_TAG / MOD_NAME_TAG로 runtime catalog 선택.
+- runtime alias로 manifest ID / manifest Name / WorkshopId / ShadowedWorkshopId 등록.
+- exact source 번역 + 앞뒤 공백 보존 + CJK 연속 구간 부분 치환.
+- 숫자와 섞인 "生命值：148", "触手本体 Lv.4 经验 389 / 100" 같은 동적 줄의 짧은 라벨도 치환 가능.
+- 기존 v0.7.2 안전 화이트리스트는 유지.
+- 전체 assembly display-like 자동 Harmony 패치는 다시 사용하지 않음.
+
+### 스크린샷 보강
+GameCardPK:
+- 蛇王
+- 错版卡
+- 生命值
+- 攻击力
+- 速度
+- 技能槽上限
+- 확인된 카드 설명문/출처명
+
+MidnightPawn:
+- 触手本体
+- 经验
+- 본체 설명
+- 쓰레기장 포획 안내
+- 调教值 / 泌乳等级 / 口交 / 性交 / 肛交 / 排卵期 / 已怀孕
+- 출처명
+
+Night Auction:
+- Sterile Gauze Pack 및 주요 전용 아이템/설명
+- 야간 경매 희귀품 공통 문구
+- 출처명
+
+BrewingExpansion:
+- Uryu Ishida / Ichigo Kurosaki / Rukia Kuchiki / Iridium Sea Cucumber 피규어 이름·설명
+- 출처명
+
+### 검증
+핵심 소스 commit:
+- 49fce14ad8251dc35bc6743a1ed0c1fc1fe5aa25 — Move item translation to final tooltip construction point
+
+최신 supplement commit:
+- 28e8b39d9165dae62aa04bbe6a8e21001a24ab4a — Expand MidnightPawn dynamic tooltip supplement
+
+manifest:
+- v0.7.3-dev
+
+game ModScanner:
+- CAPABILITIES=reflection-external
+- HARD_COUNT=0
+- files 없음
+- loader-target 없음
+
+### GitHub 배포
+Workflow run:
+- 41753457750
+- https://github.com/okkoog/sub-memory/actions/runs/41753457750
+
+Artifact:
+- ProbablyStolen_KoreanPack_v0.7.3-dev_FinalTooltip_Overlay
+- artifact id 13286713863
+- sha256:fdf16a8b39a4abde0b2ca8baf6d7577245785d0357793dd94abe631ae495a216
+
+### 다음 런타임 판별 로그
+정상적으로 최종 툴팁 브리지가 설치되면:
+- [KoreanPack] Final item tooltip bridge enabled.
+
+실제 대상 툴팁이 번역되면 최초 1회:
+- [KoreanPack] Final tooltip translation active: <mod id> (... slice(s) on first hit).
+
+MOD_ID_TAG가 있으나 catalog 매칭 실패 시 최초 1회:
+- [KoreanPack] Final tooltip catalog miss: <runtime id>
+
+### Full Install
+v0.7.3 Full Install 자동화 workflow 추가:
+- .github/workflows/probably-stolen-koreanpack-v073-full.yml
+
+베이스 ZIP 기대 경로:
+- probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip
+
+현재 ChatGPT Library에는 전체 v0.7.0 ZIP이 존재하지만, 로컬 실행 container/python이 ClientError를 반환해 바이너리를 GitHub로 이전하지 못한 상태.
+16개 대형 catalog는 GitHub 과거 커밋에도 존재하지 않았음.
+베이스 ZIP이 GitHub에 들어오면 Full Install workflow가 전체 16 catalog + v0.7.3 DLL/manifest + 6 supplement를 자동 병합하고 무결성 검사 후 artifact를 생성함.
