@@ -810,7 +810,8 @@ namespace ProbablyStolenKoreanPack
         // Deliberately excludes renderer and UI/view types.
         private static void PatchModOwnedModelSetters(Assembly assembly)
         {
-            if (assembly == null || !ByAssembly.ContainsKey(assembly)) return;
+            Catalog assemblyCatalog;
+            if (assembly == null || !ByAssembly.TryGetValue(assembly, out assemblyCatalog)) return;
             Type[] types;
             try { types = assembly.GetTypes(); }
             catch (ReflectionTypeLoadException ex) { types = ex.Types; }
@@ -853,9 +854,11 @@ namespace ProbablyStolenKoreanPack
                     // Read-only names and descriptions may have been initialized
                     // before this pack. Translate their returned value at its
                     // owning method, not at a game-global UI renderer.
-                    if (args.Length != 0 ||
-                        !(IsSafeTextReturnMethod(method.Name) ||
-                          IsVisibleStringMember(method.Name))) continue;
+                    if (args.Length != 0) continue;
+                    bool textProvider = IsSafeTextReturnMethod(method.Name) ||
+                        IsVisibleStringMember(method.Name) ||
+                        IsCompilerGeneratedTextProvider(method, assemblyCatalog);
+                    if (!textProvider) continue;
                     if (method.ReturnType == typeof(string))
                         Patch(method, null, nameof(ModOwnedTextResultPostfix));
                     else if (method.ReturnType == typeof(string[]) &&
@@ -1387,6 +1390,79 @@ namespace ProbablyStolenKoreanPack
             foreach (string end in endings)
                 if (name.EndsWith(end, StringComparison.Ordinal) ||
                     baseName.EndsWith(end, StringComparison.Ordinal)) return true;
+            return false;
+        }
+
+        private static bool IsCompilerGeneratedTextProvider(MethodBase method, Catalog catalog)
+        {
+            if (method == null || catalog == null || !(method is MethodInfo) ||
+                ((MethodInfo)method).ReturnType != typeof(string) ||
+                method.GetParameters().Length != 0) return false;
+            Type owner = method.DeclaringType;
+            string methodName = method.Name ?? "";
+            string typeName = owner != null ? (owner.Name ?? "") : "";
+            // Lambdas/local functions used as Func<string> display providers are
+            // compiler-generated and often have no semantic method name for the
+            // normal display-return filter to recognize.
+            if (methodName.IndexOf('<') < 0 && typeName.IndexOf('<') < 0) return false;
+            MethodBody body;
+            try { body = method.GetMethodBody(); } catch { return false; }
+            if (body == null) return false;
+            byte[] il = body.GetILAsByteArray();
+            if (il == null) return false;
+            int offset = 0;
+            while (offset < il.Length)
+            {
+                OpCode op;
+                byte b = il[offset++];
+                if (b == 0xfe)
+                {
+                    if (offset >= il.Length) return false;
+                    op = TwoByteOpCodes[il[offset++]];
+                }
+                else op = OneByteOpCodes[b];
+                int size;
+                switch (op.OperandType)
+                {
+                    case OperandType.InlineNone: size = 0; break;
+                    case OperandType.ShortInlineBrTarget:
+                    case OperandType.ShortInlineI:
+                    case OperandType.ShortInlineVar: size = 1; break;
+                    case OperandType.InlineVar: size = 2; break;
+                    case OperandType.InlineBrTarget:
+                    case OperandType.InlineField:
+                    case OperandType.InlineI:
+                    case OperandType.InlineMethod:
+                    case OperandType.InlineSig:
+                    case OperandType.InlineString:
+                    case OperandType.InlineTok:
+                    case OperandType.InlineType:
+                    case OperandType.ShortInlineR: size = 4; break;
+                    case OperandType.InlineI8:
+                    case OperandType.InlineR: size = 8; break;
+                    case OperandType.InlineSwitch:
+                        if (offset + 4 > il.Length) return false;
+                        int count = BitConverter.ToInt32(il, offset);
+                        if (count < 0 || count > (il.Length - offset - 4) / 4) return false;
+                        size = 4 + count * 4;
+                        break;
+                    default: return false;
+                }
+                if (offset + size > il.Length) return false;
+                if (op == OpCodes.Ldstr && size == 4)
+                {
+                    try
+                    {
+                        string literal = method.Module.ResolveString(BitConverter.ToInt32(il, offset));
+                        if (!string.IsNullOrEmpty(literal) &&
+                            !catalog.AmbiguousSource.Contains(literal) &&
+                            catalog.BySource.ContainsKey(literal))
+                            return true;
+                    }
+                    catch { }
+                }
+                offset += size;
+            }
             return false;
         }
 
