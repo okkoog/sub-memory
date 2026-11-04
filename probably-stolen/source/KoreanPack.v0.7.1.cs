@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.5
+// Probably Stolen - generic Korean localization bridge v0.7.5.2 (verified output-boundary pass)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -1146,8 +1146,12 @@ namespace ProbablyStolenKoreanPack
                 {
                     patched += PatchKnownType(assembly, "GameCardPK.GameCardFactory",
                         new KnownPatch("CreateCard", KnownPatchKind.GameItemResult),
+                        new KnownPatch("CreateCard", KnownPatchKind.GameItemWindowResult),
                         new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult),
-                        new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs));
+                        new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("AttachChessBoardWindow", KnownPatchKind.GameItemWindowArgs));
+                    patched += PatchKnownType(assembly, "GameCardPK.ShowcaseBuyerSystem",
+                        new KnownPatch("AppendBuyerCustomer", KnownPatchKind.BuyerTypeListArgs));
                     patched += PatchKnownType(assembly, "GameCardPK.SkillText",
                         new KnownPatch("ForItem", KnownPatchKind.StringResult),
                         new KnownPatch("ForBattle", KnownPatchKind.StringResult),
@@ -1156,18 +1160,28 @@ namespace ProbablyStolenKoreanPack
                 else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
-                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult),
+                        new KnownPatch("Create", KnownPatchKind.GameItemWindowResult),
+                        new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult));
                     // MaidenTooltip text is translated through the official
                     // ModHook.OnCreateTooltipLate bridge after the mod has appended it.
                 }
                 else if (assemblyName.Equals("ItemStorage", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "ItemStorage.BoxItem",
-                        new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                        new KnownPatch("Create", KnownPatchKind.GameItemResult),
+                        new KnownPatch("Create", KnownPatchKind.GameItemWindowResult));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("UpdateTooltip", KnownPatchKind.GameItemWindowArgs),
                         new KnownPatch("EnsureWindow", KnownPatchKind.StaticDisplayState),
-                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState));
+                        new KnownPatch("EnsureWindow", KnownPatchKind.GameItemWindowArgs),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticDisplayState),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.GameItemWindowArgs));
+                    patched += PatchKnownType(assembly, "ItemStorage.BoxLabel",
+                        new KnownPatch("Apply", KnownPatchKind.StorageBoxLabelState),
+                        new KnownPatch("Tick", KnownPatchKind.StorageBoxLabelState),
+                        new KnownPatch("OnItemRenamed", KnownPatchKind.StorageBoxLabelState));
                 }
                 else if (assemblyName.Equals("XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1235,6 +1249,11 @@ namespace ProbablyStolenKoreanPack
             GuiLabelTranspiler,
             LocalizerResult,
             GameItemResult,
+            GameItemWindowResult,
+            PixelWindowResult,
+            GameItemWindowArgs,
+            BuyerTypeListArgs,
+            StorageBoxLabelState,
             DialogueResult,
             ObjectArgs,
             StaticDisplayState
@@ -1376,6 +1395,45 @@ namespace ProbablyStolenKoreanPack
                                     PatchDynamic(method, null,
                                         nameof(SafeGameItemResultPostfix),
                                         "safe-gameitem-result"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.GameItemWindowResult:
+                                if (method.ReturnType == typeof(GameItem) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeGameItemWindowResultPostfix),
+                                        "safe-gameitem-window-result"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.PixelWindowResult:
+                                if (method.ReturnType == typeof(PixelWindow) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafePixelWindowResultPostfix),
+                                        "safe-pixelwindow-result"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.GameItemWindowArgs:
+                                if (method.GetParameters().Any(p =>
+                                        p.ParameterType == typeof(GameItem)) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeGameItemWindowArgsPostfix),
+                                        "safe-gameitem-window-args"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.BuyerTypeListArgs:
+                                if (PatchDynamic(method, null,
+                                    nameof(SafeBuyerTypeListArgsPostfix),
+                                    "safe-buyer-type-list"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.StorageBoxLabelState:
+                                if (PatchDynamic(method, null,
+                                    nameof(SafeStorageBoxLabelStatePostfix),
+                                    "safe-storage-box-label"))
                                     patched++;
                                 break;
 
@@ -1998,6 +2056,377 @@ namespace ProbablyStolenKoreanPack
             TranslateObjectGraph(catalog, result,
                 originalMethod.DeclaringType.Assembly,
                 false, false, null, visited, 0, ref budget);
+        }
+
+        private static void SafeGameItemWindowResultPostfix(
+            MethodBase __originalMethod, GameItem __result)
+        {
+            if (!_enabled || !IsKorean() || __result == null ||
+                __originalMethod == null || __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            TranslateGameItemDisplayFields(catalog, __result);
+            TranslatePixelWindowDisplay(catalog, __result.contentWindow);
+        }
+
+        private static void SafePixelWindowResultPostfix(
+            MethodBase __originalMethod, PixelWindow __result)
+        {
+            if (!_enabled || !IsKorean() || __result == null ||
+                __originalMethod == null || __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            TranslatePixelWindowDisplay(catalog, __result);
+        }
+
+        private static void SafeGameItemWindowArgsPostfix(
+            MethodBase __originalMethod, object[] __args)
+        {
+            if (!_enabled || !IsKorean() || __args == null ||
+                __originalMethod == null || __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            for (int i = 0; i < __args.Length; i++)
+            {
+                GameItem item = __args[i] as GameItem;
+                if (item == null)
+                    continue;
+
+                TranslateGameItemDisplayFields(catalog, item);
+                TranslatePixelWindowDisplay(catalog, item.contentWindow);
+                break;
+            }
+        }
+
+        private static void TranslateGameItemDisplayFields(
+            Catalog catalog, GameItem item)
+        {
+            if (catalog == null || item == null)
+                return;
+
+            string translated;
+
+            if (!string.IsNullOrEmpty(item.name) &&
+                TryTranslateTooltipSlice(catalog, item.name, out translated) &&
+                !string.Equals(item.name, translated, StringComparison.Ordinal))
+                item.name = translated;
+
+            if (!string.IsNullOrEmpty(item.shortDescription) &&
+                TryTranslateTooltipSlice(catalog, item.shortDescription,
+                    out translated) &&
+                !string.Equals(item.shortDescription, translated,
+                    StringComparison.Ordinal))
+                item.shortDescription = translated;
+
+            if (!string.IsNullOrEmpty(item.longDescription) &&
+                TryTranslateTooltipSlice(catalog, item.longDescription,
+                    out translated) &&
+                !string.Equals(item.longDescription, translated,
+                    StringComparison.Ordinal))
+                item.longDescription = translated;
+
+            if (!string.IsNullOrEmpty(item.flavorText) &&
+                TryTranslateTooltipSlice(catalog, item.flavorText,
+                    out translated) &&
+                !string.Equals(item.flavorText, translated,
+                    StringComparison.Ordinal))
+                item.flavorText = translated;
+        }
+
+        private static void TranslatePixelWindowDisplay(
+            Catalog catalog, PixelWindow window)
+        {
+            if (catalog == null || window == null)
+                return;
+
+            try
+            {
+                string title = window.titleString;
+                string translated;
+                if (!string.IsNullOrEmpty(title) &&
+                    TryTranslateTooltipSlice(catalog, title, out translated) &&
+                    !string.Equals(title, translated, StringComparison.Ordinal))
+                    window.SetTitle(translated);
+
+                HashSet<object> visited =
+                    new HashSet<object>(ReferenceComparer.Instance);
+                TranslatePixelElementDisplay(
+                    catalog, window.childElement, visited, 0);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] PixelWindow output translation skipped: " +
+                    ex.Message);
+            }
+        }
+
+        private static void TranslatePixelElementDisplay(
+            Catalog catalog, PixelElement element,
+            HashSet<object> visited, int depth)
+        {
+            if (catalog == null || element == null || depth > 8)
+                return;
+
+            object boxed = element;
+            if (!visited.Add(boxed))
+                return;
+
+            string translated;
+
+            MachineryButton button = element as MachineryButton;
+            if (button != null)
+            {
+                string text = button.text;
+                if (!string.IsNullOrEmpty(text) &&
+                    TryTranslateTooltipSlice(catalog, text, out translated) &&
+                    !string.Equals(text, translated, StringComparison.Ordinal))
+                    button.SetText(translated);
+
+                string description = button.description;
+                if (!string.IsNullOrEmpty(description) &&
+                    TryTranslateTooltipSlice(catalog, description,
+                        out translated) &&
+                    !string.Equals(description, translated,
+                        StringComparison.Ordinal))
+                    button.SetDescription(translated);
+            }
+
+            MachineryLabel label = element as MachineryLabel;
+            if (label != null)
+            {
+                string text = label.GetText();
+                if (!string.IsNullOrEmpty(text) &&
+                    TryTranslateTooltipSlice(catalog, text, out translated) &&
+                    !string.Equals(text, translated, StringComparison.Ordinal))
+                    label.SetText(translated);
+            }
+
+            MachineryPanel panel = element as MachineryPanel;
+            if (panel != null)
+            {
+                if (panel.label != null)
+                {
+                    string text = panel.label.GetText();
+                    if (!string.IsNullOrEmpty(text) &&
+                        TryTranslateTooltipSlice(catalog, text,
+                            out translated) &&
+                        !string.Equals(text, translated,
+                            StringComparison.Ordinal))
+                        panel.SetLabel(translated);
+                }
+
+                TranslatePixelElementDisplay(
+                    catalog, panel.content, visited, depth + 1);
+            }
+
+            MachineryPanelRow row = element as MachineryPanelRow;
+            if (row != null && row.Panels != null)
+            {
+                for (int i = 0; i < row.Panels.Count; i++)
+                {
+                    MachineryPanel child = row.Panels[i];
+                    if (child != null)
+                        TranslatePixelElementDisplay(
+                            catalog, child, visited, depth + 1);
+                }
+            }
+
+            GridPixelElement grid = element as GridPixelElement;
+            if (grid != null)
+            {
+                int width = Math.Max(0, grid.gridWidth);
+                int height = Math.Max(0, grid.gridHeight);
+                for (int x = 0; x < width; x++)
+                {
+                    for (int y = 0; y < height; y++)
+                    {
+                        PixelElement child;
+                        try { child = grid.GetElement(x, y); }
+                        catch { continue; }
+
+                        if (child != null)
+                            TranslatePixelElementDisplay(
+                                catalog, child, visited, depth + 1);
+                    }
+                }
+            }
+        }
+
+        private static void SafeBuyerTypeListArgsPostfix(
+            MethodBase __originalMethod, object[] __args)
+        {
+            if (!_enabled || !IsKorean() || __args == null ||
+                __args.Length == 0 || __originalMethod == null ||
+                __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            IList list = __args[0] as IList;
+            if (list == null)
+                return;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                object tuple = list[i];
+                if (tuple == null)
+                    continue;
+
+                Type type = tuple.GetType();
+                if (!type.IsValueType ||
+                    !type.FullName.StartsWith(
+                        "System.ValueTuple\u00602",
+                        StringComparison.Ordinal))
+                    continue;
+
+                FieldInfo item2 = type.GetField("Item2",
+                    BindingFlags.Instance | BindingFlags.Public);
+                if (item2 == null || item2.FieldType != typeof(string))
+                    continue;
+
+                string original = item2.GetValue(tuple) as string;
+                string translated;
+                if (string.IsNullOrEmpty(original) ||
+                    !TryTranslateTooltipSlice(catalog, original,
+                        out translated) ||
+                    string.Equals(original, translated,
+                        StringComparison.Ordinal))
+                    continue;
+
+                item2.SetValue(tuple, translated);
+                list[i] = tuple;
+            }
+        }
+
+        private static void SafeStorageBoxLabelStatePostfix(
+            MethodBase __originalMethod)
+        {
+            if (!_enabled || !IsKorean() || __originalMethod == null ||
+                __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            try
+            {
+                FieldInfo entriesField =
+                    __originalMethod.DeclaringType.GetField(
+                        "Entries",
+                        BindingFlags.Static |
+                        BindingFlags.NonPublic |
+                        BindingFlags.Public);
+                IDictionary entries =
+                    entriesField == null ? null :
+                    entriesField.GetValue(null) as IDictionary;
+                if (entries == null)
+                    return;
+
+                string shortDefault = null;
+                catalog.ByKey.TryGetValue(
+                    "pskb_box_label_short", out shortDefault);
+
+                foreach (DictionaryEntry pair in entries)
+                {
+                    object entry = pair.Value;
+                    if (entry == null)
+                        continue;
+
+                    Type entryType = entry.GetType();
+                    FieldInfo baseNameField = entryType.GetField(
+                        "BaseName",
+                        BindingFlags.Instance |
+                        BindingFlags.Public |
+                        BindingFlags.NonPublic);
+                    FieldInfo labelField = entryType.GetField(
+                        "Label",
+                        BindingFlags.Instance |
+                        BindingFlags.Public |
+                        BindingFlags.NonPublic);
+                    if (baseNameField == null ||
+                        baseNameField.FieldType != typeof(string) ||
+                        labelField == null)
+                        continue;
+
+                    string baseName =
+                        baseNameField.GetValue(entry) as string;
+                    if (string.IsNullOrEmpty(baseName))
+                        continue;
+
+                    string translated;
+                    if (!TryTranslateTooltipSlice(
+                            catalog, baseName, out translated) ||
+                        string.Equals(baseName, translated,
+                            StringComparison.Ordinal))
+                        continue;
+
+                    string displayBase = translated;
+                    if (string.Equals(baseName, "收纳箱",
+                            StringComparison.Ordinal) &&
+                        !string.IsNullOrEmpty(shortDefault))
+                        displayBase = shortDefault;
+
+                    baseNameField.SetValue(entry, displayBase);
+
+                    object label = labelField.GetValue(entry);
+                    if (label == null)
+                        continue;
+
+                    PropertyInfo textProperty =
+                        label.GetType().GetProperty(
+                            "text",
+                            BindingFlags.Instance |
+                            BindingFlags.Public);
+                    if (textProperty == null ||
+                        !textProperty.CanRead ||
+                        !textProperty.CanWrite ||
+                        textProperty.PropertyType != typeof(string))
+                        continue;
+
+                    string current =
+                        textProperty.GetValue(label, null) as string;
+                    bool vertical = !string.IsNullOrEmpty(current) &&
+                        current.IndexOf('\n') >= 0;
+
+                    string compact =
+                        (displayBase ?? string.Empty).Replace(" ", "");
+                    int count = Math.Min(3, compact.Length);
+                    string shown = compact.Substring(0, count);
+
+                    if (vertical && shown.Length > 1)
+                        shown = string.Join("\n",
+                            shown.ToCharArray()
+                                .Select(c => c.ToString())
+                                .ToArray());
+
+                    textProperty.SetValue(label, shown, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Storage box-label output translation skipped: " +
+                    ex.Message);
+            }
         }
 
         private static void SafeGameItemResultPostfix(
