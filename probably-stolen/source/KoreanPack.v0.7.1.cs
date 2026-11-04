@@ -1409,7 +1409,7 @@ namespace ProbablyStolenKoreanPack
                             case KnownPatchKind.PixelWindowResult:
                                 if (method.ReturnType == typeof(PixelWindow) &&
                                     PatchDynamic(method, null,
-                                        nameof(SafePixelWindowResultPostfix),
+                                        nameof(SafeOutputPixelWindowResultPostfix),
                                         "safe-pixelwindow-result"))
                                     patched++;
                                 break;
@@ -2074,7 +2074,7 @@ namespace ProbablyStolenKoreanPack
             TranslatePixelWindowDisplay(catalog, __result.contentWindow);
         }
 
-        private static void SafePixelWindowResultPostfix(
+        private static void SafeOutputPixelWindowResultPostfix(
             MethodBase __originalMethod, PixelWindow __result)
         {
             if (!_enabled || !IsKorean() || __result == null ||
