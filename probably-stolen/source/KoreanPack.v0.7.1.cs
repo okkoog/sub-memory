@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.4
+// Probably Stolen - generic Korean localization bridge v0.7.5
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -1172,7 +1172,7 @@ namespace ProbablyStolenKoreanPack
                 else if (assemblyName.Equals("XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "XIAOWONightAuction.AuctionText",
-                        new KnownPatch("Select", KnownPatchKind.StringResult),
+                        new KnownPatch("Select", KnownPatchKind.BilingualResult),
                         new KnownPatch("DisplayLog", KnownPatchKind.StringResult),
                         new KnownPatch("Get", KnownPatchKind.StringResult));
                     patched += PatchKnownType(assembly, "XIAOWONightAuction.AuctionExclusiveFactory",
@@ -1196,7 +1196,9 @@ namespace ProbablyStolenKoreanPack
                     // compiling AddLiquid caused Liquid..cctor to run during asset loading,
                     // corrupting Unity Localization operation handles.
                     patched += PatchKnownType(assembly, "CorpPresence.L",
-                        new KnownPatch("T", KnownPatchKind.LocalizerResult));
+                        new KnownPatch("T", KnownPatchKind.BilingualResult));
+                    patched += PatchKnownType(assembly, "CorpPresence.UI.MenuLabels",
+                        new KnownPatch("Get", KnownPatchKind.StringArrayResult));
                 }
             }
             catch (Exception ex)
@@ -1213,6 +1215,8 @@ namespace ProbablyStolenKoreanPack
         private enum KnownPatchKind
         {
             StringResult,
+            StringArrayResult,
+            BilingualResult,
             LocalizerResult,
             GameItemResult,
             DialogueResult,
@@ -1291,6 +1295,31 @@ namespace ProbablyStolenKoreanPack
                                         nameof(SafeStringResultPostfix),
                                         "safe-string-result"))
                                     patched++;
+                                break;
+
+                            case KnownPatchKind.StringArrayResult:
+                                if (method.ReturnType == typeof(string[]) &&
+                                    PatchDynamic(method, null,
+                                        nameof(SafeStringArrayResultPostfix),
+                                        "safe-string-array-result"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.BilingualResult:
+                                if (method.ReturnType == typeof(string))
+                                {
+                                    if (PatchDynamic(method, null,
+                                        nameof(SafeBilingualStringResultPostfix),
+                                        "safe-bilingual-string"))
+                                        patched++;
+                                }
+                                else if (method.ReturnType == typeof(string[]))
+                                {
+                                    if (PatchDynamic(method, null,
+                                        nameof(SafeBilingualStringArrayResultPostfix),
+                                        "safe-bilingual-array"))
+                                        patched++;
+                                }
                                 break;
 
                             case KnownPatchKind.LocalizerResult:
@@ -2165,6 +2194,87 @@ namespace ProbablyStolenKoreanPack
                    name.Contains("textmesh") ||
                    name.EndsWith(".text", StringComparison.Ordinal) ||
                    name.Contains("uielement");
+        }
+
+        private static void SafeBilingualStringResultPostfix(
+            MethodBase __originalMethod, object[] __args, ref string __result)
+        {
+            if (!_enabled || !IsKorean() ||
+                __originalMethod == null ||
+                __originalMethod.DeclaringType == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            string translated;
+            if (__args != null)
+            {
+                for (int i = 0; i < __args.Length; i++)
+                {
+                    string candidate = __args[i] as string;
+                    if (!string.IsNullOrEmpty(candidate) &&
+                        TryTranslateSource(catalog, candidate, out translated))
+                    {
+                        __result = translated;
+                        return;
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(__result) &&
+                TryTranslateSource(catalog, __result, out translated))
+                __result = translated;
+        }
+
+        private static void SafeBilingualStringArrayResultPostfix(
+            MethodBase __originalMethod, object[] __args, ref string[] __result)
+        {
+            if (!_enabled || !IsKorean() ||
+                __originalMethod == null ||
+                __originalMethod.DeclaringType == null ||
+                __result == null || __result.Length == 0)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            for (int i = 0; i < __result.Length; i++)
+            {
+                string translated;
+                bool done = false;
+
+                if (__args != null)
+                {
+                    for (int a = 0; a < __args.Length; a++)
+                    {
+                        string[] candidates = __args[a] as string[];
+                        if (candidates == null || i >= candidates.Length)
+                            continue;
+
+                        string candidate = candidates[i];
+                        if (!string.IsNullOrEmpty(candidate) &&
+                            TryTranslateSource(catalog, candidate, out translated))
+                        {
+                            __result[i] = translated;
+                            done = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (done)
+                    continue;
+
+                string original = __result[i];
+                if (!string.IsNullOrEmpty(original) &&
+                    TryTranslateSource(catalog, original, out translated))
+                    __result[i] = translated;
+            }
         }
 
         private static void SafeStringArrayResultPostfix(
