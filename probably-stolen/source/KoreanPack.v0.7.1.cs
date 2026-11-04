@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.5.2 (verified output-boundary pass)
+// Probably Stolen - generic Korean localization bridge v0.7.5.3 (display-boundary refinement)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -154,6 +154,7 @@ namespace ProbablyStolenKoreanPack
 
                 ModHook.OnModAssetsLoaded += OnModAssetsLoaded;
                 PatchFinalTooltipBridge();
+                PatchSharedDisplayBridges();
 
                 Debug.Log("[KoreanPack] Enabled. Waiting for official ModHook.OnModAssetsLoaded.");
             }
@@ -611,6 +612,121 @@ namespace ProbablyStolenKoreanPack
             }
 
             return null;
+        }
+
+        private static void PatchSharedDisplayBridges()
+        {
+            try
+            {
+                MethodInfo itemName = typeof(GameItem).GetMethod(
+                    "GetDisplayName",
+                    BindingFlags.Public | BindingFlags.Instance,
+                    null,
+                    new Type[] { typeof(bool) },
+                    null);
+
+                if (itemName != null &&
+                    PatchDynamic(itemName, null,
+                        nameof(SafeGameItemDisplayNamePostfix),
+                        "shared-gameitem-display-name"))
+                {
+                    Debug.Log("[KoreanPack] GameItem display-name bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] GameItem display-name bridge failed: " +
+                    ex.Message);
+            }
+
+            try
+            {
+                MethodInfo typeName = typeof(TypeHelper).GetMethod(
+                    "GetTypeDisplayName",
+                    BindingFlags.Public | BindingFlags.Static,
+                    null,
+                    new Type[] { typeof(string) },
+                    null);
+
+                if (typeName != null &&
+                    PatchDynamic(typeName, null,
+                        nameof(SafeTypeDisplayNamePostfix),
+                        "shared-type-display-name"))
+                {
+                    Debug.Log("[KoreanPack] Type display-name bridge enabled.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[KoreanPack] Type display-name bridge failed: " +
+                    ex.Message);
+            }
+        }
+
+        private static void SafeGameItemDisplayNamePostfix(
+            GameItem __instance, bool preferCustomName, ref string __result)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                __instance == null || string.IsNullOrEmpty(__result))
+                return;
+
+            // Never rewrite a player's own custom item name.
+            try
+            {
+                if (preferCustomName && GeneralHelper.HasCustomName(__instance))
+                    return;
+            }
+            catch
+            {
+            }
+
+            // Keep this hot path cheap. The saved-item cases that need this
+            // bridge are hardcoded CJK display names such as 触手本体/游戏卡棋盘.
+            if (!ContainsCjkText(__result))
+                return;
+
+            string runtimeId;
+            Catalog catalog = LocateCatalogForItem(__instance, out runtimeId);
+            if (catalog == null)
+                return;
+
+            string translated;
+            if (TryTranslateTooltipSlice(catalog, __result, out translated) &&
+                !string.Equals(__result, translated, StringComparison.Ordinal))
+                __result = translated;
+        }
+
+        private static void SafeTypeDisplayNamePostfix(
+            string typeConst, ref string __result)
+        {
+            if (!_enabled || !_catalogsReady || !IsKorean() ||
+                string.IsNullOrEmpty(typeConst))
+                return;
+
+            // GameCardPK deliberately uses 游戏卡 as an internal showcase type.
+            // Keep that internal value unchanged; translate only its display name.
+            if (!string.Equals(typeConst, "游戏卡", StringComparison.Ordinal))
+                return;
+
+            string translated =
+                TranslateKnownCatalogText("game_card_pk", typeConst);
+            if (!string.IsNullOrEmpty(translated))
+                __result = translated;
+        }
+
+        private static bool ContainsCjkText(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return false;
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                char c = value[i];
+                if (c >= '\u3400' && c <= '\u9fff')
+                    return true;
+            }
+
+            return false;
         }
 
         private static void PatchFinalTooltipBridge()
@@ -1150,8 +1266,6 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult),
                         new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs),
                         new KnownPatch("AttachChessBoardWindow", KnownPatchKind.GameItemWindowArgs));
-                    patched += PatchKnownType(assembly, "GameCardPK.ShowcaseBuyerSystem",
-                        new KnownPatch("AppendBuyerCustomer", KnownPatchKind.BuyerTypeListArgs));
                     patched += PatchKnownType(assembly, "GameCardPK.SkillText",
                         new KnownPatch("ForItem", KnownPatchKind.StringResult),
                         new KnownPatch("ForBattle", KnownPatchKind.StringResult),
@@ -1170,7 +1284,8 @@ namespace ProbablyStolenKoreanPack
                 {
                     patched += PatchKnownType(assembly, "ItemStorage.BoxItem",
                         new KnownPatch("Create", KnownPatchKind.GameItemResult),
-                        new KnownPatch("Create", KnownPatchKind.GameItemWindowResult));
+                        new KnownPatch("Create", KnownPatchKind.GameItemWindowResult),
+                        new KnownPatch("NotifyUser", KnownPatchKind.VisibleStringArgs));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
                         new KnownPatch("UpdateTooltip", KnownPatchKind.GameItemWindowArgs),
@@ -1226,7 +1341,11 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("DrawDavre", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreOrder", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreLeviathan", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler));
+                        new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSolana", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSolanaVip", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSolanaLab", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSolanaGift", KnownPatchKind.GuiLabelTranspiler));
                 }
             }
             catch (Exception ex)
@@ -1589,7 +1708,25 @@ namespace ProbablyStolenKoreanPack
             if (TryTranslateTooltipSlice(catalog, source, out translated))
                 return translated;
 
-            return source;
+            // Corp GUI often concatenates already-localized fixed text with
+            // one dynamically formatted English line into a single label.
+            // Translate only individual lines as a narrow fallback.
+            string[] lines = source.Split('\n');
+            bool changed = false;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string lineTranslated;
+                if (TryTranslateTooltipSlice(catalog, lines[i],
+                        out lineTranslated) &&
+                    !string.Equals(lines[i], lineTranslated,
+                        StringComparison.Ordinal))
+                {
+                    lines[i] = lineTranslated;
+                    changed = true;
+                }
+            }
+
+            return changed ? string.Join("\n", lines) : source;
         }
 
         private static bool HasVisibleStringArguments(MethodInfo method)
