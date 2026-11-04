@@ -1,17 +1,7 @@
 name: KoreanPack v0.7.6 full install
 
 on:
-  push:
-    branches:
-      - probably-stolen-koreanpack-sol
-    paths:
-      - 'probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip'
-      - 'probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll'
-      - 'probably-stolen/korean-pack/manifest.xml'
-      - 'probably-stolen/korean-pack/Localization/pskb__supp_*.csv'
-      - '.github/workflows/probably-stolen-koreanpack-v073-full.yml'
   workflow_dispatch:
-
 jobs:
   package:
     runs-on: ubuntu-latest
