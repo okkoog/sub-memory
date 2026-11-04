@@ -57,6 +57,12 @@ jobs:
             ${{ runner.temp }}/visible/3829085054/ItemStorage/SlotLock.cs
             ${{ runner.temp }}/visible/3829085054/ItemStorage/StoragePatch.cs
           if-no-files-found: error
+      - name: Upload GameCardPK source
+        uses: actions/upload-artifact@v4
+        with:
+          name: gamecardpk-decompiled-source
+          path: ${{ runner.temp }}/visible/3832048841/**/*.cs
+          if-no-files-found: error
       - name: Commit report
         shell: bash
         run: |
