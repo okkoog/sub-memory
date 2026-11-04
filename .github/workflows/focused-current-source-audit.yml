@@ -1,0 +1,68 @@
+name: Probably Stolen focused current source audit
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/focused-current-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/mods/3828913695/CorpPresence.dll
+            probably-stolen/mods/3829429358/XIAOWONightAuction.dll
+            probably-stolen/mods/3832048841/GameCardPK.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile
+        shell: bash
+        run: |
+          set -euo pipefail
+          for spec in             "corp:probably-stolen/mods/3828913695/CorpPresence.dll"             "auction:probably-stolen/mods/3829429358/XIAOWONightAuction.dll"             "card:probably-stolen/mods/3832048841/GameCardPK.dll"; do
+            name="${spec%%:*}"; dll="${spec#*:}"
+            mkdir -p "$RUNNER_TEMP/$name"
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$RUNNER_TEMP/$name" "$dll"
+          done
+      - name: Copy focused sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=probably-stolen/analysis/focused-current-sources
+          rm -rf "$out"; mkdir -p "$out"
+          copy_one() {
+            srcroot="$1"; filename="$2"; dest="$3"
+            f=$(find "$RUNNER_TEMP/$srcroot" -type f -name "$filename" -print -quit)
+            test -n "$f"
+            cp "$f" "$out/$dest"
+          }
+          copy_one corp CompanyWindow.cs CorpPresence.CompanyWindow.cs
+          copy_one corp MenuLabels.cs CorpPresence.MenuLabels.cs
+          copy_one corp Ui.cs CorpPresence.Ui.cs
+          copy_one corp L.cs CorpPresence.L.cs
+          copy_one auction AuctionText.cs Auction.AuctionText.cs
+          copy_one auction AuctionPhone.cs Auction.AuctionPhone.cs
+          copy_one card TagDisplay.cs GameCardPK.TagDisplay.cs
+          copy_one card GameCardFactory.cs GameCardPK.GameCardFactory.cs
+          ls -lh "$out"
+      - name: Commit focused sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add --sparse -- probably-stolen/analysis/focused-current-sources
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Save focused current target sources for localization audit"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
