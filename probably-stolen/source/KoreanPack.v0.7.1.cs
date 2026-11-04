@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.8 (v0.7.5-safe-base locale fix)
+// Probably Stolen - generic Korean localization bridge v0.7.9 (v0.7.5-safe targeted literals)
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -12,6 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -274,7 +275,7 @@ namespace ProbablyStolenKoreanPack
                 foreach (KeyValuePair<string, string> row in localeFile.Value)
                 {
                     string rowKey = row.Key ?? string.Empty;
-                    string korean = row.Value ?? string.Empty;
+                    string korean = DecodeEscapedCatalogText(row.Value ?? string.Empty);
 
                     if (rowKey.StartsWith("M|", StringComparison.Ordinal))
                     {
@@ -309,7 +310,7 @@ namespace ProbablyStolenKoreanPack
 
                     if (rowKey.StartsWith("S|", StringComparison.Ordinal))
                     {
-                        AddExplicitSource(catalog, rowKey.Substring(2), korean);
+                        AddExplicitSource(catalog, DecodeEscapedCatalogText(rowKey.Substring(2)), korean);
                         continue;
                     }
 
@@ -317,7 +318,7 @@ namespace ProbablyStolenKoreanPack
                     {
                         string source = DecodeBase64Url(rowKey.Substring(4));
                         if (!string.IsNullOrEmpty(source))
-                            AddExplicitSource(catalog, source, korean);
+                            AddExplicitSource(catalog, DecodeEscapedCatalogText(source), korean);
                     }
                 }
 
@@ -447,6 +448,18 @@ namespace ProbablyStolenKoreanPack
             catalog.ExplicitTemplates.Clear();
             foreach (KeyValuePair<string, string> pair in catalog.ExplicitBySource)
                 AddTemplateRule(catalog.ExplicitTemplates, pair.Key, pair.Value);
+        }
+
+        private static string DecodeEscapedCatalogText(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return value;
+
+            return value
+                .Replace("\\r\\n", "\n")
+                .Replace("\\n", "\n")
+                .Replace("\\r", "\r")
+                .Replace("\\t", "\t");
         }
 
         private static string DecodeBase64Url(string encoded)
@@ -1172,26 +1185,37 @@ namespace ProbablyStolenKoreanPack
                 {
                     patched += PatchKnownType(assembly, "GameCardPK.GameCardFactory",
                         new KnownPatch("CreateCard", KnownPatchKind.GameItemResult),
+                        new KnownPatch("CreateCard", KnownPatchKind.CatalogLiterals),
                         new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult),
-                        new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs));
+                        new KnownPatch("CreateSkill", KnownPatchKind.CatalogLiterals),
+                        new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("ApplySkillData", KnownPatchKind.CatalogLiterals));
                     patched += PatchKnownType(assembly, "GameCardPK.SkillText",
                         new KnownPatch("ForItem", KnownPatchKind.StringResult),
                         new KnownPatch("ForBattle", KnownPatchKind.StringResult),
                         new KnownPatch("PointLabel", KnownPatchKind.StringResult));
                     patched += PatchKnownType(assembly, "GameCardPK.ShowcaseBuyerSystem",
                         new KnownPatch("AppendBuyerCustomer", KnownPatchKind.TupleListArgs),
-                        new KnownPatch("AppendSellerPrediction", KnownPatchKind.TupleListArgs));
+                        new KnownPatch("AppendBuyerCustomer", KnownPatchKind.CatalogLiterals),
+                        new KnownPatch("AppendSellerPrediction", KnownPatchKind.TupleListArgs),
+                        new KnownPatch("AppendSellerPrediction", KnownPatchKind.CatalogLiterals));
                 }
                 else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
                 {
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody",
                         new KnownPatch("Create", KnownPatchKind.GameItemResult),
+                        new KnownPatch("Create", KnownPatchKind.CatalogLiterals),
                         new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult),
-                        new KnownPatch("DelayReport", KnownPatchKind.VisibleStringArgs));
+                        new KnownPatch("BuildWindow", KnownPatchKind.CatalogLiterals),
+                        new KnownPatch("ShowReport", KnownPatchKind.CatalogLiterals),
+                        new KnownPatch("DelayReport", KnownPatchKind.VisibleStringArgs),
+                        new KnownPatch("DelayReport", KnownPatchKind.CatalogLiterals));
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.MaidenTooltip",
-                        new KnownPatch("OnTooltip", KnownPatchKind.ObjectArgs));
+                        new KnownPatch("OnTooltip", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("OnTooltip", KnownPatchKind.CatalogLiterals));
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.ItemFactory",
-                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.ObjectArgs));
+                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("UpdateMaidenDescription", KnownPatchKind.CatalogLiterals));
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.MaidenTooltip");
                     patched += PatchKnownType(assembly, "MidnightPawn.Game.ItemFactory");
                 }
@@ -1201,11 +1225,16 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("Create", KnownPatchKind.GameItemResult));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxWindow",
                         new KnownPatch("UpdateTooltip", KnownPatchKind.ObjectArgs),
+                        new KnownPatch("UpdateTooltip", KnownPatchKind.CatalogLiterals),
                         new KnownPatch("EnsureWindow", KnownPatchKind.StaticVisibleState),
-                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticVisibleState));
+                        new KnownPatch("EnsureWindow", KnownPatchKind.CatalogLiterals),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.StaticVisibleState),
+                        new KnownPatch("RefreshButtons", KnownPatchKind.CatalogLiterals));
                     patched += PatchKnownType(assembly, "ItemStorage.BoxLabel",
                         new KnownPatch("BaseNameOf", KnownPatchKind.StringResult),
+                        new KnownPatch("BaseNameOf", KnownPatchKind.CatalogLiterals),
                         new KnownPatch("FormatText", KnownPatchKind.StringResult),
+                        new KnownPatch("FormatText", KnownPatchKind.CatalogLiterals),
                         new KnownPatch("Apply", KnownPatchKind.StaticVisibleState),
                         new KnownPatch("Tick", KnownPatchKind.StaticVisibleState),
                         new KnownPatch("OnItemRenamed", KnownPatchKind.StaticVisibleState));
@@ -1288,7 +1317,8 @@ namespace ProbablyStolenKoreanPack
             ObjectArgs,
             TupleListArgs,
             StaticDisplayState,
-            StaticVisibleState
+            StaticVisibleState,
+            CatalogLiterals
         }
 
         private sealed class KnownPatch
@@ -1482,6 +1512,13 @@ namespace ProbablyStolenKoreanPack
                                     "safe-static-visible-state"))
                                     patched++;
                                 break;
+
+                            case KnownPatchKind.CatalogLiterals:
+                                if (PatchDynamicTranspiler(method,
+                                    nameof(SafeCatalogLiteralTranspiler),
+                                    "safe-catalog-literals"))
+                                    patched++;
+                                break;
                         }
                     }
                     catch (Exception ex)
@@ -1555,6 +1592,72 @@ namespace ProbablyStolenKoreanPack
             _dynamicHarmony.Patch(method, transpiler: transpiler);
             PatchedMethods.Add(id);
             return true;
+        }
+
+        private static IEnumerable<CodeInstruction> SafeCatalogLiteralTranspiler(
+            IEnumerable<CodeInstruction> instructions, MethodBase original)
+        {
+            MethodInfo helper = typeof(KoreanPack).GetMethod(
+                nameof(TranslateCatalogLiteral),
+                BindingFlags.Static | BindingFlags.NonPublic);
+
+            string assemblyName = string.Empty;
+            try
+            {
+                if (original != null && original.DeclaringType != null)
+                    assemblyName = original.DeclaringType.Assembly.GetName().Name ?? string.Empty;
+            }
+            catch
+            {
+            }
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                yield return instruction;
+
+                if (helper == null || instruction == null ||
+                    instruction.opcode != OpCodes.Ldstr ||
+                    !(instruction.operand is string) ||
+                    string.IsNullOrEmpty((string)instruction.operand))
+                    continue;
+
+                yield return new CodeInstruction(OpCodes.Ldstr, assemblyName);
+                yield return new CodeInstruction(OpCodes.Call, helper);
+            }
+        }
+
+        private static string TranslateCatalogLiteral(
+            string source, string assemblyName)
+        {
+            if (!_enabled || !IsKorean() || string.IsNullOrEmpty(source))
+                return source;
+
+            string alias = null;
+            if (string.Equals(assemblyName, "ItemStorage", StringComparison.OrdinalIgnoreCase))
+                alias = "Dream_Item_Storage";
+            else if (string.Equals(assemblyName, "MidnightPawn", StringComparison.OrdinalIgnoreCase))
+                alias = "lewd_meme";
+            else if (string.Equals(assemblyName, "GameCardPK", StringComparison.OrdinalIgnoreCase))
+                alias = "game_card_pk";
+            else if (string.Equals(assemblyName, "XIAOWONightAuction", StringComparison.OrdinalIgnoreCase))
+                alias = "xiaowo_night_auction";
+            else if (string.Equals(assemblyName, "BrewingExpansion", StringComparison.OrdinalIgnoreCase))
+                alias = "brewing_expansion";
+
+            if (string.IsNullOrEmpty(alias))
+                return source;
+
+            Catalog catalog;
+            if ((!RuntimeCatalogs.TryGetValue(alias, out catalog) &&
+                 !Catalogs.TryGetValue(alias, out catalog)) ||
+                catalog == null)
+                return source;
+
+            string translated;
+            if (TryTranslateTooltipSlice(catalog, source, out translated))
+                return translated;
+
+            return source;
         }
 
         private static IEnumerable<CodeInstruction> SafeCorpGuiLabelTranspiler(
@@ -2655,7 +2758,7 @@ namespace ProbablyStolenKoreanPack
                 return;
 
             string translated;
-            if (TryTranslateSource(catalog, __result, out translated))
+            if (TryTranslateTooltipSlice(catalog, __result, out translated))
                 __result = translated;
         }
 
