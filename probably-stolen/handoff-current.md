@@ -400,3 +400,27 @@ v0.7.3 Full Install 자동화 workflow 추가:
 현재 ChatGPT Library에는 전체 v0.7.0 ZIP이 존재하지만, 로컬 실행 container/python이 ClientError를 반환해 바이너리를 GitHub로 이전하지 못한 상태.
 16개 대형 catalog는 GitHub 과거 커밋에도 존재하지 않았음.
 베이스 ZIP이 GitHub에 들어오면 Full Install workflow가 전체 16 catalog + v0.7.3 DLL/manifest + 6 supplement를 자동 병합하고 무결성 검사 후 artifact를 생성함.
+
+## 2026-11-04 — v0.7.6 targeted UI pass
+
+- 사용자 스크린샷 기준 v0.7.5 잔여 누락:
+  - ItemStorage 창 제목/버튼
+  - MidnightPawn 촉수 본체 창/소녀 툴팁/야간 보고
+  - CorpPresence 일부 동적 영어 본문(특히 Pastel/Spacer)
+  - BrewingExpansion Nini 전화 대화
+  - GameCardPK 고객층의 `游戏卡`
+  - XIAOWONightAuction 기본 Localization UI
+- KoreanPack 외 타 모드 파일은 수정하지 않음.
+- 안전한 exact whitelist는 유지하고, 신규 `LiteralStrings` transpiler는 번역 카탈로그에 정확히 등록된 ldstr 상수만 런타임 번역 래퍼로 통과시킴. 내부 ID/tag 문자열은 번역표에 없으므로 대상이 아님.
+- MidnightPawn: TentacleBody.BuildWindow/ShowReport, MaidenTooltip.OnTooltip, ItemFactory.UpdateMaidenDescription 추가.
+- ItemStorage: BoxWindow.EnsureWindow에 LiteralStrings 추가.
+- GameCardPK: ShowcaseBuyerSystem AppendBuyerCustomer/AppendSellerPrediction의 ValueTuple 문자열 결과를 후처리.
+- BrewingExpansion: Nini 관련 `be_nini_*` Localization key를 K| 항목으로 추가하고 PhoneDialogue 결과 후처리 추가.
+- XIAOWONightAuction: 기존 en/zh.csv의 기본 키 20개를 K| 항목으로 추가.
+- CorpPresence: Pastel 동적 문장 fragment 및 Spacer mutual-aid 화면을 추가하고 해당 CompanyWindow 메서드를 whitelist에 추가.
+- 촉수 야간 보고 `昨晚：第 N 天：调教了 M 个苗床...` 경로 및 우유/정액/무산출 조합을 문자열 상수 단위로 보강.
+- manifest: `0.7.6-dev`.
+- build/scanner run: 41761654120 — build success, `HARD_COUNT=0`, `SCANNER_EXIT=0`; capabilities: `dynamic-code,reflection-external`.
+- overlay run: 41761845060 — success.
+- artifact: `ProbablyStolen_KoreanPack_v0.7.6-dev_TargetedUI_Overlay`, id `13290457599`, sha256 `889d3e2cb8b92759d097c4cfd2b5187151f4c8105934cfa56e7ca40353023feb`.
+- 현재 상태: 정적 빌드/스캐너 검증 완료, **게임 런타임 결과는 미검증**. 다음 확인 대상은 위 6개 화면과 invalid-operation/Liquid.cctor 재발 여부.
