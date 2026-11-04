@@ -1,0 +1,46 @@
+name: Probably Stolen tooltip call-order audit
+on:
+  push:
+    branches: [probably-stolen-koreanpack-sol]
+    paths:
+      - '.github/workflows/tooltip-call-order-audit.yml'
+      - 'probably-stolen/tools/trace_tooltip_call_order.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/Managed/Assembly-CSharp.dll
+            probably-stolen/tools/trace_tooltip_call_order.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile game
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/game"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o "$RUNNER_TEMP/game" probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Trace tooltip order
+        env:
+          GAME_DECOMPILED: ${{ runner.temp }}/game
+        run: python3 probably-stolen/tools/trace_tooltip_call_order.py
+      - name: Commit report
+        shell: bash
+        run: |
+          git add --sparse -- probably-stolen/analysis/tooltip-call-order.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Trace tooltip rendering call order"
+          git pull --rebase origin probably-stolen-koreanpack-sol
+          git push origin HEAD:probably-stolen-koreanpack-sol
