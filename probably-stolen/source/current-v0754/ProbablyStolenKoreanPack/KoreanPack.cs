@@ -94,7 +94,6 @@ public sealed class KoreanPack : IMod
 		StringArrayResult,
 		BilingualResult,
 		VisibleStringArgs,
-		StringArgs,
 		GuiLabelTranspiler,
 		LocalizerResult,
 		GameItemResult,
@@ -720,34 +719,6 @@ public sealed class KoreanPack : IMod
 		}
 		try
 		{
-			int num = 0;
-			foreach (MethodInfo method6 in typeof(ModHelper).GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-			{
-				if (!string.Equals(method6.Name, "AddAfterhourLocation", StringComparison.Ordinal))
-				{
-					continue;
-				}
-				ParameterInfo[] parameters = method6.GetParameters();
-				if (!parameters.Any((ParameterInfo p) => p.ParameterType == typeof(Func<string>)))
-				{
-					continue;
-				}
-				if (PatchDynamic(method6, "SafeAfterhourLocationArgsPrefix", null, "game-card-afterhour-label"))
-				{
-					num++;
-				}
-			}
-			if (num > 0)
-			{
-				Debug.Log("[KoreanPack] GameCardPK after-hours label bridge enabled.");
-			}
-		}
-		catch (Exception ex6)
-		{
-			Debug.LogWarning("[KoreanPack] GameCardPK after-hours label bridge failed: " + ex6.Message);
-		}
-		try
-		{
 			MethodInfo method6 = typeof(CustomUIManager).GetMethod("Window", BindingFlags.Static | BindingFlags.Public, null, new Type[3]
 			{
 				typeof(string),
@@ -776,56 +747,9 @@ public sealed class KoreanPack : IMod
 				}
 			}
 		}
-		catch (Exception ex7)
+		catch (Exception ex6)
 		{
-			Debug.LogWarning("[KoreanPack] Custom UI display bridge failed: " + ex7.Message);
-		}
-	}
-
-	private static void SafeAfterhourLocationArgsPrefix(MethodBase __originalMethod, object[] __args)
-	{
-		if (!_enabled || __originalMethod == null || __args == null)
-		{
-			return;
-		}
-		ParameterInfo[] parameters;
-		try
-		{
-			parameters = __originalMethod.GetParameters();
-		}
-		catch
-		{
-			return;
-		}
-		string text = null;
-		for (int i = 0; i < parameters.Length && i < __args.Length; i++)
-		{
-			if (parameters[i].ParameterType == typeof(string) && string.Equals(NormalizeName(parameters[i].Name), "modid", StringComparison.Ordinal))
-			{
-				text = __args[i] as string;
-				break;
-			}
-		}
-		if (string.IsNullOrEmpty(text) && __args.Length > 0)
-		{
-			text = __args[0] as string;
-		}
-		if (!string.Equals(text, "game_card_pk", StringComparison.OrdinalIgnoreCase))
-		{
-			return;
-		}
-		for (int j = 0; j < parameters.Length && j < __args.Length; j++)
-		{
-			if (parameters[j].ParameterType != typeof(Func<string>) || !(__args[j] is Func<string> func))
-			{
-				continue;
-			}
-			Func<string> original = func;
-			__args[j] = new Func<string>(delegate
-			{
-				string text2 = original();
-				return TranslateKnownCatalogText("game_card_pk", text2);
-			});
+			Debug.LogWarning("[KoreanPack] Custom UI display bridge failed: " + ex6.Message);
 		}
 	}
 
@@ -1544,10 +1468,6 @@ public sealed class KoreanPack : IMod
 				num += PatchKnownType(assembly, "GameCardPK.GameCardFactory", new KnownPatch("CreateCard", KnownPatchKind.GameItemResult), new KnownPatch("CreateCard", KnownPatchKind.GameItemWindowResult), new KnownPatch("CreateSkill", KnownPatchKind.GameItemResult), new KnownPatch("ApplySkillData", KnownPatchKind.ObjectArgs), new KnownPatch("AttachChessBoardWindow", KnownPatchKind.GameItemWindowArgs));
 				num += PatchKnownType(assembly, "GameCardPK.SkillText", new KnownPatch("ForItem", KnownPatchKind.StringResult), new KnownPatch("ForBattle", KnownPatchKind.StringResult), new KnownPatch("PointLabel", KnownPatchKind.StringResult));
 				num += PatchKnownType(assembly, "GameCardPK.CardNPC", new KnownPatch("BuildClient", KnownPatchKind.StoreClientResult));
-				num += PatchKnownType(assembly, "GameCardPK.CardClubLocationData", new KnownPatch("get_ButtonLabel", KnownPatchKind.StringResult));
-				num += PatchKnownType(assembly, "GameCardPK.UI.UiKit", new KnownPatch("Text", KnownPatchKind.StringArgs), new KnownPatch("TextMuted", KnownPatchKind.StringArgs), new KnownPatch("Button", KnownPatchKind.StringArgs), new KnownPatch("ButtonPrimary", KnownPatchKind.StringArgs));
-				num += PatchKnownType(assembly, "GameCardPK.UI.PanelHost", new KnownPatch("OpenPanel", KnownPatchKind.StringArgs), new KnownPatch("set_Message", KnownPatchKind.StringArgs));
-				num += PatchKnownType(assembly, "GameCardPK.UI.BattlePanel", new KnownPatch("RegisterHover", KnownPatchKind.StringArgs));
 			}
 			else if (text.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
 			{
@@ -1661,12 +1581,6 @@ public sealed class KoreanPack : IMod
 						break;
 					case KnownPatchKind.VisibleStringArgs:
 						if (HasVisibleStringArguments(methodInfo) && PatchDynamic(methodInfo, "SafeVisibleStringArgsPrefix", null, "safe-visible-string-args"))
-						{
-							num++;
-						}
-						break;
-					case KnownPatchKind.StringArgs:
-						if (methodInfo.GetParameters().Any((ParameterInfo p) => p.ParameterType == typeof(string)) && PatchDynamic(methodInfo, "SafeDisplayStringArgsPrefix", null, "safe-display-string-args"))
 						{
 							num++;
 						}
@@ -2180,39 +2094,6 @@ public sealed class KoreanPack : IMod
 			"factory", "create", "build", "register", "refresh", "update", "apply", "localize", "catalog", "phone",
 			"shop", "machine", "ui"
 		}.Any(text2.Contains);
-	}
-
-	private static void SafeDisplayStringArgsPrefix(MethodBase __originalMethod, object[] __args)
-	{
-		if (!_enabled || !IsKorean() || __originalMethod == null || __originalMethod.DeclaringType == null || __args == null || !AssemblyCatalogs.TryGetValue(__originalMethod.DeclaringType.Assembly, out var value))
-		{
-			return;
-		}
-		ParameterInfo[] parameters;
-		try
-		{
-			parameters = __originalMethod.GetParameters();
-		}
-		catch
-		{
-			return;
-		}
-		for (int i = 0; i < parameters.Length && i < __args.Length; i++)
-		{
-			if (parameters[i].ParameterType != typeof(string) || IsProtectedName(NormalizeName(parameters[i].Name)))
-			{
-				continue;
-			}
-			string text = __args[i] as string;
-			if (string.IsNullOrEmpty(text) || (!IsVisibleArgumentName(parameters[i].Name, __originalMethod.Name) && !LooksLikeHumanText(text)))
-			{
-				continue;
-			}
-			if (TryTranslateTooltipSlice(value, text, out var translated) && !string.Equals(text, translated, StringComparison.Ordinal))
-			{
-				__args[i] = translated;
-			}
-		}
 	}
 
 	private static void SafeStringArgsPrefix(MethodBase __originalMethod, object[] __args)
