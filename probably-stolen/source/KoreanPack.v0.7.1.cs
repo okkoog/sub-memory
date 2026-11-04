@@ -1153,6 +1153,9 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("ForItem", KnownPatchKind.StringResult),
                         new KnownPatch("ForBattle", KnownPatchKind.StringResult),
                         new KnownPatch("PointLabel", KnownPatchKind.StringResult));
+                    patched += PatchKnownType(assembly, "GameCardPK.ShowcaseBuyerSystem",
+                        new KnownPatch("AppendBuyerCustomer", KnownPatchKind.TupleListArgs),
+                        new KnownPatch("AppendSellerPrediction", KnownPatchKind.TupleListArgs));
                 }
                 else if (assemblyName.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1194,6 +1197,9 @@ namespace ProbablyStolenKoreanPack
                 {
                     patched += PatchKnownType(assembly, "BrewingExpansion.Formal.Figurines",
                         new KnownPatch("Create", KnownPatchKind.GameItemResult));
+                    patched += PatchKnownType(assembly, "BrewingExpansion.Formal.FormalVisitors",
+                        new KnownPatch("PhoneDialogue", KnownPatchKind.DialogueResult),
+                        new KnownPatch("Nini", KnownPatchKind.ObjectArgs));
                 }
                 else if (assemblyName.Equals("CorpPresence", StringComparison.OrdinalIgnoreCase))
                 {
@@ -1212,13 +1218,22 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("DrawPastel", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawPastelOrder", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("PastelBribeCell", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("PastelBribeCell", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelDealer", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelDealer", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelTraffic", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelTraffic", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawPastelFooter", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelFooter", KnownPatchKind.LiteralStrings),
                         new KnownPatch("DrawDavre", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreOrder", KnownPatchKind.GuiLabelTranspiler),
                         new KnownPatch("DrawDavreLeviathan", KnownPatchKind.GuiLabelTranspiler),
-                        new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler));
+                        new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSpacer", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSpacer", KnownPatchKind.LiteralStrings),
+                        new KnownPatch("DrawSpacerMutual", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawSpacerMutual", KnownPatchKind.LiteralStrings),
+                        new KnownPatch("DrawSpacerCredits", KnownPatchKind.GuiLabelTranspiler));
                 }
             }
             catch (Exception ex)
@@ -1244,6 +1259,7 @@ namespace ProbablyStolenKoreanPack
             GameItemResult,
             DialogueResult,
             ObjectArgs,
+            TupleListArgs,
             StaticDisplayState
         }
 
@@ -1406,6 +1422,13 @@ namespace ProbablyStolenKoreanPack
                                     PatchDynamic(method, null,
                                         nameof(SafeObjectArgsPostfix),
                                         "safe-object-args"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.TupleListArgs:
+                                if (PatchDynamic(method, null,
+                                    nameof(SafeTupleListArgsPostfix),
+                                    "safe-tuple-list-args"))
                                     patched++;
                                 break;
 
@@ -2024,6 +2047,88 @@ namespace ProbablyStolenKoreanPack
             for (int i = 0; i < __args.Length && budget > 0; i++)
                 TranslateObjectGraph(catalog, __args[i], targetAssembly,
                     false, false, null, visited, 0, ref budget);
+        }
+
+        private static void SafeTupleListArgsPostfix(
+            MethodBase __originalMethod, object[] __args)
+        {
+            if (!_enabled || !IsKorean() || __originalMethod == null ||
+                __originalMethod.DeclaringType == null || __args == null)
+                return;
+
+            Catalog catalog;
+            if (!AssemblyCatalogs.TryGetValue(
+                    __originalMethod.DeclaringType.Assembly, out catalog))
+                return;
+
+            for (int a = 0; a < __args.Length; a++)
+            {
+                IList list = __args[a] as IList;
+                if (list == null || list.IsReadOnly)
+                    continue;
+
+                int count;
+                try { count = Math.Min(list.Count, 160); }
+                catch { continue; }
+
+                for (int n = 0; n < count; n++)
+                {
+                    object boxed;
+                    try { boxed = list[n]; }
+                    catch { continue; }
+                    if (boxed == null) continue;
+
+                    Type type = boxed.GetType();
+                    if (!type.IsValueType ||
+                        !(type.FullName ?? string.Empty).StartsWith(
+                            "System.ValueTuple", StringComparison.Ordinal))
+                        continue;
+
+                    bool changed = false;
+                    FieldInfo[] fields;
+                    try
+                    {
+                        fields = type.GetFields(
+                            BindingFlags.Instance | BindingFlags.Public);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+
+                    foreach (FieldInfo field in fields)
+                    {
+                        if (field == null || field.FieldType != typeof(string))
+                            continue;
+
+                        string original;
+                        try { original = field.GetValue(boxed) as string; }
+                        catch { continue; }
+
+                        string translated;
+                        if (string.IsNullOrEmpty(original) ||
+                            !TryTranslateSource(catalog, original, out translated) ||
+                            string.Equals(original, translated,
+                                StringComparison.Ordinal))
+                            continue;
+
+                        try
+                        {
+                            field.SetValue(boxed, translated);
+                            changed = true;
+                        }
+                        catch
+                        {
+                        }
+                    }
+
+                    if (changed)
+                    {
+                        try { list[n] = boxed; }
+                        catch { }
+                    }
+                }
+            }
         }
 
         private static void SafePixelWindowResultPostfix(
