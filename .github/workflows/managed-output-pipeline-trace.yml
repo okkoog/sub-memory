@@ -28,7 +28,7 @@ jobs:
           set -euo pipefail
           dll=probably-stolen/Managed/Assembly-CSharp.dll
           "$RUNNER_TEMP/ilspy/ilspycmd" -l c "$dll" > "$RUNNER_TEMP/types.txt"
-          grep -Ei 'Machinery(Button|Label)|Pixel(Window|Element)|Tooltip|RichText|GameItemElement|Dialogue|LocHelper|Localization|Showcase' "$RUNNER_TEMP/types.txt" > "$RUNNER_TEMP/relevant-types.txt" || true
+          grep -Ei 'Machinery(Button|Label)|Pixel(Window|Element)|Tooltip|RichText|GameItemElement|Dialogue|LocHelper|Localization|Showcase|Record|Transcript|History|Log' "$RUNNER_TEMP/types.txt" > "$RUNNER_TEMP/relevant-types.txt" || true
           cat "$RUNNER_TEMP/relevant-types.txt"
       - name: Decompile confirmed output types
         shell: bash
