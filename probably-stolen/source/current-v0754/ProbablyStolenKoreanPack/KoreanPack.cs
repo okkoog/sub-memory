@@ -1472,6 +1472,13 @@ public sealed class KoreanPack : IMod
 			else if (text.Equals("MidnightPawn", StringComparison.OrdinalIgnoreCase))
 			{
 				num += PatchKnownType(assembly, "MidnightPawn.Game.TentacleBody", new KnownPatch("Create", KnownPatchKind.GameItemResult), new KnownPatch("Create", KnownPatchKind.GameItemWindowResult), new KnownPatch("BuildWindow", KnownPatchKind.PixelWindowResult), new KnownPatch("DelayReport", KnownPatchKind.TentacleNightReportArgs));
+				// Translate strings as the mod produces them, not only after an item tooltip was stored.
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.Perks+<>c", "<Register>b__1_0", "<Register>b__1_1");
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.ItemFactory", "CreateMaiden", "UpdateMaidenDescription");
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.MaidenTooltip", "OnTooltip");
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.TentacleBody", "ShowReport", "DelayReport", "Create", "BuildWindow");
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.TentacleEffects", "MakeBuyBonusFeature", "MakeSemenFeature");
+				num += PatchMidnightPawnLiteralType(assembly, "MidnightPawn.Game.NameGen", "RandomName");
 			}
 			else if (text.Equals("ItemStorage", StringComparison.OrdinalIgnoreCase))
 			{
@@ -1705,6 +1712,70 @@ public sealed class KoreanPack : IMod
 		_dynamicHarmony.Patch(method, prefix, postfix);
 		PatchedMethods.Add(item);
 		return true;
+	}
+
+	// Targeted mod-only interception of Chinese literal strings at their creation sites.
+	// Avoids global UI interception and does not modify the original MidnightPawn assembly.
+	private static int PatchMidnightPawnLiteralType(Assembly assembly, string typeName, params string[] methodNames)
+	{
+		Type type = assembly.GetType(typeName, throwOnError: false);
+		if (type == null)
+		{
+			Debug.LogWarning("[KoreanPack] MidnightPawn literal type not found: " + typeName);
+			return 0;
+		}
+		int patched = 0;
+		foreach (MethodInfo method in type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
+		{
+			if (method.IsAbstract || method.ContainsGenericParameters || !methodNames.Contains(method.Name))
+				continue;
+			try
+			{
+				if (PatchDynamicTranspiler(method, "SafeMidnightPawnLiteralTranspiler", "midnight-source-literals"))
+					patched++;
+			}
+			catch (Exception ex)
+			{
+				Debug.LogWarning("[KoreanPack] MidnightPawn literal patch skipped: " + typeName + "." + method.Name + " (" + ex.Message + ")");
+			}
+		}
+		return patched;
+	}
+
+	private static IEnumerable<CodeInstruction> SafeMidnightPawnLiteralTranspiler(IEnumerable<CodeInstruction> instructions)
+	{
+		MethodInfo translate = typeof(KoreanPack).GetMethod("TranslateMidnightPawnLiteral", BindingFlags.Static | BindingFlags.NonPublic);
+		foreach (CodeInstruction instruction in instructions)
+		{
+			yield return instruction;
+			string literal = instruction.operand as string;
+			if (translate != null && instruction.opcode == System.Reflection.Emit.OpCodes.Ldstr && ContainsCjkText(literal))
+				yield return new CodeInstruction(System.Reflection.Emit.OpCodes.Call, translate);
+		}
+	}
+
+	private static string TranslateMidnightPawnLiteral(string source)
+	{
+		if (!_enabled || !_catalogsReady || !IsKorean() || string.IsNullOrEmpty(source))
+			return source;
+		string translated = TranslateKnownCatalogText("lewd_meme", source);
+		if (!string.Equals(translated, source, StringComparison.Ordinal))
+			return translated;
+		if (source.IndexOf('%') >= 0)
+		{
+			try
+			{
+				string decoded = Uri.UnescapeDataString(source);
+				if (!string.Equals(decoded, source, StringComparison.Ordinal))
+				{
+					string result = TranslateKnownCatalogText("lewd_meme", decoded);
+					if (!string.Equals(result, decoded, StringComparison.Ordinal))
+						return result;
+				}
+			}
+			catch (Exception) { }
+		}
+		return source;
 	}
 
 	private static bool PatchDynamicTranspiler(MethodBase method, string transpilerName, string kind)
