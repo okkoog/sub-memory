@@ -1,5 +1,5 @@
-# package revision: v077-v075-safe-targeted
-name: KoreanPack v0.7.7 v0.7.5-safe targeted patch
+# package revision: v078-v075-safe-locale
+name: KoreanPack v0.7.8 v0.7.5-safe locale diagnostic patch
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
           set -euo pipefail
           test -s probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll
           test -s probably-stolen/korean-pack/manifest.xml
-          grep -q '<ModVersion>0.7.7-dev</ModVersion>' probably-stolen/korean-pack/manifest.xml
+          grep -q '<ModVersion>0.7.8-dev</ModVersion>' probably-stolen/korean-pack/manifest.xml
           count=$(find probably-stolen/korean-pack/Localization -maxdepth 1 -name 'pskb__supp_*.csv' -type f | wc -l)
           test "$count" -eq 6
           python3 - <<'PY'
@@ -62,7 +62,7 @@ jobs:
           cp probably-stolen/korean-pack/manifest.xml patch/
           cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv patch/Localization/
           cat > patch/README_PATCH.txt <<'EOF'
-          Probably Stolen Korean Pack v0.7.7-dev v0.7.5-safe targeted overlay patch
+          Probably Stolen Korean Pack v0.7.8-dev v0.7.5-safe locale-gate diagnostic overlay patch
 
           Apply this over the existing v0.7.0-dev Korean Pack folder.
           Replace ProbablyStolenKoreanPack.dll and manifest.xml, then merge the Localization folder.
@@ -72,6 +72,6 @@ jobs:
           find patch -type f -maxdepth 2 -print | sort
       - uses: actions/upload-artifact@v4
         with:
-          name: ProbablyStolen_KoreanPack_v0.7.7-dev_TargetedUI_Overlay
+          name: ProbablyStolen_KoreanPack_v0.7.8-dev_TargetedUI_Overlay
           path: patch/
           if-no-files-found: error
