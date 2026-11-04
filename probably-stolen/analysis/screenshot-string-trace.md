@@ -872,6 +872,64 @@
 0289: 		item.flavorText = AuctionText.Select("只在夜间集装箱拍卖中流通的稀有货物。", "Rare goods traded only at the night container auction.");
 ~~~
 
+### Drag onto an owned stuck module
+- \`XIAOWONightAuction/AuctionItemLinkRules.cs:117\`
+~~~csharp
+0114: 		{
+0115: 			Describe(array[i], "拖到受损模组或模组提取器上维修，沿用原版电子零件的条件、成功率和消耗。不用于其他设备升级。", "Drag onto a damaged module or module extractor to repair it with native electronic-part conditions, chances and consumption. Does not upgrade other equipment.");
+0116: 		}
+0117: 		Describe("calibrator", "拖到已卡住的自有模组上，解除卡住状态。剩余次数：{0}/3。每次成功消耗1次，价值按剩余次数降低，耗尽后销毁。", "Drag onto an owned stuck module to release it. Uses remaining: {0}/3. Each successful release uses one charge; value scales with remaining charges. Consumed after the final use.");
+0118: 		Describe("fabricator_core", "可安装在原版兼容的模组槽中：品质加成15%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +15% quality. Native slot restrictions, wear and removal rules apply.");
+0119: 		Describe("quantum_controller", "可安装在原版兼容的模组槽中：效率加成10%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +10% efficiency. Native slot restrictions, wear and removal rules apply.");
+0120: 		array = new string[3] { "colony_painting", "gilt_music_box", "platinum_trophy" };
+~~~
+
+### Uses remaining:
+- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:35\`
+~~~csharp
+0032: 			["xiaowo_auction_century_vintage"] = ("Century Vintage", "A sealed bottle from an old cellar with its label intact."),
+0033: 			["xiaowo_auction_orbital_watch"] = ("Orbital Astronomical Watch", "A limited mechanical watch made in an orbital workshop."),
+0034: 			["xiaowo_auction_black_diamond"] = ("Stateless Black Diamond", "A giant black diamond with no registered origin."),
+0035: 			["xiaowo_auction_forged_pass"] = ("Forged Access Chip", "Opens native keycard-locked crates. Uses remaining: {0}/10. Value scales with remaining uses; consumed after the final use."),
+0036: 			["xiaowo_auction_silent_bolt"] = ("Silent Weapon Bolt", "A weapon bolt illegally modified for quieter operation."),
+0037: 			["xiaowo_auction_cipher_ledger"] = ("Encrypted Black Ledger", "An encrypted ledger of underground trade routes."),
+0038: 			["xiaowo_auction_black_decoder"] = ("Black-Market Decoder", "An illegal decoder that bypasses older electronic locks."),
+~~~
+- \`XIAOWONightAuction/AuctionItemLinkRules.cs:117\`
+~~~csharp
+0114: 		{
+0115: 			Describe(array[i], "拖到受损模组或模组提取器上维修，沿用原版电子零件的条件、成功率和消耗。不用于其他设备升级。", "Drag onto a damaged module or module extractor to repair it with native electronic-part conditions, chances and consumption. Does not upgrade other equipment.");
+0116: 		}
+0117: 		Describe("calibrator", "拖到已卡住的自有模组上，解除卡住状态。剩余次数：{0}/3。每次成功消耗1次，价值按剩余次数降低，耗尽后销毁。", "Drag onto an owned stuck module to release it. Uses remaining: {0}/3. Each successful release uses one charge; value scales with remaining charges. Consumed after the final use.");
+0118: 		Describe("fabricator_core", "可安装在原版兼容的模组槽中：品质加成15%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +15% quality. Native slot restrictions, wear and removal rules apply.");
+0119: 		Describe("quantum_controller", "可安装在原版兼容的模组槽中：效率加成10%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +10% efficiency. Native slot restrictions, wear and removal rules apply.");
+0120: 		array = new string[3] { "colony_painting", "gilt_music_box", "platinum_trophy" };
+~~~
+
+### Each successful release uses one charge
+- \`XIAOWONightAuction/AuctionItemLinkRules.cs:117\`
+~~~csharp
+0114: 		{
+0115: 			Describe(array[i], "拖到受损模组或模组提取器上维修，沿用原版电子零件的条件、成功率和消耗。不用于其他设备升级。", "Drag onto a damaged module or module extractor to repair it with native electronic-part conditions, chances and consumption. Does not upgrade other equipment.");
+0116: 		}
+0117: 		Describe("calibrator", "拖到已卡住的自有模组上，解除卡住状态。剩余次数：{0}/3。每次成功消耗1次，价值按剩余次数降低，耗尽后销毁。", "Drag onto an owned stuck module to release it. Uses remaining: {0}/3. Each successful release uses one charge; value scales with remaining charges. Consumed after the final use.");
+0118: 		Describe("fabricator_core", "可安装在原版兼容的模组槽中：品质加成15%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +15% quality. Native slot restrictions, wear and removal rules apply.");
+0119: 		Describe("quantum_controller", "可安装在原版兼容的模组槽中：效率加成10%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +10% efficiency. Native slot restrictions, wear and removal rules apply.");
+0120: 		array = new string[3] { "colony_painting", "gilt_music_box", "platinum_trophy" };
+~~~
+
+### Consumed after the final use
+- \`XIAOWONightAuction/AuctionItemLinkRules.cs:117\`
+~~~csharp
+0114: 		{
+0115: 			Describe(array[i], "拖到受损模组或模组提取器上维修，沿用原版电子零件的条件、成功率和消耗。不用于其他设备升级。", "Drag onto a damaged module or module extractor to repair it with native electronic-part conditions, chances and consumption. Does not upgrade other equipment.");
+0116: 		}
+0117: 		Describe("calibrator", "拖到已卡住的自有模组上，解除卡住状态。剩余次数：{0}/3。每次成功消耗1次，价值按剩余次数降低，耗尽后销毁。", "Drag onto an owned stuck module to release it. Uses remaining: {0}/3. Each successful release uses one charge; value scales with remaining charges. Consumed after the final use.");
+0118: 		Describe("fabricator_core", "可安装在原版兼容的模组槽中：品质加成15%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +15% quality. Native slot restrictions, wear and removal rules apply.");
+0119: 		Describe("quantum_controller", "可安装在原版兼容的模组槽中：效率加成10%。保留原版安装限制、磨损和拆卸规则。", "Install in a compatible native module slot: +10% efficiency. Native slot restrictions, wear and removal rules apply.");
+0120: 		array = new string[3] { "colony_painting", "gilt_music_box", "platinum_trophy" };
+~~~
+
 ## 3829085054
 
 ### 收纳箱
