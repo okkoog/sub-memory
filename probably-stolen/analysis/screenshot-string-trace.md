@@ -638,6 +638,33 @@
 0195: 
 ~~~
 
+### Industrial Calibrator
+- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:43\`
+~~~csharp
+0040: 			["xiaowo_auction_coilgun"] = ("Silent Coilgun Prototype", "An unproduced prototype of a low-noise coil weapon."),
+0041: 			["xiaowo_auction_master_key"] = ("Military Master Key", "A core key capable of forging military access credentials."),
+0042: 			["xiaowo_auction_bearing_set"] = ("High-Density Bearings", "Precision bearings for heavy industrial equipment."),
+0043: 			["xiaowo_auction_calibrator"] = ("Industrial Calibrator", "A portable instrument for precision machine calibration."),
+0044: 			["xiaowo_auction_supercoil"] = ("Superconducting Coil", "A fully sealed industrial superconducting coil."),
+0045: 			["xiaowo_auction_control_core"] = ("Prototype Control Core", "An unreleased automation control core."),
+0046: 			["xiaowo_auction_fabricator_core"] = ("Self-Calibrating Fabricator", "A fabrication core that corrects its own machining errors."),
+~~~
+
+### industrial_calibrator
+- not found in decompiled C#
+
+### A portable instrument for precision machine calibration.
+- \`XIAOWONightAuction/AuctionExclusiveCatalog.cs:43\`
+~~~csharp
+0040: 			["xiaowo_auction_coilgun"] = ("Silent Coilgun Prototype", "An unproduced prototype of a low-noise coil weapon."),
+0041: 			["xiaowo_auction_master_key"] = ("Military Master Key", "A core key capable of forging military access credentials."),
+0042: 			["xiaowo_auction_bearing_set"] = ("High-Density Bearings", "Precision bearings for heavy industrial equipment."),
+0043: 			["xiaowo_auction_calibrator"] = ("Industrial Calibrator", "A portable instrument for precision machine calibration."),
+0044: 			["xiaowo_auction_supercoil"] = ("Superconducting Coil", "A fully sealed industrial superconducting coil."),
+0045: 			["xiaowo_auction_control_core"] = ("Prototype Control Core", "An unreleased automation control core."),
+0046: 			["xiaowo_auction_fabricator_core"] = ("Self-Calibrating Fabricator", "A fabrication core that corrects its own machining errors."),
+~~~
+
 ## 3829085054
 
 ### 收纳箱
