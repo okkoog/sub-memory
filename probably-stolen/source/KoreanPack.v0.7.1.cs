@@ -1199,6 +1199,20 @@ namespace ProbablyStolenKoreanPack
                         new KnownPatch("T", KnownPatchKind.BilingualResult));
                     patched += PatchKnownType(assembly, "CorpPresence.UI.MenuLabels",
                         new KnownPatch("Get", KnownPatchKind.StringArrayResult));
+                    patched += PatchKnownType(assembly, "CorpPresence.UI.Ui",
+                        new KnownPatch("Button", KnownPatchKind.VisibleStringArgs),
+                        new KnownPatch("Label", KnownPatchKind.VisibleStringArgs));
+                    patched += PatchKnownType(assembly, "CorpPresence.UI.CompanyWindow",
+                        new KnownPatch("DrawPastel", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelOrder", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("PastelBribeCell", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelDealer", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelTraffic", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawPastelFooter", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawDavre", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawDavreOrder", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawDavreLeviathan", KnownPatchKind.GuiLabelTranspiler),
+                        new KnownPatch("DrawDavreCanning", KnownPatchKind.GuiLabelTranspiler));
                 }
             }
             catch (Exception ex)
@@ -1217,6 +1231,8 @@ namespace ProbablyStolenKoreanPack
             StringResult,
             StringArrayResult,
             BilingualResult,
+            VisibleStringArgs,
+            GuiLabelTranspiler,
             LocalizerResult,
             GameItemResult,
             DialogueResult,
@@ -1322,6 +1338,22 @@ namespace ProbablyStolenKoreanPack
                                 }
                                 break;
 
+                            case KnownPatchKind.VisibleStringArgs:
+                                if (HasVisibleStringArguments(method) &&
+                                    PatchDynamic(method,
+                                        nameof(SafeVisibleStringArgsPrefix),
+                                        null,
+                                        "safe-visible-string-args"))
+                                    patched++;
+                                break;
+
+                            case KnownPatchKind.GuiLabelTranspiler:
+                                if (PatchDynamicTranspiler(method,
+                                    nameof(SafeCorpGuiLabelTranspiler),
+                                    "safe-corp-gui-label"))
+                                    patched++;
+                                break;
+
                             case KnownPatchKind.LocalizerResult:
                                 if (method.ReturnType == typeof(string))
                                 {
@@ -1414,6 +1446,92 @@ namespace ProbablyStolenKoreanPack
             _dynamicHarmony.Patch(method, prefix: prefix, postfix: postfix);
             PatchedMethods.Add(id);
             return true;
+        }
+
+        private static bool PatchDynamicTranspiler(
+            MethodBase method, string transpilerName, string kind)
+        {
+            if (_dynamicHarmony == null || method == null ||
+                string.IsNullOrEmpty(transpilerName))
+                return false;
+
+            string id;
+            try
+            {
+                id = method.Module.ModuleVersionId + ":" +
+                    method.MetadataToken + ":" + kind;
+            }
+            catch
+            {
+                return false;
+            }
+
+            if (PatchedMethods.Contains(id))
+                return false;
+
+            HarmonyMethod transpiler =
+                new HarmonyMethod(typeof(KoreanPack), transpilerName);
+            _dynamicHarmony.Patch(method, transpiler: transpiler);
+            PatchedMethods.Add(id);
+            return true;
+        }
+
+        private static IEnumerable<CodeInstruction> SafeCorpGuiLabelTranspiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo wrapper = typeof(KoreanPack).GetMethod(
+                nameof(CorpGuiLabel),
+                BindingFlags.Static | BindingFlags.NonPublic);
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (wrapper != null)
+                {
+                    MethodInfo called = instruction.operand as MethodInfo;
+                    if (called != null &&
+                        called.DeclaringType == typeof(GUI) &&
+                        string.Equals(called.Name, "Label",
+                            StringComparison.Ordinal))
+                    {
+                        ParameterInfo[] parameters = called.GetParameters();
+                        if (parameters.Length == 3 &&
+                            parameters[0].ParameterType == typeof(Rect) &&
+                            parameters[1].ParameterType == typeof(string) &&
+                            parameters[2].ParameterType == typeof(GUIStyle))
+                        {
+                            instruction.operand = wrapper;
+                        }
+                    }
+                }
+
+                yield return instruction;
+            }
+        }
+
+        private static void CorpGuiLabel(
+            Rect position, string text, GUIStyle style)
+        {
+            GUI.Label(position,
+                TranslateKnownCatalogText("CorpPresence", text), style);
+        }
+
+        private static string TranslateKnownCatalogText(
+            string alias, string source)
+        {
+            if (!_enabled || !IsKorean() || string.IsNullOrEmpty(source))
+                return source;
+
+            Catalog catalog;
+            if ((!RuntimeCatalogs.TryGetValue(alias, out catalog) &&
+                 !Catalogs.TryGetValue(alias, out catalog)) ||
+                catalog == null)
+                return source;
+
+            string translated;
+            if (TryTranslateTooltipSlice(catalog, source, out translated))
+                return translated;
+
+            return source;
         }
 
         private static bool HasVisibleStringArguments(MethodInfo method)
