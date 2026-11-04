@@ -16,16 +16,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Reconstruct package and recovered source
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Reconstruct exact user-tested package
         shell: bash
         run: |
           set -euo pipefail
           STAGE="probably-stolen/staging/v07512"
           cat "$STAGE"/package.part* | tr -d '\r\n' | base64 -d | gzip -d > "$RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip"
           echo "7386fee70300ec0969d83c0154cbe47e2efa54c3d1a6253f8b7bba999bdf568b  $RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip" | sha256sum -c -
-          mkdir -p probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack
-          cat "$STAGE"/source.part* | tr -d '\r\n' | base64 -d | gzip -d > probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack/KoreanPack.cs
-          echo "24e13f49fbf013ba006719c1e702e3747aae5e44e0ca21afe63f740f6bc8f276  probably-stolen/source/current-v07512-recovered/ProbablyStolenKoreanPack/KoreanPack.cs" | sha256sum -c -
       - name: Expand exact current package
         shell: bash
         run: |
@@ -36,20 +36,23 @@ jobs:
           cp "$RUNNER_TEMP/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip" probably-stolen/releases/ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip
           cp probably-stolen/current-package/ProbablyStolenKoreanPack.dll probably-stolen/build/out/ProbablyStolenKoreanPack.dll
           echo "834be6542920c335f812368e1d86318a06736a16b0a66f87907453c6defa8466  probably-stolen/build/out/ProbablyStolenKoreanPack.dll" | sha256sum -c -
-      - name: Write recovered-source note
+      - name: Recover source from exact DLL
         shell: bash
         run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          rm -rf probably-stolen/source/current-v07512-recovered
+          mkdir -p probably-stolen/source/current-v07512-recovered
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -o probably-stolen/source/current-v07512-recovered probably-stolen/current-package/ProbablyStolenKoreanPack.dll
           cat > probably-stolen/source/current-v07512-recovered/README.md <<'EOF'
           # v0.7.5.12-dev recovered source
 
-          This source was recovered by decompiling the exact user-tested Work-improved DLL contained in
-          `ProbablyStolen_KoreanPack_v0.7.5.12-dev.zip`.
+          This directory was recovered by decompiling the exact user-tested Work-improved DLL.
 
           - Package SHA-256: `7386fee70300ec0969d83c0154cbe47e2efa54c3d1a6253f8b7bba999bdf568b`
           - DLL SHA-256: `834be6542920c335f812368e1d86318a06736a16b0a66f87907453c6defa8466`
-          - Recovered KoreanPack.cs SHA-256: `24e13f49fbf013ba006719c1e702e3747aae5e44e0ca21afe63f740f6bc8f276`
 
-          The exact DLL/package is authoritative. This recovered source is a reference snapshot until it is independently rebuilt and verified byte/behavior-equivalent.
+          The exact DLL/package is authoritative. The recovered source is a reference snapshot until independently rebuilt and behavior-verified.
           EOF
       - name: Commit imported current state
         shell: bash
