@@ -1,0 +1,109 @@
+name: KoreanPack v0.7.5 supplemental-format fix full install
+
+on:
+  push:
+    branches:
+      - probably-stolen-koreanpack-sol
+    paths:
+      - 'probably-stolen/korean-pack/Localization/pskb__supp_*.csv'
+      - '.github/workflows/probably-stolen-v075-supp-format-full.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: probably-stolen-koreanpack-sol
+          fetch-depth: 0
+
+      - name: Verify exact v0.7.5 source baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          git show 288a9791b14e8c1d388f933459e2d7bfaaa05a98:probably-stolen/source/KoreanPack.v0.7.1.cs > /tmp/v075.cs
+          cmp -s /tmp/v075.cs probably-stolen/source/KoreanPack.v0.7.1.cs
+          echo "SOURCE_BASELINE=exact-v0.7.5"
+
+      - name: Validate supplemental files with the game's actual parser rules
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          files=sorted(Path('probably-stolen/korean-pack/Localization').glob('pskb__supp_*.csv'))
+          assert len(files)==6, len(files)
+
+          total=0
+          for p in files:
+              directives=0
+              skipped=0
+              quoted_keys=0
+              for lineno,line in enumerate(p.read_text(encoding='utf-8-sig').splitlines(),1):
+                  if not line.strip() or line.lstrip().startswith('#'):
+                      continue
+                  i=line.find(',')
+                  if i<0:
+                      skipped+=1
+                      continue
+                  key=line[:i].strip()
+                  if key.startswith('"'):
+                      quoted_keys+=1
+                  if re.match(r'^(M|W|K|K64|S|S64)\|',key):
+                      directives+=1
+              print(f'{p.name}: directives={directives} skipped={skipped} quoted_keys={quoted_keys}')
+              assert skipped==0, (p,skipped)
+              assert quoted_keys==0, (p,quoted_keys)
+              assert directives>0, p
+              total+=directives
+          print('SUPPLEMENT_DIRECTIVES=',total)
+          PY
+
+      - name: Build full install using the original v0.7.5 DLL and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work out
+          mkdir -p work out
+          unzip -q probably-stolen/release-base/ProbablyStolen_KoreanPack_v0.7.0-dev_Install.zip -d work
+          root=work/ProbablyStolen_KoreanPack
+          test -d "$root/Localization"
+
+          # Exact runtime binary/manifest from the last user-confirmed working v0.7.5 commit.
+          git show 288a9791b14e8c1d388f933459e2d7bfaaa05a98:probably-stolen/korean-pack/ProbablyStolenKoreanPack.dll > "$root/ProbablyStolenKoreanPack.dll"
+          git show 288a9791b14e8c1d388f933459e2d7bfaaa05a98:probably-stolen/korean-pack/manifest.xml > "$root/manifest.xml"
+          grep -q '<ModVersion>0.7.5-dev</ModVersion>' "$root/manifest.xml"
+
+          # Only these six data files differ from the confirmed v0.7.5 package.
+          cp probably-stolen/korean-pack/Localization/pskb__supp_*.csv "$root/Localization/"
+
+          cat > "$root/README_FULL_INSTALL.txt" <<'EOF'
+          Probably Stolen Korean Pack v0.7.5 Supplemental-Format Fix
+
+          Runtime code:
+          - exact original v0.7.5 DLL
+          - exact original v0.7.5 manifest
+
+          Only change:
+          - six supplemental localization CSV files normalized to the actual
+            ModLoader.LoadLocalization format:
+            * keys are NOT quoted
+            * key/source strings containing ASCII commas use K64/S64
+            * embedded newlines are encoded as \n
+
+          No third-party mod files are modified.
+          EOF
+
+          (cd work && zip -qr ../out/ProbablyStolen_KoreanPack_v0.7.5_SupplementalFormatFix_Full_Install.zip .)
+          unzip -t out/ProbablyStolen_KoreanPack_v0.7.5_SupplementalFormatFix_Full_Install.zip
+          sha256sum out/ProbablyStolen_KoreanPack_v0.7.5_SupplementalFormatFix_Full_Install.zip | tee out/SHA256.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen_KoreanPack_v0.7.5_SupplementalFormatFix_Full_Install
+          path: out/
+          if-no-files-found: error
