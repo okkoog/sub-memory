@@ -33,7 +33,7 @@ jobs:
         run: python3 probably-stolen/tools/trace_corp_localization.py
       - name: Commit report
         run: |
-          git add --sparse -- probably-stolen/analysis/CorpPresence-0.9.4-localization-paths.md
+          git add --sparse -- probably-stolen/analysis/CorpPresence-0.9.5-localization-paths.md
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
