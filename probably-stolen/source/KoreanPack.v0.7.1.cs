@@ -1,4 +1,4 @@
-// Probably Stolen - generic Korean localization bridge v0.7.3
+// Probably Stolen - generic Korean localization bridge v0.7.4
 // Official lifecycle only:
 // - No ModLoader patch/reflection.
 // - No runtime file/path access.
@@ -509,10 +509,11 @@ namespace ProbablyStolenKoreanPack
 
             try
             {
+                Catalog catalog;
+
                 if (item.IsTag("MOD_ID_TAG"))
                 {
                     runtimeId = item.GetTagReadonly("MOD_ID_TAG").GetString() ?? string.Empty;
-                    Catalog catalog;
                     if (!string.IsNullOrWhiteSpace(runtimeId))
                     {
                         if (RuntimeCatalogs.TryGetValue(runtimeId, out catalog))
@@ -525,18 +526,88 @@ namespace ProbablyStolenKoreanPack
                 if (item.IsTag("MOD_NAME_TAG"))
                 {
                     string modName = item.GetTagReadonly("MOD_NAME_TAG").GetString();
-                    Catalog catalog;
-                    if (!string.IsNullOrWhiteSpace(modName) &&
-                        RuntimeCatalogs.TryGetValue(modName, out catalog))
+                    if (!string.IsNullOrWhiteSpace(modName))
                     {
-                        if (string.IsNullOrEmpty(runtimeId))
-                            runtimeId = modName;
+                        if (RuntimeCatalogs.TryGetValue(modName, out catalog))
+                        {
+                            if (string.IsNullOrEmpty(runtimeId))
+                                runtimeId = modName;
+                            return catalog;
+                        }
+
+                        if (Catalogs.TryGetValue(modName, out catalog))
+                        {
+                            if (string.IsNullOrEmpty(runtimeId))
+                                runtimeId = modName;
+                            return catalog;
+                        }
+                    }
+                }
+
+                // Mirror the game's own ModSourceHelper.GetItemModName fallback.
+                // Many workshop items do not carry MOD_ID_TAG/MOD_NAME_TAG at all;
+                // the game still knows their source by looking up the registered
+                // DirectoryMaster factory delegate. Use the same ownership path
+                // so those items can select the correct Korean catalog.
+                Delegate factory =
+                    DirectoryMaster.GetFactory<GameItem>(item.identifier);
+                LoadedMod owner = ModSourceHelper.FindModByDelegate(factory);
+
+                if (owner != null && owner.Manifest != null)
+                {
+                    runtimeId = owner.Manifest.ID ?? string.Empty;
+
+                    catalog = LocateCatalog(owner);
+                    if (catalog != null)
+                    {
+                        RegisterRuntimeCatalogAliases(owner, catalog);
                         return catalog;
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(runtimeId))
+                    {
+                        if (RuntimeCatalogs.TryGetValue(runtimeId, out catalog))
+                            return catalog;
+                        if (Catalogs.TryGetValue(runtimeId, out catalog))
+                            return catalog;
+                    }
+
+                    string ownerName = owner.Manifest.Name;
+                    if (!string.IsNullOrWhiteSpace(ownerName))
+                    {
+                        if (RuntimeCatalogs.TryGetValue(ownerName, out catalog))
+                            return catalog;
+                        if (Catalogs.TryGetValue(ownerName, out catalog))
+                            return catalog;
+                    }
+
+                    if (owner.WorkshopId != 0)
+                    {
+                        string workshopId = owner.WorkshopId.ToString();
+                        if (RuntimeCatalogs.TryGetValue(workshopId, out catalog))
+                            return catalog;
+                        if (Catalogs.TryGetValue(workshopId, out catalog))
+                            return catalog;
+                    }
+
+                    if (owner.ShadowedWorkshopId != 0)
+                    {
+                        string workshopId = owner.ShadowedWorkshopId.ToString();
+                        if (RuntimeCatalogs.TryGetValue(workshopId, out catalog))
+                            return catalog;
+                        if (Catalogs.TryGetValue(workshopId, out catalog))
+                            return catalog;
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                string key = "owner-lookup:" + item.identifier;
+                if (FinalTooltipMissLogged.Add(key))
+                {
+                    Debug.LogWarning("[KoreanPack] Item owner lookup failed for " +
+                        item.identifier + ": " + ex.Message);
+                }
             }
 
             return null;
