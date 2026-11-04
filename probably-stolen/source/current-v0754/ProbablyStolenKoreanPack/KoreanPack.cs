@@ -823,15 +823,7 @@ public sealed class KoreanPack : IMod
 			Func<string> original = func;
 			__args[j] = new Func<string>(delegate
 			{
-				string text2;
-				try
-				{
-					text2 = original();
-				}
-				catch
-				{
-					return string.Empty;
-				}
+				string text2 = original();
 				return TranslateKnownCatalogText("game_card_pk", text2);
 			});
 		}
