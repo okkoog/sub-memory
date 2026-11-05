@@ -2,8 +2,9 @@ using Mono.Cecil;
 using Mono.Cecil.Cil;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Text.Json;
 
-if(args.Length!=2 && args.Length!=4) throw new Exception("Expected dll and report, optionally existing CSV and missing report");
+if(args.Length!=2 && args.Length!=4 && args.Length!=5) throw new Exception("Expected dll and report, optionally existing CSV, missing report, JSON audit report");
 var dll=args[0]; var report=args[1];
 var asm=AssemblyDefinition.ReadAssembly(dll,new ReaderParameters{ReadingMode=ReadingMode.Immediate});
 var types=asm.MainModule.Types.SelectMany(AllTypes).ToList();
@@ -83,8 +84,45 @@ if(args.Length>=4){
     Directory.CreateDirectory(Path.GetDirectoryName(args[3])!);
     File.WriteAllText(args[3],u.ToString(),Encoding.UTF8);
     Console.WriteLine($"Uncovered Chinese IL strings: {missing}/{chinese.Count}");
+    if(args.Length>=5){
+        var js=new StringBuilder("# AiEmporium embedded JSON text audit\n");
+        int total=0, uncovered=0;
+        foreach(var resource in asm.MainModule.Resources.OfType<EmbeddedResource>().Where(r=>r.Name.EndsWith(".json",StringComparison.OrdinalIgnoreCase))){
+            using var stream=resource.GetResourceStream();
+            using var reader=new StreamReader(stream,Encoding.UTF8);
+            var json=reader.ReadToEnd();
+            using var doc=JsonDocument.Parse(json);
+            var found=new List<(string,string)>();
+            Walk(doc.RootElement,"$",found);
+            foreach(var (where,value) in found.Where(x=>Regex.IsMatch(x.Item2,@"\p{IsCJKUnifiedIdeographs}"))){
+                total++;
+                var key="S64|"+Convert.ToBase64String(Encoding.UTF8.GetBytes(value)).TrimEnd('=').Replace('+','-').Replace('/','_');
+                bool present=existing.Contains(key);
+                if(!present)uncovered++;
+                js.AppendLine((present?"COVERED":"MISSING")+"\t"+resource.Name+"\t"+where+"\t"+key+"\t"+value.Replace("\n","\\n").Replace("\t"," "));
+            }
+        }
+        js.Insert(0,$"# Chinese JSON string occurrences: {total}; missing exact S64 entries: {uncovered}\n");
+        Directory.CreateDirectory(Path.GetDirectoryName(args[4])!);
+        File.WriteAllText(args[4],js.ToString(),Encoding.UTF8);
+        Console.WriteLine($"Embedded Chinese JSON strings: {total}; uncovered: {uncovered}");
+    }
 }
 Directory.CreateDirectory(Path.GetDirectoryName(report)!);
 File.WriteAllText(report,o.ToString(),Encoding.UTF8);
 Console.WriteLine($"Audit: {hits} calls; {stringCandidates.Count} distinct candidates; {o.Length} characters");
 static IEnumerable<TypeDefinition> AllTypes(TypeDefinition t){yield return t;foreach(var x in t.NestedTypes)foreach(var n in AllTypes(x))yield return n;}
+
+static void Walk(JsonElement e,string path,List<(string,string)> output){
+    switch(e.ValueKind){
+        case JsonValueKind.Object:
+            foreach(var prop in e.EnumerateObject())Walk(prop.Value,path+"."+prop.Name,output);
+            break;
+        case JsonValueKind.Array:
+            int i=0;foreach(var el in e.EnumerateArray())Walk(el,path+"["+(i++)+"]",output);
+            break;
+        case JsonValueKind.String:
+            output.Add((path,e.GetString()??""));
+            break;
+    }
+}
