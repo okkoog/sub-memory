@@ -37,6 +37,19 @@ foreach(var t in types) foreach(var m in t.Methods.Where(m=>m.HasBody)){
         }
     }
 }
+o.AppendLine("\n# ALL source type methods / language-relevant calls");
+foreach(var t in types){
+    o.AppendLine("TYPE\t"+t.FullName);
+    foreach(var m in t.Methods.Where(m=>m.HasBody)){
+        var ins=m.Body.Instructions;
+        var calls=ins.Where(i=>i.Operand is MethodReference mr && Regex.IsMatch(mr.FullName,@"loc|translat|lang|ModHelper|key|text",RegexOptions.IgnoreCase)).Select(i=>((MethodReference)i.Operand).FullName).Distinct().Take(30).ToArray();
+        var strs=ins.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string).Select(i=>(string)i.Operand).ToArray();
+        if(calls.Length==0 && !Regex.IsMatch(m.Name,@"loc|register|item|visitor|dialog|card|book|name|text",RegexOptions.IgnoreCase))continue;
+        o.AppendLine("METHOD\t"+m.Name+"\t"+String.Join(" | ",calls));
+        foreach(var v in strs.Where(v=>Regex.IsMatch(v,@"[\p{IsCJKUnifiedIdeographs}]|(?:^|[_\.])(loc|item|dialog|visitor|card|text|name)[_\.]",RegexOptions.IgnoreCase)).Take(8))
+            o.AppendLine("LITERAL\t"+Convert.ToBase64String(Encoding.UTF8.GetBytes(v)).TrimEnd('=').Replace('+','-').Replace('/','_')+"\t"+v.Replace("\n","\\n").Replace("\t"," ").Substring(0,Math.Min(v.Length,160)));
+    }
+}
 o.AppendLine("\n# Localize-related types / methods");
 foreach(var t in types.Where(t=>Regex.IsMatch(t.FullName,@"localiz|translate|language|i18n|modhelper",RegexOptions.IgnoreCase)).Take(300))o.AppendLine("TYPE\t"+t.FullName+"\t"+string.Join(";",t.Methods.Select(m=>m.Name).Take(60)));
 o.AppendLine("\n# Localization key candidate summary");
