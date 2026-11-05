@@ -54,7 +54,7 @@ jobs:
           with catalog.open(encoding='utf-8-sig',newline='') as f:
               values=[row[1] for row in csv.reader(f) if len(row)>1 and row[0]=='K|Content/names.txt']
           assert len(values)==1, 'Korean name data missing'
-          translated_names=values[0].replace('\n',String.fromCharCode(10))
+          translated_names=values[0].replace('\\n',chr(10))
           orig_lines=(src/'Content/names.txt').read_text(encoding='utf-8-sig').splitlines()
           ko_lines=translated_names.splitlines()
           assert len(orig_lines)==len(ko_lines)==13, f'Region count changed: {len(orig_lines)} / {len(ko_lines)}'
