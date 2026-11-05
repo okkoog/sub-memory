@@ -4,7 +4,7 @@
 - Size: 6971392 bytes
 - SHA256: `044627f6a9232691db6dbac38e509b676682cebed043b6cbd0ecc9b442935b81`
 - Decompiled C# files: 104
-- Generated (UTC): 2026-11-05T02:54:10.985403+00:00
+- Generated (UTC): 2026-11-05T07:47:28.733329+00:00
 - Scope: **CorpPresence only**. This is a static text audit; no mod/game code was executed.
 - IMPORTANT: The matching lines are search leads, NOT proof of run-time patch registration or conflict.
 
