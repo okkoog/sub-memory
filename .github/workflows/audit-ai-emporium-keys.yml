@@ -1,0 +1,44 @@
+name: Audit AiEmporium localization key calls
+on:
+  push:
+    paths:
+      - ".github/workflows/audit-ai-emporium-keys.yml"
+      - "probably-stolen/tools/ai-emporium-key-audit/**"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          sparse-checkout: |
+            probably-stolen/tools/ai-emporium-key-audit
+            probably-stolen/mods/3832941698/AiEmporium.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Trace localization IL calls and key candidates
+        run: |
+          dotnet run --project probably-stolen/tools/ai-emporium-key-audit/AiKeyAudit.csproj -c Release -- \
+            probably-stolen/mods/3832941698/AiEmporium.dll \
+            probably-stolen/analysis/ai-emporium-key-audit.txt
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-emporium-key-audit
+          path: probably-stolen/analysis/ai-emporium-key-audit.txt
+          if-no-files-found: error
+      - name: Commit key audit results
+        run: |
+          git add --sparse -- probably-stolen/analysis/ai-emporium-key-audit.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Audit AiEmporium localization key usage"
+          git pull --rebase origin main
+          git push origin HEAD:main
