@@ -53,6 +53,12 @@ var replacedExamples=new List<string>();
 var skipped=new Dictionary<string,int>(StringComparer.Ordinal);
 int inspected=0, replaced=0, chinese=0, english=0, lTTranslated=0;
 foreach(var type in types)foreach(var method in type.Methods.Where(m=>m.HasBody)){
+    // These paths may contain sprite IDs, save identifiers, migration keys or tags.
+    // Even if a literal resembles display text, never rewrite strings here.
+    if(IsSensitiveMethod(type.FullName,method.Name)) {
+        skipped["sensitive-method"] = skipped.GetValueOrDefault("sensitive-method")+1;
+        continue;
+    }
     var ins=method.Body.Instructions;
     for(int n=0;n<ins.Count;n++){
         if(ins[n].OpCode!=OpCodes.Ldstr || ins[n].Operand is not string value)continue;
@@ -116,6 +122,18 @@ audit.AddRange(translatedByMethod.Select(k=>k.Key+" : "+k.Value));
 File.WriteAllLines(report,audit,Encoding.UTF8);
 Console.WriteLine($"Translated {replaced} literals ({chinese} Chinese, {english} English) across {translatedByMethod.Count} methods. File: {output}");
 
+static bool IsSensitiveMethod(string type,string method) {
+    if(type=="CorpPresence.Portraits" || type.StartsWith("CorpPresence.Portraits/"))return true;
+    if(type=="CorpPresence.UI.Tex" || type.StartsWith("CorpPresence.UI.Tex/"))return true;
+    if(type=="CorpPresence.ItemRegistry" || type.StartsWith("CorpPresence.ItemRegistry/"))return true;
+    if(type=="CorpPresence.ItemTags" || type.StartsWith("CorpPresence.ItemTags/"))return true;
+    if(type=="CorpPresence.RifleMods" && method=="Overlays")return true;
+    if(type=="CorpPresence.Goods" && method=="ApplyAppearance")return true;
+    if(type=="CorpPresence.Cards" && method=="VanillaCard")return true;
+    if(type=="CorpPresence.Cleanup" && method=="BeforeSave")return true;
+    if(type=="CorpPresence.Hooks" && method=="BeforeSave")return true;
+    return false;
+}
 static bool LooksLikeVisibleEnglish(string value) {
     if(value.Length<3 || value.Length>4000)return false;
     if(value.Contains(' ')||value.Contains('\n')||value.Contains('.')||value.Contains('!')||value.Contains('?')
