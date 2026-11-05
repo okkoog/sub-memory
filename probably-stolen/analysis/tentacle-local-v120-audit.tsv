@@ -1,0 +1,245 @@
+﻿# Chinese literal unique=238, matched=238, uncovered=0
+# Tentacle MidnightPawn 1.2.0 original DLL literal audit
+# Fields status, src-b64url, source, Korean translation, usage (first 12)
+Assembly	MidnightPawn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Total unique literals	355
+CSV source mappings	557
+CSV conflicting source mappings	0
+MATCH	ICjmnaXoh6og	 (来自 	 (출처 	System.Single MidnightPawn.Game.SpriteInjector::BasePpu() @00DB | UnityEngine.Vector2 MidnightPawn.Game.SpriteInjector::BasePivot() @014C
+MATCH	IGJ5dGVzLCDkuI3pgI_mmI7ph4fmoLcg	 bytes, 不透明采样 	바이트, 불투명 픽셀 표본 	System.Void MidnightPawn.Game.SpriteInjector::ExportInjected(System.String,System.String) @0121
+MATCH	IOS4quWcsOWMug	 个地区	개 지역	System.Void MidnightPawn.Game.NameGen::EnsureLoaded() @009D
+MATCH	IOS4quWwkeWlsykgKyDkuqflh7oo	 个少女) + 产出(	명의 소녀) + 생산물(	System.Collections.Generic.List`1<GameGridInventory> MidnightPawn.Game.TentacleBody::ResolveGrids(GameItem) @0130
+MATCH	IOS4reWlluS6hu-8iOS4reWlluetiee6pyArMe-8iQ	 中奖了（中奖等级 +1）	 임신했습니다(모유 분비 등급 +1)	System.Void MidnightPawn.Game.TentacleBody::NightlyTick(GameItem,GameGridInventory,GameGridInventory) @030C
+MATCH	IOS7tg	 件	개	System.Void MidnightPawn.Game.SpriteInjector::RepairAllAfterLoad() @0135 | System.Void MidnightPawn.Game.TentacleBody::CollectOutputs() @00DE
+MATCH	IOS7tik	 件)	개)	System.Collections.Generic.List`1<GameGridInventory> MidnightPawn.Game.TentacleBody::ResolveGrids(GameItem) @0142
+MATCH	IOS9jeWwkeWls--8jOS6p-WHuiA	 位少女，产出 	명의 소녀, 생산물 	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0197
+MATCH	IOS9jeWwkeWls--8jOaXoOS6p-WHug	 位少女，无产出	명의 소녀, 생산물 없음	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @01EF
+MATCH	IOWOn-WniyA	 原始 	 원본 	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @00E0
+MATCH	IOWkqSwg5bey55m76K6w5pys5L2TPQ	 天, 已登记本体=	일째, 등록된 본체=	System.Void MidnightPawn.Game.TentacleBody::SettleAll() @0012
+MATCH	IOWkqeW3sue7j-e7k-eul-i_hw	 天已经结算过	일째는 이미 정산했습니다	System.Void MidnightPawn.Game.TentacleBody::SettleIfNeeded() @0034
+MATCH	IOWkqee7k-eul-WujOaIkA	 天结算完成	일째 정산 완료	System.Void MidnightPawn.Game.TentacleBody::SettleIfNeeded() @0065
+MATCH	IOWkqe-8mumZquS8tOS6hiA	 天：陪伴了 	일째: 조교한 	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0182 | System.Void MidnightPawn.Game.TentacleBody::ShowReport() @01DA
+MATCH	IOWksei0pTog	 失败: 	 실패: 	System.String MidnightPawn.Game.SpriteInjector::Inject(System.String,UnityEngine.Sprite) @0064 | UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::FindInAtlas(System.String,System.String) @006E | UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::GetOriginalPortrait(System.String) @002F | System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @0099 | UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::FindExact(System.String,System.String) @005E | System.Boolean MidnightPawn.Game.TentacleBody::TryProduce(GameGridInventory,System.String) @0042
+MATCH	IOW8oO-8iQ	 张）	장)	System.String MidnightPawn.Game.SpriteInjector::PickOtherModFemalePortrait() @01AF
+MATCH	IOW-l-WIsOepuiBQTkc	 得到空 PNG	결과 PNG가 비어 있습니다	System.Void MidnightPawn.Game.SpriteInjector::ExportInjected(System.String,System.String) @005D
+MATCH	IOamgueOhyA	 概率 	 확률 	System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @00F9
+MATCH	IOi_m-WFpeW5uOi_kOaXpQ	 进入幸运日	 배란기에 들어갑니다	System.Void MidnightPawn.Game.TentacleBody::NightlyTick(GameItem,GameGridInventory,GameGridInventory) @0276
+MATCH	IOi_m-WFpeW5uOi_kOaXpSAo5bm456aP5bqmIA	 进入幸运日 (幸福度 	 배란기에 들어갔습니다(조교 수치 	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @00BA
+MATCH	IOmhteS5kOWbrSg	 页乐园(	페이지 배양 구역(	System.Collections.Generic.List`1<GameGridInventory> MidnightPawn.Game.TentacleBody::ResolveGrids(GameItem) @011E
+MATCH	IOmhteS5kOWbre-8iQ	 页乐园）	페이지 배양 구역)	System.Void MidnightPawn.Game.TentacleBody::RebuildOne(GameItem) @016F
+MATCH	RElBRyBtb2Tlm749ezB9OiByZWN0PXsxfXh7Mn0gcHB1PXszfSBib3VuZHM9ezR9IGdyaWRTaXplPXs1fQ	DIAG mod图={0}: rect={1}x{2} ppu={3} bounds={4} gridSize={5}	진단 모드 이미지={0}: 영역={1}x{2}, PPU={3}, 경계={4}, 격자={5}	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @015F
+MATCH	RElBRyDlpLHotKU6IA	DIAG 失败: 	진단 실패: 	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @01D9
+MATCH	RW5zdXJlTWFpZGVuU3ByaXRlIOWksei0pTog	EnsureMaidenSprite 失败: 	EnsureMaidenSprite 실패: 	System.Boolean MidnightPawn.Game.SpriteInjector::EnsureMaidenSprite(GameItem) @00DA
+MATCH	SGFybW9ueSDooaXkuIHlpLHotKU6IA	Harmony 补丁失败: 	Harmony 패치 실패: 	System.Void MidnightPawn.ModEntry::Init(ModManifest) @00AD
+MATCH	SGFybW9ueSDooaXkuIHlt7LlupTnlKg	Harmony 补丁已应用	Harmony 패치 적용 완료	System.Void MidnightPawn.ModEntry::Init(ModManifest) @00A0
+MATCH	TG9nU2hhcGUg5aSx6LSlOiA	LogShape 失败: 	형태 기록 실패: 	System.Void MidnightPawn.Game.ItemFactory::LogShape(GameItem,System.String) @00A9
+MATCH	U3ByaXRlSW5qZWN0b3I6IG1vZCDlm74g	SpriteInjector: mod 图 	SpriteInjector: 모드 이미지 	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @00D4
+MATCH	U3ByaXRlSW5qZWN0b3I6IG1vZCDlm77kuI3lrZjlnKgg	SpriteInjector: mod 图不存在 	SpriteInjector: 모드 이미지가 없음: 	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @00BA
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWOn-eJiOWbvuaghyA	SpriteInjector: 原版图标 	SpriteInjector: 원본 아이콘 	System.Boolean MidnightPawn.Game.SpriteInjector::TryFindVanillaSprite(System.String&,System.String&,System.String[]) @00B2
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWPliBMb2FkZWRNb2Qg5aSx6LSlOiA	SpriteInjector: 取 LoadedMod 失败: 	SpriteInjector: 로드된 모드 가져오기 실패: 	LoadedMod MidnightPawn.Game.SpriteInjector::MyMod() @006D
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWPliBtb2Qg5Zu-IA	SpriteInjector: 取 mod 图 	SpriteInjector: 모드 이미지 가져오기: 	System.String MidnightPawn.Game.SpriteInjector::InjectModTexture(System.String,System.Int32,System.Int32) @0093
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWPlueri-e7mCA	SpriteInjector: 取立绘 	SpriteInjector: 캐릭터 그림 가져오기 	UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::GetOriginalPortrait(System.String) @0029
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWPlumaj-acuueri-e7mOWQjeWksei0pTog	SpriteInjector: 取随机立绘名失败: 	SpriteInjector: 무작위 그림 이름 가져오기 실패: 	System.String MidnightPawn.Game.SpriteInjector::PickLowerFemaleKey() @0015
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWRveS4reWOn-eJiOeJqeWTgSA	SpriteInjector: 命中原版物品 	SpriteInjector: 원본 아이템 발견: 	GameItem MidnightPawn.Game.SpriteInjector::FindVanillaItem(System.String[]) @00B7
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWfuuWHhiBQUFUgPSA	SpriteInjector: 基准 PPU = 	SpriteInjector: 기준 PPU = 	System.Single MidnightPawn.Game.SpriteInjector::BasePpu() @00BD
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWfuuWHhiBQUFUg5Zue6YCAID0g	SpriteInjector: 基准 PPU 回退 = 	SpriteInjector: 기본 PPU로 대체 = 	System.Single MidnightPawn.Game.SpriteInjector::BasePpu() @012E
+MATCH	U3ByaXRlSW5qZWN0b3I6IOWfuuWHhiBwaXZvdCA9IA	SpriteInjector: 基准 pivot = 	SpriteInjector: 기준 피벗 = 	UnityEngine.Vector2 MidnightPawn.Game.SpriteInjector::BasePivot() @0128
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaJq-aPj-WFtuS7liBtb2Qg56uL57uY5aSx6LSlOiA	SpriteInjector: 扫描其他 mod 立绘失败: 	SpriteInjector: 다른 모드 그림 검색 실패: 	System.String MidnightPawn.Game.SpriteInjector::PickOtherModFemalePortrait() @01D7
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaJq-aPj-WbvumbhiA	SpriteInjector: 扫描图集 	SpriteInjector: 아틀라스 검색 	UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::FindInAtlas(System.String,System.String) @0068
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaJvuS4jeWIsOacrOaooee7hCBMb2FkZWRNb2TvvIzml6Dms5Xms6jlhaUg	SpriteInjector: 找不到本模组 LoadedMod，无法注入 	SpriteInjector: 모드 LoadedMod를 찾지 못해 주입 불가: 	System.String MidnightPawn.Game.SpriteInjector::Inject(System.String,UnityEngine.Sprite) @0014
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaMieWQjeWtl-WRveS4rSA	SpriteInjector: 按名字命中 	SpriteInjector: 이름으로 검색 성공: 	GameItem MidnightPawn.Game.SpriteInjector::FindVanillaItemByDisplayName(System.String) @0093
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaOoua1iyBQUFUg5aSx6LSlOiA	SpriteInjector: 探测 PPU 失败: 	SpriteInjector: PPU 탐지 실패: 	System.Single MidnightPawn.Game.SpriteInjector::BasePpu() @0116
+MATCH	U3ByaXRlSW5qZWN0b3I6IOaOoua1iyBwaXZvdCDlpLHotKU6IA	SpriteInjector: 探测 pivot 失败: 	SpriteInjector: 피벗 탐지 실패: 	UnityEngine.Vector2 MidnightPawn.Game.SpriteInjector::BasePivot() @0187
+MATCH	U3ByaXRlSW5qZWN0b3I6IOazqOWFpSA	SpriteInjector: 注入 	SpriteInjector: 주입 	System.String MidnightPawn.Game.SpriteInjector::Inject(System.String,UnityEngine.Sprite) @005E
+MATCH	U3ByaXRlSW5qZWN0b3I6IOeyvuehruafpeaJviA	SpriteInjector: 精确查找 	SpriteInjector: 정확히 검색 	UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::FindExact(System.String,System.String) @0058
+MATCH	U3ByaXRlSW5qZWN0b3I6IOe8qeaUvueri-e7mOWksei0pTog	SpriteInjector: 缩放立绘失败: 	SpriteInjector: 그림 크기 조정 실패: 	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderFit(UnityEngine.Sprite,System.Int32,System.Int32) @0220
+MATCH	VG9hc3Qg5by55Ye65aSx6LSlOiA	Toast 弹出失败: 	알림 팝업 실패: 	System.Void MidnightPawn.Game.Toast::Show(System.String,System.String) @00EA
+MATCH	W-W5uOemj-a3seepuu-8muWPr-iDveaYr-iupOefpea7pOe9ke-8n10g	[幸福深空：可能是认知滤网？] 	[음란한 심우주: 어쩌면 촉수] 	System.Void MidnightPawn.ModCtx::Log(System.Object) @0013 | System.Void MidnightPawn.ModCtx::LogWarning(System.Object) @0013 | System.Void MidnightPawn.ModCtx::LogError(System.Object) @0013
+MATCH	44CQ5Lit5aWW44CR56ysIHswfS8zMCDlpKk	【中奖】第 {0}/30 天	【임신 중】{0}/30일	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0381
+MATCH	44CQ5L-h5oGv57Sg5rWT57yp5ray44CRKg	【信息素浓缩液】*	【촉수 정액】*	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @00F0
+MATCH	44CQ5ZCO5bqt5pyq5byA5Y-R44CR	【后庭未开发】	【항문 처녀】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0260
+MATCH	44CQ5ZCr6Iue44CR	【含苞】	【처녀】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @022C
+MATCH	44CQ5bey5byA6Iue44CR	【已开苞】	【처녀 상실】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0246
+MATCH	44CQ5bm456aP5a625Zut57uT566X44CR56ysIA	【幸福家园结算】第 	【촉수 본체 정산】 제 	System.Void MidnightPawn.Game.TentacleBody::SettleAll() @0000
+MATCH	44CQ5bm46L-Q5pel44CR	【幸运日】	【배란기】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @034E
+MATCH	44CQ54m55Yi26ZO25rC044CRKg	【特制银水】*	【신비한 모유】*	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @00CE
+MATCH	44CQ6IKb6Zeo5bey5byA6Iue44CR	【肛门已开苞】	【항문 처녀 상실】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @027A
+MATCH	44CQ6auY57qn6L-d56aB5ZOB44CR44CQ5aWz5oCn6KeS6Imy44CR	【高级违禁品】【女性角色】	【고급 밀수품】【여성 캐릭터】	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0176
+MATCH	5LiA5bCP566h5LuO55Sf54mp5omL6IW65L2T6YeM5oq95Ye65p2l55qE6YCP5piO5ray5L2T44CC5rOo5YWl5ZCO77yM5aW555qE6Lqr5L2T5Lya56uL5Yi75byA5aeL5o6S5Y2144CC	一小管从生物手腺体里抽出来的透明液体。注入后，她的身体会立刻开始排卵。	촉수의 분비샘에서 뽑아낸 투명한 액체입니다. 주입하면 즉시 배란이 시작됩니다.	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @0017
+MATCH	5LiK5bGC5Yy6	上层区	상층구역	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @004F | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0010
+MATCH	5LiK5bGC5Yy655qE5aSn5bCP5aeQ77yM546w5Zyo5Lmf5oS_5oSP5a6J5a6J56iz56iz5Zyw55WZ5Zyo6L-Z6YeM5LqG44CC	上层区的大小姐，现在也愿意安安稳稳地留在这里了。	상층구역 출신이라는 고귀한 신분은 이곳에서 오히려 당신의 흥분을 부추길 뿐입니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @005C
+MATCH	5LiK5bGC5Yy655qE5aSq5aSq5Lus5Li65LqG5a6D5oS_5oSP5aSa5LuY5LiJ5oiQ44CC	上层区的太太们为了它愿意多付三成。	상층구역의 부유한 고객들은 이 물품에 값을 30% 더 지불합니다.	GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @0022
+MATCH	5LiL5bGC5Yy6	下层区	하층구역	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0008
+MATCH	5Liq44CQ	个【	명 【	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0067
+MATCH	5Li65LqG5oql562U5L2g77yM5aSc6YeM5Zyo5YW25Lit55qE5bCR5aWz5Lya6K6p5L2g5omT5Y2h5bel5L2c44CC	为了报答你，夜里在其中的少女会让你打卡工作。	이곳에 수용된 소녀들은 밤마다 촉수에게 조교당합니다.	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @007B
+MATCH	5Lqn5Ye6IA	产出 	생산: 	System.Boolean MidnightPawn.Game.TentacleBody::TryProduce(GameGridInventory,System.String) @003C
+MATCH	5Lqn5Ye65bey5pS25YWl6IOM5YyFOiA	产出已收入背包: 	생산물을 인벤토리에 넣었습니다: 	System.Void MidnightPawn.Game.TentacleBody::CollectOutputs() @00D2
+MATCH	5Lqn5Ye654m55Yi26ZO25rC05aSx6LSlOiA	产出特制银水失败: 	신비한 모유 생산 실패: 	System.Boolean MidnightPawn.Game.TentacleBody::TryProduceMilk(GameGridInventory,System.Int32) @004E
+MATCH	5Lqn5aWz5aSx6LSlOiA	产女失败: 	개체 생성 실패: 	System.Void MidnightPawn.Game.TentacleBody::ProduceDaughter(GameItem) @00D5
+MATCH	5Lqn5aWz5oiQ5YqfOiA	产女成功: 	새 개체 생성 성공: 	System.Void MidnightPawn.Game.TentacleBody::ProduceDaughter(GameItem) @00BD
+MATCH	5Lul5YmN5oC75piv5p2_552A6IS455qE5aW577yM546w5Zyo5Lya56yR5LqG44CC	以前总是板着脸的她，现在会笑了。	한때 다른 사람에게 총을 겨누던 그녀는 이제 두 다리를 모으는 것조차 할 수 없습니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @0077
+MATCH	5L2g5pivJUU4JUE3JUE2JUU2JTg5JThC4oCm4oCm5L2g5piv5bim5p2l5bm456aP55qE5L2_6ICF44CC5byA5bGA6I635b6X44CQ5bm456aP5a625Zut44CR77yM6aKd5aSW6I635b6XIDMg5Liq54m55oCn5qe95L2N77yM5q-P5pel5ou-6I2S5qyh5pWwICsz77yM6ICM5LiU5q-P5aSp6YO95Lya5pyJ5LiA5L2N5aWz5oCn5a6i5Lq66KKr6L-Z5Lu95bm456aP5ZC45byV6ICM5p2l44CC	你是%E8%A7%A6%E6%89%8B……你是带来幸福的使者。开局获得【幸福家园】，额外获得 3 个特性槽位，每日拾荒次数 +3，而且每天都会有一位女性客人被这份幸福吸引而来。	당신은 태어날 때부터 인간이 아니었습니다. 게임 시작 시 【촉수 본체】를 획득하고, 특성 슬롯이 3개 추가되며 하루 폐품 수집 횟수가 3회 증가합니다. 또한 매일 여성 고객 한 명이 당신의 냄새에 이끌려 찾아옵니다.	System.String MidnightPawn.Game.Perks/<>c::<Register>b__1_1() @0000
+MATCH	5L-h5oGv57Sg5rWT57yp5ray	信息素浓缩液	촉수 정액	GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @000C | GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @0171
+MATCH	5L-h5oGv57Sg5rWT57yp5rayOiBtYXlBY3RpdmF0ZSDooqvosIPnlKggLT4gdHJ1ZQ	信息素浓缩液: mayActivate 被调用 -> true	촉수 정액: mayActivate 호출됨 -> true	System.Boolean MidnightPawn.Game.ItemFactory/<>c::<CreateSemen>b__6_1(GameItem,GameInventory,SlotMarker) @0000
+MATCH	5L-h5oGv57Sg5rWT57yp5rayOiDmv4DmtLvnlJ_mlYg	信息素浓缩液: 激活生效	촉수 정액: 활성화 효과 적용	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateSemen>b__6_2(GameItem,GameInventory,SlotMarker) @0000
+MATCH	5L-h5oGv57Sg5rWT57yp5ray5Zu-5qCHOiA	信息素浓缩液图标: 	촉수 정액 아이콘: 	GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @00A2
+MATCH	5L-h5oGv57Sg5rWT57yp5ray54m55oCn5oyC6L295aSx6LSlOiA	信息素浓缩液特性挂载失败: 	촉수 정액 특성 등록 실패: 	System.Void MidnightPawn.Game.PatchClientArea::Apply(GameItem) @00C2
+MATCH	5L-h5oGv57Sg5rWT57yp5ray55Sf5pWI5aSx6LSlOiA	信息素浓缩液生效失败: 	촉수 정액 효과 적용 실패: 	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @010E
+MATCH	5L-h5oGv57Sg5rWT57yp5ray55Sf5pWI77ya5Lmw5YWl5Lu3IC0xNSXvvIzlo7DmnJsgKzE1Je-8iOW3sueZu-iusOmhvuWuou-8iQ	信息素浓缩液生效：买入价 -15%，声望 +15%（已登记顾客）	촉수 정액 효과: 매입가 -15%, 평판 +15%(등록된 고객)	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @008D
+MATCH	5L-h5oGv57Sg5rWT57yp5ray55qE5b2x5ZON	信息素浓缩液的影响	촉수 정액의 영향	ItemFeature MidnightPawn.Game.TentacleEffects::MakeSemenFeature() @0024 | ItemFeature MidnightPawn.Game.TentacleEffects::MakeSemenFeature() @0030
+MATCH	5L-h5oGv57Sg5rWT57yp5ray55qE6K-x5oOR	信息素浓缩液的诱惑	촉수 정액의 유혹	ItemFeature MidnightPawn.Game.TentacleEffects::MakeBuyBonusFeature() @0024 | ItemFeature MidnightPawn.Game.TentacleEffects::MakeBuyBonusFeature() @0030
+MATCH	5L-u5aSN5pys5L2T56uL57uY5aSx6LSlOiA	修复本体立绘失败: 	본체 일러스트 복구 실패: 	System.Void MidnightPawn.Game.SpriteInjector::RepairAllAfterLoad() @0111
+MATCH	5L-u5aSN6IOM5YyF56uL57uY5aSx6LSlOiA	修复背包立绘失败: 	가방 일러스트 복구 실패: 	System.Void MidnightPawn.Game.SpriteInjector::RepairAllAfterLoad() @0057
+MATCH	5YWc5bqV57uT566X5aSx6LSlOiA	兜底结算失败: 	예외 정산 실패: 	System.Void MidnightPawn.Game.TentacleBody::SettleAll() @00CF
+MATCH	5Yac5Zy65Li7	农场主	농장주	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0074
+MATCH	5Yir6Zeu6YeM6Z2i5pyJ5LuA5LmI77yM6Zeu5bCx5piv5qih5Zug44CC	别问里面有什么，问就是模因。	무엇이 들어 있는지는 묻지 마세요. 그냥 밈입니다.	GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @0022
+MATCH	5Yy75a2m5LiK5a6D5LiN5a2Y5Zyo44CC	医学上它不存在。	의학적으로 존재하지 않는 물질입니다.	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @0022
+MATCH	5Yy755Sf	医生	의사	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0064
+MATCH	5Y6o5biI	厨师	요리사	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @006C
+MATCH	5Y-W5YW25LuWIG1vZCDnsr7ngbXlpLHotKU6IA	取其他 mod 精灵失败: 	다른 모드 스프라이트 가져오기 실패: 	UnityEngine.Sprite MidnightPawn.Game.SpriteInjector::ResolveSprite(System.String) @00C5
+MATCH	5Y-W5b2T5YmN6aG-5a6i5aSx6LSlOiA	取当前顾客失败: 	현재 고객 조회 실패: 	StoreClient MidnightPawn.Game.TentacleEffects::CurrentClient() @0024
+MATCH	5Y-q5pyJ5bm45a2V5Lit5aWW55qE5bCR5aWz5omN6IO95Zyo5bm456aP5a625Zut5bel5L2c5Ye65Lqn55qE54m55Yi26aWu5ZOB77yM5rex5Y-X5LiK5bGC5Yy655qE6LS15aaH5Zac54ix44CC	只有幸孕中奖的少女才能在幸福家园工作出产的特制饮品，深受上层区的贵妇喜爱。	배양체에서 짜낸 유백색 액체입니다. 입에 닿을 때는 달콤하지만 뒤늦게 뜨거운 기운이 올라옵니다. 상층구역의 부인들은 이 음료에 값을 30% 더 지불하려 합니다.	GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @0017
+MATCH	5ZCN5a2X5bqTOiA	名字库: 	이름 목록: 	System.Void MidnightPawn.Game.NameGen::EnsureLoaded() @0086
+MATCH	5ZCN5a2X5bqT5Yqg6L295aSx6LSlOiA	名字库加载失败: 	이름 목록 불러오기 실패: 	System.Void MidnightPawn.Game.NameGen::EnsureLoaded() @00B0
+MATCH	5ZCN5a2X5bqT6K-75Y-W5aSx6LSl77yIQ29udGVudC9uYW1lcy50eHQg5LiN5a2Y5Zyo77yJ	名字库读取失败（Content/names.txt 不存在）	이름 목록 읽기 실패(Content/names.txt 없음)	System.Void MidnightPawn.Game.NameGen::EnsureLoaded() @0026
+MATCH	5ZKM	和	와	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @004F
+MATCH	5ZKsIHswfSDmrKEgwrcg5omT5Y2hIHsxfSDmrKEgwrcg5ZCO5bqtIHsyfSDmrKE	咬 {0} 次 · 打卡 {1} 次 · 后庭 {2} 次	구강성교 {0}회 · 성교 {1}회 · 항문성교 {2}회	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @030E
+MATCH	5ZWG5Lq6	商人	상인	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0085
+MATCH	5Zyo5L2g55qE44CQ5bm456aP5a625Zut44CR6YeM5bm456aP5Zyw5bqm6L-H5LqG5LiA5aSc	在你的【幸福家园】里幸福地度过了一夜	【촉수 본체】 안에서 당신의 촉수에게 밤새 조교당했습니다	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @00A6
+MATCH	5Zyo6Ze75Yiw5LqG5L2g55qE5ZGz6YGT5ZCO77yM	在闻到了你的味道后，	당신의 냄새를 맡은 뒤, 	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00BA | System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00CD | System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00E0
+MATCH	5aSc6Ze05oql5ZGK	夜间报告	야간 보고	System.Boolean MidnightPawn.Game.TentacleBody/<DelayReport>d__12::MoveNext() @005A
+MATCH	5aSc6Ze05oql5ZGKOiA	夜间报告: 	야간 보고: 	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0148
+MATCH	5aSc6Ze05oql5ZGKOiBDdXN0b21VSU1hbmFnZXIuSW5zdGFuY2Ug5Li6IG51bGw	夜间报告: CustomUIManager.Instance 为 null	야간 보고: CustomUIManager.Instance가 null입니다	System.Boolean MidnightPawn.Game.TentacleBody/<DelayReport>d__12::MoveNext() @0044
+MATCH	5aSc6Ze05oql5ZGKOiBNb2RIb29rLkluc3RhbmNlIOS4uiBudWxs77yM5peg5rOV5by556qX	夜间报告: ModHook.Instance 为 null，无法弹窗	야간 보고: ModHook.Instance가 null이므로 알림창을 표시할 수 없습니다	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @023D
+MATCH	5aSc6Ze05oql5ZGKOiDlt7LmjpLpmJ_lvLnnqpc	夜间报告: 已排队弹窗	야간 보고: 알림창 대기열 등록 완료	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0231
+MATCH	5aSc6Ze05oql5ZGKOiDnqpflj6Plt7LlvLnlh7o	夜间报告: 窗口已弹出	야간 보고: 알림창이 표시됐습니다	System.Boolean MidnightPawn.Game.TentacleBody/<DelayReport>d__12::MoveNext() @00CF
+MATCH	5aSc6Ze05oql5ZGK5by556qX5aSx6LSlOiA	夜间报告弹窗失败: 	야간 보고 알림창 오류: 	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @024B
+MATCH	5aSc6Ze05oql5ZGK5by556qX5byC5bi4OiA	夜间报告弹窗异常: 	야간 보고 알림창 예외: 	System.Boolean MidnightPawn.Game.TentacleBody/<DelayReport>d__12::MoveNext() @00DC
+MATCH	5aWl5YWL6KW_6I6r5rOo5bCE5Zmo	奥克西莫注射器	옥시모 주사기	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @0059
+MATCH	5aW5	她	그녀	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00AC
+MATCH	5aW55LuO6buR5biC5p2l77yM56ys5LiA5qyh55-l6YGT5LuA5LmI5piv5a6J56iz44CC	她从黑市来，第一次知道什么是安稳。	암시장에서는 무엇이든 사고팔 수 있습니다. 그녀 자신도 예외는 아닙니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @0092
+MATCH	5aW55Zi05LiK6L-Y6K-0552A55CG5oOz77yM5omL5Y205LiA55u05rKh5p2-5byA5L2g44CC	她嘴上还说着理想，手却一直没松开你。	그녀는 해방을 외쳤지만, 정작 당신에게 먼저 사로잡혔습니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @00AD
+MATCH	5aW55piv5Zyo5bm456aP5a625Zut6YeM5Ye655Sf55qE5a2p5a2Q77yM5LiA552B55y85bCx5a2m5Lya5LqG56yR44CC	她是在幸福家园里出生的孩子，一睁眼就学会了笑。	그녀는 촉수 본체 안에서 태어났고, 눈도 뜨기 전에 복종하는 법부터 배웠습니다.	System.Void MidnightPawn.Game.TentacleBody::ProduceDaughter(GameItem) @007A
+MATCH	5aW55pys5p2l5bCx5piv6L-Z5bqn56m66Ze056uZ5pyA5bqV5bGC55qE5a2p5a2Q44CC	她本来就是这座空间站最底层的孩子。	그녀는 원래 이 우주정거장의 최하층에서 사람 취급조차 받지 못하던 존재였습니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @00BB
+MATCH	5aeT5ZCN77ya	姓名：	이름: 	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @014E
+MATCH	5a2m5b6S	学徒	견습생	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00D6
+MATCH	5a-85Ye6IA	导出 	내보내기 	System.Void MidnightPawn.Game.SpriteInjector::ExportInjected(System.String,System.String) @0057
+MATCH	5a-85Ye656uL57uYIA	导出立绘 	캐릭터 그림 내보내기 	System.Void MidnightPawn.Game.SpriteInjector::ExportInjected(System.String,System.String) @00CA
+MATCH	5a-85Ye656uL57uY5aSx6LSlOiA	导出立绘失败: 	캐릭터 그림 내보내기 실패: 	System.Void MidnightPawn.Game.SpriteInjector::ExportInjected(System.String,System.String) @0163
+MATCH	5bCP5YG3	小偷	도둑	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @007C
+MATCH	5bCR5aWz	少女	소녀	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @000C | GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @0105 | GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @023E | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @011D
+MATCH	5bCR5aWzIHRvb2x0aXAg6L-95Yqg5aSx6LSlOiA	少女 tooltip 追加失败: 	소녀 툴팁 추가 실패: 	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @03A9
+MATCH	5bCR5aWz56uL57uY5rOo5YWlOiA	少女立绘注入: 	소녀 일러스트 적용: 	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @01C8
+MATCH	5bCR5aWz56uL57uY5rOo5YWl5aSx6LSl	少女立绘注入失败	소녀 일러스트 적용 실패	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @01FA
+MATCH	5bCR5aWz57y65oiQ56uL57uY5p2l5rqQ77yM5peg5rOV6KGl5rOo5YWl77yI54mp5ZOBPQ	少女缺成立绘来源，无法补注入（物品=	여성 캐릭터의 일러스트 원본이 없어 추가 적용 불가(아이템=	System.Boolean MidnightPawn.Game.SpriteInjector::EnsureMaidenSprite(GameItem) @0071
+MATCH	5bCR5aaH	少妇	밀프	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @012D
+MATCH	5bel56iL5biI	工程师	엔지니어	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0054
+MATCH	5beo5Lmz	巨乳	큰 가슴	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @012C | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0102
+MATCH	5bey5oyC5YKo6JeP5Yy66aG1562-IHRhZ--8jOmhteaVsD0	已挂储藏区页签 tag，页数=	보관 구역 탭 태그 등록 완료, 페이지 수=	GameItem MidnightPawn.Game.TentacleBody::Create() @00C2
+MATCH	5bey57uP5a6M5YWo5Lmg5oOv5LqG6L-Z6YeM55qE55Sf5rS777yM5q-P5aSp5pyA5pyf5b6F55qE5bCx5piv5q-P5aSp5aSc6YeM5ZKM5L2g5LiA6LW35omT5Y2h55qE5bm456aP5pe25YWJ44CC	已经完全习惯了这里的生活，每天最期待的就是每天夜里和你一起打卡的幸福时光。	이미 당신의 조교에 완전히 길들여져, 밤마다 당신과 성교하는 시간을 가장 기다립니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @002E
+MATCH	5bm456aP5LmQ5ZutIA	幸福乐园 	배양 구역 	PixelWindow MidnightPawn.Game.TentacleBody::BuildWindow(System.Int32,System.Collections.Generic.List`1<GameGridInventory>&) @0081
+MATCH	5bm456aP5LmQ5Zut5ouS57udOiA	幸福乐园拒绝: 	배양 구역 접근 거부: 	System.Boolean MidnightPawn.Game.TentacleBody/<>c::<BuildWindow>b__15_0(GameItem,GameInventory) @0032
+MATCH	5bm456aP5a625Zut	幸福家园	촉수 본체	GameItem MidnightPawn.Game.TentacleBody::Create() @0023
+MATCH	5bm456aP5a625ZutICsxMDAg57uP6aqM	幸福家园 +100 经验	촉수 본체 경험치 +100	System.Void MidnightPawn.ModEntry::Init(ModManifest) @0167
+MATCH	5bm456aP5a625ZutIEx2LnswfSAgIOe7j-mqjCB7MX0gLyB7Mn0	幸福家园 Lv.{0}   经验 {1} / {2}	촉수 본체 Lv.{0}   경험치 {1} / {2}	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0032
+MATCH	5bm456aP5a625ZutIHNoYXBlID0gezB9eHsxfSAoZ2xvYmFsIHsyfXh7M30p	幸福家园 shape = {0}x{1} (global {2}x{3})	촉수 본체 형태 = {0}x{1} (전체 {2}x{3})	GameItem MidnightPawn.Game.TentacleBody::Create() @01AA
+MATCH	5bm456aP5a625ZutIHRvb2x0aXAg5aSx6LSlOiA	幸福家园 tooltip 失败: 	촉수 본체 툴팁 처리 실패: 	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @00D3
+MATCH	5bm456aP5a625Zut5Y2H57qn5YiwIEx2Lg	幸福家园升级到 Lv.	촉수 본체 레벨 상승 Lv.	System.Void MidnightPawn.Game.TentacleBody::AddBodyExp(System.Int32) @0022
+MATCH	5bm456aP5a625Zut57yT5a2Y5bey6YeN572u	幸福家园缓存已重置	촉수 본체 캐시 초기화 완료	System.Void MidnightPawn.Game.TentacleBody::ResetCache() @0014
+MATCH	5bm456aP5a625Zut6KCV5Yqo5LqG5pW05aSc	幸福家园蠕动了整夜	촉수 본체가 밤새 꿈틀거렸습니다	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @00B4
+MATCH	5bm456aP5bqmIHswfSAg5Lit5aWW562J57qnIHsxfQ	幸福度 {0}  中奖等级 {1}	조교 수치 {0}  모유 분비 등급 {1}	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @02E2
+MATCH	5bm456aP5rex56m6IOW3suWBnOeUqA	幸福深空 已停用	음란 모드 비활성화	System.Void MidnightPawn.ModEntry::OnDisable() @0000
+MATCH	5bm456aP5rex56m6IOW3suWQr-eUqA	幸福深空 已启用	음란 모드 활성화	System.Void MidnightPawn.ModEntry::OnEnable() @0000
+MATCH	5bm456aP5rex56m677ya5Y-v6IO95piv55Sf54mp5omLIOWIneWni-WMliAodg	幸福深空：可能是生物手 初始化 (v	심우주 모드 초기화 (v	System.Void MidnightPawn.ModEntry::Init(ModManifest) @0017
+MATCH	5bm456aP5ruk572R	幸福滤网	촉수 기원	System.String MidnightPawn.Game.Perks/<>c::<Register>b__1_0() @0000
+MATCH	5bm456aP5ruk572R5Y-R5aWW5aSx6LSlOiA	幸福滤网发奖失败: 	촉수 기원 보상 지급 실패: 	System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String) @003C
+MATCH	5bm456aP5ruk572R5ZC45byV6aG-5a6i5aSx6LSlOiA	幸福滤网吸引顾客失败: 	촉수 기원 고객 유인 실패: 	System.Void MidnightPawn.Game.Perks::OnNewDay() @00CA
+MATCH	5bm456aP5ruk572R77ya5LuK5aSp5rKh5pyJ5Y-v55So55qE6aG-5a6i5qih5p2_	幸福滤网：今天没有可用的顾客模板	촉수 기원: 오늘은 사용할 수 있는 고객 템플릿이 없습니다	System.Void MidnightPawn.Game.Perks::OnNewDay() @0038
+MATCH	5bm456aP5ruk572R77ya5LuK5pel5ZC45byV5p2l5LiA5L2N5aWz5oCn6aG-5a6iIOKAlOKAlCA	幸福滤网：今日吸引来一位女性顾客 —— 	촉수 기원: 오늘 여성 고객 한 명이 방문했습니다 — 	System.Void MidnightPawn.Game.Perks::OnNewDay() @00B1
+MATCH	5bm456aP5ruk572R77ya5byA5bGA6I635b6X5bm456aP5a625Zut	幸福滤网：开局获得幸福家园	촉수 기원: 시작 시 촉수 본체 획득	System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String) @002F
+MATCH	5bm46L-Q6K-x5Y-R5YmC	幸运诱发剂	배란 유도제	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @000C | GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @0133 | System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @009C
+MATCH	5bm46L-Q6K-x5Y-R5YmC5aSW6KeC5YWL6ZqG6IeqIA	幸运诱发剂外观克隆自 	배란 유도제 외형 복제 출처: 	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @0094
+MATCH	5bm46L-Q6K-x5Y-R5YmC55Sf5pWI77ya	幸运诱发剂生效：	배란 유도제 효과: 	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @00AE
+MATCH	5b6h5aeQ	御姐	누님	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0125
+MATCH	5b-954S256yR5LqG6LW35p2l77yM55y8552b5Lqu5Lqu55qE77yM5YOP5piv5pS25Yiw5LqG5pyf5b6F5b6I5LmF55qE56S854mp44CC	忽然笑了起来，眼睛亮亮的，像是收到了期待很久的礼物。	갑자기 웃음을 터뜨렸고 눈빛이 반짝였습니다. 오래 기다린 선물을 받은 듯했습니다.	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00D3
+MATCH	5oiY5Yip5ZOB77ya5Yy755aX57G76YeM57-75Yiw5LiA5pSv5bm46L-Q6K-x5Y-R5YmCICg	战利品：医疗类里翻到一支幸运诱发剂 (	전리품: 의료 물자에서 배란 유도제 1개 발견 (	System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @006A
+MATCH	5oqA5biI	技师	기술자	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0097
+MATCH	5oqk5aOr	护士	간호사	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @005C
+MATCH	5ou-6I2S6ICF	拾荒者	폐품 수집가	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @003C
+MATCH	5ou-6I2S77ya5o2h5Yiw5LiA5pSv5bm46L-Q6K-x5Y-R5YmC	拾荒：捡到一支幸运诱发剂	폐품 수집: 배란 유도제 1개 획득	System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @0138
+MATCH	5ou-6I2S77ya5pC65bim5bm456aP5a625Zut77yM5o2V6I635Yiw5LiA5Liq5bCR5aWzIChMdi4	拾荒：携带幸福家园，捕获到一个少女 (Lv.	폐품 수집: 촉수 본체를 소지한 채 소녀 1명 포획(Lv.	System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @00E7
+MATCH	5o-Q56S6OiA	提示: 	안내: 	System.Void MidnightPawn.Game.Toast::Show(System.String,System.String) @0000
+MATCH	5pC65bim5a6D5Y675Z6D5Zy-5Zy65ou-6I2S77yM5pyJ5py65Lya5pWR5Zue5bCR5aWz44CC	携带它去垃圾场拾荒，有机会救回少女。	이것을 소지하고 쓰레기장에서 폐품을 수집하면 일정 확률로 소녀를 포획합니다.	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @0062
+MATCH	5pS25Y-W5Lqn5Ye65aSx6LSlOiA	收取产出失败: 	생산물 회수 실패: 	System.Void MidnightPawn.Game.TentacleBody::CollectOutputs() @00A9
+MATCH	5pW05Liq5Lq66YO96L2v5LqG5LiL5p2l77yM6Z2g5Zyo5L2g6Lqr6L6577yM5aW95LmF6YO95rKh6IiN5b6X5Yqo44CC	整个人都软了下来，靠在你身边，好久都没舍得动。	온몸의 긴장이 풀린 채 당신 곁에 기대어 한참 동안 움직이지 않았습니다.	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00E6
+MATCH	5paH5ZGY	文员	사무원	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00A0
+MATCH	5peg5ZCN	无名	이름 없음	System.String MidnightPawn.Game.NameGen::RandomName() @0018 | System.String MidnightPawn.Game.NameGen::RandomName() @0057
+MATCH	5pio5pma77ya	昨晚：	어젯밤: 	System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem) @00B1
+MATCH	5piv6KKr5L2g5LuO5Z6D5Zy-5Zy66YeM5pWR5Zue5p2l55qE5bCR5aWz44CC5aW5546w5Zyo5L2P5Zyo5L2g55qE5bm456aP5a625Zut6YeM77yM6KKr5L2g5YWo5pa55L2N5peg5q276KeS5Zyw54Wn5paZ552A77yM5oiQ5LqG5L2g5pyA54-N6LS155qE5L2P5oi344CC	是被你从垃圾场里救回来的少女。她现在住在你的幸福家园里，被你全方位无死角地照料着，成了你最珍贵的住户。	쓰레기장에서 당신의 촉수에게 포획된 소녀입니다. 지금은 【촉수 본체】 안에서 촉수에 묶인 채 꼼짝도 하지 못하고 당신의 소유물이 되었습니다.	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @0043
+MATCH	5pmu5Lmz	普乳	보통 가슴	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00FA
+MATCH	5pu05paw5bCR5aWz5o-P6L-w5aSx6LSlOiA	更新少女描述失败: 	소녀 설명 갱신 실패: 	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @00D0
+MATCH	5pys5L2T56qX5Y-j5bey6YeN5bu65Li6IEx2Lg	本体窗口已重建为 Lv.	본체 창을 Lv.로 재구성: 	System.Void MidnightPawn.Game.TentacleBody::RebuildOne(GameItem) @0141
+MATCH	5rKh5om-5Yiw5aWl5YWL6KW_6I6r5rOo5bCE5Zmo77yM5bm46L-Q6K-x5Y-R5YmC5L2_55So5Y2g5L2N	没找到奥克西莫注射器，幸运诱发剂使用占位	옥심 주사기를 찾지 못해 배란 유도제에 임시 이미지를 사용합니다	GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @00AB
+MATCH	5rKh5om-5Yiw5p6c5rGB54mp5ZOB77yM54m55Yi26ZO25rC05L2_55So5Y2g5L2N	没找到果汁物品，特制银水使用占位	주스 아이템을 찾지 못해 신비한 모유에 임시 아이콘을 사용합니다	GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @00BF
+MATCH	5rKh5om-5Yiw6aaZ5rC05Zu-5qCH77yM5L-h5oGv57Sg5rWT57yp5ray5L2_55So5Y2g5L2N	没找到香水图标，信息素浓缩液使用占位	향수 아이콘을 찾지 못해 촉수 정액에 임시 이미지를 사용합니다	GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @00E9
+MATCH	5rKh5pyJ5Y-N5bqU44CC	没有反应。	반응이 없습니다.	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @0008 | System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @0028
+MATCH	5rK75a6J6YOo	治安部	치안부	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @006A | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0018
+MATCH	5rOo5YaM6LCD6K-V5oyJ6ZKu5aSx6LSlOiA	注册调试按钮失败: 	디버그 버튼 등록 실패: 	System.Void MidnightPawn.ModEntry::Init(ModManifest) @01C8
+MATCH	5rOo5YaM6LW35aeL5aSp6LWL5aSx6LSlOiA	注册起始天赋失败: 	시작 특성 등록 실패: 	System.Void MidnightPawn.Game.Perks::Register() @00A4
+MATCH	5riF5rSB5ZGY	清洁员	청소부	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @008E
+MATCH	5r-A5Yqo55qE6Lqr5L2T5bem5Y-z5omt5Yqo77yM5Zyo5L2g55Sf54mp5omL55qE5pCA5om25LiL5omN5LiN6Iez5LqO5pGU5YCS77yM5bCP6IW55LiN5pat6LW35LyP5oq95pCQ77yM55u05o6l6L-b5YWl5LqG5bm46L-Q5pel44CC	激动的身体左右扭动，在你生物手的搀扶下才不至于摔倒，小腹不断起伏抽搐，直接进入了幸运日。	그녀의 몸이 당신의 촉수에 감긴 채 좌우로 뒤틀렸습니다. 아랫배가 쉴 새 없이 떨리고 경련하면서 곧바로 배란기에 들어갔습니다.	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @0044 | System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @0058
+MATCH	54af5aWz	熟女	숙녀	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0135
+MATCH	54m55Yi26ZO25rC0	特制银水	신비한 모유	GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @000C | GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @0147
+MATCH	54m55Yi26ZO25rC05aSW6KeC5YWL6ZqG6IeqIA	特制银水外观克隆自 	신비한 모유 외형 복제 출처: 	GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @00A8
+MATCH	54m56aWu5Yy6IA	特饮区 	특제 음료 구역 	PixelWindow MidnightPawn.Game.TentacleBody::BuildWindow(System.Int32,System.Collections.Generic.List`1<GameGridInventory>&) @00AD
+MATCH	55Sf5oiQ5bCR5aWz	生成少女	소녀 생성	System.Void MidnightPawn.ModEntry::Init(ModManifest) @00CF
+MATCH	55Sf5oiQ5bm456aP5a625Zut	生成幸福家园	촉수 본체 생성	System.Void MidnightPawn.ModEntry::Init(ModManifest) @00FF
+MATCH	55Sf5oiQ5bm46L-Q6K-x5Y-R5YmC	生成幸运诱发剂	배란 유도제 생성	System.Void MidnightPawn.ModEntry::Init(ModManifest) @0133
+MATCH	55Sf5oiQ54m55Yi26ZO25rC0K-S_oeaBr-e0oOa1k-e8qea2sg	生成特制银水+信息素浓缩液	신비한 모유와 촉수 정액 생성	System.Void MidnightPawn.ModEntry::Init(ModManifest) @019B
+MATCH	55Sf54mp5omL	生物手	촉수	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @000D | System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @002D | System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00FD
+MATCH	55qE5aWz5YS_	的女儿	의 딸	System.Void MidnightPawn.Game.TentacleBody::ProduceDaughter(GameItem) @006A
+MATCH	55qE6IS46aKK5LiA5LiL5a2Q57qi5LqG77yM5bCP5aOw6K-05LqG5Y-l77ya4oCc5L2g55qE6Lqr5LiK5aW96aaZ5ZWKfn7og73orqnmiJHlnKjkvaDouqvovrnlpJrlvoXkuIDkvJrlkJd-fuWwseS4gOWwj-S8muWwseWlveOAguKAnQ	的脸颊一下子红了，小声说了句：“你的身上好香啊~~能让我在你身边多待一会吗~~就一小会就好。”	의 뺨이 붉어졌습니다. 작은 목소리로 말했습니다. “좋은 향기가 나네요~~ 조금만 더 곁에 있어도 될까요? 정말 조금만요.”	System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem) @00C0
+MATCH	55uu5YWJ5YWF5ruh54ix5oSP5Zyw5pyb552A552A5L2g77yM5Li75Yqo5omL5oyH5oqT5o-h44CB5aS557Sn552A5L2g55qE55Sf54mp5omL77yM5LiN5pat5Zyo5LiK6Z2i5pGp5oyy77yM5byg5Zi05ZG85Ye65LiA6YGT6aaZ6aOO77yM5Li75Yqo5byg5byA5Y-M6IeC77yM5a-55L2g6Zyy5Ye65pyA5Li66ISG5byx5LiU5LiN6K6-6Ziy55qE5bCP6IW577yM6K6p5L2g55qE5LiA5qC555Sf54mp5omL5Y236LW35bm46L-Q6K-x5Y-R5YmC77yM5b-r6YCf5Zyw5omO5Zyo5LqG5aW555qE5bCP6IW577yM5bm25LiU5bCG5YW25YWo6YOo5rOo5YWl5YW25Lit44CCCgrigJzll6_llYrimaV-fuaIkeaDs-imgeWSjOKZpX5-5Lqy4pmlfn7niLHimaV-fueahOKZpX5-5Zev4pmlfn7lu7bnu63imaV-fuWZq-WZq-WZq-KZpX5-4oCd	目光充满爱意地望着着你，主动手指抓握、夹紧着你的生物手，不断在上面摩挲，张嘴呼出一道香风，主动张开双臂，对你露出最为脆弱且不设防的小腹，让你的一根生物手卷起幸运诱发剂，快速地扎在了她的小腹，并且将其全部注入其中。\n\n“嗯啊♥~~我想要和♥~~亲♥~~爱♥~~的♥~~嗯♥~~延续♥~~噫噫噫♥~~”	멍한 눈빛으로 당신을 바라보던 그녀가 먼저 손가락으로 촉수를 붙잡고 두 다리로 휘감아 계속 문질렀습니다. 달콤한 숨을 내쉬며 두 팔을 벌리고 가장 연약하고 무방비한 아랫배를 드러냈습니다. 그러자 당신의 촉수 하나가 배란 유도제를 휘감아 그녀의 아랫배에 재빨리 찔러 넣고 자궁 안으로 전량 주입했습니다.\n\n“으응♥~~ 주인님♥~~ 어서♥~~ 주인님의♥~~ 딸을♥~~ 임신하고♥~~ 싶어요♥~~”	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @003E
+MATCH	556q5aSn55y8552b5Zyw55yL552A5L2g77yM5LiN5pWi55u45L-h5L2g5oS_5oSP57uZ5aW55L2_55So5bm46L-Q6K-x5Y-R5YmC77yM5r-A5Yqo5Zyw5omL6ISa6IOh5Lmx55Sp5Yqo77yM5byg5Zi05oOz6KaB57un57ut5oSf6LCi56Wd56aP5L2g77yM6ICM5ZCM5pe25L2g55qE5LiA5qC555Sf54mp5omL5Y236LW35bm46L-Q6K-x5Y-R5YmC77yM5b-r6YCf5Zyw5omO5Zyo5LqG5aW555qE5ZCO6aKI77yM5bm25LiU5bCG5YW25YWo6YOo5rOo5YWl44CCCgrigJzll6_llYrimaV-fuS9oOi_meWlveS6uuKZpX5-5a-55oiR4pmlfn7ll6_imaV-fueUqOS6huKZpX5-6L-Z5LmI5a6d6LS14pmlfn7lmavlmavlmavimaV-fuKAnQ	瞪大眼睛地看着你，不敢相信你愿意给她使用幸运诱发剂，激动地手脚胡乱甩动，张嘴想要继续感谢祝福你，而同时你的一根生物手卷起幸运诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“嗯啊♥~~你这好人♥~~对我♥~~嗯♥~~用了♥~~这么宝贵♥~~噫噫噫♥~~”	그녀는 당신을 매섭게 노려보며 촉수에 단단히 묶인 팔다리에 힘을 주고 계속 욕설과 협박을 퍼부으려 했습니다. 그사이 당신의 촉수 하나가 배란 유도제를 휘감아 그녀의 목덜미에 재빨리 찔러 넣고 전량 주입했습니다.\n\n“으아♥~~ 이 괴물♥~~ 나한테♥~~ 대체♥~~ 뭘♥~~ 넣은 거야♥~~”	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__7_2(GameItem,GameItem) @0052
+MATCH	55-l6YGT5LqG	知道了	확인	System.Boolean MidnightPawn.Game.TentacleBody/<DelayReport>d__12::MoveNext() @009F | System.Void MidnightPawn.Game.Toast::Show(System.String,System.String) @00B7
+MATCH	55-_5bel	矿工	광부	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0044
+MATCH	56CU56m25ZGY	研究员	연구원	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00CD
+MATCH	56uL57uY5YWo6YCP5piO77yM5pS-5byD	立绘全透明，放弃	일러스트가 전체 투명이므로 중단	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderTrimFit(UnityEngine.Sprite,System.Int32,System.Int32) @019B
+MATCH	56uL57uY5oqT5Y-W5oiQ5YqfOiA	立绘抓取成功: 	일러스트 추출 성공: 	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderFit(UnityEngine.Sprite,System.Int32,System.Int32) @01C8
+MATCH	56uL57uY5oqT5Y-W57uT5p6c5YWo6YCP5piO77yIQmxpdCDph4fmoLfmnKrlkb3kuK3vvIk	立绘抓取结果全透明（Blit 采样未命中）	일러스트 추출 결과 전체 투명(Blit 샘플링 실패)	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderFit(UnityEngine.Sprite,System.Int32,System.Int32) @01AE
+MATCH	56uL57uY5p2l5rqQOiDlhbbku5YgbW9kIA	立绘来源: 其他 mod 	그림 출처: 다른 모드 	System.String MidnightPawn.Game.SpriteInjector::PickOtherModFemalePortrait() @0171
+MATCH	56uL57uY6KOB6L65OiDljp8gezB9eHsxfSDlhoXlrrkgezJ9eHszfSAtPiB7NH14ezV9ICjnlLvluIMgezZ9eHs3fSk	立绘裁边: 原 {0}x{1} 内容 {2}x{3} -> {4}x{5} (画布 {6}x{7})	그림 여백 정리: 원본 {0}x{1}, 내용 {2}x{3} → {4}x{5} (캔버스 {6}x{7})	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderTrimFit(UnityEngine.Sprite,System.Int32,System.Int32) @02D9
+MATCH	56uL57uY6KOB6L655aSx6LSlOiA	立绘裁边失败: 	그림 테두리 자르기 실패: 	UnityEngine.Texture2D MidnightPawn.Game.SpriteInjector::RenderTrimFit(UnityEngine.Sprite,System.Int32,System.Int32) @0344
+MATCH	56ysIA	第 	제	System.Void MidnightPawn.Game.TentacleBody::SettleIfNeeded() @0059 | System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0169 | System.Void MidnightPawn.Game.TentacleBody::ShowReport() @01C1
+MATCH	57uT566X6Lez6L-H77ya5Y-W5LiN5Yiw5aSp5pWw	结算跳过：取不到天数	정산 건너뜀: 날짜를 확인할 수 없습니다	System.Void MidnightPawn.Game.TentacleBody::SettleIfNeeded() @000A
+MATCH	57uT566X6Lez6L-H77ya56ysIA	结算跳过：第 	정산 건너뜀: 	System.Void MidnightPawn.Game.TentacleBody::SettleIfNeeded() @0028
+MATCH	57u05L-u5bel	维修工	정비공	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00C4
+MATCH	6Im65Lq6	艺人	연예인	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00DF
+MATCH	6JCd6I6J	萝莉	로리	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @0113 | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0115
+MATCH	6KGl5rOo5YWl5aSx6LSlOiA	补注入失败: 	추가 적용 실패: 	System.Boolean MidnightPawn.Game.SpriteInjector::EnsureMaidenSprite(GameItem) @009D
+MATCH	6KKr5aGe6L-b5p2f57ya5ZuK55qE5aWz5a2p44CC6L-Y5rS7552A77yM6L-Y5Lya5oyj5omO44CC	被塞进束缚囊的女孩。还活着，还会挣扎。	구속낭에 갇힌 소녀입니다. 아직 살아 있으며 몸부림치고 있습니다.	GameItem MidnightPawn.Game.ItemFactory::CreateMaiden() @0017
+MATCH	6KKr566A5Y2V6KOF5Zyo5rCU55CD6YeM55qE5rWK55m96Imy57KY56ig5L-h5oGv57Sg5rWT57yp5ray77yM5a-55LqO54m55a6a55qE5Lq65p2l6K-077yM6Z2e5bi455qE6aaZ6YaH5Y-v5Y-j44CC	被简单装在气球里的浊白色粘稠信息素浓缩液，对于特定的人来说，非常的香醇可口。	풍선에 간단히 담긴 뿌연 흰색의 점성 있는 촉수 정액입니다. 특정 사람에게는 매우 향긋하고 맛있게 느껴집니다.	GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @0017
+MATCH	6K-75Y-W5pys5L2T572R5qC85aSx6LSlOiA	读取本体网格失败: 	본체 격자 읽기 실패: 	System.Collections.Generic.List`1<GameGridInventory> MidnightPawn.Game.TentacleBody::ResolveGrids(GameItem) @0058
+MATCH	6K-75qGj5L-u5aSN5ZCv5Yqo5aSx6LSlOiA	读档修复启动失败: 	저장 파일 불러오기 후 복구 시작 실패: 	System.Void MidnightPawn.ModEntry::OnGameLoaded() @0025
+MATCH	6K-75qGj5L-u5aSN5byC5bi4OiA	读档修复异常: 	저장 파일 불러오기 후 복구 오류: 	System.Boolean MidnightPawn.ModEntry/<DelayRepair>d__3::MoveNext() @003F
+MATCH	6K-75qGj56uL57uY5L-u5aSN5a6M5oiQ77yM6KGl5rOo5YWlIA	读档立绘修复完成，补注入 	저장 파일 불러오기 후 일러스트 복구 완료, 추가 삽입: 	System.Void MidnightPawn.Game.SpriteInjector::RepairAllAfterLoad() @0129
+MATCH	6K-75qGj6KGl5rOo5YWl56uL57uYOiA	读档补注入立绘: 	불러오기 후 일러스트 추가 적용: 	System.Boolean MidnightPawn.Game.SpriteInjector::EnsureMaidenSprite(GameItem) @00BE
+MATCH	6LCD6K-V5Yqg57uP6aqMICs	调试加经验 +	디버그 경험치 추가 +	System.Void MidnightPawn.Game.TentacleBody::DebugAddExp(System.Int32) @000F
+MATCH	6LSn6L-Q5ZGY	货运员	화물 운송원	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00B2
+MATCH	6LSr5Lmz	贫乳	작은 가슴	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00F2
+MATCH	6LWw56eB6ICF	走私者	밀수업자	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00A9
+MATCH	6LW35aeL5aSp6LWL5bey5rOo5YaMOiDlubjnpo_mu6TnvZE	起始天赋已注册: 幸福滤网	시작 특성 등록 완료: 촉수 기원	System.Void MidnightPawn.Game.Perks::Register() @0097
+MATCH	6L-Z5piv5L2g77yM6L2v6L2v55qE57KJ5aup55qE6L-Y5Y-v5Lul56e75Yqo55qE77yM6L-Y6IO95Ye65Lqn5aW95Zad6aWu5paZ77yM6IO95aSf57uZ56m66Ze056uZ55qE5aSn5a625bim5p2l5bm456aP55qE5bm456aP5a625Zut44CC	这是你，软软的粉嫩的还可以移动的，还能出产好喝饮料，能够给空间站的大家带来幸福的幸福家园。	바로 당신의 본체인 촉수 괴물입니다. 귀엽고 유능한 촉수에 소녀들을 수용하고, 이 우주정거장을 당신만의 배양 둥지로 개조하세요.	GameItem MidnightPawn.Game.TentacleBody::Create() @002E
+MATCH	6YWS5L-d	酒保	바텐더	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @00BB
+MATCH	6YeN5bu656qX5Y-j5aSx6LSlOiA	重建窗口失败: 	창 재구성 실패: 	System.Void MidnightPawn.Game.TentacleBody::RebuildAllWindows() @003B
+MATCH	6YeN5bu6572R5qC85byV55SoOiA	重建网格引用: 	격자 참조 재구성: 	System.Collections.Generic.List`1<GameGridInventory> MidnightPawn.Game.TentacleBody::ResolveGrids(GameItem) @0102
+MATCH	6Zmq5Ly057uT566XOiDlubjnpo8gezB9IC8g5omT5Y2hIHsxfSAvIOS4reWlluetiee6pyB7Mn0gLyDnsr7ljY7mpoLnjocgezM6UDB9	陪伴结算: 幸福 {0} / 打卡 {1} / 中奖等级 {2} / 精华概率 {3:P0}	배양 정산: 조교 {0} / 성교 {1} / 모유 분비 {2} / 정액 확률 {3:P0}	System.Void MidnightPawn.Game.TentacleBody::NightlyTick(GameItem,GameGridInventory,GameGridInventory) @03CC
+MATCH	6ZuH5L2j5YW1	雇佣兵	용병	System.Void MidnightPawn.Game.MaidenTraits::.cctor() @004C
+MATCH	6Z2p5ZG95Yab	革命军	혁명군	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @00A0 | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0028
+MATCH	6aG1562-IHRhZyDorr7nva7lpLHotKU6IA	页签 tag 设置失败: 	탭 태그 설정 실패: 	GameItem MidnightPawn.Game.TentacleBody::Create() @00E1
+MATCH	6aWu5LiL5LiA55O254m55Yi26ZO25rC0	饮下一瓶特制银水	신비한 모유 한 병 마시기	System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateMilk>b__5_2(GameItem,GameInventory,SlotMarker) @0008
+MATCH	6buR5biC	黑市	암시장	System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem) @0085 | System.Void MidnightPawn.Game.MaidenTraits::.cctor() @0020
+MATCH	77yI5LmQ5Zut5a656YeP5LiO5oCn54ix5by65bqm5o-Q5Y2H77yJ	（乐园容量与性爱强度提升）	(배양 구역 수용량 및 성행위 강도 상승)	System.Void MidnightPawn.Game.TentacleBody::AddBodyExp(System.Int32) @002E
+MATCH	77yI5YCZ6YCJIA	（候选 	(후보 	System.String MidnightPawn.Game.SpriteInjector::PickOtherModFemalePortrait() @018F
+MATCH	77yM5Lqn5Ye65LqGIA	，产出了 	, 생산물: 	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0113
+MATCH	77yM5LuA5LmI5Lmf5rKh5Lqn5Ye6	，什么也没产出	, 생산물은 없습니다	System.Void MidnightPawn.Game.TentacleBody::ShowReport() @0136
