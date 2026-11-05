@@ -216,3 +216,22 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 **10개 모드 합계: 원본 키 1,248개 중 한국어팩 `K` 키 1,246개. 미포함 2개는 원본 내용이 빈 키.** 현재 번역 데이터 상에서 비어 있지 않은 키의 대조 완료. 이는 CSV 키 대조 결과이며 실제 게임 출력 경로/자연스러운 번역·성능 테스트 완료를 뜻하지 않는다.
 
 현재 Corp 전용 NoHooks 시험판은 **스캐너 차단 실패작**으로 사용하지 않으며, 안정 NoHooks DLL은 보존. 이후에는 공식 Localization 키 변경/신규 내용 추적 및 실제 게임 내 적용 확인을 우선한다. 현행 KoreanPack DLL 재빌드 불필요: 위 변경은 번역 CSV만 갱신.
+
+
+---
+
+## 2026-11-05 — CorpPresence v0.9.6 로컬 DLL 번역 시험본 제작
+
+**사용자 최신 지시**: 모더가 공식 Localization 지원을 안정판 이후로 미뤘으므로, 서브메모리에 올라온 **CorpPresence 0.9.6**을 이번 로컬 번역 기준으로 확정. 최초 워크숍 모드 파일은 수정하지 않고, 로컬 복사본 DLL 자체의 표시 문자열을 번역한다.
+
+- 원본: `probably-stolen/mods/3828913695/CorpPresence.dll` 및 원본 `manifest.xml` (ID `CorpPresence`, 버전 `0.9.6`).
+- 입력 DLL SHA-256: `044627f6a9232691db6dbac38e509b676682cebed043b6cbd0ecc9b442935b81` (6,971,392바이트).
+- 기존 번역 데이터: `0.7.5.21-dev/Localization/pskb__3828913695.csv` + `pskb__supp_3828913695.csv`. 유효 원문→한국어 매핑 2,728개; 충돌 21건은 보충본 우선.
+- Mono.Cecil 패처 소스: `probably-stolen/tools/corp-local-translation/Program.cs`, 빌드: `.github/workflows/build-corp-local-ko.yml`.
+- **번역된 로컬 DLL:** `probably-stolen/localized/CorpPresence-0.9.6-KO/CorpPresence/CorpPresence.dll` (6,902,272바이트). SHA-256 `890f7ec4830c75c9fdf7addd8b43a43540162f702718d4412eddfa1a4118a31a`.
+- **설치 ZIP:** `probably-stolen/localized/CorpPresence-0.9.6-KO-Local.zip`. 구성: `CorpPresence/CorpPresence.dll`, `CorpPresence/manifest.xml`, `README_KO.txt`, `audit.txt`.
+- 실행 파일 문자열 리터럴 **2,837곳**을 치환(중국어 1,611, 영어 1,224); 바이너리 리드백 성공. 번역 적용 메서드 386개. 원본 게임·제3자 모드 파일 불변.
+- 리소스명/아이템 등록/세이브/초상화 경로를 포함할 수 있는 메서드를 번역 범위에서 제외해 식별자 훼손을 피했음. 남은 CJK 리터럴 273회(고유 248개)에는 디버깅·로그 및 일부 표시 문구가 섞여 있음. **모든 화면 번역 완료 아님.**
+- **게임 내 로드/스캐너/세이브/번역 적용 시험은 아직 사용자 쪽에서 하지 않았음.** 정적 빌드·IL 읽기 검증까지만 성공. 게임 로더의 로컬 모드/워크숍 중복 로딩 우선순위도 실제 목록에서 반드시 확인해야 함.
+- 기존 NoHooks 한국어팩 DLL은 변경하지 않았다. Corp 로컬화가 공식 Localization 지원으로 대체되면 정식 구조로 회귀.
+- 새 ZIP/시험 DLL은 사용자 테스트용으로 제공 가능하되, 완전 검증됐다는 표현 금지.
