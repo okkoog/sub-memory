@@ -415,6 +415,580 @@ TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=1022
 TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=1024
 TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=2048
 
+# Selected implementation IL
+IL_METHOD	System.Void AiEmporium.AiClientFactory::SetDialogues(StoreClient,AiEmporium.AiSpec)
+IL	0000	newobj	System.Void Dialogue::.ctor()
+IL	0005	stloc.0	
+IL	0006	ldloc.0	
+IL	0007	ldc.i4.4	
+IL	0008	stfld	System.Int32 Dialogue::priority
+IL	000D	ldloc.0	
+IL	000E	ldstr	CLIENT
+IL	0013	ldarg.1	
+IL	0014	ldfld	System.Boolean AiEmporium.AiSpec::GunsmithOnly
+IL	0019	brfalse.s	IL_0028: ldarg.1
+IL	001B	ldarg.1	
+IL	001C	ldfld	System.String AiEmporium.AiSpec::AltAcceptLine
+IL	0021	call	System.Boolean System.String::IsNullOrEmpty(System.String)
+IL	0026	brfalse.s	IL_0030: ldarg.1
+IL	0028	ldarg.1	
+IL	0029	ldfld	System.String AiEmporium.AiSpec::AcceptLine
+IL	002E	br.s	IL_0036: ldstr "成交。"
+IL	0030	ldarg.1	
+IL	0031	ldfld	System.String AiEmporium.AiSpec::AltAcceptLine
+IL	0036	ldstr	成交。
+IL	003B	call	System.String AiEmporium.AiText::Or(System.String,System.String)
+IL	0040	callvirt	Dialogue Dialogue::SetText(System.String,System.String)
+IL	0045	pop	
+IL	0046	ldarg.0	
+IL	0047	ldloc.0	
+IL	0048	stfld	Dialogue StoreClient::acceptDealDialogue
+IL	004D	newobj	System.Void Dialogue::.ctor()
+IL	0052	stloc.1	
+IL	0053	ldloc.1	
+IL	0054	ldc.i4.4	
+IL	0055	stfld	System.Int32 Dialogue::priority
+IL	005A	ldloc.1	
+IL	005B	ldstr	CLIENT
+IL	0060	ldarg.1	
+IL	0061	ldfld	System.Boolean AiEmporium.AiSpec::GunsmithOnly
+IL	0066	brfalse.s	IL_0075: ldarg.1
+IL	0068	ldarg.1	
+IL	0069	ldfld	System.String AiEmporium.AiSpec::AltDoneLine
+IL	006E	call	System.Boolean System.String::IsNullOrEmpty(System.String)
+IL	0073	brfalse.s	IL_007d: ldarg.1
+IL	0075	ldarg.1	
+IL	0076	ldfld	System.String AiEmporium.AiSpec::DoneLine
+IL	007B	br.s	IL_0083: ldstr "下次见。"
+IL	007D	ldarg.1	
+IL	007E	ldfld	System.String AiEmporium.AiSpec::AltDoneLine
+IL	0083	ldstr	下次见。
+IL	0088	call	System.String AiEmporium.AiText::Or(System.String,System.String)
+IL	008D	callvirt	Dialogue Dialogue::SetText(System.String,System.String)
+IL	0092	pop	
+IL	0093	ldloc.1	
+IL	0094	ldsfld	System.Action AiEmporium.AiClientFactory/<>c::<>9__4_0
+IL	0099	dup	
+IL	009A	brtrue.s	IL_00b3: callvirt Dialogue Dialogue::SetEndAction(System.Action)
+IL	009C	pop	
+IL	009D	ldsfld	AiEmporium.AiClientFactory/<>c AiEmporium.AiClientFactory/<>c::<>9
+IL	00A2	ldftn	System.Void AiEmporium.AiClientFactory/<>c::<SetDialogues>b__4_0()
+IL	00A8	newobj	System.Void System.Action::.ctor(System.Object,System.IntPtr)
+IL	00AD	dup	
+IL	00AE	stsfld	System.Action AiEmporium.AiClientFactory/<>c::<>9__4_0
+IL	00B3	callvirt	Dialogue Dialogue::SetEndAction(System.Action)
+IL	00B8	pop	
+IL	00B9	ldarg.0	
+IL	00BA	ldloc.1	
+IL	00BB	stfld	Dialogue StoreClient::allDoneDialogue
+IL	00C0	ret	
+IL_METHOD	StoreClient AiEmporium.AiClientFactory::CreateAppraisal(AiEmporium.AiSpec)
+IL	0000	newobj	System.Void AiEmporium.AiClientFactory/<>c__DisplayClass7_0::.ctor()
+IL	0005	stloc.0	
+IL	0006	ldloc.0	
+IL	0007	ldarg.0	
+IL	0008	stfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	000D	newobj	System.Void StoreClient::.ctor()
+IL	0012	dup	
+IL	0013	ldstr	ai_
+IL	0018	ldloc.0	
+IL	0019	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	001E	ldfld	System.String AiEmporium.AiSpec::Id
+IL	0023	call	System.String System.String::Concat(System.String,System.String)
+IL	0028	stfld	System.String StoreClient::identifier
+IL	002D	dup	
+IL	002E	ldloc.0	
+IL	002F	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	0034	ldfld	System.String AiEmporium.AiSpec::Name
+IL	0039	stfld	System.String StoreClient::displayName
+IL	003E	dup	
+IL	003F	ldloc.0	
+IL	0040	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	0045	ldfld	System.String AiEmporium.AiSpec::Faction
+IL	004A	stfld	System.String StoreClient::clientFaction
+IL	004F	dup	
+IL	0050	ldc.i4.s	14
+IL	0052	stfld	StoreClient/ClientIntent StoreClient::clientIntent
+IL	0057	dup	
+IL	0058	ldloc.0	
+IL	0059	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	005E	ldfld	System.Int32 AiEmporium.AiSpec::Cooldown
+IL	0063	stfld	System.Int32 StoreClient::cooldown
+IL	0068	dup	
+IL	0069	ldc.i4.1	
+IL	006A	stfld	System.Boolean StoreClient::nonShootable
+IL	006F	dup	
+IL	0070	ldc.i4.1	
+IL	0071	stfld	System.Boolean StoreClient::isNoContributeToEvidence
+IL	0076	dup	
+IL	0077	ldloc.0	
+IL	0078	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	007D	ldloc.0	
+IL	007E	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	0083	call	System.String AiEmporium.AiClientFactory::PickLine(AiEmporium.AiSpec)
+IL	0088	ldloc.0	
+IL	0089	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	008E	ldfld	System.String AiEmporium.AiSpec::Id
+IL	0093	ldstr	stock
+IL	0098	call	System.String AiEmporium.AiJudgeLines::Get(System.String,System.String)
+IL	009D	ldstr	……都放柜台上吧，一件一件来。
+IL	00A2	call	System.String AiEmporium.AiText::Or(System.String,System.String)
+IL	00A7	ldloc.0	
+IL	00A8	ldftn	System.Void AiEmporium.AiClientFactory/<>c__DisplayClass7_0::<CreateAppraisal>b__0()
+IL	00AE	newobj	System.Void System.Action::.ctor(System.Object,System.IntPtr)
+IL	00B3	ldnull	
+IL	00B4	call	System.Void AiEmporium.AiArrivalHooks::SetGreeting(StoreClient,AiEmporium.AiSpec,System.String,System.String,System.Action,System.Action)
+IL	00B9	dup	
+IL	00BA	ldloc.0	
+IL	00BB	ldfld	AiEmporium.AiSpec AiEmporium.AiClientFactory/<>c__DisplayClass7_0::spec
+IL	00C0	call	System.Void AiEmporium.AiClientFactory::SetDialogues(StoreClient,AiEmporium.AiSpec)
+IL	00C5	dup	
+IL	00C6	ldc.i4.0	
+IL	00C7	callvirt	System.Void StoreClient::CompleteClientCreation(System.Boolean)
+IL	00CC	ret	
+IL_METHOD	System.Void AiEmporium.AiJudge::ReplaceKey(System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String&)
+IL	0000	ldarg.1	
+IL	0001	brfalse.s	IL_000e: leave.s IL_0048
+IL	0003	ldarg.0	
+IL	0004	ldarg.1	
+IL	0005	ldloca.s	V_0
+IL	0007	callvirt	System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.String>::TryGetValue(!0,!1&)
+IL	000C	brtrue.s	IL_0010: call System.String AiEmporium.AiJudge::CurrentId()
+IL	000E	leave.s	IL_0048: ret
+IL	0010	call	System.String AiEmporium.AiJudge::CurrentId()
+IL	0015	stloc.1	
+IL	0016	ldloc.1	
+IL	0017	brtrue.s	IL_001b: ldloc.1
+IL	0019	leave.s	IL_0048: ret
+IL	001B	ldloc.1	
+IL	001C	ldloc.0	
+IL	001D	call	System.String AiEmporium.AiJudgeLines::Get(System.String,System.String)
+IL	0022	stloc.2	
+IL	0023	ldloc.2	
+IL	0024	call	System.Boolean System.String::IsNullOrEmpty(System.String)
+IL	0029	brtrue.s	IL_002e: leave.s IL_0048
+IL	002B	ldarg.2	
+IL	002C	ldloc.2	
+IL	002D	stind.ref	
+IL	002E	leave.s	IL_0048: ret
+IL	0030	stloc.3	
+IL	0031	ldstr	AiJudge.ReplaceKey: 
+IL	0036	ldloc.3	
+IL	0037	callvirt	System.String System.Exception::get_Message()
+IL	003C	call	System.String System.String::Concat(System.String,System.String)
+IL	0041	call	System.Void AiEmporium.Log::Error(System.String)
+IL	0046	leave.s	IL_0048: ret
+IL	0048	ret	
+IL_METHOD	System.Void AiEmporium.AiJudgeDialogueKeyPatch::Postfix(System.String,System.String&)
+IL	0000	ldsfld	System.Collections.Generic.Dictionary`2<System.String,System.String> AiEmporium.AiJudge::DialogueKeys
+IL	0005	ldarg.0	
+IL	0006	ldarg.1	
+IL	0007	call	System.Void AiEmporium.AiJudge::ReplaceKey(System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String&)
+IL	000C	ret	
+IL_METHOD	System.Void AiEmporium.AiJudgeMechanicKeyPatch::Postfix(System.String,System.String&)
+IL	0000	ldsfld	System.Collections.Generic.Dictionary`2<System.String,System.String> AiEmporium.AiJudge::MechanicKeys
+IL	0005	ldarg.0	
+IL	0006	ldarg.1	
+IL	0007	call	System.Void AiEmporium.AiJudge::ReplaceKey(System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String&)
+IL	000C	ret	
+IL_METHOD	Dialogue AiEmporium.AiPhones::BuildDialog(AiEmporium.AiSpec)
+IL	0000	ldarg.0	
+IL	0001	ldfld	System.String AiEmporium.AiSpec::Id
+IL	0006	call	System.String[] AiEmporium.AiPhoneLines::Get(System.String)
+IL	000B	stloc.0	
+IL	000C	newobj	System.Void Dialogue::.ctor()
+IL	0011	stloc.1	
+IL	0012	ldarg.0	
+IL	0013	ldfld	AiEmporium.AiSettings AiEmporium.AiSpec::Settings
+IL	0018	callvirt	System.Boolean AiEmporium.AiSettings::get_Allowed()
+IL	001D	brtrue.s	IL_0057: ldloc.1
+IL	001F	ldloc.1	
+IL	0020	ldarg.0	
+IL	0021	ldfld	System.String AiEmporium.AiSpec::Name
+IL	0026	ldstr	这阵子不进店，先不约了。
+IL	002B	callvirt	Dialogue Dialogue::SetText(System.String,System.String)
+IL	0030	ldsfld	System.Action AiEmporium.AiPhones/<>c::<>9__7_0
+IL	0035	dup	
+IL	0036	brtrue.s	IL_004f: callvirt Dialogue Dialogue::SetEndAction(System.Action)
+IL	0038	pop	
+IL	0039	ldsfld	AiEmporium.AiPhones/<>c AiEmporium.AiPhones/<>c::<>9
+IL	003E	ldftn	System.Void AiEmporium.AiPhones/<>c::<BuildDialog>b__7_0()
+IL	0044	newobj	System.Void System.Action::.ctor(System.Object,System.IntPtr)
+IL	0049	dup	
+IL	004A	stsfld	System.Action AiEmporium.AiPhones/<>c::<>9__7_0
+IL	004F	callvirt	Dialogue Dialogue::SetEndAction(System.Action)
+IL	0054	pop	
+IL	0055	ldloc.1	
+IL	0056	ret	
+IL	0057	ldloc.1	
+IL	0058	ldarg.0	
+IL	0059	ldfld	System.String AiEmporium.AiSpec::Name
+IL	005E	ldloc.0	
+IL	005F	ldc.i4.0	
+IL	0060	ldelem.ref	
+IL	0061	callvirt	Dialogue Dialogue::SetText(System.String,System.String)
+IL	0066	pop	
+IL	0067	ldloc.1	
+IL	0068	ldarg.0	
+IL	0069	ldloc.0	
+IL	006A	ldc.i4.0	
+IL	006B	call	System.Void AiEmporium.AiPhones::AttachMenu(Dialogue,AiEmporium.AiSpec,System.String[],System.Int32)
+IL	0070	ldloc.1	
+IL	0071	ret	
+IL_METHOD	System.Void AiEmporium.AiSettings::Register(System.String)
+IL	0000	ldarg.0	
+IL	0001	call	ModConfig ModConfig::For(System.String)
+IL	0006	stloc.0	
+IL	0007	ldloc.0	
+IL	0008	ldstr	daily_limit
+IL	000D	ldc.i4.2	
+IL	000E	ldstr	全局
+IL	0013	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_0
+IL	0018	dup	
+IL	0019	brtrue.s	IL_0032: ldc.i4.0
+IL	001B	pop	
+IL	001C	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0021	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_0()
+IL	0027	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	002C	dup	
+IL	002D	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_0
+IL	0032	ldc.i4.0	
+IL	0033	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	0038	ldc.i4.s	15
+IL	003A	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	003F	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_1
+IL	0044	dup	
+IL	0045	brtrue.s	IL_005e: ldc.i4.0
+IL	0047	pop	
+IL	0048	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	004D	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_1()
+IL	0053	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0058	dup	
+IL	0059	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_1
+IL	005E	ldc.i4.0	
+IL	005F	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	0064	stsfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::Daily
+IL	0069	ldloc.0	
+IL	006A	ldstr	global_budget_pct
+IL	006F	ldc.i4.s	100
+IL	0071	ldstr	全局
+IL	0076	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_2
+IL	007B	dup	
+IL	007C	brtrue.s	IL_0095: ldc.i4.s 10
+IL	007E	pop	
+IL	007F	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0084	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_2()
+IL	008A	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	008F	dup	
+IL	0090	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_2
+IL	0095	ldc.i4.s	10
+IL	0097	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	009C	ldc.i4	500
+IL	00A1	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	00A6	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_3
+IL	00AB	dup	
+IL	00AC	brtrue.s	IL_00c5: ldc.i4.0
+IL	00AE	pop	
+IL	00AF	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	00B4	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_3()
+IL	00BA	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	00BF	dup	
+IL	00C0	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_3
+IL	00C5	ldc.i4.0	
+IL	00C6	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	00CB	stsfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::GlobalBudget
+IL	00D0	ldloc.0	
+IL	00D1	ldstr	allow_other_mod_goods
+IL	00D6	ldc.i4.0	
+IL	00D7	ldstr	全局
+IL	00DC	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_4
+IL	00E1	dup	
+IL	00E2	brtrue.s	IL_00fb: ldsfld System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_5
+IL	00E4	pop	
+IL	00E5	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	00EA	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_4()
+IL	00F0	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	00F5	dup	
+IL	00F6	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_4
+IL	00FB	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_5
+IL	0100	dup	
+IL	0101	brtrue.s	IL_011a: ldc.i4.0
+IL	0103	pop	
+IL	0104	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0109	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_5()
+IL	010F	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0114	dup	
+IL	0115	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_5
+IL	011A	ldc.i4.0	
+IL	011B	callvirt	ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String,System.Func`1<System.String>,System.Func`1<System.String>,System.Boolean)
+IL	0120	stsfld	ConfigEntry`1<System.Boolean> AiEmporium.AiSettings::allowOtherModGoods
+IL	0125	ldsfld	System.Collections.Generic.Dictionary`2<System.String,System.String[]> AiEmporium.AiSettings::Pools
+IL	012A	callvirt	System.Collections.Generic.Dictionary`2/KeyCollection<!0,!1> System.Collections.Generic.Dictionary`2<System.String,System.String[]>::get_Keys()
+IL	012F	newobj	System.Void System.Collections.Generic.List`1<System.String>::.ctor(System.Collections.Generic.IEnumerable`1<!0>)
+IL	0134	call	!0[] System.Collections.Generic.List`1<System.String>::ToArray()
+IL	0139	stloc.1	
+IL	013A	ldsfld	AiEmporium.AiSpec[] AiEmporium.AiRegistry::All
+IL	013F	stloc.2	
+IL	0140	ldc.i4.0	
+IL	0141	stloc.3	
+IL	0142	br	IL_045e: ldloc.3
+IL	0147	ldloc.2	
+IL	0148	ldloc.3	
+IL	0149	ldelem.ref	
+IL	014A	stloc.s	V_4
+IL	014C	ldloc.s	V_4
+IL	014E	ldfld	AiEmporium.AiSettings AiEmporium.AiSpec::Settings
+IL	0153	stloc.s	V_5
+IL	0155	ldloc.s	V_4
+IL	0157	ldfld	System.String AiEmporium.AiSpec::Id
+IL	015C	ldstr	_
+IL	0161	call	System.String System.String::Concat(System.String,System.String)
+IL	0166	stloc.s	V_6
+IL	0168	ldloc.s	V_5
+IL	016A	ldloc.0	
+IL	016B	ldloc.s	V_6
+IL	016D	ldstr	enabled
+IL	0172	call	System.String System.String::Concat(System.String,System.String)
+IL	0177	ldc.i4.1	
+IL	0178	ldloc.s	V_4
+IL	017A	ldfld	System.String AiEmporium.AiSpec::Name
+IL	017F	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_6
+IL	0184	dup	
+IL	0185	brtrue.s	IL_019e: ldsfld System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_7
+IL	0187	pop	
+IL	0188	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	018D	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_6()
+IL	0193	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0198	dup	
+IL	0199	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_6
+IL	019E	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_7
+IL	01A3	dup	
+IL	01A4	brtrue.s	IL_01bd: ldc.i4.0
+IL	01A6	pop	
+IL	01A7	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	01AC	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_7()
+IL	01B2	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	01B7	dup	
+IL	01B8	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_7
+IL	01BD	ldc.i4.0	
+IL	01BE	callvirt	ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String,System.Func`1<System.String>,System.Func`1<System.String>,System.Boolean)
+IL	01C3	stfld	ConfigEntry`1<System.Boolean> AiEmporium.AiSettings::allowed
+IL	01C8	ldloc.s	V_5
+IL	01CA	ldloc.0	
+IL	01CB	ldloc.s	V_6
+IL	01CD	ldstr	chance
+IL	01D2	call	System.String System.String::Concat(System.String,System.String)
+IL	01D7	ldc.i4.m1	
+IL	01D8	ldloc.s	V_4
+IL	01DA	ldfld	System.String AiEmporium.AiSpec::Name
+IL	01DF	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_8
+IL	01E4	dup	
+IL	01E5	brtrue.s	IL_01fe: ldc.i4.m1
+IL	01E7	pop	
+IL	01E8	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	01ED	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_8()
+IL	01F3	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	01F8	dup	
+IL	01F9	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_8
+IL	01FE	ldc.i4.m1	
+IL	01FF	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	0204	ldc.i4.s	100
+IL	0206	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	020B	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_9
+IL	0210	dup	
+IL	0211	brtrue.s	IL_022a: ldc.i4.0
+IL	0213	pop	
+IL	0214	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0219	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_9()
+IL	021F	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0224	dup	
+IL	0225	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_9
+IL	022A	ldc.i4.0	
+IL	022B	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	0230	stfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::chance
+IL	0235	ldloc.s	V_4
+IL	0237	ldfld	AiEmporium.AiArchetype AiEmporium.AiSpec::Archetype
+IL	023C	ldc.i4.3	
+IL	023D	beq	IL_03ed: ldloc.s V_5
+IL	0242	ldloc.s	V_5
+IL	0244	ldloc.0	
+IL	0245	ldloc.s	V_6
+IL	0247	ldstr	budget_pct
+IL	024C	call	System.String System.String::Concat(System.String,System.String)
+IL	0251	ldc.i4.s	100
+IL	0253	ldloc.s	V_4
+IL	0255	ldfld	System.String AiEmporium.AiSpec::Name
+IL	025A	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_10
+IL	025F	dup	
+IL	0260	brtrue.s	IL_0279: ldc.i4.s 10
+IL	0262	pop	
+IL	0263	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0268	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_10()
+IL	026E	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0273	dup	
+IL	0274	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_10
+IL	0279	ldc.i4.s	10
+IL	027B	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	0280	ldc.i4	500
+IL	0285	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	028A	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_11
+IL	028F	dup	
+IL	0290	brtrue.s	IL_02a9: ldc.i4.0
+IL	0292	pop	
+IL	0293	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0298	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_11()
+IL	029E	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	02A3	dup	
+IL	02A4	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_11
+IL	02A9	ldc.i4.0	
+IL	02AA	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	02AF	stfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::budget
+IL	02B4	ldloc.s	V_5
+IL	02B6	ldloc.0	
+IL	02B7	ldloc.s	V_6
+IL	02B9	ldstr	stock_pool
+IL	02BE	call	System.String System.String::Concat(System.String,System.String)
+IL	02C3	ldstr	角色原货池
+IL	02C8	ldloc.s	V_4
+IL	02CA	ldfld	System.String AiEmporium.AiSpec::Name
+IL	02CF	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_12
+IL	02D4	dup	
+IL	02D5	brtrue.s	IL_02ee: ldloc.1
+IL	02D7	pop	
+IL	02D8	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	02DD	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_12()
+IL	02E3	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	02E8	dup	
+IL	02E9	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_12
+IL	02EE	ldloc.1	
+IL	02EF	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_13
+IL	02F4	dup	
+IL	02F5	brtrue.s	IL_030e: ldc.i4.0
+IL	02F7	pop	
+IL	02F8	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	02FD	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_13()
+IL	0303	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0308	dup	
+IL	0309	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_13
+IL	030E	ldc.i4.0	
+IL	030F	callvirt	ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,System.Func`1<System.String>,System.String[],System.Func`1<System.String>,System.Boolean)
+IL	0314	stfld	ConfigEntry`1<System.String> AiEmporium.AiSettings::pool
+IL	0319	ldloc.s	V_5
+IL	031B	ldloc.0	
+IL	031C	ldloc.s	V_6
+IL	031E	ldstr	stock_ids
+IL	0323	call	System.String System.String::Concat(System.String,System.String)
+IL	0328	ldstr	
+IL	032D	ldloc.s	V_4
+IL	032F	ldfld	System.String AiEmporium.AiSpec::Name
+IL	0334	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_14
+IL	0339	dup	
+IL	033A	brtrue.s	IL_0353: ldnull
+IL	033C	pop	
+IL	033D	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0342	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_14()
+IL	0348	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	034D	dup	
+IL	034E	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_14
+IL	0353	ldnull	
+IL	0354	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_15
+IL	0359	dup	
+IL	035A	brtrue.s	IL_0373: ldc.i4.0
+IL	035C	pop	
+IL	035D	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0362	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_15()
+IL	0368	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	036D	dup	
+IL	036E	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_15
+IL	0373	ldc.i4.0	
+IL	0374	callvirt	ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,System.Func`1<System.String>,System.String[],System.Func`1<System.String>,System.Boolean)
+IL	0379	stfld	ConfigEntry`1<System.String> AiEmporium.AiSettings::items
+IL	037E	ldloc.s	V_5
+IL	0380	ldloc.0	
+IL	0381	ldloc.s	V_6
+IL	0383	ldstr	stock_count
+IL	0388	call	System.String System.String::Concat(System.String,System.String)
+IL	038D	ldc.i4.m1	
+IL	038E	ldloc.s	V_4
+IL	0390	ldfld	System.String AiEmporium.AiSpec::Name
+IL	0395	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_16
+IL	039A	dup	
+IL	039B	brtrue.s	IL_03b4: ldc.i4.m1
+IL	039D	pop	
+IL	039E	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	03A3	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_16()
+IL	03A9	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	03AE	dup	
+IL	03AF	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_16
+IL	03B4	ldc.i4.m1	
+IL	03B5	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	03BA	ldc.i4.s	12
+IL	03BC	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	03C1	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_17
+IL	03C6	dup	
+IL	03C7	brtrue.s	IL_03e0: ldc.i4.0
+IL	03C9	pop	
+IL	03CA	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	03CF	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_17()
+IL	03D5	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	03DA	dup	
+IL	03DB	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_17
+IL	03E0	ldc.i4.0	
+IL	03E1	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	03E6	stfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::quantity
+IL	03EB	br.s	IL_045a: ldloc.3
+IL	03ED	ldloc.s	V_5
+IL	03EF	ldloc.0	
+IL	03F0	ldloc.s	V_6
+IL	03F2	ldstr	appraisal_count
+IL	03F7	call	System.String System.String::Concat(System.String,System.String)
+IL	03FC	ldc.i4.m1	
+IL	03FD	ldloc.s	V_4
+IL	03FF	ldfld	System.String AiEmporium.AiSpec::Name
+IL	0404	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_18
+IL	0409	dup	
+IL	040A	brtrue.s	IL_0423: ldc.i4.m1
+IL	040C	pop	
+IL	040D	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	0412	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_18()
+IL	0418	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	041D	dup	
+IL	041E	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_18
+IL	0423	ldc.i4.m1	
+IL	0424	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	0429	ldc.i4.s	12
+IL	042B	newobj	System.Void System.Nullable`1<System.Int32>::.ctor(!0)
+IL	0430	ldsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_19
+IL	0435	dup	
+IL	0436	brtrue.s	IL_044f: ldc.i4.0
+IL	0438	pop	
+IL	0439	ldsfld	AiEmporium.AiSettings/<>c AiEmporium.AiSettings/<>c::<>9
+IL	043E	ldftn	System.String AiEmporium.AiSettings/<>c::<Register>b__27_19()
+IL	0444	newobj	System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+IL	0449	dup	
+IL	044A	stsfld	System.Func`1<System.String> AiEmporium.AiSettings/<>c::<>9__27_19
+IL	044F	ldc.i4.0	
+IL	0450	callvirt	ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+IL	0455	stfld	ConfigEntry`1<System.Int32> AiEmporium.AiSettings::quantity
+IL	045A	ldloc.3	
+IL	045B	ldc.i4.1	
+IL	045C	add	
+IL	045D	stloc.3	
+IL	045E	ldloc.3	
+IL	045F	ldloc.2	
+IL	0460	ldlen	
+IL	0461	conv.i4	
+IL	0462	blt	IL_0147: ldloc.2
+IL	0467	ret	
+IL_METHOD	System.String AiEmporium.AiText::Or(System.String,System.String)
+IL	0000	ldarg.0	
+IL	0001	call	System.Boolean System.String::IsNullOrEmpty(System.String)
+IL	0006	brtrue.s	IL_000a: ldarg.1
+IL	0008	ldarg.0	
+IL	0009	ret	
+IL	000A	ldarg.1	
+IL	000B	ret	
+
 # Localize-related types / methods
 
 # Localization key candidate summary
