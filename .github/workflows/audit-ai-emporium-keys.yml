@@ -18,6 +18,7 @@ jobs:
           sparse-checkout: |
             probably-stolen/tools/ai-emporium-key-audit
             probably-stolen/mods/3832941698/AiEmporium.dll
+            probably-stolen/0.7.5.21-dev/Localization/pskb__3832941698.csv
           sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
         with:
@@ -26,16 +27,20 @@ jobs:
         run: |
           dotnet run --project probably-stolen/tools/ai-emporium-key-audit/AiKeyAudit.csproj -c Release -- \
             probably-stolen/mods/3832941698/AiEmporium.dll \
-            probably-stolen/analysis/ai-emporium-key-audit.txt
+            probably-stolen/analysis/ai-emporium-key-audit.txt \
+            probably-stolen/0.7.5.21-dev/Localization/pskb__3832941698.csv \
+            probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
       - name: Upload audit report
         uses: actions/upload-artifact@v4
         with:
           name: ai-emporium-key-audit
-          path: probably-stolen/analysis/ai-emporium-key-audit.txt
+          path: |
+            probably-stolen/analysis/ai-emporium-key-audit.txt
+            probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
           if-no-files-found: error
       - name: Commit key audit results
         run: |
-          git add --sparse -- probably-stolen/analysis/ai-emporium-key-audit.txt
+          git add --sparse -- probably-stolen/analysis/ai-emporium-key-audit.txt probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
