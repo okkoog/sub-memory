@@ -117,6 +117,304 @@ CALL	GameItem AiEmporium.KimiTapes/<>c__DisplayClass6_1::<Register>b__0()	IL_005
 	0064	ldarg.0	
 	0065	ldfld	AiEmporium.KimiTapes/<>c__DisplayClass6_0 AiEmporium.KimiTapes/<>c__DisplayClass6_1::CS$<>8__locals1
 
+# ALL source type methods / language-relevant calls
+TYPE	<Module>
+TYPE	NLayer.MpegVersion
+TYPE	NLayer.MpegLayer
+TYPE	NLayer.MpegChannelMode
+TYPE	NLayer.StereoMode
+TYPE	NLayer.IMpegFrame
+TYPE	NLayer.MpegFile
+METHOD	ReadSamplesImpl	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+TYPE	NLayer.MpegFrameDecoder
+METHOD	DecodeFrameImpl	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+TYPE	NLayer.Decoder.BitReservoir
+TYPE	NLayer.Decoder.FrameBase
+METHOD	get_TotalAllocation	System.Int32 System.Threading.Interlocked::CompareExchange(System.Int32&,System.Int32,System.Int32)
+METHOD	SaveBuffer	System.Int32 System.Threading.Interlocked::Add(System.Int32&,System.Int32)
+METHOD	ClearBuffer	System.Int32 System.Threading.Interlocked::Add(System.Int32&,System.Int32)
+TYPE	NLayer.Decoder.Huffman
+TYPE	NLayer.Decoder.Huffman/HuffmanListNode
+TYPE	NLayer.Decoder.Huffman/<>c
+TYPE	NLayer.Decoder.ID3Frame
+METHOD	TryParseITunSMPB	System.Text.Encoding System.Text.Encoding::get_UTF8() | System.Text.Encoding System.Text.Encoding::get_Unicode() | System.String System.Text.Encoding::GetString(System.Byte[],System.Int32,System.Int32)
+TYPE	NLayer.Decoder.LayerDecoderBase
+TYPE	NLayer.Decoder.LayerIDecoder
+TYPE	NLayer.Decoder.LayerIIDecoder
+TYPE	NLayer.Decoder.LayerIIDecoderBase
+METHOD	DecodeFrame	System.Void NLayer.Decoder.LayerIIDecoderBase::ReadAllocation(NLayer.IMpegFrame,System.Int32[])
+METHOD	ReadAllocation	
+TYPE	NLayer.Decoder.LayerIIIDecoder
+TYPE	NLayer.Decoder.LayerIIIDecoder/HybridMDCT
+METHOD	GetPrevBlock	
+METHOD	Apply	System.Void NLayer.Decoder.LayerIIIDecoder/HybridMDCT::GetPrevBlock(System.Int32,System.Single[]&,System.Single[]&)
+TYPE	NLayer.Decoder.MpegFrame
+TYPE	NLayer.Decoder.MpegStreamReader
+METHOD	FindNextFrame	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+METHOD	DiscardThrough	
+METHOD	ReadToEnd	System.Int32 NLayer.Decoder.FrameBase::get_TotalAllocation()
+TYPE	NLayer.Decoder.MpegStreamReader/ReadBuffer
+METHOD	Read	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+METHOD	EnsureFilled	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+METHOD	DiscardThrough	
+METHOD	CommitDiscard	System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+TYPE	NLayer.Decoder.RiffHeaderFrame
+TYPE	NLayer.Decoder.VBRInfo
+TYPE	AiEmporium.AiArrivalHooks
+METHOD	SetGreeting	Dialogue Dialogue::SetText(System.String,System.String)
+TYPE	AiEmporium.AiArrivalHooks/<>c__DisplayClass0_0
+METHOD	<SetGreeting>b__2	System.Boolean ModHelper::GetModDataBool(System.String,System.String,System.Boolean) | System.Void ModHelper::SetModDataInt(System.String,System.String,System.Int32) | System.Void ModHelper::SetModDataBool(System.String,System.String,System.Boolean) | System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32)
+LITERAL	Y2FyZF8	card_
+TYPE	AiEmporium.AiAssets
+METHOD	EnsureLoaded	System.String AiEmporium.AiAssets::ResourceKey(System.String) | UnityEngine.Texture2D UnityEngine.Sprite::get_texture() | System.Void System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Texture2D>::set_Item(!0,!1) | UnityEngine.Texture2D AiEmporium.AiAssets::MakeTexture(System.Byte[],UnityEngine.FilterMode)
+METHOD	MakeTexture	System.Void UnityEngine.Texture2D::.ctor(System.Int32,System.Int32,UnityEngine.TextureFormat,System.Boolean) | System.Boolean UnityEngine.ImageConversion::LoadImage(UnityEngine.Texture2D,System.Byte[]) | System.Void UnityEngine.Texture::set_filterMode(UnityEngine.FilterMode) | System.Void UnityEngine.Texture::set_wrapMode(UnityEngine.TextureWrapMode) | System.Void UnityEngine.Texture2D::Apply(System.Boolean,System.Boolean)
+METHOD	MakeSprite	System.Void UnityEngine.Texture2D::.ctor(System.Int32,System.Int32,UnityEngine.TextureFormat,System.Boolean) | System.Boolean UnityEngine.ImageConversion::LoadImage(UnityEngine.Texture2D,System.Byte[]) | System.Void UnityEngine.Texture::set_filterMode(UnityEngine.FilterMode) | System.Void UnityEngine.Texture::set_wrapMode(UnityEngine.TextureWrapMode) | System.Void UnityEngine.Texture2D::Apply(System.Boolean,System.Boolean) | System.Int32 UnityEngine.Texture::get_width() | System.Int32 UnityEngine.Texture::get_height() | UnityEngine.Sprite UnityEngine.Sprite::Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType)
+METHOD	RegisterBook	System.Text.Encoding System.Text.Encoding::get_UTF8() | System.String System.Text.Encoding::GetString(System.Byte[]) | System.String AiEmporium.AiAssets::ResourceKey(System.String)
+TYPE	AiEmporium.AiBuyFilter
+TYPE	AiEmporium.AiCards
+METHOD	ItemId	
+LITERAL	YWlfY2FyZF8	ai_card_
+METHOD	Give	System.Boolean ModHelper::GetModDataBool(System.String,System.String,System.Boolean) | GameItem ModHelper::SpawnItem(System.String) | GameItem ModHelper::SetItemOwnerShip(GameItem,System.Boolean) | System.Void ModHelper::SetModDataBool(System.String,System.String,System.Boolean)
+LITERAL	Y2FyZF8	card_
+LITERAL	QUkg5ZWG5qCI77ya5ZCN54mH5peg5aSE5pS-572u77yM5LiL5qyh6KeB6Z2i5YaN57uZ	AI 商栈：名片无处放置，下次见面再给
+LITERAL	IOe7meS6huS9oOS4gOW8oOWQjeeJh--8iOesrCA	 给了你一张名片（第 
+LITERAL	IOWkqe-8iQ	 天）
+METHOD	spec_name	
+METHOD	IsBooked	
+METHOD	CalledDay	System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32)
+METHOD	Summon	System.Void ModHelper::SetModDataInt(System.String,System.String,System.Int32)
+LITERAL	6L-Z6Zi15a2Q5LiN6L-b5bqX77yM5YWI5LiN57qm5LqG44CC	这阵子不进店，先不约了。
+LITERAL	6L-Z5Lya5YS_57qm5LiN5LqG77yM562J5Lya5YS_5YaN5omT5ZCn44CC	这会儿约不了，等会儿再打吧。
+LITERAL	57qm5aW95LqG77yM5LuK5aSp5byA6Zeo5pe25oiR5Lya5p2l44CC	约好了，今天开门时我会来。
+LITERAL	57qm5aW95LqG77yM5piO5aSp6KeB44CC	约好了，明天见。
+LITERAL	6L-Z5Lya5YS_57qm5LiN5LqG77yM562J5Lya5YS_5YaN5omT5ZCn44CC	这会儿约不了，等会儿再打吧。
+LITERAL	6KGM77yM5piO5aSp5byA6Zeo5oiR6L-H5Y6744CC56ysIA	行，明天开门我过去。第 
+LITERAL	IOWkqeingeOAgg	 天见。
+LITERAL	6L-Z5qyh5rKh57qm5LiK77yM5pma54K55YaN5omT5ZCn44CC	这次没约上，晚点再打吧。
+TYPE	AiEmporium.AiCards/<>c__DisplayClass6_0
+TYPE	AiEmporium.AiAppointmentDay
+TYPE	AiEmporium.AiAppointmentDay/<>c__DisplayClass0_0
+TYPE	AiEmporium.AiClientFactory
+METHOD	SetDialogues	System.String AiEmporium.AiText::Or(System.String,System.String) | Dialogue Dialogue::SetText(System.String,System.String)
+LITERAL	5oiQ5Lqk44CC	成交。
+LITERAL	5LiL5qyh6KeB44CC	下次见。
+METHOD	CreateAppraisal	System.String AiEmporium.AiText::Or(System.String,System.String)
+LITERAL	4oCm4oCm6YO95pS-5p-c5Y-w5LiK5ZCn77yM5LiA5Lu25LiA5Lu25p2l44CC	……都放柜台上吧，一件一件来。
+METHOD	StockAppraisalItems	
+METHOD	PickLine	System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32) | System.String AiEmporium.AiText::Or(System.String,System.String)
+TYPE	AiEmporium.AiClientFactory/<>c
+METHOD	<SetDialogues>b__4_0	
+TYPE	AiEmporium.AiClientFactory/<>c__DisplayClass3_0
+TYPE	AiEmporium.AiClientFactory/<>c__DisplayClass5_0
+TYPE	AiEmporium.AiClientFactory/<>c__DisplayClass6_0
+TYPE	AiEmporium.AiClientFactory/<>c__DisplayClass7_0
+TYPE	AiEmporium.AiJudgeLines
+TYPE	AiEmporium.AiJudge
+TYPE	AiEmporium.AiJudgeDialogueKeyPatch
+METHOD	Postfix	System.Void AiEmporium.AiJudge::ReplaceKey(System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String&)
+TYPE	AiEmporium.AiJudgeMechanicKeyPatch
+METHOD	Postfix	System.Void AiEmporium.AiJudge::ReplaceKey(System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String&)
+TYPE	AiEmporium.AiBargainCreatePatch
+TYPE	AiEmporium.AiBargainAppendPatch
+TYPE	AiEmporium.AiWrongItemPatch
+METHOD	Postfix	Dialogue Dialogue::SetText(System.String,System.String)
+TYPE	AiEmporium.AiLinesCard
+TYPE	AiEmporium.AiLinesFirst
+TYPE	AiEmporium.AiLinesRepeat
+TYPE	AiEmporium.AiNoBuyback
+TYPE	AiEmporium.AiPhoneLines
+TYPE	AiEmporium.AiPhones
+METHOD	Ensure	System.Collections.Generic.KeyValuePair`2<!0,!1> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Int64>::get_Current() | !0 System.Collections.Generic.KeyValuePair`2<System.String,System.Int64>::get_Key() | !1 System.Collections.Generic.KeyValuePair`2<System.String,System.Int64>::get_Value() | System.Boolean System.Collections.Generic.Dictionary`2<System.Int64,StorePhoneClient>::ContainsKey(!0) | System.String AiEmporium.AiPhones::NumbersText() | System.Boolean ModHelper::GetModDataBool(System.String,System.String,System.Boolean)
+LITERAL	5Y-356CBIA	号码 
+LITERAL	IOW3suiiqyA	 已被 
+LITERAL	IOWNoOeUqO-8jA	 占用，
+LITERAL	IOaUueeUqCA	 改用 
+LITERAL	Y2FyZF8	card_
+METHOD	FindFreeNumber	System.Collections.Generic.KeyValuePair`2<!0,!1> System.Collections.Generic.Dictionary`2/Enumerator<System.Int64,StorePhoneClient>::get_Current() | !1 System.Collections.Generic.KeyValuePair`2<System.Int64,StorePhoneClient>::get_Value() | !0 System.Collections.Generic.KeyValuePair`2<System.Int64,StorePhoneClient>::get_Key() | System.Boolean System.Collections.Generic.Dictionary`2<System.Int64,StorePhoneClient>::ContainsKey(!0)
+METHOD	NumbersText	System.Void System.Text.StringBuilder::.ctor() | System.Collections.Generic.KeyValuePair`2<!0,!1> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Int64>::get_Current() | System.Int32 System.Text.StringBuilder::get_Length() | System.Text.StringBuilder System.Text.StringBuilder::Append(System.String) | !0 System.Collections.Generic.KeyValuePair`2<System.String,System.Int64>::get_Key() | System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char) | !1 System.Collections.Generic.KeyValuePair`2<System.String,System.Int64>::get_Value() | System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int64)
+METHOD	MarkKnown	System.Boolean System.Collections.Generic.Dictionary`2<System.Int64,StorePhoneClient>::ContainsKey(!0)
+METHOD	BuildDialog	Dialogue Dialogue::SetText(System.String,System.String)
+LITERAL	6L-Z6Zi15a2Q5LiN6L-b5bqX77yM5YWI5LiN57qm5LqG44CC	这阵子不进店，先不约了。
+METHOD	AttachMenu	Dialogue Dialogue::SetText(System.String,System.String)
+LITERAL	W-ivt-S9oOadpeS4gOi2n-W6l-mHjF0	[请你来一趟店里]
+LITERAL	W-S9oOaJi-S4iuacieS7gOS5iF0	[你手上有什么]
+LITERAL	W-ayoeWIq-eahOS6i-S6hl0	[没别的事了]
+METHOD	ChoiceCard	
+LITERAL	Y2FyZF9jaGVt	card_chem
+TYPE	AiEmporium.AiPhones/<>c
+METHOD	<BuildDialog>b__7_0	
+TYPE	AiEmporium.AiPhones/<>c__DisplayClass2_0
+TYPE	AiEmporium.AiPhones/<>c__DisplayClass3_0
+TYPE	AiEmporium.AiPhones/<>c__DisplayClass8_0
+METHOD	<AttachMenu>b__0	Dialogue Dialogue::SetText(System.String,System.String)
+METHOD	<AttachMenu>b__1	Dialogue Dialogue::SetText(System.String,System.String)
+LITERAL	4oCm4oCm5oyC5LqG44CC	……挂了。
+TYPE	AiEmporium.AiPhones/<>c__DisplayClass8_1
+METHOD	<AttachMenu>b__3	Dialogue Dialogue::SetText(System.String,System.String)
+TYPE	AiEmporium.AiContactName
+TYPE	AiEmporium.AiRegistry
+METHOD	IsOurName	
+TYPE	AiEmporium.AiSaleGuard
+TYPE	AiEmporium.AiScheduler
+METHOD	OnGameLoaded	System.Boolean ModHelper::GetModDataBool(System.String,System.String,System.Boolean)
+METHOD	IsEligible	System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32)
+METHOD	HasVisited	System.Boolean ModHelper::GetModDataBool(System.String,System.String,System.Boolean)
+TYPE	AiEmporium.AiScheduler/<>c
+TYPE	AiEmporium.AiSettings
+METHOD	get_PoolName	
+LITERAL	6KeS6Imy5Y6f6LSn5rGg	角色原货池
+METHOD	get_ItemIds	
+METHOD	Register	System.Collections.Generic.Dictionary`2/KeyCollection<!0,!1> System.Collections.Generic.Dictionary`2<System.String,System.String[]>::get_Keys()
+LITERAL	5YWo5bGA	全局
+LITERAL	5YWo5bGA	全局
+LITERAL	5YWo5bGA	全局
+LITERAL	6KeS6Imy5Y6f6LSn5rGg	角色原货池
+TYPE	AiEmporium.AiSettings/<>c
+METHOD	<Register>b__27_0	
+LITERAL	5q-P5pel6Ieq54S25p2l6K6_5LiK6ZmQ	每日自然来访上限
+METHOD	<Register>b__27_1	
+LITERAL	5YyF5ZCr6aaW6K6_5L-d5bqV44CCMCDlhbPpl63oh6rnhLbmnaXorr_vvIznlLXor53pooTnuqbljZXni6zorqHnrpfjgILljp_niYjpmJ_liJfov4fplb_ml7bku43kvJrorqnkvY3jgII	包含首访保底。0 关闭自然来访，电话预约单独计算。原版队列过长时仍会让位。
+METHOD	<Register>b__27_2	
+LITERAL	5YWo5L2T5Lqk5piT6aKE566X77yIJe-8iQ	全体交易预算（%）
+METHOD	<Register>b__27_3	
+LITERAL	MTAwIOS4uuWOn-mihOeul-OAguS4juWQhOinkuiJsueahOmihOeul-eZvuWIhuavlOebuOS5mO-8jOmAgueUqOS6juaWsOeUn-aIkOeahOS6pOaYk-WuouaIt-OAgg	100 为原预算。与各角色的预算百分比相乘，适用于新生成的交易客户。
+METHOD	<Register>b__27_4	
+LITERAL	5YWB6K64IEFJIOadpeWuouWHuuWUruWFtuS7luaooee7hOeahOeJqeWTgQ	允许 AI 来客出售其他模组的物品
+METHOD	<Register>b__27_5	
+LITERAL	6buY6K6k5YWz6Zet44CC5bqU55So5ZCO5LuO5LiL5LiA5qyh5pGG6LSn55Sf5pWI77yM5oyH5a6a5ZWG5ZOBIElEIOS5n-mBteW-quatpOW8gOWFs-OAguW8gOWQr-WQjuWPr-S7juW3suWQr-eUqOaooee7hOS4reaMieWOn-aciei0p-exu-WSjOS7t-agvOmAiei0p-OAgg	默认关闭。应用后从下一次摆货生效，指定商品 ID 也遵循此开关。开启后可从已启用模组中按原有货类和价格选货。
+METHOD	<Register>b__27_6	
+LITERAL	5YWB6K645p2l6K6_	允许来访
+METHOD	<Register>b__27_7	
+LITERAL	5YWz6Zet5ZCO5LiN5YaN5o6l5Y-X6L-Z5L2N6K6_5a6i55qE5paw5YWl6Zif5ZKM55S16K-d6aKE57qm77yM5bey5YWl6Zif55qE5Lqk5piT5Y-v54Wn5bi45a6M5oiQ44CC	关闭后不再接受这位访客的新入队和电话预约，已入队的交易可照常完成。
+METHOD	<Register>b__27_8	
+LITERAL	6Ieq54S25Ye6546w546H77yIJe-8iQ	自然出现率（%）
+METHOD	<Register>b__27_9	
+LITERAL	LTEg5rK_55So6KeS6Imy5qaC546H44CB5aOw5pyb5ZKM6aaW6K6_5L-d5bqV44CCMOKAkzEwMCDkuLrnrKblkIjop6PplIHjgIHlhrfljbTmnaHku7blkI7nmoTlm7rlrprmpoLnjofvvIzot7Pov4fkv53lupXvvIzlj5fmr4_ml6XlkI3pop3pmZDliLbjgII	-1 沿用角色概率、声望和首访保底。0–100 为符合解锁、冷却条件后的固定概率，跳过保底，受每日名额限制。
+METHOD	<Register>b__27_10	
+LITERAL	5Liq5Lq65Lqk5piT6aKE566X77yIJe-8iQ	个人交易预算（%）
+METHOD	<Register>b__27_11	
+LITERAL	5Zyo5YWo5bGA5YCN546H5Z-656GA5LiK5YaN6LCD5pW044CCMTAwIOS4uuS4jemineWkluiwg-aVtOOAgg	在全局倍率基础上再调整。100 为不额外调整。
+METHOD	<Register>b__27_12	
+LITERAL	5pGG5pGK6LSn54mp57G75Yir	摆摊货物类别
+METHOD	<Register>b__27_13	
+LITERAL	5pmu6YCa5Lqk5piT5pe25LuO5omA6YCJ57G75Yir5oq96LSn77yM5Y-v6K6p5Y6f5pys56m65omL55qE5Lmw5a625pGG5pGK44CC5LuN5oyJ5b2T5aSp5Lu35qC85LiK6ZmQ562b6YCJ77yM5LiN6YeN5aSN5LiK6LSn44CC	普通交易时从所选类别抽货，可让原本空手的买家摆摊。仍按当天价格上限筛选，不重复上货。
+METHOD	<Register>b__27_14	
+LITERAL	5oyH5a6a5ZWG5ZOBIElE77yI5Y-v55WZ56m677yJ	指定商品 ID（可留空）
+METHOD	<Register>b__27_15	
+LITERAL	5L6L5aaCIHNoYW1wb28sdG9vdGhwYXN0ZeOAgumdnuepuuaXtuWPquS7jua4heWNleaKvei0p--8jOimhuebluexu-WIq--8m-acquefpeOAgei2heS7t-WSjOS4jeWPr-i9rOWUruWTgeS8mui3s-i_h-OAgg	例如 shampoo,toothpaste。非空时只从清单抽货，覆盖类别；未知、超价和不可转售品会跳过。
+METHOD	<Register>b__27_16	
+LITERAL	5q-P5qyh5bim6LSn5Lu25pWw	每次带货件数
+METHOD	<Register>b__27_17	
+LITERAL	LTEg5oyJ6KeS6Imy6IyD5Zu06ZqP5py677yMMCDkuI3mkYbotKfvvIwx4oCTMTIg5oyH5a6a5Lu25pWw44CC5Y-v55So5ZWG5ZOB5LiN6Laz5pe25oyJ5a6e6ZmF5pWw6YeP44CC5pS55p6q6K6i5Y2V5Y-m566X44CC	-1 按角色范围随机，0 不摆货，1–12 指定件数。可用商品不足时按实际数量。改枪订单另算。
+METHOD	<Register>b__27_18	
+LITERAL	5q-P5qyh6Ym05a6a5Lu25pWw	每次鉴定件数
+METHOD	<Register>b__27_19	
+LITERAL	LTEg6ZqP5py6IDLigJM0IOS7tu-8jDAg5ZKMIDEg5Z2H5Li6IDEg5Lu277yM56Gu5L-d6Ym05a6a5aeU5omY5pyJ54mp5ZOB44CC6Ym05a6a57G75Z6L6ZqP5Y6f54mI562J57qn44CC	-1 随机 2–4 件，0 和 1 均为 1 件，确保鉴定委托有物品。鉴定类型随原版等级。
+TYPE	AiEmporium.AiAdmission
+TYPE	AiEmporium.AiNextAdmission
+TYPE	AiEmporium.AiSliderValues
+METHOD	Postfix	System.String ConfigEntry::get_Key()
+TYPE	AiEmporium.AiSliderValues/<>c__DisplayClass3_0
+METHOD	<Postfix>g__Refresh|0	System.String ConfigEntry::get_Key() | CustomUIElement CustomUIElement::SetText(System.String)
+TYPE	AiEmporium.AiResetSliderValues
+METHOD	Postfix	System.String ConfigEntry::get_Key() | CustomUIElement CustomUIElement::SetText(System.String)
+TYPE	AiEmporium.AiArchetype
+TYPE	AiEmporium.AiSpec
+TYPE	AiEmporium.AiText
+TYPE	AiEmporium.AiStockCatalog
+METHOD	Contains	System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.String[]>::ContainsKey(!0)
+TYPE	AiEmporium.AiStockIndex
+TYPE	AiEmporium.AiStockIndex/Visit
+TYPE	AiEmporium.AiStockIndex/<Deliver>d__12
+TYPE	AiEmporium.ContextMenuFix
+METHOD	Postfix	UnityEngine.Vector3 UnityEngine.Transform::get_localScale() | System.Void UnityEngine.Transform::set_localScale(UnityEngine.Vector3)
+TYPE	AiEmporium.GlmFolio
+METHOD	Register	
+LITERAL	YWlfZ2xtX2NhcmRfZm9saW8	ai_glm_card_folio
+METHOD	Create	System.Void ModHelper::SetSource(GameItem,System.String,System.String)
+LITERAL	YWlfZ2xtX2NhcmRfZm9saW8	ai_glm_card_folio
+LITERAL	Z2xtX2NhcmRfZm9saW8	glm_card_folio
+LITERAL	R0xNIOeahOWQjeeJh-WkuQ	GLM 的名片夹
+LITERAL	5rex57Sr5bCB55qu5LiK55qE6ZO26ImyIFog5bey57uP56Oo5Lqu44CC5Y-v5pS-5YWl5qGj5qGI566x77yM5YaF5pyJIDEww5cxMCDmoLzvvIzlj6_mlLbnurPlt7Lmi6XmnInnmoTlkI3niYflkozmlofmoaPjgII	深紫封皮上的银色 Z 已经磨亮。可放入档案箱，内有 10×10 格，可收纳已拥有的名片和文档。
+LITERAL	QUkg5ZWG5qCI	AI 商栈
+METHOD	FirstReport	System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32) | System.Void ModHelper::SetModDataInt(System.String,System.String,System.Int32) | Dialogue Dialogue::SetText(System.String,System.String)
+LITERAL	4oCm4oCm5YWI5Yir5oyJ56ys5LqM5LiL44CC5L2g6L-e5oiR5Y2W5LuA5LmI6YO96K6w5LiN5L2P77yM5Li-5oql5Y2V5LiK5YeG5aSH5aGr5LuA5LmI77yf	……先别按第二下。你连我卖什么都记不住，举报单上准备填什么？
+LITERAL	5ou_552A44CC5aS55a2Q6YeM6YKj5byg6KGo77yM5oiR5YC85aSc54-t5pe25oqE55qE44CC6LCB5pS25LuA5LmI44CB6LCB5Y2W5LuA5LmI77yM6YO95Zyo5LiK6Z2i5LqG44CC	拿着。夹子里那张表，我值夜班时抄的。谁收什么、谁卖什么，都在上面了。
+METHOD	DeliverIfOwed	System.Int32 ModHelper::GetModDataInt(System.String,System.String,System.Int32) | GameItem ModHelper::SpawnItem(System.String) | GameItem ModHelper::SetItemOwnerShip(GameItem,System.Boolean) | System.Void ModHelper::SetModDataInt(System.String,System.String,System.Int32)
+LITERAL	YWlfZ2xtX2NhcmRfZm9saW8	ai_glm_card_folio
+LITERAL	YWlfZ2xtX2NhcmRfZm9saW8	ai_glm_card_folio
+TYPE	AiEmporium.GlmFolio/<>c
+TYPE	AiEmporium.GlmFolio/<>c__DisplayClass7_0
+TYPE	AiEmporium.KimiTapes
+METHOD	SoundKeys	System.Void AiEmporium.KimiTapes/<SoundKeys>d__3::.ctor(System.Int32)
+METHOD	Register	
+TYPE	AiEmporium.KimiTapes/<>c__DisplayClass6_0
+TYPE	AiEmporium.KimiTapes/<>c__DisplayClass6_1
+METHOD	<Register>b__0	System.String ModHelper::GetSoundIdentifier(System.String,System.String) | System.String LocHelper::GetLocalizedItem(System.String,System.Object[]) | System.Void GameItem::set_flavorText(System.String) | System.Void ModHelper::SetSource(GameItem,System.String,System.String)
+LITERAL	aXRlbV9jYXNzZXR0ZV8	item_cassette_
+LITERAL	QUkg5ZWG5qCI	AI 商栈
+TYPE	AiEmporium.KimiTapes/<SoundKeys>d__3
+METHOD	System.Collections.Generic.IEnumerable<System.String>.GetEnumerator	System.Void AiEmporium.KimiTapes/<SoundKeys>d__3::.ctor(System.Int32)
+METHOD	System.Collections.IEnumerable.GetEnumerator	System.Collections.Generic.IEnumerator`1<System.String> AiEmporium.KimiTapes/<SoundKeys>d__3::System.Collections.Generic.IEnumerable<System.String>.GetEnumerator()
+TYPE	AiEmporium.KimiTapeRefusal
+TYPE	AiEmporium.AiEmporiumMod
+METHOD	OnEnable	System.Void ModHelper::AddDebugFunction(System.String,System.String,System.String,System.Action,System.Boolean)
+LITERAL	QUnllYbmoIg	AI商栈
+LITERAL	6YeN572u5ZCN54mH5LiO6aaW6K6_5qCH6K6w	重置名片与首访标记
+LITERAL	QUnllYbmoIg	AI商栈
+LITERAL	5oqKIDE1IOW8oOWQjeeJh-aUvuWIsOWJjeWPsA	把 15 张名片放到前台
+METHOD	OnItemDirectoryInit	
+METHOD	ResetVisitFlags	System.Void ModHelper::SetModDataBool(System.String,System.String,System.Boolean) | System.Void ModHelper::SetModDataInt(System.String,System.String,System.Int32)
+LITERAL	Y2FyZF8	card_
+METHOD	GiveAllCards	
+TYPE	AiEmporium.Log
+TYPE	AiEmporium.PortraitFraming
+TYPE	AiEmporium.PortraitLoader
+METHOD	Get	System.Boolean System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Texture2D>::TryGetValue(!0,!1&) | System.Void UnityEngine.Texture::set_filterMode(UnityEngine.FilterMode) | System.Void UnityEngine.Texture::set_wrapMode(UnityEngine.TextureWrapMode) | System.Int32 UnityEngine.Texture::get_width() | System.Int32 UnityEngine.Texture::get_height() | UnityEngine.Sprite UnityEngine.Sprite::Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType)
+TYPE	AiEmporium.PortraitLoader/<>c
+TYPE	AiEmporium.PortraitOptions
+METHOD	Register	
+LITERAL	5Y6f54mI5YOP57Sg	原版像素
+LITERAL	5YWo5bGA	全局
+LITERAL	5Y6f54mI5YOP57Sg	原版像素
+LITERAL	6auY5riF5o-S55S7	高清插画
+TYPE	AiEmporium.PortraitOptions/<>c
+METHOD	<Register>b__3_0	
+LITERAL	5YWo5ZGY56uL57uY6aOO5qC8	全员立绘风格
+METHOD	<Register>b__3_1	
+LITERAL	57uf5LiA5YiH5o2i5YWo6YOoIDE1IOS9jeadpeWuoueahOeri-e7mOOAgueCueW6lOeUqOWQjueUn-aViOOAgg	统一切换全部 15 位来客的立绘。点应用后生效。
+TYPE	AiEmporium.TapeAudio
+METHOD	Register	System.Collections.Generic.IEnumerable`1<System.String> AiEmporium.KimiTapes::SoundKeys() | System.Boolean System.Collections.Generic.Dictionary`2<System.String,AiEmporium.TapeAudio>::ContainsKey(!0) | System.String ModHelper::GetSoundIdentifier(System.String,System.String)
+METHOD	Clear	System.Collections.Generic.KeyValuePair`2<!0,!1> System.Collections.Generic.Dictionary`2/Enumerator<System.String,AiEmporium.TapeAudio>::get_Current() | !0 System.Collections.Generic.KeyValuePair`2<System.String,AiEmporium.TapeAudio>::get_Key() | System.String ModHelper::GetSoundIdentifier(System.String,System.String) | !1 System.Collections.Generic.KeyValuePair`2<System.String,AiEmporium.TapeAudio>::get_Value()
+TYPE	<PrivateImplementationDetails>
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=12
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=14
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=16
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=20
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=28
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=32
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=34
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=36
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=48
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=56
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=60
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=62
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=64
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=68
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=88
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=92
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=108
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=120
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=124
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=128
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=140
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=142
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=254
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=256
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=1022
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=1024
+TYPE	<PrivateImplementationDetails>/__StaticArrayInitTypeSize=2048
+
 # Localize-related types / methods
 
 # Localization key candidate summary
