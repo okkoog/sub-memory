@@ -199,3 +199,20 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 - Corp DLL 0.9.6 메타데이터에서 `CorpPresence.UI.MenuLabels.Chinese` / `English` 정적 문자열 배열과 이를 직접 반환하는 `MenuLabels.Get`을 확인했으나, 해당 정적 데이터에 대한 **현재 방식의 리플렉션 접근은 스캐너 제한에 부적합**.
 - 재검토 우선순위: 게임에서 허용하는 공식 ModHook/Localization 경로만 사용하는 접근. 다른 모드 DLL 수정은 사용자 별도 지시 전 금지.
 - **유효한 안정 기준은 이전 `ProbablyStolenKoreanPack.NoHooks.0.7.5.21-dev.dll`**. CorpMenuTrial 시험판으로 교체하지 말 것.
+
+
+---
+
+## 2026-11-05 — 번역 우선순위 변경 및 Localization 키 보강
+
+**사용자 최신 확정 지시:** CorpPresence처럼 직접 표시 문자열을 내보내 공식 Localization만으로 대응하기 어려운 모드는 **후순위**로 미루고, **원본 모드가 정식 Localization 키를 사용하는 모드 10개**부터 완성할 것. NoHooks DLL 기준과 런타임 출력 후킹 금지 원칙은 유지.
+
+원본 `probably-stolen/mods/<ID>/Localization/*.csv`와 현행 `0.7.5.21-dev/Localization/pskb__<ID>.csv`의 키를 직접 대조해 다음을 **GitHub에 실제 반영**:
+- `3829730904` 양조 확장: 기존 420개에서 누락된 `K` 번역 **97개 추가**, 현재 517/517 원본 키 확보. NPC 니니/포티세븐, 외곽 지역 평판·특성, 시장 이벤트, 케이블 표시 포함. 커밋 `3b5525ee2f908ae42552dd2092a87b0f4369518c`.
+- `3832253334` 신문 읽고 버리기: 신규 `pskb__3832253334.csv` 생성, `K|full` 번역 1개 추가. 커밋 `b9d40ff86c77cdb227646256fe709df686db21d3`.
+- `3831752512` 동방 카세트팩: 원본의 `cassette.desc`, `pack.desc` 값이 **빈 문자열**이라 번역 텍스트를 임의 생성하지 않음.
+- 나머지 Localization 모드 7개는 기존 한국어팩에 원본 키가 이미 모두 존재함.
+
+**10개 모드 합계: 원본 키 1,248개 중 한국어팩 `K` 키 1,246개. 미포함 2개는 원본 내용이 빈 키.** 현재 번역 데이터 상에서 비어 있지 않은 키의 대조 완료. 이는 CSV 키 대조 결과이며 실제 게임 출력 경로/자연스러운 번역·성능 테스트 완료를 뜻하지 않는다.
+
+현재 Corp 전용 NoHooks 시험판은 **스캐너 차단 실패작**으로 사용하지 않으며, 안정 NoHooks DLL은 보존. 이후에는 공식 Localization 키 변경/신규 내용 추적 및 실제 게임 내 적용 확인을 우선한다. 현행 KoreanPack DLL 재빌드 불필요: 위 변경은 번역 CSV만 갱신.
