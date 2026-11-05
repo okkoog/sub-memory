@@ -32,10 +32,10 @@ transform.Parameters.Add(new ParameterDefinition("catalog",Mono.Cecil.ParameterA
 transform.Parameters.Add(new ParameterDefinition("rows",Mono.Cecil.ParameterAttributes.None,jagged));
 kp.Methods.Add(transform);
 var a = transform.Body; a.InitLocals=true; a.MaxStackSize=5;
-var i = new VariableDefinition(mod.TypeSystem.Int32),j=new VariableDefinition(mod.TypeSystem.Int32),rowVar=new VariableDefinition(row),value=new VariableDefinition(mod.TypeSystem.String);
+VariableDefinition i = new VariableDefinition(mod.TypeSystem.Int32),j=new VariableDefinition(mod.TypeSystem.Int32),rowVar=new VariableDefinition(row),value=new VariableDefinition(mod.TypeSystem.String);
 a.Variables.Add(i);a.Variables.Add(j);a.Variables.Add(rowVar);a.Variables.Add(value);
 var il=a.GetILProcessor();
-var ret=Instruction.Create(OpCodes.Ret), checkI=Instruction.Create(OpCodes.Ldloc,i),loopI=Instruction.Create(OpCodes.Ldarg_1),
+Instruction ret=Instruction.Create(OpCodes.Ret), checkI=Instruction.Create(OpCodes.Ldloc,i),loopI=Instruction.Create(OpCodes.Ldarg_1),
 incI=Instruction.Create(OpCodes.Ldloc,i),checkJ=Instruction.Create(OpCodes.Ldloc,j),loopJ=Instruction.Create(OpCodes.Ldarg_0),
 incJ=Instruction.Create(OpCodes.Ldloc,j);
 il.Append(Instruction.Create(OpCodes.Ldarg_1));
@@ -78,10 +78,10 @@ dictionaryTryGet.Parameters.Add(new ParameterDefinition(new ByReferenceType(cat)
 
 entry.Body.Instructions.Clear();entry.Body.ExceptionHandlers.Clear();entry.Body.Variables.Clear();
 entry.Body.InitLocals=true;entry.Body.MaxStackSize=6;
-var cv =new VariableDefinition(cat),t=new VariableDefinition(mod.ImportReference(typeof(Type))),f=new VariableDefinition(mod.ImportReference(typeof(FieldInfo)));
+VariableDefinition cv =new VariableDefinition(cat),t=new VariableDefinition(mod.ImportReference(typeof(Type))),f=new VariableDefinition(mod.ImportReference(typeof(FieldInfo)));
 entry.Body.Variables.Add(cv);entry.Body.Variables.Add(t);entry.Body.Variables.Add(f);
 var e=entry.Body.GetILProcessor();
-var done=Instruction.Create(OpCodes.Ret),fields=Instruction.Create(OpCodes.Ldloc,t),loop=Instruction.Create(OpCodes.Ldloc,f);
+Instruction done=Instruction.Create(OpCodes.Ret),fields=Instruction.Create(OpCodes.Ldloc,t),loop=Instruction.Create(OpCodes.Ldloc,f);
 e.Append(Instruction.Create(OpCodes.Ldarg_0));e.Append(Instruction.Create(OpCodes.Brfalse,done));
 e.Append(Instruction.Create(OpCodes.Ldarg_0));e.Append(Instruction.Create(OpCodes.Callvirt,getTypeName));e.Append(Instruction.Create(OpCodes.Callvirt,getName));
 e.Append(Instruction.Create(OpCodes.Ldstr,"CorpPresence"));e.Append(Instruction.Create(OpCodes.Ldc_I4,(int)StringComparison.OrdinalIgnoreCase));
