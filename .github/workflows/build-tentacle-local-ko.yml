@@ -70,13 +70,13 @@ jobs:
           root=doc.getroot()
           name=root.find('Name');description=root.find('Description')
           assert name is not None and description is not None
-          name.text='행복한 심우주: 인지 필터일지도?'
-          description.text=('우주정거장에 숨어 있는 부드럽고 분홍빛인 행복의 보금자리. '
-              '이 공간을 모두를 위한 안식처로 만들어 보세요.\n\n'
-              '1.2.0 업데이트: 시작 특성 행복 필터(특성 슬롯 +3, 포인트 소모 없음), '
-              '시작 시 행복의 보금자리 지급 및 매일 손님 1명 방문. '
+          name.text='음란한 심우주: 어쩌면 촉수'
+          description.text=('우주정거장에 숨어 있는 분홍빛 촉수 괴물이 되어 '
+              '이곳을 당신만의 배양 둥지로 만들어 보세요.\n\n'
+              '1.2.0 업데이트: 시작 특성 촉수 기원(특성 슬롯 +3, 포인트 소모 없음), '
+              '시작 시 촉수 본체 지급 및 매일 손님 1명 방문. '
               '무작위 이름과 소속·신분·체형을 가진 소녀 콘텐츠 추가. '
-              '행운 유도제, 페로몬 농축액, 특제 은수 음료 추가.')
+              '배란 유도제, 촉수 정액, 신비한 모유 추가.')
           assert root.findtext('ID')=='lewd_meme'
           assert root.findtext('ModVersion')=='1.2.0'
           ET.indent(doc,space='  ')
