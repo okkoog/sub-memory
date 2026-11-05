@@ -29,7 +29,8 @@ jobs:
             probably-stolen/mods/3832941698/AiEmporium.dll \
             probably-stolen/analysis/ai-emporium-key-audit.txt \
             probably-stolen/0.7.5.21-dev/Localization/pskb__3832941698.csv \
-            probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
+            probably-stolen/analysis/ai-emporium-uncovered-zh.tsv \
+            probably-stolen/analysis/ai-emporium-json-audit.tsv
       - name: Upload audit report
         uses: actions/upload-artifact@v4
         with:
@@ -37,10 +38,11 @@ jobs:
           path: |
             probably-stolen/analysis/ai-emporium-key-audit.txt
             probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
+            probably-stolen/analysis/ai-emporium-json-audit.tsv
           if-no-files-found: error
       - name: Commit key audit results
         run: |
-          git add --sparse -- probably-stolen/analysis/ai-emporium-key-audit.txt probably-stolen/analysis/ai-emporium-uncovered-zh.tsv
+          git add --sparse -- probably-stolen/analysis/ai-emporium-key-audit.txt probably-stolen/analysis/ai-emporium-uncovered-zh.tsv probably-stolen/analysis/ai-emporium-json-audit.tsv
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
