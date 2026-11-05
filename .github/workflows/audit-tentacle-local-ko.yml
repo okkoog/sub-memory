@@ -1,0 +1,48 @@
+name: Audit MidnightPawn 1.2.0 Korean local-DLL coverage
+on:
+  push:
+    paths:
+      - ".github/workflows/audit-tentacle-local-ko.yml"
+      - "probably-stolen/tools/tentacle-local-translation/**"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          sparse-checkout: |
+            probably-stolen/tools/tentacle-local-translation
+            probably-stolen/mods/3831837821/MidnightPawn.dll
+            probably-stolen/0.7.5.21-dev/Localization/pskb__3831837821.csv
+            probably-stolen/0.7.5.21-dev/Localization/pskb__supp_3831837821.csv
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Scan original assembly literals
+        run: |
+          dotnet run -c Release --project probably-stolen/tools/tentacle-local-translation/TentacleAudit.csproj -- \
+            probably-stolen/mods/3831837821/MidnightPawn.dll \
+            probably-stolen/0.7.5.21-dev/Localization/pskb__3831837821.csv \
+            probably-stolen/0.7.5.21-dev/Localization/pskb__supp_3831837821.csv \
+            probably-stolen/analysis/tentacle-local-v120-audit.tsv
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: tentacle-local-audit
+          path: probably-stolen/analysis/tentacle-local-v120-audit.tsv
+          if-no-files-found: error
+      - name: Commit report
+        run: |
+          git add --sparse -- probably-stolen/analysis/tentacle-local-v120-audit.tsv
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Audit MidnightPawn 1.2.0 localization coverage"
+          git pull --rebase origin main
+          git push origin HEAD:main
