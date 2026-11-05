@@ -32,7 +32,10 @@ foreach(var file in new[] { main,supplemental }) {
     }
     rows[Path.GetFileName(file)]=rowsSeen;
 }
-using var assembly=AssemblyDefinition.ReadAssembly(source);
+var resolver = new DefaultAssemblyResolver();
+var managedPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(source)!, "..", "..", "Managed"));
+resolver.AddSearchDirectory(managedPath);
+using var assembly = AssemblyDefinition.ReadAssembly(source,new ReaderParameters { AssemblyResolver = resolver });
 if(assembly.Name.Name!="CorpPresence")throw new Exception("Unexpected assembly "+assembly.Name.Name);
 var types=assembly.MainModule.Types.SelectMany(AllTypes).ToList();
 var l=types.Single(t=>t.FullName=="CorpPresence.L");
