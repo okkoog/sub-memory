@@ -1,0 +1,548 @@
+﻿# CorpPresence v0.9.6 offline Korean text patch
+Input: probably-stolen/mods/3828913695/CorpPresence.dll
+Input assembly: CorpPresence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+CSV translations: 2728
+Conflicting source mappings (supplemental precedence): 21
+No source mods or original Workshop files changed.
+Original-string matches remaining: 17
+Assembly readback: CorpPresence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+String literals examined: 5711
+Literals translated: 2873
+Chinese literals translated: 1645
+English literals translated: 1226
+L.T-associated translated literals: 1665
+Skipped [identifier-risk]: 13
+Skipped [non-visible-literal]: 4
+Methods containing translated literals: 404
+
+## Sample mappings
+REPLACED: 统计库存失败： => 재고 집계 실패:
+REPLACED: 多琳 => 도린
+REPLACED: Doreen => 도린
+REPLACED: 按时付款，按时到货。 => 제때 결제하면 제때 도착합니다.
+REPLACED: Pay on time, get it on time. => 제때 결제하면 제때 도착합니다.
+REPLACED: “泥炭”是什么肉？配方保密。 => 피트에 어떤 고기가 들어가냐고요? 제조법은 기밀입니다.
+REPLACED: What meat is in Peat? The recipe is confidential. => 피트에 어떤 고기가 들어가냐고요? 제조법은 기밀입니다.
+REPLACED: 饿了有我们达夫雷拉面，当然要加水才能吃。水？也找我们买。 => 배고프신가요? 다브레 라면이 있습니다. 물론 물이 필요하죠. 물도 저희에게서 사시면 됩니다.
+REPLACED: Hungry? There's Davre ramen. It needs water, of course. Water? Buy that from us too. => 배고프신가요? 다브레 라면이 있습니다. 물론 물이 필요하죠. 물도 저희에게서 사시면 됩니다.
+REPLACED: 治安部发口粮的时候，我们的单子最多，工厂都要炸了。 => 치안국이 배급품을 나눠줄 때 가장 큰 주문은 저희에게 들어옵니다. 공장이 터질 지경이죠.
+REPLACED: When Security hands out rations, our orders are the biggest. The factory's about to burst. => 치안국이 배급품을 나눠줄 때 가장 큰 주문은 저희에게 들어옵니다. 공장이 터질 지경이죠.
+REPLACED: 多琳，达夫雷食品，下层区供应专员。 => 도린입니다. 다브레 식품의 하층구역 납품 담당자예요.
+REPLACED: Doreen. Davre Food, Lower Levels supply rep. => 도린입니다. 다브레 식품의 하층구역 납품 담당자예요.
+REPLACED: 放下一罐“泥炭” => 피트 통조림 하나를 내려놓는다
+REPLACED: sets down a can of Peat => 피트 통조림 하나를 내려놓는다
+REPLACED: 便宜，管饱。 => 싸고 배가 든든하죠.
+REPLACED: Cheap and filling. => 싸고 배가 든든하죠.
+REPLACED: 看了眼你的水桶 => 당신의 물통을 흘끗 본다
+REPLACED: eyes your water jug => 당신의 물통을 흘끗 본다
+REPLACED: 海德拉净水器，用旧了别扔，我们回收。 => 낡은 하이드라테크 정수기를 버리지 마세요. 저희가 매입합니다.
+REPLACED: Don't throw out worn HydraTech purifiers. We buy them back. => 낡은 하이드라테크 정수기를 버리지 마세요. 저희가 매입합니다.
+REPLACED: 把名片压在柜台上 => 명함을 카운터 위 물건 밑에 눌러 둔다
+REPLACED: pins a card under something on the counter => 명함을 카운터 위 물건 밑에 눌러 둔다
+REPLACED: 达夫雷在收海德拉的净水器。 => 다브레에서는 하이드라테크 정수기를 매입하고 있습니다.
+REPLACED: Davre is buying HydraTech purifiers. => 다브레에서는 하이드라테크 정수기를 매입하고 있습니다.
+REPLACED: 新的旧的都要。 => 새것이든 중고든 상관없습니다.
+REPLACED: New or used. => 새것이든 중고든 상관없습니다.
+REPLACED: 停顿 => 잠시 멈춘다
+REPLACED: 研发部要拆开看看。 => 연구개발부에서 분해해 보고 싶어 합니다.
+REPLACED: R&D wants to take them apart. => 연구개발부에서 분해해 보고 싶어 합니다.
+REPLACED: 只收海德拉的净水器。 => 하이드라테크 정수기만 매입합니다.
+REPLACED: HydraTech purifiers only. => 하이드라테크 정수기만 매입합니다.
+REPLACED: 听说你开始卖水了。 => 물 장사를 시작하셨다면서요.
+REPLACED: Heard you started selling water. => 물 장사를 시작하셨다면서요.
+REPLACED: 放下一台净水器 => 정수기 한 대를 내려놓는다
+REPLACED: sets down a purifier => 정수기 한 대를 내려놓는다
+REPLACED: 利维坦。达夫雷自己做的。 => 리바이어던입니다. 다브레에서 자체 생산합니다.
+REPLACED: The Leviathan. Davre makes it in-house. => 리바이어던입니다. 다브레에서 자체 생산합니다.
+REPLACED: 渗透度比海德拉差点，但是铁锈水、幽灵水都能过滤。 => 하이드라테크보다 정수 성능은 조금 떨어지지만 녹물과 유령수를 처리할 수 있습니다.
+REPLACED: It filters a bit worse than a HydraTech, but it handles Rustwater and Ghostwater. => 하이드라테크보다 정수 성능은 조금 떨어지지만 녹물과 유령수를 처리할 수 있습니다.
+REPLACED: 而且比海德拉耐用。 => 하이드라테크보다 오래갑니다.
+REPLACED: And it lasts longer than a HydraTech. => 하이드라테크보다 오래갑니다.
+REPLACED: 每周可以订一台。打电话就行。 => 매주 하나씩 주문할 수 있습니다. 전화 주세요.
+REPLACED: You can order one a week. Just call. => 매주 하나씩 주문할 수 있습니다. 전화 주세요.
+REPLACED: 水多少其实不重要。净化工艺谁手里，才重要。 => 물이 얼마나 많은지는 중요한 게 아닙니다. 누가 정수 공정을 장악했느냐가 중요하죠.
+REPLACED: How much water there is doesn't really matter. Who holds the purification process does. => 물이 얼마나 많은지는 중요한 게 아닙니다. 누가 정수 공정을 장악했느냐가 중요하죠.
+REPLACED: 达夫雷要扩产。 => 다브레가 생산 시설을 확장하고 있습니다.
+REPLACED: Davre is expanding production. => 다브레가 생산 시설을 확장하고 있습니다.
+REPLACED: 压低声音 => 목소리를 낮춘다
+REPLACED: lowers her voice => 목소리를 낮춘다
+REPLACED: 帕斯泰尔在往食品这块伸手。达夫雷决定下放一些设备。 => 파스텔이 식품 시장으로 진출하고 있어서 다브레도 설비를 보급하기로 했습니다.
+REPLACED: Pastel is reaching into food. Davre has decided to hand out some equipment. => 파스텔이 식품 시장으로 진출하고 있어서 다브레도 설비를 보급하기로 했습니다.
+REPLACED: 总部批了一批商用机器，下发给你这种小店。绞肉机一台，罐装机一台。 => 본사에서 사장님 같은 소규모 상점을 위한 상업용 기계 공급을 승인했습니다. 분쇄기 하나와 통조림 기계 하나예요.
+REPLACED: HQ approved a batch of commercial machines for small shops like yours. One grinder, one canner. => 본사에서 사장님 같은 소규모 상점을 위한 상업용 기계 공급을 승인했습니다. 분쇄기 하나와 통조림 기계 하나예요.
+REPLACED: 手续费 {0}₵。机器归你，原料自己找。 => 취급 수수료 {0}₵입니다. 기계는 가져가시되 고기는 직접 조달하세요.
+REPLACED: {0}₵ handling fee. The machines are yours; source your own meat. => 취급 수수료 {0}₵입니다. 기계는 가져가시되 고기는 직접 조달하세요.
+REPLACED: 做不做？ => 받으시겠습니까?
+REPLACED: In or out? => 받으시겠습니까?
+REPLACED: 我做。 => 하겠습니다.
+REPLACED: I'm in. => 가입하겠어.
+REPLACED: 以后坏了、要添，打电话。 => 고장 나거나 더 필요하면 전화 주세요.
+REPLACED: If one breaks or you want more, call. => 고장 나거나 더 필요하면 전화 주세요.
+REPLACED: 再想想。 => 생각해 볼게요.
+REPLACED: Let me think. => 생각해 볼게요.
+REPLACED: 名额不等人。想好了打电话，手续费照旧。 => 예약 자리는 기다려 주지 않아요. 결정하셨으면 전화 주세요. 비용은 같습니다.
+REPLACED: The slots won't wait. Call when you've decided. Same fee. => 예약 자리는 기다려 주지 않아요. 결정하셨으면 전화 주세요. 비용은 같습니다.
+REPLACED: 利维坦用完了？别担心这是量产品。 => 리바이어던이 다 닳았나요? 걱정 마세요. 대량 생산 제품이니까요.
+REPLACED: Leviathan worn out? Don't worry, it's mass-produced. => 리바이어던이 다 닳았나요? 걱정 마세요. 대량 생산 제품이니까요.
+REPLACED: 罐头卖得怎么样？ => 통조림은 잘 팔리고 있나요?
+REPLACED: How are the cans selling? => 통조림은 잘 팔리고 있나요?
+REPLACED: 达夫雷，例行供货。 => 다브레에서 정기 납품 왔습니다.
+REPLACED: Davre. Routine supply. => 다브레에서 정기 납품 왔습니다.
+REPLACED: 多琳。照单送货。 => 도린입니다. 주문하신 물건을 배송하러 왔어요.
+REPLACED: Doreen. Delivering per the order. => 도린입니다. 주문하신 물건을 배송하러 왔어요.
+REPLACED: （瞧了一眼水箱）需要净水服务吗？ => (물탱크를 힐끗 보며) 정수 서비스가 필요하신가요?
+REPLACED: (glances at the water tank) Need purification service? => (물탱크를 힐끗 보며) 정수 서비스가 필요하신가요?
+REPLACED: 看了看清单 => 목록을 확인한다
+REPLACED: checks the list => 목록을 확인한다
+REPLACED: 下一家。 => 다음 장소로 가야겠네요.
+REPLACED: Next stop. => 다음 장소로 가야겠네요.
+REPLACED: 多琳第 4 章：现金不够付手续费，改到面板补办 => 도린 제4장: 수수료를 낼 현금이 부족해 패널에서 다시 처리하도록 변경
+REPLACED: 调试： => 디버그:
+REPLACED: ）排为下一位 => ) 다음 순서로 배치
+REPLACED: {0}来访完成：{1}，进度第 {2} 章 => {0} 방문 완료: {1}, 진행도 제 {2}장
+REPLACED: 预约来访失败： => 방문 예약 실패:
+REPLACED: 每日人数上限处理失败： => 일일 인원 상한 처리 실패:
+REPLACED: {0}的来访顺延到第 {1} 天（每天最多 {2} 位） => {0}의 방문을 {1}일째로 이월({2}명/일 상한)
+REPLACED: {0}将于第 {1} 天来访（{2}；声望 {3}，现金 {4}） => {0}이(가) {1}일째 방문 예정({2}; 평판 {3}, 현금 {4})
+REPLACED: 公司访客安排失败： => 회사 방문객 일정 처리 실패:
+REPLACED: {0}（{1}）已排进今天的顾客队列，第 {2}/{3} 位 => {0}({1})을 오늘 손님 대기열에 추가, {2}/{3}번째
+REPLACED: 摆货失败： => 진열 실패:
+REPLACED: 摆货失败： => 진열 실패:
+REPLACED: 公司记录失败： => 회사 기록 실패:
+REPLACED: 名片失败： => 명함 처리 실패:
+REPLACED: 离开失败： => 퇴장 처리 실패:
+REPLACED: ：玩家选了“ => : 플레이어가 "
+REPLACED: 选项处理失败： => 선택지 처리 실패:
+REPLACED: 收回货物失败： => 상품 회수 실패:
+REPLACED: 名片失败： => 명함 처리 실패:
+REPLACED: 离开失败： => 퇴장 처리 실패:
+REPLACED: 伊莎 => 이사
+REPLACED: Isa => 이사
+REPLACED: 本次拜访不构成任何医疗建议（官方腔调）。 => 이번 방문은 어떠한 의료 조언도 구성하지 않습니다. (공식적인 어조)
+REPLACED: This visit does not constitute medical advice. (in an official tone) => 이번 방문은 어떠한 의료 조언도 구성하지 않습니다. (공식적인 어조)
+REPLACED: 零嚼只是在上层区改了名，叫“纤体-X”。药是同一种，可是价格在下城区能买一箱零嚼。 => 상층구역에서는 제로츄의 이름을 슬림-X로 바꾸었죠. 같은 약인데, 거기서 한 개 살 돈이면 여기선 제로츄 한 상자를 삽니다.
+REPLACED: In the Upper Levels, ZeroChew just got renamed "Slim-X". Same drug, but what it costs up there buys a whole box of ZeroC => 상층구역에서는 제로츄의 이름을 슬림-X로 바꾸었죠. 같은 약인데, 거기서 한 개 살 돈이면 여기선 제로츄 한 상자를 삽니다.
+REPLACED: 免疫宁每周都需要一针。回头客真是稳定（讽刺意味）。 => 이뮤니백스, 매주 한 번씩 주사를 맞아야 하죠. 참 충성스러운 단골들이에요. (빈정거리며)
+REPLACED: Immunivax, one shot every week. Such reliable repeat customers. (sarcastically) => 이뮤니백스, 매주 한 번씩 주사를 맞아야 하죠. 참 충성스러운 단골들이에요. (빈정거리며)
+REPLACED: 序列号前三位是批次。需要召回的批次，手册上有，记得比对一下。 => 일련번호 앞 세 자리가 생산 배치입니다. 회수 대상은 설명서에 나와 있으니 꼭 대조하세요.
+REPLACED: The first three digits of the serial are the batch. Batches to be recalled are in the manual. Remember to check against  => 일련번호 앞 세 자리가 생산 배치입니다. 회수 대상은 설명서에 나와 있으니 꼭 대조하세요.
+REPLACED: 奥克西莫是合法药品，手续齐全。 => 옥시모어는 합법 의약품입니다. 서류도 모두 갖춰져 있어요.
+REPLACED: Oxymore is a legal drug. All the paperwork is in order. => 옥시모어는 합법 의약품입니다. 서류도 모두 갖춰져 있어요.
+REPLACED: 有人说哨兵崩溃是人为设计的。公司对此不予置评（官方腔调）。 => 센티넬 붕괴가 인위적으로 만들어졌다는 설도 있지만 회사는 공식 입장을 내지 않습니다. (사무적인 어조로)
+REPLACED: Some say Sentinel Collapse was engineered. The company has no comment. (in an official tone) => 센티넬 붕괴가 인위적으로 만들어졌다는 설도 있지만 회사는 공식 입장을 내지 않습니다. (사무적인 어조로)
+REPLACED: 噬菌霉素，专利在卡迈克尔手里，可是大部分人居然都不知道。 => 파지마이신 특허는 카마이클이 보유하고 있습니다. 대부분 그 사실조차 모르죠.
+REPLACED: Carmicheal holds the Phagimycin patent. Most people don't even know that. => 파지마이신 특허는 카마이클이 보유하고 있습니다. 대부분 그 사실조차 모르죠.
+REPLACED: 卡迈克尔制药，市场规范部专员。伊莎·兰登。 => 카마이클 제약 시장 규정 준수 담당 이사 랭던입니다.
+REPLACED: Carmicheal Pharmaceutical, Market Compliance. Isa Langdon. => 카마이클 제약 시장 규정 준수 담당 이사 랭던입니다.
+REPLACED: 你能见到的药一大半都是我们在生产，只是目前公司最在意的还是专利期内的免疫宁 => 평생 볼 약의 대부분은 저희 회사 제품일 겁니다. 하지만 지금 회사가 가장 신경 쓰는 건 아직 특허가 유효한 이뮤니백스입니다.
+REPLACED: Most of the medicine you'll ever see is ours. Right now, though, the company cares most about Immunivax, still under pat => 평생 볼 약의 대부분은 저희 회사 제품일 겁니다. 하지만 지금 회사가 가장 신경 쓰는 건 아직 특허가 유효한 이뮤니백스입니다.
+
+## Per-method patch counts
+CorpPresence.Brand/Entry CorpPresence.Brand::Info(System.String) : 2
+CorpPresence.Goods/Def CorpPresence.SilverBlood::Carapace(System.String,System.String,System.Int64,System.String,System.Int32,System.Int32,System.String,System.String) : 1
+CorpPresence.Visit CorpPresence.Doreen::CanningDeal() : 20
+CorpPresence.Visit CorpPresence.Doreen::Chapter(System.Int32) : 35
+CorpPresence.Visit CorpPresence.Doreen::Daily(CorpPresence.CharacterState) : 14
+CorpPresence.Visit CorpPresence.Isa::Chapter(System.Int32) : 90
+CorpPresence.Visit CorpPresence.Isa::Daily(CorpPresence.CharacterState) : 14
+CorpPresence.Visit CorpPresence.Mentor::Chapter(System.Int32) : 18
+CorpPresence.Visit CorpPresence.Milo::Caught() : 22
+CorpPresence.Visit CorpPresence.Milo::Chapter(System.Int32) : 62
+CorpPresence.Visit CorpPresence.Milo::Daily(CorpPresence.CharacterState) : 30
+CorpPresence.Visit CorpPresence.Milo::ScrapMachines() : 21
+CorpPresence.Visit CorpPresence.Rosen::Chapter(System.Int32) : 34
+CorpPresence.Visit CorpPresence.Rosen::Daily(CorpPresence.CharacterState) : 26
+CorpPresence.Visit CorpPresence.Rosen::ForgeLesson() : 20
+CorpPresence.Visit CorpPresence.Seline::Chapter(System.Int32) : 31
+CorpPresence.Visit CorpPresence.Seline::Daily(CorpPresence.CharacterState) : 14
+Dialogue CorpPresence.Malice.Envoy::MentorCall(CorpPresence.Company) : 16
+Dialogue CorpPresence.Phone::CallDialog(CorpPresence.Company) : 12
+FishSpecies CorpPresence.SilverBlood::get_Species() : 4
+GameItem CorpPresence.Canning::BuildCanner() : 18
+GameItem CorpPresence.Canning::BuildGrinder() : 8
+GameItem CorpPresence.Cards::Build(CorpPresence.ItemIdentity/Entry) : 1
+GameItem CorpPresence.CatalogEntry::Make() : 4
+GameItem CorpPresence.DavreCo::MakePrebuilt(System.String) : 1
+GameItem CorpPresence.Forge::BuildAnvil() : 18
+GameItem CorpPresence.Forge::BuildFurnace() : 6
+GameItem CorpPresence.Goods::Build(CorpPresence.ItemIdentity/Entry) : 5
+GameItem CorpPresence.Goods::Make(System.String) : 1
+GameItem CorpPresence.ItemRegistry::Create(System.String) : 2
+GameItem CorpPresence.MeridianCo::MakeRefurbished(System.String) : 1
+GameItem CorpPresence.PastelCo::GenuineHemingway(System.Boolean) : 1
+GameItem CorpPresence.SilverBlood::BuildReactor() : 6
+GameItem CorpPresence.SpacerCo::MakeNote() : 3
+GameItem CorpPresence.Tobacco::BuildPacker() : 8
+GameItem CorpPresence.Tobacco::BuildRoller() : 8
+StoreClient CorpPresence.CompanyVisitors::Buyer(System.String,System.Int32) : 1
+StoreClient CorpPresence.CompanyVisitors::Courier(CorpPresence.Company,CorpPresence.CompanyState,System.Collections.Generic.List`1<CorpPresence.Order>,System.Boolean) : 51
+StoreClient CorpPresence.CompanyVisitors::LabBuyer(CorpPresence.Company,CorpPresence.CompanyState) : 10
+StoreClient CorpPresence.CompanyVisitors::PastelSeller() : 8
+StoreClient CorpPresence.CompanyVisitors::SpacerClient() : 1
+StoreClient CorpPresence.CompanyVisitors::Vip(System.Int32) : 7
+StoreClient CorpPresence.Malice.Envoy::CoinVisit(System.String) : 2
+StoreClient CorpPresence.Malice.Envoy::Create(System.String) : 82
+StoreClient CorpPresence.Malice.RebelStory::Buyer(System.String,System.String,System.String[],System.String[],System.Int32,System.Boolean) : 2
+StoreClient CorpPresence.Malice.RebelStory::Create(System.String) : 40
+StoreClient CorpPresence.Malice.RebelStory::Seller(System.String) : 6
+StoreClient CorpPresence.Malice.Rebels::FenceClient() : 6
+System.Boolean CorpPresence.CompanyVisitors::TryScheduleVisitor(StoreClientManager,CorpPresence.Company,CorpPresence.CompanyState,CorpPresence.Visitor) : 2
+System.Boolean CorpPresence.Crates::Put(GameItem,GameItem) : 3
+System.Boolean CorpPresence.DavreCo::IsGutter(GameItem) : 2
+System.Boolean CorpPresence.DavreCo::PayCanningFee() : 1
+System.Boolean CorpPresence.Engine::TryPlace(CorpPresence.Character,System.String,System.Boolean,System.Int64&) : 1
+System.Boolean CorpPresence.Goods::TryUseMask(PlayerStore) : 1
+System.Boolean CorpPresence.Hooks::BeforeActivateItem(GameItem) : 1
+System.Boolean CorpPresence.Hooks::BeforePurifierUsed(GameItem,GameItem) : 4
+System.Boolean CorpPresence.ItemRegistry::IsAvailable(System.String) : 2
+System.Boolean CorpPresence.ItemRegistry::Migrate(GameItem) : 1
+System.Boolean CorpPresence.Malice.Envoy::DebugGreet() : 6
+System.Boolean CorpPresence.Malice.RebelCo/<>c::<.cctor>b__28_0(CorpPresence.CatalogEntry) : 1
+System.Boolean CorpPresence.MeridianCo::PayForgeFee() : 1
+System.Boolean CorpPresence.PastelCo::PayBribe(System.Boolean) : 2
+System.Boolean CorpPresence.Settings::get_VanillaBuyPrices() : 1
+System.Boolean CorpPresence.Settings::get_VanillaServices() : 1
+System.Boolean CorpPresence.SilverBlood::BeforeFillet(GameItem,System.Collections.Generic.List`1<GameItem>&) : 1
+System.Boolean CorpPresence.SilverBlood::TryDeliverParcel() : 4
+System.Boolean CorpPresence.SpacerCo/<>c::<PageEntries>b__40_1(CorpPresence.CatalogEntry) : 1
+System.Boolean CorpPresence.UI.CompanyWindow/<>c__DisplayClass131_0::<PastelSpecial>b__0(CorpPresence.CatalogEntry) : 1
+System.Boolean CorpPresence.UI.CompanyWindow::PastelUnlocked(System.Int32,System.String&) : 6
+System.Collections.Generic.Dictionary`2<System.String,CorpPresence.Goods/Def> CorpPresence.Malice.MaliceItems::BuildDefs() : 17
+System.Collections.Generic.IEnumerable`1<CorpPresence.CatalogEntry> CorpPresence.SpacerCo::PageEntries(System.String) : 1
+System.Collections.Generic.List`1<GameItem> CorpPresence.Services::FakesOwned() : 1
+System.Collections.Generic.List`1<GameItem> CorpPresence.Services::RefurbishCandidates() : 1
+System.Collections.Generic.List`1<ItemSpriteModifier> CorpPresence.RifleMods::Overlays(GameItem) : 1
+System.Collections.Generic.List`1<System.String> CorpPresence.SpacerCo::RollModBox() : 1
+System.Int32 CorpPresence.Character::CountHeld(System.Func`2<GameItem,System.Boolean>) : 1
+System.Int32 CorpPresence.Portraits::CurrentTier() : 1
+System.Int32 CorpPresence.Settings::get_AgentBudget() : 1
+System.Int32 CorpPresence.UI.CompanyWindow::LeviathanPrice() : 1
+System.String CorpPresence.CarmichaelCo::FakeReason(GameItem) : 6
+System.String CorpPresence.CarmichaelCo::OrderSpecimen(CorpPresence.Company,System.String,System.Int32) : 6
+System.String CorpPresence.CarmichaelCo::get_CardFlavor() : 2
+System.String CorpPresence.CarmichaelCo::get_DeskAsk() : 2
+System.String CorpPresence.CarmichaelCo::get_DeskName() : 2
+System.String CorpPresence.CarmichaelCo::get_FrontDeskDone() : 2
+System.String CorpPresence.CarmichaelCo::get_Name() : 2
+System.String CorpPresence.Company::TierName(CorpPresence.CompanyState) : 2
+System.String CorpPresence.DavreCo::get_CardFlavor() : 2
+System.String CorpPresence.DavreCo::get_DeskName() : 2
+System.String CorpPresence.DavreCo::get_FrontDeskDone() : 2
+System.String CorpPresence.DavreCo::get_Name() : 2
+System.String CorpPresence.Doreen::get_Bye() : 2
+System.String CorpPresence.Doreen::get_Name() : 2
+System.String CorpPresence.Engine::DebugQueue(System.String,System.String) : 2
+System.String CorpPresence.Isa::get_Bye() : 2
+System.String CorpPresence.Isa::get_Name() : 2
+System.String CorpPresence.MachineUpgrade::Status(GameItem) : 8
+System.String CorpPresence.Malice.Envoy::AgreePlan() : 2
+System.String CorpPresence.Malice.Envoy::BribeForReconcile() : 4
+System.String CorpPresence.Malice.Envoy::PayServiceFee() : 4
+System.String CorpPresence.Malice.Envoy::ReconcileWithRebels() : 4
+System.String CorpPresence.Malice.EnvoyCo::get_DeskName() : 2
+System.String CorpPresence.Malice.EnvoyCo::get_FrontDeskDone() : 2
+System.String CorpPresence.Malice.EnvoyCo::get_Name() : 2
+System.String CorpPresence.Malice.Malice/<>c::<Install>b__22_9(CorpPresence.Company) : 2
+System.String CorpPresence.Malice.Malice::ApplyUnlock(CorpPresence.Company) : 4
+System.String CorpPresence.Malice.Malice::Charge(CorpPresence.Company,System.Int32,System.String) : 4
+System.String CorpPresence.Malice.Malice::OrderBlocked(CorpPresence.Company) : 8
+System.String CorpPresence.Malice.Malice::Subscribe(CorpPresence.Company) : 4
+System.String CorpPresence.Malice.RebelCo::get_DeskName() : 2
+System.String CorpPresence.Malice.RebelCo::get_FrontDeskDone() : 2
+System.String CorpPresence.Malice.RebelCo::get_Name() : 2
+System.String CorpPresence.Malice.RebelStory::BribeMeridian() : 4
+System.String CorpPresence.Malice.RebelStory::CallOdin() : 2
+System.String CorpPresence.Malice.RebelStory::CallPickup() : 4
+System.String CorpPresence.Malice.RebelStory::DebugEvent(System.Int32) : 21
+System.String CorpPresence.Malice.RebelStory::get_OdinName() : 2
+System.String CorpPresence.Malice.Rebels::BookFence() : 10
+System.String CorpPresence.Malice.Rebels::Charge(System.Int32) : 4
+System.String CorpPresence.Malice.Rebels::OrderBlocked(CorpPresence.Company) : 6
+System.String CorpPresence.Mentor::get_Name() : 2
+System.String CorpPresence.Mentor::get_Nod() : 1
+System.String CorpPresence.MeridianCo::MakeUpForge() : 8
+System.String CorpPresence.MeridianCo::OrderForgeMachine(CorpPresence.Company,System.String,System.Int32) : 6
+System.String CorpPresence.MeridianCo::get_CardFlavor() : 2
+System.String CorpPresence.MeridianCo::get_DeskName() : 2
+System.String CorpPresence.MeridianCo::get_FrontDeskDone() : 2
+System.String CorpPresence.MeridianCo::get_Name() : 2
+System.String CorpPresence.Milo::get_Name() : 2
+System.String CorpPresence.Milo::get_WrongItem() : 2
+System.String CorpPresence.PastelCo::get_CardFlavor() : 2
+System.String CorpPresence.PastelCo::get_DeskAsk() : 2
+System.String CorpPresence.PastelCo::get_DeskName() : 2
+System.String CorpPresence.PastelCo::get_FrontDeskDone() : 2
+System.String CorpPresence.PastelCo::get_Name() : 2
+System.String CorpPresence.Portraits::Ensure(System.String,System.String) : 1
+System.String CorpPresence.Rosen::get_Bye() : 2
+System.String CorpPresence.Rosen::get_Name() : 2
+System.String CorpPresence.Seline::get_Name() : 2
+System.String CorpPresence.Services::BookLab(CorpPresence.Company) : 6
+System.String CorpPresence.Services::BookVip(CorpPresence.Company) : 5
+System.String CorpPresence.Services::ClaimGift(CorpPresence.Company) : 8
+System.String CorpPresence.Services::JoinDealer(CorpPresence.Company) : 3
+System.String CorpPresence.Services::LeftText(CorpPresence.CompanyState,CorpPresence.CatalogEntry) : 3
+System.String CorpPresence.Services::MakeUpCanning(CorpPresence.DavreCo) : 11
+System.String CorpPresence.Services::OrderCanningMachine(CorpPresence.DavreCo,System.String,System.Int32) : 8
+System.String CorpPresence.Services::OrderLeviathan(CorpPresence.DavreCo,System.Int32) : 10
+System.String CorpPresence.Services::Pay(CorpPresence.Company,System.Int32,System.String) : 10
+System.String CorpPresence.Services::PlaceOrder(CorpPresence.Company,System.Collections.Generic.Dictionary`2<CorpPresence.CatalogEntry,System.Int32>,System.Func`2<CorpPresence.CatalogEntry,System.Int32>) : 20
+System.String CorpPresence.Services::RequestRefurbish(CorpPresence.Company) : 17
+System.String CorpPresence.Services::RequestStamina(CorpPresence.Company) : 7
+System.String CorpPresence.Services::RequestSwap(CorpPresence.Company) : 14
+System.String CorpPresence.Services::get_PeriodWord() : 4
+System.String CorpPresence.Settings/<>c::<Init>b__66_0() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_10() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_11() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_12() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_13() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_14() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_15() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_16() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_17() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_18() : 8
+System.String CorpPresence.Settings/<>c::<Init>b__66_19() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_2() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_20() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_21() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_22() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_23() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_24() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_25() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_26() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_27() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_28() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_29() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_3() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_30() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_32() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_33() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_34() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_35() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_36() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_37() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_4() : 6
+System.String CorpPresence.Settings/<>c::<Init>b__66_5() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_6() : 4
+System.String CorpPresence.Settings/<>c::<Init>b__66_7() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_8() : 2
+System.String CorpPresence.Settings/<>c::<Init>b__66_9() : 2
+System.String CorpPresence.SilverBlood::Inject() : 6
+System.String CorpPresence.SolanaCo::get_CardFlavor() : 2
+System.String CorpPresence.SolanaCo::get_DeskAsk() : 2
+System.String CorpPresence.SolanaCo::get_DeskName() : 2
+System.String CorpPresence.SolanaCo::get_FrontDeskDone() : 2
+System.String CorpPresence.SolanaCo::get_Name() : 2
+System.String CorpPresence.SpacerCo::get_DeskName() : 2
+System.String CorpPresence.SpacerCo::get_FrontDeskDone() : 2
+System.String CorpPresence.SpacerCo::get_Name() : 4
+System.String CorpPresence.UI.CompanyWindow::CarmLocked(CorpPresence.CatalogEntry) : 4
+System.String CorpPresence.UI.CompanyWindow::NextTierHint() : 4
+System.String[] CorpPresence.CarmichaelCo::get_FrontDesk() : 4
+System.String[] CorpPresence.CarmichaelCo::get_TierNames() : 6
+System.String[] CorpPresence.DavreCo::get_FrontDesk() : 4
+System.String[] CorpPresence.DavreCo::get_TierNames() : 6
+System.String[] CorpPresence.Doreen::get_Talk() : 6
+System.String[] CorpPresence.Isa::get_Talk() : 12
+System.String[] CorpPresence.ItemTags::Inherited(System.String) : 1
+System.String[] CorpPresence.Malice.EnvoyCo::get_FrontDesk() : 4
+System.String[] CorpPresence.Malice.EnvoyCo::get_TierNames() : 6
+System.String[] CorpPresence.Malice.RebelCo::get_FrontDesk() : 4
+System.String[] CorpPresence.Malice.RebelCo::get_TierNames() : 6
+System.String[] CorpPresence.MeridianCo::get_FrontDesk() : 2
+System.String[] CorpPresence.MeridianCo::get_TierNames() : 6
+System.String[] CorpPresence.Milo::get_Talk() : 10
+System.String[] CorpPresence.PastelCo::get_FrontDesk() : 6
+System.String[] CorpPresence.PastelCo::get_TierNames() : 6
+System.String[] CorpPresence.Rosen::get_Talk() : 14
+System.String[] CorpPresence.Seline::get_Talk() : 12
+System.String[] CorpPresence.SolanaCo::get_FrontDesk() : 4
+System.String[] CorpPresence.SolanaCo::get_TierNames() : 6
+System.String[] CorpPresence.SpacerCo::get_FrontDesk() : 2
+System.String[] CorpPresence.SpacerCo::get_TierNames() : 6
+System.ValueTuple`2<System.String,System.String> CorpPresence.Forge::get_AnvilManual() : 1
+System.ValueTuple`2<System.String,System.String> CorpPresence.Forge::get_FurnaceManual() : 1
+System.ValueTuple`2<System.String,System.String> CorpPresence.PastelCo::get_LimitedFlavor() : 2
+System.ValueTuple`2<System.String,System.String> CorpPresence.SilverBlood::get_ReactorManual() : 1
+System.ValueTuple`2<System.String,System.String> CorpPresence.Tobacco::get_PackerManual() : 2
+System.ValueTuple`2<System.String,System.String> CorpPresence.Tobacco::get_RollerManual() : 2
+System.Void CorpPresence.Brand::Record(GameItem) : 1
+System.Void CorpPresence.Brand::ScanOwned() : 1
+System.Void CorpPresence.Canning::.cctor() : 24
+System.Void CorpPresence.Canning::Can(GameItem,GameSlotInventory,GameGridInventory,GameInventory,GameInventory,GameInventory) : 4
+System.Void CorpPresence.Canning::Grind(GameItem,GameSlotInventory,GameInventory,GameInventory) : 1
+System.Void CorpPresence.Cards::ApplyText(GameItem,CorpPresence.Company) : 1
+System.Void CorpPresence.CarmichaelCo::.cctor() : 11
+System.Void CorpPresence.CarmichaelCo::GrantLicense() : 1
+System.Void CorpPresence.CarmichaelCo::OnDayStart() : 4
+System.Void CorpPresence.CarmichaelCo::OnEndDay() : 8
+System.Void CorpPresence.CjkFallback::Tick() : 3
+System.Void CorpPresence.Cleanup::BeforeSave() : 5
+System.Void CorpPresence.CompanyVisitors/<>c__DisplayClass14_0::<PastelSeller>b__0() : 2
+System.Void CorpPresence.CompanyVisitors/<>c__DisplayClass18_0::<CreateDeliveryReceipt>b__1() : 1
+System.Void CorpPresence.CompanyVisitors::Deliver(CorpPresence.Company,CorpPresence.CompanyState,System.Collections.Generic.List`1<CorpPresence.Order>,System.Func`1<System.Boolean>) : 2
+System.Void CorpPresence.DavreCo::.cctor() : 8
+System.Void CorpPresence.Doreen/<>c__DisplayClass34_0::<CanningDeal>b__0() : 1
+System.Void CorpPresence.Engine/<>c__DisplayClass11_0::<Create>b__0() : 3
+System.Void CorpPresence.Engine/<>c__DisplayClass11_0::<Create>b__1() : 1
+System.Void CorpPresence.Engine/<>c__DisplayClass11_2::<Create>b__3() : 2
+System.Void CorpPresence.Engine/<>c__DisplayClass12_0::<Exit>b__0() : 3
+System.Void CorpPresence.Engine::ApplyDailyCap(CorpPresence.CorpState,System.Int32) : 1
+System.Void CorpPresence.Engine::Book(CorpPresence.Character,CorpPresence.CharacterState,System.String,System.Int32,System.Int32) : 1
+System.Void CorpPresence.Engine::MarkVisited(CorpPresence.Character,System.String) : 1
+System.Void CorpPresence.Engine::OnDayEnd() : 2
+System.Void CorpPresence.Engine::Schedule(StoreClientManager) : 2
+System.Void CorpPresence.Ext::Fire(System.String,System.Action) : 1
+System.Void CorpPresence.Forge::.cctor() : 36
+System.Void CorpPresence.Forge::ApplyLuxury(GameItem) : 1
+System.Void CorpPresence.Forge::BeforeButcherCuts(GameItem,System.Single&) : 1
+System.Void CorpPresence.Forge::Smelt(GameItem,GameSlotInventory,GameGridInventory,GameInventory,GameInventory) : 2
+System.Void CorpPresence.Forge::Strike(GameItem,GameSlotInventory,GameInventory,GameSlotInventory,GameInventory) : 10
+System.Void CorpPresence.Goods::.cctor() : 116
+System.Void CorpPresence.Goods::ApplyAppearance(GameItem,CorpPresence.ItemIdentity/Entry,CorpPresence.Goods/Def) : 2
+System.Void CorpPresence.Goods::OnDayStart() : 2
+System.Void CorpPresence.Goods::Redraw(GameItem) : 1
+System.Void CorpPresence.Goods::RefreshBattery(GameItem) : 1
+System.Void CorpPresence.Goods::Use(GameItem,System.String) : 20
+System.Void CorpPresence.Hooks/<>c::<InstallEvents>b__8_0() : 1
+System.Void CorpPresence.Hooks::AfterBeginDay() : 1
+System.Void CorpPresence.Hooks::AfterClientBought(StoreClient,GameItem,System.Int32) : 1
+System.Void CorpPresence.Hooks::AfterClientSold(StoreClient,GameItem,System.Int32) : 1
+System.Void CorpPresence.Hooks::AfterCloseAllPaper() : 1
+System.Void CorpPresence.Hooks::AfterDisplayCase(System.Collections.Generic.List`1<StoreClient>&) : 2
+System.Void CorpPresence.Hooks::AfterGenerateClient(StoreClientManager) : 1
+System.Void CorpPresence.Hooks::AfterGetCallDialog(StorePhoneClient,Dialogue&) : 1
+System.Void CorpPresence.Hooks::AfterInitPhones(System.Collections.Generic.Dictionary`2<System.Int64,StorePhoneClient>) : 1
+System.Void CorpPresence.Hooks::AfterPhoneOpen() : 1
+System.Void CorpPresence.Hooks::BeforeEndDay() : 3
+System.Void CorpPresence.Hooks::BeforeHandleCall(System.Int64) : 1
+System.Void CorpPresence.Hooks::BeforeNextClient(PlayerStore) : 1
+System.Void CorpPresence.Hooks::BeforeSave() : 2
+System.Void CorpPresence.Hooks::Guard(System.String,System.Action) : 1
+System.Void CorpPresence.Hooks::Patch(HarmonyLib.Harmony,System.Reflection.MethodInfo,System.String,System.Type,System.String,System.String) : 2
+System.Void CorpPresence.Hooks::Patch(HarmonyLib.Harmony,System.String,System.Type,System.String,System.String,System.Type[]) : 2
+System.Void CorpPresence.Host::.ctor() : 1
+System.Void CorpPresence.Host::Report(System.String,System.Exception,System.Int32) : 1
+System.Void CorpPresence.ItemRegistry::BeforeDecode(System.Collections.Generic.List`1<SaveItemNode>) : 1
+System.Void CorpPresence.ItemRegistry::Register(ModItemDirectory) : 5
+System.Void CorpPresence.ItemTags::AfterDecode(GameItem) : 2
+System.Void CorpPresence.MachineUpgrade::Apply(GameItem,GameItem,System.String) : 9
+System.Void CorpPresence.MachineUpgrade::Resize(GameItem) : 1
+System.Void CorpPresence.Malice.Envoy::AcceptBomb() : 4
+System.Void CorpPresence.Malice.Envoy::CheckReconciled() : 2
+System.Void CorpPresence.Malice.Envoy::Finale() : 4
+System.Void CorpPresence.Malice.Envoy::FinishRepayment() : 2
+System.Void CorpPresence.Malice.Envoy::GiveItem(System.String) : 1
+System.Void CorpPresence.Malice.Envoy::JoinCorps() : 2
+System.Void CorpPresence.Malice.Envoy::MeetPhone() : 2
+System.Void CorpPresence.Malice.Envoy::MissInstallment() : 4
+System.Void CorpPresence.Malice.Envoy::OnDayStart() : 8
+System.Void CorpPresence.Malice.Envoy::PayInstallment() : 2
+System.Void CorpPresence.Malice.Envoy::SoldToClient(StoreClient,GameItem,System.Int32) : 2
+System.Void CorpPresence.Malice.Malice::Disabled(CorpPresence.Malice.MaliceState) : 2
+System.Void CorpPresence.Malice.Malice::OnDayStart() : 2
+System.Void CorpPresence.Malice.Malice::TryAutoRenew(CorpPresence.Company,CorpPresence.Malice.CorpTerms) : 2
+System.Void CorpPresence.Malice.MalicePanel::Draw(CorpPresence.Company,UnityEngine.Rect,CorpPresence.UI.Theme) : 49
+System.Void CorpPresence.Malice.RebelStory::CheckFinale() : 2
+System.Void CorpPresence.Malice.RebelStory::Complete(System.Int32) : 13
+System.Void CorpPresence.Malice.RebelStory::GiveBomb() : 6
+System.Void CorpPresence.Malice.RebelStory::OnDayStart() : 2
+System.Void CorpPresence.Malice.RebelStory::QueueEvent(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32) : 1
+System.Void CorpPresence.Malice.RebelStory::Raid() : 8
+System.Void CorpPresence.Malice.RebelStory::Rescue() : 2
+System.Void CorpPresence.Malice.RebelStory::StartCh3() : 6
+System.Void CorpPresence.Malice.Rebels::OnDayStart() : 4
+System.Void CorpPresence.MeridianCo::.cctor() : 30
+System.Void CorpPresence.Milo/<>c__DisplayClass37_0::<Caught>b__0() : 1
+System.Void CorpPresence.ModLog::Error(System.String) : 1
+System.Void CorpPresence.ModLog::Info(System.String) : 1
+System.Void CorpPresence.ModLog::Warn(System.String) : 1
+System.Void CorpPresence.PastelCo::.cctor() : 26
+System.Void CorpPresence.PastelCo::AfterCigaretteUI(CigaretteUI,GameItem) : 1
+System.Void CorpPresence.PastelCo::ApplyLimited(GameItem) : 2
+System.Void CorpPresence.Phone/<>c__DisplayClass16_0::<CallDialog>b__3() : 1
+System.Void CorpPresence.Phone::Activate(CorpPresence.Company) : 1
+System.Void CorpPresence.Phone::RegisterCurrent() : 1
+System.Void CorpPresence.Phone::WarnIfShunned(System.Int64) : 1
+System.Void CorpPresence.Portraits::Tick() : 4
+System.Void CorpPresence.RifleMods::Attach(GameItem) : 1
+System.Void CorpPresence.Rosen/<>c__DisplayClass45_0::<ForgeLesson>b__0() : 1
+System.Void CorpPresence.Services::AddCoop(CorpPresence.Company,System.Double,System.String) : 2
+System.Void CorpPresence.Services::ChapterFloor(CorpPresence.Company,CorpPresence.CompanyState) : 1
+System.Void CorpPresence.Services::MaybeGiveCard(System.String) : 5
+System.Void CorpPresence.Services::Nightly(CorpPresence.Company,CorpPresence.CompanyState,System.Int32,System.String,System.Int32) : 17
+System.Void CorpPresence.Services::OnBoughtFromClient(StoreClient,GameItem,System.Int32) : 1
+System.Void CorpPresence.Services::OnChapterDone(System.String) : 1
+System.Void CorpPresence.Services::OnSoldToClient(StoreClient,GameItem,System.Int32) : 2
+System.Void CorpPresence.Services::Rebate(CorpPresence.Company,CorpPresence.CompanyState,System.Int32) : 3
+System.Void CorpPresence.Services::RescueCrates() : 4
+System.Void CorpPresence.Settings::.cctor() : 17
+System.Void CorpPresence.Settings::<Init>g__P|66_31(System.String,System.Int32,System.String,System.String,System.String,System.String,CorpPresence.Settings/<>c__DisplayClass66_0&) : 1
+System.Void CorpPresence.Settings::Init(System.String) : 33
+System.Void CorpPresence.SilverBlood::.cctor() : 71
+System.Void CorpPresence.SilverBlood::AddLiquid(System.String,System.String,System.String,Liquid&) : 1
+System.Void CorpPresence.SilverBlood::Draw(GameItem) : 4
+System.Void CorpPresence.SilverBlood::Nightly(GameItem,GameInventory) : 1
+System.Void CorpPresence.SilverBlood::OnDayStart() : 2
+System.Void CorpPresence.SilverBlood::OnSold(StoreClient,GameItem) : 1
+System.Void CorpPresence.SilverBlood::React(GameItem,GameSlotInventory,GameGridInventory,GameSlotInventory,GameInventory) : 2
+System.Void CorpPresence.SilverBlood::RegisterLiquid() : 4
+System.Void CorpPresence.SilverBlood::RemoveSentinelPerk() : 2
+System.Void CorpPresence.SpacerCo::.cctor() : 43
+System.Void CorpPresence.SpacerCo::OnDayStart() : 1
+System.Void CorpPresence.SpacerCo::OnMentorChapter(System.Int32) : 1
+System.Void CorpPresence.Tobacco::.cctor() : 36
+System.Void CorpPresence.Tobacco::AddManual(GameItem,System.ValueTuple`2<System.String,System.String>) : 2
+System.Void CorpPresence.Tobacco::Pack(GameItem,GameSlotInventory,GameGridInventory,GameInventory,GameSlotInventory,GameInventory) : 2
+System.Void CorpPresence.Tobacco::RegisterPlant() : 1
+System.Void CorpPresence.Tobacco::Roll(GameItem,GameSlotInventory,GameInventory,GameInventory) : 2
+System.Void CorpPresence.UI.CompanyWindow::.cctor() : 8
+System.Void CorpPresence.UI.CompanyWindow::Draw() : 1
+System.Void CorpPresence.UI.CompanyWindow::DrawBloodRecovery(UnityEngine.Rect) : 1
+System.Void CorpPresence.UI.CompanyWindow::DrawBrand(UnityEngine.Rect) : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawCarmOrder(UnityEngine.Rect) : 20
+System.Void CorpPresence.UI.CompanyWindow::DrawCarmSpecimen(UnityEngine.Rect) : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawCarmStamina(UnityEngine.Rect) : 25
+System.Void CorpPresence.UI.CompanyWindow::DrawCarmSwap(UnityEngine.Rect) : 23
+System.Void CorpPresence.UI.CompanyWindow::DrawCarmichael() : 14
+System.Void CorpPresence.UI.CompanyWindow::DrawDavre() : 14
+System.Void CorpPresence.UI.CompanyWindow::DrawDavreCanning(UnityEngine.Rect) : 16
+System.Void CorpPresence.UI.CompanyWindow::DrawDavreLeviathan(UnityEngine.Rect) : 16
+System.Void CorpPresence.UI.CompanyWindow::DrawDavreOrder(UnityEngine.Rect) : 22
+System.Void CorpPresence.UI.CompanyWindow::DrawEnvoy() : 47
+System.Void CorpPresence.UI.CompanyWindow::DrawMeridian() : 18
+System.Void CorpPresence.UI.CompanyWindow::DrawMeridianForge(UnityEngine.Rect) : 16
+System.Void CorpPresence.UI.CompanyWindow::DrawMeridianOrder(UnityEngine.Rect,CorpPresence.CatalogEntry[],System.String) : 20
+System.Void CorpPresence.UI.CompanyWindow::DrawMeridianRefurb(UnityEngine.Rect) : 24
+System.Void CorpPresence.UI.CompanyWindow::DrawPastel() : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawPastelDealer(UnityEngine.Rect) : 16
+System.Void CorpPresence.UI.CompanyWindow::DrawPastelFooter(UnityEngine.Rect) : 12
+System.Void CorpPresence.UI.CompanyWindow::DrawPastelOrder(UnityEngine.Rect) : 32
+System.Void CorpPresence.UI.CompanyWindow::DrawPastelTraffic(UnityEngine.Rect) : 18
+System.Void CorpPresence.UI.CompanyWindow::DrawRebel() : 22
+System.Void CorpPresence.UI.CompanyWindow::DrawRebelFence(UnityEngine.Rect) : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawRebelTasks(UnityEngine.Rect) : 26
+System.Void CorpPresence.UI.CompanyWindow::DrawRescue(UnityEngine.Rect) : 8
+System.Void CorpPresence.UI.CompanyWindow::DrawSolana() : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawSolanaGift(UnityEngine.Rect) : 6
+System.Void CorpPresence.UI.CompanyWindow::DrawSolanaLab(UnityEngine.Rect) : 7
+System.Void CorpPresence.UI.CompanyWindow::DrawSolanaVip(UnityEngine.Rect) : 8
+System.Void CorpPresence.UI.CompanyWindow::DrawSpacer() : 14
+System.Void CorpPresence.UI.CompanyWindow::DrawSpacerCredits(UnityEngine.Rect) : 2
+System.Void CorpPresence.UI.CompanyWindow::DrawSpacerMutual(UnityEngine.Rect) : 15
+System.Void CorpPresence.UI.CompanyWindow::DrawSpacerOrder(UnityEngine.Rect,System.String) : 34
+System.Void CorpPresence.UI.CompanyWindow::Open(CorpPresence.Company) : 1
+System.Void CorpPresence.UI.CompanyWindow::PastelBribeCell(UnityEngine.Rect) : 8
+System.Void CorpPresence.UI.InputShield::Update(System.Boolean,UnityEngine.Rect) : 1
+System.Void CorpPresence.UI.MenuLabels::.cctor() : 75
+System.Void CorpPresence.UI.Notebook/<>c__DisplayClass38_0::<Corner>b__0() : 1
+System.Void CorpPresence.UI.Notebook::Build(PhoneUIManager) : 3
+System.Void CorpPresence.Visit::.ctor() : 2
+UnityEngine.Sprite CorpPresence.Cards::VanillaCard() : 1
+UnityEngine.Sprite CorpPresence.Portraits::SpriteFor(SpriteDict,System.String,System.Int32) : 1
+UnityEngine.Texture2D CorpPresence.UI.Tex::Art(System.String,System.String) : 2
+UnityEngine.Texture2D CorpPresence.UI.Tex::FromSprite(UnityEngine.Sprite) : 2
+
+Input SHA256: 044627f6a9232691db6dbac38e509b676682cebed043b6cbd0ecc9b442935b81
+Output SHA256: adcafc05b3cb9440e8cdcf8ce3997b5a9786886a6af26b5b7665790926cf1f13
+Output size: 6902272 bytes
