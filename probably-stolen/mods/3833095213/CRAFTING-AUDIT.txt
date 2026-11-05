@@ -1,0 +1,127 @@
+NEON UNDERTOW 0.14 — VANILLA CRAFTING REVIEW — 2026-11-04
+
+Scope and evidence
+Reviewed the active build's crafting, production, book, liquid, inspection,
+equipment, shop/progression and storage/save paths, alongside the installed
+Assembly-CSharp.dll. This is a source/API review, not a claim that the new UI or
+save migration has passed a live game run. Retired prototype files are excluded
+from both builds. Source-Inventory.json records the source files and their hashes.
+
+Native references saved beside the development sources:
+  native-crafting-audit-il.txt: CraftingHelper, CraftingRecipe, WaterHelper,
+    MachineMoistureFarm, MachineBottlePrinter, MachineHelper, SaveManager.
+  native-crafting-storage-il.txt: storage collection and hidden machinery panels.
+  native-cellar-aging-il.txt: MachineWineRack and WineHelper aging dispatch.
+  native-printer-audit-il.txt / native-printer-chip-il.txt: native printer chips,
+    progress, required modules and additional ingredient handling.
+Earlier liquid and inspection evidence remains in the development folder.
+
+Changes made
+1. Large bottler / progression
+   Formerly consumed water + empties, generated 8–64 bottles nightly and came
+   with a starting trait. It now creates four native large_bottled_water items
+   and fills each through WaterHelper.FillWithHighQualityWater. Native liquid
+   parts, water quality, pricing, testing, pouring and bottle layers remain in
+   charge. Capacity is exactly 2 L each. Each successful bottle costs 6 power.
+   Output is reserved before charging; the saved daily counter prevents a
+   repeated callback/reload from exceeding four. No stockpiled missed output.
+   Acquisition: day >= 28 and installed Grand Waterworks; Stormglass list price
+   12,500 before existing reputation discounts. Removed from random household
+   stock and all starting grants. The bottling trait is now a manual kit.
+   Existing owned machines/crates are grandfathered, not confiscated.
+
+2. Save compatibility
+   Native saves store inventory traversal indices. The former input, rack and
+   magazine nodes keep their dimensions and order. They accept no new items and
+   are hidden when empty. Older contents appear in retrieval panels; nothing is
+   destroyed to obtain a cleaner layout. Native decoding uses UncheckedAccept;
+   native hidden panels still collect their storage nodes. Live round-trip QA
+   is prepared but not yet executed. Old machine power metadata is refreshed.
+
+3. Physical cooking equipment
+   The seven instrument choices were virtual previews. Existing instrument
+   sprites now belong to actual reusable items sold by Quayside. A tool must
+   remain on the worktop while its batch is worked/finished. Pan/saucepan use an
+   owned galley or native heating plate; chilling uses a native fridge. Removed
+   unrelated crate-rack and Waterworks tier gates. Books still group recipes by
+   their original chapters. Required heat, tending and five-second actions are
+   retained as an explicit requested extension; not described as native logic.
+
+4. Recipes and books
+   Native CraftingHelper.InitCraftingBlueprint / CraftingRecipe remain the
+   recipe system. Books also open the shipped PaperStarters guide template via
+   PaperUI, respecting CanRead and retaining the current page. Kitchen uses
+   Choose/Craft, recognizes native books, and preserves input/output inventories.
+   Canner/galley now require the relevant book in INPUT, with native item-choice
+   previews instead of category/previous/next carousels. Ingredients, water,
+   power, books, tools and empty packaging retain explicit resource rules.
+   Old recipes cannot bypass manual food preparation.
+
+5. Metal packaging
+   A kitchen machine should not turn scrap into cans. The three packaging
+   patterns now use ordinary MachinePrinter and MachineProgressHelper chips:
+   PRINTER_CHIP_TAG, Metal Printing and CNC module requirements, 20 progress,
+   one metal ingot, and native power/progress/output handling. Four standard or
+   tall cans, or two food tins, per completed print. No custom printer UI or
+   simulated printer loop. Chips sold by Engineering. Workshop books describe
+   the native process and cannot instantly craft packaging. Galley automation
+   excludes these patterns; old saved selections are paused. Empty cans/tins
+   remain purchasable for early production.
+
+6. Cellar
+   The bench formerly increased every drink's value in passive storage.
+   Storage is now storage. Extended native MachineWineRack.CanAgeWine and
+   WineHelper.OnAgeWine for 21 suitable original wines/cider/perry. The native
+   rack controls power and module-adjusted aging calls; the custom value bonus
+   caps at 14 steps. Clear replacement glass also works when it contains the
+   matching wine. Spirits do not gain bottle-aging value. Cask rye still uses
+   its recipe's oak and 14-night processing stage. Native wines are untouched.
+   Bench process selection now uses native radio controls and a progress bar;
+   lengthy instruction text moved into the readable book. Saved batch tags and
+   all four bench inventories remain in place.
+
+7. Resource correctness
+   Stacked liquid sources are refused until split, matching existing alcohol
+   transfer guards. Production reservations temporarily disable stacking so a
+   failed multi-output batch cannot merge free products into existing stacks.
+   Original stack rules return after successful consumption.
+
+Reviewed and retained
+   Bar: physical tools, native measures/transfers, native blender and notebook.
+   Liquids: native component ledger and containers; mod fill renderer only for
+   custom glass. No soda textures regenerated. Existing rounded surfaces kept.
+   Inspections: neutral ordinary produce view; six condition pictures under the
+   native magnifier; native liquid tests for hidden contents information.
+   Shops: native after-hours shelf trading, ownership, weighing and payment.
+   Back room: native inventories and Joe Wild upgrades. Custom room storage is
+   an intentional expansion and still has fail-closed save handling.
+   Customer/faction catalogues, portraits, reputation rules and configurable
+   perk budgets are not crafting systems and were not rebalanced in this pass.
+   Native code already uses INPUT/OUTPUT panels, buttons and recipe choosers;
+   those elements alone are not departures from vanilla.
+
+Next expansion priorities (proposals, not implemented)
+   1. Seeds and crop cycles for suitable vegetables, grains and berries using
+      native hydroponics, nutrient solution, water quality and growth modules.
+      Keep tree-fruit supply appropriate to the setting rather than putting
+      every fruit tree into the same small planter.
+   2. Food storage/preservation: connect ingredient condition, finished-food
+      freshness, native fridge storage, jar/tin returns and preserving recipes.
+      Reuse the existing lens, testing and can condition systems.
+   3. Quality-based customer orders: recurring small-batch orders using native
+      visits and negotiation, rewarding verified water/drink/food quality and
+      reusable packaging. Build on the existing faction/customer systems.
+
+Remaining verification
+   Both release and QA compile against installed game assemblies. PASS 2,077
+   offline crafting/progression assertions; PASS 3,431 existing inspection-art
+   and liquid-profile checks; 59 literal reflection/patch references resolve.
+   1,040 baseline textures are identical. The other 12 are separately recorded
+   blank-can artwork updates and match that task's staging hashes; this pass
+   changed no textures. Results and build hashes are in this folder.
+   Live QA covers generator output/power/cap, old inventory
+   migration, production books and resource counts, printer chip outputs,
+   physical tools and native Age-Well dispatch. It has NOT RUN. Visual review of
+   paper pages and revised machinery windows, native printer completion, native
+   Age-Well power/module operation and a cold-restart save check remain required.
+   PC control is paused at the user's request. No install or Steam update here.
