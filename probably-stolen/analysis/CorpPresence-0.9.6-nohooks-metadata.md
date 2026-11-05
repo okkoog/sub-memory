@@ -333,3 +333,133 @@ F static System.String[][] English
 F static System.String[] _lastBase
 F static System.String _lastExtra
 F static System.String[] _lastCombined
+IL System.String[] CorpPresence.UI.MenuLabels::Get(System.Int32,System.Boolean)
+  IL_0000: ldarg.1
+  IL_0001: brtrue.s IL_000a
+  IL_0003: ldsfld System.String[][] CorpPresence.UI.MenuLabels::Chinese
+  IL_0008: br.s IL_000f
+  IL_000a: ldsfld System.String[][] CorpPresence.UI.MenuLabels::English
+  IL_000f: ldarg.0
+  IL_0010: ldelem.ref
+  IL_0011: ret
+IL System.Void CorpPresence.UI.MenuLabels::.cctor()
+  IL_0000: ldc.i4.s 12
+  IL_0002: newarr System.String[]
+  IL_0007: dup
+  IL_0008: ldc.i4.0
+  IL_0009: ldc.i4.5
+  IL_000a: newarr System.String
+  IL_000f: dup
+  IL_0010: ldc.i4.0
+  IL_0011: ldstr "正品订货"
+  IL_0016: stelem.ref
+  IL_0017: dup
+  IL_0018: ldc.i4.1
+  IL_0019: ldstr "体力增强剂申领"
+  IL_001e: stelem.ref
+  IL_001f: dup
+  IL_0020: ldc.i4.2
+  IL_0021: ldstr "赝品换正品"
+  IL_0026: stelem.ref
+  IL_0027: dup
+  IL_0028: ldc.i4.3
+  IL_0029: ldstr "标本"
+  IL_002e: stelem.ref
+  IL_002f: dup
+  IL_0030: ldc.i4.4
+  IL_0031: ldstr "品牌目录"
+  IL_0036: stelem.ref
+  IL_0037: stelem.ref
+  IL_0038: dup
+  IL_0039: ldc.i4.1
+  IL_003a: ldc.i4.4
+  IL_003b: newarr System.String
+  IL_0040: dup
+  IL_0041: ldc.i4.0
+  IL_0042: ldstr "订货"
+  IL_0047: stelem.ref
+  IL_0048: dup
+  IL_0049: ldc.i4.1
+  IL_004a: ldstr "利维坦净水器"
+  IL_004f: stelem.ref
+  IL_0050: dup
+  IL_0051: ldc.i4.2
+  IL_0052: ldstr "罐装设备"
+  IL_0057: stelem.ref
+  IL_0058: dup
+  IL_0059: ldc.i4.3
+  IL_005a: ldstr "品牌目录"
+  IL_005f: stelem.ref
+  IL_0060: stelem.ref
+  IL_0061: dup
+  IL_0062: ldc.i4.2
+  IL_0063: ldc.i4.5
+  IL_0064: newarr System.String
+  IL_0069: dup
+  IL_006a: ldc.i4.0
+  IL_006b: ldstr "制式订货"
+  IL_0070: stelem.ref
+  IL_0071: dup
+  IL_0072: ldc.i4.1
+  IL_0073: ldstr "高端配件"
+  IL_0078: stelem.ref
+  IL_0079: dup
+  IL_007a: ldc.i4.2
+  IL_007b: ldstr "返厂翻新"
+  IL_0080: stelem.ref
+  IL_0081: dup
+  IL_0082: ldc.i4.3
+  IL_0083: ldstr "锻造"
+  IL_0088: stelem.ref
+  IL_0089: dup
+  IL_008a: ldc.i4.4
+  IL_008b: ldstr "品牌目录"
+  IL_0090: stelem.ref
+  IL_0091: stelem.ref
+  IL_0092: dup
+  IL_0093: ldc.i4.3
+  IL_0094: ldc.i4.4
+  IL_0095: newarr System.String
+  IL_009a: dup
+  IL_009b: ldc.i4.0
+  IL_009c: ldstr "邮购订货"
+  IL_00a1: stelem.ref
+  IL_00a2: dup
+  IL_00a3: ldc.i4.1
+  IL_00a4: ldstr "下层合作商"
+  IL_00a9: stelem.ref
+  IL_00aa: dup
+  IL_00ab: ldc.i4.2
+  IL_00ac: ldstr "下层客流"
+  IL_00b1: stelem.ref
+  IL_00b2: dup
+  IL_00b3: ldc.i4.3
+  IL_00b4: ldstr "品牌目录"
+  IL_00b9: stelem.ref
+  IL_00ba: stelem.ref
+  IL_00bb: dup
+  IL_00bc: ldc.i4.4
+  IL_00bd: ldc.i4.3
+  IL_00be: newarr System.String
+  IL_00c3: dup
+  IL_00c4: ldc.i4.0
+  IL_00c5: ldstr "今天进货吗？"
+  IL_00ca: stelem.ref
+  IL_00cb: dup
+  IL_00cc: ldc.i4.1
+  IL_00cd: ldstr "又是我！"
+  IL_00d2: stelem.ref
+  IL_00d3: dup
+  IL_00d4: ldc.i4.2
+  IL_00d5: ldstr "货多，随便挑。"
+  IL_00da: stelem.ref
+  IL_00db: stelem.ref
+  IL_00dc: dup
+  IL_00dd: ldc.i4.5
+  IL_00de: ldc.i4.3
+  IL_00df: newarr System.String
+  IL_00e4: dup
+  IL_00e5: ldc.i4.0
+  IL_00e6: ldstr "军械订货"
+  IL_00eb: stelem.ref
+  IL_00ec: dup
