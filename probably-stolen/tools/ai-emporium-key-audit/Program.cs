@@ -50,6 +50,16 @@ foreach(var t in types){
             o.AppendLine("LITERAL\t"+Convert.ToBase64String(Encoding.UTF8.GetBytes(v)).TrimEnd('=').Replace('+','-').Replace('/','_')+"\t"+v.Replace("\n","\\n").Replace("\t"," ").Substring(0,Math.Min(v.Length,160)));
     }
 }
+o.AppendLine("\n# Selected implementation IL");
+foreach(var t in types.Where(t=>t.FullName is "AiEmporium.AiText" or "AiEmporium.AiJudge" or "AiEmporium.AiJudgeDialogueKeyPatch" or "AiEmporium.AiJudgeMechanicKeyPatch" or "AiEmporium.AiClientFactory" or "AiEmporium.AiLinesFirst" or "AiEmporium.AiPhones" or "AiEmporium.AiSettings")){
+    foreach(var m in t.Methods.Where(m=>m.HasBody && (t.FullName=="AiEmporium.AiText"|| t.FullName.Contains("KeyPatch") || Regex.IsMatch(m.Name,@"ReplaceKey|SetDialogues|BuildDialog|Register|CreateAppraisal|GetLocalized|^Or$")))){
+        o.AppendLine("IL_METHOD\t"+m.FullName);
+        foreach(var i in m.Body.Instructions.Take(850)) {
+            var v=i.Operand?.ToString()??"";
+            o.AppendLine("IL\t"+i.Offset.ToString("X4")+"\t"+i.OpCode+"\t"+v.Replace("\r","\\r").Replace("\n","\\n").Replace("\t"," "));
+        }
+    }
+}
 o.AppendLine("\n# Localize-related types / methods");
 foreach(var t in types.Where(t=>Regex.IsMatch(t.FullName,@"localiz|translate|language|i18n|modhelper",RegexOptions.IgnoreCase)).Take(300))o.AppendLine("TYPE\t"+t.FullName+"\t"+string.Join(";",t.Methods.Select(m=>m.Name).Take(60)));
 o.AppendLine("\n# Localization key candidate summary");
