@@ -106,7 +106,7 @@ using(var verify=AssemblyDefinition.ReadAssembly(output)){
     audit.Add("Original-string matches remaining: "+remaining);
     audit.Add("Assembly readback: "+verify.Name.FullName);
 }
-var residualChinese = types.SelectMany(t=>t.Methods.Where(m=>m.HasBody).SelectMany(m=>m.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr && i.Operand is string z && Regex.IsMatch(z,@"[\\p{IsCJKUnifiedIdeographs}\\p{IsCJKCompatibilityIdeographs}]")).Select(i=>new { Method=m.FullName,Text=(string)i.Operand }))).ToList();
+var residualChinese = types.SelectMany(t=>t.Methods.Where(m=>m.HasBody).SelectMany(m=>m.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr && i.Operand is string z && Regex.IsMatch(z,@"[\p{IsCJKUnifiedIdeographs}\p{IsCJKCompatibilityIdeographs}]")).Select(i=>new { Method=m.FullName,Text=(string)i.Operand }))).ToList();
 audit.Add("Remaining CJK literal occurrences: "+residualChinese.Count);
 audit.Add("Remaining distinct CJK literals: "+residualChinese.Select(x=>x.Text).Distinct().Count());
 audit.Add("");
