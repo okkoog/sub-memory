@@ -60,7 +60,7 @@ foreach(var type in types)foreach(var method in type.Methods.Where(m=>m.HasBody)
         bool nearLT = false;
         // Most paired bilingual literals appear just before L.T(zh, en).
         for(int j=n+1;j<Math.Min(n+5,ins.Count);j++){
-            if(ins[j].OpCode is OpCodes.Call or OpCodes.Callvirt
+            if((ins[j].OpCode==OpCodes.Call || ins[j].OpCode==OpCodes.Callvirt)
                 && ins[j].Operand is MethodReference call
                 && call.DeclaringType.FullName=="CorpPresence.L" && call.Name=="T"){
                 nearLT=true;break;
