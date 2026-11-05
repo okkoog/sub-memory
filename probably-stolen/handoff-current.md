@@ -190,3 +190,12 @@ GitHub는 압축파일을 자동 해제하지 않으며 GitHub Actions에서 실
 5. 번역 적용 여부, 게임 로딩/방문객 성능, 세이브 호환성 확인. 후킹 복원 금지.
 
 **현재 완료 판정:** 사용자 테스트에서 **NoHooks 적용 후 방문객 지속 렉 해소 확인**. 전체 모드의 번역 복구 및 하드코딩 모드의 로컬 번역은 **아직 미완료**.
+
+
+## 2026-11-05 — CorpPresence NoHooks 일회성 배열 번역 시험 실패 (스캐너 차단)
+
+- 시험용 별도 DLL `probably-stolen/build/out/ProbablyStolenKoreanPack.NoHooks.CorpMenuTrial.dll` (**97,792바이트**)은 빌드되었지만 **게임 ModScanner가 사용을 거부함**. 사용 금지. 이 시험판을 '적용 성공'으로 보고하지 말 것.
+- 사용자가 제공한 스캐너 화면에는 `unlisted-reference: ProbablyStolenKoreanPack.dll -> references System.Private.CoreLib not listed in <Assemblies>` 및 `reflection-external` 위반(계산된 타입/어셈블리에 대한 `GetField`/`GetType`)이 표시됨. 실행 횟수가 1회인지 여부는 해당 정적 검사에 영향을 주지 않음.
+- Corp DLL 0.9.6 메타데이터에서 `CorpPresence.UI.MenuLabels.Chinese` / `English` 정적 문자열 배열과 이를 직접 반환하는 `MenuLabels.Get`을 확인했으나, 해당 정적 데이터에 대한 **현재 방식의 리플렉션 접근은 스캐너 제한에 부적합**.
+- 재검토 우선순위: 게임에서 허용하는 공식 ModHook/Localization 경로만 사용하는 접근. 다른 모드 DLL 수정은 사용자 별도 지시 전 금지.
+- **유효한 안정 기준은 이전 `ProbablyStolenKoreanPack.NoHooks.0.7.5.21-dev.dll`**. CorpMenuTrial 시험판으로 교체하지 말 것.
