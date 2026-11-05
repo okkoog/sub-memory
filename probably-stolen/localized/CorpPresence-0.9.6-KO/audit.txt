@@ -4,16 +4,17 @@ Input assembly: CorpPresence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n
 CSV translations: 2728
 Conflicting source mappings (supplemental precedence): 21
 No source mods or original Workshop files changed.
-Original-string matches remaining: 17
+Original-string matches remaining: 53
 Assembly readback: CorpPresence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-String literals examined: 5711
-Literals translated: 2873
-Chinese literals translated: 1645
-English literals translated: 1226
-L.T-associated translated literals: 1665
+String literals examined: 5605
+Literals translated: 2837
+Chinese literals translated: 1611
+English literals translated: 1224
+L.T-associated translated literals: 1663
 Skipped [identifier-risk]: 13
 Skipped [non-visible-literal]: 4
-Methods containing translated literals: 404
+Skipped [sensitive-method]: 59
+Methods containing translated literals: 386
 
 ## Sample mappings
 REPLACED: 统计库存失败： => 재고 집계 실패:
@@ -167,7 +168,6 @@ GameItem CorpPresence.Forge::BuildAnvil() : 18
 GameItem CorpPresence.Forge::BuildFurnace() : 6
 GameItem CorpPresence.Goods::Build(CorpPresence.ItemIdentity/Entry) : 5
 GameItem CorpPresence.Goods::Make(System.String) : 1
-GameItem CorpPresence.ItemRegistry::Create(System.String) : 2
 GameItem CorpPresence.MeridianCo::MakeRefurbished(System.String) : 1
 GameItem CorpPresence.PastelCo::GenuineHemingway(System.Boolean) : 1
 GameItem CorpPresence.SilverBlood::BuildReactor() : 6
@@ -194,8 +194,6 @@ System.Boolean CorpPresence.Engine::TryPlace(CorpPresence.Character,System.Strin
 System.Boolean CorpPresence.Goods::TryUseMask(PlayerStore) : 1
 System.Boolean CorpPresence.Hooks::BeforeActivateItem(GameItem) : 1
 System.Boolean CorpPresence.Hooks::BeforePurifierUsed(GameItem,GameItem) : 4
-System.Boolean CorpPresence.ItemRegistry::IsAvailable(System.String) : 2
-System.Boolean CorpPresence.ItemRegistry::Migrate(GameItem) : 1
 System.Boolean CorpPresence.Malice.Envoy::DebugGreet() : 6
 System.Boolean CorpPresence.Malice.RebelCo/<>c::<.cctor>b__28_0(CorpPresence.CatalogEntry) : 1
 System.Boolean CorpPresence.MeridianCo::PayForgeFee() : 1
@@ -211,10 +209,8 @@ System.Collections.Generic.Dictionary`2<System.String,CorpPresence.Goods/Def> Co
 System.Collections.Generic.IEnumerable`1<CorpPresence.CatalogEntry> CorpPresence.SpacerCo::PageEntries(System.String) : 1
 System.Collections.Generic.List`1<GameItem> CorpPresence.Services::FakesOwned() : 1
 System.Collections.Generic.List`1<GameItem> CorpPresence.Services::RefurbishCandidates() : 1
-System.Collections.Generic.List`1<ItemSpriteModifier> CorpPresence.RifleMods::Overlays(GameItem) : 1
 System.Collections.Generic.List`1<System.String> CorpPresence.SpacerCo::RollModBox() : 1
 System.Int32 CorpPresence.Character::CountHeld(System.Func`2<GameItem,System.Boolean>) : 1
-System.Int32 CorpPresence.Portraits::CurrentTier() : 1
 System.Int32 CorpPresence.Settings::get_AgentBudget() : 1
 System.Int32 CorpPresence.UI.CompanyWindow::LeviathanPrice() : 1
 System.String CorpPresence.CarmichaelCo::FakeReason(GameItem) : 6
@@ -273,7 +269,6 @@ System.String CorpPresence.PastelCo::get_DeskAsk() : 2
 System.String CorpPresence.PastelCo::get_DeskName() : 2
 System.String CorpPresence.PastelCo::get_FrontDeskDone() : 2
 System.String CorpPresence.PastelCo::get_Name() : 2
-System.String CorpPresence.Portraits::Ensure(System.String,System.String) : 1
 System.String CorpPresence.Rosen::get_Bye() : 2
 System.String CorpPresence.Rosen::get_Name() : 2
 System.String CorpPresence.Seline::get_Name() : 2
@@ -344,7 +339,6 @@ System.String[] CorpPresence.DavreCo::get_FrontDesk() : 4
 System.String[] CorpPresence.DavreCo::get_TierNames() : 6
 System.String[] CorpPresence.Doreen::get_Talk() : 6
 System.String[] CorpPresence.Isa::get_Talk() : 12
-System.String[] CorpPresence.ItemTags::Inherited(System.String) : 1
 System.String[] CorpPresence.Malice.EnvoyCo::get_FrontDesk() : 4
 System.String[] CorpPresence.Malice.EnvoyCo::get_TierNames() : 6
 System.String[] CorpPresence.Malice.RebelCo::get_FrontDesk() : 4
@@ -377,7 +371,6 @@ System.Void CorpPresence.CarmichaelCo::GrantLicense() : 1
 System.Void CorpPresence.CarmichaelCo::OnDayStart() : 4
 System.Void CorpPresence.CarmichaelCo::OnEndDay() : 8
 System.Void CorpPresence.CjkFallback::Tick() : 3
-System.Void CorpPresence.Cleanup::BeforeSave() : 5
 System.Void CorpPresence.CompanyVisitors/<>c__DisplayClass14_0::<PastelSeller>b__0() : 2
 System.Void CorpPresence.CompanyVisitors/<>c__DisplayClass18_0::<CreateDeliveryReceipt>b__1() : 1
 System.Void CorpPresence.CompanyVisitors::Deliver(CorpPresence.Company,CorpPresence.CompanyState,System.Collections.Generic.List`1<CorpPresence.Order>,System.Func`1<System.Boolean>) : 2
@@ -399,7 +392,6 @@ System.Void CorpPresence.Forge::BeforeButcherCuts(GameItem,System.Single&) : 1
 System.Void CorpPresence.Forge::Smelt(GameItem,GameSlotInventory,GameGridInventory,GameInventory,GameInventory) : 2
 System.Void CorpPresence.Forge::Strike(GameItem,GameSlotInventory,GameInventory,GameSlotInventory,GameInventory) : 10
 System.Void CorpPresence.Goods::.cctor() : 116
-System.Void CorpPresence.Goods::ApplyAppearance(GameItem,CorpPresence.ItemIdentity/Entry,CorpPresence.Goods/Def) : 2
 System.Void CorpPresence.Goods::OnDayStart() : 2
 System.Void CorpPresence.Goods::Redraw(GameItem) : 1
 System.Void CorpPresence.Goods::RefreshBattery(GameItem) : 1
@@ -417,15 +409,11 @@ System.Void CorpPresence.Hooks::AfterPhoneOpen() : 1
 System.Void CorpPresence.Hooks::BeforeEndDay() : 3
 System.Void CorpPresence.Hooks::BeforeHandleCall(System.Int64) : 1
 System.Void CorpPresence.Hooks::BeforeNextClient(PlayerStore) : 1
-System.Void CorpPresence.Hooks::BeforeSave() : 2
 System.Void CorpPresence.Hooks::Guard(System.String,System.Action) : 1
 System.Void CorpPresence.Hooks::Patch(HarmonyLib.Harmony,System.Reflection.MethodInfo,System.String,System.Type,System.String,System.String) : 2
 System.Void CorpPresence.Hooks::Patch(HarmonyLib.Harmony,System.String,System.Type,System.String,System.String,System.Type[]) : 2
 System.Void CorpPresence.Host::.ctor() : 1
 System.Void CorpPresence.Host::Report(System.String,System.Exception,System.Int32) : 1
-System.Void CorpPresence.ItemRegistry::BeforeDecode(System.Collections.Generic.List`1<SaveItemNode>) : 1
-System.Void CorpPresence.ItemRegistry::Register(ModItemDirectory) : 5
-System.Void CorpPresence.ItemTags::AfterDecode(GameItem) : 2
 System.Void CorpPresence.MachineUpgrade::Apply(GameItem,GameItem,System.String) : 9
 System.Void CorpPresence.MachineUpgrade::Resize(GameItem) : 1
 System.Void CorpPresence.Malice.Envoy::AcceptBomb() : 4
@@ -464,7 +452,6 @@ System.Void CorpPresence.Phone/<>c__DisplayClass16_0::<CallDialog>b__3() : 1
 System.Void CorpPresence.Phone::Activate(CorpPresence.Company) : 1
 System.Void CorpPresence.Phone::RegisterCurrent() : 1
 System.Void CorpPresence.Phone::WarnIfShunned(System.Int64) : 1
-System.Void CorpPresence.Portraits::Tick() : 4
 System.Void CorpPresence.RifleMods::Attach(GameItem) : 1
 System.Void CorpPresence.Rosen/<>c__DisplayClass45_0::<ForgeLesson>b__0() : 1
 System.Void CorpPresence.Services::AddCoop(CorpPresence.Company,System.Double,System.String) : 2
@@ -538,11 +525,7 @@ System.Void CorpPresence.UI.MenuLabels::.cctor() : 75
 System.Void CorpPresence.UI.Notebook/<>c__DisplayClass38_0::<Corner>b__0() : 1
 System.Void CorpPresence.UI.Notebook::Build(PhoneUIManager) : 3
 System.Void CorpPresence.Visit::.ctor() : 2
-UnityEngine.Sprite CorpPresence.Cards::VanillaCard() : 1
-UnityEngine.Sprite CorpPresence.Portraits::SpriteFor(SpriteDict,System.String,System.Int32) : 1
-UnityEngine.Texture2D CorpPresence.UI.Tex::Art(System.String,System.String) : 2
-UnityEngine.Texture2D CorpPresence.UI.Tex::FromSprite(UnityEngine.Sprite) : 2
 
 Input SHA256: 044627f6a9232691db6dbac38e509b676682cebed043b6cbd0ecc9b442935b81
-Output SHA256: adcafc05b3cb9440e8cdcf8ce3997b5a9786886a6af26b5b7665790926cf1f13
+Output SHA256: 890f7ec4830c75c9fdf7addd8b43a43540162f702718d4412eddfa1a4118a31a
 Output size: 6902272 bytes
