@@ -1,0 +1,29 @@
+machine_name,Self-Learning Reinforcer
+machine_desc,Advances self-learning modules inside this machine each night.
+tooltip_note,"Higher efficiency lowers power draw; every {0}% quality grants 1 extra advance; higher performance raises the chance for a module to gain the Learning Algorithm trait."
+note_title,Instructions: {0}
+note_short,"· Power slot: insert a battery.\n· Module bay: insert modules; modules can gain the Learning Algorithm trait.\n· Note slot: this sheet can be removed and read anytime.\n· Footprint 3x3; place it in a machine bay and connect power."
+note_flavor,"[Module effects]\nEfficiency: higher efficiency lowers power draw\nQuality: +1 extra advance per {0}%\nPerformance: higher performance raises the chance for modules without the trait to gain it\n\n[Note]\nOnly modules with the Learning Algorithm trait are advanced, capped by that module's learning limit.\n[Learning Algorithm acquisition]\nConditions: 1. not a NODE; 2. no Learning Algorithm; 3. fewer than 2 effects; 4. the first effect is not {3}, {4}, {5}, {6}, or {7}; 5. only {11}, {12}, {13}, {14}, {15}, and {16}, plus compatible modules with MODULE_TAG; {1}, {2}, {9}, {10} are excluded."
+training_preview,Tonight's training: {0}
+night_log,{0}: Advanced {1} modules
+learning_gain,{0} gained the Learning Algorithm trait
+settings_section_advance,Advances
+settings_section_scale,Conversion
+settings_base_advances,Base advances
+settings_base_advances_tip,Base advances per night (range 2-10, default 2)
+settings_power_cap,Power cap
+settings_power_cap_tip,Maximum power drained per night at low efficiency
+settings_performance_scale,Performance conversion (%)
+settings_performance_scale_tip,Multiplier for performance affecting Learning Algorithm grant chance; 100 = normal
+settings_efficiency_scale,Efficiency conversion (%)
+settings_efficiency_scale_tip,Multiplier for efficiency affecting power draw; 100 = normal
+settings_quality_scale,Quality conversion (%)
+settings_quality_scale_tip,Multiplier for quality affecting extra advances; 100 = normal
+settings_quality_per_advance,Quality-to-advance conversion (lower is faster)
+settings_quality_per_advance_tip,Every X% quality grants 1 extra learning advance (range 10-200, default 50%)
+settings_learning_only_at_night,Only grant Learning Algorithm overnight
+settings_learning_only_at_night_tip,On: turbo booster cannot grant the trait; Off: turbo booster can grant it
+learning_cap_preview,{0}/{1} module(s) expected to improve; {2} module(s) may gain the trait
+settings_section_power,Power
+settings_base_power,Base power
+settings_base_power_tip,Base power used by the vanilla formula (range 1-100, default 10)

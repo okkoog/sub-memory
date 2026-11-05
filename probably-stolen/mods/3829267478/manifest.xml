@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod>
+  <ID>bargain_panel_left</ID>
+  <Name>Bargain Panel On The Left</Name>
+  <Author>Smash</Author>
+  <ModVersion>1.1.0</ModVersion>
+  <Description>Moves the haggling / markup popup from the right side of the negotiation tablet to the left, mirrors its chrome, keeps the tablet decoration on the right, and adds a close button to the panel.</Description>
+
+  <GameVersions>
+    <Version>0.46</Version>
+  </GameVersions>
+
+  <Assemblies>
+    <Assembly>BargainPanelLeft.dll</Assembly>
+  </Assemblies>
+
+  <!-- Empty on purpose: the mod scanner only flags specific BCL / engine calls
+       (file I/O, network, process, dynamic code, native, external reflection).
+       Harmony patching, Unity object creation and calling public game API are
+       not capability-gated. Do NOT ship 0Harmony.dll here: duplicating a game
+       assembly name trips the "bundled-framework" hard flag. -->
+  <Capabilities />
+</Mod>

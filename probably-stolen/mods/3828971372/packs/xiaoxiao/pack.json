@@ -1,0 +1,59 @@
+{
+  "format": "portrait-pack/1",
+  "id": "xiaoxiao",
+  "name": "深空娘化 · 小小",
+  "author": "啊啊啊~哈稽道人 / PortraitRuntime",
+  "license": "CC-BY-NC-4.0",
+  "gameBuild": "26337366",
+  "priority": 80,
+  "portraitCanvas": [
+    1086,
+    1448
+  ],
+  "characters": {
+    "xiaoxiao": {
+      "identifiers": [
+        "xiaoxiao.guide",
+        "xiaoxiao.buyer"
+      ],
+      "base": "portraits/xiaoxiao/06-shopping.png",
+      "variants": {
+        "01-welcome": "portraits/xiaoxiao/01-welcome.png",
+        "02-explain": "portraits/xiaoxiao/02-explain.png",
+        "03-confirm": "portraits/xiaoxiao/03-confirm.png",
+        "04-invitation": "portraits/xiaoxiao/04-invitation.png",
+        "05-entry-calm": "portraits/xiaoxiao/05-entry-calm.png",
+        "06-shopping": "portraits/xiaoxiao/06-shopping.png",
+        "07-good-find": "portraits/xiaoxiao/07-good-find.png",
+        "08-delighted": "portraits/xiaoxiao/08-delighted.png",
+        "10-displeased": "portraits/xiaoxiao/10-displeased.png",
+        "11-angry": "portraits/xiaoxiao/11-angry.png",
+        "12-thinking": "portraits/xiaoxiao/12-thinking.png",
+        "13-farewell": "portraits/xiaoxiao/13-farewell.png",
+        "mood:平静": "portraits/xiaoxiao/05-entry-calm.png",
+        "mood:开心_原图": "portraits/xiaoxiao/06-shopping.png",
+        "mood:好货": "portraits/xiaoxiao/07-good-find.png",
+        "mood:欢喜": "portraits/xiaoxiao/08-delighted.png",
+        "mood:不开心": "portraits/xiaoxiao/10-displeased.png",
+        "mood:愤怒": "portraits/xiaoxiao/11-angry.png",
+        "mood:思考": "portraits/xiaoxiao/12-thinking.png",
+        "mood:告别": "portraits/xiaoxiao/13-farewell.png"
+      }
+    }
+  },
+  "items": {
+    "xiaoxiao.seal-dumpling": {
+      "create": true,
+      "name": "海豹团子",
+      "description": "小小送给你的礼物。摆放在橱窗中，可使小小每日到店的概率提高一倍。",
+      "icon": "items/seal-gift.png",
+      "filter": "point",
+      "grid": [
+        3,
+        2
+      ],
+      "value": 3500,
+      "tags": []
+    }
+  }
+}

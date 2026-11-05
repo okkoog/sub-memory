@@ -1,0 +1,114 @@
+{
+  "//": "★ 委托单·纸面。assets/books/*.json 由 ModLoader 读 Mods\\GameCardPK\\Books\\，只负责「摊开的委托单」显示数据（PaperBookData），**不含 item 块** —— 委托单本体是 special_items.json 的 commission_letter 普通物品，双击打开这张纸由 CommissionItem.Attach 挂激活委托（fullId = game_card_pk:commission_letter）。",
+  "//dynamic": "所有 text 都留空，运行时由 CommissionItem 读物品标签后用 PaperUI.SetText(elementId, ...) 填：reward / req1~req4 / footer。★ 2026-11-05 起**不显示委托档位**（档位是内部定义，玩家只看报酬与要求），所以没有 tier 元素。元素 id 是**接口**，改动前先看 CommissionItem。",
+  "//background": "纸面背景 = assets/icons/commission_letter_paper.png（占位图，之后换正式美术即可，只改文件名）。`modId:文件名` 由 PaperAssets.FromMod 去 Mods\\GameCardPK\\Textures\\Items 里取（文件名不含 .png）。不写 width/height ⇒ 显示尺寸 = 背景图尺寸 × 2（320×420 → 640×840）。",
+  "//chrome": "坐标写在 design 空间（= 背景图 320×420，左上原点）。关闭按钮复用手册那套 paper_btn_close。",
+  "id": "commission_letter",
+  "title": "委托单",
+  "background": "game_card_pk:commission_letter_paper",
+  "sounds": true,
+  "draggable": true,
+  "zoomable": false,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "sprite": "game_card_pk:paper_btn_close",
+      "x": 296,
+      "y": 14,
+      "w": 16,
+      "h": 16
+    }
+  ],
+  "pages": [
+    {
+      "name": "委托",
+      "elements": [
+        {
+          "id": "title",
+          "x": 26,
+          "y": 22,
+          "w": 240,
+          "h": 34,
+          "text": "",
+          "style": "serif_title",
+          "align": "center"
+        },
+        {
+          "id": "reward",
+          "x": 26,
+          "y": 62,
+          "w": 268,
+          "h": 18,
+          "text": "",
+          "style": "label"
+        },
+        {
+          "id": "sect",
+          "x": 26,
+          "y": 94,
+          "w": 268,
+          "h": 20,
+          "text": "委托要求",
+          "style": "section"
+        },
+        {
+          "id": "req1",
+          "x": 34,
+          "y": 122,
+          "w": 252,
+          "h": 24,
+          "text": "",
+          "style": "body"
+        },
+        {
+          "id": "req2",
+          "x": 34,
+          "y": 150,
+          "w": 252,
+          "h": 24,
+          "text": "",
+          "style": "body"
+        },
+        {
+          "id": "req3",
+          "x": 34,
+          "y": 178,
+          "w": 252,
+          "h": 24,
+          "text": "",
+          "style": "body"
+        },
+        {
+          "id": "req4",
+          "x": 34,
+          "y": 206,
+          "w": 252,
+          "h": 24,
+          "text": "",
+          "style": "body"
+        },
+        {
+          "id": "sect2",
+          "x": 26,
+          "y": 276,
+          "w": 268,
+          "h": 20,
+          "text": "交付",
+          "style": "section"
+        },
+        {
+          "id": "footer",
+          "x": 34,
+          "y": 304,
+          "w": 252,
+          "h": 96,
+          "text": "",
+          "style": "body",
+          "autoHeight": true
+        }
+      ]
+    }
+  ]
+}
