@@ -51,7 +51,7 @@ Matching lines: 10; displayed context lines: 56
 82: 		_runtime.Own(Noop, InputShield.Destroy);
 83: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
 84: 		_runtime.Own(CreateHost, DestroyHost);
-85: 		ModLog.Info("公司增强 0.9.5fix 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
+85: 		ModLog.Info("公司增强 0.9.6 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
 86: 	}
 87: 
 88: 	public void OnDisable()
@@ -76,83 +76,83 @@ Matching lines: 14; displayed context lines: 78
 11: {
 12: 	private static AsyncOperationHandle&lt;StringTable&gt; _mechanic;
 13: 
-14: 	private static string _startupLocale;
+14: 	private static string _requestedLocale;
 15: 
-16: 	private static string _requestedLocale;
+16: 	private static long _generation;
 17: 
-18: 	private static long _generation;
+18: 	public static bool Ready { get; private set; }
 19: 
-20: 	public static bool Ready { get; private set; }
-32: 		//IL_0017: Unknown result type (might be due to invalid IL or missing references)
-33: 		Ready = false;
-34: 		_startupLocale = null;
-35: 		_requestedLocale = null;
-36: 		_mechanic = default(AsyncOperationHandle&lt;StringTable&gt;);
-37: 	}
-38: 
-39: 	public static bool Poll()
-40: 	{
-41: 		//IL_0009: Unknown result type (might be due to invalid IL or missing references)
-42: 		//IL_000e: Unknown result type (might be due to invalid IL or missing references)
-43: 		//IL_0025: Unknown result type (might be due to invalid IL or missing references)
-44: 		//IL_002b: Invalid comparison between Unknown and I4
-55: 		{
-56: 			return true;
-57: 		}
-58: 		AsyncOperationHandle&lt;LocalizationSettings&gt; initializationOperation = LocalizationSettings.InitializationOperation;
-59: 		if (!initializationOperation.IsValid() || !initializationOperation.IsDone)
-60: 		{
-61: 			return false;
-62: 		}
-63: 		if ((int)initializationOperation.Status != 1)
-64: 		{
-65: 			throw new InvalidOperationException("本地化系统初始化失败", initializationOperation.OperationException);
-66: 		}
-67: 		Locale selectedLocale = LocalizationSettings.SelectedLocale;
-68: 		if ((Object)(object)selectedLocale == (Object)null)
-69: 		{
-70: 			return false;
-71: 		}
-76: 			return false;
-77: 		}
-78: 		if (_requestedLocale != text)
-79: 		{
-80: 			_mechanic = ((LocalizedDatabase&lt;StringTable, StringTableEntry&gt;)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), selectedLocale);
-81: 			_requestedLocale = text;
-82: 		}
-83: 		if (!_mechanic.IsValid())
-84: 		{
-85: 			throw new InvalidOperationException("Mechanic 表句柄失效，停止公司初始化");
-86: 		}
-87: 		if (!_mechanic.IsDone)
-88: 		{
-89: 			return false;
-90: 		}
-91: 		if ((int)_mechanic.Status != 1 || (Object)(object)_mechanic.Result == (Object)null)
-92: 		{
-93: 			throw new InvalidOperationException("Mechanic 表加载失败", _mechanic.OperationException);
-94: 		}
-95: 		val = ((LocalizationTable)_mechanic.Result).LocaleIdentifier;
-96: 		if (((LocaleIdentifier)(ref val)).Code != text)
-97: 		{
-98: 			throw new InvalidOperationException("Mechanic 表语言与游戏启动语言不符");
-99: 		}
-100: 		if (((DetailedLocalizationTable&lt;StringTableEntry&gt;)(object)_mechanic.Result).GetEntry("mech_condition_pure_water") == null)
-101: 		{
-102: 			throw new InvalidOperationException("Mechanic 表缺少 mech_condition_pure_water");
-103: 		}
-104: 		Ready = true;
-105: 		return true;
-106: 	}
-107: 
-108: 	private static string ResolveMenuStartupLocale()
-109: 	{
-110: 		return LocHelper.ResolveStartupLocale() switch
+20: 	public static long Generation =&gt; _generation;
+29: 	{
+30: 		//IL_0011: Unknown result type (might be due to invalid IL or missing references)
+31: 		Ready = false;
+32: 		_requestedLocale = null;
+33: 		_mechanic = default(AsyncOperationHandle&lt;StringTable&gt;);
+34: 	}
+35: 
+36: 	public static bool Poll()
+37: 	{
+38: 		//IL_0009: Unknown result type (might be due to invalid IL or missing references)
+39: 		//IL_000e: Unknown result type (might be due to invalid IL or missing references)
+40: 		//IL_0025: Unknown result type (might be due to invalid IL or missing references)
+41: 		//IL_002b: Invalid comparison between Unknown and I4
+52: 		{
+53: 			return true;
+54: 		}
+55: 		AsyncOperationHandle&lt;LocalizationSettings&gt; initializationOperation = LocalizationSettings.InitializationOperation;
+56: 		if (!initializationOperation.IsValid() || !initializationOperation.IsDone)
+57: 		{
+58: 			return false;
+59: 		}
+60: 		if ((int)initializationOperation.Status != 1)
+61: 		{
+62: 			throw new InvalidOperationException("本地化系统初始化失败", initializationOperation.OperationException);
+63: 		}
+64: 		Locale selectedLocale = LocalizationSettings.SelectedLocale;
+65: 		if ((Object)(object)selectedLocale == (Object)null)
+66: 		{
+67: 			return false;
+68: 		}
+73: 			return false;
+74: 		}
+75: 		if (_requestedLocale != text)
+76: 		{
+77: 			_mechanic = ((LocalizedDatabase&lt;StringTable, StringTableEntry&gt;)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), selectedLocale);
+78: 			_requestedLocale = text;
+79: 		}
+80: 		if (!_mechanic.IsValid())
+81: 		{
+82: 			throw new InvalidOperationException("Mechanic 表句柄失效，停止公司初始化");
+83: 		}
+84: 		if (!_mechanic.IsDone)
+85: 		{
+86: 			return false;
+87: 		}
+88: 		if ((int)_mechanic.Status != 1 || (Object)(object)_mechanic.Result == (Object)null)
+89: 		{
+90: 			throw new InvalidOperationException("Mechanic 表加载失败", _mechanic.OperationException);
+91: 		}
+92: 		val = ((LocalizationTable)_mechanic.Result).LocaleIdentifier;
+93: 		if (((LocaleIdentifier)(ref val)).Code != text)
+94: 		{
+95: 			throw new InvalidOperationException("Mechanic 表语言与游戏启动语言不符");
+96: 		}
+97: 		if (((DetailedLocalizationTable&lt;StringTableEntry&gt;)(object)_mechanic.Result).GetEntry("mech_condition_pure_water") == null)
+98: 		{
+99: 			throw new InvalidOperationException("Mechanic 表缺少 mech_condition_pure_water");
+100: 		}
+101: 		Ready = true;
+102: 		return true;
+103: 	}
+104: 
+105: 	private static string ResolveMenuStartupLocale()
+106: 	{
+107: 		return LocHelper.ResolveStartupLocale() switch
 ```
 
 ## CorpPresence/Hooks.cs
 
-Matching lines: 83; displayed context lines: 228
+Matching lines: 80; displayed context lines: 212
 
 ```text
 16: 	private static string _reportedId;
@@ -167,7 +167,7 @@ Matching lines: 83; displayed context lines: 228
 25: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeof(ItemTags), null, "AfterDecode", new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
 26: 		Patch&lt;SaveManager&gt;(h, "EncodeNode", typeFromHandle2, "BeforeEncode", null, new Type[1] { typeof(GameItem) });
 27: 		Patch&lt;PlayerStore&gt;(h, "SaveGame", typeFromHandle, "BeforeSave");
-28: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, null, "ResetState");
+28: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, null, "AfterLoadGame");
 29: 		Patch&lt;PlayerStore&gt;(h, "StartNewGame", typeFromHandle, null, "ResetState");
 30: 	}
 31: 
@@ -314,75 +314,59 @@ Matching lines: 83; displayed context lines: 228
 172: 			throw new InvalidOperationException("液体补丁资源尚未就绪");
 173: 		}
 174: 		InstallGameplay(h);
-175: 		Patch&lt;WaterFeatureHelper&gt;(h, "UpdateWaterFeature", typeof(SilverBlood), null, "AfterUpdateWaterFeature", new Type[2]
-176: 		{
-177: 			typeof(GameItem),
-178: 			typeof(bool)
-179: 		});
-180: 		Patch&lt;WaterFeatureHelper&gt;(h, "OnLiquidChanged", typeof(SilverBlood), null, "AfterLiquidChanged", new Type[2]
-181: 		{
-182: 			typeof(GameItem),
-183: 			typeof(bool)
-184: 		});
-185: 		Patch&lt;WaterFeatureHelper&gt;(h, "OnLiquidContainerPourInto", typeof(SilverBlood), null, "AfterPourInto", new Type[3]
-186: 		{
-187: 			typeof(GameItem),
-188: 			typeof(GameItem),
-189: 			typeof(bool)
-190: 		});
+175: 	}
+176: 
+177: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
+178: 	{
+179: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
+180: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
+181: 		Type[] array = args ?? Type.EmptyTypes;
+182: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
+183: 		if (methodInfo == null)
+184: 		{
+185: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
+186: 		}
+187: 		else
+188: 		{
+189: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
+190: 		}
 191: 	}
 192: 
-193: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
+193: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
 194: 	{
-195: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
-196: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
-197: 		Type[] array = args ?? Type.EmptyTypes;
-198: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
-199: 		if (methodInfo == null)
-200: 		{
-201: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
-202: 		}
-203: 		else
-204: 		{
-205: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
-206: 		}
-207: 	}
-208: 
-209: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
-210: 	{
-211: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
-212: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
-213: 		if (original == null)
-214: 		{
-215: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
+195: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
+196: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
+197: 		if (original == null)
+198: 		{
+199: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
+200: 		}
+201: 		else
+202: 		{
+203: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
+204: 		}
+205: 	}
+206: 
+207: 	public static void InstallEvents()
+208: 	{
+209: 		if (_nightly == null)
+210: 		{
+211: 			_nightly = delegate
+212: 			{
+213: 				Guard("每晚服务", Services.OnNightlyServices);
+214: 			};
+215: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
 216: 		}
-217: 		else
-218: 		{
-219: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
-220: 		}
-221: 	}
-222: 
-223: 	public static void InstallEvents()
-224: 	{
-225: 		if (_nightly == null)
-226: 		{
-227: 			_nightly = delegate
-228: 			{
-229: 				Guard("每晚服务", Services.OnNightlyServices);
-230: 			};
-231: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
-232: 		}
-233: 	}
-234: 
-235: 	public static void UninstallEvents()
-236: 	{
-237: 		if (_nightly != null)
-238: 		{
-239: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
-240: 			_nightly = null;
-241: 		}
-242: 	}
-243: 
+217: 	}
+218: 
+219: 	public static void UninstallEvents()
+220: 	{
+221: 		if (_nightly != null)
+222: 		{
+223: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
+224: 			_nightly = null;
+225: 		}
+226: 	}
+227: 
 ```
 
 ## CorpPresence/L.cs
