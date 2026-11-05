@@ -3,7 +3,7 @@ using Mono.Cecil.Cil;
 using System.Text;
 using System.Text.RegularExpressions;
 
-if(args.Length!=2) throw new Exception("Expected dll and report");
+if(args.Length!=2 && args.Length!=4) throw new Exception("Expected dll and report, optionally existing CSV and missing report");
 var dll=args[0]; var report=args[1];
 var asm=AssemblyDefinition.ReadAssembly(dll,new ReaderParameters{ReadingMode=ReadingMode.Immediate});
 var types=asm.MainModule.Types.SelectMany(AllTypes).ToList();
@@ -67,6 +67,22 @@ o.AppendLine($"Calls: {hits}; candidate distinct strings: {stringCandidates.Coun
 foreach(var (s,uses) in stringCandidates.OrderBy(k=>k.Key,StringComparer.Ordinal)){
     string encoded=Convert.ToBase64String(Encoding.UTF8.GetBytes(s)).TrimEnd('=').Replace('+','-').Replace('/','_');
     o.AppendLine("KEY\t"+encoded+"\t"+s.Replace("\r","\\r").Replace("\n","\\n").Replace("\t","\\t").Substring(0,Math.Min(s.Length,250))+"\t"+string.Join(" | ",uses));
+}
+if(args.Length>=4){
+    var existing=File.ReadLines(args[2],Encoding.UTF8).Select(x=>x.TrimStart('\uFEFF').Split(',',2)[0]).ToHashSet(StringComparer.Ordinal);
+    var chinese=types.SelectMany(t=>t.Methods.Where(m=>m.HasBody).SelectMany(m=>m.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string z&&Regex.IsMatch(z,@"\p{IsCJKUnifiedIdeographs}")).Select(i=>new {Method=m.FullName,Text=(string)i.Operand}))).GroupBy(x=>x.Text).OrderBy(x=>x.Key,StringComparer.Ordinal).ToList();
+    var u=new StringBuilder("# Uncovered AiEmporium Chinese IL literals; original S64 CSV comparison\n");
+    int missing=0;
+    foreach(var group in chinese){
+        var key="S64|"+Convert.ToBase64String(Encoding.UTF8.GetBytes(group.Key)).TrimEnd('=').Replace('+','-').Replace('/','_');
+        if(existing.Contains(key))continue;
+        missing++;
+        u.AppendLine(key+"\t"+group.Key.Replace("\r","\\r").Replace("\n","\\n").Replace("\t"," " )+"\t"+group.First().Method);
+    }
+    u.Insert(0,$"# Distinct Chinese IL strings: {chinese.Count}; missing from existing CSV: {missing}\n");
+    Directory.CreateDirectory(Path.GetDirectoryName(args[3])!);
+    File.WriteAllText(args[3],u.ToString(),Encoding.UTF8);
+    Console.WriteLine($"Uncovered Chinese IL strings: {missing}/{chinese.Count}");
 }
 Directory.CreateDirectory(Path.GetDirectoryName(report)!);
 File.WriteAllText(report,o.ToString(),Encoding.UTF8);
