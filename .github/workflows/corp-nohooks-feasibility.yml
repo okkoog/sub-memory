@@ -1,0 +1,32 @@
+name: Corp NoHooks feasibility metadata
+on:
+  push:
+    paths:
+      - "probably-stolen/tools/nohooks/CorpMetadataAudit.*"
+      - ".github/workflows/corp-nohooks-feasibility.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Extract Corp runtime metadata
+        run: |
+          mkdir -p probably-stolen/analysis
+          dotnet run --project probably-stolen/tools/nohooks/CorpMetadataAudit.csproj --configuration Release -- probably-stolen/mods/3828913695/CorpPresence.dll probably-stolen/analysis/CorpPresence-0.9.6-nohooks-metadata.md
+      - name: Publish metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: CorpPresence-NoHooks-Metadata
+          path: probably-stolen/analysis/CorpPresence-0.9.6-nohooks-metadata.md
+      - name: Commit metadata
+        run: |
+          git add probably-stolen/analysis/CorpPresence-0.9.6-nohooks-metadata.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --cached --quiet || (git commit -m "Audit Corp 0.9.6 one-time translation data carriers" && git pull --rebase origin main && git push origin HEAD:main)
