@@ -1,0 +1,126 @@
+﻿# 堆叠收纳（ItemStorage）简体中文文本表
+# 官方本地化格式：每行 `键,文本`，UTF-8 无表头，# 开头为注释行。
+# 键名以 is_ 前缀命名空间，发布后固定不改；译文缺行时回退 en.csv（内容同为中文）。
+
+# ===== 设置面板 =====
+is_cfg_debug_name,输出调试日志
+is_cfg_debug_desc,输出 MOD 运行细节，排查问题时开启。
+is_cfg_slot_limit_name,每格数量上限
+is_cfg_slot_limit_desc,"收纳箱单格最多存放的物品数量，允许范围 20-999，超出按边界处理。改动立即对全部收纳箱生效；已经存入格子的数量不会被削减或拆分（超过上限的格子视为已满，无法再放入），整理与箱间联动照常搬运。提示：设为 999 等较大数值时，格内数量将显示为三位数，界面排版可能不如默认值美观。"
+
+# ===== 物品与通用提示 =====
+is_item_box_name,收纳箱
+is_msg_not_owned,请先购买后再操作
+
+# ===== 存入拒绝（BoxTransfer）=====
+is_msg_store_not_owned,请先购买后再存
+is_msg_store_mod_missing,该物品所属模组未加载，无法存入
+is_msg_store_collectible,藏品受深空装机保管保护，无法存入收纳箱
+is_msg_store_mod_item,模组类物品请勿存进收纳箱
+is_msg_store_crate,物资箱请先刷开清空再存
+is_msg_store_node,节点类物品请勿存进收纳箱
+is_msg_store_stash,储藏装置请勿放进收纳箱
+is_msg_store_machine,机器请勿存进收纳箱
+is_msg_store_toolbox,工具箱请勿收进收纳箱
+is_msg_store_stolen,赃物请勿存进收纳箱
+is_msg_store_brewing,酿造中或陈酿的酒不能存
+is_msg_store_liquid,含水容器请拖到面板格子存放
+is_msg_store_not_empty,物品内部还放着东西，请先清空再存
+is_msg_bottle_merge,水瓶只能并进同规格的空瓶格或水瓶格
+is_msg_box_full,收纳箱满了
+is_space_short_counter,柜台空间不足
+is_space_short_box,箱子所在空间不足
+is_msg_withdraw_out_store,店外无法取出到柜台，请回到店内再取
+is_msg_keep_one_on,已开启至少留一件，最后一件留在箱内
+is_msg_withdraw_mod_missing,该物品所属模组未加载，暂时无法取出
+
+# ===== 存入 / 取出结果（StoragePatch、BoxWindow）=====
+is_msg_withdraw_denied,{0}，无法取出物品
+is_msg_withdraw_partial,{0}，未能完全取出物品
+is_msg_deposit_partial,已存入 {0} 件，{1} 件未能存入
+is_msg_deposit_done,已存入 {0} 件
+is_msg_deposit_failed,未能存入 {0} 件
+
+# ===== 单箱收纳（AutoStow）=====
+is_msg_stow_in_store,请回到店内再收纳
+is_msg_stow_nothing,没有可收纳的物品
+is_msg_stow_done,已收进 {0} 件
+is_msg_stow_box_full,箱子已装满 16 格，先取出一些再收纳
+
+# ===== 全箱收纳（BoxStowAll）=====
+is_msg_allstow_in_store,请回到店内再收纳
+is_msg_allstow_nothing,没有可收纳的物品
+is_msg_allstow_done,已收进 {0} 件，分派到各收纳箱
+is_msg_allstow_all_full,所有收纳箱都装满了，先取出一些再收纳
+
+# ===== 上货（BoxRestock）=====
+is_msg_restock_no_box,没有可用的收纳箱
+is_msg_restock_none_enabled,所有收纳箱均设为不参与全箱上架
+is_msg_restock_busy,上货进行中，请稍候
+is_msg_restock_in_store,请回到店内再上货
+is_msg_restock_need_customer,必须有顾客在场时才能一键上货
+is_msg_restock_not_shopping,该顾客不是来购物的，不支持一键上货
+is_msg_restock_no_budget,该顾客没有预算，不支持一键上货
+is_msg_restock_counter_not_ready,柜台未就绪，无法上货
+is_msg_restock_no_interest,没有顾客感兴趣的物品可上货
+is_msg_restock_customer_left,顾客已离场，上货中止（已上 {0} 件）
+is_msg_restock_counter_full,柜台已满，自动上货 {0} 件
+is_msg_restock_budget_capped,已达顾客最高预算，自动上货 {0} 件
+is_msg_restock_done,自动上货 {0} 件
+is_msg_restock_cannot,柜台已满，无法上货
+is_msg_restock_cannot_afford,顾客预算不足，买不起箱中任何物品
+
+# ===== 箱窗（BoxWindow）=====
+is_btn_stow_one,一键收纳
+is_btn_stow_all,全箱收纳
+is_btn_restock_all,全箱上货
+is_btn_restock_one,一键上货
+is_msg_tidy_done,已整理：挪动 {0} 件
+is_msg_tidy_stuck,目前顺序已经无法整理了
+is_win_empty_slot,空
+is_win_usage_hint,拖动物品到收纳箱上或拖入格子中可以存入物品，左键取出1件，右键取出5件；含水容器只能通过拖入格子放入，一键收纳不会收纳含水容器，同规格不同水质的水瓶可以混合存放，请注意避免不希望发生的水质混合。
+
+# ===== 齿轮面板（GearPanel）=====
+is_gp_col_keybind,快捷键
+is_gp_col_toggle,开关
+is_gp_hide_name,隐藏名字
+is_gp_bind_stow_none,一键收纳:点击绑定
+is_gp_bind_stow_fmt,一键收纳:{0}
+is_gp_bind_restock_none,一键上货:点击绑定
+is_gp_bind_restock_fmt,一键上货:{0}
+is_gp_bind_allstow_none,全箱收纳:点击绑定
+is_gp_bind_allstow_fmt,全箱收纳:{0}
+is_gp_bind_allrestock_none,全箱上货:点击绑定
+is_gp_bind_allrestock_fmt,全箱上货:{0}
+is_gp_click_to_bind,点击绑定
+is_gp_settings,设置
+is_gp_settings_fmt,{0}·设置
+is_gp_pull,吸纳同类
+is_gp_guard,禁止被吸纳
+is_gp_restock_guard,不参与全箱上架
+is_gp_keep_one,至少留一件
+is_gp_capturing,按键绑定中，Esc取消
+is_gp_bind_fail,快捷键绑定失败：{0}
+is_gp_conflict_own_stow,该键已被本箱一键收纳占用
+is_gp_conflict_own_restock,该键已被本箱一键上货占用
+is_gp_conflict_stow,该键已被一键收纳占用
+is_gp_conflict_restock,该键已被一键上货占用
+is_gp_conflict_allstow,该键已被全箱收纳占用
+is_gp_conflict_allrestock,该键已被全箱上货占用
+is_gp_unbound_stow,一键收纳快捷键已解除绑定
+is_gp_unbound_restock,一键上货快捷键已解除绑定
+is_gp_unbound_allstow,全箱收纳快捷键已解除绑定
+is_gp_unbound_allrestock,全箱上货快捷键已解除绑定
+
+# ===== 物品 tooltip（BoxTooltip）=====
+is_tip_battery,电量：{0} kJ
+is_tip_durability,耐久：{0}
+is_tip_uses,次数：{0}
+is_tip_water_total,（总计{0}）
+is_tip_value,价值：{0}
+is_tip_locked,已锁定，不参与自动上货
+
+# ===== 槽位锁定（SlotLock）=====
+is_msg_lock_empty,空格子无法锁定，请先放入物品
+is_msg_lock_on,{0} 将不参与自动上货
+is_msg_lock_off,{0} 重新参与自动上货

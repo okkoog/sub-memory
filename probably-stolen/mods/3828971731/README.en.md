@@ -1,11 +1,10 @@
-# Faction Reputation Expansion v1.4.1
+# Faction Reputation Expansion v1.4.2
 
 ## Update notes
 
-- Added a configurable daily trade reputation cap. The default value of 6 preserves the original stage-based limits.
-- Fixed possible Newborn Core icon errors in the mod manager or during scene changes.
-- Fixed effects that could prevent commission rewards from being claimed.
-- Fixed stale localization caches when switching between Chinese and English.
+- Fixed a bug where localization was not ready during startup.
+- Fixed a bug where a null customer portrait could interrupt customer spawning.
+- Added stable native localization keys plus external language CSVs.
 
 ## Installation
 
@@ -15,7 +14,7 @@ For local installation, close the game and copy the entire `FactionReputationExp
 
 ## Updating and transferring saves
 
-Back up your vanilla saves and the `FactionReputationExpansion` folder beside them. Close the game before replacing release files, or let Steam download the Workshop update. Keep your saves and the side folder.
+Back up your vanilla saves and the `FactionReputationExpansion` folder beside them. Close the game before replacing release files, or let Steam download the Workshop update. Keep your saves and the side folder. Back up and retain custom language files too; see `LOCALIZATION.md` for translation instructions.
 
 Extended progress is stored both in a mod payload inside the vanilla save and in the side folder. Before moving computers, update the mod on both machines, load and save normally on the computer with the correct progress, then exit and let Steam Cloud finish syncing before loading on the other machine. Older saves not yet saved with the new format require both the vanilla saves and the side folder. Copying mod files alone does not transfer progress.
 

@@ -1,4 +1,4 @@
-AI Emporium localization — v1.3.14
+AI Emporium localization — v1.3.17
 =================================
 
 FOR TRANSLATORS

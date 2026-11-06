@@ -8,22 +8,19 @@ training_preview,当晚训练：{0} 次
 night_log,{0}：推进了 {1} 个模组
 learning_gain,{0} 获得了「自学习算法」
 settings_section_advance,结算
-settings_section_scale,转化比例
 settings_base_advances,基础推进次数
 settings_base_advances_tip,每晚基础推进次数（范围 2–10，默认 2）
-settings_power_cap,耗电上限
-settings_power_cap_tip,效率很低时每晚最多扣多少电
-settings_performance_scale,性能转化比例（%）
-settings_performance_scale_tip,性能影响「获得自学习词条概率」的倍率；100 = 原值
-settings_efficiency_scale,效率转化比例（%）
-settings_efficiency_scale_tip,效率影响耗电的倍率；100 = 原值
-settings_quality_scale,质量转化比例（%）
-settings_quality_scale_tip,质量影响额外推进次数的倍率；100 = 原值
 settings_quality_per_advance,质量转化学习次数效率（越低越快）
 settings_quality_per_advance_tip,质量每 X% 增加 1 次学习次数（范围 10–200，默认 50%）
 settings_learning_only_at_night,只在过夜时添加「自学习算法」
-settings_learning_only_at_night_tip,开启后涡轮增压器不再授予词条；关闭则允许涡轮授予
-learning_cap_preview,预计提升 {0} /{1} 个模组，{2}个模组可能获得词条
 settings_section_power,耗电
 settings_base_power,基础耗电
 settings_base_power_tip,原版公式下的基础耗电（范围 1–100，默认 10）
+tooltip_note_no_grant,效率越高耗电越少；质量每 {0}% 额外推进 1 次。
+note_short_no_grant,"· 电源槽：放电池。\n · 模组槽：放模组。\n · 备注槽：这张说明书可随时取下翻看。\n · 占地 3×3，放进机器舱位并接电。"
+note_flavor_no_grant,"[模组影响]\n效率：越高耗电越少\n质量：每 {0}% 增加 1 次额外推进\n\n[注意]\n只推进带「自学习算法」词条的模组，封顶到该模组的学习上限。"
+learning_cap_preview,预计提升 {0}/{1} 个模组，{2}个模组可能获得词条
+learning_cap_preview_off,预计提升 {0}/{1} 个模组，词条赋予已关闭
+settings_learning_only_at_night_tip,仅在总开关开启时有效：开启后涡轮不授予词条，关闭则允许涡轮授予
+settings_learning_grant,允许赋予「自学习算法」词条
+settings_learning_grant_tip,关闭后，过夜和涡轮都不再给模组添加「自学习算法」；已带词条的模组仍正常推进。
