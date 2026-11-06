@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "probably-stolen/tmp/kp081_user_dll_main.gz.b64"
+      - "probably-stolen/tmp/kp081_patch_itemfeature.py"
       - ".github/workflows/temp-kp-itemfeature-main.yml"
 
 permissions:
@@ -19,154 +20,55 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
-      - name: Reconstruct and decompile uploaded DLL
+          dotnet-version: "8.0.x"
+
+      - name: Reconstruct current user DLL
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/kp" "$RUNNER_TEMP/src"
           base64 -d probably-stolen/tmp/kp081_user_dll_main.gz.b64 | gzip -d > "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
           echo "bd7745778cde16a4aae0d747c5f9c1ee1ed5ce1906e49020d32b80e3b082a1b4  $RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll" | sha256sum -c -
-          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
-          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src"             "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
-      - name: Patch feature-category repair
+
+      - name: Decompile exact current DLL
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path(r"${{ runner.temp }}/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs")
-          s=p.read_text(encoding="utf-8")
-          anchor="""			for (int j = 0; j < array.Length; j++)
-			{
-				replacements[Error(QualityKeys[j])] = array[j];
-			}
-			int num = 0;"""
-          repl="""			for (int j = 0; j < array.Length; j++)
-			{
-				replacements[Error(QualityKeys[j])] = array[j];
-			}
-			int featureCategories = RepairFeatureCategoryNames();
-			int num = 0;"""
-          if anchor not in s:
-              raise SystemExit("counter insertion anchor not found")
-          s=s.replace(anchor,repl,1)
-          oldlog='Debug.Log("[KoreanPack] Water name compatibility: liquids=" + num + ", conditions=" + num2 + ", saved labels=" + num3 + "; official callbacks only.");'
-          newlog='Debug.Log("[KoreanPack] Localization cache repair: feature categories=" + featureCategories + ", liquids=" + num + ", conditions=" + num2 + ", saved labels=" + num3 + "; official callbacks only.");'
-          if oldlog not in s:
-              raise SystemExit("log anchor not found")
-          s=s.replace(oldlog,newlog,1)
-          method=r'''
-	private static int RepairFeatureCategoryNames()
-	{
-		Dictionary<string, string> categoryNames = ItemFeatureList.CategoryNames;
-		if (categoryNames == null || categoryNames.Count == 0)
-		{
-			return 0;
-		}
-		int repaired = 0;
-		List<string> categories = new List<string>(categoryNames.Keys);
-		foreach (string category in categories)
-		{
-			if (!categoryNames.TryGetValue(category, out string current) || !TryGetMechanicErrorKey(current, out string key))
-			{
-				continue;
-			}
-			string localized = LocHelper.GetLocalizedMechanic(key);
-			if (Valid(localized, key))
-			{
-				categoryNames[category] = localized;
-				repaired++;
-			}
-		}
-		return repaired;
-	}
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src"             "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
 
-	private static bool TryGetMechanicErrorKey(string value, out string key)
-	{
-		key = null;
-		if (string.IsNullOrEmpty(value))
-		{
-			return false;
-		}
-		const string prefix = "Translation Error '";
-		const string suffix = "' in Mechanic";
-		if (!value.StartsWith(prefix, StringComparison.Ordinal) || !value.EndsWith(suffix, StringComparison.Ordinal))
-		{
-			return false;
-		}
-		int length = value.Length - prefix.Length - suffix.Length;
-		if (length <= 0)
-		{
-			return false;
-		}
-		key = value.Substring(prefix.Length, length);
-		return !string.IsNullOrEmpty(key);
-	}
+      - name: Apply ItemFeature category cache repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 probably-stolen/tmp/kp081_patch_itemfeature.py
+          grep -nE "RepairFeatureCategoryNames|TryGetMechanicErrorKey|Localization cache repair"             "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs"
 
-'''
-          anchor2="	private bool RepairCondition(ItemCondition condition)"
-          if anchor2 not in s:
-              raise SystemExit("method insertion anchor not found")
-          s=s.replace(anchor2,method+anchor2,1)
-          p.write_text(s,encoding="utf-8")
-          kp=Path(r"${{ runner.temp }}/src/ProbablyStolenKoreanPack/KoreanPack.cs")
-          k=kp.read_text(encoding="utf-8")
-          k=k.replace("event-based water name compatibility enabled (0.8.1).","event-based localization cache repair enabled (0.8.1-featurefix).")
-          kp.write_text(k,encoding="utf-8")
-          print("patched")
-          PY
-          grep -nE "RepairFeatureCategoryNames|TryGetMechanicErrorKey|Localization cache repair" "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs"
       - name: Build patched DLL
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/build/ProbablyStolenKoreanPack"
-          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/KoreanPack.cs" "$RUNNER_TEMP/build/ProbablyStolenKoreanPack/"
-          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs" "$RUNNER_TEMP/build/ProbablyStolenKoreanPack/"
-          cat > "$RUNNER_TEMP/build/ProbablyStolenKoreanPack.csproj" <<EOF
-          <Project Sdk="Microsoft.NET.Sdk">
-            <PropertyGroup>
-              <TargetFramework>netstandard2.1</TargetFramework>
-              <AssemblyName>ProbablyStolenKoreanPack</AssemblyName>
-              <RootNamespace>ProbablyStolenKoreanPack</RootNamespace>
-              <LangVersion>latest</LangVersion>
-              <Nullable>disable</Nullable>
-              <ImplicitUsings>disable</ImplicitUsings>
-              <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-              <Deterministic>true</Deterministic>
-              <AssemblyVersion>0.8.1.0</AssemblyVersion>
-              <FileVersion>0.8.1.1</FileVersion>
-              <InformationalVersion>0.8.1-itemfeaturefix</InformationalVersion>
-            </PropertyGroup>
-            <ItemGroup>
-              <Compile Include="ProbablyStolenKoreanPack/KoreanPack.cs" />
-              <Compile Include="ProbablyStolenKoreanPack/WaterNameCompatibility.cs" />
-              <Reference Include="Assembly-CSharp"><HintPath>$GITHUB_WORKSPACE/probably-stolen/Managed/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
-              <Reference Include="Unity.Localization"><HintPath>$GITHUB_WORKSPACE/probably-stolen/Managed/Unity.Localization.dll</HintPath><Private>false</Private></Reference>
-              <Reference Include="Unity.ResourceManager"><HintPath>$GITHUB_WORKSPACE/probably-stolen/Managed/Unity.ResourceManager.dll</HintPath><Private>false</Private></Reference>
-              <Reference Include="UnityEngine.CoreModule"><HintPath>$GITHUB_WORKSPACE/probably-stolen/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
-            </ItemGroup>
-          </Project>
-          EOF
           dotnet build "$RUNNER_TEMP/build/ProbablyStolenKoreanPack.csproj" -c Release --nologo
           mkdir -p "$RUNNER_TEMP/out"
-          cp "$RUNNER_TEMP/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll"
-          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs" "$RUNNER_TEMP/out/WaterNameCompatibility.patched.cs"
-          sha256sum "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll" | tee "$RUNNER_TEMP/out/SHA256.txt"
+          cp "$RUNNER_TEMP/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll"             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll"
+          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs"             "$RUNNER_TEMP/out/WaterNameCompatibility.patched.cs"
+          sha256sum "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll" > "$RUNNER_TEMP/out/SHA256.txt"
+
       - name: Static verification
         shell: bash
         run: |
           set -euo pipefail
-          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t ProbablyStolenKoreanPack.WaterNameCompatibility             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll" > "$RUNNER_TEMP/out/verification.cs"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed             -t ProbablyStolenKoreanPack.WaterNameCompatibility             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll"             > "$RUNNER_TEMP/out/verification.cs"
           grep -q "RepairFeatureCategoryNames" "$RUNNER_TEMP/out/verification.cs"
           grep -q "ItemFeatureList.CategoryNames" "$RUNNER_TEMP/out/verification.cs"
           grep -q "TryGetMechanicErrorKey" "$RUNNER_TEMP/out/verification.cs"
           grep -q "LocHelper.GetLocalizedMechanic(key)" "$RUNNER_TEMP/out/verification.cs"
-          echo "Static verification passed." | tee "$RUNNER_TEMP/out/VERIFIED.txt"
-          stat -c '%n %s bytes' "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll"
+          printf "Static verification passed.\n" > "$RUNNER_TEMP/out/VERIFIED.txt"
+          stat -c "%n %s bytes" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ItemFeatureFix.dll"
+
       - uses: actions/upload-artifact@v4
         with:
           name: ProbablyStolenKoreanPack-ItemFeatureFix
