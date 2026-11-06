@@ -1,0 +1,45 @@
+name: Temp decompile user KoreanPack main
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "probably-stolen/tmp/kp081_user_dll_main.gz.b64"
+      - ".github/workflows/temp-kp-itemfeature-main.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Reconstruct uploaded DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/kp"
+          base64 -d probably-stolen/tmp/kp081_user_dll_main.gz.b64 | gzip -d > "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
+          echo "bd7745778cde16a4aae0d747c5f9c1ee1ed5ce1906e49020d32b80e3b082a1b4  $RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll" | sha256sum -c -
+      - name: Install ILSpy
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src"             "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
+          find "$RUNNER_TEMP/src" -type f -maxdepth 4 -print
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kp081-decompiled-source
+          path: ${{ runner.temp }}/src
+          if-no-files-found: error
