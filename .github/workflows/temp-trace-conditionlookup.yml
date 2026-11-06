@@ -1,0 +1,35 @@
+name: Temp trace ItemConditionList writers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/temp-trace-conditionlookup.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Install ILSpy
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile Assembly-CSharp and trace references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/src" "$RUNNER_TEMP/out"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src" probably-stolen/Managed/Assembly-CSharp.dll
+          grep -RniE "ItemConditionList\.conditionLookup|conditionLookup\s*=|conditionGenuineCigarette|conditionChemicalPurity|CreateOptionList"             "$RUNNER_TEMP/src" > "$RUNNER_TEMP/out/conditionlookup_refs.txt" || true
+          grep -RniE "ItemConditionList\.conditionLookup\s*=|conditionLookup\[[^]]+\]\s*=|conditionLookup\.Add|conditionLookup\.Clear|conditionLookup\.Remove"             "$RUNNER_TEMP/src" > "$RUNNER_TEMP/out/conditionlookup_writes.txt" || true
+          wc -l "$RUNNER_TEMP/out/"*.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: conditionlookup-trace
+          path: ${{ runner.temp }}/out
