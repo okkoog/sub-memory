@@ -1,0 +1,33 @@
+name: Temp inspect localization refresh path
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/temp-inspect-localization-refresh.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile target types
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/out"
+          for t in LocHelper WaterFeatureHelper LabelerElement LabelerUIManager ItemFeature ItemCondition; do
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t "$t"               probably-stolen/Managed/Assembly-CSharp.dll > "$RUNNER_TEMP/out/$t.cs"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: localization-refresh-types
+          path: ${{ runner.temp }}/out
