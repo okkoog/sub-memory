@@ -66,7 +66,8 @@ jobs:
           grep -q "RepairConditionLookup" "$RUNNER_TEMP/out/verification.cs"
           grep -q "ItemConditionList.conditionLookup" "$RUNNER_TEMP/out/verification.cs"
           grep -q "condition.display" "$RUNNER_TEMP/out/verification.cs"
-          grep -q "TryGetMechanicErrorKey" "$RUNNER_TEMP/out/verification.cs"\n          grep -n -A80 "RepairConditionLookup" "$RUNNER_TEMP/out/verification.cs" > "$RUNNER_TEMP/out/verification-conditionlookup.txt"
+          grep -q "TryGetMechanicErrorKey" "$RUNNER_TEMP/out/verification.cs"
+          grep -n -A80 "RepairConditionLookup" "$RUNNER_TEMP/out/verification.cs" > "$RUNNER_TEMP/out/verification-conditionlookup.txt"
           printf "Static verification passed.\n" > "$RUNNER_TEMP/out/VERIFIED.txt"
           stat -c "%n %s bytes" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_ConditionCacheFix.dll"
 
