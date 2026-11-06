@@ -1,4 +1,4 @@
-import os, shutil
+import os, re, shutil
 from pathlib import Path
 
 root = Path(os.environ["RUNNER_TEMP"])
@@ -6,16 +6,13 @@ src = root / "src"
 p = src / "ProbablyStolenKoreanPack" / "WaterNameCompatibility.cs"
 s = p.read_text(encoding="utf-8")
 
-anchor = "int featureCategories = RepairFeatureCategoryNames();"
-if anchor not in s:
-    raise SystemExit("feature category anchor not found")
-s = s.replace(anchor, anchor + "\n\t\t\tint conditionLookup = RepairConditionLookup();", 1)
-
-oldlog = 'Debug.Log("[KoreanPack] Localization cache repair: feature categories=" + featureCategories + ", liquids=" + num + ", conditions=" + num2 + ", saved labels=" + num3 + "; official callbacks only.");'
-newlog = 'Debug.Log("[KoreanPack] Localization cache repair: feature categories=" + featureCategories + ", condition lookup=" + conditionLookup + ", liquids=" + num + ", water conditions=" + num2 + ", saved labels=" + num3 + "; official callbacks only.");'
-if oldlog not in s:
-    raise SystemExit("log anchor not found")
-s = s.replace(oldlog, newlog, 1)
+pat = re.compile(r"(?m)^(\s*)int\s+(\w+)\s*=\s*RepairFeatureCategoryNames\(\);\s*$")
+m = pat.search(s)
+if not m:
+    raise SystemExit("RepairFeatureCategoryNames call not found")
+indent = m.group(1)
+insert = m.group(0) + "\n" + indent + "int conditionLookup = RepairConditionLookup();"
+s = s[:m.start()] + insert + s[m.end():]
 
 method = r'''
 	private static int RepairConditionLookup()
@@ -52,10 +49,10 @@ method = r'''
 	}
 
 '''
-anchor2 = "	private static int RepairFeatureCategoryNames()"
-if anchor2 not in s:
-    raise SystemExit("method insertion anchor not found")
-s = s.replace(anchor2, method + anchor2, 1)
+anchor = "\tprivate static int RepairFeatureCategoryNames()"
+if anchor not in s:
+    raise SystemExit("RepairFeatureCategoryNames method not found")
+s = s.replace(anchor, method + anchor, 1)
 s = s.replace("[KoreanPack] Water name compatibility skipped: ", "[KoreanPack] Localization cache repair skipped: ")
 p.write_text(s, encoding="utf-8")
 
