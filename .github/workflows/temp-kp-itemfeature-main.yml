@@ -1,4 +1,4 @@
-name: Temp decompile user KoreanPack main
+name: Temp inspect KoreanPack item feature types
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  decompile:
+  inspect:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -31,15 +31,18 @@ jobs:
           echo "bd7745778cde16a4aae0d747c5f9c1ee1ed5ce1906e49020d32b80e3b082a1b4  $RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll" | sha256sum -c -
       - name: Install ILSpy
         run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
-      - name: Decompile project
+      - name: Decompile KoreanPack and target game types
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/src"
-          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src"             "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
-          find "$RUNNER_TEMP/src" -type f -maxdepth 4 -print
+          mkdir -p "$RUNNER_TEMP/out/src" "$RUNNER_TEMP/out/types"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/out/src"             "$RUNNER_TEMP/kp/ProbablyStolenKoreanPack.dll"
+          for t in ItemFeatureList ItemFeature LabelerElement ItemConditionList; do
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t "$t"               probably-stolen/Managed/Assembly-CSharp.dll > "$RUNNER_TEMP/out/types/$t.cs" || true
+          done
+          grep -RniE "CategoryNames|item_feature_category|CATEGORY_GENUINE|featureName" "$RUNNER_TEMP/out/types" || true
       - uses: actions/upload-artifact@v4
         with:
-          name: kp081-decompiled-source
-          path: ${{ runner.temp }}/src
+          name: kp081-inspect-source-and-types
+          path: ${{ runner.temp }}/out
           if-no-files-found: error
