@@ -74,7 +74,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/out"
-          dotnet run -c Release --project "$RUNNER_TEMP/tool/tool.csproj" --             probably-stolen/mods/3831837821/MidnightPawn.dll             "$RUNNER_TEMP/oldko.dll"             "$RUNNER_TEMP/out/old-ko-map.tsv"
+          dotnet run -c Release --project "$RUNNER_TEMP/tool/tool.csproj" --             probably-stolen/mods/3831837821/MidnightPawn.dll             probably-stolen/localized/MidnightPawn-1.2.0-KO/Mod/MidnightPawn.dll             "$RUNNER_TEMP/out/old-ko-map.tsv"
           wc -l "$RUNNER_TEMP/out/old-ko-map.tsv"
 
       - uses: actions/upload-artifact@v4
