@@ -22,17 +22,25 @@ jobs:
           import csv, io
           p=Path('probably-stolen/0.8.0/Localization/pskb__3831837821.csv')
           text=p.read_text(encoding='utf-8-sig')
-          value=None
-          for row in csv.reader(io.StringIO(text)):
-              if row and row[0]=='K|Content/names.txt':
-                  value=row[1]
-                  break
-          if value is None:
+          marker='K|Content/names.txt,'
+          i=text.find(marker)
+          if i<0:
               raise SystemExit('names mapping not found')
+          p=i+len(marker)
+          if text[p]=='"': p+=1
+          buf=[]
+          while p<len(text):
+              ch=text[p]
+              if ch=='"':
+                  if p+1<len(text) and text[p+1]=='"':
+                      buf.append('"'); p+=2; continue
+                  break
+              buf.append(ch); p+=1
+          value=''.join(buf)
           rows=[]
           for r in value.split('\\\\n'):
-              if r.startswith(('中国\\t','日本\\t','韩国\\t')):
-                  rows.append(r.replace('\\t','\t'))
+              if r.startswith(('中国\t','日本\t','韩国\t')):
+                  rows.append(r)
           if len(rows)!=3:
               raise SystemExit(f'expected 3 rows, got {len(rows)}')
           out=Path('/tmp/names_ko.txt')
