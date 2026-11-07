@@ -1,14 +1,14 @@
-# Faction Reputation Expansion v1.4.2
+# Faction Reputation Expansion v1.4.5
 
 ## Update notes
 
-- Fixed a bug where localization was not ready during startup.
-- Fixed a bug where a null customer portrait could interrupt customer spawning.
-- Added stable native localization keys plus external language CSVs.
+Improved thieves' item generation: crates are now generated first.
+Fixed a bug that caused some Newborn Core effects to disappear.
+Improved the Newborn Alliance supplier's item pool.
 
 ## Installation
 
-Subscribe on Steam Workshop, wait for the download, enable the mod in the main menu's Mods screen, approve its file and reflection capabilities, then restart the game.
+Subscribe on Steam Workshop, wait for the download, enable the mod in the main menu's Mods screen, approve its file, reflection and dynamic-code capabilities, then restart the game.
 
 For local installation, close the game and copy the entire `FactionReputationExpansion` folder into the game's `Mods` folder. The manifest belongs at `Mods/FactionReputationExpansion/manifest.xml`, beside the DLL. The full game does not require MelonLoader. Avoid duplicate copies or old DLLs; a local copy with the same ID takes priority over Workshop content.
 

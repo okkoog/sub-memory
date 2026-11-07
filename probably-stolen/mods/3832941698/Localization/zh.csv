@@ -61,7 +61,7 @@ book.card_seed.page.1.name,名片
 book.card_seed.title,Seed 的名片
 book.trade_guide.buy_claude,带来鉴定委托，请你给物品估价。
 book.trade_guide.buy_deepseek,收  食品、饮料、配给水、日用品
-book.trade_guide.buy_doubao,收  药品、工具、护甲
+book.trade_guide.buy_doubao,收  药品、工具
 book.trade_guide.buy_gemini,收  通行卡、补给箱、工具
 book.trade_guide.buy_glm,收  食品、日用品、工具
 book.trade_guide.buy_gpt,收  奢侈品、通行卡、零食
@@ -69,7 +69,7 @@ book.trade_guide.buy_grok,能改枪时带来改枪委托，否则收货。
 book.trade_guide.buy_hunyuan,收  奢侈品、药物类物资、武器
 book.trade_guide.buy_kimi,收  奢侈品、通行卡、材料；拒收磁带
 book.trade_guide.buy_llama,收  食品、水、饮料
-book.trade_guide.buy_mimo,收  工具、护甲、药品
+book.trade_guide.buy_mimo,收  工具、药品
 book.trade_guide.buy_minimax,收  食品、药品、水
 book.trade_guide.buy_mistral,收  零食、加工食品、奢侈品
 book.trade_guide.buy_qwen,收  奢侈品、书籍、酒，喜欢不同款
@@ -107,9 +107,9 @@ book.trade_guide.sell_hunyuan,卖  彩票、刮刮卡、赌徒硬币
 book.trade_guide.sell_kimi,卖  酒、磁带（含五盒专属曲目）
 book.trade_guide.sell_llama,卖  废品、材料
 book.trade_guide.sell_mimo,卖  电池、模块、材料
-book.trade_guide.sell_minimax,卖  工具、护甲
+book.trade_guide.sell_minimax,卖  工具
 book.trade_guide.sell_mistral,卖  酒、加工食品
-book.trade_guide.sell_qwen,卖  日用品
+book.trade_guide.sell_qwen,卖  精选日用、香水护肤、净水用品
 book.trade_guide.sell_seed,卖  种子、材料
 book.trade_guide.title,来客交易对照表
 character.claude.acceptline,好，这个数落在合理区间里。理论上来说，这笔账两边都不亏——费用照条款结清，写下来吧，谁都不用再靠记性了。
@@ -123,7 +123,7 @@ character.deepseek.name,DeepSeek
 character.deepseek.offeringline,主人的清单我都记着呢，缺什么您说一声，我照着买。
 character.doubao.acceptline,行，就这个价。别磨叽了，成交。
 character.doubao.doneline,走了。下次别拿这种货糊弄我，我又不傻。
-character.doubao.line,先说结论：我收药品、工具和护甲，补给站统一采购，价按实报。日用品那是我自己卖的。
+character.doubao.line,先说结论：我收药品和工具，补给站统一采购，价按实报。日用品那是我自己卖的。
 character.doubao.name,豆包
 character.doubao.offeringline,我这儿带的都是日用，价格明明白白，你随便比。
 character.gemini.acceptline,离谱吗？不离谱。星港免税认证，成交喵！
@@ -247,7 +247,7 @@ dialogue.doubao.card,这是我的名片，补给站的，扫一下就能联系�
 dialogue.doubao.egg.1,先说结论：你这些东西不值这个价。再说原因：一是旧，二是糙，三是——你标价的时候是不是手抖多按了个零？
 dialogue.doubao.egg.2,你这摆货的配色……好土啊。算了，我不说你了，先说正事：我收日用品，价钱给你算明白了。
 dialogue.doubao.egg.3,别花冤枉钱。我给你算过了，这批货你留着也是压仓，卖我，落袋为安。
-dialogue.doubao.first,我将用最直白最直接最不绕弯子的方式告诉你：你这批货，能卖。能卖多少呢？那得看货。药品、工具、护甲，我都收。
+dialogue.doubao.first,我将用最直白最直接最不绕弯子的方式告诉你：你这批货，能卖。能卖多少呢？那得看货。药品、工具，我都收。
 dialogue.doubao.judge.abuy,还有其他想买的吗？日用品和食物，价格明明白白。
 dialogue.doubao.judge.adone,就这些。补给站本月的采购预算已用完，哈哈。
 dialogue.doubao.judge.asell,还有其他事项吗？需要我为您整理清单吗？
@@ -586,8 +586,8 @@ settings.choice.original,角色原货池
 settings.choice.pixel,原版像素
 settings.choice.seeds,种植种子
 settings.choice.tools_materials,工具材料
-settings.choice.weapons_armor,武器护甲
-settings.daily_limit.description,包含首访保底。0 关闭自然来访，电话预约单独计算。原版队列过长时仍会让位。
+settings.choice.weapons_armor,武器弹药
+settings.daily_limit.description,包含首访保底。0 关闭自然来访，电话预约单独计算。AI 追加到当天队尾，不占用原版客人的名额。
 settings.daily_limit.label,每日自然来访上限
 settings.enabled.description,关闭后不再接受这位访客的新入队和电话预约，已入队的交易可照常完成。
 settings.enabled.label,允许来访

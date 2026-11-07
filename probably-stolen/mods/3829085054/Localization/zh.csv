@@ -8,6 +8,17 @@ is_cfg_debug_desc,输出 MOD 运行细节，排查问题时开启。
 is_cfg_slot_limit_name,每格数量上限
 is_cfg_slot_limit_desc,"收纳箱单格最多存放的物品数量，允许范围 20-999，超出按边界处理。改动立即对全部收纳箱生效；已经存入格子的数量不会被削减或拆分（超过上限的格子视为已满，无法再放入），整理与箱间联动照常搬运。提示：设为 999 等较大数值时，格内数量将显示为三位数，界面排版可能不如默认值美观。"
 
+# ===== 设置面板：倒序取出（2026-11-06）=====
+is_cfg_zero_section,倒序取出
+is_cfg_zero_durability_name,优先取出0耐久
+is_cfg_zero_durability_desc,手动取出时，优先出0耐久的物品。
+is_cfg_zero_energy_name,优先取出0电量
+is_cfg_zero_energy_desc,手动取出时，优先出0电量的物品。
+is_cfg_zero_count_name,优先取出0次数
+is_cfg_zero_count_desc,手动取出时，优先出0次数的物品。
+is_cfg_zero_water_name,优先取出空水瓶
+is_cfg_zero_water_desc,手动取出时，优先出空水瓶。
+
 # ===== 物品与通用提示 =====
 is_item_box_name,收纳箱
 is_msg_not_owned,请先购买后再操作
@@ -116,6 +127,10 @@ is_gp_unbound_allrestock,全箱上货快捷键已解除绑定
 is_tip_battery,电量：{0} kJ
 is_tip_durability,耐久：{0}
 is_tip_uses,次数：{0}
+is_tip_next_battery,下一件电量：{0}/{1} kJ
+is_tip_next_durability,下一件耐久：{0}/{1}
+is_tip_next_uses,下一件次数：{0}/{1}
+is_tip_next_water,下一瓶水量：{0}
 is_tip_water_total,（总计{0}）
 is_tip_value,价值：{0}
 is_tip_locked,已锁定，不参与自动上货

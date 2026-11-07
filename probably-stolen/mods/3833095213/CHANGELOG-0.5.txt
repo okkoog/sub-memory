@@ -1,0 +1,54 @@
+[h1]Version 0.5 — translations, room windows and consolidated fixes[/h1]
+Vanilla Overhaul is now version 0.5. About half of the content I have planned is in the game so far. I’m continuing to build on the base game and improve the features already here. Thank you for the reports, ideas and patience.
+
+This update continues the existing main mod. Earlier 0.15.x versions were development build numbers; your mod ID and saved items stay the same. Use Probably Stolen's open_beta branch and restart after Steam finishes updating.
+
+[h2]New in 0.5[/h2]
+[list]
+[*]Fixed blank Simplified Chinese handbook titles, chapter names and text. The six guides now select the game's font for the current language, restoring the original reader font when closed.
+[*]Translated the page labels and index entries in all eight supported languages. Corrected brewing methods that were showing their English internal names.
+[*]Updated the kitchen, canning and brewing instructions to match the current tools, battery slots, water requirements and native fruit-wine route.
+[*]Switching between the shop and back room closes open phone, recorder, book and container pop-ups. They no longer follow you between rooms or reopen automatically when you return. The shared main inventory remains available.
+[/list]
+
+Tested the Chinese guides and 501 recipe pages for visible characters and text overflow, plus three front/back room round trips. Translation keys and format arguments were checked across English, Simplified Chinese, French, German, Japanese, Russian, Spanish and Polish. This is a rendering and coverage check; further language corrections are welcome.
+
+[h2]Recent fixes carried forward[/h2]
+The following changes from the recent development builds are also included in 0.5.
+
+[h2]Cooking and the kitchen[/h2]
+[list]
+[*]Simplified cooking: add the required supplies and click an available recipe. Recipe books also work on the normal crafting table, and supported single-ingredient preparations work by using the matching tool on the ingredient.
+[*]Seven toolbox-style attachment slots now hold the cooking tools above the work area. Four separate battery sockets leave the main input inventory free for ingredients, water and a refrigerator.
+[*]Food inside a powered vanilla refrigerator can be used by the kitchen. The refrigerator keeps its own battery; cooking draws from the cooking supply instead.
+[*]Corrected tool selection and recipe availability. Missing requirements or a full output inventory do not consume the recipe's resources.
+[*]Prepared-food values now account for ingredient, water and power costs, with a preparation margin. Customer discounts, restrictions and other price modifiers still apply.
+[/list]
+
+[h2]Sodas, water and brewing[/h2]
+[list]
+[*]Raised house-blend and soda values to better cover their supplies. Existing saved drinks receive the revised base values without being refilled.
+[*]Sodas count as both Food and Beverage, allowing food shoppers to buy them and displayed sodas to attract appropriate customers. Empty containers and bottles refilled with plain water do not keep the added soda Food category.
+[*]The manual bottler uses matching concentrate, water and empty small cans, large cans or glass bottles. It shows recipes supported by the inputs, including stacked empty cans. Plastic water bottles are excluded from soda recipes.
+[*]Fixed drink classification so flavour concentrate is not treated as dirty water. Supplier Blueberry Drift was checked for the correct label and customer acceptance.
+[*]Added 19 fruit-wine routes through the vanilla fermentation bottle, yeast and daily fermentation system. Pour finished wine into Undertow glass to retain its drink identity and matching label. Vanilla Bloomberry brewing remains available.
+[*]Kept all 76 active brewing designs, including the 20 fruit spirits/brandies. Removed unused artwork for the 20 disabled vegetable infusions; older saved items retain their contents through a compatibility migration.
+[*]Added a late-game 100 L industrial water tank and a retrofit for vanilla's fully upgraded 50 L tank. Retrofitting preserves the stored liquid.
+[/list]
+
+[h2]Storage, produce and animals[/h2]
+[list]
+[*]Adjusted floating storage windows to use the open beta's dock canvas and recalculate their fit when the display layout changes.
+[*]The compact Fizzyworks starter case contains three randomly selected concentrates, three small cans, three large cans and six glass bottles. It accepts supplies back into storage.
+[*]Recent produce fixes include full inventory footprints, revised art, item categories, hydroponic crops and the cleaver portion chain. Produce inspection and soda packaging inspection have been removed.
+[*]Added the larger 14 × 8 aquaculture system, available from day 28. Larger animal cages remain available at their progression unlocks.
+[*]Retested rat coats, traits, births and milk collection, plus inheritance and growth for all six fish species. Milk collection cannot be repeated for another allowance on the same day.
+[*]Rats and fish in the display case now affect pet clientele. Ordinary household shoppers can request pets, and specialised buyers support valuable breeding stock. Rare markings and inherited traits contribute to animal value.
+[/list]
+
+[h2]Compatibility and testing[/h2]
+Updated cooking and brewing instructions across the eight supported languages. Existing saves are supported; back up before changing mods. Other authors' expansions are not bundled or required, and combinations with overlapping gameplay mods are not yet verified.
+
+The preceding 0.15.12 full regression run passed 18,672 in-game checks, including all 252 cooking plans, 31 container cases, saved attachment slots, native brewing, animal breeding and actual customer sales. Seven existing playthrough save files remained unchanged during the test.
+
+[b]Still under investigation:[/b] intermittent mouse-drag failures, true 2560 × 1440 layout reports and slow late-game disk/cloud saves. Passing native inventory-transfer and in-memory save checks does not establish those reports are fixed. Standalone animal packs and the unfinished workshop tools are separate work and are not being announced as part of this release.

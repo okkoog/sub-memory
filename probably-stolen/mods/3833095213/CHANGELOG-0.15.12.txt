@@ -1,0 +1,39 @@
+[h1]0.15.12 — Cooking, storage, drinks and animal updates[/h1]
+These are the consolidated notes for the recent fixes now included in the main Vanilla Overhaul package. Tested on open_beta VERSION 100-Rev11. Please use the open_beta branch and restart after Steam finishes updating the mod.
+
+[h2]Cooking and the kitchen[/h2]
+[list]
+[*]Simplified cooking: add the required supplies and click an available recipe. Recipe books also work on the normal crafting table, and supported single-ingredient preparations work by using the matching tool on the ingredient.
+[*]Seven toolbox-style attachment slots now hold the cooking tools above the work area. Four separate battery sockets leave the main input inventory free for ingredients, water and a refrigerator.
+[*]Food inside a powered vanilla refrigerator can be used by the kitchen. The refrigerator keeps its own battery; cooking draws from the cooking supply instead.
+[*]Corrected tool selection and recipe availability. Missing requirements or a full output inventory do not consume the recipe's resources.
+[*]Prepared-food values now account for ingredient, water and power costs, with a preparation margin. Customer discounts, restrictions and other price modifiers still apply.
+[/list]
+
+[h2]Sodas, water and brewing[/h2]
+[list]
+[*]Raised house-blend and soda values to better cover their supplies. Existing saved drinks receive the revised base values without being refilled.
+[*]Sodas count as both Food and Beverage, allowing food shoppers to buy them and displayed sodas to attract appropriate customers. Empty containers and bottles refilled with plain water do not keep the added soda Food category.
+[*]The manual bottler uses matching concentrate, water and empty small cans, large cans or glass bottles. It shows recipes supported by the inputs, including stacked empty cans. Plastic water bottles are excluded from soda recipes.
+[*]Fixed drink classification so flavour concentrate is not treated as dirty water. Supplier Blueberry Drift was checked for the correct label and customer acceptance.
+[*]Added 19 fruit-wine routes through the vanilla fermentation bottle, yeast and daily fermentation system. Pour finished wine into Undertow glass to retain its drink identity and matching label. Vanilla Bloomberry brewing remains available.
+[*]Kept all 76 active brewing designs, including the 20 fruit spirits/brandies. Removed unused artwork for the 20 disabled vegetable infusions; older saved items retain their contents through a compatibility migration.
+[*]Added a late-game 100 L industrial water tank and a retrofit for vanilla's fully upgraded 50 L tank. Retrofitting preserves the stored liquid.
+[/list]
+
+[h2]Storage, produce and animals[/h2]
+[list]
+[*]Adjusted floating storage windows to use the open beta's dock canvas and recalculate their fit when the display layout changes.
+[*]The compact Fizzyworks starter case contains three randomly selected concentrates, three small cans, three large cans and six glass bottles. It accepts supplies back into storage.
+[*]Recent produce fixes include full inventory footprints, revised art, item categories, hydroponic crops and the cleaver portion chain. Produce inspection and soda packaging inspection have been removed.
+[*]Added the larger 14 × 8 aquaculture system, available from day 28. Larger animal cages remain available at their progression unlocks.
+[*]Retested rat coats, traits, births and milk collection, plus inheritance and growth for all six fish species. Milk collection cannot be repeated for another allowance on the same day.
+[*]Rats and fish in the display case now affect pet clientele. Ordinary household shoppers can request pets, and specialised buyers support valuable breeding stock. Rare markings and inherited traits contribute to animal value.
+[/list]
+
+[h2]Compatibility and testing[/h2]
+Updated cooking and brewing instructions across the eight supported languages. Existing saves are supported; back up before changing mods. Other authors' expansions are not bundled or required, and combinations with overlapping gameplay mods are not yet verified.
+
+The final local run passed 18,672 in-game checks, including all 252 cooking plans, 31 container cases, saved attachment slots, native brewing, animal breeding and actual customer sales. Seven existing playthrough save files remained unchanged during the test.
+
+[b]Still under investigation:[/b] intermittent mouse-drag failures, true 2560 × 1440 layout reports and slow late-game disk/cloud saves. Passing native inventory-transfer and in-memory save checks does not establish those reports are fixed. A new report of blank Simplified Chinese handbook pages is also being investigated. Standalone animal packs and the unfinished workshop tools are separate work and are not being announced as part of this release.

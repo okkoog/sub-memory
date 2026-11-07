@@ -14,9 +14,9 @@ book.neighborhood.backroom.title,Make room to work
 book.neighborhood.backroom.body,"Use BACK > on the right wall to reach the back room. The worktop shares your front counter stock. Click the cabinet or a fitted machine to open it; click the door to return to the shop.\n\nJoe Wild's BACK ROOM services add station bays, storage tiers and fitted equipment. Buy the actual machine before fitting it.\n\nKeep this guide and the book cubby in the main area if that is where you prefer to read."
 book.workshop.name,Neon Undertow: Workshop Fieldbook
 book.workshop.cooking.title,Produce and cooking
-book.workshop.cooking.body,"Buy fruit and vegetables at Quayside Canning Co-op or from visiting food suppliers.\n\nBuy cooking instruments and recipe books, then open KITCHEN above the back-room table. Put an instrument and one recipe's ingredients on the worktop, with the listed water and power. Choose the tool and manage heat, attention and timing. Each action advances five seconds. Closing the worktop pauses the batch.\n\nPans need a Galley or native heating plate; chilling needs a fridge. Tools and recipe books are reusable."
+book.workshop.cooking.body,"Buy cooking tools and recipe books at Quayside Canning Co-op. Open KITCHEN above the back-room worktop. Fit tools in their top slots and charged cells in BATTERIES. Put ingredients, water and an optional fridge in INPUT. A fridge needs its own battery.\n\nReady recipes appear automatically. Click one to cook; the listed ingredients, water and power are consumed. Tools and books are kept. Heated recipes still need a galley or native heating plate; chilled recipes need a powered fridge.\n\nRecipe books also work on the ordinary crafting table. For an unambiguous single-ingredient recipe, drag the matching tool onto the ingredient."
 book.workshop.canning.title,Canning and workshop supplies
-book.workshop.canning.body,"Keep a Fizzworks Recipe Book in the canner INPUT, or Workshop Recipes / Production Handbook in the Galley INPUT. Choose a recipe with the normal item chooser. Only the listed materials, water and power are used; books and tools remain. Food still needs hands-on cooking.\n\nSource-water quality and each can's condition affect soda quality.\n\nFor empty metal packaging, use the ordinary printer with a pattern chip from Undertow Engineering, a metal ingot, Metal Printing and CNC modules, and a charged cell."
+book.workshop.canning.body,"Put the Fizzyworks recipe book in the canning machine input. For other production recipes, use the matching recipe manual and the game's item picker. Supply the listed ingredients, water, packaging and power. Tools and books are kept.\n\nSoda accepts water above Basewater grade. Source water and container condition affect quality. Flavour ingredients are not dirty water.\n\nTo make empty metal packaging, use the native printer with a matching chip from Undertow Engineering, metal, the required modules and charged batteries."
 book.workshop.water.title,Waterworks
 book.workshop.water.body,"The Industrial Water Generator becomes available at Stormglass Depot from day 28 when you have a Grand Waterworks installed. Its list price is 12,500 credits.\n\nFit a charged cell. Overnight it generates and fills up to four native 2 L high-quality water bottles, using six power each: 24 for a full set. It needs no ingredient or empty-bottle input. Leave room in OUTPUT.\n\nStarting traits do not grant this generator. Items left in older input or attachment slots stay retrievable. The Waterworks handbook explains the manual bottling equipment and its recipes."
 book.workshop.cellar.title,Cellar and bar
@@ -58,9 +58,9 @@ book.fish.traits.title,Select useful traits
 book.fish.traits.body,"Four inherited gene pairs affect the native aquaculture calculations. Two selected alleles give the full benefit; mixed pairs give intermediate effects.\n\nMeaty: up to 20% faster fed growth progress. Native growth calorie costs remain. Mature, well-grown fish show a fuller body.\nLong-lived: up to 30% later native old-age threshold; the original mortality roll remains.\nThrifty: up to 20% less maintenance energy, without reducing growth calorie requirements.\nBreeder: up to 40% relative increase to a breedable species' laying chance, capped at 100%. No extra roll, no larger free clutch, and normal fertilisation requirements remain.\n\nFaster growth also advances the native biological-age clock. Combine it with longevity if breeding for longer service. Body weight, fillets, medical grafts, caviar and electric output still use native calculations."
 book.fish.value.title,Recognise and value stock
 book.fish.value.body,"Live fish have a pet value. Standard colours add 15%, rare colours add 100%, and most patterns add 10%. The two rare eel and sturgeon patterns add 40% or 60%. Breeding traits add value when you buy or sell a fish. Fry carry their traits until they grow into individual fish.\n\nRats and fish share 40 breeding traits. Young can take after either parent or develop a new trait. Seven traits on one offspring is a one-in-10,000 birth. Upper-level regulars, Amara Dune and Mina Rose buy pets at the counter."
-book.description,An Undertow handbook. Activate to read with the ordinary book index and page arrows. Keep it in your book cubby or with your other documents.
+book.description,A pocket handbook from Undertow. The corners are already soft.
 cubby.name,Undertow Book Cubby
-cubby.description,"A small movable cubby for sorting books in the main shop or inside the Dossier. Double-click to open. Stores books, recipe manuals and paper documents in an 8 x 6 grid. Activate a book inside to read it. Move recipe books to the relevant machine when crafting."
+cubby.description,A little shelf for books and loose papers. Fits inside the Dossier.
 cubby.window,BOOK CUBBY
 cubby.delivery,Your Undertow handbooks are in a book cubby on the main counter.
 shop.next_species,NEXT SPECIES  ›
@@ -1594,13 +1594,13 @@ wanted.neon_wanted_luma_pike.returnVisit.2,Something small today. My clerk no lo
 wanted.neon_wanted_luma_pike.returnQuestioned.0,I know what the paper says. I also know smiling won't make it disappear.
 wanted.neon_wanted_luma_pike.returnQuestioned.1,"For once, I'd like a conversation that doesn't end with a signature."
 wanted.sheet.name,{0} — Wanted Sheet
-wanted.sheet.description,"Nine wanted people. Activate to read. Captured people are crossed out. File it in your bounty folder, Dossier or book cubby. Arrest rewards are paid by security."
+wanted.sheet.description,Nine wanted faces. A name gets crossed out when security makes the arrest.
 wanted.folder.name,Undertow Bounty Folder
 wanted.folder.window,BOUNTY FOLDER
-wanted.folder.description,"A small book-sized folder for wanted sheets delivered by Officer Lun. Double-click to open. File later sheets here, with your books or inside the Dossier. Each sheet identifies nine people; visitors follow the normal wanted-encounter schedule."
-wanted.widow.keepsake,Dahlia calls this a keepsake from a late husband. Estate provenance surcharge: +200% while she is selling it.
+wanted.folder.description,Officer Lun's folder for wanted sheets. Just small enough for a bookshelf.
+wanted.widow.keepsake,Dahlia says it belonged to her late husband. She charges triple for the story.
 wanted.card.name,{0} — Business Card
-wanted.card.description,{0} · {1}. Activate to add this contact to your phone book. You can call them for another trade while they remain at large. Arrested contacts will not return.
+wanted.card.description,{0} · {1}. Add the number to your phone for another trade while they're still at large.
 wanted.card.body,"PHONE: {0}\n\n{1}\n\nSaved in your phone book. Call to arrange another trade. I buy food, drinks and everyday supplies.{2}\n\nPlease allow three days between appointments. No answer after capture."
 wanted.card.fee,Estate weapons: 200% markup (three times normal price).
 wanted.phone.name,Telephone
@@ -1999,18 +1999,18 @@ kitchen.book.5,Megablock Kitchen V: The Cold Store
 kitchen.station.stove,Stove
 kitchen.station.counter,Counter
 kitchen.station.fridge,Fridge
-kitchen.book.description,"A reusable technique guide. Activate to read. Put the named instrument and ingredients on the kitchen worktop, then manage heat, attention and finishing time on COOK. Food cannot be crafted instantly. Heated recipes need a galley or native heating plate; chilling needs an owned native fridge. Water containers, cells and tools remain reusable."
+kitchen.book.description,"An illustrated cookbook. Open it to see what goes together, or lay it on the crafting table."
 kitchen.failed.name,Failed kitchen batch
-kitchen.failed.description,Ruined or unfinished food. Not edible; ingredients cannot be recovered.
+kitchen.failed.description,Dinner didn't work out. Even the cook won't eat it.
 kitchen.recipe.worktop,Prepare by hand on the COOK tab
 kitchen.dish.description,From {0}. {1}. {2} Makes one portion from the two listed ingredients. Keep the recipe book with your crafting supplies.
 kitchen.dish.edible,Prepared food; +{0} nutrition.
-kitchen.dish.component,A prepared cooking ingredient. Use it in another recipe.
+kitchen.dish.component,Ready for the next recipe.
 kitchen.source,Megablock Kitchen · {0}
 kitchen.cold_store,Cold store
 kitchen.pantry,Pantry
-kitchen.meat.description,Raw cooking portion. Cook before eating; keep with your refrigerated kitchen supplies. Sold at Quayside Canning Co-op.
-kitchen.grain.description,One dry grain portion for the Megablock Kitchen recipe books. Ingredient only. Sold at Quayside Canning Co-op.
+kitchen.meat.description,A portion of raw meat. Keep it cold until the pan is ready.
+kitchen.grain.description,"A scoop of dry grain, ready for the cookpot."
 kitchen.recipe.details,{0} {1} · {2}. {3}{4}Produces one portion. Recipe book and fixtures are retained.
 kitchen.recipe.water,{0} mL clean water; container retained.
 kitchen.recipe.power,{0} power from a charged cell.
@@ -2049,7 +2049,7 @@ kitchen.condition.ruined,Ruined
 kitchen.condition.raw,Still raw / unfinished
 kitchen.condition.ready,Ready — finish now
 kitchen.condition.uneven,Uneven; needs attention
-kitchen.tools.desc,Reusable cooking instrument. Place on the back-room kitchen worktop with your ingredients; choose it on COOK. Keep it there until the batch is finished.
+kitchen.tools.desc,"Reusable cooking tool. Drag onto an ingredient for a matching single-ingredient recipe. For meals with several ingredients, place the tool and supplies on the kitchen worktop or use a recipe book on the normal crafting table."
 kitchen.needs.galley,Needs a galley or heating plate.
 kitchen.needs.fridge,Needs an owned fridge.
 kitchen.needs.oven,Uses its own heating element and the listed power.
@@ -2073,7 +2073,7 @@ kitchen.control.defaultHeat,HEAT: OFF
 kitchen.control.work,WORK / TURN / STIR · 5s
 kitchen.control.wait,WAIT · 5s
 kitchen.control.finish,FINISH BATCH
-kitchen.control.help,Choose an instrument and load a combination. Books describe techniques; ingredients determine the dish.
+kitchen.control.help,"Tools go in the top compartments; cells in BATTERIES. Put ingredients, water and a fridge in INPUT. Click a ready recipe."
 kitchen.control.help_load,"LOAD consumes the ingredients, measured water and power. Closing the window pauses the batch. FINISH too early or too late produces a failed batch."
 kitchen.control.noHeat,NO HEAT FOR THIS INSTRUMENT
 kitchen.control.empty,"Place a cooking instrument on the worktop. Quayside stocks boards, bowls, pans and powered instruments."
@@ -2098,14 +2098,14 @@ kitchen.control.heat,HEAT: {0}
 kitchen.control.action,{0} · 5s
 kitchen.control.tool,TOOL: {0}
 kitchen.counter.name,Back-room Kitchen Worktop
-kitchen.counter.description,"Use instruments to prepare food. Books explain combinations and techniques. Heat, attention and finishing time determine the result. Soda and workshop recipes remain on the reference tab."
+kitchen.counter.description,"A worktop with tool slots along the back. Load ingredients and a charged cell, then pick a recipe."
 kitchen.counter.choose,CHOOSE RECIPE
 kitchen.counter.craft,CRAFT
 kitchen.counter.cook,COOK
 kitchen.counter.tools,INSTRUMENTS
 kitchen.counter.books,BOOKS / WORKSHOP
 kitchen.counter.reference,REFERENCE
-kitchen.counter.input,INGREDIENTS + TOOLS
+kitchen.counter.input,INPUT
 kitchen.counter.worktop,WORKTOP
 kitchen.counter.output,OUTPUT
 kitchen.counter.intro,"Place an owned recipe book in INPUT with its ingredients. Choose a recipe. Books, cells and water containers are kept."
@@ -2461,8 +2461,8 @@ kitchen.ingredient.neon_undertow_brew_absinthe_botanicals,"Wormwood, anise & fen
 kitchen.ingredient.neon_undertow_brew_oak,Seasoned oak insert
 kitchen.ingredient.neon_undertow_brew_glowleaf,Glowleaf sachet (fictional)
 kitchen.ingredient.neon_undertow_brew_sting,Synth-sting essence (fictional)
-production.concentrate.description,"One flavor charge for one {0} can. Requires the recipe quantity of water, the matching empty can and power in the Fizzworks Canner. The Galley makes four charges from the listed fruit base, fruit sweetener and 100 mL clean water; classic cola, ginger, vanilla and root blends also use their named botanical. See the Workshop Recipe Book. Ingredient only."
-soda.bottle.description,"750 mL soda in reusable glass. Pour, drink or refill using the usual liquid-container controls. The printed label stays on the bottle; the liquid level and colour show its actual contents."
+production.concentrate.description,Enough syrup for one can of {0}. Dilute with clean water in the Fizzworks Canner.
+soda.bottle.description,A 750 mL glass soda bottle. Worth keeping for a refill.
 liquid.empty,Empty
 liquid.liquid,Liquid
 liquid.native,Native liquid
@@ -2474,10 +2474,10 @@ bar.glass,{0} · {1} mL · {2} glass
 bar.flavour,{0} flavour
 production.chip,{0} · Printer Chip
 production.concentrate.name,{0} · Flavor Concentrate
-production.food.description,Prepared in the Dockside Galley. {0}; +{1} nutrition per use and {2} mL thirst relief. Uses native food consumption and trading. Use the recipe book and the kitchen instruments to prepare it.
+production.food.description,A serving from the Dockside Galley. {0}. Restores {1} nutrition and {2} mL of thirst.
 soda.can,{0} · {1} mL
 soda.bottle,{0} · bottled
-soda.description,"Sealed {0} soda. {1} mL per can. Nutrition amenity: +2 per use. Make it in the Fizzworks Canner from source water (99%+), matching flavor concentrate, an empty can and power, or use fresh matching fruit, sweetener and fizz for a four-can batch, or buy it from the food supplier. Source-water purity and packaging damage determine this can's grade and value. Store loose cans in a Waterworks Depot; cans do not stack."
+soda.description,"A sealed can of {0} soda, {1} mL. The dents tell you how it's been handled."
 soda.flavor.cola,cola
 soda.flavor.cherry,cherry
 soda.flavor.orange,orange
@@ -2602,9 +2602,9 @@ cellar.recipe,{0} · {1} nights · {2} mL clean water · {3} power. Produces {4}
 cellar.page,{0} · {1} nights. Makes {2} mL at {3}% ABV.\n\n{4}
 cellar.bottle,Clean reusable brewing bottle
 cellar.culture,Brewer's culture
-cellar.culture.description,"One measured culture for a fruit wine, cider, perry or grain ale. Used once per batch."
+cellar.culture.description,"One dose of yeast. Enough to start a batch of wine, cider or ale."
 cellar.book,Back-room Cellar: Brewing Notes
-cellar.book.description,"76 curated fruit wines, converted grain/root ferments, distilled spirits, liqueurs and botanical infusions. Load ingredients into an owned Cellar Bench, select a process and begin. Fermentation and infusions take nights; distillation needs power. Completed batches wait safely for output space. The CELLAR tab matures finished bottles."
+cellar.book.description,"Cellar notes for 76 brews, from fruit wine to spirits. A few pages have stuck together."
 cellar.book.intro,"Activate to read the 76 cellar recipes. Ferment sugars and converted starches, distill fermented bases, or infuse existing spirits. Load one combination into the Cellar Bench; batches take nights. Keep finished bottles on its storage tab. The native Age-Well rack matures suitable wines, cider and perry; spirits do not improve merely by sitting in glass."
 cellar.own,Use your own Cellar Bench.
 cellar.busy,Finish the current batch first.
@@ -2613,7 +2613,7 @@ cellar.missing,Missing ingredients or clean bottles.
 cellar.size,The empty bottle is too small for this batch.
 cellar.power_low,Insufficient power; ingredients kept.
 cellar.bench,Undertow Cellar Bench
-cellar.bench.description,"Choose Ferment, Distill or Infuse and load one ingredient combination from Brewing Notes. START consumes supplies. Progress continues each in-game night while owned. Finished batches wait if OUTPUT is full. CELLAR is bottle storage; mature suitable wines with a native Age-Well rack."
+cellar.bench.description,"A cellar bench for fermenting, distilling and steeping. Load one batch and leave it overnight."
 cellar.start,START BATCH
 cellar.collect,COLLECT
 cellar.idle,Load one ingredient combination and an empty bottle. Read Brewing Notes for quantities.
@@ -2640,10 +2640,10 @@ bar.book.glass.body,"Every ingredient remains part of the liquid when it is pour
 bar.book.stir,"Measure into the mixing glass. Activate it to stir, then pour into a serving bottle."
 bar.book.shake,"Measure into the shaker. Activate it to shake, then pour into a serving bottle."
 bar.book.yield,Makes {0} mL at {1} ABV before any extra dilution.
-bar.bottle.desc,Reusable glass bottle. Pour measured contents into another liquid container; the empty bottle remains. Split any old stack into individual bottles before pouring.
-bar.bottle.common,"Reusable liquid container. Pour between compatible native bottles, jugs and bulk tanks. Contents determine colour, fill level and alcohol strength; the glass remains when empty."
+bar.bottle.desc,A refillable glass bottle.
+bar.bottle.common,Reusable liquid container.
 bar.cocktail.bottle,Reusable cocktail bottle
-bar.book.description,"Read for measuring, stirring, shaking, juice preparation and thirteen cocktail recipes. Use the removable tools in the rack or in your main inventory. Keep your own notes as you experiment."
+bar.book.description,"Thirteen cocktails and a few notes on what to shake, stir or leave alone."
 glass.new,New {0} glass bottle
 glass.clear,clear
 glass.amber,amber
@@ -2652,12 +2652,12 @@ bar.technique.stir,STIR
 bar.technique.shake,SHAKE
 bar.recipe.tool,Use the mixing glass or shaker; {0}
 bar.recipe.details,{0} after measuring these ratios. All alcohol is conserved. Scaled ratios work. Any compatible serving container; packaging is reusable.
-cellar.supply.conversion.description,Converts starch into fermentable sugar before yeast fermentation. Raw starch does not directly become alcohol.
-cellar.supply.juniper.description,"Juniper-led gin flavouring. Used with a finished spirit, not as a fermentation base."
-cellar.supply.absinthe_botanicals.description,"Absinthe-inspired botanicals. Herbal flavour, not a promised hallucinogenic effect."
-cellar.supply.oak.description,Used for the Cellar Bench's compressed cask-maturation stage.
-cellar.supply.glowleaf.description,A sealed fictional setting ingredient. Not a real drug recipe; adds no alcohol of its own.
-cellar.supply.sting.description,"A fictional venom-inspired compound. No real venom, preparation method or claimed detoxification. Adds no alcohol of its own."
+cellar.supply.conversion.description,Turns starch into sugar the yeast can use.
+cellar.supply.juniper.description,Juniper for a finished spirit. A little goes a long way.
+cellar.supply.absinthe_botanicals.description,A bitter herbal blend for absinthe-style spirits.
+cellar.supply.oak.description,Oak for giving a batch that cask-aged taste.
+cellar.supply.glowleaf.description,A sealed packet of glowleaf for steeping in spirits.
+cellar.supply.sting.description,"A sharp, stinging mixer for the cellar bench."
 guide.start,Start here
 guide.active,ACTIVE · Ready to play
 guide.notReady,NOT READY · Check setup
@@ -2676,7 +2676,7 @@ guide.expansion,Make room for your business
 guide.backroom,"BACK ROOM: Use BACK > on the right wall. The counter stock is shared with the front shop. Start with a cabinet and one station bay; buy equipment, then use Joe Wild's BACK ROOM tab for bay expansions, shelf tiers and station fitting. Click the entire back-room door to return to the shop. Click the cabinet or installed machines to use them."
 guide.backroomButton,Open back room
 guide.produce,Buy fruit and vegetables at Quayside Canning Co-op or from visiting food suppliers.
-guide.kitchen,"KITCHEN: buy instruments from Quayside, then click KITCHEN above the back-room table. Put the actual instrument and one ingredient combination on the worktop, with any listed water and power. Choose the instrument and manage heat and timing; each action advances five seconds. Pans need a galley or native heating plate; chilling needs a fridge. Tools remain reusable. Activate books to read their native-paper pages. Closing the worktop pauses a batch."
+guide.kitchen,"Reusable recipe book. Read for ingredients and tools, or place on the normal crafting table with them. The kitchen worktop also detects ready recipes. Heated recipes need a galley or heating plate; chilling needs a fridge. Measured water and power are used; tools and containers are kept. Tools go in the top compartments; cells in BATTERIES. Put ingredients, water and a fridge in INPUT. Click a ready recipe."
 guide.production,"PRODUCTION: keep a Fizzworks Recipe Book in canner INPUT, or Workshop Recipes / Production Handbook in galley INPUT. Choose a recipe with the native item chooser. Books and tools remain; only the listed ingredients, water and power are used. Food still requires hands-on cooking. The worktop also recognizes native recipe books. Packaging uses the ordinary printer with pattern chips from Undertow Engineering, metal ingots, Metal Printing and CNC modules."
 guide.water,"WATERWORKS: the Industrial Water Generator is available at Stormglass Depot Outlet from day 28 with a Grand Waterworks installed, list price 12,500 credits. It generates and fills four native 2 L high-quality water bottles overnight. Fit a charged cell: 6 power each, 24 for all four. No ingredient or empty-bottle input. Existing old inputs and attachments remain retrievable. Starting traits provide no generator."
 guide.cellar,"CELLAR: Quayside stocks the Cellar Bench, readable Brewing Notes, bottles and culture. 76 drinks use suitable fruit, grains, starch crops and infusion ingredients. Choose Ferment, Distill or Infuse and load one combination. Batches take nights. The CELLAR tab stores bottles. Use the native powered Age-Well rack to mature suitable wines, cider and perry; bottled spirits do not age for free. Cask rye's recipe includes its own oak stage."
@@ -2716,7 +2716,7 @@ settings.interface.cornerGuide.description,Optional guide shortcut in the corner
 perk.bottler.name,Dockside Bottling Apprentice
 perk.bottler.description,"Start with a reusable Manual Bottling Kit, recipe handbook, a 6 L jug containing 6 L of pure water, 8 empty glass bottles and 4 of each concentrate. Bottle drinks at the ordinary crafting table or back-room worktop without power. Industrial water equipment must be earned and purchased later."
 perk.technician.name,Stormglass Technician
-perk.technician.description,"Start with a standard moisture farm, a 25 L reservoir, Stormglass Throughput and Crystal Polishing modules, and a charged starter cell. Install the modules and connect the reservoir and cell yourself."
+perk.technician.description,"Start with a standard moisture farm, a 20 L reservoir, Stormglass Throughput and Crystal Polishing modules, and a charged starter cell. Install the modules and connect the reservoir and cell yourself."
 visitor.name.neon_customer_velvet_01,Nyra Sol
 visitor.name.neon_customer_velvet_02,Celeste Vale
 visitor.name.neon_customer_velvet_03,Mei Arden
@@ -2967,7 +2967,7 @@ milestone.neon_faction_brinewake_trust.description,"After a paid sale of at leas
 milestone.neon_faction_brinewake_referral.name,Freefleet Recommendations
 milestone.neon_faction_brinewake_referral.description,Each operating day has a 20% chance of an extra shopper from this faction. The six Quayside factions share a cap of two extra shoppers daily; priority rotates each day.
 milestone.neon_faction_brinewake_supplier.name,Waterway Passage Rate
-milestone.neon_faction_brinewake_supplier.description,10% discount on jugs and reservoirs at Stormglass. Overlapping discounts use the best rate; they do not stack.
+milestone.neon_faction_brinewake_supplier.description,10% discount on industrial water tanks and tank retrofit kits at Stormglass. Overlapping discounts use the best rate; they do not stack.
 milestone.neon_faction_brinewake_regular.name,Regular Shore Leave
 milestone.neon_faction_brinewake_regular.description,New faction visitors can return after one day instead of two.
 milestone.neon_faction_brinewake_patron.name,Fleet Quartermaster
@@ -2975,7 +2975,7 @@ milestone.neon_faction_brinewake_patron.description,New faction visitors bring 4
 milestone.neon_faction_brinewake_caution.name,Short Purses
 milestone.neon_faction_brinewake_caution.description,Members of Brinewake Free Fleet are wary. New faction visitors bring 15% smaller budgets.
 milestone.neon_faction_brinewake_surcharge.name,Dockside Toll
-milestone.neon_faction_brinewake_surcharge.description,10% surcharge on jugs and reservoirs at Stormglass. A surcharge takes priority over an overlapping faction discount.
+milestone.neon_faction_brinewake_surcharge.description,10% surcharge on industrial water tanks and tank retrofit kits at Stormglass. A surcharge takes priority over an overlapping faction discount.
 milestone.neon_faction_brinewake_scrutiny.name,Crew Black Mark
 milestone.neon_faction_brinewake_scrutiny.description,Complaints travel through Brinewake Free Fleet. Further reputation losses with this faction are 25% larger. Fair trades can still rebuild trust at the normal positive rate.
 milestone.neon_faction_brinewake_infrequent.name,No Shore Leave
@@ -3121,28 +3121,28 @@ reputation.velvet.flavor,"Treat the women well, and the quay hears about it."
 water.jug,Dockrunner Jug · 10 L
 water.reservoir,Undertow Reservoir · 25 L
 water.throughput,Stormglass Throughput Core
-water.throughputInfo,Universal module: +200% performance. Raises a native moisture farm's output from 850 mL to 2.55 L before shared-air penalties and other modifiers.
+water.throughputInfo,An overclocked pump core. Adds 200% performance.
 water.polishing,Crystal Polishing Core
-water.polishingInfo,Universal module: +100 quality. Improves native water-production quality and purifier performance through the normal module system.
+water.polishingInfo,A finishing filter for water machinery. Adds 100 quality.
 water.economizer,Closed-Loop Economizer
-water.economizerInfo,Universal module: +50% efficiency. Uses the game's normal power calculations.
-water.jugInfo,"Refillable, graduated water container. Compatible with native pouring, testing, purification and machine liquid slots. Sold empty."
-water.sealedInfo,"Sealed 750 mL drink. Consume normally, or use it on a liquid container with room for the full contents. Opening returns the reusable bottle. New batches retain the source mixture; older batches have unrecorded source details."
+water.economizerInfo,Gets more work out of a charged cell. +50% efficiency.
+water.jugInfo,An empty jug with a measuring scale down the side.
+water.sealedInfo,A sealed 750 mL drink. Drink it or pour it all out to get the bottle back.
 water.handbook,Undertow Bottling Handbook
 water.bookInfo,"For Reserve, Cordial or Tonic, use an empty 750 mL glass bottle or a 350/500 mL can. Keep this book, a Manual Bottling Kit and the listed supplies in a crafting table or the back-room worktop. No power needed; the kit, jug and handbook remain. Buy a kit at Undertow Engineering. Industrial Water Generator: produces four new native 2 L bottles of high-quality water overnight, using 6 power per bottle. No source water, empty bottles or concentrates required. Output space and power limit production; modules cannot raise the four-bottle daily cap. Available at Stormglass Depot Outlet from day 28 after installing a Grand Waterworks depot."
 water.oldSupplies,RETRIEVE OLD SUPPLIES
 water.oldRack,RETRIEVE OLD RACK
 water.oldMagazine,RETRIEVE OLD MAGAZINE
 water.generator,Undertow Industrial Water Generator
-water.generatorInfo,"End-tier four-bay waterworks. Generates and fills four new native 2 L bottles with high-quality water per day (8 L total), at closing. Needs a charged cell: 6 power per bottle, 24 for all four. No ingredient input or empty-bottle supply. Clear OUTPUT to keep production running; unused daily output is not banked. Performance modules cannot increase the four-bottle limit. Requires a 12 x 9 area. Stormglass Depot Outlet stocks it from day 28 after a Grand Waterworks depot is installed."
+water.generatorInfo,Four filling heads turn out up to four 2 L water bottles at closing. Each bottle costs 6 power. Leave room in the output tray.
 water.crate,Industrial Water Generator · Assembly Crate
-water.crateInfo,"Packed end-tier water generator. Purchased from Stormglass Depot Outlet after day 28 with a Grand Waterworks installed. Makes and fills four 2 L bottles of high-quality water per day, using 24 power. Activate to assemble in an owned Waterworks Depot or main inventory; clear a 12 x 9 area. The crate is consumed only after the machine fits."
+water.crateInfo,"An industrial water generator, packed for delivery. Clear a 12 × 9 space before unpacking."
 water.assembled,Industrial Water Generator assembled. Check your Waterworks Depot or main inventory.
 water.clearSpace,Clear a 12 x 9 area in a Waterworks Depot or main inventory. Your crate was kept.
 water.unavailable,Bottler unavailable. Your crate was kept.
 water.tool,Manual Bottling Kit (reusable)
 water.concentrate,{0} Concentrate
-water.concentrateInfo,One charge makes {0}. Supply a 750 mL glass bottle or a 350/500 mL can and its capacity in water of at least 99% purity.
+water.concentrateInfo,One dose of {0} concentrate. Top up the bottle or can with water at 99% purity or better.
 water.cleanWater,"High Quality or Pure Water · {0} mL water, at least 99% pure (water is used; jug remains)"
 water.recipeInfo,Uses {0} mL of clean water and the matching empty container. Your bottle is filled and returned; cans keep their size and condition. No power. Requires one matching {1} concentrate.
 water.emptyGlass,Empty {0} (filled and returned)
@@ -3151,37 +3151,37 @@ water.recipePage,"Manual Bottling Kit (reusable)\n1 empty 750 mL glass bottle or
 water.750,{0} · 750 mL
 water.source,Neon Undertow | Waterworks Division
 water.kit,Manual Bottling Kit
-water.kitInfo,"Reusable 3 x 3 hand-bottling kit. Double-click to open. Put your Bottling Handbook, clean-water jug, empty 750 mL glass bottle or 350/500 mL can and one matching concentrate in INPUT. All three drinks use these same containers. Choose the matching container size. OUTPUT keeps your bottle or the same size can; water used equals its capacity. No power needed. Also works on a crafting table. Sold at Undertow Engineering."
+water.kitInfo,"A hand press for bottles and cans. Load the handbook, concentrate, clean water and an empty container, then choose its size."
 water.fill,FILL BOTTLE / CAN
 water.kitError,"Add the handbook, an empty {0}, {1} mL of 99%+ water and 1 {2} Concentrate. Leave OUTPUT space."
 water.glassSize,{0} mL glass bottle
 water.canSize,{0} mL can
-water.canInfo,Hand-filled {0} mL can. Consume normally or use on a liquid container to pour out its contents and recover the same size empty can. The source mixture and packaging condition are retained.
+water.canInfo,A hand-filled {0} mL can. Drink it or decant it and keep the empty.
 water.delivery,Your Manual Bottling Kit has arrived. Check the counter or main inventory.
 station.cola,Quay cola spices
 station.ginger,Dried ginger
 station.vanilla,Vanilla pod
 station.root,Rootline spice blend
-station.spices,"A measured botanical portion for the Workshop Recipe Book. Combine with its listed fruit base, sweetener and clean water in the Galley. Ingredient only."
+station.spices,A measured portion of botanicals for soda syrup.
 station.fizz,Fizz charge
-station.fizzInfo,One measured fizz charge for one sealed fresh-fruit soda. Four charges are used per four-can fruit batch. Sold at Quayside Canning Co-op. Ingredient only.
+station.fizzInfo,The bubbles for one can of fresh-fruit soda.
 station.smallCan,Empty soda can · 350 mL
 station.largeCan,Empty soda can · 500 mL
-station.smallCanInfo,One blank 350 mL can. Filled and sealed in the Fizzworks Canner. Buy empties or print four from one metal ingot using the matching native printer chip.
-station.largeCanInfo,One blank 500 mL can. Filled and sealed in the Fizzworks Canner. Buy empties or print four from one metal ingot using the matching native printer chip.
+station.smallCanInfo,"An empty 350 mL can, ready for the filling head."
+station.largeCanInfo,A tall 500 mL can. Still waiting for its first fill.
 station.tin,Empty food tin
-station.tinInfo,One empty tin for a preserve. Buy empties or print two from one metal ingot using the matching native printer chip.
+station.tinInfo,An empty food tin. Just the right size for one preserve.
 station.flour,Nutrifruit flour
-station.flourInfo,One portion of milled nutrifruit flour for meals and baking. The Galley mills one native nutrifruit into two flour portions. Ingredient only.
+station.flourInfo,Finely milled nutrifruit. Useful wherever the recipe calls for flour.
 station.sweet,Fruit sweetener
-station.sweetInfo,"One portion of refined fruit sugar for concentrates, desserts and preserves. The Galley uses one native nutrifruit and 100 mL clean water to make two portions. Ingredient only."
+station.sweetInfo,Refined fruit sugar. It sticks to the scoop.
 station.usedCase,Quayside Reclaimed Can Case
-station.usedCaseInfo,"Mixed packaging lot: 20 regular and 10 large empty cans, from intact to heavily worn, dented or rusty. Purchased lots include the cans."
+station.usedCaseInfo,Twenty regular cans and ten tall ones. Some have seen better days.
 station.usedContents,RECLAIMED CANS
 station.sodaCase,Fizzworks Starter Supply Case
 station.galleyCase,Dockside Galley Supply Case
-station.sodaCaseInfo,"Each new case comes with 3 different concentrates picked at random, 3 empty 350 mL cans, 3 empty 500 mL cans and 6 empty 750 mL glass bottles. Move supplies into the canner by hand. The price includes the contents."
-station.galleyCaseInfo,"Contains flour, sweetener, tins, native fruit, milk, juice, cheese, small raw meat and small fish fillets. Move ingredients to your Galley INPUT. Price includes its contents."
+station.sodaCaseInfo,"Three syrups, six cans and six glass bottles. A first run for the soda line."
+station.galleyCaseInfo,"A galley delivery with flour, sugar, tins, produce, dairy, meat and fish."
 station.sodaStation,Fizzworks Soda Canner
 station.kitchenStation,Dockside Production Galley
 station.chooseRecipe,CHOOSE RECIPE
@@ -3203,9 +3203,9 @@ station.needsGalley,Place Undertow Workshop Recipes or the Production Handbook i
 station.choose,Choose recipe
 station.cancel,Cancel
 station.failed,"No batch made. Check the recipe book, ingredients, water purity, charged cell and OUTPUT space. Supplies were kept."
-station.sodaInfo,"6 x 4 powered production station. Keep the matching recipe book in INPUT with owned supplies, choose a recipe, and fit a charged cell. MAKE ONE runs a batch; AUTO runs overnight. Soda water must be at least 99% pure; galley recipes require 99%. Source quality and packaging condition determine soda grade and value. Stops when the book, ingredients, power or OUTPUT space are unavailable. Makes 20 brands in both can sizes. Concentrate recipes make one can; fresh-fruit recipes use matching fruit, sweetener and fizz to make four cans with four empties. Base 16 batches/night; up to 128 with performance modules. The UPGRADES tab accepts a Stormglass Control Rack. Quality modules never purify source water. Move finished products from OUTPUT to your selling counter."
-station.galleyInfo,"6 x 4 powered production station. Keep the matching recipe book in INPUT with owned supplies, choose a recipe, and fit a charged cell. MAKE ONE runs a batch; AUTO runs overnight. Soda water must be at least 99% pure; galley recipes require 99%. Source quality and packaging condition determine soda grade and value. Stops when the book, ingredients, power or OUTPUT space are unavailable. Makes flavor concentrates, flour and sweetener. Print packaging with native printer chips. Prepare meals by hand on the kitchen COOK tab. Base 8 batches/night; up to 64 with performance modules. The UPGRADES tab accepts a Stormglass Control Rack. Quality modules never purify source water. Move finished products from OUTPUT to your selling counter."
-station.chipInfo,"Reusable native printer pattern. Produces {0} empty containers from one metal ingot. Fit Metal Printing and CNC modules in the ordinary printer, load this chip, ingot and a charged cell. The printer manages power, progress and output space. See Undertow Workshop Recipes."
+station.sodaInfo,"A powered soda canner. Feed it a recipe book, cans and water of at least 99% purity. Runs up to 16 batches a night before upgrades."
+station.galleyInfo,"A powered galley for syrups, flour and sweetener. Load the book and ingredients. Runs up to eight batches a night before upgrades."
+station.chipInfo,"Printer pattern for {0} empty containers per ingot. Requires metal printing, CNC and a charged cell."
 station.oneOutput,Produces {0} item
 station.outputs,Produces {0} items
 station.sodaWater,High Quality or Pure Water · {0} mL water (99%+; grade inherited)
@@ -3217,11 +3217,11 @@ bar.tool.headroom,Leave headroom: the shaker works with up to 600 mL.
 bar.tool.stirFizzy,Use the mixing glass to stir carbonated drinks.
 bar.tool.shaker,Glassmarket Cocktail Shaker
 bar.tool.mixGlass,Glassmarket Mixing Glass & Spoon
-bar.tool.shakerInfo,"750 mL shaker. Pour measured ingredients into it, then activate to shake (up to 600 mL, leaving headroom). Pour into your serving bottle. Stir fizzy drinks instead."
-bar.tool.glassInfo,"750 mL mixing glass with a stirring spoon. Pour measured ingredients into it, then activate to stir. Pour into a serving bottle or measure smaller portions with a cylinder."
+bar.tool.shakerInfo,A 750 mL cocktail shaker. Leave some room to shake it: 600 mL at most.
+bar.tool.glassInfo,A 750 mL mixing glass with a long spoon. Stir gently to keep the fizz.
 bar.tool.railTitle,BARTENDER'S TOOL RAIL
 bar.tool.railName,Glassmarket Bartender's Tool Rail
-bar.tool.railInfo,"A narrow rail for the back of a bar: holders for a measure, mixing glass and shaker, with space beside them for a blender, notebook and serving bottle. Tools sold separately. Each works here or in your main inventory."
+bar.tool.railInfo,"A bar rail with a place for the measure, mixing glass and shaker. Bring your own tools."
 bar.tool.ownedRoom,Use an owned container with room for the whole contents.
 bar.tool.moveDrink,Place the drink in your inventory before opening it.
 bar.tool.missingEmpties,The empty container could not be created.
@@ -3292,10 +3292,10 @@ liquid.sourceUnknown,Includes soda with unrecorded source quality.
 liquid.old,Some soda batches predate liquid composition records.
 liquid.grades,Soda ingredient grades: {0}
 water.rackName,Stormglass Production Control Rack
-water.rackInfo,"Sold empty. Holds two standard 2 x 2 universal modules. Fits the Canner/Galley's UPGRADES tab. Base nightly batches: Canner 16, Galley 8; maximum 128 and 64. One +200% Stormglass core triples the base limit. Efficiency reduces power per batch, minimum 1. Quality modules do not purify water. The Industrial Water Generator has four fixed bays and does not use this rack."
+water.rackInfo,An empty control rack for two 2 × 2 modules. Fits the canner or galley upgrade bay.
 water.modules,UNIVERSAL MODULES
 water.magazine,Dockrunner Empty-Bottle Storage
-water.magazineInfo,"Sold empty. An 8 x 16 storage grid fits sixteen native 2 L bottles, or normal 750 mL bottles. Only empty, owned bottles are accepted. Keeps reusable bottles together for manual filling. The Industrial Water Generator makes its own bottles; old attached magazines can be removed with their contents intact."
+water.magazineInfo,A bottle magazine with room for sixteen empty 2 L bottles or smaller glass bottles.
 water.empty,EMPTY BOTTLES
 liquid.juiceRoom,Leave room for the extracted juice; inspect spoiled produce before blending.
 reputation.ui.title,Faction reputation
@@ -3381,26 +3381,26 @@ room.service.fit,Fit {0} · bay {1}
 room.service.move,"Move your first available owned {0} into this bay, keeping its contents. Buy the machine separately. Dismantle the current station before fitting another."
 room.service.fitWater,Fit your owned {0} delivery crate or legacy depot into this bay. Fitting is included in its purchase price. Legacy contents are preserved.
 room.service.dismantle,Dismantle station · bay {0}
-depot.info,"{0} x {0} exterior; {1} selectable 16 x 64 bays ({2} cells; up to {3} individual soda cans). Select a bay tab to see its full grid. Large windows scale down to fit the screen. Stores owned machines, tanks, filters, modules, bottles and supplies. Hidden bays remain in the native storage and overnight cycle. Supplies no free power, water or automatic stock transfer. Load each machine normally. Other depots cannot be placed directly inside. Sold empty in an assembly crate."
+depot.info,A {0} × {0} depot with {1} bays and {2} storage cells. Holds up to {3} loose soda cans.
 depot.bay,BAY {0}
 depot.capacity,STORAGE · {0} CELLS
 depot.joe,JOE WILD · BACK ROOM
 depot.crate,{0} · Assembly Crate
-depot.crateInfo,Arrange fitting in Joe Wild's BACK ROOM tab. Activate this crate to open Joe's shop. Uses no main-inventory space: {0} machine docks plus {1} storage cells on full 32 x 16 pages. Open WATERWORKS on the back room. Bottler crates use an available machine dock first.
+depot.crateInfo,A wall depot packed for Joe Wild to fit. Includes {0} machine docks and {1} storage cells.
 depot.machines,MACHINES
 depot.reclaim,Original depot: unpack remaining cargo
-depot.reclaimInfo,Old cargo that did not fit remains in its original depot. Open it to retrieve items.
+depot.reclaimInfo,The cargo left over from the move is still inside.
 depot.unpack,UNPACK
 depot.next,NEXT UNIT
 depot.shop,Install waterworks in your shop. The package and its contents have been kept.
 depot.unavailable,Waterworks unavailable; package kept.
-depot.retired,Retired depot shell. Its remaining contents are preserved here; it cannot install another wall compartment.
+depot.retired,An old depot shell. Check inside for anything left behind.
 depot.closed,Waterworks unavailable.
 depot.mustEmpty,"Empty the Waterworks docks, storage and recovery compartment before dismantling."
 depot.crateFailed,Packing crate unavailable; Waterworks kept.
 depot.crateSpace,Make room on the shared counter or in the cabinet for its delivery crate.
 depot.wall,{0} · Wall Compartment
-depot.wallInfo,"Installed wall waterworks. Machine docks plus {0} storage cells in full 32 x 16 pages. Open docked equipment to load inputs, batteries and outputs normally. No free power or automatic transfers."
+depot.wallInfo,Wall-mounted machine docks with {0} storage cells. Each machine takes its own supplies and power.
 depot.waterDock,Waterworks dock {0}
 depot.dock,DOCK {0}
 depot.rack,RACK {0}
@@ -3425,7 +3425,7 @@ shop.decor.decor_medical_sign,Mercy Circuit Counter Sign
 shop.decor.decor_amber_lamp,Undertow Amber Counter Lamp
 shop.decor.decor_teal_lamp,Undertow Teal Counter Lamp
 shop.decor.decor_violet_lamp,Undertow Violet Counter Lamp
-shop.decor.info,"Freestanding counter decoration. Place it on your shop counter or in a display. Cosmetic only; no electricity, attraction or trade effect."
+shop.decor.info,A little something for an empty spot on the shop counter.
 shop.decor.source,Neon Undertow · Glassmarket Fixtures
 fish.value,Ornamental fish pedigree
 rat.value,Pet rat pedigree
@@ -3517,9 +3517,9 @@ breed.seller.orla.offer,They're ordinary stock. Keep a pair for breeding or use 
 breed.seller.zuri,"I brought four tilapia from the same tank. Two males, two females. Want a look?"
 breed.seller.zuri.offer,"They're table fish, but you could just as well start a tank with them. There's a discount for the whole lot."
 breed.plain,Breeding traits: none
-breed.buyer.household,"I'm also looking for a pet. Do you have a rat or a fish I could take home?"
+breed.buyer.household,I'm also looking for a pet. Do you have a rat or a fish I could take home?
 crop.seed,{0} seeds
-crop.seedInfo,Plant in a hydroponic farm. A healthy harvest can produce larger crops and return seeds for replanting.
+crop.seedInfo,Bred to fit a hydroponic grower. Save seeds from a healthy harvest for the next crop.
 crop.fruitPacket,Fruit seeds · pack {0}
 crop.vegetablePacket,Vegetable seeds · pack {0}
 cage.cage_large,Large animal cage
@@ -3527,3 +3527,353 @@ cage.cage_very_large,Extra-large animal cage
 cage.cage_barn,Barn animal cage
 cleaver.space,Make room for both cuts before using the cleaver.
 kitchen.station.water tank,Water tank
+water.industrialTank,Industrial Water Tank · 100 L
+water.industrialTank.info,A 100 L tank with standard water fittings.
+water.retrofit,Water Tank Retrofit Kit
+water.retrofit.info,Expands a fully upgraded 50 L tank to 100 L. No need to drain it first.
+fish.largeSystem,Large Recirculating Aquaculture System · 14 × 8
+animal.supplier.intro,I brought stock from the breeders and a few supplies. Pick what you need.
+cellar.native.singleFruit,Use one fruit variety per batch of Undertow wine.
+cellar.native.finished,"A 750 mL bottle of fruit wine, {0}% ABV. Decant into Undertow glass for the matching label."
+cellar.native.instructions,"You can also make fruit wine in a vanilla wine bottle. Fill it with 750 mL of water, add one fruit variety and start fermentation. Yeast and ingredient quality work as in the base game. When finished, pour into an empty Undertow glass bottle for the matching drink label. Bloomberry keeps its vanilla recipe. Fruit spirits still use the Cellar Bench."
+kitchen.simple.instructions,"Use {0} with the listed ingredients, water and power. Cook on the normal crafting table with this book, or choose a ready recipe on the kitchen worktop."
+kitchen.counter.batteries,BATTERIES
+book.reader.page,Page {0}
+book.reader.index,Index
+book.reader.entry,Page {0}: {1}
+book.tutorial.firstnight.title,"Your first evening"
+book.tutorial.firstnight.body,"After closing, visit Quayside Canning Co-op using the travel menu. Buy a chopping board from KITCHEN + BOOKS, plus an apple and a cabbage from PRODUCE.\n\nBack home, open BACK >, then KITCHEN above the worktop. Follow First meal in this cubby's Workshop Fieldbook. You do not need to fit a station just to open the kitchen. Keep your guides: their index lets you return to any lesson."
+book.tutorial.firstmeal.title,"First meal: Apple Slaw"
+book.tutorial.firstmeal.body,"Fit a chopping board in its top kitchen slot. Put one apple and one cabbage in INPUT, then open COOK. Click Apple Slaw and collect it from OUTPUT. This starter recipe needs no water, battery or heating plate.\n\nFor other meals, read their recipe book. Fit the matching tool; supply any listed water and power. A heating plate or galley provides heat for a pan or saucepan, but does not replace the tool. A fridge needs its own battery."
+book.tutorial.bottling.title,"Your first bottled drink"
+book.tutorial.bottling.body,"Open the Manual Bottling Kit. Put the Undertow Bottling Handbook, matching concentrate, water at 99% purity or higher and an empty 350/500 mL can or 750 mL glass bottle in INPUT.\n\nChoose a ready drink in the middle. It uses one concentrate, one container and that container's capacity in water. Collect the labelled drink from OUTPUT. The kit needs no power. Plastic water bottles are not soda packaging. Keep space for the result."
+book.tutorial.growing.title,"Plant your first crop"
+book.tutorial.growing.body,"These crops are genetically modified compact varieties bred for standard hydroponic growers. Even the fruit trees stay small.\n\nBuy fruit or vegetable seed assortments from the Co-op's PRODUCE shelf. Open a packet and put one seed in the vanilla hydroponic unit's seed slot. Add a charged battery and a water container; use the plant analyser to check the crop's nutrient needs.\n\nGrowth uses the normal machine cycles, water and plant-health rules. Collect produce and returned seeds from OUTPUT. Healthy crops can yield large and huge produce, just like Nutrifruit. Keep seeds to plant the next generation."
+book.tutorial.genetics.title,"Develop your own strains"
+book.tutorial.genetics.body,"Our crop seeds use the vanilla plant DNA system. Read the DNA Manipulator's instruction note. Put a compatible written trait disk in TRAIT DISK, a seed in TARGET and supply power. Check the operation and success chance before starting.\n\nFor extraction, use the BLANK DISK slot and read the displayed risks. Successful edits can change growth, yield, water demand or produce properties. Returned seeds inherit the parent's traits. Keep a spare strain: edits can fail, and incompatible traits remain restricted."
+book.tutorial.stuck.title,"If the kitchen seems stuck"
+book.tutorial.stuck.body,"Open KITCHEN above the back-room worktop and select COOK. The cabinet's FITTED STATION slot is not the cooking tool selector. Fit tools in the top slots; put ingredients in INPUT and leave OUTPUT space.\n\nNo recipes? Check the exact ingredients, tool, water, power and heating or chilling requirements. TOOL: Chopping Board with heat/work controls is the older interface, retained for an unfinished saved batch. Finish that batch to return to ready recipes. If still stuck, report your version and a full-window screenshot."
+kitchen.taste.R001,Thin shreds of cabbage and tart apple. Best while they still crunch.
+kitchen.taste.R002,A sharp dressing of lemon and lime. A spoonful wakes up a salad.
+kitchen.taste.R003,"Chopped tomato and onion, sitting in their own juice."
+kitchen.taste.R004,Sticky date paste with just enough lemon to cut the sweetness.
+kitchen.taste.dessert_fruit_ice,Sweetened juice frozen into a fruit ice.
+kitchen.taste.dessert_fudge,Milk and fruit sugar cooked down to a soft fudge.
+kitchen.taste.dessert_pudding,A soft milk pudding with sweetened nutrifruit.
+kitchen.taste.meal_cheese_noodles,Soft noodles coated in melted processed cheese.
+kitchen.taste.meal_fish_chowder,Small pieces of fish in a milky broth.
+kitchen.taste.meal_garden_pot,A pot of nutrifruit thickened with its own flour.
+kitchen.taste.meal_meat_broth,A little meat goes a long way in this thick broth.
+kitchen.taste.preserve_fish,Fish fillet packed tight in a ration tin.
+kitchen.taste.preserve_fruit,Sweet nutrifruit packed into a little tin.
+kitchen.taste.preserve_meat,A tin of meat for a shift that runs late.
+kitchen.taste.snack_crackers,Thin cheese crackers made with nutrifruit flour.
+kitchen.taste.snack_fruit_chews,Chewy little bites of sweetened nutrifruit.
+kitchen.tool.note.board,A scarred cutting board. There's still a clean side.
+kitchen.tool.note.bowl,A deep bowl with room to toss a salad without losing half of it.
+kitchen.tool.note.chiller,A bowl that draws the cold from a fridge.
+kitchen.tool.note.oven,A small countertop oven with its own heating element.
+kitchen.tool.note.pan,"A broad frying pan, dark from use."
+kitchen.tool.note.pot,A saucepan deep enough for a proper broth.
+kitchen.tool.note.processor,A squat food processor with a blade that still bites.
+produce.note.apple,Firm flesh with a clean snap when you bite it.
+produce.note.asparagus,Slender green spears. Trim the woody ends.
+produce.note.beetroot,Deep red all the way to the cutting board.
+produce.note.bell_pepper,"Hollow in the middle, crisp around the edges."
+produce.note.blackcurrant,Dark berries that stain everything they touch.
+produce.note.blueberry,Little berries with a dusty bloom on the skin.
+produce.note.broccoli,"A crown of florets on a thick, edible stalk."
+produce.note.cabbage,Tightly packed leaves. A single head makes a lot of slaw.
+produce.note.carrot,"A crisp root, sweet even before it hits the pan."
+produce.note.cauliflower,Pale florets that crumble neatly under a knife.
+produce.note.celery,Ribbed stalks that snap along the strings.
+produce.note.cherry,Sweet flesh around a hard little stone.
+produce.note.coconut,A hard shell with white flesh tucked against it.
+produce.note.corn,Rows of sweet kernels packed around a cob.
+produce.note.cucumber,"Cool, watery flesh under a dark green skin."
+produce.note.date,Wrinkled and sticky. One is sweeter than it looks.
+produce.note.eggplant,Glossy skin over pale flesh that soaks up pan juices.
+produce.note.garlic,A bulb of pungent cloves. Start with one.
+produce.note.grapefruit,Pink segments with a bitter edge.
+produce.note.leek,Slice the pale stalk into rings for the pot.
+produce.note.lemon,The rind smells sweeter than the juice tastes.
+produce.note.lettuce,Tender leaves that make a handy wrap.
+produce.note.lime,A small green citrus with a sharp bite.
+produce.note.lychee,A rough shell that peels away from translucent flesh.
+produce.note.mango,"The sweet flesh clings to a broad, flat stone."
+produce.note.onion,The papery skin comes off. The smell stays on your hands.
+produce.note.orange,The peel leaves citrus oil on your fingers.
+produce.note.passionfruit,"Spoon out the tart pulp, seeds and all."
+produce.note.peach,Fuzzy skin and a large stone. Bruises easily.
+produce.note.pear,"Sweet, with a faint grain to the flesh."
+produce.note.pineapple,"Tough scales outside, bright yellow flesh inside."
+produce.note.potato,"A plain, starchy tuber. Good for stretching a stew."
+produce.note.radish,A crisp little root with a peppery bite.
+produce.note.spinach,A handful of dark leaves that cooks down fast.
+produce.note.strawberry,Soft red fruit with its seeds on the outside.
+produce.note.sweet_potato,Orange flesh that turns soft and sweet with heat.
+produce.note.tomato,"Thin skin, plenty of juice. Cut it over a bowl."
+produce.note.watermelon,A thick rind around a lot of juice.
+shop.decor.note.decor_amber_lamp,An amber lamp small enough to sit beside the till.
+shop.decor.note.decor_food_sign,A food sign big enough to read from the night queue.
+shop.decor.note.decor_medical_sign,A Mercy Circuit sign for the medical end of the counter.
+shop.decor.note.decor_teal_lamp,A little teal counter lamp from Glassmarket.
+shop.decor.note.decor_violet_lamp,A counter lamp with a violet lens in a dark frame.
+shop.decor.note.decor_water_sign,A counter sign pointing thirsty customers to the water.
+kitchen.pantry.note.beef,A cut of beef with a deep red grain. Cook before eating.
+kitchen.pantry.note.blackrail_rye,Dark rye grain for a dense loaf or a pot of porridge.
+kitchen.pantry.note.chicken,A cut of raw chicken. Keep cold and cook through.
+kitchen.pantry.note.coilwheat,A measure of wheat for dough and noodles.
+kitchen.pantry.note.ember_millet,Tiny millet grains that scatter if you tip the scoop.
+kitchen.pantry.note.glassrice,"Slender grains, almost translucent when dry."
+kitchen.pantry.note.kilnseed,Small seeds that give flatbread a little crunch.
+kitchen.pantry.note.pork,"A raw cut of pork, ready for the pan."
+kitchen.pantry.note.rustbelt_barley,Plump barley grains. Give them time to soak.
+kitchen.pantry.note.signal_sorghum,"Small, round grains that keep their bite in a pilaf."
+kitchen.pantry.note.switchyard_oats,A scoop of pale oats. They soften quickly in water.
+kitchen.pantry.note.vatmeat,Tank-grown meat. Every cut seems to run the same way.
+kitchen.taste.R005,Little cubes of pepper give the tomato relish some crunch.
+kitchen.taste.R006,Sweet corn kernels in a chunky tomato salsa.
+kitchen.taste.R007,A lettuce leaf holds just about a spoonful of salsa.
+kitchen.taste.R008,Crisp radishes with a sharp citrus bite.
+kitchen.taste.R009,"Cucumber shaved thin enough to curl, with a squeeze of lime."
+kitchen.taste.R010,A ribbon of cucumber around a pickled radish.
+kitchen.taste.R011,The beet stains every shred of carrot red.
+kitchen.taste.R012,Still tastes of apple under all that beet pink.
+kitchen.taste.R013,Broccoli and cauliflower chopped down to green and white crumbs.
+kitchen.taste.R014,Looks like couscous. The little grains are chopped vegetables.
+kitchen.taste.R015,Sweet pear and crisp celery cut into little sticks.
+kitchen.taste.R016,Strawberry juice catches in the folds of the spinach leaves.
+kitchen.taste.R017,Peeled lychees nestled between pieces of grapefruit.
+kitchen.taste.R018,"Tangy passionfruit sauce, thickened with sticky dates."
+kitchen.taste.R019,Mango slices fanned out in a pool of passionfruit sauce.
+kitchen.taste.R020,Dark berry pulp. It leaves a purple ring on the spoon.
+kitchen.taste.R021,"Peach sliced paper-thin, with cherries tucked between the slices."
+kitchen.taste.R022,Hollowed-out nutrifruit makes a handy little berry bowl.
+kitchen.taste.R023,A little fruit boat heaped with coconut shavings.
+kitchen.taste.R024,Long wedges of melon and pineapple. Both drip down your wrist.
+kitchen.taste.R025,Orange segments and chewy pieces of date.
+kitchen.taste.R026,The pale part of the rind gives this slaw its crunch.
+kitchen.taste.R027,A celery stalk makes a neat little trough for tomato relish.
+kitchen.taste.R028,A sharp garlic dip. You'll taste it for a while.
+kitchen.taste.R029,Fine asparagus ribbons with a little lemon juice.
+kitchen.taste.R030,A lettuce leaf folded around a handful of root slaw.
+kitchen.taste.R031,A handful of crunchy seeds and sorghum for the road.
+kitchen.taste.R032,Dry oats with just enough date to make them stick together.
+kitchen.taste.R033,Rye and oats measured out for a pot of porridge.
+kitchen.taste.R034,Millet adds tiny yellow grains to the rye and oats.
+kitchen.taste.R035,"Plump barley and fine millet, ready for the pot."
+kitchen.taste.R036,Slender rice grains mixed with barley and millet.
+kitchen.taste.R037,A dark rye and wheat mix for flatbread.
+kitchen.taste.R038,Little seeds speckle the rye flour.
+kitchen.taste.R039,Oats and wheat for a batch of griddle cakes.
+kitchen.taste.R040,The dates will sweeten the rice as it cooks.
+kitchen.taste.R041,Soft date paste rolled into little oat bites.
+kitchen.taste.R042,A white coat of coconut hides a soft date centre.
+kitchen.taste.R043,"Crunchy grains outside, chewy dates inside."
+kitchen.taste.R044,Sticky clusters of date and puffed sorghum.
+kitchen.taste.R045,Crushed berries turn these oats a deep purple.
+kitchen.taste.R046,A crunchy topping over soft cherries and peaches.
+kitchen.taste.R047,Lettuce tacos full of corn and crunchy sorghum.
+kitchen.taste.R048,Little seeds cling to the beet and carrot shreds.
+kitchen.taste.R049,The seeds give each cucumber roll a rough little crust.
+kitchen.taste.R050,Sweet corn salsa with a spoonful of crunchy grain.
+kitchen.taste.R051,Sorghum adds crunch to the strawberries and spinach.
+kitchen.taste.R052,A solid oat bar held together with dates.
+kitchen.taste.R053,Coconut flakes among the seeds. The small bits sink to the bottom.
+kitchen.taste.R054,A handful of blueberries softens the dry trail mix.
+kitchen.taste.R055,Oat flakes streaked with tart passionfruit sauce.
+kitchen.taste.R056,Seeds stick to the juicy edges of the mango.
+kitchen.taste.R057,Each pear half holds a scoop of oat and date muesli.
+kitchen.taste.R058,Barley and chopped dates for a hot breakfast.
+kitchen.taste.R059,Dark rye with seeds that keep their bite in porridge.
+kitchen.taste.R060,Fresh strawberry pressed between two chewy oat bars.
+kitchen.taste.R061,A soft ball of wheat dough. Dust your fingers before handling it.
+kitchen.taste.R062,Soaking has plumped up the barley grains.
+kitchen.taste.R063,Looks like water. Smells very much like garlic.
+kitchen.taste.R064,A light lemon and lime soak for fruit or vegetables.
+kitchen.taste.R065,Water has softened the tough rye kernels.
+kitchen.taste.R066,The last of the cloudy starch has washed off the rice.
+kitchen.taste.R067,Damp millet gathers in little golden clumps.
+kitchen.taste.R068,Cloudy oat milk. Give it a stir before pouring.
+kitchen.taste.R069,A little coconut cream rises to the top.
+kitchen.taste.R070,Pale red stock with the scent of a fresh tomato.
+kitchen.taste.R071,A light lychee drink with a citrus tang.
+kitchen.taste.R072,Fresh lime cuts through the rich coconut milk.
+kitchen.taste.R073,Cold tomato soup with the fresh bite of cucumber.
+kitchen.taste.R074,A dark red marinade that smells strongly of garlic.
+kitchen.taste.R075,Thin carrot curls brightened with citrus.
+kitchen.taste.R076,"Thick oat batter, ready for the griddle."
+kitchen.taste.R077,A dark lump of rye dough that rolls out thin.
+kitchen.taste.R078,"A sweet, amber drink made from dates."
+kitchen.taste.R079,Drinkable muesli. The last sip is mostly oats.
+kitchen.taste.R080,Peach pulp folded into smooth oat cream.
+kitchen.taste.R081,Black passionfruit seeds dot the white coconut milk.
+kitchen.taste.R082,Pineapple gives this lychee punch a sharp finish.
+kitchen.taste.R083,"Mostly watermelon juice, with a squeeze of citrus."
+kitchen.taste.R084,"Paper-thin radish curls, pink around the edges."
+kitchen.taste.R085,Pear slices resting in a tart citrus bath.
+kitchen.taste.R086,A spoonful turns a whole bowl of greens pink.
+kitchen.taste.R087,A few cold sips of tomato and celery.
+kitchen.taste.R088,Soaked barley and sliced leek for the soup pot.
+kitchen.taste.R089,Little dough parcels pinched shut around tomato relish.
+kitchen.taste.R090,Berry juice swirls through the oat milk.
+kitchen.taste.R091,A thin seeded bread with brown spots from the skillet.
+kitchen.taste.R092,A light tomato broth with garlic on the nose.
+kitchen.taste.R093,Loose grains of rice and barley with soft onion.
+kitchen.taste.R094,Pearls of barley in a thick tomato stew.
+kitchen.taste.R095,Little golden millet cakes with crisp edges.
+kitchen.taste.R096,Brown onion gravy thick enough to coat a spoon.
+kitchen.taste.R097,Wheat noodles with a faint garlicky bite.
+kitchen.taste.R098,Sweet peppers with little blisters on the skin.
+kitchen.taste.R099,Dates give this pepper glaze its shine.
+kitchen.taste.R100,Soft potatoes give the leek soup its body.
+kitchen.taste.R101,Sweet corn kernels in a pale oat-milk chowder.
+kitchen.taste.R102,Deep red beet soup. Mind your sleeves.
+kitchen.taste.R103,A nest of noodles under hot tomato broth.
+kitchen.taste.R104,Wilted cabbage leaves among spoonfuls of barley.
+kitchen.taste.R105,Rice cooked to a soft porridge with a little garlic.
+kitchen.taste.R106,A heap of spinach barely fills a bowl once it's cooked.
+kitchen.taste.R107,Pale cauliflower mash with a whiff of garlic.
+kitchen.taste.R108,A thick barley filling dotted with carrot.
+kitchen.taste.R109,A crimped pie with barley and carrot tucked inside.
+kitchen.taste.R110,Sweet pepper halves filled to the rim with pilaf.
+kitchen.taste.R111,Tender cabbage leaves wound around rice pilaf.
+kitchen.taste.R112,The onion gravy pools in the middle of the mash.
+kitchen.taste.R113,Thin rye bread freckled with chopped leek.
+kitchen.taste.R114,Soft eggplant with a smoky edge on warm flatbread.
+kitchen.taste.R115,A glossy pepper coating sticks to the millet crust.
+kitchen.taste.R116,Shredded potato and rye browned together in patties.
+kitchen.taste.R117,Whole corn kernels peep through the golden batter.
+kitchen.taste.R118,Little green flecks of broccoli in a browned oatcake.
+kitchen.taste.R119,"Seed-studded pancakes, best off a hot griddle."
+kitchen.taste.R120,Soft tomato-filled dumplings on a bed of cabbage.
+kitchen.taste.R121,Soft layers of leek under brown onion gravy.
+kitchen.taste.R122,Pear juice mellows the peppery radishes.
+kitchen.taste.R123,Carrot pieces lacquered with orange juice.
+kitchen.taste.R124,Dark griddle marks run across the asparagus.
+kitchen.taste.R125,A squeeze of lime over charred sweet corn.
+kitchen.taste.R126,The lettuce hearts stay tender in the garlic broth.
+kitchen.taste.R127,Pan-browned rice with strips of blistered pepper.
+kitchen.taste.R128,Three grains simmered until the oat milk thickens.
+kitchen.taste.R129,Soft rice dotted with dates and coconut.
+kitchen.taste.R130,A sturdy rye breakfast sweetened with nutrifruit.
+kitchen.taste.R131,Warm oats and dates swollen with coconut milk.
+kitchen.taste.R132,The beet has dyed the noodles all the way through.
+kitchen.taste.R133,Glossy pepper sauce clings to every noodle.
+kitchen.taste.R134,Smoky eggplant mashed with tart citrus dressing.
+kitchen.taste.R135,A little tower of eggplant slices and tomato relish.
+kitchen.taste.R136,Thick sweet potato wedges with sticky pepper edges.
+kitchen.taste.R137,Dates cook down into the berries until the spoon comes out sticky.
+kitchen.taste.R138,Cherry juice has found a way through the pastry seam.
+kitchen.taste.R139,"A browned oat topping over soft, hot peaches."
+kitchen.taste.R140,Blackcurrant juice runs down the sides of the pancakes.
+kitchen.taste.R141,Blueberries burst into purple pockets in the crumb.
+kitchen.taste.R142,A brittle slab of seeds and dates. Break off a corner.
+kitchen.taste.R143,"Pineapple rings with dark, sticky grill marks."
+kitchen.taste.R144,Soft lychees in bittersweet grapefruit juice.
+kitchen.taste.R145,Tart passionfruit pulp over creamy coconut rice.
+kitchen.taste.R146,"Mango melts into the warm, chewy barley."
+kitchen.taste.R147,A thick strawberry spread with a hint of lychee.
+kitchen.taste.R148,Strips of grapefruit peel in sticky date syrup.
+kitchen.taste.R149,A dense rye cake with little flecks of celery.
+kitchen.taste.R150,Dumplings under a ladle of onion gravy. Dinner after closing.
+kitchen.taste.R151,"Thin strips of chicken, browned with garlic."
+kitchen.taste.R152,A squeeze of lemon brightens the grilled chicken.
+kitchen.taste.R153,Shreds of chicken and soft rings of leek in a light broth.
+kitchen.taste.R154,Garlicky chicken tangled up in a heap of noodles.
+kitchen.taste.R155,A cool lettuce leaf around warm garlic chicken.
+kitchen.taste.R156,Bite-sized chicken in a crunchy grain coating.
+kitchen.taste.R157,The pepper glaze catches in the crisp chicken coating.
+kitchen.taste.R158,Barley turns a light chicken soup into a proper supper.
+kitchen.taste.R159,Apple slices browned in the juices from the pork.
+kitchen.taste.R160,Round cuts of pork with onion gravy spooned over them.
+kitchen.taste.R161,"Sticky date glaze, right down to the skewer."
+kitchen.taste.R162,Cabbage leaves hold the pork and its gravy together.
+kitchen.taste.R163,Pork and sweet apple inside a folded crust.
+kitchen.taste.R164,A soft bun heavy with pork and onion gravy.
+kitchen.taste.R165,Millet cakes soak up the sweet pork juices.
+kitchen.taste.R166,Tart cherries cut through the rich pork cutlet.
+kitchen.taste.R167,Beef sliced thin and tossed in pepper glaze.
+kitchen.taste.R168,Dark beef and beet chunks in a deep red broth.
+kitchen.taste.R169,Blackcurrants cook down to a dark sauce around the beef.
+kitchen.taste.R170,Beef strips and long noodles slick with pepper sauce.
+kitchen.taste.R171,The broccoli florets catch the sauce from the beef.
+kitchen.taste.R172,The flatbread soaks up the dark juices from the beef.
+kitchen.taste.R173,Potato and beef fried until the edges go brown.
+kitchen.taste.R174,A thick canteen stew with beef and swollen barley.
+kitchen.taste.R175,"A cool, peppery radish bite beside each strip of beef."
+kitchen.taste.R176,Oats hold the vat-grown meat together in a neat patty.
+kitchen.taste.R177,"A meaty tomato sauce with small, even crumbs of vatmeat."
+kitchen.taste.R178,Narrow strips of vatmeat with a sharp citrus finish.
+kitchen.taste.R179,Crunchy apple slaw piled high on a vatmeat patty.
+kitchen.taste.R180,A tin of noodles with enough red sauce to stain your cuffs.
+kitchen.taste.R181,Soft eggplant cradles a generous spoonful of meat ragout.
+kitchen.taste.R182,Thick meat sauce sealed in a hand-sized pie.
+kitchen.taste.R183,A browned patty resting on orange sweet potato mash.
+kitchen.taste.R184,A bowl of millet topped with citrus-marinated vatmeat.
+kitchen.taste.R185,Cool rice with little golden cubes of mango.
+kitchen.taste.R186,"Chicken, sweet mango and rice in the same bowl."
+kitchen.taste.R187,Seeded flatbread folded around crisp apple slaw.
+kitchen.taste.R188,A flatbread pocket stuffed with slaw and garlic chicken.
+kitchen.taste.R189,Dark green spinach tucked into the folds of flatbread.
+kitchen.taste.R190,"A snug roll of spinach, flatbread and citrus vatmeat."
+kitchen.taste.R191,Cool coconut cream with a mild oat taste.
+kitchen.taste.R192,Cold lychees tucked into a cup of coconut cream.
+kitchen.taste.R193,A spoon breaks through the crunchy top into oat cream.
+kitchen.taste.R194,A layer of passionfruit over the cream and crunch.
+kitchen.taste.R195,"Chopped beef and rice, ready to stuff into a pepper."
+kitchen.taste.R196,A whole sweet pepper packed with beef and rice.
+kitchen.taste.R197,Thin pork slices browned with juicy pineapple.
+kitchen.taste.R198,The rice catches the sweet juices from the pork and pineapple.
+kitchen.taste.R199,Cool cucumber slices beside sweet pineapple pork.
+kitchen.taste.R200,Dark berries leave purple trails in the coconut cream.
+kitchen.taste.R201,Diced mango and pineapple in their own juice.
+kitchen.taste.R202,Soft cherries and peaches with a savoury bite of onion.
+kitchen.taste.R203,Apple thickens this dark berry sauce as it cooks.
+kitchen.taste.R204,Sweet date and orange glaze with a little garlic underneath.
+kitchen.taste.R205,Pan-browned chicken with a spoonful of cherry-peach chutney.
+kitchen.taste.R206,Juicy fruit salsa threatens to overflow the chicken lettuce cups.
+kitchen.taste.R207,Chicken noodles coated in a sticky orange glaze.
+kitchen.taste.R208,A pork cutlet under a dark coat of berries and cherries.
+kitchen.taste.R209,"Little bites of lychee among the pork, pineapple and rice."
+kitchen.taste.R210,Coconut and lime cling to the date-glazed pork.
+kitchen.taste.R211,Tender pear takes on the colour of the blackcurrant gravy.
+kitchen.taste.R212,"A flatbread loaded with beef, peaches and cherries. Use both hands."
+kitchen.taste.R213,Strips of bittersweet grapefruit peel lie against the seared beef.
+kitchen.taste.R214,Blueberry sauce trickles down through the apple slaw to the patty.
+kitchen.taste.R215,Round vatmeat bites rolled in orange and date glaze.
+kitchen.taste.R216,Sweet mango tucked beside the citrusy strips of vatmeat.
+kitchen.taste.R217,Berry juice stains the melon darkest around the edges.
+kitchen.taste.R218,Chopped strawberries and little bursts of bitter grapefruit.
+kitchen.taste.R219,Soft chunks of pear in dark berry syrup.
+kitchen.taste.R220,Peeled lychees on a little pot of coconut rice pudding.
+kitchen.taste.R221,A chilled oat bar with a soft layer of mango and passionfruit.
+kitchen.taste.R222,A tart apple and cherry sauce that still tastes of the pan.
+kitchen.taste.R223,Salty canned meat with a bite of sweet fruit in each piece.
+kitchen.taste.R224,Meat braised until the peach and cherry sauce clings to it.
+kitchen.taste.R225,Small pieces of meat threaded on a skewer and glazed with sour fruit.
+kitchen.taste.R226,Bite-sized morsels with soft pear and a dark berry gravy.
+kitchen.taste.R227,Small enough for one bite. Sticky enough for two napkins.
+kitchen.taste.R228,Flaky fish on a stick with bright mango-pineapple salsa.
+kitchen.taste.R229,A pan-seared fillet topped with tart pink fruit salsa.
+kitchen.taste.R230,A broad fish fillet with melon and pineapple spears alongside.
+kitchen.taste.R231,"Little pieces of fish in a sweet, sharp lychee sauce."
+kitchen.taste.R232,A glossy eel fillet brushed with dark berry and apple sauce.
+kitchen.taste.R233,Rich little eel pieces with coconut milk and lime.
+kitchen.taste.R234,Leek slivers fried crisp in rendered fat.
+kitchen.taste.R235,Rice darkens where the berry-glazed eel lies on top.
+kitchen.taste.R236,Crisp fried leeks over soft eel and rice. Eat the top first.
+kitchen.taste.R237,Even slices of canned meat with a shiny orange-date coating.
+kitchen.taste.R238,A few glazed slices of canned meat on a canteen flatbread.
+kitchen.taste.R239,Sweet mango and sharp passionfruit coat the little meat bites.
+kitchen.taste.R240,"Break the crust and you'll find meat, soft pear and berry gravy."
+station.note.spice_cola,"A dark, fragrant blend for cola syrup."
+station.note.spice_ginger,A piece of dried ginger. Still has a kick.
+station.note.spice_root_beer,A woody spice blend for a batch of root beer.
+station.note.spice_vanilla,One wrinkled pod. The seeds inside smell sweeter than they taste.
+kitchen.book.note.galley_handbook,"A galley cook's notebook. Look here for chowder, preserves and something sweet."
+kitchen.book.note.production_handbook,Workshop recipes for galley supplies and printer patterns. Keep the book beside the machine.
+kitchen.book.note.soda_handbook,The Fizzworks recipe book. Syrup makes a single can. A fresh-fruit batch fills four.
+kitchen.book.note.workshop_handbook,"Syrups, flour and patterns for empty cans. A workshop book with sugar in the binding."
+water.handbook.note,A bottler's handbook for three house drinks. Keep it with the hand press and supplies.

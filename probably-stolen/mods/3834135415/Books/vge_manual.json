@@ -1,0 +1,272 @@
+{
+  "id": "vge_manual",
+  "title": "Vanilla Gun Expansion manual",
+  "background": "notebook_manual",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 297,
+      "y": 2.5,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 273.5,
+      "y": 3.5,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 124,
+      "y": 380,
+      "w": 16,
+      "h": 16
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 176,
+      "y": 380.5,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "x": 140.5,
+      "y": 374,
+      "w": 33,
+      "h": 25
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "manual_header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "manual_p1_title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 35,
+          "y": 86,
+          "w": 253,
+          "h": 290,
+          "spacing": 4
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "flow": "body_flow",
+          "style": "body",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "text": "CHIPS. The Revolution Gunsmith comes every Monday once the Wild network (Gun Workshop tab) or the rebels have introduced him. He sells frame chips, stun gun chips and attachment chips.\n\nFRAMES. A frame chip needs the metal printing module and the CNC module. Put the printed frame together with one gun part and you get the whole gun. Frames carry a purity quality: printer modules plus the purity of the ingots you fed in.\n\nMATERIALS. Metal ingots (the furnace turns 2 scrap into 1 ingot), plastic and electronics. The setting \"Vanilla recipes use metal ingots\" switches the five vanilla scrap recipes over too. The gunsmith storage bay takes ingots, scrap, electronics, gunpowder and frames as well.\n\nThe bay also accepts printer chips and melee weapons. Its price is unchanged.",
+          "translations": {
+            "zh": "芯片。革命军枪匠每周一来访，经王尔德网络「枪械工坊」页签引荐，或由革命军引荐。他卖框架芯片、电击枪芯片和配件芯片。\n\n框架。框架芯片需要金属打印模组和 CNC 模组。打出的框架配上一个枪械零件就是整枪。框架带「纯度品质」：打印机模组品质加上投入金属锭的纯度。\n\n材料。金属锭（熔炉 2 废金属出 1 锭）、塑料、电子元件。设置里的「原版配方改用金属锭」会把原版那五张废金属配方也改过去。枪械师储藏区也能放金属锭、废金属、电子元件、火药和框架。\n\n储藏区也能放打印机芯片和近战武器，售价不变。"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "manual_header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "manual_p2_title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 35,
+          "y": 86,
+          "w": 253,
+          "h": 290,
+          "spacing": 4
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "flow": "body_flow",
+          "style": "body",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "text": "POWDER. Rebel visitors sell gunpowder, scrap and attachments on the side. The quartermaster brings more, plus ingots of better purity and advanced powder.\n\nAMMO PRESS. Slot the ammo press module into the printer. Ammo chips print six loose ammunition items per batch (enough to fill one box): .22 and 10mm, standard, armour-piercing or non-lethal. Standard and AP rounds take ingots (metal printing module too), non-lethal takes plastic.\n\nAmmo is a sideline. A box sells for less than the gun it feeds.",
+          "translations": {
+            "zh": "火药。来访的革命军会顺带卖火药、废金属和配件。军需官带得更多，还有纯度更好的金属锭和高级火药。\n\n弹药压制。把弹药压制模组装进打印机。弹药芯片每张出 6 件散装弹药（凑满一个弹药盒）：.22 和 10 毫米，普通、穿甲或非致命。普通和穿甲用金属锭（也要金属打印模组），非致命用塑料。\n\n弹药只是副业，一盒卖不过它配的枪。"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 3",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "manual_header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "manual_p3_title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 35,
+          "y": 86,
+          "w": 253,
+          "h": 290,
+          "spacing": 4
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "flow": "body_flow",
+          "style": "body",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "text": "CHIP RACK. The printer window has a rack next to the chip slot. The arrows swap the slotted chip with the next one in the rack. Drag a chip rack expansion kit onto the printer to grow it, up to 3x3.\n\nGUN CABINET. Sold by the retired gunsmith and the Revolution Gunsmith. New cabinets occupy 6x4 cells; older cabinets keep their saved footprint. Nine labelled slots for firearms and stun guns, no hotkeys; the first two guns appear on padded supports. Use the native storage appearance control to choose from six styles, with the vanilla-style cabinet as default. The cabinet fits in a gunsmith bay.\n\nWILD NETWORK, GUN WORKSHOP TAB. Both need the retired gunsmith. Auto feed (gun permit II): every night a powered printer with a chip pulls the materials it is missing from your gunsmith storage bays, only when the full set is there. Auto stock (gun permit III): finished prints, frames included, go straight into a gunsmith bay with room.",
+          "translations": {
+            "zh": "芯片库。打印机窗口的芯片槽旁边多了一个库。箭头把槽里的芯片和库里的下一张对换。把芯片库扩建套件拖到打印机上可以扩容，最大 3×3。\n\n枪柜。退休枪匠和革命军枪匠出售。新柜占 6×4 格，旧柜保留存档中的占位。九个带编号的枪位，只放枪械和电击枪，没有快捷键；前两把枪显示在包胶托架上。用原版储藏区的外观切换操作打开选择窗挑选六种样式，默认原版风格。整台还能放进枪械师储藏区。\n\n王尔德网络「枪械工坊」页签。两项都要先认识退休枪匠。自动供料（二级枪械证）：每晚通电、装了芯片的打印机从枪械师储藏区补齐缺的材料，凑不齐一套就不动。自动入库（三级枪械证）：打印成品连框架一起直接送进有空位的枪械师储藏区。"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 4",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "manual_header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "manual_gunmod_title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 35,
+          "y": 86,
+          "w": 253,
+          "h": 290,
+          "spacing": 4
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "flow": "body_flow",
+          "style": "body",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "text": "GUN FITTING. The window shows the gun at twice its native size, with each attachment slot near its mount. Click a slot for compatible parts and their stats from the shop and back room, then click to fit one. The normal fitting rules still apply: the enlarged gun must fit where it lies. Switch the setting off to use the vanilla layout.\n\nCHIP AVAILABILITY. With chip pity enabled, a long-gun frame chip or ammo press module missed on three eligible gunsmith visits is offered on the next one, if the counter has room.\n\nSTORY. Turning off the covert-operation storyline prevents a new start; an operation already under way still finishes. The metal-ingot recipe option remains available.",
+          "translations": {
+            "zh": "改枪。窗口以两倍大小画出枪械，各配件槽放在装配位置旁边。点配件槽，列出店里和后屋能装的配件及属性，再点一下安装。沿用原版规则：装好后的枪必须放得下。关闭对应设置可换回原版布局。\n\n芯片保底。开启后，长枪框架芯片或弹药压制模组连续三次符合条件的枪匠来访都没带来，下次会尝试带来，仍要柜台放得下。\n\n剧情。关闭隐秘行动剧情线会阻止新剧情开始，已经开始的仍会走完。原版配方改用金属锭的设置保留。"
+          }
+        }
+      ]
+    }
+  ],
+  "item": {
+    "id": "vge_manual",
+    "nameLoc": "vge_manual_name",
+    "descriptionLoc": "vge_manual_desc",
+    "sprite": "items_misc/manual1",
+    "value": 15,
+    "important": false
+  }
+}

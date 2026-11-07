@@ -1,0 +1,103 @@
+prof_cat_weapon,Arms
+prof_cat_medical,Medical
+prof_cat_nutrition,Food
+prof_cat_water,Water
+prof_cat_brewing,Brewing
+prof_cat_material,Engineering
+prof_cat_contraband,Contraband
+prof_cat_general,General
+prof_cat_planting,Planting
+prof_cat_chemistry,Chemistry
+prof_ui_title,Proficiency
+prof_ui_header,Proficiency v{0} | click a category to switch | + to spend points | key: see settings | Esc to close
+prof_ui_points,points
+prof_ui_markup_btn,Markup {0}/5  ->  sell price +{1}%    click +1
+prof_ui_supply_btn,Purchase {0}/5  ->  buy price -{1}%    click +1
+prof_ui_line3_btn,{0} {1}/5    click +1
+prof_ui_perk,Category perk "{0}": {1}
+prof_ui_spec,Specialization (Lv5): {0}
+prof_ui_master,Master path (Lv10): {0}
+prof_ui_choice_crowd,Crowd
+prof_ui_choice_supply,Supply
+prof_ui_choice_pricing,Pricing (+{0}% sell / -{0}% buy)
+prof_ui_premium,Premium Supply: after {0} in sales, a crate is delivered next morning
+prof_ui_empire,Trade Empire: +15% sell / -15% buy
+prof_ui_ability,Signature ability (choose A or B)
+prof_ui_ability_hint,No ability chosen yet - click A or B below
+prof_ui_ability_a,A: {0}
+prof_ui_ability_b,B: {0}
+prof_ui_reset_ready,Reset this category (refund its points, clear Lv5/Lv10 choices, 7-day cooldown)
+prof_ui_reset_cd,Reset this category (cooldown: {0} day(s))
+prof_toast_not_in_run,Proficiency: not in a run
+prof_toast_panel_failed,Failed to create the proficiency panel
+prof_cfg_panel_key,Panel key
+prof_cfg_debug_key,Debug key
+prof_cfg_debug_key_on,Enable debug key
+prof_cfg_debug_log,Verbose log
+prof_cfg_bargain,Bargain bonuses
+prof_cfg_price,Price hooks
+prof_cfg_wipe,Feature cleanup hooks
+prof_cfg_nightly,Nightly hint
+prof_cfg_calendar,Calendar section
+prof_cfg_gene,Mutation chance
+prof_cfg_language,Language
+prof_cfg_line_bonus,Markup/Purchase per level
+prof_cfg_pricing,Pricing specialization bonus
+prof_cfg_crate,Supply crate threshold
+prof_cfg_xp,XP multiplier
+prof_cfg_med,Fake Medicine: sale bonus
+prof_cfg_weapon,Gunsmith: sale bonus
+prof_cfg_brew,Fine Brew: sale bonus
+prof_cfg_craft,Masterwork: sale bonus
+prof_cfg_stock,Stockpiling: buy price
+prof_cfg_stock_mod,Stockpiling: neural module chance
+prof_ab_weapon_a,Legal Shield (each crime booking: every crime entry -200)
+prof_ab_weapon_b,Gunsmith (weapon sale price +{0}%)
+prof_ab_medical_a,Fake Medicine (drug sale price +{0}%)
+prof_ab_medical_b,Medkit (doctor customers bring a medical crate)
+prof_ab_nutrition_a,Fresh Food (+15% per distinct food sold today, no cap)
+prof_ab_nutrition_b,Free Samples (food buy -50%, seller gifts 2 food)
+prof_ab_water_a,Fake Water (price scales with water quality)
+prof_ab_water_b,Stockpile (buy -80%, water buyers +200% budget)
+prof_ab_brewing_a,Fine Brew (liquor sale price +{0}%)
+prof_ab_brewing_b,Quick Brew (faster fermentation)
+prof_ab_material_a,Stockpiling (engineering/general buy {0}%, {1}% chance of a neural module)
+prof_ab_material_b,Masterwork (engineering sale price +{0}%)
+prof_ab_contraband_a,Laundering (contraband crime -30%)
+prof_ab_contraband_b,Black Market Contacts (+3 fence customers per day)
+prof_ab_general_a,Broker (all sales +10%, buys -15%)
+prof_ab_general_b,Veteran (bargaining costs no budget and no reputation loss)
+prof_ab_chemistry_a,High Purity (raises purity of produced drugs)
+prof_ab_chemistry_b,Mass Production (+1 extra street-grade unit)
+prof_ab_planting_a,High Yield (+3 harvest, +50% growth)
+prof_ab_planting_b,Mutation (chance of a random positive trait on harvested seeds)
+prof_ui_none,None
+prof_ui_premium_short,Premium Supply
+prof_ui_empire_short,Trade Empire
+prof_ui_ability_short,Signature ability
+prof_cfg_panel_key_tip,Hotkey that opens the proficiency panel
+prof_cfg_crate_tip,Lifetime sales needed for one supply crate
+prof_cfg_gene_tip,Chance to gain a positive trait when harvesting seeds
+prof_cfg_xp_tip,Higher means slower leveling (1.5x = 1.5 times the experience)
+prof_cfg_line_bonus_tip,Per-level bonus for Markup (sell) and Purchase (buy)
+prof_cfg_pricing_tip,Pricing specialization: sale up / buy down percentage
+prof_cfg_med_tip,Fake Medicine: drug sale price bonus
+prof_cfg_weapon_tip,Gunsmith: weapon sale price bonus
+prof_cfg_brew_tip,Fine Brew: liquor sale price bonus
+prof_cfg_craft_tip,Masterwork: engineering sale price bonus
+prof_cfg_stock_tip,Stockpiling: buy price percentage (negative = cheaper)
+prof_cfg_stock_mod_tip,Stockpiling: chance to receive a neural module when buying engineering goods
+prof_toast_panel_open_failed,Failed to open the proficiency panel: {0}
+prof_toast_reset_cd,Reset on cooldown, {0} day(s) left
+prof_toast_reset_done,Reset this category, refunded {0} points (next reset in 7 days)
+prof_toast_reset_all_done,Reset all categories, refunded {0} points
+prof_toast_crate,Premium Supply: {0} delivered
+prof_toast_fence,Black Market Contacts: {0} extra fence customer(s) today
+prof_toast_gift,Engineering perk: you received {0}
+prof_toast_medbox,Medkit: a doctor customer gave you a medical crate
+prof_toast_debug_xp,Debug: {0} +100 XP
+prof_toast_ability_locked,Signature ability is locked (reset the category to choose again)
+prof_toast_sampling,Free Samples: the seller gave you {0} food
+prof_toast_module,Stockpiling: the seller slipped you 1 {0}
+prof_toast_gene,Positive trait: {0} R{1}
+prof_nightly_customers,Today's returning customers: Crowd {0}, Supply {1}

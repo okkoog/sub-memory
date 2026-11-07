@@ -1,4 +1,4 @@
-Neon Undertow 0.15.11
+Neon Undertow 0.5.3
 
 The manual bottler takes up 3 x 3 inventory cells. Bring the Bottling Handbook, high-quality water (99% or higher), one matching concentrate and an empty glass bottle (750 mL) or can (350 or 500 mL). The bottle you put in is the bottle you get back. The Quayside Canning Co-op sells all three concentrates and stocked supply cases.
 
@@ -14,7 +14,7 @@ OLDER DRINKS: sealed 750 mL Quayside Reserve, Dockside Cordial and Nightshift To
 
 WATER GENERATOR: end-tier four-bay machine, sold at Stormglass Depot Outlet from day 28 with a Grand Waterworks installed. List price 12,500 credits before reputation discounts. Generates four new native 2 L bottles of native high-quality water per day, using 6 power each (24 for all four). No water, empty-bottle or concentrate input. Insufficient power/space reduces production; missed output is not banked. Starting traits cannot grant it. Existing machines retain obsolete input/attachment contents in withdraw-only recovery panels that disappear when empty.
 
-KITCHEN: buy reusable boards, bowls, pans and powered instruments from Quayside. Place the actual instrument on the back-room worktop with one ingredient combination and listed water/power. Select it on COOK. Pans and saucepans need an owned galley or native heating plate; chilling needs an owned native fridge. Other recipes no longer depend on unrelated crate racks or Waterworks tiers. LOAD consumes ingredients/resources, and each action advances five seconds. Manage heat, tending and finishing time. Closing pauses the saved batch. Food cannot be instantly crafted or automated.
+KITCHEN: click KITCHEN in the back room. Fit reusable tools in their matching top attachment slots, place charged cells in BATTERIES, and put ingredients and required water in INPUT. Keep the relevant recipe book with your supplies. Ready recipes appear on COOK; click one to prepare it. Pans and saucepans require an owned galley or heating plate; chilling requires an owned fridge. Earlier saved batches retain their finishing controls. The updated starter books explain the setup and include a first-meal walkthrough.
 
 BOOKS & PRODUCTION: activate recipe books to read them in the native paper notebook. Their blueprints still work in native crafting tables; the kitchen also recognizes native books. Keep a Fizzworks Recipe Book in canner INPUT, or Workshop Recipes / Production Handbook in galley INPUT. Choose recipes through the native item chooser. Book removal stops production. Metal cans/tins use three new chips in the ordinary printer, with one metal ingot, Metal Printing and CNC modules and charged power. Native printer progress applies. Buy the chips at Undertow Engineering; buy empty packaging at Quayside when starting out.
 
@@ -27,3 +27,15 @@ LIQUIDS: all 76 drinks can be combined. Native bottles, jugs and tanks preserve 
 STANDALONE: Neon Undertow includes its own Cellar Bench, 76 brewing recipes and bar systems. No other mods are required. Existing food and drink IDs, artwork and saved items are preserved.
 
 
+
+FRUIT WINE: The vanilla wine bottle can ferment 19 additional fruit varieties. Use its ingredient window, water and fermentation control, then pour the finished wine into an empty Undertow glass bottle for its matching label. Bloomberry keeps its vanilla recipe. The Cellar Bench still makes the other drinks and fruit spirits. Older vegetable infusions remain readable in saved games but have no production recipes.
+
+COOKING: Install tools in their top compartments and power cells in BATTERIES. INPUT holds ingredients, water and optional storage, including a vanilla fridge. Food in that fridge is available to recipes; it needs its own battery to chill. Ready recipes appear automatically; click to cook. Recipe books also work on the ordinary crafting table. Drag a tool onto an ingredient for an unambiguous single-ingredient recipe. Listed water, power and heating/chilling equipment remain required. Earlier saved batches retain their finishing controls. Prepared-food values include consumed ingredients, water and power plus a preparation margin; merchant modifiers still apply. Sodas are both Food and Beverage and attract food customers.
+
+PROJECT MILESTONE: Version 0.5 contains roughly half of the author's planned content. This is a continuation of the existing mod; 0.15.x were development build numbers. See CHANGELOG-0.5.txt for this release and the consolidated recent fixes.
+
+TUTORIALS: The existing starter books now include a first-evening shopping list, an Apple Slaw walkthrough, manual bottling, hydroponic crops, plant DNA and kitchen troubleshooting. Chapters are available in all eight supported languages. Existing book IDs and earlier chapter order are retained.
+
+PLANTED CROPS: 38 fruits and vegetables use compact pixel-art plants designed for the original hydroponic grower. These are genetically modified dwarf varieties, including the fruit trees. Their leaves and fruit retain recognizable crop features. Each crop uses one planted image throughout its growth cycle. The seed descriptions and growing guide explain these varieties in all eight supported languages.
+
+BACK-ROOM WINDOWS (0.5.2): on screens that are not 16:9, station, cabinet, waterworks and kitchen windows now open above the back room instead of behind it, and room windows can be dragged anywhere on the screen.
