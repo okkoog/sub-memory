@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/0.8.0/Localization/pskb__3831837821.csv
+          sparse-checkout-cone-mode: false
       - name: Extract translated name rows
         shell: python
         run: |
