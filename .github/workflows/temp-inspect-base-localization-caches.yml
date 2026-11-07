@@ -1,0 +1,75 @@
+name: Temp inspect base localization caches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/temp-inspect-base-localization-caches.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/Managed/Assembly-CSharp.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install ILSpy
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+      - name: Decompile base game
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/base"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p \
+            -o "$RUNNER_TEMP/base" probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Extract relevant cache/list contexts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/out/files"
+          python3 - <<'PY'
+          import os,re,shutil,pathlib
+          root=pathlib.Path(os.environ['RUNNER_TEMP'])/'base'
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'out'
+          pats=[
+            re.compile(r'conditionFoodFreshness|conditionModuleStuck|CATEGORY_FRESHNESS|CATEGORY_MODULE_STUCK',re.I),
+            re.compile(r'CreateModuleFeature|module.{0,50}(effect|bonus|description|display|name)|(?:effect|bonus|description|display|name).{0,50}module',re.I),
+            re.compile(r'(medicine|drug|pharma|chemical).{0,80}(recipe|craft|manufactur)|(?:recipe|craft|manufactur).{0,80}(medicine|drug|pharma|chemical)',re.I),
+            re.compile(r'GetLocalizedMechanic\([^\n]*(module|recipe|medicine|drug|pharma)',re.I),
+          ]
+          hits=[]
+          files=set()
+          for p in root.rglob('*.cs'):
+              try: lines=p.read_text(encoding='utf-8',errors='replace').splitlines()
+              except: continue
+              for i,line in enumerate(lines):
+                  if any(rx.search(line) for rx in pats):
+                      files.add(p)
+                      a=max(0,i-12); b=min(len(lines),i+13)
+                      hits.append(f'### {p.relative_to(root)}:{i+1}\n'+'\n'.join(f'{j+1:05d}: {lines[j]}' for j in range(a,b)))
+          (out/'contexts.txt').write_text('\n\n'.join(hits),encoding='utf-8')
+          for p in sorted(files):
+              rel=p.relative_to(root)
+              dst=out/'files'/rel
+              dst.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copy2(p,dst)
+          (out/'matched-files.txt').write_text('\n'.join(str(p.relative_to(root)) for p in sorted(files)),encoding='utf-8')
+          print('matched files',len(files),'contexts',len(hits))
+          PY
+          wc -l "$RUNNER_TEMP/out/contexts.txt" "$RUNNER_TEMP/out/matched-files.txt"
+          head -n 200 "$RUNNER_TEMP/out/matched-files.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: base-localization-cache-inspect
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
