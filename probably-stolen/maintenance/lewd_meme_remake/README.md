@@ -1,43 +1,45 @@
 # lewd_meme_remake Korean DLL maintenance
 
-This directory stores translation memory for the hard-coded-string DLL localization of `lewd_meme_remake` / `MidnightPawnRemake.dll`.
+Hard-coded-string Korean localization maintenance data for `lewd_meme_remake` / `MidnightPawnRemake.dll`.
 
-## Baseline
+## Translation memory
 
-- Previous source package: `lewd_meme_remake1.3.1.zip`
-- Previous source DLL SHA-256: `c940622cecd975b245be75fdf575492ad33aa91e752716f0560714ac94f2a16c`
-- Previous Korean DLL SHA-256: `02dbd7a521f5512264181ffc2a3611b47d7fe16a6f6dd6ba85d030a9a4952482`
-- Baseline CLR `#US` entries: 1238
-- Validated Chinese → Korean replacements: 874
+- Previous reviewed memory: 874 source → Korean pairs
+- 1.4.1 newly reviewed: 77 pairs
+- Current total: **951 pairs**
+- Canonical file: `translation_memory.csv`
 
-The baseline original and Korean DLL have exactly the same `1238` CLR user-string slots, so the 874 changed pairs can be recovered deterministically by index.
+Do not use IL offsets or metadata token numbers as long-term translation keys. Recompiles can move them. Exact source strings are the reuse key.
 
-## Current update audit
+## 1.4.1 audit
 
-- Uploaded package filename: `lewd_meme_remake1.4.1.zip`
-- Package manifest `<ModVersion>`: `1.4.0`
-- New source DLL SHA-256: `8728138396761d7014dd64b9556f23760a7033de8e63eae853a8d92ddafc7246`
-- New CLR `#US` entries: 1143
-- Chinese-containing entries: 816
-- Exact translations reused from baseline memory: 736
-- New/changed Chinese entries requiring review: 80
-
-Note: the archive filename says `1.4.1`, while its included manifest currently declares `1.4.0`.
+- Upstream archive: `lewd_meme_remake1.4.1.zip`
+- Included manifest version: `1.4.0` (upstream package mismatch; left unchanged)
+- Source DLL SHA-256: `8728138396761d7014dd64b9556f23760a7033de8e63eae853a8d92ddafc7246`
+- Source CLR #US entries: 1143
+- Chinese-containing source strings: 816
+- Reused from prior memory: 736
+- New/changed reviewed strings: 80
+  - translated: 77
+  - intentionally untranslated internal identifiers: 3
+- Internal identifiers kept verbatim: `中国`, `日本`, `韩国`
+- Patched DLL SHA-256: `6820dda8cfbd239bca7278591f5e9e0814b8bacee4b2d1ea1585d89f01c053ca`
+- Patched DLL size: 273920 bytes
+- Static validation: remaining Chinese ldstr references = exactly the 3 internal region identifiers above.
 
 ## Files
 
-- `translation_memory.csv` — exact source → Korean pairs recovered from the previous original/Korean DLL pair.
-- `pending_1.4.1.csv` — only new or changed Chinese strings not found in the baseline translation memory.
-- `translation_memory_tool.py` — dependency-free extractor/diff tool for future updates.
+- `translation_memory.csv` — canonical reusable source → Korean translation memory.
+- `reviewed_1.4.1.csv` — all 80 changed/new strings and review status.
+- `skip_internal.csv` — strings that must remain untranslated because they are runtime identifiers.
+- `translation_memory_tool.py` — update/diff helper.
+- `patch_dll.py` — dependency-free DLL #US rebuild/patch helper.
 
-## Future workflow
+## Future update flow
 
-1. Keep `translation_memory.csv` as the canonical translation memory.
-2. Extract the new upstream `MidnightPawnRemake.dll`.
-3. Match exact source strings against the translation memory.
-4. Translate only rows emitted as new/changed.
-5. Append reviewed new pairs to the translation memory.
-6. Rebuild the Korean DLL from the new upstream DLL using the complete translation memory.
-7. Validate format placeholders and remaining player-facing Chinese strings.
-
-Do not use IL offsets or metadata token numbers as the long-term translation key. Upstream recompiles can move them. The exact source string is the stable reuse key; method/offset data may be used only as an audit aid.
+1. Extract the new upstream `MidnightPawnRemake.dll`.
+2. Compare its source strings against `translation_memory.csv` and `skip_internal.csv`.
+3. Translate only genuinely new/changed player-facing strings.
+4. Append reviewed pairs to `translation_memory.csv`.
+5. Patch the new upstream DLL with `patch_dll.py`.
+6. Verify placeholders and ensure any remaining Chinese references are only approved internal identifiers.
