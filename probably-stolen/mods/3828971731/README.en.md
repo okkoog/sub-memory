@@ -1,10 +1,8 @@
-# Faction Reputation Expansion v1.4.5
+# Faction Reputation Expansion v1.4.6
 
 ## Update notes
 
-Improved thieves' item generation: crates are now generated first.
-Fixed a bug that caused some Newborn Core effects to disappear.
-Improved the Newborn Alliance supplier's item pool.
+Bug fixes.
 
 ## Installation
 
