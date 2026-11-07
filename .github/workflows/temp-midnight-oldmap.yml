@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "probably-stolen/tmp/MidnightPawn_oldko.dll.gz.b64"
+      - "probably-stolen/localized/MidnightPawn-1.2.0-KO/Mod/MidnightPawn.dll"
       - ".github/workflows/temp-midnight-oldmap.yml"
 
 permissions:
@@ -19,14 +19,6 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
-
-      - name: Decode user's Korean DLL
-        shell: bash
-        run: |
-          set -euo pipefail
-          base64 -d probably-stolen/tmp/MidnightPawn_oldko.dll.gz.b64 > "$RUNNER_TEMP/oldko.gz"
-          gzip -dc "$RUNNER_TEMP/oldko.gz" > "$RUNNER_TEMP/oldko.dll"
-          echo "d77066ad9fca5e55f9c49130cfff7af4976ac75fbfa9c9b38b6a18c9adaa1c4f  $RUNNER_TEMP/oldko.dll" | sha256sum -c -
 
       - name: Create comparer
         shell: bash
