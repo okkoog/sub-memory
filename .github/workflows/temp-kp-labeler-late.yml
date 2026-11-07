@@ -25,8 +25,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ProbablyStolenKoreanPack-LabelerTimingFix
-          path: \${{ runner.temp }}/input
-          github-token: \${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           repository: okkoog/sub-memory
           run-id: 42310100243
 
@@ -97,5 +97,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ProbablyStolenKoreanPack-LabelerLateFix
-          path: \${{ runner.temp }}/out
+          path: ${{ runner.temp }}/out
           if-no-files-found: error
