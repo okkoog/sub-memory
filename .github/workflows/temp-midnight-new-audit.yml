@@ -1,0 +1,47 @@
+name: Temp audit new MidnightPawn 1.2.0 localization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "probably-stolen/tmp/MidnightPawn_new.dll.gz.b64"
+      - ".github/workflows/temp-midnight-new-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Decode uploaded new DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          base64 -d probably-stolen/tmp/MidnightPawn_new.dll.gz.b64 > "$RUNNER_TEMP/MidnightPawn.dll.gz"
+          gzip -dc "$RUNNER_TEMP/MidnightPawn.dll.gz" > "$RUNNER_TEMP/MidnightPawn.dll"
+          echo "e5b262f54feb5fbc55b797fc4456cb72dab184c3547973e60703d2830127baeb  $RUNNER_TEMP/MidnightPawn.dll" | sha256sum -c -
+          stat -c "%n %s" "$RUNNER_TEMP/MidnightPawn.dll"
+
+      - name: Audit against current Korean mappings
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/out"
+          dotnet run -c Release --project probably-stolen/tools/tentacle-local-translation/TentacleAudit.csproj --             "$RUNNER_TEMP/MidnightPawn.dll"             probably-stolen/0.8.0/Localization/pskb__3831837821.csv             probably-stolen/0.8.0/Localization/pskb__3831837821.csv             "$RUNNER_TEMP/out/new-audit.tsv"
+          head -5 "$RUNNER_TEMP/out/new-audit.tsv"
+          grep '^MISSING' "$RUNNER_TEMP/out/new-audit.tsv" > "$RUNNER_TEMP/out/missing.tsv" || true
+          printf "Missing count: "
+          wc -l < "$RUNNER_TEMP/out/missing.tsv"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MidnightPawn-new-audit
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
