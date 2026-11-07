@@ -1,0 +1,103 @@
+name: Temp build KoreanPack postload water fix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "probably-stolen/tmp/kp_water_postload_patch.py"
+      - ".github/workflows/temp-kp-water-postload.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Download exact previous water timing build
+        uses: actions/download-artifact@v4
+        with:
+          name: ProbablyStolenKoreanPack-CorpWaterTimingFix
+          path: ${{ runner.temp }}/input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: okkoog/sub-memory
+          run-id: 42317008529
+
+      - name: Verify input DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_CorpWaterTimingFix.dll"
+          echo "e11ffe0be69a33438f252d949dd6aad70f104d018ca2b9904eabe406abc04bae  $RUNNER_TEMP/input/ProbablyStolenKoreanPack_CorpWaterTimingFix.dll" | sha256sum -c -
+
+      - name: Decompile exact input
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p             -r probably-stolen/Managed             -o "$RUNNER_TEMP/src"             "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_CorpWaterTimingFix.dll"
+
+      - name: Apply postload-only localization patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 probably-stolen/tmp/kp_water_postload_patch.py
+
+      - name: Build
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet build "$RUNNER_TEMP/build/ProbablyStolenKoreanPack.csproj" -c Release --nologo
+          mkdir -p "$RUNNER_TEMP/out"
+          cp "$RUNNER_TEMP/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll"             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_CorpInitIsolationFix.dll"
+          sha256sum "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_CorpInitIsolationFix.dll" > "$RUNNER_TEMP/out/SHA256.txt"
+
+      - name: Static verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed             -t ProbablyStolenKoreanPack.KoreanPack             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_CorpInitIsolationFix.dll"             > "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed             -t ProbablyStolenKoreanPack.WaterNameCompatibility             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_CorpInitIsolationFix.dll"             > "$RUNNER_TEMP/out/WaterNameCompatibility.verify.cs"
+
+          grep -q "0.8.2-water-postload" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "localizationHooksReady" "$RUNNER_TEMP/out/WaterNameCompatibility.verify.cs"
+          grep -q "EnsureLocalizationHooks" "$RUNNER_TEMP/out/WaterNameCompatibility.verify.cs"
+          grep -q "LabelerElement" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "RepairForLabeler" "$RUNNER_TEMP/out/WaterNameCompatibility.verify.cs"
+
+          python3 - <<'PY'
+from pathlib import Path
+s=Path("$RUNNER_TEMP/out/WaterNameCompatibility.verify.cs").read_text()
+start=s.index("internal void Enable()")
+end=s.index("internal void Disable()", start)
+enable=s[start:end]
+if "LocalizationSettings" in enable:
+    raise SystemExit("FAIL: Enable still touches LocalizationSettings")
+req_start=s.index("private void Request()")
+req_end=s.index("private void Complete(", req_start)
+req=s[req_start:req_end]
+if "if (!enabled || !worldReady)" not in req or "EnsureLocalizationHooks();" not in req:
+    raise SystemExit("FAIL: Request is not postload-gated")
+print("Postload-only verification passed")
+PY
+
+          if grep -q "CorpPresence" "$RUNNER_TEMP/out/KoreanPack.verify.cs"; then
+            echo "Unexpected CorpPresence-specific patch code found" >&2
+            exit 1
+          fi
+          printf "Verified: no LocalizationSettings access from water Enable; localization hooks attach only after worldReady.\n" > "$RUNNER_TEMP/out/VERIFIED.txt"
+          stat -c "%n %s bytes" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_CorpInitIsolationFix.dll"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolenKoreanPack-CorpInitIsolationFix
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
