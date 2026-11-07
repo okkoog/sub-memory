@@ -4,82 +4,83 @@ Only excerpts for relevant initialization/Harmony methods; no code was executed.
 
 ## CorpPresence/Main.cs
 
-Matching lines: 12; displayed context lines: 73
+Matching lines: 12; displayed context lines: 74
 
 ```text
-34: 		_harmony = new Harmony("mod." + manifest.ID);
-35: 		Settings.Init(manifest.ID);
-36: 	}
-37: 
-38: 	public void OnEnable()
-39: 	{
-40: 		bool flag;
-41: 		try
-42: 		{
-43: 			flag = _runtime.Start(EnableCore);
-44: 		}
-45: 		catch (Exception error)
-46: 		{
-47: 			ReportStartupRollback(error);
-48: 			throw;
-49: 		}
-54: 	}
-55: 
-56: 	private void EnableCore()
-57: 	{
-58: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
-59: 		_runtime.Own(Noop, LoadedItemRepair.Reset);
-60: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
-61: 		_runtime.Own(delegate
-62: 		{
-63: 			Hooks.InstallCore(_harmony);
-64: 		}, delegate
-65: 		{
-66: 			Harmony harmony = _harmony;
-67: 			if (harmony != null)
-68: 			{
-69: 				harmony.UnpatchAll(_harmony.Id);
-70: 			}
-71: 		});
-79: 	}
-80: 
-81: 	private void EnableResources()
-82: 	{
-83: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
-84: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
-85: 		Hooks.InstallResources(_harmony);
-86: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
-87: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
-88: 		_runtime.Own(Noop, CatalogPricing.Reset);
-89: 		_runtime.Own(Noop, Crates.Reset);
-90: 		ItemRegistry.Activate();
-91: 		_runtime.Own(Noop, Tex.ReleaseUi);
-92: 		_runtime.Own(Noop, Theme.ResetCachedFont);
-93: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
-94: 		_runtime.Own(Noop, Notebook.Destroy);
-95: 		_runtime.Own(Noop, InputShield.Destroy);
-96: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
-97: 		_runtime.Own(CreateHost, DestroyHost);
-98: 		ModLog.Info("公司增强 0.9.7compat 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
-99: 	}
-100: 
-101: 	public void OnDisable()
-102: 	{
-103: 		_runtime.Stop();
-104: 	}
-105: 
-106: 	private void ReportStartupRollback(Exception error)
-107: 	{
-108: 		_runtime.Stop();
-109: 		try
-110: 		{
-111: 			ModLog.Error("公司增强初始化失败，已执行运行时回滚：" + error);
-112: 		}
-113: 		catch
-114: 		{
+36: 		_harmony = new Harmony("mod." + manifest.ID);
+37: 		Settings.Init(manifest.ID);
+38: 	}
+39: 
+40: 	public void OnEnable()
+41: 	{
+42: 		bool flag;
+43: 		try
+44: 		{
+45: 			flag = _runtime.Start(EnableCore);
+46: 		}
+47: 		catch (Exception error)
+48: 		{
+49: 			ReportStartupRollback(error);
+50: 			throw;
+51: 		}
+56: 	}
+57: 
+58: 	private void EnableCore()
+59: 	{
+60: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
+61: 		_runtime.Own(Noop, LoadedItemRepair.Reset);
+62: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
+63: 		_runtime.Own(delegate
+64: 		{
+65: 			Hooks.InstallCore(_harmony);
+66: 		}, delegate
+67: 		{
+68: 			Harmony harmony = _harmony;
+69: 			if (harmony != null)
+70: 			{
+71: 				harmony.UnpatchAll(_harmony.Id);
+72: 			}
+73: 		});
+81: 	}
+82: 
+83: 	private void EnableResources()
+84: 	{
+85: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
+86: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
+87: 		Hooks.InstallResources(_harmony);
+88: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
+89: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
+90: 		_runtime.Own(Noop, CatalogPricing.Reset);
+91: 		_runtime.Own(Noop, Crates.Reset);
+92: 		ItemRegistry.Activate();
+93: 		_runtime.Own(Noop, Tex.ReleaseUi);
+94: 		_runtime.Own(Noop, Theme.ResetCachedFont);
+95: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
+96: 		_runtime.Own(Noop, PhoneDialogueLayout.Reset);
+97: 		_runtime.Own(Noop, Notebook.Destroy);
+98: 		_runtime.Own(Noop, InputShield.Destroy);
+99: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
+100: 		_runtime.Own(CreateHost, DestroyHost);
+101: 		ModLog.Info("公司增强 0.9.8fix3 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
+102: 	}
+103: 
+104: 	public void OnDisable()
+105: 	{
+106: 		_runtime.Stop();
+107: 	}
+108: 
+109: 	private void ReportStartupRollback(Exception error)
+110: 	{
+111: 		_runtime.Stop();
+112: 		try
+113: 		{
+114: 			ModLog.Error("公司增强初始化失败，已执行运行时回滚：" + error);
 115: 		}
-116: 		RollbackNotice.Queue();
-117: 	}
+116: 		catch
+117: 		{
+118: 		}
+119: 		RollbackNotice.Queue();
+120: 	}
 ```
 
 ## CorpPresence/GameResources.cs
@@ -169,226 +170,267 @@ Matching lines: 14; displayed context lines: 78
 
 ## CorpPresence/Hooks.cs
 
-Matching lines: 80; displayed context lines: 212
+Matching lines: 94; displayed context lines: 253
 
 ```text
-17: 	private static string _reportedId;
-18: 
-19: 	private static int _revBefore;
-20: 
-21: 	public static void InstallCore(Harmony h)
-22: 	{
-23: 		Type typeFromHandle = typeof(Hooks);
-24: 		Type typeFromHandle2 = typeof(ItemRegistry);
-25: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeFromHandle2, "BeforeDecode", null, new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
-26: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeof(ItemTags), null, "AfterDecode", new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
-27: 		Patch&lt;SaveManager&gt;(h, "EncodeNode", typeFromHandle2, "BeforeEncode", null, new Type[1] { typeof(GameItem) });
-28: 		Patch&lt;PlayerStore&gt;(h, "SaveGame", typeFromHandle, "BeforeSave");
-29: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, "BeforeStoreTransition", "AfterLoadGame");
-30: 		Patch&lt;PlayerStore&gt;(h, "StartNewGame", typeFromHandle, "BeforeStoreTransition", "ResetState");
-31: 	}
-32: 
-33: 	private static void InstallGameplay(Harmony h)
-34: 	{
-35: 		Type typeFromHandle = typeof(Hooks);
-36: 		Type typeFromHandle2 = typeof(ItemRegistry);
-37: 		Patch&lt;PlayerStore&gt;(h, "BeginDay", typeFromHandle, null, "AfterBeginDay");
-38: 		Patch&lt;ItemMouseDragHandler&gt;(h, "EndDrag", typeof(DragFix), "BeforeEndDrag", "AfterEndDrag");
-39: 		Patch&lt;StoreClientManager&gt;(h, "GenerateClient", typeFromHandle, null, "AfterGenerateClient");
-40: 		Patch&lt;PlayerStore&gt;(h, "GetNextClient", typeFromHandle, "BeforeNextClient");
-41: 		Patch&lt;GameItem&gt;(h, "GetNegociatedValue", typeFromHandle, null, "AfterNegociatedValue");
-42: 		Patch&lt;StoreClient&gt;(h, "OnItemSold", typeFromHandle, null, "AfterClientSold", new Type[2]
-43: 		{
-44: 			typeof(GameItem),
-45: 			typeof(int)
-46: 		});
-47: 		Patch&lt;StoreClient&gt;(h, "OnItemBought", typeFromHandle, null, "AfterClientBought", new Type[2]
-48: 		{
-49: 			typeof(GameItem),
-50: 			typeof(int)
-51: 		});
-52: 		Patch&lt;PlayerStore&gt;(h, "EndDay", typeFromHandle, "BeforeEndDay");
-53: 		Patch&lt;StorePhoneClient&gt;(h, "InitPhoneClientDict", typeFromHandle, null, "AfterInitPhones");
-54: 		Patch&lt;StorePhoneClient&gt;(h, "GetCallDialog", typeFromHandle, null, "AfterGetCallDialog");
-55: 		Patch&lt;PhoneUIManager&gt;(h, "WillAnswerCall", typeFromHandle, null, "AfterWillAnswer", new Type[1] { typeof(long) });
-56: 		Patch&lt;PhoneUIManager&gt;(h, "HandleCall", typeFromHandle, "BeforeHandleCall", null, new Type[1] { typeof(long) });
-57: 		Patch&lt;StorePhoneClient&gt;(h, "GetLocalizedDisplayName", typeFromHandle, null, "AfterPhoneName");
-58: 		Patch&lt;GameItemElement&gt;(h, "ResolveSpriteByName", typeFromHandle, "BeforeResolveSprite", null, new Type[1] { typeof(string) });
-59: 		Patch&lt;GameItemElement&gt;(h, "ResolveItemSprite", typeFromHandle, "BeforeResolveItemSprite");
-60: 		Patch&lt;SpriteDict&gt;(h, "GetSprite", typeFromHandle, "BeforeGetSprite", null, new Type[1] { typeof(string) });
-61: 		Patch&lt;ItemConditionActionList&gt;(h, "GenuineCigaretteAction", typeof(PastelCo), null, "AfterGenuineAction", new Type[1] { typeof(GameItem) });
-62: 		Patch&lt;HusbandryHelper&gt;(h, "CreateButcherCuts", typeof(Forge), "BeforeButcherCuts", "AfterButcherCuts", new Type[1] { typeof(GameItem) });
-63: 		Patch&lt;GameItem&gt;(h, "BuildShapeFromSprite", typeof(Goods), "BeforeBuildShape", null, new Type[2]
-64: 		{
-65: 			typeof(string),
-66: 			typeof(string)
-67: 		});
-68: 		Patch&lt;Image&gt;(h, "IsRaycastLocationValid", typeof(Goods), null, "AfterRaycastValid", new Type[2]
-69: 		{
-70: 			typeof(Vector2),
-71: 			typeof(Camera)
-72: 		});
-73: 		Patch&lt;AquacultureHelper&gt;(h, "CreateFilletPieces", typeof(SilverBlood), "BeforeFillet", null, new Type[1] { typeof(GameItem) });
-74: 		Patch(h, AccessTools.Method("AquacultureHelper+TankOccupancy:Fits", new Type[3]
-75: 		{
-76: 			typeof(int),
-77: 			typeof(int),
-78: 			typeof(List&lt;Vector2Int&gt;)
-79: 		}, (Type[])null), "AquacultureHelper.TankOccupancy.Fits", typeof(SilverBlood), "BeforeTankFits");
-80: 		Patch&lt;AquacultureHelper&gt;(h, "WillSuffocateTonight", typeof(SilverBlood), null, "AfterWillSuffocate", new Type[1] { typeof(GameItem) });
-81: 		Patch&lt;AquacultureHelper&gt;(h, "ApplyWaterChecks", typeof(SilverBlood), "BeforeApplyWaterChecks", null, new Type[3]
-82: 		{
-83: 			typeof(List&lt;GameItem&gt;),
-84: 			typeof(GameItem),
-85: 			typeof(bool)
-86: 		});
-87: 		Patch&lt;AquacultureHelper&gt;(h, "TickTank", typeof(SilverBlood), "BeforeTickTank", "AfterTickTank", new Type[6]
-88: 		{
-89: 			typeof(GameItem),
-90: 			typeof(GameGridInventory),
-91: 			typeof(GameItem),
-92: 			typeof(List&lt;GameSlotInventory&gt;),
-93: 			typeof(GameSlotInventory),
-94: 			typeof(bool)
-95: 		});
-96: 		Patch(h, AccessTools.Method(typeof(ChemicalHelper), "HandleTemperatureReaction", new Type[1] { typeof(GameItem) }, (Type[])null), "ChemicalHelper.HandleTemperatureReaction", typeof(SilverBlood), null, "AfterTemperatureReaction");
-97: 		Patch&lt;MaterialDirectory&gt;(h, "MetalIngot", typeof(MachineUpgrade), null, "AfterMakeIngot");
-98: 		Patch&lt;MaterialDirectory&gt;(h, "Electronic", typeof(MachineUpgrade), null, "AfterMakeElectronic");
-99: 		Patch&lt;HealthData&gt;(h, "IsSentinel", typeof(SilverBlood), null, "AfterIsSentinel");
-100: 		Patch&lt;StartingPerk&gt;(h, "IsSentinel", typeof(SilverBlood), null, "AfterIsSentinel");
-101: 		Patch&lt;StartingPerk&gt;(h, "IsPerkActive", typeof(SilverBlood), null, "AfterIsPerkActive", new Type[1] { typeof(string) });
-102: 		Patch&lt;StoreClient&gt;(h, "IsClientBuyingThisItem", typeof(SilverBlood), null, "AfterIsBuying", new Type[1] { typeof(GameItem) });
-103: 		Patch&lt;CigaretteUI&gt;(h, "OnInit", typeof(PastelCo), null, "AfterCigaretteUI", new Type[1] { typeof(GameItem) });
-104: 		Patch&lt;GameItem&gt;(h, "GetParentShapeModifier", typeof(RifleMods), null, "AfterParentShape", new Type[4]
-105: 		{
-106: 			typeof(GameItem),
-107: 			typeof(SlotMarker),
-108: 			typeof(GridShape),
-109: 			typeof(TagSystem)
-110: 		});
-111: 		Patch(h, AccessTools.Method(typeof(RenderHandler), "LoadFromAtlasRaw", new Type[2]
-112: 		{
-113: 			typeof(string),
-114: 			typeof(string)
-115: 		}, (Type[])null), "RenderHandler.LoadFromAtlasRaw", typeFromHandle, "BeforeLoadFromAtlas");
-116: 		Patch&lt;ModItemDirectory&gt;(h, "InitDirectory", typeFromHandle2, null, "AfterInitDirectory");
-117: 		Patch&lt;GameItem&gt;(h, "ActivateSlotItem", typeFromHandle, "BeforeActivateItem");
-118: 		Patch&lt;PaperUIManager&gt;(h, "CloseAllPaperUI", typeFromHandle, null, "AfterCloseAllPaper");
-119: 		Patch&lt;GameItem&gt;(h, "MayActivateSlotItem", typeFromHandle, null, "AfterCanActivate");
-120: 		Patch&lt;PowerHelper&gt;(h, "ChargeBattery", typeFromHandle, "BeforeChargeBattery", "AfterBatteryChange", new Type[1] { typeof(GameItem) });
-121: 		Patch&lt;PowerHelper&gt;(h, "UpdateEnergyCreditSprite", typeFromHandle, null, "AfterBatteryChange", new Type[1] { typeof(GameItem) });
-122: 		Patch&lt;PowerHelper&gt;(h, "SetPowerSourceAt", typeFromHandle, null, "AfterBatteryChange", new Type[2]
-123: 		{
+21: 
+22: 	[ThreadStatic]
+23: 	private static int _pendingVendingWater;
+24: 
+25: 	public static void InstallCore(Harmony h)
+26: 	{
+27: 		Type typeFromHandle = typeof(Hooks);
+28: 		Type typeFromHandle2 = typeof(ItemRegistry);
+29: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeFromHandle2, "BeforeDecode", null, new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
+30: 		Patch&lt;SaveManager&gt;(h, "DecodeNodes", typeof(ItemTags), null, "AfterDecode", new Type[1] { typeof(List&lt;SaveItemNode&gt;) });
+31: 		Patch&lt;SaveManager&gt;(h, "EncodeNode", typeFromHandle2, "BeforeEncode", null, new Type[1] { typeof(GameItem) });
+32: 		Patch&lt;PlayerStore&gt;(h, "SaveGame", typeFromHandle, "BeforeSave");
+33: 		Patch&lt;PlayerStore&gt;(h, "LoadGame", typeFromHandle, "BeforeStoreTransition", "AfterLoadGame");
+34: 		Patch&lt;PlayerStore&gt;(h, "StartNewGame", typeFromHandle, "BeforeStoreTransition", "ResetState");
+35: 		Patch(h, AccessTools.Method(typeof(ModConfigWindow), "Open", new Type[1] { typeof(LoadedMod) }, (Type[])null), "ModConfigWindow.Open", typeof(ConfigLocalization), null, "AfterOpen");
+36: 	}
+37: 
+38: 	private static void InstallGameplay(Harmony h)
+39: 	{
+40: 		Type typeFromHandle = typeof(Hooks);
+41: 		Type typeFromHandle2 = typeof(ItemRegistry);
+42: 		Patch&lt;PlayerStore&gt;(h, "BeginDay", typeFromHandle, null, "AfterBeginDay");
+43: 		MethodInfo original = AccessTools.Method(typeof(ItemMouseDragHandler), "EndDrag", new Type[1] { typeof(bool) }, (Type[])null) ?? AccessTools.Method(typeof(ItemMouseDragHandler), "EndDrag", Type.EmptyTypes, (Type[])null);
+44: 		Patch(h, original, "ItemMouseDragHandler.EndDrag", typeof(DragFix), "BeforeEndDrag", "AfterEndDrag");
+45: 		Patch&lt;StoreClientManager&gt;(h, "GenerateClient", typeFromHandle, null, "AfterGenerateClient");
+46: 		Patch&lt;PlayerStore&gt;(h, "GetNextClient", typeFromHandle, "BeforeNextClient");
+47: 		Patch&lt;GameItem&gt;(h, "GetNegociatedValue", typeFromHandle, null, "AfterNegociatedValue");
+48: 		Patch&lt;StoreClient&gt;(h, "ClientExposeFeature", typeof(Rebels), "BeforeClientExposeFeature", null, new Type[1] { typeof(GameItem) });
+49: 		Patch&lt;StoreClient&gt;(h, "OnItemSold", typeFromHandle, null, "AfterClientSold", new Type[2]
+50: 		{
+51: 			typeof(GameItem),
+52: 			typeof(int)
+53: 		});
+54: 		Patch&lt;StoreClient&gt;(h, "OnItemBought", typeFromHandle, null, "AfterClientBought", new Type[2]
+55: 		{
+56: 			typeof(GameItem),
+57: 			typeof(int)
+58: 		});
+59: 		Patch&lt;RunStats&gt;(h, "OnItemSold", typeFromHandle, null, "AfterCounterWaterSale", new Type[4]
+60: 		{
+61: 			typeof(GameItem),
+62: 			typeof(int),
+63: 			typeof(int),
+64: 			typeof(StoreClient)
+65: 		});
+66: 		Patch&lt;VendingMachineHelper&gt;(h, "TrackMislabelledSale", typeFromHandle, null, "AfterVendingItemSale", new Type[2]
+67: 		{
+68: 			typeof(GameItem),
+69: 			typeof(int)
+70: 		});
+71: 		Patch&lt;RunStats&gt;(h, "OnVendingSale", typeFromHandle, null, "AfterVendingSale", new Type[1] { typeof(int) });
+72: 		Patch&lt;RunStats&gt;(h, "OnFountainSale", typeFromHandle, null, "AfterFountainWaterSale", new Type[1] { typeof(int) });
+73: 		Patch&lt;PlayerStore&gt;(h, "EndDay", typeFromHandle, "BeforeEndDay");
+74: 		Patch&lt;StorePhoneClient&gt;(h, "InitPhoneClientDict", typeFromHandle, null, "AfterInitPhones");
+75: 		Patch&lt;StorePhoneClient&gt;(h, "GetCallDialog", typeFromHandle, null, "AfterGetCallDialog");
+76: 		Patch&lt;PhoneUIManager&gt;(h, "WillAnswerCall", typeFromHandle, null, "AfterWillAnswer", new Type[1] { typeof(long) });
+77: 		Patch&lt;PhoneUIManager&gt;(h, "HandleCall", typeFromHandle, "BeforeHandleCall", null, new Type[1] { typeof(long) });
+78: 		Patch&lt;StorePhoneClient&gt;(h, "GetLocalizedDisplayName", typeFromHandle, null, "AfterPhoneName");
+79: 		Patch&lt;DialoguePhoneUIManager&gt;(h, "DisplayClientText", typeof(PhoneDialogueLayout), null, "AfterClientText", new Type[1] { typeof(Dialogue) });
+80: 		Patch&lt;DialoguePhoneUIManager&gt;(h, "DisplayerPlayerText", typeof(PhoneDialogueLayout), null, "AfterPlayerText", new Type[1] { typeof(Dialogue) });
+81: 		MethodInfo methodInfo = AccessTools.Method(typeof(DialoguePhoneUIManager), "ApplyBubbleScale", Type.EmptyTypes, (Type[])null);
+82: 		if (methodInfo != null)
+83: 		{
+84: 			Patch(h, methodInfo, "DialoguePhoneUIManager.ApplyBubbleScale", typeof(PhoneDialogueLayout), "Reset", "AfterBubbleScale");
+85: 		}
+86: 		Patch&lt;DialogUIManager&gt;(h, "ScaleByDialogSpeed", typeof(ReadingPace), null, "AfterDialoguePause", new Type[1] { typeof(float) });
+87: 		Patch&lt;StoreUIManager&gt;(h, "GetLocaleSpeedMultiplier", typeof(ReadingPace), null, "AfterTypewriterSpeed");
+88: 		Patch&lt;ReputationUIManager&gt;(h, "Notify", typeof(ReadingPace), null, "AfterNotification", new Type[2]
+89: 		{
+90: 			typeof(string),
+91: 			typeof(string)
+92: 		});
+93: 		Patch&lt;ReputationUIManager&gt;(h, "NotifyReputation", typeof(ReadingPace), null, "AfterNotification", new Type[2]
+94: 		{
+95: 			typeof(string),
+96: 			typeof(int)
+97: 		});
+98: 		Patch&lt;GameItemElement&gt;(h, "ResolveSpriteByName", typeFromHandle, "BeforeResolveSprite", null, new Type[1] { typeof(string) });
+99: 		Patch&lt;GameItemElement&gt;(h, "ResolveItemSprite", typeFromHandle, "BeforeResolveItemSprite");
+100: 		Patch&lt;SpriteDict&gt;(h, "GetSprite", typeFromHandle, "BeforeGetSprite", null, new Type[1] { typeof(string) });
+101: 		Patch&lt;ItemConditionActionList&gt;(h, "GenuineCigaretteAction", typeof(PastelCo), null, "AfterGenuineAction", new Type[1] { typeof(GameItem) });
+102: 		Patch&lt;HusbandryHelper&gt;(h, "CreateButcherCuts", typeof(Forge), "BeforeButcherCuts", "AfterButcherCuts", new Type[1] { typeof(GameItem) });
+103: 		Patch&lt;GameItem&gt;(h, "BuildShapeFromSprite", typeof(Goods), "BeforeBuildShape", null, new Type[2]
+104: 		{
+105: 			typeof(string),
+106: 			typeof(string)
+107: 		});
+108: 		Patch&lt;Image&gt;(h, "IsRaycastLocationValid", typeof(Goods), null, "AfterRaycastValid", new Type[2]
+109: 		{
+110: 			typeof(Vector2),
+111: 			typeof(Camera)
+112: 		});
+113: 		Patch&lt;AquacultureHelper&gt;(h, "CreateFilletPieces", typeof(SilverBlood), "BeforeFillet", null, new Type[1] { typeof(GameItem) });
+114: 		Patch(h, AccessTools.Method("AquacultureHelper+TankOccupancy:Fits", new Type[3]
+115: 		{
+116: 			typeof(int),
+117: 			typeof(int),
+118: 			typeof(List&lt;Vector2Int&gt;)
+119: 		}, (Type[])null), "AquacultureHelper.TankOccupancy.Fits", typeof(SilverBlood), "BeforeTankFits");
+120: 		Patch&lt;AquacultureHelper&gt;(h, "WillSuffocateTonight", typeof(SilverBlood), null, "AfterWillSuffocate", new Type[1] { typeof(GameItem) });
+121: 		Patch&lt;AquacultureHelper&gt;(h, "ApplyWaterChecks", typeof(SilverBlood), "BeforeApplyWaterChecks", null, new Type[3]
+122: 		{
+123: 			typeof(List&lt;GameItem&gt;),
 124: 			typeof(GameItem),
-125: 			typeof(int)
+125: 			typeof(bool)
 126: 		});
-127: 		Patch&lt;PowerHelper&gt;(h, "DrawPowerSource", typeFromHandle, null, "AfterBatteryChange", new Type[2]
+127: 		Patch&lt;AquacultureHelper&gt;(h, "TickTank", typeof(SilverBlood), "BeforeTickTank", "AfterTickTank", new Type[6]
 128: 		{
 129: 			typeof(GameItem),
-130: 			typeof(int)
-131: 		});
-132: 		Patch&lt;PowerHelper&gt;(h, "ChargeBattery", typeFromHandle, "BeforeChargeBattery", "AfterBatteryChange", new Type[3]
-133: 		{
-134: 			typeof(GameItem),
-135: 			typeof(int),
-136: 			typeof(bool)
-137: 		});
-138: 		Patch&lt;GameItem&gt;(h, "CanActivateSlotItem", typeFromHandle, null, "AfterCanActivate");
-139: 		Patch&lt;ScavHelper&gt;(h, "GetMaxScavAttempts", typeFromHandle, null, "AfterMaxScav");
-140: 		Patch&lt;ScavHelper&gt;(h, "GetMinorWoundChance", typeFromHandle, null, "AfterMinorWoundChance");
-141: 		Patch&lt;ScavHelper&gt;(h, "GetMajorWoundChance", typeFromHandle, null, "AfterWoundChance");
-142: 		Patch&lt;HealthData&gt;(h, "GetTotalAddictionPenalty", typeFromHandle, null, "AfterAddictionPenalty");
-143: 		Patch&lt;HealthData&gt;(h, "GetLuck", typeFromHandle, null, "AfterGetLuck");
-144: 		Patch&lt;PlayerStore&gt;(h, "OnCustomerReported", typeFromHandle, "BeforeReported", "AfterReported");
-145: 		Patch&lt;HealthData&gt;(h, "HasNicotineDebuff", typeFromHandle, null, "AfterNicotineDebuff");
-146: 		Patch(h, AccessTools.Method(typeof(ShowcaseHelper), "HandleDisplayCase", Type.EmptyTypes, (Type[])null), "ShowcaseHelper.HandleDisplayCase", typeFromHandle, null, "AfterDisplayCase");
-147: 		Patch&lt;StoreClient&gt;(h, "GetTradeRepMultiplier", typeFromHandle, null, "AfterTradeRepMultiplier", new Type[1] { typeof(bool) });
-148: 		Patch&lt;PlayerStore&gt;(h, "HandleAfterhourDebuff", typeFromHandle, "BeforeAfterhourDebuff");
-149: 		Patch&lt;StorePhoneClient&gt;(h, "ShownInPhoneBook", typeFromHandle, null, "AfterShownInPhoneBook");
-150: 		Patch&lt;AmenitiesItemDirectory&gt;(h, "OnPortableWaterPurifierUsed", typeFromHandle, "BeforePurifierUsed", null, new Type[2]
-151: 		{
-152: 			typeof(GameItem),
-153: 			typeof(GameItem)
-154: 		});
-155: 		Patch&lt;PhoneUIManager&gt;(h, "OpenUI", typeFromHandle, null, "AfterPhoneOpen");
-156: 		Type typeFromHandle3 = typeof(InputShield);
-157: 		Patch&lt;InputActionManager&gt;(h, "Update", typeFromHandle3, "BeforeGameInput");
-158: 		Patch&lt;CustomEventHandler&gt;(h, "Update", typeFromHandle3, "BeforeDoubleClick");
-159: 		Patch&lt;StoreUIManager&gt;(h, "CheckRaycast", typeFromHandle3, "BeforeStoreRaycast");
-160: 		Patch&lt;StoreUIManager&gt;(h, "Update", typeFromHandle3, null, "AfterStoreUpdate");
-161: 		Patch&lt;StoreUIManager&gt;(h, "ResolveEscape", typeFromHandle3, "BeforeEscape");
-162: 		Patch&lt;GraphicRaycaster&gt;(h, "Raycast", typeFromHandle3, "BeforeGraphicRaycast", null, new Type[2]
-163: 		{
-164: 			typeof(PointerEventData),
-165: 			typeof(List&lt;RaycastResult&gt;)
-166: 		});
-167: 	}
-168: 
-169: 	public static void InstallResources(Harmony h)
-170: 	{
-171: 		if (!GameResources.Ready)
-172: 		{
-173: 			throw new InvalidOperationException("液体补丁资源尚未就绪");
-174: 		}
-175: 		InstallGameplay(h);
-176: 	}
-177: 
-178: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
-179: 	{
-180: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
-181: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
-182: 		Type[] array = args ?? Type.EmptyTypes;
-183: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
-184: 		if (methodInfo == null)
-185: 		{
-186: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
-187: 		}
-188: 		else
-189: 		{
-190: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
-191: 		}
-192: 	}
-193: 
-194: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
-195: 	{
-196: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
-197: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
-198: 		if (original == null)
-199: 		{
-200: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
-201: 		}
-202: 		else
-203: 		{
-204: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
-205: 		}
-206: 	}
-207: 
-208: 	public static void InstallEvents()
-209: 	{
-210: 		if (_nightly == null)
-211: 		{
-212: 			_nightly = delegate
-213: 			{
-214: 				Guard("每晚服务", Services.OnNightlyServices);
-215: 			};
-216: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
-217: 		}
-218: 	}
-219: 
-220: 	public static void UninstallEvents()
-221: 	{
-222: 		if (_nightly != null)
-223: 		{
-224: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
-225: 			_nightly = null;
-226: 		}
-227: 	}
-228: 
+130: 			typeof(GameGridInventory),
+131: 			typeof(GameItem),
+132: 			typeof(List&lt;GameSlotInventory&gt;),
+133: 			typeof(GameSlotInventory),
+134: 			typeof(bool)
+135: 		});
+136: 		Patch(h, AccessTools.Method(typeof(ChemicalHelper), "HandleTemperatureReaction", new Type[1] { typeof(GameItem) }, (Type[])null), "ChemicalHelper.HandleTemperatureReaction", typeof(SilverBlood), null, "AfterTemperatureReaction");
+137: 		Patch&lt;MaterialDirectory&gt;(h, "MetalIngot", typeof(MachineUpgrade), null, "AfterMakeIngot");
+138: 		Patch&lt;MachineHelper&gt;(h, "GetBodyStorage", typeof(Canning), null, "AfterMachineBodyStorage", new Type[2]
+139: 		{
+140: 			typeof(GameItem),
+141: 			typeof(int)
+142: 		});
+143: 		Patch&lt;MaterialDirectory&gt;(h, "Electronic", typeof(MachineUpgrade), null, "AfterMakeElectronic");
+144: 		Patch&lt;HealthData&gt;(h, "IsSentinel", typeof(SilverBlood), null, "AfterIsSentinel");
+145: 		Patch&lt;StartingPerk&gt;(h, "IsSentinel", typeof(SilverBlood), null, "AfterIsSentinel");
+146: 		Patch&lt;StartingPerk&gt;(h, "IsPerkActive", typeof(SilverBlood), null, "AfterIsPerkActive", new Type[1] { typeof(string) });
+147: 		Patch&lt;StoreClient&gt;(h, "IsClientBuyingThisItem", typeof(SilverBlood), null, "AfterIsBuying", new Type[1] { typeof(GameItem) });
+148: 		Patch&lt;CigaretteUI&gt;(h, "OnInit", typeof(PastelCo), null, "AfterCigaretteUI", new Type[1] { typeof(GameItem) });
+149: 		Patch&lt;GameItem&gt;(h, "GetParentShapeModifier", typeof(RifleMods), null, "AfterParentShape", new Type[4]
+150: 		{
+151: 			typeof(GameItem),
+152: 			typeof(SlotMarker),
+153: 			typeof(GridShape),
+154: 			typeof(TagSystem)
+155: 		});
+156: 		Patch(h, AccessTools.Method(typeof(RenderHandler), "LoadFromAtlasRaw", new Type[2]
+157: 		{
+158: 			typeof(string),
+159: 			typeof(string)
+160: 		}, (Type[])null), "RenderHandler.LoadFromAtlasRaw", typeFromHandle, "BeforeLoadFromAtlas");
+161: 		Patch&lt;ModItemDirectory&gt;(h, "InitDirectory", typeFromHandle2, null, "AfterInitDirectory");
+162: 		Patch&lt;GameItem&gt;(h, "ActivateSlotItem", typeFromHandle, "BeforeActivateItem");
+163: 		Patch&lt;PaperUIManager&gt;(h, "CloseAllPaperUI", typeFromHandle, null, "AfterCloseAllPaper");
+164: 		Patch&lt;GameItem&gt;(h, "MayActivateSlotItem", typeFromHandle, null, "AfterCanActivate");
+165: 		Patch&lt;PowerHelper&gt;(h, "ChargeBattery", typeFromHandle, "BeforeChargeBattery", "AfterBatteryChange", new Type[1] { typeof(GameItem) });
+166: 		Patch&lt;PowerHelper&gt;(h, "UpdateEnergyCreditSprite", typeFromHandle, null, "AfterBatteryChange", new Type[1] { typeof(GameItem) });
+167: 		Patch&lt;PowerHelper&gt;(h, "SetPowerSourceAt", typeFromHandle, null, "AfterBatteryChange", new Type[2]
+168: 		{
+169: 			typeof(GameItem),
+170: 			typeof(int)
+171: 		});
+172: 		Patch&lt;PowerHelper&gt;(h, "DrawPowerSource", typeFromHandle, null, "AfterBatteryChange", new Type[2]
+173: 		{
+174: 			typeof(GameItem),
+175: 			typeof(int)
+176: 		});
+177: 		Patch&lt;PowerHelper&gt;(h, "ChargeBattery", typeFromHandle, "BeforeChargeBattery", "AfterBatteryChange", new Type[3]
+178: 		{
+179: 			typeof(GameItem),
+180: 			typeof(int),
+181: 			typeof(bool)
+182: 		});
+183: 		Patch&lt;GameItem&gt;(h, "CanActivateSlotItem", typeFromHandle, null, "AfterCanActivate");
+184: 		Patch&lt;ScavHelper&gt;(h, "GetMaxScavAttempts", typeFromHandle, null, "AfterMaxScav");
+185: 		Patch&lt;ScavHelper&gt;(h, "GetMinorWoundChance", typeFromHandle, null, "AfterMinorWoundChance");
+186: 		Patch&lt;ScavHelper&gt;(h, "GetMajorWoundChance", typeFromHandle, null, "AfterWoundChance");
+187: 		Patch&lt;HealthData&gt;(h, "GetTotalAddictionPenalty", typeFromHandle, null, "AfterAddictionPenalty");
+188: 		Patch&lt;HealthData&gt;(h, "GetLuck", typeFromHandle, null, "AfterGetLuck");
+189: 		Patch&lt;PlayerStore&gt;(h, "OnCustomerReported", typeFromHandle, "BeforeReported", "AfterReported");
+190: 		Patch&lt;HealthData&gt;(h, "HasNicotineDebuff", typeFromHandle, null, "AfterNicotineDebuff");
+191: 		Patch(h, AccessTools.Method(typeof(ShowcaseHelper), "HandleDisplayCase", Type.EmptyTypes, (Type[])null), "ShowcaseHelper.HandleDisplayCase", typeFromHandle, null, "AfterDisplayCase");
+192: 		Patch&lt;StoreClient&gt;(h, "GetTradeRepMultiplier", typeFromHandle, null, "AfterTradeRepMultiplier", new Type[1] { typeof(bool) });
+193: 		Patch&lt;PlayerStore&gt;(h, "HandleAfterhourDebuff", typeFromHandle, "BeforeAfterhourDebuff");
+194: 		Patch&lt;StorePhoneClient&gt;(h, "ShownInPhoneBook", typeFromHandle, null, "AfterShownInPhoneBook");
+195: 		Patch&lt;AmenitiesItemDirectory&gt;(h, "OnPortableWaterPurifierUsed", typeFromHandle, "BeforePurifierUsed", null, new Type[2]
+196: 		{
+197: 			typeof(GameItem),
+198: 			typeof(GameItem)
+199: 		});
+200: 		Patch&lt;PhoneUIManager&gt;(h, "OpenUI", typeFromHandle, null, "AfterPhoneOpen");
+201: 		Type typeFromHandle3 = typeof(InputShield);
+202: 		Patch&lt;InputActionManager&gt;(h, "Update", typeFromHandle3, "BeforeGameInput");
+203: 		Patch&lt;CustomEventHandler&gt;(h, "Update", typeFromHandle3, "BeforeDoubleClick");
+204: 		Patch&lt;StoreUIManager&gt;(h, "CheckRaycast", typeFromHandle3, "BeforeStoreRaycast");
+205: 		Patch&lt;StoreUIManager&gt;(h, "Update", typeFromHandle3, null, "AfterStoreUpdate");
+206: 		Patch&lt;StoreUIManager&gt;(h, "ResolveEscape", typeFromHandle3, "BeforeEscape");
+207: 		Patch&lt;GraphicRaycaster&gt;(h, "Raycast", typeFromHandle3, "BeforeGraphicRaycast", null, new Type[2]
+208: 		{
+209: 			typeof(PointerEventData),
+210: 			typeof(List&lt;RaycastResult&gt;)
+211: 		});
+212: 	}
+213: 
+214: 	public static void InstallResources(Harmony h)
+215: 	{
+216: 		if (!GameResources.Ready)
+217: 		{
+218: 			throw new InvalidOperationException("液体补丁资源尚未就绪");
+219: 		}
+220: 		InstallGameplay(h);
+221: 	}
+222: 
+223: 	private static void Patch&lt;T&gt;(Harmony h, string method, Type owner, string prefix = null, string postfix = null, Type[] args = null)
+224: 	{
+225: 		//IL_006f: Unknown result type (might be due to invalid IL or missing references)
+226: 		//IL_007f: Unknown result type (might be due to invalid IL or missing references)
+227: 		Type[] array = args ?? Type.EmptyTypes;
+228: 		MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
+229: 		if (methodInfo == null)
+230: 		{
+231: 			ModLog.Warn("找不到 " + typeof(T).Name + "." + method + "，相关功能停用");
+232: 		}
+233: 		else
+234: 		{
+235: 			h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMe
+236: 		}
+237: 	}
+238: 
+239: 	private static void Patch(Harmony h, MethodInfo original, string label, Type owner, string prefix = null, string postfix = null)
+240: 	{
+241: 		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
+242: 		//IL_0039: Unknown result type (might be due to invalid IL or missing references)
+243: 		if (original == null)
+244: 		{
+245: 			ModLog.Warn("找不到 " + label + "，相关功能停用");
+246: 		}
+247: 		else
+248: 		{
+249: 			h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMeth
+250: 		}
+251: 	}
+252: 
+253: 	public static void InstallEvents()
+254: 	{
+255: 		if (_nightly == null)
+256: 		{
+257: 			_nightly = delegate
+258: 			{
+259: 				Guard("每晚服务", Services.OnNightlyServices);
+260: 			};
+261: 			ModHook.OnHandlingNightlyServicesEarly += _nightly;
+262: 		}
+263: 	}
+264: 
+265: 	public static void UninstallEvents()
+266: 	{
+267: 		if (_nightly != null)
+268: 		{
+269: 			ModHook.OnHandlingNightlyServicesEarly -= _nightly;
+270: 			_nightly = null;
+271: 		}
+272: 	}
+273: 
 ```
 
 ## CorpPresence/L.cs
 
-Matching lines: 15; displayed context lines: 57
+Matching lines: 25; displayed context lines: 96
 
 ```text
 2: using UnityEngine;
@@ -403,51 +445,90 @@ Matching lines: 15; displayed context lines: 57
 11: 
 12: 	private static bool _ready;
 13: 
-14: 	public static bool En
-15: 	{
-16: 		get
-17: 		{
-18: 			if (_frame == Time.frameCount)
-19: 			{
-20: 				return _en;
-21: 			}
-22: 			_frame = Time.frameCount;
-23: 			if (!_ready && (Object)(object)FontLoader.Instance == (Object)null)
-24: 			{
-25: 				return _en = false;
-26: 			}
-27: 			_ready = true;
-28: 			try
-29: 			{
-30: 				string currentLocaleCode = LocHelper.GetCurrentLocaleCode();
-31: 				_en = !string.IsNullOrEmpty(currentLocaleCode) && !currentLocaleCode.StartsWith("zh", StringComparison.OrdinalIgnoreCase);
-32: 			}
-33: 			catch
-34: 			{
-35: 				_en = false;
-36: 			}
-37: 			return _en;
-38: 		}
-39: 	}
-40: 
-41: 	public static string T(string zh, string en)
-42: 	{
-43: 		if (!En)
-44: 		{
-45: 			return zh;
-46: 		}
-47: 		return en;
-48: 	}
-49: 
-50: 	public static string[] T(string[] zh, string[] en)
-51: 	{
-52: 		if (!En)
-53: 		{
-54: 			return zh;
-55: 		}
-56: 		return en;
-57: 	}
-58: }
+14: 	private static string _locale = "";
+15: 
+16: 	public static bool En
+17: 	{
+18: 		get
+19: 		{
+20: 			if (_frame == Time.frameCount)
+21: 			{
+22: 				return _en;
+23: 			}
+24: 			_frame = Time.frameCount;
+25: 			if (!_ready && (Object)(object)FontLoader.Instance == (Object)null)
+26: 			{
+27: 				_locale = "";
+28: 				return _en = false;
+29: 			}
+30: 			_ready = true;
+31: 			try
+32: 			{
+33: 				_locale = LocHelper.GetCurrentLocaleCode() ?? "";
+34: 				_en = _locale.Length != 0 && !_locale.StartsWith("zh", StringComparison.OrdinalIgnoreCase);
+35: 			}
+36: 			catch
+37: 			{
+38: 				_locale = "";
+39: 				_en = false;
+40: 			}
+41: 			return _en;
+42: 		}
+43: 	}
+44: 
+45: 	internal static string Locale
+46: 	{
+47: 		get
+48: 		{
+49: 			_ = En;
+50: 			return _locale;
+51: 		}
+52: 	}
+53: 
+54: 	public static string T(string zh, string en)
+55: 	{
+56: 		if (!En)
+57: 		{
+58: 			return zh;
+59: 		}
+60: 		return TextTranslations.Select(en, _locale);
+61: 	}
+62: 
+63: 	internal static string Translate(string en)
+64: 	{
+65: 		return TextTranslations.Select(en, Locale);
+66: 	}
+67: 
+68: 	internal static string Translate(FormattableString en)
+69: 	{
+70: 		string text = Translate(en.Format);
+71: 		if (string.Equals(text, en.Format, StringComparison.Ordinal))
+72: 		{
+73: 			return en.ToString();
+74: 		}
+75: 		try
+76: 		{
+77: 			return string.Format(text, en.GetArguments());
+78: 		}
+79: 		catch (FormatException)
+80: 		{
+81: 			return en.ToString();
+82: 		}
+83: 	}
+84: 
+85: 	public static string[] T(string[] zh, string[] en)
+86: 	{
+87: 		if (!En)
+88: 		{
+89: 			return zh;
+90: 		}
+91: 		if (!TextTranslations.HasLocale(_locale) || en == null)
+92: 		{
+93: 			return en;
+94: 		}
+95: 		return Array.ConvertAll(en, (string value) =&gt; TextTranslations.Select(value, _locale));
+96: 	}
+97: }
 ```
 
 ## CorpPresence/Runtime/ResourceBootstrap.cs
