@@ -31,7 +31,7 @@ dsp_presbyopia_description,The magnifying glass makes things hard to see.
 dsp_zero_cost_name,Five-Finger Discount
 dsp_zero_cost_description,You start with 150 points of crime suspicion. You start with 300 credits worth of stolen goods.
 dsp_shawshank_name,Shawshank Redemption
-dsp_shawshank_description,You accidentally dug through the wall. The wall hole becomes 4×4 and counts as a display case instead of a hidden compartment. The display case attracts one extra buyer.
+dsp_shawshank_description,You dug straight through while expanding the wall hole. The wall hole becomes 4×4 and counts as a display case instead of a hidden compartment. The display case attracts one extra buyer.
 dsp_wanderlust_nightlog,"Last night's trip made you open late today. Wanderlust meant you lost no customers over it."
 dsp_newspaper_recipe_name,Newspaper Recipe
 dsp_newspaper_recipe_description,"Newspapers now count as a flux agent, synthetic yeast, and a hard-to-swallow X food (75KJ)."
@@ -94,3 +94,229 @@ dsp_opening_bonus_bonus_sell,Opening Bonus: sell price +X%
 dsp_byproduct_name,Supplier Side Business
 dsp_byproduct_description,"Suppliers bring along goods related to their own line of business. The total value of these extra goods grows with the day count. However many byproducts you buy, it is always at wholesale price."
 dsp_byproduct_wholesale,Wholesale price: buy price -X%
+dsp_wild_lover_name,Wilde's Informant
+dsp_wild_lover_description,"Unlocks Wilde's phone from the start. Once a day, calling Wilde lets you trade intel in code and grants 10 Wilde's Favor."
+dsp_wild_lover_contact,Wilde
+dsp_wild_lover_greet_1,You again. I know before I look.
+dsp_wild_lover_greet_2,Talk. I am listening.
+dsp_wild_lover_greet_3,Calling this late? Cannot sleep?
+dsp_wild_lover_greet_4,Three names saved under you. All of them bad.
+dsp_wild_lover_greet_5,Still raining in the Lower Levels. You?
+dsp_wild_lover_greet_6,Just out of a duct. Hands still black.
+dsp_wild_lover_greet_7,Do not ask how many died today. Answer is none.
+dsp_wild_lover_greet_8,You sound fine. Nobody hit you?
+dsp_wild_lover_greet_9,Drinking Red Imp. Awful. Cheap though.
+dsp_wild_lover_greet_10,Rent paid? Do not make me cover it again.
+dsp_wild_lover_greet_11,My people say your lights are still on.
+dsp_wild_lover_greet_12,Business first. Sweet talk later.
+dsp_wild_lover_opt_1,I miss you.
+dsp_wild_lover_opt_2,Security is watching close.
+dsp_wild_lover_opt_3,How do I move this batch?
+dsp_wild_lover_opt_4,Any clean work?
+dsp_wild_lover_opt_5,Push my rent down.
+dsp_wild_lover_opt_6,What are you short on?
+dsp_wild_lover_reply_1_1,Sure. You only call when you need something.
+dsp_wild_lover_reply_1_2,Me too. Do not repeat that.
+dsp_wild_lover_reply_1_3,Keep that line. Say it again when I am done collecting.
+dsp_wild_lover_reply_2_1,Do not let them see that bag of zerochew.
+dsp_wild_lover_reply_2_2,Patrol changed. Old one took money. This one works.
+dsp_wild_lover_reply_2_3,No names. Wipe the prints. Same as always.
+dsp_wild_lover_reply_3_1,Do not rush selling what came out of the furnace.
+dsp_wild_lover_reply_3_2,"Go to the Chemist. Talks too much, pays well."
+dsp_wild_lover_reply_3_3,Do not mix the batches. Mixed means stolen.
+dsp_wild_lover_reply_4_1,Clean? On this station?
+dsp_wild_lover_reply_4_2,"Hull repairs. Little money, little trouble."
+dsp_wild_lover_reply_4_3,Yes. Deliver a letter. Do not open it.
+dsp_wild_lover_reply_5_1,The landlord owes me. This one is on me.
+dsp_wild_lover_reply_5_2,Do not wait for the last day. People change that day.
+dsp_wild_lover_reply_5_3,I can cover it. What do I get?
+dsp_wild_lover_reply_6_1,People I can trust. Short on those.
+dsp_wild_lover_reply_6_2,Solar panels. And coffee.
+dsp_wild_lover_reply_6_3,Bullets. Always bullets.
+dsp_wild_lover_line_news_harvest_1,Read the paper? Bad berry harvest. The brewery will raise prices.
+dsp_wild_lover_line_news_harvest_2,"Berries rotting in the fields. If you have stock, sit on it."
+dsp_wild_lover_line_news_build_1,Construction started. More loading work. More strangers.
+dsp_wild_lover_line_news_build_2,Someone is building a new depot. Screws and welding rods are being grabbed.
+dsp_wild_lover_line_news_evidence_1,Evidence locker got cracked. Security sees thieves in every face now.
+dsp_wild_lover_line_news_evidence_2,"Evidence gone, so they take it out on us. Carry your papers."
+dsp_wild_lover_line_news_med_1,Medical shortage. The pharmacist is picking customers.
+dsp_wild_lover_line_news_med_2,Don't get hurt now. Bandages are currency this week.
+dsp_wild_lover_line_news_meteor_1,Meteor shower. Every miner is running outside.
+dsp_wild_lover_line_news_meteor_2,"When things fall from the sky, best not stand under them."
+dsp_wild_lover_line_after_burglary_1,Someone cracked a depot last night. Not you? Fine.
+dsp_wild_lover_line_after_burglary_2,The depot is short a few things. Don't ask which.
+dsp_wild_lover_line_after_burglary_3,Locks are changed. Don't climb through the window again.
+dsp_wild_lover_line_after_freshdump_1,Dump just got emptied. Some of it is still warm.
+dsp_wild_lover_line_after_freshdump_2,Pick early. The cleaners get there before you.
+dsp_wild_lover_line_after_restock_1,Requisition got restocked. Don't clear the shelf.
+dsp_wild_lover_line_after_restock_2,New stock on the racks. Keep your eyes open.
+dsp_wild_lover_line_after_georgio_1,Georgio owes you. I'm keeping count.
+dsp_wild_lover_line_after_georgio_2,Don't haggle with him. He gives more than he says.
+dsp_wild_lover_line_after_jackclosed_1,The doctor shut his doors. He does that when he's sour.
+dsp_wild_lover_line_after_jackclosed_2,Want the doctor? Wait two days. His temper costs more than stock.
+dsp_wild_lover_line_after_jackdiscount_1,Doctor is discounting. Don't ask why.
+dsp_wild_lover_line_after_jackdiscount_2,Cheaper goods. Cheap usually comes with small print.
+dsp_wild_lover_line_after_specialstock_1,"Special stock is out there. See it, and don't."
+dsp_wild_lover_line_after_specialstock_2,Special stock doesn't pick buyers. It picks luck.
+dsp_wild_lover_line_money_broke_1,I can hear how empty your account is through the line.
+dsp_wild_lover_line_money_broke_2,Don't buy stock. Hold on.
+dsp_wild_lover_line_money_broke_3,"Short on money, say so. Don't borrow on that street."
+dsp_wild_lover_line_money_tight_1,Few days left in you. Watch what you spend.
+dsp_wild_lover_line_money_tight_2,I looked at your books. Rent is the killer line.
+dsp_wild_lover_line_money_rich_1,Word is you're doing well. Don't let them see it.
+dsp_wild_lover_line_svc_insurance_1,Insurance. Smart.
+dsp_wild_lover_line_svc_janitorial_1,Still paying for cleaning? They don't even wipe the dust.
+dsp_wild_lover_line_svc_wildfixer_1,The fixer is yours. That helps me sleep.
+dsp_wild_lover_line_svc_cartel_1,Cartel covers you. That's a face.
+dsp_wild_lover_line_svc_crimnet_1,Criminal network is up. Don't let it eat you back.
+dsp_wild_lover_line_chain_ship_1,That ship I mentioned. Still waiting.
+dsp_wild_lover_line_chain_ship_2,The ship moved. Don't push it.
+dsp_wild_lover_line_chain_ship_3,"The ship is docked. If you want on, get on."
+dsp_wild_lover_line_chain_necklace_1,I left my necklace in your shop.
+dsp_wild_lover_line_chain_necklace_2,Did you find the necklace. I'm waiting.
+dsp_wild_lover_line_chain_debt_1,That debt of yours. It's in my book.
+dsp_wild_lover_line_chain_debt_2,The book is open on your page. Pay up.
+dsp_wild_lover_line_mix_broke_build_1,Construction started and your pocket is silent. Need a loan?
+dsp_wild_lover_line_mix_med_noins_1,Medical shortage and no insurance. That's not brave.
+dsp_wild_lover_line_mix_meteor_free_1,Meteor shower and spare cash. Fancy a trip out?
+dsp_wild_lover_line_news_harvest_3,Bad harvest means pricey booze. Your stock just got interesting.
+dsp_wild_lover_line_news_harvest_4,Want berries cheap? Wait two weeks. Not now.
+dsp_wild_lover_line_news_harvest_5,The brewery is hunting substitutes. Don't dump your stock yet.
+dsp_wild_lover_line_news_build_3,"The site needs hands. If you're broke, carry bricks for two days."
+dsp_wild_lover_line_news_build_4,Construction loosens security. Use these two days.
+dsp_wild_lover_line_news_build_5,Building materials went up. Somebody wants that scrap in your back room.
+dsp_wild_lover_line_news_evidence_3,"No evidence, dead case. Dead cases sell well."
+dsp_wild_lover_line_news_evidence_4,Security needs a scapegoat. Don't volunteer.
+dsp_wild_lover_line_news_evidence_5,They changed the locks three times. Let it go.
+dsp_wild_lover_line_news_med_3,"Short supply, rising prices. Don't sell all your bandages at once."
+dsp_wild_lover_line_news_med_4,The pharmacist is waiting for the price. So should you.
+dsp_wild_lover_line_news_med_5,"In a shortage, one bottle of alcohol buys a life."
+dsp_wild_lover_line_news_meteor_3,Meteor shower. Ore prices will drop. Don't hoard ore.
+dsp_wild_lover_line_news_meteor_4,"Rocks are falling. Plenty go out, few come back."
+dsp_wild_lover_line_news_meteor_5,Someone got rich off a shower like this. Someone got erased.
+dsp_wild_lover_line_after_burglary_4,That lock was no amateur job. You know him?
+dsp_wild_lover_line_after_burglary_5,Don't copy him. His luck is spent.
+dsp_wild_lover_line_after_freshdump_3,The dump turned over. Some throw away good things.
+dsp_wild_lover_line_after_freshdump_4,Go at night. Bring a light. Leave the talking here.
+dsp_wild_lover_line_after_freshdump_5,You'll find other people's secrets. Find them and keep walking.
+dsp_wild_lover_line_after_restock_3,The supply truck just left. The quick ones already took the good stuff.
+dsp_wild_lover_line_after_restock_4,"Restock day is a crowd. After that, empty shelves."
+dsp_wild_lover_line_after_georgio_3,Georgio helped you. His favors are never free.
+dsp_wild_lover_line_after_georgio_4,He asked me to pass one thing along. Don't forget.
+dsp_wild_lover_line_after_jackclosed_3,"When the doctor closes, so do his prices."
+dsp_wild_lover_line_after_jackclosed_4,Don't knock. He will actually open it.
+dsp_wild_lover_line_after_jackdiscount_3,"Discounts don't last. Three days of cheap, two days of regret."
+dsp_wild_lover_line_after_jackdiscount_4,"Check the cheap stuff. The doctor doesn't lie, he just doesn't know everything."
+dsp_wild_lover_line_after_specialstock_3,Special stock brings eyes. Don't take too much.
+dsp_wild_lover_line_after_specialstock_4,Special-stock buyers never ask where it came from. That's the danger.
+dsp_wild_lover_line_money_broke_4,Did you skip dinner again yesterday.
+dsp_wild_lover_line_money_broke_5,"When the account is empty, people sign the wrong things."
+dsp_wild_lover_line_money_broke_6,I have a job. Not much money. Paid tonight.
+dsp_wild_lover_line_money_tight_3,Just enough. Stay off the tables.
+dsp_wild_lover_line_money_tight_4,"Buy one, sell one. Don't hold stock."
+dsp_wild_lover_line_money_tight_5,You sound like a man counting bullets.
+dsp_wild_lover_line_money_tight_6,Slow down. Don't bet the capital.
+dsp_wild_lover_line_money_normal_1,Doing fine. Just don't get creative.
+dsp_wild_lover_line_money_normal_2,"This number is comfortable. Enough to live, too small to notice."
+dsp_wild_lover_line_money_normal_3,At this rate you last a month.
+dsp_wild_lover_line_money_normal_4,Remember this feeling. Don't get greedy later.
+dsp_wild_lover_line_money_normal_5,People only listen when they can pay.
+dsp_wild_lover_line_money_ok_1,You're spending. People are counting.
+dsp_wild_lover_line_money_ok_2,Got money? Don't change your ride. Rides get noticed.
+dsp_wild_lover_line_money_ok_3,That number buys one quiet night.
+dsp_wild_lover_line_money_ok_4,I know people who take big orders. Want in?
+dsp_wild_lover_line_money_rich_2,You have enough money for someone to move on you.
+dsp_wild_lover_line_money_rich_3,Don't walk alone at night. I say this once.
+dsp_wild_lover_line_money_rich_4,Rich men don't last on this station. Unless they're mean.
+dsp_wild_lover_line_svc_insurance_2,"Keep paying the insurance. One day off, and it never existed."
+dsp_wild_lover_line_svc_insurance_3,"When it hits, you'll remember those five credits."
+dsp_wild_lover_line_svc_janitorial_2,The cleaners changed. The new one steals.
+dsp_wild_lover_line_svc_janitorial_3,You sweep better than they do.
+dsp_wild_lover_line_svc_wildfixer_2,The fixer doesn't fix things. He fixes relationships.
+dsp_wild_lover_line_svc_wildfixer_3,He never explains his price. Don't ask.
+dsp_wild_lover_line_svc_cartel_2,Cartel protection lapses after one month unpaid.
+dsp_wild_lover_line_svc_cartel_3,They cover you. And they watch you.
+dsp_wild_lover_line_svc_crimnet_2,The network brings you news. It also sells your news.
+dsp_wild_lover_line_svc_crimnet_3,Don't leave a name on it.
+dsp_wild_lover_line_svc_power_1,"Power is getting dearer. Still lit, so you're lucky."
+dsp_wild_lover_line_svc_power_2,"The night the lights go out, everything gets seen."
+dsp_wild_lover_line_chain_necklace_3,The necklace is with me. When are you coming for it.
+dsp_wild_lover_line_chain_uniform_1,I have an old uniform. Wear it and some doors open by themselves.
+dsp_wild_lover_line_chain_uniform_2,Don't wash the uniform too clean. Too clean looks wrong.
+dsp_wild_lover_line_chain_uniform_3,Uniform back to you. I left one door open.
+dsp_wild_lover_line_mix_broke_build_2,The site is hiring and you're broke. Going or not.
+dsp_wild_lover_line_mix_med_noins_2,Medical shortage and no insurance. That's a bet on your life.
+dsp_wild_lover_line_mix_meteor_free_1,"Meteor shower, spare credits, one night."
+dsp_wild_lover_line_mix_harvest_rich_1,Bad harvest and you have money. Buying a batch?
+dsp_wild_lover_line_mix_evidence_crim_1,The evidence locker is gone. Your network already knows.
+dsp_wild_lover_line_daily_1,Still up. This late.
+dsp_wild_lover_line_daily_2,Raining here. You?
+dsp_wild_lover_line_daily_3,Say it. Don't circle.
+dsp_wild_lover_line_daily_4,I know your number by heart.
+dsp_wild_lover_line_daily_5,How was today. Don't say fine.
+dsp_wild_lover_line_daily_6,It's quiet here. Wrong kind of quiet.
+dsp_wild_lover_line_daily_7,"Whatever you're about to say, say it."
+dsp_wild_lover_line_daily_8,Eat something. Not just coffee again.
+dsp_wild_lover_line_daily_9,That lamp by the door is still broken. You never fix it.
+dsp_wild_lover_line_daily_10,"When I can't sleep, I count who owes me."
+dsp_wild_lover_line_daily_11,I can hear you smiling when you talk.
+dsp_wild_lover_line_daily_12,Call when you need me. Or when you don't.
+dsp_wild_lover_line_daily_13,Dreamed your shop burned. Dreams lie.
+dsp_wild_lover_line_daily_14,Noise outside. Hold on.
+dsp_wild_lover_line_daily_15,I'm a little short on hands here.
+dsp_wild_lover_line_daily_16,You're quiet today.
+dsp_wild_lover_line_daily_17,My memory is bad. My ledger isn't.
+dsp_wild_lover_line_daily_18,Your shop smells like old paper. I like it.
+dsp_wild_lover_line_daily_19,Not many on this station can reach me.
+dsp_wild_lover_line_daily_20,Think for three seconds before you speak.
+dsp_wild_lover_line_daily_21,Never say all of it. Keep half.
+dsp_wild_lover_line_daily_22,I'm in the middle of a deal. Messy one.
+dsp_wild_lover_line_daily_23,Sometimes I wish you never opened that shop.
+dsp_wild_lover_line_daily_24,Hanging up. Don't stay up.
+dsp_wild_lover_line_mix_meteor_free_2,"Meteor shower and spare credits. If you go, take an umbrella."
+dsp_wild_lover_line_chain_ship_4,"The ship needs an engine. You pay, I work."
+dsp_wild_lover_line_chain_ship_5,Engine is in. Don't ask where from.
+dsp_wild_lover_line_chain_ship_6,The buyer looked. Says she's too old.
+dsp_wild_lover_line_chain_ship_7,She's going up for sale. Last time I ask.
+dsp_wild_lover_line_chain_ship_8,She left port. The berth is still empty.
+dsp_wild_lover_line_chain_necklace_4,"Necklace is fixed. Broken once, it wears different."
+dsp_wild_lover_line_chain_necklace_5,I put it on. When are you coming for it.
+dsp_wild_lover_line_chain_necklace_6,Necklace back to you. Don't leave it behind again.
+dsp_wild_lover_line_chain_debt_3,Your name has a line through half of it. Half left.
+dsp_wild_lover_line_chain_debt_4,One payment left. Your call.
+dsp_wild_lover_line_chain_debt_5,The ledger is clear. I tore the page out.
+dsp_wild_lover_line_chain_uniform_4,Someone recognized the uniform. They looked twice.
+dsp_wild_lover_line_chain_uniform_5,Stop wearing it. Two days was enough.
+dsp_wild_lover_line_chain_uniform_6,"Uniform burned. Smelled wrong, dumped it at the yard."
+dsp_wild_lover_line_chain_sting_1,Security is running a sting. No new faces for now.
+dsp_wild_lover_line_chain_sting_2,Someone asked prices at your shop. That was bait.
+dsp_wild_lover_line_chain_sting_3,"They want the ledger, not you."
+dsp_wild_lover_line_chain_sting_4,They closed the net. Three taken. None of mine.
+dsp_wild_lover_line_chain_sting_5,Close the shop for three days. Don't ask.
+dsp_wild_lover_line_chain_sting_6,Rain is done. You can open.
+dsp_wild_lover_line_chain_sign_1,That sign of yours is too new. Get an old one.
+dsp_wild_lover_line_chain_sign_2,Found an old sign. Peeling.
+dsp_wild_lover_line_chain_sign_3,Hang it. Don't wipe it.
+dsp_wild_lover_line_chain_sign_4,Someone said the sign looks old. That is the point.
+dsp_wild_lover_line_chain_sign_5,Took the sign back. I know the new one too.
+dsp_wild_lover_line_chain_letter_1,A letter needs delivering. Hard address.
+dsp_wild_lover_line_chain_letter_2,Letter delivered. They asked your name.
+dsp_wild_lover_line_chain_letter_3,Reply came. They want you long term.
+dsp_wild_lover_line_chain_letter_4,Burned the letters. Line is cut. Don't pick it up.
+dsp_wall_expansion_name,Wall Expansion
+dsp_wall_expansion_description,The wall hole becomes 4×4.
+dsp_built_on_dump_serpico,I picked up a lot of food at the dumping ground. I have no idea how you got it down here.
+# foreknowledge / speculator / picky customers / harsh bargain
+dsp_foreknowledge_name,Well Informed
+dsp_foreknowledge_description,You learn which events tomorrow brings.
+dsp_foreknowledge_log,Well Informed: tomorrow's events: X
+dsp_foreknowledge_none,Well Informed: nothing scheduled for tomorrow.
+dsp_speculator_name,Herd Mentality
+dsp_speculator_description,All price-affecting events have their effects increased by 50%.
+dsp_picky_customers_name,Dazzling Array
+dsp_picky_customers_description,Customers are more likely to make peculiar demands.
+dsp_harsh_bargain_name,Bully the Customers
+dsp_harsh_bargain_description,Lose 1 reputation when you call a customer over and fail to close a deal.
+dsp_wild_lover_remark,Lao Wang
+dsp_silvertongue_name,Silver Tongue
+dsp_silvertongue_description,Improves your bargaining success rate and reduces the reputation loss from bargaining.

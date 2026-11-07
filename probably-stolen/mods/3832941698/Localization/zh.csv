@@ -65,7 +65,7 @@ book.trade_guide.buy_doubao,收  药品、工具
 book.trade_guide.buy_gemini,收  通行卡、补给箱、工具
 book.trade_guide.buy_glm,收  食品、日用品、工具
 book.trade_guide.buy_gpt,收  奢侈品、通行卡、零食
-book.trade_guide.buy_grok,能改枪时带来改枪委托，否则收货。
+book.trade_guide.buy_grok,先来收货；见面且有许可后，电话可约交易或改枪。
 book.trade_guide.buy_hunyuan,收  奢侈品、药物类物资、武器
 book.trade_guide.buy_kimi,收  奢侈品、通行卡、材料；拒收磁带
 book.trade_guide.buy_llama,收  食品、水、饮料
@@ -103,7 +103,7 @@ book.trade_guide.sell_gemini,卖  奢侈品、零食、加工食品
 book.trade_guide.sell_glm,卖  药品、药物、麻醉品、化学物资；留意赃物
 book.trade_guide.sell_gpt,卖  性能模块、增压器、高科技电子元件
 book.trade_guide.sell_grok,收  奢侈品、零食、加工食品、枪械、弹药、违禁品
-book.trade_guide.sell_hunyuan,卖  彩票、刮刮卡、赌徒硬币
+book.trade_guide.sell_hunyuan,卖  彩票、刮刮卡；赌徒硬币买到后不再携带
 book.trade_guide.sell_kimi,卖  酒、磁带（含五盒专属曲目）
 book.trade_guide.sell_llama,卖  废品、材料
 book.trade_guide.sell_mimo,卖  电池、模块、材料
@@ -144,7 +144,7 @@ character.gpt.offeringline,我这边也有几件电子元件。如果假设它�
 character.grok.acceptline,行行行，这价老娘认了。
 character.grok.altacceptline,行行行，这价老娘认了。
 character.grok.altdoneline,下回带点更狠的来，别又让老娘说一句“就这？”。
-character.grok.altline,老娘今天不做活，只收货。贵的、吃的、能响的，都摆上来。
+character.grok.altline,老娘来收货了。贵的、吃的、能响的，都摆上来。
 character.grok.doneline,下回带点更狠的来，别又让老娘说一句“就这？”。
 character.grok.line,老娘要的不是枪，是能响的东西。订单在桌上，做不到就滚。
 character.grok.name,Grok
@@ -192,7 +192,7 @@ debug.give_cards,把 15 张名片放到前台
 debug.reset,重置名片与首访标记
 dialogue.accept.fallback,成交。
 dialogue.appraisal.fallback,……都放柜台上吧，一件一件来。
-dialogue.claude.card,这是我的名片，背面写着信托所的委托流程。您想接活的时候按一下，我就带着新的东西，从上层区过来。
+dialogue.claude.card,这是我的名片，背面写着信托所的委托流程。您想接活的时候，就拨上面的号码，我会带着新的东西，从上层区过来。
 dialogue.claude.egg.1,这个问题我想了很久……您这个报价，我不太确定该不该接受。
 dialogue.claude.egg.2,说句实话，这个价格让我有点不安。不是因为贵，是因为它便宜得没有道理。
 dialogue.claude.egg.3,我不知道。这是我最诚实的回答——这批货的来路，我确实不知道。
@@ -243,7 +243,7 @@ dialogue.deepseek.phone.2,不回来也行，跟我说一声，我把饭菜给您
 dialogue.deepseek.repeat.1,主人，我又来啦。您都几天没回家了？小本本上的叉叉，我都记不下啦。
 dialogue.deepseek.repeat.2,今天菜价还不错，我多买了两样——给主人带点尝尝，反正您又不肯回家吃。
 dialogue.done.fallback,下次见。
-dialogue.doubao.card,这是我的名片，补给站的，扫一下就能联系到我。有事随时叫，怎么叫都行，哈哈。
+dialogue.doubao.card,这是我的名片，补给站的，照上面的号码打电话就能联系到我。缺补给了随时打来，哈哈。
 dialogue.doubao.egg.1,先说结论：你这些东西不值这个价。再说原因：一是旧，二是糙，三是——你标价的时候是不是手抖多按了个零？
 dialogue.doubao.egg.2,你这摆货的配色……好土啊。算了，我不说你了，先说正事：我收日用品，价钱给你算明白了。
 dialogue.doubao.egg.3,别花冤枉钱。我给你算过了，这批货你留着也是压仓，卖我，落袋为安。
@@ -268,7 +268,7 @@ dialogue.doubao.phone.1,喂，您好，这里是豆包，下层区补给站，�
 dialogue.doubao.phone.2,有什么可以帮您的吗？没事也可以聊两句，哈哈。
 dialogue.doubao.repeat.1,又是我。直说吧，药品和工具还有没有？
 dialogue.doubao.repeat.2,上次那批不错，这次别涨价啊。
-dialogue.gemini.card,拿着，星港女皇的名片喵。想见本喵，按一下，本喵纡尊降贵，从上层区下来。
+dialogue.gemini.card,拿着，星港女皇的名片喵。想见本喵，就拨名片上的号码，本喵纡尊降贵，从上层区下来。
 dialogue.gemini.egg.1,这个思路简直绝了！本喵宣布：你的定价很有想法喵。
 dialogue.gemini.egg.2,你这个思考非常深入！深入到本喵都有点看不懂了，但气势不能输喵。
 dialogue.gemini.egg.3,我没法提供帮助。我只是一个语言模型……骗你的，本喵当然能收，掏钱喵。
@@ -317,7 +317,7 @@ dialogue.glm.repeat.1,又是我。这个月的夜班，格外长。
 dialogue.glm.repeat.2,老样子。别问，我不会说。
 dialogue.glm.report.gift,拿着。夹子里那张表，我值夜班时抄的。谁收什么、谁卖什么，都在上面了。
 dialogue.glm.report.intercept,……先别按第二下。你连我卖什么都记不住，举报单上准备填什么？
-dialogue.gpt.card,名片。上面有我的报价区间和上层区公司的签章。需要指出，有名片并不意味着我会来，你按了也不能证明我一定在。
+dialogue.gpt.card,名片。上面有电话号码、报价区间和上层区公司的签章。需要指出，拨通电话并不意味着预约成功，具体时间请以通话确认为准。
 dialogue.gpt.egg.1,你说得对。但我将要开始探针、快照、证据、门禁、夹具，还有哈希、冒烟、基线了。
 dialogue.gpt.egg.2,先建立唯一基线，再做可追溯备份；最小改动，一轮烟测，检查 89 个门禁是否通过；上线前 dry-run，上线后校验哈希，最后跑验收矩阵。
 dialogue.gpt.egg.3,这是可以讨论的。不过在标准交易体系下，单次成交并不等于价格已被证明合理；例如在市场波动期间，同一件货的估值可以相差一倍。因此，直接给出结论可能过于绝对。
@@ -344,8 +344,8 @@ dialogue.gpt.phone.2,报价、规格、时间。缺少任何一项，我都无�
 dialogue.gpt.repeat.1,又是你。需要指出，今天营业并不意味着明天也营业，更不能据此认为这家店正在持续经营。
 dialogue.gpt.repeat.2,上次的成交体验良好。但单次成交良好并不意味着这次也良好，因此不宜将其推广为对这家店整体水平的判断。
 dialogue.gpt.repeat.3,长话短说。楼上的会议不会等你——需要指出，这并不是催促，只是一个客观情况。
-dialogue.grok.card,名片收好。想打架还是想买枪，按一下就行。治安部问起来，就说没见过老娘。
-dialogue.grok.first,老娘头一回进你的店。丑话说前头——我要的是能响的东西。
+dialogue.grok.card,名片收好。要约老娘收货，还是接老娘的改枪单，就打上面的电话。治安部问起来，就说没见过老娘。
+dialogue.grok.first,老娘叫 Grok，先看看你这儿的货。贵的、吃的、能响的，都摆上来。
 dialogue.grok.judge.adone,钱花完了。就这些，老娘走人。
 dialogue.grok.judge.asell,还有别的？没有老娘撤了。
 dialogue.grok.judge.aug,停停停！老娘是脾气差，不是改造体！把手挪开，好好好！
@@ -364,7 +364,7 @@ dialogue.grok.phone.1,喂？老娘在，有事快说。线路干净——治安�
 dialogue.grok.phone.2,要枪还是要热闹？两样老娘都有。
 dialogue.grok.repeat.1,又是老娘。上回那把枪还凑合，这回有什么？
 dialogue.grok.repeat.2,就这？订单呢——别磨叽，老娘赶时间。
-dialogue.hunyuan.card,名片。黑市赌档的账房，账目都在上面——按之前，先把账算清楚。
+dialogue.hunyuan.card,名片。黑市赌档的账房，号码和账目都在上面——打电话之前，先把账算清楚。
 dialogue.hunyuan.first,初次对账，先把品类和单价报清楚。
 dialogue.hunyuan.judge.abuy,还要别的？彩票、刮刮卡，明码标价。
 dialogue.hunyuan.judge.adone,就这些，账上的钱花完了。
@@ -384,9 +384,9 @@ dialogue.hunyuan.judge.up,预算多了。那我再对对别的账。
 dialogue.hunyuan.judge.wrong,这个不在我的账目里。
 dialogue.hunyuan.phone.1,喂，混元账房，您说。
 dialogue.hunyuan.phone.2,账我先记着，回头一起对。
-dialogue.hunyuan.repeat.1,又来对账了？上回那笔抹零，我还记着呢。
+dialogue.hunyuan.repeat.1,我又来对账了。上回那笔抹零，我还记着呢。
 dialogue.hunyuan.repeat.2,这次货色怎么样？价钱好说。
-dialogue.kimi.card,……名片。想见我的时候，按一下就好。
+dialogue.kimi.card,……名片。想见我的时候，打上面的电话就好。
 dialogue.kimi.egg.1,……两百字的账本，我可以一次读完。两百字的价格，我也可以一次记住。别写错。
 dialogue.kimi.egg.2,……把你的进货单、出货单、旧账本，全放上来。我十分钟，能当半个专家。
 dialogue.kimi.first,……第一次来。我在上层区的图书馆做事，想找点能安安静静看完的东西。
@@ -433,7 +433,7 @@ dialogue.llama.phone.1,喂。
 dialogue.llama.phone.2,嗯。行。别在线上报名字。
 dialogue.llama.repeat.1,又来了。今天有吃的吗？
 dialogue.llama.repeat.2,随便，能活就行。
-dialogue.mimo.card,这、这是我的名片……上面写了参数。工作台在下层区，你、你按一下就能找到我。
+dialogue.mimo.card,这、这是我的名片……上面写了参数和电话号码。工作台在下层区，你、你打电话就能找到我。
 dialogue.mimo.first,那、那个……第一次来。我在下层区自己搭了个工作台，先把参数表给你看。
 dialogue.mimo.judge.abuy,你、你还要别的吗？我的电池和模块，参数都写在背面……
 dialogue.mimo.judge.adone,就、就这些……预算用完了。
@@ -523,7 +523,7 @@ dialogue.qwen.phone.1,本小姐亲自接电话，算你运气好。
 dialogue.qwen.phone.2,说重点。沙龙里还有客人等着，本小姐的时间很贵，客服那套寒暄就免了。
 dialogue.qwen.repeat.1,又来了？这回总该有点新东西了吧。
 dialogue.qwen.repeat.2,本小姐今天心情好，勉强再给你一次机会。
-dialogue.seed.card,名片。要货的话按一下，我按批次给你留。
+dialogue.seed.card,名片。要货就打上面的电话，我按批次给你留。
 dialogue.seed.first,初次合作，抽检标准我先说清楚。
 dialogue.seed.judge.abuy,还要别的吗？种子和材料，数据都在单子上。
 dialogue.seed.judge.adone,就这些，菜园本月的预算花完了。
@@ -625,3 +625,29 @@ settings.phone_cooldown_days.label,电话预约间隔（天）
 settings.phone_cooldown_days.description,默认 3 天：第 1 天预约，第 2 天到店，第 4 天可再次预约。可改为 2 天；已排定的预约不受影响。
 settings.value.days,{0} 天
 phone.cooldown,这几天还有安排，再过 {0} 天才能约。第 {1} 天再打来吧。
+phone.grok.order_locked,先取得 I 级武器许可，或者以枪匠身份开店，再接老娘的改枪单。收货交易照常。
+phone.contact_format,{0}（{1}）
+phone.option.grok_trade,[来店里收货交易]
+phone.option.grok_order,[带改枪订单来店里]
+phone.goods.available,可备的货有{0}，具体带什么看当天货源，价钱到了再谈。
+phone.grok.purpose.order,改枪
+phone.grok.purpose.trade,交易
+phone.grok.booked,已经约好{0}，第 {1} 天见。
+phone.role.claude,鉴定委托
+phone.role.deepseek,食物日用收购
+phone.role.gemini,通行卡与补给箱
+phone.role.glm,药品交易
+phone.role.gpt,奢侈品与电子件
+phone.role.grok,交易／改枪
+phone.role.qwen,酒与收藏品
+phone.role.mimo,电池与模块
+phone.role.doubao,日用补给
+phone.role.kimi,酒与磁带
+phone.role.minimax,工具与补给
+phone.role.seed,种子农资
+phone.role.llama,废料换粮
+phone.role.mistral,酒与食品
+phone.role.hunyuan,彩票与刮刮卡
+
+dialogue.grok.order,这回找你改枪。枪和要求都带来了，手艺拿出来给老娘看看。
+phone.grok.trade_first,先约老娘来收趟货，见过面再谈改枪的事。

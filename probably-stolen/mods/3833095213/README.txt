@@ -39,3 +39,5 @@ TUTORIALS: The existing starter books now include a first-evening shopping list,
 PLANTED CROPS: 38 fruits and vegetables use compact pixel-art plants designed for the original hydroponic grower. These are genetically modified dwarf varieties, including the fruit trees. Their leaves and fruit retain recognizable crop features. Each crop uses one planted image throughout its growth cycle. The seed descriptions and growing guide explain these varieties in all eight supported languages.
 
 BACK-ROOM WINDOWS (0.5.2): on screens that are not 16:9, station, cabinet, waterworks and kitchen windows now open above the back room instead of behind it, and room windows can be dragged anywhere on the screen.
+
+COUNTER STOCK: Three dry compounds rotate daily at the Glassmarket Counter & Fixture Stall. Buy a cylinder, fit it to the chemical finisher, select its matching drug and press Output. A full cylinder supplies three portions. Substance buyers judge the finished batch by purity. Medical scavengers can bring the Quay Field Wrap, Sealpatch Gel or Steadyline.
