@@ -38,8 +38,8 @@ jobs:
               buf.append(ch); p+=1
           value=''.join(buf)
           rows=[]
-          for r in value.split('\\\\n'):
-              if r.startswith(('中国\t','日本\t','韩国\t')):
+          for r in value.split(chr(92)+'n'):
+              if r.startswith(('中国'+chr(9),'日本'+chr(9),'韩国'+chr(9))):
                   rows.append(r)
           if len(rows)!=3:
               raise SystemExit(f'expected 3 rows, got {len(rows)}')
