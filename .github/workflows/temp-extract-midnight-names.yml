@@ -30,7 +30,7 @@ jobs:
           if value is None:
               raise SystemExit('names mapping not found')
           rows=[]
-          for r in value.split('\\n'):
+          for r in value.split('\\\\n'):
               if r.startswith(('中国\\t','日本\\t','韩国\\t')):
                   rows.append(r.replace('\\t','\t'))
           if len(rows)!=3:
