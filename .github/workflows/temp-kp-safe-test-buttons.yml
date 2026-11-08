@@ -1,0 +1,105 @@
+name: Temp build KoreanPack safe test buttons
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "probably-stolen/tmp/kp_safe_test_buttons_patch.py"
+      - ".github/workflows/temp-kp-safe-test-buttons.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/tmp/kp_safe_test_buttons_patch.py
+            probably-stolen/Managed/Assembly-CSharp.dll
+            probably-stolen/Managed/0Harmony.dll
+            probably-stolen/Managed/Unity.Localization.dll
+            probably-stolen/Managed/Unity.ResourceManager.dll
+            probably-stolen/Managed/UnityEngine.CoreModule.dll
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Download exact safe base
+        uses: actions/download-artifact@v4
+        with:
+          name: ProbablyStolenKoreanPack-CacheFix3-Safe
+          path: ${{ runner.temp }}/input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: okkoog/sub-memory
+          run-id: 42430959050
+
+      - name: Verify exact safe base
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_CacheFix3_Safe.dll"
+          echo "d7063ec63f2478707c27513736ec9b50270757c74a8e9148376d1bbf1dc2d523  $RUNNER_TEMP/input/ProbablyStolenKoreanPack_CacheFix3_Safe.dll" | sha256sum -c -
+
+      - name: Decompile safe base
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p \
+            -r probably-stolen/Managed \
+            -o "$RUNNER_TEMP/src" \
+            "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_CacheFix3_Safe.dll"
+
+      - name: Add isolated F9 test buttons
+        run: python3 probably-stolen/tmp/kp_safe_test_buttons_patch.py
+
+      - name: Build
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet build "$RUNNER_TEMP/build/ProbablyStolenKoreanPack.csproj" -c Release --nologo
+          mkdir -p "$RUNNER_TEMP/out"
+          cp "$RUNNER_TEMP/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll" \
+             "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_SafeTest.dll"
+          sha256sum "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_SafeTest.dll" > "$RUNNER_TEMP/out/SHA256.txt"
+
+      - name: Static verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed \
+            -t ProbablyStolenKoreanPack.KoreanPack \
+            "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_SafeTest.dll" > "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed \
+            -t ProbablyStolenKoreanPack.FishingStartPerkCompatibility \
+            "$RUNNER_TEMP/out/ProbablyStolenKoreanPack_SafeTest.dll" > "$RUNNER_TEMP/out/FishingStartPerkCompatibility.verify.cs"
+
+          grep -q "0.8.2-cachefix3-safe-test" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "KP 테스트: 효과 모듈" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "KP 테스트: 고착 모듈" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "MODULE_EFFECT_OVERVOLTED" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "MODULE_EFFECT_RECEIVER" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "SetModuleStuck" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "Late Item cache repair" "$RUNNER_TEMP/out/KoreanPack.verify.cs"
+          grep -q "ps-fishing-gameplay" "$RUNNER_TEMP/out/FishingStartPerkCompatibility.verify.cs"
+
+          for forbidden in 'GetTableAsync("Item"' 'RequestItemTableRepair' 'itemTableRepairGeneration' 'AsyncOperationHandle<StringTable>'; do
+            if grep -Fq "$forbidden" "$RUNNER_TEMP/out/KoreanPack.verify.cs"; then
+              echo "FAIL: dangerous async localization code found: $forbidden" >&2
+              exit 1
+            fi
+          done
+          printf "Verified: exact safe base plus two isolated F9 debug actions only; no early localization table loading added.\n" > "$RUNNER_TEMP/out/VERIFIED.txt"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolenKoreanPack-SafeTest
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
