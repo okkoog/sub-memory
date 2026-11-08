@@ -1,8 +1,8 @@
-# Faction Reputation Expansion v1.4.6
+# Faction Reputation Expansion v1.5.0
 
 ## Update notes
 
-Bug fixes.
+Reworked the augmented faction's effects and improved some text and UI.
 
 ## Installation
 

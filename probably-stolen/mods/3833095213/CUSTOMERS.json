@@ -13,10 +13,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_01",
-      "intro": "I am picking up dinner and medical supplies for Velvet Quay. A sealed drink for the walk back would be welcome, too.",
+      "intro": "My shoes are under your counter. Sorry. I took them off and now I can't face putting them back on.",
       "gossip": [
-        "The night tram was late again. Half the quay finished their coffee before it arrived.",
-        "The flowers on the counter are real this week. We are taking turns remembering to water them."
+        "A client called it Brindle Fever. All I know is I'm shivering, and the clinic opens at dawn.",
+        "Two dinners, please. The woman on coat check always says she's eaten. She hasn't."
       ],
       "flirt": "You remembered my usual. Careful, I could get used to that.",
       "buyingTags": [
@@ -30,10 +30,18 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 0,
-      "portrait": "Native/neon_customer_velvet_01.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_01.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "My shoes are under your counter. Sorry. I took them off and now I can't face putting them back on.",
+          "A client called it Brindle Fever. All I know is I'm shivering, and the clinic opens at dawn.",
+          "Any of those plain little medicine bottles left? I've got my own money. Could I sit here while you ring it up?"
+        ],
+        "quickErrand": [
+          "Two dinners, please. The woman on coat check always says she's eaten. She hasn't."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_02",
@@ -46,10 +54,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_02",
-      "intro": "The house kitchen is running low. Show me your food, clean water and medical supplies.",
+      "intro": "My mother sang the last verse in Dutch tonight. A man by the door knew every word.",
       "gossip": [
-        "Someone ordered a new sign for the house. The lettering arrived before the brackets.",
-        "Our bookkeeper can spot a missing credit across a crowded room. It is an impressive talent."
+        "He stayed after the show to tell her he'd forgotten what his mother's voice sounded like. She sang it again.",
+        "Got anything soft to eat? I owe my voice a night off."
       ],
       "flirt": "Good stock and a welcoming smile. You make this errand rather pleasant.",
       "buyingTags": [
@@ -63,10 +71,18 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 1,
-      "portrait": "Native/neon_customer_velvet_02.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_02.png",
+      "status": "Registered shop visitor",
+      "heritage": "Dutch",
+      "shopVisits": {
+        "afterShift": [
+          "My mother sang the last verse in Dutch tonight. A man by the door knew every word.",
+          "He stayed after the show to tell her he'd forgotten what his mother's voice sounded like. She sang it again."
+        ],
+        "quickErrand": [
+          "Got anything soft to eat? I owe my voice a night off."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_03",
@@ -79,10 +95,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_03",
-      "intro": "Velvet Quay sent me on the supply run. We need meals for the staff and fresh medical stock.",
+      "intro": "Someone booked two men under the name James Bailey. Neither wanted the table once Security came in.",
       "gossip": [
-        "Our cook is convinced ginger soda belongs in everything. I have negotiated a truce over the soup.",
-        "A courier took the long route just to avoid the puddles. Then the overhead pipe leaked."
+        "I've got one pencil left and I'm writing people's real names in ink from now on.",
+        "Tea for the desk, please. Tomorrow's bookings can wait for the kettle."
       ],
       "flirt": "If you keep saving my favorite drink, I might start thinking it is personal.",
       "buyingTags": [
@@ -96,26 +112,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 2,
-      "portrait": "Native/neon_customer_velvet_03.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_03.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone booked two men under the name James Bailey. Neither wanted the table once Security came in.",
+          "I've got one pencil left and I'm writing people's real names in ink from now on."
+        ],
+        "quickErrand": [
+          "Tea for the desk, please. Tomorrow's bookings can wait for the kettle."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_04",
-      "name": "Roxy Cale",
+      "name": "Rik Cale",
       "age": 47,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Evening entertainer",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_04",
-      "intro": "A long evening goes better with a proper meal. I am shopping for food, drinks and medical supplies.",
+      "intro": "A client paid me extra to confess something awful. He'd eaten his flatmate's good cheese.",
       "gossip": [
-        "A dockworker swore your bottled water tastes better. Now everyone wants to compare labels.",
-        "The staff room has a new chair. We held an election to decide whose old chair it replaces."
+        "Three hours I kept that secret. Now I'm hungry and apparently you know too.",
+        "You have any cheese? Yes, I see the irony."
       ],
       "flirt": "I was going to hurry back, but you are very easy to talk to.",
       "buyingTags": [
@@ -129,10 +152,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 3,
-      "portrait": "Native/neon_customer_velvet_04.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_04.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A client paid me extra to confess something awful. He'd eaten his flatmate's good cheese.",
+          "Three hours I kept that secret. Now I'm hungry and apparently you know too."
+        ],
+        "quickErrand": [
+          "You have any cheese? Yes, I see the irony."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_05",
@@ -145,10 +175,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_05",
-      "intro": "I have the house shopping list: food first, then medical supplies, and something cold to drink.",
+      "intro": "Last tram went past with the lights off. I could see the driver eating his sandwich.",
       "gossip": [
-        "The upstairs lounge has a new music player. So far it knows exactly one song.",
-        "A regular keeps recommending restaurants they have never actually visited. Very economical expertise."
+        "Part of me wants to complain. The other part wants to know where he got the bread.",
+        "Something for the walk home. Nothing that needs a fork."
       ],
       "flirt": "You have a way of making a supply run feel like the best part of my evening.",
       "buyingTags": [
@@ -162,26 +192,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 4,
-      "portrait": "Native/neon_customer_velvet_05.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_05.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Last tram went past with the lights off. I could see the driver eating his sandwich.",
+          "Part of me wants to complain. The other part wants to know where he got the bread."
+        ],
+        "quickErrand": [
+          "Something for the walk home. Nothing that needs a fork."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_06",
-      "name": "Seren Ash",
+      "name": "Severin Ash",
       "age": 36,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "House liaison",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_06",
-      "intro": "We used up the last of the break-room snacks. I can take food and drinks, and medical supplies for the cupboard.",
+      "intro": "I've had six men ask who does my braid. One actually sat down and let me show him.",
       "gossip": [
-        "One of the women is learning to repair pumps. She says it is mostly listening carefully.",
-        "We have started sharing our shopping lists. It saves five people making the same trip."
+        "We missed the opening number. He did the last bit himself, though. Got it dead straight.",
+        "Dinner for one. I'll take the long way home so the mist doesn't undo my hair."
       ],
       "flirt": "That smile is dangerous for someone trying to keep to a shopping list.",
       "buyingTags": [
@@ -195,10 +232,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 5,
-      "portrait": "Native/neon_customer_velvet_06.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_06.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I've had six men ask who does my braid. One actually sat down and let me show him.",
+          "We missed the opening number. He did the last bit himself, though. Got it dead straight."
+        ],
+        "quickErrand": [
+          "Dinner for one. I'll take the long way home so the mist doesn't undo my hair."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_07",
@@ -211,10 +255,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_07",
-      "intro": "I am off the clock and buying for the house. What have you got in food, clean drinks and medical supplies?",
+      "intro": "Someone asked me to sing the song my old partner wrote. Haven't touched it in years.",
       "gossip": [
-        "A supplier tried selling us empty boxes as premium packaging. We sent the premium boxes back.",
-        "The night market has three stalls all claiming to sell the original recipe. Quite a family dispute."
+        "I made it through the first verse. The pianist hummed the rest with me.",
+        "A bottle of water for the pianist too. She saved my neck tonight."
       ],
       "flirt": "Maybe I will take the scenic route past your shop again tomorrow.",
       "buyingTags": [
@@ -228,26 +272,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 6,
-      "portrait": "Native/neon_customer_velvet_07.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_07.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone asked me to sing the song my old partner wrote. Haven't touched it in years.",
+          "I made it through the first verse. The pianist hummed the rest with me."
+        ],
+        "quickErrand": [
+          "A bottle of water for the pianist too. She saved my neck tonight."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_08",
-      "name": "Tavi Blue",
+      "name": "Tavon Blue",
       "age": 50,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Shift representative",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_08",
-      "intro": "The other women asked me to bring back supplies. Good food and medical stock, please.",
+      "intro": "We voted to get a stool for the door shift. Then we held a meeting about where to put the stool.",
       "gossip": [
-        "The market awnings are being patched. Pick your walking route by the weather, not the map.",
-        "Our lighting technician fixed the corridor by tapping one panel. I wish I knew which panel."
+        "I stood through both meetings. You'll forgive me if I lean on this counter.",
+        "I'm feeding the late shift. Something that splits four ways?"
       ],
       "flirt": "Keep being this charming and I will start volunteering for every supply run.",
       "buyingTags": [
@@ -261,10 +312,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 7,
-      "portrait": "Native/neon_customer_velvet_08.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_08.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "We voted to get a stool for the door shift. Then we held a meeting about where to put the stool.",
+          "I stood through both meetings. You'll forgive me if I lean on this counter."
+        ],
+        "quickErrand": [
+          "I'm feeding the late shift. Something that splits four ways?"
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_09",
@@ -277,10 +335,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_09",
-      "intro": "I promised to make this a quick supply run. Meals, sealed drinks and medical supplies are on my list.",
+      "intro": "Got any change? A customer tipped me a coat button and asked for a receipt.",
       "gossip": [
-        "We keep a list of shops that treat the staff well. Word gets around surprisingly quickly.",
-        "I brought a friend through the market yesterday. She judged every stall by the smell of its cooking."
+        "It's a lovely button. I still have rent, though.",
+        "Can you hear that squeak? New boots. Everyone hears me coming."
       ],
       "flirt": "I like a person who takes pride in their work. It suits you.",
       "buyingTags": [
@@ -294,10 +352,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 8,
-      "portrait": "Native/neon_customer_velvet_09.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_09.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Got any change? A customer tipped me a coat button and asked for a receipt.",
+          "It's a lovely button. I still have rent, though."
+        ],
+        "quickErrand": [
+          "Can you hear that squeak? New boots. Everyone hears me coming."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_10",
@@ -310,10 +375,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_10",
-      "intro": "Velvet Quay needs a dependable shop. Let me see your food and medical stock.",
+      "intro": "I did our stock count by candlelight. It says we need fourteen tins of soup and one tin of soap.",
       "gossip": [
-        "The house cat has chosen the clean towel shelf. Apparently that makes it her office.",
-        "Someone at the house is growing mint in an old filter housing. It seems happy enough."
+        "I'm fairly sure the cook meant soup. Fairly sure isn't enough. I'll take both.",
+        "Can I have the dented tin? I'll be opening it in ten minutes anyway."
       ],
       "flirt": "The others asked why I chose this shop. I may have mentioned the company.",
       "buyingTags": [
@@ -327,26 +392,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 1,
-      "sourceCell": 9,
-      "portrait": "Native/neon_customer_velvet_10.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_10.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I did our stock count by candlelight. It says we need fourteen tins of soup and one tin of soap.",
+          "I'm fairly sure the cook meant soup. Fairly sure isn't enough. I'll take both."
+        ],
+        "quickErrand": [
+          "Can I have the dented tin? I'll be opening it in ten minutes anyway."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_11",
-      "name": "Soraya Vex",
+      "name": "Soren Vex",
       "age": 46,
       "adult": true,
-      "gender": "female",
-      "role": "House hostess",
+      "gender": "male",
+      "role": "House host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_11",
-      "intro": "I am picking up dinner and medical supplies for Velvet Quay. A sealed drink for the walk back would be welcome, too.",
+      "intro": "A regular came in, paid for an hour and asked if we could just sit in silence.",
       "gossip": [
-        "A visitor asked where everyone buys their snacks. I said I was still gathering evidence.",
-        "The new doormat is already missing. I suspect the wind, but the cat is refusing to comment."
+        "Quietest money I ever made. Best hour of my week, too.",
+        "Is your fridge humming in B flat? Ours does. I hear it in my sleep."
       ],
       "flirt": "You remembered my usual. Careful, I could get used to that.",
       "buyingTags": [
@@ -360,10 +432,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 0,
-      "portrait": "Native/neon_customer_velvet_11.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_11.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A regular came in, paid for an hour and asked if we could just sit in silence.",
+          "Quietest money I ever made. Best hour of my week, too."
+        ],
+        "quickErrand": [
+          "Is your fridge humming in B flat? Ours does. I hear it in my sleep."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_12",
@@ -376,10 +455,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_12",
-      "intro": "The house kitchen is running low. Show me your food, clean water and medical supplies.",
+      "intro": "My gran's Dutch soup recipe says to add a handful of onions. You never met my gran. Her hands were enormous.",
       "gossip": [
-        "Our afternoon shift has started a recipe book. Most of the pages are arguments about spice.",
-        "Our singer has learned a new chorus. By tomorrow, every room will know it too."
+        "Better give me another onion. I'd like this to taste like home.",
+        "Can I keep the soup hot here for a minute? My sister's just across the quay."
       ],
       "flirt": "Good stock and a welcoming smile. You make this errand rather pleasant.",
       "buyingTags": [
@@ -393,10 +472,18 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 1,
-      "portrait": "Native/neon_customer_velvet_12.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_12.png",
+      "status": "Registered shop visitor",
+      "heritage": "Dutch",
+      "shopVisits": {
+        "afterShift": [
+          "My gran's Dutch soup recipe says to add a handful of onions. You never met my gran. Her hands were enormous.",
+          "Better give me another onion. I'd like this to taste like home."
+        ],
+        "quickErrand": [
+          "Can I keep the soup hot here for a minute? My sister's just across the quay."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_13",
@@ -409,10 +496,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_13",
-      "intro": "Velvet Quay sent me on the supply run. We need meals for the staff and fresh medical stock.",
+      "intro": "A customer took both our umbrellas by mistake. Came back with three.",
       "gossip": [
-        "The quay tailor is teaching evening classes. I can mend a sleeve without sewing it shut now.",
-        "People remember a shop that has their usual drink. It is a small thing, but it matters."
+        "I put them behind the desk. At this rate we'll be selling them by winter.",
+        "Anything small enough for this pocket? The other one's full of keys."
       ],
       "flirt": "If you keep saving my favorite drink, I might start thinking it is personal.",
       "buyingTags": [
@@ -426,26 +513,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 2,
-      "portrait": "Native/neon_customer_velvet_13.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_13.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A customer took both our umbrellas by mistake. Came back with three.",
+          "I put them behind the desk. At this rate we'll be selling them by winter."
+        ],
+        "quickErrand": [
+          "Anything small enough for this pocket? The other one's full of keys."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_14",
-      "name": "Cleo Moss",
+      "name": "Clemens Moss",
       "age": 42,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Evening entertainer",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_14",
-      "intro": "A long evening goes better with a proper meal. I am shopping for food, drinks and medical supplies.",
+      "intro": "Three encores in heels. People call it talent. My toes have a different word for it.",
       "gossip": [
-        "Someone won a crate of citrus at cards and discovered how much fruit one crate actually holds.",
-        "The staff traded shifts so everyone could see the market lights. The schedule now looks like a puzzle."
+        "I gave the bouquet to the lighting tech. He's the one who found my heel in the dark.",
+        "Could you tie the parcel? My nails are still wet."
       ],
       "flirt": "I was going to hurry back, but you are very easy to talk to.",
       "buyingTags": [
@@ -459,10 +553,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 3,
-      "portrait": "Native/neon_customer_velvet_14.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_14.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Three encores in heels. People call it talent. My toes have a different word for it.",
+          "I gave the bouquet to the lighting tech. He's the one who found my heel in the dark."
+        ],
+        "quickErrand": [
+          "Could you tie the parcel? My nails are still wet."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_15",
@@ -475,10 +576,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_15",
-      "intro": "I have the house shopping list: food first, then medical supplies, and something cold to drink.",
+      "intro": "A client swears he's fine and now half the night's gossip is about Brindle Fever.",
       "gossip": [
-        "The lift at the west end sings between floors. Nobody agrees whether that is an improvement.",
-        "A neighbor is organizing a shared delivery cart. I volunteered the route, not the pushing."
+        "Everybody's a doctor till somebody asks them what time the clinic opens.",
+        "The sign says open. Please tell me that includes the till."
       ],
       "flirt": "You have a way of making a supply run feel like the best part of my evening.",
       "buyingTags": [
@@ -492,26 +593,34 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 4,
-      "portrait": "Native/neon_customer_velvet_15.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_15.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A client swears he's fine and now half the night's gossip is about Brindle Fever.",
+          "Everybody's a doctor till somebody asks them what time the clinic opens.",
+          "I've had enough advice tonight. A sealed drink and something to eat will do until I get seen."
+        ],
+        "quickErrand": [
+          "The sign says open. Please tell me that includes the till."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_16",
-      "name": "Indra Quill",
+      "name": "Ilian Quill",
       "age": 31,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "House liaison",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_16",
-      "intro": "We used up the last of the break-room snacks. I can take food and drinks, and medical supplies for the cupboard.",
+      "intro": "Had a client ask if my real name came with the hour. My dear, the tailor who lets out these cuffs has only just earned it.",
       "gossip": [
-        "The staff are saving for a better kitchen cooler. Cold drinks settle more arguments than you would think.",
-        "The house kettle whistles a little out of tune. Our singer says she can work with it."
+        "He laughed. We played cards. Turns out he's been introducing himself with a made-up name, too.",
+        "Got a spare minute? I want to finish this drink while it's cold."
       ],
       "flirt": "That smile is dangerous for someone trying to keep to a shopping list.",
       "buyingTags": [
@@ -525,10 +634,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 5,
-      "portrait": "Native/neon_customer_velvet_16.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_16.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Had a client ask if my real name came with the hour. My dear, the tailor who lets out these cuffs has only just earned it.",
+          "He laughed. We played cards. Turns out he's been introducing himself with a made-up name, too."
+        ],
+        "quickErrand": [
+          "Got a spare minute? I want to finish this drink while it's cold."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_17",
@@ -541,10 +657,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_17",
-      "intro": "I am off the clock and buying for the house. What have you got in food, clean drinks and medical supplies?",
+      "intro": "You remember a tune differently after you sing it to an empty room.",
       "gossip": [
-        "I heard a musician trade a whole set of strings for a decent dinner. Fair exchange, apparently.",
-        "We tested three brands of noodles on our break. The cheapest one won. Nobody expected that."
+        "The cleaner clapped. She said I shouldn't have to pack my own applause away with the mic.",
+        "Honey for my tea if you've got it. We're rehearsing the quiet songs."
       ],
       "flirt": "Maybe I will take the scenic route past your shop again tomorrow.",
       "buyingTags": [
@@ -558,10 +674,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 6,
-      "portrait": "Native/neon_customer_velvet_17.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_17.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "You remember a tune differently after you sing it to an empty room.",
+          "The cleaner clapped. She said I shouldn't have to pack my own applause away with the mic."
+        ],
+        "quickErrand": [
+          "Honey for my tea if you've got it. We're rehearsing the quiet songs."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_18",
@@ -574,10 +697,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_18",
-      "intro": "The other women asked me to bring back supplies. Good food and medical stock, please.",
+      "intro": "I went in to ask for a raise. Came out with three people's rota changes and a broken stapler.",
       "gossip": [
-        "The flowers on the counter are real this week. We are taking turns remembering to water them.",
-        "Someone brought a board game to the lounge. We are still negotiating the rules."
+        "I'm going back after lunch. Would you mind writing 'raise' on the bag?",
+        "A sandwich I can eat one-handed. The other hand's keeping this paperwork together."
       ],
       "flirt": "Keep being this charming and I will start volunteering for every supply run.",
       "buyingTags": [
@@ -591,10 +714,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 7,
-      "portrait": "Native/neon_customer_velvet_18.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_18.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I went in to ask for a raise. Came out with three people's rota changes and a broken stapler.",
+          "I'm going back after lunch. Would you mind writing 'raise' on the bag?"
+        ],
+        "quickErrand": [
+          "A sandwich I can eat one-handed. The other hand's keeping this paperwork together."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_19",
@@ -607,10 +737,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_19",
-      "intro": "I promised to make this a quick supply run. Meals, sealed drinks and medical supplies are on my list.",
+      "intro": "Somebody left an engagement ring in the cloakroom. Three people have described it perfectly.",
       "gossip": [
-        "Our bookkeeper can spot a missing credit across a crowded room. It is an impressive talent.",
-        "The delivery driver learned our names before learning which door to use. A promising start."
+        "I'm asking them what coat it was in. Funny how nobody remembers the coat.",
+        "Have you seen a coat ticket with a little heart on it? Worth more than my lunch today."
       ],
       "flirt": "I like a person who takes pride in their work. It suits you.",
       "buyingTags": [
@@ -624,26 +754,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 8,
-      "portrait": "Native/neon_customer_velvet_19.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_19.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Somebody left an engagement ring in the cloakroom. Three people have described it perfectly.",
+          "I'm asking them what coat it was in. Funny how nobody remembers the coat."
+        ],
+        "quickErrand": [
+          "Have you seen a coat ticket with a little heart on it? Worth more than my lunch today."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_20",
-      "name": "Aurelia Frost",
+      "name": "Aurel Frost",
       "age": 34,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Supply coordinator",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_20",
-      "intro": "Velvet Quay needs a dependable shop. Let me see your food and medical stock.",
+      "intro": "I took the long way round. They painted over the height marks on my old doorframe.",
       "gossip": [
-        "A courier took the long route just to avoid the puddles. Then the overhead pipe leaked.",
-        "We have a good-stock shelf now. Putting something there is the highest compliment our cook gives."
+        "My brother cheated on the top one. Stood on a book. I'd quite like that silly mark back.",
+        "I'll take the smaller tin. It fits beside my brother's things."
       ],
       "flirt": "The others asked why I chose this shop. I may have mentioned the company.",
       "buyingTags": [
@@ -657,10 +794,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 2,
-      "sourceCell": 9,
-      "portrait": "Native/neon_customer_velvet_20.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_20.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I took the long way round. They painted over the height marks on my old doorframe.",
+          "My brother cheated on the top one. Stood on a book. I'd quite like that silly mark back."
+        ],
+        "quickErrand": [
+          "I'll take the smaller tin. It fits beside my brother's things."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_21",
@@ -673,10 +817,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_21",
-      "intro": "I am picking up dinner and medical supplies for Velvet Quay. A sealed drink for the walk back would be welcome, too.",
+      "intro": "We hung a sign saying the house cat isn't staff. First person in asked for the cat by name.",
       "gossip": [
-        "The staff room has a new chair. We held an election to decide whose old chair it replaces.",
-        "One of the women is making a coat from old curtains. You would never guess until she tells you."
+        "I suppose she has regulars. Still hasn't covered a shift for me.",
+        "Fish for the cat, something cheaper for me. Don't look at me like that."
       ],
       "flirt": "You remembered my usual. Careful, I could get used to that.",
       "buyingTags": [
@@ -690,26 +834,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 0,
-      "portrait": "Native/neon_customer_velvet_21.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_21.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "We hung a sign saying the house cat isn't staff. First person in asked for the cat by name.",
+          "I suppose she has regulars. Still hasn't covered a shift for me."
+        ],
+        "quickErrand": [
+          "Fish for the cat, something cheaper for me. Don't look at me like that."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_22",
-      "name": "Faye Copper",
+      "name": "Floris Copper",
       "age": 48,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Lounge performer",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_22",
-      "intro": "The house kitchen is running low. Show me your food, clean water and medical supplies.",
+      "intro": "Someone requested a love song and spent all three verses reading a repair invoice.",
       "gossip": [
-        "A regular keeps recommending restaurants they have never actually visited. Very economical expertise.",
-        "The house radio found a station that reads poetry between shipping notices. I rather like it."
+        "At the end he kissed the paper. Apparently Joe Wild had knocked a zero off.",
+        "Something for the drummer. He's been paid entirely in applause again."
       ],
       "flirt": "Good stock and a welcoming smile. You make this errand rather pleasant.",
       "buyingTags": [
@@ -723,10 +874,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 1,
-      "portrait": "Native/neon_customer_velvet_22.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_22.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone requested a love song and spent all three verses reading a repair invoice.",
+          "At the end he kissed the paper. Apparently Joe Wild had knocked a zero off."
+        ],
+        "quickErrand": [
+          "Something for the drummer. He's been paid entirely in applause again."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_23",
@@ -739,10 +897,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_23",
-      "intro": "Velvet Quay sent me on the supply run. We need meals for the staff and fresh medical stock.",
+      "intro": "I'm holding a table for two people who haven't spoken in eight years.",
       "gossip": [
-        "We have started sharing our shopping lists. It saves five people making the same trip.",
-        "A visitor asked me for a trustworthy shop. Reliability is surprisingly difficult to advertise."
+        "Set it for four. Their elbows need somewhere to go while they figure out what to say.",
+        "A small box of tea. I can always find two cups."
       ],
       "flirt": "If you keep saving my favorite drink, I might start thinking it is personal.",
       "buyingTags": [
@@ -756,10 +914,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 2,
-      "portrait": "Native/neon_customer_velvet_23.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_23.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I'm holding a table for two people who haven't spoken in eight years.",
+          "Set it for four. Their elbows need somewhere to go while they figure out what to say."
+        ],
+        "quickErrand": [
+          "A small box of tea. I can always find two cups."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_24",
@@ -772,10 +937,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_24",
-      "intro": "A long evening goes better with a proper meal. I am shopping for food, drinks and medical supplies.",
+      "intro": "I tried telling a joke between numbers. The speaker cut out right before the punch line.",
       "gossip": [
-        "The night market has three stalls all claiming to sell the original recipe. Quite a family dispute.",
-        "Our cleaner has declared war on glitter. I would put my money on the cleaner."
+        "Biggest laugh I've ever had. I'm taking the sound man to dinner.",
+        "Got something for two? One of us owes the other a laugh."
       ],
       "flirt": "I was going to hurry back, but you are very easy to talk to.",
       "buyingTags": [
@@ -789,26 +954,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 3,
-      "portrait": "Native/neon_customer_velvet_24.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_24.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I tried telling a joke between numbers. The speaker cut out right before the punch line.",
+          "Biggest laugh I've ever had. I'm taking the sound man to dinner."
+        ],
+        "quickErrand": [
+          "Got something for two? One of us owes the other a laugh."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_25",
-      "name": "Liora Bloom",
+      "name": "Lio Bloom",
       "age": 44,
       "adult": true,
-      "gender": "female",
-      "role": "Night hostess",
+      "gender": "male",
+      "role": "Night host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_25",
-      "intro": "I have the house shopping list: food first, then medical supplies, and something cold to drink.",
+      "intro": "I had my eyelids painted gold this evening. It took an hour. I fell asleep before anyone saw them.",
       "gossip": [
-        "Our lighting technician fixed the corridor by tapping one panel. I wish I knew which panel.",
-        "The quay bakery sells out before my shift ends. I may have to make friends with their delivery crew."
+        "The others let me sleep. Kept saying my act was very modern.",
+        "Anything for breakfast? I've slept straight through dinner."
       ],
       "flirt": "You have a way of making a supply run feel like the best part of my evening.",
       "buyingTags": [
@@ -822,10 +994,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 4,
-      "portrait": "Native/neon_customer_velvet_25.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_25.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I had my eyelids painted gold this evening. It took an hour. I fell asleep before anyone saw them.",
+          "The others let me sleep. Kept saying my act was very modern."
+        ],
+        "quickErrand": [
+          "Anything for breakfast? I've slept straight through dinner."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_26",
@@ -838,10 +1017,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_26",
-      "intro": "We used up the last of the break-room snacks. I can take food and drinks, and medical supplies for the cupboard.",
+      "intro": "I promised a new starter I'd wait until their tram arrived. We watched three go by.",
       "gossip": [
-        "I brought a friend through the market yesterday. She judged every stall by the smell of its cooking.",
-        "The staff are pooling their orders this week. Buying together leaves more time for an actual break."
+        "Fourth one was nearly empty. That was the one they could face. Home now, thank goodness.",
+        "Two waters. I don't like sending anyone to the stop empty-handed."
       ],
       "flirt": "That smile is dangerous for someone trying to keep to a shopping list.",
       "buyingTags": [
@@ -855,10 +1034,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 5,
-      "portrait": "Native/neon_customer_velvet_26.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_26.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I promised a new starter I'd wait until their tram arrived. We watched three go by.",
+          "Fourth one was nearly empty. That was the one they could face. Home now, thank goodness."
+        ],
+        "quickErrand": [
+          "Two waters. I don't like sending anyone to the stop empty-handed."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_27",
@@ -871,10 +1057,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_27",
-      "intro": "I am off the clock and buying for the house. What have you got in food, clean drinks and medical supplies?",
+      "intro": "My father never liked my stage name. He used it on a letter for the first time today.",
       "gossip": [
-        "Someone at the house is growing mint in an old filter housing. It seems happy enough.",
-        "Someone repaired the bench outside the house. Now everyone is arguing over who gets the sunny end."
+        "I'm going to frame the envelope. The letter's mostly about his drain.",
+        "Have a dry bag? There's a letter in my pocket I can't let get wet."
       ],
       "flirt": "Maybe I will take the scenic route past your shop again tomorrow.",
       "buyingTags": [
@@ -888,10 +1074,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 6,
-      "portrait": "Native/neon_customer_velvet_27.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_27.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "My father never liked my stage name. He used it on a letter for the first time today.",
+          "I'm going to frame the envelope. The letter's mostly about his drain."
+        ],
+        "quickErrand": [
+          "Have a dry bag? There's a letter in my pocket I can't let get wet."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_28",
@@ -904,10 +1097,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_28",
-      "intro": "The other women asked me to bring back supplies. Good food and medical stock, please.",
+      "intro": "One of our lads turned a booking down. The client wanted his money back and an apology from the lad himself.",
       "gossip": [
-        "The new doormat is already missing. I suspect the wind, but the cat is refusing to comment.",
-        "We found an old recipe tin while cleaning. Half the measures say just enough. Very helpful."
+        "I counted out his change. He can book an hour here. He can't buy a yes.",
+        "Something to share at the rota meeting. Sweet if it's bad news."
       ],
       "flirt": "Keep being this charming and I will start volunteering for every supply run.",
       "buyingTags": [
@@ -921,26 +1114,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 7,
-      "portrait": "Native/neon_customer_velvet_28.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_28.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "One of our lads turned a booking down. The client wanted his money back and an apology from the lad himself.",
+          "I counted out his change. He can book an hour here. He can't buy a yes."
+        ],
+        "quickErrand": [
+          "Something to share at the rota meeting. Sweet if it's bad news."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_29",
-      "name": "Rowan Silk",
+      "name": "Roel Silk",
       "age": 47,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Reception host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_29",
-      "intro": "I promised to make this a quick supply run. Meals, sealed drinks and medical supplies are on my list.",
+      "intro": "Someone asked if the flower in my hair was for sale. I said it was my uniform.",
       "gossip": [
-        "Our singer has learned a new chorus. By tomorrow, every room will know it too.",
-        "Our bookkeeper says the quietest person at a table usually knows the most. I have been testing that theory."
+        "He offered to buy my uniform. So I sold him an apron from lost property.",
+        "Is there a mirror behind the till? My braid caught on the tram door."
       ],
       "flirt": "I like a person who takes pride in their work. It suits you.",
       "buyingTags": [
@@ -954,10 +1154,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 8,
-      "portrait": "Native/neon_customer_velvet_29.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_29.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone asked if the flower in my hair was for sale. I said it was my uniform.",
+          "He offered to buy my uniform. So I sold him an apron from lost property."
+        ],
+        "quickErrand": [
+          "Is there a mirror behind the till? My braid caught on the tram door."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_30",
@@ -970,10 +1177,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_30",
-      "intro": "Velvet Quay needs a dependable shop. Let me see your food and medical stock.",
+      "intro": "I need a tin with a lid that fits. Last night the cook and I sorted thirty lids and found one pair.",
       "gossip": [
-        "People remember a shop that has their usual drink. It is a small thing, but it matters.",
-        "A reliable supplier gets recommended to friends, cousins and neighbors. It adds up."
+        "We stood there clapping like we'd just delivered a baby.",
+        "Two identical tins. I am begging you, identical."
       ],
       "flirt": "The others asked why I chose this shop. I may have mentioned the company.",
       "buyingTags": [
@@ -987,10 +1194,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 3,
-      "sourceCell": 9,
-      "portrait": "Native/neon_customer_velvet_30.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_30.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I need a tin with a lid that fits. Last night the cook and I sorted thirty lids and found one pair.",
+          "We stood there clapping like we'd just delivered a baby."
+        ],
+        "quickErrand": [
+          "Two identical tins. I am begging you, identical."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_31",
@@ -1003,10 +1217,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_31",
-      "intro": "I am picking up dinner and medical supplies for Velvet Quay. A sealed drink for the walk back would be welcome, too.",
+      "intro": "I save the last dance for the people stacking the chairs. Nobody asks them for one.",
       "gossip": [
-        "The staff traded shifts so everyone could see the market lights. The schedule now looks like a puzzle.",
-        "The house plants survived another busy week. That makes them senior staff now."
+        "Last night the dishwasher swept me clean off my feet. Best shoes in the building.",
+        "A cold drink for the dishwasher. He's earned it."
       ],
       "flirt": "You remembered my usual. Careful, I could get used to that.",
       "buyingTags": [
@@ -1020,10 +1234,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 0,
-      "portrait": "Native/neon_customer_velvet_31.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_31.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I save the last dance for the people stacking the chairs. Nobody asks them for one.",
+          "Last night the dishwasher swept me clean off my feet. Best shoes in the building."
+        ],
+        "quickErrand": [
+          "A cold drink for the dishwasher. He's earned it."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_32",
@@ -1036,10 +1257,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_32",
-      "intro": "The house kitchen is running low. Show me your food, clean water and medical supplies.",
+      "intro": "My braid caught a sequin curtain as I walked out. Half the stage set followed me down the quay.",
       "gossip": [
-        "A neighbor is organizing a shared delivery cart. I volunteered the route, not the pushing.",
-        "The women want a blind soda tasting after the late shift. I volunteered to buy the samples."
+        "I picked up every piece. If it sparkles in your doorway, that's the last one.",
+        "Has glitter got into the till? Entirely possible that's my fault."
       ],
       "flirt": "Good stock and a welcoming smile. You make this errand rather pleasant.",
       "buyingTags": [
@@ -1053,26 +1274,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 1,
-      "portrait": "Native/neon_customer_velvet_32.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_32.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "My braid caught a sequin curtain as I walked out. Half the stage set followed me down the quay.",
+          "I picked up every piece. If it sparkles in your doorway, that's the last one."
+        ],
+        "quickErrand": [
+          "Has glitter got into the till? Entirely possible that's my fault."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_33",
-      "name": "Bianca Solis",
+      "name": "Bastiaan Solis",
       "age": 50,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Booking host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_33",
-      "intro": "Velvet Quay sent me on the supply run. We need meals for the staff and fresh medical stock.",
+      "intro": "Dr. Jackson keeps a clipboard by the counter. I tried doing that at work.",
       "gossip": [
-        "The house kettle whistles a little out of tune. Our singer says she can work with it.",
-        "A shopkeeper who remembers the staff as people gets remembered in return. That is how the quay works."
+        "Within a night somebody had booked the clipboard itself for two private dances.",
+        "Dinner to go. Apparently even office supplies get a break before I do."
       ],
       "flirt": "If you keep saving my favorite drink, I might start thinking it is personal.",
       "buyingTags": [
@@ -1086,10 +1314,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 2,
-      "portrait": "Native/neon_customer_velvet_33.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_33.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Dr. Jackson keeps a clipboard by the counter. I tried doing that at work.",
+          "Within a night somebody had booked the clipboard itself for two private dances."
+        ],
+        "quickErrand": [
+          "Dinner to go. Apparently even office supplies get a break before I do."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_34",
@@ -1102,10 +1337,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_34",
-      "intro": "A long evening goes better with a proper meal. I am shopping for food, drinks and medical supplies.",
+      "intro": "Someone called me brave for working nights. I said my mum worked mornings at the docks.",
       "gossip": [
-        "We tested three brands of noodles on our break. The cheapest one won. Nobody expected that.",
-        "The night tram was late again. Half the quay finished their coffee before it arrived."
+        "Try waking her at four. That's brave.",
+        "I'll take two rolls. Mum eats the crusty one on the walk in."
       ],
       "flirt": "I was going to hurry back, but you are very easy to talk to.",
       "buyingTags": [
@@ -1119,10 +1354,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 3,
-      "portrait": "Native/neon_customer_velvet_34.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_34.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone called me brave for working nights. I said my mum worked mornings at the docks.",
+          "Try waking her at four. That's brave."
+        ],
+        "quickErrand": [
+          "I'll take two rolls. Mum eats the crusty one on the walk in."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_35",
@@ -1135,10 +1377,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_35",
-      "intro": "I have the house shopping list: food first, then medical supplies, and something cold to drink.",
+      "intro": "A client complained the room was too dark. He was still wearing his sunglasses.",
       "gossip": [
-        "Someone brought a board game to the lounge. We are still negotiating the rules.",
-        "Someone ordered a new sign for the house. The lettering arrived before the brackets."
+        "I let him discover it himself. Takes restraint. Put that on my payslip.",
+        "Just water. I've done enough smiling for tips tonight."
       ],
       "flirt": "You have a way of making a supply run feel like the best part of my evening.",
       "buyingTags": [
@@ -1152,10 +1394,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 4,
-      "portrait": "Native/neon_customer_velvet_35.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_35.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A client complained the room was too dark. He was still wearing his sunglasses.",
+          "I let him discover it himself. Takes restraint. Put that on my payslip."
+        ],
+        "quickErrand": [
+          "Just water. I've done enough smiling for tips tonight."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_36",
@@ -1168,10 +1417,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_36",
-      "intro": "We used up the last of the break-room snacks. I can take food and drinks, and medical supplies for the cupboard.",
+      "intro": "One of the new girls called in sick and said sorry six times. I used to make that call from this very corner.",
       "gossip": [
-        "The delivery driver learned our names before learning which door to use. A promising start.",
-        "Our cook is convinced ginger soda belongs in everything. I have negotiated a truce over the soup."
+        "I told her the rota's my problem. A person ought to get ill without doing sums.",
+        "Soup that reheats well, please. I'm leaving it by a friend's door."
       ],
       "flirt": "That smile is dangerous for someone trying to keep to a shopping list.",
       "buyingTags": [
@@ -1185,10 +1434,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 5,
-      "portrait": "Native/neon_customer_velvet_36.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_36.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "One of the new girls called in sick and said sorry six times. I used to make that call from this very corner.",
+          "I told her the rota's my problem. A person ought to get ill without doing sums."
+        ],
+        "quickErrand": [
+          "Soup that reheats well, please. I'm leaving it by a friend's door."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_37",
@@ -1201,10 +1457,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_37",
-      "intro": "I am off the clock and buying for the house. What have you got in food, clean drinks and medical supplies?",
+      "intro": "I used to think the hard part was singing the high note. It's remembering who's missing from the front row.",
       "gossip": [
-        "We have a good-stock shelf now. Putting something there is the highest compliment our cook gives.",
-        "A dockworker swore your bottled water tastes better. Now everyone wants to compare labels."
+        "Tonight somebody sat in his chair. I got all the way through.",
+        "Plain water. The first note tomorrow needs to be mine."
       ],
       "flirt": "Maybe I will take the scenic route past your shop again tomorrow.",
       "buyingTags": [
@@ -1218,10 +1474,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 6,
-      "portrait": "Native/neon_customer_velvet_37.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_37.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I used to think the hard part was singing the high note. It's remembering who's missing from the front row.",
+          "Tonight somebody sat in his chair. I got all the way through."
+        ],
+        "quickErrand": [
+          "Plain water. The first note tomorrow needs to be mine."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_38",
@@ -1234,10 +1497,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_38",
-      "intro": "The other women asked me to bring back supplies. Good food and medical stock, please.",
+      "intro": "I'm collecting for an emergency cab fund. One credit each, whenever there's a good night.",
       "gossip": [
-        "One of the women is making a coat from old curtains. You would never guess until she tells you.",
-        "The upstairs lounge has a new music player. So far it knows exactly one song."
+        "Last week it got a porter home to see his baby before she fell asleep. Worth the jar space.",
+        "Can you break a ten? The little coins are for a fare home."
       ],
       "flirt": "Keep being this charming and I will start volunteering for every supply run.",
       "buyingTags": [
@@ -1251,10 +1514,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 7,
-      "portrait": "Native/neon_customer_velvet_38.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_38.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I'm collecting for an emergency cab fund. One credit each, whenever there's a good night.",
+          "Last week it got a porter home to see his baby before she fell asleep. Worth the jar space."
+        ],
+        "quickErrand": [
+          "Can you break a ten? The little coins are for a fare home."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_39",
@@ -1267,10 +1537,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_39",
-      "intro": "I promised to make this a quick supply run. Meals, sealed drinks and medical supplies are on my list.",
+      "intro": "A woman asked me to wake her before closing. Didn't want company. She wanted one safe hour of sleep.",
       "gossip": [
-        "The house radio found a station that reads poetry between shipping notices. I rather like it.",
-        "One of the women is learning to repair pumps. She says it is mostly listening carefully."
+        "I sat by the door and kept the music down. She tipped me with a peppermint.",
+        "Something minty for the reception desk. I want to pass one on."
       ],
       "flirt": "I like a person who takes pride in their work. It suits you.",
       "buyingTags": [
@@ -1284,10 +1554,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 8,
-      "portrait": "Native/neon_customer_velvet_39.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_39.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "A woman asked me to wake her before closing. Didn't want company. She wanted one safe hour of sleep.",
+          "I sat by the door and kept the music down. She tipped me with a peppermint."
+        ],
+        "quickErrand": [
+          "Something minty for the reception desk. I want to pass one on."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_40",
@@ -1300,10 +1577,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_40",
-      "intro": "Velvet Quay needs a dependable shop. Let me see your food and medical stock.",
+      "intro": "The delivery slip says six cases. We got six individual lemons wearing paper hats.",
       "gossip": [
-        "A visitor asked me for a trustworthy shop. Reliability is surprisingly difficult to advertise.",
-        "A supplier tried selling us empty boxes as premium packaging. We sent the premium boxes back."
+        "They're lovely hats. Still five cases and a bit short.",
+        "How many on a full tray? I count everything twice these days."
       ],
       "flirt": "The others asked why I chose this shop. I may have mentioned the company.",
       "buyingTags": [
@@ -1317,26 +1594,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 4,
-      "sourceCell": 9,
-      "portrait": "Native/neon_customer_velvet_40.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_40.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "The delivery slip says six cases. We got six individual lemons wearing paper hats.",
+          "They're lovely hats. Still five cases and a bit short."
+        ],
+        "quickErrand": [
+          "How many on a full tray? I count everything twice these days."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_41",
-      "name": "Lyra Dawn",
+      "name": "Lex Dawn",
       "age": 31,
       "adult": true,
-      "gender": "female",
-      "role": "House hostess",
+      "gender": "male",
+      "role": "House host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_41",
-      "intro": "I am picking up dinner and medical supplies for Velvet Quay. A sealed drink for the walk back would be welcome, too.",
+      "intro": "I spent an hour listening to a regular rehearse a breakup. Then he rang his landlord.",
       "gossip": [
-        "Our cleaner has declared war on glitter. I would put my money on the cleaner.",
-        "The market awnings are being patched. Pick your walking route by the weather, not the map."
+        "Turns out the great love of his life was a flat with working heat.",
+        "A hot meal, if you have one. My own flat isn't exactly a love story."
       ],
       "flirt": "You remembered my usual. Careful, I could get used to that.",
       "buyingTags": [
@@ -1350,10 +1634,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 0,
-      "portrait": "Native/neon_customer_velvet_41.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_41.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I spent an hour listening to a regular rehearse a breakup. Then he rang his landlord.",
+          "Turns out the great love of his life was a flat with working heat."
+        ],
+        "quickErrand": [
+          "A hot meal, if you have one. My own flat isn't exactly a love story."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_42",
@@ -1366,10 +1657,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_42",
-      "intro": "The house kitchen is running low. Show me your food, clean water and medical supplies.",
+      "intro": "I found an old cassette with my first set on it. My voice shakes so badly you can hear my earring hit the mic.",
       "gossip": [
-        "The quay bakery sells out before my shift ends. I may have to make friends with their delivery crew.",
-        "We keep a list of shops that treat the staff well. Word gets around surprisingly quickly."
+        "I've kept it. Some nights I forget how hard it was just to stand there.",
+        "Something for the walk home. I've got a tape to listen to."
       ],
       "flirt": "Good stock and a welcoming smile. You make this errand rather pleasant.",
       "buyingTags": [
@@ -1383,10 +1674,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 1,
-      "portrait": "Native/neon_customer_velvet_42.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_42.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I found an old cassette with my first set on it. My voice shakes so badly you can hear my earring hit the mic.",
+          "I've kept it. Some nights I forget how hard it was just to stand there."
+        ],
+        "quickErrand": [
+          "Something for the walk home. I've got a tape to listen to."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_43",
@@ -1399,10 +1697,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_43",
-      "intro": "Velvet Quay sent me on the supply run. We need meals for the staff and fresh medical stock.",
+      "intro": "I use a little star next to quiet bookings. Last night one of the regulars drew one beside my name.",
       "gossip": [
-        "The staff are pooling their orders this week. Buying together leaves more time for an actual break.",
-        "The house cat has chosen the clean towel shelf. Apparently that makes it her office."
+        "Nobody disturbed my break. I want to do that for somebody else.",
+        "A meal for the desk. Today I'm taking the whole break."
       ],
       "flirt": "If you keep saving my favorite drink, I might start thinking it is personal.",
       "buyingTags": [
@@ -1416,26 +1714,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 2,
-      "portrait": "Native/neon_customer_velvet_43.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_43.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I use a little star next to quiet bookings. Last night one of the regulars drew one beside my name.",
+          "Nobody disturbed my break. I want to do that for somebody else."
+        ],
+        "quickErrand": [
+          "A meal for the desk. Today I'm taking the whole break."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_44",
-      "name": "Ruby Merrow",
+      "name": "Ruben Merrow",
       "age": 27,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Evening entertainer",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_44",
-      "intro": "A long evening goes better with a proper meal. I am shopping for food, drinks and medical supplies.",
+      "intro": "First night at the window in a new suit. A client said I looked just like his ex-husband.",
       "gossip": [
-        "Someone repaired the bench outside the house. Now everyone is arguing over who gets the sunny end.",
-        "A visitor asked where everyone buys their snacks. I said I was still gathering evidence."
+        "I've met his ex-husband. I'm keeping the suit.",
+        "Need a drink that won't stain a white cuff. Trust me on this."
       ],
       "flirt": "I was going to hurry back, but you are very easy to talk to.",
       "buyingTags": [
@@ -1449,10 +1754,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 3,
-      "portrait": "Native/neon_customer_velvet_44.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_44.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "First night at the window in a new suit. A client said I looked just like his ex-husband.",
+          "I've met his ex-husband. I'm keeping the suit."
+        ],
+        "quickErrand": [
+          "Need a drink that won't stain a white cuff. Trust me on this."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_45",
@@ -1465,10 +1777,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_45",
-      "intro": "I have the house shopping list: food first, then medical supplies, and something cold to drink.",
+      "intro": "I know the posters say to see Dr. Jackson. I know where his desk is. I'd go now if the clinic were open.",
       "gossip": [
-        "We found an old recipe tin while cleaning. Half the measures say just enough. Very helpful.",
-        "Our afternoon shift has started a recipe book. Most of the pages are arguments about spice."
+        "What I can do tonight is buy a drink, sit still for a bit, and stop pretending I'm fine.",
+        "A little water for the tram, please. It's a long way home when you're tired."
       ],
       "flirt": "You have a way of making a supply run feel like the best part of my evening.",
       "buyingTags": [
@@ -1482,26 +1794,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 4,
-      "portrait": "Native/neon_customer_velvet_45.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_45.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I know the posters say to see Dr. Jackson. I know where his desk is. I'd go now if the clinic were open.",
+          "What I can do tonight is buy a drink, sit still for a bit, and stop pretending I'm fine."
+        ],
+        "quickErrand": [
+          "A little water for the tram, please. It's a long way home when you're tired."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_46",
-      "name": "Sora Brass",
+      "name": "Sandro Brass",
       "age": 41,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "House liaison",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_46",
-      "intro": "We used up the last of the break-room snacks. I can take food and drinks, and medical supplies for the cupboard.",
+      "intro": "We ran out of dressing-room hooks. I spent half my shift introducing coats to chairs like guests at a wedding.",
       "gossip": [
-        "Our bookkeeper says the quietest person at a table usually knows the most. I have been testing that theory.",
-        "The quay tailor is teaching evening classes. I can mend a sleeve without sewing it shut now."
+        "Your velvet sleeve, madam, has been seated beside the till.",
+        "Anything hot left? I finally got a chair of my own."
       ],
       "flirt": "That smile is dangerous for someone trying to keep to a shopping list.",
       "buyingTags": [
@@ -1515,10 +1834,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 5,
-      "portrait": "Native/neon_customer_velvet_46.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_46.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "We ran out of dressing-room hooks. I spent half my shift introducing coats to chairs like guests at a wedding.",
+          "Your velvet sleeve, madam, has been seated beside the till."
+        ],
+        "quickErrand": [
+          "Anything hot left? I finally got a chair of my own."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_47",
@@ -1531,10 +1857,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_47",
-      "intro": "I am off the clock and buying for the house. What have you got in food, clean drinks and medical supplies?",
+      "intro": "I sang a birthday song for a man who'd come in on his own. Quiet little thing.",
       "gossip": [
-        "A reliable supplier gets recommended to friends, cousins and neighbors. It adds up.",
-        "Someone won a crate of citrus at cards and discovered how much fruit one crate actually holds."
+        "He said it was the first time anyone got his name right. I wrote it on next year's calendar.",
+        "One sweet thing for a birthday, please. I'll sort the candle."
       ],
       "flirt": "Maybe I will take the scenic route past your shop again tomorrow.",
       "buyingTags": [
@@ -1548,10 +1874,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 6,
-      "portrait": "Native/neon_customer_velvet_47.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_47.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I sang a birthday song for a man who'd come in on his own. Quiet little thing.",
+          "He said it was the first time anyone got his name right. I wrote it on next year's calendar."
+        ],
+        "quickErrand": [
+          "One sweet thing for a birthday, please. I'll sort the candle."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_48",
@@ -1564,10 +1897,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_48",
-      "intro": "The other women asked me to bring back supplies. Good food and medical stock, please.",
+      "intro": "I sign the night crew out in pairs. One of them wrote me in on the last line tonight.",
       "gossip": [
-        "The house plants survived another busy week. That makes them senior staff now.",
-        "The lift at the west end sings between floors. Nobody agrees whether that is an improvement."
+        "It didn't occur to me anyone was counting me, too.",
+        "Two drinks with lids. We're catching the same tram."
       ],
       "flirt": "Keep being this charming and I will start volunteering for every supply run.",
       "buyingTags": [
@@ -1581,26 +1914,33 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 7,
-      "portrait": "Native/neon_customer_velvet_48.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_48.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I sign the night crew out in pairs. One of them wrote me in on the last line tonight.",
+          "It didn't occur to me anyone was counting me, too."
+        ],
+        "quickErrand": [
+          "Two drinks with lids. We're catching the same tram."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_49",
-      "name": "Talia Reed",
+      "name": "Tal Reed",
       "age": 37,
       "adult": true,
-      "gender": "female",
+      "gender": "male",
       "role": "Reception host",
       "factionId": "neon_faction_velvet_quay",
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_49",
-      "intro": "I promised to make this a quick supply run. Meals, sealed drinks and medical supplies are on my list.",
+      "intro": "Someone asked what a man like me was doing with a flower in his hair. I said, 'Keeping it watered.'",
       "gossip": [
-        "The women want a blind soda tasting after the late shift. I volunteered to buy the samples.",
-        "The staff are saving for a better kitchen cooler. Cold drinks settle more arguments than you would think."
+        "He bought me a glass of water. That might be the best tip I've ever earned.",
+        "Bunch of flowers costs more than lunch. Today I'm having lunch."
       ],
       "flirt": "I like a person who takes pride in their work. It suits you.",
       "buyingTags": [
@@ -1614,10 +1954,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 8,
-      "portrait": "Native/neon_customer_velvet_49.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_49.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "Someone asked what a man like me was doing with a flower in his hair. I said, 'Keeping it watered.'",
+          "He bought me a glass of water. That might be the best tip I've ever earned."
+        ],
+        "quickErrand": [
+          "Bunch of flowers costs more than lunch. Today I'm having lunch."
+        ]
+      }
     },
     {
       "id": "neon_customer_velvet_50",
@@ -1630,10 +1977,10 @@
       "faction": "Velvet Quay Collective",
       "upper": false,
       "spriteKey": "neon_female_velvet_50",
-      "intro": "Velvet Quay needs a dependable shop. Let me see your food and medical stock.",
+      "intro": "I bring food back in everyone's order of hunger. The new cook keeps putting himself last.",
       "gossip": [
-        "A shopkeeper who remembers the staff as people gets remembered in return. That is how the quay works.",
-        "I heard a musician trade a whole set of strings for a decent dinner. Fair exchange, apparently."
+        "Tonight I'm writing his name on the first bowl. With a marker. Let them argue with that.",
+        "Something filling that travels well. I've got people waiting."
       ],
       "flirt": "The others asked why I chose this shop. I may have mentioned the company.",
       "buyingTags": [
@@ -1647,10 +1994,17 @@
         230
       ],
       "cooldownDays": 2,
-      "sourceSheet": 5,
-      "sourceCell": 9,
-      "portrait": "Native/neon_customer_velvet_50.png",
-      "status": "Integrated in 0.6.0; native playtest pending"
+      "portrait": "Textures/Items/neon_customer_velvet_50.png",
+      "status": "Registered shop visitor",
+      "shopVisits": {
+        "afterShift": [
+          "I bring food back in everyone's order of hunger. The new cook keeps putting himself last.",
+          "Tonight I'm writing his name on the first bowl. With a marker. Let them argue with that."
+        ],
+        "quickErrand": [
+          "Something filling that travels well. I've got people waiting."
+        ]
+      }
     },
     {
       "id": "neon_customer_upper_01",

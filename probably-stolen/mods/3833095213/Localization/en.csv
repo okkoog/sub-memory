@@ -11,12 +11,12 @@ book.neighborhood.night.body,"Once the shop closes, use the normal travel/map me
 book.neighborhood.equipment.title,Equipment and fixtures
 book.neighborhood.equipment.body,"Stormglass Depot Outlet carries storage and water equipment. Undertow Engineering supplies production modules, attachments and packaging pattern chips.\n\nGlassmarket Counter & Fixture Stall stocks signs, lamps and bar equipment: a tool rail, measures, a mixing glass, shaker, blender, serving glass and a bartender's notebook. The tools are separate items; the rail is storage for them."
 book.neighborhood.backroom.title,Make room to work
-book.neighborhood.backroom.body,"Use BACK > on the right wall to reach the back room. The worktop shares your front counter stock. Click the cabinet or a fitted machine to open it; click the door to return to the shop.\n\nJoe Wild's BACK ROOM services add station bays, storage tiers and fitted equipment. Buy the actual machine before fitting it.\n\nKeep this guide and the book cubby in the main area if that is where you prefer to read."
+book.neighborhood.backroom.body,"Click the arrow at the bottom right of the shop to reach the back room. The worktop shares your front counter stock; click it to cook. Click the cabinet or a fitted machine to open it, and the door to return to the shop.\n\nJoe Wild's BACK ROOM services add station bays, storage tiers and fitted equipment. Buy the actual machine before fitting it.\n\nKeep this guide and the book cubby in the main area if that is where you prefer to read."
 book.workshop.name,Neon Undertow: Workshop Fieldbook
 book.workshop.cooking.title,Produce and cooking
-book.workshop.cooking.body,"Buy cooking tools and recipe books at Quayside Canning Co-op. Open KITCHEN above the back-room worktop. Fit tools in their top slots and charged cells in BATTERIES. Put ingredients, water and an optional fridge in INPUT. A fridge needs its own battery.\n\nReady recipes appear automatically. Click one to cook; the listed ingredients, water and power are consumed. Tools and books are kept. Heated recipes still need a galley or native heating plate; chilled recipes need a powered fridge.\n\nRecipe books also work on the ordinary crafting table. For an unambiguous single-ingredient recipe, drag the matching tool onto the ingredient."
+book.workshop.cooking.body,"Buy cooking tools and recipe books at Quayside Canning Co-op. Click the back-room worktop to open the kitchen. Fit tools in their top slots and charged cells in BATTERIES. Put ingredients, water and an optional fridge in INPUT. A fridge needs its own battery.\n\nChoose a dish from your recipe books, then press Craft: the listed ingredients, water and power are consumed. Tools and books are kept. Heated recipes still need a galley or a heating plate; chilled recipes need a powered fridge.\n\nFor an unambiguous single-ingredient recipe, you can also drag the matching tool onto the ingredient."
 book.workshop.canning.title,Canning and workshop supplies
-book.workshop.canning.body,"Put the Fizzyworks recipe book in the canning machine input. For other production recipes, use the matching recipe manual and the game's item picker. Supply the listed ingredients, water, packaging and power. Tools and books are kept.\n\nSoda accepts water above Basewater grade. Source water and container condition affect quality. Flavour ingredients are not dirty water.\n\nTo make empty metal packaging, use the native printer with a matching chip from Undertow Engineering, metal, the required modules and charged batteries."
+book.workshop.canning.body,"Buy the Fizzworks Soda Canner at Stormglass Depot Outlet after hours.\n\nPut the Fizzyworks recipe book in the canning machine input. For other production recipes, use the matching recipe manual and the game's item picker. Supply the listed ingredients, water, packaging and power. Tools and books are kept.\n\nSoda accepts water above Basewater grade. Source water and container condition affect quality. Flavour ingredients are not dirty water.\n\nTo make empty metal packaging, use the native printer with a matching chip from Undertow Engineering, metal, the required modules and charged batteries."
 book.workshop.water.title,Waterworks
 book.workshop.water.body,"The Industrial Water Generator becomes available at Stormglass Depot from day 28 when you have a Grand Waterworks installed. Its list price is 12,500 credits.\n\nFit a charged cell. Overnight it generates and fills up to four native 2 L high-quality water bottles, using six power each: 24 for a full set. It needs no ingredient or empty-bottle input. Leave room in OUTPUT.\n\nStarting traits do not grant this generator. Items left in older input or attachment slots stay retrievable. The Waterworks handbook explains the manual bottling equipment and its recipes."
 book.workshop.cellar.title,Cellar and bar
@@ -257,7 +257,7 @@ visitor.velvet_07.intro,"I am off the clock and buying for the house. What have 
 visitor.velvet_07.gossip_a,A supplier tried selling us empty boxes as premium packaging. We sent the premium boxes back.
 visitor.velvet_07.gossip_b,The night market has three stalls all claiming to sell the original recipe. Quite a family dispute.
 visitor.velvet_07.flirt,Maybe I will take the scenic route past your shop again tomorrow.
-visitor.velvet_08.intro,"The other women asked me to bring back supplies. Good food and medical stock, please."
+visitor.velvet_08.intro,I'm shopping for the late shift. Any decent food or medical supplies?
 visitor.velvet_08.gossip_a,"The market awnings are being patched. Pick your walking route by the weather, not the map."
 visitor.velvet_08.gossip_b,Our lighting technician fixed the corridor by tapping one panel. I wish I knew which panel.
 visitor.velvet_08.flirt,Keep being this charming and I will start volunteering for every supply run.
@@ -1999,10 +1999,10 @@ kitchen.book.5,Megablock Kitchen V: The Cold Store
 kitchen.station.stove,Stove
 kitchen.station.counter,Counter
 kitchen.station.fridge,Fridge
-kitchen.book.description,"An illustrated cookbook. Open it to see what goes together, or lay it on the crafting table."
+kitchen.book.description,An illustrated cookbook. Open it to read the recipes; put it in the kitchen worktop's INPUT to cook them.
 kitchen.failed.name,Failed kitchen batch
 kitchen.failed.description,Dinner didn't work out. Even the cook won't eat it.
-kitchen.recipe.worktop,Prepare by hand on the COOK tab
+kitchen.recipe.worktop,Prepare by hand on the Kitchen Worktop
 kitchen.dish.description,From {0}. {1}. {2} Makes one portion from the two listed ingredients. Keep the recipe book with your crafting supplies.
 kitchen.dish.edible,Prepared food; +{0} nutrition.
 kitchen.dish.component,Ready for the next recipe.
@@ -2049,7 +2049,7 @@ kitchen.condition.ruined,Ruined
 kitchen.condition.raw,Still raw / unfinished
 kitchen.condition.ready,Ready — finish now
 kitchen.condition.uneven,Uneven; needs attention
-kitchen.tools.desc,"Reusable cooking tool. Drag onto an ingredient for a matching single-ingredient recipe. For meals with several ingredients, place the tool and supplies on the kitchen worktop or use a recipe book on the normal crafting table."
+kitchen.tools.desc,"Reusable cooking tool. Fit it in its slot on the kitchen worktop, or drag it onto an ingredient for a single-ingredient recipe."
 kitchen.needs.galley,Needs a galley or heating plate.
 kitchen.needs.fridge,Needs an owned fridge.
 kitchen.needs.oven,Uses its own heating element and the listed power.
@@ -2097,10 +2097,10 @@ kitchen.progress.doneness,Doneness {0} / {1} · attention {2}
 kitchen.control.heat,HEAT: {0}
 kitchen.control.action,{0} · 5s
 kitchen.control.tool,TOOL: {0}
-kitchen.counter.name,Back-room Kitchen Worktop
+kitchen.counter.name,Kitchen Worktop
 kitchen.counter.description,"A worktop with tool slots along the back. Load ingredients and a charged cell, then pick a recipe."
-kitchen.counter.choose,CHOOSE RECIPE
-kitchen.counter.craft,CRAFT
+kitchen.counter.choose,Choose
+kitchen.counter.craft,Craft
 kitchen.counter.cook,COOK
 kitchen.counter.tools,INSTRUMENTS
 kitchen.counter.books,BOOKS / WORKSHOP
@@ -2614,8 +2614,8 @@ cellar.size,The empty bottle is too small for this batch.
 cellar.power_low,Insufficient power; ingredients kept.
 cellar.bench,Undertow Cellar Bench
 cellar.bench.description,"A cellar bench for fermenting, distilling and steeping. Load one batch and leave it overnight."
-cellar.start,START BATCH
-cellar.collect,COLLECT
+cellar.start,Start
+cellar.collect,Collect
 cellar.idle,Load one ingredient combination and an empty bottle. Read Brewing Notes for quantities.
 cellar.done,Finished; clear OUTPUT and collect.
 cellar.wait,Wait for the batch to finish and clear OUTPUT.
@@ -2673,10 +2673,10 @@ guide.visits,"CUSTOMERS: Open the shop and serve normal visitors. Velvet Quay, Q
 guide.night,"AFTER CLOSING: Open the travel/map menu. Visit Quayside Canning Co-op for ingredients, Stormglass Depot Outlet for machines, Undertow Engineering for modules and attachments, and Glassmarket Counter & Fixture Stall for decorations."
 guide.tabBuild,Produce & build
 guide.expansion,Make room for your business
-guide.backroom,"BACK ROOM: Use BACK > on the right wall. The counter stock is shared with the front shop. Start with a cabinet and one station bay; buy equipment, then use Joe Wild's BACK ROOM tab for bay expansions, shelf tiers and station fitting. Click the entire back-room door to return to the shop. Click the cabinet or installed machines to use them."
+guide.backroom,"BACK ROOM: Click the arrow at the bottom right of the shop. The back room shares the counter stock with the shop. You start with a cabinet and one bay; buy equipment, then use Joe Wild's BACK ROOM tab to add bays, rack tiers and fitted stations. Click the cabinet, the rack, a machine or the worktop to use it, and the door to return to the shop."
 guide.backroomButton,Open back room
 guide.produce,Buy fruit and vegetables at Quayside Canning Co-op or from visiting food suppliers.
-guide.kitchen,"Reusable recipe book. Read for ingredients and tools, or place on the normal crafting table with them. The kitchen worktop also detects ready recipes. Heated recipes need a galley or heating plate; chilling needs a fridge. Measured water and power are used; tools and containers are kept. Tools go in the top compartments; cells in BATTERIES. Put ingredients, water and a fridge in INPUT. Click a ready recipe."
+guide.kitchen,"Recipe book. Read it for ingredients and tools. Put it in the INPUT of the kitchen worktop with the ingredients, pick a dish in the list, then cook. Heated dishes need a galley or heating plate; chilled dishes need a fridge. Tools, books and containers are kept."
 guide.production,"PRODUCTION: keep a Fizzworks Recipe Book in canner INPUT, or Workshop Recipes / Production Handbook in galley INPUT. Choose a recipe with the native item chooser. Books and tools remain; only the listed ingredients, water and power are used. Food still requires hands-on cooking. The worktop also recognizes native recipe books. Packaging uses the ordinary printer with pattern chips from Undertow Engineering, metal ingots, Metal Printing and CNC modules."
 guide.water,"WATERWORKS: the Industrial Water Generator is available at Stormglass Depot Outlet from day 28 with a Grand Waterworks installed, list price 12,500 credits. It generates and fills four native 2 L high-quality water bottles overnight. Fit a charged cell: 6 power each, 24 for all four. No ingredient or empty-bottle input. Existing old inputs and attachments remain retrievable. Starting traits provide no generator."
 guide.cellar,"CELLAR: Quayside stocks the Cellar Bench, readable Brewing Notes, bottles and culture. 76 drinks use suitable fruit, grains, starch crops and infusion ingredients. Choose Ferment, Distill or Infuse and load one combination. Batches take nights. The CELLAR tab stores bottles. Use the native powered Age-Well rack to mature suitable wines, cider and perry; bottled spirits do not age for free. Cask rye's recipe includes its own oak stage."
@@ -2714,42 +2714,42 @@ settings.status.description,"Neon Undertow runs independently. If startup fails,
 settings.interface.cornerGuide.name,Show corner guide
 settings.interface.cornerGuide.description,Optional guide shortcut in the corner. Off by default. Read the physical handbooks in your main-shop book cubby instead. Changes apply immediately.
 perk.bottler.name,Dockside Bottling Apprentice
-perk.bottler.description,"Start with a reusable Manual Bottling Kit, recipe handbook, a 6 L jug containing 6 L of pure water, 8 empty glass bottles and 4 of each concentrate. Bottle drinks at the ordinary crafting table or back-room worktop without power. Industrial water equipment must be earned and purchased later."
+perk.bottler.description,"Start with a reusable Manual Bottling Kit, its handbook, a 6 L jug of pure water, 8 empty glass bottles and 4 of each concentrate. Bottle drinks in the kit, without power. Industrial water equipment is earned and bought later."
 perk.technician.name,Stormglass Technician
 perk.technician.description,"Start with a standard moisture farm, a 20 L reservoir, Stormglass Throughput and Crystal Polishing modules, and a charged starter cell. Install the modules and connect the reservoir and cell yourself."
 visitor.name.neon_customer_velvet_01,Nyra Sol
 visitor.name.neon_customer_velvet_02,Celeste Vale
 visitor.name.neon_customer_velvet_03,Mei Arden
-visitor.name.neon_customer_velvet_04,Roxy Cale
+visitor.name.neon_customer_velvet_04,Rik Cale
 visitor.name.neon_customer_velvet_05,Vesper Nox
-visitor.name.neon_customer_velvet_06,Seren Ash
+visitor.name.neon_customer_velvet_06,Severin Ash
 visitor.name.neon_customer_velvet_07,Amara Dune
-visitor.name.neon_customer_velvet_08,Tavi Blue
+visitor.name.neon_customer_velvet_08,Tavon Blue
 visitor.name.neon_customer_velvet_09,Pippa Wren
 visitor.name.neon_customer_velvet_10,Selene Cross
-visitor.name.neon_customer_velvet_11,Soraya Vex
+visitor.name.neon_customer_velvet_11,Soren Vex
 visitor.name.neon_customer_velvet_12,Odette Sable
 visitor.name.neon_customer_velvet_13,Zahara Flint
-visitor.name.neon_customer_velvet_14,Cleo Moss
+visitor.name.neon_customer_velvet_14,Clemens Moss
 visitor.name.neon_customer_velvet_15,Ember Hale
-visitor.name.neon_customer_velvet_16,Indra Quill
+visitor.name.neon_customer_velvet_16,Ilian Quill
 visitor.name.neon_customer_velvet_17,Melina Rose
 visitor.name.neon_customer_velvet_18,Nyla Gold
 visitor.name.neon_customer_velvet_19,Juno Lace
-visitor.name.neon_customer_velvet_20,Aurelia Frost
+visitor.name.neon_customer_velvet_20,Aurel Frost
 visitor.name.neon_customer_velvet_21,Dara Wynn
-visitor.name.neon_customer_velvet_22,Faye Copper
+visitor.name.neon_customer_velvet_22,Floris Copper
 visitor.name.neon_customer_velvet_23,Nerissa Bell
 visitor.name.neon_customer_velvet_24,Kira Storm
-visitor.name.neon_customer_velvet_25,Liora Bloom
+visitor.name.neon_customer_velvet_25,Lio Bloom
 visitor.name.neon_customer_velvet_26,Samira Moon
 visitor.name.neon_customer_velvet_27,Isolde Ray
 visitor.name.neon_customer_velvet_28,Yuna Crest
-visitor.name.neon_customer_velvet_29,Rowan Silk
+visitor.name.neon_customer_velvet_29,Roel Silk
 visitor.name.neon_customer_velvet_30,Iris Pearl
 visitor.name.neon_customer_velvet_31,Raven Tess
 visitor.name.neon_customer_velvet_32,Ayana Reed
-visitor.name.neon_customer_velvet_33,Bianca Solis
+visitor.name.neon_customer_velvet_33,Bastiaan Solis
 visitor.name.neon_customer_velvet_34,Kaia Finch
 visitor.name.neon_customer_velvet_35,Sable Venn
 visitor.name.neon_customer_velvet_36,Elodie Gray
@@ -2757,15 +2757,15 @@ visitor.name.neon_customer_velvet_37,Mirei Thorn
 visitor.name.neon_customer_velvet_38,Zola Fern
 visitor.name.neon_customer_velvet_39,Coral Briar
 visitor.name.neon_customer_velvet_40,Astra Lane
-visitor.name.neon_customer_velvet_41,Lyra Dawn
+visitor.name.neon_customer_velvet_41,Lex Dawn
 visitor.name.neon_customer_velvet_42,Jade Kest
 visitor.name.neon_customer_velvet_43,Althea Snow
-visitor.name.neon_customer_velvet_44,Ruby Merrow
+visitor.name.neon_customer_velvet_44,Ruben Merrow
 visitor.name.neon_customer_velvet_45,Noemi Dusk
-visitor.name.neon_customer_velvet_46,Sora Brass
+visitor.name.neon_customer_velvet_46,Sandro Brass
 visitor.name.neon_customer_velvet_47,Estelle Rook
 visitor.name.neon_customer_velvet_48,Nika Azure
-visitor.name.neon_customer_velvet_49,Talia Reed
+visitor.name.neon_customer_velvet_49,Tal Reed
 visitor.name.neon_customer_velvet_50,Nia Cove
 visitor.name.neon_customer_upper_01,Vivienne Carrow
 visitor.name.neon_customer_upper_02,Marisol Vane
@@ -3087,7 +3087,7 @@ milestone.neon_faction_glassmarket_infrequent.description,New faction visitors w
 milestone.neon_faction_glassmarket_sanction.name,Trade Embargo
 milestone.neon_faction_glassmarket_sanction.description,"New faction visitors bring only 60% of their normal budget and wait six days between visits. They pay 30% less on your sale counter; associated night-shop supply surcharges rise to 25% total. These are total penalties, not extra stacked penalties. Trade remains possible so reputation can recover."
 faction.neon_faction_velvet_quay.name,Velvet Quay Collective
-faction.neon_faction_velvet_quay.gift,The girls sent a little thank-you. You have been looking after us.
+faction.neon_faction_velvet_quay.gift,Everyone at the house chipped in. Thanks for looking after us.
 milestone.neon_faction_velvet_quay_account.name,House Provisioner
 milestone.neon_faction_velvet_quay_account.description,The houses place larger food and medical orders. New Velvet Quay visitors bring 10% larger budgets.
 milestone.neon_faction_velvet_quay_specialty.name,Thank-You Parcels
@@ -3115,9 +3115,9 @@ reputation.velvet.word,Word of Mouth
 reputation.velvet.favorite,House Favorite
 reputation.velvet.crowd,Evening Crowd
 reputation.velvet.wordDetails,"Good trades bring recommendations. Each operating day has a growing chance of one additional shopper: 15% at 20 reputation, up to 70%."
-reputation.velvet.favoriteDetails,"At 80 reputation, the first daily referral chance is 45%. Velvet Quay also visits more often as reputation rises, adding up to 20 percentage points to its random-customer chance. Shoppers referred by the women pay 5% more on your sale counter."
+reputation.velvet.favoriteDetails,"At 80 reputation, the first daily referral roll has a 45% chance of success. Reputation also raises Velvet Quay's random visit chance by up to 20 percentage points. Referred customers pay 5% more at your counter."
 reputation.velvet.crowdDetails,"At 150 reputation, a second daily referral roll starts at 10% and grows to 35%. Maximum two extra shoppers per day. These visitors are added to the normal queue. Referred shoppers now pay 10% more on your sale counter; thank-you gifts rise to a 40% daily roll. Gift caps remain one per faction and two overall; sale bonuses use the best rate."
-reputation.velvet.flavor,"Treat the women well, and the quay hears about it."
+reputation.velvet.flavor,Look after the crew and word gets around the quay.
 water.jug,Dockrunner Jug · 10 L
 water.reservoir,Undertow Reservoir · 25 L
 water.throughput,Stormglass Throughput Core
@@ -3129,7 +3129,7 @@ water.economizerInfo,Gets more work out of a charged cell. +50% efficiency.
 water.jugInfo,An empty jug with a measuring scale down the side.
 water.sealedInfo,A sealed 750 mL drink. Drink it or pour it all out to get the bottle back.
 water.handbook,Undertow Bottling Handbook
-water.bookInfo,"For Reserve, Cordial or Tonic, use an empty 750 mL glass bottle or a 350/500 mL can. Keep this book, a Manual Bottling Kit and the listed supplies in a crafting table or the back-room worktop. No power needed; the kit, jug and handbook remain. Buy a kit at Undertow Engineering. Industrial Water Generator: produces four new native 2 L bottles of high-quality water overnight, using 6 power per bottle. No source water, empty bottles or concentrates required. Output space and power limit production; modules cannot raise the four-bottle daily cap. Available at Stormglass Depot Outlet from day 28 after installing a Grand Waterworks depot."
+water.bookInfo,"For Reserve, Cordial or Tonic, use an empty 750 mL glass bottle or a 350/500 mL can. Open a Manual Bottling Kit, put the listed supplies in its INPUT, pick the drink and fill. No power needed; the kit, jug and handbook remain. Buy a kit at Undertow Engineering. Industrial Water Generator: produces four new native 2 L bottles of high-quality water overnight, using 6 power per bottle. No source water, empty bottles or concentrates required. Output space and power limit production; modules cannot raise the four-bottle daily cap. Available at Stormglass Depot Outlet from day 28 after installing a Grand Waterworks depot."
 water.oldSupplies,RETRIEVE OLD SUPPLIES
 water.oldRack,RETRIEVE OLD RACK
 water.oldMagazine,RETRIEVE OLD MAGAZINE
@@ -3147,7 +3147,7 @@ water.cleanWater,"High Quality or Pure Water · {0} mL water, at least 99% pure 
 water.recipeInfo,Uses {0} mL of clean water and the matching empty container. Your bottle is filled and returned; cans keep their size and condition. No power. Requires one matching {1} concentrate.
 water.emptyGlass,Empty {0} (filled and returned)
 water.emptyCan,Empty {0}
-water.recipePage,"Manual Bottling Kit (reusable)\n1 empty 750 mL glass bottle or empty can (350 / 500 mL)\nWater to fill it, at least 99% pure\n1 {0} Concentrate\n\nUse a crafting table with this handbook and the supplies. No power needed. The kit, jug and book remain; the finished drink keeps the source mixture. Bottles pour as usual. Open a can into another container to recover the same size empty can."
+water.recipePage,"Manual Bottling Kit (reusable)\n1 empty 750 mL glass bottle or empty can (350 / 500 mL)\nWater to fill it, at least 99% pure\n1 {0} Concentrate\n\nPut the supplies in the kit's INPUT and pick this drink. No power needed. The kit, jug and book remain; the finished drink keeps the source mixture. Bottles pour as usual. Open a can into another container to recover the same size empty can."
 water.750,{0} · 750 mL
 water.source,Neon Undertow | Waterworks Division
 water.kit,Manual Bottling Kit
@@ -3180,12 +3180,12 @@ station.usedCaseInfo,Twenty regular cans and ten tall ones. Some have seen bette
 station.usedContents,RECLAIMED CANS
 station.sodaCase,Fizzworks Starter Supply Case
 station.galleyCase,Dockside Galley Supply Case
-station.sodaCaseInfo,"Three syrups, six cans and six glass bottles. A first run for the soda line."
-station.galleyCaseInfo,"A galley delivery with flour, sugar, tins, produce, dairy, meat and fish."
+station.sodaCaseInfo,"Three syrups, six cans and six glass bottles. A first run for the soda line. Buy the Fizzworks Soda Canner at Stormglass Depot Outlet after hours."
+station.galleyCaseInfo,"A galley delivery with flour, sugar, tins, produce, dairy, meat and fish. Buy the Dockside Production Galley at Stormglass Depot Outlet after hours."
 station.sodaStation,Fizzworks Soda Canner
 station.kitchenStation,Dockside Production Galley
-station.chooseRecipe,CHOOSE RECIPE
-station.makeOne,MAKE ONE BATCH
+station.chooseRecipe,Choose
+station.makeOne,Make batch
 station.autoOn,AUTO: ON
 station.autoPaused,AUTO: PAUSED
 station.checkCans,CHECK INPUT CANS
@@ -3194,8 +3194,18 @@ station.inputOrder,CANS: input order
 station.bestFirst,Best-condition cans first
 station.controlRack,CONTROL RACK
 station.production,PRODUCTION
-station.upgrades,UPGRADES
+station.upgrades,Modules
 station.recipe,RECIPE
+station.card.recipe,Recipe {0} / {1}
+station.card.needs,Required Materials:
+station.card.water,Water
+station.card.power,Power
+station.card.night,Last night
+station.card.tools,Required Tools:
+station.autoRun,Run each night
+station.bestCans,Best cans first
+station.onlyCraftable,Craftable only
+kitchen.counter.cookButton,Cook
 station.noWater,No water
 station.needsBook,Add the recipe book to INPUT.
 station.needsFizz,Place the Fizzworks Recipe Book in INPUT.
@@ -3282,8 +3292,8 @@ kitchen.book.ownCanner,Owned Fizzworks Canner
 kitchen.book.ownGalley,Owned Dockside Galley
 kitchen.book.howPrint,"Use the matching pattern chip in the ordinary printer. Fit Metal Printing and CNC modules, this ingot and a charged cell. The native printer controls progress and power. Pattern chips are sold at Undertow Engineering."
 kitchen.book.howProduce,Keep this book in the machine INPUT to select and run this recipe. Water containers and cells remain reusable.
-kitchen.book.sodaIntro,"Activate to read. Put this book and the listed supplies in a crafting table, kitchen worktop or production machine. Requires an owned Fizzworks Canner. Fresh-fruit batches make four cans; concentrate recipes remain available. Moldy fruit is unsuitable. Books, tools, containers and cells are retained."
-kitchen.book.productionIntro,"Activate to read. Put this book and the listed supplies in a crafting table, kitchen worktop or production machine. Concentrates, flour and sweetener use the Galley. Food requires physical instruments and cooking technique. Metal packaging uses the native printer, matching chip, Metal Printing and CNC modules and an ingot. Books, tools, containers and cells are retained."
+kitchen.book.sodaIntro,"Activate to read. Put this book and the listed supplies in the INPUT of the Fizzworks Soda Canner, then pick a recipe. Fresh-fruit batches make four cans; concentrate recipes remain available. Moldy fruit is unsuitable. Books, tools, containers and cells are retained."
+kitchen.book.productionIntro,"Activate to read. Put this book and the listed supplies in the INPUT of the galley or the kitchen worktop, then pick a recipe. Concentrates, flour and sweetener use the galley. Metal packaging uses the native printer, its chip, Metal Printing and CNC modules and an ingot. Books, tools, containers and cells are retained."
 kitchen.book.printCount,"Print {0} empty containers from one ingot. Fit Metal Printing and CNC modules, the pattern chip and a charged cell. Native printer progress and power costs apply."
 kitchen.book.batch,"{0}. Makes {1}. {2} mL water and {3} power. Book, station, cell and liquid container are retained."
 kitchen.book.yield,Makes {0}.
@@ -3325,7 +3335,7 @@ room.storageName,Back room storage
 room.cabinet,CABINET
 room.rack,STORAGE RACK
 room.equipment,FITTED EQUIPMENT
-room.counter,RECIPE COUNTER
+room.counter,KITCHEN WORKTOP
 room.title,BACK ROOM · CABINET / RACK / EQUIPMENT
 room.return,Return to your shop first.
 room.gone,That equipment is no longer available.
@@ -3407,7 +3417,7 @@ depot.rack,RACK {0}
 depot.page,PAGE {0}
 depot.storage,STORAGE {0}
 depot.wallTitle,WATERWORKS · {0} STORAGE CELLS
-depot.installed,{0} installed in the back room. Open BACK > to reach its machine docks and storage.
+depot.installed,{0} installed in the back room. Click the arrow at the bottom right of the shop to reach its machine docks and storage.
 liquid.unknownOld,Includes an older sealed batch with unrecorded source details.
 liquid.split,Split this old stack into individual bottles before pouring.
 liquid.stirred,Stirred
@@ -3536,23 +3546,23 @@ animal.supplier.intro,I brought stock from the breeders and a few supplies. Pick
 cellar.native.singleFruit,Use one fruit variety per batch of Undertow wine.
 cellar.native.finished,"A 750 mL bottle of fruit wine, {0}% ABV. Decant into Undertow glass for the matching label."
 cellar.native.instructions,"You can also make fruit wine in a vanilla wine bottle. Fill it with 750 mL of water, add one fruit variety and start fermentation. Yeast and ingredient quality work as in the base game. When finished, pour into an empty Undertow glass bottle for the matching drink label. Bloomberry keeps its vanilla recipe. Fruit spirits still use the Cellar Bench."
-kitchen.simple.instructions,"Use {0} with the listed ingredients, water and power. Cook on the normal crafting table with this book, or choose a ready recipe on the kitchen worktop."
+kitchen.simple.instructions,"Use {0} with the listed ingredients, water and power. With this book in the kitchen worktop's INPUT, pick this dish in the list."
 kitchen.counter.batteries,BATTERIES
 book.reader.page,Page {0}
 book.reader.index,Index
 book.reader.entry,Page {0}: {1}
 book.tutorial.firstnight.title,"Your first evening"
-book.tutorial.firstnight.body,"After closing, visit Quayside Canning Co-op using the travel menu. Buy a chopping board from KITCHEN + BOOKS, plus an apple and a cabbage from PRODUCE.\n\nBack home, open BACK >, then KITCHEN above the worktop. Follow First meal in this cubby's Workshop Fieldbook. You do not need to fit a station just to open the kitchen. Keep your guides: their index lets you return to any lesson."
+book.tutorial.firstnight.body,"After closing, visit Quayside Canning Co-op using the travel menu. Buy a chopping board from KITCHEN + BOOKS, plus an apple and a cabbage from PRODUCE.\n\nBack home, click the arrow at the bottom right of the shop, then click the worktop. Follow First meal in this cubby's Workshop Fieldbook. You do not need to fit a station just to open the kitchen. Keep your guides: their index lets you return to any lesson."
 book.tutorial.firstmeal.title,"First meal: Apple Slaw"
 book.tutorial.firstmeal.body,"Fit a chopping board in its top kitchen slot. Put one apple and one cabbage in INPUT, then open COOK. Click Apple Slaw and collect it from OUTPUT. This starter recipe needs no water, battery or heating plate.\n\nFor other meals, read their recipe book. Fit the matching tool; supply any listed water and power. A heating plate or galley provides heat for a pan or saucepan, but does not replace the tool. A fridge needs its own battery."
 book.tutorial.bottling.title,"Your first bottled drink"
 book.tutorial.bottling.body,"Open the Manual Bottling Kit. Put the Undertow Bottling Handbook, matching concentrate, water at 99% purity or higher and an empty 350/500 mL can or 750 mL glass bottle in INPUT.\n\nChoose a ready drink in the middle. It uses one concentrate, one container and that container's capacity in water. Collect the labelled drink from OUTPUT. The kit needs no power. Plastic water bottles are not soda packaging. Keep space for the result."
 book.tutorial.growing.title,"Plant your first crop"
-book.tutorial.growing.body,"These crops are genetically modified compact varieties bred for standard hydroponic growers. Even the fruit trees stay small.\n\nBuy fruit or vegetable seed assortments from the Co-op's PRODUCE shelf. Open a packet and put one seed in the vanilla hydroponic unit's seed slot. Add a charged battery and a water container; use the plant analyser to check the crop's nutrient needs.\n\nGrowth uses the normal machine cycles, water and plant-health rules. Collect produce and returned seeds from OUTPUT. Healthy crops can yield large and huge produce, just like Nutrifruit. Keep seeds to plant the next generation."
+book.tutorial.growing.body,"These crops are genetically modified compact varieties bred for standard hydroponic growers. Even the fruit trees stay small.\n\nBuy fruit or vegetable seed assortments from the Co-op's PRODUCE shelf. Open a packet and put one seed in the vanilla hydroponic unit's seed slot. Add a charged battery and a water container; use the plant analyser to check the crop's nutrient needs.\n\nGrowth uses the normal machine cycles, water and plant-health rules. Collect produce and returned seeds from OUTPUT. Healthy crops can yield large and huge produce, just like Nutrifruit. Keep seeds to plant the next generation.\n\nThe SEEDS shelf sells packs of three seeds of one crop. Select SEEDS again to switch between fruits and vegetables."
 book.tutorial.genetics.title,"Develop your own strains"
 book.tutorial.genetics.body,"Our crop seeds use the vanilla plant DNA system. Read the DNA Manipulator's instruction note. Put a compatible written trait disk in TRAIT DISK, a seed in TARGET and supply power. Check the operation and success chance before starting.\n\nFor extraction, use the BLANK DISK slot and read the displayed risks. Successful edits can change growth, yield, water demand or produce properties. Returned seeds inherit the parent's traits. Keep a spare strain: edits can fail, and incompatible traits remain restricted."
 book.tutorial.stuck.title,"If the kitchen seems stuck"
-book.tutorial.stuck.body,"Open KITCHEN above the back-room worktop and select COOK. The cabinet's FITTED STATION slot is not the cooking tool selector. Fit tools in the top slots; put ingredients in INPUT and leave OUTPUT space.\n\nNo recipes? Check the exact ingredients, tool, water, power and heating or chilling requirements. TOOL: Chopping Board with heat/work controls is the older interface, retained for an unfinished saved batch. Finish that batch to return to ready recipes. If still stuck, report your version and a full-window screenshot."
+book.tutorial.stuck.body,"Click the back-room worktop and select COOK. The cabinet's FITTED STATION slot is not the cooking tool selector. Fit tools in the top slots; put ingredients in INPUT and leave OUTPUT space.\n\nNo recipes? Check the exact ingredients, tool, water, power and heating or chilling requirements. TOOL: Chopping Board with heat/work controls is the older interface, retained for an unfinished saved batch. Finish that batch to return to ready recipes. If still stuck, report your version and a full-window screenshot."
 kitchen.taste.R001,Thin shreds of cabbage and tart apple. Best while they still crunch.
 kitchen.taste.R002,A sharp dressing of lemon and lime. A spoonful wakes up a salad.
 kitchen.taste.R003,"Chopped tomato and onion, sitting in their own juice."
@@ -3909,3 +3919,203 @@ kitchen.book.note.production_handbook,Workshop recipes for galley supplies and p
 kitchen.book.note.soda_handbook,The Fizzworks recipe book. Syrup makes a single can. A fresh-fruit batch fills four.
 kitchen.book.note.workshop_handbook,"Syrups, flour and patterns for empty cans. A workshop book with sugar in the binding."
 water.handbook.note,A bottler's handbook for three house drinks. Keep it with the hand press and supplies.
+room.hint.front,Back to the front shop
+room.hint.cabinet,Store stock and supplies in the cabinet
+room.hint.rack,Keep your crates and boxes on the rack
+room.hint.fridge,Chill ingredients and dishes in the fridge
+room.hint.galley,"Make syrups, flour and sweetener in the galley"
+room.hint.canner,Can and bottle sodas with the canner
+room.hint.waterworks,Run your water machines from the wall depot
+room.tag.front,Front Shop
+room.tag.cabinet,Cabinet
+room.tag.rack,Storage Rack
+room.tag.fridge,Fridge
+room.tag.galley,Galley
+room.tag.canner,Canner
+room.tag.waterworks,Waterworks
+room.tag.kitchen,Kitchen Worktop
+room.tag.arrow,Back Room
+room.tuto.front,Return to the Front Shop
+room.tuto.cabinet,Store Stock in the Cabinet
+room.tuto.rack,Keep Crates on the Storage Rack
+room.tuto.fridge,Chill Ingredients in the Fridge
+room.tuto.galley,Make Syrups and Flour in the Galley
+room.tuto.canner,Can and Bottle Sodas with the Canner
+room.tuto.waterworks,Run Water Machines from the Waterworks
+room.tuto.kitchen,Cook on the Kitchen Worktop
+room.tuto.arrow,Go to the Back Room
+room.hint.kitchen,Cook with your tools and recipe books
+room.hint.arrow,Go to your back room
+room.machine.gsx_refurb_bench,Refurbishing Bench
+room.service.moveGunsmith,"Move your owned {0} into this bay, keeping its contents. Security inspections still search this bay. Dismantle the current station before fitting another."
+room.tag.gunsmith_printer,3D Printer
+room.tag.gunsmith_bench,Refurbishing Bench
+room.hint.gunsmith_printer,Print items overnight with the 3D printer
+room.hint.gunsmith_bench,Refurbish your guns overnight on the bench
+room.tuto.gunsmith_printer,Print Items with the 3D Printer
+room.tuto.gunsmith_bench,Refurbish Guns on the Bench
+room.arrow.busy,You can't leave the counter in the middle of a conversation!
+visitor.faction.arms,"The fleet is short on boarding gear. Guns, blades, ammunition: I'll take whatever you can spare."
+visitor.faction.armsVex,"Vex won't sell to the fleet, so I buy where I can. Guns, blades, ammunition: I'll take whatever you can spare."
+shop.shelf.goods,Shop goods
+shop.shelf.cassettes,Cassettes
+shop.shelf.seeds,SEEDS
+crop.nextVegetable,Fruit seeds\nNext: vegetables
+crop.nextFruit,Vegetable seeds\nNext: fruit
+crop.singlePacket,{0} seed pack
+visitor.velvet_02.personal,"My mother sings the last verse in Dutch. Even on a noisy night, the whole house goes quiet for it."
+visitor.velvet_12.personal,My sister sent me our gran's Dutch recipe book. There's a tram ticket marking the soup I used to ask for.
+visitor.velvet_06.personal,"This braid takes longer than my set. If the clasp goes again, I'm borrowing a clip from the lighting crew."
+visitor.velvet_33.personal,Someone put me on door duty because they liked my jacket. Now I get the best seat for the first song.
+visitor.velvet_01.opening,My shoes are under your counter. Sorry. I took them off and now I can't face putting them back on.
+visitor.velvet_01.turn,"A client called it Brindle Fever. All I know is I'm shivering, and the clinic opens at dawn."
+visitor.velvet_01.close,Any of those plain little medicine bottles left? I've got my own money. Could I sit here while you ring it up?
+visitor.velvet_01.errand,"Two dinners, please. The woman on coat check always says she's eaten. She hasn't."
+visitor.velvet_02.opening,My mother sang the last verse in Dutch tonight. A man by the door knew every word.
+visitor.velvet_02.turn,He stayed after the show to tell her he'd forgotten what his mother's voice sounded like. She sang it again.
+visitor.velvet_02.errand,Got anything soft to eat? I owe my voice a night off.
+visitor.velvet_03.opening,Someone booked two men under the name James Bailey. Neither wanted the table once Security came in.
+visitor.velvet_03.turn,I've got one pencil left and I'm writing people's real names in ink from now on.
+visitor.velvet_03.errand,"Tea for the desk, please. Tomorrow's bookings can wait for the kettle."
+visitor.velvet_04.opening,A client paid me extra to confess something awful. He'd eaten his flatmate's good cheese.
+visitor.velvet_04.turn,Three hours I kept that secret. Now I'm hungry and apparently you know too.
+visitor.velvet_04.errand,"You have any cheese? Yes, I see the irony."
+visitor.velvet_05.opening,Last tram went past with the lights off. I could see the driver eating his sandwich.
+visitor.velvet_05.turn,Part of me wants to complain. The other part wants to know where he got the bread.
+visitor.velvet_05.errand,Something for the walk home. Nothing that needs a fork.
+visitor.velvet_06.opening,I've had six men ask who does my braid. One actually sat down and let me show him.
+visitor.velvet_06.turn,"We missed the opening number. He did the last bit himself, though. Got it dead straight."
+visitor.velvet_06.errand,Dinner for one. I'll take the long way home so the mist doesn't undo my hair.
+visitor.velvet_07.opening,Someone asked me to sing the song my old partner wrote. Haven't touched it in years.
+visitor.velvet_07.turn,I made it through the first verse. The pianist hummed the rest with me.
+visitor.velvet_07.errand,A bottle of water for the pianist too. She saved my neck tonight.
+visitor.velvet_08.opening,We voted to get a stool for the door shift. Then we held a meeting about where to put the stool.
+visitor.velvet_08.turn,I stood through both meetings. You'll forgive me if I lean on this counter.
+visitor.velvet_08.errand,I'm feeding the late shift. Something that splits four ways?
+visitor.velvet_09.opening,Got any change? A customer tipped me a coat button and asked for a receipt.
+visitor.velvet_09.turn,"It's a lovely button. I still have rent, though."
+visitor.velvet_09.errand,Can you hear that squeak? New boots. Everyone hears me coming.
+visitor.velvet_10.opening,I did our stock count by candlelight. It says we need fourteen tins of soup and one tin of soap.
+visitor.velvet_10.turn,I'm fairly sure the cook meant soup. Fairly sure isn't enough. I'll take both.
+visitor.velvet_10.errand,Can I have the dented tin? I'll be opening it in ten minutes anyway.
+visitor.velvet_11.opening,"A regular came in, paid for an hour and asked if we could just sit in silence."
+visitor.velvet_11.turn,"Quietest money I ever made. Best hour of my week, too."
+visitor.velvet_11.errand,Is your fridge humming in B flat? Ours does. I hear it in my sleep.
+visitor.velvet_12.opening,My gran's Dutch soup recipe says to add a handful of onions. You never met my gran. Her hands were enormous.
+visitor.velvet_12.turn,Better give me another onion. I'd like this to taste like home.
+visitor.velvet_12.errand,Can I keep the soup hot here for a minute? My sister's just across the quay.
+visitor.velvet_13.opening,A customer took both our umbrellas by mistake. Came back with three.
+visitor.velvet_13.turn,I put them behind the desk. At this rate we'll be selling them by winter.
+visitor.velvet_13.errand,Anything small enough for this pocket? The other one's full of keys.
+visitor.velvet_14.opening,Three encores in heels. People call it talent. My toes have a different word for it.
+visitor.velvet_14.turn,I gave the bouquet to the lighting tech. He's the one who found my heel in the dark.
+visitor.velvet_14.errand,Could you tie the parcel? My nails are still wet.
+visitor.velvet_15.opening,A client swears he's fine and now half the night's gossip is about Brindle Fever.
+visitor.velvet_15.turn,Everybody's a doctor till somebody asks them what time the clinic opens.
+visitor.velvet_15.close,I've had enough advice tonight. A sealed drink and something to eat will do until I get seen.
+visitor.velvet_15.errand,The sign says open. Please tell me that includes the till.
+visitor.velvet_16.opening,"Had a client ask if my real name came with the hour. My dear, the tailor who lets out these cuffs has only just earned it."
+visitor.velvet_16.turn,"He laughed. We played cards. Turns out he's been introducing himself with a made-up name, too."
+visitor.velvet_16.errand,Got a spare minute? I want to finish this drink while it's cold.
+visitor.velvet_17.opening,You remember a tune differently after you sing it to an empty room.
+visitor.velvet_17.turn,The cleaner clapped. She said I shouldn't have to pack my own applause away with the mic.
+visitor.velvet_17.errand,Honey for my tea if you've got it. We're rehearsing the quiet songs.
+visitor.velvet_18.opening,I went in to ask for a raise. Came out with three people's rota changes and a broken stapler.
+visitor.velvet_18.turn,I'm going back after lunch. Would you mind writing 'raise' on the bag?
+visitor.velvet_18.errand,A sandwich I can eat one-handed. The other hand's keeping this paperwork together.
+visitor.velvet_19.opening,Somebody left an engagement ring in the cloakroom. Three people have described it perfectly.
+visitor.velvet_19.turn,I'm asking them what coat it was in. Funny how nobody remembers the coat.
+visitor.velvet_19.errand,Have you seen a coat ticket with a little heart on it? Worth more than my lunch today.
+visitor.velvet_20.opening,I took the long way round. They painted over the height marks on my old doorframe.
+visitor.velvet_20.turn,My brother cheated on the top one. Stood on a book. I'd quite like that silly mark back.
+visitor.velvet_20.errand,I'll take the smaller tin. It fits beside my brother's things.
+visitor.velvet_21.opening,We hung a sign saying the house cat isn't staff. First person in asked for the cat by name.
+visitor.velvet_21.turn,I suppose she has regulars. Still hasn't covered a shift for me.
+visitor.velvet_21.errand,"Fish for the cat, something cheaper for me. Don't look at me like that."
+visitor.velvet_22.opening,Someone requested a love song and spent all three verses reading a repair invoice.
+visitor.velvet_22.turn,At the end he kissed the paper. Apparently Joe Wild had knocked a zero off.
+visitor.velvet_22.errand,Something for the drummer. He's been paid entirely in applause again.
+visitor.velvet_23.opening,I'm holding a table for two people who haven't spoken in eight years.
+visitor.velvet_23.turn,Set it for four. Their elbows need somewhere to go while they figure out what to say.
+visitor.velvet_23.errand,A small box of tea. I can always find two cups.
+visitor.velvet_24.opening,I tried telling a joke between numbers. The speaker cut out right before the punch line.
+visitor.velvet_24.turn,Biggest laugh I've ever had. I'm taking the sound man to dinner.
+visitor.velvet_24.errand,Got something for two? One of us owes the other a laugh.
+visitor.velvet_25.opening,I had my eyelids painted gold this evening. It took an hour. I fell asleep before anyone saw them.
+visitor.velvet_25.turn,The others let me sleep. Kept saying my act was very modern.
+visitor.velvet_25.errand,Anything for breakfast? I've slept straight through dinner.
+visitor.velvet_26.opening,I promised a new starter I'd wait until their tram arrived. We watched three go by.
+visitor.velvet_26.turn,"Fourth one was nearly empty. That was the one they could face. Home now, thank goodness."
+visitor.velvet_26.errand,Two waters. I don't like sending anyone to the stop empty-handed.
+visitor.velvet_27.opening,My father never liked my stage name. He used it on a letter for the first time today.
+visitor.velvet_27.turn,I'm going to frame the envelope. The letter's mostly about his drain.
+visitor.velvet_27.errand,Have a dry bag? There's a letter in my pocket I can't let get wet.
+visitor.velvet_28.opening,One of our lads turned a booking down. The client wanted his money back and an apology from the lad himself.
+visitor.velvet_28.turn,I counted out his change. He can book an hour here. He can't buy a yes.
+visitor.velvet_28.errand,Something to share at the rota meeting. Sweet if it's bad news.
+visitor.velvet_29.opening,Someone asked if the flower in my hair was for sale. I said it was my uniform.
+visitor.velvet_29.turn,He offered to buy my uniform. So I sold him an apron from lost property.
+visitor.velvet_29.errand,Is there a mirror behind the till? My braid caught on the tram door.
+visitor.velvet_30.opening,I need a tin with a lid that fits. Last night the cook and I sorted thirty lids and found one pair.
+visitor.velvet_30.turn,We stood there clapping like we'd just delivered a baby.
+visitor.velvet_30.errand,"Two identical tins. I am begging you, identical."
+visitor.velvet_31.opening,I save the last dance for the people stacking the chairs. Nobody asks them for one.
+visitor.velvet_31.turn,Last night the dishwasher swept me clean off my feet. Best shoes in the building.
+visitor.velvet_31.errand,A cold drink for the dishwasher. He's earned it.
+visitor.velvet_32.opening,My braid caught a sequin curtain as I walked out. Half the stage set followed me down the quay.
+visitor.velvet_32.turn,"I picked up every piece. If it sparkles in your doorway, that's the last one."
+visitor.velvet_32.errand,Has glitter got into the till? Entirely possible that's my fault.
+visitor.velvet_33.opening,Dr. Jackson keeps a clipboard by the counter. I tried doing that at work.
+visitor.velvet_33.turn,Within a night somebody had booked the clipboard itself for two private dances.
+visitor.velvet_33.errand,Dinner to go. Apparently even office supplies get a break before I do.
+visitor.velvet_34.opening,Someone called me brave for working nights. I said my mum worked mornings at the docks.
+visitor.velvet_34.turn,Try waking her at four. That's brave.
+visitor.velvet_34.errand,I'll take two rolls. Mum eats the crusty one on the walk in.
+visitor.velvet_35.opening,A client complained the room was too dark. He was still wearing his sunglasses.
+visitor.velvet_35.turn,I let him discover it himself. Takes restraint. Put that on my payslip.
+visitor.velvet_35.errand,Just water. I've done enough smiling for tips tonight.
+visitor.velvet_36.opening,One of the new girls called in sick and said sorry six times. I used to make that call from this very corner.
+visitor.velvet_36.turn,I told her the rota's my problem. A person ought to get ill without doing sums.
+visitor.velvet_36.errand,"Soup that reheats well, please. I'm leaving it by a friend's door."
+visitor.velvet_37.opening,I used to think the hard part was singing the high note. It's remembering who's missing from the front row.
+visitor.velvet_37.turn,Tonight somebody sat in his chair. I got all the way through.
+visitor.velvet_37.errand,Plain water. The first note tomorrow needs to be mine.
+visitor.velvet_38.opening,"I'm collecting for an emergency cab fund. One credit each, whenever there's a good night."
+visitor.velvet_38.turn,Last week it got a porter home to see his baby before she fell asleep. Worth the jar space.
+visitor.velvet_38.errand,Can you break a ten? The little coins are for a fare home.
+visitor.velvet_39.opening,A woman asked me to wake her before closing. Didn't want company. She wanted one safe hour of sleep.
+visitor.velvet_39.turn,I sat by the door and kept the music down. She tipped me with a peppermint.
+visitor.velvet_39.errand,Something minty for the reception desk. I want to pass one on.
+visitor.velvet_40.opening,The delivery slip says six cases. We got six individual lemons wearing paper hats.
+visitor.velvet_40.turn,They're lovely hats. Still five cases and a bit short.
+visitor.velvet_40.errand,How many on a full tray? I count everything twice these days.
+visitor.velvet_41.opening,I spent an hour listening to a regular rehearse a breakup. Then he rang his landlord.
+visitor.velvet_41.turn,Turns out the great love of his life was a flat with working heat.
+visitor.velvet_41.errand,"A hot meal, if you have one. My own flat isn't exactly a love story."
+visitor.velvet_42.opening,I found an old cassette with my first set on it. My voice shakes so badly you can hear my earring hit the mic.
+visitor.velvet_42.turn,I've kept it. Some nights I forget how hard it was just to stand there.
+visitor.velvet_42.errand,Something for the walk home. I've got a tape to listen to.
+visitor.velvet_43.opening,I use a little star next to quiet bookings. Last night one of the regulars drew one beside my name.
+visitor.velvet_43.turn,Nobody disturbed my break. I want to do that for somebody else.
+visitor.velvet_43.errand,A meal for the desk. Today I'm taking the whole break.
+visitor.velvet_44.opening,First night at the window in a new suit. A client said I looked just like his ex-husband.
+visitor.velvet_44.turn,I've met his ex-husband. I'm keeping the suit.
+visitor.velvet_44.errand,Need a drink that won't stain a white cuff. Trust me on this.
+visitor.velvet_45.opening,I know the posters say to see Dr. Jackson. I know where his desk is. I'd go now if the clinic were open.
+visitor.velvet_45.turn,"What I can do tonight is buy a drink, sit still for a bit, and stop pretending I'm fine."
+visitor.velvet_45.errand,"A little water for the tram, please. It's a long way home when you're tired."
+visitor.velvet_46.opening,We ran out of dressing-room hooks. I spent half my shift introducing coats to chairs like guests at a wedding.
+visitor.velvet_46.turn,"Your velvet sleeve, madam, has been seated beside the till."
+visitor.velvet_46.errand,Anything hot left? I finally got a chair of my own.
+visitor.velvet_47.opening,I sang a birthday song for a man who'd come in on his own. Quiet little thing.
+visitor.velvet_47.turn,He said it was the first time anyone got his name right. I wrote it on next year's calendar.
+visitor.velvet_47.errand,"One sweet thing for a birthday, please. I'll sort the candle."
+visitor.velvet_48.opening,I sign the night crew out in pairs. One of them wrote me in on the last line tonight.
+visitor.velvet_48.turn,"It didn't occur to me anyone was counting me, too."
+visitor.velvet_48.errand,Two drinks with lids. We're catching the same tram.
+visitor.velvet_49.opening,"Someone asked what a man like me was doing with a flower in his hair. I said, 'Keeping it watered.'"
+visitor.velvet_49.turn,He bought me a glass of water. That might be the best tip I've ever earned.
+visitor.velvet_49.errand,Bunch of flowers costs more than lunch. Today I'm having lunch.
+visitor.velvet_50.opening,I bring food back in everyone's order of hunger. The new cook keeps putting himself last.
+visitor.velvet_50.turn,Tonight I'm writing his name on the first bowl. With a marker. Let them argue with that.
+visitor.velvet_50.errand,Something filling that travels well. I've got people waiting.

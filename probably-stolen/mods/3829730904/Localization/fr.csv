@@ -64,9 +64,9 @@ be_jeanne_moreau_fruit_name,Jeanne Moreau
 be_jeanne_moreau_fruit_description,Deux fleurs réunies suffisent à faire une bouteille.\n— Une fleur plantée par Lumos.
 pulp_name,Pulpe de fruit
 pulp_named,Pulpe : {0}
-pulp_description,Obtenue en concentrant quatre fruits identiques ; deux portions de pulpe donnent quatre bouteilles de vin.
+pulp_description,Obtenue en concentrant quatre fruits identiques ; deux portions de pulpe donnent quatre bouteilles de vin. La pulpe conserve les points de qualité des fruits pour la vinification par lots dans la cuve de vinification xuxu.
 concentrator_name,Concentrateur de pulpe
-concentrator_description,"Quatre fruits identiques donnent une portion de pulpe. Le pressage manuel ne consomme pas d'énergie ; avec une batterie, le pressage est automatique, à raison de 8 unités par portion."
+concentrator_description,"Quatre fruits identiques donnent une portion de pulpe. Le pressage manuel ne consomme pas d'énergie ; avec une batterie, le pressage est automatique, à raison de 8 unités par portion. Un fruit géant placé dans son logement donne aussi une portion de pulpe correspondante. La pulpe conserve les points de qualité des fruits pour la vinification par lots dans la cuve de vinification xuxu. Chaque bouteille du lot reçoit le même bonus de qualité des fruits. Un arrondi au supérieur peut faire monter le vin d'un rang."
 concentrator_input,Zone de fruits
 concentrator_output,Zone de pulpe
 concentrator_button,Lancer le pressage
@@ -134,7 +134,7 @@ be_mijin_wanzhao_wine_name,Coucher de soleil miel et or
 be_jieban_yuxi_wine_name,Dernier souffle des pétales purs
 wine_port_description,Vin produit dans une cuve de vinification.
 barrel_name,Cuve de vinification xuxu
-barrel_description,"Deux portions de pulpe, quatre bouteilles vides, de la levure et 3000 ml d'eau donnent quatre bouteilles de vin."
+barrel_description,"Deux portions de pulpe, quatre bouteilles vides, de la levure et 3000 ml d'eau donnent quatre bouteilles de vin. La cuve répartit les points des deux portions entre quatre bouteilles et arrondit le résultat. Le bonus des fruits est identique pour chaque bouteille, et un arrondi au supérieur peut faire monter le vin d'un rang."
 barrel_pulp,Zone de pulpe
 barrel_bottles,Zone des bouteilles vides
 barrel_yeast,Zone de levure
@@ -243,13 +243,13 @@ be_void_plum_seed_description,"Un noyau noir, lourd comme une phrase inachevée.
 be_stardust_berry_seed_name,Graines de baie de poussière d'étoiles
 be_stardust_berry_seed_description,"Une graine d'argent, qui ressemble de près à une étoile minuscule. Elle pousse sur la paroi pressurisée, dehors, près de la chambre froide, là où les radiations sont plus dures et la lumière plus seule. Placez-la dans l'incubateur à graines : elle donnera un fruit en une nuit."
 be_basic_cert_name,Certificat de vinification débutant
-be_basic_cert_description,"Un certificat joliment encadré. Il permet à l'incubateur à graines de faire éclore cinq graines par nuit, et Quarante-Sept apporte sept graines. La probabilité « lointaine » de Quarante-Sept est fixée à 15 % ; « nostalgie » monte de 3 % à 8 %, « lueur » de 1 % à 5 %, le reste revenant aux graines ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_basic_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 10% / 60% / 30%. Un certificat joliment encadré. Il permet à l'incubateur à graines de faire éclore cinq graines par nuit, et Quarante-Sept apporte sept graines. La probabilité « lointaine » de Quarante-Sept est fixée à 15 % ; « nostalgie » monte de 3 % à 8 %, « lueur » de 1 % à 5 %, le reste revenant aux graines ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
 be_mid_cert_name,Certificat de vinification intermédiaire
-be_mid_cert_description,"Un certificat aux matériaux plus nobles. Il permet à l'incubateur de faire éclore sept graines par nuit, et Quarante-Sept en apporte neuf. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,3 après le bonus cumulatif : 3,9 %–10,4 % et 1,3 %–6,5 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_mid_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 5% / 60% / 35%. Un certificat aux matériaux plus nobles. Il permet à l'incubateur de faire éclore sept graines par nuit, et Quarante-Sept en apporte neuf. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,3 après le bonus cumulatif : 3,9 %–10,4 % et 1,3 %–6,5 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
 be_high_cert_name,Certificat de vinification supérieur
-be_high_cert_description,"Un certificat bordé d'un fil d'or sombre. Il permet à l'incubateur de faire éclore dix-huit graines par nuit, et Quarante-Sept en apporte treize. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,6 après le bonus cumulatif : 4,8 %–12,8 % et 1,6 %–8 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. C'est le dernier grade signé de la main de xuxu. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_high_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 0% / 30% / 70%. Un certificat bordé d'un fil d'or sombre. Il permet à l'incubateur de faire éclore dix-huit graines par nuit, et Quarante-Sept en apporte treize. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,6 après le bonus cumulatif : 4,8 %–12,8 % et 1,6 %–8 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. C'est le dernier grade signé de la main de xuxu. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
 incubator_name,Incubateur à graines
-incubator_description,"Placez des graines de ce mod ou des graines vanilla et une batterie chargée. Chaque graine de ce mod donne un fruit ; une graine vanilla donne deux cultures correspondantes, une graine de plante aquatique deux filtres vanilla. Chaque nuit réussie consomme 12 kJ pour toute la machine ; si le bac est vide, si le produit fini ne tient pas ou si l'énergie manque, les graines restent et aucune énergie superflue n'est consommée. Un certificat de vinification augmente le nombre de graines traitées par nuit."
+incubator_description,"Placez des graines de ce mod ou des graines vanilla et une batterie chargée. Chaque graine de ce mod donne un fruit ; une graine vanilla donne deux cultures correspondantes, une graine de plante aquatique deux filtres vanilla. Chaque nuit réussie consomme 12 kJ pour toute la machine ; si le bac est vide, si le produit fini ne tient pas ou si l'énergie manque, les graines restent et aucune énergie superflue n'est consommée. Un certificat de vinification augmente le nombre de graines traitées par nuit. Chaque fruit du mod ou baie luminescente produit ici reçoit −1, 1 ou 2 points de qualité. Les certificats supérieurs améliorent les chances."
 incubator_input,Entrée des graines
 incubator_output,Sortie des produits
 incubator_wait,Une nuit réussie consomme 12 d'énergie ; la limite est calculée machine par machine.
@@ -407,15 +407,15 @@ be_brewing_manual_description,Le manuel laissé par xuxu. Ouvrez-le et vous verr
 be_liunian_ager_guide_title,Guide d'utilisation : Liunian
 be_liunian_ager_guide_body,"Placez du vin fini authentique dans le stockage et une batterie chargée à gauche. Chaque nuit active, le vin vieillit et est refroidi. Sans vin ou sans énergie, aucun vieillissement machine.\n\nModules : 6×20 ; stockage : 20×20. Jours ajoutés = 1 + partie entière (qualité ÷ 125). Qualité 125 : 2 jours ; 1000 : 9 jours. Le vieillissement naturel du jeu se calcule à part.\n\nSans module : 24 kJ par nuit active pour toute la machine, quel que soit le nombre de bouteilles. La qualité seule ne majore pas la consommation par tranche de 125. Les modules ajoutent leurs effets de consommation ou d'économie : +100 % représente +24 kJ sur la base de 24 kJ. Performance et économie peuvent réduire le coût ; arrondi selon le jeu, minimum 1 kJ. Consultez les paramètres de la machine et le coût actuel ci-dessous."
 be_fruit_pulp_concentrator_guide_title,Guide d'utilisation : concentrateur de pulpe
-be_fruit_pulp_concentrator_guide_body,"Placez 4 fruits identiques dans la zone d'entrée pour obtenir 1 portion de pulpe correspondante. Les fruits concentrables de ce mod et les fruits à vin vanilla sont acceptés ; des fruits différents ne peuvent pas être mélangés dans une même portion. La zone de sortie doit pouvoir accueillir la pulpe.\n\nLe bouton de pressage manuel ne consomme pas d'énergie : on peut l'utiliser sans batterie. Avec une batterie chargée, la machine tente automatiquement le pressage à l'arrivée des matériaux ou dès que la sortie se libère, à raison de 8 kJ par portion. Si les matériaux, la place ou l'énergie manquent, la production ne s'achève pas.\n\nOn peut la relier au cuve de vinification xuxu par la ligne de transfert, dans n'importe quel ordre. La pulpe alimente automatiquement la zone de pulpe du fût connecté ; si la zone cible est pleine, elle reste dans la machine et partira quand la place se libère."
+be_fruit_pulp_concentrator_guide_body,"Placez 4 fruits identiques dans la zone d'entrée pour obtenir 1 portion de pulpe correspondante. Les fruits concentrables de ce mod et les fruits à vin vanilla sont acceptés ; des fruits différents ne peuvent pas être mélangés dans une même portion. La zone de sortie doit pouvoir accueillir la pulpe. Un fruit géant placé dans son logement donne aussi une portion de pulpe correspondante.\n\nLa pulpe conserve les points de qualité des fruits pour la vinification par lots dans la cuve de vinification xuxu. Chaque bouteille du lot reçoit le même bonus de qualité des fruits. Un arrondi au supérieur peut faire monter le vin d'un rang.\n\nLe bouton de pressage manuel ne consomme pas d'énergie : on peut l'utiliser sans batterie. Avec une batterie chargée, la machine tente automatiquement le pressage à l'arrivée des matériaux ou dès que la sortie se libère, à raison de 8 kJ par portion. Si les matériaux, la place ou l'énergie manquent, la production ne s'achève pas.\n\nOn peut la relier au cuve de vinification xuxu par la ligne de transfert, dans n'importe quel ordre. La pulpe alimente automatiquement la zone de pulpe du fût connecté ; si la zone cible est pleine, elle reste dans la machine et partira quand la place se libère."
 be_large_brewing_barrel_guide_title,Guide d'utilisation : cuve de vinification xuxu
-be_large_brewing_barrel_guide_body,"Ajoutez 2 portions de pulpe, des bouteilles vides du jeu, de la levure et assez d'eau, puis lancez la fermentation. Une bouteille coûte 750 ml d'eau et 1 usage de chaque pulpe. Une pulpe neuve a 4 usages : jusqu'à 4 bouteilles par lot et 3 L d'eau. Les fruits fixent la recette ; la levure suit les règles du jeu.\n\nLe vin fini rejoint automatiquement la sortie. Si elle est pleine, les bouteilles restent en attente. Videz les produits du lot précédent avant de relancer. Toxicité et euphorie de l'eau conservées. Le fût n'accepte pas de batterie.\n\nLa ligne de transfert relie concentrateur, imprimante à bouteilles ou récipient d'eau au fût, sans ordre imposé. L'eau manquante, la pulpe et les bouteilles sont fournies selon les places libres. Le bouton d'impression du fût utilise l'imprimante reliée et sa batterie : 4 bouteilles pour 20 kJ. Aucune impression sans imprimante."
+be_large_brewing_barrel_guide_body,"Ajoutez 2 portions de pulpe, des bouteilles vides du jeu, de la levure et assez d'eau, puis lancez la fermentation. Une bouteille coûte 750 ml d'eau et 1 usage de chaque pulpe. Une pulpe neuve a 4 usages : jusqu'à 4 bouteilles par lot et 3 L d'eau. Les fruits fixent la recette ; la levure suit les règles du jeu.\n\nAdditionnez les points de qualité des deux portions de pulpe, divisez par 4 et arrondissez à l'entier le plus proche, vers le haut en cas de demi-point. Un total de 10 donne 2,5, soit 3 points de bonus par bouteille. Mélanger des fruits de qualités différentes donne le même bonus de fruit à chaque bouteille. Un arrondi au supérieur peut faire monter le vin d'un rang.\n\nLe vin fini rejoint automatiquement la sortie. Si elle est pleine, les bouteilles restent en attente. Videz les produits du lot précédent avant de relancer. Toxicité et euphorie de l'eau conservées. Le fût n'accepte pas de batterie.\n\nLa ligne de transfert relie concentrateur, imprimante à bouteilles ou récipient d'eau au fût, sans ordre imposé. L'eau manquante, la pulpe et les bouteilles sont fournies selon les places libres. Le bouton d'impression du fût utilise l'imprimante reliée et sa batterie : 4 bouteilles pour 20 kJ. Aucune impression sans imprimante."
 be_wine_printer_guide_title,Guide d'utilisation : imprimante à bouteilles
 be_wine_printer_guide_body,"Insérez une batterie chargée dans le logement d'alimentation et appuyez sur le bouton d'impression : chaque impression consomme 20 kJ et produit 4 bouteilles vides vanilla. La zone de sortie fait 4×4. Si la place ou l'énergie manque, aucune énergie n'est consommée et aucun lot incomplet n'est produit.\n\nOn peut la relier au cuve de vinification xuxu par la ligne de transfert, dans n'importe quel ordre. Les bouteilles vides déjà présentes alimentent automatiquement la zone du fût ; si la cible est pleine, elles restent dans l'imprimante. Le bouton d'impression du fût peut aussi appeler cette imprimante, avec la même batterie et la même consommation par lot. La connexion n'imprime pas indéfiniment sans action."
 be_xuxu_water_bottle_printer_guide_title,Guide d'utilisation : imprimante à gourdes xuxu
 be_xuxu_water_bottle_printer_guide_body,"Insérez une batterie chargée et choisissez le bouton d'impression. Au niveau 1, imprime la petite gourde de 6 L pour 20 kJ ; tous les 6 composants électroniques, le niveau monte : niveau 2 débloque la gourde fine de 12 L (40 kJ), niveau 3 la super gourde de 18 L (60 kJ). Il faut 12 composants électroniques pour le maximum. Les boutons non débloqués ne se cliquent pas.\n\nZone de sortie 6×4. Si la place ou l'énergie manque, l'impression n'a pas lieu. La batterie se glisse sur la machine dans le logement d'alimentation, les composants servent aux améliorations. Aucune des trois gourdes n'accepte de filtre ; quand le volume change, la texture du niveau d'eau est mise à jour."
 be_incubator_guide_title,Guide d'utilisation : incubateur à graines
-be_incubator_guide_body,"Placez des graines du mod ou du jeu dans l'entrée et une batterie chargée à gauche. Chaque nuit, traitement par lignes, de haut en bas puis de gauche à droite. Une graine du mod donne 1 fruit ; une graine du jeu donne 2 produits. Sortie remplie par lignes.\n\nLimite par machine et par nuit : 2 graines ; avec certificat débutant/intermédiaire/supérieur : 5/7/18. Seul le meilleur grade compte. Une nuit avec production coûte 12 kJ pour toute la machine, quel que soit le nombre de fruits. Chaque machine est indépendante.\n\nLes grains de café du jeu sont aussi des graines. Bloomberry donne des baies à vin ; hydroreed donne 2 filtres du jeu. Produits sous leur forme standard, sans bonus de module hydroponique ni graines rendues. La limite compte les graines consommées. Les 2 produits doivent tenir ; sans graines, place ou énergie, aucune production ni dépense. Entrée et sortie : 12×12, rangement libre des objets admis. Notice à droite, lisible au survol."
+be_incubator_guide_body,"Placez des graines du mod ou du jeu dans l'entrée et une batterie chargée à gauche. Chaque nuit, traitement par lignes, de haut en bas puis de gauche à droite. Une graine du mod donne 1 fruit ; une graine du jeu donne 2 produits. Sortie remplie par lignes.\n\nLimite par machine et par nuit : 2 graines ; avec certificat débutant/intermédiaire/supérieur : 5/7/18. Seul le meilleur grade compte. Une nuit avec production coûte 12 kJ pour toute la machine, quel que soit le nombre de fruits. Chaque machine est indépendante.\n\nLes grains de café du jeu sont aussi des graines. Bloomberry donne des baies à vin ; hydroreed donne 2 filtres du jeu. Produits sous leur forme standard, sans bonus de module hydroponique ni graines rendues. La limite compte les graines consommées. Les 2 produits doivent tenir ; sans graines, place ou énergie, aucune production ni dépense. Entrée et sortie : 12×12, rangement libre des objets admis. Notice à droite, lisible au survol.\n\nChaque fruit du mod ou baie luminescente produit ici reçoit −1, 1 ou 2 points de qualité. Les certificats supérieurs améliorent les chances. Chances pour −1 / 1 / 2 points : sans certificat 30 % / 50 % / 20 % ; élémentaire 10 % / 60 % / 30 % ; intermédiaire 5 % / 60 % / 35 % ; avancé 0 % / 30 % / 70 %. Un fruit à −1 compte pour 0 en vinification."
 debug_foundation_check,Vérification de la base de vinification
 be_mod_name,Extension de vinification
 be_ending_assassination_title,Assassinat de l'Anneau extérieur
@@ -481,25 +481,25 @@ be_outer_n40_description,Quarante-Sept apporte 4 graines de moins ; le budget de
 be_outer_n20_name,Budget serré
 be_outer_n20_description,Quarante-Sept apporte 2 graines de moins ; le budget de Nini baisse de 20 %.
 be_outer_p20_name,Première confiance
-be_outer_p20_description,Quarante-Sept apporte 2 graines de plus ; les budgets de tous les PNJ augmentent de 20 %.
+be_outer_p20_description,Quarante-Sept apporte 1 graine de plus ; les clients disposant d’un budget peuvent dépenser 10 % de plus.
 be_outer_p40_name,Échanges croissants
-be_outer_p40_description,Quarante-Sept apporte 4 graines de plus ; les budgets de tous les PNJ augmentent de 40 %.
+be_outer_p40_description,Quarante-Sept apporte 2 graines de plus ; les clients disposant d’un budget peuvent dépenser 20 % de plus.
 be_outer_p60_name,Alliance solide
-be_outer_p60_description,Quarante-Sept apporte 6 graines de plus ; les budgets de tous les PNJ augmentent de 60 %.
+be_outer_p60_description,Quarante-Sept apporte 3 graines de plus ; les clients disposant d’un budget peuvent dépenser 30 % de plus.
 be_outer_p80_name,Hôte honoré de l'Anneau
-be_outer_p80_description,Quarante-Sept apporte 8 graines de plus ; les budgets de tous les PNJ augmentent de 80 %.
+be_outer_p80_description,Quarante-Sept apporte 4 graines de plus ; les clients disposant d’un budget peuvent dépenser 40 % de plus.
 be_outer_p100_name,Ami proche de Quarante-Sept
-be_outer_p100_description,Quarante-Sept apporte 10 graines de plus ; les budgets de tous les PNJ augmentent de 100 %.
+be_outer_p100_description,Quarante-Sept apporte 5 graines de plus ; les clients disposant d’un budget peuvent dépenser 50 % de plus.
 be_outer_p120_name,Compagnon de route de l'Anneau
-be_outer_p120_description,Quarante-Sept apporte 12 graines de plus ; les budgets de tous les PNJ augmentent de 120 %.
+be_outer_p120_description,Quarante-Sept apporte 6 graines de plus ; les clients disposant d’un budget peuvent dépenser 60 % de plus.
 be_outer_p140_name,Prospérité partagée
-be_outer_p140_description,Quarante-Sept apporte 14 graines de plus ; les budgets de tous les PNJ augmentent de 140 %.
+be_outer_p140_description,Quarante-Sept apporte 7 graines de plus ; les clients disposant d’un budget peuvent dépenser 70 % de plus.
 be_outer_p160_name,Amitié profonde
-be_outer_p160_description,Quarante-Sept apporte 16 graines de plus ; les budgets de tous les PNJ augmentent de 160 %.
+be_outer_p160_description,Quarante-Sept apporte 8 graines de plus ; les clients disposant d’un budget peuvent dépenser 80 % de plus.
 be_outer_p180_name,Amis par-delà les étoiles
-be_outer_p180_description,Quarante-Sept apporte 18 graines de plus ; les budgets de tous les PNJ augmentent de 180 %.
+be_outer_p180_description,Quarante-Sept apporte 9 graines de plus ; les clients disposant d’un budget peuvent dépenser 90 % de plus.
 be_outer_p200_name,Lumière de l'Anneau extérieur
-be_outer_p200_description,Quarante-Sept apporte 20 graines de plus ; les budgets de tous les PNJ augmentent de 200 %.
+be_outer_p200_description,Quarante-Sept apporte 10 graines de plus ; les clients disposant d’un budget peuvent dépenser 100 % de plus.
 be_liunian_current_stats,Qualité actuelle : {0} ; vieillissement par cycle : {1} jours ; consommation par cycle : {2} kJ
 be_wine_chemical_feedback,Euphorie : {0} ({1})  Toxicité : {2} ({3})
 cable_linked,Connecté : {0}
@@ -517,3 +517,35 @@ market_event_3_name,Surplus dans le quartier supérieur
 market_event_3_description,Les stocks s’accumulent dans le quartier supérieur. Les prix de transaction de l’alcool et du tabac baissent de 25 %.
 be_setting_traditional_label,Utiliser le chinois traditionnel
 be_setting_traditional_description,"Si la langue du jeu est le chinois, affiche les objets, dialogues et messages de ce mod en chinois traditionnel. Désactivez pour le chinois simplifié. Les autres langues suivent le jeu. Appliquez, quittez complètement puis relancez le jeu."
+be_huge_fruit_name,Récolte géante : {0}
+be_concentrator_giant_input,Fruit géant
+be_huge_fruit_description,Vendez-le ou placez-le dans le logement pour fruit géant du concentrateur. Un fruit géant donne une portion de pulpe correspondante.
+be_incubator_fruit_quality,Qualité du fruit : {0}
+be_machine_seed_yield,"Production : fruits, cultures du jeu de base ou filtres ({0} graines par nuit, jusqu’à {1} avec les certificats)"
+be_machine_night_energy,Énergie requise : {0} kJ par nuit de production
+be_machine_pulp_yield,Production : 1 portion de pulpe par cycle
+be_machine_pulp_energy,"Énergie requise : 0 kJ en manuel, {0} kJ par portion en automatique"
+be_machine_wine_yield,Production : jusqu’à {0} bouteilles de vin par lot
+be_machine_no_energy,Énergie requise : la vinification ne consomme pas d’énergie
+be_machine_bottle_yield,Production : {0} bouteilles de vin vides par impression
+be_machine_print_energy,Énergie requise : {0} kJ par impression
+be_machine_water_bottles,Production : 1 bouteille d’eau vide par impression (6 L / 12 L / 18 L)
+be_machine_water_energy,Énergie requise : {0} / {1} / {2} kJ selon la contenance
+be_machine_water_upgrade,"Amélioration : niveau {0}, composants électroniques courants {1}/{2}"
+be_machine_cabinet_effect,Effet : refroidit le vin et ajoute {0} j de vieillissement par nuit de fonctionnement
+be_outer_n100_flavor,"Sur la liste de l’Anneau extérieur, votre nom ne porte plus de prix. Juste une croix."
+be_outer_n80_flavor,"Volets verrouillés, registre fermé. L’Anneau extérieur ne fait plus affaire avec vous."
+be_outer_n60_flavor,"L’enseigne brille encore, mais les pas familiers ne s’arrêtent plus devant votre porte."
+be_outer_n40_flavor,Quarante-Sept apporte moins de graines. Nini serre ses crédits un peu plus fort.
+be_outer_n20_flavor,Un vent froid souffle sur l’Anneau extérieur. Il faut économiser graines et crédits.
+be_outer_p20_flavor,Quarante-Sept vous réserve une graine de plus. Les clients dépensent un peu plus.
+be_outer_p40_flavor,"Les habitués reviennent plus souvent, les sacs de graines et les bourses mieux remplis."
+be_outer_p60_flavor,L’Anneau extérieur connaît votre enseigne. On apporte plus de graines et plus de crédits.
+be_outer_p80_flavor,Les bonnes affaires valent le voyage. Personne n’oublie les graines supplémentaires.
+be_outer_p100_flavor,Quarante-Sept réserve ses bons produits aux amis. Les clients vous confient leur budget.
+be_outer_p120_flavor,"À force de suivre la même route commerciale, les graines et la confiance prennent racine."
+be_outer_p140_flavor,Votre comptoir prospère fait circuler marchandises et crédits dans l’Anneau extérieur.
+be_outer_p160_flavor,"L’amitié dépasse les registres : plus de graines dans les sacs, plus de crédits en poche."
+be_outer_p180_flavor,"Les vieilles amitiés traversent les étoiles. Les graines arrivent, les crédits restent pour le vin."
+be_outer_p200_flavor,"Les voyageurs de l’Anneau extérieur suivent votre lumière, chargés de graines et de confiance."
+be_pulp_quality_sum,Score total du concentré : {0} points

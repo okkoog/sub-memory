@@ -64,9 +64,9 @@ be_jeanne_moreau_fruit_name,Jeanne Moreau
 be_jeanne_moreau_fruit_description,"Zwei Blüten zusammen ergeben eine Flasche Wein.\n— Eine Blüte, gepflanzt von Lumos."
 pulp_name,Fruchtmark
 pulp_named,{0}-Mark
-pulp_description,Aus vier gleichen Früchten konzentriert; zwei Portionen Mark ergeben vier Flaschen Wein.
+pulp_description,Aus vier gleichen Früchten konzentriert; zwei Portionen Mark ergeben vier Flaschen Wein. Das Fruchtmark behält die Qualitätspunkte der Früchte und dient zum Brauen im xuxu-Braufass.
 concentrator_name,Fruchtmark-Konzentrator
-concentrator_description,"Vier gleiche Früchte ergeben eine Portion Mark. Manuelles Konzentrieren kostet keine Energie; mit eingelegter Batterie läuft es automatisch, 8 Energie pro Portion."
+concentrator_description,"Vier gleiche Früchte ergeben eine Portion Mark. Manuelles Konzentrieren kostet keine Energie; mit eingelegter Batterie läuft es automatisch, 8 Energie pro Portion. Eine Riesenfrucht im eigenen Schacht ergibt ebenfalls eine Portion Fruchtmark. Das Fruchtmark behält die Qualitätspunkte der Früchte und lässt sich im xuxu-Braufass zu Wein verarbeiten. Jede Flasche derselben Charge erhält denselben Fruchtbonus. Durch Aufrunden kann der Wein eine höhere Qualitätsstufe erreichen."
 concentrator_input,Fruchtbereich
 concentrator_output,Markbereich
 concentrator_button,Konzentrieren starten
@@ -134,7 +134,7 @@ be_mijin_wanzhao_wine_name,Honiggold im Abendlicht
 be_jieban_yuxi_wine_name,Letzter Atem reiner Blüten
 wine_port_description,Ein im Braufass vergorener Wein.
 barrel_name,xuxu Braufass
-barrel_description,"Zwei Portionen Mark, vier leere Flaschen, Hefe und 3000 ml Wasser ergeben vier Flaschen Wein."
+barrel_description,"Zwei Portionen Mark, vier leere Flaschen, Hefe und 3000 ml Wasser ergeben vier Flaschen Wein. Das Fass verteilt die Punkte beider Portionen auf vier Flaschen und rundet. Jede Flasche erhält denselben Fruchtbonus. Aufrunden kann den Wein eine Qualitätsstufe höher bringen."
 barrel_pulp,Markbereich
 barrel_bottles,Leerflaschenbereich
 barrel_yeast,Hefebereich
@@ -243,13 +243,13 @@ be_void_plum_seed_description,"Ein pechschwarzer Kern, schwer wie ein unvollende
 be_stardust_berry_seed_name,Sternenstaubbeeren-Samen
 be_stardust_berry_seed_description,"Ein silberweißes Korn, aus der Nähe wie ein winziger Stern. Es wächst an der Druckwand außerhalb der Kühlkammer, wo die Strahlung stärker und das Licht einsamer ist. In den Samenbrutkasten gelegt, trägt er über Nacht Frucht."
 be_basic_cert_name,Brauzertifikat Anfänger
-be_basic_cert_description,"Ein schön gerahmtes Zertifikat. Mit ihm brütet der Samenbrutkasten pro Nacht fünf Samen aus, und Siebenundvierzig bringt sieben Samen. Die Fern-Wahrscheinlichkeit von Siebenundvierzig liegt fest bei 15 %; Sehnsucht steigt von 3 % auf 8 %, Nachglanz von 1 % auf 5 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_basic_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 10% / 60% / 30%. Ein schön gerahmtes Zertifikat. Mit ihm brütet der Samenbrutkasten pro Nacht fünf Samen aus, und Siebenundvierzig bringt sieben Samen. Die Fern-Wahrscheinlichkeit von Siebenundvierzig liegt fest bei 15 %; Sehnsucht steigt von 3 % auf 8 %, Nachglanz von 1 % auf 5 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
 be_mid_cert_name,Brauzertifikat Geselle
-be_mid_cert_description,"Ein Zertifikat aus edlerem Material. Mit ihm brütet der Samenbrutkasten sieben Samen pro Nacht aus, Siebenundvierzig bringt neun. Die Wahrscheinlichkeiten für Sehnsucht und Nachglanz werden nach dem kumulativen Bonus mit 1,3 multipliziert: 3,9 %–10,4 % und 1,3 %–6,5 %; Fern bleibt bei 15 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_mid_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 5% / 60% / 35%. Ein Zertifikat aus edlerem Material. Mit ihm brütet der Samenbrutkasten sieben Samen pro Nacht aus, Siebenundvierzig bringt neun. Die Wahrscheinlichkeiten für Sehnsucht und Nachglanz werden nach dem kumulativen Bonus mit 1,3 multipliziert: 3,9 %–10,4 % und 1,3 %–6,5 %; Fern bleibt bei 15 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
 be_high_cert_name,Brauzertifikat Meister
-be_high_cert_description,"Ein Zertifikat mit dunkelgoldener Ziernaht. Mit ihm brütet der Samenbrutkasten achtzehn Samen pro Nacht aus, Siebenundvierzig bringt dreizehn. Sehnsucht und Nachglanz werden nach dem Bonus mit 1,6 multipliziert: 4,8 %–12,8 % und 1,6 %–8 %; Fern bleibt 15 %, der Rest entfällt auf gewöhnliche. Dies ist die letzte von xuxu persönlich ausgestellte Stufe. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_high_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 0% / 30% / 70%. Ein Zertifikat mit dunkelgoldener Ziernaht. Mit ihm brütet der Samenbrutkasten achtzehn Samen pro Nacht aus, Siebenundvierzig bringt dreizehn. Sehnsucht und Nachglanz werden nach dem Bonus mit 1,6 multipliziert: 4,8 %–12,8 % und 1,6 %–8 %; Fern bleibt 15 %, der Rest entfällt auf gewöhnliche. Dies ist die letzte von xuxu persönlich ausgestellte Stufe. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
 incubator_name,Samenbrutkasten
-incubator_description,"Eigene oder Vanilla-Samen und eine geladene Batterie einlegen. Jeder eigene Samen ergibt eine Frucht; Vanilla-Samen ergeben zwei passende Pflanzen, Samen der Wasserpflanze zwei Vanilla-Filter. Jede erfolgreiche Nacht kostet die ganze Maschine 12 kJ; bei leerem Fach, fehlendem Platz oder zu wenig Strom bleiben die Samen liegen, ohne zusätzlichen Verbrauch. Ein Brauzertifikat erhöht die Zahl der Samen pro Nacht."
+incubator_description,"Eigene oder Vanilla-Samen und eine geladene Batterie einlegen. Jeder eigene Samen ergibt eine Frucht; Vanilla-Samen ergeben zwei passende Pflanzen, Samen der Wasserpflanze zwei Vanilla-Filter. Jede erfolgreiche Nacht kostet die ganze Maschine 12 kJ; bei leerem Fach, fehlendem Platz oder zu wenig Strom bleiben die Samen liegen, ohne zusätzlichen Verbrauch. Ein Brauzertifikat erhöht die Zahl der Samen pro Nacht. Jede hier erzeugte Modfrucht oder Bloomberry erhält −1, 1 oder 2 Qualitätspunkte. Höhere Zertifikate verbessern die Chancen."
 incubator_input,Sameneingabe
 incubator_output,Produktausgabe
 incubator_wait,Eine erfolgreiche Nacht kostet 12 Energie; jede Maschine rechnet ihr Limit selbst.
@@ -407,15 +407,15 @@ be_brewing_manual_description,"Das von xuxu hinterlassene Brauhandbuch. Schlägt
 be_liunian_ager_guide_title,Liunian: Gebrauchsanweisung
 be_liunian_ager_guide_body,"Fertigen echten Wein in den Lagerbereich legen, die Batterie in den linken Batterieschacht. Jede aktive Nacht kostet Strom, gibt dem Wein Reifungstage und einen Kühleffekt. Bei leerem Fach oder fehlender Stromversorgung reift der Wein nicht.\n\nModulbereich 6×20, Lagerbereich 20×20. Grundreifung der Maschine: 1 Tag; je volle 125 Qualität 1 Tag mehr: 1 + ganzzahliger Anteil (Qualität ÷ 125). Zum Beispiel 125 Qualität = 2 Tage, 1000 = 9 Tage. Natürliche Vanilla-Reifung zählt separat.\n\nOhne Module kostet jede aktive Nacht 24 kJ, gerechnet für die ganze Maschine, nicht pro Flasche. Die Qualität selbst hat keine Regel „feste Zusatzkosten je 125“; installierte Module bringen Verbrauchs- oder Spar-Eigenschaften mit. Je +100 % Zusatzverbrauch entspricht das +24 kJ auf die 24 kJ Grundverbrauch; Effekte für Leistung und Sparen senken den Verbrauch, gerundet wie im Spiel, mindestens 1 kJ. Maßgeblich sind die Maschinenwerte und der aktuelle Verbrauch am Ende dieser Anleitung."
 be_fruit_pulp_concentrator_guide_title,Fruchtmark-Konzentrator: Gebrauchsanweisung
-be_fruit_pulp_concentrator_guide_body,"Vier gleiche Früchte in den Eingabebereich legen; sie werden zu einer Portion passenden Marks konzentriert. Unterstützt die konzentrierbaren Früchte dieses Mods und Vanilla-Weinfrüchte; verschiedene Früchte dürfen nicht in eine Portion. Der Ausgabebereich muss das Mark aufnehmen können.\n\nDer Knopf für manuelles Konzentrieren kostet keinen Strom und funktioniert ohne Batterie. Mit geladener Batterie wird bei eingelegtem Material oder freiem Ausgang automatisch konzentriert, 8 kJ pro Portion. Bei fehlendem Material, Platz oder Strom wird nicht fertig produziert.\n\nMit der xuxu Transferleitung lässt sich das Gerät an ein xuxu Braufass anschließen, Reihenfolge der Enden beliebig. Mark wird automatisch in den Markbereich des verbundenen Fasses gefüllt; ist das Ziel voll, bleibt es in der Maschine und wird nach Platzfreiheit übertragen."
+be_fruit_pulp_concentrator_guide_body,"Vier gleiche Früchte in den Eingabebereich legen; sie werden zu einer Portion passenden Marks konzentriert. Unterstützt die konzentrierbaren Früchte dieses Mods und Vanilla-Weinfrüchte; verschiedene Früchte dürfen nicht in eine Portion. Der Ausgabebereich muss das Mark aufnehmen können. Eine Riesenfrucht im eigenen Schacht ergibt ebenfalls eine Portion Fruchtmark.\n\nDas Fruchtmark behält die Qualitätspunkte der Früchte und lässt sich im xuxu-Braufass zu Wein verarbeiten. Jede Flasche derselben Charge erhält denselben Fruchtbonus. Durch Aufrunden kann der Wein eine höhere Qualitätsstufe erreichen.\n\nDer Knopf für manuelles Konzentrieren kostet keinen Strom und funktioniert ohne Batterie. Mit geladener Batterie wird bei eingelegtem Material oder freiem Ausgang automatisch konzentriert, 8 kJ pro Portion. Bei fehlendem Material, Platz oder Strom wird nicht fertig produziert.\n\nMit der xuxu Transferleitung lässt sich das Gerät an ein xuxu Braufass anschließen, Reihenfolge der Enden beliebig. Mark wird automatisch in den Markbereich des verbundenen Fasses gefüllt; ist das Ziel voll, bleibt es in der Maschine und wird nach Platzfreiheit übertragen."
 be_large_brewing_barrel_guide_title,xuxu Braufass: Gebrauchsanweisung
-be_large_brewing_barrel_guide_body,"Zwei gültige Portionen Mark in den Markbereich, Vanilla-Leerflaschen in den Leerflaschenbereich, nutzbare Hefe in den Hefebereich; genug Wasser zugeben und Gärung starten. Jede Flasche kostet 750 ml Wasser und je einen Einsatz der beiden Markportionen; eine neue Portion Mark hat 4 Einsätze, ein Durchgang startet höchstens 4 Flaschen und braucht bis zu 3 l Wasser. Die Fruchtkombination bestimmt das Rezept, die Hefe die Vanilla-Gärregeln.\n\nNach der Gärung wird automatisch in den Fertigbereich gesammelt; ist er voll, bleiben die Flaschen und werden nach Platzfreiheit gesammelt. Vor dem nächsten Durchgang den vorigen leeren. Toxizität und Euphorie des Ausgangswassers bleiben erhalten. Das Fass selbst nimmt keine Batterie.\n\nDie Transferleitung verbindet Konzentrator, Flaschenprinter und Wasserbehälter, Reihenfolge beliebig. Mit angeschlossenem Wasserbehälter wird bei Mangel automatisch nachgefüllt; Mark und Leerflaschen werden nach freien Plätzen ergänzt. Der Druckknopf im Fass wird über den angeschlossenen Printer versorgt, 4 Flaschen pro 20 kJ; aus dem Nichts wird nicht gedruckt."
+be_large_brewing_barrel_guide_body,"Zwei gültige Portionen Mark in den Markbereich, Vanilla-Leerflaschen in den Leerflaschenbereich, nutzbare Hefe in den Hefebereich; genug Wasser zugeben und Gärung starten. Jede Flasche kostet 750 ml Wasser und je einen Einsatz der beiden Markportionen; eine neue Portion Mark hat 4 Einsätze, ein Durchgang startet höchstens 4 Flaschen und braucht bis zu 3 l Wasser. Die Fruchtkombination bestimmt das Rezept, die Hefe die Vanilla-Gärregeln.\n\nAddiere die Qualitätspunkte der beiden Portionen Fruchtmark und teile durch 4. Runde auf eine ganze Zahl, bei einem halben Punkt nach oben. Bei 10 Punkten ergibt das 2,5, also 3 Bonuspunkte pro Flasche. Beim Mischen unterschiedlicher Fruchtqualitäten erhält jede Flasche denselben Fruchtbonus. Durch Aufrunden kann der Wein eine höhere Qualitätsstufe erreichen.\n\nNach der Gärung wird automatisch in den Fertigbereich gesammelt; ist er voll, bleiben die Flaschen und werden nach Platzfreiheit gesammelt. Vor dem nächsten Durchgang den vorigen leeren. Toxizität und Euphorie des Ausgangswassers bleiben erhalten. Das Fass selbst nimmt keine Batterie.\n\nDie Transferleitung verbindet Konzentrator, Flaschenprinter und Wasserbehälter, Reihenfolge beliebig. Mit angeschlossenem Wasserbehälter wird bei Mangel automatisch nachgefüllt; Mark und Leerflaschen werden nach freien Plätzen ergänzt. Der Druckknopf im Fass wird über den angeschlossenen Printer versorgt, 4 Flaschen pro 20 kJ; aus dem Nichts wird nicht gedruckt."
 be_wine_printer_guide_title,Flaschenprinter: Gebrauchsanweisung
 be_wine_printer_guide_body,"Batterie in den Stromschacht, Druckknopf drücken: jede Runde 20 kJ für 4 Vanilla-Leerflaschen. Ausgabebereich 4×4. Bei fehlendem Platz oder Strom wird kein Strom verbraucht und keine halbe Charge erzeugt.\n\nMit der xuxu Transferleitung ans xuxu Braufass anschließbar, Reihenfolge beliebig. Vorhandene Leerflaschen versorgen automatisch den Leerflaschenbereich des Fasses; ist das Ziel voll, bleiben sie im Printer. Der Druckknopf im Fass kann diesen Printer mitnutzen, mit derselben Batterie und demselben Verbrauch pro Charge. Die Verbindung druckt nicht ohne Aktion endlos."
 be_xuxu_water_bottle_printer_guide_title,xuxu Wasserflaschen-Drucker: Gebrauchsanweisung
 be_xuxu_water_bottle_printer_guide_body,"Nach dem Einlegen einer geladenen Batterie den Druckknopf wählen. Auf Stufe 1 lassen sich 6-l-Flaschen drucken, je 20 kJ; alle 6 Elektronikbauteile eine Stufe; Stufe 2 schaltet die schlanke 12-l-Flasche frei, je 40 kJ; Stufe 3 die 18-l-Superflasche, je 60 kJ. Für die Höchststufe sind 12 Bauteile nötig. Nicht freigeschaltete Knöpfe sind nicht klickbar.\n\nAusgabebereich 6×4. Bei fehlendem Platz oder Strom wird nicht gedruckt. Die Batterie wird auf die Maschine gezogen und geht in den Stromschacht, Bauteile dienen dem Ausbau. Keine der drei Flaschen nimmt einen Filter; bei Wasserstandsänderung wird die Pegeltextur aktualisiert."
 be_incubator_guide_title,Samenbrutkasten: Gebrauchsanweisung
-be_incubator_guide_body,"Eigene oder Vanilla-Samen in den Sameneingabebereich legen, geladene Batterie in den Stromschacht. Jede Nacht werden die Samen von oben nach unten, von links nach rechts verarbeitet: 1 eigener Samen ergibt 1 passende Frucht, 1 Vanilla-Samen 2 passende Pflanzen; die Ausgabe sucht zeilenweise freie Plätze.\n\nGrundlimit 2 Samen pro Maschine und Nacht; mit Anfänger-, Gesellen- und Meisterzertifikat steigt es auf 5, 7 und 18, die höchste Stufe gilt, nicht kumulativ. Jede erfolgreiche Nacht kostet die Maschine 12 kJ, nicht pro Frucht. Mehrere Maschinen rechnen getrennt.\n\nVanilla-Kaffeebohnen gelten auch als Samen; bloomberry-Samen ergeben eine Vanilla-Weinbeere, hydroreed-Samen 2 Vanilla-Filter. Vanilla-Produkte erscheinen in fester Standardform; Zusatzertrag oder Rück-Saat von Hydrokultur-Modulen wird nicht extra berechnet. Das Nachtlimit zählt verbrauchte Samen; beide Produkte eines Vanilla-Samens müssen Platz haben. Ohne Samen, Platz oder Strom wird nicht fertig produziert; Ein- und Ausgabe sind 12×12, passende Gegenstände lassen sich frei umordnen. Der Hinweiszettel liegt ganz rechts und ist beim Darüberfahren lesbar."
+be_incubator_guide_body,"Eigene oder Vanilla-Samen in den Sameneingabebereich legen, geladene Batterie in den Stromschacht. Jede Nacht werden die Samen von oben nach unten, von links nach rechts verarbeitet: 1 eigener Samen ergibt 1 passende Frucht, 1 Vanilla-Samen 2 passende Pflanzen; die Ausgabe sucht zeilenweise freie Plätze.\n\nGrundlimit 2 Samen pro Maschine und Nacht; mit Anfänger-, Gesellen- und Meisterzertifikat steigt es auf 5, 7 und 18, die höchste Stufe gilt, nicht kumulativ. Jede erfolgreiche Nacht kostet die Maschine 12 kJ, nicht pro Frucht. Mehrere Maschinen rechnen getrennt.\n\nVanilla-Kaffeebohnen gelten auch als Samen; bloomberry-Samen ergeben eine Vanilla-Weinbeere, hydroreed-Samen 2 Vanilla-Filter. Vanilla-Produkte erscheinen in fester Standardform; Zusatzertrag oder Rück-Saat von Hydrokultur-Modulen wird nicht extra berechnet. Das Nachtlimit zählt verbrauchte Samen; beide Produkte eines Vanilla-Samens müssen Platz haben. Ohne Samen, Platz oder Strom wird nicht fertig produziert; Ein- und Ausgabe sind 12×12, passende Gegenstände lassen sich frei umordnen. Der Hinweiszettel liegt ganz rechts und ist beim Darüberfahren lesbar.\n\nJede hier erzeugte Modfrucht oder Bloomberry erhält −1, 1 oder 2 Qualitätspunkte. Höhere Zertifikate verbessern die Chancen. Chancen für −1 / 1 / 2 Punkte: ohne Zertifikat 30 % / 50 % / 20 %; Grundstufe 10 % / 60 % / 30 %; Mittelstufe 5 % / 60 % / 35 %; Oberstufe 0 % / 30 % / 70 %. Eine Frucht mit −1 zählt beim Brauen als 0."
 debug_foundation_check,Braugrundlagen-Check
 be_mod_name,Brauereierweiterung
 be_ending_assassination_title,Attentat im Außenring
@@ -481,25 +481,25 @@ be_outer_n40_description,Siebenundvierzig bringt 4 Samen weniger; Ninis Budget �
 be_outer_n20_name,Knappes Budget
 be_outer_n20_description,Siebenundvierzig bringt 2 Samen weniger; Ninis Budget −20 %.
 be_outer_p20_name,Erstes Vertrauen
-be_outer_p20_description,Siebenundvierzig bringt 2 Samen mehr; alle NPC-Budgets +20 %.
+be_outer_p20_description,Siebenundvierzig bringt 1 Samenkorn mehr; das Kaufbudget von Kunden mit Budget steigt um 10 %.
 be_outer_p40_name,Reger Austausch
-be_outer_p40_description,Siebenundvierzig bringt 4 Samen mehr; alle NPC-Budgets +40 %.
+be_outer_p40_description,Siebenundvierzig bringt 2 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 20 %.
 be_outer_p60_name,Fester Bund
-be_outer_p60_description,Siebenundvierzig bringt 6 Samen mehr; alle NPC-Budgets +60 %.
+be_outer_p60_description,Siebenundvierzig bringt 3 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 30 %.
 be_outer_p80_name,Gast des Außenrings
-be_outer_p80_description,Siebenundvierzig bringt 8 Samen mehr; alle NPC-Budgets +80 %.
+be_outer_p80_description,Siebenundvierzig bringt 4 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 40 %.
 be_outer_p100_name,Siebenundvierzigs enger Freund
-be_outer_p100_description,Siebenundvierzig bringt 10 Samen mehr; alle NPC-Budgets +100 %.
+be_outer_p100_description,Siebenundvierzig bringt 5 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 50 %.
 be_outer_p120_name,Weggefährte des Außenrings
-be_outer_p120_description,Siebenundvierzig bringt 12 Samen mehr; alle NPC-Budgets +120 %.
+be_outer_p120_description,Siebenundvierzig bringt 6 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 60 %.
 be_outer_p140_name,Gemeinsamer Wohlstand
-be_outer_p140_description,Siebenundvierzig bringt 14 Samen mehr; alle NPC-Budgets +140 %.
+be_outer_p140_description,Siebenundvierzig bringt 7 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 70 %.
 be_outer_p160_name,Tiefe Freundschaft
-be_outer_p160_description,Siebenundvierzig bringt 16 Samen mehr; alle NPC-Budgets +160 %.
+be_outer_p160_description,Siebenundvierzig bringt 8 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 80 %.
 be_outer_p180_name,Vertraut über Sternenmeere
-be_outer_p180_description,Siebenundvierzig bringt 18 Samen mehr; alle NPC-Budgets +180 %.
+be_outer_p180_description,Siebenundvierzig bringt 9 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 90 %.
 be_outer_p200_name,Licht des Außenrings
-be_outer_p200_description,Siebenundvierzig bringt 20 Samen mehr; alle NPC-Budgets +200 %.
+be_outer_p200_description,Siebenundvierzig bringt 10 Samenkörner mehr; das Kaufbudget von Kunden mit Budget steigt um 100 %.
 be_liunian_current_stats,Aktuelle Qualität: {0}; Reifung pro Durchgang: {1} Tage; Energie pro Durchgang: {2} kJ
 be_wine_chemical_feedback,Euphorie: {0} ({1})  Toxizität: {2} ({3})
 cable_linked,Verbunden: {0}
@@ -517,3 +517,35 @@ market_event_3_name,Überfluss in den oberen Ebenen
 market_event_3_description,In den oberen Ebenen stapelt sich Ware; Preise für Tabak und Alkohol −25 %.
 be_setting_traditional_label,Traditionelles Chinesisch verwenden
 be_setting_traditional_description,"Wenn die Spielsprache Chinesisch ist, erscheinen Gegenstände, Dialoge und Hinweise dieser Mod in traditionellem Chinesisch. Deaktivieren für vereinfachtes Chinesisch. Andere Sprachen folgen dem Spiel. Anwenden, das Spiel vollständig beenden und neu starten."
+be_huge_fruit_name,Riesige Ernte: {0}
+be_concentrator_giant_input,Riesenfrucht
+be_huge_fruit_description,Verkaufe sie oder lege sie in den Riesenfruchtschacht des Konzentrators. Eine Riesenfrucht ergibt eine Portion Fruchtmark.
+be_incubator_fruit_quality,Fruchtqualität: {0}
+be_machine_seed_yield,"Ertrag: Früchte, Pflanzen des Grundspiels oder Filter ({0} Samen pro Nacht, mit Zertifikaten bis zu {1})"
+be_machine_night_energy,Energiebedarf: {0} kJ pro erfolgreicher Nacht
+be_machine_pulp_yield,Ertrag: 1 Portion Fruchtmark pro Durchgang
+be_machine_pulp_energy,"Energiebedarf: manuell 0 kJ, automatisch {0} kJ pro Portion"
+be_machine_wine_yield,Ertrag: bis zu {0} Flaschen Wein pro Charge
+be_machine_no_energy,Energiebedarf: Beim Brauen fällt kein Verbrauch an
+be_machine_bottle_yield,Ertrag: {0} leere Weinflaschen pro Druck
+be_machine_print_energy,Energiebedarf: {0} kJ pro Druck
+be_machine_water_bottles,Ertrag: 1 leere Wasserflasche pro Druck (6 L / 12 L / 18 L)
+be_machine_water_energy,Energiebedarf: {0} / {1} / {2} kJ je nach Flaschengröße
+be_machine_water_upgrade,"Ausbau: Stufe {0}, gewöhnliche Elektronik {1}/{2}"
+be_machine_cabinet_effect,Effekt: kühlt Wein und lässt ihn pro Betriebsnacht um {0} Tage reifen
+be_outer_n100_flavor,Auf der Liste des Außenrings steht neben deinem Namen kein Preis mehr. Nur ein Kreuz.
+be_outer_n80_flavor,"Läden verriegelt, Bücher geschlossen. Der Außenring macht keine Geschäfte mehr mit dir."
+be_outer_n60_flavor,"Das Schild leuchtet noch, doch vertraute Schritte halten nicht mehr vor deiner Tür."
+be_outer_n40_flavor,Siebenundvierzig bringt weniger Samen. Nini hält ihre Credits etwas fester.
+be_outer_n20_flavor,Ein kalter Wind weht vom Außenring. Samen und Credits müssen länger reichen.
+be_outer_p20_flavor,Siebenundvierzig hebt einen Samen mehr für dich auf. Kunden geben etwas mehr aus.
+be_outer_p40_flavor,"Vertraute Gesichter kommen öfter, mit volleren Samenbeuteln und Geldbörsen."
+be_outer_p60_flavor,Der Außenring kennt dein Schild. Die Gäste bringen mehr Samen und mehr Geld mit.
+be_outer_p80_flavor,Gute Geschäfte lohnen den weiten Weg. Zusätzliche Samen werden nicht vergessen.
+be_outer_p100_flavor,Siebenundvierzig hält gute Ware für Freunde zurück. Kunden vertrauen deinem Geschmack.
+be_outer_p120_flavor,Auf vertrauten Handelswegen schlagen Samen und Vertrauen gleichermaßen Wurzeln.
+be_outer_p140_flavor,Deine belebte Theke füllt auch die Warenbeutel und Geldbörsen des Außenrings.
+be_outer_p160_flavor,Freundschaft steht nicht nur im Buch: Sie zeigt sich in zusätzlichen Samen und Käufen.
+be_outer_p180_flavor,"Alte Freundschaft überquert das Sternenmeer. Samen kommen an, Credits bleiben für guten Wein."
+be_outer_p200_flavor,"Gäste vom Außenring folgen deinem Licht, mit Samen und ihrem vollen Vertrauen."
+be_pulp_quality_sum,Gesamtqualität des Fruchtkonzentrats: {0} Punkte

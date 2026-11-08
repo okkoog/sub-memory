@@ -114,8 +114,8 @@ te_producer_labels_05,Handarbeit
 te_producer_labels_06,Etikett-Aufschlag
 te_stamp_machine_03,Schließen
 te_stamp_machine_04,Aktivieren
-te_machine_instructions_01,"Anleitung zum Trockner\n\n1. Batteriebereich: geladene Batterie.\n2. Rohstoffbereich: Tabak, feuchter getrockneter Tabak oder feuchte Fasern.\n3. „Verarbeitung starten“ trocknet alles Mögliche für 6 Energie. Der Ausgang muss die ganze Charge fassen, sonst kein Verbrauch.\n4. Über Nacht wird 1 Portion automatisch getrocknet, 6 Energie.\n5. Fertige Ware aus dem Ausgang. Getrockneter Tabak und Fasern werden nachts feucht — erneut trocknen. Tabak wird nach zwei Tagen von selbst feucht-getrocknet."
-te_machine_instructions_02,"Anleitung zur Zigarettenmaschine\n\n1. Batteriebereich: geladene Batterie.\n2. Faserbereich; Papierbereich: lose oder Schachtel, Papier wird aus der Schachtel genommen, leere bleibt. Pro Packung 1 Faser, 2 Blätter, 4 Energie.\n3. Extraktbereich: Spritze mit Fruchtextrakt für den Geschmack; ohne sie Basiszigarette. Die Spritze hat begrenzte Entnahmen.\n4. Schlafstaubbereich: Schlafstaub, Fentanyl oder andere Mittel mit Euphorie/Toxizität. Jede Herstellung nimmt den ganzen Bereich und addiert die echte Chemie; ohne sie geht es auch.\n5. „Verarbeitung starten“ ergibt eine Packung; über Nacht ebenfalls eine. Bei fehlendem Platz, Material oder Energie keine Herstellung.\n6. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware im Ausgang."
+te_machine_instructions_01,"1. Batteriebereich: geladene Batterie.\n2. Rohstoffbereich: Tabak, feuchter getrockneter Tabak oder feuchte Fasern.\n\n3. „Verarbeitung starten“ trocknet alles Mögliche für 6 Energie. Der Ausgang muss die ganze Charge fassen, sonst kein Verbrauch.\n4. Über Nacht wird 1 Portion automatisch getrocknet, 6 Energie.\n5. Fertige Ware aus dem Ausgang. Getrockneter Tabak und Fasern werden nachts feucht — erneut trocknen. Tabak wird nach zwei Tagen von selbst feucht-getrocknet."
+te_machine_instructions_02,"1. Batteriebereich: geladene Batterie.\n2. Faserbereich; Papierbereich: lose oder Schachtel, Papier wird aus der Schachtel genommen, leere bleibt. Pro Packung 1 Faser, 2 Blätter, 4 Energie.\n\n3. Extraktbereich: Spritze mit Fruchtextrakt für den Geschmack; ohne sie Basiszigarette. Die Spritze hat begrenzte Entnahmen.\n4. Schlafstaubbereich: Schlafstaub, Fentanyl oder andere Mittel mit Euphorie/Toxizität. Jede Herstellung nimmt den ganzen Bereich und addiert die echte Chemie; ohne sie geht es auch.\n5. „Verarbeitung starten“ ergibt eine Packung; über Nacht ebenfalls eine. Bei fehlendem Platz, Material oder Energie keine Herstellung.\n6. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware im Ausgang."
 te_machines_01,"Rohstoff und Batterie einlegen,\nunten „Verarbeitung starten“ drücken."
 te_machines_02,Verarbeitung starten
 te_machines_03,"Fertig,\nbitte aus dem Ausgang nehmen."
@@ -382,7 +382,7 @@ te_story_short_stories_page_13,"Am Morgen öffnete Siebenundvierzig die Tür und
 te_label_name,{0} – Einmal-Etikett
 te_stamp_name,{0} – Stempel
 te_damp_material_name,{0} (feucht)
-te_cigarette_description,"{0}\nDoppelklick öffnet das Prüffenster, oder Rechtsklick „Zustand prüfen“ zeigt Feuchtigkeit und Fehler; Fehler sind nicht reparierbar.\n{1}\n„Etikett prüfen“ im Fenster zieht ein Einmal-Etikett ab und stellt Firma und Preis wieder her. Handarbeit −20 %; Stempel oder Etikett ersetzen den Modifikator. Bei Nikotinabhängigkeit Rechtsklick „Konsumieren“."
+te_cigarette_description,"Seltenheit: {2}.\n{0}\nDoppelklick öffnet das Prüffenster, oder Rechtsklick „Zustand prüfen“ zeigt Feuchtigkeit und Fehler; Fehler sind nicht reparierbar.\n{1}\n„Etikett prüfen“ im Fenster zieht ein Einmal-Etikett ab und stellt Firma und Preis wieder her. Handarbeit −20 %; Stempel oder Etikett ersetzen den Modifikator. Bei Nikotinabhängigkeit Rechtsklick „Konsumieren“."
 te_overlabel_description,"{0}{1} Ersetzt Aufschlag/Rabatt der Firma, stapelt nicht.\n„Etikett prüfen“ zieht es ab, Firma und Preis zurück; Etikett wird nicht erstattet. Bei Enttarnung durch den Kunden −10 Außenring-Ruf; der Auftrag wird weiter nach der Originalfirma bewertet."
 te_stamp_description,"{0}{1} Ersetzt Aufschlag/Rabatt der Firma, stapelt nicht. Belohnung besonderer Aufträge, wiederverwendbar, kein Einmal-Etikett."
 te_chemistry_values,Euphorie: {0} ({1})  Toxizität: {2} ({3})
@@ -418,3 +418,7 @@ te_delivery_location_display,Vitrine
 te_delivery_location_hidden,Geheimfach
 te_delivery_location_other,Sonstiger Bestand
 te_delivery_slot,"{0} · Spalte {1}, Zeile {2}"
+te_commission_min_wine_score,Weinqualität: mindestens {0} Punkte ({1})
+te_mod_name,Tabakerweiterung
+te_order_common_flavored,Beliebige gewöhnliche aromatisierte Zigaretten (keine Basiszigaretten)
+te_order_alternative,Erfülle eine Option. Die erste Lieferung legt die Wahl fest; die Optionen können nicht kombiniert werden.

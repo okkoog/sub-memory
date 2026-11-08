@@ -114,8 +114,8 @@ te_producer_labels_05,Handmade
 te_producer_labels_06,Producer label
 te_stamp_machine_03,Off
 te_stamp_machine_04,Active
-te_machine_instructions_01,"TOBACCO DRYER\n\n1. Insert a charged battery.\n2. Put leaves, damp dried tobacco or damp shreds in Ingredients.\n3. Process dries all eligible inputs for 6 energy per batch. The entire batch must fit in Output; insufficient space spends no materials or energy.\n4. Overnight processing dries one item for 6 energy.\n5. Collect dried tobacco or shreds. These materials become damp overnight and can be dried again. Leaves naturally become damp dried tobacco after two days."
-te_machine_instructions_02,"CIGARETTE MACHINE\n\n1. Insert a charged battery.\n2. Put shreds in Shreds. Paper accepts loose rolling papers or paper boxes, using their contents automatically and retaining empty boxes. Each pack uses 1 shred, 2 papers and 4 energy.\n3. Optionally place a filled fruit-extract syringe in Extract for flavored cigarettes. Without extract, the machine makes basic cigarettes. Syringe extraction uses are limited.\n4. Additives optionally accepts dream dust, fentanyl tablets and other euphoric or toxic medicines. Every cycle absorbs all medicines and their full stack quantities, adding their actual chemistry to one pack. Medicines are optional.\n5. Process makes one pack; overnight processing also makes one. Missing materials, charge or output space prevents production.\n6. Damp shreds produce irreparable defects. Collect packs from Output."
+te_machine_instructions_01,"1. Insert a charged battery.\n2. Put leaves, damp dried tobacco or damp shreds in Ingredients.\n\n3. Process dries all eligible inputs for 6 energy per batch. The entire batch must fit in Output; insufficient space spends no materials or energy.\n4. Overnight processing dries one item for 6 energy.\n5. Collect dried tobacco or shreds. These materials become damp overnight and can be dried again. Leaves naturally become damp dried tobacco after two days."
+te_machine_instructions_02,"1. Insert a charged battery.\n2. Put shreds in Shreds. Paper accepts loose rolling papers or paper boxes, using their contents automatically and retaining empty boxes. Each pack uses 1 shred, 2 papers and 4 energy.\n\n3. Optionally place a filled fruit-extract syringe in Extract for flavored cigarettes. Without extract, the machine makes basic cigarettes. Syringe extraction uses are limited.\n4. Additives optionally accepts dream dust, fentanyl tablets and other euphoric or toxic medicines. Every cycle absorbs all medicines and their full stack quantities, adding their actual chemistry to one pack. Medicines are optional.\n5. Process makes one pack; overnight processing also makes one. Missing materials, charge or output space prevents production.\n6. Damp shreds produce irreparable defects. Collect packs from Output."
 te_machines_01,Insert ingredients and battery.\nThen press Process.
 te_machines_02,Process
 te_machines_03,Processing complete.\nCollect from Output.
@@ -382,7 +382,7 @@ te_story_short_stories_page_13,"The dead-cold workshop was made utterly incongru
 te_label_name,{0} Disposable Label
 te_stamp_name,{0} Stamp
 te_damp_material_name,{0} (Damp)
-te_cigarette_description,"{0}\nDouble-click to open inspection, or right-click Check condition to reveal dampness and defects. Defects cannot be repaired. {1}\nCheck label in the window peels disposable labels, restoring the original producer and price. Handmade has a 20% producer penalty; stamps or labels replace that modifier. With nicotine addiction, right-click Consume."
+te_cigarette_description,"Rarity: {2}.\n{0}\nDouble-click to open inspection, or right-click Check condition to reveal dampness and defects. Defects cannot be repaired. {1}\nCheck label in the window peels disposable labels, restoring the original producer and price. Handmade has a 20% producer penalty; stamps or labels replace that modifier. With nicotine addiction, right-click Consume."
 te_overlabel_description,"{0}{1} Replaces the previous producer bonus or penalty; they do not stack.\nCheck label peels it off, restoring the original producer and price without returning the label. Detection by a customer costs 10 Outer Ring reputation. Commissions use the original producer's value."
 te_stamp_description,"{0}{1} Replaces the previous producer bonus or penalty; they do not stack. Earned from special commissions and reusable indefinitely, unlike a disposable label."
 te_chemistry_values,Euphoria: {0} ({1})  Toxicity: {2} ({3})
@@ -418,3 +418,7 @@ te_delivery_location_display,Showcase
 te_delivery_location_hidden,Hidden compartment
 te_delivery_location_other,Other inventory
 te_delivery_slot,"{0} · Column {1}, row {2}"
+te_commission_min_wine_score,Wine quality: {0}+ points ({1})
+te_mod_name,Tobacco Expansion
+te_order_common_flavored,Any Common flavored cigarettes (excluding Basic)
+te_order_alternative,Choose one option. The first delivery locks your choice; the two options cannot be combined.

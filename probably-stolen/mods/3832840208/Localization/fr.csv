@@ -114,8 +114,8 @@ te_producer_labels_05,Artisanal
 te_producer_labels_06,Majoration d'étiquette
 te_stamp_machine_03,Fermer
 te_stamp_machine_04,Activer
-te_machine_instructions_01,"Notice du séchoir\n\n1. Batterie : batterie chargée.\n2. Entrée : tabac, tabac séché humide ou filaments humides.\n3. « Lancer le traitement » sèche tout le possible pour 6 d'énergie. La sortie doit tout contenir ; sinon ni matière ni énergie ne sont consommées.\n4. Une nuit sèche 1 unité, 6 d'énergie.\n5. Retirez le produit fini. Tabac séché et filaments s'humidifient la nuit ; reséchez-les. Après deux jours, le tabac devient tabac séché humide."
-te_machine_instructions_02,"Notice de la machine à cigarettes\n\n1. Batterie : batterie chargée.\n2. Filaments ; papier : vrac ou boîte, le papier est pris dans la boîte, la boîte vide reste. Par paquet : 1 filament, 2 feuilles, 4 d'énergie.\n3. Extrait : seringue d'extrait fruité pour la saveur ; sans elle, basique. La seringue a un nombre limité d'extractions.\n4. Poussière de rêve : poussière de rêve, fentanyl ou autres substances à euphorie/toxicité. Chaque fabrication prend tout le contenu de la zone et ajoute la chimie réelle au paquet ; sans elles, la fabrication reste possible.\n5. « Lancer le traitement » fait un paquet ; une nuit en fait aussi un. Pas de fabrication si place, matière ou énergie manquent.\n6. Des filaments humides donnent un défaut irréparable. Retirez le produit fini."
+te_machine_instructions_01,"1. Batterie : batterie chargée.\n2. Entrée : tabac, tabac séché humide ou filaments humides.\n\n3. « Lancer le traitement » sèche tout le possible pour 6 d'énergie. La sortie doit tout contenir ; sinon ni matière ni énergie ne sont consommées.\n4. Une nuit sèche 1 unité, 6 d'énergie.\n5. Retirez le produit fini. Tabac séché et filaments s'humidifient la nuit ; reséchez-les. Après deux jours, le tabac devient tabac séché humide."
+te_machine_instructions_02,"1. Batterie : batterie chargée.\n2. Filaments ; papier : vrac ou boîte, le papier est pris dans la boîte, la boîte vide reste. Par paquet : 1 filament, 2 feuilles, 4 d'énergie.\n\n3. Extrait : seringue d'extrait fruité pour la saveur ; sans elle, basique. La seringue a un nombre limité d'extractions.\n4. Poussière de rêve : poussière de rêve, fentanyl ou autres substances à euphorie/toxicité. Chaque fabrication prend tout le contenu de la zone et ajoute la chimie réelle au paquet ; sans elles, la fabrication reste possible.\n5. « Lancer le traitement » fait un paquet ; une nuit en fait aussi un. Pas de fabrication si place, matière ou énergie manquent.\n6. Des filaments humides donnent un défaut irréparable. Retirez le produit fini."
 te_machines_01,"Placez matière et batterie,\npuis « Lancer le traitement » ci-dessous."
 te_machines_02,Lancer le traitement
 te_machines_03,"Terminé,\nretirez dans la zone de sortie."
@@ -382,7 +382,7 @@ te_story_short_stories_page_13,"À l'aube, Quarante-Sept ouvrit et vit d'abord u
 te_label_name,Étiquette jetable : {0}
 te_stamp_name,Sceau : {0}
 te_damp_material_name,{0} (humide)
-te_cigarette_description,"{0}\nDouble-cliquez pour ouvrir la fenêtre, ou clic droit « Vérifier l'état » pour voir humidité et défauts ; un défaut ne se répare pas.\n{1}\n« Vérifier l'étiquette » retire une étiquette jetable, restituant compagnie et prix. Artisanal −20 % ; sceau ou étiquette remplacent le modificateur. En cas de dépendance à la nicotine, clic droit « Consommer »."
+te_cigarette_description,"Rareté : {2}.\n{0}\nDouble-cliquez pour ouvrir la fenêtre, ou clic droit « Vérifier l'état » pour voir humidité et défauts ; un défaut ne se répare pas.\n{1}\n« Vérifier l'étiquette » retire une étiquette jetable, restituant compagnie et prix. Artisanal −20 % ; sceau ou étiquette remplacent le modificateur. En cas de dépendance à la nicotine, clic droit « Consommer »."
 te_overlabel_description,"{0}{1} Remplace la majoration/remise de la compagnie, sans cumul.\n« Vérifier l'étiquette » la retire et restitue compagnie et prix ; l'étiquette n'est pas rendue. Si un client la démasque : −10 de réputation de l'Anneau extérieur ; la commande reste évaluée sur la compagnie d'origine."
 te_stamp_description,"{0}{1} Remplace la majoration/remise de la compagnie, sans cumul. Récompense de commande spéciale, réutilisable, pas une étiquette jetable."
 te_chemistry_values,Euphorie : {0} ({1})  Toxicité : {2} ({3})
@@ -418,3 +418,7 @@ te_delivery_location_display,Vitrine
 te_delivery_location_hidden,Compartiment caché
 te_delivery_location_other,Autre stock
 te_delivery_slot,"{0} · Colonne {1}, ligne {2}"
+te_commission_min_wine_score,Qualité du vin : {0} points minimum ({1})
+te_mod_name,Extension Tabac
+te_order_common_flavored,Cigarettes aromatisées communes au choix (hors cigarettes de base)
+te_order_alternative,Choisissez une option. La première livraison fixe votre choix ; les deux options ne peuvent pas être combinées.

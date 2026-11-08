@@ -114,8 +114,8 @@ te_producer_labels_05,Ręczna robota
 te_producer_labels_06,Narzut etykiety
 te_stamp_machine_03,Zamknij
 te_stamp_machine_04,Aktywuj
-te_machine_instructions_01,"Instrukcja suszarki\n\n1. Strefa baterii: naładowana bateria.\n2. Strefa surowca: tytoń, wilgotny suszony tytoń lub wilgotne włókna.\n3. „Rozpocznij przetwarzanie” suszy wszystko możliwe za 6 energii. Wyjście musi pomieścić całą partię, inaczej brak zużycia.\n4. Przez noc suszy się 1 porcja, 6 energii.\n5. Gotowe z wyjścia. Suszony tytoń i włókna wilgotnieją nocą — osusz ponownie. Tytoń po dwóch dniach sam staje się wilgotny."
-te_machine_instructions_02,"Instrukcja maszyny do papierosów\n\n1. Strefa baterii: naładowana bateria.\n2. Strefa włókien; strefa bibułki: luźna lub pudełko, bibułka brana z pudełka, puste zostaje. Na paczkę 1 włókno, 2 arkusze, 4 energii.\n3. Strefa ekstraktu: strzykawka z ekstraktem owocowym dla smaku; bez niej bazowe. Strzykawka ma ograniczoną liczbę pobrań.\n4. Strefa pyłu sennego: pył senny, fentanyl lub inne środki z euforią/toksycznością. Każde wykonanie bierze całą strefę i dodaje prawdziwą chemię; bez nich też można.\n5. „Rozpocznij przetwarzanie” daje paczkę; przez noc też jedną. Przy braku miejsca, materiału lub energii nie produkuje.\n6. Wilgotne włókna dają nieodwracalne wady. Gotowe w wyjściu."
+te_machine_instructions_01,"1. Strefa baterii: naładowana bateria.\n2. Strefa surowca: tytoń, wilgotny suszony tytoń lub wilgotne włókna.\n\n3. „Rozpocznij przetwarzanie” suszy wszystko możliwe za 6 energii. Wyjście musi pomieścić całą partię, inaczej brak zużycia.\n4. Przez noc suszy się 1 porcja, 6 energii.\n5. Gotowe z wyjścia. Suszony tytoń i włókna wilgotnieją nocą — osusz ponownie. Tytoń po dwóch dniach sam staje się wilgotny."
+te_machine_instructions_02,"1. Strefa baterii: naładowana bateria.\n2. Strefa włókien; strefa bibułki: luźna lub pudełko, bibułka brana z pudełka, puste zostaje. Na paczkę 1 włókno, 2 arkusze, 4 energii.\n\n3. Strefa ekstraktu: strzykawka z ekstraktem owocowym dla smaku; bez niej bazowe. Strzykawka ma ograniczoną liczbę pobrań.\n4. Strefa pyłu sennego: pył senny, fentanyl lub inne środki z euforią/toksycznością. Każde wykonanie bierze całą strefę i dodaje prawdziwą chemię; bez nich też można.\n5. „Rozpocznij przetwarzanie” daje paczkę; przez noc też jedną. Przy braku miejsca, materiału lub energii nie produkuje.\n6. Wilgotne włókna dają nieodwracalne wady. Gotowe w wyjściu."
 te_machines_01,"Włóż surowiec i baterię,\nnaciśnij „Rozpocznij przetwarzanie”."
 te_machines_02,Rozpocznij przetwarzanie
 te_machines_03,"Gotowe,\nzabierz z wyjścia."
@@ -382,7 +382,7 @@ te_story_short_stories_page_13,"Rano Czterdzieści Siedem otworzyła drzwi i naj
 te_label_name,Etykieta jednorazowa: {0}
 te_stamp_name,Pieczęć: {0}
 te_damp_material_name,{0} (wilgotne)
-te_cigarette_description,"{0}\nDwuklik otworzy okno kontroli, albo prawy przycisk „Sprawdź stan” pokaże wilgoć i wady; wady są nieodwracalne.\n{1}\n„Sprawdź etykietę” zrywa jednorazową etykietę, przywracając firmę i cenę. Ręczna robota −20%; pieczęć lub etykieta zastępują modyfikator. Przy uzależnieniu prawy przycisk „Spożyj”."
+te_cigarette_description,"Rzadkość: {2}.\n{0}\nDwuklik otworzy okno kontroli, albo prawy przycisk „Sprawdź stan” pokaże wilgoć i wady; wady są nieodwracalne.\n{1}\n„Sprawdź etykietę” zrywa jednorazową etykietę, przywracając firmę i cenę. Ręczna robota −20%; pieczęć lub etykieta zastępują modyfikator. Przy uzależnieniu prawy przycisk „Spożyj”."
 te_overlabel_description,"{0}{1} Zastępuje narzut/zniżkę firmy, nie kumuluje się.\n„Sprawdź etykietę” zrywa ją, przywracając firmę i cenę; etykieta nie wraca. Jeśli klient zdemaskuje −10 reputacji Zewnętrznego Pierścienia; zlecenie nadal liczone po pierwotnej firmie."
 te_stamp_description,"{0}{1} Zastępuje narzut/zniżkę firmy, nie kumuluje się. Nagroda zleceń specjalnych, wielokrotnego użytku, nie jednorazowa etykieta."
 te_chemistry_values,Euforia: {0} ({1})  Toksyczność: {2} ({3})
@@ -418,3 +418,7 @@ te_delivery_location_display,Witryna
 te_delivery_location_hidden,Schowek
 te_delivery_location_other,Pozostałe zapasy
 te_delivery_slot,"{0} · Kolumna {1}, wiersz {2}"
+te_commission_min_wine_score,Jakość wina: co najmniej {0} pkt ({1})
+te_mod_name,Rozszerzenie tytoniowe
+te_order_common_flavored,Dowolne zwykłe papierosy smakowe (bez podstawowych)
+te_order_alternative,Wybierz jeden wariant. Pierwsza dostawa utrwala wybór; nie można łączyć obu wariantów.

@@ -1,4 +1,4 @@
-Neon Undertow 0.5.3
+Neon Undertow 0.5.9
 
 The manual bottler takes up 3 x 3 inventory cells. Bring the Bottling Handbook, high-quality water (99% or higher), one matching concentrate and an empty glass bottle (750 mL) or can (350 or 500 mL). The bottle you put in is the bottle you get back. The Quayside Canning Co-op sells all three concentrates and stocked supply cases.
 
@@ -41,3 +41,10 @@ PLANTED CROPS: 38 fruits and vegetables use compact pixel-art plants designed fo
 BACK-ROOM WINDOWS (0.5.2): on screens that are not 16:9, station, cabinet, waterworks and kitchen windows now open above the back room instead of behind it, and room windows can be dragged anywhere on the screen.
 
 COUNTER STOCK: Three dry compounds rotate daily at the Glassmarket Counter & Fixture Stall. Buy a cylinder, fit it to the chemical finisher, select its matching drug and press Output. A full cylinder supplies three portions. Substance buyers judge the finished batch by purity. Medical scavengers can bring the Quay Field Wrap, Sealpatch Gel or Steadyline.
+
+FIXES (0.5.4): bounty contacts and Officer Lun now arrive on time, Undertow produce is never hidden-spoiled, aged fruit wine keeps its value after loading, and referred Quayside shoppers finish their deal normally. Undertow items can be clicked anywhere in the cells they occupy, and back-room hotspots show the game's yellow hover outline.
+
+BOOKS (0.5.5): Shop manuals use the blue vanilla notebook and readable page text. Kitchen cookbooks show ingredient and result icons. Drag the Book Cubby by its title bar. Close the manual to switch shop shelves.
+CASSETTES: Visit Glassmarket after hours and choose Cassettes. Buy a tape, place it in the cassette player, and press Play.
+BACK ROOM (0.5.7): open it from the arrow at the bottom right of the shop. Machines show their recipes like the game's machines; put a recipe book in a machine to unlock its recipes. A gunsmith bay takes the game's 3D printer, or the Refurbishing Bench of Gunsmith Expansion.
+SEEDS: Quayside sells packs of three matching seeds. Select SEEDS again to switch between fruit and vegetables. The PRODUCE shelf carries mixed seed packs, daily fresh deliveries and native Nutrifruit. Stormglass Depot Outlet sells the Fizzworks Soda Canner and Dockside Production Galley.
