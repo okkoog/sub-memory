@@ -1,0 +1,38 @@
+name: Temp export localization working set
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/temp-export-localization-working-set.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare working set
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out/current out/sources out/drafts
+          cp probably-stolen/0.8.3/Localization/*.csv out/current/
+          cp probably-stolen/mods/3828910575/Localization/en.csv out/sources/3828910575_en.csv || true
+          cp probably-stolen/mods/3828971731/Localization/en.csv out/sources/3828971731_en.csv
+          cp probably-stolen/mods/3829085054/Localization/en.csv out/sources/3829085054_en.csv
+          cp probably-stolen/mods/3829110153/Localization/en.csv out/sources/3829110153_en.csv
+          cp probably-stolen/mods/3829413447/Localization/en.csv out/sources/3829413447_en.csv
+          cp probably-stolen/mods/3829730904/Localization/en.csv out/sources/3829730904_en.csv
+          cp probably-stolen/mods/3830758908/Localization/en.csv out/sources/3830758908_en.csv
+          cp probably-stolen/mods/3832840208/Localization/en.csv out/sources/3832840208_en.csv
+          cp probably-stolen/mods/3833095213/Localization/en.csv out/sources/3833095213_en.csv
+          cp -r probably-stolen/translation-drafts/2026-11-08-workshop-update/. out/drafts/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: localization-working-set
+          path: out
+          if-no-files-found: error
