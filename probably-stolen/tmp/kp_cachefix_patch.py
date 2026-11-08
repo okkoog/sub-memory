@@ -397,7 +397,7 @@ internal static class FishingStartPerkCompatibility
 \t}
 }
 """
-(src/"FishingStartPerkCompatibility.cs").write_text(fish,encoding="utf-8")
+fish = fish.replace("\\\\t", "\\t")\n(src/"FishingStartPerkCompatibility.cs").write_text(fish,encoding="utf-8")
 
 build = root/"build"
 (build/"ProbablyStolenKoreanPack").mkdir(parents=True, exist_ok=True)
