@@ -187,6 +187,11 @@ core.save.protected,"Не удалось прочитать данные гру�
 core.shop.carry,Вилли отправит ваши покупки на склад.
 core.shop.keeper,Вилли
 core.shop.name,Магазин снастей
+drying.finished,"Вяленая рыба: исходная масса тела {0}г, базовая масса для расчёта продажной стоимости {1}г. Энергия и масса тела остаются по правилам игры; повторное вяление и разделка на филе невозможны."
+drying.prefix,[Вяленая]
+drying.ready,"Вяление завершено. Откройте сушилку, чтобы получить готовую рыбу."
+drying.remaining,Вяление: осталось {0} дн.
+drying.summary,"Сушилка: в процессе {0}, готовы к преобразованию {1}, без рецепта {2}."
 equipment.cashShort,Недостаточно кредитов.
 equipment.legacyDocument,Устаревшая записка о зельях
 equipment.legacyDocumentBody,Эта записка относится к старой системе заказов зелий и оставлена для истории.
@@ -897,6 +902,7 @@ expedition.loading.startFailed,Не удалось завершить отпра
 expedition.map.night.sea,Ночь {0} (всего две) · Состояние моря: {1}
 expedition.merchant.exchange.missing,"Груз, записанный как оплата за этот обмен, отсутствует в трюме. Обмен завершён, дополнительная награда выдана не будет."
 expedition.merchant.exchange.resume,Продолжить обмен
+expedition.merchant.recovery.pending,Восстановление морской услуги ещё не завершено. Пока нельзя продолжить операцию или сохранить игру; попробуйте снова либо загрузите предыдущее сохранение.
 expedition.page.unavailable,Эта страница сейчас недоступна. Вернитесь через меню.
 expedition.planets.back,Вернуться в магазин
 expedition.planets.current,Аврора
@@ -942,6 +948,7 @@ expedition.settlement.pending,Итоги улова ещё не завершен
 expedition.settlement.result,Выделенная группа показывает цели этого заброса. Все награды ({0}) загружены; две другие группы доступны только для просмотра.
 expedition.settlement.result.discard,Выделенная группа показывает цели этого заброса. Загружено наград: {0}; от остальных вы явно отказались.
 expedition.settlement.retry,Повторить загрузку оставшихся наград
+expedition.store_key.repairing,Космический корабль ремонтируется
 expedition.store_key.tooltip,Летите на космическом корабле к другим планетам
 expedition.upgrade.cargo.name,Расширить рыбный трюм
 expedition.upgrade.category.basicResearch,Базовые исследования
@@ -1026,6 +1033,10 @@ fishery.terminal.consumables.all,Все припасы
 fishery.terminal.consumables.aquaculture.locked,"Откройте доступ к аквакультуре, чтобы пользоваться этим магазином."
 fishery.terminal.consumables.busy,Покупка…
 fishery.terminal.consumables.buy,Купить предметов: {0:N0}
+fishery.terminal.consumables.daily.exhausted,Сегодня распродано
+fishery.terminal.consumables.daily.invalid,Введите положительное количество в пределах остатка на сегодня
+fishery.terminal.consumables.daily.limit,Дневной лимит: {0}
+fishery.terminal.consumables.daily.remaining,Дневной лимит: {0} · Осталось сегодня: {1}
 fishery.terminal.consumables.delivery,"Сначала в основной инвентарь, затем на склад"
 fishery.terminal.consumables.empty,В этой категории нет товаров.
 fishery.terminal.consumables.failed,Покупка не удалась. Повторите попытку.
@@ -1512,9 +1523,9 @@ gameplay.ship_mentor.no_money,Сейчас не могу заплатить
 gameplay.ship_mentor.no_money_first,"Тогда, пожалуй, ещё рано передавать тебе корабль."
 gameplay.ship_mentor.no_money_later,"...Надеюсь, на следующей неделе деньги будут."
 gameplay.ship_mentor.paid,Приятно иметь дело. За сведениями звони Вилли.
+gameplay.ship_mentor.pay_1000,Заплатить 1 000
 gameplay.ship_mentor.pay_100_first,Заплатить 100
 gameplay.ship_mentor.pay_100_later,Заплатить 100
-gameplay.ship_mentor.pay_1000,Заплатить 1 000
 gameplay.ship_mentor.pay_all,Оплатить остаток
 gameplay.ship_mentor.payment_failed,Платёж не прошёл. Попробуйте позже.
 gameplay.ship_mentor.remaining,Ты ещё должен {0}. Зайду на следующей неделе.
@@ -1525,6 +1536,12 @@ gameplay.status.incomplete,Не завершено
 gameplay.status.restore_failed,"восстановить не удалось, проверьте журнал"
 gameplay.status.restored,восстановлено
 gameplay.status.unknown,Неизвестно
+gear.bait,Наживка
+gifts.factoryUnavailable,Не удалось создать подарочные предметы. Набор сохранён; попробуйте позже и проверьте журнал.
+gifts.inventoryFull,На прилавке и складе нет места для подарков. Освободите место и заберите их позже.
+gifts.notReady,Выдача подарков пока недоступна. Набор сохранён; попробуйте позже.
+gifts.pending,"Набор получен не полностью. Нажмите, чтобы забрать оставшееся; невыданные предметы сохраняются."
+gifts.recoveryPending,Предыдущая выдача подарков ещё восстанавливается. Набор сохранён; попробуйте позже.
 item.ce_basic_optical_mouse.name,Оптическая мышь в сером корпусе
 item.ce_duanxiang_m1_phone.name,Телефон Duanxiang M1
 item.ce_falcon_wireless_mouse.name,Беспроводная мышь Falcon с низкой задержкой
@@ -1556,12 +1573,12 @@ item.gf_big_eye_fish.short,Механическая рыба с Чжусина. 
 item.gf_blazing_chili_pepper.flavor,"Особый сорт обжигающе острого перца. Щепотки хватит, чтобы всё блюдо стало огненным."
 item.gf_blazing_chili_pepper.name,Огненный перец чили
 item.gf_blazing_chili_pepper.short,Можно использовать для консервирования рыбы.
-item.gf_blue_crystal_fish_fillet.flavor,
-item.gf_blue_crystal_fish_fillet.name,Филе синей кристальной рыбы
-item.gf_blue_crystal_fish_fillet.short,Ледяно-синее филе синей кристальной рыбы.
 item.gf_blue_crystal_fish.flavor,Заметно холодная на ощупь.
 item.gf_blue_crystal_fish.name,Синяя кристальная рыба
 item.gf_blue_crystal_fish.short,Внутри тела образуются полупрозрачные синие кристаллы. Мясо ничем не примечательно; настоящее сокровище — ледяные кристаллы.
+item.gf_blue_crystal_fish_fillet.flavor,
+item.gf_blue_crystal_fish_fillet.name,Филе синей кристальной рыбы
+item.gf_blue_crystal_fish_fillet.short,Ледяно-синее филе синей кристальной рыбы.
 item.gf_bone_blue_crystal_fish.flavor,
 item.gf_bone_blue_crystal_fish.name,Кости синей кристальной рыбы
 item.gf_bone_blue_crystal_fish.short,Кости после разделки. Подходят как материал; кости поддерживаемых видов можно перемолоть в порошок.
@@ -1718,15 +1735,27 @@ item.gf_drip_coffee_box.short,"Порционный кофе в одноразо
 item.gf_drying_rack.flavor,Простая сушилка для еды. Не забудьте повесить рыбу.
 item.gf_drying_rack.name,Сушилка
 item.gf_drying_rack.short,Высушивает рыбу в запас провизии.
+item.gf_durable_fish_mince_bait.flavor,
+item.gf_durable_fish_mince_bait.name,Прочная наживка из рыбного фарша
+item.gf_durable_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс успеха в обычных местах рыбалки +25 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
+item.gf_durable_glass_bait.flavor,
+item.gf_durable_glass_bait.name,Прочная стеклянная наживка
+item.gf_durable_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс ловли гигантской тени +25 процентных пунктов.
+item.gf_durable_rat_dung_bait.flavor,
+item.gf_durable_rat_dung_bait.name,Прочная наживка из крысиного помёта
+item.gf_durable_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс ловли кроваво-красной тени +25 процентных пунктов.
+item.gf_durable_shiny_bait.flavor,
+item.gf_durable_shiny_bait.name,Прочная блестящая наживка
+item.gf_durable_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс сундука после успешного улова +15 процентных пунктов.
 item.gf_eleanor_pocket_watch.flavor,
 item.gf_eleanor_pocket_watch.name,Карманные часы Элеоноры
 item.gf_eleanor_pocket_watch.short,"Говорят, принадлежат мисс Элеоноре с верхних уровней, потерявшей их после спуска на нижние."
-item.gf_electric_eel_fillet.flavor,
-item.gf_electric_eel_fillet.name,Филе светорыбы
-item.gf_electric_eel_fillet.short,"Время от времени ещё дёргается. Будем надеяться, это лишь нервный рефлекс."
 item.gf_electric_eel.flavor,
 item.gf_electric_eel.name,Светорыба
 item.gf_electric_eel.short,"Особые органы вырабатывают мощный ток. Прежде чем брать её в руки, убедитесь, что она мертва."
+item.gf_electric_eel_fillet.flavor,
+item.gf_electric_eel_fillet.name,Филе светорыбы
+item.gf_electric_eel_fillet.short,"Время от времени ещё дёргается. Будем надеяться, это лишь нервный рефлекс."
 item.gf_electric_shell.flavor,
 item.gf_electric_shell.name,Электрическая ракушка
 item.gf_electric_shell.short,Механическая рыба с Чжусина. Её внутренняя плата пригодится как материал для платы зарядки.
@@ -1736,6 +1765,12 @@ item.gf_electronic_shackle.short,"Кандал, сброшенный беглы�
 item.gf_emperor_red_crab.flavor,Твёрдый панцирь позволяет ему бесцеремонно прокладывать путь в воде.
 item.gf_emperor_red_crab.name,Императорский красный краб
 item.gf_emperor_red_crab.short,Гигантский краб в красной броне; его можно поймать гарпуном.
+item.gf_empty_can_large.flavor,
+item.gf_empty_can_large.name,Большая пустая банка
+item.gf_empty_can_large.short,Пустая металлическая банка.
+item.gf_empty_can_small.flavor,
+item.gf_empty_can_small.name,Маленькая пустая банка
+item.gf_empty_can_small.short,Пустая металлическая банка.
 item.gf_empty_reagent_injector.flavor,
 item.gf_empty_reagent_injector.name,Пустой шприц
 item.gf_empty_reagent_injector.short,Пустой шприц для приготовления зелий.
@@ -1745,15 +1780,24 @@ item.gf_energy_fish.short,Механическая рыба с Чжусина. �
 item.gf_ferrite_granules.flavor,"Железно-серые зёрна собираются вместе, порой выстраиваясь вдоль магнитного поля."
 item.gf_ferrite_granules.name,Гранулы феррита
 item.gf_ferrite_granules.short,"Гранулы из купола ферритовой медузы. Соедините с обычным электронным компонентом, чтобы получить энергетическую батарею."
-item.gf_ferrite_jellyfish_fillet.flavor,
-item.gf_ferrite_jellyfish_fillet.name,Ломтики ржаво-золотой медузы
-item.gf_ferrite_jellyfish_fillet.short,Ломтики ферритовой медузы.
 item.gf_ferrite_jellyfish.flavor,Мягкие щупальца покачиваются в слабом магнитном поле.
 item.gf_ferrite_jellyfish.name,Ферритовая медуза
 item.gf_ferrite_jellyfish.short,Медуза с Лингуаня с ферритовыми частицами в куполе.
+item.gf_ferrite_jellyfish_fillet.flavor,
+item.gf_ferrite_jellyfish_fillet.name,Ломтики ржаво-золотой медузы
+item.gf_ferrite_jellyfish_fillet.short,Ломтики ферритовой медузы.
 item.gf_fish_bone.flavor,Скелет после переработки рыбы. Можно продать как дешёвый материал.
 item.gf_fish_bone.name,Рыбья кость
 item.gf_fish_bone.short,"Обычные кости после переработки рыбы, пригодные как дешёвый материал."
+item.gf_fish_can_large.flavor,
+item.gf_fish_can_large.name,Большая банка рыбных консервов
+item.gf_fish_can_large.short,Рыбные консервы.
+item.gf_fish_can_small.flavor,
+item.gf_fish_can_small.name,Маленькая банка рыбных консервов
+item.gf_fish_can_small.short,Рыбные консервы.
+item.gf_fish_mince_bait.flavor,
+item.gf_fish_mince_bait.name,Рыбный фарш
+item.gf_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс успеха в обычных местах рыбалки +25 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
 item.gf_fish_offal.flavor,
 item.gf_fish_offal.name,Рыбные потроха
 item.gf_fish_offal.short,"Съедобные потроха, полученные при переработке большой белой акулы."
@@ -1763,6 +1807,18 @@ item.gf_fish_oil.short,Можно использовать для консерв
 item.gf_fish_powder_machine.flavor,
 item.gf_fish_powder_machine.name,Измельчитель рыбных отходов
 item.gf_fish_powder_machine.short,Поместите подходящие рыбные отходы и батарею. На следующий день получится порошок: 25% массы обычных отходов или 1% отходов большой белой акулы.
+item.gf_fishery_ecosystem.flavor,Даже большой бассейн требует заботы.
+item.gf_fishery_ecosystem.name,Большая установка замкнутого водоснабжения
+item.gf_fishery_ecosystem.short,"Базовая сетка для рыбы: 24×4 клетки. Сохранены стандартные улучшения вместимости и эффективности, питание и четыре слота фильтров. Установите отдельный бак для воды. Вместимость по-прежнему ограничена запасом воды, загрязнением и кормом."
+item.gf_fishery_printer.flavor,
+item.gf_fishery_printer.name,Принтер тары
+item.gf_fishery_printer.short,"Вставьте батарею, чтобы печатать маленькие и большие пустые банки, ящики для разведения червей и пустые шприцы. Каждая печать расходует 4 ед. энергии, материалы не нужны."
+item.gf_fishery_terminal.flavor,
+item.gf_fishery_terminal.name,Терминал рыбоводства
+item.gf_fishery_terminal.short,Просматривайте сведения о рыбе и заказывайте товары через терминал.
+item.gf_fishery_water_tank.flavor,"На шкале больше делений, но каждую каплю всё равно придётся залить."
+item.gf_fishery_water_tank.name,Большой бак для аквакультуры
+item.gf_fishery_water_tank.short,"Отдельный бак для аквакультуры объёмом 60 литров, изначально пустой. Вручную установите его в слот бака системы. Больший запас воды не повышает пропускную способность фильтров."
 item.gf_fishing_net.flavor,Прочная сеть для морских экспедиций. С «Простой рыбалкой» её можно брать для ловли при поиске ресурсов.
 item.gf_fishing_net.name,Рыболовная сеть
 item.gf_fishing_net.short,Открывается вместе с углепластиковой удочкой и использует её набор рыб. При успехе ловит трёх рыб с отдельным броском для каждой. Поиск ресурсов сохраняет разные наборы чётных/нечётных дней и фиксированный шанс улова 50%. Базовый шанс в экспедиции: 60%.
@@ -1772,26 +1828,29 @@ item.gf_food_freezer.short,Хранит еду и живую рыбу. Биол�
 item.gf_gilded_card.flavor,
 item.gf_gilded_card.name,Позолоченная карта
 item.gf_gilded_card.short,"Сверкающая позолоченная карта; говорят, игрушка богачей с верхних уровней."
-item.gf_glass_fish_fillet.name,Филе стеклянной рыбы
-item.gf_glass_fish_fillet.short,Сырое рыбное филе.
+item.gf_glass_bait.flavor,
+item.gf_glass_bait.name,Стеклянная наживка
+item.gf_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс ловли гигантской тени +25 процентных пунктов.
 item.gf_glass_fish.flavor,
 item.gf_glass_fish.name,Стеклянная рыба
 item.gf_glass_fish.short,Сквозь почти прозрачное тело видны органы и кости.
+item.gf_glass_fish_fillet.name,Филе стеклянной рыбы
+item.gf_glass_fish_fillet.short,Сырое рыбное филе.
 item.gf_gold.flavor,
 item.gf_gold.name,Золото
 item.gf_gold.short,Самородное золото из золотой рыбы.
-item.gf_golden_fish_fillet.flavor,
-item.gf_golden_fish_fillet.name,Филе золотой рыбы
-item.gf_golden_fish_fillet.short,Золотистое филе золотой рыбы.
 item.gf_golden_fish.flavor,Вся рыба чрезвычайно ценна.
 item.gf_golden_fish.name,Золотая рыба
 item.gf_golden_fish.short,Исключительно редкая рыба с металлической чешуёй. Внутри встречается даже немного самородного золота.
-item.gf_goldfish_fillet.flavor,
-item.gf_goldfish_fillet.name,Филе «Текучее золото»
-item.gf_goldfish_fillet.short,Ломтики золотой рыбки.
+item.gf_golden_fish_fillet.flavor,
+item.gf_golden_fish_fillet.name,Филе золотой рыбы
+item.gf_golden_fish_fillet.short,Золотистое филе золотой рыбы.
 item.gf_goldfish.flavor,"Плавает спокойно, но всегда ускользает до вываживания крючка."
 item.gf_goldfish.name,Золотая рыбка
 item.gf_goldfish.short,"Маленькая рыба с золотисто-красной чешуёй, часто мелькающая среди корней на мелководье."
+item.gf_goldfish_fillet.flavor,
+item.gf_goldfish_fillet.name,Филе «Текучее золото»
+item.gf_goldfish_fillet.short,Ломтики золотой рыбки.
 item.gf_great_white_shark.flavor,
 item.gf_great_white_shark.name,Большая белая акула
 item.gf_great_white_shark.short,"Высший морской хищник, нападающий на лодки ночью."
@@ -1807,6 +1866,9 @@ item.gf_horned_swordfish.short,Из головы выступает острый
 item.gf_ice_crystal.flavor,
 item.gf_ice_crystal.name,Ледяной кристалл
 item.gf_ice_crystal.short,Холодный кристалл из синей кристальной рыбы.
+item.gf_industrial_meat_feed.flavor,
+item.gf_industrial_meat_feed.name,Промышленный мясной корм
+item.gf_industrial_meat_feed.short,"Промышленный корм на основе мяса. Рыба берёт только необходимое количество. Можно объединять с кормом того же типа, но нельзя разделять."
 item.gf_iridescent_moxiao_egg.flavor,
 item.gf_iridescent_moxiao_egg.name,Радужное яйцо Мосяо
 item.gf_iridescent_moxiao_egg.short,"Переливаются радужные краски, рядом тесно прижались цветы. Свежая радость для глаз и прикосновений: каждый долгий взгляд заставляет сердце трепетать."
@@ -1819,12 +1881,12 @@ item.gf_large_yellow_croaker.short,Упитанный горбыль с боль
 item.gf_ledx_transilluminator.flavor,
 item.gf_ledx_transilluminator.name,Кожный трансиллюминатор LEDX
 item.gf_ledx_transilluminator.short,Медицинский прибор для точного определения положения вен под кожей.
-item.gf_lofurin_fillet.flavor,
-item.gf_lofurin_fillet.name,Филе «Багровый лепесток»
-item.gf_lofurin_fillet.short,Ломтики лофурина.
 item.gf_lofurin.flavor,Чешуя сохраняет мягкий блеск даже вне воды.
 item.gf_lofurin.name,Лофурин
 item.gf_lofurin.short,"Её хвост струится в воде, как вуаль, а слои чешуи напоминают маленькие опавшие лепестки."
+item.gf_lofurin_fillet.flavor,
+item.gf_lofurin_fillet.name,Филе «Багровый лепесток»
+item.gf_lofurin_fillet.short,Ломтики лофурина.
 item.gf_makeshift_fishing_rod.flavor,Удочка из подручного хлама. Что поймается — дело случая.
 item.gf_makeshift_fishing_rod.name,Самодельная удочка
 item.gf_makeshift_fishing_rod.short,Простая удочка с одним крючком. С чертой «Простая рыбалка» возьмите её для ловли при поиске ресурсов. Шанс улова: 50%; при неудаче идёт обычный поиск. Базовый шанс в экспедиции: 60%.
@@ -1837,21 +1899,21 @@ item.gf_military_radio.short,"Хорошо сохранившаяся военн
 item.gf_moonshine_runner.flavor,
 item.gf_moonshine_runner.name,Самогон «Свирепый бегун»
 item.gf_moonshine_runner.short,"Отличный самогон из убежища: шесть перегонок и тщательная обработка дали эту бутылку крепостью 79%. Помните, выпивка может иметь печальные последствия."
-item.gf_muspels_son_fillet.flavor,
-item.gf_muspels_son_fillet.name,Филе «Расплавленный огонь»
-item.gf_muspels_son_fillet.short,Ломтики сына Муспеля.
 item.gf_muspels_son.flavor,Чешуя покрывает тело словно броня и на ощупь напоминает грубый камень.
 item.gf_muspels_son.name,Сын Муспеля
 item.gf_muspels_son.short,"Красный узор чешуи похож на тлеющие угли, текущие вдоль тела."
+item.gf_muspels_son_fillet.flavor,
+item.gf_muspels_son_fillet.name,Филе «Расплавленный огонь»
+item.gf_muspels_son_fillet.short,Ломтики сына Муспеля.
 item.gf_nightmare_sac.flavor,"В тёмно-фиолетовых стенках осадок, напоминающий затянувшийся сон."
 item.gf_nightmare_sac.name,Кошмарный мешок
 item.gf_nightmare_sac.short,"Мешок из кошмара Ран, используемый для получения кошмарной пыли."
-item.gf_niorun_fillet.flavor,
-item.gf_niorun_fillet.name,Филе «Фиолетовый отблеск»
-item.gf_niorun_fillet.short,Ломтики ниоруна.
 item.gf_niorun.flavor,"Скользит в воде, как призрак, часто оставаясь незамеченной."
 item.gf_niorun.name,Ниорун
 item.gf_niorun.short,"Выглядит устрашающе, но большую часть тела составляют крыловидные плавники."
+item.gf_niorun_fillet.flavor,
+item.gf_niorun_fillet.name,Филе «Фиолетовый отблеск»
+item.gf_niorun_fillet.short,Ломтики ниоруна.
 item.gf_ocean_tear.flavor,
 item.gf_ocean_tear.name,Слеза океана
 item.gf_ocean_tear.short,"Огромная природная жемчужина, переливающаяся яркими красками. Драгоценный дар океана."
@@ -1891,12 +1953,12 @@ item.gf_processing_station.short,Верстак для переработки р
 item.gf_purification_sac.flavor,
 item.gf_purification_sac.name,Очищающий мешок
 item.gf_purification_sac.short,Особый мешок рыбы-очистителя: фильтрует грязную воду и хранит относительно чистую.
-item.gf_purifier_fish_meat.flavor,Хорошо подходит для засолки.
-item.gf_purifier_fish_meat.name,Филе рыбы-очистителя
-item.gf_purifier_fish_meat.short,Слегка бледное мясо. Уникальные свойства рыбы-очистителя делают его необыкновенно хорошим ингредиентом.
 item.gf_purifier_fish.flavor,Хорошо подходит для засолки.\n
 item.gf_purifier_fish.name,Рыба-очиститель
 item.gf_purifier_fish.short,Большой брюшной водяной мешок фильтрует и хранит относительно чистую воду.
+item.gf_purifier_fish_meat.flavor,Хорошо подходит для засолки.
+item.gf_purifier_fish_meat.name,Филе рыбы-очистителя
+item.gf_purifier_fish_meat.short,Слегка бледное мясо. Уникальные свойства рыбы-очистителя делают его необыкновенно хорошим ингредиентом.
 item.gf_purple_fillet.flavor,"Напоминает о старых временах, когда вы ещё были бедны."
 item.gf_purple_fillet.name,Фиолетовое филе
 item.gf_purple_fillet.short,Отвратительно!
@@ -1906,18 +1968,21 @@ item.gf_rainbow_fillet.short,Такие странные цвета. Это то
 item.gf_rainbow_fish.flavor,
 item.gf_rainbow_fish.name,Радужная рыба
 item.gf_rainbow_fish.short,"Популярный питомец у жителей верхнего района. Возможно, разумнее продать, чем съесть."
-item.gf_rans_nightmare_fillet.flavor,
-item.gf_rans_nightmare_fillet.name,Кошмарное филе
-item.gf_rans_nightmare_fillet.short,Ломтики кошмара Ран.
 item.gf_rans_nightmare.flavor,"Кажется, приносит кошмары и считается символом несчастья."
 item.gf_rans_nightmare.name,Кошмар Ран
 item.gf_rans_nightmare.short,Тёмная окраска почти сливается с речным дном.
-item.gf_ratfish_fillet.flavor,
-item.gf_ratfish_fillet.name,Филе рыбы-крысы
-item.gf_ratfish_fillet.short,Розовое филе рыбы-крысы.
+item.gf_rans_nightmare_fillet.flavor,
+item.gf_rans_nightmare_fillet.name,Кошмарное филе
+item.gf_rans_nightmare_fillet.short,Ломтики кошмара Ран.
+item.gf_rat_dung_bait.flavor,
+item.gf_rat_dung_bait.name,Шарик крысиного помёта
+item.gf_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс ловли кроваво-красной тени +25 процентных пунктов.
 item.gf_ratfish.flavor,Вечно прячется среди камней и ила.
 item.gf_ratfish.name,Рыба-крыса
 item.gf_ratfish.short,Маленькая придонная рыба.
+item.gf_ratfish_fillet.flavor,
+item.gf_ratfish_fillet.name,Филе рыбы-крысы
+item.gf_ratfish_fillet.short,Розовое филе рыбы-крысы.
 item.gf_reagent_custom.flavor,
 item.gf_reagent_custom.name,Особое зелье
 item.gf_reagent_custom.short,"Шприц, наполненный смесью зелья по собственному рецепту."
@@ -1927,12 +1992,12 @@ item.gf_reagent_synthesizer.short,"Добавьте растворитель, р
 item.gf_redtail_fin.flavor,
 item.gf_redtail_fin.name,Красный хвостовой плавник
 item.gf_redtail_fin.short,"Прочный хвостовой плавник, целиком срезанный с краснохвостой рыбы."
-item.gf_redtail_fish_fillet.flavor,
-item.gf_redtail_fish_fillet.name,Филе краснохвостой рыбы
-item.gf_redtail_fish_fillet.short,Толстое филе краснохвостой рыбы.
 item.gf_redtail_fish.flavor,Яркий красный хвост выделяется в мутной воде.
 item.gf_redtail_fish.name,Краснохвостая рыба
 item.gf_redtail_fish.short,"Крупная хищная рыба с заметным красным хвостом, сильными мышцами и большим количеством мяса."
+item.gf_redtail_fish_fillet.flavor,
+item.gf_redtail_fish_fillet.name,Филе краснохвостой рыбы
+item.gf_redtail_fish_fillet.short,Толстое филе краснохвостой рыбы.
 item.gf_rusty_slicing_knife.flavor,Ржавый ножичек с кровостоком.
 item.gf_rusty_slicing_knife.name,Ржавый разделочный нож
 item.gf_rusty_slicing_knife.short,Перерабатывает рыбу в мясо через исходную систему игры.
@@ -1942,11 +2007,11 @@ item.gf_salt.short,Можно использовать для консервир
 item.gf_salted_fish.flavor,
 item.gf_salted_fish.name,Солёная рыба
 item.gf_salted_fish.short,"Рыба, засоленная в герметичной банке. Очень солёная, долго хранится."
-item.gf_sardine_fillet.name,Филе сардины
-item.gf_sardine_fillet.short,Сырое рыбное филе.
 item.gf_sardine.flavor,Хорошо подходит для приготовления рыбы в масле.
 item.gf_sardine.name,Сардина
 item.gf_sardine.short,Маленькая стайная рыба.
+item.gf_sardine_fillet.name,Филе сардины
+item.gf_sardine_fillet.short,Сырое рыбное филе.
 item.gf_sealed_can.flavor,Оставлена только для старых сохранений. Больше не продаётся и не производится.
 item.gf_sealed_can.name,Герметичная банка (устаревшая)
 item.gf_sealed_can.short,Предмет для совместимости со старыми сохранениями. Переработка отключена.
@@ -1968,23 +2033,26 @@ item.gf_shark_tail_steak.short,Съедобный хвостовой стейк 
 item.gf_sharp_slicing_knife.flavor,Лезвие блестит после тщательной заточки. Долгая служба оставила следы на рукояти.
 item.gf_sharp_slicing_knife.name,Острый разделочный нож
 item.gf_sharp_slicing_knife.short,Перерабатывает рыбу в мясо через исходную систему игры.
-item.gf_small_yellow_croaker_fillet.name,Филе малого жёлтого горбыля
-item.gf_small_yellow_croaker_fillet.short,Сырое рыбное филе.
+item.gf_shiny_bait.flavor,
+item.gf_shiny_bait.name,Светящаяся наживка
+item.gf_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс сундука после успешного улова +15 процентных пунктов.
 item.gf_small_yellow_croaker.flavor,
 item.gf_small_yellow_croaker.name,Малый жёлтый горбыль
 item.gf_small_yellow_croaker.short,"Обычная мелкая рыба. Мяса немного, но это лучше, чем совсем без улова.\n"
+item.gf_small_yellow_croaker_fillet.name,Филе малого жёлтого горбыля
+item.gf_small_yellow_croaker_fillet.short,Сырое рыбное филе.
 item.gf_snakehead.flavor,"Затаился у дна, поджидая добычу."
 item.gf_snakehead.name,Змееголов
 item.gf_snakehead.short,"Плотоядная пресноводная рыба, которую можно выращивать и разводить в аквакультурном баке."
 item.gf_solid_gold_lighter.flavor,
 item.gf_solid_gold_lighter.name,Зажигалка из чистого золота
 item.gf_solid_gold_lighter.short,Зажигалка из золота 24 карат с плавно открывающейся крышкой и прочным корпусом. Даже добыть огонь кажется роскошью.
-item.gf_space_rocket_fish_fillet.flavor,
-item.gf_space_rocket_fish_fillet.name,Филе «Звёздный полёт»
-item.gf_space_rocket_fish_fillet.short,Ломтики космической рыбы-ракеты.
 item.gf_space_rocket_fish.flavor,После рывка на поверхности остаётся лишь мимолётная белая полоса.
 item.gf_space_rocket_fish.name,Космическая рыба-ракета
 item.gf_space_rocket_fish.short,"Веретенообразная рыба с Лингуаня, чьи обтекаемые тело и хвост похожи на маленькую ракету."
+item.gf_space_rocket_fish_fillet.flavor,
+item.gf_space_rocket_fish_fillet.name,Филе «Звёздный полёт»
+item.gf_space_rocket_fish_fillet.short,Ломтики космической рыбы-ракеты.
 item.gf_spectral_wing_membrane.flavor,"Вне воды всё ещё мягко раскрывается, переливаясь бледно-фиолетовым."
 item.gf_spectral_wing_membrane.name,Призрачная крыловая перепонка
 item.gf_spectral_wing_membrane.short,Перепонка крыловидных плавников ниоруна для изготовления нейроактивных духов.
@@ -1994,12 +2062,24 @@ item.gf_spicy_pickled_fish.short,"Рыба, законсервированная
 item.gf_star_fruit.flavor,"Её сказочный вкус оставляет яркое воспоминание... чувство,\nкоторое не описать словами."
 item.gf_star_fruit.name,Звёздный плод
 item.gf_star_fruit.short,"Таинственный плод, дарующий силу тому, кто его съест."
-item.gf_star_puffer_fillet.flavor,
-item.gf_star_puffer_fillet.name,Звёздное филе
-item.gf_star_puffer_fillet.short,Ломтики звёздного иглобрюха.
 item.gf_star_puffer.flavor,"При испуге раздувается, превращаясь в маленькую колючую планету."
 item.gf_star_puffer.name,Звёздный иглобрюх
 item.gf_star_puffer.short,"Круглая упитанная рыба со звёздчатыми узорами, слабо светящимися в тёмной воде."
+item.gf_star_puffer_fillet.flavor,
+item.gf_star_puffer_fillet.name,Звёздное филе
+item.gf_star_puffer_fillet.short,Ломтики звёздного иглобрюха.
+item.gf_strong_fish_mince_bait.flavor,
+item.gf_strong_fish_mince_bait.name,Усиленная наживка из рыбного фарша
+item.gf_strong_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс успеха в обычных местах рыбалки +50 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
+item.gf_strong_glass_bait.flavor,
+item.gf_strong_glass_bait.name,Усиленная стеклянная наживка
+item.gf_strong_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс ловли гигантской тени +50 процентных пунктов.
+item.gf_strong_rat_dung_bait.flavor,
+item.gf_strong_rat_dung_bait.name,Усиленная наживка из крысиного помёта
+item.gf_strong_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс ловли кроваво-красной тени +50 процентных пунктов.
+item.gf_strong_shiny_bait.flavor,
+item.gf_strong_shiny_bait.name,Усиленная блестящая наживка
+item.gf_strong_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс сундука после успешного улова +30 процентных пунктов.
 item.gf_super_salt.flavor,"Очищенная соль, которая лучше сохраняет еду."
 item.gf_super_salt.name,Суперсоль
 item.gf_super_salt.short,Можно использовать для консервирования рыбы.
@@ -2009,22 +2089,40 @@ item.gf_swordfish_rostrum.short,"Твёрдый рострум, целиком �
 item.gf_transparent_membrane.flavor,
 item.gf_transparent_membrane.name,Прозрачная перепонка
 item.gf_transparent_membrane.short,"Целая прозрачная перепонка стеклянной рыбы. Гибкая, покрыта крохотными порами."
-item.gf_volcanic_fish_fillet.flavor,Хорошо подходит для острой рыбы.\n
-item.gf_volcanic_fish_fillet.name,Филе вулканической рыбы
-item.gf_volcanic_fish_fillet.short,"Ярко-красное и тёплое. Говорят, на вкус как уголь."
 item.gf_volcanic_fish.flavor,Хорошо подходит для острой рыбы.\n
 item.gf_volcanic_fish.name,Вулканическая рыба
 item.gf_volcanic_fish.short,Необычно развитый тепловой орган некоторое время остаётся тёплым после смерти.
-item.gf_wuzhiqi_fillet.flavor,
-item.gf_wuzhiqi_fillet.name,Филе «Лазурная волна»
-item.gf_wuzhiqi_fillet.short,Ломтики учжици.
+item.gf_volcanic_fish_fillet.flavor,Хорошо подходит для острой рыбы.\n
+item.gf_volcanic_fish_fillet.name,Филе вулканической рыбы
+item.gf_volcanic_fish_fillet.short,"Ярко-красное и тёплое. Говорят, на вкус как уголь."
+item.gf_worm.flavor,
+item.gf_worm.name,Молодой червь
+item.gf_worm.short,Держите в ящике для разведения и кормите рыбным мясом или отходами.
+item.gf_worm_culture_box.flavor,
+item.gf_worm_culture_box.name,Ящик для червей
+item.gf_worm_culture_box.short,"Поместите червей, рыбное мясо и потроха внутрь для автоматического разведения."
 item.gf_wuzhiqi.flavor,"Яркий единственный глаз следит за поверхностью из-под корней, словно за кем-то шпионит."
 item.gf_wuzhiqi.name,Учжици
 item.gf_wuzhiqi.short,"Крупное водное существо с мощными плавниками-конечностями, способными раздвигать спутанные корни."
+item.gf_wuzhiqi_fillet.flavor,
+item.gf_wuzhiqi_fillet.name,Филе «Лазурная волна»
+item.gf_wuzhiqi_fillet.short,Ломтики учжици.
 item.gf_yellow_croaker_fillet.flavor,
 item.gf_yellow_croaker_fillet.name,Филе жёлтого горбыля
 item.gf_yellow_croaker_fillet.short,Тарелка сочной сырой рыбы.
 item.pstide_mechanical_key.name,Механический ключ
+item.pstide_return_cargo_box.flavor,
+item.pstide_return_cargo_box.name,Ящик с грузом после рыбалки
+item.pstide_return_cargo_box.short,"Содержит груз, привезённый в рыбном трюме. Дважды нажмите для открытия, затем извлеките вещи вручную или нажмите «Распаковать всё». Если склад полон, ящик остаётся; пустой ящик исчезает."
+item.tackle_shop_potion_manual.flavor,
+item.tackle_shop_potion_manual.name,Руководство по зельям
+item.tackle_shop_potion_manual.short,"Иллюстрированное руководство по измельчению отходов, смешиванию зелий и наполнению шприцев."
+item.tackle_shop_processing_manual.flavor,"Заметки Вилли по переработке. Вверх/вниз — выбор категории, влево/вправо — страницы."
+item.tackle_shop_processing_manual.name,Руководство перерабатывающей станции
+item.tackle_shop_processing_manual.short,"Руководство по всем рецептам перерабатывающей станции, обновляемое вместе с текущим рыболовным набором предметов."
+item.tackle_shop_willy_card.flavor,Визитка с лёгким запахом сырости.
+item.tackle_shop_willy_card.name,Визитка Вилли
+item.tackle_shop_willy_card.short,"Визитка Вилли, владельца магазина снастей. Его телефон: 2424."
 item.ui.autoProcessing,Автоматическая переработка: активна 
 item.ui.awaitingConversionCount,", ожидает преобразования "
 item.ui.canStart,Готово к запуску: 
@@ -2049,7 +2147,7 @@ item.ui.totalInputWeight,Общий вес ингредиентов:
 item.ui.unpurchasedIngredients,Есть неоплаченные ингредиенты
 item.ui.waitingConversion,"Готово, ожидает преобразования"
 item.ui.weight,Вес: 
-items.weight.description,"Вес: {0}\n{1}"
+items.weight.description,Вес: {0}\n{1}
 life.hidden.description,Тайник с припасами среди рифов. За каждый ресурсный цикл доступна одна партия припасов. Эвакуации здесь нет; после поиска вернитесь в порт самостоятельно.
 life.hidden.name,Тайная комната Кроны
 life.hidden.required,Для входа нужен ключ жизни в снаряжении или трюме.
@@ -2265,6 +2363,10 @@ mechanical.upgrade.startingPower.name,Портовое зарядное обор
 mechanical.upgrade.time,Осталось меньше 30 минут. Сначала вернитесь в центральную гавань.
 mechanical.upgrade.workshop.title,Заброшенная верфь / Мастерская оборудования
 mechanical.wrecked,Происшествие внутри промышленного объекта разрушило корпус.
+mod.display.description,"Рыбалка, экспедиции, переработка и аквакультура."
+mod.display.framework.name,GoFishing — Рыболовная система
+mod.display.name,На рыбалку
+mod.display.pack.name,GoFishing — Набор предметов
 native.boss.fillet.failed,Разделку не удалось завершить. Оставьте место для всех продуктов. Туша расходуется только после размещения всех продуктов. Незавершённые операции восстанавливаются автоматически.
 native.boss.fillet.title,Разделка крупного улова
 native.dried.name,Сушёная
@@ -2388,8 +2490,8 @@ potion.story.paper.martin_promotion,Меня сделали старшим. Во
 potion.story.paper.martin_sleep_end,"Спасибо, что решили мою проблему. Теперь могу нормально работать."
 potion.story.paper.martin_transfer,"Меня взяли в доки. Платят меньше, зато каждый день возвращаюсь домой на закате.\n\nВчера сын спросил, почему теперь мы каждый день ужинаем вместе.\n\nТут я понял, что он уже привык к моему отсутствию по ночам. Возможно, всё не так уж плохо."
 potion.story.paper.title,Письмо
-potion.story.refused,Ладно. Поищу в другом магазине.
 potion.story.refuseHint,Завершить всю сюжетную линию этого покупателя.
+potion.story.refused,Ладно. Поищу в другом магазине.
 potion.story.rewardSpace,На прилавке недостаточно места. Освободите его и продолжите. Награда сохранится.
 potion.story.saveRetry,Сейчас сохранение недоступно. Попробуйте позже.
 potion.story.submit,Передать зелье
@@ -2473,6 +2575,40 @@ processing.machine.paused,"Приостановлено, осталось дне
 processing.machine.running,"Переработка, осталось дней: {0}"
 processing.machine.summary,"{0}\nАвтопереработка: активно {1}, ждёт преобразования {2}, без рецепта {3}"
 processing.machine.title,Перерабатывающая машина
+processing.manual.category.bait,Приманки
+processing.manual.category.electronic,Энергия и электроника
+processing.manual.category.medical,Медицина и химикаты
+processing.manual.category.other,Прочие рецепты
+processing.manual.category.random,Случайный результат
+processing.manual.category.water,Вода и розлив
+processing.manual.category.weapon,Оружие и инструменты
+processing.manual.duration,Требуется {0}{1}
+processing.manual.index.entry,Рецептов: {0} · стр. {1}
+processing.manual.index.summary,Все 58 рецептов в 7 категориях.
+processing.manual.nav.next,Следующая категория
+processing.manual.nav.previous,Предыдущая категория
+processing.manual.notReady,Руководство ещё не готово. Попробуйте позже.
+processing.manual.page.bait-1.title,Приманки
+processing.manual.page.bait-2.title,Приманки
+processing.manual.page.bait-3.title,Приманки
+processing.manual.page.electronic-1.title,Энергия и электроника
+processing.manual.page.electronic-2.title,Энергия и электроника
+processing.manual.page.header, · Стр. {0}/{1}
+processing.manual.page.index.title,Все рецепты переработки
+processing.manual.page.medical-1.title,Медицина и химикаты
+processing.manual.page.medical-2.title,Медицина и химикаты
+processing.manual.page.medical-3.title,Медицина и химикаты
+processing.manual.page.other-1.title,Прочие рецепты
+processing.manual.page.random-1.title,Случайный результат
+processing.manual.page.random-2.title,Случайный результат
+processing.manual.page.water-1.title,Вода и розлив
+processing.manual.page.water-2.title,Вода и розлив
+processing.manual.page.weapon-1.title,Оружие и инструменты
+processing.manual.page.weapon-2.title,Оружие и инструменты
+processing.manual.title,Руководство по перерабатывающему станку
+processing.manual.unit.cycle, цикл.
+processing.manual.unit.day, дн.
+processing.manual.unit.hour, ч
 processing.recipe.gf_drying_rack.0,Сушка рогатой рыбы-меча
 processing.recipe.gf_drying_rack.1,Сушка радужной рыбы
 processing.recipe.gf_drying_rack.10,Сушка синей кристальной рыбы
@@ -2499,6 +2635,8 @@ processing.recovery.cleanup,Ожидается удаление ингредие
 processing.recovery.save-blocked,Предметы переработки не возвращены в хранилище. Сохранение отменено. Освободите место в исходном инвентаре и сохранитесь снова для повтора восстановления. Прошлое сохранение на диске не изменено.
 processing.recovery.title,Восстановление переработки
 processing.special.material.denied,"Побочные продукты рыбы нельзя консервировать, кроме костей. Ингредиенты не израсходованы."
+processing.station.ingredients.short,"Верстак: недостаточно материалов. Можно изготовить не более {0} порций (выбрано {1})."
+processing.station.recipe.mismatch,"Верстак: подходящий рецепт не найден. Поместите правильные материалы для переработки (рыбные органы, металл, компоненты и т. д.)."
 reagent.actualChange,Последнее приготовление: фактическое изменение
 reagent.adverse.drowsiness,Сонливость
 reagent.adverse.fatigue,Утомление
@@ -2520,8 +2658,8 @@ reagent.autoAux.history,Отмените цель сохранённого ре�
 reagent.autoAux.limits,Вспомогательные вещества немного меняют объём и концентрацию. Проверьте ступени эффектов. Неустранимая нагрузка и загрязнение не удаляются.
 reagent.autoAux.missingPair,Доступных веществ недостаточно для полезной пары. Добавьте материалы из списка ниже.
 reagent.autoAux.next,Добавьте только рекомендованные вспомогательные вещества:\n{0}\nНастройки количества порошка и растворителя сохранены.
-reagent.autoAux.none,План дополнительного снижения общей нагрузки не найден. Можно настроить пропорции вручную.
 reagent.autoAux.noStock,В запасе и зоне подготовки нет вспомогательных веществ.
+reagent.autoAux.none,План дополнительного снижения общей нагрузки не найден. Можно настроить пропорции вручную.
 reagent.autoAux.pending,Балансировка принята. Нажмите «Смешать / Пополнить» для добавления веществ.
 reagent.autoAux.reference,Справочный план после пополнения (пока невыполним):\n{0}
 reagent.autoAux.shortage,Не хватает материалов для дальнейшей балансировки:\n{0}\nПосле пополнения рассчитайте снова. Автоматически ничего не добавляется.
@@ -2530,8 +2668,8 @@ reagent.autoAux.tierDrop,{0}: {1} → {2}
 reagent.autoAux.title,Автоматический баланс вспомогательных веществ
 reagent.autoAux.tradeoffs,У этого плана есть компромиссы:\n{0}
 reagent.autoAux.unformed,Внимание: после принятия плана не останется сформированных эффектов.
-reagent.automaticHistory,"Загрузка сохранённого рецепта один раз готовит его, когда есть материалы. Порошки и добавки можно поместить в зону подготовки; растворитель сохраняет текущее качество."
 reagent.autoRatio,Автопропорции
+reagent.automaticHistory,"Загрузка сохранённого рецепта один раз готовит его, когда есть материалы. Порошки и добавки можно поместить в зону подготовки; растворитель сохраняет текущее качество."
 reagent.auxInput,Зона подготовки (рыбный порошок / вспомогательные вещества)
 reagent.auxInstructions,Итог учитывает полезный запас и подготовленные ингредиенты. Введите добавки в мкл. Для каждой цели доступны три пары; увеличенный запас можно распределить между несколькими целями. Ноль ничего не добавляет.
 reagent.auxOnly,Рыбные порошки кладите в слоты порошка. Резервуары принимают вспомогательные химикаты и жидкости.
@@ -2716,8 +2854,8 @@ reagent.nextMix,"Это добавление: порошок A {0}г, порош
 reagent.noBatch,Смеси пока нет. Сначала смешайте ингредиенты.
 reagent.noComponent,В этом материале нет химических компонентов для загрузки.
 reagent.noHistory,"Сохранённых рецептов пока нет. Смешайте свободно, затем назовите и сохраните рецепт."
-reagent.none,Нет
 reagent.noReference,Выберите сохранённый рецепт или смешивайте свободно.
+reagent.none,Нет
 reagent.nothingToMix,"Задайте количество порошка, растворителя или вспомогательного вещества для добавления."
 reagent.order.drag.adverseHigh,Чрезмерный эффект: {0}
 reagent.order.drag.arrival,"Я пришёл за зельями. Поместите их в зону передачи, я проверю всю партию."
@@ -2766,8 +2904,8 @@ reagent.order.visitor.match,"✓ Доза подходит, но нужна по
 reagent.order.visitor.name,Покупатель за заказом
 reagent.order.visitor.next,Следующая страница
 reagent.order.visitor.noEffect,Нет активного лечебного эффекта
-reagent.order.visitor.noneSelected,Сначала выберите шприцы для передачи.
 reagent.order.visitor.noOrder,Нет активного заказа
+reagent.order.visitor.noneSelected,Сначала выберите шприцы для передачи.
 reagent.order.visitor.notMatch,Несоответствие: {0}
 reagent.order.visitor.previous,Предыдущая страница
 reagent.order.visitor.reagent,Особое зелье
@@ -2874,8 +3012,8 @@ reagent.tier.marked,Выраженный эффект: {0}
 reagent.tier.mild,Умеренный эффект: {0}
 reagent.tier.nausea,тошнота
 reagent.tier.near,Близко к {0}
-reagent.tier.none,Нет
 reagent.tier.noWarning,Нет заметного дискомфорта
+reagent.tier.none,Нет
 reagent.tier.protection,Оборона
 reagent.tier.repair,Исцеление
 reagent.tier.severe,Сильный эффект: {0}
@@ -2932,10 +3070,10 @@ recipe.processing.blue_blood_bag.21.name,Голубая кровь
 recipe.processing.bottled_water.27.name,Вода в бутылке (обычная)
 recipe.processing.bottled_water.29.name,Разделить воду в бутылке (большая)
 recipe.processing.common_electronic.1.name,Обычные электронные компоненты
-recipe.processing.energy_credit_breeder.17.name,Самозаряжающаяся энергоячейка
-recipe.processing.energy_credit_ext.16.name,Энергоячейка (тип 2)
 recipe.processing.energy_credit.15.name,Энергоячейка
 recipe.processing.energy_credit.57.name,Энергетическая батарея (гранулы феррита)
+recipe.processing.energy_credit_breeder.17.name,Самозаряжающаяся энергоячейка
+recipe.processing.energy_credit_ext.16.name,Энергоячейка (тип 2)
 recipe.processing.flashbang_grenade.5.name,Светошумовая граната
 recipe.processing.flashlight.20.name,Фонарик
 recipe.processing.gf_durable_fish_mince_bait.49.name,Прочная наживка из рыбного фарша
@@ -2994,6 +3132,7 @@ return.box.pending,Доставка груза не завершена. Снов
 return.box.unpack,Распаковать всё
 return.box.unpacked,Из ящика распаковано предметов: {0}.
 return.box.waiting,"\nВозвращённых предметов, ожидающих сбора: {0}. Освободите склад и заберите их в меню отправления. Новые плавания не удалят их."
+test6.meat,Рыбное мясо
 voyage.change.bait,Прочность наживки
 voyage.change.bloodkey,Кровавые ключи
 voyage.change.credits,Кредиты
@@ -3073,6 +3212,7 @@ willy.shop.category.reagent,Реагенты
 willy.shop.category.seasoning,Приправы
 willy.shop.category.supplies,Расходные материалы
 willy.shop.category.tool,Рыболовные снасти
+willy.shop.daily.exhausted,Недостаточно оставшегося лимита покупок на сегодня.
 willy.shop.failed,Покупка не удалась. Проверьте журнал и повторите попытку.
 willy.shop.quantity,Выберите количество больше нуля.
 willy.shop.recovery,Ожидается восстановление. Сохранение приостановлено. Повторите чуть позже.
@@ -3110,107 +3250,3 @@ worm.housing.noWorms,Добавьте первых червей
 worm.housing.raising,Выращивание червей
 worm.housing.status,Черви: {0} | Пища: {1} ккал | {2}
 worm.housing.waiting,Кормление этой ночью
-mod.display.name,На рыбалку
-mod.display.description,"Рыбалка, экспедиции, переработка и аквакультура."
-mod.display.framework.name,GoFishing — Рыболовная система
-mod.display.pack.name,GoFishing — Набор предметов
-drying.finished,"Вяленая рыба: исходная масса тела {0}г, базовая масса для расчёта продажной стоимости {1}г. Энергия и масса тела остаются по правилам игры; повторное вяление и разделка на филе невозможны."
-drying.prefix,[Вяленая]
-drying.ready,"Вяление завершено. Откройте сушилку, чтобы получить готовую рыбу."
-drying.remaining,Вяление: осталось {0} дн.
-drying.summary,"Сушилка: в процессе {0}, готовы к преобразованию {1}, без рецепта {2}."
-expedition.merchant.recovery.pending,Восстановление морской услуги ещё не завершено. Пока нельзя продолжить операцию или сохранить игру; попробуйте снова либо загрузите предыдущее сохранение.
-gear.bait,Наживка
-gifts.factoryUnavailable,Не удалось создать подарочные предметы. Набор сохранён; попробуйте позже и проверьте журнал.
-gifts.inventoryFull,На прилавке и складе нет места для подарков. Освободите место и заберите их позже.
-gifts.notReady,Выдача подарков пока недоступна. Набор сохранён; попробуйте позже.
-gifts.pending,"Набор получен не полностью. Нажмите, чтобы забрать оставшееся; невыданные предметы сохраняются."
-gifts.recoveryPending,Предыдущая выдача подарков ещё восстанавливается. Набор сохранён; попробуйте позже.
-item.gf_durable_fish_mince_bait.flavor,
-item.gf_durable_fish_mince_bait.name,Прочная наживка из рыбного фарша
-item.gf_durable_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс успеха в обычных местах рыбалки +25 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
-item.gf_durable_glass_bait.flavor,
-item.gf_durable_glass_bait.name,Прочная стеклянная наживка
-item.gf_durable_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс ловли гигантской тени +25 процентных пунктов.
-item.gf_durable_rat_dung_bait.flavor,
-item.gf_durable_rat_dung_bait.name,Прочная наживка из крысиного помёта
-item.gf_durable_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс ловли кроваво-красной тени +25 процентных пунктов.
-item.gf_durable_shiny_bait.flavor,
-item.gf_durable_shiny_bait.name,Прочная блестящая наживка
-item.gf_durable_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 30. Шанс сундука после успешного улова +15 процентных пунктов.
-item.gf_empty_can_large.flavor,
-item.gf_empty_can_large.name,Большая пустая банка
-item.gf_empty_can_large.short,Пустая металлическая банка.
-item.gf_empty_can_small.flavor,
-item.gf_empty_can_small.name,Маленькая пустая банка
-item.gf_empty_can_small.short,Пустая металлическая банка.
-item.gf_fish_can_large.flavor,
-item.gf_fish_can_large.name,Большая банка рыбных консервов
-item.gf_fish_can_large.short,Рыбные консервы.
-item.gf_fish_can_small.flavor,
-item.gf_fish_can_small.name,Маленькая банка рыбных консервов
-item.gf_fish_can_small.short,Рыбные консервы.
-item.gf_fish_mince_bait.flavor,
-item.gf_fish_mince_bait.name,Рыбный фарш
-item.gf_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс успеха в обычных местах рыбалки +25 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
-item.gf_fishery_ecosystem.flavor,Даже большой бассейн требует заботы.
-item.gf_fishery_ecosystem.name,Большая установка замкнутого водоснабжения
-item.gf_fishery_ecosystem.short,"Базовая сетка для рыбы: 24×4 клетки. Сохранены стандартные улучшения вместимости и эффективности, питание и четыре слота фильтров. Установите отдельный бак для воды. Вместимость по-прежнему ограничена запасом воды, загрязнением и кормом."
-item.gf_fishery_printer.flavor,
-item.gf_fishery_printer.name,Принтер тары
-item.gf_fishery_printer.short,"Вставьте батарею, чтобы печатать маленькие и большие пустые банки, ящики для разведения червей и пустые шприцы. Каждая печать расходует 4 ед. энергии, материалы не нужны."
-item.gf_fishery_terminal.flavor,
-item.gf_fishery_terminal.name,Терминал рыбоводства
-item.gf_fishery_terminal.short,Просматривайте сведения о рыбе и заказывайте товары через терминал.
-item.gf_fishery_water_tank.flavor,"На шкале больше делений, но каждую каплю всё равно придётся залить."
-item.gf_fishery_water_tank.name,Большой бак для аквакультуры
-item.gf_fishery_water_tank.short,"Отдельный бак для аквакультуры объёмом 60 литров, изначально пустой. Вручную установите его в слот бака системы. Больший запас воды не повышает пропускную способность фильтров."
-item.gf_glass_bait.flavor,
-item.gf_glass_bait.name,Стеклянная наживка
-item.gf_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс ловли гигантской тени +25 процентных пунктов.
-item.gf_industrial_meat_feed.flavor,
-item.gf_industrial_meat_feed.name,Промышленный мясной корм
-item.gf_industrial_meat_feed.short,"Промышленный корм на основе мяса. Рыба берёт только необходимое количество. Можно объединять с кормом того же типа, но нельзя разделять."
-item.gf_rat_dung_bait.flavor,
-item.gf_rat_dung_bait.name,Шарик крысиного помёта
-item.gf_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс ловли кроваво-красной тени +25 процентных пунктов.
-item.gf_shiny_bait.flavor,
-item.gf_shiny_bait.name,Светящаяся наживка
-item.gf_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 15. Шанс сундука после успешного улова +15 процентных пунктов.
-item.gf_strong_fish_mince_bait.flavor,
-item.gf_strong_fish_mince_bait.name,Усиленная наживка из рыбного фарша
-item.gf_strong_fish_mince_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс успеха в обычных местах рыбалки +50 процентных пунктов. Не влияет на кровавые стаи и гигантские тени.
-item.gf_strong_glass_bait.flavor,
-item.gf_strong_glass_bait.name,Усиленная стеклянная наживка
-item.gf_strong_glass_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс ловли гигантской тени +50 процентных пунктов.
-item.gf_strong_rat_dung_bait.flavor,
-item.gf_strong_rat_dung_bait.name,Усиленная наживка из крысиного помёта
-item.gf_strong_rat_dung_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс ловли кроваво-красной тени +50 процентных пунктов.
-item.gf_strong_shiny_bait.flavor,
-item.gf_strong_shiny_bait.name,Усиленная блестящая наживка
-item.gf_strong_shiny_bait.short,Двойное нажатие переносит в шкаф снаряжения экспедиции. Прочность: 10. Шанс сундука после успешного улова +30 процентных пунктов.
-item.gf_worm_culture_box.flavor,
-item.gf_worm_culture_box.name,Ящик для червей
-item.gf_worm_culture_box.short,"Поместите червей, рыбное мясо и потроха внутрь для автоматического разведения."
-item.gf_worm.flavor,
-item.gf_worm.name,Молодой червь
-item.gf_worm.short,Держите в ящике для разведения и кормите рыбным мясом или отходами.
-item.pstide_return_cargo_box.flavor,
-item.pstide_return_cargo_box.name,Ящик с грузом после рыбалки
-item.pstide_return_cargo_box.short,"Содержит груз, привезённый в рыбном трюме. Дважды нажмите для открытия, затем извлеките вещи вручную или нажмите «Распаковать всё». Если склад полон, ящик остаётся; пустой ящик исчезает."
-item.tackle_shop_potion_manual.flavor,
-item.tackle_shop_potion_manual.name,Руководство по зельям
-item.tackle_shop_potion_manual.short,"Иллюстрированное руководство по измельчению отходов, смешиванию зелий и наполнению шприцев."
-item.tackle_shop_processing_manual.flavor,"Заметки Вилли по переработке. Вверх/вниз — выбор категории, влево/вправо — страницы."
-item.tackle_shop_processing_manual.name,Руководство перерабатывающей станции
-item.tackle_shop_processing_manual.short,"Руководство по всем рецептам перерабатывающей станции, обновляемое вместе с текущим рыболовным набором предметов."
-item.tackle_shop_willy_card.flavor,Визитка с лёгким запахом сырости.
-item.tackle_shop_willy_card.name,Визитка Вилли
-item.tackle_shop_willy_card.short,"Визитка Вилли, владельца магазина снастей. Его телефон: 2424."
-test6.meat,Рыбное мясо
-expedition.store_key.repairing,"Космический корабль ремонтируется"
-fishery.terminal.consumables.daily.limit,Дневной лимит: {0}
-fishery.terminal.consumables.daily.remaining,Дневной лимит: {0} · Осталось сегодня: {1}
-fishery.terminal.consumables.daily.exhausted,Сегодня распродано
-fishery.terminal.consumables.daily.invalid,Введите положительное количество в пределах остатка на сегодня
-willy.shop.daily.exhausted,Недостаточно оставшегося лимита покупок на сегодня.

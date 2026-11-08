@@ -1,8 +1,8 @@
-# Faction Reputation Expansion v1.5.0
+# Faction Reputation Expansion v1.5.1
 
 ## Update notes
 
-Reworked the augmented faction's effects and improved some text and UI.
+Fixed customer budgets, empty supply crates and interface click-through.
 
 ## Installation
 
