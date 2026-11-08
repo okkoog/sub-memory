@@ -17,6 +17,15 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/tmp/kp_cachefix_patch.py
+            probably-stolen/Managed/Assembly-CSharp.dll
+            probably-stolen/Managed/0Harmony.dll
+            probably-stolen/Managed/Unity.Localization.dll
+            probably-stolen/Managed/Unity.ResourceManager.dll
+            probably-stolen/Managed/UnityEngine.CoreModule.dll
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
