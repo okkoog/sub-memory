@@ -264,6 +264,7 @@ helpers = r"""
 \t\treturn !string.IsNullOrEmpty(value) && value != key && value.IndexOf("Translation Error", StringComparison.OrdinalIgnoreCase) < 0;
 \t}
 """
+helpers = helpers.replace("\\t", "\t")
 k = k.replace(anchor, "\n"+helpers+anchor, 1)
 k = k.replace("0.8.2-labeler-latefix", "0.8.2-cachefix", 1)
 kp.write_text(k, encoding="utf-8")
@@ -397,7 +398,8 @@ internal static class FishingStartPerkCompatibility
 \t}
 }
 """
-fish = fish.replace("\\\\t", "\\t")\n(src/"FishingStartPerkCompatibility.cs").write_text(fish,encoding="utf-8")
+fish = fish.replace("\\t", "\t")
+(src/"FishingStartPerkCompatibility.cs").write_text(fish,encoding="utf-8")
 
 build = root/"build"
 (build/"ProbablyStolenKoreanPack").mkdir(parents=True, exist_ok=True)
