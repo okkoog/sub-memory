@@ -1,10 +1,10 @@
 # CorpPresence 0.9.5 — static ILSpy audit
 
 - DLL: `/home/runner/work/sub-memory/sub-memory/probably-stolen/mods/3828913695/CorpPresence.dll`
-- Size: 7508480 bytes
-- SHA256: `22471b95cebb23041ac17d7df69092a8d6060d67cb0d85ef025c7a8e3fadb60e`
-- Decompiled C# files: 119
-- Generated (UTC): 2026-11-08T01:12:40.995259+00:00
+- Size: 8067584 bytes
+- SHA256: `ef3f3f093e5460c697811104c5a1c0f0b643b866283d411fbb0f2355cb87962b`
+- Decompiled C# files: 123
+- Generated (UTC): 2026-11-08T13:13:10.816501+00:00
 - Scope: **CorpPresence only**. This is a static text audit; no mod/game code was executed.
 - IMPORTANT: The matching lines are search leads, NOT proof of run-time patch registration or conflict.
 
@@ -24,7 +24,7 @@ CorpPresence/Hooks.cs:192: Patch(h, AccessTools.Method(typeof(ShowcaseHelper), "
 CorpPresence/Hooks.cs:229: MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
 CorpPresence/Hooks.cs:236: h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMetho
 CorpPresence/Hooks.cs:250: h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMethod)
-CorpPresence/Main.cs:71: harmony.UnpatchAll(_harmony.Id);
+CorpPresence/Main.cs:72: harmony.UnpatchAll(_harmony.Id);
 CorpPresence/UI/InputShield.cs:19: private static readonly MethodInfo ResetDrag = AccessTools.Method(typeof(ItemMouseDragHandler), "OnEventReset", (Type[])null, (Type[])null);
 ```
 
@@ -36,8 +36,8 @@ Total matching lines: 16
 CorpPresence/Canning.cs:1297: return WaterFeatureHelper.GetPurityArrayIndex(WaterHelper.GetWaterPurity(water)) &lt;= 2;
 CorpPresence/Canning.cs:1343: if (WaterFeatureHelper.GetPurityArrayIndex(WaterHelper.GetWaterPurity(water)) &gt; 2)
 CorpPresence/Canning.cs:1432: WaterFeatureHelper.OnLiquidContainerPourOutOf(water);
-CorpPresence/DavreCo.cs:171: ItemCondition conditionFromPurity = WaterFeatureHelper.GetConditionFromPurity(purity);
-CorpPresence/Forge.cs:524: EquipmentCondition val = ConditionOf(WaterFeatureHelper.GetPurityArrayIndex(WaterHelper.GetWaterPurity(childItem)));
+CorpPresence/DavreCo.cs:182: ItemCondition conditionFromPurity = WaterFeatureHelper.GetConditionFromPurity(purity);
+CorpPresence/Forge.cs:529: EquipmentCondition val = ConditionOf(WaterFeatureHelper.GetPurityArrayIndex(WaterHelper.GetWaterPurity(childItem)));
 CorpPresence/GameResources.cs:77: _mechanic = ((LocalizedDatabase&lt;StringTable, StringTableEntry&gt;)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), selectedLocale);
 CorpPresence/GameResources.cs:82: throw new InvalidOperationException("Mechanic 表句柄失效，停止公司初始化");
 CorpPresence/GameResources.cs:90: throw new InvalidOperationException("Mechanic 表加载失败", _mechanic.OperationException);
@@ -65,10 +65,10 @@ CorpPresence/GameResources.cs:70: LocaleIdentifier val = selectedLocale.Identifi
 CorpPresence/GameResources.cs:77: _mechanic = ((LocalizedDatabase&lt;StringTable, StringTableEntry&gt;)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), selectedLocale);
 CorpPresence/GameResources.cs:97: if (((DetailedLocalizationTable&lt;StringTableEntry&gt;)(object)_mechanic.Result).GetEntry("mech_condition_pure_water") == null)
 CorpPresence/GameResources.cs:107: return LocHelper.ResolveStartupLocale() switch
-CorpPresence/Goods.cs:80: return text + "\n\n" + LocHelper.BulletLines(L.T(ModuleEffects.Zh, ModuleEffects.En));
+CorpPresence/Goods.cs:82: return text + "\n\n" + LocHelper.BulletLines(L.K(TextKeys?.Effects, ModuleEffects.Zh, ModuleEffects.En));
 CorpPresence/Hooks.cs:78: Patch&lt;StorePhoneClient&gt;(h, "GetLocalizedDisplayName", typeFromHandle, null, "AfterPhoneName");
-CorpPresence/L.cs:33: _locale = LocHelper.GetCurrentLocaleCode() ?? "";
-CorpPresence/Perfume.cs:1101: return LocHelper.BulletLines(L.T(tuple.Item1, tuple.Item2));
+CorpPresence/L.cs:38: _locale = ExternalTranslations.ResolveLocale(LocHelper.GetCurrentLocaleCode() ?? "");
+CorpPresence/Perfume.cs:1101: return LocHelper.BulletLines(L.K(GoodsText.ForId(Goods.IdOf(machine))?.Effects, tuple.Item1, tuple.Item2));
 ```
 
 ## Mod load lifecycle
@@ -81,7 +81,7 @@ CorpPresence/Hooks.cs:270: ModHook.OnHandlingNightlyServicesEarly -= _nightly;
 CorpPresence/ItemRegistry.cs:30: ModHook.OnModItemDirectoryInit += _onInit;
 CorpPresence/ItemRegistry.cs:38: ModHook.OnModItemDirectoryInit -= _onInit;
 CorpPresence/Main.cs:40: public void OnEnable()
-CorpPresence/Main.cs:105: public void OnDisable()
+CorpPresence/Main.cs:106: public void OnDisable()
 CorpPresence/Runtime/ResourceBootstrap.cs:22: ModHook.OnModItemDirectoryInit += _directory;
 CorpPresence/Runtime/ResourceBootstrap.cs:29: ModHook.OnModItemDirectoryInit -= _directory;
 ```
