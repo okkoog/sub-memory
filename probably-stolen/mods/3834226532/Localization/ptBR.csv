@@ -1,0 +1,413 @@
+﻿# Especialização inicial: Distribuidor
+# Terminologia conforme o inglês oficial: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
+dsp_distributor_name,Distribuidor
+dsp_distributor_description,"Enquanto treinava sob o Mentor, você já cuidava dos representantes dos fornecedores. Controlar a cadeia de suprimentos te coloca um passo à frente."
+dsp_distributor_tag,Traços: Provavelmente Divertido
+
+# Traços iniciais
+dsp_wanderlust_name,Pé na Estrada
+dsp_wanderlust_description,"Se ainda houver pelo menos um cliente na fila quando você fechar a loja, você ganha uma ação noturna extra, e a sua primeira saída noturna não custa nenhum cliente."
+dsp_smelting_name,Fundição
+dsp_smelting_description,"Começa com um Forno precário equipado com um Módulo de Alto-Forno e um pouco de sucata."
+dsp_ecommerce_name,Comércio Eletrônico
+dsp_ecommerce_description,"Desbloqueia as Encomendas do mercado desde o início. Um comprador a menos chega por dia, mas você recebe uma encomenda do mercado extra."
+dsp_built_on_dump_name,Construído no Lixão
+dsp_built_on_dump_description,"Os itens colocados na Lixeira vão direto para o chão do Lixão; você pode pegá-los de volta antes que a noite termine. O serviço de limpeza noturno e tudo ligado a ele param de funcionar. Você mesmo faz a limpeza."
+dsp_tacit_understanding_name,Entendimento Tácito
+dsp_tacit_understanding_description,"As inspeções são mais frequentes. Enquanto sua Reputação com a Segurança estiver acima de 0, as inspeções sempre serão feitas pelo inspetor corrupto. Ladrões, batedores de carteira e ladrões de comida aparecem com um pouco mais de frequência."
+dsp_no_trash_name,Sem Lixo
+dsp_no_trash_description,"A Lixeira é reconstruída como um Compartimento de Contrabandista. Você mesmo faz a limpeza e não precisa de serviço de limpeza noturno, mas ainda pode negociar pela Lixeira. Você começa com uma Mochila (Básica)."
+dsp_former_assistant_name,Ex-Assistente
+dsp_former_assistant_description,Desbloqueia Jackson Investment I desde o início. Você ganha um bônus de negociação de 10% ao negociar com o Dr. Jackson. A cada 3 dias você pode ligar para ele e pedir que venha negociar na sua loja.
+dsp_former_assistant_contact,Dr. Jackson
+dsp_former_assistant_bonus_buy,"Negociando com o Dr. Jackson: preço de compra -10%"
+dsp_former_assistant_bonus_sell,"Negociando com o Dr. Jackson: preço de venda +10%"
+dsp_former_assistant_call_1,"Sou eu. Doutor, o senhor pode passar na loja amanhã? Tem uma coisa que eu gostaria que o senhor desse uma olhada."
+dsp_former_assistant_call_2,Combinado. Até amanhã.
+dsp_phone_frugal_name,Conta de Telefone Salgada
+dsp_phone_frugal_description,"As ligações custam 20 créditos. Todo serviço chamado por telefone traz 50% mais mercadoria e 25% mais orçamento, arredondado para cima."
+dsp_presbyopia_name,Astigmatismo
+dsp_presbyopia_description,A lupa deixa as coisas difíceis de enxergar.
+dsp_zero_cost_name,Desconto de Cinco Dedos
+dsp_zero_cost_description,Você começa com 150 pontos de suspeita de crime. Você começa com mercadorias roubadas no valor de 300 créditos.
+dsp_shawshank_name,Redenção de Shawshank
+dsp_shawshank_description,Você cavou direto ao ampliar o buraco na parede. O buraco na parede passa a ter 4×4 e conta como vitrine em vez de compartimento oculto. A vitrine atrai um comprador extra.
+dsp_wanderlust_nightlog,"A saída de ontem à noite fez você abrir tarde hoje. Pé na Estrada significa que você não perdeu nenhum cliente por isso."
+dsp_newspaper_recipe_name,Receita de Jornal
+dsp_newspaper_recipe_description,"Jornais agora contam como agente de fluxo, levedura sintética e um alimento difícil de engolir X (75 kcal)."
+dsp_newspaper_recipe_taste,Pouco Apetitoso
+dsp_newspaper_recipe_tooltip_flux,"Agente de fluxo (Básico): um aditivo prático que aumenta a pureza do minério de metal quando usado durante a fundição. É consumido no processo."
+dsp_newspaper_recipe_tooltip_yeast,"Levedura sintética: uma substância ilegal que pode substituir a levedura para produzir vinho levemente cancerígeno a um custo muito baixo. Só precisa de água."
+dsp_mortgage_description,"Você compra a loja no início com uma dívida de 7.000."
+dsp_self_built_name,"Construção Própria"
+dsp_self_built_description,"Você já é dono do imóvel desde o início, mas os serviços de energia e limpeza custam 10 créditos."
+dsp_cellar_name,Adega Natural
+dsp_wild_favor_description,"O telefone do Wild já vem desbloqueado desde o início e você ganha 300 de Favor do Wild."
+dsp_wild_favor_name,"Favor do Wild"
+dsp_cellar_description,A fermentação leva um dia a menos, e o vinho pronto envelhece 3 dias.
+dsp_stable_partnership_name,Parceria Estável
+dsp_stable_partnership_description,Todos os revendedores vêm à sua loja às terças e sextas, em vez de você pedir por telefone.
+dsp_stable_partnership_phone,A gente deixa a mercadoria nas terças e sextas. Não precisa ligar.
+dsp_mortgage_name,Hipoteca
+dsp_no_questions_name,"Sem Perguntas"
+dsp_no_questions_description,"As etiquetas de roubado e contrabando são removidas de todos os itens. As inspeções são removidas. Este save não pode completar a conquista “Clean Hands”."
+dsp_share_cigarette_name,"Compartilhar o Cigarro"
+dsp_share_cigarette_description,Ofereça um cigarro a um cliente para aumentar o orçamento dele e o multiplicador de Reputação de negociação, e ganhe um pequeno bônus de negociação. Cigarros de verdade dão o dobro dos benefícios dos falsificados.
+dsp_share_cigarette_bonus_buy,"Compartilhar o Cigarro: preço de compra"
+dsp_share_cigarette_bonus_sell,"Compartilhar o Cigarro: preço de venda"
+dsp_share_cigarette_no_customer,Atenda um cliente primeiro, depois compartilhe um cigarro.
+dsp_share_cigarette_already,Este cliente já fumou um cigarro com você.
+dsp_share_cigarette_line_genuine_1,"Agora sim, isso é do bom. Valeu — hoje eu consigo gastar um pouco mais."
+dsp_share_cigarette_line_genuine_2,"Hm, de verdade. Você tem bom gosto, e é generoso."
+dsp_share_cigarette_line_genuine_3,"É esse o gosto certo. Te devo uma."
+dsp_share_cigarette_line_fake_1,"...Isso tem um gosto meio estranho."
+dsp_share_cigarette_line_fake_2,"Deixa, é de graça. Não vou reclamar."
+dsp_share_cigarette_line_fake_3,"Essa coisa... tá, quebra o galho."
+dsp_share_cigarette_menu,Oferecer um Cigarro
+dsp_distributor_supplies_1,"Desbloqueia Red Imp Brewery, Lower Levels Chemist, Upper Level Pharmacist e GP Mining Coop."
+dsp_distributor_supplies_2,"Desbloqueia Showcase Expansion I."
+dsp_distributor_supplies_3,"Os fornecedores já mandaram as amostras grátis."
+dsp_distributor_supplies_4,"Créditos iniciais: 200."
+dsp_better_broker_name,Corretor Dedicado
+dsp_better_broker_description,"As Encomendas do mercado e os clientes têm mais chance de pedir itens volumosos que você já tem, especialmente no dia do aluguel. As Encomendas do mercado nunca pedem o mesmo item duas vezes."
+dsp_notorious_villain_name,Vilão Notório
+dsp_notorious_villain_description,"Cada traço neutro ou negativo que você escolheu te dá 40 créditos extras no início. Este traço conta como negativo."
+dsp_cyberpsychosis_name,Ciberpsicose
+dsp_cyberpsychosis_description,"Seu limite de slots de traço iniciais aumenta em 3. No início da partida, este traço é trocado por um traço negativo aleatório de 1 ponto."
+dsp_no_trash_janitor_1,Eu sei que você fez alguma coisa com aquela sua lixeira.
+dsp_no_trash_janitor_2,A rigor, quando uma lixeira passa a guardar mercadoria, ela deixa de ser uma lixeira.
+dsp_no_trash_janitor_3,"Negócio é negócio, então não vamos limpar a sua “lixeira” — você pode muito bem limpar sozinho."
+dsp_no_trash_janitor_4,"Dito isso, se você quiser entrar no comércio subterrâneo, ainda é bem-vindo."
+dsp_underground_trade_name,Comércio Subterrâneo
+dsp_snack_addiction_name,Vício em Petiscos
+dsp_snack_addiction_description,"Se você não comer petiscos com regularidade, sofre uma penalidade de 8% nas negociações. O vício pode ser curado... mas será que isso é mesmo necessário?"
+dsp_snack_addiction_withdrawal,"Vício em Petiscos: você está com desejo de novo. As negociações sofrem."
+dsp_snack_addiction_cured,"Vício em Petiscos: você passou tempo suficiente sem petiscos. Você está curado."
+dsp_snack_addiction_suppressed,"Você mastiga um petisco. Suas mãos param de tremer."
+dsp_trashcan_name_notrash,"“Lixeira”"
+dsp_trashcan_desc_notrash,"Na verdade é um compartimento oculto, não uma lixeira. Os policiais não conseguem ver o que há dentro."
+dsp_trashcan_desc_ondump,"Esta lixeira não tem fundo — tudo o que você colocar cai direto no chão do lixão. Você pode pegar de volta antes que a noite termine."
+dsp_opening_bonus_name,Bônus de Abertura
+dsp_opening_bonus_description,Ganha um bônus de negociação de 7%. Ele cai 1% por dia até o efeito acabar.
+dsp_opening_bonus_bonus_buy,Bônus de Abertura: preço de compra -X%
+dsp_opening_bonus_bonus_sell,Bônus de Abertura: preço de venda +X%
+dsp_byproduct_name,Negócio Paralelo do Fornecedor
+dsp_byproduct_description,"Os fornecedores trazem mercadorias relacionadas ao próprio ramo de negócio. O valor total dessas mercadorias extras cresce com o número de dias. Não importa quanto subproduto você compre, é sempre a preço de atacado."
+dsp_byproduct_wholesale,Preço de atacado: preço de compra -X%
+dsp_wild_lover_name,Informante do Wilde
+dsp_wild_lover_description,"Desbloqueia o telefone de Wilde desde o início. Uma vez por dia, ligar para Wilde permite trocar informações em código e concede 10 de Favor do Wilde."
+dsp_wild_lover_contact,Wilde
+dsp_wall_expansion_name,Ampliação da Parede
+dsp_wall_expansion_description,O buraco na parede passa a ter 4×4.
+dsp_built_on_dump_serpico,Peguei bastante comida no lixão. Não faço ideia de como você trouxe isso pra cá embaixo.
+# premonição / especulador / clientes exigentes / barganha dura
+dsp_foreknowledge_name,Bem Informado
+dsp_foreknowledge_description,Você fica sabendo quais eventos o amanhã traz.
+dsp_foreknowledge_log,Eventos agendados: Bem Informado: eventos de amanhã: X
+dsp_foreknowledge_none,"Nenhum evento agendado agora. Bem Informado: nada agendado para amanhã."
+dsp_speculator_name,Efeito Manada
+dsp_speculator_description,Todos os eventos que afetam preço têm seus efeitos aumentados em 50%.
+dsp_picky_customers_name,Variedade Deslumbrante
+dsp_picky_customers_description,Os clientes têm mais chance de fazer exigências peculiares.
+dsp_harsh_bargain_name,Intimidar os Clientes
+dsp_harsh_bargain_description,Você perde 2 de Reputação quando chama um cliente e não fecha negócio.
+dsp_wild_lover_remark,Lao Wang
+dsp_silvertongue_name,Lábia de Prata
+dsp_silvertongue_description,Melhora sua taxa de sucesso na barganha e reduz a perda de Reputação causada pela barganha.
+dsp_snack_addiction_menu,Comer
+# O informante de Wilde: falas do telefone (reconstruídas)
+# O informante de Wilde: falas do telefone (reconstruídas)
+# O informante de Wilde: falas do telefone (reconstruídas)
+dsp_wild_lover_line_news_harvest_1,A colheita foi pouca de novo. Ano esquisito.
+dsp_wild_lover_line_news_harvest_2,Os pomares aqui de baixo apodreceram. Não conta com eles este ano.
+dsp_wild_lover_line_news_harvest_3,A bebida de Glowberry vai subir. Bebe agora ou paga mais.
+dsp_wild_lover_line_news_harvest_4,Culpam o clima. Clima, uma ova. Ninguém acredita nisso.
+dsp_wild_lover_line_news_harvest_5,Os açambarcadores estão rindo. Você não, imagino.
+dsp_wild_lover_line_news_build_1,A parte alta está abrindo a rua de novo. Já faz meio ano.
+dsp_wild_lover_line_news_build_2,Metade da rua está isolada. Vai pela volta.
+dsp_wild_lover_line_news_build_3,Bate-estacas a noite inteira. Você está dormindo? Eu não.
+dsp_wild_lover_line_news_build_4,Terceira equipe naquela obra. Cada vez pior.
+dsp_wild_lover_line_news_build_5,E essa construção é pra quem, afinal. Só o céu sabe.
+dsp_wild_lover_line_news_evidence_1,O cofre de provas foi arrombado. Ontem à noite.
+dsp_wild_lover_line_news_evidence_2,A segurança perdeu alguma coisa. O que, não dizem.
+dsp_wild_lover_line_news_evidence_3,Fica longe de lá uns dias. Me ouviu?
+dsp_wild_lover_line_news_evidence_4,A fechadura foi aberta por dentro. Um dos deles.
+dsp_wild_lover_line_news_evidence_5,Estão cavando. Com pressa. Não esbarra neles.
+dsp_wild_lover_line_news_med_1,O suprimento médico secou. Bandagem agora é ouro.
+dsp_wild_lover_line_news_med_2,Bandagem triplicou. É pegar ou largar.
+dsp_wild_lover_line_news_med_3,Os postos estão racionando. Dois rolos por pessoa, nada além.
+dsp_wild_lover_line_news_med_4,Falta bolsa de sangue. A fila dá a volta na rua.
+dsp_wild_lover_line_news_med_5,O mercado negro tem estoque. Preço absurdo. Você decide.
+dsp_wild_lover_line_news_meteor_1,Chuva de meteoros hoje. Não fica na janela.
+dsp_wild_lover_line_news_meteor_2,Estão selando o casco. Volta cedo.
+dsp_wild_lover_line_news_meteor_3,Meteoros passam, a energia pisca. Sempre a mesma coisa.
+dsp_wild_lover_line_news_meteor_4,Tem gente subindo o preço por causa disso. Bom faro pra negócio.
+dsp_wild_lover_line_news_meteor_5,Olha pra cima. Show de graça. Só hoje.
+dsp_wild_lover_line_after_burglary_1,A loja de consignados foi arrombada ontem à noite. A porta nem estava trancada.
+dsp_wild_lover_line_after_burglary_2,A fechadura está intacta. Alguém que eles conhecem. Fica quieto.
+dsp_wild_lover_line_after_burglary_3,Só levaram coisa pequena. Diz que isso não é estranho.
+dsp_wild_lover_line_after_burglary_4,O dono está praguejando a manhã toda. Perdeu a voz.
+dsp_wild_lover_line_after_burglary_5,Sua vitrine está bem? Só perguntando.
+dsp_wild_lover_line_after_freshdump_1,Carga nova no lixão. Grande.
+dsp_wild_lover_line_after_freshdump_2,Chegou hoje de manhã. Intocada.
+dsp_wild_lover_line_after_freshdump_3,Tem gente acampada lá fora. A noite toda.
+dsp_wild_lover_line_after_freshdump_4,Barras inteiras no meio do ferro velho. De verdade.
+dsp_wild_lover_line_after_freshdump_5,Vai antes do meio-dia. Depois disso, só sobra de sobra.
+dsp_wild_lover_line_after_restock_1,O reestoque chegou. Veio de meia-noite. Ninguém viu.
+dsp_wild_lover_line_after_restock_2,O atacado cedeu. Pega o que der.
+dsp_wild_lover_line_after_restock_3,Aquela sua prateleira finalmente pode encher.
+dsp_wild_lover_line_after_restock_4,Vai tarde, você fica com as sobras. Depois não reclama de mim.
+dsp_wild_lover_line_after_georgio_1,O Georgio te fez um favor ontem à noite. Não finge que não viu.
+dsp_wild_lover_line_after_georgio_2,Ele estava lá. Você só não viu.
+dsp_wild_lover_line_after_georgio_3,Esse favor está na conta dele. Você vai pagar de volta.
+dsp_wild_lover_line_after_georgio_4,Fala demais, mas é firmeza.
+dsp_wild_lover_line_after_jackclosed_1,O Jackson fechou. O portão está todo abaixado.
+dsp_wild_lover_line_after_jackclosed_2,Devia o aluguel. Fugiu. Sumiu naquela noite.
+dsp_wild_lover_line_after_jackclosed_3,Não vai atrás. Você não vai achar. Perda de tempo.
+dsp_wild_lover_line_after_jackclosed_4,O lugar está vazio. As luzes ainda acesas. Assustador.
+dsp_wild_lover_line_after_jackdiscount_1,O Jackson está com promoção. Setenta de desconto, liquidação.
+dsp_wild_lover_line_after_jackdiscount_2,Está limpando o estoque. Não pergunta por quê. Não faz sentido.
+dsp_wild_lover_line_after_jackdiscount_3,Vai tarde, é tudo tralha. Nada que valha a pena.
+dsp_wild_lover_line_after_jackdiscount_4,Com esses preços ele está perdendo dinheiro. Não faço ideia de por quê.
+dsp_wild_lover_line_after_specialstock_1,A remessa chegou. Do tipo que não vai pra prateleira.
+dsp_wild_lover_line_after_specialstock_2,Tem coisa enfiada no buraco da parede. Vai ver você mesmo.
+dsp_wild_lover_line_after_specialstock_3,Mantém fora de vista. Você sabe o que eu quero dizer.
+dsp_wild_lover_line_after_specialstock_4,Não pergunta de onde veio esse lote. Eu não ia te contar.
+dsp_wild_lover_line_money_broke_1,Sua conta está quase seca. Quantos dias faltam.
+dsp_wild_lover_line_money_broke_2,Liso assim e ainda liga. Pra quê.
+dsp_wild_lover_line_money_broke_3,Sobrevive primeiro. Não compra. Me ouviu.
+dsp_wild_lover_line_money_broke_4,O aluguel está feio, hein. Mês difícil.
+dsp_wild_lover_line_money_broke_5,Tsc. Você chama isso de dinheiro. Compra o quê com isso.
+dsp_wild_lover_line_money_broke_6,Quanto falta. Me dá um número.
+dsp_wild_lover_line_money_tight_1,Apertado. Eu entendo. Todo mundo está assim.
+dsp_wild_lover_line_money_tight_2,Apertado quer dizer pedir menos. Não força.
+dsp_wild_lover_line_money_tight_3,Você fecha o mês? Fala se não fechar.
+dsp_wild_lover_line_money_tight_4,Não banca o herói. Já vi isso. Não funciona.
+dsp_wild_lover_line_money_tight_5,Faltando, me chama. Não deixa pra depois.
+dsp_wild_lover_line_money_tight_6,Estica. É só o que você tem. Faz render.
+dsp_wild_lover_line_money_normal_1,Na média. O suficiente já basta. Não seja ganancioso.
+dsp_wild_lover_line_money_normal_2,Mal. Não passa fome, não guarda nada.
+dsp_wild_lover_line_money_normal_3,Cobre o aluguel. Não sobra nada.
+dsp_wild_lover_line_money_normal_4,Razoável. Não torra tudo. Deixa um pouco em mãos.
+dsp_wild_lover_line_money_normal_5,Igual sempre? Era de esperar.
+dsp_wild_lover_line_money_ok_1,Deu uma folga agora? Parece que sim.
+dsp_wild_lover_line_money_ok_2,Dinheiro sobrando. Não fica exibindo. Chama atenção.
+dsp_wild_lover_line_money_ok_3,Boa. Me paga uma bebida?
+dsp_wild_lover_line_money_ok_4,Com isso você aguenta problema por um tempo.
+dsp_wild_lover_line_money_rich_1,Tsc. Você está nadando em dinheiro. Nem consegue esconder.
+dsp_wild_lover_line_money_rich_2,Números assim chamam atenção. Se cuida.
+dsp_wild_lover_line_money_rich_3,Rico ou não, não anda de noite. A estação é perigosa.
+dsp_wild_lover_line_money_rich_4,Tão rico e ainda tão pão-duro. Respeito.
+dsp_wild_lover_line_svc_insurance_1,O seguro está ativo. Deve aguentar. Não espera milagre.
+dsp_wild_lover_line_svc_insurance_2,Se acontecer alguma coisa, me liga primeiro. Não resolve sozinho.
+dsp_wild_lover_line_svc_insurance_3,Li os termos. Não tem muitas armadilhas. Duas.
+dsp_wild_lover_line_svc_janitorial_1,Os faxineiros vêm hoje. Dá uma organizada.
+dsp_wild_lover_line_svc_janitorial_2,Deixa o corredor livre. Eles não conseguem passar.
+dsp_wild_lover_line_svc_janitorial_3,O chão vai ficar mais limpo que a sua cara. Acredita.
+dsp_wild_lover_line_svc_wildfixer_1,O técnico vem hoje. Deixa uma porta aberta.
+dsp_wild_lover_line_svc_wildfixer_2,Ele conserta as coisas. Não pergunta de onde veio. Fica quieto.
+dsp_wild_lover_line_svc_wildfixer_3,O quebrado. Mostra pra ele. Não desmonta sozinho.
+dsp_wild_lover_line_svc_cartel_1,O Cartel está na sua porta. Dois deles.
+dsp_wild_lover_line_svc_cartel_2,Você pagou. Cabeça baixa. Fica na sua.
+dsp_wild_lover_line_svc_cartel_3,Tem alguém na porta. Vai dormir. Não abre a janela.
+dsp_wild_lover_line_svc_crimnet_1,A rede está no ar. Usa. Não faz barulho.
+dsp_wild_lover_line_svc_crimnet_2,A informação anda mais rápido que as pessoas. Usa. Com cuidado.
+dsp_wild_lover_line_svc_crimnet_3,Nenhum nome ali. Mas eles lembram.
+dsp_wild_lover_line_svc_power_1,A energia está ligada. Não liga tudo ao mesmo tempo.
+dsp_wild_lover_line_svc_power_2,Não puxa tudo de uma vez. Vai cair.
+dsp_wild_lover_line_chain_ship_1,Nave à deriva lá fora. Não está no manifesto. Ninguém reclama.
+dsp_wild_lover_line_chain_ship_2,Atracou de noite. Não fez barulho. Estranho.
+dsp_wild_lover_line_chain_ship_3,Metade da carga foi descarregada. O resto fica ali.
+dsp_wild_lover_line_chain_ship_4,Um morto a bordo. Ninguém registrou. Ninguém perguntou.
+dsp_wild_lover_line_chain_ship_5,A segurança subiu a bordo. Três deles. Sem uniforme.
+dsp_wild_lover_line_chain_ship_6,A nave partiu de madrugada. A carga continua empilhada aqui.
+dsp_wild_lover_line_chain_ship_7,Tem uma caixa na carga. Trancada. Pesada.
+dsp_wild_lover_line_chain_ship_8,A caixa está aberta. Vazia. Não tem nada.
+dsp_wild_lover_line_chain_necklace_1,Alguém trouxe um colar pra empenhar. Não falou muito.
+dsp_wild_lover_line_chain_necklace_2,Nome gravado atrás do pingente. Corte fundo.
+dsp_wild_lover_line_chain_necklace_3,O nome é de um chefe da Segurança. Pensa nisso.
+dsp_wild_lover_line_chain_necklace_4,Nunca voltou pra buscar. Nem uma vez.
+dsp_wild_lover_line_chain_necklace_5,Aí alguém veio perguntar. Perguntar muito. Na minha cara.
+dsp_wild_lover_line_chain_necklace_6,Eu disse que nunca vi. E é isso. Deixa pra lá.
+dsp_wild_lover_line_chain_debt_1,Estão cobrando a sua dívida agora. Alguém passou aqui.
+dsp_wild_lover_line_chain_debt_2,Cobrador novo. Não gosta de conversa. Não aperta ele.
+dsp_wild_lover_line_chain_debt_3,Eles te deram uma data. Fim do mês.
+dsp_wild_lover_line_chain_debt_4,Adiantaram a data. Esta semana. Estes dias.
+dsp_wild_lover_line_chain_debt_5,Com dinheiro ou sem. Fala. Não finge de morto.
+dsp_wild_lover_line_chain_uniform_1,Tem gente vendendo um uniforme antigo. Parece velho.
+dsp_wild_lover_line_chain_uniform_2,A insígnia foi tirada. Ficaram os buracos da costura. Não dá pra esconder.
+dsp_wild_lover_line_chain_uniform_3,O comprador é um velho. Parte alta. Veste bem.
+dsp_wild_lover_line_chain_uniform_4,Ele nunca veio buscar. Já são dois dias.
+dsp_wild_lover_line_chain_uniform_5,Tem papel costurado dentro. Costurado bem firme.
+dsp_wild_lover_line_chain_uniform_6,Só um número de série. Nada além disso.
+dsp_wild_lover_line_chain_sting_1,A Segurança está armando uma operação. Não seja o idiota.
+dsp_wild_lover_line_chain_sting_2,Plantaram um comprador falso. Boa atuação. Fala demais.
+dsp_wild_lover_line_chain_sting_3,O cara faz pergunta demais. Fora. Fica longe.
+dsp_wild_lover_line_chain_sting_4,Alguém já mordeu a isca. Levaram ele ontem à noite.
+dsp_wild_lover_line_chain_sting_5,A rede fecha em um ou dois dias. Fica quieto. Nada de remessa.
+dsp_wild_lover_line_chain_sting_6,Não vende nada. Fecha a porta. Descansa uns dias.
+dsp_wild_lover_line_chain_sign_1,Sua placa está torta. Alguém mexeu nela.
+dsp_wild_lover_line_chain_sign_2,Tiraram ela ontem à noite. Parafusos novos.
+dsp_wild_lover_line_chain_sign_3,Tem alguma coisa enfiada atrás. Parece duro.
+dsp_wild_lover_line_chain_sign_4,Puxa fora. Não na porta. Ali dentro.
+dsp_wild_lover_line_chain_sign_5,Lê e queima. Não pergunta. Não guarda.
+dsp_wild_lover_line_chain_letter_1,Chegaram umas cartas na sua loja. Sem selo.
+dsp_wild_lover_line_chain_letter_2,Sem remetente. E borradas ainda.
+dsp_wild_lover_line_chain_letter_3,A mesma mão escreveu todas. Letra dura.
+dsp_wild_lover_line_chain_letter_4,A última está vazia. Nada dentro.
+dsp_wild_lover_line_mix_broke_build_1,Liso e ainda com obra. Claro. Momento perfeito.
+dsp_wild_lover_line_mix_broke_build_2,A obra bloqueia os clientes. Você fica pior. E liso só aperta mais.
+dsp_wild_lover_line_mix_med_noins_1,Suprimento curto e sem seguro. Belo trabalho. Ousado.
+dsp_wild_lover_line_mix_med_noins_2,Se acontecer algo, você não compra nem bandagem. Que dirá remédio.
+dsp_wild_lover_line_mix_meteor_free_1,Meteoros, e você tem dinheiro. Vai mais pra dentro. Cabeça baixa.
+dsp_wild_lover_line_mix_meteor_free_2,Com esse dinheiro, aluga mais pra dentro. Não economiza nisso. Vida primeiro.
+dsp_wild_lover_line_mix_harvest_rich_1,A colheita está curta. Você tem dinheiro. Estoca. Antes deles.
+dsp_wild_lover_line_mix_evidence_crim_1,O cofre está aberto, e você paga pela rede. Dinheiro pelo ralo.
+dsp_wild_lover_line_daily_1,Ninguém ligou hoje. Só você.
+dsp_wild_lover_line_daily_2,A estação está assustadoramente quieta. Tem coisa errada.
+dsp_wild_lover_line_daily_3,Acabei de comer. Você ligou cedo. Liga depois.
+dsp_wild_lover_line_daily_4,Sua luz ainda está acesa? Que hora você chama isso.
+dsp_wild_lover_line_daily_5,Leu o jornal? Não importa. Não tem nada.
+dsp_wild_lover_line_daily_6,Esse telefone maldito. Só chiado. Não dá pra ouvir.
+dsp_wild_lover_line_daily_7,Esperando alguém. Ainda esperando. Ele não vem.
+dsp_wild_lover_line_daily_8,Relaxa. As palavras não vão fugir. Devagar.
+dsp_wild_lover_line_daily_9,Dormindo bem? Eu não, esses dois dias.
+dsp_wild_lover_line_daily_10,Aquele cheiro ainda na sua loja? Sobe pra cabeça.
+dsp_wild_lover_line_daily_11,Não quero ver ninguém hoje. Não manda ninguém aqui.
+dsp_wild_lover_line_daily_12,Alguém me deve. Fingindo de morto. Não atende.
+dsp_wild_lover_line_daily_13,Acabou o cigarro. Puto. Nem um sobrou.
+dsp_wild_lover_line_daily_14,O pessoal daqui fica mais esquisito a cada dia. Cada um pior.
+dsp_wild_lover_line_daily_15,Preciso sair hoje à tarde. Não, amanhã.
+dsp_wild_lover_line_daily_16,Adivinha quem eu encontrei. Você não vai acertar.
+dsp_wild_lover_line_daily_17,Não começa. Me deixa bravo. Já estou puto.
+dsp_wild_lover_line_daily_18,Ainda tem garrafa vazia aí? Estou com falta.
+dsp_wild_lover_line_daily_19,Esse trabalho é peso morto. Paga mal, dá mais trabalho.
+dsp_wild_lover_line_daily_20,Passo aí em uns dias. Serve?
+dsp_wild_lover_line_daily_21,Metade do jornal hoje é anúncio. A outra metade é lixo.
+dsp_wild_lover_line_daily_22,Estou com fome. Depois. A gente fala.
+dsp_wild_lover_line_daily_23,Sua voz não está boa. Aconteceu o quê.
+dsp_wild_lover_line_daily_24,Tá. Vou desligar. Ocupado.
+dsp_wild_lover_greet_1,Fala.
+dsp_wild_lover_greet_2,Mm. Manda.
+dsp_wild_lover_greet_3,Você de novo.
+dsp_wild_lover_greet_4,O quê.
+dsp_wild_lover_greet_5,É, fala.
+dsp_wild_lover_greet_6,Estou ouvindo.
+dsp_wild_lover_greet_7,Rápido. Ocupado.
+dsp_wild_lover_greet_8,Atendeu rápido.
+dsp_wild_lover_greet_9,Sem dinheiro?
+dsp_wild_lover_greet_10,Na hora, pelo menos.
+dsp_wild_lover_greet_11,Atrasado.
+dsp_wild_lover_greet_12,Tá, manda.
+dsp_wild_lover_opt_1,Aconteceu uma coisa aqui
+dsp_wild_lover_opt_2,Soube?
+dsp_wild_lover_opt_3,Estou sem grana
+dsp_wild_lover_opt_4,Recado pra você
+dsp_wild_lover_opt_5,Sobre ontem à noite
+dsp_wild_lover_opt_6,Nada. Tédio
+dsp_wild_lover_reply_1_1,Qual delas. Fala logo.
+dsp_wild_lover_reply_1_2,Mm. Imaginei.
+dsp_wild_lover_reply_1_3,Sem rodeio. Fatos.
+dsp_wild_lover_reply_2_1,Soube do quê.
+dsp_wild_lover_reply_2_2,Eu soube primeiro.
+dsp_wild_lover_reply_2_3,Continua.
+dsp_wild_lover_reply_3_1,Quão apertado.
+dsp_wild_lover_reply_3_2,Então pede menos.
+dsp_wild_lover_reply_3_3,Chega ao fim do mês?
+dsp_wild_lover_reply_4_1,De quem.
+dsp_wild_lover_reply_4_2,Não faz gracinha.
+dsp_wild_lover_reply_4_3,Deixa. Eu lembro.
+dsp_wild_lover_reply_5_1,Qual coisa.
+dsp_wild_lover_reply_5_2,Eu não estava lá ontem à noite.
+dsp_wild_lover_reply_5_3,É melhor você não estar nisso.
+dsp_wild_lover_reply_6_1,Então por que ligou.
+dsp_wild_lover_reply_6_2,Desliga então.
+dsp_wild_lover_reply_6_3,Tédio. Sei.
+dsp_meeting_room_name,Pé-Direito Baixo
+dsp_meeting_room_description,Seu inventário principal perde duas fileiras.
+dsp_rat_infestation_name,Infestação de Ratos
+dsp_rat_infestation_description,O serviço de limpeza custa 10 créditos a mais. Todo dia seu inventário principal se enche de... cocô de rato. Você pode contratar um exterminador nos serviços noturnos para remover este traço.
+dsp_cold_shop_name,Loja Frigorífica
+dsp_cold_shop_description,Começa com uma geladeira precária, mais uma caixa de cerveja Red Imp e uma caixa de sorvete de baunilha premium Beis.
+dsp_godzilla_name,Godzilla
+dsp_godzilla_description,"Uma vez por dia, comer lixo nuclear te dá 3 ações noturnas extras. Toda segunda-feira, o Gerente de Resíduos Corporativos traz uma lata de lixo nuclear até a sua porta."
+dsp_godzilla_menu,Comer
+dsp_godzilla_eaten,Você engole uma lata de lixo nuclear. Hoje à noite você se sente imparável.
+dsp_godzilla_already,Você já comeu lixo nuclear hoje.
+dsp_godzilla_nightlog,O lixo nuclear te mantém ligado a noite toda.
+dsp_godzilla_energized,O lixo nuclear te mantém ligado — você atende um cliente extra hoje.
+dsp_godzilla_delivery,O Gerente de Resíduos Corporativos deixa uma lata de lixo nuclear e te paga 100 créditos para levá-la.
+dsp_service_exterminator,Exterminador
+dsp_service_exterminator_info,Contrate um exterminador para acabar com a infestação: limpa todos os dejetos, remove o traço Infestação de Ratos e restaura o preço normal do serviço de limpeza.
+dsp_rat_infestation_removed,O exterminador resolveu os ratos ~ tente não pensar no vidro que eles derrubaram ontem à noite.
+dsp_strict_crackdown_name,Repressão Rigorosa
+dsp_strict_crackdown_description,Nenhum policial corrupto aparece. As mercadorias roubadas perdem calor na metade da velocidade.
+dsp_never_empty_handed_name,Nunca de Mãos Vazias
+dsp_never_empty_handed_description,Se você sair de um local de mãos vazias, ganha 25 créditos.
+dsp_never_empty_log,Você voltou de mãos vazias e ainda embolsou 25 créditos.
+dsp_never_empty_notify,Nunca de Mãos Vazias: +25 créditos
+dsp_patience_limit_name,Paciência Curta
+dsp_patience_limit_description,Os clientes ficam só um minuto.
+dsp_patience_limit_timeout,O cliente perdeu a paciência.
+dsp_hero_history_name,Teoria do Grande Homem
+dsp_hero_history_description,Negociar com pessoas famosas concede o dobro de Reputação.
+dsp_gathering_storm_name,Tempestade Crescente
+dsp_gathering_storm_description,Aumenta muito a chance de criminosos procurados aparecerem, até você ter conhecido todos os criminosos procurados, ou ter denunciado ou baleado um deles.
+dsp_gathering_done,Tempestade Crescente: os criminosos procurados sumiram.
+dsp_former_geologist_name,Ex-Geólogo
+dsp_former_geologist_description,Você pode provar o conteúdo de qualquer recipiente para identificá-lo.
+dsp_former_geologist_menu,Dar um gole
+dsp_former_geologist_too_little,Não tem o suficiente aí para um gole.
+dsp_fruit_battery_name,Bateria de Fruta
+dsp_fruit_battery_description,Nutrifruta pode ser usado como bateria: cada 1 kJ de energia consome 10 kcal do seu valor nutricional. Ainda assim não pode ser vendido como bateria.
+dsp_godzilla_visit_line,A cota mensal de resíduos chegou de novo. Me faz um favor e leva essa lata das minhas mãos.
+dsp_godzilla_visit_offer,Uma lata de lixo nuclear. Pegue e eu te pago 100 créditos.
+dsp_godzilla_visit_buy,Combinado. A lata é minha.
+dsp_foreknowledge_when_today,hoje
+dsp_foreknowledge_when_tomorrow,amanhã
+dsp_foreknowledge_when_after, dias
+dsp_foreknowledge_price_tag,preço
+dsp_foreknowledge_price_name,Mudança de preço
+dsp_android_name,Androide
+dsp_android_description,Um chip biônico foi implantado em você — você precisa consumir módulos para continuar vivo. Você começa com dois módulos.
+dsp_android_injected,Androide: módulo lvX trocado — o chip está estável de novo.
+dsp_android_miss,Androide: nenhum módulo disponível hoje — o chip começa a alarmar.
+dsp_android_warn,Androide: três dias sem troca — seus membros estão adormecendo.
+dsp_android_overdue,Androide: módulo atrasado — o chip está sobrecarregando.
+dsp_android_severe,Androide: sobrecarga forte — sua visão está se rasgando.
+dsp_android_critical,Androide: o chip está prestes a falhar — troque um módulo ou você morre.
+dsp_android_end_reason,Falha do Chip Androide
+dsp_android_end_desc,Semanas sem um módulo novo queimaram seu chip. Sua mente para quieta, entre as prateleiras.
+dsp_android_lethal,Android: the chip is scorching - another missed swap will kill you.
+dsp_prohibition_name,Lei Seca
+dsp_prohibition_description,Todo álcool conta como contrabando de nível médio.
+dsp_tobacco_tax_name,Imposto sobre o Tabaco
+dsp_tobacco_tax_description,"Os cigarros são vendidos por 50% a mais, mas você só fica com 10% desse acréscimo."
+dsp_blood_donor_name,Doador de Sangue
+dsp_blood_donor_description,"Uma vez por dia, você pode doar sangue usando uma bolsa de sangue para ganhar uma bolsa de sangue extra. Em troca, você perde um cliente no dia seguinte."
+dsp_force_open_name,Força Bruta
+dsp_force_open_description,"Você pode arrombar caixas de suprimentos com um cortador de plasma ou um pé de cabra. O pé de cabra quebra no processo, mas destrói menos do que há lá dentro."
+dsp_vendetta_name,Vingança
+dsp_vendetta_description,"Sem uma arma com você, você não pode fazer ações noturnas. Você pode contratar um “profissional” nos serviços noturnos para remover este traço."
+dsp_service_professional,Profissional
+dsp_vendetta_no_weapon,"Vingança: você está sem arma, então não sai hoje à noite."
+dsp_vendetta_removed,Vingança: um profissional resolveu a situação. O traço foi removido.
+dsp_blood_donor_menu,Doar sangue
+dsp_blood_donor_done,Doação concluída: uma bolsa de sangue a mais e você perde um cliente amanhã.
+dsp_blood_donor_already,Você já doou sangue hoje.
+dsp_blood_donor_no_space,Não há espaço para outra bolsa de sangue.
+dsp_revolutionary_influence_name,Influência Revolucionária
+dsp_revolutionary_influence_description,"Se a sua Reputação com a Revolução estiver acima de 20, Odin vai te contar, depois de negociar com ele, o evento que a Revolução está planejando em até três dias."
+dsp_cracker_name,Arrombador de Caixas
+dsp_cracker_description,"Durante o seu treinamento sob o Mentor, você pegou o gosto de arrombar caixas. Na maioria das vezes compensa — desde que você tenha como abri-las."
+dsp_cracker_tag,Traços: Provavelmente Divertido
+dsp_cracker_supplies_1,Uma máquina de gravação surrada.
+dsp_cracker_supplies_2,3 cartões de acesso em branco.
+dsp_cracker_supplies_3,"Uma caixa de suprimentos aleatória, um cartão de acesso e um chip de cartão."
+dsp_cracker_supplies_4,Reputação inicial mais alta (mercado negro).
+dsp_cracker_supplies_5,Reputação inicial mais baixa (Segurança).
+dsp_cracker_supplies_6,Mais sorte.
+dsp_revolutionary_influence_slip_title,Informações da Revolução
+dsp_revolutionary_influence_slip_body,Odin baixou a voz antes de sair: em até três dias a Revolução age — “{0}”. Já está marcado no calendário.
+dsp_service_professional_tooltip,Sua Vingança não vai mais te incomodar.
+dsp_service_exterminator_tooltip,"Contrate o exterminador hoje à noite: limpa os dejetos, remove o traço Infestação de Ratos e deixa uma carcaça de rato e um caco de vidro."

@@ -6,7 +6,7 @@ dsp_distributor_tag,Traits: Probably Fun
 
 # Starting perks
 dsp_wanderlust_name,Wanderlust
-dsp_wanderlust_description,"If at least one customer is still queued when you close the shop, you can go out twice at night, and the first night trip does not cost you any customers."
+dsp_wanderlust_description,If at least one customer is still queued when you close the shop, you get one extra night action, and your first night trip does not cost you any customers.
 dsp_smelting_name,Smelting
 dsp_smelting_description,"Start with a shabby Furnace fitted with a Blast Furnace Module and some scrap metal."
 dsp_ecommerce_name,E-commerce
@@ -34,15 +34,15 @@ dsp_shawshank_name,Shawshank Redemption
 dsp_shawshank_description,You dug straight through while expanding the wall hole. The wall hole becomes 4×4 and counts as a display case instead of a hidden compartment. The display case attracts one extra buyer.
 dsp_wanderlust_nightlog,"Last night's trip made you open late today. Wanderlust meant you lost no customers over it."
 dsp_newspaper_recipe_name,Newspaper Recipe
-dsp_newspaper_recipe_description,"Newspapers now count as a flux agent, synthetic yeast, and a hard-to-swallow X food (75KJ)."
+dsp_newspaper_recipe_description,"Newspapers now count as a flux agent, synthetic yeast, and a hard-to-swallow X food (75 kcal)."
 dsp_newspaper_recipe_taste,Unappetizing
 dsp_newspaper_recipe_tooltip_flux,"Flux agent (Basic): a practical additive that raises the purity of metal ore when used while smelting. It is consumed in the process."
 dsp_newspaper_recipe_tooltip_yeast,"Synthetic yeast: an illegal substance that can replace yeast to brew slightly carcinogenic wine very cheaply. Water is all it needs."
 dsp_mortgage_description,"You buy the store at the start with a debt of 7,000."
 dsp_self_built_name,"Self-Built"
-dsp_self_built_description,"You own the property from the start, but all of your nightly service fees are doubled."
+dsp_self_built_description,"You own the property from the start, but power and janitorial services cost 10 credits instead."
 dsp_cellar_name,Natural Wine Cellar
-dsp_wild_favor_description,'"Wild's phone is unlocked from the start and you gain 300 Wild's Favor."'
+dsp_wild_favor_description,"Wild's phone is unlocked from the start and you gain 300 Wild's Favor."
 dsp_wild_favor_name,"Wild's Favor"
 dsp_cellar_description,Brewing takes one day less, and finished wine is aged 3 days.
 dsp_stable_partnership_name,Stable Partnership
@@ -67,7 +67,7 @@ dsp_share_cigarette_menu,Offer a Cigarette
 dsp_distributor_supplies_1,"Unlocks Red Imp Brewery, Lower Levels Chemist, Upper Level Pharmacist and GP Mining Coop."
 dsp_distributor_supplies_2,"Unlocks Showcase Expansion I."
 dsp_distributor_supplies_3,"The suppliers have already sent their free samples."
-dsp_distributor_supplies_4,"Starting credits: 100."
+dsp_distributor_supplies_4,"Starting credits: 200."
 dsp_better_broker_name,Dutiful Broker
 dsp_better_broker_description,"Market requests and customers are more likely to ask for bulky goods you already own, especially on rent day. Market requests never ask for the same item twice."
 dsp_notorious_villain_name,Notorious Villain
@@ -103,8 +103,8 @@ dsp_built_on_dump_serpico,I picked up a lot of food at the dumping ground. I hav
 # foreknowledge / speculator / picky customers / harsh bargain
 dsp_foreknowledge_name,Well Informed
 dsp_foreknowledge_description,You learn which events tomorrow brings.
-dsp_foreknowledge_log,Well Informed: tomorrow's events: X
-dsp_foreknowledge_none,Well Informed: nothing scheduled for tomorrow.
+dsp_foreknowledge_log,Scheduled events: Well Informed: tomorrow's events: X
+dsp_foreknowledge_none,"No scheduled events right now. Well Informed: nothing scheduled for tomorrow."
 dsp_speculator_name,Herd Mentality
 dsp_speculator_description,All price-affecting events have their effects increased by 50%.
 dsp_picky_customers_name,Dazzling Array
@@ -339,7 +339,7 @@ dsp_godzilla_energized,The nuclear waste keeps you wired - you serve one extra c
 dsp_godzilla_delivery,The Corporate Waste Manager drops off a can of nuclear waste and pays you 100 credits to take it.
 dsp_service_exterminator,Exterminator
 dsp_service_exterminator_info,Hire an exterminator to end the infestation: clears every dropping, removes the Rat Infestation trait, and restores the normal cleaning service price.
-dsp_rat_infestation_removed,"The exterminator cleared the store. The infestation is over - he left a dead rat behind as proof."
+dsp_rat_infestation_removed,The exterminator dealt with the rats ~ try not to think about the glass they knocked over last night.
 dsp_strict_crackdown_name,Strict Crackdown
 dsp_strict_crackdown_description,No corrupt police appear. Stolen goods lose heat half as fast.
 dsp_never_empty_handed_name,Never Empty-Handed
@@ -359,7 +359,55 @@ dsp_former_geologist_description,You can taste the contents of any container to 
 dsp_former_geologist_menu,Take a sip
 dsp_former_geologist_too_little,Not enough in there for a sip.
 dsp_fruit_battery_name,Fruit Battery
-dsp_fruit_battery_description,Nutrifruit can be used as a battery: every 1 kJ of power drains 10 kJ of its nutrition. It still cannot be sold as a battery.
-dsp_godzilla_visit_line,Corporate Waste Manager: The monthly waste quota is in again. Do me a favour and take this can off my hands.
+dsp_fruit_battery_description,Nutrifruit can be used as a battery: every 1 kJ of power drains 10 kcal of its nutrition. It still cannot be sold as a battery.
+dsp_godzilla_visit_line,The monthly waste quota is in again. Do me a favour and take this can off my hands.
 dsp_godzilla_visit_offer,One can of nuclear waste. Take it and I will pay you 100 credits.
 dsp_godzilla_visit_buy,Deal. The can is mine.
+dsp_foreknowledge_when_today,today
+dsp_foreknowledge_when_tomorrow,tomorrow
+dsp_foreknowledge_when_after, days out
+dsp_foreknowledge_price_tag,price
+dsp_foreknowledge_price_name,Price change
+dsp_android_name,Android
+dsp_android_description,A bionic chip was implanted in you - you must consume modules to stay alive. You start with two modules.
+dsp_android_injected,Android: swapped in an lvX module - the chip is stable again.
+dsp_android_miss,Android: no module available tonight - the chip starts alarming.
+dsp_android_warn,Android: three days without a swap - your limbs are going numb.
+dsp_android_overdue,Android: overdue for a module - the chip is overloading.
+dsp_android_severe,Android: heavy overload - your vision is tearing apart.
+dsp_android_critical,Android: the chip is about to fail - swap a module or you die.
+dsp_android_end_reason,Android Chip Failure
+dsp_android_end_desc,Weeks without a fresh module burned out your chip. Your mind quietly stops running between the shelves.
+dsp_android_lethal,Android: the chip is scorching - another missed swap will kill you.
+dsp_prohibition_name,Prohibition
+dsp_prohibition_description,All alcohol counts as mid-level contraband.
+dsp_tobacco_tax_name,Tobacco Tax
+dsp_tobacco_tax_description,Cigarettes sell for 50% more. You only get 10% of that extra markup.
+dsp_blood_donor_name,Blood Donor
+dsp_blood_donor_description,Donate once a day for an extra blood bag; you miss one customer tomorrow.
+dsp_force_open_name,Brute Force
+dsp_force_open_description,Force supply crates open with a welder, wire cutter or crowbar; the crowbar breaks but ruins less inside.
+dsp_vendetta_name,Vendetta
+dsp_vendetta_description,No weapon, no night actions. A professional can remove this perk.
+dsp_service_professional,Professional
+dsp_vendetta_no_weapon,Vendetta: you have no weapon on you, so you cannot go out tonight.
+dsp_vendetta_removed,Vendetta: a professional sorted it out. The perk is gone.
+dsp_blood_donor_menu,Donate blood
+dsp_blood_donor_done,Donation done: one more blood bag, and you will miss one customer tomorrow.
+dsp_blood_donor_already,You already donated blood today.
+dsp_blood_donor_no_space,No room for another blood bag.
+dsp_revolutionary_influence_name,Revolutionary Influence
+dsp_revolutionary_influence_description,If Revolutionary reputation is above 20, Odin will tell you about an event the Revolution is planning within three days after trading with him.
+dsp_cracker_name,Cracker
+dsp_cracker_description,During your training under The Mentor you picked up a taste for cracking crates. Most of the time it pays well - as long as you have the means to open them.
+dsp_cracker_tag,Traits: Probably Fun
+dsp_cracker_supplies_1,A shabby engraving machine.
+dsp_cracker_supplies_2,3 blank access cards.
+dsp_cracker_supplies_3,A random supply crate, access card and card chip.
+dsp_cracker_supplies_4,Higher starting reputation (black market).
+dsp_cracker_supplies_5,Lower starting reputation (Security).
+dsp_cracker_supplies_6,Better luck.
+dsp_revolutionary_influence_slip_title,Revolution Intel
+dsp_revolutionary_influence_slip_body,Odin lowered his voice before leaving: within three days the Revolution moves - "{0}". It is already marked on the calendar.
+dsp_service_professional_tooltip,Your vendetta will not bother you any more.
+dsp_service_exterminator_tooltip,Hire the exterminator tonight: the droppings are cleared, the Rat Infestation perk is removed, and a rat corpse plus a shard of glass are left behind.

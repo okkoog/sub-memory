@@ -1,8 +1,8 @@
-# Faction Reputation Expansion v1.5.1
+# Faction Reputation Expansion v1.5.2
 
 ## Update notes
 
-Fixed customer budgets, empty supply crates and interface click-through.
+Adjusted some Newborn Core effects and fixed bugs.
 
 ## Installation
 
