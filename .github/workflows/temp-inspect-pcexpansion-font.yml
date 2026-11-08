@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Decompile PCExpansion 1.3
+      - name: Inspect Korean locale detection
         shell: bash
         run: |
           set -euo pipefail
@@ -23,21 +23,11 @@ jobs:
           export PATH="$PATH:$HOME/.dotnet/tools"
           mkdir decomp
           ilspycmd -p -o decomp PCExpansion.dll
-
-          echo "===== UiFonts.cs ====="
-          sed -n '1,180p' decomp/PCExpansion/UiFonts.cs
-
-          echo "===== ConsoleFontFallback.cs ====="
-          sed -n '1,140p' decomp/PCExpansion/ConsoleFontFallback.cs
-
-          echo "===== StartingPerkHooks.cs ====="
-          sed -n '1,120p' decomp/PCExpansion/StartingPerkHooks.cs
-
-          echo "===== ComputerManualView PrepareFont ====="
-          sed -n '740,870p' decomp/PCExpansion/ComputerManualView.cs
-
-          echo "===== koreanFont references ====="
-          grep -R -n -C 5 "koreanFont\|Korean\|ko-KR\|ko_KR" decomp/PCExpansion || true
-
-          echo "===== UiFonts.Require call sites ====="
-          grep -R -n "UiFonts.Require" decomp/PCExpansion || true
+          echo "===== LanguageText files ====="
+          find decomp/PCExpansion -maxdepth 2 -type f -iname '*Language*' -o -iname '*Locale*'
+          echo "===== LocaleCode definitions/usages ====="
+          grep -R -n -C 12 "LocaleCode" decomp/PCExpansion || true
+          echo "===== IsChinese definitions/usages ====="
+          grep -R -n -C 8 "IsChinese" decomp/PCExpansion || true
+          echo "===== ko localization/path logic ====="
+          grep -R -n -C 8 '"ko"\|ko.csv\|Localization' decomp/PCExpansion/LanguageText.cs decomp/PCExpansion/*Language*.cs 2>/dev/null || true
