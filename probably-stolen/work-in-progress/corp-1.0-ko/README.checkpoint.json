@@ -1,7 +1,42 @@
 {
   "project": "CorpPresence 1.0 Korean translation WIP",
   "source": "TranslationExamples/es.template.json (1621 stable keys)",
+  "status": "paused_by_user",
+  "candidate": "probably-stolen/work-in-progress/corp-1.0-ko/ko.candidate.json",
+  "total_keys": 1621,
   "manual_new_or_changed_keys": 483,
   "manual_parts": 7,
-  "note": "These parts preserve the manually translated/reviewed keys that were not safely reusable from the previous CorpPresence Korean catalog. Final ko.json will merge these with reviewed reusable keys and then receive terminology/placeholder QA."
+  "qa": {
+    "key_count": "1621/1621",
+    "missing_keys": 0,
+    "extra_keys": 0,
+    "placeholder_mismatches": 0,
+    "html_tag_mismatches": 0,
+    "newline_structure_mismatches": 0,
+    "numeric_fixed_value_omissions": 0,
+    "manual_483_second_pass": "nearly complete",
+    "character_dialogue_pass": "complete",
+    "production_ui_pass": "complete",
+    "malice_resistance_semantics_pass": "complete",
+    "terminology_pass": "in progress",
+    "remaining_focus": [
+      "reused 1138 entries: final terminology/style consistency sweep",
+      "unit typography normalization such as ml -> mL",
+      "final residual proper-noun/label consistency scan",
+      "rename/promote candidate to final ko.json after final QA"
+    ]
+  },
+  "notable_fixes_already_applied": [
+    "Davre/Meridian/Spacer terminology normalized",
+    "Solana Biogenics -> 솔라나 생명공학",
+    "Meridian Ballistics -> 메리디언 군수",
+    "Silverblood Trilobite -> 은혈 삼엽충",
+    "Sentinel -> 센티넬",
+    "restored omitted 85°C denaturation warning in Silver Blood description",
+    "fixed Malice gift timer wording so it is clearly automatic",
+    "character voice consistency polished",
+    "CorpPresence title normalized to 회사 강화"
+  ],
+  "last_saved_candidate_commit": "6f84deea968b37ce917c3c2267f9d77ad5859a2c",
+  "note": "User requested save and pause. Resume from ko.candidate.json; do not redo completed passes."
 }
