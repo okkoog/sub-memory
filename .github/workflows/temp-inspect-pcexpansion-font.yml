@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Inspect Korean locale detection
+      - name: Dump LanguageText
         shell: bash
         run: |
           set -euo pipefail
@@ -23,11 +23,4 @@ jobs:
           export PATH="$PATH:$HOME/.dotnet/tools"
           mkdir decomp
           ilspycmd -p -o decomp PCExpansion.dll
-          echo "===== LanguageText files ====="
-          find decomp/PCExpansion -maxdepth 2 -type f -iname '*Language*' -o -iname '*Locale*'
-          echo "===== LocaleCode definitions/usages ====="
-          grep -R -n -C 12 "LocaleCode" decomp/PCExpansion || true
-          echo "===== IsChinese definitions/usages ====="
-          grep -R -n -C 8 "IsChinese" decomp/PCExpansion || true
-          echo "===== ko localization/path logic ====="
-          grep -R -n -C 8 '"ko"\|ko.csv\|Localization' decomp/PCExpansion/LanguageText.cs decomp/PCExpansion/*Language*.cs 2>/dev/null || true
+          cat decomp/PCExpansion/LanguageText.cs
