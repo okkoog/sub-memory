@@ -41,8 +41,14 @@ k=k.replace(old,new,1)
 
 # Remove unrelated Mechanic gate that blocked every repair family.
 gate='''\t\t\tconst string gateKey = "mech_condition_low_purity";\n\t\t\tif (!ValidMechanic(LocHelper.GetLocalizedMechanic(gateKey), gateKey))\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\n'''
-if gate not in k: raise SystemExit('gate missing')
-k=k.replace(gate,'',1)
+combined='''\t\t\tLocale selectedLocale = LocalizationSettings.SelectedLocale;\n\t\t\tif (selectedLocale == null || (selectedLocale.Identifier.Code != "ko" && selectedLocale.Identifier.Code != "ko-KR") || !ValidMechanic(LocHelper.GetLocalizedMechanic("mech_condition_low_purity"), "mech_condition_low_purity"))\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n'''
+combined_replacement='''\t\t\tLocale selectedLocale = LocalizationSettings.SelectedLocale;\n\t\t\tif (selectedLocale == null || (selectedLocale.Identifier.Code != "ko" && selectedLocale.Identifier.Code != "ko-KR"))\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n'''
+if gate in k:
+    k=k.replace(gate,'',1)
+elif combined in k:
+    k=k.replace(combined,combined_replacement,1)
+else:
+    raise SystemExit('mechanic-wide gate missing')
 
 # Replace Chem Finisher cache repair with LocHelper's native missing-translation parser.
 start=k.find('\tprivate static int RepairChemFinisherRecipeNames()')
