@@ -23,65 +23,65 @@ Matching lines: 13; displayed context lines: 75
 49: 			ReportStartupRollback(error);
 50: 			throw;
 51: 		}
+56: 	}
 57: 
 58: 	private void EnableCore()
 59: 	{
-60: 		_runtime.Own(ExternalTranslations.Reload, ExternalTranslations.Clear);
-61: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
-62: 		_runtime.Own(Noop, LoadedItemRepair.Reset);
-63: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
-64: 		_runtime.Own(delegate
-65: 		{
-66: 			Hooks.InstallCore(_harmony);
-67: 		}, delegate
-68: 		{
-69: 			Harmony harmony = _harmony;
-70: 			if (harmony != null)
-71: 			{
-72: 				harmony.UnpatchAll(_harmony.Id);
-73: 			}
-74: 		});
-82: 	}
-83: 
-84: 	private void EnableResources()
-85: 	{
-86: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
-87: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
-88: 		_runtime.Own(Perfume.InstallResources, Perfume.UninstallResources);
-89: 		Hooks.InstallResources(_harmony);
-90: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
-91: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
-92: 		_runtime.Own(Noop, CatalogPricing.Reset);
-93: 		_runtime.Own(Noop, Crates.Reset);
-94: 		ItemRegistry.Activate();
-95: 		_runtime.Own(Noop, Tex.ReleaseUi);
-96: 		_runtime.Own(Noop, Theme.ResetCachedFont);
-97: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
-98: 		_runtime.Own(Noop, PhoneDialogueLayout.Reset);
-99: 		_runtime.Own(Noop, Notebook.Destroy);
-100: 		_runtime.Own(Noop, InputShield.Destroy);
-101: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
-102: 		_runtime.Own(CreateHost, DestroyHost);
-103: 		ModLog.Info("公司增强 1.0.0 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
-104: 	}
-105: 
-106: 	public void OnDisable()
-107: 	{
-108: 		_runtime.Stop();
-109: 	}
-110: 
-111: 	private void ReportStartupRollback(Exception error)
-112: 	{
-113: 		_runtime.Stop();
-114: 		try
-115: 		{
-116: 			ModLog.Error("公司增强初始化失败，已执行运行时回滚：" + error);
-117: 		}
-118: 		catch
-119: 		{
-120: 		}
-121: 		RollbackNotice.Queue();
-122: 	}
+60: 		_runtime.Own(GameResources.Begin, GameResources.Reset);
+61: 		_runtime.Own(Noop, LoadedItemRepair.Reset);
+62: 		_runtime.Own(ItemRegistry.Install, ItemRegistry.Uninstall);
+63: 		_runtime.Own(delegate
+64: 		{
+65: 			Hooks.InstallCore(_harmony);
+66: 		}, delegate
+67: 		{
+68: 			Harmony harmony = _harmony;
+69: 			if (harmony != null)
+70: 			{
+71: 				harmony.UnpatchAll(_harmony.Id);
+72: 			}
+73: 		});
+81: 	}
+82: 
+83: 	private void EnableResources()
+84: 	{
+85: 		_runtime.Own(SilverBlood.InstallResources, SilverBlood.UninstallResources);
+86: 		_runtime.Own(Tobacco.RegisterPlant, Tobacco.UnregisterPlant);
+87: 		_runtime.Own(Perfume.InstallResources, Perfume.UninstallResources);
+88: 		Hooks.InstallResources(_harmony);
+89: 		_runtime.Own(Hooks.InstallEvents, Hooks.UninstallEvents);
+90: 		_runtime.Own(CorpPresence.Malice.Malice.Install, CorpPresence.Malice.Malice.Uninstall);
+91: 		_runtime.Own(Noop, CatalogPricing.Reset);
+92: 		_runtime.Own(Noop, Crates.Reset);
+93: 		ItemRegistry.Activate();
+94: 		_runtime.Own(Noop, Tex.ReleaseUi);
+95: 		_runtime.Own(Noop, Theme.ResetCachedFont);
+96: 		_runtime.Own(Noop, Portraits.ResetSceneReferences);
+97: 		_runtime.Own(Noop, PhoneDialogueLayout.Reset);
+98: 		_runtime.Own(Noop, Notebook.Destroy);
+99: 		_runtime.Own(Noop, InputShield.Destroy);
+100: 		_runtime.Own(Noop, CompanyWindow.ReleaseUi);
+101: 		_runtime.Own(CreateHost, DestroyHost);
+102: 		ModLog.Info("公司增强 1.0.0 资源阶段已加载（人物：" + string.Join("、", Engine.All.Select((Character c) =&gt; c.Id)) + "）");
+103: 	}
+104: 
+105: 	public void OnDisable()
+106: 	{
+107: 		_runtime.Stop();
+108: 	}
+109: 
+110: 	private void ReportStartupRollback(Exception error)
+111: 	{
+112: 		_runtime.Stop();
+113: 		try
+114: 		{
+115: 			ModLog.Error("公司增强初始化失败，已执行运行时回滚：" + error);
+116: 		}
+117: 		catch
+118: 		{
+119: 		}
+120: 		RollbackNotice.Queue();
+121: 	}
 ```
 
 ## CorpPresence/GameResources.cs
@@ -432,230 +432,197 @@ Matching lines: 95; displayed context lines: 254
 
 ## CorpPresence/L.cs
 
-Matching lines: 59; displayed context lines: 221
+Matching lines: 52; displayed context lines: 188
 
 ```text
-3: using UnityEngine;
-4: 
-5: namespace CorpPresence;
-6: 
-7: internal static class L
-8: {
-9: 	private static int _frame = -1;
-10: 
-11: 	private static bool _en;
-12: 
-13: 	private static bool _ready;
-14: 
-15: 	private static string _locale = "";
-16: 
-17: 	private static int _translationVersion = -1;
-18: 
-19: 	public static bool En
-20: 	{
-21: 		get
-22: 		{
-23: 			int version = ExternalTranslations.Version;
-24: 			if (_frame == Time.frameCount && _translationVersion == version)
-25: 			{
-26: 				return _en;
-27: 			}
-28: 			_frame = Time.frameCount;
-29: 			_translationVersion = version;
-30: 			if (!_ready && (Object)(object)FontLoader.Instance == (Object)null)
-31: 			{
-32: 				_locale = "";
-33: 				return _en = false;
-34: 			}
-35: 			_ready = true;
-36: 			try
+2: using UnityEngine;
+3: 
+4: namespace CorpPresence;
+5: 
+6: internal static class L
+7: {
+8: 	private static int _frame = -1;
+9: 
+10: 	private static bool _en;
+11: 
+12: 	private static bool _ready;
+13: 
+14: 	private static string _locale = "";
+15: 
+16: 	public static bool En
+17: 	{
+18: 		get
+19: 		{
+20: 			if (_frame == Time.frameCount)
+21: 			{
+22: 				return _en;
+23: 			}
+24: 			_frame = Time.frameCount;
+25: 			if (!_ready && (Object)(object)FontLoader.Instance == (Object)null)
+26: 			{
+27: 				_locale = "";
+28: 				return _en = false;
+29: 			}
+30: 			_ready = true;
+31: 			try
+32: 			{
+33: 				_locale = LocHelper.GetCurrentLocaleCode() ?? "";
+34: 				_en = _locale.Length != 0 && !TextTranslations.IsBuiltInLocale(_locale, "zh");
+35: 			}
+36: 			catch
 37: 			{
-38: 				_locale = ExternalTranslations.ResolveLocale(LocHelper.GetCurrentLocaleCode() ?? "");
-39: 				_en = _locale.Length != 0 && !TextTranslations.IsBuiltInLocale(_locale, "zh");
+38: 				_locale = "";
+39: 				_en = false;
 40: 			}
-41: 			catch
-42: 			{
-43: 				_locale = "";
-44: 				_en = false;
-45: 			}
-46: 			return _en;
-47: 		}
-48: 	}
-49: 
-50: 	internal static string Locale
-51: 	{
-52: 		get
-53: 		{
-54: 			_ = En;
-55: 			return _locale;
-56: 		}
-57: 	}
-58: 
-59: 	public static string T(string zh, string en)
-60: 	{
-61: 		if (!En)
-62: 		{
-63: 			return zh;
-64: 		}
-65: 		return TextTranslations.Select(en, _locale);
-66: 	}
-67: 
-68: 	public static string K(string key, string zh, string en)
-69: 	{
-70: 		if (En)
-71: 		{
-72: 			return TextTranslations.SelectKey(key, en, _locale);
-73: 		}
-74: 		if (!ExternalTranslations.TryGet(key, en, _locale, out var value))
-75: 		{
-76: 			return zh;
-77: 		}
-78: 		return value;
-79: 	}
-80: 
-81: 	internal static string K(string key, string en)
-82: 	{
-83: 		return TextTranslations.SelectKey(key, en, Locale);
-84: 	}
-85: 
-86: 	internal static string K(string key, FormattableString en)
-87: 	{
-88: 		string locale = Locale;
-89: 		if (!ExternalTranslations.TryFormat(key, en, locale, out var value))
-90: 		{
-91: 			return FormatBuiltIn(key, en, locale);
-92: 		}
-93: 		return value;
-94: 	}
-95: 
-96: 	private static string FormatBuiltIn(string key, FormattableString en, string locale)
-97: 	{
-98: 		string text = TextTranslations.SelectBuiltInKey(key, en.Format, locale);
-99: 		if (string.Equals(text, en.Format, StringComparison.Ordinal))
-100: 		{
-101: 			return en.ToString();
-102: 		}
-103: 		try
-104: 		{
-105: 			return string.Format(text, en.GetArguments());
-106: 		}
-107: 		catch (FormatException)
-108: 		{
-109: 			return en.ToString();
-110: 		}
-111: 	}
-112: 
-113: 	public static string K(string key, string zh, FormattableString en)
-114: 	{
-115: 		bool en2 = En;
-116: 		if (ExternalTranslations.TryFormat(key, en, _locale, out var value))
-117: 		{
-118: 			return value;
-119: 		}
-120: 		if (!en2)
+41: 			return _en;
+42: 		}
+43: 	}
+44: 
+45: 	internal static string Locale
+46: 	{
+47: 		get
+48: 		{
+49: 			_ = En;
+50: 			return _locale;
+51: 		}
+52: 	}
+53: 
+54: 	public static string T(string zh, string en)
+55: 	{
+56: 		if (!En)
+57: 		{
+58: 			return zh;
+59: 		}
+60: 		return TextTranslations.Select(en, _locale);
+61: 	}
+62: 
+63: 	public static string K(string key, string zh, string en)
+64: 	{
+65: 		if (En)
+66: 		{
+67: 			return TextTranslations.SelectKey(key, en, _locale);
+68: 		}
+69: 		return zh;
+70: 	}
+71: 
+72: 	internal static string K(string key, string en)
+73: 	{
+74: 		return TextTranslations.SelectKey(key, en, Locale);
+75: 	}
+76: 
+77: 	internal static string K(string key, FormattableString en)
+78: 	{
+79: 		string locale = Locale;
+80: 		return FormatBuiltIn(key, en, locale);
+81: 	}
+82: 
+83: 	private static string FormatBuiltIn(string key, FormattableString en, string locale)
+84: 	{
+85: 		string text = TextTranslations.SelectBuiltInKey(key, en.Format, locale);
+86: 		if (string.Equals(text, en.Format, StringComparison.Ordinal))
+87: 		{
+88: 			return en.ToString();
+89: 		}
+90: 		try
+91: 		{
+92: 			return string.Format(text, en.GetArguments());
+93: 		}
+94: 		catch (FormatException)
+95: 		{
+96: 			return en.ToString();
+97: 		}
+98: 	}
+99: 
+100: 	public static string K(string key, string zh, FormattableString en)
+101: 	{
+102: 		if (!En)
+103: 		{
+104: 			return zh;
+105: 		}
+106: 		return FormatBuiltIn(key, en, _locale);
+107: 	}
+108: 
+109: 	public static string K(string key, FormattableString zh, FormattableString en)
+110: 	{
+111: 		if (!En)
+112: 		{
+113: 			return zh.ToString();
+114: 		}
+115: 		return FormatBuiltIn(key, en, _locale);
+116: 	}
+117: 
+118: 	internal static string F(string key, string zh, string en, params object[] arguments)
+119: 	{
+120: 		if (En)
 121: 		{
-122: 			return zh;
+122: 			return TextTranslations.FormatKey(key, en, _locale, arguments);
 123: 		}
-124: 		return FormatBuiltIn(key, en, _locale);
+124: 		return string.Format(zh, arguments);
 125: 	}
 126: 
-127: 	public static string K(string key, FormattableString zh, FormattableString en)
+127: 	internal static string KRendered(string key, string zh, FormattableString en)
 128: 	{
-129: 		bool en2 = En;
-130: 		if (ExternalTranslations.TryFormat(key, en, _locale, out var value))
-131: 		{
-132: 			return value;
-133: 		}
-134: 		if (!en2)
-135: 		{
-136: 			return zh.ToString();
-137: 		}
-138: 		return FormatBuiltIn(key, en, _locale);
+129: 		if (!En)
+130: 		{
+131: 			return zh;
+132: 		}
+133: 		return TextTranslations.Select(en.ToString(), _locale);
+134: 	}
+135: 
+136: 	internal static string Translate(string en)
+137: 	{
+138: 		return TextTranslations.Select(en, Locale);
 139: 	}
 140: 
-141: 	internal static string F(string key, string zh, string en, params object[] arguments)
+141: 	internal static string Translate(FormattableString en)
 142: 	{
-143: 		if (En)
-144: 		{
-145: 			return TextTranslations.FormatKey(key, en, _locale, arguments);
-146: 		}
-147: 		FormattableString english = FormattableStringFactory.Create(en, arguments);
-148: 		if (!ExternalTranslations.TryFormat(key, english, _locale, out var value))
+143: 		string text = Translate(en.Format);
+144: 		if (string.Equals(text, en.Format, StringComparison.Ordinal))
+145: 		{
+146: 			return en.ToString();
+147: 		}
+148: 		try
 149: 		{
-150: 			return string.Format(zh, arguments);
+150: 			return string.Format(text, en.GetArguments());
 151: 		}
-152: 		return value;
-153: 	}
-154: 
-155: 	internal static string KRendered(string key, string zh, FormattableString en)
-156: 	{
-157: 		bool en2 = En;
-158: 		if (ExternalTranslations.TryFormat(key, en, _locale, out var value))
-159: 		{
-160: 			return value;
-161: 		}
-162: 		if (!en2)
-163: 		{
-164: 			return zh;
-165: 		}
-166: 		return TextTranslations.Select(en.ToString(), _locale);
-167: 	}
-168: 
-169: 	internal static string Translate(string en)
-170: 	{
-171: 		return TextTranslations.Select(en, Locale);
-172: 	}
-173: 
-174: 	internal static string Translate(FormattableString en)
-175: 	{
-176: 		string text = Translate(en.Format);
-177: 		if (string.Equals(text, en.Format, StringComparison.Ordinal))
+152: 		catch (FormatException)
+153: 		{
+154: 			return en.ToString();
+155: 		}
+156: 	}
+157: 
+158: 	public static string[] T(string[] zh, string[] en)
+159: 	{
+160: 		if (!En)
+161: 		{
+162: 			return zh;
+163: 		}
+164: 		if (!TextTranslations.HasLocale(_locale) || en == null)
+165: 		{
+166: 			return en;
+167: 		}
+168: 		return Array.ConvertAll(en, (string value) =&gt; TextTranslations.Select(value, _locale));
+169: 	}
+170: 
+171: 	internal static string[] K(string[] keys, string[] zh, string[] en)
+172: 	{
+173: 		if (!En)
+174: 		{
+175: 			return zh;
+176: 		}
+177: 		if (!TextTranslations.HasLocale(_locale) || en == null)
 178: 		{
-179: 			return en.ToString();
+179: 			return en;
 180: 		}
-181: 		try
-182: 		{
-183: 			return string.Format(text, en.GetArguments());
-184: 		}
-185: 		catch (FormatException)
-186: 		{
-187: 			return en.ToString();
-188: 		}
-189: 	}
-190: 
-191: 	public static string[] T(string[] zh, string[] en)
-192: 	{
-193: 		if (!En)
-194: 		{
-195: 			return zh;
-196: 		}
-197: 		if (!TextTranslations.HasLocale(_locale) || en == null)
-198: 		{
-199: 			return en;
-200: 		}
-201: 		return Array.ConvertAll(en, (string value) =&gt; TextTranslations.Select(value, _locale));
-202: 	}
-203: 
-204: 	internal static string[] K(string[] keys, string[] zh, string[] en)
-205: 	{
-206: 		bool en2 = En;
-207: 		if (!en2 && (!ExternalTranslations.HasLocale(_locale) || zh == null || en == null))
-208: 		{
-209: 			return zh;
-210: 		}
-211: 		if (!TextTranslations.HasLocale(_locale) || en == null)
-212: 		{
-213: 			return en;
-214: 		}
-215: 		string[] array = new string[en.Length];
-216: 		for (int i = 0; i &lt; en.Length; i++)
-217: 		{
-218: 			string key = ((keys != null && i &lt; keys.Length) ? keys[i] : null);
-219: 			array[i] = (en2 ? TextTranslations.SelectKey(key, en[i], _locale) : (ExternalTranslations.TryGet(key, en[i], _locale, out var value) ? value : zh[i]));
-220: 		}
-221: 		return array;
-222: 	}
-223: }
+181: 		string[] array = new string[en.Length];
+182: 		for (int i = 0; i &lt; en.Length; i++)
+183: 		{
+184: 			string key = ((keys != null && i &lt; keys.Length) ? keys[i] : null);
+185: 			array[i] = TextTranslations.SelectKey(key, en[i], _locale);
+186: 		}
+187: 		return array;
+188: 	}
+189: }
 ```
 
 ## CorpPresence/Runtime/ResourceBootstrap.cs

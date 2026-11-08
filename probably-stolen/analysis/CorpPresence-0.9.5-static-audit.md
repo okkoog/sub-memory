@@ -1,10 +1,10 @@
 # CorpPresence 0.9.5 — static ILSpy audit
 
 - DLL: `/home/runner/work/sub-memory/sub-memory/probably-stolen/mods/3828913695/CorpPresence.dll`
-- Size: 8067584 bytes
-- SHA256: `ef3f3f093e5460c697811104c5a1c0f0b643b866283d411fbb0f2355cb87962b`
-- Decompiled C# files: 123
-- Generated (UTC): 2026-11-08T14:20:33.946151+00:00
+- Size: 8058880 bytes
+- SHA256: `21b459b20b9e55e2fe90fd031db8536ec3ebe0bf800570479b412012b12719f2`
+- Decompiled C# files: 121
+- Generated (UTC): 2026-11-08T16:37:38.699080+00:00
 - Scope: **CorpPresence only**. This is a static text audit; no mod/game code was executed.
 - IMPORTANT: The matching lines are search leads, NOT proof of run-time patch registration or conflict.
 
@@ -24,7 +24,7 @@ CorpPresence/Hooks.cs:192: Patch(h, AccessTools.Method(typeof(ShowcaseHelper), "
 CorpPresence/Hooks.cs:229: MethodInfo methodInfo = AccessTools.Method(typeof(T), method, array, (Type[])null);
 CorpPresence/Hooks.cs:236: h.Patch((MethodBase)methodInfo, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMetho
 CorpPresence/Hooks.cs:250: h.Patch((MethodBase)original, (prefix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, prefix, (Type[])null), (postfix == null) ? ((HarmonyMethod)null) : new HarmonyMethod(owner, postfix, (Type[])null), (HarmonyMethod)null, (HarmonyMethod)
-CorpPresence/Main.cs:72: harmony.UnpatchAll(_harmony.Id);
+CorpPresence/Main.cs:71: harmony.UnpatchAll(_harmony.Id);
 CorpPresence/UI/InputShield.cs:19: private static readonly MethodInfo ResetDrag = AccessTools.Method(typeof(ItemMouseDragHandler), "OnEventReset", (Type[])null, (Type[])null);
 ```
 
@@ -67,7 +67,7 @@ CorpPresence/GameResources.cs:97: if (((DetailedLocalizationTable&lt;StringTable
 CorpPresence/GameResources.cs:107: return LocHelper.ResolveStartupLocale() switch
 CorpPresence/Goods.cs:82: return text + "\n\n" + LocHelper.BulletLines(L.K(TextKeys?.Effects, ModuleEffects.Zh, ModuleEffects.En));
 CorpPresence/Hooks.cs:78: Patch&lt;StorePhoneClient&gt;(h, "GetLocalizedDisplayName", typeFromHandle, null, "AfterPhoneName");
-CorpPresence/L.cs:38: _locale = ExternalTranslations.ResolveLocale(LocHelper.GetCurrentLocaleCode() ?? "");
+CorpPresence/L.cs:33: _locale = LocHelper.GetCurrentLocaleCode() ?? "";
 CorpPresence/Perfume.cs:1101: return LocHelper.BulletLines(L.K(GoodsText.ForId(Goods.IdOf(machine))?.Effects, tuple.Item1, tuple.Item2));
 ```
 
@@ -81,7 +81,7 @@ CorpPresence/Hooks.cs:270: ModHook.OnHandlingNightlyServicesEarly -= _nightly;
 CorpPresence/ItemRegistry.cs:30: ModHook.OnModItemDirectoryInit += _onInit;
 CorpPresence/ItemRegistry.cs:38: ModHook.OnModItemDirectoryInit -= _onInit;
 CorpPresence/Main.cs:40: public void OnEnable()
-CorpPresence/Main.cs:106: public void OnDisable()
+CorpPresence/Main.cs:105: public void OnDisable()
 CorpPresence/Runtime/ResourceBootstrap.cs:22: ModHook.OnModItemDirectoryInit += _directory;
 CorpPresence/Runtime/ResourceBootstrap.cs:29: ModHook.OnModItemDirectoryInit -= _directory;
 ```
