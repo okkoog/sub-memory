@@ -15,24 +15,35 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            probably-stolen/0.8.3/Localization
+            probably-stolen/translation-drafts/2026-11-08-workshop-update
+            probably-stolen/mods/3828910575/Localization
+            probably-stolen/mods/3828971731/Localization
+            probably-stolen/mods/3829085054/Localization
+            probably-stolen/mods/3829110153/Localization
+            probably-stolen/mods/3829413447/Localization
+            probably-stolen/mods/3829730904/Localization
+            probably-stolen/mods/3830758908/Localization
+            probably-stolen/mods/3832840208/Localization
+            probably-stolen/mods/3833095213/Localization
+          sparse-checkout-cone-mode: false
       - name: Prepare working set
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p out/current out/sources out/drafts
           cp probably-stolen/0.8.3/Localization/*.csv out/current/
-          cp probably-stolen/mods/3828910575/Localization/en.csv out/sources/3828910575_en.csv || true
-          cp probably-stolen/mods/3828971731/Localization/en.csv out/sources/3828971731_en.csv
-          cp probably-stolen/mods/3829085054/Localization/en.csv out/sources/3829085054_en.csv
-          cp probably-stolen/mods/3829110153/Localization/en.csv out/sources/3829110153_en.csv
-          cp probably-stolen/mods/3829413447/Localization/en.csv out/sources/3829413447_en.csv
-          cp probably-stolen/mods/3829730904/Localization/en.csv out/sources/3829730904_en.csv
-          cp probably-stolen/mods/3830758908/Localization/en.csv out/sources/3830758908_en.csv
-          cp probably-stolen/mods/3832840208/Localization/en.csv out/sources/3832840208_en.csv
-          cp probably-stolen/mods/3833095213/Localization/en.csv out/sources/3833095213_en.csv
+          for id in 3828910575 3828971731 3829085054 3829110153 3829413447 3829730904 3830758908 3832840208 3833095213; do
+            if [ -f "probably-stolen/mods/$id/Localization/en.csv" ]; then
+              cp "probably-stolen/mods/$id/Localization/en.csv" "out/sources/$id"_en.csv
+            fi
+          done
           cp -r probably-stolen/translation-drafts/2026-11-08-workshop-update/. out/drafts/
       - uses: actions/upload-artifact@v4
         with:
-          name: localization-working-set
+          name: localization-working-set-sparse
           path: out
           if-no-files-found: error
