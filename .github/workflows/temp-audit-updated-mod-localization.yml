@@ -1,0 +1,156 @@
+name: Temp audit updated mod localization keys
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/temp-audit-updated-mod-localization.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Audit updated mods and localization keys
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv, io, json, pathlib, subprocess, xml.etree.ElementTree as ET, re
+
+          repo=pathlib.Path('.')
+          update='7684f72179fb9eaf37baf79c3086faedca9e010e'
+          parent=subprocess.check_output(['git','rev-parse',update+'^'],text=True).strip()
+          diff=subprocess.check_output(['git','diff','--name-only',parent,update,'--','probably-stolen/mods'],text=True).splitlines()
+
+          ids=sorted({m.group(1) for p in diff if (m:=re.match(r'probably-stolen/mods/(\d+)/',p))})
+          locroot=repo/'probably-stolen'/'0.8.3'/'Localization'
+
+          def git_text(ref,path):
+              try:
+                  return subprocess.check_output(['git','show',f'{ref}:{path}'],text=True,errors='replace')
+              except subprocess.CalledProcessError:
+                  return None
+
+          def version_from_manifest(txt):
+              if not txt: return None
+              try:
+                  root=ET.fromstring(txt)
+                  for tag in ['version','Version']:
+                      e=root.find('.//'+tag)
+                      if e is not None and e.text: return e.text.strip()
+                  # attributes fallback
+                  for k,v in root.attrib.items():
+                      if k.lower()=='version': return v
+              except Exception:
+                  pass
+              m=re.search(r'<version>\s*([^<]+)',txt,re.I)
+              return m.group(1).strip() if m else None
+
+          def parse_keys(txt, suffix):
+              if not txt: return set()
+              lines=txt.splitlines()
+              keys=set()
+              if suffix.lower()=='.tsv':
+                  rows=csv.reader(lines,delimiter='\t')
+              else:
+                  rows=csv.reader(lines)
+              for row in rows:
+                  if not row: continue
+                  k=row[0].strip().lstrip('\ufeff')
+                  if not k or k.startswith('#'): continue
+                  # skip obvious header
+                  if k.lower() in {'key','id','identifier','localizationkey','localization_key'}: continue
+                  keys.add(k)
+              return keys
+
+          def source_file_for(ref, mid):
+              candidates=[
+                  f'probably-stolen/mods/{mid}/Localization/en.csv',
+                  f'probably-stolen/mods/{mid}/Localization/en-US.csv',
+                  f'probably-stolen/mods/{mid}/LocalizationKeys.tsv',
+              ]
+              for p in candidates:
+                  txt=git_text(ref,p)
+                  if txt is not None:
+                      return p,txt
+              return None,None
+
+          report=[]
+          for mid in ids:
+              base=f'probably-stolen/mods/{mid}'
+              oldman=git_text(parent,base+'/manifest.xml')
+              newman=git_text(update,base+'/manifest.xml')
+              oldver=version_from_manifest(oldman)
+              newver=version_from_manifest(newman)
+              changed=[p[len(base)+1:] for p in diff if p.startswith(base+'/')]
+              loc_changed=[p for p in changed if p.lower().startswith('localization/') or p.lower().endswith('localizationkeys.tsv') or p.lower()=='data/ko.tsv']
+
+              oldsrc_path,oldsrc=source_file_for(parent,mid)
+              newsrc_path,newsrc=source_file_for(update,mid)
+              oldkeys=parse_keys(oldsrc, pathlib.Path(oldsrc_path).suffix if oldsrc_path else '')
+              newkeys=parse_keys(newsrc, pathlib.Path(newsrc_path).suffix if newsrc_path else '')
+              added=sorted(newkeys-oldkeys)
+              removed=sorted(oldkeys-newkeys)
+
+              trpath=locroot/f'pskb__{mid}.csv'
+              trtxt=trpath.read_text(encoding='utf-8-sig',errors='replace') if trpath.exists() else None
+              trkeys=parse_keys(trtxt,'.csv')
+              missing_current=sorted(newkeys-trkeys) if newsrc is not None and trtxt is not None else []
+              missing_added=sorted(set(added)-trkeys) if trtxt is not None else added
+
+              report.append({
+                  'id':mid,
+                  'old_version':oldver,
+                  'new_version':newver,
+                  'version_changed':oldver!=newver and (oldver is not None or newver is not None),
+                  'changed_file_count':len(changed),
+                  'localization_files_changed':loc_changed,
+                  'source_old':oldsrc_path,
+                  'source_new':newsrc_path,
+                  'old_key_count':len(oldkeys),
+                  'new_key_count':len(newkeys),
+                  'added_keys':added,
+                  'removed_keys':removed,
+                  'translation_file':str(trpath) if trpath.exists() else None,
+                  'translation_key_count':len(trkeys),
+                  'missing_newly_added_keys':missing_added,
+                  'missing_current_source_keys':missing_current,
+              })
+
+          out=pathlib.Path('/tmp/out')
+          out.mkdir(parents=True,exist_ok=True)
+          (out/'audit.json').write_text(json.dumps({'update_commit':update,'parent':parent,'mods':report},ensure_ascii=False,indent=2),encoding='utf-8')
+
+          md=['# Updated mod localization audit','',f'- update: {update}',f'- parent: {parent}','']
+          for x in report:
+              md += [f"## {x['id']}",
+                     f"- version: {x['old_version']} -> {x['new_version']}",
+                     f"- changed files: {x['changed_file_count']}",
+                     f"- localization files changed: {', '.join(x['localization_files_changed']) or 'none'}",
+                     f"- source: {x['source_new'] or 'none'}",
+                     f"- source keys: {x['old_key_count']} -> {x['new_key_count']}",
+                     f"- added keys: {len(x['added_keys'])}",
+                     f"- removed keys: {len(x['removed_keys'])}",
+                     f"- translation: {x['translation_file'] or 'none'}",
+                     f"- missing newly-added keys: {len(x['missing_newly_added_keys'])}",
+                     f"- missing all current source keys: {len(x['missing_current_source_keys'])}"]
+              if x['added_keys']:
+                  md += ['- added key list:'] + [f"  - {k}" for k in x['added_keys']]
+              if x['missing_newly_added_keys']:
+                  md += ['- missing newly-added key list:'] + [f"  - {k}" for k in x['missing_newly_added_keys']]
+              md += ['']
+          (out/'audit.md').write_text('\n'.join(md),encoding='utf-8')
+          print('\n'.join(md))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: updated-mod-localization-audit
+          path: /tmp/out
+          if-no-files-found: error
