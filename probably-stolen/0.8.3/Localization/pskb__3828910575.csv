@@ -1,126 +1,131 @@
-# Proficiency System 2.3.3 - user-supplied Korean key translations
-M|prof.system,"1"
-W|3828910575,"1"
-K|prof_cat_weapon,"무기"
-K|prof_cat_medical,"의료"
-K|prof_cat_nutrition,"식품"
-K|prof_cat_water,"물"
-K|prof_cat_brewing,"양조"
-K|prof_cat_material,"공학"
-K|prof_cat_contraband,"밀수품"
-K|prof_cat_general,"일반"
-K|prof_cat_planting,"재배"
-K|prof_cat_chemistry,"화학"
-K|prof_ui_title,"숙련도"
-K|prof_ui_header,"숙련도 v{0} | 카테고리를 클릭해 전환 | +를 눌러 포인트 사용 | 키: 설정에서 확인 | Esc로 닫기"
-K|prof_ui_points,"포인트"
-K|prof_ui_markup_btn,"판매가 인상 {0}/5  ->  판매가 +{1}%    클릭: +1"
-K|prof_ui_supply_btn,"매입 {0}/5  ->  구매가 -{1}%    클릭: +1"
-K|prof_ui_line3_btn,"{0} {1}/5    클릭: +1"
+﻿# Proficiency System 3.0.6 - Korean localization with 2026-11-08 update keys
+M|prof.system,1
+W|3828910575,1
+K|prof_cat_weapon,무기
+K|prof_cat_medical,의료
+K|prof_cat_nutrition,식품
+K|prof_cat_water,물
+K|prof_cat_brewing,양조
+K|prof_cat_material,공학
+K|prof_cat_contraband,밀수품
+K|prof_cat_general,일반
+K|prof_cat_planting,재배
+K|prof_cat_chemistry,화학
+K|prof_ui_title,숙련도
+K|prof_ui_header,숙련도 v{0} | 카테고리를 클릭해 전환 | +를 눌러 포인트 사용 | 키: 설정에서 확인 | Esc로 닫기
+K|prof_ui_points,포인트
+K|prof_ui_markup_btn,판매가 인상 {0}/5  ->  판매가 +{1}%    클릭: +1
+K|prof_ui_supply_btn,매입 {0}/5  ->  구매가 -{1}%    클릭: +1
+K|prof_ui_line3_btn,{0} {1}/5    클릭: +1
 K|prof_ui_perk,"카테고리 특전 ""{0}"": {1}"
-K|prof_ui_spec,"전문화 (Lv5): {0}"
-K|prof_ui_master,"마스터 경로 (Lv10): {0}"
-K|prof_ui_choice_crowd,"고객"
-K|prof_ui_choice_supply,"보급"
-K|prof_ui_choice_pricing,"가격 조정 (+{0}% 판매 / -{0}% 구매)"
-K|prof_ui_premium,"고급 보급: 누적 판매액 {0} 달성 시 다음 날 아침 보급 상자 배송"
-K|prof_ui_empire,"무역 제국: 판매가 +15% / 구매가 -15%"
-K|prof_ui_ability,"고유 능력 (A 또는 B 선택)"
-K|prof_ui_ability_hint,"아직 능력을 선택하지 않았습니다 - 아래에서 A 또는 B를 클릭하세요"
-K|prof_ui_ability_a,"A: {0}"
-K|prof_ui_ability_b,"B: {0}"
+K|prof_ui_spec,전문화 (Lv5): {0}
+K|prof_ui_master,마스터 경로 (Lv10): {0}
+K|prof_ui_choice_crowd,고객
+K|prof_ui_choice_supply,보급
+K|prof_ui_choice_pricing,가격 조정 (+{0}% 판매 / -{0}% 구매)
+K|prof_ui_premium,고급 보급: 누적 판매액 {0} 달성 시 다음 날 아침 보급 상자 배송
+K|prof_ui_empire,무역 제국: 판매가 +15% / 구매가 -15%
+K|prof_ui_ability,고유 능력 (A 또는 B 선택)
+K|prof_ui_ability_hint,아직 능력을 선택하지 않았습니다 - 아래에서 A 또는 B를 클릭하세요
+K|prof_ui_ability_a,A: {0}
+K|prof_ui_ability_b,B: {0}
 K|prof_ui_reset_ready,"이 카테고리 초기화 (포인트 환불, Lv5/Lv10 선택 초기화, 재사용 대기시간 7일)"
-K|prof_ui_reset_cd,"이 카테고리 초기화 (재사용 대기시간: {0}일)"
-K|prof_toast_not_in_run,"숙련도: 진행 중인 게임이 없습니다"
-K|prof_toast_panel_failed,"숙련도 패널 생성에 실패했습니다"
-K|prof_cfg_panel_key,"패널 키"
-K|prof_cfg_debug_key,"디버그 키"
-K|prof_cfg_debug_key_on,"디버그 키 활성화"
-K|prof_cfg_debug_log,"상세 로그"
-K|prof_cfg_bargain,"흥정 보너스"
-K|prof_cfg_price,"가격 후크"
-K|prof_cfg_wipe,"기능 정리 후크"
-K|prof_cfg_nightly,"매일 밤 안내"
-K|prof_cfg_calendar,"달력 항목"
-K|prof_cfg_gene,"돌연변이 확률"
-K|prof_cfg_language,"언어"
-K|prof_cfg_line_bonus,"판매가 인상/매입 레벨당 보너스"
-K|prof_cfg_pricing,"가격 조정 전문화 보너스"
-K|prof_cfg_crate,"보급 상자 기준액"
-K|prof_cfg_xp,"경험치 배율"
-K|prof_cfg_med,"가짜 약: 판매 보너스"
-K|prof_cfg_weapon,"총기 제작: 판매 보너스"
-K|prof_cfg_brew,"고급 양조: 판매 보너스"
-K|prof_cfg_craft,"장인품: 판매 보너스"
-K|prof_cfg_stock,"비축: 구매가"
-K|prof_cfg_stock_mod,"비축: 신경 모듈 획득 확률"
-K|prof_ab_weapon_a,"법적 방패 (범죄 기록이 추가될 때마다 모든 범죄 수치 -200)"
-K|prof_ab_weapon_b,"총기 제작 (무기 판매가 +{0}%)"
-K|prof_ab_medical_a,"가짜 약 (약물 판매가 +{0}%)"
-K|prof_ab_medical_b,"구급상자 (의사 손님이 의료 상자를 가져옴)"
+K|prof_ui_reset_cd,이 카테고리 초기화 (재사용 대기시간: {0}일)
+K|prof_toast_not_in_run,숙련도: 진행 중인 게임이 없습니다
+K|prof_toast_panel_failed,숙련도 패널 생성에 실패했습니다
+K|prof_cfg_panel_key,패널 키
+K|prof_cfg_debug_key,디버그 키
+K|prof_cfg_debug_key_on,디버그 키 활성화
+K|prof_cfg_debug_log,상세 로그
+K|prof_cfg_bargain,흥정 보너스
+K|prof_cfg_price,가격 후크
+K|prof_cfg_wipe,기능 정리 후크
+K|prof_cfg_nightly,매일 밤 안내
+K|prof_cfg_calendar,달력 항목
+K|prof_cfg_gene,돌연변이 확률
+K|prof_cfg_language,언어
+K|prof_cfg_line_bonus,판매가 인상/매입 레벨당 보너스
+K|prof_cfg_pricing,가격 조정 전문화 보너스
+K|prof_cfg_crate,보급 상자 기준액
+K|prof_cfg_xp,경험치 배율
+K|prof_cfg_med,가짜 약: 판매 보너스
+K|prof_cfg_weapon,총기 제작: 판매 보너스
+K|prof_cfg_brew,고급 양조: 판매 보너스
+K|prof_cfg_craft,장인품: 판매 보너스
+K|prof_cfg_stock,비축: 구매가
+K|prof_cfg_stock_mod,비축: 신경 모듈 획득 확률
+K|prof_ab_weapon_a,법적 방패 (범죄 기록이 추가될 때마다 모든 범죄 수치 -200)
+K|prof_ab_weapon_b,총기 제작 (무기 판매가 +{0}%)
+K|prof_ab_medical_a,가짜 약 (약물 판매가 +{0}%)
+K|prof_ab_medical_b,구급상자 (의사 손님이 의료 상자를 가져옴)
 K|prof_ab_nutrition_a,"신선 식품 (오늘 판매한 서로 다른 식품 종류마다 +15%, 상한 없음)"
 K|prof_ab_nutrition_b,"무료 시식 (식품 구매가 -50%, 판매자가 식품 2개 증정)"
-K|prof_ab_water_a,"가짜 물 (물의 품질에 따라 가격 변동)"
+K|prof_ab_water_a,가짜 물 (물의 품질에 따라 가격 변동)
 K|prof_ab_water_b,"비축 (구매가 -80%, 물 구매 고객 예산 +200%)"
-K|prof_ab_brewing_a,"고급 양조 (주류 판매가 +{0}%)"
-K|prof_ab_brewing_b,"고속 양조 (발효 속도 증가)"
-K|prof_ab_material_a,"비축 (공학/일반 물품 구매가 {0}%, 신경 모듈 획득 확률 {1}%)"
-K|prof_ab_material_b,"장인품 (공학 물품 판매가 +{0}%)"
-K|prof_ab_contraband_a,"세탁 (밀수품 범죄 수치 -30%)"
-K|prof_ab_contraband_b,"암시장 인맥 (하루 장물상 손님 +3명)"
+K|prof_ab_brewing_a,고급 양조 (주류 판매가 +{0}%)
+K|prof_ab_brewing_b,고속 양조 (발효 속도 증가)
+K|prof_ab_material_a,비축 (공학/일반 물품 구매가 {0}%
+K|prof_ab_material_b,장인품 (공학 물품 판매가 +{0}%)
+K|prof_ab_contraband_a,세탁 (밀수품 범죄 수치 -30%)
+K|prof_ab_contraband_b,암시장 인맥 (하루 장물상 손님 +3명)
 K|prof_ab_general_a,"중개인 (모든 판매가 +10%, 구매가 -15%)"
-K|prof_ab_general_b,"베테랑 (흥정 시 예산 소모 및 평판 하락 없음)"
-K|prof_ab_chemistry_a,"고순도 (생산한 약물의 순도 증가)"
-K|prof_ab_chemistry_b,"대량생산 (스트리트 등급 제품 1개 추가)"
+K|prof_ab_general_b,베테랑 (흥정 시 예산 소모 및 평판 하락 없음)
+K|prof_ab_chemistry_a,고순도 (생산한 약물의 순도 증가)
+K|prof_ab_chemistry_b,대량생산 (스트리트 등급 제품 1개 추가)
 K|prof_ab_planting_a,"다수확 (수확량 +3, 성장 속도 +50%)"
-K|prof_ab_planting_b,"돌연변이 (수확한 씨앗에 무작위 긍정 특성이 붙을 확률)"
-K|prof_ui_none,"없음"
-K|prof_ui_premium_short,"고급 보급"
-K|prof_ui_empire_short,"무역 제국"
-K|prof_ui_ability_short,"고유 능력"
-K|prof_cfg_panel_key_tip,"숙련도 패널을 여는 단축키"
-K|prof_cfg_crate_tip,"보급 상자 1개를 받기 위해 필요한 누적 판매액"
-K|prof_cfg_gene_tip,"씨앗 수확 시 긍정 특성을 얻을 확률"
-K|prof_cfg_xp_tip,"값이 높을수록 레벨업이 느려집니다 (1.5배 = 필요한 경험치 1.5배)"
-K|prof_cfg_line_bonus_tip,"판매가 인상(판매) 및 매입(구매)의 레벨당 보너스"
-K|prof_cfg_pricing_tip,"가격 조정 전문화: 판매가 상승 / 구매가 하락 비율"
-K|prof_cfg_med_tip,"가짜 약: 약물 판매가 보너스"
-K|prof_cfg_weapon_tip,"총기 제작: 무기 판매가 보너스"
-K|prof_cfg_brew_tip,"고급 양조: 주류 판매가 보너스"
-K|prof_cfg_craft_tip,"장인품: 공학 물품 판매가 보너스"
-K|prof_cfg_stock_tip,"비축: 구매가 비율 (음수일수록 저렴)"
-K|prof_cfg_stock_mod_tip,"비축: 공학 물품 구매 시 신경 모듈을 받을 확률"
-K|prof_toast_panel_open_failed,"숙련도 패널을 열지 못했습니다: {0}"
-K|prof_toast_reset_cd,"아직 초기화할 수 없습니다. {0}일 후에 다시 시도하세요."
-K|prof_toast_reset_done,"이 카테고리를 초기화하고 포인트 {0}점을 돌려받았습니다. 다음 초기화는 7일 후에 가능합니다."
-K|prof_toast_reset_all_done,"모든 카테고리를 초기화하고 포인트 {0}점을 돌려받았습니다."
-K|prof_toast_crate,"고급 보급: {0} 분야의 보급품이 도착했습니다."
-K|prof_toast_fence,"암시장 인맥: 오늘 장물상 손님이 {0}명 더 찾아옵니다."
-K|prof_toast_gift,"공학 특전: {0} 추가 획득"
-K|prof_toast_medbox,"구급상자: 의사 손님이 의료 보급 상자를 선물했습니다."
-K|prof_toast_debug_xp,"디버그: {0} 경험치 +100"
-K|prof_toast_ability_locked,"고유 능력은 이미 확정되었습니다. 다시 선택하려면 이 카테고리를 초기화하세요."
-K|prof_toast_sampling,"무료 시식: 판매자가 식품 {0}개를 덤으로 줬습니다."
-K|prof_toast_module,"비축: 판매자에게서 {0} 1개를 덤으로 받았습니다."
-K|prof_toast_gene,"긍정 특성 획득: {0} R{1}"
-K|prof_nightly_customers,"오늘 다시 방문한 손님: 구매 손님 {0}명, 납품 손님 {1}명"
-K|prof_cat_appraisal,"감정"
-K|prof_cfg_appraise_fee,"감정사의 안목: 레벨당 수수료"
-K|prof_cfg_appraise_fee_tip,"레벨당 감정 서비스 수수료 증가량"
-K|prof_cfg_appraise_perfect,"감정의 달인: 완벽 감정 보너스"
-K|prof_cfg_appraise_perfect_tip,"완벽한 감정(정확도 1)에 적용되는 추가 서비스 수수료"
-K|prof_ab_appraisal_a,"감정의 달인(완벽 감정 수수료 +{0}%)"
-K|prof_ab_appraisal_b,"시장 안목(감정을 의뢰하는 손님마다 물건을 1개 더 가져옴)"
-K|prof_cat_husbandry,"사육"
+K|prof_ab_planting_b,돌연변이 (수확한 씨앗에 무작위 긍정 특성이 붙을 확률)
+K|prof_ui_none,없음
+K|prof_ui_premium_short,고급 보급
+K|prof_ui_empire_short,무역 제국
+K|prof_ui_ability_short,고유 능력
+K|prof_cfg_panel_key_tip,숙련도 패널을 여는 단축키
+K|prof_cfg_crate_tip,보급 상자 1개를 받기 위해 필요한 누적 판매액
+K|prof_cfg_gene_tip,씨앗 수확 시 긍정 특성을 얻을 확률
+K|prof_cfg_xp_tip,값이 높을수록 레벨업이 느려집니다 (1.5배 = 필요한 경험치 1.5배)
+K|prof_cfg_line_bonus_tip,판매가 인상(판매) 및 매입(구매)의 레벨당 보너스
+K|prof_cfg_pricing_tip,가격 조정 전문화: 판매가 상승 / 구매가 하락 비율
+K|prof_cfg_med_tip,가짜 약: 약물 판매가 보너스
+K|prof_cfg_weapon_tip,총기 제작: 무기 판매가 보너스
+K|prof_cfg_brew_tip,고급 양조: 주류 판매가 보너스
+K|prof_cfg_craft_tip,장인품: 공학 물품 판매가 보너스
+K|prof_cfg_stock_tip,비축: 구매가 비율 (음수일수록 저렴)
+K|prof_cfg_stock_mod_tip,비축: 공학 물품 구매 시 신경 모듈을 받을 확률
+K|prof_toast_panel_open_failed,숙련도 패널을 열지 못했습니다: {0}
+K|prof_toast_reset_cd,초기화 재사용 대기 중
+K|prof_toast_reset_done,이 카테고리 초기화
+K|prof_toast_reset_all_done,모든 카테고리 초기화
+K|prof_toast_crate,고급 보급: {0} 분야의 보급품이 도착했습니다.
+K|prof_toast_fence,암시장 인맥: 오늘 장물상 손님이 {0}명 더 찾아옵니다.
+K|prof_toast_gift,공학 특전: {0} 추가 획득
+K|prof_toast_medbox,구급상자: 의사 손님이 의료 보급 상자를 선물했습니다.
+K|prof_toast_debug_xp,디버그: {0} 경험치 +100
+K|prof_toast_ability_locked,고유 능력은 이미 확정되었습니다. 다시 선택하려면 이 카테고리를 초기화하세요.
+K|prof_toast_sampling,무료 시식: 판매자가 식품 {0}개를 덤으로 줬습니다.
+K|prof_toast_module,비축: 판매자에게서 {0} 1개를 덤으로 받았습니다.
+K|prof_toast_gene,긍정 특성 획득: {0} R{1}
+K|prof_nightly_customers,오늘 다시 방문한 손님: 일반 손님 {0}명
+K|prof_cat_appraisal,감정
+K|prof_cfg_appraise_fee,감정사의 안목: 레벨당 수수료
+K|prof_cfg_appraise_fee_tip,레벨당 감정 서비스 수수료 증가량
+K|prof_cfg_appraise_perfect,감정의 달인: 완벽 감정 보너스
+K|prof_cfg_appraise_perfect_tip,완벽한 감정(정확도 1)에 적용되는 추가 서비스 수수료
+K|prof_ab_appraisal_a,감정의 달인(완벽 감정 수수료 +{0}%)
+K|prof_ab_appraisal_b,시장 안목(감정을 의뢰하는 손님마다 물건을 1개 더 가져옴)
+K|prof_cat_husbandry,사육
 K|prof_ab_husbandry_a,"우량 번식(한배 새끼 수 +1, 물고기 목표 체중 +25%)"
 K|prof_ab_husbandry_b,"풍성한 수확(물고기 체중 +20%, 도축 시 추가 고기 1개)"
-K|prof_feat_markup,"판매가 인상 ({0})"
-K|prof_feat_purchase,"매입 ({0})"
-K|prof_feat_pricing,"가격 조정 ({0})"
-K|prof_feat_empire,"무역 제국 ({0})"
-K|prof_feat_line3,"{0} ({1})"
-K|prof_feat_broker,"중개인 (모든 품목)"
-K|prof_feat_stockpile,"비축 (공학 > 일반)"
-K|prof_feat_appraise_global,"감정 {0} (모든 품목)"
-K|prof_feat_markup_word,"판매가 인상"
-K|prof_feat_purchase_word,"매입"
+K|prof_feat_markup,판매가 인상 ({0})
+K|prof_feat_purchase,매입 ({0})
+K|prof_feat_pricing,가격 조정 ({0})
+K|prof_feat_empire,무역 제국 ({0})
+K|prof_feat_line3,{0} ({1})
+K|prof_feat_broker,중개인 (모든 품목)
+K|prof_feat_stockpile,비축 (공학 > 일반)
+K|prof_feat_appraise_global,감정 {0} (모든 품목)
+K|prof_feat_markup_word,판매가 인상
+K|prof_feat_purchase_word,매입
+K|prof_cfg_group_language,언어
+K|prof_cfg_group_planting,재배
+K|prof_cfg_group_play,게임플레이
+K|prof_summary,{0} Lv{1} ({2})  포인트 {3}  판매가 인상 {4}  매입 {5}  {6} {7}
+K|prof_toast_choose_failed,선택에 실패했습니다. 자세한 내용은 로그를 확인하세요.
