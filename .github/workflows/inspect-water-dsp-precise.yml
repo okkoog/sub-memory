@@ -1,0 +1,32 @@
+name: Review competing native-water localization writer methods
+on:
+  push:
+    branches: [fix-koreanpack-mechanic-water-20261109]
+    paths: [.github/workflows/inspect-water-dsp-precise.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3834226532
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Inspect water locale repair and callbacks
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          mkdir -p "$RUNNER_TEMP/dsp"
+          "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/dsp" probably-stolen/mods/3834226532/DeepSpacePawnshop.dll
+          echo "===== entire water locale fix ====="
+          sed -n '1,350p' "$RUNNER_TEMP/dsp/DeepSpacePawnshop/WaterLocaleFix.cs"
+          echo "===== plugin: call sites and diagnostics ====="
+          grep -n -C 14 -E 'WaterLocaleFix|HandleCreateTooltip|HandleAssetsLoaded|HandleGameLoaded|OnEnable|OnDisable' "$RUNNER_TEMP/dsp/DeepSpacePawnshop/Plugin.cs" | head -n 260
