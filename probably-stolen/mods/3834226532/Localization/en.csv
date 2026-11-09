@@ -43,7 +43,7 @@ dsp_self_built_description,"You own the property from the start, but the base co
 dsp_cellar_name,Natural Wine Cellar
 dsp_wild_favor_description,"Wild's phone is unlocked from the start and you gain 300 Wild's Favor."
 dsp_wild_favor_name,"Wild's Favor"
-dsp_cellar_description,Brewing takes one day less, and finished wine is aged 3 days.
+dsp_cellar_description,"Brewing takes 1 day less, and finished wine ages for 3 days."
 dsp_stable_partnership_name,Stable Partnership
 dsp_stable_partnership_description,All dealers come to your store on Tuesdays and Fridays instead of you ordering them by phone.
 dsp_stable_partnership_phone,We drop the goods off on Tuesdays and Fridays. No need to call.
@@ -341,7 +341,7 @@ dsp_rat_infestation_removed,The exterminator dealt with the rats ~ try not to th
 dsp_strict_crackdown_name,Strict Crackdown
 dsp_strict_crackdown_description,No corrupt police appear. Stolen goods lose heat half as fast.
 dsp_never_empty_handed_name,Never Empty-Handed
-dsp_never_empty_handed_description,If you leave a location empty-handed, you gain 25 credits.
+dsp_never_empty_handed_description,"If you leave a location with at least one empty pocket, you gain 15 credits."
 dsp_never_empty_log,You came back empty-handed and pocketed 25 credits anyway.
 dsp_never_empty_notify,Never Empty-Handed: +25 credits
 dsp_patience_limit_name,Short Patience
@@ -367,7 +367,7 @@ dsp_foreknowledge_when_after, days out
 dsp_foreknowledge_price_tag,price
 dsp_foreknowledge_price_name,Price change
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,All alcohol counts as mid-level contraband.
+dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 and counts as a narcotic.
 dsp_tobacco_tax_name,Tobacco Tax
 dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Blood Donor
@@ -398,11 +398,11 @@ dsp_revolutionary_influence_slip_title,Revolution Intel
 dsp_revolutionary_influence_slip_body,Odin lowered his voice before leaving: within three days the Revolution moves - "{0}". It is already marked on the calendar.
 dsp_service_professional_tooltip,Your vendetta will not bother you any more.
 dsp_scav_drone_name,Scavenger Drone
-dsp_scav_drone_description,During night actions you have two extra hands. You are less likely to pick up junk while scavenging.
+dsp_scav_drone_description,During night actions you have two extra pockets. You are less likely to pick up junk while scavenging.
 dsp_trust_fund_name,Keystone Foundation for Charity
 dsp_trust_fund_description,You get 50 credits every Thursday.
 dsp_snake_oil_name,Snake Oil
-dsp_snake_oil_description,Start with 20 bottles of pure-starch Dream Dust.
+dsp_snake_oil_description,Start with 20 bottles of starch dream dust. They do not count as contraband.
 dsp_charm_mushroom_name,Charming Mushroom
 dsp_charm_mushroom_description,"Dream Cap and Nightmare Cap count as both food and narcotics."
 dsp_jane_smith_name,Jane Smith
@@ -413,11 +413,11 @@ dsp_share_cigarette_not_cig,This option only works on cigarettes.
 dsp_share_cigarette_not_owned,That pack is not in your hands.
 dsp_cracker_supplies_7,Better luck.
 dsp_mutual_choice_name,Mutual Choice
-dsp_mutual_choice_description,Once a day, when a customer leaves without trading, one more customer joins the queue.
+dsp_mutual_choice_description,"Twice per day, a customer who leaves without trading adds 1 customer to the queue."
 dsp_snake_oil_item_name,Snake Oil
 dsp_newspaper_stand_name,Newsstand
 dsp_newspaper_stand_description,Pay 10 credits in the nightly services to get 4 extra newspapers. You can always sell one copy of today's newspaper to every customer for 8 credits each.
-dsp_newspaper_stand_menu,Sell one newspaper (8 credits)
+dsp_newspaper_stand_menu,Sell
 dsp_service_paper_delivery,Newspaper Delivery
 dsp_service_paper_delivery_tooltip,10 credits: 4 extra copies of today's newspaper arrive overnight
 dsp_newspaper_stand_sold,"Sold one newspaper, +8 credits"
@@ -425,12 +425,12 @@ dsp_newspaper_stand_already,I already bought a newspaper today.
 dsp_newspaper_stand_stale,This newspaper is out of date.
 dsp_newspaper_stand_delivered,{0} copies of today's newspaper arrived
 dsp_watermelon_merge_name,Fruit Merge
-dsp_watermelon_merge_description,You can merge two crops of the same kind and the same size into one bigger crop.
+dsp_watermelon_merge_description,You can merge two crops of the same kind and size into a bigger one of the same kind. Bloomberries instead become smaller.
 dsp_watermelon_merge_menu,Merge (uses one identical crop)
 dsp_watermelon_merge_done,"Merged into a bigger {0}, worth {1} credits"
 dsp_watermelon_merge_max,This one is already as big as it gets.
 dsp_hydro_question_name,Hydro... ponics?
-dsp_hydro_question_description,You can grow 2 plants on the water pipes. Start with 2 of every seed.
+dsp_hydro_question_description,You can grow 2 plants in the water pipe. Start with 2 random seeds.
 dsp_poet_admirer_name,Poet Admirer
 dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
 dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
@@ -476,5 +476,8 @@ dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the r
 dsp_magician_piper_name,Pied Piper
 dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
 dsp_careless_tutor_name,Careless Tutor
-dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
+dsp_careless_tutor_description,"Your mentor forgot to buy you a newspaper, though he believes he did. You get no newspaper; events still happen but are not shown on the calendar. You can order a newspaper in the night services to remove this trait."
 dsp_service_newspaper_subscription,Newspaper Subscription
+dsp_scav_drone_pocket3,Pocket #3
+dsp_scav_drone_pocket4,Pocket #4
+dsp_newspaper_stand_no_customer_hint, (no customer right now)

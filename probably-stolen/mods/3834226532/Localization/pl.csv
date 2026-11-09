@@ -9,14 +9,14 @@ dsp_wanderlust_name,Żądza wędrówki
 dsp_wanderlust_description,"Jeśli w chwili zamykania sklepu w kolejce stoi choć jeden klient, dostajesz jedną dodatkową nocną akcję, a pierwsza nocna wyprawa nie kosztuje cię żadnych klientów."
 dsp_smelting_name,Wytop
 dsp_smelting_description,"Zaczynasz ze zniszczonym Piecem wyposażonym w Moduł wielkiego pieca i trochę złomu."
-dsp_ecommerce_name,E-handel
+dsp_ecommerce_name,Handel online
 dsp_ecommerce_description,"Od początku odblokowuje Zlecenia rynkowe. Każdego dnia przychodzi o jednego kupca mniej, ale otrzymujesz jedno dodatkowe zlecenie rynkowe."
 dsp_built_on_dump_name,Budowa na wysypisku
 dsp_built_on_dump_description,"Przedmioty wrzucone do Kosza od razu lądują na ziemi na Wysypisku; możesz je odzyskać przed końcem nocy. Nocna usługa sprzątania i wszystko z nią związane przestaje działać. Sprzątasz sam."
 dsp_tacit_understanding_name,Milczące porozumienie
 dsp_tacit_understanding_description,"Kontrole są częstsze. Dopóki twoja reputacja u Bezpieki jest powyżej 0, kontrole zawsze przeprowadza skorumpowany inspektor. Złodzieje, kieszonkowcy i złodzieje jedzenia zaglądają nieco częściej."
 dsp_no_trash_name,Bez śmieci
-dsp_no_trash_description,"The trash can is converted into a smuggler stash. You clean the shop yourself and no longer need the night janitorial service, but you can still trade through the trash can."
+dsp_no_trash_description,"Kosz na śmieci staje się skrytką przemytnika. Sprzątasz samodzielnie i nie potrzebujesz nocnej usługi sprzątania, ale handel przez kosz nadal działa."
 dsp_former_assistant_name,Były asystent
 dsp_former_assistant_description,Od początku odblokowuje Inwestycję Jacksona I. Handel z dr. Jacksonem daje ci 10% premii do handlu. Raz na 3 dni możesz zadzwonić po niego — przyjdzie i będzie handlował w twoim sklepie.
 dsp_former_assistant_contact,Dr Jackson
@@ -44,7 +44,7 @@ dsp_self_built_description,"Od początku jesteś właścicielem lokalu, ale pods
 dsp_cellar_name,Naturalna piwnica z winem
 dsp_wild_favor_description,"Telefon Wilda jest odblokowany od początku, a ty zyskujesz 300 Przychylności Wilda."
 dsp_wild_favor_name,"Przychylność Wilda"
-dsp_cellar_description,Warzenie trwa o jeden dzień krócej. Gotowe wino dojrzewa 3 dni.
+dsp_cellar_description,"Warzenie trwa 1 dzień krócej, gotowe wino dojrzewa 3 dni."
 dsp_stable_partnership_name,Stała współpraca
 dsp_stable_partnership_description,Wszyscy dostawcy sami przychodzą do twojego sklepu we wtorki i piątki — nie musisz ich zamawiać telefonicznie.
 dsp_stable_partnership_phone,Przywozimy towar we wtorki i piątki. Nie trzeba dzwonić.
@@ -342,7 +342,7 @@ dsp_rat_infestation_removed,Deratyzator rozprawił się ze szczurami ~ lepiej ni
 dsp_strict_crackdown_name,Ostra rozprawa
 dsp_strict_crackdown_description,Nie pojawiają się skorumpowani policjanci. Kradziony towar traci „gorączkę” dwa razy wolniej.
 dsp_never_empty_handed_name,Nigdy z pustymi rękami
-dsp_never_empty_handed_description,Jeśli wrócisz z wyprawy z pustymi rękami — zyskujesz 25 kredytów.
+dsp_never_empty_handed_description,"Jeśli opuścisz miejsce z co najmniej jedną wolną kieszenią, dostajesz 15 kredytów."
 dsp_never_empty_log,Wróciłeś z pustymi rękami. Mimo to wpadło ci 25 kredytów.
 dsp_never_empty_notify,Nigdy z pustymi rękami: +25 kredytów
 dsp_patience_limit_name,Krótka cierpliwość
@@ -368,9 +368,9 @@ dsp_foreknowledge_when_after, dni
 dsp_foreknowledge_price_tag,cena
 dsp_foreknowledge_price_name,Zmiana ceny
 dsp_prohibition_name,Prohibicja
-dsp_prohibition_description,Każdy alkohol liczy się jako kontrabanda średniego poziomu.
+dsp_prohibition_description,Każdy alkohol to kontrabanda średniego stopnia. Fermentujące wino sprzedaje się za 50 i liczy jako narkotyk.
 dsp_tobacco_tax_name,Podatek od tytoniu
-dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
+dsp_tobacco_tax_description,Papierosy mają 50% narzutu detalicznego. Ale dostajesz tylko 20% tego narzutu.
 dsp_blood_donor_name,Dawca krwi
 dsp_blood_donor_description,"Raz dziennie możesz oddać krew, używając worka z krwią, i dostać jeszcze jeden worek z krwią. Przez to następnego dnia ominie cię jeden klient."
 dsp_force_open_name,Brutalna siła
@@ -399,26 +399,26 @@ dsp_revolutionary_influence_slip_title,Informacje Rewolucji
 dsp_revolutionary_influence_slip_body,Odin ściszył głos przed wyjściem: w ciągu trzech dni Rewolucja uderzy — „{0}”. To już jest zaznaczone w kalendarzu.
 dsp_service_professional_tooltip,Wendeta nie będzie ci już przeszkadzać.
 dsp_scav_drone_name,Dron złomiarz
-dsp_scav_drone_description,"Podczas nocnych akcji masz dwie dodatkowe ręce. Rzadziej trafiasz na graty, grzebiąc na wysypisku."
-dsp_trust_fund_name,Keystone Foundation for Charity
-dsp_trust_fund_description,You get 50 credits every Thursday.
+dsp_scav_drone_description,Podczas nocnych działań masz dwie dodatkowe kieszenie. Rzadziej znajdujesz śmieci.
+dsp_trust_fund_name,Fundacja charytatywna Keystone
+dsp_trust_fund_description,W każdy czwartek otrzymujesz 50 kredytów.
 dsp_snake_oil_name,Olej wężowy
-dsp_snake_oil_description,Zaczynasz z 20 butelkami Pyłu sennego z czystej skrobi.
+dsp_snake_oil_description,Zaczynasz z 20 butelkami skrobiowego pyłu snów; nie liczą się jako kontrabanda.
 dsp_charm_mushroom_name,Czarujący grzyb
 dsp_charm_mushroom_description,Snówka i Koszmarówka liczą się jednocześnie jako żywność i narkotyki.
 dsp_jane_smith_name,Anna Kowalska
 dsp_jane_smith_description,Wszystkie imiona wyświetlają się jako Jan Kowalski / Anna Kowalska.
 dsp_scav_drone_extra,Dron złomiarz: przyniosłeś trochę więcej.
-dsp_trust_fund_paid,Keystone Foundation for Charity: {0} credits arrived for Thursday.
+dsp_trust_fund_paid,Fundacja charytatywna Keystone: przyszło {0} kredytów za czwartek.
 dsp_share_cigarette_not_cig,Ta opcja działa tylko na papierosy.
 dsp_share_cigarette_not_owned,Tej paczki nie masz w rękach.
 dsp_cracker_supplies_7,Więcej szczęścia.
 dsp_mutual_choice_name,Wzajemny wybór
-dsp_mutual_choice_description,"Raz dziennie, gdy klient odejdzie bez zakupu, do kolejki dołącza jeszcze jeden klient."
+dsp_mutual_choice_description,"Dwa razy dziennie: klient, który wyjdzie bez transakcji, dodaje 1 klienta do kolejki."
 dsp_snake_oil_item_name,Olej wężowy
 dsp_newspaper_stand_name,Kiosk z gazetami
 dsp_newspaper_stand_description,"Zapłać 10 kredytów w nocnych usługach, aby dostać 4 dodatkowe gazety. Zawsze możesz sprzedać każdemu klientowi jeden egzemplarz dzisiejszej gazety po 8 kredytów."
-dsp_newspaper_stand_menu,Sprzedaj gazetę (8 kredytów)
+dsp_newspaper_stand_menu,Sprzedaj
 dsp_service_paper_delivery,Dostawa gazet
 dsp_service_paper_delivery_tooltip,10 kredytów: 4 dodatkowe egzemplarze dzisiejszej gazety dotrą nocą
 dsp_newspaper_stand_sold,"Sprzedano gazetę, +8 kredytów"
@@ -426,56 +426,59 @@ dsp_newspaper_stand_already,Kupiłem już dziś gazetę.
 dsp_newspaper_stand_stale,Ta gazeta jest nieaktualna.
 dsp_newspaper_stand_delivered,Dotarły {0} egzemplarze dzisiejszej gazety
 dsp_watermelon_merge_name,Fuzja owoców
-dsp_watermelon_merge_description,Możesz połączyć dwa plony tego samego rodzaju i rozmiaru w jeden większy.
+dsp_watermelon_merge_description,Możesz połączyć dwa owoce tego samego rodzaju w jeden większy. Borówki stają się mniejsze.
 dsp_watermelon_merge_menu,Połącz (zużywa jeden taki sam)
 dsp_watermelon_merge_done,"Połączono w większy {0}, wartość {1} kredytów."
 dsp_watermelon_merge_max,Większy już nie będzie.
 dsp_hydro_question_name,Hydro… ponika?
-dsp_hydro_question_description,Możesz uprawiać rośliny na rurach wodnych. Zaczynasz z dwoma nasionami każdego rodzaju.
+dsp_hydro_question_description,Możesz uprawiać 2 rośliny w kranie wodnym. Na start dostajesz 2 losowe nasiona.
 dsp_poet_admirer_name,Poetycki wielbiciel
-dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
-dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
-dsp_admirer_poem_2,"The reeds and rushes are deeply green, and the white dew is turned into hoarfrost. The man of whom I think is somewhere about the water. - Book of Songs, Jian Jia (tr. James Legge)"
-dsp_admirer_poem_3,"For life or for death, however separated, to our wives we pledged our word. We held their hands; we are to grow old together. - Book of Songs, Ji Gu (tr. James Legge)"
-dsp_admirer_poem_4,"When shall we meet again in longing? Tonight, this hour, I cannot bear it. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
-dsp_admirer_poem_5,"Whoever enters the gate of longing learns how bitter longing is. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
-dsp_admirer_poem_6,"The corners of the earth have an end; longing alone has none. - Yan Shu, Spring Regret (tr. Xu Yuanchong)"
-dsp_admirer_poem_7,"My belt grows loose and I never regret it - worn thin for her sake. - Liu Yong, Die Lian Hua (tr. Xu Yuanchong)"
-dsp_admirer_poem_8,"Once you have seen the ocean, no water will do; once you have seen Mount Wu, no cloud is a cloud. - Yuan Zhen, Five Poems of Longing (tr. Xu Yuanchong)"
-dsp_admirer_poem_9,"Do not let the spring heart race with the flowers - every inch of longing burns to an inch of ash. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_10,"When shall we trim the candle by the west window, and speak of this rainy night in Ba? - Li Shangyin, Written on a Rainy Night (tr. Xu Yuanchong)"
-dsp_admirer_poem_11,"No phoenix wings to fly to you - yet one thread links heart to heart. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_12,"This feeling could have been a memory to keep; only then, I was already lost. - Li Shangyin, The Jeweled Zither (tr. Xu Yuanchong)"
-dsp_admirer_poem_13,"If love between both sides can last for aye, why need they stay together night and day? - Qin Guan, Immortals at the Magpie Bridge (tr. Xu Yuanchong)"
-dsp_admirer_poem_14,"A thousand times I seek her in the crowd; I turn, and there she is, where the lights are dim. - Xin Qiji, The Lantern Festival (tr. Xu Yuanchong)"
-dsp_admirer_poem_15,"Ten years, dead and living dim and draw apart; I do not think of you, yet cannot forget. - Su Shi, Riverside Town (tr. Xu Yuanchong)"
-dsp_admirer_poem_16,"One hour of a spring night is worth a thousand gold; flowers have fragrance, the moon has shadow. - Su Shi, Spring Night (tr. Xu Yuanchong)"
-dsp_admirer_poem_17,"Let me be the star and you the moon, brightening each other night after night. - Fan Chengda, The Distant Cart (tr. Xu Yuanchong)"
-dsp_admirer_poem_18,"I only wish your heart were like mine; then longing would never be betrayed. - Li Zhiyi, Bu Suan Zi (tr. Xu Yuanchong)"
-dsp_admirer_poem_19,"Trade my heart for yours, and only then you will know how deep this remembering is. - Gu Xiong, Telling Innermost Feeling (tr. Xu Yuanchong)"
-dsp_admirer_poem_20,"My thoughts of you run like the west river, flowing east all day and never resting. - Yu Xuanji, Gazing at the River (tr. Xu Yuanchong)"
-dsp_admirer_poem_21,"I remember a green silk skirt, and now I love every blade of grass. - Niu Xiji, Sheng Cha Zi (tr. Xu Yuanchong)"
-dsp_admirer_poem_22,"When the flower is ripe for picking, pick it; do not wait for an empty branch. - Du Qiuniang, Robe of Gold Thread (tr. Xu Yuanchong)"
-dsp_admirer_poem_23,"Hard to meet and hard to part; the east wind has no strength and a hundred flowers fade. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_24,"You came by on bamboo stilts, playing horse, you walked about my seat, playing with blue plums. - Li Bai, The River Merchant's Wife (tr. Ezra Pound, after Arthur Waley)"
-dsp_admirer_poem_25,"In heaven we would be birds flying side by side; on earth, branches of one tree grown together. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
-dsp_admirer_poem_26,"Heaven and earth endure, yet they shall end; this sorrow stretches on and has no end. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
-dsp_admirer_poem_27,"May we all be blessed with longevity, though a thousand miles apart, to share the same moonlight. - Su Shi, Prelude to Water Melody (tr. Lin Yutang)"
-dsp_admirer_poem_28,"When you are old and grey and full of sleep, and nodding by the fire, take down this book. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
-dsp_admirer_poem_29,"But one man loved the pilgrim soul in you, and loved the sorrows of your changing face. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
-dsp_admirer_poem_30,"I remember that wondrous moment: before me you appeared, a fleeting vision, a spirit of pure beauty. - Pushkin, To Kern (tr. Zha Liangzheng)"
-dsp_admirer_poem_31,"I loved you once; perhaps that love has not quite died in my soul. - Pushkin, I Loved You (tr. Zha Liangzheng)"
-dsp_admirer_poem_32,"Shall I compare thee to a summer day? Thou art more lovely and more temperate. - Shakespeare, Sonnet 18 (tr. Liang Zongdai)"
-dsp_admirer_poem_33,"I love thee with the breath, smiles, tears, of all my life. - Elizabeth Barrett Browning, Sonnets from the Portuguese (tr. Zha Liangzheng)"
-dsp_admirer_poem_34,"She walks in beauty, like the night of cloudless climes and starry skies. - Byron, She Walks in Beauty (tr. Zha Liangzheng)"
-dsp_admirer_poem_35,"On the wings of song, my darling, let us go. - Heine, On Wings of Song (tr. Feng Zhi)"
-dsp_admirer_poem_36,"O my Luve is like a red, red rose, that is newly sprung in June. - Robert Burns, A Red, Red Rose (tr. Wang Zuoliang)"
-dsp_admirer_poem_37,"You smiled and talked to me of nothing and I felt that for this I had been waiting long. - Tagore, Stray Birds (tr. Zheng Zhenduo)"
-dsp_admirer_poem_38,"I like for you to be still: it is as though you were absent. - Neruda, Twenty Love Poems (tr. Li Zongrong)"
-dsp_admirer_poem_39,"Green, how I want you, green. - Lorca, Romance Sonambulo (tr. Dai Wangshu)"
-dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the rugged road and the rocks. - Petofi, I Would Be a Torrent (tr. Sun Yong)"
-dsp_magician_piper_name,Pied Piper
-dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
-dsp_careless_tutor_name,Careless Tutor
-dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
-dsp_service_newspaper_subscription,Newspaper Subscription
+dsp_poet_admirer_description,Liściki wielbiciela są przedmiotami luksusowymi o wartości 50 kredytów.
+dsp_admirer_poem_1,"Kwa-kwa wołają rybołowy na rzecznej wysepce. Skromna, cnotliwa dziewczyna to dobra towarzyszka dla księcia. — Księga Pieśni, Guan Ju"
+dsp_admirer_poem_2,"Trzciny i sitowie są głęboko zielone, biała rosa stała się szronem. Ten, o kim myślę, jest gdzieś nad wodą. — Księga Pieśni, Jian Jia"
+dsp_admirer_poem_3,"Za życia czy po śmierci, choć rozdzieleni, daliśmy słowo naszym żonom. Trzymaliśmy ich ręce; zestarzejemy się razem. — Księga Pieśni, Ji Gu"
+dsp_admirer_poem_4,"Kiedy znów się spotkamy w tęsknocie? Dziś, o tej godzinie, nie zniosę tego. — Li Bai, Pieśń jesiennego wiatru"
+dsp_admirer_poem_5,"Kto przekroczy bramę tęsknoty, poznaje jej gorycz. — Li Bai, Pieśń jesiennego wiatru"
+dsp_admirer_poem_6,"Krańce ziemi mają kres; sama tęsknota nie ma żadnego. — Yan Shu, Wiosenna żałość"
+dsp_admirer_poem_7,"Pas mój się luzuje i nigdy nie żałuję — wytarty dla niej. — Liu Yong, Die Lian Hua"
+dsp_admirer_poem_8,"Kto ujrzał ocean, temu żadna woda nie wystarczy; kto ujrzał górę Wu, ten już nie widzi chmury w chmurze. — Yuan Zhen, Pięć pieśni tęsknoty"
+dsp_admirer_poem_9,"Nie pozwól wiosennemu sercu biec za kwiatami — każdy cal tęsknoty spala się w cal popiołu. — Li Shangyin, Bez tytułu"
+dsp_admirer_poem_10,"Kiedy zetniemy knot świecy przy zachodnim oknie i pomówimy o tej deszczowej nocy w Ba? — Li Shangyin, Napisane w deszczową noc"
+dsp_admirer_poem_11,"Nie mam skrzydeł feniksa, by lecieć do ciebie — ale jedna nić łączy serce z sercem. — Li Shangyin, Bez tytułu"
+dsp_admirer_poem_12,"To uczucie mogło zostać wspomnieniem; tylko że wtedy już byłem zgubiony. — Li Shangyin, Zdobiona cytra"
+dsp_admirer_poem_13,"Jeśli miłość obu stron może trwać wiecznie, po cóż być razem dniem i nocą? — Qin Guan, Nieśmiertelni na Moście Srok"
+dsp_admirer_poem_14,"Tysiąc razy szukam jej w tłumie; odwracam się, a ona jest tam, gdzie światła są mdłe. — Xin Qiji, Święto Latarni"
+dsp_admirer_poem_15,"Dziesięć lat, żywi i umarli, ciemni i odlegli; nie myślę o tobie, a jednak nie mogę zapomnieć. — Su Shi, Miasto nad rzeką"
+dsp_admirer_poem_16,"Jedna godzina wiosennej nocy warta jest tysiąca złota; kwiaty mają zapach, księżyc ma cień. — Su Shi, Wiosenna noc"
+dsp_admirer_poem_17,"Pozwól mi być gwiazdą, a tobie księżycem — rozjaśniając się noc po nocy. — Fan Chengda, Daleki wóz"
+dsp_admirer_poem_18,"Chciałbym tylko, by twoje serce było jak moje; wtedy tęsknota nigdy nie byłaby zdradzona. — Li Zhiyi, Bu Suan Zi"
+dsp_admirer_poem_19,"Zamień moje serce na swoje, a wtedy poznasz, jak głęboka jest ta pamięć. — Gu Xiong, Mówiąc najskrytsze"
+dsp_admirer_poem_20,"Moje myśli o tobie płyną jak zachodnia rzeka: cały dzień na wschód i bez wytchnienia. — Yu Xuanji, Patrząc na rzekę"
+dsp_admirer_poem_21,"Pamiętam zieloną jedwabną spódnicę, a teraz kocham każde źdźbło trawy. — Niu Xiji, Sheng Cha Zi"
+dsp_admirer_poem_22,"Gdy kwiat dojrzał do zrywania, zrywaj go; nie czekaj na pustą gałąź. — Du Qiuniang, Szata ze złotych nici"
+dsp_admirer_poem_23,"Trudno się spotkać i trudno rozstać; wschodni wiatr nie ma siły, a sto kwiatów więdnie. — Li Shangyin, Bez tytułu"
+dsp_admirer_poem_24,"Przychodziłeś na bambusowych szczudłach, bawiąc się w konia, chodziłeś wokół mojego miejsca, bawiąc się zielonymi śliwkami. — Li Bai, Żona kupca rzecznego"
+dsp_admirer_poem_25,"W niebie bylibyśmy ptakami lecącymi obok siebie; na ziemi — gałęziami jednego drzewa zrośniętymi. — Bai Juyi, Wieczna żałość"
+dsp_admirer_poem_26,"Niebo i ziemia trwają, lecz i one się skończą; ten smutek ciągnie się i końca nie ma. — Bai Juyi, Wieczna żałość"
+dsp_admirer_poem_27,"Obyśmy wszyscy dostąpili długowieczności i choć tysiąc mil od siebie dzielili ten sam blask księżyca. — Su Shi, Preludium do melodii wody"
+dsp_admirer_poem_28,"Gdy będziesz stara, siwa i senna, drzemiąc przy ogniu, weź tę książkę. — W. B. Yeats, When You Are Old"
+dsp_admirer_poem_29,"Lecz jeden człowiek ukochał w tobie duszę pielgrzyma i ukochał smutki twojej zmiennej twarzy. — W. B. Yeats, When You Are Old"
+dsp_admirer_poem_30,"Pamiętam tę cudowną chwilę: zjawiłaś się przede mną, ulotne widzenie, duch czystego piękna. — A. S. Puszkin, Do Kern"
+dsp_admirer_poem_31,"Kochałem cię kiedyś; być może ta miłość nie wygasła jeszcze w mojej duszy. — A. S. Puszkin, Kochałem cię"
+dsp_admirer_poem_32,"Czy przyrównać cię do letniego dnia? Jesteś piękniejsza i łagodniejsza. — W. Szekspir, Sonet 18"
+dsp_admirer_poem_33,"Kocham cię oddechem, uśmiechami i łzami całego mojego życia. — E. B. Browning, Sonety portugalskie"
+dsp_admirer_poem_34,"Ona idzie w pięknie jak noc bezchmurnych stron i gwiezdnych niebios. — Lord Byron, She Walks in Beauty"
+dsp_admirer_poem_35,"Na skrzydłach pieśni, ukochana, lećmy. — H. Heine, Auf Flügeln des Gesanges"
+dsp_admirer_poem_36,"Moja miłość jest jak czerwona, czerwona róża, co w czerwcu dopiero rozkwitła. — R. Burns, A Red, Red Rose"
+dsp_admirer_poem_37,"Uśmiechnęłaś się i nic mi nie powiedziałaś, a ja poczułem, że długo na to czekałem. — R. Tagore, Wędrowne ptaki"
+dsp_admirer_poem_38,"Lubię, gdy milczysz: jakby cię nie było. — P. Neruda, Dwadzieścia poematów o miłości"
+dsp_admirer_poem_39,"Zielona, jak ja cię pragnę, zielona. — F. G. Lorca, Romans lunatyka"
+dsp_admirer_poem_40,"Chciałbym być potokiem, górskim strumieniem, płynącym nad stromą drogą i skałami. — S. Petőfi, Chciałbym być potokiem"
+dsp_magician_piper_name,Szczurołap
+dsp_magician_piper_description,Za każdego szczura zabranego na wysypisko możesz przeszukać je jeszcze raz.
+dsp_careless_tutor_name,Roztargniony mentor
+dsp_careless_tutor_description,"Mentor nie kupił gazety, choć jest pewien, że kupił. Gazeta nie przychodzi, wydarzenia trwają, ale nie ma ich w kalendarzu. Prenumerata w usługach nocnych usuwa tę cechę."
+dsp_service_newspaper_subscription,Prenumerata gazety
+dsp_scav_drone_pocket3,Kieszeń nr 3
+dsp_scav_drone_pocket4,Kieszeń nr 4
+dsp_newspaper_stand_no_customer_hint, (teraz nie ma klienta)

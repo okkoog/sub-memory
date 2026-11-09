@@ -139,10 +139,10 @@ op_rev_extra_none_1,核心呢？没找到。
 op_rev_extra_none_2,收好了，过几天军需官来取。
 op_log_officers,两名治安官死在了你的店里。革命军替你处理了后手，治安部也把这笔账记在了革命军头上，不过你的店还在他们的名单上：治安声望再 −10。
 vge_gun_cabinet_name,枪柜
-vge_gun_cabinet_desc,初始有四格，可放枪械、电击枪或枪油。拖一块金属锭到柜上解锁一格，最多九格。前两把枪会摆在托架上展示；柜里有油时夜间给到期的名枪上油。可以切换外观。
+vge_gun_cabinet_desc,初始有四格，可放枪械、近战武器、电击枪或枪油。拖一块金属锭到柜上解锁一格，最多九格。前两件武器会摆在托架上展示；柜里有油时夜间给到期的名枪上油。可以切换外观。
 vge_chip_rack_kit_name,芯片库扩建套件
 vge_chip_rack_kit_desc,拖到 3D 打印机上，扩大它的芯片库。
-vge_bay_desc,专门存放枪械、近战武器、改装件和枪械工坊用品的储藏区。除枪柜外无法存放其他容器，也无法存放机器。
+vge_bay_desc,专门存放枪械、近战武器、军需品、改装件和枪械工坊用品的储藏区。除枪柜外无法存放其他容器，也无法存放机器。
 cabinet_slot,{0}号
 cabinet_capacity_title,{0} · {1}/{2} 格
 vge_gunpowder_name,火药
@@ -487,8 +487,14 @@ vge_ammo_45_name,.45 AFP 弹药
 vge_ammo_45_p_name,.45 AFP 穿甲弹
 vge_ammo_45_nl_name,.45 AFP 非致命弹
 vge_ammo_box_packed_name,弹药盒（{0} 件{1}）
+vge_ammo_box_packed_desc,标签标示：已装满{0}。
+vge_ammo_box_packed_desc_unknown,标签标示：本盒已封装。
 vge_ammo_box_open_name,弹药盒（未封装）
-vge_ammo_box_open_desc,可反复装填，最多放八份散装弹药。装入弹药后可封装，也可再次拆封。
+vge_ammo_box_open_desc,可反复装填，八格装满时会自动封装。也可提前手动封装或再次拆封。
+vge_ammo_box_contents,（{0}）
+vge_ammo_box_contents_item,{0} 件 {1}
+vge_ammo_box_contents_empty,空盒
+vge_ammo_box_contents_sep,，
 log_auto_feed,枪械工坊：从枪械师储藏区给打印机补了 {0} 件材料。
 log_auto_store,枪械工坊：{0} 件打印成品已入枪械师储藏区。
 manual_gunmod_title,改枪与设置

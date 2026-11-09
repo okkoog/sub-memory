@@ -139,10 +139,10 @@ op_rev_extra_none_1,The core? Could not find it.
 op_rev_extra_none_2,"Keep it safe, the quartermaster will come for it in a few days."
 op_log_officers,"Two Security officers died in your store. The Revolution covered for you and Security puts it on them, but your store stays on their list: Security reputation −10 more."
 vge_gun_cabinet_name,Gun Cabinet
-vge_gun_cabinet_desc,"Starts with four slots for guns, stun guns or oil. Drop a metal ingot onto the cabinet to open one more slot, up to nine. The first two guns are displayed. With oil inside, due famous guns are oiled at night. Its look can be switched."
+vge_gun_cabinet_desc,"Starts with four slots for guns, melee weapons, stun guns or oil. Drop a metal ingot onto the cabinet to open one more slot, up to nine. The first two weapons are displayed. With oil inside, due famous guns are oiled at night. Its look can be switched."
 vge_chip_rack_kit_name,Chip Rack Expansion Kit
 vge_chip_rack_kit_desc,Drag onto a 3D printer to enlarge its chip rack.
-vge_bay_desc,"A specialized storage bay for firearms, melee weapons, modifications and gun workshop supplies. Can't store machines or containers other than gun cabinets."
+vge_bay_desc,"A specialized storage bay for firearms, melee weapons, munitions, modifications and gun workshop supplies. Can't store machines or containers other than gun cabinets."
 cabinet_slot,Slot {0}
 cabinet_capacity_title,{0} · {1}/{2} slots
 vge_gunpowder_name,Gunpowder
@@ -487,8 +487,14 @@ vge_ammo_45_name,.45 AFP Rounds
 vge_ammo_45_p_name,.45 AFP Armor-Piercing Rounds
 vge_ammo_45_nl_name,.45 AFP Non-Lethal Rounds
 vge_ammo_box_packed_name,Ammo Box (x{0} {1})
+vge_ammo_box_packed_desc,The label says the box is full of {0}.
+vge_ammo_box_packed_desc_unknown,The label says the box has been sealed.
 vge_ammo_box_open_name,Ammo Box (Unpacked)
-vge_ammo_box_open_desc,A reusable box for eight handfuls of loose ammunition. Fill it and use Toggle to pack or reopen it.
+vge_ammo_box_open_desc,A reusable box for loose ammunition. It seals when all eight slots are filled. Use Toggle to seal it early or reopen it.
+vge_ammo_box_contents,({0})
+vge_ammo_box_contents_item,{0} × {1}
+vge_ammo_box_contents_empty,Empty
+vge_ammo_box_contents_sep,", "
 log_auto_feed,Workshop: {0} material(s) moved from the gunsmith bays to the printer.
 log_auto_store,Workshop: {0} printed item(s) stored in the gunsmith bays.
 manual_gunmod_title,Gun fitting and settings

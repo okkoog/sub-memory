@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "packId": "neon_undertow_bounties_six_sheets",
-  "status": "Runtime integration in progress; see runtime/Verification.txt for local test status",
+  "status": "Six sheets use the native wanted, questioning, capture and reward systems. The English encounter fields describe the current visits; earlier dialogue page arrays also supply the translated script structure.",
   "language": "en",
   "nativePortraitSize": [
     288,
     211
   ],
-  "balanceStatus": "Initial rewards and budgets follow the scale of inspected native wanted encounters; require playtesting",
+  "balanceStatus": "Rewards are printed on the wanted sheets. Each visitor has a separate shopping list and purse.",
   "characters": [
     {
       "id": "neon_wanted_mara_voss",
@@ -21,11 +21,6 @@
       "spriteKey": "neon_wanted_mara_voss",
       "boardId": "neon_board_military_fugitives",
       "reward": 250,
-      "budget": 180,
-      "buyingTags": [
-        "FOOD",
-        "WATER"
-      ],
       "poster": {
         "charge": "Desertion, unauthorized power diversion and removal of a service regulator",
         "identifyingMarks": "Gray streak at one temple; notched eyebrow; ochre utility jacket with a stitched lightning repair.",
@@ -78,7 +73,14 @@
         ]
       },
       "nativePortrait": "portraits/native/mara_voss.png",
-      "headIcon": "portraits/icons/mara_voss.png"
+      "headIcon": "portraits/icons/mara_voss.png",
+      "shoppingList": "water",
+      "englishEncounter": {
+        "arrival": "Can I get a sealed water? I've still got grit from junction six in my teeth.",
+        "returned": "The lights stayed on all night. Even the little one over the clinic sink.",
+        "questioned": "I took the regulator. Command had it running a sign upstairs. Downstairs the clinic had a patient on a hand pump. I made the call.",
+        "previouslyQuestioned": "You'll find my service number inside the cover. Leave it on till the clinic switches over, would you?"
+      }
     },
     {
       "id": "neon_wanted_ivo_kessel",
@@ -92,12 +94,6 @@
       "spriteKey": "neon_wanted_ivo_kessel",
       "boardId": "neon_board_butcher_warrants",
       "reward": 350,
-      "budget": 260,
-      "buyingTags": [
-        "FOOD",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Meat-ration fraud and diversion of prepaid food orders",
         "identifyingMarks": "Square spectacles; narrow mustache; plum butcher apron; bent cream pen in the bib pocket.",
@@ -150,7 +146,14 @@
         ]
       },
       "nativePortrait": "portraits/native/ivo_kessel.png",
-      "headIcon": "portraits/icons/ivo_kessel.png"
+      "headIcon": "portraits/icons/ivo_kessel.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee, and a receipt for the coffee. Just the one copy.",
+        "returned": "The woman at stall eight came for her order herself today. I had to look her in the eye.",
+        "questioned": "I'd already taken her deposit. A restaurant offered me double. I wrote a second slip for the same side of beef and let her turn up to an empty hook.",
+        "previouslyQuestioned": "I could give her the deposit back. It was her son's wedding dinner. She keeps asking what I'm going to do about that."
+      }
     },
     {
       "id": "neon_wanted_nessa_venn",
@@ -164,11 +167,6 @@
       "spriteKey": "neon_wanted_nessa_venn",
       "boardId": "neon_board_butcher_warrants",
       "reward": 200,
-      "budget": 155,
-      "buyingTags": [
-        "FOOD",
-        "WATER"
-      ],
       "poster": {
         "charge": "Cold-store burglary and unlawful copying of market access keys",
         "identifyingMarks": "Burgundy work cap; split left eyebrow; rust-brown butcher apron with a brass fastener.",
@@ -221,7 +219,14 @@
         ]
       },
       "nativePortrait": "portraits/native/nessa_venn.png",
-      "headIcon": "portraits/icons/nessa_venn.png"
+      "headIcon": "portraits/icons/nessa_venn.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "Can I see a screwdriver? My old boss had one with a bit of red tape on the handle. I still look for it.",
+        "returned": "Walked past the old shop. They've changed the lock. Good.",
+        "questioned": "My boss gave me his cold-room key when I was seventeen. Years later I made a copy for some men with a van. I knew whose door they were opening.",
+        "previouslyQuestioned": "He doesn't want the key back. He wants to know why I picked his shop. Because I knew he'd trust me."
+      }
     },
     {
       "id": "neon_wanted_tobin_rusk",
@@ -235,12 +240,6 @@
       "spriteKey": "neon_wanted_tobin_rusk",
       "boardId": "neon_board_butcher_warrants",
       "reward": 800,
-      "budget": 240,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Sale of spoiled meat and falsification of cold-chain inspection records",
         "identifyingMarks": "Square graying beard; pale crescent scar on right jaw; ochre leather apron over a gray-green shirt.",
@@ -293,7 +292,14 @@
         ]
       },
       "nativePortrait": "portraits/native/tobin_rusk.png",
-      "headIcon": "portraits/icons/tobin_rusk.png"
+      "headIcon": "portraits/icons/tobin_rusk.png",
+      "shoppingList": "snacks",
+      "englishEncounter": {
+        "arrival": "Something in a wrapper. I don't want anything off a hook today.",
+        "returned": "Saw a woman checking a date stamp with her glasses on. She caught me watching. I let her look.",
+        "questioned": "The cooler quit at four. The owner said we'd lose the whole load. That's my signature saying it stayed cold. He didn't move my hand.",
+        "previouslyQuestioned": "I could smell it when I opened the door. Should've said that to the inspector first time round."
+      }
     },
     {
       "id": "neon_wanted_tamsin_crowe",
@@ -307,12 +313,6 @@
       "spriteKey": "neon_wanted_tamsin_crowe",
       "boardId": "neon_board_military_fugitives",
       "reward": 150,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "MEDICAL"
-      ],
       "poster": {
         "charge": "Absence from duty and falsification of military dispensary records",
         "identifyingMarks": "Auburn bun; freckled face; cream jacket with a brick-red sleeve band; copper collar pin.",
@@ -365,7 +365,14 @@
         ]
       },
       "nativePortrait": "portraits/native/tamsin_crowe.png",
-      "headIcon": "portraits/icons/tamsin_crowe.png"
+      "headIcon": "portraits/icons/tamsin_crowe.png",
+      "shoppingList": "dressings",
+      "englishEncounter": {
+        "arrival": "Little dressings, please. I'm seeing people out of a kitchen and they keep turning up before I've even lit the stove.",
+        "returned": "An old patient brought me a chair yesterday. First piece of clinic furniture I actually own.",
+        "questioned": "My unit moved out. Three of my patients couldn't. I put soldiers' names on the supply chits and stayed. The quartermaster found two men drawing dressings a week after they'd shipped out.",
+        "previouslyQuestioned": "The men whose names I wrote didn't know. Put that in the statement if you're making one."
+      }
     },
     {
       "id": "neon_wanted_dax_mercer",
@@ -379,11 +386,6 @@
       "spriteKey": "neon_wanted_dax_mercer",
       "boardId": "neon_board_military_fugitives",
       "reward": 1250,
-      "budget": 300,
-      "buyingTags": [
-        "FOOD",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Extortion, impersonation of military personnel and assault",
         "identifyingMarks": "Shaved head; scar through lower lip; blue-gray padded coat with a removed insignia.",
@@ -436,7 +438,14 @@
         ]
       },
       "nativePortrait": "portraits/native/dax_mercer.png",
-      "headIcon": "portraits/icons/dax_mercer.png"
+      "headIcon": "portraits/icons/dax_mercer.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee. Keep the change where I can see it. Habit.",
+        "returned": "Some stallholders shut their shutters as I come down the row now. Makes for a quiet walk.",
+        "questioned": "I kept the uniform when they discharged me. Turns out people still paid when I put my hand out. One fellow asked to see my orders. He got hurt.",
+        "previouslyQuestioned": "It was me who hit him. The uniform didn't do that."
+      }
     },
     {
       "id": "neon_wanted_elka_drenn",
@@ -450,12 +459,6 @@
       "spriteKey": "neon_wanted_elka_drenn",
       "boardId": "neon_board_butcher_warrants",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Assault during a meat-market debt dispute",
         "identifyingMarks": "Broad face; gray braid; faded blue apron with a white repair.",
@@ -513,7 +516,14 @@
         ]
       },
       "nativePortrait": "portraits/native/elka_drenn.png",
-      "headIcon": "portraits/icons/elka_drenn.png"
+      "headIcon": "portraits/icons/elka_drenn.png",
+      "shoppingList": "wrap",
+      "englishEncounter": {
+        "arrival": "A bandage for my hand. You're looking at the other fellow's blood on the cuff.",
+        "returned": "He's wearing a sling. I'm back behind the block. Neither of us likes passing the other in the aisle.",
+        "questioned": "He took my neighbour's stock in payment. I caught his wrist across the block. I meant to stop him. I also meant to hurt him.",
+        "previouslyQuestioned": "I work with my hands. I knew exactly how hard I was pulling."
+      }
     },
     {
       "id": "neon_wanted_garron_vey",
@@ -527,12 +537,6 @@
       "spriteKey": "neon_wanted_garron_vey",
       "boardId": "neon_board_butcher_warrants",
       "reward": 250,
-      "budget": 180,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Theft of carcass deliveries and false loss reports",
         "identifyingMarks": "Long nose; cropped beard; olive cap; striped gray apron.",
@@ -590,7 +594,14 @@
         ]
       },
       "nativePortrait": "portraits/native/garron_vey.png",
-      "headIcon": "portraits/icons/garron_vey.png"
+      "headIcon": "portraits/icons/garron_vey.png",
+      "shoppingList": "lunch",
+      "englishEncounter": {
+        "arrival": "Anything ready to eat? I've got an empty meat cart out there and everybody's got an opinion about it.",
+        "returned": "Rat man came to inspect my cart. Cleanest cart he'd ever seen. That went in his report.",
+        "questioned": "There weren't any rats. I sold the missing cuts round the back and wrote off the weight. The buyer still had my cart chalk on his sleeve.",
+        "previouslyQuestioned": "People paid for meat I was meant to deliver. I'm the reason their hooks were empty."
+      }
     },
     {
       "id": "neon_wanted_suri_pell",
@@ -604,12 +615,6 @@
       "spriteKey": "neon_wanted_suri_pell",
       "boardId": "neon_board_butcher_warrants",
       "reward": 200,
-      "budget": 170,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "False weights and repeated customer fraud",
         "identifyingMarks": "Brown skin; blunt black bob; mustard apron; round collar pin.",
@@ -667,7 +672,14 @@
         ]
       },
       "nativePortrait": "portraits/native/suri_pell.png",
-      "headIcon": "portraits/icons/suri_pell.png"
+      "headIcon": "portraits/icons/suri_pell.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "I need a tool to take a scale pan off. Don't lean on the counter while I'm looking at it, please.",
+        "returned": "Weighed my own supper on the repaired scale. Looked small. I suppose it would.",
+        "questioned": "I shaved my weights when the rent went up. Everyone paid for a full cut and took a little less home. Nobody noticed till a woman brought her own scales.",
+        "previouslyQuestioned": "It worked out to a whole week's shopping for her. I used to think of it a few grams at a time."
+      }
     },
     {
       "id": "neon_wanted_piet_lorn",
@@ -681,12 +693,6 @@
       "spriteKey": "neon_wanted_piet_lorn",
       "boardId": "neon_board_butcher_warrants",
       "reward": 150,
-      "budget": 150,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Theft of ration stock from a locked meat store",
         "identifyingMarks": "Copper curls; freckled cheeks; cream apron with green straps.",
@@ -744,7 +750,14 @@
         ]
       },
       "nativePortrait": "portraits/native/piet_lorn.png",
-      "headIcon": "portraits/icons/piet_lorn.png"
+      "headIcon": "portraits/icons/piet_lorn.png",
+      "shoppingList": "lunch",
+      "englishEncounter": {
+        "arrival": "A meal. Paid for. Don't mind me counting this out.",
+        "returned": "They've given my old locker to the new lad. Left my boots on the step for me.",
+        "questioned": "After they sacked me I lifted a crate of ration meat. I fed the crew with some. Sold the rest. That's the bit I leave out when my mates are listening.",
+        "previouslyQuestioned": "I knew the stores clerk would have to explain the shortage. I went ahead anyway."
+      }
     },
     {
       "id": "neon_wanted_veda_brask",
@@ -758,12 +771,6 @@
       "spriteKey": "neon_wanted_veda_brask",
       "boardId": "neon_board_butcher_warrants",
       "reward": 400,
-      "budget": 230,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Concealment of spoiled stock and falsified packing dates",
         "identifyingMarks": "Silver hair under a mauve scarf; dark apron; brass spectacles.",
@@ -821,7 +828,14 @@
         ]
       },
       "nativePortrait": "portraits/native/veda_brask.png",
-      "headIcon": "portraits/icons/veda_brask.png"
+      "headIcon": "portraits/icons/veda_brask.png",
+      "shoppingList": "spice",
+      "englishEncounter": {
+        "arrival": "What've you got to season a pot? I still cook for myself, whatever you heard.",
+        "returned": "They scraped my name off the stall. You can read it when it rains.",
+        "questioned": "I stamped Monday on meat I'd packed Friday. Twenty years behind that counter and people believed the stamp. That's why there's a warrant.",
+        "previouslyQuestioned": "Yes, I saw the inspection sheet. You can stop asking whether I could read it."
+      }
     },
     {
       "id": "neon_wanted_harlan_quill",
@@ -835,12 +849,6 @@
       "spriteKey": "neon_wanted_harlan_quill",
       "boardId": "neon_board_butcher_warrants",
       "reward": 900,
-      "budget": 270,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Coercion of witnesses and destruction of inspection records",
         "identifyingMarks": "Bald crown; dark sideburns; leather apron; patched right shoulder.",
@@ -898,7 +906,14 @@
         ]
       },
       "nativePortrait": "portraits/native/harlan_quill.png",
-      "headIcon": "portraits/icons/harlan_quill.png"
+      "headIcon": "portraits/icons/harlan_quill.png",
+      "shoppingList": "light",
+      "englishEncounter": {
+        "arrival": "Need a flashlight. There's a shed I don't turn the lights on in any more.",
+        "returned": "They found the other copy of the shift report. I forgot payroll kept one.",
+        "questioned": "A boy lost two fingers on my shift. I tore the page out of the log and told the crew what would happen if another page turned up.",
+        "previouslyQuestioned": "He still has to do his buttons with one hand. No piece of paper fixes that."
+      }
     },
     {
       "id": "neon_wanted_rafe_orlick",
@@ -912,12 +927,6 @@
       "spriteKey": "neon_wanted_rafe_orlick",
       "boardId": "neon_board_military_fugitives",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Desertion while carrying a sealed dispatch",
         "identifyingMarks": "Black curls; amber skin; faded burgundy military scarf.",
@@ -975,7 +984,14 @@
         ]
       },
       "nativePortrait": "portraits/native/rafe_orlick.png",
-      "headIcon": "portraits/icons/rafe_orlick.png"
+      "headIcon": "portraits/icons/rafe_orlick.png",
+      "shoppingList": "snacks",
+      "englishEncounter": {
+        "arrival": "Food for the road. This bag stays on my shoulder, thanks.",
+        "returned": "Still carrying it. The corners of that envelope are wearing holes in the lining.",
+        "questioned": "I had orders to take a dispatch through a firing line. I went home with it instead. Seal's intact. I couldn't tell you what it says.",
+        "previouslyQuestioned": "I didn't cross. That's what they can charge me with. Being a spy requires knowing something."
+      }
     },
     {
       "id": "neon_wanted_zoya_halvek",
@@ -989,12 +1005,6 @@
       "spriteKey": "neon_wanted_zoya_halvek",
       "boardId": "neon_board_military_fugitives",
       "reward": 550,
-      "budget": 280,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Assault on a superior officer and departure from duty",
         "identifyingMarks": "Gray-blond cropped hair; broken nose; dark olive field coat.",
@@ -1052,7 +1062,14 @@
         ]
       },
       "nativePortrait": "portraits/native/zoya_halvek.png",
-      "headIcon": "portraits/icons/zoya_halvek.png"
+      "headIcon": "portraits/icons/zoya_halvek.png",
+      "shoppingList": "wrap",
+      "englishEncounter": {
+        "arrival": "A dressing for my knuckles. Yes, I did what it looks like I did.",
+        "returned": "Saw one of the families on the tram. Kid was asleep against the window. I stood the whole way home.",
+        "questioned": "My officer ordered civilians through a gate we'd just shelled. I punched him. Somebody else closed the gate. I'm wanted for the punch.",
+        "previouslyQuestioned": "I can tell you which hand. I can't tell you it was an accident."
+      }
     },
     {
       "id": "neon_wanted_kellan_dorn",
@@ -1066,12 +1083,6 @@
       "spriteKey": "neon_wanted_kellan_dorn",
       "boardId": "neon_board_military_fugitives",
       "reward": 350,
-      "budget": 220,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Sale of fraudulent military exemption papers",
         "identifyingMarks": "Sandy hair; narrow chin; square spectacles; blue-gray collar.",
@@ -1129,7 +1140,14 @@
         ]
       },
       "nativePortrait": "portraits/native/kellan_dorn.png",
-      "headIcon": "portraits/icons/kellan_dorn.png"
+      "headIcon": "portraits/icons/kellan_dorn.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee first. If you're asking about an exemption, the office is closed.",
+        "returned": "A father waited outside my room till breakfast. I knew which paper he was holding.",
+        "questioned": "I sold exemptions. The first few had real numbers. When those ran out I kept the desk open. Families paid me to send their boys back to the same queue.",
+        "previouslyQuestioned": "They were paying for my signature. I let them think it still meant something."
+      }
     },
     {
       "id": "neon_wanted_ansel_trask",
@@ -1143,12 +1161,6 @@
       "spriteKey": "neon_wanted_ansel_trask",
       "boardId": "neon_board_military_fugitives",
       "reward": 450,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Removal and unauthorized sale of military radio equipment",
         "identifyingMarks": "Deep brown skin; white mustache; faded blue service cap.",
@@ -1206,7 +1218,14 @@
         ]
       },
       "nativePortrait": "portraits/native/ansel_trask.png",
-      "headIcon": "portraits/icons/ansel_trask.png"
+      "headIcon": "portraits/icons/ansel_trask.png",
+      "shoppingList": "electrics",
+      "englishEncounter": {
+        "arrival": "Got electronic parts? I've radios to shift and one of them hasn't made a sound since the inspection.",
+        "returned": "The crew asked when their share was coming. I hadn't even written their names down.",
+        "questioned": "I sold the radios as scrap. They were still on the garrison register, and I pocketed what should've gone to the crew. Both things can be true.",
+        "previouslyQuestioned": "They helped me load the truck. Didn't see a coin. Ask any of them."
+      }
     },
     {
       "id": "neon_wanted_dima_hest",
@@ -1220,12 +1239,6 @@
       "spriteKey": "neon_wanted_dima_hest",
       "boardId": "neon_board_military_fugitives",
       "reward": 1000,
-      "budget": 300,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Diversion of military food and winter clothing",
         "identifyingMarks": "Dark braid; wide cheekbones; green coat with mismatched buttons.",
@@ -1283,7 +1296,14 @@
         ]
       },
       "nativePortrait": "portraits/native/dima_hest.png",
-      "headIcon": "portraits/icons/dima_hest.png"
+      "headIcon": "portraits/icons/dima_hest.png",
+      "shoppingList": "cloth",
+      "englishEncounter": {
+        "arrival": "Plain fabric, please. Funny how much warmer a coat looks through a shop window.",
+        "returned": "Passed the barracks at changeover. One man handed his coat to the next before he went inside.",
+        "questioned": "Those winter coats were issued. I sold them along with the ration tins. I signed every form. If you've read the charge, you've seen my handwriting.",
+        "previouslyQuestioned": "We counted coats on paper while they took turns wearing the ones that were left."
+      }
     },
     {
       "id": "neon_wanted_sorrel_baines",
@@ -1297,12 +1317,6 @@
       "spriteKey": "neon_wanted_sorrel_baines",
       "boardId": "neon_board_military_fugitives",
       "reward": 200,
-      "budget": 170,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Absence from duty and removal of a service vehicle",
         "identifyingMarks": "Brown skin; short twists; rust jacket; pale cheek scar.",
@@ -1360,7 +1374,14 @@
         ]
       },
       "nativePortrait": "portraits/native/sorrel_baines.png",
-      "headIcon": "portraits/icons/sorrel_baines.png"
+      "headIcon": "portraits/icons/sorrel_baines.png",
+      "shoppingList": "water",
+      "englishEncounter": {
+        "arrival": "I'd like a water. Been walking a lot more since the truck packed up.",
+        "returned": "Found a mechanic who'd tow it back. He asked for the owner's signature. That was an awkward minute.",
+        "questioned": "I took a service truck to get three injured workers out. Broke an axle and left it there. No guns in the back, whatever that bloke down the quay says.",
+        "previouslyQuestioned": "The army wants the truck. The workers want their names kept out of it. You can see my difficulty."
+      }
     },
     {
       "id": "neon_wanted_yara_quell",
@@ -1374,12 +1395,6 @@
       "spriteKey": "neon_wanted_yara_quell",
       "boardId": "neon_board_smugglers",
       "reward": 450,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Transport of undeclared cargo and bribery of dock officials",
         "identifyingMarks": "Dark skin; gray locs tied back; teal river coat.",
@@ -1437,7 +1452,14 @@
         ]
       },
       "nativePortrait": "portraits/native/yara_quell.png",
-      "headIcon": "portraits/icons/yara_quell.png"
+      "headIcon": "portraits/icons/yara_quell.png",
+      "shoppingList": "cells",
+      "englishEncounter": {
+        "arrival": "A power cell for the cabin light. I've a couple of things to sell if you're interested.",
+        "returned": "One of the dock inspectors crossed the street when he saw me. His new shoes were lovely.",
+        "questioned": "I ran cargo off the books and paid men on the quay to look away. The people I brought across weren't listed either. Don't put a price per head on them.",
+        "previouslyQuestioned": "I can name the inspector. Then everybody on that boat gets a knock at the door."
+      }
     },
     {
       "id": "neon_wanted_edric_foyle",
@@ -1451,12 +1473,6 @@
       "spriteKey": "neon_wanted_edric_foyle",
       "boardId": "neon_board_smugglers",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Concealment of stolen valuables in declared textile shipments",
         "identifyingMarks": "Pale skin; black side-parted hair; plum scarf; tan waistcoat.",
@@ -1514,7 +1530,14 @@
         ]
       },
       "nativePortrait": "portraits/native/edric_foyle.png",
-      "headIcon": "portraits/icons/edric_foyle.png"
+      "headIcon": "portraits/icons/edric_foyle.png",
+      "shoppingList": "cloth",
+      "englishEncounter": {
+        "arrival": "Cloth, please. I still notice a good weave. It's what got me the work.",
+        "returned": "Customer opened the hem of a coat right in front of me. I couldn't blame her.",
+        "questioned": "I sewed stolen jewellery into the hems of shipments. Told myself I was being paid to sew. Nobody pays that well for a plain hem.",
+        "previouslyQuestioned": "There was an inscription on one ring. I turned it inwards so I didn't have to read it."
+      }
     },
     {
       "id": "neon_wanted_pella_thorne",
@@ -1528,12 +1551,6 @@
       "spriteKey": "neon_wanted_pella_thorne",
       "boardId": "neon_board_smugglers",
       "reward": 200,
-      "budget": 170,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Unlicensed crossings and evasion of passenger checkpoints",
         "identifyingMarks": "White hair; brown skin; patched ochre rain cape.",
@@ -1591,7 +1608,14 @@
         ]
       },
       "nativePortrait": "portraits/native/pella_thorne.png",
-      "headIcon": "portraits/icons/pella_thorne.png"
+      "headIcon": "portraits/icons/pella_thorne.png",
+      "shoppingList": "tea",
+      "englishEncounter": {
+        "arrival": "Coffee? I've got the little ferry tied up where the wind can't quite reach it.",
+        "returned": "Got word that family made it to their people. They sent a drawing of the boat. No rail on it. Fair criticism.",
+        "questioned": "I charged families to pass a closed checkpoint. Put one family ashore on a bank I hadn't walked myself. The little girl was still asking me where the path was when I cast off.",
+        "previouslyQuestioned": "I sent back their fare. If somebody did that to my kid I'd want more than the fare."
+      }
     },
     {
       "id": "neon_wanted_jory_noll",
@@ -1605,12 +1629,6 @@
       "spriteKey": "neon_wanted_jory_noll",
       "boardId": "neon_board_smugglers",
       "reward": 150,
-      "budget": 150,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Repeated carriage of stolen parcels",
         "identifyingMarks": "Freckles; dark undercut; oversized gray porter vest.",
@@ -1668,7 +1686,14 @@
         ]
       },
       "nativePortrait": "portraits/native/jory_noll.png",
-      "headIcon": "portraits/icons/jory_noll.png"
+      "headIcon": "portraits/icons/jory_noll.png",
+      "shoppingList": "snacks",
+      "englishEncounter": {
+        "arrival": "Something for my pocket. If I set these parcels down there's always one more than I remember.",
+        "returned": "They made me unwrap a parcel for a woman. Inside was a blanket with her baby's name on it.",
+        "questioned": "I saw where they'd cut the addresses off. Kept doing the run because the pay was good. That's receiving stolen goods, even when all you carry is string and paper.",
+        "previouslyQuestioned": "I could've stopped at the first cut label. I waited till someone recognised a parcel."
+      }
     },
     {
       "id": "neon_wanted_keira_senn",
@@ -1682,12 +1707,6 @@
       "spriteKey": "neon_wanted_keira_senn",
       "boardId": "neon_board_smugglers",
       "reward": 400,
-      "budget": 230,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Guiding illegal landings and accepting payments to avoid inspection",
         "identifyingMarks": "Copper-brown skin; black braid; faded blue hood worn down.",
@@ -1745,7 +1764,14 @@
         ]
       },
       "nativePortrait": "portraits/native/keira_senn.png",
-      "headIcon": "portraits/icons/keira_senn.png"
+      "headIcon": "portraits/icons/keira_senn.png",
+      "shoppingList": "light",
+      "englishEncounter": {
+        "arrival": "Small torch for the landing. I know the way. It's the next fellow I worry about.",
+        "returned": "A clinic porter came down to the dock asking for a missing crate. Knew my boat by the scrape on its side.",
+        "questioned": "I guided boats in past inspection for cash. One had the clinic's dressings aboard. I never opened the crate. I was paid extra to keep it that way.",
+        "previouslyQuestioned": "The porter knew the crate would rattle. I'd heard it all the way in."
+      }
     },
     {
       "id": "neon_wanted_mikel_dray",
@@ -1759,12 +1785,6 @@
       "spriteKey": "neon_wanted_mikel_dray",
       "boardId": "neon_board_smugglers",
       "reward": 350,
-      "budget": 220,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Concealment and transport of diverted industrial supplies",
         "identifyingMarks": "Gray beard; shaved temples; brown patched river jacket.",
@@ -1822,7 +1842,14 @@
         ]
       },
       "nativePortrait": "portraits/native/mikel_dray.png",
-      "headIcon": "portraits/icons/mikel_dray.png"
+      "headIcon": "portraits/icons/mikel_dray.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "I'm after hand tools. The engine shed's been locked up with mine inside.",
+        "returned": "Heard they're carrying water up the hill again. Used to be a pump there. I know exactly where it went.",
+        "questioned": "I called them repairs on the invoices. Took working pumps out and sent them to paying customers. The people whose pumps they were got the empty mounts back.",
+        "previouslyQuestioned": "They paid for pipes all the way up that hill. I made those pipes useless."
+      }
     },
     {
       "id": "neon_wanted_fenna_croft",
@@ -1836,12 +1863,6 @@
       "spriteKey": "neon_wanted_fenna_croft",
       "boardId": "neon_board_smugglers",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Removal of seized goods from a restricted dock store",
         "identifyingMarks": "Pale skin; wet-looking dark crop; muted green rubberized collar.",
@@ -1899,7 +1920,14 @@
         ]
       },
       "nativePortrait": "portraits/native/fenna_croft.png",
-      "headIcon": "portraits/icons/fenna_croft.png"
+      "headIcon": "portraits/icons/fenna_croft.png",
+      "shoppingList": "wire",
+      "englishEncounter": {
+        "arrival": "Wire for a salvage hook. Not everything I bring up is trouble.",
+        "returned": "An old lady came down with the matching earring. She didn't have to say what she wanted.",
+        "questioned": "I took seized goods out of the dock store. Owners offered me a share to get their things back. I kept more than we agreed.",
+        "previouslyQuestioned": "Nobody was going to complain to Security about stolen goods being stolen again. At least that's what I counted on."
+      }
     },
     {
       "id": "neon_wanted_osric_dane",
@@ -1913,12 +1941,6 @@
       "spriteKey": "neon_wanted_osric_dane",
       "boardId": "neon_board_smugglers",
       "reward": 250,
-      "budget": 180,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Handling undeclared parcels and bribery of baggage staff",
         "identifyingMarks": "Balding silver hair; amber glasses; faded maroon overcoat.",
@@ -1976,7 +1998,14 @@
         ]
       },
       "nativePortrait": "portraits/native/osric_dane.png",
-      "headIcon": "portraits/icons/osric_dane.png"
+      "headIcon": "portraits/icons/osric_dane.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee for a man who's just missed the last tram he works on.",
+        "returned": "There's a woman who still waits at the baggage window for her brother. I leave the shutter up a little longer.",
+        "questioned": "I moved unlisted bags on the night tram and paid staff to skip the checks. I remember every parcel number. Names are harder. That's what I told the families.",
+        "previouslyQuestioned": "One man asked about a bag and didn't come home. I'd rather talk about the money. I expect you'd rather I didn't."
+      }
     },
     {
       "id": "neon_wanted_leto_arven",
@@ -1990,12 +2019,6 @@
       "spriteKey": "neon_wanted_leto_arven",
       "boardId": "neon_board_smugglers",
       "reward": 800,
-      "budget": 270,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Falsified cargo declarations and movement of stolen depot stock",
         "identifyingMarks": "Tan skin; black beard; sand-colored headwrap; blue coat.",
@@ -2053,7 +2076,14 @@
         ]
       },
       "nativePortrait": "portraits/native/leto_arven.png",
-      "headIcon": "portraits/icons/leto_arven.png"
+      "headIcon": "portraits/icons/leto_arven.png",
+      "shoppingList": "spice",
+      "englishEncounter": {
+        "arrival": "Have you any seasoning that isn't salt? I work on a salt barge. Humour me.",
+        "returned": "Another skipper got searched this morning. Same buyer as mine. Buyer's still at his desk.",
+        "questioned": "I buried stolen depot stock on the manifest under a legitimate load. The receipt says salt. The men who unloaded it could tell you otherwise.",
+        "previouslyQuestioned": "They've got my name right. I'm waiting to see if they'll print the name on the other end of the receipt."
+      }
     },
     {
       "id": "neon_wanted_brin_harker",
@@ -2067,12 +2097,6 @@
       "spriteKey": "neon_wanted_brin_harker",
       "boardId": "neon_board_saboteurs",
       "reward": 350,
-      "budget": 220,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Deliberate damage to a neighborhood communications relay",
         "identifyingMarks": "Pale skin; ash-brown curls; blue-gray maintenance jacket.",
@@ -2130,7 +2154,14 @@
         ]
       },
       "nativePortrait": "portraits/native/brin_harker.png",
-      "headIcon": "portraits/icons/brin_harker.png"
+      "headIcon": "portraits/icons/brin_harker.png",
+      "shoppingList": "electrics",
+      "englishEncounter": {
+        "arrival": "Electrical parts, if you've got them. The estate relay's been quiet a little too long.",
+        "returned": "My neighbour's call for a nurse went unheard that night. He told me at breakfast. Couldn't finish mine.",
+        "questioned": "A collector kept reading our debts over the relay. I smashed it. It carried emergency calls on the same line. I knew that.",
+        "previouslyQuestioned": "I wanted one man to shut up. A whole block went quiet."
+      }
     },
     {
       "id": "neon_wanted_naila_vos",
@@ -2144,12 +2175,6 @@
       "spriteKey": "neon_wanted_naila_vos",
       "boardId": "neon_board_saboteurs",
       "reward": 1000,
-      "budget": 270,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Sabotage of a freight lift during an occupied shift",
         "identifyingMarks": "Brown skin; silver-streaked black bun; mustard work shirt.",
@@ -2207,7 +2232,14 @@
         ]
       },
       "nativePortrait": "portraits/native/naila_vos.png",
-      "headIcon": "portraits/icons/naila_vos.png"
+      "headIcon": "portraits/icons/naila_vos.png",
+      "shoppingList": "light",
+      "englishEncounter": {
+        "arrival": "A light I can take under a lift car. I don't go inside them these days.",
+        "returned": "I took the stairs up to see the porter. He took them too. Neither of us said why.",
+        "questioned": "I stopped a loaded lift over unpaid wages. Knew the porters were in it. Didn't know the brake was going to give.",
+        "previouslyQuestioned": "They're the ones who heard the cable slip. I've had long enough to think about whose risk I took."
+      }
     },
     {
       "id": "neon_wanted_calder_orr",
@@ -2221,12 +2253,6 @@
       "spriteKey": "neon_wanted_calder_orr",
       "boardId": "neon_board_saboteurs",
       "reward": 1500,
-      "budget": 300,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Intentional damage to public pumps to obtain repair contracts",
         "identifyingMarks": "Ruddy skin; gray horseshoe mustache; moss-green coveralls.",
@@ -2284,7 +2310,14 @@
         ]
       },
       "nativePortrait": "portraits/native/calder_orr.png",
-      "headIcon": "portraits/icons/calder_orr.png"
+      "headIcon": "portraits/icons/calder_orr.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "Need a driver for a pump cover. I can pay in cash.",
+        "returned": "Clinic got somebody else to fix their pump. Can't say I expected a call.",
+        "questioned": "I made pumps fail, then billed for the repairs. The clinic was on the same line as the last one. It went dry while they waited for me to turn up.",
+        "previouslyQuestioned": "There was a spare part in my bag the whole time. There always was."
+      }
     },
     {
       "id": "neon_wanted_esme_tull",
@@ -2298,12 +2331,6 @@
       "spriteKey": "neon_wanted_esme_tull",
       "boardId": "neon_board_saboteurs",
       "reward": 250,
-      "budget": 180,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Repeated tampering with shop supply meters",
         "identifyingMarks": "Olive skin; cropped black fringe; burgundy repair jacket.",
@@ -2361,7 +2388,14 @@
         ]
       },
       "nativePortrait": "portraits/native/esme_tull.png",
-      "headIcon": "portraits/icons/esme_tull.png"
+      "headIcon": "portraits/icons/esme_tull.png",
+      "shoppingList": "wire",
+      "englishEncounter": {
+        "arrival": "Some wire for a meter. Oh, you've seen the notice.",
+        "returned": "Lady from the next block showed me her bill. She'd kept every one in date order.",
+        "questioned": "Shops paid me to slow their meters down. The district total didn't change. All that extra use went on the bills upstairs.",
+        "previouslyQuestioned": "She lives alone and she was billed for a bakery. I can't tell her it was a rounding error."
+      }
     },
     {
       "id": "neon_wanted_rudo_kreel",
@@ -2375,12 +2409,6 @@
       "spriteKey": "neon_wanted_rudo_kreel",
       "boardId": "neon_board_saboteurs",
       "reward": 1100,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Destruction of safety interlocks and intimidation of witnesses",
         "identifyingMarks": "Dark skin; bald scalp; one gray eyebrow; patched brown vest.",
@@ -2438,7 +2466,14 @@
         ]
       },
       "nativePortrait": "portraits/native/rudo_kreel.png",
-      "headIcon": "portraits/icons/rudo_kreel.png"
+      "headIcon": "portraits/icons/rudo_kreel.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "A screwdriver. I used to send a boy for these.",
+        "returned": "The lad I sent home has given a statement. His mother's taken him out of the district.",
+        "questioned": "I took the interlocks off to get the line moving. When the boy reported it, I told him he'd never work here again. My words. Nobody else's.",
+        "previouslyQuestioned": "He did the one thing the safety sheet tells you to do. I leaned on him for doing it."
+      }
     },
     {
       "id": "neon_wanted_linet_dane",
@@ -2452,12 +2487,6 @@
       "spriteKey": "neon_wanted_linet_dane",
       "boardId": "neon_board_saboteurs",
       "reward": 400,
-      "budget": 230,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Deliberate shutdown of market refrigeration",
         "identifyingMarks": "Fair skin; pale blond braid; faded teal padded coat.",
@@ -2515,7 +2544,14 @@
         ]
       },
       "nativePortrait": "portraits/native/linet_dane.png",
-      "headIcon": "portraits/icons/linet_dane.png"
+      "headIcon": "portraits/icons/linet_dane.png",
+      "shoppingList": "filters",
+      "englishEncounter": {
+        "arrival": "Looking for a filter. The people at my old supply counter won't serve me.",
+        "returned": "A market kid asked if I could fix his mum's icebox. Didn't have the heart to tell him why she knew my name.",
+        "questioned": "I shut down my rival's cold room so the stalls would hire me instead. By morning they had nothing left to chill.",
+        "previouslyQuestioned": "I did it after closing. That gave the food all night to spoil. I know how refrigeration works."
+      }
     },
     {
       "id": "neon_wanted_odo_trenn",
@@ -2529,12 +2565,6 @@
       "spriteKey": "neon_wanted_odo_trenn",
       "boardId": "neon_board_saboteurs",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Unauthorized disruption of district lighting",
         "identifyingMarks": "Tan skin; white curls; navy work coat with ivory collar.",
@@ -2592,7 +2622,14 @@
         ]
       },
       "nativePortrait": "portraits/native/odo_trenn.png",
-      "headIcon": "portraits/icons/odo_trenn.png"
+      "headIcon": "portraits/icons/odo_trenn.png",
+      "shoppingList": "cells",
+      "englishEncounter": {
+        "arrival": "Could use a cell. I've wire and a few bits left from the lighting crew if you want to trade.",
+        "returned": "They held the hearing again in daylight. More people came to it this time.",
+        "questioned": "I cut the lights to stop an eviction vote. Same breaker fed the public stairs. A woman fell before anybody found the emergency lamp.",
+        "previouslyQuestioned": "I was standing by the breaker with a torch. I could've put the lights back on."
+      }
     },
     {
       "id": "neon_wanted_rina_mott",
@@ -2606,12 +2643,6 @@
       "spriteKey": "neon_wanted_rina_mott",
       "boardId": "neon_board_saboteurs",
       "reward": 350,
-      "budget": 220,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Damage to transit wiring and falsification of repair reports",
         "identifyingMarks": "Warm brown skin; short black curls; gray jacket with red lining.",
@@ -2669,7 +2700,14 @@
         ]
       },
       "nativePortrait": "portraits/native/rina_mott.png",
-      "headIcon": "portraits/icons/rina_mott.png"
+      "headIcon": "portraits/icons/rina_mott.png",
+      "shoppingList": "wire",
+      "englishEncounter": {
+        "arrival": "Wire, please. Write down what I take. I've had enough of guessing at figures.",
+        "returned": "Foreman's got both pieces of the cable on his desk. Side by side the cuts look different.",
+        "questioned": "Cut the first line by mistake. Cut the second one on purpose to make the first look like sabotage. Now it is sabotage.",
+        "previouslyQuestioned": "If I'd reported the first cut we'd have had one broken cable and one very cross foreman."
+      }
     },
     {
       "id": "neon_wanted_eryk_fenn",
@@ -2683,12 +2721,6 @@
       "spriteKey": "neon_wanted_eryk_fenn",
       "boardId": "neon_board_saboteurs",
       "reward": 1400,
-      "budget": 280,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE"
-      ],
       "poster": {
         "charge": "Disabling shop alarms to assist armed robberies",
         "identifyingMarks": "Pale olive skin; dark receding hair; black scarf; tan coat.",
@@ -2746,7 +2778,14 @@
         ]
       },
       "nativePortrait": "portraits/native/eryk_fenn.png",
-      "headIcon": "portraits/icons/eryk_fenn.png"
+      "headIcon": "portraits/icons/eryk_fenn.png",
+      "shoppingList": "electrics",
+      "englishEncounter": {
+        "arrival": "I'm shopping for alarm parts. I can see you looking at your shutter.",
+        "returned": "Shop on the corner's got a new alarm man. I know because he changed all the locks too.",
+        "questioned": "I left gaps in alarm coverage and sold the hours to a robbery crew. Customers were paying me to maintain the alarms. I took both payments.",
+        "previouslyQuestioned": "I didn't go inside with a gun. I did tell them exactly when it was safe to go in."
+      }
     },
     {
       "id": "neon_wanted_maelis_trent",
@@ -2760,13 +2799,6 @@
       "spriteKey": "neon_wanted_maelis_trent",
       "boardId": "neon_board_fraudsters",
       "reward": 400,
-      "budget": 230,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Sale of forged housing permits",
         "identifyingMarks": "Brown skin; neat gray bob; plum jacket; bronze brooch.",
@@ -2824,7 +2856,14 @@
         ]
       },
       "nativePortrait": "portraits/native/maelis_trent.png",
-      "headIcon": "portraits/icons/maelis_trent.png"
+      "headIcon": "portraits/icons/maelis_trent.png",
+      "shoppingList": "water",
+      "englishEncounter": {
+        "arrival": "A small water. I've spent the morning outside housing. They don't have chairs any more.",
+        "returned": "The family came back to my old desk with all their boxes. They'd kept the permit in a plastic sleeve.",
+        "questioned": "I sold them a housing permit I knew wouldn't stand up. When the lock was changed I told them it was a delay. Took the fee anyway.",
+        "previouslyQuestioned": "The stamp looked right. The lock still wouldn't open. Which bit would you like me to explain?"
+      }
     },
     {
       "id": "neon_wanted_corvin_nace",
@@ -2838,13 +2877,6 @@
       "spriteKey": "neon_wanted_corvin_nace",
       "boardId": "neon_board_fraudsters",
       "reward": 500,
-      "budget": 270,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Repeated sale of the same storage lease",
         "identifyingMarks": "Light skin; dark swept hair; thin beard; green waistcoat.",
@@ -2902,7 +2934,14 @@
         ]
       },
       "nativePortrait": "portraits/native/corvin_nace.png",
-      "headIcon": "portraits/icons/corvin_nace.png"
+      "headIcon": "portraits/icons/corvin_nace.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee. My tenants... the people I'm meeting are late.",
+        "returned": "They all came together today. I'd have preferred late.",
+        "questioned": "I leased one warehouse to three buyers. Gave each a key. It went rather badly when the first lorry arrived and the other two were already unloading.",
+        "previouslyQuestioned": "All three keys fit. Only one warehouse. Even I can't argue with that."
+      }
     },
     {
       "id": "neon_wanted_tessa_wrenn",
@@ -2916,13 +2955,6 @@
       "spriteKey": "neon_wanted_tessa_wrenn",
       "boardId": "neon_board_fraudsters",
       "reward": 250,
-      "budget": 180,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "False appraisal certificates and counterfeit precious-metal sales",
         "identifyingMarks": "Olive skin; auburn cropped hair; blue scarf; gray seller's coat.",
@@ -2980,7 +3012,14 @@
         ]
       },
       "nativePortrait": "portraits/native/tessa_wrenn.png",
-      "headIcon": "portraits/icons/tessa_wrenn.png"
+      "headIcon": "portraits/icons/tessa_wrenn.png",
+      "shoppingList": "lens",
+      "englishEncounter": {
+        "arrival": "May I see that glass? I usually bring my own to an appraisal.",
+        "returned": "A woman scratched the back of a brooch while I watched. Copper underneath. She didn't need my glass.",
+        "questioned": "I certified plated pieces as solid metal. Families used my papers when they pawned their things. My signature outlasted the plating.",
+        "previouslyQuestioned": "It's a lovely brooch. That's what I should've written, if I wanted to be complimentary."
+      }
     },
     {
       "id": "neon_wanted_halvo_mint",
@@ -2994,13 +3033,6 @@
       "spriteKey": "neon_wanted_halvo_mint",
       "boardId": "neon_board_fraudsters",
       "reward": 1000,
-      "budget": 300,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Misappropriation of communal savings",
         "identifyingMarks": "Pale skin; bald head; round glasses; rust cardigan.",
@@ -3058,7 +3090,14 @@
         ]
       },
       "nativePortrait": "portraits/native/halvo_mint.png",
-      "headIcon": "portraits/icons/halvo_mint.png"
+      "headIcon": "portraits/icons/halvo_mint.png",
+      "shoppingList": "tea",
+      "englishEncounter": {
+        "arrival": "Coffee for the collection desk. Nobody's coming in, but I still put the pot on.",
+        "returned": "An old saver brought her little book. Every single deposit is in my handwriting.",
+        "questioned": "I lost my own money. Used the neighbourhood savings to cover it. I thought I'd win it back before the first withdrawal.",
+        "previouslyQuestioned": "I can tell you what each of them put in. I can't give it to them."
+      }
     },
     {
       "id": "neon_wanted_ines_dorr",
@@ -3072,13 +3111,6 @@
       "spriteKey": "neon_wanted_ines_dorr",
       "boardId": "neon_board_fraudsters",
       "reward": 350,
-      "budget": 220,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Collection of compensation under stolen identities",
         "identifyingMarks": "Tan skin; black low bun; olive blazer; cream collar.",
@@ -3136,7 +3168,14 @@
         ]
       },
       "nativePortrait": "portraits/native/ines_dorr.png",
-      "headIcon": "portraits/icons/ines_dorr.png"
+      "headIcon": "portraits/icons/ines_dorr.png",
+      "shoppingList": "dressings",
+      "englishEncounter": {
+        "arrival": "A dressing, please. I've case notes to deliver. If you're ever short of a buyer I'll leave my number.",
+        "returned": "A claimant thanked me for a payment she hadn't received yet. Someone had shown her the ledger.",
+        "questioned": "I signed injured workers' names on compensation claims and collected the money. Some didn't know they could claim. That was how I picked them.",
+        "previouslyQuestioned": "She could have learned to sign her own name. Instead I practised it."
+      }
     },
     {
       "id": "neon_wanted_beren_soll",
@@ -3150,13 +3189,6 @@
       "spriteKey": "neon_wanted_beren_soll",
       "boardId": "neon_board_fraudsters",
       "reward": 450,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Creation of fictitious employees and payroll theft",
         "identifyingMarks": "Dark skin; short curls; maroon sweater; patched tan vest.",
@@ -3214,7 +3246,14 @@
         ]
       },
       "nativePortrait": "portraits/native/beren_soll.png",
-      "headIcon": "portraits/icons/beren_soll.png"
+      "headIcon": "portraits/icons/beren_soll.png",
+      "shoppingList": "noodles",
+      "englishEncounter": {
+        "arrival": "Noodles. One packet's enough. I used to order for a rather larger staff.",
+        "returned": "They read the payroll out on the shop floor. Nobody answered to 'Len' or 'Bert'. Both my uncles' names.",
+        "questioned": "I put people who didn't exist on the payroll. Took their wages home. The people doing overtime were told the cash had run out.",
+        "previouslyQuestioned": "I even put a sick day down for Bert. Thought that made him look real."
+      }
     },
     {
       "id": "neon_wanted_oleta_rake",
@@ -3228,13 +3267,6 @@
       "spriteKey": "neon_wanted_oleta_rake",
       "boardId": "neon_board_fraudsters",
       "reward": 900,
-      "budget": 280,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Fraudulent debt settlements and coercive collection",
         "identifyingMarks": "Fair skin; silver bun; dark green coat; square copper glasses.",
@@ -3292,7 +3324,14 @@
         ]
       },
       "nativePortrait": "portraits/native/oleta_rake.png",
-      "headIcon": "portraits/icons/oleta_rake.png"
+      "headIcon": "portraits/icons/oleta_rake.png",
+      "shoppingList": "snacks",
+      "englishEncounter": {
+        "arrival": "A bite before the collections office opens. I like to be there early.",
+        "returned": "One of my clients saw my handwriting on both envelopes. She's taken them to Security.",
+        "questioned": "I charged people to settle a debt. Then my other company bought the same debt and collected it again. They thought the two desks were competitors.",
+        "previouslyQuestioned": "One envelope promised she was clear. One demanded payment. She'd already paid me for both."
+      }
     },
     {
       "id": "neon_wanted_jonas_krail",
@@ -3306,13 +3345,6 @@
       "spriteKey": "neon_wanted_jonas_krail",
       "boardId": "neon_board_fraudsters",
       "reward": 300,
-      "budget": 200,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Sale of false equipment inspection certificates",
         "identifyingMarks": "Brown skin; thick mustache; gray cap; blue clerk jacket.",
@@ -3370,7 +3402,14 @@
         ]
       },
       "nativePortrait": "portraits/native/jonas_krail.png",
-      "headIcon": "portraits/icons/jonas_krail.png"
+      "headIcon": "portraits/icons/jonas_krail.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "Need a screwdriver. I've been asked to open a panel in front of an inspector.",
+        "returned": "They've put a red mark on every machine I signed off. One factory wall looks like it's got the measles.",
+        "questioned": "I sold inspection certificates without going to see the machines. Told myself I was saving people a long wait. One of them was running without a guard.",
+        "previouslyQuestioned": "It has my signature. If you're asking me what the guard looked like, that's rather the point."
+      }
     },
     {
       "id": "neon_wanted_cira_hess",
@@ -3384,13 +3423,6 @@
       "spriteKey": "neon_wanted_cira_hess",
       "boardId": "neon_board_fraudsters",
       "reward": 200,
-      "budget": 170,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Sale of invalid travel papers under a false agency name",
         "identifyingMarks": "Light olive skin; dark wavy bob; purple scarf; brown jacket.",
@@ -3448,7 +3480,14 @@
         ]
       },
       "nativePortrait": "portraits/native/cira_hess.png",
-      "headIcon": "portraits/icons/cira_hess.png"
+      "headIcon": "portraits/icons/cira_hess.png",
+      "shoppingList": "water",
+      "englishEncounter": {
+        "arrival": "A bottle for the bus station, please. I'm going there on foot.",
+        "returned": "Three passengers were still waiting under the timetable. One had brought sandwiches for her children.",
+        "questioned": "I took fares for routes that didn't exist. The first week I believed the agency. By the third week I'd watched the empty platform myself.",
+        "previouslyQuestioned": "I kept the desk open. That's the part that was up to me."
+      }
     },
     {
       "id": "neon_wanted_dahlia_vey",
@@ -3462,13 +3501,6 @@
       "portrait": "portraits/dahlia_vey.png",
       "boardId": "neon_board_unknown",
       "reward": 2500,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Suspected serial murder and sale of evidence",
         "identifyingMarks": "Pale olive skin; black swept-back hair; burgundy mourning coat.",
@@ -3526,7 +3558,14 @@
         ]
       },
       "nativePortrait": "portraits/native/dahlia_vey.png",
-      "headIcon": "portraits/icons/dahlia_vey.png"
+      "headIcon": "portraits/icons/dahlia_vey.png",
+      "shoppingList": "cloth",
+      "englishEncounter": {
+        "arrival": "I've brought the knives. Mind the handles. My late husband was particular about fingerprints. Have you cloth to wrap them in?",
+        "returned": "One family came to ask after a matching fork. Such a relief when people know what they're looking for.",
+        "questioned": "Which husband? You'll have to be specific. Security says I sold evidence. I say a widow can't eat a drawer full of cutlery.",
+        "previouslyQuestioned": "That's his monogram, yes. I'd have polished it off if I'd anything to hide, wouldn't I?"
+      }
     },
     {
       "id": "neon_wanted_mina_quince",
@@ -3540,13 +3579,6 @@
       "portrait": "portraits/mina_quince.png",
       "boardId": "neon_board_unknown",
       "reward": 250,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Fraudulent toll collection and theft of official signs",
         "identifyingMarks": "Brown skin; thick black braid; patched olive coat.",
@@ -3604,7 +3636,14 @@
         ]
       },
       "nativePortrait": "portraits/native/mina_quince.png",
-      "headIcon": "portraits/icons/mina_quince.png"
+      "headIcon": "portraits/icons/mina_quince.png",
+      "shoppingList": "soap",
+      "englishEncounter": {
+        "arrival": "Shampoo? The customs house smells of damp mops. It's also the broom cupboard, but that's a separate matter.",
+        "returned": "The council took my sign back. Business is slow without a border.",
+        "questioned": "I charged a toll on every mop that crossed the threshold. Apparently you can't declare independence from inside a municipal cupboard. The sign rather gave me away.",
+        "previouslyQuestioned": "I returned the sign. They still want nine mop tolls and an apology to the cleaner."
+      }
     },
     {
       "id": "neon_wanted_orla_sprocket",
@@ -3618,13 +3657,6 @@
       "portrait": "portraits/orla_sprocket.png",
       "boardId": "neon_board_unknown",
       "reward": 400,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Sale of fraudulent travel tickets and stolen clock parts",
         "identifyingMarks": "Fair freckled skin; wiry copper-gray curls; dusty blue waistcoat.",
@@ -3682,7 +3714,14 @@
         ]
       },
       "nativePortrait": "portraits/native/orla_sprocket.png",
-      "headIcon": "portraits/icons/orla_sprocket.png"
+      "headIcon": "portraits/icons/orla_sprocket.png",
+      "shoppingList": "cells",
+      "englishEncounter": {
+        "arrival": "A battery for the timetable clock. It's usually quite accurate about yesterday.",
+        "returned": "The station put today's date on the board in big red letters. Very bad for my business.",
+        "questioned": "I sold tickets for trains that had already left. Took parts from the station clock so people wouldn't know by how much.",
+        "previouslyQuestioned": "If the little hand's missing, a customer really ought to ask. Yes, I've heard myself say that."
+      }
     },
     {
       "id": "neon_wanted_sabela_wick",
@@ -3696,13 +3735,6 @@
       "portrait": "portraits/sabela_wick.png",
       "boardId": "neon_board_unknown",
       "reward": 350,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Insurance fraud and theft of municipal funeral funds",
         "identifyingMarks": "Tan skin; dark wavy bob; plum scarf; faded black coat.",
@@ -3760,7 +3792,14 @@
         ]
       },
       "nativePortrait": "portraits/native/sabela_wick.png",
-      "headIcon": "portraits/icons/sabela_wick.png"
+      "headIcon": "portraits/icons/sabela_wick.png",
+      "shoppingList": "tea",
+      "englishEncounter": {
+        "arrival": "Have you any coffee? I sang through my own memorial this morning. Twice. They wanted an encore.",
+        "returned": "An aunt sent flowers to my flat with a card saying 'do call'. No fooling that woman.",
+        "questioned": "I claimed funeral money from the council while alive. They'd probably have paid if I hadn't also submitted the bill for singing.",
+        "previouslyQuestioned": "The councillor asked who'd chosen the music. I raised my hand. Force of habit."
+      }
     },
     {
       "id": "neon_wanted_tilda_rook",
@@ -3774,13 +3813,6 @@
       "portrait": "portraits/tilda_rook.png",
       "boardId": "neon_board_unknown",
       "reward": 450,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Theft of public bath fixtures and obstruction of drainage",
         "identifyingMarks": "Deep brown skin; silver cropped hair; navy coat.",
@@ -3838,7 +3870,14 @@
         ]
       },
       "nativePortrait": "portraits/native/tilda_rook.png",
-      "headIcon": "portraits/icons/tilda_rook.png"
+      "headIcon": "portraits/icons/tilda_rook.png",
+      "shoppingList": "tools",
+      "englishEncounter": {
+        "arrival": "Got tools? There's a bath stuck crossways in a drain. Before you ask, it isn't my bath.",
+        "returned": "Low tide's brought the rest of them into view. The harbourmaster counted the wheels.",
+        "questioned": "I took public baths, fitted wheels and floated them down the cut. We did block the drainage channel. Only captains on that water who could pull their own plugs.",
+        "previouslyQuestioned": "You can have the tubs back. I'd like a receipt for the wheels."
+      }
     },
     {
       "id": "neon_wanted_nerys_bell",
@@ -3852,13 +3891,6 @@
       "portrait": "portraits/nerys_bell.png",
       "boardId": "neon_board_unknown",
       "reward": 300,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Identity fraud and collection of another person's wages",
         "identifyingMarks": "Light skin; straight auburn fringe; patched tan jacket.",
@@ -3916,7 +3948,14 @@
         ]
       },
       "nativePortrait": "portraits/native/nerys_bell.png",
-      "headIcon": "portraits/icons/nerys_bell.png"
+      "headIcon": "portraits/icons/nerys_bell.png",
+      "shoppingList": "lunch",
+      "englishEncounter": {
+        "arrival": "Lunch to go. I'm covering somebody's shift at the wages desk. I have to check which name I'm using.",
+        "returned": "Met myself coming off the late shift. She said I'd left her no lunch break.",
+        "questioned": "I took a missing woman's wages by standing in for her. Then she turned up, so I hired her to cover MY shifts. Payroll noticed her signing her own name wrong.",
+        "previouslyQuestioned": "We both worked. It's which one of us they actually hired that's troubling Security."
+      }
     },
     {
       "id": "neon_wanted_petra_soot",
@@ -3930,13 +3969,6 @@
       "portrait": "portraits/petra_soot.png",
       "boardId": "neon_board_unknown",
       "reward": 2000,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Suspected murder, inheritance fraud and sale of stolen heirlooms",
         "identifyingMarks": "Warm olive skin; long dark waves; wine-purple dress; pearl and gold earrings.",
@@ -3994,7 +4026,14 @@
         ]
       },
       "nativePortrait": "portraits/native/petra_soot.png",
-      "headIcon": "portraits/icons/petra_soot.png"
+      "headIcon": "portraits/icons/petra_soot.png",
+      "shoppingList": "scent",
+      "englishEncounter": {
+        "arrival": "I'd like perfume. My fiancé always chose it. I suppose I'm allowed an opinion now.",
+        "returned": "His sister came for the rings. I offered her the one that actually fitted her brother.",
+        "questioned": "They say I killed him for the estate. They can prove I sold his heirlooms before probate. There is rather a gap between those two statements.",
+        "previouslyQuestioned": "Six rings, yes. You're welcome to count them. It won't tell you where he went."
+      }
     },
     {
       "id": "neon_wanted_vera_latch",
@@ -4008,13 +4047,6 @@
       "portrait": "portraits/vera_latch.png",
       "boardId": "neon_board_unknown",
       "reward": 1250,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Marriage fraud, theft of savings and falsified death claims",
         "identifyingMarks": "Fair skin; elaborate blonde updo; emerald dress; green jeweled comb.",
@@ -4072,7 +4104,14 @@
         ]
       },
       "nativePortrait": "portraits/native/vera_latch.png",
-      "headIcon": "portraits/icons/vera_latch.png"
+      "headIcon": "portraits/icons/vera_latch.png",
+      "shoppingList": "coffee",
+      "englishEncounter": {
+        "arrival": "Coffee, and a quiet minute. My three appointments appear to have compared diaries.",
+        "returned": "They took the honeymoon together. Sent me a postcard. All three signatures, no kisses.",
+        "questioned": "I promised three men a wedding, took three sets of savings and booked one honeymoon. The death certificates kept the questions down for a while.",
+        "previouslyQuestioned": "I could spot a crooked contract at six paces. I wrote every one of theirs."
+      }
     },
     {
       "id": "neon_wanted_luma_pike",
@@ -4086,13 +4125,6 @@
       "portrait": "portraits/luma_pike.png",
       "boardId": "neon_board_unknown",
       "reward": 1800,
-      "budget": 250,
-      "buyingTags": [
-        "FOOD",
-        "WATER",
-        "BREVAGE",
-        "TREAT"
-      ],
       "poster": {
         "charge": "Suspected murder and fraudulent collection of multiple estates",
         "identifyingMarks": "Deep brown skin; long black curls; plum dress; copper ornaments.",
@@ -4150,7 +4182,14 @@
         ]
       },
       "nativePortrait": "portraits/native/luma_pike.png",
-      "headIcon": "portraits/icons/luma_pike.png"
+      "headIcon": "portraits/icons/luma_pike.png",
+      "shoppingList": "treat",
+      "englishEncounter": {
+        "arrival": "Do you have something sweet? The hotel sent condolences with the bill. I preferred their old chocolates.",
+        "returned": "The manager asked if I'd be needing my usual suite again. He meant well. I think.",
+        "questioned": "Security's counting husbands and paid-out estates. I've never denied the claims. It's the word 'murder' on that sheet I'm interested in.",
+        "previouslyQuestioned": "I put the probate clerk down as my emergency contact. He always answers the phone. Can you say that about your family?"
+      }
     }
   ],
   "boards": [

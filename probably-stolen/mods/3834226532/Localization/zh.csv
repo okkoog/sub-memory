@@ -43,7 +43,7 @@ dsp_self_built_description,初始拥有店铺，但是供电和清洁服务的�
 dsp_cellar_name,天然酒窖
 dsp_wild_favor_description,"开局解锁王尔德的电话并获得300点王尔德的恩惠。"
 dsp_wild_favor_name,王尔德的人情
-dsp_cellar_description,酿酒的过程减少一天，酿好的酒会陈化3天。
+dsp_cellar_description,酿酒的过程减少1天，酿好的酒会陈化3天。
 dsp_stable_partnership_name,稳定合作
 dsp_stable_partnership_description,所有经销商会在周二、周五上门，而非通过电话预定。
 dsp_stable_partnership_phone,周二、周五我们自己把货送过去，这通电话不用打。
@@ -341,7 +341,7 @@ dsp_rat_infestation_removed,捕鼠人解决了老鼠~你尽量不去想昨夜被
 dsp_strict_crackdown_name,严厉追查
 dsp_strict_crackdown_description,不再出现腐败警察。赃物热度消退速度减半。
 dsp_never_empty_handed_name,贼不走空
-dsp_never_empty_handed_description,如果离开一个地点时两手空空，你会获得25信用点。
+dsp_never_empty_handed_description,如果离开一个地点时至少有一个空口袋，你会获得15信用点。
 dsp_never_empty_log,空手而归，顺手摸到25信用点
 dsp_never_empty_notify,贼不走空：+25 信用点
 dsp_patience_limit_name,耐心有限
@@ -367,7 +367,7 @@ dsp_foreknowledge_when_after, 天后
 dsp_foreknowledge_price_tag,价格
 dsp_foreknowledge_price_name,价格变动
 dsp_prohibition_name,禁酒令
-dsp_prohibition_description,所有酒水都被视为中级违禁品。
+dsp_prohibition_description,所有酒水都被视为中级违禁品。发酵中的酒售价为50且视为麻醉品。
 dsp_tobacco_tax_name,烟草税
 dsp_tobacco_tax_description,香烟获得50%零售加价。但你只能获得这一部分额外加价的20%。
 dsp_blood_donor_name,献血者
@@ -398,11 +398,11 @@ dsp_revolutionary_influence_slip_title,革命军的情报
 dsp_revolutionary_influence_slip_body,奥丁临走前压低了声音：三天之内，革命军会动手——「{0}」。日历上已经标好了。
 dsp_service_professional_tooltip,让你的仇家不再打扰你。
 dsp_scav_drone_name,拾荒无人机
-dsp_scav_drone_description,你在夜间行动时，额外“多两只手”。拾荒时获得垃圾的概率下降。
+dsp_scav_drone_description,你在夜间行动时，额外两个口袋。拾荒时获得垃圾的概率下降。
 dsp_trust_fund_name,KFC信托基金
 dsp_trust_fund_description,每周四获得50信用点。
 dsp_snake_oil_name,蛇油
-dsp_snake_oil_description,开局获得20瓶纯淀粉梦尘。
+dsp_snake_oil_description,开局获得20瓶淀粉梦尘，它们不算作违禁品。
 dsp_charm_mushroom_name,魅惑菇
 dsp_charm_mushroom_description,梦帽菇和梦魇帽菇具有食物和麻醉品标签。
 dsp_jane_smith_name,张娟
@@ -413,11 +413,11 @@ dsp_share_cigarette_not_cig,这个选项只对香烟有效。
 dsp_share_cigarette_not_owned,这包烟不在你手上。
 dsp_cracker_supplies_7,更高的幸运。
 dsp_mutual_choice_name,双向选择
-dsp_mutual_choice_description,每天一次，顾客未交易就离开时，队列会新增一名顾客。
+dsp_mutual_choice_description,每天2次，顾客未交易就离开时，队列会新增1名顾客。
 dsp_snake_oil_item_name,蛇油
 dsp_newspaper_stand_name,报亭
 dsp_newspaper_stand_description,在夜间服务支付10信用点来获得额外4份报纸。你总是可以按每份8信用点的价格对每名顾客出售一份当日的报纸。
-dsp_newspaper_stand_menu,卖一份报纸（8信用点）
+dsp_newspaper_stand_menu,出售
 dsp_service_paper_delivery,报纸配送
 dsp_service_paper_delivery_tooltip,花10信用点，明早多送4份当日报纸
 dsp_newspaper_stand_sold,卖出一份报纸，+8信用点
@@ -425,12 +425,12 @@ dsp_newspaper_stand_already,我今天已经买过一份报纸了。
 dsp_newspaper_stand_stale,这报纸过期了。
 dsp_newspaper_stand_delivered,配送了 {0} 份当日报纸
 dsp_watermelon_merge_name,合成大西瓜
-dsp_watermelon_merge_description,你可以将两个同等大小的同类作物合成一个更大的同类作物。
+dsp_watermelon_merge_description,你可以将两个同等大小的同类作物合成一个更大的同类作物。如果是荧光莓，反而会变小。
 dsp_watermelon_merge_menu,合成（消耗同类一份）
 dsp_watermelon_merge_done,合成了更大的{0}，价值 {1} 信用点
 dsp_watermelon_merge_max,这已经是最大了，合成不了。
 dsp_hydro_question_name,水…培？
-dsp_hydro_question_description,你可以在水管上种植2株植物。初始获得每种种子各2颗。
+dsp_hydro_question_description,你可以在水管里种植2株植物。初始获得随机2颗种子。
 dsp_poet_admirer_name,诗人仰慕者
 dsp_poet_admirer_description,仰慕者的纸条是价值50信用点的奢侈品。
 dsp_admirer_poem_1,关关雎鸠，在河之洲。窈窕淑女，君子好逑。——《诗经·周南·关雎》
@@ -476,5 +476,8 @@ dsp_admirer_poem_40,我愿意是急流，山里的小河，在崎岖的路上、
 dsp_magician_piper_name,魔笛手
 dsp_magician_piper_description,每携带一只老鼠进入垃圾场，你都可以额外进行一次拾荒。
 dsp_careless_tutor_name,粗心的导师
-dsp_careless_tutor_description,导师忘了给你买报纸。你不会收到报纸，事件仍然生效，但不会显示在日历里。可以在夜间服务中订购报纸来移除这一特质。
+dsp_careless_tutor_description,导师忘了给你买报纸，尽管他以为自己买了。你不会收到报纸，事件仍然生效，但不在日历中显示。你可以在夜间服务中订购报纸来移除这一特质。
 dsp_service_newspaper_subscription,订购报纸
+dsp_scav_drone_pocket3,口袋#3
+dsp_scav_drone_pocket4,口袋#4
+dsp_newspaper_stand_no_customer_hint,（现在没有顾客）

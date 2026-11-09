@@ -16,7 +16,7 @@ dsp_built_on_dump_description,"쓰레기통에 넣은 물건이 곧바로 쓰레
 dsp_tacit_understanding_name,암묵적 이해
 dsp_tacit_understanding_description,"검문이 더 자주 이루어집니다. 치안부 평판이 0보다 높으면 검문은 항상 부패한 검문관이 나옵니다. 도둑과 소매치기와 음식 도둑이 조금 더 자주 찾아옵니다."
 dsp_no_trash_name,쓰레기통 없음
-dsp_no_trash_description,"The trash can is converted into a smuggler stash. You clean the shop yourself and no longer need the night janitorial service, but you can still trade through the trash can."
+dsp_no_trash_description,"쓰레기통이 밀수 은닉처로 개조된다. 청소는 직접 하고 야간 청소 서비스가 필요 없어지지만, 쓰레기통 거래는 계속할 수 있다."
 dsp_former_assistant_name,전직 비서
 dsp_former_assistant_description,시작부터 잭슨 투자 I이 해금됩니다. 잭슨 박사와 거래할 때 10% 거래 보너스를 받습니다. 3일마다 한 번 그를 불러 가게로 오게 할 수 있습니다.
 dsp_former_assistant_contact,잭슨 박사
@@ -44,7 +44,7 @@ dsp_self_built_description,"시작부터 건물을 소유하고 있지만 전력
 dsp_cellar_name,천연 와인 저장고
 dsp_wild_favor_description,"와일드의 전화가 시작부터 해금되고 와일드의 호의 300을 얻습니다."
 dsp_wild_favor_name,"와일드의 호의"
-dsp_cellar_description,양조에 걸리는 시간이 하루 줄고 완성된 와인은 3일간 숙성됩니다.
+dsp_cellar_description,"양조 기간이 1일 줄고, 완성된 술은 3일 숙성된다."
 dsp_stable_partnership_name,안정적인 파트너십
 dsp_stable_partnership_description,모든 딜러가 전화로 주문하는 대신 화요일과 금요일에 직접 가게로 옵니다.
 dsp_stable_partnership_phone,화요일과 금요일에 물건을 두고 갈게. 전화할 필요 없어.
@@ -342,7 +342,7 @@ dsp_rat_infestation_removed,방역업자가 쥐를 처리했습니다 ~ 어젯�
 dsp_strict_crackdown_name,철저한 단속
 dsp_strict_crackdown_description,부패 경찰이 나타나지 않습니다. 장물의 열기가 절반의 속도로만 식습니다.
 dsp_never_empty_handed_name,빈손으로는 안 끝남
-dsp_never_empty_handed_description,빈손으로 장소를 떠나면 25 크레딧을 얻습니다.
+dsp_never_empty_handed_description,주머니가 하나 이상 비어 있는 상태로 장소를 떠나면 15 크레딧을 얻는다.
 dsp_never_empty_log,빈손으로 돌아왔지만 그래도 25 크레딧을 챙겼습니다.
 dsp_never_empty_notify,빈손으로는 안 끝남: +25 크레딧
 dsp_patience_limit_name,짧은 인내심
@@ -368,9 +368,9 @@ dsp_foreknowledge_when_after, 일 뒤
 dsp_foreknowledge_price_tag,가격
 dsp_foreknowledge_price_name,가격 변동
 dsp_prohibition_name,금주법
-dsp_prohibition_description,모든 술은 중급 밀수품으로 취급합니다.
+dsp_prohibition_description,모든 술이 중급 밀수품으로 취급된다. 발효 중인 술은 50에 팔리며 마약으로 취급된다.
 dsp_tobacco_tax_name,담배세
-dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
+dsp_tobacco_tax_description,담배에 소매가 50% 할증이 붙는다. 다만 그 할증분의 20%만 받는다.
 dsp_blood_donor_name,헌혈자
 dsp_blood_donor_description,하루에 한 번 혈액팩으로 헌혈하면 혈액팩 하나를 더 얻습니다. 대신 다음 날 손님 한 명을 놓칩니다.
 dsp_force_open_name,강제 개봉
@@ -399,26 +399,26 @@ dsp_revolutionary_influence_slip_title,혁명군의 정보
 dsp_revolutionary_influence_slip_body,오딘은 떠나기 전 목소리를 낮췄습니다. 3일 안에 혁명군이 움직입니다 — “{0}”. 달력에 이미 표시되어 있습니다.
 dsp_service_professional_tooltip,원한이 더 이상 당신을 괴롭히지 않습니다.
 dsp_scav_drone_name,고물 수집 드론
-dsp_scav_drone_description,야간 행동 중에는 손이 두 개 더 있습니다. 뒤질 때 쓰레기를 주울 확률이 낮아집니다.
-dsp_trust_fund_name,Keystone Foundation for Charity
-dsp_trust_fund_description,You get 50 credits every Thursday.
+dsp_scav_drone_description,야간 행동 시 주머니가 두 개 늘어난다. 탐색할 때 쓰레기를 얻을 확률이 낮아진다.
+dsp_trust_fund_name,키스톤 자선 재단
+dsp_trust_fund_description,매주 목요일에 50 크레딧을 받는다.
 dsp_snake_oil_name,뱀기름
-dsp_snake_oil_description,시작할 때 순수 전분 드림 더스트 20병을 들고 시작합니다.
+dsp_snake_oil_description,전분 계열 꿈가루 20병을 가지고 시작한다. 이들은 밀수품으로 취급되지 않는다.
 dsp_charm_mushroom_name,매혹 버섯
 dsp_charm_mushroom_description,꿈 버섯과 악몽 버섯은 음식과 마약으로 모두 취급됩니다.
 dsp_jane_smith_name,홍길순
 dsp_jane_smith_description,모든 이름이 홍길동 / 홍길순으로 표시됩니다.
 dsp_scav_drone_extra,고물 수집 드론: 조금 더 챙겨 왔습니다.
-dsp_trust_fund_paid,Keystone Foundation for Charity: {0} credits arrived for Thursday.
+dsp_trust_fund_paid,키스톤 자선 재단: 목요일 몫 {0} 크레딧이 도착했다.
 dsp_share_cigarette_not_cig,이 선택지는 담배에만 쓸 수 있습니다.
 dsp_share_cigarette_not_owned,그 담배는 지금 손에 없습니다.
 dsp_cracker_supplies_7,행운 상승.
 dsp_mutual_choice_name,상호 선택
-dsp_mutual_choice_description,"하루에 한 번, 손님이 거래 없이 떠나면 대기열에 손님이 한 명 더 추가됩니다."
+dsp_mutual_choice_description,"하루 2번, 거래 없이 떠난 손님 1명이 대기열에 1명을 추가한다."
 dsp_snake_oil_item_name,뱀기름
 dsp_newspaper_stand_name,신문 가판대
 dsp_newspaper_stand_description,야간 서비스에서 10 크레딧을 지불하면 신문 4부를 더 받습니다. 언제든지 손님마다 당일 신문 한 부를 8 크레딧에 팔 수 있습니다.
-dsp_newspaper_stand_menu,신문 한 부 팔기 (8 크레딧)
+dsp_newspaper_stand_menu,팔기
 dsp_service_paper_delivery,신문 배달
 dsp_service_paper_delivery_tooltip,10 크레딧: 이튿날 아침 당일 신문이 4부 더 도착합니다
 dsp_newspaper_stand_sold,신문 한 부를 팔았습니다. +8 크레딧
@@ -426,56 +426,59 @@ dsp_newspaper_stand_already,오늘은 이미 신문을 샀어.
 dsp_newspaper_stand_stale,이 신문은 오래됐어.
 dsp_newspaper_stand_delivered,당일 신문이 {0}부 도착했습니다
 dsp_watermelon_merge_name,과일 합성
-dsp_watermelon_merge_description,같은 종류의 같은 크기 작물 두 개를 더 큰 작물 하나로 합칠 수 있습니다.
+dsp_watermelon_merge_description,같은 크기의 같은 작물 2개를 더 큰 하나로 합칠 수 있다. 블루베리는 오히려 작아진다.
 dsp_watermelon_merge_menu,합성 (동일 작물 1개 소모)
 dsp_watermelon_merge_done,더 큰 {0}(으)로 합성되었습니다. 가치 {1} 크레딧.
 dsp_watermelon_merge_max,더 이상 커질 수 없습니다.
 dsp_hydro_question_name,수…경?
-dsp_hydro_question_description,수도관 위에서 식물을 기를 수 있습니다. 시작할 때 종류별 씨앗을 2개씩 가집니다.
+dsp_hydro_question_description,수도꼭지에서 식물 2그루를 기를 수 있다. 시작 시 무작위 씨앗 2개를 받는다.
 dsp_poet_admirer_name,시인 같은 애모자
-dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
-dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
-dsp_admirer_poem_2,"The reeds and rushes are deeply green, and the white dew is turned into hoarfrost. The man of whom I think is somewhere about the water. - Book of Songs, Jian Jia (tr. James Legge)"
-dsp_admirer_poem_3,"For life or for death, however separated, to our wives we pledged our word. We held their hands; we are to grow old together. - Book of Songs, Ji Gu (tr. James Legge)"
-dsp_admirer_poem_4,"When shall we meet again in longing? Tonight, this hour, I cannot bear it. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
-dsp_admirer_poem_5,"Whoever enters the gate of longing learns how bitter longing is. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
-dsp_admirer_poem_6,"The corners of the earth have an end; longing alone has none. - Yan Shu, Spring Regret (tr. Xu Yuanchong)"
-dsp_admirer_poem_7,"My belt grows loose and I never regret it - worn thin for her sake. - Liu Yong, Die Lian Hua (tr. Xu Yuanchong)"
-dsp_admirer_poem_8,"Once you have seen the ocean, no water will do; once you have seen Mount Wu, no cloud is a cloud. - Yuan Zhen, Five Poems of Longing (tr. Xu Yuanchong)"
-dsp_admirer_poem_9,"Do not let the spring heart race with the flowers - every inch of longing burns to an inch of ash. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_10,"When shall we trim the candle by the west window, and speak of this rainy night in Ba? - Li Shangyin, Written on a Rainy Night (tr. Xu Yuanchong)"
-dsp_admirer_poem_11,"No phoenix wings to fly to you - yet one thread links heart to heart. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_12,"This feeling could have been a memory to keep; only then, I was already lost. - Li Shangyin, The Jeweled Zither (tr. Xu Yuanchong)"
-dsp_admirer_poem_13,"If love between both sides can last for aye, why need they stay together night and day? - Qin Guan, Immortals at the Magpie Bridge (tr. Xu Yuanchong)"
-dsp_admirer_poem_14,"A thousand times I seek her in the crowd; I turn, and there she is, where the lights are dim. - Xin Qiji, The Lantern Festival (tr. Xu Yuanchong)"
-dsp_admirer_poem_15,"Ten years, dead and living dim and draw apart; I do not think of you, yet cannot forget. - Su Shi, Riverside Town (tr. Xu Yuanchong)"
-dsp_admirer_poem_16,"One hour of a spring night is worth a thousand gold; flowers have fragrance, the moon has shadow. - Su Shi, Spring Night (tr. Xu Yuanchong)"
-dsp_admirer_poem_17,"Let me be the star and you the moon, brightening each other night after night. - Fan Chengda, The Distant Cart (tr. Xu Yuanchong)"
-dsp_admirer_poem_18,"I only wish your heart were like mine; then longing would never be betrayed. - Li Zhiyi, Bu Suan Zi (tr. Xu Yuanchong)"
-dsp_admirer_poem_19,"Trade my heart for yours, and only then you will know how deep this remembering is. - Gu Xiong, Telling Innermost Feeling (tr. Xu Yuanchong)"
-dsp_admirer_poem_20,"My thoughts of you run like the west river, flowing east all day and never resting. - Yu Xuanji, Gazing at the River (tr. Xu Yuanchong)"
-dsp_admirer_poem_21,"I remember a green silk skirt, and now I love every blade of grass. - Niu Xiji, Sheng Cha Zi (tr. Xu Yuanchong)"
-dsp_admirer_poem_22,"When the flower is ripe for picking, pick it; do not wait for an empty branch. - Du Qiuniang, Robe of Gold Thread (tr. Xu Yuanchong)"
-dsp_admirer_poem_23,"Hard to meet and hard to part; the east wind has no strength and a hundred flowers fade. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
-dsp_admirer_poem_24,"You came by on bamboo stilts, playing horse, you walked about my seat, playing with blue plums. - Li Bai, The River Merchant's Wife (tr. Ezra Pound, after Arthur Waley)"
-dsp_admirer_poem_25,"In heaven we would be birds flying side by side; on earth, branches of one tree grown together. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
-dsp_admirer_poem_26,"Heaven and earth endure, yet they shall end; this sorrow stretches on and has no end. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
-dsp_admirer_poem_27,"May we all be blessed with longevity, though a thousand miles apart, to share the same moonlight. - Su Shi, Prelude to Water Melody (tr. Lin Yutang)"
-dsp_admirer_poem_28,"When you are old and grey and full of sleep, and nodding by the fire, take down this book. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
-dsp_admirer_poem_29,"But one man loved the pilgrim soul in you, and loved the sorrows of your changing face. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
-dsp_admirer_poem_30,"I remember that wondrous moment: before me you appeared, a fleeting vision, a spirit of pure beauty. - Pushkin, To Kern (tr. Zha Liangzheng)"
-dsp_admirer_poem_31,"I loved you once; perhaps that love has not quite died in my soul. - Pushkin, I Loved You (tr. Zha Liangzheng)"
-dsp_admirer_poem_32,"Shall I compare thee to a summer day? Thou art more lovely and more temperate. - Shakespeare, Sonnet 18 (tr. Liang Zongdai)"
-dsp_admirer_poem_33,"I love thee with the breath, smiles, tears, of all my life. - Elizabeth Barrett Browning, Sonnets from the Portuguese (tr. Zha Liangzheng)"
-dsp_admirer_poem_34,"She walks in beauty, like the night of cloudless climes and starry skies. - Byron, She Walks in Beauty (tr. Zha Liangzheng)"
-dsp_admirer_poem_35,"On the wings of song, my darling, let us go. - Heine, On Wings of Song (tr. Feng Zhi)"
-dsp_admirer_poem_36,"O my Luve is like a red, red rose, that is newly sprung in June. - Robert Burns, A Red, Red Rose (tr. Wang Zuoliang)"
-dsp_admirer_poem_37,"You smiled and talked to me of nothing and I felt that for this I had been waiting long. - Tagore, Stray Birds (tr. Zheng Zhenduo)"
-dsp_admirer_poem_38,"I like for you to be still: it is as though you were absent. - Neruda, Twenty Love Poems (tr. Li Zongrong)"
-dsp_admirer_poem_39,"Green, how I want you, green. - Lorca, Romance Sonambulo (tr. Dai Wangshu)"
-dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the rugged road and the rocks. - Petofi, I Would Be a Torrent (tr. Sun Yong)"
-dsp_magician_piper_name,Pied Piper
-dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
-dsp_careless_tutor_name,Careless Tutor
-dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
-dsp_service_newspaper_subscription,Newspaper Subscription
+dsp_poet_admirer_description,추종자의 쪽지는 가치 50 크레딧의 사치품이 된다.
+dsp_admirer_poem_1,강물 섬에서 물수리가 꽥꽥 운다. 조용하고 어진 아가씨는 군주에게 좋은 짝. — 시경 「관저」
+dsp_admirer_poem_2,갈대와 억새는 짙푸르고 흰 이슬은 서리로 변했다. 내가 생각하는 사람은 물가 어딘가에 있다. — 시경 「겸가」
+dsp_admirer_poem_3,"살아서든 죽어서든, 헤어져 있어도 아내들에게 맹세했다. 그들의 손을 잡았다. 함께 늙어가자. — 시경 「격고」"
+dsp_admirer_poem_4,그리움 속에 언제 다시 만날까. 오늘 이 시간은 견딜 수 없다. — 이백 「추풍사」
+dsp_admirer_poem_5,그리움의 문에 들어선 사람은 그리움이 얼마나 쓰라린지 안다. — 이백 「추풍사」
+dsp_admirer_poem_6,땅의 끝에는 끝이 있다. 오직 그리움만이 끝이 없다. — 안수 「춘한」
+dsp_admirer_poem_7,허리띠는 느슨해지고 그래도 후회 없다. 그녀 때문에 닳아서. — 유영 「접련화」
+dsp_admirer_poem_8,바다를 본 사람은 다시 어떤 물로도 만족하지 못한다. 무산을 본 사람은 구름을 구름이라 여기지 않는다. — 원진 「이사오수」
+dsp_admirer_poem_9,봄 마음이 꽃과 함께 달리게 두지 마라. 한 치의 그리움은 한 치의 재가 된다. — 이상은 「무제」
+dsp_admirer_poem_10,언제 서쪽 창에서 심지를 자르고 파 땅의 비 오는 밤 이야기를 나눌까. — 이상은 「야우기북」
+dsp_admirer_poem_11,봉황의 날개는 없다. 그래도 한 가닥 실이 마음과 마음을 잇는다. — 이상은 「무제」
+dsp_admirer_poem_12,이 마음은 기억으로 남을 수 있었을 텐데. 다만 그때 나는 이미 길을 잃었지. — 이상은 「금슬」
+dsp_admirer_poem_13,"양쪽의 사랑이 영원히 간다면, 어찌 밤낮으로 함께 있어야 하는가. — 진관 「작교선」"
+dsp_admirer_poem_14,수천 명 속에서 몇 번이고 그녀를 찾는다. 돌아보니 불빛이 흐린 곳에 그녀가 있다. — 신기질 「청옥안」
+dsp_admirer_poem_15,"십 년, 삶과 죽음이 갈려 흐릿하고 멀어졌다. 생각하지 않는데도 잊을 수 없다. — 소식 「강성자」"
+dsp_admirer_poem_16,"봄밤 한 시각은 천금의 값. 꽃에는 향기가, 달에는 그림자가 있다. — 소식 「춘야」"
+dsp_admirer_poem_17,"나는 별이, 그대는 달이 되게 하여 밤마다 서로를 비추자. — 범성대 「거요요」"
+dsp_admirer_poem_18,다만 그대 마음이 내 마음 같기를 바란다. 그러면 그리움은 배신당하지 않으리. — 이지의 「복산자」
+dsp_admirer_poem_19,내 마음과 그대 마음을 바꾸어 보라. 그제야 이 그리움이 얼마나 깊은지 알 것이다. — 고형 「소충정」
+dsp_admirer_poem_20,그대를 향한 생각은 서쪽 강물처럼 흐른다. 하루 종일 동쪽으로 쉬지 않고. — 어현기 「강을 보며」
+dsp_admirer_poem_21,초록 비단 치마가 기억난다. 그리고 이제는 풀잎 하나하나가 사랑스럽다. — 우희제 「생사자」
+dsp_admirer_poem_22,꽃이 딸 때가 되면 따라. 빈 가지를 기다리지 마라. — 두추랑 「금루의」
+dsp_admirer_poem_23,만나기 어렵고 헤어지기 어렵다. 동풍은 힘이 없고 백 가지 꽃이 진다. — 이상은 「무제」
+dsp_admirer_poem_24,그대는 대나무 말을 타고 놀며 와서 내 자리 주위를 푸른 매실을 가지고 놀며 걸었다. — 이백 「장간행」
+dsp_admirer_poem_25,"하늘에서는 나란히 나는 새가, 땅에서는 한 나무의 가지가 되어 이어지리. — 백거이 「장한가」"
+dsp_admirer_poem_26,하늘과 땅은 이어지지만 결국 끝난다. 이 슬픔만은 끝이 없다. — 백거이 「장한가」
+dsp_admirer_poem_27,모두가 장수하여 천 리 떨어져 있어도 같은 달빛을 나눌 수 있기를. — 소식 「수조가두」
+dsp_admirer_poem_28,"늙어 백발이 되고 졸려서 난롯가에서 끄덕일 때, 이 책을 펴 보아요. — W. B. 예이츠 「그대 늙었을 때」"
+dsp_admirer_poem_29,"그러나 한 사람은 그대 안의 순례자 영혼을 사랑했고, 변해가는 얼굴의 슬픔을 사랑했다. — W. B. 예이츠 「그대 늙었을 때」"
+dsp_admirer_poem_30,"그 놀라운 순간을 기억한다. 그대가 내 앞에 나타났다, 덧없는 환영, 순수한 아름다움의 정령. — A. S. 푸시킨 「케른에게」"
+dsp_admirer_poem_31,한때 그대를 사랑했다. 그 사랑이 아직 내 영혼에서 다 꺼지지 않았는지도 모른다. — A. S. 푸시킨 「그대를 사랑했노라」
+dsp_admirer_poem_32,그대를 여름날에 비할까. 그대는 더 사랑스럽고 더 온화하다. — W. 셰익스피어 소네트 18
+dsp_admirer_poem_33,내 평생의 숨결과 미소와 눈물로 그대를 사랑한다. — E. B. 브라우닝 「포르투갈 소네트」
+dsp_admirer_poem_34,그녀는 아름다움 속을 걷는다. 구름 없는 하늘의 별밤처럼. — 바이런 「그녀는 아름답게 걷는다」
+dsp_admirer_poem_35,"노래의 날개를 타고, 그대여, 함께 가자. — H. 하이네 「노래의 날개 위에」"
+dsp_admirer_poem_36,"내 사랑은 빨갛고 빨간 장미, 유월에 막 피어난. — R. 번스 「빨간 빨간 장미」"
+dsp_admirer_poem_37,"그대는 웃으며 아무 말도 하지 않았고, 나는 이것을 오래 기다렸음을 느꼈다. — R. 타고르 「방랑의 새」"
+dsp_admirer_poem_38,그대가 조용하기를 바란다. 마치 없는 것처럼. — P. 네루다 「스무 편의 사랑의 시」
+dsp_admirer_poem_39,"초록, 내가 그대를 얼마나 원하는지, 초록. — F. G. 로르카 「잠자는 로만세」"
+dsp_admirer_poem_40,"나는 급류가 되고 싶다, 산의 시내가 되어 험한 길과 바위를 넘어 흐르고 싶다. — S. 페퇴피 「강이 되고 싶다」"
+dsp_magician_piper_name,피리 부는 사나이
+dsp_magician_piper_description,쓰레기장에 데려가는 쥐 한 마리당 추가로 한 번 탐색할 수 있다.
+dsp_careless_tutor_name,덜렁대는 스승
+dsp_careless_tutor_description,스승은 샀다고 믿지만 신문을 사지 않았다. 신문은 오지 않고 이벤트는 일어나지만 달력에 뜨지 않는다. 야간 서비스에서 구독하면 해제된다.
+dsp_service_newspaper_subscription,신문 구독
+dsp_scav_drone_pocket3,주머니 #3
+dsp_scav_drone_pocket4,주머니 #4
+dsp_newspaper_stand_no_customer_hint, (지금 손님이 없음)

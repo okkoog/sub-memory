@@ -1,0 +1,24 @@
+农业扩展1.7.4 — 官方接口与权限兼容（本地测试）
+
+本次针对游戏显示的“使用下次更新将拒绝的权限”提示。
+官方扫描器确认，旧版唯一的reflection-external来源是AgriFurnaceCyclePatch.TargetMethod：通过计算出的内部闭包类型定位原版熔炉方法。
+
+改动
+- 删除这处内部方法的反射定位和补丁，改为扩展GameItem公开的onCycleEndSlotItemFunc回调。沿用原有公开熔炉工厂扩展入口。
+- 原版回调先执行，实际消耗了原料时不重复处理铁果。正常过夜与原版涡轮调用同一循环回调。
+- 保留小/普通/大/巨大铁果的数量、产量、纯度及质量模组规则；保留基础耗电、完整批次输出空间检查和失败回滚。
+- 从manifest移除reflection-external声明。当前DLL经游戏原装ModScanner扫描，Capabilities、Findings、HardFlags、Pending均为空，弃用权限/反射为False。
+- 不再保证依赖原版熔炉委托Target内部类型的其他模组兼容。此点遵循用户指定的“官方接口优先”。不修改其他模组或游戏加载器规则。
+- 包含1.7.3全部香水手册补充：第3—5页为反应顺序、六组融合表及优先级，第6页起为香水标准。
+
+验证
+- 当前游戏程序集编译：0警告、0错误。
+- 52项源代码链接的熔炉专项断言：四种规格、各自凑批、巨大优先、混合原矿优先、缺电、未开启、产出不足及插入失败回滚、质量加成传递、重复配置、连续循环、物品归属与原版回调参数/异常保留。
+- 75处Harmony目标和94项参数/结果绑定检查通过。
+- 启动时序检查通过；未提前访问本地化/液体数据。
+- 原版扫描器在同一运行包上对比：1.7.3存在reflection-external，1.7.4不再检出。扫描未执行或修改模组玩法。
+- 上述为离线与受控边界检查。请实测铁果过夜、普通/高级涡轮、模组加成和读档；长时间游玩由用户验证。
+
+本版本不修改玩家存档，不上传工坊。LatestRelease和WorkshopPublication继续保留已发布1.7.2。
+
+Agri Expansion 1.7.4: Ironfruit smelting now extends the public machine cycle callback instead of reflecting into a native closure. The reflection-external declaration has been removed. Vanilla processing retains priority; recipes, power, purity and transaction rollback rules are preserved. The game's own scanner reports no capabilities or findings. Mods relying on the furnace delegate's internal Target type are no longer covered. Includes the complete bilingual handbook rules from 1.7.3. Local test build, not uploaded to Workshop.

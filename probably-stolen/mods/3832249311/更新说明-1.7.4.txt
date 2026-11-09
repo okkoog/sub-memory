@@ -1,0 +1,11 @@
+农业扩展1.7.4 / Agri Expansion 1.7.4
+
+铁果冶炼改为公开机器循环回调，移除reflection-external权限；游戏官方扫描器不再检出弃用权限或反射警告。
+铁果四种规格的配方、产量、耗电、纯度和模组规则保留。原版矿石优先；整批放不下时保留原料和电量。兼顾正常过夜与原版涡轮加工。优先遵循官方接口，不再保证依赖原版熔炉内部委托类型的其他模组兼容。
+香水手册扩为13页，在配方之前新增反应顺序、六组融合表、融合优先级、衬托并列顺序和成品选择规则（第3—5页）。中英文同步，旧阅读位置自动迁移。
+包含1.7.2全部内容，保留原封面和六张展示图。更新后请完全退出并重新启动游戏。
+
+Ironfruit smelting now uses the public per-machine cycle callback. Removed reflection-external; the official game scanner reports no deprecated capabilities or reflection.
+Preserved all four size recipes, yield, power, purity and module rules, native-ore priority and full-batch output checks. Overnight and native turbo processing share the callback. Official API compatibility takes priority; mods relying on the furnace delegate's internal Target type are no longer covered.
+Expanded the bilingual Perfumery Handbook to 13 pages. Pages 3-5 explain processing order, all six fusion pairs, fusion priority, support ties and automatic perfume selection, before the standards pages. Existing reading positions migrate by chapter.
+Includes all 1.7.2 content. Original cover and six gallery images retained. Fully exit and restart the game after updating.

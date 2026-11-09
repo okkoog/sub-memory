@@ -1,4 +1,4 @@
-Neon Undertow 0.5.13
+Neon Undertow 0.5.14
 
 The manual bottler takes up 3 x 3 inventory cells. Bring the Bottling Handbook, high-quality water (99% or higher), one matching concentrate and an empty glass bottle (750 mL) or can (350 or 500 mL). The bottle you put in is the bottle you get back. The Quayside Canning Co-op sells all three concentrates and stocked supply cases.
 
@@ -50,3 +50,6 @@ BACK ROOM (0.5.7): open it from the arrow at the bottom right of the shop. Machi
 SEEDS: Quayside sells packs of three matching seeds. Select SEEDS again to switch between fruit and vegetables. The PRODUCE shelf carries mixed seed packs, daily fresh deliveries and native Nutrifruit. Stormglass Depot Outlet sells the Fizzworks Soda Canner and Dockside Production Galley.
 
 CHEMISTRY: The Workshop Fieldbook covers basic shop chemistry, 33 follow-on products and Yardglass lab safety. Divide a first-stage batch before adding the ingredient for your route. See CHEMISTRY.txt for the full catalog.
+
+COUNTER VISITS: Shoppers carry less money when the shop is new. Their budgets grow with the run and their faction's opinion of you. They still come looking for particular goods. A follow-up appointment has money for one named item. You can usually offer advice instead. Some wanted visitors will tell you about a problem if you question them. Choose whom to send, ask for time, or leave it alone. New conversations are in English. Shopping requests are available in every supported language.
+AFTER HOURS: Talk again at the counter to get to know a regular. Before opening or after closing, enter the back room and choose Visitors / spare room. Some friends bring company or ask to see you privately. You can stay friends at ten hearts. A spare cot and a personal locker allow one willing friend to live here. Authorized private warrant statements can be written up at the same desk.
