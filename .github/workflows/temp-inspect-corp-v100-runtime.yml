@@ -1,0 +1,42 @@
+name: Temp inspect CorpPresence v1.0.0 runtime
+on:
+  push:
+    branches: [tmp-corp-v100-runtime-review]
+    paths:
+      - .github/workflows/temp-inspect-corp-v100-runtime.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3828913695
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Decompile CorpPresence read-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy"
+          DLL=probably-stolen/mods/3828913695/CorpPresence.dll
+          sha256sum "$DLL" | tee "$RUNNER_TEMP/corp-sha256.txt"
+          mkdir -p "$RUNNER_TEMP/corp"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o "$RUNNER_TEMP/corp" "$DLL"
+          mkdir -p "$RUNNER_TEMP/out"
+          for f in             "$RUNNER_TEMP/corp/CorpPresence/Main.cs"             "$RUNNER_TEMP/corp/CorpPresence/GameResources.cs"             "$RUNNER_TEMP/corp/CorpPresence/ItemRegistry.cs"             "$RUNNER_TEMP/corp/CorpPresence/ModLog.cs"             "$RUNNER_TEMP/corp/CorpPresence/Runtime/ResourceBootstrap.cs"; do
+            if [ -f "$f" ]; then cp --parents "$f" "$RUNNER_TEMP/out"; fi
+          done
+          grep -RniE -C 8 'OnEnable|OnDisable|Tick\(|InitializationOperation|LocalizationSettings|SelectedLocale|OnModAssetsLoaded|OnGameLoaded|OnShutterOpened|Ready|Abort|throw|catch|Register' "$RUNNER_TEMP/corp/CorpPresence" --include='*.cs' > "$RUNNER_TEMP/out/activation-grep.txt" || true
+          cp "$RUNNER_TEMP/corp-sha256.txt" "$RUNNER_TEMP/out/"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CorpPresence-v100-runtime-decompile
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
