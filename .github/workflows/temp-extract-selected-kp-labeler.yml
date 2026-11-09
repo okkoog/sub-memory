@@ -1,0 +1,36 @@
+name: Temp extract selected KoreanPack DLL
+on:
+  push:
+    branches: [tmp-labeler-only-on-fix-water-20261109]
+    paths:
+      - .github/workflows/temp-extract-selected-kp-labeler.yml
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/Managed
+            probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Extract source from exact selected DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -r probably-stolen/Managed -o "$RUNNER_TEMP/src" "probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll"
+          ls "$RUNNER_TEMP/src/ProbablyStolenKoreanPack"
+          cp "probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll" "$RUNNER_TEMP/src/ORIGINAL.dll"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selected-koreanpack-labeler-source
+          path: ${{ runner.temp }}/src
+          if-no-files-found: error
