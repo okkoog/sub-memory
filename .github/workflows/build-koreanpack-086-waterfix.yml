@@ -1,8 +1,8 @@
-name: Build KoreanPack 0.8.6 water-condition fix
+name: Build exact b041 KoreanPack plus Corp postload fix
 on:
   push:
     branches:
-      - fix-koreanpack-mechanic-water-20261109
+      - tmp-koreanpack-corp-postload-b041
     paths:
       - .github/workflows/build-koreanpack-086-waterfix.yml
       - probably-stolen/build/KoreanPack086WaterFix.csproj
@@ -59,6 +59,20 @@ jobs:
           grep -R -q 'Water tooltip v4 audit:' "$RUNNER_TEMP/waterfix-decompiled"
           grep -R -q 'CoreGameWaterFeaturePostfix' "$RUNNER_TEMP/waterfix-decompiled"
           grep -R -q 'Native water feature repaired after other mods' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'localizationHooksReady' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'EnsureLocalizationHooks' "$RUNNER_TEMP/waterfix-decompiled"
+          python3 - <<'PY'
+          from pathlib import Path
+          p=next(Path("$RUNNER_TEMP/waterfix-decompiled").rglob("WaterNameCompatibility.cs"))
+          t=p.read_text()
+          a=t[t.index("internal void Enable()"):t.index("internal void Disable()", t.index("internal void Enable()"))]
+          if "LocalizationSettings" in a:
+              raise SystemExit("FAIL: Enable still touches LocalizationSettings")
+          r=t[t.index("private void Request()"):]
+          if "EnsureLocalizationHooks();" not in r or "!worldReady" not in r:
+              raise SystemExit("FAIL: Request is not postload gated")
+          print("Corp postload initialization isolation verified")
+          PY
           test "$(stat -c '%s' probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll)" -ge 20000
       - name: Stage candidate DLL (never overwrite released main)
         shell: bash
@@ -69,16 +83,6 @@ jobs:
           sha256sum probably-stolen/build/waterfix-086/ProbablyStolenKoreanPack.dll > probably-stolen/build/waterfix-086/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: KoreanPack-086-water-condition-candidate
+          name: KoreanPack-086-water-condition-corp-postload
           path: probably-stolen/build/waterfix-086/
           if-no-files-found: error
-      - name: Commit candidate to isolated branch only
-        shell: bash
-        run: |
-          set -euo pipefail
-          git add probably-stolen/build/waterfix-086
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Build 0.8.6 Korean water-condition repair candidate'
-          git push origin HEAD:fix-koreanpack-mechanic-water-20261109
