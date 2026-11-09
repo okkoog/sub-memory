@@ -222,7 +222,7 @@ debug_items_kits,トップページ > トップページ > トップページ > 
 debug_items_nodes,トップ > ワークショップ > すべての3つのノード
 debug_items_compiler,ワークショップ ： コンパイラー + 4 ホワイト ディスク + トゥニング マトリックス
 debug_items_printer,ワークショップ 3Dプリンター
-debug_items_materials,ワークショップ 印刷チップとテスト材料
+debug_items_materials,工房｜印刷チップ・モジュール・テスト素材
 debug_items_resonance,ワークショップ レソナンス モジュール テスト キット
 debug_items_battery,シンプルな放置可能なバッテリー x3
 debug_story_status,ワークショップのストーリー 支出とイベントの状態
@@ -428,10 +428,11 @@ workshop_display_name,ガブリエル工房
 workshop_display_description,ガブリエルと出会い、機械の改造、3Dプリントのレシピ、モジュールコンパイラーを解放しましょう。MOD設定ではイベントの発生条件や立ち絵を変更でき、大人向け商品のストーリーを無効にすることもできます。
 duke_name,星間公爵
 duke_intro,やあ、友よ！ 星間公爵だ！ そう、あの星間公爵さ。
-duke_contact,連絡先\n{0}
+duke_contact,星間公爵の連絡先\n—— {0}\n覚えておいて！ ちょっと変わった素材商よ。\nこう伝えてね。{1}\n金属くずと3Dプリンター用フィラメント、それにケーブルを持ってきてくれる。\nこう伝えてね。{2}\nゴム、ラテックス、ガラスの破片を売ってくれる。
 duke_phone_hello,やあ、友よ！ 誰に用だい？ ああ、そうだった。この番号は今、星間公爵のものだ。
 duke_contents,偉大なる星間公爵に何の用だ？ 何か偉大な使命でもあるのか？
 duke_order,プリンターの材料を1ロット頼む
+duke_order_other,ほかの材料を注文する
 duke_booked,明日持っていくから、見てくれよ！
 duke_phone_cancel,今日はやめておく。
 duke_pending,君の任務は覚えているぞ。星間公爵は約束を必ず守る。
@@ -444,13 +445,13 @@ duke_referral_intro,こんにちは！ この前持ってきたモジュール�
 duke_referral_note,ここに番号を書いておいたよ。材料が足りなくなったら、電話してみて。
 duke_referral_wait,番号は書いてあるから、カウンターが少し空いたらここに置いておくね。
 duke_note_name,星間公爵の連絡先メモ
-duke_note_desc,ガブリエルが置いていった手書きのメモ。
+duke_note_desc,ガブリエルが残していった星間公爵の連絡先。番号は{0}。
 duke_scrap_name,「異星母艦の残骸」
 duke_filament_name,「圧縮星雲フィラメント」
 duke_wire_name,「玉座専用の伝令索」
 duke_stock_flavor,どう見ても普通の{0}だ。公爵には違って見えるのかもしれない。
 duke_referral_supply,運よく下層区の回収屋さんと知り合ってね。\n材料が足りないときは、いつも一ロット分そろえてくれたの。
-duke_delivery_price,まとめて持っていくなら卸値だ。\n星間公爵がそこからさらに1割引こう。ほかの客には出さない値だぞ！
+duke_delivery_price,気に入ったものを選びな。まとめて持っていくなら、公爵がさらに二割引きにしてやるぞ！
 duke_no_order,おや、今日の荷物は君の分じゃなかった。\n星間公爵には次の届け先がある。またな、友よ！
 duke_story_1_1,すばらしい！ 一昨日、星間公爵は船を駆って金属のエイリアン怪獣を倒したばかりだ！
 duke_story_1_2,そいつの体から山ほど部品を外してきたぞ！
@@ -469,3 +470,55 @@ duke_referral_alias,本名は私も知らないの。自分では「星間公爵
 duke_referral_character,話してみるとちょっと変わった人に思えるかも。でも、いい人だよ。
 duke_referral_bye,じゃあ、工房に戻るね。またね！
 duke_phone_cooldown,星間公爵はまだ冒険の途中だ。話はまた今度。
+glass_plate_name,ガラス板
+glass_plate_desc,ガラスの破片を溶かし直して作った透明な薄板。加工用の素材として使える。
+glass_smelting_module_name,ガラス溶解モジュール
+glass_smelting_module_desc,溶鉱炉専用のモジュール。
+glass_smelting_module_effect,ガラスの破片1個を溶かしてガラス板1枚にする。
+wine_bottle_chip_name,3Dプリンターチップ（{0} ×{1}）
+high_temperature_nozzle_name,高温印刷ノズルモジュール
+high_temperature_nozzle_desc,プリンターでガラス板を使ってガラス製品を印刷できるようにする。
+high_temperature_nozzle_effect,高温印刷
+debug_items_glass_furnace,工房｜ガラス溶融テストセット
+debug_items_glass_shard,工房｜ガラスの破片を生成
+debug_items_glass_plate,工房｜ガラス板を生成
+duke_rubber_name,「探査船のパッキン」
+duke_latex_name,「異星樹木の樹液原液」
+duke_shard_name,「耐圧舷窓の破片」
+duke_other_delivery,舷窓の破片に気をつけろよ、友よ！\n手を切らないよう、パッキンでくるんで運んできたんだ。\nほら、見てくれ！
+duke_other_story_1_1,いいぞ、友よ！ 星間公爵は座礁した探査船から宝の詰まった箱を運び出したところだ。
+duke_other_story_1_2,船の舷窓はひびだらけなのに、箱に入ってた瓶からは一滴もこぼれてなかったぞ。
+duke_other_story_2_1,ちょうどいい！ 星間公爵は宇宙港の税関に代わって密輸品をひと箱押収したところだ！
+duke_other_story_2_2,箱には「割れ物注意」と書いてあった。中を見たが、そこだけは本当だったぞ。
+duke_other_story_3_1,すばらしい！ この前、星間公爵は異星の農園の主人に頼まれて、ハッチを直したんだ。
+duke_other_story_3_2,いくらだと聞いてきた。
+duke_other_story_4_1,聞いてくれ！ 星間公爵は廃ステーションで足の生えた箱を三ブロックも追いかけたんだ！
+duke_other_story_4_2,あそこは無重力でな。あの箱、宇宙海賊より逃げ足が速かったぞ。公爵が先に扉をふさいでやったがな。
+duke_other_story_5_1,ちょうどいい！ 星間公爵は昨日リングレースを見に行ったんだ！
+duke_other_story_5_2,優勝者の船がコースを飛び出して、組み立て式の宇宙船になっちまった！
+duke_other_story_3_3,倉庫の隅にある宝の箱でいいと言った。いやあ、返事が早かったぞ！
+duke_other_story_4_3,箱は持ち帰れなかったが、腹の中は空っぽにしてやったぞ！
+duke_other_story_5_3,舷窓がひとつ落ちてたから、公爵が拾っておいてやったよ。
+duke_other_delivery_2,ほら、友よ。\n「割れ物注意」の面をわざわざ上にしといたぞ。公爵が注意しなかったなんて言わせないからな。
+duke_other_delivery_3,ほら、ハッチの修理代にもらった箱だ。\n主人のやつ、私より先に運び出してきてな。前から場所を空けたかったらしい。
+duke_other_delivery_4,品物はここだ、友よ！ 全部あの箱の腹の中にあったもんだぞ！
+duke_other_delivery_4_2,次に機会があったら、あの箱も捕まえて見せに来るぞ！
+duke_other_delivery_5,ほら、優勝者の舷窓だ！ サインはないぞ！\nでも破片を全部集めれば、元の形に戻せるかもしれないな。
+duke_other_delivery_price,気に入ったものを選びな。まとめて持っていくなら、公爵がさらに二割引きにしてやるぞ！
+duke_other_price_1,商船の秘宝
+duke_other_price_2,宇宙港の密輸品
+duke_other_price_3,ハッチ修理の現物払い
+duke_other_price_4,箱の腹の秘蔵品
+duke_other_price_5,優勝者の記念品
+duke_delivery_1,見てくれ。あの怪獣から落ちた鉄の塊、結構重いぞ。\n公爵の船が飛べなくなってもよけりゃ、丸ごと引っ張ってきたんだがな！
+duke_delivery_2,この箱を抱えて出るとき、後ろでまた音がしたんだ。\n公爵は振り返らなかった。品は揃ってたんだ。何を見に戻るっていうんだ？
+duke_delivery_3,あの海賊ども、引き上げるときも追いかけてやると叫んでたぞ。\n公爵が通信ケーブルを全部外したんだ。どうやって仲間を呼ぶか見ものだな！
+duke_delivery_4,ほら、この箱だ！ あの日は魚が一匹も食いつかなかったのに、糸はいつまでも引っ張られてな。\n公爵が手を放さなくてよかったよ。
+duke_delivery_5,あの友人から、次は鉄の塊を送ってくるなって伝言があってな。\nおかしなもんだ。今回は向こうがひと箱送ってきたんだぞ。
+duke_printer_price_1,怪獣狩りの戦利品
+duke_printer_price_2,幽霊ステーションの回収品
+duke_printer_price_3,海賊船からの押収品
+duke_printer_price_4,釣り上げたお宝
+duke_printer_price_5,宇宙の友からの贈り物
+duke_order_reply,宇宙船の部品を一箱頼む。
+duke_order_other_reply,遠い星の戦利品を一箱頼む。

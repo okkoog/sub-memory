@@ -222,7 +222,7 @@ debug_items_kits,Workshop Wird alle drei Upgrade-Kits
 debug_items_nodes,Workshop Alle drei Knoten
 debug_items_compiler,Werkstücke Compiler + 4 weiße Platten + Tuning Matrix
 debug_items_printer,Workshop mit 3D-Drucker
-debug_items_materials,Workshop Ausdruckschips und Testmaterialien
+debug_items_materials,"Werkstatt | Druckchips, Module und Testmaterial"
 debug_items_resonance,Workshop Resonanz Module Test-Kit
 debug_items_battery,Aktivitäten in der Nähe von Simple Disposable Batteries x3
 debug_story_status,Workshop-Historie — Ausgaben und Veranstaltungsstatus
@@ -428,10 +428,11 @@ workshop_display_name,Gabrielles Werkstatt
 workshop_display_description,"Lerne Gabrielle kennen und schalte Maschinen-Upgrades, 3D-Druckrezepte und den Modul-Compiler frei. In den Mod-Einstellungen kannst du Ereignisschwellen anpassen, Porträts wechseln oder die Handlung rund um Erwachsenenartikel abschalten."
 duke_name,Sternenherzog
 duke_intro,"Hallo, mein Freund! Ich bin’s, der Sternenherzog! Ja, genau der Sternenherzog."
-duke_contact,Telefonnummer\n{0}
+duke_contact,"Kontaktdaten des Sternenherzogs\n—— {0}\nDenk dran! Er ist ein etwas seltsamer Materialhändler.\nSag ihm: {1}\nEr bringt dir Metallschrott, 3D-Druckfilament und Kabel.\nSag ihm: {2}\nEr verkauft dir Gummi, Latex und Glasscherben."
 duke_phone_hello,"Hallo, mein Freund! Wen suchst du? Ach ja. Die Nummer gehört jetzt dem Sternenherzog."
 duke_contents,Was führt dich zum großen Sternenherzog? Eine große Mission vielleicht?
 duke_order,Eine Ladung Druckmaterial bestellen
+duke_order_other,Andere Materialien bestellen
 duke_booked,"Ich bring’s dir morgen vorbei, dann kannst du’s dir ansehen!"
 duke_phone_cancel,Heute lieber nichts.
 duke_pending,Deine Mission ist in Arbeit. Der Sternenherzog hält sein Wort.
@@ -444,13 +445,13 @@ duke_referral_intro,"Hallo! Kommst du mit den Modulen und Chips zurecht, die ich
 duke_referral_note,"Ich hab dir hier seine Nummer aufgeschrieben. Wenn dir Material fehlt, ruf ihn einfach an."
 duke_referral_wait,"Seine Nummer steht schon auf dem Zettel. Sobald Platz auf dem Tresen ist, leg ich ihn dir hin."
 duke_note_name,Kontaktnotiz des Sternenherzogs
-duke_note_desc,Ein handgeschriebener Zettel von Gabrielle.
+duke_note_desc,Gabrielle hat die Kontaktdaten des Sternenherzogs hinterlassen. Seine Nummer lautet {0}.
 duke_scrap_name,„Trümmer eines Alien-Mutterschiffs“
 duke_filament_name,„Komprimiertes Nebelfilament“
 duke_wire_name,„Königliche Thron-Signalleitung“
 duke_stock_flavor,Sieht ganz nach gewöhnlichem Material aus ({0}). Der Herzog sieht das wohl anders.
 duke_referral_supply,"Zum Glück hab ich einen Schrottsammler von der Unteren Ebene kennengelernt.\nWenn mir Material fehlte, konnte er mir immer eine Ladung zusammentragen."
-duke_delivery_price,"Nimmst du alles, gibt’s den Großhandelspreis.\nDer Sternenherzog legt noch zehn Prozent Rabatt drauf. Den Preis kriegt sonst keiner!"
+duke_delivery_price,"Nimm, was dir gefällt. Nimmst du die ganze Ladung, gibt dir der Herzog nochmal zwanzig Prozent Rabatt!"
 duke_no_order,"Huch, die Ladung ist heute gar nicht für dich.\nDer Sternenherzog muss noch woanders hin. Bis dann, mein Freund!"
 duke_story_1_1,Wunderbar! Erst vorgestern hat der Sternenherzog mit seinem Raumschiff ein außerirdisches Metallmonster besiegt!
 duke_story_1_2,Und dabei hat er jede Menge Zeug aus dem Biest ausgebaut!
@@ -469,3 +470,55 @@ duke_referral_alias,"Ich weiß auch nicht, wie er wirklich heißt. Er nennt sich
 duke_referral_character,Beim Reden kommt er dir vielleicht ein bisschen seltsam vor. Aber er ist ein guter Kerl.
 duke_referral_bye,Dann geh ich mal zurück in die Werkstatt. Bis zum nächsten Mal!
 duke_phone_cooldown,Der Sternenherzog ist noch auf Abenteuerreise. Reden wir später.
+glass_plate_name,Glasplatte
+glass_plate_desc,"Eine dünne, durchsichtige Platte aus eingeschmolzenen Glasscherben, die sich weiterverarbeiten lässt."
+glass_smelting_module_name,Glasschmelzmodul
+glass_smelting_module_desc,Ein Modul für den Schmelzofen.
+glass_smelting_module_effect,Schmilzt 1 Glasscherbe zu 1 Glasplatte.
+wine_bottle_chip_name,3D-Druckerchip ({0} ×{1})
+high_temperature_nozzle_name,Hochtemperatur-Düsenmodul
+high_temperature_nozzle_desc,Damit kann der Drucker Glasplatten zum Drucken von Glasobjekten verwenden.
+high_temperature_nozzle_effect,Hochtemperaturdruck
+debug_items_glass_furnace,Werkstatt | Testpaket für die Glasschmelze
+debug_items_glass_shard,Werkstatt | Glasscherbe erzeugen
+debug_items_glass_plate,Werkstatt | Glasplatte erzeugen
+duke_rubber_name,„Dichtung vom Erkundungsschiff“
+duke_latex_name,„Rohsaft außerirdischer Bäume“
+duke_shard_name,„Splitter eines druckfesten Bullauges“
+duke_other_delivery,"Vorsicht mit den Bullaugensplittern, mein Freund!\nIch hab sie in eine Dichtung gewickelt, damit ich mir unterwegs nicht die Hände aufschneide.\nHier, sieh selbst!"
+duke_other_story_1_1,"Ausgezeichnet, mein Freund! Der Sternenherzog hat gerade eine Kiste voller Schätze von einem gestrandeten Erkundungsschiff geholt."
+duke_other_story_1_2,"Die Bullaugen hatten schon Risse, aber aus dem Glas in der Kiste ist kein Tropfen ausgelaufen."
+duke_other_story_2_1,Du kommst wie gerufen! Der Sternenherzog hat gerade für den Raumhafenzoll eine Kiste Schmuggelware beschlagnahmt!
+duke_other_story_2_2,"Auf der Kiste stand „Zerbrechlich“. Ich hab reingeschaut. Das war das Einzige, was gestimmt hat."
+duke_other_story_3_1,Wunderbar! Der Sternenherzog hat neulich dem Besitzer einer Plantage auf einem fremden Planeten eine Luke repariert.
+duke_other_story_3_2,"Er fragte, was ich dafür nehme."
+duke_other_story_4_1,Hör dir das an! Der Sternenherzog hat auf einer verlassenen Station eine Kiste mit Beinen drei Straßen weit verfolgt!
+duke_other_story_4_2,Da gab’s keine Schwerkraft. Die Kiste konnte besser fliehen als ein Weltraumpirat. Zum Glück war der Herzog zuerst an der Tür.
+duke_other_story_5_1,Passt! Der Sternenherzog war gestern beim Ringrennen!
+duke_other_story_5_2,Das Schiff des Siegers flog aus der Bahn und wurde zum Raumschiff-Bausatz!
+duke_other_story_3_3,Ich sagte: Die Kiste mit den Schätzen da hinten im Lager reicht mir. So schnell hat mir noch keiner zugesagt!
+duke_other_story_4_3,"Schade, die Kiste selbst konnte ich nicht mitbringen. Aber den Bauch hab ich ihr ausgeräumt!"
+duke_other_story_5_3,Dabei hat es ein Bullauge verloren. Der Herzog hat es für ihn aufgesammelt.
+duke_other_delivery_2,"Hier, mein Freund.\nIch hab die Seite mit „Zerbrechlich“ extra nach oben gedreht. Sag bloß nicht, der Herzog hätte dich nicht gewarnt."
+duke_other_delivery_3,"Hier ist die Kiste, die ich für die Reparatur der Luke bekommen hab.\nDer Besitzer hat sie schneller rausgetragen als ich. Der wollte wohl schon länger Platz schaffen."
+duke_other_delivery_4,"Hier ist die Beute, mein Freund! Das kommt alles aus dem Bauch der Kiste!"
+duke_other_delivery_4_2,Bei der nächsten Gelegenheit fang ich die Kiste selbst und bring sie dir zum Anschauen vorbei!
+duke_other_delivery_5,"Hier, das Bullauge vom Sieger! Ohne Autogramm!\nAber wenn du alle Teile findest, kriegst du es vielleicht wieder zusammen."
+duke_other_delivery_price,"Nimm, was dir gefällt. Nimmst du die ganze Ladung, gibt dir der Herzog nochmal zwanzig Prozent Rabatt!"
+duke_other_price_1,Schatz vom Handelsschiff
+duke_other_price_2,Schmuggelware vom Raumhafen
+duke_other_price_3,Lohn für die Lukenreparatur
+duke_other_price_4,Vorrat aus dem Kistenbauch
+duke_other_price_5,Souvenir des Siegers
+duke_delivery_1,"Sieh mal. Die Metallbrocken, die das Vieh verloren hat, wiegen ordentlich was.\nWenn der Herzog sein Schiff nicht noch zum Fliegen bräuchte, hätt ich dir das ganze Vieh hergeschleppt!"
+duke_delivery_2,"Als ich die Kiste rausgetragen hab, hat’s hinter mir wieder gekracht.\nDer Herzog hat sich nicht umgedreht. Ich hatte die Ware doch schon. Was gab’s da noch zu gucken?"
+duke_delivery_3,"Die Piraten haben beim Abhauen noch gebrüllt, sie würden mich kriegen.\nDer Herzog hat ihnen sämtliche Signalkabel ausgebaut. Mal sehen, womit sie jetzt Verstärkung rufen!"
+duke_delivery_4,"Hier, genau die Kiste! An dem Tag hat kein Fisch angebissen, aber an der Leine hat’s ewig gezerrt.\nGut, dass der Herzog nicht losgelassen hat."
+duke_delivery_5,"Mein Freund hat ausrichten lassen, ich soll ihm keine Eisenbrocken mehr schicken.\nUnd stell dir vor, diesmal hat er mir selbst eine ganze Kiste geschickt."
+duke_printer_price_1,Jagdtrophäe
+duke_printer_price_2,Bergungsgut der Geisterstation
+duke_printer_price_3,Beschlagnahmte Piratenfracht
+duke_printer_price_4,Schatz am Haken
+duke_printer_price_5,Geschenk eines Weltraumfreunds
+duke_order_reply,Ich brauche eine Ladung Sternenschiffteile.
+duke_order_other_reply,Ich brauche eine Ladung Beute von fernen Sternen.

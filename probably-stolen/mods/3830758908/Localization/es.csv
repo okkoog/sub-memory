@@ -222,7 +222,7 @@ debug_items_kits,Taller de trabajo Todos los tres kits de actualización
 debug_items_nodes,Taller de trabajo Todos los tres nodos
 debug_items_compiler,Compilador de talleres + 4 discos blancos + matriz de tonificación
 debug_items_printer,Taller de imprenta 3D
-debug_items_materials,Taller de impresión de chips y materiales de prueba
+debug_items_materials,"Taller | Chips, módulos y materiales de prueba"
 debug_items_resonance,Curso de Resonancia Modulo Test Kit
 debug_items_battery,Página de trabajo Baterías sencillas de uso x3
 debug_story_status,Historia del taller El gasto y el estado del evento
@@ -428,10 +428,11 @@ workshop_display_name,Taller de Gabrielle
 workshop_display_description,"Conoce a Gabrielle y desbloquea mejoras para máquinas, recetas de impresión 3D y el compilador de módulos. En los ajustes puedes cambiar los requisitos de los eventos, elegir los retratos o desactivar la trama de productos para adultos."
 duke_name,Duque Estelar
 duke_intro,"¡Hola, amigo! ¡Soy yo, el Duque Estelar! Sí, ese Duque Estelar."
-duke_contact,Teléfono de contacto\n{0}
+duke_contact,"Contacto del Duque Estelar\n—— {0}\n¡Recuerda! Es un vendedor de materiales algo raro.\nDile: {1}\nTe traerá chatarra, filamento de impresión 3D y cable.\nDile: {2}\nTe venderá caucho, látex y trozos de cristal."
 duke_phone_hello,"¡Hola, amigo! ¿A quién buscas? Ah, claro. Ahora este número es del Duque Estelar."
 duke_contents,"¿Qué te trae ante el gran Duque Estelar? ¿Una gran misión, tal vez?"
 duke_order,Pedir un lote de material para la impresora
+duke_order_other,Pedir otros materiales
 duke_booked,¡Mañana te lo llevo para que lo veas!
 duke_phone_cancel,Hoy no voy a pedir nada.
 duke_pending,Tu misión sigue en pie. El Duque Estelar siempre cumple su palabra.
@@ -444,13 +445,13 @@ duke_referral_intro,¡Hola! ¿Qué tal te van los módulos y chips que te traje 
 duke_referral_note,"Te he apuntado aquí su número. Si te falta material, llámalo."
 duke_referral_wait,"Ya te he apuntado el número. En cuanto haya sitio en el mostrador, te dejo aquí la nota."
 duke_note_name,Nota de contacto del Duque Estelar
-duke_note_desc,Una nota manuscrita que dejó Gabrielle.
+duke_note_desc,El contacto del Duque Estelar que dejó Gabrielle. Su número es {0}.
 duke_scrap_name,«Restos de nave nodriza alienígena»
 duke_filament_name,«Filamento de nebulosa comprimida»
 duke_wire_name,«Cable de señales del trono real»
 duke_stock_flavor,Parece {0} de toda la vida. Quizá el Duque lo ve de otra manera.
 duke_referral_supply,"Por suerte, conocí a un chatarrero de los Niveles Inferiores.\nCuando me faltaba material, siempre me conseguía un lote."
-duke_delivery_price,"Si te llevas todo el lote, te sale a precio de mayorista.\nEl Duque Estelar te descuenta otro diez por ciento. ¡Nadie más tiene ese precio!"
+duke_delivery_price,"Llévate lo que te guste. ¡Si te quedas con todo el lote, el Duque te hace otro veinte por ciento de descuento!"
 duke_no_order,"Vaya, este lote no venía aquí.\nEl Duque Estelar tiene otra parada. ¡Hasta luego, amigo!"
 duke_story_1_1,"¡Estupendo! ¡Anteayer, el Duque Estelar pilotó su nave y derrotó a un monstruo alienígena de metal!"
 duke_story_1_2,¡Y le sacó un montón de cosas del cuerpo!
@@ -469,3 +470,55 @@ duke_referral_alias,No sé cómo se llama de verdad. Se hace llamar el Duque Est
 duke_referral_character,"Cuando hables con él, quizá te parezca un poco raro. Pero es buena gente."
 duke_referral_bye,"Bueno, vuelvo al taller. ¡Hasta la próxima!"
 duke_phone_cooldown,El Duque Estelar sigue de aventura. Hablamos luego.
+glass_plate_name,Placa de vidrio
+glass_plate_desc,"Una lámina fina y transparente de trozos de cristal refundidos, lista para su procesamiento."
+glass_smelting_module_name,Módulo de fundición de vidrio
+glass_smelting_module_desc,Un módulo diseñado para el horno de fundición.
+glass_smelting_module_effect,Funde 1 fragmento de vidrio para producir 1 placa de vidrio.
+wine_bottle_chip_name,Chip de impresora 3D ({0} ×{1})
+high_temperature_nozzle_name,Módulo de boquilla de alta temperatura
+high_temperature_nozzle_desc,Permite que la impresora use placas de vidrio para imprimir objetos de vidrio.
+high_temperature_nozzle_effect,Impresión a alta temperatura
+debug_items_glass_furnace,Taller | Kit de prueba de fundición de vidrio
+debug_items_glass_shard,Taller | Generar trozo de cristal
+debug_items_glass_plate,Taller | Generar placa de vidrio
+duke_rubber_name,«Junta de la nave de exploración»
+duke_latex_name,«Savia de árbol alienígena sin refinar»
+duke_shard_name,«Fragmento de escotilla presurizada»
+duke_other_delivery,"¡Cuidado con esos trozos de escotilla, amigo!\nLos envolví en una junta para no cortarme las manos por el camino.\n¡Mira!"
+duke_other_story_1_1,"¡Estupendo, amigo! El Duque Estelar acaba de sacar una caja de tesoros de una nave de exploración varada."
+duke_other_story_1_2,"Las escotillas estaban rajadas y, aun así, del frasco de la caja no se derramó ni una gota."
+duke_other_story_2_1,¡Llegas justo a tiempo! ¡El Duque Estelar acaba de incautar una caja de contrabando para la aduana del puerto espacial!
+duke_other_story_2_2,En la caja ponía «Frágil». Eché un vistazo al contenido. Era lo único que no era mentira.
+duke_other_story_3_1,"¡Estupendo! El otro día, el Duque Estelar le arregló una escotilla al dueño de una plantación en otro planeta."
+duke_other_story_3_2,Me preguntó cuánto cobraba.
+duke_other_story_4_1,¡Escucha esto! ¡El Duque Estelar persiguió una caja con patas durante tres manzanas en una estación abandonada!
+duke_other_story_4_2,"No había gravedad. Esa caja sabía escapar mejor que un pirata espacial. Por suerte, el Duque le cortó el paso en la puerta."
+duke_other_story_5_1,¡Perfecto! ¡Ayer el Duque Estelar fue a ver la carrera del anillo!
+duke_other_story_5_2,¡La nave del campeón se salió del circuito y se convirtió en una nave para montar por piezas!
+duke_other_story_3_3,Le dije que me llevaba esa caja de tesoros del rincón del almacén. ¡No tardó ni un segundo en aceptar!
+duke_other_story_4_3,"Qué pena que no pudiera traerme la caja, ¡pero le vacié la barriga!"
+duke_other_story_5_3,Pero se le cayó una escotilla. El Duque se la recogió.
+duke_other_delivery_2,"Toma, amigo.\nHe puesto el lado de «Frágil» hacia arriba, para que no digas que el Duque no te avisó."
+duke_other_delivery_3,Aquí tienes la caja que me dieron por arreglar la escotilla.\nEl dueño la sacó más rápido que yo. Se ve que llevaba tiempo queriendo hacer sitio.
+duke_other_delivery_4,"¡Aquí tienes la mercancía, amigo! ¡Todo salió de la barriga de la caja!"
+duke_other_delivery_4_2,"¡En cuanto tenga otra oportunidad, atraparé la caja y te la traeré para que la veas!"
+duke_other_delivery_5,"¡Aquí tienes la escotilla del campeón! ¡Sin autógrafo!\nPero si reúnes todos los trozos, igual hasta consigues recomponerla."
+duke_other_delivery_price,"Llévate lo que te guste. ¡Si te quedas con todo el lote, el Duque te hace otro veinte por ciento de descuento!"
+duke_other_price_1,Tesoro del carguero
+duke_other_price_2,Contrabando del puerto espacial
+duke_other_price_3,Pago por arreglar la escotilla
+duke_other_price_4,Reserva de la barriga
+duke_other_price_5,Recuerdo del campeón
+duke_delivery_1,"Mira. Los trozos de metal que soltó la bestia pesan lo suyo.\n¡Si la nave del Duque no tuviera que seguir volando, la habría traído entera!"
+duke_delivery_2,Oí otro ruido a mi espalda mientras sacaba la caja.\nEl Duque no miró atrás. Ya tenía toda la mercancía. ¿Para qué iba a mirar?
+duke_delivery_3,Esos piratas se fueron gritando que vendrían a por mí.\nEl Duque les quitó todos los cables de comunicación. ¡A ver cómo piden ayuda ahora!
+duke_delivery_4,"¡Aquí está, la mismísima caja! Aquel día no picó ni un pez, pero el sedal no paraba de tirar.\nMenos mal que el Duque no lo soltó."
+duke_delivery_5,Mi amigo mandó decir que no le enviara más trozos de hierro.\n¿Y sabes qué? Esta vez me mandó él una caja entera.
+duke_printer_price_1,Trofeo de caza
+duke_printer_price_2,Restos de la estación embrujada
+duke_printer_price_3,Cargamento pirata incautado
+duke_printer_price_4,Tesoro pescado
+duke_printer_price_5,Regalo de un amigo del espacio
+duke_order_reply,Necesito un lote de piezas de nave estelar.
+duke_order_other_reply,Necesito un lote de botín de estrellas lejanas.

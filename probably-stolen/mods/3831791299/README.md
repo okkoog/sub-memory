@@ -31,3 +31,10 @@ Forecasts use the current water composition, volume and machine performance. Cha
 ## Validation
 
 The scanner priority, native-action routing, consumable preservation, ownership, locks, unavailable resources, bilingual menu and click-time rechecks are covered by 89 automated water-menu checks. Purifier calculations are compared with the installed game's isolated native calculation. This is not a claim of in-game visual verification.
+
+
+## 1.0.6 — Pure-water forecast / 정제수 예측
+
+When water is already high quality (99% or above), a purifier whose native maximum purity can reach 99.9% forecasts nights and the completion morning for pure water. Weaker purifiers keep the existing high-quality forecast. Power shortages, stalled purification and unremovable contaminants remain visible; the forecast never changes water or consumes power.
+
+현재 물이 고품질수(99%) 이상이고 정수기의 실제 최대 순도가 99.9%에 도달할 수 있을 때, 정제수(99.9%)까지 남은 밤과 완료 예정일을 표시합니다. 성능이 부족한 기계는 기존 고품질수 예측을 유지합니다. 전력 부족·정수 중단·제거 불가능한 오염 성분도 반영하며, 예측은 물이나 전력을 변경하지 않습니다.

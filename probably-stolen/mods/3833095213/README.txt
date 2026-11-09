@@ -1,4 +1,4 @@
-Neon Undertow 0.5.9
+Neon Undertow 0.5.11
 
 The manual bottler takes up 3 x 3 inventory cells. Bring the Bottling Handbook, high-quality water (99% or higher), one matching concentrate and an empty glass bottle (750 mL) or can (350 or 500 mL). The bottle you put in is the bottle you get back. The Quayside Canning Co-op sells all three concentrates and stocked supply cases.
 

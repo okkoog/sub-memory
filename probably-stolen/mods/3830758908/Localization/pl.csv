@@ -222,7 +222,7 @@ debug_items_kits,Wszelkie trzy upgrade kits
 debug_items_nodes,Szkolenie dla wszystkich trzech węzłów
 debug_items_compiler,Kompilator warsztatowy + 4 białe dyski + matryca tuningu
 debug_items_printer,Pracownik 3D drukarki
-debug_items_materials,warsztaty drukujące chipsy i materiały testowe
+debug_items_materials,"Warsztat | Chipy, moduły i materiały testowe"
 debug_items_resonance,Zestaw do testowania modułu Resonance
 debug_items_battery,Szybkie akumulatory do użytku x3
 debug_story_status,Historia warsztatów Wydatki i status wydarzeń
@@ -428,10 +428,11 @@ workshop_display_name,Warsztat Gabrielle
 workshop_display_description,"Poznaj Gabrielle i odblokuj ulepszenia maszyn, receptury druku 3D oraz kompilator modułów. W ustawieniach możesz zmienić progi wydarzeń, wybrać portrety lub wyłączyć wątek produktów dla dorosłych."
 duke_name,Gwiezdny Książę
 duke_intro,"Witaj, przyjacielu! To ja, Gwiezdny Książę! Tak, ten Gwiezdny Książę."
-duke_contact,Numer kontaktowy\n{0}
+duke_contact,"Kontakt do Gwiezdnego Księcia\n—— {0}\nPamiętaj! To trochę dziwny handlarz materiałami.\nPowiedz mu: {1}\nPrzyniesie ci złom, filament do druku 3D i przewody.\nPowiedz mu: {2}\nSprzeda ci gumę, lateks i kawałki szkła."
 duke_phone_hello,"Witaj, przyjacielu! Do kogo dzwonisz? A, racja. Ten numer należy teraz do Gwiezdnego Księcia."
 duke_contents,Co cię sprowadza do wielkiego Gwiezdnego Księcia? Jakaś wielka misja?
 duke_order,Zamów partię materiałów do drukarki
+duke_order_other,Zamów inne materiały
 duke_booked,"Przywiozę to jutro, sam zobaczysz!"
 duke_phone_cancel,Dziś nic nie zamawiam.
 duke_pending,Pamiętam o twoim zadaniu. Gwiezdny Książę zawsze dotrzymuje słowa.
@@ -444,13 +445,13 @@ duke_referral_intro,"Cześć! Jak się sprawdzają moduły i czipy, które przyw
 duke_referral_note,"Zapisałam ci tutaj jego numer. Jak zabraknie ci materiałów, po prostu do niego zadzwoń."
 duke_referral_wait,"Numer już zapisałam. Gdy tylko zrobi się miejsce na ladzie, zostawię ci tu kartkę."
 duke_note_name,Kartka z numerem Gwiezdnego Księcia
-duke_note_desc,Odręczna notatka zostawiona przez Gabrielle.
+duke_note_desc,Kontakt do Gwiezdnego Księcia zostawiony przez Gabrielle. Jego numer to {0}.
 duke_scrap_name,„Szczątki obcego statku-matki”
 duke_filament_name,„Filament ze sprasowanej mgławicy”
 duke_wire_name,„Królewski przewód sygnałowy do tronu”
 duke_stock_flavor,Wygląda na zwykły materiał ({0}). Książę pewnie patrzy na to inaczej.
 duke_referral_supply,"Na szczęście poznałam zbieracza z Dolnego Poziomu.\nGdy brakowało mi materiałów, zawsze umiał zebrać dla mnie całą partię."
-duke_delivery_price,"Weź całość, to policzę hurtowo.\nGwiezdny Książę dorzuci jeszcze dziesięć procent rabatu. Nikt inny nie dostaje takiej ceny!"
+duke_delivery_price,"Bierz, co ci się podoba. Jeśli weźmiesz całą partię, Książę dorzuci jeszcze dwadzieścia procent rabatu!"
 duke_no_order,"O, ta partia nie jest dziś dla ciebie.\nGwiezdny Książę ma jeszcze jeden przystanek. Do zobaczenia, przyjacielu!"
 duke_story_1_1,Wspaniale! Przedwczoraj Gwiezdny Książę za sterami swego statku pokonał metalowego kosmicznego potwora!
 duke_story_1_2,I wydobył z jego cielska całą górę rozmaitości!
@@ -469,3 +470,55 @@ duke_referral_alias,Nie znam jego prawdziwego imienia. Nazywa się Gwiezdnym Ksi
 duke_referral_character,W rozmowie może ci się wydać trochę dziwny. Ale to dobry człowiek.
 duke_referral_bye,To ja wracam do warsztatu. Do zobaczenia!
 duke_phone_cooldown,Gwiezdny Książę wciąż jest na wyprawie. Pogadamy później.
+glass_plate_name,Płyta szklana
+glass_plate_desc,"Cienka, przezroczysta płyta z przetopionych kawałków szkła, nadająca się do dalszej obróbki."
+glass_smelting_module_name,Moduł wytopu szkła
+glass_smelting_module_desc,Moduł przeznaczony do pieca hutniczego.
+glass_smelting_module_effect,Przetapia 1 odłamek szkła na 1 płytę szklaną.
+wine_bottle_chip_name,Chip drukarki 3D ({0} ×{1})
+high_temperature_nozzle_name,Moduł dyszy wysokotemperaturowej
+high_temperature_nozzle_desc,Pozwala drukarce używać płyt szklanych do drukowania przedmiotów ze szkła.
+high_temperature_nozzle_effect,Druk wysokotemperaturowy
+debug_items_glass_furnace,Warsztat | Zestaw do testowania przetopu szkła
+debug_items_glass_shard,Warsztat | Utwórz kawałek szkła
+debug_items_glass_plate,Warsztat | Utwórz płytę szklaną
+duke_rubber_name,„Uszczelka ze statku zwiadowczego”
+duke_latex_name,„Surowy sok z obcego drzewa”
+duke_shard_name,„Odłamek ciśnieniowego iluminatora”
+duke_other_delivery,"Uważaj na odłamki iluminatora, przyjacielu!\nOwinąłem je uszczelką, żeby nie pokaleczyć sobie rąk po drodze.\nPatrz!"
+duke_other_story_1_1,"Świetnie, przyjacielu! Gwiezdny Książę właśnie wyniósł skrzynię skarbów ze statku zwiadowczego, który osiadł na mieliźnie."
+duke_other_story_1_2,"Iluminatory popękały, a z tego słoika w skrzyni nie wylała się ani kropla."
+duke_other_story_2_1,W samą porę! Gwiezdny Książę właśnie przechwycił skrzynię kontrabandy dla celników z kosmoportu!
+duke_other_story_2_2,"Na skrzyni napisali „Ostrożnie, szkło”. Zajrzałem do środka. Tylko tu nie skłamali."
+duke_other_story_3_1,Wspaniale! Gwiezdny Książę naprawił ostatnio właz właścicielowi plantacji na obcej planecie.
+duke_other_story_3_2,"Zapytał, ile się należy."
+duke_other_story_4_1,Posłuchaj! Gwiezdny Książę gonił skrzynię na nogach przez trzy ulice opuszczonej stacji!
+duke_other_story_4_2,Nie było tam grawitacji. Skrzynia umykała sprawniej niż kosmiczny pirat. Na szczęście Książę pierwszy zastawił drzwi.
+duke_other_story_5_1,Świetnie się składa! Gwiezdny Książę oglądał wczoraj wyścig wokół pierścienia!
+duke_other_story_5_2,Statek zwycięzcy wyleciał z toru i zmienił się w zestaw do samodzielnego montażu!
+duke_other_story_3_3,"Powiedziałem, że wystarczy ta skrzynia skarbów z rogu magazynu. Jak szybko się zgodził!"
+duke_other_story_4_3,"Szkoda, że samej skrzyni nie udało mi się przywlec, ale opróżniłem jej brzuch!"
+duke_other_story_5_3,Tylko iluminator zgubił po drodze. Książę go za niego podniósł.
+duke_other_delivery_2,"Masz, przyjacielu.\nPołożyłem skrzynię napisem „Ostrożnie, szkło” do góry, żebyś nie mówił, że Książę cię nie ostrzegał."
+duke_other_delivery_3,"Masz skrzynię, którą dostałem za naprawę włazu.\nWłaściciel wyniósł ją szybciej ode mnie. Chyba od dawna chciał zrobić trochę miejsca."
+duke_other_delivery_4,"Oto towar, przyjacielu! Wszystko prosto z brzucha tej skrzyni!"
+duke_other_delivery_4_2,"Jak tylko będzie okazja, złapię samą skrzynię i przyniosę ci ją pokazać!"
+duke_other_delivery_5,"Masz iluminator zwycięzcy! Bez autografu!\nAle jeśli znajdziesz wszystkie kawałki, może uda ci się go złożyć."
+duke_other_delivery_price,"Bierz, co ci się podoba. Jeśli weźmiesz całą partię, Książę dorzuci jeszcze dwadzieścia procent rabatu!"
+duke_other_price_1,Skarb ze statku handlowego
+duke_other_price_2,Kontrabanda z kosmoportu
+duke_other_price_3,Zapłata za naprawę włazu
+duke_other_price_4,Zapas z brzucha skrzyni
+duke_other_price_5,Pamiątka po zwycięzcy
+duke_delivery_1,"Popatrz, kawały żelaza, które odpadły od bestii, trochę ważą.\nGdyby statek Księcia nie musiał jeszcze latać, przywlókłbym ją tu całą!"
+duke_delivery_2,"Kiedy wynosiłem skrzynię, znów coś za mną huknęło.\nKsiążę się nie obejrzał. Towar był już w komplecie. Po co się oglądać?"
+duke_delivery_3,"Piraci jeszcze na odchodnym wrzeszczeli, że mnie dopadną.\nKsiążę powyrywał im wszystkie przewody sygnałowe. Zobaczymy, czym wezwą posiłki!"
+duke_delivery_4,"Masz, to właśnie ta skrzynia! Ani jedna ryba tego dnia nie wzięła, ale żyłkę ciągnęło i ciągnęło.\nCałe szczęście, że Książę jej nie puścił."
+duke_delivery_5,"Przyjaciel przekazał, żebym więcej nie wysyłał mu kawałów żelaza.\nI wyobraź sobie, tym razem sam przysłał mi całą skrzynię."
+duke_printer_price_1,Trofeum z polowania
+duke_printer_price_2,Znaleziska ze stacji widmo
+duke_printer_price_3,Przejęty ładunek piratów
+duke_printer_price_4,Skarb na haczyku
+duke_printer_price_5,Prezent od kosmicznego przyjaciela
+duke_order_reply,Potrzebuję partii części do statku gwiezdnego.
+duke_order_other_reply,Potrzebuję partii łupów z odległych gwiazd.

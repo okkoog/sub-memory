@@ -3,7 +3,7 @@
   <ID>deep_space_pawnshop</ID>
   <Name>更多特质：可能是神人</Name>
   <Author>ASUS</Author>
-  <ModVersion>0.9.163</ModVersion>
+  <ModVersion>0.9.194</ModVersion>
   <Description>新增开局专精「经销商」（初始解锁红魔鬼酿酒厂 / 下城区化学家 / 上层区药商 / GP采矿合作社 / 展示柜扩建I，酒 1 箱 / 注射器 6 支 / 梦尘 8 份 / 矿石 8 份，并取消四家首次通话的免费样品）与 33 个开局特质：漫游癖、冶炼、电商、建在垃圾场上、心照不宣、没有垃圾、前助理、心疼话费、散光、零元购、肖申克的救赎、报纸食谱、莫问来路、房贷、王尔德的人情、自建房、窖藏、有烟同享、稳定合作、负责的掮客、知名恶棍、赛博精神病、零食成瘾、开门红、厂商副业、王尔德的线人、墙洞扩建、消息灵通、油嘴滑舌、羊群效应、低檐矮筑、琳琅满目、店大欺客。</Description>
   <GameVersions>
     <Version>0.46D</Version>
@@ -12,13 +12,13 @@
   <Assemblies>
     <Assembly>DeepSpacePawnshop.dll</Assembly>
   </Assemblies>
-  <!-- 目前只用官方 API + Harmony，不需要任何额外能力。
-       一旦用到反射/网络/文件/原生库，必须在这里补上，否则游戏会拒绝启用。 -->
-  <!-- 本 mod 用 Harmony 打补丁 + AccessTools 读私有字段，属于「通过反射访问系统和引擎的内部实现」。
-       必须在清单里声明，否则订阅者侧会被权限门拒绝加载（本地开发者模式不会拦）。 -->
-  <Capabilities>
-    <Capability>reflection-external</Capability>
-  </Capabilities>
+  <!-- 一个能力都不声明。
+       Harmony 打补丁 + AccessTools 反射游戏自己的类型（Assembly-CSharp）不算外部反射，
+       扫描器认这种形状；碰到"运行时才知道的类型/名字"的地方我们走游戏的 ModReflect 门面。
+       反射进 System.* / UnityEngine 内部、动态生成代码、原生库、后台线程这四类
+       （reflection-external / dynamic-code / native / threads）从 12 月 10 日起
+       会被直接拒绝，且声明了也没用 —— 所以这里保持空。 -->
+  <Capabilities />
 </Mod>
 
 

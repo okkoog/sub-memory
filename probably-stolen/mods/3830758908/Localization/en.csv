@@ -222,7 +222,7 @@ debug_items_kits,Workshop | All three upgrade kits
 debug_items_nodes,Workshop | All three nodes
 debug_items_compiler,Workshop | Compiler + 4 blank disks + tuning matrix
 debug_items_printer,Workshop | 3D printer
-debug_items_materials,Workshop | Printing chips and test materials
+debug_items_materials,Workshop | Printer chips and modules with test materials
 debug_items_resonance,Workshop | Resonance module test kit
 debug_items_battery,Workshop | Simple disposable batteries x3
 debug_story_status,Workshop story | Spending and event status
@@ -428,10 +428,11 @@ workshop_display_name,Gabrielle’s Workshop
 workshop_display_description,"Meet Gabrielle and unlock machine upgrades, 3D printing recipes and the Module Compiler. In the mod settings, you can adjust story thresholds, switch portrait styles or turn off the adult-product storyline."
 duke_name,Star Duke
 duke_intro,"Hello, friend! It’s me, the Star Duke! Yes, that Star Duke."
-duke_contact,Contact number\n{0}
+duke_contact,"The Star Duke’s contact details\n—— {0}\nRemember! He’s a rather odd materials dealer.\nTell him: {1}\nHe’ll bring you scrap metal, 3D printing filament and wire.\nTell him: {2}\nHe’ll sell you rubber, latex and glass shards."
 duke_phone_hello,"Hello there, friend! Who are you looking for? Oh, right. This number belongs to the Star Duke now."
 duke_contents,"What brings you to the great Star Duke? A grand mission, perhaps?"
 duke_order,Order a batch of printer supplies
+duke_order_other,Order other materials
 duke_booked,I’ll bring it by tomorrow and show you!
 duke_phone_cancel,Nothing today.
 duke_pending,Your mission is in hand. The Star Duke always keeps his word.
@@ -444,13 +445,13 @@ duke_referral_intro,Hi! How are the modules and chips I brought last time workin
 duke_referral_note,I wrote his number down here. Just give him a call when you need materials.
 duke_referral_wait,I’ve written down his number. I’ll leave the note here as soon as there’s room on the counter.
 duke_note_name,Star Duke’s Contact Note
-duke_note_desc,A handwritten note left by Gabrielle.
+duke_note_desc,"The Star Duke’s contact details, left by Gabrielle. His number is {0}."
 duke_scrap_name,“Alien Mothership Wreckage”
 duke_filament_name,“Compressed Nebula Filament”
 duke_wire_name,“Royal Throne Signal Cord”
 duke_stock_flavor,Looks like ordinary {0}. Maybe the Duke sees things a little differently.
 duke_referral_supply,"Luckily, I met a scavenger from the Lower Levels.\nWhenever I ran short, he could put a batch together for me."
-duke_delivery_price,Take the whole lot and it’s wholesale.\nThe Star Duke will knock off another ten percent. Nobody else gets that price!
+duke_delivery_price,Pick whichever pieces you like. Take the whole lot and the Duke will knock another twenty percent off!
 duke_no_order,"Huh, this batch isn’t for you today.\nThe Star Duke has another stop to make. See you, friend!"
 duke_story_1_1,"Wonderful! Just the day before yesterday, the Star Duke flew his ship into battle and defeated a metal alien monster!"
 duke_story_1_2,And he pulled a whole pile of things out of its body!
@@ -469,3 +470,55 @@ duke_referral_alias,I don’t know his real name. He calls himself the Star Duke
 duke_referral_character,"He might strike you as a little odd when you talk to him. He’s a good person, though."
 duke_referral_bye,I’ll head back to the workshop now. See you next time!
 duke_phone_cooldown,The Star Duke is still out adventuring. Talk later.
+glass_plate_name,Glass Plate
+glass_plate_desc,"A thin, clear sheet made from remelted glass shards, ready for further processing."
+glass_smelting_module_name,Glass Smelting Module
+glass_smelting_module_desc,A module designed for the smelting furnace.
+glass_smelting_module_effect,Smelts 1 glass shard into 1 glass plate.
+wine_bottle_chip_name,3D Printer Chip ({0} ×{1})
+high_temperature_nozzle_name,High-Temperature Printing Nozzle Module
+high_temperature_nozzle_desc,Allows the printer to use glass plates to print glass products.
+high_temperature_nozzle_effect,High-Temperature Printing
+debug_items_glass_furnace,Workshop | Glass smelting test kit
+debug_items_glass_shard,Workshop | Spawn a glass shard
+debug_items_glass_plate,Workshop | Spawn a glass plate
+duke_rubber_name,“Survey Ship Gasket”
+duke_latex_name,“Raw Alien Tree Sap”
+duke_shard_name,“Pressure-Rated Porthole Shard”
+duke_other_delivery,"Mind those porthole shards, friend!\nI wrapped them in a gasket so I wouldn’t cut my hands on the way over.\nHere, have a look!"
+duke_other_story_1_1,"Excellent, friend! The Star Duke just hauled a crate of treasure off a stranded survey ship."
+duke_other_story_1_2,"The ship’s portholes were cracked, and somehow the jar in that crate didn’t spill a drop."
+duke_other_story_2_1,Good timing! The Star Duke just seized a crate of contraband for starport customs!
+duke_other_story_2_2,The crate said “Fragile.” I looked inside. That was the only part they hadn’t lied about.
+duke_other_story_3_1,Wonderful! The Star Duke fixed a hatch for the owner of an offworld plantation the other day.
+duke_other_story_3_2,He asked what I charged.
+duke_other_story_4_1,Listen to this! The Star Duke chased a crate with legs for three blocks through an abandoned station!
+duke_other_story_4_2,There was no gravity. That crate could flee better than a space pirate. Lucky the Duke got to the door first.
+duke_other_story_5_1,Just the thing! The Star Duke went to the Ring Race yesterday!
+duke_other_story_5_2,The champion’s ship flew off the course and came back as a build-it-yourself kit!
+duke_other_story_3_3,I said I’d take that crate of treasures in the corner of his storeroom. Never seen a man agree so fast!
+duke_other_story_4_3,"Shame I couldn’t bring the crate back, but I cleaned out its belly!"
+duke_other_story_5_3,"It dropped a porthole, though. The Duke picked it up for him."
+duke_other_delivery_2,"Here you go, friend.\nI put the “Fragile” side up on purpose, so you can’t say the Duke didn’t warn you."
+duke_other_delivery_3,Here’s the crate I got for fixing that hatch.\nThe owner carried it out faster than I could. Guess he’d been meaning to clear some space.
+duke_other_delivery_4,"Here’s the haul, friend! It all came out of the crate’s belly!"
+duke_other_delivery_4_2,"Next chance I get, I’ll catch the crate itself and bring it over for you to see!"
+duke_other_delivery_5,"Here’s the champion’s porthole! No autograph!\nBut if you find every piece, you might be able to put it back together."
+duke_other_delivery_price,Pick whichever pieces you like. Take the whole lot and the Duke will knock another twenty percent off!
+duke_other_price_1,Merchant Ship Treasure
+duke_other_price_2,Starport Contraband
+duke_other_price_3,Payment for Hatch Repairs
+duke_other_price_4,From the Crate’s Belly
+duke_other_price_5,Champion’s Souvenir
+duke_delivery_1,"Look at that. The chunks of metal that fell off the beast are pretty heavy.\nIf the Duke didn’t still need his ship to fly, I’d have hauled the whole thing here!"
+duke_delivery_2,I heard another noise behind me while I was carrying this crate out.\nThe Duke didn’t look back. I had all the goods. What was there to look at?
+duke_delivery_3,Those pirates were still yelling that they’d come after me when they left.\nThe Duke pulled out all their signal cords. Let’s see how they call for help now!
+duke_delivery_4,"Here it is, the very same crate! Not a single fish bit that day, but the line kept tugging.\nGood thing the Duke held on."
+duke_delivery_5,My friend sent word that I shouldn’t mail him any more chunks of iron.\nAnd wouldn’t you know it? This time he sent me a whole crate of them.
+duke_printer_price_1,Beast Hunt Trophy
+duke_printer_price_2,Haunted Station Salvage
+duke_printer_price_3,Seized Pirate Cargo
+duke_printer_price_4,Treasure on the Line
+duke_printer_price_5,Gift from a Spacefaring Friend
+duke_order_reply,I need a shipment of starship parts.
+duke_order_other_reply,I need a shipment of spoils from distant stars.
