@@ -1,0 +1,34 @@
+name: Inspect native purifier and rich text (read-only)
+on:
+  push:
+    branches: [fix-koreanpack-mechanic-water-20261109]
+    paths: [.github/workflows/inspect-native-tooltip-details.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Read native methods
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          DLL=probably-stolen/Managed/Assembly-CSharp.dll
+          for t in MachinePurifier GeneralHelper RichText; do
+            echo "===== $t ====="
+            "$RUNNER_TEMP/ilspytools/ilspycmd" -t "$t" "$DLL" > "$RUNNER_TEMP/$t.cs"
+            if [ "$t" = RichText ]; then head -n 200 "$RUNNER_TEMP/$t.cs"; else
+              grep -n -C 25 -E 'CreateTooltip\(|GetTooltip\(|UpdateWaterFeature|GetBaseCurrentDisplay|CreateGeneralItemTooltip' "$RUNNER_TEMP/$t.cs" | head -250 || true
+            fi
+          done
