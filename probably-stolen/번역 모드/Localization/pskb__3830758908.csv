@@ -225,7 +225,7 @@ K|debug_items_kits,작업장 | 업그레이드 키트 3종
 K|debug_items_nodes,작업장 | 노드 3종
 K|debug_items_compiler,작업장 | 컴파일러 + 빈 디스크 4개 + 튜닝 매트릭스
 K|debug_items_printer,작업장 | 3D 프린터
-K|debug_items_materials,작업장 | 프린팅 칩 및 테스트 재료
+K|debug_items_materials,작업장 | 프린터 칩·모듈 및 테스트 재료
 K|debug_items_resonance,작업장 | 공명 모듈 테스트 키트
 K|debug_items_battery,작업장 | 간이 일회용 배터리 ×3
 K|debug_story_status,작업장 스토리 | 지출 및 이벤트 상태
@@ -431,7 +431,7 @@ K|workshop_display_name,가브리엘의 작업장
 K|workshop_display_description,"가브리엘을 만나 기계 업그레이드, 3D 프린팅 제조법, 모듈 컴파일러를 해금합니다. 모드 설정에서 스토리 발동 기준을 조정하고 초상화 스타일을 바꾸거나 성인용품 스토리를 끌 수 있습니다."
 K|duke_name,스타 듀크
 K|duke_intro,"안녕, 친구! 나야, 스타 듀크! 그래, 바로 그 스타 듀크라고!"
-K|duke_contact,연락처\n{0}
+K|duke_contact,"스타 듀크의 연락처\n—— {0}\n명심하게! 그자는 조금 괴짜인 재료상이라네.\n이렇게 말하게: {1}\n그러면 고철과 3D 프린팅 필라멘트, 케이블을 가져올 걸세.\n이렇게 말하게: {2}\n그러면 고무와 라텍스, 유리 조각을 팔 걸세."
 K|duke_phone_hello,"여보게, 친구! 누구를 찾나? 아, 맞다. 이 번호는 이제 스타 듀크의 것이지."
 K|duke_contents,위대한 스타 듀크에게 무슨 용무인가? 혹시 장대한 임무라도?
 K|duke_order,프린터 재료 한 묶음 주문
@@ -447,13 +447,13 @@ K|duke_referral_intro,안녕하세요! 지난번에 가져다드린 모듈과 �
 K|duke_referral_note,여기에 그 사람 번호를 적어 뒀어요. 재료가 필요할 때 전화하면 돼요.
 K|duke_referral_wait,번호는 적어 뒀어요. 카운터에 자리가 생기는 대로 메모를 놓고 갈게요.
 K|duke_note_name,스타 듀크 연락처 메모
-K|duke_note_desc,가브리엘이 손으로 적어 둔 메모입니다.
+K|duke_note_desc,가브리엘이 남긴 스타 듀크의 연락처 메모. 전화번호는 {0}이다.
 K|duke_scrap_name,「외계 모선 잔해」
 K|duke_filament_name,「압축 성운 필라멘트」
 K|duke_wire_name,「왕좌 신호 케이블」
 K|duke_stock_flavor,평범한 {0}처럼 보입니다. 듀크의 눈에는 조금 다르게 보이나 봅니다.
 K|duke_referral_supply,다행히 하층구역에서 폐품 수집가 한 명을 알게 됐어요.\n재료가 떨어질 때마다 그 사람이 한 묶음씩 구해 줬죠.
-K|duke_delivery_price,전부 가져가면 도매가로 해 주지.\n거기서 스타 듀크가 10%를 더 깎아 주겠네. 이런 가격은 다른 누구에게도 안 준다고!
+K|duke_delivery_price,마음에 드는 물건만 골라도 좋네. 전부 사면 듀크가 제시한 가격에서 20%를 더 깎아 주지!
 K|duke_no_order,"음, 오늘 이 물건들은 자네 몫이 아닌 모양이군.\n스타 듀크는 다른 곳에 들러야 해서 말이지. 또 보자고, 친구!"
 K|duke_story_1_1,"훌륭하지! 불과 그저께, 스타 듀크가 직접 우주선을 몰고 전투에 나가 금속 외계 괴물을 쓰러뜨렸다네!"
 K|duke_story_1_2,그리고 그 몸에서 물건을 한가득 뜯어 냈지!
@@ -472,3 +472,56 @@ K|duke_referral_alias,본명은 저도 몰라요. 스스로를 스타 듀크라�
 K|duke_referral_character,직접 얘기해 보면 좀 이상한 사람처럼 느껴질 수도 있어요. 그래도 좋은 사람이에요.
 K|duke_referral_bye,저는 작업장으로 돌아갈게요. 다음에 또 봐요!
 K|duke_phone_cooldown,스타 듀크는 아직 모험 중입니다. 다음에 다시 연락하세요.
+K|duke_order_other,다른 재료 주문
+K|glass_plate_name,유리판
+K|glass_plate_desc,유리 조각을 다시 녹여 만든 얇고 투명한 판. 추가 가공에 사용할 수 있다.
+K|glass_smelting_module_name,유리 제련 모듈
+K|glass_smelting_module_desc,제련용 용광로에 장착하는 모듈.
+K|glass_smelting_module_effect,유리 조각 1개를 녹여 유리판 1개를 만든다.
+K|wine_bottle_chip_name,3D 프린터 칩 ({0} ×{1})
+K|high_temperature_nozzle_name,고온 프린팅 노즐 모듈
+K|high_temperature_nozzle_desc,3D 프린터에서 유리판을 재료로 유리 제품을 출력할 수 있게 해 준다.
+K|high_temperature_nozzle_effect,고온 프린팅
+K|debug_items_glass_furnace,작업장 | 유리 제련 테스트 키트
+K|debug_items_glass_shard,작업장 | 유리 조각 생성
+K|debug_items_glass_plate,작업장 | 유리판 생성
+K|duke_rubber_name,「탐사선 개스킷」
+K|duke_latex_name,「외계 나무 원액」
+K|duke_shard_name,「내압 관측창 파편」
+K|duke_other_delivery,"관측창 파편은 조심하게, 친구!\n오는 길에 손을 베지 않도록 개스킷으로 감싸 뒀다네.\n자, 한번 보라고!"
+K|duke_other_story_1_1,"훌륭하지, 친구! 스타 듀크가 표류 중인 탐사선에서 보물이 든 상자를 건져 왔다네!"
+K|duke_other_story_1_2,"그 배의 관측창은 깨져 있었는데, 상자 속 병에 든 액체는 신기하게도 한 방울도 새지 않았지."
+K|duke_other_story_2_1,때마침 잘 왔군! 스타 듀크가 우주항 세관을 대신해 밀수품 상자를 압수했다네!
+K|duke_other_story_2_2,상자에는 '취급 주의'라고 적혀 있더군. 안을 열어 봤지. 거짓말이 아닌 건 그 문구뿐이었어.
+K|duke_other_story_3_1,멋진 일이지! 얼마 전 스타 듀크가 외계 행성 농장 주인의 출입문을 고쳐 줬다네!
+K|duke_other_story_3_2,그자가 수리비로 얼마를 받을 거냐고 묻더군.
+K|duke_other_story_4_1,이 얘기 좀 들어 보게! 스타 듀크가 버려진 우주정거장에서 다리 달린 상자를 세 블록이나 쫓아갔다네!
+K|duke_other_story_4_2,무중력 상태였지. 그 상자는 웬만한 우주 해적보다 도망을 잘 치더군. 듀크가 먼저 문 앞에 도착해서 망정이지!
+K|duke_other_story_5_1,이런 얘기는 어떤가! 스타 듀크가 어제 링 레이스를 보러 갔다네!
+K|duke_other_story_5_2,우승자의 우주선이 코스 밖으로 튕겨 나갔다가 조립식 부품 더미가 되어 돌아왔지!
+K|duke_other_story_3_3,창고 구석에 있는 보물 상자를 수리비로 받겠다고 했지. 그렇게 빨리 승낙하는 사람은 처음 봤다네!
+K|duke_other_story_4_3,"상자 자체를 가져오지 못한 건 아쉽지만, 뱃속은 싹 털어 왔다네!"
+K|duke_other_story_5_3,그래도 관측창 하나를 떨어뜨렸지. 듀크가 대신 주워 줬다네.
+K|duke_other_delivery_2,"자, 여기 있네, 친구.\n일부러 '취급 주의'라고 적힌 면을 위로 놓았으니, 듀크가 경고하지 않았다고는 하지 말게!"
+K|duke_other_delivery_3,그 출입문을 고쳐 주고 받은 상자라네.\n주인이 내가 옮기기도 전에 냉큼 밖으로 내놓더군. 안 그래도 창고를 비우고 싶었던 모양이야.
+K|duke_other_delivery_4,"자, 전리품이네, 친구! 전부 그 상자 뱃속에서 꺼낸 거라네!"
+K|duke_other_delivery_4_2,다음에 기회가 생기면 그 상자 자체를 붙잡아 자네에게도 보여 주겠네!
+K|duke_other_delivery_5,"자, 우승자의 관측창이라네! 사인은 없지만!\n부품을 전부 모으면 원래대로 조립할 수 있을지도 모르지."
+K|duke_other_delivery_price,마음에 드는 물건만 골라도 좋네. 전부 사면 스타 듀크가 제시한 가격에서 20%를 더 깎아 주겠네!
+K|duke_other_price_1,상선의 보물
+K|duke_other_price_2,우주항 밀수품
+K|duke_other_price_3,출입문 수리 대가
+K|duke_other_price_4,상자의 뱃속에서
+K|duke_other_price_5,우승자의 기념품
+K|duke_delivery_1,저것 좀 보게. 괴물 몸에서 떨어진 금속 덩어리들이 꽤 무겁지 않은가.\n듀크에게 아직 타고 다닐 우주선이 필요하지만 않았어도 그놈을 통째로 가져왔을 텐데!
+K|duke_delivery_2,상자를 들고 나오는데 뒤에서 또 무슨 소리가 들리더군.\n하지만 듀크는 돌아보지 않았지. 물건은 다 챙겼는데 더 볼 게 뭐 있겠나?
+K|duke_delivery_3,떠날 때까지도 해적들이 듀크를 끝까지 쫓겠다고 고함치더군.\n그래서 듀크가 신호 케이블을 모조리 뽑아 버렸지. 이제 어떻게 구조를 요청하는지 보자고!
+K|duke_delivery_4,바로 그 상자라네! 그날 물고기는 한 마리도 안 물었는데 낚싯줄은 계속 팽팽해지더군.\n듀크가 끝까지 놓지 않아서 다행이지.
+K|duke_delivery_5,친구에게서 철 덩어리는 이제 그만 보내 달라는 연락이 왔지.\n그런데 이번에는 그 친구가 오히려 철 덩어리 한 상자를 보내 왔다네!
+K|duke_printer_price_1,괴물 사냥 전리품
+K|duke_printer_price_2,유령 정거장 수집품
+K|duke_printer_price_3,압수한 해적 화물
+K|duke_printer_price_4,낚싯줄에 걸린 보물
+K|duke_printer_price_5,우주를 누비는 친구의 선물
+K|duke_order_reply,우주선 부품을 한 묶음 주문하고 싶네.
+K|duke_order_other_reply,먼 별에서 온 전리품을 한 묶음 주문하고 싶네.
