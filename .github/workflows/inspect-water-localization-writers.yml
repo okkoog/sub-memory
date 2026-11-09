@@ -1,0 +1,36 @@
+name: Identify writers of shared Mechanic water conditions
+on:
+  push:
+    branches: [fix-koreanpack-mechanic-water-20261109]
+    paths: [.github/workflows/inspect-water-localization-writers.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3828891515
+            probably-stolen/mods/3834226532
+            probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Inspect original mods read-only in temporary location
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          for spec in '3828891515/KoreanTranslation.dll' '3834226532/DeepSpacePawnshop.dll'; do
+            dll="probably-stolen/mods/$spec"
+            folder="$(basename "$spec" .dll)"
+            target="$RUNNER_TEMP/$folder"
+            "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$target" "$dll"
+            echo "===== $spec water condition references ====="
+            grep -RnE -C 9 'conditionWaterPurity|CreateGutterflow|GUTTERFLOW_WATER_DISPLAY|GetLocalizedMechanic|StringDatabase|SelectedLocaleChanged|WATER_DISPLAY_LOCALIZED|WaterFeatureHelper\.(GetCondition|UpdateWaterFeature)|OnCreateTooltip(Early|Late)|SetPublicDisplay|UpdateWaterFeature' "$target" --include='*.cs' | head -n 240 || true
+          done
