@@ -1,0 +1,39 @@
+name: Temp surgical patch old KoreanPack water label only
+on:
+  push:
+    branches: [tmp-labeler-only-on-fix-water-20261109]
+    paths:
+      - .github/workflows/temp-surgical-label-only.yml
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll
+            probably-stolen/tmp/surgical-water-label
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Surgical IL insertion on original DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/work" "$RUNNER_TEMP/out"
+          cp "probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll" "$RUNNER_TEMP/work/ORIGINAL.dll"
+          curl -fL "https://raw.githubusercontent.com/okkoog/sub-memory/113a1fd3873eb193ae07afece1399e5009253aef/probably-stolen/%EB%B2%88%EC%97%AD%20%EB%AA%A8%EB%93%9C/ProbablyStolenKoreanPack.dll" -o "$RUNNER_TEMP/work/PATCHED.dll"
+          mkdir -p "$RUNNER_TEMP/app"
+          dotnet new console -n Surgical -o "$RUNNER_TEMP/app" -f net8.0 --no-restore
+          cp probably-stolen/tmp/surgical-water-label/Program.cs "$RUNNER_TEMP/app/Program.cs"
+          dotnet add "$RUNNER_TEMP/app/Surgical.csproj" package dnlib --version 4.5.0
+          dotnet run --project "$RUNNER_TEMP/app/Surgical.csproj" --configuration Release -- "$RUNNER_TEMP/work/ORIGINAL.dll" "$RUNNER_TEMP/work/PATCHED.dll" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack.dll"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-surgical-original-plus-water-label
+          path: ${{ runner.temp }}/out/ProbablyStolenKoreanPack.dll
+          if-no-files-found: error
