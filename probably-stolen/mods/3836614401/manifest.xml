@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod>
+  <ID>fried_rice_girls</ID>
+  <Name>Fried Rice Girls</Name>
+  <Author>清明葬花祭|lapismind</Author>
+  <ModVersion>0.1.1</ModVersion>
+  <Description>Girlified customers and dialogue for "A Bowl of Cyber Fried Rice: No Pre-made Food, We Swear". Requires cyber_fried_rice to be enabled too.</Description>
+
+  <GameVersions>
+    <Version>0.46</Version>
+  </GameVersions>
+
+  <!-- 依赖外卖 mod。加载器只在模组列表里提示，不阻止启用；外卖 mod 未启用时本模组没有任何效果。 -->
+  <Prerequisites>
+    <Mod>cyber_fried_rice</Mod>
+  </Prerequisites>
+
+  <Assemblies>
+    <Assembly>FriedRiceGirls.dll</Assembly>
+  </Assemblies>
+
+  <!-- 只用游戏公开 API 和 Harmony。不要打包 0Harmony.dll。 -->
+  <Capabilities />
+</Mod>

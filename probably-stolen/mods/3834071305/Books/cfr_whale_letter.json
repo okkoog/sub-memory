@@ -1,0 +1,66 @@
+{
+  "id": "cfr_whale_letter",
+  "title": "Pale Blue Letter",
+  "background": "whale_letter_paper",
+  "width": 400,
+  "height": 260,
+  "designWidth": 200,
+  "designHeight": 130,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "zoomable": false,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 184,
+      "y": 3,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_close1",
+      "hoverSprite": "paper_buttons_close2"
+    }
+  ],
+  "templates": [
+    {
+      "id": "letter",
+      "elements": [
+        {
+          "type": "text",
+          "id": "body",
+          "x": 16,
+          "y": 18,
+          "w": 168,
+          "h": 70,
+          "text": "Sorry the little one bothered your shop. Her meals, repaid double.",
+          "translations": {
+            "zh": "孩子顽皮，叨扰贵店。饭钱加倍奉还。"
+          },
+          "style": "handwritten",
+          "align": "left",
+          "color": "#2c3e74",
+          "fontSize": 9
+        },
+        {
+          "type": "image",
+          "id": "seal",
+          "sprite": "whale_seal",
+          "x": 146,
+          "y": 78,
+          "w": 34,
+          "h": 34,
+          "fit": "stretch"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "Letter",
+      "template": "letter"
+    }
+  ]
+}

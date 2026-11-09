@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod>
+  <ID>npc_girls</ID>
+  <Name>NPC Girls</Name>
+  <Author>清明葬花祭|lapismind</Author>
+  <ModVersion>0.1.1</ModVersion>
+  <Description>NPC Girls: named NPCs rewritten as girls. Requires Wanted Girls (wanted_girls) to be enabled too.</Description>
+
+  <GameVersions>
+    <Version>0.46</Version>
+  </GameVersions>
+
+  <!-- 依赖一期。加载器只在模组列表里提示，不阻止启用；一期未启用时本模组没有任何效果。 -->
+  <Prerequisites>
+    <Mod>wanted_girls</Mod>
+  </Prerequisites>
+
+  <Assemblies>
+    <Assembly>NPCGirls.dll</Assembly>
+  </Assemblies>
+
+  <Capabilities />
+</Mod>

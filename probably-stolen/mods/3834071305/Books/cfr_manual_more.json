@@ -1,0 +1,492 @@
+{
+  "id": "cfr_manual_more",
+  "title": "More Set Meals",
+  "background": "notebook_manual",
+  "width": 628,
+  "height": 804,
+  "designWidth": 314,
+  "designHeight": 402,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 297,
+      "y": 2.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_close1",
+      "hoverSprite": "paper_buttons_close2"
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 273.5,
+      "y": 3.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_screen_0",
+      "hoverSprite": "paper_buttons_screen_1"
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 124,
+      "y": 380,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_l_1",
+      "hoverSprite": "paper_buttons_l_2"
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 176,
+      "y": 380.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons1",
+      "hoverSprite": "paper_buttons2"
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "x": 140.5,
+      "y": 374,
+      "w": 33,
+      "h": 25
+    }
+  ],
+  "templates": [
+    {
+      "id": "cfr_page_more",
+      "elements": [
+        {
+          "type": "image",
+          "id": "logo",
+          "sprite": "cfr_logo",
+          "x": 18.5,
+          "y": 22,
+          "w": 283,
+          "h": 116,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20,
+          "text": "CYBER FRIED RICE",
+          "translations": {
+            "zh": "一碗赌上赛博生涯的蛋炒饭"
+          },
+          "style": "header",
+          "align": "center",
+          "color": "#355271",
+          "wrap": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21,
+          "text": "More Set Meals",
+          "translations": {
+            "zh": "更多的套餐"
+          },
+          "style": "title",
+          "align": "center",
+          "wrap": false
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "template": "cfr_page_more",
+      "elements": [
+        {
+          "type": "text",
+          "id": "s1",
+          "x": 35,
+          "y": 84,
+          "w": 253,
+          "h": 14,
+          "text": "1. New dishes",
+          "translations": {
+            "zh": "1. 新菜"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "new_img0",
+          "sprite": "pm_chicken",
+          "x": 51,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "new_cap0",
+          "x": 35,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Air fryer",
+          "translations": {
+            "zh": "空气炸锅"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "new_img1",
+          "sprite": "pm_skewer",
+          "x": 114,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "new_cap1",
+          "x": 98,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Microwave\n+ torch",
+          "translations": {
+            "zh": "微波\n+ 喷枪"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "new_img2",
+          "sprite": "pm_knuckle",
+          "x": 177,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "new_cap2",
+          "x": 162,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Microwave",
+          "translations": {
+            "zh": "微波"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "new_img3",
+          "sprite": "pm_roast",
+          "x": 240,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "new_cap3",
+          "x": 225,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Air fryer\n+ torch",
+          "translations": {
+            "zh": "空气炸锅\n+ 喷枪"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "p1",
+          "x": 35,
+          "y": 162,
+          "w": 253,
+          "h": 44,
+          "text": "Fried chicken and roast pork rice only go in the air fryer. The microwave won't take them.",
+          "translations": {
+            "zh": "炸鸡、烤肉饭只能进空气炸锅，微波炉不收。空气炸锅更费电，吹两秒。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "image",
+          "id": "tool_img0",
+          "sprite": "pm_fryer",
+          "x": 97,
+          "y": 206,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "tool_cap0",
+          "x": 65,
+          "y": 241,
+          "w": 96,
+          "h": 16,
+          "text": "Air fryer",
+          "translations": {
+            "zh": "空气炸锅"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "tool_img1",
+          "sprite": "pm_torch",
+          "x": 194,
+          "y": 222,
+          "w": 32,
+          "h": 16,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "tool_cap1",
+          "x": 162,
+          "y": 241,
+          "w": 96,
+          "h": 16,
+          "text": "Torch · 20 uses a can",
+          "translations": {
+            "zh": "喷枪 · 一罐 20 次"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "p2",
+          "x": 35,
+          "y": 262,
+          "w": 253,
+          "h": 44,
+          "text": "Skewers and roast pork rice: heat first, then drag the torch onto them. Unscorched counts as done wrong.",
+          "translations": {
+            "zh": "肉串、烤肉饭先热好，再把喷枪拖上去燎一下。没燎会被差评。丁烷罐在下单机买。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "note1",
+          "x": 155,
+          "y": 312,
+          "w": 140,
+          "h": 30,
+          "text": "Nobody can tell it's not charcoal.",
+          "translations": {
+            "zh": "炭火？谁吃得出来。"
+          },
+          "style": "handwritten",
+          "align": "center",
+          "color": "#9c3738",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "template": "cfr_page_more",
+      "elements": [
+        {
+          "type": "text",
+          "id": "s2",
+          "x": 35,
+          "y": 84,
+          "w": 253,
+          "h": 14,
+          "text": "2. Uptown light meals",
+          "translations": {
+            "zh": "2. 上城轻食"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "lm_meal",
+          "sprite": "pm_meal",
+          "x": 49,
+          "y": 116,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "line",
+          "id": "lm_a1",
+          "x": 87,
+          "y": 132,
+          "x2": 127,
+          "y2": 132,
+          "thickness": 1,
+          "arrow": "end",
+          "arrowSize": 4,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "lm_station",
+          "sprite": "pm_light",
+          "x": 133,
+          "y": 108,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "line",
+          "id": "lm_a2",
+          "x": 187,
+          "y": 132,
+          "x2": 227,
+          "y2": 132,
+          "thickness": 1,
+          "arrow": "end",
+          "arrowSize": 4,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "lm_box",
+          "sprite": "pm_boxbag",
+          "x": 237,
+          "y": 116,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "lm_cap",
+          "x": 95,
+          "y": 150,
+          "w": 130,
+          "h": 12,
+          "text": "One drag: rinse, blot, box",
+          "translations": {
+            "zh": "拖一次：冲水、吸油、装木盒"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "p3",
+          "x": 35,
+          "y": 168,
+          "w": 253,
+          "h": 44,
+          "text": "Nine heavy dishes have an uptown version. Uptown orders (15%) only take boxed meals and pay 4x.",
+          "translations": {
+            "zh": "9 道重油菜有上城版。上城单（约 15%）只收木盒外卖，按平台价 ×4 付。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "p4",
+          "x": 35,
+          "y": 212,
+          "w": 253,
+          "h": 44,
+          "text": "Put water in the station's water slot: 300 ml a dish. Boxes and paper are station stock. 10% aren't rinsed clean: check the tooltip.",
+          "translations": {
+            "zh": "台上水格放水，每份冲 300 毫升。木盒、吸油纸是台上计数，下单机补。每份 10% 手抖没冲干净，看悬停提示。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "s3",
+          "x": 35,
+          "y": 258,
+          "w": 253,
+          "h": 14,
+          "text": "3. Heartburn",
+          "translations": {
+            "zh": "3. 烧心值"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "id": "p5",
+          "x": 35,
+          "y": 276,
+          "w": 253,
+          "h": 60,
+          "text": "Uptown has one extra demand: no heartburn after eating. ≤15: good review. Up to 40: a forum rant, uptown reputation down. Above: acute pancreatitis, the legal team claims 3x the uptown price.",
+          "translations": {
+            "zh": "上层区额外要求吃了不烧心。≤15：好评。16–40：论坛小作文，上层区声望下降。超过 40：急性胰腺炎，私人法务索赔上城价 ×3。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "note2",
+          "x": 135,
+          "y": 336,
+          "w": 160,
+          "h": 30,
+          "text": "The box takes \"seasoning\" too.",
+          "translations": {
+            "zh": "木盒里照样能加“调味料”。"
+          },
+          "style": "handwritten",
+          "align": "center",
+          "color": "#a8641e",
+          "fontSize": 9
+        }
+      ]
+    }
+  ],
+  "item": {
+    "id": "cfr_manual_more",
+    "name": "More Set Meals",
+    "nameLoc": "item_manual_more_name",
+    "descriptionLoc": "item_manual_more_desc",
+    "sprite": "cfr_manual_more"
+  }
+}

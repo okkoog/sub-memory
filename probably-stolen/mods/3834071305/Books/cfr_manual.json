@@ -1,0 +1,785 @@
+{
+  "id": "cfr_manual",
+  "title": "Takeout Counter Notes",
+  "background": "notebook_manual",
+  "width": 628,
+  "height": 804,
+  "designWidth": 314,
+  "designHeight": 402,
+  "locales": [
+    "en",
+    "zh"
+  ],
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 297,
+      "y": 2.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_close1",
+      "hoverSprite": "paper_buttons_close2"
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 273.5,
+      "y": 3.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_screen_0",
+      "hoverSprite": "paper_buttons_screen_1"
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 124,
+      "y": 380,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_l_1",
+      "hoverSprite": "paper_buttons_l_2"
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 176,
+      "y": 380.5,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons1",
+      "hoverSprite": "paper_buttons2"
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "x": 140.5,
+      "y": 374,
+      "w": 33,
+      "h": 25
+    }
+  ],
+  "templates": [
+    {
+      "id": "cfr_page",
+      "elements": [
+        {
+          "type": "image",
+          "id": "logo",
+          "sprite": "cfr_logo",
+          "x": 18.5,
+          "y": 22,
+          "w": 283,
+          "h": 116,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "x": 72,
+          "y": 34,
+          "w": 173,
+          "h": 20,
+          "text": "CYBER FRIED RICE",
+          "translations": {
+            "zh": "一碗赌上赛博生涯的蛋炒饭"
+          },
+          "style": "header",
+          "align": "center",
+          "color": "#355271",
+          "wrap": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "x": 28,
+          "y": 49,
+          "w": 262,
+          "h": 21,
+          "text": "Takeout Counter Notes",
+          "translations": {
+            "zh": "外卖档口出餐手册"
+          },
+          "style": "title",
+          "align": "center",
+          "wrap": false
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "template": "cfr_page",
+      "elements": [
+        {
+          "type": "text",
+          "id": "s1",
+          "x": 35,
+          "y": 84,
+          "w": 253,
+          "h": 14,
+          "text": "1. Hand-off",
+          "translations": {
+            "zh": "1. 出餐"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "gear_img0",
+          "sprite": "pp_kitchen",
+          "x": 47,
+          "y": 102,
+          "w": 40,
+          "h": 40,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "gear_cap0",
+          "x": 35,
+          "y": 145,
+          "w": 63,
+          "h": 16,
+          "text": "Back kitchen",
+          "translations": {
+            "zh": "后厨柜"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "gear_img1",
+          "sprite": "pp_microwave",
+          "x": 106,
+          "y": 110,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "gear_cap1",
+          "x": 98,
+          "y": 145,
+          "w": 63,
+          "h": 16,
+          "text": "Microwave",
+          "translations": {
+            "zh": "微波炉"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "gear_img2",
+          "sprite": "pp_terminal",
+          "x": 177,
+          "y": 110,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "gear_cap2",
+          "x": 162,
+          "y": 145,
+          "w": 63,
+          "h": 16,
+          "text": "Order terminal",
+          "translations": {
+            "zh": "下单机"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "gear_img3",
+          "sprite": "pp_board",
+          "x": 232,
+          "y": 110,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "gear_cap3",
+          "x": 225,
+          "y": 145,
+          "w": 63,
+          "h": 16,
+          "text": "Menu board",
+          "translations": {
+            "zh": "线上菜单板"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "p1",
+          "x": 35,
+          "y": 166,
+          "w": 253,
+          "h": 46,
+          "text": "Drag cooked meals onto the packing station. Put the resulting bags on the counter for the courier. Add-ons come from station stock.",
+          "translations": {
+            "zh": "熟食拖到打包台，消耗一份材料生成外卖。成品袋放柜台交给骑手，加购从台上库存自动扣。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "image",
+          "id": "bag_img0",
+          "sprite": "pp_station",
+          "x": 99,
+          "y": 214,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "bag_cap0",
+          "x": 85,
+          "y": 249,
+          "w": 76,
+          "h": 16,
+          "text": "Packing station",
+          "translations": {
+            "zh": "打包台"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "bag_img1",
+          "sprite": "pp_bag",
+          "x": 184,
+          "y": 214,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "bag_cap1",
+          "x": 162,
+          "y": 249,
+          "w": 76,
+          "h": 16,
+          "text": "Takeout bag",
+          "translations": {
+            "zh": "打包袋"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "line",
+          "id": "bag_arrow",
+          "x": 147,
+          "y": 230,
+          "x2": 176,
+          "y2": 230,
+          "thickness": 1,
+          "arrow": "end",
+          "arrowSize": 4,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "id": "p2",
+          "x": 35,
+          "y": 270,
+          "w": 253,
+          "h": 46,
+          "text": "Starter orders: 85% single, 15% double. Start with 2 packs per dish. The platform keeps 20%.",
+          "translations": {
+            "zh": "起步 85% 单份、15% 双份，默认上架每道菜送 2 包。平台抽成 20%。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "x": 35,
+          "y": 300,
+          "w": 253,
+          "h": 14,
+          "text": "2. Order terminal",
+          "translations": {
+            "zh": "2. 下单机"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "id": "p3",
+          "x": 35,
+          "y": 318,
+          "w": 253,
+          "h": 40,
+          "text": "Paid now, delivered next morning. Kits and add-ons refill station stock.",
+          "translations": {
+            "zh": "当场付钱，次日送到。材料和加购直接补入打包台计数。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "p3b",
+          "x": 35,
+          "y": 352,
+          "w": 253,
+          "h": 40,
+          "text": "Menu board: tick dishes, star one, or list by stock. Joe Wild sells a promotional poster for 500 credits, bringing one more courier.",
+          "translations": {
+            "zh": "菜单板勾选上架、打星，或按库存一键上架。王尔德处花 500 信用点买宣传图，每天多来一位骑手。"
+          },
+          "style": "body"
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "template": "cfr_page",
+      "elements": [
+        {
+          "type": "text",
+          "id": "s3",
+          "x": 35,
+          "y": 84,
+          "w": 253,
+          "h": 14,
+          "text": "3. Cooking",
+          "translations": {
+            "zh": "3. 做法"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "cook_img0",
+          "sprite": "pp_raw",
+          "x": 51,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "cook_cap0",
+          "x": 35,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Microwave",
+          "translations": {
+            "zh": "微波"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "cook_img1",
+          "sprite": "pp_sachet",
+          "x": 114,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "cook_cap1",
+          "x": 98,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Water, then\nmicrowave",
+          "translations": {
+            "zh": "加水后微波"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "cook_img2",
+          "sprite": "pp_bottle",
+          "x": 185,
+          "y": 102,
+          "w": 16,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "cook_cap2",
+          "x": 162,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Water only\ndon't heat",
+          "translations": {
+            "zh": "只加水\n别热"
+          },
+          "style": "caption",
+          "align": "center",
+          "color": "#9c3738"
+        },
+        {
+          "type": "image",
+          "id": "cook_img3",
+          "sprite": "pp_onigiri",
+          "x": 240,
+          "y": 102,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "cook_cap3",
+          "x": 225,
+          "y": 137,
+          "w": 63,
+          "h": 22,
+          "text": "Right-click\ndon't heat",
+          "translations": {
+            "zh": "右键拆开\n别热"
+          },
+          "style": "caption",
+          "align": "center",
+          "color": "#9c3738"
+        },
+        {
+          "type": "text",
+          "id": "p4",
+          "x": 35,
+          "y": 166,
+          "w": 253,
+          "h": 56,
+          "text": "Serve hot food hot; it goes cold overnight. A heated iced drink or rice ball counts as done wrong. The pack says how much water; any \"water\" works.",
+          "translations": {
+            "zh": "该热的要热着出餐，过一夜就凉。冰饮、饭团热过会被差评。加多少水看料理包说明，“什么水”都行。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "image",
+          "id": "mw_raw",
+          "sprite": "pp_raw",
+          "x": 57,
+          "y": 252,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "image",
+          "id": "mw_oven",
+          "sprite": "pp_microwave",
+          "x": 137,
+          "y": 222,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "line",
+          "id": "mw_arrow",
+          "x": 107,
+          "y": 268,
+          "x2": 215,
+          "y2": 268,
+          "thickness": 1,
+          "arrow": "end",
+          "arrowSize": 4,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "id": "mw_hot",
+          "sprite": "pp_pack",
+          "x": 233,
+          "y": 252,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "mw_how",
+          "x": 107,
+          "y": 274,
+          "w": 108,
+          "h": 12,
+          "text": "Put it in. Ding, done.",
+          "translations": {
+            "zh": "放进去，叮一下即可"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "mw_raw_name",
+          "x": 27,
+          "y": 288,
+          "w": 92,
+          "h": 22,
+          "text": "Freeze-thawed Soy Protein\nCrumb Microwave Rice Pack",
+          "translations": {
+            "zh": "冻融大豆蛋白碎\n微波米饭包"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "mw_hot_name",
+          "x": 203,
+          "y": 288,
+          "w": 92,
+          "h": 22,
+          "text": "Deep Space Wok-Hei\nGolden Fried Rice",
+          "translations": {
+            "zh": "深空猛火锅气\n黄金炒饭"
+          },
+          "style": "caption",
+          "align": "center",
+          "color": "#a8641e"
+        },
+        {
+          "type": "text",
+          "id": "mw_note",
+          "x": 169,
+          "y": 314,
+          "w": 150,
+          "h": 36,
+          "text": "More \"seasoning\", more regulars!",
+          "translations": {
+            "zh": "掺点“调味料”更能赚回头客！"
+          },
+          "style": "handwritten",
+          "align": "center",
+          "color": "#9c3738",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "name": "Page 3",
+      "template": "cfr_page",
+      "elements": [
+        {
+          "type": "text",
+          "id": "s5",
+          "x": 35,
+          "y": 84,
+          "w": 253,
+          "h": 14,
+          "text": "4. Likes",
+          "translations": {
+            "zh": "4. 点赞"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "id": "p6",
+          "x": 35,
+          "y": 100,
+          "w": 213,
+          "h": 34,
+          "text": "Every 15 likes and every 5 dishes on the menu bring one more courier a day (max 7). Open the Merchant Console to check likes.",
+          "translations": {
+            "zh": "每 15 个赞、每上架 5 样菜，每天多来 1 位骑手（最多 7 位）。点开商家后台随时看点赞和近 7 晚走势。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "image",
+          "id": "panel_img",
+          "sprite": "pp_panel",
+          "x": 254,
+          "y": 100,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "image",
+          "id": "like_img0",
+          "sprite": "pp_cola",
+          "x": 61,
+          "y": 136,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "like_cap0",
+          "x": 35,
+          "y": 171,
+          "w": 84,
+          "h": 22,
+          "text": "Add-on\npays 1 · costs 2",
+          "translations": {
+            "zh": "加购\n收 1 · 进价 2"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "like_img1",
+          "sprite": "pp_sausage",
+          "x": 146,
+          "y": 136,
+          "w": 32,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "like_cap1",
+          "x": 119,
+          "y": 171,
+          "w": 84,
+          "h": 22,
+          "text": "Add-on\npays 1 · costs 2",
+          "translations": {
+            "zh": "加购\n收 1 · 进价 2"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "image",
+          "id": "like_img2",
+          "sprite": "pp_sign",
+          "x": 222,
+          "y": 136,
+          "w": 48,
+          "h": 32,
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "id": "like_cap2",
+          "x": 204,
+          "y": 171,
+          "w": 84,
+          "h": 22,
+          "text": "Display case\n+1 courier 75%",
+          "translations": {
+            "zh": "放橱窗\n75% 多 1 位骑手"
+          },
+          "style": "caption",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "p7",
+          "x": 35,
+          "y": 196,
+          "w": 253,
+          "h": 16,
+          "text": "Start with 5 of each add-on. Missing one costs 2 likes.",
+          "translations": {
+            "zh": "开局小可乐、淀粉肠各送 5 个，漏送加购扣 2 赞。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "s6",
+          "x": 35,
+          "y": 220,
+          "w": 253,
+          "h": 14,
+          "text": "5. Pre-made meals",
+          "translations": {
+            "zh": "5. 预制熟食"
+          },
+          "style": "section",
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "id": "p8",
+          "x": 35,
+          "y": 238,
+          "w": 253,
+          "h": 30,
+          "text": "Cooked but unbagged food sells to the Lower Levels and Eleanor, and Serpico takes it.",
+          "translations": {
+            "zh": "做好没打包的菜，可以卖给下层区和埃利诺，也能送塞尔皮斯。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "p9",
+          "x": 35,
+          "y": 268,
+          "w": 253,
+          "h": 30,
+          "text": "Fish & rats: over 30% pre-made calories (dispensers too) = trash-grade meat.",
+          "translations": {
+            "zh": "喂鱼喂鼠：预制热量超过吃过总热量的 30%（饲喂器也算），肉变垃圾级。"
+          },
+          "style": "body"
+        },
+        {
+          "type": "text",
+          "id": "warn",
+          "x": 35,
+          "y": 312,
+          "w": 253,
+          "h": 40,
+          "text": "Before disabling the mod, take batteries and modules out of the back kitchen and the microwave.",
+          "translations": {
+            "zh": "停用本 mod 前，先把后厨柜、微波炉里的电池和模组取出来。"
+          },
+          "style": "body",
+          "color": "#9c3738"
+        }
+      ]
+    }
+  ],
+  "item": {
+    "id": "cfr_manual",
+    "name": "Takeout Counter Notes",
+    "nameLoc": "item_manual_name",
+    "descriptionLoc": "item_manual_desc",
+    "sprite": "cfr_manual"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "cfr_card_orange",
+  "title": "Card orange",
+  "background": "cardface_orange",
+  "width": 411,
+  "height": 255,
+  "designWidth": 137,
+  "designHeight": 85,
+  "zoomable": false,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 121,
+      "y": 2,
+      "w": 14,
+      "h": 15,
+      "sprite": "paper_buttons_close1",
+      "hoverSprite": "paper_buttons_close2"
+    }
+  ],
+  "templates": [
+    {
+      "id": "face",
+      "elements": [
+        {
+          "type": "button",
+          "id": "call",
+          "action": "call",
+          "x": 34,
+          "y": 56,
+          "w": 69,
+          "h": 20,
+          "sprite": "cardnum_orange",
+          "hoverSprite": "cardnum_orange_hover"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "Front",
+      "template": "face"
+    }
+  ]
+}
