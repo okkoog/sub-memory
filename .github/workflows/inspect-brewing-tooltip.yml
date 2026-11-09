@@ -1,0 +1,34 @@
+name: Inspect brewing water tooltip behavior without modifying original
+on:
+  push:
+    branches: [fix-koreanpack-mechanic-water-20261109]
+    paths: [.github/workflows/inspect-brewing-tooltip.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3829730904
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Inspect original brewing DLL in temp only
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          mkdir -p "$RUNNER_TEMP/brewing"
+          "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/brewing" probably-stolen/mods/3829730904/BrewingExpansion.dll
+          echo "===== matching source files ====="
+          grep -rlE 'tooltipRichTextFunc|GetTooltip\(|CreateLabeledItemTooltip|CATEGORY_WATER_PURITY|mech_condition_gutterflow|GetBaseCurrentDisplay|GetBaseFakeDisplay|GetBaseRealDisplay|OnCreateTooltip(Early|Late)' "$RUNNER_TEMP/brewing" --include='*.cs' | head -80 || true
+          echo "===== relevant call site snippets ====="
+          grep -RnE -C 8 'tooltipRichTextFunc|CreateLabeledItemTooltip|CATEGORY_WATER_PURITY|mech_condition_gutterflow|GetBaseCurrentDisplay|GetBaseFakeDisplay|GetBaseRealDisplay|OnCreateTooltip(Early|Late)' "$RUNNER_TEMP/brewing" --include='*.cs' | head -360 || true
+          echo "===== candidate tooltip methods ====="
+          grep -RnE -C 2 'Create.*Tooltip|Tooltip.*Create|GetTooltip|SetTooltip|AddLine.*[Ll]abel' "$RUNNER_TEMP/brewing" --include='*.cs' | head -220 || true
