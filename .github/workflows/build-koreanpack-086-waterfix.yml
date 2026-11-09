@@ -63,7 +63,8 @@ jobs:
           grep -R -q 'EnsureLocalizationHooks' "$RUNNER_TEMP/waterfix-decompiled"
           python3 - <<'PY'
           from pathlib import Path
-          p=next(Path("$RUNNER_TEMP/waterfix-decompiled").rglob("WaterNameCompatibility.cs"))
+          import os
+          p=next((Path(os.environ["RUNNER_TEMP"])/"waterfix-decompiled").rglob("WaterNameCompatibility.cs"))
           t=p.read_text()
           a=t[t.index("internal void Enable()"):t.index("internal void Disable()", t.index("internal void Enable()"))]
           if "LocalizationSettings" in a:
