@@ -16,6 +16,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/Managed
+            probably-stolen/build
+            probably-stolen/source/koreanpack-086-restored
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
