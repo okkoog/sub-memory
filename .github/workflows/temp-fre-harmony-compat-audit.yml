@@ -1,0 +1,52 @@
+name: Temporary audit Faction Reputation Harmony call
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/temp-fre-harmony-compat-audit.yml]
+permissions: {contents: read}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /probably-stolen/mods/3828971731/FactionReputationExpansion.dll
+            /probably-stolen/Managed/0Harmony.dll
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: '10.0.x'}
+      - name: Inspect exact Cecil references and Harmony API
+        run: |
+          set -eu
+          dotnet new console --framework net10.0 -o "$RUNNER_TEMP/audit" --no-restore > /dev/null
+          dotnet add "$RUNNER_TEMP/audit/audit.csproj" package Mono.Cecil --version 0.11.6 > /dev/null
+          cat > "$RUNNER_TEMP/audit/Program.cs" <<'CS'
+          using System;
+          using Mono.Cecil;
+          using Mono.Cecil.Cil;
+          using System.Linq;
+          var target=AssemblyDefinition.ReadAssembly("probably-stolen/mods/3828971731/FactionReputationExpansion.dll");
+          var harmony=AssemblyDefinition.ReadAssembly("probably-stolen/Managed/0Harmony.dll");
+          var methods=target.MainModule.Types.SelectMany(x=>new[]{x}.Concat(x.NestedTypes)).SelectMany(x=>x.Methods).Where(x=>x.HasBody);
+          int n=0;
+          foreach(var m in methods)foreach(var il in m.Body.Instructions) {
+              if(il.Operand is MethodReference call && call.FullName.Contains("LoadsConstant")){
+                  Console.WriteLine("CALL "+m.FullName+" : "+call.FullName+" opcode="+il.OpCode+" RVA="+m.RVA);
+                  n++;
+              }
+          }
+          Console.WriteLine("TOTAL CALLS "+n);
+          foreach(var t in harmony.MainModule.Types.Where(x=>x.FullName.Contains("CodeInstruction"))) {
+              Console.WriteLine("TYPE "+t.FullName);
+              foreach(var f in t.Fields) Console.WriteLine("FIELD "+f.FullName);
+              foreach(var m in t.Methods.Where(x=>x.Name.Contains("LoadsConstant")))Console.WriteLine("METHOD "+m.FullName);
+          }
+          foreach(var t in target.MainModule.Types.Where(x=>x.FullName.Contains("ThiefCrateFirst"))) {
+              Console.WriteLine("TARGET "+t.FullName);
+              foreach(var m in t.Methods)Console.WriteLine("TARGETMETHOD "+m.FullName);
+              foreach(var nt in t.NestedTypes){Console.WriteLine("NESTED "+nt.FullName);foreach(var m in nt.Methods)Console.WriteLine("NESTEDMETHOD "+m.FullName);}
+          }
+          CS
+          dotnet run --project "$RUNNER_TEMP/audit" --configuration Release
