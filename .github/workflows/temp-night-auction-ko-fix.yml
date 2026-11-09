@@ -1,0 +1,85 @@
+name: Temp build Night Auction Korean crash-fix
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/temp-night-auction-ko-fix.yml]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/mods/3829429358
+            probably-stolen/Managed
+            probably-stolen/work-in-progress/sa-na-dll-translation
+            probably-stolen/번역 모드/Localization/pskb__3829429358.csv
+            probably-stolen/downloads
+          persist-credentials: true
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Compile and check fixed Night Auction DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="probably-stolen/work-in-progress/sa-na-dll-translation"
+          game="probably-stolen/mods/3829429358"
+          dest="probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9_fix1"
+          mkdir -p "$dest/Localization"
+          dotnet new console --framework net10.0 -o "$RUNNER_TEMP/patcher" --no-restore >/dev/null
+          cp "$src/NightAuction.KoreanPatch.cs" "$RUNNER_TEMP/patcher/Program.cs"
+          dotnet add "$RUNNER_TEMP/patcher/patcher.csproj" package Mono.Cecil --version 0.11.6 >/dev/null
+          dotnet run --project "$RUNNER_TEMP/patcher" --configuration Release -- "$game/XIAOWONightAuction.dll" "$src/NightAuction.Chinese.original.json" "$src" "$dest/XIAOWONightAuction.dll"
+          cp "$game/manifest.xml" "$game/preview.png" "$dest/"
+          cp "$game/Localization/en.csv" "$game/Localization/zh.csv" "$dest/Localization/"
+          cp -r "$game/Textures" "$dest/Textures"
+          test -s "$dest/Textures/Items/xiaowo_auction_container_medical.png"
+          test -s "$dest/Textures/Items/xiaowo_auction_container_luxury.png"
+          python3 - <<'PY'
+          import csv,pathlib
+          src=pathlib.Path("probably-stolen/번역 모드/Localization/pskb__3829429358.csv")
+          dst=pathlib.Path("probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9_fix1/Localization/ko.csv")
+          rows=[]
+          for line in src.read_text(encoding="utf-8-sig").splitlines():
+              if line.startswith("K|"):
+                  pair=next(csv.reader([line[2:]]))
+                  assert len(pair)==2,pair
+                  rows.append(pair)
+          assert len(rows)==20,len(rows)
+          with dst.open("w",encoding="utf-8-sig",newline="") as f:
+              csv.writer(f,lineterminator="\r\n").writerows(rows)
+          print("Official Korean locale keys:",len(rows))
+          PY
+          cat > "$dest/README.txt" <<'TXT'
+          Night Auction v2.1.9 Korean DLL - fix1
+          Original ID: xiaowo_night_auction / Workshop: 3829429358
+          Corrects missing game art resources and broken Dictionary method reference in the first Korean build.
+          Original Textures, preview, manifest and en/zh locale files are included.
+          Replace the entire previous local NightAuction_Korean_DLL_2.1.9 folder with this folder.
+          Do not load an additional mod copy with the same ID.
+          Runtime verification inside the actual game is NOT completed.
+          TXT
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy" >/dev/null
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t KoreanLocalization.NightAuctionKoreanRuntime "$dest/XIAOWONightAuction.dll" > "$RUNNER_TEMP/korean-runtime.txt"
+          grep -F 'Hashtable' "$RUNNER_TEMP/korean-runtime.txt" >/dev/null
+          if grep -E 'Dictionary.*Add\(string, string\)' "$RUNNER_TEMP/korean-runtime.txt"; then
+              echo "ERROR: invalid generic dictionary method still present"
+              exit 1
+          fi
+          echo "ILSpy confirms non-generic Hashtable methods"
+          pushd probably-stolen/downloads >/dev/null
+          zip -qr NightAuction_Korean_DLL_2.1.9_fix1.zip NightAuction_Korean_DLL_2.1.9_fix1
+          unzip -t NightAuction_Korean_DLL_2.1.9_fix1.zip | tail -1
+          popd >/dev/null
+          sha256sum "$dest/XIAOWONightAuction.dll" "probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9_fix1.zip"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9_fix1.zip"
+          if ! git diff --cached --quiet; then
+              git commit -m "Night Auction Korean fix1: repair startup localization and include original textures"
+              git push origin HEAD:main
+          fi
