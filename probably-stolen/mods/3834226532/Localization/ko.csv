@@ -16,7 +16,7 @@ dsp_built_on_dump_description,"쓰레기통에 넣은 물건이 곧바로 쓰레
 dsp_tacit_understanding_name,암묵적 이해
 dsp_tacit_understanding_description,"검문이 더 자주 이루어집니다. 치안부 평판이 0보다 높으면 검문은 항상 부패한 검문관이 나옵니다. 도둑과 소매치기와 음식 도둑이 조금 더 자주 찾아옵니다."
 dsp_no_trash_name,쓰레기통 없음
-dsp_no_trash_description,"쓰레기통이 밀수품 보관함으로 개조됩니다. 청소는 직접 하면 되고 야간 청소 서비스도 필요 없지만 쓰레기통을 통한 거래는 그대로 할 수 있습니다. 배낭(일반)을 가지고 시작합니다."
+dsp_no_trash_description,"The trash can is converted into a smuggler stash. You clean the shop yourself and no longer need the night janitorial service, but you can still trade through the trash can."
 dsp_former_assistant_name,전직 비서
 dsp_former_assistant_description,시작부터 잭슨 투자 I이 해금됩니다. 잭슨 박사와 거래할 때 10% 거래 보너스를 받습니다. 3일마다 한 번 그를 불러 가게로 오게 할 수 있습니다.
 dsp_former_assistant_contact,잭슨 박사
@@ -40,7 +40,7 @@ dsp_newspaper_recipe_tooltip_flux,"조제제(기본): 제련할 때 쓰면 금�
 dsp_newspaper_recipe_tooltip_yeast,"합성 효모: 효모 대신 써서 발암성이 약간 있는 술을 아주 싸게 빚을 수 있는 불법 물질입니다. 물만 있으면 됩니다."
 dsp_mortgage_description,"시작할 때 7,000의 빚을 지고 가게를 삽니다."
 dsp_self_built_name,"자가 건축"
-dsp_self_built_description,"시작부터 건물을 소유하고 있지만 전력과 청소 서비스 비용이 10 크레딧이 됩니다."
+dsp_self_built_description,"시작부터 건물을 소유하고 있지만 전력과 청소 서비스의 기본 비용이 10 크레딧이 되고, 난이도 계수의 영향을 받습니다."
 dsp_cellar_name,천연 와인 저장고
 dsp_wild_favor_description,"와일드의 전화가 시작부터 해금되고 와일드의 호의 300을 얻습니다."
 dsp_wild_favor_name,"와일드의 호의"
@@ -370,7 +370,7 @@ dsp_foreknowledge_price_name,가격 변동
 dsp_prohibition_name,금주법
 dsp_prohibition_description,모든 술은 중급 밀수품으로 취급합니다.
 dsp_tobacco_tax_name,담배세
-dsp_tobacco_tax_description,"담배는 소매가가 50% 오르지만, 그 인상분 중 당신이 받는 것은 10%뿐입니다."
+dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,헌혈자
 dsp_blood_donor_description,하루에 한 번 혈액팩으로 헌혈하면 혈액팩 하나를 더 얻습니다. 대신 다음 날 손님 한 명을 놓칩니다.
 dsp_force_open_name,강제 개봉
@@ -400,18 +400,82 @@ dsp_revolutionary_influence_slip_body,오딘은 떠나기 전 목소리를 낮�
 dsp_service_professional_tooltip,원한이 더 이상 당신을 괴롭히지 않습니다.
 dsp_scav_drone_name,고물 수집 드론
 dsp_scav_drone_description,야간 행동 중에는 손이 두 개 더 있습니다. 뒤질 때 쓰레기를 주울 확률이 낮아집니다.
-dsp_trust_fund_name,신탁 기금
-dsp_trust_fund_description,매주 월요일마다 50 크레딧을 받습니다.
+dsp_trust_fund_name,Keystone Foundation for Charity
+dsp_trust_fund_description,You get 50 credits every Thursday.
 dsp_snake_oil_name,뱀기름
-dsp_snake_oil_description,시작할 때 전분 등급 드림 더스트 20병을 들고 시작합니다.
+dsp_snake_oil_description,시작할 때 순수 전분 드림 더스트 20병을 들고 시작합니다.
 dsp_charm_mushroom_name,매혹 버섯
 dsp_charm_mushroom_description,꿈 버섯과 악몽 버섯은 음식과 마약으로 모두 취급됩니다.
 dsp_jane_smith_name,홍길순
 dsp_jane_smith_description,모든 이름이 홍길동 / 홍길순으로 표시됩니다.
 dsp_scav_drone_extra,고물 수집 드론: 조금 더 챙겨 왔습니다.
-dsp_trust_fund_paid,신탁 기금: 월요일 몫 {0} 크레딧이 입금되었습니다.
+dsp_trust_fund_paid,Keystone Foundation for Charity: {0} credits arrived for Thursday.
 dsp_share_cigarette_not_cig,이 선택지는 담배에만 쓸 수 있습니다.
 dsp_share_cigarette_not_owned,그 담배는 지금 손에 없습니다.
 dsp_cracker_supplies_7,행운 상승.
 dsp_mutual_choice_name,상호 선택
 dsp_mutual_choice_description,"하루에 한 번, 손님이 거래 없이 떠나면 대기열에 손님이 한 명 더 추가됩니다."
+dsp_snake_oil_item_name,뱀기름
+dsp_newspaper_stand_name,신문 가판대
+dsp_newspaper_stand_description,야간 서비스에서 10 크레딧을 지불하면 신문 4부를 더 받습니다. 언제든지 손님마다 당일 신문 한 부를 8 크레딧에 팔 수 있습니다.
+dsp_newspaper_stand_menu,신문 한 부 팔기 (8 크레딧)
+dsp_service_paper_delivery,신문 배달
+dsp_service_paper_delivery_tooltip,10 크레딧: 이튿날 아침 당일 신문이 4부 더 도착합니다
+dsp_newspaper_stand_sold,신문 한 부를 팔았습니다. +8 크레딧
+dsp_newspaper_stand_already,오늘은 이미 신문을 샀어.
+dsp_newspaper_stand_stale,이 신문은 오래됐어.
+dsp_newspaper_stand_delivered,당일 신문이 {0}부 도착했습니다
+dsp_watermelon_merge_name,과일 합성
+dsp_watermelon_merge_description,같은 종류의 같은 크기 작물 두 개를 더 큰 작물 하나로 합칠 수 있습니다.
+dsp_watermelon_merge_menu,합성 (동일 작물 1개 소모)
+dsp_watermelon_merge_done,더 큰 {0}(으)로 합성되었습니다. 가치 {1} 크레딧.
+dsp_watermelon_merge_max,더 이상 커질 수 없습니다.
+dsp_hydro_question_name,수…경?
+dsp_hydro_question_description,수도관 위에서 식물을 기를 수 있습니다. 시작할 때 종류별 씨앗을 2개씩 가집니다.
+dsp_poet_admirer_name,시인 같은 애모자
+dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
+dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
+dsp_admirer_poem_2,"The reeds and rushes are deeply green, and the white dew is turned into hoarfrost. The man of whom I think is somewhere about the water. - Book of Songs, Jian Jia (tr. James Legge)"
+dsp_admirer_poem_3,"For life or for death, however separated, to our wives we pledged our word. We held their hands; we are to grow old together. - Book of Songs, Ji Gu (tr. James Legge)"
+dsp_admirer_poem_4,"When shall we meet again in longing? Tonight, this hour, I cannot bear it. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_5,"Whoever enters the gate of longing learns how bitter longing is. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_6,"The corners of the earth have an end; longing alone has none. - Yan Shu, Spring Regret (tr. Xu Yuanchong)"
+dsp_admirer_poem_7,"My belt grows loose and I never regret it - worn thin for her sake. - Liu Yong, Die Lian Hua (tr. Xu Yuanchong)"
+dsp_admirer_poem_8,"Once you have seen the ocean, no water will do; once you have seen Mount Wu, no cloud is a cloud. - Yuan Zhen, Five Poems of Longing (tr. Xu Yuanchong)"
+dsp_admirer_poem_9,"Do not let the spring heart race with the flowers - every inch of longing burns to an inch of ash. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_10,"When shall we trim the candle by the west window, and speak of this rainy night in Ba? - Li Shangyin, Written on a Rainy Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_11,"No phoenix wings to fly to you - yet one thread links heart to heart. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_12,"This feeling could have been a memory to keep; only then, I was already lost. - Li Shangyin, The Jeweled Zither (tr. Xu Yuanchong)"
+dsp_admirer_poem_13,"If love between both sides can last for aye, why need they stay together night and day? - Qin Guan, Immortals at the Magpie Bridge (tr. Xu Yuanchong)"
+dsp_admirer_poem_14,"A thousand times I seek her in the crowd; I turn, and there she is, where the lights are dim. - Xin Qiji, The Lantern Festival (tr. Xu Yuanchong)"
+dsp_admirer_poem_15,"Ten years, dead and living dim and draw apart; I do not think of you, yet cannot forget. - Su Shi, Riverside Town (tr. Xu Yuanchong)"
+dsp_admirer_poem_16,"One hour of a spring night is worth a thousand gold; flowers have fragrance, the moon has shadow. - Su Shi, Spring Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_17,"Let me be the star and you the moon, brightening each other night after night. - Fan Chengda, The Distant Cart (tr. Xu Yuanchong)"
+dsp_admirer_poem_18,"I only wish your heart were like mine; then longing would never be betrayed. - Li Zhiyi, Bu Suan Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_19,"Trade my heart for yours, and only then you will know how deep this remembering is. - Gu Xiong, Telling Innermost Feeling (tr. Xu Yuanchong)"
+dsp_admirer_poem_20,"My thoughts of you run like the west river, flowing east all day and never resting. - Yu Xuanji, Gazing at the River (tr. Xu Yuanchong)"
+dsp_admirer_poem_21,"I remember a green silk skirt, and now I love every blade of grass. - Niu Xiji, Sheng Cha Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_22,"When the flower is ripe for picking, pick it; do not wait for an empty branch. - Du Qiuniang, Robe of Gold Thread (tr. Xu Yuanchong)"
+dsp_admirer_poem_23,"Hard to meet and hard to part; the east wind has no strength and a hundred flowers fade. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_24,"You came by on bamboo stilts, playing horse, you walked about my seat, playing with blue plums. - Li Bai, The River Merchant's Wife (tr. Ezra Pound, after Arthur Waley)"
+dsp_admirer_poem_25,"In heaven we would be birds flying side by side; on earth, branches of one tree grown together. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_26,"Heaven and earth endure, yet they shall end; this sorrow stretches on and has no end. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_27,"May we all be blessed with longevity, though a thousand miles apart, to share the same moonlight. - Su Shi, Prelude to Water Melody (tr. Lin Yutang)"
+dsp_admirer_poem_28,"When you are old and grey and full of sleep, and nodding by the fire, take down this book. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_29,"But one man loved the pilgrim soul in you, and loved the sorrows of your changing face. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_30,"I remember that wondrous moment: before me you appeared, a fleeting vision, a spirit of pure beauty. - Pushkin, To Kern (tr. Zha Liangzheng)"
+dsp_admirer_poem_31,"I loved you once; perhaps that love has not quite died in my soul. - Pushkin, I Loved You (tr. Zha Liangzheng)"
+dsp_admirer_poem_32,"Shall I compare thee to a summer day? Thou art more lovely and more temperate. - Shakespeare, Sonnet 18 (tr. Liang Zongdai)"
+dsp_admirer_poem_33,"I love thee with the breath, smiles, tears, of all my life. - Elizabeth Barrett Browning, Sonnets from the Portuguese (tr. Zha Liangzheng)"
+dsp_admirer_poem_34,"She walks in beauty, like the night of cloudless climes and starry skies. - Byron, She Walks in Beauty (tr. Zha Liangzheng)"
+dsp_admirer_poem_35,"On the wings of song, my darling, let us go. - Heine, On Wings of Song (tr. Feng Zhi)"
+dsp_admirer_poem_36,"O my Luve is like a red, red rose, that is newly sprung in June. - Robert Burns, A Red, Red Rose (tr. Wang Zuoliang)"
+dsp_admirer_poem_37,"You smiled and talked to me of nothing and I felt that for this I had been waiting long. - Tagore, Stray Birds (tr. Zheng Zhenduo)"
+dsp_admirer_poem_38,"I like for you to be still: it is as though you were absent. - Neruda, Twenty Love Poems (tr. Li Zongrong)"
+dsp_admirer_poem_39,"Green, how I want you, green. - Lorca, Romance Sonambulo (tr. Dai Wangshu)"
+dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the rugged road and the rocks. - Petofi, I Would Be a Torrent (tr. Sun Yong)"
+dsp_magician_piper_name,Pied Piper
+dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
+dsp_careless_tutor_name,Careless Tutor
+dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
+dsp_service_newspaper_subscription,Newspaper Subscription

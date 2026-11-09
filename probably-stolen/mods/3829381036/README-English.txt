@@ -1,3 +1,5 @@
+Ember Protocol 2.1.10: Official bounded legacy import; no files capability. Existing story and progress retained.
+
 Ember Protocol 2.1.9 - firearm audio and Den rewards
 
 Workshop release build. Gameplay and listening tests remain with the player.

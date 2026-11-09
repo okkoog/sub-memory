@@ -16,7 +16,7 @@ dsp_built_on_dump_description,"Предметы, положенные в мус�
 dsp_tacit_understanding_name,Молчаливое понимание
 dsp_tacit_understanding_description,"Проверки случаются чаще. Пока ваша репутация в Службе безопасности выше 0, проверки всегда проводит коррумпированный инспектор. Воры, карманники и воришки еды заходят чуть чаще."
 dsp_no_trash_name,Без мусора
-dsp_no_trash_description,"Мусорный бак переделан в контрабандный отсек. Убираться вы будете сами, ночная уборка вам не нужна, но торговать через бак по-прежнему можно. На старте у вас есть рюкзак (обычный)."
+dsp_no_trash_description,"The trash can is converted into a smuggler stash. You clean the shop yourself and no longer need the night janitorial service, but you can still trade through the trash can."
 dsp_former_assistant_name,Бывший ассистент
 dsp_former_assistant_description,«Инвестиции Джексона I» открыты с самого начала. При торговле с доктором Джексоном вы получаете 10% бонус к торговле. Раз в 3 дня вы можете позвонить ему, чтобы он пришёл и поторговал с вашим магазином.
 dsp_former_assistant_contact,Доктор Джексон
@@ -40,7 +40,7 @@ dsp_newspaper_recipe_tooltip_flux,"Флюс (базовый): практична
 dsp_newspaper_recipe_tooltip_yeast,"Синтетические дрожжи: нелегальное вещество, способное заменить дрожжи, чтобы очень дёшево сварить слегка канцерогенное вино. Нужна только вода."
 dsp_mortgage_description,"Вы покупаете магазин на старте с долгом 7 000."
 dsp_self_built_name,"Своё помещение"
-dsp_self_built_description,"Помещение принадлежит вам с самого начала, но электричество и уборка стоят по 10 кредитов."
+dsp_self_built_description,"Помещение принадлежит вам с самого начала, но базовая стоимость электричества и уборки составляет 10 кредитов, и модификаторы сложности по-прежнему действуют."
 dsp_cellar_name,Винный погреб
 dsp_wild_favor_description,"Телефон Уайльда разблокирован с самого начала, и вы получаете 300 единиц благосклонности Уайльда."
 dsp_wild_favor_name,"Благосклонность Уайльда"
@@ -370,7 +370,7 @@ dsp_foreknowledge_price_name,Изменение цены
 dsp_prohibition_name,Сухой закон
 dsp_prohibition_description,Весь алкоголь считается контрабандой среднего уровня.
 dsp_tobacco_tax_name,Налог на табак
-dsp_tobacco_tax_description,"Сигареты продаются на 50% дороже, но из этой наценки вам достаётся только 10%."
+dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Донор крови
 dsp_blood_donor_description,"Раз в день вы можете сдать кровь, использовав пакет крови, и получить ещё один пакет крови. Из-за этого на следующий день вы упустите одного клиента."
 dsp_force_open_name,Грубая сила
@@ -400,18 +400,82 @@ dsp_revolutionary_influence_slip_body,Перед уходом Один пони�
 dsp_service_professional_tooltip,Вендетта больше не будет вас беспокоить.
 dsp_scav_drone_name,Дрон-мусорщик
 dsp_scav_drone_description,"Во время ночных действий у вас две лишние руки. Копаясь на Свалке, вы реже подбираете мусор."
-dsp_trust_fund_name,Трастовый фонд
-dsp_trust_fund_description,Каждый понедельник вы получаете 50 кредитов.
+dsp_trust_fund_name,Keystone Foundation for Charity
+dsp_trust_fund_description,You get 50 credits every Thursday.
 dsp_snake_oil_name,Змеиное масло
-dsp_snake_oil_description,На старте у вас 20 флаконов Пыли снов крахмального класса.
+dsp_snake_oil_description,На старте у вас 20 флаконов Пыли снов из чистого крахмала.
 dsp_charm_mushroom_name,Очаровательный гриб
 dsp_charm_mushroom_description,Сонник и Кошмарник считаются одновременно едой и наркотиком.
 dsp_jane_smith_name,Мария Иванова
 dsp_jane_smith_description,Все имена показываются как Иван Иванов / Мария Иванова.
 dsp_scav_drone_extra,Дрон-мусорщик: вы притащили немного лишнего.
-dsp_trust_fund_paid,Трастовый фонд: за понедельник пришло {0} кредитов.
+dsp_trust_fund_paid,Keystone Foundation for Charity: {0} credits arrived for Thursday.
 dsp_share_cigarette_not_cig,Этот вариант срабатывает только с сигаретами.
 dsp_share_cigarette_not_owned,Этой пачки у вас в руках нет.
 dsp_cracker_supplies_7,Больше удачи.
 dsp_mutual_choice_name,Взаимный выбор
 dsp_mutual_choice_description,"Раз в день, если клиент уходит, ничего не купив, в очередь добавляется ещё один клиент."
+dsp_snake_oil_item_name,Змеиное масло
+dsp_newspaper_stand_name,Газетный киоск
+dsp_newspaper_stand_description,"Заплатите 10 кредитов в ночных услугах, чтобы получить 4 дополнительных газеты. Вы всегда можете продать каждому клиенту один экземпляр сегодняшней газеты по 8 кредитов."
+dsp_newspaper_stand_menu,Продать газету (8 кредитов)
+dsp_service_paper_delivery,Доставка газет
+dsp_service_paper_delivery_tooltip,10 кредитов: 4 дополнительных экземпляра сегодняшней газеты прибудут ночью
+dsp_newspaper_stand_sold,"Газета продана, +8 кредитов"
+dsp_newspaper_stand_already,Я уже купил сегодня газету.
+dsp_newspaper_stand_stale,Эта газета устарела.
+dsp_newspaper_stand_delivered,Прибыло {0} экземпляров сегодняшней газеты
+dsp_watermelon_merge_name,Слияние фруктов
+dsp_watermelon_merge_description,Вы можете объединить два плода одного вида и размера в один более крупный.
+dsp_watermelon_merge_menu,Объединить (тратит такой же плод)
+dsp_watermelon_merge_done,"Объединено в более крупный {0}, стоимость {1} кредитов."
+dsp_watermelon_merge_max,Больше уже не станет.
+dsp_hydro_question_name,Гидро… поника?
+dsp_hydro_question_description,Вы можете выращивать растения на водопроводных трубах. На старте у вас по два семени каждого вида.
+dsp_poet_admirer_name,Влюблённый поэт
+dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
+dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
+dsp_admirer_poem_2,"The reeds and rushes are deeply green, and the white dew is turned into hoarfrost. The man of whom I think is somewhere about the water. - Book of Songs, Jian Jia (tr. James Legge)"
+dsp_admirer_poem_3,"For life or for death, however separated, to our wives we pledged our word. We held their hands; we are to grow old together. - Book of Songs, Ji Gu (tr. James Legge)"
+dsp_admirer_poem_4,"When shall we meet again in longing? Tonight, this hour, I cannot bear it. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_5,"Whoever enters the gate of longing learns how bitter longing is. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_6,"The corners of the earth have an end; longing alone has none. - Yan Shu, Spring Regret (tr. Xu Yuanchong)"
+dsp_admirer_poem_7,"My belt grows loose and I never regret it - worn thin for her sake. - Liu Yong, Die Lian Hua (tr. Xu Yuanchong)"
+dsp_admirer_poem_8,"Once you have seen the ocean, no water will do; once you have seen Mount Wu, no cloud is a cloud. - Yuan Zhen, Five Poems of Longing (tr. Xu Yuanchong)"
+dsp_admirer_poem_9,"Do not let the spring heart race with the flowers - every inch of longing burns to an inch of ash. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_10,"When shall we trim the candle by the west window, and speak of this rainy night in Ba? - Li Shangyin, Written on a Rainy Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_11,"No phoenix wings to fly to you - yet one thread links heart to heart. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_12,"This feeling could have been a memory to keep; only then, I was already lost. - Li Shangyin, The Jeweled Zither (tr. Xu Yuanchong)"
+dsp_admirer_poem_13,"If love between both sides can last for aye, why need they stay together night and day? - Qin Guan, Immortals at the Magpie Bridge (tr. Xu Yuanchong)"
+dsp_admirer_poem_14,"A thousand times I seek her in the crowd; I turn, and there she is, where the lights are dim. - Xin Qiji, The Lantern Festival (tr. Xu Yuanchong)"
+dsp_admirer_poem_15,"Ten years, dead and living dim and draw apart; I do not think of you, yet cannot forget. - Su Shi, Riverside Town (tr. Xu Yuanchong)"
+dsp_admirer_poem_16,"One hour of a spring night is worth a thousand gold; flowers have fragrance, the moon has shadow. - Su Shi, Spring Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_17,"Let me be the star and you the moon, brightening each other night after night. - Fan Chengda, The Distant Cart (tr. Xu Yuanchong)"
+dsp_admirer_poem_18,"I only wish your heart were like mine; then longing would never be betrayed. - Li Zhiyi, Bu Suan Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_19,"Trade my heart for yours, and only then you will know how deep this remembering is. - Gu Xiong, Telling Innermost Feeling (tr. Xu Yuanchong)"
+dsp_admirer_poem_20,"My thoughts of you run like the west river, flowing east all day and never resting. - Yu Xuanji, Gazing at the River (tr. Xu Yuanchong)"
+dsp_admirer_poem_21,"I remember a green silk skirt, and now I love every blade of grass. - Niu Xiji, Sheng Cha Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_22,"When the flower is ripe for picking, pick it; do not wait for an empty branch. - Du Qiuniang, Robe of Gold Thread (tr. Xu Yuanchong)"
+dsp_admirer_poem_23,"Hard to meet and hard to part; the east wind has no strength and a hundred flowers fade. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_24,"You came by on bamboo stilts, playing horse, you walked about my seat, playing with blue plums. - Li Bai, The River Merchant's Wife (tr. Ezra Pound, after Arthur Waley)"
+dsp_admirer_poem_25,"In heaven we would be birds flying side by side; on earth, branches of one tree grown together. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_26,"Heaven and earth endure, yet they shall end; this sorrow stretches on and has no end. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_27,"May we all be blessed with longevity, though a thousand miles apart, to share the same moonlight. - Su Shi, Prelude to Water Melody (tr. Lin Yutang)"
+dsp_admirer_poem_28,"When you are old and grey and full of sleep, and nodding by the fire, take down this book. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_29,"But one man loved the pilgrim soul in you, and loved the sorrows of your changing face. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_30,"I remember that wondrous moment: before me you appeared, a fleeting vision, a spirit of pure beauty. - Pushkin, To Kern (tr. Zha Liangzheng)"
+dsp_admirer_poem_31,"I loved you once; perhaps that love has not quite died in my soul. - Pushkin, I Loved You (tr. Zha Liangzheng)"
+dsp_admirer_poem_32,"Shall I compare thee to a summer day? Thou art more lovely and more temperate. - Shakespeare, Sonnet 18 (tr. Liang Zongdai)"
+dsp_admirer_poem_33,"I love thee with the breath, smiles, tears, of all my life. - Elizabeth Barrett Browning, Sonnets from the Portuguese (tr. Zha Liangzheng)"
+dsp_admirer_poem_34,"She walks in beauty, like the night of cloudless climes and starry skies. - Byron, She Walks in Beauty (tr. Zha Liangzheng)"
+dsp_admirer_poem_35,"On the wings of song, my darling, let us go. - Heine, On Wings of Song (tr. Feng Zhi)"
+dsp_admirer_poem_36,"O my Luve is like a red, red rose, that is newly sprung in June. - Robert Burns, A Red, Red Rose (tr. Wang Zuoliang)"
+dsp_admirer_poem_37,"You smiled and talked to me of nothing and I felt that for this I had been waiting long. - Tagore, Stray Birds (tr. Zheng Zhenduo)"
+dsp_admirer_poem_38,"I like for you to be still: it is as though you were absent. - Neruda, Twenty Love Poems (tr. Li Zongrong)"
+dsp_admirer_poem_39,"Green, how I want you, green. - Lorca, Romance Sonambulo (tr. Dai Wangshu)"
+dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the rugged road and the rocks. - Petofi, I Would Be a Torrent (tr. Sun Yong)"
+dsp_magician_piper_name,Pied Piper
+dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
+dsp_careless_tutor_name,Careless Tutor
+dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
+dsp_service_newspaper_subscription,Newspaper Subscription

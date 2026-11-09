@@ -1,8 +1,9 @@
-﻿# 开局专精：经销商
+﻿# Starting specialization: Distributor
+# 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,经销商
 dsp_distributor_description,在跟随导师训练期间，你提前打点好了和各个厂家代表之间的关系。把握供货渠道足以让你快人一步。
 dsp_distributor_tag,更多特质：可能是神人
-# 开局特质
+# Starting perks
 dsp_wanderlust_name,漫游癖
 dsp_wanderlust_description,如果闭店时还有至少一名顾客在排队，你可以在夜间活动额外行动一次，且第一次进行夜间活动不会流失顾客。
 dsp_smelting_name,冶炼
@@ -14,7 +15,7 @@ dsp_built_on_dump_description,放入垃圾桶的物品会立刻被移动到垃�
 dsp_tacit_understanding_name,心照不宣
 dsp_tacit_understanding_description,盘查更加频繁。但只要治安部声望大于0，进行盘查的总会是腐败的检查员。小偷、扒手和食物窃贼的造访频率略微提高。
 dsp_no_trash_name,没有垃圾
-dsp_no_trash_description,垃圾桶被改造为走私暗格。你会自行打扫卫生而无需夜间清洁服务，但仍然可以通过垃圾桶交易。开局拥有一个背包（基础）。
+dsp_no_trash_description,垃圾桶被改造为走私暗格。你会自行打扫卫生而无需夜间清洁服务，但仍然可以通过垃圾桶交易。
 dsp_former_assistant_name,前助理
 dsp_former_assistant_description,初始解锁杰克逊投资I。你在和杰克逊博士交易时获得10%的交易奖励。每3天一次，你可以通过电话联系博士上门交易。
 dsp_former_assistant_contact,杰克逊博士
@@ -36,19 +37,19 @@ dsp_newspaper_recipe_description,报纸现在被视为助熔剂、合成酵母�
 dsp_newspaper_recipe_taste,难以下咽
 dsp_newspaper_recipe_tooltip_flux,助熔剂（基础）：实用的添加剂，在冶炼时使用可提高金属矿石的纯度。会在过程中被消耗。
 dsp_newspaper_recipe_tooltip_yeast,合成酵母：一种非法物质，可以用来代替酵母，以极其廉价的方式生产带有轻微致癌性的酒。只需加水即可。
-dsp_no_questions_name,莫问来路
-dsp_no_questions_description,移除所有物品的赃物和违禁品标签。移除搜查。本存档不能完成“干净的手”成就。
-dsp_mortgage_name,房贷
 dsp_mortgage_description,开局以7000债务买下店铺。
-dsp_wild_favor_name,王尔德的人情
-dsp_wild_favor_description,"开局解锁王尔德的电话并获得300点王尔德的恩惠。"
 dsp_self_built_name,自建房
-dsp_self_built_description,初始拥有店铺，但是供电和清洁服务的费用变为10信用点。
+dsp_self_built_description,初始拥有店铺，但是供电和清洁服务的基础费用变为10信用点，受到难度系数影响。
 dsp_cellar_name,天然酒窖
+dsp_wild_favor_description,"开局解锁王尔德的电话并获得300点王尔德的恩惠。"
+dsp_wild_favor_name,王尔德的人情
 dsp_cellar_description,酿酒的过程减少一天，酿好的酒会陈化3天。
 dsp_stable_partnership_name,稳定合作
 dsp_stable_partnership_description,所有经销商会在周二、周五上门，而非通过电话预定。
 dsp_stable_partnership_phone,周二、周五我们自己把货送过去，这通电话不用打。
+dsp_mortgage_name,房贷
+dsp_no_questions_name,莫问来路
+dsp_no_questions_description,移除所有物品的赃物和违禁品标签。移除搜查。本存档不能完成“干净的手”成就。
 dsp_share_cigarette_name,有烟同享
 dsp_share_cigarette_description,你可以和顾客分享一包烟来增加其预算和交易声望倍率并获得些微交易奖励。正品烟会提供两倍于赝品的好处。
 dsp_share_cigarette_bonus_buy,有烟同享：买入价格
@@ -98,7 +99,7 @@ dsp_wild_lover_contact,王尔德
 dsp_wall_expansion_name,墙洞扩建
 dsp_wall_expansion_description,墙洞的大小变为4×4。
 dsp_built_on_dump_serpico,我在垃圾场捡到了很多食物，不知道你是通过什么手段送下来的。
-# 消息灵通 / 投机者 / 琳琅满目 / 店大欺客
+# foreknowledge / speculator / picky customers / harsh bargain
 dsp_foreknowledge_name,消息灵通
 dsp_foreknowledge_description,你可以得知次日的事件。
 dsp_foreknowledge_log,消息灵通：已知的排期事件：X
@@ -368,7 +369,7 @@ dsp_foreknowledge_price_name,价格变动
 dsp_prohibition_name,禁酒令
 dsp_prohibition_description,所有酒水都被视为中级违禁品。
 dsp_tobacco_tax_name,烟草税
-dsp_tobacco_tax_description,香烟获得50%零售加价。但你只能获得这一部分额外加价的10%。
+dsp_tobacco_tax_description,香烟获得50%零售加价。但你只能获得这一部分额外加价的20%。
 dsp_blood_donor_name,献血者
 dsp_blood_donor_description,每天一次，你可以使用血袋进行献血来获得额外一个血袋。这会让你在第二天错过一个顾客。
 dsp_force_open_name,暴力破拆
@@ -383,7 +384,7 @@ dsp_blood_donor_done,献血完成：多了一个血袋，明天会少一个顾�
 dsp_blood_donor_already,今天已经献过血了。
 dsp_blood_donor_no_space,血袋没地方放了。
 dsp_revolutionary_influence_name,革命军的影响
-dsp_revolutionary_influence_description,如果革命军声望高于20。奥丁会在交易后告知三天内革命军策划的一起事件。
+dsp_revolutionary_influence_description,如果革命军声望高于20，奥丁会在交易后告知三天内革命军策划的一起事件。
 dsp_cracker_name,开箱者
 dsp_cracker_description,在跟随导师训练期间，你染上了开箱的癖好。多数时候，开箱收益颇丰——只要你有把物资箱打开的本事。
 dsp_cracker_tag,更多特质：可能是神人
@@ -398,18 +399,82 @@ dsp_revolutionary_influence_slip_body,奥丁临走前压低了声音：三天之
 dsp_service_professional_tooltip,让你的仇家不再打扰你。
 dsp_scav_drone_name,拾荒无人机
 dsp_scav_drone_description,你在夜间行动时，额外“多两只手”。拾荒时获得垃圾的概率下降。
-dsp_trust_fund_name,信托
-dsp_trust_fund_description,每周一获得50信用点。
+dsp_trust_fund_name,KFC信托基金
+dsp_trust_fund_description,每周四获得50信用点。
 dsp_snake_oil_name,蛇油
-dsp_snake_oil_description,开局获得20瓶淀粉级梦尘。
+dsp_snake_oil_description,开局获得20瓶纯淀粉梦尘。
 dsp_charm_mushroom_name,魅惑菇
 dsp_charm_mushroom_description,梦帽菇和梦魇帽菇具有食物和麻醉品标签。
 dsp_jane_smith_name,张娟
 dsp_jane_smith_description,所有人的名字都显示为张伟/张娟。
 dsp_scav_drone_extra,拾荒无人机：多带回来一些东西。
-dsp_trust_fund_paid,信托：周一入账{0}信用点。
+dsp_trust_fund_paid,信托：周四入账{0}信用点。
 dsp_share_cigarette_not_cig,这个选项只对香烟有效。
 dsp_share_cigarette_not_owned,这包烟不在你手上。
 dsp_cracker_supplies_7,更高的幸运。
 dsp_mutual_choice_name,双向选择
 dsp_mutual_choice_description,每天一次，顾客未交易就离开时，队列会新增一名顾客。
+dsp_snake_oil_item_name,蛇油
+dsp_newspaper_stand_name,报亭
+dsp_newspaper_stand_description,在夜间服务支付10信用点来获得额外4份报纸。你总是可以按每份8信用点的价格对每名顾客出售一份当日的报纸。
+dsp_newspaper_stand_menu,卖一份报纸（8信用点）
+dsp_service_paper_delivery,报纸配送
+dsp_service_paper_delivery_tooltip,花10信用点，明早多送4份当日报纸
+dsp_newspaper_stand_sold,卖出一份报纸，+8信用点
+dsp_newspaper_stand_already,我今天已经买过一份报纸了。
+dsp_newspaper_stand_stale,这报纸过期了。
+dsp_newspaper_stand_delivered,配送了 {0} 份当日报纸
+dsp_watermelon_merge_name,合成大西瓜
+dsp_watermelon_merge_description,你可以将两个同等大小的同类作物合成一个更大的同类作物。
+dsp_watermelon_merge_menu,合成（消耗同类一份）
+dsp_watermelon_merge_done,合成了更大的{0}，价值 {1} 信用点
+dsp_watermelon_merge_max,这已经是最大了，合成不了。
+dsp_hydro_question_name,水…培？
+dsp_hydro_question_description,你可以在水管上种植2株植物。初始获得每种种子各2颗。
+dsp_poet_admirer_name,诗人仰慕者
+dsp_poet_admirer_description,仰慕者的纸条是价值50信用点的奢侈品。
+dsp_admirer_poem_1,关关雎鸠，在河之洲。窈窕淑女，君子好逑。——《诗经·周南·关雎》
+dsp_admirer_poem_2,蒹葭苍苍，白露为霜。所谓伊人，在水一方。——《诗经·秦风·蒹葭》
+dsp_admirer_poem_3,死生契阔，与子成说。执子之手，与子偕老。——《诗经·邶风·击鼓》
+dsp_admirer_poem_4,相思相见知何日，此时此夜难为情。——李白《三五七言·秋风词》
+dsp_admirer_poem_5,入我相思门，知我相思苦。——李白《三五七言·秋风词》
+dsp_admirer_poem_6,天涯地角有穷时，只有相思无尽处。——晏殊《玉楼春·春恨》
+dsp_admirer_poem_7,衣带渐宽终不悔，为伊消得人憔悴。——柳永《蝶恋花·伫倚危楼风细细》
+dsp_admirer_poem_8,曾经沧海难为水，除却巫山不是云。——元稹《离思五首·其四》
+dsp_admirer_poem_9,春心莫共花争发，一寸相思一寸灰。——李商隐《无题·飒飒东风细雨来》
+dsp_admirer_poem_10,何当共剪西窗烛，却话巴山夜雨时。——李商隐《夜雨寄北》
+dsp_admirer_poem_11,身无彩凤双飞翼，心有灵犀一点通。——李商隐《无题·昨夜星辰昨夜风》
+dsp_admirer_poem_12,此情可待成追忆，只是当时已惘然。——李商隐《锦瑟》
+dsp_admirer_poem_13,两情若是久长时，又岂在朝朝暮暮。——秦观《鹊桥仙·纤云弄巧》
+dsp_admirer_poem_14,众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。——辛弃疾《青玉案·元夕》
+dsp_admirer_poem_15,十年生死两茫茫，不思量，自难忘。——苏轼《江城子·乙卯正月二十日夜记梦》
+dsp_admirer_poem_16,春宵一刻值千金，花有清香月有阴。——苏轼《春宵》
+dsp_admirer_poem_17,愿我如星君如月，夜夜流光相皎洁。——范成大《车遥遥篇》
+dsp_admirer_poem_18,只愿君心似我心，定不负相思意。——李之仪《卜算子·我住长江头》
+dsp_admirer_poem_19,换我心，为你心，始知相忆深。——顾夐《诉衷情·永夜抛人何处去》
+dsp_admirer_poem_20,忆君心似西江水，日夜东流无歇时。——鱼玄机《江陵愁望寄子安》
+dsp_admirer_poem_21,记得绿罗裙，处处怜芳草。——牛希济《生查子·春山烟欲收》
+dsp_admirer_poem_22,花开堪折直须折，莫待无花空折枝。——杜秋娘《金缕衣》
+dsp_admirer_poem_23,相见时难别亦难，东风无力百花残。——李商隐《无题·相见时难别亦难》
+dsp_admirer_poem_24,郎骑竹马来，绕床弄青梅。——李白《长干行》
+dsp_admirer_poem_25,在天愿作比翼鸟，在地愿为连理枝。——白居易《长恨歌》
+dsp_admirer_poem_26,天长地久有时尽，此恨绵绵无绝期。——白居易《长恨歌》
+dsp_admirer_poem_27,但愿人长久，千里共婵娟。——苏轼《水调歌头·明月几时有》
+dsp_admirer_poem_28,当你老了，头发白了，睡思昏沉，炉火旁打盹，请取下这部诗歌。——叶芝《当你老了》，袁可嘉 译
+dsp_admirer_poem_29,只有一个人爱你那朝圣者的灵魂，爱你衰老的脸上痛苦的皱纹。——叶芝《当你老了》，袁可嘉 译
+dsp_admirer_poem_30,我记得那美妙的一瞬：在我的面前出现了你，有如昙花一现的幻影，有如纯洁之美的精灵。——普希金《致凯恩》，查良铮 译
+dsp_admirer_poem_31,我曾经爱过你：爱情，也许，在我的心灵里还没有完全消亡。——普希金《我曾经爱过你》，查良铮 译
+dsp_admirer_poem_32,我能否把你比作夏季的一天？你可是更加可爱，更加温婉。——莎士比亚《十四行诗第十八首》，梁宗岱 译
+dsp_admirer_poem_33,我爱你，以我终生的呼吸、微笑和眼泪。——勃朗宁夫人《葡萄牙人十四行诗》，查良铮 译
+dsp_admirer_poem_34,她走在美的光彩中，像夜晚皎洁无云而且繁星满天。——拜伦《她走在美的光彩中》，查良铮 译
+dsp_admirer_poem_35,乘着歌声的翅膀，亲爱的，随我前往。——海涅《乘着歌声的翅膀》，冯至 译
+dsp_admirer_poem_36,啊，我的爱人像一朵红红的玫瑰，六月里迎风初开。——彭斯《一朵红红的玫瑰》，王佐良 译
+dsp_admirer_poem_37,你微微地笑着，不同我说什么话。而我觉得，为了这个，我已等待得久了。——泰戈尔《飞鸟集》，郑振铎 译
+dsp_admirer_poem_38,我喜欢你是寂静的，仿佛你消失了一样。——聂鲁达《二十首情诗与一首绝望的歌》，李宗荣 译
+dsp_admirer_poem_39,绿啊，我多么爱你这绿色。——洛尔迦《梦游人谣》，戴望舒 译
+dsp_admirer_poem_40,我愿意是急流，山里的小河，在崎岖的路上、岩石上经过。——裴多菲《我愿意是急流》，孙用 译
+dsp_magician_piper_name,魔笛手
+dsp_magician_piper_description,每携带一只老鼠进入垃圾场，你都可以额外进行一次拾荒。
+dsp_careless_tutor_name,粗心的导师
+dsp_careless_tutor_description,导师忘了给你买报纸。你不会收到报纸，事件仍然生效，但不会显示在日历里。可以在夜间服务中订购报纸来移除这一特质。
+dsp_service_newspaper_subscription,订购报纸

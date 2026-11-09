@@ -16,7 +16,7 @@ dsp_built_on_dump_description,"Los objetos que pongas en el cubo de basura pasan
 dsp_tacit_understanding_name,Entendimiento tácito
 dsp_tacit_understanding_description,"Las inspecciones son más frecuentes. Mientras tu reputación con Seguridad esté por encima de 0 las inspecciones siempre las hará el inspector corrupto. Los ladrones, los carteristas y los ladrones de comida aparecen algo más a menudo."
 dsp_no_trash_name,Ni un cubo
-dsp_no_trash_description,"El cubo de basura se reconstruye como un hueco de contrabandista. Te encargas tú de limpiar y no necesitas servicio nocturno de limpieza, pero sigues pudiendo comerciar a través del cubo de basura. Empiezas con una Mochila (básica)."
+dsp_no_trash_description,"The trash can is converted into a smuggler stash. You clean the shop yourself and no longer need the night janitorial service, but you can still trade through the trash can."
 dsp_former_assistant_name,Antiguo ayudante
 dsp_former_assistant_description,Desbloquea Inversión Jackson I desde el principio. Obtienes un 10% de bonificación comercial al tratar con el Dr. Jackson. Cada 3 días puedes llamarle para que venga a comerciar con tu tienda.
 dsp_former_assistant_contact,Dr. Jackson
@@ -40,7 +40,7 @@ dsp_newspaper_recipe_tooltip_flux,"Agente de flujo (básico): un aditivo prácti
 dsp_newspaper_recipe_tooltip_yeast,"Levadura sintética: una sustancia ilegal que puede sustituir a la levadura para fermentar vino ligeramente cancerígeno a muy bajo coste. Solo necesita agua."
 dsp_mortgage_description,"Compras la tienda al principio con una deuda de 7.000."
 dsp_self_built_name,"Autoconstruida"
-dsp_self_built_description,"La propiedad es tuya desde el principio, pero los servicios de electricidad y limpieza cuestan 10 créditos."
+dsp_self_built_description,"La propiedad es tuya desde el principio, pero el coste base de los servicios de electricidad y limpieza es de 10 créditos, y los modificadores de dificultad siguen aplicándose."
 dsp_cellar_name,Bodega natural
 dsp_wild_favor_description,"El teléfono de Wild está desbloqueado desde el principio y ganas 300 de Favor de Wild."
 dsp_wild_favor_name,"Favor de Wild"
@@ -370,7 +370,7 @@ dsp_foreknowledge_price_name,Cambio de precio
 dsp_prohibition_name,Ley seca
 dsp_prohibition_description,Todo el alcohol cuenta como contrabando corriente.
 dsp_tobacco_tax_name,Impuesto al tabaco
-dsp_tobacco_tax_description,"Los cigarrillos se venden un 50% más caros, pero solo te llevas el 10% de ese recargo."
+dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Donante de sangre
 dsp_blood_donor_description,"Una vez al día puedes donar sangre usando una bolsa de sangre para conseguir una bolsa de sangre extra. A cambio, al día siguiente pierdes un cliente."
 dsp_force_open_name,Fuerza bruta
@@ -400,18 +400,82 @@ dsp_revolutionary_influence_slip_body,Odin bajó la voz antes de irse: en tres d
 dsp_service_professional_tooltip,Tu Venganza ya no te molestará.
 dsp_scav_drone_name,Dron carroñero
 dsp_scav_drone_description,Durante las acciones nocturnas tienes dos manos extra. Es menos probable que recojas basura mientras rebuscas.
-dsp_trust_fund_name,Fondo fiduciario
-dsp_trust_fund_description,Recibes 50 créditos cada lunes.
+dsp_trust_fund_name,Keystone Foundation for Charity
+dsp_trust_fund_description,You get 50 credits every Thursday.
 dsp_snake_oil_name,Aceite de serpiente
-dsp_snake_oil_description,Empiezas con 20 frascos de polvo de ensueño de grado almidón.
+dsp_snake_oil_description,Empiezas con 20 frascos de polvo de ensueño de almidón puro.
 dsp_charm_mushroom_name,Champiñón encantador
 dsp_charm_mushroom_description,La Amanita onírica y la Amanita sombría cuentan a la vez como comida y como narcótico.
 dsp_jane_smith_name,María Pérez
 dsp_jane_smith_description,Todos los nombres aparecen como Juan Pérez / María Pérez.
 dsp_scav_drone_extra,Dron carroñero: has traído un poco de más.
-dsp_trust_fund_paid,Fondo fiduciario: han llegado {0} créditos del lunes.
+dsp_trust_fund_paid,Keystone Foundation for Charity: {0} credits arrived for Thursday.
 dsp_share_cigarette_not_cig,Esta opción solo funciona con cigarrillos.
 dsp_share_cigarette_not_owned,Ese paquete no lo tienes en las manos.
 dsp_cracker_supplies_7,Más suerte.
 dsp_mutual_choice_name,Elección mutua
 dsp_mutual_choice_description,"Una vez al día, si un cliente se va sin comprar nada, se suma otro cliente a la cola."
+dsp_snake_oil_item_name,Aceite de serpiente
+dsp_newspaper_stand_name,Quiosco de periódicos
+dsp_newspaper_stand_description,Paga 10 créditos en los servicios nocturnos para conseguir 4 periódicos extra. Siempre puedes vender un ejemplar del periódico de hoy a cada cliente por 8 créditos cada uno.
+dsp_newspaper_stand_menu,Vender un periódico (8 créditos)
+dsp_service_paper_delivery,Reparto de periódicos
+dsp_service_paper_delivery_tooltip,10 créditos: 4 ejemplares extra del periódico de hoy llegan por la noche
+dsp_newspaper_stand_sold,"Periódico vendido, +8 créditos"
+dsp_newspaper_stand_already,Ya he comprado un periódico hoy.
+dsp_newspaper_stand_stale,Este periódico está caducado.
+dsp_newspaper_stand_delivered,{0} ejemplares del periódico de hoy han llegado
+dsp_watermelon_merge_name,Fusión de frutas
+dsp_watermelon_merge_description,Puedes fusionar dos cosechas del mismo tipo y del mismo tamaño en una cosecha más grande.
+dsp_watermelon_merge_menu,Fusionar (consume uno idéntico)
+dsp_watermelon_merge_done,"Fusionado en un {0} más grande, valor {1} créditos."
+dsp_watermelon_merge_max,Ya no puede ser más grande.
+dsp_hydro_question_name,¿Hidro… ponia?
+dsp_hydro_question_description,Puedes cultivar plantas en las tuberías de agua. Empiezas con dos semillas de cada tipo.
+dsp_poet_admirer_name,Admirador poeta
+dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
+dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
+dsp_admirer_poem_2,"The reeds and rushes are deeply green, and the white dew is turned into hoarfrost. The man of whom I think is somewhere about the water. - Book of Songs, Jian Jia (tr. James Legge)"
+dsp_admirer_poem_3,"For life or for death, however separated, to our wives we pledged our word. We held their hands; we are to grow old together. - Book of Songs, Ji Gu (tr. James Legge)"
+dsp_admirer_poem_4,"When shall we meet again in longing? Tonight, this hour, I cannot bear it. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_5,"Whoever enters the gate of longing learns how bitter longing is. - Li Bai, Autumn Wind Ci (tr. Xu Yuanchong)"
+dsp_admirer_poem_6,"The corners of the earth have an end; longing alone has none. - Yan Shu, Spring Regret (tr. Xu Yuanchong)"
+dsp_admirer_poem_7,"My belt grows loose and I never regret it - worn thin for her sake. - Liu Yong, Die Lian Hua (tr. Xu Yuanchong)"
+dsp_admirer_poem_8,"Once you have seen the ocean, no water will do; once you have seen Mount Wu, no cloud is a cloud. - Yuan Zhen, Five Poems of Longing (tr. Xu Yuanchong)"
+dsp_admirer_poem_9,"Do not let the spring heart race with the flowers - every inch of longing burns to an inch of ash. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_10,"When shall we trim the candle by the west window, and speak of this rainy night in Ba? - Li Shangyin, Written on a Rainy Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_11,"No phoenix wings to fly to you - yet one thread links heart to heart. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_12,"This feeling could have been a memory to keep; only then, I was already lost. - Li Shangyin, The Jeweled Zither (tr. Xu Yuanchong)"
+dsp_admirer_poem_13,"If love between both sides can last for aye, why need they stay together night and day? - Qin Guan, Immortals at the Magpie Bridge (tr. Xu Yuanchong)"
+dsp_admirer_poem_14,"A thousand times I seek her in the crowd; I turn, and there she is, where the lights are dim. - Xin Qiji, The Lantern Festival (tr. Xu Yuanchong)"
+dsp_admirer_poem_15,"Ten years, dead and living dim and draw apart; I do not think of you, yet cannot forget. - Su Shi, Riverside Town (tr. Xu Yuanchong)"
+dsp_admirer_poem_16,"One hour of a spring night is worth a thousand gold; flowers have fragrance, the moon has shadow. - Su Shi, Spring Night (tr. Xu Yuanchong)"
+dsp_admirer_poem_17,"Let me be the star and you the moon, brightening each other night after night. - Fan Chengda, The Distant Cart (tr. Xu Yuanchong)"
+dsp_admirer_poem_18,"I only wish your heart were like mine; then longing would never be betrayed. - Li Zhiyi, Bu Suan Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_19,"Trade my heart for yours, and only then you will know how deep this remembering is. - Gu Xiong, Telling Innermost Feeling (tr. Xu Yuanchong)"
+dsp_admirer_poem_20,"My thoughts of you run like the west river, flowing east all day and never resting. - Yu Xuanji, Gazing at the River (tr. Xu Yuanchong)"
+dsp_admirer_poem_21,"I remember a green silk skirt, and now I love every blade of grass. - Niu Xiji, Sheng Cha Zi (tr. Xu Yuanchong)"
+dsp_admirer_poem_22,"When the flower is ripe for picking, pick it; do not wait for an empty branch. - Du Qiuniang, Robe of Gold Thread (tr. Xu Yuanchong)"
+dsp_admirer_poem_23,"Hard to meet and hard to part; the east wind has no strength and a hundred flowers fade. - Li Shangyin, Untitled (tr. Xu Yuanchong)"
+dsp_admirer_poem_24,"You came by on bamboo stilts, playing horse, you walked about my seat, playing with blue plums. - Li Bai, The River Merchant's Wife (tr. Ezra Pound, after Arthur Waley)"
+dsp_admirer_poem_25,"In heaven we would be birds flying side by side; on earth, branches of one tree grown together. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_26,"Heaven and earth endure, yet they shall end; this sorrow stretches on and has no end. - Bai Juyi, The Everlasting Wrong (tr. Herbert A. Giles)"
+dsp_admirer_poem_27,"May we all be blessed with longevity, though a thousand miles apart, to share the same moonlight. - Su Shi, Prelude to Water Melody (tr. Lin Yutang)"
+dsp_admirer_poem_28,"When you are old and grey and full of sleep, and nodding by the fire, take down this book. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_29,"But one man loved the pilgrim soul in you, and loved the sorrows of your changing face. - W. B. Yeats, When You Are Old (tr. Yuan Kejia)"
+dsp_admirer_poem_30,"I remember that wondrous moment: before me you appeared, a fleeting vision, a spirit of pure beauty. - Pushkin, To Kern (tr. Zha Liangzheng)"
+dsp_admirer_poem_31,"I loved you once; perhaps that love has not quite died in my soul. - Pushkin, I Loved You (tr. Zha Liangzheng)"
+dsp_admirer_poem_32,"Shall I compare thee to a summer day? Thou art more lovely and more temperate. - Shakespeare, Sonnet 18 (tr. Liang Zongdai)"
+dsp_admirer_poem_33,"I love thee with the breath, smiles, tears, of all my life. - Elizabeth Barrett Browning, Sonnets from the Portuguese (tr. Zha Liangzheng)"
+dsp_admirer_poem_34,"She walks in beauty, like the night of cloudless climes and starry skies. - Byron, She Walks in Beauty (tr. Zha Liangzheng)"
+dsp_admirer_poem_35,"On the wings of song, my darling, let us go. - Heine, On Wings of Song (tr. Feng Zhi)"
+dsp_admirer_poem_36,"O my Luve is like a red, red rose, that is newly sprung in June. - Robert Burns, A Red, Red Rose (tr. Wang Zuoliang)"
+dsp_admirer_poem_37,"You smiled and talked to me of nothing and I felt that for this I had been waiting long. - Tagore, Stray Birds (tr. Zheng Zhenduo)"
+dsp_admirer_poem_38,"I like for you to be still: it is as though you were absent. - Neruda, Twenty Love Poems (tr. Li Zongrong)"
+dsp_admirer_poem_39,"Green, how I want you, green. - Lorca, Romance Sonambulo (tr. Dai Wangshu)"
+dsp_admirer_poem_40,"I would be a torrent, a mountain stream, passing over the rugged road and the rocks. - Petofi, I Would Be a Torrent (tr. Sun Yong)"
+dsp_magician_piper_name,Pied Piper
+dsp_magician_piper_description,For every rat you carry into the dumping grounds you may scavenge one extra time.
+dsp_careless_tutor_name,Careless Tutor
+dsp_careless_tutor_description,Your tutor forgot to buy you the newspaper. You no longer receive it; events still happen but never show up in the calendar. Order a newspaper in the night services to remove this trait.
+dsp_service_newspaper_subscription,Newspaper Subscription

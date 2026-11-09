@@ -1,4 +1,4 @@
-Neon Undertow 0.5.11
+Neon Undertow 0.5.13
 
 The manual bottler takes up 3 x 3 inventory cells. Bring the Bottling Handbook, high-quality water (99% or higher), one matching concentrate and an empty glass bottle (750 mL) or can (350 or 500 mL). The bottle you put in is the bottle you get back. The Quayside Canning Co-op sells all three concentrates and stocked supply cases.
 
@@ -48,3 +48,5 @@ BOOKS (0.5.5): Shop manuals use the blue vanilla notebook and readable page text
 CASSETTES: Visit Glassmarket after hours and choose Cassettes. Buy a tape, place it in the cassette player, and press Play.
 BACK ROOM (0.5.7): open it from the arrow at the bottom right of the shop. Machines show their recipes like the game's machines; put a recipe book in a machine to unlock its recipes. A gunsmith bay takes the game's 3D printer, or the Refurbishing Bench of Gunsmith Expansion.
 SEEDS: Quayside sells packs of three matching seeds. Select SEEDS again to switch between fruit and vegetables. The PRODUCE shelf carries mixed seed packs, daily fresh deliveries and native Nutrifruit. Stormglass Depot Outlet sells the Fizzworks Soda Canner and Dockside Production Galley.
+
+CHEMISTRY: The Workshop Fieldbook covers basic shop chemistry, 33 follow-on products and Yardglass lab safety. Divide a first-stage batch before adding the ingredient for your route. See CHEMISTRY.txt for the full catalog.
