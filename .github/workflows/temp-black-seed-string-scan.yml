@@ -16,6 +16,10 @@ jobs:
             /probably-stolen/mods/*/*.dll
             /probably-stolen/mods/*/Localization/*.csv
             /probably-stolen/mods/*/*.json
+            /probably-stolen/mods/*/*.xml
+            /probably-stolen/mods/*/Localization/*.json
+            /probably-stolen/mods/*/Localization/*.txt
+            /probably-stolen/mods/*/Localization/*.tsv
       - name: Scan all uploaded mod DLL strings
         shell: bash
         run: |
@@ -38,4 +42,14 @@ jobs:
                           preview=nearby.decode(enc,'replace').replace('\n',' ')[:220]
                           matches.append((n,enc,preview))
               if matches:print("MATCH",str(f),repr(matches))
+          for f in sorted(root.rglob("*")):
+              if not f.is_file() or f.suffix.lower() not in ['.csv','.json','.tsv','.txt','.xml']:continue
+              try: content=f.read_text(encoding='utf-8-sig',errors='ignore')
+              except:continue
+              matches=[q for q in needles if q.lower() in content.lower()]
+              if matches:
+                  print('TEXT MATCH',str(f),matches)
+                  for q in matches:
+                      index=content.lower().find(q.lower())
+                      print('NEARBY',repr(content[max(0,index-150):index+300]))
           PY
