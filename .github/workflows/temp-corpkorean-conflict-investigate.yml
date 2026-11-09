@@ -46,6 +46,12 @@ jobs:
               print("token",token,"hits",len(hits))
               for m in hits[:3]:
                   print(k[max(0,m.start()-250):m.end()+450])
+          print("\n======== KoreanTranslation: table patch implementation ========")
+          anchor=k.find('[HarmonyPatch(typeof(DetailedLocalizationTable<StringTableEntry>), "GetEntry"')
+          print(k[anchor:anchor+6500] if anchor>=0 else 'not found')
+          print("\n======== KoreanTranslation: setup and data loader ========")
+          anchor=k.find('private static void EnsureLoaded()')
+          print(k[anchor:anchor+3200] if anchor>=0 else 'not found')
           print("\n======== KoreanTranslation types ========")
           for m in list(re.finditer(r'^\s*(?:internal|public|private)?\s*(?:sealed\s+)?class\s+[^\n{]+',k,re.M))[:60]:print(m.group().strip())
           PY
