@@ -23,7 +23,7 @@ jobs:
           set -euo pipefail
           mkdir -p probably-stolen/analysis/water-tooltip-086
           DLL=probably-stolen/Managed/Assembly-CSharp.dll
-          for cls in LocHelper WaterFeatureHelper ItemFeature ItemCondition LabelerElement ItemConditionList LocalizedLines PlayerStore GameInventory ModHook GraphUtils EmporiumEntry GameItem RichTextBuilder ItemTooltipUI; do
+          for cls in LocHelper WaterFeatureHelper ItemFeature ItemCondition LabelerElement ItemConditionList LocalizedLines PlayerStore GameInventory ModHook GraphUtils EmporiumEntry GameItem RichTextBuilder; do
             "$RUNNER_TEMP/ilspytools/ilspycmd" -t "$cls" "$DLL" > "probably-stolen/analysis/water-tooltip-086/$cls.cs"
           done
           echo "Examined game-native classes"
