@@ -1,0 +1,40 @@
+name: Check prior KoreanPack Corp locale compatibility code
+on:
+  push:
+    branches: [diagnose-corp-v100-20261109]
+    paths: [.github/workflows/check-previous-corp-compat.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/build/out
+            probably-stolen/번역 모드
+            probably-stolen/mods/3834117650
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Compare older KoreanPack build contents read-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          for file in probably-stolen/build/out/ProbablyStolenKoreanPack.NoHooks.CorpMenuTrial.dll probably-stolen/build/out/ProbablyStolenKoreanPack.dll probably-stolen/번역\ 모드/ProbablyStolenKoreanPack.dll; do
+            echo "======== FILE: $file ========"
+            sha256sum "$file"
+            safe="$(basename "$file")"
+            out="$RUNNER_TEMP/$safe"
+            mkdir -p "$out"
+            "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$out" "$file"
+            echo '======== CORP COMPATIBLE SOURCE REFERENCES ========'
+            grep -RnEi -C 8 'CorpPresence|CorpMenu|ResolveStartupLocale|Locale|Mechanic' "$out" --include='*.cs' | grep -E 'CorpPresence|CorpMenu|ResolveStartupLocale|KoreanPack|[0-9]+-' | head -n 135 || true
+            echo '======== DECOMPILED FILES ========'
+            find "$out" -name '*.cs' | sed "s|$out/||" | head -n 45
+          done
