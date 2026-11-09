@@ -1,0 +1,40 @@
+name: Temp inspect old Corp-working KoreanPack
+on:
+  push:
+    branches: [tmp-oldcorp-add-labeler]
+    paths:
+      - .github/workflows/temp-oldcorp-labeler.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Extract and decompile old DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/input"
+          git show 8599861c19a16f727f52da50a238e8d33f36aadf:probably-stolen/0.7.5.21-dev/ProbablyStolenKoreanPack.dll > "$RUNNER_TEMP/input/ProbablyStolenKoreanPack-old.dll"
+          sha256sum "$RUNNER_TEMP/input/ProbablyStolenKoreanPack-old.dll" | tee "$RUNNER_TEMP/old.sha256"
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -r probably-stolen/Managed -o "$RUNNER_TEMP/src" "$RUNNER_TEMP/input/ProbablyStolenKoreanPack-old.dll"
+          mkdir -p "$RUNNER_TEMP/out"
+          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/KoreanPack.cs" "$RUNNER_TEMP/out/KoreanPack.cs"
+          if [ -f "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs" ]; then
+            cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/WaterNameCompatibility.cs" "$RUNNER_TEMP/out/WaterNameCompatibility.cs"
+          fi
+          cp "$RUNNER_TEMP/old.sha256" "$RUNNER_TEMP/out/"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oldcorp-koreanpack-source
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
