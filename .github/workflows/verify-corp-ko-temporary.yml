@@ -1,0 +1,56 @@
+name: Verify CorpPresence Korean startup locale (temporary)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/verify-corp-ko-temporary.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2e1960174ecdcc175cb59cdc5683b0c59c3560c3
+          sparse-checkout: |
+            probably-stolen/mods/3828913695
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Decompile exact uploaded CorpPresence DLL and check ko
+        shell: bash
+        run: |
+          set -euo pipefail
+          dll="probably-stolen/mods/3828913695/CorpPresence.dll"
+          sha256sum "$dll"
+          stat -c "DLL bytes: %s" "$dll"
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t CorpPresence.GameResources "$dll" > "$RUNNER_TEMP/GameResources.cs"
+          python3 - <<'PY'
+          import pathlib, re
+          path = pathlib.Path(__import__('os').environ['RUNNER_TEMP'])/'GameResources.cs'
+          text=path.read_text()
+          match=re.search(r'(?:private|internal|public)\s+static\s+string\s+ResolveMenuStartupLocale\s*\([^)]*\)',text)
+          if not match:
+              print("Method missing; output nearby occurrences:")
+              for found in list(re.finditer('ResolveMenuStartupLocale',text))[:6]:
+                  print(text[max(0,found.start()-120):found.end()+300])
+              raise SystemExit(2)
+          start=text.index('{',match.end())
+          depth=0
+          end=None
+          for i in range(start,len(text)):
+              if text[i]=='{': depth+=1
+              if text[i]=='}':
+                  depth-=1
+                  if depth==0:
+                      end=i+1
+                      break
+          body=text[match.start():end]
+          print("=== Actual decompiled ResolveMenuStartupLocale ===")
+          print(body)
+          assert re.search(r'"ko"\s*=>\s*"ko"',body), "FAIL: Korean ko mapping not found"
+          print("PASS: ko => ko mapping present in exact uploaded DLL.")
+          PY
