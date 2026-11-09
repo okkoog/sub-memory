@@ -1,0 +1,72 @@
+name: Temp build and apply selected DLL water label fix
+on:
+  push:
+    branches: [tmp-labeler-only-on-fix-water-20261109]
+    paths:
+      - .github/workflows/temp-build-selected-kp-labeler.yml
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/Managed
+            probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll
+            probably-stolen/tmp/patch_selected_water_label.py
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Decompile, apply requested label patch, compile DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/src" "$RUNNER_TEMP/out"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -r probably-stolen/Managed -o "$RUNNER_TEMP/src" "probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll"
+          python3 probably-stolen/tmp/patch_selected_water_label.py
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          root=Path(os.environ["RUNNER_TEMP"])/"src"
+          proj=root/"ProbablyStolenKoreanPack.csproj"
+          s=proj.read_text()
+          workspace=os.environ["GITHUB_WORKSPACE"]
+          s=s.replace("<HintPath>probably-stolen/Managed/", "<HintPath>"+workspace+"/probably-stolen/Managed/")
+          proj.write_text(s)
+          PY
+          dotnet build "$RUNNER_TEMP/src/ProbablyStolenKoreanPack.csproj" --configuration Release --nologo
+          cp "$RUNNER_TEMP/src/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack.dll"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-selected-branch-label-only
+          path: ${{ runner.temp }}/out/ProbablyStolenKoreanPack.dll
+          if-no-files-found: error
+      - name: Replace only specified DLL in specified branch
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64,json,os,urllib.request,urllib.parse
+          from pathlib import Path
+          repo="okkoog/sub-memory"
+          branch="fix-koreanpack-mechanic-water-20261109"
+          path="probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll"
+          uri="https://api.github.com/repos/"+repo+"/contents/"+urllib.parse.quote(path,safe="/")
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28","User-Agent":"KoreanPack-Label-Only"}
+          def request(method,url,data=None):
+              req=urllib.request.Request(url,data=data,headers=headers,method=method)
+              with urllib.request.urlopen(req,timeout=90) as r:
+                  return json.load(r)
+          current=request("GET",uri+"?ref="+branch)
+          data=Path(os.environ["RUNNER_TEMP"]+"/out/ProbablyStolenKoreanPack.dll").read_bytes()
+          payload={"message":"Apply latest water label fix only to selected KoreanPack DLL","content":base64.b64encode(data).decode(),"sha":current["sha"],"branch":branch}
+          res=request("PUT",uri,json.dumps(payload).encode())
+          print("Updated:",repo,branch,path,"commit",res["commit"]["sha"],"bytes",len(data))
+          PY
