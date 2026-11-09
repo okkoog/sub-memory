@@ -61,7 +61,6 @@ class Program {
       if (obj is TypeSig ts) return imp.Import(ts);
       if (obj is MethodSig ms) return imp.Import(ms);
       if (obj is FieldSig fs) return imp.Import(fs);
-      if (obj is CallSite cs) return imp.Import(cs);
       return obj;
     }
 
