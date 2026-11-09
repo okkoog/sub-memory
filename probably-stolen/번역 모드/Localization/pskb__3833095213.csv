@@ -2331,7 +2331,7 @@ K|settings.customers.upper.description,기존 상류층 고객 풀에 새로운 
 K|settings.customers.flirting.name,가끔 나오는 가벼운 호감 표현
 K|settings.customers.flirting.description,벨벳 키 손님 방문 중 15% 확률로 가벼운 호감 표현 대사가 나옵니다. 켜거나 꺼도 거래와 평판 시스템은 동일하게 작동합니다.
 K|settings.customers.velvetChance.name,벨벳 키 기본 방문 확률
-K|settings.customers.velvetChance.description,일반 무작위 손님을 뽑을 때 벨벳 키 손님이 선택될 기본 확률입니다. 평판에 따라 최대 20%p가 추가됩니다. 스토리 방문에는 영향을 주지 않습니다.
+K|settings.customers.velvetChance.description,일반 무작위 손님을 뽑을 때 벨벳 키 손님이 선택될 기본 확률입니다. 평판에 따라 최대 20%p가 추가됩니다. 스토리 방문에는 영향을 주지 않습니다. 게임 기본 세력의 손님 선정이 끝난 뒤에 판정합니다.
 K|settings.customers.quayside.name,퀘이사이드 추가 세력 6개
 K|settings.customers.quayside.description,"네온 언더토우의 오리지널 손님 143명입니다. 거인 여성, 해적, 교단원, 노동조합원, 의료진, 상인으로 구성되며 모두 고유한 신원과 초상화를 가집니다. 변경 후 게임을 다시 시작해야 합니다."
 K|settings.customers.quaysideChance.name,퀘이사이드 세력 방문 확률
@@ -2545,11 +2545,11 @@ K|reputation.velvet.flavor,사람들을 잘 챙겨 주면 벨벳 키에 금세 �
 K|water.jug,도크러너 물통 · 10 L
 K|water.reservoir,언더토우 저수조 · 25 L
 K|water.throughput,스톰글라스 처리량 코어
-K|water.throughputInfo,"범용 모듈: 성능 +200%. 공유 공기 페널티와 기타 보정을 적용하기 전 기준으로, 기본 게임 집수기의 생산량을 850 mL에서 2.55 L로 늘립니다."
+K|water.throughputInfo,과부하로 작동하는 펌프 코어. 처리 속도가 빨라지는 대신 전력 소모가 증가합니다.
 K|water.polishing,크리스털 정밀 여과 코어
-K|water.polishingInfo,범용 모듈: 품질 +100. 기본 모듈 시스템을 통해 기본 게임 물 생산 품질과 정수기 성능을 높입니다.
+K|water.polishingInfo,수처리 장치의 마무리 여과 코어. 처리 속도와 전력 효율을 희생하는 대신 수질을 높입니다.
 K|water.economizer,폐쇄순환 절약 코어
-K|water.economizerInfo,범용 모듈: 효율 +50%. 기본 게임의 일반 전력 계산 방식을 사용합니다.
+K|water.economizerInfo,충전된 전지의 에너지를 더 효율적으로 활용합니다. 대신 기계의 작동 속도가 조금 느려집니다.
 K|water.jugInfo,"다시 채울 수 있는 눈금 물통입니다. 기본 게임의 붓기, 검사, 정수 기능과 기계의 액체 슬롯에 사용할 수 있습니다. 빈 상태로 판매합니다."
 K|water.sealedInfo,"밀봉된 750 mL 음료입니다. 그대로 마시거나, 내용물 전체가 들어갈 공간이 있는 액체 용기에 사용해 옮겨 담을 수 있습니다. 개봉하면 재사용 가능한 병이 남습니다. 새로 만든 배치는 원수 혼합 정보를 보존하지만 이전 버전 배치는 원수 정보가 기록되어 있지 않을 수 있습니다."
 K|water.handbook,언더토우 병입 안내서
@@ -3138,7 +3138,7 @@ K|cellar.collect,수령
 K|cellar.water,순도 99.5% 이상의 깨끗한 물 {0}mL를 넣으세요.
 K|cellar.power,전력 {0} 이상이 남은 전지를 장착하세요.
 K|cellar.remaining,완료까지 {0}일
-K|bar.book.juice.body,"신선한 과일·채소와 액체 용기를 기본 블렌더에 넣으면 주스를 만들 수 있습니다. 블렌더 업그레이드는 주스 생산량에 영향을 줍니다. 상한 농산물은 주스로 만들 수 없습니다.\n\n모든 과일을 사용할 수 있으며 채소 중에는 토마토, 당근, 비트, 셀러리, 오이, 피망을 사용할 수 있습니다. 크기가 작거나 덜 익은 농산물은 주스가 적게 나옵니다.\n\n밀봉된 탄산음료, 리저브 워터, 코디얼 또는 토닉을 전체 내용물이 들어갈 만큼 여유 있는 용기에 사용하면 한 번에 옮겨 담을 수 있습니다. 빈 포장은 인벤토리로 돌아오며, 개봉된 음료는 계량하고 섞을 수 있습니다."
+K|bar.book.juice.body,"신선한 과일·채소와 액체 용기를 기본 블렌더에 넣으면 주스를 만들 수 있습니다. 블렌더 업그레이드는 주스 생산량에 영향을 줍니다. 상한 농산물은 주스로 만들 수 없습니다.\n\n모든 과일을 사용할 수 있으며 채소 중에는 토마토, 당근, 비트, 셀러리, 오이, 피망을 사용할 수 있습니다. 크기가 작거나 덜 익은 농산물은 주스가 적게 나옵니다. 단, 뉴트리프루트는 예외로, 갈아도 물과 전분으로 변합니다.\n\n밀봉된 탄산음료, 리저브 워터, 코디얼 또는 토닉을 전체 내용물이 들어갈 만큼 여유 있는 용기에 사용하면 한 번에 옮겨 담을 수 있습니다. 빈 포장은 인벤토리로 돌아오며, 개봉된 음료는 계량하고 섞을 수 있습니다."
 K|bar.book.yield,"추가로 희석하기 전 기준으로 {0}mL를 만들며, 알코올 도수는 {1}입니다."
 K|glass.new,새로운 {0} 유리병
 K|glass.clear,명확한
