@@ -429,7 +429,7 @@ public sealed class KoreanPack : IMod
 		int num = 0;
 		foreach (KeyValuePair<string, ModuleEffect> moduleEffect in ModuleEffectHelper.moduleEffects)
 		{
-			ModuleEffect value = moduleEffect.Value;
+			ModuleEffectHelper.ModuleEffect value = moduleEffect.Value;
 			switch (moduleEffect.Key)
 			{
 			case "MODULE_EFFECT_PREMIUM":
@@ -467,7 +467,7 @@ public sealed class KoreanPack : IMod
 		return num;
 	}
 
-	private static int RepairModuleEffect(ModuleEffect effect, string nameKey, string descriptionKey, params object[] descriptionArgs)
+	private static int RepairModuleEffect(ModuleEffectHelper.ModuleEffect effect, string nameKey, string descriptionKey, params object[] descriptionArgs)
 	{
 		if (effect == null)
 		{
