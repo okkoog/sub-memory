@@ -881,7 +881,7 @@ K|wanted.neon_wanted_sorrel_baines.arrival.1,엔진 소리만 들리면 뭔가 �
 K|wanted.neon_wanted_sorrel_baines.arrival.2,내가 배송 밴을 빤히 쳐다보더라도 그 때문입니다.
 K|wanted.neon_wanted_sorrel_baines.repeat.0,병 하나를 더 들고 갈 수 있을지 고민 중입니다. 어깨는 안 된다고 하네요.
 K|wanted.neon_wanted_sorrel_baines.questioned.0,부상당한 작업자들을 뒤에 태우고 정비 트럭을 몰고 나왔습니다.
-K|wanted.neon_wanted_sorrel_baines.questioned.1,수리장 근처에서 트럭이 고장 났어요. 사람들은 전부 내리게 하고 차량은 거기 두고 왔죠.
+K|wanted.neon_wanted_sorrel_baines.questioned.1,"수리장 근처에서 트럭이 고장 났어요. 다친 작업자들은 전부 내리게 하고, 차량은 거기 두고 왔죠."
 K|wanted.neon_wanted_sorrel_baines.questioned.2,사람들은 내가 무기 수송품을 훔쳤다고 하더군요. 무기는 하나도 없었습니다. 그 말을 옮기기 전에 작업자들에게 물어보세요.
 K|wanted.neon_wanted_sorrel_baines.dealAccepted.0,이거면 계속 움직일 수 있겠네요. 멀쩡한 쪽 어깨로 들고 갈게요.
 K|wanted.neon_wanted_sorrel_baines.departure.0,"참, 밴 소리는 괜찮았습니다. 걱정 하나는 덜었네요."
@@ -1162,7 +1162,7 @@ K|wanted.neon_wanted_odo_trenn.arrest.1,오도 트렌. 허가 없이 구역 조�
 K|wanted.neon_wanted_odo_trenn.arrest.2,네. 조명을 끊은 건 나였습니다. 어둠 속에 있던 사람들은 그런 일을 부탁한 적 없었고요.
 K|wanted.neon_wanted_odo_trenn.returnVisit.0,심리는 결국 진행됐습니다. 다음 심리에는 참석했고 조명도 켜 뒀어요.
 K|wanted.neon_wanted_odo_trenn.returnVisit.1,3분 동안 말했습니다. 정전됐던 전체 시간보다 더 길게 느껴지더군요.
-K|wanted.neon_wanted_odo_trenn.returnVisit.2,이번에도 부드러운 걸로 주세요. 제 이빨까지 정치적인 이유로 단단해지진 않았거든요.
+K|wanted.neon_wanted_odo_trenn.returnVisit.2,이번에도 씹기 편한 걸로 주세요. 정치적인 일 때문에 제 이빨까지 튼튼해진 건 아니거든요.
 K|wanted.neon_wanted_odo_trenn.returnQuestioned.0,계단에서 넘어진 분은 회복 중이라고 들었습니다. 이웃을 통해 사과를 전했어요.
 K|wanted.neon_wanted_odo_trenn.returnQuestioned.1,답장을 해 줄 의무는 없죠. 그걸 기억하려고 합니다.
 K|wanted.neon_wanted_rina_mott.arrival.0,또 지연된 이유를 설명하라는 말을 듣기 전에 식사부터 하나 할게요.
@@ -2649,7 +2649,7 @@ K|inspect.grade.2,기본
 K|inspect.grade.3,희석
 K|inspect.grade.4,녹물
 K|inspect.grade.5,오수
-K|inspect.grade.6,최하급 오염수
+K|inspect.grade.6,오수 미만
 K|kitchen.book.production,언더토우 생산 안내서
 K|kitchen.book.canner,피즈웍스 제조법 책
 K|kitchen.book.workshop,언더토우 작업장 제조법
@@ -3376,7 +3376,7 @@ K|water.delivery,수동 병입 키트가 도착했습니다. 계산대나 기본
 K|station.usedCaseInfo,"혼합 포장 상자입니다. 빈 일반 캔 20개와 대형 캔 10개가 들어 있으며, 상태는 멀쩡한 것부터 심하게 마모되거나 찌그러지고 녹슨 것까지 다양합니다. 구매 가격에 캔 내용물이 포함됩니다."
 K|station.sodaCaseInfo,"시럽 3종, 캔 6개, 유리병 6개가 들어 있습니다. 탄산음료 생산을 시작하기 위한 물품입니다. 영업 종료 후 스톰글라스 창고 판매점에서 피즈웍스 탄산음료 통조림 기계를 구입하세요."
 K|station.bestFirst,상태가 가장 좋은 캔부터
-K|station.sodaInfo,"전기로 작동하는 탄산음료 통조림 기계입니다. 제조법 책과 빈 캔, 순도 99% 이상의 물을 투입하세요. 업그레이드 전에는 하룻밤에 최대 16배치를 생산합니다."
+K|station.sodaInfo,"6 x 4 크기의 동력 생산 설비입니다. 투입칸(INPUT)에 해당 제조법 책과 소유한 재료를 넣고 제조법을 선택한 뒤 충전된 전지를 장착하세요. 「1회 생산」은 한 배치를 만들고 「자동」은 밤새 생산합니다. 사용하는 물은 순도 99% 이상이어야 하며 갤리 제조법도 99% 물을 요구합니다. 원재료 품질과 포장 상태에 따라 탄산음료의 등급과 가치가 정해집니다. 책, 재료, 전력 또는 완성품칸(OUTPUT) 공간이 부족하면 생산이 멈춥니다. 두 가지 캔 크기로 20개 브랜드를 만들 수 있습니다. 농축액 제조법은 1캔을 만들고, 신선 과일 제조법은 해당 과일·감미료·탄산과 빈 캔 4개로 4캔을 만듭니다. 기본 생산량은 밤당 16배치이며 성능 모듈로 최대 128배치까지 늘릴 수 있습니다. 「UPGRADES」 탭에는 스톰글라스 제어 랙을 장착할 수 있습니다. 품질 모듈은 원수를 정화하지 않습니다. 완제품은 완성품칸에서 판매 카운터로 옮기세요."
 K|station.galleyInfo,"6 x 4 크기의 동력 생산 설비입니다. 투입칸(INPUT)에 해당 제조법 책과 소유한 재료를 넣고 제조법을 선택한 뒤 충전된 전지를 장착하세요. 「1회 생산」은 한 배치를 만들고 「자동」은 밤새 생산합니다. 사용하는 물은 순도 99% 이상이어야 합니다. 책, 재료, 전력 또는 완성품칸(OUTPUT) 공간이 부족하면 생산이 멈춥니다. 향미 농축액, 밀가루와 감미료를 만들며, 포장재는 기본 게임 프린터용 칩으로 인쇄합니다. 식사는 주방의 「COOK」 탭에서 직접 조리하세요. 기본 생산량은 밤당 8배치이며 성능 모듈로 최대 64배치까지 늘릴 수 있습니다. 「UPGRADES」 탭에는 스톰글라스 제어 랙을 장착할 수 있습니다. 품질 모듈은 원수를 정화하지 않습니다. 완제품은 완성품칸에서 판매 카운터로 옮기세요."
 K|station.chipInfo,"기본 게임 프린터에서 반복 사용할 수 있는 패턴 칩입니다. 금속 주괴 하나로 빈 용기 {0}개를 만듭니다. 일반 프린터에 금속 인쇄 모듈과 CNC 모듈을 장착하고 이 칩, 금속 주괴와 충전된 전지를 넣으세요. 전력 소모, 진행도와 완성품 공간은 프린터가 처리합니다. 자세한 내용은 「언더토우 작업장 제조법」을 확인하세요."
 K|station.oneOutput,{0}개 생산
@@ -3975,7 +3975,7 @@ K|visitor.velvet_02.opening,오늘 엄마가 마지막 절을 네덜란드어로
 K|visitor.velvet_02.personal,엄마는 마지막 절을 네덜란드어로 불러요. 아무리 시끄러운 밤이라도 그 부분이 나오면 집 전체가 조용해져요.
 K|visitor.velvet_02.turn,"공연이 끝난 뒤에도 남아서 자기 어머니 목소리가 기억나지 않는다고 했어요. 그래서 엄마가 그 노래를 다시 불러 줬죠."
 K|visitor.velvet_03.errand,안내 데스크에서 마실 차 좀 주세요. 내일 예약은 물이 끓고 나서 생각해도 되겠죠.
-K|visitor.velvet_03.opening,제임스 베일리라는 이름으로 남자 둘이 예약했어요. 경비대가 들어오자 둘 다 자리를 뜨고 싶어 하더군요.
+K|visitor.velvet_03.opening,제임스 베일리라는 이름으로 남자 둘이 예약했어요. 치안부가 들어오자 둘 다 자리를 뜨고 싶어 하더군요.
 K|visitor.velvet_03.turn,연필이 이제 한 자루밖에 안 남았어요. 앞으로는 손님들 진짜 이름을 잉크로 적어야겠네요.
 K|visitor.velvet_04.errand,"치즈 있나요? 네, 저도 이 상황이 좀 우습다는 건 알아요."
 K|visitor.velvet_04.opening,손님 하나가 끔찍한 걸 고백하겠다며 돈을 더 얹어 줬어요. 룸메이트가 아껴 둔 좋은 치즈를 먹어 버렸대요.
@@ -4081,9 +4081,9 @@ K|visitor.velvet_36.errand,다시 데워 먹기 좋은 수프 주세요. 친구 
 K|visitor.velvet_36.opening,"신입 하나가 아파서 못 나오겠다며 전화했는데, 미안하다는 말을 여섯 번이나 하더군요. 저도 예전엔 바로 이 구석에서 그런 전화를 했죠."
 K|visitor.velvet_36.turn,대타 구하는 건 제 일이니 신경 쓰지 말라고 했어요. 아픈 사람이 근무표 계산까지 할 필요는 없잖아요.
 K|visitor.velvet_37.errand,그냥 물로 주세요. 내일 첫 음은 제 목소리로 내고 싶거든요.
-K|visitor.velvet_37.opening,예전엔 높은 음을 내는 게 제일 힘든 줄 알았어요. 그런데 맨 앞줄에서 누가 사라졌는지 모른 척하는 게 더 힘들더군요.
+K|visitor.velvet_37.opening,예전엔 높은 음을 내는 게 제일 어려운 줄 알았어요. 그런데 더 힘든 건 맨 앞줄에서 늘 보이던 사람이 이제 없다는 걸 기억하는 일이더군요.
 K|visitor.velvet_37.turn,오늘 밤엔 다른 사람이 그 자리에 앉아 있었어요. 그래도 끝까지 노래할 수 있었죠.
-K|visitor.velvet_38.errand,10크레딧짜리 지폐를 잔돈으로 바꿔 주실래요? 작은 동전들은 집에 갈 차비로 모으고 있어요.
+K|visitor.velvet_38.errand,10크레딧을 잔돈으로 바꿔 주실래요? 작은 동전들은 집에 갈 차비로 모으고 있어요.
 K|visitor.velvet_38.opening,비상 택시비를 모으고 있어요. 장사가 잘된 날마다 한 크레딧씩 넣는 식으로요.
 K|visitor.velvet_38.turn,지난주엔 그 돈 덕분에 짐꾼 한 명이 아기가 잠들기 전에 집에 도착했어요. 모금함 하나 둘 만한 가치가 있죠.
 K|visitor.velvet_39.errand,접수대에 둘 민트 맛 나는 거 있나요? 하나 나눠 주고 싶어서요.
