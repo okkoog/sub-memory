@@ -37,14 +37,14 @@ class Patch {
   var helper=new TypeDefinition("KoreanLocalization","NightAuctionKoreanRuntime",TypeAttributes.NotPublic|TypeAttributes.Abstract|TypeAttributes.Sealed,module.TypeSystem.Object);
   module.Types.Add(helper);
   var str=module.TypeSystem.String;
-  var dt=new TypeReference("System.Collections.Generic","Dictionary"+(char)96+"2",module,module.TypeSystem.Object.Scope);
-  var dict=new GenericInstanceType(dt);dict.GenericArguments.Add(str);dict.GenericArguments.Add(str);
-  var field=new FieldDefinition("Map",FieldAttributes.Private|FieldAttributes.Static|FieldAttributes.InitOnly,dict);helper.Fields.Add(field);
-  var ctor=new MethodReference(".ctor",module.TypeSystem.Void,dict){HasThis=true};
-  var add=new MethodReference("Add",module.TypeSystem.Void,dict){HasThis=true};
-  add.Parameters.Add(new ParameterDefinition(str));add.Parameters.Add(new ParameterDefinition(str));
-  var lookup=new MethodReference("TryGetValue",module.TypeSystem.Boolean,dict){HasThis=true};
-  lookup.Parameters.Add(new ParameterDefinition(str));lookup.Parameters.Add(new ParameterDefinition(new ByReferenceType(str)));
+  // Hashtable uses non-generic CLR signatures; valid under the game's Mono runtime.
+  var ht=new TypeReference("System.Collections","Hashtable",module,module.TypeSystem.Object.Scope);
+  var field=new FieldDefinition("Map",FieldAttributes.Private|FieldAttributes.Static|FieldAttributes.InitOnly,ht);helper.Fields.Add(field);
+  var ctor=new MethodReference(".ctor",module.TypeSystem.Void,ht){HasThis=true};
+  var add=new MethodReference("Add",module.TypeSystem.Void,ht){HasThis=true};
+  add.Parameters.Add(new ParameterDefinition(module.TypeSystem.Object));add.Parameters.Add(new ParameterDefinition(module.TypeSystem.Object));
+  var lookup=new MethodReference("get_Item",module.TypeSystem.Object,ht){HasThis=true};
+  lookup.Parameters.Add(new ParameterDefinition(module.TypeSystem.Object));
   var starts=new MethodReference("StartsWith",module.TypeSystem.Boolean,str){HasThis=true};starts.Parameters.Add(new ParameterDefinition(str));
   var replace=new MethodReference("Replace",str,str){HasThis=true};replace.Parameters.Add(new ParameterDefinition(str));replace.Parameters.Add(new ParameterDefinition(str));
   var clinit=Add(helper,".cctor",module.TypeSystem.Void);clinit.Attributes|=Mono.Cecil.MethodAttributes.SpecialName|Mono.Cecil.MethodAttributes.RTSpecialName;
@@ -54,8 +54,10 @@ class Patch {
   var known=Add(helper,"Known",str,str);known.Body.InitLocals=true;known.Body.Variables.Add(new VariableDefinition(str));
   il=known.Body.GetILProcessor();var fallback=Instruction.Create(OpCodes.Ldarg_0);
   il.Emit(OpCodes.Ldarg_0);il.Emit(OpCodes.Brfalse,fallback);
-  il.Emit(OpCodes.Ldsfld,field);il.Emit(OpCodes.Ldarg_0);il.Emit(OpCodes.Ldloca_S,known.Body.Variables[0]);
-  il.Emit(OpCodes.Callvirt,lookup);il.Emit(OpCodes.Brfalse,fallback);il.Emit(OpCodes.Ldloc_0);il.Emit(OpCodes.Ret);il.Append(fallback);il.Emit(OpCodes.Ret);
+  il.Emit(OpCodes.Ldsfld,field);il.Emit(OpCodes.Ldarg_0);il.Emit(OpCodes.Callvirt,lookup);
+  il.Emit(OpCodes.Castclass,str);il.Emit(OpCodes.Stloc_0);
+  il.Emit(OpCodes.Ldloc_0);il.Emit(OpCodes.Brfalse,fallback);il.Emit(OpCodes.Ldloc_0);il.Emit(OpCodes.Ret);
+  il.Append(fallback);il.Emit(OpCodes.Ret);
   var korean=Add(helper,"IsKorean",module.TypeSystem.Boolean,str);il=korean.Body.GetILProcessor();var notKo=Instruction.Create(OpCodes.Ldc_I4_0);
   il.Emit(OpCodes.Ldarg_0);il.Emit(OpCodes.Brfalse,notKo);il.Emit(OpCodes.Ldarg_0);il.Emit(OpCodes.Ldstr,"ko");il.Emit(OpCodes.Callvirt,starts);il.Emit(OpCodes.Ret);il.Append(notKo);il.Emit(OpCodes.Ret);
   var translate=Add(helper,"Literal",str,str);il=translate.Body.GetILProcessor();var same=Instruction.Create(OpCodes.Ldarg_0);
