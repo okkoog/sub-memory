@@ -1,0 +1,43 @@
+name: Bundle updated Korean Pack CSV files
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/bundle-koreanpack-csv-20261109.yml
+permissions:
+  contents: write
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package exactly two translated CSV files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path("probably-stolen/번역 모드/Localization")
+          names = ["pskb__3828971731.csv", "pskb__3834135415.csv"]
+          destination = Path("probably-stolen/downloads/KoreanPack_Translation_Update_319keys_20261109.zip")
+          destination.parent.mkdir(parents=True, exist_ok=True)
+          with ZipFile(destination, "w", ZIP_DEFLATED, compresslevel=9) as archive:
+              for name in names:
+                  path = root / name
+                  assert path.exists() and path.stat().st_size > 1000, path
+                  assert path.read_bytes().startswith(b"\xef\xbb\xbf"), "Expected UTF-8 BOM: " + name
+                  archive.write(path, arcname=name)
+          with ZipFile(destination) as archive:
+              assert sorted(archive.namelist()) == sorted(names)
+              assert archive.testzip() is None
+          print(destination, destination.stat().st_size, "bytes")
+          PY
+      - name: Commit ZIP for direct download
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add probably-stolen/downloads/KoreanPack_Translation_Update_319keys_20261109.zip
+          git commit -m "Bundle updated Korean Pack CSV translations (+319 keys)"
+          git push origin HEAD:main
