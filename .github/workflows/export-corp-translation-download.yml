@@ -1,0 +1,21 @@
+name: Export CorpPresence Korean CSV for download
+on:
+  push:
+    paths:
+      - '.github/workflows/export-corp-translation-download.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check file
+        run: test -s 'probably-stolen/번역 모드/Localization/pskb__3828913695.csv'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pskb__3828913695
+          path: probably-stolen/번역 모드/Localization/pskb__3828913695.csv
+          if-no-files-found: error
