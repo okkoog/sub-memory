@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HarmonyLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using UnityEngine.Localization;
@@ -18,6 +19,10 @@ internal sealed class WaterNameCompatibility
 	private bool assetsReady;
 
 	private bool tooltipRepairLogged;
+
+	private bool nativeWaterRepairLogged;
+
+	private static WaterNameCompatibility activeInstance;
 
 	private int waterTooltipAuditCount;
 
@@ -80,6 +85,7 @@ internal sealed class WaterNameCompatibility
 		if (!enabled)
 		{
 			enabled = true;
+			activeInstance = this;
 			LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
 			ModHook.OnGameLoadedInit += Loading;
 			ModHook.OnGameLoadedLate += Loaded;
@@ -100,6 +106,10 @@ internal sealed class WaterNameCompatibility
 	internal void Disable()
 	{
 		enabled = false;
+		if (activeInstance == this)
+		{
+			activeInstance = null;
+		}
 		worldReady = false;
 		assetsReady = false;
 		generation++;
@@ -278,6 +288,40 @@ internal sealed class WaterNameCompatibility
 		catch (Exception ex)
 		{
 			Debug.LogWarning((object)("[KoreanPack] Water tooltip v4 audit skipped: " + ex.GetType().Name + " " + ex.Message));
+		}
+	}
+
+	// Core-game WaterFeatureHelper.GetWaterFeature has an independent postfix
+	// in Traits Probably Fun. That postfix can restore a previously cached
+	// 'Translation Error' after the official OnCreateTooltipEarly repair.
+	// Apply the minimum six-condition data repair AFTER normal Harmony
+	// postfixes, without hooking any other mod DLL or global UI/string API.
+	internal static void RestoreWaterFeatureAfterMods(ItemFeature feature)
+	{
+		WaterNameCompatibility self = activeInstance;
+		if (self == null || !self.enabled || feature == null || feature.category != "CATEGORY_WATER_PURITY")
+		{
+			return;
+		}
+		Locale locale = LocalizationSettings.SelectedLocale;
+		if ((Object)(object)locale == (Object)null)
+		{
+			return;
+		}
+		string code = locale.Identifier.Code;
+		if (code != "ko" && code != "ko-KR")
+		{
+			return;
+		}
+		bool changed = self.RepairCondition(feature.fakeCondition);
+		if (feature.realCondition != feature.fakeCondition)
+		{
+			changed |= self.RepairCondition(feature.realCondition);
+		}
+		if (changed && !self.nativeWaterRepairLogged)
+		{
+			self.nativeWaterRepairLogged = true;
+			Debug.Log((object)("[KoreanPack] Native water feature repaired after other mods; feature=" + feature.category + " display=" + feature.GetBaseCurrentDisplay()));
 		}
 	}
 
@@ -496,5 +540,16 @@ internal sealed class WaterNameCompatibility
 			return value.IndexOf("Translation Error", StringComparison.OrdinalIgnoreCase) < 0;
 		}
 		return false;
+	}
+}
+
+[HarmonyPatch(typeof(WaterFeatureHelper), nameof(WaterFeatureHelper.GetWaterFeature))]
+internal static class CoreGameWaterFeaturePostfix
+{
+	[HarmonyPostfix]
+	[HarmonyPriority(Priority.Last)]
+	private static void Postfix(ItemFeature __result)
+	{
+		WaterNameCompatibility.RestoreWaterFeatureAfterMods(__result);
 	}
 }

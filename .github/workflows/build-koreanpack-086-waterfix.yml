@@ -57,6 +57,8 @@ jobs:
           grep -R -q 'OnCreateTooltipEarly' "$RUNNER_TEMP/waterfix-decompiled"
           grep -R -q 'Water tooltip v3: repaired feature category=' "$RUNNER_TEMP/waterfix-decompiled"
           grep -R -q 'Water tooltip v4 audit:' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'CoreGameWaterFeaturePostfix' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'Native water feature repaired after other mods' "$RUNNER_TEMP/waterfix-decompiled"
           test "$(stat -c '%s' probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll)" -ge 20000
       - name: Stage candidate DLL (never overwrite released main)
         shell: bash
