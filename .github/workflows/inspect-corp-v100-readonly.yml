@@ -33,9 +33,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/corp"
           "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/corp" "$DLL"
           echo '===== targeted activation classes ====='
-          for ty in CorpPresence.Main CorpPresence.Host CorpPresence.Hooks CorpPresence.Engine CorpPresence.Runtime.RuntimeLifetime CorpPresence.Runtime.ResourceBootstrap CorpPresence.Runtime.OwnedCallbacks; do
+          for ty in CorpPresence.GameResources CorpPresence.ItemRegistry CorpPresence.ModLog CorpPresence.Runtime.ResourceBootstrap; do
             echo "=========== TYPE: $ty ==========="
-            "$RUNNER_TEMP/ilspytools/ilspycmd" -t "$ty" "$DLL" | head -n 330 || true
+            "$RUNNER_TEMP/ilspytools/ilspycmd" -t "$ty" "$DLL" | head -n 450 || true
           done
-          echo '===== key logging tokens ====='
-          grep -RnE 'ModLog\.(Info|Warn|Error)|ModHelper\.Register|OnGameLoaded|OnModAssetsLoaded|OnShutterOpened|OnGenerateCustomer|OnClient|OnEnable\(' "$RUNNER_TEMP/corp/CorpPresence/Main.cs" "$RUNNER_TEMP/corp/CorpPresence/Host.cs" "$RUNNER_TEMP/corp/CorpPresence/Engine.cs" "$RUNNER_TEMP/corp/CorpPresence/Runtime" --include='*.cs' | head -n 110 || true
