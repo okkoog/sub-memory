@@ -1,10 +1,13 @@
-# Vanilla Gun Expansion English
 vge_frame_glock_name,Sentinel Mk. III Frame
 vge_frame_revolver_name,Lancewell Revolver Frame
 vge_frame_smg_name,Peacemaker SMG Frame
 vge_frame_shotgun_name,Rampart Shotgun Frame
 chip_name_single,{0} 3D Printer Chip
 chip_name_multi,3D Printer Chip (x{0} {1})
+printer_title_loaded,{0} · {1}
+gunmod_title_condition,{0} · {1}
+gunmod_repair,Repair
+gunmod_repair_tip,Success chance: {0}%
 tooltip_quality,Purity quality {0}%
 client_rev_gunsmith_name,Revolution Gunsmith
 dialog_rev_gunsmith_1,"Wild sent me. Chips and parts the movement retired, see if any of it is useful to you."
@@ -15,6 +18,20 @@ upgrade_rev_gunsmith_title,Revolution Gunsmith
 upgrade_rev_gunsmith_desc,"Wild will refer you to a Revolution Gunsmith, who will visit the next day and then once a week, selling gun frame chips, attachment chips and arms supplies. (Unlocks Revolution Gunsmith content.)"
 cfg_ingot_recipes,Vanilla recipes use metal ingots
 cfg_ingot_recipes_tip,"Five vanilla chips (silencer, red dot sight, laser sight, 10mm magazine, Ironcraft 10 frame) consume metal ingots (some with printer filament) instead of scrap metal; recipes using ingots require the Metal Printing Module. Existing chips follow the setting. Before uninstalling this mod, turn this off and load and save once, or the chips in the save keep the ingot recipes."
+cfg_deep_content,Deep content
+cfg_deep_content_tip,"Turns off new street clashes, gun reputation, upkeep, gun reoffers, new paint and sticker sources, collector orders and new Upper-Level Gunsmith bookings. Existing paint, stickers, gun history and upgrades are kept. Takes effect after restarting the game."
+cfg_deep_clashes,Street clashes
+cfg_deep_clashes_tip,"Street clashes between the Revolution and Security. Off: no new clash starts; one under way plays out. No effect with deep content off."
+cfg_gun_buyer_rep,Gun buyer reputation
+cfg_gun_buyer_rep_tip,"Delivering New or Excellent guns with stats no worse than a new gun of the model raises it; selling unrepaired war-damaged guns lowers it; every 3 days without such a sale it moves 1 back toward 0. It runs from −15 to +15 and changes the three gun buyers' visit chance (±15%) and order rewards (±7.5%); together with the showcase bonus, visits get at most +30%. Off: it neither changes nor counts. No effect with deep content off."
+cfg_famous_upkeep,Famous gun upkeep
+cfg_famous_upkeep_tip,"A famous gun that goes 7 days without gun oil loses its famous gun bonus (+15%) over the next 8 days. Off: famous guns keep it and gun oil has no use; turned back on, the 7 days start over. With deep content off nothing fades either."
+cfg_merc_kills,Mercenary guns with kills
+cfg_merc_kills_tip,"Half the guns the mercenary gun seller brings have kills (1–24); 20 or more makes a famous gun. Off: no kills. No effect with deep content off."
+cfg_collector_orders,Collector orders
+cfg_collector_orders_tip,"30% of eligible high orders become collector orders: a big gun (size > 14) or a valuable one (value ≥ 300), in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a usable Premium can. Of collector orders, 70% match current stock; 30% draw freely from both kinds and may need preparation. Off: no new orders. No effect with deep content off."
+cfg_disassembly_condition,Disassembly parts by condition
+cfg_disassembly_condition_tip,"Gun parts from disassembly scale with condition: New 100%, Excellent 90%, Good 80%, Fair 65%, Poor 50% (rounded, at least 1); plastic and scrap stay. Off: vanilla amounts. No effect with deep content off."
 cfg_story_line,Covert operation story
 cfg_story_line_tip,"The covert operation story. Off: it does not start; one already started plays out."
 cfg_chip_pity,Chip pity
@@ -85,6 +102,18 @@ op_insp_clean_2,Someone will be back in the next few days.
 op_insp_clean_last_1,...Still nothing.
 op_insp_clean_last_2,Then it goes up the chain. Stay away from the rebels from now on.
 op_log_seized,Security seized the neural core module.
+op_bribe_offer_1,These goods aren't what we came for. But if they go into the report, your day is about to get a lot worse.
+op_bribe_offer_2,More of this stuff. The bosses only want that core. As for everything else... perhaps we can come to an arrangement.
+op_bribe_offer_3,This is our last round. The bosses get what they're after. Whether these other goods get a separate report is up to you.
+op_bribe_pay_1,Please make an exception for me [Pay {0} credits]
+op_bribe_pay_2,For your trouble. Please look the other way [Pay {0} credits]
+op_bribe_pay_3,One last favor. Please let this slide [Pay {0} credits]
+op_bribe_accept_1,All right. We didn't see these goods. They won't be in this report.
+op_bribe_accept_2,Glad we understand each other. These goods won't appear in today's report.
+op_bribe_accept_3,Fine. We leave these out. Be more careful next time.
+op_bribe_pay_tip,Overlooks other contraband found on this visit only. The story core is still confiscated. Requires enough cash.
+op_bribe_refuse,Then do it by the book.
+op_bribe_refuse_reply,By the book it is. Let's account for every item.
 op_col_1_alive,I made it back. Thanks to you.
 op_col_1_other,Reno did not make it back. I am here for him.
 op_col_2,That thing we left with you last time. Time to give it back.
@@ -110,15 +139,16 @@ op_rev_extra_none_1,The core? Could not find it.
 op_rev_extra_none_2,"Keep it safe, the quartermaster will come for it in a few days."
 op_log_officers,"Two Security officers died in your store. The Revolution covered for you and Security puts it on them, but your store stays on their list: Security reputation −10 more."
 vge_gun_cabinet_name,Gun Cabinet
-vge_gun_cabinet_desc,A cabinet for nine firearms or stun guns. The first two are displayed on supports. Choose from six appearances.
+vge_gun_cabinet_desc,"Starts with four slots for guns, stun guns or oil. Drop a metal ingot onto the cabinet to open one more slot, up to nine. The first two guns are displayed. With oil inside, due famous guns are oiled at night. Its look can be switched."
 vge_chip_rack_kit_name,Chip Rack Expansion Kit
 vge_chip_rack_kit_desc,Drag onto a 3D printer to enlarge its chip rack.
 vge_bay_desc,"A specialized storage bay for firearms, melee weapons, modifications and gun workshop supplies. Can't store machines or containers other than gun cabinets."
 cabinet_slot,Slot {0}
+cabinet_capacity_title,{0} · {1}/{2} slots
 vge_gunpowder_name,Gunpowder
-vge_gunpowder_desc,Propellant for pressing ammunition. One bottle per box.
+vge_gunpowder_desc,Propellant for pressing regular or non-lethal ammunition. One bottle per printing batch.
 vge_gunpowder_adv_name,Advanced Gunpowder
-vge_gunpowder_adv_desc,"Faster-burning propellant, for armor-piercing rounds. One bottle per box."
+vge_gunpowder_adv_desc,"Faster-burning propellant for armor-piercing rounds. One bottle per printing batch."
 vge_module_ammo_press_name,Ammo Press Module
 vge_module_ammo_press_desc,A module that lets a 3D printer press ammunition.
 vge_module_ammo_press_effect,Presses ammunition
@@ -126,15 +156,16 @@ upgrade_auto_feed_title,Auto feed
 upgrade_auto_feed_desc,"Every night before work starts, 3D printers with a chip loaded restock the materials they need from your gunsmith storage bays."
 upgrade_auto_store_title,Auto stock
 upgrade_auto_store_desc,Finished 3D printer products are moved into a gunsmith storage bay with room.
-log_auto_feed,Workshop: {0} material(s) moved from the gunsmith bays to the printer.
-log_auto_store,Workshop: {0} printed item(s) stored in the gunsmith bays.
 log_manual,Odin left a Vanilla Gun Expansion manual in the back inventory.
 vge_manual_name,Vanilla Gun Expansion manual
-vge_manual_desc,Four pages on chips, ammunition, the chip rack, the workshop and the gun-fitting window.
+vge_manual_desc,"Chips, ammunition, the gun workshop, street clashes, famous guns and paint. Six pages."
 manual_header,VANILLA GUN EXPANSION
 manual_p1_title,Chips and frames
 manual_p2_title,Powder and ammo
 manual_p3_title,Workshop gear
+manual_p4_title,Clashes and reputation
+manual_p5_title,Famous guns and gun oil
+manual_p6_title,"Paint, stickers, collector"
 op_log_kill_qm_rev,You shot the rebel quartermaster in your store. Revolution reputation -40.
 op_col_1_other_killed,You killed Reno. The brass say the debt is one thing, the goods another.
 op_col_nocore_1,It never reached you? Then it's not on you.
@@ -149,10 +180,265 @@ op_col_1_reported,Reno got picked up in your store. Everyone knows.
 op_core_fault,"Core fault: performance and quality drop every night. Select a hypertech electronic, then click this core to repair it (takes 2)."
 op_core_fault_progress,"Core fault: performance and quality drop every night. Select a hypertech electronic, then click this core to repair it ({0}/{1} done)."
 op_col_give_4,"Keep this capped one, a small token from us."
+op_log_officer_blame,"Security puts the dead officer on the Revolution, but your store is on their list now: Security reputation −10."
 feature_print_quality,Print quality {0}%
-toggle_auto_feed_tip,Whether this printer pulls its missing materials from the gunsmith storage bays every night.
-toggle_auto_store_tip,Whether this printer's finished prints go straight into a gunsmith storage bay.
+toggle_auto_feed_tip,Allow this printer to take missing materials from gunsmith storage when Auto Feed is on in Wild's Network.
+toggle_auto_store_tip,Allow this printer to send finished prints to gunsmith storage when Auto Stock is on in Wild's Network.
+upgrade_switch_enable,Turn on
+upgrade_switch_disable,Turn off
+clash_news,Street Fighting Between the Revolution and Security!
+clash_display,Lower Levels Street Clash
+clash_desc,"The Revolution and Security are trading fire at street corners across the Lower Levels, and both sides are scrambling for weapons to replace their losses. Demand for weapons and ammunition is expected to rise."
+clash_buyer_rev_1,The streets are on fire and our people are short on hardware. Get me a gun.
+clash_buyer_rev_2,Security is rounding people up in the Lower Levels again. I am ordering a gun for the comrades.
+clash_buyer_rev_3,"Do not ask who it is for. ...Fine, the Revolution. It has to work."
+clash_buyer_rev_4,The front line is waiting on guns. Got anything good?
+clash_sec_buyer_1,"Hello, I am buying equipment on behalf of Security Department."
+clash_sec_buyer_2,"The recent street clash has cost the Armory dearly, and standard issue is still being allocated."
+clash_sec_buyer_3,"Until resupply arrives, we need to purchase some firearms to make do."
+clash_seller_1,"Picked these up off the street. They have seen action, so they are cheap."
+clash_seller_2,Scavenged during the clash. A little work and they will shoot again.
+clash_seller_3,Their owners will not be needing them. Want them?
+clash_log_rev,"The street clash is over: the Revolution came out on top (battle score Revolution {0} : Security {1}).{2}{3}"
+clash_log_sec,"The street clash is over: Security came out on top (battle score Revolution {0} : Security {1}).{2}{3}"
+clash_log_security_ammo,Security will offer leftover rounds at 10% off once in the coming week.
+sec_surplus_offer,"We have ammunition left over from the fighting. You're paying for the rounds still in the packs, less ten percent."
+clash_log_tiebreak," The score was tied, so an extra roll decided the winner."
+clash_log_wave," Over the next few days, gun sellers will bring war-damaged guns."
+clash_log_wave_nosign," Gun sellers only bring war-damaged guns to stores with a Firearm or Heavy Firearm Neon Sign in the showcase."
+clash_log_gunsmith_discount," The Revolutionary Gunsmith sent word: they won, so his goods are 10% off this week."
+side_rev,the Revolution
+side_sec,Security
+hist_clash,Used by {1} in the street clash of day {0}
+hist_engaged,Kills: {0}
+hist_maint,Last oiled: day {0}
+hist_maint_late,{0} days overdue for oil: the famous gun bonus is fading
+feature_history,History ({0})
+feature_famous,Famous gun
+feature_famous_faded,Famous gun (neglected)
+feature_war,War-damaged
+order_req_famous,Famous gun
+vge_gun_oil_name,Gun Oil
+vge_gun_oil_desc,"Used to oil famous guns and keep their bonus; kept in a gun cabinet, it oils the cabinet's due famous guns every night. One oiling clears a war-damaged gun repaired to Good or better."
+skin_desert,Desert
+skin_urban,Urban Grey
+skin_olive,Olive
+skin_navy,Navy
+skin_rust,Rust
+skin_woodland,Woodland Camo
+skin_city,City Camo
+skin_blackgold,Black Gold
+skin_neon,Neon
+skin_revfire,Revolution Flame
+skin_ulcollection,Upper Levels Collection
+skin_ghost,Ghost
+skin_matte,Matte Black
+skin_gunmetal,Gunmetal
+skin_sand,Light Sand
+skin_sakura,Sakura Pink
+skin_sky,Sky Blue
+skin_arctic,Arctic White
+skin_crimson,Crimson
+skin_cobalt,Cobalt
+skin_forest,Forest Green
+skin_plum,Plum
+skin_safety,Safety Orange
+skin_teal,Teal
+skin_bronze,Bronze
+skin_snow,Snow Camo
+skin_dune,Dune Camo
+skin_digital,Digital Urban
+skin_digidesert,Digital Desert
+skin_digijungle,Digital Jungle
+skin_tiger,Tiger Stripe
+skin_zebra,Zebra
+skin_tanblack,Tan over Black
+skin_greenblack,Green over Black
+skin_checker,Checkerboard
+skin_carbon,Carbon Fiber
+skin_walnut,Walnut Grain
+skin_graffiti,Graffiti
+skin_sunset,Sunset
+skin_deepsea,Deep Sea
+skin_hazard,Hazard Stripes
+skin_polka,Polka Dots
+skin_circuit,Circuit Board
+skin_damascus,Damascus
+skin_chrome,Mirror Chrome
+skin_rosegold,Rose Gold
+skin_galaxy,Galaxy
+skin_aurora,Aurora
+skin_lava,Lava
+skin_toxic,Toxic
+skin_royal,Royal Purple
+paint_tier_1,Basic
+paint_tier_2,Fine
+paint_tier_3,Premium
+feature_paint,Paint: {0} ({1} #{2})
+vge_paint_crate_name,Paint Crate
+vge_paint_crate_desc,Activate to open. Holds 2-4 spray cans.
+order_req_skin,Paint: {0}
+collector_order_big,"I want a big, intimidating gun in epic or legendary paint. I pay the market price and a premium on top, more if it is {0}."
+collector_order_value,"I want a valuable gun, worth at least {1} credits, in epic or legendary paint. I pay the market price and a premium on top, more if it is {0}."
+collector_1,I collect guns. Do not bother with the ordinary stuff.
+collector_2,I hear good paint jobs come through here. I am a collector.
+collector_3,I am after one particular paint job. Find it and we can talk money.
+vge_spray_can_name,Spray Can ({0})
+vge_spray_can_desc,"Paints a gun or one of seven melee weapons (knives, hatchet, stun baton): each use offers {0} paints, each Common {1}, Rare {2}, Epic {3} or Legendary {4}. {5} uses."
+paint_offer_title,{0} Spray Can: pick a paint
+paint_offer_desc,"Price +{0}%, pattern #{1}. Click to spray it on (uses one charge)."
+paint_offer_wanted,The collector at the counter asked for this one.
+paint_offer_own,This gun already wears this paint.
+order_req_paint_high,Epic or Legendary paint
+order_req_value,Value ≥ {0}
+vge_sticker_pack_name,Sticker Pack
+vge_sticker_pack_desc,Five stickers to put on guns; each adds {0}% to the price. Large ones only fit the SMG and the shotgun.
+sticker_pack_left,Left in the pack: {0}
+sticker_pick_title,Sticker Pack: pick one
+sticker_spot_title,Where does {0} go?
+sticker_spot_1,Spot 1
+sticker_spot_2,Spot 2
+feature_sticker,Stickers: {0}
 list_sep,", "
+client_ul_gunsmith_name,Upper-Level Gunsmith
+upgrade_ul_gunsmith_title,Upper-Level Gunsmith
+upgrade_ul_gunsmith_desc,"Wild will hand you an upper-level gunsmith's business card. Call him on the store phone ({0}) to book a visit; he brings fine guns (only a stun gun without Weapon Permit II), premium attachments and paint supplies. (Unlocks Upper-Level Gunsmith content.)"
+log_ul_card,The Upper-Level Gunsmith's business card is in the back room. Number: {0}.
+log_ul_card_shop,"No room in the back room: the Upper-Level Gunsmith's business card is in the store inventory. Number: {0}."
+log_ul_card_lost,"No room anywhere for the Upper-Level Gunsmith's business card. His number: {0}."
+vge_ul_card_name,Business Card (Upper-Level Gunsmith)
+vge_ul_card_desc,Ivory card stock with gold trim and nothing on it but a phone number.
+ul_phone_intro_1,"Upper-level gun studio. Wild mentioned you. The pawnshop, right?"
+ul_phone_intro_2,"I deal in what the upper levels got bored of: guns in top shape, premium attachments, paint and stickers. Call this number and I bring the goods myself."
+ul_phone_ask,When do you want me over?
+ul_phone_tomorrow,Come tomorrow.
+ul_phone_tomorrow_ok,Fine. I will be there when you open tomorrow.
+ul_phone_dayafter,Come the day after tomorrow.
+ul_phone_dayafter_ok,"The day after tomorrow, then, when you open."
+ul_phone_no,"Never mind, another time."
+ul_phone_bye,Call any time.
+ul_phone_booked,We already have a date. See you then.
+ul_phone_cooldown,My schedule is full. Call again in {0} days.
+ul_phone_cooldown_1,My schedule is full. Call again tomorrow.
+dialog_ul_gunsmith_1,"Here as arranged. All of it from the upper levels, in top condition."
+dialog_ul_gunsmith_2,"Market prices. See something you like, take it."
+skin_secissue,Security Issue
+skin_republic,Republic Navy
+skin_revolution,Revolution
+skin_davre,Davre Red & White
+skin_ribwich,Ribwich Olive
+skin_exchange,Underground Exchange
+skin_peat,Peat
+skin_medical,Immunivax
+skin_gunsign,Firearm Neon
+skin_homesign,Household Neon
+skin_certificate,Appraisal Certificate
+skin_waxseal,Wax Seal
+skin_toxin,Toxic Warning
+skin_euphoria,Euphoria Purple
+skin_ornate,Ornate Red
+skin_command,Command Gold Trim
+skin_material,Material Neon
+skin_stunyellow,Stun Yellow
+skin_upperlevel,Upper-Level Ivory
+skin_carbonhand,Carbon Cyber Hand
+skin_goldhand,Gold Cyber Hand
+skin_steelhand,Steel Cyber Hand
+skin_redpack,Hemingway Red
+skin_foodstamp,Food Stamp
+skin_caviar,Caviar Gold
+skin_plasmaignition,IGN Cartridge
+skin_plasmall,WLD Cartridge
+skin_plasmarepublic,RNR Cartridge
+skin_plasmazhonghua,ZHS Cartridge
+skin_plasmapure,Pure Plasma
+skin_injector,Immunivax Injector
+skin_ribwichdeluxe,Ribwich Deluxe
+sticker_sec_badge,Security Badge
+sticker_republic,Republic Emblem
+sticker_rev_flag,Revolution Flag
+sticker_red_star,Red Star
+sticker_peat_can,Peat
+sticker_credit,Credit
+sticker_immunin,Immunivax
+sticker_pill,Pill
+sticker_droplet,Droplet
+sticker_toxic_skull,Toxic Skull
+sticker_euphoria,Euphoria Face
+sticker_skull,Skull
+sticker_price_tag,Pawn Tag
+sticker_wax_seal,Wax Seal
+sticker_crosshair,Crosshair
+sticker_tin_duck,Tin Duck
+sticker_bullet,Bullet
+sticker_grenade,Grenade
+sticker_lightning,Lightning
+sticker_crown,Gang Crown
+sticker_spray_x,Spray X
+sticker_rat,Rat
+sticker_nutrifruit,Nutrifruit
+sticker_heart,Heart
+sticker_star,Star
+sticker_moon,Moon
+sticker_spade,Spade
+sticker_eye,Watching Eye
+sticker_bolt,Big Bolt
+sticker_heart_m,Big Heart
+sticker_star_m,Big Star
+sticker_crown_m,Jewel Crown
+sticker_crosshair_m,Reticle
+sticker_cat,Black Cat
+sticker_eye_horus,Eye of Horus
+sticker_skull_bones,Skull and Bones
+sticker_flame,Flame
+sticker_ace_spades,Ace of Spades
+sticker_dice,Dice
+sticker_rose,Rose
+skin_rarity_1,Common
+skin_rarity_2,Rare
+skin_rarity_3,Epic
+skin_rarity_4,Legendary
+paint_random,Random
+paint_random_tip,Spray one of these at random (uses one charge).
+paint_direct,Always random
+paint_direct_tip,"On: a spray can paints one at random right away, without this window (the settings can turn it off)."
+paint_reveal_hidden,???
+paint_reveal_tip,Revealing each finish. Click Show all to skip the remaining animation.
+paint_reveal_all,Show all
+cfg_paint_direct,Spray paint at random
+cfg_paint_direct_tip,"A spray can paints one of its offer at random, without the picking window (the window has this switch too). Off: new offers are revealed one by one and you pick."
+skin_koi,Koi
+skin_magma,Magma
+skin_porcelain,Porcelain
+skin_baroque,Baroque
+skin_glacier,Glacier
+skin_blossom,Blossom
+skin_jade,Jade
+skin_nebula,Nebula
+skin_wave,Breakers
+skin_synthwave,Synthwave
+skin_marble,Marble
+skin_thunder,Thunderstorm
+skin_phoenix,Phoenix
+skin_inkwash,Ink Wash
+skin_jungle,Rainforest
+skin_amethyst,Amethyst
+skin_racing,Racing
+skin_blueprint,Blueprint
+skin_pop,Pop Art
+skin_hullplate,Hull Plate
+skin_candy,Candy
+skin_scrapyard,Scrapyard
+skin_revstar,Red Star
+skin_parade,Parade
+skin_patrician,Patrician
+skin_heirloom,Heirloom
+skin_abyss,Abyss
+skin_tagger,Tagger
+skin_chromafade,Chroma Fade
+skin_morpho,Morpho
+skin_diamond,Diamond
+skin_gold,Gold
 cabinet_style_title,Cabinet style
 cabinet_style_tip,Switch to this look.
 cabinet_style_1,Standard
@@ -161,11 +447,24 @@ cabinet_style_3,Copper Trim
 cabinet_style_4,Slatted
 cabinet_style_5,Red Velvet
 cabinet_style_6,Dusk
+type_famous,Famous
+type_war,War-Damaged
+feature_purity,Metal purity: {0}
+hist_war_repair,"War-damaged: repair it to Good or better, then oil it once to clear it."
+hist_war_oil,War-damaged: repaired; oil it once to clear it.
 vge_gun_cabinet_flavor,Welded steel. Keeps the guns in and the trouble out.
 vge_chip_rack_kit_flavor,"More slots, less rummaging."
+vge_gunpowder_flavor,Keep away from open flames. And from Security.
+vge_gunpowder_adv_flavor,Burns faster. Costs more.
+vge_module_ammo_press_flavor,"Turns a printer into a small ammunition plant, gunpowder permitting."
+vge_gun_oil_flavor,Upper-level collectors say a fine gun is raised on oil.
+vge_paint_crate_flavor,Labeled as art supplies.
+vge_spray_can_flavor,Shake well before use. Never at people.
+vge_sticker_pack_flavor,Put one on a gun and it is yours. At least it looks that way.
 cfg_gun_mod_view,Gun-mod window: gun preview and click to fit
-cfg_gun_mod_view_tip,Shows the gun and fitted attachments, with each slot near its mount. Click a slot for compatible attachments and their stats from the shop and back room, then click to fit one. An attachment cannot be fitted if the enlarged gun would not fit where it lies. Off: the vanilla window.
+cfg_gun_mod_view_tip,"The gun-mod window shows the gun (paint, stickers and fitted attachments) with each slot box next to where it mounts. Click a box to list the attachments in the shop and back room that fit there, with their stats; click one to fit it. If the gun grows too big for where it lies, it cannot go on (no room). The one it replaces goes into the new one's container, else the shop or back room; with no room anywhere it cannot be fitted. Off: the vanilla window."
 gunmod_slot_tip,Click to pick an attachment
+gunmod_specials,Special slots
 gunmod_pick_title,{0}: pick an attachment
 gunmod_pick_tip,Click to fit it.
 gunmod_pick_many,{0} in the shop and back room.
@@ -174,8 +473,22 @@ gunmod_none,Nothing in the shop or back room fits here.
 gunmod_remove,Remove
 gunmod_remove_tip,Take it off into the shop or back room.
 gunmod_remove_no_room,No room in the shop or back room.
+sticker_large,{0} (large)
 gunmod_old_stuck,The fitted one is not yours to take off.
 gunmod_no_space,No room: the gun grows with it and no longer fits where it lies.
-gunmod_none_gun,Vanilla makes no {0} for this gun.
+gunmod_none_gun,No known {0} fits this gun.
 gunmod_value,· {0} Credits
+vge_pistol_backplate_name,Pistol Grip Backplate
+vge_pistol_backplate_desc,A thin grip insert for the Printed Pistol, Nestfire, Ironcraft 10 and Sentinel Mk III. Fits the stock slot.
+vge_shotgun_tube_name,Shotgun Drum Magazine
+vge_shotgun_tube_desc,A drum magazine for the shotgun. Improves firepower and style at the cost of handling.
+vge_ammo_12_name,12-Gauge Shells
+vge_ammo_45_name,.45 AFP Rounds
+vge_ammo_45_p_name,.45 AFP Armor-Piercing Rounds
+vge_ammo_45_nl_name,.45 AFP Non-Lethal Rounds
+vge_ammo_box_packed_name,Ammo Box (x{0} {1})
+vge_ammo_box_open_name,Ammo Box (Unpacked)
+vge_ammo_box_open_desc,A reusable box for eight handfuls of loose ammunition. Fill it and use Toggle to pack or reopen it.
+log_auto_feed,Workshop: {0} material(s) moved from the gunsmith bays to the printer.
+log_auto_store,Workshop: {0} printed item(s) stored in the gunsmith bays.
 manual_gunmod_title,Gun fitting and settings

@@ -1,10 +1,13 @@
-# 原版枪械拓展 简体中文
 vge_frame_glock_name,哨兵3型框架
 vge_frame_revolver_name,兰斯维尔左轮框架
 vge_frame_smg_name,“和平使者”冲锋枪框架
 vge_frame_shotgun_name,“壁垒”霰弹枪框架
 chip_name_single,3D打印机芯片（{0}）
 chip_name_multi,3D打印机芯片（x{0} {1}）
+printer_title_loaded,{0}·{1}
+gunmod_title_condition,{0}·{1}
+gunmod_repair,修复
+gunmod_repair_tip,成功率：{0}%
 tooltip_quality,纯度品质 {0}%
 client_rev_gunsmith_name,革命军枪匠
 dialog_rev_gunsmith_1,王尔德介绍我来的。军里淘汰下来的芯片和配件，看看有没有用得上的。
@@ -15,6 +18,20 @@ upgrade_rev_gunsmith_title,革命军枪匠
 upgrade_rev_gunsmith_desc,王尔德会为你引荐一位革命军枪匠，他会在第二天到访，随后每周到访一次，出售枪械框架芯片、配件芯片和军火物资。（解锁革命军枪匠内容。）
 cfg_ingot_recipes,原版配方改用金属锭
 cfg_ingot_recipes_tip,消音器、红点、激光、10毫米弹匣、“铁铸10”框架这五张原版芯片改为消耗金属锭（部分配方搭配3D打印耗材），不再消耗废金属；用锭的配方都需要金属打印模组。开关对已有芯片同样生效。卸载本 mod 前请先关闭此项并读档存档一次，否则存档里的芯片会停留在金属锭配方。
+cfg_deep_content,深度内容
+cfg_deep_content_tip,关闭后不再开启街头冲突、改变买枪客口碑或结算名枪保养；佣兵不再带回已售枪械，也不再新增喷漆贴纸来源、收藏家订单或上层区枪匠预约。已有涂装、贴纸、来历和已购升级保留。改动后需要重启游戏。
+cfg_deep_clashes,街头冲突
+cfg_deep_clashes_tip,革命军和治安部之间的街头冲突。关闭后不再开始新的冲突，正在进行的照常打完。深度内容关闭时无效。
+cfg_gun_buyer_rep,买枪客口碑
+cfg_gun_buyer_rep_tip,交出全新或极佳成色、属性不输同型号新枪的枪，口碑上升；卖没修好的战损枪，口碑下降；连续 3 天没有这样的成交，口碑向 0 回落 1 点。口碑在 −15 到 +15 之间，影响三种买枪客的来访概率（±15%）和订单赏金（±7.5%）；与展示加成合计，来访概率最多提高 30%。关闭后口碑既不变化也不起作用。深度内容关闭时无效。
+cfg_famous_upkeep,名枪保养
+cfg_famous_upkeep_tip,名枪 7 天没上枪油，名枪加价（+15%）会在之后 8 天里逐渐消退。关闭后名枪不再消退，枪油也用不上；重新开启时从当天重新算 7 天。深度内容关闭时名枪同样不消退。
+cfg_merc_kills,佣兵枪带击杀数
+cfg_merc_kills_tip,佣兵卖枪客卖的枪有一半带击杀数（1–24 人），满 20 人就是名枪。关闭后不再带。深度内容关闭时无效。
+cfg_collector_orders,收藏家订单
+cfg_collector_orders_tip,上层区买枪客符合条件的高档单有 30% 变成收藏家单：要史诗或传说涂装的大枪（大小 > 14）或值钱的枪（市价 ≥ 300）。店里须有合格成枪，或合适的枪和还有使用次数的高级喷漆罐。收藏家单中 70% 按当前库存选单，30% 从两类完整订单池随机选，可能需要临时备货。关闭后不再出新单。深度内容关闭时无效。
+cfg_disassembly_condition,拆枪零件按成色
+cfg_disassembly_condition_tip,拆枪得到的枪械零件按成色打折：全新 100%、极佳 90%、良好 80%、一般 65%、较差 50%（四舍五入，至少 1 个），塑料和废金属不变。关闭后按原版数量给。深度内容关闭时无效。
 cfg_story_line,隐秘行动剧情线
 cfg_story_line_tip,隐秘行动剧情。关闭后不会再开始，已经开始的照常走完。
 cfg_chip_pity,芯片保底
@@ -85,6 +102,18 @@ op_insp_clean_2,这几天还会有人来。
 op_insp_clean_last_1,……还是没有。
 op_insp_clean_last_2,找不着就只能往上报了。以后离革命军的人远点。
 op_log_seized,治安部搜走了那枚神经核心模组。
+op_bribe_offer_1,这几样可不在我们要找的东西里。不过真要写进记录，你这店今天就不好收场了。
+op_bribe_offer_2,又让我们看见这些东西。上头只催那枚核心，别的事……也不是不能商量。
+op_bribe_offer_3,这是最后一轮了。上头要的东西归上头，这些账要不要另开一张单，就看你了。
+op_bribe_pay_1,请您通融通融[支付 {0} 信用点]
+op_bribe_pay_2,这趟辛苦了，请您通融[支付 {0} 信用点]
+op_bribe_pay_3,最后一趟了，劳烦高抬贵手[支付 {0} 信用点]
+op_bribe_accept_1,行，这几样就当没看见。这次的记录里没有它们。
+op_bribe_accept_2,懂规矩就好。今天的记录里没有这些货。
+op_bribe_accept_3,行，这几样不记了。往后自己留点心。
+op_bribe_pay_tip,只放过本次发现的其他违禁品，剧情核心照常处理。现金不足时不可选。
+op_bribe_refuse,那就按规定处理。
+op_bribe_refuse_reply,行，公事公办。这些东西一件件算。
 op_col_1_alive,我回来了。多亏了你。
 op_col_1_other,雷诺没能回来。我替他来取东西。
 op_col_2,上次留在你这的那件东西，该还给我们了。
@@ -110,15 +139,16 @@ op_rev_extra_none_1,核心呢？没找到。
 op_rev_extra_none_2,收好了，过几天军需官来取。
 op_log_officers,两名治安官死在了你的店里。革命军替你处理了后手，治安部也把这笔账记在了革命军头上，不过你的店还在他们的名单上：治安声望再 −10。
 vge_gun_cabinet_name,枪柜
-vge_gun_cabinet_desc,存放九把枪械或电击枪的枪柜，前两把枪会摆在托架上展示。可以从选择窗切换六种外观。
+vge_gun_cabinet_desc,初始有四格，可放枪械、电击枪或枪油。拖一块金属锭到柜上解锁一格，最多九格。前两把枪会摆在托架上展示；柜里有油时夜间给到期的名枪上油。可以切换外观。
 vge_chip_rack_kit_name,芯片库扩建套件
 vge_chip_rack_kit_desc,拖到 3D 打印机上，扩大它的芯片库。
 vge_bay_desc,专门存放枪械、近战武器、改装件和枪械工坊用品的储藏区。除枪柜外无法存放其他容器，也无法存放机器。
 cabinet_slot,{0}号
+cabinet_capacity_title,{0} · {1}/{2} 格
 vge_gunpowder_name,火药
-vge_gunpowder_desc,压制弹药用的发射药。一瓶够压一盒。
+vge_gunpowder_desc,用于压制普通弹或非致命弹。每批打印消耗一瓶。
 vge_gunpowder_adv_name,高级火药
-vge_gunpowder_adv_desc,燃速更高的发射药，穿甲弹专用。一瓶够压一盒。
+vge_gunpowder_adv_desc,燃速更高的发射药，穿甲弹专用。每批打印消耗一瓶。
 vge_module_ammo_press_name,弹药压制模组
 vge_module_ammo_press_desc,一个能让 3D 打印机压制弹药的模组。
 vge_module_ammo_press_effect,可压制弹药
@@ -126,15 +156,16 @@ upgrade_auto_feed_title,自动供料
 upgrade_auto_feed_desc,每晚开工前，装好芯片的 3D 打印机会从枪械师储藏区补齐所需的材料。
 upgrade_auto_store_title,自动入库
 upgrade_auto_store_desc,3D 打印机的成品会自动送进有空位的枪械师储藏区。
-log_auto_feed,枪械工坊：从枪械师储藏区给打印机补了 {0} 件材料。
-log_auto_store,枪械工坊：{0} 件打印成品已入枪械师储藏区。
 log_manual,奥丁留下一本《原版枪械拓展·上手说明》，放在后台库存。
 vge_manual_name,原版枪械拓展·上手说明
-vge_manual_desc,芯片、弹药、芯片库、枪械工坊和改枪窗口的用法，四页。
+vge_manual_desc,芯片、弹药、枪械工坊、街头冲突、名枪和涂装的用法，六页。
 manual_header,原版枪械拓展
 manual_p1_title,芯片与框架
 manual_p2_title,火药与弹药
 manual_p3_title,工坊设备
+manual_p4_title,冲突与口碑
+manual_p5_title,名枪、来历与枪油
+manual_p6_title,涂装、贴纸与收藏家
 op_log_kill_qm_rev,你在店里击毙了革命军军需官，革命军声望 −40。
 op_col_1_other_killed,雷诺是你打死的。上头说，账归账，东西归东西。
 op_col_nocore_1,东西没送到你手上？那不怪你。
@@ -149,10 +180,265 @@ op_col_1_reported,雷诺是在你店里被抓的，这事谁都知道了。
 op_core_fault,核心故障：每晚性能和品质降低。选中超科技电子元件后点这枚核心可以修复（需要 2 个）。
 op_core_fault_progress,核心故障：每晚性能和品质降低。选中超科技电子元件后点这枚核心可以修复（已修 {0}/{1}）。
 op_col_give_4,这枚限制版你留着，算我们的一点心意。
+op_log_officer_blame,治安部把治安官的死算在了革命军头上，不过你的店也上了他们的名单：治安声望 −10。
 feature_print_quality,打印品质 {0}%
-toggle_auto_feed_tip,这台打印机每晚开工前是否从枪械师储藏区补料。
-toggle_auto_store_tip,这台打印机的成品是否直接送进枪械师储藏区。
+toggle_auto_feed_tip,允许这台打印机从枪械师储藏区补料。仅在王尔德网络的「自动供料」开启时生效。
+toggle_auto_store_tip,允许这台打印机把成品送进枪械师储藏区。仅在王尔德网络的「自动入库」开启时生效。
+upgrade_switch_enable,开启
+upgrade_switch_disable,关闭
+clash_news,革命军与治安部爆发街头冲突！
+clash_display,下层区街头冲突
+clash_desc,革命军与治安部在下层区多处街口交火，双方都在四处搜罗武器、补充损耗。武器和弹药需求预计将会上升。
+clash_buyer_rev_1,街上打起来了，我们的人缺家伙。给我弄把枪。
+clash_buyer_rev_2,治安部又在下层区抓人。我替弟兄们来订一把枪。
+clash_buyer_rev_3,别问我替谁买。……好吧，革命军。枪要能用的。
+clash_buyer_rev_4,前线等着要枪，你这儿有好货吗？
+clash_sec_buyer_1,你好，我代表治安部采购装备。
+clash_sec_buyer_2,最近的街头冲突让军械库损失不小，制式装备还在调拨中。
+clash_sec_buyer_3,在补给到位之前，我们需要先采购一些枪械应急。
+clash_seller_1,刚从街上收来的，打过仗，便宜卖。
+clash_seller_2,冲突那几天捡的家伙，修修还能用。
+clash_seller_3,这些枪的主人用不上了。你要不要？
+clash_log_rev,街头冲突结束，革命军占了上风（战局积分 革命军 {0} : 治安部 {1}）。{2}{3}
+clash_log_sec,街头冲突结束，治安部占了上风（战局积分 革命军 {0} : 治安部 {1}）。{2}{3}
+clash_log_security_ammo,治安部会在一周内上门卖一次战后余弹，按剩余发数打九折。
+sec_surplus_offer,这是冲突过后清点出来的余弹。剩几发算几发，再给你打九折。
+clash_log_tiebreak,积分打平，加掷决胜。
+clash_log_wave,接下来几天，来卖枪的人会带来战损枪。
+clash_log_wave_nosign,展示柜里要摆着枪械或重型枪械霓虹灯牌，卖枪的人才会把战损枪带来。
+clash_log_gunsmith_discount,革命军枪匠托人带话：打了胜仗，这一周他的货打九折。
+side_rev,革命军
+side_sec,治安部
+hist_clash,第 {0} 天街头冲突中为{1}所用
+hist_engaged,击杀 {0} 人
+hist_maint,上次上油：第 {0} 天
+hist_maint_late,保养已超期 {0} 天，名枪加价在下降
+feature_history,来历 {0} 条
+feature_famous,名枪
+feature_famous_faded,名枪（疏于保养）
+feature_war,战损
+order_req_famous,名枪
+vge_gun_oil_name,枪油
+vge_gun_oil_desc,用于给名枪上油，保住名枪加价；放进枪柜，每晚给柜里到期的名枪上油。修到良好或更好的战损枪上一次油，就不再是战损枪。
+skin_desert,沙漠
+skin_urban,都市灰
+skin_olive,橄榄
+skin_navy,海军蓝
+skin_rust,铁锈
+skin_woodland,林地迷彩
+skin_city,城市迷彩
+skin_blackgold,黑金
+skin_neon,霓虹
+skin_revfire,革命烈焰
+skin_ulcollection,上层区典藏
+skin_ghost,幽灵
+skin_matte,消光黑
+skin_gunmetal,枪灰
+skin_sand,浅沙
+skin_sakura,樱粉
+skin_sky,天蓝
+skin_arctic,极地白
+skin_crimson,绯红
+skin_cobalt,钴蓝
+skin_forest,墨绿
+skin_plum,梅紫
+skin_safety,安全橙
+skin_teal,青碧
+skin_bronze,古铜
+skin_snow,雪地迷彩
+skin_dune,沙丘迷彩
+skin_digital,数码城市
+skin_digidesert,数码荒漠
+skin_digijungle,数码丛林
+skin_tiger,虎纹
+skin_zebra,斑马纹
+skin_tanblack,沙黑双色
+skin_greenblack,绿黑双色
+skin_checker,棋盘格
+skin_carbon,碳纤维
+skin_walnut,胡桃木纹
+skin_graffiti,涂鸦
+skin_sunset,落日
+skin_deepsea,深海
+skin_hazard,警戒条纹
+skin_polka,红白波点
+skin_circuit,电路板
+skin_damascus,大马士革
+skin_chrome,镜面镀铬
+skin_rosegold,玫瑰金
+skin_galaxy,星空
+skin_aurora,极光
+skin_lava,熔岩
+skin_toxic,剧毒
+skin_royal,皇家紫金
+paint_tier_1,低级
+paint_tier_2,中级
+paint_tier_3,高级
+feature_paint,涂装：{0}（{1} #{2}）
+vge_paint_crate_name,涂装箱
+vge_paint_crate_desc,激活开箱，内含 2–4 罐喷漆。
+order_req_skin,涂装：{0}
+collector_order_big,我要一把够大、够唬人的枪，还得是史诗或传说涂装。按市价付钱，另外再加一笔；涂的要是「{0}」，我再多给。
+collector_order_value,我要一把值钱的枪，至少值 {1} 信用点，还得是史诗或传说涂装。按市价付钱，另外再加一笔；涂的要是「{0}」，我再多给。
+collector_1,我收藏枪。普通货就别拿出来了。
+collector_2,听说你这儿出过好涂装。我是来收藏的。
+collector_3,我在找一款特别的涂装，找到了价钱好说。
+vge_spray_can_name,喷漆罐（{0}）
+vge_spray_can_desc,用于给枪或七种近战武器（刀具、斧头和电棍）喷涂装：每次给出 {0} 款候选，每款普通 {1}、稀有 {2}、史诗 {3}、传说 {4}。可用 {5} 次。
+paint_offer_title,{0}喷漆罐：挑一款涂装
+paint_offer_desc,售价 +{0}%，图案编号 #{1}。点它喷上，用掉一次。
+paint_offer_wanted,柜台前的收藏家点名要这款。
+paint_offer_own,这把枪现在就是这款涂装。
+order_req_paint_high,史诗或传说涂装
+order_req_value,价值 ≥ {0}
+vge_sticker_pack_name,贴纸包
+vge_sticker_pack_desc,内含五张贴纸，可以贴在枪上，每张让售价提高 {0}%。大号贴纸只贴得上冲锋枪和霰弹枪。
+sticker_pack_left,包里还有：{0}
+sticker_pick_title,贴纸包：挑一张
+sticker_spot_title,「{0}」贴在哪？
+sticker_spot_1,位置一
+sticker_spot_2,位置二
+feature_sticker,贴纸：{0}
 list_sep,、
+client_ul_gunsmith_name,上层区枪匠
+upgrade_ul_gunsmith_title,上层区枪匠
+upgrade_ul_gunsmith_desc,王尔德会把一位上层区枪匠的名片交给你。用店里的电话（{0}）约他上门，他会带来成色上佳的枪械（没有武器许可证 II 时只带电击枪）、高档配件和涂装用品。（解锁上层区枪匠内容。）
+log_ul_card,上层区枪匠的名片放在后台库存了，电话 {0}。
+log_ul_card_shop,后台库存放不下，上层区枪匠的名片放在店里的库存了，电话 {0}。
+log_ul_card_lost,两处库存都放不下上层区枪匠的名片，记下他的电话：{0}。
+vge_ul_card_name,名片（上层区枪匠）
+vge_ul_card_desc,象牙白卡纸烫了金边，只印着一个电话号码。
+ul_phone_intro_1,上层区枪械工作室。王尔德提过你，开当铺的，对吧？
+ul_phone_intro_2,我这儿都是上层区那帮人玩腻了的好东西：成色好的枪、高档配件，还有涂装、贴纸这些小玩意儿。要看货就打这个电话，我亲自带过去。
+ul_phone_ask,要我哪天过去？
+ul_phone_tomorrow,明天来吧。
+ul_phone_tomorrow_ok,好，明天开门就到。
+ul_phone_dayafter,后天来吧。
+ul_phone_dayafter_ok,行，后天开门就到。
+ul_phone_no,算了，下次再说。
+ul_phone_bye,随时来电。
+ul_phone_booked,日子已经定了，到时候见。
+ul_phone_cooldown,最近排不开，{0} 天后再打来吧。
+ul_phone_cooldown_1,最近排不开，明天再打来吧。
+dialog_ul_gunsmith_1,按约好的来了。都是上层区淘来的货，成色一流。
+dialog_ul_gunsmith_2,价钱按市价来，看中了就拿。
+skin_secissue,治安部制式
+skin_republic,共和国海军
+skin_revolution,革命军
+skin_davre,达夫雷红白
+skin_ribwich,肋明治橄榄
+skin_exchange,地下交易所
+skin_peat,泥炭合成肉
+skin_medical,免疫宁
+skin_gunsign,枪械霓虹
+skin_homesign,日用品霓虹
+skin_certificate,鉴定证书
+skin_waxseal,蜡封
+skin_toxin,毒性警示
+skin_euphoria,欣快紫
+skin_ornate,华饰红
+skin_command,指挥部金边
+skin_material,材料霓虹
+skin_stunyellow,电击黄
+skin_upperlevel,上层区象牙白
+skin_carbonhand,碳纤机械手
+skin_goldhand,金质机械手
+skin_steelhand,钢制机械手
+skin_redpack,海明威红盒
+skin_foodstamp,食品券
+skin_caviar,鱼子酱金罐
+skin_plasmaignition,IGN 燃料匣
+skin_plasmall,WLD 燃料匣
+skin_plasmarepublic,RNR 燃料匣
+skin_plasmazhonghua,ZHS 燃料匣
+skin_plasmapure,高纯等离子
+skin_injector,免疫宁注射器
+skin_ribwichdeluxe,肋明治豪华版
+sticker_sec_badge,治安部徽章
+sticker_republic,共和国徽
+sticker_rev_flag,革命军旗
+sticker_red_star,红星
+sticker_peat_can,泥炭合成肉
+sticker_credit,信用点
+sticker_immunin,免疫宁
+sticker_pill,药丸
+sticker_droplet,水滴
+sticker_toxic_skull,剧毒骷髅
+sticker_euphoria,欣快笑脸
+sticker_skull,骷髅
+sticker_price_tag,当铺价签
+sticker_wax_seal,蜡封
+sticker_crosshair,准星
+sticker_tin_duck,铁皮鸭
+sticker_bullet,子弹
+sticker_grenade,手雷
+sticker_lightning,闪电
+sticker_crown,帮派皇冠
+sticker_spray_x,喷漆叉
+sticker_rat,老鼠
+sticker_nutrifruit,营养果
+sticker_heart,红心
+sticker_star,星星
+sticker_moon,月亮
+sticker_spade,黑桃
+sticker_eye,监视之眼
+sticker_bolt,大闪电
+sticker_heart_m,大红心
+sticker_star_m,大星星
+sticker_crown_m,宝石皇冠
+sticker_crosshair_m,瞄准圈
+sticker_cat,黑猫
+sticker_eye_horus,荷鲁斯之眼
+sticker_skull_bones,海盗骷髅
+sticker_flame,火焰
+sticker_ace_spades,黑桃 A
+sticker_dice,骰子
+sticker_rose,玫瑰
+skin_rarity_1,普通
+skin_rarity_2,稀有
+skin_rarity_3,史诗
+skin_rarity_4,传说
+paint_random,随机
+paint_random_tip,从这几款里随机喷一款，用掉一次。
+paint_direct,总是随机
+paint_direct_tip,开启后，喷漆罐点到枪或近战武器上直接随机喷一款，不再弹出这个窗口（设置里也能关）。
+paint_reveal_hidden,？？？
+paint_reveal_tip,逐款揭晓中。点击“全部显示”可跳过剩余动画。
+paint_reveal_all,全部显示
+cfg_paint_direct,喷漆直接随机
+cfg_paint_direct_tip,喷漆罐点到枪或近战武器上时不弹出挑选窗口，直接从候选里随机喷一款（挑选窗口里也有这个开关）。关闭：新的候选先逐个揭晓，再挑一款。
+skin_koi,锦鲤
+skin_magma,岩浆
+skin_porcelain,白瓷
+skin_baroque,巴洛克
+skin_glacier,冰川
+skin_blossom,樱花
+skin_jade,翡翠
+skin_nebula,星云
+skin_wave,浪涛
+skin_synthwave,合成波
+skin_marble,大理石
+skin_thunder,雷暴
+skin_phoenix,凤凰
+skin_inkwash,水墨
+skin_jungle,雨林
+skin_amethyst,紫晶
+skin_racing,赛车
+skin_blueprint,蓝图
+skin_pop,波普
+skin_hullplate,舰体
+skin_candy,糖果
+skin_scrapyard,废料场
+skin_revstar,红星
+skin_parade,阅兵
+skin_patrician,贵族
+skin_heirloom,传家宝
+skin_abyss,深渊
+skin_tagger,涂鸦客
+skin_chromafade,幻彩
+skin_morpho,闪蝶
+skin_diamond,钻石
+skin_gold,黄金
 cabinet_style_title,枪柜外观
 cabinet_style_tip,换成这个外观。
 cabinet_style_1,原版
@@ -161,11 +447,24 @@ cabinet_style_3,铜框
 cabinet_style_4,百叶
 cabinet_style_5,红绒
 cabinet_style_6,暗紫
+type_famous,名枪
+type_war,战损
+feature_purity,金属纯度：{0}
+hist_war_repair,战损枪：修到良好或更好，再上一次枪油，就不再是战损枪。
+hist_war_oil,战损枪：已经修好，上一次枪油就不再是战损枪。
 vge_gun_cabinet_flavor,钢板焊的，锁得住枪，也锁得住麻烦。
 vge_chip_rack_kit_flavor,多几个插槽，就少几次翻箱倒柜。
+vge_gunpowder_flavor,远离明火。也远离治安部。
+vge_gunpowder_adv_flavor,烧得更快，也更贵。
+vge_module_ammo_press_flavor,把打印机变成一座小型弹药厂，前提是你有火药。
+vge_gun_oil_flavor,上层区的收藏家说，好枪是用油养出来的。
+vge_paint_crate_flavor,标签上写着「艺术用品」。
+vge_spray_can_flavor,摇匀再喷。别对着人。
+vge_sticker_pack_flavor,贴在枪上，枪就成了你的。至少看起来是。
 cfg_gun_mod_view,改枪窗口：枪械预览与点选配件
-cfg_gun_mod_view_tip,改枪窗口里画出这把枪和已装的配件，各配件槽摆在装配位置旁边。点配件槽，列出店里和后屋能装在这里的配件和属性，点一下装上；装上后枪变大、放的地方放不下就装不了（空间不足）。关闭：原版改枪窗口。
+cfg_gun_mod_view_tip,改枪窗口里画出这把枪（涂装、贴纸和已装的配件），各配件槽摆在装配位置旁边。点配件槽，列出店里和后屋能装在这里的配件和属性，点一下装上；装上后枪变大、放的地方放不下就装不了（空间不足）。换下来的配件放进新配件所在的容器，放不下就放店里或后屋，都没地方就装不了。关闭：原版改枪窗口。
 gunmod_slot_tip,点击选择配件
+gunmod_specials,特殊槽
 gunmod_pick_title,{0}：选择配件
 gunmod_pick_tip,点它装上。
 gunmod_pick_many,店里和后屋共有 {0} 件。
@@ -174,8 +473,22 @@ gunmod_none,店里和后屋没有能装在这里的配件。
 gunmod_remove,卸下
 gunmod_remove_tip,把这件配件卸下来，放进店里或后屋。
 gunmod_remove_no_room,店里和后屋都没有空位，卸不下来。
+sticker_large,{0}（大号）
 gunmod_old_stuck,装着的这件不是你的，卸不下来。
 gunmod_no_space,空间不足：装上后枪会变大，现在放的地方放不下。
-gunmod_none_gun,原版没有这把枪能用的{0}。
+gunmod_none_gun,没有已知能装在这把枪上的{0}。
 gunmod_value,· {0}信用点
+vge_pistol_backplate_name,手枪握把贴背板
+vge_pistol_backplate_desc,适配打印手枪、巢火、铸铁 10 和哨兵 3 型。安装在枪托槽。
+vge_shotgun_tube_name,霰弹枪弹鼓
+vge_shotgun_tube_desc,霰弹枪专用的弹鼓。提升火力和风格，但会降低人机工效。
+vge_ammo_12_name,12 号霰弹
+vge_ammo_45_name,.45 AFP 弹药
+vge_ammo_45_p_name,.45 AFP 穿甲弹
+vge_ammo_45_nl_name,.45 AFP 非致命弹
+vge_ammo_box_packed_name,弹药盒（{0} 件{1}）
+vge_ammo_box_open_name,弹药盒（未封装）
+vge_ammo_box_open_desc,可反复装填，最多放八份散装弹药。装入弹药后可封装，也可再次拆封。
+log_auto_feed,枪械工坊：从枪械师储藏区给打印机补了 {0} 件材料。
+log_auto_store,枪械工坊：{0} 件打印成品已入枪械师储藏区。
 manual_gunmod_title,改枪与设置
