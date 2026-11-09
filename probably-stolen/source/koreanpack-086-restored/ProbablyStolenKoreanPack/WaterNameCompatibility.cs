@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
@@ -165,7 +166,7 @@ internal sealed class WaterNameCompatibility
 			}
 		}
 		int token = ++generation;
-		AsyncOperationHandle<StringTable> tableAsync = ((LocalizedDatabase<StringTable, StringTableEntry>)(object)LocalizationSettings.StringDatabase).GetTableAsync(TableReference.op_Implicit("Mechanic"), locale);
+		AsyncOperationHandle<StringTable> tableAsync = ((LocalizedDatabase<StringTable, StringTableEntry>)(object)LocalizationSettings.StringDatabase).GetTableAsync((TableReference)"Mechanic", locale);
 		if (tableAsync.IsDone)
 		{
 			Complete(tableAsync, locale, token);
@@ -200,15 +201,8 @@ internal sealed class WaterNameCompatibility
 				string translated = LocHelper.GetLocalizedMechanic(key, Array.Empty<object>());
 				if (!Valid(translated, key))
 				{
-					StringTableEntry entry = mechanic.GetEntry(key);
-					if (entry == null)
-					{
-						mechanic.AddEntry(key, KoreanQualityNames[i]);
-					}
-					else
-					{
-						entry.LocalizedValue = KoreanQualityNames[i];
-					}
+					// AddEntry also updates an existing value in this Unity Localization version.
+					mechanic.AddEntry(key, KoreanQualityNames[i]);
 					tableRepairs++;
 					translated = LocHelper.GetLocalizedMechanic(key, Array.Empty<object>());
 					if (!Valid(translated, key))

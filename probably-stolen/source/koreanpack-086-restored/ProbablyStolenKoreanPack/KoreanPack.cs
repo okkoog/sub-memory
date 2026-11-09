@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using HarmonyLib;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
@@ -325,7 +326,7 @@ public sealed class KoreanPack : IMod
 			num += RepairConditionList(ItemConditionList.conditionModuleStuck);
 			if (IngotPurityHelper.ingotPurities != null)
 			{
-				foreach (IngotPurity value in IngotPurityHelper.ingotPurities.Values)
+				foreach (IngotPurityHelper.IngotPurity value in IngotPurityHelper.ingotPurities.Values)
 				{
 					if (value != null && RepairGenericCondition(value.itemCondition))
 					{
@@ -427,7 +428,7 @@ public sealed class KoreanPack : IMod
 			return 0;
 		}
 		int num = 0;
-		foreach (KeyValuePair<string, ModuleEffect> moduleEffect in ModuleEffectHelper.moduleEffects)
+		foreach (KeyValuePair<string, ModuleEffectHelper.ModuleEffect> moduleEffect in ModuleEffectHelper.moduleEffects)
 		{
 			ModuleEffectHelper.ModuleEffect value = moduleEffect.Value;
 			switch (moduleEffect.Key)
@@ -506,7 +507,7 @@ public sealed class KoreanPack : IMod
 		string key = default;
 		foreach (ChemFinisherRecipe chemFinisherRecipe in ChemFinisherRecipe.chemFinisherRecipes)
 		{
-			if (chemFinisherRecipe != null && LocHelper.TryParseMissingTranslation(chemFinisherRecipe.displayName, ref a, ref key) && string.Equals(a, "Item", StringComparison.Ordinal))
+			if (chemFinisherRecipe != null && LocHelper.TryParseMissingTranslation(chemFinisherRecipe.displayName, out a, out key) && string.Equals(a, "Item", StringComparison.Ordinal))
 			{
 				string text = LocHelper.RelocalizeIfMissing(chemFinisherRecipe.displayName);
 				if (ValidLocalized(text, key))
