@@ -141,9 +141,13 @@ internal sealed class WaterNameCompatibility
 
 	// Repair the source ItemFeature data at the official early tooltip callback.
 	// This is limited to water-purity features; it never intercepts or replaces UI text.
+	// The native LabelerHelper walks ALL itemFeatures, not just the first
+	// CATEGORY_WATER_PURITY feature. Repair the exact six missing Korean
+	// water names on every feature of a water item before native tooltip
+	// construction, without changing unrelated item categories or UI strings.
 	private void BeforeWaterTooltip(RichTextBuilder builder, GameItem item)
 	{
-		if (!enabled || item == null)
+		if (!enabled || item == null || item.itemFeatures == null)
 		{
 			return;
 		}
@@ -159,42 +163,72 @@ internal sealed class WaterNameCompatibility
 		}
 		try
 		{
-			ItemFeature feature = item.FindItemFeatureByCategory("CATEGORY_WATER_PURITY");
-			if (feature == null)
+			if (!item.IsTag("LIQUID_CONTAINER_TAG") && item.FindItemFeatureByCategory("CATEGORY_WATER_PURITY") == null)
 			{
 				return;
 			}
-			bool repaired = RepairCondition(feature.fakeCondition);
-			if (feature.realCondition != feature.fakeCondition)
+			int changed = 0;
+			foreach (ItemFeature feature in item.itemFeatures)
 			{
-				repaired |= RepairCondition(feature.realCondition);
-			}
-			if (!feature.useCondition)
-			{
-				string before = feature.GetBaseFakeDisplay();
-				string after = Repair(before);
-				if (before != after)
+				if (feature == null)
 				{
-					feature.SetPublicDisplay(after);
-					repaired = true;
+					continue;
 				}
-				before = feature.GetBaseRealDisplay();
-				after = Repair(before);
-				if (before != after)
+				bool repaired = false;
+				if (feature.fakeCondition != null)
 				{
-					feature.SetActualDisplay(after);
-					repaired = true;
+					string before = feature.fakeCondition.display;
+					string after = Repair(before);
+					if (before != after)
+					{
+						feature.fakeCondition.display = after;
+						repaired = true;
+					}
+				}
+				if (feature.realCondition != null && feature.realCondition != feature.fakeCondition)
+				{
+					string before = feature.realCondition.display;
+					string after = Repair(before);
+					if (before != after)
+					{
+						feature.realCondition.display = after;
+						repaired = true;
+					}
+				}
+				if (!feature.useCondition)
+				{
+					string before = feature.GetBaseFakeDisplay();
+					string after = Repair(before);
+					if (before != after)
+					{
+						feature.SetPublicDisplay(after);
+						repaired = true;
+					}
+					before = feature.GetBaseRealDisplay();
+					after = Repair(before);
+					if (before != after)
+					{
+						feature.SetActualDisplay(after);
+						repaired = true;
+					}
+				}
+				if (repaired)
+				{
+					changed++;
+					if (!tooltipRepairLogged)
+					{
+						Debug.Log((object)("[KoreanPack] Water tooltip v3: repaired feature category=" + feature.category + "; display=" + feature.GetBaseCurrentDisplay()));
+					}
 				}
 			}
-			if (repaired && !tooltipRepairLogged)
+			if (changed > 0)
 			{
 				tooltipRepairLogged = true;
-				Debug.Log((object)"[KoreanPack] Water label data repaired before native tooltip (official item event).");
 			}
 		}
 		catch (Exception ex)
 		{
-			Debug.LogWarning((object)("[KoreanPack] Water tooltip data repair skipped: " + ex.Message));
+			Debug.LogWarning((object)("[KoreanPack] Water tooltip v3 repair skipped: " + ex.Message));
 		}
 	}
 
