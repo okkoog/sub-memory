@@ -28,7 +28,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/input"
-          cat probably-stolen/tmp/corp-repair-input/part*.b64 | base64 -d > "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_user.dll"
+          cat probably-stolen/tmp/corp-repair-input/p*.b64 | base64 -d > "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_user.dll"
           echo "b0417f1bc43ccf6b33ca97cda3b26b3d30bcd40490039f0681debe21e4610b0a  $RUNNER_TEMP/input/ProbablyStolenKoreanPack_user.dll" | sha256sum -c -
           stat -c '%n %s bytes' "$RUNNER_TEMP/input/ProbablyStolenKoreanPack_user.dll"
 
