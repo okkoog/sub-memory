@@ -1,0 +1,32 @@
+name: Temp inspect Corp 0.9.6 startup path
+on:
+  push:
+    branches: [tmp-corp-v100-runtime-review]
+    paths: [.github/workflows/temp-compare-corp-096.yml]
+permissions: {contents: read}
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: "8.0.x"}
+      - name: Inspect 0.9.6 startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/out"
+          curl -fLsS "https://raw.githubusercontent.com/okkoog/sub-memory/cb32a1a5fe173e20fa72735b2704b87357e13055/probably-stolen/mods/3828913695/CorpPresence.dll" -o "$RUNNER_TEMP/old096.dll"
+          sha256sum "$RUNNER_TEMP/old096.dll" > "$RUNNER_TEMP/out/old096.sha256"
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t CorpPresence.GameResources "$RUNNER_TEMP/old096.dll" > "$RUNNER_TEMP/out/old096.GameResources.cs" || true
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t CorpPresence.Main "$RUNNER_TEMP/old096.dll" > "$RUNNER_TEMP/out/old096.Main.cs" || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corp-locale-096-comparison
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
