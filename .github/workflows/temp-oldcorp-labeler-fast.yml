@@ -1,0 +1,37 @@
+name: Temp fast old Corp KoreanPack inspect
+on:
+  push:
+    branches: [tmp-oldcorp-add-labeler]
+    paths:
+      - .github/workflows/temp-oldcorp-labeler-fast.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Download exact old DLL and decompile
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/input" "$RUNNER_TEMP/src" "$RUNNER_TEMP/out"
+          curl -fL "https://raw.githubusercontent.com/okkoog/sub-memory/8599861c19a16f727f52da50a238e8d33f36aadf/probably-stolen/0.7.5.21-dev/ProbablyStolenKoreanPack.dll" -o "$RUNNER_TEMP/input/old.dll"
+          sha256sum "$RUNNER_TEMP/input/old.dll" | tee "$RUNNER_TEMP/out/old.sha256"
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck --nested-directories -p -r probably-stolen/Managed -o "$RUNNER_TEMP/src" "$RUNNER_TEMP/input/old.dll"
+          cp "$RUNNER_TEMP/src/ProbablyStolenKoreanPack/KoreanPack.cs" "$RUNNER_TEMP/out/KoreanPack.cs"
+          find "$RUNNER_TEMP/src/ProbablyStolenKoreanPack" -maxdepth 1 -type f -name '*.cs' -printf '%f\n' | sort > "$RUNNER_TEMP/out/files.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oldcorp-koreanpack-source-fast
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
