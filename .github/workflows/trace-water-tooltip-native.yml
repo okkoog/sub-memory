@@ -28,7 +28,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/game-src"
           "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/game-src" probably-stolen/Managed/Assembly-CSharp.dll
           mkdir -p probably-stolen/analysis/water-tooltip-086/callsites
-          rg -l 'FireOnCreateTooltipEarly|FireOnCreateTooltipLate|CreateWaterFeatureTooltip' "$RUNNER_TEMP/game-src" --glob '*.cs' | while IFS= read -r file; do
+          grep -rlE 'FireOnCreateTooltipEarly|FireOnCreateTooltipLate|CreateWaterFeatureTooltip' "$RUNNER_TEMP/game-src" --include='*.cs' | while IFS= read -r file; do
             name="$(basename "$file")"
             cp "$file" "probably-stolen/analysis/water-tooltip-086/callsites/$name"
           done
