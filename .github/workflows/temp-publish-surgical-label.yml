@@ -1,0 +1,45 @@
+name: Temp publish surgical water label DLL
+on:
+  push:
+    branches: [tmp-labeler-only-on-fix-water-20261109]
+    paths:
+      - .github/workflows/temp-publish-surgical-label.yml
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: KoreanPack-surgical-original-plus-water-label
+          path: ${{ runner.temp }}/out
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: okkoog/sub-memory
+          run-id: 42591098567
+      - name: Replace selected branch DLL and nothing else
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64,json,os,urllib.request,urllib.parse,hashlib
+          from pathlib import Path
+          repo="okkoog/sub-memory"
+          branch="fix-koreanpack-mechanic-water-20261109"
+          path="probably-stolen/번역 모드/ProbablyStolenKoreanPack.dll"
+          uri="https://api.github.com/repos/"+repo+"/contents/"+urllib.parse.quote(path,safe="/")
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28","User-Agent":"KoreanPack-Surgical-Label"}
+          def request(method,url,data=None):
+              req=urllib.request.Request(url,data=data,headers=headers,method=method)
+              with urllib.request.urlopen(req,timeout=90) as r:
+                  return json.load(r)
+          current=request("GET",uri+"?ref="+branch)
+          data=Path(os.environ["RUNNER_TEMP"]+"/out/ProbablyStolenKoreanPack.dll").read_bytes()
+          payload={"message":"Replace recompiled KoreanPack with original plus surgical water-label changes","content":base64.b64encode(data).decode(),"sha":current["sha"],"branch":branch}
+          res=request("PUT",uri,json.dumps(payload).encode())
+          print("Updated:",repo,branch,path,"commit",res["commit"]["sha"],"bytes",len(data),"sha256",hashlib.sha256(data).hexdigest())
+          PY
