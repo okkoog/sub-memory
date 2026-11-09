@@ -1,0 +1,36 @@
+name: Temp compare Corp startup gate versions
+on:
+  push:
+    branches: [tmp-corp-v100-runtime-review]
+    paths: [.github/workflows/temp-compare-corp-locale-versions.yml]
+permissions: {contents: read}
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: "8.0.x"}
+      - name: Decompile game startup locale and three Corp versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install --tool-path "$RUNNER_TEMP/ilspy" ilspycmd --version 9.1.0.7988
+          mkdir -p "$RUNNER_TEMP/out"
+          for entry in old099:7684f72179fb9eaf37baf79c3086faedca9e010e early100:4e4c0b961bf35262cad797f0f105918ededf7f1b recent100:1ed43ae78820b8e751b87e85ce9244098d6641ce; do
+            label="${entry%%:*}"; sha="${entry##*:}"
+            curl -fLsS "https://raw.githubusercontent.com/okkoog/sub-memory/$sha/probably-stolen/mods/3828913695/CorpPresence.dll" -o "$RUNNER_TEMP/$label.dll"
+            sha256sum "$RUNNER_TEMP/$label.dll" > "$RUNNER_TEMP/out/$label.sha256"
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t CorpPresence.GameResources "$RUNNER_TEMP/$label.dll" > "$RUNNER_TEMP/out/$label.GameResources.cs" || true
+            "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t CorpPresence.Main "$RUNNER_TEMP/$label.dll" > "$RUNNER_TEMP/out/$label.Main.cs" || true
+          done
+          "$RUNNER_TEMP/ilspy/ilspycmd" --disable-updatecheck -r probably-stolen/Managed -t LocHelper probably-stolen/Managed/Assembly-CSharp.dll > "$RUNNER_TEMP/out/LocHelper.cs"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corp-locale-version-comparison
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
