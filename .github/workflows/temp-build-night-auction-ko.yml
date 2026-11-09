@@ -1,0 +1,76 @@
+name: Build Night Auction Korean DLL
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/temp-build-night-auction-ko.yml
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/mods/3829429358
+            probably-stolen/work-in-progress/sa-na-dll-translation
+            probably-stolen/번역 모드/Localization/pskb__3829429358.csv
+            probably-stolen/downloads
+            .github/workflows
+          persist-credentials: true
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build isolated, self-contained Korean DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="probably-stolen/work-in-progress/sa-na-dll-translation"
+          game="probably-stolen/mods/3829429358"
+          dest="probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9"
+          mkdir -p "$dest/Localization"
+          dotnet new console --framework net10.0 -o "$RUNNER_TEMP/patcher" --no-restore >/dev/null
+          cp "$src/NightAuction.KoreanPatch.cs" "$RUNNER_TEMP/patcher/Program.cs"
+          dotnet add "$RUNNER_TEMP/patcher/patcher.csproj" package Mono.Cecil --version 0.11.6 >/dev/null
+          dotnet run --project "$RUNNER_TEMP/patcher" --configuration Release -- "$game/XIAOWONightAuction.dll" "$src/NightAuction.Chinese.original.json" "$src" "$dest/XIAOWONightAuction.dll"
+          cp "$game/manifest.xml" "$dest/manifest.xml"
+          cp "$game/Localization/en.csv" "$dest/Localization/en.csv"
+          cp "$game/Localization/zh.csv" "$dest/Localization/zh.csv"
+          python3 - <<'PY'
+          import csv, pathlib
+          src=pathlib.Path("probably-stolen/번역 모드/Localization/pskb__3829429358.csv")
+          dst=pathlib.Path("probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9/Localization/ko.csv")
+          rows=[]
+          for line in src.read_text(encoding="utf-8-sig").splitlines():
+              if not line.startswith("K|"):continue
+              data=next(csv.reader([line[2:]]))
+              assert len(data)==2, data
+              rows.append(data)
+          assert len(rows)==20, len(rows)
+          with dst.open("w",encoding="utf-8-sig",newline="") as f:
+              csv.writer(f,lineterminator="\r\n").writerows(rows)
+          print("Official Localization/ko.csv keys",len(rows))
+          PY
+          cat > "$dest/README.txt" <<'TXT'
+          Probably Stolen - Night Auction 2.1.9 - Korean-localized DLL
+          Original workshop mod: 3829429358
+          This package is derived from the original uploaded DLL and only modifies that DLL.
+          Korean text mappings are embedded inside XIAOWONightAuction.dll.
+          Use this build in place of the same-version original Night Auction DLL, not alongside a duplicate copy.
+          For other languages the original localization behavior is preserved by runtime locale checking.
+          Local DLL static verification passed; game runtime testing has NOT been performed.
+          TXT
+          pushd probably-stolen/downloads >/dev/null
+          zip -q -r NightAuction_Korean_DLL_2.1.9.zip NightAuction_Korean_DLL_2.1.9
+          unzip -t NightAuction_Korean_DLL_2.1.9.zip | tail -1
+          popd >/dev/null
+          sha256sum "$dest/XIAOWONightAuction.dll" "probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9.zip"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "$dest" "probably-stolen/downloads/NightAuction_Korean_DLL_2.1.9.zip"
+          if ! git diff --cached --quiet; then
+              git commit -m "Build Night Auction 2.1.9 Korean-localized DLL"
+              git push origin HEAD:main
+          fi
