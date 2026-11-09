@@ -29,7 +29,8 @@ class Patch {
   if(original.Count!=659||translations.Count!=659)throw new Exception("Bad count "+original.Count+" "+translations.Count);
   var map=new Dictionary<string,string>(StringComparer.Ordinal);
   for(int i=0;i<659;i++)map.Add(Un(original[i]),translations[i]);
-  var assembly=AssemblyDefinition.ReadAssembly(args[0],new ReaderParameters{InMemory=true});
+  var resolver=new DefaultAssemblyResolver(); resolver.AddSearchDirectory("probably-stolen/Managed");
+  var assembly=AssemblyDefinition.ReadAssembly(args[0],new ReaderParameters{InMemory=true,AssemblyResolver=resolver});
   var module=assembly.MainModule;
   var auction=module.Types.SelectMany(Types).Single(t=>t.Name=="AuctionText");
   var getLocale=auction.Methods.Single(m=>m.Name=="get_CurrentLocaleCode");
