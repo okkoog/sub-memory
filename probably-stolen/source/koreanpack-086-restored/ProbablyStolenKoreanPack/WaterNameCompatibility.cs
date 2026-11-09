@@ -17,6 +17,8 @@ internal sealed class WaterNameCompatibility
 
 	private bool assetsReady;
 
+	private bool tooltipRepairLogged;
+
 	private int generation;
 
 	private AsyncOperationHandle<LocalizationSettings> initialization;
@@ -79,6 +81,7 @@ internal sealed class WaterNameCompatibility
 			LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
 			ModHook.OnGameLoadedInit += Loading;
 			ModHook.OnGameLoadedLate += Loaded;
+			ModHook.OnCreateTooltipEarly += BeforeWaterTooltip;
 			initialization = LocalizationSettings.InitializationOperation;
 			if (initialization.IsDone)
 			{
@@ -100,6 +103,7 @@ internal sealed class WaterNameCompatibility
 		LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
 		ModHook.OnGameLoadedInit -= Loading;
 		ModHook.OnGameLoadedLate -= Loaded;
+		ModHook.OnCreateTooltipEarly -= BeforeWaterTooltip;
 		if (initialization.IsValid())
 		{
 			initialization.Completed -= Initialized;
@@ -133,6 +137,65 @@ internal sealed class WaterNameCompatibility
 	{
 		worldReady = true;
 		Request();
+	}
+
+	// Repair the source ItemFeature data at the official early tooltip callback.
+	// This is limited to water-purity features; it never intercepts or replaces UI text.
+	private void BeforeWaterTooltip(RichTextBuilder builder, GameItem item)
+	{
+		if (!enabled || item == null)
+		{
+			return;
+		}
+		Locale locale = LocalizationSettings.SelectedLocale;
+		if ((Object)(object)locale == (Object)null)
+		{
+			return;
+		}
+		string code = locale.Identifier.Code;
+		if (code != "ko" && code != "ko-KR")
+		{
+			return;
+		}
+		try
+		{
+			ItemFeature feature = item.FindItemFeatureByCategory("CATEGORY_WATER_PURITY");
+			if (feature == null)
+			{
+				return;
+			}
+			bool repaired = RepairCondition(feature.fakeCondition);
+			if (feature.realCondition != feature.fakeCondition)
+			{
+				repaired |= RepairCondition(feature.realCondition);
+			}
+			if (!feature.useCondition)
+			{
+				string before = feature.GetBaseFakeDisplay();
+				string after = Repair(before);
+				if (before != after)
+				{
+					feature.SetPublicDisplay(after);
+					repaired = true;
+				}
+				before = feature.GetBaseRealDisplay();
+				after = Repair(before);
+				if (before != after)
+				{
+					feature.SetActualDisplay(after);
+					repaired = true;
+				}
+			}
+			if (repaired && !tooltipRepairLogged)
+			{
+				tooltipRepairLogged = true;
+				Debug.Log((object)"[KoreanPack] Water label data repaired before native tooltip (official item event).");
+			}
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning((object)("[KoreanPack] Water tooltip data repair skipped: " + ex.Message));
+		}
 	}
 
 	private void Request()
@@ -328,6 +391,12 @@ internal sealed class WaterNameCompatibility
 		foreach (KeyValuePair<string, string> replacement in replacements)
 		{
 			value = value.Replace(replacement.Key, replacement.Value);
+		}
+		// The locale callback can precede inventory deserialization or a new
+		// container can be created later. Never depend solely on a cached map.
+		for (int i = 0; i < QualityKeys.Length; i++)
+		{
+			value = value.Replace(Error(QualityKeys[i]), KoreanQualityNames[i]);
 		}
 		return value;
 	}
