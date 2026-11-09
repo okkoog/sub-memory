@@ -19,6 +19,17 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
+      - name: Diagnose ModuleEffect type from original game binaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          for dll in probably-stolen/Managed/*.dll; do
+            if LC_ALL=C grep -a -q 'ModuleEffect' "$dll"; then
+              echo "TYPE NAME FOUND IN: $dll"
+              "$RUNNER_TEMP/ilspytools/ilspycmd" -l c "$dll" | grep 'ModuleEffect' | head -n 25 || true
+            fi
+          done
       - name: Compile restored current DLL plus targeted fix
         shell: bash
         run: |
