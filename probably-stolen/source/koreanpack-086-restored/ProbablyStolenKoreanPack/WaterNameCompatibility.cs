@@ -18,6 +18,8 @@ internal sealed class WaterNameCompatibility
 
 	private bool assetsReady;
 
+	private bool localizationHooksReady;
+
 	private bool tooltipRepairLogged;
 
 	private bool nativeWaterRepairLogged;
@@ -80,26 +82,14 @@ internal sealed class WaterNameCompatibility
 
 	internal void Enable()
 	{
-		//IL_0043: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0048: Unknown result type (might be due to invalid IL or missing references)
 		if (!enabled)
 		{
 			enabled = true;
 			activeInstance = this;
-			LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
 			ModHook.OnGameLoadedInit += Loading;
 			ModHook.OnGameLoadedLate += Loaded;
 			ModHook.OnCreateTooltipEarly += BeforeWaterTooltip;
 			ModHook.OnCreateTooltipLate += AuditWaterTooltip;
-			initialization = LocalizationSettings.InitializationOperation;
-			if (initialization.IsDone)
-			{
-				Request();
-			}
-			else
-			{
-				initialization.Completed += Initialized;
-			}
 		}
 	}
 
@@ -113,16 +103,35 @@ internal sealed class WaterNameCompatibility
 		worldReady = false;
 		assetsReady = false;
 		generation++;
-		LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
 		ModHook.OnGameLoadedInit -= Loading;
 		ModHook.OnGameLoadedLate -= Loaded;
 		ModHook.OnCreateTooltipEarly -= BeforeWaterTooltip;
 		ModHook.OnCreateTooltipLate -= AuditWaterTooltip;
-		if (initialization.IsValid())
+		if (localizationHooksReady)
 		{
-			initialization.Completed -= Initialized;
+			LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
+			if (initialization.IsValid())
+			{
+				initialization.Completed -= Initialized;
+			}
+			localizationHooksReady = false;
 		}
 		replacements.Clear();
+	}
+
+	private void EnsureLocalizationHooks()
+	{
+		if (!enabled || !worldReady || localizationHooksReady)
+		{
+			return;
+		}
+		localizationHooksReady = true;
+		LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
+		initialization = LocalizationSettings.InitializationOperation;
+		if (!initialization.IsDone)
+		{
+			initialization.Completed += Initialized;
+		}
 	}
 
 	private void Initialized(AsyncOperationHandle<LocalizationSettings> operation)
@@ -337,7 +346,12 @@ internal sealed class WaterNameCompatibility
 		//IL_0084: Unknown result type (might be due to invalid IL or missing references)
 		//IL_0089: Unknown result type (might be due to invalid IL or missing references)
 		//IL_00da: Unknown result type (might be due to invalid IL or missing references)
-		if (!enabled || !assetsReady || !initialization.IsValid() || !initialization.IsDone || (int)initialization.Status != 1)
+		if (!enabled || !worldReady)
+		{
+			return;
+		}
+		EnsureLocalizationHooks();
+		if (!assetsReady || !localizationHooksReady || !initialization.IsValid() || !initialization.IsDone || (int)initialization.Status != 1)
 		{
 			return;
 		}
