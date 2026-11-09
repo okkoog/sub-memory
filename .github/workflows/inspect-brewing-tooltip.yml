@@ -26,6 +26,10 @@ jobs:
           dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
           mkdir -p "$RUNNER_TEMP/brewing"
           "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/brewing" probably-stolen/mods/3829730904/BrewingExpansion.dll
+          echo "===== custom item tooltip layout ====="
+          sed -n '1,230p' "$RUNNER_TEMP/brewing/BrewingExpansion.Formal/ItemTooltipLayout.cs" || true
+          echo "===== recipe tooltip override ====="
+          sed -n '1,120p' "$RUNNER_TEMP/brewing/BrewingExpansion.Formal/RecipeReadAccess.cs" || true
           echo "===== matching source files ====="
           grep -rlE 'tooltipRichTextFunc|GetTooltip\(|CreateLabeledItemTooltip|CATEGORY_WATER_PURITY|mech_condition_gutterflow|GetBaseCurrentDisplay|GetBaseFakeDisplay|GetBaseRealDisplay|OnCreateTooltip(Early|Late)' "$RUNNER_TEMP/brewing" --include='*.cs' | head -80 || true
           echo "===== relevant call site snippets ====="
