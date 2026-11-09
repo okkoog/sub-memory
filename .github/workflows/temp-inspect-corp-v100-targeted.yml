@@ -1,0 +1,37 @@
+name: Temp inspect CorpPresence v1.0.0 runtime targeted
+on:
+  push:
+    branches: [tmp-corp-v100-runtime-review]
+    paths:
+      - .github/workflows/temp-inspect-corp-v100-targeted.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3828913695
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Decompile target files
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy"
+          DLL=probably-stolen/mods/3828913695/CorpPresence.dll
+          mkdir -p "$RUNNER_TEMP/out"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t CorpPresence.Main "$DLL" > "$RUNNER_TEMP/out/Main.cs"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t CorpPresence.GameResources "$DLL" > "$RUNNER_TEMP/out/GameResources.cs"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t CorpPresence.Runtime.ResourceBootstrap "$DLL" > "$RUNNER_TEMP/out/ResourceBootstrap.cs" || true
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t CorpPresence.ModLog "$DLL" > "$RUNNER_TEMP/out/ModLog.cs"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CorpPresence-v100-targeted-source
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
