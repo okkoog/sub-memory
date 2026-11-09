@@ -1,0 +1,39 @@
+name: Diagnose native water label tooltip source
+on:
+  push:
+    branches: [fix-koreanpack-mechanic-water-20261109]
+    paths: [.github/workflows/diagnose-water-tooltip-v2.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Install decompiler
+        run: dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+      - name: Decompile targeted game classes without altering originals
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probably-stolen/analysis/water-tooltip-086
+          DLL=probably-stolen/Managed/Assembly-CSharp.dll
+          for cls in LocHelper WaterFeatureHelper ItemFeature ItemCondition LabelerElement; do
+            "$RUNNER_TEMP/ilspytools/ilspycmd" -t "$cls" "$DLL" > "probably-stolen/analysis/water-tooltip-086/$cls.cs"
+          done
+          echo "Examined game-native classes"
+          wc -lc probably-stolen/analysis/water-tooltip-086/*.cs
+      - name: Commit decompiled evidence to isolated branch
+        shell: bash
+        run: |
+          git add probably-stolen/analysis/water-tooltip-086
+          git diff --cached --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Inspect native water tooltip and localized mechanic call paths'
+          git push origin HEAD:fix-koreanpack-mechanic-water-20261109
