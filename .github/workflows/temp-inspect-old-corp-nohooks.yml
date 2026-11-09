@@ -1,0 +1,40 @@
+name: Temp inspect old KoreanPack Corp nohooks
+on:
+  push:
+    branches: [tmp-corp-v100-runtime-review]
+    paths:
+      - .github/workflows/temp-inspect-old-corp-nohooks.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/build/out
+            probably-stolen/Managed
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Decompile old nohooks KoreanPack
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy"
+          DLL=probably-stolen/build/out/ProbablyStolenKoreanPack.NoHooks.CorpMenuTrial.dll
+          test -f "$DLL"
+          sha256sum "$DLL" | tee "$RUNNER_TEMP/hash.txt"
+          mkdir -p "$RUNNER_TEMP/src"
+          "$RUNNER_TEMP/ilspy/ilspycmd" -p -o "$RUNNER_TEMP/src" -r probably-stolen/Managed "$DLL"
+          mkdir -p "$RUNNER_TEMP/out"
+          cp -a "$RUNNER_TEMP/src/." "$RUNNER_TEMP/out/"
+          cp "$RUNNER_TEMP/hash.txt" "$RUNNER_TEMP/out/"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-old-CorpMenuTrial-source
+          path: ${{ runner.temp }}/out
+          if-no-files-found: error
