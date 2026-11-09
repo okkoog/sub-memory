@@ -38,6 +38,9 @@ jobs:
           workspace=os.environ["GITHUB_WORKSPACE"]
           s=s.replace("<HintPath>probably-stolen/Managed/", "<HintPath>"+workspace+"/probably-stolen/Managed/")
           proj.write_text(s)
+          asm=root/"Properties"/"AssemblyInfo.cs"
+          if asm.exists():
+              asm.write_text(asm.read_text().replace("[module: RefSafetyRules(11)]", ""))
           PY
           dotnet build "$RUNNER_TEMP/src/ProbablyStolenKoreanPack.csproj" --configuration Release --nologo
           cp "$RUNNER_TEMP/src/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll" "$RUNNER_TEMP/out/ProbablyStolenKoreanPack.dll"
