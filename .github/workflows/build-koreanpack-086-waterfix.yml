@@ -1,0 +1,62 @@
+name: Build KoreanPack 0.8.6 water-condition fix
+on:
+  push:
+    branches:
+      - fix-koreanpack-mechanic-water-20261109
+    paths:
+      - .github/workflows/build-koreanpack-086-waterfix.yml
+      - probably-stolen/build/KoreanPack086WaterFix.csproj
+      - probably-stolen/source/koreanpack-086-restored/**
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Compile restored current DLL plus targeted fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet build probably-stolen/build/KoreanPack086WaterFix.csproj -c Release -v minimal
+          test -s probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll
+      - name: Validate feature entry points and water table repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          mkdir -p "$RUNNER_TEMP/waterfix-decompiled"
+          "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/waterfix-decompiled" probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll
+          grep -R -q 'Korean Mechanic water entries repaired' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'void OnEnable' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'void OnDisable' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'FishingStartPerkCompatibility' "$RUNNER_TEMP/waterfix-decompiled"
+          grep -R -q 'LabelerElement' "$RUNNER_TEMP/waterfix-decompiled"
+          test "$(stat -c '%s' probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll)" -ge 20000
+      - name: Stage candidate DLL (never overwrite released main)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probably-stolen/build/waterfix-086
+          cp probably-stolen/build/bin/Release/netstandard2.1/ProbablyStolenKoreanPack.dll probably-stolen/build/waterfix-086/ProbablyStolenKoreanPack.dll
+          sha256sum probably-stolen/build/waterfix-086/ProbablyStolenKoreanPack.dll > probably-stolen/build/waterfix-086/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-086-water-condition-candidate
+          path: probably-stolen/build/waterfix-086/
+          if-no-files-found: error
+      - name: Commit candidate to isolated branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add probably-stolen/build/waterfix-086
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Build 0.8.6 Korean water-condition repair candidate'
+          git push origin HEAD:fix-koreanpack-mechanic-water-20261109
