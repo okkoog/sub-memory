@@ -19,6 +19,8 @@ internal sealed class WaterNameCompatibility
 
 	private bool tooltipRepairLogged;
 
+	private int waterTooltipAuditCount;
+
 	private int generation;
 
 	private AsyncOperationHandle<LocalizationSettings> initialization;
@@ -82,6 +84,7 @@ internal sealed class WaterNameCompatibility
 			ModHook.OnGameLoadedInit += Loading;
 			ModHook.OnGameLoadedLate += Loaded;
 			ModHook.OnCreateTooltipEarly += BeforeWaterTooltip;
+			ModHook.OnCreateTooltipLate += AuditWaterTooltip;
 			initialization = LocalizationSettings.InitializationOperation;
 			if (initialization.IsDone)
 			{
@@ -104,6 +107,7 @@ internal sealed class WaterNameCompatibility
 		ModHook.OnGameLoadedInit -= Loading;
 		ModHook.OnGameLoadedLate -= Loaded;
 		ModHook.OnCreateTooltipEarly -= BeforeWaterTooltip;
+		ModHook.OnCreateTooltipLate -= AuditWaterTooltip;
 		if (initialization.IsValid())
 		{
 			initialization.Completed -= Initialized;
@@ -229,6 +233,51 @@ internal sealed class WaterNameCompatibility
 		catch (Exception ex)
 		{
 			Debug.LogWarning((object)("[KoreanPack] Water tooltip v3 repair skipped: " + ex.Message));
+		}
+	}
+
+	// Diagnostic only: inspect the *already assembled* native tooltip, after
+	// LabelerHelper.CreateLabeledItemTooltip. Do not alter builder or UI text.
+	private void AuditWaterTooltip(RichTextBuilder builder, GameItem item)
+	{
+		if (!enabled || builder == null || item == null || item.itemFeatures == null || waterTooltipAuditCount >= 8)
+		{
+			return;
+		}
+		Locale selected = LocalizationSettings.SelectedLocale;
+		if ((Object)(object)selected == (Object)null || !selected.Identifier.Code.StartsWith("ko", StringComparison.Ordinal))
+		{
+			return;
+		}
+		if (!item.identifier.StartsWith("be_", StringComparison.Ordinal) || (!item.IsTag("LIQUID_CONTAINER_TAG") && item.FindItemFeatureByCategory("CATEGORY_WATER_PURITY") == null))
+		{
+			return;
+		}
+		waterTooltipAuditCount++;
+		try
+		{
+			string nativeText = builder.Build().nakedText;
+			string condition = "(none)";
+			foreach (ItemFeature feature in item.itemFeatures)
+			{
+				if (feature != null && feature.category == "CATEGORY_WATER_PURITY")
+				{
+					condition = feature.GetBaseCurrentDisplay();
+					break;
+				}
+			}
+			int labelAt = nativeText.IndexOf("Translation Error 'mech_condition_gutterflow'", StringComparison.Ordinal);
+			int labelPrefix = nativeText.IndexOf("라벨", StringComparison.Ordinal);
+			if (labelAt < 0)
+			{
+				labelAt = labelPrefix;
+			}
+			string excerpt = labelAt < 0 ? "(not found)" : nativeText.Substring(Math.Max(0, labelAt - 14), Math.Min(nativeText.Length - Math.Max(0, labelAt - 14), 130)).Replace("\n", " ");
+			Debug.Log((object)("[KoreanPack] Water tooltip v4 audit: item=" + item.identifier + " uid=" + item.uniqueId + " condition=" + condition + " builtError=" + nativeText.Contains("mech_condition_gutterflow") + " excerpt=" + excerpt));
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning((object)("[KoreanPack] Water tooltip v4 audit skipped: " + ex.GetType().Name + " " + ex.Message));
 		}
 	}
 
