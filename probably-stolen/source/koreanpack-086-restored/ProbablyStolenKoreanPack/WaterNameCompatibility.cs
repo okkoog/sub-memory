@@ -24,6 +24,10 @@ internal sealed class WaterNameCompatibility
 
 	private static readonly string[] QualityKeys = new string[6] { "mech_condition_pure_water", "mech_condition_high_quality_water", "mech_condition_basewater", "mech_condition_ghostwater", "mech_condition_rustwater", "mech_condition_gutterflow" };
 
+	// Original Korean Translation 2.1 (Mechanic table IDs 951840645365857..862).
+	// This is a narrow data repair, not a global UI text hook.
+	private static readonly string[] KoreanQualityNames = new string[6] { "순수한 물", "고품질 물", "기본수", "유령수", "녹물", "하수" };
+
 	private static readonly Dictionary<string, string> LiquidKeys = new Dictionary<string, string>(StringComparer.Ordinal)
 	{
 		{ "water", "liquid_water" },
@@ -184,14 +188,41 @@ internal sealed class WaterNameCompatibility
 		}
 		try
 		{
+			// Recover only missing Korean Mechanic entries at the authoritative
+			// StringTable. Patching cached item labels alone misses later tooltip
+			// calculations that call LocHelper.GetLocalizedMechanic again.
+			StringTable mechanic = operation.Result;
 			string[] array = new string[QualityKeys.Length];
+			int tableRepairs = 0;
 			for (int i = 0; i < array.Length; i++)
 			{
-				array[i] = LocHelper.GetLocalizedMechanic(QualityKeys[i], Array.Empty<object>());
-				if (!Valid(array[i], QualityKeys[i]))
+				string key = QualityKeys[i];
+				string translated = LocHelper.GetLocalizedMechanic(key, Array.Empty<object>());
+				if (!Valid(translated, key))
 				{
-					return;
+					StringTableEntry entry = mechanic.GetEntry(key);
+					if (entry == null)
+					{
+						mechanic.AddEntry(key, KoreanQualityNames[i]);
+					}
+					else
+					{
+						entry.LocalizedValue = KoreanQualityNames[i];
+					}
+					tableRepairs++;
+					translated = LocHelper.GetLocalizedMechanic(key, Array.Empty<object>());
+					if (!Valid(translated, key))
+					{
+						// Keep existing saved-item cache repair functional even when
+						// the game's localized-string cache still holds an old error.
+						translated = KoreanQualityNames[i];
+					}
 				}
+				array[i] = translated;
+			}
+			if (tableRepairs != 0)
+			{
+				Debug.Log((object)("[KoreanPack] Korean Mechanic water entries repaired: " + tableRepairs));
 			}
 			replacements.Clear();
 			KoreanPack.RepairConditionDisplays(includeItems: false);
