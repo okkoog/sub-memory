@@ -36,6 +36,10 @@ jobs:
           cp "$src/NightAuction.KoreanPatch.cs" "$RUNNER_TEMP/patcher/Program.cs"
           dotnet add "$RUNNER_TEMP/patcher/patcher.csproj" package Mono.Cecil --version 0.11.6 >/dev/null
           dotnet run --project "$RUNNER_TEMP/patcher" --configuration Release -- "$game/XIAOWONightAuction.dll" "$src/NightAuction.Chinese.original.json" "$src" "$dest/XIAOWONightAuction.dll"
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspy" >/dev/null
+          "$RUNNER_TEMP/ilspy/ilspycmd" -t KoreanLocalization.NightAuctionKoreanRuntime "$dest/XIAOWONightAuction.dll" > "$RUNNER_TEMP/KoreanRuntime.cs"
+          grep -F "TranslateLiteral" "$RUNNER_TEMP/KoreanRuntime.cs" >/dev/null || grep -F "Literal(" "$RUNNER_TEMP/KoreanRuntime.cs" >/dev/null
+          echo "ILSpy verified injected Korean translation runtime"
           cp "$game/manifest.xml" "$dest/manifest.xml"
           cp "$game/Localization/en.csv" "$dest/Localization/en.csv"
           cp "$game/Localization/zh.csv" "$dest/Localization/zh.csv"
