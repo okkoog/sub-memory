@@ -1,0 +1,38 @@
+name: Inspect CorpPresence v1.0.0 activation path
+on:
+  push:
+    branches: [diagnose-corp-v100-20261109]
+    paths: [.github/workflows/inspect-corp-v100-readonly.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/mods/3828913695
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Inspect original DLL read-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool install ilspycmd --tool-path "$RUNNER_TEMP/ilspytools"
+          DLL=probably-stolen/mods/3828913695/CorpPresence.dll
+          echo '===== DLL ====='
+          sha256sum "$DLL"
+          echo '===== types / classes ====='
+          "$RUNNER_TEMP/ilspytools/ilspycmd" -l c "$DLL" | head -n 180 || true
+          echo '===== namespace source ====='
+          mkdir -p "$RUNNER_TEMP/corp"
+          "$RUNNER_TEMP/ilspytools/ilspycmd" -p -o "$RUNNER_TEMP/corp" "$DLL"
+          echo '===== startup / activation / hooks / guarded failures ====='
+          grep -RnE -C 3 'class .*:.*IMod|void OnEnable\(|void OnDisable\(|OnModAssetsLoaded|OnGameLoaded|OnShutterOpened|OnNewGameStarted|Register|OnCreateTooltip|OnClient|OnCustomer|Application\.is|catch \(Exception|OnEnable\b|CorpPresence|CompanyVisitor' "$RUNNER_TEMP/corp" --include='*.cs' | head -n 420 || true
+          echo '===== key files ====='
+          find "$RUNNER_TEMP/corp" -type f -name '*.cs' | sed "s|$RUNNER_TEMP/corp/||" | head -n 150
