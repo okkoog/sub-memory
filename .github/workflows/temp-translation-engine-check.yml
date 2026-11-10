@@ -1,0 +1,23 @@
+name: Temp check translation API reachability
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/temp-translation-engine-check.yml]
+permissions: {contents: read}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify public translation endpoints
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import requests
+          u="https://translate.googleapis.com/translate_a/single"
+          for lang in ["en","zh-CN"]:
+            try:
+              r=requests.get(u,params={"client":"gtx","sl":lang,"tl":"ko","dt":"t","q":"I will visit again." if lang=="en" else "下次还会来的。"},timeout=15)
+              print(lang,r.status_code,r.text[:600])
+            except Exception as e:print(lang,repr(e))
+          PY
