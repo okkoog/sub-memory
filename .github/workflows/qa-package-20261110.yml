@@ -1,0 +1,89 @@
+name: KoreanPack QA snapshot ZIP validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/qa-package-20261110.yml
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /probably-stolen/번역 모드/Localization/*
+            /probably-stolen/work-in-progress/translation-20261110/qa-review-20261110.md
+            /probably-stolen/work-in-progress/translation-20261110/KoreanPack_20261110_QApass3_11mods.zip
+            /.github/workflows/qa-package-20261110.yml
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assemble validated review-only ZIP with Python zipfile
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, pathlib, zipfile
+          base = pathlib.Path('probably-stolen')
+          loc = base / '번역 모드' / 'Localization'
+          work = base / 'work-in-progress' / 'translation-20261110'
+          out = work / 'KoreanPack_20261110_QApass3_11mods.zip'
+          expected = {
+              '3836005870':131, '3828910575':174, '3830758908':606,
+              '3833095213':4281, '3836614401':82, '3830180473':123,
+              '3834619049':279, '3834135415':500, '3835292703':817,
+              '3830031787':664, '3834071305':473
+          }
+          documents = []
+          for wid, n in expected.items():
+              f = loc / ('pskb__' + wid + '.csv')
+              raw = f.read_bytes()
+              rows = list(csv.reader(io.StringIO(raw.decode('utf-8-sig'), newline='')))
+              keyed = [r for r in rows if r and r[0].startswith('K|')]
+              ids = [r[0] for r in keyed]
+              assert len(keyed)==n, (wid,'count',len(keyed),n)
+              assert len(ids)==len(set(ids)), (wid,'duplicates')
+              assert all(len(r)==2 for r in keyed), (wid,'CSV parse')
+              assert any(r and r[0]=='W|'+wid for r in rows), (wid,'workshop tag')
+              documents.append(('Localization/'+f.name,raw))
+          readme = (
+              'Probably Stolen KoreanPack - QA only, not Steam release.\n'
+              '11 CSV files; 8130 KoreanPack localization keys.\n'
+              'Static source audit found no missing source keys or broken source placeholders.\n'
+              '21 additional content errors were corrected.\n'
+              'This archive is NOT verified in-game. Do not publish to Steam yet.\n'
+              'See QA_REVIEW.md for known risks.\n'
+          ).encode('utf-8')
+          docs = [('README_QA_NOT_RELEASE.txt',readme),
+                  ('QA_REVIEW.md',(work/'qa-review-20261110.md').read_bytes())] + documents
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for name, body in docs:
+                  z.writestr(name,body)
+          with zipfile.ZipFile(out,'r') as z:
+              assert z.testzip() is None, 'bad CRC'
+              assert len(z.namelist())==13
+              for name, body in docs:
+                  assert z.read(name)==body, 'content mismatch: '+name
+          print('ZIP_VERIFIED',len(docs),'files',out.stat().st_size,'bytes')
+          print('ZIP_SHA256',hashlib.sha256(out.read_bytes()).hexdigest())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KoreanPack-QApass3-verified
+          path: probably-stolen/work-in-progress/translation-20261110/KoreanPack_20261110_QApass3_11mods.zip
+          if-no-files-found: error
+      - name: Commit validated ZIP only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f "probably-stolen/work-in-progress/translation-20261110/KoreanPack_20261110_QApass3_11mods.zip"
+          git commit -m "Replace QA snapshot with zipfile-validated ZIP; hold Steam deployment"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
