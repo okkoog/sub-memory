@@ -28,9 +28,11 @@ for row in allrows:
     if not row:continue
     key=row[0].strip()
     if key.startswith('#') or key=='key':continue
-    if len(row)!=2: raise ValueError(f"Malformed CSV for {ID}: {row[:2]}")
+    if len(row)<2: raise ValueError(f"Malformed CSV for {ID}: {row[:2]}")
     if not key:continue
-    rows.append((key,row[1]))
+    # Some original mod CSV values contain unquoted commas: preserve everything after
+    # the first key field rather than silently dropping or rejecting those values.
+    rows.append((key,','.join(row[1:])))
 assert len(rows)==len(set(k for k,v in rows)), 'duplicate source keys'
 
 # Match ordinary game placeholders.  Do not feed the \n delimiter to the NMT.
