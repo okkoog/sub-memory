@@ -33,7 +33,7 @@ K|prof_ui_reset_ready,"이 카테고리 초기화 (포인트 환불, Lv5/Lv10 �
 K|prof_ui_reset_cd,이 카테고리 초기화 (재사용 대기시간: {0}일)
 K|prof_toast_not_in_run,숙련도: 진행 중인 게임이 없습니다
 K|prof_toast_panel_failed,숙련도 패널 생성에 실패했습니다
-K|prof_cfg_panel_key,패널 키
+K|prof_cfg_panel_key,숙련도 패널 단축키
 K|prof_cfg_debug_key,디버그 키
 K|prof_cfg_debug_key_on,디버그 키 활성화
 K|prof_cfg_debug_log,상세 로그
@@ -64,14 +64,14 @@ K|prof_ab_water_a,가짜 물 (물의 품질에 따라 가격 변동)
 K|prof_ab_water_b,"비축 (구매가 -80%, 물 구매 고객 예산 +200%)"
 K|prof_ab_brewing_a,고급 양조 (주류 판매가 +{0}%)
 K|prof_ab_brewing_b,고속 양조 (발효 속도 증가)
-K|prof_ab_material_a,"비축 (공학/잡화 매입가 {0}%, 공학품 매입 시 {1}% 확률로 특제 신경 모듈 증정)"
+K|prof_ab_material_a,"비축 (공학/일반 물품 매입가 {0}%, 공학품 매입 시 {1}% 확률로 특제 신경 모듈 증정)"
 K|prof_ab_material_b,장인품 (공학 물품 판매가 +{0}%)
 K|prof_ab_contraband_a,세탁 (밀수품 범죄 수치 -30%)
 K|prof_ab_contraband_b,암시장 인맥 (하루 장물상 손님 +3명)
 K|prof_ab_general_a,"중개인 (모든 판매가 +10%, 구매가 -15%)"
 K|prof_ab_general_b,베테랑 (흥정 시 예산 소모 및 평판 하락 없음)
 K|prof_ab_chemistry_a,고순도 (생산한 약물의 순도 증가)
-K|prof_ab_chemistry_b,대량생산 (스트리트 등급 제품 1개 추가)
+K|prof_ab_chemistry_b,대량생산 (약물 제조 시 스트리트 등급 약물 1개 추가)
 K|prof_ab_planting_a,"다수확 (수확량 +3, 성장 속도 +50%)"
 K|prof_ab_planting_b,돌연변이 (수확한 씨앗에 무작위 긍정 특성이 붙을 확률)
 K|prof_ui_none,없음
@@ -94,7 +94,7 @@ K|prof_toast_panel_open_failed,숙련도 패널을 열지 못했습니다: {0}
 K|prof_toast_reset_cd,초기화 대기 중: {0}일 남음
 K|prof_toast_reset_done,이 카테고리 초기화 완료: {0}포인트 반환 (다음 초기화까지 7일)
 K|prof_toast_reset_all_done,모든 카테고리 초기화 완료: {0}포인트 반환
-K|prof_toast_crate,고급 보급: {0} 분야의 보급품이 도착했습니다.
+K|prof_toast_crate,고급 보급: {0} 도착
 K|prof_toast_fence,암시장 인맥: 오늘 장물상 손님이 {0}명 더 찾아옵니다.
 K|prof_toast_gift,공학 특전: {0} 추가 획득
 K|prof_toast_medbox,구급상자: 의사 손님이 의료 보급 상자를 선물했습니다.
@@ -111,9 +111,9 @@ K|prof_cfg_appraise_perfect,감정의 달인: 완벽 감정 보너스
 K|prof_cfg_appraise_perfect_tip,완벽한 감정(정확도 1)에 적용되는 추가 서비스 수수료
 K|prof_ab_appraisal_a,감정의 달인(완벽 감정 수수료 +{0}%)
 K|prof_ab_appraisal_b,시장 안목(감정을 의뢰하는 손님마다 물건을 1개 더 가져옴)
-K|prof_cat_husbandry,사육
-K|prof_ab_husbandry_a,"우량 번식(한배 새끼 수 +1, 물고기 목표 체중 +25%)"
-K|prof_ab_husbandry_b,"풍성한 수확(물고기 체중 +20%, 도축 시 추가 고기 1개)"
+K|prof_cat_husbandry,사육·양식
+K|prof_ab_husbandry_a,"우량 번식(한 번에 태어나는 새끼 수 +1, 물고기 목표 체중 +25%)"
+K|prof_ab_husbandry_b,"풍성한 수확(물고기 체중 +20%, 도축 시 고기 부위 1개 추가)"
 K|prof_feat_markup,판매가 인상 ({0})
 K|prof_feat_purchase,매입 ({0})
 K|prof_feat_pricing,가격 조정 ({0})
@@ -142,7 +142,7 @@ K|prof_msg_locked,전문화 분야가 고정되었습니다. 다시 선택하려
 K|prof_msg_master_taken,이미 마스터 분야를 선택했습니다.
 K|prof_msg_choice5_done,{0}: 전문화 분야를 {1}(으)로 설정했습니다.
 K|prof_msg_choice10_done,{0}: 마스터 분야를 {1}(으)로 설정했습니다.
-K|prof_line_markup,흥정
+K|prof_line_markup,판매가 인상
 K|prof_line_supply,매입
 K|prof_line_unique,고유
 K|prof_cal_title,{0} · 숙련도 Lv{1}/10 · 포인트 {2}
@@ -158,11 +158,11 @@ K|prof_cal_crowd,고객 증가 (Lv5)
 K|prof_cal_crowd_tip,이 분류의 구매 고객이 매일 1명 추가로 방문합니다(일반 고객 방문 후).\nLv5 필요. 언제든 다시 선택할 수 있습니다.
 K|prof_cal_source,공급자 증가 (Lv5)
 K|prof_cal_source_tip,이 분류의 공급자가 매일 1명 추가로 방문합니다(일반 고객 방문 후).\nLv5 필요. 언제든 다시 선택할 수 있습니다.
-K|prof_cal_pricing,가격 우대 (Lv5)
+K|prof_cal_pricing,가격 조정 (Lv5)
 K|prof_cal_pricing_tip,"판매가 +12%, 매입가 -12%\nLv5 필요. 언제든 다시 선택할 수 있습니다."
-K|prof_cal_premium,고급 물자 보급 (Lv10)
-K|prof_cal_premium_tip,이 분류의 누적 판매액이 800에 도달할 때마다 다음 개점 시 물자 상자가 배송됩니다.\nLv10 필요
-K|prof_cal_empire,상업 제국 (Lv10)
+K|prof_cal_premium,고급 보급 (Lv10)
+K|prof_cal_premium_tip,이 분류의 누적 판매액 800마다 다음 개점 시 물자 상자가 배송됩니다.\nLv10 필요
+K|prof_cal_empire,무역 제국 (Lv10)
 K|prof_cal_empire_tip,"판매가 +15%, 매입가 -15%\nLv10 필요"
 K|prof_cal_ability,고유 능력 (Lv10)
 K|prof_cal_ability_tip,해당 분류의 고유 능력 두 가지 중 하나(A 또는 B)를 선택할 수 있습니다.\nLv10 필요
