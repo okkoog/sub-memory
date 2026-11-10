@@ -11,9 +11,9 @@ K|sec_material,재료
 K|sec_weapon,무기
 K|sec_security,보안
 K|sec_lottery,복권
-K|sec_plant,식물
-K|sec_husbandry,축산
-K|sec_food,식품
+K|sec_plant,재배
+K|sec_husbandry,사육·양식
+K|sec_food,섭취 효과
 K|sec_bio,생물
 K|sec_brew,양조
 K|sec_module,모듈
@@ -47,7 +47,7 @@ K|cfg_scale_tip,100%는 게임 기본 설명 창과 같은 크기입니다. 다�
 K|cfg_price_size,가격 글자 크기(%)
 K|cfg_price_size_tip,감정서의 큰 가격 글씨 크기입니다. 100%는 본문 크기와 같으며 기본값은 220%입니다.
 K|cfg_mods_column,보조 열 분리 기준(줄)
-K|cfg_mods_column_tip,"'모드'와 '기타' 항목의 합계가 이 줄 수를 넘으면 오른쪽에 별도 열로 표시합니다. 기본값 8, 0이면 끕니다. 감정서가 화면보다 길 때는 0이어도 분리됩니다."
+K|cfg_mods_column_tip,"'모드'와 '기타' 항목의 합계가 설정한 줄 수를 넘으면 오른쪽에 별도 열로 표시합니다. 기본값은 8줄이며, 0으로 설정하면 줄 수 기준의 분리를 끕니다. 다만 감정서가 화면보다 길어지면 0이어도 별도 열로 분리됩니다."
 K|cfg_opacity,감정서 불투명도(%)
 K|cfg_opacity_tip,"낮출수록 감정서 뒤쪽이 더 잘 보이지만 글씨도 함께 흐려집니다. 기본값 100%, 최저 40%."
 K|cfg_paper,내 물품 감정서 색상
@@ -78,7 +78,7 @@ K|cfg_tree_tip,줄 앞에 ├ └ 연결선을 표시합니다.
 K|cfg_liquid_panel,액체 계기판
 K|cfg_liquid_panel_tip,눈금이 있는 액체 용기의 계기판을 게임 기본 창 옆에 표시하고 용량 막대도 이쪽으로 옮깁니다. 그래픽 진행 막대를 켜야 합니다.
 K|cfg_debug,항목 분류 내역 로그
-K|cfg_debug_tip,새 물품에 마우스를 올리면 항목이 어떻게 분류됐는지 F8 콘솔에 기록합니다. 잘못 묶인 항목을 찾을 때 사용하세요.
+K|cfg_debug_tip,처음 보는 물품에 마우스를 올리면 설명 항목이 어떻게 분류됐는지 F8 콘솔에 기록합니다. 잘못 분류된 항목을 찾을 때 사용하세요.
 K|preview_own,내 물품
 K|preview_not_owned,소유하지 않은 물품
 K|sample_name,수분 포집기
