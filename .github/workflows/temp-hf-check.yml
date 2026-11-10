@@ -1,0 +1,25 @@
+name: Temp test Hugging Face model access
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/temp-hf-check.yml]
+permissions: {contents: read}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: HEAD model metadata
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import requests
+          urls=["https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-en-ko/resolve/main/config.json",
+          "https://huggingface.co/facebook/nllb-200-distilled-600M/resolve/main/config.json",
+          "https://api.mymemory.translated.net/get?q=Take%20this%20GPU&langpair=en%7Cko"]
+          for u in urls:
+            try:
+              r=requests.get(u,timeout=15)
+              print(u.split('/')[2],r.status_code,len(r.content),r.text[:90])
+            except Exception as e:print(repr(e))
+          PY
