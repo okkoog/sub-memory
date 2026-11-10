@@ -61,18 +61,18 @@
 | 343 | 7 | `item_microwave_name` | Second-hand Microwave | 二手微波炉 | 중고 전자레인지 | 유지 | 중고 전자레인지 아이템명 |
 | 344 | 8 | `item_microwave_desc` | The only "stove" in the shop. Double-click to open, plug in a battery, put a meal pack inside and it heats itself: ding, done. Efficiency modules save power; quality modules make the food taste more freshly cooked. | 本店唯一的“灶台”。双击打开，插电池，料理包放进去自动加热，叮一声就好。效率模组省电，质量模组让菜更像现炒的。 | 가게에 있는 유일한 '조리 기구'입니다. 더블클릭해 열고 배터리를 연결한 다음 밀키트를 넣으면 알아서 데워 줍니다. 띵! 완성입니다. 효율 모듈은 전력 소모를 줄이고, 품질 모듈은 음식이 갓 조리된 것처럼 느껴지게 합니다. | 유지 | 더블클릭·배터리·모듈 효능과 의성어 모두 확인 |
 | 345 | 9 | `item_terminal_name` | Order Terminal | 下单机 | 주문 단말기 | 유지 | 물품 발주 단말기의 명칭 |
-| 346 | 10 | `item_terminal_desc` | Right-click to order. Meal packs and equipment arrive in the cabinet next morning. Packing kits, colas and sausages go straight into the packing station stock counters. | 右键打开进货单。料理包和设备次日送到后厨柜，打包材料、小可乐、淀粉肠次日直接补入打包台计数。 | 우클릭해 물품을 주문합니다. 밀키트와 장비는 다음 날 아침 보관함으로 배송됩니다. 포장 세트, 콜라, 소시지는 포장 작업대의 재고에 바로 추가됩니다. | 유지 | 포장 재료도 다음 날 재고에 입고된다는 시점 보완 |
+| 346 | 10 | `item_terminal_desc` | Right-click to order. Meal packs and equipment arrive in the cabinet next morning. Packing kits, colas and sausages go straight into the packing station stock counters. | 右键打开进货单。料理包和设备次日送到后厨柜，打包材料、小可乐、淀粉肠次日直接补入打包台计数。 | 우클릭해 물품을 주문합니다. 밀키트와 장비는 다음 날 아침 보관함으로 배송됩니다. 포장 세트, 콜라, 소시지도 다음 날 아침 포장 작업대의 재고에 추가됩니다. | **수정** | 포장 재료도 다음 날 재고에 입고된다는 시점 보완 |
 | 347 | 11 | `item_kit_name` | Disposable Packing Kit | 一次性打包材料 | 일회용 포장 세트 | 유지 | 포장 한 회분에 쓰는 일회용 세트 명칭 |
-| 348 | 12 | `item_kit_desc` | One kit packs one takeout portion. Put as many kits on the counter as the courier has portions; they turn into guochao takeout bags on hand-off. | 一套 = 一份外卖的包装。骑手要几份，就往柜台放几套，交餐时变成国潮外卖打包袋。 | 배달 음식 1인분을 포장할 때마다 세트 하나가 필요합니다. 배달 기사가 가져갈 음식 수만큼 작업대에 올려 두면, 음식을 건네줄 때 배달 봉투로 바뀝니다. | 유지 | 원문 counter와 작업대를 혼동한 위치 수정 |
+| 348 | 12 | `item_kit_desc` | One kit packs one takeout portion. Put as many kits on the counter as the courier has portions; they turn into guochao takeout bags on hand-off. | 一套 = 一份外卖的包装。骑手要几份，就往柜台放几套，交餐时变成国潮外卖打包袋。 | 배달 음식 1인분을 포장할 때마다 세트 하나가 필요합니다. 배달 기사가 가져갈 인분 수만큼 포장 세트를 카운터에 올려 두면, 음식을 건넬 때 궈차오풍 배달 봉투로 바뀝니다. | **수정** | 원문 counter와 작업대를 혼동한 위치 수정 |
 | 349 | 13 | `item_kit_flavor` | Contains: a black plastic Spongy Bob spoon, chopsticks, a bad toothpick, a napkin, a guochao takeout bag and a home-made "No Pre-made Food" box. | 内含：海棉宝宝黑色塑料小软勺、筷子、劣质牙签、餐巾纸、国潮外卖包装袋、自制“绝无预制菜”饭盒。 | 구성품: 검은색 플라스틱 '스펀지 밥' 숟가락, 젓가락, 싸구려 이쑤시개, 냅킨, 궈차오풍 배달 봉투, 수제 '미리 만든 음식 아님' 포장 상자. | 유지 | 스펀지 밥 패러디와 부속품 목록·풍자 유지 |
 | 350 | 14 | `item_bag_name` | Guochao Takeout Bag | 国潮外卖打包袋 | 궈차오풍 배달 봉투 | 유지 | 궈차오풍 포장 가방의 명칭 |
-| 351 | 15 | `item_bag_desc` | Packed takeout. Place the dishes the courier ordered on the counter and accept the offer to hand them over. | 已打包的成品外卖。把骑手要的菜放到柜台，接受报价即可交餐。 | 포장된 배달 음식입니다. 배달 기사가 주문한 음식을 작업대에 올려놓고 제안을 수락하면 건네줄 수 있습니다. | 유지 | 전달 장소가 포장 작업대 아닌 카운터임을 복구 |
+| 351 | 15 | `item_bag_desc` | Packed takeout. Place the dishes the courier ordered on the counter and accept the offer to hand them over. | 已打包的成品外卖。把骑手要的菜放到柜台，接受报价即可交餐。 | 포장된 배달 음식입니다. 배달 기사가 주문한 음식을 카운터에 올려놓고 제안을 수락하면 건네줄 수 있습니다. | **수정** | 전달 장소가 포장 작업대 아닌 카운터임을 복구 |
 | 352 | 16 | `item_cola_name` | Bootleg Mini Cola | 劣质小可乐 | 짝퉁 미니 콜라 | 유지 | 짝퉁 미니 콜라 이름과 품질 뉘앙스 |
 | 353 | 17 | `item_cola_desc` | Origin unknown. Customers who liked the shop add one for 1 credit; it costs you 2. | 来源不明。点赞店铺的食客 1 信用点加购，进价 2。 | 출처는 불명입니다. 가게를 마음에 들어 한 손님은 1크레딧을 추가로 내고 콜라를 주문하지만, 가게의 원가는 2크레딧입니다. | 유지 | 손님 판매 1크레딧·매입원가 2크레딧 관계 |
 | 354 | 18 | `item_sausage_name` | Bootleg Starch Sausage | 劣质淀粉肠 | 짝퉁 전분 소시지 | 유지 | 짝퉁 전분 소시지의 명칭 |
 | 355 | 19 | `item_sausage_desc` | Ingredients unknown. Customers who liked the shop add one for 1 credit; it costs you 2. | 用料不明。点赞店铺的食客 1 信用点加购，进价 2。 | 원재료는 불명입니다. 가게를 마음에 들어 한 손님은 1크레딧을 추가로 내고 소시지를 주문하지만, 가게의 원가는 2크레딧입니다. | 유지 | 소시지 추가 판매가 1·원가 2 유지 |
 | 356 | 20 | `item_manual_name` | Takeout Counter Notes | 外卖档口出餐手册 | 배달 작업대 안내서 | 유지 | 배달 작업 안내 문서 제목 |
-| 357 | 21 | `item_manual_desc` | Hand-offs, cooking, the microwave, likes and pre-made meals, page by page. | 出餐、做法、微波炉、点赞、预制熟食，一页一页写着。 | 음식 전달, 조리법, 전자레인지, 호감도, 미리 만들어 둔 음식에 관한 내용을 한 장씩 설명합니다. | 유지 | 플랫폼 좋아요를 호감도로 바꿨던 표현 교정 |
+| 357 | 21 | `item_manual_desc` | Hand-offs, cooking, the microwave, likes and pre-made meals, page by page. | 出餐、做法、微波炉、点赞、预制熟食，一页一页写着。 | 음식 전달, 조리법, 전자레인지, 좋아요, 미리 만들어 둔 음식에 관한 내용을 한 장씩 설명합니다. | **수정** | 플랫폼 좋아요를 호감도로 바꿨던 표현 교정 |
 | 358 | 22 | `item_sign_name` | "Freshly Wok-Fried" Sign | “现炒”灯牌 | ‘갓 볶은 요리’ 간판 | 유지 | 현장 볶음 간판 특유의 광고 어투 |
 | 359 | 23 | `item_sign_desc` | Put it in the display case. Couriers see it from afar: each day there is a 75% chance one more courier comes (taking one of the day's regular customer slots). | 放进橱窗，骑手远远就能看见：每天有 75% 的机会多来一位骑手（占当天普通顾客的名额）。 | 진열장에 놓으세요. 배달 기사들이 멀리서도 간판을 알아봅니다. 매일 75% 확률로 배달 기사가 한 명 더 방문하지만, 그날 방문할 일반 손님 한 명을 대신합니다. | 유지 | 진열장·75%·일반 손님 슬롯 대체 조건 |
 | 360 | 24 | `raw_desc_microwave` | Pre-made meal pack. Heat it in the microwave and it's done. | 预制料理包。放进微波炉加热就算做好。 | 미리 만들어 둔 밀키트입니다. 전자레인지에 데우기만 하면 완성됩니다. | 유지 | 완제품 밀키트는 전자레인지에 데우는 방식 |
@@ -147,12 +147,12 @@
 | 429 | 93 | `nightlog_dealer_paid` | The dealer came by: {0} poppy husks in the trash can, {1}¢ taken. | 毒贩来过：{0} 个罂粟壳在垃圾桶里，取走了 {1}¢。 | 마약상 방문: 쓰레기통에 양귀비 껍질 {0}개를 놓고 {1}크레딧을 가져갔습니다. | 유지 | 마약상 방문·양귀비 껍질 수·금액 |
 | 430 | 94 | `nightlog_dealer_broke` | The dealer came by, but you didn't have {0}¢. He left with nothing. | 毒贩来过，你的账上不够 {0}¢，他空手走了。 | 마약상이 찾아왔지만 {0}크레딧이 없어 빈손으로 돌아갔습니다. | 유지 | 돈이 부족해 물건을 못 놓고 간 마약상 |
 | 431 | 95 | `dish_fried_rice_fancy` | Deep Space Wok-Hei Golden Fried Rice | 深空猛火锅气黄金炒饭 | 심우주 강불 직화 황금 볶음밥 | 유지 | 심우주 직화 황금 볶음밥 광고명 |
-| 432 | 96 | `dish_fried_rice_truth` | Freeze-thawed Soy Protein Crumb Microwave Rice Pack | 冻融大豆蛋白碎微波米饭包 | 냉동 대두 단백질 가루 전자레인지 밥 | 유지 | 대두단백 부스러기를 냉동·해동했다는 공정 복구 |
+| 432 | 96 | `dish_fried_rice_truth` | Freeze-thawed Soy Protein Crumb Microwave Rice Pack | 冻融大豆蛋白碎微波米饭包 | 냉동·해동한 대두단백 부스러기를 넣은 전자레인지 밥 팩 | **수정** | 대두단백 부스러기를 냉동·해동했다는 공정 복구 |
 | 433 | 97 | `dish_braised_chicken_fancy` | Old Street Firewood Braised Chicken | 老街古法柴火黄焖鸡 | 옛 골목 장작불 황먼지(중국식 닭고기 조림) | 유지 | 중국식 황먼지의 음식 종류·양념 특징 보존 |
 | 434 | 98 | `dish_braised_chicken_truth` | Chicken Skin and Bone Shard Frozen Grease Pack | 鸡皮与碎骨冷冻重油料理包 | 닭 껍질과 부서진 뼈로 만든 냉동 기름 범벅 밀키트 | 유지 | 닭 껍질·뼛조각·기름진 냉동 팩의 반전 |
 | 435 | 99 | `dish_pepper_beef_fancy` | Volcano Lava Marbled Black Pepper Beef | 火山熔岩雪花黑椒牛柳 | 화산 용암 마블링 흑후추 소고기 | 유지 | 마블링 흑후추 소고기의 과장된 광고명 |
-| 436 | 100 | `dish_pepper_beef_truth` | Water-injected Tenderizer-glued Restructured Meat Slices | 注水嫩肉粉重组胶水肉片 | 물 주입 육연화제 접착 재구성 고기 조각 | 유지 | 물 주입·연육제·접착제로 재구성한 고기 공정 명확화 |
-| 437 | 101 | `dish_basa_fish_fancy` | Aged-jar Fresh-boiled Sour Soup Eco Basa Fish | 老坛现熬酸汤生态巴沙鱼 | 오래 숙성한 항아리의 새콤한 국물로 끓인 신선한 바사 생선 | 유지 | 생선이 신선하다는 뜻 아닌 갓 끓였다는 뜻으로 교정 |
+| 436 | 100 | `dish_pepper_beef_truth` | Water-injected Tenderizer-glued Restructured Meat Slices | 注水嫩肉粉重组胶水肉片 | 물을 주입하고 연육제·접착제로 뭉친 재구성 고기 조각 | **수정** | 물 주입·연육제·접착제로 재구성한 고기 공정 명확화 |
+| 437 | 101 | `dish_basa_fish_fancy` | Aged-jar Fresh-boiled Sour Soup Eco Basa Fish | 老坛现熬酸汤生态巴沙鱼 | 묵힌 항아리의 새콤한 국물로 갓 끓인 바사 생선 | **수정** | 생선이 신선하다는 뜻 아닌 갓 끓였다는 뜻으로 교정 |
 | 438 | 102 | `dish_basa_fish_truth` | Phosphate-soaked Swollen Mixed Fish Fillet | 磷酸盐泡发膨胀杂鱼柳 | 인산염에 불려 부풀린 잡어살 | 유지 | 인산염에 불려 부풀린 잡어살의 실제 재료 |
 | 439 | 103 | `dish_braised_pork_rice_fancy` | Grandma's Secret Handmade Braised Pork Rice | 外婆秘制手作酱汁卤肉饭 | 할머니 비법 수제 소스 돼지고기 덮밥 | 유지 | 할머니 수제 양념 돼지고기 덮밥 광고명 |
 | 440 | 104 | `dish_braised_pork_rice_truth` | Soy Fiber Protein with Shelf-stable Fat Pack | 大豆拉丝蛋白拼凑常温油脂包 | 대두 섬유 단백질과 상온 보관 지방을 섞은 식품 팩 | 유지 | 대두 섬유 단백질과 상온 지방의 조합 |
@@ -162,7 +162,7 @@
 | 444 | 108 | `dish_pork_chop_truth` | Pressed Offcut Meat and Starch Patty | 边角料碎肉压制淀粉合成肉饼 | 자투리 고기를 압착한 전분 혼합 패티 | 유지 | 자투리 고기·전분 압착 패티의 실체 |
 | 445 | 109 | `dish_angus_beef_fancy` | Italian Slow-stewed Fresh Tomato Angus Beef | 意式慢炖鲜茄安格斯牛肉 | 이탈리아식 생토마토 앵거스 소고기 스튜 | 유지 | 이탈리아식 토마토 앵거스 소고기 광고명 |
 | 446 | 110 | `dish_angus_beef_truth` | Industrial Tomato Paste with Beef Offal Bits | 工业番茄膏调和牛杂碎料包 | 산업용 토마토 페이스트와 소 내장 부스러기 팩 | 유지 | 산업용 토마토 페이스트·소 내장 부스러기 |
-| 447 | 111 | `dish_mapo_tofu_fancy` | Sichuan Hand-chopped Authentic Mapo Tofu | 川味手剁地道麻婆豆腐 | 정통 쓰촨식 손질 마파두부 | 유지 | 손수 잘게 다졌다는 원문 조리법 의미 복구 |
+| 447 | 111 | `dish_mapo_tofu_fancy` | Sichuan Hand-chopped Authentic Mapo Tofu | 川味手剁地道麻婆豆腐 | 손수 다져 만든 정통 쓰촨식 마파두부 | **수정** | 손수 잘게 다졌다는 원문 조리법 의미 복구 |
 | 448 | 112 | `dish_mapo_tofu_truth` | Dextrin-thickened Chili Oil Okara Soft Can | 淀粉糊精勾芡红油豆渣软罐头 | 덱스트린으로 걸쭉하게 만든 고추기름 비지 통조림 | 유지 | 덱스트린·고추기름·비지의 저질 재료 |
 | 449 | 113 | `dish_mini_pizza_fancy` | Fresh-baked Stretchy Loaded Lava Mini Pizza | 现烤拉丝多肉爆浆小披萨 | 갓 구워 치즈가 쭉 늘어나는 육즙 가득 미니 피자 | 유지 | 치즈가 늘어나는 미니 피자 광고명 |
 | 450 | 114 | `dish_mini_pizza_truth` | Rubbery Synthetic Cheese Frozen Dough Disc | 橡胶感仿生人造干酪冷冻生胚 | 고무 같은 인조 치즈를 얹은 냉동 피자 반죽 | 유지 | 고무 같은 인조 치즈·냉동 반죽 실체 |
@@ -175,7 +175,7 @@
 | 457 | 121 | `dish_maw_soup_fancy` | Nourishing Clay-pot Fish Maw Chicken Broth | 滋补现炖原盅花胶土鸡羹 | 뚝배기에 갓 끓인 보양 생선 부레 닭고기탕 | 유지 | 생선 부레·닭고기 보양탕 메뉴명 |
 | 458 | 122 | `dish_maw_soup_truth` | Gelatin and Xanthan Gum Thickened Flavored Soup | 食用明胶与黄原胶增稠调味浓汤 | 젤라틴과 잔탄검으로 걸쭉하게 만든 향 첨가 수프 | 유지 | 젤라틴·잔탄검을 넣은 조미 수프의 실체 |
 | 459 | 123 | `dish_coconut_milk_fancy` | Dawn Handmade Silky Rich Coconut Milk | 晨曦手作丝滑浓醇生椰乳 | 아침에 직접 만든 진하고 부드러운 코코넛 밀크 | 유지 | 아침 수제 코코넛 밀크 광고명 |
-| 460 | 124 | `dish_coconut_milk_truth` | Creamer and Hydrogenated Oil Instant Mix | 植脂末与氢化植物油勾兑冲剂 | 커피 프리머와 경화 식물성 기름을 섞은 즉석 분말 음료 | 유지 | 식물성 크리머의 의미를 특정 커피용 프리머와 분리 |
+| 460 | 124 | `dish_coconut_milk_truth` | Creamer and Hydrogenated Oil Instant Mix | 植脂末与氢化植物油勾兑冲剂 | 식물성 크리머와 경화 식물성 기름을 섞은 즉석 음료 분말 | **수정** | 식물성 크리머의 의미를 특정 커피용 프리머와 분리 |
 | 461 | 125 | `dish_pearl_milk_fancy` | Handmade Brown Sugar Boba Fresh Milk | 现熬手作黑糖珍珠鲜牛乳 | 갓 만든 흑당 타피오카 펄 우유 | 유지 | 흑당 타피오카 펄 신선 우유의 광고명 |
 | 462 | 126 | `dish_pearl_milk_truth` | Industrial Gum Fake Pearls in Creamer Water | 工业食用胶人造圆子配奶精水 | 공업용 식용 검으로 만든 가짜 펄과 프리머 물 | 유지 | 식용 검으로 가짜 펄을 만든 음료 |
 | 463 | 127 | `dish_lemon_ice_fancy` | Chef's Hand-smashed Lemon Ice Drink | 主厨手作暴打柠香冰饮 | 주방장이 직접 으깬 상큼한 레몬 얼음 음료 | 유지 | 주방장이 직접 으깬 레몬 음료 광고명 |
@@ -184,8 +184,8 @@
 | 466 | 130 | `dish_plum_drink_truth` | Caramel Color and Corn Syrup Concentrate | 焦糖色素与果葡糖浆浓缩勾兑液 | 캐러멜 색소와 액상과당 농축액을 섞은 음료 | 유지 | 캐러멜 색소와 액상과당으로 만든 농축 음료 |
 | 467 | 131 | `dish_orange_juice_fancy` | Fresh-squeezed NFC Sunshine Orange Juice | 鲜榨NFC阳光甜橙原汁 | 갓 짜낸 NFC 햇살 오렌지 주스 | 유지 | NFC 과즙이라는 광고 요소 유지 |
 | 468 | 132 | `dish_orange_juice_truth` | Orange Flavoring and Thickener Fruity Water | 橙味香料与增稠剂调配果味水 | 오렌지 향료와 증점제로 만든 과일맛 물 | 유지 | 오렌지 향료와 증점제로 만든 가짜 주스 |
-| 469 | 133 | `dish_tuna_onigiri_fancy` | Polar Deep-sea Tuna Energy Rice Ball | 极地深海金枪鱼元气饭团 | 극지 심해 참치 영양 주먹밥 | 유지 | 원문의 Energy를 영양이 아닌 활력으로 맞춤 |
-| 470 | 134 | `dish_tuna_onigiri_truth` | Mystery Fish Paste in a Lethal Dose of Cheap Mayo | 杂鱼泥拌致死量廉价沙拉酱 | 정체불명 잡어 반죽에 값싼 마요네즈를 잔뜩 섞은 주먹밥 | 유지 | 값싼 마요네즈의 치사량 과장 표현 복구 |
+| 469 | 133 | `dish_tuna_onigiri_fancy` | Polar Deep-sea Tuna Energy Rice Ball | 极地深海金枪鱼元气饭团 | 극지 심해 참치 활력 주먹밥 | **수정** | 원문의 Energy를 영양이 아닌 활력으로 맞춤 |
+| 470 | 134 | `dish_tuna_onigiri_truth` | Mystery Fish Paste in a Lethal Dose of Cheap Mayo | 杂鱼泥拌致死量廉价沙拉酱 | 정체불명 잡어살 반죽에 치사량 수준의 싸구려 마요네즈를 버무린 주먹밥 | **수정** | 값싼 마요네즈의 치사량 과장 표현 복구 |
 | 471 | 135 | `item_board_name` | Online Menu Board | 线上菜单板 | 온라인 메뉴판 | 유지 | 배달 플랫폼 메뉴판 아이템명 |
 | 472 | 136 | `item_board_desc` | The platform storefront menu. Right-click: tick the dishes on sale, and star one (Pick) to guarantee an order the next morning. More dishes listed, more couriers. Changes apply next morning. | 平台店铺的菜单。右键打开：勾选上架的菜，打一颗星（店长推荐）就保证明早有一单点它。上架越多，平台推流越好，来的骑手越多。改动明早生效。 | 배달 플랫폼에 표시되는 가게 메뉴입니다. 우클릭해서 판매할 요리를 선택하고 하나에 별표(추천)를 지정하세요. 추천한 요리는 다음 날 아침 주문이 반드시 들어옵니다. 등록한 메뉴가 많을수록 배달 기사도 많이 찾아옵니다. 변경 사항은 다음 날 아침 적용됩니다. | 유지 | 판매 등록·별표 추천·다음 날 주문 보장 설명 |
 | 473 | 137 | `item_mw_note_name` | Note | 说明纸条 | 안내문 | 유지 | 전자레인지 설명 쪽지 제목 |
@@ -205,7 +205,7 @@
 | 487 | 151 | `board_auto_tip` | Lists dishes with at least this much stock and unlists the rest. Stock counts packs, cooked meals, packed bags and terminal orders on the way. Takes effect tomorrow. | 库存够这么多份的菜上架，不够的下架。库存算料理包、熟食、外卖袋，加上下单机已订未到的货。明早生效。 | 재고가 지정 수량 이상인 메뉴는 등록하고 부족한 메뉴는 내립니다. 재고에는 밀키트, 조리된 음식, 포장된 배달 음식, 배송 중인 주문 물품이 모두 포함됩니다. 다음 날부터 적용됩니다. | 유지 | 배송 중 발주품도 재고에 포함·익일 적용 |
 | 488 | 152 | `board_auto_done` | Listed {0} dishes by stock ({1} added, {2} removed). Takes effect tomorrow. | 按库存上架了 {0} 样（新上 {1}、下架 {2}），明早生效。 | 재고 기준으로 메뉴 {0}개를 등록했습니다 (신규 등록 {1}개, 판매 해제 {2}개). 내일부터 적용됩니다. | 유지 | 신규 등록·해제 건수 및 익일 적용 |
 | 489 | 153 | `board_auto_none` | No dish has {0} in stock, so the menu was left as is. Restock at the terminal or lower the threshold. | 没有一样菜的库存够 {0} 份，菜单没动。先去下单机补货，或者把门槛调低。 | 재고가 {0}개 이상인 메뉴가 없어 기존 메뉴를 유지했습니다. 주문 단말기에서 재고를 보충하거나 기준 수량을 낮추세요. | 유지 | 조건에 맞는 재고가 없으면 메뉴 변경 안 함 |
-| 490 | 154 | `courier_need_bags` | Put the packed dishes for this order on the counter. | 把订单对应的成品外卖放到柜台。 | 주문에 맞는 포장 음식을 작업대에 올려 주세요. | 유지 | 주문 음식을 올릴 장소가 카운터인 점 복구 |
+| 490 | 154 | `courier_need_bags` | Put the packed dishes for this order on the counter. | 把订单对应的成品外卖放到柜台。 | 주문에 맞는 포장 음식을 카운터에 올려 주세요. | **수정** | 주문 음식을 올릴 장소가 카운터인 점 복구 |
 | 491 | 155 | `item_packing_name` | Packing Station | 打包台 | 포장 작업대 | 유지 | 음식 포장 설비의 고유 아이템명 |
 | 492 | 156 | `item_packing_desc` | Drag cooked food onto the station. One packing kit becomes a takeout bag in the cabinet. Double-click to view kits, colas and sausages. Order add-ons are deducted automatically at pickup. | 把做好的菜拖到台上，消耗 1 份打包材料生成外卖，送回后厨柜。双击查看材料、小可乐和淀粉肠库存，订单加购在交餐时自动扣除。 | 조리된 음식을 작업대에 끌어다 놓으면 포장 세트 1개를 소비하고 배달 음식을 만든 뒤 조리실 보관함에 넣습니다. 더블클릭하면 포장 세트, 콜라, 소시지 재고를 확인할 수 있습니다. 추가 주문품은 전달할 때 자동으로 차감됩니다. | 유지 | 조리식 투입·포장재 소모·보관함 이동 |
 | 493 | 157 | `packing_intake` | Pack | 打包 | 포장하기 | 유지 | 포장 작업 실행 버튼 |
@@ -239,11 +239,11 @@
 | 521 | 185 | `dealer_cooldown` | Stock hasn't arrived yet. Call back in {0} days. | 东西还没到，{0} 天后再打。 | 아직 물건이 도착하지 않았다. {0}일 뒤에 다시 전화해. | 유지 | 발주 대기기간 {0}일 안내 |
 | 522 | 186 | `item_poppy_seed_name` | Poppy Seed | 罂粟籽 | 양귀비 씨앗 | 유지 | 양귀비 씨앗의 물품명 |
 | 523 | 187 | `upgrade_more_title` | More Set Meals | 更多的套餐 | 추가 세트 메뉴 | 유지 | 추가 세트 메뉴 해금 제목 |
-| 524 | 188 | `upgrade_more_desc` | Needs the platform first. Adds fried chicken, skewers, pork knuckle rice and roast pork rice, with an air fryer, a torch and a light-meal station, and opens uptown light-meal orders. Comes with a manual. | 要先入驻外卖平台。上新炸鸡、肉串、猪脚饭、烤肉饭，送空气炸锅、喷枪和轻食操作台，开通上城轻食单。附一本说明书。 | 먼저 배달 플랫폼에 입점해야 합니다. 치킨, 꼬치, 족발 덮밥, 구운 돼지고기 덮밥을 추가하고 에어프라이어, 토치, 저칼로리 식사 작업대를 지급합니다. 상층구역용 가벼운 식사 주문도 열립니다. 안내서가 포함됩니다. | 유지 | light meal은 저칼로리 단정 아닌 가벼운 식사로 통일 |
+| 524 | 188 | `upgrade_more_desc` | Needs the platform first. Adds fried chicken, skewers, pork knuckle rice and roast pork rice, with an air fryer, a torch and a light-meal station, and opens uptown light-meal orders. Comes with a manual. | 要先入驻外卖平台。上新炸鸡、肉串、猪脚饭、烤肉饭，送空气炸锅、喷枪和轻食操作台，开通上城轻食单。附一本说明书。 | 먼저 배달 플랫폼에 입점해야 합니다. 치킨, 꼬치, 족발 덮밥, 구운 돼지고기 덮밥을 추가하고 에어프라이어, 토치, 가벼운 식사 작업대를 지급합니다. 상층구역용 가벼운 식사 주문도 열립니다. 안내서가 포함됩니다. | **수정** | light meal은 저칼로리 단정 아닌 가벼운 식사로 통일 |
 | 525 | 189 | `item_manual_more_name` | More Set Meals | 更多的套餐 | 추가 세트 메뉴 | 유지 | 새 세트 메뉴 안내서 제목 |
 | 526 | 190 | `item_manual_more_desc` | New dishes, the air fryer, the torch, uptown light meals and heartburn, on two pages. | 新菜、空气炸锅、喷枪、上城轻食和烧心值，两页写完。 | 새로운 요리, 에어프라이어, 토치, 상층구역용 가벼운 식사와 속쓰림 지수를 두 페이지로 설명합니다. | 유지 | 신규 메뉴·기기·속쓰림 지수 안내 범위 |
 | 527 | 191 | `dish_fried_chicken_fancy` | American Finger-Lickin' Juicy Crunch Chicken | 美式吮指多汁大脆鸡 | 미국식 손가락까지 핥게 되는 바삭하고 촉촉한 치킨 | 유지 | 미국식 바삭한 치킨의 과장 메뉴명 |
-| 528 | 192 | `dish_fried_chicken_truth` | Frozen Starch-Battered Chicken Nugget Pack | 冷冻淀粉裹粉鸡块包 | 전분 튀김옷을 입힌 냉동 닭고기 덩어리 팩 | 유지 | 전분 튀김옷을 입힌 냉동 치킨너겟임을 명시 |
+| 528 | 192 | `dish_fried_chicken_truth` | Frozen Starch-Battered Chicken Nugget Pack | 冷冻淀粉裹粉鸡块包 | 전분 튀김옷을 입힌 냉동 치킨너겟 팩 | **수정** | 전분 튀김옷을 입힌 냉동 치킨너겟임을 명시 |
 | 529 | 193 | `dish_skewer_fancy` | Heritage Fruitwood Charcoal Mega Skewers | 老字号炭火果木大肉串 | 전통 과일나무 숯불 왕꼬치 | 유지 | 과일나무 숯불에 구운 고기 꼬치 광고명 |
 | 530 | 194 | `dish_skewer_truth` | Frozen Half-Done Restructured Meat Skewers | 冷冻半成品重组肉串 | 재구성 고기로 만든 냉동 반조리 꼬치 | 유지 | 반조리 재구성 육류의 냉동 꼬치 |
 | 531 | 195 | `dish_pork_knuckle_fancy` | Longjiang Overlord Braised Pork Knuckle Rice | 隆江霸王老卤爆油猪脚饭 | 룽장식 진한 양념 족발 덮밥 | 유지 | 룽장식 족발 덮밥의 지역명 유지 |
@@ -260,15 +260,15 @@
 | 542 | 206 | `dish_pork_chop_pitch` | Sous-vide at 62°C for 4 hours, trimmed lean. The protein answer for gym people. | 62°C 舒肥 4 小时，精修去脂，健身人士的蛋白质答案。 | 62°C에서 4시간 동안 수비드로 익힌 뒤 지방을 정리했습니다. 운동하는 사람을 위한 단백질 식단! | 유지 | 62°C·4시간·지방 제거 정보 모두 유지 |
 | 543 | 207 | `dish_mapo_tofu_upper` | Chili-Oil-Free Steamed Silken Tofu Slim Bowl | 去红油·清蒸嫩豆腐纤体碗 | 고추기름을 뺀 순두부 찜 다이어트볼 | 유지 | 고추기름 없는 순두부 다이어트 메뉴명 |
 | 544 | 208 | `dish_mapo_tofu_pitch` | No chili oil, all bean fragrance. Sichuan flavor you can eat on a diet. | 去红油、留豆香，纤体期也能放心吃的川味。 | 고추기름은 빼고 콩의 향은 살렸습니다. 다이어트 중에도 마음 놓고 즐기는 쓰촨의 맛. | 유지 | 콩 향과 쓰촨풍의 맛을 강조한 문구 |
-| 545 | 209 | `dish_fried_chicken_upper` | Polar Mist Oil-Free High-Fiber Air-Crisped Chicken Strips | 极地冷雾·无油高纤空气炸原汁鸡柳 | 극지 냉무 가공 무기름 고단백 에어프라이어 치킨 스트립 | 유지 | High-Fiber를 고단백으로 잘못 옮긴 부분 교정 |
+| 545 | 209 | `dish_fried_chicken_upper` | Polar Mist Oil-Free High-Fiber Air-Crisped Chicken Strips | 极地冷雾·无油高纤空气炸原汁鸡柳 | 극지 냉무 공법으로 만든 무기름 고섬유질 에어프라이어 치킨 스트립 | **수정** | High-Fiber를 고단백으로 잘못 옮긴 부분 교정 |
 | 546 | 210 | `dish_fried_chicken_pitch` | 360° hot-air degreasing tech. Zero frying, high-protein muscle fuel. | 360° 热风气流脱脂技术，0 油炸，高蛋白肌能轻食。 | 360° 열풍으로 기름을 제거하는 기술! 튀김 기름 없이 단백질은 듬뿍. | 유지 | 열풍 360°·무유·고단백 강조 광고문 |
-| 547 | 211 | `dish_skewer_upper` | Rock-Seared Grain-Fed Native Protein Skewers with Heritage Mineral Salt | 岩烧·谷饲原生蛋白炙烤串配古法矿盐 | 암반구이 곡물 사육 고단백 꼬치와 전통 미네랄 소금 | 유지 | 고단백이 아닌 곡물 사육 원육 꼬치 의미 복구 |
+| 547 | 211 | `dish_skewer_upper` | Rock-Seared Grain-Fed Native Protein Skewers with Heritage Mineral Salt | 岩烧·谷饲原生蛋白炙烤串配古法矿盐 | 암반에 구운 곡물 사육 고기 꼬치와 전통 미네랄 소금 | **수정** | 고단백이 아닌 곡물 사육 원육 꼬치 의미 복구 |
 | 548 | 212 | `dish_skewer_pitch` | No fussy spices. Only Himalayan pink salt to awaken the wild within. | 摒弃繁杂香料，仅以喜马拉雅粉盐唤醒食材原始野性。 | 복잡한 향신료는 쓰지 않습니다. 히말라야 핑크 소금으로 재료 본연의 야성을 깨웁니다. | 유지 | 히말라야 핑크 소금의 원재료 강조 |
 | 549 | 213 | `dish_pork_knuckle_upper` | Dawn Slow-Simmered Collagen Glow Light Set | 晨光慢熬·胶原蛋白焕颜轻食定食 | 새벽까지 천천히 끓인 콜라겐 광채 가벼운 정식 | 유지 | 새벽 조리·콜라겐 미용 메뉴명 |
 | 550 | 214 | `dish_pork_knuckle_pitch` | 72-hour fat separation, rich in bioactive collagen peptides. An anti-aging light bowl. | 72 小时油脂分离，富含高活性胶原多肽，抗老养颜轻盈碗。 | 72시간 동안 지방을 분리해 생리활성 콜라겐 펩타이드가 풍부합니다. 젊음을 위한 가벼운 한 그릇. | 유지 | 72시간 지방 분리·콜라겐 펩타이드 광고 |
 | 551 | 215 | `dish_roast_pork_rice_upper` | Japanese-Style Seared Lean Low-Fat Energy Bowl | 和风炙烧·赤身低脂能量碗 | 일본식 직화 저지방 살코기 에너지볼 | 유지 | 일본식 직화 살코기 저지방 덮밥 이름 |
 | 552 | 216 | `dish_roast_pork_rice_pitch` | A precision calorie set built on a low-carb metabolic model. The elite's morning fuel. | 精准控卡定食，低碳水化合物代谢模型，精英晨间充能首选。 | 정밀한 열량 계산과 저탄수화물 대사 설계를 반영한 식사. 엘리트의 아침 에너지 충전식! | 유지 | 열량·저탄수 설계·아침 식사 홍보 내용 |
-| 553 | 217 | `raw_desc_airfry` | Pre-made pack. Crisp it in the air fryer. The microwave won't take it. | 预制料理包。放进空气炸锅吹熟，微波炉不收。 | 미리 만든 밀키트입니다. 에어프라이어로 바삭하게 데우세요. 전자레인지에는 넣을 수 없습니다. | 유지 | 에어프라이어에서 데우기 아닌 바삭하게 조리 |
+| 553 | 217 | `raw_desc_airfry` | Pre-made pack. Crisp it in the air fryer. The microwave won't take it. | 预制料理包。放进空气炸锅吹熟，微波炉不收。 | 미리 만든 밀키트입니다. 에어프라이어에서 바삭하게 조리하세요. 전자레인지에는 넣을 수 없습니다. | **수정** | 에어프라이어에서 데우기 아닌 바삭하게 조리 |
 | 554 | 218 | `method_airfry` | Air fry | 空气炸 | 에어프라이어 조리 | 유지 | 에어프라이어 조리 방식 표제 |
 | 555 | 219 | `item_fryer_name` | Second-hand Air Fryer | 二手空气炸锅 | 중고 에어프라이어 | 유지 | 중고 에어프라이어의 아이템명 |
 | 556 | 220 | `item_fryer_desc` | The "deep fryer" for fried chicken and roast pork rice. Double-click to open, insert a battery, drop a pack in and it's done in two seconds. Uses more power than the microwave. | 炸鸡、烤肉饭的“油炸锅”。双击打开，插电池，料理包放进去吹两秒就好。比微波炉费电。 | 치킨과 구운 돼지고기 덮밥용 '튀김기'입니다. 더블클릭해 열고 배터리를 넣은 뒤 밀키트를 집어넣으면 2초 만에 완성됩니다. 전자레인지보다 전력을 더 많이 씁니다. | 유지 | 2초 가열·배터리 삽입·전자레인지 대비 소비전력 |
@@ -276,7 +276,7 @@
 | 558 | 222 | `item_af_note_desc` | Put fried chicken or roast pork rice packs in and they crisp automatically in two seconds. Cold ones can go back in. Everything else goes in the microwave. | 炸鸡、烤肉饭的料理包放进来，自动吹熟：亮两秒就好。凉了的也能回炉。别的菜请找微波炉。 | 치킨이나 구운 돼지고기 덮밥 밀키트를 넣으면 2초 만에 바삭하게 조리됩니다. 식은 음식도 다시 데울 수 있습니다. 다른 음식은 전자레인지를 사용하세요. | 유지 | 치킨·구운 돼지고기만 사용·식은 음식 재가열 |
 | 559 | 223 | `item_torch_name` | Baking Torch | 烘焙喷枪 | 요리용 토치 | 유지 | 요리용 토치 아이템명 |
 | 560 | 224 | `item_torch_desc` | Drag onto hot skewers or roast pork rice to sear two "charcoal" marks. Each use burns a little butane. Buy cans at the terminal. | 拖到热好的肉串、烤肉饭上，燎出两道“炭火”焦印。每次用掉一点丁烷，丁烷在下单机买。 | 따뜻한 꼬치나 구운 돼지고기 덮밥에 끌어다 놓으면 '숯불' 자국 두 줄을 그을립니다. 사용할 때마다 부탄가스가 조금 소모되며 가스통은 주문 단말기에서 구매할 수 있습니다. | 유지 | 숯불 자국 두 줄·부탄 소모·발주 경로 |
-| 561 | 225 | `item_light_name` | Light-Meal Station | 轻食操作台 | 저칼로리 식사 작업대 | 유지 | 저칼로리라는 미확정 조건 제거한 설비명 |
+| 561 | 225 | `item_light_name` | Light-Meal Station | 轻食操作台 | 가벼운 식사 작업대 | **수정** | 저칼로리라는 미확정 조건 제거한 설비명 |
 | 562 | 226 | `item_light_desc` | Double-click to open and put a water jug or bottle in the water slot. Drag a cooked dish with an uptown version onto it: rinse off the chili oil (300 ml each, any water works), blot it dry and box it in black-gold wood, all at once. The boxed meal goes to the cabinet. | 双击打开，水壶或水瓶放进水格。有上城版的熟食拖上来：冲掉红油（每份 300 毫升，什么水都行）、吸油纸压干、装进黑金木盒，一次搞定，木盒外卖送回后厨柜。 | 더블클릭해 열고 물통이나 물병을 물 칸에 넣으세요. 상층구역용 버전이 있는 조리된 음식을 끌어다 놓으면 고추기름을 씻고 (1인분당 물 300ml, 물 종류는 무관), 기름을 흡수지로 닦아 검정·금색 나무 상자에 포장합니다. 완성된 도시락은 조리실 보관함으로 이동합니다. | 유지 | 물 용기·300mL·기름 제거·나무상자 포장 |
 | 563 | 227 | `item_box_bag_name` | Boxed Light Meal | 木盒外卖 | 상층구역용 나무 상자 도시락 | 유지 | 상층구역용 포장 도시락의 아이템명 |
 | 564 | 228 | `item_box_bag_desc` | A black-gold biodegradable wood box with raffia, twine and an organic certificate. Only uptown orders take it. | 黑金降解木盒，拉菲草、麻绳、有机认证一样不少。只有上城单收。 | 라피아 장식, 노끈, 유기농 인증까지 갖춘 검정·금색 생분해성 나무 상자입니다. 상층구역 주문에만 사용됩니다. | 유지 | 생분해 상자·라피아·노끈·유기농 인증 |
@@ -312,8 +312,8 @@
 | 594 | 258 | `event_price_war_news` | Takeout platforms start a price war | 外卖平台打响价格战 | 배달 플랫폼들이 가격 전쟁을 시작하다 | 유지 | 배달 플랫폼 가격 전쟁 뉴스 제목 |
 | 595 | 259 | `event_price_war_display` | Takeout price war | 外卖价格战 | 배달 가격 전쟁 | 유지 | 배달 플랫폼 가격 전쟁 이벤트명 |
 | 596 | 260 | `event_price_war_desc` | Several takeout platforms are burning cash on "miracle coupons" station-wide. Stores in the subsidy plan are flooded with orders; the rest are empty. | 几家外卖平台同时砸钱发“神券”，满 10 减 9.9 刷屏全站。加入补贴计划的店流量暴涨，没加入的门可罗雀。 | 여러 배달 플랫폼이 우주 정거장 전역에 '초특가 쿠폰'을 뿌리며 출혈 경쟁을 벌입니다. 보조금 프로그램에 참여한 가게에는 주문이 몰리고, 나머지 가게는 한산해졌습니다. | 유지 | 역 전역의 쿠폰 보조금·참여 여부 영향 |
-| 597 | 261 | `nightlog_price_war` | The takeout platforms announced a price war starting next Monday (day {0}). A platform investigator will visit tomorrow about the coupon plan. Stock up meanwhile. | 外卖平台宣布下周一（第 {0} 天）打响价格战。明天平台调查员会上门调研，让你决定加不加入神券计划。趁这几天把货囤好。 | 배달 플랫폼들이 다음 주 월요일({0}일 차)에 가격 전쟁을 시작한다고 발표했습니다. 내일 플랫폼 조사원이 쿠폰 프로그램 참여 여부를 확인하러 옵니다. 미리 재고를 쌓아 두세요. | 유지 | 조사관이 참여 의사를 묻는다는 선택권 명확화 |
-| 598 | 262 | `nightlog_price_war_end` | The price war is over. Platform cut and traffic are back to normal. | 价格战结束了，平台抽成和推流恢复原样。 | 가격 전쟁이 끝났습니다. 플랫폼 수수료와 주문량이 정상으로 돌아왔습니다. | 유지 | 플랫폼 수수료·유입량 정상화로 의미 보완 |
+| 597 | 261 | `nightlog_price_war` | The takeout platforms announced a price war starting next Monday (day {0}). A platform investigator will visit tomorrow about the coupon plan. Stock up meanwhile. | 外卖平台宣布下周一（第 {0} 天）打响价格战。明天平台调查员会上门调研，让你决定加不加入神券计划。趁这几天把货囤好。 | 배달 플랫폼들이 다음 주 월요일({0}일 차)에 가격 전쟁을 시작한다고 발표했습니다. 내일 플랫폼 조사원이 찾아와 쿠폰 프로그램 참여 의사를 묻습니다. 미리 재고를 쌓아 두세요. | **수정** | 조사관이 참여 의사를 묻는다는 선택권 명확화 |
+| 598 | 262 | `nightlog_price_war_end` | The price war is over. Platform cut and traffic are back to normal. | 价格战结束了，平台抽成和推流恢复原样。 | 가격 전쟁이 끝났습니다. 플랫폼 수수료와 주문 유입이 정상 수준으로 돌아왔습니다. | **수정** | 플랫폼 수수료·유입량 정상화로 의미 보완 |
 | 599 | 263 | `investigator_name` | Platform Investigator | 平台调查员 | 배달 플랫폼 조사관 | 유지 | 배달 플랫폼 조사관의 직함 |
 | 600 | 264 | `investigator_1` | Hello, I'm your platform account manager. The platform starts a price war next Monday (day {0}). I'm surveying the stores first. | 您好，我是外卖平台的商家经理。平台下周一（第 {0} 天）要打价格战，我先来各家店调研一下。 | 안녕하세요, 플랫폼의 가맹점 담당자입니다. 다음 주 월요일({0}일 차)부터 가격 전쟁이 시작되어 가게마다 사전 조사를 진행하고 있습니다. | 유지 | 가맹점 담당자가 다음 주 월요일 사전 조사하러 방문 |
 
