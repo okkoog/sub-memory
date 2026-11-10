@@ -1,0 +1,331 @@
+{
+  "mod_id": "3830031787",
+  "source_count": 664,
+  "translated_count": 664,
+  "unique_fragments": 703,
+  "failed_fragments": 12,
+  "failed_examples": [
+    {
+      "source": "Order complete. Received {0} credits for this dish.",
+      "draft": "주문이 완료됐습니다. 이 요리에 대한 크레딧을 받았습니다.",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "I'd like to try {0} today",
+      "draft": "오늘 시도해 보겠습니다.",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "Delivered 1/2 dishes. Received {0} credits.",
+      "draft": "1/2장 배달, 0점 수여",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "[Fishing Cuisine] Core directory registration incomplete. Expansion patches removed to prevent partial item registration. Harmony ID={0}",
+      "draft": "[낚시 요리] 코어 디렉토리 등록이 불완전. 일부 항목 등록을 방지하기 위해 확장 패치를 제거했습니다.",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "Ready: {0}.",
+      "draft": "준비 됐어",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "[Fishing Cuisine] Patches installed: {0} successful, {1} skipped, {2} failed; Harmony ID={3}.",
+      "draft": "[낚시 요리] 패치 설치: {0} 성공, {1} 건너뛰기, {2} 실패.",
+      "expected": {
+        "{0}": 1,
+        "{1}": 1,
+        "{2}": 1,
+        "{3}": 1
+      },
+      "actual": {
+        "{0}": 1,
+        "{1}": 1,
+        "{2}": 1
+      }
+    },
+    {
+      "source": "I'll take this one. {0} I'm still waiting for {1}.",
+      "draft": "이쪽은 내가 가져갈게요",
+      "expected": {
+        "{0}": 1,
+        "{1}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "[Fishing Cuisine] Wrote {0} cuisine entries to item manager catalog (replaced {1} old entries).",
+      "draft": "[낚시 요리] 항목 관리자 카탈로그에 요리 항목을 작성했습니다 (옛 항목을 대체했습니다).",
+      "expected": {
+        "{0}": 1,
+        "{1}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "Niorun",
+      "draft": "",
+      "expected": {},
+      "actual": {}
+    },
+    {
+      "source": "please make me some {0}",
+      "draft": "좀 해줘요",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    },
+    {
+      "source": "I'd like it prepared by {0}",
+      "draft": "{0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0} {0}",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {
+        "{0}": 29
+      }
+    },
+    {
+      "source": "Issued by the Chefs Association. Once active on display, use nighttime services to book diners.\nReputation: {0}",
+      "draft": "셰프 협회에서 발급한. 전시가 활성화되면, 야간 서비스를 사용하여 식사 예약하십시오.",
+      "expected": {
+        "{0}": 1
+      },
+      "actual": {}
+    }
+  ],
+  "untranslated_keys": [
+    "fce_1f7f55943c9f01648b6e7cf2164993d64a818932ccfcd6684dcb2c31fed7b158",
+    "fce_e110bce36765f161cb24bedd4cbc876bf75214865cf4ab999a36fa91d57c4c0d",
+    "fce_215cc9dd68aa53c7f7c337c9b9d5e14e01befb806b5cc01d3797ea3b43f03254",
+    "fce_c04e8ee8b15067c912661f0bcdb63be528c0d6fd7b787d7d558a6f4424d89d86",
+    "fce_8362a00a7b12638ff31dcf9f43248bb3653f39fb51c8ce834372e47518b11aad",
+    "fce_757bebaedc4828d730d378a120e91f8f028bbede4f4e26df7c6d8c7043722a58",
+    "fce_c0bfcb847113ab5a8ddf504047eb1ab552e7b87eb2e322ec451c795841f2ff49",
+    "fce_c71dfbd41c1cbbc83da7bab60392e7197abab2a4026820e6f585f38fd00783e7",
+    "fce_1e9f1ee13acf1bfa0885d673a1180275519db0d236c6e31fa66af0ae1a7daccc",
+    "fce_d4f48046f23ff78bc156092217944b70b45e8779094af1cbba5ac85b6f9052d6",
+    "fce_8ae3edfb8f511239824986b3eab2cb355d305179600dd59ce43b3fcb70aaa2e6",
+    "fce_0b0a364ec14394518dcfc639c8aa37558cd6baaeb0962c65a506b0dedb14f230"
+  ],
+  "seconds": 821,
+  "samples": [
+    {
+      "key": "fce_164b617d67f7ec9f8638f98c6e2ae77326f3a10359e43739aae5947222aba705",
+      "source": "[Fishing Cuisine] Dedicated cooking page creation failed; original page retained: {0}",
+      "ko_draft": "[낚시 요리] 전용 요리 페이지 제작 실패; 원래 페이지 보존: {0}"
+    },
+    {
+      "key": "fce_0ead414d6659452f11253cca0f87eadf0a30d77e0774cceac2673c329635fc1b",
+      "source": "The station needs fish, fillets, dried fish or raw meat as a main ingredient. Only supported extras and fishing-pack seasonings are accepted.",
+      "ko_draft": "이 역은 생선, 필레, 건조된 생선 또는 원료 육류를 주요 재료로 필요로 한다. 지원된 부가품과 낚시 포장 매료품만 받아들여진다."
+    },
+    {
+      "key": "fce_0ebb30147fa1abbc3aaace1beedf58f973a13a496fc02467b02a17bcdf3a772a",
+      "source": "Thick, tough flesh; dry then slow-stew.",
+      "ko_draft": "두꺼운 고기, 건조한 후 느린 튀김."
+    },
+    {
+      "key": "fce_30b88dae37f996fb9ccf12b30582597bdb2b45b6fee78b405b8c3ff7ee173f91",
+      "source": "Large Portion",
+      "ko_draft": "큰 부분"
+    },
+    {
+      "key": "fce_f3bdf5b0f7917841cd70d6733a6beccd4ad8df89682303a1703244ed32434eee",
+      "source": "Azure Wave Fillet",
+      "ko_draft": "Azure 웨이브 필렛"
+    },
+    {
+      "key": "fce_4e3492b38ce39a3d9675e6e86e9be7ea9e9ec8849d9943fb67da6002448701bd",
+      "source": "Separate the meat from the shell, use the shell as a dish, and grill with fish oil, chili and cooking wine until fragrant.",
+      "ko_draft": "껍질에서 고기를 분리하고, 껍질을 요리로 사용하고, 생선 기름, 칠리, 그리고 향기가 될 때까지 요리 와인을 그릴 수 있습니다."
+    },
+    {
+      "key": "fce_e0dd08690f4a26d6562f50a94a119ab7ed1a3c1c2a7a34ee04b8295b177581b5",
+      "source": "[Fishing Cuisine] Not enough inventory space to give: {0}",
+      "ko_draft": "[낚시 요리] 충분한 인벤토리 공간은 제공되지 않습니다: {0}"
+    },
+    {
+      "key": "fce_45e55b5209c5b2f9940ea909d630582927775a89fb44f7effe3188d1ead654d9",
+      "source": "Plump crab meat, suited to grilling, unsuitable for sashimi.",
+      "ko_draft": "덩어리 크랩 고기, 그릴링에 적합하지, 사시미에 적합하지 않습니다."
+    },
+    {
+      "key": "fce_ff425686399f1969b1c40a3fd3251a722fa62f6873f200e0b8fbe1ef0e20bff2",
+      "source": "Rainbow Fillet",
+      "ko_draft": "레인보우 필레"
+    },
+    {
+      "key": "fce_a021f14d7ce362860b17950b0f5edfe75245197fd969fea21ca4684e43f61db6",
+      "source": "Customer Shelves",
+      "ko_draft": "고객 래프트"
+    },
+    {
+      "key": "fce_965cd824b01e1d1f2e00240df755a126f279996b9225fec26709e6ab4748c0a6",
+      "source": "Invalid method",
+      "ko_draft": "유효하지 않은 방법"
+    },
+    {
+      "key": "fce_440e158f14bc42dae35e2494dc6bfedacbe49d66a4be3d117eaf3fe431cc6c92",
+      "source": "The cooking starter kit is currently unavailable.",
+      "ko_draft": "요리의 시작 키트는 현재 사용할 수 없습니다."
+    },
+    {
+      "key": "fce_50d18cab54ec79ce7f1b654c504d0e8f827428259eb7a5df7caf8ff8ad0e5dd4",
+      "source": "Put your certificate in a display case to start welcoming diners.",
+      "ko_draft": "증명서를 전시장에 넣어서 손님들을 환영할 수 있습니다."
+    },
+    {
+      "key": "fce_789fff7b1daa8bd11d9c50f0e5e22fb422f87c6209426094250d3d422bfd6692",
+      "source": "[Fishing Cuisine] Patch failed: {0} → {1}; Harmony ID={2}, priority={3} (default); {4}",
+      "ko_draft": "[낚시 요리] 패치 실패: {0} → {1}; 조화 ID={2}, 우선 순위={3} (장애); {4}"
+    },
+    {
+      "key": "fce_6cfbcdb36273f5fa0604f97b8167c5bf43e33d9c06662a2e5dac5d381267882b",
+      "source": "Flowgold Fillet",
+      "ko_draft": "플로우 골드 필렛"
+    },
+    {
+      "key": "fce_c57dfd9418e27901fa6bd7ab121d84fe9669bf2ad49a39d11a0286ed69dc7e65",
+      "source": "Rich from oil packing; good for crisp frying at high heat",
+      "ko_draft": "기름 포장으로 풍부하고, 높은 열에서 튀김에 적합하다"
+    },
+    {
+      "key": "fce_8d7b97f0df91302be88e47ccfaaeeb87b112021f5289f6fe996e0eaddf9a3d69",
+      "source": "Unowned Cookbook Reading",
+      "ko_draft": "소유 하지 않은 요리 책 읽기"
+    },
+    {
+      "key": "fce_740b745555dcdc80757f8d648b14e7c6fc4ca2956bd314c778ff821c611f37ab",
+      "source": "Could not remove the dish from the counter. Please try again.",
+      "ko_draft": "책상에서 접시를 꺼내지 못했어요. 다시 시도해 보세요."
+    },
+    {
+      "key": "fce_6694a182124cd23e5731fb5ed009a6a3eed3ddf637ffc11f7e8720709b21cd62",
+      "source": "Electric Eel",
+      "ko_draft": "전기 오징어"
+    },
+    {
+      "key": "fce_62cec6e98c856be0acd1018d92b2e5863d93713807685f2e5a19e318d82ff607",
+      "source": "Plenty of charcoal aroma, with lightly charred skin. Soy sauce and smoke mingle in skewers that are hard to stop eating.",
+      "ko_draft": "소아 소스와 연기가 섞여서 먹기 힘들죠."
+    },
+    {
+      "key": "fce_0e8fa161027c8c78816df7ad421f7c2f9ecdd94a2cc2e29b99c23311d2ba6326",
+      "source": "Manual Page Navigation",
+      "ko_draft": "매뉴얼 페이지 내비게이션"
+    },
+    {
+      "key": "fce_f522ecb529b4551bebb7f74848fd2d83d0bcfd43161dc5578809eef48c79e435",
+      "source": "[Fishing Cuisine] Failed to check certificate display state: {0}",
+      "ko_draft": "[낚시 요리] 인증서 표시 상태를 확인하지 못했습니다: {0}"
+    },
+    {
+      "key": "fce_bc4d66357a82950592fde3d4cd6fc02836a35f6797bac3a6ca6d0594a9073ba6",
+      "source": "Processed Fish",
+      "ko_draft": "가공 된 물고기"
+    },
+    {
+      "key": "fce_5a48e6d46ca9691e9c905d3d2eb07a32e4d55d588d9a9930e9de17752934e8b9",
+      "source": "Season fillets with cooking wine, then deep-fry in hot fish oil until golden and crisp.",
+      "ko_draft": "기 와인을 넣고 기 필레를 기 후 뜨거운 생선 기름에 튀겨 기 시작하면 황금하고 튀어나오게 됩니다."
+    },
+    {
+      "key": "fce_1f7f55943c9f01648b6e7cf2164993d64a818932ccfcd6684dcb2c31fed7b158",
+      "source": "Order complete. Received {0} credits for this dish.",
+      "ko_draft": "Order complete. Received {0} credits for this dish."
+    },
+    {
+      "key": "fce_d18c6a6d7c9d7b77a6b70757ed9cab6aa859463eb447f21e3f96d4b67ff5a5ed",
+      "source": "[Fishing Cuisine] Cooking failed: {0}",
+      "ko_draft": "[낚시 요리] 요리 실패: {0}"
+    },
+    {
+      "key": "fce_13b9ae3a0a0f95464d5cc3eb9aae28af00147bedeafa17be472aec86bb748d4f",
+      "source": "make it a hearty meal",
+      "ko_draft": "맛있는 식사로 만들어"
+    },
+    {
+      "key": "fce_7c868fd2a298b663ce3b95942b7eb1f20805064eeef80d2d167fa00e0e98b178",
+      "source": "Dried Niorun",
+      "ko_draft": "건조된 Niorun"
+    },
+    {
+      "key": "fce_9f98e38fcb107663832150fbdf7832986470107900747b223cbd5fa18262ba37",
+      "source": "Once made with whole starry fruit, now it makes do with fruit blend. The seasoned blend is poured over a pan-fried steak. Adventurous eaters may find the pairing intriguing.",
+      "ko_draft": "한 번 에는 별 이 가득 한 과 과 과 과 를 사용 하였지만, 지금은 과 과 과 혼합 을 사용 하게 되었습니다. 맛 있는 혼합 을  튀긴 스테이크 에 붓습니다. 모험적 인 먹자 들 은 이 조화 를 흥미롭게 볼 수 있습니다."
+    },
+    {
+      "key": "fce_41c00178d1da53f460ca80102ccca59b2dee017271839f6910f63bb0da820f3e",
+      "source": "[Fishing Cuisine] Ingredient name lookup failed: {0}: {1}",
+      "ko_draft": "[낚시 요리] 재료 이름 검색 실패: {0}: {1}"
+    },
+    {
+      "key": "fce_afabf88f5c6141609048f03c3022c2fa168e07a88b71785edaf7eb950f831e11",
+      "source": "Soy Sauce",
+      "ko_draft": "소아 소스"
+    },
+    {
+      "key": "fce_b821eb85adca4c76f0cfb34e104ced8f6587fa57d89da9e4f924a621de9ea55b",
+      "source": "Come back next week",
+      "ko_draft": "다음 주에 다시 오세요"
+    },
+    {
+      "key": "fce_e110bce36765f161cb24bedd4cbc876bf75214865cf4ab999a36fa91d57c4c0d",
+      "source": "I'd like to try {0} today",
+      "ko_draft": "I'd like to try {0} today"
+    },
+    {
+      "key": "fce_447b849ad705de581c46f9b51b15365e93121e935f5a9b25f362e6bf75cb5464",
+      "source": "[Fishing Cuisine] Failed to prepare ingredient tags: {0}",
+      "ko_draft": "[낚시 요리] 재료 태그를 준비하지 못했습니다: {0}"
+    },
+    {
+      "key": "fce_71f80c5f9acf79edc04f107cd0bcbfdcb30a04eebed7c58e3ed07b714a065a7a",
+      "source": "Electric Eel Fillet",
+      "ko_draft": "전기 앵무새 필레"
+    },
+    {
+      "key": "fce_bc2fba3b93fb0e6a240d61dac9aa0be18be9d051401fb464772f48ecb1a3df91",
+      "source": "Sugar, Soy Sauce",
+      "ko_draft": "설탕, 소아 소스"
+    },
+    {
+      "key": "fce_053a5559cd38dbedc7b26d6a1885e01da4698ee2969efa33790575959e88654d",
+      "source": "Keep the salt balanced",
+      "ko_draft": "소금 을 균형 있게 유지 하십시오"
+    },
+    {
+      "key": "fce_f4cef9b6658516cac46d03c12b35c5124c93173423967e04553ceb2aa1d97499",
+      "source": "Grill",
+      "ko_draft": "그릴"
+    },
+    {
+      "key": "fce_e1878d66d5ff7c9260b7b64e73779c8dc4937a62d860d0b2c37bc897e6260122",
+      "source": "What if you ruin it?\\n...Perhaps don't serve it to a customer just yet.",
+      "ko_draft": "만약 당신이 그것을 망칠 경우?\\n...아마도 아직 고객에게 제공하지 않을 수도 있습니다."
+    },
+    {
+      "key": "fce_742cb88db184e47a2c5f363f66bf8d57d6d2f95a44ddb1fd0a3f89cbd3d0c2f2",
+      "source": "[Fishing Cuisine] Failed to create cooking station window: {0}",
+      "ko_draft": "[낚시 요리] 요리 스테이션 창을 만들지 못했습니다: {0}"
+    }
+  ]
+}
