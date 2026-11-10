@@ -1,0 +1,125 @@
+M|amres.sectioned_tooltips,1
+W|3830180473,1
+K|sec_value,가치
+K|sec_appraisal,감정
+K|sec_power,전력
+K|sec_equipment,장비
+K|sec_machine,기계
+K|sec_condition,상태
+K|sec_liquid,액체
+K|sec_material,재료
+K|sec_weapon,무기
+K|sec_security,보안
+K|sec_lottery,복권
+K|sec_plant,식물
+K|sec_husbandry,축산
+K|sec_food,식품
+K|sec_bio,생물
+K|sec_brew,양조
+K|sec_module,모듈
+K|sec_label,라벨
+K|sec_container,내용물
+K|sec_mods,모드
+K|sec_info,기타
+K|panel_liquid,액체
+K|panel_contents,내용물
+K|ticket_no,감정서 번호 {0}
+K|cfg_enabled,모드 활성화
+K|cfg_enabled_tip,끄면 원래의 물품 설명 창으로 돌아갑니다. 재시작할 필요는 없습니다.
+K|cfg_style,표시 방식
+K|cfg_style_tip,감정서: 종이 감정표 형태. 클래식: 게임 기본 창 안에서 항목별로 묶어 표시합니다.
+K|cfg_show_desc,물품 설명 표시
+K|cfg_show_desc_tip,설명 창 아래쪽의 물품 설명을 표시합니다. 끄면 설명 창이 훨씬 짧아집니다. 두 방식 모두에 적용됩니다.
+K|cfg_show_mods,모드 정보 표시
+K|cfg_show_mods_tip,다른 모드가 추가한 문구를 표시합니다('모드' 항목). 두 방식 모두에 적용됩니다.
+K|cfg_icon,물품 아이콘 표시
+K|cfg_icon_tip,물품 이름 왼쪽에 아이콘을 표시합니다.
+K|cfg_bars,그래픽 진행 막대
+K|cfg_bars_tip,"게임의 텍스트 진행 막대(용량, 충전량 등)를 그래픽 막대로 바꿉니다. 끄면 비율 막대와 액체 계기판도 숨겨집니다."
+K|cfg_fraction_bars,분수형 수치에도 막대 표시
+K|cfg_fraction_bars_tip,내구도처럼 '400/400'으로 표시되는 수치 앞에 비율에 따른 색상 막대를 추가합니다. 그래픽 진행 막대를 켜야 합니다.
+K|cfg_contents_panel,용기 내용물 표시
+K|cfg_contents_panel_tip,잠금·밀봉되지 않은 용기와 기계의 내용물을 아이콘으로 표시합니다. 배터리와 액체는 계기판으로 나타내고 다른 모드가 추가한 내용물 텍스트 목록은 숨깁니다. 클래식 방식에서는 게임 기본 창 옆에 표시합니다.
+K|cfg_content_rows,내용물 표시 최대 행 수
+K|cfg_content_rows_tip,내용물 아이콘을 몇 줄까지 표시할지 정합니다. 나머지는 '+개수' 칸으로 접힙니다.
+K|cfg_scale,감정서 크기(%)
+K|cfg_scale_tip,100%는 게임 기본 설명 창과 같은 크기입니다. 다른 창을 가리면 작게 조정하세요.
+K|cfg_price_size,가격 글자 크기(%)
+K|cfg_price_size_tip,감정서의 큰 가격 글씨 크기입니다. 100%는 본문 크기와 같으며 기본값은 220%입니다.
+K|cfg_mods_column,보조 열 분리 기준(줄)
+K|cfg_mods_column_tip,"'모드'와 '기타' 항목의 합계가 이 줄 수를 넘으면 오른쪽에 별도 열로 표시합니다. 기본값 8, 0이면 끕니다. 감정서가 화면보다 길 때는 0이어도 분리됩니다."
+K|cfg_opacity,감정서 불투명도(%)
+K|cfg_opacity_tip,"낮출수록 감정서 뒤쪽이 더 잘 보이지만 글씨도 함께 흐려집니다. 기본값 100%, 최저 40%."
+K|cfg_paper,내 물품의 감정서 색상
+K|cfg_paper_tip,내가 소유한 물품에 표시되는 감정서의 종이 색상입니다.
+K|cfg_paper_not_owned,남의 물품 감정서 색상
+K|cfg_paper_not_owned_tip,소유하지 않은 물품의 감정서 종이 색상입니다. 기본값은 분홍색으로 내 물품과 구분하기 쉽습니다.
+K|cfg_show_prices,가격 세부 정보 표시
+K|cfg_show_prices_tip,"판매가 아래의 작은 줄에 정가, 칸당 가치 등을 표시합니다. 끄면 판매가만 남지만 '잠김' 같은 안내는 계속 나옵니다."
+K|cfg_show_footer,바코드 및 감정서 번호 표시
+K|cfg_show_footer_tip,감정서 아래쪽에 바코드와 감정서 번호를 표시합니다.
+K|cfg_tag_bg,분류 태그 배경색
+K|cfg_tag_bg_tip,감정서에 색상 라벨을 붙인 것처럼 분류 태그 뒤에 옅은 색을 칠합니다. 끄면 글씨만 색상이 바뀝니다.
+K|cfg_tag_color_tip,이 분류 태그 그룹의 색상입니다. 기본값은 Item Details 모드의 색상과 같습니다.
+K|cfg_tag_medical,의료품·약물
+K|cfg_tag_water,물·정수
+K|cfg_tag_alcohol,주류
+K|cfg_tag_luxury,사치품·예술품
+K|cfg_tag_food,식품·씨앗
+K|cfg_tag_household,생활용품
+K|cfg_tag_weapon,무기·탄약·방어구
+K|cfg_tag_tool,도구·기계·재료
+K|cfg_tag_contraband,밀수품
+K|cfg_tag_other,기타 분류
+K|cfg_max_width,최대 너비(반각 문자 수)
+K|cfg_max_width_tip,텍스트의 최대 너비를 반각 문자 수로 정합니다. 한중일 전각 문자는 2칸으로 계산합니다. 긴 줄은 줄바꿈하거나 값이 다음 줄로 넘어갑니다.
+K|cfg_tree,트리 연결선 표시
+K|cfg_tree_tip,줄 앞에 ├ └ 연결선을 표시합니다.
+K|cfg_liquid_panel,액체 계기판
+K|cfg_liquid_panel_tip,눈금이 있는 액체 용기의 계기판을 게임 기본 창 옆에 표시하고 용량 막대도 이쪽으로 옮깁니다. 그래픽 진행 막대를 켜야 합니다.
+K|cfg_debug,항목 분류 내역 로그
+K|cfg_debug_tip,새 물품에 마우스를 올리면 항목이 어떻게 분류됐는지 F8 콘솔에 기록합니다. 잘못 묶인 항목을 찾을 때 사용하세요.
+K|preview_own,내 물품
+K|preview_not_owned,소유하지 않은 물품
+K|sample_name,수분 포집기
+K|sample_tags,[기계]
+K|sample_not_owned,미소유
+K|sample_price,예상 가치
+K|sample_base,기본 가치
+K|sample_buy,구매 가격
+K|sample_output,생산량
+K|sample_output_value,946mL/일
+K|sample_power,필요 전력
+K|sample_power_value,3/일
+K|sample_desc,용기를 연결하면 물을 생산합니다. 전력이 필요합니다.
+K|sample_tag_household,[생활용품]
+K|sample_tag_contraband,[밀수품]
+K|sample_stolen,도난품(수배 위험도 14%)
+K|sample_stamp,규제 물품
+K|preview_classic,클래식 방식
+K|gauge_power,전지
+K|gauge_liquid,액체
+K|row_status,상태
+K|sample_battery,전지
+K|gene_header,유전자
+K|gene_expressed,발현
+K|gene_a,A
+K|gene_b,B
+K|cfg_collapse,일부 항목 접기
+K|cfg_collapse_tip,"감정서에는 중요한 정보만 남깁니다. 아래에서 선택한 항목은 펼치기 키를 누르는 동안만 모두 보이고, 손을 떼면 다시 접힙니다. 아래쪽에 접힌 항목 안내가 표시됩니다."
+K|cfg_expand_key,펼치기 키
+K|cfg_expand_key_tip,이 키를 누르고 있으면 감정서 전체가 표시되고 놓으면 다시 접힙니다.
+K|cfg_collapse_prices,가격 세부 정보 접기
+K|cfg_collapse_prices_tip,"판매가 아래의 작은 줄(정가, 칸당 가치 등)을 접습니다. 큰 판매가와 매입가는 유지됩니다."
+K|cfg_collapse_contents,내용물 접기
+K|cfg_collapse_contents_tip,용기와 기계의 내용물 아이콘을 접습니다. 배터리와 액체 탱크의 계기판은 유지됩니다.
+K|cfg_collapse_desc,물품 설명 접기
+K|cfg_collapse_desc_tip,물품 고유 설명문을 접습니다.
+K|cfg_collapse_mods,모드 정보 접기
+K|cfg_collapse_mods_tip,다른 모드가 추가한 '모드' 항목과 모드 출처 줄을 접습니다.
+K|fold_view,{0} 펼치기
+K|fold_sep,","
+K|fold_prices,가격 정보
+K|fold_contents,내용물
+K|fold_desc,물품 설명
+K|fold_mods,모드 정보
