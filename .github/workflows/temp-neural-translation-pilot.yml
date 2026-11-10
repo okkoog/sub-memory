@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
       - name: Install translation model runtime
         run: |
           python3 -m pip install --quiet "transformers==4.46.3" "sentencepiece" "torch" "sacremoses"
