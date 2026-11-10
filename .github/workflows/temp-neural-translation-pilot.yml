@@ -1,0 +1,37 @@
+name: Temp local neural translation pilot
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/temp-neural-translation-pilot.yml]
+permissions: {contents: read}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Install translation model runtime
+        run: |
+          python3 -m pip install --quiet "transformers==4.46.3" "sentencepiece" "torch" "sacremoses"
+      - name: Translate samples from original mod strings
+        env:
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          python3 - <<'PY'
+          import torch,time
+          from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+          torch.set_num_threads(2)
+          model_id="Helsinki-NLP/opus-mt-tc-big-en-ko"
+          st=time.time()
+          tok=AutoTokenizer.from_pretrained(model_id)
+          model=AutoModelForSeq2SeqLM.from_pretrained(model_id)
+          model.eval()
+          samples=["Hello. We meet again.","The shop is now open.","Takeout Platform Listing",
+                   "The station needs fish, fillets, dried fish or raw meat as a main ingredient. Only supported extras and fishing-pack seasonings are accepted.",
+                   "I have a black seed or two. Want to look at those separately? No obligation.",
+                   "Put it on a rack, install a graphics card, and switch it on to start earning cryptocurrency."]
+          inputs=tok(samples,return_tensors="pt",padding=True,truncation=True,max_length=256)
+          with torch.no_grad():res=model.generate(**inputs,max_new_tokens=256,num_beams=4)
+          out=tok.batch_decode(res,skip_special_tokens=True)
+          print("MODEL_LOAD_AND_INFER_SECONDS",int(time.time()-st))
+          for x,y in zip(samples,out):print("RESULT|",x,"|",y)
+          PY
