@@ -64,7 +64,7 @@ K|prof_ab_water_a,가짜 물 (물의 품질에 따라 가격 변동)
 K|prof_ab_water_b,"비축 (구매가 -80%, 물 구매 고객 예산 +200%)"
 K|prof_ab_brewing_a,고급 양조 (주류 판매가 +{0}%)
 K|prof_ab_brewing_b,고속 양조 (발효 속도 증가)
-K|prof_ab_material_a,비축 (공학/일반 물품 구매가 {0}%
+K|prof_ab_material_a,비축 (공학/잡화 매입가 {0}%, 공학품 매입 시 {1}% 확률로 특제 신경 모듈 증정)
 K|prof_ab_material_b,장인품 (공학 물품 판매가 +{0}%)
 K|prof_ab_contraband_a,세탁 (밀수품 범죄 수치 -30%)
 K|prof_ab_contraband_b,암시장 인맥 (하루 장물상 손님 +3명)
@@ -91,9 +91,9 @@ K|prof_cfg_craft_tip,장인품: 공학 물품 판매가 보너스
 K|prof_cfg_stock_tip,비축: 구매가 비율 (음수일수록 저렴)
 K|prof_cfg_stock_mod_tip,비축: 공학 물품 구매 시 신경 모듈을 받을 확률
 K|prof_toast_panel_open_failed,숙련도 패널을 열지 못했습니다: {0}
-K|prof_toast_reset_cd,초기화 재사용 대기 중
-K|prof_toast_reset_done,이 카테고리 초기화
-K|prof_toast_reset_all_done,모든 카테고리 초기화
+K|prof_toast_reset_cd,초기화 대기 중: {0}일 남음
+K|prof_toast_reset_done,이 카테고리 초기화 완료: {0}포인트 반환 (다음 초기화까지 7일)
+K|prof_toast_reset_all_done,모든 카테고리 초기화 완료: {0}포인트 반환
 K|prof_toast_crate,고급 보급: {0} 분야의 보급품이 도착했습니다.
 K|prof_toast_fence,암시장 인맥: 오늘 장물상 손님이 {0}명 더 찾아옵니다.
 K|prof_toast_gift,공학 특전: {0} 추가 획득
@@ -103,7 +103,7 @@ K|prof_toast_ability_locked,고유 능력은 이미 확정되었습니다. 다�
 K|prof_toast_sampling,무료 시식: 판매자가 식품 {0}개를 덤으로 줬습니다.
 K|prof_toast_module,비축: 판매자에게서 {0} 1개를 덤으로 받았습니다.
 K|prof_toast_gene,긍정 특성 획득: {0} R{1}
-K|prof_nightly_customers,오늘 다시 방문한 손님: 일반 손님 {0}명
+K|prof_nightly_customers,오늘의 재방문 고객: 손님 {0}명, 물품 공급자 {1}명
 K|prof_cat_appraisal,감정
 K|prof_cfg_appraise_fee,감정사의 안목: 레벨당 수수료
 K|prof_cfg_appraise_fee_tip,레벨당 감정 서비스 수수료 증가량
