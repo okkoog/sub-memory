@@ -116,14 +116,18 @@ compiler_debug,Prototipo del compilador de módulos + 2 discos de compilación
 compiler_output,Salida
 compiler_manual_name,Instrucciones del compilador de módulos
 compiler_manual_short,"El compilador de módulos permite grabar, extraer, copiar y mejorar efectos. Los módulos especiales habilitan otras funciones.\nConsulta la información de la máquina para ver qué hará a continuación."
-compiler_manual_text,"Grabar: coloca un disco grabado en el puerto de entrada y un módulo con espacio libre suficiente en la ranura objetivo. Enciende la máquina para grabar el efecto.\nExtraer: coloca un disco en blanco en el puerto de exportación y un módulo con efectos compilables en la ranura objetivo. Enciende la máquina para extraer un efecto al azar.\nCopiar: coloca un disco grabado en la entrada y uno en blanco en la exportación. Deja vacía la ranura objetivo y enciende la máquina.\nMejorar: coloca dos discos con el mismo efecto y nivel. Deja vacía la ranura objetivo y enciende la máquina para mejorar el disco de exportación hasta el nivel III.\n[Efectos de los módulos]\nLa eficiencia afecta al consumo de energía.\nEl rendimiento afecta a la velocidad de trabajo.\nLa calidad afecta a la probabilidad de éxito (coeficiente: 0,25)."
+compiler_manual_text,"Grabar: coloca un disco grabado en el puerto de entrada y un módulo con espacio libre suficiente en la ranura objetivo. Enciende la máquina para grabar el efecto.\nSobrescribir: coloca un disco grabado en el puerto de entrada y un módulo con el mismo efecto, pero de distinto nivel, en la ranura objetivo. Enciende la máquina para sustituir el nivel del efecto, ya sea para aumentarlo o reducirlo.\nExtraer: coloca un disco en blanco en el puerto de exportación y un módulo con efectos compilables en la ranura objetivo. Enciende la máquina para extraer un efecto al azar.\nCopiar: coloca un disco grabado en la entrada y uno en blanco en la exportación. Deja vacía la ranura objetivo y enciende la máquina.\nMejorar: coloca dos discos con el mismo efecto y nivel. Deja vacía la ranura objetivo y enciende la máquina para mejorar el disco de exportación hasta el nivel III.\n[Efectos de los módulos]\nLa eficiencia afecta al consumo de energía.\nEl rendimiento afecta a la velocidad de trabajo.\nLa calidad afecta a la probabilidad de éxito (coeficiente: 0,25)."
 compiler_disk_blank,Disco de compilación de módulos en blanco
 compiler_capacity,Ocupación
 compiler_life,Discos de vida
 compiler_apply,Grabar
 compiler_extract,Extraer
 compiler_cancel,Cancelar
-compiler_duplicate,Este efecto ya está presente.
+compiler_duplicate,Este efecto ya está presente al mismo nivel.
+compiler_next_overwrite_upgrade,Siguiente: sobrescribir para subir de nivel {0} → {1}
+compiler_next_overwrite_downgrade,Siguiente: sobrescribir para bajar de nivel {0} → {1}
+compiler_working_overwrite_upgrade,Sobrescribiendo para subir de nivel: {0} → {1}
+compiler_working_overwrite_downgrade,Sobrescribiendo para bajar de nivel: {0} → {1}
 compiler_full,Grabar este efecto superaría el 100% de ocupación.
 compiler_unknown,Este efecto no se apoya para la compilación.
 compiler_conflict,Los efectos son incompatibles.
@@ -164,7 +168,7 @@ compiler_working_enhance,Mejorando: {0}
 compiler_enhance_risk,Cada intento utiliza una escritura de fuente; los escritos de destino permanecen inalterados.
 compiler_enhanced,La mejora ha logrado.
 compiler_enhance_failed,La mejora ha fallado; el disco de destino está inalterado.
-compiler_learning_desc_level,"Los atributos base positivos empiezan en cero y crecen {0} puntos porcentuales por uso, hasta alcanzar {1} veces su valor original."
+compiler_learning_desc_level,Este módulo conserva sus atributos base iniciales y gana {0} puntos porcentuales tras cada uso. Los atributos base positivos tienen un límite de {1} veces su valor inicial; los negativos pueden mejorar hasta cero.
 compiler_degrading_desc_level,"Los atributos base iniciales se multiplican por {0}, pero los positivos pierden {1} puntos porcentuales por uso."
 compiler_overvolted_desc_level,"Los atributos base iniciales se multiplican por {0}, pero cada uso tiene un {1} % de probabilidad de destruir el módulo."
 compiler_premium_desc,Los atributos base de este módulo aumentan un {0} %.
@@ -172,7 +176,7 @@ compiler_inferior_desc,Los atributos base de este módulo disminuyen un {0} %.
 compiler_receiver_desc,Cada [nodo] adyacente concede a este módulo una bonificación temporal del {0} % a sus atributos.
 compiler_top_desc,"Si el módulo toca el borde superior del compartimento, obtiene una bonificación temporal del {0} %."
 compiler_side_desc,"Si el módulo toca el borde izquierdo del compartimento, obtiene una bonificación temporal del {0} %."
-compiler_learning_desc,"Los atributos base positivos empiezan en cero. Tras cada uso crecen {0} puntos porcentuales, hasta alcanzar {1} veces su valor original."
+compiler_learning_desc,Este módulo conserva sus atributos base iniciales y gana {0} puntos porcentuales tras cada uso. Los atributos base positivos tienen un límite de {1} veces su valor inicial; los negativos pueden mejorar hasta cero.
 compiler_feedback_desc,"Los atributos base iniciales aumentan un 25 %, pero el módulo absorbe temporalmente el {0} % de los atributos base negativos de los [módulos] adyacentes."
 compiler_not_compilable,Este efecto especial no puede ser compilado.
 compiler_fixed_effect,No compilable
@@ -474,7 +478,7 @@ glass_plate_name,Placa de vidrio
 glass_plate_desc,"Una lámina fina y transparente de trozos de cristal refundidos, lista para su procesamiento."
 glass_smelting_module_name,Módulo de fundición de vidrio
 glass_smelting_module_desc,Un módulo diseñado para el horno de fundición.
-glass_smelting_module_effect,Funde 1 fragmento de vidrio para producir 1 placa de vidrio.
+glass_smelting_module_effect,Funde 2 fragmentos de vidrio o 1 botella de cerveza vacía para producir 2 placas de vidrio.
 wine_bottle_chip_name,Chip de impresora 3D ({0} ×{1})
 high_temperature_nozzle_name,Módulo de boquilla de alta temperatura
 high_temperature_nozzle_desc,Permite que la impresora use placas de vidrio para imprimir objetos de vidrio.

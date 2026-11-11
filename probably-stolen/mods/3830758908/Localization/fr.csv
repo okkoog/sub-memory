@@ -116,14 +116,18 @@ compiler_debug,Prototype du compilateur de modules + 2 disques de compilation
 compiler_output,Sortie
 compiler_manual_name,Notice du compilateur de modules
 compiler_manual_short,"Le compilateur de modules permet d’inscrire, d’extraire, de copier et d’améliorer des effets. Des modules spéciaux débloquent d’autres fonctions.\nConsultez l’infobulle de la machine pour voir sa prochaine opération."
-compiler_manual_text,"Inscription : placez un disque enregistré dans le port d’entrée et un module ayant assez de place libre dans l’emplacement cible. Allumez la machine pour inscrire l’effet.\nExtraction : placez un disque vierge dans le port d’exportation et un module contenant des effets compilables dans l’emplacement cible. Allumez la machine pour extraire un effet au hasard.\nCopie : placez un disque enregistré à l’entrée et un disque vierge à l’exportation. Laissez l’emplacement cible vide et allumez la machine.\nAmélioration : placez deux disques ayant le même effet et le même niveau. Laissez l’emplacement cible vide et allumez la machine pour améliorer le disque d’exportation, jusqu’au niveau III.\n[Effets des modules]\nL’efficacité influe sur la consommation d’énergie.\nLes performances influent sur la vitesse de travail.\nLa qualité influe sur les chances de réussite (coefficient : 0,25)."
+compiler_manual_text,"Inscription : placez un disque enregistré dans le port d’entrée et un module ayant assez de place libre dans l’emplacement cible. Allumez la machine pour inscrire l’effet.\nRéécriture : placez un disque enregistré dans le port d’entrée et un module ayant le même effet à un niveau différent dans l’emplacement cible. Allumez la machine pour remplacer le niveau de l’effet, à la hausse comme à la baisse.\nExtraction : placez un disque vierge dans le port d’exportation et un module contenant des effets compilables dans l’emplacement cible. Allumez la machine pour extraire un effet au hasard.\nCopie : placez un disque enregistré à l’entrée et un disque vierge à l’exportation. Laissez l’emplacement cible vide et allumez la machine.\nAmélioration : placez deux disques ayant le même effet et le même niveau. Laissez l’emplacement cible vide et allumez la machine pour améliorer le disque d’exportation, jusqu’au niveau III.\n[Effets des modules]\nL’efficacité influe sur la consommation d’énergie.\nLes performances influent sur la vitesse de travail.\nLa qualité influe sur les chances de réussite (coefficient : 0,25)."
 compiler_disk_blank,Disque de compilation de modules vierge
 compiler_capacity,Occupation
 compiler_life,Disque de vie
 compiler_apply,Inscrire
 compiler_extract,Extraire
 compiler_cancel,Annulation
-compiler_duplicate,Cet effet est déjà présent.
+compiler_duplicate,Cet effet est déjà présent au même niveau.
+compiler_next_overwrite_upgrade,À suivre : remplacer pour augmenter le niveau de {0} → {1}
+compiler_next_overwrite_downgrade,À suivre : remplacer pour réduire le niveau de {0} → {1}
+compiler_working_overwrite_upgrade,Remplacement avec hausse de niveau : {0} → {1}
+compiler_working_overwrite_downgrade,Remplacement avec baisse de niveau : {0} → {1}
 compiler_full,L’écriture de cet effet dépasse 100 % de l’utilisation.
 compiler_unknown,Cet effet n’est pas soutenu pour la compilation.
 compiler_conflict,Les effets sont incompatibles.
@@ -164,7 +168,7 @@ compiler_working_enhance,Amélioration : {0}
 compiler_enhance_risk,Chaque tentative utilise une source d'écriture ; les écriture de destination restent inchangées.
 compiler_enhanced,L’amélioration a réussi.
 compiler_enhance_failed,L’amélioration a échoué ; le disque de destination est inchangé.
-compiler_learning_desc_level,"Les attributs de base positifs commencent à zéro et gagnent {0} points de pourcentage par utilisation, jusqu’à {1} fois leur valeur d’origine."
+compiler_learning_desc_level,Ce module conserve ses attributs de base initiaux et gagne {0} points de pourcentage après chaque utilisation. Les attributs positifs sont plafonnés à {1} fois leur valeur initiale ; les attributs négatifs peuvent progresser jusqu’à zéro.
 compiler_degrading_desc_level,"Les attributs de base initiaux sont multipliés par {0}, mais les attributs positifs perdent {1} points de pourcentage à chaque utilisation."
 compiler_overvolted_desc_level,"Les attributs de base initiaux sont multipliés par {0}, mais chaque utilisation a {1} % de chances de détruire le module."
 compiler_premium_desc,Les attributs de base de ce module augmentent de {0} %.
@@ -172,7 +176,7 @@ compiler_inferior_desc,Les attributs de base de ce module diminuent de {0} %.
 compiler_receiver_desc,Chaque [nœud] adjacent confère à ce module un bonus temporaire de {0} % à ses attributs.
 compiler_top_desc,"Si le module touche le bord supérieur du compartiment, il reçoit un bonus temporaire de {0} %."
 compiler_side_desc,"Si le module touche le bord gauche du compartiment, il reçoit un bonus temporaire de {0} %."
-compiler_learning_desc,"Les attributs de base positifs commencent à zéro. Ils gagnent {0} points de pourcentage par utilisation, jusqu’à {1} fois leur valeur d’origine."
+compiler_learning_desc,Ce module conserve ses attributs de base initiaux et gagne {0} points de pourcentage après chaque utilisation. Les attributs positifs sont plafonnés à {1} fois leur valeur initiale ; les attributs négatifs peuvent progresser jusqu’à zéro.
 compiler_feedback_desc,"Les attributs de base initiaux augmentent de 25 %, mais le module absorbe temporairement {0} % des attributs de base négatifs des [modules] adjacents."
 compiler_not_compilable,Cet effet spécial ne peut pas être compilé.
 compiler_fixed_effect,Non compilable
@@ -474,7 +478,7 @@ glass_plate_name,Plaque de verre
 glass_plate_desc,"Une plaque mince et transparente faite d’éclats de verre refondus, prête à être transformée."
 glass_smelting_module_name,Module de fusion du verre
 glass_smelting_module_desc,Un module conçu pour le four de fusion.
-glass_smelting_module_effect,Fait fondre 1 éclat de verre pour produire 1 plaque de verre.
+glass_smelting_module_effect,Fait fondre 2 éclats de verre ou 1 bouteille de bière vide pour produire 2 plaques de verre.
 wine_bottle_chip_name,Puce d’imprimante 3D ({0} ×{1})
 high_temperature_nozzle_name,Module de buse d’impression à haute température
 high_temperature_nozzle_desc,Permet à l’imprimante d’utiliser des plaques de verre pour imprimer des objets en verre.

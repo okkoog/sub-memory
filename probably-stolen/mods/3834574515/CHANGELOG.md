@@ -1,3 +1,13 @@
+1.5.10 — 暗格丢弃与治安服务修复 / Cabinet disposal and case suppression
+
+• 白厄三种违禁品暗格取空后可丢进垃圾桶，过夜清理；装着物品时继续阻止丢弃。
+• 金蝮、赤隼的压案服务将罪值与调查减半，同时撤回待到访执法、重置旧案件派遣状态，按剩余案值重排常规巡查。对话显示前后数值，并校验冷却避免重复扣款。
+• 中文、英文与俄文同步。旧存档可继续使用。
+
+• Empty covert cabinets can now be discarded in the trash and cleared overnight. Contents must be removed first.
+• Gold Viper and Crimson Falcon halve crime and evidence, cancel queued enforcement, reset stale case dispatch and reschedule inspections from the remaining crime. Results show before/after values; cooldown is rechecked before charging.
+• Chinese, English and Russian updated. Existing saves remain compatible.
+
 1.5.9 — 俄语支持 / Russian support / Русская локализация
 
 新增俄语文本，覆盖物品、角色对话、工作台、电话、拍卖和御藏名录，随游戏语言切换。感谢最早主动提出分享俄语翻译的玩家。俄语初版采用机器翻译，并校对术语及关键玩法，欢迎反馈。

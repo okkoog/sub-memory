@@ -116,14 +116,18 @@ compiler_debug,Module Compiler Prototype + 2 Compilation Disks
 compiler_output,Output
 compiler_manual_name,Module Compiler Instructions
 compiler_manual_short,"The Module Compiler can write, extract, copy and enhance effects. Special modules can enable additional functions.\nCheck the machine tooltip to see what it will do next."
-compiler_manual_text,"Write: Place a recorded disk in the input port and a module with enough free capacity in the target bay, then switch on the machine to write the effect.\nExtract: Place a blank disk in the export port and a module with compilable effects in the target bay, then switch on the machine to extract one random effect.\nCopy: Place a recorded disk in the input port and a blank disk in the export port. Leave the target bay empty, then switch on the machine to copy the effect.\nEnhance: Place disks with the same effect and level in both ports. Leave the target bay empty, then switch on the machine to upgrade the export disk, up to level III.\n[Module Effects]:\nEfficiency affects power consumption\nPerformance affects work speed\nQuality affects success chance (coefficient: 0.25)"
+compiler_manual_text,"Write: Place a recorded disk in the input port and a module with enough free capacity in the target bay, then switch on the machine to write the effect.\nOverwrite: Place a recorded disk in the input port and a module with the same effect at a different level in the target bay, then switch on the machine to overwrite the effect level. This can upgrade or downgrade the effect.\nExtract: Place a blank disk in the export port and a module with compilable effects in the target bay, then switch on the machine to extract one random effect.\nCopy: Place a recorded disk in the input port and a blank disk in the export port. Leave the target bay empty, then switch on the machine to copy the effect.\nEnhance: Place disks with the same effect and level in both ports. Leave the target bay empty, then switch on the machine to upgrade the export disk, up to level III.\n[Module Effects]:\nEfficiency affects power consumption\nPerformance affects work speed\nQuality affects success chance (coefficient: 0.25)"
 compiler_disk_blank,Blank Module Compilation Disk
 compiler_capacity,Usage
 compiler_life,Disk Lifespan
 compiler_apply,Write
 compiler_extract,Extract
 compiler_cancel,Cancel
-compiler_duplicate,This effect is already present.
+compiler_duplicate,This effect is already present at the same level.
+compiler_next_overwrite_upgrade,Next: overwrite to upgrade {0} → {1}
+compiler_next_overwrite_downgrade,Next: overwrite to downgrade {0} → {1}
+compiler_working_overwrite_upgrade,Overwriting to upgrade: {0} → {1}
+compiler_working_overwrite_downgrade,Overwriting to downgrade: {0} → {1}
 compiler_full,Writing this effect would exceed 100% usage.
 compiler_unknown,This effect is not supported for compilation.
 compiler_conflict,The effects are incompatible.
@@ -164,7 +168,7 @@ compiler_working_enhance,Enhancing: {0}
 compiler_enhance_risk,Each attempt uses one source write; destination writes remain unchanged.
 compiler_enhanced,Enhancement succeeded.
 compiler_enhance_failed,Enhancement failed; the destination disk is unchanged.
-compiler_learning_desc_level,"Initial positive base stats start at zero, with a cap of {1} times their original values; they grow by {0} percentage points per use."
+compiler_learning_desc_level,This module retains its initial base stats and gains {0} percentage points after each use. Positive base stats are capped at {1} times their initial values; negative base stats can grow up to zero.
 compiler_degrading_desc_level,"Initial base stats are multiplied by {0}, but positive base stats lose {1} percentage points per use."
 compiler_overvolted_desc_level,"Initial base stats are multiplied by {0}, but each use has a {1}% chance to destroy the module."
 compiler_premium_desc,This module gains {0}% to its base stats.
@@ -172,7 +176,7 @@ compiler_inferior_desc,This module loses {0}% of its base stats.
 compiler_receiver_desc,Each adjacent [Node] grants this module a temporary {0}% stat bonus.
 compiler_top_desc,"If this module touches the top edge of the module bay, it gains a temporary {0}% stat bonus."
 compiler_side_desc,"If this module touches the left edge of the module bay, it gains a temporary {0}% stat bonus."
-compiler_learning_desc,"This module starts with zero positive base stats and gains {0} percentage points after each use, up to {1} times its original positive base stats."
+compiler_learning_desc,This module retains its initial base stats and gains {0} percentage points after each use. Positive base stats are capped at {1} times their initial values; negative base stats can grow up to zero.
 compiler_feedback_desc,"This module gains 25% to its initial base stats, but temporarily absorbs {0}% of adjacent [Module] negative base stats."
 compiler_not_compilable,This special effect cannot be compiled.
 compiler_fixed_effect,Not compilable
@@ -474,7 +478,7 @@ glass_plate_name,Glass Plate
 glass_plate_desc,"A thin, clear sheet made from remelted glass shards, ready for further processing."
 glass_smelting_module_name,Glass Smelting Module
 glass_smelting_module_desc,A module designed for the smelting furnace.
-glass_smelting_module_effect,Smelts 1 glass shard into 1 glass plate.
+glass_smelting_module_effect,Smelts 2 glass shards or 1 empty beer bottle into 2 glass plates.
 wine_bottle_chip_name,3D Printer Chip ({0} ×{1})
 high_temperature_nozzle_name,High-Temperature Printing Nozzle Module
 high_temperature_nozzle_desc,Allows the printer to use glass plates to print glass products.

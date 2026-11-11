@@ -116,14 +116,18 @@ compiler_debug,模组编译器原型＋编译盘×2
 compiler_output,输出
 compiler_manual_name,模组编译器使用说明
 compiler_manual_short,模组编译器有录入、导出、拷贝、增强等功能，还可以通过特殊模组获得其他效果。\n具体将进行什么工作，可以查看机器提示了解。
-compiler_manual_text,录入：将有效果的编译盘放入录入端，再将有足够剩余空间的模组放入待编译区，启动后即可录入效果。\n导出：将空白盘放入导出端，再将拥有可编译效果的模组放入待编译区，启动后即可随机导出其中一条效果。\n拷贝：将有效果的编译盘放入录入端，空白盘放入导出端，待编译区留空，启动后即可拷贝效果。\n增强：将同等级、同效果的编译盘分别放入两端，待编译区留空，启动后即可提升导出端编译盘的效果等级，最高Ⅲ级。\n[模组影响]：\n效率影响功耗\n性能影响作业速度\n质量影响成功率（系数：0.25）
+compiler_manual_text,录入：将有效果的编译盘放入录入端，再将有足够剩余空间的模组放入待编译区，启动后即可录入效果。\n覆写：将有效果的编译盘放入录入端，再将已有同效果、不同等级的模组放入待编译区，启动后即可覆写效果等级，既可升级，也可降级。\n导出：将空白盘放入导出端，再将拥有可编译效果的模组放入待编译区，启动后即可随机导出其中一条效果。\n拷贝：将有效果的编译盘放入录入端，空白盘放入导出端，待编译区留空，启动后即可拷贝效果。\n增强：将同等级、同效果的编译盘分别放入两端，待编译区留空，启动后即可提升导出端编译盘的效果等级，最高Ⅲ级。\n[模组影响]：\n效率影响功耗\n性能影响作业速度\n质量影响成功率（系数：0.25）
 compiler_disk_blank,空白模组编译盘
 compiler_capacity,占用率
 compiler_life,磁盘寿命
 compiler_apply,录入
 compiler_extract,导出
 compiler_cancel,取消
-compiler_duplicate,已有相同效果，无法重复录入。
+compiler_duplicate,已有同等级的相同特性，无法重复录入。
+compiler_next_overwrite_upgrade,下一步：覆写升级（{0} → {1}）
+compiler_next_overwrite_downgrade,下一步：覆写降级（{0} → {1}）
+compiler_working_overwrite_upgrade,正在覆写升级：{0} → {1}
+compiler_working_overwrite_downgrade,正在覆写降级：{0} → {1}
 compiler_full,录入后占用率会超过100%。
 compiler_unknown,此效果尚不支持编译。
 compiler_conflict,特殊效果互斥，无法录入。
@@ -164,7 +168,7 @@ compiler_working_enhance,正在增强：{0}
 compiler_enhance_risk,每次消耗录入盘1次，导出盘剩余次数不变
 compiler_enhanced,增强成功。
 compiler_enhance_failed,增强失败，导出盘保持原样。
-compiler_learning_desc_level,初始正向基础属性归零，成长上限为初始值的{1}倍；每次使用后增长{0}个百分点。
+compiler_learning_desc_level,此模组保留初始基础属性，每次使用后增长{0}个百分点，正向基础属性上限为初始值的{1}倍，负向基础属性最多成长至0。
 compiler_degrading_desc_level,初始基础属性提高至原来的{0}倍，但每次使用后正向基础属性减少{1}个百分点。
 compiler_overvolted_desc_level,初始基础属性提高至原来的{0}倍，但每次使用有{1}%概率烧毁模组。
 compiler_premium_desc,此模组的基础属性提高{0}%。
@@ -172,7 +176,7 @@ compiler_inferior_desc,此模组的基础属性降低{0}%。
 compiler_receiver_desc,每个相邻[节点]会使此模组获得{0}%的临时属性加成。
 compiler_top_desc,如果此模组接触到模组舱的顶部边缘，它将获得{0}%的临时属性加成。
 compiler_side_desc,如果此模组接触到模组舱的左侧边缘，它将获得{0}%的临时属性加成。
-compiler_learning_desc,此模组的初始正向基础属性归零，每次使用后增长{0}个百分点，上限为初始正向基础属性的{1}倍。
+compiler_learning_desc,此模组保留初始基础属性，每次使用后增长{0}个百分点，正向基础属性上限为初始值的{1}倍，负向基础属性最多成长至0。
 compiler_feedback_desc,此模组的初始基础属性提高25%，但会吸收相邻[模组]{0}%的负面基础属性作为临时属性。
 compiler_not_compilable,此特殊效果不可编译。
 compiler_fixed_effect,不可编译
@@ -474,7 +478,7 @@ glass_plate_name,玻璃板
 glass_plate_desc,一块由碎玻璃重新熔制而成的可以用于加工的透明薄板。
 glass_smelting_module_name,玻璃熔炼模组
 glass_smelting_module_desc,一种专用于熔炉的模组。
-glass_smelting_module_effect,将1份碎玻璃熔炼成1块玻璃板。
+glass_smelting_module_effect,将2份碎玻璃或1个空啤酒瓶熔炼成2块玻璃板。
 wine_bottle_chip_name,3D打印机芯片（{0} ×{1}）
 high_temperature_nozzle_name,高温打印喷头模组
 high_temperature_nozzle_desc,可让打印机使用玻璃板进行玻璃制品的打印工作。

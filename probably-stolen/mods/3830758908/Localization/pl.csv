@@ -116,14 +116,18 @@ compiler_debug,Prototyp kompilatora modułów + 2 dyski kompilacji
 compiler_output,Wyjście
 compiler_manual_name,Instrukcja kompilatora modułów
 compiler_manual_short,"Kompilator modułów zapisuje, wyodrębnia, kopiuje i wzmacnia efekty. Specjalne moduły odblokowują dodatkowe funkcje.\nSprawdź podpowiedź maszyny, aby zobaczyć następną operację."
-compiler_manual_text,"Zapis: włóż zapisany dysk do gniazda wejściowego, a moduł z wystarczającą ilością miejsca do gniazda docelowego. Włącz maszynę, aby zapisać efekt.\nWyodrębnianie: włóż pusty dysk do gniazda eksportu, a moduł z odpowiednim efektem do gniazda docelowego. Włącz maszynę, aby wyodrębnić jeden losowy efekt.\nKopiowanie: włóż zapisany dysk do gniazda wejściowego, a pusty do gniazda eksportu. Zostaw gniazdo docelowe puste i włącz maszynę.\nWzmacnianie: włóż dwa dyski z tym samym efektem i poziomem. Zostaw gniazdo docelowe puste i włącz maszynę, aby wzmocnić dysk w gnieździe eksportu maksymalnie do poziomu III.\n[Wpływ modułów]\nWydajność wpływa na zużycie energii.\nOsiągi wpływają na szybkość pracy.\nJakość wpływa na szansę powodzenia (współczynnik: 0,25)."
+compiler_manual_text,"Zapis: włóż zapisany dysk do gniazda wejściowego, a moduł z wystarczającą ilością miejsca do gniazda docelowego. Włącz maszynę, aby zapisać efekt.\nNadpisywanie: włóż zapisany dysk do gniazda wejściowego, a moduł z tym samym efektem na innym poziomie do gniazda docelowego. Włącz maszynę, aby zastąpić poziom efektu. Można go zarówno podnieść, jak i obniżyć.\nWyodrębnianie: włóż pusty dysk do gniazda eksportu, a moduł z odpowiednim efektem do gniazda docelowego. Włącz maszynę, aby wyodrębnić jeden losowy efekt.\nKopiowanie: włóż zapisany dysk do gniazda wejściowego, a pusty do gniazda eksportu. Zostaw gniazdo docelowe puste i włącz maszynę.\nWzmacnianie: włóż dwa dyski z tym samym efektem i poziomem. Zostaw gniazdo docelowe puste i włącz maszynę, aby wzmocnić dysk w gnieździe eksportu maksymalnie do poziomu III.\n[Wpływ modułów]\nWydajność wpływa na zużycie energii.\nOsiągi wpływają na szybkość pracy.\nJakość wpływa na szansę powodzenia (współczynnik: 0,25)."
 compiler_disk_blank,Pusty dysk kompilacji modułów
 compiler_capacity,Zajętość
 compiler_life,płytki Lifespan
 compiler_apply,Zapisz
 compiler_extract,Wyodrębnij
 compiler_cancel,anulowanie
-compiler_duplicate,Ten efekt jest już obecny.
+compiler_duplicate,Ten efekt jest już obecny na tym samym poziomie.
+compiler_next_overwrite_upgrade,"Następnie: nadpisz, aby podnieść poziom ({0} → {1})"
+compiler_next_overwrite_downgrade,"Następnie: nadpisz, aby obniżyć poziom ({0} → {1})"
+compiler_working_overwrite_upgrade,Nadpisywanie z podniesieniem poziomu: {0} → {1}
+compiler_working_overwrite_downgrade,Nadpisywanie z obniżeniem poziomu: {0} → {1}
 compiler_full,Napisanie tego efektu przekroczyłoby 100% użytkowania.
 compiler_unknown,Ten efekt nie jest wspierany do kompilacji.
 compiler_conflict,Efekty są niezgodne.
@@ -164,7 +168,7 @@ compiler_working_enhance,Wzmacnianie: {0}
 compiler_enhance_risk,Każda próba używa jednego pisma źródłowego; pisma docelowe pozostają niezmienione.
 compiler_enhanced,Wzmocnienie się udało.
 compiler_enhance_failed,Poprawa nie powiodła się; dysk docelowy nie uległ zmianie.
-compiler_learning_desc_level,"Dodatnie parametry bazowe zaczynają od zera i rosną o {0} pkt proc. przy każdym użyciu, do {1}-krotności wartości początkowej."
+compiler_learning_desc_level,"Moduł zachowuje początkowe parametry bazowe i zyskuje {0} pkt proc. po każdym użyciu. Dodatnie parametry mogą osiągnąć {1}-krotność wartości początkowej, a ujemne mogą wzrosnąć najwyżej do zera."
 compiler_degrading_desc_level,"Początkowe parametry bazowe są mnożone przez {0}, lecz przy każdym użyciu dodatnie parametry tracą {1} pkt proc."
 compiler_overvolted_desc_level,"Początkowe parametry bazowe są mnożone przez {0}, ale każde użycie może zniszczyć moduł z prawdopodobieństwem {1}%."
 compiler_premium_desc,Parametry bazowe tego modułu rosną o {0}%.
@@ -172,7 +176,7 @@ compiler_inferior_desc,Parametry bazowe tego modułu spadają o {0}%.
 compiler_receiver_desc,Każdy sąsiedni [węzeł] daje temu modułowi tymczasową premię {0}% do parametrów.
 compiler_top_desc,"Jeśli moduł dotyka górnej krawędzi komory, otrzymuje tymczasową premię {0}% do parametrów."
 compiler_side_desc,"Jeśli moduł dotyka lewej krawędzi komory, otrzymuje tymczasową premię {0}% do parametrów."
-compiler_learning_desc,"Dodatnie parametry bazowe zaczynają od zera i rosną o {0} pkt proc. przy każdym użyciu, do {1}-krotności wartości początkowej."
+compiler_learning_desc,"Moduł zachowuje początkowe parametry bazowe i zyskuje {0} pkt proc. po każdym użyciu. Dodatnie parametry mogą osiągnąć {1}-krotność wartości początkowej, a ujemne mogą wzrosnąć najwyżej do zera."
 compiler_feedback_desc,"Początkowe parametry bazowe rosną o 25%, ale moduł tymczasowo przejmuje {0}% ujemnych parametrów bazowych sąsiednich [modułów]."
 compiler_not_compilable,Tego szczególnego efektu nie można skomponować.
 compiler_fixed_effect,Niekomponowane
@@ -474,7 +478,7 @@ glass_plate_name,Płyta szklana
 glass_plate_desc,"Cienka, przezroczysta płyta z przetopionych kawałków szkła, nadająca się do dalszej obróbki."
 glass_smelting_module_name,Moduł wytopu szkła
 glass_smelting_module_desc,Moduł przeznaczony do pieca hutniczego.
-glass_smelting_module_effect,Przetapia 1 odłamek szkła na 1 płytę szklaną.
+glass_smelting_module_effect,Przetapia 2 odłamki szkła lub 1 pustą butelkę po piwie na 2 płyty szklane.
 wine_bottle_chip_name,Chip drukarki 3D ({0} ×{1})
 high_temperature_nozzle_name,Moduł dyszy wysokotemperaturowej
 high_temperature_nozzle_desc,Pozwala drukarce używać płyt szklanych do drukowania przedmiotów ze szkła.

@@ -1,5 +1,5 @@
 FORBIDDEN REGALIA — THIS MIGHT KILL YOU
-Version 1.5.9 · Probably Stolen 0.46D
+Version 1.5.10 · Probably Stolen 0.46D
 
 77 rebuildable watches from 13 fictional makers, sealed collector’s pieces, 30 modular guns, six high-tech melee weapons, workshop commissions, night shops and specialist visitors.
 

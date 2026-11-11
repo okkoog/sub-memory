@@ -116,14 +116,18 @@ compiler_debug,Modulkompilierer-Prototyp + 2 Kompilierdatenträger
 compiler_output,Ausgabe
 compiler_manual_name,Anleitung zum Modulkompilierer
 compiler_manual_short,"Der Modul-Compiler kann Effekte schreiben, extrahieren, kopieren und verbessern. Spezialmodule ermöglichen weitere Funktionen.\nIm Tooltip der Maschine steht, was sie als Nächstes tut."
-compiler_manual_text,"Schreiben: Lege eine beschriebene Diskette in den Eingabeschacht und ein Modul mit genügend freiem Platz in den Zielschacht. Schalte die Maschine ein, um den Effekt zu schreiben.\nExtrahieren: Lege eine leere Diskette in den Exportschacht und ein Modul mit kompilierbaren Effekten in den Zielschacht. Schalte die Maschine ein, um einen zufälligen Effekt zu extrahieren.\nKopieren: Lege eine beschriebene Diskette in den Eingabeschacht und eine leere in den Exportschacht. Lass den Zielschacht leer und schalte die Maschine ein.\nVerbessern: Lege zwei Disketten mit demselben Effekt und derselben Stufe ein. Lass den Zielschacht leer und schalte die Maschine ein, um die Exportdiskette bis maximal Stufe III zu verbessern.\n[Moduleffekte]\nEffizienz beeinflusst den Stromverbrauch.\nLeistung beeinflusst das Arbeitstempo.\nQualität beeinflusst die Erfolgschance (Faktor: 0,25)."
+compiler_manual_text,"Schreiben: Lege eine beschriebene Diskette in den Eingabeschacht und ein Modul mit genügend freiem Platz in den Zielschacht. Schalte die Maschine ein, um den Effekt zu schreiben.\nÜberschreiben: Lege eine beschriebene Diskette in den Eingabeschacht und ein Modul mit demselben Effekt auf einer anderen Stufe in den Zielschacht. Schalte die Maschine ein, um die Effektstufe zu ersetzen. Dabei kann sie erhöht oder gesenkt werden.\nExtrahieren: Lege eine leere Diskette in den Exportschacht und ein Modul mit kompilierbaren Effekten in den Zielschacht. Schalte die Maschine ein, um einen zufälligen Effekt zu extrahieren.\nKopieren: Lege eine beschriebene Diskette in den Eingabeschacht und eine leere in den Exportschacht. Lass den Zielschacht leer und schalte die Maschine ein.\nVerbessern: Lege zwei Disketten mit demselben Effekt und derselben Stufe ein. Lass den Zielschacht leer und schalte die Maschine ein, um die Exportdiskette bis maximal Stufe III zu verbessern.\n[Moduleffekte]\nEffizienz beeinflusst den Stromverbrauch.\nLeistung beeinflusst das Arbeitstempo.\nQualität beeinflusst die Erfolgschance (Faktor: 0,25)."
 compiler_disk_blank,Leere Modul-Kompilierdiskette
 compiler_capacity,Belegung
 compiler_life,Disk LIFESPAN
 compiler_apply,Schreiben
 compiler_extract,Extrahieren
 compiler_cancel,Widerrufen
-compiler_duplicate,Dieser Effekt ist bereits vorhanden.
+compiler_duplicate,Dieser Effekt ist bereits auf derselben Stufe vorhanden.
+compiler_next_overwrite_upgrade,Nächster Schritt: überschreiben und hochstufen ({0} → {1})
+compiler_next_overwrite_downgrade,Nächster Schritt: überschreiben und herabstufen ({0} → {1})
+compiler_working_overwrite_upgrade,Überschreiben mit Hochstufung: {0} → {1}
+compiler_working_overwrite_downgrade,Überschreiben mit Herabstufung: {0} → {1}
 compiler_full,Das Schreiben dieser Wirkung würde 100 % der Verwendung überschreiten.
 compiler_unknown,Dieser Effekt wird für die Sammlung nicht unterstützt.
 compiler_conflict,Die Auswirkungen sind unvereinbar.
@@ -164,7 +168,7 @@ compiler_working_enhance,Verbessert: {0}
 compiler_enhance_risk,Jedes Versuch verwendet eine Quellschrift; Zielschriften bleiben unverändert.
 compiler_enhanced,Die Verbesserung erfolgte.
 compiler_enhance_failed,Verbesserung fehlte; der Zieldisk ist unverändert.
-compiler_learning_desc_level,"Positive Basiswerte beginnen bei null und steigen pro Einsatz um {0} Prozentpunkte, bis zum {1}-Fachen ihres ursprünglichen Werts."
+compiler_learning_desc_level,Dieses Modul behält seine ursprünglichen Basiswerte und gewinnt nach jedem Einsatz {0} Prozentpunkte hinzu. Positive Basiswerte sind auf das {1}-Fache ihres Ausgangswerts begrenzt; negative Basiswerte können bis null steigen.
 compiler_degrading_desc_level,"Die anfänglichen Basiswerte werden mit {0} multipliziert, positive Basiswerte sinken jedoch pro Einsatz um {1} Prozentpunkte."
 compiler_overvolted_desc_level,"Die anfänglichen Basiswerte werden mit {0} multipliziert, doch jeder Einsatz zerstört das Modul mit einer Wahrscheinlichkeit von {1} %."
 compiler_premium_desc,Die Basiswerte dieses Moduls steigen um {0} %.
@@ -172,7 +176,7 @@ compiler_inferior_desc,Die Basiswerte dieses Moduls sinken um {0} %.
 compiler_receiver_desc,Jeder benachbarte [Knoten] gewährt diesem Modul vorübergehend {0} % Bonus auf seine Werte.
 compiler_top_desc,"Berührt das Modul den oberen Rand des Modulfachs, erhält es vorübergehend {0} % Bonus."
 compiler_side_desc,"Berührt das Modul den linken Rand des Modulfachs, erhält es vorübergehend {0} % Bonus."
-compiler_learning_desc,"Positive Basiswerte beginnen bei null und steigen pro Einsatz um {0} Prozentpunkte, bis zum {1}-Fachen ihres ursprünglichen Werts."
+compiler_learning_desc,Dieses Modul behält seine ursprünglichen Basiswerte und gewinnt nach jedem Einsatz {0} Prozentpunkte hinzu. Positive Basiswerte sind auf das {1}-Fache ihres Ausgangswerts begrenzt; negative Basiswerte können bis null steigen.
 compiler_feedback_desc,"Die anfänglichen Basiswerte steigen um 25 %, doch das Modul übernimmt vorübergehend {0} % der negativen Basiswerte benachbarter [Module]."
 compiler_not_compilable,Dieser besondere Effekt kann nicht zusammengefasst werden.
 compiler_fixed_effect,nicht kompilierbar
@@ -474,7 +478,7 @@ glass_plate_name,Glasplatte
 glass_plate_desc,"Eine dünne, durchsichtige Platte aus eingeschmolzenen Glasscherben, die sich weiterverarbeiten lässt."
 glass_smelting_module_name,Glasschmelzmodul
 glass_smelting_module_desc,Ein Modul für den Schmelzofen.
-glass_smelting_module_effect,Schmilzt 1 Glasscherbe zu 1 Glasplatte.
+glass_smelting_module_effect,Schmilzt 2 Glasscherben oder 1 leere Bierflasche zu 2 Glasplatten.
 wine_bottle_chip_name,3D-Druckerchip ({0} ×{1})
 high_temperature_nozzle_name,Hochtemperatur-Düsenmodul
 high_temperature_nozzle_desc,Damit kann der Drucker Glasplatten zum Drucken von Glasobjekten verwenden.

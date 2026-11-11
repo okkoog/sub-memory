@@ -4,9 +4,23 @@
 《深空当铺：可能是偷的 / Probably Stolen》Eleanor 个人剧情线重制 MOD。
 
 - 游戏版本：1.0.0.14（public 与 open_beta 当前为同一构建；同时保留 1.0.0.13 / 0.46D 兼容）
-- MOD版本：0.91
+- MOD版本：0.92
 - 内容尺度：全年龄
 - 语言：简体中文 / English（剧情与 UI 均已翻译）
+
+## 0.92：双恋入口台词与声望提示修正
+
+- 双恋入口的选项标题从“进入埃莉诺与莉迪亚的后宫剧情。”改为角色口吻“那你教我几句。”；路线与奖励说明移入选项描述，不再让玩家角色念系统说明。
+- 双恋等待期的“上层区声望：X／Y……”从旁白对话改为场景开始时的顶部提示，不再出现在 Lydia 的对白链里。
+- 同版本纳入索菲娅 v3 上层日常装与 v4 奶油白针织私服定稿：启用少女当铺时使用新图，未启用仍回退原游戏 `femaleUpper3`；现有母亲到店场景使用日常装，私服键保留给居家剧情。
+- 保留 0.91 的选项发言归属修复、0.90 革命军线、0.89 像素 CG、0.88 Lydia 独立画像与全部既有内容。
+
+## 2026-11-11 本地美术更新：索菲娅定稿
+
+- 按用户确认采用现有两套：v3 翡翠绿上层日常装、v4 奶油白露肩针织私服；停止 v5 重设计，不再等待生图。索菲娅实际38岁、外表约28岁。
+- 两张288×212美化画像已导入运行资源。现有母亲来访与侍从线采购出场使用日常装；私服独立保存，由 `PortraitCompat.ResolveMotherHome()` 调用，居家剧情尚未实装。
+- 美化启用时使用定稿；私服缺失先回退日常装，日常装缺失再回退游戏画像。无少女当铺时暂保留原有 `femaleUpper3` 回退，独立原版新图仍待制作。
+- 保留高清母图、旧立绘与批准哈希；旧档母亲画像会重新解析，私服键不会被清理成日常装。交付及验证见 [索菲娅导入记录](Art/mother-redesign-2026-11-11/FINAL_INTEGRATION.md)。本次更新已纳入 0.92 创意工坊包。
 
 ## 0.91：修复选项气泡把 NPC 分支当成玩家选项
 
@@ -339,11 +353,11 @@ pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Sto
     - 无少女当铺：`er_portrait_lydia_female_vanilla`
     - 有少女当铺：`er_portrait_lydia_female_beauty`
     - 约会服同理使用 `er_portrait_lydia_date_female_vanilla` / `er_portrait_lydia_date_female_beauty`；仅自定义文件缺失时才回退 `femaleUpper10` 防崩溃。
-  - **母亲：** 少女当铺开启时 `er_portrait_mother_female_beauty`；未开启时使用原游戏 `femaleUpper3`，不再显示自定义母亲 `_vanilla` 图。
+  - **母亲索菲娅：** 少女当铺开启时日常使用 `er_portrait_mother_female_beauty`（已替换为v3定稿）；私服为 `er_portrait_mother_home_female_beauty`（v4定稿），经独立入口调用。现有到店出场只用日常装，居家剧情待实装。未开启少女当铺时暂使用原游戏 `femaleUpper3`，不显示旧自定义母亲 `_vanilla` 图。
 - **Eleanor 新服装：** 少女当铺开启时使用本 MOD 的女仆装、礼服和后续战术背心美化图；未开启时直接复用原游戏 Eleanor 画像：女仆装回退当前场景常服（`eleanor_scav` / `eleanor1`），礼服回退 `eleanor1`，战术背心回退 `eleanor_rev`。`er_portrait_eleanor_maid_female_vanilla` 不再作为运行显示图。
 - **其他美化 MOD：** 本 MOD 只识别少女当铺。其他替换普通埃莉诺立绘的 MOD 不会被当作服装美化来源；女仆装、礼服、战术背心会回退原游戏 Eleanor 立绘，因此不会再出现“普通立绘美化、女仆装却是本 MOD 原版风”的混搭。Lydia 始终保持本 MOD 的独立形象，不会跟随其他美化 MOD 变成通用 NPC。
-- 实现位于 `src/PortraitCompat.cs`：从 CutePortraits 的 `LoadedMod.Sprites` 读取美化 Sprite；未检测到少女当铺时，Lydia/母亲/新服装统一回退原游戏立绘 ID。旧存档中的自定义 `_vanilla` 立绘键会在载入时清理为对应原游戏 ID。
-- 莉迪亚/母亲的美化立绘仍用于少女当铺环境；`_vanilla` 文件仅保留作历史/旧档清理参考，不再在无少女当铺时主动显示。规格与校验见 `Art/v0.6/ART_DELIVERY.md`、`asset_validation.json`。
+- 实现位于 `src/PortraitCompat.cs`：从 CutePortraits 的 `LoadedMod.Sprites` 读取普通角色美化 Sprite；本 MOD 自有画像桥接到游戏字典。无少女当铺时 Lydia 保留独立原版画像，母亲/女仆/礼服/战术背心按各自规则回退游戏画像。旧档母亲通用键与历史键会重新解析，私服键保持私服选择。
+- 莉迪亚/母亲的美化立绘用于少女当铺环境；Lydia `_vanilla` 仍在原版环境主动显示，母亲旧 `_vanilla` 仅保留作历史参考。母亲新定稿见 `Art/mother-redesign-2026-11-11/FINAL_INTEGRATION.md`；早期规格见 `Art/v0.6/ART_DELIVERY.md`、`asset_validation.json`。
 - 物品图标已替换为正式 16 色像素图：吊坠、上层区手工镯。
 - `preview.png` 已使用 `workshop_cover_master.png` 生成的 768×768 版本。
 

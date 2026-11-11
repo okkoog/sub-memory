@@ -116,14 +116,18 @@ compiler_debug,モジュールコンパイラ試作機＋コンパイルディ�
 compiler_output,出力
 compiler_manual_name,モジュールコンパイラの説明書
 compiler_manual_short,モジュールコンパイラーは効果の書き込み、抽出、コピー、強化ができる。特殊モジュールを装着すると、ほかの機能も使える。\n次の処理は機械のツールチップで確認できる。
-compiler_manual_text,書き込み：記録済みディスクを書き込みポートに、空き容量のあるモジュールを対象スロットに入れ、機械を起動する。\n抽出：空のディスクを抽出ポートに、コンパイル可能な効果を持つモジュールを対象スロットに入れ、機械を起動する。効果がランダムに1つ抽出される。\nコピー：書き込みポートに記録済みディスク、抽出ポートに空のディスクを入れる。対象スロットは空のまま起動する。\n強化：両方のポートに同じ効果とレベルのディスクを入れる。対象スロットは空のまま起動する。抽出ポートのディスクを最大レベルIIIまで強化できる。\n［モジュールの効果］\n効率は消費電力に影響する。\n性能は作業速度に影響する。\n品質は成功率に影響する（係数：0.25）。
+compiler_manual_text,書き込み：記録済みディスクを書き込みポートに、空き容量のあるモジュールを対象スロットに入れ、機械を起動する。\n上書き：記録済みディスクを書き込みポートに、同じ効果を別のレベルで持つモジュールを対象スロットに入れ、機械を起動する。効果のレベルを上書きでき、レベルを上げることも下げることもできる。\n抽出：空のディスクを抽出ポートに、コンパイル可能な効果を持つモジュールを対象スロットに入れ、機械を起動する。効果がランダムに1つ抽出される。\nコピー：書き込みポートに記録済みディスク、抽出ポートに空のディスクを入れる。対象スロットは空のまま起動する。\n強化：両方のポートに同じ効果とレベルのディスクを入れる。対象スロットは空のまま起動する。抽出ポートのディスクを最大レベルIIIまで強化できる。\n［モジュールの効果］\n効率は消費電力に影響する。\n性能は作業速度に影響する。\n品質は成功率に影響する（係数：0.25）。
 compiler_disk_blank,空のモジュールコンパイルディスク
 compiler_capacity,使用率
 compiler_life,ディスク リフスパン
 compiler_apply,書き込み
 compiler_extract,抽出
 compiler_cancel,キャンセル
-compiler_duplicate,この効果はすでに存在している。
+compiler_duplicate,同じ効果が同じレベルで登録されています。
+compiler_next_overwrite_upgrade,次の処理：上書きでレベルを上げる（{0} → {1}）
+compiler_next_overwrite_downgrade,次の処理：上書きでレベルを下げる（{0} → {1}）
+compiler_working_overwrite_upgrade,上書きでレベルを上昇中：{0} → {1}
+compiler_working_overwrite_downgrade,上書きでレベルを低下中：{0} → {1}
 compiler_full,この効果を書くことは100%の使用量を超えるでしょう。
 compiler_unknown,この効果は、編集のためにサポートされていません。
 compiler_conflict,効果は不一致です。
@@ -164,7 +168,7 @@ compiler_working_enhance,強化中：{0}
 compiler_enhance_risk,それぞれの試みは、一つのソースの書き込みを使用し、目的の書き込みは変わらない。
 compiler_enhanced,改善が成功した。
 compiler_enhance_failed,アップグレードが失敗し、目的地ディスクは変わらない。
-compiler_learning_desc_level,正の基礎ステータスは0から始まり、使用するたびに{0}ポイント上昇する。上限は元の値の{1}倍。
+compiler_learning_desc_level,このモジュールは初期の基礎ステータスを維持し、使用するたびに{0}ポイント上昇する。正の基礎ステータスの上限は初期値の{1}倍。負の基礎ステータスは最大0まで上昇する。
 compiler_degrading_desc_level,初期の基礎ステータスが{0}倍になるが、使用するたびに正の基礎ステータスが{1}ポイント低下する。
 compiler_overvolted_desc_level,初期の基礎ステータスが{0}倍になるが、使用するたびに{1}%の確率でモジュールが壊れる。
 compiler_premium_desc,このモジュールの基礎ステータスが{0}%上昇する。
@@ -172,7 +176,7 @@ compiler_inferior_desc,このモジュールの基礎ステータスが{0}%低�
 compiler_receiver_desc,隣接する［ノード］1個につき、このモジュールのステータスが一時的に{0}%上昇する。
 compiler_top_desc,モジュール区画の上端に接している間、一時的に{0}%のステータスボーナスを得る。
 compiler_side_desc,モジュール区画の左端に接している間、一時的に{0}%のステータスボーナスを得る。
-compiler_learning_desc,正の基礎ステータスは0から始まり、使用するたびに{0}ポイント上昇する。上限は元の正の基礎ステータスの{1}倍。
+compiler_learning_desc,このモジュールは初期の基礎ステータスを維持し、使用するたびに{0}ポイント上昇する。正の基礎ステータスの上限は初期値の{1}倍。負の基礎ステータスは最大0まで上昇する。
 compiler_feedback_desc,初期の基礎ステータスが25%上昇するが、隣接する［モジュール］の負の基礎ステータスを一時的に{0}%吸収する。
 compiler_not_compilable,この特別効果は作り出せない。
 compiler_fixed_effect,コンパクトできない
@@ -474,7 +478,7 @@ glass_plate_name,ガラス板
 glass_plate_desc,ガラスの破片を溶かし直して作った透明な薄板。加工用の素材として使える。
 glass_smelting_module_name,ガラス溶解モジュール
 glass_smelting_module_desc,溶鉱炉専用のモジュール。
-glass_smelting_module_effect,ガラスの破片1個を溶かしてガラス板1枚にする。
+glass_smelting_module_effect,ガラスの破片2個、または空のビール瓶1本を溶かして、ガラス板2枚にする。
 wine_bottle_chip_name,3Dプリンターチップ（{0} ×{1}）
 high_temperature_nozzle_name,高温印刷ノズルモジュール
 high_temperature_nozzle_desc,プリンターでガラス板を使ってガラス製品を印刷できるようにする。
