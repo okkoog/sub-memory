@@ -1,3 +1,5 @@
+> **2026-11-11 최우선 번역키 분석 규칙**: 모드 업데이트/미번역 키 비교를 시작하기 전에 반드시 [LOCALIZATION_AUDIT_RULES.md](LOCALIZATION_AUDIT_RULES.md)를 먼저 열 것. 특히 **스택 수납(Item Storage, 3829085054)은 자체 ko.csv 지원**으로 사용자가 확인했다. `pskb__3829085054.csv`가 없다는 이유로 미등록·미번역으로 분류하지 말 것. GitHub 원본 모드 복제본에 ko.csv가 안 보이면 복제본 동기화 상태로 별도 표시.
+
 # CURRENT BASELINE — 2026-11-04 Work-improved package
 
 **Use this as the current project baseline before any older source/build.**
