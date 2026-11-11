@@ -1,0 +1,111 @@
+NEON UNDERTOW 0.10.0 — FIRST SODA OVERHAUL BATCH
+
+20 REGULAR BRANDS, 100 CONDITION APPEARANCES
+Following your clarification, the first 100 icons are 20 brands x five states:
+pristine, worn, dented, rusty and badly damaged. They are not 100 separate flavors.
+The 10 x 10 sheet shows two brands per row, five states of each from left to right.
+All regular cans use exactly the same native 16 x 32 canvas, silhouette, lid and
+baseline. Damage is represented by surface wear, corrosion and creases; it does
+not change the inventory footprint. The regular can remains one by two cells.
+
+The existing 10 regular brands keep their IDs. Ten regular-size versions of the
+existing large-can brands complete the 20. The existing ten 500 mL cans remain
+available with their original IDs and larger native silhouette. They also share
+the condition/inspection rules, but the full new large-can range is a later stage.
+
+HOW TO USE
+Buy supplies at Quayside Canning Co-op after closing. New blank cans are sound.
+The Reclaimed Can Case contains 20 regular and 10 large cans with mixed damage.
+Move your selected cans, concentrate and a water container into canner INPUT.
+Use a magnifier to inspect a can or finished soda through the normal inspection
+action. Empty cans also open inspection through Activate. The canner has INSPECT
+INPUT and INSPECT OUTPUT buttons for owned items in those compartments.
+CANS: best inspected first prioritizes inspected packaging by condition. It does
+not silently reveal the condition of uninspected cans. Default is input order.
+Use Category to switch between regular and large-can recipes.
+
+The canner takes one matching empty can, one matching flavor concentrate, 350 mL
+water and two power per regular can (500 mL / three power for existing large cans).
+Water must contain at least 35% water: the lowest named native water grade. Below
+that, the game calls it unknown water and the canner refuses it. Galley food and
+concentrate recipes retain their earlier 99.5% minimum. Existing bottle machinery
+is unchanged. Make one or use overnight AUTO; available power, supplies and output
+space still limit production. Empty cans at zero durability are unusable.
+
+QUALITY MAPPING — VERIFIED AGAINST THE INSTALLED GAME
+Scale: integer 0..10000, where 10000 is 100.00% source-water purity.
+Source band                       Minimum    Native innate value modifier
+Pure Water                         9990                    +100%
+High Quality Water                 9900                     +50%
+Basewater                          9800                       0%
+Ghostwater                         9600                     -33%
+Rustwater                          9000                     -75%
+Gutterflow                         3500                     -90%
+
+Container penalty uses the native integer durability valuation formula:
+ -(100 - current*100/maximum)/2 - (100 - maximum*100/original)/2
+Add the verified native dent penalty (-5) and rust penalty (-40), as applicable.
+Clamp the total to -100..0. Soda quality score = source purity * (100+penalty)/100,
+rounded down. This combination is a NEW soda rule; it is not native water physics.
+The score is a condition-adjusted quality measure, not measured chemical purity.
+Apply the native band modifier for that final score once, through an innate item
+feature. The generic durability modifier is neutralized on these items to avoid
+charging the same damage twice. Market, faction and negotiation effects still
+apply normally. Below-Gutterflow scores retain the lowest native value tier.
+
+Example: 10000 source, intact can => score 10000, Pure grade, +100% innate value.
+The same water with a dent but full durability => score 9500, Rust grade, -75%.
+These native water bands make the initial damage curve deliberately steep;
+further balancing can change the soda retention rule without changing brands.
+
+Freshness/quality does not recolor an opaque metal can's brand. The native water
+system mixes liquid colors from its actual liquid contents; it does not assign
+one fixed paint color per grade. We preserve that actual source color and show
+its swatch in inspection. Labels identify brands; grade labels describe the item.
+
+PERSISTENCE AND INSPECTION
+Saved item tags keep schema, source purity, source color, origin, filling-time
+container durability, current durability, dents/rust, inspection flag and final
+quality separate. Later damage recomputes final score without overwriting the
+original source-water snapshot. Moving/storing items does not change it.
+Inspection only marks information as examined. It never cleans or repairs cans,
+alters source water, raises a grade, consumes supplies or adds value.
+Existing saved sodas with no recorded source are explicitly unrecorded. Their
+source grade is not invented. New supplier offers declare 99.00% producer water.
+
+WHAT IS STILL NEXT
+The new large-can range, actual premium glass-bottle items/recipes/inspection,
+alcohol and further drinks are not included in this first regular-can batch.
+A separate glass-packaging price helper is tested (1.6x base packaging category)
+and the data model reserves a premium flag; this is groundwork, not a shipped
+glass-soda catalogue. Glass grade will still depend on water and condition.
+No new spoilage/health effects, cleaning recipes or repair recipes are introduced.
+
+FILES
+Regular-Cans-100.png: transparent, exact native-scale 10 x 10 atlas (320 x 480).
+Regular-Cans-100-Preview.png: nearest-neighbor 3x review copy.
+Regular-Cans-Batch-1-25.png through Batch-4-25.png: four 5 x 5 sheet sections.
+Sprites/: 100 native-size individual regular-can PNGs.
+Regular-Cans-Manifest.json: IDs, names, state, dynamic quality mapping, filename,
+sheet coordinates and pixel hashes. Brand IDs repeat across their five states.
+Source-Art/: original generated label and decal sheets, retained for provenance.
+Image-Prompts.json: exact prompts and import method; built-in image_gen was used.
+Native-Contracts.json: installed game thresholds, condition values and API checks.
+PRODUCTION-RECIPES.json: all 67 current machine recipes.
+
+VERIFICATION
+Compiled against the actual installed game assemblies.
+453 production assertions and 101855 quality assertions passed using API doubles,
+covering all recipes, grade boundaries, damage, conservation on failed batches,
+inspection, better-container selection, saved tag roundtrips and existing items.
+236 artwork startup assertions passed against actual PNGs. Import checks require
+100 distinct images with identical native size/outer pixels/alpha.
+12 installed native contracts passed. Merged pack API/branch checks passed.
+Live Unity rendering, magnifier-window layout, actual save-file roundtrip and
+customer pricing still require an in-game acceptance pass. These are not claimed
+as playtested by the automated harness.
+
+Original game and community component credits/licenses remain in the pack.
+New label concepts and damage decals are AI-assisted; native can silhouettes and
+tops belong to the Probably Stolen creators. Import, integration and quality code
+are Neon Undertow work. No Workshop page or gallery edits are part of this batch.
