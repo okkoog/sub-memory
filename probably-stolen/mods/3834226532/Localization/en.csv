@@ -1,4 +1,4 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distributor
 dsp_distributor_description,"While training under The Mentor you already worked the supplier reps. Controlling the supply chain puts you a step ahead."
@@ -9,7 +9,7 @@ dsp_wanderlust_description,If at least one customer is still queued when you clo
 dsp_smelting_name,Smelting
 dsp_smelting_description,"Start with a shabby Furnace fitted with a Blast Furnace Module and some scrap metal."
 dsp_ecommerce_name,E-commerce
-dsp_ecommerce_description,"Unlocks Marketplace Requests from the start. One fewer buyer arrives each day, but you receive one extra marketplace request."
+dsp_ecommerce_description,Unlocks Marketplace Requests from the start. One fewer buyer arrives each day, but you receive one extra marketplace request every two days.
 dsp_built_on_dump_name,Built on the Dumping Grounds
 dsp_built_on_dump_description,"Items put in the Trash Can are moved onto the ground at the Dumping Grounds right away; you can take them back before the night ends. The nightly cleaning service and everything tied to it stop working. You clean up yourself."
 dsp_tacit_understanding_name,Tacit Understanding
@@ -65,10 +65,11 @@ dsp_share_cigarette_line_fake_3,"This thing... fine, it'll do."
 dsp_share_cigarette_menu,Offer a Cigarette
 dsp_distributor_supplies_1,"Unlocks Red Imp Brewery, Lower Levels Chemist, Upper Level Pharmacist and GP Mining Coop."
 dsp_distributor_supplies_2,"Unlocks Showcase Expansion I."
-dsp_distributor_supplies_3,"The suppliers have already sent their free samples."
-dsp_distributor_supplies_4,"Starting credits: 200."
+dsp_distributor_supplies_3,Extra equipment (back storage).
+dsp_distributor_supplies_5,Starting credits: only 200.
+dsp_distributor_supplies_4,Free samples from every supplier are already in the back storage.
 dsp_better_broker_name,Dutiful Broker
-dsp_better_broker_description,"Market requests and customers are more likely to ask for bulky goods you already own, especially on rent day. Market requests never ask for the same item twice."
+dsp_better_broker_description,"Market requests and customers are more likely to ask for bulky goods you already own, especially on rent day."
 dsp_notorious_villain_name,Notorious Villain
 dsp_notorious_villain_description,"Each neutral or negative perk you picked gives you 40 extra credits at the start. This perk counts as negative."
 dsp_cyberpsychosis_name,Cyberpsychosis
@@ -91,7 +92,7 @@ dsp_opening_bonus_description,Gain a 7% trade bonus. It drops by 1% per day unti
 dsp_opening_bonus_bonus_buy,Opening Bonus: buy price -X%
 dsp_opening_bonus_bonus_sell,Opening Bonus: sell price +X%
 dsp_byproduct_name,Supplier Side Business
-dsp_byproduct_description,"Suppliers bring along goods related to their own line of business. The total value of these extra goods grows with the day count. However many byproducts you buy, it is always at wholesale price."
+dsp_byproduct_description,"Suppliers bring along goods related to their own line of business. The total value of these goods grows with the day count. And no matter how much of a supplier's stock you buy, you always settle at wholesale price."
 dsp_byproduct_wholesale,Wholesale price: buy price -X%
 dsp_wild_lover_name,Wilde's Informant
 dsp_wild_lover_description,"Unlocks Wilde's phone from the start. Once a day, calling Wilde lets you trade intel in code and grants 10 Wilde's Favor."
@@ -107,7 +108,7 @@ dsp_foreknowledge_none,"No scheduled events right now. Well Informed: nothing sc
 dsp_speculator_name,Herd Mentality
 dsp_speculator_description,All price-affecting events have their effects increased by 50%.
 dsp_picky_customers_name,Dazzling Array
-dsp_picky_customers_description,Customers are more likely to make peculiar demands.
+dsp_picky_customers_description,Customers make more unusual demands.
 dsp_harsh_bargain_name,Bully the Customers
 dsp_harsh_bargain_description,Lose 2 reputation when you call a customer over and fail to close a deal.
 dsp_wild_lover_remark,Lao Wang
@@ -367,7 +368,7 @@ dsp_foreknowledge_when_after, days out
 dsp_foreknowledge_price_tag,price
 dsp_foreknowledge_price_name,Price change
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 and counts as a narcotic.
+dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 credits and counts as a narcotic.
 dsp_tobacco_tax_name,Tobacco Tax
 dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Blood Donor
@@ -384,15 +385,15 @@ dsp_blood_donor_done,Donation done: one more blood bag, and you will miss one cu
 dsp_blood_donor_already,You already donated blood today.
 dsp_blood_donor_no_space,No room for another blood bag.
 dsp_revolutionary_influence_name,Revolutionary Influence
-dsp_revolutionary_influence_description,If Revolutionary reputation is above 20, Odin will tell you about an event the Revolution is planning within three days after trading with him.
+dsp_revolutionary_influence_description,"If Revolutionary reputation is above 20, Odin will tell you about an event the Revolution is planning within three days after trading with him."
 dsp_cracker_name,Cracker
 dsp_cracker_description,During your training under The Mentor you picked up a taste for cracking crates. Most of the time it pays well - as long as you have the means to open them.
 dsp_cracker_tag,Traits: Probably Fun
-dsp_cracker_supplies_1,A shabby descrambler.
-dsp_cracker_supplies_2,3 blank access cards.
-dsp_cracker_supplies_3,A random supply crate and access card chip.
-dsp_cracker_supplies_4,One access card for every department.
-dsp_cracker_supplies_5,Higher starting reputation (black market).
+dsp_cracker_supplies_1,"An extra device (smuggler's stash, upgraded)."
+dsp_cracker_supplies_2,A worn-out code sequencer.
+dsp_cracker_supplies_3,3 blank access cards and 1 command access card.
+dsp_cracker_supplies_4,2 different supply crates and an access-card chip matching each type.
+dsp_cracker_supplies_5,Your friend and other sellers offer you supply crates.
 dsp_cracker_supplies_6,Lower starting reputation (Security).
 dsp_revolutionary_influence_slip_title,Revolution Intel
 dsp_revolutionary_influence_slip_body,Odin lowered his voice before leaving: within three days the Revolution moves - "{0}". It is already marked on the calendar.
@@ -416,7 +417,7 @@ dsp_mutual_choice_name,Mutual Choice
 dsp_mutual_choice_description,"Twice per day, a customer who leaves without trading adds 1 customer to the queue."
 dsp_snake_oil_item_name,Snake Oil
 dsp_newspaper_stand_name,Newsstand
-dsp_newspaper_stand_description,Pay 10 credits in the nightly services to get 4 extra newspapers. You can always sell one copy of today's newspaper to every customer for 8 credits each.
+dsp_newspaper_stand_description,Pay 10 credits in the nightly services to get 4 extra newspapers. You can always sell one copy of today's newspaper to every customer for 8 credits each and gain a little reputation.
 dsp_newspaper_stand_menu,Sell
 dsp_service_paper_delivery,Newspaper Delivery
 dsp_service_paper_delivery_tooltip,10 credits: 4 extra copies of today's newspaper arrive overnight
@@ -425,7 +426,7 @@ dsp_newspaper_stand_already,I already bought a newspaper today.
 dsp_newspaper_stand_stale,This newspaper is out of date.
 dsp_newspaper_stand_delivered,{0} copies of today's newspaper arrived
 dsp_watermelon_merge_name,Fruit Merge
-dsp_watermelon_merge_description,You can merge two crops of the same kind and size into a bigger one of the same kind. Bloomberries instead become smaller.
+dsp_watermelon_merge_description,You can merge two crops of the same kind and size into a bigger one of the same kind (Bloomberries instead become smaller). Their value, calories and composition are added together.
 dsp_watermelon_merge_menu,Merge (uses one identical crop)
 dsp_watermelon_merge_done,"Merged into a bigger {0}, worth {1} credits"
 dsp_watermelon_merge_max,This one is already as big as it gets.
@@ -481,3 +482,36 @@ dsp_service_newspaper_subscription,Newspaper Subscription
 dsp_scav_drone_pocket3,Pocket #3
 dsp_scav_drone_pocket4,Pocket #4
 dsp_newspaper_stand_no_customer_hint, (no customer right now)
+dsp_blood_donor_row_done,Already donated today
+dsp_hydro_open_menu,Open
+dsp_hydro_manual_name,The Secret of Pipe Hydroponics
+dsp_hydro_manual_desc,Without it you cannot grow plants in the water pipe.
+dsp_unlicensed_name,Unlicensed Operation
+dsp_unlicensed_description,The trade commission officer visits on day five.
+dsp_water_vending_name,Water Vending Machine
+dsp_water_vending_description,You start with a water vending machine outside the shop. Customers can buy drinking water on their own outside business hours.
+dsp_lucky_supply_name,Lucky Supply
+dsp_lucky_supply_description,Every week Georgio visits to trade, bringing one bottle of Liquid Luck and two completely random items.
+dsp_buddy_hi_1,"Hey pal, it's me again."
+dsp_buddy_hi_2,"How is your luck, pal?"
+dsp_buddy_hi_3,"Pal, pal, look what I found!"
+dsp_buddy_hi_4,"Shake my hand so some of your luck rubs off on me, pal."
+dsp_buddy_hi_5,Always a joy to see you hit big!
+dsp_buddy_intro_1,"Pal, look at this new crate I found. I bet it has something good in it!"
+dsp_buddy_choice_yes,"I think so too."
+dsp_buddy_choice_no,"I don't think so."
+dsp_buddy_intro_2,"Well, let us see."
+dsp_buddy_end_1,"No!"
+dsp_buddy_end_2,"What rotten luck."
+dsp_buddy_end_3,"But I have an idea. How about you open the crates instead?"
+dsp_buddy_end_4,"We are friends, so your haul is my haul."
+dsp_buddy_end_5,"Then it's settled!"
+dsp_phone_bill_half_1,"This is half of the ore. Once you clear this batch, I will put the rest out."
+dsp_phone_bill_half_2,Here is the other half.
+
+dsp_buddy_end_choice_yes,Fine, I will open it.
+dsp_buddy_end_choice_no,Why should I be the one?
+dsp_hawaii_training_name,Hawaii Training
+dsp_hawaii_training_description,Gain 3 random perks whose perk points add up to -2.
+dsp_paid_training_name,Paid Training
+dsp_paid_training_description,"Your starting perk slot limit is increased by 3. You start with a 699 credit debt. Thanks to the sponsor's ads, this perk is shown as a positive one."

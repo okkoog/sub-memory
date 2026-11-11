@@ -1,8 +1,8 @@
-﻿# Spécialité de départ : Distributeur
+# Spécialité de départ : Distributeur
 # Terminologie reprise de la localisation officielle du jeu : Faveurs de Wild / Brasserie du Diable carmin / Labo de chimie des strates inférieures / Pharmacie des strates supérieures / Coopérative minière GP / Agrandissement de vitrine I
 dsp_distributor_name,Distributeur
 dsp_distributor_description,"Pendant votre formation auprès du Mentor, vous avez déjà travaillé avec les représentants des fournisseurs. Contrôler la chaîne d'approvisionnement vous donne une longueur d'avance."
-dsp_distributor_tag,Traits : Probablement fun
+dsp_distributor_tag,Plus de traits : probablement un dingue
 
 # Atouts de départ
 dsp_wanderlust_name,Envie d'ailleurs
@@ -10,7 +10,7 @@ dsp_wanderlust_description,"S'il reste au moins un client dans la file au moment
 dsp_smelting_name,Fonte
 dsp_smelting_description,"Vous commencez avec un four délabré, équipé d'un module de haut fourneau, et un peu de ferraille."
 dsp_ecommerce_name,E-commerce
-dsp_ecommerce_description,"Débloque les demandes du marché dès le départ. Un acheteur de moins chaque jour, mais une demande du marché supplémentaire."
+dsp_ecommerce_description,Les demandes du marché sont débloquées dès le début. Un acheteur en moins chaque jour, mais une demande supplémentaire tous les deux jours.
 dsp_built_on_dump_name,Construit sur la décharge
 dsp_built_on_dump_description,"Les objets placés dans la poubelle tombent aussitôt au sol de la décharge ; vous pouvez les récupérer avant la fin de la nuit. Le service d'entretien nocturne et tout ce qui en dépend cessent de fonctionner. C'est vous qui faites le ménage."
 dsp_tacit_understanding_name,Entente tacite
@@ -66,8 +66,9 @@ dsp_share_cigarette_line_fake_3,"Ce machin... bon, ça fera l'affaire."
 dsp_share_cigarette_menu,Proposer une cigarette
 dsp_distributor_supplies_1,"Débloque la Brasserie du Diable carmin, le Labo de chimie des strates inférieures, la Pharmacie des strates supérieures et la Coopérative minière GP."
 dsp_distributor_supplies_2,"Débloque Agrandissement de vitrine I."
-dsp_distributor_supplies_3,"Les fournisseurs ont déjà envoyé leurs échantillons gratuits."
-dsp_distributor_supplies_4,"Crédits de départ : 200."
+dsp_distributor_supplies_3,Équipement en plus : réserve
+dsp_distributor_supplies_5,"Crédits de départ : 200."
+dsp_distributor_supplies_4,Les échantillons de chaque fournisseur sont déjà dans la réserve.
 dsp_better_broker_name,Courtier consciencieux
 dsp_better_broker_description,"Les demandes du marché et les clients réclament plus volontiers les marchandises encombrantes que vous possédez déjà, surtout le jour du loyer. Les demandes du marché ne réclament jamais deux fois le même objet."
 dsp_notorious_villain_name,Célèbre scélérat
@@ -108,7 +109,7 @@ dsp_foreknowledge_none,"Aucun événement prévu pour le moment. Bien informé 
 dsp_speculator_name,Mentalité de troupeau
 dsp_speculator_description,Tous les événements qui influent sur les prix voient leur effet augmenté de 50 %.
 dsp_picky_customers_name,Étalage éblouissant
-dsp_picky_customers_description,Les clients sont plus susceptibles de formuler des demandes bizarres.
+dsp_picky_customers_description,Les clients font plus souvent des demandes inhabituelles.
 dsp_harsh_bargain_name,Malmener les clients
 dsp_harsh_bargain_description,Vous perdez 2 points de réputation lorsque vous faites venir un client et ne parvenez pas à conclure la vente.
 dsp_wild_lover_remark,Lao Wang
@@ -385,15 +386,15 @@ dsp_blood_donor_done,"Don effectué : une poche de sang en plus, et un client en
 dsp_blood_donor_already,Vous avez déjà donné votre sang aujourd'hui.
 dsp_blood_donor_no_space,Plus de place pour une autre poche de sang.
 dsp_revolutionary_influence_name,Influence de la Révolution
-dsp_revolutionary_influence_description,"Si votre réputation auprès de la Révolution dépasse 20, Odin vous indiquera, après une transaction, l'événement que la Révolution prépare dans les trois jours."
+dsp_revolutionary_influence_description,"Si votre réputation auprès de la Révolution atteint 20 ou plus, Odin vous indiquera, après une transaction, l'événement que la Révolution prépare dans les trois jours."
 dsp_cracker_name,Casseur de caisses
 dsp_cracker_description,"Pendant votre formation auprès du Mentor, vous avez pris goût à ouvrir les caisses. La plupart du temps ça rapporte bien — à condition d'avoir de quoi les ouvrir."
-dsp_cracker_tag,Traits : Probablement fun
-dsp_cracker_supplies_1,Un déséquenceur cryptographique tout cabossé.
-dsp_cracker_supplies_2,3 cartes d'accès vierges.
-dsp_cracker_supplies_3,Une caisse de ravitaillement aléatoire et une puce de carte d'accès.
-dsp_cracker_supplies_4,Une carte d'accès pour chaque département.
-dsp_cracker_supplies_5,Réputation de départ plus élevée (marché noir).
+dsp_cracker_tag,Plus de traits : probablement un dingue
+dsp_cracker_supplies_1,"Un appareil supplémentaire (cache de contrebandier, améliorée)."
+dsp_cracker_supplies_2,Un séquenceur de codes usé.
+dsp_cracker_supplies_3,3 cartes d'accès vierges et 1 carte d'accès de commandement.
+dsp_cracker_supplies_4,2 caisses de ravitaillement différentes et une puce de carte d'accès du type correspondant.
+dsp_cracker_supplies_5,Ton ami et les autres vendeurs te proposent des caisses de ravitaillement.
 dsp_cracker_supplies_6,Réputation de départ plus basse (Sécurité).
 dsp_revolutionary_influence_slip_title,Renseignements de la Révolution
 dsp_revolutionary_influence_slip_body,"Odin a baissé la voix avant de partir : dans les trois jours, la Révolution passe à l'action — « {0} ». C'est déjà coché sur le calendrier."
@@ -431,7 +432,7 @@ dsp_watermelon_merge_menu,Fusionner (consomme un identique)
 dsp_watermelon_merge_done,"Fusionné en un {0} plus gros, valeur {1} crédits."
 dsp_watermelon_merge_max,Impossible de faire plus gros.
 dsp_hydro_question_name,Hydro… ponie ?
-dsp_hydro_question_description,Vous pouvez cultiver 2 plantes dans le robinet d'eau. Vous commencez avec 2 graines aléatoires.
+dsp_hydro_question_description,Vous pouvez cultiver 2 plantes dans le robinet d'eau. Vous commencez avec 2 graines aléatoires. Double-cliquez sur le robinet (ou sur la note « Culture hydroponique dans la conduite » du dossier) pour ouvrir la fenêtre.
 dsp_poet_admirer_name,Admirateur poète
 dsp_poet_admirer_description,Les billets de votre admirateur sont des objets de luxe d'une valeur de 50 crédits.
 dsp_admirer_poem_1,"Kwan-kwan crient les aigles sur l'îlot du fleuve. La jeune fille discrète et vertueuse est une bonne épouse pour le prince. — Livre des Odes, Guan Ju"
@@ -482,3 +483,36 @@ dsp_service_newspaper_subscription,Abonnement au journal
 dsp_scav_drone_pocket3,Poche n° 3
 dsp_scav_drone_pocket4,Poche n° 4
 dsp_newspaper_stand_no_customer_hint, (aucun client pour le moment)
+dsp_blood_donor_row_done,Déjà donné aujourd'hui
+dsp_hydro_open_menu,Ouvrir
+dsp_hydro_manual_name,Le secret de l'hydroponie sur tuyau
+dsp_hydro_manual_desc,"Sans elle, impossible de cultiver des plantes dans le robinet."
+dsp_unlicensed_name,Commerce sans licence
+dsp_unlicensed_description,Le fonctionnaire de la commission arrive le cinquième jour.
+dsp_water_vending_name,Distributeur d'eau
+dsp_water_vending_description,Vous commencez avec un distributeur d'eau devant la boutique. Les clients peuvent acheter de l'eau seuls hors des heures d'ouverture.
+dsp_lucky_supply_name,Ravitaillement chanceux
+dsp_lucky_supply_description,Georgio apporte une Chance Liquide dès le lendemain de votre rencontre, puis revient chaque semaine comme un marchand.
+dsp_buddy_hi_1,"Salut l'ami, me revoilà."
+dsp_buddy_hi_2,"Alors, la chance, l'ami ?"
+dsp_buddy_hi_3,"L'ami, l'ami, regarde ce que j'ai trouvé !"
+dsp_buddy_hi_4,"Serre-moi la main pour que ta chance me porte, l'ami."
+dsp_buddy_hi_5,Toujours un plaisir de te voir tomber sur une perle !
+dsp_buddy_intro_1,"L'ami, regarde la nouvelle caisse que j'ai trouvée. Je parie qu'il y a du bon dedans !"
+dsp_buddy_choice_yes,"Je pense aussi."
+dsp_buddy_choice_no,"Je ne crois pas."
+dsp_buddy_intro_2,"Bon, voyons voir."
+dsp_buddy_end_1,"Non !"
+dsp_buddy_end_2,"Quelle malchance."
+dsp_buddy_end_3,"Mais j'ai une idée. Et si c'était toi qui ouvrais les caisses ?"
+dsp_buddy_end_4,"On est amis, ce que tu sors compte aussi pour moi."
+dsp_buddy_end_5,"C'est dit !"
+dsp_phone_bill_half_1,"Voici la moitié du minerai. Quand tu auras écoulé ce lot, je sortirai le reste."
+dsp_phone_bill_half_2,Voici l'autre moitié.
+
+dsp_buddy_end_choice_yes,Bon, je l'ouvre.
+dsp_buddy_end_choice_no,Pourquoi ce serait moi ?
+dsp_hawaii_training_name,Stage à Hawaï
+dsp_hawaii_training_description,Gagnez 3 avantages aléatoires dont les points totalisent -2.
+dsp_paid_training_name,Formation payante
+dsp_paid_training_description,"Votre limite d'emplacements d'avantages augmente de 3. Vous commencez avec une dette de 699 crédits. Grâce à la publicité du sponsor, cet avantage est présenté comme positif."

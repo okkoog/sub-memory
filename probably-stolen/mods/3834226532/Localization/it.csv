@@ -1,8 +1,8 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distributore
 dsp_distributor_description,"Durante la formazione sotto Il Mentore lavoravi già con gli agenti dei fornitori. Controllare la filiera ti dà un passo di vantaggio."
-dsp_distributor_tag,Tratti: Probabilmente divertenti
+dsp_distributor_tag,Più tratti: probabilmente un matto
 
 # Starting perks
 dsp_wanderlust_name,Irrequietezza
@@ -10,7 +10,7 @@ dsp_wanderlust_description,"Se alla chiusura del negozio c'è ancora almeno un c
 dsp_smelting_name,Fusione
 dsp_smelting_description,"Parti con una Fornace malandata dotata di un Modulo altoforno e un po' di rottami metallici."
 dsp_ecommerce_name,Commercio online
-dsp_ecommerce_description,"Sblocca gli Incarichi del mercato fin dall'inizio. Ogni giorno arriva un acquirente in meno, ma ricevi un incarico del mercato in più."
+dsp_ecommerce_description,Le richieste del mercato sono sbloccate fin dall inizio. Un acquirente in meno ogni giorno, ma una richiesta extra ogni due giorni.
 dsp_built_on_dump_name,Costruito sulla discarica
 dsp_built_on_dump_description,"Gli oggetti messi nel Bidone della spazzatura finiscono subito sul terreno della Discarica; puoi riprenderli prima che finisca la notte. Il servizio di pulizia notturno e tutto ciò che vi è collegato smettono di funzionare. Le pulizie te le fai da solo."
 dsp_tacit_understanding_name,Intesa tacita
@@ -66,8 +66,9 @@ dsp_share_cigarette_line_fake_3,"Questa roba... va beh, può andare."
 dsp_share_cigarette_menu,Offri una sigaretta
 dsp_distributor_supplies_1,"Sblocca Birreria Red Imp, Farmacista dei livelli inferiori, Farmacista del livello superiore e Cooperativa mineraria GP."
 dsp_distributor_supplies_2,"Sblocca Ampliamento vetrina I."
-dsp_distributor_supplies_3,"I fornitori hanno già mandato i loro campioni gratuiti."
-dsp_distributor_supplies_4,"Crediti iniziali: 200."
+dsp_distributor_supplies_3,Attrezzatura extra: magazzino
+dsp_distributor_supplies_5,"Crediti iniziali: 200."
+dsp_distributor_supplies_4,I campioni di ogni fornitore sono già nel magazzino.
 dsp_better_broker_name,Intermediario scrupoloso
 dsp_better_broker_description,"Gli incarichi del mercato e i clienti chiedono più spesso merci ingombranti che possiedi già, soprattutto il giorno dell'affitto. Gli incarichi del mercato non chiedono mai due volte lo stesso oggetto."
 dsp_notorious_villain_name,Malfattore famigerato
@@ -108,7 +109,7 @@ dsp_foreknowledge_none,"Al momento nessun evento programmato. Ben informato: nie
 dsp_speculator_name,Mentalità del gregge
 dsp_speculator_description,Tutti gli eventi che influenzano i prezzi hanno effetti aumentati del 50%.
 dsp_picky_customers_name,Varietà sfavillante
-dsp_picky_customers_description,I clienti hanno più probabilità di fare richieste strane.
+dsp_picky_customers_description,I clienti fanno più spesso richieste insolite.
 dsp_harsh_bargain_name,Spadroneggia con i clienti
 dsp_harsh_bargain_description,Perdi 2 di reputazione quando fai avvicinare un cliente e non chiudi l'affare.
 dsp_wild_lover_remark,Lao Wang
@@ -385,15 +386,15 @@ dsp_blood_donor_done,Donazione completata: una sacca di sangue in più e domani 
 dsp_blood_donor_already,Oggi hai già donato il sangue.
 dsp_blood_donor_no_space,Non c'è spazio per un'altra sacca di sangue.
 dsp_revolutionary_influence_name,Influenza Rivoluzionaria
-dsp_revolutionary_influence_description,"Se la tua reputazione con la Rivoluzione è sopra 20, Odin ti dirà, dopo aver concluso un affare con lui, l'evento che la Rivoluzione sta pianificando entro tre giorni."
+dsp_revolutionary_influence_description,"Se la tua reputazione con la Rivoluzione è pari o superiore a 20, Odin ti dirà, dopo aver concluso un affare con lui, l'evento che la Rivoluzione sta pianificando entro tre giorni."
 dsp_cracker_name,Scassinatore di casse
 dsp_cracker_description,Durante la formazione sotto Il Mentore ti sei preso il vizio di aprire le casse. Il più delle volte rende bene — purché tu abbia i mezzi per aprirle.
-dsp_cracker_tag,Tratti: Probabilmente divertenti
-dsp_cracker_supplies_1,Un decodificatore crittografico malandato.
-dsp_cracker_supplies_2,3 tessere d'accesso vuote.
-dsp_cracker_supplies_3,Una cassa di rifornimenti casuale e un chip per tessera d'accesso.
-dsp_cracker_supplies_4,Una tessera d'accesso per ogni reparto.
-dsp_cracker_supplies_5,Reputazione iniziale più alta (mercato nero).
+dsp_cracker_tag,Più tratti: probabilmente un matto
+dsp_cracker_supplies_1,"Un dispositivo extra (nascondiglio del contrabbandiere, migliorato)."
+dsp_cracker_supplies_2,Un sequenziatore di codici usurato.
+dsp_cracker_supplies_3,3 tessere di accesso vuote e 1 tessera di accesso di comando.
+dsp_cracker_supplies_4,2 casse di rifornimento diverse e un chip tessera di accesso del tipo corrispondente.
+dsp_cracker_supplies_5,Il tuo amico e gli altri venditori ti offrono casse di rifornimento.
 dsp_cracker_supplies_6,Reputazione iniziale più bassa (Sicurezza).
 dsp_revolutionary_influence_slip_title,Informazioni sulla Rivoluzione
 dsp_revolutionary_influence_slip_body,Odin ha abbassato la voce prima di andarsene: entro tre giorni la Rivoluzione si muove — «{0}». È già segnato sul calendario.
@@ -431,7 +432,7 @@ dsp_watermelon_merge_menu,Fondi (consuma uno identico)
 dsp_watermelon_merge_done,"Fuso in un {0} più grande, valore {1} crediti."
 dsp_watermelon_merge_max,Non può diventare più grande.
 dsp_hydro_question_name,Idro… ponica?
-dsp_hydro_question_description,Puoi coltivare 2 piante nel rubinetto dell'acqua. Inizi con 2 semi casuali.
+dsp_hydro_question_description,Puoi coltivare 2 piante nel rubinetto dell'acqua. Inizi con 2 semi casuali. Fai doppio clic sul rubinetto (o sul biglietto «Idroponica nella conduttura» del dossier) per aprire la finestra.
 dsp_poet_admirer_name,Ammiratore poeta
 dsp_poet_admirer_description,I biglietti del tuo ammiratore sono oggetti di lusso del valore di 50 crediti.
 dsp_admirer_poem_1,"Kwan-kwan gridano le aquile sull'isolotto del fiume. La fanciulla modesta e virtuosa è una buona compagna per il principe. — Libro delle Odi, Guan Ju"
@@ -482,3 +483,36 @@ dsp_service_newspaper_subscription,Abbonamento al giornale
 dsp_scav_drone_pocket3,Tasca n. 3
 dsp_scav_drone_pocket4,Tasca n. 4
 dsp_newspaper_stand_no_customer_hint, (nessun cliente adesso)
+dsp_blood_donor_row_done,Hai già donato oggi
+dsp_hydro_open_menu,Apri
+dsp_hydro_manual_name,Il segreto dell'idroponica nel tubo
+dsp_hydro_manual_desc,Senza di essa non puoi coltivare piante nel rubinetto.
+dsp_unlicensed_name,Attività senza licenza
+dsp_unlicensed_description,Il funzionario della commissione arriva il quinto giorno.
+dsp_water_vending_name,Distributore d'acqua
+dsp_water_vending_description,Inizi con un distributore d'acqua fuori dal negozio. I clienti possono comprare acqua da soli fuori orario.
+dsp_lucky_supply_name,Rifornimento fortunato
+dsp_lucky_supply_description,Georgio porta Fortuna Liquida il giorno dopo il primo incontro, poi passa ogni settimana come un mercante.
+dsp_buddy_hi_1,"Ehi amico, eccomi di nuovo."
+dsp_buddy_hi_2,"Come va la fortuna, amico?"
+dsp_buddy_hi_3,"Amico, amico, guarda cosa ho trovato!"
+dsp_buddy_hi_4,"Stringimi la mano così mi attacco alla tua fortuna, amico."
+dsp_buddy_hi_5,È sempre un piacere vederti fare il colpo!
+dsp_buddy_intro_1,"Amico, guarda la cassa nuova che ho trovato. Scommetto che c'è roba buona!"
+dsp_buddy_choice_yes,"Penso anch'io."
+dsp_buddy_choice_no,"Non credo."
+dsp_buddy_intro_2,"Bene, vediamo."
+dsp_buddy_end_1,"No!"
+dsp_buddy_end_2,"Che sfiga."
+dsp_buddy_end_3,"Però ho un'idea. E se le casse le aprissi tu?"
+dsp_buddy_end_4,"Siamo amici, quello che trovi tu vale anche per me."
+dsp_buddy_end_5,"Affare fatto!"
+dsp_phone_bill_half_1,"Questa è metà del minerale. Quando avrai venduto questo lotto, metto fuori il resto."
+dsp_phone_bill_half_2,Ecco l'altra metà.
+
+dsp_buddy_end_choice_yes,Va bene, lo apro io.
+dsp_buddy_end_choice_no,E perché dovrei essere io?
+dsp_hawaii_training_name,Formazione alle Hawaii
+dsp_hawaii_training_description,Ottieni 3 vantaggi casuali i cui punti sommano -2.
+dsp_paid_training_name,Formazione a pagamento
+dsp_paid_training_description,"Il limite degli slot dei vantaggi iniziali aumenta di 3. Inizi con un debito di 699 crediti. Grazie alla pubblicità dello sponsor, questo vantaggio viene mostrato come positivo."

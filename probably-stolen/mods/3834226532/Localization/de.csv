@@ -1,8 +1,8 @@
-﻿# Start-Spezialisierung: Distributor
+# Start-Spezialisierung: Distributor
 # Begriffe laut offizieller englischer Fassung: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Vertriebspartner
 dsp_distributor_description,"Während deiner Ausbildung unter dem Mentor hast du bereits mit den Lieferantenvertretern gearbeitet. Wer die Lieferkette kontrolliert, ist einen Schritt voraus."
-dsp_distributor_tag,Perks: Probably Fun
+dsp_distributor_tag,Mehr Eigenschaften: wahrscheinlich ein Spinner
 
 # Start-Perks
 dsp_wanderlust_name,Fernweh
@@ -10,7 +10,7 @@ dsp_wanderlust_description,"Wenn beim Schließen des Ladens noch mindestens ein 
 dsp_smelting_name,Schmelzen
 dsp_smelting_description,"Du startest mit einem schäbigen Schmelzofen mit Hochofenmodul und etwas Altmetall."
 dsp_ecommerce_name,Onlinehandel
-dsp_ecommerce_description,"Schaltet Marktaufträge von Anfang an frei. Jeden Tag kommt ein Käufer weniger, dafür bekommst du einen zusätzlichen Marktauftrag."
+dsp_ecommerce_description,Marktanfragen sind von Anfang an freigeschaltet. Jeden Tag kommt ein Käufer weniger, dafür alle zwei Tage eine zusätzliche Marktanfrage.
 dsp_built_on_dump_name,Auf der Deponie gebaut
 dsp_built_on_dump_description,"Gegenstände im Mülleimer landen sofort auf dem Boden der Deponie; du kannst sie vor Tagesende zurückholen. Der nächtliche Reinigungsdienst und alles, was daran hängt, funktioniert nicht mehr. Du räumst selbst auf."
 dsp_tacit_understanding_name,Ungeschriebenes Einverständnis
@@ -66,8 +66,9 @@ dsp_share_cigarette_line_fake_3,"Das Ding… na gut, es tut's."
 dsp_share_cigarette_menu,Eine Zigarette anbieten
 dsp_distributor_supplies_1,"Schaltet Red Imp Brewery, Lower Levels Chemist, Upper Level Pharmacist und GP Mining Coop frei."
 dsp_distributor_supplies_2,"Schaltet Showcase Expansion I frei."
-dsp_distributor_supplies_3,"Die Lieferanten haben ihre Gratisproben schon geschickt."
-dsp_distributor_supplies_4,"Startkapital: 200."
+dsp_distributor_supplies_3,Zusatzausstattung: Lagerraum
+dsp_distributor_supplies_5,"Startkapital: 200."
+dsp_distributor_supplies_4,Die Gratisproben aller Lieferanten liegen schon im Lagerraum.
 dsp_better_broker_name,Pflichtbewusster Makler
 dsp_better_broker_description,"Marktaufträge und Kunden fragen eher nach sperriger Ware, die du schon hast, besonders am Zahltag. Marktaufträge verlangen nie zweimal denselben Gegenstand."
 dsp_notorious_villain_name,Berüchtigter Schurke
@@ -108,7 +109,7 @@ dsp_foreknowledge_none,"Derzeit keine geplanten Ereignisse. Gut informiert: für
 dsp_speculator_name,Herdenverhalten
 dsp_speculator_description,Alle preisbeeinflussenden Ereignisse haben um 50% verstärkte Effekte.
 dsp_picky_customers_name,Blendende Auswahl
-dsp_picky_customers_description,Kunden stellen eher eigenartige Forderungen.
+dsp_picky_customers_description,Kunden stellen häufiger ungewöhnliche Forderungen.
 dsp_harsh_bargain_name,Kunden unter Druck setzen
 dsp_harsh_bargain_description,"Du verlierst 2 Ruf, wenn du einen Kunden herbeirufst und keinen Abschluss schaffst."
 dsp_wild_lover_remark,Lao Wang
@@ -385,15 +386,15 @@ dsp_blood_donor_done,"Blutspende erledigt: eine Blutkonserve mehr, dafür verpas
 dsp_blood_donor_already,Du hast heute schon Blut gespendet.
 dsp_blood_donor_no_space,Kein Platz für eine weitere Blutkonserve.
 dsp_revolutionary_influence_name,Einfluss der Revolution
-dsp_revolutionary_influence_description,"Wenn dein Ruf bei der Revolution über 20 liegt, verrät dir Odin nach einem Handel, welches Ereignis die Revolution innerhalb von drei Tagen plant."
+dsp_revolutionary_influence_description,"Wenn dein Ruf bei der Revolution 20 oder höher ist, verrät dir Odin nach einem Handel, welches Ereignis die Revolution innerhalb von drei Tagen plant."
 dsp_cracker_name,Kistenknacker
 dsp_cracker_description,"Während deiner Ausbildung unter dem Mentor hast du dir das Aufbrechen von Kisten angewöhnt. Meistens zahlt es sich aus – solange du die Mittel hast, sie auch zu öffnen."
-dsp_cracker_tag,Perks: Probably Fun
-dsp_cracker_supplies_1,Ein ramponierter kryptografischer Desequenzierer.
-dsp_cracker_supplies_2,3 leere Zugangskarten.
-dsp_cracker_supplies_3,Eine zufällige Materialkiste und ein Zugangskarten-Chip.
-dsp_cracker_supplies_4,Eine Zugangskarte für jede Abteilung.
-dsp_cracker_supplies_5,Höherer Startruf (Schwarzmarkt).
+dsp_cracker_tag,Mehr Eigenschaften: wahrscheinlich ein Spinner
+dsp_cracker_supplies_1,"Ein zusätzliches Gerät (Schmugglerversteck, verbessert)."
+dsp_cracker_supplies_2,Ein abgenutzter Code-Sequencer.
+dsp_cracker_supplies_3,3 leere Zugangskarten und 1 Kommando-Zugangskarte.
+dsp_cracker_supplies_4,2 verschiedene Versorgungskisten und je ein passender Zugangskarten-Chip.
+dsp_cracker_supplies_5,Dein Freund und andere Verkäufer bieten dir Versorgungskisten an.
 dsp_cracker_supplies_6,Niedrigerer Startruf (Sicherheit).
 dsp_revolutionary_influence_slip_title,Information der Revolution
 dsp_revolutionary_influence_slip_body,Odin senkte vor dem Gehen die Stimme: Innerhalb von drei Tagen schlägt die Revolution zu – „{0}“. Im Kalender ist es bereits markiert.
@@ -431,7 +432,7 @@ dsp_watermelon_merge_menu,Verschmelzen (verbraucht ein gleiches Produkt)
 dsp_watermelon_merge_done,"Zu einem größeren {0} verschmolzen, Wert {1} Credits."
 dsp_watermelon_merge_max,Größer geht nicht mehr.
 dsp_hydro_question_name,Hydro… ponik?
-dsp_hydro_question_description,Du kannst 2 Pflanzen im Wasserhahn anbauen. Zum Start gibt es 2 zufällige Samen.
+dsp_hydro_question_description,Du kannst 2 Pflanzen im Wasserhahn anbauen. Zum Start gibt es 2 zufällige Samen. Doppelklicke den Wasserhahn (oder den Zettel „Wasserkultur im Rohr“ im Dossier) um das Fenster zu öffnen.
 dsp_poet_admirer_name,Poetischer Verehrer
 dsp_poet_admirer_description,Die Zettel deines Verehrers sind Luxusgüter im Wert von 50 Credits.
 dsp_admirer_poem_1,"Kwa-kwa rufen die Fischadler am Flussinselchen. Die stille, tugendsame Jungfrau ist dem Fürsten eine gute Gefährtin. — Buch der Lieder, Guan Ju"
@@ -482,3 +483,36 @@ dsp_service_newspaper_subscription,Zeitungsabo
 dsp_scav_drone_pocket3,Tasche Nr. 3
 dsp_scav_drone_pocket4,Tasche Nr. 4
 dsp_newspaper_stand_no_customer_hint, (gerade kein Kunde da)
+dsp_blood_donor_row_done,Heute schon gespendet
+dsp_hydro_open_menu,Öffnen
+dsp_hydro_manual_name,Das Geheimnis der Rohr-Hydroponik
+dsp_hydro_manual_desc,Ohne sie kannst du keine Pflanzen im Wasserhahn anbauen.
+dsp_unlicensed_name,Betrieb ohne Lizenz
+dsp_unlicensed_description,Der Beamte der Handelskommission kommt am fünften Tag.
+dsp_water_vending_name,Wasserautomat
+dsp_water_vending_description,Du startest mit einem Wasserautomaten vor dem Laden. Kunden können außerhalb der Öffnungszeiten selbst Trinkwasser kaufen.
+dsp_lucky_supply_name,Glücksnachschub
+dsp_lucky_supply_description,Georgio bringt Flüssiges Glück schon am Tag nach dem ersten Treffen und kommt danach jede Woche wie ein Händler.
+dsp_buddy_hi_1,"Alter, ich bin wieder da."
+dsp_buddy_hi_2,"Wie läuft das Glück, Alter?"
+dsp_buddy_hi_3,"Alter, Alter, sieh mal was ich gefunden habe!"
+dsp_buddy_hi_4,"Gib mir die Hand, damit dein Glück auf mich abfärbt, Alter."
+dsp_buddy_hi_5,"Ich freue mich immer, wenn du groß abräumst!"
+dsp_buddy_intro_1,"Alter, sieh dir die neue Kiste an, die ich gefunden habe. Ich wette, da ist was Gutes drin!"
+dsp_buddy_choice_yes,"Das denke ich auch."
+dsp_buddy_choice_no,"Ich glaube nicht."
+dsp_buddy_intro_2,"Na dann, warten wir es ab."
+dsp_buddy_end_1,"Nein!"
+dsp_buddy_end_2,"So ein Pech."
+dsp_buddy_end_3,"Aber ich habe eine Idee. Wie wäre es, wenn du die Kisten öffnest?"
+dsp_buddy_end_4,"Wir sind Freunde, deine Ausbeute ist auch meine Ausbeute."
+dsp_buddy_end_5,"Abgemacht!"
+dsp_phone_bill_half_1,"Das ist die Hälfte des Erzes. Wenn du diese Ladung kaufst, lege ich den Rest dazu."
+dsp_phone_bill_half_2,Hier ist die andere Hälfte.
+
+dsp_buddy_end_choice_yes,Okay, ich mache das auf.
+dsp_buddy_end_choice_no,Warum sollte ich das sein?
+dsp_hawaii_training_name,Hawaii-Training
+dsp_hawaii_training_description,"Erhalte 3 zufällige Perks, deren Perkpunkte zusammen -2 ergeben."
+dsp_paid_training_name,Bezahlte Ausbildung
+dsp_paid_training_description,Dein Startlimit für Perkplätze steigt um 3. Du startest mit 699 Credits Schulden. Dank der Werbung des Sponsors wird dieser Perk als positiv angezeigt.

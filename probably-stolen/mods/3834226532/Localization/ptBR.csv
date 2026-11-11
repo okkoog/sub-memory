@@ -1,8 +1,8 @@
-﻿# Especialização inicial: Distribuidor
+# Especialização inicial: Distribuidor
 # Terminologia conforme o inglês oficial: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distribuidor
 dsp_distributor_description,"Enquanto treinava sob o Mentor, você já cuidava dos representantes dos fornecedores. Controlar a cadeia de suprimentos te coloca um passo à frente."
-dsp_distributor_tag,Traços: Provavelmente Divertido
+dsp_distributor_tag,Mais traços: provavelmente um esquisitão
 
 # Traços iniciais
 dsp_wanderlust_name,Pé na Estrada
@@ -10,7 +10,7 @@ dsp_wanderlust_description,"Se ainda houver pelo menos um cliente na fila quando
 dsp_smelting_name,Fundição
 dsp_smelting_description,"Começa com um Forno precário equipado com um Módulo de Alto-Forno e um pouco de sucata."
 dsp_ecommerce_name,Comércio eletrônico
-dsp_ecommerce_description,"Desbloqueia as Encomendas do mercado desde o início. Um comprador a menos chega por dia, mas você recebe uma encomenda do mercado extra."
+dsp_ecommerce_description,Desbloqueia Solicitações do Mercado desde o início. Um comprador a menos por dia, mas uma solicitação extra a cada dois dias.
 dsp_built_on_dump_name,Construído no Lixão
 dsp_built_on_dump_description,"Os itens colocados na Lixeira vão direto para o chão do Lixão; você pode pegá-los de volta antes que a noite termine. O serviço de limpeza noturno e tudo ligado a ele param de funcionar. Você mesmo faz a limpeza."
 dsp_tacit_understanding_name,Entendimento Tácito
@@ -66,8 +66,9 @@ dsp_share_cigarette_line_fake_3,"Essa coisa... tá, quebra o galho."
 dsp_share_cigarette_menu,Oferecer um Cigarro
 dsp_distributor_supplies_1,"Desbloqueia Red Imp Brewery, Lower Levels Chemist, Upper Level Pharmacist e GP Mining Coop."
 dsp_distributor_supplies_2,"Desbloqueia Showcase Expansion I."
-dsp_distributor_supplies_3,"Os fornecedores já mandaram as amostras grátis."
-dsp_distributor_supplies_4,"Créditos iniciais: 200."
+dsp_distributor_supplies_3,Equipamento extra: depósito
+dsp_distributor_supplies_5,"Créditos iniciais: 200."
+dsp_distributor_supplies_4,As amostras de todos os fornecedores já estão no depósito.
 dsp_better_broker_name,Corretor Dedicado
 dsp_better_broker_description,"As Encomendas do mercado e os clientes têm mais chance de pedir itens volumosos que você já tem, especialmente no dia do aluguel. As Encomendas do mercado nunca pedem o mesmo item duas vezes."
 dsp_notorious_villain_name,Vilão Notório
@@ -108,7 +109,7 @@ dsp_foreknowledge_none,"Nenhum evento agendado agora. Bem Informado: nada agenda
 dsp_speculator_name,Efeito Manada
 dsp_speculator_description,Todos os eventos que afetam preço têm seus efeitos aumentados em 50%.
 dsp_picky_customers_name,Variedade Deslumbrante
-dsp_picky_customers_description,Os clientes têm mais chance de fazer exigências peculiares.
+dsp_picky_customers_description,Os clientes fazem pedidos mais incomuns.
 dsp_harsh_bargain_name,Intimidar os Clientes
 dsp_harsh_bargain_description,Você perde 2 de Reputação quando chama um cliente e não fecha negócio.
 dsp_wild_lover_remark,Lao Wang
@@ -385,15 +386,15 @@ dsp_blood_donor_done,Doação concluída: uma bolsa de sangue a mais e você per
 dsp_blood_donor_already,Você já doou sangue hoje.
 dsp_blood_donor_no_space,Não há espaço para outra bolsa de sangue.
 dsp_revolutionary_influence_name,Influência Revolucionária
-dsp_revolutionary_influence_description,"Se a sua Reputação com a Revolução estiver acima de 20, Odin vai te contar, depois de negociar com ele, o evento que a Revolução está planejando em até três dias."
+dsp_revolutionary_influence_description,"Se a sua Reputação com a Revolução for 20 ou mais, Odin vai te contar, depois de negociar com ele, o evento que a Revolução está planejando em até três dias."
 dsp_cracker_name,Arrombador de Caixas
 dsp_cracker_description,"Durante o seu treinamento sob o Mentor, você pegou o gosto de arrombar caixas. Na maioria das vezes compensa — desde que você tenha como abri-las."
-dsp_cracker_tag,Traços: Provavelmente Divertido
-dsp_cracker_supplies_1,Um decodificador criptográfico surrado.
-dsp_cracker_supplies_2,3 cartões de acesso em branco.
-dsp_cracker_supplies_3,Uma caixa de suprimentos aleatória e um chip de cartão de acesso.
-dsp_cracker_supplies_4,Um cartão de acesso para cada departamento.
-dsp_cracker_supplies_5,Reputação inicial mais alta (mercado negro).
+dsp_cracker_tag,Mais traços: provavelmente um esquisitão
+dsp_cracker_supplies_1,"Um dispositivo extra (esconderijo do contrabandista, melhorado)."
+dsp_cracker_supplies_2,Um sequenciador de códigos desgastado.
+dsp_cracker_supplies_3,3 cartões de acesso em branco e 1 cartão de acesso de comando.
+dsp_cracker_supplies_4,2 caixas de suprimentos diferentes e um chip de cartão de acesso de cada tipo.
+dsp_cracker_supplies_5,Seu amigo e outros vendedores te oferecem caixas de suprimentos.
 dsp_cracker_supplies_6,Reputação inicial mais baixa (Segurança).
 dsp_revolutionary_influence_slip_title,Informações da Revolução
 dsp_revolutionary_influence_slip_body,Odin baixou a voz antes de sair: em até três dias a Revolução age — “{0}”. Já está marcado no calendário.
@@ -407,7 +408,7 @@ dsp_snake_oil_description,Começa com 20 frascos de pó de sonho de amido; eles 
 dsp_charm_mushroom_name,Cogumelo encantador
 dsp_charm_mushroom_description,O Cogumelo dos Sonhos e o Cogumelo dos Pesadelos contam como comida e como narcótico ao mesmo tempo.
 dsp_jane_smith_name,Maria Silva
-dsp_jane_smith_description,Todos os nomes aparecem como João Silva / Maria Silva.
+dsp_jane_smith_description,Todos os nomes aparecem como João da Silva / Maria Silva.
 dsp_scav_drone_extra,Drone catador: você trouxe um pouco a mais.
 dsp_trust_fund_paid,Fundação beneficente Keystone: chegaram {0} créditos da quinta-feira.
 dsp_share_cigarette_not_cig,Esta opção só funciona com cigarros.
@@ -431,7 +432,7 @@ dsp_watermelon_merge_menu,Fundir (consome um idêntico)
 dsp_watermelon_merge_done,"Fundido em um {0} maior, no valor de {1} créditos."
 dsp_watermelon_merge_max,Não dá para ficar maior que isso.
 dsp_hydro_question_name,Hidro… ponia?
-dsp_hydro_question_description,Você pode cultivar 2 plantas na torneira de água. Começa com 2 sementes aleatórias.
+dsp_hydro_question_description,Você pode cultivar 2 plantas na torneira de água. Começa com 2 sementes aleatórias. Dê um clique duplo na torneira (ou no bilhete «Hidroponia no cano» do dossiê) para abrir a janela de cultivo.
 dsp_poet_admirer_name,Admirador poeta
 dsp_poet_admirer_description,Os bilhetes do seu admirador são itens de luxo no valor de 50 créditos.
 dsp_admirer_poem_1,"Kwa-kwa gritam as águias-pescadoras no ilhote do rio. A donzela discreta e virtuosa é boa companheira para o príncipe. — Livro das Odes, Guan Ju"
@@ -482,3 +483,36 @@ dsp_service_newspaper_subscription,Assinatura do jornal
 dsp_scav_drone_pocket3,Bolso nº 3
 dsp_scav_drone_pocket4,Bolso nº 4
 dsp_newspaper_stand_no_customer_hint, (nenhum cliente agora)
+dsp_blood_donor_row_done,Já doou hoje
+dsp_hydro_open_menu,Abrir
+dsp_hydro_manual_name,O segredo da hidroponia no cano
+dsp_hydro_manual_desc,Sem ela você não cultiva plantas na torneira.
+dsp_unlicensed_name,Operação sem licença
+dsp_unlicensed_description,O oficial da comissão comercial chega no quinto dia.
+dsp_water_vending_name,Máquina de água
+dsp_water_vending_description,Você começa com uma máquina de água do lado de fora da loja. Clientes podem comprar água potável sozinhos fora do horário.
+dsp_lucky_supply_name,Suprimento da sorte
+dsp_lucky_supply_description,Georgio traz Sorte Líquida no dia seguinte ao primeiro encontro e depois passa toda semana como um comerciante.
+dsp_buddy_hi_1,"E aí, parceiro, aqui estou eu de novo."
+dsp_buddy_hi_2,"Como tá a sorte, parceiro?"
+dsp_buddy_hi_3,"Parceiro, parceiro, olha o que eu achei!"
+dsp_buddy_hi_4,"Aperta minha mão pra um pouco da sua sorte passar pra mim, parceiro."
+dsp_buddy_hi_5,É sempre bom te ver tirando uma boa!
+dsp_buddy_intro_1,"Parceiro, olha a caixa nova que eu achei. Aposto que tem coisa boa aí!"
+dsp_buddy_choice_yes,"Também acho."
+dsp_buddy_choice_no,"Não acho não."
+dsp_buddy_intro_2,"Bom, vamos ver."
+dsp_buddy_end_1,"Não!"
+dsp_buddy_end_2,"Que azar."
+dsp_buddy_end_3,"Mas eu tenho uma ideia. Que tal você abrir as caixas?"
+dsp_buddy_end_4,"Somos amigos, o que você tira também é meu."
+dsp_buddy_end_5,"Então combinado!"
+dsp_phone_bill_half_1,"Esta é metade do minério. Quando você vender este lote, coloco o resto."
+dsp_phone_bill_half_2,Aqui está a outra metade.
+
+dsp_buddy_end_choice_yes,Tá bom, eu abro.
+dsp_buddy_end_choice_no,Por que eu?
+dsp_hawaii_training_name,Treinamento no Havaí
+dsp_hawaii_training_description,Ganhe 3 vantagens aleatórias cujos pontos somam -2.
+dsp_paid_training_name,Treinamento pago
+dsp_paid_training_description,"Seu limite de espaços de vantagens aumenta em 3. Você começa com uma dívida de 699 créditos. Gracias à propaganda do patrocinador, esta vantagem aparece como positiva."

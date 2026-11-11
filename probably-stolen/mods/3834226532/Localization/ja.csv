@@ -1,8 +1,8 @@
-﻿# 開始時の専精：ディストリビューター
+# 開始時の専精：ディストリビューター
 # 用語は公式英語に準拠：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,ディストリビューター
 dsp_distributor_description,"導師のもとで修業していた頃から、すでに取引先の担当者たちと懇意にしていた。供給網を握れば、一歩先を行ける。"
-dsp_distributor_tag,特性：たぶん愉快
+dsp_distributor_tag,もっと特性：たぶん変人
 
 # 開始時特性
 dsp_wanderlust_name,放浪癖
@@ -10,7 +10,7 @@ dsp_wanderlust_description,閉店時に少なくとも1人の客がまだ行列�
 dsp_smelting_name,精錬
 dsp_smelting_description,"高炉モジュールを取り付けた粗末な炉と、いくらかの金属くずを持って始める。"
 dsp_ecommerce_name,ネット通販
-dsp_ecommerce_description,"最初からマーケット依頼が解放される。毎日買い手が1人減るが、マーケット依頼を1件多く受け取る。"
+dsp_ecommerce_description,開始時から市場依頼が解禁される。毎日買い手が1人減るが、市場依頼は2日に1件多く届く。
 dsp_built_on_dump_name,廃棄場の上に建てて
 dsp_built_on_dump_description,"ゴミ箱に入れた物品はすぐに廃棄場の地面へ移され、夜が明ける前に取り戻せる。夜間の清掃サービスとそれに類するものは一切機能しなくなる。掃除は自分でやること。"
 dsp_tacit_understanding_name,暗黙の了解
@@ -66,8 +66,9 @@ dsp_share_cigarette_line_fake_3,"これは……まあ、悪くない。"
 dsp_share_cigarette_menu,煙草を差し出す
 dsp_distributor_supplies_1,"レッドインプ醸造所、下層街の化学者、上層区の薬剤師、GP採掘協同組合を解放する。"
 dsp_distributor_supplies_2,"陳列ケース拡張 Iを解放する。"
-dsp_distributor_supplies_3,"取引先からはすでに無料サンプルが届いている。"
-dsp_distributor_supplies_4,"開始クレジット：200。"
+dsp_distributor_supplies_3,追加設備：保管庫
+dsp_distributor_supplies_5,"開始クレジット：200。"
+dsp_distributor_supplies_4,各社の無料サンプルは保管庫に収納済み。
 dsp_better_broker_name,忠実なブローカー
 dsp_better_broker_description,"マーケット依頼と客は、あなたがすでに持っているかさばる品を求める傾向が強くなる。とくに家賃の日は顕著だ。マーケット依頼は同じ品を二度要求しない。"
 dsp_notorious_villain_name,札付きの悪党
@@ -108,7 +109,7 @@ dsp_foreknowledge_none,"現在予定されているイベントはない。情�
 dsp_speculator_name,群集心理
 dsp_speculator_description,価格に影響するすべてのイベントの効果が50%増える。
 dsp_picky_customers_name,目移りする品揃え
-dsp_picky_customers_description,客は風変わりな要求をしてくるようになる。
+dsp_picky_customers_description,客はより珍しい要求を出してくる。
 dsp_harsh_bargain_name,客を泣かせる
 dsp_harsh_bargain_description,客を呼びつけて取引をまとめられなかったとき、評判を2失う。
 dsp_wild_lover_remark,ワイルドのおやじ
@@ -385,15 +386,15 @@ dsp_blood_donor_done,献血完了：血液パックが1つ増えた。明日は�
 dsp_blood_donor_already,今日はもう献血した。
 dsp_blood_donor_no_space,血液パックを置く場所がない。
 dsp_revolutionary_influence_name,革命家の影響力
-dsp_revolutionary_influence_description,革命家からの評判が20を超えていると、取引のあと、オーディンが3日以内に革命家が計画しているイベントを教えてくれる。
+dsp_revolutionary_influence_description,"革命家からの評判が20以上になると、取引のあと、オーディンが3日以内に革命家が計画しているイベントを教えてくれる。"
 dsp_cracker_name,箱開け
 dsp_cracker_description,導師のもとで修業していた頃、あなたは箱を開ける癖がついた。たいていは割に合う——開ける手段さえあれば。
-dsp_cracker_tag,特性：たぶん愉快
-dsp_cracker_supplies_1,くたびれた暗号デシーケンサー。
-dsp_cracker_supplies_2,空白のアクセスカード3枚。
-dsp_cracker_supplies_3,ランダムな物資箱とアクセスカード用チップ。
-dsp_cracker_supplies_4,全部署のアクセスカードを各1枚。
-dsp_cracker_supplies_5,初期評判が上がる（闇市場）。
+dsp_cracker_tag,もっと特性：たぶん変人
+dsp_cracker_supplies_1,追加装備（密輸人の隠し場所・改良型）。
+dsp_cracker_supplies_2,使い古されたコード解読器。
+dsp_cracker_supplies_3,空白のアクセスカード3枚と司令アクセスカード1枚。
+dsp_cracker_supplies_4,種類の異なる補給箱2つと、それぞれに対応するアクセスカードチップ。
+dsp_cracker_supplies_5,友達や他の売り手が補給箱を売ってくれる。
 dsp_cracker_supplies_6,初期評判が下がる（治安部）。
 dsp_revolutionary_influence_slip_title,革命家の情報
 dsp_revolutionary_influence_slip_body,オーディンは去り際に声を落とした。3日以内に革命家が動く——「{0}」。カレンダーにはもう印がついている。
@@ -431,7 +432,7 @@ dsp_watermelon_merge_menu,合成する（同種を1つ消費）
 dsp_watermelon_merge_done,より大きな{0}ができた。価値 {1} クレジット。
 dsp_watermelon_merge_max,これ以上は大きくできない。
 dsp_hydro_question_name,水…耕？
-dsp_hydro_question_description,水道の蛇口で植物を2株育てられる。開始時にランダムな種を2つ持つ。
+dsp_hydro_question_description,水道の蛇口で植物を2株育てられる。開始時にランダムな種を2つ持つ。蛇口（または書類ケースの「水路水耕の秘訣」の紙）をダブルクリックすると栽培画面が開く。
 dsp_poet_admirer_name,詩人な崇拝者
 dsp_poet_admirer_description,崇拝者のメモは価値50クレジットの高級品になる。
 dsp_admirer_poem_1,川の中州でミサゴがクワクワと鳴く。つつましく徳のある娘は、君侯によい伴侶。— 詩経「関雎」
@@ -482,3 +483,36 @@ dsp_service_newspaper_subscription,新聞の定期購読
 dsp_scav_drone_pocket3,ポケット#3
 dsp_scav_drone_pocket4,ポケット#4
 dsp_newspaper_stand_no_customer_hint,（今はお客さんがいない）
+dsp_blood_donor_row_done,今日はもう献血した
+dsp_hydro_open_menu,開く
+dsp_hydro_manual_name,水道水耕の秘訣
+dsp_hydro_manual_desc,これがないと水道の蛇口では植物を育てられない。
+dsp_unlicensed_name,無許可営業
+dsp_unlicensed_description,貿易委員会の担当官が5日目に訪れる。
+dsp_water_vending_name,自動給水機
+dsp_water_vending_description,店の外に自動給水機が付いてくる。営業時間外でも客が自分で飲料水を買える。
+dsp_lucky_supply_name,幸運の補給
+dsp_lucky_supply_description,ジョルジオは初対面の翌日に液体幸運を持って来て、以後は毎週商人のように訪れる。
+dsp_buddy_hi_1,よお、相棒。また来たぜ。
+dsp_buddy_hi_2,運はどうだい、相棒。
+dsp_buddy_hi_3,相棒相棒、見てくれよ、これ見つけたんだ！
+dsp_buddy_hi_4,握手してくれよ、俺にも幸運を分けてくれ、相棒。
+dsp_buddy_hi_5,お前が当たりを引くのを見るのは嬉しいもんだ！
+dsp_buddy_intro_1,"相棒、見てくれよ、新しく見つけた箱だ。きっといいもんが出るぜ！"
+dsp_buddy_choice_yes,"そうだと思う。"
+dsp_buddy_choice_no,"そうは思わない。"
+dsp_buddy_intro_2,"よし、見てみよう。"
+dsp_buddy_end_1,"くそ！"
+dsp_buddy_end_2,"ついてないな。"
+dsp_buddy_end_3,"でもいいことを思いついた。お前が箱を開けてくれよ。"
+dsp_buddy_end_4,"俺たち友達だろ、お前が出したもんは俺が出したもんと同じさ。"
+dsp_buddy_end_5,"決まりだ！"
+dsp_phone_bill_half_1,鉱石の半分だ。この分を買い終えたら残りを置く。
+dsp_phone_bill_half_2,残りの半分だ。
+
+dsp_buddy_end_choice_yes,いいよ、俺が開ける。
+dsp_buddy_end_choice_no,なんで俺が開けるんだ？
+dsp_hawaii_training_name,ハワイ研修
+dsp_hawaii_training_description,ランダムなパークを3つ獲得する。それらのパークポイントの合計は-2になる。
+dsp_paid_training_name,有料研修
+dsp_paid_training_description,開始時のパーク枠上限が3つ増える。開始時に699クレジットの借金を負う。スポンサーの広告により、このパークはポジティブとして表示される。

@@ -108,16 +108,21 @@ cfg_collapse_tip,"The slip shows just the essentials; the parts ticked below sta
 cfg_expand_key,Expand key
 cfg_expand_key_tip,Hold this key to show the full slip; let go to fold it again.
 cfg_collapse_prices,Fold price details
-cfg_collapse_prices_tip,"The small line under the selling price (list price, value per cell and so on). The big selling price and the purchase price stay."
+cfg_collapse_prices_tip,"The price details under the selling price (list price and so on). The big selling price, the purchase price and value per cell stay."
 cfg_collapse_contents,Fold contents
 cfg_collapse_contents_tip,"The item grids of containers and machines. Battery and tank gauges are readings and stay."
 cfg_collapse_desc,Fold item description
 cfg_collapse_desc_tip,The item's own flavour text.
 cfg_collapse_mods,Fold mod info
 cfg_collapse_mods_tip,"The Mod info section added by other mods, and the mod source line."
+cfg_collapse_factors,Fold price factors
+cfg_collapse_factors_tip,"The lines in Mod info that end in a signed percentage (market events, black market premium and so on) stay folded until you hold the expand key; the rest of Mod info still shows. No need to tick this if Fold mod info is already ticked."
+cfg_show_on_key,Show the tooltip only while holding the expand key
+cfg_show_on_key_tip,"Moving the mouse over items shows nothing; hold the expand key to show the tooltip (the full slip). Applies to both styles."
 fold_view,Show {0}
 fold_sep,","
 fold_prices,price details
 fold_contents,contents
 fold_desc,description
 fold_mods,mod info
+fold_factors,price factors

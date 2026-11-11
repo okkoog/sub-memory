@@ -439,7 +439,7 @@ fre.security_procurement_05d6c39e	Security Procurement	警务采购	legacy share
 fre.ordered_batches_0_2_contraband_1_8_item_mode_c4a91a1a	Ordered batches {0}/2 · Contraband {1}/8 · Item models {2}/3 · Reference value {3}/1500	订货批次 {0}/2 · 违禁品 {1}/8 · 品种 {2}/3 · 参考价 {3}/1500	legacy shared text
 fre.know_the_door_know_the_key_b8ca1322	Know the Door, Know the Key	认得门，也认得钥匙	legacy shared text
 fre.noted_delivery_tomorrow_morning_392ee8a2	Noted. Delivery tomorrow morning.	记下了，明早送到。	legacy shared text
-fre.keycards_and_supply_crates_7c6d6ce9	Keycards and supply crates	识别卡与物资箱	legacy shared text
+fre.keycards_and_supply_crates_7c6d6ce9	Keycards and supply crates	识别卡与物资箱	legacy shared text; F6 supply cargo
 fre.keep_your_hands_visible_please_we_can_contin_12f67b75	Keep your hands visible, please. We can continue trading.	请让双手保持可见。我们可以继续交易。	legacy shared text
 fre.estate_procurement_51c9c42b	Estate Procurement	豪门采购	legacy shared text
 fre.corporate_supply_channel_289bd6ff	Corporate Supply Channel	财阀渠道	legacy shared text
@@ -1163,3 +1163,30 @@ fre.alliance_surplus_preparing	Preparing stock	物资整理中	Alliance surplus 
 fre.alliance_surplus_preparing_reply	Inventory indexing in progress. Please call again shortly.	正在整理库存目录。请稍后再拨。	Alliance surplus hotline preparation
 fre.alliance_surplus_pending	Visit pending	预约进行中	Alliance surplus hotline status
 fre.core_zero_negative_module_stats	Set negative performance, efficiency and quality stats on all owned modules to zero. Positive and zero values remain unchanged.	将当前拥有的所有模组的性能、效率、质量三项属性中的负值归零；正值和零值保持不变。	Newborn Core P12 Whole System Calibration
+fre.the_scavenger_union_opens_its_contact_line_o_16aad2e4	The Scavenger Union opens its contact line: one call, and supplies arrive tomorrow. Food, medical supplies and tools/materials you sell through them fetch 15% more. Deeper ties bring better goods.	拾荒者同盟向您敞开联络渠道，只需一通电话，明天就有人带着您需要的补给登门；经他们之手卖出的食物、医疗与工具材料价格提高15%。交情越深，带来的好货越多。	src/RepConfig.cs (stage-1 rework)
+fre.items_sold_to_lower_level_customers_fetch_20_d8f4a2dd	Items sold to Lower Level customers fetch 20% more. The neighbourhood remembers your help, and sometimes leaves treasured goods at your door in the morning.	向下层区卖出物品多得20%；街坊记着您的照应，清晨偶尔会把珍藏的好东西留在店门口。	src/RepConfig.cs (stage-1 rework)
+fre.your_name_enters_the_upper_level_salons_luxu_3df5378d	Your name enters the Upper Level salons. Luxury goods sell for 20% more, and generous customers tip 20% higher.	您的名字进了上层区的私人沙龙。奢侈品卖价提高20%，阔绰的客人给小费时也按20%出手。	src/RepConfig.cs (stage-1 rework)
+fre.someone_slows_your_case_down_investigation_p_596790e6	Someone slows your case down: investigation progress is 25% lower, and Upper Level complaints cannot speed it up. Estate procurement answers your invitations first.	有人替您的案子放慢了脚步：调查推进降低25%，上层区的检举也催不动它。豪门采购更愿意优先回应您的邀约。	src/RepConfig.cs (stage-1 rework)
+fre.your_influence_reaches_beyond_the_counter_al_3f39f2f4	Your influence reaches beyond the counter: all non-stolen goods sell for 15% more. Every Monday morning the board sends a dividend.	您的影响力延伸到了柜台之外：全店非赃物卖价提高15%。每周一清晨，董事会都会送来一份分红。	src/RepConfig.cs (stage-1 rework)
+fre.compliant_food_medical_supplies_and_weapons_3ba2e401	Compliant food, medical supplies and weapons sell to Security customers for 20% more. The procurement line lets you book weapon, medical or food purchases; the buyer never touches stolen goods or contraband.	向治安部顾客卖出合规的食物、医疗物品或武器时价格提高20%。警务采购向您开放专线，可预约武器、医疗物品或食物的收购；采购员不碰赃物和违禁品。	src/RepConfig.cs (stage-1 rework)
+fre.sales_to_ordinary_security_customers_pay_20_5d587919	Sales to ordinary Security customers pay 20% more. The buyer is more generous with requested goods, and pays a bonus on departure when quantity and condition are sufficient.	向治安部普通顾客卖货可多得20%。采购员对指定物资更加慷慨；交付的数量与成色够分量，离店时还会另付一笔奖励。	src/RepConfig.cs (stage-1 rework)
+fre.the_dedicated_black_market_merchant_treats_y_575f8226	The dedicated black-market merchant treats you as one of their own: contraband sells for 20% more. Night burglars avoid your shop, and daytime supply continues.	专属黑市商人把您当作自己人：违禁品卖价提高20%。夜里的窃贼会绕开您的店，白天的供货照常。	src/RepConfig.cs (stage-1 rework)
+fre.no_matter_the_heat_stolen_goods_lose_their_o_86c05e4f	No matter the heat, stolen goods lose their origin overnight. Contraband sells for 15% more; the item's own restrictions still apply.	不论风声多紧，您手里的赃物过一夜便能洗去来路。违禁品卖出多得15%，货物本身的禁令依然算数。	src/RepConfig.cs (stage-1 rework)
+fre.the_red_flag_alliance_treats_your_counter_as_3e62fce5	The Red Flag Alliance treats your counter as a reliable supply point. Food, medical supplies and weapons sell to the Revolution for 15% more.	赤旗同盟把您的柜台视作可靠的补给点。向革命军卖出食物、医疗物品和武器时价格提高15%。	src/RepConfig.cs (stage-1 rework)
+fre.cartel_raw_material_supplier_prices_are_10_l_1aacb2e1	Cartel raw-material supplier prices are 10% lower.	卡特尔原料商的供货价格降低10%。	src/RepConfig.cs (stage-1 rework)
+fre.addictive_contraband_adds_half_the_usual_dru_bd0dc6c9	Addictive contraband adds half the usual drug-trafficking investigation. Dream dust, nightmare dust and caffeine sell for 20% more.	出售成瘾违禁品带来的贩毒调查增长减半。梦尘、梦魇尘与咖啡因售价提高20%。	src/RepConfig.cs (stage-1 rework)
+fre.three_to_four_augmented_visitors_arrive_each_d1321fa7	Three to four augmented visitors arrive each week. Basic modules and nodes enter the supplier stock at 10% off.	每周至少三到四位改造体来访；补给商新增普通模组与节点，商品九折。	stage-1 visitor frequency
+fre.additional_alliance_customers_visit_three_to_d171dfe2	Additional Alliance customers visit three to four times a week, and pay extra for medical supplies and materials.	每周会有三到四次额外的同盟顾客前来；收购药物与材料时，他们也愿意主动多付一份报酬。	stage-1 visitor frequency
+fre.three_to_four_invited_vips_visit_each_week_b_1d16ec99	Three to four invited VIPs visit each week, buying medical supplies, tobacco and alcohol, luxuries, food and weapons. Each has a preference; matching goods sell for a better price.	每周会有三到四位特约贵宾登门，收购医疗物品、烟酒、奢侈品、食物与武器。贵宾各有偏爱，投其所好的货物总能卖个更漂亮的价钱。	stage-1 visitor frequency
+fre.supply_orders_1fd96c17	Supply Orders	预约供货	F6 supply page title
+fre.pick_a_line_then_double_click_a_cargo_type_t_a30e89a9	Pick a line, then double-click a cargo type to confirm. Each line cools down independently; the visit arrives tomorrow.	选择线路后双击货物类型确认；每条线路独立冷却，预约后次日到访	F6 supply page hint
+fre.ready_b073db9c	Ready	就绪	F6 supply status
+fre.arriving_tomorrow_5e82911b	Arriving tomorrow	明天到访	F6 supply status
+fre.booked_c7c336b7	Booked: 	已预约：	F6 supply toast
+fre.arriving_tomorrow_15cc454f	, arriving tomorrow	，明天到访	F6 supply toast
+fre.booking_failed_on_cooldown_or_a_delivery_is_e7401408	Booking failed: on cooldown or a delivery is already pending	预约失败：冷却中或已有待交付订单	F6 supply toast
+fre.click_again_to_confirm_6f029f4f	Click again to confirm: 	再次点击确认预约：	F6 supply hint
+fre.set_to_6801eed1	Set to: 	已设置：	F6 supply status
+fre.raw_materials_71dfeee5	Raw materials	原料与耗材	F6 supply cargo
+fre.locked_308d62ba	Locked	未解锁	F6 supply status
+fre.acquisition_orders_731f6d91	Acquisition Orders	预约收购	F6 acquisition page
