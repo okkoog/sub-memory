@@ -1,3 +1,30 @@
+﻿1.5.11 — 陈列、威慑与商人来意
+
+• 新增单表位典藏柜：取得唯一封存典藏原装后由表商赠送，固定在电话上方墙面，可拉帘遮蔽。展示吸引特别收藏家，并有机会引来应汐渊。
+• 武器陈列提供威慑，腕表陈列提供名望。神剑独立提供80威慑，总威慑上限100；防盗减免最高90%。名望吸引资金更充足的收藏家，也增加盗窃与盘查压力。
+• 新增交易案值按违禁等级和赃物热度计算风险，再扣威慑；每级违禁的案值计算基数上限5,000，纯赃物5,000。风险被完全覆盖时不新增案值；旧案保留。
+• 神剑挡判罚需要有效维护，每次扣7天维护期；官员退去后调查清零，已有案值保留。普通盘查官仍会被公开展示的神剑劝退。
+• 十位表商与军火商区分卖货、采购来访；名帖可指定来意。卖货时不收货或替玩家鉴定，采购时不带货。军火商收购增加20%压价。
+• 修正电话排版、展示说明及缺失文本；御藏名录、中英俄说明同步。1.x存档继续使用。
+
+1.5.11 — Displays, Deterrence and Merchant Visits
+
+• A dealer gifts a single-watch cabinet after you acquire a genuine unique sealed collectible. It mounts above the telephone and has a concealing curtain. Displays attract special collectors and may draw Ying Xiyuan.
+• Displayed weapons grant deterrence; watches grant prestige. The Crownblade contributes 80 separately, with total deterrence capped at 100 and theft protection at 90%. Prestige attracts wealthier collectors but increases theft and inspection pressure.
+• New trade crime uses contraband level plus stolen heat, minus deterrence. The calculation base is capped at 5,000 per contraband level, or 5,000 for stolen-only goods. Fully covered risk adds no crime; existing cases remain.
+• Repelling a sentencing officer requires an actively maintained, displayed Crownblade and consumes seven maintenance days. The officer's departure resets investigation progress, retaining crime value. Ordinary inspectors still retreat from the displayed sword.
+• Ten watch and arms dealers now visit either to sell or to buy. Calling cards let you choose. Selling visitors neither buy nor appraise your goods; purchasing visitors bring no stock. Arms dealers apply a 20% buying discount.
+• Fixed phone layout, display descriptions and missing text. Updated the Ledger and Chinese, English and Russian text. Existing 1.x saves remain compatible.
+
+1.5.11 — Витрины, сдерживание и цели визитов
+
+• После получения уникальных коллекционных часов в оригинале торговец дарит витрину на одни часы. Она крепится над телефоном и закрывается шторкой. Открытая витрина привлекает особых коллекционеров и иногда Ин Сиюань.
+• Оружие на виду даёт сдерживание, часы — престиж. Меч короны отдельно даёт 80; общий предел сдерживания — 100, защиты от краж — 90%. Престиж привлекает богатых покупателей, но повышает давление воров и проверок.
+• Риск новых сделок равен уровню контрабанды ×20 плюс розыск краденого, минус сдерживание. База расчёта ограничена 5000 за уровень, для просто краденого — 5000. Полностью покрытый риск не добавляет сумму дела. Старые дела сохраняются.
+• Чтобы отвести приговор, выставленный меч должен быть обслужен. Каждый такой уход офицера расходует семь дней обслуживания и обнуляет расследование, сохраняя сумму дел. Обычные инспекторы по-прежнему уходят при виде меча.
+• Десять торговцев часами и оружием приходят либо продавать, либо покупать. Цель можно выбрать через визитку. Продавцы не покупают и не оценивают ваши вещи; покупатели не приносят товар. Торговцы оружием закупают со скидкой 20%.
+• Исправлены телефонный интерфейс и отсутствующие тексты, обновлён Каталог. Поддерживаются китайский, английский и русский языки; сохранения 1.x совместимы.
+
 1.5.10 — 暗格丢弃与治安服务修复 / Cabinet disposal and case suppression
 
 • 白厄三种违禁品暗格取空后可丢进垃圾桶，过夜清理；装着物品时继续阻止丢弃。

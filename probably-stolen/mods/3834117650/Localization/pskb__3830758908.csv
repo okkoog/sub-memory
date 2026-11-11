@@ -1,4 +1,4 @@
-﻿# Gabrielle Workshop / ChipSlotExpansion 0.20.59 - Korean localization
+﻿# Gabrielle Workshop / ChipSlotExpansion 0.20.119 - Korean localization
 M|chip_slot_expansion,1
 W|3830758908,1
 K|text_001,가브리엘
@@ -119,14 +119,18 @@ K|compiler_debug,모듈 컴파일러 프로토타입 + 컴파일 디스크 2개
 K|compiler_output,출력
 K|compiler_manual_name,모듈 컴파일러 사용 설명서
 K|compiler_manual_short,모듈 컴파일러는 효과를 기록·추출·복사·강화할 수 있습니다. 특수 모듈을 장착하면 추가 기능이 열립니다.\n기계 툴팁에서 다음 작업을 확인하세요.
-K|compiler_manual_text,"기록: 입력 포트에 기록된 디스크를 넣고, 대상 칸에 여유 용량이 충분한 모듈을 넣은 뒤 기계를 켜면 효과를 기록합니다.\n추출: 출력 포트에 빈 디스크를 넣고 대상 칸에 컴파일 가능한 효과가 있는 모듈을 넣은 뒤 기계를 켜면 무작위 효과 하나를 추출합니다.\n복사: 입력 포트에 기록된 디스크를, 출력 포트에 빈 디스크를 넣으세요. 대상 칸은 비운 채 기계를 켜면 효과를 복사합니다.\n강화: 양쪽 포트에 같은 효과·같은 레벨의 디스크를 넣으세요. 대상 칸은 비운 채 기계를 켜면 출력 포트의 디스크를 최대 Ⅲ레벨까지 강화합니다.\n[모듈 효과]:\n효율은 전력 소모에 영향\n성능은 작업 속도에 영향\n품질은 성공률에 영향 (계수: 0.25)"
+K|compiler_manual_text,"기록: 입력 포트에 기록된 디스크를 넣고, 대상 칸에 여유 용량이 충분한 모듈을 넣은 뒤 기계를 켜면 효과를 기록합니다.\n덮어쓰기: 입력 포트에 기록된 디스크를 넣고, 대상 칸에 같은 효과를 다른 레벨로 가진 모듈을 넣은 뒤 기계를 켜면 기존 효과의 레벨을 덮어씁니다. 레벨을 올리거나 내릴 수 있습니다.\n추출: 출력 포트에 빈 디스크를 넣고 대상 칸에 컴파일 가능한 효과가 있는 모듈을 넣은 뒤 기계를 켜면 무작위 효과 하나를 추출합니다.\n복사: 입력 포트에 기록된 디스크를, 출력 포트에 빈 디스크를 넣으세요. 대상 칸은 비운 채 기계를 켜면 효과를 복사합니다.\n강화: 양쪽 포트에 같은 효과·같은 레벨의 디스크를 넣으세요. 대상 칸은 비운 채 기계를 켜면 출력 포트의 디스크를 최대 Ⅲ레벨까지 강화합니다.\n[모듈 효과]:\n효율은 전력 소모에 영향\n성능은 작업 속도에 영향\n품질은 성공률에 영향 (계수: 0.25)"
 K|compiler_disk_blank,빈 모듈 컴파일 디스크
 K|compiler_capacity,사용량
 K|compiler_life,디스크 수명
 K|compiler_apply,기록
 K|compiler_extract,추출
 K|compiler_cancel,취소
-K|compiler_duplicate,이미 존재하는 효과입니다.
+K|compiler_duplicate,같은 레벨의 효과가 이미 존재합니다.
+K|compiler_next_overwrite_upgrade,다음 작업: 덮어쓰기 업그레이드 {0} → {1}
+K|compiler_next_overwrite_downgrade,다음 작업: 덮어쓰기 다운그레이드 {0} → {1}
+K|compiler_working_overwrite_upgrade,덮어쓰기 업그레이드 중: {0} → {1}
+K|compiler_working_overwrite_downgrade,덮어쓰기 다운그레이드 중: {0} → {1}
 K|compiler_full,이 효과를 기록하면 사용량이 100%를 초과합니다.
 K|compiler_unknown,이 효과는 컴파일을 지원하지 않습니다.
 K|compiler_conflict,서로 호환되지 않는 효과입니다.
@@ -167,7 +171,7 @@ K|compiler_working_enhance,강화 중: {0}
 K|compiler_enhance_risk,"시도할 때마다 원본 디스크의 기록 횟수 1회를 소모하며, 대상 디스크의 남은 횟수는 변하지 않습니다."
 K|compiler_enhanced,강화 성공.
 K|compiler_enhance_failed,강화 실패. 대상 디스크는 그대로입니다.
-K|compiler_learning_desc_level,초기 양수 기본 능력치는 0에서 시작하며 상한은 원래 값의 {1}배입니다. 사용할 때마다 {0}%p씩 증가합니다.
+K|compiler_learning_desc_level,"이 모듈은 초기 기본 능력치를 유지하며 사용할 때마다 {0}%p씩 성장합니다. 양수 기본 능력치는 초기 값의 최대 {1}배까지, 음수 기본 능력치는 0까지 성장합니다."
 K|compiler_degrading_desc_level,"초기 기본 능력치에 {0}배가 적용되지만, 사용할 때마다 양수 기본 능력치가 {1}%p씩 감소합니다."
 K|compiler_overvolted_desc_level,"초기 기본 능력치에 {0}배가 적용되지만, 사용할 때마다 {1}% 확률로 모듈이 파괴됩니다."
 K|compiler_premium_desc,이 모듈의 기본 능력치가 {0}% 증가합니다.
@@ -175,7 +179,7 @@ K|compiler_inferior_desc,이 모듈의 기본 능력치가 {0}% 감소합니다.
 K|compiler_receiver_desc,인접한 [노드] 하나마다 이 모듈의 능력치가 일시적으로 {0}% 증가합니다.
 K|compiler_top_desc,이 모듈이 모듈 칸의 위쪽 가장자리에 닿아 있으면 능력치가 일시적으로 {0}% 증가합니다.
 K|compiler_side_desc,이 모듈이 모듈 칸의 왼쪽 가장자리에 닿아 있으면 능력치가 일시적으로 {0}% 증가합니다.
-K|compiler_learning_desc,"이 모듈은 양수 기본 능력치가 0에서 시작하며, 사용할 때마다 {0}%p씩 증가해 원래 양수 기본 능력치의 최대 {1}배까지 성장합니다."
+K|compiler_learning_desc,"이 모듈은 초기 기본 능력치를 유지하며 사용할 때마다 {0}%p씩 성장합니다. 양수 기본 능력치는 초기 값의 최대 {1}배까지, 음수 기본 능력치는 0까지 성장합니다."
 K|compiler_feedback_desc,"이 모듈은 초기 기본 능력치가 25% 증가하지만, 인접한 [모듈]의 음수 기본 능력치 중 {0}%를 일시적으로 흡수합니다."
 K|compiler_not_compilable,이 특수 효과는 컴파일할 수 없습니다.
 K|compiler_fixed_effect,컴파일 불가
@@ -477,7 +481,7 @@ K|glass_plate_name,유리판
 K|glass_plate_desc,유리 조각을 다시 녹여 만든 얇고 투명한 판. 추가 가공에 사용할 수 있다.
 K|glass_smelting_module_name,유리 제련 모듈
 K|glass_smelting_module_desc,제련용 용광로에 장착하는 모듈.
-K|glass_smelting_module_effect,유리 조각 1개를 녹여 유리판 1개를 만든다.
+K|glass_smelting_module_effect,유리 조각 2개 또는 빈 맥주병 1개를 제련해 유리판 2개를 만듭니다.
 K|wine_bottle_chip_name,3D 프린터 칩 ({0} ×{1})
 K|high_temperature_nozzle_name,고온 프린팅 노즐 모듈
 K|high_temperature_nozzle_desc,3D 프린터에서 유리판을 재료로 유리 제품을 출력할 수 있게 해 준다.

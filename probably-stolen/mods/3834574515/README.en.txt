@@ -1,5 +1,14 @@
+﻿1.5.11 — Displays, Deterrence and Merchant Visits
+
+• A dealer gifts a single-watch cabinet after you acquire a genuine unique sealed collectible. It mounts above the telephone and has a concealing curtain. Displays attract special collectors and may draw Ying Xiyuan.
+• Displayed weapons grant deterrence; watches grant prestige. The Crownblade contributes 80 separately, with total deterrence capped at 100 and theft protection at 90%. Prestige attracts wealthier collectors but increases theft and inspection pressure.
+• New trade crime uses contraband level plus stolen heat, minus deterrence. The calculation base is capped at 5,000 per contraband level, or 5,000 for stolen-only goods. Fully covered risk adds no crime; existing cases remain.
+• Repelling a sentencing officer requires an actively maintained, displayed Crownblade and consumes seven maintenance days. The officer's departure resets investigation progress, retaining crime value. Ordinary inspectors still retreat from the displayed sword.
+• Ten watch and arms dealers now visit either to sell or to buy. Calling cards let you choose. Selling visitors neither buy nor appraise your goods; purchasing visitors bring no stock. Arms dealers apply a 20% buying discount.
+• Fixed phone layout, display descriptions and missing text. Updated the Ledger and Chinese, English and Russian text. Existing 1.x saves remain compatible.
+
 FORBIDDEN REGALIA — THIS MIGHT KILL YOU
-Version 1.5.10 · Probably Stolen 0.46D
+Version 1.5.11 · Probably Stolen 0.46D
 
 77 rebuildable watches from 13 fictional makers, sealed collector’s pieces, 30 modular guns, six high-tech melee weapons, workshop commissions, night shops and specialist visitors.
 
@@ -35,7 +44,7 @@ Relationships unlock the assassins’ evidence services; dialogue shows costs an
 Forbidden Court Essence invites Ying Xiyuan. Qualifying sought-after watches or counterfeit Regalia may also attract her. Relationships and royal builds open access to her collection. Her coffin, mirror, throne and sword have practical uses described in the Ledger. Unregistered Yuan Matter can trigger a claim: returning it earns favor, trusted clients can pay to register it, and confirming refusal ends the run.
 
 WALL DISPLAYS AND NIGHTTIME POWER
-Earn one gun rack and one sword rack through story progress. Installation fixes them to the wall. Click a mount to manage weapons; display enables deterrence, while concealment protects rack contents and pauses display effects. A displayed divine sword turns inspectors and sentencing officers away; existing cases remain.
+Earn one gun rack and one sword rack through story progress. Installation fixes them to the wall. Click a mount to manage weapons; display enables deterrence, while concealment protects rack contents and pauses display effects. A displayed divine sword turns ordinary inspectors away. Repelling sentencing officers requires active maintenance and consumes seven maintenance days; investigation resets, while existing crime value remains.
 Yuan Matter, Ember cores and Regalia recharge eligible batteries overnight, subject to placement, upkeep and daily limits. Take batteries out of bags, hidden compartments and ordinary containers, and place them in suitable shop positions. Yuan Matter can also act as an initially empty 200kJ slow-charging power source. Registration and claims still apply. See the Ledger power pages for exact rules.
 
 OPTIONAL STATION POLITICS
