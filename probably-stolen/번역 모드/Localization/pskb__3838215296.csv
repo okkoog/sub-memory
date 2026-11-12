@@ -1,0 +1,219 @@
+# Vanilla Overhaul 3838215296 Korean localization - split from Neon Undertow, 2026-11-12
+M|vanilla_overhaul_storage,1
+W|3838215296,1
+K|cubby.name,언더토우 책 보관함
+K|cubby.description,"본점이나 서류함(Dossier) 안에서 책을 정리할 수 있는 작은 이동식 보관함입니다. 더블클릭해 여세요. 8 x 6 칸에 책, 제조법 안내서와 종이 문서를 보관할 수 있습니다. 안에 있는 책을 사용하면 읽을 수 있습니다. 제작할 때는 제조법 책을 해당 기계로 옮겨야 합니다."
+K|cubby.window,책 보관함
+K|cubby.delivery,언더토우 안내서는 본점 계산대 위의 책 보관함에 들어 있습니다.
+K|room.unavailable,뒷방 데이터를 사용할 수 없습니다.
+K|room.allOpen,모든 설비 구획이 열려 있습니다.
+K|room.credits,크레딧이 충분하지 않습니다.
+K|room.locked,먼저 이 설비 구획을 잠금 해제하세요.
+K|room.occupied,이 설비 구획은 이미 사용 중입니다. 다른 설비로 바꾸려면 현재 설비를 먼저 해체하세요.
+K|room.planned,이 개발 경로는 계획되어 있지만 아직 사용할 수 없습니다.
+K|room.duplicateWall,급수 설비 벽면 구획이 이미 설치되어 있습니다.
+K|room.installCost,설치에 필요한 크레딧이 부족합니다.
+K|room.availableDay,영업일 {0}에 이용 가능합니다.
+K|room.loadFailed,뒷방을 불러오지 못했습니다: {0}. 저장된 내용물은 보존되어 있습니다. Player.log와 함께 문제를 보고해 주세요.
+K|room.loadPending,이번 플레이에서 뒷방 초기화가 아직 끝나지 않았습니다. 메인 메뉴로 돌아간 뒤 네온 언더토우 시작이 완료되면 저장 파일을 다시 불러오세요.
+K|room.storageName,뒷방 보관함
+K|room.cabinet,수납장
+K|room.rack,보관 선반
+K|room.equipment,설치된 장비
+K|room.counter,주방 작업대
+K|room.title,뒷방 · 수납장 / 선반 / 장비
+K|room.return,먼저 가게로 돌아가세요.
+K|room.gone,해당 장비는 더 이상 사용할 수 없습니다.
+K|room.moveFailed,설비를 옮기지 못했습니다. 비용은 청구되지 않았습니다.
+K|room.emptyBay,이 설비 구획은 비어 있습니다.
+K|room.removeCost,해체에 필요한 크레딧이 부족합니다.
+K|room.missingStation,설비 데이터를 사용할 수 없습니다.
+K|room.emptyStation,"해체하기 전에 설비의 재료, 배터리, 모듈과 완성품을 모두 비우세요."
+K|room.noRoom,공용 계산대나 뒷방 수납장에 공간을 확보하세요. 비용은 청구되지 않았습니다.
+K|room.waterExists,"급수 설비가 이미 설치되어 있습니다. 뒷방에서 사용하거나, 교체하려면 내용물을 비운 뒤 해체하세요."
+K|room.clearBay,먼저 뒷방 설비 구획을 잠금 해제하거나 비우세요.
+K|room.maxRack,랙이 완전히 업그레이드되었습니다.
+K|room.fitted,이미 장착되어 있습니다.
+K|room.plantRequires,선반 식물을 추가하려면 보관 선반 3단계를 모두 설치해야 합니다.
+K|room.crate,상자 {0}
+K|room.station,설치된 설비 {0}
+K|room.frontButton,< 매장
+K|room.kitchenButton,주방
+K|room.backButton,뒷방 >
+K|room.kind.fridge,냉장고
+K|room.kind.waterworks,급수 설비
+K|room.kind.galley,갤리
+K|room.kind.canner,통조림 기계
+K|room.service.ready,준비되었습니다. 아래에서 조 와일드에게 이 서비스를 신청하세요.
+K|room.service.installed,뒷방에 설치되었습니다.
+K|room.service.atHome,장비를 준비하려면 매장으로 돌아가세요.
+K|room.service.buyFirst,먼저 공급업자에게서 이 장비를 구입하세요. 소유 중이면서 아직 설치되지 않은 장비여야 합니다.
+K|room.service.buyWater,먼저 이 급수 설비 배송 상자를 구입하세요.
+K|room.service.unlock,먼저 이 베이를 잠금 해제하세요.
+K|room.service.empty,"먼저 설비의 재료, 배터리, 모듈과 완성품을 모두 비우세요."
+K|room.service.backRoom,뒷방
+K|room.service.baySpace,뒷방 공간
+K|room.service.bayInfo,"전력과 물이 연결되는 설비 구획을 하나 더 마련합니다. 구획 하나에는 설비 하나만 설치할 수 있으며, 다른 설비로 바꾸려면 기존 설비를 먼저 유료로 해체해야 합니다."
+K|room.service.storage,뒷방 보관
+K|room.service.greenery,선반 식물
+K|room.service.plantInfo,완성된 보관 선반에 매달아 두는 식물을 추가합니다.
+K|room.service.waterFailure,급수 설비를 설치하지 못했습니다. 배송 상자와 화물은 그대로 유지됩니다.
+K|room.service.dismantleInfo,"먼저 모든 재료, 완성품, 배터리와 모듈을 비우세요. 해체하면 같은 장비가 공용 카운터나 뒷방 수납장으로 돌아가며, 급수 설비는 해당 배송 상자로 되돌아갑니다. 돌려놓을 공간이 없으면 비용은 청구되지 않습니다. 기존 설치비는 환불되지 않습니다."
+K|room.service.unknown,알 수 없는 설치 서비스입니다.
+K|room.service.busy,이미 다른 설치 작업이 진행 중입니다.
+K|room.service.later,이 서비스는 아직 제공되지 않습니다.
+K|room.service.cost,크레딧 또는 조 와일드의 호감도가 부족합니다.
+K|room.service.updated,백룸이 업데이트되었습니다.
+K|room.service.days,\n\n영업일 {0}부터 이용할 수 있습니다. 현재 일차: {1}.
+K|room.service.group,설비 구획 {0} · 설치/해체
+K|room.service.bay,뒷방 설비 구획 {0}
+K|room.service.rack,보관 선반 · {0}단계
+K|room.service.rackInfo,소유한 상자나 보관함 {0}개를 놓을 선반 공간을 설치합니다. 용기 안의 내용물은 그대로 유지됩니다. 이 구매로 제공되는 것은 선반이며 무료 상자는 포함되지 않습니다.
+K|room.service.fit,{0} 설치 · 구획 {1}
+K|room.service.move,소유 중이고 아직 설치되지 않은 {0} 중 첫 번째 장비를 이 구획으로 옮깁니다. 내용물은 그대로 유지됩니다. 기계 자체는 별도로 구입해야 하며 다른 설비를 설치하려면 현재 설비부터 해체해야 합니다.
+K|room.service.fitWater,소유한 {0} 배송 상자 또는 이전 버전의 창고를 이 구획에 설치합니다. 설치비는 구매 가격에 포함되어 있으며 기존 창고의 내용물도 그대로 보존됩니다.
+K|room.service.dismantle,설비 해체 · 구획 {0}
+K|room.hint.front,앞쪽 매장으로 돌아가기
+K|room.hint.cabinet,수납장에 재고와 보급품 보관
+K|room.hint.rack,선반에 상자와 박스 보관
+K|room.hint.fridge,냉장고에서 재료와 요리를 차갑게 보관
+K|room.hint.galley,조리실에서 시럽·밀가루·감미료 만들기
+K|room.hint.canner,캔 제조기로 탄산음료를 캔과 병에 담기
+K|room.hint.waterworks,벽면 급수 설비에서 물 관련 기계 운용
+K|room.tag.front,앞쪽 매장
+K|room.tag.cabinet,수납장
+K|room.tag.rack,보관 선반
+K|room.tag.fridge,냉장고
+K|room.tag.galley,조리실
+K|room.tag.canner,캔 제조기
+K|room.tag.waterworks,급수 설비
+K|room.tag.kitchen,주방 작업대
+K|room.tag.arrow,뒷방
+K|room.tuto.front,앞쪽 매장으로 돌아가기
+K|room.tuto.cabinet,수납장에 재고 보관
+K|room.tuto.rack,보관 선반에 상자 보관
+K|room.tuto.fridge,냉장고에서 재료를 차갑게 보관
+K|room.tuto.galley,조리실에서 시럽과 밀가루 만들기
+K|room.tuto.canner,캔 제조기로 탄산음료를 캔과 병에 담기
+K|room.tuto.waterworks,급수 설비에서 물 관련 기계 운용
+K|room.tuto.kitchen,주방 작업대에서 요리
+K|room.tuto.arrow,뒷방으로 이동
+K|room.hint.kitchen,도구와 요리책을 사용해 요리
+K|room.hint.arrow,뒷방으로 이동
+K|room.machine.gsx_refurb_bench,총기 정비 작업대
+K|room.service.moveGunsmith,보유 중인 {0}을 내용물 그대로 이 작업칸으로 옮깁니다. 치안부 검사 시에도 이 작업칸은 검색 대상입니다. 다른 설비를 설치하려면 현재 설비를 먼저 해체하세요.
+K|room.tag.gunsmith_printer,3D 프린터
+K|room.tag.gunsmith_bench,총기 정비 작업대
+K|room.hint.gunsmith_printer,3D 프린터로 밤새 물품 출력
+K|room.hint.gunsmith_bench,작업대에서 총기를 밤새 정비
+K|room.tuto.gunsmith_printer,3D 프린터로 물품 출력
+K|room.tuto.gunsmith_bench,작업대에서 총기 정비
+K|room.arrow.busy,대화 중에는 카운터를 떠날 수 없습니다!
+K|module.language,ko
+K|depot.waterworks_depot_compact,도크사이드 소형 창고
+K|depot.waterworks_depot,언더토우 급수 설비 창고
+K|depot.waterworks_depot_grand,스톰글라스 대형 창고
+K|depot.info,"외형 크기 {0} x {0}. 선택 가능한 16 x 64 보관 구획 {1}개({2}칸, 낱개 탄산음료 캔 최대 {3}개)를 제공합니다. 구획 탭을 선택하면 전체 격자를 볼 수 있으며 큰 창은 화면 크기에 맞게 축소됩니다. 소유한 기계, 탱크, 필터, 모듈, 병과 소모품을 보관할 수 있습니다. 화면에 보이지 않는 구획도 기본 저장·야간 처리에는 계속 포함됩니다. 무료 전력·물이나 자동 재고 이동은 제공하지 않으므로 각 기계는 평소처럼 직접 채워야 합니다. 다른 창고를 안에 직접 넣을 수는 없습니다. 조립 상자에 담긴 빈 상태로 판매됩니다."
+K|depot.bay,베이 {0}
+K|depot.capacity,보관함 · {0}칸
+K|depot.joe,조 와일드 · 뒷방
+K|depot.crate,{0} · 조립 상자
+K|depot.crateInfo,"조 와일드의 「BACK ROOM」 탭에서 설치를 신청하세요. 이 상자를 사용하면 조의 상점을 열 수 있습니다. 기본 인벤토리 공간은 차지하지 않으며, 전체 32 x 16 페이지에 기계 설치칸 {0}개와 보관칸 {1}개를 제공합니다. 뒷방에서 「WATERWORKS」를 열어 사용하세요. 병입기 배송 상자는 먼저 비어 있는 기계 설치칸을 사용합니다."
+K|depot.machines,기계
+K|depot.reclaim,기존 창고: 남은 화물 회수
+K|depot.reclaimInfo,새 창고로 옮기지 못한 기존 화물은 원래 창고에 그대로 남아 있습니다. 기존 창고를 열어 물건을 회수하세요.
+K|depot.unpack,내용물 꺼내기
+K|depot.next,다음 설비
+K|depot.shop,가게에 급수 설비를 설치하세요. 배송 상자와 내용물은 그대로 유지됩니다.
+K|depot.unavailable,급수 설비를 사용할 수 없습니다. 배송 상자는 그대로 유지됩니다.
+K|depot.retired,더 이상 설치에 사용할 수 없는 기존 창고 본체입니다. 남아 있는 내용물은 이 안에 그대로 보존되지만 새 벽면 구획을 설치할 수는 없습니다.
+K|depot.closed,급수 설비를 사용할 수 없습니다.
+K|depot.mustEmpty,"해체하기 전에 급수 설비의 기계 설치칸, 보관칸과 회수 구획을 모두 비우세요."
+K|depot.crateFailed,포장 상자를 만들 수 없습니다. 급수 설비는 그대로 유지됩니다.
+K|depot.crateSpace,공용 계산대나 수납장에 배송 상자를 둘 공간을 확보하세요.
+K|depot.wall,{0} · 벽칸
+K|depot.wallInfo,"벽면 급수 설비가 설치되어 있습니다. 전체 32 x 16 페이지에 기계 설치칸과 보관칸 {0}개가 있습니다. 설치된 장비를 열어 투입물, 배터리와 완성품을 평소처럼 관리하세요. 무료 전력이나 자동 이동 기능은 제공하지 않습니다."
+K|depot.waterDock,급수 설비 설치칸 {0}
+K|depot.dock,도크 {0}
+K|depot.rack,랙 {0}
+K|depot.page,페이지 {0}
+K|depot.storage,보관 {0}
+K|depot.wallTitle,급수 설비 · 보관칸 {0}개
+K|depot.installed,{0}이(가) 뒷방에 설치되었습니다. 가게 오른쪽 아래의 화살표를 클릭하면 기계 설치칸과 보관 공간으로 이동할 수 있습니다.
+K|depot.cargoLoadError,급수 설비 화물을 불러오지 못했습니다. 이 저장 파일로 계속 진행하지 마세요. 기존 데이터는 보존되어 있습니다.
+K|book.welcome.name,네온 언더토우: 시작 안내
+K|book.welcome.counter.title,계산대에 두는 메모
+K|book.welcome.counter.body,"네온 언더토우를 활성화하면 별도의 시작 버튼 없이 새 손님, 세력, 상점이 기존 플레이에 자연스럽게 추가됩니다. 손님은 평소처럼 방문하므로 플레이하다 보면 차례로 만나게 됩니다.\n\n이 작은 책 보관함은 본점에 두거나 서류함(Dossier) 안에 넣어 책을 정리할 수 있습니다. 더블클릭해 연 뒤 읽을 안내서를 선택하세요. 목차와 페이지 화살표로 이동할 수 있으며, 책은 다른 물건처럼 꺼내서 옮길 수 있습니다."
+K|book.welcome.shortcut.title,계산대를 비워 두기
+K|book.welcome.shortcut.body,"화면 모서리 안내는 기본적으로 꺼져 있습니다. 바로가기를 쓰고 싶다면 모드에서 네온 언더토우를 선택한 뒤 설정의 「화면 모서리 안내 표시」를 켜세요. 즉시 적용되며 시작 상태도 같은 곳에서 확인할 수 있습니다.\n\n책 보관함에는 기본 게임 안내서를 포함해 소유한 책과 종이 문서를 넣을 수 있습니다. 제조법 책은 여전히 직접 구입하거나 획득해야 합니다. 제작할 때는 해당 제조법 책을 기계의 투입칸(INPUT)에 넣어야 하며, 책 보관함에 넣어 둔다고 원격으로 제작법이 활성화되지는 않습니다.\n\n분실한 언더토우 안내서나 빈 책 보관함은 퀘이사이드 통조림 협동조합의 「주방 + 서적」 선반에서 다시 살 수 있습니다."
+K|book.neighborhood.name,네온 언더토우: 동네 안내
+K|book.neighborhood.people.title,사람과 세력
+K|book.neighborhood.people.body,세력(FACTIONS) 화면을 열고 「다음」을 눌러 기본 게임 세력 뒤에 추가된 새 세력을 확인하세요. 평판 단계에 마우스를 올리면 받을 수 있는 혜택과 평판이 떨어졌을 때의 불이익을 볼 수 있습니다.\n\n가게는 평소처럼 열고 손님을 응대하면 됩니다. 네온 언더토우는 벨벳 키 주민과 상류층 손님 등을 일반 손님 목록에 추가합니다. 기존 스토리 손님의 역할은 바뀌지 않습니다.
+K|book.neighborhood.night.title,영업 종료 후
+K|book.neighborhood.night.body,"가게를 닫은 뒤에는 평소의 이동/지도 메뉴에서 야간 상점을 방문할 수 있습니다.\n\n퀘이사이드 통조림 협동조합에서는 농산물, 빈 캔, 주방용품과 책을 판매합니다. 선반은 「탄산음료 재료」, 「농산물」, 「주방 + 서적」, 「지하실」로 나뉩니다. 다른 선반으로 옮기기 전에 구매를 끝내거나 사지 않을 물건을 제자리에 돌려놓으세요.\n\n재고는 매일 갱신되며, 세력 평판에 따라 판매 품목과 가격이 달라질 수 있습니다."
+K|book.neighborhood.equipment.title,장비와 집기
+K|book.neighborhood.equipment.body,"스톰글라스 창고 직판점에서는 보관·급수 장비를 판매합니다. 언더토우 엔지니어링에서는 생산 모듈, 부착물, 포장 패턴 칩을 구할 수 있습니다.\n\n글래스마켓 카운터·집기 상점에서는 간판, 조명과 바 장비를 판매합니다. 도구 걸이, 계량 도구, 믹싱 글라스, 셰이커, 블렌더, 서빙 글라스, 바텐더 노트가 있습니다. 도구는 각각 별도 물품이며 도구 걸이는 보관용입니다."
+K|book.neighborhood.backroom.title,작업 공간 확보하기
+K|book.neighborhood.backroom.body,"가게 오른쪽 아래의 화살표를 클릭하면 뒷방으로 이동합니다. 작업대는 앞쪽 계산대와 재고를 공유하며, 클릭하면 요리할 수 있습니다. 수납장이나 설치된 기계를 클릭하면 열 수 있고 문을 클릭하면 가게로 돌아갑니다.\n\n조 와일드의 「BACK ROOM」 서비스로 설비 구획, 보관 단계와 고정 장비를 추가할 수 있습니다. 장비를 설치하려면 먼저 실제 기계를 구입해야 합니다.\n\n주로 본점에서 책을 읽는다면 이 안내서와 책 보관함도 본점에 두는 편이 편리합니다."
+K|book.workshop.name,네온 언더토우: 작업장 안내서
+K|book.workshop.cooking.title,농산물과 요리
+K|book.workshop.cooking.body,"퀘이사이드 통조림 협동조합에서 조리 도구와 제조법 책을 구입하세요. 뒷방의 주방 작업대를 클릭하면 주방을 열 수 있습니다. 도구는 상단 전용 칸에 장착하고 충전된 전지는 「BATTERIES」에 넣으세요. 재료와 물, 필요하다면 냉장고를 「INPUT」에 넣습니다. 냉장고에는 별도의 전지가 필요합니다.\n\n제조법 책에서 요리를 선택한 뒤 「제작」을 누르면 표시된 재료·물·전력이 소모됩니다. 도구와 책은 남습니다. 가열 요리에는 여전히 갤리 또는 가열판이 필요하고, 냉각 요리에는 전원이 공급되는 냉장고가 필요합니다.\n\n재료가 하나뿐이고 제조법이 명확한 요리는 해당 도구를 재료 위로 끌어놓는 방식으로도 만들 수 있습니다."
+K|book.workshop.canning.title,통조림과 작업장 재료
+K|book.workshop.canning.body,"영업 종료 후 스톰글라스 창고 판매점에서 피즈웍스 탄산음료 통조림 기계를 구입하세요.\n\n통조림 기계의 투입칸에는 피즈웍스 제조법 책을 넣으세요. 다른 생산 제조법은 해당 제조법 안내서와 기본 게임의 아이템 선택창을 사용합니다. 표시된 재료·물·포장재·전력을 준비하세요. 도구와 책은 소모되지 않습니다.\n\n탄산음료에는 기본수(Basewater) 등급보다 좋은 물을 사용할 수 있습니다. 원수의 수질과 용기 상태가 품질에 영향을 줍니다. 향미 재료는 오염수로 취급되지 않습니다.\n\n빈 금속 포장재를 만들려면 기본 프린터에 언더토우 엔지니어링의 해당 칩, 금속 주괴, 필요한 모듈과 충전된 전지를 사용하세요."
+K|book.workshop.water.title,급수 설비
+K|book.workshop.water.body,"대형 급수 설비(Grand Waterworks)를 설치하면 28일차부터 스톰글라스 창고에서 산업용 물 생성기를 구입할 수 있습니다. 정가는 12,500크레딧입니다.\n\n충전된 전지를 장착하면 하룻밤에 기본 게임의 2L 고품질 물병을 최대 4개까지 만들어 채웁니다. 병 하나당 전력 6, 네 병 모두 만들면 전력 24를 소모합니다. 재료나 빈 병을 넣을 필요는 없지만 완성품칸(OUTPUT)에 자리를 비워 두어야 합니다.\n\n시작 특성으로는 이 생성기를 받을 수 없습니다. 이전 버전의 투입칸이나 부착물칸에 남겨 둔 물건은 계속 꺼낼 수 있습니다. 수동 병입 장비와 제조법은 급수 설비 안내서를 확인하세요."
+K|book.workshop.cellar.title,지하실과 바
+K|book.workshop.cellar.body,"퀘이사이드 협동조합의 「지하실」 선반에서는 양조 작업대, 양조 기록, 병과 배양균을 판매합니다. 76가지 제조법으로 여러 과일·곡물·전분 작물·침출 재료를 사용할 수 있습니다. 발효, 증류, 침출 중 하나를 고르고 재료 조합을 넣으세요. 한 배치를 완성하려면 며칠 밤이 필요합니다.\n\n「CELLAR」 탭에는 완성된 병을 보관합니다. 숙성이 가능한 와인·사과주·배주에는 기본 게임의 전동 Age-Well 선반을 사용하세요. 병에 든 증류주는 보관만 해서는 숙성되지 않습니다.\n\n바에서는 평소 인벤토리 조작 방식으로 액체를 붓습니다. 분량을 계량하고 믹싱 글라스로 저으거나 셰이커로 흔든 뒤 병에 옮기세요. 탄산음료는 저어서 섞습니다. 블렌더는 농산물에서 주스를 추출합니다. 정확한 양과 제조법은 바텐더 노트를 확인하세요."
+K|book.help.name,네온 언더토우: 문제 해결 안내
+K|book.help.missing.title,콘텐츠가 보이지 않을 때
+K|book.help.missing.body,"Mods에서 네온 언더토우를 활성화한 뒤 게임을 다시 시작하세요. 모드 Settings에서 시작 상태도 확인할 수 있습니다. Steam이 업데이트를 내려받는 중이라면 게임을 종료하고 다운로드가 끝난 뒤 다시 실행하세요.\n\n새 세력은 세력(FACTIONS) 화면의 뒤쪽 페이지에 있습니다. 손님 관련 설정에 따라 이후 방문이 꺼질 수 있으며, 「Restart required」가 표시된 설정은 게임을 다시 시작해야 적용됩니다. 야간 상점은 영업 종료 후 방문할 수 있습니다.\n\n화면 모서리 바로가기는 선택 사항입니다. 숨겨도 콘텐츠가 비활성화되거나 보유한 책이 사라지지는 않습니다."
+K|book.help.saves.title,기존 저장 파일
+K|book.help.saves.body,네온 언더토우는 독립적으로 작동하며 자체 양조 작업대와 양조 제조법을 포함합니다. 활성화한 모드 구성을 바꾸기 전에는 저장 파일을 백업하는 것이 좋습니다.\n\n처음 지급되는 책 보관함은 한 플레이에서 한 번만 배달됩니다. 아직 받지 않은 기존 저장 파일도 본점 계산대에 자리가 있으면 받을 수 있습니다. 안의 책을 옮기거나 팔아도 다시 채워지지는 않습니다. 책 보관함의 내용물과 책갈피는 일반 아이템 저장 시스템으로 보존됩니다.
+K|book.help.report.title,문제가 발생했을 때
+K|book.help.report.body,"뒷방 화물을 불러오지 못한 경우 원래 물건을 보호하기 위해 저장이 차단됩니다. 메뉴로 돌아간 뒤 문제를 보고하세요.\n\n버그를 신고할 때는 게임과 모드 버전, 새 저장인지 기존 저장인지, 함께 켠 다른 모드, 문제가 발생하기까지의 순서를 적어 주세요. 스크린샷도 도움이 됩니다. 시작 단계의 오류는 Player.log에 기록됩니다.\n\n이 안내서는 도구 사용법만 설명합니다. 물건을 수리하거나 액체를 검사하거나 제조법 조건을 무시하게 해 주지는 않습니다."
+K|book.description,언더토우 안내서입니다. 사용하면 일반 책처럼 목차와 페이지 화살표로 읽을 수 있습니다. 책 보관함이나 다른 문서와 함께 보관하세요.
+K|book.reader.page,{0}쪽
+K|book.reader.index,목차
+K|book.reader.entry,{0}쪽: {1}
+K|book.tutorial.firstnight.title,첫날 저녁
+K|book.tutorial.firstnight.body,"영업을 마친 뒤 이동 메뉴에서 퀘이사이드 통조림 협동조합을 방문하세요. 「주방 + 서적」에서 도마를, 「농산물」에서 사과와 양배추를 구입하세요.\n\n가게로 돌아와 오른쪽 아래의 화살표를 클릭해 뒷방으로 간 뒤 작업대를 클릭하세요. 책 보관함에 있는 작업장 안내서의 「첫 요리」를 따라 하세요. 주방을 여는 것만으로는 별도의 설비를 설치할 필요가 없습니다. 안내서를 보관해 두면 목차에서 언제든 필요한 설명을 다시 볼 수 있습니다."
+K|book.tutorial.firstmeal.title,첫 요리: 사과 양배추 샐러드
+K|book.tutorial.firstmeal.body,"주방 상단의 도구 칸에 도마를 장착하세요. 「INPUT」에 사과와 양배추를 하나씩 넣고 「COOK」을 연 뒤 사과 양배추 샐러드를 선택하세요. 완성품은 「OUTPUT」에서 꺼낼 수 있습니다. 이 첫 제조법에는 물이나 전지, 가열판이 필요하지 않습니다.\n\n다른 요리를 만들 때는 해당 제조법 책을 읽으세요. 필요한 도구를 장착하고 표시된 물과 전력을 공급해야 합니다. 가열판이나 조리 설비는 프라이팬과 냄비에 열을 제공하지만 조리 도구를 대신하지는 않습니다. 냉장고에는 전지가 별도로 필요합니다."
+K|book.tutorial.bottling.title,첫 음료 병입하기
+K|book.tutorial.bottling.body,"수동 병입 키트를 여세요. 언더토우 병입 안내서, 해당 농축액, 순도 99% 이상의 물과 빈 350/500mL 캔 또는 750mL 유리병을 「INPUT」에 넣으세요.\n\n가운데에서 제조 가능한 음료를 선택하세요. 농축액 하나와 빈 용기 하나, 용기의 용량만큼 물이 사용됩니다. 라벨이 붙은 완성 음료는 「OUTPUT」에서 꺼내세요. 병입 키트에는 전력이 필요하지 않습니다. 플라스틱 물병은 탄산음료 포장용으로 사용할 수 없습니다. 완성품이 나올 공간을 확보하세요."
+K|book.tutorial.growing.title,첫 작물 재배하기
+K|book.tutorial.growing.body,"이 작물들은 일반 수경재배기에 맞춰 작게 자라도록 유전자 개량한 품종입니다. 과일나무도 크게 자라지 않습니다.\n\n협동조합의 「농산물」 선반에서 과일 또는 채소 씨앗 묶음을 구입하세요. 포장을 열어 씨앗 하나를 기본 게임 수경재배기의 씨앗 칸에 넣으세요. 충전된 전지와 물통을 장착하고 식물 분석기로 작물의 영양 요구량을 확인하세요.\n\n성장에는 기본 게임의 기계 작동 주기, 물 공급, 식물 건강 규칙이 적용됩니다. 「OUTPUT」에서 수확물과 반환된 씨앗을 꺼내세요. 건강한 작물에서는 뉴트리프루트처럼 대형이나 초대형 농산물이 나올 수 있습니다. 다음 세대를 심을 씨앗을 남겨 두세요.\n\n「SEEDS」 선반에서는 한 작물의 씨앗 3개가 든 묶음을 판매합니다. 「SEEDS」를 다시 선택하면 과일과 채소 사이를 전환할 수 있습니다."
+K|book.tutorial.genetics.title,나만의 품종 개발하기
+K|book.tutorial.genetics.body,"이 작물의 씨앗은 기본 게임의 식물 DNA 시스템을 사용합니다. DNA 조작기의 설명을 읽으세요. 호환되는 기록 완료 특성 디스크를 「TRAIT DISK」에, 씨앗을 「TARGET」에 넣고 전력을 공급하세요. 시작하기 전에 작업 내용과 성공 확률을 확인하세요.\n\n유전자를 추출하려면 「BLANK DISK」 칸을 사용하고 화면에 표시되는 위험을 확인하세요. 편집에 성공하면 성장 속도, 수확량, 물 요구량 또는 수확물 특성이 달라질 수 있습니다. 반환된 씨앗은 부모의 특성을 이어받습니다. 편집은 실패할 수 있고 호환되지 않는 특성은 적용할 수 없으므로 예비 품종을 남겨 두세요."
+K|book.tutorial.stuck.title,주방이 작동하지 않을 때
+K|book.tutorial.stuck.body,"뒷방의 주방 작업대를 클릭하고 「COOK」을 선택하세요. 수납장의 「FITTED STATION」 칸은 조리 도구 선택 칸이 아닙니다. 도구는 상단 칸에 장착하고 재료는 「INPUT」에 넣으세요. 「OUTPUT」에도 공간을 확보해야 합니다.\n\n제조법이 보이지 않는다면 정확한 재료, 도구, 물, 전력, 가열 또는 냉각 조건을 확인하세요. 가열·작업 조작이 표시되는 「TOOL: Chopping Board」 화면은 저장된 미완료 작업을 위한 이전 인터페이스입니다. 해당 작업을 완료하면 제조법 선택 화면으로 돌아옵니다. 그래도 문제가 있으면 버전 정보와 창 전체가 보이는 스크린샷을 첨부해 신고하세요."
+K|book.lab.bench.title,화학 작업대 사용법
+K|book.lab.bench.body,글래스마켓에서 원액용 메스실린더를 구입하세요. 제조법에 적힌 원액 두 종류를 같은 양씩 하나의 실린더에 넣고 물을 조금 더합니다. 처음에는 각 원액 2mL와 물 1mL를 사용해 보세요. 두 원액의 반응이 끝날 때까지 가열한 다음 성분 분광기로 혼합물을 확인하세요. 건조가 필요한 제조법이라면 증발기를 사용한 뒤 화학 완제품 제조기에서 제품을 선택하세요. 제조법에는 최저 가열 온도와 포장당 필요 용량이 나옵니다.
+K|book.lab.clinic.title,진료소 제조법
+K|book.lab.street.title,길거리 약물 제조법
+K|book.lab.clinic.body,"브리지 정제 — 콰이어트 시그널 + 벨벳 스태틱\n45°C · 2mL · 건조 필요\n\n봉합 젤 — 스위치백 + 로우 타이드\n45°C · 2mL · 수분 유지 가능\n\n여명 주사제 — 미러 솔트 + 레드시프트\n65°C · 4mL · 수분 유지 가능\n\n진료소용 제품은 유효 성분이 75% 이상이어야 하며, 도취감·중독·독성을 유발하는 액체가 남아 있으면 안 됩니다."
+K|book.lab.street.body,화물장 결정 — 도크 초크 + 엠버웨이크\n65°C · 2mL · 건조 필요\n실린더에 물을 남기고 약한 불로 가열하세요. 건조된 혼합물을 센 불로 가열하면 폭발해 게임이 끝날 수 있습니다.\n\n프리즘 코러스 — 언더톤 + 글래스 콰이어\n65°C · 3mL · 건조 필요\n\n언더틴트 — 램프라이트 + 나이트 잉크\n45°C · 1.5mL · 건조 필요\n\n길거리 약물은 유효 성분이 50% 이상이어야 합니다. 마약 구매자는 완제품의 순도를 기준으로 가치를 판단합니다.
+K|book.bio.split.title,혼합물 나누기
+K|book.bio.split.body,가열판에서 1단계 혼합물을 만드세요. 건조하거나 완제품으로 만들기 전에 실린더 두 개로 나눕니다. 유효 성분 6mL마다 첨가물 한 종류만 6mL 넣고 물을 최소 0.5mL 더 남기세요. 55°C까지 가열합니다. 블렌더에서 만든 신선한 과일·채소 주스나 수유 중인 건강한 점박이쥐의 젖을 사용하세요. 첨가물 두 종류를 섞으면 해당 반응이 진행되지 않습니다. 완제품으로 만들기 전에 분광기로 확인하세요.
+K|book.bio.seam.title,봉합 젤 응용 제조법
+K|book.bio.seam.body,봉합 젤 · 55°C\n\n당근 주스 → 봉합 필름\n2mL · 수분 유지 가능\n\n쥐의 깨끗한 젖 → 쥐굴 혈청\n2mL · 수분 유지 가능\n\n글래스 콰이어 → 잔상\n2mL · 건조 필요\n\n비트 주스 → 쥐굴 검사 면봉\n1mL · 건조 필요\n\n토마토 주스 → 쥐굴 연고\n2mL · 수분 유지 가능
+K|book.bio.bridge.title,브리지 정제 응용 제조법
+K|book.bio.bridge.body,브리지 정제 · 55°C\n\n사과 주스 → 부두 사탕정\n2mL · 건조 필요\n\n배 주스 → 드라이도크 금단 완화제\n2mL · 건조 필요\n\n쥐의 깨끗한 젖 → 새끼 사료 웨이퍼\n4mL · 건조 필요
+K|book.bio.daybreak.title,여명 주사제 응용 제조법
+K|book.bio.daybreak.body,여명 주사제 · 55°C\n\n오이 주스 → 아가미 연고\n2mL · 수분 유지 가능\n\n로우 타이드 → 센티널 완충제\n4mL · 수분 유지 가능\n\n블루베리 주스 → 진료소 검사지\n1mL · 건조 필요\n\n혈액팩 혼합물 → 부두 외상 처치팩\n6mL · 수분 유지 가능
+K|book.lab.benchgoods.title,협동조합 화학 원료
+K|book.lab.benchgoods.body,작물을 각각 따로 갈아 주스를 만드세요. 두 주스를 각각 20mL씩 50mL 메스실린더에 넣고 45°C로 가열합니다. 증발기로 물을 제거한 다음 화학 완제품 제조기를 사용하세요. 이 과정에서 유효 성분 0.4mL가 만들어지며 0.3mL 제품 한 팩을 생산할 수 있습니다.\n\n사과 + 레몬 → 과수원 보수제\n\n배 + 셀러리 → 갈대밭 응집제
+K|book.lab.nightshift.title,야간 근무 제조법
+K|book.lab.nightshift.body,화물장 결정 + 벨벳 스태틱 → 슬립스트림 점적제\n55°C · 2mL · 수분 유지 가능\n\n프리즘 코러스 + 레드시프트 → 벨벳 에코\n55°C · 4mL · 건조 필요\n\n언더틴트 + 미러 솔트 → 유령 잉크\n55°C · 2mL · 수분 유지 가능
+K|book.lab.recovery.title,회복제 제조법
+K|book.lab.recovery.body,브리지 정제 + 라임 주스 → 쌍중독 완화정\n55°C · 3mL · 건조 필요\n\n여명 주사제 + 쥐의 깨끗한 젖 → 육아 유제\n55°C · 4mL · 수분 유지 가능
+K|book.wave.yard.title,화물장 제조법
+K|book.wave.yard.body,화물장 결정 + 콰이어트 시그널 → 묵음표\n55°C · 1.5mL · 건조 필요\n\n화물장 결정 + 나이트 잉크 → 철로흑\n55°C · 3mL · 건조 필요\n\n화물장 결정 + 미러 솔트 → 전환등\n55°C · 2mL · 수분 유지 가능\n\n프리즘 코러스 + 램프라이트 → 등불무리\n55°C · 4mL · 수분 유지 가능
+K|book.wave.club.title,클럽·야간 근무 제조법
+K|book.wave.club.body,프리즘 코러스 + 스위치백 → 크로스페이드\n55°C · 3mL · 건조 필요\n\n프리즘 코러스 + 도크 초크 → 백악 오페라\n55°C · 4mL · 건조 필요\n\n언더틴트 + 엠버웨이크 → 붉은 정박지\n55°C · 1.5mL · 건조 필요\n\n언더틴트 + 벨벳 스태틱 → 마지막 춤\n55°C · 3mL · 수분 유지 가능
+K|book.wave.dressings.title,붕대와 부목 제조법
+K|book.wave.dressings.body,봉합 젤 + 레몬 주스 → 카운터 거즈\n55°C · 1mL · 건조 필요\n\n봉합 젤 + 배 주스 → 심부 상처 패킹 롤\n55°C · 4mL · 건조 필요\n\n봉합 젤 + 블랙커런트 주스 → 야간 병동 드레싱\n55°C · 3mL · 건조 필요\n\n봉합 젤 + 셀러리 주스 → 쥐굴 부목\n55°C · 3mL · 건조 필요
+K|book.wave.ward.title,병동 및 어린 동물 치료
+K|book.wave.ward.body,브리지 정제 + 망고 주스 → 임신쥐 케어 유제\n55°C · 4mL · 수분 유지 가능\n\n여명 주사제 + 당근 주스 → 지느러미 지지대\n55°C · 2mL · 수분 유지 가능\n\n여명 주사제 + 복숭아 주스 → 센티널 응급제\n55°C · 4mL · 수분 유지 가능\n\n브리지 정제 + 체리 주스 → 귀환 정제\n55°C · 3mL · 건조 필요
+K|book.wave.safety.title,화물장 결정 안전 수칙
+K|book.wave.safety.body,물을 넣고 약한 불로 가열하세요. 도크 초크와 엠버웨이크를 물 없이 섞은 뒤 센 불로 가열하면 폭발할 수 있습니다. 실린더에서 덜컹거리는 소리가 들리면 즉시 치우거나 불을 줄이세요. 폭발 카운트다운이 시작되면 혼합물은 되살릴 수 없으며 폭발로 게임이 종료됩니다.
