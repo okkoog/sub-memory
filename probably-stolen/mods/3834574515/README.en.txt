@@ -1,4 +1,6 @@
-﻿1.5.11 — Displays, Deterrence and Merchant Visits
+﻿1.5.12: Manufacturer introductions, revised buyer budgets and harsher relabeling-fraud penalties apply only to new runs. Existing saves keep their previous rules. Dialogue, Ledger and display-loading fixes apply to all saves.
+
+1.5.11 — Displays, Deterrence and Merchant Visits
 
 • A dealer gifts a single-watch cabinet after you acquire a genuine unique sealed collectible. It mounts above the telephone and has a concealing curtain. Displays attract special collectors and may draw Ying Xiyuan.
 • Displayed weapons grant deterrence; watches grant prestige. The Crownblade contributes 80 separately, with total deterrence capped at 100 and theft protection at 90%. Prestige attracts wealthier collectors but increases theft and inspection pressure.

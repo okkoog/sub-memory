@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Official ModLoader manifest (Mods\<folder>\manifest.xml).
+  - ID: letters/digits/_-. only. Language packs list it in <Prerequisites> (informational only: the loader
+    neither enforces it nor orders Init by it, so the core discovers packs lazily).
+  - ModVersion must match <Version> in LangCore.csproj.
+  - Capabilities: intentionally EMPTY. Pack data is read with ModHelper.ReadModFileText (game API, no file IO in
+    our IL); the preference lives in PlayerPrefs; Harmony targets only Assembly-CSharp types (plus, only when a
+    right-to-left pack is enabled, typeof()-based patches on TextMeshPro, an allowed namespace, with ___field injection);
+    coroutines run through ModHelper.StartCoroutine, so the loader stops them when the mod is switched off;
+    pack fonts are loaded by the engine (new Font(path) inside the pack folder, checked with ModHelper);
+    no reflection on external types, no network, no processes, no native code.
+-->
+<ModManifest>
+  <ID>elio.langcore</ID>
+  <Name>Language Framework</Name>
+  <Author>Elio</Author>
+  <ModVersion>1.2.5</ModVersion>
+  <Description>Adds new languages to the game from separate language-pack mods (e.g. Hrvatski). Also translates hardcoded (non-string-table) game text from the pack's lang/hardcoded.tsv. Contains no translations itself.</Description>
+
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+
+  <Assemblies>
+    <Assembly>LangCore.dll</Assembly>
+  </Assemblies>
+
+  <Capabilities />
+</ModManifest>

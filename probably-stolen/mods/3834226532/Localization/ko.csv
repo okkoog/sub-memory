@@ -82,6 +82,8 @@ dsp_no_trash_janitor_4,"그건 그렇고 지하 거래에 끼고 싶다면 언�
 dsp_underground_trade_name,지하 거래
 dsp_snack_addiction_name,간식 중독
 dsp_snack_addiction_description,"간식을 꾸준히 먹지 않으면 8% 거래 페널티를 받습니다. 중독은 치료할 수 있습니다... 하지만 정말 그럴 필요가 있을까요?"
+dsp_snack_addiction_log_start,간식 중독: {0}일 후 금단 증상이 시작됩니다
+dsp_snack_addiction_log_cure,"간식 중독: 또 금단 증상, 거래가 불리합니다({0}일 후 치유)"
 dsp_snack_addiction_withdrawal,"간식 중독: 또 당깁니다. 거래에 지장이 생깁니다."
 dsp_snack_addiction_cured,"간식 중독: 간식 없이 충분히 버텼습니다. 완치되었습니다."
 dsp_snack_addiction_suppressed,"간식을 씹자 손 떨림이 멈춥니다."
@@ -493,7 +495,7 @@ dsp_newspaper_stand_no_customer_hint, (지금 손님이 없음)
 dsp_blood_donor_row_done,오늘은 이미 헌혈했다
 dsp_hydro_open_menu,열기
 dsp_hydro_manual_name,수도 수경의 비결
-dsp_hydro_manual_desc,이것이 없으면 수도꼭지에서 식물을 기를 수 없다.
+dsp_hydro_manual_desc,이것이 없으면 수도꼭지에서 식물을 기를 수 없다.\n이 문서를 더블 클릭해도 수도 수경 화면을 열 수 있다.
 dsp_unlicensed_name,무허가 영업
 dsp_unlicensed_description,무역 위원회 담당자가 5일째에 방문합니다.
 dsp_water_vending_name,자동 물 판매기
@@ -530,3 +532,31 @@ dsp_hawaii_training_description,게임 시작 시 특성 포인트 합이 -2인 
 dsp_hawaii_announce,하와이 여행: {0} 습득
 dsp_paid_training_name,유료 진학
 dsp_paid_training_description,시작 특성 슬롯 상한이 3개 늘어납니다. 시작 시 648 크레딧의 빚을 집니다. 후원사의 광고 덕분에 이 특성은 긍정 특성으로 표시됩니다.
+dsp_startrak_name,스타트랙
+dsp_startrak_description,특성 슬롯 3개가 줄어듭니다. 시작 시 무작위 강력 특성 세트를 얻습니다. 다른 모든 특성과 상호 배타.
+dsp_startrak_announce,스타트랙: {0} 획득
+dsp_star_crossed_name,스타크로스
+dsp_star_crossed_description,매주 시작 시 100크레딧과 무작위 특성 1개를 얻습니다. 총 5주. 특성 포인트는 1점에서 -3점까지 차례로 내려갑니다.
+dsp_star_crossed_week,"스타크로스: {0}주차, +{1}크레딧, {2} 획득"
+dsp_theyre_millions_name,그들은 수백만
+dsp_theyre_millions_description,개조체가 등장한 뒤 1주일간 개조체 광풍이 시작됩니다.\n\n2026/11/7 본 게임 100만 장 판매 기념.
+dsp_millions_start,"개조체 광풍 시작: 이번 주 무기·탄약·방어구 +25%, 모듈 +50%, 개조체가 매일 옵니다."
+dsp_millions_end,개조체 광풍이 끝났습니다.
+dsp_vanessa_name,바네사
+dsp_vanessa_1_1,내 이름은 바네사.
+dsp_vanessa_1_2,"고마워, 모듈 좀 주세요."
+dsp_vanessa_1_3,"고마워, 넌 친구야. 이건 필요 없어, 가져."
+dsp_vanessa_2_1,난 바네사야.
+dsp_vanessa_2_2,"모듈 필요해, 가공된 모듈 판매해."
+dsp_vanessa_2_3,"고마워, 친구. 많이 먹어."
+dsp_vanessa_friend_price,친구 가격
+dsp_vanessa_captured,개조체가 붙잡혔다.
+dsp_service_paid_training,학자금 대출
+dsp_service_paid_training_tooltip,"유료 연수의 대가: 매주 월요일 현금에서, 첫 회 48, 이후 100씩, 총 648크레딧. 스폰서의 조건이라 취소할 수 없습니다."
+dsp_preset_save,프리셋 저장
+dsp_preset_load,프리셋 불러오기
+dsp_perk_search_placeholder,특성 검색 (이름 / 설명 / id)…
+dsp_option_ui_scale,UI 확대
+dsp_option_ui_scale_tooltip,특성 선택·전문화 선택 화면을 15% 확대합니다. 끄면 원래 크기.
+dsp_option_ui_scale_percent,확대 비율
+dsp_option_ui_scale_percent_tooltip,특성 선택·전문화 선택 화면의 확대 비율 (100% = 원래 크기).

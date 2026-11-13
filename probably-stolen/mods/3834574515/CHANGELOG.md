@@ -1,4 +1,28 @@
-﻿1.5.11 — 陈列、威慑与商人来意
+﻿1.5.12 — 表厂引荐与来客修整
+
+• 新局的原厂订货从缇梭、岚琴起步；店铺名望与表商交情解锁后续品牌引荐。
+• 新局调整表商、展示柜买家与势力采购预算；典藏原装主要由应汐渊与鉴赏家收购。
+• 新局中，打标隐瞒问题并被买家发现的售假行为加重处罚。
+• 旧存档沿用原有订货、买家预算与售假规则，已有订单保留。
+• 重写来客台词与御藏名录，统一中文、英文、俄文说明；修复重复读档时展示架清理中断的问题。
+
+1.5.12 — Manufacturer Introductions and Visitor Improvements
+
+• New runs start factory ordering with two entry-level brands. Build shop prestige and meet dealers to unlock introductions to more brands.
+• New runs use revised dealer, display-customer and faction procurement budgets. Genuine sealed collectibles are mainly bought by Ying Xiyuan and the Connoisseur.
+• In new runs, discovered fraud involving relabeled goods carries higher penalties.
+• Existing saves retain their ordering access, buyer budgets and fraud rules. Existing orders remain intact.
+• Rewritten visitor dialogue and Ledger guidance in Chinese, English and Russian. Fixed a wall-display cleanup failure when loading another save in the same session.
+
+1.5.12 — Знакомства с производителями и улучшения посетителей
+
+• В новых играх заказы у производителей начинаются с двух марок. Престиж лавки и знакомства с торговцами открывают доступ к остальным.
+• В новых играх изменены бюджеты торговцев, посетителей витрин и закупщиков фракций. Коллекционные оригиналы принимают главным образом Ин Сиюань и Знаток.
+• В новых играх за раскрытый обман с перемаркированным товаром предусмотрено более строгое наказание.
+• Старые сохранения сохраняют прежние правила заказов, бюджеты покупателей и наказания за обман. Оформленные заказы остаются в силе.
+• Переработаны диалоги и Каталог на трёх языках. Исправлена ошибка очистки настенных витрин при повторной загрузке сохранения.
+
+1.5.11 — 陈列、威慑与商人来意
 
 • 新增单表位典藏柜：取得唯一封存典藏原装后由表商赠送，固定在电话上方墙面，可拉帘遮蔽。展示吸引特别收藏家，并有机会引来应汐渊。
 • 武器陈列提供威慑，腕表陈列提供名望。神剑独立提供80威慑，总威慑上限100；防盗减免最高90%。名望吸引资金更充足的收藏家，也增加盗窃与盘查压力。

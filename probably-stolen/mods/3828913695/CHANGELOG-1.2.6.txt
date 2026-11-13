@@ -1,5 +1,0 @@
-1.2.6 — 兼容替代库存解码
-其他 Mod 接管库存解码时，公司增强等读档完成后核对公司物品是否实际恢复。确认恢复则正常送货和来访；无法核验只记维护信息。确认缺失或公司存档数据不可读时仍暂停。
-
-1.2.6 — Compatibility with replacement inventory decoders
-Company Presence checks the live inventory after loading before pausing deliveries and visits. An inconclusive check is logged without adding a pause.

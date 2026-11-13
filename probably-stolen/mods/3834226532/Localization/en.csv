@@ -2,7 +2,7 @@
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distributor
 dsp_distributor_description,"While training under The Mentor you already worked the supplier reps. Controlling the supply chain puts you a step ahead."
-dsp_distributor_tag,Traits: Probably Fun
+dsp_distributor_tag,Perks: Probably Fun
 # Starting perks
 dsp_wanderlust_name,Wanderlust
 dsp_wanderlust_description,If at least one customer is still queued when you close the shop, you get one extra night action, and your first night trip does not cost you any customers.
@@ -81,6 +81,8 @@ dsp_no_trash_janitor_4,"That said, if you would like to join the underground tra
 dsp_underground_trade_name,Underground Trade
 dsp_snack_addiction_name,Snack Addiction
 dsp_snack_addiction_description,"If you do not eat snacks regularly, you suffer an 8% trade penalty. The addiction can be cured... but is that really necessary?"
+dsp_snack_addiction_log_start,Snack Addiction: withdrawal starts in {0} day(s)
+dsp_snack_addiction_log_cure,"Snack Addiction: craving again, trades suffer (cured in {0} day(s))"
 dsp_snack_addiction_withdrawal,"Snack Addiction: you are craving again. Trades suffer."
 dsp_snack_addiction_cured,"Snack Addiction: you have gone long enough without snacks. You are cured."
 dsp_snack_addiction_suppressed,"You chew on a snack. Your hands stop shaking."
@@ -395,7 +397,7 @@ dsp_revolutionary_influence_name,Revolutionary Influence
 dsp_revolutionary_influence_description,"If Revolutionary reputation is above 20, Odin will tell you about an event the Revolution is planning within three days after trading with him."
 dsp_cracker_name,Cracker
 dsp_cracker_description,During your training under The Mentor you picked up a taste for cracking crates. Most of the time it pays well - as long as you have the means to open them.
-dsp_cracker_tag,Traits: Probably Fun
+dsp_cracker_tag,Perks: Probably Fun
 dsp_cracker_supplies_1,"An extra device (smuggler's stash, upgraded)."
 dsp_cracker_supplies_2,A worn-out code sequencer.
 dsp_cracker_supplies_3,3 blank access cards and 1 command access card.
@@ -492,7 +494,7 @@ dsp_newspaper_stand_no_customer_hint, (no customer right now)
 dsp_blood_donor_row_done,Already donated today
 dsp_hydro_open_menu,Open
 dsp_hydro_manual_name,The Secret of Pipe Hydroponics
-dsp_hydro_manual_desc,Without it you cannot grow plants in the water pipe.
+dsp_hydro_manual_desc,Without it you cannot grow plants in the water pipe.\nDouble-clicking this document also opens the pipe hydroponics screen.
 dsp_unlicensed_name,Unlicensed Operation
 dsp_unlicensed_description,The trade commission officer visits on day five.
 dsp_water_vending_name,Water Vending Machine
@@ -500,11 +502,11 @@ dsp_water_vending_description,You start with a water vending machine outside the
 dsp_lucky_supply_name,Lucky Supply
 dsp_lucky_supply_description,Every week Georgio visits to trade, bringing one bottle of Liquid Luck and two completely random items.
 dsp_thousand_miles_name,A Thousand Miles
-dsp_thousand_miles_description,While music is playing you gain a 5% trade bonus.
+dsp_thousand_miles_description,"While music is playing you gain a 5% trade bonus."
 dsp_thousand_miles_bonus_buy,Music playing: +X% trade bonus
 dsp_thousand_miles_bonus_sell,Music playing: +X% trade bonus
 dsp_one_for_ten_thousand_name,One for Ten Thousand
-dsp_one_for_ten_thousand_description,Every faction's reputation changes by the same amount at the same time.
+dsp_one_for_ten_thousand_description,"Every faction's reputation changes by the same amount at the same time."
 dsp_buddy_hi_1,"Hey pal, it's me again."
 dsp_buddy_hi_2,"How is your luck, pal?"
 dsp_buddy_hi_3,"Pal, pal, look what I found!"
@@ -529,3 +531,31 @@ dsp_hawaii_training_description,At the start of the game you gain 3 random perks
 dsp_hawaii_announce,Hawaii Trip: gained {0}
 dsp_paid_training_name,Paid Training
 dsp_paid_training_description,"Your starting perk slot limit is increased by 3. You start with a 648 credit debt. Thanks to the sponsor's ads, this perk is shown as a positive one."
+dsp_startrak_name,Startrak
+dsp_startrak_description,Lose 3 perk slots. At the start of the game you gain a random set of powerful perks. Mutually exclusive with every other perk.
+dsp_startrak_announce,Startrak: you gained {0}
+dsp_star_crossed_name,Star-crossed
+dsp_star_crossed_description,"At the start of every week you gain 100 credits and a random perk, for 5 weeks. The perks count down from 1 point to -3 points."
+dsp_star_crossed_week,"Star-crossed: week {0}, +{1} credits, gained {2}"
+dsp_theyre_millions_name,They're Millions
+dsp_theyre_millions_description,"Once augs show up, a one-week Aug Frenzy begins.\n\nCommemorates 1,000,000 copies sold on 2026/11/7."
+dsp_millions_start,"The Aug Frenzy has begun: this week weapons, ammo and armor sell for +25%, modules +50%, and augs keep coming."
+dsp_millions_end,The Aug Frenzy is over.
+dsp_vanessa_name,Vanessa
+dsp_vanessa_1_1,My name is Vanessa.
+dsp_vanessa_1_2,"Thanks, get me some modules, thanks."
+dsp_vanessa_1_3,"Thanks, you are a friend. We do not need this - take it."
+dsp_vanessa_2_1,I am Vanessa.
+dsp_vanessa_2_2,Need modules. Selling processed modules.
+dsp_vanessa_2_3,"Thanks, friend. Eat up."
+dsp_vanessa_friend_price,Friend price
+dsp_vanessa_captured,The aug has been captured.
+dsp_service_paid_training,Student Loan
+dsp_service_paid_training_tooltip,"The cost of Paid Training: charged from your cash every Monday - 48 for the first installment, 100 each after that, 648 in total. Part of the sponsor deal, cannot be cancelled."
+dsp_preset_save,Save preset
+dsp_preset_load,Load preset
+dsp_perk_search_placeholder,Search perks (name / text / id)...
+dsp_option_ui_scale,UI scale
+dsp_option_ui_scale_tooltip,Enlarges the perk and specialization screens by 15%. Turn it off for the vanilla size.
+dsp_option_ui_scale_percent,UI scale percent
+dsp_option_ui_scale_percent_tooltip,Scale of the perk and specialization screens (100% = vanilla size).
