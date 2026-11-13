@@ -1,6 +1,6 @@
-# Go Fishing 2.5.0 Detailed Stats Guide
+# Go Fishing 2.5.1 Detailed Stats Guide
 
-Applicable to: Go Fishing 2.5.0 source and configuration as of November 13, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.5.0 Mod Guide.md>); the two can be read together.
+Applicable to: Go Fishing 2.5.1 source and configuration as of November 13, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.5.1 Mod Guide.md>); the two can be read together.
 
 All amounts are in credits, weights in grams, food calories in kcal, and power in device energy points. The defined base price, formula quote, and shop transaction price in the tables are explained separately. Market conditions, native quality traits, actual weight, and rounding may continue to affect interface prices.
 
@@ -793,7 +793,7 @@ A stable, adverse-free full single-effect dose has a base price of 110, 210 or 3
 
 ### 11.1 Supply, opening and quotes
 
-The trader visits every 3–5 in-game days. Batches of 4, 5 or 6 contain 2, 3 or 3 raw stones respectively. Opened stock includes at least one Common stone. Each batch has a base 20% chance of a Fine or Collector Grade offer. After two stocked visits with no high-grade stone placed on the desk, the next batch is guaranteed a high-grade roll. Of those rolls, 10% are Collector Grade. Limited desk space can reduce displayed stock.
+Visit intervals use the game day when the next visit is scheduled: 3–4 days on days 1–14, 2–3 days on days 15–29, and 1–2 days from day 30 onward. Existing scheduled visits keep their dates. Batches of 4, 5 or 6 contain 2, 3 or 3 raw stones respectively. Opened stock includes at least one Common stone. Each batch has a base 20% chance of a Fine or Collector Grade offer. After two stocked visits with no high-grade stone placed on the desk, the next batch is guaranteed a high-grade roll. Of those rolls, 10% are Collector Grade. Limited desk space can reduce displayed stock.
 
 A raw stone is appraised at 261 credits. A 15% supplier markup puts its base asking price at 300. Type weights (Salt, Toxic, Iridescent) are 25%/20%/55% in Aurora and 20%/60%/20% in Linguan. Each cell below shows **unprocessed appraisal / trader base quote**. The quote uses a separate supply value plus the 15% markup, rounded to the nearest credit. Vanilla transaction modifiers may still affect the final price.
 
@@ -831,6 +831,8 @@ Bare stone, Chlorite, Azurite and Hematite each count as one loss-producing cut.
 | Collector Grade | 100% | 92% | 70% | 15% |
 
 Chlorite, Azurite and Hematite rebate 30%, 20% and 10% of the loss, respectively. Average the rebate rates across all loss-producing cuts (bare stone contributes 0%), then apply that average to total loss. Amethyst causes no loss and adds no value.
+
+A Veteran’s Experience now has four pages, including mineral identification examples. The seven-page Reagent Manual places fish-scrap sources before the additive reference.
 
 ### 11.3 Gem bonuses and polishing
 

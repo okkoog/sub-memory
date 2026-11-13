@@ -1,4 +1,27 @@
-﻿1.5.12 — 表厂引荐与来客修整
+1.5.13 — 腕表交易修复
+
+• 修复腕表鉴定后，原厂未拆封等溢价导致交易面板报错、交易按钮消失的问题。
+• 修复订表客人的验收设置及读档后的订单报价关联；保存完整订单条件、报价和完成状态。
+• 读档不再消耗另一张待交订单。旧档若缺失完整订单条件，该单会明确取消，不扣钱、不降低声望。
+• 相关提示提供中文、英文和俄文。物品真伪、成色与所有权不变。
+
+1.5.13 — Watch Trading Fixes
+
+• Fixed a trading-panel error that could hide the trade buttons after appraisal revealed premiums such as a factory seal.
+• Fixed watch-order acceptance settings and restored fixed quotes after loading. Order requirements, quotes and completion status are now retained.
+• Loading no longer consumes another pending order. If an older save lacks the full contract, that order is cancelled with no charge or reputation penalty.
+• Updated messages in Chinese, English and Russian. Item authenticity, condition and ownership are unchanged.
+
+1.5.13 — Исправления торговли часами
+
+• Исправлена ошибка панели торговли: после проверки часов надбавки, в том числе за заводскую упаковку, могли скрывать кнопки сделки.
+• Исправлены условия приёмки заказанных часов и восстановление согласованной цены после загрузки. Условия заказа, цена и статус выполнения теперь сохраняются.
+• Загрузка больше не удаляет другой ожидающий заказ. Если в старом сохранении нет полных условий, заказ отменяется без списания денег и потери репутации.
+• Сообщения доступны на китайском, английском и русском. Подлинность, состояние и принадлежность предметов не меняются.
+
+---
+
+1.5.12 — 表厂引荐与来客修整
 
 • 新局的原厂订货从缇梭、岚琴起步；店铺名望与表商交情解锁后续品牌引荐。
 • 新局调整表商、展示柜买家与势力采购预算；典藏原装主要由应汐渊与鉴赏家收购。

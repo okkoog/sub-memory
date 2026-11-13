@@ -1,8 +1,8 @@
-# Go Fishing 2.5.0 Mod Guide
+# Go Fishing 2.5.1 Mod Guide
 
-Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.5.0 Detailed Stats Guide](<Go Fishing 2.5.0 Detailed Stats Guide.md>).
+Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.5.1 Detailed Stats Guide](<Go Fishing 2.5.1 Detailed Stats Guide.md>).
 
-Applies to the standalone "Go Fishing" 2.5.0. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
+Applies to the standalone "Go Fishing" 2.5.1. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
 
 ## Table of Contents
 
@@ -263,7 +263,7 @@ Drag a battery into the designated battery slot; each craft consumes 4 power and
 
 ## Processing Station
 
-Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.5.0 Detailed Stats Guide.md>).
+Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.5.1 Detailed Stats Guide.md>).
 
 Matching rule: the material types must exactly match a recipe (extra, missing, or unrelated materials will not match), and each material only needs to reach the recipe's minimum count — it does not have to equal it exactly. With surplus materials you can craft multiple outputs at once: the plus/minus buttons around the count box switch freely between 1 and 10 portions regardless of current stock; the check against materials happens when you click start, and a mismatched recipe or insufficient materials shows a notice instead of failing silently. The station only accepts the material forms a recipe names — for example, the fish meat mash recipes take whole small yellow croakers or sardines, while most advanced recipes take fish organs and processed materials such as conductive tendons, heat glands, and purification sacs; a whole fish of another kind will not match.
 
@@ -285,15 +285,17 @@ The five legacy dry powders can still be used. Loading an old save converts thei
 4. Supply empty syringes and power. Each syringe takes exactly 10 mL and uses one empty syringe and one charge. Any leftover solution stays in the station.
 5. The filling panel shows the dose count, remainder and base price per syringe. Save successful formulas to history and supply the actual ingredients when repeating them.
 
-The six-page Reagent Manual walks through a Purifier Fish detox recipe and includes concentration and pricing references.
+The seven-page Reagent Manual includes a fish-scrap source page before the additive reference and walks through a Purifier Fish detox recipe and includes concentration and pricing references.
 
 ## Crystal Nautilites
 
 ### Trader and purchasing
 
-The nautilite trader visits every 3–5 in-game days with 4–6 stones from Aurora or Linguan, subject to available desk space. Each stone takes up a 2×2 area. Raw stones have a base asking price of 300 credits and reveal their type and grade when opened. Opened stones are quoted by type and grade.
+Visit intervals use the game day when the next visit is scheduled: 3–4 days on days 1–14, 2–3 days on days 15–29, and 1–2 days from day 30 onward. Existing scheduled visits keep their dates.
 
-Each opened stone has a 30% chance of arriving with one cut. You can see its actual sprite before buying, but the cut is shown as “?” in the details and the trader quotes it as uncut. A bare-stone cut has no colored overlay. The result is revealed upon purchase and counts toward the three-cut limit. Willy visits the day after your first purchase to give you the illustrated three-page guide A Veteran’s Experience.
+The nautilite trader brings 4–6 stones from Aurora or Linguan, subject to available desk space. Each stone takes up a 2×2 area. Raw stones have a base asking price of 300 credits and reveal their type and grade when opened. Opened stones are quoted by type and grade.
+
+Each opened stone has a 30% chance of arriving with one cut. You can see its actual sprite before buying, but the cut is shown as “?” in the details and the trader quotes it as uncut. A bare-stone cut has no colored overlay. The result is revealed upon purchase and counts toward the three-cut limit. Willy visits the day after your first purchase to give you the illustrated four-page guide A Veteran’s Experience. Its fourth page compares Chlorite and Green Fluorite cores over a Common stone at three opacity levels.
 
 ### Opening, cutting and polishing
 
@@ -302,7 +304,7 @@ Each opened stone has a 30% chance of arriving with one cut. You can see its act
 3. Select **Polish** to finish the stone. The marker travels out and back in four seconds, two seconds each way. The three green zones vary in width and are randomly placed. Confirm once per zone on either pass. A mistimed click leaves a crack immediately, and each zone still missed at the end leaves one crack.
 4. Once polishing starts, cutting is locked and you must finish before selling or bartering. Reopening restores the layout and scored zones. Zero, one, two or three cracks yield 120%, 95%, 75% or 60% of the current appraisal, respectively.
 
-You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.5.0 Detailed Stats Guide.md>).
+You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.5.1 Detailed Stats Guide.md>).
 
 ## Research Codex & Integrations
 
@@ -344,4 +346,4 @@ Fishing Cuisine Expansion is a declared prerequisite. The other entries add inte
 
 ---
 
-Applicable version: Standalone 2.5.0. Verification date: November 13, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.
+Applicable version: Standalone 2.5.1. Verification date: November 13, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.

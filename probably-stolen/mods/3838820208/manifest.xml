@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod>
+  <ID>more_girls</ID>
+  <Name>More Girls</Name>
+  <Author>清明葬花祭|lapismind</Author>
+  <ModVersion>0.1.2</ModVersion>
+  <Description>Original extension for All Girls: a milk seller (same logic as the pale scav blood seller), a fortune teller who previews the next seven days' price events and appears in the middle of the screen, and a green-cloak girl who collects weapons and medicine as donations and gives a snake ring at 500 credits. Requires All Girls (all_girls) to be enabled too (portrait).</Description>
+
+  <GameVersions>
+    <Version>0.46</Version>
+  </GameVersions>
+
+  <!-- 依赖 All Girls（合并包）：立绘登记（portrait:）由它的 LocOverride 读取。加载器只在模组列表里提示，不阻止启用。 -->
+  <Prerequisites>
+    <Mod>all_girls</Mod>
+  </Prerequisites>
+
+  <Assemblies>
+    <Assembly>MoreGirls.dll</Assembly>
+  </Assemblies>
+
+  <Capabilities />
+</Mod>

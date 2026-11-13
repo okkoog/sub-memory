@@ -245,7 +245,7 @@ K|expedition.0d425fab66159bc6,사용 가능한 비상 수리 키트가 없습니
 K|expedition.0d7066ded5e61afc,"이곳은 물고기가 빽빽하게 모여 있습니다. 더 큰 어획을 기대할 수 있지만 낚시할수록 바다가 교란되고, 반복해서 잡으면 어군이 경계합니다.{0}\n{1}"
 K|expedition.0d76cd3cf7468770,저장에 실패했습니다. 물품은 어창에 그대로 있습니다. 이 페이지를 다시 열어 확인하세요.
 K|expedition.0e16a1c01ee4644c,선체 강화\n{0}크레딧
-K|expedition.0e6ed0880a828dc4,왼쪽 버튼으로 드래그해 물품을 재배치하거나 양방향으로 옮길 수 있습니다. 드래그 중 우클릭하면 회전합니다. 왼쪽으로 되돌린 물품은 장소가 갱신되기 전까지 다시 회수할 수 있습니다.
+K|expedition.0e6ed0880a828dc4,"왼쪽 버튼으로 드래그해 물품을 재배치하거나 양방향으로 옮길 수 있습니다. 드래그 중 Q, E 또는 마우스 오른쪽 버튼으로 회전합니다. 왼쪽으로 되돌린 물품은 장소가 갱신되기 전까지 다시 회수할 수 있습니다."
 K|expedition.0ead1b8c60780381,선체 최대 업그레이드 완료
 K|expedition.0f1639138b521707,교환받을 물품이 어창에 들어가지 않습니다. 거래가 취소되고 원래 화물이 복구되었습니다.
 K|expedition.0fe47c7c0086f21a,해상 이벤트 대응
@@ -707,7 +707,7 @@ K|expedition.blood.key.stock,블러드 키\n수량: {0}
 K|expedition.blood.key.unsellable,블러드 키는 원정 장비입니다. 가지고 귀환하면 보관되며 판매할 수 없습니다.
 K|expedition.c07f44c6ddff5ed3,아이스박스 열기
 K|expedition.c086e2e92786edc9,{0}{1}\n어창에서 어획물 {2}개를 집으로 가져왔습니다.{3}
-K|expedition.c0876fae3b45d608, · 좌클릭 드래그로 이동 / 우클릭으로 회전
+K|expedition.c0876fae3b45d608," · 좌클릭 드래그로 이동 / 드래그 중 Q/E 또는 우클릭으로 회전"
 K|expedition.c259c68b4783c97e,현재 낚싯대에는 미끼를 더 보충할 필요가 없습니다.
 K|expedition.c275448f2d613de7,상어 대응: {0}/{1}
 K|expedition.c357ee6132907953,항구 떠나기
@@ -2522,7 +2522,7 @@ K|powder.machine.noPower,에너지가 부족합니다. {0} 필요.
 K|powder.machine.notOwned,{0}\n플레이어 소유가 아닙니다.\n가공할 수 없습니다.
 K|powder.machine.otherItem,기타 아이템
 K|powder.machine.output,생선 분말
-K|powder.machine.preview,예상 분말: {0} g\n에너지: {1}; 다음 날 준비됩니다.
+K|powder.machine.preview,"이 분쇄기는 더 이상 사용되지 않습니다. 남은 재고를 꺼낸 뒤 기본 게임의 믹서기를 사용하세요."
 K|powder.machine.processing,가공 중: {0}일차에 완료
 K|powder.machine.scrapName,생선 부산물
 K|powder.machine.title,생선 부산물 분쇄기
@@ -2790,7 +2790,7 @@ K|reagent.missingSolvent,용매: {0} ml
 K|reagent.mix,혼합 / 보정
 K|reagent.mixAmounts,분말 양은 이번 추가분의 g 단위이며 0.001 g까지 입력할 수 있습니다. 0으로 설정하면 용매나 보조재만 추가합니다.
 K|reagent.mixSettings,이번 추가분의 재료
-K|reagent.multidose.used," ({0}쌍 사용, 처리 가능 부담 {1}% 감소)"
+K|reagent.multidose.used,"({0}쌍 사용)"
 K|reagent.nameFormula,이름 지정 / 배합 저장
 K|reagent.nameInstructions,최대 24자. 이름은 표시에만 쓰이며 실제 효과는 재료가 결정합니다.
 K|reagent.naming.advanced,고급
@@ -3157,7 +3157,7 @@ K|willy.intel.unlocked,좌표 획득
 K|willy.phone.closed,가게가 아직 열리지 않았어. 영업시간에 다시 전화해.
 K|willy.phone.requirements.bait,{0}을(를) 가져와줘.
 K|willy.phone.requirements.item,{0} ×1
-K|willy.phone.requirements.king,{0} 또는 {1} 중 하나를 가져와줘.
+K|willy.phone.requirements.king,"다음 물고기 왕 중 아무 종류나 한 마리를 가져와 줘: {0}."
 K|willy.phone.requirements.net,{0}을(를) 가져와줘.
 K|willy.phone.requirements.research,{0}을(를) 가져와줘.
 K|willy.phone.requirements.separator,", "
@@ -3349,3 +3349,78 @@ K|reagent.ui.clearSolution,약액 비우기
 K|reagent.ui.nextMix,원액 용기에서 {0}mL를 덜어 내고 보조재를 추가합니다: {1}.
 K|willy.fishking.deliver.lofurin,로푸린 1마리 건네기
 K|willy.fishking.deliver.niorun,니오룬 1마리 건네기
+K|item.gf_nautilite_grinder.flavor,""
+K|item.gf_nautilite_grinder.name,"나우틸라이트 연마기"
+K|item.gf_nautilite_grinder.short,"흰색 연마 헤드를 나우틸라이트의 절단면에 2초간 접촉시키면 절단할 수 있습니다."
+K|item.tackle_shop_nautilite_manual.flavor,""
+K|item.tackle_shop_nautilite_manual.name,"베테랑의 노하우"
+K|item.tackle_shop_nautilite_manual.short,"나우틸라이트의 선별과 가공 경험을 그림과 함께 정리한 안내서."
+K|nautilite.core.1,"녹색 형석핵"
+K|nautilite.core.2,"청수정 핵"
+K|nautilite.core.3,"진홍빛 핵"
+K|nautilite.core.4,"보랏빛 별핵"
+K|nautilite.core.5,"녹니석"
+K|nautilite.core.6,"남동석"
+K|nautilite.core.7,"적철석"
+K|nautilite.core.8,"자수정"
+K|nautilite.flavor.empty,"{0}에서 온 나우틸라이트. 아쉽게도 내부는 비어 있었습니다."
+K|nautilite.flavor.gem,"{0}에서 온 나우틸라이트. 가공하자 내부의 보석이 드러났습니다."
+K|nautilite.flavor.mineral,"{0}에서 온 나우틸라이트. 절단면에 흔한 광물이 드러났습니다."
+K|nautilite.flavor.origin,"{0}에서 온 나우틸라이트."
+K|nautilite.grade.1,"하급"
+K|nautilite.grade.2,"일반"
+K|nautilite.grade.3,"상급"
+K|nautilite.grade.4,"수집품급"
+K|nautilite.grinder.hint,"위쪽의 연마기를 끌어 흰색 연마 헤드를 절단면에 2초간 접촉시키세요."
+K|nautilite.grinder.progress,"절단 {0}%"
+K|nautilite.inspection.condition,"{0} · 내부 균열 {1}곳"
+K|nautilite.inspection.cut,"절단"
+K|nautilite.inspection.face,"암석면"
+K|nautilite.inspection.finished,"연마 완료"
+K|nautilite.inspection.nextFace,"다음 절단면이 암석일 때 예상 가격: {0}"
+K|nautilite.inspection.open,"외피 벗기기"
+K|nautilite.inspection.polish,"정밀 연마"
+K|nautilite.inspection.polishValues,"정밀 연마 예상 가격(균열 0~3개): {0} / {1} / {2} / {3}"
+K|nautilite.inspection.raw,"돋보기로 외피를 벗겨 종류와 등급을 확인하세요."
+K|nautilite.inspection.slot,"절단면 {0}: {1}"
+K|nautilite.inspection.unavailable,"현재는 이 작업을 할 수 없습니다."
+K|nautilite.inspection.uncut,"미절단"
+K|nautilite.inspection.unpolished,"연마 전"
+K|nautilite.inspection.value,"기본 예상 가격: {0}"
+K|nautilite.manual.gift,"나우틸라이트를 샀다면서요? 예전에 친구가 남겨 놓은 건데, 도움이 될지도 모르겠네요."
+K|nautilite.manual.giftLeft,"(《베테랑의 노하우》를 남긴다.)"
+K|nautilite.manual.giftPending,"안내서를 놓을 공간이 없습니다. 자리를 비워 주세요. 윌리가 다음에 방문할 때 다시 전달합니다."
+K|nautilite.manual.text.0,"나우틸라이트의 종류"
+K|nautilite.manual.text.1,"미가공 나우틸라이트"
+K|nautilite.manual.text.10,"정밀 연마"
+K|nautilite.manual.text.11,"표시 바늘은 4초마다 왕복합니다. 각 녹색 구간에서 한 번씩 확인하세요.\n타이밍을 놓치거나 왕복이 끝날 때까지 구간을 누르지 않으면 해당 구간마다 내부 균열이 하나씩 생깁니다."
+K|nautilite.manual.text.12,"보석 가격"
+K|nautilite.manual.text.13,"같은 종류의 보석이라도 어떤 나우틸라이트에서 나왔느냐에 따라 가치가 달라집니다."
+K|nautilite.manual.text.14,"고염 나우틸라이트"
+K|nautilite.manual.text.15,"녹색 형석핵 ×1.20, 청수정 핵 ×1.10.\n녹색이나 파란색 보석을 노린다면 고염 나우틸라이트를 고르세요."
+K|nautilite.manual.text.16,"독성 나우틸라이트"
+K|nautilite.manual.text.17,"진홍빛 핵 ×1.25.\n진홍빛 핵의 가치를 노린다면 독성 나우틸라이트를 고르세요."
+K|nautilite.manual.text.18,"무지갯빛 나우틸라이트"
+K|nautilite.manual.text.19,"보랏빛 별핵 ×1.25, 청수정 핵 ×1.10.\n무지갯빛 나우틸라이트는 값이 비싸지만 고가의 사치품이 나올 가능성도 높습니다."
+K|nautilite.manual.text.2,"기본 판매가 300. 외피를 벗겨야 종류와 등급을 확인할 수 있습니다."
+K|nautilite.manual.text.3,"외피를 벗긴 나우틸라이트"
+K|nautilite.manual.text.4,"상인은 종류와 등급에 따라 서로 다른 공급 가격을 제시합니다.\n\n오로라에서는 무지갯빛 나우틸라이트가, 캐노피에서는 독성 나우틸라이트가 많이 나옵니다."
+K|nautilite.manual.text.5,"가공 방법"
+K|nautilite.manual.text.6,"외피 벗기기"
+K|nautilite.manual.text.7,"돋보기를 사용하면 가공 화면이 열립니다.\n'외피 벗기기'를 선택하면 종류와 등급이 공개됩니다."
+K|nautilite.manual.text.8,"절단"
+K|nautilite.manual.text.9,"연마기를 드래그해 흰색 헤드를 절단면에 접촉시키세요. 2초간 접촉해야 절단이 완료됩니다.\n같은 색의 핵이라도 흔한 광물일 수도, 보석일 수도 있습니다. 형태와 광택을 살펴보세요."
+K|nautilite.name,"{0}·{1}"
+K|nautilite.offer,"{0}에서 새 나우틸라이트를 가져왔어요. 몇 개 사 보실래요?"
+K|nautilite.polish.confirm,"연마 확인"
+K|nautilite.polish.miss,"이번 단계에서 내부 균열이 발생했습니다."
+K|nautilite.polish.resume,"정밀 연마 진행 중 ({0}/3)"
+K|nautilite.polish.round,"정밀 연마 {0}/3 · 각 녹색 구간에서 한 번씩 확인"
+K|nautilite.polish.success,"이번 단계 성공"
+K|nautilite.polish.tradeLocked,"정밀 연마를 마쳐야 판매하거나 물물교환할 수 있습니다."
+K|nautilite.species.iridescent,"무지갯빛 나우틸라이트"
+K|nautilite.species.salt,"고염 나우틸라이트"
+K|nautilite.species.toxic,"독성 나우틸라이트"
+K|nautilite.trader,"나우틸라이트 채집상"
+K|nautilite.unknown,"미가공 나우틸라이트"
+K|willy.fishking.deliver.one,"물고기 왕 1마리 건네기(탁자 위 물고기 우선)"
