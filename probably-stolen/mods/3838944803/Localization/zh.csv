@@ -1360,7 +1360,7 @@ item_ul_dissector_name,解剖机
 item_ul_dissector_desc,放进一具尸体，过一晚取出完好的器官。
 item_ul_dissector_flavor,二手医疗设备。原来的主人不想再看见它。
 item_ul_dissector_note_name,解剖机说明
-item_ul_dissector_note_flavor,尸体槽放一具尸体，有电的那晚解剖。\n一具通常能取出一两件能用的器官，运气好有三四件。取出哪几件看运气，放久了的尸体出得更少。\n器官放在冷藏箱外面每天都会变差，第 4 天就坏了。尸体只能放 2 天。
+item_ul_dissector_note_flavor,尸体槽放一具尸体，有电的那晚解剖。\n一具通常能取出一两件能用的器官，运气好有三四件。取出哪几件看运气，放久了的尸体出得更少。\n器官放在冷藏箱外面每天都会变差，第 4 天就坏了。尸体只能放 2 天。\n每件器官有完整度：完好（原价）、受损（-50%）、损坏（-99%）。放过的尸体更容易取出受损的。\n模组格能插原版的通用模组：超频类多取器官，精工类更容易完好，节能类省电。
 dissector_label_body,尸体
 dissector_label_status,状态
 dissector_status_empty,空
@@ -2040,7 +2040,7 @@ tap_faucet_desc,{0}。今天还能接约 {1} 升，用容器点它就能接。
 tap_empty,今天的水已经接完了，明天再来。
 uc.water_resident.name,买水的住户
 uc.water_resident.1,楼里的净水器又坏了，物业说下周才修。
-uc.water_resident.2,你这儿有干净的水吗？
+uc.water_resident.2,有瓶装泉水吗？密封的那种。
 uc.water_corp.name,企业采购代表
 uc.water_corp.1,公司的会议室和高管层要用水。只要优质的。
 uc.water_corp.2,纯度够高，价钱好说。
@@ -2083,3 +2083,18 @@ perk.ul_blacklisted.desc_nosalon,开局范德林家族声望-30。
 perk.ul_outsider.desc_nosalon,上层区没人认识你。顾客减少30%。
 scenario.soon.tag,即将推出
 scenario.soon.desc,即将推出。这个职业还在做，做好了就开放~
+organ_grade_1,受损的{0}
+organ_grade_2,损坏的{0}
+ul_dialog_upper_lower_visitor_1,喂，店主！我就住楼上那几层。
+ul_dialog_upper_hedonist_greeting_1,绕了半条长廊才找到你这儿。赶紧的吧。
+ul_dialog_upper_lower_visitor_luxury_1,真是无聊的一天，干脆出来买点东西。
+ul_dialog_minor_ul_visitor_2,我平时不怎么逛当铺，
+ul_dialog_minor_ul_visitor_3,听说这种店里能淘到下层区来的东西！
+ul_dialog_minor_ul_visitor_4,不得不说，下层区的东西真的很有意思。
+ul_dialog_minor_ul_visitor_8,只要是下层区来的，什么都行。
+ul_dialog_minor_ul_visitor_9,像是下层区的土制物品、加工食品，还有低科技武器，
+ul_dialog_tourist_greet_1,哇，上层区原来是这个样子。我太喜欢了！
+ul_dialog_tourist_greet_5,所有人都说这一带贵得离谱。所以我当然非来不可。
+ul_dialog_tourist_deal_2,听说我在这儿能找点乐子？
+ul_dialog_tourist_weapon_greet_2,他们说这一带的店都死贵，可我倒觉得挺有意思。
+ul_dialog_tourist_weapon_greet_3,今天来逛逛空间站最有钱的区域。文化气息可真浓！

@@ -1345,7 +1345,7 @@ item_ul_dissector_name,Dissection Machine
 item_ul_dissector_desc,Put a body in, take out intact organs after one night.
 item_ul_dissector_flavor,Second-hand medical equipment. The previous owner never wants to see it again.
 item_ul_dissector_note_name,Dissection Machine Notes
-item_ul_dissector_note_flavor,Put a body in the body slot. It's dissected on a night with power.\nA body usually yields one or two usable organs, three or four if you're lucky. Which ones is luck; older bodies yield less.\nOrgans outside the cooler get worse every day and spoil on day 4. Bodies keep for 2 days.
+item_ul_dissector_note_flavor,Put a body in the body slot. It's dissected on a night with power.\nA body usually yields one or two usable organs, three or four if you're lucky. Which ones is luck; older bodies yield less.\nOrgans outside the cooler get worse every day and spoil on day 4. Bodies keep for 2 days.\nEach organ has a condition: intact (full price), damaged (-50%), ruined (-99%). Older bodies give more damaged organs.\nThe module bay takes standard modules: overclock extracts more, precision keeps organs intact, efficiency saves power.
 dissector_label_body,Body
 dissector_label_status,Status
 dissector_status_empty,Empty
@@ -2025,7 +2025,7 @@ tap_faucet_desc,{0}. About {1} L left today. Click it with a container to fill.
 tap_empty,The water is used up for today. Come back tomorrow.
 uc.water_resident.name,Resident Buying Water
 uc.water_resident.1,The building's purifier broke again. Maintenance says next week.
-uc.water_resident.2,Got any clean water?
+uc.water_resident.2,Got any bottled spring water? The sealed kind.
 uc.water_corp.name,Corporate Procurement Rep
 uc.water_corp.1,Our boardrooms and executive floors need water. High quality only.
 uc.water_corp.2,If the purity's right, the price isn't a problem.
@@ -2068,3 +2068,18 @@ perk.ul_blacklisted.desc_nosalon,Start with Vanderlin family reputation -30.
 perk.ul_outsider.desc_nosalon,Nobody in the Upper Levels knows you. 30% fewer customers.
 scenario.soon.tag,Coming soon
 scenario.soon.desc,Coming soon. This profession is still being made.
+organ_grade_1,Damaged {0}
+organ_grade_2,Ruined {0}
+ul_dialog_upper_lower_visitor_1,Hey, shopkeeper! I live a few floors up.
+ul_dialog_upper_hedonist_greeting_1,Took me half the promenade to find this place. Let us be quick.
+ul_dialog_upper_lower_visitor_luxury_1,What a dull day. Might as well go shopping.
+ul_dialog_minor_ul_visitor_2,I do not usually visit pawnshops,
+ul_dialog_minor_ul_visitor_3,but I heard you can find things from the Lower Levels here!
+ul_dialog_minor_ul_visitor_4,I have to say, things from down there are fascinating.
+ul_dialog_minor_ul_visitor_8,Anything from the Lower Levels will do.
+ul_dialog_minor_ul_visitor_9,Homemade stuff, processed food, low-tech weapons,
+ul_dialog_tourist_greet_1,Wow, so this is the Upper Levels. I love it!
+ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So of course I had to come.
+ul_dialog_tourist_deal_2,I heard I could have some fun around here?
+ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
+ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
