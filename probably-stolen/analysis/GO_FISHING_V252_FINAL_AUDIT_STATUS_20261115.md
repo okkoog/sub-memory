@@ -7,7 +7,7 @@
 - 6차 수정: 윌리 서비스·대사 5건, 지렁이 사육 16건, 가공 설명서 3건, 통조림 3건, 화학·물약 9건, 나우틸라이트 5건.
 - 6차 원문/변경 전/변경 후/검수 메모: `probably-stolen/analysis/GO_FISHING_V252_REVIEW_BATCH_006_20261115.csv`.
 - 기존 검수 기록: `GO_FISHING_V252_MANUAL_REVIEW_PART1_20261114.csv`(1차 71개 변경 건), `GO_FISHING_V252_REVIEW_BATCH_002_20261115.csv`, `003`, `004`, `005`.
-- 전체 3,448개 원문·번역 전후·유지/수정 판정·개별 검수 메모 통합 기록: `probably-stolen/analysis/GO_FISHING_V252_REVIEW_ALL_3448_20261115.csv`.
+- 전체 3,448개 원문·번역 전후·유지/수정 판정·개별 검수 메모 통합 기록 (GitHub에서 보기 편하도록 분할): `probably-stolen/analysis/GO_FISHING_V252_FULL_AUDIT_0001-1750_20261115.csv`, `probably-stolen/analysis/GO_FISHING_V252_FULL_AUDIT_1751-3448_20261115.csv`.
 - 1차 125개 전체 기록(수정 71 + 유지 54): `probably-stolen/analysis/GO_FISHING_V252_REVIEW_BATCH_001_FULL_20261115.csv`.
 - **한계**: 실제 게임 출력·대사 연결·스크린 UI 배치 및 원본 코드와 원문 내부 충돌 부분은 검증되지 않음.
 - **확인 필요**: 원문 자체 일부 화학 안내에 카페인/꿈버섯 추출물 제목·내용 교차, 단위나 조합 규칙 구버전 설명 가능성 있음. 번역이 원문의 실제 게임 로직을 증명하는 것은 아님.
