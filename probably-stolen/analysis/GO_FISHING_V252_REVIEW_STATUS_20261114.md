@@ -48,3 +48,11 @@
 - 중요 수정: 최신 물약 제조법(기본 믹서기, 0.5~5mL, A+B 1등급/최대 4조합), 약재 성분명, 출항 열쇠·보관함 명칭, 주사기 충전량 및 UI 표기
 - **원본 내부 충돌:** `potion.story.dialogue.edwin_retry.0` 중국어/영어 의미 상충, `reagent.auxInstructions`(3쌍/µL)과 현행 5효과 안내(4쌍/mL) 불일치, `reagent.burden.auxDoses` 및 `reagent.rebuild.guideConcentration` 구버전 규칙 잔존. 임의로 원문을 조작하지 않고 미결 항목으로 표시.
 - 전체 번역키 3,448개 유지, 중복 0, 원문 대비 변수 불일치 0. 게임 출력·모드 본체/DLL·스팀 배포 미변경.
+
+## 6차 검수 (2026-11-15)
+
+- 마지막 **323개 검수 완료**, 41개 수정 · 282개 유지.
+- 누적 **3,448 / 3,448개 (100%)** · 미검수 0개 (키별 원문 대조 기준).
+- 검수표: `probably-stolen/analysis/GO_FISHING_V252_REVIEW_BATCH_006_20261115.csv`.
+- 전체 통합 상태: `probably-stolen/analysis/GO_FISHING_V252_FINAL_AUDIT_STATUS_20261115.md`.
+- 중복 0 · 키 누락 0 · 변수 불일치 0. 게임 실행 중 출력 확인은 별도.
