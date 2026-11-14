@@ -33,7 +33,7 @@ is_msg_deposit_failed,{0}개를 보관하지 못했습니다
 is_msg_stow_in_store,매장으로 돌아온 뒤 수납하세요
 is_msg_stow_nothing,수납할 물품이 없습니다
 is_msg_stow_done,{0}개를 수납했습니다
-is_msg_stow_box_full,수납함의 16칸이 모두 찼습니다. 일부 물품을 꺼낸 뒤 수납하세요
+is_msg_stow_box_full,수납함이 가득 찼습니다({0}칸). 일부 물품을 꺼낸 뒤 수납하세요
 is_msg_allstow_in_store,매장으로 돌아온 뒤 수납하세요
 is_msg_allstow_nothing,수납할 물품이 없습니다
 is_msg_allstow_done,{0}개를 각 수납함에 나누어 보관했습니다
@@ -113,3 +113,27 @@ is_tip_next_battery,다음: {0}/{1} kJ
 is_tip_next_durability,다음: {0}/{1}
 is_tip_next_uses,다음: {0}/{1}
 is_tip_next_water,다음 물병: {0}
+
+# 1.4.4 이후 신규 설정 및 알림 번역 (2026-11-14)
+is_cfg_slot_mode_name,수납함 칸 수
+is_cfg_slot_mode_desc,"수납함의 칸 수를 16칸 또는 25칸으로 설정합니다. 기존 저장 데이터에서 25칸을 16칸으로 줄이면 17~25번 칸은 비활성화되지만, 물품은 사라지지 않습니다."
+is_gp_bay_storage,보관 구역
+is_gp_bay_machine,기계 구역
+is_gp_bay_smuggler,밀수 구역
+is_msg_need_store,매장 안에서만 변경할 수 있습니다
+is_toast_opt_pull,자동 수납 시 다른 수납함에서도 같은 종류의 물품을 가져옵니다.
+is_toast_opt_guard,다른 수납함에서 이 수납함의 물품을 가져갈 수 없게 됩니다.
+is_toast_opt_restockguard,이 수납함을 전체 진열 대상에서 제외합니다.
+is_toast_opt_keepone,각 칸에 물품을 최소 1개씩 남깁니다.
+is_toast_opt_baystor,보관 구역에서도 물품을 가져옵니다(모든 수납함에 적용).
+is_toast_opt_baymach,기계 구역에서도 물품을 가져옵니다(모든 수납함에 적용).
+is_toast_opt_baysmug,밀수 구역에서도 물품을 가져옵니다(모든 수납함에 적용).
+is_toast_opt_hidename,각 칸 아래의 물품 이름을 숨깁니다.
+is_toast_off_pull,자동 수납 시 다른 수납함에서 같은 종류의 물품을 가져오지 않습니다.
+is_toast_off_guard,다른 수납함에서 이 수납함의 물품을 다시 가져갈 수 있습니다.
+is_toast_off_restockguard,이 수납함을 전체 진열 대상에 다시 포함합니다.
+is_toast_off_keepone,각 칸의 마지막 물품도 꺼낼 수 있습니다.
+is_toast_off_baystor,보관 구역에서 물품을 가져오지 않습니다(모든 수납함에 적용).
+is_toast_off_baymach,기계 구역에서 물품을 가져오지 않습니다(모든 수납함에 적용).
+is_toast_off_baysmug,밀수 구역에서 물품을 가져오지 않습니다(모든 수납함에 적용).
+is_toast_off_hidename,각 칸 아래의 물품 이름을 표시합니다.
