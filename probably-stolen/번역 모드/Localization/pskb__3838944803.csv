@@ -1219,3 +1219,118 @@ K|perk.ul_cigar.desc,정기적으로 담배를 피우지 않으면 거래에 8% 
 K|perk.ul_wine.name,와인 의존
 K|perk.ul_wine.desc,정기적으로 술을 마시지 않으면 거래에 8% 페널티를 받습니다. 끊을 수 있습니다.
 K|perk.ul_gambler.name,도박판 단골
+K|perk.ul_gambler.desc,기회만 있으면 복권을 사게 됩니다. 시작부터 모든 복권 콘텐츠가 해금됩니다. 이 습관은 끊을 수 있습니다.
+K|perk.ul_clutter.name,이전 세입자의 잡동사니
+K|perk.ul_clutter.desc,이전 세입자가 급히 떠나는 바람에 물품 보관함 아래쪽에 잡동사니 세 더미가 남았습니다. 더미마다 따로 치울 수 있습니다.
+K|perk.ul_small_unit.name,좁은 점포
+K|perk.ul_small_unit.desc,기본 보관함 크기가 24×10에서 20×10으로 줄어듭니다.
+K|perk.ul_secret.name,숨겨진 과거
+K|perk.ul_secret.desc,"누군가 당신의 과거를 알고 협박하고 있습니다. 매주 입막음 비용을 내야 하며, 내지 않으면 과거가 폭로되어 대부분의 세력과 관계가 크게 악화됩니다."
+K|perk.ul_illness.name,만성 질환
+K|perk.ul_illness.desc,치료할 수 없는 자가면역 질환을 앓고 있습니다. 살아남으려면 매주 면역 혈청 주사를 맞아야 합니다. 면역 혈청 1개를 가지고 시작합니다.
+K|perk.ul_no_news.name,신문 미구독
+K|perk.ul_no_news.desc,일간 신문을 받지 않으며 달력에도 향후 소식이 표시되지 않습니다(기본 게임의 '구독 취소'와 동일).
+K|perk.ul_homebody.name,집순이·집돌이
+K|perk.ul_homebody.desc,외출을 좋아하지 않습니다. 밤 외출은 이틀에 한 번만 가능합니다.
+K|scenario.organ.title,장기 밀매상
+K|scenario.organ.desc,상층 구역에는 장기가 부족하지 않습니다. 출력 장기는 싸고 합법적입니다. 부자들이 원하는 것은 천연 장기죠. 천연 장기를 얻을 수 있는 곳은 한 군데뿐입니다.
+K|scenario.organ.with1,해부 기계와 배터리 1개
+K|scenario.organ.with2,장기 냉장 보관함
+K|scenario.organ.with3,교전 지역의 위치
+K|scenario.organ.tag,고위험
+K|item_ul_organ_heart_name,천연 심장
+K|item_ul_organ_heart_flavor,출력기로 만들지 않은 심장. 상층 구역의 병원에서는 이런 장기만 취급한다.
+K|item_ul_organ_lung_left_name,천연 왼쪽 폐
+K|item_ul_organ_lung_left_flavor,천연 왼쪽 폐.
+K|item_ul_organ_lung_right_name,천연 오른쪽 폐
+K|item_ul_organ_lung_right_flavor,천연 오른쪽 폐.
+K|item_ul_organ_kidney_left_name,천연 왼쪽 신장
+K|item_ul_organ_kidney_left_flavor,천연 왼쪽 신장.
+K|item_ul_organ_kidney_right_name,천연 오른쪽 신장
+K|item_ul_organ_kidney_right_flavor,천연 오른쪽 신장.
+K|organ_rotten_prefix,부패한 {0}
+K|organ_rotted,물품 {0}개가 부패했습니다.
+K|item_ul_corpse_name,시신 가방
+K|item_ul_corpse_flavor,지퍼가 끝까지 잠겨 있다. 오늘 밤이나 내일 안에 처리하는 게 좋겠다.
+K|item_ul_organ_cooler_name,장기 냉장 보관함
+K|item_ul_organ_cooler_desc,내부에 보관한 장기는 부패하지 않습니다.
+K|item_ul_organ_cooler_flavor,의료용 장비. 병원 이름이 적힌 라벨은 긁혀 지워졌다.
+K|item_ul_dissector_name,해부 기계
+K|item_ul_dissector_desc,시신을 넣고 하룻밤 기다리면 손상되지 않은 장기를 얻을 수 있습니다.
+K|item_ul_dissector_flavor,중고 의료 장비. 이전 주인은 다시는 보고 싶어 하지 않는다.
+K|item_ul_dissector_note_name,해부 기계 사용 설명서
+K|item_ul_dissector_note_flavor,"시신 투입구에 시신 하나를 넣으세요. 전력이 공급되는 밤에 해부가 진행됩니다.\n시신 한 구에서 대개 사용 가능한 장기 1~2개를 얻으며, 운이 좋으면 3~4개까지 나옵니다. 어떤 장기가 나오는지는 무작위이며 오래된 시신에서는 더 적게 나옵니다.\n냉장 보관함 밖에 놓인 장기는 날마다 상태가 나빠지다가 4일째에 부패합니다. 시신은 2일 동안 보관할 수 있습니다."
+K|dissector_label_body,시신
+K|dissector_label_status,상태
+K|dissector_status_empty,비어 있음
+K|dissector_status_ready,신선도 {0}
+K|dissector_status_rotten,부패함
+K|dissector_log_done,해부 기계에서 손상되지 않은 장기 {0}개를 추출했습니다.
+K|dissector_log_rotten,시신이 부패해 해부 기계에서 아무것도 얻지 못했습니다.
+K|battle.title,교전 지역
+K|battle.panel_quiet,며칠 전 이곳에서 혁명군과 치안부가 교전했다. 오늘 밤은 조용하다.
+K|battle.panel_fight,막 총격전이 끝난 곳이다. 바닥에서 더 많은 물건을 찾을 수 있지만 순찰도 늘었다.
+K|battle.tries_left,오늘 밤 남은 수색 횟수: {0}/{1}회
+K|battle.wounded,부상을 입어 오늘 밤에는 더 이상 수색할 수 없습니다.
+K|battle.risk,경상 {0}%  중상 {1}%  발각 {2}%
+K|battle.search,수색
+K|battle.found_corpse,대체로 온전한 시신 하나를 발견했다. 포장할 필요는 없다. 떠날 때 끌고 가면 된다.
+K|battle.found_scrap,팔 만한 폐품 몇 개를 주웠다.
+K|battle.found_nothing,아무것도 찾지 못했다.
+K|battle.luck_saved,유탄이 스쳐 지나갈 뻔했다. 운이 좋았다.
+K|battle.spotted_police,치안부 순찰대에게 목격당했다. 이 일은 당신의 기록에 남을 것이다.
+K|battle.spotted_rev,혁명군 대원에게 목격당했다. 결국 경찰에게 소식이 전해질 것이다.
+K|battle.fight_tonight,오늘 밤 교전 지역에서 총격전이 벌어지고 있습니다.
+K|npc_clinic_name,쏜
+K|clinic.intro.1,"백탑 병원 구매 담당, 쏜입니다."
+K|clinic.intro.2,우리는 천연 장기만 삽니다. 나머지는 직접 출력하면 되니까요.
+K|clinic.intro.3,며칠마다 방문하겠습니다. 물건이 신선할수록 값을 더 쳐 드리죠.
+K|clinic.visit.1,물건을 인수하러 왔습니다.
+K|clinic.wanted_now,이번에는 {0}이(가) 급히 필요합니다. 값을 50% 더 드리죠.
+K|clinic.ask,어떤 물건이 있습니까?
+K|clinic.more,다른 물건도 있습니까?
+K|clinic.sold,좋습니다.
+K|clinic.c_none,오늘은 이게 전부입니다.
+K|clinic.c_sell,"{0}, {1}크레딧."
+K|clinic.c_sell_wanted,"{0}, {1}크레딧(긴급 매입)."
+K|clinic.bye_next,며칠 뒤에 뵙죠. 물건은 냉장 보관하세요.
+K|clinic.arrest.c1,상층 구역에서 이식 수술을 기다리는 사람이 얼마나 많은지 아십니까?
+K|clinic.arrest.s1,백탑 병원 구매 담당자군. 우리와 함께 가시죠.
+K|scenario.perfume.title,조향사
+K|scenario.perfume.desc,조향사 밑에서 3년간 기술을 배웠습니다. 상층 구역의 다른 향수는 모두 합성품이지만 당신의 향수는 다릅니다.
+K|scenario.perfume.with1,조향대 2대와 조향법 수첩
+K|scenario.perfume.with2,천연 꽃 8개와 이후 매주 들어오는 꽃 배송
+K|scenario.perfume.with3,매주 물품을 수거하는 구매자
+K|scenario.perfume.tag,상층 구역 모드
+K|npc_perfume_buyer_name,비올라
+K|perfume_buyer.intro.1,전 비올라예요. 앰버 거리의 부티크에서 물건을 사들여요.
+K|perfume_buyer.intro.2,천연 꽃으로 향수를 만드신다면서요?
+K|perfume_buyer.intro.3,매주 한 번 올게요. 갖고 계신 물건은 전부 매입하죠.
+K|perfume_buyer.visit.1,또 그날이네요.
+K|perfume_buyer.wanted_now,이번 주에는 {0}이(가) 가장 잘 팔려요. 값을 더 드리죠.
+K|perfume_buyer.ask,이번에는 어떤 물건이 있나요?
+K|perfume_buyer.more,다른 물건도 있나요?
+K|perfume_buyer.sold,좋아요.
+K|perfume_buyer.c_none,이게 전부예요.
+K|perfume_buyer.c_sell,"{0}, {1}크레딧."
+K|perfume_buyer.c_sell_wanted,"{0}, {1}크레딧(특별 매입)."
+K|perfume_buyer.bye,다음 주에 봬요.
+K|ice_maker.scenario.title,아이스 제조업자
+K|ice_maker.scenario.desc,"냉각 결정 장비 한 세트를 가지고 상층 구역에 왔습니다. 파티 관계자들이 매주 아이스를 매입하러 오며, 할당량을 채우면 보수를 받습니다. 경찰 기록은 깨끗하지 않습니다(경찰 평판 -10)."
+K|ice_maker.scenario.with1,봉인이 해제된 냉각 결정 반응기
+K|ice_maker.scenario.with2,극저온 결정화 장치와 순도 검사기
+K|ice_maker.scenario.with3,시약 몇 개와 배터리 3개
+K|ice_maker.scenario.with4,매주 물품을 수거하는 구매자
+K|ice_maker.scenario.tag,고위험
+K|ice_maker.collector_name,준
+K|ice_maker.supplier_name,루벤
+K|ice_maker.grade.0,거리급
+K|ice_maker.grade.1,파티급
+K|ice_maker.grade.2,결정급
+K|ice_maker.intro.1,새로 가게를 연 사람인가요? 전 준이에요.
+K|ice_maker.intro.2,상층 구역의 파티 모임 몇 군데에 물건을 공급하고 있어요.
+K|ice_maker.intro.3,전 공급업자는 지난달에 잡혀갔어요.
+K|ice_maker.intro.4,장비를 통째로 가지고 왔다고 들었어요.
+K|ice_maker.intro.5,다음 주 같은 시간에 {1}급 이상으로 {0}개를 받으러 올게요.
+K|ice_maker.intro.6,검사하지 않은 물건은 받지 않아요. 손님들이 순도 보고서를 요구하거든요.
+K|ice_maker.intro.7,봉지당 등급에 따라 현장에서 값을 치를게요.
