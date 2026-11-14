@@ -1040,7 +1040,7 @@ K|fishery.terminal.consumables.daily.exhausted,오늘 품절
 K|fishery.terminal.consumables.daily.invalid,오늘 남은 한도 안에서 1 이상의 수량을 입력하세요
 K|fishery.terminal.consumables.daily.limit,일일 한도: {0}
 K|fishery.terminal.consumables.daily.remaining,일일 한도: {0} · 오늘 {1}개 남음
-K|fishery.terminal.consumables.delivery,"주 인벤토리 우선, 이후 창고"
+K|fishery.terminal.consumables.delivery,주 인벤토리 우선 · 공간 부족 시 창고
 K|fishery.terminal.consumables.empty,이 분류에는 상품이 없습니다.
 K|fishery.terminal.consumables.failed,구매에 실패했습니다. 다시 시도하세요.
 K|fishery.terminal.consumables.invalid,유효한 양의 정수로 수량을 입력하세요.
@@ -1055,7 +1055,7 @@ K|fishery.terminal.consumables.unavailable,현재 구매 불가
 K|fishery.terminal.consumables.unit,개당 가격: {0:N0} 크레딧
 K|fishery.terminal.consumables.weekly.remaining,주간 한도: 1 · 이번 주 {0}개 남음
 K|fishery.terminal.dex.archive,물고기 도감
-K|fishery.terminal.dex.archive.empty,아직 물고기 기록이 없습니다.\n의뢰에서 종을 제출하면 기록이 해금됩니다.
+K|fishery.terminal.dex.archive.empty,아직 물고기 기록이 없습니다.\n의뢰에서 해당 어종을 제출하면 기록이 해금됩니다.
 K|fishery.terminal.dex.archive.list,어종
 K|fishery.terminal.dex.balance,{0} 크레딧
 K|fishery.terminal.dex.biological,생물형 어류
@@ -1078,7 +1078,7 @@ K|fishery.terminal.dex.filter.ready,제출 가능
 K|fishery.terminal.dex.footer,헤더를 드래그해 이동 · 모델을 드래그해 회전 · 모델 더블클릭으로 초기화
 K|fishery.terminal.dex.life.days,{0}일
 K|fishery.terminal.dex.mechanical,기계형 어류
-K|fishery.terminal.dex.mechanical.body,기계형 어류는 생물 양식 대상이 아닙니다.\n성장·필요 수량·번식에 관한 수치가 없습니다.
+K|fishery.terminal.dex.mechanical.body,기계형 어류는 생물 양식 대상이 아닙니다.\n성장·물 요구량·번식 관련 수치가 없습니다.
 K|fishery.terminal.dex.model.hint,드래그해 회전 · 더블클릭으로 초기화
 K|fishery.terminal.dex.printer,용기 프린터
 K|fishery.terminal.dex.printer.feature,"캔, 벌레 상자, 주사기 출력 · 전력 4"
@@ -1242,7 +1242,7 @@ K|gameplay.3660fd0dfd76c4fa,업그레이드 상태를 저장하지 못했습니�
 K|gameplay.36eef7e38e6d90a1,윌리에게서 겨울별 전설 듣기
 K|gameplay.376c07838094fcef,탄소섬유 낚싯대 해금 후 사용할 수 있습니다. 같은 어군을 사용하며 한 번에 물고기 3마리를 잡습니다. 원정 기본 낚시 성공률: 60%.
 K|gameplay.37705d45afcd7bb8,"어디서 본 얼굴 같은데... 하하, 내가 착각했겠지."
-K|gameplay.382f65b00add82a4,아직 황새치 주둥이가 하나 부족해. 하나만 좀 찾아봐줄래?
+K|gameplay.382f65b00add82a4,아직 황새치 주둥이돌기 하나가 부족해. 좀 찾아봐줄래?
 K|gameplay.3873f60977084050,좋아. 이 네 종류의 물고기면 낚싯대에 걸리는 하중을 비교하기에 딱 좋겠군.
 K|gameplay.39a62442da885b98,영원의 활력 회복 혈청
 K|gameplay.39fc504f2c46029c,{0}이 필요하면 알맞은 장비를 챙겨서 한번 도전해봐!
@@ -1295,7 +1295,7 @@ K|gameplay.5bfed9327cb8fba3,물고기 왕 2종 모두 낚기
 K|gameplay.5cf3d7e50c29b4aa,자가충전 에너지 셀
 K|gameplay.5d69b8226a362925,요즘 뭔가 느낌이 이상해. 저 아래에 큰 게 있는 것 같달까.
 K|gameplay.5df3582abb5875b3,물고기 왕은 갖고 있어. 나중에 윌리에게 다시 전화하면 돼.
-K|gameplay.5e76b3bdcb6a8467,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 30. 일반 낚시터 성공률 +25%p. 핏빛 물고기 그림자나 거대 물고기 그림자에는 효과가 없습니다.
+K|gameplay.5e76b3bdcb6a8467,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 30. 일반 낚시터 성공률 +25%p. 핏빛 그림자나 거대 그림자에는 효과가 없습니다.
 K|gameplay.5f0f23908912674e,생수(소)
 K|gameplay.606415e44158c418,{0}. {1}: 제조법 {2}개 / {3}페이지
 K|gameplay.6250f96bf4b18abe,"안녕, 윌리라고 해. 새로 온 점주 맞지?"
@@ -1414,7 +1414,7 @@ K|gameplay.b4bcc87ca9c1ed7d,스멜링 솔트
 K|gameplay.b5e1cbb94d282289,네가 가져온 물고기들이 큰 도움이 됐어.
 K|gameplay.b6660a52a135a3b3,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 핏빛 물고기 그림자 낚시 성공률 +25%p.
 K|gameplay.b6b84ec3b3dda704,가공 작업대 제조법을 찾지 못했습니다.\nGo Fishing! 아이템 팩이 제대로 로드되었는지 확인하세요.
-K|gameplay.b746de10a947e8d2,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 일반 낚시터 성공률 +25%p. 핏빛 물고기 그림자와 거대 물고기 그림자에는 효과가 없습니다.
+K|gameplay.b746de10a947e8d2,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 일반 낚시터 성공률 +25%p. 핏빛 그림자나 거대 그림자에는 효과가 없습니다.
 K|gameplay.b89642ba3bce17c9,사람들은 그 별을 보면 행운이 찾아온다고 믿었지.
 K|gameplay.b8fa188327f3320b,축축한 공기 냄새가 희미하게 배어 있는 명함.
 K|gameplay.backpack_shop.go,낚시용품점으로 가기
@@ -1444,7 +1444,7 @@ K|gameplay.cdfec883f30a21ce,손질 실패
 K|gameplay.ce85a987fc2b120e,무작위 잡화
 K|gameplay.cf0a5798d5931954,새로 온 기념으로 작은 선물이야. 내 가게는 바로 옆이니까 시간 나면 들러.
 K|gameplay.d04682ea689cccc9,생수(표준)
-K|gameplay.d11e33c2e8185ea5,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 10. 일반 낚시터 성공률 +50%p. 핏빛 어군이나 거대 그림자에는 효과가 없습니다.
+K|gameplay.d11e33c2e8185ea5,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 10. 일반 낚시터 성공률 +50%p. 핏빛 그림자나 거대 그림자에는 효과가 없습니다.
 K|gameplay.d1de52706127913c,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 거대 물고기 그림자 낚시 성공률 +25%p.
 K|gameplay.d254bebf0f4b2df8,잡동사니
 K|gameplay.d2ee5e4322e90f0f,항구 상점에서 살 수 있어.
@@ -1513,7 +1513,7 @@ K|gameplay.fish.grade.1,3등급
 K|gameplay.fish.grade.2,2등급
 K|gameplay.fish.grade.3,1등급
 K|gameplay.fish.grade.4,특급
-K|gameplay.fish.processing.multiplier,물고기 품질 계승: 가치 ×{0}
+K|gameplay.fish.processing.multiplier,물고기 품질 계승: 판매가 ×{0}
 K|gameplay.fishing.level.max,낚시 Lv.{0}  경험치 {1} (최대 레벨)
 K|gameplay.fishing.level.progress,낚시 Lv.{0}  경험치 {1}/{2}  다음 레벨까지 {3}
 K|gameplay.fishing.level.rules,"수령한 물고기마다 XP 10을 획득합니다. 최대 레벨에는 XP 9,500이 필요합니다. 온전한 물고기의 등급은 처음 낚을 때 고정되며 주요 손질 살코기에 계승됩니다. 번식한 물고기는 기본적으로 4등급입니다. 야생 생물형 어류는 해당 어종의 성체 단계로 생성되며, 낚일 때 특성이 한 번 적용됩니다."
@@ -1687,7 +1687,7 @@ K|item.gf_dried_goldfish.short,말린 금붕어.
 K|item.gf_dried_horned_swordfish.flavor,좋은 소식은 먹을 수 있다는 겁니다. 나쁜 소식은 이가 고생한다는 겁니다.
 K|item.gf_dried_horned_swordfish.name,말린 뿔황새치
 K|item.gf_dried_horned_swordfish.short,바람에 말린 뿔황새치.
-K|item.gf_dried_large_yellow_croaker.flavor,단단하고 감칠맛 나는 살이 오래 보존됩니다. 비상식량으로 유용합니다.
+K|item.gf_dried_large_yellow_croaker.flavor,살이 단단하고 짭짤한 풍미가 있으며 보관도 오래갑니다. 비상식량으로도 좋습니다.
 K|item.gf_dried_large_yellow_croaker.name,말린 부세
 K|item.gf_dried_large_yellow_croaker.short,바람에 말린 부세.
 K|item.gf_dried_lofurin.flavor,
@@ -1740,7 +1740,7 @@ K|item.gf_drying_rack.name,건조대
 K|item.gf_drying_rack.short,생선을 말려 보존식으로 만듭니다.
 K|item.gf_durable_fish_mince_bait.flavor,
 K|item.gf_durable_fish_mince_bait.name,내구형 생선 다짐육 미끼
-K|item.gf_durable_fish_mince_bait.short,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 30. 일반 낚시터 성공률 +25%p. 핏빛 어군이나 거대 그림자에는 효과가 없습니다.
+K|item.gf_durable_fish_mince_bait.short,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 30. 일반 낚시터 성공률 +25%p. 핏빛 그림자나 거대 그림자에는 효과가 없습니다.
 K|item.gf_durable_glass_bait.flavor,
 K|item.gf_durable_glass_bait.name,내구형 유리 미끼
 K|item.gf_durable_glass_bait.short,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 30. 거대 물고기 그림자 낚시 성공률 +25%p.
@@ -1800,7 +1800,7 @@ K|item.gf_fish_can_small.name,소형 생선 통조림
 K|item.gf_fish_can_small.short,생선 통조림.
 K|item.gf_fish_mince_bait.flavor,
 K|item.gf_fish_mince_bait.name,생선 다짐육 미끼
-K|item.gf_fish_mince_bait.short,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 일반 낚시터 성공률 +25%p. 핏빛 어군이나 거대 그림자에는 효과가 없습니다.
+K|item.gf_fish_mince_bait.short,더블클릭하면 원정 장비 보관함으로 옮깁니다. 내구도: 15. 일반 낚시터 성공률 +25%p. 핏빛 그림자나 거대 그림자에는 효과가 없습니다.
 K|item.gf_fish_offal.flavor,
 K|item.gf_fish_offal.name,생선 내장
 K|item.gf_fish_offal.short,백상아리를 가공해 얻은 식용 내장.
@@ -1890,7 +1890,7 @@ K|item.gf_lofurin_fillet.short,로푸린에서 잘라낸 필레.
 K|item.gf_lofurin.flavor,물 밖에서도 비늘의 은은한 윤기가 유지됩니다.
 K|item.gf_lofurin.name,로푸린
 K|item.gf_lofurin.short,"꼬리가 비단처럼 물속을 떠다니며, 겹겹이 쌓인 비늘은 작은 낙화처럼 보입니다."
-K|item.gf_makeshift_fishing_rod.flavor,고철을 이어 붙여 만든 낚싯대. 무엇이 낚일지는 운에 달렸습니다.
+K|item.gf_makeshift_fishing_rod.flavor,대충 조립한 낚싯대. 무엇이 낚일지는 운에 달렸습니다.
 K|item.gf_makeshift_fishing_rod.name,급조 낚싯대
 K|item.gf_makeshift_fishing_rod.short,"기본 외바늘 낚싯대입니다. '간단 낚시' 특성이 있으면 장착한 채 수색 중 낚시할 수 있습니다. 성공률: 50%, 실패 시 일반 수색을 수행합니다. 원정 기본 낚시 성공률: 60%."
 K|item.gf_military_drone.flavor,
@@ -1965,7 +1965,7 @@ K|item.gf_purifier_fish.short,복부의 큰 물주머니가 물을 걸러 비교
 K|item.gf_purple_fillet.flavor,아직 가난했던 옛 시절이 떠오릅니다.
 K|item.gf_purple_fillet.name,보라색 필레
 K|item.gf_purple_fillet.short,역겹습니다!
-K|item.gf_rainbow_fillet.flavor,나눠 먹자고 권하자 친구가 묘한 표정으로 쳐다봅니다.
+K|item.gf_rainbow_fillet.flavor,친구와 나눠 먹었더니 친구가 묘한 눈빛으로 쳐다봅니다.
 K|item.gf_rainbow_fillet.name,무지개물고기 필레
 K|item.gf_rainbow_fillet.short,정말 이상한 색입니다. 진짜 먹어도 되는 걸까요?
 K|item.gf_rainbow_fish.flavor,
