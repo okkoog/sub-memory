@@ -25,3 +25,11 @@
 - 본편과 추가 확장에 동일한 중국어 명칭으로 등장하는 5개 가공품명을 자연스러운 한국어로 맞춤: `碧澜鱼片`, `流金鱼片`, `锈金水母片`, `紫辉鱼片`, `星航鱼片`.
 - 위 보완 5개 키는 앞선 13개 정정 키와 겹치지 않음. 정오표 총 18개 키.
 - 본편과 요리 확장에 공통으로 사용되는 실제 아이템 이름은 일치하며, 시적 가공품 이름과 일반 설명/안내문은 별도 문맥에 따른 번역 차이를 허용함.
+
+## 추가 재검토 결과 — 2026-11-15 (17개 키)
+
+- 번역키 **17개** 추가 수정. 원문·영어·이전/신규 한국어·판정 근거는 `probably-stolen/analysis/GO_FISHING_V252_FINAL_FOLLOWUP_CORRECTIONS_20261115.csv`.
+- UI/설명서 4건(목차 2, 약제 안내서 1, 조리 도구 1), 납품 화면 8건(오늘의 근거 없는 시간 조건, 수령 손님, 동일 선택지 요구, 약효/주문 상태 등), 원정 미끼 3건(쥐 배설물/반짝이/생선 다짐육), 보조재 설탕 표기 2건.
+- 원정 미끼는 v2.5.2 상세 수치 가이드의 Mouse droppings ball·Flash bait·Fish meat mash 제조법과 아이템명 `item.gf_*_bait.name`을 함께 근거로 확인함.
+- **변경 보류하되 사유 확인한 항목:** `gameplay.a8d32d3a831d7e9a` / `item.gf_star_fruit.name`은 중국어 星之果实 동일하지만 영문 Stardrop/Star Fruit로 달라 같은 아이템 호출인지는 자료만으로 확정 불가; `item.gf_fish_offal.name`의 '생선 내장'과 `powder.machine.scrapName`의 '생선 부산물'은 영어 Fish Offal/Fish Scrap이라는 별도 사용 문맥을 반영; `reagent.effect.strength`과 `reagent.five.effect.strength`은 영어 Strength/Fortify로 달라 자동 통일하지 않음.
+- 한패 키 3,448개 유지, 중복/누락 0건, 변수 불일치 0건. 게임 실행·DLL 내부 호출 경로는 확인되지 않음. 스팀 미반영.
