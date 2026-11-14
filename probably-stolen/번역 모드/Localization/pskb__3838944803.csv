@@ -1574,3 +1574,118 @@ K|navy.reyes.c_intel,[정보를 제출한다: {0}]
 K|navy.reyes.intel_ask.dock,"부두 밀수업자 명단이군요. 정보국에서 찾던 물건입니다. 현금으로 받으시겠습니까, 호의를 얻으시겠습니까?"
 K|navy.reyes.intel_ask.vanderlin,"반더린 가문의 배급 할당량 장부군요. 이게 있으면 평의회가 회의를 열 수밖에 없겠어요. 현금을 원하십니까, 호의를 원하십니까?"
 K|navy.reyes.intel_ask.rev,"혁명군 침투 조직의 연락 지점이군요. 값어치가 높습니다. 대가가 무엇인지도 아시겠죠. 현금으로 받으시겠습니까, 호의를 원하십니까?"
+K|navy.reyes.c_intel_cash,[현금으로 받는다 ({0}크레딧)]
+K|navy.reyes.c_intel_favor,[돈은 받지 않고 호의를 빚지게 한다]
+K|navy.reyes.intel_ok_cash,정보국에서 돈을 지급할 겁니다. 정보 제공자 명단에 당신 이름은 올리지 않겠습니다.
+K|navy.reyes.intel_ok_favor,기억해 두겠습니다. 공화국은 이런 호의를 오래 기억하죠.
+K|navy.reyes.close,좋습니다.
+K|navy.reyes.close_due,좋습니다. 납품 기한을 넘긴 발주서는 계약에 따라 보증금에서 차감합니다.
+K|navy.reyes.no_new,아직 완료하지 않은 발주서가 있군요. 이번 주 새 발주는 없습니다.
+K|navy.reyes.new_intro,이번 주 발주서 {0}건입니다.
+K|navy.reyes.new_outro,세부 내용은 면허 기록에 전부 들어 있습니다.
+K|navy.reyes.bye,다음 주에 봅시다.
+K|navy.intel.dock.name,정보: 부두 밀수업자 명단
+K|navy.intel.dock.flavor,선박 이름과 정박 위치가 적힌 목록. 레이예스가 방문할 때 해군 정보국에 판매할 수 있다.
+K|navy.intel.vanderlin.name,정보: 반더린 가문 할당량 장부
+K|navy.intel.vanderlin.flavor,반더린 가문이 할당량을 초과해 사용한 물과 전력 기록. 레이예스가 방문할 때 해군 정보국에 판매할 수 있다. 반더린 가문은 좋아하지 않을 것이다.
+K|navy.intel.rev.name,정보: 혁명군 침투 조직 연락망
+K|navy.intel.rev.flavor,주소 세 곳과 암호 구절 하나. 레이예스가 방문할 때 해군 정보국에 판매할 수 있다. 혁명군 침투 조직은 좋아하지 않을 것이다.
+K|navy.clerk.name,해군 사무원
+K|navy.clerk.v1,군수품 조달국에서 서류를 필사하고 있어요. 월급으로는 집세도 못 내요.
+K|navy.clerk.v2,제복은 신경 쓰지 마세요. 오늘은 휴가거든요.
+K|navy.clerk.v3,레이예스의 계약업자라면서요? 그럼 구매자들을 알고 있겠군요.
+K|navy.clerk.offer.dock,부두 밀수업자 명단 사본이에요. {0}크레딧입니다.
+K|navy.clerk.offer.vanderlin,감사실에서 빼돌린 반더린 가문 할당량 장부예요. {0}크레딧입니다.
+K|navy.clerk.offer.rev,혁명군 침투 조직의 연락 지점이에요. 필사하는 동안 손이 떨렸어요. {0}크레딧입니다.
+K|navy.clerk.c_no,[사양한다]
+K|navy.clerk.c_buy,[구매한다 ({0}크레딧)]
+K|navy.clerk.bye_no,알겠어요. 전 여기 온 적 없는 거예요.
+K|navy.clerk.bye_buy,거래 끝났어요. 어디서 얻었는지는 말하지 마세요.
+K|navy.auction.name,해군 경매 담당자
+K|navy.auction.intro.1,해군 경매소입니다. 계약업자 명단에 이름이 있군요.
+K|navy.auction.intro.2,퇴역 군수품이 든 봉인 상자입니다. 물품 목록은 공개하지 않고 낙찰 즉시 개봉합니다.
+K|navy.auction.intro.3,매입 창구에서 내용물을 목록 가격으로 다시 사들입니다. 이익이든 손해든 모두 당신 몫입니다.
+K|navy.auction.v1,이번 주 경매 물품이 들어왔습니다.
+K|navy.auction.v2,해군 경매소입니다. 규칙은 평소와 같습니다.
+K|navy.auction.lots_1,이번 주에는 당신 등급으로 입찰할 수 있는 작은 상자 하나뿐입니다.
+K|navy.auction.lots_2,이번 주에는 작은 상자와 중간 크기 상자가 있습니다.
+K|navy.auction.lots_3,"이번 주에는 작은 상자, 중간 상자, 대형 컨테이너가 있습니다."
+K|navy.auction.ask,어느 물건에 입찰하시겠습니까?
+K|navy.auction.more,더 입찰하시겠습니까?
+K|navy.auction.c_none,[입찰하지 않는다]
+K|navy.auction.bye_none,다음 주에도 경매가 있으니까요.
+K|navy.auction.bye,영수증은 제가 처리하겠습니다. 다음 주에 뵙죠.
+K|navy.auction.c_lot0,[작은 봉인 상자에 입찰한다 ({0}크레딧)]
+K|navy.auction.c_lot1,[중간 봉인 상자에 입찰한다 ({0}크레딧)]
+K|navy.auction.c_lot2,[대형 컨테이너에 입찰한다 ({0}크레딧)]
+K|navy.auction.r0.1,녹슨 렌치와 유효기간이 지난 설명서가 나왔습니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r0.2,왼발용 부츠만 가득 나왔습니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r1.1,유통기한이 3개월 남은 압축 전투식량입니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r1.2,단종된 기종의 예비 필터가 나왔습니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r2.1,봉인된 의료 키트 한 상자입니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r2.2,항법 모듈이 나왔습니다. 두 개는 아직 작동합니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r3.1,상표도 떼지 않은 군용 방어구 한 벌입니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|navy.auction.r3.2,물품 목록에는 식기류라고 적혀 있지만 안에는 함선용 출력기의 핵심 부품이 들어 있었습니다. 매입 창구에서 {0}크레딧을 지급했습니다.
+K|retire_kai_1,좋은 아침입니다. 장부는 봤어요.
+K|retire_kai_2,자산이 백만 크레딧을 넘었군요. 이곳에서는 그 정도면 '충분하다'고 하죠.
+K|retire_kai_3,점포는 다른 사람에게 넘길 수 있습니다. 인수할 만한 사람도 몇 명 알고 있고요.
+K|retire_kai_4,살 곳도 알아봐 뒀습니다. 평의회에서 두 거리쯤 떨어진 곳이에요.
+K|retire_kai_5,"그래서, 지금 그만두시겠습니까? 아니면 좀 더 해 보시겠습니까?"
+K|retire_choice_now,지금 그만둔다.
+K|retire_choice_later,조금 더 계속한다.
+K|retire_kai_now_1,좋습니다. 서류는 제가 처리하죠. 내일이면 새 점주가 인수할 겁니다.
+K|retire_kai_now_2,상층 구역 시민이 되신 걸 환영합니다.
+K|retire_kai_later_1,마음대로 하세요. 이 명함은 가지고 계시고요.
+K|retire_kai_later_2,결심이 서면 이 명함으로 연락하세요.
+K|item_ul_kai_card_name,카이 와일드의 명함
+K|item_ul_kai_card_flavor,카이 와일드의 개인 명함. 자산이 {0:N0} 이상일 때 사용하면 은퇴할 수 있다.
+K|retire_card_not_here,명함은 점포 안에서만 사용할 수 있습니다.
+K|retire_card_short,은퇴하려면 {0:N0}크레딧이 더 필요합니다.
+K|retire_card_no_deed,아직 점포가 당신 소유가 아니어서 은퇴할 수 없습니다.
+K|retire_test_ready,테스트: 점포를 매입하고 자산을 은퇴 조건까지 올렸습니다. 카이가 오늘 방문합니다.
+K|retire_end_title,상층 구역 시민
+K|retire_end_open,점포를 팔고 상층 구역으로 이사했습니다. 남은 평생 쓰고도 충분할 만큼 돈이 있습니다.
+K|retire_end_prof_newcomer,처음 정거장에 왔을 때는 집세로 낼 크레딧 하나까지 세어야 했습니다.
+K|retire_end_prof_organ,냉장 보관함을 팔았습니다. 이제 아무도 예전에 무슨 일을 했는지 묻지 않습니다.
+K|retire_end_prof_perfume,지금도 향수를 만듭니다. 더 이상 팔지는 않을 뿐이죠.
+K|retire_end_prof_ice,반응기는 없애고 제조법은 태웠습니다. 적어도 다른 사람들에게는 그렇게 말합니다.
+K|retire_end_prof_crate,아직도 경매장에 들러 군수품 봉인 상자를 구경하지만 입찰은 하지 않습니다.
+K|retire_end_prof_appraiser,물건이 진품인지 묻는 사람이 있으면 '글쎄요'라고 답합니다.
+K|retire_end_prof_luxury,집에 놓인 물건 중 절반은 한때 팔았다가 다시 사들인 것들입니다.
+K|retire_end_prof_navy,해군 계약 기간이 끝났지만 갱신하지 않았습니다.
+K|retire_end_sold_organ,건강 검진 결과가 훌륭합니다. 장기의 가치만큼은 의사보다도 잘 압니다.
+K|retire_end_sold_ice,치안부에는 아이스 관련 사건 파일이 있지만 그 안에 당신 이름은 없습니다.
+K|retire_end_faction_council,공화국 당국이 영주권을 발급해 줬습니다. 발급 번호도 상당히 앞쪽입니다.
+K|retire_end_faction_helios,헬리오스가 매년 연하장을 보내옵니다. 발신인은 법무 부서입니다.
+K|retire_end_faction_vanderlin,반더린 가문 만찬에 가면 상석에 앉습니다.
+K|retire_end_faction_rev,집에서 일하는 청소부는 서재만큼은 청소하지 않습니다. 당신도 이유를 묻지 않습니다.
+K|retire_end_close,카이가 가끔 찾아옵니다. 사업 이야기는 전혀 하지 않습니다.
+K|mach_status_nopower,전력 없음: 배터리를 넣으세요
+K|dissector_log_nopower,해부 기계에 전력이 공급되지 않아 시신이 아직 투입구에 남아 있습니다.
+K|battle.ground_full,바닥에 공간이 부족해 물건을 두고 갑니다.
+K|navy.p2.notify,계약업자 등급 상승: 6(함대). 레이예스가 함대 계약을 가져옵니다. 하나를 완료하면 다음 주에 새 계약을 가져옵니다.
+K|navy.status.level_fleet,계약업자 {0}등급(함대). 납품 완료 {1}건.
+K|navy.order.fleet,함대 계약: {0}
+K|navy.order.short_fleet,함대 계약: {0} {1}개(보유 {2}개)
+K|navy.reyes.fleet.1,점포를 매입했다는 소식을 들었습니다.
+K|navy.reyes.fleet.2,함대는 자기 점포를 가진 계약업자하고만 계약하거든요.
+K|navy.reyes.fleet.3,오늘부터 함대 계약업자입니다. 주문도 늘고 보수도 커질 겁니다.
+K|navy.reyes.fleet.4,함대 계약은 규모가 큽니다. 납품 기한은 2주입니다. 하나를 끝내면 그다음 주에 새 계약서를 가져오겠습니다.
+K|navy.reyes.fleet_new,함대 계약도 한 건 더 있습니다.
+K|navy.auction.lots_4,"이번 주에는 작은 상자와 중간 상자, 대형 컨테이너가 있습니다. 퇴역 군수품을 가득 실은 함선 한 척 분량도 나왔죠."
+K|navy.auction.c_lot3,[함선 한 척 분량의 퇴역 물자에 입찰한다 ({0}크레딧)]
+K|luxury.p2.notify,신탁이 점포에 전용 진열대를 설치했습니다. 이제 모로가 더 비싼 물건과 개인 고객의 예약품을 가져옵니다.
+K|luxury.p2.1,점포를 매입했다고요? 신탁에서도 이미 알고 있습니다.
+K|luxury.p2.2,자기 점포를 가진 판매업자에게는 신탁 전용 판매대를 제공하거든요.
+K|luxury.p2.3,앞으로는 값비싼 물건 몇 점을 더 가져오겠습니다. 일부는 고객이 미리 예약한 물건들이죠.
+K|luxury.p2.4,예약품은 잘 보관해 두세요. 다음에 제가 높은 가격으로 다시 매입하겠습니다.
+K|luxury.vit.ask,지난번 고객들이 예약한 물건이 있습니까?
+K|luxury.vit.none,지난번 예약품을 가지고 계시지 않군요. 어쩔 수 없죠.
+K|luxury.vit.c_ok,[알겠다]
+K|luxury.vit.c_give,[예약품 {0}개를 넘긴다 ({1}크레딧)]
+K|luxury.vit.c_keep,[예약품을 보관한다]
+K|luxury.vit.paid,대금 지급을 마쳤습니다. 고객들도 만족하겠군요.
+K|luxury.vit.kept,좋습니다. 그럼 예약은 취소하겠습니다.
+K|luxury.vit.offer,이번에는 전용 판매대용 물건 {0}개를 추가로 가져왔습니다.
+K|luxury.vit.reserve_1,{0}은(는) 예약된 물건입니다. 다음에 제가 가치의 {1}% 가격으로 다시 사겠습니다.
+K|luxury.vit.reserve_2,{0}과(와) {1}은(는) 예약된 물건입니다. 다음에 제가 가치의 {2}% 가격으로 다시 사겠습니다.
