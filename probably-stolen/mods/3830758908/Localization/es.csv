@@ -1,4 +1,4 @@
-text_001,Gabrielle
+﻿text_001,Gabrielle
 text_002,Investigadora de los Niveles Superiores
 text_003,"Hola, disculpa la molestia."
 text_004,Tengo un taller en los Niveles Superiores.\nAllí compilo módulos de ingeniería «especiales» para clientes adinerados.
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,Marca del fabricante desconocida
 magnifier_appraisal_progress,Escaneado {0}/{1}
 gabrielle_old_friend_discount,Descuento de la infancia
 drone_name,Dron carroñero
-drone_desc,Un dron carroñero con compartimentos para armas y carga. Con una batería instalada consume energía cada día; déjalo en el mostrador delantero para enviarlo por la noche.
+drone_desc,Dron recolector con modos de trabajo y espera. Trabaja de noche y vuelve al mostrador exterior a la mañana siguiente.
 drone_module_bay,Módulos
 drone_weapon_bay,Armamento
 drone_cargo_bay,Carga
 drone_searches,Búsquedas: {0}/día
 drone_weapon_stats,Casillas de armas: {0}; atributos totales: {1}; defensa: {2}
 drone_upgrade_status,Mejoras de carga: {0}/4; de energía: {1}/4; de armamento: {2}/3
-drone_upgrade_hint,"Usa lingotes de metal para ampliar la carga, componentes electrónicos para reducir el consumo base y piezas de armas para ampliar el armamento. Cada mejora consume un objeto. Con batería consume energía a diario; solo sale del mostrador delantero."
+drone_upgrade_hint,"Trabajo: recolecta al dormir y vuelve al mostrador exterior. Espera: se pliega, no sale y no consume energía."
 drone_last_result,"Última operación: {0} búsquedas, {1} objetos recogidos, {2} descartados, {3} kJ consumidos."
 drone_night_result,El dron completó su misión de búsqueda y trajo {0} objetos. No sufrió ataques.
 debug_items_drone,"Dron | Máquina, batería y pistola"
@@ -649,3 +649,14 @@ repair_kit_name,Kit de reparación
 repair_kit_desc,"Repara objetos con durabilidad. Se recarga con lingotes de metal, chatarra o tornillos."
 repair_material_remaining,Materiales restantes
 debug_items_repair,Kit de reparación y materiales de recarga
+drone_manual_name,Instrucciones: dron recolector
+drone_manual_short,Inserta una batería con carga suficiente y activa el modo de trabajo. Recolecta de noche y vuelve al mostrador exterior por la mañana. En espera se pliega y no consume energía. Las armas de autodefensa reducen el riesgo de ataque; el kit de reparación restaura la durabilidad. Los hallazgos que no quepan en la bodega se descartan.
+drone_manual_text,[Efecto de los módulos]:\nEficiencia: consumo de energía\nRendimiento: número de búsquedas\nCalidad: probabilidad de elegir hallazgos valiosos
+drone_mode_work,Modo de trabajo
+drone_mode_standby,Modo de espera
+drone_switch_standby,Pasar a espera
+drone_switch_work,Activar trabajo
+drone_mode_hint,"Trabajo: recolecta al dormir y vuelve al mostrador exterior. Espera: se pliega, no sale y no consume energía."
+drone_mode_no_space,No hay espacio para desplegar el dron. Libera más espacio primero.
+drone_return_blocked,El mostrador exterior está lleno. El dron está a salvo y volverá automáticamente cuando haya espacio.
+drone_return_failed,El dron no pudo volver al mostrador exterior y sigue en su contenedor original.

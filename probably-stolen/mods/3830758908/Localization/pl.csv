@@ -1,4 +1,4 @@
-text_001,Gabrielle
+﻿text_001,Gabrielle
 text_002,Badaczka z górnych poziomów
 text_003,"Cześć, przepraszam za to, że cię przeszkadzałam."
 text_004,"prowadzę warsztaty na najwyższych poziomach,\nKompilowanie „specjalnych” modułów inżynieryjnych dla bogatych klientów."
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,Nieznany znak producenta
 magnifier_appraisal_progress,Sprawdzono {0}/{1}
 gabrielle_old_friend_discount,Zniżka dla przyjaciół z dzieciństwa
 drone_name,Dron zbierający
-drone_desc,"Dron zbierający z przedziałami na broń i ładunek. Z baterią zużywa energię codziennie; zostaw go na przedniej ladzie, aby wyruszył nocą."
+drone_desc,Dron zbierający z trybami pracy i czuwania. Podczas pracy szuka łupów nocą i rano wraca na zewnętrzną ladę.
 drone_module_bay,Moduły
 drone_weapon_bay,Uzbrojenie
 drone_cargo_bay,Ładownia
 drone_searches,Przeszukania: {0}/dzień
 drone_weapon_stats,Pola broni: {0}; suma statystyk: {1}; obrona: {2}
 drone_upgrade_status,Ulepszenia ładowni: {0}/4; zasilania: {1}/4; uzbrojenia: {2}/3
-drone_upgrade_hint,"Sztabki metalu powiększają ładownię, części elektroniczne obniżają podstawowe zużycie energii, a części broni powiększają uzbrojenie. Każde ulepszenie zużywa jeden przedmiot. Z baterią dron zużywa energię codziennie; wyrusza tylko z przedniej lady."
+drone_upgrade_hint,"Praca: zbiera podczas snu i wraca na zewnętrzną ladę. Czuwanie: składa się, nie wyrusza i nie zużywa energii."
 drone_last_result,"Ostatnia wyprawa: {0} przeszukań, {1} przedmiotów zabranych, {2} odrzuconych, zużyto {3} kJ."
 drone_night_result,Dron zakończył misję zbierania i przywiózł {0} przedmiotów. Nie został zaatakowany.
 debug_items_drone,"Dron | Maszyna, bateria i pistolet"
@@ -649,3 +649,14 @@ repair_kit_name,Zestaw narzędzi naprawczych
 repair_kit_desc,"Naprawia przedmioty z wytrzymałością. Materiały można uzupełniać sztabkami metalu, złomem lub śrubami."
 repair_material_remaining,Pozostałe materiały
 debug_items_repair,Zestaw naprawczy i materiały uzupełniające
+drone_manual_name,Instrukcja: dron zbierający
+drone_manual_short,"Włóż dostatecznie naładowaną baterię i włącz tryb pracy. Dron zbiera łupy nocą i rano wraca na zewnętrzną ladę. W czuwaniu składa się i nie zużywa energii. Broń do samoobrony zmniejsza ryzyko ataku; zestaw narzędzi naprawczych przywraca wytrzymałość. Znaleziska, które nie zmieszczą się w ładowni, zostają odrzucone."
+drone_manual_text,[Wpływ modułów]:\nEfektywność: zużycie energii\nWydajność: liczba poszukiwań\nJakość: szansa wyboru cennych znalezisk
+drone_mode_work,Tryb pracy
+drone_mode_standby,Tryb czuwania
+drone_switch_standby,Włącz czuwanie
+drone_switch_work,Włącz tryb pracy
+drone_mode_hint,"Praca: zbiera podczas snu i wraca na zewnętrzną ladę. Czuwanie: składa się, nie wyrusza i nie zużywa energii."
+drone_mode_no_space,Za mało miejsca na rozłożenie drona. Najpierw zwolnij miejsce.
+drone_return_blocked,"Zewnętrzna lada jest pełna. Dron jest bezpiecznie przechowany i wróci automatycznie, gdy zwolni się miejsce."
+drone_return_failed,Dron nie mógł wrócić na zewnętrzną ladę i pozostał w swoim dotychczasowym pojemniku.

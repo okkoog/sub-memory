@@ -1,0 +1,504 @@
+{
+  "id": "ul_readme",
+  "title": "README.md",
+  "background": "upper_levels:ul_readme_bg",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 284,
+      "y": 9,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_close",
+      "hoverSprite": "upper_levels:ul_btn_close_hover"
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 264,
+      "y": 9,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_zoom",
+      "hoverSprite": "upper_levels:ul_btn_zoom_hover"
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 108,
+      "y": 378,
+      "w": 16,
+      "h": 16,
+      "sprite": "upper_levels:ul_btn_left",
+      "hoverSprite": "upper_levels:ul_btn_left_hover"
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 194,
+      "y": 378,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_right",
+      "hoverSprite": "upper_levels:ul_btn_right_hover"
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "x": 126,
+      "y": 372,
+      "w": 66,
+      "h": 26,
+      "fontSize": 14
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p1.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p1.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p2.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p2.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 4",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p4.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p4.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 5",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p5.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p5.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 6",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p6.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p6.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 7",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p7.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p7.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 8",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "readme.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "readme.p8.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "readme.p8.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    }
+  ],
+  "item": {
+    "id": "ul_readme",
+    "nameLoc": "readme.item_name",
+    "descriptionLoc": "readme.item_desc",
+    "sprite": "items_misc/manual1",
+    "value": 0,
+    "important": true
+  }
+}

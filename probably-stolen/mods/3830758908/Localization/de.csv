@@ -1,4 +1,4 @@
-text_001,Gabrielle
+﻿text_001,Gabrielle
 text_002,Forscherin aus den oberen Ebenen
 text_003,"Hallo, entschuldige mich, dass ich dich störte."
 text_004,"Ich arbeite mit einem Workshop auf der Oberfläche,\nSammeln von ""speziellen"" Ingenieurmodulen für reiche Kunden."
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,Unbekanntes Herstellerzeichen
 magnifier_appraisal_progress,Geprüft {0}/{1}
 gabrielle_old_friend_discount,Kindheitsfreundschaftsrabatt
 drone_name,Sammeldrohne
-drone_desc,Eine Sammeldrohne mit Waffen- und Frachtraum. Eine eingesetzte Batterie wird täglich belastet; vom vorderen Tresen startet sie nachts zur Müllhalde.
+drone_desc,Sammeldrohne mit Arbeits- und Bereitschaftsmodus. Im Arbeitsmodus sammelt sie nachts und kehrt morgens zum Außentresen zurück.
 drone_module_bay,Module
 drone_weapon_bay,Bewaffnung
 drone_cargo_bay,Frachtraum
 drone_searches,Suchgänge: {0}/Tag
 drone_weapon_stats,Waffenfelder: {0}; Attributsumme: {1}; Verteidigung: {2}
 drone_upgrade_status,Frachtausbau: {0}/4; Energieausbau: {1}/4; Waffenausbau: {2}/3
-drone_upgrade_hint,"Metallbarren vergrößern den Frachtraum, Elektronikbauteile senken den Grundverbrauch und Waffenteile vergrößern den Waffenraum. Jeder Ausbau verbraucht ein Teil. Eine eingesetzte Batterie wird täglich belastet; Einsätze starten nur vom vorderen Tresen."
+drone_upgrade_hint,"Arbeit: Beim Schlafen sammeln und zum Außentresen zurückkehren. Bereitschaft: einklappen, keine Einsätze und kein Energieverbrauch."
 drone_last_result,"Letzter Einsatz: {0} Suchgänge, {1} Gegenstände behalten, {2} verworfen, {3} kJ verbraucht."
 drone_night_result,Die Drohne hat ihren Sammelauftrag abgeschlossen und {0} Gegenstände mitgebracht. Sie wurde nicht angegriffen.
 debug_items_drone,"Drohne | Maschine, Batterie und Pistole"
@@ -649,3 +649,14 @@ repair_kit_name,Reparaturwerkzeugsatz
 repair_kit_desc,"Repariert Gegenstände mit Haltbarkeit. Mit Metallbarren, Altmetall oder Schrauben nachfüllbar."
 repair_material_remaining,Verbleibendes Material
 debug_items_repair,Reparaturwerkzeugsatz und Nachfüllmaterial
+drone_manual_name,Anleitung: Sammeldrohne
+drone_manual_short,"Setze eine ausreichend geladene Batterie ein und schalte den Arbeitsmodus ein. Sammelt über Nacht und kehrt morgens zum Außentresen zurück. In Bereitschaft klappt sich die Drohne ein und verbraucht keine Energie. Selbstverteidigungswaffen senken das Angriffsrisiko; ein Reparaturwerkzeugsatz stellt die Haltbarkeit wieder her. Funde, die nicht in den Frachtraum passen, werden verworfen."
+drone_manual_text,[Moduleinfluss]:\nEffizienz: Energieverbrauch\nLeistung: Anzahl der Suchgänge\nQualität: Chance auf die Auswahl wertvoller Funde
+drone_mode_work,Arbeitsmodus
+drone_mode_standby,Bereitschaft
+drone_switch_standby,Bereitschaft aktivieren
+drone_switch_work,Arbeitsmodus aktivieren
+drone_mode_hint,"Arbeit: Beim Schlafen sammeln und zum Außentresen zurückkehren. Bereitschaft: einklappen, keine Einsätze und kein Energieverbrauch."
+drone_mode_no_space,Kein Platz zum Ausklappen. Schaffe zuerst mehr Platz.
+drone_return_blocked,"Der Außentresen ist voll. Die Drohne wird sicher aufbewahrt und kehrt automatisch zurück, sobald Platz frei wird."
+drone_return_failed,Die Drohne konnte nicht zum Außentresen wechseln und bleibt in ihrem bisherigen Behälter.

@@ -1,4 +1,4 @@
-text_001,Gabrielle
+﻿text_001,Gabrielle
 text_002,Upper-Level Researcher
 text_003,Hello. Sorry to bother you.
 text_004,"I run a workshop in the Upper Levels,\ncompiling ""special"" engineering modules for wealthy clients."
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,Unrecognized maker’s mark
 magnifier_appraisal_progress,Scanned {0}/{1}
 gabrielle_old_friend_discount,Childhood Friend Discount
 drone_name,Scavenging Drone
-drone_desc,A scavenging drone with weapon and cargo bays. A fitted battery drains daily; leave it on the front counter to send it out at night.
+drone_desc,A scavenging drone with work and standby modes. It scavenges at night in work mode and returns to the front counter next morning.
 drone_module_bay,Modules
 drone_weapon_bay,Armament
 drone_cargo_bay,Cargo
 drone_searches,Scavenging attempts: {0}/day
 drone_weapon_stats,Weapon cells: {0}; total firearm stats: {1}; defense: {2}
 drone_upgrade_status,Cargo upgrades: {0}/4; power upgrades: {1}/4; weapon bay upgrades: {2}/3
-drone_upgrade_hint,"Use metal ingots to expand cargo, electronic components to reduce base power use, and gun parts to expand the weapon bay. Each upgrade consumes one item. A fitted battery drains daily; scavenging requires front-counter placement."
+drone_upgrade_hint,"Work: scavenge when you sleep and return to the front counter. Standby: fold up, with no outings or power use."
 drone_last_result,"Last operation: {0} searches, {1} items kept, {2} discarded, {3} kJ used."
 drone_night_result,The drone completed its scavenging mission and brought back {0} items. It was not attacked.
 debug_items_drone,"Drone | Machine, battery and pistol"
@@ -649,3 +649,14 @@ repair_kit_name,Repair Tool Kit
 repair_kit_desc,"Repairs items with durability. Refill with metal ingots, scrap metal or screws."
 repair_material_remaining,Materials remaining
 debug_items_repair,Repair tool kit and refill materials
+drone_manual_name,How To: The Scavenging Drone
+drone_manual_short,Insert a charged battery and toggle work mode. Scavenges overnight and returns to the front counter the next morning. Standby folds the drone and uses no power. Self-defense guns reduce attack risk; a Repair Toolkit restores durability. Finds that do not fit in the cargo bay are discarded.
+drone_manual_text,[Module Impact]:\nEfficiency: Power Consumption\nPerformance: Number of Searches\nQuality: Chance of Selecting High-Value Finds
+drone_mode_work,Work mode
+drone_mode_standby,Standby mode
+drone_switch_standby,Switch to standby
+drone_switch_work,Enable work mode
+drone_mode_hint,"Work: scavenge when you sleep and return to the front counter. Standby: fold up, with no outings or power use."
+drone_mode_no_space,Not enough room to unfold the drone. Clear more space first.
+drone_return_blocked,The front counter is full. The drone is safely held and will return automatically when space is cleared.
+drone_return_failed,The drone could not move to the front counter and remains in its original container.

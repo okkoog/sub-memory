@@ -1,4 +1,4 @@
-text_001,Gabrielle
+﻿text_001,Gabrielle
 text_002,Chercheuse des niveaux supérieurs
 text_003,"Bonjour, je suis désolée de t’inquiéter."
 text_004,"Je travaille sur un atelier au niveau supérieur.\ncompilation de modules d'ingénierie ""special"" pour les clients riches."
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,Marque du fabricant inconnue
 magnifier_appraisal_progress,Analysé {0}/{1}
 gabrielle_old_friend_discount,Remise d’amie d’enfance
 drone_name,Drone récupérateur
-drone_desc,Un drone récupérateur doté de soutes pour les armes et le fret. La batterie se décharge chaque jour ; placez-le sur le comptoir avant pour l’envoyer la nuit.
+drone_desc,"Drone récupérateur à modes travail et veille. En travail, il récupère la nuit et revient au comptoir extérieur le lendemain matin."
 drone_module_bay,Modules
 drone_weapon_bay,Armement
 drone_cargo_bay,Soute
 drone_searches,Fouilles : {0}/jour
 drone_weapon_stats,Cases d’armes : {0} ; attributs cumulés : {1} ; défense : {2}
 drone_upgrade_status,Soute : {0}/4 ; alimentation : {1}/4 ; armement : {2}/3
-drone_upgrade_hint,"Utilisez des lingots de métal pour agrandir la soute, des composants électroniques pour réduire la consommation de base et des pièces d’armes pour agrandir l’armement. Une unité par amélioration. La batterie se décharge chaque jour ; le drone ne part que du comptoir avant."
+drone_upgrade_hint,"Travail : récupère pendant ton sommeil et revient au comptoir extérieur. Veille : se replie, sans sortie ni consommation d’énergie."
 drone_last_result,"Dernière sortie : {0} fouilles, {1} objets conservés, {2} abandonnés, {3} kJ consommés."
 drone_night_result,Le drone a terminé sa mission de récupération et rapporté {0} objets. Il n’a subi aucune attaque.
 debug_items_drone,"Drone | Machine, batterie et pistolet"
@@ -649,3 +649,14 @@ repair_kit_name,Kit de réparation
 repair_kit_desc,"Répare les objets ayant une durabilité. Se recharge avec des lingots de métal, de la ferraille ou des vis."
 repair_material_remaining,Matériaux restants
 debug_items_repair,Kit de réparation et matériaux de recharge
+drone_manual_name,Mode d’emploi : drone récupérateur
+drone_manual_short,"Insère une batterie suffisamment chargée et active le mode travail. Récupère la nuit et revient au comptoir extérieur le matin. En veille, le drone se replie et ne consomme pas d’énergie. Les armes de défense réduisent le risque d’attaque ; un kit de réparation restaure la durabilité. Les trouvailles qui ne rentrent pas dans la soute sont abandonnées."
+drone_manual_text,[Effets des modules] :\nEfficacité : consommation d’énergie\nPerformance : nombre de recherches\nQualité : chance de choisir des trouvailles de valeur
+drone_mode_work,Mode travail
+drone_mode_standby,Mode veille
+drone_switch_standby,Passer en veille
+drone_switch_work,Activer le travail
+drone_mode_hint,"Travail : récupère pendant ton sommeil et revient au comptoir extérieur. Veille : se replie, sans sortie ni consommation d’énergie."
+drone_mode_no_space,Pas assez de place pour déployer le drone. Libère de l’espace.
+drone_return_blocked,Le comptoir extérieur est plein. Le drone est conservé en sécurité et reviendra automatiquement dès qu’il y aura de la place.
+drone_return_failed,Le drone n’a pas pu rejoindre le comptoir extérieur et reste dans son conteneur d’origine.

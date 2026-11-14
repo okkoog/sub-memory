@@ -1,4 +1,4 @@
-text_001,ガブリエル
+﻿text_001,ガブリエル
 text_002,上層区の研究員
 text_003,こんにちは、ご迷惑をおかけして申し訳ありません。
 text_004,トップレベルでワークショップを開催し、\n豊かな顧客のための「特別な」エンジニアリングモジュールを組み立てる。
@@ -609,14 +609,14 @@ magnifier_fuel_seal_unknown,メーカーのマークを識別できず
 magnifier_appraisal_progress,確認済み {0}/{1}
 gabrielle_old_friend_discount,幼なじみ割引
 drone_name,回収ドローン
-drone_desc,武装室と貨物室を備えた回収ドローン。電池装着中は毎日電力を消費し、表カウンターに置くと夜間に出発する。
+drone_desc,稼働と待機を切り替えられる探索ドローン。稼働中は夜間に自動探索し、翌朝に外カウンターへ戻る。
 drone_module_bay,モジュール
 drone_weapon_bay,武装モジュール
 drone_cargo_bay,貨物室
 drone_searches,探索回数：{0}/日
 drone_weapon_stats,武器占有マス：{0}、銃器能力合計：{1}、自衛能力：{2}
 drone_upgrade_status,貨物室強化：{0}/4、電源強化：{1}/4、武装室強化：{2}/3
-drone_upgrade_hint,金属インゴットで貨物室を拡張し、電子部品で基本消費電力を下げ、銃器部品で武装室を拡張する。強化ごとに1個消費。電池装着中は毎日電力を消費し、表カウンターに置いた場合のみ出発する。
+drone_upgrade_hint,稼働中は就寝時に探索し、外カウンターへ戻る。待機中は折りたたみ、出動せず電力も消費しない。
 drone_last_result,前回の作業：探索{0}回、回収{1}個、廃棄{2}個、消費電力{3} kJ。
 drone_night_result,ドローンは回収任務を終え、{0}個の品物を持ち帰った。襲撃は受けなかった。
 debug_items_drone,ドローン｜本体・電池・拳銃
@@ -649,3 +649,14 @@ repair_kit_name,修理工具セット
 repair_kit_desc,耐久値のあるアイテムを修理できる。金属インゴット、くず鉄、ネジで材料を補充できる。
 repair_material_remaining,残りの材料
 debug_items_repair,修理工具セットと補充材料
+drone_manual_name,使用説明：探索ドローン
+drone_manual_short,十分に充電されたバッテリーを入れ、稼働モードに切り替えると夜間に自動探索し、翌朝に外カウンターへ戻る。待機中は折りたたみ、電力を消費しない。護身用の銃で襲撃の危険を下げられ、修理工具キットで耐久度を回復できる。貨物室に入りきらない戦利品は破棄される。
+drone_manual_text,[モジュールの影響]：\n効率：消費電力\n性能：探索回数\n品質：高価な品を優先して選ぶ確率
+drone_mode_work,稼働モード
+drone_mode_standby,待機モード
+drone_switch_standby,待機に切り替え
+drone_switch_work,稼働モードにする
+drone_mode_hint,稼働中は就寝時に探索し、外カウンターへ戻る。待機中は折りたたみ、出動せず電力も消費しない。
+drone_mode_no_space,ドローンを展開する空間がない。先に空きを作ってね。
+drone_return_blocked,外カウンターに空きがないため、ドローンは安全な場所で待機中。空きができれば自動で戻るよ。
+drone_return_failed,ドローンを外カウンターに移せなかったため、元の容器に残してあるよ。

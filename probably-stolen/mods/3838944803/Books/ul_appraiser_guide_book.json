@@ -1,0 +1,647 @@
+{
+  "id": "ul_appraiser_guide_book",
+  "title": "上层区藏品估价手册",
+  "background": "upper_levels:ul_readme_bg",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 284,
+      "y": 9,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_close",
+      "hoverSprite": "upper_levels:ul_btn_close_hover"
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 264,
+      "y": 9,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_zoom",
+      "hoverSprite": "upper_levels:ul_btn_zoom_hover"
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 108,
+      "y": 378,
+      "w": 16,
+      "h": 16,
+      "sprite": "upper_levels:ul_btn_left",
+      "hoverSprite": "upper_levels:ul_btn_left_hover"
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 194,
+      "y": 378,
+      "w": 14,
+      "h": 15,
+      "sprite": "upper_levels:ul_btn_right",
+      "hoverSprite": "upper_levels:ul_btn_right_hover"
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "x": 126,
+      "y": 372,
+      "w": 66,
+      "h": 26,
+      "fontSize": 14
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p1.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "apguide.p1.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p2.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "image",
+          "id": "img_painting",
+          "sprite": "upper_levels:ul_loot_painting",
+          "fit": "fit",
+          "x": 48,
+          "y": 92,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_painting",
+          "loc": "appraiser.piece.painting.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 86,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_painting",
+          "loc": "apguide.kind.painting",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 106,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "sep_0",
+          "x": 66,
+          "y": 174,
+          "x2": 266,
+          "y2": 174,
+          "thickness": 1,
+          "color": "#8a7a68"
+        },
+        {
+          "type": "image",
+          "id": "img_holo",
+          "sprite": "upper_levels:ul_holo_work",
+          "fit": "fit",
+          "x": 48,
+          "y": 186,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_holo",
+          "loc": "appraiser.piece.holo.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 180,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_holo",
+          "loc": "apguide.kind.holo",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 200,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "sep_1",
+          "x": 66,
+          "y": 268,
+          "x2": 266,
+          "y2": 268,
+          "thickness": 1,
+          "color": "#8a7a68"
+        },
+        {
+          "type": "image",
+          "id": "img_vase",
+          "sprite": "upper_levels:ul_loot_vase",
+          "fit": "fit",
+          "x": 48,
+          "y": 280,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_vase",
+          "loc": "appraiser.piece.vase.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 274,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_vase",
+          "loc": "apguide.kind.vase",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 294,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "name": "Page 3",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p3.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "image",
+          "id": "img_watch",
+          "sprite": "upper_levels:ul_loot_watch",
+          "fit": "fit",
+          "x": 48,
+          "y": 92,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_watch",
+          "loc": "appraiser.piece.watch.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 86,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_watch",
+          "loc": "apguide.kind.watch",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 106,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "sep_0",
+          "x": 66,
+          "y": 174,
+          "x2": 266,
+          "y2": 174,
+          "thickness": 1,
+          "color": "#8a7a68"
+        },
+        {
+          "type": "image",
+          "id": "img_carving",
+          "sprite": "upper_levels:ul_wood_carving",
+          "fit": "fit",
+          "x": 48,
+          "y": 186,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_carving",
+          "loc": "appraiser.piece.carving.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 180,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_carving",
+          "loc": "apguide.kind.carving",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 200,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "sep_1",
+          "x": 66,
+          "y": 268,
+          "x2": 266,
+          "y2": 268,
+          "thickness": 1,
+          "color": "#8a7a68"
+        },
+        {
+          "type": "image",
+          "id": "img_brooch",
+          "sprite": "upper_levels:ul_loot_brooch",
+          "fit": "fit",
+          "x": 48,
+          "y": 280,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "name_brooch",
+          "loc": "appraiser.piece.brooch.name",
+          "style": "title",
+          "align": "left",
+          "wrap": false,
+          "x": 122,
+          "y": 274,
+          "w": 164,
+          "h": 18,
+          "fontSize": 11
+        },
+        {
+          "type": "text",
+          "id": "desc_brooch",
+          "loc": "apguide.kind.brooch",
+          "style": "body",
+          "align": "left",
+          "x": 122,
+          "y": 294,
+          "w": 164,
+          "h": 64,
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "name": "Page 4",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p4.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "apguide.p4.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 5",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p5.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "image",
+          "id": "img_scanner",
+          "sprite": "upper_levels:ul_appraiser_scanner",
+          "fit": "fit",
+          "x": 126,
+          "y": 84,
+          "w": 80,
+          "h": 64
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "apguide.p5.body",
+          "style": "body",
+          "align": "left",
+          "x": 46,
+          "y": 156,
+          "w": 240,
+          "h": 212,
+          "fontSize": 10
+        }
+      ]
+    },
+    {
+      "name": "Page 6",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "loc": "apguide.header",
+          "style": "header",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 24,
+          "w": 240,
+          "h": 16,
+          "fontSize": 9
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 56,
+          "y": 44,
+          "x2": 276,
+          "y2": 44,
+          "thickness": 1,
+          "color": "#2a2420"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "apguide.p6.title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 46,
+          "y": 52,
+          "w": 240,
+          "h": 24,
+          "fontSize": 15
+        },
+        {
+          "type": "flow",
+          "id": "body_flow",
+          "x": 46,
+          "y": 86,
+          "w": 240,
+          "h": 282,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "apguide.p6.body",
+          "style": "body",
+          "flow": "body_flow",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 10
+        }
+      ]
+    }
+  ]
+}
