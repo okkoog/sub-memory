@@ -33,3 +33,9 @@
 - 원정 미끼는 v2.5.2 상세 수치 가이드의 Mouse droppings ball·Flash bait·Fish meat mash 제조법과 아이템명 `item.gf_*_bait.name`을 함께 근거로 확인함.
 - **변경 보류하되 사유 확인한 항목:** `gameplay.a8d32d3a831d7e9a` / `item.gf_star_fruit.name`은 중국어 星之果实 동일하지만 영문 Stardrop/Star Fruit로 달라 같은 아이템 호출인지는 자료만으로 확정 불가; `item.gf_fish_offal.name`의 '생선 내장'과 `powder.machine.scrapName`의 '생선 부산물'은 영어 Fish Offal/Fish Scrap이라는 별도 사용 문맥을 반영; `reagent.effect.strength`과 `reagent.five.effect.strength`은 영어 Strength/Fortify로 달라 자동 통일하지 않음.
 - 한패 키 3,448개 유지, 중복/누락 0건, 변수 불일치 0건. 게임 실행·DLL 내부 호출 경로는 확인되지 않음. 스팀 미반영.
+
+## 다른 번역팩 참고 후 독립 재대조 (2026-11-15)
+
+- 사용자 제공 Probably Translated v1.0.19의 표현을 비교 참고로만 활용. 복사·일괄 수용 없이 중국어/영어 원문으로 검증한 14키를 추가 교정함.
+- 직접 수정 내역: `probably-stolen/analysis/GO_FISHING_REFERENCE_ONLY_COMPARISON_FIXES_20261115.csv`, 비교 판정 보고서: `probably-stolen/analysis/GO_FISHING_REFERENCE_ONLY_COMPARISON_REPORT_20261115.md`.
+- 기존 3,448키는 유지했으며 스팀·원본 DLL 미변경.
