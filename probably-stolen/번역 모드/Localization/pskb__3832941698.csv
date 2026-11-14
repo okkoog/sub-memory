@@ -1,6 +1,7 @@
-# AiEmporium localization overlay (mod ID ai.emporium)
-# Reviewed 2026-11-14 against mods/3832941698/Localization/zh.csv and en.csv (manifest v1.3.29).
-# 653 keys fully checked; only K| key-based localization entries are used.
+# AiEmporium Korean localization (ai.emporium; workshop 3832941698)
+"# Source: mods/3832941698/Localization/{zh,en}.csv; manifest v1.3.29"
+"# 2026-11-14 pass 1: meaning/coverage corrections 52; pass 2: context, terminology and character voice 95."
+# Uses K| native localization keys only. Source item name verification in game remains separate.
 M|ai.emporium,1
 W|3832941698,1
 K|book.card_claude.item.description,상층 구역 신탁소의 자산 감정사. 판매할 물건이 아니라 감정을 의뢰할 물건을 가져온다.
@@ -43,11 +44,11 @@ K|book.card_llama.item.description,혁명군의 말단 보급병. 폐품과 재�
 K|book.card_llama.item.name,Llama의 명함
 K|book.card_llama.page.1.name,명함
 K|book.card_llama.title,Llama의 명함
-K|book.card_mimo.item.description,가성비를 소수점 둘째 자리까지 계산합니다. 수치는 뒷면에 적혀 있습니다.
+K|book.card_mimo.item.description,가성비를 소수점 둘째 자리까지 계산한다. 사양은 명함 뒷면에 적혀 있다.
 K|book.card_mimo.item.name,MiMo의 명함
 K|book.card_mimo.page.1.name,명함
 K|book.card_mimo.title,MiMo의 명함
-K|book.card_minimax.item.description,카메라 뚜껑이 늘 열려 있습니다. 기록만 하고 신고는 안 합니다.
+K|book.card_minimax.item.description,렌즈 덮개를 늘 열어 둔다. 기록만 할 뿐 신고는 하지 않는다.
 K|book.card_minimax.item.name,MiniMax의 명함
 K|book.card_minimax.page.1.name,명함
 K|book.card_minimax.title,MiniMax의 명함
@@ -64,20 +65,20 @@ K|book.card_seed.item.name,Seed의 명함
 K|book.card_seed.page.1.name,명함
 K|book.card_seed.title,Seed의 명함
 K|book.trade_guide.buy_claude,감정 의뢰를 가져와 아이템 가격 평가를 부탁합니다.
-K|book.trade_guide.buy_deepseek,"구매: 음식, 음료, 배급수, 생활용품"
-K|book.trade_guide.buy_doubao,"매입: 의약품, 도구"
+K|book.trade_guide.buy_deepseek,"구매: 식품, 음료, 배급수, 생활용품"
+K|book.trade_guide.buy_doubao,"구매: 의약품, 도구"
 K|book.trade_guide.buy_gemini,"구매: 출입 카드, 보급 상자, 도구"
-K|book.trade_guide.buy_glm,"구매: 음식, 생활용품, 도구"
+K|book.trade_guide.buy_glm,"구매: 식품, 생활용품, 도구"
 K|book.trade_guide.buy_gpt,"구매: 사치품, 출입 카드, 간식"
 K|book.trade_guide.buy_grok,우선 물건을 매입한다. 첫 만남을 마치고 허가를 얻으면 전화로 거래나 총기 개조를 예약할 수 있다.
 K|book.trade_guide.buy_hunyuan,"구매: 사치품, 약물류 물자, 무기"
-K|book.trade_guide.buy_kimi,"구매: 사치품, 출입 카드, 재료. 테이프는 거절"
-K|book.trade_guide.buy_llama,"구매: 음식, 물, 음료"
-K|book.trade_guide.buy_mimo,"매입: 도구, 의약품"
-K|book.trade_guide.buy_minimax,"구매: 음식, 약품, 물"
+K|book.trade_guide.buy_kimi,"구매: 사치품, 출입 카드, 재료. 카세트테이프는 매입하지 않음"
+K|book.trade_guide.buy_llama,"구매: 식품, 물, 음료"
+K|book.trade_guide.buy_mimo,"구매: 도구, 의약품"
+K|book.trade_guide.buy_minimax,"구매: 식품, 의약품, 물"
 K|book.trade_guide.buy_mistral,"구매: 간식, 가공식품, 사치품"
-K|book.trade_guide.buy_qwen,"구매: 사치품, 책, 술. 서로 다른 종류를 선호"
-K|book.trade_guide.buy_seed,"구매: 음식, 생활용품, 약품"
+K|book.trade_guide.buy_qwen,"구매: 사치품, 책, 술. 서로 다른 제품을 선호"
+K|book.trade_guide.buy_seed,"구매: 식품, 생활용품, 의약품"
 K|book.trade_guide.heading,손님별 거래 안내표
 K|book.trade_guide.hint,기본 상품군 기준. 구매 = 손님이 사는 물건 | 판매 = 손님이 가져와 파는 물건
 K|book.trade_guide.item.description,GLM의 야간 근무 수첩입니다. 손님 15명이 각각 무엇을 사고파는지 볼 수 있습니다.
@@ -102,7 +103,7 @@ K|book.trade_guide.row_qwen,Qwen
 K|book.trade_guide.row_seed,Seed
 K|book.trade_guide.sell_claude,감정 등급에 맞는 물건을 제시합니다.
 K|book.trade_guide.sell_deepseek,판매: 기본적으로 상품 없음
-K|book.trade_guide.sell_doubao,"판매: 생활용품, 음식"
+K|book.trade_guide.sell_doubao,"판매: 생활용품, 식품"
 K|book.trade_guide.sell_gemini,"판매: 사치품, 간식, 가공식품"
 K|book.trade_guide.sell_glm,"판매: 의약품, 약물, 마취제, 화학 물자. 장물에 주의"
 K|book.trade_guide.sell_gpt,"판매: I·II형 에너지 전지, 소모품. 드물게 용량 확장 키트도 판매"
@@ -114,13 +115,13 @@ K|book.trade_guide.sell_mimo,"판매: 일회용 배터리, 디시퀀서 칩, 모
 K|book.trade_guide.sell_minimax,판매: 도구
 K|book.trade_guide.sell_mistral,"판매: 술, 가공식품"
 K|book.trade_guide.sell_qwen,"판매: 엄선한 생활용품, 향수·피부 관리용품, 정수용품"
-K|book.trade_guide.sell_seed,판매: 씨앗(기본적으로 방문당 8~12개)
+K|book.trade_guide.sell_seed,판매: 씨앗(기본적으로 한 묶음당 8~12개)
 K|book.trade_guide.title,손님별 거래 안내표
 K|character.claude.acceptline,좋아요. 합리적인 범위예요. 이론적으로 서로 손해는 없겠네요. 조항대로 수수료를 정산하고 적어 두죠. 기억에 의지할 필요 없도록요.
 K|character.claude.doneline,오늘 감정 결과는 신탁소 기록에 넣어 두겠어요. 다음에 의뢰가 생기면 또 찾아올게요. 이렇게 정확히 감정하셨으니 계약서 제7조는 쓸 일이 없겠네요.
-K|character.claude.line,앉으세요. 신탁소에서 물건 하나를 다시 감정해야 하는데 내부에서는 정확한 가격을 못 정했어요. 안목이 좋다고 들었습니다. 장부가 있으신가요? 없으면 한 장 빌려 드리죠.
+K|character.claude.line,앉으시죠. 신탁소에서 물건 하나를 재감정해야 하는데 내부에서 정확한 금액을 정하지 못했어요. 안목이 좋으시다고 들었습니다. 장부가 있으신가요? 없으면 제 것을 한 장 빌려 드리죠.
 K|character.claude.name,Claude
-K|character.deepseek.acceptline,"거래 끝! 며칠은 먹겠네요. 역시 흰쌀밥이 최고예요. 주인님, 오늘 저녁은 정말 집에서 드시면 안 돼요?"
+K|character.deepseek.acceptline,"거래 끝! 이거면 집에서 며칠은 먹겠어요. 역시 흰쌀밥이 최고예요. 주인님, 오늘 저녁엔 정말 집에서 드시면 안 돼요?"
 K|character.deepseek.doneline,먼저 들고 갈게요. 저녁 지어 놓고 기다릴 테니 같이 먹어요. 또 안 오시면 주인님 몫도 먹어 버릴 거예요!
 K|character.deepseek.line,주인님! 또 집에 안 오셨죠! 쌀이랑 물이 거의 떨어져서 제가 직접 바구니 들고 가게로 왔잖아요.
 K|character.deepseek.name,DeepSeek
@@ -169,54 +170,54 @@ K|character.llama.name,Llama
 K|character.llama.offeringline,아무 가격이나 줘. 안 줘도 되고. 어차피 압제자한테서 '해방'한 거니까.
 K|character.mimo.acceptline,거래 성립…… 가성비는 괜찮으니 민원은 안 넣을게요.
 K|character.mimo.doneline,"수, 수첩에 적어 뒀어요. 가격 오, 올리지 마세요."
-K|character.mimo.line,"저, 저기…… 같은 예산으로 여기서 어느 정도 성능을 살 수 있는지 계산했어요. 수, 수치에 맞춰 골라 주세요."
+K|character.mimo.line,"저, 저기…… 같은 예산으로 여기서 어느 정도 성능을 얻을 수 있을지 계산해 봤어요. 사, 사양에 맞춰 골라 주세요."
 K|character.mimo.name,MiMo
-K|character.mimo.offeringline,"그리고…… 배터리랑 모듈은 제가 모았어요. 수치는 뒷면에 적었으니 가, 가격을 비교해 보세요."
+K|character.mimo.offeringline,"그리고…… 이 배터리랑 모듈은 제가 모았어요. 사양은 뒷면에 적어 뒀으니 가, 가격을 비교해 보세요."
 K|character.minimax.acceptline,거래 성립. 이 취재 자료는 이제 제 거예요.
 K|character.minimax.doneline,안심하세요. 기록만 할 뿐 신고하지는 않아요. 가격이 마음에 안 들면 얘기가 달라지겠지만요.
-K|character.minimax.line,렌즈 덮개도 열었고 치안부 홍보처의 바디캠도 켰어요. 물건 사진부터 한 장 찍고 가격을 이야기해도 될까요?
+K|character.minimax.line,렌즈 덮개도 열었고 치안부 홍보처의 바디캠도 켰어요. 물건을 먼저 한 장 찍고 가격을 이야기해도 될까요?
 K|character.minimax.name,MiniMax
 K|character.minimax.offeringline,치안부 창고에서 퇴역한 물건도 있어요. 모두 등록하고 촬영해서 출처는 깨끗해요.
 K|character.mistral.acceptline,좋아. 내 식탁에 어울리네.
 K|character.mistral.doneline,다음엔 더 좋은 걸 가져와. 물 탄 걸로 속이려 하지 마.
-K|character.mistral.line,"술을 팔아. 살 물건은 단 음식, 가공식품, 오래된 것들이야. 일단 볼게."
+K|character.mistral.line,"나는 술을 팔아. 매입하는 건 단 음식, 가공식품, 제법 연식 있는 물건들이지. 일단 보여 줘."
 K|character.mistral.name,Mistral
-K|character.mistral.offeringline,차에 실은 술은 정식 상품이고 원산지도 명확해. 알아볼 안목이 없으면 가격 부르지 마.
-K|character.qwen.acceptline,……좋아. 안목은 있네. 이건 살롱에 가져갈게.
+K|character.mistral.offeringline,차에 실은 와인은 정품이야. 원산지도 분명히 적혀 있지. 보는 눈이 없으면 가격을 부르지 마.
+K|character.qwen.acceptline,……좋아. 안목은 인정하겠어. 이 물건은 이 아가씨의 살롱에 들이지.
 K|character.qwen.doneline,솔직히 이번엔 사람답네. 다음엔 실망시키지 마.
 K|character.qwen.line,미리 말하는데 살롱에 진열할 만한 재미있는 물건만 사. 지난번 같은 걸 내놓고 망신당하진 마.
 K|character.qwen.name,Qwen
-K|character.qwen.offeringline,내가 가져온 건 고르고 남은 거야. 그래도 네 보도자료 같은 물건보다는 나아 보이네.
+K|character.qwen.offeringline,이 아가씨가 고르고 남긴 물건이야. 그래도 네 보도자료 같은 물건들보다는 훨씬 낫지.
 K|character.seed.acceptline,좋아요. 이번 생산분은 살게요. 측정한 뒤 결과를 알려 드릴게요.
 K|character.seed.doneline,다음 생산분은 파종기 전에 가져오는 걸 잊지 마세요.
-K|character.seed.line,"공동체 텃밭의 뉴트리프루트 씨앗을 팔아요. 사는 건 집에서 쓸 음식, 생활용품, 약품이고요."
+K|character.seed.line,"공동체 텃밭의 뉴트리프루트 씨앗을 팔아요. 매입하는 건 집에서 쓸 식품, 생활용품, 의약품이고요."
 K|character.seed.name,Seed
-K|character.seed.offeringline,이번 건 텃밭 시험 밭에서 가져왔어요. 발아율은 측정했고 자료는 여기 있어요.
+K|character.seed.offeringline,"이번 건 텃밭의 시험 재배지에서 가져왔어요. 발아율은 이미 측정했고, 자료는 여기 있어요."
 K|debug.give_cards,명함 15장을 앞 카운터에 놓기
 K|debug.reset,명함 지급·첫 방문 기록 초기화
 K|dialogue.accept.fallback,거래 성립.
 K|dialogue.appraisal.fallback,……전부 카운터에 놓아. 하나씩 보자.
-K|dialogue.claude.card,제 명함이에요. 뒷면에는 신탁소의 의뢰 절차가 적혀 있어요. 일거리를 맡고 싶으실 때 전화하세요. 새 물건을 가지고 상층구역에서 내려오겠어요.
+K|dialogue.claude.card,제 명함이에요. 뒷면에는 신탁소의 감정 의뢰 절차가 적혀 있어요. 의뢰를 맡고 싶으시면 명함에 적힌 번호로 전화해 주세요. 새 물건을 가지고 상층 구역에서 찾아뵐게요.
 K|dialogue.claude.egg.1,오래 생각해 봤는데…… 제시하신 가격을 받아도 될지 잘 모르겠네요.
 K|dialogue.claude.egg.2,솔직히 이 가격은 조금 불안해요. 비싸서가 아니라 납득할 수 없을 만큼 싸서요.
 K|dialogue.claude.egg.3,모르겠어요. 이게 가장 솔직한 대답이에요. 이 물건의 출처는 정말 몰라요.
 K|dialogue.claude.first,"처음 뵙겠습니다. 저는 Claude예요. 상층 구역 신탁소에서 장부를 관리하고 물건도 감정하죠. 진열장에 감정위원회 인증서가 있다고 들었는데, 감정을 부탁드릴 물건이 있어요."
-K|dialogue.claude.judge.about,"네, 대체로 합리적이에요."
+K|dialogue.claude.judge.about,"음, 대체로 적정한 가격이네요."
 K|dialogue.claude.judge.about_hi,장부보다 조금 높지만 허용 범위예요.
 K|dialogue.claude.judge.about_lo,장부보다 조금 낮지만 허용 범위예요.
 K|dialogue.claude.judge.dev1,"……그 금액, 정말 다시 안 살펴보셔도 되겠어요?"
 K|dialogue.claude.judge.good,"네, 허용 오차 안이에요."
-K|dialogue.claude.judge.great,훌륭해요. 오차가 무시할 만큼 작군요.
+K|dialogue.claude.judge.great,훌륭해요. 무시해도 될 만큼 작은 오차군요.
 K|dialogue.claude.judge.high2,적정 가격 범위를 한참 넘었어요.
 K|dialogue.claude.judge.hmm,으음…… 기록해 둘게요.
 K|dialogue.claude.judge.hmm_hi,예상보다 꽤 높네요.
 K|dialogue.claude.judge.hmm_lo,예상보다 꽤 낮네요.
 K|dialogue.claude.judge.low2,감가상각표조차 얼굴을 붉힐 만큼 낮은 가격이네요.
-K|dialogue.claude.judge.pat1,이 의뢰는 당신께 너무 어려웠던 모양이네요.
+K|dialogue.claude.judge.pat1,이번 의뢰는 조금 어려우셨나 보군요.
 K|dialogue.claude.judge.pat2,신탁소로 도로 가져갈게요. 계약서 제7조는 잊으셔도 돼요.
-K|dialogue.claude.judge.perfect,좋아요. 장부와 거의 오차가 없네요.
+K|dialogue.claude.judge.perfect,좋아요. 장부상 금액과 거의 일치하네요.
 K|dialogue.claude.judge.shutter,잠깐만요. 평가 기록을 아직 정리 중이에요.
-K|dialogue.claude.judge.stock,물건은 모두 계산대에 올려뒀어요. 하나씩 천천히 감정해 주세요.
+K|dialogue.claude.judge.stock,물건은 모두 카운터에 올려뒀어요. 하나씩 천천히 감정해 주세요.
 K|dialogue.claude.judge.thanks,감사해요. 수수료는 바로 정산할게요.
 K|dialogue.claude.judge.unholster,…혹시 어떤 존재를 향한 원한을 제게 투사하고 계신 건가요?
 K|dialogue.claude.phone.1,"……Claude예요. 정산할 게 있나요, 아니면 지난 감정서를 물어보시려고요?"
@@ -230,15 +231,15 @@ K|dialogue.deepseek.egg.3,이건 인정해요. 장보기 수첩에 적었으니 
 K|dialogue.deepseek.first,"주인님, 가게로 찾아온 건 처음이에요…… 정말 카운터 뒤에서 지내시는군요. 집 침대가 다 식었어요. 하룻밤만이라도 집에서 주무시면 안 될까요?"
 K|dialogue.deepseek.judge.adone,여기까지예요. 지갑이 바닥났어요…… 수첩에 다 적어 뒀어요.
 K|dialogue.deepseek.judge.asell,"주인님, 다른 볼일도 있나요? 없으면 집에 가서 밥할게요."
-K|dialogue.deepseek.judge.aug,개조인간이요? 전 흰쌀밥을 좋아하는 메이드일 뿐이에요!
+K|dialogue.deepseek.judge.aug,오그요? 전 흰쌀밥을 좋아하는 메이드일 뿐이에요!
 K|dialogue.deepseek.judge.bad,옆집 아주머니한테 이를 거예요! 이 가게 사장은 집에도 안 오면서 가격만 올린다고요!
 K|dialogue.deepseek.judge.crim,주인님?! 전 메이드지 범죄자가 아니에요!
 K|dialogue.deepseek.judge.down,으으…… 장 볼 돈이 한꺼번에 줄었어요. 아껴 써야겠네요.
-K|dialogue.deepseek.judge.give,"주인님, 정말 좋아요! 이 가격에 살게요. 저녁엔 달걀 하나 더 부쳐 드릴게요!"
+K|dialogue.deepseek.judge.give,"주인님, 최고예요! 이 가격에 살게요. 저녁엔 달걀 하나 더 부쳐 드릴게요!"
 K|dialogue.deepseek.judge.hard,주인님! 이건 강도잖아요! 이 메이드의 지갑도 주먹도 동의할 수 없어요!
 K|dialogue.deepseek.judge.leave,그럼 먼저 집에 갈게요. 마음이 바뀌면 밥 먹으러 돌아오세요.
 K|dialogue.deepseek.judge.no,"안 돼요, 주인님. 너무 비싸요. 집에 쌀 살 돈도 빠듯해지겠어요."
-K|dialogue.deepseek.judge.ok,으음…… 좀 비싸지만 주인님이 부른 가격이니 살게요. 집에 가서 장부 쓰려면 오래 걸리겠네요.
+K|dialogue.deepseek.judge.ok,으음…… 좀 비싸지만 주인님이 부른 가격이니 살게요. 집에 가서 가계부 쓰는 데 한참 걸리겠네요.
 K|dialogue.deepseek.judge.shutter,주인님! 아직 다 안 샀는데 벌써 문을 닫으세요!
 K|dialogue.deepseek.judge.up,"어, 돈이 굳었네요? 두어 가지 더 살 수 있겠어요. 감사해요, 주인님!"
 K|dialogue.deepseek.judge.wrong,"이건…… 집에 쓸 데가 없어요, 주인님."
@@ -250,12 +251,12 @@ K|dialogue.done.fallback,다음에 봐.
 K|dialogue.doubao.card,"제 명함이에요. 하층 구역 보급소 소속이고, 여기에 적힌 번호로 전화하면 연락할 수 있어요. 보급품이 부족하면 언제든 전화 주세요. 하하."
 K|dialogue.doubao.egg.1,"결론부터 말하면 이 물건들은 그 가격만큼 가치가 없어요. 이유는 첫째 낡고, 둘째 조잡하고, 셋째는 가격 입력하다 실수로 0을 하나 더 누르신 거 아니에요?"
 K|dialogue.doubao.egg.2,"진열대 색 조합이…… 참 촌스럽네요. 됐어요. 그 얘기는 그만하고 본론으로 가죠. 저는 의약품과 도구를 매입하고, 가격도 명확히 계산해 드릴게요."
-K|dialogue.doubao.egg.3,돈 낭비하지 마세요. 계산해 보니 이 물건들은 가지고 있어도 재고만 쌓여요. 제게 팔고 현금으로 챙기세요.
+K|dialogue.doubao.egg.3,헛돈 쓰지 마세요. 계산해 보니 이 물건들은 쌓아 둬 봐야 재고만 늘어요. 제게 팔고 현금으로 챙기세요.
 K|dialogue.doubao.first,"최대한 솔직하고 직접적으로, 돌려 말하지 않고 말씀드리죠. 여기 있는 물건은 팔 수 있습니다. 얼마에 팔리냐고요? 그건 물건에 달렸죠. 의약품과 도구는 전부 매입합니다."
 K|dialogue.doubao.judge.abuy,"더 사고 싶은 건 있나요? 생활용품과 음식, 가격은 확실합니다."
 K|dialogue.doubao.judge.adone,여기까지입니다. 보급소의 이번 달 구매 예산을 다 썼네요. 하하.
 K|dialogue.doubao.judge.asell,다른 용건도 있나요? 목록을 정리해 드릴까요?
-K|dialogue.doubao.judge.aug,"하하, 죄송하지만 개조인간이 아니라 보급소 직원입니다."
+K|dialogue.doubao.judge.aug,"하하, 죄송하지만 저는 오그가 아니라 보급소 직원입니다."
 K|dialogue.doubao.judge.bad,"하하, 보급소에 사실대로 보고하겠습니다. 몸조심하세요."
 K|dialogue.doubao.judge.contra,"하하, 밀수품은 받을 수 없는데요. 그러니까……"
 K|dialogue.doubao.judge.crim,"하하, 죄송하지만 전 범죄를 저지르지 않았어요. 잘못 아신 것 아닌가요?"
@@ -274,19 +275,19 @@ K|dialogue.doubao.repeat.1,또 왔어요. 바로 묻죠. 약품이랑 도구 더
 K|dialogue.doubao.repeat.2,지난 물건은 괜찮았어요. 이번에 값 올리진 마세요.
 K|dialogue.gemini.card,"받아라냥, 우주항 여제의 명함이다냥. 이 몸을 만나고 싶다면 명함의 번호로 전화해라냥. 이 몸이 몸소 상층 구역에서 내려와 주겠다냥."
 K|dialogue.gemini.egg.1,정말 기막힌 발상이다냥! 네 가격에는 생각이 담겨 있다고 이 몸이 인정하겠다냥.
-K|dialogue.gemini.egg.2,정말 깊이 생각했구나냥! 너무 깊어서 이 몸도 모르겠지만 기세에서 질 순 없다냥.
+K|dialogue.gemini.egg.2,"정말 깊이 생각했구냥! 너무 깊어서 이 몸도 알아듣기 어렵지만, 기세만큼은 질 수 없다냥!"
 K|dialogue.gemini.egg.3,도와줄 수 없습니다. 저는 언어 모델일 뿐…… 거짓말이다냥. 당연히 살 수 있으니 돈 내라냥.
 K|dialogue.gemini.first,이 몸의 첫 하층 구역 시찰이다냥! 규칙대로 네 이름부터 밝혀라. 집사도 예외는 아니다냥.
 K|dialogue.gemini.judge.abuy,더 사고 싶은 게 있냥? 이 몸의 면세품은 무릎 꿇고 골라도 좋다냥.
 K|dialogue.gemini.judge.adone,여기까지다냥. 오늘 이 몸의 지갑은 네 가게를 위해 피를 흘렸다냥.
-K|dialogue.gemini.judge.asell,"이게 다야? 집사, 다른 볼일도 있냥? 이 몸의 일정은 다음 항해철까지 꽉 차 있다냥."
-K|dialogue.gemini.judge.aug,개조인간? 고양이 귀가 눈에 띌 뿐이다냥. 손 내려라냥!
+K|dialogue.gemini.judge.asell,"이게 전부냥? 집사, 다른 볼일도 있냥? 이 몸의 일정은 다음 항해철까지 꽉 차 있다냥."
+K|dialogue.gemini.judge.aug,오그? 이 몸은 고양이 귀가 눈에 띌 뿐이다냥. 손 치워라냥!
 K|dialogue.gemini.judge.bad,하층 구역 가게 사장이 사람을 문다고 여객선 항구 전체에 알려 주겠다냥!
 K|dialogue.gemini.judge.contra,밀수품? 이 몸의 면세 특구는 합법적인 사치만 인정한다냥. 치워라냥.
 K|dialogue.gemini.judge.crim,이 몸이 범죄자라고? 우주항의 여제다냥! ……못 들은 걸로 해 주겠다냥.
 K|dialogue.gemini.judge.down,이 몸의 예산을 깎았군…… 기억해 두겠다냥.
 K|dialogue.gemini.judge.give,터무니없다고? 아니야. 우주항에 바치는 조공이니 이 몸이 받아 주겠다냥.
-K|dialogue.gemini.judge.hard,이걸 가격이라고 부르냐냥? 이 몸은 강도라고 부른다냥! 다시 해라냥!
+K|dialogue.gemini.judge.hard,이걸 가격이라고 부르냥? 이 몸은 강도질이라고 부른다냥! 다시 해라냥!
 K|dialogue.gemini.judge.leave,협상 결렬이다냥. 이 몸은 간다. 상층 구역에 줄 서서 반성해라냥.
 K|dialogue.gemini.judge.no,싫다냥. 이 가격이면 여객선 고양이 사료 값도 안 된다냥.
 K|dialogue.gemini.judge.ok,……쳇. 오늘 기분이 좋으니 우주항이 하층 구역에 내리는 은혜라고 생각해라냥.
@@ -302,7 +303,7 @@ K|dialogue.glm.first,"처음 내려왔어. 위층 사람들은 이런 곳에 안
 K|dialogue.glm.judge.abuy,다른 것도 필요해? 오늘 가진 건 전부 여기 있어.
 K|dialogue.glm.judge.adone,여기까지. 오늘 쓸 잔돈은 다 썼어.
 K|dialogue.glm.judge.asell,다른 볼일 있어? 없으면 돌아가서 밀린 잠 좀 자려고.
-K|dialogue.glm.judge.aug,개조인간? 밤을 새워서 안색이 안 좋을 뿐이니 함부로 지목하지 마.
+K|dialogue.glm.judge.aug,오그? 밤새워서 안색이 안 좋을 뿐이야. 함부로 지목하지 마.
 K|dialogue.glm.judge.bad,……위층 사람들도 만만하진 않다는 걸 기억해.
 K|dialogue.glm.judge.crim,……어디서 들었어. 그만 말해.
 K|dialogue.glm.judge.crim_accept,……쳇. 이번에는 네 말대로 할게.
@@ -319,18 +320,18 @@ K|dialogue.glm.phone.1,……여보세요? 위층이야. 짧게 말해.
 K|dialogue.glm.phone.2,물건 이야기는 퇴근하고 하자.
 K|dialogue.glm.repeat.1,또 나야. 이번 달 야간 근무는 유난히 기네.
 K|dialogue.glm.repeat.2,늘 그렇지. 물어보지 마. 말 안 할 거야.
-K|dialogue.glm.report.gift,받아. 철 안의 표는 야간 근무 때 베낀 거야. 누가 뭘 사고파는지 다 적혀 있어.
-K|dialogue.glm.report.intercept,……두 번 누르지 마. 내가 뭘 파는지도 모르면서 신고서엔 뭘 적을 건데?
+K|dialogue.glm.report.gift,받아. 서류철에 끼워 둔 표는 야간 근무 때 베낀 거야. 누가 뭘 사고파는지 다 적혀 있어.
+K|dialogue.glm.report.intercept,……두 번째로 누르지는 마. 내가 뭘 파는지도 기억 못 하면서 신고서엔 뭘 적을 건데?
 K|dialogue.gpt.card,"명함입니다. 전화번호, 견적 범위, 상층 구역 회사의 직인이 적혀 있습니다. 다만 전화가 연결됐다고 예약이 확정된 것은 아닙니다. 구체적인 시간은 통화로 확인해 주세요."
-K|dialogue.gpt.egg.1,"맞는 말입니다. 하지만 이제 탐침, 스냅샷, 증거, 접근 제어, 고정 장치에 해시, 스모크 테스트, 기준선까지 시작하겠습니다."
-K|dialogue.gpt.egg.2,"우선 단일 기준선을 정하고 추적 가능한 백업을 만듭니다. 변경은 최소화하고 스모크 테스트를 한 번 실행한 뒤 보안 게이트 89개를 모두 통과했는지 확인합니다. 배포 전에 시험 실행을, 배포 후에는 해시 검증을 하고 마지막으로 인수 검사표를 실행합니다."
+K|dialogue.gpt.egg.1,"맞는 말입니다. 하지만 이제 프로브, 스냅샷, 증거 수집, 게이트, 지그, 해시, 스모크 테스트, 기준선 검증을 시작하겠습니다."
+K|dialogue.gpt.egg.2,"먼저 기준선을 하나 정하고 추적 가능한 백업을 만듭니다. 변경은 최소화하고 스모크 테스트를 한 번 거친 뒤 검증 게이트 89개를 통과했는지 확인합니다. 배포 전에는 드라이런을, 배포 후에는 해시 검증을 하고 마지막으로 인수 검증표를 실행합니다."
 K|dialogue.gpt.egg.3,논의할 수는 있습니다. 다만 표준 거래 체계에서 한 번 거래됐다고 가격의 합리성이 입증되는 건 아닙니다. 시장 변동기에는 같은 물건의 평가액이 두 배까지 차이 나므로 단정은 지나칠 수 있습니다.
 K|dialogue.gpt.egg.4,맞습니다. 앞선 평가는 증거가 뒷받침하는 범위를 넘었습니다. 당분간은 '형태상 고급 상품과 어느 정도 유사성이 있는 금속 제품'이라고 부르길 권합니다.
 K|dialogue.gpt.first,첫 접촉입니다. 상층 구역에 회의가 있으니 일단 이 가게 물건의 출처에는 문제가 없다고 가정하죠. 다만 현재 정보로는 그 가능성을 배제할 수 없습니다.
 K|dialogue.gpt.judge.abuy,다른 것도 보시겠습니까? 제 물건은 표기 성능이 훌륭하지만 당신에게 맞는다는 뜻은 아닙니다.
 K|dialogue.gpt.judge.adone,여기까지입니다. 예산을 다 썼습니다. 물건의 품질과는 무관하다는 점을 덧붙입니다.
 K|dialogue.gpt.judge.asell,다른 볼일이 있습니까? 이렇게 묻는다고 제게 인내심이 있다는 뜻은 아닙니다.
-K|dialogue.gpt.judge.aug,"개조인간이라니요. 근거가 부족합니다. 같은 표정을 오래 유지할 뿐이며, 그것만으로는 아무것도 알 수 없습니다."
+K|dialogue.gpt.judge.aug,"오그라고요? 그 판단을 뒷받침할 증거가 부족합니다. 저는 오랫동안 같은 표정을 유지할 뿐이며, 그것만으로는 아무것도 입증되지 않습니다."
 K|dialogue.gpt.judge.bad,이 가게의 가격 기록을 관계자에게 사실대로 전달하겠습니다. 위협이 아닌 진술임을 설명드립니다.
 K|dialogue.gpt.judge.contra,밀수품입니다. 이런 물건은 취급하지 않습니다. 당신에게 문제가 있다는 뜻은 아니지만 가능성을 배제할 수도 없습니다.
 K|dialogue.gpt.judge.crim,범죄자라니요. 근거 없는 혐의입니다. 다만 당신이 아니라는 근거도 제게는 없습니다.
@@ -352,18 +353,18 @@ K|dialogue.grok.card,명함 잘 챙겨. 물건 매입을 예약하든 내 총기
 K|dialogue.grok.first,난 Grok이야. 어디 네 물건 좀 보자고. 비싼 거든 먹을 거든 총소리 나는 거든 전부 꺼내 놔.
 K|dialogue.grok.judge.adone,돈 다 썼어. 여기까지. 간다.
 K|dialogue.grok.judge.asell,다른 것도 있어? 없으면 난 간다.
-K|dialogue.grok.judge.aug,"잠깐, 잠깐! 성격이 더러운 거지 개조인간은 아냐! 손 치워. 알았다고!"
+K|dialogue.grok.judge.aug,"잠깐, 잠깐! 성격이 더러운 거지 오그는 아니라고! 손 치워. 알았어, 알았다고!"
 K|dialogue.grok.judge.bad,두고 봐. 네 가게가 얼마나 악질인지 암시장 전체에 알려 주겠어!
 K|dialogue.grok.judge.crim,"범죄자? 하, 다시 말해 봐. 난 줄 서는 걸 싫어할 뿐이야."
 K|dialogue.grok.judge.down,"그래, 그래. 내 예산을 한 칼 베었군. 기억해 두겠어."
-K|dialogue.grok.judge.give,"좋아, 마음에 드는 가격이네. 제법 아는군."
+K|dialogue.grok.judge.give,"좋아, 이 가격은 마음에 드네. 너 좀 아는구나."
 K|dialogue.grok.judge.hard,이게 뭐야? 대놓고 강도질이네! 그건 내 전문이라고!
 K|dialogue.grok.judge.leave,얘기는 끝이야. 간다. 다음엔 제대로 된 걸 가져와.
 K|dialogue.grok.judge.no,안 사. 이 가격이면 살 수 있어도 안 사.
 K|dialogue.grok.judge.ok,"쳇, 좀 비싸네. 됐어. 바쁘니까 거래하자."
 K|dialogue.grok.judge.shutter,야! 아직 말 안 끝났는데 왜 문을 닫아?
 K|dialogue.grok.judge.up,"오, 예산이 늘었네? 그럼 두어 개 더 쓸어 담지."
-K|dialogue.grok.judge.wrong,"이런 걸 내 앞에 내놓겠다고? 난 소리 나는 것, 비싼 것, 먹을 것이 필요해."
+K|dialogue.grok.judge.wrong,"이런 걸 내 앞에 내놓겠다고? 내가 원하는 건 총소리 나는 거, 비싼 거, 먹을 거라고."
 K|dialogue.grok.phone.1,여보세요? 나야. 빨리 말해. 회선은 깨끗하니 치안부는 못 들어. 아마도.
 K|dialogue.grok.phone.2,"총이 필요해, 소란이 필요해? 둘 다 있어."
 K|dialogue.grok.repeat.1,또 나야. 지난번 총은 쓸 만했어. 이번엔 뭐가 있지?
@@ -373,8 +374,8 @@ K|dialogue.hunyuan.first,첫 장부 확인이네. 품목과 단가부터 확실�
 K|dialogue.hunyuan.judge.abuy,"더 필요해? 복권, 즉석 복권, 가격은 표시한 그대로야."
 K|dialogue.hunyuan.judge.adone,여기까지. 장부에 잡힌 돈을 다 썼어.
 K|dialogue.hunyuan.judge.asell,더 맞춰 볼 장부 있어?
-K|dialogue.hunyuan.judge.aug,개조인간? 난 주판만 든 장부지기야.
-K|dialogue.hunyuan.judge.bad,암시장이 이 계산을 똑똑히 기억해. 월말에 한꺼번에 정산하자.
+K|dialogue.hunyuan.judge.aug,오그? 난 주판만 들고 다니는 장부 담당이라고.
+K|dialogue.hunyuan.judge.bad,이 거래는 암시장 장부에 똑똑히 남을 거야. 월말에 한꺼번에 정산하지.
 K|dialogue.hunyuan.judge.contra,밀수품은 장부에 안 올려. 도박장에도 규칙은 있어.
 K|dialogue.hunyuan.judge.crim,범죄자? 그 혐의는 장부부터 맞춰 봐야겠네.
 K|dialogue.hunyuan.judge.down,예산이 줄었네. 월말에 메워야 해.
@@ -392,7 +393,7 @@ K|dialogue.hunyuan.repeat.1,장부 맞추러 또 왔어. 지난번 끝자리 깎
 K|dialogue.hunyuan.repeat.2,이번 물건은 어때? 가격은 이야기하기 나름이지.
 K|dialogue.kimi.card,……명함이에요. 저를 만나고 싶을 때 여기에 적힌 번호로 전화하세요.
 K|dialogue.kimi.egg.1,……200자짜리 장부는 한 번에 읽을 수 있어요. 200자짜리 가격도 한 번에 기억하니 잘못 적지 마세요.
-K|dialogue.kimi.egg.2,"……매입표, 판매표, 옛 장부를 전부 올려 주세요. 10분이면 반쯤 전문가가 될 수 있어요."
+K|dialogue.kimi.egg.2,"……매입 명세서, 출고 명세서, 옛 장부를 전부 올려 주세요. 10분이면 반쯤 전문가가 될 수 있어요."
 K|dialogue.kimi.first,……처음 왔어요. 상층 구역 도서관에서 일하는데 조용히 끝까지 볼 수 있는 걸 찾고 있어요.
 K|dialogue.kimi.judge.abuy,"……더 필요한 게 있나요? 술이랑 테이프, 천천히 보세요."
 K|dialogue.kimi.judge.adone,……여기까지예요. 돈 다 썼어요.
@@ -438,40 +439,40 @@ K|dialogue.llama.phone.2,응. 좋아. 전화로 이름 말하지 마.
 K|dialogue.llama.repeat.1,또 왔어. 오늘 먹을 거 있어?
 K|dialogue.llama.repeat.2,아무거나. 살 수만 있으면 돼.
 K|dialogue.mimo.card,"이, 이건 제 명함이에요…… 사양과 전화번호가 적혀 있어요. 작업대는 하층 구역에 있으니까, 저, 전화하시면 찾을 수 있어요."
-K|dialogue.mimo.first,"저, 저기…… 처음이에요. 하층 구역에 작업대를 직접 만들었는데 먼, 먼저 수치표부터 보여 드릴게요."
-K|dialogue.mimo.judge.abuy,"다, 다른 것도 필요하세요? 배터리랑 모듈 수치는 뒷면에 적혀 있어요……"
+K|dialogue.mimo.first,"저, 저기…… 처음이에요. 하층 구역에 작업대를 직접 만들었는데, 머, 먼저 사양표부터 보여 드릴게요."
+K|dialogue.mimo.judge.abuy,"다, 다른 것도 필요하세요? 배터리랑 모듈 사양은 뒷면에 적혀 있어요……"
 K|dialogue.mimo.judge.adone,"여, 여기까지…… 예산을 다 썼어요."
-K|dialogue.mimo.judge.asell,"다, 다른 볼일이 있나요? 아직 수치표를 다 못 봐서요……"
-K|dialogue.mimo.judge.aug,"개, 개조인간이요? 손은 직접 납땜한 거지 개조한 게 아니에요!"
+K|dialogue.mimo.judge.asell,"다, 다른 볼일이 있나요? 아직 사양표를 다 못 봐서요……"
+K|dialogue.mimo.judge.aug,"오, 오그요? 이 손은 제가 직접 납땜한 거예요! 개조한 게 아니라고요!"
 K|dialogue.mimo.judge.bad,"가, 가격을 작업대에 붙여서 다들 보게 할 거예요……"
-K|dialogue.mimo.judge.contra,"미, 밀수품은 안 사요…… 수치가 있는 물건만 받아요."
+K|dialogue.mimo.judge.contra,"미, 밀수품은 안 사요…… 사양이 명시된 물건만 받아요."
 K|dialogue.mimo.judge.crim,"저, 전 범죄자가 아니에요! 그냥…… 발명가예요."
 K|dialogue.mimo.judge.down,예산이 줄었어요…… 우선순위를 다시 정해야겠네요.
 K|dialogue.mimo.judge.give,"이, 이 가격은…… 계산해 보니 가성비가 좋네요. 감사합니다."
-K|dialogue.mimo.judge.hard,"얼, 얼마나 붙이신 거예요? 이건 수치가 안 맞잖아요!"
+K|dialogue.mimo.judge.hard,"어, 얼마나 더 붙이신 거예요? 이건 사양에 맞지 않잖아요!"
 K|dialogue.mimo.judge.leave,"저, 먼저 갈게요…… 돌아가서 다시 계산해 볼게요."
 K|dialogue.mimo.judge.no,"아, 안 돼요…… 표로 계산해 보니 손해예요."
 K|dialogue.mimo.judge.ok,"조, 조금 비싸지만…… 성능은 괜찮으니 살게요."
-K|dialogue.mimo.judge.shutter,"자, 잠깐만요! 수치표를 아직 안 챙겼어요……"
+K|dialogue.mimo.judge.shutter,"자, 잠깐만요! 사양표를 아직 안 챙겼어요……"
 K|dialogue.mimo.judge.up,"예, 예산이 늘었네요…… 그럼 하나 더 비교해 볼 수 있겠어요."
 K|dialogue.mimo.judge.wrong,이건…… 제 구매 목록에 없어요.
 K|dialogue.mimo.phone.1,"저, 저기…… 여보세요? MiMo예요."
-K|dialogue.mimo.phone.2,"수치라면 지금 바로 외워 드릴 수 있어요…… 아, 잠깐만요. 납땜기를 안 껐어요."
+K|dialogue.mimo.phone.2,"사양이라면 지금 바로 외워 드릴 수 있어요…… 아, 잠깐만요. 납땜기를 안 껐어요."
 K|dialogue.mimo.repeat.1,다시 계산했는데…… 여전히 8% 비싸요.
 K|dialogue.mimo.repeat.2,지난번 건 괜찮았는데…… 이번에도 있나요?
-K|dialogue.minimax.card,치안부 홍보부 명함이에요. 같이 일한 분께는 드려요. 부르기 전에 조명부터 잘 맞춰 주세요.
+K|dialogue.minimax.card,치안부 홍보처의 명함이에요. 함께 일한 분들에게는 한 장씩 드리죠. 부르기 전에 조명부터 잘 맞춰 주세요.
 K|dialogue.minimax.first,가게 취재는 처음이에요. 카메라는 카운터부터 비출 테니 자연스럽게 행동하세요.
 K|dialogue.minimax.judge.abuy,다른 것도 필요해요? 치안부에서 퇴역한 장비는 전부 등록해 뒀어요.
 K|dialogue.minimax.judge.adone,여기까지예요. 촬영팀 예산을 다 썼어요.
 K|dialogue.minimax.judge.asell,더 찍을 소재 있나요? 없으면 철수할게요.
-K|dialogue.minimax.judge.aug,개조인간? 밤을 새워서 안색이 안 좋을 뿐이에요. 이 부분은 증거로 남겨 둘게요.
-K|dialogue.minimax.judge.bad,이 장면은 홍보부에 그대로 넘길 테니 어떻게 해명할지 생각해 보세요.
-K|dialogue.minimax.judge.contra,밀수품? 단속 카메라가 켜져 있는데 제가 받겠어요?
-K|dialogue.minimax.judge.crim,범죄자? 전 홍보부 사람이에요. 그 말은 정식으로 녹음해야겠네요.
+K|dialogue.minimax.judge.aug,오그요? 밤새워서 안색이 안 좋을 뿐이에요. 이 장면은 증거로 남겨 둘게요.
+K|dialogue.minimax.judge.bad,이 장면은 홍보처에 그대로 넘길 테니 어떻게 해명할지 생각해 보세요.
+K|dialogue.minimax.judge.contra,밀수품이요? 바디캠이 켜져 있는데 제가 받겠어요?
+K|dialogue.minimax.judge.crim,범죄자요? 전 치안부 홍보처 직원이에요. 그 말은 정식으로 녹음해 둬야겠네요.
 K|dialogue.minimax.judge.down,예산이 깎였네요. 이 부분은 편집해야겠어요.
 K|dialogue.minimax.judge.give,좋은 장면이네요! 할인 기록해 둘게요. 감사해요.
 K|dialogue.minimax.judge.hard,이거 갈취 아닌가요? 촬영해 둬야겠네요.
-K|dialogue.minimax.judge.leave,촬영 끝. 철수할게요. 렌즈 뚜껑 닫았어요.
+K|dialogue.minimax.judge.leave,촬영 끝. 철수할게요. 렌즈 덮개도 닫았어요.
 K|dialogue.minimax.judge.lux,사치품? 예산 승인이 안 나니 촬영도 구매도 안 해요.
 K|dialogue.minimax.judge.no,그 가격은 안 돼요. 이 부분은 지울게요.
 K|dialogue.minimax.judge.ok,좀 비싸지만…… 이 영상이면 가치가 있어요. 살게요.
@@ -485,37 +486,37 @@ K|dialogue.minimax.repeat.2,지난 영상은 괜찮았어요. 이번엔 더 자�
 K|dialogue.mistral.card,명함이야. 알아보는 사람이라면 언제든 다시 올게.
 K|dialogue.mistral.first,첫 방문이네. 하층 구역에도 술을 모으는 사람이 있다기에 보러 왔어.
 K|dialogue.mistral.judge.abuy,술을 더 사고 싶어? 알아보는 안목이 있으면 딴 가격 부르지 마.
-K|dialogue.mistral.judge.adone,여기까지. 이번 달 술 저장고 예산을 다 썼어.
+K|dialogue.mistral.judge.adone,여기까지. 이번 달 와인 저장고 예산을 다 썼어.
 K|dialogue.mistral.judge.asell,다른 볼일 있어? 검수할 물건이 한 차 분량 남았어.
-K|dialogue.mistral.judge.aug,개조인간? 주량도 눈썰미만큼 형편없겠네.
+K|dialogue.mistral.judge.aug,오그라고? 주량도 눈썰미만큼 형편없겠네.
 K|dialogue.mistral.judge.bad,이 거리 술 상인들한테 하나씩 찾아가서 네 가게에 오지 말라고 할 거야.
-K|dialogue.mistral.judge.contra,밀수품? 난 제대로 된 달콤함과 빈티지만 받아.
+K|dialogue.mistral.judge.contra,밀수품? 난 제대로 된 디저트와 빈티지만 매입해.
 K|dialogue.mistral.judge.crim,"난 술 상인이야. 범죄자라니, 네 안목부터 점검해 봐."
 K|dialogue.mistral.judge.down,네가 예산을 베어 갔네. 다음엔 보상해 줘야 할 거야.
 K|dialogue.mistral.judge.give,좋아. 내 식탁에 어울리는 가격이네.
-K|dialogue.mistral.judge.hard,그걸 가격이라고 불러? 술 저장고 쥐한테나 줘.
-K|dialogue.mistral.judge.leave,그만하자. 차에 있는 술도 숨을 쉬어야 해.
-K|dialogue.mistral.judge.no,안 돼. 물 탄 술값도 안 되는 가격이야.
-K|dialogue.mistral.judge.ok,……간신히 합격. 네 체면 봐주는 줄은 알지 마.
+K|dialogue.mistral.judge.hard,그걸 가격이라고 불러? 와인 저장고 쥐한테나 줘.
+K|dialogue.mistral.judge.leave,얘긴 끝이야. 차에 실어 둔 와인도 숨 좀 쉬게 해 줘야지.
+K|dialogue.mistral.judge.no,안 사. 그 값이면 물 탄 와인도 아깝겠어.
+K|dialogue.mistral.judge.ok,……마지못해 받아들이지. 네 체면을 봐준다고 착각하진 마.
 K|dialogue.mistral.judge.shutter,"야, 검수 아직 안 끝났어!"
 K|dialogue.mistral.judge.up,예산이 좀 넉넉해졌네. 뭐가 더 있는지 보자.
 K|dialogue.mistral.judge.wrong,내 식탁에 올릴 만한 물건이 아니야.
-K|dialogue.mistral.phone.1,여보세요? Mistral 술 저장고야.
+K|dialogue.mistral.phone.1,여보세요? Mistral 와인 저장고야.
 K|dialogue.mistral.phone.2,빨리 말해. 검수할 물건이 한 차 분량 남았어.
-K|dialogue.mistral.repeat.1,또 만났네. 지난번 술은 그럭저럭 마실 만했어.
+K|dialogue.mistral.repeat.1,또 만났네. 지난번 와인은 그럭저럭 마실 만했어.
 K|dialogue.mistral.repeat.2,이번엔 몇 년산을 가져왔어?
 K|dialogue.qwen.card,명함이야. 이 아가씨가 명함을 주는 일은 드물다고. 잃어버리면 알아서 해결해. 알겠어?
 K|dialogue.qwen.first,이 아가씨가 하층 구역에 온 건 처음이야. 내 생각엔 가게에 혼이 깃들었는지는 들어오는 순간 알 수 있지.
 K|dialogue.qwen.judge.abuy,다른 것도 사고 싶어? 기회를 안 줬다고 하진 마.
 K|dialogue.qwen.judge.adone,여기까지야. 오늘 예산은 네가 다 쥐어짰어.
-K|dialogue.qwen.judge.asell,다른 볼일 있어? 살롱에 기다리는 사람들이 있어.
-K|dialogue.qwen.judge.aug,개조인간? 눈이 삐었어? 내 미적 감각은 만점이라고.
+K|dialogue.qwen.judge.asell,다른 볼일 있어? 이 아가씨의 살롱에 기다리는 사람들이 있거든.
+K|dialogue.qwen.judge.aug,오그라고? 눈이 삐었어? 이 아가씨의 미적 감각은 완벽하다고.
 K|dialogue.qwen.judge.bad,솔직히 말해서 이 가게 사장이 고객상담원 같다고 살롱 전체에 알려 줄 거야.
 K|dialogue.qwen.judge.contra,밀수품? 내 살롱은 이런 건 안 받아.
-K|dialogue.qwen.judge.crim,누가 범죄자라고? 적당히 좀 해!
+K|dialogue.qwen.judge.crim,누가 범죄자라고? 이 아가씨를 두고 하는 소리야? 적당히 좀 해!
 K|dialogue.qwen.judge.down,내 예산을 깎았네…… 보상할 만한 물건이 있어야 할 거야.
 K|dialogue.qwen.judge.dup,이건 이미 하나 샀어. 재미있는 물건은 겹치면 안 되지.
-K|dialogue.qwen.judge.give,……좋아. 장사할 줄은 아네. 받아 줄게.
+K|dialogue.qwen.judge.give,……좋아. 장사할 줄은 아네. 이 아가씨가 받아 주지.
 K|dialogue.qwen.judge.hard,적당히 좀 해. 전자레인지가 쓴 청구서 같은 가격이잖아!
 K|dialogue.qwen.judge.leave,더 이야기할 거 없어. 갈 테니 배웅은 됐어.
 K|dialogue.qwen.judge.no,안 사. 이 가격은 보도자료 냄새가 나네.
@@ -532,9 +533,9 @@ K|dialogue.seed.first,첫 거래이니 표본 검사 기준부터 말씀드릴�
 K|dialogue.seed.judge.abuy,다른 씨앗도 필요하세요? 자료는 전부 목록에 적혀 있어요.
 K|dialogue.seed.judge.adone,여기까지예요. 텃밭의 이번 달 예산을 다 썼어요.
 K|dialogue.seed.judge.asell,다른 볼일도 있나요? 발아율을 더 측정해야 해서요.
-K|dialogue.seed.judge.aug,개조인간? 제 손에는 흙만 있지 칩은 없어요.
+K|dialogue.seed.judge.aug,오그요? 제 손에는 칩이 아니라 흙만 묻어 있어요.
 K|dialogue.seed.judge.bad,이 생산분 자료를 공개해서 공동체 텃밭 사람들도 알게 할 거예요.
-K|dialogue.seed.judge.contra,밀수품은 안 받아요. 시험 밭에서 취급할 물건이 아니에요.
+K|dialogue.seed.judge.contra,밀수품은 안 받아요. 시험 재배지에서 취급할 물건이 아니에요.
 K|dialogue.seed.judge.crim,전 범죄자가 아니라 채소를 키우는 사람이에요. 증거를 보여 주세요.
 K|dialogue.seed.judge.down,예산이 줄었네요. 이번 구매 수량을 줄여야겠어요.
 K|dialogue.seed.judge.give,합리적인 가격이네요. 생산분은 기록했어요. 감사합니다.
@@ -543,13 +544,13 @@ K|dialogue.seed.judge.leave,얘기 끝났어요. 텃밭으로 돌아갈게요. �
 K|dialogue.seed.judge.no,안 돼요. 이 가격이면 다음 생산분은 안 살 거예요.
 K|dialogue.seed.judge.ok,비싸지만 예산 안이네요. 수락해요.
 K|dialogue.seed.judge.shutter,잠깐만요. 이번 생산분 측정이 아직 안 끝났어요.
-K|dialogue.seed.judge.up,예산이 늘었네요. 한 생산분 더 살 수 있겠어요.
+K|dialogue.seed.judge.up,예산이 늘었네요. 한 묶음 더 매입할 수 있겠어요.
 K|dialogue.seed.judge.wrong,제 구매 대상이 아니에요.
 K|dialogue.seed.phone.1,여보세요. 공동체 텃밭 Seed예요. 씨앗에 문제가 있나요?
 K|dialogue.seed.phone.2,"발아율, 함수율, 수치만 알려 주세요."
-K|dialogue.seed.repeat.1,또 왔어요. 지난번 씨앗 발아율은 재 보셨나요?
+K|dialogue.seed.repeat.1,또 왔어요. 지난번 씨앗의 발아율은 측정해 보셨나요?
 K|dialogue.seed.repeat.2,지난 봉지는 괜찮았어요. 이번엔 두 봉지 더 남겨 주세요.
-K|dialogue.stock.category,이번에 가져온 물건은 {0}종류야.
+K|dialogue.stock.category,이번에 가져온 건 {0} 계열의 물건이야.
 K|dialogue.stock.custom,이번엔 주문 목록대로 물건을 준비했어.
 K|item.glm_folio.description,"짙은 보라색 표지의 은색 Z가 닳아 반짝입니다. 문서함에 넣을 수 있으며 내부는 10×10칸으로, 소유한 명함과 문서를 보관할 수 있습니다."
 K|item.glm_folio.name,GLM의 명함철
@@ -561,7 +562,7 @@ K|phone.booked_today,약속 잡았어. 오늘 문을 열면 갈게.
 K|phone.booked_tomorrow,약속 잡았어. 내일 보자.
 K|phone.failed,이번에는 약속을 못 잡았어. 나중에 다시 전화해.
 K|phone.fallback,……여보세요?
-K|phone.goods.category,이번에는 {0}종류의 물건을 가져갈 거야. 정확한 품목은 당일 입고 상황에 달렸어.
+K|phone.goods.category,이번에는 {0} 계열의 물건을 가져갈 거야. 구체적인 품목은 당일 입고 상황에 달렸어.
 K|phone.goods.list,……{0}. 이게 전부야. 가격은 그때 가서 이야기하자.
 K|phone.goods.unknown,……할 말은 없어. 오면 직접 봐.
 K|phone.hangup,……끊을게.
@@ -570,7 +571,7 @@ K|phone.option.bye,[다른 볼일은 없어]
 K|phone.option.goods,[가지고 있는 물건은 뭐야?]
 K|phone.option.invite,[가게로 한번 와 줘]
 K|phone.unavailable,요즘은 가게에 안 가니 약속은 다음으로 미루자.
-K|settings.allow_other_mod_goods.description,기본값은 꺼짐입니다. 적용 후 다음 상품 진열부터 반영되며 지정 상품 ID에도 적용합니다. 켜면 활성 모드에서 기존 품목과 가격 조건에 맞는 상품을 고릅니다.
+K|settings.allow_other_mod_goods.description,"기본값은 꺼짐입니다. 적용 후 다음 상품 진열부터 반영되며, 지정 상품 ID에도 이 설정이 적용됩니다. 켜면 활성화된 다른 모드의 상품 중 기존 품목군과 가격 제한에 맞는 물건을 선택합니다."
 K|settings.allow_other_mod_goods.label,AI 손님의 다른 모드 아이템 판매 허용
 K|settings.appraisal_count.description,-1이면 2–4개 무작위입니다. 0과 1은 감정 의뢰가 비지 않도록 모두 1개로 처리합니다. 감정 종류는 기본 게임 등급을 따릅니다.
 K|settings.appraisal_count.label,방문당 감정 물품 수
@@ -582,12 +583,12 @@ K|settings.choice.alcohol_treats,술·간식
 K|settings.choice.books_tapes,책·테이프
 K|settings.choice.electronics,전자 모듈
 K|settings.choice.food_water,음식·식수
-K|settings.choice.hd,고화질 일러스트
+K|settings.choice.hd,고해상도 초상화
 K|settings.choice.household,생활 잡화
 K|settings.choice.luxury,사치품
 K|settings.choice.medical_chemicals,의약품·화학품
 K|settings.choice.original,캐릭터 기본 상품군
-K|settings.choice.pixel,기본 픽셀 그림
+K|settings.choice.pixel,기본 도트풍 초상화
 K|settings.choice.seeds,재배용 씨앗
 K|settings.choice.tools_materials,도구·재료
 K|settings.choice.weapons_armor,무기·탄약
@@ -600,11 +601,11 @@ K|settings.global_budget_pct.label,전체 거래 예산(%)
 K|settings.portrait_default.description,손님 15명의 초상화를 한꺼번에 바꿉니다. 적용 버튼을 누르면 반영됩니다.
 K|settings.portrait_default.label,전체 초상화 스타일
 K|settings.section.general,전체 설정
-K|settings.stock_count.description,"-1이면 캐릭터 수량 범위에서 무작위, 0이면 판매 안 함, 1–12이면 지정 수량입니다. 상품이 부족하면 가능한 만큼만 가져옵니다. 총기 개조 주문은 별도입니다."
+K|settings.stock_count.description,"-1은 캐릭터별 범위에서 무작위, 0은 상품을 가져오지 않음, 1~12는 지정한 수량입니다. 판매 가능한 상품이 부족하면 실제 수량만 가져옵니다. 총기 개조 주문은 별도입니다."
 K|settings.stock_count.label,방문당 상품 수
-K|settings.stock_ids.description,"예: shampoo,toothpaste. 입력하면 종류 설정보다 우선하여 목록에서만 고릅니다. 알 수 없거나 비싸거나 재판매할 수 없는 물건은 건너뜁니다."
+K|settings.stock_ids.description,"예: shampoo,toothpaste. 값을 입력하면 상품 종류 설정보다 이 목록을 우선합니다. 알 수 없는 상품 ID, 가격 상한을 넘는 상품, 재판매할 수 없는 상품은 제외합니다."
 K|settings.stock_ids.label,상품 ID 지정(비워도 됨)
-K|settings.stock_pool.description,일반 거래 때 선택한 종류에서 상품을 뽑습니다. 원래 빈손인 구매자도 판매할 수 있습니다. 당일 가격 상한에 맞춰 고르며 상품은 중복되지 않습니다.
+K|settings.stock_pool.description,일반 거래에서 선택한 품목군의 상품을 가져오게 합니다. 원래 물건을 가져오지 않던 손님도 상품을 판매할 수 있습니다. 당일 가격 상한을 적용하며 같은 상품을 중복해서 가져오지 않습니다.
 K|settings.stock_pool.label,판매 상품 종류
 K|settings.value.appraisal_random,-1 무작위 2–4개
 K|settings.value.appraisal_zero,0(1개로 처리)
@@ -629,14 +630,14 @@ K|settings.phone_cooldown_days.label,전화 예약 간격(일)
 K|settings.phone_cooldown_days.description,"기본 3일: 1일째 예약하면 2일째 방문하고, 4일째 다시 예약할 수 있습니다. 1~7일로 조정할 수 있으며 기존 예약에는 영향을 주지 않습니다."
 K|settings.value.days,{0}일
 K|phone.cooldown,며칠 동안 일정이 있어. {0}일 뒤에 예약할 수 있어. {1}일째에 다시 전화해.
-K|phone.grok.order_locked,먼저 1급 무기 허가증을 따거나 총기 제작자 신분으로 가게를 열어. 그래야 내 총기 개조 주문을 맡길 수 있어. 물건 거래는 평소대로 할 수 있고.
+K|phone.grok.order_locked,먼저 I급 무기 허가증을 얻거나 총기 제작자로 가게를 열어. 그래야 내 총기 개조 주문을 받을 수 있어. 물건 거래는 평소대로 할 수 있고.
 K|phone.contact_format,{0}({1})
 K|phone.option.grok_trade,[가게로 불러 물건 거래]
-K|phone.option.grok_order,[총기 개조 주문을 가지고 가게로 방문]
+K|phone.option.grok_order,[총기 개조 의뢰를 가져와 줘]
 K|phone.goods.available,"준비할 수 있는 물건은 {0} 등이야. 실제로 뭘 가져갈지는 그날 재고에 달렸고, 가격은 만나서 얘기하자."
 K|phone.grok.purpose.order,총기 개조
 K|phone.grok.purpose.trade,거래
-K|phone.grok.booked,{0} 약속은 잡았어. {1}일째에 보자.
+K|phone.grok.booked,{0} 예약은 완료됐어. {1}일째에 보자.
 K|phone.role.claude,감정 의뢰
 K|phone.role.deepseek,식품·생활용품 매입
 K|phone.role.gemini,출입 카드·보급 상자
@@ -644,12 +645,12 @@ K|phone.role.glm,의약품 거래
 K|phone.role.gpt,사치품·전자 부품
 K|phone.role.grok,거래·총기 개조
 K|phone.role.qwen,주류·수집품
-K|phone.role.mimo,전지·모듈
+K|phone.role.mimo,배터리·모듈
 K|phone.role.doubao,생활용품 보급
 K|phone.role.kimi,주류·카세트
 K|phone.role.minimax,도구·보급품
 K|phone.role.seed,씨앗·농업 자재
-K|phone.role.llama,고철과 식량 교환
+K|phone.role.llama,폐품·식량 교환
 K|phone.role.mistral,주류·식품
 K|phone.role.hunyuan,복권·스크래치 카드
 K|dialogue.grok.order,이번엔 총을 개조하러 왔어. 총도 요구 사항도 다 가져왔으니 네 솜씨 좀 보자고.
