@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../source/ModEntry.cs" Link="ModEntry.cs" />
+    <Compile Include="../source/Translation.cs" Link="Translation.cs" />
+  </ItemGroup>
+</Project>

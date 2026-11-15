@@ -1,0 +1,65 @@
+name: Build isolated CSV item-translation probe
+
+on:
+  push:
+    branches:
+      - experiment/generic-item-csv-probe-20261115
+    paths:
+      - "probably-stolen/experiments/post-item-translation-probe/**"
+      - ".github/workflows/build-post-item-translation-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Run isolated tests with stubs
+        run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
+      - name: Compile production DLL against game assemblies
+        run: |
+          dotnet build probably-stolen/experiments/post-item-translation-probe/source/PostItemTranslationProbe.csproj \
+            -c Release -p:GameManaged="$GITHUB_WORKSPACE/probably-stolen/Managed"
+      - name: Package DLL, manifest, CSV and README
+        run: |
+          python3 - <<'PY'
+          import pathlib, zipfile
+          base=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
+          source=base/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll"
+          assert source.is_file(), "Production DLL missing"
+          package=base/"dist/PostItemTranslationProbe-0.2.0.zip"
+          package.parent.mkdir(parents=True, exist_ok=True)
+          mapping={
+             "PostItemTranslationProbe/PostItemTranslationProbe.dll":source,
+             "PostItemTranslationProbe/manifest.xml":base/"mod/PostItemTranslationProbe/manifest.xml",
+             "PostItemTranslationProbe/Translations/items.csv":base/"mod/PostItemTranslationProbe/Translations/items.csv",
+             "README.ko.md":base/"README.ko.md",
+          }
+          with zipfile.ZipFile(package,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for name,path in mapping.items():
+                  z.write(path,name)
+                  print(name, path.stat().st_size)
+          assert zipfile.ZipFile(package).testzip() is None
+          print("READY",package,package.stat().st_size)
+          PY
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PostItemTranslationProbe-0.2.0
+          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.2.0.zip
+          if-no-files-found: error
+      - name: Save compiled ZIP on this experiment branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.2.0.zip
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Build CSV item translation probe 0.2.0 [skip ci]"
+          git push origin HEAD:"$GITHUB_REF_NAME"
