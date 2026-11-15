@@ -14,6 +14,14 @@ namespace PostItemTranslationProbe
             public Func<GameItem> Wrapper;
         }
 
+        private sealed class PerkPatch
+        {
+            public StartingPerk Perk;
+            public bool IsDescription;
+            public Func<string> Original;
+            public Func<string> Wrapper;
+        }
+
         private ModLog log;
         private bool enabled, loaded, itemEnabled, paperEnabled, warned;
         private ModItemDirectory directory;
@@ -22,6 +30,10 @@ namespace PostItemTranslationProbe
             new Dictionary<string, List<Translation.Paper>>(StringComparer.Ordinal);
         private readonly Dictionary<string, Patch> patches =
             new Dictionary<string, Patch>(StringComparer.Ordinal);
+        private readonly Dictionary<string, List<Translation.Perk>> earlyPerks =
+            new Dictionary<string, List<Translation.Perk>>(StringComparer.Ordinal);
+        private readonly Dictionary<string, PerkPatch> perkPatches =
+            new Dictionary<string, PerkPatch>(StringComparer.Ordinal);
 
         public void Init(ModManifest manifest) { log = new ModLog(manifest); }
 
@@ -31,6 +43,136 @@ namespace PostItemTranslationProbe
             loaded = itemEnabled = paperEnabled = warned = false;
             ModHook.OnModItemDirectoryInit -= DirectoryReady;
             ModHook.OnModItemDirectoryInit += DirectoryReady;
+            // Start-perk UI opens before the game item directory exists.
+            // Asset events cover mods that register after us; this first scan
+            // also covers mods that registered before this mod was loaded.
+            ModHook.OnModAssetsLoaded -= AssetsLoaded;
+            ModHook.OnModAssetsLoaded += AssetsLoaded;
+            ScanStartingPerks();
+        }
+
+        private void AssetsLoaded(LoadedMod loadedMod)
+        {
+            if (!enabled || loadedMod == null) return;
+            ScanStartingPerks();
+        }
+
+        private void ScanStartingPerks()
+        {
+            if (!enabled) return;
+            try
+            {
+                if (ModLoader.Mods == null) return;
+                foreach (var mod in ModLoader.Mods)
+                {
+                    if (mod == null || !mod.IsEnabled || mod.Instance == null ||
+                        mod.Manifest == null || string.IsNullOrEmpty(mod.Manifest.ID))
+                        continue;
+
+                    var modId = mod.Manifest.ID;
+                    if (modId == Id || !ModLoader.IsModEnabled(modId) ||
+                        !ModLoader.IsValidModId(modId))
+                        continue;
+
+                    if (!earlyPerks.TryGetValue(modId, out var rules))
+                    {
+                        var csvPath = "Translations/" + modId + ".csv";
+                        if (!ModHelper.ModFileExists(Id, csvPath)) continue;
+
+                        try
+                        {
+                            var parsed = Translation.Parse(modId,
+                                ModHelper.ReadModFileText(Id, csvPath));
+                            rules = new List<Translation.Perk>(parsed.Perks);
+                            earlyPerks.Add(modId, rules);
+                        }
+                        catch (Exception)
+                        {
+                            Warn("Optional perk CSV failed validation; ignoring that file.");
+                            continue;
+                        }
+                    }
+
+                    foreach (var rule in rules)
+                        TryPatchPerk(rule);
+                }
+            }
+            catch (Exception) { Warn("Early perk registry was not available; original perks unchanged."); }
+        }
+
+        private void TryPatchPerk(Translation.Perk rule)
+        {
+            if (rule == null) return;
+            // Reading the owner mod's existing definition is not a method hook.
+            StartingPerk perk;
+            try { perk = StartingPerkList.GetModPerk(rule.PerkId); }
+            catch { return; }
+            if (perk == null || perk.id != rule.PerkId) return;
+
+            if (rule.NameSource != null)
+                PatchPerkProvider(perk, false, rule.NameSource, rule.NameKorean);
+            if (rule.DescriptionSource != null)
+                PatchPerkProvider(perk, true, rule.DescriptionSource, rule.DescriptionKorean);
+        }
+
+        private void PatchPerkProvider(StartingPerk perk, bool description,
+                                       string original, string korean)
+        {
+            var key = perk.id + (description ? "\u001fdescription" : "\u001fname");
+            if (perkPatches.ContainsKey(key)) return;
+
+            var sourceProvider = description ? perk.descriptionProvider : perk.nameProvider;
+            var raw = description ? perk.rawDescription : perk.rawName;
+            string current;
+            try { current = sourceProvider != null ? sourceProvider() : raw; }
+            catch { return; }
+
+            // No mutation if the original definition no longer matches the CSV.
+            if (!string.Equals(current, original, StringComparison.Ordinal))
+                return;
+
+            Func<string> wrapper = () =>
+            {
+                // Resolve the original value each time; if another locale takes
+                // effect, keep that value instead of forcing Chinese -> Korean.
+                var value = sourceProvider != null ? sourceProvider() : raw;
+                return string.Equals(value, original, StringComparison.Ordinal)
+                    ? korean : value;
+            };
+
+            if (description) perk.descriptionProvider = wrapper;
+            else perk.nameProvider = wrapper;
+
+            perkPatches.Add(key, new PerkPatch
+            {
+                Perk = perk,
+                IsDescription = description,
+                Original = sourceProvider,
+                Wrapper = wrapper
+            });
+            log.Log("CSV perk text provider installed: " + perk.id +
+                    (description ? " description" : " name"));
+        }
+
+        private void RestorePerks()
+        {
+            foreach (var patch in perkPatches.Values)
+            {
+                try
+                {
+                    // Never overwrite a provider replaced later by another mod.
+                    if (patch.IsDescription)
+                    {
+                        if (patch.Perk.descriptionProvider == patch.Wrapper)
+                            patch.Perk.descriptionProvider = patch.Original;
+                    }
+                    else if (patch.Perk.nameProvider == patch.Wrapper)
+                        patch.Perk.nameProvider = patch.Original;
+                }
+                catch (Exception) { Warn("Perk provider restore failed; restart game."); }
+            }
+            perkPatches.Clear();
+            earlyPerks.Clear();
         }
 
         private void LoadCsv()
@@ -252,6 +394,8 @@ namespace PostItemTranslationProbe
             ModHook.OnModItemDirectoryInit -= DirectoryReady;
             ModHook.OnGameLoadedLate -= Check;
             ModHook.OnPaperOpened -= PaperOpened;
+            ModHook.OnModAssetsLoaded -= AssetsLoaded;
+            RestorePerks();
             Restore();
             items.Clear();
             paper.Clear();
