@@ -36,6 +36,10 @@ jobs:
           sed -n '/## ModLoader/,/## /p' /tmp/probe_api.txt | head -n 90
           sed -n '/## LoadedMod/,/## /p' /tmp/probe_api.txt | head -n 80
           grep '^## .*Dialog' /tmp/probe_api.txt | head -n 50 || true
+      - name: Inspect paper and mod registry type signatures
+        run: |
+          dotnet run --project probably-stolen/experiments/post-item-translation-probe/inspection/Signatures.csproj -c Release -- probably-stolen/Managed/Assembly-CSharp.dll > /tmp/probe_signatures.txt
+          grep -E '^TYPE |^## |^  P |^  M |^  F ' /tmp/probe_signatures.txt | head -n 650
       - name: Run isolated tests with stubs
         run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
       - name: Compile production DLL against game assemblies
