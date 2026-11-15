@@ -1131,7 +1131,7 @@ K|scenario.newcomer.title,상층 구역의 신참 점주
 K|scenario.newcomer.desc,상층 구역에 점포 하나를 임대했습니다. 기계도 없고 인맥도 없습니다. 수중에는 창업 자금과 카이 와일드의 명함뿐입니다.
 K|scenario.newcomer.with1,상층 구역의 점포 한 곳
 K|scenario.newcomer.with2,창업 자금
-K|scenario.newcomer.with3,"카이 와일드의 위탁 판매: 매주 물건 20개, 판매 수익의 70%를 받음"
+K|scenario.newcomer.with3,"카이 와일드의 위탁 판매: 매주 물건 20개, 보증금 25%. 3일 이내에 팔면 판매 대금의 40%를 가져갑니다."
 K|scenario.newcomer.tag,상층 구역 모드
 K|perk.ul_trust_fund.name,신탁 기금
 K|perk.ul_trust_fund.desc,"시작 시 3,000크레딧을 추가로 받습니다."
@@ -1755,17 +1755,17 @@ K|appraiser.auction.cons.taken,작품 {0}점을 인수했습니다. 다음 주�
 K|appraiser.auction.lots,이번 주의 주요 경매 출품작입니다. 살펴봐 주세요.
 K|appraiser.auction.done,감정서는 제가 가져가겠습니다. 경매가 끝난 뒤에 뵙죠.
 K|kai.consign.intro.1,물건을 좀 가지고 왔습니다. 이 점포에서 대신 팔아 주세요.
-K|kai.consign.intro.2,"선불은 필요 없습니다. 판매 수익 중 당신이 {0}%, 제가 {1}%를 가져갑니다."
-K|kai.consign.intro.3,다음 주에 정산하죠. 팔리지 않은 물건은 제가 회수하겠습니다.
+K|kai.consign.intro.2,"물건 표시 가격의 {0}%를 보증금으로 먼저 내세요. 3일 안에 팔리면 제 수수료는 {1}%, 더 늦으면 {2}%예요."
+K|kai.consign.intro.3,다음 주에 정산하죠. 팔리지 않은 물건은 제가 회수하고 보증금도 돌려드릴게요.
 K|kai.consign.hello,정산할 시간이군요.
 K|kai.consign.phase2.1,이제 점포가 당신 소유입니까? 축하드립니다.
-K|kai.consign.phase2.2,"그럼 물량을 늘리겠습니다. 앞으로는 매주 {0}점씩 맡기고, 당신 몫은 {1}%로 하죠."
+K|kai.consign.phase2.2,"그럼 물량을 늘리죠. 앞으로 매주 {0}개씩 맡길게요. 3일 안에 팔리면 제 수수료는 {1}%, 더 늦으면 {2}%예요."
 K|kai.consign.sold,물건 {0}점이 판매돼 총매출은 {1}크레딧입니다. 제 몫 {2}%는 {3}크레딧이군요.
 K|kai.consign.none_sold,이번 주에는 한 점도 팔리지 않았군요.
 K|kai.consign.missing,물건 {0}점이 점포에서 사라졌습니다. 정가로 계산하면 {1}크레딧이니 제 몫은 {2}크레딧입니다.
-K|kai.consign.recalled,오늘 아침 팔리지 않은 물건 {0}점을 사람을 보내 회수했습니다.
+K|kai.consign.recalled,팔리지 않은 물건 {0}개는 제가 회수할게요.
 K|kai.consign.owed,모두 합쳐 {0}크레딧입니다. 지금 받겠습니다.
-K|kai.consign.new,새 물건 {0}점을 가져왔습니다. 조건은 그대로입니다.
+K|kai.consign.new,새 물건 {0}개와 보증금 {1}. 조건은 전과 같아요.
 K|kai.consign.debt,카이에게 아직 {0}크레딧을 빚졌습니다. 다음 정산으로 이월됩니다.
 K|kai.consign.full,점포에 공간이 부족해 카이는 위탁 판매 물건 {0}점만 남겨 놓았습니다.
 K|kai.consign.tip,카이의 위탁 판매 물건입니다. 판매 시 카이가 수익의 {0}%를 가져가며 다음 방문 때 정산합니다.
@@ -1966,7 +1966,7 @@ K|ul_dialog_upper_lower_visitor_1,"어이, 점주! 난 여기서 몇 층 위에 
 K|ul_dialog_upper_hedonist_greeting_1,이 가게 찾느라 산책로를 반이나 돌아왔군. 빨리 끝내자고.
 K|ul_dialog_upper_lower_visitor_luxury_1,오늘은 참 따분하네. 쇼핑이라도 해야겠어.
 K|ul_dialog_minor_ul_visitor_2,"평소에 전당포에는 잘 안 오는데,"
-K|ul_dialog_minor_ul_visitor_3,여기서는 하층 구역 물건도 구할 수 있다고 들었어요!
+K|ul_dialog_minor_ul_visitor_3,그런데 이 가게에는 하층 구역에서 올라온 물건이 많다고 들었어요!
 K|ul_dialog_minor_ul_visitor_4,솔직히 아래쪽 물건들은 참 신기하네요.
 K|ul_dialog_minor_ul_visitor_8,하층 구역에서 온 물건이면 뭐든 좋아요.
 K|ul_dialog_minor_ul_visitor_9,"직접 만든 물건이나 가공식품, 구식 무기 같은 것들요."
@@ -1975,7 +1975,7 @@ K|ul_dialog_tourist_greet_5,다들 여기가 터무니없이 비싸다고 하더
 K|ul_dialog_tourist_deal_2,이 근처에서 재미 좀 볼 수 있다고 들었는데요?
 K|ul_dialog_tourist_weapon_greet_2,"이쪽 가게들은 물건값이 엄청나다던데, 전 오히려 매력적인 것 같아요."
 K|ul_dialog_tourist_weapon_greet_3,오늘은 정거장에서 가장 부유한 구역을 구경하고 있어요. 문화적인 분위기가 물씬 풍기네요!
-K|test_hotkey_update,"테스트(최근 업데이트): 심장 2개, 신장 1개, 냉장고, 검은 조명, 3D 장기 출력기, 바이오 잉크 6개, 자체 충전 배터리와 5,000크레딧을 받습니다. (카이에게서 장기 판매 허가증을 구매하세요.) 오늘 혁명군 야전 의무병과 부유한 환자가 방문하며, 허가증이 있으면 장기 은행 담당자와 사립 병원도 방문합니다."
+K|test_hotkey_update,"테스트(최근 업데이트): 《해부의 기초》, 《가게 운영 수칙》, 그림이 있는 단골손님 명부를 지급합니다. 카이가 오늘 정산과 납품을 위해 방문하며, 명부가 없으면 생성하고 오늘 단골손님 한 명이 방문합니다. 크레딧 +5,000. 예약 주문을 시험하려면 Ctrl+F12로 가게 매입 이후 단계를 해금하세요."
 K|corpse_name_fresh,"{0} (신선도 {1}%)"
 K|battle.found_corpse_old,"며칠째 방치된 시신 한 구를 발견했다. (신선도 {0}%) 이곳을 떠날 때 가게로 끌고 간다."
 K|battle.found_corpse_rotten,"시신 한 구를 발견했지만 이미 부패했다. 채취할 만한 것이 없다."
