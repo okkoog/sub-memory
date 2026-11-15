@@ -1,4 +1,4 @@
-name: Build CSV-per-mod translation probe
+name: Build expanded CSV item and PaperUI testpack
 
 on:
   push:
@@ -27,48 +27,82 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
-      - name: Run unit tests with stub game APIs
+      - name: Run isolated translation-engine tests
         run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
-      - name: Compile production DLL against game assemblies
+      - name: Compile engine with actual game references
         run: |
           dotnet build probably-stolen/experiments/post-item-translation-probe/source/PostItemTranslationProbe.csproj \
             -c Release -p:GameManaged="$GITHUB_WORKSPACE/probably-stolen/Managed"
-      - name: Package DLL, manifest and every per-mod CSV
+      - name: Compile optional document fixture with actual game references
+        run: |
+          dotnet build probably-stolen/experiments/post-item-translation-probe/fixture/ProbePaperFixture/source/ProbePaperFixture.csproj \
+            -c Release -p:GameManaged="$GITHUB_WORKSPACE/probably-stolen/Managed"
+      - name: Check CSV coverage against optional fixture book
+        run: |
+          python3 - <<'PY'
+          import csv, json, pathlib
+          base=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
+          trans=base/"mod/PostItemTranslationProbe/Translations"
+          counts={}
+          for f in sorted(trans.glob("*.csv")):
+              with f.open(encoding="utf-8-sig",newline="") as handle:
+                  rows=list(csv.DictReader(handle))
+              assert all(tuple(r)==('Type','Target','Field','Original','Korean') for r in rows)
+              assert all(r['Original'] and r['Korean'] for r in rows)
+              assert len(rows)==len(set((r['Type'],r['Target'],r['Field']) for r in rows))
+              counts[f.stem]=len(rows)
+          assert counts=={'lewd_meme':19,'lewd_meme_remake':17,'probe.paper_fixture':4},counts
+          paper=json.loads((base/"fixture/ProbePaperFixture/mod/Books/translation_probe.json").read_text(encoding="utf-8"))
+          txt=[(e['id'],e['text']) for e in paper.get('chrome',[]) if 'text' in e]
+          for page in paper['pages']:
+              txt += [(e['id'],e['text']) for e in page.get('elements',[]) if 'text' in e]
+          txt=set(txt)
+          with (trans/"probe.paper_fixture.csv").open(encoding="utf-8-sig",newline="") as handle:
+              for r in csv.DictReader(handle):
+                  assert r["Type"]=="Paper" and r["Target"]==paper["id"]
+                  assert (r["Field"],r["Original"]) in txt,(r,txt)
+          print("CSV verified:",counts,"paper elements:",len(txt))
+          PY
+      - name: Package both independent mods and README
         run: |
           python3 - <<'PY'
           import pathlib, zipfile
           base=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
-          source=base/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll"
-          assert source.is_file(), "Production DLL missing"
-          package=base/"dist/PostItemTranslationProbe-0.3.0.zip"
-          package.parent.mkdir(parents=True, exist_ok=True)
-          mapping={
-             "PostItemTranslationProbe/PostItemTranslationProbe.dll":source,
-             "PostItemTranslationProbe/manifest.xml":base/"mod/PostItemTranslationProbe/manifest.xml",
-             "README.ko.md":base/"README.ko.md",
+          engine=base/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll"
+          fixture=base/"fixture/ProbePaperFixture/source/bin/Release/netstandard2.1/ProbePaperFixture.dll"
+          assert engine.is_file() and fixture.is_file()
+          out=base/"dist/PostItemTranslationProbe-expanded-tests-20261115.zip"
+          out.parent.mkdir(parents=True,exist_ok=True)
+          pairs={
+            "PostItemTranslationProbe/PostItemTranslationProbe.dll": engine,
+            "PostItemTranslationProbe/manifest.xml":base/"mod/PostItemTranslationProbe/manifest.xml",
+            "ProbePaperFixture/ProbePaperFixture.dll":fixture,
+            "ProbePaperFixture/manifest.xml":base/"fixture/ProbePaperFixture/mod/manifest.xml",
+            "ProbePaperFixture/Books/translation_probe.json":base/"fixture/ProbePaperFixture/mod/Books/translation_probe.json",
+            "README.ko.md":base/"README.ko.md"
           }
-          translation_dir=base/"mod/PostItemTranslationProbe/Translations"
-          for path in sorted(translation_dir.glob("*.csv")):
-              mapping["PostItemTranslationProbe/Translations/"+path.name]=path
-          assert len(mapping)>3, "No per-mod translation CSV files"
-          with zipfile.ZipFile(package,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-              for name,path in mapping.items():
+          for f in sorted((base/"mod/PostItemTranslationProbe/Translations").glob("*.csv")):
+              pairs["PostItemTranslationProbe/Translations/"+f.name]=f
+          assert len(pairs)==9
+          with zipfile.ZipFile(out,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for name,path in pairs.items():
+                  assert path.exists(),name
                   z.write(path,name)
                   print(name,path.stat().st_size)
-          assert zipfile.ZipFile(package).testzip() is None
-          print("READY",package,package.stat().st_size)
+          assert zipfile.ZipFile(out).testzip() is None
+          print("READY",out,out.stat().st_size)
           PY
-      - name: Upload ZIP artifact
+      - name: Upload testpack artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PostItemTranslationProbe-0.3.0
-          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.3.0.zip
+          name: PostItemTranslationProbe-expanded-tests
+          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-expanded-tests-20261115.zip
           if-no-files-found: error
-      - name: Save ZIP on experiment branch only
+      - name: Save completed testpack on experiment branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.3.0.zip
+          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-expanded-tests-20261115.zip
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Build per-mod CSV translation probe v0.3.0 [skip ci]"
+          git commit -m "Build expanded multi-mod item and PaperUI testpack [skip ci]"
           git push origin HEAD:"$GITHUB_REF_NAME"
