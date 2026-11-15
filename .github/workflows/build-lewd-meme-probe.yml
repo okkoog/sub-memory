@@ -1,0 +1,91 @@
+name: Build original lewd_meme focused translation probe
+
+on:
+  push:
+    branches:
+      - experiment/lewd-meme-full-20261115
+    paths:
+      - "probably-stolen/experiments/post-item-translation-probe/**"
+      - ".github/workflows/build-lewd-meme-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/experiments/post-item-translation-probe
+            probably-stolen/Managed
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Verify focused CSV
+        run: |
+          python3 - <<'PY'
+          import csv,pathlib
+          root=pathlib.Path("probably-stolen/experiments/post-item-translation-probe/mod/PostItemTranslationProbe/Translations")
+          files=sorted(root.glob("*.csv"))
+          assert len(files)==1 and files[0].name=="lewd_meme.csv",[str(x) for x in files]
+          with files[0].open("r",encoding="utf-8-sig",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==34,len(rows)
+          assert len({r["Target"] for r in rows})==14
+          assert sum(r["Field"]=="name" for r in rows)==13
+          assert sum(r["Field"]=="shortDescription" for r in rows)==11
+          assert sum(r["Field"]=="flavorText" for r in rows)==10
+          assert len({(r["Type"],r["Target"],r["Field"]) for r in rows})==len(rows)
+          assert all(tuple(r)==("Type","Target","Field","Original","Korean") for r in rows)
+          assert all(r["Type"]=="Item" and r["Original"] and r["Korean"] for r in rows)
+          print("SUCCESS: original lewd_meme only; 14 items; 34 static strings")
+          PY
+      - name: Run stub regression tests
+        run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
+      - name: Compile against game assemblies
+        run: |
+          dotnet build probably-stolen/experiments/post-item-translation-probe/source/PostItemTranslationProbe.csproj \
+            -c Release -p:GameManaged="$GITHUB_WORKSPACE/probably-stolen/Managed"
+      - name: Build ZIP
+        run: |
+          python3 - <<'PY'
+          import pathlib,zipfile
+          root=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
+          out=root/"dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip"
+          out.parent.mkdir(parents=True,exist_ok=True)
+          mapping={
+            "PostItemTranslationProbe/PostItemTranslationProbe.dll":root/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll",
+            "PostItemTranslationProbe/manifest.xml":root/"mod/PostItemTranslationProbe/manifest.xml",
+            "PostItemTranslationProbe/Translations/lewd_meme.csv":root/"mod/PostItemTranslationProbe/Translations/lewd_meme.csv",
+            "README.ko.md":root/"README.ko.md",
+          }
+          with zipfile.ZipFile(out,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for path,p in mapping.items():
+                  assert p.is_file(),str(p)
+                  z.write(p,path)
+                  print(path,p.stat().st_size)
+          with zipfile.ZipFile(out) as z:
+              assert z.testzip() is None
+              assert len(z.namelist())==4
+          print("READY",out,out.stat().st_size)
+          PY
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PostItemTranslationProbe-lewd_meme-v0.3.1
+          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip
+          if-no-files-found: error
+      - name: Save ZIP on experiment branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Build original lewd_meme-only translation probe [skip ci]"
+          git push origin HEAD:"$GITHUB_REF_NAME"
