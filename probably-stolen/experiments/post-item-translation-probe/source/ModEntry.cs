@@ -39,7 +39,7 @@ namespace PostItemTranslationProbe
                 var document = Translation.Parse(ModHelper.ReadModFileText(Id, "Translations/items.csv"));
                 active.Clear();
                 foreach (var target in document.Items)
-                    if (ModLoader.IsModEnabled(target.ModId) && ModHelper.IsModRunning(target.ModId))
+                    if (ModLoader.IsModEnabled(target.ModId))
                         active.Add(target);
                 if (active.Count == 0) return;
                 armed = true;
@@ -69,7 +69,7 @@ namespace PostItemTranslationProbe
             {
                 foreach (var target in active)
                 {
-                    if (!ModHelper.IsModRunning(target.ModId)) continue;
+                    if (!ModLoader.IsModEnabled(target.ModId)) continue;
                     if (patches.TryGetValue(target.ItemId, out var patch))
                     {
                         if (DirectoryMaster.GetFactory<GameItem>(target.ItemId) != patch.Wrapper)
