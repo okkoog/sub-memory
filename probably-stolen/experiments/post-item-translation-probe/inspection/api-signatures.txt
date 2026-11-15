@@ -1,0 +1,1060 @@
+TYPE BookHelper
+## BookHelper
+  F String CURRENT_BOOK_PAGE
+  F String BOOK_ID
+  F String BOOK_TAG
+  M Void InitBookItem(GameItem, String)
+  M Boolean CanFlipLeft(GameItem)
+  M Boolean CanFlipRight(GameItem)
+  M Void InitGuide(GameItem)
+  M Void InitPaperGuide(GameItem)
+  M Void .ctor()
+TYPE PhoneDialogList
+TYPE StoreClientDialogList
+TYPE StoreClientListInformationDialog
+TYPE DialogBubbleList
+TYPE DialogChoiceBubble
+TYPE StoreBookData
+## StoreBookData
+  F String title
+  F String[] subtitle
+  F String[] body
+  F Int32 pageCount
+  F Dictionary`2<String,StoreBookData> bookDatas
+  F String WATER_BOOK
+  F String INGOT_BOOK
+  M Void InitBookDatas()
+  M StoreBookData GetBookById(String)
+  M StoreBookData CreateWaterBook()
+  M Void CheckBookCreation(StoreBookData)
+  M Void .ctor()
+TYPE NewsPaper
+## NewsPaper
+  M String GetTooltip()
+  M Boolean IsTooltipEnabled()
+  M Void OnClick()
+  M Void Start()
+  M Void Update()
+  M Void .ctor()
+TYPE PaperPanelFocusStamp
+## PaperPanelFocusStamp
+  F Int64 stamp
+  M Void OnEnable()
+  M Void Bump()
+  M Int64 GetStamp(GameObject)
+  M Void BumpPanel(GameObject)
+  M Void .ctor()
+TYPE PaperAssetCatalog
+## PaperAssetCatalog
+  F String RESOURCE_PATH
+  F List`1<Entry> entries
+  F Dictionary`2<String,Entry> byKey
+  F Dictionary`2<Sprite,Entry> bySprite
+  M Void ResetLookup()
+  M Void BuildLookup()
+  M Entry Find(String)
+  M Entry FindBySprite(Sprite)
+  M IEnumerable`1<Entry> OfKind(Kind)
+  M Void .ctor()
+TYPE PaperAssets
+## PaperAssets
+  P PaperAssetCatalog Catalog
+  F String SPRITE_CLOSE
+  F String SPRITE_ZOOM
+  F String SPRITE_FLIP_LEFT
+  F String SPRITE_FLIP_RIGHT
+  F String SPRITE_TEXT_BUTTON
+  F String SPRITE_GUIDE_LOGO
+  F PaperAssetCatalog catalog
+  F Boolean catalogLoaded
+  F Dictionary`2<String,Sprite> slicedCache
+  F HashSet`1<String> warnedKeys
+  F String ITEM_ATLAS_ROOT
+  F List`1<ValueTuple`3<String,Sprite,String>> itemAtlasSprites
+  M Entry FindInCatalog(String)
+  M Void ReloadCatalog()
+  M Boolean TryResolve(String, String, Sprite&)
+  M Sprite Resolve(String, String, Boolean)
+  M Void WarnOnce(String, String)
+  M Sprite FromItemAtlas(String)
+  M List`1<ValueTuple`3<String,Sprite,String>> ItemAtlasSprites()
+  M Sprite FromMod(String, String)
+  M Sprite ResolveBackground(PaperBookData, String)
+  M String KeyOf(Sprite)
+  M Vector2 DisplaySizeOf(String)
+  M List`1<ValueTuple`3<String,Sprite,String>> ListAvailable(String, Boolean)
+  M Void .cctor()
+TYPE PaperBookData
+## PaperBookData
+  F String id
+  F String title
+  F String background
+  F Single width
+  F Single height
+  F Single designWidth
+  F Single designHeight
+  F Single[] border
+  F Single posX
+  F Single posY
+  F Boolean sounds
+  F Boolean draggable
+  F Boolean zoomable
+  F List`1<PaperElementData> chrome
+  F List`1<PaperTemplateData> templates
+  F List`1<PaperPageData> pages
+  F PaperItemData item
+  F List`1<String> locales
+  F IDictionary`2<String,JToken> Extra
+  M PaperBookData Clone()
+  M PaperPageData GetPage(Int32)
+  M PaperTemplateData GetTemplate(String)
+  M IEnumerable`1<PaperElementData> AllElements()
+  M Void .ctor()
+TYPE PaperPageData
+## PaperPageData
+  F String name
+  F String template
+  F Dictionary`2<String,String> slots
+  F List`1<PaperElementData> elements
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperTemplateData
+## PaperTemplateData
+  F String id
+  F List`1<PaperElementData> elements
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperElementType
+## PaperElementType
+  F String TEXT
+  F String IMAGE
+  F String BUTTON
+  F String FLOW
+  F String LINE
+  F String[] All
+  M Void .cctor()
+TYPE PaperLineArrow
+## PaperLineArrow
+  F String NONE
+  F String END
+  F String START
+  F String BOTH
+  F String[] All
+  M Void .cctor()
+TYPE PaperAction
+## PaperAction
+  F String CLOSE
+  F String ZOOM
+  F String FLIP_LEFT
+  F String FLIP_RIGHT
+  F String PAGE_INDICATOR
+  F String[] Chrome
+  M Boolean IsChrome(String)
+  M Void .cctor()
+TYPE PaperImageFit
+## PaperImageFit
+  F String STRETCH
+  F String FIT
+  F String NATIVE
+  F String[] All
+  M Void .cctor()
+TYPE PaperElementData
+## PaperElementData
+  P Rect Bounds
+  P Boolean IsText
+  P Boolean IsImage
+  P Boolean IsButton
+  P Boolean IsFlow
+  P Boolean IsLine
+  P Boolean HasArrow
+  P Boolean IsChromeAction
+  P Boolean IsIconButton
+  P String DisplayName
+  F String type
+  F String id
+  F Single x
+  F Single y
+  F Single w
+  F Single h
+  F String text
+  F String loc
+  F Dictionary`2<String,String> translations
+  F String style
+  F Single fontSize
+  F String align
+  F String valign
+  F String color
+  F Boolean wrap
+  F Boolean autoHeight
+  F String preview
+  F String sprite
+  F String fit
+  F Single scale
+  F Boolean silhouette
+  F String fill
+  F Single x2
+  F Single y2
+  F Single thickness
+  F String arrow
+  F Single arrowSize
+  F String action
+  F String hoverSprite
+  F String slot
+  F String flow
+  F Single spacing
+  F Boolean visible
+  F Boolean locked
+  F Boolean raycast
+  F IDictionary`2<String,JToken> Extra
+  M PaperElementData Clone()
+  M Rect LineBounds()
+  M Void Translate(Single, Single)
+  M Void .ctor()
+TYPE PaperItemData
+## PaperItemData
+  F String id
+  F String name
+  F String nameLoc
+  F String description
+  F String descriptionLoc
+  F String sprite
+  F Int64 value
+  F Boolean important
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperJson
+## PaperJson
+  F JsonSerializerSettings Settings
+  M String Serialize(Object)
+  M !!0 Deserialize(String)
+  M !!0 Clone(!!0)
+  M PaperBookData ParseBook(String, String)
+  M Void Normalize(PaperBookData)
+  M Void .cctor()
+TYPE PaperBookRegistry
+## PaperBookRegistry
+  P IEnumerable`1<Entry> All
+  P IEnumerable`1<Entry> Loaded
+  F String BOOKS_FOLDER
+  F Dictionary`2<String,Entry> entries
+  F List`1<String> extraBookRoots
+  F Boolean hooked
+  F ModItemDirectory liveDirectory
+  F Action Changed
+  M String FullId(String, String)
+  M IEnumerable`1<Entry> OfMod(String)
+  M Entry Get(String)
+  M Entry Find(String, String)
+  M Entry Resolve(String)
+  M String BooksFolder(LoadedMod)
+  M Void LoadMod(LoadedMod)
+  M Void AllowBookRoot(String)
+  M Int32 LoadFolder(String, String)
+  M Entry LoadFile(String, String)
+  M Entry Register(String, PaperBookData, String)
+  M Boolean Unregister(String)
+  M Int32 RemoveMod(String)
+  M PaperUI Open(String)
+  M PaperUI Open(Entry)
+  M Void FireOpened(Entry, PaperUI)
+  M PaperUI GetOpen(String)
+  M Boolean IsOpen(String)
+  M Void Close(String)
+  M Void CloseAll()
+  M Void OnOpened(String, Action`1<PaperUI>)
+  M String SplitMod(String)
+  M String SplitBook(String)
+  M Boolean IsSafeToken(String)
+  M Boolean IsAllowedBookPath(String, String)
+  M Boolean IsUnder(String, String)
+  M Boolean Save(Entry)
+  M Boolean HasChangedOnDisk(Entry)
+  M Boolean ReloadFromDisk(Entry, Boolean)
+  M Void RefreshItem(Entry)
+  M Int32 ReloadAll()
+  M Boolean PathsEqual(String, String)
+  M Void EnsureHooked()
+  M Void OnItemDirectoryInit(ModItemDirectory)
+  M Void RegisterItemNow(Entry)
+  M Void UnregisterItem(Entry)
+  M ModItemDirectory LiveDirectory()
+  M GameItem CreateItem(Entry)
+  M Void ApplyItemSprite(GameItem, String, String)
+  M GameItem SpawnItem(String)
+  M Void .cctor()
+TYPE PaperDebugCommands
+## PaperDebugCommands
+  M String List()
+  M String Open(String)
+  M String Close(String)
+  M String Reload()
+  M String Edit(String)
+  M String Item(String)
+TYPE PaperEditor
+## PaperEditor
+  P PaperEditor Instance
+  P Entry Entry
+  P PaperBookData Data
+  P PaperUI Ui
+  P PaperEditorOverlay Overlay
+  P PaperEditorHistory History
+  P String EditingTemplate
+  P String Status
+  P Boolean IsEditing
+  P Boolean Dirty
+  P PaperPageData CurrentPageData
+  P PaperTemplateData EditingTemplateData
+  P Boolean CanPaste
+  P Boolean Shift
+  P Boolean Ctrl
+  P Boolean Alt
+  F PaperEditor <Instance>k__BackingField
+  F Entry <Entry>k__BackingField
+  F PaperUI <Ui>k__BackingField
+  F PaperEditorOverlay <Overlay>k__BackingField
+  F PaperEditorHistory <History>k__BackingField
+  F List`1<PaperElementData> Selection
+  F String <EditingTemplate>k__BackingField
+  F Int32 ActiveTab
+  F Boolean snapToGrid
+  F Boolean snapToElements
+  F Boolean showRulers
+  F Boolean showIds
+  F Single gridSize
+  F Single editorZoom
+  F Boolean inspectMode
+  F String <Status>k__BackingField
+  F Action Changed
+  F List`1<PaperElementData> clipboard
+  F Single AUTOSAVE_DELAY
+  F Single WATCH_INTERVAL
+  F Single SNAP_THRESHOLD
+  F Single MIN_SIZE
+  F Boolean dirty
+  F Single dirtyTimer
+  F Single watchTimer
+  F PaperBookData knownData
+  F Boolean applyingOwnData
+  F Locale originalLocale
+  F DragMode drag
+  F Vector2 dragStart
+  F Vector3 dragStartScreen
+  F Boolean dragMoved
+  F Dictionary`2<PaperElementData,Rect> dragOrigins
+  F Dictionary`2<PaperElementData,Vector2> dragOriginEnds
+  F Rect dragOriginBounds
+  F Handle dragHandle
+  F Vector2 panelStart
+  F List`1<RaycastResult> raycastResults
+  F Boolean reshowNextUpdate
+  F Boolean stopNextUpdate
+  F Boolean focused
+  F DateTime lastFailedReload
+  M PaperEditor Ensure()
+  M Void ToggleWindow()
+  M Void OpenWindow()
+  M Void Awake()
+  M Void OnDestroy()
+  M Void SetStatus(String)
+  M Void RaiseChanged()
+  M Void Edit(Entry)
+  M Void StopEditing()
+  M Void OnUiRebuilt(PaperUI)
+  M Void OnUiClosed(PaperUI)
+  M Void OnRegistryChanged()
+  M Void ValidateView()
+  M Entry NewBook(String, String, String, String, String)
+  M Void Save()
+  M Void ReloadFromDisk()
+  M List`1<PaperElementData> EditableElements()
+  M Boolean IsChrome(PaperElementData)
+  M Boolean IsTemplateElementOnPage(PaperElementData)
+  M Boolean IsEditable(PaperElementData)
+  M Boolean IsBuiltInTemplate(String)
+  M String KeyOf(PaperElementData)
+  M PaperElementData FromKey(String)
+  M List`1<String> Keys()
+  M Void RestoreSelection(List`1<String>)
+  M Boolean IsSelected(PaperElementData)
+  M Void Select(PaperElementData, Boolean)
+  M Void SelectMany(IEnumerable`1<PaperElementData>, Boolean)
+  M Void ToggleSelect(PaperElementData)
+  M Void ClearSelection()
+  M Void SelectAll()
+  M Rect BoundsOf(PaperElementData)
+  M Rect SelectionBounds()
+  M List`1<PaperElementData> MovableSelection()
+  M Boolean CanMoveSelection()
+  M Boolean CanResizeSelection()
+  M PaperElementData HitElement(Vector2)
+  M Void Commit(String, Boolean)
+  M Void PreviewText(PaperElementData, String)
+  M Void ApplyData(PaperBookData, List`1<String>, String)
+  M Void Undo()
+  M Void Redo()
+  M PaperElementData AddElement(PaperElementData, Boolean, Boolean)
+  M String UniqueId(String, PaperElementData)
+  M List`1<PaperElementData> CloneSet(IEnumerable`1<PaperElementData>, List`1<PaperElementData>, Single, Single)
+  M Void DeleteSelection()
+  M Void Copy()
+  M Void Cut()
+  M Void Paste()
+  M Void Duplicate()
+  M List`1<PaperElementData> ContainerOf(PaperElementData)
+  M Void Nudge(Single, Single)
+  M Void SetRect(PaperElementData, Single, Single, Single, Single)
+  M Void Align(AlignMode)
+  M Void Distribute(Boolean)
+  M Void SetBoxX(PaperElementData, Rect, Single)
+  M Void SetBoxY(PaperElementData, Rect, Single)
+  M Void MatchSize(Boolean, Boolean)
+  M Void ZOrder(Int32)
+  M Boolean IsOwned(PaperElementData)
+  M Void SetLocked(Boolean)
+  M Void SetVisible(Boolean)
+  M Void RenameElement(PaperElementData, String)
+  M Void SetFlow(String)
+  M Void GoToPage(Int32)
+  M Int32 PaperCount()
+  M Void AddPage(String)
+  M Void DuplicatePage()
+  M Void DeletePage()
+  M Void MovePage(Int32)
+  M Void RenamePage(String)
+  M Void SetPageTemplate(String)
+  M Void SetSlot(String, String)
+  M List`1<String> CurrentSlots()
+  M List`1<String> TemplateIds(Boolean)
+  M Void EditTemplate(String)
+  M Void StopEditingTemplate(Boolean)
+  M Void CreateTemplateFromSelection(String)
+  M Void DeleteTemplate(String)
+  M Void DetachTemplate()
+  M Void SetTitle(String)
+  M Void SetBackground(String)
+  M Void SetDisplaySize(Single, Single)
+  M Void SetDesignSize(Single, Single)
+  M Void SetBorder(Single, Single, Single, Single)
+  M Void SetFlags(Boolean, Boolean, Boolean)
+  M Void ResetChrome(Boolean, Boolean, Boolean, Boolean)
+  M Void SetItem(PaperItemData)
+  M Void SetPanelPosition(Single, Single)
+  M Void SetEditorZoom(Single)
+  M Void ApplyEditorZoom()
+  M List`1<Locale> Locales()
+  M Void SetPreviewLocale(Locale)
+  M IEnumerator PreviewLocaleRoutine(Locale)
+  M Void RestoreLocale()
+  M Void Update()
+  M Vector2 MouseDesign()
+  M Boolean PointerOverBook()
+  M Void UpdateReadout(Vector2, Boolean)
+  M Void HandleMouse(Vector2, Boolean)
+  M Rect RectFrom(Vector2, Vector2)
+  M Void CaptureOrigins()
+  M Void ApplyMove(Vector2, Boolean)
+  M Void ApplyResize(Vector2, Boolean)
+  M Void LiveRect(PaperElementData)
+  M Single Round(Single)
+  M List`1<Single> SnapTargets(Boolean)
+  M Single SnapValue(Single, Boolean, Boolean&)
+  M Vector2 SnapOffset(Rect, Nullable`1<Single>&, Nullable`1<Single>&)
+  M Void HandleKeys()
+  M Void .ctor()
+  M Void .cctor()
+  M Boolean <ValidateView>b__83_0(PaperTemplateData)
+  M Boolean <EditableElements>b__91_0(PaperTemplateData)
+  M Boolean <MovableSelection>b__108_0(PaperElementData)
+  M Boolean <DeleteSelection>b__120_0(PaperElementData)
+  M Boolean <Duplicate>b__126_0(PaperElementData)
+  M Boolean <ZOrder>b__136_0(PaperElementData)
+TYPE PaperEditorFiles
+## PaperEditorFiles
+  M String SanitizeId(String)
+  M List`1<LoadedMod> LocalMods()
+  M Void CopyJson(PaperEditor)
+  M Void CopyCSharp(PaperEditor)
+  M Void OpenFolder(PaperEditor)
+  M Void OpenFile(PaperEditor)
+  M String GenerateCSharp(PaperBookData, String)
+  M Void AppendElement(StringBuilder, PaperElementData)
+  M String Quote(String)
+  M String F(Single)
+  M String B(Boolean)
+  M Void Screenshot(PaperEditor)
+  M IEnumerator ScreenshotRoutine(PaperEditor)
+TYPE PaperEditorHistory
+## PaperEditorHistory
+  P Boolean CanUndo
+  P Boolean CanRedo
+  P String UndoLabel
+  P String RedoLabel
+  P Int32 UndoCount
+  F Int32 LIMIT
+  F List`1<Snapshot> undo
+  F List`1<Snapshot> redo
+  F Snapshot current
+  M Void Reset(PaperBookData, List`1<String>, String)
+  M Void Push(PaperBookData, List`1<String>, String)
+  M Snapshot Undo()
+  M Snapshot Redo()
+  M Snapshot Make(PaperBookData, List`1<String>, String)
+  M Void .ctor()
+TYPE PaperEditorInspect
+## PaperEditorInspect
+  P Info Hovered
+  P Info Pinned
+  F Info <Hovered>k__BackingField
+  F Info <Pinned>k__BackingField
+  F List`1<RaycastResult> results
+  M Void Clear()
+  M Void Update(PaperEditor)
+  M Info Describe(GameObject, PaperEditor)
+  M String Path(Transform)
+  M Void AddLikeThis(PaperEditor)
+  M Void .cctor()
+TYPE PaperEditorOverlay
+## PaperEditorOverlay
+  P Boolean Visible
+  P Single Px
+  F Color BOX_PAGE
+  F Color BOX_CHROME
+  F Color BOX_TEMPLATE
+  F Color BOX_LOCKED
+  F Color BOX_FLOW
+  F Color BOX_OVERFLOW
+  F Color SELECTION
+  F Color HANDLE_FILL
+  F Color MARQUEE
+  F Color GUIDE
+  F Color RULER
+  F Color LABEL
+  F Color LABEL_PLATE
+  F PaperEditor editor
+  F PaperUI ui
+  F GameObject root
+  F RectTransform rootRect
+  F RectTransform boxLayer
+  F RectTransform topLayer
+  F Dictionary`2<PaperElementData,Box> boxes
+  F RectTransform[] selectionEdges
+  F RectTransform[] handles
+  F RectTransform marquee
+  F RectTransform guideX
+  F RectTransform guideY
+  F TextMeshProUGUI readout
+  F RectTransform readoutRect
+  F List`1<GameObject> rulerObjects
+  F TMP_FontAsset font
+  M Void .ctor(PaperEditor)
+  M Void Attach(PaperUI)
+  M Void Destroy()
+  M RectTransform NewLayer(String)
+  M Void Stretch(RectTransform, RectTransform)
+  M RectTransform NewQuad(RectTransform, String, Color)
+  M TextMeshProUGUI NewLabel(RectTransform, String, RectTransform&)
+  M Void Refresh()
+  M Box MakeBox(Binding)
+  M Void UpdateLive()
+  M Color ColorFor(PaperElementData)
+  M Vector2 HandleCenter(Rect, Handle)
+  M Boolean HitHandle(Vector2, Handle&)
+  M Void Outline(RectTransform[], Rect, Single)
+  M Void ShowMarquee(Rect)
+  M Void HideMarquee()
+  M Void ShowGuides(Nullable`1<Single>, Nullable`1<Single>)
+  M Void HideGuides()
+  M Void SetReadout(String)
+  M Void PositionReadout()
+  M Void RefreshRulers()
+  M Single PickRulerStep(Single)
+  M Void .cctor()
+TYPE PaperEditorSpritePicker
+## PaperEditorSpritePicker
+  F String WINDOW_ID
+  F String ALL
+  F Int32 COLUMNS
+  F Single CELL
+  F Single LABEL_HEIGHT
+  F String filter
+  F String group
+  F Action`1<String> onPick
+  F String modId
+  F String title
+  F Func`2<String,Boolean> groupFilter
+  F Boolean includeItemAtlases
+  F Int32 MAX_SHOWN
+  M Void Open(String, String, Action`1<String>, Func`2<String,Boolean>, Boolean)
+  M Void Close()
+  M Void Build()
+  M Void FitSprite(CustomUIElement, Sprite)
+  M String Shorten(String)
+  M Void Pick(String)
+  M Void .cctor()
+TYPE PaperEditorValidation
+## PaperEditorValidation
+  M List`1<Issue> Run(PaperEditor)
+  M Void CheckElements(List`1<Issue>, List`1<PaperElementData>, PaperEditor, String, Vector2, Int32, String, PaperTemplateData)
+TYPE PaperEditorWindow
+## PaperEditorWindow
+  P Boolean IsOpen
+  P Func`2<String,Boolean> BackgroundGroups
+  F String WINDOW_ID
+  F Single WIDTH
+  F Single HEIGHT
+  F Single SCROLL_HEIGHT
+  F String[] TABS
+  F PaperEditor editor
+  F PaperEditor subscribedEditor
+  F Boolean pendingRebuild
+  F Boolean rebuilding
+  F CustomUIWindow window
+  F Int32 newModIndex
+  F String newId
+  F String newTitle
+  F Int32 newStarterIndex
+  F String newBackground
+  F String newTemplateId
+  F List`1<Issue> lastIssues
+  M Void Open(PaperEditor)
+  M Void Hide()
+  M Void Close()
+  M Void SetVisible(Boolean)
+  M Boolean Contains(GameObject)
+  M Boolean PointerOverWindow()
+  M Void UpdateStatus(String)
+  M Void ClearIssues()
+  M Void RequestRebuild()
+  M Void Tick()
+  M Void Build()
+  M String F(Single)
+  M Boolean TryParse(String, Single&)
+  M Void Header(CustomUIBuilder, String)
+  M Void FloatField(CustomUIBuilder, String, Single, Action`1<Single>, Single)
+  M Void FloatPair(CustomUIBuilder, String, Func`1<Single>, String, Func`1<Single>, Action`2<Single,Single>)
+  M Void TextField(CustomUIBuilder, String, String, Action`1<String>, Action`1<String>, String)
+  M Void ToggleField(CustomUIBuilder, String, Boolean, Action`1<Boolean>)
+  M Void DropdownField(CustomUIBuilder, String, List`1<String>, Int32, Action`1<Int32>)
+  M Void SpriteField(CustomUIBuilder, String, String, Action`1<String>, Func`2<String,Boolean>)
+  M Void BuildBookTab(CustomUIBuilder)
+  M Void BuildPagesTab(CustomUIBuilder)
+  M Void BuildElementsTab(CustomUIBuilder)
+  M Void ElementRow(CustomUIBuilder, PaperElementData, Boolean)
+  M Void BuildInspectorTab(CustomUIBuilder)
+  M Void BuildPaletteTab(CustomUIBuilder)
+  M Void AddText(PaperTextStyle, PaperElementData)
+  M Void BuildToolsTab(CustomUIBuilder)
+  M Void BuildCheckTab(CustomUIBuilder)
+  M Void .cctor()
+TYPE PaperSpriteEffects
+## PaperSpriteEffects
+  F Dictionary`2<ValueTuple`2<Sprite,Color32>,Sprite> silhouettes
+  F Dictionary`2<ValueTuple`2<Sprite,Color32>,Sprite> fills
+  M Sprite FillEnclosed(Sprite, Color)
+  M Sprite CreateSprite(Color32[], Int32, Int32, Sprite, String)
+  M Sprite Silhouette(Sprite, Color)
+  M Color32[] ReadPixels(Sprite, Int32&, Int32&)
+  M Void .cctor()
+  M Void <FillEnclosed>g__Seed|2_0(Int32, Int32, <>c__DisplayClass2_0&)
+TYPE PaperStarters
+## PaperStarters
+  P IReadOnlyList`1<Starter> All
+  F String RESOURCE_FOLDER
+  F String BLANK
+  F List`1<Starter> starters
+  F Dictionary`2<String,PaperTemplateData> builtInTemplates
+  M Starter Get(String)
+  M PaperTemplateData GetBuiltInTemplate(String)
+  M IEnumerable`1<String> BuiltInTemplateIds()
+  M Void Load()
+  M PaperBookData NewBook(String, String, String)
+  M List`1<PaperElementData> DefaultChrome(Vector2, Single, Boolean, Boolean, Boolean, Boolean)
+  M Single Round(Single)
+  M Void .cctor()
+TYPE PaperTextStyle
+## PaperTextStyle
+  P IReadOnlyList`1<PaperTextStyle> All
+  F String HEADER
+  F String TITLE
+  F String SECTION
+  F String BODY
+  F String CAPTION
+  F String LABEL
+  F String SERIF_TITLE
+  F String HANDWRITTEN
+  F String PAGE_NUMBER
+  F String STAMP
+  F String BUTTON
+  F String META_HEADER
+  F String META_BODY
+  F String META_WARNING
+  F String id
+  F FontRole role
+  F Single size
+  F Color color
+  F String description
+  F FontStyles fontStyle
+  F Color INK
+  F Color RED
+  F Color BUTTON_TEXT
+  F Color META_HEADER_TEXT
+  F Color META_BODY_TEXT
+  F Color META_WARNING_TEXT
+  F List`1<PaperTextStyle> all
+  F HashSet`1<String> warned
+  M Void .ctor(String, FontRole, Single, Color, String, FontStyles)
+  M List`1<String> Ids()
+  M PaperTextStyle Get(String)
+  M Boolean Exists(String)
+  M TMP_FontAsset Font()
+  M String GuessFromFont(TMP_FontAsset, Single)
+  M TextAlignmentOptions Alignment(String, String)
+  M Color ParseColor(String, Color)
+  M String ToHex(Color)
+  M Void .cctor()
+TYPE PaperUI
+## PaperUI
+  P String Id
+  P String ModId
+  P PaperBookData Data
+  P GameObject Root
+  P RectTransform Rect
+  P RectTransform Content
+  P Vector2 DesignSize
+  P Vector2 DisplaySize
+  P Single DisplayScale
+  P Int32 CurrentPage
+  P Int32 PageCount
+  P Boolean IsAlive
+  P Boolean IsVisible
+  P Boolean EditorMode
+  P String PreviewTemplate
+  P PaperElementData Last
+  F PaperBookData <Data>k__BackingField
+  M Void .ctor(String, PaperBookData, String)
+  M PaperUI Create(String, String, Single, Single, String)
+  M PaperUI FromData(String, PaperBookData, String)
+  M PaperUI AddPage(String, String)
+  M PaperPageData CurrentAuthoringPage()
+  M PaperUI AddElement(PaperElementData)
+  M PaperUI AddText(Single, Single, Single, Single, String, String, String, String, Single)
+  M PaperUI AddLocalizedText(Single, Single, Single, Single, String, String, String, String, Single)
+  M PaperUI AddTextBelow(String, Single, String, String, Single)
+  M PaperUI AddImage(Single, Single, Single, Single, String, String, String)
+  M PaperUI AddButton(Single, Single, Single, Single, String, Action, String, String)
+  M PaperUI AddIconButton(Single, Single, Single, Single, String, Action, String, String, String)
+  M PaperUI AddFlow(Single, Single, Single, Single, String, Single, String)
+  M PaperUI AddFlowText(String, String, String, String, Single)
+  M PaperUI AddLine(Single, Single, Single, Single, Single, String, String, String)
+  M PaperUI AddSilhouette(Single, Single, Single, Single, String, String, Single, String)
+  M PaperUI SetSlot(String, String)
+  M PaperUI SetChrome(Boolean, Boolean, Boolean, Boolean)
+  M PaperUI SetSize(Single, Single)
+  M PaperUI SetPosition(Single, Single)
+  M PaperUI SetSounds(Boolean)
+  M PaperUI OnAction(String, Action)
+  M PaperUI OnPageShown(Action`2<PaperUI,Int32>)
+  M Void MarkDirty()
+  M Vector2 DesignSizeOrDefault()
+  M PaperUI Show()
+  M Void Hide()
+  M Void Close()
+  M Void Toggle()
+  M PaperUI Apply()
+  M Void Rebuild()
+  M IEnumerator SwitchLocale(Locale)
+  M IEnumerator WaitForLocalization()
+  M Void ReplaceData(PaperBookData)
+  M Void ResetBindings()
+  M Void RefreshPage()
+  M Void NotifyHidden()
+  M Void NotifyDestroyed(Boolean)
+  M Void FlipTo(Int32)
+  M Void FlipLeft()
+  M Void FlipRight()
+  M Void ShowPage(Int32, Boolean)
+  M CustomUIElement Get(String)
+  M Boolean Has(String)
+  M PaperUI SetText(String, String)
+  M PaperUI SetSprite(String, String)
+  M PaperUI SetVisible(String, Boolean)
+  M Binding GetBinding(String)
+  M Binding GetBinding(PaperElementData)
+  M List`1<Binding> VisibleBindings()
+  M Int32 SiblingOrder(Binding)
+  M Boolean IsOverflowing(PaperElementData)
+  M String ResolveText(PaperElementData, PaperPageData)
+  M String ResolveSpriteKey(PaperElementData, PaperPageData)
+  M String DefaultChromeSprite(String)
+  M Void ResolveSizes(Vector2&, Vector2&)
+  M Void Build()
+  M Void StretchToParent(RectTransform, RectTransform)
+  M Void BuildElements(List`1<PaperElementData>, RectTransform, PaperPageData, Dictionary`2<PaperElementData,Binding>)
+  M Void FadeHidden(GameObject)
+  M Void SetRect(RectTransform, Single, Single, Single, Single)
+  M Binding NewBinding(PaperElementData, RectTransform, String)
+  M Binding BuildFlow(PaperElementData, RectTransform)
+  M Void ConfigureFlowChild(Binding, PaperElementData, RectTransform)
+  M Binding BuildText(PaperElementData, RectTransform, PaperPageData)
+  M Binding BuildImage(PaperElementData, RectTransform, PaperPageData)
+  M Void ApplySprite(Image, Sprite, PaperElementData)
+  M Binding BuildLine(PaperElementData, RectTransform)
+  M Image NewBar(Transform, String, Color, Boolean)
+  M Void LayoutLine(Binding)
+  M Void PlaceWing(Transform, Vector2, Vector2, Single, Single, Single)
+  M Void PlaceBar(Transform, Vector2, Vector2, Single, Single)
+  M Void RefreshLine(PaperElementData)
+  M Binding BuildButton(PaperElementData, RectTransform, PaperPageData)
+  M Void HandleAction(String)
+  M Void PlayPickup()
+  M Void PlayDrop()
+  M Void .cctor()
+TYPE PaperUIPanel
+## PaperUIPanel
+  F PaperUI owner
+  F Boolean quitting
+  M Void OnApplicationQuit()
+  M Void OnDisable()
+  M Void OnDestroy()
+  M Void .ctor()
+TYPE DialogSettingUIManager
+TYPE DialoguePhoneUIManager
+TYPE DialogUIManager
+TYPE PaperUIManager
+## PaperUIManager
+  P PaperUIManager Instance
+  F PaperUIManager <Instance>k__BackingField
+  F String JOE_CARD_UI_ID
+  F GameObject paperUIGroup
+  F AudioSource audioSourcePickup
+  F AudioSource audioSourceDrop
+  F GameObject panel
+  F Image panelImage
+  F TextMeshProUGUI title
+  F TextMeshProUGUI body
+  F TextMeshProUGUI signature
+  F Sprite paperBack1
+  F Sprite paperBack2
+  F GameObject contractPanel
+  F GameObject deedPanel
+  F GameObject introPanel
+  F GameObject bookPanel
+  F TextMeshProUGUI bookTitle
+  F TextMeshProUGUI bookSubtitle
+  F TextMeshProUGUI bookBody
+  F TextMeshProUGUI bookPage
+  F Int32 bookCurrentPage
+  F GameItem currentBook
+  F Button leftButton
+  F Button rightButton
+  F GameObject indexGroup
+  F List`1<TextMeshProUGUI> indexElements
+  F GameObject slipPanel
+  F TextMeshProUGUI procurementHeader
+  F TextMeshProUGUI procurementClient
+  F TextMeshProUGUI procurementBody
+  F TextMeshProUGUI procurementDueDate
+  F GameObject generalSlipPanel
+  F TextMeshProUGUI generalSlipTitle
+  F TextMeshProUGUI generalSlipBody
+  F GameObject JoeWildBusinessCard
+  F GameObject cigaretteGuidePanel
+  F GameObject foodStampGuidePanel
+  F GameObject injectorGuidePanel
+  F GameObject wantedPanel
+  F GameObject secCardPanel
+  F GameObject cardBrewer
+  F GameObject cardChem
+  F GameObject cardPharma
+  F GameObject cardMining
+  F GameObject cigaretteColorPanel
+  F GameObject codeBookPanel
+  F GameObject cardRev
+  F GameObject secSlip
+  F GameObject lotteryInfo
+  F GameObject augIdGuide
+  M Void Awake()
+  M Void Start()
+  M Void Update()
+  M Void OpenUI(String, String, String, Int32)
+  M Void CloseUI()
+  M Void OpenContract()
+  M Void CloseContract()
+  M Void OpenDeed()
+  M Void CloseDeed()
+  M Void CloseBook()
+  M Void OpenBook(GameItem)
+  M Void BookOnFlipPage()
+  M Void BookOnFlipPage(Int32)
+  M Void BookIndexClick()
+  M Void BookLeftClick()
+  M Void BookRightClick()
+  M Void OnIndexClick(Int32)
+  M Void CloseIndex()
+  M Void OpenIndex()
+  M Void OpenSlipUI(GameItem)
+  M Void CloseSlipUI()
+  M Void OpenGeneralSlipUI(GameItem)
+  M Void CloseGeneralSlipUI()
+  M Void ToggleJoeCard()
+  M Void OnJoeCardClosed()
+  M Void OpenCigaretteGuide()
+  M Void CloseCigaretteGuide()
+  M Void OpenStampGuide()
+  M Void CloseStampGuide()
+  M Void OpenInjectorGuide()
+  M Void CloseInjectorGuide()
+  M Void OpenWantedPaper()
+  M Void CloseWantedPaper()
+  M Void OpenSecCard()
+  M Void CloseSecCard()
+  M Void OpenCigaretteColor()
+  M Void CloseCigaretteColor()
+  M Void OpenCodeBook()
+  M Void CloseCodeBook()
+  M Void OpenBrewerCard()
+  M Void CloseBrewerCard()
+  M Void OpenMiningCard()
+  M Void CloseMiningCard()
+  M Void OpenChemCard()
+  M Void CloseChemCard()
+  M Void OpenPharmaCard()
+  M Void ClosePharmaCard()
+  M Void OpenCard(String, GameItem)
+  M Void CloseCard(String)
+  M Void CloseAllPaperUI()
+  M Void OpenLotteryInfo()
+  M Void CloseLotteryInfo()
+  M Void OpenAugIdGuide()
+  M Void CloseAugIdGuide()
+  M Void .ctor()
+TYPE PhoneBookUIManager
+## PhoneBookUIManager
+  F GameObject layoutGroup
+  F GameObject contactElementPrefab
+  M Void Start()
+  M Void Update()
+  M Void OpenUI()
+  M Void CloseUI()
+  M Void .ctor()
+## RichTextBuilder
+  F List`1<TextSlice> slices
+  F String nextBegin
+  F Int32 maxCharWidth
+  F Char[] defaultStyle
+  F Char[] defaultStyleVertical
+  F Char[] defaultStyleOldSchool
+  M Void .ctor(Int32)
+  M Boolean IsEmpty()
+  M String GetFillString(String, Char)
+  M RichTextBuilder Add(RichTextBuilder)
+  M RichTextBuilder AddProgressBarOld(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder AddProgressTest(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder AddProgressBar(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder MarkLastSliceNoBreak()
+  M RichTextBuilder AddLine(String, Boolean, ColorPalette, Boolean, Boolean, Boolean, Boolean, ColorPalette, ColorPalette, ColorPalette)
+  M RichTextBuilder NextLine()
+  M RichTextBuilder AddEmptyLine(Int32)
+  M RichTextBuilder Add(String, ColorPalette, String, Boolean, Boolean, Boolean, Boolean, ColorPalette, ColorPalette, ColorPalette)
+  M RichTextBuilder AddIcon(Sprite, String)
+  M RichTextBuilder Clear()
+  M RichTextBuilder AddRichTable(RichTableBuilder)
+  M ValueTuple`2<Int32,Int32> FindBestSlice(List`1<TextSlice>, Int32, Int32, Int32, Int32)
+  M ValueTuple`2<Int32,Int32> FindCharBreak(List`1<TextSlice>, Int32, Int32, Int32)
+  M ValueTuple`2<Int32,Int32> FindFirstSlice(List`1<TextSlice>, Int32)
+  M RichText Build(Int32)
+  M String Color(String, ColorPalette)
+  M String Style(String, Boolean, Boolean)
+TYPE DialogueHandler
+## DialogueHandler
+  P List`1<KeyCode> keyListeners
+  P KeyCode key2
+  F DialogueHandler current
+  F KeyCode key
+  M Void Awake()
+  M Void OnEventPress(ISet`1<KeyCode>)
+  M Void OnEventRelease(ISet`1<KeyCode>)
+  M Void .ctor()
+TYPE Dialogue
+TYPE DialogBubbleWidth
+## ModLoader
+  P ModLoader Instance
+  P List`1<LoadedMod> Mods
+  P HashSet`1<String> EnabledMods
+  P String ModsPath
+  P Boolean RestartRequired
+  F ModLoader <Instance>k__BackingField
+  F List`1<LoadedMod> <Mods>k__BackingField
+  F HashSet`1<String> <EnabledMods>k__BackingField
+  F List`1<String> _modOrder
+  F Boolean <RestartRequired>k__BackingField
+  F Int32 _rejectedLocalFolders
+  F HashSet`1<String> gameAssemblyNames
+  F Nullable`1<ValueTuple`2<String,ModManifest>> loadingMod
+  F Single nextGuardCheck
+  F Action OnTrustRefreshed
+  F Byte[] IModNameBytes
+  M Boolean IsValidModId(String)
+  M String GetModLabel(ModManifest)
+  M Void ReportLoadError(LoadedMod, Exception, String)
+  M Void LoadModOrder()
+  M Void SetModEnabled(String, Boolean)
+  M Void ReorderMods(List`1<String>)
+  M Boolean IsModEnabled(String)
+  M Boolean SetDeveloperMode(LoadedMod, Boolean)
+  M Assembly ResolveModDependency(Object, ResolveEventArgs)
+  M Void StopRunningMod(LoadedMod, Boolean)
+  M Void LoadAllMods()
+  M Void LoadWorkshopMods()
+  M Void ForgetMod(String)
+  M Boolean AnyReferencesIMod(IEnumerable`1<String>)
+  M Void LoadModFromFolder(String, ModSource, UInt64)
+  M Void LoadModDll(String, String, ModManifest, ModSource, UInt64)
+  M Void LoadModAssets()
+  M Void LoadTextures(LoadedMod)
+  M Void LoadTexturesFromFolder(LoadedMod, String, String, Boolean)
+  M Void LoadPaperTextures(LoadedMod, String)
+  M Void LoadLocalization(LoadedMod)
+  M IEnumerator LoadSoundsCoroutine(LoadedMod)
+## LoadedMod
+  F IMod Instance
+  F ModManifest Manifest
+  F Assembly Assembly
+  F Harmony HarmonyInstance
+  F String FolderPath
+  F String DllPath
+  F Boolean IsEnabled
+  F String LoadError
+  F ModSource Source
+  F UInt64 WorkshopId
+  F UInt64 ShadowedWorkshopId
+  F ModTrustState TrustState
+  F String TrustNote
+  F ModFingerprint Fingerprint
+  F ModTrustRecord TrustRecord
+  F ModListVerdict ListVerdict
+  F ModScanResult LastScan
+  F List`1<String> UnlistedDlls
+  F Dictionary`2<String,Texture2D> Textures
+  F Dictionary`2<String,Sprite> Sprites
+  F Dictionary`2<String,Sprite> PaperSprites
+  F Dictionary`2<String,AudioClip> Sounds
+  F Dictionary`2<String,Dictionary`2<String,String>> Localization
+  M Void .ctor()
+TYPE Binding
+## Binding
+  F String id
+  F KeyCode defaultKey
+  F Func`1<String> label
+  M Void .ctor()
+TYPE Binding
+## Binding
+  F PaperElementData data
+  F GameObject go
+  F RectTransform rect
+  F TextMeshProUGUI text
+  F Image image
+  F Button button
+  F CustomUIElement handle
+  M Void .ctor()
+TYPE <DialogueCoroutine>d__61
