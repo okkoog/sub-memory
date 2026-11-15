@@ -22,6 +22,7 @@ class Tests
     {
         ModLoader.Mods.Clear(); ModLoader.Enabled.Clear(); ModHelper.Files.Clear();
         DirectoryMaster.Current=null; ModSourceHelper.Owners.Clear();
+        StartingPerkList.Registered.Clear();
     }
     static ModEntry Enable()
     {
@@ -37,7 +38,7 @@ class Tests
     static void Main()
     {
         var one=Translation.Parse("lewd_meme",Header+Row);
-        Check(one.ItemCount==1&&one.PaperCount==0,"Mod ID comes from filename, not DLL");
+        Check(one.ItemCount==1&&one.PaperCount==0&&one.PerkCount==0,"Mod ID comes from filename, not DLL");
         var two=Translation.Parse("another_mod",Header+
              "Item,gadget,name,Original,번역\n"+
              "Paper,guide,title,Original title,한글 제목\n");
@@ -51,7 +52,10 @@ class Tests
         foreach(var bad in new[]{Header+"Item,x,name,{0},{1}\n",
              Header+Row+Row,Header+"Paper,b,a,Hello,안녕\nPaper,b,a,Hello,안녕\n",
              Header+"Dialogue,x,y,A,B\n",Header+"Item,x,value,A,B\n",
-             Header+"Item,x,name,\"unfinished",Header+"Item,x,name,\"ok\"x,hi"})Bad(bad);
+             Header+"Item,x,name,\"unfinished",Header+"Item,x,name,\"ok\"x,hi",
+             Header+"Perk,bad_mod.fake,invalid,Original,Korean\n",
+             Header+"Perk,other_mod.fake,name,Original,Korean\n",
+             Header+"Perk,bad_mod.fake,name,Original,Korean\nPerk,bad_mod.fake,name,Original,Korean\n"})Bad(bad);
 
         Reset();
         var disabled=Owner("lewd_meme",false);
@@ -59,8 +63,9 @@ class Tests
         var probe=Enable();
         var directory=new ModItemDirectory();
         ModHook.Directory(directory);
-        Check(ModHook.SubscriptionCount==0,"Disabled target unsubscribes all hooks after discovery");
+        Check(ModHook.SubscriptionCount==1,"No active target leaves only non-frame bootstrap event");
         probe.OnDisable();
+        Check(ModHook.SubscriptionCount==0,"Disabled probe unsubscribes remaining bootstrap event");
 
         Reset();
         var owner=Owner("lewd_meme");
@@ -134,8 +139,9 @@ class Tests
         probe=Enable();
         directory=new ModItemDirectory();
         ModHook.Directory(directory);
-        Check(ModHook.SubscriptionCount==0,"Corrupt CSV leaves no persistent hooks");
+        Check(ModHook.SubscriptionCount==1,"Corrupt CSV does not leave any translation hooks");
         probe.OnDisable();
+        Check(ModHook.SubscriptionCount==0,"Corrupt CSV bootstrap unsubscribes on disable");
 
         Reset();
         owner=Owner("lewd_meme");
@@ -158,6 +164,77 @@ class Tests
         var child=new Child{name="触手本体"};
         one.Items.Single().Apply(child);
         Check(child.name=="触手本体","Custom child type never mutated");
+        // Early starting perk translation: new-game UI opens before item directory.
+        Reset();
+        owner=Owner("lewd_meme");
+        var originalName = "触手起源";
+        var originalDesc = "你生来就不是人。开局获得【触手本体】。";
+        Func<string> nameOrigin=()=>originalName;
+        Func<string> descOrigin=()=>originalDesc;
+        var perk=new StartingPerk {
+            id="lewd_meme.tentacle_origin", source="lewd_meme",
+            cost=0,maxSlot=3,
+            rawName=originalName,rawDescription=originalDesc,
+            nameProvider=nameOrigin,descriptionProvider=descOrigin
+        };
+        StartingPerkList.Registered.Add(perk.id,perk);
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+
+            "Perk,lewd_meme.tentacle_origin,name,触手起源,촉수 기원\n"+
+            "Perk,lewd_meme.tentacle_origin,description,你生来就不是人。开局获得【触手本体】。,태어날 때부터 인간이 아니었다. 시작 아이템 【촉수 본체】를 얻는다.\n";
+        probe=Enable();
+        Check(perk.GetLocalizedDisplayName()=="촉수 기원"&&
+              perk.GetLocalizedDescription().StartsWith("태어날 때부터"),
+              "Starting perk name and description translated BEFORE item directory initialization");
+        Check(perk.id=="lewd_meme.tentacle_origin"&&perk.cost==0&&perk.maxSlot==3,
+              "Perk id, cost and slot metadata unchanged");
+        var installedName=perk.nameProvider;
+        ModHook.Assets(owner);
+        Check(perk.nameProvider==installedName,"Repeated asset callbacks do not wrap perk twice");
+        originalName="English name";
+        Check(perk.GetLocalizedDisplayName()=="English name",
+              "Other-language value is never force translated");
+        originalName="触手起源";
+        probe.OnDisable();
+        Check(perk.nameProvider==nameOrigin&&perk.descriptionProvider==descOrigin,
+              "Disabling probe restores original registered name and description providers");
+
+        // Late-loaded target: registration after our probe's OnEnable.
+        Reset();
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+
+            "Perk,lewd_meme.tentacle_origin,name,触手起源,촉수 기원\n";
+        probe=Enable();
+        owner=Owner("lewd_meme");
+        perk=new StartingPerk {id="lewd_meme.tentacle_origin",
+              nameProvider=()=> "触手起源"};
+        StartingPerkList.Registered.Add(perk.id,perk);
+        ModHook.Assets(owner);
+        Check(perk.GetLocalizedDisplayName()=="촉수 기원",
+              "Perk of subsequently loaded mod updated on official asset-loaded event");
+        probe.OnDisable();
+        Check(perk.GetLocalizedDisplayName()=="触手起源",
+              "Late-loaded perk provider restored on disable");
+
+        // Mismatch and missing mod: never overwrite other values.
+        Reset();
+        owner=Owner("lewd_meme");
+        perk=new StartingPerk {id="lewd_meme.tentacle_origin",
+              nameProvider=()=> "Updated Chinese text"};
+        StartingPerkList.Registered.Add(perk.id,perk);
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+
+            "Perk,lewd_meme.tentacle_origin,name,触手起源,촉수 기원\n";
+        var unchanged=perk.nameProvider;
+        probe=Enable();
+        Check(perk.nameProvider==unchanged&&perk.GetLocalizedDisplayName()=="Updated Chinese text",
+              "Original mismatch produces zero edits to the trait object");
+        probe.OnDisable();
+
+        Reset();
+        probe=Enable();
+        Check(StartingPerkList.Registered.Count==0,
+              "No target mod means no perk registry mutations");
+        probe.OnDisable();
+        Check(ModHook.SubscriptionCount==0,"Probe cleanup removes all official event subscriptions");
+
         Console.WriteLine("RESULT: "+checks+" assertions passed (stubbed API)");
     }
     private sealed class Child:GameItemElement{}
