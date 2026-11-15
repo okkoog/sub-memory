@@ -7,6 +7,8 @@ ui_upper_mode_tooltip,把店开在空间站上层区，不在下层区。\n铺�
 diff_subtitle,{0} · 上层区
 diff_note_property,店铺买断价 {0}
 diff_note_start,房租×{0}，起始现金+{1}
+diff_restored,这份存档的上层区难度丢过，已经恢复。
+diff_restored_guess,这份存档的上层区难度丢过，原来是哪一档查不到，按普通难度恢复。
 
 # ===== 凯·王尔德：开业保险（替换乔·王尔德第 4 天的登场） =====
 kane.Dialogue.dialog_insurance_1,你好。欢迎来到上层区。
@@ -1230,7 +1232,7 @@ scenario.newcomer.title,上层区新店主
 scenario.newcomer.desc,你在上层区租下了一间铺面。没带机器，也没有熟人，只有一笔开业资金和凯·王尔德的名片。
 scenario.newcomer.with1,上层区的一间铺面
 scenario.newcomer.with2,开业资金
-scenario.newcomer.with3,凯·王尔德的寄售货：每周 20 件，卖掉分你七成
+scenario.newcomer.with3,凯·王尔德的寄售货：每周 20 件，先押两成五，三天内卖掉分你四成
 scenario.newcomer.tag,上层区模式
 perk.ul_trust_fund.name,信托基金
 perk.ul_trust_fund.desc,开局额外获得3000信用点。
@@ -1867,17 +1869,17 @@ appraiser.auction.cons.taken,{0} 件，我带走了。下周一起结。
 appraiser.auction.lots,这周的重点拍品。麻烦你看看。
 appraiser.auction.done,鉴定单我带走了。拍完来结账。
 kai.consign.intro.1,我手上有些货，放你这儿卖。
-kai.consign.intro.2,不要你本钱。卖掉了你拿 {0}%，我拿 {1}%。
-kai.consign.intro.3,下周我来对账。没卖掉的我拿回去。
+kai.consign.intro.2,每件先押标价的 {0}%。三天内卖掉我拿 {1}%，慢了拿 {2}%。
+kai.consign.intro.3,下周我来对账。没卖掉的我拿回去，押金退你。
 kai.consign.hello,来对账了。
 kai.consign.phase2.1,店是你的了？恭喜。
-kai.consign.phase2.2,那我多放点货。以后每周 {0} 件，你拿 {1}%。
+kai.consign.phase2.2,那我多放点货。以后每周 {0} 件，三天内卖掉我拿 {1}%，慢了拿 {2}%。
 kai.consign.sold,卖了 {0} 件，一共 {1}。我拿 {2}%，{3}。
 kai.consign.none_sold,这周一件没卖出去。
 kai.consign.missing,还有 {0} 件不在店里。按标价 {1} 算，我拿 {2}。
-kai.consign.recalled,没卖掉的 {0} 件，我一早让人取走了。
+kai.consign.recalled,没卖掉的 {0} 件，我带走了。
 kai.consign.owed,一共 {0}，我收走了。
-kai.consign.new,这批 {0} 件，放下了。老规矩。
+kai.consign.new,这批 {0} 件，押金 {1}，收了。老规矩。
 kai.consign.debt,还欠凯 {0}，下次一起结。
 kai.consign.full,店里放不下了，凯只留下 {0} 件寄售品。
 kai.consign.tip,凯的寄售品：卖掉后凯拿 {0}%，他下次来时结算。
@@ -2089,16 +2091,16 @@ ul_dialog_upper_lower_visitor_1,喂，店主！我就住楼上那几层。
 ul_dialog_upper_hedonist_greeting_1,绕了半条长廊才找到你这儿。赶紧的吧。
 ul_dialog_upper_lower_visitor_luxury_1,真是无聊的一天，干脆出来买点东西。
 ul_dialog_minor_ul_visitor_2,我平时不怎么逛当铺，
-ul_dialog_minor_ul_visitor_3,听说这种店里能淘到下层区来的东西！
+ul_dialog_minor_ul_visitor_3,听说你这儿收了不少下层区流上来的东西！
 ul_dialog_minor_ul_visitor_4,不得不说，下层区的东西真的很有意思。
 ul_dialog_minor_ul_visitor_8,只要是下层区来的，什么都行。
-ul_dialog_minor_ul_visitor_9,像是下层区的土制物品、加工食品，还有低科技武器，
+ul_dialog_minor_ul_visitor_9,像是土制物品、加工食品，还有低科技武器，
 ul_dialog_tourist_greet_1,哇，上层区原来是这个样子。我太喜欢了！
 ul_dialog_tourist_greet_5,所有人都说这一带贵得离谱。所以我当然非来不可。
 ul_dialog_tourist_deal_2,听说我在这儿能找点乐子？
 ul_dialog_tourist_weapon_greet_2,他们说这一带的店都死贵，可我倒觉得挺有意思。
 ul_dialog_tourist_weapon_greet_3,今天来逛逛空间站最有钱的区域。文化气息可真浓！
-test_hotkey_update,测试（上次更新）：发了 2 颗心脏、1 个肾、冷藏箱、暗灯、3D 器官打印机、6 份墨水、自充电电池，+5000 信用点（去凯那里买器官销售许可）。革命军战地医生和富豪病人今天会来；已有许可时器官库协调员和私立医院也来。
+test_hotkey_update,测试（上次更新）：发了《解体要点》《开店守则》和一本图文版熟客名册；凯今天来对账、送货；熟客名册没建的话先建，熟客今天来一位。+5000 信用点。想测预订：按住 Ctrl 按 F12 解锁买店后。
 corpse_name_fresh,{0}（新鲜度 {1}%）
 battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。走的时候拖回店里。
 battle.found_corpse_rotten,你找到一具，已经烂了，拆不出东西。
@@ -2187,6 +2189,61 @@ dissector_nopower_converter,转换器供不上电
 dissector_nopower_battery,电池没电
 richpat.premium,富豪溢价
 battle.treat_first,伤口还没处理，先包扎一下。
+regulars.roster_name,熟客名册
+regulars.roster_new,熟客名册放进店里了。常来的客人都记在上面。
+regulars.desc_head,常来的客人。卖他们想要的那件有额外报酬，别抬价。
+regulars.desc_empty,名册上还没有人。
+regulars.desc_line,{0}：爱买{1}，想要{2}。{3}，{4}
+regulars.when_today,今天来
+regulars.when_days,{0} 天后来
+regulars.hello.1,又来了。
+regulars.hello.2,最近店里怎么样？
+regulars.hello.3,路过，进来看看。
+regulars.hello.4,老样子，先看看货。
+regulars.ask,上次说的{0}，有了吗？
+regulars.wish_done,{0} 拿到了想要的东西。好感 +1。
+regulars.overcharged,{0} 觉得你抬价了。好感 -1。
+regulars.left,{0} 不再来了，从名册上划掉了。
+regulars.referred,{0} 给你介绍了一位新熟客：{1}。
+regulars.joined,又多了一位熟客：{0}。
+regulars.name.0,温女士
+regulars.name.1,陆先生
+regulars.name.2,白夫人
+regulars.name.3,赵先生
+regulars.name.4,秦小姐
+regulars.name.5,顾先生
+regulars.name.6,沈太太
+regulars.name.7,林教授
+regulars.name.8,苏小姐
+regulars.name.9,韩先生
+regulars.name.10,叶夫人
+regulars.name.11,周医生
+regulars.name.12,唐小姐
+regulars.name.13,许先生
+regulars.name.14,程老先生
+regulars.name.15,季女士
+kai.consign.intro.4,货是转了几手的，偶尔有封条被拆过的。细心点，看看包装再卖。
+kai.consign.change,跟你说一声，规矩改了。
+kai.consign.new_pending,这批 {0} 件。老规矩，先押钱。
+kai.consign.new_short,押金只够 {0} 件，收你 {1}。剩下 {2} 件我先带回去。
+kai.consign.new_none,押金你付不起。这批我先带回去，下周再说。
+kai.consign.new_full,你店里没地方了。这批我先带回去。
+kai.consign.sold2,卖了 {0} 件，一共 {1}。三天内卖掉的 {2} 件按 {3}%，其余按 {4}%，我拿 {5}。
+kai.consign.waived,有 {0} 件被客人投诉了，封条的事。那几件我不抽，算我的。
+kai.consign.deposit,你押了 {0}，从里面扣。
+kai.consign.refund,押金比我那份多，退你 {0}。
+kai.consign.refund_notify,凯退回押金 {0}。
+kai.consign.even,正好抵平。
+kai.consign.dubious_flavor,包装封条有被拆过的痕迹。
+kai.consign.complaint,客人发现{0}的封条被拆过，投诉了。上层区声望 -{1}。
+kai.consign.tip2,凯的寄售品：押金 {0}。到第 {2} 天为止卖掉，凯拿 {1}%；之后卖掉拿 {3}%。下次凯来时结算。
+regulars.first,头一回来，以后常来。
+regulars.ask_new,我在找{0}，有的话给我留着，价钱好说。
+ul_dialog_minor_ul_visitor_5,日子实在无聊。
+ul_dialog_minor_ul_visitor_6,总是同一群人，翻来覆去做着同样的事。
+ul_dialog_minor_ul_visitor_7,我想买些新鲜玩意儿。
+ul_dialog_minor_ul_visitor_10,再来点下面的人寻开心用的好东西。*眨眼*
+regulars.seller_has,摊上有{0}，是{1}想要的。
 ogguide.item_name,解体要点
 ogguide.item_desc,器官贩子的入行手册。点开阅读。
 ogguide.header,解体要点
@@ -2217,3 +2274,89 @@ ogguide.k.sign,买许可时一起给。摆进橱窗，订单变成每 2 天一�
 ogguide.p7.title,几句忠告
 ogguide.p7.body,· 打印的器官只值原生的三成，但不会坏，不用冷藏。\n\n· 解剖机和打印机都吃电，晚上记得给电。\n\n· 走私者暗格里的违禁品，盘查时不搜。\n\n· 原生器官别攒太多。放久了会坏，被查到更麻烦。\n\n· 犯罪记录每天都要清。警察上门的时候，什么都晚了。
 ogguide.reissued,店里多了一本《解体要点》，器官贩子的入行手册。
+regulars.dubious,{0} 发现买的东西封条被拆过。好感 -1。
+ncguide.item_name,开店守则
+ncguide.item_desc,上层区新店主的入行手册。点开阅读。
+ncguide.header,开店守则
+ncguide.p1.title,写在前面
+ncguide.p1.body,你在上层区盘下了一间店面。没本钱，没门路，客人也不认识你。\n\n好在凯·王尔德愿意先把货放你这儿卖。上层区的客人看的是体面：东西要好，价钱要公道，人要靠得住。\n\n这本守则讲三件事：凯的寄售怎么算，熟客怎么养，货从哪来。
+ncguide.p2.title,凯的寄售
+ncguide.n.consign,寄售品
+ncguide.k.consign,凯每 7 天来一次，带一批上层区的货（开头每次 20 件）。每件先押标价的四分之一，钱不够就少拿几件。
+ncguide.n.fast,卖得快，拿得多
+ncguide.k.fast,送货后三天内卖掉，你拿四成；慢了拿三成。拿去别处卖、用掉的，按慢的算。
+ncguide.n.dubious,问题货
+ncguide.k.dubious,少数货的说明末尾写着“封条有被拆过的痕迹”。卖出去一半会被投诉，上层区声望 -5，凯照样抽成。不想冒险就别卖，凯会收回去，押金照退。
+ncguide.p3.title,对账
+ncguide.p3.body,凯进门时先对上一批的账：\n\n· 卖掉的，按快慢抽成。\n· 没卖掉的，他带走，押金退你。\n· 不见了的，按标价算卖掉。\n\n押金从他那份里扣：押多了他退钱，押少了你补。钱不够就先记账，下次一起结。\n\n买下店以后，他每周多送几件，抽成也低一点。
+ncguide.p4.title,熟客
+ncguide.n.roster,熟客名册
+ncguide.k.roster,第 3 天起有熟客上门，每人每 4 天来一次。名册上写着谁爱买什么、想要什么、几天后来。
+ncguide.n.wish,心愿
+ncguide.k.wish,卖给熟客他想要的那件，多付成交价的五成，好感 +1。买下店以后，心愿变成预订：报酬翻倍，但下次来还没有，好感会掉。
+ncguide.n.favor,好感
+ncguide.k.favor,抬价、卖他问题货，好感 -1，掉光了就不来了。熟了会跟你聊几句家常；到 5 星还会介绍新熟客。
+ncguide.p5.title,货从哪来
+ncguide.p5.body,上层区的卖家会上门。熟客想要的东西，对口的卖家有一半几率顺带一件：\n\n· 奢侈品：遗产清点人、拍卖行、收藏家、落魄贵族。\n· 家居用品：搬家的住户、水贩、工程师。\n· 医疗用品：私人医生、实验室研究员。\n\n看到“是某某想要的”提示，记得留着。
+ncguide.p6.title,橱窗
+ncguide.p6.body,橱窗摆奢侈品、艺术品，会请来淘货的贵客；摆贵重的材料、机器，会请来财团采购。\n\n他们的预算按橱窗里最贵的那一件算，大概够买那一件。橱窗是招客用的，不是清仓用的。\n\n凯的货也能摆，卖得快，你拿得多。
+ncguide.p7.title,几句忠告
+ncguide.p7.body,· 默认价就是公道价。讨价还价往上抬，熟客记得住。\n\n· 凯来之前，先把能卖的卖了。三天内和三天外，差一成。\n\n· 店里要留地方。凯来送货时店里满了，他就带回去。\n\n· 钱紧的时候，少拿几件也没关系。押金是借给凯的，不是花掉的。
+regulars.roster_desc,常来的客人都记在上面。点开阅读。
+roster.header,熟客名册
+roster.p1.title,规矩
+roster.p1.body,· 熟客每 4 天来一次，只买他爱买的那类，再加他想要的那一件。\n\n· 卖给他想要的那件：多付五成，好感 +1。\n\n· 抬价、卖他封条被拆过的货：好感 -1。掉光了，就从名册上划掉。\n\n· 熟了会跟你聊几句家常，名册上会记下来。到 5 星，他会介绍一位新熟客。\n\n· 买下店以后，心愿变成预订：报酬翻倍，下次来还没有，好感 -1。
+roster.list_title,名单
+roster.info,爱买{0}　{1}\n想要：{2}\n{3}
+roster.info_reserve,爱买{0}　{1}\n预订：{2}（报酬翻倍）\n{3}
+roster.story_none,（还不太熟。）
+roster.empty,（空）
+regulars.story_new,{0}跟你聊了几句家常，名册上记下了。
+regulars.gift,{0}留下一件谢礼：{1}。
+regulars.reserve_new,帮我订一件{0}。下次来取，钱给双份。
+regulars.reserve_ask,上次订的{0}，到了吗？
+regulars.reserve_missed,{0}订的{1}没等到。好感 -1。
+regulars.story.0.3,温女士在给女儿攒嫁妆。她说上层区嫁女儿，体面比钱贵。
+regulars.story.0.5,女儿下个月出嫁。她说婚礼上用的几样东西，都是在你这儿买的。
+regulars.story.1.3,陆先生在财团做审计，每天对着别人的账。他说来你这儿，是因为你的账对得上。
+regulars.story.1.5,陆先生升职了。他说以后公司采购，会提一句你的店。
+regulars.story.2.3,白夫人的丈夫常年在外。她说家里东西多，人少，买东西是为了有点事做。
+regulars.story.2.5,丈夫回来了。她说想换一套新的摆设，让家里像个家。
+regulars.story.3.3,赵先生开了三十年货运，退休了闲不住，天天在站里转。
+regulars.story.3.5,他说年轻时运过的货，现在一件比一件贵。你的店让他想起那时候。
+regulars.story.4.3,秦小姐是乐团的小提琴手，演出前总来逛一圈。她说你这儿安静。
+regulars.story.4.5,她送了你两张音乐会的票。座位不算好，但是她特意留的。
+regulars.story.5.3,顾先生在码头管调度，说话快，买东西也快。
+regulars.story.5.5,他说码头的人都知道你这家店了。“东西真，价钱不坑。”
+regulars.story.6.3,沈太太养了一只很老的猫，比她女儿年纪还大。
+regulars.story.6.5,猫走了。她说那天本来想关在家里，结果还是来你这儿坐了一会儿。
+regulars.story.7.3,林教授在找一本旧书，地球上印的纸质版。他说找了二十年。
+regulars.story.7.5,书还没找到。他说不急，找东西的人，总得有个地方歇脚。
+regulars.story.8.3,苏小姐刚从下层区搬上来，什么都想买，又什么都舍不得。
+regulars.story.8.5,她说在上层区，你是第一个没拿她口音开玩笑的人。
+regulars.story.9.3,韩先生做保险。他说站里最值钱的不是东西，是“没出事”。
+regulars.story.9.5,他说你的店他评过风险，结论是“可以长期往来”。
+regulars.story.10.3,叶夫人收藏古董，最看重来历。她说来路不明的东西，再好看也是负担。
+regulars.story.10.5,她说以后家里的藏品要出手，会先问你。
+regulars.story.11.3,周医生在私立医院值夜班，白天来逛，眼睛总是红的。
+regulars.story.11.5,他说病人家属问他哪儿能买到靠谱的东西，他报的是你的店名。
+regulars.story.12.3,唐小姐在做全息设计，最近在给一家大公司赶稿。
+regulars.story.12.5,稿子过了。她说庆功宴上用的东西，全从你这儿挑。
+regulars.story.13.3,许先生是元老家族的远房，说自己“沾亲带故，没沾到钱”。
+regulars.story.13.5,他说家族聚会上，有人问起他手上的东西从哪买的。他说了你的店。
+regulars.story.14.3,程老先生每周都来，买得不多，主要是想找人说说话。
+regulars.story.14.5,他说孙子要来站里看他了，想挑件像样的见面礼。
+regulars.story.15.3,季女士在理事会做文书，嘴很严，只说工作“很无聊”。
+regulars.story.15.5,她说理事会最近要查几家店的账，你的不在名单上。
+ncguide.reissued,店里多了一本《开店守则》，新店主的入行手册。
+ul_kai_organ_route_title,黑路门路
+ul_kai_organ_route_desc,凯介绍你认识诊所的索恩，再告诉你交火区怎么走。买下后送一台解剖机、一个器官冷藏箱和一本《解体要点》：晚上去交火区捡尸体，解剖出器官卖给索恩这些黑路买家。米勒博士也会开始卖 3D 器官打印机。器官贩子开局自带，不用买。
+net_group_organ,器官门路
+organ.route.unlocked,凯送来了解剖机、冷藏箱和一本《解体要点》。交火区今晚就能去。
+organ.route.compensated,以前买的器官销售许可缺了前面一步：凯补送了黑路门路，解剖机和冷藏箱已经放进店里。
+regulars.wish_feature,熟客心愿
+regulars.reserve_feature,熟客预订
+ul_kai_police_donation_title,警局捐款
+ul_kai_police_donation_desc,凯替你以店铺的名义给警察局的抚恤基金捐一笔钱，再送几箱好吃的到值班室。警察局声望 +{0}。{1} 天后可以再捐。
+perk.ul_aug_surge.name,改造体狂潮
+perk.ul_aug_surge.desc,开局就有霰弹枪，改造体从第一周起混在客人里上门，危机一直持续，放跑太多会直接游戏结束。击杀改造体能拿赏金（多 25%）和警察局声望。

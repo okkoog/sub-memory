@@ -7,6 +7,8 @@ ui_upper_mode_tooltip,Open your shop in the station's Upper Levels instead of th
 diff_subtitle,{0} · Upper Levels
 diff_note_property,Property price: {0}
 diff_note_start,"Rent x{0}, +{1} starting cash"
+diff_restored,This save had lost its Upper Levels difficulty. It has been restored.
+diff_restored_guess,This save had lost its Upper Levels difficulty. The original tier is unknown, so it was restored as Normal.
 
 # ===== Kai Wild: insurance intro =====
 kane.Dialogue.dialog_insurance_1,Good day. Welcome to the Upper Levels.
@@ -1215,7 +1217,7 @@ scenario.newcomer.title,Upper Levels Newcomer
 scenario.newcomer.desc,You've rented a storefront in the Upper Levels. No machines, no contacts. Just some startup money and Kai Wild's card.
 scenario.newcomer.with1,A storefront in the Upper Levels
 scenario.newcomer.with2,Startup money
-scenario.newcomer.with3,Kai Wild's consignment: 20 pieces a week, you keep 70% of sales
+scenario.newcomer.with3,Kai Wild's consignment: 20 pieces a week, 25% deposit, keep 40% of what sells within 3 days
 scenario.newcomer.tag,Upper Levels mode
 perk.ul_trust_fund.name,Trust Fund
 perk.ul_trust_fund.desc,Start with 3000 extra credits.
@@ -1852,17 +1854,17 @@ appraiser.auction.cons.taken,{0} pieces. I'll settle them next week.
 appraiser.auction.lots,This week's key lots. Take a look.
 appraiser.auction.done,I'll take the slips. See you after the sale.
 kai.consign.intro.1,I've got some stock. Sell it here for me.
-kai.consign.intro.2,Nothing up front. You keep {0}% of what sells, I take {1}%.
-kai.consign.intro.3,I'll settle up next week. Whatever doesn't sell comes back with me.
+kai.consign.intro.2,{0}% of list price up front as a deposit. Sells within three days, I take {1}%. Slower, {2}%.
+kai.consign.intro.3,I'll settle up next week. Whatever doesn't sell comes back with me, and you get the deposit back.
 kai.consign.hello,Time to settle up.
 kai.consign.phase2.1,The place is yours now? Congratulations.
-kai.consign.phase2.2,Then I'll bring more. {0} pieces a week from now on, and you keep {1}%.
+kai.consign.phase2.2,Then I'll bring more. {0} pieces a week from now on. Sells within three days, I take {1}%. Slower, {2}%.
 kai.consign.sold,{0} sold, {1} total. My {2}% is {3}.
 kai.consign.none_sold,Nothing sold this week.
 kai.consign.missing,{0} pieces aren't in the store. At list price that's {1}, so I take {2}.
-kai.consign.recalled,I had someone pick up the {0} that didn't sell this morning.
+kai.consign.recalled,I'll take back the {0} that didn't sell.
 kai.consign.owed,That's {0} in all. I'll take it now.
-kai.consign.new,Here's {0} new pieces. Same deal.
+kai.consign.new,{0} new pieces, {1} deposit. Same deal.
 kai.consign.debt,You still owe Kai {0}. It rolls into next time.
 kai.consign.full,No room left. Kai left only {0} consignment pieces.
 kai.consign.tip,Kai's consignment. He takes {0}% when it sells, settled on his next visit.
@@ -2074,7 +2076,7 @@ ul_dialog_upper_lower_visitor_1,Hey, shopkeeper! I live a few floors up.
 ul_dialog_upper_hedonist_greeting_1,Took me half the promenade to find this place. Let us be quick.
 ul_dialog_upper_lower_visitor_luxury_1,What a dull day. Might as well go shopping.
 ul_dialog_minor_ul_visitor_2,I do not usually visit pawnshops,
-ul_dialog_minor_ul_visitor_3,but I heard you can find things from the Lower Levels here!
+ul_dialog_minor_ul_visitor_3,but I heard you get a lot of things from the Lower Levels!
 ul_dialog_minor_ul_visitor_4,I have to say, things from down there are fascinating.
 ul_dialog_minor_ul_visitor_8,Anything from the Lower Levels will do.
 ul_dialog_minor_ul_visitor_9,Homemade stuff, processed food, low-tech weapons,
@@ -2083,7 +2085,7 @@ ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So 
 ul_dialog_tourist_deal_2,I heard I could have some fun around here?
 ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
 ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
-test_hotkey_update,Test (last update): gave 2 hearts, 1 kidney, a cooler, a black lamp, a 3D organ printer, 6 bio-ink, a self-charging cell, +5000 credits (buy the Organ Sales License from Kai). The revolution field medic and the rich patient come today; with the license, the organ bank coordinator and the private hospital come too.
+test_hotkey_update,Test (last update): gave Dissection Essentials, Shopkeeping Rules and the illustrated regulars roster; Kai comes today to settle and deliver; the roster is created if missing and one regular comes today. +5000 credits. To test reservations, press Ctrl+F12 to unlock the post-purchase phase.
 corpse_name_fresh,{0} (freshness {1}%)
 battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). It gets dragged back when you leave.
 battle.found_corpse_rotten,You find one, but it has already rotted. Nothing to harvest.
@@ -2172,6 +2174,61 @@ dissector_nopower_converter,converter cannot supply
 dissector_nopower_battery,battery empty
 richpat.premium,Wealthy patient premium
 battle.treat_first,Your wound is not treated yet. Patch it up first.
+regulars.roster_name,Regulars List
+regulars.roster_new,A regulars list is in the shop now. Your usual customers are on it.
+regulars.desc_head,Your usual customers. Sell them what they want for a bonus. Don't mark up.
+regulars.desc_empty,Nobody on the list yet.
+regulars.desc_line,{0}: buys {1}, wants {2}. {3}, {4}
+regulars.when_today,coming today
+regulars.when_days,coming in {0} days
+regulars.hello.1,Back again.
+regulars.hello.2,How's business?
+regulars.hello.3,I was passing by, thought I'd drop in.
+regulars.hello.4,The usual. Let me see what you have.
+regulars.ask,That {0} we talked about, got one yet?
+regulars.wish_done,{0} got what they wanted. Favor +1.
+regulars.overcharged,{0} thinks you marked up the price. Favor -1.
+regulars.left,{0} won't be coming back. Crossed off the list.
+regulars.referred,{0} sent you a new regular: {1}.
+regulars.joined,A new regular: {0}.
+regulars.name.0,Ms. Wen
+regulars.name.1,Mr. Lu
+regulars.name.2,Mrs. Bai
+regulars.name.3,Mr. Zhao
+regulars.name.4,Miss Qin
+regulars.name.5,Mr. Gu
+regulars.name.6,Mrs. Shen
+regulars.name.7,Professor Lin
+regulars.name.8,Miss Su
+regulars.name.9,Mr. Han
+regulars.name.10,Lady Ye
+regulars.name.11,Dr. Zhou
+regulars.name.12,Miss Tang
+regulars.name.13,Mr. Xu
+regulars.name.14,Old Mr. Cheng
+regulars.name.15,Ms. Ji
+kai.consign.intro.4,This stuff's been through a few hands. Now and then a seal's been opened. Check the packaging before you sell.
+kai.consign.change,Heads up. The deal's changed.
+kai.consign.new_pending,{0} new pieces. Same deal, deposit first.
+kai.consign.new_short,Your cash covers the deposit on {0} pieces. That's {1}. I'll hold on to the other {2}.
+kai.consign.new_none,You can't cover the deposit. I'll take this lot back. Next week.
+kai.consign.new_full,No room in here. I'll take this lot back.
+kai.consign.sold2,{0} sold, {1} total. {2} went within three days at {3}%, the rest at {4}%. My cut is {5}.
+kai.consign.waived,{0} got complaints. The seals. I won't take a cut on those. That's on me.
+kai.consign.deposit,You put down {0} in deposit. That comes off.
+kai.consign.refund,Your deposit's more than my cut. Here's {0} back.
+kai.consign.refund_notify,Kai returned {0} of your deposit.
+kai.consign.even,That squares it.
+kai.consign.dubious_flavor,The packaging seal looks like it's been opened.
+kai.consign.complaint,A customer noticed the seal on {0} had been opened and complained. Upper Levels reputation -{1}.
+kai.consign.tip2,Kai's consignment. Deposit {0}. Sell by day {2} and he takes {1}%; after that {3}%. Settled on his next visit.
+regulars.first,First time here. I'll be back.
+regulars.ask_new,I'm looking for {0}. If you get one, keep it for me. I'll pay well.
+ul_dialog_minor_ul_visitor_5,Life up here gets pretty boring.
+ul_dialog_minor_ul_visitor_6,Same people doing the same thing over and over.
+ul_dialog_minor_ul_visitor_7,I am looking for something new.
+ul_dialog_minor_ul_visitor_10,and the good stuff they take for fun down there. *Wink*
+regulars.seller_has,There is {0} on the table. {1} wants one.
 ogguide.item_name,Dissection Essentials
 ogguide.item_desc,An organ dealer's starter handbook. Click to read.
 ogguide.header,Dissection Essentials
@@ -2202,3 +2259,89 @@ ogguide.k.sign,Comes with the license. In the display case, orders come every 2 
 ogguide.p7.title,A Few Warnings
 ogguide.p7.body,- Printed organs are worth a third of natural ones, but they don't rot and need no cooler.\n\n- The dissector and the printer both need power at night.\n\n- Contraband in a smuggler's compartment isn't searched.\n\n- Don't hoard natural organs. They rot, and getting caught is worse.\n\n- Clear your crime every day. Once the police are at the door, it's too late.
 ogguide.reissued,There's a copy of Dissection Essentials in the shop: an organ dealer's starter handbook.
+regulars.dubious,{0} noticed the seal on what they bought had been opened. Favor -1.
+ncguide.item_name,Shopkeeping Rules
+ncguide.item_desc,A starter handbook for a new Upper Levels shopkeeper. Click to read.
+ncguide.header,Shopkeeping Rules
+ncguide.p1.title,Before You Start
+ncguide.p1.body,You've taken over a shopfront in the Upper Levels. No capital, no connections, and nobody knows you.\n\nLuckily Kai Wild is willing to leave goods with you on consignment. Upper Levels customers care about appearances: good goods, fair prices, someone they can trust.\n\nThis book covers three things: how Kai's consignment works, how to keep regulars, and where goods come from.
+ncguide.p2.title,Kai's Consignment
+ncguide.n.consign,Consigned goods
+ncguide.k.consign,Kai comes every 7 days with Upper Levels goods (20 pieces at first). Each piece needs a deposit of a quarter of its list price; if you are short, take fewer.
+ncguide.n.fast,Sell fast, keep more
+ncguide.k.fast,Sold within 3 days of delivery: you keep 40%. Later: 30%. Anything sold elsewhere or used counts as slow.
+ncguide.n.dubious,Dubious goods
+ncguide.k.dubious,A few pieces say their seal has been opened. Half of those draw a complaint when sold: Upper Levels reputation -5, and Kai still takes his cut. Don't want the risk? Don't sell it. Kai takes it back and refunds the deposit.
+ncguide.p3.title,Settling Up
+ncguide.p3.body,When Kai walks in, he settles the last batch:\n\n- Sold: he takes his cut, fast or slow.\n- Unsold: he takes it back and refunds the deposit.\n- Missing: counted as sold at list price.\n\nThe deposit comes off his cut: if it's more, he refunds you; if less, you pay the rest. Short on cash? It goes on the tab.\n\nOnce you own the shop, he brings more each week and takes less.
+ncguide.p4.title,Regulars
+ncguide.n.roster,Regulars Roster
+ncguide.k.roster,From day 3, regulars visit every 4 days each. The roster says what they like, what they want and when they come.
+ncguide.n.wish,Wishes
+ncguide.k.wish,Sell a regular the piece they want: they pay 50% extra, favor +1. After you own the shop, wishes become reservations: double pay, but favor drops if it isn't there next time.
+ncguide.n.favor,Favor
+ncguide.k.favor,Marking up or selling them dubious goods: favor -1. At zero they stop coming. Close regulars tell you about themselves; at 5 stars they bring a friend.
+ncguide.p5.title,Where Goods Come From
+ncguide.p5.body,Upper Levels sellers drop by. If a regular wants something in their line, there's a 50% chance they bring one:\n\n- Luxury: the estate clerk, the auction house, the collector, the fallen aristocrat.\n- Household: the family moving out, the water seller, the engineer.\n- Medical: the private doctor, the lab researcher.\n\nWhen you see "someone wants this", hold on to it.
+ncguide.p6.title,The Display Case
+ncguide.p6.body,Luxury goods and art in the display case bring discerning shoppers; valuable materials and machines bring corporate buyers.\n\nTheir budget is based on the most expensive piece on display, roughly enough to buy that one. The display case brings customers in. It isn't a clearance rack.\n\nKai's goods can go on display too. Sell fast, keep more.
+ncguide.p7.title,A Few Tips
+ncguide.p7.body,- The default price is a fair price. Regulars remember when you push it up.\n\n- Sell what you can before Kai comes. Within 3 days or not makes a 10% difference.\n\n- Keep space free. If the shop is full when Kai delivers, he takes the goods back.\n\n- Short on cash? Take fewer pieces. A deposit is lent to Kai, not spent.
+regulars.roster_desc,Your regular customers. Click to read.
+roster.header,Regulars Roster
+roster.p1.title,The Rules
+roster.p1.body,- Each regular comes every 4 days and buys what they like, plus the one piece they want.\n\n- Sell them the piece they want: 50% extra, favor +1.\n\n- Marking up or selling them goods with an opened seal: favor -1. At zero they're crossed off.\n\n- Close regulars tell you about themselves; it's written down here. At 5 stars they introduce a new regular.\n\n- After you own the shop, wishes become reservations: double pay, favor -1 if it isn't there next time.
+roster.list_title,Names
+roster.info,Likes {0}  {1}\nWants: {2}\n{3}
+roster.info_reserve,Likes {0}  {1}\nReserved: {2} (double pay)\n{3}
+roster.story_none,(Not close yet.)
+roster.empty,(Empty)
+regulars.story_new,{0} told you a bit about themselves. It's in the roster.
+regulars.gift,{0} left you a thank-you gift: {1}.
+regulars.reserve_new,Get me {0}. I'll pick it up next time. Double the price.
+regulars.reserve_ask,Did the {0} I reserved come in?
+regulars.reserve_missed,{0}'s reserved {1} wasn't there. Favor -1.
+regulars.story.0.3,Ms. Wen is saving up for her daughter's wedding. Up here, she says, appearances cost more than money.
+regulars.story.0.5,Her daughter marries next month. A few things at the wedding came from your shop, she says.
+regulars.story.1.3,Mr. Lu audits for a corporation, staring at other people's books all day. He comes here because your books add up.
+regulars.story.1.5,Mr. Lu got promoted. He says he will mention your shop when the company buys.
+regulars.story.2.3,Mrs. Bai's husband is always away. Lots of things at home, few people. Shopping gives her something to do.
+regulars.story.2.5,Her husband is back. She wants new decor so the place feels like home.
+regulars.story.3.3,Mr. Zhao ran freight for thirty years. Retired, he can't sit still and walks the station every day.
+regulars.story.3.5,The cargo he hauled as a young man is worth more every year, he says. Your shop reminds him of those days.
+regulars.story.4.3,Miss Qin plays violin in the orchestra and always browses before a show. She says it's quiet here.
+regulars.story.4.5,She gave you two concert tickets. Not great seats, but she saved them for you.
+regulars.story.5.3,Mr. Gu runs scheduling at the docks. Talks fast, buys fast.
+regulars.story.5.5,Everyone at the docks knows your shop now, he says. "Real goods, no rip-offs."
+regulars.story.6.3,Mrs. Shen has a very old cat, older than her daughter.
+regulars.story.6.5,The cat is gone. She meant to stay home that day, she says, but came and sat here for a while.
+regulars.story.7.3,Professor Lin is looking for an old book, a paper edition printed on Earth. He's been looking for twenty years.
+regulars.story.7.5,Still not found. No hurry, he says. People who look for things need somewhere to rest.
+regulars.story.8.3,Miss Su just moved up from the Lower Levels. She wants everything and can afford to part with nothing.
+regulars.story.8.5,Up here, she says, you're the first one who didn't joke about her accent.
+regulars.story.9.3,Mr. Han sells insurance. The most valuable thing on the station, he says, is "nothing went wrong".
+regulars.story.9.5,He ran a risk assessment on your shop. Verdict: "suitable for a long-term relationship".
+regulars.story.10.3,Lady Ye collects antiques and cares most about provenance. Something of unknown origin is a burden, however pretty.
+regulars.story.10.5,When the family sells pieces from the collection, she says, she'll ask you first.
+regulars.story.11.3,Dr. Zhou works nights at a private hospital and browses by day, eyes always red.
+regulars.story.11.5,When patients' families ask where to buy things they can trust, he gives them your shop's name.
+regulars.story.12.3,Miss Tang designs holograms and is rushing a job for a big company.
+regulars.story.12.5,The job went through. Everything for the launch party, she says, she will pick from your shop.
+regulars.story.13.3,Mr. Xu is distant family of an old house. "Related," he says, "but not to the money."
+regulars.story.13.5,At a family gathering someone asked where he bought his things. He named your shop.
+regulars.story.14.3,Old Mr. Cheng comes every week. He buys little; mostly he wants someone to talk to.
+regulars.story.14.5,His grandson is coming to visit. He wants to pick a proper gift.
+regulars.story.15.3,Ms. Ji is a clerk at the Council. Tight-lipped; she only says the work is "boring".
+regulars.story.15.5,The Council is about to audit a few shops, she says. Yours isn't on the list.
+ncguide.reissued,There's a copy of Shopkeeping Rules in the shop: a new shopkeeper's starter handbook.
+ul_kai_organ_route_title,Black Route
+ul_kai_organ_route_desc,Kai introduces you to Thorne from the clinic and tells you how to reach the Firefight Zone. You get a dissector, an organ cooler and a copy of Dissection Essentials: pick up bodies there at night, take out the organs and sell them to buyers like Thorne. Dr. Miller also starts selling the 3D organ printer. Organ dealers start with this.
+net_group_organ,Organ Trade
+organ.route.unlocked,Kai dropped off a dissector, an organ cooler and a copy of Dissection Essentials. The Firefight Zone is open tonight.
+organ.route.compensated,The organ sales license you bought was missing a step: Kai threw in the Black Route for free. The dissector and cooler are in the shop.
+regulars.wish_feature,Regular's wish
+regulars.reserve_feature,Regular's reservation
+ul_kai_police_donation_title,Precinct Donation
+ul_kai_police_donation_desc,Kai makes a donation to the police widows' fund in your shop's name, and sends a few crates of good food to the duty room. Police reputation +{0}. You can donate again after {1} days.
+perk.ul_aug_surge.name,Augment Surge
+perk.ul_aug_surge.desc,You start with a shotgun. Augments mix in with your customers from the first week, and the crisis never ends: let too many go and the game is over. Killing an augment pays a bounty (+25%) and earns police reputation.
