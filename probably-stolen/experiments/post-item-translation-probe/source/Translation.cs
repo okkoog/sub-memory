@@ -9,6 +9,7 @@ namespace PostItemTranslationProbe
         private readonly Dictionary<string, TargetItem> entries =
             new Dictionary<string, TargetItem>(StringComparer.Ordinal);
         public IEnumerable<TargetItem> Items => entries.Values;
+        public int Count => entries.Count;
 
         public sealed class TargetItem
         {
