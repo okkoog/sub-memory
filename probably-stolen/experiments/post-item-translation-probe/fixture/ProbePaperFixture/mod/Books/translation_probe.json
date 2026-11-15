@@ -1,0 +1,75 @@
+{
+  "id": "translation_probe",
+  "title": "Factory Translation Test",
+  "background": "notebook_manual",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close_label",
+      "action": "close",
+      "x": 115,
+      "y": 357,
+      "w": 82,
+      "h": 19,
+      "text": "Close"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "x": 27,
+          "y": 36,
+          "w": 262,
+          "h": 31,
+          "text": "Factory Translation Test",
+          "style": "title",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "x": 28,
+          "y": 95,
+          "w": 253,
+          "h": 81,
+          "text": "This line came from another mod's paper book.",
+          "style": "body",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "elements": [
+        {
+          "type": "text",
+          "id": "header",
+          "x": 27,
+          "y": 36,
+          "w": 262,
+          "h": 31,
+          "text": "Factory Translation Test",
+          "style": "title",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "id": "page_two",
+          "x": 28,
+          "y": 95,
+          "w": 253,
+          "h": 81,
+          "text": "Second page: the original is still English.",
+          "style": "body",
+          "wrap": true
+        }
+      ]
+    }
+  ]
+}
