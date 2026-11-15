@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>netstandard2.1</TargetFramework><AssemblyName>ProbePaperFixture</AssemblyName><GameManaged Condition="'$(GameManaged)' == ''">G:\steam\steamapps\common\Probably Stolen\Probably Stolen_Data\Managed</GameManaged></PropertyGroup>
+  <ItemGroup><Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+</Project>
