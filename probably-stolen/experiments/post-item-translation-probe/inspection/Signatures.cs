@@ -41,14 +41,14 @@ class Scanner
       foreach(var fh in t.GetFields()){
         var x=r.GetFieldDefinition(fh);var name=r.GetString(x.Name);
         if(n=="PaperUI"&&!name.Contains("Data"))continue;
-        try{Console.WriteLine("  F "+x.DecodeSignature(d,null)+" "+name);}
+        try{Console.WriteLine("  F "+x.Attributes+" "+x.DecodeSignature(d,null)+" "+name);}
         catch(Exception){Console.WriteLine("  F ?? "+name);}
       }
       foreach(var mh in t.GetMethods()){
         var x=r.GetMethodDefinition(mh);var name=r.GetString(x.Name);
         if(name.StartsWith("get_")||name.StartsWith("set_")||name.StartsWith("add_")||name.StartsWith("remove_"))continue;
         if(n=="ModLoader" && !name.Contains("Mod") && !name.Contains("Load"))continue;
-        try{var sig=x.DecodeSignature(d,null);Console.WriteLine("  M "+sig.ReturnType+" "+name+"("+string.Join(", ",sig.ParameterTypes)+")");}
+        try{var sig=x.DecodeSignature(d,null);Console.WriteLine("  M "+x.Attributes+" "+sig.ReturnType+" "+name+"("+string.Join(", ",sig.ParameterTypes)+")");}
         catch(Exception){Console.WriteLine("  M ?? "+name);}
       }
     }
