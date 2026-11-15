@@ -28,10 +28,10 @@ class Scanner
     using var f=File.OpenRead(a[0]);using var p=new PEReader(f);var r=p.GetMetadataReader();var d=new Provider();
     foreach(var h in r.TypeDefinitions){
       var t=r.GetTypeDefinition(h);var n=r.GetString(t.Name);
-      if(n.Contains("Book")||n.Contains("Paper")||n.Contains("Binding")||n.Contains("Dialog")||n.Contains("Dialogue"))
+      if(n.Contains("Book")||n.Contains("Paper")||n.Contains("Binding")||n.Contains("Dialog")||n.Contains("Dialogue")||n.Contains("Perk")||n.Contains("Starting"))
         Console.WriteLine("TYPE "+n);
       if(n!="PaperUI" && n!="ModLoader" && n!="LoadedMod" && n!="RichTextBuilder"&&
-         n!="DialogueHandler" && !n.Contains("Paper")&&!n.Contains("Book")&&!n.Contains("Binding"))continue;
+         n!="DialogueHandler" && !n.Contains("Paper")&&!n.Contains("Book")&&!n.Contains("Binding")&&!n.Contains("Perk")&&!n.Contains("Starting") && n!="ModHelper")continue;
       Console.WriteLine("## "+n);
       foreach(var ph in t.GetProperties()){
         var x=r.GetPropertyDefinition(ph);var name=r.GetString(x.Name); try{
