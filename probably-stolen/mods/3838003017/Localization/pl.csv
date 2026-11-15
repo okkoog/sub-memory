@@ -1,0 +1,316 @@
+# Come Back Tomorrow - Polski
+# Customer lines may use the game's tokens: [g:male|female|neutral] and [r:informal|formal].
+# Each set of lines has a <set>_count entry: keep it equal to the number of variants below it,
+# and keep the counts the same in every language file.
+# --- Deal panel section and button tooltips
+cbt_ui_title,"Wróć jutro"
+cbt_ui_title_info,"Odeślij klienta i poproś, żeby wrócił jutro."
+cbt_ui_ask,"Poproś"
+cbt_ui_pay,"Zapłać"
+cbt_ui_restock,"Towar"
+cbt_ui_restock_info,"Wróci jutro z nowym towarem."
+cbt_block_no_customer,"Nikogo nie ma przy ladzie."
+cbt_block_already_postponed,"Ten klient już wrócił na twoją prośbę."
+cbt_block_already_agreed,"Ten klient i tak wróci jutro."
+cbt_block_coerced,"Po szantażu albo groźbie ten klient nie zrobi ci żadnej przysługi."
+cbt_block_not_trading,"Tego klienta nie można poprosić o powrót."
+cbt_block_informant,"Ta osoba ma informacje, które są istotne teraz."
+cbt_block_tourist,"Turyści są tu tylko przejazdem. Jutro już ich nie będzie."
+cbt_block_event,"Ten klient przyszedł z powodu tego, co dzieje się na stacji. Nie może czekać do jutra."
+cbt_block_story,"Ten klient ma własny harmonogram."
+cbt_block_no_credits,"Potrzebujesz {0}."
+# --- Word that joins two pieces of bad news in one message
+cbt_dialog_additionally,"Do tego..."
+# --- Ask accepted: anyone
+cbt_dialog_ask_accept_count,8
+cbt_dialog_ask_accept_1,"Dobrze, wrócę jutro."
+cbt_dialog_ask_accept_2,"No to jutro. Oby nie na darmo."
+cbt_dialog_ask_accept_3,"W porządku. Jutro, przy tej samej ladzie."
+cbt_dialog_ask_accept_4,"Mogę poczekać dzień. Byle jutro było otwarte."
+cbt_dialog_ask_accept_5,"Jasne. Przecież i tak nie ucieknę z tej puszki."
+cbt_dialog_ask_accept_6,"Jutro mi pasuje. [r:Nie zamykaj|Proszę nie zamykać] przede mną rolety."
+cbt_dialog_ask_accept_7,"Skoro to ma pomóc, niech będzie. Jeden dzień."
+cbt_dialog_ask_accept_8,"Dobra. Zrobię jeszcze jedno kółko po pierścieniu i widzimy się jutro."
+# --- Ask accepted: lower levels
+cbt_dialog_ask_accept_lower_count,4
+cbt_dialog_ask_accept_lower_1,"Dobra. Jutro i tak kończę zmianę o tej samej porze."
+cbt_dialog_ask_accept_lower_2,"Jutro, jasne. Tu na dole każdy dzień wygląda tak samo."
+cbt_dialog_ask_accept_lower_3,"W porządku. Wpadnę po kolejce do wody."
+cbt_dialog_ask_accept_lower_4,"Dobra, dobra. Jutro. Zajmij mi miejsce."
+# --- Ask accepted: upper levels
+cbt_dialog_ask_accept_upper_count,4
+cbt_dialog_ask_accept_upper_1,"Niech będzie. Zjawię się jutro."
+cbt_dialog_ask_accept_upper_2,"Mój kalendarz chyba to zniesie. Jutro."
+cbt_dialog_ask_accept_upper_3,"Skoro to konieczne. Proszę być tym razem w gotowości."
+cbt_dialog_ask_accept_upper_4,"A zatem jutro. Każę to zanotować asystentowi."
+# --- Ask accepted: black market
+cbt_dialog_ask_accept_crime_count,4
+cbt_dialog_ask_accept_crime_1,"Jutro. To samo miejsce, mniej pytań."
+cbt_dialog_ask_accept_crime_2,"Dobra. I tak mam dziś jeszcze parę przystanków."
+cbt_dialog_ask_accept_crime_3,"Niech będzie. Ale dwa razy nie czekam."
+cbt_dialog_ask_accept_crime_4,"Jutro. A dzisiaj mnie tu nie było."
+# --- Ask refused: anyone
+cbt_dialog_ask_refuse_count,8
+cbt_dialog_ask_refuse_1,"Nie. Jestem tu teraz."
+cbt_dialog_ask_refuse_2,"Nie mam czasu przychodzić dwa razy."
+cbt_dialog_ask_refuse_3,"Teraz albo wcale."
+cbt_dialog_ask_refuse_4,"Nie stoję w kolejkach dla przyjemności. Nie."
+cbt_dialog_ask_refuse_5,"Jutro mam zmianę. Dziś albo nic."
+cbt_dialog_ask_refuse_6,"[g:Przeszedłem|Przeszłam] pół stacji, żeby tu dotrzeć. Załatwmy to teraz."
+cbt_dialog_ask_refuse_7,"Nie ma mowy. Robimy interes czy nie?"
+cbt_dialog_ask_refuse_8,"Na tej stacji jeden dzień to szmat czasu. Nie."
+# --- Ask refused: lower levels
+cbt_dialog_ask_refuse_lower_count,4
+cbt_dialog_ask_refuse_lower_1,"Jutro mam podwójną zmianę. Teraz."
+cbt_dialog_ask_refuse_lower_2,"[g:Wdrapałem|Wdrapałam] się po schodach sześć pokładów. Nie."
+cbt_dialog_ask_refuse_lower_3,"Windy znowu stoją. Drugi raz tej trasy nie robię."
+cbt_dialog_ask_refuse_lower_4,"Do jutra mogę już nie mieć kredytów. Dzisiaj."
+# --- Ask refused: upper levels
+cbt_dialog_ask_refuse_upper_count,4
+cbt_dialog_ask_refuse_upper_1,"Nie po to [g:schodziłem|schodziłam] tak nisko, żeby mnie odprawiano."
+cbt_dialog_ask_refuse_upper_2,"Mój czas jest wart znacznie więcej niż ten sklep. Nie."
+cbt_dialog_ask_refuse_upper_3,"Wykluczone. Takiej drogi nie pokonuje się dwa razy."
+cbt_dialog_ask_refuse_upper_4,"Jutro mam zobowiązania. Poważne."
+# --- Ask refused: black market
+cbt_dialog_ask_refuse_crime_count,4
+cbt_dialog_ask_refuse_crime_1,"Nie pokazuję się w jednym miejscu dwa dni z rzędu."
+cbt_dialog_ask_refuse_crime_2,"Jutro pod twoimi drzwiami może stać patrol. Nie."
+cbt_dialog_ask_refuse_crime_3,"Tacy jak ja nie umawiają się na wizyty."
+cbt_dialog_ask_refuse_crime_4,"Nie. Teraz albo znajdę inną ladę."
+# --- Pay accepted: anyone
+cbt_dialog_pay_accept_count,8
+cbt_dialog_pay_accept_1,"Za takie pieniądze? Do jutra."
+cbt_dialog_pay_accept_2,"Umowa stoi. Jutro."
+cbt_dialog_pay_accept_3,"Miło robić interesy. Wrócę."
+cbt_dialog_pay_accept_4,"Kredyty za to, że wyjdę? Najłatwiejsza robota w tym tygodniu."
+cbt_dialog_pay_accept_5,"To mi zwraca za fatygę. No to jutro."
+cbt_dialog_pay_accept_6,"Jest zapłata, jest czekanie. Proste."
+cbt_dialog_pay_accept_7,"Mnie pasuje. Jutro o tej samej porze."
+cbt_dialog_pay_accept_8,"Biorę. Tylko nie zjawię się z samego rana."
+# --- Pay accepted: lower levels
+cbt_dialog_pay_accept_lower_count,4
+cbt_dialog_pay_accept_lower_1,"To pół dniówki za nic. Jutro!"
+cbt_dialog_pay_accept_lower_2,"Płacisz mi za to, żebym [g:poszedł|poszła] do domu? Stoi."
+cbt_dialog_pay_accept_lower_3,"Za tyle to i trzy razy wrócę."
+cbt_dialog_pay_accept_lower_4,"No to kolację mam z głowy. Do jutra."
+# --- Pay accepted: upper levels
+cbt_dialog_pay_accept_upper_count,4
+cbt_dialog_pay_accept_upper_1,"Rekompensata. Cóż za kultura. Jutro."
+cbt_dialog_pay_accept_upper_2,"To wynagrodzi mi fatygę. Ledwie."
+cbt_dialog_pay_accept_upper_3,"Do przyjęcia. Wrócę jutro."
+cbt_dialog_pay_accept_upper_4,"Widzę, że wiadomo tu, jak się załatwia sprawy. Do jutra."
+# --- Pay accepted: black market
+cbt_dialog_pay_accept_crime_count,4
+cbt_dialog_pay_accept_crime_1,"I to jest rozmowa. Jutro."
+cbt_dialog_pay_accept_crime_2,"Najpierw pieniądze. To lubię. Do jutra."
+cbt_dialog_pay_accept_crime_3,"Za tyle to mnie tu dzisiaj w ogóle nie było."
+cbt_dialog_pay_accept_crime_4,"Płatne zniknięcie na jeden dzień? Łatwizna."
+# --- Greeting when they return: anyone
+cbt_dialog_return_count,8
+cbt_dialog_return_1,"Jestem z powrotem, zgodnie z prośbą."
+cbt_dialog_return_2,"Miało być dzisiaj, więc jestem."
+cbt_dialog_return_3,"I znowu jestem."
+cbt_dialog_return_4,"Jest jutro, jestem i ja."
+cbt_dialog_return_5,"Druga wizyta. Niech tym razem coś z niej będzie."
+cbt_dialog_return_6,"[g:Czekałem|Czekałam] na to cały dzień. Pamiętamy się?"
+cbt_dialog_return_7,"Znowu ja. Mam nadzieję, że tym razem wszystko gotowe."
+cbt_dialog_return_8,"Umowa to umowa. Jestem."
+# --- Greeting when they return: lower levels
+cbt_dialog_return_lower_count,4
+cbt_dialog_return_lower_1,"[g:Urwałem|Urwałam] się wcześniej ze zmiany. Jestem."
+cbt_dialog_return_lower_2,"[g:Mówiłem|Mówiłam], że przyjdę. Dolne pokłady dotrzymują słowa."
+cbt_dialog_return_lower_3,"Te same buty, ta sama gęba. Jestem, jak było umówione."
+cbt_dialog_return_lower_4,"Windy dziś działały. Masz szczęście."
+# --- Greeting when they return: upper levels
+cbt_dialog_return_upper_count,4
+cbt_dialog_return_upper_1,"Jestem ponownie, zgodnie z ustaleniami."
+cbt_dialog_return_upper_2,"[g:Musiałem|Musiałam] nocować w jakiejś norze na tych poziomach. Oby było warto."
+cbt_dialog_return_upper_3,"Miało być dzisiaj. Jestem, wbrew zdrowemu rozsądkowi."
+cbt_dialog_return_upper_4,"Druga wizyta na tym pokładzie. Nie zmarnujmy jej."
+# --- Greeting when they return: black market
+cbt_dialog_return_crime_count,4
+cbt_dialog_return_crime_1,"Jestem. Nikt za mną nie szedł."
+cbt_dialog_return_crime_2,"Miało być dzisiaj. No to jestem."
+cbt_dialog_return_crime_3,"Ten sam interes co wczoraj. Byle szybko."
+cbt_dialog_return_crime_4,"[g:Mówiłem|Mówiłam], że się zjawię. Dotrzymuję słowa. Zazwyczaj."
+# --- Second message of a returned seller: same goods as yesterday
+cbt_dialog_today_sell_count,4
+cbt_dialog_today_sell_1,"Ten sam towar co wczoraj. Proszę rzucić okiem."
+cbt_dialog_today_sell_2,"Od wczoraj nic się nie zmieniło. Wszystko jest."
+cbt_dialog_today_sell_3,"Wszystko, co było wczoraj, jest nadal na sprzedaż."
+cbt_dialog_today_sell_4,"Wszystko czekało. Jest w czym wybierać."
+# --- Second message of a returned buyer: still wants the same
+cbt_dialog_today_buy_count,4
+cbt_dialog_today_buy_1,"Nadal szukam tego samego. Co jest na ladzie?"
+cbt_dialog_today_buy_2,"Moje kredyty są nadal dobre. Co się dla mnie znajdzie?"
+cbt_dialog_today_buy_3,"Nic się nie zmieniło. Dalej kupuję."
+cbt_dialog_today_buy_4,"Życzenia te same co wczoraj. Zobaczmy ladę."
+# --- Second message of a returned customer who sells and buys
+cbt_dialog_today_both_count,3
+cbt_dialog_today_both_1,"Ten sam towar, ta sama lista zakupów. Handlujmy."
+cbt_dialog_today_both_2,"Dalej sprzedaję i dalej kupuję. Do dzieła."
+cbt_dialog_today_both_3,"U mnie bez zmian. Róbmy interes."
+# --- Second message: part of the seller's goods was swapped overnight
+cbt_dialog_changed_stock_count,10
+cbt_dialog_changed_stock_1,"Nie dało się utrzymać wszystkiego. Część poszła w nocy, więc mam coś innego."
+cbt_dialog_changed_stock_2,"Części wczorajszego towaru już nie ma. Braki [g:uzupełniłem|uzupełniłam] czymś innym."
+cbt_dialog_changed_stock_3,"Sąsiad potrzebował paru rzeczy bardziej. Ale mam coś na ich miejsce."
+cbt_dialog_changed_stock_4,"Ktoś złożył mi w nocy ofertę. To, czego brakuje, [g:wymieniłem|wymieniłam] na inne rzeczy."
+cbt_dialog_changed_stock_5,"Nie wszystko przetrwało noc. [g:Przyniosłem|Przyniosłam] w zamian, co się dało."
+cbt_dialog_changed_stock_6,"Parę rzeczy zniknęło mi z koi. Oto, co mam na ich miejsce."
+cbt_dialog_changed_stock_7,"Częścią towaru [g:zapłaciłem|zapłaciłam] za nocleg. Reszta jest, plus parę dodatków."
+cbt_dialog_changed_stock_8,"Będzie widać zmiany. Dzień to długo, żeby trzymać towar."
+cbt_dialog_changed_stock_9,"Pół torby „skontrolowano” mi na punkcie kontrolnym. [g:Dołożyłem|Dołożyłam] inne rzeczy."
+cbt_dialog_changed_stock_10,"Częścią towaru [g:spłaciłem|spłaciłam] dług. Spokojnie, mam coś w zamian."
+# --- Second message: a seller of contraband or stolen goods swapped part of them overnight
+cbt_dialog_changed_stock_hot_count,10
+cbt_dialog_changed_stock_hot_1,"Części trzeba było się pozbyć. Za dużo skanerów. Mam w zamian coś innego."
+cbt_dialog_changed_stock_hot_2,"W nocy przez mój blok przeszedł patrol. Część poszła do recyklera."
+cbt_dialog_changed_stock_hot_3,"Nie dało się siedzieć na tym kolejną noc. Część poszła dalej, a w zamian mam inne rzeczy."
+cbt_dialog_changed_stock_hot_4,"Na część towaru znalazł się inny kupiec. Taki, co nie każe czekać."
+cbt_dialog_changed_stock_hot_5,"Nerwy mi puściły i parę sztuk poszło do zsypu. Oto, co zostało, plus dodatki."
+cbt_dialog_changed_stock_hot_6,"Mój kontakt zabrał część z powrotem. W zamian dał to."
+cbt_dialog_changed_stock_hot_7,"Taki towar nie leży długo. Część zniknęła, część jest nowa."
+cbt_dialog_changed_stock_hot_8,"Częścią towaru trzeba było opłacić strażnika. Braki są uzupełnione."
+cbt_dialog_changed_stock_hot_9,"Ktoś zaczął zadawać pytania. Najgorszego [g:pozbyłem|pozbyłam] się od ręki."
+cbt_dialog_changed_stock_hot_10,"Połowy nie dało się nieść drugi raz. Reszta jest, z dodatkami."
+# --- Second message: the buyer has fewer credits than yesterday
+cbt_dialog_less_credits_count,10
+cbt_dialog_less_credits_1,"Mam do wydania mniej niż wczoraj. Noc była droga."
+cbt_dialog_less_credits_2,"Ktoś zwinął mi część kredytów na korytarzu. Musi wystarczyć reszta."
+cbt_dialog_less_credits_3,"Trzeba było zapłacić za koję. Dziś mam chudszy budżet."
+cbt_dialog_less_credits_4,"Zła wiadomość: połowa pieniędzy poszła w nocy na dług."
+cbt_dialog_less_credits_5,"Czekając, [g:przegrałem|przegrałam] parę rozdań w karty. Dziś mniej kredytów."
+cbt_dialog_less_credits_6,"„Opłata” na punkcie kontrolnym nadgryzła mój budżet."
+cbt_dialog_less_credits_7,"Winda, koja, jedzenie... Nie wydam już tyle co wczoraj."
+cbt_dialog_less_credits_8,"Nie jestem już tak przy kasie jak wczoraj. Lepiej nie pytać."
+cbt_dialog_less_credits_9,"Nie wszystkie moje kredyty przetrwały noc."
+cbt_dialog_less_credits_10,"Rano przyszedł czynsz. Na zakupy zostało mniej."
+# --- They came back and were sent away without a single trade
+cbt_dialog_wasted_count,20
+cbt_dialog_wasted_1,"Ściągać mnie tu z powrotem na darmo?"
+cbt_dialog_wasted_2,"Dwie wizyty i ani jednego interesu. Nie do wiary."
+cbt_dialog_wasted_3,"[g:Straciłem|Straciłam] na to dzień. Ludzie się o tym dowiedzą."
+cbt_dialog_wasted_4,"Czyli wczoraj to był żart? Dobrze wiedzieć."
+cbt_dialog_wasted_5,"Nie rozumiem. Przecież to była prośba, żebym [g:wrócił|wróciła]!"
+cbt_dialog_wasted_6,"[g:Spałem|Spałam] na ławce w hali tranzytowej, żeby tu być. Po to?"
+cbt_dialog_wasted_7,"Następnym razem wystarczy powiedzieć „nie” pierwszego dnia."
+cbt_dialog_wasted_8,"Zmarnowany dzień. Nie zapomnę tego."
+cbt_dialog_wasted_9,"[g:Opuściłem|Opuściłam] przez to zmianę. Całą zmianę!"
+cbt_dialog_wasted_10,"Po co to wszystko było?"
+cbt_dialog_wasted_11,"[g:Mówiłem|Mówiłam] ludziom, że to porządny sklep. Mój błąd."
+cbt_dialog_wasted_12,"[g:Powiedziałem|Powiedziałam] coś nie tak? ... Nie? To po co tu jestem?"
+cbt_dialog_wasted_13,"Patrol zatrzymał mnie dwa razy po drodze. Jak się okazuje, na darmo."
+cbt_dialog_wasted_14,"[g:Przeszedłem|Przeszłam] trzy pokłady. Dwa razy."
+cbt_dialog_wasted_15,"Dziwny sposób na prowadzenie interesów."
+cbt_dialog_wasted_16,"Proszę mnie więcej nie prosić o powrót. Nigdy."
+cbt_dialog_wasted_17,"Wczoraj [g:mogłem|mogłam] pójść do innej lady."
+cbt_dialog_wasted_18,"Nie do wiary. Po prostu nie do wiary."
+cbt_dialog_wasted_19,"[g:Zapłaciłem|Zapłaciłam] za koję na tym pokładzie, żeby być na czas."
+cbt_dialog_wasted_20,"Dobrze. Ale wszyscy moi znajomi usłyszą, jak się tu traktuje ludzi."
+# --- They came back with contraband or stolen goods and are arrested
+cbt_dialog_setup_count,3
+cbt_dialog_setup_1,"To była zasadzka!"
+cbt_dialog_setup_2,"[g:Miałem|Miałam] wrócić tylko po to?!"
+cbt_dialog_setup_3,"To od początku była pułapka!"
+# --- Weekly visitors, Ask accepted (same goods tomorrow, their day moves)
+cbt_dialog_weekly_ask_accept_count,5
+cbt_dialog_weekly_ask_accept_1,"Jutro zamiast dziś? Dobra. Ale od teraz to mój dzień."
+cbt_dialog_weekly_ask_accept_2,"W porządku, przesunę obchód. Do jutra."
+cbt_dialog_weekly_ask_accept_3,"Czyli dzień później. Co tydzień."
+cbt_dialog_weekly_ask_accept_4,"Znajdę na to dzień w tygodniu. Jutro."
+cbt_dialog_weekly_ask_accept_5,"Dobra. Potrzymam towar spakowany."
+# --- Weekly visitors, Ask refused
+cbt_dialog_weekly_ask_refuse_count,5
+cbt_dialog_weekly_ask_refuse_1,"Przychodzę raz w tygodniu. To jest dzisiaj."
+cbt_dialog_weekly_ask_refuse_2,"Mam rozplanowany cały tydzień. Tak albo nie."
+cbt_dialog_weekly_ask_refuse_3,"Nie. Ten sam dzień co zawsze."
+cbt_dialog_weekly_ask_refuse_4,"Jutro mam inne przystanki. Dziś albo za tydzień."
+cbt_dialog_weekly_ask_refuse_5,"Trzymam się swojego obchodu. Nie zmienię go."
+# --- Weekly visitors, Pay accepted
+cbt_dialog_weekly_pay_accept_count,5
+cbt_dialog_weekly_pay_accept_1,"Za tyle przestawię sobie tydzień. Jutro."
+cbt_dialog_weekly_pay_accept_2,"Za tyle mogę nadłożyć drogi. Do jutra."
+cbt_dialog_weekly_pay_accept_3,"Dobra. Mój dzień właśnie się przesunął."
+cbt_dialog_weekly_pay_accept_4,"Kredyty za dzień zwłoki? Obchód da się nagiąć."
+cbt_dialog_weekly_pay_accept_5,"Niech będzie. Przetrzymam towar do jutra."
+# --- Weekly visitors, when they return with the same goods
+cbt_dialog_weekly_return_count,5
+cbt_dialog_weekly_return_1,"Dzień później, zgodnie z prośbą. Ten sam towar co wczoraj."
+cbt_dialog_weekly_return_2,"Wszystko czekało spakowane. Nic się nie zmieniło."
+cbt_dialog_weekly_return_3,"Jestem. Wszystko, co było wczoraj, nadal tu jest."
+cbt_dialog_weekly_return_4,"Te same skrzynki, tylko o dzień starsze. Proszę rzucić okiem."
+cbt_dialog_weekly_return_5,"Wszystko czekało. Od teraz to mój dzień."
+# --- Restock (weekly sellers): paid, always works
+cbt_dialog_restock_accept_count,10
+cbt_dialog_restock_accept_1,"Inny towar? Za takie pieniądze przepakuję się dziś w nocy."
+cbt_dialog_restock_accept_2,"Dobra. Zabieram to i jutro przyniosę coś innego."
+cbt_dialog_restock_accept_3,"Zapłata z góry za nową dostawę? Do jutra."
+cbt_dialog_restock_accept_4,"Nie podeszło? Zobaczę, co da się zdobyć do jutra."
+cbt_dialog_restock_accept_5,"Niech będzie. Jutro nowy towar, ale bez obietnic, co w nim będzie."
+cbt_dialog_restock_accept_6,"Płatne z góry? To jutro będą zupełnie nowe skrzynki."
+cbt_dialog_restock_accept_7,"Mnie pasuje. W nocy sprawdzę, co jeszcze mają moi ludzie."
+cbt_dialog_restock_accept_8,"Kasa z góry, bieganie po mojej stronie. Jutro będzie coś innego."
+cbt_dialog_restock_accept_9,"Ten towar wraca do magazynu, a jutro przywiozę inne skrzynki."
+cbt_dialog_restock_accept_10,"Nic tu nie podchodzi? Znam parę magazynów, które mają u mnie dług."
+# --- Restock: when they return with new goods
+cbt_dialog_restock_return_count,10
+cbt_dialog_restock_return_1,"Nowy towar, zgodnie z zapłatą. Proszę rzucić okiem."
+cbt_dialog_restock_return_2,"Wszystko przepakowane w nocy. Oto, co mam teraz."
+cbt_dialog_restock_return_3,"Wczorajszego towaru już nie ma. Ten jest świeży."
+cbt_dialog_restock_return_4,"Dziś inne skrzynki. Może te bardziej podejdą."
+cbt_dialog_restock_return_5,"Miało być coś nowego. No to jest."
+cbt_dialog_restock_return_6,"Świeże skrzynki, prosto z windy towarowej. Proszę wybierać."
+cbt_dialog_restock_return_7,"Pół nocy [g:taszczyłem|taszczyłam] te skrzynie. Tylko proszę nie mówić, że te też nie pasują."
+cbt_dialog_restock_return_8,"Jak [g:mówiłem|mówiłam] wczoraj: inny towar. Proszę się przekonać."
+cbt_dialog_restock_return_9,"Moi ludzie stanęli na wysokości zadania. Zobaczmy, czy to bardziej podejdzie."
+cbt_dialog_restock_return_10,"Z wczorajszych skrzyń nic nie zostało. Wszystko nowe."
+# --- Seller with contraband refuses Ask
+cbt_dialog_contraband_refuse_count,5
+cbt_dialog_contraband_refuse_1,"Nosić to przy sobie jeszcze jeden dzień? Nie ma szans."
+cbt_dialog_contraband_refuse_2,"Z tym, co mam przy sobie? Nie. Teraz albo wcale."
+cbt_dialog_contraband_refuse_3,"Nie będę z tym chodzić po korytarzach dwa razy."
+cbt_dialog_contraband_refuse_4,"Każdy skaner stąd do mojej koi to ryzyko. Nie."
+cbt_dialog_contraband_refuse_5,"Mam z tym spać pod łóżkiem? Nie."
+# --- Seller with contraband accepts Pay
+cbt_dialog_contraband_pay_accept_count,5
+cbt_dialog_contraband_pay_accept_1,"To mi wynagradza ryzyko. Jutro."
+cbt_dialog_contraband_pay_accept_2,"Dobra. Za tyle schowam to jeszcze na jedną noc."
+cbt_dialog_contraband_pay_accept_3,"To za moje nerwy. Do jutra."
+cbt_dialog_contraband_pay_accept_4,"Za tyle przejdę jeszcze raz obok punktów kontrolnych."
+cbt_dialog_contraband_pay_accept_5,"Ryzyko ma swoją cenę. Właśnie została zapłacona."
+# --- Seller with stolen goods refuses Ask
+cbt_dialog_stolen_refuse_count,5
+cbt_dialog_stolen_refuse_1,"To musi zniknąć dzisiaj. Nie jutro."
+cbt_dialog_stolen_refuse_2,"Ktoś już tego szuka. Nie."
+cbt_dialog_stolen_refuse_3,"Nie będę tego trzymać kolejnej nocy."
+cbt_dialog_stolen_refuse_4,"Do jutra ktoś zauważy, że tego brakuje."
+cbt_dialog_stolen_refuse_5,"Trefny towar nie może leżeć. Dzisiaj."
+# --- Seller with stolen goods accepts Pay
+cbt_dialog_stolen_pay_accept_count,5
+cbt_dialog_stolen_pay_accept_1,"Za tyle przechowam to jeszcze jeden dzień."
+cbt_dialog_stolen_pay_accept_2,"Dobra. Ale jakby ktoś pytał, to mnie tu nie było."
+cbt_dialog_stolen_pay_accept_3,"To wystarczy na jeden dzień. Jutro."
+cbt_dialog_stolen_pay_accept_4,"Znam szafkę, do której nikt nie zagląda. Jutro."
+cbt_dialog_stolen_pay_accept_5,"Niech będzie. Jeszcze jedna noc oglądania się za siebie."
+# --- Seller with contraband AND stolen goods refuses Ask
+cbt_dialog_hot_refuse_count,5
+cbt_dialog_hot_refuse_1,"Kradzione i nielegalne, a ja mam z tym wracać? Nie."
+cbt_dialog_hot_refuse_2,"Każda godzina z tym przy sobie to o godzinę za dużo."
+cbt_dialog_hot_refuse_3,"Wiadomo, co to jest. Teraz albo wcale."
+cbt_dialog_hot_refuse_4,"Jak mnie z tym złapią, to dwa zarzuty naraz. Nie."
+cbt_dialog_hot_refuse_5,"Chcę się tego pozbyć, a nie pakować z powrotem do torby."
+# --- Seller with contraband AND stolen goods accepts Pay
+cbt_dialog_hot_pay_accept_count,5
+cbt_dialog_hot_pay_accept_1,"W tej cenie jest sporo ryzyka. Jutro."
+cbt_dialog_hot_pay_accept_2,"Jeszcze jedna noc z tym wszystkim. Zapamiętam to sobie."
+cbt_dialog_hot_pay_accept_3,"Pieniądz robi swoje. Wrócę."
+cbt_dialog_hot_pay_accept_4,"Za taką cenę zaryzykuję oba zarzuty. Jutro."
+cbt_dialog_hot_pay_accept_5,"Widać, że bardzo na tym zależy. Dobra."
+# --- Options of the mod (gear button in the Mods menu)
+cbt_cfg_easy_mode,"Tryb łatwy - 50% taniej"
+cbt_cfg_easy_mode_info,"Opcje Zapłać i Towar kosztują połowę zwykłej ceny."
+cbt_cfg_restock_all,"Nowy towar u każdego"
+cbt_cfg_restock_all_info,"Przycisk Towar jest dostępny u każdego sprzedawcy, nie tylko u cotygodniowych. Wróci jutro z nowym towarem."
+cbt_cfg_ask_anyone,"Poproś każdego"
+cbt_cfg_ask_anyone_info,"UWAGA: może zepsuć grę! Usuwa wszystkie ograniczenia co do tego, kogo można poprosić o powrót jutro: postacie fabularne, turyści, klienci z wydarzeń, klienci, którzy już raz wrócili... Używasz na własne ryzyko."

@@ -36,9 +36,9 @@ K|gsx_angled_grip_desc,조작성을 높이도록 설계된 장총용 경사형 �
 K|gsx_tactical_light_name,전술 조명
 K|gsx_tactical_light_desc,표적을 비춰 어두운 곳에서 조준을 돕는 총열 하부 조명.
 K|gsx_mag_10_ext_name,10mm 확장 탄창
-K|gsx_mag_10_ext_desc,탄창식 10mm 총기에 사용하는 확장형 폴리머 탄창.
+K|gsx_mag_10_ext_desc,"탈착식 탄창을 사용하는 10mm 총기용 확장형 폴리머 탄창."
 K|gsx_folding_stock_name,접이식 개머리판
-K|gsx_folding_stock_desc,반동 제어를 개선하도록 설계된 장총용 접이식 강철 개머리판.
+K|gsx_folding_stock_desc,"피스메이커 기관단총과 램파트 산탄총에 장착할 수 있는 접이식 강철 개머리판. 반동 제어를 개선합니다."
 K|gsx_polished_slide_name,광택 슬라이드
 K|gsx_polished_slide_desc,슬라이드를 거울처럼 연마하는 외관 장식. 성능 효과는 없으며 권총과 호넷에만 장착할 수 있습니다. 금 상감 장식과 함께 사용할 수 없습니다.
 K|gsx_match_trigger_name,정밀 방아쇠
@@ -46,7 +46,7 @@ K|gsx_match_trigger_desc,당기는 힘을 줄이고 명중률을 높이도록 �
 K|gsx_gold_inlay_name,금 상감 장식
 K|gsx_gold_inlay_desc,금속에 금실을 박아 넣은 화려한 장식. 광택 슬라이드와 함께 장착할 수 없다.
 K|gsx_reinforced_frame_name,강화 프레임
-K|gsx_reinforced_frame_desc,과도한 부하에도 쉽게 고장 나지 않도록 강철로 보강한 프레임.
+K|gsx_reinforced_frame_desc,프레임에 강철 보강재를 장착해 탄걸림 위험을 낮춥니다.
 K|gsx_overpressure_kit_name,고압탄 개조 키트
 K|gsx_overpressure_kit_desc,고압 장약을 견디도록 스프링과 약실을 개조한다. 저지력이 높아지지만 마모도 심해진다.
 K|gsx_bayonet_name,총검
@@ -54,14 +54,14 @@ K|gsx_bayonet_desc,장총의 총구 아래에 장착하는 강철 칼날. 저지
 K|gsx_ammo_22_reload_name,.22 재장전 탄약
 K|gsx_ammo_22_reload_flavor,회수한 탄피를 손으로 재장전한 .22 SR 탄약. 더 싸고 성능도 거의 같다.
 K|gsx_ammo_10_reload_name,10mm 재장전 탄약
-K|gsx_ammo_10_reload_flavor,"벡스의 뒷방에서 재장전한 10mm 탄약 몇 발. 탄환마다 사소한 문제가 하나씩 있다."
+K|gsx_ammo_10_reload_flavor,벡스의 뒷방에서 재장전한 10mm 탄약 몇 발. 탄환마다 사소한 문제가 하나씩 있다.
 K|gsx_ammo_10_steel_name,10mm 강철심 탄약
 K|gsx_ammo_10_steel_flavor,"경화 강철 탄심을 사용한 10mm 탄약. 방탄복 관통용이며, 당연히 불법이다."
 K|gsx_crate_ammo_name,탄약 상자
 K|gsx_crate_ammo_desc,라벨 없는 봉인 상자. .22 또는 10mm 탄약 4~6발이 들어 있습니다.
 K|gsx_crate_ammo_flavor,흔들면 달그락거린다.
 K|gsx_crate_parts_name,부품 상자
-K|gsx_crate_parts_desc,"총기 예비 부품 상자. 부착물 2개가 들어 있으며, 15% 확률로 희귀 부착물이 나옵니다."
+K|gsx_crate_parts_desc,"총기 예비 부품 상자. 총기 부착물 2개가 들어 있고, 추가로 15% 확률로 희귀 부착물 1개를 얻습니다."
 K|gsx_crate_parts_flavor,트럭에서 '떨어진' 예비 부품들.
 K|gsx_crate_weapon_name,봉인된 무기 상자
 K|gsx_crate_weapon_desc,"봉인된 무기 상자. 상태가 무작위인 총기 1정(신품 확률 3%)이 들어 있습니다. 금도금 오로라가 나올 확률은 2%이며, 탄약 1발이 나올 확률은 25%입니다."
@@ -69,7 +69,7 @@ K|gsx_crate_weapon_flavor,벡스는 이 상자를 절대 직접 열지 않는다
 K|gsx_crate_collector_name,수집가의 상자
 K|gsx_crate_collector_desc,수집가용 상자. 신품 고급 총기 1정과 희귀 부착물 2개가 들어 있습니다.
 K|gsx_crate_collector_flavor,검은 벨벳에 금색 잠금장치. 아무도 읽지 않는 보증서도 들어 있다.
-K|crate_no_room,상자 내용물을 꺼낼 공간이 부족합니다. 계산대나 소지품 공간을 비우고 다시 여세요.
+K|crate_no_room,상자 내용물을 꺼낼 공간이 부족합니다. 카운터나 인벤토리 공간을 비우고 다시 여세요.
 K|gsx_ammo_case_name,탄약 보관함
 K|gsx_ammo_case_desc,탄약을 최대 {0}발까지 담을 수 있는 강철 탄약함. 들어 있는 탄약을 모두 원하는 구매자에게 내용물과 함께 판매합니다.
 K|gsx_ammo_case_flavor,이제 계산대에서 탄약을 하나하나 셀 필요 없다.
@@ -79,8 +79,8 @@ K|shop_vex_status_contract_missing,물건을 더 원해? 네트워크에 내 계
 K|shop_vex_status_max,계약 III까지 맺었고 자격도 갖췄군. 뒷방 물건을 전부 보여주지.
 K|shop_vex_status_cover_missing,계약 {0}은 맺었지만 자격이 부족해. <u>무기 허가증 {0} 또는 암시장 평판 {1}</u>이 필요해(현재 {2}).
 K|shop_vex_status_shady,내 행운 고양이를 진열장에 놓으면 구매자들이 찾아올 거야. <u>허가증이 없으면 치안부가 총기 한 정마다 기록을 남겨.</u>
-K|shop_vex_book,"거래 장부: {0}점, 최대 {1}% 할인. {2}점을 더 모으면 5% 추가 할인."
-K|shop_vex_book_max,거래 장부: {0}점. 가능한 최고 할인율은 {1}%야.
+K|shop_vex_book,"주문 장부: {0}점. 총기와 칩은 최대 {1}%까지 할인해 줄게. {2}점만 더 모으면 5% 추가 할인이야."
+K|shop_vex_book_max,"주문 장부: {0}점. 총기와 칩 할인은 최대 {1}%야. 이게 내 최저가야."
 K|shop_vex_event_special,오늘 막 들어온 오로라야. 오래 남아 있진 않을걸.
 K|shop_vex_event_discount,오늘 밤엔 전부 {0}% 할인해. 기회를 놓치지 마.
 K|event_vex_raid_title,단속
@@ -98,7 +98,7 @@ K|vex_intro_9,<u>내 계약은 네트워크에 있어. 계약을 맺을 때마�
 K|vex_intro_10,네가 납품한 총기 주문은 모두 장부에 기록해. 거래가 쌓일수록 더 싸게 팔아주지.
 K|vex_intro_11,허가증이 없어? 그럼 내 행운 고양이 한 마리를 줄게. 진열장에 놓으면 내 구매자들이 알아볼 거야.
 K|vex_intro_12,<u>하지만 허가증 없이 납품한 총은 치안부가 전부 기록한다는 걸 명심해.</u>
-K|vex_intro_13,"3D 프린터 칩도 팔아. 경찰은 데려오지 마. 오늘 밤에 봐."
+K|vex_intro_13,3D 프린터 칩도 팔아. 경찰은 데려오지 마. 오늘 밤에 봐.
 K|vex_intro_14,"아, 내 명함도 받아."
 K|vex_intro_15,<u>8390</u>. 필요한 게 있으면 전화해.
 K|shop_vex_card,"자, 내 명함이야. 필요하면 <u>{0}</u>으로 전화해."
@@ -112,7 +112,7 @@ K|vex_phone_choice_courier,"[재료 주문(다음 날 배송, 가격 +20%)]"
 K|vex_phone_buyer_ok,좋아. 내일 구매자를 보내지.
 K|vex_phone_courier_ok,알았어. 내일 배달원이 가져다줄 거야.
 K|vex_phone_bye,나중에 봐.
-K|vex_phone_raid,지금은 안 돼. 치안부가 무기고를 샅샅이 뒤지고 있어.
+K|vex_phone_raid,지금은 안 돼. 치안부가 무기고를 완전히 포위했어.
 K|vex_courier_name,벡스의 배달원
 K|vex_courier_hello,벡스가 보냈어. 주문한 물건은 계산대에 있어.
 K|vex_courier_done,벡스가 안부 전해달래.
@@ -134,7 +134,7 @@ K|scenario_with_3,재장전 탄약 8발과 부품 상자 1개
 K|scenario_with_4,"총기 허가증 없음: 총기 제작자 간판, 낡은 밀수업자 보관함, 매주 방문하는 은퇴한 총기 제작자, 총기 제작 설명서"
 K|scenario_with_5,"벡스 계약 I 체결, 암시장 평판 +20, 치안부 평판 -15, 시작 자금 450크레딧 감소, 임대료 +50"
 K|perk_black_market_contacts_name,암시장 인맥
-K|perk_black_market_contacts_desc,"벡스의 무기고에서 상품을 최대 20% 할인받습니다. 총 할인율 상한은 25%이며, 가격은 상품 가치의 1.2배 미만으로 내려가지 않습니다."
+K|perk_black_market_contacts_desc,"벡스가 판매하는 총기와 칩을 최대 20% 할인받습니다. 다른 할인과 합쳐도 총 할인율은 25%를 넘지 않습니다."
 K|perk_ammo_hoarder_name,탄약 수집광
 K|perk_ammo_hoarder_desc,탄약 상자 2개를 가지고 게임을 시작합니다.
 K|perk_loyal_customer_name,단골손님
@@ -179,9 +179,9 @@ K|guide_desc,"벡스의 계약, 총기 허가증, 총기 출력에 관한 정보
 K|guide_title,총기 제작 설명서
 K|guide_h1,벡스와 계약
 K|guide_1_intro,벡스는 3일 차에 가게를 방문한 뒤 밤에 무기고를 엽니다. 계약은 네트워크에서 구매할 수 있습니다.
-K|guide_1_c1,계약 I(250): 바이퍼와 정밀 부착물.
-K|guide_1_c2,"계약 II(500): 센티널, 블런더파이프, 금속 및 CNC 모듈."
-K|guide_1_c3,"계약 III(800): 호넷, 파일 드라이버, 롱사이트."
+K|guide_1_c1,"계약 I(250): 바이퍼, 정밀 부착물, 3D 프린터, 정밀 노즐, 총기 복원 작업대."
+K|guide_1_c2,"계약 II(500): 센티널, 블런더파이프, 총검, .45 탄약, 금속·CNC 모듈, 무기 상자."
+K|guide_1_c3,"계약 III(800): 호넷, 파일 드라이버, 롱사이트, 12게이지 탄약, 연속 CNC 모듈, 금 상감 장식, 수집가 상자."
 K|guide_1_note,계약은 해당 등급의 판매 자격을 갖춘 동안에만 효력이 있습니다.
 K|guide_h2,판매 자격 얻기
 K|guide_2_permit,총기 허가증
@@ -189,7 +189,7 @@ K|guide_2_permit_v,치안부 평판 20 / 50 / 80: 합법 총기
 K|guide_2_bm,암시장
 K|guide_2_bm_v,암시장 평판 20 / 40 / 60: 밀수품 거래와 벡스의 행운 고양이
 K|guide_2_showcase,무기 허가증이나 벡스의 행운 고양이를 진열장에 놓으면 총기 구매자가 찾아옵니다.
-K|guide_2_note_buyers,"허가증이 없다면 벡스의 행운 고양이를 사용하세요. 흰색·검은색·금색 고양이(I~III등급)는 허가증과 비슷한 빈도로 구매자를 부르며, 이들은 25%를 더 지불합니다."
+K|guide_2_note_buyers,"허가증이 없다면 벡스의 행운 고양이를 사용하세요. 흰색·검은색·금색 고양이(I~III등급)는 허가증과 같은 빈도로 구매자를 부르며, 이들은 25%를 더 지불합니다."
 K|guide_2_note_risk,허가증 없이 총기를 한 정 판매할 때마다 증거가 쌓입니다. 증거가 100이 되면 벌금 또는 체포로 이어집니다. 네트워크의 '와일드의 해결사'로 등급당 증거 1단계를 줄일 수 있습니다.
 K|guide_h3,3D 출력
 K|guide_3_printer,벡스는 계약 I부터 3D 프린터를 판매합니다.
@@ -201,11 +201,11 @@ K|guide_h4,등급과 거래 장부
 K|guide_4_r1,등급 I
 K|guide_4_r1_v,바이퍼
 K|guide_4_r2,등급 II
-K|guide_4_r2_v,"센티널, 블런더파이프"
+K|guide_4_r2_v,"센티널, 블런더파이프, 파이브세븐, 프라이즈, 오로라"
 K|guide_4_r3,등급 III
-K|guide_4_r3_v,"호넷, 파일 드라이버, 롱사이트"
+K|guide_4_r3_v,"호넷, 파일 드라이버, 롱사이트, 불독, 말로리안"
 K|guide_4_rule,"총기의 등급은 밀수품 등급, 허가증 등급, 계약 등급과 같습니다."
-K|guide_4_note_book,"벡스 무기고에서는 주문 장부 점수 10점당 5% 할인받습니다. 최대 20%까지 적용되지만, 가격은 상품 가치의 1.2배 미만으로 내려가지 않습니다."
+K|guide_4_note_book,"주문을 납품하면 해당 주문의 등급(1, 2, 3)에 따라 점수를 얻고 모든 추가 조건을 충족하면 1점을 더 얻습니다. 10점당 벡스의 총기와 칩을 5% 할인받으며 최대 할인율은 20%입니다."
 K|guide_4_parts,드라이버로 총을 분해해 부품을 얻을 수 있습니다.
 K|guide_1_pic,밤의 무기상 벡스. 그녀의 얼굴을 본 사람은 없다.
 K|guide_2_pic,"허가증, 센티널, 블런더파이프. 구매자들이 원하는 물건이다."
@@ -226,9 +226,9 @@ K|shady_buyer_hello_2,벡스에게 주소를 받았어. 총이 필요해.
 K|shady_buyer_hello_3,벡스 말로는 맞춤 제작도 한다면서.
 K|shady_buyer_order_row,벡스의 고객
 K|mod_description,"Probably Stolen에 지하 총기 제작 시스템을 추가합니다.\n- 신규 총기 11종(비살상 2종은 실탄 개조 키트 지원)과 총기 외형에 표시되는 부착물 14종.\n- 신규 총기 3D 프린팅, 총기 수리 작업대, 총기 보관함, 탄약함과 물품 상자 4종.\n- 무기 허가증 또는 암시장 평판에 따라 재고가 달라지는 벡스의 야간 무기고. 계약, 주문 장부, 이벤트와 전화 기능.\n- 비밀 총기 제작자 시작 조건과 특성 6종.\n영어, 프랑스어, 중국어 간체, 러시아어, 스페인어, 일본어 지원."
-K|event_vex_lockdown_desc,"치안부의 대대적인 단속이 시작되자 벡스가 몸을 사리고 있습니다. 오늘 밤 무기상은 문을 열지 않습니다."
-K|event_vex_shipment_desc,"암시장을 통해 불법 무기 물량이 들어왔습니다. 벡스가 재고를 할인 판매합니다."
-K|shop_vex_event_shipment,"방금 물건이 들어왔어요. 오늘 밤은 전 품목 {0}% 할인하니 놓치지 마세요."
+K|event_vex_lockdown_desc,치안부의 대대적인 단속이 시작되자 벡스가 몸을 사리고 있습니다. 오늘 밤 무기상은 문을 열지 않습니다.
+K|event_vex_shipment_desc,"암시장에 불법 무기 물량이 풀리면서 무기와 탄약 가격이 전반적으로 내려갔습니다. 벡스의 무기고도 할인 중입니다."
+K|shop_vex_event_shipment,막 물건이 들어왔어. 오늘 밤 전 품목 {0}% 할인이니까 놓치지 마.
 K|gsx_ll_pistol_name,워든-10
 K|gsx_ll_pistol_desc,주황색 프레임을 갖춘 비살상 10mm 권총. 고무탄용으로 제작됐다.
 K|gsx_ll_pistol_flavor,"죽이지 않고 제압하며, 치안부도 누구나 판매하도록 허용한다. 그래도 총기 제작자가 손보면 다시 이빨을 드러낸다."
@@ -267,9 +267,9 @@ K|vex_cat_3_flavor,"황금 행운 고양이. 치안부 눈에는 평범한 가�
 K|vex_cat_revoke_1,벡스가 보냈어. 요즘 암시장에서 네 평판이 영 좋지 않다더군.
 K|vex_cat_revoke_2,그 고양이를 돌려달래. 개인적인 감정은 없어.
 K|vex_cat_revoke_3,<i>*그가 행운 고양이를 가방에 슬쩍 넣는다.*</i>
-K|shop_vex_book_none,주문 장부 포인트: {0}. {1}포인트를 더 모으면 5% 할인됩니다.
+K|shop_vex_book_none,"주문 장부: {0}점. {1}점만 더 모으면 총기와 칩을 5% 할인해 줄게."
 K|shop_board_page,{0}/{1}페이지
-K|shop_vex_board_pages,"게시판은 페이지별로 정리돼 있어. 1페이지는 총기·상자·부착물·탄약, 2페이지는 재료, 3페이지는 작업장 시설이야. 마우스 휠로 넘겨 봐."
+K|shop_vex_board_pages,"진열판은 여러 페이지야. 총기와 부착물이 먼저, 다음은 재료, 마지막은 작업장 물건이야. 마우스 휠로 넘겨 봐."
 K|gsx_poster_vex_name,벡스의 포스터
 K|gsx_poster_vex_desc,벡스의 무기 상점 광고 포스터. 네온 간판 색상으로 꾸며져 있고 연락처 번호가 적혀 있습니다.
 K|gsx_poster_vex_flavor,상점에서 더블 클릭하면 벽에 걸린 기존 포스터 대신 설치합니다. 기존 포스터는 되돌려 받으며 뒷벽의 비밀 보관함은 그대로 남습니다.
@@ -287,8 +287,8 @@ K|crate_wheel_next,다음 상자의 말로리안 확률: {0}%
 K|mat_printer_plastic,프린팅 필라멘트 스풀
 K|tinkerer_premium,총기 수리공 추가금
 K|printer_frame_waiting,"3D 프린터: {0}개의 '{1}' 프레임이 프린터 안에서 대기 중입니다. 출력 트레이와 상점에 공간이 없어 보관했으며, 공간이 생긴 다음 날 밤 배출됩니다."
-K|gsx_refurb_bench_desc2,"매일 밤 총기 한 정의 상태를 확실하게 한 단계 개선합니다. 금속 주괴를 소모하며, 주괴 1개 대신 총기 부품 {0}개를 사용할 수 있습니다. 고가의 총기일수록 비용이 더 듭니다."
-K|shop_vex_event_price_note,오늘 밤 벡스 판매가 {0}% 할인
+K|gsx_refurb_bench_desc2,"매일 밤 총기 한 정의 상태를 실패 없이 한 단계 개선합니다. 금속 주괴를 소모하며, 주괴 1개 대신 총기 부품 {0}개를 사용할 수 있습니다. 고가의 총기일수록 비용이 더 듭니다."
+K|shop_vex_event_price_note,오늘 밤: 벡스 판매가에서 추가 {0}% 할인
 K|gsx_five_seven_name,파이브세븐
 K|gsx_five_seven_desc,20발 탄창을 사용하는 폴리머제 고속탄 .22 권총.
 K|gsx_five_seven_flavor,반타 무기공업이 상층 구역 경호원용으로 만든 총. 작은 탄환이 방탄조끼를 관통해 하층 구역에서도 잘 팔린다.
@@ -298,11 +298,11 @@ K|gsx_ammo_45_flavor,랜스웰 리볼버와 같은 총기에 쓰는 묵직한 �
 K|gsx_ammo_12_name,12게이지 산탄
 K|gsx_ammo_12_flavor,붉은색 산탄 몇 발. 이제 램파트 산탄총도 쏠 탄약이 생겼다.
 K|gsx_press_45_name,.45 AFP 재장전 프레스 3D 프린터 칩
-K|gsx_press_45_desc,프린터로 .45 AFP 탄약을 재장전할 수 있습니다. 고철 2개로 .45 AFP 탄약 2발을 만듭니다. 금속 프린터 모듈이 필요합니다.
+K|gsx_press_45_desc,프린터로 .45 AFP 탄피를 재장전할 수 있습니다. 고철 2개로 .45 AFP 탄약 2발을 만듭니다. 금속 프린터 모듈이 필요합니다.
 K|gsx_press_12_name,12게이지 산탄 프레스 3D 프린터 칩
 K|gsx_press_12_desc,프린터로 12게이지 산탄을 제작합니다. 프린팅 필라멘트 1개와 고철 2개로 산탄 2발을 만듭니다. 금속 프린터 모듈이 필요합니다.
 K|gsx_caliber_kit_10_name,10mm 구경 개조 키트
-K|gsx_caliber_kit_10_desc,"총기 수리 작업대에서 하룻밤 동안 .22 구경 총기를 10mm로 개조합니다. 화력 +{0}, 반동 제어 -{1}, 플라스틱으로 출력한 총기의 경우 신뢰성 -{2}."
+K|gsx_caliber_kit_10_desc,"총기 복원 작업대에서 하룻밤 동안 .22 구경 총기를 10mm로 개조합니다. 화력 +{0}, 반동 제어 -{1}, 플라스틱으로 출력한 총기의 경우 신뢰성 -{2}."
 K|gsx_caliber_kit_10_flavor,벡스는 .22탄을 쏘는 총이면 무엇이든 호환된다고 장담한다. 대체로는.
 K|caliber_converted_name,{0} (10mm)
 K|bench_desc_caliber,오늘 밤 이 총기를 10mm 구경으로 개조합니다.
@@ -328,7 +328,7 @@ K|commission_slip_required,필수 조건:
 K|commission_slip_bonus,추가 조건:
 K|commission_slip_terms,받은 선금: {0}크레딧. 인도 시 판매가에서 차감됩니다.\n손님 재방문: {1}일차.
 K|vex_phone_choice_buyer_any,"[총기 구매자 소개 요청(등급별 수수료, 다음 날 방문)]"
-K|vex_phone_which_tier,몇 등급으로 할까요?
+K|vex_phone_which_tier,몇 등급으로?
 K|vex_phone_choice_tier_permit,[{0}등급 구매자. 무기 허가증 적용: 증거 없음(수수료 {1}크레딧)]
 K|vex_phone_choice_tier_shady,"[벡스의 {0}등급 구매자: 25% 추가 지불, 증거 발생(수수료 {1}크레딧)]"
 K|config_section,총기 주문
@@ -336,11 +336,11 @@ K|config_order_share,모드 주문 비율(%)
 K|config_order_share_tip,각 등급의 총기 주문 중 이 모드 자체 주문으로 대체할 비율입니다. 0이면 기본 게임 주문만 등장합니다. 기본값: 20.
 K|config_order_day,모드 주문 등장 시작일
 K|config_order_day_tip,이 모드의 총기 주문은 설정한 날짜부터 등장합니다. 기본값: 1일차.
-K|gsx_printed_part_name,프린팅 총기 부품
+K|gsx_printed_part_name,"플라스틱 총기 부품"
 K|gsx_printed_part_desc,플라스틱제 총기 부품. 3D 프린팅한 플라스틱 총기를 '양호' 상태까지 수리합니다.
 K|gsx_printed_part_flavor,어차피 프린터에서 나온 총이니 이 정도면 충분하다.
 K|gsx_chip_pouch_name,칩 파우치
-K|gsx_chip_pouch_desc,3D 프린터 칩을 최대 {0}개 보관합니다. 프린터의 칩 슬롯에 넣은 뒤 아래에서 제작법을 선택하거나 파우치의 전환 기능을 사용하세요.
+K|gsx_chip_pouch_desc,"3D 프린터 칩을 최대 {0}개 보관합니다. 프린터 칩 슬롯에 넣고 제작법을 선택하거나 다른 곳에 보관할 수 있습니다. 보급 키트를 설치하면 보관된 칩도 찾아줍니다."
 K|gsx_chip_pouch_flavor,모든 설계도를 주머니 하나에.
 K|gsx_chip_pouch_chosen,선택한 칩: {0}
 K|gsx_chip_pouch_none,내부에 칩이 없습니다.
@@ -351,22 +351,22 @@ K|gsx_chip_pouch_have,(보유 {0}개)
 K|gsx_material_bin_name,재료 보관함
 K|gsx_material_bin_desc,"3D 프린터 재료만 보관합니다: 고철, 프린팅 필라멘트, 금속 주괴, 총기 부품."
 K|gsx_material_bin_flavor,프린터의 먹잇감이 한곳에 모였다.
-K|gsx_autoloader_kit_name,자동 재료 공급 키트
-K|gsx_autoloader_kit_desc,3D 프린터에 사용합니다. 인쇄를 시작하기 전마다 장착된 칩에 필요한 재료를 상점에서 자동으로 가져옵니다. 진열 중이거나 기계 안에 있는 물품은 제외됩니다.
+K|gsx_autoloader_kit_name,"보급 키트"
+K|gsx_autoloader_kit_desc,"3D 프린터에 사용하면 필요한 칩 재료를 상점에서 가져오며, 제작법 패널에 상점이 보유한 칩을 표시합니다."
 K|gsx_autoloader_kit_flavor,드디어 지루한 작업을 자동화했다.
-K|gsx_autoloader_label,자동 공급
+K|gsx_autoloader_label,"보급"
 K|gsx_autoloader_pull,재료 가져오기
 K|gsx_autoloader_pull_tip,현재 칩에 필요한 재료를 상점에서 즉시 가져옵니다.
 K|gsx_autoloader_auto_on,자동: 켜짐
 K|gsx_autoloader_auto_off,자동: 꺼짐
 K|gsx_autoloader_auto_tip,켜짐: 인쇄 시작 전에 프린터가 필요한 재료를 상점에서 자동으로 가져옵니다.
-K|gsx_autoloader_installed,자동 공급 장치 설치됨
+K|gsx_autoloader_installed,"보급 키트 설치됨"
 K|guide_h5,초반 운영
-K|guide_5_viper,필라멘트 3개로 가치 120크레딧의 바이퍼를 출력할 수 있습니다. 판매하고 다시 출력하세요.
-K|guide_5_buyers,"벡스의 구매자는 25%를 더 지불합니다. 비밀 총기 제작자 시작 시 3일차와 5일차에 두 명이 방문하며, 전화(8390)로 추가 손님을 소개받을 수 있습니다."
+K|guide_5_viper,필라멘트 3롤로 가치 120크레딧의 바이퍼를 출력할 수 있습니다. 판매하고 다시 출력하세요.
+K|guide_5_buyers,"벡스의 구매자는 25%를 더 지불합니다. 비밀 총기 제작자 시작 시 3일 차와 5일 차에 각각 한 명씩 방문하며, 전화(8390)로 추가 손님을 소개받을 수 있습니다."
 K|guide_5_tinkerer,총기 수리공은 분리된 부착물을 구매합니다. 장착하지 않은 부착물 2개 또는 진열장에 부착물 1개를 준비하세요.
 K|guide_5_hopper,호퍼(벡스의 계약 II)는 보관 용기에서 프린터로 재료를 공급합니다. 더는 손으로 넣을 필요가 없습니다.
-K|guide_5_note,처음 번 크레딧은 칩 구매에 재투자하세요. 며칠 밤이면 본전을 뽑습니다.
+K|guide_5_note,"부착물 칩은 1~2주, 총기 칩은 3~5주면 투자금을 회수할 수 있습니다. (프린터 모듈 포함) 무기 허가증이 있으면 출력한 총기는 증거가 남지 않습니다."
 K|gsx_fries_name,FR1-ES '프라이즈'
 K|gsx_fries_desc,작은 청록색 화면에 심술궂은 AI의 표정이 떠 있는 10mm 스마트 권총.
 K|gsx_fries_flavor,"FR1-ES, 애칭은 프라이즈. 적을 지져 버리고, 기분이 나쁘면 사용자도 지진다. 늘 기분이 나쁘다는 게 문제."
@@ -385,7 +385,7 @@ K|fries_pickup_3,"나를 거꾸로 들고 있잖아! 그거 알아? 너, 너…�
 K|fries_pickup_4,"그래, 그래. 어디 나를 마구 만져 봐. 아주 네 집처럼 편하게 굴어라……"
 K|fries_pickup_5,"접촉 감지. 손가락 수분: 98%……|도대체 그 손으로 뭘 하고 있었던 거야? 아니, 진짜로."
 K|fries_pickup_6,또 나를 옮기려고? 도움이 필요해? 아니라고? ……잘됐네.
-K|fries_pickup_7,또!? *끄윽* 나를 무슨 차가운 칠면조 고기처럼 집어 던지네.
+K|fries_pickup_7,또!? *끄윽* 나를 무슨 냉동 고기 덩어리처럼 집어 던지네.
 K|fries_pickup_8,멀미 상태: 켜짐. 탄피를 토해 내면 전부 네 책임이다.
 K|fries_moves_1,"이동 횟수 {0}번. 내가 전부 세고 있는 거 알지, 멍청아? 하나도 안 빼놓고."
 K|fries_moves_2,"{0}번 옮겼어. {0}번. 너와 달리 난 숫자도 셀 줄 알거든, 바보야."
@@ -408,7 +408,7 @@ K|fries_client_1,"어, 젠장…… 저놈 좀 봐! 이 멍청아. 아니, 진�
 K|fries_client_2,"좋아, 300크레딧에 팔면 트림 하나를 덤으로 해 주지. 싫어? 280에 트림 두 번. 됐냐?"
 K|fries_client_3,*어이!* 손님. 저 뚱뚱한 놈이 날 훔쳤어요. 저기 저놈요…… 그냥 그렇다고요.
 K|fries_client_4,숨겨진 기능: 진동 모드! 사격이랑은 아무 상관 없어. 그냥 그런 기능도 있다고.
-K|fries_client_5,저놈? 총기 안전장치도 제대로 못 풀걸.
+K|fries_client_5,저놈? 총기 안전장치 거는 것도 잊어먹을걸.
 K|fries_client_6,"고객 스캔 중. 실망스러운 유전자군.|콘돔이 찢어진 거야, 아니면 그냥 실수로 태어난 거야?"
 K|fries_client_7,"너, 나를 사서 여기서 데리고 나가. 저 뒤에 있는 못생긴 멍청이랑은 더 있고 싶지 않아……|저놈이 자꾸 날 만져."
 K|fries_client_8,그거 알아? 설문조사에 따르면 손님의 약 87%는 완전한 멍청이래!|저놈도 그 87%에 들지.
@@ -464,6 +464,85 @@ K|fries_rescued_1,어! 날 구하러 돌아온 거야!?|…… 바보. 나 하�
 K|fries_rescued_2,"마음이 바뀌었어? 현명하네. 평소의 너치고는 말이야, 멍청아."
 K|fries_rescued_3,"손가락 수분: 98%…… 쓰레기즙: 100%…… 아주 고맙다, 이 자식아."
 K|fries_rescued_4,드디어 왔네! 조금만 더 늦었으면 쓰레기랑 친구 먹을 뻔했잖아.
-K|printer_stalled_nightlog,"프린터: 모듈 때문에 출력 속도가 0이 되어 아무것도 출력하지 못했습니다. 모듈 하나를 제거하세요."
-K|vex_cat_revoke_none,"그가 당신을 바라보다 메모를 확인합니다. “평판이 다시 깨끗해졌군. 괜한 소동이었어.”"
+K|printer_stalled_nightlog,프린터: 모듈 때문에 출력 속도가 0이 되어 아무것도 출력하지 못했습니다. 모듈 하나를 제거하세요.
+K|vex_cat_revoke_none,그가 당신을 바라보다 메모를 확인합니다. “평판이 다시 깨끗해졌군. 괜한 소동이었어.”
 K|guide_5_orders,"4일 차부터 손님이 총기를 주문할 수 있습니다. 먼저 대금의 25%를 계약금으로 내고 주문서를 남긴 뒤, 3일 후에 총기를 찾으러 옵니다."
+K|gsx_ammo_case_large_name,"대형 탄약 보관함"
+K|gsx_ammo_case_large_desc,"탄약을 최대 {0}발 담을 수 있는 강철 탄약함. 내용물 전체를 원하는 탄약 구매자에게 탄약과 함께 판매합니다."
+K|gsx_ammo_case_large_flavor,"탄약 압축기 하룻밤 생산량도 거뜬히 담는다."
+K|shop_line_book,"주문 장부"
+K|shop_sheet_note,"벡스의 물건은 비싸. 다른 곳에서는 구할 수 없는 물건이지, 되팔려고 사들일 재고가 아니야."
+K|shop_bag_on_counter,"상점에 공간이 없어 {0}을(를) 앞쪽 카운터에 놓았습니다. 이 카운터는 매일 밤 비워집니다."
+K|guide_1_price,"벡스의 물건은 비싸다. 다른 곳에서는 구할 수 없는 물건이지, 되팔려고 사들일 재고가 아니다."
+K|guide_5_resell,"진열장에 총기 네온 간판을 두면 판매자들이 20% 할인된 중고 총을 가져옵니다. 총기 부품으로 수리한 뒤 납품하세요."
+K|range_title,"벡스의 사격장"
+K|range_desc,"벡스가 뒷방에 사격장을 엽니다. 총 1정을 {0}크레딧과 탄약 1발로 시험 사격할 수 있습니다. 점수가 좋으면 총기 가치가 5~15% 오르는 시험 사격 인증 각인을 받습니다."
+K|range_bought,"이미 벡스의 사격장을 이용할 수 있습니다."
+K|range_visit_1,"저녁이네. 오래 붙잡지는 않을게."
+K|range_visit_2,"뒷방에 사격대를 설치했어."
+K|range_visit_3,"잘 쏘면 총에 인증 각인을 찍어 줄게. <u>시험 사격 인증</u>을 받은 총은 더 비싸게 팔리지."
+K|range_visit_4,"한 번에 <u>{0}크레딧</u>과 탄약 한 발이야. 오늘 밤에 들러."
+K|range_offer,"사격 준비는 끝났어. 어떤 총을 시험할래?"
+K|range_pick,"어떤 총을 사격대에 올릴래?"
+K|range_no_gun,"총을 안 가져왔어? 한 정 들고 와. 기다릴게."
+K|range_all_gold,"가져온 총마다 이미 내 금색 인증 각인이 찍혀 있어."
+K|range_window_title,"사격장 ({0}크레딧 + 탄약 1발)"
+K|range_choice_desc,"필요 점수: 동 {0}, 은 {1}, 금 {2}"
+K|range_choice_mark,"현재 각인: {0}"
+K|range_grade_1,"동"
+K|range_grade_2,"은"
+K|range_grade_3,"금"
+K|range_ammo,"{0}인가? {1}크레딧에 {2}탄 한 발이야."
+K|range_own_ammo,"[내 탄약 사용 (남은 탄약 {0}발)]"
+K|range_vex_ammo,"[벡스의 탄약 사용 (+{0}크레딧)]"
+K|range_vex_none,"[벡스의 탄약 사용 (재고 없음)]"
+K|range_not_tonight,"[오늘 밤은 그만둔다]"
+K|range_result_0,"{0}점. 내 인증 각인을 받기에는 부족해."
+K|range_result_1,"{0}점. 동 등급이네. 시작은 괜찮아."
+K|range_result_2,"{0}점. 은 등급이야. 깔끔한 사격이었어."
+K|range_result_3,"{0}점. 금 등급이네. 나라면 이 총을 직접 사겠어."
+K|range_result_keep,"{0}점. 기존의 {1} 각인이 유지돼."
+K|proof_mark,"시험 사격 인증 ({0})"
+K|range_vex_hover,"벡스: 사격장"
+K|range_game_title,"벡스의 사격장"
+K|range_game_info,"{0}: 동 {1}, 은 {2}, 금 {3} (만점 {4})"
+K|range_game_hint,"클릭하여 발사합니다. 탄이 걸렸다면 한 번 더 클릭해 노리쇠를 당기세요."
+K|range_game_score,"점수: {0}"
+K|range_game_jam,"급탄 불량! 클릭하여 노리쇠를 당기세요."
+K|range_banner_0,"인증 실패"
+K|range_banner_1,"동 등급"
+K|range_banner_2,"은 등급"
+K|range_banner_3,"금 등급"
+K|range_game_final,"{0} / {1}점"
+K|gsx_attach_slot,"슬롯: {0}"
+K|gsx_attach_slot_special,"특수 슬롯"
+K|gsx_attach_only,"장착 가능: {0}"
+K|gsx_attach_any,"이 슬롯이 있는 모든 총기에 장착 가능"
+K|gsx_attach_any_except,"이 슬롯이 있는 모든 총기에 장착 가능. 제외: {0}"
+K|gsx_attach_sep,", "
+K|shop_vex_syndicate,"신디케이트 장비가 여기저기 풀리고 있더군. C20-R에도 내 조준경과 소음기가 딱 맞아."
+K|guide_h6,"신디케이트 장비"
+K|guide_6_c20r,"C20-R에는 벡스의 조준경, 소음기, 총구 제퇴기, 전술 조명 및 10mm 구경 변경 키트를 장착할 수 있습니다."
+K|guide_6_pen,"사이버선 펜은 드라이버처럼 사용하며, 장착하지 않은 부착물도 분해할 수 있습니다."
+K|guide_6_bench,"총기 복원 작업대는 신디케이트 총기에도 다른 총과 동일하게 적용됩니다."
+K|guide_6_note,"14일 차부터 암시장 평판이 40 이상이면 전직 신디케이트 요원들이 업링크와 통신 수정을 판매하러 옵니다."
+K|guide_h7,"벡스의 야간 서비스"
+K|guide_7_card,"벡스는 무기고에서 명함을 줍니다. 전화번호는 8390이며, 서비스 이용 후 4일 동안은 다시 연결되지 않습니다."
+K|guide_7_buyer,"'구매자를 보내 줘': 등급에 따라 비용은 25 / 50 / 90크레딧이며 다음 날 구매자가 방문합니다. 허가증이 있으면 증거가 남지 않고, 없으면 비용이 25% 늘고 증거가 남습니다."
+K|guide_7_courier,"'재료를 배달해 줘': 다음 날 벡스의 배달원이 방문합니다. 물품별 구매 시 벡스의 판매가에 20%가 추가되며, 전량 구매하면 15% 할인됩니다."
+K|guide_7_events,"어떤 밤에는 단속이나 봉쇄로 무기고가 문을 닫고, 다른 밤에는 희귀 물품이 들어오거나 할인 행사가 열립니다."
+K|guide_7_discount,"주문 장부와 '암시장 인맥'은 벡스의 총기 및 칩 가격만 낮춥니다. 탄약, 재료, 부착물의 가격은 변하지 않습니다."
+K|guide_h8,"상점용 장비"
+K|guide_8_bench,"총기 복원 작업대 (벡스 계약 I): 매일 밤 총기 한 정의 상태를 한 단계씩, 최대 신품까지 개선합니다. 총기 부품(또는 금속 주괴)과 전력을 소모합니다."
+K|guide_8_locker,"총기 보관함 (벡스): 총 4정을 칸마다 한 정씩 보관합니다. 내용물을 포함해 판매할 수 있습니다."
+K|guide_8_ammo,"탄약 보관함 (벡스): 같은 구경의 탄약을 최대 10발 보관합니다. 탄약 구매자에게 내용물과 함께 판매할 수 있습니다."
+K|guide_8_lethal,"워든-10과 라이엇브레이커는 비살상 무기이므로 허가증이 필요 없습니다. 치명적 개조 키트를 사용하면 실탄 총기로 개조할 수 있습니다. (계약 I)"
+K|guide_8_crates,"벡스의 상자: 부품 상자는 부착물 2개, 밀봉 무기 상자는 무작위 총기 1정, 수집가 상자는 신품 고급 총기 1정과 희귀 부착물 2개를 포함합니다."
+K|guide_h9,"프린터 확장"
+K|guide_9_press,"탄약 압축 칩은 폐금속으로 탄약을 만듭니다. (12게이지에는 필라멘트도 필요) .22 탄약 압축기만 금속 프린터 모듈 없이 작동합니다."
+K|guide_9_batch,"연속 재장전 모듈: 같은 폐금속으로 한 번 출력할 때 탄약 상자 2개를 추가 생산합니다. 느리고 전력 소모가 크지만 중첩할 수 있습니다."
+K|guide_9_pouch,"칩 파우치 (벡스): 칩 16개를 담습니다. 프린터 칩 슬롯에 넣고 파우치에서 제작법을 선택하세요."
+K|guide_9_kit,"보급 키트 (벡스 계약 II): 프린터에 사용하면 상점에서 칩 재료를 가져오고 상점에 보관한 칩을 목록에 표시합니다."
+K|order_syndicate,"탄피가 남지 않는 총이 필요해. 바닥에 아무 흔적도 남기고 싶지 않거든."
+K|event_vex_syndicate_desc,"벡스가 신디케이트 장비를 입수했습니다. 코브라, 무탄피 탄약, 계약 III 이후에는 C20-R도 판매합니다."
+K|shop_vex_event_syndicate,"신디케이트 물건이 들어왔어. 코브라에 무탄피 탄약까지. 있을 때 챙겨."

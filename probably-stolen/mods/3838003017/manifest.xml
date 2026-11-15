@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>come_back_tomorrow</ID>
+  <Name>Come Back Tomorrow</Name>
+  <Author>pesky bee</Author>
+  <ModVersion>1.2</ModVersion>
+  <Description>I'm busy right now!</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <!-- Every DLL the game must load, relative to this folder. Nothing else in the folder is loaded. -->
+  <Assemblies>
+    <Assembly>ComeBackTomorrow.dll</Assembly>
+  </Assemblies>
+  <!-- What your code does beyond the game's API: files, network, process, dynamic-code, native, reflection-external.
+       Most mods need none. The game scans your DLL when a player activates the mod; an undeclared capability
+       refuses the activation. Check with the console command: mod-scan come_back_tomorrow   (see ModdingGuide.md) -->
+  <Capabilities />
+</Manifest>

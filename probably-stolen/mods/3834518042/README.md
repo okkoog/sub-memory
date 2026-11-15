@@ -28,7 +28,8 @@ It adds a lot of shops, so with many destination mods installed, [Unified Transi
 
 All settings are under the gear button in the Mods menu.
 
-### What's new in 1.2.5:
+### What's new in 1.2.7:
+- Retired traders visit once; missing them only skips the discount
 - Night shops follow the difficulty's markups
 - New night shop: the Unmarked Stall
 

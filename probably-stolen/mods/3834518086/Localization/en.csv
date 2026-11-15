@@ -31,6 +31,11 @@ brewery_label_crops,Crops per bottle
 fermenter_tip_unhosted,Works only inside a Bottling Line.
 fermenter_tip_demand,Ingredients for {0} bottles.
 beer_tip_tier,Grade: {0}
+fruit_tip_condition,Condition: {0}
+fruit_condition_mold,Moldy
+fruit_condition_under,Under-ripe
+fruit_condition_over,Over-ripe
+fruit_condition_small,Small
 beer_tier_0,Rough
 beer_tier_1,Fair
 beer_tier_2,Good
@@ -146,8 +151,27 @@ fermenter_why_too_few,Idle: needs {0} {1} per bottle; the input holds {2}.
 fermenter_why_other_recipe,The input holds {0}: choose {1} as the Brewery's recipe.
 fermenter_why_other_crop,The input holds {0}: choose it as the Winery's crop.
 fermenter_why_recipe_nofit,Idle: the Recipe's fruits and the yeast do not fit one bottle.
+fermenter_why_huge_nutrifruit,Idle: {0} does not fit a wine bottle.
 fermenter_any_beer_yeast,yeast (not red yeast or Quality Yeast)
 fermenter_any_wine_yeast,"plain, super or reusable yeast"
 fermenter_tip_demand_one,Ingredients for 1 bottle.
 fermenter_why_more,And {0} more: see the tooltip.
 fermenter_unknown_item,an item from a removed mod
+sheet_crop_fillerweed,Fillerweed
+sheet_crop_coffee_bean,Coffee Bean
+sheet_crop_dream_cap,Dream Cap
+sheet_crop_be_wheat,Wheat (Brewing Expansion)
+sheet_crop_be_rice,Rice (Brewing Expansion)
+sheet_water_pure,Pure
+sheet_water_hq,High Quality
+sheet_water_base,Base Water
+sheet_water_ghost,Ghostwater
+sheet_water_rust,Rustwater
+sheet_water_gutter,Gutterflow
+sheet_grade_master,Master Vintage
+sheet_grade_reserve,Reserve
+sheet_grade_production,Production
+sheet_grade_homebrew,Homebrew
+sheet_grade_bucket,Bucket Brew
+sheet_grade_undrinkable,Undrinkable
+sheet_yeast_red,Red yeast
