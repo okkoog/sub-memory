@@ -43,15 +43,17 @@ jobs:
           assert len(files)==1 and files[0].name=="lewd_meme.csv",[str(x) for x in files]
           with files[0].open("r",encoding="utf-8-sig",newline="") as f:
               rows=list(csv.DictReader(f))
-          assert len(rows)==34,len(rows)
-          assert len({r["Target"] for r in rows})==14
-          assert sum(r["Field"]=="name" for r in rows)==13
-          assert sum(r["Field"]=="shortDescription" for r in rows)==11
-          assert sum(r["Field"]=="flavorText" for r in rows)==10
+          assert len(rows)==36,len(rows)
+          assert len({r["Target"] for r in rows if r["Type"]=="Item"})==14
+          assert sum(r["Field"]=="name" for r in rows if r["Type"]=="Item")==13
+          assert sum(r["Field"]=="shortDescription" for r in rows if r["Type"]=="Item")==11
+          assert sum(r["Field"]=="flavorText" for r in rows if r["Type"]=="Item")==10
           assert len({(r["Type"],r["Target"],r["Field"]) for r in rows})==len(rows)
           assert all(tuple(r)==("Type","Target","Field","Original","Korean") for r in rows)
-          assert all(r["Type"]=="Item" and r["Original"] and r["Korean"] for r in rows)
-          print("SUCCESS: original lewd_meme only; 14 items; 34 static strings")
+          assert all(r["Type"] in ("Item","Perk") and r["Original"] and r["Korean"] for r in rows)
+          assert sum(r["Type"]=="Perk" for r in rows)==2
+          assert {(r["Target"],r["Field"]) for r in rows if r["Type"]=="Perk"}=={("lewd_meme.tentacle_origin","name"),("lewd_meme.tentacle_origin","description")}
+          print("SUCCESS: original lewd_meme only; 14 items, 34 item strings, 2 starting perk fields")
           PY
       - name: Run stub regression tests
         run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
@@ -64,7 +66,7 @@ jobs:
           python3 - <<'PY'
           import pathlib,zipfile
           root=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
-          out=root/"dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip"
+          out=root/"dist/PostItemTranslationProbe-lewd_meme-v0.3.2.zip"
           out.parent.mkdir(parents=True,exist_ok=True)
           mapping={
             "PostItemTranslationProbe/PostItemTranslationProbe.dll":root/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll",
@@ -85,14 +87,14 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PostItemTranslationProbe-lewd_meme-v0.3.1
-          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip
+          name: PostItemTranslationProbe-lewd_meme-v0.3.2
+          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.2.zip
           if-no-files-found: error
       - name: Save ZIP on experiment branch only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.1.zip
+          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-lewd_meme-v0.3.2.zip
           git add probably-stolen/experiments/post-item-translation-probe/inspection/perk-api-signatures.txt
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Build original lewd_meme-only translation probe [skip ci]"
