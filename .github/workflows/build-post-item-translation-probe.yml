@@ -1,4 +1,4 @@
-name: Build isolated CSV item-translation probe
+name: Build CSV-per-mod translation probe
 
 on:
   push:
@@ -27,60 +27,48 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
-      - name: Inspect available official UI and dialogue APIs
-        run: |
-          dotnet run --project probably-stolen/experiments/post-item-translation-probe/inspection/Scan.csproj -c Release -- probably-stolen/Managed/Assembly-CSharp.dll > /tmp/probe_api.txt
-          sed -n '/## RichTextBuilder/,/## /p' /tmp/probe_api.txt | head -n 125
-          sed -n '/## PaperUI/,/## /p' /tmp/probe_api.txt | head -n 130
-          sed -n '/## ModHook/,/## /p' /tmp/probe_api.txt | head -n 170
-          sed -n '/## ModLoader/,/## /p' /tmp/probe_api.txt | head -n 90
-          sed -n '/## LoadedMod/,/## /p' /tmp/probe_api.txt | head -n 80
-          grep '^## .*Dialog' /tmp/probe_api.txt | head -n 50 || true
-      - name: Inspect paper and mod registry type signatures
-        run: |
-          dotnet run --project probably-stolen/experiments/post-item-translation-probe/inspection/Signatures.csproj -c Release -- probably-stolen/Managed/Assembly-CSharp.dll > /tmp/probe_signatures.txt
-          grep -E '^TYPE |^## |^  P |^  M |^  F ' /tmp/probe_signatures.txt | head -n 650
-          cp /tmp/probe_signatures.txt probably-stolen/experiments/post-item-translation-probe/inspection/api-signatures.txt
-      - name: Run isolated tests with stubs
+      - name: Run unit tests with stub game APIs
         run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
       - name: Compile production DLL against game assemblies
         run: |
           dotnet build probably-stolen/experiments/post-item-translation-probe/source/PostItemTranslationProbe.csproj \
             -c Release -p:GameManaged="$GITHUB_WORKSPACE/probably-stolen/Managed"
-      - name: Package DLL, manifest, CSV and README
+      - name: Package DLL, manifest and every per-mod CSV
         run: |
           python3 - <<'PY'
           import pathlib, zipfile
           base=pathlib.Path("probably-stolen/experiments/post-item-translation-probe")
           source=base/"source/bin/Release/netstandard2.1/PostItemTranslationProbe.dll"
           assert source.is_file(), "Production DLL missing"
-          package=base/"dist/PostItemTranslationProbe-0.2.0.zip"
+          package=base/"dist/PostItemTranslationProbe-0.3.0.zip"
           package.parent.mkdir(parents=True, exist_ok=True)
           mapping={
              "PostItemTranslationProbe/PostItemTranslationProbe.dll":source,
              "PostItemTranslationProbe/manifest.xml":base/"mod/PostItemTranslationProbe/manifest.xml",
-             "PostItemTranslationProbe/Translations/items.csv":base/"mod/PostItemTranslationProbe/Translations/items.csv",
              "README.ko.md":base/"README.ko.md",
           }
+          translation_dir=base/"mod/PostItemTranslationProbe/Translations"
+          for path in sorted(translation_dir.glob("*.csv")):
+              mapping["PostItemTranslationProbe/Translations/"+path.name]=path
+          assert len(mapping)>3, "No per-mod translation CSV files"
           with zipfile.ZipFile(package,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
               for name,path in mapping.items():
                   z.write(path,name)
-                  print(name, path.stat().st_size)
+                  print(name,path.stat().st_size)
           assert zipfile.ZipFile(package).testzip() is None
           print("READY",package,package.stat().st_size)
           PY
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PostItemTranslationProbe-0.2.0
-          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.2.0.zip
+          name: PostItemTranslationProbe-0.3.0
+          path: probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.3.0.zip
           if-no-files-found: error
-      - name: Save compiled ZIP on this experiment branch only
+      - name: Save ZIP on experiment branch only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.2.0.zip
-          git add probably-stolen/experiments/post-item-translation-probe/inspection/api-signatures.txt
+          git add probably-stolen/experiments/post-item-translation-probe/dist/PostItemTranslationProbe-0.3.0.zip
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Build CSV item translation probe 0.2.0 [skip ci]"
+          git commit -m "Build per-mod CSV translation probe v0.3.0 [skip ci]"
           git push origin HEAD:"$GITHUB_REF_NAME"
