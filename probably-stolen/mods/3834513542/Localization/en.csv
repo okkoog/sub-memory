@@ -1,0 +1,217 @@
+# water_expansion - English strings
+faucet_name,Faucet
+faucet_desc,"Keeps the container in its slot filled from your water line. Needs a tap unlocked. No power."
+faucet_label_container,Container
+faucet_label_open,Tap open
+faucet_open_tip,"Open: the container is kept full from the water line."
+faucet_tip_on,Valve: on
+faucet_tip_off,Valve: off
+faucet_tip_line,Line: {0} at {1}
+faucet_tip_no_tap,No water line unlocked
+tip_store_grid_only,Only runs in the store grid
+pipe_name,Smart Pipe
+pipe_desc,"Moves water from what touches its back end to what touches its arrow end. Set a water grade and it can take or refuse water by grade, and it can wait for a full source or an empty destination."
+pipe_label_valve,Valve
+pipe_label_grade,Water grade
+pipe_grade_any,Any
+pipe_tip_state,Last: {0}
+pipe_tip_idle,Last: nothing yet
+config_faucet,Enable Faucet
+config_faucet_tip,Off: the Faucet stops filling its container.
+config_pipe,Enable Pipes
+config_pipe_tip,Off: pipes stop moving water.
+config_debug_transfers,Log every transfer
+config_debug_transfers_tip,Writes one F8 console line per transfer and faucet fill.
+pipe_label_overnight,Overnight
+pipe_order_caption,Order
+pipe_order_tip,"When this pipe runs at night. 1-5 before machines, 6-10 after, 11-15 last. Hoppers use the same numbers."
+pipe_order_value,{0} ({1})
+pipe_tip_overnight,"Runs overnight, order {0}"
+pipe_tip_last_night,Last night: {0}
+basic_pipe_name,Basic Pipe
+basic_pipe_desc,"Moves water from what touches its back end to what touches its arrow end."
+basic_elbow_name,Basic Corner Pipe
+basic_elbow_desc,"Moves water around a corner, from what touches its back end to what touches its front end."
+pipe_label_input,Input
+pipe_label_output,Output
+pipe_label_wait_full,Wait for full
+pipe_label_wait_empty,Wait for empty
+pipe_switch_on,{0}: ON
+pipe_switch_off,{0}: OFF
+pipe_check_on,[x] {0}
+pipe_check_off,[ ] {0}
+pipe_valve_tip,"Switches the pipe on or off. An off pipe moves nothing."
+pipe_overnight_tip,"On: the pipe runs once a night, at the order below, and not by day."
+pipe_grade_tip,"Pick one water grade. The input and output rules compare against it, and Any switches them off. A machine with a slot per grade takes the pipe set to that grade."
+pipe_input_tip,"Which water the pipe takes from its source, compared with the grade above."
+pipe_output_tip,Whether the pipe pours into a container whose water is dirtier or cleaner than the grade above.
+pipe_wait_full_tip,"Input side: the pipe waits until its source is full, then moves the whole amount once the destination has room."
+pipe_wait_empty_tip,"Output side: the pipe pours only into an empty destination, so a batch already there is never topped up. Protects a purifier's batch."
+pipe_input_better,This grade or better
+pipe_input_exact,Only this grade
+pipe_input_worse,This grade or worse
+pipe_output_anyway,Pour anyway
+pipe_output_not_dirtier,Not into dirtier water
+pipe_output_not_cleaner,Not into cleaner water
+pipe_tip_grade,Grade: {0} / input: {1} / output: {2}
+pipe_tip_wait_full,Waits for a full source
+pipe_tip_wait_empty,Waits for an empty destination
+reason_source_not_full,waiting for the source to fill
+reason_input_better,"source is {0}, below the pipe's grade ({1})"
+reason_input_exact,"source is {0}, the pipe takes only {1}"
+reason_input_worse,"source is {0}, better than the pipe's grade ({1})"
+reason_output_not_dirtier,"destination holds {0}, dirtier than the pipe's grade ({1})"
+reason_output_not_cleaner,"destination holds {0}, cleaner than the pipe's grade ({1})"
+reason_chemistry_machine,"{0} is a chemistry machine, which pipes do not connect to yet"
+elbow_name,Smart Corner Pipe
+elbow_desc,"Moves water around a corner, from what touches its back end to what touches its front end, with the smart pipe's grade and wait settings."
+bridge_in_name,Smart Bridge Pipe Inlet
+bridge_in_desc,"Takes water from what touches its back end and sends it to a linked Smart Bridge Pipe Outlet in another grid, with the smart pipe's grade and wait settings. Drag it onto an outlet to link them."
+bridge_out_name,Smart Bridge Pipe Outlet
+bridge_out_desc,"Gives the water of every linked Smart Bridge Pipe Inlet to what touches its front end. Drag an inlet onto it to link them."
+bridge_label_link,Link
+bridge_unlink,Unlink
+bridge_tip_linked,Linked to an outlet
+bridge_tip_unlinked,Not linked to an outlet
+bridge_tip_inlets,Linked inlets: {0}
+config_night_report,Morning pipe report
+config_night_report_tip,Shows on the morning screen how many litres the pipes moved overnight.
+night_moved,Pipes moved {0} L of water overnight.
+config_section_features,Features
+config_section_debug,Debug
+config_title,Water Expanded
+tank_2x2_name,Compact Tank
+tank_2x2_desc,"A {0} L tank two cells wide. Takes an aquascanner."
+tank_large_name,Cistern
+tank_large_desc,"A {0} L tank four cells wide. Takes an aquascanner."
+tank_label_scanner,Aquascanner
+tank_tip_scanned,SCANNER INSTALLED
+tank_tip_no_scanner,Activate to add an aquascanner and keep the label true
+tank_tip_aquasense,LABEL KEPT BY AQUASENSE
+tank_tip_aquasense_no_scanner,Own an aquascanner and AquaSense keeps this label true
+purifier_label_target,Target
+purifier_target_max,Machine maximum
+purifier_tip_target,Target: {0}
+purifier_tip_module,Pure module: refuses water below {0}
+purifier_tip_refusing,"Refusing this water: it is below {0}, so nothing is purified"
+pure_module_name,Pure Module
+pure_module_desc,"Quality +100, enough for Pure water. Water purifier only, one per machine. The machine refuses water below High Quality, so purify to High Quality in another purifier first."
+pure_module_flavor,Does the last tenth of a percent and nothing else.
+pure_module_tip,Fits a water purifier only; one per machine. Refuses water below {0}.
+faucet_label_grade,Grade
+faucet_grade_line,Line setting
+config_line_grade,Line grade
+config_line_grade_tip,"Needs the Main Line Siphon upgrade. The grade your water line serves, never above what you have bought. The vanilla faucet follows it from the next morning."
+config_line_grade_best,Best you have bought
+line_ghost_title,Industrial Filter
+line_ghost_desc,"A large industrial filter installed over your existing line. Every faucet serves ghostwater instead of rustwater."
+line_base_title,Main Line Siphon
+line_base_desc,"Siphons the station's main line. The line serves Base water, and the line and each Faucet can serve a lower grade than the best you have bought: set the line in the mod settings and each faucet in its window."
+line_hq_title,Upper Pipe Siphon
+line_hq_desc,"Siphons the pipes of the upper levels, at a price. The line serves High Quality water."
+nutrient_name,Algae Biofilter
+nutrient_desc,"A pipe piece that enriches water for hydroponics. Its intake end draws from a container, a machine or a pipe feeding it; its outlet end fills the hydroponic rack it touches with nutrient water. Runs on a battery, which pays per litre."
+nutrient_tip,Draws at its intake end and fills a touching hydroponic rack at its outlet end with nutrient water
+nutrient_tip_no_clean,"Does not clean water: contaminants pass through, so feed clean water to sensitive crops"
+nutrient_label_intake,Intake grade
+nutrient_grade_tip,"Any, or a water grade: the biofilter then takes only water of that grade or better, and waits for the rest."
+nutrient_overnight_tip,"On: the biofilter runs only at night, before and after the machines. Off: it runs whenever water changes, like an always-on pipe."
+nutrient_activate,Activate
+nutrient_activate_tip,"Runs the biofilter once now, under its grade and its battery."
+nutrient_tip_overnight,"Runs at night, before and after the machines"
+nutrient_tip_always,Runs whenever water changes
+nutrient_tip_grade,Intake: {0} or better
+reason_feeds_biofilter,feeds the Algae Biofilter
+reason_biofilter_intake_only,{0} takes water only from a pipe's arrow end at its intake
+reason_intake_end,intake: {0}
+reason_outlet_end,outlet: {0}
+reason_biofilter_feed_pipe,{0} cannot feed the biofilter; use a straight or corner pipe
+reason_biofilter_pipe_away,{0} points away from the intake
+reason_feed_pipe_off,the feeding pipe's valve is off
+reason_feed_pipe,feeding pipe {0}
+reason_biofilter_not_rack,{0} is not a hydroponic rack
+reason_no_battery,no battery
+reason_battery_empty,battery empty
+filler_name,Water Bottler
+filler_desc,"Fills a batch of bottles overnight from its water container, empty bottles in its input first (plastic, wine and glass beer bottles). With a bottle printer hosted, the vanilla one or a glass printer, it prints the chosen kind when the input has none. Hoppers load and unload both grids."
+filler_label_water,Water
+filler_label_printer,Printer
+filler_label_input,Empty bottles
+filler_label_output,Output
+filler_label_size,Print size
+filler_label_batch,Per night
+filler_batch_caption,Bottles
+filler_batch_value,{0} of {1}
+filler_size_small,Small
+filler_size_normal,Normal
+filler_size_large,Large
+filler_size_wine,Wine bottle
+filler_size_beer,Beer bottle
+filler_tip_printer,Printer hosted
+filler_tip_no_printer,No printer hosted: fills only the bottles you load
+filler_tip_last,"Last night: filled {0}, printed {1}"
+reason_input_only,"{0} slot is input only, so a pipe cannot draw from it"
+reason_output_only,"{0} slot is output only, so a pipe cannot fill it"
+reason_invalid_target,{0} is not a valid pipe target
+reason_many_container_slots,"{0} has {1} container slots, so a pipe cannot choose one"
+reason_multi_grade_tag,{0} has a slot with more than one grade tag
+reason_mixed_slots,{0} mixes graded and ungraded container slots
+reason_any_pipe_graded,"{0} has graded slots, so an Any pipe cannot choose one"
+reason_no_grade_slot,{0} has no slot for grade {1}
+reason_many_grade_slots,{0} has {1} slots for grade {2}
+reason_grade_slot_empty,{0} slot for grade {1} {2}
+reason_nothing_touching,nothing touching
+reason_no_container,holds no container
+reason_name_then,{0} {1}
+reason_not_pipe,not a pipe piece
+reason_outlet_only,an outlet only gives to what touches it
+reason_back_end,back end: {0}
+reason_front_end,front end: {0}
+reason_not_linked,bridge inlet is not linked to an outlet
+reason_outlet_missing,linked bridge outlet is missing
+reason_outlet_not_store,bridge outlet is not in the store grid
+reason_outlet_front,outlet front end: {0}
+reason_not_in_grid,not placed in a grid
+reason_switched_off,switched off
+reason_not_store_grid,not in the store grid
+reason_same_container,both ends reach the same container
+reason_loop,pipes form a loop
+reason_not_owned,an end is not owned
+reason_source_not_water,source {0} is not a plain water container
+reason_destination_not_water,destination {0} is not a plain water container
+reason_container_not_water,{0} is not a plain water container
+reason_source_empty,source empty
+reason_destination_not_empty,destination not empty
+reason_destination_full,destination full
+reason_nothing_moved,nothing moved
+reason_moved_ml,moved {0} mL
+reason_valve_off,valve is off
+reason_no_tap,no tap unlocked
+reason_no_power,no power
+debug_test_machine,Water Expanded test machine
+debug_role_input,Input only slot
+debug_role_output,Output only slot
+config_offer_line_ghost,Offer Industrial Filter
+config_offer_line_ghost_tip,Off: the Industrial Filter upgrade is not offered in the Wild and its water grade is not applied. Anything you bought is kept and returns when this is turned on.
+config_offer_line_base,Offer Main Line Siphon
+config_offer_line_base_tip,Off: the Main Line Siphon upgrade is not offered in the Wild and its water grade and grade choice are not applied. Anything you bought is kept and returns when this is turned on.
+config_offer_line_hq,Offer Upper Pipe Siphon
+config_offer_line_hq_tip,Off: the Upper Pipe Siphon upgrade is not offered in the Wild and its High Quality water is not applied. Anything you bought is kept and returns when this is turned on.
+config_price_line_ghost,Industrial Filter price
+config_price_line_ghost_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
+config_price_line_base,Main Line Siphon price
+config_price_line_base_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
+config_price_line_hq,Upper Pipe Siphon price
+config_price_line_hq_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
+config_section_balance,Balance
+config_slider_value,"{0}: {1}"
+config_item_prices,Item prices (%)
+config_item_prices_tip,"The price of every item this mod sells (faucet, pipes, tanks, Water Bottler, Algae Biofilter and Pure Module), in percent of the usual price. A change applies to items made after it."
+config_tank_capacity,Tank capacity (%)
+config_tank_capacity_tip,"How much the Compact Tank and the Cistern hold, in percent of the usual 10 L and 100 L. A change applies to tanks made after it; a tank you own keeps its size."
+config_biofilter_charge_per_litre,Algae Biofilter charge per litre
+config_biofilter_charge_per_litre_tip,The battery charge the Algae Biofilter spends per litre of water it draws. Applies from its next move.
+config_shop_stock,Water goods stock (%)
+config_shop_stock_tip,"How many pipes, pipe pieces, tanks and faucets the shops stock, in percent of the usual amount: the Water Shop with Better Merchants, the retired water merchant's pipes without it. Machines and the Pure Module stay one at a time. Applies at once."
+config_cistern_jackson_chance,Cistern chance at Dr. Jackson (%)
+config_cistern_jackson_chance_tip,"The chance that a Dr. Jackson arrival brings a Cistern, once the water line is bought. With Better Merchants running, its Water Shop sells the Cistern instead and this setting does nothing."
