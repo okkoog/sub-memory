@@ -210,6 +210,7 @@ wine_printer_print,Print Four Wine Bottles
 wine_printer_print_linked,Print Four Wine Bottles (20 energy)
 wine_printer_ready,Prints four empty bottles per batch
 wine_printer_done,Printed four empty bottles (20 energy)
+be_seed_manufacturer_name,xuxu Outer Ring Company
 be_chili_seed_name,Chili Seed
 be_chili_seed_description,"A tiny chili seed. The mortal realm's fire — never costly, yet it can warm a whole night through. Set it in the Seed Incubator; by dawn, it fruits."
 be_rice_seed_name,Rice Seed
@@ -243,11 +244,13 @@ be_void_plum_seed_description,"A jet-black pit, heavy as a sentence left unfinis
 be_stardust_berry_seed_name,Stardust Berry Seed
 be_stardust_berry_seed_description,"A silver-white seed — up close, a miniature star. It grew upon the depressurized wall beyond the cooling bay, where the radiation burns harsher than elsewhere, and the light stands lonelier than anywhere. Set it in the Seed Incubator; by dawn, it fruits."
 be_basic_cert_name,Basic Brewing Certificate
-be_basic_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 10% / 60% / 30%, respectively. An elegantly framed certificate. The Seed Incubator hatches five seeds nightly, and Forty-Seven brings seven. From Afar stays at 15%; Longing rises from 3% to 8% and Afterglow from 1% to 5% after misses. Mortal fills the remainder. The effect applies while you own the item, even when it is kept in a storage container. No display is required."
+be_basic_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 10% / 60% / 30%, respectively. An elegantly framed certificate. The Seed Incubator hatches five seeds nightly, and Forty-Seven brings seven. From Afar stays at 15%; Longing rises from 3% to 8% and Afterglow from 1% to 5% after misses. Mortal fills the remainder. The effect applies while you own the item, even when it is kept in a storage container. No display is required. Receiving it for the first time permanently removes innate infertility from Mortal seeds."
 be_mid_cert_name,Intermediate Brewing Certificate
-be_mid_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 5% / 60% / 35%, respectively. A certificate of finer materials. The Seed Incubator hatches seven seeds nightly, and Forty-Seven brings nine. After the miss bonus, Longing and Afterglow odds are multiplied by 1.3: 3.9%–10.4% and 1.3%–6.5%. From Afar stays at 15%; Mortal fills the remainder. The effect applies while you own the item, even when it is kept in a storage container. No display is required."
+be_mid_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 5% / 50% / 45%, respectively. A certificate of finer materials. The Seed Incubator hatches seven seeds nightly, and Forty-Seven brings nine. After the miss bonus, Longing and Afterglow odds are multiplied by 1.3: 3.9%–10.4% and 1.3%–6.5%. From Afar stays at 15%; Mortal fills the remainder. The effect applies while you own the item, even when it is kept in a storage container. No display is required. Receiving it for the first time permanently removes innate infertility from From Afar seeds."
 be_high_cert_name,Advanced Brewing Certificate
-be_high_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 0% / 30% / 70%, respectively. A certificate edged in dark-gold thread. The Seed Incubator hatches eighteen seeds nightly, and Forty-Seven brings thirteen. After the miss bonus, Longing and Afterglow odds are multiplied by 1.6: 4.8%–12.8% and 1.6%–8%. From Afar stays at 15%; Mortal fills the remainder. This is xuxu's final tier. The effect applies while you own the item, even when it is kept in a storage container. No display is required."
+be_high_cert_description,"Mod fruit and Bloomberries from the incubator roll -1 / 1 / 2 quality points with odds of 0% / 30% / 70%, respectively. A certificate edged in dark-gold thread. The Seed Incubator hatches eighteen seeds nightly, and Forty-Seven brings thirteen. After the miss bonus, Longing and Afterglow odds are multiplied by 1.6: 4.8%–12.8% and 1.6%–8%. From Afar stays at 15%; Mortal fills the remainder. The effect applies while you own the item, even when it is kept in a storage container. No display is required. Receiving it for the first time permanently removes innate infertility from Longing seeds."
+be_top_cert_name,Master Brewing Certificate
+be_top_cert_description,"While owned, the Seed Incubator processes up to 24 seeds per night. Mod fruit and Bloomberries from it always score 2. Forty-Seven brings 16 seeds before bonuses and uses the advanced certificate’s rarity bonus. Receiving it for the first time permanently removes innate infertility from Afterglow seeds. It works in storage without being displayed."
 incubator_name,Seed Incubator
 incubator_description,"Insert this mod's or native seeds and a charged battery. Each own seed yields one fruit; each native seed yields two corresponding crops, or two native filters for Hydroreed. A productive night costs 12kJ per machine. Missing space for the complete yield or insufficient power retains the seed without an extra charge. Brewing certificates raise the number of seeds processed per night. Each mod fruit or Bloomberry produced here rolls −1, 1 or 2 quality. Higher certificates improve the odds."
 incubator_input,Seeds
@@ -351,7 +354,7 @@ be_container_blindbox_description,"Double-click to receive one container: Laolis
 be_figurine_blindbox_name,Figurine Blindbox
 be_figurine_blindbox_description,"Double-click for one of four equally likely figurines: Ichigo Kurosaki, Rukia Kuchiki, Uryu Ishida, or Oh My God, It's an Iridium Sea Cucumber. Each distinct figurine adds 100 shop attractiveness; duplicates do not stack."
 be_xuxu_cassette_bundle_name,xuxu Cassette Bundle
-be_xuxu_cassette_bundle_description,"Double-click to receive all five cassettes: Bar Special, Neon Street, Tipsy Night, Breeze Between Strings, and Brewing Hip-Hop. Insert one into a cassette player to hear its music."
+be_xuxu_cassette_bundle_description,Double-click to receive the full set of 12 cassettes. Make sure there is room in your inventory. Play them in a cassette player.
 be_midautumn_blindbox_name,Mid-Autumn Blindbox (Limited)
 be_midautumn_blindbox_description,"An octagonal gift box, its face a deep-blue night, upon which a golden moon floats.\n\nBeside the moon, a small jade rabbit leans down, gazing at the mortal world.\n\nThe lid is bound with a red cord, the knot tied in the shape of reunion.\n\nOpen it — perhaps a folding fan, perhaps a lantern, perhaps a box of mooncakes.\n\n— The Mid-Autumn decorations within can raise your shop's attractiveness.\nOn a night of blossoms and full moon, who would not walk a few extra steps to come see the moon with you?\n\nAvailable once every 5 days, counted from the last purchase. Restocks on the fifth day after purchase."
 be_midautumn_mooncake_box_name,Moon-Cake Gift Box
@@ -403,7 +406,7 @@ be_music_cassette_9b23823d7fcbcfb2_description,[Cassette] Insert into a cassette
 be_music_cassette_120129a8a5d85fd3_name,Brewing Hip-Hop
 be_music_cassette_120129a8a5d85fd3_description,[Cassette] Insert into a cassette player to play.\n\nNo one knows what it means.
 be_brewing_manual_name,Brewing Manual
-be_brewing_manual_description,"A brewing manual left behind by xuxu. Turn its pages, and every secret of brewing lies before you. Best read alongside the scattered recipe fragments — those you will need to gather yourself, from Forty-Seven."
+be_brewing_manual_description,"Double-click to read. While you own this manual, owned recipe sheets are used up and their pages are permanently added. Sheets bought earlier are added when you acquire the manual."
 be_liunian_ager_guide_title,Liunian Instructions
 be_liunian_ager_guide_body,"Put finished genuine wine in storage and a battery in the power slot. Each productive night consumes power, advances wine aging, and chills the wine. Empty or unpowered machines do not perform machine aging.\n\nModules: 6×20; storage: 20×20. Machine aging is 1 + floor(max(0, quality)/125) days per cycle: 125 quality gives 2 days; 1000 gives 9. Natural aging is separate.\n\nBase power is 24kJ per productive night for the whole machine, not per bottle. Quality does not directly add power at each 125-point threshold. Modules also carry power, efficiency, or performance effects: +100% extra consumption adds 24kJ to the base; efficiency and performance may reduce it. Native rounding and the minimum of 1kJ apply. See the current values below."
 be_fruit_pulp_concentrator_guide_title,Fruit Pulp Concentrator Instructions
@@ -415,7 +418,7 @@ be_wine_printer_guide_body,Insert a charged battery and press Print: each action
 be_xuxu_water_bottle_printer_guide_title,xuxu Water Bottle Printer Instructions
 be_xuxu_water_bottle_printer_guide_body,Insert a charged battery and select a print button. Level 1 prints 6L Small Bottles for 20kJ each. Six electronic components raise one level: level 2 unlocks 12L Slim Bottles for 40kJ; level 3 unlocks 18L Super Bottles for 60kJ. Maximum level requires twelve components in total. Locked buttons are disabled.\n\nOutput is 6×4. Insufficient space or power prevents printing. Batteries dropped on the machine enter the power slot; components upgrade it. None of these bottles accepts a filter. Water-level artwork updates with water amount.
 be_incubator_guide_title,Seed Incubator Instructions
-be_incubator_guide_body,"Put this mod's or native seeds in input and a charged battery in the power slot. Each night seeds are processed top to bottom, then left to right. Each own seed produces one fruit; each native seed produces two matching crops; output uses row-order free space.\n\nEach machine handles up to 2 seeds per night by default. Basic, intermediate, and advanced brewing certificates raise this to 5, 7, and 18 respectively; only the highest tier applies. A productive night costs 12kJ per machine, not per fruit. Multiple machines settle independently.\n\nNative Coffee Beans also count as seeds. Bloomberry produces native Wine Berries; Hydroreed produces two native filters. Outputs use fixed normal forms without hydroponic module bonuses or extra returned seeds. The nightly quota counts seeds consumed. Both native products must fit; insufficient space or power retains the seed. Both grids are 12×12 and permit rearranging accepted items. Hover the instruction note on the far right to read it.\n\nEach mod fruit or Bloomberry produced here rolls −1, 1 or 2 quality. Higher certificates improve the odds. Odds for −1 / 1 / 2 quality: no certificate 30% / 50% / 20%; basic 10% / 60% / 30%; intermediate 5% / 60% / 35%; advanced 0% / 30% / 70%. A −1 fruit counts as 0 when brewing."
+be_incubator_guide_body,"Put this mod's or native seeds in input and a charged battery in the power slot. Each night seeds are processed top to bottom, then left to right. Each own seed produces one fruit; each native seed produces two matching crops; output uses row-order free space.\n\nEach machine handles up to 2 seeds per night by default. Basic, intermediate, advanced, and master brewing certificates raise this to 5, 7, 18, and 24 respectively; only the highest tier applies. A productive night costs 12kJ per machine, not per fruit. Multiple machines settle independently.\n\nNative Coffee Beans also count as seeds. Bloomberry produces native Wine Berries; Hydroreed produces two native filters. Outputs use fixed normal forms without hydroponic module bonuses or extra returned seeds. The nightly quota counts seeds consumed. Both native products must fit; insufficient space or power retains the seed. Both grids are 12×12 and permit rearranging accepted items. Hover the instruction note on the far right to read it.\n\nEach mod fruit or Bloomberry produced here rolls −1, 1 or 2 quality. Higher certificates improve the odds. Odds for −1 / 1 / 2 quality: no certificate 30% / 50% / 20%; basic 10% / 60% / 30%; intermediate 5% / 50% / 45%; advanced 0% / 30% / 70%; master 0% / 0% / 100%. A −1 fruit counts as 0 when brewing."
 debug_foundation_check,Brewing foundation check
 be_mod_name,Brewing Expansion
 be_ending_assassination_title,Outer Ring Assassination
@@ -428,6 +431,7 @@ be_nini_inspection_warning,This pack doesn't match its label. Don't try to fool 
 be_brewer_start_name,Novice Brewer
 be_brewer_start_description,"You are a professional brewer. Since childhood, you have heard the legend of xuxu and dreamed of following the brewer's path. Now you can begin."
 be_brewer_start_supplies,"4 regular yeasts, 4 empty bottles, settling tank, brewery sign, water sign, filter and a water test kit containing 10 test strips"
+be_brewer_start_equipment,"1 seed incubator with a fully charged 100 kJ battery, and 1 old hydroponic system, 4 hydroponic nutrient tablets · 1 Brewing Manual and 1 Brewing Hydroponics Guide"
 be_perk_devotion_name,Devoted to Wine
 be_perk_drunk_name,Dead Drunk
 be_trait_bonus_category,Trait bonuses
@@ -439,7 +443,7 @@ be_nini_phone_end,End call
 be_nini_phone_closed,Your shop is closed. Call me when you're open.
 be_nini_phone_missing_card,You don't have my card. Try another time.
 be_nini_phone_accepted,Got good wine? Wait for me — I'm on my way.
-be_nini_trade_greeting,"Oi, kid — got any alcohol or tobacco to sell? Bring it to me. Trade enough, and I will issue you a certificate."
+be_nini_trade_greeting,"Oi, kid, got any alcohol or tobacco? Tobacco only counts when you sell it to me. Alcohol counts with other customers too. Once the base values add up, your certificate goes on the counter."
 be_nini_trade_accepted,I'll take the alcohol and tobacco.
 be_nini_trade_done,That will do for today.
 be_forty_seven_name,Forty-Seven
@@ -448,7 +452,7 @@ be_forty_seven_trade_accepted,Deal.
 be_forty_seven_trade_done,Fine.
 be_assassin_name,Outer Ring Assassin
 be_assassin_greeting,The Outer Ring has come to settle its accounts.
-be_certificate_delivery_pending,"You have earned a brewing certificate. Make room on the counter; I will deliver it on our next trade or visit, or when you reload."
+be_certificate_delivery_pending,"You have earned a brewing certificate. Make room on the counter, and I will hand it over on our next trade or visit."
 be_certificate_awarded,Well done. Take this brewing certificate and keep brewing finer wine.
 be_recipe_purchase_required,Not yet unlocked. Purchase to reveal its contents.
 be_basic_battery_empty_description,"Purchased as the empty variant. Chassis value: 200 credits, plus current energy. Capacity: 200 kJ; recharges 6 kJ nightly. Value is 200 when empty and 400 when full, before trade and market adjustments."
@@ -518,6 +522,7 @@ market_event_3_description,Stocks are piling up in the upper district. Trade pri
 be_setting_traditional_label,Use Traditional Chinese
 be_setting_traditional_description,"When the game language is Chinese, show Brewing Expansion items, dialogue and messages in Traditional Chinese. Turn off for Simplified Chinese. Other languages follow the game. Apply, fully quit and restart the game."
 be_huge_fruit_name,Giant {0}
+be_small_fruit_name,Mini {0}
 be_concentrator_giant_input,Giant fruit
 be_huge_fruit_description,Sell it or place it in the concentrator’s giant fruit slot. One giant fruit makes one batch of its pulp.
 be_incubator_fruit_quality,Fruit quality: {0}
@@ -549,3 +554,158 @@ be_outer_p160_flavor,"Friendship lives beyond the ledger, in extra seeds and cus
 be_outer_p180_flavor,Old friendships cross the stars. Seeds come with visitors; credits stay for good wine.
 be_outer_p200_flavor,"Guests from the Outer Ring follow your light, bringing seeds and their fullest confidence."
 be_pulp_quality_sum,Pulp quality total: {0} points
+be_hydroponic_small_fruit_description,Can be sold or used as feed.
+be_hydroponic_fertile,Non-perennial plants return 1 seed per harvest by default. Fertile raises the yield by rank with no extra cap. Offspring inherit the parent’s gene ranks and start with zero heat.
+be_hydroponic_locked_basic,Hydroponic crop. Earn the basic brewing certificate to remove infertility.
+be_hydroponic_locked_mid,Hydroponic crop. Earn the intermediate brewing certificate to remove infertility.
+be_nini_cellar_deliver,Deliver the wine cabinet
+be_nini_cellar_cancel,Cancel
+be_nini_cellar_confirm,Give Nini {0} and everything inside? This unlocks the Perennial gene for brewing seeds.
+be_hydroponic_perennial_locked,"Earn the top brewing certificate, then give Nini a Liunian cabinet with one bottle of each wine from the eight recipe pages."
+be_hydroponic_locked_high,"Hydroponic crop. Earn the advanced brewing certificate to remove infertility."
+be_hydroponic_locked_top,Hydroponic crop. Earn the master brewing certificate to remove infertility.
+be_certificate_status_title,"Brewing certificates"
+be_certificate_status_none,"Claimed: none"
+be_certificate_status_earned,"Highest claimed: {0}"
+be_certificate_status_next,"Next: {0} · {1:N0} / {2:N0}"
+be_certificate_status_remaining,"Base value still needed: {0:N0}"
+be_certificate_status_pending,"Goal reached. Leave room on the counter for Nini’s next visit."
+be_certificate_status_complete,"All certificates claimed."
+be_certificate_status_rule,"Alcohol sold to regular customers counts at its base value."
+be_brewing_hydroponic_guide_name,Brewing Hydroponics Guide
+be_brewing_hydroponic_guide_description,"Double-click to read Forty-Seven’s guide to harvests, fruit quality and seed returns."
+be_hydro_guide_title_1,Planting and growth
+be_hydro_guide_title_2,Health and fruit size
+be_hydro_guide_title_3,Health and quality
+be_wine_quality_cloud_jade,Cloud-Jade Nectar
+be_hydro_guide_title_4,Certificates and seed returns
+be_hydro_guide_setup,Planting supplies
+be_hydro_guide_setup_note,"Load a seed, a battery and prepared water into a hydroponic system."
+be_hydro_guide_growth,Base growth and yield
+be_hydro_guide_work,Work
+be_hydro_guide_yield,Yield
+be_hydro_guide_minerals,Minerals
+be_hydro_guide_tier_0,Mortal
+be_hydro_guide_tier_1,From Afar
+be_hydro_guide_tier_2,Longing
+be_hydro_guide_tier_3,Afterglow
+be_hydro_guide_modules,Yield genes and quality modules increase harvests. Performance speeds growth. Efficiency saves power.
+be_hydro_guide_fruit_0,Mini fruit
+be_hydro_guide_fruit_1,Regular fruit
+be_hydro_guide_fruit_2,Giant fruit
+be_hydro_guide_sizes,Health at harvest · Mini fruit share
+be_hydro_guide_mini_note,Round down the number of mini fruit. The rest are regular. Sell mini fruit or use them as feed.
+be_hydro_guide_giants,Giant fruit
+be_hydro_guide_giant_note,"20% chance at 96–99% health, 40% at 100%. At most one giant per harvest, using one yield slot."
+be_hydro_guide_health,Plant Analyzer
+be_hydro_guide_health_note,Growth score shows current health. Too few or too many minerals and harmful contaminants lower it.
+be_hydro_guide_points,Harvest health · Odds by fruit quality score
+be_hydro_guide_pulp_note,Each regular or giant fruit rolls its own score. One giant makes one pulp with four times its fruit score.
+be_hydro_guide_certificates,Removing innate infertility
+be_hydro_guide_cert_0,Basic
+be_hydro_guide_cert_1,Intermediate
+be_hydro_guide_cert_2,Advanced
+be_hydro_guide_cert_3,Master
+be_hydro_guide_return_note,"Once fertile, non-perennial plants return one seed by default. Fertile increases the yield. Offspring inherit genes and reset heat."
+be_hydro_guide_perennial,Unlocking the Perennial gene
+be_hydro_guide_perennial_note,"After earning the master certificate, deliver a Liunian cabinet with every recipe wine to Nini. Perennials fruit again and yield only fruit."
+be_manual_quality_rules,"6 points: Master Vintage (+75%). 7+: Cloud-Jade Nectar (+100%).\nTwo 2-point fruits give 4. The pair bonus adds 1 for 5. Yeast and good water add 1 each for 7. Also applies to bloomberry wine."
+be_manual_collection,Recipes collected {0}/{1}
+be_hydro_guide_cloud_jade,Two 2-point fruits can make a 7-point Cloud-Jade Nectar wine (+100%). See the Brewing Manual for the method.
+be_manual_flow_title,From seed to sale
+be_manual_flow_1,"Buy the brewing sign at the brewing shop at night. Put it in the display case before opening. Buy seeds and recipes from Forty-Seven. If you own this manual, each purchase unlocks its recipe."
+be_manual_flow_2,Grow fruit overnight in the Seed Incubator or use hydroponics. See the Brewing Hydroponics Guide.
+be_manual_flow_3,"Ferment two fruits, yeast and 750 mL of water in an empty bottle. Press fruit into pulp for batch brewing in the barrel. Later, use transfer cables to automate production."
+be_manual_flow_4,Wine sold to any NPC counts toward certificates at base value. Buy Nini’s card and call to book a visit. She has a higher budget for alcohol and tobacco and issues earned certificates when she visits. Check the calendar’s Status tab for progress.
+be_button_accept,Accept
+be_commission_available,Available · {0} days after accepting
+be_commission_commissioner,Commissioner: {0}
+be_commission_credit_reward,Reward: actual submitted value + {0} credits
+be_commission_min_wine_score,Wine quality: {0}+ points ({1})
+be_commission_pending_seeds,Seeds awaiting collection: {0}
+be_commission_progress_wine,{0} {1}/{2} bottles{3}
+be_commission_remaining,Remaining: {0} days
+be_commission_seed_reward,Outer Ring reputation +5; random seeds: {0}
+be_commission_submitted_value,Submitted actual value: {0}
+be_commission_wine_requirement,{0} wine
+be_delivery_back,Back
+be_delivery_changed,Stock or commission changed. Please select again.
+be_delivery_confirm,Confirm {0} items
+be_delivery_details,{0} · Est. {1} credits\n{2}
+be_delivery_empty,No stock meets this requirement.
+be_delivery_help,Choose the items to deliver. Confirm to remove them from stock.
+be_delivery_location_back,Back counter
+be_delivery_location_counter,Counter
+be_delivery_location_display,Showcase
+be_delivery_location_hidden,Hidden compartment
+be_delivery_location_other,Other inventory
+be_delivery_location_storage,Storage
+be_delivery_partial,Delivered {0} items. Select the remaining items again.
+be_delivery_slot,"{0} · Column {1}, row {2}"
+be_delivery_title,Choose items to deliver
+be_delivery_unit,{0} ({1}/{2})
+be_empty_available,Today's commissions are all accepted. Check back tomorrow.
+be_empty_pending,No pending commissions.
+be_order_alternative,Choose one option. The first delivery locks your choice; the two options cannot be combined.
+be_order_face_0,Lv.1
+be_order_face_1,Lv.2
+be_order_face_2,Lv.3
+be_order_incomplete,Complete this commission before requesting its reward.
+be_order_person_0,Scavenger
+be_order_person_1,Upper District resident
+be_order_person_2,Spacer
+be_order_person_3,Homeless traveler
+be_order_person_4,Fellow trader
+be_order_person_5,Tourist
+be_order_reason_0,My scrapyard night shift is coming up. Bring a few bottles for the crew to share after work.
+be_order_reason_1,I'm hosting a small gathering. Please follow the list: my guests have different tastes.
+be_order_reason_2,My ship departs soon. I'd like a taste of the Outer Ring for the long voyage.
+be_order_reason_3,Time to find another place to sleep. The road is cold; a few supplies would help.
+be_order_reason_4,I'm short of stock and my regulars are waiting. Help me fill this list. Good doing business with you.
+be_order_reason_5,I've heard about your craft! I'd like a few gifts for friends I met on my travels.
+be_order_reputation_block,"At Outer Ring reputation -80 or lower, new commissions are unavailable. Existing commissions may still be delivered and claimed."
+be_order_terminal_02,Outer Ring Commission Terminal
+be_order_window_02,Normal
+be_order_window_03,Rare
+be_order_window_04,Precious
+be_order_window_09,Complete · click Claim
+be_order_window_12,Paid · reward items pending
+be_order_window_13,Paid
+be_order_window_14,Expired · submitted goods are not returned
+be_order_window_15,Commission details
+be_order_window_25,". Make room on the counter, then claim again."
+be_order_window_30,"Select an accepted commission and choose bottles from inventory. Claim credits and reputation at the terminal. Seeds go to the counter, where any that do not fit remain pending. Completed orders settle automatically after the deadline. Submitted bottles from unfinished orders are forfeited without a reputation penalty."
+be_order_window_art_03,Available
+be_order_window_art_04,Pending
+be_order_window_art_05,Accept
+be_order_window_art_06,Submit inventory
+be_order_window_art_08,Items
+be_order_window_art_09,Claim
+be_order_window_art_10,Selected for delivery.
+be_order_window_art_11,Complete. Claim now; items go to your counter.
+be_order_window_art_12,"Make room on the counter, then claim the remaining items."
+be_order_window_art_13,Click a face to view its commission.
+be_order_window_art_14,5 active commissions. Complete one before accepting more.
+be_order_window_art_15,Outer Ring reputation is at or below -80. New commissions are blocked.
+be_tab_available,Available commissions
+be_tab_pending,Pending commissions
+be_tier_0,Common
+be_tier_1,From Afar
+be_tier_2,Longing
+be_tier_3,Afterglow
+be_tier_min_1,From Afar or higher
+be_tier_min_2,Longing or higher
+be_music_cassette_7a93cb8719305ea0_name,The Mountain Wind Bears Witness
+be_music_cassette_7a93cb8719305ea0_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_21db8823e50ae889_name,Ode to the Evening Breeze
+be_music_cassette_21db8823e50ae889_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_e7ac3f1a6f4a9e01_name,Neon Rain on the Window
+be_music_cassette_e7ac3f1a6f4a9e01_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_5df0e489eaba8042_name,Sweet Enemy
+be_music_cassette_5df0e489eaba8042_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_632070af08377956_name,Undercurrent
+be_music_cassette_632070af08377956_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_a3b9805a7a709a28_name,Night of Love
+be_music_cassette_a3b9805a7a709a28_description,[Cassette] Insert into a cassette player to listen.
+be_music_cassette_c42b00acf22a1239_name,Ode to Night Rain
+be_music_cassette_c42b00acf22a1239_description,[Cassette] Insert into a cassette player to listen.

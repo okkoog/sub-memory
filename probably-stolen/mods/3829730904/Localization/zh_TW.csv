@@ -210,6 +210,7 @@ wine_printer_print,打印四個酒瓶
 wine_printer_print_linked,打印四個酒瓶（20電）
 wine_printer_ready,每批打印四個空酒瓶
 wine_printer_done,已打印四個空酒瓶（耗電20）
+be_seed_manufacturer_name,xuxu外環公司
 be_chili_seed_name,辣椒種子
 be_chili_seed_description,一顆小小的辣椒種子。凡間的辛辣，不必昂貴，便能暖透一整夜。放進種子孵化器裡，過夜就能長出果實。
 be_rice_seed_name,水稻種子
@@ -243,11 +244,13 @@ be_void_plum_seed_description,一顆漆黑的核，沈得像一句沒說完的�
 be_stardust_berry_seed_name,星塵莓種子
 be_stardust_berry_seed_description,一顆銀白的籽，細看像一粒微縮的星。它長在冷卻艙外的減壓墻上，那裡的輻射比別處更烈，光比別處更孤。放進種子孵化器裡，過夜就能長出果實。
 be_basic_cert_name,初級釀酒證書
-be_basic_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 10%／60%／30%。一張裝裱精美的資格證。持有它能讓種子孵化器每晚孵化五顆種子，四十七會帶來七顆種子。四十七的遠來概率固定 15%；情思從 3% 逐步升至 8%，遺光從 1% 逐步升至 5%，凡間占剩餘概率。持有即生效，放在收納容器內也有效，無需展示。
+be_basic_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 10%／60%／30%。一張裝裱精美的資格證。持有它能讓種子孵化器每晚孵化五顆種子，四十七會帶來七顆種子。四十七的遠來概率固定 15%；情思從 3% 逐步升至 8%，遺光從 1% 逐步升至 5%，凡間占剩餘概率。持有即生效，放在收納容器內也有效，無需展示。首次領取後永久解除凡間種子的固有不育。
 be_mid_cert_name,中級釀酒證書
-be_mid_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 5%／60%／35%。一張用料更考究的資格證。持有它能讓種子孵化器每晚孵化七顆種子，四十七會帶來九顆種子。四十七的情思與遺光概率在遞增加成後再乘 1.3：分別為 3.9%～10.4% 與 1.3%～6.5%；遠來固定 15%，凡間占剩餘概率。持有即生效，放在收納容器內也有效，無需展示。
+be_mid_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 5%／50%／45%。一張用料更考究的資格證。持有它能讓種子孵化器每晚孵化七顆種子，四十七會帶來九顆種子。四十七的情思與遺光概率在遞增加成後再乘 1.3：分別為 3.9%～10.4% 與 1.3%～6.5%；遠來固定 15%，凡間占剩餘概率。持有即生效，放在收納容器內也有效，無需展示。首次領取後永久解除遠來種子的固有不育。
 be_high_cert_name,高級釀酒證書
-be_high_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 0%／30%／70%。一張用暗金線繡邊的資格證。持有它能讓種子孵化器每晚孵化十八顆種子，四十七會帶來十三顆種子。四十七的情思與遺光概率在遞增加成後再乘 1.6：分別為 4.8%～12.8% 與 1.6%～8%；遠來固定 15%，凡間占剩餘概率。這是 xuxu 親手簽發的最後一檔。持有即生效，放在收納容器內也有效，無需展示。
+be_high_cert_description,孵化器產出的本模組果實與熒光莓，品質為 −1／1／2 分的機率分別為 0%／30%／70%。一張用暗金線繡邊的資格證。持有它能讓種子孵化器每晚孵化十八顆種子，四十七會帶來十三顆種子。四十七的情思與遺光概率在遞增加成後再乘 1.6：分別為 4.8%～12.8% 與 1.6%～8%；遠來固定 15%，凡間占剩餘概率。持有即生效，放在收納容器內也有效，無需展示。首次領取後永久解除情思種子的固有不育。
+be_top_cert_name,頂級釀酒證書
+be_top_cert_description,持有時，種子孵化器每晚最多處理24顆種子，孵化出的本模組果實和螢光莓固定為2分。四十七基礎攜帶16顆種子，沿用高級證書的稀有度加成。首次領取後永久解除遺光種子的固有不育。證書放在收納容器裡也能生效，無需展示。
 incubator_name,種子孵化器
 incubator_description,放入本模組或原版種子及有電電池。每消耗1顆本模組種子產出1個果實；原版種子產出2個對應作物，凈水植物種子產出2個原版濾芯。每個成功產出的夜晚整台消耗12kJ；空倉、完整產物放不下或電量不足時保留種子，不額外耗電。持有釀酒證書可提高每晚處理的種子顆數。孵化產出的本模組果實和螢光莓各自抽取 −1、1 或 2 分，持有更高級的證書更容易獲得高分果實。
 incubator_input,種子輸入
@@ -351,7 +354,7 @@ be_container_blindbox_description,雙擊打開，隨機獲得一件容器：牢�
 be_figurine_blindbox_name,手辦盲盒
 be_figurine_blindbox_description,雙擊打開，等概率獲得黑崎一護、朽木露琪亞、石田雨龍或噢我的天啊是銥星大海參手辦。每種手辦擁有一件即可增加 100 點店鋪吸引力，同款不疊加。
 be_xuxu_cassette_bundle_name,xuxu磁帶捆綁包
-be_xuxu_cassette_bundle_description,雙擊打開，一次獲得酒吧特調、霓虹街道、微醺之夜、弦間微風、釀酒有嘻哈五盤磁帶。放入磁帶播放器，即可播放對應的音樂。
+be_xuxu_cassette_bundle_description,雙擊打開，一次獲得全套 12 盤磁帶。請留出足夠的庫存空間。放入磁帶播放器即可播放。
 be_midautumn_blindbox_name,中秋盲盒「限定」
 be_midautumn_blindbox_description,一隻八角形的禮盒，盒面是深藍的夜色，上面浮著一輪金黃的圓月。\n\n月亮旁邊，一隻小小的玉兔正俯身看著人間。\n\n盒蓋用一條紅繩系著，繩結打成團圓的模樣。\n\n打開它，可能是一柄折扇，可能是一盞燈，也可能是一盒月餅。\n\n——其中的中秋裝飾，能提升店鋪的吸引力。\n花好月圓之夜，誰不願多走幾步，來你這兒看看月亮？\n\n每5天可購買1次，從上次購買當天計算；購買後的第5天恢復上架。
 be_midautumn_mooncake_box_name,月團禮盒
@@ -403,7 +406,7 @@ be_music_cassette_9b23823d7fcbcfb2_description,指尖掠過琴弦，風從音符
 be_music_cassette_120129a8a5d85fd3_name,釀酒有嘻哈
 be_music_cassette_120129a8a5d85fd3_description,不知道何意味。
 be_brewing_manual_name,釀酒手冊
-be_brewing_manual_description,xuxu留下的釀酒手冊。翻開它，你會看到所有釀酒的秘密。建議配合散落的配方殘頁一起閱讀——那些殘頁需要你自己從四十七那裡買齊。
+be_brewing_manual_description,雙擊翻閱釀酒說明。持有釀酒手冊時，已擁有的配方紙會自動收錄並消失。先買配方也可以，拿到手冊後會一併收錄。
 be_liunian_ager_guide_title,流年使用說明
 be_liunian_ager_guide_body,將已釀好的真酒放入存放區，電池放入左側電池槽。每個有效夜晚消耗電量，為酒增加陳化天數並添加冰鎮效果。空倉或無法供電時不進行機器陳化。\n\n模組區6×20，存放區20×20。基礎機器陳化為1天，每滿125質量額外增加1天：1＋整數部分（質量÷125）。例如125質量為2天，1000質量為9天。原版自然陳化另行計算。\n\n未加模組的基礎耗電為每個有效夜晚24kJ，按整台機器結算，不按酒瓶數量逐瓶收費。質量本身沒有“每125質量固定增加耗電”的規則；安裝的模組還會附帶能耗或節能屬性。每增加100%額外耗電，對24kJ基礎耗電相當於增加24kJ；性能與節能效果可降低耗電，按原版取整、最低1kJ。以機器參數和本說明末尾的當前耗電為準。
 be_fruit_pulp_concentrator_guide_title,原漿濃縮器使用說明
@@ -415,7 +418,7 @@ be_wine_printer_guide_body,電源槽裝入有電電池，點擊打印按鈕，�
 be_xuxu_water_bottle_printer_guide_title,xuxu水瓶打印機使用說明
 be_xuxu_water_bottle_printer_guide_body,裝入有電電池後選擇打印按鈕。初始1級可打印6L小水瓶，每個20kJ；每投入6個電子元件升1級，2級解鎖12L細水瓶、每個40kJ；3級解鎖18L超級水瓶、每個60kJ。滿級共需12個電子元件。未解鎖按鈕不能點擊。\n\n輸出區6×4。空間或電量不足時不打印。電池拖到機器上進入電源槽，電子元件用於升級。三款水瓶均不可安裝濾芯，水量改變會更新水位貼圖。
 be_incubator_guide_title,種子孵化器使用說明
-be_incubator_guide_body,將本模組或原版種子放進種子輸入區，將有電電池放入電源槽。每晚按輸入區從上到下、從左到右處理種子，每消耗1顆本模組種子產出1個對應果實，1顆原版種子產出2個常規對應作物，輸出按行尋找空位。\n\n每台每晚基礎上限2顆；持有初、中、高級釀酒證書後，上限分別為5、7、18顆，取最高檔，不疊加。每個成功產出的夜晚整台消耗12kJ，不按果實逐個扣電。多台機器分別結算。\n\n原版咖啡豆也兼作種子；bloomberry種子產出原版釀酒漿果，hydroreed種子產出2個原版濾芯。原版產物按固定常規形態產出，不另結算水培模組的額外收成或返種。每晚處理上限按消耗的種子顆數計，原版種子的兩件產物必須全部放得下；無種子、空間不足或電量不足時不會完成生產；輸入區、輸出區均12×12，可自由重排符合條件的物品。說明紙條位於最右側，懸停可閱讀。\n\n孵化產出的本模組果實和螢光莓各自抽取 −1、1 或 2 分，持有更高級的證書更容易獲得高分果實。 按 −1／1／2 分順序，無證書 30%／50%／20%，初級 10%／60%／30%，中級 5%／60%／35%，高級 0%／30%／70%。−1 分果在釀酒時按 0 分計。
+be_incubator_guide_body,將本模組或原版種子放進種子輸入區，將有電電池放入電源槽。每晚按輸入區從上到下、從左到右處理種子，每消耗1顆本模組種子產出1個對應果實，1顆原版種子產出2個常規對應作物，輸出按行尋找空位。\n\n每台每晚基礎上限2顆；持有初、中、高、頂級釀酒證書後，上限分別為5、7、18、24顆，取最高檔，不疊加。每個成功產出的夜晚整台消耗12kJ，不按果實逐個扣電。多台機器分別結算。\n\n原版咖啡豆也兼作種子；bloomberry種子產出原版釀酒漿果，hydroreed種子產出2個原版濾芯。原版產物按固定常規形態產出，不另結算水培模組的額外收成或返種。每晚處理上限按消耗的種子顆數計，原版種子的兩件產物必須全部放得下；無種子、空間不足或電量不足時不會完成生產；輸入區、輸出區均12×12，可自由重排符合條件的物品。說明紙條位於最右側，懸停可閱讀。\n\n孵化產出的本模組果實和螢光莓各自抽取 −1、1 或 2 分，持有更高級的證書更容易獲得高分果實。 按 −1／1／2 分順序，無證書 30%／50%／20%，初級 10%／60%／30%，中級 5%／50%／45%，高級 0%／30%／70%，頂級 0%／0%／100%。−1 分果在釀酒時按 0 分計。
 debug_foundation_check,釀酒基礎接入檢查
 be_mod_name,釀酒拓展
 be_ending_assassination_title,外環區刺殺
@@ -428,6 +431,7 @@ be_nini_inspection_warning,這煙的標簽和品相對不上，別拿來糊弄�
 be_brewer_start_name,新人釀酒師
 be_brewer_start_description,你是一個專業的釀酒師，從小你就聽說過xuxu的傳說，也想走上釀酒的道路。現在，你可以開始了。
 be_brewer_start_supplies,普通酵母×4、空酒瓶×4、清釀澄水箱、釀酒燈牌、水霓虹燈牌、普通過濾器、水質檢測試劑盒（內含10支試紙）
+be_brewer_start_equipment,種子孵化器×1（已裝滿電的100 kJ普通電池）、舊水培系統×1、水培營養片×4、釀酒手冊×1、釀酒水培手冊×1
 be_perk_devotion_name,一心為酒
 be_perk_drunk_name,酩酊大醉
 be_trait_bonus_category,特質加成
@@ -439,7 +443,7 @@ be_nini_phone_end,結束通話
 be_nini_phone_closed,店門關著呢，營業時再叫我吧。
 be_nini_phone_missing_card,名片不在你手裡，改天再說吧。
 be_nini_phone_accepted,有好酒就等著，我馬上就來。
-be_nini_trade_greeting,oi，小鬼，今天有煙酒賣嗎？全賣我，交易額攢夠了，我就給你頒發證書。
+be_nini_trade_greeting,oi，小鬼，今天有煙酒賣嗎？煙賣給我才算證書進度，酒賣給其他顧客也算。按基礎價值累積，攢夠了證書就發到櫃檯。
 be_nini_trade_accepted,煙酒我收下了。
 be_nini_trade_done,今天就到這兒吧。
 be_forty_seven_name,四十七
@@ -448,7 +452,7 @@ be_forty_seven_trade_accepted,成交。
 be_forty_seven_trade_done,行。
 be_assassin_name,外環區刺客
 be_assassin_greeting,外環區的賬，該清了。
-be_certificate_delivery_pending,已經夠領釀酒證書了。櫃檯騰出位置，下次交易或我再來時補給你，讀檔也會補發。
+be_certificate_delivery_pending,"已經夠領釀酒證書了。櫃檯騰出位置，我會在下次交易或來訪時給你。"
 be_certificate_awarded,不錯，這張釀酒證書給你，繼續釀更好的酒吧。
 be_recipe_purchase_required,尚未解鎖。購買後即可查看內容。
 be_basic_battery_empty_description,零電版購入。基礎估值200信用點，當前電量另計；容量200kJ，每晚自動回覆6kJ。零電時估值200，滿電時估值400，交易加成和市場變化另算。
@@ -518,6 +522,7 @@ market_event_3_description,上層區煙酒庫存積壓，煙酒類物品的交�
 be_setting_traditional_label,中文使用繁體
 be_setting_traditional_description,開啟後，遊戲使用中文時，釀酒拓展的物品、對話和提示顯示為繁體中文；關閉則顯示簡體。其他語言不受影響。點擊套用後，請完全退出並重新啟動遊戲。
 be_huge_fruit_name,巨大{0}
+be_small_fruit_name,迷你{0}
 be_concentrator_giant_input,巨大果實區
 be_huge_fruit_description,可出售，或放入原漿濃縮器的巨大果實區。每顆可製成一份對應原漿。
 be_incubator_fruit_quality,果實品質：{0} 分
@@ -549,3 +554,190 @@ be_outer_p160_flavor,交情不只寫在帳本上，也裝在多帶的種子和�
 be_outer_p180_flavor,星海隔不斷老交情；種子隨人來，信用點隨好酒留下。
 be_outer_p200_flavor,外環的遠客循著你的燈火而來，帶著種子，也帶著最足的誠意。
 be_pulp_quality_sum,原漿品質總分：{0} 分
+be_hydroponic_small_fruit_description,可出售或用於卡路里養殖。
+be_hydroponic_fertile,非多年生植株每輪基礎返還 1 顆種子。繁育力強按等級提高返種量，無額外上限。子種繼承親本的基因等級，熱度歸零。
+be_hydroponic_locked_basic,可水培。取得初級釀酒證書後解除不育。
+be_hydroponic_locked_mid,可水培。取得中級釀酒證書後解除不育。
+be_nini_cellar_deliver,交付流年酒櫃
+be_nini_cellar_cancel,取消
+be_nini_cellar_confirm,確定把「{0}」和櫃內所有物品一起交給泥泥嗎？交付後將解鎖釀酒種子的多年生基因改造。
+be_hydroponic_perennial_locked,領取頂級釀酒證書後，把八張釀酒配方記載的酒各裝一瓶進同一個流年酒櫃，再在泥泥的交易面板交付整櫃。
+be_hydroponic_locked_high,"可水培。取得高級釀酒證書後解除不育。"
+be_hydroponic_locked_top,可水培。取得頂級釀酒證書後解除不育。
+be_certificate_status_title,"釀酒證書"
+be_certificate_status_none,"已領取：無"
+be_certificate_status_earned,"已領取：{0}"
+be_certificate_status_next,"下一張：{0} · {1:N0} / {2:N0}"
+be_certificate_status_remaining,"還差 {0:N0} 基礎價值"
+be_certificate_status_pending,"已達標。等待泥泥到店發放，請在櫃檯留出位置。"
+be_certificate_status_complete,"全部證書已領取。"
+be_certificate_status_rule,"賣給一般顧客的酒也按基礎價值計入。"
+be_chili_fruit_small_description,一小顆鮮紅的辣椒，辣意一點沒少。凡間最廉價的暖意，縮成了指尖大小。可出售，也可用於卡路里養殖。
+be_rice_fruit_small_description,一小捧飽滿的水稻，粒粒都在。凡間最古老的安穩，被收進掌心。可出售，也可用於卡路里養殖。
+be_wheat_fruit_small_description,一小把金黃的小麥，磨不出多少麵粉，香氣卻足。可出售，也可用於卡路里養殖。
+be_wormwood_fruit_small_description,一小株苦艾草，苦味照舊藏在草葉背後。可出售，也可用於卡路里養殖。
+be_sichuan_pepper_fruit_small_description,一小撮花椒，麻得乾脆，舌尖照樣會醒。可出售，也可用於卡路里養殖。
+be_lemon_fruit_small_description,一小顆檸檬，酸得毫不含糊。可出售，也可用於卡路里養殖。
+be_yellow_grape_fruit_small_description,一小串黃葡萄，圓潤得像幾粒日光。可出售，也可用於卡路里養殖。
+be_sugarcane_fruit_small_description,一小段甘蔗，硬殼底下仍是甜的。可出售，也可用於卡路里養殖。
+be_cucumber_fruit_small_description,一小根黃瓜，脆生生地帶著田氣。可出售，也可用於卡路里養殖。
+be_lychee_fruit_small_description,一小顆荔枝，果肉仍晶瑩。遠來的甜，縮成一口舊夢。可出售，也可用於卡路里養殖。
+be_jasmine_fruit_small_description,一小簇茉莉，仍是夜裡才開，天亮之前就謝。可出售，也可用於卡路里養殖。
+be_green_grape_fruit_small_description,一小串青提，等過一場霜才夠甜。可出售，也可用於卡路里養殖。
+be_osmanthus_fruit_small_description,一小簇金黃桂花，香得襲人。那年折桂的人，還沒回頭。可出售，也可用於卡路里養殖。
+be_bayberry_fruit_small_description,一小顆楊梅，酸甜依舊。有些人是等不回的。可出售，也可用於卡路里養殖。
+be_void_plum_fruit_small_description,一顆代表虛空顏色的李子，皮上仍沒有一絲光。消失的質量，縮得更輕了。可出售，也可用於卡路里養殖。
+be_stardust_berry_fruit_small_description,一顆代表星空顏色的漿果，光點仍在果肉裡懸著。殘留的光，也縮成了這一小粒。可出售，也可用於卡路里養殖。
+be_chili_fruit_huge_description,一顆碩大的紅辣椒，紅得發亮。凡間的暖意被放大了一整圈。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_rice_fruit_huge_description,一捆沉甸甸的水稻，穗子壓手。凡間最古老的安穩，被放大成一抱。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_wheat_fruit_huge_description,一束金黃的小麥，磨出的麵粉夠吃好幾頓。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_wormwood_fruit_huge_description,一株高大的苦艾草，苦味更濃，藏在草葉背後。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_sichuan_pepper_fruit_huge_description,一大把花椒，麻香撲鼻，指尖都跟著發麻。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_lemon_fruit_huge_description,一顆碩大的檸檬，酸得人瞇眼。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_yellow_grape_fruit_huge_description,一大串黃葡萄，顆顆飽滿，像一串金色的日光。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_sugarcane_fruit_huge_description,一截粗壯的甘蔗，硬殼底下全是甜。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_cucumber_fruit_huge_description,一根粗長的黃瓜，脆得能聽見聲。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_lychee_fruit_huge_description,一顆碩大的荔枝，果肉晶瑩。遠來的舊夢，這次做大了。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_jasmine_fruit_huge_description,一大簇茉莉，夜裡開得更盛，天亮之前仍會謝。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_green_grape_fruit_huge_description,一大串青提，霜後更甜，冷過一次才夠沉。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_osmanthus_fruit_huge_description,一大簇金黃桂花，香氣能飄滿一整間店。折桂的人還是沒回頭。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_bayberry_fruit_huge_description,一顆碩大的楊梅，鮮紅多汁，酸甜更重。從淺絳沉到緋紅，有些人終究等不回。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_void_plum_fruit_huge_description,一顆代表虛空顏色的巨大李子，皮上仍沒有一絲光。消失的質量，這次沉得壓手。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_stardust_berry_fruit_huge_description,一顆代表星空顏色的巨大漿果，光點在果肉裡懸成一小片星夜。殘留的光，這次亮得能照見人。可出售，或放入原漿濃縮器的巨大果實區，一顆換一份原漿。
+be_brewing_hydroponic_guide_name,釀酒水培手冊
+be_brewing_hydroponic_guide_description,四十七整理的釀酒作物指南。雙擊查看水培收穫、果實品質和返種規則。
+be_hydro_guide_title_1,種植與生長
+be_hydro_guide_title_2,健康與果型
+be_hydro_guide_title_3,健康與品質
+be_wine_quality_cloud_jade,雲液玉髓
+be_hydro_guide_title_4,證書與返種
+be_hydro_guide_setup,種植準備
+be_hydro_guide_setup_note,把種子、電池和配好的水放進原版水培機。
+be_hydro_guide_growth,基礎生長與產量
+be_hydro_guide_work,工作量
+be_hydro_guide_yield,產量
+be_hydro_guide_minerals,礦物質
+be_hydro_guide_tier_0,凡間
+be_hydro_guide_tier_1,遠來
+be_hydro_guide_tier_2,情思
+be_hydro_guide_tier_3,遺光
+be_hydro_guide_modules,高產基因和品質模組增加產量。性能加快生長，效率降低耗電。
+be_hydro_guide_fruit_0,迷你果
+be_hydro_guide_fruit_1,普通果
+be_hydro_guide_fruit_2,巨大果
+be_hydro_guide_sizes,收穫時的健康值 · 迷你果比例
+be_hydro_guide_mini_note,迷你果數量無條件捨去，其餘為普通果。迷你果可出售或作飼料。
+be_hydro_guide_giants,巨大果
+be_hydro_guide_giant_note,健康 96–99% 時有 20% 機率，100% 時有 40%。每輪最多 1 顆，佔 1 份產量。
+be_hydro_guide_health,植物分析儀
+be_hydro_guide_health_note,「生長評分」就是目前健康值。礦物質不足、過量或有害污染都會扣健康。
+be_hydro_guide_points,收穫健康值 · 果實品質分數的機率
+be_hydro_guide_pulp_note,普通果和巨大果逐顆抽取品質分數。1 顆巨大果可壓成 1 份原漿，保留 4 倍的果實品質分數。
+be_hydro_guide_certificates,解除固有不育
+be_hydro_guide_cert_0,初級
+be_hydro_guide_cert_1,中級
+be_hydro_guide_cert_2,高級
+be_hydro_guide_cert_3,頂級
+be_hydro_guide_return_note,解除不育後，非多年生植株基礎返種 1 顆。繁育力強可增加數量。子種繼承基因，熱度歸零。
+be_hydro_guide_perennial,解鎖多年生改造
+be_hydro_guide_perennial_note,領到頂級證書後，把裝齊配方酒的流年交給泥泥。多年生植株可以再次結果，每輪只收果。
+be_manual_quality_rules,6 分：瓊漿玉液（+75%）。7 分及以上：雲液玉髓（+100%）。\n兩顆 2 分果實得 4 分。使用兩顆果實再加 1 分，共 5 分。酵母和優質水各加 1 分，合計 7 分。配方酒與原版螢光莓果釀都適用。
+be_manual_collection,配方收集 {0}/{1}
+be_hydro_guide_cloud_jade,兩顆 2 分果實可釀出 7 分「雲液玉髓」酒（+100%）。詳細配法見《釀酒手冊》。
+be_manual_flow_title,釀酒流程
+be_manual_flow_1,夜間外出時前往釀酒商店，購買釀酒燈牌。開店前把燈牌放進展示櫃。四十七來店時可以買種子和配方。持有《釀酒手冊》時，買到的配方會自動解鎖對應內容。
+be_manual_flow_2,用種子孵化器過夜收果，或用水培機培育。水質和收穫規則見《釀酒水培手冊》。
+be_manual_flow_3,空酒瓶裝入兩顆果實、酵母和 750 毫升水即可發酵。也可把果實壓成原漿，用釀造桶批量釀造。後期可用傳輸線實現自動化。
+be_manual_flow_4,賣給任何 NPC 的成酒都按基礎價值累計證書進度。購買泥泥的名片並打電話預約收購，她的菸酒收購預算更高。累計達標後，泥泥會在來店時發放證書。解鎖進度可在日曆的「狀態」頁查看。
+be_button_accept,接取委托
+be_commission_available,可接 · 接取后{0}天
+be_commission_commissioner,委託人：{0}
+be_commission_credit_reward,獎勵：真實估值總和 + {0} 信用點
+be_commission_min_wine_score,酒類品質 ≥ {0} 分（{1}）
+be_commission_pending_seeds,種子待領取：{0}
+be_commission_progress_wine,{0} {1}/{2} 瓶{3}
+be_commission_remaining,剩余{0}天
+be_commission_seed_reward,外環區聲望 +5；隨機種子 {0}
+be_commission_submitted_value,已提交真實估值：{0}
+be_commission_wine_requirement,{0}酒
+be_delivery_back,返回
+be_delivery_changed,庫存或委託已變化，請重新選擇。
+be_delivery_confirm,確認提交 {0} 件
+be_delivery_details,{0} · 估值 {1} 信用點\n{2}
+be_delivery_empty,沒有符合此要求的庫存。
+be_delivery_help,勾選要交付的物品，確認后才會從庫存扣除。
+be_delivery_location_back,后柜
+be_delivery_location_counter,櫃檯
+be_delivery_location_display,展示柜
+be_delivery_location_hidden,暗格
+be_delivery_location_other,其他庫存
+be_delivery_location_storage,倉庫
+be_delivery_partial,已提交 {0} 件，剩余物品請重新選擇。
+be_delivery_slot,{0} · 第 {1} 列、第 {2} 行
+be_delivery_title,選擇提交物品
+be_delivery_unit,{0}（第 {1}/{2} 件）
+be_empty_available,今天的委託已全部接取，明天再來看看。
+be_empty_pending,還沒有待完成的委託。
+be_order_alternative,二選一：完成任一方案即可。首次提交后鎖定方案，兩種方案不能混交。
+be_order_face_0,普通委託
+be_order_face_1,稀有委託
+be_order_face_2,珍稀委託
+be_order_incomplete,請先完成這張委託。
+be_order_person_0,拾荒客
+be_order_person_1,上層區顧客
+be_order_person_2,星際客
+be_order_person_3,流浪漢
+be_order_person_4,同行
+be_order_person_5,游客
+be_order_reason_0,廢料場的夜班快輪到我了。給夥伴們備幾瓶酒，熬完這班再慢慢享用。
+be_order_reason_1,我準備了一場小聚會，請按清單送來。客人們的口味各不相同。
+be_order_reason_2,下一班飛船快出港了。長途航行前，想帶點外環區的味道。
+be_order_reason_3,又要換個地方落腳了。路上冷，湊幾份留著，慢慢用。
+be_order_reason_4,我這邊缺了一批貨，老顧客還在等。請幫我按單補齊，合作愉快。
+be_order_reason_5,聽說你們的手藝很好！離開前想帶幾份，送給旅途里認識的朋友。
+be_order_reputation_block,外環區聲望低於或等於-80，無法接取新的委託。已接委託仍可提交和領獎。
+be_order_terminal_02,外環區委託機
+be_order_window_02,普通
+be_order_window_03,稀有
+be_order_window_04,珍稀
+be_order_window_09,已完成 · 點擊領取獎勵
+be_order_window_12,已結算 · 獎勵物品待領取
+be_order_window_13,已結算
+be_order_window_14,已逾期 · 已交物品不退
+be_order_window_15,委託詳情
+be_order_window_25,。請在櫃檯騰出空間，再點擊領取。
+be_order_window_30,選擇待完成的委託，從庫存挑選成品酒交付。完成後在委託機領取信用點和聲望，種子送到櫃檯，放不下的可稍後領取。已完成的委託到期後自動結算，未完成逾期時已交的酒不退，也不扣聲望。
+be_order_window_art_03,可接取委託
+be_order_window_art_04,待完成委託
+be_order_window_art_05,接取委託
+be_order_window_art_06,從庫存提交
+be_order_window_art_08,領取物品
+be_order_window_art_09,領取獎勵
+be_order_window_art_10,已選中此委託，提交物品將交給它。
+be_order_window_art_11,委託已完成，點擊領取獎勵，物品送到櫃檯。
+be_order_window_art_12,請在櫃檯騰出空間，再點擊領取物品。
+be_order_window_art_13,點擊笑臉查看委託內容。
+be_order_window_art_14,已接滿5個委託，請先完成已有委託。
+be_order_window_art_15,外環區聲望≤-80，無法接取新委託。
+be_tab_available,可接取委託
+be_tab_pending,待完成委託
+be_tier_0,凡間
+be_tier_1,遠來
+be_tier_2,情思
+be_tier_3,遺光
+be_tier_min_1,遠來及以上
+be_tier_min_2,情思及以上
+be_music_cassette_7a93cb8719305ea0_name,山風為證
+be_music_cassette_7a93cb8719305ea0_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_21db8823e50ae889_name,晚風辭
+be_music_cassette_21db8823e50ae889_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_e7ac3f1a6f4a9e01_name,霓虹雨窗
+be_music_cassette_e7ac3f1a6f4a9e01_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_5df0e489eaba8042_name,甜蜜敵人
+be_music_cassette_5df0e489eaba8042_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_632070af08377956_name,暗流
+be_music_cassette_632070af08377956_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_a3b9805a7a709a28_name,夜愛
+be_music_cassette_a3b9805a7a709a28_description,【磁帶】放入磁帶播放器即可播放。
+be_music_cassette_c42b00acf22a1239_name,夜雨賦
+be_music_cassette_c42b00acf22a1239_description,【磁帶】放入磁帶播放器即可播放。

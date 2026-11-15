@@ -11,11 +11,11 @@ te_item_paper_description,"Dünnes Papier sammelt den Duft des Blattes und ein S
 te_item_paperbox_name,Zigarettenpapier-Schachtel
 te_item_paperbox_description,"Eine volle Schachtel hat 8 Blätter, genug für 4 Packungen. Doppelklick zeigt den Rest.\nDie Schachtel kann ganz eingelegt werden; die Maschine nimmt 2 Blätter pro Packung, die leere Schachtel bleibt; auch mit losem Papier kombinierbar."
 te_item_syringe_name,Leere Spritze
-te_item_syringe_description,Spritze auf das Fruchtmark ziehen: jeweils ein Viertel Mark ergibt 1 Extraktdosis; mit Rest darf kein anderer Geschmack hinein.\nVolle Spritze in den Extraktbereich; 1 Dosis pro Packung. Eine Spritze schafft 2 Entnahmen und wird erst nach einer erfolgreichen Packung mit der letzten Dosis verbraucht.
+te_item_syringe_description,Ziehe eine leere Spritze auf eine Frucht. Das verbraucht 1 Frucht und ergibt 1 Dosis. Nach erfolgreicher Herstellung der Packung wird die Spritze verbraucht. Fruchtmark erlaubt 2 Entnahmen zu je einem Viertel. Restextrakt nicht mischen. Pro Packung braucht die Maschine 1 Dosis im Extraktfach.
 te_item_partialpulp_name,Fruchtmark-Rest
 te_item_partialpulp_description,Spritze mit restlichen Entnahmen auf den Markrest ziehen: je ein Viertel ergibt 1 Extraktdosis. Für vollständige Weinrezepte nicht mehr geeignet.
 te_item_knife_name,xuxu Messer
-te_item_knife_description,"Messer auf getrockneten Tabak ziehen: 2 Fasern pro Portion, ein normales Messer nur 1. Feuchter getrockneter Tabak lässt sich schneiden, die Feuchtigkeit bleibt.\nTötet auch Ratten und passt in den Werkzeugkasten."
+te_item_knife_description,"Messer auf getrockneten Tabak ziehen: 2 Fasern pro Portion, ein normales Messer nur 1. Feuchter getrockneter Tabak lässt sich schneiden, die Feuchtigkeit bleibt.\nTötet auch Ratten und passt in den Werkzeugkasten.\nRiesiges getrocknetes Blatt: vier Portionen mit einem normalen Messer, acht mit dem xuxu-Messer."
 te_item_sign_name,Tabakschild
 te_item_sign_description,"In die Vitrine stellen: lädt beim Öffnen Tabakhändler und Chenzi ein. Chenzi bringt täglich Einmal-Etiketten, die Händler verkaufen Zigaretten.\nAufträge werden am Terminal auf dem Tisch angenommen, abgegeben und abgeholt — Chenzi und Schild nicht nötig."
 te_cigarette_lore_basic,"Nur ein schwacher Tabakgeschmack und etwas Wärme. Wer wenig spricht, raucht langsam."
@@ -57,13 +57,13 @@ te_cigarette_osmanthus_name,Osmanthus-Zigaretten
 te_cigarette_bayberry_name,Wachsbeeren-Zigaretten
 te_cigarette_stardust_berry_name,Sternenstaubbeeren-Zigaretten
 te_cigarette_void_plum_name,Leere-Pflaume-Zigaretten
-te_syringe_status,Entnahmen übrig: {0}/2; Extrakt: {1} Dosen.\nSpritze auf das Fruchtmark ziehen: ein Viertel Mark = 1 Dosis; mit Rest kein anderer Geschmack.\nVolle Spritze in den Extraktbereich; 1 Dosis pro Packung. Nach zwei Entnahmen wird die Spritze erst nach einer erfolgreichen Packung mit der letzten Dosis verbraucht.
+te_syringe_status,Entnahmen übrig: {0}/{2}; Extrakt: {1} Dosen.\nZiehe eine leere Spritze auf eine Frucht. Das verbraucht 1 Frucht und ergibt 1 Dosis. Nach erfolgreicher Herstellung der Packung wird die Spritze verbraucht. Fruchtmark erlaubt 2 Entnahmen zu je einem Viertel. Restextrakt nicht mischen. Pro Packung braucht die Maschine 1 Dosis im Extraktfach.
 te_dryer_name,Trockner
 te_dryer_description,"Doppelklick. Batterie in den Batteriebereich, Tabak, feuchten getrockneten Tabak oder feuchte Fasern in den Rohstoffbereich.\n„Verarbeitung starten“ trocknet alles Mögliche für 6 Energie; über Nacht wird 1 Portion automatisch getrocknet, ebenfalls 6 Energie. Der Ausgang muss die ganze Charge fassen, sonst werden Rohstoff und Energie nicht verbraucht. Vollständige Anleitung auf dem Zettel rechts."
 te_maker_name,Zigarettenmaschine
-te_maker_description,"Doppelklick. Batterie, Faserbereich, Papierbereich (lose oder Schachtel). Jeder Klick oder jede Nacht ergibt 1 Packung: 1 Faser, 2 Blätter, 4 Energie.\nOptional: Extraktbereich (1 Dosis pro Packung), sonst Basiszigarette; alle Medikamente im Schlafstaubbereich gehen in dieselbe Packung, Wirkungen addieren sich. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware aus dem Ausgang; Zettel rechts."
+te_maker_description,"Doppelklick. Batterie, Faserbereich, Papierbereich (lose oder Schachtel). Jeder Klick oder jede Nacht ergibt 1 Packung: 1 Faser, 2 Blätter, 4 Energie.\nOptional: Extraktbereich (1 Dosis pro Packung), sonst Basiszigarette; alle Medikamente im Schlafstaubbereich gehen in dieselbe Packung, Wirkungen addieren sich. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware aus dem Ausgang; Zettel rechts.\nZigarre: Ein riesiges getrocknetes Blatt ins Papierfach, vier Portionen Tabak ins Tabakfach. Benötigt vier Energie. Feuchte Zutaten ergeben Mängel. Papier, Extrakt und Zusätze bleiben unberührt."
 te_guide_name,Echtheitshandbuch für Fruchtzigaretten
-te_guide_description,"Nach dem Kauf per Doppelklick lesen; Pfeile unten blättern, Knopf oben rechts zoomt. 14 Seiten: Verpackung, Schrift, Siegel und Marken der sieben Sorten.\nZigarette mit der Lupe prüfen und vergleichen. Das Handbuch dient der Echtheit; Fehler über „Zustand prüfen“, Einmal-Etiketten über „Etikett prüfen“."
+te_guide_description,"Per Doppelklick lesen; Pfeile unten blättern, Knopf oben rechts zoomt. 14 Seiten: Verpackung, Schrift, Siegel und Marken der sieben Sorten.\nZigarette mit der Lupe prüfen und vergleichen. Das Handbuch dient der Echtheit; Fehler über „Zustand prüfen“, Einmal-Etiketten über „Etikett prüfen“."
 te_story_description,"Geschichten aus dem Außenring, {0} Seiten. Doppelklick oder Rechtsklick „Öffnen“; zoombar."
 te_story_book_forty_seven_name,„Siebenundvierzig“
 te_story_book_nini_name,„Nini“
@@ -115,7 +115,7 @@ te_producer_labels_06,Etikett-Aufschlag
 te_stamp_machine_03,Schließen
 te_stamp_machine_04,Aktivieren
 te_machine_instructions_01,"1. Batteriebereich: geladene Batterie.\n2. Rohstoffbereich: Tabak, feuchter getrockneter Tabak oder feuchte Fasern.\n\n3. „Verarbeitung starten“ trocknet alles Mögliche für 6 Energie. Der Ausgang muss die ganze Charge fassen, sonst kein Verbrauch.\n4. Über Nacht wird 1 Portion automatisch getrocknet, 6 Energie.\n5. Fertige Ware aus dem Ausgang. Getrockneter Tabak und Fasern werden nachts feucht — erneut trocknen. Tabak wird nach zwei Tagen von selbst feucht-getrocknet."
-te_machine_instructions_02,"1. Batteriebereich: geladene Batterie.\n2. Faserbereich; Papierbereich: lose oder Schachtel, Papier wird aus der Schachtel genommen, leere bleibt. Pro Packung 1 Faser, 2 Blätter, 4 Energie.\n\n3. Extraktbereich: Spritze mit Fruchtextrakt für den Geschmack; ohne sie Basiszigarette. Die Spritze hat begrenzte Entnahmen.\n4. Schlafstaubbereich: Schlafstaub, Fentanyl oder andere Mittel mit Euphorie/Toxizität. Jede Herstellung nimmt den ganzen Bereich und addiert die echte Chemie; ohne sie geht es auch.\n5. „Verarbeitung starten“ ergibt eine Packung; über Nacht ebenfalls eine. Bei fehlendem Platz, Material oder Energie keine Herstellung.\n6. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware im Ausgang."
+te_machine_instructions_02,"1. Batteriebereich: geladene Batterie.\n2. Faserbereich; Papierbereich: lose oder Schachtel, Papier wird aus der Schachtel genommen, leere bleibt. Pro Packung 1 Faser, 2 Blätter, 4 Energie.\n\n3. Extraktbereich: Spritze mit Fruchtextrakt für den Geschmack; ohne sie Basiszigarette. Die Spritze hat begrenzte Entnahmen.\n4. Schlafstaubbereich: Schlafstaub, Fentanyl oder andere Mittel mit Euphorie/Toxizität. Jede Herstellung nimmt den ganzen Bereich und addiert die echte Chemie; ohne sie geht es auch.\n5. „Verarbeitung starten“ ergibt eine Packung; über Nacht ebenfalls eine. Bei fehlendem Platz, Material oder Energie keine Herstellung.\n6. Feuchte Fasern ergeben irreparable Fehler. Fertige Ware im Ausgang.\n\nZigarre: Ein riesiges getrocknetes Blatt ins Papierfach, vier Portionen Tabak ins Tabakfach. Benötigt vier Energie. Feuchte Zutaten ergeben Mängel. Papier, Extrakt und Zusätze bleiben unberührt."
 te_machines_01,"Rohstoff und Batterie einlegen,\nunten „Verarbeitung starten“ drücken."
 te_machines_02,Verarbeitung starten
 te_machines_03,"Fertig,\nbitte aus dem Ausgang nehmen."
@@ -402,6 +402,7 @@ te_commission_smoke_requirement,Zigaretten der Stufe {0}
 te_commission_progress_items,{0}: {1}/{2} Stk.{3}
 te_commission_progress_wine,{0}: {1}/{2} Fl.{3}
 te_commission_progress_smoke,{0}: {1}/{2} Pck.{3}
+te_commission_progress_cigar,{0}: {1}/{2} Stk.{3}
 te_delivery_title,Waren zur Lieferung wählen
 te_delivery_help,Wähle die Waren aus. Erst die Bestätigung entnimmt sie dem Bestand.
 te_delivery_back,Zurück
@@ -426,3 +427,111 @@ te_cigarette_tier_lore_0,"Eine Schachtel, so vertraut wie der tägliche Heimweg.
 te_cigarette_tier_lore_1,Die Schachtel zu öffnen ist wie einen Brief aus der Ferne zu öffnen.
 te_cigarette_tier_lore_2,"Die Einzelheiten verblassen, doch ein vertrauter Duft erinnert sich."
 te_cigarette_tier_lore_3,"Der Name des Herkunftsortes ist verblasst, doch der Duft bleibt."
+te_hydro_small_leaf,Mini-Tabakblatt
+te_hydro_large_leaf,Großes Tabakblatt
+te_hydro_fertile,Mit dem mittleren Brauzertifikat kann die Hydroponik-Ernte Samen liefern.
+te_hydro_locked,Hydrokulturpflanze. Das mittlere Brauzertifikat hebt die Unfruchtbarkeit auf und schaltet die Samenrückgabe frei.
+te_hydro_perennial_locked,"Schließe den fünften Spezialauftrag ab, um mehrjährige Gene auf Tabaksamen anzuwenden."
+te_hydro_trial,Versuch mit mehrjährigem Tabak
+te_hydro_no_deadline,Kein Zeitlimit
+te_hydro_trial_reason,Hast du alle vier Stempel? Bring mir eine Packung von jeder Sorte mit dem Stempel der xuxu Outer Ring Company. Lass dir Zeit.
+te_hydro_trial_reward,Belohnung: Das Gen für Mehrjährigkeit wird für Tabaksamen freigeschaltet.
+te_tobacco_hydroponic_guide_name,Handbuch für Tabak-Hydrokultur
+te_tobacco_hydroponic_guide_description,"Doppelklicken zum Lesen. Über Tabakanbau, Ernte, Gene und den Spezialauftrag."
+te_hydro_guide_plant_title,Tabak anpflanzen
+te_hydro_guide_plant_first_body,"Samen, Akku und Wasser in die Hydrokulturanlage einsetzen. Die Pflanze wächst über Nacht."
+te_hydro_guide_plant_second,Wachstumsbedingungen
+te_hydro_guide_harvest_title,Tabak ernten
+te_hydro_guide_genes_title,Samen und Gene
+te_hydro_guide_genes_first,Angeborene Gene
+te_hydro_guide_genes_second,Mittleres Brauzertifikat
+te_hydro_guide_trial_title,Mehrjähriger Tabak
+te_hydro_guide_trial_first,Der fünfte Spezialauftrag
+te_hydro_guide_trial_first_body,Sammle alle vier Firmenstempel. Am Auftragsterminal erscheint dann der Versuch mit mehrjährigem Tabak. Er hat kein Zeitlimit.
+te_hydro_guide_trial_second,Alle 17 Sorten abgeben
+te_hydro_guide_trial_second_body,"Liefere eine Basispackung und je eine der 16 Geschmacksrichtungen. Alle müssen echt, einwandfrei und dauerhaft von xuxu Outer Ring gestempelt sein."
+te_hydro_guide_battery,Geladener Akku
+te_hydro_guide_water,Wasserbehälter
+te_hydro_guide_work,Wachstumspunkte
+te_hydro_guide_water_rate,Wasser pro Zyklus
+te_hydro_guide_minerals,Ideale Mineralien
+te_hydro_guide_health_note,Der Pflanzenanalysator zeigt die Gesundheit. Falscher Mineralgehalt und verschmutztes Wasser senken sie.
+te_hydro_guide_normal_leaf,Normales Blatt
+te_hydro_guide_mini_share,Gesundheit bei Ernte · Anteil Miniblätter
+te_hydro_guide_mini_rounding,Miniblätter werden abgerundet. Basis: 2 Blätter vor Modulen und Genen.
+te_hydro_guide_large_note,"Chance auf ein großes Blatt: 20 % bei 96–99 %, 40 % bei 100 %. Höchstens eins pro Ernte, als Teil des Ertrags. Alle Größen lassen sich trocknen."
+te_hydro_guide_innate_note,Angeboren: Komplexes Genom II und Unfruchtbar X. Ladensamen haben zwei weitere Gene.
+te_hydro_guide_shop_odds,Zwei zufällige Gene bei Ladensamen
+te_hydro_guide_mixed_genes,"Ein positives, ein negatives"
+te_hydro_guide_positive_genes,Zwei positive
+te_hydro_guide_negative_genes,Zwei negative
+te_hydro_guide_return_note,"Das mittlere Zertifikat hebt die Unfruchtbarkeit auf. Einjährige Pflanzen geben einen Samen zurück, Fruchtbarkeit kann mehr liefern. Gene bleiben, Hitze wird null."
+te_hydro_guide_regrowth,Mehrjähriger Tabak bleibt in der Anlage und treibt neue Blätter.
+te_item_small_dry_name,Getrocknetes Mini-Tabakblatt
+te_item_large_dry_name,Riesiges getrocknetes Tabakblatt
+te_tobacco_manual_name,Tabakhandbuch
+te_tobacco_manual_description,"Doppelklick zum Lesen. Acht illustrierte Seiten über Anbau, Herstellung, Prüfung, Handel, Etiketten und Aufträge."
+te_manual_0_title,Tabakhandbuch
+te_manual_0_0,"Nachts Schild und Zubehör kaufen. Das Schild vor dem Öffnen ausstellen: Chenzi bringt Etiketten, Händler Zigaretten."
+te_manual_0_1,"Blätter im Brutkasten oder hydroponisch ziehen, trocknen und schneiden. Kleine Blätter ergeben nur mit dem xuxu-Messer 1 Portion. Nach zwei Nächten an der Luft bleiben Blätter feucht."
+te_manual_0_2,"Je Packung: 1 Portion, 2 Papiere, 4 Energie. Für Aroma 1 Extrakt zugeben. Eine Spritze reicht zweimal für Mark oder einmal für Obst. Zigarre: 1 Riesenblatt im Papierfach, 4 Portionen, 4 Energie. Feuchte Zutaten ergeben Mängel."
+te_manual_0_3,"Liefere aus dem Inventar. Sachprämien kommen auf den Tresen. 7 Wochenaufträge öffnen einen Stempelauftrag. Nach 4 Stempeln folgt der fünfte ohne Frist: alle 17 Sorten echt, intakt und dauerhaft mit xuxu gestempelt. Das schaltet mehrjährigen Tabak frei."
+te_manual_1_title,Laden und Ruf
+te_manual_1_0,"Im Nachtladen gibt es Schilder, Samen, Spritzen, Papierboxen, Werkzeuge und Maschinen. Schwierigkeitsgrad und Rabatte beeinflussen die Preise."
+te_manual_1_1,"Bei ausgestelltem Schild bringt Chenzi täglich 5 Einwegetiketten, Händler 3 Packungen, jeweils ohne Rufbonus. Prüfe Echtheit, Zustand und Sticker vor dem Kauf."
+te_manual_1_2,"Je 20 Außenring-Ruf bis 200 kommen je ein Samen, eine Spritze und eine Papierbox sowie ein Händlerpäckchen und ein Etikett von Chenzi hinzu."
+te_manual_1_3,Bei −20/−40 gibt es je 2/4 Samen und Spritzen weniger. Bei −60 schließt der Laden und es bleibt 1 Auftrag. Ab −80 keine neuen Aufträge. Der Laden verkauft drei Erzählbände.
+te_manual_2_title,"Anbau, Trocknen und Schneiden"
+te_manual_2_0,Der Brutkasten liefert über Nacht ein normales Blatt pro Samen. Hydroanbau liefert grundsätzlich zwei. Die Gesundheit beeinflusst die Größe. Details stehen im Hydrokultur-Handbuch.
+te_manual_2_1,Der Trockner verarbeitet alle Blattgrößen zusammen für sechs Energie. Die Größe bleibt gleich. Nach zwei Nächten an der Luft bleiben die getrockneten Blätter feucht.
+te_manual_2_2,"Trockene Blätter und Schnitttabak werden über Nacht feucht. Trockne sie erneut. Feuchter Tabak ergibt mangelhafte Päckchen mit 30% Wertverlust, die sich nicht trockenreparieren lassen."
+te_manual_2_3,"Kleine Trockenblätter: nur xuxu-Messer, 1 Portion. Normale Blätter: 1/2, riesige: 4/8 mit normalem/xuxu-Messer. Feuchtigkeit bleibt erhalten."
+te_manual_3_title,Zigaretten herstellen
+te_manual_3_0,"Pro Packung werden eine Portion Tabak, zwei Papiere und vier Energie verbraucht. Lose Papiere und Boxen lassen sich kombinieren, leere Boxen bleiben zurück."
+te_manual_3_1,Eine leere Spritze zieht eine Dosis aus einer Frucht und wird beim Herstellen verbraucht. Ein Viertel Fruchtmark ergibt auch eine Dosis. Jede Spritze kann zweimal aus Mark ziehen.
+te_manual_3_2,"Zigarre: 1 riesiges Trockenblatt ins Papierfach, 4 Portionen ins Tabakfach, 4 Energie. Zigarren werden nach zwei Nächten feucht, verlieren 30% und lassen sich nicht trocknen."
+te_manual_3_3,Manueller Start oder Nachtbetrieb ergibt eine Packung. Optionale Zusätze wirken gemeinsam in derselben Packung. Genuss und Toxizität stehen im Tooltip.
+te_manual_4_title,Prüfen und verkaufen
+te_manual_4_0,"Das Echtheitshandbuch zeigt auf 14 Seiten Verpackung, Schrift, Siegel und Marken. Der Drucker ändert sichtbare Angaben zu Echtheit und Zustand. Beim Verkauf aufgedeckte Täuschung kostet 2 Ruf je Packung."
+te_manual_4_1,"Gewöhnliche Sorten sind echt. Prüfe geeignete Packungen per Lupe und den Zustand per Doppelklick. Mängel kosten 30%. Die Unterschicht erkennt Fälschungen, die Oberschicht Mängel."
+te_manual_4_2,"Die Etikettprüfung zieht Sticker ab und stellt den Preis wieder her. Prüfende Kunden warnen vorher. Entdeckung kostet 10 Ruf. Die Handelsansicht zeigt Vorlieben: +10% pro Treffer, bis +20%."
+te_manual_4_3,"Die Handelsansicht zeigt Vorlieben für Aroma und Qualität. Jede Übereinstimmung bringt 10%, beide zusammen 20%. Seltenheit und Budget hängen vom Kunden ab."
+te_manual_5_title,Etiketten und Stempel
+te_manual_5_0,"Handgemacht −20%. Pastel, Aphelion, Kepler und xuxu Außenring bringen 0%, +20%, +40% und +80%. Firmenaufschläge ersetzen einander."
+te_manual_5_1,"Ziehe ein Einwegetikett auf die Packung. Erkennt ein prüfender Kunde den Aufkleber, zieht er ihn ab, berechnet den Preis neu und du verlierst zehn Außenring-Ruf."
+te_manual_5_2,"Sonderaufträge bringen dauerhafte Stempel. Lege sie in die Maschine, aktiviere einen Platz und ziehe die Maschine auf eine Packung. Stempel sind wiederverwendbar."
+te_manual_5_3,Chenzis Sticker kosten 10/25/60/120 Credits. Auch Händlerware kann beklebt sein. Für Aufträge zählt der ursprüngliche Hersteller unter dem Sticker.
+te_manual_6_title,Tagesaufträge
+te_manual_6_0,Normalerweise erscheinen drei Tabak- und drei Weinaufträge. Einer nimmt vier Basispäckchen oder zwei gewöhnliche Aromasorten. Die erste Lieferung legt den Weg fest.
+te_manual_6_1,Wähle den angenommenen Auftrag und dann die Waren im Inventar. Zigaretten müssen in der Regel echt und einwandfrei sein. Die nötige Weinqualität steht im Auftrag.
+te_manual_6_2,"Normale, seltene und außergewöhnliche Aufträge dauern 5, 3 oder 2 Tage. Belohnung: echter Wert plus 300, 500 oder 800 Credits, fünf Ruf und 4, 6 oder 10 Samen."
+te_manual_6_3,Fordere Belohnungen am Terminal an. Samen landen auf dem Tresen und warten bei Platzmangel. Erledigte Aufträge rechnen bei Fristende ab. Gelieferte Waren bleiben abgegeben.
+te_manual_7_title,Stempel und mehrjähriger Tabak
+te_manual_7_0,7 Aufträge in einer Woche öffnen xuxus nächsten Stempelauftrag. Die vier Aufträge folgen den Aromaseltenheiten von Gewöhnlich bis Nachglanz.
+te_manual_7_1,"Liefere in 3 Tagen 5 passende Packungen oder Weine, auch gemischt. Belohnung: Stempel, 5 Ruf und 4 Samen. Nach einem Fehlschlag zählt die nächste Woche."
+te_manual_7_2,"Mit vier Stempeln öffnet sich der fünfte Auftrag ohne Frist. Reiche je eine echte, einwandfreie Packung aller 17 Sorten mit dauerhaftem xuxu-Stempel ein."
+te_manual_7_3,Das schaltet mehrjährige Genetik frei. Diese Pflanzen bleiben nach der Ernte in der Hydroanlage. Das mittlere Brauzertifikat ermöglicht Saatgut aus gewöhnlichem Tabak.
+te_item_cigar_name,Zigarre
+te_item_cigar_description,"Von Hand gerollt, mit einem ganzen riesigen getrockneten Tabakblatt als Deckblatt und vier Portionen geschnittenem Tabak als Füllung.\nDiese Zigarre können sich nur die feinen Herren des oberen Bezirks und Leute leisten, die es wirklich zu Geld gebracht haben.\nSie brennt sehr langsam. Der kräftige Rauch bleibt lange hinten auf der Zunge und klingt noch lange nach.\nNach zwei Nächten außerhalb einer Feuchtigkeitsschutzbox wird sie feucht, auch im normalen Lager. Sie verliert 30 % ihres Werts und lässt sich im Trockner nicht wiederherstellen."
+te_moisture_box_name,Feuchtigkeitsschutzbox
+te_moisture_box_description,"Doppelklick zum Öffnen. Jede Seite hat 12×12 Felder. Ein Lager-Erweiterungssatz ergänzt eine Seite, bis zu fünf. Zigarren, getrocknete Blätter und Tabak bleiben trocken. Frische Blätter trocknen nicht weiter. Bestehende Mängel bleiben."
+te_item_small_dry_description,"Messer auf getrockneten Tabak ziehen: normales Messer 1 Faser, xuxu Messer 2.\nGetrockneter Tabak wird über Nacht feucht, bleibt aber schneidbar; vorher im Trockner trocknen, um Fehler zu vermeiden.\nEin kleines getrocknetes Blatt lässt sich nur mit dem xuxu-Messer schneiden und ergibt eine Portion."
+te_item_large_dry_description,"Ein riesiges trockenes Tabakblatt. Ein normales Messer liefert vier Portionen, das xuxu-Messer acht.\nFür eine Zigarre kommen ein Blatt ins Papierfach und vier Portionen ins Tabakfach. Das kostet vier Energie.\nFeuchte Blätter lassen sich weiterhin schneiden oder rollen. Eine feucht gerollte Zigarre ist dauerhaft mangelhaft und 30% weniger wert."
+te_auth_plate_company,xuxu Außenring
+te_auth_plate_title,Echtheitsprüfung · {0}
+te_auth_plate_trademark,Markenzeichen im Detail
+te_auth_plate_compare,"Vergleiche das ganze Motiv, seine Kontur und die Details."
+te_auth_plate_genuine,Echt
+te_auth_plate_wrong1,Fehler 1
+te_auth_plate_wrong2,Fehler 2
+te_auth_plate_wrong3,Fehler 3
+te_auth_plate_repeat,Eine erneute Prüfung ändert die Verpackung nicht.
+te_auth_plate_overview,"Vergleiche Schriftzug, Markenzeichen und Siegel mit der echten Packung. Mehrere Fehler können gleichzeitig auftreten. Die nächste Seite zeigt die Marke vergrößert."
+te_auth_plate_pack,Echte Packung
+te_auth_plate_lettering,Fehler im Schriftzug
+te_auth_plate_lettering_hint,"Falsche Schrift, Rechtschreibfehler oder fehlende Buchstaben weisen auf eine Fälschung hin."
+te_auth_plate_font,Falsche Schrift
+te_auth_plate_spelling,Schreibfehler
+te_auth_plate_seal,Fehler am Siegel
+te_auth_plate_seal_hint,Ein fehlendes oder beschädigtes Siegel weist auf eine Fälschung hin.
+te_auth_plate_wrong,Fehlerhaft

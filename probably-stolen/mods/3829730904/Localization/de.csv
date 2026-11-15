@@ -210,6 +210,7 @@ wine_printer_print,Vier Flaschen drucken
 wine_printer_print_linked,Vier Flaschen drucken (20 Energie)
 wine_printer_ready,Vier leere Flaschen pro Charge
 wine_printer_done,Vier leere Flaschen gedruckt (20 Energie)
+be_seed_manufacturer_name,xuxu-Außenringgesellschaft
 be_chili_seed_name,Chili-Samen
 be_chili_seed_description,"Ein kleines Chilisamenkorn. Die Schärfe der Welt muss nicht teuer sein, um eine ganze Nacht zu wärmen. In den Samenbrutkasten gelegt, trägt er über Nacht Frucht."
 be_rice_seed_name,Reissamen
@@ -243,11 +244,13 @@ be_void_plum_seed_description,"Ein pechschwarzer Kern, schwer wie ein unvollende
 be_stardust_berry_seed_name,Sternenstaubbeeren-Samen
 be_stardust_berry_seed_description,"Ein silberweißes Korn, aus der Nähe wie ein winziger Stern. Es wächst an der Druckwand außerhalb der Kühlkammer, wo die Strahlung stärker und das Licht einsamer ist. In den Samenbrutkasten gelegt, trägt er über Nacht Frucht."
 be_basic_cert_name,Brauzertifikat Anfänger
-be_basic_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 10% / 60% / 30%. Ein schön gerahmtes Zertifikat. Mit ihm brütet der Samenbrutkasten pro Nacht fünf Samen aus, und Siebenundvierzig bringt sieben Samen. Die Fern-Wahrscheinlichkeit von Siebenundvierzig liegt fest bei 15 %; Sehnsucht steigt von 3 % auf 8 %, Nachglanz von 1 % auf 5 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_basic_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 10% / 60% / 30%. Ein schön gerahmtes Zertifikat. Mit ihm brütet der Samenbrutkasten pro Nacht fünf Samen aus, und Siebenundvierzig bringt sieben Samen. Die Fern-Wahrscheinlichkeit von Siebenundvierzig liegt fest bei 15 %; Sehnsucht steigt von 3 % auf 8 %, Nachglanz von 1 % auf 5 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen. Der erste Erhalt hebt die angeborene Unfruchtbarkeit dieser Samen dauerhaft auf (gewöhnlich)."
 be_mid_cert_name,Brauzertifikat Geselle
-be_mid_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 5% / 60% / 35%. Ein Zertifikat aus edlerem Material. Mit ihm brütet der Samenbrutkasten sieben Samen pro Nacht aus, Siebenundvierzig bringt neun. Die Wahrscheinlichkeiten für Sehnsucht und Nachglanz werden nach dem kumulativen Bonus mit 1,3 multipliziert: 3,9 %–10,4 % und 1,3 %–6,5 %; Fern bleibt bei 15 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_mid_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 5% / 50% / 45%. Ein Zertifikat aus edlerem Material. Mit ihm brütet der Samenbrutkasten sieben Samen pro Nacht aus, Siebenundvierzig bringt neun. Die Wahrscheinlichkeiten für Sehnsucht und Nachglanz werden nach dem kumulativen Bonus mit 1,3 multipliziert: 3,9 %–10,4 % und 1,3 %–6,5 %; Fern bleibt bei 15 %, der Rest entfällt auf gewöhnliche Samen. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen. Der erste Erhalt hebt die angeborene Unfruchtbarkeit dieser Samen dauerhaft auf (Fern)."
 be_high_cert_name,Brauzertifikat Meister
-be_high_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 0% / 30% / 70%. Ein Zertifikat mit dunkelgoldener Ziernaht. Mit ihm brütet der Samenbrutkasten achtzehn Samen pro Nacht aus, Siebenundvierzig bringt dreizehn. Sehnsucht und Nachglanz werden nach dem Bonus mit 1,6 multipliziert: 4,8 %–12,8 % und 1,6 %–8 %; Fern bleibt 15 %, der Rest entfällt auf gewöhnliche. Dies ist die letzte von xuxu persönlich ausgestellte Stufe. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen."
+be_high_cert_description,"Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten -1 / 1 / 2 Qualitätspunkte mit einer Wahrscheinlichkeit von 0% / 30% / 70%. Ein Zertifikat mit dunkelgoldener Ziernaht. Mit ihm brütet der Samenbrutkasten achtzehn Samen pro Nacht aus, Siebenundvierzig bringt dreizehn. Sehnsucht und Nachglanz werden nach dem Bonus mit 1,6 multipliziert: 4,8 %–12,8 % und 1,6 %–8 %; Fern bleibt 15 %, der Rest entfällt auf gewöhnliche. Der Effekt gilt, solange dir der Gegenstand gehört, auch in einem Lagerbehälter. Du musst ihn nicht ausstellen. Der erste Erhalt hebt die angeborene Unfruchtbarkeit dieser Samen dauerhaft auf (Sehnsucht)."
+be_top_cert_name,Brauzertifikat der höchsten Stufe
+be_top_cert_description,"Solange du dieses Zertifikat besitzt, verarbeitet der Samenbrutkasten bis zu 24 Samen pro Nacht. Mod-Früchte und Leuchtbeeren aus dem Brutkasten erhalten immer 2 Punkte. Siebenundvierzig bringt vor Boni 16 Samen und behält den Seltenheitsbonus der Oberstufe. Der erste Erhalt hebt die angeborene Unfruchtbarkeit von Nachglanzsamen dauerhaft auf. Das Zertifikat wirkt auch im Lager."
 incubator_name,Samenbrutkasten
 incubator_description,"Eigene oder Vanilla-Samen und eine geladene Batterie einlegen. Jeder eigene Samen ergibt eine Frucht; Vanilla-Samen ergeben zwei passende Pflanzen, Samen der Wasserpflanze zwei Vanilla-Filter. Jede erfolgreiche Nacht kostet die ganze Maschine 12 kJ; bei leerem Fach, fehlendem Platz oder zu wenig Strom bleiben die Samen liegen, ohne zusätzlichen Verbrauch. Ein Brauzertifikat erhöht die Zahl der Samen pro Nacht. Jede hier erzeugte Modfrucht oder Bloomberry erhält −1, 1 oder 2 Qualitätspunkte. Höhere Zertifikate verbessern die Chancen."
 incubator_input,Sameneingabe
@@ -351,7 +354,7 @@ be_container_blindbox_description,"Doppelklick: ein zufälliger Behälter — Ge
 be_figurine_blindbox_name,Figuren-Blindbox
 be_figurine_blindbox_description,"Doppelklick: mit gleicher Wahrscheinlichkeit Ichigo Kurosaki, Rukia Kuchiki, Uryu Ishida oder „Oh mein Gott, eine Iridium-Seegurke“. Eine Figur erhöht die Attraktivität um 100; gleiche Figuren stapeln sich nicht."
 be_xuxu_cassette_bundle_name,xuxu Kassettenpaket
-be_xuxu_cassette_bundle_description,"Doppelklick: fünf Kassetten auf einmal — Bar-Spezial, Neonstraße, Leicht beschwipste Nacht, Brise zwischen den Saiten, Brau-Hip-Hop. In den Kassettenplayer gelegt, spielen sie die passende Musik."
+be_xuxu_cassette_bundle_description,Per Doppelklick erhältst du alle 12 Kassetten. Lass genügend Platz im Inventar. Die Kassetten lassen sich im Kassettenspieler abspielen.
 be_midautumn_blindbox_name,Mittherbst-Blindbox „limitiert“
 be_midautumn_blindbox_description,"Eine achteckige Geschenkbox: auf dem Deckel tiefblaue Nacht, darüber ein goldener runder Mond.\n\nNeben dem Mond beugt sich ein kleiner Jadehase zum Irdischen herab.\n\nDer Deckel ist mit einer roten Schnur gebunden, der Knoten in Form einer Vereinigung.\n\nÖffne sie: ein Faltfächer, eine Laterne oder eine Schachtel Mondkuchen.\n\n— Die Mittherbst-Deko darin erhöht die Attraktivität des Ladens. In einer Nacht mit schönen Blüten und rundem Mond geht man doch gern ein paar Schritte mehr, um bei dir den Mond anzusehen.\n\nEinmal alle 5 Tage kaufbar, gerechnet ab dem Kauftag; am 5. Tag nach dem Kauf wieder im Regal."
 be_midautumn_mooncake_box_name,Yuetuan-Geschenkbox
@@ -403,7 +406,7 @@ be_music_cassette_9b23823d7fcbcfb2_description,"[Kassette]In den Kassettenplayer
 be_music_cassette_120129a8a5d85fd3_name,Brau-Hip-Hop
 be_music_cassette_120129a8a5d85fd3_description,"[Kassette]In den Kassettenplayer gelegt, spielt sie.\n\nKeine Ahnung, was das bedeuten soll."
 be_brewing_manual_name,Brauhandbuch
-be_brewing_manual_description,"Das von xuxu hinterlassene Brauhandbuch. Schlägt man es auf, sieht man alle Geheimnisse des Brauens. Am besten zusammen mit den verstreuten Rezeptseiten lesen — die muss man bei Siebenundvierzig selbst kaufen."
+be_brewing_manual_description,"Zum Lesen doppelklicken. Solange du das Handbuch besitzt, werden deine Rezeptblätter verbraucht und dauerhaft eingetragen. Früher gekaufte Blätter werden beim Erwerb des Handbuchs eingetragen."
 be_liunian_ager_guide_title,Liunian: Gebrauchsanweisung
 be_liunian_ager_guide_body,"Fertigen echten Wein in den Lagerbereich legen, die Batterie in den linken Batterieschacht. Jede aktive Nacht kostet Strom, gibt dem Wein Reifungstage und einen Kühleffekt. Bei leerem Fach oder fehlender Stromversorgung reift der Wein nicht.\n\nModulbereich 6×20, Lagerbereich 20×20. Grundreifung der Maschine: 1 Tag; je volle 125 Qualität 1 Tag mehr: 1 + ganzzahliger Anteil (Qualität ÷ 125). Zum Beispiel 125 Qualität = 2 Tage, 1000 = 9 Tage. Natürliche Vanilla-Reifung zählt separat.\n\nOhne Module kostet jede aktive Nacht 24 kJ, gerechnet für die ganze Maschine, nicht pro Flasche. Die Qualität selbst hat keine Regel „feste Zusatzkosten je 125“; installierte Module bringen Verbrauchs- oder Spar-Eigenschaften mit. Je +100 % Zusatzverbrauch entspricht das +24 kJ auf die 24 kJ Grundverbrauch; Effekte für Leistung und Sparen senken den Verbrauch, gerundet wie im Spiel, mindestens 1 kJ. Maßgeblich sind die Maschinenwerte und der aktuelle Verbrauch am Ende dieser Anleitung."
 be_fruit_pulp_concentrator_guide_title,Fruchtmark-Konzentrator: Gebrauchsanweisung
@@ -415,7 +418,7 @@ be_wine_printer_guide_body,"Batterie in den Stromschacht, Druckknopf drücken: j
 be_xuxu_water_bottle_printer_guide_title,xuxu Wasserflaschen-Drucker: Gebrauchsanweisung
 be_xuxu_water_bottle_printer_guide_body,"Nach dem Einlegen einer geladenen Batterie den Druckknopf wählen. Auf Stufe 1 lassen sich 6-l-Flaschen drucken, je 20 kJ; alle 6 Elektronikbauteile eine Stufe; Stufe 2 schaltet die schlanke 12-l-Flasche frei, je 40 kJ; Stufe 3 die 18-l-Superflasche, je 60 kJ. Für die Höchststufe sind 12 Bauteile nötig. Nicht freigeschaltete Knöpfe sind nicht klickbar.\n\nAusgabebereich 6×4. Bei fehlendem Platz oder Strom wird nicht gedruckt. Die Batterie wird auf die Maschine gezogen und geht in den Stromschacht, Bauteile dienen dem Ausbau. Keine der drei Flaschen nimmt einen Filter; bei Wasserstandsänderung wird die Pegeltextur aktualisiert."
 be_incubator_guide_title,Samenbrutkasten: Gebrauchsanweisung
-be_incubator_guide_body,"Eigene oder Vanilla-Samen in den Sameneingabebereich legen, geladene Batterie in den Stromschacht. Jede Nacht werden die Samen von oben nach unten, von links nach rechts verarbeitet: 1 eigener Samen ergibt 1 passende Frucht, 1 Vanilla-Samen 2 passende Pflanzen; die Ausgabe sucht zeilenweise freie Plätze.\n\nGrundlimit 2 Samen pro Maschine und Nacht; mit Anfänger-, Gesellen- und Meisterzertifikat steigt es auf 5, 7 und 18, die höchste Stufe gilt, nicht kumulativ. Jede erfolgreiche Nacht kostet die Maschine 12 kJ, nicht pro Frucht. Mehrere Maschinen rechnen getrennt.\n\nVanilla-Kaffeebohnen gelten auch als Samen; bloomberry-Samen ergeben eine Vanilla-Weinbeere, hydroreed-Samen 2 Vanilla-Filter. Vanilla-Produkte erscheinen in fester Standardform; Zusatzertrag oder Rück-Saat von Hydrokultur-Modulen wird nicht extra berechnet. Das Nachtlimit zählt verbrauchte Samen; beide Produkte eines Vanilla-Samens müssen Platz haben. Ohne Samen, Platz oder Strom wird nicht fertig produziert; Ein- und Ausgabe sind 12×12, passende Gegenstände lassen sich frei umordnen. Der Hinweiszettel liegt ganz rechts und ist beim Darüberfahren lesbar.\n\nJede hier erzeugte Modfrucht oder Bloomberry erhält −1, 1 oder 2 Qualitätspunkte. Höhere Zertifikate verbessern die Chancen. Chancen für −1 / 1 / 2 Punkte: ohne Zertifikat 30 % / 50 % / 20 %; Grundstufe 10 % / 60 % / 30 %; Mittelstufe 5 % / 60 % / 35 %; Oberstufe 0 % / 30 % / 70 %. Eine Frucht mit −1 zählt beim Brauen als 0."
+be_incubator_guide_body,"Eigene oder Vanilla-Samen in den Sameneingabebereich legen, geladene Batterie in den Stromschacht. Jede Nacht werden die Samen von oben nach unten, von links nach rechts verarbeitet: 1 eigener Samen ergibt 1 passende Frucht, 1 Vanilla-Samen 2 passende Pflanzen; die Ausgabe sucht zeilenweise freie Plätze.\n\nGrundlimit 2 Samen pro Maschine und Nacht; mit Zertifikaten der Grund-, Mittel-, Ober- und höchsten Stufe steigt es auf 5, 7, 18 und 24, die höchste Stufe gilt, nicht kumulativ. Jede erfolgreiche Nacht kostet die Maschine 12 kJ, nicht pro Frucht. Mehrere Maschinen rechnen getrennt.\n\nVanilla-Kaffeebohnen gelten auch als Samen; bloomberry-Samen ergeben eine Vanilla-Weinbeere, hydroreed-Samen 2 Vanilla-Filter. Vanilla-Produkte erscheinen in fester Standardform; Zusatzertrag oder Rück-Saat von Hydrokultur-Modulen wird nicht extra berechnet. Das Nachtlimit zählt verbrauchte Samen; beide Produkte eines Vanilla-Samens müssen Platz haben. Ohne Samen, Platz oder Strom wird nicht fertig produziert; Ein- und Ausgabe sind 12×12, passende Gegenstände lassen sich frei umordnen. Der Hinweiszettel liegt ganz rechts und ist beim Darüberfahren lesbar.\n\nJede hier erzeugte Modfrucht oder Bloomberry erhält −1, 1 oder 2 Qualitätspunkte. Höhere Zertifikate verbessern die Chancen. Chancen für −1 / 1 / 2 Punkte: ohne Zertifikat 30 % / 50 % / 20 %; Grundstufe 10 % / 60 % / 30 %; Mittelstufe 5 % / 50 % / 45 %; Oberstufe 0 % / 30 % / 70 %; höchste Stufe 0 % / 0 % / 100 %. Eine Frucht mit −1 zählt beim Brauen als 0."
 debug_foundation_check,Braugrundlagen-Check
 be_mod_name,Brauereierweiterung
 be_ending_assassination_title,Attentat im Außenring
@@ -428,6 +431,7 @@ be_nini_inspection_warning,"Die Etiketten passen nicht zum Inhalt — versuch ni
 be_brewer_start_name,Neuer Brauer
 be_brewer_start_description,Du bist ein professioneller Brauer. Seit Kindheit hörst du die Legende von xuxu und willst den Weg des Brauens gehen. Jetzt kannst du anfangen.
 be_brewer_start_supplies,"4 gewöhnliche Hefen, 4 leere Flaschen, Klarwassertank, Brauerei-Schild, Wasser-Neonschild, gewöhnlicher Filter, Wassertest-Kit (10 Streifen)"
+be_brewer_start_equipment,"1 Saatgutinkubator mit voll geladener 100-kJ-Batterie und 1 altes Hydroponiksystem, 4 Nährstofftabletten für die Hydroponik · 1 Brauhandbuch und 1 Leitfaden für Brau-Hydroponik"
 be_perk_devotion_name,Von ganzem Herzen beim Wein
 be_perk_drunk_name,Stockbetrunken
 be_trait_bonus_category,Eigenschaftsbonus
@@ -439,7 +443,7 @@ be_nini_phone_end,Anruf beenden
 be_nini_phone_closed,"Der Laden ist zu; ruf an, wenn geöffnet."
 be_nini_phone_missing_card,Du hast meine Karte nicht. Ein andermal.
 be_nini_phone_accepted,"Wenn du guten Wein hast, warte — ich komme gleich."
-be_nini_trade_greeting,"oi, Kleiner, hast du heute Tabak oder Alkohol? Verkauf mir alles; genug Umsatz, und ich stelle dir ein Zertifikat aus."
+be_nini_trade_greeting,"Oi, Kleiner, hast du Tabak oder Alkohol? Tabak zählt nur, wenn du ihn mir verkaufst. Alkohol zählt auch bei anderen Kunden. Sobald die Summe der Grundwerte reicht, liegt dein Zertifikat auf der Theke."
 be_nini_trade_accepted,Tabak und Alkohol nehme ich.
 be_nini_trade_done,Für heute reicht es.
 be_forty_seven_name,Siebenundvierzig
@@ -448,7 +452,7 @@ be_forty_seven_trade_accepted,Abgemacht.
 be_forty_seven_trade_done,Gut.
 be_assassin_name,Assassine des Außenrings
 be_assassin_greeting,Die Schulden des Außenrings sind fällig.
-be_certificate_delivery_pending,"Du hast genug für ein Brauzertifikat. Mach Platz am Tresen; beim nächsten Handel oder Besuch gebe ich es dir, auch beim Laden."
+be_certificate_delivery_pending,"Du hast genug für ein Brauzertifikat. Mach Platz am Tresen, dann gebe ich es dir bei unserem nächsten Handel oder Besuch."
 be_certificate_awarded,Gut. Hier ist dein Brauzertifikat — braue weiter besseren Wein.
 be_recipe_purchase_required,Noch nicht freigeschaltet. Nach dem Kauf sichtbar.
 be_basic_battery_empty_description,"Leer gekauft. Grundwert 200 Credits, aktuelle Ladung extra; Kapazität 200 kJ, lädt nachts 6 kJ. Wert 200 leer, 400 voll; Handelsboni und Markt extra."
@@ -518,6 +522,7 @@ market_event_3_description,In den oberen Ebenen stapelt sich Ware; Preise für T
 be_setting_traditional_label,Traditionelles Chinesisch verwenden
 be_setting_traditional_description,"Wenn die Spielsprache Chinesisch ist, erscheinen Gegenstände, Dialoge und Hinweise dieser Mod in traditionellem Chinesisch. Deaktivieren für vereinfachtes Chinesisch. Andere Sprachen folgen dem Spiel. Anwenden, das Spiel vollständig beenden und neu starten."
 be_huge_fruit_name,Riesige Ernte: {0}
+be_small_fruit_name,Mini-{0}
 be_concentrator_giant_input,Riesenfrucht
 be_huge_fruit_description,Verkaufe sie oder lege sie in den Riesenfruchtschacht des Konzentrators. Eine Riesenfrucht ergibt eine Portion Fruchtmark.
 be_incubator_fruit_quality,Fruchtqualität: {0}
@@ -549,3 +554,158 @@ be_outer_p160_flavor,Freundschaft steht nicht nur im Buch: Sie zeigt sich in zus
 be_outer_p180_flavor,"Alte Freundschaft überquert das Sternenmeer. Samen kommen an, Credits bleiben für guten Wein."
 be_outer_p200_flavor,"Gäste vom Außenring folgen deinem Licht, mit Samen und ihrem vollen Vertrauen."
 be_pulp_quality_sum,Gesamtqualität des Fruchtkonzentrats: {0} Punkte
+be_hydroponic_small_fruit_description,Kann verkauft oder als Futter verwendet werden.
+be_hydroponic_fertile,Nicht mehrjährige Pflanzen liefern pro Ernte standardmäßig 1 Samen. Fruchtbarkeit erhöht den Ertrag je nach Stufe ohne zusätzliche Obergrenze. Nachkommen erben die Genstufen der Elternpflanze und starten ohne Genhitze.
+be_hydroponic_locked_basic,Hydrokulturpflanze. Das einfache Brauzertifikat hebt die Unfruchtbarkeit auf.
+be_hydroponic_locked_mid,Hydrokulturpflanze. Das mittlere Brauzertifikat hebt die Unfruchtbarkeit auf.
+be_nini_cellar_deliver,Weinschrank abgeben
+be_nini_cellar_cancel,Abbrechen
+be_nini_cellar_confirm,Nini den Schrank „{0}“ samt Inhalt geben? Dadurch wird das Gen Mehrjährigkeit für Saatgut aus dem Mod freigeschaltet.
+be_hydroponic_perennial_locked,Erhalte das höchste Brauzertifikat und übergib Nini einen Liunian-Schrank mit je einer Flasche aller Weine aus den acht Rezeptblättern.
+be_hydroponic_locked_high,"Hydrokulturpflanze. Das fortgeschrittene Brauzertifikat hebt die Unfruchtbarkeit auf."
+be_hydroponic_locked_top,Hydrokulturpflanze. Das Brauzertifikat der höchsten Stufe hebt die Unfruchtbarkeit auf.
+be_certificate_status_title,"Brauzertifikate"
+be_certificate_status_none,"Erhalten: keines"
+be_certificate_status_earned,"Höchstes erhaltenes Zertifikat: {0}"
+be_certificate_status_next,"Als Nächstes: {0} · {1:N0} / {2:N0}"
+be_certificate_status_remaining,"Noch benötigter Grundwert: {0:N0}"
+be_certificate_status_pending,"Ziel erreicht. Lass für Ninis nächsten Besuch Platz am Tresen."
+be_certificate_status_complete,"Alle Zertifikate erhalten."
+be_certificate_status_rule,"Alkohol zählt auch bei Verkäufen an reguläre Kunden zum Grundwert."
+be_brewing_hydroponic_guide_name,Hydroponik-Handbuch für Brauer
+be_brewing_hydroponic_guide_description,"Doppelklicken für Ernte, Fruchtqualität und Saatgutrückgabe."
+be_hydro_guide_title_1,Anbau und Wachstum
+be_hydro_guide_title_2,Gesundheit und Größe
+be_hydro_guide_title_3,Gesundheit und Qualität
+be_wine_quality_cloud_jade,Wolkenjade-Nektar
+be_hydro_guide_title_4,Zertifikate und Saatgut
+be_hydro_guide_setup,Pflanzbedarf
+be_hydro_guide_setup_note,"Setze Saatgut, einen Akku und aufbereitetes Wasser in ein Hydrokultursystem ein."
+be_hydro_guide_growth,Grundwerte für Wachstum und Ertrag
+be_hydro_guide_work,Aufwand
+be_hydro_guide_yield,Ertrag
+be_hydro_guide_minerals,Mineralien
+be_hydro_guide_tier_0,Sterblich
+be_hydro_guide_tier_1,Aus der Ferne
+be_hydro_guide_tier_2,Sehnsucht
+be_hydro_guide_tier_3,Nachglühen
+be_hydro_guide_modules,Ertragsgene und Qualitätsmodule erhöhen den Ertrag. Leistung beschleunigt das Wachstum. Effizienz spart Strom.
+be_hydro_guide_fruit_0,Minifrucht
+be_hydro_guide_fruit_1,Normale Frucht
+be_hydro_guide_fruit_2,Riesenfrucht
+be_hydro_guide_sizes,Gesundheit bei Ernte · Anteil Minifrüchte
+be_hydro_guide_mini_note,Runde die Anzahl der Minifrüchte ab. Der Rest ist normal. Minifrüchte eignen sich für Verkauf und Futter.
+be_hydro_guide_giants,Riesenfrüchte
+be_hydro_guide_giant_note,"20 % Chance bei 96–99 % Gesundheit, 40 % bei 100 %. Höchstens eine pro Ernte. Sie belegt einen Ertragsplatz."
+be_hydro_guide_health,Pflanzenanalysator
+be_hydro_guide_health_note,Der Wachstumswert zeigt die aktuelle Gesundheit. Zu viele oder zu wenige Mineralien und Schadstoffe senken sie.
+be_hydro_guide_points,Gesundheit bei Ernte · Chancen je Fruchtwertung
+be_hydro_guide_pulp_note,Normale und riesige Früchte werden einzeln gewertet. Eine Riesenfrucht ergibt ein Fruchtmus mit vierfacher Fruchtwertung.
+be_hydro_guide_certificates,Angeborene Unfruchtbarkeit aufheben
+be_hydro_guide_cert_0,Grundstufe
+be_hydro_guide_cert_1,Mittelstufe
+be_hydro_guide_cert_2,Fortgeschritten
+be_hydro_guide_cert_3,Meister
+be_hydro_guide_return_note,"Fruchtbare einjährige Pflanzen liefern regulär einen Samen. Das Fruchtbarkeitsgen erhöht den Ertrag. Nachkommen erben Gene, ihre Hitze sinkt auf null."
+be_hydro_guide_perennial,Mehrjährigkeit freischalten
+be_hydro_guide_perennial_note,Übergib Nini nach dem Meisterzertifikat einen Liunian-Schrank mit allen Rezeptweinen. Mehrjährige Pflanzen tragen erneut Früchte und liefern nur Früchte.
+be_manual_quality_rules,"6 Punkte: Spitzenjahrgang (+75 %). Ab 7: Wolkenjade-Nektar (+100 %).\nZwei Früchte à 2 Punkte geben 4. Der Paarbonus ergibt 5. Hefe und gutes Wasser geben je 1, also 7. Gilt auch für Leuchtbeerenwein."
+be_manual_collection,Gesammelte Rezepte {0}/{1}
+be_hydro_guide_cloud_jade,Zwei 2-Punkte-Früchte können 7-Punkte-Wein ergeben: Wolkenjade-Nektar (+100 %). Anleitung im Brauhandbuch.
+be_manual_flow_title,Von der Saat zum Verkauf
+be_manual_flow_1,Kaufe nachts das Brauschild im Brauladen. Lege es vor der Öffnung in die Vitrine. Siebenundvierzig verkauft Saatgut und Rezepte. Mit dem Handbuch werden gekaufte Rezepte freigeschaltet.
+be_manual_flow_2,Ziehe Früchte über Nacht im Inkubator oder per Hydroponik. Details stehen im Hydroponik-Leitfaden.
+be_manual_flow_3,"Vergäre zwei Früchte, Hefe und 750 ml Wasser in einer leeren Flasche. Presse Früchte zu Mus fürs Fass. Später automatisieren Transferkabel die Produktion."
+be_manual_flow_4,"Weinverkäufe an alle NPCs zählen mit dem Grundwert. Kaufe Ninis Karte und vereinbare telefonisch einen Besuch. Sie hat mehr Budget für Alkohol und Tabak und überreicht verdiente Zertifikate. Fortschritt: Kalender, Status."
+be_button_accept,Auftrag annehmen
+be_commission_available,Verfügbar · Frist nach Annahme: {0} Tage
+be_commission_commissioner,Auftraggeber: {0}
+be_commission_credit_reward,Belohnung: tatsächlicher Warenwert + {0} Credits
+be_commission_min_wine_score,Weinqualität: mindestens {0} Punkte ({1})
+be_commission_pending_seeds,Abzuholende Samen: {0}
+be_commission_progress_wine,{0}: {1}/{2} Fl.{3}
+be_commission_remaining,Verbleibende Tage: {0}
+be_commission_seed_reward,Außenring-Ruf +5; zufällige Samen: {0}
+be_commission_submitted_value,Tatsächlicher Wert der abgegebenen Waren: {0}
+be_commission_wine_requirement,Wein der Stufe {0}
+be_delivery_back,Zurück
+be_delivery_changed,Bestand oder Auftrag hat sich geändert. Wähle erneut.
+be_delivery_confirm,{0} Gegenstände abgeben
+be_delivery_details,{0} · Schätzwert: {1} Credits\n{2}
+be_delivery_empty,Keine passenden Waren im Bestand.
+be_delivery_help,Wähle die Waren aus. Erst die Bestätigung entnimmt sie dem Bestand.
+be_delivery_location_back,Hintere Theke
+be_delivery_location_counter,Theke
+be_delivery_location_display,Vitrine
+be_delivery_location_hidden,Geheimfach
+be_delivery_location_other,Sonstiger Bestand
+be_delivery_location_storage,Lager
+be_delivery_partial,{0} Gegenstände geliefert. Wähle die übrigen erneut.
+be_delivery_slot,"{0} · Spalte {1}, Zeile {2}"
+be_delivery_title,Waren zur Lieferung wählen
+be_delivery_unit,{0} ({1}/{2})
+be_empty_available,"Alle Aufträge für heute angenommen, schau morgen wieder."
+be_empty_pending,Noch keine laufenden Aufträge.
+be_order_alternative,Erfülle eine Option. Die erste Lieferung legt die Wahl fest; die Optionen können nicht kombiniert werden.
+be_order_face_0,Gewöhnlicher Auftrag
+be_order_face_1,Seltener Auftrag
+be_order_face_2,Kostbarer Auftrag
+be_order_incomplete,Erst diesen Auftrag erfüllen.
+be_order_person_0,Sammler
+be_order_person_1,Kunde aus den oberen Ebenen
+be_order_person_2,Sternengast
+be_order_person_3,Obdachloser
+be_order_person_4,Kollege
+be_order_person_5,Tourist
+be_order_reason_0,"Bald beginnt meine Nachtschicht auf dem Schrottplatz. Bring ein paar Flaschen für die Crew mit, die wir nach Feierabend teilen können."
+be_order_reason_1,"Ich gebe eine kleine Feier, liefere nach Liste. Die Gäste haben verschiedene Geschmäcker."
+be_order_reason_2,Das nächste Schiff legt bald ab. Vor der langen Reise will ich einen Hauch Außenring mitnehmen.
+be_order_reason_3,Ich ziehe wieder um. Unterwegs ist es kalt — ein paar Portionen für später.
+be_order_reason_4,"Mir fehlt eine Charge, die Stammkunden warten. Ergänze nach Liste, gute Zusammenarbeit."
+be_order_reason_5,"Man sagt, du machst das gut! Vor der Abreise nehme ich ein paar mit für Freunde unterwegs."
+be_order_reputation_block,Außenring-Ruf <= −80: keine neuen Aufträge. Angenommene können weiter abgegeben und abgeholt werden.
+be_order_terminal_02,Terminal für Außenring-Aufträge
+be_order_window_02,Gewöhnlich
+be_order_window_03,Selten
+be_order_window_04,Kostbar
+be_order_window_09,Erfüllt · „Belohnung abholen“
+be_order_window_12,Abgerechnet · Belohnung wartet
+be_order_window_13,Abgerechnet
+be_order_window_14,Abgelaufen · Abgegebenes wird nicht erstattet
+be_order_window_15,Auftragsdetails
+be_order_window_25,". Platz am Tresen schaffen, dann abholen."
+be_order_window_30,"Wähle einen angenommenen Auftrag und Flaschen aus dem Inventar. Credits und Ruf gibt es am Terminal, Samen auf dem Ladentisch. Fehlt Platz, kannst du sie später abholen. Erfüllte Aufträge werden nach Ablauf automatisch abgerechnet. Bei unerfüllten Aufträgen verfallen abgegebene Flaschen ohne Rufverlust."
+be_order_window_art_03,Verfügbare Aufträge
+be_order_window_art_04,Laufende Aufträge
+be_order_window_art_05,Auftrag annehmen
+be_order_window_art_06,Aus dem Lager abgeben
+be_order_window_art_08,Waren abholen
+be_order_window_art_09,Belohnung abholen
+be_order_window_art_10,Auftrag gewählt; abgegebene Waren gehen dorthin.
+be_order_window_art_11,"Auftrag erfüllt; „Belohnung abholen“, Waren gehen an den Tresen."
+be_order_window_art_12,"Platz am Tresen schaffen, dann Waren abholen."
+be_order_window_art_13,"Auf das Smiley klicken, um den Auftrag zu sehen."
+be_order_window_art_14,Bereits 5 Aufträge angenommen; erst bestehende erfüllen.
+be_order_window_art_15,Außenring-Ruf <= −80: keine neuen Aufträge.
+be_tab_available,Verfügbare Aufträge
+be_tab_pending,Laufende Aufträge
+be_tier_0,Gewöhnlich
+be_tier_1,Fern
+be_tier_2,Sehnsucht
+be_tier_3,Nachglanz
+be_tier_min_1,Fern und höher
+be_tier_min_2,Sehnsucht und höher
+be_music_cassette_7a93cb8719305ea0_name,Der Bergwind ist Zeuge
+be_music_cassette_7a93cb8719305ea0_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_21db8823e50ae889_name,Ode an den Abendwind
+be_music_cassette_21db8823e50ae889_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_e7ac3f1a6f4a9e01_name,Neonregen am Fenster
+be_music_cassette_e7ac3f1a6f4a9e01_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_5df0e489eaba8042_name,Sweet Enemy
+be_music_cassette_5df0e489eaba8042_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_632070af08377956_name,Undercurrent
+be_music_cassette_632070af08377956_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_a3b9805a7a709a28_name,Night of Love
+be_music_cassette_a3b9805a7a709a28_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.
+be_music_cassette_c42b00acf22a1239_name,Ode an den Nachtregen
+be_music_cassette_c42b00acf22a1239_description,[Kassette] Zum Anhören in den Kassettenspieler einlegen.

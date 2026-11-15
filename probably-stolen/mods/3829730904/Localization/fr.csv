@@ -210,6 +210,7 @@ wine_printer_print,Imprimer quatre bouteilles
 wine_printer_print_linked,Imprimer quatre bouteilles (20 kJ)
 wine_printer_ready,Quatre bouteilles vides par lot
 wine_printer_done,Quatre bouteilles vides imprimées (20 kJ)
+be_seed_manufacturer_name,Compagnie xuxu de l’Anneau extérieur
 be_chili_seed_name,Graines de piment
 be_chili_seed_description,Une petite graine de piment. La piquance du monde n'a pas besoin d'être chère pour réchauffer toute une nuit. Placez-la dans l'incubateur à graines : elle donnera un fruit en une nuit.
 be_rice_seed_name,Graines de riz
@@ -243,11 +244,13 @@ be_void_plum_seed_description,"Un noyau noir, lourd comme une phrase inachevée.
 be_stardust_berry_seed_name,Graines de baie de poussière d'étoiles
 be_stardust_berry_seed_description,"Une graine d'argent, qui ressemble de près à une étoile minuscule. Elle pousse sur la paroi pressurisée, dehors, près de la chambre froide, là où les radiations sont plus dures et la lumière plus seule. Placez-la dans l'incubateur à graines : elle donnera un fruit en une nuit."
 be_basic_cert_name,Certificat de vinification débutant
-be_basic_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 10% / 60% / 30%. Un certificat joliment encadré. Il permet à l'incubateur à graines de faire éclore cinq graines par nuit, et Quarante-Sept apporte sept graines. La probabilité « lointaine » de Quarante-Sept est fixée à 15 % ; « nostalgie » monte de 3 % à 8 %, « lueur » de 1 % à 5 %, le reste revenant aux graines ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_basic_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 10% / 60% / 30%. Un certificat joliment encadré. Il permet à l'incubateur à graines de faire éclore cinq graines par nuit, et Quarante-Sept apporte sept graines. La probabilité « lointaine » de Quarante-Sept est fixée à 15 % ; « nostalgie » monte de 3 % à 8 %, « lueur » de 1 % à 5 %, le reste revenant aux graines ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer. La première obtention supprime définitivement la stérilité innée des graines « ordinaires »."
 be_mid_cert_name,Certificat de vinification intermédiaire
-be_mid_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 5% / 60% / 35%. Un certificat aux matériaux plus nobles. Il permet à l'incubateur de faire éclore sept graines par nuit, et Quarante-Sept en apporte neuf. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,3 après le bonus cumulatif : 3,9 %–10,4 % et 1,3 %–6,5 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_mid_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 5% / 50% / 45%. Un certificat aux matériaux plus nobles. Il permet à l'incubateur de faire éclore sept graines par nuit, et Quarante-Sept en apporte neuf. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,3 après le bonus cumulatif : 3,9 %–10,4 % et 1,3 %–6,5 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer. La première obtention supprime définitivement la stérilité innée des graines « lointaine »."
 be_high_cert_name,Certificat de vinification supérieur
-be_high_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 0% / 30% / 70%. Un certificat bordé d'un fil d'or sombre. Il permet à l'incubateur de faire éclore dix-huit graines par nuit, et Quarante-Sept en apporte treize. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,6 après le bonus cumulatif : 4,8 %–12,8 % et 1,6 %–8 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. C'est le dernier grade signé de la main de xuxu. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer."
+be_high_cert_description,"Les fruits du mod et les baies luminescentes issus de l'incubateur obtiennent -1 / 1 / 2 points de qualité avec des probabilités respectives de 0% / 30% / 70%. Un certificat bordé d'un fil d'or sombre. Il permet à l'incubateur de faire éclore dix-huit graines par nuit, et Quarante-Sept en apporte treize. Les probabilités « nostalgie » et « lueur » sont multipliées par 1,6 après le bonus cumulatif : 4,8 %–12,8 % et 1,6 %–8 % ; « lointaine » reste à 15 %, le reste va aux ordinaires. L’effet s’applique tant que vous possédez l’objet, même rangé dans un contenant. Il est inutile de l’exposer. La première obtention supprime définitivement la stérilité innée des graines « nostalgie »."
+be_top_cert_name,Certificat de maîtrise du brassage
+be_top_cert_description,"Tant que vous le possédez, l’incubateur traite jusqu’à 24 graines par nuit. Les fruits du mod et les baies luminescentes issus de l’incubateur obtiennent toujours 2 points. Quarante-Sept apporte 16 graines avant bonus et conserve le bonus de rareté du certificat avancé. La première obtention supprime définitivement la stérilité innée des graines « lueur ». Le certificat agit aussi en réserve, sans être exposé."
 incubator_name,Incubateur à graines
 incubator_description,"Placez des graines de ce mod ou des graines vanilla et une batterie chargée. Chaque graine de ce mod donne un fruit ; une graine vanilla donne deux cultures correspondantes, une graine de plante aquatique deux filtres vanilla. Chaque nuit réussie consomme 12 kJ pour toute la machine ; si le bac est vide, si le produit fini ne tient pas ou si l'énergie manque, les graines restent et aucune énergie superflue n'est consommée. Un certificat de vinification augmente le nombre de graines traitées par nuit. Chaque fruit du mod ou baie luminescente produit ici reçoit −1, 1 ou 2 points de qualité. Les certificats supérieurs améliorent les chances."
 incubator_input,Entrée des graines
@@ -351,7 +354,7 @@ be_container_blindbox_description,"Double-cliquez pour obtenir un récipient au 
 be_figurine_blindbox_name,Boîte mystère des figurines
 be_figurine_blindbox_description,"Double-cliquez pour obtenir, à probabilité égale, Ichigo Kurosaki, Rukia Kuchiki, Uryu Ishida ou « Oh mon dieu, un concombre de mer d'iridium ». Posséder une figurine de chaque type ajoute 100 d'attrait par type ; les exemplaires identiques ne se cumulent pas."
 be_xuxu_cassette_bundle_name,Pack de cassettes xuxu
-be_xuxu_cassette_bundle_description,"Double-cliquez pour obtenir d'un coup cinq cassettes : Bar spécial, Rue des néons, Nuit légèrement grisée, Brise entre les cordes, Hip-hop du brasseur. Insérez-les dans le lecteur pour écouter la musique correspondante."
+be_xuxu_cassette_bundle_description,Double-cliquez pour obtenir les 12 cassettes. Prévoyez assez de place dans l’inventaire. Écoutez-les dans un lecteur de cassettes.
 be_midautumn_blindbox_name,Boîte mystère de la mi-automne « édition limitée »
 be_midautumn_blindbox_description,"Une boîte octogonale : sur le couvercle, un ciel nocturne bleu profond et une lune ronde dorée qui flotte.\n\nPrès de la lune, un petit lapin de jade se penche vers le monde des hommes.\n\nLe couvercle est noué d'une corde rouge, dont le nœud dessine une réunion.\n\nOuvrez-la : un éventail pliant, une lanterne, ou une boîte de gâteaux de lune.\n\n— Les décorations de la mi-automne augmentent l'attrait de la boutique. Par une nuit de fleurs épanouies et de lune ronde, qui ne ferait pas quelques pas de plus pour venir voir la lune chez vous ?\n\nAchat possible une fois tous les 5 jours, à compter du jour d'achat ; le produit revient 5 jours après l'achat."
 be_midautumn_mooncake_box_name,Coffret « yuétuan »
@@ -403,7 +406,7 @@ be_music_cassette_9b23823d7fcbcfb2_description,"[Cassette] À insérer dans un l
 be_music_cassette_120129a8a5d85fd3_name,Hip-hop du brasseur
 be_music_cassette_120129a8a5d85fd3_description,[Cassette] À insérer dans un lecteur de cassettes.\n\nOn ne sait pas trop ce que ça veut dire.
 be_brewing_manual_name,Manuel de vinification
-be_brewing_manual_description,Le manuel laissé par xuxu. Ouvrez-le et vous verrez tous les secrets de la vinification. Mieux vaut le lire avec les feuillets de recettes épars — ceux-ci sont à acheter vous-même auprès de Quarante-Sept.
+be_brewing_manual_description,"Double-cliquez pour lire. Tant que vous possédez le manuel, vos fiches sont consommées et leurs pages ajoutées définitivement. Les fiches achetées avant sont ajoutées dès l’obtention du manuel."
 be_liunian_ager_guide_title,Guide d'utilisation : Liunian
 be_liunian_ager_guide_body,"Placez du vin fini authentique dans le stockage et une batterie chargée à gauche. Chaque nuit active, le vin vieillit et est refroidi. Sans vin ou sans énergie, aucun vieillissement machine.\n\nModules : 6×20 ; stockage : 20×20. Jours ajoutés = 1 + partie entière (qualité ÷ 125). Qualité 125 : 2 jours ; 1000 : 9 jours. Le vieillissement naturel du jeu se calcule à part.\n\nSans module : 24 kJ par nuit active pour toute la machine, quel que soit le nombre de bouteilles. La qualité seule ne majore pas la consommation par tranche de 125. Les modules ajoutent leurs effets de consommation ou d'économie : +100 % représente +24 kJ sur la base de 24 kJ. Performance et économie peuvent réduire le coût ; arrondi selon le jeu, minimum 1 kJ. Consultez les paramètres de la machine et le coût actuel ci-dessous."
 be_fruit_pulp_concentrator_guide_title,Guide d'utilisation : concentrateur de pulpe
@@ -415,7 +418,7 @@ be_wine_printer_guide_body,"Insérez une batterie chargée dans le logement d'al
 be_xuxu_water_bottle_printer_guide_title,Guide d'utilisation : imprimante à gourdes xuxu
 be_xuxu_water_bottle_printer_guide_body,"Insérez une batterie chargée et choisissez le bouton d'impression. Au niveau 1, imprime la petite gourde de 6 L pour 20 kJ ; tous les 6 composants électroniques, le niveau monte : niveau 2 débloque la gourde fine de 12 L (40 kJ), niveau 3 la super gourde de 18 L (60 kJ). Il faut 12 composants électroniques pour le maximum. Les boutons non débloqués ne se cliquent pas.\n\nZone de sortie 6×4. Si la place ou l'énergie manque, l'impression n'a pas lieu. La batterie se glisse sur la machine dans le logement d'alimentation, les composants servent aux améliorations. Aucune des trois gourdes n'accepte de filtre ; quand le volume change, la texture du niveau d'eau est mise à jour."
 be_incubator_guide_title,Guide d'utilisation : incubateur à graines
-be_incubator_guide_body,"Placez des graines du mod ou du jeu dans l'entrée et une batterie chargée à gauche. Chaque nuit, traitement par lignes, de haut en bas puis de gauche à droite. Une graine du mod donne 1 fruit ; une graine du jeu donne 2 produits. Sortie remplie par lignes.\n\nLimite par machine et par nuit : 2 graines ; avec certificat débutant/intermédiaire/supérieur : 5/7/18. Seul le meilleur grade compte. Une nuit avec production coûte 12 kJ pour toute la machine, quel que soit le nombre de fruits. Chaque machine est indépendante.\n\nLes grains de café du jeu sont aussi des graines. Bloomberry donne des baies à vin ; hydroreed donne 2 filtres du jeu. Produits sous leur forme standard, sans bonus de module hydroponique ni graines rendues. La limite compte les graines consommées. Les 2 produits doivent tenir ; sans graines, place ou énergie, aucune production ni dépense. Entrée et sortie : 12×12, rangement libre des objets admis. Notice à droite, lisible au survol.\n\nChaque fruit du mod ou baie luminescente produit ici reçoit −1, 1 ou 2 points de qualité. Les certificats supérieurs améliorent les chances. Chances pour −1 / 1 / 2 points : sans certificat 30 % / 50 % / 20 % ; élémentaire 10 % / 60 % / 30 % ; intermédiaire 5 % / 60 % / 35 % ; avancé 0 % / 30 % / 70 %. Un fruit à −1 compte pour 0 en vinification."
+be_incubator_guide_body,"Placez des graines du mod ou du jeu dans l'entrée et une batterie chargée à gauche. Chaque nuit, traitement par lignes, de haut en bas puis de gauche à droite. Une graine du mod donne 1 fruit ; une graine du jeu donne 2 produits. Sortie remplie par lignes.\n\nLimite par machine et par nuit : 2 graines ; avec certificat débutant/intermédiaire/avancé/de maîtrise : 5/7/18/24. Seul le meilleur grade compte. Une nuit avec production coûte 12 kJ pour toute la machine, quel que soit le nombre de fruits. Chaque machine est indépendante.\n\nLes grains de café du jeu sont aussi des graines. Bloomberry donne des baies à vin ; hydroreed donne 2 filtres du jeu. Produits sous leur forme standard, sans bonus de module hydroponique ni graines rendues. La limite compte les graines consommées. Les 2 produits doivent tenir ; sans graines, place ou énergie, aucune production ni dépense. Entrée et sortie : 12×12, rangement libre des objets admis. Notice à droite, lisible au survol.\n\nChaque fruit du mod ou baie luminescente produit ici reçoit −1, 1 ou 2 points de qualité. Les certificats supérieurs améliorent les chances. Chances pour −1 / 1 / 2 points : sans certificat 30 % / 50 % / 20 % ; élémentaire 10 % / 60 % / 30 % ; intermédiaire 5 % / 50 % / 45 % ; avancé 0 % / 30 % / 70 % ; maîtrise 0 % / 0 % / 100 %. Un fruit à −1 compte pour 0 en vinification."
 debug_foundation_check,Vérification de la base de vinification
 be_mod_name,Extension de vinification
 be_ending_assassination_title,Assassinat de l'Anneau extérieur
@@ -428,6 +431,7 @@ be_nini_inspection_warning,Cette cigarette ne correspond pas à son étiquette. 
 be_brewer_start_name,Vinificateur débutant
 be_brewer_start_description,"Tu es un vinificateur professionnel. Depuis l'enfance, tu entends la légende de xuxu et tu rêves de suivre la voie de la vinification. Maintenant, tu peux commencer."
 be_brewer_start_supplies,"4 levures ordinaires, 4 bouteilles vides, réservoir d'eau claire, enseigne de brasserie, enseigne néon d'eau, filtre ordinaire et kit d'analyse d'eau (10 bandelettes)"
+be_brewer_start_equipment,"1 incubateur de graines avec une batterie de 100 kJ entièrement chargée et 1 ancien système hydroponique, 4 pastilles nutritives hydroponiques · 1 manuel de brassage et 1 guide hydroponique de brassage"
 be_perk_devotion_name,Tout pour le vin
 be_perk_drunk_name,Ivre mort
 be_trait_bonus_category,Bonus de trait
@@ -439,7 +443,7 @@ be_nini_phone_end,Terminer l'appel
 be_nini_phone_closed,La boutique est fermée. Appelle-moi quand tu es ouvert.
 be_nini_phone_missing_card,Tu n'as pas ma carte. Une autre fois.
 be_nini_phone_accepted,"Si tu as du bon vin, attends-moi, j'arrive."
-be_nini_trade_greeting,"Hé, gamin, du tabac ou de l'alcool à vendre aujourd'hui ? Vends-moi tout. Accumule assez de volume et je te délivre un certificat."
+be_nini_trade_greeting,"Hé, gamin, du tabac ou de l’alcool à vendre ? Le tabac ne compte que si tu me le vends. L’alcool compte aussi chez les autres clients. Une fois le seuil de valeur de base atteint, ton certificat sera déposé sur le comptoir."
 be_nini_trade_accepted,Je prends le tabac et l'alcool.
 be_nini_trade_done,Ça suffira pour aujourd'hui.
 be_forty_seven_name,Quarante-Sept
@@ -448,7 +452,7 @@ be_forty_seven_trade_accepted,Marché conclu.
 be_forty_seven_trade_done,D'accord.
 be_assassin_name,Assassin de l'Anneau extérieur
 be_assassin_greeting,L'Anneau extérieur vient régler ses comptes.
-be_certificate_delivery_pending,"Tu as droit à un certificat de vinification. Libère de la place sur le comptoir ; je te le donnerai à la prochaine transaction ou visite, ou au chargement."
+be_certificate_delivery_pending,"Tu as droit à un certificat de brassage. Libère de la place sur le comptoir et je te le remettrai à notre prochaine transaction ou visite."
 be_certificate_awarded,Bien joué. Prends ce certificat et continue de élaborer de meilleurs vins.
 be_recipe_purchase_required,Pas encore débloqué. Achète pour en révéler le contenu.
 be_basic_battery_empty_description,"Acheté à vide. Valeur de base 200 crédits, charge actuelle comptée à part ; capacité 200 kJ, récupère 6 kJ chaque nuit. Valeur 200 à vide, 400 à pleine charge ; bonus commerciaux et marché à part."
@@ -518,6 +522,7 @@ market_event_3_description,Les stocks s’accumulent dans le quartier supérieur
 be_setting_traditional_label,Utiliser le chinois traditionnel
 be_setting_traditional_description,"Si la langue du jeu est le chinois, affiche les objets, dialogues et messages de ce mod en chinois traditionnel. Désactivez pour le chinois simplifié. Les autres langues suivent le jeu. Appliquez, quittez complètement puis relancez le jeu."
 be_huge_fruit_name,Récolte géante : {0}
+be_small_fruit_name,Mini-{0}
 be_concentrator_giant_input,Fruit géant
 be_huge_fruit_description,Vendez-le ou placez-le dans le logement pour fruit géant du concentrateur. Un fruit géant donne une portion de pulpe correspondante.
 be_incubator_fruit_quality,Qualité du fruit : {0}
@@ -549,3 +554,158 @@ be_outer_p160_flavor,"L’amitié dépasse les registres : plus de graines dans 
 be_outer_p180_flavor,"Les vieilles amitiés traversent les étoiles. Les graines arrivent, les crédits restent pour le vin."
 be_outer_p200_flavor,"Les voyageurs de l’Anneau extérieur suivent votre lumière, chargés de graines et de confiance."
 be_pulp_quality_sum,Score total du concentré : {0} points
+be_hydroponic_small_fruit_description,Peut être vendu ou servir de nourriture pour les animaux.
+be_hydroponic_fertile,Une plante non vivace rend 1 graine par récolte par défaut. La fertilité augmente le rendement selon son niveau sans plafond supplémentaire. Les descendants héritent des niveaux de gènes du parent et repartent sans chaleur.
+be_hydroponic_locked_basic,Culture hydroponique. Le certificat de brassage de base supprime la stérilité.
+be_hydroponic_locked_mid,Culture hydroponique. Le certificat de brassage intermédiaire supprime la stérilité.
+be_nini_cellar_deliver,Remettre la cave
+be_nini_cellar_cancel,Annuler
+be_nini_cellar_confirm,Remettre à Nini {0} et tout son contenu ? Cela débloque le gène Vivace pour les graines du mod.
+be_hydroponic_perennial_locked,"Obtenez le certificat de brassage suprême, puis remettez à Nini une cave Liunian contenant une bouteille de chaque vin des huit fiches de recettes."
+be_hydroponic_locked_high,"Culture hydroponique. Le certificat de brassage avancé supprime la stérilité."
+be_hydroponic_locked_top,Culture hydroponique. Le certificat de maîtrise supprime la stérilité.
+be_certificate_status_title,"Certificats de brassage"
+be_certificate_status_none,"Certificats obtenus : aucun"
+be_certificate_status_earned,"Meilleur certificat obtenu : {0}"
+be_certificate_status_next,"Prochain : {0} · {1:N0} / {2:N0}"
+be_certificate_status_remaining,"Valeur de base restante : {0:N0}"
+be_certificate_status_pending,"Objectif atteint. Libérez de la place sur le comptoir pour la prochaine visite de Nini."
+be_certificate_status_complete,"Tous les certificats ont été obtenus."
+be_certificate_status_rule,"L’alcool vendu aux clients ordinaires compte à sa valeur de base."
+be_brewing_hydroponic_guide_name,Guide hydroponique du brasseur
+be_brewing_hydroponic_guide_description,"Double-cliquez pour lire les règles de récolte, de qualité et de retour des graines."
+be_hydro_guide_title_1,Culture et croissance
+be_hydro_guide_title_2,Santé et taille
+be_hydro_guide_title_3,Santé et qualité
+be_wine_quality_cloud_jade,Nectar de jade céleste
+be_hydro_guide_title_4,Certificats et semences
+be_hydro_guide_setup,Matériel de plantation
+be_hydro_guide_setup_note,"Placez une graine, une batterie et de l’eau préparée dans un système hydroponique."
+be_hydro_guide_growth,Croissance et rendement de base
+be_hydro_guide_work,Travail
+be_hydro_guide_yield,Récolte
+be_hydro_guide_minerals,Minéraux
+be_hydro_guide_tier_0,Mortel
+be_hydro_guide_tier_1,Lointain
+be_hydro_guide_tier_2,Nostalgie
+be_hydro_guide_tier_3,Rémanence
+be_hydro_guide_modules,Le gène de rendement et les modules de qualité augmentent la récolte. La performance accélère la croissance. L’efficacité économise l’énergie.
+be_hydro_guide_fruit_0,Mini-fruit
+be_hydro_guide_fruit_1,Fruit normal
+be_hydro_guide_fruit_2,Fruit géant
+be_hydro_guide_sizes,Santé à la récolte · Part de mini-fruits
+be_hydro_guide_mini_note,Arrondissez le nombre de mini-fruits à l’entier inférieur. Le reste est normal. Vendez-les ou utilisez-les comme aliment.
+be_hydro_guide_giants,Fruits géants
+be_hydro_guide_giant_note,"20 % de chance à 96–99 % de santé, 40 % à 100 %. Un géant maximum, compté comme un fruit dans la récolte."
+be_hydro_guide_health,Analyseur de plantes
+be_hydro_guide_health_note,Le score de croissance indique la santé actuelle. Le manque ou l’excès de minéraux et les polluants la réduisent.
+be_hydro_guide_points,Santé à la récolte · Chances par score de qualité
+be_hydro_guide_pulp_note,Chaque fruit normal ou géant a son propre score. Un géant donne une pulpe avec quatre fois son score.
+be_hydro_guide_certificates,Lever la stérilité innée
+be_hydro_guide_cert_0,Débutant
+be_hydro_guide_cert_1,Intermédiaire
+be_hydro_guide_cert_2,Avancé
+be_hydro_guide_cert_3,Maître
+be_hydro_guide_return_note,Une plante fertile non vivace rend une graine de base. Le gène de fertilité augmente ce nombre. Les descendants héritent des gènes et repartent sans chaleur.
+be_hydro_guide_perennial,Débloquer le gène Vivace
+be_hydro_guide_perennial_note,"Après le certificat de maître, remettez à Nini une armoire Liunian avec tous les vins des recettes. Les vivaces fructifient à nouveau et ne donnent que des fruits."
+be_manual_quality_rules,"6 points : Grand millésime (+75 %). Dès 7 : Nectar de jade céleste (+100 %).\nDeux fruits à 2 points = 4. Duo +1 = 5. Levure et eau de qualité +1 chacune = 7. Les baies lumineuses sont incluses."
+be_manual_collection,Recettes collectées {0}/{1}
+be_hydro_guide_cloud_jade,"Deux fruits à 2 points peuvent donner un vin à 7 points, Nectar de jade céleste (+100 %). Voir le manuel de brassage."
+be_manual_flow_title,De la graine à la vente
+be_manual_flow_1,"Achetez l’enseigne à la boutique de brassage, la nuit. Placez-la en vitrine avant l’ouverture. Quarante-Sept vend graines et recettes. Avec le manuel, chaque recette achetée se déverrouille."
+be_manual_flow_2,Cultivez les fruits dans l’incubateur ou en hydroponie. Consultez le guide hydroponique.
+be_manual_flow_3,"Faites fermenter deux fruits, de la levure et 750 mL d’eau en bouteille vide. Pressez les fruits en pulpe pour brasser en fût. Les câbles de transfert permettent ensuite d’automatiser la production."
+be_manual_flow_4,Toute vente de vin à un PNJ compte pour sa valeur de base. Achetez la carte de Nini et appelez-la. Elle a un budget alcool et tabac plus élevé et remet les certificats acquis lors de sa visite. Suivi dans l’onglet Statut du calendrier.
+be_button_accept,Accepter la commande
+be_commission_available,Disponible · délai après acceptation : {0} jours
+be_commission_commissioner,Client : {0}
+be_commission_credit_reward,Récompense : valeur réelle des marchandises + {0} crédits
+be_commission_min_wine_score,Qualité du vin : {0} points minimum ({1})
+be_commission_pending_seeds,Graines à récupérer : {0}
+be_commission_progress_wine,{0} : {1}/{2} bouteilles{3}
+be_commission_remaining,Jours restants : {0}
+be_commission_seed_reward,Réputation de l’Anneau extérieur +5 ; graines aléatoires : {0}
+be_commission_submitted_value,Valeur réelle des marchandises livrées : {0}
+be_commission_wine_requirement,Vin — {0}
+be_delivery_back,Retour
+be_delivery_changed,Le stock ou la commande a changé. Sélectionnez à nouveau.
+be_delivery_confirm,Livrer {0} articles
+be_delivery_details,{0} · Valeur estimée : {1} crédits\n{2}
+be_delivery_empty,Aucun article en stock ne remplit cette condition.
+be_delivery_help,Choisissez les articles à livrer. Confirmez pour les retirer du stock.
+be_delivery_location_back,Comptoir arrière
+be_delivery_location_counter,Comptoir
+be_delivery_location_display,Vitrine
+be_delivery_location_hidden,Compartiment caché
+be_delivery_location_other,Autre stock
+be_delivery_location_storage,Réserve
+be_delivery_partial,{0} articles livrés. Sélectionnez de nouveau les articles restants.
+be_delivery_slot,"{0} · Colonne {1}, ligne {2}"
+be_delivery_title,Choisir les articles à livrer
+be_delivery_unit,{0} ({1}/{2})
+be_empty_available,"Toutes les commandes du jour sont prises, revenez demain."
+be_empty_pending,Aucune commande en cours.
+be_order_alternative,Choisissez une option. La première livraison fixe votre choix ; les deux options ne peuvent pas être combinées.
+be_order_face_0,Commande commune
+be_order_face_1,Commande rare
+be_order_face_2,Commande exotique
+be_order_incomplete,Terminez d'abord cette commande.
+be_order_person_0,Récupérateur
+be_order_person_1,Client des niveaux supérieurs
+be_order_person_2,Voyageur stellaire
+be_order_person_3,Sans-abri
+be_order_person_4,Confrère
+be_order_person_5,Touriste
+be_order_reason_0,Je vais bientôt prendre mon service de nuit à la décharge. Apportez quelques bouteilles à partager entre collègues après le travail.
+be_order_reason_1,"Je prépare une petite fête, livrez selon la liste. Les invités ont des goûts différents."
+be_order_reason_2,"Le prochain vaisseau part bientôt. Avant le long voyage, je veux emporter un goût de l'Anneau extérieur."
+be_order_reason_3,Je déménage encore. La route est froide — je prends quelques portions pour tenir.
+be_order_reason_4,"Il me manque un lot, mes habitués attendent. Complétez selon la liste, on s'entendra."
+be_order_reason_5,"On dit que vous faites du bon travail ! Avant de partir, j'en prends quelques-uns pour des amis rencontrés en route."
+be_order_reputation_block,Réputation de l'Anneau extérieur <= −80 : nouvelles commandes impossibles. Les commandes acceptées restent livrables.
+be_order_terminal_02,Terminal de commandes de l'Anneau extérieur
+be_order_window_02,Commun
+be_order_window_03,Rare
+be_order_window_04,Exotique
+be_order_window_09,Terminé · cliquez « Réclamer la récompense »
+be_order_window_12,Réglé · récompense à réclamer
+be_order_window_13,Réglé
+be_order_window_14,Expiré · les objets livrés ne sont pas rendus
+be_order_window_15,Détails de la commande
+be_order_window_25,. Libérez de la place au comptoir puis cliquez « Réclamer ».
+be_order_window_30,"Sélectionnez une commission acceptée et choisissez des bouteilles dans votre inventaire. Récupérez les crédits et la réputation au terminal. Les graines sont déposées sur le comptoir dès qu’il y a de la place. Les commissions terminées sont réglées à échéance. Pour une commission inachevée, les bouteilles livrées sont perdues sans pénalité de réputation."
+be_order_window_art_03,Commandes disponibles
+be_order_window_art_04,Commandes en cours
+be_order_window_art_05,Accepter la commande
+be_order_window_art_06,Livrer depuis l'inventaire
+be_order_window_art_08,Prendre les objets
+be_order_window_art_09,Réclamer la récompense
+be_order_window_art_10,Commande sélectionnée ; les objets livrés iront à elle.
+be_order_window_art_11,"Commande terminée ; cliquez « Réclamer la récompense », les objets arrivent au comptoir."
+be_order_window_art_12,Libérez de la place au comptoir puis cliquez « Prendre les objets ».
+be_order_window_art_13,Cliquez un smiley pour voir la commande.
+be_order_window_art_14,5 commandes déjà acceptées ; terminez-les d'abord.
+be_order_window_art_15,Réputation de l'Anneau extérieur <= −80 : nouvelles commandes indisponibles.
+be_tab_available,Commandes disponibles
+be_tab_pending,Commandes en cours
+be_tier_0,Commun
+be_tier_1,Lointain
+be_tier_2,Nostalgie
+be_tier_3,Après-lueur
+be_tier_min_1,À partir de Lointain
+be_tier_min_2,À partir de Nostalgie
+be_music_cassette_7a93cb8719305ea0_name,Le vent des montagnes en témoigne
+be_music_cassette_7a93cb8719305ea0_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_21db8823e50ae889_name,Ode à la brise du soir
+be_music_cassette_21db8823e50ae889_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_e7ac3f1a6f4a9e01_name,Pluie et néons à la fenêtre
+be_music_cassette_e7ac3f1a6f4a9e01_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_5df0e489eaba8042_name,Sweet Enemy
+be_music_cassette_5df0e489eaba8042_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_632070af08377956_name,Undercurrent
+be_music_cassette_632070af08377956_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_a3b9805a7a709a28_name,Night of Love
+be_music_cassette_a3b9805a7a709a28_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.
+be_music_cassette_c42b00acf22a1239_name,Ode à la pluie nocturne
+be_music_cassette_c42b00acf22a1239_description,[Cassette] Insérez-la dans le lecteur pour l’écouter.

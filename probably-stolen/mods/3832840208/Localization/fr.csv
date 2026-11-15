@@ -11,11 +11,11 @@ te_item_paper_description,"Le papier fin retient le parfum de la feuille et un p
 te_item_paperbox_name,Boîte de papier à rouler
 te_item_paperbox_description,"Une boîte pleine contient 8 feuilles, de quoi faire 4 paquets. Double-cliquez pour voir le reste.\nInsérez la boîte entière ; la machine prend 2 feuilles par paquet, la boîte vide reste ; peut se combiner avec du papier en vrac."
 te_item_syringe_name,Seringue vide
-te_item_syringe_description,"Glissez la seringue sur la pulpe de vinification : chaque fois un quart de pulpe donne 1 dose d'extrait ; avec un reste, impossible de mélanger d'autres saveurs.\nPlacez la seringue pleine dans la zone extrait ; 1 dose par paquet. Une seringue fait 2 extractions et n'est consommée qu'après un paquet réussi avec la dernière dose."
+te_item_syringe_description,Glissez une seringue vide sur un fruit pour le consommer et obtenir 1 dose. La seringue est utilisée après fabrication du paquet. La pulpe permet 2 extractions d’un quart chacune. Ne mélangez pas les saveurs s’il reste de l’extrait. Placez la seringue dans le compartiment extrait : 1 dose par paquet.
 te_item_partialpulp_name,Pulpe restante
 te_item_partialpulp_description,Glissez une seringue à extractions restantes sur la pulpe restante : chaque quart donne 1 dose d'extrait. Ne convient plus aux recettes complètes de vinification.
 te_item_knife_name,Couteau xuxu
-te_item_knife_description,"Glissez le couteau sur le tabac séché : 2 filaments par portion, contre 1 avec un couteau ordinaire. Le tabac séché humide se coupe aussi, sans retirer l'humidité.\nSert aussi à tuer les rats et se range dans la boîte à outils."
+te_item_knife_description,"Glissez le couteau sur le tabac séché : 2 filaments par portion, contre 1 avec un couteau ordinaire. Le tabac séché humide se coupe aussi, sans retirer l'humidité.\nSert aussi à tuer les rats et se range dans la boîte à outils.\nUne feuille séchée géante donne quatre portions au couteau normal et huit au couteau xuxu."
 te_item_sign_name,Enseigne de tabac
 te_item_sign_description,"Placez dans la vitrine : à l'ouverture, invite les vendeurs de tabac et Chenzi. Chenzi apporte chaque jour des étiquettes jetables, les vendeurs vendent des cigarettes.\nLes commandes se prennent, se livrent et se paient au terminal sur le bureau — sans Chenzi ni enseigne."
 te_cigarette_lore_basic,Juste un léger goût de tabac et un peu de chaleur. Ceux qui parlent peu fument lentement.
@@ -57,11 +57,11 @@ te_cigarette_osmanthus_name,Cigarettes à l'osmanthus
 te_cigarette_bayberry_name,Cigarettes à la baie de cire
 te_cigarette_stardust_berry_name,Cigarettes à la baie d'étoiles
 te_cigarette_void_plum_name,Cigarettes à la prune du vide
-te_syringe_status,"Extractions restantes : {0}/2 ; extrait : {1} doses.\nGlissez la seringue sur la pulpe de vinification : un quart de pulpe = 1 dose ; avec un reste, pas de mélange de saveurs.\nSeringue pleine dans la zone extrait ; 1 dose par paquet. Après deux extractions, la seringue n'est consommée qu'après un paquet réussi avec la dernière dose."
+te_syringe_status,Extractions restantes : {0}/{2} ; extrait : {1} dose(s).\nGlissez une seringue vide sur un fruit pour le consommer et obtenir 1 dose. La seringue est utilisée après fabrication du paquet. La pulpe permet 2 extractions d’un quart chacune. Ne mélangez pas les saveurs s’il reste de l’extrait. Placez la seringue dans le compartiment extrait : 1 dose par paquet.
 te_dryer_name,Séchoir
 te_dryer_description,"Double-clic. Batterie chargée dans son logement ; tabac, tabac séché humide ou filaments humides dans l'entrée.\n« Lancer le traitement » sèche tout le possible pour 6 d'énergie ; une nuit sèche 1 unité, aussi 6 d'énergie. La sortie doit tout contenir, sinon ni matière ni énergie ne sont consommées. Notice complète à droite."
 te_maker_name,Machine à cigarettes
-te_maker_description,"Double-clic. Batterie, zone filaments, zone papier (vrac ou boîte). Chaque clic ou nuit fait 1 paquet : 1 filament, 2 feuilles, 4 d'énergie.\nOption : zone extrait (1 dose par paquet), sinon basique ; tous les médicaments de la zone poussière de rêve entrent dans le même paquet, effets cumulés. Des filaments humides donnent un défaut irréparable. Sortie à droite ; notice à droite."
+te_maker_description,"Double-clic. Batterie, zone filaments, zone papier (vrac ou boîte). Chaque clic ou nuit fait 1 paquet : 1 filament, 2 feuilles, 4 d'énergie.\nOption : zone extrait (1 dose par paquet), sinon basique ; tous les médicaments de la zone poussière de rêve entrent dans le même paquet, effets cumulés. Des filaments humides donnent un défaut irréparable. Sortie à droite ; notice à droite.\nCigare : une feuille séchée géante dans le bac à papier et quatre portions de tabac, pour quatre unités d’énergie. Des ingrédients humides donnent un cigare défectueux. Papier, extrait et additifs restent en place."
 te_guide_name,Guide d'authenticité des cigarettes fruitées
 te_guide_description,"Double-clic pour lire ; flèches en bas pour les pages, bouton en haut à droite pour zoomer. 14 pages : emballages, textes, sceaux et marques des sept saveurs.\nExaminez la cigarette à la loupe et comparez. Le guide traite de l'authenticité ; pour un défaut, « Vérifier l'état » ; pour une étiquette jetable, « Vérifier l'étiquette »."
 te_story_description,"Histoires de l'Anneau extérieur, {0} pages. Double-clic ou clic droit « Ouvrir » ; zoom possible."
@@ -115,7 +115,7 @@ te_producer_labels_06,Majoration d'étiquette
 te_stamp_machine_03,Fermer
 te_stamp_machine_04,Activer
 te_machine_instructions_01,"1. Batterie : batterie chargée.\n2. Entrée : tabac, tabac séché humide ou filaments humides.\n\n3. « Lancer le traitement » sèche tout le possible pour 6 d'énergie. La sortie doit tout contenir ; sinon ni matière ni énergie ne sont consommées.\n4. Une nuit sèche 1 unité, 6 d'énergie.\n5. Retirez le produit fini. Tabac séché et filaments s'humidifient la nuit ; reséchez-les. Après deux jours, le tabac devient tabac séché humide."
-te_machine_instructions_02,"1. Batterie : batterie chargée.\n2. Filaments ; papier : vrac ou boîte, le papier est pris dans la boîte, la boîte vide reste. Par paquet : 1 filament, 2 feuilles, 4 d'énergie.\n\n3. Extrait : seringue d'extrait fruité pour la saveur ; sans elle, basique. La seringue a un nombre limité d'extractions.\n4. Poussière de rêve : poussière de rêve, fentanyl ou autres substances à euphorie/toxicité. Chaque fabrication prend tout le contenu de la zone et ajoute la chimie réelle au paquet ; sans elles, la fabrication reste possible.\n5. « Lancer le traitement » fait un paquet ; une nuit en fait aussi un. Pas de fabrication si place, matière ou énergie manquent.\n6. Des filaments humides donnent un défaut irréparable. Retirez le produit fini."
+te_machine_instructions_02,"1. Batterie : batterie chargée.\n2. Filaments ; papier : vrac ou boîte, le papier est pris dans la boîte, la boîte vide reste. Par paquet : 1 filament, 2 feuilles, 4 d'énergie.\n\n3. Extrait : seringue d'extrait fruité pour la saveur ; sans elle, basique. La seringue a un nombre limité d'extractions.\n4. Poussière de rêve : poussière de rêve, fentanyl ou autres substances à euphorie/toxicité. Chaque fabrication prend tout le contenu de la zone et ajoute la chimie réelle au paquet ; sans elles, la fabrication reste possible.\n5. « Lancer le traitement » fait un paquet ; une nuit en fait aussi un. Pas de fabrication si place, matière ou énergie manquent.\n6. Des filaments humides donnent un défaut irréparable. Retirez le produit fini.\n\nCigare : une feuille séchée géante dans le bac à papier et quatre portions de tabac, pour quatre unités d’énergie. Des ingrédients humides donnent un cigare défectueux. Papier, extrait et additifs restent en place."
 te_machines_01,"Placez matière et batterie,\npuis « Lancer le traitement » ci-dessous."
 te_machines_02,Lancer le traitement
 te_machines_03,"Terminé,\nretirez dans la zone de sortie."
@@ -402,6 +402,7 @@ te_commission_smoke_requirement,Cigarettes — {0}
 te_commission_progress_items,{0} : {1}/{2} pièces{3}
 te_commission_progress_wine,{0} : {1}/{2} bouteilles{3}
 te_commission_progress_smoke,{0} : {1}/{2} paquets{3}
+te_commission_progress_cigar,{0} : {1}/{2}{3}
 te_delivery_title,Choisir les articles à livrer
 te_delivery_help,Choisissez les articles à livrer. Confirmez pour les retirer du stock.
 te_delivery_back,Retour
@@ -426,3 +427,111 @@ te_cigarette_tier_lore_0,Un paquet aussi familier que la rue qu'on emprunte chaq
 te_cigarette_tier_lore_1,"Ouvrir le paquet, c'est décacheter une lettre venue de loin."
 te_cigarette_tier_lore_2,"Les détails s'effacent, mais un parfum familier se souvient."
 te_cigarette_tier_lore_3,"Le nom du lieu d'origine s'est effacé, mais le parfum demeure."
+te_hydro_small_leaf,Petite feuille de tabac
+te_hydro_large_leaf,Grande feuille de tabac
+te_hydro_fertile,Le certificat de brassage intermédiaire permet de récupérer des graines à la récolte hydroponique.
+te_hydro_locked,Culture hydroponique. Le certificat intermédiaire lève la stérilité et permet de récupérer des graines.
+te_hydro_perennial_locked,Terminez la cinquième commission spéciale pour appliquer le gène vivace aux graines de tabac.
+te_hydro_trial,Essai de tabac vivace
+te_hydro_no_deadline,Sans limite de temps
+te_hydro_trial_reason,"Tu as les quatre tampons ? Apporte-moi un paquet de chaque variété, tous marqués du tampon de la société xuxu de l’Anneau extérieur. Prends ton temps."
+te_hydro_trial_reward,Récompense : déverrouille le gène vivace pour les graines de tabac.
+te_tobacco_hydroponic_guide_name,Guide hydroponique du tabac
+te_tobacco_hydroponic_guide_description,"Double-cliquez pour lire le guide de culture, de récolte, de génétique et de la commission spéciale."
+te_hydro_guide_plant_title,Planter le tabac
+te_hydro_guide_plant_first_body,"Placez la graine, la batterie et l’eau dans la machine hydroponique. Le tabac pousse la nuit."
+te_hydro_guide_plant_second,Conditions de croissance
+te_hydro_guide_harvest_title,Récolter le tabac
+te_hydro_guide_genes_title,Graines et gènes
+te_hydro_guide_genes_first,Gènes innés et du magasin
+te_hydro_guide_genes_second,Certificat intermédiaire
+te_hydro_guide_trial_title,Commission vivace
+te_hydro_guide_trial_first,Cinquième commission spéciale
+te_hydro_guide_trial_first_body,Réunissez les quatre tampons pour débloquer l’essai de tabac vivace au terminal. La commission est sans limite de temps.
+te_hydro_guide_trial_second,Livrer les 17 variétés
+te_hydro_guide_trial_second_body,"Livrez un paquet de base et un de chaque saveur. Tous doivent être authentiques, en bon état et marqués du tampon permanent de xuxu Anneau extérieur."
+te_hydro_guide_battery,Batterie chargée
+te_hydro_guide_water,Récipient d’eau
+te_hydro_guide_work,Points de croissance
+te_hydro_guide_water_rate,Eau par cycle
+te_hydro_guide_minerals,Minéraux idéaux
+te_hydro_guide_health_note,La note de croissance indique la santé. Un mauvais dosage des minéraux ou de l’eau polluée la réduit.
+te_hydro_guide_normal_leaf,Feuille normale
+te_hydro_guide_mini_share,Santé à la récolte · Part des petites feuilles
+te_hydro_guide_mini_rounding,Arrondissez les petites feuilles à l’entier inférieur. Base : 2 feuilles avant modules et gènes.
+te_hydro_guide_large_note,"Chance d’une grande feuille : 20 % à 96–99 % de santé, 40 % à 100 %. Une au plus par récolte, incluse dans le rendement. Toutes se sèchent."
+te_hydro_guide_innate_note,Innés : Génome complexe II et Stérile X. Le magasin ajoute deux gènes.
+te_hydro_guide_shop_odds,Deux gènes aléatoires en magasin
+te_hydro_guide_mixed_genes,Un positif et un négatif
+te_hydro_guide_positive_genes,Deux positifs
+te_hydro_guide_negative_genes,Deux négatifs
+te_hydro_guide_return_note,"Le certificat intermédiaire lève la stérilité initiale. Un plant annuel rend une graine, parfois plus avec Fertile. Les gènes se transmettent, la chaleur repart de zéro."
+te_hydro_guide_regrowth,Le tabac vivace reste dans la machine pour produire de nouvelles feuilles.
+te_item_small_dry_name,Petite feuille de tabac séchée
+te_item_large_dry_name,Feuille de tabac séchée géante
+te_tobacco_manual_name,Manuel du tabac
+te_tobacco_manual_description,"Double-cliquez pour lire huit pages illustrées sur la culture, la fabrication, l’inspection, la vente, les étiquettes et les contrats."
+te_manual_0_title,Manuel du tabac
+te_manual_0_0,Achetez une enseigne et du matériel la nuit. Exposez-la avant l’ouverture pour attirer Chenzi avec ses étiquettes et les vendeurs avec leurs cigarettes.
+te_manual_0_1,"Cultivez, séchez puis hachez les feuilles. Seul le couteau xuxu coupe une petite feuille, pour une portion. Deux nuits à l’air laissent les feuilles séchées humides."
+te_manual_0_2,"Par paquet : 1 portion, 2 feuilles, 4 unités d’énergie. Ajoutez 1 extrait pour la saveur. Une seringue sert deux fois sur la pulpe ou une fois sur un fruit. Cigare : 1 feuille géante dans le bac à papier, 4 portions, 4 unités. Les ingrédients humides donnent des défauts."
+te_manual_0_3,"Livrez depuis le stock et récupérez les objets au comptoir. Sept contrats par semaine ouvrent un contrat de tampon. Après quatre tampons, le cinquième contrat est sans délai : livrez les 17 paquets authentiques et intacts, tamponnés xuxu, pour débloquer le tabac vivace."
+te_manual_1_title,Boutique et réputation
+te_manual_1_0,"La boutique de nuit vend enseigne, graines, seringues, boîtes de feuilles, outils et machines. La difficulté et les remises modifient les prix."
+te_manual_1_1,"L’enseigne attire Chenzi avec 5 étiquettes chaque jour et les vendeurs avec 3 paquets, hors bonus de réputation. Vérifiez l’authenticité, l’état et l’étiquette avant achat."
+te_manual_1_2,"Par tranche de 20 de réputation jusqu’à 200, ajoutez une graine, une seringue et une boîte, un paquet du vendeur et une étiquette de Chenzi."
+te_manual_1_3,"À −20/−40, il y a 2/4 graines et seringues de moins. À −60, la boutique ferme et il reste 1 contrat. À −80, plus de nouveaux contrats. La boutique vend aussi trois recueils."
+te_manual_2_title,"Cultiver, sécher et hacher"
+te_manual_2_0,L’incubateur produit une feuille normale par graine en une nuit. L’hydroponie en donne deux de base. Leur taille dépend de la santé. Voir le manuel d’hydroponie.
+te_manual_2_1,"Le séchoir traite ensemble toutes les tailles de feuilles pour six unités d’énergie. Les tailles restent les mêmes. Après deux nuits à l’air, les feuilles restent humides."
+te_manual_2_2,"Les feuilles séchées et le tabac haché reprennent l’humidité la nuit. Séchez-les à nouveau. Le tabac humide crée un paquet défectueux valant 30% de moins, irréparable au séchoir."
+te_manual_2_3,"Petite feuille séchée : couteau xuxu uniquement, 1 portion. Feuille normale : 1/2, géante : 4/8 avec un couteau ordinaire/xuxu. L’humidité reste."
+te_manual_3_title,Fabriquer les cigarettes
+te_manual_3_0,"Chaque paquet coûte une portion de tabac, deux feuilles et quatre unités d’énergie. Les feuilles isolées et en boîte se combinent. La boîte vide reste."
+te_manual_3_1,"Une seringue vide extrait une dose d’un fruit, puis est consommée en fabrication. La pulpe fournit une dose par quart. Une seringue peut piquer la pulpe deux fois."
+te_manual_3_2,"Cigare : 1 feuille géante sèche dans le bac à papier, 4 portions de tabac et 4 unités d’énergie. Après deux nuits, un cigare humide perd 30%. Le séchoir ne le répare pas."
+te_manual_3_3,Lancez la machine ou laissez-la fonctionner la nuit pour un paquet. Les effets des additifs se cumulent dans ce paquet. L’infobulle affiche plaisir et toxicité.
+te_manual_4_title,Inspecter et vendre
+te_manual_4_0,"Le guide d’authenticité montre emballages, lettres, sceaux et marques sur 14 pages. L’étiqueteuse change les indications visibles. Une tromperie détectée à la vente coûte 2 de réputation par paquet."
+te_manual_4_1,"Les cigarettes communes sont authentiques. Loupe pour les paquets examinables, double-clic pour l’état. Défaut : −30%. Les clients des quartiers modestes repèrent les faux, ceux des quartiers riches les défauts."
+te_manual_4_2,"Le contrôle d’étiquette retire le sticker et rétablit le prix. Les clients qui inspectent préviennent, puis retirent 10 de réputation en cas de fraude. Le panneau affiche les goûts : +10% par correspondance, jusqu’à +20%."
+te_manual_4_3,"Les goûts apparaissent dans l’écran de vente. Saveur ou qualité correspondante : +10% chacune, +20% ensemble. Les raretés recherchées et le budget varient selon le client."
+te_manual_5_title,Étiquettes et tampons
+te_manual_5_0,"Fabrication artisanale : −20%. Pastel, Aphélie, Kepler et xuxu donnent 0%, +20%, +40% et +80%. Un bonus de fabricant remplace le précédent."
+te_manual_5_1,"Faites glisser une étiquette jetable sur le paquet. Un acheteur qui la repère l’arrache, recalcule son offre et vous fait perdre 10 de réputation de l’Anneau extérieur."
+te_manual_5_2,"Les contrats spéciaux donnent des tampons permanents. Placez-en un dans la machine, activez son emplacement et glissez la machine sur un paquet. Le tampon est réutilisable."
+te_manual_5_3,Les étiquettes coûtent 10/25/60/120 crédits. Les vendeurs peuvent aussi en poser. Les contrats paient selon le fabricant d’origine sous l’étiquette.
+te_manual_6_title,Contrats quotidiens
+te_manual_6_0,"En général, trois contrats de tabac et trois d’alcool. Un contrat accepte quatre paquets de base ou deux paquets aromatisés communs. Le premier dépôt fixe le choix."
+te_manual_6_1,"Une fois le contrat accepté, sélectionnez-le parmi ceux en cours, puis les articles en stock. Tabac normalement authentique et intact. Suivez la qualité d’alcool demandée."
+te_manual_6_2,"Délais ordinaire, rare et exceptionnel : 5, 3 et 2 jours. Valeur réelle +300, +500 ou +800 crédits, cinq de réputation et 4, 6 ou 10 graines."
+te_manual_6_3,Réclamez au terminal. Les graines arrivent au comptoir ou attendent s’il est plein. Un contrat achevé est payé à l’échéance. Un échec ne rend pas les articles déjà livrés.
+te_manual_7_title,Tampons et tabac vivace
+te_manual_7_0,Terminez 7 contrats dans la semaine pour obtenir le prochain contrat de tampon de xuxu. Les quatre niveaux suivent la rareté des tabacs aromatisés.
+te_manual_7_1,"Livrez 5 tabacs ou alcools de la rareté indiquée, au choix, en 3 jours. Récompense : tampon, 5 points de réputation, 4 graines. En cas d’échec, réessayez la semaine suivante."
+te_manual_7_2,"Une fois les quatre tampons obtenus, le cinquième contrat est sans délai. Livrez un paquet authentique et intact de chacune des 17 variétés avec le tampon permanent xuxu."
+te_manual_7_3,La livraison débloque le gène vivace. Ces plantes restent après récolte dans la machine. Le certificat de brassage intermédiaire débloque le retour de graines du tabac ordinaire.
+te_item_cigar_name,Cigare
+te_item_cigar_description,"Roulé entièrement à la main, avec une feuille géante de tabac séché pour la cape et quatre portions de tabac haché pour la tripe.\nSeuls les notables du quartier supérieur et ceux qui ont vraiment fait fortune peuvent se l’offrir.\nIl se consume très lentement. Sa fumée puissante reste au fond de la langue et laisse une longue note en bouche.\nAprès deux nuits hors d’une boîte anti-humidité, il prend l’humidité, même dans un espace de stockage ordinaire. Il perd 30 % de sa valeur et le séchoir ne peut pas le remettre en état."
+te_moisture_box_name,Boîte anti-humidité
+te_moisture_box_description,"Double-cliquez pour ouvrir. Chaque page fait 12×12 cases. Un kit d’extension de stockage ajoute une page, jusqu’à cinq. Cigares, feuilles sèches et tabac restent au sec. Le séchage des feuilles fraîches est suspendu. Les défauts existants restent."
+te_item_small_dry_description,"Glissez un couteau sur le tabac séché : couteau ordinaire 1 filament, couteau xuxu 2.\nLe tabac séché s’humidifie la nuit mais reste coupable ; séchez-le d’abord pour éviter les défauts.\nSeul le couteau xuxu peut couper une petite feuille séchée. Elle donne une portion."
+te_item_large_dry_description,"Une grande feuille de tabac séchée. Un couteau ordinaire donne quatre portions, celui de xuxu en donne huit.\nPour un cigare, placez une feuille dans le bac à papier et quatre portions dans le bac à tabac. Coût : quatre unités d’énergie.\nLa feuille humide peut encore être hachée ou roulée. Un cigare roulé avec des ingrédients humides perd définitivement 30% de sa valeur."
+te_auth_plate_company,xuxu Anneau extérieur
+te_auth_plate_title,Authentification · {0}
+te_auth_plate_trademark,Marque en détail
+te_auth_plate_compare,"Comparez le motif entier, son contour et ses détails."
+te_auth_plate_genuine,Authentique
+te_auth_plate_wrong1,Erreur 1
+te_auth_plate_wrong2,Erreur 2
+te_auth_plate_wrong3,Erreur 3
+te_auth_plate_repeat,Un nouvel examen ne change pas l’emballage.
+te_auth_plate_overview,"Comparez le lettrage, la marque et le sceau au paquet authentique. Plusieurs défauts peuvent coexister. La page suivante agrandit la marque."
+te_auth_plate_pack,Paquet authentique
+te_auth_plate_lettering,Défauts du lettrage
+te_auth_plate_lettering_hint,"Police incorrecte, fautes ou lettres manquantes indiquent une contrefaçon."
+te_auth_plate_font,Mauvaise police
+te_auth_plate_spelling,Faute d’orthographe
+te_auth_plate_seal,Défauts du sceau
+te_auth_plate_seal_hint,Un sceau absent ou endommagé indique une contrefaçon.
+te_auth_plate_wrong,Incorrect

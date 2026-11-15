@@ -11,11 +11,11 @@ te_item_paper_description,Thin paper gathers the fragrance of a leaf.\nPut in th
 te_item_paperbox_name,Rolling Paper Box
 te_item_paperbox_description,"A full box holds 8 rolling papers, enough paper for 4 packs. Double-click to check how many remain.\nPut the whole box in the machine's Paper area; it takes 2 sheets per pack and keeps the empty box. Can be combined with loose papers."
 te_item_syringe_name,Extraction Syringe
-te_item_syringe_description,"Drag onto brewing pulp to draw one quarter, gaining 1 extract dose. Cannot mix flavors while extract remains.\nPut the filled syringe in the machine's Extract area; each fruit pack uses 1 dose. Each syringe allows 2 extractions and is consumed only after its final dose successfully makes a pack."
+te_item_syringe_description,Drag an empty syringe onto a fruit to use 1 fruit and gain 1 dose. The syringe is used up after a pack is made. Pulp yields 1 dose per quarter and allows 2 draws. Do not mix flavors while extract remains. Load the syringe into the Extract area; each pack uses 1 dose.
 te_item_partialpulp_name,Remaining Pulp
 te_item_partialpulp_description,Drag a syringe with extractions remaining onto this pulp. Each use draws one quarter for 1 cigarette-extract dose. Cannot satisfy brewing recipes that require a full pulp.
 te_item_knife_name,xuxu Knife
-te_item_knife_description,"Drag onto dried tobacco to yield 2 shreds per leaf, compared with 1 from an ordinary knife. Can cut damp dried tobacco without removing its moisture.\nAlso kills rats and fits in a toolbox."
+te_item_knife_description,"Drag onto dried tobacco to yield 2 shreds per leaf, compared with 1 from an ordinary knife. Can cut damp dried tobacco without removing its moisture.\nAlso kills rats and fits in a toolbox.\nA huge dried leaf yields four portions with a normal knife or eight with the xuxu knife."
 te_item_sign_name,Tobacco Sign
 te_item_sign_description,"Place in your showcase to invite tobacco vendors and Chenzi when opening. Chenzi brings disposable company labels daily; vendors sell cigarettes.\nUse the desktop Commission Terminal to accept, submit and claim commissions. Commissions need neither Chenzi nor this sign."
 te_cigarette_lore_basic,Only a faint tobacco taste and a little warmth. Those who say little keep smoking for a long time.
@@ -57,13 +57,13 @@ te_cigarette_osmanthus_name,Osmanthus Cigarettes
 te_cigarette_bayberry_name,Bayberry Cigarettes
 te_cigarette_stardust_berry_name,Stardust Berry Cigarettes
 te_cigarette_void_plum_name,Void Plum Cigarettes
-te_syringe_status,"Extractions left: {0}/2. Extract held: {1} dose(s).\nDrag onto brewing pulp to draw one quarter, gaining 1 dose per extraction. Cannot mix flavors while extract remains.\nPlace the filled syringe in the machine's Extract area; each fruit pack uses 1 dose. After both extractions, the syringe is consumed only when its final dose successfully makes a pack."
+te_syringe_status,Extractions left: {0}/{2}. Extract held: {1} dose(s).\nDrag an empty syringe onto a fruit to use 1 fruit and gain 1 dose. The syringe is used up after a pack is made. Pulp yields 1 dose per quarter and allows 2 draws. Do not mix flavors while extract remains. Load the syringe into the Extract area; each pack uses 1 dose.
 te_dryer_name,Tobacco Dryer
 te_dryer_description,"Double-click to open. Insert a charged battery in Power and leaves, damp dried tobacco or damp shreds in Ingredients.\nProcess dries all eligible inputs for 6 energy per batch. Overnight drying handles 1 item for 6 energy. Output must fit the entire batch; insufficient space spends no materials or charge. Open the guide note on the right for details."
 te_maker_name,Cigarette Machine
-te_maker_description,"Double-click to open. Insert a charged battery, shreds in Shreds, and loose papers or whole boxes in Paper. Each click or night makes 1 pack using 1 shred, 2 papers and 4 energy.\nOptional: a filled syringe in Extract supplies 1 dose per pack; without it, the machine makes basic cigarettes. All medicines in Additives, including full stacks, go into that single pack and add their euphoria and toxicity. Damp shreds cause irreparable defects. Collect from Output; see the guide note on the right."
+te_maker_description,"Double-click to open. Insert a charged battery, shreds in Shreds, and loose papers or whole boxes in Paper. Each click or night makes 1 pack using 1 shred, 2 papers and 4 energy.\nOptional: a filled syringe in Extract supplies 1 dose per pack; without it, the machine makes basic cigarettes. All medicines in Additives, including full stacks, go into that single pack and add their euphoria and toxicity. Damp shreds cause irreparable defects. Collect from Output; see the guide note on the right.\nCigar: put a huge dried leaf in the paper area and four shreds in the shred area. Uses four energy. Damp materials make a defective cigar. A wrapper selects cigar mode, which uses no papers, extracts, or additives."
 te_guide_name,Fruit Cigarette Authentication Guide
-te_guide_description,"Buy and double-click to read. Use the bottom arrows to turn pages and the top-right button to enlarge. Its 14 pages compare genuine packaging, lettering, seals and trademarks for seven fruit cigarettes.\nInspect a pack with a magnifier and compare it with the guide. This checks authenticity; use Check condition for defects and Check label for disposable producer labels."
+te_guide_description,"Double-click to read. Use the bottom arrows to turn pages and the top-right button to enlarge. Its 14 pages compare genuine packaging, lettering, seals and trademarks for seven fruit cigarettes.\nInspect a pack with a magnifier and compare it with the guide. This checks authenticity; use Check condition for defects and Check label for disposable producer labels."
 te_story_description,An Outer Ring story in {0} pages. Buy and double-click or choose Open; use the book's maximize control for a larger view. Story text is in Chinese.
 te_story_book_forty_seven_name,Forty-Seven
 te_story_book_nini_name,Nini
@@ -115,7 +115,7 @@ te_producer_labels_06,Producer label
 te_stamp_machine_03,Off
 te_stamp_machine_04,Active
 te_machine_instructions_01,"1. Insert a charged battery.\n2. Put leaves, damp dried tobacco or damp shreds in Ingredients.\n\n3. Process dries all eligible inputs for 6 energy per batch. The entire batch must fit in Output; insufficient space spends no materials or energy.\n4. Overnight processing dries one item for 6 energy.\n5. Collect dried tobacco or shreds. These materials become damp overnight and can be dried again. Leaves naturally become damp dried tobacco after two days."
-te_machine_instructions_02,"1. Insert a charged battery.\n2. Put shreds in Shreds. Paper accepts loose rolling papers or paper boxes, using their contents automatically and retaining empty boxes. Each pack uses 1 shred, 2 papers and 4 energy.\n\n3. Optionally place a filled fruit-extract syringe in Extract for flavored cigarettes. Without extract, the machine makes basic cigarettes. Syringe extraction uses are limited.\n4. Additives optionally accepts dream dust, fentanyl tablets and other euphoric or toxic medicines. Every cycle absorbs all medicines and their full stack quantities, adding their actual chemistry to one pack. Medicines are optional.\n5. Process makes one pack; overnight processing also makes one. Missing materials, charge or output space prevents production.\n6. Damp shreds produce irreparable defects. Collect packs from Output."
+te_machine_instructions_02,"1. Insert a charged battery.\n2. Put shreds in Shreds. Paper accepts loose rolling papers or paper boxes, using their contents automatically and retaining empty boxes. Each pack uses 1 shred, 2 papers and 4 energy.\n\n3. Optionally place a filled fruit-extract syringe in Extract for flavored cigarettes. Without extract, the machine makes basic cigarettes. Syringe extraction uses are limited.\n4. Additives optionally accepts dream dust, fentanyl tablets and other euphoric or toxic medicines. Every cycle absorbs all medicines and their full stack quantities, adding their actual chemistry to one pack. Medicines are optional.\n5. Process makes one pack; overnight processing also makes one. Missing materials, charge or output space prevents production.\n6. Damp shreds produce irreparable defects. Collect packs from Output.\n\nCigar: put a huge dried leaf in the paper area and four shreds in the shred area. Uses four energy. Damp materials make a defective cigar. A wrapper selects cigar mode, which uses no papers, extracts, or additives."
 te_machines_01,Insert ingredients and battery.\nThen press Process.
 te_machines_02,Process
 te_machines_03,Processing complete.\nCollect from Output.
@@ -402,6 +402,7 @@ te_commission_smoke_requirement,{0} cigarettes
 te_commission_progress_items,{0} {1}/{2} items{3}
 te_commission_progress_wine,{0} {1}/{2} bottles{3}
 te_commission_progress_smoke,{0} {1}/{2} packs{3}
+te_commission_progress_cigar,{0}: {1}/{2}{3}
 te_delivery_title,Choose items to deliver
 te_delivery_help,Choose the items to deliver. Confirm to remove them from stock.
 te_delivery_back,Back
@@ -426,3 +427,111 @@ te_cigarette_tier_lore_0,A pack as familiar as the street you walk every day.
 te_cigarette_tier_lore_1,Opening the pack feels like opening a letter from far away.
 te_cigarette_tier_lore_2,"The details fade, but a familiar scent remembers."
 te_cigarette_tier_lore_3,"The place it came from has faded from memory, but its scent lingers."
+te_hydro_small_leaf,Mini tobacco leaf
+te_hydro_large_leaf,Large tobacco leaf
+te_hydro_fertile,Intermediate brewing certificate earned. Hydroponic harvests can return seeds.
+te_hydro_locked,Hydroponic crop. Earn the intermediate brewing certificate to remove infertility and unlock seed returns.
+te_hydro_perennial_locked,Complete the fifth special commission to use perennial genes on tobacco seeds.
+te_hydro_trial,Perennial Tobacco Trial
+te_hydro_no_deadline,No time limit
+te_hydro_trial_reason,Got all four stamps? Bring me one pack of every kind and stamp them all with the xuxu Outer Ring Company mark. Take your time.
+te_hydro_trial_reward,Reward: Unlock the perennial gene for tobacco seeds.
+te_tobacco_hydroponic_guide_name,Tobacco Hydroponics Guide
+te_tobacco_hydroponic_guide_description,"Double-click to read about hydroponic tobacco, harvests, seed genetics, and the perennial commission."
+te_hydro_guide_plant_title,Planting Tobacco
+te_hydro_guide_plant_first_body,"Load the seed, charged battery, and water container into the hydroponic machine. Growth advances overnight."
+te_hydro_guide_plant_second,Growing conditions
+te_hydro_guide_harvest_title,Harvesting Tobacco
+te_hydro_guide_genes_title,Seeds and Genetics
+te_hydro_guide_genes_first,Innate and shop genes
+te_hydro_guide_genes_second,Intermediate brewing certificate
+te_hydro_guide_trial_title,Perennial Commission
+te_hydro_guide_trial_first,The fifth special commission
+te_hydro_guide_trial_first_body,Collect all four producer stamps to unlock the Perennial Tobacco Trial at the terminal. The commission has no deadline.
+te_hydro_guide_trial_second,Deliver all 17 cigarettes
+te_hydro_guide_trial_second_body,"Deliver one Basic pack and one of each of the 16 flavors. All must be genuine, in good condition, and stamped with the permanent xuxu company mark."
+te_hydro_guide_battery,Charged battery
+te_hydro_guide_water,Water container
+te_hydro_guide_work,Growth points
+te_hydro_guide_water_rate,Water per cycle
+te_hydro_guide_minerals,Ideal minerals
+te_hydro_guide_health_note,The plant analyzer’s growth rating shows health. Mineral imbalance and polluted water lower it.
+te_hydro_guide_normal_leaf,Normal leaf
+te_hydro_guide_mini_share,Health at harvest · Mini leaf share
+te_hydro_guide_mini_rounding,"Round the mini leaf count down. The base yield is 2 leaves, before modules and genes."
+te_hydro_guide_large_note,"At 96–99% health the chance of a large leaf is 20%; at 100% it is 40%. At most one per harvest, taking one yield slot. Dry and shred any leaf size."
+te_hydro_guide_innate_note,Innate: Complex Genome II and Infertile X. Shop seeds roll two more genes.
+te_hydro_guide_shop_odds,Two random genes on shop seeds
+te_hydro_guide_mixed_genes,"One positive, one negative"
+te_hydro_guide_positive_genes,Two positive
+te_hydro_guide_negative_genes,Two negative
+te_hydro_guide_return_note,The intermediate certificate removes initial infertility. Annual plants return one seed by default. Fertile can add more. Offspring inherit genes with zero heat.
+te_hydro_guide_regrowth,Perennial tobacco stays in the machine and grows another crop of leaves.
+te_item_small_dry_name,Mini dried tobacco leaf
+te_item_large_dry_name,Huge Dried Tobacco Leaf
+te_tobacco_manual_name,Tobacco Manual
+te_tobacco_manual_description,"Double-click to read eight illustrated pages on growing, making, inspecting, trading, labeling, and commissions."
+te_manual_0_title,Tobacco Manual
+te_manual_0_0,Buy a sign and supplies at the night shop. Display the sign before opening to attract Chenzi with labels and vendors with cigarettes.
+te_manual_0_1,"Grow leaves in an incubator or hydroponics, then dry and cut them. Mini leaves yield one shred with the xuxu knife only. Air-drying takes two nights and leaves them damp."
+te_manual_0_2,"Per pack: 1 shred, 2 papers and 4 energy. Add 1 extract for flavor. A syringe draws pulp twice or fruit once. For a cigar: 1 huge dried leaf in the paper slot, 4 shreds and 4 energy. Damp inputs yield defects."
+te_manual_0_3,"Submit from inventory and collect physical rewards at the counter. Finish 7 jobs in a week to unlock a stamp job. With all 4 stamps, a fifth job has no deadline: turn in all 17 genuine, intact packs with permanent xuxu stamps to unlock perennial tobacco."
+te_manual_1_title,Shop and Reputation
+te_manual_1_0,"The night shop sells seeds, syringes, boxes of papers, tools, and machines. Game difficulty and shop discounts affect prices."
+te_manual_1_1,"Displaying the sign attracts Chenzi with disposable labels and vendors with cigarettes. Base stock: five labels and three packs. Check authenticity, condition, and labels first."
+te_manual_1_2,"Each 20 Outer Ring reputation, up to 200, adds one seed, syringes, and paper boxes, plus one vendor pack and one label from Chenzi."
+te_manual_1_3,"At −20 or −40, seeds and syringes each drop by two or four. At −60 the shop closes and one commission appears. At −80 you cannot accept new work. The shop also sells three storybooks."
+te_manual_2_title,"Grow, Dry, and Cut"
+te_manual_2_0,"The incubator grows one normal leaf per seed overnight. Hydroponics yields two leaves by default. Health affects leaf size. See the Tobacco Hydroponics Guide for genes, water, and seed returns."
+te_manual_2_1,"A dryer processes mini, normal, and large leaves together for six energy per batch. Leaves keep their size. Air-drying for two nights gives damp dried leaves."
+te_manual_2_2,Dried leaves and shreds get damp overnight. Dry them again before crafting. Damp shreds make irreparably defective packs worth 30% less.
+te_manual_2_3,Only the xuxu knife cuts mini dried leaves (1 shred). Regular leaves yield 1/2 and huge leaves 4/8 with a standard/xuxu knife. Moisture carries over.
+te_manual_3_title,Making Cigarettes
+te_manual_3_0,"Each pack uses one portion of shreds, two papers, and four energy. Use loose papers or full boxes. The maker draws from the box and leaves the empty box behind."
+te_manual_3_1,"Drag an empty syringe onto one fruit for one dose. Crafting consumes it. A quarter of pulp also gives one dose, and each syringe can draw from pulp twice."
+te_manual_3_2,"For a cigar, load 1 huge dried leaf into the paper slot and 4 shreds into the shred slot. Uses 4 energy. Cigars get damp in two nights, lose 30% in value and cannot be dried."
+te_manual_3_3,"Start processing or leave the maker overnight for one pack. Dream Dust slot additives combine, with pleasure and toxicity shown in the tooltip. Right-click to use when eligible for nicotine."
+te_manual_4_title,Inspection and Selling
+te_manual_4_0,"The 14-page Authentication Guide shows genuine packs, lettering, seals and trademarks. The label printer changes public authenticity and condition labels. If deception is spotted when selling, lose 2 reputation per pack."
+te_manual_4_1,Common cigarettes are genuine. Inspect eligible packs with the magnifier and double-click to check condition. Defects cost 30% in value. Lower District buyers spot fakes and Upper District buyers spot defects.
+te_manual_4_2,"Check Label peels disposable stickers and restores the original price. Inspectors warn you before buying and deduct 10 reputation if they spot one. The trade panel lists preferences: +10% per match, up to +20%."
+te_manual_4_3,"The trade panel lists flavor and quality preferences. Each match adds 10%, up to 20%. Lower District: Common to From Afar. Spacers: through Longing. Upper District and tourists: From Afar to Afterglow. Budgets still apply."
+te_manual_5_title,Labels and Stamps
+te_manual_5_0,"Handmade packs are −20%. Pastel, Aphelion, Kepler, and xuxu Outer Ring apply 0%, +20%, +40%, and +80%. Company modifiers replace one another."
+te_manual_5_1,"A disposable label changes the displayed company. A customer who detects it removes it, recalculates the offer, and deducts ten Outer Ring reputation."
+te_manual_5_2,"Earn permanent stamps from special commissions. Put a stamp in the machine, activate its slot, and drag the machine onto a pack. The stamp is reusable."
+te_manual_5_3,"Chenzi’s labels cost 10, 25, 60, or 120 credits. Vendor packs can also be relabeled. Commissions pay for the original company beneath the sticker."
+te_manual_6_title,Daily Commissions
+te_manual_6_0,The board normally offers three tobacco and three wine commissions. One tobacco contract accepts four Basic packs or two Common flavored packs. The first delivery commits to a route.
+te_manual_6_1,"Accept an offer, select its face under Pending, and choose Submit from Inventory. Select the exact items. Packs normally need to be genuine and in good condition. Follow the listed wine quality."
+te_manual_6_2,"Ordinary, Rare, and Exceptional contracts last 5, 3, or 2 days. They pay genuine value plus 300, 500, or 800 credits, plus five reputation and 4, 6, or 10 seeds."
+te_manual_6_3,Claim at the terminal. Seeds go to the counter and wait if it is full. Completed rewards are claimed automatically at expiry. Incomplete contracts fail and delivered goods stay turned in.
+te_manual_7_title,Stamps and Perennials
+te_manual_7_0,Complete seven commissions in a week for xuxu’s next stamp contract. They progress from Common through From Afar and Longing to Afterglow.
+te_manual_7_1,"Deliver five matching cigarettes or wines within three days. Earn the permanent stamp, five reputation, and four seeds, with no credits. After failure, qualify again next week."
+te_manual_7_2,"After receiving all four stamps, accept the fifth contract with no deadline. Deliver one genuine, intact pack of all 17 varieties, each permanently stamped by xuxu Outer Ring."
+te_manual_7_3,Delivery unlocks perennial genetics. Perennial plants stay in the machine after harvest. The intermediate brewing certificate enables seed returns from ordinary tobacco.
+te_item_cigar_name,Cigar
+te_item_cigar_description,"Rolled entirely by hand, with one whole huge dried tobacco leaf for the wrapper and four portions of shredded tobacco for the filler.\nOnly Upper District elites and people who've really made their money can afford to smoke one.\nIt burns slowly. The smoke lingers at the back of the tongue, hits hard, and leaves a long finish.\nTwo nights outside a Moisture-Proof Box will make it damp, even in ordinary storage. It loses 30% of its value, and the dryer cannot restore it."
+te_moisture_box_name,Moisture-Proof Box
+te_moisture_box_description,"Double-click to open. Each page is 12×12. A Storage Bay Expansion Kit adds one page, up to five. Cigars, dried leaves, and shreds stay dry inside. Fresh leaves stop air-drying. Existing dampness and defects remain."
+te_item_small_dry_description,"Drag a knife onto dried tobacco to cut it: ordinary knives yield 1 shred; the xuxu Knife yields 2.\nGets damp overnight but can still be cut. Use the dryer to remove moisture before crafting, avoiding defective cigarettes.\nOnly the xuxu knife can cut a mini dried leaf, yielding one portion of shreds."
+te_item_large_dry_description,"A huge dried tobacco leaf. A standard knife yields four portions of shreds and the xuxu knife yields eight.\nFor a cigar, place one huge dried leaf in the paper area and four portions of shreds in the shred area. Rolling uses four energy.\nThe leaf gets damp overnight and can still be cut or rolled. Damp ingredients make an irreparably defective cigar worth 30% less."
+te_auth_plate_company,xuxu Outer Ring Company
+te_auth_plate_title,{0} Cigarette Authentication
+te_auth_plate_trademark,Trademark Details
+te_auth_plate_compare,Compare the full design. Check its outline and internal details.
+te_auth_plate_genuine,Genuine
+te_auth_plate_wrong1,Incorrect 1
+te_auth_plate_wrong2,Incorrect 2
+te_auth_plate_wrong3,Incorrect 3
+te_auth_plate_repeat,Reinspection never changes the packaging.
+te_auth_plate_overview,"Use the genuine pack as a reference. Check lettering, trademark and security seal. Multiple flaws can coexist. Enlarged trademarks are on the next page."
+te_auth_plate_pack,Genuine pack
+te_auth_plate_lettering,Lettering issues
+te_auth_plate_lettering_hint,"Wrong fonts, spelling or missing letters indicate a counterfeit."
+te_auth_plate_font,Wrong font
+te_auth_plate_spelling,Misspelling
+te_auth_plate_seal,Security seal issues
+te_auth_plate_seal_hint,A missing or damaged seal indicates a counterfeit.
+te_auth_plate_wrong,Incorrect
