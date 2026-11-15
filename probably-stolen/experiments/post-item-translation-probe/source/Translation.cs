@@ -10,11 +10,15 @@ namespace PostItemTranslationProbe
             new Dictionary<string, Item>(StringComparer.Ordinal);
         private readonly Dictionary<string, Paper> papers =
             new Dictionary<string, Paper>(StringComparer.Ordinal);
+        private readonly Dictionary<string, Perk> perks =
+            new Dictionary<string, Perk>(StringComparer.Ordinal);
 
         public IEnumerable<Item> Items => items.Values;
         public IEnumerable<Paper> Papers => papers.Values;
+        public IEnumerable<Perk> Perks => perks.Values;
         public int ItemCount => items.Count;
         public int PaperCount => papers.Count;
+        public int PerkCount => perks.Count;
 
         public sealed class Paper
         {
@@ -24,6 +28,32 @@ namespace PostItemTranslationProbe
             {
                 ModId = modId; BookId = bookId; ElementId = elementId;
                 Original = original; Korean = korean;
+            }
+        }
+
+        // Perk text is a text-provider only. No cost, icon, slot count or effect changes.
+        public sealed class Perk
+        {
+            public readonly string ModId, PerkId;
+            public string NameSource { get; private set; }
+            public string NameKorean { get; private set; }
+            public string DescriptionSource { get; private set; }
+            public string DescriptionKorean { get; private set; }
+            public Perk(string modId, string perkId) { ModId = modId; PerkId = perkId; }
+
+            public void Add(string field, string original, string korean)
+            {
+                if (field == "name")
+                {
+                    if (NameSource != null) throw new FormatException("Duplicate perk name");
+                    NameSource = original; NameKorean = korean;
+                }
+                else if (field == "description")
+                {
+                    if (DescriptionSource != null) throw new FormatException("Duplicate perk description");
+                    DescriptionSource = original; DescriptionKorean = korean;
+                }
+                else throw new FormatException("Unsupported perk field");
             }
         }
 
@@ -128,6 +158,18 @@ namespace PostItemTranslationProbe
                         throw new FormatException("Duplicate paper element");
                     result.papers.Add(key,
                         new Paper(modId, r[1], r[2], r[3], r[4]));
+                }
+                else if (r[0] == "Perk")
+                {
+                    // Only named mod-owned perks; never change vanilla perk metadata.
+                    if (!r[1].StartsWith(modId + ".", StringComparison.Ordinal))
+                        throw new FormatException("Perk ID must begin with owner ModID");
+                    if (!result.perks.TryGetValue(r[1], out var perk))
+                    {
+                        perk = new Perk(modId, r[1]);
+                        result.perks.Add(r[1], perk);
+                    }
+                    perk.Add(r[2], r[3], r[4]);
                 }
                 else throw new FormatException("Unsupported translation type");
             }
