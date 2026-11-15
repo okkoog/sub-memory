@@ -1,48 +1,56 @@
-# Post Item Translation Probe v0.3.1 — 원본 촉수 모드 단독 번역 시험판
+# Post Item Translation Probe v0.3.2 — 촉수 시작 특성 번역 추가
 
-**대상:** `lewd_meme` v1.7.1 — `TEST.zip/lewd_meme1.7.1/MidnightPawn.dll` (SHA-256: `97cb1c61ec1c8ee495c8ab634281eb0ca6fdcb96ce0bceb191d975eb43a055b2`).
+**독립 시험 모드. 기존 통합 한국어팩 및 촉수 원본 DLL 변경 없음. Harmony/IL 패치/메서드 후킹 없음.**
 
-## 범위
-이 ZIP에는 **원본 촉수 모드용 `Translations/lewd_meme.csv`만** 있습니다. 이전의 `lewd_meme_remake.csv`, `probe.paper_fixture.csv` 및 시험 문서 모드는 배포하지 않습니다. 기존 한국어팩은 수정하지 않습니다.
+이번 v0.3.2는 원본 촉수 모드 `lewd_meme`의 **시작 특성**을 아이템과 같은 외부 CSV에서 번역하도록 확장했습니다. 시작 특성 화면은 게임에 진입하기 전이므로, CSV를 먼저 읽고 공식 공개 특성 객체의 표시용 `nameProvider`, `descriptionProvider`만 래핑합니다. 비용·아이콘·효과·식별자는 손대지 않습니다.
 
-원본 DLL에서 실제 `Directory.Set` 등록 확인: 아이템 ID 14개. 게임의 공식 생성 함수 경로에서 읽는 **정적 이름·설명·부가 설명 34행**을 CSV에 기록했습니다. 생성 후 텍스트가 바뀌는 문구에는 현재 방식이 항상 적용되지 않습니다.
+### CSV 구성
 
-| 항목 | 현황 |
-| --- | --- |
-| 모드별 CSV | `Translations/lewd_meme.csv` 한 개 |
-| 등록 아이템 | 14종 |
-| 정적 번역 행 | 34행 (이름 13, 짧은 설명 11, 부가 설명 10) |
-| 신규 게임에서 생성된 정적 아이템 | 번역 적용 대상 |
-| 아이템의 동적 설명·툴팁·보고서·설정 UI·대사 | **별도 지원 필요 / 미완료** |
-| DLL 후킹·원본 파일 변경 | 없음 |
+`PostItemTranslationProbe/Translations/lewd_meme.csv` **한 개만** 사용합니다.
 
-원본 `MidnightPawn.dll`에서 추출한 중국어 포함 문자열은 중복 제거 **523종**, 총 사용 위치 705개입니다. 여기에는 실제 화면 문구와 내부 분류명·로그가 혼재하므로 전부 CSV에 강제 주입하지 않았습니다. 분류용 검수 목록은 별도 `lewd_meme_1.7.1_full_audit.csv`에 있습니다.
+| 종류 | 수량 | 적용 |
+| --- | ---: | --- |
+| `Item` | 정적 문구 34행 / 아이템 14종 | 게임 디렉터리 생성 시 |
+| `Perk` | 2행 / 시작 특성 1종 | **게임 시작 특성 선택 화면이 열리기 전** |
+| `Paper` | 0행 | 이번 촉수 모드에는 실증 대상 없음 |
 
-## 설치
-게임을 종료한 뒤, ZIP의 `PostItemTranslationProbe` 폴더를 다음 경로로 교체하세요.
+CSV 예시:
 
-`G:\steam\steamapps\common\Probably Stolen\Mods\PostItemTranslationProbe`
-
-기존 파일 `Translations/items.csv` 및 기타 실험용 CSV가 남아 있다면 제거합니다. **원본 `lewd_meme` 모드를 함께 활성화**하고 신규 게임/신규 아이템으로 테스트하세요.
-
-## 외부 CSV 관리 방식
 ```csv
 Type,Target,Field,Original,Korean
 Item,tentacle_body,name,触手本体,촉수 본체
-Item,alarm_clock,name,闹钟,알람시계
+Perk,lewd_meme.tentacle_origin,name,触手起源,촉수 기원
+Perk,lewd_meme.tentacle_origin,description,원본 전체 문장,한국어 전체 문장
 ```
-- 모드 하나당 파일 하나. 새 모드를 지원하려면 `Translations/<ModID>.csv`를 추가하면 됩니다. 이 시험팩은 다른 모드를 포함하지 않습니다.
-- 이름, `shortDescription`, `longDescription`, `flavorText` 네 필드만 지원합니다.
-- 원문이 **완전히 일치**할 때만 번역하고, 그렇지 않으면 그대로 둡니다.
-- CSV 인용부호/쉼표/개행/UTF-8 BOM/서식 변수 검사 포함.
-- CSV 수정 후 게임을 완전히 재시작해야 합니다.
 
-## 완전 번역까지 남은 작업
-**현재 완료된 것은 원본 촉수 모드의 정적 아이템 문자열 정리 단계입니다. 완전 번역본이 아닙니다.**
+마지막 설명 행은 구조 예시입니다. **실제 CSV에는 원본 중국어 문장과 전체 한국어 번역을 그대로 입력**했습니다. 대상 추가는 DLL 수정 없이 CSV에 행을 더하는 방식이며, 모드는 `ModLoader.Mods`에 활성 상태로 로드되어야 합니다.
 
-1. `CorruptTentacle.RefreshTooltip`, `TentaclePrinter.RefreshDescription`, `TentacleTrap.RefreshDescription`처럼 **사용 도중 재생성되는 설명**은 생성 시 번역만으로 유지되지 않습니다.
-2. `MaidenTooltip.OnTooltip`, `TentacleBody.ShowReport`, `AlarmClock.WriteMorningReport`, `TentaclePrinter.RecipeTip` 등의 화면 문구는 공식 API로 개입 가능한 범위를 추가 조사해야 합니다.
-3. 일반 대사·자체 UI 전용 범용 출력 이벤트가 공식 API에 확인되지 않았습니다. **후킹 금지 조건을 유지하면 일부 문구의 인게임 적용은 불가능할 수 있습니다.**
-4. 번역용 factory를 등록하면 아이템 출처 모드 표시가 바뀔 가능성이 있으며, 출처 태그를 임의 변경하지 않습니다.
+### 설치
 
-기존 한국어팩과 원본 모드 DLL은 변경하지 않았습니다. GitHub의 별도 실험 브랜치에서만 빌드합니다.
+게임 종료 후 ZIP의 `PostItemTranslationProbe` 폴더를 다음 위치에 덮어씁니다.
+
+`G:\steam\steamapps\common\Probably Stolen\Mods\PostItemTranslationProbe`
+
+기존 `Translations/items.csv`나 리메이크·가상 문서 시험용 CSV는 제거합니다. 원본 촉수 모드 `lewd_meme`를 켜고 게임을 완전히 재시작하세요.
+
+### 테스트
+
+1. 새 게임 만들기 → **시작 특성** 화면으로 들어갑니다. 촉수 특성 이름이 `촉수 기원`으로 표시되는지 확인합니다.
+2. 마우스를 올려 특성 설명이 한국어로 나오는지 확인합니다. 시작 아이템·특성 슬롯 +3·일일 수집 +3·여성 손님 유입 설명이 그대로 보존돼야 합니다.
+3. 실제로 해당 특성을 선택하고 게임에 진입합니다. 기존에 성공한 `촉수 본체` 아이템 이름도 한국어인지 확인합니다.
+4. 시험 번역 모드를 비활성화한 뒤 재시작하면 특성 이름·설명은 원문으로 돌아와야 합니다.
+5. 원본 촉수 모드 없이 번역 모드만 켰을 때 시작 특성 UI나 게임 초기화 오류가 없어야 합니다.
+
+### 주의
+
+- 게임 DLL 공개 API `StartingPerkList.GetModPerk`와 `StartingPerk.nameProvider/descriptionProvider`를 사용합니다. 다른 모드에서 특성 정의를 삭제·변경했거나 원문이 정확히 일치하지 않으면 건드리지 않습니다.
+- 표시 함수의 원본값을 매번 확인하고 한국어로 변환합니다. 로딩 중 등록이 늦어도 공식 `OnModAssetsLoaded` 이벤트에서 재검사합니다. 매 프레임 검색하지 않습니다.
+- 번역 모드를 비활성화할 때 **자신이 등록한 표시 함수인 경우에만** 원본으로 되돌립니다. 다른 모드가 나중에 교체했다면 건드리지 않습니다.
+- **실제 게임에서 초기 특성 UI가 번역되는지는 아직 미검증**입니다. 컴파일 및 테스트 스텁 통과 여부와 구분해야 합니다.
+- 시작 특성 문제와 별개로 동적 툴팁·야간 보고서·일반 NPC 대사는 현재 엔진에서 모두 지원하지 않습니다.
+- 이 시험판을 완전 번역본으로 배포하지 마세요. 기존 한국어팩과도 별개입니다.
+
+### 공식 API 근거
+
+- 게임 DLL: `StartingPerkList.GetModPerk(string)`, `StartingPerk.nameProvider`, `StartingPerk.descriptionProvider`, `ModHook.OnModAssetsLoaded`.
+- 공개 문서: https://github.com/dragonpan2/probably-stolen-modding/blob/3541332ad755a07e423077659863268256ccd233/ModdingGuide.md#starting-perks
