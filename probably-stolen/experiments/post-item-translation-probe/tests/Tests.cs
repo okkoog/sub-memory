@@ -1,113 +1,164 @@
 using System;
+using System.Linq;
 using PostItemTranslationProbe;
 class Tests
 {
     private static int checks;
-    static void Assert(bool ok, string description)
+    static void Check(bool c,string reason)
     {
-        checks++;
-        if (!ok) throw new Exception("FAILED " + description);
-        Console.WriteLine("PASS " + description);
+        checks++; if(!c)throw new Exception("FAILED: "+reason);
+        Console.WriteLine("PASS "+reason);
     }
-    static string Header = "ModID,ItemID,Field,Original,Korean\n";
+    static string Header="Type,Target,Field,Original,Korean\n";
+    static string Row="Item,tentacle_body,name,触手本体,촉수 본체\n";
+    static LoadedMod Owner(string id,bool enabled=true)
+    {
+        var m=new LoadedMod { Manifest=new ModManifest { ID=id },IsEnabled=enabled};
+        ModLoader.Mods.Add(m);
+        if(enabled)ModLoader.Enabled.Add(id);
+        return m;
+    }
+    static void Reset()
+    {
+        ModLoader.Mods.Clear(); ModLoader.Enabled.Clear(); ModHelper.Files.Clear();
+        DirectoryMaster.Current=null; ModSourceHelper.Owners.Clear();
+    }
+    static ModEntry Enable()
+    {
+        var m=new ModEntry();m.Init(new ModManifest { ID=ModEntry.Id });m.OnEnable();return m;
+    }
     static void Bad(string csv)
     {
-        bool rejected = false;
-        try { Translation.Parse(csv); } catch (FormatException) { rejected = true; }
-        Assert(rejected, "Malformed CSV rejected");
-    }
-    static ModEntry Start(string csv, params string[] targets)
-    {
-        ModLoader.Enabled.Clear(); ModHelper.Running.Clear();
-        ModHelper.Csv = csv;
-        foreach (var t in targets) { ModLoader.Enabled.Add(t); ModHelper.Running.Add(t); }
-        var m = new ModEntry();
-        m.Init(new ModManifest { ID = ModEntry.Id });
-        m.OnEnable();
-        ModHook.Assets();
-        return m;
+        bool rejected=false;
+        try {Translation.Parse("bad_mod",csv);}
+        catch(FormatException) {rejected=true;}
+        Check(rejected,"Invalid CSV safely rejected");
     }
     static void Main()
     {
-        var row = Header + "lewd_meme,tentacle_body,name,触手本体,촉수 본체\n";
-        var entries = Translation.Parse(row);
-        Assert(entries.Count == 1, "Generic CSV has one item");
-        var multi = row + "other_mod,other_item,name,English,한국어\n";
-        Assert(Translation.Parse(multi).Count == 2, "Two distinct mod IDs without DLL edits");
-        var doc = Translation.Parse("\uFEFF" + Header +
-            "another_mod,item,name,\"A, \"\"quoted\"\"\n{0}\",\"한글, \"\"인용\"\"\n{0}\"\n");
-        var itemTranslation = System.Linq.Enumerable.First(doc.Items);
-        var item = new GameItemElement { name = "A, \"quoted\"\n{0}" };
-        itemTranslation.Apply(item);
-        Assert(item.name == "한글, \"인용\"\n{0}", "BOM, commas, quotes, multiline and placeholders");
-        Bad(Header + "other,item,name,{0},{1}\n");
-        Bad(Header + "other,item,name,A,B\nother,item,name,A,C\n");
-        Bad(Header + "other,item,unitValue,A,B\n");
-        Bad(Header + "other,item,name,\"broken");
-        Bad(Header + "other,item,name,\"closed\"x,hi");
-        Bad(null);
+        var one=Translation.Parse("lewd_meme",Header+Row);
+        Check(one.ItemCount==1&&one.PaperCount==0,"Mod ID comes from filename, not DLL");
+        var two=Translation.Parse("another_mod",Header+
+             "Item,gadget,name,Original,번역\n"+
+             "Paper,guide,title,Original title,한글 제목\n");
+        Check(two.ItemCount==1&&two.PaperCount==1,"One per-mod CSV can mix item and UI");
+        var multiline=Translation.Parse("x","\uFEFF"+Header+
+             "Item,id,name,\"A, \"\"quoted\"\"\n{0}\",\"한글, \"\"인용\"\"\n{0}\"\n");
+        var item=multiline.Items.Single();
+        var objectItem=new GameItemElement{name="A, \"quoted\"\n{0}"};
+        item.Apply(objectItem);
+        Check(objectItem.name=="한글, \"인용\"\n{0}","UTF-8 BOM/CSV quotes/comma/newlines/placeholders");
+        foreach(var bad in new[]{Header+"Item,x,name,{0},{1}\n",
+             Header+Row+Row,Header+"Paper,b,a,Hello,안녕\nPaper,b,a,Hello,안녕\n",
+             Header+"Dialogue,x,y,A,B\n",Header+"Item,x,value,A,B\n",
+             Header+"Item,x,name,\"unfinished",Header+"Item,x,name,\"ok\"x,hi"})Bad(bad);
 
-        var m = Start(row);
-        Assert(ModHook.Subscriptions == 0, "No running targets => zero remaining subscriptions");
-        m.OnDisable();
-        m = Start("malformed", "lewd_meme");
-        Assert(ModHook.Subscriptions == 0, "Malformed CSV => zero remaining subscriptions");
-        m.OnDisable();
-
-        m = Start(multi, "lewd_meme", "other_mod");
-        var directory = new ModItemDirectory();
-        int calls1 = 0, calls2 = 0;
-        Func<GameItem> a = () => { calls1++; return new GameItemElement { name = "触手本体", shortDescription = "KEEP" }; };
-        Func<GameItem> b = () => { calls2++; return new GameItemElement { name = "English" }; };
-        directory.factoryDictionary["tentacle_body"] = a;
-        directory.factoryDictionary["other_item"] = b;
-        var owner1 = new LoadedMod { Manifest = new ModManifest { ID = "lewd_meme" } };
-        var owner2 = new LoadedMod { Manifest = new ModManifest { ID = "other_mod" } };
-        ModSourceHelper.Owners[a] = owner1; ModSourceHelper.Owners[b] = owner2;
+        Reset();
+        var disabled=Owner("lewd_meme",false);
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+Row;
+        var probe=Enable();
+        var directory=new ModItemDirectory();
         ModHook.Directory(directory);
-        var wa = directory.factoryDictionary["tentacle_body"];
-        var wb = directory.factoryDictionary["other_item"];
-        Assert(wa != a && wb != b, "Two factory delegates wrapped dynamically");
-        for (int i = 0; i < 1000; i++)
+        Check(ModHook.SubscriptionCount==0,"Disabled target unsubscribes all hooks after discovery");
+        probe.OnDisable();
+
+        Reset();
+        var owner=Owner("lewd_meme");
+        var other=Owner("other_mod");
+        var skip=Owner("no_file_mod");
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+Row+
+          "Paper,guide,title,Notice,공지\n";
+        ModHelper.Files[ModEntry.Id+"/Translations/other_mod.csv"]=Header+
+          "Item,other_item,name,English,한국어\n";
+        var m=Enable();
+        int ca=0,cb=0;
+        Func<GameItem> a=()=>{ca++;return new GameItemElement{name="触手本体",shortDescription="KEEP"};};
+        Func<GameItem> b=()=>{cb++;return new GameItemElement{name="English"};};
+        directory=new ModItemDirectory();
+        directory.factoryDictionary["tentacle_body"]=a;
+        directory.factoryDictionary["other_item"]=b;
+        ModSourceHelper.Owners[a]=owner;ModSourceHelper.Owners[b]=other;
+        ModHook.Directory(directory);
+        var aa=directory.factoryDictionary["tentacle_body"];
+        var bb=directory.factoryDictionary["other_item"];
+        Check(aa!=a&&bb!=b,"Two separate per-mod CSV files auto discovered");
+        for(int i=0;i<1000;i++)
         {
-            var x = wa(); var y = wb();
-            if (x.name != "촉수 본체" || x.shortDescription != "KEEP" || y.name != "한국어")
-                throw new Exception("Incorrect translation result");
+            var x=aa();var y=bb();
+            if(x.name!="촉수 본체"||x.shortDescription!="KEEP"||y.name!="한국어")
+                throw new Exception("Wrong translation");
         }
-        Assert(calls1 == 1000 && calls2 == 1000, "Original factory called exactly once per creation");
+        Check(ca==1000&&cb==1000,"Factory invoked exactly once per spawn");
         ModHook.Late();
-        Assert(directory.factoryDictionary["tentacle_body"] == wa, "Late check never double-wraps");
-        ModHook.Directory(directory);
-        Assert(directory.factoryDictionary["other_item"] == wb, "Same directory event never double-wraps");
-        owner1.IsEnabled = false;
-        Assert(wa().name == "触手本体", "Disabled owner bypasses existing wrapper");
-        owner1.IsEnabled = true;
-        m.OnDisable();
-        Assert(directory.factoryDictionary["tentacle_body"] == a &&
-            directory.factoryDictionary["other_item"] == b &&
-            ModHook.Subscriptions == 0, "Disable restores only own wrappers");
+        Check(directory.factoryDictionary["tentacle_body"]==aa,"No duplicate wrapping on load late");
 
-        m = Start(row, "lewd_meme");
+        var ui=new PaperUI { Id="guide",ModId="lewd_meme" };
+        var page=new PaperPageData();
+        page.elements.Add(new PaperElementData{id="title",text="Notice"});
+        ui.Data.pages.Add(page);
+        ModHook.Paper("lewd_meme:guide",ui);
+        Check(ui.Rendered.TryGetValue("title",out var ko)&&ko=="공지",
+              "Paper output translated via official OnPaperOpened");
+        ui.Rendered.Clear();
+        ui.FlipTo(0);
+        Check(ui.Rendered.ContainsKey("title"),"Page switch re-applies paper text");
+        ui.Rendered.Clear();
+        ModHook.Paper("other_mod:guide",ui);
+        Check(ui.Rendered.Count==0,"Paper UI from wrong mod untouched");
+
+        var different=new PaperUI();
+        var dp=new PaperPageData();
+        dp.elements.Add(new PaperElementData{id="title",text="Changed by author"});
+        different.Data.pages.Add(dp);
+        ModHook.Paper("lewd_meme:guide",different);
+        Check(different.Rendered.Count==0,"Paper source mismatch untouched");
+
+        var localized=new PaperUI();
+        var lp=new PaperPageData();
+        lp.elements.Add(new PaperElementData{id="title",text="Notice",loc="existing_key"});
+        localized.Data.pages.Add(lp);
+        ModHook.Paper("lewd_meme:guide",localized);
+        Check(localized.Rendered.Count==0,"Paper with original localization protected");
+
+        owner.IsEnabled=false;
+        Check(aa().name=="触手本体","Disabled owner bypasses installed wrapper");
+        owner.IsEnabled=true;
+        m.OnDisable();
+        Check(directory.factoryDictionary["tentacle_body"]==a&&
+              directory.factoryDictionary["other_item"]==b&&ModHook.SubscriptionCount==0,
+              "Disable restores only owned wrappers and unsubscribes hooks");
+
+        Reset();
+        Owner("lewd_meme");
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]="BROKEN";
+        probe=Enable();
+        directory=new ModItemDirectory();
         ModHook.Directory(directory);
-        var current = directory.factoryDictionary["tentacle_body"];
-        Func<GameItem> replacement = () => new GameItemElement { name = "third-party" };
-        directory.factoryDictionary["tentacle_body"] = replacement;
+        Check(ModHook.SubscriptionCount==0,"Corrupt CSV leaves no persistent hooks");
+        probe.OnDisable();
+
+        Reset();
+        owner=Owner("lewd_meme");
+        ModHelper.Files[ModEntry.Id+"/Translations/lewd_meme.csv"]=Header+Row;
+        probe=Enable();
+        directory=new ModItemDirectory();
+        a=()=>null;
+        directory.factoryDictionary["tentacle_body"]=a;
+        ModSourceHelper.Owners[a]=owner;
+        ModHook.Directory(directory);
+        Check(directory.factoryDictionary["tentacle_body"]()==null,
+              "Null factory result preserved");
+        Func<GameItem> later=()=>new GameItemElement{name="Third-party"};
+        directory.factoryDictionary["tentacle_body"]=later;
         ModHook.Late();
-        m.OnDisable();
-        Assert(directory.factoryDictionary["tentacle_body"] == replacement, "Later third-party replacement untouched");
+        probe.OnDisable();
+        Check(directory.factoryDictionary["tentacle_body"]==later,
+              "Subsequent third-party factory replacement left alone");
 
-        m = Start(row, "lewd_meme");
-        directory.factoryDictionary["tentacle_body"] = () => null;
-        var nullFactory = directory.factoryDictionary["tentacle_body"];
-        ModSourceHelper.Owners[nullFactory] = owner1;
-        ModHook.Directory(directory);
-        Assert(directory.factoryDictionary["tentacle_body"]() == null, "Null factory passes through");
-        m.OnDisable();
-
-        var subclass = new Child { name = "触手本体" };
-        System.Linq.Enumerable.First(entries.Items).Apply(subclass);
-        Assert(subclass.name == "触手本体", "Custom child item type not mutated");
-        Console.WriteLine("RESULT: " + checks + " assertions passed, test doubles only");
+        var child=new Child{name="触手本体"};
+        one.Items.Single().Apply(child);
+        Check(child.name=="触手本体","Custom child type never mutated");
+        Console.WriteLine("RESULT: "+checks+" assertions passed (stubbed API)");
     }
-    sealed class Child : GameItemElement {}
+    private sealed class Child:GameItemElement{}
 }

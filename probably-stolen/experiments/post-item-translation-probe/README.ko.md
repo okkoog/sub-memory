@@ -1,39 +1,58 @@
-# Post Item Translation Probe 0.2.0 (CSV 기반 범용 실험판)
+# Post Item Translation Probe v0.3.0 — 모드별 CSV + 종이 문서 UI
 
-**독립 테스트 모드입니다. 기존 한국어팩, 원본 촉수 모드, main 브랜치는 수정하지 않습니다.**
+**이것은 실험용 독립 모드입니다.** 기존 통합 한국어팩 및 원본 촉수 모드와 무관합니다. Harmony·IL 후킹을 사용하지 않습니다.
 
-## 실행 구조
-1. 자신의 \`Translations/items.csv\`를 공식 \`ModHelper.ReadModFileText\`로 읽습니다.
-2. CSV에 기재된 모드가 활성 설정 상태이고 활성화되어 있으면 해당 아이템 ID의 공용 factory delegate를 검사합니다.
-3. 실제로 등록된 factory의 소유 모드 ID와 소유 객체의 IsEnabled까지 일치할 때 원본 함수를 한 번만 실행하는 wrapper로 교체합니다.
-4. 그 경로로 아이템을 새로 생성할 때마다 **원문이 정확히 일치한 속성만** 한국어로 바꿉니다. 번역이 없거나 null이면 수정하지 않습니다.
-5. 모드 비활성화 시 자신이 설치한 wrapper일 때만 원본 delegate로 되돌립니다. 다른 모드의 후속 교체를 덮어쓰지 않습니다.
+## 모드별 파일 구조
 
-## CSV (DLL 수정 불필요)
-\`\`\`csv
-ModID,ItemID,Field,Original,Korean
-lewd_meme,tentacle_body,name,触手本体,촉수 본체
+\`\`\`text
+PostItemTranslationProbe/
+  PostItemTranslationProbe.dll
+  manifest.xml
+  Translations/
+    lewd_meme.csv
+    another_mod.csv         (추가할 때 DLL 수정 필요 없음)
 \`\`\`
-- 추가 모드마다 위 구조로 **CSV 행만 추가**한 후 게임을 완전히 재시작합니다.
-- 네 가지 번역 속성: \`name\`, \`shortDescription\`, \`longDescription\`, \`flavorText\`.
-- 쉼표와 따옴표가 있는 원문은 일반 CSV 인용 규칙을 따릅니다. UTF-8 BOM, 인용 셀 줄바꿈 지원.
-- \`{0}\`, \`{name}\` 같은 변수는 원문과 번역의 토큰이 같아야 합니다.
-- CSV 전체를 읽거나 해석하지 못하면 안전하게 번역을 비활성화합니다.
 
-## 촉수 본체 시험
-원본 촉수 모드 v1.7.1의 실제 ID \`lewd_meme\`, item ID \`tentacle_body\`, 원문 이름 \`触手本体\`를 확인했습니다. 새 게임에서 시작 특성 \`触手起源\`을 선택하고 처음 지급되는 촉수 본체의 이름이 **촉수 본체**로 나오는지 확인하세요. 기존 소유 아이템은 소급 변경되지 않을 수 있습니다.
+CSV 파일명은 **정확한 게임 Mod ID**여야 합니다. 엔진은 \`ModLoader.Mods\`에서 실제 로딩된 모드를 한 번 검사해 **해당 ID의 CSV가 존재하면 자동으로 로드**합니다. 별도의 \`index.csv\`도 필요 없습니다.
 
-설치는 ZIP 안 \`mod/PostItemTranslationProbe/\` 폴더만 \`G:\steam\steamapps\common\Probably Stolen\Mods\PostItemTranslationProbe\`로 복사합니다. 게임에서 테스트 모드를 활성화한 뒤 재시작합니다.
+### CSV 형식 (모드별 한 파일)
 
-## 제한과 위험
-- 디렉터리 factory를 통하지 않는 자체 생성·PreBuiltItem·복제 후 문자열 재복사·사후 속성 재설정·독립 UI는 못 잡을 수 있습니다.
-- 대상 모드가 비활성 또는 미설치이면 factory를 변경하지 않습니다. 활성 설정이 남아 있지만 실제 로딩에 실패한 경우에는 이벤트가 등록될 수 있으나, 소유 모드 확인 단계에서 생성 함수는 변경하지 않습니다.
-- 아이템 하위 타입을 안전하게 다루기 위해 기본 \`GameItemElement\`와 정확히 같은 객체만 수정합니다.
-- **아이템 출처 표시가 원본 모드 대신 시험 모드로 바뀔 수 있습니다.** 출처 태그는 수정하지 않았습니다.
-- directory 초기화 이벤트 순서나 실제 인게임 반복 생성은 **빌드 성공만으로 검증되지 않습니다**. 별도 게임 실행 시험이 필요합니다.
-- 원본 factory 예외는 전달하며 재시도하지 않습니다. 번역 실패는 가능한 범위에서 원래 문자열로 복구합니다.
-- Unity 게임 스캐너 통과 여부는 실제 실행으로 최종 확인해야 합니다.
+\`\`\`csv
+Type,Target,Field,Original,Korean
+Item,tentacle_body,name,触手本体,촉수 본체
+Paper,example_book,title,Original title,한국어 제목
+\`\`\`
 
-## 빌드
-GitHub Actions가 \`probably-stolen/Managed\`의 게임 참조 DLL을 이용해 빌드합니다.
-\`dotnet build source/PostItemTranslationProbe.csproj -c Release -p:GameManaged="<게임 Managed 경로>"\`
+- \`Type=Item\`: \`Target\`은 아이템 ID, \`Field\`는 \`name\` / \`shortDescription\` / \`longDescription\` / \`flavorText\`.
+- \`Type=Paper\`: \`Target\`은 **그 모드가 만든 종이 문서 ID**, \`Field\`는 문서의 **텍스트 요소 ID**. 공식 \`ModHook.OnPaperOpened\`에서 현재 표시 문구가 \`Original\`과 일치할 때 \`SetText\`를 적용합니다. 원본 데이터 파일은 수정하지 않습니다.
+- 같은 모드의 아이템·문서 UI 번역을 하나의 CSV에 혼합할 수 있습니다.
+- **대사는 아직 지원하지 않습니다.** 이를 위한 범용 대사 출력 후크가 공식 API에 확인되지 않았습니다. \`Dialogue\` 행을 넣으면 임의로 처리하지 않고 해당 CSV를 거부합니다.
+- CSV는 UTF-8 BOM, 큰따옴표, 쉼표, 따옴표 이스케이프, 인용된 줄바꿈을 처리하며 변수 \`{0}\` 등을 검사합니다.
+- 원문이 일치하지 않으면 아무 속성도 다시 대입하지 않습니다.
+- CSV의 특정 모드 파일이 깨져도 나머지 모드 번역은 계속 로드합니다.
+- \`Translations/<모드ID>.csv\`를 추가/수정하면 **게임을 완전히 재시작**해야 반영됩니다.
+
+### 촉수 본체 테스트
+
+제공 CSV \`Translations/lewd_meme.csv\`는 \`Item,tentacle_body,name,触手本体,촉수 본체\` 한 줄만 포함합니다. 기존 v0.2.0과 동일하게 신규 시작 특성을 선택한 뒤 이름을 확인하세요.
+
+**종이 문서 기능을 실게임에서 시험하려면**, 공식 PaperUI로 제작된 문서의 정확한 book ID 및 요소 ID, 원문 문구를 조사한 뒤 같은 \`lewd_meme.csv\` 파일에 \`Paper\` 행을 추가해야 합니다. 이 모드에 그런 PaperUI 문서가 존재하는지는 아직 검증하지 않았습니다. 문서 이름을 임의로 가정하여 번역이 적용된 것처럼 주장하지 않습니다.
+
+### 지원 범위 및 위험
+
+- 아이템: 원본 factory를 감싼 새 디렉터리 생성에만 적용. 원본을 정확히 한 번 호출, \`GameItemElement\`의 4가지 문자열 속성만 검사.
+- 문서 UI: \`OnPaperOpened\`와 페이지 표시 이벤트를 이용하여 **정적 텍스트/버튼 요소**만 변경. 요소 ID·기존 표시값이 정확히 일치해야 하며 기존 \`loc\`·\`translations\`가 설정된 요소는 건드리지 않습니다.
+- 일반 UI, 독자적 모드 창, NPC 대사, 코드에서 직접 조립하는 툴팁은 현재 지원하지 않습니다.
+- 문서 모드가 표시 직전에 또는 그 후 \`SetText\`로 값을 다시 설정하면 결과가 덮어써질 수 있습니다. 공식 이벤트 순서가 보장되지 않으면 100% 유지할 수 없습니다.
+- factory 교체로 인해 아이템 출처 표시가 시험 모드로 바뀔 수 있으며 출처 태그 변경은 하지 않습니다.
+- 모드가 없는 경우 처음 디렉터리 이벤트에서 파일 검색만 하고 모든 번역 이벤트에서 구독 해제합니다. 프레임마다 검색하지 않습니다.
+- 공식 API만 사용하되 **실제 게임의 보안 스캐너 통과·새 UI 번역 실동작은 별도의 실게임 시험 대상**입니다.
+
+### 설치
+게임 종료 후 ZIP의 \`PostItemTranslationProbe\` 폴더를 다음 위치에 놓습니다.
+\`G:\steam\steamapps\common\Probably Stolen\Mods\PostItemTranslationProbe\`
+
+기존 \`Translations/items.csv\` 파일은 **제거**하고 \`Translations/lewd_meme.csv\`로 교체합니다. 기존 한국어팩의 CSV는 수정하지 마세요.
+
+### 빌드
+GitHub Actions에서 \`probably-stolen/Managed\`의 참조 DLL을 이용해 .NET Standard 2.1 DLL을 빌드합니다. 단위 테스트는 실제 게임이 아닌 API 스텁을 사용하므로, 통과하더라도 게임 내 실증을 의미하지 않습니다.
