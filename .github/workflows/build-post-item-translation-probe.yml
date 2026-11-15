@@ -27,6 +27,15 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
+      - name: Inspect available official UI and dialogue APIs
+        run: |
+          dotnet run --project probably-stolen/experiments/post-item-translation-probe/inspection/Scan.csproj -c Release -- probably-stolen/Managed/Assembly-CSharp.dll > /tmp/probe_api.txt
+          sed -n '/## RichTextBuilder/,/## /p' /tmp/probe_api.txt | head -n 125
+          sed -n '/## PaperUI/,/## /p' /tmp/probe_api.txt | head -n 130
+          sed -n '/## ModHook/,/## /p' /tmp/probe_api.txt | head -n 170
+          sed -n '/## ModLoader/,/## /p' /tmp/probe_api.txt | head -n 90
+          sed -n '/## LoadedMod/,/## /p' /tmp/probe_api.txt | head -n 80
+          grep '^## .*Dialog' /tmp/probe_api.txt | head -n 50 || true
       - name: Run isolated tests with stubs
         run: dotnet run --project probably-stolen/experiments/post-item-translation-probe/tests/Tests.csproj -c Release
       - name: Compile production DLL against game assemblies
