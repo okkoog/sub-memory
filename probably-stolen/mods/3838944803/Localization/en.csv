@@ -672,7 +672,7 @@ uc.researcher.3,And if you have chemical supplies, I pay market price.
 uc.moving.name,Resident Moving Out
 uc.moving.1,I'm moving to the other side of the ring next month and the new place is smaller.
 uc.moving.2,I brought everything we won't need. Have a look.
-uc.moving.3,Oh, and if you have good household goods, I'd take a few.
+uc.moving.3,Oh, and if you have good household goods, I would take a few.
 uc.estate.name,Estate Clerk
 uc.estate.1,Hello. I've been engaged to dispose of a late gentleman's effects.
 uc.estate.2,The heirs only want cash, so these should go quickly.
@@ -1215,7 +1215,7 @@ scenario.newcomer.title,Upper Levels Newcomer
 scenario.newcomer.desc,You've rented a storefront in the Upper Levels. No machines, no contacts. Just some startup money and Kai Wild's card.
 scenario.newcomer.with1,A storefront in the Upper Levels
 scenario.newcomer.with2,Startup money
-scenario.newcomer.with3,Kai Wild's consignment: 20 pieces a week, you keep 60% of sales
+scenario.newcomer.with3,Kai Wild's consignment: 20 pieces a week, you keep 70% of sales
 scenario.newcomer.tag,Upper Levels mode
 perk.ul_trust_fund.name,Trust Fund
 perk.ul_trust_fund.desc,Start with 3000 extra credits.
@@ -1345,11 +1345,11 @@ item_ul_dissector_name,Dissection Machine
 item_ul_dissector_desc,Put a body in, take out intact organs after one night.
 item_ul_dissector_flavor,Second-hand medical equipment. The previous owner never wants to see it again.
 item_ul_dissector_note_name,Dissection Machine Notes
-item_ul_dissector_note_flavor,Put a body in the body slot. It's dissected on a night with power.\nA body usually yields one or two usable organs, three or four if you're lucky. Which ones is luck; older bodies yield less.\nOrgans outside the cooler get worse every day and spoil on day 4. Bodies keep for 2 days.\nEach organ has a condition: intact (full price), damaged (-50%), ruined (-99%). Older bodies give more damaged organs.\nThe module bay takes standard modules: overclock extracts more, precision keeps organs intact, efficiency saves power.
+item_ul_dissector_note_flavor,Put a body in the body slot. It's dissected on a night with power.\nA body usually yields one or two usable organs, three or four if you're lucky. Which ones is luck; older bodies yield less.\nOrgans outside the cooler get worse every day and spoil on day 4. Bodies keep for 2 days.\nEach organ has a condition: intact (full price), damaged (-50%), ruined (-99%). Older bodies give more damaged organs.\n[Module Impact]:\n  Efficiency: Power Consumption\n  Performance: Organs Extracted (each 1% = +1% chance of one extra organ; above 100% rolls a second)\n  Quality: Organ Condition (factor: 0.5)
 dissector_label_body,Body
 dissector_label_status,Status
 dissector_status_empty,Empty
-dissector_status_ready,Freshness {0}
+dissector_status_ready,Freshness {0}%
 dissector_status_rotten,Spoiled
 dissector_log_done,The dissection machine recovered {0} intact organs.
 dissector_log_rotten,The body had spoiled. The dissection machine recovered nothing.
@@ -1360,7 +1360,7 @@ battle.tries_left,{0} searches left tonight (of {1}).
 battle.wounded,You're hurt. No more searching tonight.
 battle.risk,Minor injury {0}%  Major injury {1}%  Spotted {2}%
 battle.search,Search
-battle.found_corpse,You find one that's still mostly intact. No need to pack it. You'll drag it back when you leave.
+battle.found_corpse,You find one that just died. No need to pack it; it gets dragged back to the shop when you leave.
 battle.found_scrap,You pick up some scrap worth selling.
 battle.found_nothing,You find nothing.
 battle.luck_saved,A stray round nearly grazes you. Lucky.
@@ -2030,7 +2030,7 @@ uc.water_corp.name,Corporate Procurement Rep
 uc.water_corp.1,Our boardrooms and executive floors need water. High quality only.
 uc.water_corp.2,If the purity's right, the price isn't a problem.
 pex.give.smuggler,Smuggler's bay + 8 pink injectors
-pex.give.smuggler_big,Large smuggler's bay + 8 pink injectors
+pex.give.smuggler_big,Large smuggler bay + 8 pink injectors (expansion kits used on it are returned)
 pex.get.smuggler,Modded smuggler's bay (8x8, hidden from inspections)
 salon_talk_leave,(Not now)
 salon_guest_line3,· {0} ({1}) standing {2}{3}
@@ -2083,3 +2083,91 @@ ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So 
 ul_dialog_tourist_deal_2,I heard I could have some fun around here?
 ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
 ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
+test_hotkey_update,Test (last update): gave 2 hearts, 1 kidney, a cooler, a black lamp, a 3D organ printer, 6 bio-ink, a self-charging cell, +5000 credits (buy the Organ Sales License from Kai). The revolution field medic and the rich patient come today; with the license, the organ bank coordinator and the private hospital come too.
+corpse_name_fresh,{0} (freshness {1}%)
+battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). It gets dragged back when you leave.
+battle.found_corpse_rotten,You find one, but it has already rotted. Nothing to harvest.
+bdoc.name,Shady Doctor
+bdoc.1,Saw your lamp.
+bdoc.2,Got anything? Organs only. Nothing else.
+item_ul_organ_printer_name,3D Organ Printer
+item_ul_organ_printer_desc,Prints organs from bio-ink and cell samples. Works only on nights with power.
+item_ul_organ_printer_flavor,What comes out works. Everyone can tell it was printed.
+item_ul_organ_printer_note_name,Printer Notes
+item_ul_organ_printer_note_flavor,Put bio-ink and cell samples in the ink / sample slot, pick what to print, and it works on nights with power. A heart takes 2 ink and 2 nights; a lung or kidney takes 1 ink and 1 night; every print also takes 1 cell sample. Prints come out in random condition (60% intact, 30% damaged, 10% ruined).\nYou have to take cell samples yourself: put a real organ (not rotten) in the sample organ slot and it is sampled on a night with power. The organ is used up. Intact gives 8 samples, damaged 6, ruined 3. With an organ in the slot it samples first, then prints.\nPrinted organs are worth 30% of real ones, never spoil and need no cooler. Without a sales permit they are mid-level contraband; only the shady doctor takes them, one per visit.\nBuy the Organ Sales License from Kai to make them legal: an organ bank coordinator visits every 3 days with an order, paying double plus Upper Levels reputation for on-time delivery; a private hospital comes every 7 days with a big order for 3 intact ones, paying 2.5x each. Put the sign in the showcase for an order every 2 days, and a cosmetic clinic buyer comes for lungs and kidneys.\n[Module Impact]:\n  Efficiency: Power Consumption\n  Performance: Print Speed (each 1% = +1% chance to advance an extra night)\n  Quality: Print Condition (factor: 0.5)
+item_ul_bioink_name,Bio-ink
+item_ul_bioink_desc,Consumable for the 3D organ printer.
+item_ul_organ_license_name,Organ Sales Permit
+item_ul_organ_license_desc,With this, printed organs are legal goods.
+item_ul_sign_organ_name,Organ Bank Neon Sign
+item_ul_sign_organ_desc,A neon sign. Placed in the showcase, the organ bank coordinator comes more often and a cosmetic clinic buyer comes for printed lungs and kidneys.
+item_ul_printed_heart_name,Printed Heart
+item_ul_printed_heart_flavor,A bit pale. It beats.
+item_ul_printed_lung_name,Printed Lung
+item_ul_printed_lung_flavor,Lighter than a real one.
+item_ul_printed_kidney_name,Printed Kidney
+item_ul_printed_kidney_flavor,Faint print lines around the edge.
+printer_mode_heart,Heart (2 ink + 1 sample, 2 nights)
+printer_mode_lung,Lung (1 ink + 1 sample, 1 night)
+printer_mode_kidney,Kidney (1 ink + 1 sample, 1 night)
+printer_label_ink,Ink / Samples
+printer_label_mode,Print
+printer_status_need,Ink {0}/{1}
+printer_log_done,The 3D organ printer finished a {0}.
+obank.name,Cosmetic Clinic Buyer
+obank.1,Saw your sign.
+obank.2,Any compliant printed lungs or kidneys? We have no use for hearts.
+ul_kai_organ_license_title,Organ Sales License
+ul_kai_organ_license_desc,Kai sorts out the paperwork. Printed organs become legal goods (not contraband). An organ bank coordinator visits with orders (double pay plus Upper Levels reputation for on-time delivery), and a private hospital comes every 7 days with a big order. You also get a sales permit and an organ bank neon sign: in the showcase, orders come more often and a cosmetic clinic buyer comes for lungs and kidneys.
+printer_label_organ,Sample Organ
+printer_status_organ,Sampling
+ocoord.name,Organ Bank Coordinator
+ocoord.intro.1,Kai said you got the license. I work for the organ bank.
+ocoord.intro.2,We order what we need. I leave you an order slip; deliver it next time I come. On time, and the pay is good.
+ocoord.hello,Good to see you again.
+ocoord.ask,Did you bring the {0} we ordered? This one pays {1} credits.
+ocoord.bye,See you next time.
+porder.want_intact,an intact {0}
+porder.want_any,a {0} (damaged is fine)
+porder.slip_name,Organ bank order: {0}
+porder.slip_done,Organ bank order (void)
+porder.slip_desc,Deliver when the coordinator next visits. On time: {0} credits, Upper Levels reputation +1.
+porder.new,New order: {0}, due on the coordinator next visit, pays {1} credits.
+porder.delivered,Order delivered: {0} extra credits, Upper Levels reputation +{1}.
+porder.missed,Order missed. The next one pays 20% less.
+porder.skipped,Two orders missed in a row. The organ bank skips this one.
+battle.heat,Heat is on: chance of being spotted doubled ({0} nights left)
+revmed.name,Revolution Field Medic
+revmed.1,They need it at the front. I will keep this short.
+revmed.2,Hearts only. Usable ones. Do not show me rotten stuff.
+richpat.name,Wealthy Patient
+richpat.1,The hospital put me on a waiting list. I cannot wait.
+richpat.2,Intact ones only. Nothing damaged. Money is not the problem.
+item_ul_cell_sample_name,Cell Sample
+item_ul_cell_sample_desc,Cells taken from a real organ. The 3D organ printer uses 1 per print.
+printer_status_sample,Samples {0}/{1}
+printer_log_extract,The 3D organ printer took {0} cell samples.
+phosp.name,Private Hospital Buyer
+phosp.intro.1,Kai sent me. I buy for a private hospital.
+phosp.intro.2,We order in bulk, intact only. I'll leave you an order slip. See you next week.
+phosp.hello,Last week's order. Is it all here?
+phosp.ask,The order is: {0}. Intact only.
+phosp.bye,See you next week.
+phosp.part,{0} {1}/{2}
+phosp.sep, / 
+phosp.slip_name,Private Hospital Order
+phosp.slip_done,Private Hospital Order (void)
+phosp.slip_desc,Deliver when the private hospital next visits: {0}. Intact only. The full order pays {1} credits plus Upper Levels reputation +{2}.
+phosp.new,Private hospital order: {0}, collected next week, {1} credits in total.
+phosp.delivered,One item of the big order delivered: {0} extra credits.
+phosp.complete,Big order complete: {0} extra credits, Upper Levels reputation +{1}.
+item_ul_printed_heart_desc,A 3D printed heart, worth 30% of a real one. Never spoils, needs no cooler.
+item_ul_printed_lung_desc,A 3D printed lung, worth 30% of a real one. Never spoils, needs no cooler.
+item_ul_printed_kidney_desc,A 3D printed kidney, worth 30% of a real one. Never spoils, needs no cooler.
+organprint.reissued,Kai reissued your organ sales permit and sign. They are in the shop.
+dissector_status_nopower,Freshness {0}% ({1})
+dissector_nopower_empty,no power source
+dissector_nopower_converter_off,converter is off
+dissector_nopower_converter,converter cannot supply
+dissector_nopower_battery,battery empty
+richpat.premium,Wealthy patient premium

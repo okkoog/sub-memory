@@ -41,9 +41,9 @@ gsx_angled_grip_desc,"An angled foregrip for long guns, designed to improve hand
 gsx_tactical_light_name,Tactical Light
 gsx_tactical_light_desc,"An underbarrel light that lights up the target, improving aim in the dark."
 gsx_mag_10_ext_name,Extended 10mm Magazine
-gsx_mag_10_ext_desc,"An extended polymer 10mm magazine for magazine-fed 10mm guns."
+gsx_mag_10_ext_desc,"An extended polymer 10mm magazine for 10mm guns with a removable magazine."
 gsx_folding_stock_name,Folding Stock
-gsx_folding_stock_desc,"A folding steel stock compatible with long guns, designed to improve recoil handling."
+gsx_folding_stock_desc,"A folding steel stock for the Peacemaker SMG and the Rampart shotgun, designed to improve recoil handling."
 gsx_polished_slide_name,Polished Slide
 gsx_polished_slide_desc,A mirror finish for the slide. Purely cosmetic. Pistols and the Hornet only. Cannot be combined with Gold Inlay.
 gsx_match_trigger_name,Match Trigger
@@ -85,6 +85,9 @@ crate_wheel_next,"Malorian: {0}% in the next crate"
 gsx_ammo_case_name,Ammo Case
 gsx_ammo_case_desc,"A steel ammo case that holds up to {0} rounds. Sold with its contents to ammo buyers who want all of them."
 gsx_ammo_case_flavor,"No more counting rounds on the counter."
+gsx_ammo_case_large_name,"Large Ammo Case"
+gsx_ammo_case_large_desc,"A steel ammo crate that holds up to {0} rounds. Sold with its contents to ammo buyers who want all of them."
+gsx_ammo_case_large_flavor,"Room for a whole night of presses."
 # ---- Vex's Armory ----
 shop_title,Vex's Armory
 shop_vex_name,Vex
@@ -92,9 +95,12 @@ shop_vex_status_contract_missing,"Want more? My contract {0} is in the network."
 shop_vex_status_max,"Contract III, and you're covered. The whole back room is yours."
 shop_vex_status_cover_missing,"Contract {0} is signed, but you're not covered: <u>permit {0}, or {1} Black Market Reputation</u> (you have {2})."
 shop_vex_status_shady,"Keep my cat in your display case and my buyers will come. <u>Without a permit, Security counts every gun.</u>"
-shop_vex_book,"Your book: {0} points, up to {1}% off. {2} more points for another 5%."
-shop_vex_book_max,"Your book: {0} points. That's my best discount: up to {1}%."
-shop_vex_book_none,"Your book: {0} points. {1} more points for 5% off."
+shop_vex_book,"Your book: {0} points, up to {1}% off guns and chips. {2} more points for another 5%."
+shop_vex_book_max,"Your book: {0} points. That's my best discount: up to {1}% off guns and chips."
+shop_vex_book_none,"Your book: {0} points. {1} more points for 5% off guns and chips."
+shop_line_book,"Order book"
+shop_sheet_note,"Vex sells dear: she supplies what nobody else sells, not stock to resell."
+shop_bag_on_counter,"No room left in the Store: {0} was put on the front counter, which is cleared every night."
 shop_vex_event_special,"Fresh in today: an Aurora. It won't stay long."
 shop_vex_event_discount,"Tonight, everything is {0}% off. Make it count."
 event_vex_raid_title,Raid
@@ -154,7 +160,7 @@ scenario_with_4,"No gun permit: gunsmith sign, worn smuggler bay, the retired gu
 scenario_with_5,"Vex Contract I signed, Black Market +20, Security -15. 450 fewer credits, rent +50"
 # ---- Perks ----
 perk_black_market_contacts_name,Black Market Contacts
-perk_black_market_contacts_desc,"Everything is up to 20% cheaper at Vex's Armory (total discount capped at 25%, never under 1.2 times an item's value)."
+perk_black_market_contacts_desc,"Vex's guns and chips are up to 20% cheaper (total discount capped at 25%)."
 perk_ammo_hoarder_name,Ammo Hoarder
 perk_ammo_hoarder_desc,"Start the game with 2 ammo crates."
 perk_loyal_customer_name,Loyal Customer
@@ -207,9 +213,10 @@ guide_desc,"A handy manual that contains all the information on Vex's contracts,
 guide_title,"Gunsmith's Manual"
 guide_h1,"Vex and her Contracts"
 guide_1_intro,"Vex visits your Store on day 3, then opens her armory at night. Her contracts are sold in the network."
-guide_1_c1,"Contract I (250): the Viper and precision attachments."
-guide_1_c2,"Contract II (500): Sentinel, Blunderpipe, metal and CNC modules."
-guide_1_c3,"Contract III (800): Hornet, Pile Driver, Longsight."
+guide_1_price,"Vex sells dear: she supplies what nobody else sells, not stock to resell."
+guide_1_c1,"Contract I (250): the Viper, precision attachments, 3D printer, Precision Nozzle, Refurbishing Bench."
+guide_1_c2,"Contract II (500): Sentinel, Blunderpipe, bayonet, .45 ammo, metal and CNC modules, weapon crate."
+guide_1_c3,"Contract III (800): Hornet, Pile Driver, Longsight, .12 ammo, Serial CNC Module, gold inlays, collector's crate."
 guide_1_note,"A contract only counts while you are covered for its rank."
 guide_h2,"Getting Covered"
 guide_2_permit,"Gun permit"
@@ -229,11 +236,11 @@ guide_h4,"Ranks and Order Book"
 guide_4_r1,"Rank I"
 guide_4_r1_v,"Viper"
 guide_4_r2,"Rank II"
-guide_4_r2_v,"Sentinel, Blunderpipe"
+guide_4_r2_v,"Sentinel, Blunderpipe, Five-Seven, Fries, Aurora"
 guide_4_r3,"Rank III"
-guide_4_r3_v,"Hornet, Pile Driver, Longsight"
+guide_4_r3_v,"Hornet, Pile Driver, Longsight, Bulldog, Malorian"
 guide_4_rule,"A gun's rank is also its contraband level, its permit and its contract."
-guide_4_note_book,"10 order points = 5% off at Vex's, up to 20%, never under 1.2 times an item's value."
+guide_4_note_book,"Each delivered order earns points: its rank (1, 2 or 3), plus 1 if every bonus is met. 10 points = 5% off Vex's guns and chips, up to 20%."
 guide_4_parts,"The screwdriver strips a gun into parts."
 guide_1_pic,"Vex, the night armorer. Nobody has ever seen her face."
 guide_2_pic,"A permit, a Sentinel, a Blunderpipe: what buyers come for."
@@ -275,8 +282,7 @@ gsx_module_ammo_batch_name,"Serial Reloading Module"
 gsx_module_ammo_batch_desc,"A printer module that adds 2 ammo boxes to every reloading press print, for the same scrap. Slow and power hungry. Stacks."
 module_effect_ammo_batch,"Printed Reloaded Ammo Boxes +{0}"
 event_vex_lockdown_desc,"With Security's crackdown on, Vex keeps her head down. The armory stays closed tonight."
-event_vex_shipment_desc,"An illegal weapon shipment went through the Black Market: Vex is selling her stock for less."
-shop_vex_event_shipment,"A shipment just came through. Everything's {0}% off tonight, make the most of it."
+event_vex_shipment_desc,"An illegal weapon shipment went through the Black Market: weapon and ammo prices are down everywhere, Vex's included."
 shop_vex_event_price_note,"Tonight: {0}% off Vex's price"
 gsx_snub_revolver_name,"Bulldog"
 gsx_snub_revolver_desc,"A snub-nosed 10mm revolver with a short dark red wooden grip."
@@ -452,11 +458,11 @@ config_order_share,Mod order share (%)
 config_order_share_tip,Share of each rank's gun orders replaced by the mod's own orders. 0 = the game's orders only. Default: 20.
 config_order_day,Mod orders from day
 config_order_day_tip,The mod's gun orders only come from this day on. Default: 1.
-gsx_printed_part_name,Printed Gun Part
+gsx_printed_part_name,"Plastic Gun Part"
 gsx_printed_part_desc,"A plastic gun part. Repairs printed plastic guns, up to Good condition."
 gsx_printed_part_flavor,Good enough for a gun that came out of a printer anyway.
 gsx_chip_pouch_name,Chip Pouch
-gsx_chip_pouch_desc,"Holds up to {0} 3D printer chips. Put it in the printer's chip slot, then pick the recipe under it (or toggle the pouch)."
+gsx_chip_pouch_desc,"Holds up to {0} 3D printer chips. Put it in the printer's chip slot and pick the recipe, or store it: a Supply Kit finds the chips inside."
 gsx_chip_pouch_flavor,Every blueprint in one pocket.
 gsx_chip_pouch_chosen,Chosen chip: {0}
 gsx_chip_pouch_none,No chip inside.
@@ -467,20 +473,94 @@ gsx_chip_pouch_have,({0} available)
 gsx_material_bin_name,Material Bin
 gsx_material_bin_desc,"Holds 3D printer materials only: Scrap Metal, Filament, Metal Ingots, Gun Parts."
 gsx_material_bin_flavor,"Everything the printer eats, in one place."
-gsx_autoloader_kit_name,Autoloader Kit
-gsx_autoloader_kit_desc,"Use it on a 3D Printer: before each print, the printer takes what its chip needs from your Store, except items on display or in a machine."
+gsx_autoloader_kit_name,Supply Kit
+gsx_autoloader_kit_desc,"Use it on a 3D Printer: it takes its chip's materials from your Store, and its Recipe panel lists your Store's chips."
 gsx_autoloader_kit_flavor,Someone finally automated the boring part.
-gsx_autoloader_label,Loader
+gsx_autoloader_label,Supply
 gsx_autoloader_pull,Pull Materials
 gsx_autoloader_pull_tip,Take what the chip needs from your Store now.
 gsx_autoloader_auto_on,Auto: On
 gsx_autoloader_auto_off,Auto: Off
 gsx_autoloader_auto_tip,"On: before each print, the printer takes its materials from your Store."
-gsx_autoloader_installed,Autoloader installed
+gsx_autoloader_installed,Supply Kit installed
 guide_h5,First Days
 guide_5_viper,"3 spools of filament print a Viper worth 120: sell it, print another."
 guide_5_buyers,Vex's buyers pay 25% more. Clandestine start: two come on days 3 and 5; her line (8390) sends more.
 guide_5_tinkerer,"The Gun Tinkerer buys loose attachments: keep 2 unmounted, or one in the display case."
 guide_5_hopper,"Hoppers (Vex, contract II) feed a printer from a container: no more loading by hand."
 guide_5_orders,"From day 4, a buyer may order a gun built: 25% down and a Gun Order Slip, back in 3 days."
-guide_5_note,Put your first credits back into chips: they pay for themselves in a few nights.
+guide_5_resell,"With a Firearm Neon Sign on display, sellers bring used guns at 20% off: repair them with Gun Parts, then deliver."
+guide_5_note,"Attachment chips pay for themselves in 1 to 2 weeks, gun chips in 3 to 5 (printer modules included). Under a permit, printed guns leave no evidence."
+# ---- Shooting range (Range.cs) ----
+range_title,"Vex's Shooting Range"
+range_desc,"Vex will open a shooting range in her back room. Test a gun there for {0} credits and one round: a good score earns a proof mark worth +5% to +15% of its value."
+range_bought,"You already have access to Vex's range."
+range_visit_1,"Evening. I won't keep you long."
+range_visit_2,"I've set up a shooting lane in my back room."
+range_visit_3,"Shoot well and I stamp the gun. Buyers pay more for a <u>proof mark</u>."
+range_visit_4,"<u>{0} credits</u> a session, plus one round. Come by tonight."
+range_offer,"The lane's ready. Which gun are we testing?"
+range_pick,"Which one goes on the lane?"
+range_no_gun,"No gun on you? Bring one, I'll be here."
+range_all_gold,"Everything you carry already has my gold stamp."
+range_window_title,"Shooting Range ({0} Credits + 1 Round)"
+range_choice_desc,"Score needed: bronze {0}, silver {1}, gold {2}"
+range_choice_mark,"Current mark: {0}"
+range_grade_1,"bronze"
+range_grade_2,"silver"
+range_grade_3,"gold"
+range_ammo,"{0}: {1} credits, and one {2} round."
+range_own_ammo,"[Use My Rounds ({0} Left)]"
+range_vex_ammo,"[Use Your Rounds (+{0} Credits)]"
+range_vex_none,"[Use Your Rounds (Not Stocked)]"
+range_not_tonight,"[Not Tonight]"
+range_result_0,"Score: {0}. Not enough for my stamp."
+range_result_1,"Score: {0}. Bronze. It's a start."
+range_result_2,"Score: {0}. Silver. Clean shooting."
+range_result_3,"Score: {0}. Gold. I'd buy that gun myself."
+range_result_keep,"Score: {0}. It keeps its {1} mark."
+proof_mark,"Proof-Fired ({0})"
+range_vex_hover,"Vex: shooting range"
+range_game_title,"Vex's Range"
+range_game_info,"{0}: bronze {1}, silver {2}, gold {3} (out of {4})"
+range_game_hint,"Click to fire. Jammed? Click again to rack."
+range_game_score,"Score: {0}"
+range_game_jam,"Jammed! Click to rack."
+range_banner_0,"NO MARK"
+range_banner_1,"BRONZE"
+range_banner_2,"SILVER"
+range_banner_3,"GOLD"
+range_game_final,"{0} of {1} points"
+# ---- Attachment tooltip (slot, guns) ----
+gsx_attach_slot,"Slot: {0}"
+gsx_attach_slot_special,"Special"
+gsx_attach_only,"Fits: {0}"
+gsx_attach_any,"Fits every gun with this slot"
+gsx_attach_any_except,"Fits every gun with this slot, except: {0}"
+gsx_attach_sep,", "
+shop_vex_syndicate,Syndicate gear's going around. A C20-R takes my sights and suppressors fine.
+guide_h6,Syndicate Gear
+guide_6_c20r,"The C20-R takes Vex's sights, suppressors, muzzle brake and tactical light, and her 10mm Caliber Kit."
+guide_6_pen,The Cybersun Pen works like a screwdriver: it takes loose attachments apart too.
+guide_6_bench,The Refurbishing Bench repairs Syndicate guns like any other.
+guide_6_note,"From day 14, with 40 Black Market Reputation, Ex-Syndicate Agents come to sell uplinks and telecrystals."
+guide_h7,"Vex at Night"
+guide_7_card,"Vex hands you her card at the armory: dial 8390. After each service the line is busy for 4 days."
+guide_7_buyer,"“Send me a buyer”: 25 / 50 / 90 credits by rank, he comes tomorrow. Under a permit, no evidence; without one, +25% and evidence."
+guide_7_courier,"“Deliver materials”: her courier comes tomorrow. Buy item by item at her prices +20%, or take the whole lot at 15% off."
+guide_7_events,"Some nights her armory is closed (raid, lockdown); others bring a rare piece or a discount night."
+guide_7_discount,"The order book and Black Market Contacts only lower her guns and chips: ammo, materials and attachments keep their price."
+guide_h8,"Gear for Your Store"
+guide_8_bench,"Refurbishing Bench (Vex, rank I): raises one gun by one condition step each night, up to New. Costs gun parts (or ingots) and power."
+guide_8_locker,"Gun Locker (Vex): holds 4 guns, one per slot. It sells with what is inside."
+guide_8_ammo,"Ammo Case (Vex): holds up to 10 rounds of one calibre. It sells with its contents to buyers who want ammo."
+guide_8_lethal,"Warden-10 and Riotbreaker are non-lethal: no permit needed. A Lethal Conversion Kit turns them into real guns (rank I)."
+guide_8_crates,"Crates (Vex): Parts Crate = 2 attachments; Sealed Weapon Crate = 1 random gun; Collector's Crate = a new high-end gun and 2 rare attachments."
+guide_h9,"Printer Extras"
+guide_9_press,"Press chips make ammo from Scrap Metal (12 gauge: plus Filament). Only the .22 press runs without the Metal Printer Module."
+guide_9_batch,"Serial Reloading Module: +2 ammo boxes per press print, for the same scrap. Slow, power hungry, stackable."
+guide_9_pouch,"Chip Pouch (Vex): holds 16 chips. Put it in the printer's chip slot, then pick the recipe from it."
+guide_9_kit,"Supply Kit (Vex, rank II): use it on the printer. It then takes the chip's materials from your Store and lists your Store's chips."
+order_syndicate,"I need a caseless piece. No brass on the floor, nothing left behind."
+event_vex_syndicate_desc,"Vex got her hands on Syndicate gear: a Cobra, caseless rounds, and a C20-R from contract III."
+shop_vex_event_syndicate,"A Syndicate crate came through. Cobra, caseless rounds. Grab them while they're here."

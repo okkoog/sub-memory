@@ -687,7 +687,7 @@ uc.researcher.3,另外，你这儿要是有化学用品，我按市价收。
 uc.moving.name,搬家的住户
 uc.moving.1,我下个月搬到环区另一头，新房子小，放不下这么多东西。
 uc.moving.2,家里用不上的都带来了，你挑挑。
-uc.moving.3,对了，你要是有好用的家居用品，我也想换几件。
+uc.moving.3,对了，你要是有好用的日用品，我也想换几件。
 uc.estate.name,遗产清点人
 uc.estate.1,你好。我受托处理一位过世老先生的遗物。
 uc.estate.2,继承人只要现金，这些东西得尽快出手。
@@ -1230,7 +1230,7 @@ scenario.newcomer.title,上层区新店主
 scenario.newcomer.desc,你在上层区租下了一间铺面。没带机器，也没有熟人，只有一笔开业资金和凯·王尔德的名片。
 scenario.newcomer.with1,上层区的一间铺面
 scenario.newcomer.with2,开业资金
-scenario.newcomer.with3,凯·王尔德的寄售货：每周 20 件，卖掉分你六成
+scenario.newcomer.with3,凯·王尔德的寄售货：每周 20 件，卖掉分你七成
 scenario.newcomer.tag,上层区模式
 perk.ul_trust_fund.name,信托基金
 perk.ul_trust_fund.desc,开局额外获得3000信用点。
@@ -1360,11 +1360,11 @@ item_ul_dissector_name,解剖机
 item_ul_dissector_desc,放进一具尸体，过一晚取出完好的器官。
 item_ul_dissector_flavor,二手医疗设备。原来的主人不想再看见它。
 item_ul_dissector_note_name,解剖机说明
-item_ul_dissector_note_flavor,尸体槽放一具尸体，有电的那晚解剖。\n一具通常能取出一两件能用的器官，运气好有三四件。取出哪几件看运气，放久了的尸体出得更少。\n器官放在冷藏箱外面每天都会变差，第 4 天就坏了。尸体只能放 2 天。\n每件器官有完整度：完好（原价）、受损（-50%）、损坏（-99%）。放过的尸体更容易取出受损的。\n模组格能插原版的通用模组：超频类多取器官，精工类更容易完好，节能类省电。
+item_ul_dissector_note_flavor,尸体槽放一具尸体，有电的那晚解剖。\n一具通常能取出一两件能用的器官，运气好有三四件。取出哪几件看运气，放久了的尸体出得更少。\n器官放在冷藏箱外面每天都会变差，第 4 天就坏了。尸体只能放 2 天。\n每件器官有完整度：完好（原价）、受损（-50%）、损坏（-99%）。放过的尸体更容易取出受损的。\n[模组影响]：\n效率影响功耗\n性能影响取出件数（每 1% 性能 = 多取一件的几率 +1%，超过 100% 的部分再掷一件）\n质量影响完整度（系数：0.5）
 dissector_label_body,尸体
 dissector_label_status,状态
 dissector_status_empty,空
-dissector_status_ready,新鲜度 {0}
+dissector_status_ready,新鲜度 {0}%
 dissector_status_rotten,已腐坏
 dissector_log_done,解剖机取出了{0}件完好的器官。
 dissector_log_rotten,尸体放坏了，解剖机什么也没取出来。
@@ -1375,7 +1375,7 @@ battle.tries_left,今晚还能翻找{0}次（共{1}次）。
 battle.wounded,你受伤了，今晚翻不动了。
 battle.risk,轻伤 {0}%　重伤 {1}%　被撞见 {2}%
 battle.search,翻找
-battle.found_corpse,你找到一具还算完整的。不用装包，走的时候拖回店里。
+battle.found_corpse,你找到一具刚断气的。不用装包，走的时候拖回店里。
 battle.found_scrap,你捡到一些能卖的零碎。
 battle.found_nothing,什么也没找到。
 battle.luck_saved,差点被流弹擦到。运气不错。
@@ -2045,7 +2045,7 @@ uc.water_corp.name,企业采购代表
 uc.water_corp.1,公司的会议室和高管层要用水。只要优质的。
 uc.water_corp.2,纯度够高，价钱好说。
 pex.give.smuggler,走私者暗格 + 8 支粉色注射器
-pex.give.smuggler_big,加大走私者暗格 + 8 支粉色注射器
+pex.give.smuggler_big,加大走私者暗格 + 8 支粉色注射器（扩建用过的套件退回）
 pex.get.smuggler,改装走私暗格（8×8，盘查时不搜）
 salon_talk_leave,（先不聊了）
 salon_guest_line3,· {0}（{1}）好感 {2}{3}
@@ -2098,3 +2098,91 @@ ul_dialog_tourist_greet_5,所有人都说这一带贵得离谱。所以我当然
 ul_dialog_tourist_deal_2,听说我在这儿能找点乐子？
 ul_dialog_tourist_weapon_greet_2,他们说这一带的店都死贵，可我倒觉得挺有意思。
 ul_dialog_tourist_weapon_greet_3,今天来逛逛空间站最有钱的区域。文化气息可真浓！
+test_hotkey_update,测试（上次更新）：发了 2 颗心脏、1 个肾、冷藏箱、暗灯、3D 器官打印机、6 份墨水、自充电电池，+5000 信用点（去凯那里买器官销售许可）。革命军战地医生和富豪病人今天会来；已有许可时器官库协调员和私立医院也来。
+corpse_name_fresh,{0}（新鲜度 {1}%）
+battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。走的时候拖回店里。
+battle.found_corpse_rotten,你找到一具，已经烂了，拆不出东西。
+bdoc.name,黑心医生
+bdoc.1,看到你的灯了。
+bdoc.2,手头有货吗？只要器官，别的不要。
+item_ul_organ_printer_name,3D 器官打印机
+item_ul_organ_printer_desc,用生物墨水和细胞样本打印器官。只在有电的晚上干活。
+item_ul_organ_printer_flavor,打出来的东西能用，就是谁都看得出是打的。
+item_ul_organ_printer_note_name,打印机说明
+item_ul_organ_printer_note_flavor,墨水 / 样本格放生物墨水和细胞样本，选好打什么，有电的晚上开工。心脏要 2 份墨水、2 晚；肺、肾各 1 份墨水、1 晚；每件另要 1 份细胞样本。打出来的品相随机（完好六成、受损三成、损坏一成）。\n细胞样本只能自己取：把原生器官（不能是腐坏的）放进取样器官槽，有电的晚上取一次，器官就没了。完好的取 8 份，受损 6 份，损坏 3 份。槽里有器官时先取样，再打印。\n打印器官只值原生的三成，不会坏，不用冷藏。没有销售证时算中级违禁品，只有黑心医生收，而且每次只收 1 件。\n在凯那里买"器官销售许可"后变成合法货：器官库协调员每 3 天来派单，按时交货给 2 倍报酬和上层区声望；私立医院每 7 天来派一张大单，要 3 件完好的，每件给 2.5 倍。招牌摆进橱窗，订单变成每 2 天一张，还会有整形诊所的人来收肺和肾。\n[模组影响]：\n效率影响功耗\n性能影响打印速度（每 1% 性能 = 当晚多推进一晚的几率 +1%）\n质量影响打印品相（系数：0.5）
+item_ul_bioink_name,生物墨水
+item_ul_bioink_desc,3D 器官打印机的耗材。
+item_ul_organ_license_name,器官合法销售证
+item_ul_organ_license_desc,有了它，打印的器官就是合法货。
+item_ul_sign_organ_name,器官库霓虹灯牌
+item_ul_sign_organ_desc,一块霓虹灯牌。将其放置在展示柜中，器官库协调员来得更勤，还会有整形诊所的人来收打印的肺和肾。
+item_ul_printed_heart_name,打印心脏
+item_ul_printed_heart_flavor,颜色浅了点。能跳。
+item_ul_printed_lung_name,打印肺
+item_ul_printed_lung_flavor,比原生的轻。
+item_ul_printed_kidney_name,打印肾
+item_ul_printed_kidney_flavor,边上有一圈打印纹。
+printer_mode_heart,心脏（2 墨水 + 1 样本，2 晚）
+printer_mode_lung,肺（1 墨水 + 1 样本，1 晚）
+printer_mode_kidney,肾（1 墨水 + 1 样本，1 晚）
+printer_label_ink,墨水 / 样本
+printer_label_mode,打印
+printer_status_need,墨水 {0}/{1}
+printer_log_done,3D 器官打印机打好了一件{0}。
+obank.name,整形诊所采购
+obank.1,看到你的招牌了。
+obank.2,有合规的打印肺、肾吗？心脏我们用不上。
+ul_kai_organ_license_title,器官销售许可
+ul_kai_organ_license_desc,凯替你办好手续。打印的器官变成合法货（不算违禁品）。器官库协调员会定期上门派订单（按时交货给 2 倍报酬和上层区声望），私立医院每 7 天来要一次大单。另给一张合法销售证和一块器官库霓虹灯牌：摆进橱窗，订单更勤，还会有整形诊所的人来收肺和肾。
+printer_label_organ,取样器官
+printer_status_organ,取样中
+ocoord.name,器官库协调员
+ocoord.intro.1,凯说你拿到许可了。我是器官库的。
+ocoord.intro.2,我们按单要货。走的时候给你一张单子，下次来时交。按时交，钱好说。
+ocoord.hello,又见面了。
+ocoord.ask,上次要的{0}带来了吗？这单是 {1} 信用点。
+ocoord.bye,下次见。
+porder.want_intact,完好的{0}
+porder.want_any,{0}（受损也行）
+porder.slip_name,器官库订单：{0}
+porder.slip_done,器官库订单（已作废）
+porder.slip_desc,器官库协调员下次来时交货。按时交：{0} 信用点，上层区声望 +1。
+porder.new,新订单：{0}，下次协调员来时交，报酬 {1} 信用点。
+porder.delivered,订单交了：另付 {0} 信用点，上层区声望 +{1}。
+porder.missed,订单没交上。下一单报酬少两成。
+porder.skipped,连着两单没交上，器官库这次不派单了。
+battle.heat,风声紧：被撞见的几率翻倍（还剩 {0} 晚）
+revmed.name,革命军战地医生
+revmed.1,前线等着用，我长话短说。
+revmed.2,只要心脏，能用的就行。烂的别拿出来。
+richpat.name,富豪病人
+richpat.1,医院让我排队，我等不起。
+richpat.2,要完好的，伤了的不要。钱不是问题。
+item_ul_cell_sample_name,细胞样本
+item_ul_cell_sample_desc,从原生器官上取下来的细胞。3D 器官打印机每打一件要 1 份。
+printer_status_sample,样本 {0}/{1}
+printer_log_extract,3D 器官打印机取了 {0} 份细胞样本。
+phosp.name,私立医院采购
+phosp.intro.1,凯介绍的。我替一家私立医院跑采购。
+phosp.intro.2,我们一次要得多，只要完好的。走的时候给你张单子，下周我再来。
+phosp.hello,上周的单子，货齐了吗？
+phosp.ask,单子上是：{0}。只要完好的。
+phosp.bye,下周见。
+phosp.part,{0} {1}/{2}
+phosp.sep,、
+phosp.slip_name,私立医院大单
+phosp.slip_done,私立医院大单（已作废）
+phosp.slip_desc,下次私立医院来时交：{0}。都要完好的。交齐一共 {1} 信用点，另加上层区声望 +{2}。
+phosp.new,私立医院大单：{0}，下周来收，一共 {1} 信用点。
+phosp.delivered,大单交了一件：另付 {0} 信用点。
+phosp.complete,大单交齐：另付 {0} 信用点，上层区声望 +{1}。
+item_ul_printed_heart_desc,3D 打印的心脏，只值原生的三成。不会坏，不用冷藏。
+item_ul_printed_lung_desc,3D 打印的肺，只值原生的三成。不会坏，不用冷藏。
+item_ul_printed_kidney_desc,3D 打印的肾，只值原生的三成。不会坏，不用冷藏。
+organprint.reissued,凯补发了器官销售证和招牌，放在店里了。
+dissector_status_nopower,新鲜度 {0}%（{1}）
+dissector_nopower_empty,没插电源
+dissector_nopower_converter_off,电源转换器没打开
+dissector_nopower_converter,转换器供不上电
+dissector_nopower_battery,电池没电
+richpat.premium,富豪溢价

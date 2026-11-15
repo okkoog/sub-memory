@@ -41,9 +41,9 @@ gsx_angled_grip_desc,"一款适用于长枪的倾斜前握把，可提升操控�
 gsx_tactical_light_name,"战术灯"
 gsx_tactical_light_desc,"一款下挂式战术灯，可照亮目标，便于在黑暗中瞄准。"
 gsx_mag_10_ext_name,"聚合物加长10毫米弹匣"
-gsx_mag_10_ext_desc,"一款聚合物加长10毫米弹匣，适用于使用弹匣供弹的10毫米枪械。"
+gsx_mag_10_ext_desc,"一款聚合物加长10毫米弹匣，适用于使用可拆卸弹匣的10毫米枪械。"
 gsx_folding_stock_name,"折叠枪托"
-gsx_folding_stock_desc,"一款适配长枪的钢制折叠枪托，可改善后坐力控制。"
+gsx_folding_stock_desc,"一款钢制折叠枪托，适用于“和平使者”冲锋枪和“壁垒”霰弹枪，可改善后坐力控制。"
 gsx_polished_slide_name,"抛光套筒"
 gsx_polished_slide_desc,为套筒做的镜面抛光。纯装饰。仅限手枪和“大黄蜂”。不能与金色镶嵌同时安装。
 gsx_match_trigger_name,"竞赛扳机"
@@ -58,7 +58,7 @@ gsx_bayonet_name,"刺刀"
 gsx_bayonet_desc,"一把卡在长枪枪口下方的钢制刀刃。提升威力和风格，但会让枪口变沉。也可以当作近战武器出售。"
 # ---- Ammo ----
 gsx_ammo_22_reload_name,"复装.22子弹"
-gsx_ammo_22_reload_flavor,"少量用回收弹壳手工复装的.22 SR子弹。更便宜，效果也差不了多少。"
+gsx_ammo_22_reload_flavor,"少量用回收弹壳手工复装的.22 SR子弹。更便宜，但效果差不了多少。"
 gsx_ammo_10_reload_name,"复装10毫米子弹"
 gsx_ammo_10_reload_flavor,"少量在维克丝后屋里复装的10毫米子弹。每一发都有点小毛病。"
 gsx_ammo_10_steel_name,"10毫米钢芯弹"
@@ -85,6 +85,9 @@ crate_wheel_next,"下一个箱子出 Malorian 的概率：{0}%"
 gsx_ammo_case_name,"弹药盒"
 gsx_ammo_case_desc,"一个钢制弹药盒，最多可装{0}发子弹。只要收购弹药的顾客要盒内全部子弹，就连盒带弹一起卖给他。"
 gsx_ammo_case_flavor,"再也不用在柜台上一发一发地数子弹了。"
+gsx_ammo_case_large_name,"大号弹药盒"
+gsx_ammo_case_large_desc,"一个钢制弹药箱，最多可装{0}发子弹。只要收购弹药的顾客要箱内全部子弹，就连箱带弹一起卖给他。"
+gsx_ammo_case_large_flavor,"压弹机一晚的产量全装得下。"
 # ---- Vex's Armory ----
 shop_title,"维克丝军火铺"
 shop_vex_name,"维克丝"
@@ -92,9 +95,12 @@ shop_vex_status_contract_missing,"想要更多货？去人脉网络签我的合�
 shop_vex_status_max,"合同III签了，资格也够。后屋随你挑。"
 shop_vex_status_cover_missing,"合同{0}是签了，可你资格还不够：<u>{0}级许可证，或{1}点黑市声望</u>（你现在{2}点）。"
 shop_vex_status_shady,"猫摆在展示柜里，我的买家自然会来。<u>没有许可证，你卖出去的每一把枪治安部都记着。</u>"
-shop_vex_book,"你的订单簿：{0}点，最多便宜{1}%。再攒{2}点，再便宜5%。"
-shop_vex_book_max,"你的订单簿：{0}点。最多就给到{1}%，不能再低了。"
-shop_vex_book_none,"你的订单簿：{0}点。再攒{1}点，便宜5%。"
+shop_vex_book,"你的订单簿：{0}点，枪械和芯片最多便宜{1}%。再攒{2}点，再便宜5%。"
+shop_vex_book_max,"你的订单簿：{0}点。枪械和芯片最多就给到{1}%，不能再低了。"
+shop_vex_book_none,"你的订单簿：{0}点。再攒{1}点，枪械和芯片便宜5%。"
+shop_line_book,"订单积分"
+shop_sheet_note,"维克丝卖得贵：她供应别处买不到的东西，不是拿来转卖的存货。"
+shop_bag_on_counter,"店里没有空位了：{0}被放在前柜台上，而前柜台每晚都会清空。"
 shop_vex_event_special,"今天刚到一把“极光”。手慢就没了。"
 shop_vex_event_discount,"今晚全场便宜{0}%。别浪费。"
 event_vex_raid_title,"突击搜查"
@@ -154,7 +160,7 @@ scenario_with_4,"没有武器许可证：枪械霓虹灯牌、破旧的走私者
 scenario_with_5,"维克丝合同I已签，黑市+20，治安部-15。信用点少450，租金+50"
 # ---- Perks ----
 perk_black_market_contacts_name,"黑市人脉"
-perk_black_market_contacts_desc,"维克丝军火铺的商品最多便宜20%（总折扣上限为25%，且价格不会低于商品价值的1.2倍）。"
+perk_black_market_contacts_desc,"维克丝的枪械和芯片最多便宜20%（总折扣上限为25%）。"
 perk_ammo_hoarder_name,"弹药囤积者"
 perk_ammo_hoarder_desc,"开局获得2个弹药箱。"
 perk_loyal_customer_name,"老主顾"
@@ -207,9 +213,10 @@ guide_desc,"一本实用手册，收录了维克丝的合同、武器许可证�
 guide_title,"枪匠手册"
 guide_h1,"维克丝和她的合同"
 guide_1_intro,"维克丝第3天会来你的店铺，之后在夜间开放她的军火铺。她的合同在人脉网络中出售。"
-guide_1_c1,"合同I（250）：“蝰蛇”和精密配件。"
-guide_1_c2,"合同II（500）：“哨兵”、“喇叭管”、金属和数控模组。"
-guide_1_c3,"合同III（800）：“大黄蜂”、“打桩机”、“远瞻”。"
+guide_1_price,"维克丝卖得贵：她供应别处买不到的东西，不是拿来转卖的存货。"
+guide_1_c1,"合同I（250）：“蝰蛇”、精密配件、3D打印机、精密喷嘴、翻新工作台。"
+guide_1_c2,"合同II（500）：“哨兵”、“喇叭管”、刺刀、.45弹药、金属和数控模组、武器箱。"
+guide_1_c3,"合同III（800）：“大黄蜂”、“打桩机”、“远瞻”、12号弹药、批量数控模组、镀金镶嵌、收藏家箱子。"
 guide_1_note,"只有具备对应等级的资格时，合同才算数。"
 guide_h2,"获得资格"
 guide_2_permit,"武器许可证"
@@ -229,11 +236,11 @@ guide_h4,"等级和订单簿"
 guide_4_r1,"I级"
 guide_4_r1_v,"“蝰蛇”"
 guide_4_r2,"II级"
-guide_4_r2_v,"“哨兵”、“喇叭管”"
+guide_4_r2_v,"“哨兵”、“喇叭管”、“五七”、“炸鸡”、“极光”"
 guide_4_r3,"III级"
-guide_4_r3_v,"“大黄蜂”、“打桩机”、“远瞻”"
+guide_4_r3_v,"“大黄蜂”、“打桩机”、“远瞻”、“斗牛犬”、Malorian"
 guide_4_rule,"枪的等级同时也是它的违禁品等级、对应的许可证和合同。"
-guide_4_note_book,"10点订单积分 = 维克丝处优惠5%，最多20%，售价不低于物品价值的1.2倍。"
+guide_4_note_book,"每交付一份订单就得积分：积分等于订单等级（1、2或3），达成全部加成再加1。10积分 = 维克丝的枪械和芯片优惠5%，最多20%。"
 guide_4_parts,"螺丝刀可以把枪拆成零件。"
 guide_1_pic,"夜间军火商维克丝。没人见过她的脸。"
 guide_2_pic,"许可证、“哨兵”、“喇叭管”：买家就冲这些来。"
@@ -275,8 +282,7 @@ gsx_module_ammo_batch_name,"批量复装模组"
 gsx_module_ammo_batch_desc,"一种打印机模组，每次用复装机打印时额外产出2盒子弹，消耗的废金属不变。打印速度较慢，耗电量大。可叠加。"
 module_effect_ammo_batch,"复装弹药盒打印数量+{0}"
 event_vex_lockdown_desc,"治安部正在严打，维克丝低调行事。军火铺今晚关门。"
-event_vex_shipment_desc,"一批非法军火经由黑市流入：维克丝降价清货。"
-shop_vex_event_shipment,"刚到了一批货。今晚全场降价{0}%，抓紧时间。"
+event_vex_shipment_desc,"一批非法武器经黑市流入：武器和弹药到处降价，维克丝这里也一样。"
 shop_vex_event_price_note,"今晚：在Vex的价格上再降{0}%"
 gsx_snub_revolver_name,"“斗牛犬”短管左轮"
 gsx_snub_revolver_desc,"一把10毫米短管左轮手枪，配有暗红色木质短握把。"
@@ -452,11 +458,11 @@ config_order_share,模组订单占比（%）
 config_order_share_tip,各等级枪械订单中被模组订单替换的比例。0 = 只有游戏原版订单。默认：20。
 config_order_day,模组订单起始天数
 config_order_day_tip,从这一天起才会出现模组的枪械订单。默认：1。
-gsx_printed_part_name,打印枪械零件
+gsx_printed_part_name,"塑料枪械零件"
 gsx_printed_part_desc,一个塑料枪械零件。可修理塑料打印枪，最多修到“良好”。
 gsx_printed_part_flavor,反正枪也是打印出来的，够用了。
 gsx_chip_pouch_name,芯片收纳袋
-gsx_chip_pouch_desc,最多可装{0}枚3D打印机芯片。放进打印机的芯片槽，再在下方选择配方（也可切换它）。
+gsx_chip_pouch_desc,最多可装{0}枚3D打印机芯片。放进芯片槽后选择配方，或收起来：补给套件会找到里面的芯片。
 gsx_chip_pouch_flavor,所有图纸，一袋装下。
 gsx_chip_pouch_chosen,选中的芯片：{0}
 gsx_chip_pouch_none,袋里没有芯片。
@@ -467,20 +473,94 @@ gsx_chip_pouch_have,（可用 {0}）
 gsx_material_bin_name,材料箱
 gsx_material_bin_desc,只能装3D打印材料：废金属、耗材、金属锭、枪械零件。
 gsx_material_bin_flavor,打印机吃的东西，全放在一处。
-gsx_autoloader_kit_name,自动上料套件
-gsx_autoloader_kit_desc,对3D打印机使用：每次打印前，打印机会从你的店铺里取出芯片所需的材料（陈列中或机器里的物品除外）。
+gsx_autoloader_kit_name,补给套件
+gsx_autoloader_kit_desc,对3D打印机使用：打印机会从店铺取出芯片所需的材料，“配方”栏会列出店铺里的芯片。
 gsx_autoloader_kit_flavor,总算有人把最无聊的活儿自动化了。
-gsx_autoloader_label,上料
+gsx_autoloader_label,补给
 gsx_autoloader_pull,取出材料
 gsx_autoloader_pull_tip,立刻从你的店铺里取出芯片所需的材料。
 gsx_autoloader_auto_on,自动：开
 gsx_autoloader_auto_off,自动：关
 gsx_autoloader_auto_tip,开：每次打印前，打印机从你的店铺里取材料。
-gsx_autoloader_installed,已安装自动上料器
+gsx_autoloader_installed,已安装补给套件
 guide_h5,开局几天
 guide_5_viper,3卷耗材能打印一把价值120的“蝰蛇”：卖掉，再打印。
 guide_5_buyers,维克丝的买家多付25%。地下开局：第3天和第5天各来一位；她的电话（8390）还能叫更多。
 guide_5_tinkerer,枪械改装匠收购未安装的配件：留2个不装上，或在展示柜放1个。
 guide_5_hopper,料斗（维克丝，合同 II）能从容器给打印机上料：不用再手动装料。
 guide_5_orders,"第4天起，买家可能会订购一把枪：先付25%，留下订购凭单，3天后回来取。"
-guide_5_note,把最早赚的信用点再投到芯片上：几个晚上就能回本。
+guide_5_resell,"展示柜里放枪械霓虹灯牌，就会有卖家带着打八折的二手枪上门：用枪械零件修好再交货。"
+guide_5_note,"配件芯片1到2周回本，枪械芯片要3到5周（含打印机模组）。有许可证时，打印的枪不会留下证据。"
+# ---- 靶场 (Range.cs) ----
+range_title,"维克丝的靶场"
+range_desc,"维克丝会在后屋开一个靶场。花{0}信用点和一发子弹就能试射一把枪，成绩好的话会打上钢印，价值提升5%到15%。"
+range_bought,"你已经可以使用维克丝的靶场了。"
+range_visit_1,"晚上好。说两句就走。"
+range_visit_2,"我在后屋搭了个靶场。"
+range_visit_3,"打得好，我就给枪打上钢印。有<u>钢印</u>的枪卖得更贵。"
+range_visit_4,"一次<u>{0}信用点</u>，外加一发子弹。今晚过来。"
+range_offer,"靶场准备好了。试哪把？"
+range_pick,"哪把上靶场？"
+range_no_gun,"身上没枪？带一把来，我等你。"
+range_all_gold,"你带的枪都已经有我的金印了。"
+range_window_title,"靶场（{0}信用点 + 1发子弹）"
+range_choice_desc,"所需分数：铜 {0}，银 {1}，金 {2}"
+range_choice_mark,"当前钢印：{0}"
+range_grade_1,"铜"
+range_grade_2,"银"
+range_grade_3,"金"
+range_ammo,"{0}啊。{1}信用点，外加一发{2}子弹。"
+range_own_ammo,"[用我的子弹（还剩{0}发）]"
+range_vex_ammo,"[用你的子弹（+{0}信用点）]"
+range_vex_none,"[用你的子弹（没这口径）]"
+range_not_tonight,"[今晚算了]"
+range_result_0,"{0}分。不够格打我的印。"
+range_result_1,"{0}分。铜印。还行吧。"
+range_result_2,"{0}分。银印。枪法干净。"
+range_result_3,"{0}分。金印。这把枪我自己都想要。"
+range_result_keep,"{0}分。还是保留它的{1}印。"
+proof_mark,"试射认证（{0}）"
+range_vex_hover,"维克丝：靶场"
+range_game_title,"维克丝的靶场"
+range_game_info,"{0}：铜 {1}，银 {2}，金 {3}（满分{4}）"
+range_game_hint,"点击射击。卡壳了就再点一下上膛。"
+range_game_score,"得分：{0}"
+range_game_jam,"卡壳了！点击上膛。"
+range_banner_0,"未达标"
+range_banner_1,"铜印"
+range_banner_2,"银印"
+range_banner_3,"金印"
+range_game_final,"{0} / {1} 分"
+# ---- Attachment tooltip (slot, guns) ----
+gsx_attach_slot,"槽位：{0}"
+gsx_attach_slot_special,"特殊槽位"
+gsx_attach_only,"适用：{0}"
+gsx_attach_any,"适用于所有带此槽位的枪械"
+gsx_attach_any_except,"适用于所有带此槽位的枪械，{0}除外"
+gsx_attach_sep,"、"
+shop_vex_syndicate,辛迪加的装备在外面流通。C20-R 装我的瞄具和消音器，严丝合缝。
+guide_h6,辛迪加装备
+guide_6_c20r,C20-R 能装维克丝的瞄具、消音器、枪口制退器和战术灯，也能用她的10毫米口径改装套件。
+guide_6_pen,Cybersun Pen 可以当螺丝刀用，也能拆解未安装的配件。
+guide_6_bench,翻新工作台修辛迪加的枪，和修别的枪一样。
+guide_6_note,从第14天起，黑市声望达到40，前辛迪加特工会来卖上行链路和电信水晶。
+guide_h7,"夜间的维克丝"
+guide_7_card,"维克丝在军火铺给你名片：拨打8390。每次服务后，线路占线4天。"
+guide_7_buyer,"“给我派个买家”：佣金按等级25 / 50 / 90信用点，次日上门。有许可证则无证据；没有则加价25%并留下证据。"
+guide_7_courier,"“给我送材料”：她的跑腿次日送达。可按她的价格+20%逐件购买，或整批购买享85折。"
+guide_7_events,"有些夜晚她的军火铺关门（突击检查、严打）；也有些夜晚会有稀有货或打折。"
+guide_7_discount,"订单簿和“黑市人脉”只降低她的枪械和芯片价格：弹药、材料和配件价格不变。"
+guide_h8,"店铺设备"
+guide_8_bench,"翻新工作台（维克丝，I级）：每晚让一把枪的成色提升一级，最高到全新。消耗枪械零件（或金属锭）和电力。"
+guide_8_locker,"枪柜（维克丝）：可放4把枪，每格一把。连同里面的东西一起出售。"
+guide_8_ammo,"弹药盒（维克丝）：最多放10发同一口径的子弹。连同内容物一起卖给想买弹药的顾客。"
+guide_8_lethal,"“守卫”10和“破暴”防暴枪为非致命枪械：无需许可证。致命改装套件能把它们变成真枪（I级）。"
+guide_8_crates,"箱子（维克丝）：零件箱有2个配件；密封武器箱有1把随机枪械；收藏家箱子有一把全新高端枪和2个稀有配件。"
+guide_h9,"打印机扩展"
+guide_9_press,"复装机芯片用废金属制作弹药（12号口径还需打印耗材）。只有.22复装机无需金属打印模组。"
+guide_9_batch,"批量复装模组：每次复装机打印多产出2盒子弹，废金属不变。速度慢、耗电大，可叠加。"
+guide_9_pouch,"芯片收纳袋（维克丝）：可装16枚芯片。放进打印机的芯片槽，再从中选择配方。"
+guide_9_kit,"补给套件（维克丝，II级）：对打印机使用。此后打印机会从店铺取出芯片所需材料，并列出店铺里的芯片。"
+order_syndicate,我要一把无壳弹的枪。地上不能留弹壳，什么痕迹都不能留。
+event_vex_syndicate_desc,维克丝弄到了一批辛迪加装备：一把 Cobra、无壳弹，签下合同III后还有C20-R。
+shop_vex_event_syndicate,刚过来一箱辛迪加的货。Cobra、无壳弹，趁还在赶紧拿。

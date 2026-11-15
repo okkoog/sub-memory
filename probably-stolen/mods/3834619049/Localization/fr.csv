@@ -41,9 +41,9 @@ gsx_angled_grip_desc,"Une poignée avant inclinée pour les armes longues, qui a
 gsx_tactical_light_name,Lampe tactique
 gsx_tactical_light_desc,"Une lampe sous le canon qui éclaire la cible et facilite la visée dans le noir."
 gsx_mag_10_ext_name,"Chargeur 10 mm allongé"
-gsx_mag_10_ext_desc,"Un chargeur de 10 mm allongé en polymère, pour les armes de 10 mm à chargeur."
+gsx_mag_10_ext_desc,"Un chargeur de 10 mm allongé en polymère, pour les armes de 10 mm à chargeur amovible."
 gsx_folding_stock_name,Crosse pliante
-gsx_folding_stock_desc,"Une crosse repliable en acier, compatible avec les armes longues, qui limite le recul."
+gsx_folding_stock_desc,"Une crosse repliable en acier pour la mitraillette Peacemaker et le fusil à pompe Rempart, qui limite le recul."
 gsx_polished_slide_name,Culasse polie
 gsx_polished_slide_desc,Une finition miroir pour la culasse. Purement esthétique. Pistolets et Frelon seulement. Incompatible avec les incrustations dorées.
 gsx_match_trigger_name,Détente de compétition
@@ -85,6 +85,9 @@ crate_wheel_next,"Malorian : {0} % à la prochaine caisse"
 gsx_ammo_case_name,Boîte à munitions
 gsx_ammo_case_desc,"Une boîte en acier qui contient jusqu'à {0} munitions. Elle se vend avec son contenu aux acheteurs de munitions qui en veulent tout le contenu."
 gsx_ammo_case_flavor,"Fini de compter les cartouches sur le comptoir."
+gsx_ammo_case_large_name,"Grande boîte à munitions"
+gsx_ammo_case_large_desc,"Une caisse en acier qui contient jusqu'à {0} munitions. Elle se vend avec son contenu aux acheteurs de munitions qui en veulent tout le contenu."
+gsx_ammo_case_large_flavor,"De quoi ranger toute une nuit de presses."
 # ---- Armurerie de Vex ----
 shop_title,Armurerie de Vex
 shop_vex_name,Vex
@@ -92,9 +95,12 @@ shop_vex_status_contract_missing,"Vous en voulez plus ? Mon contrat {0} est dans
 shop_vex_status_max,"Contrat III, et vous êtes couvert. Toute l'arrière-boutique est à vous."
 shop_vex_status_cover_missing,"Contrat {0} signé, mais vous n'êtes pas couvert : <u>permis {0}, ou une réputation de {1} auprès du marché noir</u> (vous en avez {2})."
 shop_vex_status_shady,"Gardez mon chat en vitrine, et mes clients passeront. <u>Sans permis, le service de sécurité compte chaque arme.</u>"
-shop_vex_book,"Votre carnet : {0} points, jusqu'à {1} % de remise. Encore {2} points pour 5 % de plus."
-shop_vex_book_max,"Votre carnet : {0} points. C'est ma meilleure remise : jusqu'à {1} %."
-shop_vex_book_none,"Votre carnet : {0} points. Encore {1} points pour 5 % de remise."
+shop_vex_book,"Votre carnet : {0} points, jusqu'à {1} % de remise sur armes et puces. Encore {2} points pour 5 % de plus."
+shop_vex_book_max,"Votre carnet : {0} points. C'est ma meilleure remise : jusqu'à {1} % sur armes et puces."
+shop_vex_book_none,"Votre carnet : {0} points. Encore {1} points pour 5 % de remise sur armes et puces."
+shop_line_book,"Carnet de commandes"
+shop_sheet_note,"Vex vend cher : elle fournit ce que personne ne vend, pas du stock à revendre."
+shop_bag_on_counter,"Plus de place dans la boutique : {0} est sur le comptoir avant, qui est vidé chaque nuit."
 shop_vex_event_special,"Arrivage du jour : une Aurore. Elle ne restera pas longtemps."
 shop_vex_event_discount,"Ce soir, tout est à -{0} %. Profitez-en."
 event_vex_raid_title,Descente
@@ -154,7 +160,7 @@ scenario_with_4,"Aucun permis d'armes : enseigne d'armurerie, cachette de contre
 scenario_with_5,"Contrat Vex I signé, marché noir +20, Sécurité -15. 450 crédits de moins, loyer +50"
 # ---- Traits ----
 perk_black_market_contacts_name,Contacts au marché noir
-perk_black_market_contacts_desc,"Tout est jusqu'à 20% moins cher à l'armurerie de Vex (la remise totale ne dépasse pas 25%, jamais sous 1,2 fois la valeur d'un objet)."
+perk_black_market_contacts_desc,"Les armes et les puces de Vex sont jusqu'à 20 % moins chères (la remise totale ne dépasse pas 25 %)."
 perk_ammo_hoarder_name,Stockeur de munitions
 perk_ammo_hoarder_desc,"Vous commencez la partie avec 2 caisses de munitions."
 perk_loyal_customer_name,Client fidèle
@@ -207,9 +213,10 @@ guide_desc,"Ce manuel contient des informations sur les contrats de Vex, les per
 guide_title,"Manuel de l'armurier"
 guide_h1,"Vex et ses contrats"
 guide_1_intro,"Vex passe à votre boutique le jour 3, puis ouvre son armurerie la nuit. Ses contrats sont dans le réseau."
-guide_1_c1,"Contrat I (250) : la Vipère et les accessoires de précision."
-guide_1_c2,"Contrat II (500) : Sentinelle, Escopette, modules métal et CNC."
-guide_1_c3,"Contrat III (800) : Frelon, Marteau-Pilon, Longue-Vue."
+guide_1_price,"Vex vend cher : elle fournit ce que personne ne vend, pas du stock à revendre."
+guide_1_c1,"Contrat I (250) : Vipère, accessoires de précision, imprimante 3D, buse de précision, banc de remise à neuf."
+guide_1_c2,"Contrat II (500) : Sentinelle, Escopette, baïonnette, munitions .45, modules métal et CNC, caisse d'armes."
+guide_1_c3,"Contrat III (800) : Frelon, Marteau-Pilon, Longue-Vue, munitions .12, module CNC de série, incrustations dorées, caisse du collectionneur."
 guide_1_note,"Un contrat ne compte que si vous êtes couvert pour son rang."
 guide_h2,"Être couvert"
 guide_2_permit,"Permis d'armes"
@@ -229,11 +236,11 @@ guide_h4,"Rangs et carnet de commandes"
 guide_4_r1,"Rang I"
 guide_4_r1_v,"Vipère"
 guide_4_r2,"Rang II"
-guide_4_r2_v,"Sentinelle, Escopette"
+guide_4_r2_v,"Sentinelle, Escopette, Five-Seven, Frite, Aurore"
 guide_4_r3,"Rang III"
-guide_4_r3_v,"Frelon, Marteau-Pilon, Longue-Vue"
+guide_4_r3_v,"Frelon, Marteau-Pilon, Longue-Vue, Bouledogue, Malorian"
 guide_4_rule,"Le rang d'une arme est aussi son niveau de contrebande, son permis et son contrat."
-guide_4_note_book,"10 points de commande = 5 % de remise chez Vex, jusqu'à 20 %, jamais sous 1,2 fois la valeur d'un objet."
+guide_4_note_book,"Chaque commande livrée rapporte des points : son rang (1, 2 ou 3), plus 1 si tous les bonus sont remplis. 10 points = 5 % de remise sur les armes et puces de Vex, jusqu'à 20 %."
 guide_4_parts,"Le tournevis démonte une arme en pièces."
 guide_1_pic,"Vex, l'armurière de nuit. Personne n'a jamais vu son visage."
 guide_2_pic,"Permis, Sentinelle, Escopette : ce que veulent les acheteurs."
@@ -275,8 +282,7 @@ gsx_module_ammo_batch_name,"Module de rechargement en série"
 gsx_module_ammo_batch_desc,"Un module qui ajoute 2 boîtes de munitions à chaque impression d'une presse de rechargement, pour la même ferraille. Lent. Consomme beaucoup plus d'énergie. Cumulable."
 module_effect_ammo_batch,"Boîtes de munitions rechargées imprimées : +{0}"
 event_vex_lockdown_desc,"Avec la répression du service de sécurité, Vex fait profil bas. L'armurerie reste fermée cette nuit."
-event_vex_shipment_desc,"Un arrivage d'armes illégal est passé par le marché noir : Vex écoule son stock moins cher."
-shop_vex_event_shipment,"Un arrivage vient de passer. Tout est à -{0} % ce soir, profitez-en."
+event_vex_shipment_desc,"Un arrivage d'armes illégal est passé par le marché noir : armes et munitions baissent partout, chez Vex aussi."
 shop_vex_event_price_note,"Ce soir : -{0} % sur le prix de Vex"
 gsx_snub_revolver_name,"Bouledogue"
 gsx_snub_revolver_desc,"Un revolver à canon court de calibre 10 mm, à crosse courte en bois rouge sombre."
@@ -452,11 +458,11 @@ config_order_share,Part des commandes du mod (%)
 config_order_share_tip,Part des commandes d'armes de chaque rang remplacées par celles du mod. 0 = seulement celles du jeu. Par défaut : 20.
 config_order_day,Commandes du mod dès le jour
 config_order_day_tip,Les commandes d'armes du mod ne viennent qu'à partir de ce jour. Par défaut : 1.
-gsx_printed_part_name,Pièce d'arme imprimée
+gsx_printed_part_name,"Pièce d'arme en plastique"
 gsx_printed_part_desc,"Une pièce d'arme en plastique. Répare les armes en plastique imprimé, jusqu'à « Bon état »."
 gsx_printed_part_flavor,Assez bonne pour une arme qui sort déjà d'une imprimante.
 gsx_chip_pouch_name,Pochette à puces
-gsx_chip_pouch_desc,"Contient jusqu'à {0} puces d'imprimante 3D. Posez-la dans la case Puce de l'imprimante, puis choisissez la recette en dessous (ou altérez la pochette)."
+gsx_chip_pouch_desc,"Contient jusqu'à {0} puces d'imprimante 3D. Posez-la dans la case Puce et choisissez la recette, ou rangez-la : un kit d'approvisionnement trouve les puces dedans."
 gsx_chip_pouch_flavor,Tous les plans dans une seule poche.
 gsx_chip_pouch_chosen,Puce choisie : {0}
 gsx_chip_pouch_none,Aucune puce dedans.
@@ -467,20 +473,94 @@ gsx_chip_pouch_have,({0} disponibles)
 gsx_material_bin_name,Bac à matières
 gsx_material_bin_desc,"Ne contient que des matières d'impression 3D : ferraille, filament, lingots de métal, pièces détachées d'arme."
 gsx_material_bin_flavor,"Tout ce que mange l'imprimante, au même endroit."
-gsx_autoloader_kit_name,Kit de chargeur automatique
-gsx_autoloader_kit_desc,"S'utilise sur une imprimante 3D : avant chaque impression, elle prend dans votre boutique ce que demande sa puce, sauf ce qui est exposé ou dans une machine."
+gsx_autoloader_kit_name,Kit d'approvisionnement
+gsx_autoloader_kit_desc,"S'utilise sur une imprimante 3D : elle prend dans votre boutique les matières de sa puce, et son panneau Recette liste les puces de la boutique."
 gsx_autoloader_kit_flavor,Quelqu'un a enfin automatisé la partie ennuyeuse.
-gsx_autoloader_label,Chargeur
+gsx_autoloader_label,Appro.
 gsx_autoloader_pull,Tirer les matières
 gsx_autoloader_pull_tip,Prend tout de suite dans votre boutique ce que demande la puce.
 gsx_autoloader_auto_on,Auto : oui
 gsx_autoloader_auto_off,Auto : non
 gsx_autoloader_auto_tip,"Oui : avant chaque impression, l'imprimante prend ses matières dans votre boutique."
-gsx_autoloader_installed,Chargeur automatique installé
+gsx_autoloader_installed,Kit d'approvisionnement installé
 guide_h5,Premiers jours
 guide_5_viper,"3 bobines de filament impriment une Vipère qui vaut 120 : vendez-la, réimprimez."
 guide_5_buyers,Les clients de Vex paient 25 % de plus. Départ clandestin : deux passent les jours 3 et 5 ; sa ligne (8390) en envoie d'autres.
 guide_5_tinkerer,"Le bricoleur d'armes achète les accessoires non montés : gardez-en 2 en stock, ou un en vitrine."
 guide_5_hopper,"Les trémies (Vex, contrat II) alimentent une imprimante depuis un conteneur : plus de chargement à la main."
 guide_5_orders,"Dès le jour 4, un acheteur peut commander une arme : 25 % d'avance et une fiche, il revient 3 jours après."
-guide_5_note,Réinvestissez vos premiers crédits dans des puces : elles se remboursent en quelques nuits.
+guide_5_resell,"Avec l'Enseigne néon (armes à feu) en vitrine, des vendeurs apportent des armes usagées à −20 % : réparez-les avec des pièces détachées, puis livrez."
+guide_5_note,"Une puce d'accessoire se rembourse en 1 à 2 semaines, une puce d'arme en 3 à 5 (modules d'imprimante compris). Avec un permis, vos armes imprimées ne laissent aucune preuve."
+# ---- Stand de tir (Range.cs) ----
+range_title,"Stand de tir de Vex"
+range_desc,"Vex ouvrira un stand de tir dans son arrière-boutique. Vous pourrez y éprouver une arme pour {0} crédits et une balle : un bon score lui vaudra un poinçon de +5 % à +15 % de sa valeur."
+range_bought,"Vous avez déjà accès au stand de Vex."
+range_visit_1,"Bonsoir. Je ne vous retiens pas longtemps."
+range_visit_2,"J'ai monté un stand de tir dans mon arrière-boutique."
+range_visit_3,"Tirez bien, et je poinçonne l'arme. Les acheteurs paient plus pour un <u>poinçon</u>."
+range_visit_4,"<u>{0} crédits</u> la séance, plus une balle. Passez ce soir."
+range_offer,"Le stand est prêt. Quelle arme on éprouve ?"
+range_pick,"Laquelle passe sur le stand ?"
+range_no_gun,"Pas d'arme sur vous ? Revenez avec une, je ne bouge pas."
+range_all_gold,"Tout ce que vous portez a déjà mon poinçon d'or."
+range_window_title,"Stand de tir ({0} crédits + 1 balle)"
+range_choice_desc,"Score demandé : bronze {0}, argent {1}, or {2}"
+range_choice_mark,"Poinçon actuel : {0}"
+range_grade_1,"bronze"
+range_grade_2,"argent"
+range_grade_3,"or"
+range_ammo,"{0} : {1} crédits, et une balle de {2}."
+range_own_ammo,"[Utiliser mes balles (il m'en reste {0})]"
+range_vex_ammo,"[Utiliser vos balles (+{0} crédits)]"
+range_vex_none,"[Utiliser vos balles (pas ce calibre)]"
+range_not_tonight,"[Pas ce soir]"
+range_result_0,"Score : {0}. Pas assez pour mon poinçon."
+range_result_1,"Score : {0}. Bronze. C'est un début."
+range_result_2,"Score : {0}. Argent. Du tir propre."
+range_result_3,"Score : {0}. Or. Je l'achèterais bien moi-même."
+range_result_keep,"Score : {0}. Elle garde son poinçon ({1})."
+proof_mark,"Éprouvée ({0})"
+range_vex_hover,"Vex : stand de tir"
+range_game_title,"Stand de Vex"
+range_game_info,"{0} : bronze {1}, argent {2}, or {3} (sur {4})"
+range_game_hint,"Cliquez pour tirer. Enrayée ? Un clic pour réarmer."
+range_game_score,"Score : {0}"
+range_game_jam,"Enrayée ! Cliquez pour réarmer."
+range_banner_0,"PAS DE POINÇON"
+range_banner_1,"BRONZE"
+range_banner_2,"ARGENT"
+range_banner_3,"OR"
+range_game_final,"{0} points sur {1}"
+# ---- Attachment tooltip (slot, guns) ----
+gsx_attach_slot,"Emplacement : {0}"
+gsx_attach_slot_special,"Option"
+gsx_attach_only,"Va sur : {0}"
+gsx_attach_any,"Va sur toute arme qui a cet emplacement"
+gsx_attach_any_except,"Va sur toute arme qui a cet emplacement, sauf : {0}"
+gsx_attach_sep,", "
+shop_vex_syndicate,Du matériel du Syndicat circule. Mes viseurs et mes silencieux vont très bien sur un C20-R.
+guide_h6,Matériel du Syndicat
+guide_6_c20r,"Le C20-R prend les viseurs, silencieux, frein de bouche et lampe tactique de Vex, et son kit de calibre 10 mm."
+guide_6_pen,Le stylo Cybersun sert de tournevis : il démonte aussi les accessoires non montés.
+guide_6_bench,Le banc de remise à neuf répare les armes du Syndicat comme les autres.
+guide_6_note,"Dès le jour 14, avec 40 de réputation auprès du marché noir, d'anciens agents du Syndicat viennent vendre uplinks et télécristaux."
+guide_h7,"Vex la nuit"
+guide_7_card,"Vex vous donne sa carte à l'armurerie : composez le 8390. Après chaque service, la ligne est occupée 4 jours."
+guide_7_buyer,"« Envoie-moi un acheteur » : 25 / 50 / 90 crédits selon le rang, il passe demain. Avec un permis, aucune preuve ; sans permis, +25 % et des preuves."
+guide_7_courier,"« Livre-moi des matières » : son coursier passe demain. Achat à l'unité à ses prix +20 %, ou tout le lot à −15 %."
+guide_7_events,"Certaines nuits, son armurerie est fermée (descente, coup de filet) ; d'autres apportent une pièce rare ou une soirée de rabais."
+guide_7_discount,"Le carnet de commandes et Contacts au marché noir ne baissent que ses armes et puces : munitions, matières et accessoires gardent leur prix."
+guide_h8,"Équipement de la boutique"
+guide_8_bench,"Banc de remise à neuf (Vex, rang I) : une arme gagne un cran d'état chaque nuit, jusqu'à Neuf. Coûte des pièces d'arme (ou des lingots) et de l'énergie."
+guide_8_locker,"Casier à armes (Vex) : 4 armes, une par emplacement. Il se vend avec son contenu."
+guide_8_ammo,"Boîte à munitions (Vex) : jusqu'à 10 munitions d'un seul calibre. Elle se vend avec son contenu aux acheteurs de munitions."
+guide_8_lethal,"Gardien-10 et Brise-émeute sont non létaux : aucun permis requis. Un kit de conversion létale en fait de vraies armes (rang I)."
+guide_8_crates,"Caisses (Vex) : caisse de pièces = 2 accessoires ; caisse d'armes scellée = 1 arme au hasard ; caisse du collectionneur = une arme haut de gamme neuve et 2 accessoires rares."
+guide_h9,"Compléments d'imprimante"
+guide_9_press,"Les puces de presse fabriquent des munitions avec de la ferraille (calibre 12 : plus du filament). Seule la presse .22 se passe du module d'impression métallique."
+guide_9_batch,"Module de rechargement en série : +2 boîtes de munitions par impression d'une presse, pour la même ferraille. Lent, gourmand en énergie, cumulable."
+guide_9_pouch,"Pochette à puces (Vex) : 16 puces. Posez-la dans la case Puce de l'imprimante, puis choisissez la recette dedans."
+guide_9_kit,"Kit d'approvisionnement (Vex, rang II) : s'utilise sur l'imprimante, qui prend alors les matières de sa puce dans la boutique et liste les puces de la boutique."
+order_syndicate,"Il me faut une arme sans étui. Pas une douille par terre, rien qui reste derrière."
+event_vex_syndicate_desc,"Vex a mis la main sur du matériel du Syndicat : un Cobra, des munitions sans étui, et un C20-R dès le contrat III."
+shop_vex_event_syndicate,"Une caisse du Syndicat est passée par ici. Cobra, munitions sans étui. Servez-vous tant qu'il y en a."

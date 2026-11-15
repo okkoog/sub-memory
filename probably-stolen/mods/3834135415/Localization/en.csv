@@ -498,3 +498,10 @@ vge_ammo_box_contents_sep,", "
 log_auto_feed,Workshop: {0} material(s) moved from the gunsmith bays to the printer.
 log_auto_store,Workshop: {0} printed item(s) stored in the gunsmith bays.
 manual_gunmod_title,Gun fitting and settings
+cfg_chip_rack,Printer chip rack
+cfg_chip_rack_tip,"The chip rack and its two rotate buttons in the printer's chip panel. Off: printers keep the vanilla chip panel, chips left in the rack go to the output tray, and the expansion kit is neither sold nor usable; a rack you expanded keeps its size for when you switch this back on. Takes a restart. Switched off automatically while a mod that rebuilds the printer's chip slot is enabled."
+compat_notice,"To keep the game compatible, Vanilla Gun Expansion has turned off its {0} ({1})."
+compat_chip_rack,printer chip rack
+compat_reason_mod,it conflicts with the mod {0}
+compat_reason_shape,another mod has already rebuilt the printer's chip panel
+compat_rack_moved,"The {0} chip(s) that were in the rack are back in the printer's output tray, or in the back room or the store inventory if the tray was full."
