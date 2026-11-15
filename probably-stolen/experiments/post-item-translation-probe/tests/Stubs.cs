@@ -12,6 +12,21 @@ public class GameItem
     public string flavorText { get; set; }
 }
 public class GameItemElement : GameItem {}
+public class StartingPerk
+{
+    public string id, rawName, rawDescription, source;
+    public int cost, maxSlot;
+    public Func<string> nameProvider, descriptionProvider;
+    public string GetLocalizedDisplayName() => nameProvider != null ? nameProvider() : rawName;
+    public string GetLocalizedDescription() => descriptionProvider != null ? descriptionProvider() : rawDescription;
+}
+public static class StartingPerkList
+{
+    public static readonly Dictionary<string, StartingPerk> Registered =
+        new Dictionary<string, StartingPerk>(StringComparer.Ordinal);
+    public static StartingPerk GetModPerk(string id) =>
+        Registered.TryGetValue(id, out var p) ? p : null;
+}
 public class LoadedMod
 {
     public ModManifest Manifest;
@@ -86,14 +101,17 @@ public static class ModHook
     public static event Action<ModItemDirectory> OnModItemDirectoryInit;
     public static event Action OnGameLoadedLate;
     public static event Action<string,PaperUI> OnPaperOpened;
+    public static event Action<LoadedMod> OnModAssetsLoaded;
     public static void Directory(ModItemDirectory d) {
         DirectoryMaster.Current=d;
         OnModItemDirectoryInit?.Invoke(d);
     }
     public static void Late()=>OnGameLoadedLate?.Invoke();
     public static void Paper(string full, PaperUI ui)=>OnPaperOpened?.Invoke(full,ui);
+    public static void Assets(LoadedMod mod)=>OnModAssetsLoaded?.Invoke(mod);
     public static int SubscriptionCount=>
         (OnModItemDirectoryInit?.GetInvocationList().Length ?? 0)+
         (OnGameLoadedLate?.GetInvocationList().Length ?? 0)+
-        (OnPaperOpened?.GetInvocationList().Length ?? 0);
+        (OnPaperOpened?.GetInvocationList().Length ?? 0)+
+        (OnModAssetsLoaded?.GetInvocationList().Length ?? 0);
 }
