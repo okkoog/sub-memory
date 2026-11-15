@@ -1605,6 +1605,28 @@ TYPE PhoneBookUIManager
   M Public, HideBySig Void OpenUI()
   M Public, HideBySig Void CloseUI()
   M Public, HideBySig, SpecialName, RTSpecialName Void .ctor()
+TYPE RichText
+## RichText
+  P String nakedText
+  P String richTextStrikethrough
+  P String richTextUnderline
+  P String richTextForeground
+  P String richTextBackground
+  P Int32 recommendedWidth
+  P Int32 recommendedHeight
+  P Boolean isTruncated
+  F Private String <nakedText>k__BackingField
+  F Private String <richTextStrikethrough>k__BackingField
+  F Private String <richTextUnderline>k__BackingField
+  F Private String <richTextForeground>k__BackingField
+  F Private String <richTextBackground>k__BackingField
+  F Private Int32 <recommendedWidth>k__BackingField
+  F Private Int32 <recommendedHeight>k__BackingField
+  F Private Boolean <isTruncated>k__BackingField
+  M Public, HideBySig, SpecialName, RTSpecialName Void .ctor(String, String, String, String, String, Int32, Int32, Boolean)
+  M Public, Virtual, HideBySig Int32 GetHashCode()
+  M Public, HideBySig Boolean QuickEquals(RichText)
+TYPE RichTextBuilder
 ## RichTextBuilder
   F Private List`1<TextSlice> slices
   F Private String nextBegin
@@ -1895,4 +1917,27 @@ TYPE Binding
   F Public Button button
   F Public CustomUIElement handle
   M Public, HideBySig, SpecialName, RTSpecialName Void .ctor()
+TYPE TextSlice
+## TextSlice
+  F Public String text
+  F Public Boolean bold
+  F Public Boolean italic
+  F Public Boolean underline
+  F Public Boolean strikethrough
+  F Public Char underlineChar
+  F Public Char strikethroughChar
+  F Public ColorPalette color
+  F Public ColorPalette backgroundColor
+  F Public ColorPalette underlineColor
+  F Public ColorPalette strikethroughColor
+  F Public Boolean isNewLine
+  F Public Boolean noBreak
+  F Private Int32 length
+  M Public, HideBySig, SpecialName, RTSpecialName Void .ctor(Boolean)
+  M Public, HideBySig Int32 GetLengthOld()
+  M Public, HideBySig Int32 GetLength()
+  M Public, HideBySig TextSlice Copy(String)
+  M Public, HideBySig List`1<Int32> GetReversedIndices(Char)
+  M Public, HideBySig Int32 GetFirstIndex(Char)
+  M Public, HideBySig ValueTuple`5<String,String,String,String,String> GetString(Int32)
 TYPE <DialogueCoroutine>d__61
