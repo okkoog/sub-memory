@@ -6,42 +6,65 @@ namespace PostItemTranslationProbe
 {
     public sealed class Translation
     {
-        private readonly Dictionary<string, TargetItem> entries =
-            new Dictionary<string, TargetItem>(StringComparer.Ordinal);
-        public IEnumerable<TargetItem> Items => entries.Values;
-        public int Count => entries.Count;
+        private readonly Dictionary<string, Item> items =
+            new Dictionary<string, Item>(StringComparer.Ordinal);
+        private readonly Dictionary<string, Paper> papers =
+            new Dictionary<string, Paper>(StringComparer.Ordinal);
 
-        public sealed class TargetItem
+        public IEnumerable<Item> Items => items.Values;
+        public IEnumerable<Paper> Papers => papers.Values;
+        public int ItemCount => items.Count;
+        public int PaperCount => papers.Count;
+
+        public sealed class Paper
+        {
+            public readonly string ModId, BookId, ElementId, Original, Korean;
+            public Paper(string modId, string bookId, string elementId,
+                         string original, string korean)
+            {
+                ModId = modId; BookId = bookId; ElementId = elementId;
+                Original = original; Korean = korean;
+            }
+        }
+
+        public sealed class Item
         {
             private sealed class Pair
             {
-                public readonly string Original, Korean;
-                public Pair(string original, string korean) { Original = original; Korean = korean; }
+                public readonly string Source, Korean;
+                public Pair(string source, string korean)
+                { Source = source; Korean = korean; }
             }
             public readonly string ModId, ItemId;
             private readonly Dictionary<string, Pair> fields =
                 new Dictionary<string, Pair>(StringComparer.Ordinal);
 
-            public TargetItem(string modId, string itemId) { ModId = modId; ItemId = itemId; }
-            public void Add(string field, string original, string korean)
+            public Item(string modId, string itemId)
+            { ModId = modId; ItemId = itemId; }
+
+            public void Add(string field, string source, string korean)
             {
-                if (fields.ContainsKey(field)) throw new FormatException("Duplicate field");
-                fields.Add(field, new Pair(original, korean));
+                if (fields.ContainsKey(field))
+                    throw new FormatException("Duplicate item translation field");
+                fields.Add(field, new Pair(source, korean));
             }
-            private string Translate(string field, string input)
+
+            private string Get(string field, string current)
             {
-                return input != null && fields.TryGetValue(field, out var pair) &&
-                    string.Equals(input, pair.Original, StringComparison.Ordinal)
-                    ? pair.Korean : input;
+                return current != null &&
+                    fields.TryGetValue(field, out var pair) &&
+                    string.Equals(current, pair.Source, StringComparison.Ordinal)
+                    ? pair.Korean : current;
             }
+
             public void Apply(GameItem item)
             {
-                // We deliberately avoid virtual setters on custom mod-derived item types.
+                // Do not call overridden accessors of another mod's derived class.
                 if (item == null || item.GetType() != typeof(GameItemElement)) return;
                 var n = item.name; var s = item.shortDescription;
                 var l = item.longDescription; var f = item.flavorText;
-                var nn = Translate("name", n); var ss = Translate("shortDescription", s);
-                var ll = Translate("longDescription", l); var ff = Translate("flavorText", f);
+                var nn = Get("name", n); var ss = Get("shortDescription", s);
+                var ll = Get("longDescription", l); var ff = Get("flavorText", f);
                 if (nn == n && ss == s && ll == l && ff == f) return;
                 try
                 {
@@ -52,7 +75,6 @@ namespace PostItemTranslationProbe
                 }
                 catch
                 {
-                    // Restore only already changed strings if any setter unexpectedly throws.
                     try
                     {
                         if (item.name != n) item.name = n;
@@ -66,37 +88,50 @@ namespace PostItemTranslationProbe
             }
         }
 
-        public static Translation Parse(string text)
+        public static Translation Parse(string modId, string text)
         {
-            if (text == null || text.Length > 524288)
-                throw new FormatException("Missing or oversized CSV");
+            if (string.IsNullOrWhiteSpace(modId) || text == null || text.Length > 524288)
+                throw new FormatException("Invalid mod ID or missing/oversized CSV");
+
             var rows = Csv(text.TrimStart('\uFEFF'));
             if (rows.Count == 0 || rows[0].Length != 5 ||
-                string.Join(",", rows[0]) != "ModID,ItemID,Field,Original,Korean")
-                throw new FormatException("CSV header");
+                string.Join(",", rows[0]) != "Type,Target,Field,Original,Korean")
+                throw new FormatException("CSV header must be Type,Target,Field,Original,Korean");
 
-            var parsed = new Translation();
+            var result = new Translation();
             for (int i = 1; i < rows.Count; i++)
             {
                 var r = rows[i];
-                if (r.Length != 5) throw new FormatException("CSV column count");
-                if (string.IsNullOrWhiteSpace(r[0]) || string.IsNullOrWhiteSpace(r[1]))
-                    throw new FormatException("Empty mod/item ID");
-                if (r[2] != "name" && r[2] != "shortDescription" &&
-                    r[2] != "longDescription" && r[2] != "flavorText")
-                    throw new FormatException("Unsupported field");
+                if (r.Length != 5 || string.IsNullOrWhiteSpace(r[1]) ||
+                    string.IsNullOrWhiteSpace(r[2]))
+                    throw new FormatException("Invalid row");
                 if (r[3].Length == 0 || r[4].Length == 0) continue;
                 if (Tokens(r[3]) != Tokens(r[4]))
                     throw new FormatException("Placeholder mismatch");
-                string key = r[0] + "\u001f" + r[1];
-                if (!parsed.entries.TryGetValue(key, out var item))
+
+                if (r[0] == "Item")
                 {
-                    item = new TargetItem(r[0], r[1]);
-                    parsed.entries.Add(key, item);
+                    if (r[2] != "name" && r[2] != "shortDescription" &&
+                        r[2] != "longDescription" && r[2] != "flavorText")
+                        throw new FormatException("Unsupported item field");
+                    if (!result.items.TryGetValue(r[1], out var item))
+                    {
+                        item = new Item(modId, r[1]);
+                        result.items.Add(r[1], item);
+                    }
+                    item.Add(r[2], r[3], r[4]);
                 }
-                item.Add(r[2], r[3], r[4]);
+                else if (r[0] == "Paper")
+                {
+                    string key = r[1] + "\u001f" + r[2];
+                    if (result.papers.ContainsKey(key))
+                        throw new FormatException("Duplicate paper element");
+                    result.papers.Add(key,
+                        new Paper(modId, r[1], r[2], r[3], r[4]));
+                }
+                else throw new FormatException("Unsupported translation type");
             }
-            return parsed;
+            return result;
         }
 
         private static string Tokens(string s)
@@ -126,9 +161,11 @@ namespace PostItemTranslationProbe
 
         private static List<string[]> Csv(string s)
         {
-            var output = new List<string[]>(); var row = new List<string>();
+            var output = new List<string[]>();
+            var row = new List<string>();
             var cell = new StringBuilder();
             bool quoted = false, closed = false, started = false;
+
             for (int i = 0; i < s.Length; i++)
             {
                 char c = s[i];
@@ -143,9 +180,12 @@ namespace PostItemTranslationProbe
                     else cell.Append(c);
                     continue;
                 }
+
                 if (c == ',' || c == '\r' || c == '\n')
                 {
-                    row.Add(cell.ToString()); cell.Clear(); closed = started = false;
+                    row.Add(cell.ToString());
+                    cell.Clear();
+                    closed = started = false;
                     if (c != ',')
                     {
                         if (row.Count != 1 || row[0] != "") output.Add(row.ToArray());
@@ -153,17 +193,21 @@ namespace PostItemTranslationProbe
                         if (c == '\r' && i + 1 < s.Length && s[i + 1] == '\n') i++;
                     }
                 }
-                else if (closed) throw new FormatException("Characters after quote");
+                else if (closed) throw new FormatException("Trailing text after quoted cell");
                 else if (c == '"')
                 {
-                    if (started) throw new FormatException("Quote in plain cell");
+                    if (started) throw new FormatException("Quote in unquoted cell");
                     quoted = started = true;
                 }
                 else { cell.Append(c); started = true; }
             }
-            if (quoted) throw new FormatException("Unclosed quoted CSV cell");
+
+            if (quoted) throw new FormatException("Unclosed quoted cell");
             if (started || closed || row.Count != 0)
-            { row.Add(cell.ToString()); output.Add(row.ToArray()); }
+            {
+                row.Add(cell.ToString());
+                output.Add(row.ToArray());
+            }
             return output;
         }
     }
