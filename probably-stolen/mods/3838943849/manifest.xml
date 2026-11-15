@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ============================================================================
-  【这个文件是 mod 的身份卡 + 发布页文案，随时可以自己改】
-
-  · ID        必须和文件夹名一模一样（这里 Mods\ds_gacha），改了就加载不了
-  · Name      游戏 MOD 列表、Steam 创意工坊里显示的名字
-  · Author    作者名
-  · ModVersion 版本号，纯文本，你自己怎么编都行（建议 主版本.次版本.修订 = 1.0.1）
-  · Description 就是下面这一大段 —— 它在游戏 MOD 列表里、在 Steam 创意工坊里都当作简介显示。
-              想加内容直接往中间插行就行，注意不能出现英文的 & < > 三个符号
-              （要写 & 请写成 &amp;，要写 < 请写成 &lt;，要写 > 请写成 &gt;）
-  · GameVersions 认哪些游戏版本。当前游戏是 0.46D
-  · Assemblies  要加载的 DLL 文件名，别改
-  · Capabilities 申请的权限。files = 允许读写 mod 目录里的文件（读 Art 图片、cards.json 必需）
-
-  想还原成发布前的旧版（那一大串更新记录）：见工作区 _history\manifest-0.5.0-旧版备份.xml
-  ============================================================================
+============================================================================
 -->
 <Manifest>
   <ID>ds_gacha</ID>
   <Name>深空抽卡 · 我靠运气暴富</Name>
-  <Author>自制</Author>
-  <ModVersion>1.0.0</ModVersion>
+  <Author>风神翼</Author>
+  <ModVersion>1.2.0</ModVersion>
 
   <Description>
-深空当铺 × 绝区零 —— 在录像店里摆一台抽卡机，靠收藏卡发财。
+深空当铺抽卡模拟器 —— 在录像店里摆一台抽卡机，靠收藏卡发财。
 
 这是给《深空当铺》(Probably Stolen) 做的扩展 MOD：加了一整套「抽卡 · 集卡 · 卖卡」的循环。
 不替换、不修改任何原版内容，也不占用原版顾客的生成名额，可以随时启用 / 停用。
@@ -137,7 +123,7 @@ MOD 专属顾客，不占原版名额。每天开门掷一次骰子：
   <Assemblies>
     <Assembly>DSGacha.dll</Assembly>
   </Assemblies>
-  <Capabilities>
-    <Capability>files</Capability>
-  </Capabilities>
+  <!-- 代码只通过 ModHelper.ReadModFileText / ReadModFileBytes / ModFileExists 读自己文件夹，
+       不走 System.IO，所以不需要任何能力。留空 = 玩家启用时没有权限确认框，也不需要开发者验证。 -->
+  <Capabilities />
 </Manifest>
