@@ -1,0 +1,1898 @@
+TYPE StartingPerkSelectedEvent
+## StartingPerkSelectedEvent
+  P String PerkId
+  P String Spec
+  P Int32 RunNumber
+  P String RunId
+  P Boolean SkipIntro
+  P Boolean HardMode
+  P Boolean EndlessMode
+  M Void .ctor()
+TYPE PerkDirectory
+## PerkDirectory
+  F List`1<String> craftPerks
+  F List`1<String> onEffectApplyPerks
+  M Void InitDirectory()
+  M Void .ctor()
+TYPE BookHelper
+## BookHelper
+  F String CURRENT_BOOK_PAGE
+  F String BOOK_ID
+  F String BOOK_TAG
+  M Void InitBookItem(GameItem, String)
+  M Boolean CanFlipLeft(GameItem)
+  M Boolean CanFlipRight(GameItem)
+  M Void InitGuide(GameItem)
+  M Void InitPaperGuide(GameItem)
+  M Void .ctor()
+TYPE NewGamePerksFrame
+## NewGamePerksFrame
+  F TextMeshProUGUI instruction
+  F TextMeshProUGUI availableLabel
+  F TextMeshProUGUI selectedLabel
+  F TextMeshProUGUI pointsCounter
+  F TextMeshProUGUI perksCounter
+  F RectTransform availableSlots
+  F RectTransform selectedSlots
+  F Button prevButton
+  F Image prevImage
+  F Button nextButton
+  F Image nextImage
+  F Button selectedPrevButton
+  F Image selectedPrevImage
+  F Button selectedNextButton
+  F Image selectedNextImage
+  F Sprite perkSlotNormal
+  F Sprite perkSlotHover
+  F Sprite perkSlotLock
+  F Sprite perkTooltipLock
+  M Void .ctor()
+TYPE NewGamePerksUI
+## NewGamePerksUI
+  P Boolean IsOpen
+  P List`1<StartingPerk> SelectedPerks
+  F String WINDOW_ID
+  F Int32 MAX_PERK_POINT
+  F Int32 BASE_PERK_COUNT
+  F CustomUIWindow window
+  F NewGamePerksFrame frame
+  F List`1<StartingPerk> sorted
+  F List`1<SlotView> views
+  F Int32 page
+  F Int32 selectedPage
+  F Boolean firstRun
+  F Boolean startingGame
+  F Boolean continueHovered
+  F NewGamePerkTooltip tooltip
+  F Char[] labelTrim
+  M Void Open()
+  M Void Close()
+  M Void CloseWithoutReturning()
+  M Void OnWindowClosed()
+  M String TrimLabel(String)
+  M Boolean IsSelected(String)
+  M Boolean IsLocked(StartingPerk)
+  M StartingPerk LockedBy(StartingPerk)
+  M Int32 UsedPoints()
+  M Int32 MaxPerkCount()
+  M Boolean CanStart()
+  M Void OnSlotClicked(String)
+  M Void TurnPage(Int32)
+  M Int32 PageCount()
+  M Int32 SelectedPageCount()
+  M Void TurnSelectedPage(Int32)
+  M Void Rebuild()
+  M Void BuildSlot(RectTransform, StartingPerk, Single, Single, Boolean)
+  M Void OnSlotHover(SlotView, Boolean)
+  M Sprite ResolveIcon(StartingPerk)
+  M Void RefreshCounters()
+  M String Value(String, Boolean)
+  M Void ShowTooltip(StartingPerk, StartingPerk)
+  M Void HideTooltip()
+  M Void OnContinueClicked()
+  M Void .cctor()
+TYPE NewGamePerkTooltip
+## NewGamePerkTooltip
+  P Boolean IsShown
+  F NewGamePanelFrame frame
+  F RectTransform rect
+  F Image outer
+  F Image fill
+  F Image border
+  F TextMeshProUGUI nameText
+  F TextMeshProUGUI costText
+  F Image headerRule
+  F RectTransform linesHost
+  F Image lockRule
+  F Image lockIcon
+  F TextMeshProUGUI lockText
+  F List`1<GameObject> lineObjects
+  M NewGamePerkTooltip Create(NewGamePanelFrame, Transform, Sprite)
+  M Void Build(Sprite)
+  M Void Show(StartingPerk, StartingPerk)
+  M Void Hide()
+  M String CostLabel(Int32)
+  M Void Update()
+  M Void Follow()
+  M Void .ctor()
+TYPE PerkUIController
+## PerkUIController
+  P PerkUIController Instance
+  F GameObject ui
+  F GameObject availablePerks
+  F GameObject selectedPerks
+  F GameObject perkElementPrefab
+  F PerkUIController <Instance>k__BackingField
+  F TextMeshProUGUI pointCount
+  F TextMeshProUGUI slotCounter
+  F Int32 maxPerkCount
+  F Int32 maxPerkPoint
+  F Int32 currentPerkPoint
+  F Int32 currentPerkCount
+  F Color green
+  F Color red
+  F Color orange
+  F Button startButton
+  F GameObject startingPerkTooltip
+  F RectTransform startingPerkTooltipRect
+  F TextMeshProUGUI startingPerkTooltipTitle
+  F TextMeshProUGUI startingPerkTooltipDescription
+  F TextMeshProUGUI startingPerkTooltipCost
+  F TextMeshProUGUI startingPerkTooltipIncompatible
+  F Sprite normalBackground
+  F Sprite disabledBackground
+  F GameObject perkBlocker
+  F Boolean isFirstRun
+  F Transform tooltipHost
+  F Transform tooltipHomeParent
+  F Int32 tooltipHomeSiblingIndex
+  F Vector3 tooltipHomeLocalScale
+  F Boolean tooltipDocked
+  M Void Awake()
+  M Void OnDestroy()
+  M Void Start()
+  M Void Update()
+  M Void OpenUI()
+  M Void CloseUI()
+  M Void HideUI()
+  M Void Reset()
+  M Void SelectPerk(StartingPerkElement)
+  M Void DeselectPerk(StartingPerkElement)
+  M Void OnChange()
+  M Boolean CanStart()
+  M Void ShowTooltip()
+  M Void HideTooltip()
+  M Void DockTooltip()
+  M Void RestoreTooltipFromDock()
+  M Void FlattenTooltipZ(Transform)
+  M Void OnLetterboxLayoutChanged()
+  M Void SortPerkContainer(GameObject)
+  M Void .ctor()
+TYPE StartingPerk
+## StartingPerk
+  F String id
+  F Int32 cost
+  F Int32 maxSlot
+  F List`1<String> incompatiblePerks
+  F StartingPerkType type
+  F Boolean mindEditable
+  F String rawName
+  F String rawDescription
+  F String source
+  F String iconKey
+  F Func`1<String> nameProvider
+  F Func`1<String> descriptionProvider
+  F Dictionary`2<String,String> PendingEnglish
+  F Object[] NoArgs
+  F Object[] ArgsSaving
+  F Object[] ArgsBadLease
+  F Object[] ArgsConvict
+  F Object[] ArgsModelCitizen
+  F Object[] ArgsWellConnected
+  F Object[] ArgsPublicEnemy
+  F Object[] ArgsAscetic
+  F Object[] ArgsWildFavorite
+  F Object[] ArgsWildBadSide
+  F Object[] ArgsAugMenace
+  F Object[] ArgsDiplomatic
+  F Object[] ArgsIntimidating
+  F Object[] ArgsAddiction
+  F Object[] ArgsColorfulCharacter
+  F Object[] ArgsRevolutionSympathizer
+  F Object[] ArgsPrimeRealEstate
+  F Object[] ArgsOsteoarthritis
+  F Object[] ArgsKnownSnitch
+  F Object[] ArgsTinkerer
+  F Object[] ArgsCarefulScavenger
+  F Object[] ArgsSycophant
+  F Object[] ArgsAgoraphobia
+  F Object[] ArgsAwfulNegotiator
+  M String GetLocalizedDisplayName()
+  M String GetLocalizedDescription()
+  M String GetDescriptionKey()
+  M String GetPerkTableText(String, Object[])
+  M String ResolveProvider(Func`1<String>)
+  M Object[] GetDescriptionArguments()
+  M Void .ctor()
+  M Boolean IsFullOnlyPerkActive(String)
+  M Boolean IsPerkActive(String)
+  M Void RemovePerk(String)
+  M StartingPerk GetPerkById(String)
+  M Boolean IsSaving()
+  M Boolean IsBadLease()
+  M Boolean IsLoan()
+  M Boolean IsDebt()
+  M Boolean IsConvict()
+  M Boolean IsModelCitizen()
+  M Boolean IsWellConnected()
+  M Boolean IsPublicEnemy()
+  M Boolean IsSycophant()
+  M Boolean IsAwfulNegotiator()
+  M Boolean IsBannedCommissary()
+  M Boolean IsHoarder()
+  M Boolean IsMakeshiftReactor()
+  M Boolean IsAlert()
+  M Boolean IsSawyerCrew()
+  M Boolean IsDiplomatic()
+  M Boolean IsIntimidating()
+  M Boolean IsSideStreet()
+  M Boolean IsNicotineAddiction()
+  M Boolean IsNarcoticAddiction()
+  M Boolean IsAlcoholAddiction()
+  M Boolean IsSecretAdmirer()
+  M Boolean IsBlackmail()
+  M Boolean IsBlabbermouth()
+  M Boolean IsUnsubscribed()
+  M Boolean IsMinimalist()
+  M Boolean IsAscetic()
+  M Boolean IsSentinel()
+  M Boolean IsExperiencedChemist()
+  M Boolean IsSpeedy()
+  M Boolean IsAgoraphobia()
+  M Boolean IsWelfareProgram()
+  M Boolean IsProficientScavenger()
+  M Boolean IsMaimed()
+  M Boolean IsCarefulScavenger()
+  M Boolean IsRevolutionSympathizer()
+  M Boolean IsGamblingAddiction()
+  M Boolean IsWildFavorite()
+  M Boolean IsWildBadSide()
+  M Boolean IsAugMenace()
+  M Boolean IsLucky()
+  M Boolean IsUnlucky()
+  M Boolean IsTapehead()
+  M Boolean IsHandy()
+  M Boolean IsTinkerer()
+  M Boolean IsExpeditionOrganizer()
+  M Boolean IsVending()
+  M Boolean IsShortSleeper()
+  M Boolean IsWorkingPipes()
+  M Boolean IsIlliterate()
+  M Boolean IsPrimeRealEstate()
+  M Boolean IsFullOrDemoPerkActive(String)
+  M Boolean IsDegenerativeOsteoarthritis()
+  M Boolean IsKnownSnitch()
+  M Void .cctor()
+TYPE StartingPerkList
+## StartingPerkList
+  F String SAVING
+  F String BAD_LEASE
+  F String LOAN
+  F String DEBT
+  F String CONVICT
+  F String MODEL_CITIZEN
+  F String WELL_CONNECTED
+  F String ALERT
+  F String SAWYER_CREW
+  F String DIPLOMATIC
+  F String INTIMIDATING
+  F String SIDE_STREET
+  F String NICOTINE_ADDICTION
+  F String NARCOTIC_ADDICTION
+  F String ALCOHOL_ADDICTION
+  F String SECRET_ADMIRER
+  F String COLORFUL_CHARACTER
+  F String BLACKMAIL
+  F String BLABBERMOUTH
+  F String UNSUBSCRIBED
+  F String MINIMALIST
+  F String SENTINEL
+  F String SPEEDY
+  F String AGORAPHOBIA
+  F String WELFARE_PROGRAM
+  F String PROFICIENT_SCAVENGER
+  F String REVOLUTION_SYMPATHIZER
+  F String GAMBLING_ADDICTION
+  F String TAPEHEAD
+  F String EXPEDITION_ORGANIZER
+  F String VENDING
+  F String HANDY
+  F String PUBLIC_ENEMY
+  F String ASCETIC
+  F String MAIMED
+  F String WILD_FAVORITE
+  F String WILD_BAD_SIDE
+  F String AUG_MENACE
+  F String LUCKY
+  F String UNLUCKY
+  F String TINKERER
+  F String CAREFUL_SCAVENGER
+  F String SYCOPHANT
+  F String AWFUL_NEGOTIATOR
+  F String BANNED_COMMISSARY
+  F String HOARDER
+  F String MAKESHIFT_REACTOR
+  F String SHORT_SLEEPER
+  F String WORKING_PIPES
+  F String ILLITERATE
+  F String PRIME_REAL_ESTATE
+  F String DEGENERATIVE_OSTEOARTHRITIS
+  F String KNOWN_SNITCH
+  F Int32 SAVING_CREDITS
+  F Int32 BAD_LEASE_VALUE
+  F Int32 CONVICT_VALUE
+  F Int32 CONVICT_VALUE_REWARD
+  F Int32 MODEL_CITIZEN_VALUE
+  F Int32 MODEL_CITIZEN_VALUE_REWARD
+  F Int32 WELL_CONNECTED_VALUE
+  F Int32 PUBLIC_ENEMY_VALUE
+  F Int32 DIPLOMATIC_VALUE
+  F Int32 INTIMIDATING_VALUE
+  F Int32 ADDICTION_PENALTY
+  F Int32 COLORFUL_CHARACTER_VALUE
+  F Int32 BLABBERMOUTH_VALUE
+  F Int32 BLACKMAIL_VALUE
+  F Int32 REVOLUTION_SYMPATHIZER_VALUE
+  F Int32 PRIME_REAL_ESTATE_VALUE
+  F Int32 KNOWN_SNITCH_REP_PENALTY
+  F Int32 OSTEOARTHRITIS_MIN_ATTEMPTS
+  F Int32 OSTEOARTHRITIS_BANDAGE_COUNT
+  F Int32 HANDY_TOOLBOX_SLOTS
+  F Int32 MINIMALIST_INVENTORY_WIDTH
+  F Int32 ASCETIC_INVENTORY_WIDTH
+  F Int32 WILD_FAVORITE_UPGRADE_DISCOUNT
+  F Int32 WILD_FAVORITE_INSURANCE_DISCOUNT
+  F Int32 WILD_BAD_SIDE_UPGRADE_MARKUP
+  F Int32 WILD_BAD_SIDE_INSURANCE_MARKUP
+  F Int32 AUG_MENACE_KILL_REWARD_BONUS
+  F Int32 AUG_MENACE_INTRODUCED_DAY
+  F Int32 AUG_MENACE_FIRST_AUG_MIN_DAYS
+  F Int32 AUG_MENACE_FIRST_AUG_MAX_DAYS
+  F Int32 LUCKY_LUCK
+  F Int32 UNLUCKY_LUCK
+  F Int32 TINKERER_KEEP_CHANCE
+  F Int32 CAREFUL_SCAVENGER_ATTEMPT_PENALTY
+  F Int32 SYCOPHANT_START_REP
+  F Int32 SYCOPHANT_REP_GAIN_BONUS
+  F Int32 SYCOPHANT_BUDGET_BONUS
+  F Int32 AWFUL_NEGOTIATOR_PRICE_PENALTY
+  F Int32 AGORAPHOBIA_REST_NIGHTS
+  F List`1<StartingPerk> Perks
+  F List`1<StartingPerk> modPerks
+  M Void InitStartingPerk()
+  M Void RegisterModPerk(StartingPerk)
+  M Int32 RemoveModPerks(String)
+  M StartingPerk GetModPerk(String)
+  M List`1<StartingPerk> AllPerkDefinitions()
+  M List`1<StartingPerk> AllPerkDefinitionsWithMods()
+  M StartingPerk Saving()
+  M StartingPerk BadLease()
+  M StartingPerk Convict()
+  M StartingPerk ModelCitizen()
+  M StartingPerk WellConnected()
+  M StartingPerk Sycophant()
+  M StartingPerk AwfulNegotiator()
+  M StartingPerk PublicEnemy()
+  M StartingPerk Alert()
+  M StartingPerk SawyerCrew()
+  M StartingPerk Diplomatic()
+  M StartingPerk Intimidating()
+  M StartingPerk SideStreet()
+  M StartingPerk NicotineAddiction()
+  M StartingPerk NarcoticAddiction()
+  M StartingPerk AlcoholAddiction()
+  M StartingPerk SecretAdmirer()
+  M StartingPerk ColorfulCharacter()
+  M StartingPerk Blackmail()
+  M StartingPerk Blabbermouth()
+  M StartingPerk Minimalist()
+  M StartingPerk Ascetic()
+  M StartingPerk Sentinel()
+  M StartingPerk Agoraphobia()
+  M StartingPerk WelfareProgram()
+  M StartingPerk MakeshiftReactor()
+  M StartingPerk Hoarder()
+  M StartingPerk BannedCommissary()
+  M StartingPerk ProficientScavenger()
+  M StartingPerk CarefulScavenger()
+  M StartingPerk Maimed()
+  M StartingPerk RevolutionSympathizer()
+  M StartingPerk GamblingAddiction()
+  M StartingPerk Tapehead()
+  M StartingPerk WildFavorite()
+  M StartingPerk WildBadSide()
+  M StartingPerk AugMenace()
+  M StartingPerk Lucky()
+  M StartingPerk Unlucky()
+  M StartingPerk Handy()
+  M StartingPerk Tinkerer()
+  M StartingPerk VendingMachine()
+  M StartingPerk ShortSleeper()
+  M StartingPerk WorkingPipes()
+  M StartingPerk Illiterate()
+  M StartingPerk PrimeRealEstate()
+  M StartingPerk DegenerativeOsteoarthritis()
+  M StartingPerk KnownSnitch()
+  M Void .ctor()
+  M Void .cctor()
+TYPE StartingPerkContent
+## StartingPerkContent
+  F Object gamblingClientTracker
+  F Int32 lotteryBoughtCount
+  F Int32 scratcherBoughtCount
+  M Void HandleNewGamePerkBeforeItems()
+  M Void HandleNewGamePerk()
+  M Void AddHandyToolbox()
+  M Void UnlockAugMenace()
+  M Void AddTapeheadCassettes()
+  M GameItem CreateUnownedDegradedCassette()
+  M Int32 GetSecretAdmirerChance()
+  M Boolean IsOwningUsableImmunivax()
+  M Void HandleSecretAdmirerOnOpenShutter()
+  M Void InitWelfareProgram()
+  M Void HandleWelfareProgram()
+  M Void ConsumeUpgradeMaterial(GameItem)
+  M Int32 GetAgoraphobiaReadyDay()
+  M Boolean IsAgoraphobiaResting()
+  M Int32 GetAgoraphobiaRestNightsLeft()
+  M Void HandleAgoraphobiaReady()
+  M Int32 HandleReportRewardConvict(Int32)
+  M Int32 HandleReportRewardModelCitizen(Int32)
+  M Void HandleGamblingAddictionItemAdded(GameItem)
+  M Boolean RollGamblingPurchase(Int32, Int32)
+  M Void ForceBuyGamblingItem(GameItem, Int32)
+  M Void .ctor()
+TYPE StartingPerkElement
+## StartingPerkElement
+  F String id
+  F Boolean isSelected
+  F Image icon
+  F Image background
+  F StartingPerk perk
+  F Boolean showTooltip
+  M Void OnPointerClick(PointerEventData)
+  M Boolean CanSelect()
+  M Void OnPointerEnter(PointerEventData)
+  M Void OnPointerExit(PointerEventData)
+  M Void Start()
+  M Void Update()
+  M Void SetTooltipContent(StartingPerk)
+  M Void .ctor()
+TYPE StartingPerkIconLoader
+## StartingPerkIconLoader
+  P Dictionary`2<String,Sprite> perkIcons
+  F List`1<PerkIconEntry> perkIconList
+  F Dictionary`2<String,Sprite> <perkIcons>k__BackingField
+  M Void Start()
+  M Void .ctor()
+  M Void .cctor()
+TYPE PerkIconEntry
+## PerkIconEntry
+  F String perkName
+  F Sprite Sprite
+TYPE StartingScenario
+## StartingScenario
+  P Boolean IsMod
+  F String id
+  F StartType startType
+  F String source
+  F String iconKey
+  F Func`1<String> titleProvider
+  F Func`1<String> descriptionProvider
+  F List`1<Func`1<String>> startWithProviders
+  F Func`1<String> tagProvider
+  F TagTone tagTone
+  F Boolean comingSoon
+  F Boolean skipIntro
+  F Boolean hidden
+  F Action onStart
+  F List`1<StartingScenario> vanilla
+  F List`1<StartingScenario> modded
+  M String GetTitle()
+  M String GetDescription()
+  M String GetTag()
+  M List`1<String> GetStartWith()
+  M Boolean IsAvailableInBuild()
+  M Boolean CanStart()
+  M String Resolve(Func`1<String>)
+  M List`1<StartingScenario> GetAll()
+  M List`1<StartingScenario> GetVisible()
+  M StartingScenario Get(String)
+  M StartingScenario GetByStartType(StartType)
+  M String ResolveId(StartType, String)
+  M StartingScenario GetCurrent()
+  M Void Register(StartingScenario)
+  M Int32 RemoveMod(String)
+  M List`1<StartingScenario> Vanilla()
+  M StartingScenario CreatePending(String, StartType, String, String, String, String, ValueTuple`2<String,String>[], String, String, TagTone, Boolean, Boolean, Boolean)
+  M StartingScenario Create(String, StartType, String, String, String[], String, TagTone, Boolean, Boolean, Boolean)
+  M Void .ctor()
+  M Void .cctor()
+TYPE StoreReputationPerk
+## StoreReputationPerk
+  F String perkId
+  F Int32 perkThreshold
+  F Int32 perkType
+  F Boolean isUnlocked
+  F String iconName
+  F Boolean firstTimeUnlockActionDone
+  F Boolean isAlwaysActive
+  F Int32 LL_REFERRAL_CHANCE
+  F Int32 LL_REFERRAL_CUSTOMER_COUNT
+  F Single LL_TIGHTLIPS_EVIDENCE_MULTIPLIER
+  F Int32 LL_PILLAR_DISCOUNT
+  F Int32 LL_POOR_REVIEWS_CHANCE
+  F Int32 LL_POOR_REVIEWS_CUSTOMER_COUNT
+  F Int32 LL_TARGET_INSURANCE_MULTIPLIER
+  F Single SEC_WATCHLIST_INVESTIGATION_MULTIPLIER
+  F Single SEC_PRIORITY_INVESTIGATION_MULTIPLIER
+  F Int32 SEC_RELIABLE_VENDOR_BUDGET_INCREASE
+  F Single BM_HONOR_REPUTATION_LOSS_MULTIPLIER
+  F Int32 UL_TIPS_BONUS
+  F Int32 UL_HOUSEHOLD_NAME_CHANCE
+  F Int32 UL_HOUSEHOLD_NAME_CUSTOMER_COUNT
+  F Int32 UL_TOP_REVIEW_BUDGET_INCREASE
+  F Single UL_PETITION_REPUTATION_LOSS_MULTIPLIER
+  F Single UL_PETITION_INVESTIGATION_MULTIPLIER
+  F Int32 UL_DISCERNING_TASTE_BASE_CHANCE
+  F Int32 UL_DISCERNING_TASTE_REP_DIVISOR
+  F Int32 UL_DISCERNING_TASTE_COOLDOWN
+  F Int32 CARTEL_RELIABLE_CHEMIST_COST_REDUCTION
+  F Object[] NoArgs
+  F Object[] ArgsLLReferral
+  F Object[] ArgsLLTightLips
+  F Object[] ArgsLLPillar
+  F Object[] ArgsLLPoorReviews
+  F Object[] ArgsLLTarget
+  F Object[] ArgsSecWatchlist
+  F Object[] ArgsSecPriority
+  F Object[] ArgsSecReliableVendor
+  F Object[] ArgsBMHonor
+  F Object[] ArgsULTips
+  F Object[] ArgsULHouseholdName
+  F Object[] ArgsULTopReview
+  F Object[] ArgsULPetition
+  F Object[] ArgsCartelReliableChemist
+  F String LLREFERAL
+  F String LLTIPS
+  F String LLRAREGOOD
+  F String LLTIGHTLIPS
+  F String LLPILLAR
+  F String LLPOORREVIEWS
+  F String LLDISTRUSTED
+  F String LLTARGET
+  F String LLLYNCH
+  F String LLAVOIDED
+  F String SECALARM_IGNORED
+  F String SEC_WATCHLIST
+  F String SEC_PRIORITY
+  F String SEC_THOROUGH_INSPECTION
+  F String SEC_CONTRABAND_TOLERANCE
+  F String SEC_IMMEDIATE_ARREST
+  F String SEC_PROTECTION
+  F String SEC_SURPLUS
+  F String SEC_VIP
+  F String SEC_TRUSTED
+  F String SEC_REQUISITION
+  F String SEC_RELIABLE_VENDOR
+  F String BM_Distrusted
+  F String BM_UNINSURABLE
+  F String BM_SMALL_TIME_BROKER
+  F String BM_RELIABLE
+  F String BM_NETWORK
+  F String BM_HONOR
+  F String UL_GOSSIP
+  F String UL_TIPS
+  F String UL_HOUSEHOLD_NAME
+  F String UL_TOP_REVIEW
+  F String UL_CHARITY
+  F String UL_DISCERNING_TASTE
+  F String UL_TOURISTTRAP
+  F String UL_HITMAN
+  F String UL_PETITION
+  F String REV_HIT
+  F String REV_BLACKLISTED
+  F String REV_REQUEST
+  F String REV_RAID_LOOT
+  F String REV_QUARTERMASTER
+  F String REV_FRIEND
+  F String CARTEL_RETIRED
+  F String CARTEL_INCREASED_STIPEND
+  F String CARTEL_RELIABLE_CHEMIST
+  F String CARTEL_AUTHORIZED_EXIT
+  M String GetLocalizedPerkName()
+  M String GetLocalizedDescription()
+  M String GetLocalizedFlavorText()
+  M Int32 GetDiscerningTasteChance()
+  M Object[] GetDescriptionArguments()
+  M StoreReputationPerk LLReferral()
+  M StoreReputationPerk LLTips()
+  M StoreReputationPerk LLRareGood()
+  M StoreReputationPerk LLTightLips()
+  M StoreReputationPerk LLPillar()
+  M StoreReputationPerk LLPoorReviews()
+  M StoreReputationPerk LLDistrusted()
+  M StoreReputationPerk LLTarget()
+  M StoreReputationPerk LLAvoided()
+  M StoreReputationPerk LLLynch()
+  M StoreReputationPerk SecRequisition()
+  M StoreReputationPerk SecAlarmIgnored()
+  M StoreReputationPerk SecWatchlist()
+  M StoreReputationPerk SecPriority()
+  M StoreReputationPerk SecThoroughInspection()
+  M StoreReputationPerk SecContrabandTolerance()
+  M StoreReputationPerk SecImmediateArrest()
+  M StoreReputationPerk SecProtection()
+  M StoreReputationPerk SecSurplus()
+  M StoreReputationPerk SecReliableVendor()
+  M StoreReputationPerk SecVIP()
+  M StoreReputationPerk SecTrusted()
+  M StoreReputationPerk BMNetwork()
+  M StoreReputationPerk BMDistrusted()
+  M StoreReputationPerk BMUninsurable()
+  M StoreReputationPerk BMBroker()
+  M StoreReputationPerk BMHonor()
+  M StoreReputationPerk BMReliable()
+  M StoreReputationPerk ULDiscerningTaste()
+  M StoreReputationPerk ULGossip()
+  M StoreReputationPerk ULTips()
+  M StoreReputationPerk ULCharity()
+  M StoreReputationPerk ULHouseholdName()
+  M StoreReputationPerk ULTopReview()
+  M StoreReputationPerk ULTouristTrap()
+  M StoreReputationPerk ULPetition()
+  M StoreReputationPerk ULHitman()
+  M StoreReputationPerk RevFriend()
+  M StoreReputationPerk RevHit()
+  M StoreReputationPerk RevBlacklisted()
+  M StoreReputationPerk RevRequest()
+  M StoreReputationPerk RevRaidLoot()
+  M StoreReputationPerk RevQuartermaster()
+  M StoreReputationPerk CartelRetired()
+  M StoreReputationPerk CartelIncreasedStipend()
+  M StoreReputationPerk CartelReliableChemist()
+  M StoreReputationPerk CartelAuthorizedExit()
+  M Void .ctor()
+  M Void .cctor()
+TYPE PhoneDialogList
+TYPE StoreClientDialogList
+TYPE StoreClientListInformationDialog
+TYPE DialogBubbleList
+TYPE DialogChoiceBubble
+TYPE StoreBookData
+## StoreBookData
+  F String title
+  F String[] subtitle
+  F String[] body
+  F Int32 pageCount
+  F Dictionary`2<String,StoreBookData> bookDatas
+  F String WATER_BOOK
+  F String INGOT_BOOK
+  M Void InitBookDatas()
+  M StoreBookData GetBookById(String)
+  M StoreBookData CreateWaterBook()
+  M Void CheckBookCreation(StoreBookData)
+  M Void .ctor()
+TYPE NewsPaper
+## NewsPaper
+  M String GetTooltip()
+  M Boolean IsTooltipEnabled()
+  M Void OnClick()
+  M Void Start()
+  M Void Update()
+  M Void .ctor()
+TYPE PaperPanelFocusStamp
+## PaperPanelFocusStamp
+  F Int64 stamp
+  M Void OnEnable()
+  M Void Bump()
+  M Int64 GetStamp(GameObject)
+  M Void BumpPanel(GameObject)
+  M Void .ctor()
+TYPE PaperAssetCatalog
+## PaperAssetCatalog
+  F String RESOURCE_PATH
+  F List`1<Entry> entries
+  F Dictionary`2<String,Entry> byKey
+  F Dictionary`2<Sprite,Entry> bySprite
+  M Void ResetLookup()
+  M Void BuildLookup()
+  M Entry Find(String)
+  M Entry FindBySprite(Sprite)
+  M IEnumerable`1<Entry> OfKind(Kind)
+  M Void .ctor()
+TYPE PaperAssets
+## PaperAssets
+  P PaperAssetCatalog Catalog
+  F String SPRITE_CLOSE
+  F String SPRITE_ZOOM
+  F String SPRITE_FLIP_LEFT
+  F String SPRITE_FLIP_RIGHT
+  F String SPRITE_TEXT_BUTTON
+  F String SPRITE_GUIDE_LOGO
+  F PaperAssetCatalog catalog
+  F Boolean catalogLoaded
+  F Dictionary`2<String,Sprite> slicedCache
+  F HashSet`1<String> warnedKeys
+  F String ITEM_ATLAS_ROOT
+  F List`1<ValueTuple`3<String,Sprite,String>> itemAtlasSprites
+  M Entry FindInCatalog(String)
+  M Void ReloadCatalog()
+  M Boolean TryResolve(String, String, Sprite&)
+  M Sprite Resolve(String, String, Boolean)
+  M Void WarnOnce(String, String)
+  M Sprite FromItemAtlas(String)
+  M List`1<ValueTuple`3<String,Sprite,String>> ItemAtlasSprites()
+  M Sprite FromMod(String, String)
+  M Sprite ResolveBackground(PaperBookData, String)
+  M String KeyOf(Sprite)
+  M Vector2 DisplaySizeOf(String)
+  M List`1<ValueTuple`3<String,Sprite,String>> ListAvailable(String, Boolean)
+  M Void .cctor()
+TYPE PaperBookData
+## PaperBookData
+  F String id
+  F String title
+  F String background
+  F Single width
+  F Single height
+  F Single designWidth
+  F Single designHeight
+  F Single[] border
+  F Single posX
+  F Single posY
+  F Boolean sounds
+  F Boolean draggable
+  F Boolean zoomable
+  F List`1<PaperElementData> chrome
+  F List`1<PaperTemplateData> templates
+  F List`1<PaperPageData> pages
+  F PaperItemData item
+  F List`1<String> locales
+  F IDictionary`2<String,JToken> Extra
+  M PaperBookData Clone()
+  M PaperPageData GetPage(Int32)
+  M PaperTemplateData GetTemplate(String)
+  M IEnumerable`1<PaperElementData> AllElements()
+  M Void .ctor()
+TYPE PaperPageData
+## PaperPageData
+  F String name
+  F String template
+  F Dictionary`2<String,String> slots
+  F List`1<PaperElementData> elements
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperTemplateData
+## PaperTemplateData
+  F String id
+  F List`1<PaperElementData> elements
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperElementType
+## PaperElementType
+  F String TEXT
+  F String IMAGE
+  F String BUTTON
+  F String FLOW
+  F String LINE
+  F String[] All
+  M Void .cctor()
+TYPE PaperLineArrow
+## PaperLineArrow
+  F String NONE
+  F String END
+  F String START
+  F String BOTH
+  F String[] All
+  M Void .cctor()
+TYPE PaperAction
+## PaperAction
+  F String CLOSE
+  F String ZOOM
+  F String FLIP_LEFT
+  F String FLIP_RIGHT
+  F String PAGE_INDICATOR
+  F String[] Chrome
+  M Boolean IsChrome(String)
+  M Void .cctor()
+TYPE PaperImageFit
+## PaperImageFit
+  F String STRETCH
+  F String FIT
+  F String NATIVE
+  F String[] All
+  M Void .cctor()
+TYPE PaperElementData
+## PaperElementData
+  P Rect Bounds
+  P Boolean IsText
+  P Boolean IsImage
+  P Boolean IsButton
+  P Boolean IsFlow
+  P Boolean IsLine
+  P Boolean HasArrow
+  P Boolean IsChromeAction
+  P Boolean IsIconButton
+  P String DisplayName
+  F String type
+  F String id
+  F Single x
+  F Single y
+  F Single w
+  F Single h
+  F String text
+  F String loc
+  F Dictionary`2<String,String> translations
+  F String style
+  F Single fontSize
+  F String align
+  F String valign
+  F String color
+  F Boolean wrap
+  F Boolean autoHeight
+  F String preview
+  F String sprite
+  F String fit
+  F Single scale
+  F Boolean silhouette
+  F String fill
+  F Single x2
+  F Single y2
+  F Single thickness
+  F String arrow
+  F Single arrowSize
+  F String action
+  F String hoverSprite
+  F String slot
+  F String flow
+  F Single spacing
+  F Boolean visible
+  F Boolean locked
+  F Boolean raycast
+  F IDictionary`2<String,JToken> Extra
+  M PaperElementData Clone()
+  M Rect LineBounds()
+  M Void Translate(Single, Single)
+  M Void .ctor()
+TYPE PaperItemData
+## PaperItemData
+  F String id
+  F String name
+  F String nameLoc
+  F String description
+  F String descriptionLoc
+  F String sprite
+  F Int64 value
+  F Boolean important
+  F IDictionary`2<String,JToken> Extra
+  M Void .ctor()
+TYPE PaperJson
+## PaperJson
+  F JsonSerializerSettings Settings
+  M String Serialize(Object)
+  M !!0 Deserialize(String)
+  M !!0 Clone(!!0)
+  M PaperBookData ParseBook(String, String)
+  M Void Normalize(PaperBookData)
+  M Void .cctor()
+TYPE PaperBookRegistry
+## PaperBookRegistry
+  P IEnumerable`1<Entry> All
+  P IEnumerable`1<Entry> Loaded
+  F String BOOKS_FOLDER
+  F Dictionary`2<String,Entry> entries
+  F List`1<String> extraBookRoots
+  F Boolean hooked
+  F ModItemDirectory liveDirectory
+  F Action Changed
+  M String FullId(String, String)
+  M IEnumerable`1<Entry> OfMod(String)
+  M Entry Get(String)
+  M Entry Find(String, String)
+  M Entry Resolve(String)
+  M String BooksFolder(LoadedMod)
+  M Void LoadMod(LoadedMod)
+  M Void AllowBookRoot(String)
+  M Int32 LoadFolder(String, String)
+  M Entry LoadFile(String, String)
+  M Entry Register(String, PaperBookData, String)
+  M Boolean Unregister(String)
+  M Int32 RemoveMod(String)
+  M PaperUI Open(String)
+  M PaperUI Open(Entry)
+  M Void FireOpened(Entry, PaperUI)
+  M PaperUI GetOpen(String)
+  M Boolean IsOpen(String)
+  M Void Close(String)
+  M Void CloseAll()
+  M Void OnOpened(String, Action`1<PaperUI>)
+  M String SplitMod(String)
+  M String SplitBook(String)
+  M Boolean IsSafeToken(String)
+  M Boolean IsAllowedBookPath(String, String)
+  M Boolean IsUnder(String, String)
+  M Boolean Save(Entry)
+  M Boolean HasChangedOnDisk(Entry)
+  M Boolean ReloadFromDisk(Entry, Boolean)
+  M Void RefreshItem(Entry)
+  M Int32 ReloadAll()
+  M Boolean PathsEqual(String, String)
+  M Void EnsureHooked()
+  M Void OnItemDirectoryInit(ModItemDirectory)
+  M Void RegisterItemNow(Entry)
+  M Void UnregisterItem(Entry)
+  M ModItemDirectory LiveDirectory()
+  M GameItem CreateItem(Entry)
+  M Void ApplyItemSprite(GameItem, String, String)
+  M GameItem SpawnItem(String)
+  M Void .cctor()
+TYPE PaperDebugCommands
+## PaperDebugCommands
+  M String List()
+  M String Open(String)
+  M String Close(String)
+  M String Reload()
+  M String Edit(String)
+  M String Item(String)
+TYPE PaperEditor
+## PaperEditor
+  P PaperEditor Instance
+  P Entry Entry
+  P PaperBookData Data
+  P PaperUI Ui
+  P PaperEditorOverlay Overlay
+  P PaperEditorHistory History
+  P String EditingTemplate
+  P String Status
+  P Boolean IsEditing
+  P Boolean Dirty
+  P PaperPageData CurrentPageData
+  P PaperTemplateData EditingTemplateData
+  P Boolean CanPaste
+  P Boolean Shift
+  P Boolean Ctrl
+  P Boolean Alt
+  F PaperEditor <Instance>k__BackingField
+  F Entry <Entry>k__BackingField
+  F PaperUI <Ui>k__BackingField
+  F PaperEditorOverlay <Overlay>k__BackingField
+  F PaperEditorHistory <History>k__BackingField
+  F List`1<PaperElementData> Selection
+  F String <EditingTemplate>k__BackingField
+  F Int32 ActiveTab
+  F Boolean snapToGrid
+  F Boolean snapToElements
+  F Boolean showRulers
+  F Boolean showIds
+  F Single gridSize
+  F Single editorZoom
+  F Boolean inspectMode
+  F String <Status>k__BackingField
+  F Action Changed
+  F List`1<PaperElementData> clipboard
+  F Single AUTOSAVE_DELAY
+  F Single WATCH_INTERVAL
+  F Single SNAP_THRESHOLD
+  F Single MIN_SIZE
+  F Boolean dirty
+  F Single dirtyTimer
+  F Single watchTimer
+  F PaperBookData knownData
+  F Boolean applyingOwnData
+  F Locale originalLocale
+  F DragMode drag
+  F Vector2 dragStart
+  F Vector3 dragStartScreen
+  F Boolean dragMoved
+  F Dictionary`2<PaperElementData,Rect> dragOrigins
+  F Dictionary`2<PaperElementData,Vector2> dragOriginEnds
+  F Rect dragOriginBounds
+  F Handle dragHandle
+  F Vector2 panelStart
+  F List`1<RaycastResult> raycastResults
+  F Boolean reshowNextUpdate
+  F Boolean stopNextUpdate
+  F Boolean focused
+  F DateTime lastFailedReload
+  M PaperEditor Ensure()
+  M Void ToggleWindow()
+  M Void OpenWindow()
+  M Void Awake()
+  M Void OnDestroy()
+  M Void SetStatus(String)
+  M Void RaiseChanged()
+  M Void Edit(Entry)
+  M Void StopEditing()
+  M Void OnUiRebuilt(PaperUI)
+  M Void OnUiClosed(PaperUI)
+  M Void OnRegistryChanged()
+  M Void ValidateView()
+  M Entry NewBook(String, String, String, String, String)
+  M Void Save()
+  M Void ReloadFromDisk()
+  M List`1<PaperElementData> EditableElements()
+  M Boolean IsChrome(PaperElementData)
+  M Boolean IsTemplateElementOnPage(PaperElementData)
+  M Boolean IsEditable(PaperElementData)
+  M Boolean IsBuiltInTemplate(String)
+  M String KeyOf(PaperElementData)
+  M PaperElementData FromKey(String)
+  M List`1<String> Keys()
+  M Void RestoreSelection(List`1<String>)
+  M Boolean IsSelected(PaperElementData)
+  M Void Select(PaperElementData, Boolean)
+  M Void SelectMany(IEnumerable`1<PaperElementData>, Boolean)
+  M Void ToggleSelect(PaperElementData)
+  M Void ClearSelection()
+  M Void SelectAll()
+  M Rect BoundsOf(PaperElementData)
+  M Rect SelectionBounds()
+  M List`1<PaperElementData> MovableSelection()
+  M Boolean CanMoveSelection()
+  M Boolean CanResizeSelection()
+  M PaperElementData HitElement(Vector2)
+  M Void Commit(String, Boolean)
+  M Void PreviewText(PaperElementData, String)
+  M Void ApplyData(PaperBookData, List`1<String>, String)
+  M Void Undo()
+  M Void Redo()
+  M PaperElementData AddElement(PaperElementData, Boolean, Boolean)
+  M String UniqueId(String, PaperElementData)
+  M List`1<PaperElementData> CloneSet(IEnumerable`1<PaperElementData>, List`1<PaperElementData>, Single, Single)
+  M Void DeleteSelection()
+  M Void Copy()
+  M Void Cut()
+  M Void Paste()
+  M Void Duplicate()
+  M List`1<PaperElementData> ContainerOf(PaperElementData)
+  M Void Nudge(Single, Single)
+  M Void SetRect(PaperElementData, Single, Single, Single, Single)
+  M Void Align(AlignMode)
+  M Void Distribute(Boolean)
+  M Void SetBoxX(PaperElementData, Rect, Single)
+  M Void SetBoxY(PaperElementData, Rect, Single)
+  M Void MatchSize(Boolean, Boolean)
+  M Void ZOrder(Int32)
+  M Boolean IsOwned(PaperElementData)
+  M Void SetLocked(Boolean)
+  M Void SetVisible(Boolean)
+  M Void RenameElement(PaperElementData, String)
+  M Void SetFlow(String)
+  M Void GoToPage(Int32)
+  M Int32 PaperCount()
+  M Void AddPage(String)
+  M Void DuplicatePage()
+  M Void DeletePage()
+  M Void MovePage(Int32)
+  M Void RenamePage(String)
+  M Void SetPageTemplate(String)
+  M Void SetSlot(String, String)
+  M List`1<String> CurrentSlots()
+  M List`1<String> TemplateIds(Boolean)
+  M Void EditTemplate(String)
+  M Void StopEditingTemplate(Boolean)
+  M Void CreateTemplateFromSelection(String)
+  M Void DeleteTemplate(String)
+  M Void DetachTemplate()
+  M Void SetTitle(String)
+  M Void SetBackground(String)
+  M Void SetDisplaySize(Single, Single)
+  M Void SetDesignSize(Single, Single)
+  M Void SetBorder(Single, Single, Single, Single)
+  M Void SetFlags(Boolean, Boolean, Boolean)
+  M Void ResetChrome(Boolean, Boolean, Boolean, Boolean)
+  M Void SetItem(PaperItemData)
+  M Void SetPanelPosition(Single, Single)
+  M Void SetEditorZoom(Single)
+  M Void ApplyEditorZoom()
+  M List`1<Locale> Locales()
+  M Void SetPreviewLocale(Locale)
+  M IEnumerator PreviewLocaleRoutine(Locale)
+  M Void RestoreLocale()
+  M Void Update()
+  M Vector2 MouseDesign()
+  M Boolean PointerOverBook()
+  M Void UpdateReadout(Vector2, Boolean)
+  M Void HandleMouse(Vector2, Boolean)
+  M Rect RectFrom(Vector2, Vector2)
+  M Void CaptureOrigins()
+  M Void ApplyMove(Vector2, Boolean)
+  M Void ApplyResize(Vector2, Boolean)
+  M Void LiveRect(PaperElementData)
+  M Single Round(Single)
+  M List`1<Single> SnapTargets(Boolean)
+  M Single SnapValue(Single, Boolean, Boolean&)
+  M Vector2 SnapOffset(Rect, Nullable`1<Single>&, Nullable`1<Single>&)
+  M Void HandleKeys()
+  M Void .ctor()
+  M Void .cctor()
+  M Boolean <ValidateView>b__83_0(PaperTemplateData)
+  M Boolean <EditableElements>b__91_0(PaperTemplateData)
+  M Boolean <MovableSelection>b__108_0(PaperElementData)
+  M Boolean <DeleteSelection>b__120_0(PaperElementData)
+  M Boolean <Duplicate>b__126_0(PaperElementData)
+  M Boolean <ZOrder>b__136_0(PaperElementData)
+TYPE PaperEditorFiles
+## PaperEditorFiles
+  M String SanitizeId(String)
+  M List`1<LoadedMod> LocalMods()
+  M Void CopyJson(PaperEditor)
+  M Void CopyCSharp(PaperEditor)
+  M Void OpenFolder(PaperEditor)
+  M Void OpenFile(PaperEditor)
+  M String GenerateCSharp(PaperBookData, String)
+  M Void AppendElement(StringBuilder, PaperElementData)
+  M String Quote(String)
+  M String F(Single)
+  M String B(Boolean)
+  M Void Screenshot(PaperEditor)
+  M IEnumerator ScreenshotRoutine(PaperEditor)
+TYPE PaperEditorHistory
+## PaperEditorHistory
+  P Boolean CanUndo
+  P Boolean CanRedo
+  P String UndoLabel
+  P String RedoLabel
+  P Int32 UndoCount
+  F Int32 LIMIT
+  F List`1<Snapshot> undo
+  F List`1<Snapshot> redo
+  F Snapshot current
+  M Void Reset(PaperBookData, List`1<String>, String)
+  M Void Push(PaperBookData, List`1<String>, String)
+  M Snapshot Undo()
+  M Snapshot Redo()
+  M Snapshot Make(PaperBookData, List`1<String>, String)
+  M Void .ctor()
+TYPE PaperEditorInspect
+## PaperEditorInspect
+  P Info Hovered
+  P Info Pinned
+  F Info <Hovered>k__BackingField
+  F Info <Pinned>k__BackingField
+  F List`1<RaycastResult> results
+  M Void Clear()
+  M Void Update(PaperEditor)
+  M Info Describe(GameObject, PaperEditor)
+  M String Path(Transform)
+  M Void AddLikeThis(PaperEditor)
+  M Void .cctor()
+TYPE PaperEditorOverlay
+## PaperEditorOverlay
+  P Boolean Visible
+  P Single Px
+  F Color BOX_PAGE
+  F Color BOX_CHROME
+  F Color BOX_TEMPLATE
+  F Color BOX_LOCKED
+  F Color BOX_FLOW
+  F Color BOX_OVERFLOW
+  F Color SELECTION
+  F Color HANDLE_FILL
+  F Color MARQUEE
+  F Color GUIDE
+  F Color RULER
+  F Color LABEL
+  F Color LABEL_PLATE
+  F PaperEditor editor
+  F PaperUI ui
+  F GameObject root
+  F RectTransform rootRect
+  F RectTransform boxLayer
+  F RectTransform topLayer
+  F Dictionary`2<PaperElementData,Box> boxes
+  F RectTransform[] selectionEdges
+  F RectTransform[] handles
+  F RectTransform marquee
+  F RectTransform guideX
+  F RectTransform guideY
+  F TextMeshProUGUI readout
+  F RectTransform readoutRect
+  F List`1<GameObject> rulerObjects
+  F TMP_FontAsset font
+  M Void .ctor(PaperEditor)
+  M Void Attach(PaperUI)
+  M Void Destroy()
+  M RectTransform NewLayer(String)
+  M Void Stretch(RectTransform, RectTransform)
+  M RectTransform NewQuad(RectTransform, String, Color)
+  M TextMeshProUGUI NewLabel(RectTransform, String, RectTransform&)
+  M Void Refresh()
+  M Box MakeBox(Binding)
+  M Void UpdateLive()
+  M Color ColorFor(PaperElementData)
+  M Vector2 HandleCenter(Rect, Handle)
+  M Boolean HitHandle(Vector2, Handle&)
+  M Void Outline(RectTransform[], Rect, Single)
+  M Void ShowMarquee(Rect)
+  M Void HideMarquee()
+  M Void ShowGuides(Nullable`1<Single>, Nullable`1<Single>)
+  M Void HideGuides()
+  M Void SetReadout(String)
+  M Void PositionReadout()
+  M Void RefreshRulers()
+  M Single PickRulerStep(Single)
+  M Void .cctor()
+TYPE PaperEditorSpritePicker
+## PaperEditorSpritePicker
+  F String WINDOW_ID
+  F String ALL
+  F Int32 COLUMNS
+  F Single CELL
+  F Single LABEL_HEIGHT
+  F String filter
+  F String group
+  F Action`1<String> onPick
+  F String modId
+  F String title
+  F Func`2<String,Boolean> groupFilter
+  F Boolean includeItemAtlases
+  F Int32 MAX_SHOWN
+  M Void Open(String, String, Action`1<String>, Func`2<String,Boolean>, Boolean)
+  M Void Close()
+  M Void Build()
+  M Void FitSprite(CustomUIElement, Sprite)
+  M String Shorten(String)
+  M Void Pick(String)
+  M Void .cctor()
+TYPE PaperEditorValidation
+## PaperEditorValidation
+  M List`1<Issue> Run(PaperEditor)
+  M Void CheckElements(List`1<Issue>, List`1<PaperElementData>, PaperEditor, String, Vector2, Int32, String, PaperTemplateData)
+TYPE PaperEditorWindow
+## PaperEditorWindow
+  P Boolean IsOpen
+  P Func`2<String,Boolean> BackgroundGroups
+  F String WINDOW_ID
+  F Single WIDTH
+  F Single HEIGHT
+  F Single SCROLL_HEIGHT
+  F String[] TABS
+  F PaperEditor editor
+  F PaperEditor subscribedEditor
+  F Boolean pendingRebuild
+  F Boolean rebuilding
+  F CustomUIWindow window
+  F Int32 newModIndex
+  F String newId
+  F String newTitle
+  F Int32 newStarterIndex
+  F String newBackground
+  F String newTemplateId
+  F List`1<Issue> lastIssues
+  M Void Open(PaperEditor)
+  M Void Hide()
+  M Void Close()
+  M Void SetVisible(Boolean)
+  M Boolean Contains(GameObject)
+  M Boolean PointerOverWindow()
+  M Void UpdateStatus(String)
+  M Void ClearIssues()
+  M Void RequestRebuild()
+  M Void Tick()
+  M Void Build()
+  M String F(Single)
+  M Boolean TryParse(String, Single&)
+  M Void Header(CustomUIBuilder, String)
+  M Void FloatField(CustomUIBuilder, String, Single, Action`1<Single>, Single)
+  M Void FloatPair(CustomUIBuilder, String, Func`1<Single>, String, Func`1<Single>, Action`2<Single,Single>)
+  M Void TextField(CustomUIBuilder, String, String, Action`1<String>, Action`1<String>, String)
+  M Void ToggleField(CustomUIBuilder, String, Boolean, Action`1<Boolean>)
+  M Void DropdownField(CustomUIBuilder, String, List`1<String>, Int32, Action`1<Int32>)
+  M Void SpriteField(CustomUIBuilder, String, String, Action`1<String>, Func`2<String,Boolean>)
+  M Void BuildBookTab(CustomUIBuilder)
+  M Void BuildPagesTab(CustomUIBuilder)
+  M Void BuildElementsTab(CustomUIBuilder)
+  M Void ElementRow(CustomUIBuilder, PaperElementData, Boolean)
+  M Void BuildInspectorTab(CustomUIBuilder)
+  M Void BuildPaletteTab(CustomUIBuilder)
+  M Void AddText(PaperTextStyle, PaperElementData)
+  M Void BuildToolsTab(CustomUIBuilder)
+  M Void BuildCheckTab(CustomUIBuilder)
+  M Void .cctor()
+TYPE PaperSpriteEffects
+## PaperSpriteEffects
+  F Dictionary`2<ValueTuple`2<Sprite,Color32>,Sprite> silhouettes
+  F Dictionary`2<ValueTuple`2<Sprite,Color32>,Sprite> fills
+  M Sprite FillEnclosed(Sprite, Color)
+  M Sprite CreateSprite(Color32[], Int32, Int32, Sprite, String)
+  M Sprite Silhouette(Sprite, Color)
+  M Color32[] ReadPixels(Sprite, Int32&, Int32&)
+  M Void .cctor()
+  M Void <FillEnclosed>g__Seed|2_0(Int32, Int32, <>c__DisplayClass2_0&)
+TYPE PaperStarters
+## PaperStarters
+  P IReadOnlyList`1<Starter> All
+  F String RESOURCE_FOLDER
+  F String BLANK
+  F List`1<Starter> starters
+  F Dictionary`2<String,PaperTemplateData> builtInTemplates
+  M Starter Get(String)
+  M PaperTemplateData GetBuiltInTemplate(String)
+  M IEnumerable`1<String> BuiltInTemplateIds()
+  M Void Load()
+  M PaperBookData NewBook(String, String, String)
+  M List`1<PaperElementData> DefaultChrome(Vector2, Single, Boolean, Boolean, Boolean, Boolean)
+  M Single Round(Single)
+  M Void .cctor()
+TYPE PaperTextStyle
+## PaperTextStyle
+  P IReadOnlyList`1<PaperTextStyle> All
+  F String HEADER
+  F String TITLE
+  F String SECTION
+  F String BODY
+  F String CAPTION
+  F String LABEL
+  F String SERIF_TITLE
+  F String HANDWRITTEN
+  F String PAGE_NUMBER
+  F String STAMP
+  F String BUTTON
+  F String META_HEADER
+  F String META_BODY
+  F String META_WARNING
+  F String id
+  F FontRole role
+  F Single size
+  F Color color
+  F String description
+  F FontStyles fontStyle
+  F Color INK
+  F Color RED
+  F Color BUTTON_TEXT
+  F Color META_HEADER_TEXT
+  F Color META_BODY_TEXT
+  F Color META_WARNING_TEXT
+  F List`1<PaperTextStyle> all
+  F HashSet`1<String> warned
+  M Void .ctor(String, FontRole, Single, Color, String, FontStyles)
+  M List`1<String> Ids()
+  M PaperTextStyle Get(String)
+  M Boolean Exists(String)
+  M TMP_FontAsset Font()
+  M String GuessFromFont(TMP_FontAsset, Single)
+  M TextAlignmentOptions Alignment(String, String)
+  M Color ParseColor(String, Color)
+  M String ToHex(Color)
+  M Void .cctor()
+TYPE PaperUI
+## PaperUI
+  P String Id
+  P String ModId
+  P PaperBookData Data
+  P GameObject Root
+  P RectTransform Rect
+  P RectTransform Content
+  P Vector2 DesignSize
+  P Vector2 DisplaySize
+  P Single DisplayScale
+  P Int32 CurrentPage
+  P Int32 PageCount
+  P Boolean IsAlive
+  P Boolean IsVisible
+  P Boolean EditorMode
+  P String PreviewTemplate
+  P PaperElementData Last
+  F PaperBookData <Data>k__BackingField
+  M Void .ctor(String, PaperBookData, String)
+  M PaperUI Create(String, String, Single, Single, String)
+  M PaperUI FromData(String, PaperBookData, String)
+  M PaperUI AddPage(String, String)
+  M PaperPageData CurrentAuthoringPage()
+  M PaperUI AddElement(PaperElementData)
+  M PaperUI AddText(Single, Single, Single, Single, String, String, String, String, Single)
+  M PaperUI AddLocalizedText(Single, Single, Single, Single, String, String, String, String, Single)
+  M PaperUI AddTextBelow(String, Single, String, String, Single)
+  M PaperUI AddImage(Single, Single, Single, Single, String, String, String)
+  M PaperUI AddButton(Single, Single, Single, Single, String, Action, String, String)
+  M PaperUI AddIconButton(Single, Single, Single, Single, String, Action, String, String, String)
+  M PaperUI AddFlow(Single, Single, Single, Single, String, Single, String)
+  M PaperUI AddFlowText(String, String, String, String, Single)
+  M PaperUI AddLine(Single, Single, Single, Single, Single, String, String, String)
+  M PaperUI AddSilhouette(Single, Single, Single, Single, String, String, Single, String)
+  M PaperUI SetSlot(String, String)
+  M PaperUI SetChrome(Boolean, Boolean, Boolean, Boolean)
+  M PaperUI SetSize(Single, Single)
+  M PaperUI SetPosition(Single, Single)
+  M PaperUI SetSounds(Boolean)
+  M PaperUI OnAction(String, Action)
+  M PaperUI OnPageShown(Action`2<PaperUI,Int32>)
+  M Void MarkDirty()
+  M Vector2 DesignSizeOrDefault()
+  M PaperUI Show()
+  M Void Hide()
+  M Void Close()
+  M Void Toggle()
+  M PaperUI Apply()
+  M Void Rebuild()
+  M IEnumerator SwitchLocale(Locale)
+  M IEnumerator WaitForLocalization()
+  M Void ReplaceData(PaperBookData)
+  M Void ResetBindings()
+  M Void RefreshPage()
+  M Void NotifyHidden()
+  M Void NotifyDestroyed(Boolean)
+  M Void FlipTo(Int32)
+  M Void FlipLeft()
+  M Void FlipRight()
+  M Void ShowPage(Int32, Boolean)
+  M CustomUIElement Get(String)
+  M Boolean Has(String)
+  M PaperUI SetText(String, String)
+  M PaperUI SetSprite(String, String)
+  M PaperUI SetVisible(String, Boolean)
+  M Binding GetBinding(String)
+  M Binding GetBinding(PaperElementData)
+  M List`1<Binding> VisibleBindings()
+  M Int32 SiblingOrder(Binding)
+  M Boolean IsOverflowing(PaperElementData)
+  M String ResolveText(PaperElementData, PaperPageData)
+  M String ResolveSpriteKey(PaperElementData, PaperPageData)
+  M String DefaultChromeSprite(String)
+  M Void ResolveSizes(Vector2&, Vector2&)
+  M Void Build()
+  M Void StretchToParent(RectTransform, RectTransform)
+  M Void BuildElements(List`1<PaperElementData>, RectTransform, PaperPageData, Dictionary`2<PaperElementData,Binding>)
+  M Void FadeHidden(GameObject)
+  M Void SetRect(RectTransform, Single, Single, Single, Single)
+  M Binding NewBinding(PaperElementData, RectTransform, String)
+  M Binding BuildFlow(PaperElementData, RectTransform)
+  M Void ConfigureFlowChild(Binding, PaperElementData, RectTransform)
+  M Binding BuildText(PaperElementData, RectTransform, PaperPageData)
+  M Binding BuildImage(PaperElementData, RectTransform, PaperPageData)
+  M Void ApplySprite(Image, Sprite, PaperElementData)
+  M Binding BuildLine(PaperElementData, RectTransform)
+  M Image NewBar(Transform, String, Color, Boolean)
+  M Void LayoutLine(Binding)
+  M Void PlaceWing(Transform, Vector2, Vector2, Single, Single, Single)
+  M Void PlaceBar(Transform, Vector2, Vector2, Single, Single)
+  M Void RefreshLine(PaperElementData)
+  M Binding BuildButton(PaperElementData, RectTransform, PaperPageData)
+  M Void HandleAction(String)
+  M Void PlayPickup()
+  M Void PlayDrop()
+  M Void .cctor()
+TYPE PaperUIPanel
+## PaperUIPanel
+  F PaperUI owner
+  F Boolean quitting
+  M Void OnApplicationQuit()
+  M Void OnDisable()
+  M Void OnDestroy()
+  M Void .ctor()
+TYPE DialogSettingUIManager
+TYPE DialoguePhoneUIManager
+TYPE DialogUIManager
+TYPE PaperUIManager
+## PaperUIManager
+  P PaperUIManager Instance
+  F PaperUIManager <Instance>k__BackingField
+  F String JOE_CARD_UI_ID
+  F GameObject paperUIGroup
+  F AudioSource audioSourcePickup
+  F AudioSource audioSourceDrop
+  F GameObject panel
+  F Image panelImage
+  F TextMeshProUGUI title
+  F TextMeshProUGUI body
+  F TextMeshProUGUI signature
+  F Sprite paperBack1
+  F Sprite paperBack2
+  F GameObject contractPanel
+  F GameObject deedPanel
+  F GameObject introPanel
+  F GameObject bookPanel
+  F TextMeshProUGUI bookTitle
+  F TextMeshProUGUI bookSubtitle
+  F TextMeshProUGUI bookBody
+  F TextMeshProUGUI bookPage
+  F Int32 bookCurrentPage
+  F GameItem currentBook
+  F Button leftButton
+  F Button rightButton
+  F GameObject indexGroup
+  F List`1<TextMeshProUGUI> indexElements
+  F GameObject slipPanel
+  F TextMeshProUGUI procurementHeader
+  F TextMeshProUGUI procurementClient
+  F TextMeshProUGUI procurementBody
+  F TextMeshProUGUI procurementDueDate
+  F GameObject generalSlipPanel
+  F TextMeshProUGUI generalSlipTitle
+  F TextMeshProUGUI generalSlipBody
+  F GameObject JoeWildBusinessCard
+  F GameObject cigaretteGuidePanel
+  F GameObject foodStampGuidePanel
+  F GameObject injectorGuidePanel
+  F GameObject wantedPanel
+  F GameObject secCardPanel
+  F GameObject cardBrewer
+  F GameObject cardChem
+  F GameObject cardPharma
+  F GameObject cardMining
+  F GameObject cigaretteColorPanel
+  F GameObject codeBookPanel
+  F GameObject cardRev
+  F GameObject secSlip
+  F GameObject lotteryInfo
+  F GameObject augIdGuide
+  M Void Awake()
+  M Void Start()
+  M Void Update()
+  M Void OpenUI(String, String, String, Int32)
+  M Void CloseUI()
+  M Void OpenContract()
+  M Void CloseContract()
+  M Void OpenDeed()
+  M Void CloseDeed()
+  M Void CloseBook()
+  M Void OpenBook(GameItem)
+  M Void BookOnFlipPage()
+  M Void BookOnFlipPage(Int32)
+  M Void BookIndexClick()
+  M Void BookLeftClick()
+  M Void BookRightClick()
+  M Void OnIndexClick(Int32)
+  M Void CloseIndex()
+  M Void OpenIndex()
+  M Void OpenSlipUI(GameItem)
+  M Void CloseSlipUI()
+  M Void OpenGeneralSlipUI(GameItem)
+  M Void CloseGeneralSlipUI()
+  M Void ToggleJoeCard()
+  M Void OnJoeCardClosed()
+  M Void OpenCigaretteGuide()
+  M Void CloseCigaretteGuide()
+  M Void OpenStampGuide()
+  M Void CloseStampGuide()
+  M Void OpenInjectorGuide()
+  M Void CloseInjectorGuide()
+  M Void OpenWantedPaper()
+  M Void CloseWantedPaper()
+  M Void OpenSecCard()
+  M Void CloseSecCard()
+  M Void OpenCigaretteColor()
+  M Void CloseCigaretteColor()
+  M Void OpenCodeBook()
+  M Void CloseCodeBook()
+  M Void OpenBrewerCard()
+  M Void CloseBrewerCard()
+  M Void OpenMiningCard()
+  M Void CloseMiningCard()
+  M Void OpenChemCard()
+  M Void CloseChemCard()
+  M Void OpenPharmaCard()
+  M Void ClosePharmaCard()
+  M Void OpenCard(String, GameItem)
+  M Void CloseCard(String)
+  M Void CloseAllPaperUI()
+  M Void OpenLotteryInfo()
+  M Void CloseLotteryInfo()
+  M Void OpenAugIdGuide()
+  M Void CloseAugIdGuide()
+  M Void .ctor()
+TYPE PerkElement
+## PerkElement
+  F Image image
+  F StoreReputationPerk perk
+  M Void Start()
+  M Void Update()
+  M Void SetLocked()
+  M Void SetUnlocked()
+  M Void Init(StoreReputationPerk)
+  M Void SetIcon()
+  M Void OnPointerEnter(PointerEventData)
+  M Void OnPointerExit(PointerEventData)
+  M Void .ctor()
+TYPE PhoneBookUIManager
+## PhoneBookUIManager
+  F GameObject layoutGroup
+  F GameObject contactElementPrefab
+  M Void Start()
+  M Void Update()
+  M Void OpenUI()
+  M Void CloseUI()
+  M Void .ctor()
+## RichTextBuilder
+  F List`1<TextSlice> slices
+  F String nextBegin
+  F Int32 maxCharWidth
+  F Char[] defaultStyle
+  F Char[] defaultStyleVertical
+  F Char[] defaultStyleOldSchool
+  M Void .ctor(Int32)
+  M Boolean IsEmpty()
+  M String GetFillString(String, Char)
+  M RichTextBuilder Add(RichTextBuilder)
+  M RichTextBuilder AddProgressBarOld(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder AddProgressTest(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder AddProgressBar(Single, Int32, ColorPalette, ColorPalette, Char[], String, Boolean, Boolean)
+  M RichTextBuilder MarkLastSliceNoBreak()
+  M RichTextBuilder AddLine(String, Boolean, ColorPalette, Boolean, Boolean, Boolean, Boolean, ColorPalette, ColorPalette, ColorPalette)
+  M RichTextBuilder NextLine()
+  M RichTextBuilder AddEmptyLine(Int32)
+  M RichTextBuilder Add(String, ColorPalette, String, Boolean, Boolean, Boolean, Boolean, ColorPalette, ColorPalette, ColorPalette)
+  M RichTextBuilder AddIcon(Sprite, String)
+  M RichTextBuilder Clear()
+  M RichTextBuilder AddRichTable(RichTableBuilder)
+  M ValueTuple`2<Int32,Int32> FindBestSlice(List`1<TextSlice>, Int32, Int32, Int32, Int32)
+  M ValueTuple`2<Int32,Int32> FindCharBreak(List`1<TextSlice>, Int32, Int32, Int32)
+  M ValueTuple`2<Int32,Int32> FindFirstSlice(List`1<TextSlice>, Int32)
+  M RichText Build(Int32)
+  M String Color(String, ColorPalette)
+  M String Style(String, Boolean, Boolean)
+TYPE DialogueHandler
+## DialogueHandler
+  P List`1<KeyCode> keyListeners
+  P KeyCode key2
+  F DialogueHandler current
+  F KeyCode key
+  M Void Awake()
+  M Void OnEventPress(ISet`1<KeyCode>)
+  M Void OnEventRelease(ISet`1<KeyCode>)
+  M Void .ctor()
+TYPE Dialogue
+TYPE DialogBubbleWidth
+## ModHelper
+  F String MOD_ID_TAG
+  F String MOD_NAME_TAG
+  F HashSet`1<String> warnedLocalizationKeys
+  F String DEBUG_CATEGORY_STORE
+  F String DEBUG_CATEGORY_COMMAND
+  F String DEBUG_CATEGORY_SPAWN
+  F String DEBUG_CATEGORY_SPECIAL
+  F String DEBUG_CATEGORY_MODDING
+  F String DEBUG_CATEGORY_MARKETING
+  F String OPTION_SECTION_GAMEPLAY
+  F String OPTION_SECTION_AUDIO
+  F String OPTION_SECTION_DISPLAY
+  F String OPTION_SECTION_DIALOGUE
+  F String OPTION_SECTION_KEYBIND
+  M Void AddCredit(Int32, Boolean)
+  M GameItem SpawnItem(String)
+  M GameItem SetItemOwnerShip(GameItem, Boolean)
+  M Void MoveItemToFrontCounter(GameItem)
+  M Void MoveItemToBackCounter(GameItem)
+  M Void MoveItemToInventory(GameItem)
+  M Void MoveItemToTrash(GameItem)
+  M Void MoveItemToDisplayCase(GameItem)
+  M Void MoveItemToAfterhours(GameItem)
+  M Locale GetCurrentLocale()
+  M String GetLocalized(String, String, Object[])
+  M String GetSoundIdentifier(String, String)
+  M Boolean PlaySound(String, String)
+  M Boolean PlaySound2(String, String)
+  M Boolean PlaySound3(String, String)
+  M Void SetSource(GameItem, String, String)
+  M Void SetClientSource(StoreClient, String)
+  M Void AddDebugFunction(String, String, String, Action, Boolean)
+  M Int32 RemoveDebugFunctions(String)
+  M ModConfig GetConfig(String)
+  M String GameOptionId(String, String)
+  M String GameOptionSectionId(String, String)
+  M Void AddGameOptionSection(String, String, Func`1<String>)
+  M Void AddGameOptionToggle(String, String, String, Func`1<String>, Func`1<Boolean>, Action`1<Boolean>, Func`1<String>)
+  M Void AddGameOptionSlider(String, String, String, Func`1<String>, Func`1<Single>, Action`1<Single>, Single, Single, Boolean, Func`1<String>, Func`2<Single,String>)
+  M Void AddGameOptionSlider(String, String, String, Func`1<String>, Func`1<Single>, Action`1<Single>, Single, Single, Boolean, Func`1<String>)
+  M Void AddGameOptionDropdown(String, String, String, Func`1<String>, Func`1<IList`1<String>>, Func`1<Int32>, Action`1<Int32>, Func`1<String>)
+  M Void AddGameOptionKeyBind(String, String, String, Func`1<String>, Func`1<KeyCode>, Action`1<KeyCode>, Func`1<String>)
+  M Boolean RemoveGameOption(String, String)
+  M Int32 RemoveGameOptions(String)
+  M Void RegisterLootTable(String, String, ValueTuple`2<String,Single>[])
+  M Void AddNetworkUpgrade(String, String, Int32, String, Func`1<String>, Func`1<String>, Action, String, String, String[], Int32, Func`1<String>, Func`1<String>, Boolean)
+  M Void SetNetworkTabLabel(String, Func`1<String>)
+  M Int32 RemoveNetworkUpgrades(String)
+  M Boolean IsNetworkUpgradeUnlocked(String)
+  M NetworkUpgrade GetNetworkUpgrade(String)
+  M Void OpenWildNetwork()
+  M Void CloseWildNetwork()
+  M Void AddStartingScenario(String, String, Func`1<String>, Func`1<String>, Func`1<String>[], Action, String, Func`1<String>, TagTone, Boolean, Boolean)
+  M Int32 RemoveStartingScenarios(String)
+  M String GetStartingScenarioId()
+  M Boolean IsStartingScenario(String)
+  M Void OpenNewGameSpecialization()
+  M Void CloseNewGameSpecialization()
+  M Void AddStartingPerk(String, String, Int32, StartingPerkType, Func`1<String>, Func`1<String>, String, String[], Int32, Boolean)
+  M Int32 RemoveStartingPerks(String)
+  M Boolean IsStartingPerkActive(String)
+  M List`1<String> GetStartingPerkIds()
+  M Void OpenNewGamePerks()
+  M Void CloseNewGamePerks()
+  M Void AddDifficulty(String, String, Int32, Func`1<String>, Func`1<String>, Action`1<DifficultyRules>, String, Func`1<String>[], String)
+  M Void ModifyDifficulty(String, Action`1<Difficulty>)
+  M Int32 RemoveDifficulties(String)
+  M String GetDifficultyId()
+  M DifficultyRules GetDifficultyRules()
+  M Boolean IsDifficultyAtLeast(String)
+  M Void AddAppraisalItem(String, String, String, Int32, Func`1<GameItem>, Func`2<GameItem,Int32>, Func`2<GameItem,Boolean>, String, Func`1<String>)
+  M Int32 RemoveAppraisalItems(String)
+  M Int32 GetAppraiserRank()
+  M DelegateAfterhourLocation AddAfterhourLocation(String, String, Func`1<String>, Action, Action, Action`1<CustomUIBuilder>, String, String, String, Func`1<Boolean>, Func`1<Boolean>)
+  M Void AddAfterhourLocation(AfterhourLocation)
+  M PaperUI OpenPaper(String, String)
+  M PaperUI OpenPaper(String)
+  M Void ClosePaper(String, String)
+  M Boolean IsPaperOpen(String, String)
+  M PaperUI GetOpenPaper(String, String)
+  M Void OnPaperOpened(String, String, Action`1<PaperUI>)
+  M Void RegisterPaperBook(String, PaperBookData)
+  M PaperBookData ParsePaperBook(String)
+  M Int32 RemovePaperBooks(String)
+  M List`1<String> GetPaperBookIds(String)
+  M PaperUI CreatePaper(String, String, String, Single, Single)
+  M GameItem SpawnPaperItem(String, String)
+  M Int32 RemoveAfterhourLocations(String)
+  M AfterhourLocation GetAfterhourLocation(String)
+  M String GetCurrentAfterhourLocationId()
+  M Boolean IsOutsideStore()
+  M Void ReturnFromAfterhour(Boolean)
+  M Boolean RegisterAfterhourAmbience(String, String, String)
+  M Boolean RegisterAfterhourAmbience(String, AudioClip)
+  M Int32 GetAfterhourVisits(String)
+  M Int32 GetAfterhourCounter(String, String, Int32)
+  M Void SetAfterhourCounter(String, String, Int32)
+  M AfterhourEventDefinition AddAfterhourEvent(String, String, String, Func`1<String>, Int32, Func`1<String>, IEnumerable`1<AfterhourEffect>, Single, Nullable`1<AfterhourEventTone>, Func`1<Boolean>, Action, Action, IEnumerable`1<AfterhourWeekday>, Boolean)
+  M AfterhourEffect AfterhourEffect(Func`1<String>, String, Single, AfterhourEffectPolarity)
+  M Int32 RemoveAfterhourEvents(String)
+  M Boolean StartAfterhourEvent(String, Int32)
+  M Boolean EndAfterhourEvent(String)
+  M Void EndAllAfterhourEvents(String)
+  M Boolean IsAfterhourEventActive(String)
+  M List`1<String> GetActiveAfterhourEventIds(String)
+  M Single GetAfterhourModifier(String, String)
+  M Void AddLootEntry(String, String, String, Single)
+  M Void RemoveLootEntry(String, String, String)
+  M Void SetLootWeight(String, String, String, Single)
+  M Void ClearLootTable(String, String)
+  M Void RegisterLootGroup(String, String, ValueTuple`2<String,Single>[])
+  M Void AddLootGroupEntry(String, String, String, Single)
+  M Void RemoveLootGroupEntry(String, String, String)
+  M Void SetLootGroupWeight(String, String, String, Single)
+  M Void ClearLootGroup(String, String)
+  M List`1<LootEntry> GetLootEntries(String)
+  M List`1<LootEntry> GetLootGroupEntries(String)
+  M String RollLootTable(String)
+  M String RollLootGroup(String)
+  M GameItem SpawnFromLootTable(String)
+  M GameItem SpawnFromLootGroup(String)
+  M String ModDataKey(String, String)
+  M Dictionary`2<String,String> ModDataStore(Boolean)
+  M Void SetModData(String, String, String)
+  M String GetModData(String, String, String)
+  M Boolean HasModData(String, String)
+  M Boolean RemoveModData(String, String)
+  M List`1<String> GetModDataKeys(String)
+  M Int32 ClearModData(String)
+  M Void SetModDataInt(String, String, Int32)
+  M Int32 GetModDataInt(String, String, Int32)
+  M Void SetModDataFloat(String, String, Single)
+  M Single GetModDataFloat(String, String, Single)
+  M Void SetModDataBool(String, String, Boolean)
+  M Boolean GetModDataBool(String, String, Boolean)
+  M String GetModFolder(String)
+  M String GetModDataFolder(String)
+  M Boolean ModFileExists(String, String)
+  M Byte[] ReadModFileBytes(String, String)
+  M String ReadModFileText(String, String)
+  M Boolean ModDataFileExists(String, String)
+  M Byte[] ReadModDataFileBytes(String, String)
+  M String ReadModDataFileText(String, String)
+  M Void WriteModDataFileBytes(String, String, Byte[])
+  M Void WriteModDataFileText(String, String, String)
+  M Boolean DeleteModDataFile(String, String)
+  M List`1<String> ListModDataFiles(String)
+  M String SafeFolderName(String)
+  M String RequireInside(String, String, String)
+  M String ResolveInside(String, String)
+  M Void .ctor()
+  M Void .cctor()
+## ModLoader
+  P ModLoader Instance
+  P List`1<LoadedMod> Mods
+  P HashSet`1<String> EnabledMods
+  P String ModsPath
+  P Boolean RestartRequired
+  F ModLoader <Instance>k__BackingField
+  F List`1<LoadedMod> <Mods>k__BackingField
+  F HashSet`1<String> <EnabledMods>k__BackingField
+  F List`1<String> _modOrder
+  F Boolean <RestartRequired>k__BackingField
+  F Int32 _rejectedLocalFolders
+  F HashSet`1<String> gameAssemblyNames
+  F Nullable`1<ValueTuple`2<String,ModManifest>> loadingMod
+  F Single nextGuardCheck
+  F Action OnTrustRefreshed
+  F Byte[] IModNameBytes
+  M Boolean IsValidModId(String)
+  M String GetModLabel(ModManifest)
+  M Void ReportLoadError(LoadedMod, Exception, String)
+  M Void LoadModOrder()
+  M Void SetModEnabled(String, Boolean)
+  M Void ReorderMods(List`1<String>)
+  M Boolean IsModEnabled(String)
+  M Boolean SetDeveloperMode(LoadedMod, Boolean)
+  M Assembly ResolveModDependency(Object, ResolveEventArgs)
+  M Void StopRunningMod(LoadedMod, Boolean)
+  M Void LoadAllMods()
+  M Void LoadWorkshopMods()
+  M Void ForgetMod(String)
+  M Boolean AnyReferencesIMod(IEnumerable`1<String>)
+  M Void LoadModFromFolder(String, ModSource, UInt64)
+  M Void LoadModDll(String, String, ModManifest, ModSource, UInt64)
+  M Void LoadModAssets()
+  M Void LoadTextures(LoadedMod)
+  M Void LoadTexturesFromFolder(LoadedMod, String, String, Boolean)
+  M Void LoadPaperTextures(LoadedMod, String)
+  M Void LoadLocalization(LoadedMod)
+  M IEnumerator LoadSoundsCoroutine(LoadedMod)
+## LoadedMod
+  F IMod Instance
+  F ModManifest Manifest
+  F Assembly Assembly
+  F Harmony HarmonyInstance
+  F String FolderPath
+  F String DllPath
+  F Boolean IsEnabled
+  F String LoadError
+  F ModSource Source
+  F UInt64 WorkshopId
+  F UInt64 ShadowedWorkshopId
+  F ModTrustState TrustState
+  F String TrustNote
+  F ModFingerprint Fingerprint
+  F ModTrustRecord TrustRecord
+  F ModListVerdict ListVerdict
+  F ModScanResult LastScan
+  F List`1<String> UnlistedDlls
+  F Dictionary`2<String,Texture2D> Textures
+  F Dictionary`2<String,Sprite> Sprites
+  F Dictionary`2<String,Sprite> PaperSprites
+  F Dictionary`2<String,AudioClip> Sounds
+  F Dictionary`2<String,Dictionary`2<String,String>> Localization
+  M Void .ctor()
+TYPE Binding
+## Binding
+  F String id
+  F KeyCode defaultKey
+  F Func`1<String> label
+  M Void .ctor()
+TYPE PerkHoverTooltip
+## PerkHoverTooltip
+  F StartingPerk perk
+  F Boolean hovered
+  M Void OnPointerEnter(PointerEventData)
+  M Void OnPointerExit(PointerEventData)
+  M Void OnDisable()
+  M Void Update()
+  M Void Release()
+  M Void FollowMouse(PerkUIController)
+  M Void .ctor()
+TYPE StartingPerkType
+## StartingPerkType
+  F Int32 value__
+  F StartingPerkType POSITIVE
+  F StartingPerkType NEGATIVE
+  F StartingPerkType NEUTRAL
+TYPE Binding
+## Binding
+  F PaperElementData data
+  F GameObject go
+  F RectTransform rect
+  F TextMeshProUGUI text
+  F Image image
+  F Button button
+  F CustomUIElement handle
+  M Void .ctor()
+TYPE <DialogueCoroutine>d__61
