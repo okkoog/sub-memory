@@ -18,6 +18,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            probably-stolen/experiments/post-item-translation-probe
+            probably-stolen/Managed
+          sparse-checkout-cone-mode: true
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
