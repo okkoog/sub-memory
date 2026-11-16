@@ -43,6 +43,9 @@ is_msg_store_collectible,Collectibles are protected by 深空装机 - cannot be 
 is_msg_store_mod_item,Module items cannot be stored in the box.
 is_msg_store_crate,Unlock the supply crate and empty it before storing.
 is_msg_store_node,Node items cannot be stored in the box.
+is_msg_store_animal,Animals cannot be stored here (can be allowed in mod settings).
+is_cfg_allow_animals_name,Allow animals
+is_cfg_allow_animals_desc,"Lets rats, fish and other animals be stored. Each animal keeps its own age, weight and genes, and to preserve these attributes this data cannot be merged. Ten full boxes (10 boxes x 125 slots x 999 each) take about 4.2 GB of save data and will be very laggy. For normal play keep the number of stored animals under 200 (~0.7 MB). Off by default: animals are rejected, but ones already inside can still be taken out."
 is_msg_store_stash,Storage devices cannot be put in the box.
 is_msg_store_machine,Machines cannot be stored in the box.
 is_msg_store_toolbox,Toolboxes cannot be stored in the box.
@@ -55,7 +58,7 @@ is_msg_box_full,The box is full.
 is_space_short_counter,Not enough counter space.
 is_space_short_box,Not enough space where the box is.
 is_msg_withdraw_out_store,Cannot take out to the counter outside the shop - go back inside first.
-is_msg_keep_one_on,Keep at least 1 is on - the last one stays in the box.
+is_msg_keep_one_on,Keep at least 1 is on - auto-stocking leaves the last one.
 is_msg_withdraw_mod_missing,This item's mod is not loaded - cannot take it out right now.
 
 # ===== 存入 / 取出结果（StoragePatch、BoxWindow）=====
@@ -70,6 +73,7 @@ is_msg_stow_in_store,Go back inside the shop to stow.
 is_msg_stow_nothing,Nothing to stow.
 is_msg_stow_done,Stowed {0}.
 is_msg_stow_box_full,"The box is full ({0} slots) - take something out first."
+is_msg_slotmode_frozen,"Switched to {0} slots: the last {1} item slots are frozen for now. Switch back to 25 to restore them."
 
 # ===== 全箱收纳（BoxStowAll）=====
 is_msg_allstow_in_store,Go back inside the shop to stow.
@@ -122,7 +126,7 @@ is_gp_settings_fmt,{0} - Settings
 is_gp_pull,Pull Same
 is_gp_guard,No Pull
 is_gp_restock_guard,Skip Stock All
-is_gp_keep_one,Keep at least 1
+is_gp_keep_one,Keep 1 when stocking
 is_gp_capturing,Press a key - Esc to cancel
 is_gp_bind_fail,Bind failed: {0}
 is_gp_conflict_own_stow,Key already used by this box's Stow.
@@ -155,7 +159,7 @@ is_msg_lock_off,{0} will be auto-stocked again.
 
 # ===== Slot mode & bay pull (2026-11-10, 1.4.4) =====
 is_cfg_slot_mode_name,Slot Count
-is_cfg_slot_mode_desc,"Changes the box slot count to 16 or 25. Switching from 25 to 16 freezes slots 17-25 in existing saves. Nothing is lost."
+is_cfg_slot_mode_desc,"Changes the slots per page to 16 or 25. Total capacity = slots per page x page count (25 x 5 pages = 125, 16 x 5 pages = 80). Switching to 16 freezes everything beyond that capacity; nothing is lost and switching back restores it."
 is_gp_bay_storage,Storage Bays
 is_gp_bay_machine,Machine Bays
 is_gp_bay_smuggler,Smuggler Bays
@@ -165,7 +169,7 @@ is_msg_need_store,Only editable inside the store
 is_toast_opt_pull,Pulls matching items from other boxes
 is_toast_opt_guard,Other boxes will no longer pull from this one
 is_toast_opt_restockguard,This box is excluded from stow-all restock
-is_toast_opt_keepone,Keeps at least one item per slot
+is_toast_opt_keepone,Only auto-stocking keeps the last item
 is_toast_opt_baystor,Pulls from storage bays (all boxes)
 is_toast_opt_baymach,Pulls from machine bays (all boxes)
 is_toast_opt_baysmug,Pulls from smuggler bays (all boxes)
@@ -175,8 +179,37 @@ is_toast_opt_hidename,Hides the names under slots
 is_toast_off_pull,No longer pulls matching items from other boxes
 is_toast_off_guard,Other boxes can pull from this one again
 is_toast_off_restockguard,This box is included in stow-all restock
-is_toast_off_keepone,No longer keeps the last item in a slot
+is_toast_off_keepone,Auto-stocking takes the last item too
 is_toast_off_baystor,No longer pulls from storage bays (all boxes)
 is_toast_off_baymach,No longer pulls from machine bays (all boxes)
 is_toast_off_baysmug,No longer pulls from smuggler bays (all boxes)
 is_toast_off_hidename,Shows the names under slots
+
+# ===== Manual (2026-11-16) =====
+is_manual_name,Storage Box Manual
+is_manual_desc,Open it any time with the ? in the title bar.
+is_btn_help_desc,Open the manual
+is_msg_manual_missing,Manual failed to load (missing Books/itemstorage_manual.json)
+
+# ===== Gear panel hover descriptions (2026-11-16) =====
+is_gp_pull_desc,One-key stow also pulls this item from other boxes
+is_gp_guard_desc,Other boxes may not pull from this one
+is_gp_restock_guard_desc,Stock-all skips this box; its own buttons and keys still work
+is_gp_keep_one_desc,Auto exits keep one item per slot; manual takeout is unlimited
+is_gp_bay_storage_desc,One-key stow also collects from storage bays (all pages). Applies to every box
+is_gp_bay_machine_desc,Collects loose items left in machine bays; machines themselves stay. Applies to every box
+is_gp_bay_smuggler_desc,Collects items from smuggler bays. Applies to every box
+is_gp_hide_name_desc,Hides the slot names; the box works as usual
+
+# ===== Manual pages (4 x title / section / body) =====
+is_mn_p1_title,Storage Box Manual
+is_mn_p1_s1,Basics
+is_mn_p1_b1,1. One slot holds one type of item, up to 99 per slot. A storage box comes with you from the start; other sizes are sold by Dr. Jackson. Items stored in the box only keep their real tags; put labels back on manually after taking them out.\n\n2. Store: drop onto the box and items merge into matching slots or fill empty ones; drop onto a slot in the detail panel to store straight into it.\n\n3. Take: left-click takes 1, right-click takes 5; hold Alt while clicking to put the item straight onto the counter.\n\n4. Durability, charge and use-count items: values pool into one total per slot. Withdrawal tops slots up in order; once the pool runs dry the rest carry zero value.\n\n5. Liquids: containers of the same size share one slot; empty bottles and their contents are kept together and split by capacity on withdrawal. Items holding liquid can only be placed by dragging them onto a slot; bulk storing will not pick them up.\n\n6. Chemicals: stored separately by grade.\n\n7. Storage expansion kits add pages to a storage box; one box holds at most 5 pages.\n\n8. Items tagged [Storage] [Machine] [Loot] [Module] [Node] [Toolbox] are refused; containers must be emptied first; locked supply crates must be unlocked before storing; homemade wine and question-mark items are refused; animals are refused too (see Main Menu Mod Settings).
+is_mn_p2_title,Storage Box Manual
+is_mn_p2_s1,Gear Panel Buttons, Keys and Switches
+is_mn_p2_b1,1. Store One: this box only, and only item types it already holds.\n\n2. Store All: every box takes its turn in acquisition order, again only for types already held.\n\n3. Restock One: goods come from this box only.\n\n4. Restock All: every box supplies together.\n\n5. Restocking needs a customer in store, places only what that customer wants and can afford, stops when the counter is full and skips locked slots.\n\n6. All four buttons can be bound in the gear panel.\n\n7. Pull Alike: when storing, matching items come in from other boxes; matching slots here fill up first, only the rest opens a new slot; animal slots are never pulled.\n\n8. Block Pull: other boxes' Store One cannot take goods from this one.\n\n9. Skip Restock All: Restock All passes this box by; its own buttons and keys still work.\n\n10. Keep One on Restock: automatic restock leaves 1 per slot; manual withdrawal is unrestricted.\n\n11. Pull Storage / Machine / Smuggler Bay: those areas are included when storing; machines themselves stay put. All three apply to every box in the save.\n\n12. Hide Names: show or hide the names on the box itself.
+is_mn_p3_title,Storage Box Manual
+is_mn_p3_s1,Locking and Tidy
+is_mn_p3_b1,1. Click the name plate under a slot to lock it; click again to unlock.\n\n2. Locked slots are skipped by automatic restocking and never receive automatic placement; manual access is unaffected.\n\n3. Click the three-line button in the title bar: items queue up forward in order.\n\n4. Locked slots keep their items in place during tidy.
+is_mn_p3_s2,Main Menu Mod Settings
+is_mn_p3_b2,1. Where: main menu > Mods > select 堆叠收纳 > the settings icon on that row.\n\n2. Slot Cap: 20-999, default 99.\n\n3. Slot Count: 16 or 25. Switching back to 16 freezes slots 17-25; items are kept.\n\n4. Zero-First Withdrawal: 0 durability / 0 charge / 0 uses / empty bottles, four switches.\n\n5. Debug Log: enable only when troubleshooting.\n\n6. Allow Animals: off by default. Rats, fish (dead or alive), fry and fertilized roe are refused; when on, they can be stored and taken out as usual.

@@ -21,6 +21,9 @@ sec_mods,附加信息
 sec_info,其他
 panel_liquid,液体
 panel_contents,内容物
+packing_title,装箱单 · {0} 件
+packing_more,…另有 {0} 种
+packing_page,第 {0}/{1} 页
 ticket_no,估价单 No.{0}
 cfg_enabled,启用本模组
 cfg_enabled_tip,关闭后恢复原版物品详情，无需重启。
@@ -38,8 +41,10 @@ cfg_fraction_bars,分数数值加进度条
 cfg_fraction_bars_tip,形如「400/400」的数值（如耐久度）前面加一条进度条，颜色随比例变化。需开启图形进度条。
 cfg_contents_panel,显示容器内容物
 cfg_contents_panel_tip,用图标显示容器和机器里的物品（上锁、密封的不显示），电池和液体显示为量条，其他模组列出的内容物文字会去掉。经典风格下显示在原版窗口旁边。
-cfg_content_rows,内容物最多行数
-cfg_content_rows_tip,内容物图标最多显示几行，放不下的合并成「+数量」。
+cfg_contents_layout,内容物显示方式
+cfg_contents_layout_tip,装箱单：另一张小票订在估价单旁边，列出名字和数量，单子不会因为东西多而变高。格子：照旧在估价单里画一格格图标。
+cfg_content_rows,内容物显示档数
+cfg_content_rows_tip,装箱单每档列 5 种物品（默认 2 档，10 种），放不下的写成「…另有 N 种」；格子方式是图标最多几行，放不下的合并成「+数量」。
 cfg_scale,估价单大小（%）
 cfg_scale_tip,以原版物品详情为 100%。挡住其他窗口时可以调小。
 cfg_price_size,价格字号（%）
@@ -93,7 +98,7 @@ sample_desc,在提供容器的情况下可产出水。需要能量。
 sample_tag_household,[日用品]
 sample_tag_contraband,[违禁品]
 sample_stolen,赃物（14%热度）
-sample_stamp,中级违禁品
+sample_contraband,中级违禁品
 preview_classic,经典风格
 gauge_power,电池
 gauge_liquid,液体

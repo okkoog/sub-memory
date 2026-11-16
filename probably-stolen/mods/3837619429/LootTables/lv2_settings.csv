@@ -2,9 +2,9 @@
 # Half of boxes draw from the low band; the other half use the high band.
 LowBudgetChance,0.50
 LowBudgetMin,100
-LowBudgetMax,500
-HighBudgetMin,1200
-HighBudgetMax,4000
+LowBudgetMax,800
+HighBudgetMin,2400
+HighBudgetMax,3000
 
 # 90% of B is split between the normal and rare pools. The unused rare remainder flows into normal.
 SpendableBudgetFactor,0.90
@@ -19,7 +19,7 @@ EmptyProtectionMin,400
 EmptyProtectionMax,500
 
 # Missed rare rolls add to the next rare pool. More than two rare rewards in one box clears the pity.
-PityPerMiss,100
+PityPerMiss,300
 PityCap,2000
 
 # Extra rewards after the first rare prize pay only this fraction of their value from the rare pool.

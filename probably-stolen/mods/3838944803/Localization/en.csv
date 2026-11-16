@@ -106,7 +106,7 @@ tier_neutral,Neutral
 tier_cold,Cold
 tier_hostile,Hostile
 
-faction_council_name,Republic Authority
+faction_council_name,The Republic
 faction_council_desc,The Republic's two offices on the station: the Station Council handles regulations, permits and cross-level passes; Navy Requisitions handles military procurement. They follow procedure, and procedure can be bought.
 faction_helios_name,Helios Consortium
 faction_helios_desc,The megacorp that controls the station's water, power and hydroponics. It always gets what it wants.
@@ -1214,10 +1214,10 @@ ui_upper_mode_on,Upper Levels: ON
 ui_upper_mode_off,Upper Levels: OFF
 
 scenario.newcomer.title,Upper Levels Newcomer
-scenario.newcomer.desc,You've rented a storefront in the Upper Levels. No machines, no contacts. Just some startup money and Kai Wild's card.
+scenario.newcomer.desc,"You won a million in the lottery. The Republic took it, and all you got was the right to use a shop in the Upper Levels. No machines, no contacts."
 scenario.newcomer.with1,A storefront in the Upper Levels
 scenario.newcomer.with2,Startup money
-scenario.newcomer.with3,Kai Wild's consignment: 20 pieces a week, 25% deposit, keep 40% of what sells within 3 days
+scenario.newcomer.with3,"Weight's consignment: Upper Levels goods to sell on his behalf, 60/40 split"
 scenario.newcomer.tag,Upper Levels mode
 perk.ul_trust_fund.name,Trust Fund
 perk.ul_trust_fund.desc,Start with 3000 extra credits.
@@ -1278,9 +1278,9 @@ perk.ul_perfumer.desc,You learned from a perfumer. Start with a perfume desk and
 perk.ul_lightfield.name,Lightfield Apprentice
 perk.ul_lightfield.desc,You worked in a lightfield studio. Start with a lightfield restoration and certification bench.
 perk.ul_council_friend.name,Friend in the Authority
-perk.ul_council_friend.desc,Republic Authority standing starts at +20.
+perk.ul_council_friend.desc,Republic standing starts at +20.
 perk.ul_council_black.name,Authority Blacklist
-perk.ul_council_black.desc,Republic Authority standing starts at -20.
+perk.ul_council_black.desc,Republic standing starts at -20.
 perk.ul_fortune.name,Fortunate
 perk.ul_fortune.desc,Makes you luckier. Probably.
 perk.ul_security.name,Private Security
@@ -1908,7 +1908,7 @@ readme.p2.body,· Rent is three times the Lower Levels, due every week. Keep som
 readme.p4.title,Kai Wild
 readme.p4.body,Kai is Joe's cousin. Anything you need up here goes through him.\n\nHis services are in the Wild network screen, under Upper Circle, paid with Wild's favor. Not sure what to buy? Start with the cheapest one in each column.\n\nHe'll also bring you an invitation to the Friday salon.
 readme.p5.title,Salon and factions
-readme.p5.body,Four factions run things up here: the Republic Authority, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.
+readme.p5.body,Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.
 readme.p6.title,At night
 readme.p6.body,After closing you can go out: the salon, places only your profession knows about, and a few less respectable spots.\n\nNights are risky. You can get hurt, get seen, leave evidence. Know your limits. You still have a shop to open tomorrow.
 readme.p7.title,Around the shop
@@ -1919,9 +1919,9 @@ readme.p8.body,This is a beta. A lot isn't finished yet, and there are surely pr
 readme.header,UPPER LEVELS · README.md
 
 opt_allow_wanted,Wanted criminals in Upper Levels runs
-opt_allow_wanted_tip,Off by default: the Upper Levels are safe, no wanted criminals. Turn it on if you use mods built around wanted criminals. Also applies to saves in progress, starting the next day.
+opt_allow_wanted_tip,On by default: wanted criminals show up like in vanilla. Turn it off if you do not want them. Also applies to saves in progress, starting the next day.
 opt_allow_aug,Augment crisis in Upper Levels runs
-opt_allow_aug_tip,Off by default: no augment crisis in the Upper Levels. Turn it on if you use mods built around augments. Also applies to saves in progress, starting the next day; past day 12, you get the shotgun the next morning.
+opt_allow_aug_tip,On by default: like vanilla, the augment crisis starts on day 12. Turn it off if you do not want it. Also applies to saves in progress, starting the next day; past day 12, you get the shotgun the next morning.
 
 opt_aug_started,Augments have started showing up in the Upper Levels. There is a shotgun under the counter now.
 
@@ -2253,7 +2253,7 @@ ogguide.k.ink,Also from Dr. Miller. A heart needs 2, a lung or kidney 1.
 ogguide.k.sample,You take them yourself: put a natural organ in the printer's sampling slot. One night with power and the organ is used up. Intact gives 8, damaged 6, ruined 3. Each print uses 1.
 ogguide.p6.title,White Path: Buyers
 ogguide.n.order,Orders
-ogguide.k.license,Buy it from Kai for 5000. Without it, printed organs are mid-level contraband and only the shady doctor buys them, one at a time.
+ogguide.k.license,Buy it from Kai for 1400. Without it, printed organs are mid-level contraband and only the shady doctor buys them, one at a time.
 ogguide.k.order,With the license, the organ bank coordinator brings an order every 3 days. Deliver on time for double pay and Upper Levels reputation. The private hospital places a big order every 7 days: 3 intact organs.
 ogguide.k.sign,Comes with the license. In the display case, orders come every 2 days, and the cosmetic clinic sends someone to buy lungs and kidneys.
 ogguide.p7.title,A Few Warnings
@@ -2264,29 +2264,29 @@ ncguide.item_name,Shopkeeping Rules
 ncguide.item_desc,A starter handbook for a new Upper Levels shopkeeper. Click to read.
 ncguide.header,Shopkeeping Rules
 ncguide.p1.title,Before You Start
-ncguide.p1.body,You've taken over a shopfront in the Upper Levels. No capital, no connections, and nobody knows you.\n\nLuckily Kai Wild is willing to leave goods with you on consignment. Upper Levels customers care about appearances: good goods, fair prices, someone they can trust.\n\nThis book covers three things: how Kai's consignment works, how to keep regulars, and where goods come from.
-ncguide.p2.title,Kai's Consignment
+ncguide.p1.body,"You won a million in the lottery. The Republic took it, and all you got was the right to use this shop in the Upper Levels.\n\nLuckily, someone is willing to help: Weight, the ""Straight Arrow"" who made it out of the Lower Levels. He lets you sell his goods and lent you money to open.\n\nThis guide covers four things: how Weight's consignment works, residence and taxes, the regulars, and where to find stock."
+ncguide.p2.title,Weight's Consignment
 ncguide.n.consign,Consigned goods
-ncguide.k.consign,Kai comes every 7 days with Upper Levels goods (20 pieces at first). Each piece needs a deposit of a quarter of its list price; if you are short, take fewer.
-ncguide.n.fast,Sell fast, keep more
-ncguide.k.fast,Sold within 3 days of delivery: you keep 40%. Later: 30%. Anything sold elsewhere or used counts as slow.
-ncguide.n.dubious,Dubious goods
-ncguide.k.dubious,A few pieces say their seal has been opened. Half of those draw a complaint when sold: Upper Levels reputation -5, and Kai still takes his cut. Don't want the risk? Don't sell it. Kai takes it back and refunds the deposit.
+ncguide.k.consign,"Weight delivers on days 2, 4 and 9, then once a week. The goods go into your shop for you to sell; their description says ""Weight's consignment""."
+ncguide.n.fast,60/40 split
+ncguide.k.fast,"For anything sold at the counter, Weight takes 60% of the price and you keep 40%. Whatever does not sell stays with you."
+ncguide.n.dubious,The loan
+ncguide.k.dubious,"The 1500 he lent you on day 1, plus the first week of rent he covered on day 4. Weight says there is no rush; nothing comes out of your share. Your 40% is all yours."
 ncguide.p3.title,Settling Up
-ncguide.p3.body,When Kai walks in, he settles the last batch:\n\n- Sold: he takes his cut, fast or slow.\n- Unsold: he takes it back and refunds the deposit.\n- Missing: counted as sold at list price.\n\nThe deposit comes off his cut: if it's more, he refunds you; if less, you pay the rest. Short on cash? It goes on the tab.\n\nOnce you own the shop, he brings more each week and takes less.
-ncguide.p4.title,Regulars
-ncguide.n.roster,Regulars Roster
-ncguide.k.roster,From day 3, regulars visit every 4 days each. The roster says what they like, what they want and when they come.
-ncguide.n.wish,Wishes
-ncguide.k.wish,Sell a regular the piece they want: they pay 50% extra, favor +1. After you own the shop, wishes become reservations: double pay, but favor drops if it isn't there next time.
-ncguide.n.favor,Favor
-ncguide.k.favor,Marking up or selling them dubious goods: favor -1. At zero they stop coming. Close regulars tell you about themselves; at 5 stars they bring a friend.
-ncguide.p5.title,Where Goods Come From
-ncguide.p5.body,Upper Levels sellers drop by. If a regular wants something in their line, there's a 50% chance they bring one:\n\n- Luxury: the estate clerk, the auction house, the collector, the fallen aristocrat.\n- Household: the family moving out, the water seller, the engineer.\n- Medical: the private doctor, the lab researcher.\n\nWhen you see "someone wants this", hold on to it.
-ncguide.p6.title,The Display Case
-ncguide.p6.body,Luxury goods and art in the display case bring discerning shoppers; valuable materials and machines bring corporate buyers.\n\nTheir budget is based on the most expensive piece on display, roughly enough to buy that one. The display case brings customers in. It isn't a clearance rack.\n\nKai's goods can go on display too. Sell fast, keep more.
+ncguide.p3.body,"Weight starts each visit by settling last week:\n\n· Sold at the counter: he takes 60%.\n· Gone from the shop but not sold at the counter (sold elsewhere, used up): counted as sold at list price.\n· Still in the shop: keep selling.\n\nThen he drops off a new batch.\n\nIf you are short on cash, the rest waits until next time."
+ncguide.p4.title,Residence and Taxes
+ncguide.n.roster,Tax list
+ncguide.k.roster,The Republic official hands it to you on day 1. Its description shows which day of residence you are on.
+ncguide.n.wish,Sixty days
+ncguide.k.wish,"Sixty days of residence without trouble, and you may buy a permanent Upper Levels residence permit. Get rid of any contraband early."
+ncguide.n.favor,Support for the Republic
+ncguide.k.favor,"The Republic official will come back for money, based on the cash you hold, with no receipt. The more cash, the more they take."
+ncguide.p5.title,Regulars
+ncguide.p5.body,"· Bruce: an old man who has lived in the Upper Levels for forty years and now works the recycling stations. Buy from him and he brings a batch every 3 days, 30% off. Help him and he will remember.\n\n· The Helios butler: comes every 4 days to buy fresh food for the young lady. No cans. Pays well.\n\n· Officer Dex: patrols this area. Report sellers carrying high-level contraband for a bounty based on what gets seized."
+ncguide.p6.title,Where Stock Comes From
+ncguide.p6.body,"Upper Levels sellers will come to you:\n\n· People moving out: household goods.\n· The deli courier: freshly made food.\n· The private doctor: medical supplies.\n· Estate clerks, auction clerks, collectors, fallen aristocrats: rare goods.\n\nPut luxuries and rare goods in the display case to draw in wealthy shoppers. Their budget is roughly enough for the priciest piece on display."
 ncguide.p7.title,A Few Tips
-ncguide.p7.body,- The default price is a fair price. Regulars remember when you push it up.\n\n- Sell what you can before Kai comes. Within 3 days or not makes a 10% difference.\n\n- Keep space free. If the shop is full when Kai delivers, he takes the goods back.\n\n- Short on cash? Take fewer pieces. A deposit is lent to Kai, not spent.
+ncguide.p7.body,"· The default price is a fair price. Upper Levels customers care about appearances.\n\n· Keep some room in the shop. If Weight can't fit a delivery, he only leaves part of it.\n\n· Haadasgen goes in the freezer; salads, sandwiches and cake go in the fridge. Left out overnight, they lose their value.\n\n· Things people leave with you for safekeeping can't be sold. Don't lose them either."
 regulars.roster_desc,Your regular customers. Click to read.
 roster.header,Regulars Roster
 roster.p1.title,The Rules
@@ -2345,3 +2345,277 @@ ul_kai_police_donation_title,Precinct Donation
 ul_kai_police_donation_desc,Kai makes a donation to the police widows' fund in your shop's name, and sends a few crates of good food to the duty room. Police reputation +{0}. You can donate again after {1} days.
 perk.ul_aug_surge.name,Augment Surge
 perk.ul_aug_surge.desc,You start with a shotgun. Augments mix in with your customers from the first week, and the crisis never ends: let too many go and the game is over. Killing an augment pays a bounty (+25%) and earns police reputation.
+kai.consign.paused,I'm putting the consignment on hold for a while. We'll talk about goods later. Call me if you need anything else.
+balance_k3_notice,Upper Levels prices were rebalanced: the shop now costs {0} to buy, customers carry a bit more money, and organs sell for less.
+item_ul_cigar_box_name,Luvister Cigars (Box)
+item_ul_cigar_box_flavor,"Luxury in a lift of the hand. A humidor of ten hand-rolled real-leaf cigars. Up here, every deal starts with offering one."
+item_ul_beeswax_candle_name,Scented Candle
+item_ul_beeswax_candle_flavor,"Light it and the room smells of flowers. Real beeswax, burns slow, no black smoke. It still counts against the air quota. Nobody cares."
+item_ul_perfume_earth_name,"""Earth"" Everyday Scent"
+item_ul_perfume_earth_flavor,The ordinary kind. Every shop clerk in the Upper Levels sprays some before work.
+item_ul_perfume_romance_name,"""Romance"" Bespoke Neuroactive Scent"
+item_ul_perfume_romance_flavor,Made to match the client's memory map. Legal. The waiting list runs into next month.
+item_ul_perfume_samurai_name,"""Samurai"" Experimental Pheromone Extract"
+item_ul_perfume_samurai_flavor,Raw pheromone extract that never got approved. Use too much and the customer forgets why they came in.
+item_ul_perfume_siyang_name,"""Siyang"" Self-Refilling Perfume"
+item_ul_perfume_siyang_flavor,A tiny synthesis chamber hides in the cap. The bottle never runs dry.
+item_ul_gift_melon_name,Gift-Box Melon
+item_ul_gift_melon_flavor,"One melon per vine in the greenhouse, dusted every day. People leave it in the living room and never have the heart to cut it."
+item_ul_air_filter_name,Pine Air Filter
+item_ul_air_filter_flavor,Brings the mountain pines home. Slot it into a home air purifier and the place smells of pine for a whole month. There is not one real pine on the station.
+item_ul_dry_shampoo_name,Disposable Dry Shampoo
+item_ul_dry_shampoo_flavor,"It's not lazy, it's efficient. Spray, comb, clean. The Upper Levels have the water, just not the time."
+item_ul_disinfect_spray_name,Disinfecting Purifier Spray
+item_ul_disinfect_spray_flavor,"Know the difference between up here and down there? Yep, this. One spray and the germs and smells are gone. Down below, they call that smell ""air""."
+item_ul_petal_soap_name,Handmade Petal Soap
+item_ul_petal_soap_flavor,"A scent straight from nature. Real olive oil, real petals, cut by hand one bar at a time. Down below, people wash with 4-in-1 detergent."
+item_ul_cotton_wipes_name,Real-Cotton Wet Wipes (Pack)
+item_ul_cotton_wipes_flavor,"Soft and clean, all in one. Woven from real cotton, water filtered three times. Wipe and toss, no regrets."
+item_ul_latex_condoms_name,Natural Latex Condoms (Box)
+item_ul_latex_condoms_flavor,"Zero distance. Natural latex tapped from rubber trees, so thin it's like nothing's there. Down below they use REX."
+item_ul_laundry_liquid_name,Scented Laundry Liquid
+item_ul_laundry_liquid_flavor,"For clothes only. Not dishes, not people. Up here, everything has its own bottle."
+item_ul_cotton_pads_name,Real-Cotton Makeup Pads
+item_ul_cotton_pads_flavor,"One pad, one wipe. Whiter than any blanket in the Lower Levels."
+item_ul_beeswax_wrap_name,Beeswax Food Wrap
+item_ul_beeswax_wrap_flavor,"Cotton soaked in real beeswax, for greens and bread. Up here even cling film is too wasteful."
+item_ul_mouthwash_name,Natural Mouthwash
+item_ul_mouthwash_flavor,Steeped with real mint. Nobody at the meeting will know what you had for lunch.
+item_ul_rejection_suppressant_name,Implant Rejection Suppressant
+item_ul_rejection_suppressant_flavor,A cartridge that clicks into the implant port. New implants need it for three months. Skip a dose and the hand stops listening.
+item_ul_suture_kit_name,Auto-Suture First Aid Kit
+item_ul_suture_kit_flavor,"Stops the bleeding, kills the pain, closes the wound. Nobody up here wants to queue at a hospital."
+item_ul_pain_patch_name,Non-Addictive Pain Patches
+item_ul_pain_patch_flavor,"Kills pain, no habit. Down below, all they can afford is Fanta pills."
+item_ul_hemostatic_gel_name,Scarless Hemostatic Gel
+item_ul_hemostatic_gel_flavor,"Ten seconds to stop the bleeding, no scar afterwards. Up here, nobody wants a scar."
+item_ul_antibiotic_ampoule_name,Original-Brand Antibiotic
+item_ul_antibiotic_ampoule_flavor,"The real thing, one shot. Down below they take knockoff Phagimycin, often fake."
+item_ul_antidote_injector_name,Broad-Spectrum Antidote
+item_ul_antidote_injector_flavor,A needle-free hypospray. Too much Ice at the party? One shot and you are back. Down below there is only Naloxone.
+item_ul_allergy_pen_name,Allergy Emergency Injector
+item_ul_allergy_pen_flavor,Press once. Only up here do people get the chance to be allergic to real peanuts and real pollen.
+item_ul_disinfect_wipes_name,Medical Disinfecting Wipes
+item_ul_disinfect_wipes_flavor,"Pull one at a time, for wounds and needles. Down below they just pour alcohol on it."
+item_ul_gauze_dressing_name,Real-Cotton Gauze Dressings
+item_ul_gauze_dressing_flavor,"Real cotton gauze, sterile packed. Down below, bandages are torn from old clothes."
+item_ul_coffee_beans_name,Bagged Coffee Beans
+item_ul_coffee_beans_flavor,Grown on a tree. Anyone raised on synthetic coffee can tell with one sniff.
+item_ul_honey_jar_name,Natural Honey
+item_ul_honey_jar_flavor,Made by real bees. The whole station makes a few dozen jars a year.
+item_ul_salad_bowl_name,Fresh Salad Bowl
+item_ul_salad_bowl_flavor,"Leaves picked off the hydroponic racks this morning, dressed with real olive oil. Lunch in the Upper Levels."
+item_ul_chicken_sandwich_name,Roast Chicken Sandwich
+item_ul_chicken_sandwich_flavor,"Chicken from the top-deck farm, bread baked this morning. Everyone in the office towers has one."
+item_ul_haadasgen_name,Haadasgen Ice Cream
+item_ul_haadasgen_flavor,"Real milk, real vanilla pods. Unlike Bei's down below, this one actually melts."
+item_ul_cream_cake_name,Real Cream Cake
+item_ul_cream_cake_flavor,Whipped from real milk. There are twelve cows on the whole station. Afternoon tea in the Upper Levels.
+item_ul_wheat_bread_name,Fresh Whole-Wheat Loaf
+item_ul_wheat_bread_flavor,"Baked this morning from real milled wheat. Down below, bread comes out of a tube."
+item_ul_orange_juice_name,Fresh-Squeezed Orange Juice
+item_ul_orange_juice_flavor,"Real greenhouse oranges, squeezed in front of you. Down below they drink sweetener juice."
+item_ul_farm_eggs_name,Farm Eggs (Six)
+item_ul_farm_eggs_flavor,From the hens on the top-deck farm. Still a bit of straw on the shells.
+ngoods.perfume_desc,Use to boost trading bonus by {0}% with the current customer. You can only benefit from the effects of one perfume at a time.
+ngoods.perfume_desc_refill,Use to boost trading bonus by {0}% with the current customer. You can only benefit from the effects of one perfume at a time. Refills on its own.
+ngoods.melted,Melted
+ngoods.melted_log,{0} tub(s) of Haadasgen were left out of the freezer and melted. Now worth 30%.
+ngoods.sentinel_done,The cartridge clicks into the port. The tremor stops.
+item_ul_haadasgen_desc,"Keeps in the freezer section of a fridge and sells for a bit more. Left out overnight, it melts and is worth only 30%."
+item_ul_hemostatic_gel_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level.
+item_ul_suture_kit_desc,Use on an unstable wound: stops the bleeding and lowers the wound by two levels. 2 uses.
+item_ul_gauze_dressing_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level. 3 uses per box.
+item_ul_disinfect_wipes_desc,Use on an unstable wound: stabilizes it. 5 uses per box.
+item_ul_pain_patch_desc,"Use on an unstable wound: stabilizes it, no addiction. 5 uses per box."
+item_ul_allergy_pen_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level.
+item_ul_antidote_injector_desc,"Relieves narcotic withdrawal, twice as long as vanilla Nomore."
+item_ul_rejection_suppressant_desc,Only for Sentinel Collapse Syndrome: works like a genuine Immunivax shot.
+uc.deli.name,Deli Courier
+uc.deli.1,"Hi, from the deli down the promenade. Today's delivery."
+uc.deli.2,"All made this morning. Real greens, real meat."
+uc.deli.3,"Ice cream goes in the freezer, salads and cake in the fridge. They will not keep out here."
+act1.name.republic,Republic Official
+act1.name.weight,Weight
+act1.name.dex,Officer Dex
+act1.name.bruce,Bruce
+act1.name.landlord,Landlord
+act1.name.oldman,Old Gentleman
+act1.name.vbutler,Vanderlin Butler
+act1.name.helios,Helios Butler
+act1.rep1.1,Hello. I'm with a relevant department of the Republic. We tolerate people from the Lower Levels.
+act1.rep1.2,That doesn't mean you're legal yet.
+act1.rep1.3,I have new instructions for you.
+act1.rep1.4,"Sixty days of residence with no misconduct, and you'll have the right to buy a permanent Upper Levels residence permit."
+act1.rep1.5,Here's your tax list. Good luck.
+act1.w1.1,Two blocks and not a single battery for sale.
+act1.w1.2,This blackout is killing everyone.
+act1.w1.3,Why is your shop empty?
+act1.w1.p1,It's a long story.
+act1.w1.p2,I won a million in the lottery... The Republic took the money. All I got was the right to use this shop.
+act1.w1.4,What a lucky one!
+act1.w1.5,And an unlucky one.
+act1.w1.6,But that's fine. I'm happy to help.
+act1.w1.7,"After all, I am the kind-hearted ""Straight Arrow""."
+act1.w1.p3,I heard stories about you as a kid.
+act1.w1.p4,"The grown-ups called you a ""legend"" of the Lower Levels."
+act1.w1.8,My business is a few blocks over. Busier there.
+act1.w1.9,"Here, I'll lend you some credits. Call it a grand opening gift."
+act1.w1.10,Tomorrow I'll bring you some hot consignment goods.
+act1.w1.11,Get some rest today.
+act1.w1.12,"Goodbye, new shopkeeper."
+act1.w2.1,Here's the stock. Things the Upper Levels folks like.
+act1.w2.p1,How do we split what sells?
+act1.w2.2,"Sixty for me, forty for you."
+act1.w2.3,I'll come for the money in a week.
+act1.w2.4,Good luck.
+act1.dex1.1,*radio chatter*
+act1.dex1.2,"Hello, boss. I'm Dex. This area's my beat."
+act1.dex1.3,I'm on patrol today.
+act1.dex1.4,As per standard procedure...
+act1.dex1.5,We will ensure your personal safety.
+act1.dex1.6,"If you have any contraband in here, get rid of it early."
+act1.oscar.1,"Old pal! New shop, right?"
+act1.oscar.2,"I'm Oscar Vanderlin. Yes, THAT Vanderlin."
+act1.oscar.3,"The family is doing some ""financial discipline"" thing."
+act1.oscar.4,My grandfather started taking inventory of the house.
+act1.oscar.5,They're right behind me. No time.
+act1.oscar.6,Can I leave this with you? Safer than under my bed.
+act1.oscar.7,Here's a storage fee. See? I play by the rules.
+act1.oscar.c_yes,Deal.
+act1.oscar.yes,Smart! I'll come back for the box in a few days.
+act1.oscar.c_no,No.
+act1.oscar.no,Damn it.
+act1.bruce1.1,"Hey boss, buying?"
+act1.bruce1.2,I work the Upper Levels recycling stations.
+act1.bruce1.3,"Fancy food near its date, retired tools, stuff nobody claimed."
+act1.bruce1.4,This stuff is worth a lot.
+act1.bruce1.5,Name a price and I'll be back.
+act1.bruce.r.1,"Boss, it's me again. Bruce."
+act1.bruce.r.2,Good haul at the station today. Take a look.
+act1.landlord.1,So you're the new one?
+act1.landlord.2,I don't care about any Republic certificate.
+act1.landlord.3,Let me be straight with you.
+act1.landlord.4,This storefront is mine. I've got the real deed.
+act1.landlord.5,Pay a day late and I'll have you thrown out.
+act1.landlord.6,I'll be back in a week.
+act1.landlord.c_less,Can the rent be any lower?
+act1.landlord.no,No.
+act1.landlord.c_ok,Got it.
+act1.landlord.bye,Hmph.
+act1.w3.1,I heard about the rent.
+act1.w3.2,Let Weight take care of your first week.
+act1.w3.3,Your landlord owes me a favor or two.
+act1.w3.4,"It's called kindness, kid."
+act1.w3.5,Here's another batch. It's been sitting in my warehouse too long.
+act1.w3.6,Don't let the Upper Levels look down on you.
+act1.w3.7,"If this shop goes under, my name goes with it."
+act1.w3.8,"See you in a few days, kid."
+act1.w3.9,Good luck.
+act1.old1.1,"Hello, boss. Buying today?"
+act1.old1.2,I've lived up here forty years. Nobody knows me anymore.
+act1.old1.3,These are old things I've kept. Have a look.
+act1.old1.c_look,[Look at his goods]
+act1.old1.yes,My legs aren't what they were. I'll bring you a batch every three days. Just buy them cheap.
+act1.old1.c_no,[Send him away]
+act1.old1.no,"All right, all right. I understand you have your reasons. I'll come back some other time."
+act1.oldr.first,"There, it's all out. Take your time."
+act1.oldr.1,"It's me again, young boss."
+act1.oldr.2,Same as always. Buy them cheap.
+act1.oldr.gift,I remember what you did. This one's on me.
+act1.vb.1,"Good afternoon. I am the Vanderlin butler, acting for Master August."
+act1.vb.2,Young Master Oscar has not been home for three days.
+act1.vb.3,And the family property keys are missing from the vault.
+act1.vb.4,If you see Young Master Oscar... please tell him to come home.
+act1.vb.5,"The old master will not be angry. Not too angry, at least."
+act1.vb.c_give,[Hand over the box]
+act1.vb.give,Thank you. The old master will remember this.
+act1.vb.c_deny,[Don't mention the box] Haven't seen him.
+act1.vb.deny,I see... Sorry to bother you.
+act1.kai.1,Hello. Welcome to the Upper Levels.
+act1.kai.2,"I'm Kai Wild. Yes, cousin of Joe Wild from the Lower Levels."
+act1.kai.3,"Joe's cousin, strictly speaking."
+act1.kai.4,The Upper Levels look clean. The thieves here just have better taste.
+act1.kai.5,Lose one valuable piece and a small shop like yours might not survive.
+act1.kai.6,So I sell insurance.
+act1.kai.7,For people who just came up and opened shop.
+act1.kai.8,Paid daily. A bit pricier than my cousin's. Everything up here is.
+act1.kai.9,"If anything gets stolen, I cover all of it."
+act1.kai.10,"Every night before bed, you decide whether to renew."
+act1.kai.n1,"One more thing, so we are clear."
+act1.kai.n2,"Up here, you don't get things done with fists or a loud voice."
+act1.kai.n3,You get them done by knowing people.
+act1.kai.n4,I can introduce you to a few. Put in a good word for me when you can.
+act1.kai.n5,Here's my card. Gold-plated. Don't get it dirty.
+act1.kai.11,That's all. Good business to you.
+act1.rep2.1,We meet again.
+act1.rep2.2,I'm with a relevant department of the Republic. We treat everyone from the Lower Levels the same.
+act1.rep2.3,That doesn't mean you.
+act1.rep2.4,I have new instructions for you.
+act1.rep2.5,"You need to pay some credits, recorded as ""support for the Republic"". It will affect your residence approval."
+act1.rep2.amount,"Based on your current credits, {0}%: {1} credits."
+act1.rep2.6,This counts as your support for the Republic. It's on your record.
+act1.rep2.c_receipt,Where is my receipt?
+act1.rep2.r1,Receipt? There isn't one. The record is enough.
+act1.rep2.r2,Don't make me write that you didn't cooperate.
+act1.rep2.c_ok,Fine.
+act1.rep2.bye,Good.
+act1.dex2.1,*radio chatter*
+act1.dex2.2,"Hello, boss. It's Dex."
+act1.dex2.3,I'm on patrol today.
+act1.dex2.4,The department has new instructions for you.
+act1.dex2.5,Report all sellers carrying high-level contraband.
+act1.dex2.6,Low and mid-level contraband sellers are not worth our time.
+act1.dex2.7,Your reputation might take a hit...
+act1.dex2.8,But we will reward you based on how much contraband we seize.
+act1.dex2.9,Stay safe.
+act1.old2.1,"Young boss, got anything to eat?"
+act1.old2.2,They've been strict up here lately. I can't find food at the recycling station.
+act1.old2.3,Anything. Just something to fill my stomach.
+act1.old2.4,I won't take it for free. Next time I'll give you something from my goods.
+act1.old2.c_cash,[Give him {0} credits]
+act1.old2.cash,"I'll remember you, young boss."
+act1.old2.c_food,[Give him some food]
+act1.old2.food,"Thanks for the food, young boss."
+act1.old2.c_no,I don't have much either.
+act1.old2.no,"See you next time, young boss."
+act1.w4.1,Your shop looks much better.
+act1.w4.2,What a lucky one!
+act1.w4.3,"Getting help from the ""Straight Arrow"", of all people, in the Upper Levels."
+act1.w4.p1,I really am grateful.
+act1.w4.4,"This is your fair share, and this part is mine."
+act1.w4.5,I brought some more stock while I was at it. Take it.
+act1.w4.6,My business needs more rare goods.
+act1.w4.7,If you can have some ready next time I come by...
+act1.w4.8,Then I didn't misjudge you.
+act1.w4.9,"That's it. See you next time, shopkeeper."
+act1.helios.1,I hear a Lower Levels person opened a shop here?
+act1.helios.2,What do you have that is edible?
+act1.helios.3,No cans. Fresh.
+act1.helios.4,Bring out whatever you have. Don't keep the young lady waiting.
+act1.helios.5,You'll be paid well.
+act1.helios.r.1,Me again. The young lady wants something fresh today.
+act1.helios.r.2,"As usual, no cans."
+weight.settle.sold,"You sold {0} at the counter this week, {1} credits in total."
+weight.settle.missing,"{0} piece(s) aren't in the shop anymore. I'll count them as sold at list price, {1} credits."
+weight.settle.none,Nothing sold yet? No rush. Keep the goods here.
+weight.settle.cut,"As agreed, I take {0}%: {1} credits."
+weight.settle.repay,"For the loan, I'll take {0} out of your share this time. {1} left."
+weight.settle.owe,And the {0} you couldn't cover last time.
+weight.owe_notify,Not enough cash. You still owe Weight {0} credits; it will be settled next time.
+weight.full,The counter is full. Weight took the rest back ({0} piece(s) left).
+weight.tip,Weight's consignment: he takes {0}% of the sale price.
+weight.week.1,"Another week, shopkeeper. Let's go over the books."
+weight.week.2,Here's the new batch.
+weight.week.3,"See you next week, shopkeeper."
+weight.week.3_clear,The loan's all paid off. Well done. See you next week.
+act1.residence,Residence: day {0} of {1}.
+item_ul_tax_list_name,Upper Levels Tax List
+item_ul_tax_list_flavor,"Security fee, Republic settlement tax, Vanderlin district fee, Upper Levels residence tax... Last line: Remaining 0."
+act1.oldr.gift_notify,Bruce gave you a {0}. It is on the counter.
+act1.oldr.bye,"I'll be on my way, young boss."
+act1.old2.5,Thank you.
+ul_dialog_minor_lottery_2,I haven't been back to the Lower Levels since I moved up.
+ul_dialog_minor_lottery_6,"Still, sometimes I miss the cheap, comforting food down in the Lower Levels. Everything up here costs a fortune."
+act1.kai.card_fixed,Kai's card is in your shop. Wild's phone line and network are open now.
+kai.consign.kept,Keep the {0} piece(s) left and sell them yourself. I'll keep their deposit.

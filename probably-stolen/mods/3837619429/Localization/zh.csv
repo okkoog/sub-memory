@@ -1,4 +1,16 @@
 # Simplified Chinese text for Fence Case Expansion
+config_budget_preset,开箱预算预设
+config_budget_preset_tip,标准模式：使用模组掉落表的默认预算。充裕物资：低预算概率20%且高低预算四个上下限为打包默认值的150%。切换后下方立即预览对应数值；选择自定义才可编辑。点击应用后生效且只影响之后新生成的箱子。切换预设会保留自定义值。
+config_low_chance,低预算概率（%）
+config_low_chance_tip,仅自定义模式生效。0至100；高预算概率为100%减去此值。预算是生成算法的资金而非最终战利品售价。
+config_low_min,低预算下限
+config_low_max,低预算上限
+config_high_min,高预算下限
+config_high_max,高预算上限
+config_protection_min,防空箱普通池预算下限
+config_protection_max,防空箱普通池预算上限
+config_budget_tip,仅自定义模式生效。输入0至1000000的整数；超出范围时自动限制。上下限填反时按较小值至较大值处理。修改后点击应用。
+config_protection_tip,仅自定义模式生效。稀有池资金不足以启动抽取时使用的普通池预算范围；不是最终售价保底。输入0至1000000的整数；超出范围自动限制且上下限填反时自动调换。充裕物资模式不放大此项。
 speaker_broker,中间人
 tag_collectible,收藏品
 type_collectible,收藏品

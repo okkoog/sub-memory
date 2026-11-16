@@ -107,7 +107,7 @@ tier_cold,冷淡
 tier_hostile,敌视
 
 # ----- 派系 -----
-faction_council_name,共和国当局
+faction_council_name,共和国
 faction_council_desc,共和国在空间站的两个部门：理事会管法规、许可证和跨层通行证，海军征用部管军需采购。办事讲程序，程序可以花钱走快点。
 faction_helios_name,赫利俄斯财团
 faction_helios_desc,管着全站水、电和水培农业的大企业。他们想要的东西，一般都能弄到。
@@ -1229,10 +1229,10 @@ ui_upper_mode_on,上层区模式：开
 ui_upper_mode_off,上层区模式：关
 
 scenario.newcomer.title,上层区新店主
-scenario.newcomer.desc,你在上层区租下了一间铺面。没带机器，也没有熟人，只有一笔开业资金和凯·王尔德的名片。
+scenario.newcomer.desc,你中了一百万的彩票，钱被共和国收走了，只换来上层区一间店铺的使用权。没有机器，也没有熟人。
 scenario.newcomer.with1,上层区的一间铺面
 scenario.newcomer.with2,开业资金
-scenario.newcomer.with3,凯·王尔德的寄售货：每周 20 件，先押两成五，三天内卖掉分你四成
+scenario.newcomer.with3,韦特的寄售：上层区的货先放你这儿卖，卖掉六四分成
 scenario.newcomer.tag,上层区模式
 perk.ul_trust_fund.name,信托基金
 perk.ul_trust_fund.desc,开局额外获得3000信用点。
@@ -1293,9 +1293,9 @@ perk.ul_perfumer.desc,你跟调香师学过手艺。开局就有调香台和调�
 perk.ul_lightfield.name,光场学徒
 perk.ul_lightfield.desc,你在光场工作室打过工。开局就有一台光场修复与认证台。
 perk.ul_council_friend.name,当局有人
-perk.ul_council_friend.desc,开局共和国当局声望+20。
+perk.ul_council_friend.desc,开局共和国声望+20。
 perk.ul_council_black.name,当局黑名单
-perk.ul_council_black.desc,开局共和国当局声望-20。
+perk.ul_council_black.desc,开局共和国声望-20。
 perk.ul_fortune.name,福星高照
 perk.ul_fortune.desc,让你的运气变好。大概吧。
 perk.ul_security.name,安保系统
@@ -1923,7 +1923,7 @@ readme.p2.body,1. 房租是下层区的三倍哦，一周一交，别忘啦。\n
 readme.p4.title,凯·王尔德
 readme.p4.body,1. 凯是乔的表弟，不过他混得好，其实就是上层区的王哥。\n\n2. 他的服务和原来的王哥一样，都是打电话。\n\n3. 店里接水管啊什么的，都找他。
 readme.p5.title,派系
-readme.p5.body,上层区有四家：\n\n共和国当局（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）
+readme.p5.body,上层区有四家：\n\n共和国（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）
 readme.p6.title,晚上
 readme.p6.body,打烊以后可以出门：沙龙、跟你职业有关的地方，还有些不太正经的地方。\n\n晚上出去可能受伤、被人看见、留下证据。第二天还得开店。
 readme.p7.title,店里的东西
@@ -1934,9 +1934,9 @@ readme.p8.body,还在测试，没做完的地方不少，bug 肯定也有。\n\n
 readme.header,上层区 · README.md
 
 opt_allow_wanted,上层区开局也会出现通缉犯
-opt_allow_wanted_tip,默认关：上层区治安好，没有通缉犯。如果你装了围绕通缉犯做的模组，可以打开。进行中的存档也会生效，从下一天开始。
+opt_allow_wanted_tip,默认开：和原版一样会来通缉犯。不想要可以关掉。进行中的存档也会生效，从下一天开始。
 opt_allow_aug,上层区开局也会有改造体危机
-opt_allow_aug_tip,默认关：上层区没有改造体危机。如果你装了围绕改造体做的模组，可以打开。进行中的存档也会生效，从下一天开始；已经过了第 12 天的存档，第二天早上会拿到霰弹枪。
+opt_allow_aug_tip,默认开：和原版一样，第 12 天起有改造体危机。不想要可以关掉。进行中的存档也会生效，从下一天开始；已经过了第 12 天的存档，第二天早上会拿到霰弹枪。
 
 opt_aug_started,改造体开始在上层区出没了。柜台下多了一把霰弹枪。
 
@@ -2268,7 +2268,7 @@ ogguide.k.ink,也在米勒博士那里买。心脏要 2 份，肺、肾各 1 份
 ogguide.k.sample,只能自己取：把原生器官放进打印机的取样槽，有电的晚上取一次，器官就没了。完好的取 8 份，受损的 6 份，损坏的 3 份。每打一件用 1 份。
 ogguide.p6.title,白路：卖给谁
 ogguide.n.order,订单
-ogguide.k.license,在凯那里买，5000。没有它，打印器官算中级违禁品，只有黑心医生收，一次只收一件。
+ogguide.k.license,在凯那里买，1400。没有它，打印器官算中级违禁品，只有黑心医生收，一次只收一件。
 ogguide.k.order,有了许可，器官库协调员每 3 天来派一张单，按时交货给两倍报酬和上层区声望。私立医院每 7 天来一张大单，要 3 件完好的。
 ogguide.k.sign,买许可时一起给。摆进橱窗，订单变成每 2 天一张，还会有整形诊所的人来收肺和肾。
 ogguide.p7.title,几句忠告
@@ -2279,29 +2279,29 @@ ncguide.item_name,开店守则
 ncguide.item_desc,上层区新店主的入行手册。点开阅读。
 ncguide.header,开店守则
 ncguide.p1.title,写在前面
-ncguide.p1.body,你在上层区盘下了一间店面。没本钱，没门路，客人也不认识你。\n\n好在凯·王尔德愿意先把货放你这儿卖。上层区的客人看的是体面：东西要好，价钱要公道，人要靠得住。\n\n这本守则讲三件事：凯的寄售怎么算，熟客怎么养，货从哪来。
-ncguide.p2.title,凯的寄售
+ncguide.p1.body,"你中了一百万的彩票。钱被共和国收走了，只换来上层区这间店的使用权。\n\n好在有人愿意拉你一把：韦特，下层区出来的""正道""。他先把货放你这儿卖，还借了你开业的钱。\n\n这本守则讲四件事：韦特的寄售怎么算，居留和税，常来的人，货从哪来。"
+ncguide.p2.title,韦特的寄售
 ncguide.n.consign,寄售品
-ncguide.k.consign,凯每 7 天来一次，带一批上层区的货（开头每次 20 件）。每件先押标价的四分之一，钱不够就少拿几件。
-ncguide.n.fast,卖得快，拿得多
-ncguide.k.fast,送货后三天内卖掉，你拿四成；慢了拿三成。拿去别处卖、用掉的，按慢的算。
-ncguide.n.dubious,问题货
-ncguide.k.dubious,少数货的说明末尾写着“封条有被拆过的痕迹”。卖出去一半会被投诉，上层区声望 -5，凯照样抽成。不想冒险就别卖，凯会收回去，押金照退。
+ncguide.k.consign,韦特第 2、4、9 天送货，之后每周来一次。货放进店里，归你卖，说明里写着“韦特的寄售品”。
+ncguide.n.fast,六四分成
+ncguide.k.fast,柜台卖掉的，韦特拿成交价的六成，你留四成。卖不掉的接着放你这儿，不收回。
+ncguide.n.dubious,借的钱
+ncguide.k.dubious,第 1 天借的 1500，加上第 4 天替你垫的第一周房租。韦特说不急，分红里不扣，你那四成全是你的。
 ncguide.p3.title,对账
-ncguide.p3.body,凯进门时先对上一批的账：\n\n· 卖掉的，按快慢抽成。\n· 没卖掉的，他带走，押金退你。\n· 不见了的，按标价算卖掉。\n\n押金从他那份里扣：押多了他退钱，押少了你补。钱不够就先记账，下次一起结。\n\n买下店以后，他每周多送几件，抽成也低一点。
-ncguide.p4.title,熟客
-ncguide.n.roster,熟客名册
-ncguide.k.roster,第 3 天起有熟客上门，每人每 4 天来一次。名册上写着谁爱买什么、想要什么、几天后来。
-ncguide.n.wish,心愿
-ncguide.k.wish,卖给熟客他想要的那件，多付成交价的五成，好感 +1。买下店以后，心愿变成预订：报酬翻倍，但下次来还没有，好感会掉。
-ncguide.n.favor,好感
-ncguide.k.favor,抬价、卖他问题货，好感 -1，掉光了就不来了。熟了会跟你聊几句家常；到 5 星还会介绍新熟客。
-ncguide.p5.title,货从哪来
-ncguide.p5.body,上层区的卖家会上门。熟客想要的东西，对口的卖家有一半几率顺带一件：\n\n· 奢侈品：遗产清点人、拍卖行、收藏家、落魄贵族。\n· 家居用品：搬家的住户、水贩、工程师。\n· 医疗用品：私人医生、实验室研究员。\n\n看到“是某某想要的”提示，记得留着。
-ncguide.p6.title,橱窗
-ncguide.p6.body,橱窗摆奢侈品、艺术品，会请来淘货的贵客；摆贵重的材料、机器，会请来财团采购。\n\n他们的预算按橱窗里最贵的那一件算，大概够买那一件。橱窗是招客用的，不是清仓用的。\n\n凯的货也能摆，卖得快，你拿得多。
+ncguide.p3.body,韦特进门先对上一周的账：\n\n· 柜台卖掉的，他拿六成。\n· 不在店里、也不是柜台卖掉的（拿去别处卖、自己用掉），按标价算卖掉。\n· 还在店里的，接着卖。\n\n然后送新的一批。\n\n现金不够付他那份，就先记着，下次一起结。
+ncguide.p4.title,居留和税
+ncguide.n.roster,纳税清单
+ncguide.k.roster,第 1 天共和国的人给的。说明里写着你居留到第几天了。
+ncguide.n.wish,六十天
+ncguide.k.wish,居留六十天内不出事，才有资格买上层区永久居留证。店里的违禁品，早点处理。
+ncguide.n.favor,对共和国的支持
+ncguide.k.favor,共和国的人还会再来收钱，按你手里的现金算，没有收据。现金越多，交得越多。
+ncguide.p5.title,常来的人
+ncguide.p5.body,· 布鲁斯：在上层区住了四十年、现在跑回收站的老人。买了他的货，他每 3 天送一批来，便宜三成。帮过他，他会记着你。\n\n· 赫利俄斯家的管家：每 4 天来一次，替大小姐买新鲜吃的，不要罐头，出手大方。\n\n· 德克斯警官：这片的巡警。举报带高级违禁品的卖家，按没收的多少给赏金。
+ncguide.p6.title,货从哪来
+ncguide.p6.body,上层区的卖家会上门：\n\n· 搬家的住户：日用品。\n· 熟食店送货员：现做的吃的。\n· 私人医生：医疗品。\n· 遗产清点人、拍卖行、收藏家、落魄贵族：稀有货。\n\n橱窗摆奢侈品、稀有货，会请来淘货的贵客。他们的预算大概够买橱窗里最贵的那一件。
 ncguide.p7.title,几句忠告
-ncguide.p7.body,· 默认价就是公道价。讨价还价往上抬，熟客记得住。\n\n· 凯来之前，先把能卖的卖了。三天内和三天外，差一成。\n\n· 店里要留地方。凯来送货时店里满了，他就带回去。\n\n· 钱紧的时候，少拿几件也没关系。押金是借给凯的，不是花掉的。
+ncguide.p7.body,· 默认价就是公道价。上层区的客人看的是体面。\n\n· 店里要留地方。韦特来送货时放不下，他就只留一部分。\n\n· 哈达斯根放冰箱冷冻区，沙拉、三明治、蛋糕放冷藏区，放外面过夜就不值钱了。\n\n· 别人寄存在你这儿的东西，卖不掉，也别弄丢。
 regulars.roster_desc,常来的客人都记在上面。点开阅读。
 roster.header,熟客名册
 roster.p1.title,规矩
@@ -2360,3 +2360,277 @@ ul_kai_police_donation_title,警局捐款
 ul_kai_police_donation_desc,凯替你以店铺的名义给警察局的抚恤基金捐一笔钱，再送几箱好吃的到值班室。警察局声望 +{0}。{1} 天后可以再捐。
 perk.ul_aug_surge.name,改造体狂潮
 perk.ul_aug_surge.desc,开局就有霰弹枪，改造体从第一周起混在客人里上门，危机一直持续，放跑太多会直接游戏结束。击杀改造体能拿赏金（多 25%）和警察局声望。
+kai.consign.paused,寄售我这边先停一阵。货的事以后再说，有别的需要找我。
+balance_k3_notice,上层区的物价重新调过了：店铺买断价降到 {0}，客人手里的钱多了一些，器官的价钱降了。
+item_ul_cigar_box_name,路维斯特雪茄（一盒）
+item_ul_cigar_box_flavor,奢华在抬手之间。恒温木盒，十支真烟叶手卷。上层区的人谈生意，先递一支。
+item_ul_beeswax_candle_name,香薰蜡烛
+item_ul_beeswax_candle_flavor,点燃它会有鲜花的味道。真蜂蜡做的，烧得慢，不冒黑烟。空气配额照扣，可没人在乎。
+item_ul_perfume_earth_name,"""大地""日常香氛"
+item_ul_perfume_earth_flavor,最普通的那种，上层区的店员上班前都会喷一下。
+item_ul_perfume_romance_name,"""浪漫""定制神经香氛"
+item_ul_perfume_romance_flavor,照客人的记忆图谱定做，合法，预约排到下个月。
+item_ul_perfume_samurai_name,"""武士""实验信息素原液"
+item_ul_perfume_samurai_flavor,实验室里还没批下来的信息素原液。喷多了，客人会忘了自己是来干嘛的。
+item_ul_perfume_siyang_name,"""思扬""自动补充香水"
+item_ul_perfume_siyang_flavor,瓶盖里藏着一个小合成仓，瓶子永远见不了底。
+item_ul_gift_melon_name,礼盒蜜瓜
+item_ul_gift_melon_flavor,温室里一根藤只留一个瓜，每天有人给它擦灰。收到的人摆在客厅里，熟透了也舍不得切。
+item_ul_air_filter_name,松香空气滤芯
+item_ul_air_filter_flavor,带给家松间山林的气息。装进家用空气净化器，屋里一整个月都是松林味。站上一棵真松树也没有。
+item_ul_dry_shampoo_name,一次性洗发喷雾
+item_ul_dry_shampoo_flavor,这不是懒，是高效。喷完梳一梳，头发就干净了。上层区不缺水，只是没那个时间。
+item_ul_disinfect_spray_name,除菌净化喷雾
+item_ul_disinfect_spray_flavor,"知道上层与下层的区别吗？没错，就是它。喷一下，屋里的细菌和怪味全没了。下层区的人管那股味儿叫""空气""。"
+item_ul_petal_soap_name,手工花瓣香皂
+item_ul_petal_soap_flavor,味道源于自然。真橄榄油、真花瓣，一块一块手工切的。下层区的人拿四合一洗涤剂洗澡。
+item_ul_cotton_wipes_name,真棉湿巾（一包）
+item_ul_cotton_wipes_flavor,柔软与洁净集于一身。真棉花织的，用的水滤过三遍。擦完就扔，一点不心疼。
+item_ul_latex_condoms_name,天然 TT（一盒）
+item_ul_latex_condoms_flavor,拥有零距离的感觉。橡胶树上割下来的天然乳胶，薄得像没戴。下层区用的是瑞克斯。
+item_ul_laundry_liquid_name,香氛洗衣液
+item_ul_laundry_liquid_flavor,只洗衣服，不洗碗也不洗人。上层区的东西各管各的。
+item_ul_cotton_pads_name,真棉卸妆棉（一盒）
+item_ul_cotton_pads_flavor,一片擦一次，擦完就扔。用的棉花比下层区的被子还白。
+item_ul_beeswax_wrap_name,蜂蜡保鲜布（一卷）
+item_ul_beeswax_wrap_flavor,真蜂蜡浸过的棉布，包菜包面包。上层区连保鲜膜都嫌不环保。
+item_ul_mouthwash_name,天然漱口水
+item_ul_mouthwash_flavor,真薄荷泡的。漱完开会，没人闻得出你中午吃了什么。
+item_ul_rejection_suppressant_name,义体排异抑制剂
+item_ul_rejection_suppressant_flavor,插进义体接口的药匣。新装义体的人前三个月离不了，断了药，手就不听使唤。
+item_ul_suture_kit_name,自动缝合急救包
+item_ul_suture_kit_flavor,止血、镇痛、缝合一次搞定。上层区的人不想去医院排队。
+item_ul_pain_patch_name,非成瘾镇痛贴（一盒）
+item_ul_pain_patch_flavor,止疼，不上瘾。下层区的人只买得起芬太片。
+item_ul_hemostatic_gel_name,无痕止血凝胶
+item_ul_hemostatic_gel_flavor,抹在伤口上，十秒止血，长好了不留疤。上层区的人连疤都不想留。
+item_ul_antibiotic_ampoule_name,原研抗生素针剂
+item_ul_antibiotic_ampoule_flavor,原厂原研，一针见效。下层区用的是仿制的噬菌霉素，还常买到假的。
+item_ul_antidote_injector_name,广谱解毒针
+item_ul_antidote_injector_flavor,无针喷注枪。派对上冰粉吸过头了，一针下去就醒。下层区只有纳洛通。
+item_ul_allergy_pen_name,过敏急救器
+item_ul_allergy_pen_flavor,按一下就打进去。吃了真花生、碰了真花粉，上层区的人才有机会对真东西过敏。
+item_ul_disinfect_wipes_name,医用消毒湿片（一盒）
+item_ul_disinfect_wipes_flavor,一片一片抽着用，擦伤口、擦针头。下层区拿酒精直接倒。
+item_ul_gauze_dressing_name,真棉纱布敷料（一盒）
+item_ul_gauze_dressing_flavor,真棉纱布，无菌包装。下层区的绷带是拆旧衣服做的。
+item_ul_coffee_beans_name,袋装咖啡豆
+item_ul_coffee_beans_flavor,树上长的。合成咖啡喝多了的人，一闻就知道。
+item_ul_honey_jar_name,天然蜂蜜（一罐）
+item_ul_honey_jar_flavor,真蜜蜂酿的，站上一年就出几十罐。
+item_ul_salad_bowl_name,鲜蔬沙拉碗
+item_ul_salad_bowl_flavor,菜叶是水培架上早上现摘的，酱是真橄榄油调的。上层区的人中午就吃这个。
+item_ul_chicken_sandwich_name,烤鸡三明治
+item_ul_chicken_sandwich_flavor,鸡是顶层农场舱养的，面包是现烤的。写字楼里人手一个。
+item_ul_haadasgen_name,哈达斯根冰淇淋
+item_ul_haadasgen_flavor,真牛奶、真香草荚做的。和下层区的贝氏不一样，放在外面是会化的。
+item_ul_cream_cake_name,真奶油蛋糕（一块）
+item_ul_cream_cake_flavor,奶油是真牛奶打的，站上的奶牛一共十二头。上层区的下午茶，一人一块。
+item_ul_wheat_bread_name,现烤全麦面包
+item_ul_wheat_bread_flavor,早上现烤的，真麦子磨的面。下层区的面包是从管子里挤出来的。
+item_ul_orange_juice_name,鲜榨橙汁（一瓶）
+item_ul_orange_juice_flavor,温室里的真橙子，当面榨的。下层区喝的是代糖果汁。
+item_ul_farm_eggs_name,农场鸡蛋（一盒六个）
+item_ul_farm_eggs_flavor,顶层农场舱的母鸡下的，壳上还带着一点草。
+ngoods.perfume_desc,使用后，与当前顾客的交易收益将提升{0}%。你同时只能获得一种香水效果的增益。
+ngoods.perfume_desc_refill,使用后，与当前顾客的交易收益将提升{0}%。你同时只能获得一种香水效果的增益。会自动补充。
+ngoods.melted,化了
+ngoods.melted_log,{0} 盒哈达斯根冰淇淋没放进冷冻区，化了，只值三成。
+ngoods.sentinel_done,药匣咔哒一声插进接口。手不抖了。
+item_ul_haadasgen_desc,放进冰箱冷冻区能保存，还能多卖一点。放在外面过一夜就会化，化了只值三成。
+item_ul_hemostatic_gel_desc,伤口没稳住时使用：止血，伤势减轻一级。
+item_ul_suture_kit_desc,伤口没稳住时使用：止血，伤势减轻两级。能用 2 次。
+item_ul_gauze_dressing_desc,伤口没稳住时使用：止血，伤势减轻一级。一盒能用 3 次。
+item_ul_disinfect_wipes_desc,伤口没稳住时使用：先稳住伤口。一盒能用 5 次。
+item_ul_pain_patch_desc,伤口没稳住时使用：先稳住伤口，不上瘾。一盒能用 5 次。
+item_ul_allergy_pen_desc,伤口没稳住时使用：止血，伤势减轻一级。
+item_ul_antidote_injector_desc,缓解成瘾品的戒断，效果比奥克莫吸注射器长一倍。
+item_ul_rejection_suppressant_desc,只对哨兵综合征有用：相当于打了一针真的免疫宁。
+uc.deli.name,熟食店送货员
+uc.deli.1,您好，长廊那头的熟食店，今天的货。
+uc.deli.2,都是早上现做的，真菜真肉。
+uc.deli.3,冰淇淋记得放冷冻，沙拉蛋糕放冷藏，放外面可放不住。
+act1.name.republic,共和国工作人员
+act1.name.weight,韦特
+act1.name.dex,德克斯警官
+act1.name.bruce,布鲁斯
+act1.name.landlord,房东
+act1.name.oldman,老先生
+act1.name.vbutler,范德林家的管家
+act1.name.helios,赫利俄斯家的管家
+act1.rep1.1,你好，本人隶属于共和国相关部门——我们容忍下层区来的人。
+act1.rep1.2,但不代表你现在已经合法。
+act1.rep1.3,我对你有新的指示。
+act1.rep1.4,居留六十天内，没有任何不良行为，你才有权购买上层区永久居留证。
+act1.rep1.5,这是你的纳税清单。祝你好运。
+act1.w1.1,走了两个街区，居然买不到一块电池。
+act1.w1.2,这次停电真把人害惨了。
+act1.w1.3,你这店里怎么什么也没有？
+act1.w1.p1,说来话长。
+act1.w1.p2,我中了一百万的彩票……钱被共和国收走了，只给了这家店的使用权。
+act1.w1.4,真是个幸运儿！
+act1.w1.5,也是个倒霉蛋。
+act1.w1.6,不过没关系，我很乐意帮助你。
+act1.w1.7,"因为我可是善良的""正道""。"
+act1.w1.p3,小时候听过你的故事。
+act1.w1.p4,"大人们都说你是下层区的""传奇""。"
+act1.w1.8,我的生意在另一条街区，那儿更繁华。
+act1.w1.9,借你些信用点，就当祝你开业大吉了。
+act1.w1.10,明天我会带些紧俏的寄售货物给你。
+act1.w1.11,今天你就好好休息吧。
+act1.w1.12,再见，新任店长。
+act1.w2.1,货拿来了。这是一些上层人喜欢的玩意。
+act1.w2.p1,卖出去的分红怎么算？
+act1.w2.2,我六你四吧。
+act1.w2.3,一周后我来拿钱。
+act1.w2.4,祝你好运。
+act1.dex1.1,*无线电通话声*
+act1.dex1.2,你好，老板，我叫德克斯，负责这片区域。
+act1.dex1.3,今天是我来巡逻。
+act1.dex1.4,根据标准程序……
+act1.dex1.5,我们会保护你的人身安全。
+act1.dex1.6,你店里要有违禁品，记得早点处理。
+act1.oscar.1,老伙计！新开的店吧。
+act1.oscar.2,我是奥斯卡·范德林。对，就是那个范德林。
+act1.oscar.3,"家里在搞什么""财务纪律""。"
+act1.oscar.4,我爷爷开始盘点家里的东西了。
+act1.oscar.5,追兵就在后面，来不及了。
+act1.oscar.6,能先放你这儿吗？比放我床底下安全。
+act1.oscar.7,这是保管费，看，我也讲规矩。
+act1.oscar.c_yes,成交。
+act1.oscar.yes,明智！过几天我来拿匣子。
+act1.oscar.c_no,不行。
+act1.oscar.no,该死的。
+act1.bruce1.1,你好啊老板，收货吗？
+act1.bruce1.2,我专跑上层区的回收站。
+act1.bruce1.3,临期高档食物、淘汰了的工具、没人认领的东西。
+act1.bruce1.4,这些东西可值钱了。
+act1.bruce1.5,你给个价，我下次还来。
+act1.bruce.r.1,老板，又是我，布鲁斯。
+act1.bruce.r.2,回收站今天收成不错，你看看。
+act1.landlord.1,你就是新来的？
+act1.landlord.2,我才不管什么共和国的证书。
+act1.landlord.3,老实和你说。
+act1.landlord.4,这店面是我的，真正的房契在我这。
+act1.landlord.5,敢拖一天，我就叫人把你赶走。
+act1.landlord.6,一周后我再来。
+act1.landlord.c_less,租金能少点吗？
+act1.landlord.no,不能。
+act1.landlord.c_ok,知道了。
+act1.landlord.bye,哼。
+act1.w3.1,租金的事我听说了。
+act1.w3.2,让韦特来帮你搞定第一周的租金吧。
+act1.w3.3,你的房东百分百得给我面子。
+act1.w3.4,这是一种善良，孩子。
+act1.w3.5,再给你批货，这是我仓库积压太久的。
+act1.w3.6,别让上层区的人看扁了。
+act1.w3.7,这店要是没能干下去，我的名声也就臭了。
+act1.w3.8,过几天见，孩子。
+act1.w3.9,祝你好运。
+act1.old1.1,你好啊老板，今天收货吗？
+act1.old1.2,我在上面住了四十年，现在没人认得我了。
+act1.old1.3,这些是我攒的旧货，你看看。
+act1.old1.c_look,[看看他的货]
+act1.old1.yes,我腿脚不好，跑不动了。每三天我给你送一批，你便宜收了就行。
+act1.old1.c_no,[让他走]
+act1.old1.no,好吧，好吧，我明白你也有苦衷。过段时间我再来。
+act1.oldr.first,来，都摆上了，你慢慢挑。
+act1.oldr.1,小老板，我又来了。
+act1.oldr.2,还是老样子，便宜点收了吧。
+act1.oldr.gift,上次的事我记着呢，这件送你。
+act1.vb.1,午安。我是范德林家的管家，为奥古斯特老先生办事。
+act1.vb.2,奥斯卡少爷已经三天没有回家了。
+act1.vb.3,家族的产权密钥也不在库里。
+act1.vb.4,如果您见到奥斯卡少爷……请让他回家。
+act1.vb.5,老先生不会生气的。至少不会太生气。
+act1.vb.c_give,[交出匣子]
+act1.vb.give,谢谢您。老先生会记得这份情。
+act1.vb.c_deny,[不提匣子的事] 没见过他。
+act1.vb.deny,是吗……打扰了。
+act1.kai.1,你好。欢迎来到上层区。
+act1.kai.2,我是凯·王尔德。对，就是下层区乔·王尔德的表弟。
+act1.kai.3,严格来说是乔的表弟。
+act1.kai.4,上层区看着干净，小偷也更识货。
+act1.kai.5,丢一件值钱的，小店可能就开不下去了。
+act1.kai.6,所以我做保险。
+act1.kai.7,专门给刚上来开店的人。
+act1.kai.8,按天收钱。比我表哥那儿贵一点，这边什么都贵。
+act1.kai.9,只要店里失窃，你所有的货都赔。
+act1.kai.10,每晚睡前，你决定续不续。
+act1.kai.n1,还有件事，先跟你说清楚。
+act1.kai.n2,上层区办事，不靠拳头，也不靠嗓门。
+act1.kai.n3,靠的是认识人。
+act1.kai.n4,我可以帮你介绍几个人。有机会的话，替我说几句好话。
+act1.kai.n5,这是我的名片。镀金的，别弄脏了。
+act1.kai.11,就这些。生意兴隆。
+act1.rep2.1,又见面了。
+act1.rep2.2,本人隶属于共和国相关部门——我们对下层区来的人一视同仁。
+act1.rep2.3,但不代表对你也是。
+act1.rep2.4,我对你有新的指示。
+act1.rep2.5,"你需要交一笔信用点，记为""对共和国的支持""，这会影响后续居留审批。"
+act1.rep2.amount,按你现在的信用点算，{0}%：{1} 信用点。
+act1.rep2.6,这笔算你支持共和国，记你账上。
+act1.rep2.c_receipt,收据单呢？
+act1.rep2.r1,收据？没有。有记录就够了。
+act1.rep2.r2,别让我写你不配合。
+act1.rep2.c_ok,好吧。
+act1.rep2.bye,很好。
+act1.dex2.1,*无线电通话声*
+act1.dex2.2,你好，老板，我是德克斯。
+act1.dex2.3,今天是我来巡逻。
+act1.dex2.4,警局对你有新的指示。
+act1.dex2.5,举报所有携带高级别违禁品的卖家。
+act1.dex2.6,中低级违禁品卖家不值得我们花时间。
+act1.dex2.7,你的声望可能会受到打击……
+act1.dex2.8,但我们将根据没收违禁品的数量来奖励你。
+act1.dex2.9,祝你一切安全。
+act1.old2.1,小老板，有吃的吗？
+act1.old2.2,这两天上面查得紧，我在回收站找不到食物。
+act1.old2.3,随便什么，能填肚子就好。
+act1.old2.4,我不会白拿的，下次的货物我会免费送你。
+act1.old2.c_cash,[给他 {0} 信用点]
+act1.old2.cash,我会记着你的，小老板。
+act1.old2.c_food,[给他一些吃的]
+act1.old2.food,多谢你的食物了，小老板。
+act1.old2.c_no,我这也不多。
+act1.old2.no,下次见，小老板。
+act1.w4.1,你这店里看起来好多了。
+act1.w4.2,真是个幸运儿！
+act1.w4.3,"居然在上层区得到了""正道""的帮助。"
+act1.w4.p1,确实非常感谢你。
+act1.w4.4,这是你应得的分红，这部分则是我的。
+act1.w4.5,我顺便又带来了一些库存，一起给你吧。
+act1.w4.6,我的生意需要更多稀有物品。
+act1.w4.7,如果你能在下次我来的时候准备一些……
+act1.w4.8,说明我没看走眼。
+act1.w4.9,就这样，下次再见，店长。
+act1.helios.1,听说这新开了一家下层人的店？
+act1.helios.2,你们这儿有什么能吃的？
+act1.helios.3,不要罐头，要新鲜的。
+act1.helios.4,有什么都拿出来，别让我家大小姐等太久。
+act1.helios.5,钱不会少你。
+act1.helios.r.1,又是我。大小姐今天想吃点新鲜的。
+act1.helios.r.2,老规矩，不要罐头。
+weight.settle.sold,这周柜台卖了 {0} 件，一共 {1} 信用点。
+weight.settle.missing,有 {0} 件不在店里了，按标价算你卖掉，{1} 信用点。
+weight.settle.none,这批还没卖出去？不急，货先放你这儿。
+weight.settle.cut,按说好的，我拿{0}%，{1} 信用点。
+weight.settle.repay,借你的钱，这次从你那份里扣 {0}，还剩 {1}。
+weight.settle.owe,上次没结清的 {0}，这次一起算。
+weight.owe_notify,现金不够，还欠韦特 {0} 信用点分成，下次一起结。
+weight.full,柜台放不下了，韦特把剩下的带回去了（留下 {0} 件）。
+weight.tip,韦特的寄售品：卖掉后他拿成交价的 {0}%。
+weight.week.1,又一周了，店长。来，对对账。
+weight.week.2,新的一批，放你这儿了。
+weight.week.3,下周见，店长。
+weight.week.3_clear,借的钱都还清了。好样的，下周见。
+act1.residence,居留第 {0} / {1} 天。
+item_ul_tax_list_name,上层区纳税清单
+item_ul_tax_list_flavor,治安费、共和国安置税、范德林片区管理费、上层区居住税……最后一行：剩余 0。
+act1.oldr.gift_notify,布鲁斯送了你一件{0}，放在柜台上了。
+act1.oldr.bye,那我先走了，小老板。
+act1.old2.5,谢谢你。
+ul_dialog_minor_lottery_2,我搬上来以后，就再没回过下层区。
+ul_dialog_minor_lottery_6,不过，我有时还是会想念下层区那些便宜又暖心的吃食。上层区什么都贵。
+act1.kai.card_fixed,凯的名片放进店里了。王尔德的电话和人脉网络现在可以用了。
+kai.consign.kept,剩下的 {0} 件你留着卖吧，算你的。这几件的押金我就不退了。

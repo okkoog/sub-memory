@@ -277,33 +277,39 @@
 
   // ── 2. N / R 档：直接掉原版物品，写物品 id ────────────────────────
   "npool": [
-    "bottle_hot_sauce", "common_chemical", "compensator", 
-    "barrel", "labeler", "labeler_blue", "laser", 
-    "magnifier", "metal_ingot", "node_medium", "node_small", 
-    "blank_module", "trigger_group", "hatchet", "mag_10mm_smg", 
-    "silencer", "rds", "smoke_grenade", "kitchen_cleaver", 
-    "kotton_fabric", "ammo_display", "handmade_pistol_frame", "mag_10mm_smg_high", 
-    "system_module_efficiancy", "system_module_performance", "system_module_quality", 
-    "combat_knife", "crowbar", "eng_keycard", "match_barrel", 
-    "med_keycard", "packet_red_cigarette", "salve", "welder", 
-    "flashbang_grenade", "mag_10mm_smg_box", "nudka", 
-    "mag_10mm_smg_box", "silencer2", "box_tampon", "restricted_chemical", 
-    "sci_keycard", "scratcher_stack", "sec_keycard", "tazer", 
-    "mag_10mm_ext"
+    "kotton_fabric", "packet_red_cigarette", "box_tampon", 
+    "smoke_grenade", "flashbang_grenade", "bottle_hot_sauce", 
+    "small_raw_meat", "nudka", "common_chemical", 
+    "tazer", "fish_fillet", "small_eel_fillet", 
+    "metal_ingot", "restricted_chemical", "salve", 
+    "hatchet", "kitchen_cleaver", "combat_knife", 
+    "crowbar", "skinning_knife", "small_eel_fillet", 
+    "eng_keycard", "med_keycard", "sci_keycard", 
+    "scratcher_stack", "sec_keycard", "cmd_keycard", 
+    "node_medium", "node_small", "system_module_efficiancy", 
+    "system_module_performance", "system_module_quality", "alarm_module_transmitter", 
+    "farm_module_smuggler", "system_module_eco", "system_module_fineness", 
+    "system_module_overclock", "skinning_knife", "small_eel_fillet", 
+    "crowbar", "skinning_knife", "small_eel_fillet",
   ],
   "rpool": [
-    "1ml_dropper", "furnace_module_junk", "handmade_pistol", "cmd_keycard",
-    "system_module_streamlining", "neuroactive_perfume", "uv_filter", "raw_meat",
-    "heavy_handmade_pistol", "stun_baton", "combat_machete", "aquascan",
-    "pheromone_perfume", "surgery_tool", "revolver", 
-    "metal_scanner", "wine_yeast_infinite", "smg", "advanced_flux_agent", "turbo_booster_adv", 
-    "blue_blood_bag"
+    "neuroactive_perfume", "uv_filter", "aquascan",
+    "1ml_dropper", "raw_meat", "bottled_water_premium",
+    "pheromone_perfume", "portable_water_purifier", "water_filter_adv",
+    "eel_fillet", "large_fish_fillet", "caviar",
+    "large_purple_injector", "surgery_tool", "blue_blood_bag",
+    "black_injector", "stun_baton", "combat_machete",
+    "furnace_module_junk", "system_module_streamlining", "furnace_module_blast",
+    "crypto_module_eng", "crypto_module_med", "combat_machete",
+    "black_injector", "stun_baton", "crypto_module_sec",
+    "turbo_booster_adv", "stun_baton", "crypto_module_sec",
+    "black_injector", "stun_baton", "crypto_module_sec"
   ],
 
   // ── 3. UP 候选名单（每 7 天从这张名单里随机换一位，只写 ur 里的 id）──
   //  顺序已经不再有意义了：每过 7 天，存档里预抽好的「下期 UP」转正，
   //  然后立刻从这张名单里再随机抽一张当下期 UP（保证不跟刚转正的那张重复）。
-  "upOrder": [ "ellen", "zhuyuan", "qingyi", "jian", "Robin", "Kafka", "ailisi", "yifulin", "yaojiayin", "banji", "fuboyouye", "xide", "yuguo", "xingjianya", "yixuan", "weiweian", "yuguo", "yuguo", "yuguo", "yuguo", "yuguo", "lycaon" ],
+  "upOrder": [ "ellen", "zhuyuan", "qingyi", "jian", "Robin", "Kafka", "ailisi", "yifulin", "yaojiayin", "banji", "fuboyouye", "xide", "yuguo", "xingjianya", "yixuan", "weiweian", "gelisi", "keleida", "lina", "11hao", "maoyou", "kaisa", "bonisi", "liu", "laite", "youzhen", "jufufu", "aofeisi", "lycaon" ],
 
   // ── 3.5 UP 冷却（一张卡当过 UP 之后，要空过几轮才会重新进随机池）──
   //  1 轮 = 7 天。默认 3：当过一次之后要再隔 3 轮（21 天）才可能被抽到，
@@ -338,6 +344,28 @@
   //    举例：下面那张「音擎·深海访客」带的是 ZZZ / SR / 音擎；
   //          想只卖音擎卡的顾客，buys 里写 [ "音擎" ] 就行。
   // ──────────────────────────────────────────────────────────────
+  // ──────────────────────────────────────────────────────────────
+  //  N / R 档的「自定义物品」：写法跟上面的 sr / ur 一模一样
+  // ──────────────────────────────────────────────────────────────
+  //  · 留空数组 = 只用 npool / rpool 里的原版物品。
+  //  · 抽取时候选表 = 原版物品 ID 各算一格 + 这里每张卡各算一格，均匀随机。
+  //    想让自定义卡更容易抽到：多写几张，或者把 npool / rpool 里不想要的原版物品删掉。
+  //  · 字段跟 sr / ur 完全一样：id（必填，别和别的卡重名）· name · value（面值）
+  //    sprite（物品格里的图，放 Mods\ds_gacha\Textures\Items\<名字>.png）
+  //    art（放大看的高清图，放 Mods\ds_gacha\Art\<名字>.png）
+  //    kind（类别，会自动变成标签）· desc（描述）· tags（额外标签数组）· inspectable（能否放大）
+  //    w / h（占几格，一格 16px；不写就是 2×3 = 32×48 的图）
+  //  · 下面两条是注释掉的示例，删掉行首的 // 就能直接用（记得同时放好对应的 png）。
+  "ncustom": [
+    // { "id": "mychip", "name": "杂牌数据芯片", "value": 60, "kind": "电子垃圾", "sprite": "mychip", "desc": "来路不明的芯片，插上会发热。" }
+  ],
+  "rcustom": [
+    { "id": "shibaiping01",   "name": "001", "value": 300, "kind": "代理人", "tags": ["赝品"], "sprite": "shibaiping01", "art": "shibaiping01",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
+    { "id": "shibaiping02",   "name": "002", "value": 300, "kind": "代理人", "tags": ["赝品"], "sprite": "shibaiping02", "art": "shibaiping02",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
+    { "id": "shibaiping03",   "name": "003", "value": 300, "kind": "代理人", "tags": ["赝品"], "sprite": "shibaiping03", "art": "shibaiping03",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
+    // { "id": "vipcard", "name": "便利店金卡", "value": 180, "kind": "收藏品", "sprite": "vipcard", "desc": "储值卡，余额不详。" }
+  ],
+
   "sr": [
     { "id": "shenhaifangke",   "name": "音擎·深海访客", "value": 800, "w": 2, "h": 2, "kind": "音擎", "sprite": "shenhaifangke", "art": "shenhaifangke", "desc": "S级音擎卡，深海访客。——大功率变温，能瞬间冻结目标。但它上一任主人只用它来刮刨冰" },
     { "id": "yuhuqingbing",   "name": "音擎·玉壶清冰", "value": 800, "w": 2, "h": 2, "kind": "音擎", "sprite": "yuhuqingbing", "art": "yuhuqingbing", "desc": "S级音擎卡，玉壶清冰。——烧制工艺温润清雅，壶身冰裂纹看似名贵瓷器，实则是手工绘制的障眼法。一旦碎裂，方能见其刚硬锐利" },
@@ -350,6 +378,14 @@
     { "id": "aquan",  "name": "邦布·阿全", "value": 500, "w": 2, "h": 2, "kind": "邦布", "sprite": "aquan", "art": "aquan",  "desc": "S 级邦布卡，阿全。——驾着钻机全速向前，一心掘进突破地心" },
     { "id": "nike",   "name": "妮可·德玛拉", "value": 1000, "kind": "代理人", "sprite": "nike", "art": "nike",  "desc": "A 级代理人卡，狡兔屋。——一生的请求！" },
     { "id": "anbi",   "name": "安比·德玛拉", "value": 1000, "kind": "代理人", "sprite": "anbi", "art": "anbi",  "desc": "A 级代理人卡，狡兔屋。——目标确认，开始行动" },
+    { "id": "kelin",   "name": "可琳·威克斯", "value": 1000, "kind": "代理人", "sprite": "kelin", "art": "kelin",  "desc": "A 级代理人卡，维多利亚家政。——拜托了，请好好听可琳说话！" },
+    { "id": "ben",   "name": "本·比格", "value": 1000, "kind": "代理人", "sprite": "ben", "art": "ben",  "desc": "A 级代理人卡，白祇重工。——我喜欢算数，但这不妨碍我一巴掌拍碎歹徒" },
+    { "id": "bili",   "name": "比利·奇德", "value": 1000, "kind": "代理人", "sprite": "bili", "art": "bili",  "desc": "A 级代理人卡，狡兔屋。——荣光！在此！闪耀！" },
+    { "id": "luxi",   "name": "露西亚娜·德·蒙特夫", "value": 1000, "kind": "代理人", "sprite": "luxi", "art": "luxi",  "desc": "A 级代理人卡，卡吕冬之子。——有贵客登门，就让本小姐来招待吧！" },
+    { "id": "saisi",   "name": "赛斯·洛威尔", "value": 1000, "kind": "代理人", "sprite": "saisi", "art": "saisi",  "desc": "A 级代理人卡，刑侦特勤组。——队长，逮捕犯人就交给我吧！" },
+    { "id": "bokena",   "name": "波可娜·费雷尼", "value": 1000, "kind": "代理人", "sprite": "bokena", "art": "bokena",  "desc": "A 级代理人卡，卡吕冬之子。——我只对赢家忠诚，而赢家，永远是我" },
+    { "id": "panyinhu",   "name": "潘引壶", "value": 1000, "kind": "代理人", "sprite": "panyinhu", "art": "panyinhu",  "desc": "A 级代理人卡，云岿山。——草木尚知食尘饮露，修炼术法断不可饿着肚子呀" },
+    { "id": "zhendou",   "name": "狛野真斗", "value": 1000, "kind": "代理人", "sprite": "zhendou", "art": "zhendou",  "desc": "A 级代理人卡，怪啖屋。——万一有什么麻烦，就站到我身后吧" },
     { "id": "paipai",   "name": "派派·韦尔", "value": 1000, "kind": "代理人", "sprite": "paipai", "art": "paipai",  "desc": "A 级代理人卡，卡吕冬之子。——要载你一程吗？记得系好安全带哦" },
     { "id": "cangjiao",   "name": "苍角", "value": 1000, "kind": "代理人", "sprite": "cangjiao", "art": "cangjiao",  "desc": "A 级代理人卡，对空六课。——苍角，到！" }
   ],
@@ -365,6 +401,18 @@
     { "id": "banji",   "name": "扳机", "value": 2000, "kind": "代理人", "sprite": "banji", "art": "banji",  "desc": "S 级代理人卡，奥波勒斯小队。——我，看到你了" },
     { "id": "fuboyouye",   "name": "浮波柚叶", "value": 2000, "kind": "代理人", "sprite": "fuboyouye", "art": "fuboyouye",  "desc": "S 级代理人卡，怪啖屋。——觉得自己霉运缠身吗，那不妨问问……狸猫的建议吧？" },
     { "id": "xide",   "name": "席德", "value": 2000, "kind": "代理人", "sprite": "xide", "art": "xide",  "desc": "S 级代理人卡，奥波勒斯小队。——呀嚯～我是席德哦！" },
+    { "id": "gelisi",   "name": "格莉丝·霍华德", "value": 2000, "kind": "代理人", "sprite": "gelisi", "art": "gelisi",  "desc": "S 级代理人卡，白祇重工。——这冷峻的线条，真美啊…忍不住想拆开来看看呢？" },
+    { "id": "keleida",   "name": "柯蕾妲·贝洛伯格", "value": 2000, "kind": "代理人", "sprite": "keleida", "art": "keleida",  "desc": "S 级代理人卡，白祇重工。——目标只有一个，那就是做到业界第一！" },
+    { "id": "lina",   "name": "亚历山大德丽娜·莎芭丝缇安", "value": 2000, "kind": "代理人", "sprite": "lina", "art": "lina",  "desc": "S 级代理人卡，维多利亚家政。——迷途的流浪者啊，你可曾听过这里的规则" },
+    { "id": "11hao",   "name": "11号", "value": 2000, "kind": "代理人", "sprite": "11hao", "art": "11hao",  "desc": "S 级代理人卡，奥波勒斯小队。——士兵11号就位！随时准备行动！" },
+    { "id": "maoyou",   "name": "猫宫又乃", "value": 2000, "kind": "代理人", "sprite": "maoyou", "art": "maoyou",  "desc": "S 级代理人卡，狡兔屋。——那能变出青花鱼吗？！…果然不行啊，我就知道，没劲" },
+    { "id": "kaisa",   "name": "凯撒·金", "value": 2000, "kind": "代理人", "sprite": "kaisa", "art": "kaisa",  "desc": "S 级代理人卡，卡吕冬之子。——我就是凯撒，卡吕冬之子的老大" },
+    { "id": "bonisi",   "name": "柏妮思·怀特", "value": 2000, "kind": "代理人", "sprite": "bonisi", "art": "bonisi",  "desc": "S 级代理人卡，卡吕冬之子。——你看起来不太热烈呢，要‘燃’一下吗~" },
+    { "id": "liu",   "name": "月城柳", "value": 2000, "kind": "代理人", "sprite": "liu", "art": "liu",  "desc": "S 级代理人卡，对空六课。——对空六课副课长月城柳，向您问好" },
+    { "id": "laite",   "name": "莱特", "value": 2000, "kind": "代理人", "sprite": "laite", "art": "laite",  "desc": "S 级代理人卡，卡吕冬之子。——有人想要挑战一下常胜冠军吗？" },
+    { "id": "youzhen",   "name": "浅羽悠真", "value": 2000, "kind": "代理人", "sprite": "youzhen", "art": "youzhen",  "desc": "S 级代理人卡，对空六课。——很高兴认识你，除非你是来叫我加班的" },
+    { "id": "jufufu",   "name": "橘福福", "value": 2000, "kind": "代理人", "sprite": "jufufu", "art": "jufufu",  "desc": "S 级代理人卡，云岿山。——云岿山上有猛虎，仗义行侠好威风！" },
+    { "id": "aofeisi",   "name": "奥菲丝&「鬼火」", "value": 2000, "kind": "代理人", "sprite": "aofeisi", "art": "aofeisi",  "desc": "S 级代理人卡，奥波勒斯小队。——战术对策：歼灭-四！/ 是！‘鬼火’队长！" },
     { "id": "yuguo",   "name": "雨果·维拉德", "value": 2000, "kind": "代理人", "sprite": "yuguo", "art": "yuguo",  "desc": "S 级代理人卡，反舌鸟。——亲爱的朋友，我必如雪崩再来" },
     { "id": "xingjianya",   "name": "星见雅", "value": 2000, "kind": "代理人", "sprite": "xingjianya", "art": "xingjianya",  "desc": "S 级代理人卡，对空六课。——对空六课课长星见雅，向你问好" },
     { "id": "yixuan",   "name": "仪玄", "value": 2000, "kind": "代理人", "sprite": "yixuan", "art": "yixuan",  "desc": "S 级代理人卡，云岿山。——以静制动，动静相宜。而动中有静，静中亦有动" },

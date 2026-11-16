@@ -21,6 +21,9 @@ sec_mods,Mods
 sec_info,Other
 panel_liquid,Liquid
 panel_contents,Contents
+packing_title,Packing list · ×{0}
+packing_more,…and {0} more kinds
+packing_page,Page {0}/{1}
 ticket_no,Appraisal No.{0}
 cfg_enabled,Enable the mod
 cfg_enabled_tip,Turn off to get the original item tooltip back. No restart needed.
@@ -38,8 +41,10 @@ cfg_fraction_bars,Bars for fraction values
 cfg_fraction_bars_tip,"Values like ""400/400"" (durability, for example) get a bar in front, coloured by how full it is. Needs graphic progress bars."
 cfg_contents_panel,Show container contents
 cfg_contents_panel_tip,"Shows what containers and machines hold as icons (not when locked or sealed), batteries and liquids as gauges, and drops text lists of the contents added by other mods. In the Classic style they go beside the game's window."
-cfg_content_rows,Max contents rows
-cfg_content_rows_tip,"How many rows of icons the contents grid shows; the rest is folded into a ""+count"" cell."
+cfg_contents_layout,Contents layout
+cfg_contents_layout_tip,"Packing list: a small slip stapled beside the ticket lists names and counts, so the ticket doesn't grow with the contents. Grid: icon cells inside the ticket, as before."
+cfg_content_rows,Contents shown (steps)
+cfg_content_rows_tip,"Packing list: 5 kinds per step (default 2 steps, 10 kinds), the rest become ""…and N more kinds"". Grid: rows of icons, the rest merge into ""+count""."
 cfg_scale,Slip size (%)
 cfg_scale_tip,100% is the size of the game's tooltip. Make it smaller if it covers other windows.
 cfg_price_size,Price size (%)
@@ -93,7 +98,7 @@ sample_desc,Produces water when given a container. Needs power.
 sample_tag_household,[Household]
 sample_tag_contraband,[Contraband]
 sample_stolen,Stolen (14% heat)
-sample_stamp,Restricted
+sample_contraband,Restricted
 preview_classic,Classic style
 gauge_power,Battery
 gauge_liquid,Liquid

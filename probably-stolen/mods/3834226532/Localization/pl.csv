@@ -38,7 +38,7 @@ dsp_newspaper_recipe_description,"Gazety liczą się teraz jako topnik oraz dro�
 dsp_newspaper_recipe_taste,Niesmaczne
 dsp_newspaper_recipe_tooltip_flux,"Topnik (podstawowy): praktyczny dodatek, który podnosi czystość rudy metalu użyty podczas wytopu. Zużywa się w tym procesie."
 dsp_newspaper_recipe_tooltip_yeast,"Drożdże syntetyczne: nielegalna substancja, która zastępuje drożdże i pozwala bardzo tanio warzyć lekko rakotwórcze wino. Potrzebuje tylko wody."
-dsp_mortgage_description,"Na starcie kupujesz sklep z długiem 7000."
+dsp_mortgage_description,Na starcie kupujesz sklep z długiem 7000.\n\nOstrzeżenie: wyjątkowo trudny początek.
 dsp_self_built_name,"Własna budowa"
 dsp_self_built_description,"Od początku jesteś właścicielem lokalu, ale podstawowy koszt prądu i sprzątania wynosi 10 kredytów plus 5 za każdy poziom trudności powyżej trudności podstawowej. Aby otrzymać akt własności, musisz zapłacić właścicielowi 2000 kredytów opłaty za przeniesienie."
 dsp_cellar_name,Naturalna piwnica z winem
@@ -62,9 +62,9 @@ dsp_sp_redimp_off_done,"Dobrze, anulowaliśmy usługę dostaw."
 dsp_sp_redimp_ask_on,Chce pan wznowić dostawy?
 dsp_sp_redimp_on_done,"Dobrze, załatwimy to i ktoś do pana przyjedzie."
 dsp_sp_ashish_hello,"Hej, tu Ashish."
-dsp_sp_ashish_ask_off,Na razie nie zamawiasz Dream Dust?
+dsp_sp_ashish_ask_off,Na razie nie zamawiasz Proszku Snów?
 dsp_sp_ashish_off_done,"Dobrze, oszczędzę sobie drogi."
-dsp_sp_ashish_ask_on,Wracasz do Dream Dust?
+dsp_sp_ashish_ask_on,Wracasz do Proszku Snów?
 dsp_sp_ashish_on_done,"Dobrze, sam ci to przyniosę."
 dsp_sp_caulson_hello,"GP Mining, słucham."
 dsp_sp_caulson_ask_off,Koniec z rudą?
@@ -158,7 +158,7 @@ dsp_snack_addiction_menu,Zjedz
 # Informator Wilde'a: kwestie telefoniczne (odbudowa)
 dsp_wild_lover_line_news_harvest_1,Znowu kiepskie plony. Dziwny rok.
 dsp_wild_lover_line_news_harvest_2,Sady na dolnych poziomach zgniły. Nie licz na nie w tym roku.
-dsp_wild_lover_line_news_harvest_3,Napar z jagód świecących idzie w górę. Pij teraz albo płać więcej.
+dsp_wild_lover_line_news_harvest_3,Napar z KwiatoGody idzie w górę. Pij teraz albo płać więcej.
 dsp_wild_lover_line_news_harvest_4,Zrzucają winę na pogodę. Na pogodę? Do diabła. Nikt w to nie wierzy.
 dsp_wild_lover_line_news_harvest_5,Spekulanci się cieszą. Ty raczej nie.
 dsp_wild_lover_line_news_build_1,Górne miasto znowu rozkopuje drogę. Już pół roku.
@@ -396,7 +396,7 @@ dsp_former_geologist_description,"Możesz spróbować dowolnej substancji, aby u
 dsp_former_geologist_menu,Weź łyk
 dsp_former_geologist_too_little,Za mało w środku na jeden łyk.
 dsp_fruit_battery_name,Owocowa bateria
-dsp_fruit_battery_description,Owoc nutri może służyć jako bateria: każdy 1 kJ prądu zużywa 10 kcal jego wartości odżywczej. Nadal nie można go sprzedać jako baterii.
+dsp_fruit_battery_description,Pożywnowoc może służyć jako bateria: każdy 1 kJ prądu zużywa 10 kcal jego wartości odżywczej. Nadal nie można go sprzedać jako baterii.
 dsp_godzilla_visit_line,Miesięczna norma odpadów znów przyszła. Zrób mi przysługę i weź tę puszkę z moich rąk.
 dsp_godzilla_visit_offer,Jedna puszka odpadów radioaktywnych. Weź ją — zapłacę ci 100 kredytów.
 dsp_godzilla_visit_buy,Umowa. Puszka moja.
@@ -441,7 +441,7 @@ dsp_scav_drone_description,Podczas nocnych działań masz dwie dodatkowe kieszen
 dsp_trust_fund_name,Fundacja charytatywna Keystone
 dsp_trust_fund_description,W każdy czwartek otrzymujesz 50 kredytów.
 dsp_snake_oil_name,Olej wężowy
-dsp_snake_oil_description,Zaczynasz z 20 butelkami skrobiowego pyłu snów; nie liczą się jako kontrabanda.
+dsp_snake_oil_description,Zaczynasz z 20 butelkami skrobiowego Proszku Snów; nie liczą się jako kontrabanda.
 dsp_charm_mushroom_name,Czarujący grzyb
 dsp_charm_mushroom_description,Snówka i Koszmarówka liczą się jednocześnie jako żywność i narkotyki.
 dsp_jane_smith_male_name,Jan Kowalski
@@ -583,6 +583,40 @@ dsp_service_paid_training,Kredyt studencki
 dsp_service_paid_training_tooltip,"Koszt płatnego szkolenia: pobierany w każdy poniedziałek - 48 za pierwszą ratę, potem po 100, łącznie 648. Warunek sponsora, nie można anulować."
 dsp_preset_save,Zapisz preset
 dsp_preset_load,Wczytaj preset
+dsp_preset_export,Eksportuj
+dsp_preset_rename,Nazwij
+d,_
+名,
+名,
+N,
+N,
+N,
+N,
+N,
+名,
+이,
+N,
+И,
+N,
+dsp_preset_open,Presety
+dsp_preset_window_title,Presety startowe
+dsp_preset_thanks,Dzięki za grę
+dsp_preset_unnamed,Bez nazwy
+dsp_preset_default2,Czarny rynek
+dsp_preset_default3,Nocny szperacz
+dsp_preset_numeral_label,Numery jako cyfry rzymskie
+dsp_preset_numeral_tooltip,Numery w oknie jako I, II, III…; wyłączone = 1, 2, 3…
+dsp_preset_preview,Cechy ({0})
+dsp_preset_preview_more,+{0} więcej
+dsp_preset_preview_empty,(ten preset jest pusty)
+dsp_preset_delete,Usuń
+dsp_preset_delete_ask,Potwierdź
+dsp_preset_deleted,Usunięto
+dsp_preset_prev,Wstecz
+dsp_preset_next,Dalej
+dsp_preset_close,Zamknij
+dsp_preset_row_save,Zapisz
+dsp_preset_row_load,Wczytaj
 dsp_perk_search_placeholder,Szukaj perków (nazwa / opis / id)...
 dsp_option_ui_scale,Powiększenie interfejsu
 dsp_option_ui_scale_tooltip,Powiększa ekrany perków i specjalizacji o 15%. Wyłączone = oryginalny rozmiar.
