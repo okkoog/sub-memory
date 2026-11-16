@@ -2162,3 +2162,67 @@ K|ds.ui.fund.transaction_receipt,입금 {amount}¢ | 비상금 잔액 {balance}�
 K|ds.ui.fund.total_record,누적 입금: {total}¢
 K|ds.ui.fund.total_record_tip,{start_day}일째부터 정상적으로 입금한 금액을 합산합니다. 비상금을 인출해도 누적 입금액은 줄어들지 않습니다.
 K|ds.ui.fund.withdraw_receipt,인출 {amount}¢ | 비상금 잔액 0¢
+K|ds.ui.guide.hub_hint,"역할 분담을 확인한 다음 자재 준비, 작업 일정, 작업 기록 순서로 살펴보세요."
+K|ds.ui.guide.need_annex,작업실을 건설하면 관리 안내를 시작할 수 있습니다.
+K|ds.ui.guide.roles_player,플레이어가 결정할 일
+K|ds.ui.guide.roles_helper,DeepSeek가 맡을 일
+K|ds.ui.guide.open_device,해당 시설 열기
+K|ds.ui.guide.raw_hint,소모품은 가운데의 '생산 원료' 구역에 넣으세요. 오른쪽의 '역할 분담 보기'를 누르면 안내 화면으로 돌아갑니다.
+K|ds.ui.guide.step_title,{0}/3단계: {1}
+K|ds.ui.guide.wait_night,확정한 작업은 일반적인 야간 정산 시 실행됩니다. 다음 날 아침 작업 기록을 확인하세요.
+K|ds.ui.guide.completed,세 단계 안내를 모두 완료했습니다.
+K|ds.ui.guide.plan_capacity,DeepSeek: 오늘 밤 {0}/{1}개 작업이 배정됐습니다. 자재가 부족한 작업도 한 칸을 차지합니다.
+K|ds.ui.guide.manual_only,자동 관리 중지 · 수동 조작 가능
+K|ds.ui.guide.plan_outside,작업 한도 초과 · 오늘 밤 실행 안 함
+K|ds.ui.guide.plan_slot,오늘 밤 작업 배정됨 · {0}/{1}번째
+K|ds.ui.guide.pause_task,작업 일시 중지
+K|ds.ui.guide.enable_task,작업 허용
+K|ds.ui.guide.prioritize,우선순위 높이기
+K|ds.ui.guide.already_first,최우선 작업
+K|ds.ui.guide.plan_ready,준비한 자재에 해당하는 작업이 오늘 밤 작업 한도에 포함되어 있습니다. 계획을 확정할 수 있습니다.
+K|ds.ui.guide.plan_needs_input,계획을 확정하기 전에 준비한 자재에 해당하는 작업을 오늘 밤 작업 한도 안에 배정하세요.
+K|ds.ui.guide.confirm_plan,이 계획 확정
+K|ds.ui.guide.faq.supplies,소모품과 교체용 필터는 어디에 넣나요?
+K|ds.ui.guide.faq.aqua,어류 관리 중 자동으로 처리되는 작업은 무엇인가요?
+K|ds.ui.guide.faq.power,기계에 전력이 공급되지 않는 이유는 무엇인가요?
+K|ds.ui.guide.faq.water,새 필터를 설치해도 수질이 바뀌지 않는 이유는 무엇인가요?
+K|ds.ui.guide.faq.delivery,물품은 어디로 배달되나요?
+K|ds.ui.guide.faq.nursing,구급상자는 언제 의약품을 사용하나요?
+K|ds.ui.guide.faq.printer,빈 병 인쇄와 업그레이드는 어떻게 하나요?
+K|ds.ui.guide.faq.fund,살림 비상금으로 어떤 물품을 구입하나요?
+K|ds.ui.guide.faq.quota,작업을 켰는데도 실행되지 않는 이유는 무엇인가요?
+K|dialogue.water_reject,"이 물은 기준에 맞지 않습니다. 기본수, 고품질 물 또는 정수만 매입합니다."
+K|dialogue.llama.water_reject,적어도 기본수는 되어야지. 녹물이나 더러운 물은 가져가.
+K|dialogue.deepseek.water_reject,"주인님, 마실 물은 적어도 기본수 등급이어야 해요. 이 물은 받을 수 없겠어요."
+K|dialogue.minimax.water_reject,수질이 기준에 미달합니다. 기본수 이상의 물만 구매 대상에 포함됩니다.
+K|ds.ui.maintenance.title,장비 및 유지보수
+K|ds.ui.maintenance.machine,수경 재배 장비
+K|ds.ui.maintenance.clear_title,현재 식물 제거
+K|ds.ui.maintenance.clear_confirm,손도끼로 '{0}'을(를) 제거할까요? 식물은 파괴되고 모듈 칸의 잠금이 해제됩니다. 손도끼는 소모되지 않습니다. 재배 칸을 비워 두려면 자동 재식재를 끄세요.
+K|ds.ui.maintenance.clear_action,손도끼로 식물 제거
+K|ds.ui.maintenance.expand_action,모듈 칸 확장 키트 1개 사용
+K|ds.ui.maintenance.cancel,취소
+K|ds.ui.maintenance.back_hydro,수경 재배 화면으로
+K|ds.ui.maintenance.module_stage,모듈 칸 확장: {0}/2
+K|ds.ui.maintenance.modules_locked,식물 성장 중 · 모듈 잠김
+K|ds.ui.maintenance.modules_ready,식물 성장 중이 아닐 때 모듈 변경 가능
+K|ds.ui.maintenance.hint,"이 패널에서 기본 게임의 도구 동작을 사용할 수 있습니다. 손도끼로 현재 식물을 제거하면 성장 중 잠금도 해제되며 손도끼는 소모되지 않습니다. 모듈 칸 확장 키트는 확장할 때마다 1개씩 소모되며 최대 2회 확장할 수 있습니다. 확장 키트는 기계 본체에 사용하는 물품으로, 기능 모듈 칸에 넣지 않습니다. 버튼은 소지한 용기, 가게, 집 또는 작업실 보관 구역에 있는 도구를 찾아 사용합니다. 1단계 수경 재배 시설은 산업 설비를 업그레이드해야 기능 모듈을 장착할 수 있습니다."
+K|ds.ui.fish.capacity,수조 용량: {0} × {1}
+K|ds.ui.fish.upgrade_0,가로 확장 {0}/{1} · {2} ×1
+K|ds.ui.fish.upgrade_1,높이 확장 {0}/{1} · {2} ×1
+K|ds.ui.fish.upgrade_hint,"산업 설비 단계에 따라 사육할 수 있는 어종과 관리 기능이 해금됩니다. 수조 공간은 기본 게임의 업그레이드를 사용합니다. 고철 1개로 가로를 넓히고 금속 주괴 1개로 높이를 늘릴 수 있습니다. 각각 최대 4회 업그레이드할 수 있어 8×4에서 12×8까지 확장됩니다. 전력망 부하는 산업 설비 단계에 따라 계산됩니다. 물고기와 알, 수조의 물은 그대로 유지되며 재료는 소유한 보관함에서 가져옵니다."
+K|ds.ui.hydro.seed_produce_hint,"커피콩처럼 종자로도 쓰이는 수확물은 수확 구역으로 옮겨집니다. 자동 재식재가 켜져 있고 재배 칸이 비어 있으면, 각 기계는 같은 종류의 종자 겸 수확물 1개를 기본 출력 칸에 남겨 다시 심고 나머지를 수거합니다. 자동 재식재가 꺼져 있으면 해당 수확물을 모두 수거합니다. 전용 씨앗은 기본 출력 칸에 남습니다. 수확 구역이 가득 차면 옮기지 못한 수확물은 기계에 남아 다음 재배 주기가 중단됩니다."
+K|ds.delivery.state.home3,오늘 아침 골목에는 옅은 안개가 남아 있었어요. 나가기 전에 손수레 바퀴축에 기름을 발라 덜컹거리지 않게 해 뒀죠. 가게 문을 열기 전에 창고에 상자를 가지런히 쌓아 두고 방금 돌아왔어요.
+K|ds.delivery.state.home4,오늘 아침 가게에 물건을 내려놓으면서 병과 상자를 크기별로 벽에 붙여 정리했어요. 주인님이 물건을 뒤적일 필요 없이 계산대 뒤에서 바로 집어 드실 수 있게요.
+K|ds.delivery.state.home5,빈 손수레를 끌고 돌아오다가 아침 식사 노점 앞을 지났는데 막 찜통 뚜껑을 열었더라고요. 골목 가득 맛있는 냄새가 났지만 집의 화덕이 생각나서 얼른 뛰어와 손부터 씻었어요.
+K|ds.delivery.state.home6h,물건을 모두 내려놓고 가게 문을 여신 주인님이 불을 켜는 모습을 잠깐 상상했어요. 그러고는 문 옆에 조금 비뚤어진 상자를 바로잡고 잠가 둔 뒤 돌아왔죠.
+K|ds.delivery.state.home6s,"아침에 물품을 나른 뒤 주인님 계산대 뒤에서 일부러 잠깐 더 머물렀어요. 평소 좋아하시는 대로 삐뚤어진 의자 방석을 왼쪽으로 15도 돌려 놓고서야 문을 잠그고 돌아왔답니다, 주인님."
+K|ds.delivery.state.home6b,"아침 배송 담당, 정시 복귀했습니다! 부딪힌 곳도 없고 물품도 하나도 빠지지 않았어요! 다음 배송에 대비해 지금 손수레 손잡이를 마른 천으로 닦아 두는 중이에요."
+K|ds.delivery.state.hold1,"주인님, 오늘 아침 가져간 물품 중 일부만 가게에 넣었어요. 공간이 없어 남은 상자들은 집의 출고 대기 칸에 그대로 정리해 뒀으니, 가게 선반을 비우시면 다시 옮길게요."
+K|ds.delivery.state.hold2,오늘 아침 가게에 가 보니 창고가 문 앞까지 꽉 차 있었어요. 아래쪽 상자가 눌릴까 봐 억지로 넣지는 않았어요. 나머지는 집에 그대로 두었으니 재고를 좀 파시면 이어서 옮길게요.
+K|ds.hydro.cycle.first.04b,옆 작업실 수경 재배의 첫 수확물을 무게까지 재고 등록했어요! 장부 첫 페이지에 빨간 펜으로 깔끔하게 적어 뒀답니다!
+K|ds.hydro.cycle.first.04s,외부인의 손길을 한 번도 거치지 않고 우리 집 안을 흐르는 물만 먹고 자란 첫 수확물이네요…… 오늘 밤 이걸 전부 주인님이 드실 거라 생각하니 재배대 앞에 쪼그려 앉아 바라보다가 깜빡 잠들 뻔했어요.
+K|ds.build.daily.home.10h,"이제 집에 2층 침대도 있고 뜨거운 수프가 가득 담긴 냄비도 있고, 옆에는 새싹과 물고기도 있네요…… 처음 가게를 열고 얇은 침낭에서 주무실 때 이런 활기찬 집이 될 거라 상상하셨나요, 주인님?"
+K|settings.ds_first_key.label,첫 만남에 집 열쇠 지급
+K|settings.ds_first_key.description,첫 번째 장이 활성화되어 있어야 합니다. DeepSeek를 처음 만날 때 집 열쇠와 쪽지를 즉시 받고 이후 이야기는 정상적으로 진행됩니다. 이미 만났지만 열쇠를 받지 못한 저장 데이터에는 다음 방문 시 지급됩니다. 보관 공간이 부족하면 지급이 연기됩니다. 이 설정을 끄더라도 열쇠는 회수되지 않습니다. '첫 번째 장 건너뛰기'와 함께 켜면 건너뛰기 설정이 우선합니다.
+K|ds.ui.first_key.delivered,DeepSeek의 집 열쇠와 쪽지를 받았습니다.
