@@ -40,8 +40,8 @@ K|cfg_fraction_bars,분수형 수치에도 막대 표시
 K|cfg_fraction_bars_tip,내구도처럼 '400/400'으로 표시되는 수치 앞에 비율에 따른 색상 막대를 추가합니다. 그래픽 진행 막대를 켜야 합니다.
 K|cfg_contents_panel,용기 내용물 표시
 K|cfg_contents_panel_tip,잠금·밀봉되지 않은 용기와 기계의 내용물을 아이콘으로 표시합니다. 배터리와 액체는 계기판으로 나타내고 다른 모드가 추가한 내용물 텍스트 목록은 숨깁니다. 클래식 방식에서는 게임 기본 창 옆에 표시합니다.
-K|cfg_content_rows,내용물 표시 최대 행 수
-K|cfg_content_rows_tip,내용물 아이콘을 몇 줄까지 표시할지 정합니다. 나머지는 '+개수' 칸으로 접힙니다.
+K|cfg_content_rows,내용물 표시 단계
+K|cfg_content_rows_tip,"포장 명세서: 한 단계당 물품 5종을 표시합니다. (기본 2단계, 10종) 넘치는 물품은 '…외 N종'으로 표시합니다. 격자: 설정한 행 수만큼 아이콘을 표시하고 나머지는 '+개수' 칸으로 합칩니다."
 K|cfg_scale,감정서 크기(%)
 K|cfg_scale_tip,100%는 게임 기본 설명 창과 같은 크기입니다. 다른 창을 가리면 작게 조정하세요.
 K|cfg_price_size,가격 글자 크기(%)
@@ -128,3 +128,9 @@ K|cfg_collapse_factors_tip,"모드 정보에서 부호가 붙은 백분율(시�
 K|cfg_show_on_key,펼치기 키를 누르는 동안에만 물품 상세 정보 표시
 K|cfg_show_on_key_tip,평소에는 물품 위에 마우스를 올려도 상세 정보가 나타나지 않습니다. 펼치기 키를 누르고 있어야 감정서 전체가 표시됩니다. 두 가지 표시 방식 모두에 적용됩니다.
 K|fold_factors,가격 변동 요인
+K|packing_title,포장 명세서 · ×{0}
+K|packing_more,…외 {0}종
+K|packing_page,{0}/{1}페이지
+K|cfg_contents_layout,내용물 표시 방식
+K|cfg_contents_layout_tip,포장 명세서: 견적서 옆에 별도의 작은 명세서를 붙여 물품 이름과 수량을 표시합니다. 물품이 많아져도 견적서 크기는 변하지 않습니다. 격자: 기존처럼 견적서 안에 아이콘을 칸별로 표시합니다.
+K|sample_contraband,중급 밀수품
