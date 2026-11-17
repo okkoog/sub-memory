@@ -1,0 +1,393 @@
+# MoreDeviceUpgrades 本地化（zh）—— 由 ModLoader.LoadLocalization 读取，
+# key,value 逗号分隔；# 开头为注释行。内容对齐原 mod UILoc 表（zh 列）。
+upg,{0}（{1}）：{2}（{3}）
+upg_nop,{0}（{1}）：{2}
+maxed,已满{0}/{1}
+req,使用{0}×{1}
+cap_circuit,电路板数/2
+mat_ingot,金属锭
+mat_circuit,电子元件
+mat_wire,线缆
+mat_plastic,3D打印耗材
+mat_chem_common,普通化学品
+mat_chem_restricted,管制品化学品
+nm_dna_pcr,聚合酶链式反应系统（PCR）
+nm_dna_crispr,CRISPR/Cas9 基因剪刀
+mat_rare_circuit,稀有电子件
+mat_plasma_cutter,等离子切割机
+mat_screws,螺丝
+mat_wire_cutter,剪线钳
+mat_gun_part,枪械零件
+nm_printer_lathe,精加工车床
+nm_printer_cad,计算机辅助打印
+nm_printer_scrap,废料再利用
+nm_printer_expand,金属锭扩容
+prn_expand,金属锭扩容（金属锭）{0}/{1}
+prn_expand_hint,拖入金属锭：每锭 输入/输出区各 +{0} 行、质量 +{1}%
+prn_storage,储藏格：原料区 {0} 行 / 成品区 {1} 行
+mat_medical,医疗用品
+mat_uvfilter,紫外线灯
+nm_purifier_plastic,3D打印滤芯外壳
+nm_purifier_uv,加装紫外线灯
+nm_hydro_thermal,日夜温控系统
+nm_hydro_circulation,小空间循环系统
+nm_hydro_expand,扩充农场
+hyd_expand,扩充农场（金属锭）{0}/{1}
+hyd_expand_hint,攒够金属锭后解锁：种子可放两个、输出区格子翻倍。
+hyd_expand_done,扩充农场已解锁（金属锭 {0}/{1}）
+hyd_expand_effect,效果：输出区格子翻倍
+hyd_seed2_label,种子 · 第二床位
+hyd_seed2,第二种植位：可再放一颗种子；两颗各自独立计时生长，水耗按颗计
+hyd_seed2_on,已种：{0}
+hyd_seed2_empty,空（拖入种子即可种植）
+pui_slots,滤芯槽位 {0}/{1}
+pui_basic_hint,滤水器：每个 +10% 质量
+pui_slot_hint,拖入金属锭扩充滤芯槽位（纯度越高，进度越多）
+pui_slot_maxed,滤芯槽位已满（{0} 槽）
+pui_ingot,扩槽进度 {0}%
+pui_filter,已装滤芯：高效 {0} / 技术 {1} / 滤水器 {2}
+nm_furnace_ingot,增加保温炉衬
+nm_furnace_circuit,增加冶炼温度传感器
+nm_moisture_circuit,加装水质检测探头
+nm_moisture_wire,增加冷凝铜管
+nm_winrack_circuit,优化控制电路
+nm_winrack_wire,优化供电线路
+nm_projector_circuit,优化成像处理电路
+nm_projector_plastic,更换聚光透镜
+nm_projector_wire,加粗投影供电线
+stat_quality,质量+{0}%/次
+stat_performance,性能+{0}%/次
+stat_eff,效率+{0}%/次
+stat_powercost,能耗+{0}%/次
+fui_ingot,炉衬强化（金属锭）{0}/{1}
+fui_hint,拖入金属锭，提升质量与效率；每精炼 3 次扩充 3 行原料/成品储藏格。
+fui_circuit,温度传感器（电子元件）{0}/{1}
+fui_eff,效率+{0}%
+fui_storage,原料/成品储藏：{0} 行
+pui_bonus_header,已获得的加成
+pui_q,质量+{0}%
+pui_p,性能+{0}%
+pui_none,暂无
+fui_eff_neg,效率{0}%
+fui_perf_neg,性能{0}%
+pui_q_neg,质量{0}%
+jeff_name,杰弗逊博士
+jeff_d_enter,店主！我带来了一些新做的设备，有没有想要的？
+jeff_d_greet,日安，先生，向您致敬。
+jeff_d_q_who,杰弗逊博士？
+jeff_d_a_who,正确，先生。
+jeff_d_q_ok,你还好吗？
+jeff_d_a_ok,我很好，先生。神经权重校准信号良好。
+jeff_d_intro1,自我介绍一下，先生。我是杰弗逊博士的时空异构体——简单说，您可以当我是平行世界的杰弗逊博士。
+jeff_d_intro2,为了方便您区分，先生，您可以称呼我为 R917。
+jeff_d_q_parallel,平行世界？
+jeff_d_q_isomer,时空异构体？
+jeff_d_q_r917,R917？
+jeff_d_q_purpose,我明白了，你有什么目的找我吗？
+jeff_d_wake,……咦？我……刚才说到哪了？……算了。
+jeff_d_p1,没错，先生，平行世界。
+jeff_d_p2,先生，两条宇宙之间只共有一物——古人云「逝者如斯」，所言即是「可能性」。
+jeff_d_p3,每一次可能发生的事情……我不是说您宏观上的决定，而是微观上的，比如每一次量子涨落。每一次发生，都在塑造我们的宇宙，先生。
+jeff_d_p4,我的发明可以在两个世界之间、在亚原子层面撕开一个小口子，从而干涉目标世界，先生。
+jeff_d_p5,请不要紧张，先生。它只能干涉一些微观效应——这也正是我要借用他身体的原因。
+jeff_d_p6,我只干扰了他神经系统中的量子效应，让他的神经权值更接近我罢了，先生。
+jeff_d_p7,而且，哪怕是这种程度的干涉，我也不能持续太久，先生。
+jeff_d_i1,同分异构体，先生——同样的组成，不同的结构。
+jeff_d_i2,我们出自同一个「杰弗逊」，只是时空坐标不同，长出的形态便不同。如此而已，先生。
+jeff_d_r1,我那条时间线的编号，先生。
+jeff_d_r2,您需要一个称呼来区分我们，我便给您一个。称呼的含义，不必深究，先生。
+jeff_d_pu1,您的判断没有错误，先生。我需要您的协助。
+jeff_d_pu2,如您所见，我对这个世界的干涉程度有限。借用杰弗逊先生的身体会给他带来显著的副作用——这既不利于他的健康，也对我的事业毫无帮助。
+jeff_d_pu3,因此，我计划委托您。
+jeff_d_pu4,我需要建造一个中继设施，让我能在这个世界的物理规则下进行研究。
+jeff_d_card1,这不是命令，仅仅是一个要求，您有充分的时间可以进行考虑。
+jeff_d_card2,地址我已经同步给您了，先生。为了保密，我直接干涉了您的海马体，如有冒犯敬请谅解，不过这应该是最安全的方式了。
+jeff_d_card3,如果您需要联系我，这是我的名片，请您收好，先生。
+jeff_d_card4,杰弗逊先生稍后会疑惑自己为什么在这里，不必担心，他会认为和您闲聊了一段时间。等时机合适，我会向他表达歉意的。
+item_r917_card_name,R917 的名片
+item_r917_card_flavor,一张金属质感的名片，署名「R917」。背面浮现着一串不断缓慢变化的空间坐标。
+nm_projector_ingot,加装散热片
+nm_recharger_cap,打印扩展充电仓
+nm_recharger_fast,改装快充电路
+req2,使用{0}×{1}+{2}×{3}
+stat_battery_bay,电池格 4×2→4×4
+stat_fast_charge,过夜充电×2
+installed,已安装
+screwdriver_hint,可以使用螺丝刀卸载升级。
+# ---- 二级升级（高级强化路线）----
+adv_title,选择高级强化路线
+adv_menu,选择升级方向
+adv_cancel,取消
+adv_confirm,确认
+adv_confirm_title,确认路线
+adv_slots,在途路线 {0}/{1}
+adv_hint,先选一条路线，再按配方拖入材料。
+adv_none,未选择
+adv_done,已完成
+adv_on,已选
+adv_select,选择该路线
+adv_deselect,取消选择
+adv_recipe,配方：
+adv_locked,未解锁
+adv_parallel,并行冶炼
+adv_thermal,热管理
+adv_crystal,应用结晶学
+adv_modular,模块化熔炉
+adv_parallel_desc,过夜时熔炉额外工作 1 次，每 300% 性能再 +1 次。配方：金属锭×5 + 电子元件×5
+adv_thermal_desc,为相邻机器提供 性能+40% / 效率+40% / 质量+15%（机器本身是熔炉则翻倍为 +80% / +80% / +30%），每台热管理熔炉叠加一层。配方：电子元件×7 + 金属锭×1 + 线缆×2
+adv_crystal_desc,熔炉获得虚拟模块：质量+1000% / 性能+500% / 效率+50%。配方：金属锭×12 + 电子元件×2
+adv_modular_desc,解锁第二个高级强化槽位。配方：熔炉×2 + 金属锭进度 500 + 线缆×2
+adv_eff_header,高级升级效果
+adv_eff_parallel,平行冶炼：过夜时熔炉会额外工作若干次，性能越高次数越多。
+adv_eff_thermal,热管理：为相邻机器提供 性能+40% / 效率+40% / 质量+15%（机器本身是熔炉则翻倍为 +80% / +80% / +30%），每台热管理熔炉叠加一层。
+adv_eff_crystal,应用结晶学：熔炉获得 质量+1000% / 性能+500% / 效率+50%（每夜出锭纯度提升、工作速度加快）。
+adv_eff_modular,模块化熔炉：解锁第二个高级强化槽位。
+fui_adv_sel,高级升级
+fui_adv_slot,高级槽位 {0}/{1}
+mat_furnace,熔炉
+mat_purifier,净水器
+mat_collector,水汽收集器
+mat_lead_pipe,铅管
+mat_superyeast,超级酵母
+adv_chosen,已选定路线（不可更改）：
+adv_screwdriver,把螺丝刀拖到本机可拆除全部高级升级（材料不退），之后可重选路线。
+adv_stripped,螺丝刀：已拆除全部高级升级（材料不退），可重新选择路线。
+adv_no_remove,螺丝刀：当前没有可拆除的高级升级（需先把已选路线全部完成）。
+fui_perf,性能+{0}%
+adv_parallel_now,当前性能下每夜额外冶炼 {0} 次
+thermal_adj,热管理（来自相邻熔炉）
+adv_locked_furnace,高级升级未解锁：需先把炉衬（9 颗金属锭）与温度传感器（10 次电子元件）升满。
+adv_locked_hydro,高级升级未解锁：需先完成扩充农场（10 个金属锭），并把日夜温控（8 个电子元件）与小空间循环（5 个线缆）升满。
+hadv_loop,完美内循环
+hadv_loop_ok,生效中：水量与水质达标，作物按最佳状态生长（不掉健康值）
+hadv_loop_noseed,待机：还没有放入种子
+hadv_loop_nowater,待机：水箱里没有水容器
+hadv_loop_lowwater,待机：水量仅 {0}ml，需大于每周期耗水 {1}ml
+hadv_loop_badwater,待机：水质 {0}，低于幽灵水（需 ≥ 96%）
+hadv_loop_desc,只要水箱水量大于植物每周期耗水量、且水质达到幽灵水及以上（纯度 ≥ 96%），作物每周期都按最佳状态结算：矿物质恒定最优、污染物不伤苗，因此永不掉健康值。水照常消耗。安装本模块期间第二种植位停用（用螺丝刀拆除本模块后恢复）。配方：电子元件×6 + 3D打印耗材×6 + 普通化学品×4 + 紫外线灯×1
+hadv_loop_eff,完美内循环：水量大于每周期耗水且水质 ≥ 幽灵水（96%）时，作物按最佳状态生长（不掉健康值）。安装期间第二种植位停用。
+hadv_huge,巨大作物诱发器
+hadv_huge_ok,已就绪：本茬健康 {0}/{1}，收成时额外产出 1 个巨大化作物
+hadv_huge_bad,本茬健康不足（{0}/{1}），收成时不会产出巨大化作物；下一茬重新计
+hadv_huge_noseed,待机：还没有放入种子
+hadv_huge_nosupport,未知作物，没有对应的巨大化形态
+hadv_huge_desc,作物在本茬收成时健康度达标（≥98%；博士保育装置后 ≥90%）就会在输出区额外多产 1 个该作物的巨大化形态。巨大化物品的各项数值＝原版「大号」作物的 4 倍（价值 / 成分克重 / 卡路里 / 耐久），并自带奢侈品标签。营养果原版已有「巨大」形态，故单开一档**极巨化**：贴图在巨大营养果基础上再长宽各 +1 格（4×4），数值＝4 个巨大营养果之和。原版收成照常结算、不会被替换或削减。掉过一次健康值本茬就作废，下一茬重新计。配方：普通化学品×8 + 电子元件×12 + 金属锭×4 + 线缆×3
+hadv_huge_eff,巨大作物诱发器：收成时健康度达标（≥98%）即额外产出1个巨大化作物。
+hadv_keep,保种机
+hadv_keep_ok,已就绪：本茬健康 {0}/{1}（从未掉过健康值），收成时额外返还 2 颗同种种子
+hadv_keep_bad,本茬已掉过健康值（{0}/{1}），收成时额外返还 1 颗同种种子；下一茬从头计
+hadv_keep_noseed,待机：还没有放入种子
+hadv_keep_desc,每次收成都会往输出区额外返还同种种子：本茬从未掉过健康值给 2 颗，掉过健康值给 1 颗。这颗种子会继承母株的性状，所以反复用本模块的产出续种不会掉品质。原版收成与原有的返种一概不动，本模块只是额外多给。输出区装满时会直接溢到飞船库存。配方：3D打印耗材×5 + 电子元件×4 + 普通化学品×3 + 线缆×2
+hadv_keep_eff,保种机：每次收成额外返还 1 颗同种种子；全程不掉健康值则返还 2 颗（继承母株性状）。
+hyd_seed2_off,已停用（被完美内循环占用；用螺丝刀拆除该模块后恢复）
+pradv_batch,多工位打印臂
+pradv_batch_desc,打印完成的产物会在原有数量之外再补 1 件，追加的那件品质与成色和原件完全一致（走的是原版同一套投递与品质结算）。原产物数量已经包含近战批量模块与金属锭纯度带来的数量，所以口径是「先算原产物数量，再加 1」。输出区装满时追加件会转到飞船库存，不会消失。配方：电子元件×6 + 线缆×5 + 等离子切割机×2
+pradv_batch_eff,多工位打印臂：每次打印在原产物数量之外额外产出 1 件（近战批量模块、枪支部件纯度数量都照常算）。
+pradv_feed,闭环供料
+pradv_feed_desc,打印开始时消耗的原料减半，向上取整，最少仍然要吃掉 1 件（要 6 锭吃 3 锭、要 1 件吃 1 件）。芯片本身不消耗，减的只是托盘里的原料。此模块只影响打印机自己的开工消耗，不会动别的机器。配方：螺丝×8 + 剪线钳×3 + 线缆×6
+pradv_feed_eff,闭环供料：打印消耗的原料减半（向上取整，最少 1 件）。
+pradv_micro,微米级打印
+pradv_micro_desc,打印出来的武器成色在原产物基础上提升一档（差→一般→良好→优良→全新）。若产物是枪械，六项属性（火力/颜值/可靠性/人机工效/精度）面板值全部 +5、后坐力控制 +5 —— 以最终面板数字为准，不会被成色倍率放大。近战武器没有数值属性，只吃成色。弹匣、配件、零件之类不算武器，不受影响。配方：枪械零件×8 + 电子元件×5 + 线缆×4
+pradv_micro_eff,微米级打印：武器成色 +1 档；枪械六项 +5、后坐力控制 +5（按最终面板值）。
+adv_locked_printer,高级升级未解锁：需先把精加工车床（5 个枪械零件）与废料再利用（10 个线缆）升满。
+dnaadv_purge,去芜存菁程序
+dnaadv_purge_desc,在这台机器上完成一次基因操作后，这颗种子就被「去芜存菁」标记：面板显示的基因复杂度封顶 5，之后反复编辑也不会再往上累积，成功率与耗时不再一路恶化；原本复杂度就超过 5 的存量种子，编辑一次后同样降为 5。性状等级与效果完全保留，不会被修剪 —— 新写入的形状照常生效，DNA 盘按原版规则消耗。基因热度照旧封顶 5。标记跟随种子，拆掉模块后仍有效。配方：电子元件×6 + 线缆×5 + 普通化学品×4
+dnaadv_purge_eff,去芜存菁程序：标记过的种子面板复杂度封顶 5（性状等级不变），基因热度封顶 5。
+dnaadv_mutate,定向诱变
+dnaadv_mutate_desc,对种子里本来就有的性状再应用一次时，加级量从 +1 变成 +2。正面性状（生长、产量、口感、耐旱…）和负面性状（缓慢、稀疏、难吃…）一视同仁。首次应用某个新性状不受影响，仍然是 +1。若基因盘本身带等级（盘 rank 大于 1），则是在原本的加级量上再加 1。上限照旧受性状自己的最大等级限制。配方：管制品化学品×6 + 电子元件×4 + 线缆×3
+dnaadv_mutate_eff,定向诱变：对已有性状再应用时额外 +1 级（正面 / 负面通吃）。
+dnaadv_double,双联测序
+dnaadv_double_desc,每次提取基因盘都会额外多产出一张，性状、等级、可用次数与原来那张完全一致。给已有盘续次数时也算提取，同样多给一张。提取判定失败（没写出东西）时不产出。输出区装满时会转到飞船库存，不会消失。配方：电子元件×5 + 线缆×6 + 3D打印耗材×3
+dnaadv_double_eff,双联测序：每次提取基因盘额外产出 1 张同性状、同等级、同可用次数的盘。
+adv_locked_dna,高级升级未解锁：需先把聚合酶链式反应系统（10 个普通化学品）与 CRISPR/Cas9 基因剪刀（4 个管制品化学品）升满。
+
+xl_giga_of,极巨{0}
+wine_ambrosia,仙馔秘酿
+alarmadv_camera,高清摄像头
+alarmadv_camera_desc,给警报系统加装一路高清摄像头：每枚警报传输模组带来的派系声望由 1 点提升为 2 点，一晚最多 4 个派系共 8 点。配方：电子元件×5 + 线缆×4 + 3D打印耗材×3
+alarmadv_camera_eff,高清摄像头：每枚警报传输模组带来的派系声望由 1 点提升为 2 点/晚。
+alarmadv_dedicated,专供警戒
+alarmadv_dedicated_desc,把这台警报改成专供一路警戒：模组安装区缩小为单个警报传输模组的尺寸（只能装 1 枚），但该派系的声望收益提升到 6 点每晚。多出来的模组会退回飞船库存。配方：电子元件×8 + 线缆×5 + 金属锭×4
+alarmadv_dedicated_eff,专供警戒：模组区只能装 1 枚传输模组，该派系声望 6 点/晚。
+alarmadv_pro,专业化报警设备
+alarmadv_pro_desc,把警报系统改造成专业化报警设备：性能 +500%（防盗率由 50% 提升到 550%，等于必定喝止夜盗）。配方：电子元件×6 + 金属锭×6 + 普通化学品×4
+alarmadv_pro_eff,专业化报警设备：性能 +500%（防盗率 +500 个百分点）。
+# --- 密码解析器（desequencer）· 三条高级模块（v1.8.20） ---
+dseqadv_clean,去标识制卡
+dseqadv_clean_desc,给出卡机构加装信号屏蔽层与数据擦除总线：解析产出的卡不再带违禁品标记，可以直接摆上货架或随身携带而不会招来麻烦。
+dseqadv_clean_eff,去标识制卡：解析产出的卡不再带违禁品标记。
+dseqadv_autofeed,自动供卡
+dseqadv_autofeed_desc,内置一套送卡机构：不再需要手动放入空白卡——只要电池格有电、芯片槽里有解析芯片，机器就会自己补卡持续出卡（补进去的卡当场锁定，无法取出倒卖）。
+dseqadv_autofeed_eff,自动供卡：无需放入空白卡，有电池和解析芯片即可持续出卡。
+dseqadv_dual,双打印
+dseqadv_dual_desc,换装双写磁头与承载托架：输出区扩大为 2×4（8 格），并且每次解析都在产出之外额外刻录一张同种卡。
+dseqadv_dual_eff,双打印：输出区扩为 2×4，每次解析额外产出一张同种卡。
+dseq_out_label,扩展输出
+# --- 陈化器（wine_rack）· 三条初级 + 两条高级模块（v1.8.21） ---
+nm_winrack_expand,金属锭扩容
+wradv_cellar,陈化窖藏
+wradv_cellar_desc,把陈化井改造成恒温陈化窖：发酵还没完成的酒也能直接放进来（原版只收发酵完成的酒），放进来第二天就发酵完毕，而且发酵完成必定是大师年份。已有更高品质（仙馔秘酿级）的酒不会被降级。配方：稀有电子件×3 + 3D打印耗材×4 + 紫外线灯×1
+wradv_cellar_eff,陈化窖藏：发酵中的酒也能放入陈化器，次日凌晨直接发酵完毕且必定大师年份。
+wradv_yeast,双效酵母
+wradv_yeast_desc,向酒架投放双效酵母菌种：每夜发酵推进两倍酵母强度，标准 4 天的发酵周期缩短为 2 天。只影响陈化器里的酒瓶，别处的酒照常发酵。配方：稀有电子件×3 + 3D打印耗材×3 + 焊枪×2
+wradv_yeast_eff,双效酵母：发酵速度翻倍（每夜推进 2×酵母强度，4 天 → 2 天）。
+adv_locked_wine,高级升级未解锁：需先把优化控制电路（10 次电子元件）与优化供电线路（7 个线缆）升满。
+# --- mod 设置项 / 剧情物品（v1.8.14） ---
+cfg_enabled,零件升级
+cfg_enabled_desc,把电子零件（电路 / 电线 / 打印塑料）拖到机器上即可升级该机器。
+cfg_verbose,详细日志
+cfg_verbose_desc,每次升级都往 Player.log 打一行。排查问题时可开。
+cfg_diag,拖放诊断日志
+cfg_diag_desc,每次松手都记一行「机器 / 材料 / 堆叠」，用于定位拖放没反应。
+cfg_advmax,二级升级需先满级基础升级
+cfg_advmax_desc,开启后与原版一致：熔炉要把炉衬（9 颗金属锭）和电路（10 次）都升满，高级升级入口才会出现。另外一旦选定某条路线就锁死，不能再换。
+cfg_tooltip_detail,机器说明栏显示详细描述
+cfg_tooltip_detail_desc,关闭后机器说明栏只显示「高级模块 x/y」与已装模块名（完成红色 / 未完成灰色）；按住 Ctrl 再悬停可临时查看完整描述。
+cfg_lang,语言（本 mod）
+cfg_lang_desc,auto = 跟随游戏语言；系统语言为葡萄牙语时自动切到巴西葡语。也可强制指定某个语言码。
+cfg_ws_broken,废料客捎带坏机器
+cfg_ws_broken_desc,开启时保持原版拾荒者口径：问候后随机上柜坏警报器（必带）、坏熔炉（66%）或坏潮湿农场（33%），修复可正常使用。关闭后他只卖三种零件。
+adv_compact_slot,高级模块 {0}/{1}
+adv_compact_name,高级模块-{0}
+adv_compact_undone,-未完成
+aug_capture_name,改造人捕获器
+aug_capture_desc,R917 改造的捕获器。装入电池后，对准改造人激活，即可将其收押进营地名册。每次激活消耗 25 点能量。
+aug_capture_done,……目标已控制。正在移送至营地。
+aug_capture_notaug,……扫描结果：目标不具备改造体征。设备空转，能量已损耗。
+# ---- 杰克逊博士来访 + 博士的恩惠（v1.8.18） ----
+dr_tab,博士的升级
+dr_svc,博士的升级
+dr_bought,已购买
+dr_favor_row,杰克逊博士的恩惠
+dr_modular_title,模块化（熔炉）
+dr_modular_desc,熔炉可以再加装第二个高级模块：高级槽位由 0/1 变为 0/2。必须先把当前已选的高级模块升级完成，才能选择下一项。
+dr_thermal_title,热阶梯（熔炉）
+dr_thermal_desc,熔炉高级模块「热管理」的辐射范围由上下左右 4 格扩大为周围一圈 8 格（含斜角）。
+dr_card_name,博士的恩惠卡
+dr_card_desc,杰克逊博士留下的兑换券。双击使用可获得 500 点博士的恩惠，在王尔德电话里的博士栏目抵扣服务费用。
+dr_card_flavor,博士亲笔签名。不可兑换现金——大概吧。
+dr_card_consume_fail,恩惠卡未能消耗：请把卡收回自己的库存后再双击使用。
+jackson_v1,嘿。
+jackson_v2,我听说了你最近在改装机器。
+jackson_v3,我可以在你的机器上再加装一些更有趣的功能。
+jackson_v4,有需要的话，通过王尔德的电话联系我吧。
+wrack_storage,酒架：6×{0}（共 {1} 格）
+dr_favor_short,博士的恩惠不足：需要 {0}，现有 {1}。与杰克逊博士交易可获得（账单的 20%）。
+dr_pay_short,支付失败：需要 {0}，恩惠 + 信用点仅 {1}。
+dr_efficiency_title,效率全开（熔炉）
+dr_efficiency_desc,每台熔炉每晚额外工作 1 次。可与并行冶炼叠加。
+dr_deepclean_title,深度净化（水培）
+dr_deepclean_desc,完美内循环不再要求水质 ≥96%——只要有水就能生效。
+dr_nursery_title,保育装置（水培）
+dr_nursery_desc,巨大作物诱发器的健康值要求降到 90%——健康度 ≥90% 的作物也能产出巨大作物。
+dr_triple_title,三重打印模块（3D 打印机）
+dr_triple_desc,需已装多工位打印臂。其能耗 +100%，但每次打印在多工位打印臂的基础上再额外产出 1 件（合计 3 件）。
+dr_nano_title,纳米级打印（3D 打印机）
+dr_nano_desc,需已装微米级打印。其能耗 +100%，但武器成色 +2 档；枪械六项属性 +10。
+dr_instant_title,即刻编辑（DNA 编辑器）
+dr_instant_desc,编辑器窗口出现「立即工作」按钮——点击立刻进行一次工作。按次结算耗电：从机器电池扣 当前机器耗电×5，电量不足则点击无效（平时不额外耗电）。
+dr_instant_btn,立即工作
+dr_instant_btn_desc,立刻进行一次编辑工作。消耗电池电量 = 当前机器耗电×5；电量不足则无法使用。
+dr_instant_power,即刻编辑所需电量：{0}
+dr_malware1_title,恶意软件 I（警报系统）
+dr_malware1_desc,杰克逊在上传给治安部的摄像头中安装了恶意应用：犯罪证据 -15%。
+dr_malware2_title,恶意软件 II（警报系统）
+dr_malware2_desc,恶意应用开始深度清理档案：犯罪证据 -25%（需先购买恶意软件 I；取最高档生效）。
+dr_malware3_title,恶意软件 III（警报系统）
+dr_malware3_desc,彻底拿下治安部档案库的根权限：犯罪证据 -35%（需先购买恶意软件 II；取最高档生效）。
+testgun_name,测试升级枪
+testgun_desc,开发者测试工具。第一次拖到机器上拉满全部初级升级；右键选定高级模块后再次拖放即完成选定模块。测试枪不会被消耗。
+# ---- 改造人危机后博士登门 + 改造人芯片改造器（v1.8.38） ----
+aug_reprog_name,改造人芯片改造器
+aug_reprog_desc,装入电池后对准改造人激活即可重写其脑内芯片，成功后立刻把人驱离并支付 300 点博士的恩惠。
+aug_reprog_done,……好了，数据都记下来了吗？那我先走了。
+aug_reprog_misuse,你用这玩意闪我干什么？
+aug_reprog_ok,改造成功，300恩惠点已入账。
+aug_reprog_harmless,一名改造体被无害化处理，危机值有所下降。
+r917_name,杰弗逊博士
+r917_enter,打扰了。改造人那件事，我想你已经见识过了。
+r917_v1,我把研究用的那台机器塞进了这么一个小盒子——改造人芯片改造器。
+r917_v2,对准改造人激活，它就能重写对方脑内的芯片，顺便替我记下改造体的研究数据。
+r917_v3,每改写成功一个，我付你 300 恩惠点，当场入账。
+r917_v4,它只能对着改造人用。
+r917_v5,每次激活需要一定电量，记得先给它装节电池。
+r917_v6,那就拜托你了。
+nm_blender_blade,乳化刀头
+nm_blender_stash,隐藏夹层
+nm_plate_titra,滴定仪
+nm_plate_filter,自动过滤装置
+nm_evap_perf,蒸发效率改良
+nm_evap_power,供电管加粗
+mat_scrap,废金属
+mat_fabric,韧棉织物
+mat_filter,过滤器
+chem_blade_gain,损耗率-{0}%（已装4个化学模块时改为产出+{1}%）
+chem_stash_req,电子元件×4、螺丝×8、废金属×8
+chem_stash_prog,{0}/{1} · {2}/{3} · {4}/{5}
+chem_stash_gain,机内物品视为走私者箱，治安官搜不出
+chem_titra_req,电子元件×8 + 普通化学品×6
+chem_titra_prog,电子元件 {0}/{1} · 化学品 {2}/{3}
+chem_titra_gain,置入的瓶子自动去除蛋白质与稳定剂
+chem_filter_req,韧棉织物×5 + 过滤器×5
+chem_filter_prog,{0}/{1} · {2}/{3}
+chem_filter_gain,置入的瓶子自动去除植物物质、碎屑、物理污染物、矿物质
+chemadv_source,源头改良
+chemadv_source_eff,压制所需有效成分降至 85%
+chemadv_clean,污染管控法
+chemadv_clean_eff,成品纯度阶级 +1 级（最高「实验室纯品」）
+chemadv_pack,精包装
+chemadv_pack_eff,压制消耗 ×4 原料，输出改为药盒
+pharmabox_dream_dust_name,迷梦粉尘 药盒
+pharmabox_nightmare_dust_name,噩梦粉尘 药盒
+pharmabox_caffeine_pill_name,咖啡因片 药盒
+pharmabox_zyanide_pill_name,氰化物片 药盒
+pharmabox_birth_control_pill_name,避孕药 药盒
+pharmabox_fanta_pill_name,芬太尼片 药盒
+pharmabox_pink_alt_injector_name,粉色注射剂 药盒
+pharmabox_desc,封装好的成品药盒，内含 4 份。
+pharmabox_open_full,没有空间取出药盒里的东西
+pharmabox_open_part,空间不足，只取出了一部分
+dr_sourcerefine2_title,源头改良 II
+dr_sourcerefine2_desc,成型机压制同一份成品只需要 75% 的有效成分（与「源头改良」模块取最低值，不叠乘）
+dr_labstd_title,实验室标准
+dr_labstd_desc,纯度 ≥99.9% 的成品额外获得「实验室高纯」标签（+185%）。
+chemadv_source_desc,压制同一份成品所需的有效成分降到 85%
+chemadv_clean_desc,压制出的成品纯度阶级 +1 级，最高「实验室纯品」
+chemadv_pack_desc,压制消耗 ×4 的原料，输出改为药盒（内含 4 份，盒价 = 药品原价值 ×5）
+chem_blade_gain2,内容物增加：5%
+dr_labhigh_cond,实验室高纯
+dr_supplier_tab,供应商
+dr_wholesaler_title,零件批发商人
+dr_wholesaler_desc,博士把他认识的一位批发各种零件的废料客介绍给你。废料客每周周二准时拜访，一周只来一次；每次固定出售：电子元件×6、线缆×2、3D打印耗材
+dr_wholesaler_credit,本mod功能与创意来自 dzyj，向原作者 crong 致敬
+mat_filter,滤水器
+mat_filter_adv,高级滤水器
+nm_feed_box,饲料箱扩建
+feed_box_gain,每件容量 +{0}kJ（{1} → 最高 {2} kJ），升满后投入区长宽各 +3（9×7）
+nm_feed_refine,饲料精加工
+feed_refine_gain,投入食品获得的热量 +{0}%
+nm_ras_expand,鱼塘额外扩建
+ras_expand_gain,每件鱼缸长宽各 +1，上限 5
+nm_ras_selfclean,水体自洁设备
+ras_clean_req,线缆×12 + 滤水器×5 + 高级滤水器×1（放满才生效）
+ras_clean_prog,线缆 {0}/{1} + 紫外线灯 {2}/{3} + 普通化学品 {4}/{5}
+ras_selfclean_gain,水体不会减少、水质不会变差
+ras_selfclean_short,水体自洁设备：{0}（{1}）
+nm_ras_nightlight,夜间光系统
+ras_light_req,电子元件×4 + 3D打印材料×6 + 金属锭×2（放满才生效）
+ras_light_prog,电子元件 {0}/{1} + 打印材料 {2}/{3} + 金属锭 {4}/{5}
+ras_nightlight_gain,过夜时鱼吃下的食物 ×1.{0}
+ras_gate,需先升满原版全部升级（宽度 4/4、高度 4/4、省电 12/12）才能进行本 mod 的升级
+dr_oxygenwater_title,极富氧化水体
+dr_oxygenwater_desc,博士改良了缸里的水体含氧量。鼠鼠可以进入水养殖缸（窒息→适应期→水呼吸），肉食鱼会吞食超过年限的鼠鼠并按比例增重，体型达标后长得更大，鲟鱼切块时能切出整块大肉
+ras_stage_suffocate,窒息
+ras_stage_adapt,适应期
+ras_stage_water,水呼吸
+ras_eat_report,{0}吞食掉了一只鼠鼠，体重增加了 {1}g
+ras_fish_fallback,肉食鱼
+sturgeon_meat_large_name,鲟鱼肉（大）
+sturgeon_meat_large_desc,整扇切下来的鲟鱼大块肉。脂肪厚，煎着吃。
+sturgeon_meat_large_flavor,切面像大理石，还是一大块。
+adv_inprogress,升级中
+nm_ras_watercap,水量扩容（废金属）
+ras_watercap_gain,每件水量上限 +{0}ml（当前 {1}ml）
