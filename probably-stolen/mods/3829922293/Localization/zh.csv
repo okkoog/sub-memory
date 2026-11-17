@@ -1,0 +1,90 @@
+safety,拾荒受伤风险降低：{0}%
+loot,额外材料几率：{0}%
+max,已达到当前设置上限（{0}%）
+upgrade,可使用{0}进行升级。
+preview,批量升级：{0}% → {1}%（消耗{2}个{3}，多余保留）
+upgrade_with_tool,拖入另一件同类工具升级，每件提升5个百分点。
+tool_upgrade_preview,同类工具升级：{0}% → {1}%（投入{2}件{3}）
+upgrade_with_tool_1,螺丝刀：使用同类工具升级
+upgrade_with_tool_2,剪线钳：使用同类工具升级
+upgrade_with_tool_3,等离子切割机：使用同类工具升级
+upgrade_with_tool_4,精密拆解镊：使用同类工具升级
+upgrade_with_tool_5,耗材回收钳：使用同类工具升级
+upgrade_with_tool_6,枪械拆解工具盒：使用同类工具升级
+upgrade_with_tool_help,开启时使用另一件同类工具升级。关闭时使用{0}升级。
+junk,垃圾
+nuts_metal,金属螺丝
+wire,线缆
+scrap_metal,废金属
+common_electronic,普通电子元件
+tweezers_name,精密拆解镊
+tweezers_desc,用于拆取细小的电子零件。随身携带，拾荒时有概率额外获得普通电子元件。（同类工具只取最高效果。）
+
+cap_0,手电筒：最高受伤风险减免（%）
+cap_1,螺丝刀：最高额外掉落概率（%）
+cap_2,剪线钳：最高额外掉落概率（%）
+cap_3,等离子切割机：最高额外掉落概率（%）
+cap_4,精密拆解镊：最高额外掉落概率（%）
+cap_help,点击应用后生效。手电筒最低50%，其余工具最低10%。已升级进度保留，调高上限后恢复。默认100%。
+
+
+
+printer_plastic,3D打印耗材
+filament_pliers_name,耗材回收钳
+filament_pliers_desc,用于回收废弃设备中的打印耗材。随身携带，拾荒时有概率额外获得3D打印耗材。（同类工具只取最高效果。）
+cap_5,耗材回收钳：最高额外掉落概率（%）
+
+filament_pliers_flavor,废料堆里的塑料线头，也许还能派上用场。
+
+tweezers_flavor,细小的零件，总比整块废铁更难捡。
+gun_part,枪械零件
+gun_name,枪械拆解工具盒
+gun_desc,随身携带可在成功拾荒时额外获得枪械零件。同类工具只取最高效果。
+gun_flavor,生锈的枪里也许还有一枚好零件。
+cap_6,枪械工具盒：最高额外掉落概率（%）
+mask_name,化工回收面具
+mask_desc,安装滤罐后随身携带可在成功拾荒时额外发现普通与受管制化学用品。同类不叠加。右键可取下滤罐，所在背包需一格空位，工具箱需一个已解锁的空工具槽。
+mask_flavor,镜片擦干净了。该换的是滤罐。
+filter_name,替换滤罐
+filter_desc,拖到耗尽的化工回收面具上安装。全新滤罐支持三个实际使用的拾荒夜晚。取下后保留剩余次数，重新安装不会恢复寿命。
+filter_flavor,密封包装里的三晚余量。
+common_chemical,普通化学用品
+restricted_chemical,受管制化学用品
+filter_install,安装这枚滤罐后还可开启{0}个新的拾荒夜晚。
+filter_install_tonight,安装后可用到今晚结束。
+filter_loaded,滤罐尚可使用，暂时无需更换。
+filter_status,滤罐可用：剩余{0}个新夜晚（已启用的当晚可持续使用）。
+filter_empty,滤罐耗尽：更换滤罐后恢复化工材料搜索。
+chem_chances,普通化学用品：{0}% / 受管制化学用品：{1}%
+remove_filter,取下滤罐
+loose_filter_status,滤罐余量：{0}个新夜晚（已启用的当晚仍可使用）。
+loose_filter_empty,滤罐已耗尽，无法重新安装。
+enable_bonus,开启升级加成
+disable_bonus,关闭升级加成
+bonus_enabled,升级加成已开启（右键关闭后恢复初始10%）。
+bonus_disabled,升级加成已关闭：按初始10%计算；升级数值保留。右键可重新开启。
+loot_disabled_stored,当前额外材料概率：10%（升级加成已关闭；保留的升级概率：{0}%）
+
+enable_mask_bonus,开启面具额外拾荒
+disable_mask_bonus,关闭面具额外拾荒
+mask_bonus_enabled,面具额外拾荒已开启（需有效滤罐；右键可关闭）。
+mask_bonus_disabled,面具额外拾荒已关闭：不提供额外化学品；不会新增滤罐夜晚消耗，已消耗的次数不返还。
+
+tinkerer_saved_material,工匠特性触发：节省了 {0} × {1}！
+quick_move_no_backpack,请先装备随身背包，再使用快捷收纳。
+quick_move_backpack_full,背包没有可放入的位置，物品仍留在地面。
+quick_move_partial,背包空间不足，剩余 {0} 件物品仍留在地面。
+tool_upgrade_success,{0}升级成功：额外拾荒概率 {1}% → {2}%！
+tool_upgrade_safety_success,{0}升级成功：拾荒受伤风险减免 {1}% → {2}%！
+tool_upgrade_still_disabled,升级加成目前关闭；开启后生效，当前仍按初始10%计算。
+filter_missing,未安装滤罐。将可用滤罐拖到面具上安装。
+chem_upgrade,升级上限：普通 {2}% / 受管制 {3}%
+chem_upgrade_inactive,启用后掉率：普通 {0}%（最高 {2}%） / 受管制 {1}%（最高 {3}%）
+upgrade_with_mask,化工回收面具：使用同类面具升级
+upgrade_with_mask_help,默认使用对应化学用品。开启后投入另一只化工回收面具，两项概率各增加5个百分点，最高50%和10%。点击应用后生效。
+mask_upgrade_max,两项掉率均已升满。
+mask_upgrade_preview,使用一只面具升级：普通 {0}% → {1}% / 受管制 {2}% → {3}%
+mask_upgrade_with_material,拖入对应化学用品可升级。
+mask_upgrade_success,{0}升级：普通 {1}% → {2}% / 受管制 {3}% → {4}%
+mask_donor_filter,投入的面具被消耗时，已装滤罐也会消耗。可以先右键取下滤罐。
+mask_upgrade_disabled,面具目前已关闭。重新激活后才会使用升级后的掉率。

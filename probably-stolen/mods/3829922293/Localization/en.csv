@@ -1,0 +1,90 @@
+safety,Scavenging injury risk reduction: {0}%
+loot,Extra material chance: {0}%
+max,Current configured limit reached ({0}%)
+upgrade,Can be upgraded with {0}.
+preview,Batch upgrade: {0}% -> {1}% (consumes {2} {3}; excess is kept)
+upgrade_with_tool,Drag another copy of this tool onto it to gain 5 percentage points.
+tool_upgrade_preview,Tool upgrade: {0}% -> {1}% (using {2} × {3})
+upgrade_with_tool_1,Screwdriver: upgrade with matching tools
+upgrade_with_tool_2,Wire Cutter: upgrade with matching tools
+upgrade_with_tool_3,Plasma Cutter: upgrade with matching tools
+upgrade_with_tool_4,Precision Salvage Tweezers: upgrade with matching tools
+upgrade_with_tool_5,Filament Salvage Pliers: upgrade with matching tools
+upgrade_with_tool_6,Gunsmith Salvage Kit: upgrade with matching tools
+upgrade_with_tool_help,On: use another copy of this tool. Off: upgrade with {0}.
+junk,Junk
+nuts_metal,Metal Screws
+wire,Wire
+scrap_metal,Scrap Metal
+common_electronic,Common Electronic Component
+tweezers_name,Precision Salvage Tweezers
+tweezers_desc,A precision tool for salvaging small electronic parts. Carry while scavenging for extra common electronic components. Only the strongest carried pair applies.
+
+cap_0,Flashlight: maximum injury reduction (%)
+cap_1,Screwdriver: maximum extra loot chance (%)
+cap_2,Wire Cutter: maximum extra loot chance (%)
+cap_3,Welder: maximum extra loot chance (%)
+cap_4,Precision Tweezers: maximum extra loot chance (%)
+cap_help,Click Apply to save. Minimum: flashlight 50%; other tools 10%. Existing upgrades are preserved and restored when the limit is raised. Default 100%.
+
+
+printer_plastic,3D Printing Filament
+filament_pliers_name,Filament Salvage Pliers
+filament_pliers_desc,Recovers printing filament from discarded equipment. Carry while scavenging for extra 3D printing filament. Only the strongest carried pair applies.
+cap_5,Filament Pliers: maximum extra loot chance (%)
+
+filament_pliers_flavor,A loose strand in the scrap heap might still have a use.
+
+tweezers_flavor,The smallest parts are often the hardest to find.
+gun_part,Gun Part
+gun_name,Gunsmith Salvage Kit
+gun_desc,Carry while scavenging for extra gun parts after successful searches. Only the strongest carried kit applies.
+gun_flavor,Even a rusted gun might have one good part left.
+cap_6,Gunsmith Kit: maximum extra loot chance (%)
+mask_name,Chemical Salvage Respirator
+mask_desc,Fit a filter and carry while scavenging for common and restricted chemical supplies. Right-click to remove the filter. Leave a free cell in a backpack or an unlocked empty tool slot in the toolbox. Multiple masks do not stack.
+mask_flavor,The visor is fine. Replace the filters.
+filter_name,Replacement Filter
+filter_desc,Drag onto an exhausted Chemical Salvage Respirator. A new filter lasts three used scavenging nights. Removed filters retain their remaining life when installed again.
+filter_flavor,Three nights in a sealed package.
+common_chemical,Common Chemical Supplies
+restricted_chemical,Restricted Chemical Supplies
+filter_install,Install this filter with {0} new scavenging nights remaining.
+filter_install_tonight,Install this filter to use it for the rest of tonight.
+filter_loaded,The current filter is still usable.
+filter_status,Filter ready: {0} new nights left. A night already started remains covered.
+filter_empty,Filter exhausted. Fit a replacement to resume chemical salvage.
+chem_chances,Common chemicals: {0}% / Restricted chemicals: {1}%
+remove_filter,Remove filter
+loose_filter_status,Filter life: {0} new nights. A night already started remains covered.
+loose_filter_empty,Exhausted filter. Cannot be installed again.
+enable_bonus,Enable upgrade bonus
+disable_bonus,Disable upgrade bonus
+bonus_enabled,Upgrade bonus enabled (right-click to return to the base 10%).
+bonus_disabled,Upgrade bonus disabled: base 10% applies; upgrade level retained. Right-click to enable.
+loot_disabled_stored,Current extra material chance: 10% (upgrade bonus disabled; stored upgrade chance: {0}%)
+
+enable_mask_bonus,Enable respirator bonus
+disable_mask_bonus,Disable respirator bonus
+mask_bonus_enabled,Respirator bonus enabled (requires a usable filter; right-click to disable).
+mask_bonus_disabled,Respirator bonus disabled: no bonus chemicals or new filter-night charges; already spent charges are not refunded.
+
+
+tinkerer_saved_material,Tinkerer activated: saved {0} × {1}!
+quick_move_no_backpack,Equip a carried backpack before using quick transfer.
+quick_move_backpack_full,No suitable space in the backpack. The item remains on the ground.
+quick_move_partial,Backpack space is limited. {0} items remain on the ground.
+tool_upgrade_success,{0} upgraded: extra scavenging chance {1}% → {2}%!
+tool_upgrade_safety_success,{0} upgraded: scavenging injury risk reduction {1}% → {2}%!
+tool_upgrade_still_disabled,Upgrade bonus is disabled. Enable it to apply the upgrade; the base 10% still applies.
+filter_missing,No filter fitted. Drag a usable filter onto the respirator.
+chem_upgrade,Upgrade limits: common {2}% / restricted {3}%
+chem_upgrade_inactive,Chances when active: common {0}% (max {2}%) / restricted {1}% (max {3}%)
+upgrade_with_mask,Chemical salvage respirator: upgrade with a matching respirator
+upgrade_with_mask_help,Uses matching chemicals by default. Enable to use another respirator for +5 percentage points to both chances up to 50% and 10%. Click Apply to save.
+mask_upgrade_max,Both drop chances are fully upgraded.
+mask_upgrade_preview,Use one respirator: common {0}% -> {1}% / restricted {2}% -> {3}%
+mask_upgrade_with_material,Drag matching chemicals onto the respirator to upgrade it.
+mask_upgrade_success,{0} upgraded: common {1}% -> {2}% / restricted {3}% -> {4}%
+mask_donor_filter,If the donor respirator is consumed its filter goes with it. You can remove the filter first.
+mask_upgrade_disabled,The respirator is switched off. Reactivate it to use the upgraded chances.
