@@ -1,12 +1,14 @@
 # better_merchants - English strings
 shop_name_farm,Greenhouse
-shop_name_chem,Chem Supply
-shop_name_guns,Gun Shop
+shop_name_chem,Underground Chemist
+shop_name_guns,Arms & Ammo
 shop_name_redimp,Red Imp Brewery
-shop_name_pharma,Pharmacy
+shop_name_pharma,Ashvin Clinic
 shop_name_mining,GP Mining
 shop_name_water,Water Shop
+shop_name_market,Gutter Market
 shop_name_stash,Unmarked Stall
+shop_name_hypertech,Hypertech Den
 config_first_batch_discount,First batch discount
 config_first_batch_discount_tip,"The investor's thank-you visit sells its first batch 25% cheaper."
 invest_title_water,Water Trade Investment
@@ -45,18 +47,17 @@ visit_gunsmith_where,"Soon you will find most of my goods at {0}."
 night_shop_title_brewer,Red Imp Night Shop
 night_shop_title_miner,GP Mining Night Shop
 night_shop_title_chem_supplier,Ashish's Night Shop
-night_shop_title_pharma,Pharmacy Night Shop
+night_shop_title_pharma,Ashvin Clinic Night Shop
 night_shop_gift_brewer,one case of Red Imp beer
 night_shop_gift_miner,6 common ore
 night_shop_gift_chem_supplier,8 dream dust
 night_shop_gift_pharma,5 pink injectors
-night_shop_desc_brewer,"Their courier also keeps a night shop on the transit screen, selling Red Imp beer at full price, plus raw goods for brewing, and Brewing & Winemaking's machines when it is installed. Comes with {0} as a welcome gift."
+night_shop_desc_brewer,"Their courier also keeps a night shop on the transit screen, selling Red Imp beer at full price, plus yeast and a couple of water rations, and Brewing & Winemaking's machines when it is installed. Comes with {0} as a welcome gift."
 night_shop_desc_miner,"Their courier also keeps a night shop on the transit screen, selling ore at full price, plus scrap, wire and tools (the tools wait for the broken-machine story step). Comes with {0} as a welcome gift."
 night_shop_desc_chem_supplier,"Their courier also keeps a night shop on the transit screen, selling dream dust at full price, plus chemistry goods and glassware (the chemistry gear and most of the glassware wait for the retired chemist upgrade). Comes with {0} as a welcome gift."
 night_shop_desc_pharma,"Their courier also keeps a night shop on the transit screen, selling injectors at full price, plus medicine and bandages. Comes with {0} as a welcome gift."
 shareholder_shop_discount,Also {0}% off everything at their night shop.
 stash_upgrade_title,A Stall With No Sign
-stash_upgrade_desc,"A thief keeps a stash of rare finds at a makeshift stall under a staircase, with no sign. It opens on {0} and {1} nights only, from the transit screen: a pristine tape you are missing, a sealed supply crate, a keycard or a rare machine module, and some of the most valuable goods around, at twice their value. A new stash every night it opens."
 stash_upgrade_desc_every_night,"A thief keeps a stash of rare finds at a makeshift stall under a staircase, with no sign. It opens every night, from the transit screen: a pristine tape you are missing, a sealed supply crate, a keycard or a rare machine module, and some of the most valuable goods around, at twice their value. A new stash every night it opens."
 config_section,General
 config_title,Better Merchants
@@ -64,17 +65,101 @@ config_shop_theft,Shop thefts
 config_shop_theft_tip,"Now and then thieves raid a shop for a night and take part of its stock, as they do at the commissary. Off: no new thefts, and a running one stops thinning the counters."
 config_shop_closure,Weekly shop closing
 config_shop_closure_tip,"Each shop is closed one day a week, a different day for each shop, as Dr. Jackson is on Mondays. Off: no new closings; one already running ends with its day."
-config_stash_nights,Unmarked Stall keeps its nights
-config_stash_nights_tip,On: open Friday and Saturday nights only. Off: open every night.
 config_night_shops_via_intro,Night shops open with the first upgrade
 config_night_shops_via_intro_tip,"On: buying a supplier's first upgrade opens its night shop, and the Night Shop upgrade is not offered. Off: the Night Shop is its own Wild upgrade before Shareholder, and a shop opened by the first upgrade closes until you buy it."
 config_difficulty_markup,Difficulty markup
 config_difficulty_markup_tip,"Night shops charge the markup your difficulty sets where the game sells the same goods: a retired trader's goods carry his markup, goods that moved off Dr. Jackson's counter carry his. Supplier goods carry none, as on the phone. Off: base prices."
+config_jackson_goods_move,Shops take over Dr. Jackson's goods
+config_jackson_goods_move_tip,"On: the goods that moved to an open shop leave Dr. Jackson's counter and his store visit, as the shops sell them, and stay off even on the day that shop is closed. Off: he sells his full stock as in the game, and the shops still sell the same goods. Other mods' goods have their own setting in Auto-stock. Applies from his next arrival of stock."
+config_vanilla_visits,Traders still visit the store
+config_vanilla_visits_tip,"On: retired traders keep their weekly store visits and the Hypertech Smuggler visits as in the game, with his paid service. Off: they sell only at their night shops."
 event_theft_title,Theft
 event_theft_desc,"Thieves got into the stockroom overnight."
 event_theft_effect,"About {0}% of the stock is gone"
 event_closure_title,Closed today
 event_closure_desc,"The shop is closed for the day. It keeps this weekday every week."
+stash_upgrade_desc_nights,"A thief keeps a stash of rare finds at a makeshift stall under a staircase, with no sign. It opens on one or two random nights a week, from the transit screen: a pristine tape you are missing, a sealed supply crate, a keycard or a rare machine module, and some of the most valuable goods around, at twice their value. A new stash every night it opens."
+stash_event_tonight_desc_last,Gone by morning. Back next week.
+den_event_closed_title,Closed
+den_event_closed_desc,The smuggler is out of town. Next open: {0}.
+config_rare_nights,Rare shops keep their nights
+config_rare_nights_tip,"On: the Unmarked Stall opens on one or two random nights each week, the Hypertech Den on Friday and Saturday nights. Off: both open every night."
+config_fire_sales,Fire sales
+config_fire_sales_tip,"Now and then a shop clears its shelves for a night: everything 25% cheaper. Never at the Unmarked Stall. Off: no new fire sales, and a running one stops applying."
+config_shop_specials,Shop specials
+config_shop_specials_tip,"Now and then a shop has a good night of its own, such as a Seed Swap at the Greenhouse or Happy Hour at Red Imp: one kind of goods cheaper or in larger supply. Off: no new specials, and a running one stops applying."
+config_shop_troubles,Shop troubles
+config_shop_troubles_tip,"Now and then a shop has a bad night of its own, such as a Blight Scare at the Greenhouse or a Cave-In at GP Mining: one kind of goods missing, scarce or more expensive. Off: no new troubles, and a running one stops applying."
+config_price_hikes,Price hikes
+config_price_hikes_tip,"Now and then a supplier jacks up the rates for a night: everything at that shop 25% more expensive. Never at the Unmarked Stall. Off: no new price hikes, and a running one stops applying."
+event_fire_sale_title,Fire Sale
+event_fire_sale_desc,Everything must go tonight.
+event_fire_sale_effect,Everything {0}% cheaper
+event_price_hike_title,Price Hike
+event_price_hike_desc,The supplier jacked up the rates.
+event_price_hike_effect,Everything {0}% more expensive
+event_seed_swap_title,Seed Swap
+event_seed_swap_desc,Growers traded their spare seeds in.
+event_seed_swap_effect,Seeds {0}% cheaper
+event_ammo_surplus_title,Ammo Surplus
+event_ammo_surplus_desc,A crate of rounds came in that nobody ordered.
+event_ammo_surplus_effect,{0}% more ammo in stock
+event_ammo_surplus_effect2,Ammo {0}% cheaper
+event_filter_restock_title,Filter Restock
+event_filter_restock_desc,A shipment of filters finally arrived.
+event_filter_restock_effect,"{0}% more filters, tablets and test strips"
+event_fresh_catch_title,Fresh Catch
+event_fresh_catch_desc,The tanks are full tonight.
+event_fresh_catch_effect,{0}% more fish and roe
+event_happy_hour_title,Happy Hour
+event_happy_hour_desc,The beer is flowing cheap tonight.
+event_happy_hour_effect,Beer {0}% cheaper
+event_good_batch_title,Good Batch
+event_good_batch_desc,The last cook came out clean and plentiful.
+event_good_batch_effect,{0}% more chemistry goods
+event_short_dated_meds_title,Short-Dated Meds
+event_short_dated_meds_desc,"Close to the date. Still good, mostly."
+event_short_dated_meds_effect,Medicine and bandages {0}% cheaper
+event_rich_vein_title,Rich Vein
+event_rich_vein_desc,The shaft hit a rich seam.
+event_rich_vein_effect,{0}% more ore
+event_hot_goods_title,Hot Goods
+event_hot_goods_desc,The fence wants these gone before morning.
+event_hot_goods_effect,Markup halved
+event_fresh_shipment_title,Fresh Shipment
+event_fresh_shipment_desc,A new load came off the docks.
+event_fresh_shipment_effect,Twice the usual goods
+event_blight_scare_title,Blight Scare
+event_blight_scare_desc,Inspectors pulled the seed trays.
+event_blight_scare_effect,No seeds tonight
+event_patrol_sweep_title,Patrol Sweep
+event_patrol_sweep_desc,The guns went under the floor till the patrol passes.
+event_patrol_sweep_effect,No guns tonight; ammo and knives stay
+event_dry_spell_title,Dry Spell
+event_dry_spell_desc,The upper levels are hoarding filters.
+event_dry_spell_effect,"Filters, tablets and test strips {0}% more expensive"
+event_die_off_title,Die-Off
+event_die_off_desc,A bad tank killed half the stock.
+event_die_off_effect,{0}% fewer fish and roe
+event_sour_batch_title,Sour Batch
+event_sour_batch_desc,The last batch went off and was poured out.
+event_sour_batch_effect,No single beers tonight
+event_lying_low_title,Lying Low
+event_lying_low_desc,The chemist only brought what fits in a coat.
+event_lying_low_effect,{0}% fewer chemistry goods
+event_supply_audit_title,Supply Audit
+event_supply_audit_desc,Auditors counted the injectors.
+event_supply_audit_effect,No injectors tonight
+event_cave_in_title,Cave-In
+event_cave_in_desc,The shaft is shut; little ore came up.
+event_cave_in_effect,{0}% less ore
+event_cave_in_effect2,Ore {0}% more expensive
+event_heats_on_title,Heat's On
+event_heats_on_desc,The fence left the hot pieces at home.
+event_heats_on_effect,No keycard or module tonight
+event_customs_crackdown_title,Customs Crackdown
+event_customs_crackdown_desc,Bribes went up at the dock.
+event_customs_crackdown_effect,Smuggler's markup {0}% higher
 stash_event_closed_title,Closed
 stash_event_closed_desc,The spot seems completely empty.
 stash_event_tonight_title,In town tonight
@@ -82,7 +167,9 @@ stash_event_tonight_desc,Gone by morning. Next open: {0}.
 config_section_auto_stock,Auto-stock
 config_section_auto_stock_mods,Auto-stock: mods
 config_auto_stock,Sell other mods' items
-config_auto_stock_tip,"Shops also sell one of each fitting item other mods add (guns at the Gun Shop, seeds at the Greenhouse and so on), in room their own stock leaves, a different pick each visit. A mod with its own stock tables keeps its items there. Off: own stock only."
+config_auto_stock_tip,"Shops also sell one of each fitting item other mods add (guns at Arms & Ammo, seeds at the Greenhouse, fish and animals at the Gutter Market and so on), in room their own stock leaves, a different pick each visit. A mod with its own stock tables keeps its items there. Off: own stock only."
+config_jackson_redirect,Move other mods' Dr. Jackson goods to the shops
+config_jackson_redirect_tip,"What other mods add to Dr. Jackson's counter sells at the shop that fits it instead (guns at Arms & Ammo, chemistry machines at Underground Chemist and so on), once that shop is open; on a day it is shut they stay off his counter and wait for its next night. Goods no shop fits, and those of a mod with its own stock tables, stay with him. Off: nothing of other mods' leaves his counter or store visit."
 config_auto_stock_budget,Other mods' items: counter space (%)
 config_auto_stock_budget_tip,"The most of a shop's counter that other mods' items may take, after the shop's own goods. A theft cuts it like the rest of the stock."
 config_auto_stock_price_cap,Other mods' items: price limit (%)
@@ -90,7 +177,7 @@ config_auto_stock_price_cap_tip,Other mods' items are worth at most this percent
 config_auto_stock_type,Auto-stock: {0}
 config_auto_stock_type_tip,"Off: no item of this type is auto-stocked, even one that also has another type. Documents, machines and modules are off by default."
 config_auto_stock_mod,Auto-stock from {0}
-config_auto_stock_mod_tip,Off: none of this mod's items is auto-stocked. Does nothing for a mod that sells through its own stock tables.
+config_auto_stock_mod_tip,"Off: none of this mod's items is auto-stocked, and what it puts on Dr. Jackson's counter stays with him. Does nothing for a mod that sells through its own stock tables."
 item_type_weapon,weapons
 item_type_firearm,firearms
 item_type_ammunition,ammunition

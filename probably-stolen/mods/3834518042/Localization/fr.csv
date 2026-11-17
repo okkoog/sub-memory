@@ -1,9 +1,7 @@
 # better_merchants - French strings
 shop_name_farm,Serre
-shop_name_chem,Fournitures chimiques
 shop_name_guns,Armurerie
 shop_name_redimp,Brasserie Red Imp
-shop_name_pharma,Pharmacie
 shop_name_mining,GP Mining
 shop_name_water,Boutique d'eau
 shop_name_stash,Étal sans enseigne
@@ -45,7 +43,6 @@ visit_gunsmith_where,Bientôt vous trouverez la plupart de mes marchandises chez
 night_shop_title_brewer,Boutique de nuit Red Imp
 night_shop_title_miner,Boutique de nuit GP Mining
 night_shop_title_chem_supplier,Boutique de nuit d'Ashish
-night_shop_title_pharma,Boutique de nuit de la pharmacie
 night_shop_gift_brewer,une caisse de bière Red Imp
 night_shop_gift_miner,6 minerais communs
 night_shop_gift_chem_supplier,8 poussières de rêve
@@ -56,7 +53,6 @@ night_shop_desc_chem_supplier,Leur coursier tient aussi une boutique de nuit sur
 night_shop_desc_pharma,Leur coursier tient aussi une boutique de nuit sur l'écran de transit : injecteurs au prix fort ainsi que des médicaments et des bandages. Livré avec {0} en cadeau de bienvenue.
 shareholder_shop_discount,Et {0} % de remise sur tout dans leur boutique de nuit.
 stash_upgrade_title,Un étal sans enseigne
-stash_upgrade_desc,"Un receleur garde une réserve de trouvailles rares sur un étal de fortune sous un escalier, sans enseigne. Il n'ouvre que les nuits de {0} et {1}, depuis l'écran de transit : une cassette qui vous manque, une caisse de fournitures scellée, une carte d'accès ou un module de machine rare, et quelques-uns des biens les plus précieux du coin, au double de leur valeur. Une nouvelle réserve à chaque nuit d'ouverture."
 stash_upgrade_desc_every_night,"Un receleur garde une réserve de trouvailles rares sur un étal de fortune sous un escalier, sans enseigne. Il ouvre chaque nuit, depuis l'écran de transit : une cassette qui vous manque, une caisse de fournitures scellée, une carte d'accès ou un module de machine rare, et quelques-uns des biens les plus précieux du coin, au double de leur valeur. Une nouvelle réserve à chaque nuit d'ouverture."
 config_section,Général
 config_title,Better Merchants
@@ -64,8 +60,6 @@ config_shop_theft,Vols en boutique
 config_shop_theft_tip,De temps en temps des voleurs pillent une boutique pendant une nuit et emportent une partie du stock comme ils le font à l'économat. Désactivé : plus de nouveaux vols et un vol en cours cesse de vider les comptoirs.
 config_shop_closure,Fermeture hebdomadaire
 config_shop_closure_tip,Chaque boutique est fermée un jour par semaine et ce jour varie selon la boutique : le lundi pour le Dr Jackson. Désactivé : plus de nouvelles fermetures ; une fermeture en cours se termine avec sa journée.
-config_stash_nights,L'étal sans enseigne garde ses nuits
-config_stash_nights_tip,Activé : ouvre uniquement les nuits du vendredi et du samedi. Désactivé : ouvre chaque nuit.
 event_theft_title,Vol
 event_theft_desc,Des voleurs sont entrés dans la réserve pendant la nuit.
 event_theft_effect,Environ {0} % du stock a disparu
@@ -86,7 +80,6 @@ config_auto_stock_price_cap_tip,Les objets des autres mods valent au plus ce pou
 config_auto_stock_type,Approvisionnement auto : {0}
 config_auto_stock_type_tip,Désactivé : aucun objet de ce type n'est approvisionné automatiquement même s'il possède aussi un autre type. Les documents ainsi que les machines et les modules sont désactivés par défaut.
 config_auto_stock_mod,Approvisionnement auto depuis {0}
-config_auto_stock_mod_tip,Désactivé : aucun objet de ce mod n'est approvisionné automatiquement. Sans effet pour un mod qui vend via ses propres tables de stock.
 item_type_weapon,armes
 item_type_firearm,armes à feu
 item_type_ammunition,munitions
