@@ -3,14 +3,12 @@
   <ID>eleanor_romance</ID>
   <Name>Eleanor Story Expand / 上层区的富家千金爱上在下层区开当铺的我：埃莉诺剧情扩展</Name>
   <Author>EleanorRomance Team</Author>
-  <ModVersion>1.13</ModVersion>
-  <Description>1.13 fixes the mother's household-goods visit: she now accepts both Household Good and Food instead of a hidden Nutrifruit-only exception, and the normal-branch text matches. Linked arrest bail/release scheduling now reuses only the native rescue eligibility and factories. The 1.12 harem bracelet fix, 1.11 portrait selector, 1.10 voice pass and earlier entry, hit-area and portrait-compatibility fixes remain. Simplified Chinese / English. 1.13 修复母亲的日用品来访：改为同时接受日用品和食物，移除隐藏的营养果特例，普通分支台词同步；被捕保释/释放调度只复用原生救援资格与工厂。保留 1.12 手镯修复、1.11 立绘选择、1.10 voice pass 与更早的入线、点击区、立绘兼容修复。简体中文 / English。</Description>
-  <GameVersions>
-    <Version>0.46</Version>
-    <Version>0.46D</Version>
-    <Version>1.0.0.13</Version>
-    <Version>1.0.0.14</Version>
-  </GameVersions>
+  <ModVersion>1.14</ModVersion>
+  <Description>1.14 makes game version strings non-gating: patch updates such as 1.0.0.15 keep loading instead of pausing existing saves, and the manifest version metadata is empty so the mod menu no longer shows a version-mismatch warning. The 1.13 mother household-goods and bail scheduling fixes, 1.12 harem bracelet fix, 1.11 portrait selector, 1.10 voice pass and earlier entry, hit-area and portrait-compatibility fixes remain. Simplified Chinese / English. 1.14 取消按游戏版本号停用剧情：1.0.0.15 等补丁更新后会继续加载，不再中断已有存档；manifest 版本元数据清空，模组菜单不再显示版本不匹配提示。保留 1.13 母亲日用品交易与保释调度修复、1.12 手镯修复、1.11 立绘选择、1.10 voice pass 与更早的入线、点击区、立绘兼容修复。简体中文 / English。</Description>
+  <!-- Empty on purpose: the mod does not gate on the game version string,
+       and a listed version that does not cover the running build is shown as
+       a red warning in the mod menu. -->
+  <GameVersions />
   <Prerequisites />
   <Assemblies>
     <Assembly>EleanorRomance.dll</Assembly>

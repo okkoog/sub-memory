@@ -3,9 +3,15 @@
 
 《深空当铺：可能是偷的 / Probably Stolen》Eleanor 个人剧情线重制 MOD。
 
-- 游戏版本：1.0.0.14（public 与 open_beta 当前为同一构建；同时保留 1.0.0.13 / 0.46D 兼容）
-- MOD版本：1.13
+- 游戏版本：1.0.0.15（当前 public/open_beta 构建）；版本号只写入日志，不再按游戏更新停用剧情。0.46D / 1.0.0.13 / 1.0.0.14 继续兼容。
+- MOD版本：1.14
 - 语言：简体中文 / English（剧情与 UI 均已翻译）
+
+## 1.14：游戏版本更新不再停用剧情
+
+- 之前 `VersionGate` 使用精确版本白名单；游戏每次更新（如 1.0.0.14 → 1.0.0.15）都会让剧情、物品和开局特性整体停用，玩家会看到进度中断。
+- 现在 `Application.version` 只用于日志，不再决定是否运行；MOD 默认在所有游戏补丁上继续加载。兼容性由编译基线、Harmony 补丁安装结果和运行日志确认，存档结构由 `RomanceState.IncompatibleSave` 单独保护。
+- 旧存档数据不会被删除或改写；游戏更新后继续使用原章节进度。
 
 ## 1.13：母亲日用品交易与保释调度修复
 
@@ -524,7 +530,7 @@ pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Sto
 
 ## 兼容与限制
 
-- 目标版本 1.0.0.14（同时保留 1.0.0.13 / 0.46D 兼容）。版本不匹配时剧情补丁停用，但不会删除 MOD 存档数据。
+- 不再按游戏版本号停用剧情：`Application.version` 只记录日志；兼容性由编译基线、Harmony 补丁结果和运行日志确认。存档结构不兼容时仍由 `IncompatibleSave` 暂停并保留数据。当前已在 1.0.0.15 构建加载并应用 38 个 Harmony 补丁。
 - Modding API 安全规则（空能力清单、禁止 threads/反射/文件/网络用法、正式版优先的编译基线）见 [`docs/MODDING_SECURITY_COMPATIBILITY.md`](docs/MODDING_SECURITY_COMPATIBILITY.md)。
 - 选择性复用原版 Eleanor 保释调度，桥接层隔离其他原版访客并接回重制章节；谢礼放置拦截只在本 MOD 同步调用原版奖励动作时生效。保留立绘和结束界面的补丁；拾荒协助使用原版地点事件接口。
 - 与其他修改 Eleanor 调度的 MOD 可能冲突；启动日志会记录状态。
