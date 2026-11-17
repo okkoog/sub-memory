@@ -1,0 +1,80 @@
+name: Compare FRE Harmony IL (temporary diagnostic)
+on:
+  push:
+    branches: [diagnostics/fre-harmony-20261117]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download versioned FRE DLLs from this repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          p=probably-stolen/mods/3828971731/FactionReputationExpansion.dll
+          curl -fLSs --retry 3 --max-time 90 "https://raw.githubusercontent.com/okkoog/sub-memory/b9e7a68caffa49d5116fff86db5137dd4e4d993c/$p" -o fre-1.5.6.dll
+          curl -fLSs --retry 3 --max-time 90 "https://raw.githubusercontent.com/okkoog/sub-memory/f3d5b447267a54f28ccf46ac89921bb5caf7905e/$p" -o fre-1.5.8.dll
+          sha256sum fre-1.5.6.dll fre-1.5.8.dll
+          ls -lh fre-*.dll
+      - name: Read assembly metadata and actual IL method references
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console --framework net8.0 --name FreAudit --no-restore
+          dotnet add FreAudit package Mono.Cecil --version 0.11.6
+          cat > FreAudit/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.Collections.Generic;
+          using Mono.Cecil;
+          using Mono.Cecil.Cil;
+          class Program {
+            static IEnumerable<TypeDefinition> Types(IEnumerable<TypeDefinition> types) {
+              foreach(var t in types) {
+                yield return t;
+                foreach(var n in Types(t.NestedTypes)) yield return n;
+              }
+            }
+            static void Main(string[] args) {
+              foreach (var f in args) {
+                using var a = AssemblyDefinition.ReadAssembly(f, new ReaderParameters { InMemory = true });
+                Console.WriteLine("========== " + f + " ==========");
+                Console.WriteLine("Assembly = " + a.Name.FullName);
+                Console.WriteLine("REFERENCES " + string.Join(", ", a.MainModule.AssemblyReferences.Select(r => r.FullName)));
+                var all = Types(a.MainModule.Types).ToList();
+                Console.WriteLine("Types = "+all.Count);
+                var found = new List<string>();
+                foreach (var t in all) {
+                  foreach (var m in t.Methods) {
+                    if (!m.HasBody) continue;
+                    var instructions=m.Body.Instructions;
+                    bool target=t.FullName.Contains("ThiefCrate",StringComparison.OrdinalIgnoreCase) ||
+                      m.Name.Contains("ReorderStock",StringComparison.OrdinalIgnoreCase);
+                    for(var i=0;i<instructions.Count;i++) {
+                      var ins=instructions[i];
+                      if (ins.Operand is MethodReference mr &&
+                          (mr.Name.Contains("LoadsConstant",StringComparison.OrdinalIgnoreCase) ||
+                           mr.FullName.Contains("CodeInstructionExtensions",StringComparison.OrdinalIgnoreCase))) {
+                        Console.WriteLine("HARMONY_REFERENCE IN "+m.FullName);
+                        Console.WriteLine("  IL_"+ins.Offset.ToString("x4")+" "+ins.OpCode+" "+mr.FullName);
+                        for(var j=Math.Max(0,i-5);j<=Math.Min(instructions.Count-1,i+5);j++)
+                          Console.WriteLine("    "+instructions[j]);
+                        found.Add(m.FullName+" => "+mr.FullName);
+                      }
+                    }
+                    if (target) {
+                      Console.WriteLine("TARGET_METHOD "+m.FullName+" IL_COUNT "+instructions.Count);
+                      for(var i=0;i<Math.Min(instructions.Count,500);i++) Console.WriteLine("  "+instructions[i]);
+                    }
+                  }
+                }
+                Console.WriteLine("TOTAL HARMONY REFERENCES "+found.Count);
+                if(found.Count==0) Console.WriteLine("NO CALL to LoadsConstant/CodeInstructionExtensions found in any method body");
+                Console.WriteLine("========== END ==========");
+              }
+            }
+          }
+          CS
+          dotnet run --project FreAudit -- fre-1.5.6.dll fre-1.5.8.dll
