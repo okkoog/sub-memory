@@ -942,3 +942,117 @@ again just a reminder: please keep this discussion of the modding dispute focuse
 ## 20. 누적 기록 이력 추가
 
 - **6차 기록 (2026-11-18):** \`Inquiry: Modding Dispute\` 스레드 2026-11-17 22:54~23:20 발췌 추가. Victor가 제출한 xuxu 댓글 왕복, 의존성·호환 패치 해명, Steam 부정 평가, 중국어 관용구와 명시적 위협 문구의 차이, 증거 문서의 SHA-256 중복을 구분해 기록.
+
+
+---
+
+## 21. 조사 스레드 후반: 2026-11-17 23:21 ~ 2026-11-18 11:14 (사용자가 제공한 기록의 마지막)
+
+> **출처:** 사용자가 붙여넣은 \`Inquiry: Modding Dispute\` 스레드 대화 및 함께 첨부한 스크린샷 4장. 복사본에서 \`어제\`는 2026-11-17, 오전 12시 이후는 2026-11-18로 해석했다. 해당 시각의 시간대는 미확인. **기록이 끝난다는 것은 사용자가 제공한 자료의 끝이라는 뜻이며, 실제 분쟁이 종결됐다는 뜻은 아니다.**
+
+### 21.1 11월 17일 밤: 파일 복구와 자체 DLL 분석 자료
+
+| 시각 | 발언자 | 내용 | 확인 가능 범위 |
+|---|---|---|---|
+| 23:23~23:31 | Leo·Void Advisor·RIchardTAN 등 | 사과 요구와 국적 관련 언쟁이 이어지자 Leo가 반복 경고. 기술적 자료로 돌아갈 것을 요청 | 운영상 마찰. 코드 사용 의혹의 증거는 아님 |
+| **23:31~23:32** | **Victor** | “I didnt have the files anymore but all I could do is this for you all”이라며 이후 AI 분석 캡처를 제시 | **원본 구버전 배포물의 전수 코드 비교 자료가 아니라 화면에 제시된 분석 결과** |
+| 23:33~23:34 | Victor | 가능한 과거 이력을 복구 중이라고 설명. **0.10 파일을 복구해 Leo와 Amba에게 전달했다**고 다시 말함 | 실제 제공된 파일·해시·버전 검증은 이 기록에 없음 |
+| 23:34~23:36 | EikoocSun·Victor | AI 출력의 “원본 manifest가 23개의 제3자 DLL을 선언”한다는 문구를 질문하자, Victor는 “외부 생성자 참조이며 각 원작 모드를 별도로 실행해야 한다”라고 설명 | **의존성 선언과 파일 재배포는 서로 다름.** 실제 패키지 내 DLL의 존재 여부는 별도 검사 |
+| **23:37** | **Void Advisor** | “제3자 묶음 코드·에셋 제거, Brewing/Tobacco 별도 필요”라는 0.10.1 변경 로그가 과거 번들 사용을 시사한다고 지적 | **보존된 변경 로그 자체에 근거한 의혹**. 실제 포함 파일·허락 미확인 |
+| **23:37** | **Victor** | 처음에는 xuxu를 위한 호환 패치를 제작했으나 xuxu가 거절해 **제거하고 작동 방식을 수정했다**고 설명 | 설명이 정확하다면 원작 모드의 내부 파일 직접 번들과는 다른 경우. 그러나 0.10.1 표현과의 관계는 설명 부족 |
+| 23:39 | EikoocSun | AI가 “23개의 외부 DLL 재배포 허락 미확인”이라고 쓴 근거를 문제 삼음. **\`<Prerequisites>\`는 재배포 뜻이 아니다**라고 지적 | **중요한 기술적 반박**. manifest 의존성 목록과 복제·동봉은 엄격히 구분 |
+| **23:40** | **Lazy Duck** | 출처 자료가 과거 CorpPresence 제작자의 Neon 호환성 작업 중 보관된 기록이며, JSONL 보존 자료에 SHA-256을 함께 첨부했다고 설명 | 출처·해시 보존의 경위에 대한 발언. **해시는 제출 파일의 무결성 검증용이며 Steam 원본 사실관계의 독립 인증은 아님** |
+| 23:41~23:42 | Lord·EikoocSun | 문제는 당시 **실제로 제3자 파일을 배포 패키지에 포함했는지**이며, **DLL 안에 코드로 결합하는 것뿐 아니라 다른 사람 DLL을 배포 폴더에 함께 넣어도 동봉에 해당**한다고 설명 | 핵심 기술적 기준. 코드 내부 일치가 없어도 배포 파일 구성 문제는 남음 |
+| 23:54~23:59 | Lazy Duck·RIchardTAN | 사전 통보 없는 크레딧, 이후 의존성 지정·해제, 현재 GitHub에서 해당 구버전 확인 불가를 다시 주장. 신뢰성과 심사 담당자 자격 문제를 강조 | **의혹 제기 측 입장**. 별도의 바이너리 직접 비교 결과 아님 |
+
+### 21.2 Victor가 제출한 AI 분석 캡처의 정확한 내용과 한계
+
+캡처에 보이는 핵심 문장들은 다음과 같다.
+
+- “I found no evidence of substantial copied mod implementations inside our 0.9.0 DLL. The findings support external integration references.”
+- “The original manifest also declared 23 separate third-party DLLs. We haven’t verified permission to redistribute those, and some comparison versions differed.”
+- “In our 0.9.0 DLL, **71 tiny compiled methods matched after normalization**, each only **1–9 instructions**.”
+- “Across all 23 comparison mods, **no matching method bodies of 20 or more instructions** were found.”
+- “The controller’s **23 direct component calls are external constructor references**. It also contains component registration metadata. **No embedded component DLLs or implementation classes were identified by these checks**.”
+- 같은 결과는 스스로 "**the controller audit found no substantial copied code, but it cannot certify that the entire original release contained no unauthorized content**"라고 한계를 명시한다.
+
+**이 자료의 의미:**
+
+1. 캡처대로라면, **분석 대상인 0.9.0 컨트롤러 DLL**에서는 비교한 모드와 긴 메서드 본문의 뚜렷한 중복이 발견되지 않았다.
+2. **1~9 명령어짜리 짧은 메서드가 71건 일치**했다는 사실만으로 코드 도용을 입증할 수 없다. 반대로 길이 20 이상인 일치 메서드가 없다는 사실만으로 전체 패키지의 복제 문제가 없었다고 확정할 수도 없다.
+3. 캡처에서 발견된 **23개 외부 생성자 참조 또는 Prerequisites**는 **실제 타사 DLL 파일을 패키지에 함께 배포했다는 뜻이 아니다**. \`<Prerequisites>\`를 재배포로 본 AI 해석은 부정확할 수 있다.
+4. **검사 범위가 0.9.0 컨트롤러 DLL에 한정**되어 있고, 스크린샷 자체로는 AI가 어떤 실제 파일들을 읽었는지·비교 대상 버전이 적절한지·전체 배포 폴더를 검사했는지 검증할 수 없다.
+5. 따라서 해당 캡처는 **Victor에게 유리한 제한적 분석 결과**로 기록하되, **전면적 무혐의 증명서 또는 무단 번들 확정 증거로 사용하지 않는다**.
+
+또 다른 Steam 모바일 화면에는 **11월 4일 오전 12:57 게시 / 오전 6:55 업데이트**로 표시된 Victor의 모드가 **Brewing Expansion과 Tobacco Expansion을 Required items로 지정**한 모습이 있다. 이 캡처는 **그 시점의 의존성 설정**을 보여줄 뿐, 그 이전에 동일 기능·파일을 동봉했는지는 보여주지 않는다. 시간대 표시 기준은 캡처의 휴대전화/Steam 설정에 따르므로 다른 시각과의 단순 비교에 주의한다.
+
+### 21.3 11월 18일 새벽: 공개 사과와 추가 반론
+
+| 시각 | 발언자 | 내용 | 판단 |
+|---|---|---|---|
+| 00:04~00:06 | Victor | 32시간 잠을 못 잤으며 Leo/Amba에게 자신이 가진 자료를 모두 제공했다고 말함. 이어 **과거 발언이나 행동으로 불쾌감 또는 무례함을 느꼈다면 진심으로 사과한다**는 긴 글 게시 | **관계 회복을 위한 포괄적 사과**. 특정 코드 무단 복제·권리 침해를 인정한 사과로 확대 해석 금지 |
+| 00:10~00:11 | RIchardTAN·Victor | CorpPresence(회사 확장) 제작자는 자신의 코드가 오픈소스이며 정직한 사용을 바란다고 전해 줌. Victor는 자신의 코드도 공개되어 있고 이전에는 악성코드 공격 때문에 저장소가 잠겨 있었다고 설명 | 당사자 설명. 저장소의 공개·비공개 변경 이력은 독립 미검증 |
+| 02:14~02:21 | Lord·Lemocuber | Victor의 심사 담당자 배제 원인이 리뷰 폭격인지 논란 자체인지 상반된 설명. AI 생성물의 저작권에 관한 추측도 등장 | **상충하는 제3자 진술**. 운영진의 공식 결정문으로 취급 금지 |
+| **02:48** | **Victor** | 과거 스크린샷과 설명 변경만으로 은폐를 확정해서는 안 된다고 반박. 크레딧을 기재하는 것과 타인 저작물을 훔치는 것은 다른 일이라고 강조 | **본인의 방어 논리**. 크레딧 작성 시점 및 실물 구성의 의문은 남음 |
+| 03:04~03:10 | Gideon·Victor | **기술적 코드 리뷰가 선행되어야 한다**는 중재 의견. Victor는 AI 사용 사실을 공개했고 저장소도 검토를 위해 공개했다며 협조 의사를 재확인 | 근거에 기초한 판단에 대한 제안 |
+| **03:19** | **puberty** | 앞서 자신이 사용한 공격적 표현에 사과. 문제 제기 목적은 논란 중인 제작자를 심사 담당자로 지정해도 되는지에 있다고 밝힘 | 인신공격과 운영상 문제 제기를 구별한 사후 설명 |
+| **03:25** | **Victor** | 창작마당에서 악성코드·스파이웨어·키로거를 조사했지만 본인은 실제 승인·제재 권한이 없었고 Amba와 Tom에게 보고만 했다고 설명 | 본인 역할에 대한 상세 진술. Amba의 기존 'Victor는 아직 심사를 시작하지 않았다'는 말과 비교해 **직접 승인 권한과 자원봉사 조사 업무를 분리**할 필요 |
+| **03:30** | **Lazy Duck** | Victor가 자신에게 정중하고 친절했다고 평가. 좋은 의도를 믿지만 대중을 설득할 증거가 부족하다고 말함. 소통 부족으로 발생한 문제일 수도 있다고 설명 | **개인적 관계 개선 및 증거 부족을 동시에 인정**한 발언 |
+| **04:47** | **Lemocuber** | “I SEE WHERE THAT MISUNDERSTANDING IS COMING FROM / I'M CONVINCED YOU'RE INNOCENT”라고 갑자기 선언 | **결백 확신의 근거가 이 발췌본에 제시되지 않음**. 공식 무혐의 결론 아님 |
+
+### 21.4 **11월 18일 11:14 Pen의 직접 문제 제기 — 추가 당사자 증언**
+
+\`Pen\`은 **Pipette(피펫) 및 Self-Learning Machine(자가 학습 기계)** 제작자로 자신을 설명하며, 앞선 xuxu 외에 직접 영향을 받은 것으로 언급된 제작자 입장에서 네 가지 질문을 제출했다.
+
+1. 누군가는 Neon이 자신의 두 모드를 복제했다고 알렸지만, Victor는 단순한 **호환성 패치**였다고 설명했다. 그러나 Pen은 자신의 모드 변경이 너무 사소해 별도의 호환성 조치가 필요하다는 주장을 이해하기 어렵고, 현재 버전에서는 자신의 모드에 영향을 줄 만한 부분도 보지 못했다고 말했다.
+2. 실제 복제를 하지 않았다면 **왜 자신의 이름과 모드가 크레딧에 올라갔는지** 의문을 제기했다.
+3. Victor가 크레딧에 오른 제작자들에게 미리 허락을 구했다고 들었으나, **Pen 본인은 창작마당 메시지나 DM으로 그런 요청을 받은 적 없다고 진술**했다.
+4. 다른 이들에게서 얻은 정보에 따르면 **Blockbuster 모드에 대한 감사 문구는 2026-11-04에 게시**됐는데, Victor의 공개 GitHub에는 프로젝트가 **2026-11-05 16:39에 처음 Codex로 푸시**된 것으로 보인다고 말했다.
+
+**중요한 구분:** Pen의 발언은 **본인에게 직접 연락이 없었다는 1차 경험 진술**로서 중요하다. 하지만 '코드를 복제했다'는 내용은 **타인에게 전달받은 의혹**이고, 11월 4일과 5일의 시간차도 **Pen이 수집한 자료에 대한 진술**이므로 실제 GitHub 생성·푸시 기록과 원본 게시물 시각의 추가 대조 없이는 확정할 수 없다. **Pen이 이 내용을 올렸다는 사실이 곧 실제 코드 복제가 입증됐다는 뜻은 아니다.**
+
+**Pen 원문:**
+
+> I’m very confused; I’ve been receiving too much conflicting information.
+>
+> 1. Someone told me that Neon had copied my pipette and self-learning machine mods, but Victor later explained that Neon had merely created a patch to ensure compatibility with other mods. However, I cannot understand this, as the changes I made to my mods were so minor that I find it hard to imagine they would require specific compatibility measures. Furthermore, in the current version, I haven’t seen anything that could potentially affect my mods.
+> 2. If Vic hasn’t copied any of my mods, there seems to be absolutely no need to include a credit within the mod.
+> 3. From what I’ve heard from other modders, Vic said he’d contacted the authors listed in the credits to seek permission. However, as far as I’m concerned, I haven’t received any such requests, whether via Workshop messages or private messages.
+> 4. I tried to investigate this myself. Based on information provided by others, the text acknowledging the ‘Blockbuster’ mod was posted on 4 November 2026; however, on Vic’s public GitHub repository, the project was first pushed to Codex at 16:39 on 5 November 2026.
+>
+> I would appreciate a reasonable explanation to resolve these concerns.
+
+### 21.5 기타 정황 및 자료의 한계
+
+- **스레드 내부 논쟁은 11월 18일 오전 11:14 Pen의 공개 질문을 마지막으로 제공됨**. 공식 조사 결과나 Pen에게 돌아온 답변은 **아직 제공되지 않았다**.
+- **협박 논쟁:** 이전 구간에서 논의된 살해 협박 여부는 이 구간에서 새로 인증되거나 최종 결론이 내려지지 않았다.
+- **AI·저작권:** 일부 사용자가 AI로 작성한 코드에는 저작권이 없다고 단정하는 발언을 했으나, 이는 **분쟁 당사자의 작품 라이선스·제3자 에셋의 권리·법적 침해 여부를 판정할 근거가 아니다**.
+- **Vanilla Overhaul의 최근 구성 모드 삭제:** 최근 Food/Farming/Water/Drinks/Storage 공개 중단의 **실제 삭제 사유가 과거 분쟁 은폐라는 독립 증거는 이 스레드에도 없음**. 다만 삭제로 인해 사용자 세이브 피해가 발생했다는 다른 채널 이용자 진술은 앞의 15절에 기록돼 있다.
+
+## 22. 현재까지 전체 논란 요약 — 확정할 수 있는 내용과 미해결 쟁점
+
+| 구분 | 현재 자료가 뒷받침하는 내용 | 한계·보완 사항 |
+|---|---|---|
+| **과거 모드의 통합 표현** | 0.9.0 설명에는 외부 모드 제작자의 작업을 병합했다고 했고, 0.10.1 변경 로그에는 제3자 묶음 코드·에셋 제거가 기록됐다는 보존 자료가 있음 | **어떤 파일을 어느 버전에서 재배포했는지** 직접 바이너리 대조 미실시 |
+| **xuxu와의 협의** | Steam 댓글 캡처에는 Victor의 병합 문의, xuxu의 거절과 의존성/호환 패치 요청, Victor의 수락 발언이 표시됨 | **최초 배포 전 허락 여부 및 실제 이행 내용 미확인** |
+| **0.9.0 DLL 자체 분석** | Victor가 제시한 AI 결과에서는 길이 20명령어 이상인 일치 메서드가 없고, 71건의 짧은 공통 메서드만 확인됐다고 주장 | **실제 검사 파일·범위·재현 가능성 미확인**. 전체 배포 패키지에 관한 무혐의 입증 아님 |
+| **23개 외부 DLL 언급** | AI 캡처에는 23개의 외부 생성자·의존성 참조가 등장 | **의존성 참조 != 타인의 DLL을 자기 파일에 동봉**. 이 근거로 무단 재배포 단정 금지 |
+| **GitHub 구버전 공백** | 반대 측은 0.9.x/0.10.x 자료가 공개 저장소에 없다고 주장, Victor는 파일 복구를 시도했다고 말함 | **개별 커밋·이전 파일 실물 검증 전까지 공백은 제기된 의혹** |
+| **Pen의 본인 증언** | Pen은 자신에게 **사전 연락이 없었다**고 말했고, 왜 크레딧에 포함됐는지 설명을 요청 | 직접적인 연락 부재 진술. 다른 제작자 전원에게 연락하지 않았다는 사실을 의미하지 않음 |
+| **창작마당 심사 담당자 임명** | Amba는 Victor의 심사 참여를 조사 기간 보류한다고 밝힘. Victor는 자신이 신고·점검만 했고 심사 권한은 없었다고 설명 | **심사 권한·조치에 관한 당사자 설명의 범위 구분 필요** |
+| **위협·국적 논쟁** | 일부 모욕적·비하적 발언은 실제 발췌에 존재, 당사자들이 공방 후 사과한 기록도 있음 | 위협의 원본 발신자·날짜 및 공개 스레드에 존재했는지 전수 확인 불가 |
+| **추가 삭제 모드와의 인과관계** | Vanilla Overhaul 여러 모듈 공개 중단과 이용자의 세이브 피해 호소가 있었음 | **저작권 논란을 감추려고 삭제했다는 가설은 아직 입증되지 않음** |
+| **최종 결론** | 2026-11-18 11:14까지의 제공 자료에는 Pen의 설명 요구가 마지막으로 기록됨 | **운영진 최종 조사 결과, 실제 코드 일치 검증, 관련 당사자 전원의 합의 또는 법적 판단은 없음** |
+
+### 22.1 현재의 분석 결론
+
+**분쟁이 발생한 이유 자체는 충분히 드러났다.** 원작자들은 **모드가 실제로 어떻게 참조·배포됐고, 왜 사전 통보 없이 크레딧에 등록됐으며, 그 과정에 대해 창작마당 심사 담당자로 예정된 인물을 신뢰할 수 있느냐**를 문제 삼는다. Victor는 **호환성·자체 구현 및 출처 표기**의 문제였고 무단 복제는 아니라고 부인한다.
+
+**현재 제시된 사진과 보존 자료는 두 입장을 완전히 판정하지 못한다.** 원작자와의 실제 접촉 사례(xuxu), 본인에게 접촉이 없었다는 직접 증언(Pen), 제거를 언급한 변경 로그, Victor의 제한적 DLL 분석 결과를 **함께** 고려해야 한다.
+
+**직접 증거의 가장 큰 공백은 당시 배포된 0.9.x의 폴더 전체 실물과 비교 대상 원본 모드 버전이다.** AI가 생성한 감사 문구, 타인의 저장소 추정, 욕설·협박 논쟁, 작성자에 대한 인상평만으로 저작권 침해 또는 결백을 단정하지 않는다.
+
+## 23. 누적 기록 이력 추가
+
+- **7차 기록 (2026-11-18):** \`Inquiry: Modding Dispute\` 스레드 2026-11-17 23:21~2026-11-18 11:14 자료까지 반영. Victor가 제출한 0.9.0 컨트롤러 AI 분석 결과, 외부 의존성 23건과 DLL 배포의 구분, 0.10 복구 발언, 사과와 당사자 간 관계 완화, Pen의 구체적 공개 질문, 전체 논란의 미해결 증거 공백을 추가.
+- **자료 범위 종료:** **사용자가 이번에 제공한 텍스트 기록은 Pen의 2026-11-18 11:14 발언에서 끝남.** 스레드 자체의 종료 여부 또는 공식 조사 결과는 확인되지 않음.
