@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>module_optimizer</ID>
+  <Name>自动摆放模组</Name>
+  <Author>local</Author>
+  <ModVersion>1.3.5</ModVersion>
+  <Description>在机器模组栏的右键菜单里加一个「自动摆放」：一键算出让机器加成最高的摆法，性能优先，其次品质，最后效率。按原版规则计算支援节点、接收器、顶装、侧装、负反馈。mod 设置里可选摆放模式：最优（默认）算出理论最优解，模组和节点摆满的机器要等几秒到十几秒；快速最多算 3 秒，与最优相差不超过 5%。可用本体的「撤销整理」撤回。机器放在机器区等容器里时，可用「自动摆放（含容器）」把该容器里直接放着的模组和节点一起挑选。右键菜单另有「品质优先」的两项，按品质 > 性能 > 效率来摆。</Description>
+  <GameVersions><Version>0.46D</Version></GameVersions>
+  <Prerequisites />
+  <Assemblies><Assembly>ModuleOptimizer.dll</Assembly></Assemblies>
+  <Capabilities />
+</Manifest>
