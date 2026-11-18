@@ -6,11 +6,11 @@ dsp_distributor_tag,Więcej cech: prawdopodobnie dziwak
 
 # Cechy startowe
 dsp_wanderlust_name,Żądza wędrówki
-dsp_wanderlust_description,"Jeśli w chwili zamykania sklepu w kolejce stoi choć jeden klient, dostajesz jedną dodatkową nocną akcję, a pierwsza nocna wyprawa nie kosztuje cię żadnych klientów."
+dsp_wanderlust_description,"Jeśli w chwili zamykania sklepu w kolejce stoi choć jeden klient, dostajesz jedną dodatkową nocną akcję. Dopóki zostają ci nocne akcje, nie tracisz klientów."
 dsp_smelting_name,Wytop
-dsp_smelting_description,"Zaczynasz ze zniszczonym Piecem wyposażonym w Moduł wielkiego pieca i trochę złomu."
+dsp_smelting_description,"Zaczynasz ze zniszczonym Piecem wyposażonym w Moduł wielkiego pieca i 6 złomu."
 dsp_ecommerce_name,Handel online
-dsp_ecommerce_description,Zlecenia rynkowe są odblokowane od początku. Codziennie o jednego kupca mniej, ale co dwa dni jedno dodatkowe zlecenie.
+dsp_ecommerce_description,Zlecenia rynkowe są odblokowane od początku. Codziennie o jednego kupca mniej, ale co dwa dni jedno dodatkowe zlecenie. Dodatkowe zlecenia nie powtarzają typu, który już masz.
 dsp_built_on_dump_name,Budowa na wysypisku
 dsp_built_on_dump_description,"Przedmioty wrzucone do Kosza od razu lądują na ziemi na Wysypisku; możesz je odzyskać przed końcem nocy. Nocna usługa sprzątania i wszystko z nią związane przestaje działać. Sprzątasz sam."
 dsp_tacit_understanding_name,Milczące porozumienie
@@ -25,7 +25,7 @@ dsp_former_assistant_bonus_sell,"Handel z dr. Jacksonem: cena sprzedaży +10%"
 dsp_former_assistant_call_1,"To ja. Doktorze, możesz wpaść do sklepu jutro? Chciałbym, żebyś na coś spojrzał."
 dsp_former_assistant_call_2,Umowa. Do jutra.
 dsp_phone_frugal_name,Bolesny rachunek za telefon
-dsp_phone_frugal_description,"Telefony kosztują 20 kredytów. Każda usługa wezwana telefonicznie przywozi 50% więcej towaru i 25% większy budżet (w zaokrągleniu w górę)."
+dsp_phone_frugal_description,Telefony kosztują 10 kredytów. Każda usługa wezwana telefonicznie przywozi 50% więcej towaru i 25% większy budżet (w zaokrągleniu w górę).
 dsp_presbyopia_name,Astygmatyzm
 dsp_presbyopia_description,Przez lupę trudno cokolwiek zobaczyć.
 dsp_zero_cost_name,Zniżka na pięć palców
@@ -40,7 +40,9 @@ dsp_newspaper_recipe_tooltip_flux,"Topnik (podstawowy): praktyczny dodatek, któ
 dsp_newspaper_recipe_tooltip_yeast,"Drożdże syntetyczne: nielegalna substancja, która zastępuje drożdże i pozwala bardzo tanio warzyć lekko rakotwórcze wino. Potrzebuje tylko wody."
 dsp_mortgage_description,Na starcie kupujesz sklep z długiem 7000.\n\nOstrzeżenie: wyjątkowo trudny początek.
 dsp_self_built_name,"Własna budowa"
-dsp_self_built_description,"Od początku jesteś właścicielem lokalu, ale podstawowy koszt prądu i sprzątania wynosi 10 kredytów plus 5 za każdy poziom trudności powyżej trudności podstawowej. Aby otrzymać akt własności, musisz zapłacić właścicielowi 2000 kredytów opłaty za przeniesienie."
+dsp_self_built_description,"Od początku jesteś właścicielem lokalu, ale podstawowy koszt prądu i sprzątania wynosi 10 kredytów plus 5 za każdy poziom trudności powyżej trudności podstawowej. Potrzebujesz 2000 kredytów, aby rozstrzygnąć spór o nieruchomość i otrzymać akt własności."
+dsp_selfbuilt_dispute_paid,Masz 2000 kredytów. Akt własności jest mój.
+dsp_selfbuilt_dispute_choice,Rozstrzygnij spór o nieruchomość (2000)
 dsp_cellar_name,Naturalna piwnica z winem
 dsp_wild_favor_description,"Telefon Wilda jest odblokowany od początku, a ty zyskujesz 300 Przychylności Wilda."
 dsp_wild_favor_name,"Przychylność Wilda"
@@ -100,7 +102,7 @@ dsp_distributor_supplies_4,Darmowe próbki wszystkich dostawców są już w maga
 dsp_better_broker_name,Sumienny pośrednik
 dsp_better_broker_description,"Zlecenia rynkowe i klienci częściej proszą o gabarytowe towary, które już masz, zwłaszcza w dniu czynszu. Zlecenia rynkowe nigdy nie proszą dwa razy o ten sam przedmiot."
 dsp_notorious_villain_name,Notoryczny złoczyńca
-dsp_notorious_villain_description,"Każda wybrana neutralna lub negatywna cecha daje ci na starcie 40 dodatkowych kredytów. Ta cecha liczy się jako negatywna."
+dsp_notorious_villain_description,Każda wybrana neutralna lub negatywna cecha daje ci na starcie 30 dodatkowych kredytów. Ta cecha liczy się jako negatywna.
 dsp_cyberpsychosis_name,Cyberpsychoza
 dsp_cyberpsychosis_description,"Limit slotów cech na start rośnie o 3. Na początku rozgrywki ta cecha zostaje zastąpiona losową negatywną cechą za 1 punkt."
 dsp_no_trash_janitor_1,Wiem o tym: coś zrobiłeś ze swoim koszem na śmieci.
@@ -366,15 +368,15 @@ dsp_meeting_room_description,Twój główny ekwipunek traci dwa rzędy.
 dsp_rat_infestation_name,Plaga szczurów
 dsp_rat_infestation_description,Sprzątanie kosztuje 10 kredytów więcej. Codziennie główny ekwipunek zapełnia się... szczurzymi odchodami. Deratyzatora wynajmiesz w nocnych usługach — usunie tę cechę.
 dsp_cold_shop_name,Sklep z chłodnią
-dsp_cold_shop_description,Zaczynasz ze zniszczoną lodówką oraz skrzynką piwa Czerwony Diabeł i pudełkiem lodów waniliowych Beis premium.
+dsp_cold_shop_description,"Zaczynasz z 1 zniszczoną lodówką, 1 skrzynką piwa Czerwony Diabeł i 2 pudełkami lodów waniliowych Beis premium."
 dsp_godzilla_name,Godzilla
-dsp_godzilla_description,"Raz dziennie zjedzenie odpadów radioaktywnych daje ci 3 dodatkowe nocne akcje. W każdy poniedziałek Kierownik od Odpadów Korporacyjnych przynosi ci pod drzwi jedną puszkę odpadów radioaktywnych."
+dsp_godzilla_description,Raz dziennie zjedzenie odpadów jądrowych daje ci 3 dodatkowe nocne akcje. W każdy poniedziałek Kierownik od Odpadów Korporacyjnych przynosi ci pod drzwi jedną puszkę odpadów jądrowych.
 dsp_godzilla_menu,Zjedz
-dsp_godzilla_eaten,Połykasz puszkę odpadów radioaktywnych. Tej nocy czujesz się nie do zatrzymania.
-dsp_godzilla_already,Dziś już zjadłeś odpady radioaktywne.
+dsp_godzilla_eaten,Połykasz puszkę odpadów jądrowych. Tej nocy czujesz się nie do zatrzymania.
+dsp_godzilla_already,Dziś już zjadłeś odpady jądrowe.
 dsp_godzilla_nightlog,Odpady radioaktywne trzymają cię na nogach całą noc.
 dsp_godzilla_energized,Odpady radioaktywne trzymają cię na nogach — dziś obsłużysz jednego klienta więcej.
-dsp_godzilla_delivery,Kierownik od Odpadów Korporacyjnych podrzuca ci puszkę odpadów radioaktywnych i płaci 100 kredytów. Bierzesz ją.
+dsp_godzilla_delivery,Kierownik od Odpadów Korporacyjnych podrzuca ci puszkę odpadów jądrowych i płaci 100 kredytów. Bierzesz ją.
 dsp_service_exterminator,Deratyzator
 dsp_rat_infestation_removed,Deratyzator rozprawił się ze szczurami ~ lepiej nie myśl o szkle potłuczonym w nocy.
 dsp_strict_crackdown_name,Ostra rozprawa
@@ -389,7 +391,7 @@ dsp_patience_limit_timeout,Klientowi skończyła się cierpliwość.
 dsp_hero_history_name,Teoria wielkiego człowieka
 dsp_hero_history_description,Handel ze znanymi osobami daje podwójną reputację.
 dsp_gathering_storm_name,Nadciągająca burza
-dsp_gathering_storm_description,Znacznie zwiększa szansę na pojawienie się poszukiwanych przestępców — aż spotkasz każdego z nich albo zgłosisz lub zastrzelisz jednego.
+dsp_gathering_storm_description,"Znacznie zwiększa szansę na pojawienie się poszukiwanych przestępców, dopóki nie spotkasz ich wszystkich albo nie doniesiesz o którymś lub go nie zastrzelisz."
 dsp_gathering_done,Nadciągająca burza: poszukiwani przestępcy przycichli.
 dsp_former_geologist_name,Były geolog
 dsp_former_geologist_description,"Możesz spróbować dowolnej substancji, aby ustalić, czym jest."
@@ -398,7 +400,7 @@ dsp_former_geologist_too_little,Za mało w środku na jeden łyk.
 dsp_fruit_battery_name,Owocowa bateria
 dsp_fruit_battery_description,Pożywnowoc może służyć jako bateria: każdy 1 kJ prądu zużywa 10 kcal jego wartości odżywczej. Nadal nie można go sprzedać jako baterii.
 dsp_godzilla_visit_line,Miesięczna norma odpadów znów przyszła. Zrób mi przysługę i weź tę puszkę z moich rąk.
-dsp_godzilla_visit_offer,Jedna puszka odpadów radioaktywnych. Weź ją — zapłacę ci 100 kredytów.
+dsp_godzilla_visit_offer,Jedna puszka odpadów jądrowych. Weź ją — zapłacę ci 100 kredytów.
 dsp_godzilla_visit_buy,Umowa. Puszka moja.
 dsp_foreknowledge_when_today,dziś
 dsp_foreknowledge_when_tomorrow,jutro
@@ -406,7 +408,7 @@ dsp_foreknowledge_when_after, dni
 dsp_foreknowledge_price_tag,cena
 dsp_foreknowledge_price_name,Zmiana ceny
 dsp_prohibition_name,Prohibicja
-dsp_prohibition_description,Każdy alkohol to kontrabanda średniego stopnia. Fermentujące wino sprzedaje się za 50 i liczy jako narkotyk.
+dsp_prohibition_description,Każdy alkohol to kontrabanda średniego stopnia. Fermentujące wino sprzedaje się za 50 i liczy jako wyroby alkoholowe i tytoniowe.
 dsp_tobacco_tax_name,Podatek od tytoniu
 dsp_tobacco_tax_description,Papierosy mają 50% narzutu detalicznego. Ale dostajesz tylko 20% tego narzutu.
 dsp_blood_donor_name,Dawca krwi
@@ -437,7 +439,7 @@ dsp_revolutionary_influence_slip_title,Informacje Rewolucji
 dsp_revolutionary_influence_slip_body,Odin ściszył głos przed wyjściem: w ciągu trzech dni Rewolucja uderzy — „{0}”. To już jest zaznaczone w kalendarzu.
 dsp_service_professional_tooltip,Wendeta nie będzie ci już przeszkadzać.
 dsp_scav_drone_name,Dron złomiarz
-dsp_scav_drone_description,Podczas nocnych działań masz dwie dodatkowe kieszenie. Rzadziej znajdujesz śmieci.
+dsp_scav_drone_description,Masz dwie dodatkowe kieszenie. Rzadziej znajdujesz śmieci.
 dsp_trust_fund_name,Fundacja charytatywna Keystone
 dsp_trust_fund_description,W każdy czwartek otrzymujesz 50 kredytów.
 dsp_snake_oil_name,Olej wężowy
@@ -470,7 +472,8 @@ dsp_watermelon_merge_menu,Połącz (zużywa jeden taki sam)
 dsp_watermelon_merge_done,"Połączono w większy {0}, wartość {1} kredytów."
 dsp_watermelon_merge_max,Większy już nie będzie.
 dsp_hydro_question_name,Hydroponika w rurach
-dsp_hydro_question_description,Możesz uprawiać 2 rośliny w kranie wodnym. Na start dostajesz 2 losowe nasiona. Kliknij dwukrotnie kran (albo notatkę „Hydroponika w rurze” w teczce) aby otworzyć okno uprawy.
+dsp_hydro_question_description,Możesz uprawiać 2 rośliny w kranie wodnym. Na start dostajesz 2 losowe nasiona. Modyfikacje podnoszą limit do 6 roślin. Kliknij dwukrotnie kran (albo notatkę „Hydroponika w rurze” w teczce) aby otworzyć okno uprawy.
+dsp_hydro_need_tap,"Hydroponika w rurach: nasiona już masz, ale kran nie jest jeszcze podłączony. Odblokuj ulepszenie dopływu wody (Gutterflow albo rdzawa woda), a notatka sama pojawi się w aktach."
 dsp_poet_admirer_name,Poetycki wielbiciel
 dsp_poet_admirer_description,Liściki wielbiciela są przedmiotami luksusowymi o wartości 50 kredytów.
 dsp_admirer_poem_1,"Kwa-kwa wołają rybołowy na rzecznej wysepce. Skromna, cnotliwa dziewczyna to dobra towarzyszka dla księcia. — Księga Pieśni, Guan Ju"
@@ -530,7 +533,7 @@ dsp_unlicensed_description,Urzędnik komisji handlowej przychodzi piątego dnia.
 dsp_water_vending_name,Automat z wodą
 dsp_water_vending_description,Zaczynasz z automatem z wodą przed sklepem. Klienci mogą sami kupować wodę pitną poza godzinami otwarcia.
 dsp_lucky_supply_name,Zapas szczęścia
-dsp_lucky_supply_description,Georgio przynosi Płynne Szczęście dzień po pierwszym spotkaniu, a potem wpada co tydzień jak kupiec.
+dsp_lucky_supply_description,"Georgio co tydzień przychodzi handlować, przynosząc 1 butelkę Płynnego Szczęścia i 4 całkowicie losowe przedmioty."
 dsp_thousand_miles_name,A Thousand Miles
 dsp_thousand_miles_description,"Gdy gra muzyka, dostajesz 5% bonusu do handlu."
 dsp_thousand_miles_bonus_buy,Muzyka gra: +X% bonusu
@@ -556,9 +559,9 @@ dsp_phone_bill_half_2,A to druga połowa.
 
 dsp_buddy_end_choice_yes,No dobra, ja to otworzę.
 dsp_buddy_end_choice_no,Czemu niby ja?
-dsp_hawaii_training_name,Podróż na Hawaje
+dsp_hawaii_training_name,Czego nauczyłem się na Hawajach
 dsp_hawaii_training_description,"Na początku gry zyskujesz 3 losowe atuty, których punkty sumują się do -2. Nie wszystko, czego uczą na Hawajach, jest dobre."
-dsp_hawaii_announce,Podróż na Hawaje: zdobywasz {0}
+dsp_hawaii_announce,Czego nauczyłem się na Hawajach: zdobywasz {0}
 dsp_paid_training_name,Płatne szkolenie
 dsp_paid_training_description,Limit slotów atutów na starcie rośnie o 3. Zaczynasz z długiem 648 kredytów. Dzięki reklamie sponsora ten atut jest pokazywany jako pozytywny.
 dsp_startrak_name,Startrak

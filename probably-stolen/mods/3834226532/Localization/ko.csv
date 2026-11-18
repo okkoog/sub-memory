@@ -6,11 +6,11 @@ dsp_distributor_tag,특성 추가: 아마도 괴짜
 
 # Starting perks
 dsp_wanderlust_name,방랑벽
-dsp_wanderlust_description,"가게를 닫을 때 대기 중인 손님이 한 명이라도 남아 있으면 야간 행동이 한 번 늘어나고, 첫 번째 야간 외출에서는 손님을 잃지 않습니다."
+dsp_wanderlust_description,가게를 닫을 때 대기 중인 손님이 한 명이라도 남아 있으면 야간 행동이 한 번 늘어납니다. 야간 행동이 남아 있는 한 손님을 잃지 않습니다.
 dsp_smelting_name,제련
-dsp_smelting_description,"고로 모듈을 단 허름한 용광로와 고철 몇 점을 가지고 시작합니다."
+dsp_smelting_description,"고로 모듈을 단 허름한 용광로와 고철 6점을 가지고 시작합니다."
 dsp_ecommerce_name,전자상거래
-dsp_ecommerce_description,시작부터 시장 주문이 해금됩니다. 매일 구매자가 한 명 줄어들지만 시장 주문은 이틀에 하나 더 받습니다.
+dsp_ecommerce_description,시작부터 시장 주문이 해금됩니다. 매일 구매자가 한 명 줄어들지만 시장 주문은 이틀에 하나 더 받습니다. 추가 주문은 이미 있는 종류와 겹치지 않습니다.
 dsp_built_on_dump_name,쓰레기장 위에 세운 가게
 dsp_built_on_dump_description,"쓰레기통에 넣은 물건이 곧바로 쓰레기장 바닥으로 옮겨지고 밤이 끝나기 전에 되찾을 수 있습니다. 야간 청소 서비스와 거기에 연결된 모든 기능이 작동하지 않습니다. 청소는 직접 하셔야 합니다."
 dsp_tacit_understanding_name,암묵적 이해
@@ -25,7 +25,7 @@ dsp_former_assistant_bonus_sell,"잭슨 박사와 거래: 판매가 +10%"
 dsp_former_assistant_call_1,"나야. 박사님 내일 가게에 들러 주실 수 있나요? 보여 드리고 싶은 게 있습니다."
 dsp_former_assistant_call_2,좋아. 내일 봐.
 dsp_phone_frugal_name,뼈아픈 전화요금
-dsp_phone_frugal_description,"통화에 20 크레딧이 듭니다. 전화로 부르는 모든 서비스는 물건이 50% 더 많이 예산이 25% 더 많이 옵니다(올림)."
+dsp_phone_frugal_description,통화에 10 크레딧이 듭니다. 전화로 부르는 모든 서비스는 물건이 50% 더 많이 예산이 25% 더 많이 옵니다(올림).
 dsp_presbyopia_name,난시
 dsp_presbyopia_description,돋보기 때문에 물건이 잘 보이지 않습니다.
 dsp_zero_cost_name,손버릇
@@ -40,7 +40,9 @@ dsp_newspaper_recipe_tooltip_flux,"조제제(기본): 제련할 때 쓰면 금�
 dsp_newspaper_recipe_tooltip_yeast,"합성 효모: 효모 대신 써서 발암성이 약간 있는 술을 아주 싸게 빚을 수 있는 불법 물질입니다. 물만 있으면 됩니다."
 dsp_mortgage_description,"시작할 때 7,000의 빚을 지고 가게를 삽니다.\n\n경고: 극도로 어려운 시작입니다."
 dsp_self_built_name,"자가 건축"
-dsp_self_built_description,"시작부터 건물을 소유하고 있지만 전력과 청소 서비스의 기본 비용이 10 크레딧이 되고, 기본 난이도보다 한 단계 높을 때마다 5 크레딧이 추가됩니다. 부동산 증서를 받으려면 집주인에게 2000 크레딧의 명의 이전 비용을 지불해야 합니다."
+dsp_self_built_description,"시작부터 건물을 소유하고 있지만 전력과 청소 서비스의 기본 비용이 10 크레딧이 되고, 기본 난이도보다 한 단계 높을 때마다 5 크레딧이 추가됩니다. 부동산 분쟁을 해결해 등기를 받으려면 2000 크레딧이 필요합니다."
+dsp_selfbuilt_dispute_paid,여기 2000 크레딧입니다. 등기는 제 겁니다.
+dsp_selfbuilt_dispute_choice,부동산 분쟁 해결 (2000)
 dsp_cellar_name,천연 와인 저장고
 dsp_wild_favor_description,"와일드의 전화가 시작부터 해금되고 와일드의 호의 300을 얻습니다."
 dsp_wild_favor_name,"와일드의 호의"
@@ -100,7 +102,7 @@ dsp_distributor_supplies_4,각 업체의 무료 샘플은 창고에 보관되어
 dsp_better_broker_name,성실한 중개인
 dsp_better_broker_description,"시장 주문과 손님이 당신이 이미 가진 부피 큰 물건을 더 자주 찾습니다. 특히 월세 날에 그렇습니다. 시장 주문은 같은 물건을 두 번 요구하지 않습니다."
 dsp_notorious_villain_name,악명 높은 악당
-dsp_notorious_villain_description,"고른 중립 또는 부정 특성 하나마다 시작 크레딧이 40 늘어납니다. 이 특성도 부정 특성으로 칩니다."
+dsp_notorious_villain_description,고른 중립 또는 부정 특성 하나마다 시작 크레딧이 30 늘어납니다. 이 특성도 부정 특성으로 칩니다.
 dsp_cyberpsychosis_name,사이버 사이코시스
 dsp_cyberpsychosis_description,"시작 특성 슬롯 한도가 3 늘어납니다. 시작할 때 이 특성은 무작위 1포인트 부정 특성으로 교체됩니다."
 dsp_no_trash_janitor_1,네가 그 쓰레기통에 뭔가 한 거 다 알아.
@@ -366,9 +368,9 @@ dsp_meeting_room_description,주 진열장이 두 줄 줄어듭니다.
 dsp_rat_infestation_name,쥐 떼
 dsp_rat_infestation_description,청소 서비스 비용이 10 크레딧 늘어납니다. 매일 주 진열장이... 쥐똥으로 채워집니다. 야간 서비스에서 방역업자를 고용하면 이 특성을 제거할 수 있습니다.
 dsp_cold_shop_name,냉장 가게
-dsp_cold_shop_description,허름한 냉장고와 레드 임프 맥주 한 상자 그리고 베이스 프리미엄 바닐라 아이스크림 한 통을 가지고 시작합니다.
+dsp_cold_shop_description,"허름한 냉장고 1대와 레드 임프 맥주 1상자, 베이스 프리미엄 바닐라 아이스크림 2통을 가지고 시작합니다."
 dsp_godzilla_name,고질라
-dsp_godzilla_description,"하루에 한 번 핵 폐기물을 먹으면 야간 행동력 3을 얻습니다. 매주 월요일 기업 폐기물 담당자가 핵 폐기물 한 캔을 문 앞에 가져다줍니다."
+dsp_godzilla_description,하루에 한 번 핵 폐기물을 먹으면 야간 행동력 3을 얻습니다. 매주 월요일 기업 폐기물 담당자가 핵 폐기물 한 캔을 문 앞에 가져다줍니다.
 dsp_godzilla_menu,먹기
 dsp_godzilla_eaten,핵 폐기물 한 캔을 삼켰습니다. 오늘 밤은 무적일 것 같습니다.
 dsp_godzilla_already,오늘은 이미 핵 폐기물을 먹었습니다.
@@ -389,7 +391,7 @@ dsp_patience_limit_timeout,손님이 인내심을 잃었습니다.
 dsp_hero_history_name,위인론
 dsp_hero_history_description,유명 인물과 거래하면 평판을 두 배로 얻습니다.
 dsp_gathering_storm_name,몰려오는 폭풍
-dsp_gathering_storm_description,지명 수배자가 나타날 확률이 크게 높아지며 모든 지명 수배자를 만나거나 신고하거나 사살할 때까지 계속됩니다.
+dsp_gathering_storm_description,현상범 등장 확률을 크게 높인다. 모든 현상범을 만나거나 현상범을 신고하거나 사살하면 끝난다.
 dsp_gathering_done,몰려오는 폭풍: 지명 수배자들이 조용해졌습니다.
 dsp_former_geologist_name,전직 지질학자
 dsp_former_geologist_description,어떤 물질이든 맛을 보고 성분을 판별할 수 있습니다.
@@ -406,7 +408,7 @@ dsp_foreknowledge_when_after, 일 뒤
 dsp_foreknowledge_price_tag,가격
 dsp_foreknowledge_price_name,가격 변동
 dsp_prohibition_name,금주법
-dsp_prohibition_description,모든 술이 중급 밀수품으로 취급된다. 발효 중인 술은 50에 팔리며 마약으로 취급된다.
+dsp_prohibition_description,모든 술이 중급 밀수품으로 취급된다. 발효 중인 술은 50에 팔리며 주류·담배류로 취급된다.
 dsp_tobacco_tax_name,담배세
 dsp_tobacco_tax_description,담배에 소매가 50% 할증이 붙는다. 다만 그 할증분의 20%만 받는다.
 dsp_blood_donor_name,헌혈자
@@ -437,7 +439,7 @@ dsp_revolutionary_influence_slip_title,혁명군의 정보
 dsp_revolutionary_influence_slip_body,오딘은 떠나기 전 목소리를 낮췄습니다. 3일 안에 혁명군이 움직입니다 — “{0}”. 달력에 이미 표시되어 있습니다.
 dsp_service_professional_tooltip,원한이 더 이상 당신을 괴롭히지 않습니다.
 dsp_scav_drone_name,고물 수집 드론
-dsp_scav_drone_description,야간 행동 시 주머니가 두 개 늘어난다. 탐색할 때 쓰레기를 얻을 확률이 낮아진다.
+dsp_scav_drone_description,주머니가 두 개 늘어난다. 탐색할 때 쓰레기를 얻을 확률이 낮아진다.
 dsp_trust_fund_name,키스톤 자선 재단
 dsp_trust_fund_description,매주 목요일에 50 크레딧을 받는다.
 dsp_snake_oil_name,뱀기름
@@ -470,7 +472,8 @@ dsp_watermelon_merge_menu,합성 (동일 작물 1개 소모)
 dsp_watermelon_merge_done,더 큰 {0}(으)로 합성되었습니다. 가치 {1} 크레딧.
 dsp_watermelon_merge_max,더 이상 커질 수 없습니다.
 dsp_hydro_question_name,배관 수경재배
-dsp_hydro_question_description,수도꼭지에서 식물 2그루를 기를 수 있다. 시작 시 무작위 씨앗 2개를 받는다.수도꼭지(또는 서류함의 「수로 수경 재배의 비결」 쪽지)를 더블 클릭하면 재배 창이 열린다.
+dsp_hydro_question_description,수도꼭지에서 식물 2그루를 기를 수 있다. 시작 시 무작위 씨앗 2개를 받는다. 개조로 최대 6그루까지 늘릴 수 있다. 수도꼭지(또는 서류함의 「수로 수경 재배의 비결」 쪽지)를 더블 클릭하면 재배 창이 열린다.
+dsp_hydro_need_tap,수도 배관 재배: 씨앗은 이미 손에 있지만 수도가 아직 연결되지 않았습니다. 수도 업그레이드(거터플로 급수 또는 녹물 급수)를 해금하면 안내서가 서류함에 자동으로 들어옵니다.
 dsp_poet_admirer_name,시인 같은 애모자
 dsp_poet_admirer_description,추종자의 쪽지는 가치 50 크레딧의 사치품이 된다.
 dsp_admirer_poem_1,강물 섬에서 물수리가 꽥꽥 운다. 조용하고 어진 아가씨는 군주에게 좋은 짝. — 시경 「관저」
@@ -530,7 +533,7 @@ dsp_unlicensed_description,무역 위원회 담당자가 5일째에 방문합니
 dsp_water_vending_name,자동 물 판매기
 dsp_water_vending_description,가게 밖에 자동 물 판매기가 함께 제공됩니다. 영업시간 외에도 손님이 직접 식수를 살 수 있습니다.
 dsp_lucky_supply_name,행운 보급
-dsp_lucky_supply_description,조르지오는 처음 만난 다음 날 액체 행운을 가져오고, 이후 매주 상인처럼 찾아옵니다.
+dsp_lucky_supply_description,조르지오는 매주 액체 행운 1병과 완전히 무작위인 물건 4개를 가지고 거래하러 옵니다.
 dsp_thousand_miles_name,천천정청
 dsp_thousand_miles_description,음악을 재생하는 동안 거래 보너스 5%를 얻습니다.
 dsp_thousand_miles_bonus_buy,음악 재생 중: 거래 보너스 +X%
@@ -556,9 +559,9 @@ dsp_phone_bill_half_2,나머지 절반이다.
 
 dsp_buddy_end_choice_yes,좋아, 내가 열지.
 dsp_buddy_end_choice_no,왜 내가 열어야 해?
-dsp_hawaii_training_name,하와이 여행
+dsp_hawaii_training_name,하와이에서 배운 것
 dsp_hawaii_training_description,게임 시작 시 특성 포인트 합이 -2인 무작위 특성 3개를 얻습니다. 하와이에서 배운 것이라고 다 좋은 건 아닙니다.
-dsp_hawaii_announce,하와이 여행: {0} 습득
+dsp_hawaii_announce,하와이에서 배운 것: {0} 습득
 dsp_paid_training_name,유료 진학
 dsp_paid_training_description,시작 특성 슬롯 상한이 3개 늘어납니다. 시작 시 648 크레딧의 빚을 집니다. 후원사의 광고 덕분에 이 특성은 긍정 특성으로 표시됩니다.
 dsp_startrak_name,스타트랙

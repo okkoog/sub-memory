@@ -6,11 +6,11 @@ dsp_distributor_tag,Mehr Eigenschaften: wahrscheinlich ein Spinner
 
 # Start-Perks
 dsp_wanderlust_name,Fernweh
-dsp_wanderlust_description,"Wenn beim Schließen des Ladens noch mindestens ein Kunde ansteht, bekommst du eine zusätzliche Nachtaktion, und dein erster Nachtausflug kostet dich keine Kunden."
+dsp_wanderlust_description,"Wenn beim Schließen des Ladens noch mindestens ein Kunde ansteht, bekommst du eine zusätzliche Nachtaktion. Solange dir Nachtaktionen übrig bleiben, verlierst du keine Kunden."
 dsp_smelting_name,Schmelzen
-dsp_smelting_description,"Du startest mit einem schäbigen Schmelzofen mit Hochofenmodul und etwas Altmetall."
+dsp_smelting_description,"Du startest mit einem schäbigen Schmelzofen mit Hochofenmodul und 6 Altmetall."
 dsp_ecommerce_name,Onlinehandel
-dsp_ecommerce_description,Marktanfragen sind von Anfang an freigeschaltet. Jeden Tag kommt ein Käufer weniger, dafür alle zwei Tage eine zusätzliche Marktanfrage.
+dsp_ecommerce_description,Marktanfragen sind von Anfang an freigeschaltet. Jeden Tag kommt ein Käufer weniger, dafür alle zwei Tage eine zusätzliche Marktanfrage. Zusätzliche Anfragen wiederholen nie eine Art, die du schon hast.
 dsp_built_on_dump_name,Auf der Deponie gebaut
 dsp_built_on_dump_description,"Gegenstände im Mülleimer landen sofort auf dem Boden der Deponie; du kannst sie vor Tagesende zurückholen. Der nächtliche Reinigungsdienst und alles, was daran hängt, funktioniert nicht mehr. Du räumst selbst auf."
 dsp_tacit_understanding_name,Ungeschriebenes Einverständnis
@@ -25,7 +25,7 @@ dsp_former_assistant_bonus_sell,"Handel mit Dr. Jackson: Verkaufspreis +10%"
 dsp_former_assistant_call_1,"Ich bin's. Doktor, kannst du morgen im Laden vorbeikommen? Ich habe da etwas, das du dir ansehen solltest."
 dsp_former_assistant_call_2,Abgemacht. Bis morgen.
 dsp_phone_frugal_name,Schmerzhafte Telefonrechnung
-dsp_phone_frugal_description,"Anrufe kosten 20 Credits. Jeder per Telefon herbeigerufene Dienst bringt 50% mehr Ware und 25% mehr Budget, aufgerundet."
+dsp_phone_frugal_description,"Anrufe kosten 10 Credits. Jeder per Telefon herbeigerufene Dienst bringt 50% mehr Ware und 25% mehr Budget, aufgerundet."
 dsp_presbyopia_name,Hornhautverkrümmung
 dsp_presbyopia_description,Die Lupe macht das Sehen schwer.
 dsp_zero_cost_name,Fünf-Finger-Rabatt
@@ -40,7 +40,9 @@ dsp_newspaper_recipe_tooltip_flux,"Flussmittel (Basis): ein praktisches Zusatzmi
 dsp_newspaper_recipe_tooltip_yeast,"Synthetische Hefe: eine illegale Substanz, die Hefe ersetzen kann, um sehr billig leicht krebserregenden Wein zu brauen. Sie braucht nur Wasser."
 dsp_mortgage_description,Du kaufst den Laden am Anfang mit 7.000 Schulden.\n\nWarnung: ein extrem schwerer Start.
 dsp_self_built_name,"Selbst gebaut"
-dsp_self_built_description,"Du besitzt das Grundstück von Anfang an, aber die Grundkosten für Strom und Reinigung betragen 10 Credits, plus 5 weitere für jede Schwierigkeitsstufe über der Basisschwierigkeit. Du musst dem Vermieter eine Übertragungsgebühr von 2000 Credits zahlen, um die Urkunde zu erhalten."
+dsp_self_built_description,"Du besitzt das Grundstück von Anfang an, aber die Grundkosten für Strom und Reinigung betragen 10 Credits, plus 5 weitere für jede Schwierigkeitsstufe über der Basisschwierigkeit. Du brauchst 2000 Credits, um den Immobilienstreit zu klären und die Urkunde zu erhalten."
+dsp_selfbuilt_dispute_paid,Hier sind 2000 Credits. Die Urkunde gehört mir.
+dsp_selfbuilt_dispute_choice,Immobilienstreit klären (2000)
 dsp_cellar_name,Naturweinkeller
 dsp_wild_favor_description,"Wilds Telefon ist von Anfang an freigeschaltet und du erhältst 300 Wilds Gunst."
 dsp_wild_favor_name,"Wilds Gunst"
@@ -100,7 +102,7 @@ dsp_distributor_supplies_4,Die Gratisproben aller Lieferanten liegen schon im La
 dsp_better_broker_name,Pflichtbewusster Makler
 dsp_better_broker_description,"Marktaufträge und Kunden fragen eher nach sperriger Ware, die du schon hast, besonders am Zahltag. Marktaufträge verlangen nie zweimal denselben Gegenstand."
 dsp_notorious_villain_name,Berüchtigter Schurke
-dsp_notorious_villain_description,"Jeder neutrale oder negative Perk, den du wählst, gibt dir am Start 40 zusätzliche Credits. Dieser Perk zählt als negativ."
+dsp_notorious_villain_description,"Jeder neutrale oder negative Perk, den du wählst, gibt dir am Start 30 zusätzliche Credits. Dieser Perk zählt als negativ."
 dsp_cyberpsychosis_name,Cyberpsychose
 dsp_cyberpsychosis_description,"Dein Startlimit für Perk-Plätze steigt um 3. Zu Beginn des Durchlaufs wird dieser Perk durch einen zufälligen negativen 1-Punkt-Perk ersetzt."
 dsp_no_trash_janitor_1,Ich weiß, dass du an deinem Mülleimer was gedreht hast.
@@ -366,15 +368,15 @@ dsp_meeting_room_description,Dein Hauptinventar verliert zwei Reihen.
 dsp_rat_infestation_name,Rattenbefall
 dsp_rat_infestation_description,"Der Reinigungsdienst kostet 10 Credits mehr. Jeden Tag füllt sich dein Hauptinventar mit… Rattenkot. Du kannst in den Nachtdiensten einen Kammerjäger anheuern, um diesen Perk loszuwerden."
 dsp_cold_shop_name,Kühlhaus-Laden
-dsp_cold_shop_description,"Du startest mit einem schäbigen Kühlschrank, einem Kasten Red Imp Beer und einer Packung Beis Premium-Vanilleeis."
+dsp_cold_shop_description,"Du startest mit 1 schäbigen Kühlschrank, 1 Kasten Red Imp Beer und 2 Packungen Beis Premium-Vanilleeis."
 dsp_godzilla_name,Godzilla
-dsp_godzilla_description,Einmal pro Tag gibt dir das Fressen von radioaktivem Abfall 3 zusätzliche Nachtaktionen. Jeden Montag bringt der Betriebsabfallmanager eine Dose radioaktiven Abfalls an deine Tür.
+dsp_godzilla_description,Einmal pro Tag gibt dir das Fressen von Atommüll 3 zusätzliche Nachtaktionen. Jeden Montag bringt der Betriebsabfallmanager eine Dose Atommüll an deine Tür.
 dsp_godzilla_menu,Essen
-dsp_godzilla_eaten,Du schluckst eine Dose radioaktiven Abfalls. Heute Nacht fühlst du dich unaufhaltsam.
-dsp_godzilla_already,Du hast heute schon radioaktiven Abfall gefressen.
-dsp_godzilla_nightlog,Der radioaktive Abfall hält dich die ganze Nacht wach.
-dsp_godzilla_energized,Der radioaktive Abfall hält dich wach – du bedienst heute einen Kunden mehr.
-dsp_godzilla_delivery,"Der Betriebsabfallmanager stellt eine Dose radioaktiven Abfalls ab und zahlt dir 100 Credits dafür, dass du sie nimmst."
+dsp_godzilla_eaten,Du schluckst eine Dose Atommüll. Heute Nacht fühlst du dich unaufhaltsam.
+dsp_godzilla_already,Du hast heute schon Atommüll gefressen.
+dsp_godzilla_nightlog,Der Atommüll hält dich die ganze Nacht wach.
+dsp_godzilla_energized,Der Atommüll hält dich wach – du bedienst heute einen Kunden mehr.
+dsp_godzilla_delivery,"Der Betriebsabfallmanager stellt eine Dose Atommüll ab und zahlt dir 100 Credits dafür, dass du sie nimmst."
 dsp_service_exterminator,Kammerjäger
 dsp_rat_infestation_removed,Der Kammerjäger hat sich um die Ratten gekümmert ~ denk besser nicht an das Glas, das sie letzte Nacht umgestoßen haben.
 dsp_strict_crackdown_name,Harte Razzia
@@ -389,7 +391,7 @@ dsp_patience_limit_timeout,Dem Kunden ist die Geduld ausgegangen.
 dsp_hero_history_name,Große-Männer-Theorie
 dsp_hero_history_description,Handel mit berühmten Leuten bringt doppelten Ruf.
 dsp_gathering_storm_name,Aufziehender Sturm
-dsp_gathering_storm_description,"Erhöht die Chance auf gesuchte Verbrecher deutlich, bis du jeden gesuchten Verbrecher getroffen oder einen gemeldet oder erschossen hast."
+dsp_gathering_storm_description,"Erhöht die Chance auf gesuchte Kriminelle stark, bis du jeden Gesuchten getroffen oder einen von ihnen verpfiffen oder erschossen hast."
 dsp_gathering_done,Aufziehender Sturm: Die gesuchten Verbrecher sind verstummt.
 dsp_former_geologist_name,Ehemaliger Geologe
 dsp_former_geologist_description,"Du kannst jede Substanz kosten, um herauszufinden, was sie ist."
@@ -398,7 +400,7 @@ dsp_former_geologist_too_little,Da ist nicht genug drin für einen Schluck.
 dsp_fruit_battery_name,Fruchtbatterie
 dsp_fruit_battery_description,"Nutrifrucht kann als Batterie verwendet werden: jede 1 kJ Strom verbraucht 10 kcal ihrer Nährstoffe. Als Batterie verkaufen lässt sie sich trotzdem nicht."
 dsp_godzilla_visit_line,"Die Monatsquote für Abfall ist wieder da. Tu mir einen Gefallen und nimm mir diese Dose ab."
-dsp_godzilla_visit_offer,"Eine Dose radioaktiven Abfalls. Nimm sie, und ich zahle dir 100 Credits."
+dsp_godzilla_visit_offer,"Eine Dose Atommüll. Nimm sie, und ich zahle dir 100 Credits."
 dsp_godzilla_visit_buy,Abgemacht. Die Dose gehört mir.
 dsp_foreknowledge_when_today,heute
 dsp_foreknowledge_when_tomorrow,morgen
@@ -406,7 +408,7 @@ dsp_foreknowledge_when_after, Tage entfernt
 dsp_foreknowledge_price_tag,Preis
 dsp_foreknowledge_price_name,Preisänderung
 dsp_prohibition_name,Alkoholverbot
-dsp_prohibition_description,Jeder Alkohol gilt als Schmuggelware mittlerer Stufe. Gärender Wein wird für 50 verkauft und gilt als Droge.
+dsp_prohibition_description,Jeder Alkohol gilt als Schmuggelware mittlerer Stufe. Gärender Wein wird für 50 verkauft und gilt als Alkohol- und Tabakware.
 dsp_tobacco_tax_name,Tabaksteuer
 dsp_tobacco_tax_description,Zigaretten bekommen 50% Aufschlag im Einzelhandel. Du bekommst davon aber nur 20% des Aufschlags.
 dsp_blood_donor_name,Blutspender
@@ -437,7 +439,7 @@ dsp_revolutionary_influence_slip_title,Information der Revolution
 dsp_revolutionary_influence_slip_body,Odin senkte vor dem Gehen die Stimme: Innerhalb von drei Tagen schlägt die Revolution zu – „{0}“. Im Kalender ist es bereits markiert.
 dsp_service_professional_tooltip,Deine Vendetta stört dich nicht mehr.
 dsp_scav_drone_name,Plünderdrohne
-dsp_scav_drone_description,Bei Nachtaktionen hast du zwei zusätzliche Taschen. Du findest beim Durchsuchen seltener Müll.
+dsp_scav_drone_description,Du hast zwei zusätzliche Taschen. Du findest beim Durchsuchen seltener Müll.
 dsp_trust_fund_name,Keystone-Wohltätigkeitsstiftung
 dsp_trust_fund_description,Jeden Donnerstag bekommst du 50 Credits.
 dsp_snake_oil_name,Schlangenöl
@@ -470,7 +472,8 @@ dsp_watermelon_merge_menu,Verschmelzen (verbraucht ein gleiches Produkt)
 dsp_watermelon_merge_done,"Zu einem größeren {0} verschmolzen, Wert {1} Credits."
 dsp_watermelon_merge_max,Größer geht nicht mehr.
 dsp_hydro_question_name,Rohr-Hydroponik
-dsp_hydro_question_description,Du kannst 2 Pflanzen im Wasserhahn anbauen. Zum Start gibt es 2 zufällige Samen. Doppelklicke den Wasserhahn (oder den Zettel „Wasserkultur im Rohr“ im Dossier) um das Fenster zu öffnen.
+dsp_hydro_question_description,Du kannst 2 Pflanzen im Wasserhahn anbauen. Zum Start gibt es 2 zufällige Samen. Durch Umbauten steigt das Limit auf bis zu 6 Pflanzen. Doppelklicke den Wasserhahn (oder den Zettel „Wasserkultur im Rohr“ im Dossier) um das Fenster zu öffnen.
+dsp_hydro_need_tap,"Rohr-Hydroponik: Die Samen hast du schon, aber der Wasserhahn ist noch nicht angeschlossen. Schalte ein Wasserhahn-Upgrade frei (Gutterflow- oder Rostwasser-Zuleitung), dann erscheint die Anleitung automatisch in deiner Akte."
 dsp_poet_admirer_name,Poetischer Verehrer
 dsp_poet_admirer_description,Die Zettel deines Verehrers sind Luxusgüter im Wert von 50 Credits.
 dsp_admirer_poem_1,"Kwa-kwa rufen die Fischadler am Flussinselchen. Die stille, tugendsame Jungfrau ist dem Fürsten eine gute Gefährtin. — Buch der Lieder, Guan Ju"
@@ -530,7 +533,7 @@ dsp_unlicensed_description,Der Beamte der Handelskommission kommt am fünften Ta
 dsp_water_vending_name,Wasserautomat
 dsp_water_vending_description,Du startest mit einem Wasserautomaten vor dem Laden. Kunden können außerhalb der Öffnungszeiten selbst Trinkwasser kaufen.
 dsp_lucky_supply_name,Glücksnachschub
-dsp_lucky_supply_description,Georgio bringt Flüssiges Glück schon am Tag nach dem ersten Treffen und kommt danach jede Woche wie ein Händler.
+dsp_lucky_supply_description,Georgio kommt jede Woche zum Handeln vorbei und bringt 1 Flasche Flüssiges Glück sowie 4 völlig zufällige Gegenstände mit.
 dsp_thousand_miles_name,A Thousand Miles
 dsp_thousand_miles_description,"Solange Musik läuft, bekommst du einen Handelsbonus von 5%."
 dsp_thousand_miles_bonus_buy,Musik läuft: +X% Handelsbonus
@@ -556,9 +559,9 @@ dsp_phone_bill_half_2,Hier ist die andere Hälfte.
 
 dsp_buddy_end_choice_yes,Okay, ich mache das auf.
 dsp_buddy_end_choice_no,Warum sollte ich das sein?
-dsp_hawaii_training_name,Hawaii-Reise
+dsp_hawaii_training_name,Was ich auf Hawaii lernte
 dsp_hawaii_training_description,"Zu Spielbeginn erhältst du 3 zufällige Perks, deren Perkpunkte zusammen -2 ergeben. Nicht alles, was man auf Hawaii lernt, ist gut."
-dsp_hawaii_announce,Hawaii-Reise: {0} erhalten
+dsp_hawaii_announce,Was ich auf Hawaii lernte: {0} erhalten
 dsp_paid_training_name,Bezahlte Ausbildung
 dsp_paid_training_description,Dein Startlimit für Perkplätze steigt um 3. Du startest mit 648 Credits Schulden. Dank der Werbung des Sponsors wird dieser Perk als positiv angezeigt.
 dsp_startrak_name,Startrak

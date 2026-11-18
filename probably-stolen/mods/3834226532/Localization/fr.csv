@@ -6,11 +6,11 @@ dsp_distributor_tag,Plus de traits : probablement un dingue
 
 # Atouts de départ
 dsp_wanderlust_name,Envie d'ailleurs
-dsp_wanderlust_description,"S'il reste au moins un client dans la file au moment où vous fermez la boutique, vous gagnez une action nocturne supplémentaire, et votre première sortie nocturne ne vous coûte aucun client."
+dsp_wanderlust_description,"S'il reste au moins un client dans la file quand vous fermez la boutique, vous gagnez une action nocturne supplémentaire. Tant qu'il vous reste des actions nocturnes, vous ne perdez aucun client."
 dsp_smelting_name,Fonte
-dsp_smelting_description,"Vous commencez avec un four délabré, équipé d'un module de haut fourneau, et un peu de ferraille."
+dsp_smelting_description,"Vous commencez avec un four délabré, équipé d'un module de haut fourneau, et 6 ferrailles."
 dsp_ecommerce_name,E-commerce
-dsp_ecommerce_description,Les demandes du marché sont débloquées dès le début. Un acheteur en moins chaque jour, mais une demande supplémentaire tous les deux jours.
+dsp_ecommerce_description,Les demandes du marché sont débloquées dès le début. Un acheteur en moins chaque jour, mais une demande supplémentaire tous les deux jours. Les demandes supplémentaires ne répètent jamais un type que vous avez déjà.
 dsp_built_on_dump_name,Construit sur la décharge
 dsp_built_on_dump_description,"Les objets placés dans la poubelle tombent aussitôt au sol de la décharge ; vous pouvez les récupérer avant la fin de la nuit. Le service d'entretien nocturne et tout ce qui en dépend cessent de fonctionner. C'est vous qui faites le ménage."
 dsp_tacit_understanding_name,Entente tacite
@@ -25,7 +25,7 @@ dsp_former_assistant_bonus_sell,"Commerce avec le Dr Jackson : prix de vente +1
 dsp_former_assistant_call_1,"C'est moi. Docteur, vous pouvez passer à la boutique demain ? J'aimerais que vous jetiez un œil à quelque chose."
 dsp_former_assistant_call_2,Entendu. À demain.
 dsp_phone_frugal_name,Facture téléphonique douloureuse
-dsp_phone_frugal_description,"Les appels coûtent 20 crédits. Chaque service appelé par téléphone apporte 50 % de marchandises en plus et 25 % de budget en plus, arrondis au supérieur."
+dsp_phone_frugal_description,"Les appels coûtent 10 crédits. Chaque service appelé par téléphone apporte 50 % de marchandises en plus et 25 % de budget en plus, arrondis au supérieur."
 dsp_presbyopia_name,Astigmatisme
 dsp_presbyopia_description,La loupe rend les choses difficiles à voir.
 dsp_zero_cost_name,Remise à cinq doigts
@@ -40,7 +40,9 @@ dsp_newspaper_recipe_tooltip_flux,"Fondant (basique) : un additif pratique qui 
 dsp_newspaper_recipe_tooltip_yeast,"Levure synthétique : une substance illégale qui remplace la levure pour brasser à très bas prix un vin légèrement cancérigène. Il ne lui faut que de l'eau."
 dsp_mortgage_description,Vous achetez la boutique au départ avec une dette de 7 000.\n\nAvertissement : un départ extrêmement difficile.
 dsp_self_built_name,"Autoconstruit"
-dsp_self_built_description,"Vous êtes propriétaire des lieux dès le départ, mais le coût de base de l'électricité et de l'entretien passe à 10 crédits, plus 5 par niveau de difficulté au-dessus de la difficulté de base. Vous devez payer au propriétaire des frais de transfert de 2000 crédits pour obtenir l'acte de propriété."
+dsp_self_built_description,"Vous êtes propriétaire des lieux dès le départ, mais le coût de base de l'électricité et de l'entretien passe à 10 crédits, plus 5 par niveau de difficulté au-dessus de la difficulté de base. Il vous faut 2000 crédits pour régler le litige immobilier et obtenir l'acte de propriété."
+dsp_selfbuilt_dispute_paid,Voici 2000 crédits. L'acte est à moi.
+dsp_selfbuilt_dispute_choice,Régler le litige immobilier (2000)
 dsp_cellar_name,Cave à vin naturelle
 dsp_wild_favor_description,"Le téléphone de Wild est débloqué dès le départ et vous gagnez 300 faveurs de Wild."
 dsp_wild_favor_name,"Faveurs de Wild"
@@ -100,7 +102,7 @@ dsp_distributor_supplies_4,Les échantillons de chaque fournisseur sont déjà d
 dsp_better_broker_name,Courtier consciencieux
 dsp_better_broker_description,"Les demandes du marché et les clients réclament plus volontiers les marchandises encombrantes que vous possédez déjà, surtout le jour du loyer. Les demandes du marché ne réclament jamais deux fois le même objet."
 dsp_notorious_villain_name,Célèbre scélérat
-dsp_notorious_villain_description,"Chaque atout neutre ou négatif choisi vous rapporte 40 crédits supplémentaires au départ. Cet atout compte comme négatif."
+dsp_notorious_villain_description,Chaque atout neutre ou négatif choisi vous rapporte 30 crédits supplémentaires au départ. Cet atout compte comme négatif.
 dsp_cyberpsychosis_name,Cyberpsychose
 dsp_cyberpsychosis_description,"La limite d'emplacements d'atouts de départ augmente de 3. Au début de la partie, cet atout est remplacé par un atout négatif aléatoire de 1 point."
 dsp_no_trash_janitor_1,Je sais que vous avez trafiqué quelque chose à votre poubelle.
@@ -366,15 +368,15 @@ dsp_meeting_room_description,Votre inventaire principal perd deux rangées.
 dsp_rat_infestation_name,Infestation de rats
 dsp_rat_infestation_description,Le service d'entretien coûte 10 crédits de plus. Chaque jour, votre inventaire principal se remplit de... crottes de rat. Vous pouvez engager un exterminateur via les services de nuit pour retirer cet atout.
 dsp_cold_shop_name,Boutique du froid
-dsp_cold_shop_description,Vous commencez avec un réfrigérateur délabré, un pack de bière du Diable carmin et une boîte de glace à la vanille premium de Bei.
+dsp_cold_shop_description,"Vous commencez avec 1 réfrigérateur délabré, 1 caisse de bière Red Imp et 2 boîtes de glace à la vanille Beis premium."
 dsp_godzilla_name,Godzilla
-dsp_godzilla_description,"Une fois par jour, manger des déchets radioactifs vous accorde 3 actions nocturnes supplémentaires. Chaque lundi, le Gestionnaire des déchets vous apporte une boîte de déchets radioactifs."
+dsp_godzilla_description,"Une fois par jour, manger des déchets nucléaires vous accorde 3 actions nocturnes supplémentaires. Chaque lundi, le Gestionnaire des déchets vous apporte une boîte de déchets nucléaires."
 dsp_godzilla_menu,Manger
-dsp_godzilla_eaten,"Vous avalez une boîte de déchets radioactifs. Cette nuit, vous vous sentez invincible."
-dsp_godzilla_already,Vous avez déjà mangé des déchets radioactifs aujourd'hui.
-dsp_godzilla_nightlog,Les déchets radioactifs vous tiennent éveillé toute la nuit.
-dsp_godzilla_energized,Les déchets radioactifs vous survoltent : vous servez un client supplémentaire aujourd’hui.
-dsp_godzilla_delivery,Le Gestionnaire des déchets dépose une boîte de déchets radioactifs et vous paye 100 crédits pour la prendre.
+dsp_godzilla_eaten,"Vous avalez une boîte de déchets nucléaires. Cette nuit, vous vous sentez invincible."
+dsp_godzilla_already,Vous avez déjà mangé des déchets nucléaires aujourd'hui.
+dsp_godzilla_nightlog,Les déchets nucléaires vous tiennent éveillé toute la nuit.
+dsp_godzilla_energized,Les déchets nucléaires vous survoltent : vous servez un client supplémentaire aujourd’hui.
+dsp_godzilla_delivery,Le Gestionnaire des déchets dépose une boîte de déchets nucléaires et vous paye 100 crédits pour la prendre.
 dsp_service_exterminator,Exterminateur
 dsp_rat_infestation_removed,L'exterminateur s'est occupé des rats ~ essayez de ne pas penser au verre qu'il a renversé cette nuit.
 dsp_strict_crackdown_name,Répression stricte
@@ -389,7 +391,7 @@ dsp_patience_limit_timeout,Le client a perdu patience.
 dsp_hero_history_name,Théorie du grand homme
 dsp_hero_history_description,Commercer avec des personnes célèbres accorde le double de réputation.
 dsp_gathering_storm_name,Tempête qui monte
-dsp_gathering_storm_description,Augmente fortement les chances de voir apparaître des criminels recherchés, jusqu'à ce que vous ayez rencontré tous les criminels recherchés, ou que vous en ayez dénoncé ou abattu un seul.
+dsp_gathering_storm_description,"Augmente fortement les chances de voir des criminels recherchés, jusqu'à ce que vous les ayez tous rencontrés ou que vous en ayez dénoncé ou abattu un."
 dsp_gathering_done,Tempête qui monte : les criminels recherchés se sont calmés.
 dsp_former_geologist_name,Ancien géologue
 dsp_former_geologist_description,Vous pouvez goûter n'importe quelle substance pour déterminer ce que c'est.
@@ -398,7 +400,7 @@ dsp_former_geologist_too_little,Il n'y en a pas assez pour une gorgée.
 dsp_fruit_battery_name,Batterie de Nutrifruit
 dsp_fruit_battery_description,Le Nutrifruit peut servir de batterie : chaque 1 kJ d'électricité consommé draine 10 kcal de sa valeur nutritive. Il ne peut toujours pas être vendu comme batterie.
 dsp_godzilla_visit_line,Le quota mensuel de déchets est encore arrivé. Rendez-moi service et débarrassez-moi de cette boîte.
-dsp_godzilla_visit_offer,Une boîte de déchets radioactifs. Prenez-la et je vous paye 100 crédits.
+dsp_godzilla_visit_offer,Une boîte de déchets nucléaires. Prenez-la et je vous paye 100 crédits.
 dsp_godzilla_visit_buy,Marché conclu. La boîte est à moi.
 dsp_foreknowledge_when_today,aujourd'hui
 dsp_foreknowledge_when_tomorrow,demain
@@ -406,7 +408,7 @@ dsp_foreknowledge_when_after, jours plus tard
 dsp_foreknowledge_price_tag,prix
 dsp_foreknowledge_price_name,Changement de prix
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,Tout alcool compte comme contrebande de niveau moyen. Le vin en fermentation se vend 50 et compte comme drogue.
+dsp_prohibition_description,Tout alcool compte comme contrebande de niveau moyen. Le vin en fermentation se vend 50 et compte comme produit alcoolisé et tabac.
 dsp_tobacco_tax_name,Taxe sur le tabac
 dsp_tobacco_tax_description,Les cigarettes gagnent 50% de marge au détail. Mais vous n'en touchez que 20%.
 dsp_blood_donor_name,Donneur de sang
@@ -437,7 +439,7 @@ dsp_revolutionary_influence_slip_title,Renseignements de la Révolution
 dsp_revolutionary_influence_slip_body,"Odin a baissé la voix avant de partir : dans les trois jours, la Révolution passe à l'action — « {0} ». C'est déjà coché sur le calendrier."
 dsp_service_professional_tooltip,Votre Vendetta ne vous dérangera plus.
 dsp_scav_drone_name,Drone de récupération
-dsp_scav_drone_description,"Lors des actions nocturnes, vous disposez de deux poches supplémentaires. Vous trouvez moins souvent des déchets en fouillant."
+dsp_scav_drone_description,Vous disposez de deux poches supplémentaires. Vous trouvez moins souvent des déchets en fouillant.
 dsp_trust_fund_name,Fondation caritative Keystone
 dsp_trust_fund_description,"Chaque jeudi, vous recevez 50 crédits."
 dsp_snake_oil_name,Huile de serpent
@@ -470,7 +472,8 @@ dsp_watermelon_merge_menu,Fusionner (consomme un identique)
 dsp_watermelon_merge_done,"Fusionné en un {0} plus gros, valeur {1} crédits."
 dsp_watermelon_merge_max,Impossible de faire plus gros.
 dsp_hydro_question_name,Hydroponie sur tuyau
-dsp_hydro_question_description,Vous pouvez cultiver 2 plantes dans le robinet d'eau. Vous commencez avec 2 graines aléatoires. Double-cliquez sur le robinet (ou sur la note « Culture hydroponique dans la conduite » du dossier) pour ouvrir la fenêtre.
+dsp_hydro_question_description,Vous pouvez cultiver 2 plantes dans le robinet d'eau. Vous commencez avec 2 graines aléatoires. Les améliorations portent la limite à 6 plantes. Double-cliquez sur le robinet (ou sur la note « Culture hydroponique dans la conduite » du dossier) pour ouvrir la fenêtre.
+dsp_hydro_need_tap,"Hydroponie sur tuyaux : vous avez déjà les graines, mais le robinet n'est pas encore raccordé. Débloquez une amélioration d'arrivée d'eau (Gutterflow ou eau rouillée) et la note apparaîtra automatiquement dans votre dossier."
 dsp_poet_admirer_name,Admirateur poète
 dsp_poet_admirer_description,Les billets de votre admirateur sont des objets de luxe d'une valeur de 50 crédits.
 dsp_admirer_poem_1,"Kwan-kwan crient les aigles sur l'îlot du fleuve. La jeune fille discrète et vertueuse est une bonne épouse pour le prince. — Livre des Odes, Guan Ju"
@@ -530,7 +533,7 @@ dsp_unlicensed_description,Le fonctionnaire de la commission arrive le cinquièm
 dsp_water_vending_name,Distributeur d'eau
 dsp_water_vending_description,Vous commencez avec un distributeur d'eau devant la boutique. Les clients peuvent acheter de l'eau seuls hors des heures d'ouverture.
 dsp_lucky_supply_name,Ravitaillement chanceux
-dsp_lucky_supply_description,Georgio apporte une Chance Liquide dès le lendemain de votre rencontre, puis revient chaque semaine comme un marchand.
+dsp_lucky_supply_description,"Chaque semaine, Georgio passe pour commercer et apporte 1 bouteille de Chance Liquide ainsi que 4 objets totalement aléatoires."
 dsp_thousand_miles_name,A Thousand Miles
 dsp_thousand_miles_description,"Pendant la musique, vous gagnez 5% de bonus de commerce."
 dsp_thousand_miles_bonus_buy,Musique en cours : +X% de bonus
@@ -556,9 +559,9 @@ dsp_phone_bill_half_2,Voici l'autre moitié.
 
 dsp_buddy_end_choice_yes,Bon, je l'ouvre.
 dsp_buddy_end_choice_no,Pourquoi ce serait moi ?
-dsp_hawaii_training_name,Voyage à Hawaï
+dsp_hawaii_training_name,Ce que j'ai appris à Hawaï
 dsp_hawaii_training_description,"Au début de la partie, vous gagnez 3 avantages aléatoires dont les points totalisent -2. Tout ce qu'on apprend à Hawaï n'est pas bon."
-dsp_hawaii_announce,Voyage à Hawaï : vous gagnez {0}
+dsp_hawaii_announce,Ce que j'ai appris à Hawaï : vous gagnez {0}
 dsp_paid_training_name,Formation payante
 dsp_paid_training_description,"Votre limite d'emplacements d'avantages augmente de 3. Vous commencez avec une dette de 648 crédits. Grâce à la publicité du sponsor, cet avantage est présenté comme positif."
 dsp_startrak_name,Startrak

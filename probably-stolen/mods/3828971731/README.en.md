@@ -1,9 +1,8 @@
-# Faction Reputation Expansion v1.5.8.1
+# Faction Reputation Expansion v1.5.8.2
 
-## Update notes
+## Edition
 
-This is the 1.5.8.1 migration build and includes the 1.5.8.1 update. See the in-game F6 "Update Log" page for details.
-Fixed the Newborn Alliance requisition phone freezing and missing cooldown display.
+This is the 1.5.8.2 legacy migration build. Approve its file capability to migrate existing saves.
 
 ## Installation
 

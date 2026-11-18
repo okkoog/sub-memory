@@ -233,7 +233,7 @@
         {
           "type": "text",
           "id": "3_s1",
-          "loc": "is_mn_p3_s1",
+          "loc": "is_mn_p2_s1",
           "style": "section",
           "color": "#FFFFFF",
           "align": "center",
@@ -251,7 +251,7 @@
           "x": 74,
           "y": 126.0,
           "w": 500,
-          "h": 190.0,
+          "h": 606.0,
           "spacing": 6
         },
         {
@@ -264,10 +264,74 @@
           "w": 0,
           "h": 0,
           "fontSize": 16
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "elements": [
+        {
+          "type": "text",
+          "id": "4_t",
+          "loc": "is_mn_p4_title",
+          "style": "title",
+          "align": "center",
+          "wrap": false,
+          "x": 48,
+          "y": 32,
+          "w": 532,
+          "h": 32,
+          "fontSize": 23
         },
         {
           "type": "image",
-          "id": "3_s2_bg",
+          "id": "4_s1_bg",
+          "sprite": "notebook_manual_section_2x",
+          "color": "#84A251",
+          "fit": "stretch",
+          "x": 74,
+          "y": 89.0,
+          "w": 500,
+          "h": 28
+        },
+        {
+          "type": "text",
+          "id": "4_s1",
+          "loc": "is_mn_p4_s1",
+          "style": "section",
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle",
+          "wrap": false,
+          "x": 74,
+          "y": 89.0,
+          "w": 500,
+          "h": 28,
+          "fontSize": 18
+        },
+        {
+          "type": "flow",
+          "id": "4_f1",
+          "x": 74,
+          "y": 126.0,
+          "w": 500,
+          "h": 190.0,
+          "spacing": 6
+        },
+        {
+          "type": "text",
+          "id": "4_b1",
+          "loc": "is_mn_p4_b1",
+          "flow": "4_f1",
+          "style": "body",
+          "autoHeight": true,
+          "w": 0,
+          "h": 0,
+          "fontSize": 16
+        },
+        {
+          "type": "image",
+          "id": "4_s2_bg",
           "sprite": "notebook_manual_section_2x",
           "color": "#84A251",
           "fit": "stretch",
@@ -278,8 +342,8 @@
         },
         {
           "type": "text",
-          "id": "3_s2",
-          "loc": "is_mn_p3_s2",
+          "id": "4_s2",
+          "loc": "is_mn_p4_s2",
           "style": "section",
           "color": "#FFFFFF",
           "align": "center",
@@ -293,7 +357,7 @@
         },
         {
           "type": "flow",
-          "id": "3_f2",
+          "id": "4_f2",
           "x": 74,
           "y": 373.0,
           "w": 500,
@@ -302,9 +366,9 @@
         },
         {
           "type": "text",
-          "id": "3_b2",
-          "loc": "is_mn_p3_b2",
-          "flow": "3_f2",
+          "id": "4_b2",
+          "loc": "is_mn_p4_b2",
+          "flow": "4_f2",
           "style": "body",
           "autoHeight": true,
           "w": 0,

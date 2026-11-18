@@ -69,14 +69,16 @@ is_msg_deposit_done,Stored {0}.
 is_msg_deposit_failed,Could not store {0}.
 
 # ===== 单箱收纳（AutoStow）=====
-is_msg_stow_in_store,Go back inside the shop to stow.
+is_msg_stow_in_store,No items to stow in this scene
+is_msg_stow_box_not_carried,This box is still in the shop, bring it along before stowing
+is_msg_stow_box_not_carried_key,The box bound to this hotkey is still in the shop, bring it along before using it
 is_msg_stow_nothing,Nothing to stow.
 is_msg_stow_done,Stowed {0}.
 is_msg_stow_box_full,"The box is full ({0} slots) - take something out first."
-is_msg_slotmode_frozen,"Switched to {0} slots: the last {1} item slots are frozen for now. Switch back to 25 to restore them."
+is_msg_slotmode_frozen,"Switched to {0} slots, the last {1} item slots are frozen for now. Switch back to 25 to restore them."
 
 # ===== 全箱收纳（BoxStowAll）=====
-is_msg_allstow_in_store,Go back inside the shop to stow.
+is_msg_allstow_in_store,Go back inside the shop to use Store All
 is_msg_allstow_nothing,Nothing to stow.
 is_msg_allstow_done,Stowed {0} across all boxes.
 is_msg_allstow_all_full,All boxes are full - take something out first.
@@ -103,7 +105,7 @@ is_btn_stow_one,Stow
 is_btn_stow_all,Stow All
 is_btn_restock_all,Stock All
 is_btn_restock_one,Stock
-is_msg_tidy_done,Sorted: moved {0}.
+is_msg_tidy_done,Sorted, moved {0}.
 is_msg_tidy_stuck,Nothing more can be sorted.
 is_win_empty_slot,Empty
 is_win_usage_hint,"Drag items onto the box, or into a slot, to store them. Left-click a slot to take out 1, right-click for 5. Water containers can only be stored by dragging into a slot - Stow never picks them up. Bottles of the same size can share a slot even when the water quality differs, so avoid mixing you do not want."
@@ -128,7 +130,7 @@ is_gp_guard,No Pull
 is_gp_restock_guard,Skip Stock All
 is_gp_keep_one,Keep 1 when stocking
 is_gp_capturing,Press a key - Esc to cancel
-is_gp_bind_fail,Bind failed: {0}
+is_gp_bind_fail,Bind failed, {0}
 is_gp_conflict_own_stow,Key already used by this box's Stow.
 is_gp_conflict_own_restock,Key already used by this box's Stock.
 is_gp_conflict_stow,Key already used by Stow on another box.
@@ -139,6 +141,42 @@ is_gp_unbound_stow,Stow hotkey unbound.
 is_gp_unbound_restock,Stock hotkey unbound.
 is_gp_unbound_allstow,Stow All hotkey unbound.
 is_gp_unbound_allrestock,Stock All hotkey unbound.
+
+# ===== 容器配对（Container pairing，2026-11-18）=====
+is_gp_col_pair,Paired Containers
+is_gp_pair,Pair Container
+is_gp_pair_list,Paired List
+is_gp_pair_desc,Click, then click a container to pair; the mode exits after pairing
+is_gp_pair_list_desc,View and unpair this box's containers
+is_msg_link_pick,Click a container to pair it; the mode exits after pairing; Esc to cancel
+is_msg_link_ok,Paired {0}, Stow will pull every matching item out of it
+is_msg_link_off,Unpaired {0}
+is_msg_link_off_all,Unpaired all {0} containers
+is_msg_link_full,Pairing full ({0} containers). Unpair some before pairing again.
+is_msg_link_lost,Pairing with {0} is gone, container no longer exists
+is_msg_link_in_store,Go back inside the store to pair containers
+is_msg_link_cancel,Container pairing closed
+is_msg_link_bad_not_container,That is not a container
+is_msg_link_bad_locked,That container is locked
+is_msg_link_bad_bay,Storage/machine/smuggler bays use the toggle switches
+is_msg_link_bad_box,Cannot pair with a storage box
+is_msg_link_bad_self,Cannot pair with this box
+is_msg_link_bad_owned,That container is not yours
+is_msg_link_bad_display,Display items cannot be paired
+is_msg_link_bad_no_grid,That container has no item slots
+is_msg_link_bad_unknown,That container cannot be paired
+is_link_unknown,container
+is_link_win_title,Paired Containers - {0}
+is_link_win_title_plain,Paired Containers
+is_link_win_count,{0} in total
+is_link_win_none,No paired containers yet
+is_link_win_hint,Click "Pair Container" in the gear panel to start
+is_link_win_row,{0}. {1}
+is_link_win_row_desc,Click to unpair this container
+is_link_win_missing,{0} (not found)
+is_link_win_unlink_all,Unpair All
+is_link_win_unlink_all_desc,Clears every pair; items inside boxes are untouched
+
 
 # ===== 物品 tooltip（BoxTooltip）=====
 is_tip_battery,Charge: {0} kJ
@@ -207,9 +245,11 @@ is_mn_p1_s1,Basics
 is_mn_p1_b1,1. One slot holds one type of item, up to 99 per slot. A storage box comes with you from the start; other sizes are sold by Dr. Jackson. Items stored in the box only keep their real tags; put labels back on manually after taking them out.\n\n2. Store: drop onto the box and items merge into matching slots or fill empty ones; drop onto a slot in the detail panel to store straight into it.\n\n3. Take: left-click takes 1, right-click takes 5; hold Alt while clicking to put the item straight onto the counter.\n\n4. Durability, charge and use-count items: values pool into one total per slot. Withdrawal tops slots up in order; once the pool runs dry the rest carry zero value.\n\n5. Liquids: containers of the same size share one slot; empty bottles and their contents are kept together and split by capacity on withdrawal. Items holding liquid can only be placed by dragging them onto a slot; bulk storing will not pick them up.\n\n6. Chemicals: stored separately by grade.\n\n7. Storage expansion kits add pages to a storage box; one box holds at most 5 pages.\n\n8. Items tagged [Storage] [Machine] [Loot] [Module] [Node] [Toolbox] are refused; containers must be emptied first; locked supply crates must be unlocked before storing; homemade wine and question-mark items are refused; animals are refused too (see Main Menu Mod Settings).
 is_mn_p2_title,Storage Box Manual
 is_mn_p2_s1,Gear Panel Buttons, Keys and Switches
-is_mn_p2_b1,1. Store One: this box only, and only item types it already holds.\n\n2. Store All: every box takes its turn in acquisition order, again only for types already held.\n\n3. Restock One: goods come from this box only.\n\n4. Restock All: every box supplies together.\n\n5. Restocking needs a customer in store, places only what that customer wants and can afford, stops when the counter is full and skips locked slots.\n\n6. All four buttons can be bound in the gear panel.\n\n7. Pull Alike: when storing, matching items come in from other boxes; matching slots here fill up first, only the rest opens a new slot; animal slots are never pulled.\n\n8. Block Pull: other boxes' Store One cannot take goods from this one.\n\n9. Skip Restock All: Restock All passes this box by; its own buttons and keys still work.\n\n10. Keep One on Restock: automatic restock leaves 1 per slot; manual withdrawal is unrestricted.\n\n11. Pull Storage / Machine / Smuggler Bay: those areas are included when storing; machines themselves stay put. All three apply to every box in the save.\n\n12. Hide Names: show or hide the names on the box itself.
+is_mn_p2_b1,1. Store One: this box only, and only item types it already holds.\n\n2. Store All: every box takes its turn in acquisition order, again only for types already held.\n\n3. Restock One: goods come from this box only.\n\n4. Restock All: every box supplies together.\n\n5. Restocking needs a customer in store, places only what that customer wants and can afford, stops when the counter is full and skips locked slots.\n\n6. All four buttons can be bound in the gear panel.\n\n7. Pull Alike: when storing, matching items come in from other boxes; matching slots here fill up first, only the rest opens a new slot; animal slots are never pulled.\n\n8. Block Pull: other boxes' Store One cannot take goods from this one.\n\n9. Skip Restock All: Restock All passes this box by; its own buttons and keys still work.\n\n10. Keep One on Restock: automatic restock leaves 1 per slot; manual withdrawal is unrestricted.
 is_mn_p3_title,Storage Box Manual
-is_mn_p3_s1,Locking and Tidy
-is_mn_p3_b1,1. Click the name plate under a slot to lock it; click again to unlock.\n\n2. Locked slots are skipped by automatic restocking and never receive automatic placement; manual access is unaffected.\n\n3. Click the three-line button in the title bar: items queue up forward in order.\n\n4. Locked slots keep their items in place during tidy.
-is_mn_p3_s2,Main Menu Mod Settings
-is_mn_p3_b2,1. Where: main menu > Mods > select 堆叠收纳 > the settings icon on that row.\n\n2. Slot Cap: 20-999, default 99.\n\n3. Slot Count: 16 or 25. Switching back to 16 freezes slots 17-25; items are kept.\n\n4. Zero-First Withdrawal: 0 durability / 0 charge / 0 uses / empty bottles, four switches.\n\n5. Debug Log: enable only when troubleshooting.\n\n6. Allow Animals: off by default. Rats, fish (dead or alive), fry and fertilized roe are refused; when on, they can be stored and taken out as usual.
+is_mn_p3_b1,11. Pull Storage / Machine / Smuggler Bay: those areas are included when storing; machines themselves stay put. All three apply to every box in the save.\n\n12. Hide Names: show or hide the names on the box itself.\n\n13. Pair Container: extends Store One, letting you designate extra containers that can be stowed from.\n\n14. Paired List: view the containers this box is paired with and unpair them.
+is_mn_p4_title,Storage Box Manual
+is_mn_p4_s1,Locking and Tidy
+is_mn_p4_b1,1. Click the name plate under a slot to lock it; click again to unlock.\n\n2. Locked slots are skipped by automatic restocking and never receive automatic placement; manual access is unaffected.\n\n3. Click the three-line button in the title bar: items queue up forward in order.\n\n4. Locked slots keep their items in place during tidy.
+is_mn_p4_s2,Main Menu Mod Settings
+is_mn_p4_b2,1. Where: main menu > Mods > select 堆叠收纳 > the settings icon on that row.\n\n2. Slot Cap: 20-999, default 99.\n\n3. Slot Count: 16 or 25. Switching back to 16 freezes slots 17-25; items are kept.\n\n4. Zero-First Withdrawal: 0 durability / 0 charge / 0 uses / empty bottles, four switches.\n\n5. Debug Log: enable only when troubleshooting.\n\n6. Allow Animals: off by default. Rats, fish (dead or alive), fry and fertilized roe are refused; when on, they can be stored and taken out as usual.

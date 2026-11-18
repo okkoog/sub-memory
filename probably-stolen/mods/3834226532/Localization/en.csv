@@ -5,11 +5,11 @@ dsp_distributor_description,"While training under The Mentor you already worked 
 dsp_distributor_tag,Perks: Probably Fun
 # Starting perks
 dsp_wanderlust_name,Wanderlust
-dsp_wanderlust_description,If at least one customer is still queued when you close the shop, you get one extra night action, and your first night trip does not cost you any customers.
+dsp_wanderlust_description,"If at least one customer is still queued when you close the shop, you get one extra night action. As long as you have night actions left, you do not lose customers."
 dsp_smelting_name,Smelting
-dsp_smelting_description,"Start with a shabby Furnace fitted with a Blast Furnace Module and some scrap metal."
+dsp_smelting_description,"Start with a shabby Furnace fitted with a Blast Furnace Module and 6 scrap metal."
 dsp_ecommerce_name,E-commerce
-dsp_ecommerce_description,Unlocks Marketplace Requests from the start. One fewer buyer arrives each day, but you receive one extra marketplace request every two days.
+dsp_ecommerce_description,Unlocks Marketplace Requests from the start. One fewer buyer arrives each day, but you receive one extra marketplace request every two days. Extra requests never duplicate a type you already have.
 dsp_built_on_dump_name,Built on the Dumping Grounds
 dsp_built_on_dump_description,"Items put in the Trash Can are moved onto the ground at the Dumping Grounds right away; you can take them back before the night ends. The nightly cleaning service and everything tied to it stop working. You clean up yourself."
 dsp_tacit_understanding_name,Tacit Understanding
@@ -24,7 +24,7 @@ dsp_former_assistant_bonus_sell,"Trading with Dr. Jackson: sell price +10%"
 dsp_former_assistant_call_1,"It's me. Doctor, can you drop by the store tomorrow? There is something I would like you to look at."
 dsp_former_assistant_call_2,Deal. See you tomorrow.
 dsp_phone_frugal_name,Painful Phone Bill
-dsp_phone_frugal_description,"Calls cost 20 credits. Every phone-summoned service brings 50% more goods and 25% more budget, rounded up."
+dsp_phone_frugal_description,"Calls cost 10 credits. Every phone-summoned service brings 50% more goods and 25% more budget, rounded up."
 dsp_presbyopia_name,Astigmatism
 dsp_presbyopia_description,The magnifying glass makes things hard to see.
 dsp_zero_cost_name,Five-Finger Discount
@@ -39,7 +39,9 @@ dsp_newspaper_recipe_tooltip_flux,"Flux agent (Basic): a practical additive that
 dsp_newspaper_recipe_tooltip_yeast,"Synthetic yeast: an illegal substance that can replace yeast to brew slightly carcinogenic wine very cheaply. Water is all it needs."
 dsp_mortgage_description,"You buy the store at the start with a debt of 7,000.\n\nWarning: an extremely difficult start."
 dsp_self_built_name,"Self-Built"
-dsp_self_built_description,"You own the property from the start, but the base cost of power and janitorial services becomes 10 credits, plus 5 more for each difficulty step above the base difficulty. You must pay the landlord a 2000 credit transfer fee to obtain the deed."
+dsp_self_built_description,"You own the property from the start, but the base cost of power and janitorial services becomes 10 credits, plus 5 more for each difficulty step above the base difficulty. You need 2000 credits to settle the property dispute and obtain the deed."
+dsp_selfbuilt_dispute_paid,Here are 2000 credits. The deed is mine.
+dsp_selfbuilt_dispute_choice,Settle the property dispute (2000)
 dsp_cellar_name,Natural Wine Cellar
 dsp_wild_favor_description,"Wild's phone is unlocked from the start and you gain 300 Wild's Favor."
 dsp_wild_favor_name,"Wild's Favor"
@@ -99,7 +101,7 @@ dsp_distributor_supplies_4,Free samples from every supplier are already in the b
 dsp_better_broker_name,Dutiful Broker
 dsp_better_broker_description,"Market requests and customers are more likely to ask for bulky goods you already own, especially on rent day."
 dsp_notorious_villain_name,Notorious Villain
-dsp_notorious_villain_description,"Each neutral or negative perk you picked gives you 40 extra credits at the start. This perk counts as negative."
+dsp_notorious_villain_description,Each neutral or negative perk you picked gives you 30 extra credits at the start. This perk counts as negative.
 dsp_cyberpsychosis_name,Cyberpsychosis
 dsp_cyberpsychosis_description,"Your starting perk slot limit is increased by 3. At the start of the run this perk is replaced by a random 1-point negative perk."
 dsp_no_trash_janitor_1,I know you did something to that trash can of yours.
@@ -365,15 +367,15 @@ dsp_meeting_room_description,Your main inventory loses two rows.
 dsp_rat_infestation_name,Rat Infestation
 dsp_rat_infestation_description,Cleaning service costs 10 more credits. Every day your main inventory fills up with... rat droppings. You can hire an exterminator from the nightly services to remove this trait.
 dsp_cold_shop_name,Cold Storage Shop
-dsp_cold_shop_description,Start with a shabby fridge plus a case of Red Imp beer and a box of Beis premium vanilla ice cream.
+dsp_cold_shop_description,"Start with 1 shabby fridge, 1 case of Red Imp beer and 2 boxes of Beis premium vanilla ice cream."
 dsp_godzilla_name,Godzilla
-dsp_godzilla_description,"Once a day, eating Radioactive Waste gives you 3 extra night actions. Every Monday, the Corporate Waste Manager brings one can of Radioactive Waste to your door."
+dsp_godzilla_description,"Once a day, eating Nuclear Waste gives you 3 extra night actions. Every Monday, the Corporate Waste Manager brings one can of Nuclear Waste to your door."
 dsp_godzilla_menu,Eat
-dsp_godzilla_eaten,You swallow a can of Radioactive Waste. Tonight you feel unstoppable.
-dsp_godzilla_already,You have already eaten Radioactive Waste today.
-dsp_godzilla_nightlog,The Radioactive Waste keeps you wired all night.
-dsp_godzilla_energized,The Radioactive Waste keeps you wired - you serve one extra customer today.
-dsp_godzilla_delivery,The Corporate Waste Manager drops off a can of Radioactive Waste and pays you 100 credits to take it.
+dsp_godzilla_eaten,You swallow a can of Nuclear Waste. Tonight you feel unstoppable.
+dsp_godzilla_already,You have already eaten Nuclear Waste today.
+dsp_godzilla_nightlog,The Nuclear Waste keeps you wired all night.
+dsp_godzilla_energized,The Nuclear Waste keeps you wired - you serve one extra customer today.
+dsp_godzilla_delivery,The Corporate Waste Manager drops off a can of Nuclear Waste and pays you 100 credits to take it.
 dsp_service_exterminator,Exterminator
 dsp_rat_infestation_removed,The exterminator dealt with the rats ~ try not to think about the glass they knocked over last night.
 dsp_strict_crackdown_name,Strict Crackdown
@@ -388,7 +390,7 @@ dsp_patience_limit_timeout,The customer ran out of patience.
 dsp_hero_history_name,Great Man Theory
 dsp_hero_history_description,Trading with famous people grants double reputation.
 dsp_gathering_storm_name,Rising Storm
-dsp_gathering_storm_description,Greatly increases the odds of wanted criminals showing up, until you have met every wanted criminal or reported or shot one.
+dsp_gathering_storm_description,"Greatly increases the chance of wanted criminals showing up, until you have met every wanted criminal or reported or shot any one of them."
 dsp_gathering_done,Rising Storm: the wanted criminals have gone quiet.
 dsp_former_geologist_name,Former Geologist
 dsp_former_geologist_description,You can taste any substance to identify what it is.
@@ -397,7 +399,7 @@ dsp_former_geologist_too_little,Not enough in there for a sip.
 dsp_fruit_battery_name,Fruit Battery
 dsp_fruit_battery_description,Nutrifruit can be used as a battery: every 1 kJ of power drains 10 kcal of its nutrition. It still cannot be sold as a battery.
 dsp_godzilla_visit_line,The monthly waste quota is in again. Do me a favour and take this can off my hands.
-dsp_godzilla_visit_offer,One can of Radioactive Waste. Take it and I will pay you 100 credits.
+dsp_godzilla_visit_offer,One can of Nuclear Waste. Take it and I will pay you 100 credits.
 dsp_godzilla_visit_buy,Deal. The can is mine.
 dsp_foreknowledge_when_today,today
 dsp_foreknowledge_when_tomorrow,tomorrow
@@ -405,7 +407,7 @@ dsp_foreknowledge_when_after, days out
 dsp_foreknowledge_price_tag,price
 dsp_foreknowledge_price_name,Price change
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 credits and counts as a narcotic.
+dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 credits and counts as liquor-and-tobacco goods.
 dsp_tobacco_tax_name,Tobacco Tax
 dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Blood Donor
@@ -436,7 +438,7 @@ dsp_revolutionary_influence_slip_title,Revolution Intel
 dsp_revolutionary_influence_slip_body,Odin lowered his voice before leaving: within three days the Revolution moves - "{0}". It is already marked on the calendar.
 dsp_service_professional_tooltip,Your vendetta will not bother you any more.
 dsp_scav_drone_name,Scavenger Drone
-dsp_scav_drone_description,During night actions you have two extra pockets. You are less likely to pick up junk while scavenging.
+dsp_scav_drone_description,You have two extra pockets. You are less likely to pick up junk while scavenging.
 dsp_trust_fund_name,Keystone Foundation for Charity
 dsp_trust_fund_description,You get 50 credits every Thursday.
 dsp_snake_oil_name,Snake Oil
@@ -469,7 +471,8 @@ dsp_watermelon_merge_menu,Merge (uses one identical crop)
 dsp_watermelon_merge_done,"Merged into a bigger {0}, worth {1} credits"
 dsp_watermelon_merge_max,This one is already as big as it gets.
 dsp_hydro_question_name,Pipe Hydroponics
-dsp_hydro_question_description,You can grow 2 plants in the water pipe. Start with 2 random seeds.
+dsp_hydro_question_description,You can grow 2 plants in the water pipe. Start with 2 random seeds. Upgrades raise the limit to 6 plants.
+dsp_hydro_need_tap,"Pipe Hydroponics: the seeds are already in your hands, but the water tap is not connected yet. Unlock a water tap upgrade (Gutterflow Tap or Rustwater Tap) and the note appears in your dossier automatically."
 dsp_poet_admirer_name,Poet Admirer
 dsp_poet_admirer_description,Your admirer's notes are luxury items worth 50 credits.
 dsp_admirer_poem_1,"Kwan-kwan go the ospreys, on the islet in the river. The modest, retiring, virtuous, young lady: for our prince a good mate she. - Book of Songs, Guan Ju (tr. James Legge)"
@@ -529,7 +532,7 @@ dsp_unlicensed_description,The trade commission officer visits on day five.
 dsp_water_vending_name,Water Vending Machine
 dsp_water_vending_description,You start with a water vending machine outside the shop. Customers can buy drinking water on their own outside business hours.
 dsp_lucky_supply_name,Lucky Supply
-dsp_lucky_supply_description,Every week Georgio visits to trade, bringing one bottle of Liquid Luck and two completely random items.
+dsp_lucky_supply_description,"Every week Georgio comes by to trade, bringing 1 bottle of Liquid Luck and 4 completely random items."
 dsp_thousand_miles_name,A Thousand Miles
 dsp_thousand_miles_description,"While music is playing you gain a 5% trade bonus."
 dsp_thousand_miles_bonus_buy,Music playing: +X% trade bonus
@@ -555,9 +558,9 @@ dsp_phone_bill_half_2,Here is the other half.
 
 dsp_buddy_end_choice_yes,Fine, I will open it.
 dsp_buddy_end_choice_no,Why should I be the one?
-dsp_hawaii_training_name,Hawaii Trip
+dsp_hawaii_training_name,What I Learned in Hawaii
 dsp_hawaii_training_description,At the start of the game you gain 3 random perks whose perk points add up to -2. Not everything you learn in Hawaii is good.
-dsp_hawaii_announce,Hawaii Trip: gained {0}
+dsp_hawaii_announce,What I Learned in Hawaii: gained {0}
 dsp_paid_training_name,Paid Training
 dsp_paid_training_description,"Your starting perk slot limit is increased by 3. You start with a 648 credit debt. Thanks to the sponsor's ads, this perk is shown as a positive one."
 dsp_startrak_name,Startrak
