@@ -645,3 +645,160 @@ Lazy Duck — 22:33
 
 - **4차 기록 (2026-11-18):** 21:03~22:33 대화 추가. 공개 GitHub, 삭제된 구버전 자료 요청, 0.10.1 변경 내역과 기술·운영 논점 기록.
 - **첨부 검증:** 제공된 JSONL 2개가 일치함을 SHA-256으로 검사. 물리적 1246행에 0.10.1 관련 변경 로그가 실제 존재함을 확인. 보존 문서·설명문·기술 스크린샷의 증거상 한계를 기록.
+
+
+---
+
+## 13. 조사 스레드 분리: 2026-11-17 22:34~22:57
+
+> **자료:** 사용자가 제공한 Discord 본 채널 복사본. 아래 시간은 Discord 표시 시각이며 시간대는 미확인. **2026-11-17 22:54에 공식 조사 스레드 \`Inquiry: Modding Dispute\` 생성.** 이 스레드의 내부 메시지는 아직 제공되지 않음. 생성 직후 복사본에 보인 \`메시지 201개\` 표시는 그 시점의 UI 표시일 뿐, 전수 열람을 의미하지 않는다.
+
+### 13.1 핵심 사건
+
+| 시각 | 발언자 | 발언·조치 | 증거 수준 |
+|---|---|---|---|
+| 22:34 | EikoocSun | “The logs for version 0.10.1 don't match the repository for version 0.15, so let's calm down and wait for new, conclusive evidence.” | **버전 공백을 지적**하고 결정적 증거가 나올 때까지 기다리자고 제안 |
+| 22:36 | Lazy Duck | GitHub 커밋 기록이 문제가 된 버전을 포함하지 않는다고 주장. 0.9.0 출시 캡처와 0.9.1 변경 로그 언급 | **제출자 측 주장**. 실제 저장소 이력은 별도 미확인 |
+| 22:41 | Victor | “Duck I am going threw old cloud files one sec, I recoverd the 0.10.1 and gave it to leo. Trying to recover older ones.” | **중요한 신규 발언:** 0.10.1 파일을 복구해 Leo에게 전달했다고 주장. **전달된 실제 파일이나 해시가 제시되지 않아 독립 확인 안 됨** |
+| 22:41 | Leo [STOL] | “I'm look into this” | 운영진이 전달 자료를 살펴보겠다고 밝힘 |
+| 22:42 | Lazy Duck | 해명 전까지 심사 담당자로 임명하는 것이 부적절하다는 것이 핵심 요구라고 재확인. 공격·협박을 지지하거나 조장하지 않는다고 밝힘 | **문제 제기 측 공식 입장** |
+| 22:43 | Leo [STOL] | **별도 논의 스레드를 만들겠다**고 공지. 인신공격·괴롭힘·모욕·인종차별 금지, 위반 시 24시간 타임아웃 안내 | 공개적인 운영 조치 |
+| 22:44 | Lazy Duck | 자신이 공유할 수 있는 자료는 모두 제시했으며 차분히 검토하자고 말함 | 자료 제출 완료 주장 |
+| 22:49~22:51 | Victor, Lazy Duck | Victor “I just want to resolve this peacefully.” Lazy Duck은 Victor가 본인에게 정중하게 대응해 왔다고 인정하며 차분한 해결 희망 | 당사자 간 갈등 완화의 직접 발언 |
+| 22:51 | Victor | “Do You mind If I dm you?” | 개별 DM 협의 요청 |
+| **22:54** | **Leo** | **\`Inquiry: Modding Dispute\` 별도 스레드 생성** | 본 채널 논란이 공식적으로 스레드로 이동된 분기점 |
+| **22:55** | **Lazy Duck** | DM보다 **누구나 이해할 수 있도록 스레드에 증거를 공개**해 달라고 요청. 오해이기를 바란다고 밝힘 | 비공개 합의가 아닌 공개 증거 검토 요구 |
+| 22:54~22:57 | Leo, aliocube [STOL] | 기존 논쟁은 새 스레드에서 진행하고 이 채널은 원래 모드 개발 주제로 복귀하도록 지시 | 논쟁의 운영상 분리 |
+
+**해석:** 22:41 Victor의 **0.10.1 파일 복구 발언**은 수사·검증상 의미가 있다. 다만 그가 전달했다고 말한 **0.10.1은 앞서 확인된 '제3자 코드·에셋 제거' 변경 내역이 발표된 버전**이다. 의혹이 집중된 **0.9.0~0.9.1 이전 배포물**을 확보하지 못했다면 논쟁의 핵심은 여전히 남는다. 반대로 실제로 0.10.1 파일을 Leo에게 전달했다는 사실조차 이 텍스트만으로 확정할 수는 없다.
+
+### 13.2 주요 원문 발췌
+
+~~~text
+EikoocSun — 22:34
+The logs for version 0.10.1 don't match the repository for version 0.15, so let's calm down and wait for new, conclusive evidence.
+
+Lazy Duck — 22:36
+This GitHub repository is incomplete; its commit history does not even cover the version in question at that time.Here is a screenshot of the public release of version 0.9.0. His changelog includes every version except for 0.9.0. Furthermore, the content of his 0.9.1 update log explicitly mentions removing the used (bundled) content.
+
+Victor — 22:41
+Duck I am going threw old cloud files one sec, I recoverd the 0.10.1 and gave it to leo.
+Trying to recover older ones.
+
+Leo [STOL] — 22:41
+I'm look into this
+
+Lazy Duck — 22:42
+Our point has always been simple: as long as he hasn't proven his innocence and remains suspected of infringement, we don't recommend him as a moderator. I've always wanted to keep things peaceful and friendly, just like our previous respectful communication in the comments. I also want to make it clear that I do not support attacks or death threats from anyone, and I would never encourage that. We are just here to set the record straight, not to get sidetracked.
+
+Leo [STOL] — 22:43
+I will create a seperate thread to discuss the issue regarding this allegation
+Only on one conditions
+No personal attacks/harassment insult, racism or any kind. I would not allow it, anyone found guilty will get 24h timeout from this server
+
+Victor — 22:49
+I just want to resolve this peacefully.
+
+Lazy Duck — 22:51
+Yes, I believe you feel the same way. Regardless of whether the mod involves infringement or other issues, you have been polite and friendly when communicating with me. So I believe we can handle this calmly. Setting the record straight is all that is needed; there's no need for more people to argue and make things complicated.
+
+Victor — 22:51
+Do You mind If I dm you?
+
+Leo — 22:54
+Inquiry: Modding Dispute 스레드를 시작하셨어요 (당시 UI: 메시지 201개)
+
+Leo [STOL] — 22:54
+please move this discussion under the thread
+
+Lazy Duck — 22:55
+Thank you very much for reaching out to me. Unfortunately, I cannot speak for everyone. They also need a channel to understand the situation, so if possible, please publish all the evidence here. I sincerely hope this is just a misunderstanding.
+
+aliocube [STOL] — 22:56
+anything from the previous convo goes in there
+
+Leo [STOL] — 22:57
+correct
+~~~
+
+## 14. 논쟁 분리 이후 본 채널: 2026-11-17 23:03~23:39
+
+- 본 채널은 모드 개발·게임플레이 이야기로 복귀했고, 유저들 사이에는 사건이 **아직 결론 나지 않았다**는 인식이 공유됨(23:38 질문, 23:39 \`cyxw: not even concluded yet / 还没结束\`).
+- **23:30~23:36 yamsi와 RIchardTAN**이 서로 오해와 공격적 표현을 사과하며 이 대화에서의 감정적 갈등을 완화했다. **이는 저작권 쟁점의 종결이나 Victor의 행위에 대한 사과·판정이 아님.**
+- \`Inquiry: Modding Dispute\` 스레드 **안에서 진행된 후속 조사·증거 제출 내용은 이 본 채널 기록만으로 파악할 수 없다.**
+
+주요 발언:
+
+~~~text
+yamsi [SANC] — 23:30
+Since we started here, off topic to the inquiry, @RIchardTAN answering ur message.
+I believe any drama can be cause by anyone in the whole world. Both drama which I mentioned in my first message (review bombing and Victor’s drama) were caused by people speaking Chinese.
+
+RIchardTAN — 23:32
+Sorry for all my offensive words, and improper doubt to you, that is a big mistake. I do not expect for a forgiveness but hope this can make you feel better.
+
+yamsi [SANC] — 23:32
+Thanks mate, sorry if you felt I’m treating or thinking Chinese people are worse in any way or offended them.
+
+RIchardTAN — 23:35
+It doesn’t matter, since we cannot see each other’s motions through internet, only chatting with words could make many misunderstandings. And I hope my rude won’t make you feel the people on the internet are all bad. Sorry again, I made a big mistake.
+
+yamsi [SANC] — 23:36
+Same, love you bro
+
+鳴風みなも — 23:38
+Could someone please explain what the conclusion is?
+
+cyxw [ATM] — 23:39
+not even concluded yet
+还没结束
+~~~
+
+## 15. 다음 날 본 채널: 2026-11-18 00:28~09:07 — 세이브 영향과 논란의 재유입
+
+### 15.1 게임 이용자에게 발생한 영향
+
+**00:30 Kevnel**이 Vanilla Overhaul이 갑자기 사라져 본인의 저장 데이터가 사실상 망가졌다고 호소했다. 다른 참가자는 \`legacy version\` 설치를 권했지만, Kevnel은 불필요한 다른 콘텐츠가 많다는 이유로 새 게임을 시작하겠다고 말했다.
+
+~~~text
+Kevnel — 00:30
+Hey, does anyone know what happened to Vanilla Overhaul? My save's basically trashed as a result of it just... suddenly disappearing
+
+jarredminko — 00:31
+get the legacy version
+
+Kevnel — 00:32
+oh good lord, all that extra content I don't need
+ughhhhhhhh
+I'll just start a new save...
+~~~
+
+**증거 수준:** 특정 이용자 한 명이 **모드 공개 중단으로 세이브 이용에 영향을 받았다고 주장하는 직접 진술**이다. 어떤 모듈·어떤 세이브 파일에 문제가 발생했는지 실제 진단 자료는 없다. **저작권 의혹이 모듈 삭제의 원인이었다는 증거는 아니다.**
+
+### 15.2 논란이 일반 채널로 재유입
+
+- **01:49~02:14:** 일부 신규 참가자가 Victor를 도둑이라고 단정하고 모욕하는 글을 게시. 이에 대한 반발 과정에서 일부 참가자가 중국인 집단을 비하하거나 사건의 책임을 국적 전체에 돌리는 발언을 하면서 논쟁이 다시 격화됨.
+- 일부는 **협박이 실제로 있었다는 증거**를 요청했고, \`jarredminko\`는 **증거가 별도 스레드에 올라왔다고 주장**(01:58). **그 스레드 기록이 아직 제공되지 않아 실제로 무엇이 게시됐는지는 확인할 수 없다.**
+- **02:13~02:16:** 운영진 \`aliocube\`, \`Waf\` 등이 이 논쟁은 여기서 다루지 말고 전용 조사 스레드로 옮기라고 재차 지시함. 다른 모드 관련 토론으로 복귀하라고 안내.
+- **09:07:** \`ParrotParrot\`이 Steam에서 강제하는 창작마당 수동 심사 제도가 현재 작동하고 있다고 일반 채널에서 다시 설명. **모드 도용 의혹과는 다른 운영 현황**이다.
+
+**중요:** 본 채널의 일부 참가자가 저지른 모욕과 국적 일반화는 **제3자의 발언**이며 이를 Lazy Duck·RIchardTAN이 지시하거나 조직했다는 근거는 이 자료에서 확인되지 않는다. 실제 협박 증거가 있다면 **별도 스레드의 원본 자료를 확인해야** 한다.
+
+### 15.3 사건과 무관한 기록
+
+- 전날 23:40 이후와 새벽에는 RefugeeCamp 번역 DLL 패치 방법, BepInEx AutoTranslator, Steam 수동 승인, 다른 모드 추천, 모듈 설계 등 별도 개발 이야기가 오갔다.
+- 02:40경 타 창작마당 모드가 비활성화된 것으로 보인다는 대화도 있으나 **Vanilla Overhaul의 삭제 원인과 연결할 증거는 아님**.
+- 이 잡담 전체를 사건 핵심 증거로 혼합하지 않고 후속 로그의 참고 사항으로만 둔다.
+
+## 16. 이후 추적해야 할 두 개의 기록 흐름
+
+| 기록 위치 | 현재 확보 범위 | 이후 우선 확보할 정보 |
+|---|---|---|
+| **기존 모딩 본 채널** | 2026-11-17 18:35부터 **2026-11-18 09:07까지 사용자 제공 발췌** | 운영진의 공개 조치·사과·모드 삭제 발표 등 본 채널에 남는 후속 메시지 |
+| **\`Inquiry: Modding Dispute\` 스레드** | **2026-11-17 22:54 생성 사실만 확보. 스레드 내부 메시지 미확보** | Victor가 Leo에게 줬다는 0.10.1 파일의 분석·검증, 더 오래된 버전 복구 여부, 원작자 측 반박, 협박 증거, 조사의 결론 |
+
+**핵심 구분:** \`Inquiry: Modding Dispute\`의 스레드 메시지 수가 표시됐다고 해서 그 **내용을 읽었다고 볼 수는 없다**. 추후 사용자가 실제 스레드 대화를 제공하면 본 채널 기록과 섞지 않고 **새로운 스레드 항목**으로 추가한다.
+
+## 17. 누적 기록 이력 추가
+
+- **5차 기록 (2026-11-18):** 본 채널의 11월 17일 22:34부터 11월 18일 09:07까지의 사용자 제공 대화 요약·핵심 발언 원문 수록. 22:54 \`Inquiry: Modding Dispute\` 스레드 분리 확인, Victor의 0.10.1 복구 주장, Lazy Duck의 공개 검증 요청, 이용자 세이브 영향 호소, 집단 일반화 및 운영진 경고를 구분해 기록.
