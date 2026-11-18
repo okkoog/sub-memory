@@ -1056,3 +1056,79 @@ again just a reminder: please keep this discussion of the modding dispute focuse
 
 - **7차 기록 (2026-11-18):** \`Inquiry: Modding Dispute\` 스레드 2026-11-17 23:21~2026-11-18 11:14 자료까지 반영. Victor가 제출한 0.9.0 컨트롤러 AI 분석 결과, 외부 의존성 23건과 DLL 배포의 구분, 0.10 복구 발언, 사과와 당사자 간 관계 완화, Pen의 구체적 공개 질문, 전체 논란의 미해결 증거 공백을 추가.
 - **자료 범위 종료:** **사용자가 이번에 제공한 텍스트 기록은 Pen의 2026-11-18 11:14 발언에서 끝남.** 스레드 자체의 종료 여부 또는 공식 조사 결과는 확인되지 않음.
+
+
+---
+
+## 24. DLL 및 텍스처 교차 비교 — 2026-11-18 (추가 기술 검사)
+
+> **주의:** 아래는 **과거 도용 의혹의 핵심인 Neon Undertow 0.9.0 배포물에 대한 검사가 아니다.** 2026-11-18 시점에 사용자 저장소 \`okkoog/sub-memory\`의 \`main\`에 보존된, 이후 **Vanilla Overhaul 모듈 5개**와 xuxu의 **현재 양조·담배 확장** 간의 기술 비교다. GitHub 파일의 base64 내용을 실제로 읽고 자체 .NET PE/CLI 메타데이터·IL 분석을 수행했다. 검사 코드는 정식 디컴파일러 전체 기능을 구현한 것은 아니므로 그 한계를 반영한다.
+
+### 24.1 비교한 실제 DLL
+
+| 종류 | GitHub 폴더 ID | DLL | 파일 크기 | .NET 타입 수 | 메서드 수 |
+|---|---|---|---:|---:|---:|
+| Vanilla Overhaul - Food | 3838213378 | \`VanillaOverhaul.Food.dll\` | 157,696 B | 121 | 471 |
+| Vanilla Overhaul - Farming | 3838213447 | \`VanillaOverhaul.Farming.dll\` | 35,840 B | 41 | 125 |
+| Vanilla Overhaul - Water | 3838213636 | \`VanillaOverhaul.Water.dll\` | 58,880 B | 60 | 270 |
+| Vanilla Overhaul - Drinks | 3838213693 | \`VanillaOverhaul.Drinks.dll\` | 200,192 B | 227 | 941 |
+| Vanilla Overhaul - Storage | 3838215296 | \`VanillaOverhaul.Storage.dll\` | 157,184 B | 124 | 657 |
+| xuxu Brewing Expansion | 3829730904 | \`BrewingExpansion.dll\` | 346,624 B | 419 | 1,457 |
+| xuxu Tobacco Expansion | 3832840208 | \`TobaccoExpansion.dll\` | 323,072 B | 387 | 1,539 (실제 IL 바디 1,535) |
+
+**대조 방식:** (1) 타입의 전체 이름(namespace/type) 대조, (2) 메서드 이름 대조, (3) **IL 본문이 32바이트 이상인 메서드의 바이트 단위 완전 일치**, (4) 메타데이터 토큰·분기 상대 위치 등을 정규화해 **30개 이상 IL 명령어를 가진 메서드의 구조 일치**, (5) .NET \`#US\` 사용자 문자열 대조, (6) GitHub Git blob SHA를 통한 \`Textures\` 디렉터리의 정확히 동일한 파일 대조.
+
+### 24.2 실제 검사 결과
+
+| 삭제된 모듈 ↔ xuxu 모드 | 긴 IL 바이트 완전 일치 | 30명령 이상 IL 구조 일치 | 구체적인 사용자 정의 타입명 일치 |
+|---|---:|---:|---|
+| Food ↔ Brewing | **0** | **1** (정적 초기화 \`.cctor\`로 범용 패턴) | **0** |
+| Food ↔ Tobacco | **0** | **1** (상기와 같은 종류의 정적 초기화 패턴) | **0** |
+| Farming ↔ Brewing/Tobacco | **각 0** | **각 0** | **각 0** |
+| Water ↔ Brewing/Tobacco | **각 0** | **각 0** | **각 0** |
+| Drinks ↔ Brewing/Tobacco | **각 0** | **각 0** | **각 0** |
+| Storage ↔ Brewing/Tobacco | **각 0** | **각 0** | **각 0** |
+
+- Food의 \`VanillaOverhaul.Food.NeonCooking..cctor\`는 xuxu의 \`BrewingExpansion.Formal.FormalShop..cctor\`, \`TobaccoExpansion.TobaccoShop..cctor\`와 **토큰을 지운 IL 명령어 패턴 32개가 일치**했으나 **실제 IL 바이트는 일치하지 않음**. 양조·담배 쪽에도 똑같이 나타나는 범용 정적 초기화 패턴이므로 **독창적 구현의 복사 증거로 보지 않는다**.
+- 타입 전체 이름 대조에서는 \`<Module>\`, C# 컴파일러가 자동 생성한 \`<>c\` 및 \`DisplayClass\`, \`__StaticArrayInitTypeSize\`, \`EmbeddedAttribute\` 등의 일반적인 컴파일러 생성 이름을 제외하면 **구체적인 사용자 정의 타입 일치 없음**.
+- 공유되는 유의미한 문자열은 존재한다. 특히 Drinks와 Brewing은 \`TransferLiquid\`, \`OnAgeWine\`, \`WINE_CONTAINER_STATE\`, \`WINE_COUNTERFEIT_TAG\`, \`WINE_INGREDIENT_TAG\`, \`Items/items_winemaking\` 등을 공유한다. Storage에는 Brewing/Tobacco와 \`CIGARETTE_TAG\`, \`CATEGORY_GENUINE_CIGARETTE\`, \`WINE_SCORE_INT\` 등 공통 식별자가 보인다. 그러나 **일반 게임 API/다른 모드와의 상호운용을 위한 태그 공유는 실제 메서드 본문 복사와 다르다.**
+- 공유 사용자 문자열만으로 복사 여부를 판단하지 않았다. 완전히 동일한 긴 IL 메서드나 고유 타입 이름의 대응은 찾지 못했다.
+
+### 24.3 텍스처 에셋 파일 해시 대조
+
+GitHub \`Textures\` 하위 모든 파일을 재귀 열거하여 각 Git blob SHA를 교차 비교했다.
+
+| Vanilla Overhaul | 텍스처 파일 수 |
+|---|---:|
+| Food | 267 |
+| Farming | 271 |
+| Water | 5 |
+| Drinks | 363 |
+| Storage | 58 |
+| **5개 합계** | **964** |
+
+xuxu 쪽: Brewing 359개, Tobacco 794개, **합계 1,153개**.
+
+**두 그룹 사이에서 Git blob SHA가 정확히 동일한 파일은 0개였다.** 이는 GitHub에 저장된 이미지 바이너리 **그대로의 재배포 흔적이 발견되지 않았다**는 뜻이며, **내용을 수정하거나 재압축한 유사 이미지·파생물의 존재까지 부정하지는 않는다.** 파일의 시각적 유사성 비교를 별도로 수행한 결과는 아니다.
+
+### 24.4 해석 및 한계
+
+1. **이번 검사는 현재 삭제된 5개 모듈이 xuxu DLL 코드를 그대로 붙여 넣은 복제품이라는 가설에 직접적인 긍정 증거를 제시하지 못한다.** 특히 메서드 IL과 고유 타입, 에셋 해시의 완전 일치는 확인되지 않았다.
+2. 반대로 **복제 가능성을 완전히 배제하는 검사도 아니다.** 코드가 수정·재작성·재컴파일되면 메서드 바이트 및 일부 구조가 달라진다. 특히 오래된 xuxu 원본 버전과 신규 모듈의 **동시기 원본 비교**가 아니며, 패키지 속 이미지의 변형 유사성 검사도 하지 않았다.
+3. **핵심 과거 사건과 혼동 금지:** 이번 비교 대상인 Vanilla Overhaul 모듈은 이후 분리돼 저장된 빌드다. 0.10.1 변경 로그에서 말한 **“23 hard-merged Workshop mods”**는 *그 이전* 통합본에 관한 주장이다. **후대 모듈에서 흔적이 없다고 과거 0.9.0에서의 병합이 없었다고 볼 수 없다.**
+4. **현재 비교 가능한 범위의 결론:** “삭제된 다섯 모듈의 현재 보존본에서 xuxu 원본 코드·원본 에셋을 그대로 복제했다는 직접 일치 증거는 발견하지 못했다.” 삭제 이유가 도용 은폐라는 **동기 가설은 이번 기술 검사로 강화되지 않는다**.
+5. 더 결정적인 검증에는 **0.9.0 실제 원본 배포 폴더 전체**와 **당시의 xuxu 모드 버전**이 필요하다. 코드 구조가 매우 바뀐 경우에는 정식 디컴파일·수작업 함수 단위 비교까지 요구된다.
+
+### 24.5 검사 대상 GitHub 링크
+
+- [Food DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3838213378/VanillaOverhaul.Food.dll)
+- [Farming DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3838213447/VanillaOverhaul.Farming.dll)
+- [Water DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3838213636/VanillaOverhaul.Water.dll)
+- [Drinks DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3838213693/VanillaOverhaul.Drinks.dll)
+- [Storage DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3838215296/VanillaOverhaul.Storage.dll)
+- [Brewing DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3829730904/BrewingExpansion.dll)
+- [Tobacco DLL](https://github.com/okkoog/sub-memory/blob/main/probably-stolen/mods/3832840208/TobaccoExpansion.dll)
+
+## 25. 누적 검사 기록 추가
+
+- **8차 기록 (2026-11-18):** 실제 DLL 7개, 내부 메서드와 타입, 사용자 문자열, 2,117개 텍스처 파일에 대해 GitHub 저장본끼리 교차 비교. **복제의 직접적인 일치 증거는 발견되지 않음.** 기존 0.9.0 직접 병합 의혹과 별도의 증거 범위를 명시.
