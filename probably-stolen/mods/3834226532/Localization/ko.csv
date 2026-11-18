@@ -48,7 +48,7 @@ dsp_wild_favor_description,"와일드의 전화가 시작부터 해금되고 와
 dsp_wild_favor_name,"와일드의 호의"
 dsp_cellar_description,"양조 기간이 1일 줄고, 완성된 술은 3일 숙성된다."
 dsp_stable_partnership_name,안정적인 파트너십
-dsp_stable_partnership_description,모든 딜러가 전화로 주문하는 대신 화요일과 금요일에 직접 가게로 옵니다.
+dsp_stable_partnership_description,모든 딜러가 전화로 주문하는 대신 화요일과 금요일에 직접 가게로 옵니다. 전화로 예약 상태를 변경할 수 있습니다.
 dsp_stable_partnership_phone_bye,다 됐어요.
 dsp_stable_partnership_phone_order,주문할게요.
 dsp_sp_option_stop,주문 중지
@@ -472,8 +472,8 @@ dsp_watermelon_merge_menu,합성 (동일 작물 1개 소모)
 dsp_watermelon_merge_done,더 큰 {0}(으)로 합성되었습니다. 가치 {1} 크레딧.
 dsp_watermelon_merge_max,더 이상 커질 수 없습니다.
 dsp_hydro_question_name,배관 수경재배
-dsp_hydro_question_description,수도꼭지에서 식물 2그루를 기를 수 있다. 시작 시 무작위 씨앗 2개를 받는다. 개조로 최대 6그루까지 늘릴 수 있다. 수도꼭지(또는 서류함의 「수로 수경 재배의 비결」 쪽지)를 더블 클릭하면 재배 창이 열린다.
-dsp_hydro_need_tap,수도 배관 재배: 씨앗은 이미 손에 있지만 수도가 아직 연결되지 않았습니다. 수도 업그레이드(거터플로 급수 또는 녹물 급수)를 해금하면 안내서가 서류함에 자동으로 들어옵니다.
+dsp_hydro_question_description,"수도꼭지에서 식물 2그루를 기를 수 있고, 이 식물들은 미네랄 농도의 영향을 무시합니다. 배관을 개조하면 최대 6그루까지 기를 수 있습니다. 시작 시 종류마다 씨앗을 하나씩 받습니다."
+dsp_hydro_need_tap,배관 수경: 식물은 슬롯에 있지만 수도꼭지가 아직 연결되지 않아 자라지 않습니다. 수도꼭지 업그레이드(도랑수·녹물)를 해금하면 바로 다시 자랍니다.
 dsp_poet_admirer_name,시인 같은 애모자
 dsp_poet_admirer_description,추종자의 쪽지는 가치 50 크레딧의 사치품이 된다.
 dsp_admirer_poem_1,강물 섬에서 물수리가 꽥꽥 운다. 조용하고 어진 아가씨는 군주에게 좋은 짝. — 시경 「관저」
@@ -575,10 +575,10 @@ dsp_theyre_millions_description,개조체가 등장한 뒤 1주일간 개조체 
 dsp_millions_start,"개조체 광풍 시작: 이번 주 무기·탄약·방어구 +25%, 모듈 +50%, 개조체가 매일 옵니다."
 dsp_millions_end,개조체 광풍이 끝났습니다.
 dsp_vanessa_name,바네사
-dsp_vanessa_1_1,내 이름은 바네사.
-dsp_vanessa_1_2,물건 좀 가지고 왔어. 한번 봐.
-dsp_vanessa_1_3,"고마워, 넌 친구야. 이건 필요 없어, 가져."
-dsp_vanessa_2_1,난 바네사야.
+dsp_vanessa_1_1,내 이름은 {name}.
+dsp_vanessa_1_2,"고맙다, 모듈 좀 팔아라, 고맙다."
+dsp_vanessa_1_3,"고맙다, 공존파가 너를 높이 산다."
+dsp_vanessa_2_1,내 이름은 {name}.
 dsp_vanessa_2_2,"모듈 필요해, 가공된 모듈 판매해."
 dsp_vanessa_2_3,"고마워, 친구. 많이 먹어."
 dsp_vanessa_friend_price,친구 가격
@@ -635,3 +635,11 @@ dsp_service_underground_trade,지하 거래
 dsp_service_underground_trade_tooltip,매일 밤 쓰레기통 안의 물건으로 지하 거래를 한다. 청소 서비스를 켜야만 쓸 수 있다.
 dsp_service_underground_trade_hint,먼저 청소 서비스를 켜야 합니다.
 dsp_service_stable_partnership,안정적인 거래
+dsp_sunday_name,일요일
+dsp_sunday_description,"매일 손님이 한 명 더 오지만, 일요일에는 일반 손님이 오지 않습니다. 일요일에는 와인 한 병을 받고 축복을 받습니다."
+dsp_career_advice_name,진로 상담 서비스
+dsp_career_advice_description,"후원사의 광고 덕분에 이 특성은 긍정 특성으로 표시됩니다. 뭐, 이 특성의 효과가 뭐냐고요? 서비스 센터에 문의하세요, 저 말고요. 감사합니다."
+dsp_millions_event_name,개조체 광풍
+dsp_millions_event_desc,"개조체가 몰려옵니다. 무기·탄약·방어구 +25%, 모듈 +50%."
+
+dsp_vanessa_1_4,"이건 우리에게 필요 없다, 가져라."

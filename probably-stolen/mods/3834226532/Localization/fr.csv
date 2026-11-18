@@ -48,7 +48,7 @@ dsp_wild_favor_description,"Le téléphone de Wild est débloqué dès le dépar
 dsp_wild_favor_name,"Faveurs de Wild"
 dsp_cellar_description,"Le brassage prend 1 jour de moins, le vin fini vieillit 3 jours."
 dsp_stable_partnership_name,Partenariat stable
-dsp_stable_partnership_description,Tous les fournisseurs viennent dans votre boutique les mardis et vendredis, au lieu que vous les commandiez par téléphone.
+dsp_stable_partnership_description,"Tous les fournisseurs viennent dans votre boutique les mardis et vendredis, au lieu que vous les commandiez par téléphone. Vous pouvez changer le statut du rendez-vous par téléphone."
 dsp_stable_partnership_phone_bye,C'est tout.
 dsp_stable_partnership_phone_order,Je voudrais commander.
 dsp_sp_option_stop,Arrêter les commandes
@@ -472,8 +472,8 @@ dsp_watermelon_merge_menu,Fusionner (consomme un identique)
 dsp_watermelon_merge_done,"Fusionné en un {0} plus gros, valeur {1} crédits."
 dsp_watermelon_merge_max,Impossible de faire plus gros.
 dsp_hydro_question_name,Hydroponie sur tuyau
-dsp_hydro_question_description,Vous pouvez cultiver 2 plantes dans le robinet d'eau. Vous commencez avec 2 graines aléatoires. Les améliorations portent la limite à 6 plantes. Double-cliquez sur le robinet (ou sur la note « Culture hydroponique dans la conduite » du dossier) pour ouvrir la fenêtre.
-dsp_hydro_need_tap,"Hydroponie sur tuyaux : vous avez déjà les graines, mais le robinet n'est pas encore raccordé. Débloquez une amélioration d'arrivée d'eau (Gutterflow ou eau rouillée) et la note apparaîtra automatiquement dans votre dossier."
+dsp_hydro_question_description,"Vous pouvez cultiver 2 plantes dans le robinet d'eau, et ces plantes ignorent la concentration en minéraux. En améliorant le tuyau, vous pouvez cultiver jusqu'à 6 plantes. Vous commencez avec une graine de chaque type."
+dsp_hydro_need_tap,"Hydroponie sur tuyau : les plantes sont dans les emplacements mais le robinet n'est pas encore raccordé, elles ne poussent donc pas. Débloquez une amélioration de robinet (caniveau ou eau rouillée) et elles reprennent aussitôt."
 dsp_poet_admirer_name,Admirateur poète
 dsp_poet_admirer_description,Les billets de votre admirateur sont des objets de luxe d'une valeur de 50 crédits.
 dsp_admirer_poem_1,"Kwan-kwan crient les aigles sur l'îlot du fleuve. La jeune fille discrète et vertueuse est une bonne épouse pour le prince. — Livre des Odes, Guan Ju"
@@ -575,10 +575,10 @@ dsp_theyre_millions_description,"Dès que les augmentés apparaissent, une semai
 dsp_millions_start,"L'euphorie des augmentés commence : cette semaine armes, munitions et armures +25%, modules +50%."
 dsp_millions_end,L'euphorie des augmentés est terminée.
 dsp_vanessa_name,Vanessa
-dsp_vanessa_1_1,Je m'appelle Vanessa.
-dsp_vanessa_1_2,J'ai apporté de la marchandise. Jette un œil.
-dsp_vanessa_1_3,"Merci, tu es un ami. On n'a pas besoin de ça, prends-le."
-dsp_vanessa_2_1,Je suis Vanessa.
+dsp_vanessa_1_1,Je m'appelle {name}.
+dsp_vanessa_1_2,"Merci, vends-moi des modules, merci."
+dsp_vanessa_1_3,"Merci, la faction de coexistence t'apprécie."
+dsp_vanessa_2_1,Je suis {name}.
 dsp_vanessa_2_2,"Besoin de modules, je vends des modules traités."
 dsp_vanessa_2_3,"Merci, ami. Mange bien."
 dsp_vanessa_friend_price,Prix d'ami
@@ -635,3 +635,11 @@ dsp_service_underground_trade,Marché noir
 dsp_service_underground_trade_tooltip,Lance chaque nuit le marché noir avec les objets de la poubelle. Disponible uniquement si le service de nettoyage est actif.
 dsp_service_underground_trade_hint,Activez d'abord le service de nettoyage.
 dsp_service_stable_partnership,Partenariat stable
+dsp_sunday_name,Dimanche
+dsp_sunday_description,"Vous avez un client de plus chaque jour, mais le dimanche aucun client normal ne viendra. Le dimanche, vous recevez une bouteille de vin et vous êtes béni."
+dsp_career_advice_name,Service d'orientation professionnelle
+dsp_career_advice_description,"Grâce à la publicité du sponsor, cet avantage est présenté comme positif. Quoi, vous demandez ce que fait cet avantage ? Veuillez consulter le centre de services, pas moi, merci."
+dsp_millions_event_name,Euphorie des augmentés
+dsp_millions_event_desc,"Les augmentés affluent ; armes, munitions et armures +25%, modules +50%."
+
+dsp_vanessa_1_4,"On n'a pas besoin de ça, prends-le."

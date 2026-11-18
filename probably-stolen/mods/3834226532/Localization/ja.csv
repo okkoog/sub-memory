@@ -48,7 +48,7 @@ dsp_wild_favor_description,"ワイルドの電話が最初から解放され、�
 dsp_wild_favor_name,"ワイルドの恩寵"
 dsp_cellar_description,醸造が1日短くなり、完成した酒は3日熟成する。
 dsp_stable_partnership_name,安定取引
-dsp_stable_partnership_description,すべての問屋は、電話で注文する代わりに火曜日と金曜日に店へ来る。
+dsp_stable_partnership_description,すべての問屋は、電話で注文する代わりに火曜日と金曜日に店へ来る。電話で予約状態を変更できる。
 dsp_stable_partnership_phone_bye,もういい。
 dsp_stable_partnership_phone_order,注文したい。
 dsp_sp_option_stop,注文を停止
@@ -472,8 +472,8 @@ dsp_watermelon_merge_menu,合成する（同種を1つ消費）
 dsp_watermelon_merge_done,より大きな{0}ができた。価値 {1} クレジット。
 dsp_watermelon_merge_max,これ以上は大きくできない。
 dsp_hydro_question_name,配管水耕
-dsp_hydro_question_description,水道の蛇口で植物を2株育てられる。開始時にランダムな種を2つ持つ。改造で最大6株まで増やせる。蛇口（または書類ケースの「水路水耕の秘訣」の紙）をダブルクリックすると栽培画面が開く。
-dsp_hydro_need_tap,水管水培：種はすでに手元にありますが、水道はまだつながっていません。水道のアップグレード（ガター水直送または錆水直送）を解放すると、手引きが書類箱に自動で入ります。
+dsp_hydro_question_description,水道の蛇口で植物を2株育てられる。これらの植物はミネラル濃度の影響を無視する。配管を改造することで、最大6株まで育てられる。開始時に各種類の種を1つずつ持つ。
+dsp_hydro_need_tap,パイプ水耕：植物はスロットに入っていますが、水道の蛇口がまだ接続されていないため成長しません。蛇口のアップグレード（側溝水・錆水）を解放するとすぐ成長を再開します。
 dsp_poet_admirer_name,詩人な崇拝者
 dsp_poet_admirer_description,崇拝者のメモは価値50クレジットの高級品になる。
 dsp_admirer_poem_1,川の中州でミサゴがクワクワと鳴く。つつましく徳のある娘は、君侯によい伴侶。— 詩経「関雎」
@@ -575,10 +575,10 @@ dsp_theyre_millions_description,改造体が現れたあと、1週間の改造�
 dsp_millions_start,改造体フィーバー開始：今週は武器・弾薬・装甲 +25%、モジュール +50%、改造体が毎日来る。
 dsp_millions_end,改造体フィーバーが終わった。
 dsp_vanessa_name,ヴァネッサ
-dsp_vanessa_1_1,私はヴァネッサ。
-dsp_vanessa_1_2,いくつか品物を持ってきたよ。見てみて。
-dsp_vanessa_1_3,ありがとう、あなたは友達。これはいらない、どうぞ。
-dsp_vanessa_2_1,私はヴァネッサ。
+dsp_vanessa_1_1,私は{name}。
+dsp_vanessa_1_2,ありがとう、モジュールを売ってくれ、ありがとう。
+dsp_vanessa_1_3,ありがとう、共存派は君を評価している。
+dsp_vanessa_2_1,私は{name}。
 dsp_vanessa_2_2,モジュールが要る、加工済みモジュールを売る。
 dsp_vanessa_2_3,ありがとう、友よ。たくさん食べて。
 dsp_vanessa_friend_price,友達価格
@@ -635,3 +635,11 @@ dsp_service_underground_trade,闇取引
 dsp_service_underground_trade_tooltip,毎晩ゴミ箱の中の品で闇取引を行う。清掃サービスをオンにしている時だけ使える。
 dsp_service_underground_trade_hint,先に清掃サービスをオンにしてください。
 dsp_service_stable_partnership,安定した取引
+dsp_sunday_name,日曜日
+dsp_sunday_description,毎日客が1人増えるが、日曜日には通常客は来なくなる。日曜日にはワインを1本受け取り、祝福を受ける。
+dsp_career_advice_name,キャリア相談サービス
+dsp_career_advice_description,スポンサーの広告により、このパークはポジティブとして表示される。何、このパークの効果は何かって？サービスセンターに聞いてくれ、私じゃなくて。ありがとう。
+dsp_millions_event_name,改造体フィーバー
+dsp_millions_event_desc,改造体が押し寄せる。武器・弾薬・装甲 +25%、モジュール +50%。
+
+dsp_vanessa_1_4,これは我々には不要だ、持っていけ。

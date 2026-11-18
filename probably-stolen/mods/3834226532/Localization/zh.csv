@@ -7,7 +7,7 @@ dsp_distributor_tag,更多特质：可能是神人
 dsp_wanderlust_name,漫游癖
 dsp_wanderlust_description,如果闭店时还有至少一名顾客在排队，你可以在夜间活动额外行动一次。只要有剩余的夜间行动次数，你就不会流失顾客。
 dsp_smelting_name,冶炼
-dsp_smelting_description,开局自带一个带有高炉模组的破旧熔炉和6份废金属。
+dsp_smelting_description,开局自带1个带有高炉模组的破旧熔炉和6份废金属。
 dsp_ecommerce_name,电商
 dsp_ecommerce_description,初始解锁市场委托。每天会少来一位买家，但每两天多收到一个市场委托。额外的市场委托类型不会和已有的重复。
 dsp_built_on_dump_name,建在垃圾场上
@@ -47,7 +47,7 @@ dsp_wild_favor_description,"开局解锁王尔德的电话并获得300点王尔�
 dsp_wild_favor_name,王尔德的人情
 dsp_cellar_description,酿酒的过程减少1天，酿好的酒会陈化3天。
 dsp_stable_partnership_name,稳定合作
-dsp_stable_partnership_description,所有经销商会在周二、周五上门，而非通过电话预定。
+dsp_stable_partnership_description,所有经销商会在周二、周五上门，而非通过电话预定。你可以通过电话改变预约状态。
 dsp_stable_partnership_phone_bye,没事了。
 dsp_stable_partnership_phone_order,我要订货。
 dsp_sp_option_stop,停止订购
@@ -471,8 +471,8 @@ dsp_watermelon_merge_menu,合成（消耗同类一份）
 dsp_watermelon_merge_done,合成了更大的{0}，价值 {1} 信用点
 dsp_watermelon_merge_max,这已经是最大了，合成不了。
 dsp_hydro_question_name,水管水培
-dsp_hydro_question_description,你可以在水管里种植2株植物。初始获得随机2颗种子。通过改造，最多可以种植6株植物。
-dsp_hydro_need_tap,水管水培：种子已经在手上，但水管还没接通。先解锁水管升级（沟渠水直供或铁锈水直供），指南会自动出现在档案箱里。
+dsp_hydro_question_description,你可以在水管里种植2株植物，这些植物忽略矿物质浓度影响。通过改造水管，最多可以种植6株植物。初始获得每种种子各一颗。
+dsp_hydro_need_tap,水管水培：植物已经在槽里，但水管还没接通，它们不会生长。先解锁水管升级（沟渠水直供或铁锈水直供），接上就会继续长。
 dsp_poet_admirer_name,诗人仰慕者
 dsp_poet_admirer_description,仰慕者的纸条是价值50信用点的奢侈品。
 dsp_admirer_poem_1,关关雎鸠，在河之洲。窈窕淑女，君子好逑。——《诗经·周南·关雎》
@@ -559,7 +559,7 @@ dsp_phone_bill_half_2,这是剩下的一半。
 dsp_buddy_end_choice_yes,行啊，我来开。
 dsp_buddy_end_choice_no,凭什么是我开？
 dsp_hawaii_training_name,在夏威夷学的
-dsp_hawaii_training_description,开局时获得3个随机特质，它们的特性点数总和为-2。在夏威夷学的东西并不只有好的。
+dsp_hawaii_training_description,开局时获得3个随机特质，它们的特性点数总和为-2。在夏威夷学到的东西并不只有好的。
 dsp_hawaii_announce,在夏威夷学的：获得 {0}
 dsp_paid_training_name,付费深造
 dsp_paid_training_description,初始特性槽位上限增加3个。开局获得648信用点债务。由于赞助商的广告，本特质显示为正面特质。
@@ -574,10 +574,10 @@ dsp_theyre_millions_description,在改造体出现之后，进入为期一周的
 dsp_millions_start,改造体狂潮开始了：这一周武器、弹药、护甲 +25%，模组 +50%，每天都会有改造体上门。
 dsp_millions_end,改造体狂潮结束了。
 dsp_vanessa_name,梵妮莎
-dsp_vanessa_1_1,我叫梵妮莎。
-dsp_vanessa_1_2,我带了点货过来，看看有没有你想要的。
-dsp_vanessa_1_3,谢谢，你是朋友。这个我们不需要，给你。
-dsp_vanessa_2_1,我是梵妮莎。
+dsp_vanessa_1_1,我叫{name}。
+dsp_vanessa_1_2,谢谢，给我来点模组，谢谢。
+dsp_vanessa_1_3,谢谢，共存派赞赏你。
+dsp_vanessa_2_1,我是{name}。
 dsp_vanessa_2_2,需要模组，出售加工过的模组。
 dsp_vanessa_2_3,谢谢，朋友，多吃点。
 dsp_vanessa_friend_price,友情价
@@ -634,3 +634,11 @@ dsp_service_underground_trade,地下交易
 dsp_service_underground_trade_tooltip,每晚用垃圾桶里的物品进行地下交易。只有开启清洁服务时才能开启。
 dsp_service_underground_trade_hint,需要先开启清洁服务。
 dsp_service_stable_partnership,稳定合作
+dsp_sunday_name,礼拜日
+dsp_sunday_description,每天会多一名顾客但礼拜日不再有普通顾客上门。在礼拜日，你会收到一瓶葡萄酒并蒙福。
+dsp_career_advice_name,生涯咨询服务
+dsp_career_advice_description,由于赞助商的广告，本特质显示为正面特质。什么，你问这个特质的效果是什么？请咨询服务中心而不是我，谢谢。
+dsp_millions_event_name,改造体狂潮
+dsp_millions_event_desc,改造体大量上门；武器、弹药、护甲 +25%，模组 +50%。
+
+dsp_vanessa_1_4,这个我们不需要，给你。

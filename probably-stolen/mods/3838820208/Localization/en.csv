@@ -184,8 +184,8 @@ goddess_hint_more_clear_bead,"The slime wants to taste everything: materials, fo
 idol_photo_sign,"For the shopkeeper ♡"
 name_fairy,"Fairy"
 fairy_1,"Greetings, shopkeeper of the mortal world."
-fairy_2,"Bring me your useless scraps and I will touch them for you. (She only takes junk and scrap, three at most.)"
-fairy_touch,"(A light touch of her fingertip, and the scrap becomes a gleaming metal ingot.)"
+fairy_2,"Bring me your useless scraps and I will make them metal ingots; anything of real worth becomes gold. (Three at most.)"
+fairy_touch,"(A light touch of her fingertip, and the item becomes a gleaming metal ingot.)"
 fairy_ask,"Three are done. Until dawn, this gold is true gold... Do you want more?"
 fairy_choice_enough,"That is enough, thank you."
 fairy_choice_more,"That trick of yours... could you teach it to me?"
@@ -193,7 +193,7 @@ fairy_enough,"Contentment is its own reward. Run your shop well; we will meet ag
 fairy_reward,"Contentment is its own reward. Each time we met, you were never greedy - take this jade hairpin as a token of our bond."
 fairy_reward_full,"(The back counter is full. Clear a spot and come back another time; the jade hairpin is still yours.)"
 fairy_greedy,"...A mortal heart is never full. So be it. The gold returns to stone, and I will not come again."
-nightlog_fairy_revert,"At dawn, the {0} unsold fairy ingots in your shop turned back into scrap."
+nightlog_fairy_revert,"At dawn, the {0} unsold fairy ingots in your shop turned back into what they were."
 nightlog_fairy_makeup,"Overnight, a jade hairpin appeared on the back counter: the gift that was never handed over at the right moment, now delivered."
 item_jade_hairpin_name,"Jade Hairpin"
 item_jade_hairpin_desc,"A smooth jade hairpin carved with a five-petal flower and a fine tassel. The fairy says it is for those who know when enough is enough. Some nights it turns a piece of scrap in your shop into real gold."
@@ -512,7 +512,7 @@ magical_healed,"A passing magical girl healed your wounds."
 out_reaper_shot,"I am not among the things you can kill. (When the gunshot fades, she is no longer there.)"
 out_reaper_arrest,"(Security walks in, looks around, and sees no one at all.)"
 taoist_back_1,"(Passing by the door, she stops and glances over the counter.) 'Shopkeeper, where is the lamp this monk left with you?'"
-taoist_lamp_ask,"'Burned up? I did tell you it catches fire on its own when the uncanny draws near. Very well, you may have another for {0} credits of incense money.'"
+taoist_lamp_ask,"'Burned up? I did tell you a lamp on the counter catches fire on its own when the uncanny draws near. Very well, you may have another for {0} credits of incense money.'"
 taoist_lamp_fine,"'Good, the lamp is still here. This monk was only passing by.'"
 taoist_choice_lamp,"Offer {0} credits in incense money for another oil lamp"
 taoist_choice_lamp_no,"No need"
@@ -684,7 +684,7 @@ moon_cut,"(You and she work through half the night in the grove, piling fresh sh
 moon_chase_1,"(A white light suddenly floods the bamboo grove. She lunges to hug her pestle, shaking all over.) ""It's a patrol from the Moon Palace... four of them! If they catch my scent, I'm done for!"""
 moon_chase_2,"(The white light is back, closer than last time.) ""They're back... I was almost caught last time! D-did you bring wine? They can't resist wine!"""
 moon_chase_last,"(The white light turns the whole grove bright as day. Her voice is trembling.) ""This is the last time... if I can't get away now, they'll take me back."""
-moon_chase_choice_wine,"Set out {0} bottles of bamboo wine in the grove"
+moon_chase_choice_wine,"Set out {0} bottles of alcohol in the grove"
 moon_chase_choice_hide,"Not enough wine; just help her hide"
 moon_chase_win,"(The four rabbit pursuers catch the scent of the wine and drink, one after another, until they're snoring in a heap. She peeks out of the bamboo and lets out a long breath.) ""...I'm going to live here from now on! This is my home!"""
 moon_chase_fail,"(The pursuers search the grove for most of the night before leaving. She crawls out of the bamboo, ears still trembling.) ""Th-that was terrifying... next time, you have to bring wine. Four of them, one bottle each!"""
@@ -823,14 +823,18 @@ item_revelation_desc,"A white book left by the Saint. Use it to page through its
 wonderland_prev,"Previous"
 wonderland_next,"Next"
 item_oil_lamp_name,"Oil Lamp"
-item_oil_lamp_desc,"A small brass oil lamp with an empty glass chimney. The Taoist says it lights itself when something uncanny draws near."
+item_oil_lamp_desc,"A small brass oil lamp with an empty glass chimney. The Taoist says that if it stands on the counter, it lights itself when something uncanny draws near."
 item_fox_lamp_name,"Foxfire Lamp"
 item_fox_lamp_desc,"Pale blue foxfire dances inside the chimney, and it is strangely warm to the touch. The flame lasts only three days."
+item_lit_lamp_name,"Lit Oil Lamp"
+item_lit_lamp_desc,"The wick burns steadily. The flame lasts three days, then goes out, but the lamp stays."
+item_gold_ingot_name,"Gold Ingot"
+item_gold_ingot_desc,"Pure gold touched by the fairy. Sell it before dawn, or it turns back into what it was."
 fox_choice_lamp,"Hand her the oil lamp"
 fox_lamp_lit,"(She flicks a fingertip, and a blue flame slips into the chimney.) ""Take it. It'll keep you from freezing for three days."""
-lamp_burned_notice,"The oil lamp you were carrying suddenly bursts into flame and burns away to nothing."
+lamp_burned_notice,"The oil lamp on the counter suddenly catches fire and starts to burn."
 taoist_lamp_1,"(She deftly pulls a little oil lamp from her sleeve and sets it on the counter.) ""This lamp is yours. Light your way on dark roads at night."""
-taoist_lamp_2,"""Remember, it lights itself when something uncanny gets close. If you see a flicker, watch yourself!"""
+taoist_lamp_2,"""Remember, if it stands on the counter, it lights itself when something uncanny gets close. If you see a flicker, watch yourself!"""
 wonderland_snow_name,"Ice Field"
 wonderland_snow_desc,"White as far as the eye can see. Fine snow stings your face, and there seems to be a figure standing in the wind."
 name_snow_woman,"Snow Woman"
@@ -983,15 +987,929 @@ snake_morning,"""Fine, it's morning. You barely pass. Next time, no complaining 
 moon_open_escape,"""Pounding medicine up in the sky every day wore me out, so I snuck down for a couple days' rest..."""
 reaper_nothing_2,"""I wish you steady business today. Should you need me, until next time."""
 name_master,"Master"
-master_1,"(Behind the sunglasses, her gaze lingers on your counter.) One of your paths has come to a dead end."
-master_2,"I have a black pill here. A regret pill. Pick a broken path, and that person starts over from the beginning."
+master_1,"One of your sidequests has broken."
+master_2,"I have a regret pill here. It can let you and her start over."
 master_choice_free,"One, please (the first one is free)"
 master_choice_buy,"One ({0} credits)"
 master_choice_no,"No thanks"
-master_leave_no,"(She puts the pill back in its box and gives a small nod.) Suit yourself."
+master_leave_no,"Suit yourself."
 master_broke,"Not enough money."
 master_target,"Who should take it?"
-master_done,"({0}'s path has gone back to the start.)"
-master_paid_free,"(She shakes her head. The first one is free.)"
-master_paid,"(She takes {0} credits.)"
+master_done,"{0}'s sidequest has started over."
+master_paid_free,"The first one's free."
+master_paid,"{0} credits. I've got it."
 master_more,"Another one?"
+name_landmine_girl,"Landmine Girl"
+landmine_1,"Hey, those weapons on your shelves. Give me one."
+landmine_2,"Any one will do. I'll pay."
+landmine_choice_weapon,"Give her a weapon"
+landmine_choice_tea,"Give her {0} credits to buy bubble tea"
+landmine_choice_none,"Give her nothing"
+landmine_weapon_ok,"Good. This one."
+landmine_bought,"Here's the money. Bye!"
+landmine_tea_ok,"Got the tea money. Thanks!"
+landmine_declined,"Fine, I'm off then."
+landmine_no_credit,"Not enough credits"
+landmine_greet,"Thanks for the milk tea. I bought this one and won 5 scratch cards, so here, take them."
+landmine_shop_1,"Same as always. Let me see the daily stuff."
+landmine_shop_2,"I'll take these."
+· Like the scavenger who sells blood, she buys milk bottles and gives food or water in return.
+· Milk bottles can only be checked for their contents with a water scanner. Their quality is not shown, and they cannot be sold as water.
+· On days 25, 50 and 75, the sales list gains one more milk bottle each time.
+【Vampire】
+· Appears: from day 15, 1% per day.
+· First visit: pick one of three."
+    · Give blood;
+    · Refuse (she never comes back).
+· After giving blood: she only takes your blood, not blood bags. She appears 20% per day until she shows up again."
+· Reward: after 5 total blood donations (blood bags don't count), she gives the Silver Goblet.
+· Silver Goblet: a 150 ml liquid container. Every night it refills to 10% ancestral blood."
+· Ancestral blood: a new liquid. Evaporators cannot evaporate it, and water purifiers cannot remove it. So evaporators only remove water, and the ancestral blood gets stronger.
+· Blood water: water where ancestral blood is at least 30%.
+· Familiars: customers who buy blood water become familiars.
+    · Up to 2. A third one pushes out the oldest."
+    · They pay the normal water price, plus 10 credits per ml of ancestral blood.
+    · If they don't buy blood water for 3 days in a row, they leave.
+    · They look like the customer they were registered from, with ""Familiar·"" added to the name.
+【Elf and Dark Elf】"
+    · Accept: medical supplies on the scale get -50% temporary selling price.
+    · Refuse: she apologizes and leaves.
+    · When her half-price purchases total 300, she gives the Arrow Feather (one time only).
+· Dark Elf: appears about 5% per visit once you hold the Arrow Feather."
+    · You can report her while she is in the shop; the reward is 200. After that she doesn't come back.
+    · After you show the feather, she visits every 2 days and brings 1–2 stolen goods (placed on the front counter).
+【Mummy】
+· Appears: from day 5, 5% per day."
+【Angel】
+· Appears: 0.5% per day, only if you have a criminal record or investigation points. Only one visit per run.
+· Effect: clears your criminal record and investigation points.
+【Zombie】"
+· Appears: 20% per day until day 20, then drops in a straight line to 2% on day 60, and stays at 2% after that. Only one visit per run.
+· How it works: she buys nothing and says three lines, then leaves. Before she leaves, you can shoot her; the reward is a fixed 300.
+【Knight】"
+· Pay: your reputation is restored.
+· Refuse: she never comes back.
+· Not enough money: the bill is cancelled, and it doesn't count as a refusal.
+· After the apology, she sometimes comes to buy household goods, food and water (8% per day).
+【Cheerleader】"
+· Effect: all customers who come in that day are affected by neuro-active perfume (customers already using pheromone perfume are unchanged). She buys nothing.
+【Ninja】
+· Appears: from day 10, 2% per day. Once per run."
+· Shuriken: while you hold it (anywhere in the shop), it blocks minor and major injuries from scavenging outside.
+【Oni】
+· Appears: from day 5, 10% per day."
+· Sake Gourd: a 200 ml liquid container. It refills 60 ml of alcohol every night.
+【Slime】
+· Appears: from day 5, 8% per day."
+【Idol】
+· Requirement: total reputation (all eight factions, positive and negative added together) reaches 400."
+· Photo book: placed in the showcase, it adds 1 normal customer per day. You can flip through the photo book, and tap a photo to see it larger.
+【Santa】
+· Appears: on the real-world date of 25 December, once per save.
+· Gifts: random items placed on the back counter (3 common, 1 rare). She gives no relics."
+【Miko】
+· Appears: from day 14, every Saturday (not Sunday). She is an extra customer.
+· Donations: 50 / 100 / 200 / all remaining / donate nothing. Donations come straight out of your cash. If you can't afford any tier, or you donate nothing, there is no penalty."
+· Lucky Cat: when it is in the showcase, Miko comes 1.5 times as often.
+【Witch】
+· Appears: from day 7, 4% per day. She doesn't come for a new delivery while there is an unreported one.
+· Delivery: she takes any item from the counter for free (not relics, and not untradeable items)."
+    · She picks from ordinary items first. A Magic Residue item makes up the difference.
+    · If the delivered total is over 333, she may give you a Red Stone (one time only). The higher the total, the lower the chance.
+【Landmine Girl】"
+· First visit: choose one of three.
+    · Give a weapon: she buys it and never comes back;
+    · Give 100 credits: she goes to buy bubble tea, comes back the next day, and gives you 5 scratch cards;"
+· After that: she sometimes comes to shop (10%), buying household goods only.
+【Saint】
+· Requirement: total reputation (sum of all factions) reaches 600, and you hold the Cross. The day the requirement is first met, she comes the next day."
+· Heavenly Record: after use, you can flip through 8 two-page spreads with 16 CG images.
+【Reaper】
+· Appears: each day she checks the threats below. If any threat reaches its warning level, she comes that day (once).
+· Deals:"
+    · Pay with your soul (once per run): threats that can be reset return to their starting values, and you become permanently weak (you oversleep every night, and customers -1 the next day).
+    · Refuse: the threat happens as normal.
+· Threats:
+    · criminal record (a police officer, or a fine you can't pay);"
+    · sentinel body type with sentinel pool at 15 or more;
+    · augmented body ratio at 80 or more (only when the augmented ending is active);
+    · a simple reactor that will explode within 2 nights;
+    · rent you can't pay;
+    · mortgage debt you can't pay;
+    · full injury level (warning only, no deals)."
+· Appears: the day after a story branch is lost (you cannot get that relic, and you haven't got it yet). If the branch becomes possible again, she stops coming.
+· Regret pill (black pill): the first one is free, then each costs 200 more credits. When you buy one, you pick a lost branch, and that character is reset to their first appearance.
+【Fortune Teller】"
+· How it works: she previews the next seven days of newspaper price-changing news.
+· Crystal ball: after her preview, if you have a crystal ball anywhere in the shop (including your backpack outside), you can give it to her. After that, she comes every Monday instead of once per run.
+【Green Cloak Girl】
+· Appears: from day 15, 2% per day. At most two visits per run."
+· Reward: at 500 credits, she gives the Snake Ring.
+· Second visit: if she didn't reach 500 on the first visit, she returns 7 days later. After the second visit, she never comes back.
+· Ring effect: while you hold it, two extra customers come every Monday."
+· Does not come to the shop. From day 7, each morning there is a 6% chance she sends a dream (you have a relic you haven't got or been hinted at; at least 7 days since the last dream).
+· The dream shows a CG, and a Goddess's Note appears on the back counter, telling you how to get one relic you don't have yet.
+【Fairy】"
+· Transform: donate items from the counter. At most 3 per visit.
+    · Junk: becomes a metal ingot. Purity is random (30% perfect, the rest very high).
+    · Items worth 100 or more: becomes a Gold Ingot (base price 200, perfect purity, golden)."
+· Gold Ingot counts as 3: one gold ingot uses up all 3 chances for the visit. Then she goes straight to the question.
+· Dawn reversal: metal ingots and gold ingots still in the shop before you sleep turn back into what they were (sell them on the same day). Only the item itself comes back; liquid level, freshness and other states are not kept."
+    · Enough: she says goodbye, and she still comes back later.
+    · Greedy: she takes back everything she made this visit, and never comes back.
+· Jade Hairpin: once your total reaches 9 (gold ingots count as 3) and you were never greedy, she gives you the Jade Hairpin and leaves."
+【Thief】
+· Appears: from day 10, 2% per day. Up to 3 warnings per run, at least 3 days apart. She only comes if you hold at least one relic.
+· Warning: when she visits, she picks one relic you hold at random and places a warning note on the back counter."
+    · Alert level = alarm block rate (50 base, no limit) + Shuriken 20 + gang protection 15 + alert start 15. Alert level 150 or more stops her, with no dice roll. Insurance does not stop her.
+    · If she isn't stopped: she takes the target relic.
+    · If she is stopped: she isn't caught, nothing is lost, and she just runs away.
+· Next day:"
+    · Failed: no relic returned, no debt.
+· Leaving: after 3 different relics (success or failure both count), she leaves the Poker Card on the third day, and never appears again."
+【Taoist】
+· Appears: from day 7, 3% per day, at least 4 days between visits.
+· How it works: she offers an exorcism for 60 incense money, and it counts as one ritual. If you refuse, nothing is taken and no ritual is counted.
+· Reward: after 3 rituals, she places the Demon Mirror on the back counter and never comes back."
+· Oil lamp: after the first ritual, she gives you an oil lamp, placed on the back counter. If you have no oil lamp, you can pay 60 incense money for another.
+· Oil lamps catch fire when a yokai customer comes in (see section VII).
+【Lair · Dragon】"
+· Tell the dragon ""I am your admirer"": one time only. She gives the Dragon Scale, placed on the back counter."
+· Big box: after 2 visits, when you leave calmly, there is a 40% chance each time to get a random supply crate.
+【Seabed · Mermaid】
+· Pearl Shell: when clean value reaches 5000, she gives the Pearl Shell (one time only), placed on the back counter."
+    · Water delivery: 1 ml of pure water = 1 clean value. She only accepts water at pure grade (9990) or higher. Blood water is refused, and her favor drops by 1. Water that isn't pure enough is refused, and it doesn't affect her favor."
+    · Barnacles: you need cleaning tools and a 14-day cooldown has passed. 8 barnacle clumps appear on the ground (you can eat them). Barnacles you carry out count by area."
+· Pearl Shell (item): drag a liquid container onto it, and the water inside is purified to 99%. Limited to 3000 ml per week (counted by total liquid in the container). Resets on Monday.
+【Inn · Fox】"
+    · Foxfire lamp: halves the chance of minor and major injuries when scavenging outside (stacks with the flashlight). It lets you enter the Snow Field and the Cave.
+【Foreign Realm · Princess】"
+    · Likes: cassette tapes, soda, newspapers, scratch cards, robot vacuums. After she has received 3 gifts, she gives the Royal Letter (one time only). After that, each gift she likes earns 150–250 credits in return.
+    · Addictive substance (drugs): she takes the gift (it's destroyed). The Foreign Realm never appears again."
+· Tell a story: she talks about her interest in the outside world, and pays 100–200 credits.
+· Relic: show her any relic. The first time for each kind pays 50–100 credits. A Message in a Bottle pays 600–800.
+【Forest · Flower Fairy】
+· Help with the garden: free. You get a Nutrifruit Seed."
+· Nap (while you carry the Flower Crown): next day, luck +30.
+· Share the harvest (after the Flower Crown): she gives you one Flower Bag per kind of crop she has received. Opening a bag gives that crop, at half the normal harvest amount."
+· Lucky Clover: can be grown hydroponically, and gives Lucky Clover. Using it that day gives luck +10.
+【Cave · Snake Woman】"
+· Opening: you are caught. If you accept, she lets you go.
+· Choices: three, all with the same result. If you accept, you spend a suffocating night, and customers -1 the next day.
+· After the third session: she gives the Snake Scale (one time only)."
+· Maybe I can solve your problem (if you carry the demon mirror, red stone, or clear bead): she spits out a crystal ball (luxury item, 200 credits, one time only).
+· Choices that appear only from the second visit: show the ice crystal, maybe I can solve your problem."
+· Standard choices: give her food (luxury item → regret pills); show her the Fairy's Jade Hairpin (one time, a pill); ask about her past; show her something from the human world; pay 200 credits; cut bamboo shoots with tools (takes tonight); leave.
+· Repaying: after you show her 3 different human-world items, she repays all the money you have given her, plus one pill (one time only)."
+    · [I saw her]: the Bamboo Forest closes for good.
+    · [I don't know]: next time you go to the forest, you get the Jade Pestle (one time)."
+【Snow Field · Snow Woman】
+· Requirement: carry a lit foxfire lamp (within 3 days).
+· First visit: she gives you the Ice Crystal.
+· Night together: next day, luck +30."
+· Sake Gourd (when you carry it): uses 50 ml; next day, luck +45.
+· Ice Crystal: kept in a cold-storage compartment, it stays cold or frozen each night, with no power use.
+【Church · Nun】"
+· Confession booth (only shown if you have criminal points): halves each of your criminal points.
+· Donate 300 credits: lower-district reputation +1.
+· Cross: you can use it once a day; it is not used up. The next haggling after use always succeeds."
+· Hand over the stolen goods (only shown if you carry stolen goods after exposure): all stolen-goods marks on you are removed. No fee. Takes tonight, 3-day cooldown.
+· From day 3, each search rolls for an encounter, with at most one per search."
+    · Blessing: +2 searches that night, no injuries, better finds (a chance of one extra item), no succubus attack that night, and no oversleeping the next day.
+· Succubus: 3%. After an attack, she won't come back for 7 days. The next day, normal customers -3 in total.
+· If you carry a Spirit Trait item, both have ×3 chance."
+· Finding her: when searching for scrap outside, the base chance is 2%. Each search without finding her adds +0.2%, up to 10%. Finding her resets the chance, and she won't appear for 4 days.
+· Choices: take her home (she gives you her broken core), or leave her (she stays there, and you can find her again later).
+【Broken core】"
+· Once repaired, the core is yours, and the machine girl comes to the shop from the next day.
+【Visits to the shop】
+· The first visit after repair is certain. After that, each day has a 15% chance, with at least 2 days between visits."
+【Three memories and the report】
+· After you finish the three memories, she places one scrap metal or basic electronic part on the back counter."
+· The next business day after that, she always comes, and secretly reports herself. There are three warnings. Choose ""Stop her"" in any one of them to succeed."
+    · If you don't stop her in any of the three: the security bureau takes the old AI core from her body, pays a reward of 1500, and she never appears again. Your broken core is not affected."
+【Ledger】
+· Each night after the service, you get one page and a line in the night log."
+· A book you flip through, one side per day. Open it, and it shows the last page.
+【Disabled start】"
+· Accept the core: free. It goes on the back counter.
+· Not now: he asks again 7 days later, until you accept."
+【Milk Girl】
+· Like the scavenger who sells blood, she buys milk bottles and gives food or water in return.
+· Milk bottles can only be checked for their contents with a water scanner. Their quality is not shown, and they cannot be sold as water.
+· On days 25, 50 and 75, the sales list gains one more milk bottle each time.
+【Vampire】
+· Appears: from day 15, 1% per day.
+· First visit: pick one of three.
+    · Hand over a blood bag (only offered if you carry one; one time only);
+    · Give blood;
+    · Refuse (she never comes back)."
+· Weakness: after giving blood, you are weak for 3 days (the first time) or 1 day (later). While weak, you cannot leave the shop through the door. Next day, customers -1 (unless you are a short sleeper).
+· Reward: after 5 total blood donations (blood bags don't count), she gives the Silver Goblet.
+· Silver Goblet: a 150 ml liquid container. Every night it refills to 10% ancestral blood.
+【Ancestral Blood and Familiars】"
+· Blood water: water where ancestral blood is at least 30%.
+· Familiars: customers who buy blood water become familiars.
+    · Up to 2. A third one pushes out the oldest.
+    · They visit once more per day, only buy blood water, and buy as much as you have.
+    · They pay the normal water price, plus 10 credits per ml of ancestral blood.
+    · If they don't buy blood water for 3 days in a row, they leave."
+【Elf and Dark Elf】
+· Elf: from day 5, 6% per day. She comes to buy medical supplies, can't afford them, and asks for half price.
+    · Accept: medical supplies on the scale get -50% temporary selling price.
+    · Refuse: she apologizes and leaves.
+    · When her half-price purchases total 300, she gives the Arrow Feather (one time only).
+· Dark Elf: appears about 5% per visit once you hold the Arrow Feather.
+    · After two conversation lines, you choose to show the feather or ignore her."
+    · After you show the feather, she visits every 2 days and brings 1–2 stolen goods (placed on the front counter).
+【Mummy】
+· Appears: from day 5, 5% per day.
+· How it works: she asks for three kinds of original bandages, which you donate for free. After 10 rolls, she gives the Old Bandage, and then she stops coming.
+【Angel】
+· Appears: 0.5% per day, only if you have a criminal record or investigation points. Only one visit per run.
+· Effect: clears your criminal record and investigation points.
+【Zombie】"
+· Appears: 20% per day until day 20, then drops in a straight line to 2% on day 60, and stays at 2% after that. Only one visit per run.
+· How it works: she buys nothing and says three lines, then leaves. Before she leaves, you can shoot her; the reward is a fixed 300.
+【Knight】
+· Appears: if your lower-district reputation drops by 5 or more in one day, she comes the next day to ask for an apology payment (loss × 50 credits).
+· Pay: your reputation is restored.
+· Refuse: she never comes back."
+· After the apology, she sometimes comes to buy household goods, food and water (8% per day).
+【Cheerleader】
+· Appears: from day 5, 1% per day. Once per run. She is the first customer of the day.
+· Effect: all customers who come in that day are affected by neuro-active perfume (customers already using pheromone perfume are unchanged). She buys nothing.
+【Ninja】
+· Appears: from day 10, 2% per day. Once per run."
+· Shuriken: while you hold it (anywhere in the shop), it blocks minor and major injuries from scavenging outside.
+【Oni】
+· Appears: from day 5, 10% per day.
+· How it works: she wants alcohol. Donate alcohol from the counter (beer, red wine, spirits). Her total counts by value. At 300, she gives the Sake Gourd, and then she stops coming. If you give her nothing, there is no penalty."
+【Slime】
+· Appears: from day 5, 8% per day.
+· How it works: she eats anything you donate from the counter. The items are gone. There are eight categories (grouped by item type). After she has eaten one item from each, she gives the Clear Bead, and then she stops coming. She only accepts categories she hasn't eaten yet.
+【Idol】
+· Requirement: total reputation (all eight factions, positive and negative added together) reaches 400.
+· Appears: she passes by once and gives the Photo Book. Once per run."
+【Santa】
+· Appears: on the real-world date of 25 December, once per save.
+· Gifts: random items placed on the back counter (3 common, 1 rare). She gives no relics.
+· If you are threatened with a shotgun or reported to the authorities, she runs away and never comes back.
+【Miko】
+· Appears: from day 14, every Saturday (not Sunday). She is an extra customer."
+· When she has received 500 in total, she gives the Lucky Cat (one time only), and then she stops coming.
+· Lucky Cat: when it is in the showcase, Miko comes 1.5 times as often.
+【Witch】
+· Appears: from day 7, 4% per day. She doesn't come for a new delivery while there is an unreported one.
+· Delivery: she takes any item from the counter for free (not relics, and not untradeable items)."
+    · She picks from ordinary items first. A Magic Residue item makes up the difference.
+    · If the delivered total is over 333, she may give you a Red Stone (one time only). The higher the total, the lower the chance.
+【Landmine Girl】
+· Appears: from day 12, base 20% per day. Each day she doesn't appear adds 5% to her chance. Once she appears, she comes for the first visit.
+· First visit: choose one of three.
+    · Give a weapon: she buys it and never comes back;"
+    · Give nothing: she comes back in 3 days. If you still give nothing, she never comes back.
+· After that: she sometimes comes to shop (10%), buying household goods only.
+【Saint】
+· Requirement: total reputation (sum of all factions) reaches 600, and you hold the Cross. The day the requirement is first met, she comes the next day.
+· How it works: she comes once, places the Heavenly Record on the back counter, and never comes back.
+· Heavenly Record: after use, you can flip through 8 two-page spreads with 16 CG images.
+【Reaper】"
+· Deals:
+    · Pay 500 credits: all threats being negotiated are postponed by 3 days, and quiet for 3 days.
+    · Pay with your soul (once per run): threats that can be reset return to their starting values, and you become permanently weak (you oversleep every night, and customers -1 the next day).
+    · Refuse: the threat happens as normal.
+· Threats:
+    · criminal record (a police officer, or a fine you can't pay);
+    · a faction reputation of -85 or lower (lower district, security, upper, revolutionary, cartel);"
+    · augmented body ratio at 80 or more (only when the augmented ending is active);
+    · a simple reactor that will explode within 2 nights;
+    · rent you can't pay;
+    · mortgage debt you can't pay;
+    · full injury level (warning only, no deals).
+【Master】
+· Appears: the day after a story branch is lost (you cannot get that relic, and you haven't got it yet). If the branch becomes possible again, she stops coming."
+【Fortune Teller】
+· Appears: from day 15, 0.25% per day. Once per run.
+· How it works: she previews the next seven days of newspaper price-changing news.
+· Crystal ball: after her preview, if you have a crystal ball anywhere in the shop (including your backpack outside), you can give it to her. After that, she comes every Monday instead of once per run.
+【Green Cloak Girl】
+· Appears: from day 15, 2% per day. At most two visits per run."
+· Reward: at 500 credits, she gives the Snake Ring.
+· Second visit: if she didn't reach 500 on the first visit, she returns 7 days later. After the second visit, she never comes back.
+· Ring effect: while you hold it, two extra customers come every Monday.
+【Goddess】
+· Does not come to the shop. From day 7, each morning there is a 6% chance she sends a dream (you have a relic you haven't got or been hinted at; at least 7 days since the last dream)."
+【Fairy】
+· Appears: from day 10, 6% per day. She can come again and again until she gives you the Jade Hairpin, or until you get greedy.
+· Transform: donate items from the counter. At most 3 per visit.
+    · Junk: becomes a metal ingot. Purity is random (30% perfect, the rest very high).
+    · Items worth 100 or more: becomes a Gold Ingot (base price 200, perfect purity, golden).
+    · Relics and untradeable items are not accepted."
+· Dawn reversal: metal ingots and gold ingots still in the shop before you sleep turn back into what they were (sell them on the same day). Only the item itself comes back; liquid level, freshness and other states are not kept.
+· Question: after 3 items (or one gold ingot), she asks ""Do you want more?""
+    · Enough: she says goodbye, and she still comes back later.
+    · Greedy: she takes back everything she made this visit, and never comes back."
+    · While you hold it, each night there is a 50% chance one junk item in the shop becomes a very high purity metal ingot (permanent, not reversed at dawn).
+【Thief】
+· Appears: from day 10, 2% per day. Up to 3 warnings per run, at least 3 days apart. She only comes if you hold at least one relic.
+· Warning: when she visits, she picks one relic you hold at random and places a warning note on the back counter.
+· Night: on the night of the warning, she always tries."
+    · If she isn't stopped: she takes the target relic.
+    · If she is stopped: she isn't caught, nothing is lost, and she just runs away.
+· Next day:
+    · Theft succeeded: she puts the relic back on the back counter and leaves you a debt (you pay up to one payment per night, only on nights when you have at least 300 cash).
+    · Failed: no relic returned, no debt."
+· Shotgun or report: she escapes, can come back, and gives no reward.
+【Taoist】
+· Appears: from day 7, 3% per day, at least 4 days between visits.
+· How it works: she offers an exorcism for 60 incense money, and it counts as one ritual. If you refuse, nothing is taken and no ritual is counted.
+· Reward: after 3 rituals, she places the Demon Mirror on the back counter and never comes back.
+    · The Demon Mirror is a tool for appraising augmented bodies (unlimited use, once per customer)."
+· Oil lamps catch fire when a yokai customer comes in (see section VII).
+▌IV. Characters in Wonderland
+【Lair · Dragon】
+· Sneak to steal gold: 55% success, stealing 300–800 credits straight into your cash. On failure, you take a major injury, and the lair is closed for 3 days.
+· Tell the dragon ""I am your admirer"": one time only. She gives the Dragon Scale, placed on the back counter."
+· Big box: after 2 visits, when you leave calmly, there is a 40% chance each time to get a random supply crate.
+【Seabed · Mermaid】
+· Pearl Shell: when clean value reaches 5000, she gives the Pearl Shell (one time only), placed on the back counter.
+· Sources of clean value (all three add together toward the total):"
+    · Seabed junk: tonight, the seabed is full of junk on the ground (up to 40 items). When you leave Wonderland, items you carried out count by area × 25. Items you can't carry out return to the seabed.
+    · Barnacles: you need cleaning tools and a 14-day cooldown has passed. 8 barnacle clumps appear on the ground (you can eat them). Barnacles you carry out count by area."
+· Pearl Shell (item): drag a liquid container onto it, and the water inside is purified to 99%. Limited to 3000 ml per week (counted by total liquid in the container). Resets on Monday.
+【Inn · Fox】
+· Guess the lantern: three lanterns hang from the beam. Only one is foxfire. Each night the answer is set randomly, and it stays the same when you reload. The first correct guess gives the Fox Tail Hair. Later correct guesses give 150 credits as thanks. A wrong guess costs you 100 in tuition."
+· Oil lamp lighting: if you carry an oil lamp in your backpack outside, you get one more option, ""Give the oil lamp to her."" The oil lamp becomes a foxfire lamp, lasting 3 days.
+    · Foxfire lamp: halves the chance of minor and major injuries when scavenging outside (stacks with the flashlight). It lets you enter the Snow Field and the Cave."
+· Gift guessing: pick an item from your backpack outside to give her.
+    · Likes: cassette tapes, soda, newspapers, scratch cards, robot vacuums. After she has received 3 gifts, she gives the Royal Letter (one time only). After that, each gift she likes earns 150–250 credits in return.
+    · Addictive substance (drugs): she takes the gift (it's destroyed). The Foreign Realm never appears again.
+    · Anything else: no reaction, no effect.
+· Tell a story: she talks about her interest in the outside world, and pays 100–200 credits."
+【Forest · Flower Fairy】
+· Help with the garden: free. You get a Nutrifruit Seed.
+· Give her several different seeds: she accepts each kind once. After 5 different kinds, she gives the Flower Crown. If you don't have enough, she tells you how many are missing.
+· Nap (while you carry the Flower Crown): next day, luck +30.
+· Share the harvest (after the Flower Crown): she gives you one Flower Bag per kind of crop she has received. Opening a bag gives that crop, at half the normal harvest amount."
+· Fix the garden: each night, the first time you enter the forest, there is a 30% chance a fence is loose. If you have the original tools (plant analyzer, nutrient tablets, screwdriver, wire cutters, toolbox, welding torch, etc.), you can help her fix it, and she gives you Flower Honey."
+· Lucky Clover: can be grown hydroponically, and gives Lucky Clover. Using it that day gives luck +10.
+【Cave · Snake Woman】
+· Requirement: carry a flashlight, or a lit oil lamp (foxfire or burning oil lamp, still within 3 days).
+· Opening: you are caught. If you accept, she lets you go.
+· Choices: three, all with the same result. If you accept, you spend a suffocating night, and customers -1 the next day."
+· Show the ice crystal (only if you carry one): 20 ore nodes appear on the ground (70% metal ore, 30% rare metal ore). Takes up tonight, 3-day cooldown.
+· Maybe I can solve your problem (if you carry the demon mirror, red stone, or clear bead): she spits out a crystal ball (luxury item, 200 credits, one time only).
+· Choices that appear only from the second visit: show the ice crystal, maybe I can solve your problem.
+【Bamboo Forest · Moon Rabbit】"
+· Repaying: after you show her 3 different human-world items, she repays all the money you have given her, plus one pill (one time only).
+· Another moon rabbit: two days after you meet her, another moon rabbit comes to ask.
+    · [I saw her]: the Bamboo Forest closes for good.
+    · [I don't know]: next time you go to the forest, you get the Jade Pestle (one time)."
+· Ambush: after you get the Jade Pestle, every visit to the forest is an ambush. You can drop her with 4 bottles of bamboo wine. The first two failed attempts leave her shaken, and on the third attempt she tells you it is the last one. If all three fail, she is taken away, and the forest closes for good."
+【Snow Field · Snow Woman】
+· Requirement: carry a lit foxfire lamp (within 3 days).
+· First visit: she gives you the Ice Crystal.
+· Night together: next day, luck +30.
+· Cold food: ask her to make cold treats with ingredients. Milk → ice cream (90); soda or juice → popsicle (50), 1-for-1, up to 3 per visit. Ice bar (400, a luxury item) needs no ingredients, one per week."
+· Ice Crystal: kept in a cold-storage compartment, it stays cold or frozen each night, with no power use.
+【Church · Nun】
+· Progress: confession +1, donation +2. At 3, she gives the Cross (one time only). The church stays open afterward, and you can still confess and donate (with cooldowns).
+· Confession booth (only shown if you have criminal points): halves each of your criminal points.
+· Donate 300 credits: lower-district reputation +1.
+· Cross: you can use it once a day; it is not used up. The next haggling after use always succeeds."
+· Hand over the stolen goods (only shown if you carry stolen goods after exposure): all stolen-goods marks on you are removed. No fee. Takes tonight, 3-day cooldown.
+▌V. Scavenging Outside
+· From day 3, each search rolls for an encounter, with at most one per search.
+· Magical Girl: 5%. After she is found, she won't appear for 7 days. Can repeat.
+    · Blessing: +2 searches that night, no injuries, better finds (a chance of one extra item), no succubus attack that night, and no oversleeping the next day."
+· If you carry a Spirit Trait item, both have ×3 chance.
+▌VI. Machine Girl
+【Finding and taking her home】
+· Finding her: when searching for scrap outside, the base chance is 2%. Each search without finding her adds +0.2%, up to 10%. Finding her resets the chance, and she won't appear for 4 days.
+· Choices: take her home (she gives you her broken core), or leave her (she stays there, and you can find her again later).
+【Broken core】
+· Drag scrap metal or basic electronic parts onto it. Each one you drag is used up. Five pieces repair it."
+【Visits to the shop】
+· The first visit after repair is certain. After that, each day has a 15% chance, with at least 2 days between visits.
+· Choices: give her scrap metal (luck +20 the next day); give her metal ingots (they charge the shop's lowest-charge battery, by purity: perfect 100, very high 60, high 40, normal 25, low 15, very low 10); chat with her; or leave.
+【Three memories and the report】
+· After you finish the three memories, she places one scrap metal or basic electronic part on the back counter."
+· The next business day after that, she always comes, and secretly reports herself. There are three warnings. Choose ""Stop her"" in any one of them to succeed.
+    · If you stop her: she becomes a regular, visiting 15% per day (at least 5 days apart). She gives you a Ledger (not stored in the relic album).
+    · If you don't stop her in any of the three: the security bureau takes the old AI core from her body, pays a reward of 1500, and she never appears again. Your broken core is not affected."
+【Ledger】
+· Each night after the service, you get one page and a line in the night log.
+· Each page shows: sales compared with yesterday, net worth and cash, items sold and restocked, rent and electricity, the biggest single sale of the day, the most profitable resale, the day's news, and Lucy's comments.
+· A book you flip through, one side per day. Open it, and it shows the last page.
+【Disabled start】
+· If you started with the ""disabled"" trait (original game), George comes on day 15 and hands you the broken core."
+· Not now: he asks again 7 days later, until you accept."
+【Milk Girl】
+· Like the scavenger who sells blood, she buys milk bottles and gives food or water in return.
+· Milk bottles can only be checked for their contents with a water scanner. Their quality is not shown, and they cannot be sold as water.
+· On days 25, 50 and 75, the sales list gains one more milk bottle each time.
+【Vampire】
+· Appears: from day 15, 1% per day.
+· First visit: pick one of three.
+    · Hand over a blood bag (only offered if you carry one; one time only);
+    · Give blood;
+    · Refuse (she never comes back)."
+· Weakness: after giving blood, you are weak for 3 days (the first time) or 1 day (later). While weak, you cannot leave the shop through the door. Next day, customers -1 (unless you are a short sleeper).
+· Reward: after 5 total blood donations (blood bags don't count), she gives the Silver Goblet.
+· Silver Goblet: a 150 ml liquid container. Every night it refills to 10% ancestral blood.
+【Ancestral Blood and Familiars】"
+· Blood water: water where ancestral blood is at least 30%.
+· Familiars: customers who buy blood water become familiars.
+    · Up to 2. A third one pushes out the oldest.
+    · They visit once more per day, only buy blood water, and buy as much as you have.
+    · They pay the normal water price, plus 10 credits per ml of ancestral blood.
+    · If they don't buy blood water for 3 days in a row, they leave."
+【Elf and Dark Elf】
+· Elf: from day 5, 6% per day. She comes to buy medical supplies, can't afford them, and asks for half price.
+    · Accept: medical supplies on the scale get -50% temporary selling price.
+    · Refuse: she apologizes and leaves.
+    · When her half-price purchases total 300, she gives the Arrow Feather (one time only).
+· Dark Elf: appears about 5% per visit once you hold the Arrow Feather.
+    · After two conversation lines, you choose to show the feather or ignore her."
+    · After you show the feather, she visits every 2 days and brings 1–2 stolen goods (placed on the front counter).
+【Mummy】
+· Appears: from day 5, 5% per day.
+· How it works: she asks for three kinds of original bandages, which you donate for free. After 10 rolls, she gives the Old Bandage, and then she stops coming.
+【Angel】
+· Appears: 0.5% per day, only if you have a criminal record or investigation points. Only one visit per run.
+· Effect: clears your criminal record and investigation points.
+【Zombie】"
+· Appears: 20% per day until day 20, then drops in a straight line to 2% on day 60, and stays at 2% after that. Only one visit per run.
+· How it works: she buys nothing and says three lines, then leaves. Before she leaves, you can shoot her; the reward is a fixed 300.
+【Knight】
+· Appears: if your lower-district reputation drops by 5 or more in one day, she comes the next day to ask for an apology payment (loss × 50 credits).
+· Pay: your reputation is restored.
+· Refuse: she never comes back."
+· After the apology, she sometimes comes to buy household goods, food and water (8% per day).
+【Cheerleader】
+· Appears: from day 5, 1% per day. Once per run. She is the first customer of the day.
+· Effect: all customers who come in that day are affected by neuro-active perfume (customers already using pheromone perfume are unchanged). She buys nothing.
+【Ninja】
+· Appears: from day 10, 2% per day. Once per run."
+· Shuriken: while you hold it (anywhere in the shop), it blocks minor and major injuries from scavenging outside.
+【Oni】
+· Appears: from day 5, 10% per day.
+· How it works: she wants alcohol. Donate alcohol from the counter (beer, red wine, spirits). Her total counts by value. At 300, she gives the Sake Gourd, and then she stops coming. If you give her nothing, there is no penalty."
+【Slime】
+· Appears: from day 5, 8% per day.
+· How it works: she eats anything you donate from the counter. The items are gone. There are eight categories (grouped by item type). After she has eaten one item from each, she gives the Clear Bead, and then she stops coming. She only accepts categories she hasn't eaten yet.
+【Idol】
+· Requirement: total reputation (all eight factions, positive and negative added together) reaches 400.
+· Appears: she passes by once and gives the Photo Book. Once per run."
+【Santa】
+· Appears: on the real-world date of 25 December, once per save.
+· Gifts: random items placed on the back counter (3 common, 1 rare). She gives no relics.
+· If you are threatened with a shotgun or reported to the authorities, she runs away and never comes back.
+【Miko】
+· Appears: from day 14, every Saturday (not Sunday). She is an extra customer."
+· When she has received 500 in total, she gives the Lucky Cat (one time only), and then she stops coming.
+· Lucky Cat: when it is in the showcase, Miko comes 1.5 times as often.
+【Witch】
+· Appears: from day 7, 4% per day. She doesn't come for a new delivery while there is an unreported one.
+· Delivery: she takes any item from the counter for free (not relics, and not untradeable items)."
+    · She picks from ordinary items first. A Magic Residue item makes up the difference.
+    · If the delivered total is over 333, she may give you a Red Stone (one time only). The higher the total, the lower the chance.
+【Landmine Girl】
+· Appears: from day 12, base 20% per day. Each day she doesn't appear adds 5% to her chance. Once she appears, she comes for the first visit.
+· First visit: choose one of three.
+    · Give a weapon: she buys it and never comes back;"
+    · Give nothing: she comes back in 3 days. If you still give nothing, she never comes back.
+· After that: she sometimes comes to shop (10%), buying household goods only.
+【Saint】
+· Requirement: total reputation (sum of all factions) reaches 600, and you hold the Cross. The day the requirement is first met, she comes the next day.
+· How it works: she comes once, places the Heavenly Record on the back counter, and never comes back.
+· Heavenly Record: after use, you can flip through 8 two-page spreads with 16 CG images.
+【Reaper】"
+· Deals:
+    · Pay 500 credits: all threats being negotiated are postponed by 3 days, and quiet for 3 days.
+    · Pay with your soul (once per run): threats that can be reset return to their starting values, and you become permanently weak (you oversleep every night, and customers -1 the next day).
+    · Refuse: the threat happens as normal.
+· Threats:
+    · criminal record (a police officer, or a fine you can't pay);
+    · a faction reputation of -85 or lower (lower district, security, upper, revolutionary, cartel);"
+    · augmented body ratio at 80 or more (only when the augmented ending is active);
+    · a simple reactor that will explode within 2 nights;
+    · rent you can't pay;
+    · mortgage debt you can't pay;
+    · full injury level (warning only, no deals).
+【Master】
+· Appears: the day after a story branch is lost (you cannot get that relic, and you haven't got it yet). If the branch becomes possible again, she stops coming."
+【Fortune Teller】
+· Appears: from day 15, 0.25% per day. Once per run.
+· How it works: she previews the next seven days of newspaper price-changing news.
+· Crystal ball: after her preview, if you have a crystal ball anywhere in the shop (including your backpack outside), you can give it to her. After that, she comes every Monday instead of once per run.
+【Green Cloak Girl】
+· Appears: from day 15, 2% per day. At most two visits per run."
+· Reward: at 500 credits, she gives the Snake Ring.
+· Second visit: if she didn't reach 500 on the first visit, she returns 7 days later. After the second visit, she never comes back.
+· Ring effect: while you hold it, two extra customers come every Monday.
+【Goddess】
+· Does not come to the shop. From day 7, each morning there is a 6% chance she sends a dream (you have a relic you haven't got or been hinted at; at least 7 days since the last dream)."
+【Fairy】
+· Appears: from day 10, 6% per day. She can come again and again until she gives you the Jade Hairpin, or until you get greedy.
+· Transform: donate items from the counter. At most 3 per visit.
+    · Junk: becomes a metal ingot. Purity is random (30% perfect, the rest very high).
+    · Items worth 100 or more: becomes a Gold Ingot (base price 200, perfect purity, golden).
+    · Relics and untradeable items are not accepted."
+· Dawn reversal: metal ingots and gold ingots still in the shop before you sleep turn back into what they were (sell them on the same day). Only the item itself comes back; liquid level, freshness and other states are not kept.
+· Question: after 3 items (or one gold ingot), she asks ""Do you want more?""
+    · Enough: she says goodbye, and she still comes back later.
+    · Greedy: she takes back everything she made this visit, and never comes back."
+    · While you hold it, each night there is a 50% chance one junk item in the shop becomes a very high purity metal ingot (permanent, not reversed at dawn).
+【Thief】
+· Appears: from day 10, 2% per day. Up to 3 warnings per run, at least 3 days apart. She only comes if you hold at least one relic.
+· Warning: when she visits, she picks one relic you hold at random and places a warning note on the back counter.
+· Night: on the night of the warning, she always tries."
+    · If she isn't stopped: she takes the target relic.
+    · If she is stopped: she isn't caught, nothing is lost, and she just runs away.
+· Next day:
+    · Theft succeeded: she puts the relic back on the back counter and leaves you a debt (you pay up to one payment per night, only on nights when you have at least 300 cash).
+    · Failed: no relic returned, no debt."
+· Shotgun or report: she escapes, can come back, and gives no reward.
+【Taoist】
+· Appears: from day 7, 3% per day, at least 4 days between visits.
+· How it works: she offers an exorcism for 60 incense money, and it counts as one ritual. If you refuse, nothing is taken and no ritual is counted.
+· Reward: after 3 rituals, she places the Demon Mirror on the back counter and never comes back.
+    · The Demon Mirror is a tool for appraising augmented bodies (unlimited use, once per customer)."
+· Oil lamps catch fire when a yokai customer comes in (see section VII).
+▌IV. Characters in Wonderland
+【Lair · Dragon】
+· Sneak to steal gold: 55% success, stealing 300–800 credits straight into your cash. On failure, you take a major injury, and the lair is closed for 3 days.
+· Tell the dragon ""I am your admirer"": one time only. She gives the Dragon Scale, placed on the back counter."
+· Big box: after 2 visits, when you leave calmly, there is a 40% chance each time to get a random supply crate.
+【Seabed · Mermaid】
+· Pearl Shell: when clean value reaches 5000, she gives the Pearl Shell (one time only), placed on the back counter.
+· Sources of clean value (all three add together toward the total):"
+    · Seabed junk: tonight, the seabed is full of junk on the ground (up to 40 items). When you leave Wonderland, items you carried out count by area × 25. Items you can't carry out return to the seabed.
+    · Barnacles: you need cleaning tools and a 14-day cooldown has passed. 8 barnacle clumps appear on the ground (you can eat them). Barnacles you carry out count by area."
+· Pearl Shell (item): drag a liquid container onto it, and the water inside is purified to 99%. Limited to 3000 ml per week (counted by total liquid in the container). Resets on Monday.
+【Inn · Fox】
+· Guess the lantern: three lanterns hang from the beam. Only one is foxfire. Each night the answer is set randomly, and it stays the same when you reload. The first correct guess gives the Fox Tail Hair. Later correct guesses give 150 credits as thanks. A wrong guess costs you 100 in tuition."
+· Oil lamp lighting: if you carry an oil lamp in your backpack outside, you get one more option, ""Give the oil lamp to her."" The oil lamp becomes a foxfire lamp, lasting 3 days.
+    · Foxfire lamp: halves the chance of minor and major injuries when scavenging outside (stacks with the flashlight). It lets you enter the Snow Field and the Cave."
+· Gift guessing: pick an item from your backpack outside to give her.
+    · Likes: cassette tapes, soda, newspapers, scratch cards, robot vacuums. After she has received 3 gifts, she gives the Royal Letter (one time only). After that, each gift she likes earns 150–250 credits in return.
+    · Addictive substance (drugs): she takes the gift (it's destroyed). The Foreign Realm never appears again.
+    · Anything else: no reaction, no effect.
+· Tell a story: she talks about her interest in the outside world, and pays 100–200 credits."
+【Forest · Flower Fairy】
+· Help with the garden: free. You get a Nutrifruit Seed.
+· Give her several different seeds: she accepts each kind once. After 5 different kinds, she gives the Flower Crown. If you don't have enough, she tells you how many are missing.
+· Nap (while you carry the Flower Crown): next day, luck +30.
+· Share the harvest (after the Flower Crown): she gives you one Flower Bag per kind of crop she has received. Opening a bag gives that crop, at half the normal harvest amount."
+· Fix the garden: each night, the first time you enter the forest, there is a 30% chance a fence is loose. If you have the original tools (plant analyzer, nutrient tablets, screwdriver, wire cutters, toolbox, welding torch, etc.), you can help her fix it, and she gives you Flower Honey."
+· Lucky Clover: can be grown hydroponically, and gives Lucky Clover. Using it that day gives luck +10.
+【Cave · Snake Woman】
+· Requirement: carry a flashlight, or a lit oil lamp (foxfire or burning oil lamp, still within 3 days).
+· Opening: you are caught. If you accept, she lets you go.
+· Choices: three, all with the same result. If you accept, you spend a suffocating night, and customers -1 the next day."
+· Show the ice crystal (only if you carry one): 20 ore nodes appear on the ground (70% metal ore, 30% rare metal ore). Takes up tonight, 3-day cooldown.
+· Maybe I can solve your problem (if you carry the demon mirror, red stone, or clear bead): she spits out a crystal ball (luxury item, 200 credits, one time only).
+· Choices that appear only from the second visit: show the ice crystal, maybe I can solve your problem.
+【Bamboo Forest · Moon Rabbit】"
+· Repaying: after you show her 3 different human-world items, she repays all the money you have given her, plus one pill (one time only).
+· Another moon rabbit: two days after you meet her, another moon rabbit comes to ask.
+    · [I saw her]: the Bamboo Forest closes for good.
+    · [I don't know]: next time you go to the forest, you get the Jade Pestle (one time)."
+· Ambush: after you get the Jade Pestle, every visit to the forest is an ambush. You can drop her with 4 bottles of bamboo wine. The first two failed attempts leave her shaken, and on the third attempt she tells you it is the last one. If all three fail, she is taken away, and the forest closes for good."
+【Snow Field · Snow Woman】
+· Requirement: carry a lit foxfire lamp (within 3 days).
+· First visit: she gives you the Ice Crystal.
+· Night together: next day, luck +30.
+· Cold food: ask her to make cold treats with ingredients. Milk → ice cream (90); soda or juice → popsicle (50), 1-for-1, up to 3 per visit. Ice bar (400, a luxury item) needs no ingredients, one per week."
+· Ice Crystal: kept in a cold-storage compartment, it stays cold or frozen each night, with no power use.
+【Church · Nun】
+· Progress: confession +1, donation +2. At 3, she gives the Cross (one time only). The church stays open afterward, and you can still confess and donate (with cooldowns).
+· Confession booth (only shown if you have criminal points): halves each of your criminal points.
+· Donate 300 credits: lower-district reputation +1.
+· Cross: you can use it once a day; it is not used up. The next haggling after use always succeeds."
+· Hand over the stolen goods (only shown if you carry stolen goods after exposure): all stolen-goods marks on you are removed. No fee. Takes tonight, 3-day cooldown.
+▌V. Scavenging Outside
+· From day 3, each search rolls for an encounter, with at most one per search.
+· Magical Girl: 5%. After she is found, she won't appear for 7 days. Can repeat.
+    · Blessing: +2 searches that night, no injuries, better finds (a chance of one extra item), no succubus attack that night, and no oversleeping the next day."
+· If you carry a Spirit Trait item, both have ×3 chance.
+▌VI. Machine Girl
+【Finding and taking her home】
+· Finding her: when searching for scrap outside, the base chance is 2%. Each search without finding her adds +0.2%, up to 10%. Finding her resets the chance, and she won't appear for 4 days.
+· Choices: take her home (she gives you her broken core), or leave her (she stays there, and you can find her again later).
+【Broken core】
+· Drag scrap metal or basic electronic parts onto it. Each one you drag is used up. Five pieces repair it."
+【Visits to the shop】
+· The first visit after repair is certain. After that, each day has a 15% chance, with at least 2 days between visits.
+· Choices: give her scrap metal (luck +20 the next day); give her metal ingots (they charge the shop's lowest-charge battery, by purity: perfect 100, very high 60, high 40, normal 25, low 15, very low 10); chat with her; or leave.
+【Three memories and the report】
+· After you finish the three memories, she places one scrap metal or basic electronic part on the back counter."
+· The next business day after that, she always comes, and secretly reports herself. There are three warnings. Choose ""Stop her"" in any one of them to succeed.
+    · If you stop her: she becomes a regular, visiting 15% per day (at least 5 days apart). She gives you a Ledger (not stored in the relic album).
+    · If you don't stop her in any of the three: the security bureau takes the old AI core from her body, pays a reward of 1500, and she never appears again. Your broken core is not affected."
+【Ledger】
+· Each night after the service, you get one page and a line in the night log.
+· Each page shows: sales compared with yesterday, net worth and cash, items sold and restocked, rent and electricity, the biggest single sale of the day, the most profitable resale, the day's news, and Lucy's comments.
+· A book you flip through, one side per day. Open it, and it shows the last page.
+【Disabled start】
+· If you started with the ""disabled"" trait (original game), George comes on day 15 and hands you the broken core."
+· Not now: he asks again 7 days later, until you accept."
+【Milk Girl】
+· Like the scavenger who sells blood, she buys milk bottles and gives food or water in return.
+· Milk bottles can only be checked for their contents with a water scanner. Their quality is not shown, and they cannot be sold as water.
+· On days 25, 50 and 75, the sales list gains one more milk bottle each time.
+【Vampire】
+· Appears: from day 15, 1% per day.
+· First visit: pick one of three.
+    · Hand over a blood bag (only offered if you carry one; one time only);
+    · Give blood;
+    · Refuse (she never comes back)."
+· Weakness: after giving blood, you are weak for 3 days (the first time) or 1 day (later). While weak, you cannot leave the shop through the door. Next day, customers -1 (unless you are a short sleeper).
+· Reward: after 5 total blood donations (blood bags don't count), she gives the Silver Goblet.
+· Silver Goblet: a 150 ml liquid container. Every night it refills to 10% ancestral blood.
+【Ancestral Blood and Familiars】"
+· Blood water: water where ancestral blood is at least 30%.
+· Familiars: customers who buy blood water become familiars.
+    · Up to 2. A third one pushes out the oldest.
+    · They visit once more per day, only buy blood water, and buy as much as you have.
+    · They pay the normal water price, plus 10 credits per ml of ancestral blood.
+    · If they don't buy blood water for 3 days in a row, they leave."
+【Elf and Dark Elf】
+· Elf: from day 5, 6% per day. She comes to buy medical supplies, can't afford them, and asks for half price.
+    · Accept: medical supplies on the scale get -50% temporary selling price.
+    · Refuse: she apologizes and leaves.
+    · When her half-price purchases total 300, she gives the Arrow Feather (one time only).
+· Dark Elf: appears about 5% per visit once you hold the Arrow Feather.
+    · After two conversation lines, you choose to show the feather or ignore her."
+    · After you show the feather, she visits every 2 days and brings 1–2 stolen goods (placed on the front counter).
+【Mummy】
+· Appears: from day 5, 5% per day.
+· How it works: she asks for three kinds of original bandages, which you donate for free. After 10 rolls, she gives the Old Bandage, and then she stops coming.
+【Angel】
+· Appears: 0.5% per day, only if you have a criminal record or investigation points. Only one visit per run.
+· Effect: clears your criminal record and investigation points.
+【Zombie】"
+· Appears: 20% per day until day 20, then drops in a straight line to 2% on day 60, and stays at 2% after that. Only one visit per run.
+· How it works: she buys nothing and says three lines, then leaves. Before she leaves, you can shoot her; the reward is a fixed 300.
+【Knight】
+· Appears: if your lower-district reputation drops by 5 or more in one day, she comes the next day to ask for an apology payment (loss × 50 credits).
+· Pay: your reputation is restored.
+· Refuse: she never comes back."
+· After the apology, she sometimes comes to buy household goods, food and water (8% per day).
+【Cheerleader】
+· Appears: from day 5, 1% per day. Once per run. She is the first customer of the day.
+· Effect: all customers who come in that day are affected by neuro-active perfume (customers already using pheromone perfume are unchanged). She buys nothing.
+【Ninja】
+· Appears: from day 10, 2% per day. Once per run."
+· Shuriken: while you hold it (anywhere in the shop), it blocks minor and major injuries from scavenging outside.
+【Oni】
+· Appears: from day 5, 10% per day.
+· How it works: she wants alcohol. Donate alcohol from the counter (beer, red wine, spirits). Her total counts by value. At 300, she gives the Sake Gourd, and then she stops coming. If you give her nothing, there is no penalty."
+【Slime】
+· Appears: from day 5, 8% per day.
+· How it works: she eats anything you donate from the counter. The items are gone. There are eight categories (grouped by item type). After she has eaten one item from each, she gives the Clear Bead, and then she stops coming. She only accepts categories she hasn't eaten yet.
+【Idol】
+· Requirement: total reputation (all eight factions, positive and negative added together) reaches 400.
+· Appears: she passes by once and gives the Photo Book. Once per run."
+【Santa】
+· Appears: on the real-world date of 25 December, once per save.
+· Gifts: random items placed on the back counter (3 common, 1 rare). She gives no relics.
+· If you are threatened with a shotgun or reported to the authorities, she runs away and never comes back.
+【Miko】
+· Appears: from day 14, every Saturday (not Sunday). She is an extra customer."
+· When she has received 500 in total, she gives the Lucky Cat (one time only), and then she stops coming.
+· Lucky Cat: when it is in the showcase, Miko comes 1.5 times as often.
+【Witch】
+· Appears: from day 7, 4% per day. She doesn't come for a new delivery while there is an unreported one.
+· Delivery: she takes any item from the counter for free (not relics, and not untradeable items)."
+    · She picks from ordinary items first. A Magic Residue item makes up the difference.
+    · If the delivered total is over 333, she may give you a Red Stone (one time only). The higher the total, the lower the chance.
+【Landmine Girl】
+· Appears: from day 12, base 20% per day. Each day she doesn't appear adds 5% to her chance. Once she appears, she comes for the first visit.
+· First visit: choose one of three.
+    · Give a weapon: she buys it and never comes back;"
+    · Give nothing: she comes back in 3 days. If you still give nothing, she never comes back.
+· After that: she sometimes comes to shop (10%), buying household goods only.
+【Saint】
+· Requirement: total reputation (sum of all factions) reaches 600, and you hold the Cross. The day the requirement is first met, she comes the next day.
+· How it works: she comes once, places the Heavenly Record on the back counter, and never comes back.
+· Heavenly Record: after use, you can flip through 8 two-page spreads with 16 CG images.
+【Reaper】"
+· Deals:
+    · Pay 500 credits: all threats being negotiated are postponed by 3 days, and quiet for 3 days.
+    · Pay with your soul (once per run): threats that can be reset return to their starting values, and you become permanently weak (you oversleep every night, and customers -1 the next day).
+    · Refuse: the threat happens as normal.
+· Threats:
+    · criminal record (a police officer, or a fine you can't pay);
+    · a faction reputation of -85 or lower (lower district, security, upper, revolutionary, cartel);"
+    · augmented body ratio at 80 or more (only when the augmented ending is active);
+    · a simple reactor that will explode within 2 nights;
+    · rent you can't pay;
+    · mortgage debt you can't pay;
+    · full injury level (warning only, no deals).
+【Master】
+· Appears: the day after a story branch is lost (you cannot get that relic, and you haven't got it yet). If the branch becomes possible again, she stops coming."
+【Fortune Teller】
+· Appears: from day 15, 0.25% per day. Once per run.
+· How it works: she previews the next seven days of newspaper price-changing news.
+· Crystal ball: after her preview, if you have a crystal ball anywhere in the shop (including your backpack outside), you can give it to her. After that, she comes every Monday instead of once per run.
+【Green Cloak Girl】
+· Appears: from day 15, 2% per day. At most two visits per run."
+· Reward: at 500 credits, she gives the Snake Ring.
+· Second visit: if she didn't reach 500 on the first visit, she returns 7 days later. After the second visit, she never comes back.
+· Ring effect: while you hold it, two extra customers come every Monday.
+【Goddess】
+· Does not come to the shop. From day 7, each morning there is a 6% chance she sends a dream (you have a relic you haven't got or been hinted at; at least 7 days since the last dream)."
+【Fairy】
+· Appears: from day 10, 6% per day. She can come again and again until she gives you the Jade Hairpin, or until you get greedy.
+· Transform: donate items from the counter. At most 3 per visit.
+    · Junk: becomes a metal ingot. Purity is random (30% perfect, the rest very high).
+    · Items worth 100 or more: becomes a Gold Ingot (base price 200, perfect purity, golden).
+    · Relics and untradeable items are not accepted."
+· Dawn reversal: metal ingots and gold ingots still in the shop before you sleep turn back into what they were (sell them on the same day). Only the item itself comes back; liquid level, freshness and other states are not kept.
+· Question: after 3 items (or one gold ingot), she asks ""Do you want more?""
+    · Enough: she says goodbye, and she still comes back later.
+    · Greedy: she takes back everything she made this visit, and never comes back."
+    · While you hold it, each night there is a 50% chance one junk item in the shop becomes a very high purity metal ingot (permanent, not reversed at dawn).
+【Thief】
+· Appears: from day 10, 2% per day. Up to 3 warnings per run, at least 3 days apart. She only comes if you hold at least one relic.
+· Warning: when she visits, she picks one relic you hold at random and places a warning note on the back counter.
+· Night: on the night of the warning, she always tries."
+    · If she isn't stopped: she takes the target relic.
+    · If she is stopped: she isn't caught, nothing is lost, and she just runs away.
+· Next day:
+    · Theft succeeded: she puts the relic back on the back counter and leaves you a debt (you pay up to one payment per night, only on nights when you have at least 300 cash).
+    · Failed: no relic returned, no debt."
+· Shotgun or report: she escapes, can come back, and gives no reward.
+【Taoist】
+· Appears: from day 7, 3% per day, at least 4 days between visits.
+· How it works: she offers an exorcism for 60 incense money, and it counts as one ritual. If you refuse, nothing is taken and no ritual is counted.
+· Reward: after 3 rituals, she places the Demon Mirror on the back counter and never comes back.
+    · The Demon Mirror is a tool for appraising augmented bodies (unlimited use, once per customer)."
+· Oil lamps catch fire when a yokai customer comes in (see section VII).
+—— IV. Characters in Wonderland ——
+【Lair · Dragon】
+· Sneak to steal gold: 55% success, stealing 300–800 credits straight into your cash. On failure, you take a major injury, and the lair is closed for 3 days.
+· Tell the dragon ""I am your admirer"": one time only. She gives the Dragon Scale, placed on the back counter."
+· Big box: after 2 visits, when you leave calmly, there is a 40% chance each time to get a random supply crate.
+【Seabed · Mermaid】
+· Pearl Shell: when clean value reaches 5000, she gives the Pearl Shell (one time only), placed on the back counter.
+· Sources of clean value (all three add together toward the total):"
+    · Seabed junk: tonight, the seabed is full of junk on the ground (up to 40 items). When you leave Wonderland, items you carried out count by area × 25. Items you can't carry out return to the seabed.
+    · Barnacles: you need cleaning tools and a 14-day cooldown has passed. 8 barnacle clumps appear on the ground (you can eat them). Barnacles you carry out count by area."
+· Pearl Shell (item): drag a liquid container onto it, and the water inside is purified to 99%. Limited to 3000 ml per week (counted by total liquid in the container). Resets on Monday.
+【Inn · Fox】
+· Guess the lantern: three lanterns hang from the beam. Only one is foxfire. Each night the answer is set randomly, and it stays the same when you reload. The first correct guess gives the Fox Tail Hair. Later correct guesses give 150 credits as thanks. A wrong guess costs you 100 in tuition."
+· Oil lamp lighting: if you carry an oil lamp in your backpack outside, you get one more option, ""Give the oil lamp to her."" The oil lamp becomes a foxfire lamp, lasting 3 days.
+    · Foxfire lamp: halves the chance of minor and major injuries when scavenging outside (stacks with the flashlight). It lets you enter the Snow Field and the Cave."
+· Gift guessing: pick an item from your backpack outside to give her.
+    · Likes: cassette tapes, soda, newspapers, scratch cards, robot vacuums. After she has received 3 gifts, she gives the Royal Letter (one time only). After that, each gift she likes earns 150–250 credits in return.
+    · Addictive substance (drugs): she takes the gift (it's destroyed). The Foreign Realm never appears again.
+    · Anything else: no reaction, no effect.
+· Tell a story: she talks about her interest in the outside world, and pays 100–200 credits."
+【Forest · Flower Fairy】
+· Help with the garden: free. You get a Nutrifruit Seed.
+· Give her several different seeds: she accepts each kind once. After 5 different kinds, she gives the Flower Crown. If you don't have enough, she tells you how many are missing.
+· Nap (while you carry the Flower Crown): next day, luck +30.
+· Share the harvest (after the Flower Crown): she gives you one Flower Bag per kind of crop she has received. Opening a bag gives that crop, at half the normal harvest amount."
+· Fix the garden: each night, the first time you enter the forest, there is a 30% chance a fence is loose. If you have the original tools (plant analyzer, nutrient tablets, screwdriver, wire cutters, toolbox, welding torch, etc.), you can help her fix it, and she gives you Flower Honey."
+· Lucky Clover: can be grown hydroponically, and gives Lucky Clover. Using it that day gives luck +10.
+【Cave · Snake Woman】
+· Requirement: carry a flashlight, or a lit oil lamp (foxfire or burning oil lamp, still within 3 days).
+· Opening: you are caught. If you accept, she lets you go.
+· Choices: three, all with the same result. If you accept, you spend a suffocating night, and customers -1 the next day."
+· Show the ice crystal (only if you carry one): 20 ore nodes appear on the ground (70% metal ore, 30% rare metal ore). Takes up tonight, 3-day cooldown.
+· Maybe I can solve your problem (if you carry the demon mirror, red stone, or clear bead): she spits out a crystal ball (luxury item, 200 credits, one time only).
+· Choices that appear only from the second visit: show the ice crystal, maybe I can solve your problem.
+【Bamboo Forest · Moon Rabbit】"
+· Repaying: after you show her 3 different human-world items, she repays all the money you have given her, plus one pill (one time only).
+· Another moon rabbit: two days after you meet her, another moon rabbit comes to ask.
+    · [I saw her]: the Bamboo Forest closes for good.
+    · [I don't know]: next time you go to the forest, you get the Jade Pestle (one time)."
+· Ambush: after you get the Jade Pestle, every visit to the forest is an ambush. You can drop her with 4 bottles of bamboo wine. The first two failed attempts leave her shaken, and on the third attempt she tells you it is the last one. If all three fail, she is taken away, and the forest closes for good."
+【Snow Field · Snow Woman】
+· Requirement: carry a lit foxfire lamp (within 3 days).
+· First visit: she gives you the Ice Crystal.
+· Night together: next day, luck +30.
+· Cold food: ask her to make cold treats with ingredients. Milk → ice cream (90); soda or juice → popsicle (50), 1-for-1, up to 3 per visit. Ice bar (400, a luxury item) needs no ingredients, one per week."
+· Ice Crystal: kept in a cold-storage compartment, it stays cold or frozen each night, with no power use.
+【Church · Nun】
+· Progress: confession +1, donation +2. At 3, she gives the Cross (one time only). The church stays open afterward, and you can still confess and donate (with cooldowns).
+· Confession booth (only shown if you have criminal points): halves each of your criminal points.
+· Donate 300 credits: lower-district reputation +1.
+· Cross: you can use it once a day; it is not used up. The next haggling after use always succeeds."
+· Hand over the stolen goods (only shown if you carry stolen goods after exposure): all stolen-goods marks on you are removed. No fee. Takes tonight, 3-day cooldown.
+—— V. Scavenging Outside ——
+· From day 3, each search rolls for an encounter, with at most one per search.
+· Magical Girl: 5%. After she is found, she won't appear for 7 days. Can repeat.
+    · Blessing: +2 searches that night, no injuries, better finds (a chance of one extra item), no succubus attack that night, and no oversleeping the next day."
+· If you carry a Spirit Trait item, both have ×3 chance.
+—— VI. Machine Girl ——
+【Finding and taking her home】
+· Finding her: when searching for scrap outside, the base chance is 2%. Each search without finding her adds +0.2%, up to 10%. Finding her resets the chance, and she won't appear for 4 days.
+· Choices: take her home (she gives you her broken core), or leave her (she stays there, and you can find her again later).
+【Broken core】"
+· Once repaired, the core is yours, and the machine girl comes to the shop from the next day.
+【Visits to the shop】
+· The first visit after repair is certain. After that, each day has a 15% chance, with at least 2 days between visits.
+· Choices: give her scrap metal (luck +20 the next day); give her metal ingots (they charge the shop's lowest-charge battery, by purity: perfect 100, very high 60, high 40, normal 25, low 15, very low 10); chat with her; or leave.
+【Three memories and the report】"
+· After the third memory, a newspaper story appears: ""Security bureau offers reward for missing AI core."" It lasts 1 day.
+· The next business day after that, she always comes, and secretly reports herself. There are three warnings. Choose ""Stop her"" in any one of them to succeed.
+    · If you stop her: she becomes a regular, visiting 15% per day (at least 5 days apart). She gives you a Ledger (not stored in the relic album)."
+· Shooting or reporting her: the same as above. The bureau takes the old AI core, pays 1500, and she never appears again.
+【Ledger】
+· Each night after the service, you get one page and a line in the night log.
+· Each page shows: sales compared with yesterday, net worth and cash, items sold and restocked, rent and electricity, the biggest single sale of the day, the most profitable resale, the day's news, and Lucy's comments."
+【Disabled start】
+· If you started with the ""disabled"" trait (original game), George comes on day 15 and hands you the broken core.
+· Accept the core: free. It goes on the back counter.
+· Not now: he asks again 7 days later, until you accept."
+name_guide_girl,"Gamer Girl"
+guide_girl_1,"Oh, so you subscribed to our MoreGirls mod!"
+guide_girl_2,"Do you want the official strategy guide? The mod is still in beta, so even the guide may have bugs or not match what the game actually does."
+guide_girl_choice_yes,"Yes, I want it"
+guide_girl_choice_no,"No, thanks"
+guide_girl_yes,"(She slaps the notebook into your hands.) 'Here. Don't mind the mess.'"
+guide_girl_no,"'Fine by me. It is your game anyway.'"
+item_guide_book_name,"Strategy Guide"
+item_guide_book_desc,"A little notebook full of tips on the regulars, scrawled as if written in one sleepless night."
+guide_book_count,"38"
+guide_book_1,"【Milk Girl】\n· She trades milk bottles for food or water.\n· Milk bottles can only be checked with a water scanner. They cannot be sold as water.\n· After each visit, the direct sales list gains milk bottles: 2 normally, 3 from day 25, 4 from day 50, 5 from day 75."
+guide_book_img_1,"milk_girl_book"
+guide_book_2,"【Vampire】\n· From day 15, 1% per day. First visit: hand over a blood bag, give blood, or refuse.\n· After giving blood, she only takes your blood. She appears 20% per day.\n· After the first donation, you are weak for 3 days. After each later donation, 1 day. While weak, the shop door is blocked. Next day, customers -1.\n· After 5 donations, she gives the Silver Goblet (150 ml, refills to 10% ancestral blood each night)."
+guide_book_img_2,"vampire_book"
+guide_book_3,"【Ancestral Blood and Familiars】\n· Ancestral blood does not evaporate, so evaporators only remove water and the blood gets stronger.\n· Blood water: ancestral blood at 30% or more.\n· A customer who buys blood water becomes a familiar. Up to 2. They visit once more per day, buy only blood water, and pay 10 extra per ml.\n· If they don't buy blood water for 3 days in a row, they leave."
+guide_book_img_3,"-"
+guide_book_4,"【Elf and Dark Elf】\n· Elf: from day 5, 6% per day. She asks for half price. If you accept, medical supplies -50%. After 300 half-price sales, she gives the Arrow Feather.\n· Dark Elf: after you hold the feather, about 5% per visit. After two lines, show the feather or ignore her. Reporting her pays 200, and she never comes back. After showing the feather, she visits every 2 days and brings stolen goods."
+guide_book_img_4,"elf_book,dark_elf_book"
+guide_book_5,"【Mummy】\n· From day 5, 5% per day. She takes three kinds of bandages for free. After 10 rolls, she gives the Old Bandage."
+guide_book_img_5,"mummy_book"
+guide_book_6,"【Angel】\n· 0.5% per day, only if you have a criminal record or investigation points. Once per run. Clears both."
+guide_book_img_6,"angel_book"
+guide_book_7,"【Zombie】\n· You must unlock shooting first. 20% per day until day 20, falling to 2% by day 60. Once per run.\n· She says three lines, then leaves. You may shoot her for a fixed 300."
+guide_book_img_7,"zombie_book"
+guide_book_8,"【Knight】\n· If lower-district reputation drops 5 or more in one day, she comes the next day for an apology fee (loss × 50).\n· Pay and your reputation is restored. Refuse and she never returns. Short on cash and the bill is void.\n· After the apology, she sometimes buys household goods, food and water (8% per day)."
+guide_book_img_8,"knight_book"
+guide_book_9,"【Cheerleader】\n· From day 5, 1% per day. Once per run. She is the first customer of the day.\n· Every customer that day is hit by neuro-active perfume. She buys nothing."
+guide_book_img_9,"cheerleader_book"
+guide_book_10,"【Ninja】\n· From day 10, 2% per day. Once per run. She buys a weapon. Lower the price, or she haggles down to her budget. She leaves the Shuriken.\n· While you hold the Shuriken, it blocks minor and major injuries from scavenging outside."
+guide_book_img_10,"ninja_book"
+guide_book_11,"【Oni】\n· From day 5, 10% per day. Donate alcohol from the counter. At 300 total, she gives the Sake Gourd (200 ml, refills 60 ml alcohol each night)."
+guide_book_img_11,"oni_book"
+guide_book_12,"【Slime】\n· From day 5, 8% per day. Donate items from the counter and she eats them. After she has eaten one of each of the eight categories, she gives the Clear Bead and stops coming."
+guide_book_img_12,"slime_book"
+guide_book_13,"【Idol】\n· Total reputation of 400 or more. She passes by once and gives the Photo Book. Once per run.\n· In the showcase, the Photo Book adds 1 normal customer per day. You can flip through it."
+guide_book_img_13,"idol_book"
+guide_book_14,"【Santa】\n· On real-world 25 December, once per save. She leaves random gifts on the back counter (3 common, 1 rare).\n· If you shoot or report her, she runs away and never returns."
+guide_book_img_14,"santa_book"
+guide_book_15,"【Miko】\n· From day 14, every Saturday. Extra customer. Donate 50, 100, 200, all remaining, or nothing. No penalty for short cash or no donation.\n· At 500 total, she gives the Lucky Cat and stops coming. In the showcase, Miko comes more often."
+guide_book_img_15,"miko_book"
+guide_book_16,"【Witch】\n· From day 7, 4% per day. Items on the counter (not relics) can be handed to her for free. Three days later she returns equal-value items.\n· If the delivered total is over 333, she may give a Red Stone."
+guide_book_img_16,"witch_book"
+guide_book_17,"【Landmine Girl】\n· From day 12, 20% per day. Each day she doesn't appear adds 5%.\n· First visit: give a weapon (she buys it, never returns), give 100 (5 scratch cards next day), or give nothing (back in 3 days).\n· Afterwards she sometimes buys household goods."
+guide_book_img_17,"landmine_girl_book"
+guide_book_18,"【Saint】\n· Total reputation of 600 or more and you hold the Cross. She comes the next day, once. She leaves the Heavenly Record on the back counter.\n· After use, the Heavenly Record shows 8 two-page spreads of CG."
+guide_book_img_18,"saint_book"
+guide_book_19,"【Reaper】\n· Each day she checks the threats. If one reaches its warning level, she comes that day.\n· Pay 500: threats are postponed 3 days. Pay with your soul (once per run): resettable threats are reset, and you become permanently weak. Refuse: the threat happens.\n· Threats: criminal record, faction reputation -85 or lower, sentinel pool 15 or more, augmented body ratio 80 or more, reactor, rent, mortgage, full injury (warning only)."
+guide_book_img_19,"reaper_book"
+guide_book_20,"【Master】\n· She comes the day after a story branch is lost (you cannot get the relic). She stops once the branch is open again.\n· Regret pill (black pill): the first is free, then 200 each. Choose a lost branch to reset that character."
+guide_book_img_20,"master_book"
+guide_book_21,"【Fortune Teller】\n· From day 15, 0.25% per day. Once per run. She previews next week's price news in the newspaper.\n· After the preview, if you have a crystal ball in the shop, you can give it to her. Then she comes every Monday."
+guide_book_img_21,"fortune_teller_book"
+guide_book_22,"【Green Cloak Girl】\n· From day 15, 2% per day. At most two visits. Weapons and medicine on the counter count as donations. At 500 total, she gives the Snake Ring.\n· If she is short on the first visit, she returns 7 days later.\n· The ring brings two extra customers every Monday."
+guide_book_img_22,"green_cloak_book"
+guide_book_23,"【Fairy】\n· From day 10, 6% per day. Donate up to 3 items per visit.\n· Junk becomes a metal ingot. Items worth 100+ become a Gold Ingot (base 200), counting as 3.\n· Unsold ingots turn back at dawn.\n· After 3, she asks for more. Enough: goodbye. Greedy: she takes everything back and never returns.\n· At 9 total (gold counts 3), if never greedy: the Jade Hairpin (50% nightly, converts junk)."
+guide_book_img_23,"fairy_book"
+guide_book_24,"【Thief】\n· From day 10, 2% per day. Up to 3 warnings, 3 days apart. She only comes if you hold a relic.\n· On the night of the warning she always tries. Alert 150 or more stops her; otherwise she takes the target relic.\n· If she succeeds, the relic is returned next day with a debt, paid at 1 per night when you have 300 cash or more. If she fails, nothing is returned or recorded.\n· After 3 different relics, she leaves the Poker Card on the third day and never returns."
+guide_book_img_24,"thief_book"
+guide_book_25,"【Taoist】\n· From day 7, 3% per day, at least 4 days apart. Pay 60 for a ritual. After 3 rituals she gives the Demon Mirror and stops. Refuse and nothing is taken.\n· After the first ritual she gives an oil lamp. If you have none, you can pay 60 for another."
+guide_book_img_25,"taoist_book"
+guide_book_26,"【Lair · Dragon】\n· Sneak: 55% success, 300 to 800 credits. Failure is a major injury and a 3-day cooldown.\n· Say ""I am your admirer"" (once): she gives the Dragon Scale. With it, barter a luxury item for 2 or 3 dragon materials.\n· After 2 visits, leaving calmly gives a 40% chance of a supply crate each time."
+guide_book_img_26,"dragon_book"
+guide_book_27,"【Seabed · Mermaid】\n· 5000 clean value gives the Pearl Shell (once).\n· Clean value comes from water (1 ml pure = 1 point, 9990 purity or more; blood water is refused and -1 favor), junk carried out (area × 25), and barnacles carried out (by area).\n· Fake pure water (labeled 9990 but not really) closes the seabed for good.\n· Pearl Shell item: drag a liquid container on it to purify to 99%, up to 3000 ml per week."
+guide_book_img_27,"mermaid_book"
+guide_book_28,"【Inn · Fox】\n· Lantern guessing (one of three is foxfire, set each night): first correct guess gives the Fox Tail Hair. Later correct guesses pay 150, wrong guesses cost 100.\n· After a correct guess: choose one of two treasures, a random luxury item or an original Chinese item.\n· With an oil lamp outside, you can give it to her. It becomes a foxfire lamp for 3 days. It halves injury chance when scavenging, and lets you enter the Snow Field and the Cave."
+guide_book_img_28,"fox_book"
+guide_book_29,"【Foreign Realm · Princess】\n· Gifts she likes (cassette tapes, soda, newspapers, scratch cards, robot vacuum): 3 gifts earn the Royal Letter. Later likes pay 150 to 250.\n· An addictive drug: she takes it and the Foreign Realm closes for good. Anything else has no effect.\n· Telling a story pays 100 to 200. Showing a relic pays 50 to 100 the first time for each kind. A Message in a Bottle pays 600 to 800."
+guide_book_img_29,"princess_book"
+guide_book_30,"【Forest · Flower Fairy】\n· Helping with the garden gives a free Nutrifruit Seed. Five kinds of seed give the Flower Crown.\n· With the crown: a nap gives luck +30. Sharing the harvest gives one Flower Bag per kind (half the harvest).\n· Water shortage: 250 ml pure water gives Flower Honey. Fixing the fence (30% nightly, tools) also does.\n· Flower Honey: 2 extra trips tonight, or 3 cycles of full quality in a hydroponic machine."
+guide_book_img_30,"flower_fairy_book"
+guide_book_31,"【Cave · Snake Woman】\n· Requires a flashlight or a lit oil lamp.\n· You are caught. Accept and she lets you go. That night is suffocating and customers are -1 the next day. All three choices give the same result.\n· After the third session she gives the Snake Scale. Showing the ice crystal (with one) spawns 20 ore nodes, 3-day cooldown.\n· If you carry a demon mirror, red stone or clear bead, you can choose ""maybe I can solve your problem"" to get a crystal ball (200, once)."
+guide_book_img_31,"snake_book"
+guide_book_32,"【Bamboo Forest · Moon Rabbit】\n· Standard: food for pill; Jade Hairpin (once, pill); pay 200; cut shoots (tools); chat.\n· After 3 human things, she repays your money and gives a pill.\n· Two days later another rabbit asks: [I saw her] closes the forest; [I don't know] gives the Jade Pestle.\n· Jade Pestle: pound hydroponic crops into ointment (3 per week); brew bamboo wine from basic water and shoots.\n· Ambush: four bottles of any alcohol drop her; three failures close the forest."
+guide_book_img_32,"moon_book"
+guide_book_33,"【Snow Field · Snow Woman】\n· Requires a foxfire lamp lit within 3 days.\n· First visit gives the Ice Crystal. A night together gives luck +30 the next day.\n· Cold treats: milk → ice cream (90); soda or juice → popsicle (50), 1 for 1, up to 3. Ice bar (400): no ingredients, weekly. Sake Gourd (50 ml): luck +45."
+guide_book_img_33,"snow_book"
+guide_book_34,"【Church · Nun】\n· Progress: confession +1, donation of 300 +2. At 3 she gives the Cross (once). Confession and donation remain possible.\n· Confession halves your criminal points (only if you have some). Donation gives lower-district reputation +1.\n· Cross: once a day, the next haggle always succeeds.\n· The next church visit after the Cross triggers an exposure. If you carry stolen goods, she can clear them (uses tonight, 3-day cooldown)."
+guide_book_img_34,"nun_book"
+guide_book_35,"【Scavenging】\n· From day 3, each search rolls for an encounter, at most one.\n· Magical Girl: 5%, then 7 days before she appears again. Blessing: +2 searches, no injury, better finds, no succubus attack that night, no oversleeping.\n· Succubus: 3%, then 7 days before she returns. Next day, normal customers -3."
+guide_book_img_35,"magical_girl_book,succubus_book"
+guide_book_36,"【Goddess】\n· Does not come to the shop. From day 7, each morning 6% chance of a dream. A note appears on the back counter, hinting how to get a relic you don't have."
+guide_book_img_36,"goddess_book"
+guide_book_37,"【Machine Girl】\n· Scavenging: base 2%, +0.2% per miss, up to 10%. Finding her gives a 4-day cooldown.\n· Take her home for the broken core. Repair it with 5 scrap metal or basic electronics.\n· After repair she visits from the next day: certain at first, then 15% per day. Scrap metal (luck +20), metal ingots to charge, chat, or leave.\n· After three memories, she leaves a scrap or electronic part on the back counter."
+guide_book_img_37,"machine_girl_cg_book"
+guide_book_38,"【Machine Girl (cont.)】\n· A newspaper reports the missing AI core after the third memory. Next business day she reports herself. Stop her within three warnings.\n· Stopped: she becomes a regular (15% per day, 5+ days apart) and gives you the Ledger.\n· Otherwise, or if you shoot or report her: the bureau takes her core, pays 1500, and she never returns.\n· Disabled start: George brings the core on day 15. Accept it free, or he returns 7 days later."
+guide_book_img_38,"machine_girl_book"

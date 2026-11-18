@@ -27,7 +27,7 @@ Brew beer and make new wines from new crops in this expansion mod. Automate your
 
 All settings are under the gear button in the Mods menu.
 
-### What's new in 1.1.4:
+### What's new in 1.1.5:
 - Nutricooler by hand, graded by Nutrifruit size
 - French translation, by Dreams
 
