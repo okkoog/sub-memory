@@ -795,10 +795,150 @@ I'll just start a new save...
 | 기록 위치 | 현재 확보 범위 | 이후 우선 확보할 정보 |
 |---|---|---|
 | **기존 모딩 본 채널** | 2026-11-17 18:35부터 **2026-11-18 09:07까지 사용자 제공 발췌** | 운영진의 공개 조치·사과·모드 삭제 발표 등 본 채널에 남는 후속 메시지 |
-| **\`Inquiry: Modding Dispute\` 스레드** | **2026-11-17 22:54 생성 사실만 확보. 스레드 내부 메시지 미확보** | Victor가 Leo에게 줬다는 0.10.1 파일의 분석·검증, 더 오래된 버전 복구 여부, 원작자 측 반박, 협박 증거, 조사의 결론 |
+| **\`Inquiry: Modding Dispute\` 스레드** | **2026-11-17 22:54~23:20 스레드 메시지 확보** (사용자 제공 발췌본) | Victor가 Leo에게 줬다는 0.10.1 파일의 분석·검증, 더 오래된 버전 복구 여부, 원작자 측 반박, 협박 증거, 조사의 결론 |
 
 **핵심 구분:** \`Inquiry: Modding Dispute\`의 스레드 메시지 수가 표시됐다고 해서 그 **내용을 읽었다고 볼 수는 없다**. 추후 사용자가 실제 스레드 대화를 제공하면 본 채널 기록과 섞지 않고 **새로운 스레드 항목**으로 추가한다.
 
 ## 17. 누적 기록 이력 추가
 
 - **5차 기록 (2026-11-18):** 본 채널의 11월 17일 22:34부터 11월 18일 09:07까지의 사용자 제공 대화 요약·핵심 발언 원문 수록. 22:54 \`Inquiry: Modding Dispute\` 스레드 분리 확인, Victor의 0.10.1 복구 주장, Lazy Duck의 공개 검증 요청, 이용자 세이브 영향 호소, 집단 일반화 및 운영진 경고를 구분해 기록.
+
+
+---
+
+## 18. 첫 조사 스레드 — \`Inquiry: Modding Dispute\` (2026-11-17 22:54~23:20)
+
+> **제공 자료:** 이용자가 복사해 제공한 해당 스레드 첫 대화, 스크린샷 7장, 재전송한 \`read me(1).txt\`/Codex JSONL/\`Evidence Preservation Note\`/\`Exhibit A\` 파일. Discord의 실제 메시지 링크, 첨부 이미지 원본 URL·해시는 자료에 없어 이 문서에는 **사진 자체가 아닌 그 판독 내용만 보존**한다. '어제'는 제공일 2026-11-18에 비추어 2026-11-17로 해석. 표시 시간대 미확인.
+>
+> **증거 판별 원칙:** 스크린샷의 표시 내용 = 그 화면에 나타난 텍스트의 증거. 제작자의 의도·과거 DLL 실제 구성·협박 발신자 신원은 그 화면만으로 확정할 수 없다.
+
+### 18.1 당사자 진술과 운영진의 대응
+
+| 시각 | 발언자 | 요지 | 해석상 주의 |
+|---|---|---|---|
+| 22:54 | Leo (Moderator) | 이 스레드는 양 당사자 간 분쟁을 평화롭게 조사하는 곳. 인신공격·모욕·인종차별 금지, 사실 자료만 공개, 위반 시 24시간 타임아웃 | **운영진의 공개 규칙** |
+| 22:56 | Victor | xuxu와 소통할 때 중국어 번역의 정확성을 확신하지 못했다고 설명. **처음에는 xuxu의 모드들을 의존성으로 추가했다**고 주장하고 댓글 캡처 제시 | 의존성 추가 시점·배포된 구성은 별도 대조 필요 |
+| 22:56 | RIchardTAN | 이전 변경 로그의 **“third-party bundled code/assets”**가 다른 모드의 자료일 수 있다고 문제 제기. 신뢰 회복을 위한 설명과 필요시 사과를 요구. 창작마당 심사 담당자 선정 반대 입장 유지 | **기술적 의혹 및 운영상 요구**, 침해 확정 판결이 아님 |
+| 22:57 | Victor | Backroom 제작 중 기존 의존성 방식이 더는 작동하지 않아 **의존성을 제거하고 팀과 함께 독자적인 주류/Backroom 구현을 만들기 시작했다**고 설명 | **당사자의 설명**. 당시 파일 비교 결과 없음 |
+| 22:57 | RIchardTAN | 협박 증거를 공개하면 가해자 확인에 협조하겠다고 요청 | 위협 혐의와 저작권 논란의 분리 |
+| 22:58 | Victor | Steam 신고/리뷰 일부는 남아 있지만 **DM·프로필의 메시지는 삭제했다**고 말함. 게임의 부정적 리뷰 화면을 첨부하면서 심사 지연은 Amba 단독 처리 및 Steam 악성코드 대응 때문이라고 설명 | 리뷰는 불만 표시·모욕의 증거가 될 수 있으나 **그 자체가 살해 협박 증거는 아님** |
+| 23:02 | yamsi | 스크린샷을 보고 협박과 최소 1건의 살해 위협이 확인됐다고 판단하며 RIchardTAN의 사과 요구 | **참가자의 해석**, 전체 사진 원본 대조 필요 |
+| 23:03 | Aava | 본인이 중국어 원어민으로서 번역을 도울 수 있다고 제안. 제시된 리뷰에는 살해 위협이 보이지 않는다고 반박 | **반대 해석** |
+| **23:05** | **Victor** | **“The third-party bundled code, was a compatablity patch i made for xuxu”** 라고 해명. 원래 Neon Undertow로 재구성하기 전의 오래된 빌드를 휴지통에서 복구하고 있다고 설명 | **이번 구간의 핵심 진술**. 원본 모드의 파일과 비교해 검증해야 하며, '제3자 코드·에셋'과 '자신이 만든 호환 패치'의 관계는 불분명 |
+| 23:05 | HA会長 | 당시 제시된 일반 게임 리뷰에는 직접적인 살해 협박이 없고 게임 운영이나 콘텐츠에 관한 의견이 보인다고 설명 | 당시 자료에 대한 해석. Victor가 삭제했다고 말한 DM 존재 여부는 판정 불가 |
+| **23:09** | **Victor** | **“你信不信老子弄死你？”**의 뜻을 물음 | 직역상 직접적인 위협 문구지만, **누가·언제·누구에게 보낸 문장인지는 이 메시지만으로 확인되지 않음** |
+| 23:11~23:13 | HA会長, Aava | 위 중국어 표현은 상황에 따라 살해 협박이 될 수 있다고 인정. Aava는 원문 캡처를 공개하면 가해자 식별을 돕겠다고 요청. HA会長은 개인의 언행을 전체 모더나 중국 이용자의 책임으로 돌릴 수 없다고 밝힘 | 표현 자체의 의미와 **실제로 전달됐는지**는 구분 필요 |
+| 23:13 | RIchardTAN | 게임 리뷰에 악의적인 표현이 있더라도 자신이 통제할 수 없고, 중국인 전체의 행동으로 취급하면 안 된다고 주장 | 개별 책임 여부 미확인 |
+| 23:16 | RIchardTAN | 충분한 신뢰 회복 자료가 아직 없다는 입장을 재확인 | 기존 핵심 입장 유지 |
+| 23:16 | Aava | 다른 이용자가 확보한 증거 자료를 첨부 8~12 형태로 재제시 | 내용이 앞서 제출된 0.10.1 자료와 **동일한지 해시 확인 필요** |
+| 23:18~23:20 | Victor·Leo | Victor는 협박 화제에서 벗어나 원만하게 해결하자고 말함. Leo는 모드 관련 **증거 중심**으로 돌아갈 것을 공지 | 사건 자체는 이 시점 아직 종결되지 않음 |
+
+### 18.2 **11월 3일 Steam 댓글 스크린샷** — 순서와 실제 의미
+
+사용자가 제공한 이미지에서 한 화면에 보인 **표시 시각 기준** 순서는 다음과 같다. 위의 Lazy Duck 11월 4일 03:34는 댓글을 **발견했다는 시각**이지 이 댓글의 **게시 시각 자체**가 아니다.
+
+| Steam 댓글 표시 시각 | 작성자 | 표시된 내용 |
+|---|---|---|
+| **Nov 3 @ 2:23pm** | Victorp1811 | xuxu의 담배 확장에 대해 “You mind if I merge this into my megamod ... Give you full credit as well.”라며 자신의 megamod로 병합해도 되는지 문의 |
+| **Nov 3 @ 3:05pm** | **xuxu [author]** | 크레딧에는 감사하나 **원작 모드 파일을 직접 통합·번들링하는 방식은 거절**. 원작 모드는 지속적으로 업데이트되므로 배포·업데이트 통제권을 유지해야 한다고 밝힘. Brewing Expansion과 그 코드·에셋을 다음 업데이트에서 제거하고, 원작을 필수 의존성으로 지정하거나 **별도 호환성 패치**를 만들 것을 요청 |
+| **Nov 3 @ 3:39pm** | Victorp1811 | xuxu의 요청을 이해·수락하고 **현재는 xuxu의 에셋을 사용·재배포하지 않는다고 주장**. 호환성 지원만 하고 있고 코드·에셋이 복사되지 않았는지 다시 확인하겠다고 말함. 원작을 필수 의존성으로 추가하거나 별도의 호환 패치를 만들고 설명을 수정하겠다고 답변 |
+
+**중요한 수정:** xuxu에 한해서는 Steam 댓글 형태의 **실제 접촉·거절·후속 답변 화면**이 제시됐으므로, 이 시점의 모든 제작자에게 Victor가 한 번도 문의하지 않았다고 일반화할 수 없다. 그러나 **그 문의가 처음으로 작품을 배포하기 전이었는지**는 다른 문제이며, 실제 배포물에 허락 없이 포함된 자산이 있었는지도 이 댓글 화면만으로는 결론을 내릴 수 없다.
+
+**현재 진술의 긴장 관계:** Victor의 **“현재 사용하거나 재배포하지 않는다”**, **“복사된 것이 없는지 다시 확인하겠다”**라는 댓글과, 이전에 발표한 **“모든 제3자 묶음 코드·에셋을 제거했다”**는 0.10.1 변경 내역은 각 발언 시점과 수정 전후의 **실제 배포물**을 기준으로 비교해야 한다. 댓글 자체를 무단 복제의 직접 증거로 간주하지 않는다.
+
+### 18.3 위협 관련 중국어 문구와 리뷰 — 서로 다른 증거
+
+| 자료 | 원문/표현 | 의미와 판단 |
+|---|---|---|
+| 부정 평가 화면의 문구 | \`墙头草两边倒只会被两边一脚踢死\` | 양쪽에 붙는 기회주의자는 결국 양쪽에게 배척당한다는 **비유적 경고·비난**. '踢死(차서 죽이다)'라는 말이 있으나 **해당 문구만으로 특정인에 대한 직접 살해 협박이라고 보기 어려움** |
+| Victor가 23:09에 의미를 물은 문구 | \`你信不信老子弄死你？\` | “내가 너 죽여버릴 거라는 걸 못 믿겠냐?” 정도의 **직접적인 위협**. **실제 그 문구가 Victor에게 발송됐다는 캡처, 작성자, 날짜, 맥락은 아직 미제공** |
+| Victor가 보여준 게임 부정 평가 여러 건 | 게임 업데이트·모드 비활성화·창작마당 심사·AI 콘텐츠·불만 표시, 기타 격한 표현 | **부정적 평가가 올라왔다는 화면 증거**. 그 자체로 일사불란한 '리뷰 폭격' 또는 살해 협박 조직을 입증하지 않음 |
+| Victor의 진술 | DM·프로필에서 받은 메시지는 삭제했고 Steam 신고/리뷰는 일부 남아 있다고 주장 | 삭제된 DM의 진위는 **현재 자료만으로 검증 불가** |
+
+**오해의 핵심:** 단순히 리뷰에 '죽다'라는 글자가 들어갔다는 것과 누군가에게 직접 “죽이겠다”고 말한 것은 다르다. 반면 후자의 중국어 표현이 **실제 누군가에게 전달됐다면** 해당 직접 위협은 매우 심각하다. 어느 쪽이든 **발신자를 특정하지 않고 중국인 이용자 전체나 모더 대표단에 책임을 돌릴 수 없다**.
+
+### 18.4 증거 재업로드·중복 검사
+
+2026-11-18 대화에서 다시 첨부된 자료를 로컬 파일 해시로 검사함.
+
+- \`rollout-2026-11-17T17-27-35-01a1e8d5-4d7f-76b0-96a2-66e0ab72a008.jsonl\`, \`(1).jsonl\`, \`(2).jsonl\`: **모두 6,713,374바이트, SHA-256 \`fb4c536fea5ad718d2e0b8457a4bcd35e9355e5d0e75b85d97ee5ee8bc3ba8af\`**. **3개는 같은 파일**.
+- \`read me.txt\`와 \`read me(1).txt\`: SHA-256 처음 20자리 \`36f92a686da3c85dab9b\` — 동일.
+- \`Exhibit A - Neon Undertow 0.10.1.txt\`, \`(1).txt\`, \`(2).txt\`: SHA-256 처음 20자리 \`06078ee7d2692d5f6b26\` — 동일.
+- \`Evidence Preservation Note - Neon Undertow 0.10.1.txt\`, \`(1).txt\`: SHA-256 처음 20자리 \`550a2939dca8c3e9d7d8\` — 동일.
+
+**따라서 동일한 0.10.1 변경 로그가 여러 곳에 첨부됐다고 이를 복수의 독립적 증거로 계산해서는 안 된다.** 변경 내역의 내용은 위 10절에 수록돼 있다.
+
+### 18.5 이번 분량의 원문 핵심 발언
+
+~~~text
+Leo [STOL], Moderator — 22:54
+This thread is intended for peaceful, civil discussion of the modding dispute between both parties. Personal attacks, insults, and racism are not permitted. Both parties must present only factual evidence and keep the conversation civil and constructive. Anyone found breaking these rules will receive a 24-hour timeout.
+
+Victor — 22:56
+Another thing I would like to note, is when I talked to xuxu, not sure my translations are always perfect with the Chinese community
+[image of Nov 3 comments]
+i did add there mods as a dependncy at first
+
+RIchardTAN — 22:56
+With respect, and I feel sorry for the death threats happening to you again, but I think we need to figure out the whole situation. Our major issue is that we cannot believe you, because the evidence for now shows that there were “third-party bundled code/assets” which could be from other mods, as it written on your change log. Thus, we think you need to explain the truth, which can make you be trusted, and apologize if necessary. Or we do not think you can be the moderator of the workshops, since we cannot trust you.
+
+Victor — 22:57
+and I wanted to be upfront and honest with them and moved on as when I started making my mods backroom the dependency couldnt work anymore
+So I removed the dependency and started working with my team on making the backroom and our own version of alchohol.
+
+Victor — 22:58
+I have some of the reports people made on steam, I deleted the ones in dms and my steam profile
+let me get the rude downvotes on the game
+[images of Steam negative reviews]
+These votes, were uncalled for as Amba is only one able to do moderation atm, because steam pushed lcoked down, not me.
+The team has been dealing with malware attacks in mods.
+
+Aava — 23:03
+Unfortunately there are no evidence of death wishes. Nobody even use any word related to death.
+
+Victor — 23:05
+The third-party bundled code, was a compatablity patch i made for xuxu, I am trying to recover my oldest save from a deleted trash file from before i remade the mod itself and make it just neon undertown - vanilla overhaul, I want to work with yall
+
+HA会長 — 23:05
+I have seen these comments, and there are no death threats; they indeed express opinions about the game, such as issues with community management and insufficient game content.
+
+Victor — 23:09
+What does 你信不信老子弄死你？mean?
+Sorry i am not Chinese and I rely on my friends to tell me
+
+HA会長 — 23:11
+你信不信老子弄死你？ 👈
+This sentence can indeed be considered a death threat.
+
+Aava — 23:13
+Would you mind showing the screenshot of this threat so I can help you to identify the attacker and tell the person not to do so?
+
+RIchardTAN — 23:13
+With respect, this is an idiom like “flying without wings will only be killed by gravity” the word “kill” shows but it means a bad result finally would happened if an improper means was adopted, not means there is anyone would be killed. But there are some hate speech appears on the review part. But that not the part we can control, and not the result of our actions. It just someone who is “无能狂怒”, or no ability for everything but just show anger. And that cannot represent the Chinese player, not “all drama from Chinese”
+
+Aava — 23:16
+Aside from the off topic discussion. Here's the evidence another user pulled out.
+[attachments 8–12: duplicate evidence material; see hash results above]
+
+Victor — 23:18
+Can we just move on
+from the death threats, Its whatever.
+I would rather be on good terms with the chinese community
+
+Leo [STOL], Moderator — 23:20
+again just a reminder: please keep this discussion of the modding dispute focused on the evidence provided. Anything else can be addressed afterward.
+~~~
+
+## 19. 조사 스레드 첫 26분의 종합 판단 및 후속 확인 과제
+
+1. **Victor와 xuxu의 실제 공개 댓글 왕복은 존재한다는 자료가 제시됨.** Victor가 합병 여부를 문의했고 xuxu가 거절·원작 의존성/호환 패치로의 변경을 요구했으며, Victor는 해당 요청을 수용하겠다고 답했다. 그러나 **해당 시점까지 이미 배포했던 파일과 이후 실제 파일이 어떻게 달랐는지**는 불명이다.
+2. **Victor의 호환성 패치 해명은 새로운 검증 가능한 주장.** 핵심 질문은 0.9.x 빌드에 실제로 무엇이 포함됐는지다. **“제3자 코드·에셋 제거”**라는 변경 로그와 **“그건 내가 만든 xuxu용 호환 패치였다”**라는 설명은 명확히 대조해야 한다.
+3. **협박 주장과 실제 증거의 연결고리 부족.** 직접 위협 표현 자체는 명백하지만 발신자가 Victor에게 보냈다는 맥락 자료가 아직 없고, Steam 부정 평가나 중국어 속담을 곧바로 직접 위협으로 볼 수 없다. 피해 주장 역시 증거 없이 거짓이라고 단정하지 않는다.
+4. **조사 쟁점은 모드 제작자의 권리·배포 방식과 창작마당 심사 담당자의 신뢰성.** 살해 협박 발신자를 특정하고 제재하는 문제는 별개의 사안. 발신자의 집단적 국적 책임을 가정하면 본래 기술 검증을 방해한다.
+5. **재업로드된 문서 대부분은 동일한 기존 증거.** 추가 자료 수가 많아 보여도 **새로운 파일 비교 자료가 제출된 것은 아님**. 0.9.x 빌드와 원본 모드 DLL·텍스처를 독립적으로 대조한 자료가 핵심.
+6. **최근 Vanilla Overhaul 모드의 비공개·삭제가 이 분쟁 때문에 이루어졌는지는 여전히 미확정.** 이 스레드 첫 구간의 발언에 직접적 인과관계 증명은 없다.
+
+## 20. 누적 기록 이력 추가
+
+- **6차 기록 (2026-11-18):** \`Inquiry: Modding Dispute\` 스레드 2026-11-17 22:54~23:20 발췌 추가. Victor가 제출한 xuxu 댓글 왕복, 의존성·호환 패치 해명, Steam 부정 평가, 중국어 관용구와 명시적 위협 문구의 차이, 증거 문서의 SHA-256 중복을 구분해 기록.
