@@ -1,8 +1,8 @@
-# Go Fishing 2.5.3 Mod Guide
+# Go Fishing 2.5.4 Mod Guide
 
-Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.5.3 Detailed Stats Guide](<Go Fishing 2.5.3 Detailed Stats Guide.md>).
+Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.5.4 Detailed Stats Guide](<Go Fishing 2.5.4 Detailed Stats Guide.md>).
 
-Applies to the standalone "Go Fishing" 2.5.3. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
+Applies to the standalone "Go Fishing" 2.5.4. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ For your first voyage, aim for "come back safely and unload the cargo." Fish val
 
 ## Willie & the Terminal
 
-Choose the single fish king hand-in option. It takes one eligible fish from the desk first, then checks your inventory. Golden Fish, Blue Crystal Fish, Lofurin and Niorun are eligible.
+Choose the single fish king hand-in option. It checks the desk first, then your backpack, then shop shelves and containers for an eligible fish you own and can remove. Golden Fish, Blue Crystal Fish, Lofurin and Niorun are eligible.
 
 ### Visits & Unlocking
 
@@ -160,7 +160,7 @@ Before farming, check the terminal fish file to confirm diet, growth stage, wate
 | Food | Sustain growth and breeding | Provide edible feed by diet |
 | Power | Equipment functioning | Check power and battery regularly |
 
-The large ecological farming device's display spec is 24×4 tiles with 4 filter slots, supporting expansion and power-saving upgrades; the water tank is purchased separately. The 60 L tank is created empty and must be filled. Old tanks only update capacity on load, keeping existing water, not auto-filling. Actual device state follows the current panel.
+The large ecological farming device's display spec is 24×4 tiles with 4 filter slots, supporting expansion and power-saving upgrades; it costs 2,000 credits and comes with an empty 60 L tank installed when purchased from Willy or the terminal. Old tanks only update capacity on load, keeping existing water, not auto-filling. Actual device state follows the current panel.
 
 Do not calculate capacity only by juvenile size. A fish's weight, water use, and waste may change after entering a new stage, and adult age does not equal maximum weight. For example, black fish's current adult node is 13 development days; small yellow croaker and sardine are 4 development days; actual nights elapsed also depend on feeding and growth speed.
 
@@ -302,7 +302,7 @@ Drag a battery into the designated battery slot; each craft consumes 4 power and
 
 ## Processing Station
 
-Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.5.3 Detailed Stats Guide.md>).
+Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.5.4 Detailed Stats Guide.md>).
 
 Matching rule: the material types must exactly match a recipe (extra, missing, or unrelated materials will not match), and each material only needs to reach the recipe's minimum count — it does not have to equal it exactly. With surplus materials you can craft multiple outputs at once: the plus/minus buttons around the count box switch freely between 1 and 10 portions regardless of current stock; the check against materials happens when you click start, and a mismatched recipe or insufficient materials shows a notice instead of failing silently. The station only accepts the material forms a recipe names — for example, the fish meat mash recipes take whole small yellow croakers or sardines, while most advanced recipes take fish organs and processed materials such as conductive tendons, heat glands, and purification sacs; a whole fish of another kind will not match.
 
@@ -322,9 +322,9 @@ The five legacy dry powders can still be used. Loading an old save converts thei
 2. Add a more concentrated base when an effect is too weak. Add water to dilute an overly strong batch and check whether the effect drops a tier. For a dual-effect batch, establish the main effect first and add the second base in small amounts.
 3. Choose a balancing target, review additive doses and the projected profile, then confirm. Measure additives per 10 mL of base before additives. Each complete A+B pair lowers its target adverse effect by one tier. Stabilizer uses a single treatment. See the in-game manual or the Detailed Stats Guide for pairs.
 4. Supply empty syringes and power. Each syringe takes exactly 10 mL and uses one empty syringe and one charge. Any leftover solution stays in the station.
-5. The filling panel shows the dose count, remainder and base price per syringe. Save successful formulas to history and supply the actual ingredients when repeating them.
+5. The filling panel shows the dose count, remainder and base price per syringe. Save successful formulas to history and supply the actual ingredients when repeating them. Recipe replay uses liquid stock and additives, with shortages shown in mL.
 
-The seven registered fish-chemistry liquids now use the native machine-removal parameter `baseMaxPurityFromMachine = 10`, enabling native purification handling. This parameter is not a 10% cap on final solution purity.
+Heat the fish-scrap solution with alcohol at 40–60°C. Each 1 mL of residue converted consumes 10 mL of alcohol. Conversion pauses when alcohol runs short, and overheating above 60°C destroys active ingredients. Use the evaporator to remove the converted impurities, water and remaining alcohol. Cotton and standard filters pass the residue through, and the water purifier skips both forms.
 
 The seven-page Reagent Manual includes a fish-scrap source page before the additive reference and walks through a Purifier Fish detox recipe and includes concentration and pricing references.
 
@@ -347,7 +347,7 @@ Each opened stone has a 30% chance of arriving with one cut. You can see its act
 3. Select **Polish** to finish the stone. The marker travels out and back in four seconds, two seconds each way. The three green zones vary in width and are randomly placed. Confirm once per zone on either pass. A mistimed click leaves a crack immediately, and each zone still missed at the end leaves one crack.
 4. Once polishing starts, cutting is locked and you must finish before selling or bartering. Reopening restores the layout and scored zones. Zero, one, two or three cracks yield 120%, 95%, 75% or 60% of the current appraisal, respectively.
 
-You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.5.3 Detailed Stats Guide.md>).
+You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.5.4 Detailed Stats Guide.md>).
 
 ## Research Codex & Integrations
 
@@ -389,4 +389,4 @@ Fishing Cuisine Expansion is a declared prerequisite. The other entries add inte
 
 ---
 
-Applicable version: Standalone 2.5.3. Verification date: November 15, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.
+Applicable version: Standalone 2.5.4. Verification date: November 17, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.

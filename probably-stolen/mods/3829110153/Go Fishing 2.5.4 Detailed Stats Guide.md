@@ -1,6 +1,6 @@
-# Go Fishing 2.5.3 Detailed Stats Guide
+# Go Fishing 2.5.4 Detailed Stats Guide
 
-Applicable to: Go Fishing 2.5.3 source and configuration as of November 15, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.5.3 Mod Guide.md>); the two can be read together.
+Applicable to: Go Fishing 2.5.4 source and configuration as of November 17, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.5.4 Mod Guide.md>); the two can be read together.
 
 All amounts are in credits, weights in grams, food calories in kcal, and power in device energy points. The defined base price, formula quote, and shop transaction price in the tables are explained separately. Market conditions, native quality traits, actual weight, and rounding may continue to affect interface prices.
 
@@ -398,7 +398,7 @@ For example, 2750 g glow fish produces 1 conductive tendon by threshold, 5500 g 
 - Let width upgrades = W, height = H, efficiency = E; W/H range 0–4, E range 0–12.
 - Per-night power: `max(1, 10 + 2W + 3H − 2E)`.
 - Initial 10 power; full-size with no efficiency 30; full-size with 12 efficiency 6; initial-size with 5 efficiency upgrades reaches the 1-power floor.
-- Standalone water tank capacity 60 L (new tank empty; old tank on load only changes cap, keeps water, does not refill), 4 filter slots. Device power, fish generation, water, and water quality settle separately — checking one item does not guarantee stable operation.
+- New devices include an installed, empty 60 L tank. Existing tanks retain their water on load, 4 filter slots. Device power, fish generation, water, and water quality settle separately — checking one item does not guarantee stable operation.
 
 ### 5.2 Worms, Stored Feed & Industrial Feed
 
@@ -594,7 +594,7 @@ Colors follow item value and occupied area, with fixed-color overrides taking pr
 
 ## 8. Unlocks, Research & Delivery
 
-Choose the single fish king hand-in option. It takes one eligible fish from the desk first, then checks your inventory. Golden Fish, Blue Crystal Fish, Lofurin and Niorun are eligible.
+Choose the single fish king hand-in option. It checks the desk first, then your backpack, then shop shelves and containers for an eligible fish you own and can remove. Golden Fish, Blue Crystal Fish, Lofurin and Niorun are eligible.
 
 ### 8.1 Key Unlock Table
 
@@ -633,8 +633,7 @@ Farming equipment's weekly limit is recorded by the seven-day interval containin
 | Container printing qualification | 300 credits | Permanent unlock, plus 1 printer; keep pending if no space |
 | Farming qualification | 650 credits | Grants 2 roe, 5 worms; new unlock adds a worm box; old records not re-granted |
 | Additional printer | 400 credits | After printing unlock, 1 per week |
-| Large farming device | 1800 credits | After farming unlock, 1 per week |
-| Water tank | 300 credits | After farming unlock, 1 per week |
+| Large farming device (includes empty 60 L tank) | 2,000 credits | After farming unlock, 1 per week |
 
 Weekly limits are divided by game-day ÷ 7, each device counted separately. Printing produces 1 item per craft; small empty can, large empty can, worm box, and empty syringe each consume 4 power.
 
@@ -808,15 +807,15 @@ Use the base volume before adding additives. Each pair below lowers its target a
 
 Up to four pairs apply per target. Tier I can be cleared. Shared additives follow the balancing priority, and each amount can be allocated once. Stabilizer uses a single treatment of 5 mL per 10 mL of base. Clearing Tier III fatigue in a 20 mL base needs three pairs, for 3 mL sugar and 6 mL protein.
 
-The adverse-effect baseline uses the concentration before additives. Positive effects use the finished concentration. Additives occupy volume and can lower an effect tier. Impurities affect purity and can be treated with native filters. All seven registered fish-chemistry liquids use `baseMaxPurityFromMachine = 10` for native machine removal; this is a machine-removal parameter, not a 10% final-purity cap. Excess additives carry no extra adverse-effect penalty.
+The adverse-effect baseline uses the concentration before additives. Positive effects use the finished concentration. Additives occupy volume and can lower an effect tier. Fish-scrap residue passes through cotton and standard filters, and the water purifier skips both forms. Heat at 40–60°C with alcohol to convert it into volatile impurities. Each 1 mL converted consumes 10 mL of alcohol. Above 60°C, active ingredients are lost. The evaporator separates converted impurities, water and remaining alcohol. The solvent-recovery module can recover part of the remaining alcohol. Excess additives carry no extra adverse-effect penalty.
 
 ### Fixed-dose filling and formula history
 
-Each syringe takes 10 mL, one empty syringe and one charge, subject to inventory and output space. A 25 mL batch yields two doses with 5 mL left in the station. New syringes and the remainder use the pre-fill formula to evaluate effects. Adding new material recalculates the profile from the current composition. Repeating a saved formula checks and consumes the required ingredients.
+Each syringe takes 10 mL, one empty syringe and one charge, subject to inventory and output space. A 25 mL batch yields two doses with 5 mL left in the station. New syringes and the remainder use the pre-fill formula to evaluate effects. Adding new material recalculates the profile from the current composition. Repeating a saved formula uses liquid stocks and additives, with liquid shortages shown in mL.
 
 ### Base price per syringe
 
-`Base price = round(10 + 100 × combined effect weight × min(adverse factor, stability factor) × fill share)`. Fill share is actual volume divided by 10 mL, capped at 1. New syringes have a fill share of 1.
+`Base price = round(10 + 60 × combined effect weight × min(adverse factor, stability factor) × fill share)`. Fill share is actual volume divided by 10 mL, capped at 1. New syringes have a fill share of 1.
 
 | Factor | Calculation |
 |---|---|
@@ -825,7 +824,7 @@ Each syringe takes 10 mL, one empty syringe and one charge, subject to inventory
 | Adverse effects | Scores ≤0, 1–19, 20–39, 40–69 and ≥70 correspond to tiers 0–IV. Subtract 5% per summed tier, up to 30% |
 | Stability | Factor 1.00 at 70+, 0.90 at 60–69 and 0.75 below 60 |
 
-A stable, adverse-free full single-effect dose has a base price of 110, 210 or 310 for tiers I, II and III. A full Tier II dose with two summed adverse tiers and stability 55 has a base price of 10 + 200 × 0.75 = 160. Native quality and other sale modifiers can affect the final quote.
+A stable, adverse-free full single-effect dose has a base price of 70, 130 or 190 for tiers I, II and III. A full Tier II dose with two summed adverse tiers and stability 55 has a base price of 10 + 120 × 0.75 = 100. Native quality and other sale modifiers can affect the final quote.
 
 ## 11. Crystal Nautilite Stats
 

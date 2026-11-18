@@ -98,8 +98,8 @@ ui_close,Close
 talk_continue,Continue
 talk_narration,Narration
 talk_got_intel,[Gained: intel on {0}]
-social_notify_up,{0} standing +{1}
-social_notify_down,{0} standing -{1}
+social_notify_up,{0} reputation +{1}
+social_notify_down,{0} reputation -{1}
 tier_ally,Ally
 tier_friendly,Friendly
 tier_neutral,Neutral
@@ -468,10 +468,10 @@ faction_infiltration_name,Infiltration Bureau
 perk_notify_contract,Council procurement payment received: +{0} credits
 perk_notify_audit,Council audit: fined {0} credits
 rep_perk_ULF_COUNCIL_STAMP_name,Rubber Stamp
-rep_perk_ULF_COUNCIL_STAMP_desc,The Council buries a few complaints for you: evidence drops by an extra 2 every morning.
+rep_perk_ULF_COUNCIL_STAMP_desc,The Republic buries a few complaints for you: evidence drops by an extra 2 every morning.
 rep_perk_ULF_COUNCIL_STAMP_flavor,Councillor Harlow says how long a file sits on a desk is always negotiable.
 rep_perk_ULF_COUNCIL_CONTRACT_name,Municipal Contract
-rep_perk_ULF_COUNCIL_CONTRACT_desc,Every 7 days you receive a Council procurement payment of 300 credits.
+rep_perk_ULF_COUNCIL_CONTRACT_desc,Every 7 days you receive a Republic procurement payment of 300 credits.
 rep_perk_ULF_COUNCIL_CONTRACT_flavor,The Council building's old furniture and equipment now go through you first.
 rep_perk_ULF_COUNCIL_AUDIT_name,Routine Audit
 rep_perk_ULF_COUNCIL_AUDIT_desc,An audit every 7 days fines you 200 credits (or whatever cash you have left).
@@ -491,18 +491,18 @@ rep_perk_ULF_HELIOS_PRICEWAR_flavor,The new consignment shop across the way has 
 rep_perk_ULF_HELIOS_BLACKLIST_name,Consortium Blacklist
 rep_perk_ULF_HELIOS_BLACKLIST_desc,Everyone tied to Helios avoids you: one fewer customer every day.
 rep_perk_ULF_HELIOS_BLACKLIST_flavor,Every Helios subsidiary received the same memo.
-rep_perk_ULF_VANDERLIN_REGULAR_name,Salon Regular
-rep_perk_ULF_VANDERLIN_REGULAR_desc,Conversations at the Friday salon earn +1 extra standing.
-rep_perk_ULF_VANDERLIN_REGULAR_flavor,Lord Vanderlin knows your name. Here, that's enough.
+rep_perk_ULF_VANDERLIN_REGULAR_name,Old Money
+rep_perk_ULF_VANDERLIN_REGULAR_desc,Upper Levels customers who buy luxury goods have 10% more budget.
+rep_perk_ULF_VANDERLIN_REGULAR_flavor,The Vanderlins mentioned you. The other old families trust you now.
 rep_perk_ULF_VANDERLIN_INTRO_name,Family Introductions
 rep_perk_ULF_VANDERLIN_INTRO_desc,Each day there is a 25% chance an extra wealthy collector visits.
 rep_perk_ULF_VANDERLIN_INTRO_flavor,A friend of the Vanderlins is a friend of ours.
 rep_perk_ULF_VANDERLIN_COLD_name,Cold Shoulder
-rep_perk_ULF_VANDERLIN_COLD_desc,Conversations at the Friday salon earn half the standing.
+rep_perk_ULF_VANDERLIN_COLD_desc,Half of the collectors and fallen aristocrats stop coming.
 rep_perk_ULF_VANDERLIN_COLD_flavor,Whenever you approach, everyone remembers urgent business elsewhere.
-rep_perk_ULF_VANDERLIN_FEUD_name,Family Feud
-rep_perk_ULF_VANDERLIN_FEUD_desc,The Vanderlin manor is on guard: heists there are 1.5x as likely to get you spotted or caught.
-rep_perk_ULF_VANDERLIN_FEUD_flavor,The manor has a new doorman. He studies every unfamiliar face.
+rep_perk_ULF_VANDERLIN_FEUD_name,Blacklisted
+rep_perk_ULF_VANDERLIN_FEUD_desc,The luxury dealer's wholesale prices are 15% higher.
+rep_perk_ULF_VANDERLIN_FEUD_flavor,The dealer says someone upstairs had a word with him.
 
 
 # ===================== Heist: chance-based =====================
@@ -1362,7 +1362,7 @@ battle.tries_left,{0} searches left tonight (of {1}).
 battle.wounded,You are hurt. Treat the wound (a bandage or similar) and you can keep searching.
 battle.risk,Minor injury {0}%  Major injury {1}%  Spotted {2}%
 battle.search,Search
-battle.found_corpse,You find one that just died. No need to pack it; it gets dragged back to the shop when you leave.
+battle.found_corpse,You find one that just died. You can only drag one back per night.
 battle.found_scrap,You pick up some scrap worth selling.
 battle.found_nothing,You find nothing.
 battle.luck_saved,A stray round nearly grazes you. Lucky.
@@ -1908,7 +1908,7 @@ readme.p2.body,· Rent is three times the Lower Levels, due every week. Keep som
 readme.p4.title,Kai Wild
 readme.p4.body,Kai is Joe's cousin. Anything you need up here goes through him.\n\nHis services are in the Wild network screen, under Upper Circle, paid with Wild's favor. Not sure what to buy? Start with the cheapest one in each column.\n\nHe'll also bring you an invitation to the Friday salon.
 readme.p5.title,Salon and factions
-readme.p5.body,Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.
+readme.p5.body,"Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.\n\nEach week a regular visits; doing business with them raises that column (regulars raise it to +60 at most):\n· Police: Superintendent Arthur, buys smokes and drinks\n· Infiltration Bureau: the Bureau liaison, buys medicine and tins\n· Republic: the tax inspector, collects a compliance fee\n· Vanderlin family: Oscar, buys luxury goods\nServing Arthur costs you a little with the Bureau, and paying the fee costs you a little with the Vanderlins."
 readme.p6.title,At night
 readme.p6.body,After closing you can go out: the salon, places only your profession knows about, and a few less respectable spots.\n\nNights are risky. You can get hurt, get seen, leave evidence. Know your limits. You still have a shop to open tomorrow.
 readme.p7.title,Around the shop
@@ -2031,8 +2031,8 @@ uc.water_resident.2,Got any bottled spring water? The sealed kind.
 uc.water_corp.name,Corporate Procurement Rep
 uc.water_corp.1,Our boardrooms and executive floors need water. High quality only.
 uc.water_corp.2,If the purity's right, the price isn't a problem.
-pex.give.smuggler,Smuggler's bay + 8 pink injectors
-pex.give.smuggler_big,Large smuggler bay + 8 pink injectors (expansion kits used on it are returned)
+pex.give.smuggler,"Smuggler's bay (5×5) + 8 bags of ""Blue Blood"""
+pex.give.smuggler_big,"Large or small smuggler bay + 8 bags of ""Blue Blood"" (expansion kits used on it are returned)"
 pex.get.smuggler,Modded smuggler's bay (8x8, hidden from inspections)
 salon_talk_leave,(Not now)
 salon_guest_line3,· {0} ({1}) standing {2}{3}
@@ -2085,9 +2085,9 @@ ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So 
 ul_dialog_tourist_deal_2,I heard I could have some fun around here?
 ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
 ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
-test_hotkey_update,Test (last update): gave Dissection Essentials, Shopkeeping Rules and the illustrated regulars roster; Kai comes today to settle and deliver; the roster is created if missing and one regular comes today. +5000 credits. To test reservations, press Ctrl+F12 to unlock the post-purchase phase.
+test_hotkey_update,Test (last update): gave a fresh body and a bloodletting kit. Drag the kit onto the body to draw blood.
 corpse_name_fresh,{0} (freshness {1}%)
-battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). It gets dragged back when you leave.
+battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). You can only drag one back per night.
 battle.found_corpse_rotten,You find one, but it has already rotted. Nothing to harvest.
 bdoc.name,Shady Doctor
 bdoc.1,Saw your lamp.
@@ -2235,7 +2235,7 @@ ogguide.header,Dissection Essentials
 ogguide.p1.title,Before You Start
 ogguide.p1.body,The Upper Levels have plenty of printed organs. Cheap and legal. But the rich want natural ones, and natural ones only come from the dead.\n\nThis book covers two paths.\n\nThe black path: pick up bodies at the battlefield at night, take out natural organs, sell them to black market buyers. Fast money, real risk.\n\nThe white path: print organs with a 3D printer. With a license it's legal. Less money, better sleep.\n\nYou can walk both.
 ogguide.p2.title,Black Path: Supply
-ogguide.k.corpse,Search the battlefield at night. Heavy fighting means more bodies, and fresher ones; quiet nights mostly leave old ones. You may get hurt searching. Patch up and keep going.
+ogguide.k.corpse,"Search the firefight zone at night. Rough nights turn up more bodies, and fresher ones; on quiet nights they have usually been lying around. You can get hurt searching, but once patched up you can keep going. You can only drag one body back per night, and doing so costs reputation with the police, the Revolution and the Republic."
 ogguide.k.dissector,Put a body in; it works on a night with power. A body usually gives one or two organs, three or four with luck. Fresher bodies give cleaner organs. Bodies don't keep long.
 ogguide.k.cooler,Organs outside get worse every day and rot by day 4. Inside the cooler they keep.
 ogguide.p3.title,Natural Organs
@@ -2275,8 +2275,8 @@ ncguide.k.dubious,"The 1500 he lent you on day 1, plus the first week of rent he
 ncguide.p3.title,Settling Up
 ncguide.p3.body,"Weight starts each visit by settling last week:\n\n· Sold at the counter: he takes 60%.\n· Gone from the shop but not sold at the counter (sold elsewhere, used up): counted as sold at list price.\n· Still in the shop: keep selling.\n\nThen he drops off a new batch.\n\nIf you are short on cash, the rest waits until next time."
 ncguide.p4.title,Residence and Taxes
-ncguide.n.roster,Tax list
-ncguide.k.roster,The Republic official hands it to you on day 1. Its description shows which day of residence you are on.
+ncguide.n.roster,Residence period
+ncguide.k.roster,"Counted from day 1, when the Republic official came. He comes back on day 7 and takes 30% of your cash as ""support for the Republic""."
 ncguide.n.wish,Sixty days
 ncguide.k.wish,"Sixty days of residence without trouble, and you may buy a permanent Upper Levels residence permit. Get rid of any contraband early."
 ncguide.n.favor,Support for the Republic
@@ -2284,7 +2284,7 @@ ncguide.k.favor,"The Republic official will come back for money, based on the ca
 ncguide.p5.title,Regulars
 ncguide.p5.body,"· Bruce: an old man who has lived in the Upper Levels for forty years and now works the recycling stations. Buy from him and he brings a batch every 3 days, 30% off. Help him and he will remember.\n\n· The Helios butler: comes every 4 days to buy fresh food for the young lady. No cans. Pays well.\n\n· Officer Dex: patrols this area. Report sellers carrying high-level contraband for a bounty based on what gets seized."
 ncguide.p6.title,Where Stock Comes From
-ncguide.p6.body,"Upper Levels sellers will come to you:\n\n· People moving out: household goods.\n· The deli courier: freshly made food.\n· The private doctor: medical supplies.\n· Estate clerks, auction clerks, collectors, fallen aristocrats: rare goods.\n\nPut luxuries and rare goods in the display case to draw in wealthy shoppers. Their budget is roughly enough for the priciest piece on display."
+ncguide.p6.body,"Upper Levels sellers will come to you:\n\n· People moving out: household goods.\n· The deli courier: freshly made food.\n· The private doctor: medical supplies.\n· Estate clerks, auction clerks, collectors, fallen aristocrats: luxuries.\n\nPut luxuries in the display case to draw in wealthy shoppers. Their budget is roughly enough for the priciest piece on display."
 ncguide.p7.title,A Few Tips
 ncguide.p7.body,"· The default price is a fair price. Upper Levels customers care about appearances.\n\n· Keep some room in the shop. If Weight can't fit a delivery, he only leaves part of it.\n\n· Haadasgen goes in the freezer; salads, sandwiches and cake go in the fridge. Left out overnight, they lose their value.\n\n· Things people leave with you for safekeeping can't be sold. Don't lose them either."
 regulars.roster_desc,Your regular customers. Click to read.
@@ -2420,21 +2420,21 @@ item_ul_farm_eggs_flavor,From the hens on the top-deck farm. Still a bit of stra
 ngoods.perfume_desc,Use to boost trading bonus by {0}% with the current customer. You can only benefit from the effects of one perfume at a time.
 ngoods.perfume_desc_refill,Use to boost trading bonus by {0}% with the current customer. You can only benefit from the effects of one perfume at a time. Refills on its own.
 ngoods.melted,Melted
-ngoods.melted_log,{0} tub(s) of Haadasgen were left out of the freezer and melted. Now worth 30%.
+ngoods.melted_log,{0} tub(s) of Haadasgen were left out of the freezer and melted. Now worth 90%.
 ngoods.sentinel_done,The cartridge clicks into the port. The tremor stops.
-item_ul_haadasgen_desc,"Keeps in the freezer section of a fridge and sells for a bit more. Left out overnight, it melts and is worth only 30%."
-item_ul_hemostatic_gel_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level.
+item_ul_haadasgen_desc,"Keeps in the freezer section of a fridge and sells for a bit more. Left out overnight, it melts and is worth only 90%."
+item_ul_hemostatic_gel_desc,Use when your wound is unstable: stops the bleeding and reduces the wound by two levels. Single use.
 item_ul_suture_kit_desc,Use on an unstable wound: stops the bleeding and lowers the wound by two levels. 2 uses.
 item_ul_gauze_dressing_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level. 3 uses per box.
 item_ul_disinfect_wipes_desc,Use on an unstable wound: stabilizes it. 5 uses per box.
 item_ul_pain_patch_desc,"Use on an unstable wound: stabilizes it, no addiction. 5 uses per box."
-item_ul_allergy_pen_desc,Use on an unstable wound: stops the bleeding and lowers the wound by one level.
+item_ul_allergy_pen_desc,Use right after getting hurt: one shot and you can keep searching. Does not stabilize or reduce the wound.
 item_ul_antidote_injector_desc,"Relieves narcotic withdrawal, twice as long as vanilla Nomore."
 item_ul_rejection_suppressant_desc,Only for Sentinel Collapse Syndrome: works like a genuine Immunivax shot.
 uc.deli.name,Deli Courier
 uc.deli.1,"Hi, from the deli down the promenade. Today's delivery."
-uc.deli.2,"All made this morning. Real greens, real meat."
-uc.deli.3,"Ice cream goes in the freezer, salads and cake in the fridge. They will not keep out here."
+uc.deli.2,"The deli food was made this morning, real vegetables and real meat. The rest is grocery stock from the shop, since I was coming anyway."
+uc.deli.3,"Keep the deli food in the fridge. If there is ice cream, the freezer. They will not keep out here."
 act1.name.republic,Republic Official
 act1.name.weight,Weight
 act1.name.dex,Officer Dex
@@ -2447,7 +2447,7 @@ act1.rep1.1,Hello. I'm with a relevant department of the Republic. We tolerate p
 act1.rep1.2,That doesn't mean you're legal yet.
 act1.rep1.3,I have new instructions for you.
 act1.rep1.4,"Sixty days of residence with no misconduct, and you'll have the right to buy a permanent Upper Levels residence permit."
-act1.rep1.5,Here's your tax list. Good luck.
+act1.rep1.5,Good luck.
 act1.w1.1,Two blocks and not a single battery for sale.
 act1.w1.2,This blackout is killing everyone.
 act1.w1.3,Why is your shop empty?
@@ -2476,7 +2476,7 @@ act1.dex1.4,As per standard procedure...
 act1.dex1.5,We will ensure your personal safety.
 act1.dex1.6,"If you have any contraband in here, get rid of it early."
 act1.oscar.1,"Old pal! New shop, right?"
-act1.oscar.2,"I'm Oscar Vanderlin. Yes, THAT Vanderlin."
+act1.oscar.2,"I'm from the Vanderlin family. Yes, THAT Vanderlin."
 act1.oscar.3,"The family is doing some ""financial discipline"" thing."
 act1.oscar.4,My grandfather started taking inventory of the house.
 act1.oscar.5,They're right behind me. No time.
@@ -2490,7 +2490,7 @@ act1.bruce1.1,"Hey boss, buying?"
 act1.bruce1.2,I work the Upper Levels recycling stations.
 act1.bruce1.3,"Fancy food near its date, retired tools, stuff nobody claimed."
 act1.bruce1.4,This stuff is worth a lot.
-act1.bruce1.5,Name a price and I'll be back.
+act1.bruce1.5,Have a look first.
 act1.bruce.r.1,"Boss, it's me again. Bruce."
 act1.bruce.r.2,Good haul at the station today. Take a look.
 act1.landlord.1,So you're the new one?
@@ -2504,7 +2504,7 @@ act1.landlord.no,No.
 act1.landlord.c_ok,Got it.
 act1.landlord.bye,Hmph.
 act1.w3.1,I heard about the rent.
-act1.w3.2,Let Weight take care of your first week.
+act1.w3.2,"Let the ""Straight Arrow"" take care of your first week."
 act1.w3.3,Your landlord owes me a favor or two.
 act1.w3.4,"It's called kindness, kid."
 act1.w3.5,Here's another batch. It's been sitting in my warehouse too long.
@@ -2514,7 +2514,7 @@ act1.w3.8,"See you in a few days, kid."
 act1.w3.9,Good luck.
 act1.old1.1,"Hello, boss. Buying today?"
 act1.old1.2,I've lived up here forty years. Nobody knows me anymore.
-act1.old1.3,These are old things I've kept. Have a look.
+act1.old1.3,These are old things I've kept. Want to have a look?
 act1.old1.c_look,[Look at his goods]
 act1.old1.yes,My legs aren't what they were. I'll bring you a batch every three days. Just buy them cheap.
 act1.old1.c_no,[Send him away]
@@ -2533,7 +2533,7 @@ act1.vb.give,Thank you. The old master will remember this.
 act1.vb.c_deny,[Don't mention the box] Haven't seen him.
 act1.vb.deny,I see... Sorry to bother you.
 act1.kai.1,Hello. Welcome to the Upper Levels.
-act1.kai.2,"I'm Kai Wild. Yes, cousin of Joe Wild from the Lower Levels."
+act1.kai.2,"I'm Kai Wild. Yes, Joe Wild's brother, from the Lower Levels."
 act1.kai.3,"Joe's cousin, strictly speaking."
 act1.kai.4,The Upper Levels look clean. The thieves here just have better taste.
 act1.kai.5,Lose one valuable piece and a small shop like yours might not survive.
@@ -2586,8 +2586,8 @@ act1.w4.p1,I really am grateful.
 act1.w4.4,"This is your fair share, and this part is mine."
 act1.w4.5,I brought some more stock while I was at it. Take it.
 act1.w4.6,My business needs more rare goods.
-act1.w4.7,If you can have some ready next time I come by...
-act1.w4.8,Then I didn't misjudge you.
+act1.w4.7,"If you can have some luxury goods ready next time I come by,"
+act1.w4.8,then I didn't misjudge you.
 act1.w4.9,"That's it. See you next time, shopkeeper."
 act1.helios.1,I hear a Lower Levels person opened a shop here?
 act1.helios.2,What do you have that is edible?
@@ -2615,7 +2615,204 @@ item_ul_tax_list_flavor,"Security fee, Republic settlement tax, Vanderlin distri
 act1.oldr.gift_notify,Bruce gave you a {0}. It is on the counter.
 act1.oldr.bye,"I'll be on my way, young boss."
 act1.old2.5,Thank you.
-ul_dialog_minor_lottery_2,I haven't been back to the Lower Levels since I moved up.
+ul_dialog_minor_lottery_2,"You won the lottery to get up here too, right? I can tell from the shop."
 ul_dialog_minor_lottery_6,"Still, sometimes I miss the cheap, comforting food down in the Lower Levels. Everything up here costs a fortune."
 act1.kai.card_fixed,Kai's card is in your shop. Wild's phone line and network are open now.
 kai.consign.kept,Keep the {0} piece(s) left and sell them yourself. I'll keep their deposit.
+act1.bruce1.bye,"I'll come by again next time, young boss."
+act1.name.arthur,Superintendent Arthur
+act1.arthur.1,I'm not here for a surprise inspection.
+act1.arthur.2,"Relax, boss."
+act1.arthur.3,"Two packs of cigarettes. Good liquor too, if you've got any."
+act1.arthur.4,Drifting along isn't so bad. A month ago I didn't touch a drop.
+act1.arthur.5,It's a mess up there right now.
+act1.arthur.6,"The Republic and the Revolution keep fighting, the corporations are getting rich off the war, and the old families are still living in memories from decades ago."
+act1.arthur.7,"We police are stuck in the middle. When the Revolution comes, we're the ones sent to hold the line."
+act1.arthur.8,Several of my colleagues have already gone missing.
+act1.arthur.9,It's fucked.
+act1.arthur.bye1,Stay safe.
+act1.arthur.bye2,Take care.
+act1.w5.1,Now it's my turn for bad luck!
+act1.w5.2,The Revolution has really been something lately.
+act1.w5.3,How long is this war going to last?
+act1.w5.4,My business got caught up in it too.
+act1.w5.5,"The kind-hearted ""Straight Arrow"" has to leave the station for a while."
+act1.w5.6,I brought you one last batch. This one's a gift.
+act1.w5.7,Here's my friend's number. I've already put in a word.
+act1.w5.8,Take it. He deals in valuables.
+act1.w5.9,"I'm off. Take care, boss."
+act1.w5.kept,Weight's leftover consignment goods are yours now. No cut to share.
+dealer.name,Valuables Dealer
+item_ul_dealer_card_name,Gilded Card
+item_ul_dealer_card_flavor,"Card from Weight's friend, a valuables dealer. The back reads: {0}."
+dealer.card_tip,Dial {0} on the shop phone to order. Delivered the next day at wholesale price.
+dealer.intro.1,Weight told me about you. You're the new shopkeeper?
+dealer.intro.2,"I deal in valuables: cigars, fragrances, top-grade medicine. The Upper Levels can't do without them."
+dealer.intro.3,Call this number when you need stock. I'll send it over the next day at wholesale price.
+dealer.intro.4,Start with small orders. Spend enough with me and I'll take big ones too.
+dealer.intro.5,"I'll send a small batch this time, at a welcome price."
+dealer.reg.1,Valuables. Go ahead.
+dealer.reg.2,How much this time?
+dealer.c_small,A small batch (about {0} credits of goods).
+dealer.c_big,A big batch (about {0} credits of goods).
+dealer.c_hang,Another time.
+dealer.ready,Delivery tomorrow. Have cash ready.
+dealer.bye,Fine.
+dealer.cool.1,I'm still sourcing after your last order.
+dealer.cool.2,Call again in {0} day(s).
+dealer.courier.name,Dealer's Courier
+dealer.courier.1,"From the dealer. Wholesale price, take the whole lot."
+dealer.courier.done,Payment received. Good day.
+act1.oscar.fee,Here are eight hundred credits.
+item_ul_roast_beef_name,Slow-Roast Beef
+item_ul_roast_beef_flavor,"Real beef, still pink in the middle. Down below, people eat Peat their whole lives."
+item_ul_grilled_salmon_name,Seared Salmon
+item_ul_grilled_salmon_flavor,"A real fish that once swam in a farm tank. Crispy skin, a wedge of lemon."
+item_ul_veg_soup_name,Garden Vegetable Soup
+item_ul_veg_soup_flavor,"Carrot, pumpkin, celery, all grown on the hydroponic racks and simmered all morning."
+item_ul_pork_sausage_name,Handmade Pork Sausages
+item_ul_pork_sausage_flavor,"Real casing, real pork. Three to a bundle, tied with twine."
+item_ul_roast_veggies_name,Roasted Vegetable Platter
+item_ul_roast_veggies_flavor,"Peppers, zucchini, cherry tomatoes, roasted till the edges char. Up here they call this ""light""."
+item_ul_lamb_skewers_name,Lamb Skewers
+item_ul_lamb_skewers_flavor,"Real lamb, fat and lean, grilled over charcoal. Two skewers."
+item_ul_chicken_pie_name,Chicken & Mushroom Pie
+item_ul_chicken_pie_flavor,Flaky crust that crumbles at a touch. Creamy chicken and real mushrooms inside.
+item_ul_meat_pasta_name,Bolognese Pasta
+item_ul_meat_pasta_flavor,"Sauce cooked down from real tomatoes, minced beef, a handful of real cheese on top."
+item_ul_antibiotic_ampoule_desc,Use when your wound is unstable: stops infection and stabilizes the wound.
+battle.drag,[Drag a body back]
+battle.drag_hint,"{0} bodies on the ground. You can bring one back per night, and you have to carry it yourself (bodies left on the ground stay here): one in your backpack costs 2 reputation each with the Police, the Infiltration Bureau and the Republic (bodies can only drag them down to -60); one stuffed in your left or right pocket costs nothing. If you carry several, only the freshest is kept."
+battle.drag_done,You pick the freshest one. You will drag it back when you leave.
+battle.dragged,You already have one to drag tonight. You cannot manage another.
+item_ul_blood_kit_name,Bloodletting Kit
+item_ul_blood_kit_flavor,"A full set of retired clinic bloodletting gear: tubing, needle, hand pump and clamp, packed in a black case."
+item_ul_blood_kit_desc,"Drag it onto an unbled body to draw a bag of blood. The fresher the body, the bigger the bag."
+item_ul_blood_bag_s_name,Blood Bag (Small)
+item_ul_blood_bag_s_flavor,The label only gives the blood type and the date. Not where it came from.
+item_ul_blood_bag_m_name,Blood Bag (Medium)
+item_ul_blood_bag_m_flavor,"Upper Levels clinics never ask where it came from, only whether it is from today."
+item_ul_blood_bag_l_name,Blood Bag (Large)
+item_ul_blood_bag_l_flavor,A full bag. Enough for one surgery.
+blood.done,Done. You get a {0}.
+blood.bled_tip,Already bled
+item_ul_mat_aluminum_name,"Compressed ""Aluminum"" Block"
+item_ul_mat_aluminum_flavor,"A day's worth of Upper Levels drink cans, pressed into one block. Melt it down and it's good aluminum again."
+item_ul_mat_copper_name,Copper Pipe Offcuts
+item_ul_mat_copper_flavor,"Real copper plumbing torn out in a renovation, cut into lengths and tied with wire."
+item_ul_mat_glass_name,Glass Cullet (Sack)
+item_ul_mat_glass_flavor,"Shards of wine bottles, perfume bottles and vases, sorted by color. They can be melted and blown again."
+item_ul_mat_carbon_name,Carbon Fiber Offcuts
+item_ul_mat_carbon_flavor,Leftover scraps from custom hovercars and bicycles. Light and stiff.
+item_ul_mat_cotton_name,Real Cotton Scraps
+item_ul_mat_cotton_flavor,"Real cotton offcuts from a tailor's floor, tied in bundles. Down below, people would call it good cloth."
+item_ul_mat_magnet_name,Salvaged Rare-Earth Magnets
+item_ul_mat_magnet_flavor,Pulled out of discarded speakers and motors. A few stuck together so hard you can barely pry them apart.
+item_ul_junk_perfume_bottle_name,Empty Perfume Bottle
+item_ul_junk_perfume_bottle_flavor,"A designer bottle, not a drop left. Still smells faintly nice."
+item_ul_junk_smartband_name,Broken Smart Band
+item_ul_junk_smartband_flavor,"Snapped strap, cracked screen. The owner didn't even wipe it before throwing it out."
+item_ul_junk_cigar_box_name,Empty Cigar Box
+item_ul_junk_cigar_box_flavor,"The cigars are gone, but the box is still good wood. A little tobacco dust in the bottom."
+item_ul_junk_toothbrush_name,Broken Electric Toothbrush
+item_ul_junk_toothbrush_flavor,"Gold-plated handle cracked, bristles worn flat. Up here people replace them every three months."
+battle.event.title,Firefight Night
+battle.event.desc,The Revolution and the police are fighting in these blocks tonight
+battle.event.corpse,Better chance to find bodies (30% to 55%)
+battle.event.fresh,Bodies are fresher
+battle.event.injury,Double chance of injury
+battle.event.spot,Double chance of being spotted by patrols
+ul_dialog_minor_lottery_3,"Same here. Won years ago, and the Republic took the money the moment it landed."
+ul_dialog_minor_lottery_4,All I got was a residence permit and a job working for the Upper Levels.
+ul_dialog_minor_lottery_5,"It took years, but I finally got my feet under me. You will too."
+ngoods.adrenaline_done,Your heart kicks into gear. You can keep going a while longer.
+battle.corpse_one_only,You can only bring one body back a night. The other {0} you were carrying were left behind.
+test_hotkey_night_done,Test: it is now the night of day {0}. You can go out.
+test_hotkey_night_busy,"Test: cannot skip right now (shutter moving, arrest or shootout in progress). Try again in a moment."
+test_hotkey_night_outside,Test: go back to the shop first.
+battle.corpse_carried_rep,"You dragged {0} body back to the shop. Police -{1}, Infiltration Bureau -{2}, The Republic -{3} (bodies can only drag them down to {4})."
+reg.notify,{0}: {1}
+reg.notify.up,{0} +{1}
+reg.notify.down,{0} -{1}
+reg.notify.sep,", "
+reg.notify.capped, ({0} is at +{1}; regulars can't raise it further)
+reg.arthur.hi1,"Me again. The usual: smokes, and a drink if you have one."
+reg.arthur.hi2,Two more gone this week. Don't ask. Just get me some smokes.
+reg.arthur.hi3,After a shift this is the only place I want to be. Got anything good to drink?
+reg.tax.hi1,Routine visit. Republic Tax Office.
+reg.tax.hi2,"Since my last visit you've sold {0} credits. At {1}%, the compliance fee is {2}."
+reg.tax.pay,Pay {0}.
+reg.tax.extra,"Pay {0} ({1} extra, in support of the Republic)."
+reg.tax.refuse,Not this time.
+reg.tax.thanks,Received. Paperwork's in order. See you next week.
+reg.tax.extra_thanks,...The Republic remembers its supporters. I'll put it in my report.
+reg.tax.refused,"""Voluntary,"" of course. I'll report it exactly as it happened."
+reg.oscar.hi1,Old friend! Grandfather's taking inventory again. I need to put a few decent pieces back.
+reg.oscar.hi2,"Got anything presentable? Genuine, mind you. My family have sharp eyes."
+reg.oscar.hi3,"Here I am again. I brought enough money this time, honestly."
+reg.oscar.remind,Did you find the {0} I asked about?
+reg.oscar.ask,"Oh, could you keep a {0} for me next time? The family is short of one."
+reg.oscar.bye,It's a deal. Keep it between us.
+reg.liaison.name,Bureau Liaison
+reg.liaison.hi1,"Don't look at the door. I'm just buying, then I'm gone."
+reg.liaison.hi2,"Medicine, tins, anything. The people downstairs are waiting."
+reg.liaison.hi3,I don't have much. Give me a fair price and we'll remember it.
+reg.liaison.remind,"The {0} I mentioned last time, do you have it? Someone's life depends on it."
+reg.liaison.ask,Can you get me a {0} for next time? It's urgent.
+reg.liaison.bye,Thanks. You never saw me today.
+rep_perk_ULF_COUNCIL_RELIEF_name,Tax Relief
+rep_perk_ULF_COUNCIL_RELIEF_desc,The weekly compliance fee drops from 1% to 0.5% of your sales.
+rep_perk_ULF_COUNCIL_RELIEF_flavor,"""We know who pays on time."""
+rep_how_upper,Raise: sell to Upper Levels customers (+1 a day at most); trade two artworks at the private exchange once a week.\nLower: report Upper Levels customers.
+rep_how_police,"Raise: Superintendent Arthur buys smokes and drinks weekly (regulars raise it to +60 at most); requisitions; killing augments, reporting wanted criminals; alarm transmitter module.\nLower: dragging bodies home (down to -60 at most)."
+rep_how_rev,"Raise: the Bureau liaison buys medicine and tins weekly (regulars raise it to +60 at most), more for filling his urgent request; selling organs to the field medic.\nLower: dragging bodies home (down to -60 at most); serving Superintendent Arthur."
+rep_how_council,"Raise: pay the compliance fee at the weekly visit (regulars raise it to +60 at most, +20 more the first time); pay 500 extra for more.\nLower: refusing the fee; dragging bodies home (down to -60 at most)."
+rep_how_vanderlin,Raise: Oscar buys luxury goods weekly (regulars raise it to +60 at most); more for finding the piece he asked for.\nLower: paying the compliance fee (Republic inspection).
+battle.corpse_pocket,"You brought the body in your pocket back to the shop. Nobody saw, so your reputation is unaffected."
+test_hotkey_regulars,"Test: Arthur, the Republic inspector, Oscar and the Bureau liaison all visit today."
+reg.arthur.interest,Tobacco & Alcohol
+pex.give.organ4,4 natural organs (no printed or rotten ones)
+item_ul_thorne_card_name,Thorne's Card
+item_ul_thorne_card_flavor,Thorne from the clinic. A number is handwritten on the back: {0}.
+item_ul_doctor_card_name,Private Doctor's Card
+item_ul_doctor_card_flavor,An Upper Levels private doctor. House-call number: {0}.
+phone.thorne.card_tip,Dial {0} on the shop phone to have Thorne come buy organs tomorrow (6-day cooldown).
+phone.doctor.card_tip,Dial {0} on the shop phone to have the private doctor visit tomorrow (7-day cooldown).
+phone.thorne.name,Thorne (Clinic)
+phone.doctor.name,Private Doctor
+phone.thorne.intro1,"Oh, it's you. Kept the card, good."
+phone.thorne.intro2,"When you have too much stock, call me and I'll find time to come by."
+phone.thorne.hello,"Clinic, Thorne. Got something?"
+phone.thorne.ok,"Tomorrow, then. Keep it cold."
+phone.thorne.bye,Then don't tie up the line.
+phone.thorne.cool,I was just at your place.
+phone.doctor.intro1,"Hello, private practice."
+phone.doctor.intro2,"For supplies or a house call, book on this number."
+phone.doctor.hello,"Private practice, go ahead."
+phone.doctor.ok,"All right, I'll come tomorrow and bring the first-aid kit."
+phone.doctor.bye,"All right, goodbye."
+phone.doctor.cool,This week's house calls are fully booked.
+phone.cool_days,Call again in {0} days.
+phone.c_come,Can you come by tomorrow?
+phone.c_hang,"Never mind, wrong number."
+phone.no_answer,...No answer.
+rep_how_helios,Raise: the Helios butler buys fresh food every 4 days (regulars raise it to +60 at most).\nLower: crossing the Helios household.
+item_ul_smuggler_bay_small_name,Small Smuggler's Bay
+item_ul_smuggler_bay_small_desc,A cramped 3×3 smuggler's bay. Its contents are hidden from inspection.
+ul_kai_thorne_contact_title,Thorne's Number
+ul_kai_thorne_contact_desc,"Kai gives you Thorne's private number ({0}) and a card. When you have stock, call and he comes the next day to buy organs (once every 6 days)."
+ul_kai_doctor_contact_title,Private Doctor's Number
+ul_kai_doctor_contact_desc,Kai introduces you to an Upper Levels private doctor ({0}) and gives you a card. Call to book a visit the next day; he always brings an auto-suture kit (once every 7 days).
+phone.thorne.unlocked,Thorne's card is in your shop. Dial {0} on the phone.
+phone.doctor.unlocked,The private doctor's card is in your shop. Dial {0} on the phone.
+pex.give.organ_set,"One natural heart, left lung, right lung, left kidney and right kidney (no rotten ones)"
+pex.give.good_heart,1 natural heart in perfect condition
+pex.give.good_organ,Any 1 natural lung or kidney in perfect condition
+pex.get.rep_random,"+5 reputation with a random one of the Police, the Infiltration Bureau or the Republic"
+pex.give.melon,1 gift melon
+pex.get.samurai,"1 bottle of ""Samurai"" experimental pheromone"
+pex.give.samurai10,"10 bottles of ""Samurai"" experimental pheromone"
+pex.get.siyang,"1 bottle of ""Siyang"" self-refilling perfume"
+pex.give.junk10,Any 10 pieces of Upper Levels junk (the kinds from the recycling station)
+pex.get.cigar,1 box of Luvist cigars
+act1.dex.bye,"Right, I'm heading back. Call the station if anything comes up."

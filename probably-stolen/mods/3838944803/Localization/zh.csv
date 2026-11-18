@@ -98,8 +98,8 @@ ui_close,关闭
 talk_continue,继续
 talk_narration,旁白
 talk_got_intel,【获得：关于{0}的情报】
-social_notify_up,{0} 好感 +{1}
-social_notify_down,{0} 好感 -{1}
+social_notify_up,{0} 声望 +{1}
+social_notify_down,{0} 声望 -{1}
 tier_ally,盟友
 tier_friendly,友善
 tier_neutral,中立
@@ -483,16 +483,16 @@ faction_infiltration_name,革命渗透部
 perk_notify_contract,理事会的市政采购款到账：+{0} 信用点
 perk_notify_audit,理事会例行审计，罚款 {0} 信用点
 rep_perk_ULF_COUNCIL_STAMP_name,盖章放行
-rep_perk_ULF_COUNCIL_STAMP_desc,理事会帮你压下几份举报：每天早上证据等级额外降低 2。
+rep_perk_ULF_COUNCIL_STAMP_desc,共和国帮你压下几份举报：每天早上证据等级额外降低 2。
 rep_perk_ULF_COUNCIL_STAMP_flavor,哈洛说，一份文件在桌上压多久，是可以谈的。
 rep_perk_ULF_COUNCIL_CONTRACT_name,市政合同
-rep_perk_ULF_COUNCIL_CONTRACT_desc,每 7 天收到一笔理事会的市政采购款，300 信用点。
+rep_perk_ULF_COUNCIL_CONTRACT_desc,每 7 天收到一笔共和国的市政采购款，300 信用点。
 rep_perk_ULF_COUNCIL_CONTRACT_flavor,议会大楼换下来的家具和设备，以后都先给你挑。
 rep_perk_ULF_COUNCIL_AUDIT_name,例行审计
 rep_perk_ULF_COUNCIL_AUDIT_desc,每 7 天来一次审计，罚款 200 信用点（现金不够就罚到见底）。
 rep_perk_ULF_COUNCIL_AUDIT_flavor,审计员很客气，但每次都能查出点问题。
 rep_perk_ULF_COUNCIL_WATCH_name,重点监控
-rep_perk_ULF_COUNCIL_WATCH_desc,每天早上证据等级增加 3；潜入理事会档案馆时，被察觉、被抓的概率 ×1.5。
+rep_perk_ULF_COUNCIL_WATCH_desc,每天早上证据等级增加 3；潜入共和国档案馆时，被察觉、被抓的概率 ×1.5。
 rep_perk_ULF_COUNCIL_WATCH_flavor,你上了一份不公开的名单。
 rep_perk_ULF_HELIOS_CLIENTS_name,财团客户
 rep_perk_ULF_HELIOS_CLIENTS_desc,赫利俄斯的职员会来光顾：上层区顾客的预算增加 10%。
@@ -506,18 +506,18 @@ rep_perk_ULF_HELIOS_PRICEWAR_flavor,对面新开了家寄卖行，招牌上是�
 rep_perk_ULF_HELIOS_BLACKLIST_name,财团黑名单
 rep_perk_ULF_HELIOS_BLACKLIST_desc,财团旗下的人都绕着你走：每天少来 1 位客人。
 rep_perk_ULF_HELIOS_BLACKLIST_flavor,赫利俄斯旗下每家公司都收到了同一份内部通知。
-rep_perk_ULF_VANDERLIN_REGULAR_name,沙龙常客
-rep_perk_ULF_VANDERLIN_REGULAR_desc,在周五沙龙里与人交谈时，获得的好感额外 +1。
-rep_perk_ULF_VANDERLIN_REGULAR_flavor,勋爵记得你的名字了。
+rep_perk_ULF_VANDERLIN_REGULAR_name,老钱圈子
+rep_perk_ULF_VANDERLIN_REGULAR_desc,买奢侈品的上层区客人，预算增加 10%。
+rep_perk_ULF_VANDERLIN_REGULAR_flavor,范德林家的人提过你，别的老钱家族也就信你了。
 rep_perk_ULF_VANDERLIN_INTRO_name,家族引荐
 rep_perk_ULF_VANDERLIN_INTRO_desc,每天有 25% 的概率多来一位出手阔绰的收藏家。
 rep_perk_ULF_VANDERLIN_INTRO_flavor,“范德林家的朋友，就是我们的朋友。”
 rep_perk_ULF_VANDERLIN_COLD_name,冷遇
-rep_perk_ULF_VANDERLIN_COLD_desc,在周五沙龙里与人交谈时，获得的好感减半。
+rep_perk_ULF_VANDERLIN_COLD_desc,收藏家、落魄贵族有一半不来了。
 rep_perk_ULF_VANDERLIN_COLD_flavor,你一过去，大家就想起别处还有事。
-rep_perk_ULF_VANDERLIN_FEUD_name,家族宿怨
-rep_perk_ULF_VANDERLIN_FEUD_desc,范德林宅邸加强了戒备：潜入时被察觉、被抓的概率 ×1.5。
-rep_perk_ULF_VANDERLIN_FEUD_flavor,宅邸换了个门房，见到生面孔就盯着看。
+rep_perk_ULF_VANDERLIN_FEUD_name,封杀
+rep_perk_ULF_VANDERLIN_FEUD_desc,贵重品经销商的批发价贵 15%。
+rep_perk_ULF_VANDERLIN_FEUD_flavor,经销商说，上面有人打过招呼了。
 
 
 # ===================== 潜入：按概率判定 =====================
@@ -1371,18 +1371,18 @@ dissector_status_rotten,已腐坏
 dissector_log_done,解剖机取出了{0}件完好的器官。
 dissector_log_rotten,尸体放坏了，解剖机什么也没取出来。
 battle.title,交火区
-battle.panel_quiet,革命军和治安部前几天在这儿打过。今晚很安静。
+battle.panel_quiet,革命军和警察局前几天在这儿打过。今晚很安静。
 battle.panel_fight,今晚这儿刚打完。地上东西多，巡逻的人也多。
 battle.tries_left,今晚还能翻找{0}次（共{1}次）。
 battle.wounded,你受伤了。用绷带之类的处理好伤口，就能接着翻。
 battle.risk,轻伤 {0}%　重伤 {1}%　被撞见 {2}%
 battle.search,翻找
-battle.found_corpse,你找到一具刚断气的。不用装包，走的时候拖回店里。
+battle.found_corpse,你找到一具刚断气的。想带走的话，一晚只拖得动一具。
 battle.found_scrap,你捡到一些能卖的零碎。
 battle.found_nothing,什么也没找到。
 battle.luck_saved,差点被流弹擦到。运气不错。
-battle.spotted_police,治安部的巡逻看见你了。这事会记进你的档案。
-battle.spotted_rev,革命军的人看见你了。早晚会传到警察局那边。
+battle.spotted_police,警察局的巡逻看见你了。这事会记进你的档案。
+battle.spotted_rev,革命渗透部的人看见你了。早晚会传到警察局那边。
 battle.fight_tonight,今晚交火区有交火。
 npc_clinic_name,索恩
 clinic.intro.1,白塔诊所，采购部，索恩。
@@ -1469,7 +1469,7 @@ ice_maker.extra.c_2,[卖一份水晶级（{0}）]
 ice_maker.extra.sold,行。
 ice_maker.extra.bye,下周见。
 ice_maker.arrest.c1,你叫了警察？行。
-ice_maker.arrest.s1,治安部。有人举报这里在交易违禁品。
+ice_maker.arrest.s1,警察局。有人举报这里在交易违禁品。
 ice_maker.arrest.s2,跟我们走一趟。
 ice_maker.supply.arrest.c1,我就是个送货的！
 ice_maker.supply.first.1,我是鲁本，茱恩让我来的。
@@ -1764,7 +1764,7 @@ retire_end_prof_appraiser,有人拿东西来问你真假，你都说“不好说
 retire_end_prof_luxury,家里的摆设，有一半是你以前卖出去又收回来的。
 retire_end_prof_navy,海军的合同到期了，你没有续。
 retire_end_sold_organ,你的体检报告很好。每个器官值多少钱，你比医生清楚。
-retire_end_sold_ice,治安部有一份冰粉案的卷宗，里面没有你的名字。
+retire_end_sold_ice,警察局有一份冰粉案的卷宗，里面没有你的名字。
 retire_end_faction_council,共和国当局给你发了永久居住证，编号很靠前。
 retire_end_faction_helios,赫利俄斯每年给你寄一张贺卡，落款是法务部。
 retire_end_faction_vanderlin,范德林家的晚宴，你坐主桌。
@@ -1923,7 +1923,7 @@ readme.p2.body,1. 房租是下层区的三倍哦，一周一交，别忘啦。\n
 readme.p4.title,凯·王尔德
 readme.p4.body,1. 凯是乔的表弟，不过他混得好，其实就是上层区的王哥。\n\n2. 他的服务和原来的王哥一样，都是打电话。\n\n3. 店里接水管啊什么的，都找他。
 readme.p5.title,派系
-readme.p5.body,上层区有四家：\n\n共和国（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）
+readme.p5.body,上层区有四家：\n\n共和国（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）\n\n每周都有一位常客上门，照顾他的生意，对应那一栏就涨（常客最多带到 +60）：\n· 警察局：亚瑟警司，买烟酒\n· 革命渗透部：渗透部联络员，收药和罐头\n· 共和国：税务巡查，交合规费\n· 范德林家族：奥斯卡，收奢侈品\n照顾亚瑟会让革命渗透部掉一点，交合规费会让范德林掉一点。
 readme.p6.title,晚上
 readme.p6.body,打烊以后可以出门：沙龙、跟你职业有关的地方，还有些不太正经的地方。\n\n晚上出去可能受伤、被人看见、留下证据。第二天还得开店。
 readme.p7.title,店里的东西
@@ -1977,7 +1977,7 @@ pex.give.art,2 件艺术品
 pex.give.weapon,1 件武器
 pex.give.module,2 个机器模块
 pex.give.luxury,3 件奢侈品
-pex.give.sec_card,治安部门禁卡
+pex.give.sec_card,警察局门禁卡
 pex.give.med_card,医疗部门禁卡
 pex.give.eng_card,工程部门禁卡
 pex.get.module,1 个稀有机器模块（超频 / 节能 / 精工，偶尔是神经核心）
@@ -1988,7 +1988,7 @@ pex.get.surgery,手术工具 + 2 支黑色注射器
 pex.get.rep10,上层区声望 +10
 pex.get.rep25,上层区声望 +25
 pex.get.favor,王尔德恩惠 +150
-pex.get.sec_crate,一箱治安部物资
+pex.get.sec_crate,一箱警察局物资
 pex.get.med_crate,一箱医疗部物资
 pex.get.eng_crate,一箱工程部物资
 pex.give.perfume4,4 瓶神经香氛
@@ -2046,8 +2046,8 @@ uc.water_resident.2,有瓶装泉水吗？密封的那种。
 uc.water_corp.name,企业采购代表
 uc.water_corp.1,公司的会议室和高管层要用水。只要优质的。
 uc.water_corp.2,纯度够高，价钱好说。
-pex.give.smuggler,走私者暗格 + 8 支粉色注射器
-pex.give.smuggler_big,加大走私者暗格 + 8 支粉色注射器（扩建用过的套件退回）
+pex.give.smuggler,"走私者暗格（5×5）+ 8 袋""蓝血"""
+pex.give.smuggler_big,"加大 / 小号走私者暗格 + 8 袋""蓝血""（扩建用过的套件退回）"
 pex.get.smuggler,改装走私暗格（8×8，盘查时不搜）
 salon_talk_leave,（先不聊了）
 salon_guest_line3,· {0}（{1}）好感 {2}{3}
@@ -2100,9 +2100,9 @@ ul_dialog_tourist_greet_5,所有人都说这一带贵得离谱。所以我当然
 ul_dialog_tourist_deal_2,听说我在这儿能找点乐子？
 ul_dialog_tourist_weapon_greet_2,他们说这一带的店都死贵，可我倒觉得挺有意思。
 ul_dialog_tourist_weapon_greet_3,今天来逛逛空间站最有钱的区域。文化气息可真浓！
-test_hotkey_update,测试（上次更新）：发了《解体要点》《开店守则》和一本图文版熟客名册；凯今天来对账、送货；熟客名册没建的话先建，熟客今天来一位。+5000 信用点。想测预订：按住 Ctrl 按 F12 解锁买店后。
+test_hotkey_update,测试（上次更新）：发了一具新鲜尸体和一个放血器。把放血器拖到尸体上放血。
 corpse_name_fresh,{0}（新鲜度 {1}%）
-battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。走的时候拖回店里。
+battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。一晚只拖得动一具。
 battle.found_corpse_rotten,你找到一具，已经烂了，拆不出东西。
 bdoc.name,黑心医生
 bdoc.1,看到你的灯了。
@@ -2250,7 +2250,7 @@ ogguide.header,解体要点
 ogguide.p1.title,写在前面
 ogguide.p1.body,上层区不缺打印的器官，又便宜又合法。可有钱人要原生的，原生的只能从死人身上取。\n\n这本手册讲两条路。\n\n黑路：夜里去交火区捡尸体，拆出原生器官，卖给黑市的买家。来钱快，风险也大。\n\n白路：用 3D 打印机打器官，拿到许可就是合法买卖。赚得少，但睡得着。\n\n两条路可以一起走。
 ogguide.p2.title,黑路：货从哪来
-ogguide.k.corpse,夜里去交火区翻找。打得凶的晚上更容易捡到，也更新鲜；安静的晚上捡到的多半放久了。翻找可能受伤，包扎好了还能接着翻。
+ogguide.k.corpse,夜里去交火区翻找。打得凶的晚上更容易捡到，也更新鲜；安静的晚上捡到的多半放久了。翻找可能受伤，包扎好了还能接着翻。一晚只拖得动一具回店，拖回去警察局、革命军、共和国的声望都会掉。
 ogguide.k.dissector,尸体放进去，有电的那晚拆。一具通常出一两件，运气好三四件。尸体越新鲜，拆出来的越完整。尸体放不了几天，捡回来尽快拆。
 ogguide.k.cooler,器官放在外面每天都会变差，第 4 天就坏了。放进冷藏箱就不会变。
 ogguide.p3.title,原生器官
@@ -2290,8 +2290,8 @@ ncguide.k.dubious,第 1 天借的 1500，加上第 4 天替你垫的第一周房
 ncguide.p3.title,对账
 ncguide.p3.body,韦特进门先对上一周的账：\n\n· 柜台卖掉的，他拿六成。\n· 不在店里、也不是柜台卖掉的（拿去别处卖、自己用掉），按标价算卖掉。\n· 还在店里的，接着卖。\n\n然后送新的一批。\n\n现金不够付他那份，就先记着，下次一起结。
 ncguide.p4.title,居留和税
-ncguide.n.roster,纳税清单
-ncguide.k.roster,第 1 天共和国的人给的。说明里写着你居留到第几天了。
+ncguide.n.roster,居留期限
+ncguide.k.roster,"从第 1 天共和国的人来过那天算起。第 7 天他还会再来，收走你现金的三成，记作""对共和国的支持""。"
 ncguide.n.wish,六十天
 ncguide.k.wish,居留六十天内不出事，才有资格买上层区永久居留证。店里的违禁品，早点处理。
 ncguide.n.favor,对共和国的支持
@@ -2299,7 +2299,7 @@ ncguide.k.favor,共和国的人还会再来收钱，按你手里的现金算，�
 ncguide.p5.title,常来的人
 ncguide.p5.body,· 布鲁斯：在上层区住了四十年、现在跑回收站的老人。买了他的货，他每 3 天送一批来，便宜三成。帮过他，他会记着你。\n\n· 赫利俄斯家的管家：每 4 天来一次，替大小姐买新鲜吃的，不要罐头，出手大方。\n\n· 德克斯警官：这片的巡警。举报带高级违禁品的卖家，按没收的多少给赏金。
 ncguide.p6.title,货从哪来
-ncguide.p6.body,上层区的卖家会上门：\n\n· 搬家的住户：日用品。\n· 熟食店送货员：现做的吃的。\n· 私人医生：医疗品。\n· 遗产清点人、拍卖行、收藏家、落魄贵族：稀有货。\n\n橱窗摆奢侈品、稀有货，会请来淘货的贵客。他们的预算大概够买橱窗里最贵的那一件。
+ncguide.p6.body,上层区的卖家会上门：\n\n· 搬家的住户：日用品。\n· 熟食店送货员：现做的吃的。\n· 私人医生：医疗品。\n· 遗产清点人、拍卖行、收藏家、落魄贵族：奢侈品。\n\n橱窗摆奢侈品，会请来淘货的贵客。他们的预算大概够买橱窗里最贵的那一件。
 ncguide.p7.title,几句忠告
 ncguide.p7.body,· 默认价就是公道价。上层区的客人看的是体面。\n\n· 店里要留地方。韦特来送货时放不下，他就只留一部分。\n\n· 哈达斯根放冰箱冷冻区，沙拉、三明治、蛋糕放冷藏区，放外面过夜就不值钱了。\n\n· 别人寄存在你这儿的东西，卖不掉，也别弄丢。
 regulars.roster_desc,常来的客人都记在上面。点开阅读。
@@ -2435,21 +2435,21 @@ item_ul_farm_eggs_flavor,顶层农场舱的母鸡下的，壳上还带着一点�
 ngoods.perfume_desc,使用后，与当前顾客的交易收益将提升{0}%。你同时只能获得一种香水效果的增益。
 ngoods.perfume_desc_refill,使用后，与当前顾客的交易收益将提升{0}%。你同时只能获得一种香水效果的增益。会自动补充。
 ngoods.melted,化了
-ngoods.melted_log,{0} 盒哈达斯根冰淇淋没放进冷冻区，化了，只值三成。
+ngoods.melted_log,{0} 盒哈达斯根冰淇淋没放进冷冻区，化了，只值九成。
 ngoods.sentinel_done,药匣咔哒一声插进接口。手不抖了。
-item_ul_haadasgen_desc,放进冰箱冷冻区能保存，还能多卖一点。放在外面过一夜就会化，化了只值三成。
-item_ul_hemostatic_gel_desc,伤口没稳住时使用：止血，伤势减轻一级。
+item_ul_haadasgen_desc,放进冰箱冷冻区能保存，还能多卖一点。放在外面过一夜就会化，化了只值九成。
+item_ul_hemostatic_gel_desc,伤口没稳住时使用：止血，伤势减轻两级。只能用一次。
 item_ul_suture_kit_desc,伤口没稳住时使用：止血，伤势减轻两级。能用 2 次。
 item_ul_gauze_dressing_desc,伤口没稳住时使用：止血，伤势减轻一级。一盒能用 3 次。
 item_ul_disinfect_wipes_desc,伤口没稳住时使用：先稳住伤口。一盒能用 5 次。
 item_ul_pain_patch_desc,伤口没稳住时使用：先稳住伤口，不上瘾。一盒能用 5 次。
-item_ul_allergy_pen_desc,伤口没稳住时使用：止血，伤势减轻一级。
+item_ul_allergy_pen_desc,刚受伤时使用：一针下去，能马上接着翻找。伤口不会稳住，伤势也不减。
 item_ul_antidote_injector_desc,缓解成瘾品的戒断，效果比奥克莫吸注射器长一倍。
 item_ul_rejection_suppressant_desc,只对哨兵综合征有用：相当于打了一针真的免疫宁。
 uc.deli.name,熟食店送货员
 uc.deli.1,您好，长廊那头的熟食店，今天的货。
-uc.deli.2,都是早上现做的，真菜真肉。
-uc.deli.3,冰淇淋记得放冷冻，沙拉蛋糕放冷藏，放外面可放不住。
+uc.deli.2,熟食都是早上现做的，真菜真肉。剩下几样是店里的杂货，顺路带来。
+uc.deli.3,熟食记得放冷藏；要是有冰淇淋，放冷冻。放外面可放不住。
 act1.name.republic,共和国工作人员
 act1.name.weight,韦特
 act1.name.dex,德克斯警官
@@ -2462,7 +2462,7 @@ act1.rep1.1,你好，本人隶属于共和国相关部门——我们容忍下�
 act1.rep1.2,但不代表你现在已经合法。
 act1.rep1.3,我对你有新的指示。
 act1.rep1.4,居留六十天内，没有任何不良行为，你才有权购买上层区永久居留证。
-act1.rep1.5,这是你的纳税清单。祝你好运。
+act1.rep1.5,祝你好运。
 act1.w1.1,走了两个街区，居然买不到一块电池。
 act1.w1.2,这次停电真把人害惨了。
 act1.w1.3,你这店里怎么什么也没有？
@@ -2491,7 +2491,7 @@ act1.dex1.4,根据标准程序……
 act1.dex1.5,我们会保护你的人身安全。
 act1.dex1.6,你店里要有违禁品，记得早点处理。
 act1.oscar.1,老伙计！新开的店吧。
-act1.oscar.2,我是奥斯卡·范德林。对，就是那个范德林。
+act1.oscar.2,我是范德林家的。对，就是那个范德林。
 act1.oscar.3,"家里在搞什么""财务纪律""。"
 act1.oscar.4,我爷爷开始盘点家里的东西了。
 act1.oscar.5,追兵就在后面，来不及了。
@@ -2505,7 +2505,7 @@ act1.bruce1.1,你好啊老板，收货吗？
 act1.bruce1.2,我专跑上层区的回收站。
 act1.bruce1.3,临期高档食物、淘汰了的工具、没人认领的东西。
 act1.bruce1.4,这些东西可值钱了。
-act1.bruce1.5,你给个价，我下次还来。
+act1.bruce1.5,你先看看吧。
 act1.bruce.r.1,老板，又是我，布鲁斯。
 act1.bruce.r.2,回收站今天收成不错，你看看。
 act1.landlord.1,你就是新来的？
@@ -2519,7 +2519,7 @@ act1.landlord.no,不能。
 act1.landlord.c_ok,知道了。
 act1.landlord.bye,哼。
 act1.w3.1,租金的事我听说了。
-act1.w3.2,让韦特来帮你搞定第一周的租金吧。
+act1.w3.2,"让""正道""来帮你搞定第一周的租金吧。"
 act1.w3.3,你的房东百分百得给我面子。
 act1.w3.4,这是一种善良，孩子。
 act1.w3.5,再给你批货，这是我仓库积压太久的。
@@ -2529,7 +2529,7 @@ act1.w3.8,过几天见，孩子。
 act1.w3.9,祝你好运。
 act1.old1.1,你好啊老板，今天收货吗？
 act1.old1.2,我在上面住了四十年，现在没人认得我了。
-act1.old1.3,这些是我攒的旧货，你看看。
+act1.old1.3,这些是我攒的旧货，你想看看吗？
 act1.old1.c_look,[看看他的货]
 act1.old1.yes,我腿脚不好，跑不动了。每三天我给你送一批，你便宜收了就行。
 act1.old1.c_no,[让他走]
@@ -2548,7 +2548,7 @@ act1.vb.give,谢谢您。老先生会记得这份情。
 act1.vb.c_deny,[不提匣子的事] 没见过他。
 act1.vb.deny,是吗……打扰了。
 act1.kai.1,你好。欢迎来到上层区。
-act1.kai.2,我是凯·王尔德。对，就是下层区乔·王尔德的表弟。
+act1.kai.2,我是凯·王尔德。对，就是下层区乔·王尔德的兄弟。
 act1.kai.3,严格来说是乔的表弟。
 act1.kai.4,上层区看着干净，小偷也更识货。
 act1.kai.5,丢一件值钱的，小店可能就开不下去了。
@@ -2601,7 +2601,7 @@ act1.w4.p1,确实非常感谢你。
 act1.w4.4,这是你应得的分红，这部分则是我的。
 act1.w4.5,我顺便又带来了一些库存，一起给你吧。
 act1.w4.6,我的生意需要更多稀有物品。
-act1.w4.7,如果你能在下次我来的时候准备一些……
+act1.w4.7,如果你能在下次我来的时候准备一些奢侈品，
 act1.w4.8,说明我没看走眼。
 act1.w4.9,就这样，下次再见，店长。
 act1.helios.1,听说这新开了一家下层人的店？
@@ -2630,7 +2630,204 @@ item_ul_tax_list_flavor,治安费、共和国安置税、范德林片区管理�
 act1.oldr.gift_notify,布鲁斯送了你一件{0}，放在柜台上了。
 act1.oldr.bye,那我先走了，小老板。
 act1.old2.5,谢谢你。
-ul_dialog_minor_lottery_2,我搬上来以后，就再没回过下层区。
+ul_dialog_minor_lottery_2,你也是中了彩票上来的吧？看你这店就知道。
 ul_dialog_minor_lottery_6,不过，我有时还是会想念下层区那些便宜又暖心的吃食。上层区什么都贵。
 act1.kai.card_fixed,凯的名片放进店里了。王尔德的电话和人脉网络现在可以用了。
 kai.consign.kept,剩下的 {0} 件你留着卖吧，算你的。这几件的押金我就不退了。
+act1.bruce1.bye,小老板，下次我再来捧场啊。
+act1.name.arthur,亚瑟警司
+act1.arthur.1,我不是突击检查的。
+act1.arthur.2,放松一点，老板。
+act1.arthur.3,拿两包烟，有好酒也行。
+act1.arthur.4,浑浑噩噩也不错，我一个月前还是滴酒不沾的。
+act1.arthur.5,上面现在乱得很。
+act1.arthur.6,共和国和革命军打个没完，财团都在发战争财，大家族还沉浸在几十年前的回忆里。
+act1.arthur.7,我们警察局夹在中间，革命军打过来了还得顶上去。
+act1.arthur.8,我已经有好几个同僚失踪了。
+act1.arthur.9,真他妈操蛋。
+act1.arthur.bye1,祝你平安。
+act1.arthur.bye2,一路顺风。
+act1.w5.1,我也倒霉咯！
+act1.w5.2,最近这革命军可真有能耐。
+act1.w5.3,要打到什么时候呢？
+act1.w5.4,我的生意也受到波及了。
+act1.w5.5,"善良的""正道""得离开空间站一会。"
+act1.w5.6,我给你带来最后一批寄售货，这批就当送给你了。
+act1.w5.7,这是我朋友的电话，我已经打点好了。
+act1.w5.8,给你，他是贵重物品的经销商。
+act1.w5.9,我走了，保重，老板。
+act1.w5.kept,店里剩下的韦特寄售货都归你了，卖了不用分成。
+dealer.name,贵重品经销商
+item_ul_dealer_card_name,镀金名片
+item_ul_dealer_card_flavor,韦特朋友的名片，贵重品经销商。背面印着电话：{0}。
+dealer.card_tip,用店里的电话拨 {0} 订货：第二天送到，批发价。
+dealer.intro.1,韦特跟我打过招呼了。你就是那个新店长？
+dealer.intro.2,我做贵重品：雪茄、香氛、上好的药品，上层人离不开这些。
+dealer.intro.3,要货就打这个电话，第二天派人送到，按批发价算。
+dealer.intro.4,先从小单做起。在我这花够了钱，大单我也接。
+dealer.intro.5,这次先给你送一批小的，算见面礼的价钱。
+dealer.reg.1,贵重品，请讲。
+dealer.reg.2,这次要多少？
+dealer.c_small,来一批小的（约 {0} 信用点的货）。
+dealer.c_big,来一批大的（约 {0} 信用点的货）。
+dealer.c_hang,下次再说。
+dealer.ready,明天送到。现钱准备好。
+dealer.bye,好。
+dealer.cool.1,上一批的货还在调。
+dealer.cool.2,{0} 天后再打来。
+dealer.courier.name,经销商的快递员
+dealer.courier.1,经销商让我送来的。批发价，要就整批拿走。
+dealer.courier.done,货款收到，告辞。
+act1.oscar.fee,这是八百信用点。
+item_ul_roast_beef_name,慢烤牛肉
+item_ul_roast_beef_flavor,"真牛的肉，切开还是粉的。下层区的人一辈子吃的都是""泥炭""。"
+item_ul_grilled_salmon_name,香煎三文鱼
+item_ul_grilled_salmon_flavor,养殖舱里游过的真鱼。皮煎得脆，配一角柠檬。
+item_ul_veg_soup_name,时蔬浓汤
+item_ul_veg_soup_flavor,胡萝卜、南瓜、芹菜，全是水培舱里长的，熬了一早上。
+item_ul_pork_sausage_name,手工猪肉香肠
+item_ul_pork_sausage_flavor,肠衣是真的，肉也是真的。三根一扎，麻绳捆着。
+item_ul_roast_veggies_name,烤时蔬拼盘
+item_ul_roast_veggies_flavor,"彩椒、西葫芦、小番茄，烤到边上发焦。上层区的人管这叫""清淡""。"
+item_ul_lamb_skewers_name,烤羊肉串
+item_ul_lamb_skewers_flavor,真羊肉，肥瘦相间，炭火烤的。两串。
+item_ul_chicken_pie_name,鸡肉蘑菇派
+item_ul_chicken_pie_flavor,酥皮一碰就掉渣，里面是奶油鸡肉和真蘑菇。
+item_ul_meat_pasta_name,番茄肉酱意面
+item_ul_meat_pasta_flavor,番茄熬的酱，牛肉末，上面撒一把真奶酪。
+item_ul_antibiotic_ampoule_desc,伤口没稳住时使用：防住感染，伤口稳住。
+battle.drag,[拖一具尸体回去]
+battle.drag_hint,地上有 {0} 具尸体。一晚只带得回一具，要带哪具，自己放进口袋或背包（地上的不会自动带走）：放背包里带回，警察局、革命渗透部、共和国的声望各 -2（拖尸体最多扣到 -60）；塞在左右口袋里的不扣。随身放了好几具，只留最新鲜的那具。
+battle.drag_done,你挑了最新鲜的那具，走的时候拖回去。
+battle.dragged,今晚已经拖了一具，再拖就走不动了。
+item_ul_blood_kit_name,放血器
+item_ul_blood_kit_flavor,诊所淘汰下来的全套放血设备：导管、针头、手泵、止血夹，装在一只黑匣子里。
+item_ul_blood_kit_desc,拖到一具没放过血的尸体上才能放血，放出一袋血。尸体越新鲜，血袋越大。
+item_ul_blood_bag_s_name,血袋（小）
+item_ul_blood_bag_s_flavor,标签上只写了血型和日期，没写从哪来的。
+item_ul_blood_bag_m_name,血袋（中）
+item_ul_blood_bag_m_flavor,上层区的诊所从不问来路，只问是不是今天的。
+item_ul_blood_bag_l_name,血袋（大）
+item_ul_blood_bag_l_flavor,满满一袋，够一台手术用。
+blood.done,放完了，得到一个{0}。
+blood.bled_tip,放过血了
+item_ul_mat_aluminum_name,压缩“铝”块
+item_ul_mat_aluminum_flavor,上层区一天喝掉的易拉罐，压成一块。拿去熔了，还是好铝。
+item_ul_mat_copper_name,紫铜管边角
+item_ul_mat_copper_flavor,装修换下来的真铜水管，截成一段一段，用铁丝捆着。
+item_ul_mat_glass_name,碎玻璃料（一袋）
+item_ul_mat_glass_flavor,酒瓶、香水瓶、花瓶的碎片，分好颜色装袋。回炉还能再吹。
+item_ul_mat_carbon_name,碳纤维边角板
+item_ul_mat_carbon_flavor,定制飞车、自行车剩下的边角料，又轻又硬。
+item_ul_mat_cotton_name,真棉碎布包
+item_ul_mat_cotton_flavor,裁缝铺剪下来的真棉布头，一捆一捆扎好。下层区的人拿它当好布料。
+item_ul_mat_magnet_name,拆解稀土磁铁
+item_ul_mat_magnet_flavor,从扔掉的音箱、马达里拆出来的。几块吸在一起，掰都掰不开。
+item_ul_junk_perfume_bottle_name,空香水瓶
+item_ul_junk_perfume_bottle_flavor,名牌的瓶子，一滴不剩。闻一下还有点香。
+item_ul_junk_smartband_name,断带智能手环
+item_ul_junk_smartband_flavor,表带断了，屏幕也裂了。主人连数据都没删就扔了。
+item_ul_junk_cigar_box_name,空雪茄木盒
+item_ul_junk_cigar_box_flavor,雪茄抽完了，盒子还是好木头。底下剩一点烟叶末。
+item_ul_junk_toothbrush_name,坏电动牙刷
+item_ul_junk_toothbrush_flavor,镀金的手柄裂了，刷毛也秃了。上层区的人三个月换一支。
+battle.event.title,交火夜
+battle.event.desc,革命军和警察局今晚在这片街区交火
+battle.event.corpse,找到尸体的概率提高（30% → 55%）
+battle.event.fresh,尸体更新鲜
+battle.event.injury,受伤概率翻倍
+battle.event.spot,被巡逻撞见的概率翻倍
+ul_dialog_minor_lottery_3,我也是。好几年前中的，钱一到账就被共和国收走了。
+ul_dialog_minor_lottery_4,只给了我一张居留证，和一份在上层区打工的活儿。
+ul_dialog_minor_lottery_5,熬了这么些年，总算站稳了脚。你也会的。
+ngoods.adrenaline_done,心跳一下子快起来。还能再撑一会儿。
+battle.corpse_one_only,一晚只带得回一具，随身另外的{0}具扔在原地了。
+test_hotkey_night_done,测试：已经是第 {0} 天晚上了，可以出门。
+test_hotkey_night_busy,测试：现在跳不了（卷帘门在动、有人被抓或在交火），稍等再按。
+test_hotkey_night_outside,测试：先回店里再按。
+battle.corpse_carried_rep,你把{0}具尸体拖回了店里。警察局 -{1}、革命渗透部 -{2}、共和国 -{3}（拖尸体最多扣到 {4}）。
+reg.notify,{0}：{1}
+reg.notify.up,{0} +{1}
+reg.notify.down,{0} -{1}
+reg.notify.sep,，
+reg.notify.capped,（{0}已到 +{1}，常客不再加）
+reg.arthur.hi1,又是我。老样子，烟，有酒更好。
+reg.arthur.hi2,这周又少了两个人。别问，给我拿包烟。
+reg.arthur.hi3,下了班就想来你这儿坐坐。有好酒吗？
+reg.tax.hi1,例行巡查，共和国税务处。
+reg.tax.hi2,从上次到现在，你卖了 {0} 信用点。按 {1}% 算，合规费 {2}。
+reg.tax.pay,交 {0}。
+reg.tax.extra,交 {0}（多交 {1}，算我支持共和国）。
+reg.tax.refuse,这次不交。
+reg.tax.thanks,收到。手续齐全，下周见。
+reg.tax.extra_thanks,……共和国记得每一位支持者。我会写进报告的。
+reg.tax.refused,“自愿”嘛，我懂。我也会照实写进报告。
+reg.oscar.hi1,老伙计！爷爷又在盘点了，我得补几件像样的东西回去。
+reg.oscar.hi2,有没有拿得出手的？要真货，家里人眼睛毒。
+reg.oscar.hi3,我又来了。这回带够钱了，真的。
+reg.oscar.remind,上次托你的{0}，找到了吗？
+reg.oscar.ask,对了，下次能帮我留一件{0}吗？家里正缺这个。
+reg.oscar.bye,就这么说定了，替我保密啊。
+reg.liaison.name,渗透部联络员
+reg.liaison.hi1,别看门口。我只买东西，买完就走。
+reg.liaison.hi2,药，罐头，什么都行。下面的人等着用。
+reg.liaison.hi3,钱不多。你开个公道价，我们记着。
+reg.liaison.remind,上次说的{0}，有吗？有人等着这个救命。
+reg.liaison.ask,下次能帮我弄一件{0}吗？急用。
+reg.liaison.bye,谢了。今天的事，你没见过我。
+rep_perk_ULF_COUNCIL_RELIEF_name,税务减免
+rep_perk_ULF_COUNCIL_RELIEF_desc,共和国工作人员每周巡查收的合规费，从营业额的 1% 降到 0.5%。
+rep_perk_ULF_COUNCIL_RELIEF_flavor,“按时交的，我们心里有数。”
+rep_how_upper,怎么涨：卖东西给上层区的客人（每天最多 +1）；私人交换会每周能用两件艺术品换一次。\n怎么跌：举报上层区的客人。
+rep_how_police,怎么涨：亚瑟警司每周来买烟酒（常客最多带到 +60）；征用官；打改造体、举报通缉犯；报警器传输模组。\n怎么跌：把尸体拖回店（最多扣到 -60）。
+rep_how_rev,怎么涨：渗透部联络员每周来收药和罐头（常客最多带到 +60），交齐他的急需单再加；把器官卖给革命军战地医生。\n怎么跌：把尸体拖回店（最多扣到 -60）；照顾亚瑟警司的生意。
+rep_how_council,怎么涨：每周巡查时交合规费（常客最多带到 +60，第一次交再 +20）；多交 500 再加。\n怎么跌：不交合规费；把尸体拖回店（最多扣到 -60）。
+rep_how_vanderlin,怎么涨：奥斯卡每周来收奢侈品（常客最多带到 +60）；替他找到指定的那件再加。\n怎么跌：交合规费（共和国巡查）。
+battle.corpse_pocket,你把口袋里那具尸体带回了店里。没人看见，声望没掉。
+test_hotkey_regulars,测试：亚瑟警司、共和国巡查、奥斯卡、渗透部联络员今天都来。
+reg.arthur.interest,烟酒类
+pex.give.organ4,4 件原生器官（打印的、烂的不算）
+item_ul_thorne_card_name,索恩的名片
+item_ul_thorne_card_flavor,诊所索恩的名片，背面手写着一个号码：{0}。
+item_ul_doctor_card_name,私人医生的名片
+item_ul_doctor_card_flavor,上层区私人医生的名片，印着出诊电话：{0}。
+phone.thorne.card_tip,用店里的电话拨 {0}，约索恩明天来收器官（冷却 6 天）。
+phone.doctor.card_tip,用店里的电话拨 {0}，约私人医生明天上门（冷却 7 天）。
+phone.thorne.name,诊所索恩
+phone.doctor.name,私人医生
+phone.thorne.intro1,是你啊。名片收好了？
+phone.thorne.intro2,货多了就打给我，我抽空过去。
+phone.thorne.hello,诊所，索恩。有货？
+phone.thorne.ok,明天过去。东西冷藏好。
+phone.thorne.bye,那就别占线。
+phone.thorne.cool,我刚去过你那儿。
+phone.doctor.intro1,您好，私人诊疗。
+phone.doctor.intro2,需要药品或者出诊，打这个电话预约。
+phone.doctor.hello,私人诊疗，请讲。
+phone.doctor.ok,好，明天上门，急救包也带上。
+phone.doctor.bye,好的，再见。
+phone.doctor.cool,这周的出诊排满了。
+phone.cool_days,{0} 天后再打来。
+phone.c_come,明天能来一趟吗？
+phone.c_hang,没事，打错了。
+phone.no_answer,……没人接。
+rep_how_helios,怎么涨：赫利俄斯家的管家每 4 天来买新鲜食物（常客最多带到 +60）。\n怎么跌：得罪赫利俄斯家的人。
+item_ul_smuggler_bay_small_name,小号走私者暗格
+item_ul_smuggler_bay_small_desc,3×3 的小暗格，放不了多少东西。盘查时不搜里面的东西。
+ul_kai_thorne_contact_title,索恩的联系方式
+ul_kai_thorne_contact_desc,凯把诊所索恩的私人号码给你（{0}），附一张名片。货多的时候打过去，他第二天就来收器官（每 6 天能约一次）。
+ul_kai_doctor_contact_title,私人医生的联系方式
+ul_kai_doctor_contact_desc,凯介绍一位上层区的私人医生给你（{0}），附一张名片。打电话约他第二天上门卖药，每次都带自动缝合急救包（每 7 天能约一次）。
+phone.thorne.unlocked,索恩的名片放在店里了。用电话拨 {0}。
+phone.doctor.unlocked,私人医生的名片放在店里了。用电话拨 {0}。
+pex.give.organ_set,原生的心脏、左肺、右肺、左肾、右肾各 1 件（烂的不算）
+pex.give.good_heart,1 件完好的原生心脏
+pex.give.good_organ,任意 1 件完好的原生肺或肾
+pex.get.rep_random,警察局、革命渗透部、共和国随机一个声望 +5
+pex.give.melon,1 个礼盒蜜瓜
+pex.get.samurai,"1 瓶""武士""实验信息素原液"
+pex.give.samurai10,"10 瓶""武士""实验信息素原液"
+pex.get.siyang,"1 瓶""思扬""自动补充香水"
+pex.give.junk10,任意 10 件上层区垃圾（回收站翻到的那几种）
+pex.get.cigar,1 盒路维斯特雪茄
+act1.dex.bye,行，我先回去了。有事打警察局。

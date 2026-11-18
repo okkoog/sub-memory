@@ -1,12 +1,13 @@
-# Faction Reputation Expansion v1.5.8
+# Faction Reputation Expansion v1.5.8.1
 
 ## Update notes
 
-This is the 1.5.8 legacy-save migration edition. It converts old saves to official ModData; load and save each old save once, then switch back to the capability-free standard edition. See the Workshop change note for the regular 1.5.8 changes.
+This is the 1.5.8.1 migration build and includes the 1.5.8.1 update. See the in-game F6 "Update Log" page for details.
+Fixed the Newborn Alliance requisition phone freezing and missing cooldown display.
 
 ## Installation
 
-Enable the mod in the main menu's Mods screen, then restart. This migration edition requires the file capability; after conversion, switch back to the standard edition, which requests no extra capabilities.
+Enable the mod in the main menu's Mods screen, then restart. The standard edition uses the official save-data API and requests no extra capabilities.
 
 For local installation, close the game and copy the entire `FactionReputationExpansion` folder into the game's `Mods` folder. The manifest belongs at `Mods/FactionReputationExpansion/manifest.xml`, beside the DLL. The full game does not require MelonLoader. Avoid duplicate copies or old DLLs; a local copy with the same ID takes priority over Workshop content.
 
