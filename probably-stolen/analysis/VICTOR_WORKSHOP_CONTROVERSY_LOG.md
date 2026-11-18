@@ -1132,3 +1132,58 @@ xuxu 쪽: Brewing 359개, Tobacco 794개, **합계 1,153개**.
 ## 25. 누적 검사 기록 추가
 
 - **8차 기록 (2026-11-18):** 실제 DLL 7개, 내부 메서드와 타입, 사용자 문자열, 2,117개 텍스처 파일에 대해 GitHub 저장본끼리 교차 비교. **복제의 직접적인 일치 증거는 발견되지 않음.** 기존 0.9.0 직접 병합 의혹과 별도의 증거 범위를 명시.
+
+---
+
+## 26. 구조적 유사성 확대 검사 — 2026-11-18
+
+**검사 취지:** 기존 바이트 일치 비교를 넘어서 IL opcode의 구조적 유사성, 변수·토큰·분기 거리 정규화, 연속 5개 명령어 패턴(n-그램), 메서드별 문자열·호출 함수·분기 수를 교차 확인했다. 컴파일러 생성 코드, 생성자, 정적 초기화와 공통 게임 API가 만들어 내는 유사성은 낮게 평가한다.
+
+### 26.1 검증에 사용한 초기 모듈과 동시기 xuxu 코드
+
+- 분리 모듈 최초 GitHub 백업: 2026-11-12 커밋 \`184d2ca99a07\`. Food / Farming / Water / Drinks / Storage는 모두 **v0.6.0**.
+- xuxu 양조 확장: 2026-11-03 커밋 \`1827f2c47246\`의 **v3.6.7.6**, 2026-11-04 커밋 \`421b4a3279d8\`의 **v3.6.7.7**.
+- xuxu 담배 확장: 2026-11-04 커밋 \`421b4a3279d8\`의 **v0.5.3.5**.
+- 초기 빌드 메서드 수: Food 468 / Farming 125 / Water 267 / Drinks 937 / Storage 422. 초기 원본 메서드 수: 양조 916 및 935 / 담배 1,277.
+- 24절에서 다룬 최신 보존본 간 비교 결과와 함께 판단하되, **초기·최신 빌드를 혼동하지 않는다.**
+
+### 26.2 구조 비교 방법
+
+1. GitHub에서 실제 DLL 바이너리를 base64로 읽고 .NET PE/CLI 메타데이터 및 메서드 IL 본문을 해석했다.
+2. 지역변수 번호, 일부 명령어의 short/long 형식, 메서드 참조 토큰과 분기 오프셋 차이를 정규화하고 IL opcode의 **연속 5-그램 집합**을 구축했다.
+3. 각 메서드 쌍의 Jaccard, 짧은 쪽 5-그램의 포함 비율, 길이 비율로 후보를 검색했다. 빈번한 공통 패턴을 일부 제외했다.
+4. 고유 사용자 문자열(\`ldstr\`), 호출 API 이름, 분기 수, 메서드 역할을 확인했다. **일반적인 생성자·정적 초기화(\`.cctor\`)·컴파일러 생성 상태 머신**과 고유 게임 로직을 분리했다.
+5. 초기에 확인된 **조건 충족 후보 쌍 50개** 가운데 자동 생성·정적 초기화 등은 제외하면 **14개**. 단, 양조 확장의 두 과거 버전을 각각 비교했으므로 14건이 독립된 14개 코드 복제를 뜻하지 않는다.
+
+### 26.3 대표적인 후보와 판별
+
+| 분리 모듈 v0.6.0 | xuxu 원본 | 5-gram Jaccard | 의미와 한계 |
+|---|---|---:|---|
+| Food \`KitchenDish..ctor\` | Brewing \`Definition..ctor\` | **1.000** | 42/30 명령어, **분기 0, 공통 문자열 0, 고유 공통 호출 0**. 단순 필드 초기화 생성자의 구조적 동일성. 실질적인 코드 도용 증거 아님 |
+| Farming 및 Drinks \`VegetableCatalogue..cctor\` | Brewing \`BrewingSeeds..cctor\` | **0.643** | 144/132 명령어. **분기 0, 공통 문자열 0**. 배열/사전과 종자 목록 초기화의 형태가 닮았지만 **특징적인 동일 데이터·호출이 확인되지 않음** |
+| Drinks \`NeonBar.InitSealedSource\` | Brewing \`ModuleExpansion.Bind\` | **0.560** | 48/33 명령어, 분기 0/1, 공통 고유 호출·문자열 0. 일반적인 객체/모듈 바인딩 패턴 가능 |
+| Drinks \`NeonBarBook.Attach\` | Brewing \`RemainingConsumables.Bind\` | **0.444** | 47/34 명령어, 분기 3/3. 공통 \`set_mayActivateSlotItemFunc\`, \`set_canActivateSlotItemFunc\`, \`set_onActivateSlotItemFunc\`는 게임 UI 슬롯 설정 API |
+| Food \`NeonCooking.DirectPlan\` | Brewing \`MachineConnections.PrinterFor\` | **0.438** | 45/35 명령어, 분기 5/3, 공통 고유 문자열·호출 없음. 제작·장비 검색에서 발생 가능한 유사성 |
+| Drinks \`NeonBarBook.Attach\` | Tobacco \`CigaretteActions.Bind\` | **0.387** | 동일한 슬롯 UI 설정 API를 사용. 특정 작성자의 독창적 로직 재사용을 입증하지 않음 |
+| Water \`NeonWallDepot.Stop\` | Brewing \`FormalVisitors.CertificateLevel\` | **0.268** | 기능상 목적도 다르고 구조적 유사성도 낮음 |
+
+**오독 주의:** Jaccard 1.000은 IL opcode 5-그램 **집합의 유사도**이지 원래 IL의 바이트가 100% 같거나 소스 코드가 그대로 복제됐다는 뜻이 아니다. 패턴이 단순한 생성자와 정적 초기화는 높은 점수가 나와도 저작권 침해와 무관할 수 있다.
+
+### 26.4 결론
+
+- **고유 구현의 복제를 나타내는 결정적인 코드 구조·고유 문자열·특수 함수 호출의 결합은 발견하지 못했다.**
+- **완전 일치 검사에서 빠졌던 후보**는 확인됐다. 그러나 가장 높은 점수의 후보는 공통 생성자/정적 초기화 형태이고, 실제 기능 로직에서도 공통 게임 API 이외의 특이한 중복을 입증하지 못했다.
+- **검사 범위의 제한:** 리팩터링이나 재작성으로 opcode 배열이 달라진 경우, 게임 API 호출 방식만 참고한 경우, 일부 코드 구문만 옮긴 경우, 아예 과거 패키지에 원작 DLL을 동봉했다가 제거한 경우는 이 검사로 포착하지 못할 수 있다.
+- **중요한 시점 구분:** 여기서 분석한 것은 11월 12일 이후의 분리 모듈 및 당시 xuxu DLL. 원래 논란인 **11월 3일경 Neon Undertow 0.9.x의 실제 전체 배포 폴더**를 확보해 분석한 것이 아니다.
+- **현재 판단:** 최근 삭제된 Food/Farming/Water/Drinks/Storage 모듈이 xuxu의 코드를 그대로 가져왔거나 부분 수정했다는 가설은 **이번 확대 검사에서도 직접적인 기술적 뒷받침을 얻지 못했다**. 반면 과거 Neon Undertow의 '23개 hard-merged 모드 제거' 기록은 독립된 쟁점으로 남는다.
+
+### 26.5 비교에 사용한 GitHub 커밋
+
+- [초기 분리 모듈 커밋](https://github.com/okkoog/sub-memory/tree/184d2ca99a07/probably-stolen/mods)
+- [11월 3일 xuxu 양조 확장](https://github.com/okkoog/sub-memory/blob/1827f2c47246/probably-stolen/mods/3829730904/BrewingExpansion.dll)
+- [11월 4일 xuxu 양조 확장](https://github.com/okkoog/sub-memory/blob/421b4a3279d8/probably-stolen/mods/3829730904/BrewingExpansion.dll)
+- [11월 4일 xuxu 담배 확장](https://github.com/okkoog/sub-memory/blob/421b4a3279d8/probably-stolen/mods/3832840208/TobaccoExpansion.dll)
+
+## 27. 검사 이력 업데이트
+
+- **9차 (2026-11-18):** 초기 버전까지 추가해 구조적 IL 유사성을 확대 분석함. **유사 후보는 검출됐으나, 고유 로직의 강한 재사용 흔적은 발견하지 못함.** 0.9.x 통합본 미확보 한계를 명시.
