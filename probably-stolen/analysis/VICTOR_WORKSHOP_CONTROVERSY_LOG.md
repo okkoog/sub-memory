@@ -455,3 +455,193 @@ Lazy Duck — 20:28
 
 - **2차 기록 (2026-11-18):** 20:09~20:24 대화 추가. Victor 해명과 Lazy Duck의 통합 허락 요청 댓글 및 모드 소개·크레딧 이미지 설명 기록.
 - **3차 기록 (2026-11-18):** 20:26~20:28 대화 추가. 원작자 측이 제시한 코드·에셋 포함 주장 및 버전별 의존성/크레딧/댓글 변경 경과 기록. 관련 이미지들의 실제 파일 및 URL은 아직 GitHub 문서에 미보존.
+
+
+---
+
+## 9. 4차 기록: 2026-11-17 21:03~22:33 — GitHub 공개, 과거 버전 요구, 변경 로그 보존, 논쟁 격화
+
+> **근거:** 이용자가 2026-11-18 제공한 Discord 발췌본(전날 21:03~22:33), 이미지 2장, TXT 5종(중복본 포함), JSONL 2종(동일 내용). 기록의 **발언자·날짜·첨부 자료**는 제공본 기준이다. 실제 Discord 메시지 ID와 모든 증거 사진의 원본 URL은 미확인이다.
+
+### 9.1 사건과 직접 관계있는 발언의 시간순 정리
+
+| 표시 시각 | 발언자 | 발언 또는 사건 | 의미와 검증 범위 |
+|---|---|---|---|
+| 21:03 | Void Advisor L22B | Victor가 불리한 증거가 있다면 왜 요청받아 GitHub를 공개하겠냐는 취지로 반론 | **참가자의 추측**. 공개 자체는 과거 버전 무결성을 입증하지 않음 |
+| 21:04 | EikoocSun | 제작진이 삭제된 구버전, 특히 **여러 제작자를 크레딧에 올렸던 버전**을 확보해 줄 수 있는지 요청 | 구버전 확보 및 버전별 비교를 핵심 검증 방법으로 제시 |
+| 21:04 | Amba [STOL] | "**he just made it public. try again**" | 그 시점 GitHub 접근성이 변경됐다는 **Amba의 발언** |
+| 21:05 | EikoocSun | 단순한 사후 크레딧 추가에 의한 오해일 수 있다며 **오래된 버전을 찾으면 해소될 것**이라고 말함 | 침해 주장에 대한 반대 가설 |
+| 21:05 | Victor | "**as long as if you want to use our content ... just let us know**"라고 발언 | 타인의 콘텐츠 사용 시 통보·협의를 강조한 표현. 당시 허락 여부에 대한 해명은 아님 |
+| 21:05~21:07 | jarredminko·EikoocSun | 기존 버전 제거가 타인의 세이브를 깨뜨릴 수 있다는 문제와, 삭제된 모듈의 소스 파일 접근 문제를 언급 | 삭제 모드의 이용자 영향과 소스 보관 논쟁 |
+| 21:07 | Victor | "**Everything is still in the github / Just archived.**" | 저장소에 모든 것이 남아 있다고 주장. **실제로 논란 시기 구버전까지 남아 있는지는 미검증** |
+| 21:13 | Victor | 공개 저장소에 변경 요청이 들어오는 데 반응하며 공개했다고 마음대로 수정 요청을 해도 되는 것은 아니라고 말함 | 공개 저장소 관리에 관한 발언 |
+| 21:49 | RIchardTAN | 0.10.1 변경 로그에 **“Removed all third-party bundled code/assets and unused content.”** 문구가 있다는 증거를 언급 | 후술하는 보존된 로그에서 **해당 문구의 실제 기록 확인** |
+| 22:05 | RIchardTAN | 제공된 GitHub에는 이 변경 로그가 가리키는 구버전이 없으며 저장소가 사건 이후 만들어진 것 같다고 주장. Victor의 과거 Steam 계정 제재 및 사과 부재 문제도 제기 | **저장소 생성·완전성·계정 제재 관련 주장은 별도 확인되지 않음** |
+| 22:05~22:07 | Victor | 자신의 이전 발언에 사과 의향이 있었다고 반박. **VAC ban이 아니라 10년 전의 game ban**이라고 구별하며, 반대 측에도 소스 공개를 요구 | 계정 제재의 구체적인 형태는 상충된 주장. **저작권 의혹의 기술적 증거와 별개** |
+| 22:17 | RIchardTAN | 다른 제작자들이 수집한 두 문서가 코드 복사 경위를 보여줄 수 있다고 발표 | 사용자 첨부 문서는 **Steam 변경 내역 보존 및 해석 자료**. 코드 자체의 일치 비교는 아님 |
+| 22:22~22:30 | Leo [STOL], Moderator | 인신공격 금지, 24시간 타임아웃 가능성 등을 반복 경고 | 운영진이 공개 논쟁의 격화를 제지한 사실 |
+| 22:28 | EikoocSun | 의혹은 **0.10 버전**에 관한 것인데 상대 측 공개 저장소 기록은 **0.15 버전부터**라고 지적 | **버전 공백 지적**. 실제 저장소의 최초 이력은 미검증 |
+| 22:33 | Lazy Duck | 추가 캡처 6~9를 첨부했다고 기록 | 이 대화 발췌본에서 해당 4개 캡처와 파일 간 **일대일 대응 확인 불가** |
+
+### 9.2 논쟁의 변질 및 Moderation 개입
+
+- **22:03~22:33**에는 저작권 의혹보다 중국 이용자들의 협박 문제, 국적 일반화, 반대 측의 협박 책임 유무 등을 놓고 감정적 논쟁이 심해졌다.
+- **yamsi** 등 일부 참가자는 중국 이용자 집단이 Victor에게 살해 협박을 했다고 주장하거나, 문제 제기 측의 행동이 위협을 유발했다고 주장했다. 반면 **RIchardTAN**, **Askov** 등은 본인이 해당 행동을 조직했다는 증거를 요구하고 집단 전체를 동일시하지 말라고 반박했다. **이 자료에는 구체적인 협박 메시지 원본이 제시되지 않았다.**
+- 22:25 yamsi는 "I’ve never said you sent death wishes, I said your actions made people do it"이라고 자신의 주장 범위를 명시했다. 이를 RichardTAN이 직접 협박했다는 진술로 바꾸면 안 된다.
+- **Leo**가 인신공격 금지와 타임아웃을 경고했고, **Lemocuber**와 **HA会長** 등은 증거를 따로 제시할 공간과 양측의 자제를 요청했다.
+- 음성·인종·국적 관련 비하 발언은 **발언자의 말**로만 취급하고 어떠한 집단의 집단적 책임도 추정하지 않는다.
+
+### 9.3 별개의 기술 대화
+
+- jarredminko 등은 **RefugeeCamp.dll의 디컴파일·번역·재컴파일**과 dnSpy/ILSpy 사용, 의존 DLL, 폰트 표시 문제를 논의했다.
+- 사용자가 첨부한 이미지 2개는 각각 **RefugeeCamp.dll의 클래스 목록**과 **Side Mount/Top Mount 게임 효과 툴팁**이다.
+- 이것들은 Victor의 Neon Undertow 구버전 코드 복사 여부에 대한 증거가 **아니다**. RefugeeCamp의 코드가 편집되지 않는 현상, 중국어 폰트 표시 문제, 모듈 효과 편집 문의 역시 별개이다.
+- “uneditable part of code for some reason.txt”는 JSON 형식 데이터이지만 여러 텍스트 필드의 원문이 이미 **물음표(????)**로 저장되어 있다. **문자 원문을 복원하거나 저작권 침해 여부를 판단하는 근거로 사용할 수 없다.**
+
+## 10. 보존된 자료 검증: Neon Undertow 0.10.1 변경 로그
+
+### 10.1 확보한 원문 자료와 정확한 출처
+
+- **Steam 창작마당 아이템:** \`3833095213\`, Neon Undertow
+- **변경 내역 페이지:** https://steamcommunity.com/sharedfiles/filedetails/changelog/3833095213?p=4
+- **기록상 버전:** \`0.10.1\`
+- **기록상 작성자:** \`Victorp1811\`
+- **Steam에 표시된 갱신 시각:** **Nov 3 @ 1:06pm** (표시 시간대 정보 없음)
+- **수집 기록:** 이용자가 제공한 Codex JSONL 세션 로그의 **물리적 1246번째 줄**, 해당 도구 응답 안의 **L97~L101**.
+- **원본 도구 응답 저장 시각:** **2026-11-17 12:36:14.700 UTC** (중국 표준시 20:36:14.700).
+- **출처 성격:** 당시 Steam 페이지를 검색 도구가 읽어 반환한 **텍스트 응답의 보존본**이다. 직접 찍은 원본 웹페이지 스크린샷이나 Steam 내부 기록과 동급의 검증 자료는 아니다.
+
+**보존 응답의 L100:**
+
+> 0.10.1: Renamed to Neon Undertow: NPC Total Overhaul + More. Removed all third-party bundled code/assets and unused content. Original Brewing Expansion and Tobacco Expansion by xuxu are required separately. Preserved original Neon NPCs, factions, waterworks, storage and shops; added 20 regular soda brands with five condition appearances each, source-water quality and packaging inspection. Existing saves with removed components need the corresponding originals or a fresh playthrough.
+
+**번역 요지:** 0.10.1에서 Neon Undertow의 이름을 변경하고 **제3자 코드를 묶어 넣은 부분·제3자 자산 및 사용하지 않는 콘텐츠를 제거**했으며, **xuxu의 Brewing Expansion과 Tobacco Expansion을 개별 필수 모드로 사용하도록 변경**했다고 기재되어 있다. 이전 저장 데이터에 제거된 요소가 있다면 원작 모드를 설치하거나 새로 시작해야 할 수 있다고도 안내한다.
+
+**L101:** 자동 검사는 통과했지만 실제 게임 내 마이그레이션 검증은 아직 수행되지 않았다고 설명.
+
+**추가 맥락:** 사용자가 제공한 \`read me.txt\`에는 **0.9.1(11월 3일 오전 11:32)**에서 병합된 물품의 텍스처 경로를 수정했다는 언급, **0.10.2(11월 3일 오후 2:55)**에서 게임 DLL·텍스처가 0.10.1과 동일하고 Brewing·Tobacco의 동시 사용을 다시 강조했다는 정리가 있다. 이 날짜와 내용 역시 수집된 도구 응답을 인용한 문서에 근거한다.
+
+### 10.2 기록 무결성 검사 — 실제 첨부 파일로 확인
+
+| 자료 | 파일 크기 | SHA-256 / 확인 사항 |
+|---|---:|---|
+| \`rollout-2026-11-17T17-27-35-01a1e8d5-4d7f-76b0-96a2-66e0ab72a008.jsonl\` | **6,713,374바이트** | \`fb4c536fea5ad718d2e0b8457a4bcd35e9355e5d0e75b85d97ee5ee8bc3ba8af\` |
+| 같은 이름에 \`(1)\`이 붙은 중복본 | **6,713,374바이트** | **동일한 SHA-256. 두 첨부의 내용이 바이트 단위로 같음** |
+| \`Exhibit A - Neon Undertow 0.10.1.txt\` | **2,444바이트** | 설명문/출처 기록. 동일명 \`(1)\` 파일과 완전 동일 |
+| \`Evidence Preservation Note - Neon Undertow 0.10.1.txt\` | **2,780바이트** | 원본 로그의 출처·보존 과정·한계 설명 |
+| \`read me.txt\` | **2,416바이트** | 0.9.1/0.10.1/0.10.2의 경과를 요약한 **2차 설명문** |
+| \`His mod description.txt\` | **2,943바이트** | **0.9.0**으로 표기된 상세 소개문의 발췌 텍스트 |
+
+**검사 결과:** 업로드된 JSONL을 실제로 읽어, **물리적 1246번째 줄의 텍스트에 0.10.1 변경 로그 원문이 포함되어 있음**을 확인했다. 보존 문서에 적힌 파일 크기 및 SHA-256도 일치한다. **해시가 보장하는 것은 파일 내용의 동일성이지, Steam 서버에서 보낸 당시 원문이라는 사실의 독립적인 인증이 아니다.**
+
+### 10.3 0.9.0 설명과 0.10.1 변경 내역을 대조할 때의 의미
+
+사용자가 제출한 \`His mod description.txt\`의 **0.9.0** 설명에는 아래의 문장이 있다.
+
+> Disable standalone copies of its merged components. Credits are acknowledgments, not a list of extra mods to install.
+
+> This overhaul combines community modders' work. I manually patched and merged conflicts where included mods overwrote one another, so their parts could work together.
+
+이는 당시 **병합된 구성요소의 개별 모드 버전을 사용하지 말라**고 안내하면서 **커뮤니티 제작자들의 작업을 통합·수정·병합했다고 소개**한 내용이다.
+
+반면 보존된 **0.10.1 변경 로그**는 **제3자의 통합 코드·에셋을 제거하고 Brewing·Tobacco를 별도 필수 모드로 설정**했다고 설명한다.
+
+**판단:** 이런 연속된 문구는 **그 이전에 제3자의 코드나 자산이 배포물에 통합돼 있었다는 해석을 상당히 구체적으로 뒷받침한다**. 단순히 제작자 이름을 감사 인사로 적었다는 상황만을 가리키는 표현은 아니다. 그러나 **원본 코드가 정확히 무엇이었는지, 특정 제작자의 권리 침해가 발생했는지, 라이선스와 허락 조건이 무엇이었는지**는 실제 구버전 배포물·원본과의 비교 없이 판단할 수 없다.
+
+### 10.4 날짜 순서의 주의점
+
+- Steam에 표시된 0.10.1 수정 시각: **11월 3일 오후 1:06**, 시간대 미확인.
+- Lazy Duck이 Tobacco Expansion 댓글에서 병합 제안을 확인했다고 말한 시각: **11월 4일 오전 3:34**, 베이징 시간.
+- 따라서 **제3자 파일 제거를 발표한 변경 로그가 Lazy Duck이 댓글을 발견한 날짜보다 빠르게 나타난다**. 하지만 Steam 표시 시각의 시간대도, 해당 댓글의 실제 게시 시각도 완전히 독립 확인된 것은 아니다. **댓글 발견 시점과 댓글 작성 시점은 다를 수 있다.**
+
+### 10.5 아직 해결되지 않은 질문
+
+1. **0.9.0 또는 0.9.1 구버전 DLL·에셋 원본을 확보할 수 있는가?** 관련 창작마당 게시물이나 GitHub 기록의 실제 해당 버전이 필요.
+2. 0.10.1에서 말한 "**third-party bundled code/assets**"의 구체적인 파일·제작자는 누구인가?
+3. Brewing·Tobacco의 필수 모드 지정 전후에 실제 콘텐츠가 **복제→제거**된 것인가, 아니면 다른 형태로 병합됐던 것인가?
+4. Victor가 “Everything is still in the github, just archived”라고 말한 **전체 이전 버전 이력**이 실제로 존재하는가? EikoocSun은 **0.10과 0.15 사이의 자료 공백**을 주장했다.
+5. Victor가 받았다는 협박과 반대 측의 연관성이 주장될 경우 **각각의 메시지·행위에 대한 개별 증거**가 제시되는가?
+6. **Vanilla Overhaul 구성 모드 5개(Food·Farming·Water·Drinks·Storage)의 최근 공개 중단**과 위 과거 사건 사이의 직접적인 인과관계는 무엇인가? **현 기록만으로 연결되지 않는다.**
+
+## 11. 핵심 원문 발췌 — 21:03~22:33
+
+아래는 판별에 영향을 주는 표현을 원문으로 남긴 **선별 발췌**다. 이 시간대에 제공된 모든 잡담·공격적 발언을 빠짐없이 재현한 전문은 아니다.
+
+~~~text
+Void Advisor L22B [TBND] — 21:03
+Richard and Lazy Duck seem pretty much entirely confident they are right, and I don’t see why Victor would make the GitHub public if it was incriminating, especially not at the request of someone with no power, so I believe this argument will continue after checking the GitHub
+
+EikoocSun — 21:04
+By the way, could the developers try to find the removed of the mods, especially the version that included all those acknowledgments, since it's your Workshop?
+If possible, all problems can be solved.
+
+Amba [STOL] — 21:04
+he just made it public. try again
+
+EikoocSun — 21:05
+I'm more inclined to believe this is a misunderstanding caused by adding acknowledgments after the fact.
+Finding an older version will resolve this.
+
+Victor — 21:05
+I mean, as long as if you want to use our content we make or come up with ideas for, just let us know we are very open ❤️
+
+jarredminko — 21:05
+if you remove the legacy version then it will break other peoples saves
+
+Victor — 21:07
+Everything is still in the github
+Just archived.
+
+Victor — 21:13
+Oi... just because I made it public doesn't mean you can request to change stuff. You guys know I can see those requests right.
+
+RIchardTAN — 21:49
+Update: we check the snapshots of the mod’s workshops update record, which shows that “Removed all third-party bundled code/assets and unused content. Original Brewing Expansion and Tobacco Expansion by xuxu are required separately.”
+
+RIchardTAN — 22:05
+The GitHub we have checked for now doesn’t exist the version mentioned above, which could be the result of deleted or not uploaded. We highly doubt that this hub is not the true hub. Further more this description makes us hard to believe that there was no copied codes before the version of this change log. It is important that Victor does not get our trust, and he hasn’t proved that he can be trusted for now. Furthermore, we found that there was a VAC ban on Victor’s account. And Victor still hasn’t give us any apology for listing the mod creators names and mods on mod’s detail page without informing us before. Thus, we hope the decision to let Victor become only moderator is improper, just like what we mentioned above.
+
+Victor — 22:05
+What? I said I would apologize above?
+
+Victor — 22:06
+Also i don't have a Vac ban, I have a 10 year old game ban, from a old mistake I did when I was way younger, people make mistakes.
+
+Victor — 22:07
+In turns of transparency, can you please also release your code to the public?
+
+RIchardTAN — 22:17
+This two documents is collected by our members, which may show the details of codes’ copy.
+
+Leo [STOL], Moderator — 22:22
+Again: Personal attacks of any kind are not tolerated on this server. Anyone who targets another member will be timed out. Consider this your final warning.
+
+RIchardTAN — 22:24
+So you charging us to be responsible for the things we never do? Ridiculous
+
+yamsi [SANC] — 22:25
+I’ve never said you sent death wishes, I said your actions made people do it.
+
+EikoocSun — 22:28
+One side is questioning version 0.10, while the other side provides repository records starting from version 0.15.
+
+Lemocuber — 22:30
+maybe a separate channel for the controversy? idk
+
+HA会長 [STOL] — 22:31
+Yeah, everyone calm down first. Accusations still need a solid chain of evidence, whether it's death threats or plagiarism scandals.
+
+EikoocSun — 22:33
+Clearly, only individuals have the potential to bear legal responsibility. Blaming the broad concept of "Chinese people" will not bring any benefit.
+
+jarredminko — 22:33
+mind you victor never showed any of the death threats or names
+
+Lazy Duck — 22:33
+첨부 6~9 (캡처 원본과 번호의 대응 확인되지 않음)
+~~~
+
+## 12. 누적 기록 이력 추가
+
+- **4차 기록 (2026-11-18):** 21:03~22:33 대화 추가. 공개 GitHub, 삭제된 구버전 자료 요청, 0.10.1 변경 내역과 기술·운영 논점 기록.
+- **첨부 검증:** 제공된 JSONL 2개가 일치함을 SHA-256으로 검사. 물리적 1246행에 0.10.1 관련 변경 로그가 실제 존재함을 확인. 보존 문서·설명문·기술 스크린샷의 증거상 한계를 기록.
