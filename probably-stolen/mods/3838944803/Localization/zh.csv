@@ -684,7 +684,7 @@ uc.doctor.2,诊所换了供货商，这批库存得清掉。
 uc.doctor.3,都是正规渠道的货，有单据。
 uc.researcher.name,实验室研究员
 uc.researcher.1,你好，我是赫利俄斯研究院的研究员。
-uc.researcher.2,实验室在换器材，旧的试剂和量具便宜给你。
+uc.researcher.2,实验室清库存，旧的试剂、多出来的样品便宜给你。
 uc.researcher.3,另外，你这儿要是有化学用品，我按市价收。
 uc.moving.name,搬家的住户
 uc.moving.1,我下个月搬到环区另一头，新房子小，放不下这么多东西。
@@ -1339,7 +1339,7 @@ scenario.organ.title,器官贩子
 scenario.organ.desc,上层区不缺打印的器官，又便宜又合法。可有钱人要原生的，原生的只能从死人身上取。
 scenario.organ.with1,一台解剖机和一块电池
 scenario.organ.with2,一个器官冷藏箱
-scenario.organ.with3,交火区的位置
+scenario.organ.with3,诊所索恩的门路：每周上门收器官
 scenario.organ.tag,高危
 item_ul_organ_heart_name,原生心脏
 item_ul_organ_heart_flavor,没打印过的心脏。上层区的诊所只收这种。
@@ -1377,7 +1377,7 @@ battle.tries_left,今晚还能翻找{0}次（共{1}次）。
 battle.wounded,你受伤了。用绷带之类的处理好伤口，就能接着翻。
 battle.risk,轻伤 {0}%　重伤 {1}%　被撞见 {2}%
 battle.search,翻找
-battle.found_corpse,你找到一具刚断气的。想带走的话，一晚只拖得动一具。
+battle.found_corpse,你找到一具刚断气的。想带走就放进口袋（背包里放不了），一晚最多带回两具。
 battle.found_scrap,你捡到一些能卖的零碎。
 battle.found_nothing,什么也没找到。
 battle.luck_saved,差点被流弹擦到。运气不错。
@@ -1923,7 +1923,7 @@ readme.p2.body,1. 房租是下层区的三倍哦，一周一交，别忘啦。\n
 readme.p4.title,凯·王尔德
 readme.p4.body,1. 凯是乔的表弟，不过他混得好，其实就是上层区的王哥。\n\n2. 他的服务和原来的王哥一样，都是打电话。\n\n3. 店里接水管啊什么的，都找他。
 readme.p5.title,派系
-readme.p5.body,上层区有四家：\n\n共和国（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）\n\n每周都有一位常客上门，照顾他的生意，对应那一栏就涨（常客最多带到 +60）：\n· 警察局：亚瑟警司，买烟酒\n· 革命渗透部：渗透部联络员，收药和罐头\n· 共和国：税务巡查，交合规费\n· 范德林家族：奥斯卡，收奢侈品\n照顾亚瑟会让革命渗透部掉一点，交合规费会让范德林掉一点。
+readme.p5.body,上层区有四家：\n\n共和国（就是总管这块空间站的）\n\n赫利俄斯财团（就是上层区的财阀）\n\n范德林家族（就是上层区的老钱家族 hhh）\n\n革命渗透部（就是革命军在上层的部门）\n\n每周都有一位常客上门，卖给他一件东西，对应那一栏 +0.1（常客最多带到 +60）：\n· 警察局：亚瑟警司，买烟酒\n· 革命渗透部：渗透部联络员，收药和罐头\n· 共和国：税务巡查，交合规费\n· 范德林家族：奥斯卡，收奢侈品\n卖东西给谁都不会让别家掉声望。
 readme.p6.title,晚上
 readme.p6.body,打烊以后可以出门：沙龙、跟你职业有关的地方，还有些不太正经的地方。\n\n晚上出去可能受伤、被人看见、留下证据。第二天还得开店。
 readme.p7.title,店里的东西
@@ -1953,7 +1953,7 @@ item_ul_smuggler_bay_name,加大走私者暗格
 item_ul_smuggler_bay_desc,改装过的走私者暗格，比普通的宽一列。盘查时不搜里面的东西。
 heist_loot_carried,你把{0}件东西带回了店里。
 heist_loot_no_room,店里放不下，{0}件东西只能丢下。
-pex.name_contact,交换会联络人
+pex.name_contact,可萨
 pex.intro.1,晚上好。我替一个小圈子来的。
 pex.intro.2,上层区有些东西，不方便走账，也不方便让人看见。
 pex.intro.3,所以我们弄了个私人交换会，只跟熟人换。
@@ -2046,7 +2046,7 @@ uc.water_resident.2,有瓶装泉水吗？密封的那种。
 uc.water_corp.name,企业采购代表
 uc.water_corp.1,公司的会议室和高管层要用水。只要优质的。
 uc.water_corp.2,纯度够高，价钱好说。
-pex.give.smuggler,"走私者暗格（5×5）+ 8 袋""蓝血"""
+pex.give.smuggler,"走私者暗格（5×5，器官贩子的加大暗格也行）+ 8 袋""蓝血"""
 pex.give.smuggler_big,"加大 / 小号走私者暗格 + 8 袋""蓝血""（扩建用过的套件退回）"
 pex.get.smuggler,改装走私暗格（8×8，盘查时不搜）
 salon_talk_leave,（先不聊了）
@@ -2100,9 +2100,9 @@ ul_dialog_tourist_greet_5,所有人都说这一带贵得离谱。所以我当然
 ul_dialog_tourist_deal_2,听说我在这儿能找点乐子？
 ul_dialog_tourist_weapon_greet_2,他们说这一带的店都死贵，可我倒觉得挺有意思。
 ul_dialog_tourist_weapon_greet_3,今天来逛逛空间站最有钱的区域。文化气息可真浓！
-test_hotkey_update,测试（上次更新）：发了一具新鲜尸体和一个放血器。把放血器拖到尸体上放血。
+test_hotkey_update,"测试（上次更新）：发了 5 瓶""武士""（私人交换会换思扬）、材料霓虹灯牌（摆进橱窗，请来的卖家带新材料）、加大走私者暗格（6×5）。"
 corpse_name_fresh,{0}（新鲜度 {1}%）
-battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。一晚只拖得动一具。
+battle.found_corpse_old,你找到一具，放了有几天了（新鲜度 {0}%）。一晚最多带回两具。
 battle.found_corpse_rotten,你找到一具，已经烂了，拆不出东西。
 bdoc.name,黑心医生
 bdoc.1,看到你的灯了。
@@ -2111,7 +2111,7 @@ item_ul_organ_printer_name,3D 器官打印机
 item_ul_organ_printer_desc,用生物墨水和细胞样本打印器官。只在有电的晚上干活。
 item_ul_organ_printer_flavor,打出来的东西能用，就是谁都看得出是打的。
 item_ul_organ_printer_note_name,打印机说明
-item_ul_organ_printer_note_flavor,墨水 / 样本格放生物墨水和细胞样本，选好打什么，有电的晚上开工。心脏要 2 份墨水、2 晚；肺、肾各 1 份墨水、1 晚；每件另要 1 份细胞样本。打出来的品相随机（完好六成、受损三成、损坏一成）。\n细胞样本只能自己取：把原生器官（不能是腐坏的）放进取样器官槽，有电的晚上取一次，器官就没了。完好的取 8 份，受损 6 份，损坏 3 份。槽里有器官时先取样，再打印。\n打印器官只值原生的三成，不会坏，不用冷藏。没有销售证时算中级违禁品，只有黑心医生收，而且每次只收 1 件。\n在凯那里买"器官销售许可"后变成合法货：器官库协调员每 3 天来派单，按时交货给 2 倍报酬和上层区声望；私立医院每 7 天来派一张大单，要 3 件完好的，每件给 2.5 倍。招牌摆进橱窗，订单变成每 2 天一张，还会有整形诊所的人来收肺和肾。\n[模组影响]：\n效率影响功耗\n性能影响打印速度（每 1% 性能 = 当晚多推进一晚的几率 +1%）\n质量影响打印品相（系数：0.5）
+item_ul_organ_printer_note_flavor,墨水 / 样本格放生物墨水和细胞样本，选好打什么，有电的晚上开工。心脏要 2 份墨水、2 晚；肺、肾各 1 份墨水、1 晚；每件另要 1 份细胞样本。打出来的品相随机（完好六成、受损三成、损坏一成）。\n细胞样本只能自己取：把原生器官（不能是腐坏的）放进取样器官槽，有电的晚上取一次，器官就没了。完好的取 8 份，受损 6 份，损坏 3 份。槽里有器官时先取样，再打印。\n打印器官只值原生的五成，不会坏，不用冷藏。没有销售证时算中级违禁品，只有黑心医生收，而且每次只收 1 件。\n在凯那里买"器官销售许可"后变成合法货：器官库协调员每 3 天来派单，按时交货给 2 倍报酬和上层区声望；私立医院每 7 天来派一张大单，要 3 件完好的，每件给 2.5 倍。招牌摆进橱窗，订单变成每 2 天一张，还会有整形诊所的人来收肺和肾。\n[模组影响]：\n效率影响功耗\n性能影响打印速度（每 1% 性能 = 当晚多推进一晚的几率 +1%）\n质量影响打印品相（系数：0.5）
 item_ul_bioink_name,生物墨水
 item_ul_bioink_desc,3D 器官打印机的耗材。
 item_ul_organ_license_name,器官合法销售证
@@ -2178,9 +2178,9 @@ phosp.slip_desc,下次私立医院来时交：{0}。都要完好的。交齐一�
 phosp.new,私立医院大单：{0}，下周来收，一共 {1} 信用点。
 phosp.delivered,大单交了一件：另付 {0} 信用点。
 phosp.complete,大单交齐：另付 {0} 信用点，上层区声望 +{1}。
-item_ul_printed_heart_desc,3D 打印的心脏，只值原生的三成。不会坏，不用冷藏。
-item_ul_printed_lung_desc,3D 打印的肺，只值原生的三成。不会坏，不用冷藏。
-item_ul_printed_kidney_desc,3D 打印的肾，只值原生的三成。不会坏，不用冷藏。
+item_ul_printed_heart_desc,3D 打印的心脏，只值原生的五成。不会坏，不用冷藏。
+item_ul_printed_lung_desc,3D 打印的肺，只值原生的五成。不会坏，不用冷藏。
+item_ul_printed_kidney_desc,3D 打印的肾，只值原生的五成。不会坏，不用冷藏。
 organprint.reissued,凯补发了器官销售证和招牌，放在店里了。
 dissector_status_nopower,新鲜度 {0}%（{1}）
 dissector_nopower_empty,没插电源
@@ -2250,7 +2250,7 @@ ogguide.header,解体要点
 ogguide.p1.title,写在前面
 ogguide.p1.body,上层区不缺打印的器官，又便宜又合法。可有钱人要原生的，原生的只能从死人身上取。\n\n这本手册讲两条路。\n\n黑路：夜里去交火区捡尸体，拆出原生器官，卖给黑市的买家。来钱快，风险也大。\n\n白路：用 3D 打印机打器官，拿到许可就是合法买卖。赚得少，但睡得着。\n\n两条路可以一起走。
 ogguide.p2.title,黑路：货从哪来
-ogguide.k.corpse,夜里去交火区翻找。打得凶的晚上更容易捡到，也更新鲜；安静的晚上捡到的多半放久了。翻找可能受伤，包扎好了还能接着翻。一晚只拖得动一具回店，拖回去警察局、革命军、共和国的声望都会掉。
+ogguide.k.corpse,夜里去交火区翻找。打得凶的晚上更容易捡到，也更新鲜；安静的晚上捡到的多半放久了。翻找可能受伤，包扎好了还能接着翻。要带的尸体自己放进口袋（背包里放不了），一晚最多带回两具；每带回一具，共和国、警察局、革命渗透部里随机一个声望掉 0.5。
 ogguide.k.dissector,尸体放进去，有电的那晚拆。一具通常出一两件，运气好三四件。尸体越新鲜，拆出来的越完整。尸体放不了几天，捡回来尽快拆。
 ogguide.k.cooler,器官放在外面每天都会变差，第 4 天就坏了。放进冷藏箱就不会变。
 ogguide.p3.title,原生器官
@@ -2272,7 +2272,7 @@ ogguide.k.license,在凯那里买，1400。没有它，打印器官算中级违�
 ogguide.k.order,有了许可，器官库协调员每 3 天来派一张单，按时交货给两倍报酬和上层区声望。私立医院每 7 天来一张大单，要 3 件完好的。
 ogguide.k.sign,买许可时一起给。摆进橱窗，订单变成每 2 天一张，还会有整形诊所的人来收肺和肾。
 ogguide.p7.title,几句忠告
-ogguide.p7.body,· 打印的器官只值原生的三成，但不会坏，不用冷藏。\n\n· 解剖机和打印机都吃电，晚上记得给电。\n\n· 走私者暗格里的违禁品，盘查时不搜。\n\n· 原生器官别攒太多。放久了会坏，被查到更麻烦。\n\n· 犯罪记录每天都要清。警察上门的时候，什么都晚了。
+ogguide.p7.body,· 打印的器官只值原生的五成，但不会坏，不用冷藏。\n\n· 解剖机和打印机都吃电，晚上记得给电。\n\n· 走私者暗格里的违禁品，盘查时不搜。\n\n· 原生器官别攒太多。放久了会坏，被查到更麻烦。\n\n· 犯罪记录每天都要清。警察上门的时候，什么都晚了。
 ogguide.reissued,店里多了一本《解体要点》，器官贩子的入行手册。
 regulars.dubious,{0} 发现买的东西封条被拆过。好感 -1。
 ncguide.item_name,开店守则
@@ -2349,11 +2349,11 @@ regulars.story.14.5,他说孙子要来站里看他了，想挑件像样的见面
 regulars.story.15.3,季女士在理事会做文书，嘴很严，只说工作“很无聊”。
 regulars.story.15.5,她说理事会最近要查几家店的账，你的不在名单上。
 ncguide.reissued,店里多了一本《开店守则》，新店主的入行手册。
-ul_kai_organ_route_title,黑路门路
-ul_kai_organ_route_desc,凯介绍你认识诊所的索恩，再告诉你交火区怎么走。买下后送一台解剖机、一个器官冷藏箱和一本《解体要点》：晚上去交火区捡尸体，解剖出器官卖给索恩这些黑路买家。米勒博士也会开始卖 3D 器官打印机。器官贩子开局自带，不用买。
+ul_kai_organ_route_title,机器和解体说明
+ul_kai_organ_route_desc,交火区谁都能去，可尸体带回来得有机器才拆得了。买下后凯送来两台机器（解剖机、器官冷藏箱）、一个放血器和一本《解体要点》，再介绍你认识诊所的索恩：他每周上门收一次器官（他的名片和电话要另买）。米勒博士也会开始卖 3D 器官打印机。器官贩子开局自带，不用买。
 net_group_organ,器官门路
-organ.route.unlocked,凯送来了解剖机、冷藏箱和一本《解体要点》。交火区今晚就能去。
-organ.route.compensated,以前买的器官销售许可缺了前面一步：凯补送了黑路门路，解剖机和冷藏箱已经放进店里。
+organ.route.unlocked,凯送来了解剖机、冷藏箱、放血器和一本《解体要点》。诊所的索恩以后每周上门一次。
+organ.route.compensated,以前买的器官销售许可缺了前面一步：凯补送了"机器和解体说明"，解剖机和冷藏箱已经放进店里。
 regulars.wish_feature,熟客心愿
 regulars.reserve_feature,熟客预订
 ul_kai_police_donation_title,警局捐款
@@ -2417,19 +2417,19 @@ item_ul_gauze_dressing_flavor,真棉纱布，无菌包装。下层区的绷带�
 item_ul_coffee_beans_name,袋装咖啡豆
 item_ul_coffee_beans_flavor,树上长的。合成咖啡喝多了的人，一闻就知道。
 item_ul_honey_jar_name,天然蜂蜜（一罐）
-item_ul_honey_jar_flavor,真蜜蜂酿的，站上一年就出几十罐。
+item_ul_honey_jar_flavor,蜜蜂酿的，站上一年就出几十罐。
 item_ul_salad_bowl_name,鲜蔬沙拉碗
-item_ul_salad_bowl_flavor,菜叶是水培架上早上现摘的，酱是真橄榄油调的。上层区的人中午就吃这个。
+item_ul_salad_bowl_flavor,菜叶是水培架上早上现摘的，拌的是橄榄油。上层区的人中午就吃这个。
 item_ul_chicken_sandwich_name,烤鸡三明治
 item_ul_chicken_sandwich_flavor,鸡是顶层农场舱养的，面包是现烤的。写字楼里人手一个。
 item_ul_haadasgen_name,哈达斯根冰淇淋
-item_ul_haadasgen_flavor,真牛奶、真香草荚做的。和下层区的贝氏不一样，放在外面是会化的。
+item_ul_haadasgen_flavor,牛奶和香草荚做的。和下层区的贝氏不一样，放在外面是会化的。
 item_ul_cream_cake_name,真奶油蛋糕（一块）
-item_ul_cream_cake_flavor,奶油是真牛奶打的，站上的奶牛一共十二头。上层区的下午茶，一人一块。
+item_ul_cream_cake_flavor,奶油是牛奶打的，站上的奶牛一共十二头。上层区的下午茶，一人一块。
 item_ul_wheat_bread_name,现烤全麦面包
-item_ul_wheat_bread_flavor,早上现烤的，真麦子磨的面。下层区的面包是从管子里挤出来的。
+item_ul_wheat_bread_flavor,早上现烤的，麦子磨的面。下层区的面包是从管子里挤出来的。
 item_ul_orange_juice_name,鲜榨橙汁（一瓶）
-item_ul_orange_juice_flavor,温室里的真橙子，当面榨的。下层区喝的是代糖果汁。
+item_ul_orange_juice_flavor,温室里的橙子，当面榨的。下层区喝的是代糖果汁。
 item_ul_farm_eggs_name,农场鸡蛋（一盒六个）
 item_ul_farm_eggs_flavor,顶层农场舱的母鸡下的，壳上还带着一点草。
 ngoods.perfume_desc,使用后，与当前顾客的交易收益将提升{0}%。你同时只能获得一种香水效果的增益。
@@ -2601,7 +2601,7 @@ act1.w4.p1,确实非常感谢你。
 act1.w4.4,这是你应得的分红，这部分则是我的。
 act1.w4.5,我顺便又带来了一些库存，一起给你吧。
 act1.w4.6,我的生意需要更多稀有物品。
-act1.w4.7,如果你能在下次我来的时候准备一些奢侈品，
+act1.w4.7,如果你能在下次我来的时候准备一些医疗品和武器，
 act1.w4.8,说明我没看走眼。
 act1.w4.9,就这样，下次再见，店长。
 act1.helios.1,听说这新开了一家下层人的店？
@@ -2680,24 +2680,24 @@ dealer.courier.1,经销商让我送来的。批发价，要就整批拿走。
 dealer.courier.done,货款收到，告辞。
 act1.oscar.fee,这是八百信用点。
 item_ul_roast_beef_name,慢烤牛肉
-item_ul_roast_beef_flavor,"真牛的肉，切开还是粉的。下层区的人一辈子吃的都是""泥炭""。"
+item_ul_roast_beef_flavor,"牛肉切开还是粉的。下层区的人一辈子吃的都是""泥炭""。"
 item_ul_grilled_salmon_name,香煎三文鱼
-item_ul_grilled_salmon_flavor,养殖舱里游过的真鱼。皮煎得脆，配一角柠檬。
+item_ul_grilled_salmon_flavor,养殖舱里游过的鱼。皮煎得脆，配一角柠檬。
 item_ul_veg_soup_name,时蔬浓汤
 item_ul_veg_soup_flavor,胡萝卜、南瓜、芹菜，全是水培舱里长的，熬了一早上。
 item_ul_pork_sausage_name,手工猪肉香肠
-item_ul_pork_sausage_flavor,肠衣是真的，肉也是真的。三根一扎，麻绳捆着。
+item_ul_pork_sausage_flavor,猪肉灌的香肠，三根一扎，麻绳捆着。
 item_ul_roast_veggies_name,烤时蔬拼盘
 item_ul_roast_veggies_flavor,"彩椒、西葫芦、小番茄，烤到边上发焦。上层区的人管这叫""清淡""。"
 item_ul_lamb_skewers_name,烤羊肉串
-item_ul_lamb_skewers_flavor,真羊肉，肥瘦相间，炭火烤的。两串。
+item_ul_lamb_skewers_flavor,羊肉肥瘦相间，炭火烤的。两串。
 item_ul_chicken_pie_name,鸡肉蘑菇派
-item_ul_chicken_pie_flavor,酥皮一碰就掉渣，里面是奶油鸡肉和真蘑菇。
+item_ul_chicken_pie_flavor,酥皮一碰就掉渣，里面是奶油鸡肉和蘑菇。
 item_ul_meat_pasta_name,番茄肉酱意面
-item_ul_meat_pasta_flavor,番茄熬的酱，牛肉末，上面撒一把真奶酪。
+item_ul_meat_pasta_flavor,番茄熬的酱，牛肉末，上面撒一把奶酪。
 item_ul_antibiotic_ampoule_desc,伤口没稳住时使用：防住感染，伤口稳住。
 battle.drag,[拖一具尸体回去]
-battle.drag_hint,地上有 {0} 具尸体。一晚只带得回一具，要带哪具，自己放进口袋或背包（地上的不会自动带走）：放背包里带回，警察局、革命渗透部、共和国的声望各 -2（拖尸体最多扣到 -60）；塞在左右口袋里的不扣。随身放了好几具，只留最新鲜的那具。
+battle.drag_hint,地上有 {0} 具尸体。一晚最多带回 2 具，要带哪具，自己放进口袋（背包里放不了；地上的不会自动带走）。每带回一具，共和国、警察局、革命渗透部里随机一个声望 -0.5（最多扣到 -60）。随身放了更多，只留最新鲜的 2 具。
 battle.drag_done,你挑了最新鲜的那具，走的时候拖回去。
 battle.dragged,今晚已经拖了一具，再拖就走不动了。
 item_ul_blood_kit_name,放血器
@@ -2779,10 +2779,10 @@ rep_perk_ULF_COUNCIL_RELIEF_name,税务减免
 rep_perk_ULF_COUNCIL_RELIEF_desc,共和国工作人员每周巡查收的合规费，从营业额的 1% 降到 0.5%。
 rep_perk_ULF_COUNCIL_RELIEF_flavor,“按时交的，我们心里有数。”
 rep_how_upper,怎么涨：卖东西给上层区的客人（每天最多 +1）；私人交换会每周能用两件艺术品换一次。\n怎么跌：举报上层区的客人。
-rep_how_police,怎么涨：亚瑟警司每周来买烟酒（常客最多带到 +60）；征用官；打改造体、举报通缉犯；报警器传输模组。\n怎么跌：把尸体拖回店（最多扣到 -60）。
-rep_how_rev,怎么涨：渗透部联络员每周来收药和罐头（常客最多带到 +60），交齐他的急需单再加；把器官卖给革命军战地医生。\n怎么跌：把尸体拖回店（最多扣到 -60）；照顾亚瑟警司的生意。
-rep_how_council,怎么涨：每周巡查时交合规费（常客最多带到 +60，第一次交再 +20）；多交 500 再加。\n怎么跌：不交合规费；把尸体拖回店（最多扣到 -60）。
-rep_how_vanderlin,怎么涨：奥斯卡每周来收奢侈品（常客最多带到 +60）；替他找到指定的那件再加。\n怎么跌：交合规费（共和国巡查）。
+rep_how_police,怎么涨：卖东西给亚瑟警司、德克斯警官（每卖一件 +0.1，常客最多带到 +60）；征用官；打改造体、举报通缉犯；报警器传输模组。\n怎么跌：从交火区带尸体回店（每具在共和国、警察局、革命渗透部里随机扣一个 0.5，最多扣到 -60）。
+rep_how_rev,怎么涨：卖药和罐头给渗透部联络员（每卖一件 +0.1，常客最多带到 +60），交齐他的急需单再加；把器官卖给革命军战地医生。\n怎么跌：从交火区带尸体回店（每具在共和国、警察局、革命渗透部里随机扣一个 0.5，最多扣到 -60）。
+rep_how_council,怎么涨：每周巡查时交合规费（常客最多带到 +60，第一次交再 +20）；多交 500 再加。\n怎么跌：不交合规费；从交火区带尸体回店（每具在共和国、警察局、革命渗透部里随机扣一个 0.5，最多扣到 -60）。
+rep_how_vanderlin,怎么涨：卖奢侈品给奥斯卡（每卖一件 +0.1，常客最多带到 +60）；替他找到指定的那件再加。\n怎么跌：得罪范德林家的人。
 battle.corpse_pocket,你把口袋里那具尸体带回了店里。没人看见，声望没掉。
 test_hotkey_regulars,测试：亚瑟警司、共和国巡查、奥斯卡、渗透部联络员今天都来。
 reg.arthur.interest,烟酒类
@@ -2811,7 +2811,7 @@ phone.cool_days,{0} 天后再打来。
 phone.c_come,明天能来一趟吗？
 phone.c_hang,没事，打错了。
 phone.no_answer,……没人接。
-rep_how_helios,怎么涨：赫利俄斯家的管家每 4 天来买新鲜食物（常客最多带到 +60）。\n怎么跌：得罪赫利俄斯家的人。
+rep_how_helios,怎么涨：卖新鲜食物给赫利俄斯家的管家（每卖一件 +0.1，常客最多带到 +60）。\n怎么跌：得罪赫利俄斯家的人。
 item_ul_smuggler_bay_small_name,小号走私者暗格
 item_ul_smuggler_bay_small_desc,3×3 的小暗格，放不了多少东西。盘查时不搜里面的东西。
 ul_kai_thorne_contact_title,索恩的联系方式
@@ -2831,3 +2831,290 @@ pex.get.siyang,"1 瓶""思扬""自动补充香水"
 pex.give.junk10,任意 10 件上层区垃圾（回收站翻到的那几种）
 pex.get.cigar,1 盒路维斯特雪茄
 act1.dex.bye,行，我先回去了。有事打警察局。
+battle.corpse_limit,一晚最多带回 {0} 具，随身另外的 {1} 具扔在原地了。
+battle.corpse_carried_rep2,你把 {0} 具尸体带回了店里。{1}。
+reg.stay.done,今天就买这些了。
+act1.dex0.1,*无线电通话声*
+act1.dex0.2,你好，老板，我叫德克斯，警察局的，负责这片区域。
+act1.dex0.3,根据标准程序……
+act1.dex0.4,你的柜台下面有一个报警按钮。
+act1.dex0.5,这是目前正在通缉的罪犯名单。
+act1.dex0.6,要是这帮人里有谁进了你的店，
+act1.dex0.7,<u><b>绝对不要听信他们的话！</u></b>
+act1.dex0.8,在他们离开之前用报警器通知我们。
+act1.dex0.9,我们会处理剩下的事情。
+act1.dex0.10,只有当你确信是他们时才进行举报。
+act1.dex0.11,如果谎报警情，你将被罚款。
+act1.dex0.12,祝你一切安全。
+act1.dex1.again,老板，今天还是我来巡逻。
+act1.dex1.goods,我多带了些子弹和绷带，你看看用不用得上。
+act1.w5.buy,对了，走之前我想带点东西上路。药和武器，你有多少我收多少。
+act1.bruce.samurai,对了，回收站翻到一瓶怪香水，我用不上，送你了。
+pex.give.samurai5,"5 瓶没用过的""武士""实验信息素原液（用过的不算）"
+ul_item_business_permit_desc,共和国颁发的许可证，在上层区合法经营商铺的必需品。
+ul_dialog_info_bad_harvest_mid,{0}天后，上层区一家重要的营养果农场将遭遇歉收。
+ul_name_cartel_handler,6区负责人
+ul_dialog_tourist_junk_deal_1,上层区的人都扔些什么？有那种用剩的小玩意儿吗？
+ul_dialog_tourist_junk_deal_2,我想找些上层区回收站出来的东西，垃圾也行，回收的材料也行。
+ul_dialog_tourist_junk_deal_3,我只想要一件能见证上层区生活的东西。来个空香水瓶就太棒了！
+ul_dialog_tourist_junk_deal_4,有上层区的垃圾、回收来的材料之类的吗？摆在家里肯定很适合当谈资！
+battle.no_route,"你没有解剖机，尸体带回去也拆不了。凯的人脉""上层圈子""里有""机器和解体说明""（{0} 信用点）：两台机器，外加一位每周上门收器官的买家。"
+trait.model_citizen.name,警局有人
+trait.model_citizen.desc,开局额外获得 40 点警察局声望。每周有一位警局的人上门，卖一批武器和医疗品。
+trait.well_connected.name,八面玲珑
+trait.well_connected.desc,所有派系的初始声望均增加 15 点。
+trait.alert.name,警觉
+trait.alert.desc,你在夜间永远不会遭遇抢劫。
+trait.diplomatic.name,舌灿莲花
+trait.diplomatic.desc,交易产生的声望增加 33%，每天靠交易最多能加的声望从 1 点提到 5 点；卖给常客每件加的声望也吃这 33%。
+trait.intimidating.name,凶神恶煞
+trait.intimidating.desc,实施所有犯罪行为时，留下的可用证据减少 33%。
+trait.proficient_scavenger.name,熟练的拾荒客
+trait.proficient_scavenger.desc,每次去回收站和交火区多 2 次搜索：回收站通常由 5 次变为 7 次，交火区由 4 次变为 6 次。
+trait.ul_dealer_regular.name,经销商熟客
+trait.ul_dealer_regular.desc,贵重品经销商的大单门槛降到 1000，冷却 5 天（原来 7 天）。
+trait.ul_surgeon_hands.name,外科手艺
+trait.ul_surgeon_hands.desc,"解剖出""完好""器官的概率 +15%。"
+trait.ul_estate_clearing.name,清宅生意
+trait.ul_estate_clearing.desc,上层区有人过世时会有人上门通知，一周一次。当晚可以选择去清宅；第二天有人把清出来的一屋子东西送上门（8–12 件，总价值 1000–1500），可以挑着买，整批全收按估价四折。送货那天少来几位随机客人。
+trait.ul_night_watch.name,兼职守夜
+trait.ul_night_watch.desc,"打烊后多一个选项：去范德林家的库房守夜，守一晚收 100；连续守满 3 晚，第 3 晚另加 400，之后重新从头算。守夜的第二天少来一位客人。有 20% 会遇到有人塞钱让你""看不见""：收了多拿 800，但犯罪证据 +400。守夜算晚上出门。"
+trait.saving.name,正道的恩惠
+trait.saving.desc,第 1 天韦特来过之后，额外获得 600 信用点。
+trait.sawyer_crew.name,可萨的伙计
+trait.sawyer_crew.desc,"初始解锁""私人交换会""。清洁服务永远免费，除非店铺遭到破坏；清理破坏的费用也大幅降低。"
+trait.revolution_sympathizer.name,心向革命军
+trait.revolution_sympathizer.desc,开局获得额外 25 点革命渗透部声望。你将更频繁地收到来自革命渗透部的市场委托。
+trait.wild_favorite.name,凯的红人
+trait.wild_favorite.desc,凯的人脉网络中，所有升级费用降低 10%，保险费用降低 50%。
+trait.lucky.name,最后的幸运
+trait.lucky.desc,基础幸运值 +15；会与硬币、液体好运相加。
+trait.ul_bleeder.name,熟练放血
+trait.ul_bleeder.desc,用放血器时，每具尸体的血袋多出一档（小变中、中变大）；本来就是大袋的，另给一袋小的。
+trait.ul_weight_trust.name,韦特的托付
+trait.ul_weight_trust.desc,韦特告别以后，每 3 天托人捎来一批寄售货（3 件），卖掉你拿五成。
+trait.ul_socialite_friend.name,名媛的闺蜜
+trait.ul_socialite_friend.desc,"每周来一位名媛闺蜜，只买香氛和奢侈品，预算是普通名媛的 1.5 倍。第一次来送你一瓶""大地""日常香氛。"
+trait.ul_residence_cert.name,居留公证
+trait.ul_residence_cert.desc,"开局带一份共和国临时居留公证。第 7 天交给共和国工作人员，就免掉""对共和国的支持""；不交，也能当稀有品卖掉（约 500）。"
+trait.ul_neon_signs.name,霓虹招牌
+trait.ul_neon_signs.desc,开局就带四块霓虹灯牌：材料、日用品、食物、医疗。摆进橱窗能请来对应的卖家。
+trait.ascetic.name,苦行者
+trait.ascetic.desc,主物品栏的尺寸从 24×10 缩减为 16×10。
+trait.awful_negotiator.name,不善议价
+trait.awful_negotiator.desc,你无法与顾客讨价还价，并且会永久承受 7% 的交易惩罚。
+trait.blabbermouth.name,大嘴巴
+trait.blabbermouth.desc,实施所有犯罪时留下的可用证据增加 33%。你在黑市和革命渗透部处获得的声望减少 50%。
+trait.minimalist.name,极简主义者
+trait.minimalist.desc,主物品栏由 24×10 缩减为 20×10。
+trait.maimed.name,肢体残缺
+trait.maimed.desc,回收站和交火区都去不了。你无法进行任何拾荒和拖尸活动。
+trait.wild_bad_side.name,凯的眼中钉
+trait.wild_bad_side.desc,凯的人脉网络中，所有升级费用提高 20%，保险费用提高 50%。
+trait.ul_no_referral.name,没人引荐
+trait.ul_no_referral.desc,凯的人脉第 14 天才开（原来第 7 天）。
+trait.ul_witness.name,交火区目击者
+trait.ul_witness.desc,交火区有人看见了你。每拖回 3 具尸体，第二天他上门要 150 封口费；不给，警察局声望 −5。
+trait.bad_lease.name,高昂房租
+trait.bad_lease.desc,你的初始租金增加 100 信用点。
+trait.agoraphobia.name,广场恐惧症
+trait.agoraphobia.desc,夜间外出后必须休息 2 晚。例如第 5 天外出，第 6、7 天不能再外出，第 8 天恢复。
+trait.unlucky.name,倒霉蛋
+trait.unlucky.desc,基础幸运值 −15；可被正面幸运加成抵消。
+trait.ul_old_enemy.name,仇家
+trait.ul_old_enemy.desc,下层区的旧仇家每 7 天来闹一次，要你送他一件商品（价值 100 以上）。不给，当晚店铺被破坏，还会丢一件 100 信用点以下的东西。
+trait.ul_return_law.name,退货法
+trait.ul_return_law.desc,上层区有消费者保护法：卖出的东西 3 天内能无理由退货。约 15% 的客人会拿回来，你退全款，退回来的货可以再卖。钱不够退，按那件货价值的 50% 记犯罪证据。
+trait.ul_lower_rat.name,下层区的老鼠
+trait.ul_lower_rat.desc,你在上层区不受任何人待见，所有顾客预算减少 10%。住满 60 天居留期后这个特性消失。
+trait.ul_vanderlin_due.name,范德林的威望
+trait.ul_vanderlin_due.desc,范德林家的管家每周上门收一笔 200 信用点的建设费；钱不够，有多少收多少，范德林声望 −2。范德林家族声望到 100 后这个特性消失。
+trait.colorful_character.name,奇人异士
+trait.colorful_character.desc,特性数量上限 +3，从 4 提高到 7；自身仍占 1 个槽位，最多再选 6 项。
+trait.hoarder.name,囤积癖
+trait.hoarder.desc,开局时，物品栏底部会堆着三堆无法移动的杂物。每堆杂物都可以清除，清理途中会得到回收物品、材料等产出。
+trait.aug_menace.name,改造体危机
+trait.aug_menace.desc,开局即解锁改造体相关内容。击杀改造体获得的信用点增加 25%。改造体危机将一直持续；无论选择哪种难度，放跑过多改造体都会导致游戏结束。
+trait.ul_fresh_only.name,只收新鲜货
+trait.ul_fresh_only.desc,捡到的尸体都在 75% 新鲜以上，但找到尸体的概率少两成。
+trait.ul_friend_relic.name,朋友的遗物
+trait.ul_friend_relic.desc,去世的朋友托你保管一只上锁的箱子（占储藏区 5×5，初始箱内物品总价值 1000 信用点，每天增加 100）。箱子没撬开之前卖不掉。赫利俄斯财团的人每周来打听箱子，你必须按箱子当前总价值的 20% 贿赂他，否则财团会强行收走箱子。你可以随时用撬棍撬开它（拿到相当于箱子当前价值、100% 热度的赃物，剩下的空箱子可以卖掉或丢弃），或者一直守着：第 60 天它的主人来取，给你一大笔谢礼。
+trait.saving.given,韦特临走又塞给你 {0} 信用点。
+trait.police.name,警局的熟人
+trait.police.1,老板，是我。局里清库存，我先想到你。
+trait.police.2,都是正经来路，你挑挑。
+trait.friend.name,名媛的闺蜜
+trait.friend.first,"她老跟我提起你这家店。头一回来，这瓶""大地""送你，别嫌弃。"
+trait.friend.hi1,又是我。这周有什么新到的香氛吗？
+trait.friend.hi2,拿得出手的都摆出来，我今天带够钱了。
+trait.witness.name,交火区的目击者
+trait.witness.1,老板，交火区那边，我可都看见了。
+trait.witness.2,150 信用点，我就当没去过那儿。
+trait.witness.pay,给他 {0}。
+trait.witness.refuse,不给。
+trait.witness.paid,聪明人。下回见。
+trait.witness.refused,行。那我去警察局坐坐。
+trait.due.1,范德林家在这一带的建设，离不开各位商户的支持。
+trait.due.2,这周的建设费，{0} 信用点。我替您记上了。
+trait.due.short,钱不够，管家只收走了 {0} 信用点。范德林家族 -2。
+trait.due.over,范德林家认你了，管家不会再来收建设费。
+item_ul_residence_cert_item_name,共和国临时居留公证
+item_ul_residence_cert_item_desc,"一份盖了章的临时居留公证。第 7 天交给共和国工作人员，可以免掉那笔""对共和国的支持""；也能当稀有品卖掉。"
+item_ul_relic_chest_name,朋友的箱子
+item_ul_relic_chest_desc,"去世的朋友托你保管的上锁的箱子。里面的东西越放越值钱。没撬开之前卖不掉。店里有撬棍时，在它上面""使用""可以撬开：拿到等值的赃物，只剩一只空箱子。"
+trait.cert.used,你有居留公证？……行，手续齐全。这笔免了。
+trait.estate.name,清宅的经办人
+trait.estate.n1,老板，环区有位住户过世了，家里的东西要清掉。
+trait.estate.n2,"你要接的话，今晚打烊时在结算单上勾一下""去清宅""，东西明天给你送来。"
+trait.estate.d1,昨晚清出来的都在这儿了。
+trait.estate.d2,你可以挑着拿；整批全收，按估价四折。
+trait.estate.service,去清宅（明天送货上门）
+trait.estate.log,你接下了清宅的活儿，清出来的东西明天送到。
+trait.watch.service,去范德林库房守夜
+trait.watch.log,你在范德林家的库房守了一夜，拿到 {0} 信用点。今天没精神，少来一位客人。
+trait.watch.name,库房外的人
+trait.watch.b1,昨晚守夜的是你吧？有批货出库，你当时正好在打盹。
+trait.watch.b2,"这点钱拿着，以后也这么""打盹""。"
+trait.watch.take,收下 {0}。
+trait.watch.refuse,不收。
+trait.watch.taken,聪明。咱们没见过。
+trait.watch.refused,……随你。就当我没来过。
+trait.trust.name,捎货的人
+trait.trust.1,韦特老板托我捎来的，说是老规矩。
+trait.trust.2,他说按半价给你，卖多少都是你的。
+trait.enemy.name,下层区的仇家
+trait.enemy.1,哟，混到上层区来了？日子过得不错嘛。
+trait.enemy.2,老规矩，拿件像样的东西出来，我就走。
+trait.enemy.give,给他一件。
+trait.enemy.refuse,不给。
+trait.enemy.given,识相。下礼拜见。
+trait.enemy.refused,行。你晚上锁好门。
+trait.enemy.took,仇家拿走了你的{0}。
+trait.enemy.log,仇家夜里砸了你的店。
+trait.enemy.log_item,仇家夜里砸了你的店，还顺走了{0}。
+trait.return.name,来退货的客人
+trait.return.1,老板，前几天在你这儿买的东西，我不想要了。
+trait.return.2,按消费者保护法，三天内无理由退货。退我 {0} 信用点。
+trait.return.short,你拿不出退款，被记了 {0} 的犯罪证据。
+trait.relic.helios,赫利俄斯的调查员
+trait.relic.h1,听说你这儿有只来路不明的箱子。财团对它很感兴趣。
+trait.relic.h2,{0} 信用点，我回去就说没找到。不然，我现在就带走。
+trait.relic.pay,给他 {0}。
+trait.relic.refuse,不给。
+trait.relic.paid,"很好。下周我再来""找""一次。"
+trait.relic.refused,那就按规矩办。箱子归财团了。
+trait.relic.seized,赫利俄斯的人把箱子强行带走了。
+trait.relic.owner,箱子的主人
+trait.relic.o1,他说过，要是他不在了，箱子会在一个靠得住的人手里。
+trait.relic.o2,你守了它六十天。这些是你应得的。
+trait.relic.pried,你撬开了箱子：里面值 {0} 信用点的东西都是赃物。
+trait.rat.over,你在上层区住满了 60 天，没人再把你当外人：顾客的预算恢复正常。
+trait.ul_who_is_he.name,他是？
+trait.ul_who_is_he.desc,？
+who.name,？？？
+who.dots,……
+who.c_gift,[给他一件奢侈品（先把要给的放到柜台上；不放，就拿店里最便宜的那件）]
+who.c_cash,[给他 {0} 信用点]
+item_ul_who_note_name,纸条
+item_ul_who_note_desc,他留下的纸条。上面只有一个字：{0}
+who.note.1,区
+who.note.2,层
+who.note.3,下
+who.note.4,了
+who.note.5,忘
+who.note.6,别
+who.note.7,请
+who.mentor.1,好久不见。
+who.mentor.2,没想到上层区也有你这样的好心人。
+who.mentor.3,最近有人用你的名义，给下层区捐了好多吃的。说是拿上层区的好东西换的。
+who.mentor.4,配给站排队的人都在念叨你。
+who.mentor.p1,……我？
+who.mentor.5,别谦虚了。下面的人都记着呢。
+item_ul_relic_chest_open_name,撬开的箱子
+item_ul_relic_chest_open_desc,锁被撬坏的空箱子。可以卖掉，也可以扔掉。
+trait.relic.need_crowbar,要有一根撬棍才撬得开这把锁。
+tag.ul_household,上层区日用品
+loot.search,搜索
+loot.searched_suffix,（已搜）
+loot.window_title,被搜索的尸体
+loot.rep,翻死人的口袋，{0} 的人看见了：-0.05
+loot.empty,什么都没摸到。搜过的尸体带不回店。
+loot.done,搜完了：蓝 {0}、紫 {1}、金 {2}、红 {3}。搜过的尸体带不回店，东西记得拿走。
+loot.cut,没搜完就走了，还有 {0} 件没翻出来。
+loot.spilled,尸体里还剩 {0} 件搜出来的东西，放进店里了。
+test_hotkey_battle,测试：交火区地上放了 {0} 具尸体（100% / 75% / 35% / 腐坏各 2 具）。
+test_hotkey_battle_closed,测试：交火区现在去不了。
+item_ul_mil_biscuit_name,军用压缩饼干
+item_ul_mil_biscuit_flavor,一块顶一顿，难吃但管饱。
+item_ul_mayo_tube_name,蛋黄酱（一管）
+item_ul_mayo_tube_flavor,军用高热量蛋黄酱，挤一口顶半顿饭。不知道为什么，捡到的人都舍不得卖。
+item_ul_mre_name,自热战地口粮
+item_ul_mre_flavor,拉一下绳子就热。
+item_ul_beef_stew_can_name,罐装牛肉炖菜
+item_ul_beef_stew_can_flavor,军官食堂的罐头，牛肉块炖的。
+item_ul_officer_chocolate_name,军官配给巧克力
+item_ul_officer_chocolate_flavor,包装上印着部队番号。
+item_ul_wagyu_vacuum_name,真空封装 A5 和牛
+item_ul_wagyu_vacuum_flavor,不知道谁把它带上了战场。要冷藏。
+item_ul_tourniquet_name,战地止血带
+item_ul_tourniquet_flavor,单手就能勒紧。
+item_ul_ifak_name,单兵急救包
+item_ul_ifak_flavor,绷带、止血粉、剪刀一套。
+item_ul_adrenaline_pen_name,肾上腺素注射笔
+item_ul_adrenaline_pen_flavor,扎大腿，十秒起效。
+item_ul_defibrillator_name,红色便携除颤仪
+item_ul_defibrillator_flavor,红色外壳，屏幕上跳着青色心电图，电极板还带余温。电量还剩一格。
+item_ul_iv_kit_name,战地输液套装
+item_ul_iv_kit_flavor,血浆、针头、架子都有。
+item_ul_regen_serum_name,实验型再生针
+item_ul_regen_serum_flavor,赫利俄斯的编号，没上市。
+item_ul_tactical_knife_name,战术折刀
+item_ul_tactical_knife_flavor,刀背带锯齿。
+item_ul_carbon_baton_name,碳纤维警棍
+item_ul_carbon_baton_flavor,警察局制式，比钢的轻一半。
+item_ul_entrench_tool_name,军用工兵铲
+item_ul_entrench_tool_flavor,挖战壕用的，也能拍人。
+item_ul_thermal_scope_name,热成像瞄具
+item_ul_thermal_scope_flavor,哑光黑镜身，目镜里一片青紫色的热影。拆下来了，装不回你手上那把枪。
+item_ul_holo_butterfly_name,全息蝴蝶刀
+item_ul_holo_butterfly_flavor,刀身是全息涂层，换个角度就变色。甩开、合上，咔哒咔哒，停不下来。
+item_ul_rail_rifle_name,电磁步枪原型
+item_ul_rail_rifle_flavor,没有编号，没有厂标。
+item_ul_canteen_name,军用水壶
+item_ul_canteen_flavor,凹了一块，不漏。
+item_ul_storm_lighter_name,防风打火机
+item_ul_storm_lighter_flavor,刻着一个女人的名字。
+item_ul_tac_flashlight_name,战术手电
+item_ul_tac_flashlight_flavor,三档，带爆闪。
+item_ul_mil_blanket_name,军用保温毯（卷）
+item_ul_mil_blanket_flavor,卷成一卷用带子扎着，银色那面朝里。
+item_ul_comm_headset_name,降噪通讯耳机
+item_ul_comm_headset_flavor,还能听到频道里有人在喊。
+item_ul_gilded_compass_name,镀金军用指南针
+item_ul_gilded_compass_flavor,背面刻着授勋日期。
+item_ul_fmj_rounds_name,全金属被甲弹（5.56×45mm，一盒）
+item_ul_fmj_rounds_flavor,最普通的步枪弹，部队里按箱发。一盒 30 发。
+item_ul_buckshot_box_name,鹿弹霰弹（12 号，一盒）
+item_ul_buckshot_box_flavor,一发九颗弹丸。一盒 10 发。
+item_ul_hollowpoint_rounds_name,空尖弹（9×19mm，一盒）
+item_ul_hollowpoint_rounds_flavor,打进去就开花，警察局不让民间买。一盒 25 发。
+item_ul_incendiary_rounds_name,燃烧弹（7.62×39mm，一盒）
+item_ul_incendiary_rounds_flavor,弹头里灌了磷，盒子摸着发烫。一盒 20 发。
+item_ul_he_rounds_name,高爆弹（12.7×99mm，一盒）
+item_ul_he_rounds_flavor,每一发都是一颗小炸弹，别摔。一盒 5 发。
+item_ul_ap_rounds_name,穿甲弹（7.62×51mm，一盒）
+item_ul_ap_rounds_flavor,钨芯，能打穿装甲插板。一盒 20 发。
+item_ul_brass_casings_name,弹壳铜（一袋）
+item_ul_brass_casings_flavor,回炉就是好铜。
+item_ul_kevlar_scrap_name,凯夫拉碎片
+item_ul_kevlar_scrap_flavor,剪下来的防弹衣边角。
+item_ul_mil_circuit_name,军用电路板
+item_ul_mil_circuit_flavor,从无人机里拆的。
+item_ul_ceramic_plate_name,碎裂的陶瓷插板
+item_ul_ceramic_plate_flavor,挡过一发，还能回收。
+item_ul_titanium_billet_name,钛合金枪管坯
+item_ul_titanium_billet_flavor,军工厂流出来的毛坯。
+item_ul_mil_powercell_name,军规高能电池芯
+item_ul_mil_powercell_flavor,一颗顶一台家用电站。
+ul_item_bottle_hot_sauce_flavor,一小瓶辣酱，什么菜都能救一救。
+blood.battle_rep,在交火区当场给尸体放血，{0} 的人看见了：-1

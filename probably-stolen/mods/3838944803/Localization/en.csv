@@ -669,7 +669,7 @@ uc.doctor.2,The clinic changed suppliers and this stock has to go.
 uc.doctor.3,All from proper channels, with paperwork.
 uc.researcher.name,Lab Researcher
 uc.researcher.1,Hello, I'm a researcher at the Helios Institute.
-uc.researcher.2,The lab is replacing its equipment. You can have the old reagents and glassware.
+uc.researcher.2,The lab is clearing its stock. You can have the old reagents and spare samples cheap.
 uc.researcher.3,And if you have chemical supplies, I pay market price.
 uc.moving.name,Resident Moving Out
 uc.moving.1,I'm moving to the other side of the ring next month and the new place is smaller.
@@ -1324,7 +1324,7 @@ scenario.organ.title,Organ Dealer
 scenario.organ.desc,Nobody up here lacks organs. Printed ones are cheap and legal. What they want is natural. Natural ones only come from one place.
 scenario.organ.with1,A dissection machine and a battery
 scenario.organ.with2,An organ cooler
-scenario.organ.with3,The location of the firefight zone
+scenario.organ.with3,An in with Thorne from the clinic: he comes by weekly to buy organs
 scenario.organ.tag,High risk
 item_ul_organ_heart_name,Natural Heart
 item_ul_organ_heart_flavor,A heart that was never printed. Upper Levels clinics only take these.
@@ -1362,7 +1362,7 @@ battle.tries_left,{0} searches left tonight (of {1}).
 battle.wounded,You are hurt. Treat the wound (a bandage or similar) and you can keep searching.
 battle.risk,Minor injury {0}%  Major injury {1}%  Spotted {2}%
 battle.search,Search
-battle.found_corpse,You find one that just died. You can only drag one back per night.
+battle.found_corpse,"You find one that just died. To take it, put it in a pocket (it will not go in a backpack). Two a night at most."
 battle.found_scrap,You pick up some scrap worth selling.
 battle.found_nothing,You find nothing.
 battle.luck_saved,A stray round nearly grazes you. Lucky.
@@ -1908,7 +1908,7 @@ readme.p2.body,· Rent is three times the Lower Levels, due every week. Keep som
 readme.p4.title,Kai Wild
 readme.p4.body,Kai is Joe's cousin. Anything you need up here goes through him.\n\nHis services are in the Wild network screen, under Upper Circle, paid with Wild's favor. Not sure what to buy? Start with the cheapest one in each column.\n\nHe'll also bring you an invitation to the Friday salon.
 readme.p5.title,Salon and factions
-readme.p5.body,"Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.\n\nEach week a regular visits; doing business with them raises that column (regulars raise it to +60 at most):\n· Police: Superintendent Arthur, buys smokes and drinks\n· Infiltration Bureau: the Bureau liaison, buys medicine and tins\n· Republic: the tax inspector, collects a compliance fee\n· Vanderlin family: Oscar, buys luxury goods\nServing Arthur costs you a little with the Bureau, and paying the fee costs you a little with the Vanderlins."
+readme.p5.body,"Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.\n\nEach week a regular visits; every item you sell them adds 0.1 to that column (regulars raise it to +60 at most):\n· Police: Superintendent Arthur, buys smokes and drinks\n· Infiltration Bureau: the Bureau liaison, buys medicine and tins\n· Republic: the tax inspector, collects a compliance fee\n· Vanderlin family: Oscar, buys luxury goods\nSelling to one side never costs you reputation with another."
 readme.p6.title,At night
 readme.p6.body,After closing you can go out: the salon, places only your profession knows about, and a few less respectable spots.\n\nNights are risky. You can get hurt, get seen, leave evidence. Know your limits. You still have a shop to open tomorrow.
 readme.p7.title,Around the shop
@@ -1938,7 +1938,7 @@ item_ul_smuggler_bay_name,Large Smuggler's Bay
 item_ul_smuggler_bay_desc,A modified smuggler's bay, one column wider than usual. Its contents are hidden from inspection.
 heist_loot_carried,You bring {0} item(s) back to the shop.
 heist_loot_no_room,No room in the shop. You leave {0} item(s) behind.
-pex.name_contact,Exchange Contact
+pex.name_contact,Kesa
 pex.intro.1,Good evening. I'm here on behalf of a small circle.
 pex.intro.2,Some things up here shouldn't go through the books. Or be seen.
 pex.intro.3,So we run a private exchange. Friends only.
@@ -2031,7 +2031,7 @@ uc.water_resident.2,Got any bottled spring water? The sealed kind.
 uc.water_corp.name,Corporate Procurement Rep
 uc.water_corp.1,Our boardrooms and executive floors need water. High quality only.
 uc.water_corp.2,If the purity's right, the price isn't a problem.
-pex.give.smuggler,"Smuggler's bay (5×5) + 8 bags of ""Blue Blood"""
+pex.give.smuggler,"Smuggler's bay (5×5; the organ dealer's enlarged bay also works) + 8 bags of ""Blue Blood"""
 pex.give.smuggler_big,"Large or small smuggler bay + 8 bags of ""Blue Blood"" (expansion kits used on it are returned)"
 pex.get.smuggler,Modded smuggler's bay (8x8, hidden from inspections)
 salon_talk_leave,(Not now)
@@ -2085,9 +2085,9 @@ ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So 
 ul_dialog_tourist_deal_2,I heard I could have some fun around here?
 ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
 ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
-test_hotkey_update,Test (last update): gave a fresh body and a bloodletting kit. Drag the kit onto the body to draw blood.
+test_hotkey_update,"Test (last update): gave 5 bottles of ""Samurai"" (trade for Siyang at the private exchange), a materials neon sign (put it in the showcase; the seller it attracts brings the new materials) and the enlarged smuggler's bay (6×5)."
 corpse_name_fresh,{0} (freshness {1}%)
-battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). You can only drag one back per night.
+battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). Two a night at most.
 battle.found_corpse_rotten,You find one, but it has already rotted. Nothing to harvest.
 bdoc.name,Shady Doctor
 bdoc.1,Saw your lamp.
@@ -2096,7 +2096,7 @@ item_ul_organ_printer_name,3D Organ Printer
 item_ul_organ_printer_desc,Prints organs from bio-ink and cell samples. Works only on nights with power.
 item_ul_organ_printer_flavor,What comes out works. Everyone can tell it was printed.
 item_ul_organ_printer_note_name,Printer Notes
-item_ul_organ_printer_note_flavor,Put bio-ink and cell samples in the ink / sample slot, pick what to print, and it works on nights with power. A heart takes 2 ink and 2 nights; a lung or kidney takes 1 ink and 1 night; every print also takes 1 cell sample. Prints come out in random condition (60% intact, 30% damaged, 10% ruined).\nYou have to take cell samples yourself: put a real organ (not rotten) in the sample organ slot and it is sampled on a night with power. The organ is used up. Intact gives 8 samples, damaged 6, ruined 3. With an organ in the slot it samples first, then prints.\nPrinted organs are worth 30% of real ones, never spoil and need no cooler. Without a sales permit they are mid-level contraband; only the shady doctor takes them, one per visit.\nBuy the Organ Sales License from Kai to make them legal: an organ bank coordinator visits every 3 days with an order, paying double plus Upper Levels reputation for on-time delivery; a private hospital comes every 7 days with a big order for 3 intact ones, paying 2.5x each. Put the sign in the showcase for an order every 2 days, and a cosmetic clinic buyer comes for lungs and kidneys.\n[Module Impact]:\n  Efficiency: Power Consumption\n  Performance: Print Speed (each 1% = +1% chance to advance an extra night)\n  Quality: Print Condition (factor: 0.5)
+item_ul_organ_printer_note_flavor,Put bio-ink and cell samples in the ink / sample slot, pick what to print, and it works on nights with power. A heart takes 2 ink and 2 nights; a lung or kidney takes 1 ink and 1 night; every print also takes 1 cell sample. Prints come out in random condition (60% intact, 30% damaged, 10% ruined).\nYou have to take cell samples yourself: put a real organ (not rotten) in the sample organ slot and it is sampled on a night with power. The organ is used up. Intact gives 8 samples, damaged 6, ruined 3. With an organ in the slot it samples first, then prints.\nPrinted organs are worth 50% of real ones, never spoil and need no cooler. Without a sales permit they are mid-level contraband; only the shady doctor takes them, one per visit.\nBuy the Organ Sales License from Kai to make them legal: an organ bank coordinator visits every 3 days with an order, paying double plus Upper Levels reputation for on-time delivery; a private hospital comes every 7 days with a big order for 3 intact ones, paying 2.5x each. Put the sign in the showcase for an order every 2 days, and a cosmetic clinic buyer comes for lungs and kidneys.\n[Module Impact]:\n  Efficiency: Power Consumption\n  Performance: Print Speed (each 1% = +1% chance to advance an extra night)\n  Quality: Print Condition (factor: 0.5)
 item_ul_bioink_name,Bio-ink
 item_ul_bioink_desc,Consumable for the 3D organ printer.
 item_ul_organ_license_name,Organ Sales Permit
@@ -2163,9 +2163,9 @@ phosp.slip_desc,Deliver when the private hospital next visits: {0}. Intact only.
 phosp.new,Private hospital order: {0}, collected next week, {1} credits in total.
 phosp.delivered,One item of the big order delivered: {0} extra credits.
 phosp.complete,Big order complete: {0} extra credits, Upper Levels reputation +{1}.
-item_ul_printed_heart_desc,A 3D printed heart, worth 30% of a real one. Never spoils, needs no cooler.
-item_ul_printed_lung_desc,A 3D printed lung, worth 30% of a real one. Never spoils, needs no cooler.
-item_ul_printed_kidney_desc,A 3D printed kidney, worth 30% of a real one. Never spoils, needs no cooler.
+item_ul_printed_heart_desc,A 3D printed heart, worth 50% of a real one. Never spoils, needs no cooler.
+item_ul_printed_lung_desc,A 3D printed lung, worth 50% of a real one. Never spoils, needs no cooler.
+item_ul_printed_kidney_desc,A 3D printed kidney, worth 50% of a real one. Never spoils, needs no cooler.
 organprint.reissued,Kai reissued your organ sales permit and sign. They are in the shop.
 dissector_status_nopower,Freshness {0}% ({1})
 dissector_nopower_empty,no power source
@@ -2235,7 +2235,7 @@ ogguide.header,Dissection Essentials
 ogguide.p1.title,Before You Start
 ogguide.p1.body,The Upper Levels have plenty of printed organs. Cheap and legal. But the rich want natural ones, and natural ones only come from the dead.\n\nThis book covers two paths.\n\nThe black path: pick up bodies at the battlefield at night, take out natural organs, sell them to black market buyers. Fast money, real risk.\n\nThe white path: print organs with a 3D printer. With a license it's legal. Less money, better sleep.\n\nYou can walk both.
 ogguide.p2.title,Black Path: Supply
-ogguide.k.corpse,"Search the firefight zone at night. Rough nights turn up more bodies, and fresher ones; on quiet nights they have usually been lying around. You can get hurt searching, but once patched up you can keep going. You can only drag one body back per night, and doing so costs reputation with the police, the Revolution and the Republic."
+ogguide.k.corpse,"Search the firefight zone at night. Rough nights turn up more bodies, and fresher ones; on quiet nights they have usually been lying around. You can get hurt searching, but once patched up you can keep going. Put the bodies you want in a pocket (not a backpack), two a night at most; each one costs 0.5 reputation with the Republic, the Police or the Infiltration Bureau at random."
 ogguide.k.dissector,Put a body in; it works on a night with power. A body usually gives one or two organs, three or four with luck. Fresher bodies give cleaner organs. Bodies don't keep long.
 ogguide.k.cooler,Organs outside get worse every day and rot by day 4. Inside the cooler they keep.
 ogguide.p3.title,Natural Organs
@@ -2257,7 +2257,7 @@ ogguide.k.license,Buy it from Kai for 1400. Without it, printed organs are mid-l
 ogguide.k.order,With the license, the organ bank coordinator brings an order every 3 days. Deliver on time for double pay and Upper Levels reputation. The private hospital places a big order every 7 days: 3 intact organs.
 ogguide.k.sign,Comes with the license. In the display case, orders come every 2 days, and the cosmetic clinic sends someone to buy lungs and kidneys.
 ogguide.p7.title,A Few Warnings
-ogguide.p7.body,- Printed organs are worth a third of natural ones, but they don't rot and need no cooler.\n\n- The dissector and the printer both need power at night.\n\n- Contraband in a smuggler's compartment isn't searched.\n\n- Don't hoard natural organs. They rot, and getting caught is worse.\n\n- Clear your crime every day. Once the police are at the door, it's too late.
+ogguide.p7.body,- Printed organs are worth half as much as natural ones, but they don't rot and need no cooler.\n\n- The dissector and the printer both need power at night.\n\n- Contraband in a smuggler's compartment isn't searched.\n\n- Don't hoard natural organs. They rot, and getting caught is worse.\n\n- Clear your crime every day. Once the police are at the door, it's too late.
 ogguide.reissued,There's a copy of Dissection Essentials in the shop: an organ dealer's starter handbook.
 regulars.dubious,{0} noticed the seal on what they bought had been opened. Favor -1.
 ncguide.item_name,Shopkeeping Rules
@@ -2334,11 +2334,11 @@ regulars.story.14.5,His grandson is coming to visit. He wants to pick a proper g
 regulars.story.15.3,Ms. Ji is a clerk at the Council. Tight-lipped; she only says the work is "boring".
 regulars.story.15.5,The Council is about to audit a few shops, she says. Yours isn't on the list.
 ncguide.reissued,There's a copy of Shopkeeping Rules in the shop: a new shopkeeper's starter handbook.
-ul_kai_organ_route_title,Black Route
-ul_kai_organ_route_desc,Kai introduces you to Thorne from the clinic and tells you how to reach the Firefight Zone. You get a dissector, an organ cooler and a copy of Dissection Essentials: pick up bodies there at night, take out the organs and sell them to buyers like Thorne. Dr. Miller also starts selling the 3D organ printer. Organ dealers start with this.
+ul_kai_organ_route_title,Machines and Dissection Notes
+ul_kai_organ_route_desc,"Anyone can go to the Firefight Zone, but a body is no use without the machines. Kai sends over two machines (a dissector and an organ cooler), a bloodletting kit and a copy of Dissection Essentials, and introduces you to Thorne from the clinic, who comes by once a week to buy organs (his card and phone number are sold separately). Dr. Miller also starts selling the 3D organ printer. Organ dealers start with this."
 net_group_organ,Organ Trade
-organ.route.unlocked,Kai dropped off a dissector, an organ cooler and a copy of Dissection Essentials. The Firefight Zone is open tonight.
-organ.route.compensated,The organ sales license you bought was missing a step: Kai threw in the Black Route for free. The dissector and cooler are in the shop.
+organ.route.unlocked,"Kai dropped off a dissector, an organ cooler, a bloodletting kit and a copy of Dissection Essentials. Thorne from the clinic will come by once a week."
+organ.route.compensated,The organ sales license you bought was missing a step: Kai threw in "Machines and Dissection Notes" for free. The dissector and cooler are in the shop.
 regulars.wish_feature,Regular's wish
 regulars.reserve_feature,Regular's reservation
 ul_kai_police_donation_title,Precinct Donation
@@ -2402,19 +2402,19 @@ item_ul_gauze_dressing_flavor,"Real cotton gauze, sterile packed. Down below, ba
 item_ul_coffee_beans_name,Bagged Coffee Beans
 item_ul_coffee_beans_flavor,Grown on a tree. Anyone raised on synthetic coffee can tell with one sniff.
 item_ul_honey_jar_name,Natural Honey
-item_ul_honey_jar_flavor,Made by real bees. The whole station makes a few dozen jars a year.
+item_ul_honey_jar_flavor,Made by bees. The whole station makes a few dozen jars a year.
 item_ul_salad_bowl_name,Fresh Salad Bowl
-item_ul_salad_bowl_flavor,"Leaves picked off the hydroponic racks this morning, dressed with real olive oil. Lunch in the Upper Levels."
+item_ul_salad_bowl_flavor,"Leaves picked off the hydroponic racks this morning, dressed with olive oil. Lunch in the Upper Levels."
 item_ul_chicken_sandwich_name,Roast Chicken Sandwich
 item_ul_chicken_sandwich_flavor,"Chicken from the top-deck farm, bread baked this morning. Everyone in the office towers has one."
 item_ul_haadasgen_name,Haadasgen Ice Cream
-item_ul_haadasgen_flavor,"Real milk, real vanilla pods. Unlike Bei's down below, this one actually melts."
+item_ul_haadasgen_flavor,"Milk and vanilla pods. Unlike Bei's down below, this one actually melts."
 item_ul_cream_cake_name,Real Cream Cake
-item_ul_cream_cake_flavor,Whipped from real milk. There are twelve cows on the whole station. Afternoon tea in the Upper Levels.
+item_ul_cream_cake_flavor,Whipped from milk. There are twelve cows on the whole station. Afternoon tea in the Upper Levels.
 item_ul_wheat_bread_name,Fresh Whole-Wheat Loaf
-item_ul_wheat_bread_flavor,"Baked this morning from real milled wheat. Down below, bread comes out of a tube."
+item_ul_wheat_bread_flavor,"Baked this morning from milled wheat. Down below, bread comes out of a tube."
 item_ul_orange_juice_name,Fresh-Squeezed Orange Juice
-item_ul_orange_juice_flavor,"Real greenhouse oranges, squeezed in front of you. Down below they drink sweetener juice."
+item_ul_orange_juice_flavor,"Greenhouse oranges, squeezed in front of you. Down below they drink sweetener juice."
 item_ul_farm_eggs_name,Farm Eggs (Six)
 item_ul_farm_eggs_flavor,From the hens on the top-deck farm. Still a bit of straw on the shells.
 ngoods.perfume_desc,Use to boost trading bonus by {0}% with the current customer. You can only benefit from the effects of one perfume at a time.
@@ -2586,7 +2586,7 @@ act1.w4.p1,I really am grateful.
 act1.w4.4,"This is your fair share, and this part is mine."
 act1.w4.5,I brought some more stock while I was at it. Take it.
 act1.w4.6,My business needs more rare goods.
-act1.w4.7,"If you can have some luxury goods ready next time I come by,"
+act1.w4.7,"If you can have some medicine and weapons ready next time I come by,"
 act1.w4.8,then I didn't misjudge you.
 act1.w4.9,"That's it. See you next time, shopkeeper."
 act1.helios.1,I hear a Lower Levels person opened a shop here?
@@ -2665,24 +2665,24 @@ dealer.courier.1,"From the dealer. Wholesale price, take the whole lot."
 dealer.courier.done,Payment received. Good day.
 act1.oscar.fee,Here are eight hundred credits.
 item_ul_roast_beef_name,Slow-Roast Beef
-item_ul_roast_beef_flavor,"Real beef, still pink in the middle. Down below, people eat Peat their whole lives."
+item_ul_roast_beef_flavor,"Beef, still pink in the middle. Down below, people eat Peat their whole lives."
 item_ul_grilled_salmon_name,Seared Salmon
-item_ul_grilled_salmon_flavor,"A real fish that once swam in a farm tank. Crispy skin, a wedge of lemon."
+item_ul_grilled_salmon_flavor,"A fish that once swam in a farm tank. Crispy skin, a wedge of lemon."
 item_ul_veg_soup_name,Garden Vegetable Soup
 item_ul_veg_soup_flavor,"Carrot, pumpkin, celery, all grown on the hydroponic racks and simmered all morning."
 item_ul_pork_sausage_name,Handmade Pork Sausages
-item_ul_pork_sausage_flavor,"Real casing, real pork. Three to a bundle, tied with twine."
+item_ul_pork_sausage_flavor,"Pork sausages, three to a bundle, tied with twine."
 item_ul_roast_veggies_name,Roasted Vegetable Platter
 item_ul_roast_veggies_flavor,"Peppers, zucchini, cherry tomatoes, roasted till the edges char. Up here they call this ""light""."
 item_ul_lamb_skewers_name,Lamb Skewers
-item_ul_lamb_skewers_flavor,"Real lamb, fat and lean, grilled over charcoal. Two skewers."
+item_ul_lamb_skewers_flavor,"Lamb, fat and lean, grilled over charcoal. Two skewers."
 item_ul_chicken_pie_name,Chicken & Mushroom Pie
-item_ul_chicken_pie_flavor,Flaky crust that crumbles at a touch. Creamy chicken and real mushrooms inside.
+item_ul_chicken_pie_flavor,Flaky crust that crumbles at a touch. Creamy chicken and mushrooms inside.
 item_ul_meat_pasta_name,Bolognese Pasta
-item_ul_meat_pasta_flavor,"Sauce cooked down from real tomatoes, minced beef, a handful of real cheese on top."
+item_ul_meat_pasta_flavor,"Sauce cooked down from tomatoes, minced beef, a handful of cheese on top."
 item_ul_antibiotic_ampoule_desc,Use when your wound is unstable: stops infection and stabilizes the wound.
 battle.drag,[Drag a body back]
-battle.drag_hint,"{0} bodies on the ground. You can bring one back per night, and you have to carry it yourself (bodies left on the ground stay here): one in your backpack costs 2 reputation each with the Police, the Infiltration Bureau and the Republic (bodies can only drag them down to -60); one stuffed in your left or right pocket costs nothing. If you carry several, only the freshest is kept."
+battle.drag_hint,"{0} bodies on the ground. You can bring two back per night, and you have to carry them yourself in a pocket (not a backpack; bodies left on the ground stay here). Each one you bring back costs 0.5 reputation with the Republic, the Police or the Infiltration Bureau at random (down to -60 at most). If you carry more, only the two freshest are kept."
 battle.drag_done,You pick the freshest one. You will drag it back when you leave.
 battle.dragged,You already have one to drag tonight. You cannot manage another.
 item_ul_blood_kit_name,Bloodletting Kit
@@ -2764,10 +2764,10 @@ rep_perk_ULF_COUNCIL_RELIEF_name,Tax Relief
 rep_perk_ULF_COUNCIL_RELIEF_desc,The weekly compliance fee drops from 1% to 0.5% of your sales.
 rep_perk_ULF_COUNCIL_RELIEF_flavor,"""We know who pays on time."""
 rep_how_upper,Raise: sell to Upper Levels customers (+1 a day at most); trade two artworks at the private exchange once a week.\nLower: report Upper Levels customers.
-rep_how_police,"Raise: Superintendent Arthur buys smokes and drinks weekly (regulars raise it to +60 at most); requisitions; killing augments, reporting wanted criminals; alarm transmitter module.\nLower: dragging bodies home (down to -60 at most)."
-rep_how_rev,"Raise: the Bureau liaison buys medicine and tins weekly (regulars raise it to +60 at most), more for filling his urgent request; selling organs to the field medic.\nLower: dragging bodies home (down to -60 at most); serving Superintendent Arthur."
-rep_how_council,"Raise: pay the compliance fee at the weekly visit (regulars raise it to +60 at most, +20 more the first time); pay 500 extra for more.\nLower: refusing the fee; dragging bodies home (down to -60 at most)."
-rep_how_vanderlin,Raise: Oscar buys luxury goods weekly (regulars raise it to +60 at most); more for finding the piece he asked for.\nLower: paying the compliance fee (Republic inspection).
+rep_how_police,"Raise: sell to Superintendent Arthur or Officer Dex (+0.1 per item, regulars raise it to +60 at most); requisitions; killing augments, reporting wanted criminals; alarm transmitter module.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
+rep_how_rev,"Raise: sell medicine and tins to the Bureau liaison (+0.1 per item, regulars raise it to +60 at most), more for filling his urgent request; selling organs to the field medic.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
+rep_how_council,"Raise: pay the compliance fee at the weekly visit (regulars raise it to +60 at most, +20 more the first time); pay 500 extra for more.\nLower: refusing the fee; bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
+rep_how_vanderlin,"Raise: sell luxury goods to Oscar (+0.1 per item, regulars raise it to +60 at most); more for finding the piece he asked for.\nLower: crossing the Vanderlin family."
 battle.corpse_pocket,"You brought the body in your pocket back to the shop. Nobody saw, so your reputation is unaffected."
 test_hotkey_regulars,"Test: Arthur, the Republic inspector, Oscar and the Bureau liaison all visit today."
 reg.arthur.interest,Tobacco & Alcohol
@@ -2796,7 +2796,7 @@ phone.cool_days,Call again in {0} days.
 phone.c_come,Can you come by tomorrow?
 phone.c_hang,"Never mind, wrong number."
 phone.no_answer,...No answer.
-rep_how_helios,Raise: the Helios butler buys fresh food every 4 days (regulars raise it to +60 at most).\nLower: crossing the Helios household.
+rep_how_helios,"Raise: sell fresh food to the Helios butler (+0.1 per item, regulars raise it to +60 at most).\nLower: crossing the Helios household."
 item_ul_smuggler_bay_small_name,Small Smuggler's Bay
 item_ul_smuggler_bay_small_desc,A cramped 3×3 smuggler's bay. Its contents are hidden from inspection.
 ul_kai_thorne_contact_title,Thorne's Number
@@ -2816,3 +2816,290 @@ pex.get.siyang,"1 bottle of ""Siyang"" self-refilling perfume"
 pex.give.junk10,Any 10 pieces of Upper Levels junk (the kinds from the recycling station)
 pex.get.cigar,1 box of Luvist cigars
 act1.dex.bye,"Right, I'm heading back. Call the station if anything comes up."
+battle.corpse_limit,You can bring back {0} bodies a night. The other {1} you were carrying got left behind.
+battle.corpse_carried_rep2,You bring {0} body(s) back to the shop. {1}.
+reg.stay.done,That's all for today.
+act1.dex0.1,*radio chatter*
+act1.dex0.2,"Hello, boss. I'm Dex, with the Police. This area's my beat."
+act1.dex0.3,As per standard procedure...
+act1.dex0.4,You have an alarm button under your counter.
+act1.dex0.5,Here's a list of the current wanted criminals.
+act1.dex0.6,"If one of them comes to your store,"
+act1.dex0.7,<u><b>Do NOT listen to them!</u></b>
+act1.dex0.8,Notify us with your alarm before they leave.
+act1.dex0.9,We will take care of the rest.
+act1.dex0.10,Only report them if you're sure it's them.
+act1.dex0.11,You will be fined if you make a false report.
+act1.dex0.12,Have a secure shift.
+act1.dex1.again,"Boss, it's me on patrol again today."
+act1.dex1.goods,I brought extra ammo and bandages. See if you can use any.
+act1.w5.buy,"One more thing. I want to take a few things with me. Medicine and weapons, I will take whatever you have."
+act1.bruce.samurai,"Oh, and I dug up an odd bottle of perfume at the recycling station. No use to me. It is yours."
+pex.give.samurai5,"5 unused bottles of ""Samurai"" experimental pheromone concentrate (used ones do not count)"
+ul_item_business_permit_desc,A permit issued by the Republic. Required to legally operate a business in the Upper Levels.
+ul_dialog_info_bad_harvest_mid,"In {0} days, a significant upper-level Nutrifruit farm is going to suffer a bad harvest."
+ul_name_cartel_handler,Sector 6 Handler
+ul_dialog_tourist_junk_deal_1,What do people throw away up here? Got any of those leftover odds and ends?
+ul_dialog_tourist_junk_deal_2,"I am after things from the Upper Levels recycling station. Junk or recycled materials, either is fine."
+ul_dialog_tourist_junk_deal_3,I just want a piece of Upper Levels life. An empty perfume bottle would be amazing!
+ul_dialog_tourist_junk_deal_4,Got any Upper Levels junk or recycled materials? Would make a great conversation piece!
+battle.no_route,"You have no dissector, so a body is no use to you yet. Kai's network (the ""Upper Circle"" tab) sells ""Machines and Dissection Notes"" ({0} credits): two machines, plus a buyer who comes by weekly for organs."
+trait.model_citizen.name,A Friend on the Force
+trait.model_citizen.desc,Start with 40 extra Police reputation. Once a week someone from the Police comes by to sell a batch of weapons and medical supplies.
+trait.well_connected.name,Well Connected
+trait.well_connected.desc,Start with 15 extra reputation with every faction.
+trait.alert.name,Vigilant
+trait.alert.desc,You are never robbed at night.
+trait.diplomatic.name,Silver Tongue
+trait.diplomatic.desc,"Reputation from trading is increased by 33%, and the daily cap on reputation from trading rises from 1 to 5. The bonus also applies to the reputation you earn per item sold to regulars."
+trait.intimidating.name,Intimidating
+trait.intimidating.desc,All crimes you commit leave 33% less usable evidence.
+trait.proficient_scavenger.name,Proficient Scavenger
+trait.proficient_scavenger.desc,"Two extra searches on every visit to the Recycling Station and the Firefight Zone: usually 5 to 7 at the station, 4 to 6 in the zone."
+trait.ul_dealer_regular.name,Dealer's Regular
+trait.ul_dealer_regular.desc,"The luxury dealer offers big orders once you have spent 1000 with him, and his cooldown is 5 days instead of 7."
+trait.ul_surgeon_hands.name,Surgeon's Hands
+trait.ul_surgeon_hands.desc,+15% chance that a dissected organ comes out intact.
+trait.ul_estate_clearing.name,Estate Clearing
+trait.ul_estate_clearing.desc,"Once a week someone lets you know that an Upper Levels resident has died. You can choose to clear the house that night; the next day the lot is brought to your shop (8-12 items worth 1000-1500 in total). Buy what you like, or take the whole lot at 40% of its value. Fewer random customers come on delivery day."
+trait.ul_night_watch.name,Night Watch
+trait.ul_night_watch.desc,"After closing you get one more option: guard the Vanderlin warehouse overnight for 100; after 3 nights in a row the third night pays 400 extra, then the count starts over. The day after a night watch, one fewer customer comes. 20% of the time someone pays you to ""look away"": take it for 800 more, but criminal evidence +400. A night watch counts as going out at night."
+trait.saving.name,Weight's Kindness
+trait.saving.desc,"After Weight visits on day 1, you receive 600 extra credits."
+trait.sawyer_crew.name,Kesa's Crew
+trait.sawyer_crew.desc,"Start with the Private Exchange unlocked. Cleaning is always free unless the shop is vandalized, and cleaning up vandalism costs much less."
+trait.revolution_sympathizer.name,Revolution Sympathizer
+trait.revolution_sympathizer.desc,Start with 25 extra Infiltration Bureau reputation. You receive marketplace requests from the Bureau more often.
+trait.wild_favorite.name,Kai's Favorite
+trait.wild_favorite.desc,In Kai's network all upgrades cost 10% less and insurance costs 50% less.
+trait.lucky.name,Last Bit of Luck
+trait.lucky.desc,+15 base luck. Stacks with the coin and liquid luck.
+trait.ul_bleeder.name,Practiced Bleeder
+trait.ul_bleeder.desc,"The bloodletting kit yields a blood bag one size larger from each body (small to medium, medium to large). A body that already gives a large bag gives an extra small one."
+trait.ul_weight_trust.name,Weight's Trust
+trait.ul_weight_trust.desc,"After Weight says goodbye, he has a batch of 3 consignment items sent over every 3 days. You keep half of what they sell for."
+trait.ul_socialite_friend.name,Socialite's Best Friend
+trait.ul_socialite_friend.desc,"Once a week a socialite friend visits. She only buys perfume and luxury goods, with 1.5 times a normal socialite's budget. On her first visit she gives you a bottle of ""Earth"" perfume."
+trait.ul_residence_cert.name,Residence Certificate
+trait.ul_residence_cert.desc,"Start with a notarized temporary residence certificate. Hand it to the Republic official on day 7 to skip the ""support for the Republic"" payment, or sell it as a rare item (about 500)."
+trait.ul_neon_signs.name,Neon Signs
+trait.ul_neon_signs.desc,"Start with four neon signs: materials, household goods, food and medical. Put one in the showcase to attract sellers of that kind."
+trait.ascetic.name,Ascetic
+trait.ascetic.desc,Your main inventory shrinks from 24x10 to 16x10.
+trait.awful_negotiator.name,Awful Negotiator
+trait.awful_negotiator.desc,"You cannot bargain with customers, and you suffer a permanent 7% trading penalty."
+trait.blabbermouth.name,Blabbermouth
+trait.blabbermouth.desc,All crimes you commit leave 33% more usable evidence. You gain 50% less reputation with the Black Market and the Infiltration Bureau.
+trait.minimalist.name,Minimalist
+trait.minimalist.desc,Your main inventory shrinks from 24x10 to 20x10.
+trait.maimed.name,Maimed
+trait.maimed.desc,"You cannot visit the Recycling Station or the Firefight Zone. No scavenging, no bodies."
+trait.wild_bad_side.name,On Kai's Bad Side
+trait.wild_bad_side.desc,In Kai's network all upgrades cost 20% more and insurance costs 50% more.
+trait.ul_no_referral.name,No One to Vouch
+trait.ul_no_referral.desc,Kai's network opens on day 14 instead of day 7.
+trait.ul_witness.name,Witness in the Zone
+trait.ul_witness.desc,"Someone saw you in the Firefight Zone. For every 3 bodies you bring home, he shows up the next day asking 150 to keep quiet. Refuse and you lose 5 Police reputation."
+trait.bad_lease.name,Bad Lease
+trait.bad_lease.desc,Your starting rent is 100 credits higher.
+trait.agoraphobia.name,Agoraphobia
+trait.agoraphobia.desc,After going out at night you must rest for 2 nights. Go out on day 5 and you stay in on days 6 and 7; you can go out again on day 8.
+trait.unlucky.name,Jinxed
+trait.unlucky.desc,-15 base luck. Positive luck bonuses can offset it.
+trait.ul_old_enemy.name,Old Enemy
+trait.ul_old_enemy.desc,"An old enemy from the Lower Levels shows up every 7 days and demands an item worth 100 or more. Refuse and your shop is vandalized that night, and you lose one item worth under 100."
+trait.ul_return_law.name,Return Law
+trait.ul_return_law.desc,"The Upper Levels have a consumer protection law: anything you sell can be returned within 3 days, no questions asked. About 15% of buyers bring it back for a full refund; you can sell it again. If you cannot pay the refund, you get crime evidence worth 50% of the item."
+trait.ul_lower_rat.name,Lower Levels Rat
+trait.ul_lower_rat.desc,"Nobody up here likes you: all customers have 10% less budget. This trait goes away once you have lived here for the full 60 days of your residence term."
+trait.ul_vanderlin_due.name,Vanderlin's Due
+trait.ul_vanderlin_due.desc,"The Vanderlin butler comes by every week to collect a 200 credit ""development fee"". If you cannot pay in full he takes what you have and you lose 2 Vanderlin reputation. This trait goes away when your Vanderlin reputation reaches 100."
+trait.colorful_character.name,Colorful Character
+trait.colorful_character.desc,"+3 trait slots, from 4 to 7. This trait still takes one slot, so you can pick up to 6 more."
+trait.hoarder.name,Hoarder
+trait.hoarder.desc,"You start with three immovable piles of clutter at the bottom of your inventory. Each pile can be cleared, and clearing it turns up recyclables and materials."
+trait.aug_menace.name,Aug Menace
+trait.aug_menace.desc,"Aug content is unlocked from the start. Killing augs pays 25% more. The aug menace never ends, and on any difficulty letting too many augs get away ends the game."
+trait.ul_fresh_only.name,Fresh Only
+trait.ul_fresh_only.desc,"Every body you find is at least 75% fresh, but you are 20% less likely to find one."
+trait.ul_friend_relic.name,A Friend's Relic
+trait.ul_friend_relic.desc,"A late friend left a locked chest in your keeping (it takes 5x5 in storage; its contents start at 1000 credits and gain 100 a day). It cannot be sold while locked. Every week someone from the Helios Consortium comes asking about it, and you must bribe him with 20% of its current value or they take the chest by force. You can pry it open with a crowbar at any time (you get stolen goods at 100% heat worth its current value, and may sell or discard the empty chest), or keep guarding it: on day 60 its owner comes for it and thanks you handsomely."
+trait.saving.given,"On his way out, Weight slips you another {0} credits."
+trait.police.name,A Friend on the Force
+trait.police.1,"Boss, it is me. The station is clearing stock and I thought of you first."
+trait.police.2,All above board. Take your pick.
+trait.friend.name,The Socialite's Friend
+trait.friend.first,"She keeps telling me about your shop. First visit, so here, a bottle of ""Earth"" for you."
+trait.friend.hi1,Me again. Any new perfume this week?
+trait.friend.hi2,Show me your best. I brought enough today.
+trait.witness.name,Witness from the Zone
+trait.witness.1,"Boss, I saw everything out in the zone."
+trait.witness.2,150 credits and I was never there.
+trait.witness.pay,Pay him {0}.
+trait.witness.refuse,Refuse.
+trait.witness.paid,Smart. See you next time.
+trait.witness.refused,Fine. I will go have a chat with the Police.
+trait.due.1,The Vanderlin family's work in this district depends on the support of its shopkeepers.
+trait.due.2,This week's development fee: {0} credits. I have put you down for it.
+trait.due.short,You could not pay in full; the butler took {0} credits. Vanderlin family -2.
+trait.due.over,The Vanderlins accept you now. The butler will not come for the fee again.
+item_ul_residence_cert_item_name,Republic Temporary Residence Certificate
+item_ul_residence_cert_item_desc,"A stamped temporary residence certificate. Hand it to the Republic official on day 7 to skip the ""support for the Republic"" payment, or sell it as a rare item."
+item_ul_relic_chest_name,A Friend's Chest
+item_ul_relic_chest_desc,"A locked chest a late friend left in your keeping. What is inside grows more valuable over time. It cannot be sold while locked. With a crowbar in the shop, ""use"" the chest to pry it open: you get stolen goods of the same value and are left with an empty chest."
+trait.cert.used,You have a residence certificate? ...Fine. Your papers are in order. No payment this time.
+trait.estate.name,Estate Agent
+trait.estate.n1,"Boss, a resident in the ring has passed away. The household needs clearing."
+trait.estate.n2,"If you want the job, tick ""Clear the estate"" on tonight's closing sheet and the lot will be brought over tomorrow."
+trait.estate.d1,Here is everything we cleared out last night.
+trait.estate.d2,"Take what you like, or take the whole lot at forty percent of its value."
+trait.estate.service,Clear the estate (delivered tomorrow)
+trait.estate.log,You took the estate job. The lot arrives tomorrow.
+trait.watch.service,Stand watch at the Vanderlin warehouse
+trait.watch.log,You guarded the Vanderlin warehouse all night and got {0} credits. You are worn out: one fewer customer today.
+trait.watch.name,A Man from the Warehouse
+trait.watch.b1,"You were on watch last night, right? A shipment went out while you happened to be dozing."
+trait.watch.b2,"Take this, and keep ""dozing"" like that."
+trait.watch.take,Take the {0}.
+trait.watch.refuse,Refuse.
+trait.watch.taken,Smart. We never met.
+trait.watch.refused,...Suit yourself. I was never here.
+trait.trust.name,Courier
+trait.trust.1,"Mr. Weight asked me to bring these. The usual arrangement, he says."
+trait.trust.2,He says you get them at half price. Whatever you sell them for is yours.
+trait.enemy.name,Old Enemy from Below
+trait.enemy.1,"Well, well. Made it to the Upper Levels? Living the good life."
+trait.enemy.2,You know how it goes. Hand over something decent and I will be on my way.
+trait.enemy.give,Give him something.
+trait.enemy.refuse,Refuse.
+trait.enemy.given,Good. See you next week.
+trait.enemy.refused,Fine. Lock your door tonight.
+trait.enemy.took,Your old enemy took your {0}.
+trait.enemy.log,Your old enemy trashed your shop in the night.
+trait.enemy.log_item,Your old enemy trashed your shop in the night and made off with your {0}.
+trait.return.name,Customer with a Return
+trait.return.1,"Boss, that thing I bought here the other day. I do not want it any more."
+trait.return.2,"Consumer protection law: returns within three days, no questions asked. That is {0} credits back."
+trait.return.short,You could not pay the refund. {0} crime evidence was recorded.
+trait.relic.helios,Helios Investigator
+trait.relic.h1,We hear you are holding a chest of uncertain origin. The Consortium is very interested.
+trait.relic.h2,{0} credits and I report that I found nothing. Otherwise I take it now.
+trait.relic.pay,Pay him {0}.
+trait.relic.refuse,Refuse.
+trait.relic.paid,"Good. I will come and ""look"" again next week."
+trait.relic.refused,Then we do it by the book. The chest belongs to the Consortium now.
+trait.relic.seized,The Helios man took the chest by force.
+trait.relic.owner,Owner of the Chest
+trait.relic.o1,"He said that if anything happened to him, the chest would be with someone he could trust."
+trait.relic.o2,You guarded it for sixty days. This is what you have earned.
+trait.relic.pried,"You pried the chest open: about {0} credits of goods inside, all of them stolen."
+trait.rat.over,You have lived in the Upper Levels for 60 days and nobody treats you as an outsider any more: customer budgets are back to normal.
+trait.ul_who_is_he.name,Who Is He?
+trait.ul_who_is_he.desc,?
+who.name,???
+who.dots,...
+who.c_gift,[Give him a luxury item (put the one you choose on the counter first; otherwise he takes your cheapest)]
+who.c_cash,[Give him {0} credits]
+item_ul_who_note_name,Note
+item_ul_who_note_desc,A note he left behind. A single word on it: {0}
+who.note.1,Levels
+who.note.2,Lower
+who.note.3,the
+who.note.4,forget
+who.note.5,not
+who.note.6,do
+who.note.7,Please
+who.mentor.1,Long time no see.
+who.mentor.2,Didn't think the Upper Levels had folks like you.
+who.mentor.3,Someone's been donating food to the Lower Levels in your name. Said they traded fancy Upper Levels goods for it.
+who.mentor.4,The commissary line won't stop talking about you.
+who.mentor.p1,...Me?
+who.mentor.5,Don't be modest. Folks down there remember.
+item_ul_relic_chest_open_name,Pried-Open Chest
+item_ul_relic_chest_open_desc,An empty chest with a broken lock. Sell it or throw it away.
+trait.relic.need_crowbar,You need a crowbar to break this lock.
+tag.ul_household,Upper Levels household goods
+loot.search,Search
+loot.searched_suffix, (searched)
+loot.window_title,Body being searched
+loot.rep,Someone from {0} saw you go through a dead man's pockets: -0.05
+loot.empty,Nothing on him. A searched body can't be taken back to the store.
+loot.done,"Done searching: blue {0}, purple {1}, gold {2}, red {3}. A searched body can't be taken back, so grab what you want."
+loot.cut,You left before finishing; {0} item(s) never turned up.
+loot.spilled,{0} item(s) left in the body were moved into your store.
+test_hotkey_battle,Test: placed {0} bodies in the firefight zone (2 each at 100% / 75% / 35% / rotten).
+test_hotkey_battle_closed,Test: the firefight zone is not available right now.
+item_ul_mil_biscuit_name,Military Compressed Biscuit
+item_ul_mil_biscuit_flavor,"One block is a meal. Tastes awful, keeps you going."
+item_ul_mayo_tube_name,Mayonnaise (Tube)
+item_ul_mayo_tube_flavor,Military high-calorie mayonnaise. One squeeze is half a meal. For some reason nobody who finds one wants to sell it.
+item_ul_mre_name,Self-Heating Field Ration
+item_ul_mre_flavor,Pull the cord and it heats itself.
+item_ul_beef_stew_can_name,Canned Beef Stew
+item_ul_beef_stew_can_flavor,From the officers' mess. Chunks of beef.
+item_ul_officer_chocolate_name,Officer's Ration Chocolate
+item_ul_officer_chocolate_flavor,The wrapper still has the unit number on it.
+item_ul_wagyu_vacuum_name,Vacuum-Sealed A5 Wagyu
+item_ul_wagyu_vacuum_flavor,Nobody knows who brought this to a firefight. Keep it chilled.
+item_ul_tourniquet_name,Field Tourniquet
+item_ul_tourniquet_flavor,Tightens with one hand.
+item_ul_ifak_name,Individual First-Aid Kit
+item_ul_ifak_flavor,"Bandages, clotting powder and shears in one pouch."
+item_ul_adrenaline_pen_name,Adrenaline Auto-Injector
+item_ul_adrenaline_pen_flavor,Jab the thigh. Kicks in within ten seconds.
+item_ul_defibrillator_name,Red Portable Defibrillator
+item_ul_defibrillator_flavor,"Red casing, a cyan heartbeat on the screen, paddles still warm. One bar of charge left."
+item_ul_iv_kit_name,Field IV Kit
+item_ul_iv_kit_flavor,"Plasma, needles and the stand, all in one case."
+item_ul_regen_serum_name,Experimental Regeneration Serum
+item_ul_regen_serum_flavor,A Helios batch number. Never made it to market.
+item_ul_tactical_knife_name,Tactical Folding Knife
+item_ul_tactical_knife_flavor,Serrated spine.
+item_ul_carbon_baton_name,Carbon-Fibre Baton
+item_ul_carbon_baton_flavor,Police issue. Half the weight of a steel one.
+item_ul_entrench_tool_name,Entrenching Tool
+item_ul_entrench_tool_flavor,Made for digging trenches. Works on people too.
+item_ul_thermal_scope_name,Thermal Scope
+item_ul_thermal_scope_flavor,"Matte black body, cyan-violet heat shapes in the eyepiece. Stripped off a rifle; it will not fit yours."
+item_ul_holo_butterfly_name,Holographic Butterfly Knife
+item_ul_holo_butterfly_flavor,"The blade has a holographic finish that shifts colour as you turn it. Flip it open, flip it shut. Hard to stop."
+item_ul_rail_rifle_name,Prototype Railgun Rifle
+item_ul_rail_rifle_flavor,"No serial number, no maker's mark."
+item_ul_canteen_name,Military Canteen
+item_ul_canteen_flavor,"Dented, but it does not leak."
+item_ul_storm_lighter_name,Windproof Lighter
+item_ul_storm_lighter_flavor,A woman's name is engraved on it.
+item_ul_tac_flashlight_name,Tactical Flashlight
+item_ul_tac_flashlight_flavor,"Three modes, plus strobe."
+item_ul_mil_blanket_name,Military Thermal Blanket (Rolled)
+item_ul_mil_blanket_flavor,Rolled up and strapped. Silver side goes inward.
+item_ul_comm_headset_name,Noise-Cancelling Comms Headset
+item_ul_comm_headset_flavor,Someone is still shouting on the channel.
+item_ul_gilded_compass_name,Gilded Military Compass
+item_ul_gilded_compass_flavor,The back is engraved with a medal ceremony date.
+item_ul_fmj_rounds_name,"FMJ Rounds (5.56x45mm, Box)"
+item_ul_fmj_rounds_flavor,The most ordinary rifle round; the army hands them out by the crate. 30 per box.
+item_ul_buckshot_box_name,"Buckshot Shells (12 Gauge, Box)"
+item_ul_buckshot_box_flavor,Nine pellets per shell. 10 per box.
+item_ul_hollowpoint_rounds_name,"Hollow-Point Rounds (9x19mm, Box)"
+item_ul_hollowpoint_rounds_flavor,They open up on impact. The police do not let civilians buy them. 25 per box.
+item_ul_incendiary_rounds_name,"Incendiary Rounds (7.62x39mm, Box)"
+item_ul_incendiary_rounds_flavor,Phosphorus in the tips; the box feels warm. 20 per box.
+item_ul_he_rounds_name,"High-Explosive Rounds (12.7x99mm, Box)"
+item_ul_he_rounds_flavor,Every round is a small bomb. Do not drop it. 5 per box.
+item_ul_ap_rounds_name,"Armour-Piercing Rounds (7.62x51mm, Box)"
+item_ul_ap_rounds_flavor,Tungsten core. Goes through armour plates. 20 per box.
+item_ul_brass_casings_name,Brass Casings (Bag)
+item_ul_brass_casings_flavor,Melt them down and it is good brass.
+item_ul_kevlar_scrap_name,Kevlar Scraps
+item_ul_kevlar_scrap_flavor,Offcuts from body armour.
+item_ul_mil_circuit_name,Military Circuit Board
+item_ul_mil_circuit_flavor,Pulled out of a drone.
+item_ul_ceramic_plate_name,Cracked Ceramic Armour Plate
+item_ul_ceramic_plate_flavor,It stopped one round. Still worth recycling.
+item_ul_titanium_billet_name,Titanium Barrel Billet
+item_ul_titanium_billet_flavor,A blank that walked out of an arms factory.
+item_ul_mil_powercell_name,Military High-Energy Power Cell
+item_ul_mil_powercell_flavor,One of these runs a whole household power station.
+ul_item_bottle_hot_sauce_flavor,A small bottle of hot sauce. It can save almost any dish.
+blood.battle_rep,"Someone from {0} saw you draining a body in the firefight zone: -1"

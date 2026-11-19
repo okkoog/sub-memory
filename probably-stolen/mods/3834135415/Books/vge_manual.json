@@ -1,15 +1,15 @@
 {
   "id": "vge_manual",
   "title": "Vanilla Gun Expansion manual",
-  "background": "notebook_manual",
+  "background": "vge_manual_page",
   "width": 628,
   "height": 804,
   "chrome": [
     { "type": "button", "id": "close", "action": "close", "x": 297, "y": 2.5, "w": 14, "h": 15 },
     { "type": "button", "id": "zoom", "action": "zoom", "x": 273.5, "y": 3.5, "w": 14, "h": 15 },
-    { "type": "button", "id": "flip_left", "action": "flip_left", "x": 124, "y": 380, "w": 16, "h": 16 },
-    { "type": "button", "id": "flip_right", "action": "flip_right", "x": 176, "y": 380.5, "w": 14, "h": 15 },
-    { "type": "text", "id": "page_indicator", "action": "page_indicator", "style": "page_number", "align": "center", "valign": "middle", "wrap": false, "x": 140.5, "y": 374, "w": 33, "h": 25 }
+    { "type": "button", "id": "flip_left", "action": "flip_left", "x": 102.5, "y": 380, "w": 16, "h": 16 },
+    { "type": "button", "id": "flip_right", "action": "flip_right", "x": 197.5, "y": 380.5, "w": 14, "h": 15 },
+    { "type": "text", "id": "page_indicator", "action": "page_indicator", "style": "page_number", "align": "center", "valign": "middle", "wrap": false, "x": 119, "y": 374, "w": 76, "h": 25 }
   ],
   "pages": [
     {
@@ -19,9 +19,10 @@
         { "type": "text", "id": "title", "loc": "manual_p1_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "CHIPS. The Revolution Gunsmith comes every Monday once Wild (under Gunsmith) or the Revolution has introduced him. His chips cover frames, stun guns, ammunition and attachments, including the grenade launcher, pistol grip backplate and shotgun drum.\n\nFRAMES. A frame chip needs the metal printing and CNC modules. Add one gun part to the printed frame to finish the gun. The printer modules and ingot purity determine print quality.\n\nMATERIALS. The gunsmith bay takes ingots, scrap, electronics, gunpowder and frames. The optional ingot-recipes setting switches five vanilla recipes from scrap to ingots.",
+          "text": "CHIPS\nThe Revolution Gunsmith visits every Monday once you've met him through Gunsmith on the Basic tab of Wild's Network or through the rebels. He sells frame chips, stun gun chips and gun mod chips. With Weapon Permit II he can bring frame chips for the Sentinel Mk. III and the Lancewell Revolver. The Peacemaker SMG and Rampart Shotgun chips need Permit III.\n\nFRAMES\nFrame chips need the CNC Module. If the recipe uses ingots, fit the Metal Printing Module too. Metal purity affects gun stats.\n\nOVERCLOCK\nOverclocked Printing in Wild's Network (Gunsmith group) adds an Overclock button to the 3D printer. It draws four times the power needed for the remaining work and finishes the item at once. Three uses per printer per day. Overclock Regulator cuts the draw from four times to twice the power.",
           "translations": {
-            "zh": "芯片。通过王尔德网络的「枪械匠」组或革命军引荐后，革命军枪匠每周一来访。他卖框架、电击枪、弹药和配件芯片，配件包括榴弹发射器、手枪握把贴背板和霰弹枪弹鼓。\n\n框架。框架芯片需要金属打印和 CNC 模组。打出的框架配上一个枪械零件就是整枪。打印品质取决于打印机模组和投入金属锭的纯度。\n\n材料。枪械师储藏区可放金属锭、废金属、电子元件、火药和框架。打开「原版配方改用金属锭」后，五张原版废金属配方会改用金属锭。"
+            "zh": "芯片\n革命军枪匠每周一来访，经王尔德网络基础页的“枪械匠”引荐，或由革命军引荐。他卖框架芯片、电击枪芯片和改装件芯片。哨兵3型和兰斯维尔左轮的框架芯片有II级武器许可证就可能带来，“和平使者”冲锋枪和“壁垒”霰弹枪的要III级。\n\n框架\n打印框架要装CNC模组，配方里有锭的还要装金属打印模组。枪械属性受金属纯度影响。\n\n超频\n王尔德网络“枪械匠”一组的“超频制造”给3D打印机加一个“超频”按钮：一次耗掉剩余工作量四倍的电，当场打完这一件，每台每天三次。“超频稳压”把四倍降到两倍。",
+            "ru": "ЧИПЫ\nРеволюционер-оружейник приходит каждый понедельник после знакомства через пункт «Оружейник» на вкладке «Основные» сети Уайлда или через революционеров. Он продаёт чипы рам, электрошокеров и модификаций для оружия. С разрешением на оружие 2-го класса он может привезти чипы рам Sentinel Mk. III и револьвера «Лансвелл». Для чипов рам пистолета-пулемёта «Миротворец» и дробовика «Рампарт» нужно разрешение 3-го класса.\n\nРАМЫ\nДля печати рамы нужен модуль ЧПУ. Если по рецепту нужны слитки, поставьте и модуль печати из металла. Чистота металла влияет на характеристики оружия.\n\nРАЗГОН\n«Печать с разгоном» (сеть Уайлда, группа «Оружейник») добавляет 3D-принтеру кнопку «Разгон». Принтер разом тратит вчетверо больше энергии, чем нужно на остаток работы, и сразу заканчивает деталь. Лимит на принтер: три раза в день. «Стабилизатор разгона» снижает расход с четырёхкратного до двукратного."
           }
         }
       ]
@@ -33,9 +34,10 @@
         { "type": "text", "id": "title", "loc": "manual_p2_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "AMMO PRESS. Fit the press in the printer's module grid. A chip prints six handfuls of finished ammo (30 rounds) per batch. Standard and non-lethal loads need a bottle of regular powder; armor-piercing needs advanced powder. Metal rounds need ingots and the metal printing module; non-lethal rounds use plastic.\n\nAMMUNITION. Print .22, 10 mm and .45 AFP in standard, armor-piercing and non-lethal loads, or standard 12-gauge shells. A full handful has five rounds.\n\nPACKING. A box holds up to eight handfuls (40 rounds when full). Use Toggle to seal or reopen it. Old sealed six-packs stay six-packs until repacked. Buyers may spot short fills, the wrong caliber or the wrong load; vending machines reject boxes a normal buyer would refuse.",
+          "text": "POWDER\nThe Revolution Gunsmith starts with 3-5 regular and 1-2 advanced powder per visit. Every 5 bottles you buy, of either kind, add 25% of that visit's base stock, rounded to whole bottles. At 20 bottles he brings double. Each bottle holds 30 g.\n\nCASES\nFit the Case Press Module in a printer's module bay to print empty cases. Metal cases and 12-gauge hulls need ingots and the Metal Printing Module. Non-lethal cases use plastic.\n\n.45 AFP AND 12-GAUGE\nEach visit, the Revolution Gunsmith tries to put out standard .45 AFP rounds and 12-gauge shells. Sometimes he also offers .45 AFP AP and non-lethal rounds. There must be room on the counter. The mercenary gun seller sells all three .45 AFP loads. The Security Requisition Officer sells 12-gauge shells (Weapon Permit III).",
           "translations": {
-            "zh": "弹药压制。把压制模组装进打印机的模组槽。弹药芯片每批直接打印 6 份成品（30 发）。普通弹和非致命弹消耗一瓶普通火药，穿甲弹用高级火药。金属弹需要金属锭和金属打印模组，非致命弹用塑料。\n\n弹种。.22、10 毫米和 .45 AFP 都有普通、穿甲和非致命三种，也能打印普通 12 号霰弹。每份散装弹药最多 5 发。\n\n装盒。一盒最多放 8 份，装满是 40 发。用切换操作封装或拆开；旧六份盒保持原样，拆开重封后才按新容量算。少装、掺错口径或弹种可能被客人识破；普通客人不收的盒子，售货机也不会卖。"
+            "zh": "火药\n革命军枪匠起初每次带普通火药3至5瓶、高级火药1至2瓶。两种火药合计每买满5瓶，他下次就多备当次基础数量的25%（四舍五入到整瓶）。买满20瓶后带双倍。每瓶30克。\n\n空壳\n把弹壳压制模组装进打印机的模组槽，就能打印空壳。金属壳和12号空壳用锭和金属打印模组，非致命弹壳用塑料。\n\n.45 AFP和12号\n革命军枪匠每次来都会尝试摆出.45 AFP普通弹和12号霰弹，有时还摆.45 AFP穿甲弹和非致命弹，前提是柜台有空位。佣兵卖枪客也卖这三种.45 AFP弹药，治安部征用官卖12号霰弹（要III级武器许可证）。",
+            "ru": "ПОРОХ\nРеволюционер-оружейник сначала привозит за визит 3-5 банок обычного пороха и 1-2 банки улучшенного. Каждые 5 купленных у него банок любого вида прибавляют 25% к базовому запасу, выпавшему на этот визит. Количество округляется до целых банок. После 20 банок запас удваивается. В банке 30 г.\n\nГИЛЬЗЫ\nПоставьте модуль прессовки гильз в отсек для модулей принтера, чтобы печатать пустые гильзы. Для металлических гильз и гильз 12-го калибра нужны слитки и модуль печати из металла. Нелетальные гильзы печатаются из пластика.\n\n.45 AFP И 12-Й КАЛИБР\nВ каждый визит революционер-оружейник пытается выставить обычные патроны .45 AFP и патроны 12-го калибра. Иногда бывают и бронебойные или нелетальные .45 AFP. На прилавке нужно свободное место. У наёмника-продавца есть все три вида .45 AFP. Для покупки патронов 12-го калибра у снабженца из Службы безопасности нужно разрешение на оружие 3-го класса."
           }
         }
       ]
@@ -44,12 +46,13 @@
       "name": "Page 3",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p3_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_p2_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "PRINTER. Use the arrows to swap chips with the rack; the title shows the loaded chip. Apply an expansion kit to expand the rack, up to 3×3.\n\nCABINET. A new cabinet occupies 6×4 cells and starts with four slots. Apply one ingot per extra slot, up to nine. Old cabinets keep nine slots and their footprint. The front displays the first two guns; choose from six looks. It also holds gun oil.\n\nFITTING. Select a slot to see fitting parts in the shop and back room. A part will not fit if the gun would outgrow its space. The title shows condition; Repair uses an accessible gun part and the game's normal repair odds. The vanilla layout is still a setting.\n\nWILD'S GUNSMITH GROUP. Once purchased, toggle auto feed and auto stock from their cards or per printer. Feed brings missing materials only when the batch can be supplied; stock sends prints to a bay with room. Call the Upper-Level Gunsmith using his business card to arrange a visit for premium guns, attachments and finishes.",
+          "text": "LOADING\nEach round needs 1 g of powder. AP rounds use advanced gunpowder.\n- By hand, no printer needed: drag the cases onto the powder or vice versa. Box-select a batch to load it all at once.\n- In a printer with the Case Press Module: put the cases and powder in the printer. With Auto Feed on, the powder can stay in a gunsmith storage bay. Press the loading key for up to 60 rounds at a time.\n\nPACKING\nGun sellers carry empty boxes. The Revolution and Upper-Level Gunsmiths each bring one box of 40 rounds per visit. The ammo box chip prints two empty boxes per spool. The Box Dispenser makes them too.\nBuyers check the contents against the label. They may spot a short count, the wrong caliber or the wrong load.",
           "translations": {
-            "zh": "打印机。用箭头在芯片槽和芯片库之间轮换，标题显示正在用的芯片。把扩建套件拖到打印机上可扩容，最大 3×3。\n\n枪柜。新柜占 6×4 格，四个枪位起步，每块金属锭扩一格，最多九格。旧柜保留九格和原占位。柜门展示前两把枪，外观六选一；柜内也可放枪油。\n\n改枪。点击配件槽查看店里和后屋能装的配件。装上后放不下就不换件。标题显示成色，「修复」使用可取到的枪械零件，成功率沿用原版。设置可切回原版窗口。\n\n王尔德「枪械匠」组。买下自动供料和自动入库后，可在各自卡片或每台打印机上开关。供料只在材料凑齐时搬运，入库只送到有空位的储藏区。拿到上层区枪匠的名片后，可用店里的电话约他上门买高档枪械、配件和涂装。"
+            "zh": "填装\n每发子弹需要1克火药。穿甲弹使用高级火药。\n- 手工装，不用打印机：把空壳和火药拖到一起。框选一批可以一起装。\n- 打印机装：装着压制模组时，把空壳和火药放入打印机（开着自动供料时火药也可以放在枪械师储藏区），按填装键，一次最多60发。\n\n装盒\n普通卖枪客卖空盒。革命军枪匠和上层区枪匠每次各带一盒弹药，每盒40发。空盒还能用芯片打印（1卷耗材出2个），或用弹药盒分发器领取。\n客人会对照标签验货，少装、口径或弹种不对都可能被识破。",
+            "ru": "СНАРЯЖЕНИЕ\nНа каждый патрон нужен 1 г пороха. Для бронебойных используется улучшенный порох.\n- Вручную, без принтера: перетащите гильзы на порох или наоборот. Выделите партию рамкой, чтобы снарядить её за раз.\n- В принтере с модулем прессовки гильз: положите в него гильзы и порох. При включённой «Автоподаче» порох можно оставить в шкафу оружейника. Нажмите «Снарядить». За раз можно снарядить до 60 патронов.\n\nУПАКОВКА\nПустые коробки продают торговцы оружием. Революционер-оружейник и оружейник с Верхних уровней за визит привозят по одной коробке на 40 патронов. Пустые коробки можно напечатать по чипу (две с катушки) или взять в раздатчике.\nПокупатели сверяют содержимое с этикеткой и могут заметить недостачу, не тот калибр или тип патронов."
           }
         }
       ]
@@ -58,12 +61,13 @@
       "name": "Page 4",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p4_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_p3_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "STREET CLASHES. From day 12, displaying a Class I or II Weapon Permit can draw a three-night clash. Weapon and ammo demand rises. Each filled procurement order adds five to that side's remaining rolls; the gun's quality is not battle credit. A Revolution win gives a week at 10% off the Revolution Gunsmith. A Security win brings one offer of leftover rounds within the week, priced by rounds remaining, less 10%. After either result, display a firearm sign for a chance at war-damaged guns over the next five days.\n\nGUN BUYER REPUTATION. New or Excellent guns with stats at least as good as a fresh gun of that model help your standing. Unrepaired war-damaged guns can hurt it. Reputation affects buyer visits and order rewards and drifts toward neutral when you stop making qualifying sales.",
+          "text": "CHIP RACK\nA rack sits under the printer's chip slot, and the arrows beside the slot swap in the previous or next chip. Drag a Chip Rack Expansion Kit onto the printer to grow it, up to 3x3.\n\nGUN CABINET\nSold by the Retired Gunsmith and the Revolution Gunsmith. A new cabinet takes up 6x4 cells and starts with four weapon slots. Upgrade it with metal ingots for up to nine slots. It holds weapons and gun oil. The whole cabinet fits in a gunsmith storage bay.\n\nGUNSMITH STORAGE BAY\nOnce every tab is unlocked, you can fit three more of the vanilla Storage Bay Expansion Kits.\n\nGUN-MOD WINDOW\nClick a mod slot to list the gun mods in the shop and on the counter that fit. Click one to fit it. The old mod goes into the container the new one came from, then shop storage or the counter if needed. If none has room, the swap is cancelled. You can switch back to the vanilla window in the settings.",
           "translations": {
-            "zh": "街头冲突。第 12 天起，展示柜摆着 I 级或 II 级武器许可证，街上就可能打起来。冲突打三晚，武器和弹药涨价。每完成一笔阵营采购，该方之后每次掷骰都加 5；交好枪不额外算战功。革命军胜，革命军枪匠一周内九折。治安部胜，一周内有人上门卖一次战后余弹，按剩余发数计价，再打九折。无论哪方赢，之后五天摆着枪械灯牌的店都有机会收到战损枪。\n\n买枪客口碑。交出全新或极佳成色、属性不输同型号新枪的枪，口碑会上升；卖没修好的战损枪可能掉口碑。口碑影响来访和赏金，一段时间没有这样的成交，就会向中间回落。"
+            "zh": "芯片库\n打印机芯片槽下面多了一个库，槽两边的箭头换上一张或下一张。把芯片库扩建套件拖到打印机上可以扩容，最大3×3。\n\n枪柜\n退休枪匠和革命军枪匠有卖。新柜占6×4格，最开始四个枪位，可使用金属锭升级，最多九格，能放武器与枪油。整柜能放进枪械师储藏区。\n\n枪械师储藏区\n页签全解锁后，原版的储藏区扩建套件还能再装3个。\n\n改枪窗口\n点改装件槽，列出店里和柜台上能装的改装件，点一下装上。换下的改装件先放回新件原来的容器，再试店内库存和柜台上。都没地方就不换。设置里可以换回原版窗口。",
+            "ru": "КАССЕТА ДЛЯ ЧИПОВ\nКассета стоит под гнездом принтера для чипа. Стрелки у гнезда переключают на предыдущий или следующий чип. Перетащите набор расширения кассеты на принтер, чтобы увеличить её (до 3×3).\n\nОРУЖЕЙНЫЙ ШКАФ\nЕго продают опытный оружейник и революционер-оружейник. Новый шкаф занимает 6×4 клетки, в нём четыре ячейки для оружия. Слитками металла можно увеличить их число до девяти. Шкаф вмещает оружие и оружейное масло и целиком помещается в шкаф оружейника.\n\nШКАФ ОРУЖЕЙНИКА\nКогда открыты все вкладки, можно установить ещё три стандартных набора расширения шкафа.\n\nОКНО МОДИФИКАЦИЙ\nЩёлкните по ячейке, чтобы увидеть подходящие модификации из магазина и с прилавка. Щёлкните по модификации, чтобы установить её. Снятая модификация сначала идёт туда, откуда взяли новую, затем в запас магазина или на прилавок. Если места нет нигде, замены не будет. В настройках можно вернуть стандартное окно."
           }
         }
       ]
@@ -72,12 +76,13 @@
       "name": "Page 5",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p5_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_p3_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "HISTORY. Street-clash history adds 4% per entry; kills add 1% per five (up to 8%). Two entries or 20 kills make a gun famous, adding another 15%. Total history markup is capped at 40%.\n\nUPKEEP. After seven days without oil, the famous bonus fades over eight days without changing condition. Oil has five uses; apply it by hand or leave it in the cabinet for its guns. Repair a war-damaged gun to Good or better, then oil it to remove its war-damage label.\n\nDISPLAY AND RESALE. Displaying famous or war-damaged guns draws the matching buyer. A sold gun can come back through a mercenary with its original serial, parts and history. Read the serial under the barcode in the gun tooltip.",
+          "text": "WILD'S NETWORK, BASIC TAB, GUNSMITH GROUP\nMeet the Retired Gunsmith first for both upgrades.\n- Auto Feed (Weapon Permit II): each night a powered printer with a chip takes what it is missing from your gunsmith storage bays.\n- Auto Stock (Weapon Permit III): finished prints, frames included, go straight into a gunsmith bay with room, joining their own kind first.\n\nUPPER-LEVEL GUNSMITH (meet the Retired Gunsmith first)\nHis card goes on the counter. Call him on the store phone to book a visit for tomorrow or the day after, once every 5 days. He brings one vanilla or company gun from your highest permit tier, plus 3-4 premium gun mods, gun parts, gun oil, paint crates and sticker packs. There's a 10% chance the gun is famous.",
           "translations": {
-            "zh": "来历。街头冲突经历每条加价 4%，击杀每 5 人加 1%（最多 8%）。有两条来历或击杀 20 人就是名枪，再加 15%；来历总加价最多 40%。\n\n保养。名枪 7 天不上油，加价会在之后 8 天慢慢消退，成色不变。枪油每罐可用 5 次，可手动用，也可放进枪柜给柜里的枪保养。战损枪修到良好或更好，再上一次油，就能去掉战损标签。\n\n展示与转卖。展示名枪或战损枪能招来对应的买家。卖出去的同一把枪有机会被佣兵带回来，保留原序列号、配件和来历。枪械提示框的条码下方可以查看序列号。"
+            "zh": "王尔德网络基础页的“枪械匠”一组\n两项都要先认识退休枪匠。\n- 自动供料（II级武器许可证）：每晚给通电、装了芯片的打印机从枪械师储藏区补齐材料。\n- 自动入库（III级武器许可证）：打印成品连框架直接送进有空位的枪械师储藏区，先放已有同类的地方。\n\n上层区枪匠（要先认识退休枪匠）\n名片放在柜台上，用店里的电话约他明天或后天来，每约一次隔5天。他带一把你最高许可证那一档的原版枪或公司枪，有一成机会是名枪。另带3至4件高档改装件、枪零件、枪油、涂装箱和贴纸包。",
+            "ru": "СЕТЬ УАЙЛДА, ВКЛАДКА «ОСНОВНЫЕ», ГРУППА «ОРУЖЕЙНИК»\nДля обоих улучшений нужно знакомство с опытным оружейником.\n- «Автоподача» (разрешение на оружие 2-го класса): каждую ночь принтер с питанием и чипом берёт недостающие материалы из ваших шкафов оружейника.\n- «Автосклад» (разрешение на оружие 3-го класса): готовая продукция, включая рамы, сразу уходит в шкаф оружейника, где есть место, в первую очередь к таким же предметам.\n\nОРУЖЕЙНИК С ВЕРХНИХ УРОВНЕЙ (сначала познакомьтесь с опытным оружейником)\nЕго визитка оказывается на прилавке. Позвоните из магазина и пригласите его на завтра или послезавтра, не чаще раза в 5 дней. Он привозит одно стандартное или корпоративное оружие того класса, что ваше высшее разрешение. С шансом 10% оно знаменитое. Ещё у него 3-4 премиальные модификации, детали оружия, оружейное масло, ящики с краской и наборы наклеек."
           }
         }
       ]
@@ -86,12 +91,193 @@
       "name": "Page 6",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p4_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "STREET CLASHES\nFrom night 12, a weapon permit in your display case can trigger a street clash the next day, raising weapon and ammo prices. The Revolution buys through lower-level and mercenary gun buyers (display Weapon Permits I and II respectively). Security sends a requisition officer. Each faction order you fill gives that side an edge.\n- Revolution win: 10% off at the Revolution Gunsmith for a week\n- Security win: someone visits once within the week to sell leftover ammo, priced by rounds left with 10% off\nEither way, displaying a Firearm or Heavy Firearm Neon Sign may bring war-damaged guns over the next five days.\n\nGUN BUYER REPUTATION\nOnly gun orders count towards reputation, not repairs. A New or Excellent gun earns reputation if its base Firepower, Style, Reliability, Ergonomics and Accuracy add up to at least those of a new gun of the same model. A Fair or Poor war-damaged gun costs reputation. It affects visits and order rewards, and drifts back toward neutral if you go a long time without such sales. Normally, display the matching permit to attract gun buyers: I for lower-level, II for mercenaries, III for upper-level.",
+          "translations": {
+            "zh": "街头冲突\n从第12晚起，展示柜里有武器许可证，次日就可能发生街头冲突，武器和弹药涨价。革命军托下层区和佣兵买枪客采购（要摆I级、II级许可证），治安部派征用官上门。每完成一笔阵营采购，该方获得额外优势。\n- 革命军胜：革命军枪匠一周内九折\n- 治安部胜：一周内有人上门卖一次战后余弹，按剩余发数计价再打九折\n无论哪方赢，之后五天摆着枪械或重型枪械霓虹灯牌的店都可能收到战损枪。\n\n买枪客口碑\n只有交枪单算口碑，维修单不算。交出全新或极佳的枪，且火力、风格、可靠性、人机工效、精准度的基础值加起来不低于同型号新枪，口碑上升；交出品相一般或较差的战损枪，口碑下降。口碑影响来访和赏金，长期没有这样的成交就往中间回落。平时要靠展示柜里的对应许可证招来买枪客：I级下层区，II级佣兵，III级上层区。",
+            "ru": "УЛИЧНЫЕ СТОЛКНОВЕНИЯ\nНачиная с 12-й ночи, при выставленном на витрине разрешении на оружие на следующий день могут начаться уличные столкновения. Оружие и патроны дорожают. Революционеры закупаются через покупателей оружия с Нижних уровней и наёмников (нужны разрешения 1-го и 2-го класса на витрине). Служба безопасности присылает снабженца. Каждый выполненный заказ даёт преимущество этой стороне.\n- Победа революционеров: неделю действует скидка 10% у Революционера-оружейника\n- Победа Службы безопасности: в течение недели к вам один раз придут продать остатки патронов. Цена зависит от их числа, скидка 10%\nПри любом исходе неоновая вывеска «Огнестрельное оружие» или «Тяжёлое оружие» на витрине даёт шанс получить оружие с боевыми повреждениями в следующие пять дней.\n\nРЕПУТАЦИЯ У ПОКУПАТЕЛЕЙ ОРУЖИЯ\nВ счёт репутации идут только заказы на оружие, но не на ремонт. Новое оружие или оружие в отличном состоянии повышает репутацию, если сумма базовой огневой мощи, стиля, надёжности, эргономики и точности не ниже, чем у нового оружия той же модели. Оружие с боевыми повреждениями в сносном или плохом состоянии снижает репутацию. Она влияет на визиты и награды, а без таких сделок со временем возвращается к нейтральной. В обычные дни выставляйте на витрину нужное разрешение: 1-го класса для Нижних уровней, 2-го для наёмников, 3-го для Верхних."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 7",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p5_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "HISTORY\nA gun keeps its story: the street clash a war-damaged gun came out of, league wins, range records, mercenary missions\n- +4% each\n- Kills add +1% per 5 (at most +8%)\nWar-damaged guns carry kills. Guns from the mercenary seller have a base 50% chance to carry kills, affected by luck.\n- Two entries or 20 kills make a famous gun, another +15%\n- History adds at most +40%\n\nUPKEEP\nAfter 7 days without oil, a famous gun's bonus fades over the next 8 days. Its condition doesn't change. A can of gun oil has 5 uses. Apply it by hand or leave it in the gun cabinet. On nights the range is open, Range Famous Gun Upkeep oils famous guns on the lanes and in the locker when they're due.",
+          "translations": {
+            "zh": "来历\n枪会记下自己的经历：街头冲突里流出的战损枪、联赛冠军、靶场纪录、随佣兵出过任务\n- 每条+4%\n- 击杀数每5人+1%（最多+8%）\n战损枪带击杀数。佣兵卖枪客的枪带击杀数的基础几率是50%，受运气影响。\n- 2条来历或击杀20人就是名枪，再+15%\n- 来历加价合计最多+40%\n\n保养\n名枪7天没上油，加价会在之后8天里慢慢消退，品相不变。枪油每罐5次，可手动使用或放在枪柜里。“靶场名枪保养”只在营业夜给靶位和储物柜里到期的名枪上油。",
+            "ru": "ИСТОРИЯ\nОружие хранит свою историю: уличное столкновение, из которого вышло оружие с боевыми повреждениями, победы в лиге, рекорды тира, задания наёмников\n- +4% за каждую запись\n- убийства: +1% за каждые 5 (не больше +8%)\nОружие с боевыми повреждениями имеет убийства на счету. Для оружия наёмника-продавца базовый шанс получить такой счёт составляет 50%, с поправкой на удачу.\n- Две записи или 20 убийств делают оружие знаменитым, ещё +15%\n- История добавляет не больше +40%\n\nУХОД\nЕсли не смазывать знаменитое оружие 7 дней, за следующие 8 дней надбавка сойдёт на нет. Состояние не изменится. Одной банки масла хватает на 5 раз. Смажьте оружие вручную или оставьте масло в оружейном шкафу. «Уход за знаменитым оружием в тире» действует только в рабочие ночи: на позициях и в шкафчике смазывают знаменитое оружие, которому подошёл срок."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 8",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p5_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "SHOWCASE\nFamous guns on display attract upper-level gun buyers. War-damaged guns attract lower-level buyers. With cabinet display on, guns in a displayed cabinet count too:\n- +15% for the first\n- +5% for each extra\n- up to three\nIf you have a famous gun in the shop, regular high-end gun orders from upper-level buyers offer a famous gun bonus. Repair, best gun and collector orders don't.\n\nMERCENARY RENTALS\nRent out up to two guns at once for 3-5 days. Requirements are on the tablet like a custom order. You get an IOU and upfront rent at 10% of the gun's value per day. Rent goes up 25% per bonus requirement met. The renter returns on the due date or next open day. The gun gains 2-8 kills and sometimes a mission record. If it's lost, the claim covers part or all of its value.",
+          "translations": {
+            "zh": "展示\n展示名枪能吸引上层区买枪客，展示战损枪能吸引下层区买枪客。开启枪柜展示时，摆在展示柜里的枪柜也算：\n- 第一把+15%\n- 之后每把+5%\n- 最多算3把\n店里有名枪时，上层区普通高档交枪单会加名枪赏金。维修单、要求最好枪的订单和收藏家单不加。\n\n佣兵租枪\n租期3至5天，同时最多租出两把。要求跟定制单一样列在平板上。交枪时收借条和租金，每天按枪价的10%算，每满足一条额外奖励条件，租金再多25%。佣兵到期来还枪，没开门就下次来。枪会多2至8次击杀，有时多一条任务来历。丢枪就凭赔偿单获赔一部分或全价。",
+            "ru": "ВИТРИНА\nЗнаменитое оружие на витрине привлекает покупателей с Верхних уровней, а оружие с боевыми повреждениями привлекает покупателей с Нижних. Если включён показ оружия в шкафу, стволы в выставленном шкафу тоже считаются:\n- +15% за первый\n- +5% за каждый следующий\n- учитывается до трёх\nЕсли в магазине есть знаменитое оружие, в обычном дорогом заказе с Верхних уровней за него дают премию. В заказах на ремонт, лучшее оружие и оружие для коллекционера премии нет.\n\nАРЕНДА ОРУЖИЯ НАЁМНИКАМ\nСрок 3-5 дней, до двух стволов сразу. Требования видны на планшете, как в заказе. Наёмник оставляет расписку и платит вперёд по 10% цены оружия в день. Каждое выполненное дополнительное требование даёт +25% к аренде. Он вернёт ствол в срок или когда вы откроетесь. Оружие получит 2-8 убийств, иногда и запись о задании. Если его потеряют, по акту возместят часть цены или всю сумму."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 9",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
         { "type": "text", "id": "title", "loc": "manual_p6_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
         { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
-          "text": "PAINT. Spray cans come in Basic, Fine and Premium (5/4/3 uses). Used on a gun or one of seven melee weapons, a can offers four paints, each rolled Common / Rare / Epic / Legendary (+5/+10/+20/+30%): Basic 90/7/2/1%, Fine 15/78/5/2%, Premium 0/15/80/5%. A new offer is revealed one by one; Random takes one of the four, and Always random skips the window. Most Legendary paints are hand-drawn art laid onto the gun; every paint has a pattern number (#0-999) that moves its pattern and where it chips (some paints only chip differently, so on a new gun, which has no chips, their numbers look alike), and wears with the gun's condition (Poor: about half chipped off). Main parts take the pattern, grips and frames a dimmed version (melee weapons: the main part only), attachments too. Cans come from paint crates, 2-4 each, each Basic 70%, Fine 25%, Premium 5% (the Upper-Level Gunsmith, the Revolution Gunsmith and thieves sell them) and, with a Firearm or Heavy Firearm Neon Sign in the showcase, now and then from vanilla locked crates.\n\nSTICKERS. A pack holds 5; a gun has 2 spots, +2% each. Small and medium stickers fit any gun, large ones only the SMG (both spots) and the shotgun (one); the ones with no room are greyed out in the picker. The Upper-Level Gunsmith and thieves sell packs.\n\nCOLLECTOR. An eligible high order has a 30% chance to be a collector's. He wants a big gun (size > 14) or one worth at least 300, in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a Premium can with uses left. Of collector orders, 70% match current stock; 30% draw freely from both kinds, so you may need to prepare another gun. He pays market price plus 300–350, with a further 150 for the named Epic skin (premiums scale with vanilla market and markup). While he waits, a Premium can offers that skin.",
+          "text": "PAINT\nSpray cans come in Basic, Fine and Premium (5/4/3 uses). Use one on a gun or one of seven melee weapons for a choice of four paints. Each paint's rarity depends on the can: Common, Rare, Epic and Legendary add 10%, 20%, 40% and 60% to the price.\nEvery paint has a pattern number (#0-999) that sets where the pattern sits and where it chips. The worse the gun's condition, the more paint comes off (about half at Poor).\n\nSPRAY CANS\nThey come from paint crates, 2-4 a crate, each Basic 70%, Fine 25%, Premium 5%. The Upper-Level Gunsmith, the Revolution Gunsmith and thieves sell crates. With a Firearm or Heavy Firearm Neon Sign in the showcase, vanilla locked crates hold a can now and then.\nSelect a Box Cutter and click the weapon to scrape off paint and stickers. Neither is refunded.",
           "translations": {
-            "zh": "涂装。喷漆罐分低级、中级、高级三档，可用 5/4/3 次。对枪或七种近战武器使用时给出 4 款涂装，每款按罐子档次抽稀有度（普通/稀有/史诗/传说，加价 +5%/+10%/+20%/+30%）：低级 90/7/2/1%，中级 15/78/5/2%，高级 0/15/80/5%。新的候选会逐个揭晓；「随机」从 4 款里随机喷一款，「总是随机」直接喷、不弹窗口。传说涂装大多是手绘图案铺到枪上；每款涂装带图案编号（#0–999），编号不同，图案的位置和掉漆的地方就不同（有的涂装只有掉漆不同：全新的枪不掉漆，这些涂装的编号就看不出差别），按枪况磨损（差：大约一半掉漆）。主体部件铺图案，握把和框架是淡化的图案（近战武器只铺主体），配件也一样。喷漆罐来自涂装箱（每箱 2–4 罐，每罐低级 70%、中级 25%、高级 5%；上层区枪匠、革命军枪匠和小偷有卖），展示柜摆着枪械或重型枪械霓虹灯牌时，原版上锁箱里偶尔也有。\n\n贴纸。一包 5 张，每把枪 2 个位置，每张 +2%。贴纸分小、中、大三种：小号和中号哪把枪都贴得上，大号只贴得上冲锋枪（两处）和霰弹枪（一处），放不下的在挑选窗里是灰的。上层区枪匠和小偷有卖。\n\n收藏家。上层区买枪客符合条件的高档单有 30% 变成收藏家单。他要大枪（大小 > 14）或值钱的枪（市价 ≥ 300），涂装得是史诗或传说。店里要有能交的成枪，或者有能喷出合格成品的枪和还有使用次数的高级罐。收藏家单中 70% 按当前库存选单，30% 从两类完整订单池随机选，可能需要另外备枪。按市价另加 300–350，点名的史诗款再加 150，两笔奖金照常受行情和加价影响。他在柜台前时，高级罐会给出点名款。"
+            "zh": "涂装\n喷漆罐分低级、中级、高级，能用5/4/3次。对枪或七种近战武器使用，给出4款涂装，每款按罐子档次抽稀有度（普通/稀有/史诗/传说，加价+10%/+20%/+40%/+60%）。\n每款涂装带图案编号（#0至999），编号决定图案的位置和掉漆的地方。枪的品相越差掉漆越多（较差时大约掉一半）。\n\n喷漆罐\n来自涂装箱，每箱2至4罐，每罐低级70%、中级25%、高级5%。涂装箱上层区枪匠、革命军枪匠和小偷有卖。展示柜摆着枪械或重型枪械霓虹灯牌时，原版上锁箱里偶尔也有。\n选中美工刀点枪或近战武器，能刮掉涂装和贴纸，不退还。",
+            "ru": "ОКРАСКА\nБазового баллончика хватает на 5 применений, качественного на 4, премиального на 3. Для огнестрельного и семи видов холодного оружия баллончик предлагает четыре окраски. Шанс каждой редкости зависит от баллончика: обычная окраска прибавляет к цене 10%, редкая 20%, эпическая 40%, легендарная 60%.\nУ каждой окраски есть номер узора (#0-999). Он задаёт положение узора и места сколов. Чем хуже состояние оружия, тем больше сколов: в плохом состоянии сходит примерно половина краски.\n\nБАЛЛОНЧИКИ С КРАСКОЙ\nВ ящике с краской 2-4 баллончика. Для каждого шансы такие: базовый 70%, качественный 25%, премиальный 5%. Ящики продают оружейник с Верхних уровней, революционер-оружейник и воры. С неоновой вывеской «Огнестрельное оружие» или «Тяжёлое оружие» на витрине баллончик иногда попадается и в стандартном запертом ящике.\nВыберите канцелярский нож и щёлкните по оружию, чтобы снять окраску и наклейки. Ни то ни другое не возвращается."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 10",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p6_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "STICKERS\nA pack holds 5, a gun has 2 spots, +4% each. Small stickers fit nearly any gun, while medium and large ones need room on the gun. They also fit guns from other mods. The Upper-Level Gunsmith and thieves sell packs.\n\nCOLLECTOR\nAn eligible high-end order from an upper-level gun buyer has a 30% chance to be a collector's. He wants a big gun (size over 14) or one worth at least 300, in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a Premium can with uses left. 70% of collector orders match current stock and 30% are drawn at random from both kinds, so you may need to prepare another gun. He pays:\n- market price plus 300-350\n- another 150 for the requested Epic paint\nBoth bonuses scale with the market and markup. While he's at the counter, a Premium can offers that paint, but you have to pick it by hand.",
+          "translations": {
+            "zh": "贴纸\n一包5张，每把枪2个位置，每张+4%。小号基本都贴得上，中号和大号要枪上有地方。兼容其它模组的枪。上层区枪匠和小偷有卖。\n\n收藏家\n上层区买枪客符合条件的高档单有30%变成收藏家单。他要大枪（大小超过14）或市价不低于300的枪，涂装要史诗或传说。店里要有能交的成枪，或者有能喷出合格成品的枪和还有次数的高级罐。收藏家单70%按当前库存选，30%从两类订单里随机选，可能要另外备枪。\n- 市价另加300至350\n- 点名的史诗款再加150\n两笔奖金照常随行情和加价变动。他在柜台前时，高级罐会给出点名款，要手挑才喷得中。",
+            "ru": "НАКЛЕЙКИ\nВ наборе 5 наклеек, на оружии два места, каждая наклейка прибавляет 4% к цене. Маленькие подходят почти к любому оружию, средним и большим нужно место. Подходят и для оружия из других модов. Наборы продают оружейник с Верхних уровней и воры.\n\nКОЛЛЕКЦИОНЕР\n30% подходящих дорогих заказов покупателя оружия с Верхних уровней становятся заказами коллекционера. Ему нужно крупное оружие (размер больше 14) или оружие с рыночной ценой не ниже 300, обязательно в эпической или легендарной окраске. В магазине должно быть подходящее готовое оружие либо подходящее оружие и премиальный баллончик, в котором ещё есть краска. В 70% случаев заказ подбирается под текущий запас, в 30% выбирается наугад из обоих видов, так что иногда придётся подготовить другое оружие. Коллекционер платит:\n- рыночную цену плюс 300-350\n- ещё 150 за названную эпическую окраску\nОбе надбавки зависят от рынка и наценки. Пока он у прилавка, премиальный баллончик предлагает эту окраску. Выберите её вручную."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 11",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p7_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "UNDERGROUND RANGE\nUnlock through Wild (Weapon Permit II). Start with 4 lanes from 30 Credits a night. Rent more from Wild to reach 6, 8 or 10. Each step adds 20 to the starting rent. Untick Range Rent at closing to stay shut that night. Buying out keeps the lanes you lease. Expansions are extra. Right-click .22, 10mm, .45 or 12-gauge guns and ammo to send them to the range.\n\nGuests pay a lane fee plus any loaner and rounds bought. Lane and loaner fees grow with your shop. Each lane takes two guests a night at most. Better guns draw more guests. Empty lanes and guns in poor condition draw fewer. Loaners wear from use. At an owned range, claim empty cases from regular ammo sales at the range terminal. Your own shooting never uses stock. Paper targets don't set records.",
+          "translations": {
+            "zh": "地下靶场\n通过王尔德解锁（II级武器许可证）。起租4个靶位，日租30起。向王尔德加租可增至6、8、10个，每级起租价多20。结束营业时不勾租金，当晚休业。买断后已租的靶位都归你，扩建另买。右键送.22、10毫米、.45、12号枪和弹药到靶场。\n\n客人付靶位费，租枪和购买的弹药另算。靶位费和租枪费随店越做越大而上涨。每个靶位每晚最多接两位客人。靶位上的枪越好，来的客人越多；空靶位和品相较差的枪会让客人变少。租枪会磨损。买断后，普通营业卖弹留下的弹壳可在靶场营业终端领取。玩家自己射击不扣库存。纸靶不计纪录。",
+            "ru": "ПОДПОЛЬНЫЙ ТИР\nОткрывается через Уайлда (разрешение на оружие 2-го класса). Сначала доступны 4 позиции от 30 Кр. за ночь. У Уайлда можно увеличить их число до 6, 8 и 10. Каждый шаг добавляет 20 Кр. к начальной плате. Снимите галочку аренды в конце дня, и в эту ночь тир будет закрыт. Выкупив тир, вы сохраняете арендованные позиции. Расширения покупаются отдельно. Щёлкните правой кнопкой мыши по оружию и патронам .22, 10 мм, .45 или 12-го калибра, чтобы отправить их в тир.\n\nПосетители платят за позицию, а также за прокатное оружие и купленные патроны. Плата за позиции и прокат растёт вместе с магазином. Каждая позиция принимает не больше двух посетителей за ночь. Хорошее оружие привлекает больше гостей. Пустые позиции и оружие в плохом состоянии привлекают меньше. Прокатное оружие изнашивается. В собственном тире гильзы от продаж патронов обычным покупателям можно забрать у терминала тира. Ваша собственная стрельба запас не тратит. Результаты по мишени в рекорды не идут."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 12",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p7_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "SATURDAY LEAGUE\nOn league nights guests use no stock and pay no ammo fee. Sponsors also cover the rent and the upkeep. Owners can pay 200 to host and commit to opening that night. Sponsorship depends on turnout and full guests: each guest counts for up to 5 shots, and every 5 shots in total make one full guest. Entry is 50. The top three take prizes. Prizes and sponsorship grow with your shop.\n\nENERGY WEAPONS\nThe four Blue Shield and Echelon guns can go to the range too. They draw charge from the cell in the gun:\n- On a full charge: 10 shots from a standard or self-charging cell, 20 from an extended cell and 100 from a disposable one\n- Guests pay 17 Credits a shot for charging\nLeague nights use no charge and take no fee. Range Cell Cabinet (Wild's Network) adds a charging cabinet for energy cells only, up to thirty. A gun that runs dry on a lane gets the cabinet's cell with the most shots left. Like the shop charger, the cabinet gives each rechargeable cell 3 units a night, or 6 once you unlock commercial power. It doesn't charge while the shop has no power.",
+          "translations": {
+            "zh": "周六联赛\n联赛当晚顾客用弹不扣库存，也不收弹药费。场租和保养费由赞助方承担。业主可付200主办，确认后当晚保持营业。赞助看客流和满额客人：每位客人最多算5发，合计每5发算1位满额客人。报名费50，前三名有奖金。奖金和赞助也随店越做越大而上涨。\n\n能量武器\n蓝盾和梯队的四把枪也能送去靶场，消耗是枪中电池的电：\n- 电池满电时，普通和自充电池各能打10发，大容量电池20发，一次性电池100发\n- 客人每打一发另收17信用点充电费\n联赛当晚不耗电，也不收这笔钱。王尔德网络的“靶场电池柜”添一台充电柜，只放能量电池，最多三十块：靶位上的枪没电了就换上柜里还能打最多发的一块，可充电的和店里的充电器一样，每晚充3点电，解锁原版的商用电力后充6点，店里停电时不充。",
+            "ru": "СУББОТНЯЯ ЛИГА\nВ ночи лиги посетители не тратят запас и не платят за патроны. Аренду и уход оплачивают спонсоры. Владельцы могут заплатить 200 Кр. за проведение и обязуются открыть тир в эту ночь. Спонсорство зависит от посещаемости и числа полноценных гостей: у каждого учитывают до 5 выстрелов. Каждые 5 выстрелов в сумме дают одного полноценного гостя. Взнос 50 Кр. Три лучших получают призы. Призы и спонсорство растут вместе с магазином.\n\nЭНЕРГЕТИЧЕСКОЕ ОРУЖИЕ\nЧетыре модели Blue Shield и Echelon тоже можно отправить в тир. На выстрелы тратится заряд установленного энергоэлемента:\n- На полном заряде: обычный или самозарядный энергоэлемент даёт 10 выстрелов, энергоэлемент повышенной ёмкости 20, одноразовая батарея 100\n- Посетители платят за зарядку 17 Кр. за выстрел\nВ ночи лиги заряд не расходуется и плата не берётся. «Зарядный шкаф в тире» из сети Уайлда вмещает только энергоэлементы, до тридцати штук. Если у оружия на позиции кончился заряд, ставится элемент из шкафа с наибольшим остатком выстрелов. Как и в зарядном устройстве магазина, каждый перезаряжаемый элемент получает за ночь 3 ед. заряда, а с улучшением «Качественный блок питания» по 6. Если в магазине нет электричества, зарядка не идёт."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 13",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_guns_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "FOUR COMPANIES, EIGHT GUNS\n- Meridian: the Lineguard Carbine and the Watchtower Support Gun, 10mm, fed from Sentinel Mk. III and Peacemaker magazines respectively\n- Frontier Arms: the Breakbranch Revolving Carbine (.45 AFP) and the Packhorse Revolving Shotgun (12 gauge), loaded by hand\n- Blue Shield: the Escort Stun Carbine and the Cordon Net Launcher\n- Echelon: the Hush Coil Carbine and the Boundary Coil Rifle\n\nHOW TO GET THEM\nThe Revolution Gunsmith only sells company gun frame chips with Deep content on: five may show up with Weapon Permit II, while the Watchtower, Packhorse and Boundary need Permit III. The Upper-Level Gunsmith brings finished guns from your highest permit tier. War-damaged guns from street clashes include the four from Meridian and Frontier Arms. Now and then, after the Security Requisition Officer has been in to sell surplus equipment, a Security Logistics Officer stops by with a used Lineguard or Watchtower.",
+          "translations": {
+            "zh": "四家公司，八把枪\n- 子午线：“线卫”卡宾枪、“岗楼”支援枪，10毫米，分别用哨兵3型和“和平使者”的弹匣\n- 边境军工：“折枝”转轮卡宾枪（.45 AFP）、“驮兽”转轮霰弹枪（12号），手工装填\n- 蓝盾：“傍身”电击卡宾枪、“收束”捕网发射器\n- 梯队：“止鸣”线圈短枪、“定界”线圈步枪\n\n怎么来\n开启深度内容后，革命军枪匠才卖公司枪框架芯片：五把有II级武器许可证就可能带来，“岗楼”“驮兽”“定界”要III级。上层区枪匠带你最高许可证那一档的成品。街头冲突流出的战损枪里有子午线和边境军工的四把。卖剩余装备的治安部征用官走后，偶尔会来一位治安部后勤官，带旧的“线卫”“岗楼”。",
+            "ru": "ЧЕТЫРЕ КОМПАНИИ, ВОСЕМЬ МОДЕЛЕЙ\n- Meridian: карабин «Заслон» и оружие поддержки «Вышка», 10 мм, с магазинами от Sentinel Mk. III и «Миротворца» соответственно\n- Frontier Arms: револьверный карабин «Бурелом» (.45 AFP) и револьверный дробовик «Тяжеловоз» (12-й калибр), заряжаются вручную\n- Blue Shield: электрошоковый карабин «Оберег» и сетемёт «Кордон»\n- Echelon: гаусс-карабин «Тишина» и гаусс-винтовка «Рубеж»\n\nГДЕ ДОСТАТЬ\nРеволюционер-оружейник продаёт чипы рам корпоративного оружия только при включённом Расширенном контенте: пять из них попадаются с разрешением на оружие 2-го класса, а для «Вышки», «Тяжеловоза» и «Рубежа» нужен 3-й класс. Оружейник с Верхних уровней привозит готовое оружие по вашему высшему разрешению. Среди оружия с боевыми повреждениями после уличных столкновений попадаются четыре модели Meridian и Frontier Arms. Иногда после ухода снабженца из Службы безопасности, продающего излишки снаряжения, заходит интендант с подержанным «Заслоном» или «Вышкой»."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 14",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_guns_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "MODS\nEach gun only takes matching mods. Slots it can't use are sealed. Hover over one in the gun-mod window to see why. All stocks are factory parts and can't be removed.\n\nCELLS\nThe four Blue Shield and Echelon guns don't use bullets: load an energy cell into the magazine slot, and its charge acts as ammo. Hypertech Power Cells don't fit. If you sell a gun with a cell loaded, the cell's value is included.\n\nLUXURY\nThe Hush and the Boundary count as luxury goods: upper-level buyers take them, and putting them in a display case draws picky customers. With Permit II, an upper-level resident will occasionally drop by to sell an Echelon gun.",
+          "translations": {
+            "zh": "改装件\n每把枪只收合用的改装件。装不了的槽是封着的，在改枪窗口里悬停能看到原因。枪托都是原厂件，拆不下来。\n\n电池\n蓝盾和梯队的四把不用子弹：把能量电池装进弹匣槽，电量就是弹药。超科技能源单元装不进去。装着电池卖，电池的价钱一起算。\n\n奢侈品\n“止鸣”和“定界”算奢侈品：上层区的买家会收，摆进展示柜能招来挑剔的客人。有了II级许可证，偶尔有上层区住户上门转手梯队的枪。",
+            "ru": "МОДИФИКАЦИИ\nК каждому оружию подходят только свои модификации. Недоступные ячейки закрыты. Наведите на них курсор в окне модификаций, чтобы узнать причину. Ложе у всех заводское и не снимается.\n\nЭНЕРГОЭЛЕМЕНТЫ\nЧетыре модели Blue Shield и Echelon стреляют без патронов: в ячейку магазина ставится энергоэлемент, а его заряд служит боезапасом. Гипертех-энергоячейка туда не влезет. Оружие, проданное с энергоэлементом внутри, оценивается вместе с ним.\n\nПРЕДМЕТЫ РОСКОШИ\n«Тишина» и «Рубеж» считаются предметами роскоши: их берут покупатели с Верхних уровней, а на витрине они привлекают разборчивых клиентов. С разрешением 2-го класса к вам иногда заходит житель Верхних уровней, чтобы продать оружие Echelon."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 15",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_damage_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "WHO GETS IT\nA Fair or Poor used gun can come in with hidden damage, vanilla, company and other mods' guns alike, each kind only on a part of the gun you can see. New prints, frame builds and guns brought in for work never do. Up to 3 per gun, no kind twice:\n- war-damaged guns 40%\n- sold guns coming back around 25%\n- mercenary sellers' guns with kills 20%\n- rental returns 10%\n- guns fired at the range, with range wear on, 10% a night\n- other sellers' used guns 10%\nWar-damaged guns, mercenary guns with kills and other sellers' used guns arrive with 1-3. A comeback after a sale, a rental return or a night at the range adds at most one, even the first.\n\nWHAT IT COSTS\nFrom the start, each damage takes 10% off one stat, adding up:\n- Reliability: cracked frame, feed problems, burnt contacts\n- Accuracy: cracked grip/stock, dented barrel, rusted internals\nThe price drops only once found: cracked frame -15%, the rest -10%.\n\nCONDITION CAP\nEach damage lowers the condition cap one grade:\n- one: Excellent at most\n- two: Good\n- three: Fair\nEach repair raises it one grade again. At the cap, gun parts no longer refurbish it.",
+          "translations": {
+            "zh": "哪些枪会带\n品相一般或较差的旧枪进店时可能带暗伤，原版枪、公司枪和别的模组的枪都会，每种伤只出现在枪上看得见的部位。新打印的、框架装成的和订单客人拿来改的枪不会。一把最多3处，种类不重复：\n- 战损枪40%\n- 卖出后流回的枪25%\n- 佣兵卖枪客带击杀数的枪20%\n- 租出去还回来的枪10%\n- 开启靶场磨损时，当晚在靶场开过火的枪有10%几率多一处暗伤。\n- 其他卖家摆上柜台的旧枪10%\n战损枪、带击杀数的佣兵枪和其他卖家的旧枪，进货时可能带1到3处暗伤。之后每次流回、租还或在靶场过一晚，最多再添1处（第一处也是这样）。\n\n扣什么\n从带上起，每处让一项属性-10%，同一项相加：\n- 可靠性：机身裂纹、供弹不畅、触点烧蚀\n- 精准度：握把枪托开裂、枪管凹痕、内部锈蚀\n发现之后估价才降：机身裂纹-15%，其余-10%。\n\n品相上限\n每处让品相上限降一档：\n- 1处最多极佳\n- 2处最多良好\n- 3处最多一般\n修好一处升回一档。到了上限，枪械零件就翻新不上去了。",
+            "ru": "У КАКОГО ОРУЖИЯ\nУ подержанного оружия в сносном или плохом состоянии бывают скрытые повреждения видимых частей: у стандартного, корпоративного и из других модов. У оружия из принтера, из рам и на доработке их нет. До 3 разных повреждений:\n- оружие с боевыми повреждениями: 40%\n- вернулось после продажи: 25%\n- оружие наёмника-продавца с убийствами на счету: 20%\n- вернулось из аренды: 10%\n- стреляли в тире при включённом износе: 10% за ночь\n- подержанное на прилавке другого продавца: 10%\nОружие с боевыми повреждениями, наёмников и с прилавков: сразу 1-3. Возврат и ночь в тире: не больше одного за раз.\n\nЧТО ОНИ ОТНИМАЮТ\nКаждое сразу отнимает 10% у одной характеристики. Вычеты для неё складываются:\n- Надёжность: трещина в корпусе, сбои подачи патронов, обгоревшие контакты\n- Точность: трещина в рукояти/ложе, вмятина на стволе, ржавчина внутри\nЦена падает только после обнаружения: трещина в корпусе -15%, остальные -10%.\n\nПРЕДЕЛ СОСТОЯНИЯ\nКаждое повреждение снижает предел на ступень: отличное, хорошее, сносное. Ремонт одного повреждения возвращает ступень. Детали оружия не поднимут состояние выше предела."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 16",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_damage_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "INSPECT\nSelect the Magnifying Glass or Flashlight and click the gun. Use the Magnifying Glass for the frame, grip/stock and energy contacts. Use the Flashlight for rust, plus the barrel and feed on powder guns. When you spot a sign, tick the issue. Tick several or just one.\n\nCONFRONTING\nIf any tick is wrong, nothing is confirmed and you aren't told which. A failed confrontation on a seller's gun costs 2 reputation. There's no penalty on your own. Confirmed damage lowers the price. The extra 15% discount applies once per gun. You can check again. Damage to the frame, grip/stock or contacts shows faintly on the gun, darkens once confirmed and vanishes when repaired.\n\nREPAIR\nDrag the material onto the gun to fix found damage: one item, never fails, condition unchanged. Gun Parts for frame, rust, barrel and feed, 3D Printing Filament for grip/stock, Electronic Parts (Common) for contacts. The gun-mod window's Repair finds it too.",
+          "translations": {
+            "zh": "查找\n选中放大镜或手电筒，再点枪。放大镜查机身、握把枪托和能量枪触点。手电筒查锈蚀，火药枪还可查枪管和供弹。看到痕迹就勾上对应的问题，可以勾好几项，也可以只勾一项。\n\n对质\n勾的有一项不对，这次就都不算，也不告诉你错在哪。卖家的枪，对质失败一次扣2声望。自己的枪不罚。认下的暗伤按真实价算，每把枪另便宜15%一次。可以复查。机身、握把枪托和触点的暗伤在枪上隐约看得出，确认后痕迹变深，修好就消失。\n\n修理\n找到的暗伤才能修：把料拖到枪上，耗一件，一次修好，品相不变。机身、锈蚀、枪管、供弹用枪械零件，握把枪托用3D打印耗材，触点用电子元件（普通）。改枪窗口的“修复”也会找对应的料。",
+            "ru": "ОСМОТР\nВыберите увеличительное стекло или фонарик и нажмите на оружие. Стеклом проверьте корпус, рукоять/ложе и контакты энергетического оружия. Фонариком проверьте ржавчину, а у порохового оружия ещё ствол и подачу патронов. Заметив след, отметьте проблему. Можно отметить несколько или одну.\n\nПРЕТЕНЗИИ\nОдна ошибка, и ни одно повреждение не засчитают, а где ошибка, не скажут. Неудачная претензия продавцу стоит 2 очка репутации. На своём оружии штрафа нет. Найденные повреждения снижают цену, плюс разовая скидка 15% на оружие. Можно проверить повторно. Повреждения корпуса, рукояти/ложа и контактов слабо видны на оружии. После подтверждения следы темнеют, а после ремонта исчезают.\n\nРЕМОНТ\nПеретащите материал на оружие. Детали оружия: корпус, ржавчина, ствол, подача патронов. Нить для 3D-принтера: рукоять/ложе. Электронные компоненты (обычные): контакты. Один предмет устраняет одно найденное повреждение. Состояние не меняется. «Починить» в окне модификаций тоже ищет материал."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 17",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p8_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "SETTINGS\nOpen this mod's settings from the mod list. \"Deep content\" and \"Printer chip rack\" need a restart. All other settings apply right away. \"Vanilla recipes use metal ingots\" and \"Spray paint at random\" are off by default, and the rest are on. Turning one off deletes nothing: active orders, scheduled visits and ongoing league rounds still finish.\n\nCRAFTING & MODDING\nIngot recipes, frame chip pity, print-quality prices, the gun-mod window, random paint, the printer chip rack.\n\nSTORAGE & DISPLAY\nGun cabinets in the showcase, what the Gunsmith Storage Bay holds and how it looks, ammo box art, auto-sealing and contents tooltips, printer titles, gun barcodes.",
+          "translations": {
+            "zh": "设置\n在模组列表里打开本mod的设置。“深度内容”和“打印机芯片库”改了要重启游戏，其余设置立刻生效。“原版配方改用金属锭”和“喷漆直接随机”默认关闭，其余默认开启。关掉一项不会删除已有的物品，已经来的订单、排上的来访和开了局的联赛照常走完。\n\n制造与改装\n金属锭配方、框架芯片保底、打印品质计价、改枪窗口、喷漆直接随机、打印机芯片库。\n\n收纳与显示\n展示柜里的枪柜，枪械师储藏区的收纳和外观，弹药盒的外观、自动封装和内容提示，打印机标题，枪械条码。",
+            "ru": "НАСТРОЙКИ\nНастройки этого мода открываются из списка модов. «Расширенный контент» и «Кассета для чипов принтера» требуют перезапуска игры, остальные настройки действуют сразу. «Стандартные рецепты из слитков металла» и «Окраска баллончиком наугад» по умолчанию выключены, остальные включены. Выключение ничего не удаляет: уже идущие заказы, визиты и заходы лиги завершаются как обычно.\n\nПРОИЗВОДСТВО И МОДИФИКАЦИИ\nРецепты из слитков, гарантия чипов рам, цены по качеству печати, окно модификаций, окраска наугад, кассета для чипов принтера.\n\nХРАНЕНИЕ И ВИТРИНЫ\nШкафы на витрине, что принимает шкаф оружейника и как он выглядит, вид коробок для патронов, их запечатывание и содержимое, заголовки принтеров, штрихкоды оружия."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 18",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_p8_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0,
+          "text": "VISITORS & STORY\nExtra ammo, materials and gun mods from vanilla vendors, the Retired Gunsmith's clearance, Odin's manual, the covert operation, buying water by quality after changing language.\n\nDEEP CONTENT\nThe master switch controls the next three groups. Clashes & orders: street clashes, war-damaged guns, Security's surplus ammo, gun buyer reputation, mercenary rentals, collector orders, Aug hunts. Famous guns & circulation: buyers drawn by famous and war-damaged guns, famous gun upkeep, mercenary gun kill counts, sold guns returning to the market, parts from disassembly by condition, hidden damage. Paint & range: thieves' paint crates and sticker packs, spray cans in locked crates, range wear, buyers drawn by the range.",
+          "translations": {
+            "zh": "来客与剧情\n原版商人加卖的弹药、原料和改装件，退休枪匠清货，奥丁送来的上手说明，隐秘行动，切换语言后照常按水质收水。\n\n深度内容\n总开关管着后面三组。冲突与订单：街头冲突、战损枪、治安部余弹、买枪客口碑、佣兵租枪、收藏家订单、猎改造体。名枪与流通：名枪和战损枪招客、名枪保养、佣兵枪击杀数、卖出的枪流回市面、拆枪零件按品相、暗伤。涂装与靶场：小偷的涂装箱和贴纸包、上锁箱里的喷漆罐、靶场磨损、靶场引流。",
+            "ru": "ПОСЕТИТЕЛИ И СЮЖЕТ\nПатроны, материалы и модификации, которые добавляются стандартным торговцам, распродажи опытного оружейника, инструкция от Одина, «Тайная операция», приём воды по чистоте после смены языка.\n\nРАСШИРЕННЫЙ КОНТЕНТ\nОбщий выключатель управляет тремя группами после него. Столкновения и заказы: уличные столкновения, оружие с боевыми повреждениями, патроны Службы безопасности, репутация у покупателей оружия, аренда оружия наёмникам, заказы коллекционера, охота за аугами. Знаменитое оружие и оборот: покупатели, которых привлекает знаменитое и повреждённое в боях оружие, уход, убийства на оружии наёмников, возврат проданного оружия, детали при разборке по состоянию, скрытые повреждения. Окраска и тир: ящики и наборы у воров, баллончики в запертых ящиках, износ в тире, посетители тира."
           }
         }
       ]
@@ -101,7 +287,7 @@
     "id": "vge_manual",
     "nameLoc": "vge_manual_name",
     "descriptionLoc": "vge_manual_desc",
-    "sprite": "items_misc/book3",
+    "sprite": "vge_manual",
     "value": 15,
     "important": false
   }
