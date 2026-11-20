@@ -70,7 +70,7 @@ foreach (var pair in methodMap)
             else n.Operand = original.ImportReference(method);
         }
         else if (item is FieldReference field) n.Operand = original.ImportReference(field);
-        else if (item is CallSite site) n.Operand = original.ImportReference(site);
+        else if (item is CallSite) throw new NotSupportedException("Call-site opcodes are not supported in the helper");
         else n.Operand = item;
     }
     foreach (var handler in s.Body.ExceptionHandlers)
