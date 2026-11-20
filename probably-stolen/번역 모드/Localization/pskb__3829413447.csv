@@ -116,9 +116,9 @@ K|collection_seven_dreams_effect,획득 후 0512 번호가 영구 해금되어 �
 K|collection_seven_dreams_name,분리되지 않은 일곱 개의 환몽
 K|collection_shops_buy,구매 확인
 K|collection_shops_cancel,지금은 안 산다
-K|collection_shops_doctor_offer,"박사의 특별 작품 (파손)\n고정 판매가: 18,000\n구매 후 보관함에 들어갑니다."
+K|collection_shops_doctor_offer,"<b>고정 판매가: 18,000 C</b>\n박사의 특별 작품 (파손)\n구매 후 보관함에 들어갑니다."
 K|collection_shops_greeting,놓치면 다시 보기 힘든 물건들이 있지. 다행히 난 그런 걸 다루는 장사꾼이야.
-K|collection_shops_hat_offer,"장바이의 낡은 모자\n고정 판매가: 30,000\n구매 후 보관함에 들어갑니다."
+K|collection_shops_hat_offer,"<b>고정 판매가: 30,000 C</b>\n장바이의 낡은 모자\n구매 후 보관함에 들어갑니다."
 K|collection_shops_insufficient,현금이 부족해 결제되지 않았습니다.
 K|collection_shops_name,아예
 K|collection_sponsor_4070_clue,45일차부터 고객에게 서로 다른 완제품 T4/T5 컴퓨터 5대를 성공적으로 판매하면 상층 구매자가 전달합니다.
@@ -873,9 +873,9 @@ K|serverroom_web_chart_sell_short,매도
 K|serverroom_web_coin_column,채굴 코인
 K|serverroom_web_coin_units,{0}개
 K|serverroom_web_component_day,{0}일차 부품 목록.
-K|serverroom_web_component_locked,뤄시의 보관 의뢰를 완료하면 일일 부품 주문이 해금됩니다. 기존 서버·채굴기 예약은 그대로 이용할 수 있습니다.
+K|serverroom_web_component_locked,"뤄시의 위탁 보관 의뢰를 성공적으로 반환하면 일일 부품 주문이 해금됩니다. 고급 부품은 45일 차부터 이용할 수 있습니다."
 K|serverroom_web_component_stock,오늘 1개 한정 예약 · 정상 완제품
-K|serverroom_web_component_taken,오늘 예약 완료
+K|serverroom_web_component_taken,"일일 한도 도달"
 K|serverroom_web_components,일일 부품
 K|serverroom_web_configure_column,구성
 K|serverroom_web_configured,장비 구성
@@ -1218,7 +1218,7 @@ K|workroom_autofill_fixed,이미 장착된 부품 유지
 K|workroom_autofill_fixed_conflict,"이미 장착된 ""{0}""이 파손됐거나 등급 범위를 벗어납니다. 수동으로 조정하세요."
 K|workroom_autofill_fixed_count,이미 장착된 {0} 수량이 사용자 지정 수량을 초과합니다. 수동으로 조정하세요.
 K|workroom_autofill_fixed_line,장착된 상태로 유지: {0}
-K|workroom_autofill_fold_hint,옵션을 클릭해 전환합니다. 0GB는 용량 제한 없음입니다. 사용자 지정 수량에는 이미 넣은 부품도 포함됩니다.\n빈 슬롯 자동 채우기는 현재 조건에 맞는 부품을 넣습니다. 부족한 부품은 이동하지 않으며 조립은 직접 눌러야 합니다.
+K|workroom_autofill_fold_hint,"용량을 선택하거나 '제한 없음'을 선택하세요. 사용자 지정 수량에는 이미 장착된 부품도 포함됩니다.\n자동 채우기는 사용 가능한 호환 부품을 배치합니다. 조립은 직접 확인해야 합니다."
 K|workroom_autofill_hint,"옵션을 클릭해 순환 전환합니다. 0GB는 추가 요구 없음입니다. 최소 필요량은 적은 부품 사용을 우선하며, 사용자 지정 수량에는 이미 장착된 부품도 포함됩니다."
 K|workroom_autofill_incompatible,조건에 맞는 구성을 만들 수 없습니다. 장착된 부품과 용량이 등급 범위와 충돌하는지 확인하세요. 완제품은 메모리 등급이 같아야 하고 최고·최저 등급 차이가 3을 넘을 수 없습니다.
 K|workroom_autofill_incomplete,아직 요구 조건을 충족하지 못했습니다. 인벤토리는 변경되지 않습니다.
@@ -1330,7 +1330,7 @@ K|workroom_component_processing_already_intact,이 부품은 이미 정상 상�
 K|workroom_component_processing_cash_header,수리 후 가치 {0} · 현금 비용 {1} · 보유 현금 {2}.
 K|workroom_component_processing_cash_limit,필요 현금이 현재 현금 인터페이스의 처리 범위를 초과합니다. 원본은 유지됩니다.
 K|workroom_component_processing_cash_ready,현금이 충분합니다. 수리 후 정상 상태 가치로 복구되며 현재 대상 칸에 남습니다.
-K|workroom_component_processing_cash_recovery,현금 수리 환불이 아직 완료되지 않아 작업과 저장을 보호하고 있습니다. 잠시 후 다시 시도하세요.
+K|workroom_component_processing_cash_recovery,"현재 작업실 작업이 아직 마무리 중입니다. 잠시 후 다시 시도하세요."
 K|workroom_component_processing_discard_changed,"대상, 인벤토리 또는 세션이 변경되어 폐기 확인을 취소했습니다. 원본은 유지됩니다."
 K|workroom_component_processing_discard_confirm_required,"두 번째 확인 대기 중: ""폐기 확인""을 클릭해야 현재 대상을 제거합니다."
 K|workroom_component_processing_discard_preview,"폐기 대상: {0} ×1.\n재료나 현금을 얻지 않고 현재 대상 1개만 제거합니다. 먼저 ""폐기""를 클릭한 뒤 ""폐기 확인""을 클릭하세요. 아이템 교체, 모드 전환 또는 창 닫기로 확인을 취소할 수 있습니다."
@@ -1481,7 +1481,7 @@ K|workroom_machine_case,케이스
 K|workroom_machine_case_body,케이스 본체
 K|workroom_machine_case_title,케이스 조립
 K|workroom_machine_complete,필요한 부품이 모두 갖춰져 검사를 통과했습니다.
-K|workroom_machine_contents_info,"아이템 {0}개 장착됨, 구성 T{1}."
+K|workroom_machine_contents_info,"장착된 물품 {0}개 · {1}."
 K|workroom_machine_cooler,CPU 쿨러
 K|workroom_machine_cpu,CPU
 K|workroom_machine_crate_hint,물자 상자에 아이템 {0}개가 들어 있습니다. 개봉하면 전부 작업실 인벤토리로 옮깁니다.
@@ -1664,13 +1664,13 @@ K|benchmark_total,종합 점수: {0}
 K|benchmark_unknown,"벤치마크 불가: 구성, 전력 또는 냉각 정보를 확인할 수 없습니다."
 K|collection_reward_isolated,「물고기 도약」 배송을 확인할 수 없습니다. 원본 물품은 격리되어 사용할 수 없으며 다시 지급되지 않습니다. 세이브를 보존한 뒤 모드 제작자에게 문의하세요.
 K|market_part_request_blocked,이번 배송이 정상적으로 완료되지 않았습니다. 추가 시도는 차단되었습니다. 아무 조치도 하기 전에 인벤토리와 보상을 확인하고 로그를 보관하세요. 다시 클릭하거나 세이브를 다시 불러와 재시도하지 마세요.
-K|market_part_request_description,딱 하나만 필요합니다. 급해요.
+K|market_part_request_description,"목록에 표시된 모델의 정상 부품 또는 구성품 1개를 납품하세요."
 K|market_part_request_requester,커뮤니티 수리 작업장
 K|market_part_request_title,부품이 필요합니다
 K|npc_benchmark_name,구매자
 K|npc_benchmark_refusal,이건 조건에 안 맞네요. 필요 없습니다.
 K|npc_benchmark_specialist,구매자
-K|npc_repair_visitor_greeting,물건이 망가졌어요. 고쳐서 {0} 하나로 만들어 주실 수 있나요?
+K|npc_repair_visitor_greeting,"제 물건이 고장 났어요. 수리하거나 손상된 부품을 교체해서 정상 작동하는 {0} 하나를 팔아 주실 수 있나요?"
 K|npc_repair_visitor_name,수리 고객
 K|npc_repair_visitor_refusal,이제 더는 필요 없습니다.
 K|pc_market_part_request_black_requester,중개상
@@ -1706,7 +1706,7 @@ K|pc_production_chip_packager_description,"반도체 다이와 재료를 사용�
 K|pc_production_chip_packager_name,칩 패키징기
 K|pc_production_component_scanner_description,고급 스캐너입니다. 부품을 넣고 스캔을 시작하면 내부 구조를 분석합니다. 스캔이 끝나면 해당 부품의 제작 설계도를 얻습니다.
 K|pc_production_component_scanner_name,설계도 스캐너
-K|pc_production_cycle_batch,{0} ×{1} · {2}/{3} · 양품률 {4}%
+K|pc_production_cycle_batch,"{0} ×{1}"
 K|pc_production_cycle_blueprint_list,설계도 선택
 K|pc_production_cycle_blueprint_row,{0}\n개당 작업량 {1} · 양품률 {2}% · 품질 {3}
 K|pc_production_cycle_box_only,먼저 이 물품을 작업실 보관함에 넣으세요.
@@ -1813,7 +1813,7 @@ K|pc_production_service_unsupported,선택한 작업을 지원하지 않는 물�
 K|pc_production_supply_arrival,"주문하신 물품이 도착했습니다. {0} ×{1}, 개당 {2}입니다."
 K|pc_production_supply_blueprint_done,설계도를 배웠습니다.
 K|pc_production_supply_blueprint_row,가격 {0} · {1}일차부터 구매 가능
-K|pc_production_supply_blueprint_terms,구매한 설계도는 이 세이브 파일에 영구적으로 기록됩니다. CPU 덮개 설계도는 해당 모델의 물품이 배송될 때 별도로 구매하세요.
+K|pc_production_supply_blueprint_terms,"CPU 덮개를 포함한 모든 제작 설계도는 해금되는 날부터 이곳에서 판매됩니다. 배운 설계도는 이 세이브 파일에 유지됩니다."
 K|pc_production_supply_blueprints_page,네트워크 자료 교환소
 K|pc_production_supply_buy_blueprint,설계도 구매
 K|pc_production_supply_buy_cpu_blueprint,설계도 구매 · {0}
@@ -1825,11 +1825,11 @@ K|pc_production_supply_counter_full,카운터가 가득 찼습니다. 주문은 
 K|pc_production_supply_cpu,덮개 미장착 CPU · {0}
 K|pc_production_supply_cpu_desc,기판에 장착된 상태입니다. 해당 모델의 덮개 설계도를 사용해 칩 패키징기에서 완성하세요.
 K|pc_production_supply_crate_contents,{0} ×{1} · 더블클릭하면 작업실 보관함으로 풀어 넣습니다.
-K|pc_production_supply_crate_desc,더블클릭하면 상자에 든 재료를 소지품으로 꺼냅니다.
-K|pc_production_supply_crate_name,밀봉된 재료 상자
-K|pc_production_supply_crate_trade,재료는 밀봉된 상자로 배송됩니다. 필요할 때 열어 보시면 됩니다.
+K|pc_production_supply_crate_desc,"더블클릭하면 상자 내용물이 작업실 보관함으로 들어갑니다."
+K|pc_production_supply_crate_name,"공급 상자"
+K|pc_production_supply_crate_trade,"품목별로 상자에 따로 포장해 두었습니다. 구매한 뒤 상자를 더블클릭하면 열 수 있습니다."
 K|pc_production_supply_die_supplier,스타필드 테크놀로지 배송 담당자
-K|pc_production_supply_die_terms,한 번에 다이 한 종류 또는 CPU 모델 하나만 주문할 수 있습니다. 주문 간격은 최소 4일이며 배송에는 2일이 걸립니다. 해당 CPU 덮개 설계도는 배송 당일 별도로 판매합니다.
+K|pc_production_supply_die_terms,"한 번에 다이 한 종류 또는 덮개 없는 CPU 한 종류를 주문할 수 있습니다. 주문 사이에는 최소 4일의 간격이 필요합니다. 밀봉 상자는 이틀 뒤 도착하며 도착 시 결제합니다."
 K|pc_production_supply_dies_page,스타필드 반도체 기술
 K|pc_production_supply_gpu_desc,칩 패키징기에서 그래픽 코어를 만드는 데 사용됩니다.
 K|pc_production_supply_gpu_die,GPU 다이
@@ -1845,7 +1845,7 @@ K|pc_production_supply_no_order,진행 중인 주문이 없습니다. 배송 당
 K|pc_production_supply_order_summary,{0}\n주문 수량 {1} · 구매 수량 {2}\n개당 가격 {3} · 배송일 {4}일차
 K|pc_production_supply_ordered,{0}일차 배송이 예약됐습니다.
 K|pc_production_supply_page,{0} / {1}페이지
-K|pc_production_supply_pending,이 공급업체에 이미 진행 중인 주문이 있습니다.
+K|pc_production_supply_pending,"이 공급업체의 미결제 주문이 한도에 도달했습니다."
 K|pc_production_supply_place_order,주문하기
 K|pc_production_supply_previous,이전
 K|pc_production_supply_ssd_desc,칩 패키징기에서 SSD 컨트롤러를 만드는 데 사용됩니다.
@@ -1900,7 +1900,7 @@ K|handbook_a4_h2,"빈 케이스 · T1~T3"
 K|handbook_a4_h3,"하위 부품 확인"
 K|handbook_a4_t1,"메인보드를 완전히 비운 뒤 수리하세요. T1에는 전자 부품, T2에는 전선, T3에는 너트가 추가로 필요합니다. 재료를 한꺼번에 모두 준비해야 합니다."
 K|handbook_a4_t2,"T1 케이스에는 고철이 필요합니다. T2에는 금속 주괴, T3에는 프린팅 플라스틱이 각각 한 개씩 추가됩니다. 수리된 케이스는 슬롯에 남습니다. 뤄시의 공구함을 전시하면 빈 T4/T5 케이스도 수리할 수 있습니다."
-K|handbook_a4_t3,"하우징, 회전자, 방열 모듈, 팬 조립체는 정상 물품 가치의 25%를 올림한 비용으로 수리할 수 있습니다. CPU, 그래픽카드 코어, SSD 컨트롤러, 메모리 칩은 수리할 수 없습니다."
+K|handbook_a4_t3,"하우징, 회전자, 방열 모듈, 냉각 팬은 수리할 때 재료가 필요하지만 수리비는 들지 않습니다. CPU, 그래픽카드 코어, SSD 컨트롤러, 메모리 칩은 수리할 수 없습니다."
 K|handbook_a4_title,"수리할 수 있는 부품은?"
 K|handbook_a5_h1,"정격 출력과 실제 출력의 차이"
 K|handbook_a5_h2,"파손된 커패시터 묶음별 재료"
@@ -2006,8 +2006,8 @@ K|handbook_c1_h1,"부품 가공기 준비"
 K|handbook_c1_h2,"설계도 습득"
 K|handbook_c1_h3,"전선 1개 → 회전자 1개"
 K|handbook_c1_t1,"서버실 컴퓨터로 뤄시에게 부품 가공기를 예약하세요. 작업실에 설치한 뒤 T1 팬 회전자부터 만들어 보세요. 기계 종류는 C2, 대기열 문제는 C8을 참조하세요."
-K|handbook_c1_t2,"자료 거래소에서 회전자 설계도를 80크레딧에 구매하거나, 조건을 충족하는 T1 회전자를 연구해 20크레딧과 작업량 50으로 얻으세요. (C4 참조) 어느 방법이든 같은 제작법이 해금됩니다."
-K|handbook_c1_t3,"회전자 1개를 선택하고 전선 1개를 공급한 뒤 작업을 대기열에 넣고 전원을 켜세요. 이 제작법은 용융 금속과 가공비가 필요 없습니다. 완료 후 보관함에서 확인하세요. 양품률에 따라 정상 또는 파손 상태로 나옵니다."
+K|handbook_c1_t2,"자료 거래소에서 회전자 설계도를 60 C에 구매하거나, 조건을 충족하는 T1 회전자를 15 C와 작업량 50으로 연구하세요(C4 참조). 어느 방법이든 같은 제작법이 해금됩니다."
+K|handbook_c1_t3,"회전자 1개를 선택하고 전선 1개를 공급한 뒤 대기열에 넣고 전원을 켜세요. 용융 금속은 필요 없지만 가공비 7 C가 듭니다. 완료 후 보관함을 확인하세요. 양품률에 따라 정상 또는 파손 상태로 나옵니다."
 K|handbook_c1_title,"첫 팬 회전자 만들기"
 K|handbook_c2_band,"기계별 기능과 설명 확인"
 K|handbook_c2_h1,"일괄 분해·수리기"
@@ -2024,35 +2024,35 @@ K|handbook_c2_title,"작업실 기계 다섯 종류"
 K|handbook_c3_h1,"모드 선택 후 물건 선택"
 K|handbook_c3_h2,"더 깊게 분해하려면?"
 K|handbook_c3_h3,"수리할 물품 구별하기"
-K|handbook_c3_t1,"수리 모드에는 손상됐지만 수리 가능한 물건이, 분해 모드에는 내부 부품이 있는 물건이 우선 표시됩니다. 한 번에 1~5개를 처리합니다. 여러 보관 위치를 필터로 선택하거나 기계 또는 패널로 물건을 끌어다 놓으세요."
+K|handbook_c3_t1,"수리 모드에는 수리할 수 있는 파손품이 표시되며, 수동 수리와 동일한 재료를 사용합니다. 수리비는 없지만 기계 전력은 소모됩니다. 분해 모드에는 내부 부품이 있는 물건이 표시됩니다. 한 번에 1~5개를 처리하고 보관 위치를 필터로 고르거나 물건 한 개를 끌어다 놓을 수 있습니다."
 K|handbook_c3_t2,"심층 분해 모듈을 장착하세요. 내용물을 알 수 없는 케이스 상자도 분해할 수 있습니다. 시작 전에 대상 물품을 확인하세요. 회수한 재료는 작업실 보관함으로 들어갑니다."
 K|handbook_c3_t3,"파손된 본체와 교체 가능한 부품, 수리 불가능한 칩을 구별하세요. 본체를 수리해도 내부 파손 부품까지 복구되지 않습니다. 재료와 재활용 규칙은 조립 설명서 A4~A5를 참조하세요."
 K|handbook_c3_title,"일괄 수리와 분해"
 K|handbook_c4_h1,"분리된 부품 견본 선택"
 K|handbook_c4_h2,"연구 시작"
 K|handbook_c4_h3,"견본 반환 및 제작법 습득"
-K|handbook_c4_t1,"정상 T1 팬 회전자를 사용해 보세요. 조립되지 않은 견본을 스캐너에 넣거나 보관함에서 선택하세요. CPU, 메인보드, 케이스, 보호 중인 수집품은 연구할 수 없습니다."
-K|handbook_c4_t2,"첫 작업 주기에 20크레딧이 청구되고 회전자 연구에는 작업량 50이 필요합니다. 정상 견본에는 파손 견본의 품질 제한이 없습니다. 파손된 T1 견본이라면 장비 품질이 16 이상이어야 합니다. 진행도를 확인하세요."
-K|handbook_c4_t3,"연구를 완료하면 설계도를 배우고 견본은 보관함으로 돌아갑니다. 취소해도 견본은 반환됩니다. 일반 설계도와 CPU 설계도의 판매처는 다르며, 난이도 1 설계도는 보통 6일 차부터 구매할 수 있습니다."
+K|handbook_c4_t1,"분리된 견본을 스캐너에 넣거나 보관함에서 선택하세요. 정상 상태의 T1 팬 회전자 또는 완성된 CPU를 연구할 수 있습니다. 메인보드, 케이스, 보호 중인 수집품은 스캔할 수 없습니다."
+K|handbook_c4_t2,"첫 작업 주기에 15 C가 청구되며 회전자 연구에는 작업량 50이 필요합니다. 정상 견본에는 파손 견본의 품질 제한이 적용되지 않습니다. 파손된 T1 견본은 장비 품질 16 이상이 필요합니다. 진행도를 확인하세요."
+K|handbook_c4_t3,"연구를 완료하면 설계도를 배우고 견본이 반환됩니다. 취소해도 견본은 돌아옵니다. 설계도 판매처는 난이도에 따라 6/12/24/40/55일 차에 판매를 시작합니다. 조건을 충족하는 견본은 그보다 일찍 연구할 수 있습니다."
 K|handbook_c4_title,"스캐너: 견본으로 설계도 얻기"
 K|handbook_c5_h1,"본체 설계도 선택"
 K|handbook_c5_h2,"용융 탱크에 재료 넣기"
 K|handbook_c5_h3,"예시: 그래픽카드 본체"
-K|handbook_c5_t1,"본체 종류와 수량을 고르고 재료, 용융 금속, 작업량, 양품률을 확인하세요. 팬 본체는 프린팅 플라스틱 1개만 필요합니다. 모든 제작법에 용융 금속이 필요한 것은 아닙니다."
+K|handbook_c5_t1,"하우징 종류와 수량을 선택하고 재료, 용융 금속, 작업량, 양품률을 확인하세요. 팬 하우징 1개에는 프린팅 플라스틱 1개와 이 기계의 용융 금속 6 mL가 필요합니다."
 K|handbook_c5_t2,"금속 주괴, 폐금속 또는 내부를 비운 파손 케이스를 녹일 수 있습니다. 재료 한 개를 끌어다 넣거나 보관함에서 선택하세요. 액체 용량을 확인하세요. 성형기 한 대의 용융 탱크는 5,000mL까지 저장합니다."
-K|handbook_c5_t3,"각 그래픽카드 본체에 전선 1개와 이 기계의 용융 금속 20mL가 필요하며 가공비는 2크레딧입니다. 다른 기계의 용융 금속은 함께 사용할 수 없습니다. 대기열에 등록한 뒤 전원을 확인하세요."
+K|handbook_c5_t3,"각 부품에는 전선 1개와 이 기계 탱크의 용융 금속 29 mL가 필요합니다. 가공비는 0 C입니다. 다른 기계의 용융 금속은 공유할 수 없습니다. 대기열에 넣은 다음 전원을 확인하세요."
 K|handbook_c5_title,"본체 성형기: 전용 탱크 채우기"
 K|handbook_c6_h1,"T1 회전자 · 전선 1개"
 K|handbook_c6_h2,"T2 회전자 · 용융 금속 추가"
 K|handbook_c6_h3,"완성된 부품 상태 확인"
-K|handbook_c6_t1,"T1 회전자 설계도와 수량을 선택하세요. 개당 작업량은 4, 기본 양품률은 90%, 용융 금속과 가공비는 필요 없습니다. 기본 양품률이 90%라고 매번 정상 제품을 보장하는 것은 아닙니다."
-K|handbook_c6_t2,"T2 회전자 1개에는 전선 1개와 부품 가공기 자체의 용융 금속 20mL가 필요합니다. 가까운 성형기가 아닌 현재 가공기의 탱크를 확인하세요. 작업을 대기열에 넣고 전원을 켜세요."
+K|handbook_c6_t1,"T1 회전자 설계도와 수량을 선택하세요. 개당 작업량 4, 기본 양품률 90%이며 용융 금속은 필요 없고 가공비는 7 C입니다. 기본 양품률이 정상 제품을 보장하지는 않습니다."
+K|handbook_c6_t2,"T2 회전자 1개에 전선 1개, 이 가공기의 용융 금속 20 mL와 가공비 31 C가 필요합니다. 이 가공기의 탱크를 확인하고 대기열에 넣은 뒤 전원을 켜세요."
 K|handbook_c6_t3,"완성품은 작업실 보관함에 들어갑니다. 조립 전에 정상 상태의 회전자를 골라내고 파손된 부품은 수리 규칙에 따라 처리하세요. 전원과 대기열 문제는 C8을 참조하세요."
 K|handbook_c6_title,"부품 가공기: 제작법에 따라 재료 투입"
 K|handbook_c7_h1,"메모리 다이로 플래시 칩 만들기"
 K|handbook_c7_h2,"종류가 맞는 다이 사용"
 K|handbook_c7_h3,"금속이 필요한 제작법"
-K|handbook_c7_t1,"256GB 플래시 칩 1개에는 메모리 다이 1개가 필요하고 가공비는 0크레딧입니다. 맞는 설계도를 선택하고 수량과 양품률을 확인한 뒤 대기열에 등록하세요."
+K|handbook_c7_t1,"예를 들어 256 GB 플래시 칩 1개에는 메모리 다이 1개와 가공비 1 C가 필요합니다. 해당 설계도를 선택하고 수량과 양품률을 확인한 뒤 대기열에 넣으세요."
 K|handbook_c7_t2,"GPU 코어, SSD 컨트롤러, CPU에는 각각 해당하는 다이나 등급에 맞는 히트스프레더가 제거된 CPU가 필요합니다. 부족한 재료는 서버실 컴퓨터의 칩 공급처에서 확인하세요."
 K|handbook_c7_t3,"칩 패키징기는 보관함의 고체 금속 주괴를 사용합니다. 본체 성형기나 부품 가공기의 용융 금속은 사용하지 않습니다. 대기열에 넣은 뒤 전원을 켜고 보관함에서 완성품을 수령하세요."
 K|handbook_c7_title,"칩 패키징기: 재료 종류 맞추기"
@@ -2061,7 +2061,7 @@ K|handbook_c8_h2,"밤새 중단 및 재개"
 K|handbook_c8_h3,"재료가 부족하면 배송일 확인"
 K|handbook_c8_t1,"기계마다 최대 5개 묶음의 작업을 대기열에 등록할 수 있습니다. 새 기계는 전원이 꺼져 있습니다. 전원 스위치, 공급 전력과 최초 가공비를 확인하세요. 시작하지 않은 작업은 수량을 바꾸거나 취소해 재료를 돌려받을 수 있으며, 시작한 작업은 진행도에 따라 처리됩니다."
 K|handbook_c8_t2,"전원을 꺼도 대기열과 진행도는 유지됩니다. 필요한 기계만 가동하세요. 작업실 기계는 밤이 지나도 작업을 이어 가고 저장 파일을 불러와도 재개할 수 있습니다. 보관함에서 완성품을 확인하세요."
-K|handbook_c8_t3,"서버실 컴퓨터로 재료 또는 칩 공급처에 주문하세요. 종류와 수량을 확인하고 게임 내 이틀 뒤에 상점 카운터에서 거래합니다. 재료 상자를 더블클릭하면 내용물이 보관함으로 들어갑니다. 판매 방법은 조립 설명서 A9를 참조하세요."
+K|handbook_c8_t3,"서버실 컴퓨터에서 재료와 다이를 주문하세요. 55일 차부터 업체별로 하루 한 번 여러 품목을 주문할 수 있습니다. 이틀 뒤 카운터에서 상자별로 결제한 다음 더블클릭하면 작업실 보관함으로 들어갑니다. 매입 담당자 납품은 조립 설명서 A9를 참고하세요."
 K|handbook_c8_title,"대기열이 진행되지 않는 이유"
 K|handbook_diagram_bill,"재료별 1개씩"
 K|handbook_diagram_bonus,"임대 기간 보너스"
@@ -2086,3 +2086,27 @@ K|handbook_diagram_work50,"작업량 50"
 K|handbook_diagram_yield,"코인 순생산량"
 K|pc_production_procurement_delivery_computer,"매입 대상: {0}. 남은 수량: PC {1}대. 한 대당 대금은 가격 보정이 반영된 정상 판매가의 110%이며, 최저 지급액은 {2} C입니다. 전량 납품하면 고정 보너스 {3} C를 추가 지급합니다."
 K|pc_production_procurement_offer_computer,"다음 조건을 충족하는 PC {1}대를 준비해 주세요: {0}. {4}일 차에 수거하겠습니다. 한 대당 대금은 가격 보정이 반영된 정상 판매가의 110%이며, 최저 지급액은 {2} C입니다. 전량 납품하면 고정 보너스 {3} C를 추가 지급합니다."
+K|collection_phone_0512_dialog_failed,"통화 내용을 이어갈 수 없습니다."
+K|handbook_open_failed,"이 안내서를 열 수 없습니다."
+K|manual_contents,"목차"
+K|npc_contact_card_unlock_failed,"연락처를 영구 등록하지 못했습니다. 명함을 보관하고 나중에 전화번호부를 다시 열어 보세요."
+K|pc_production_cycle_empty_samples,"보관함에 스캔 가능한 견본이 없습니다. 연구할 수 있는 부품을 먼저 보관하세요."
+K|pc_production_cycle_scan_quality,"스캐너 품질이 부족합니다. 필요 품질 {0}(현재 {1})."
+K|production_cycle_shortage,"부족 {0}"
+K|pc_production_supply_basket_arrival,"주문하신 물품이 도착했습니다. 카운터에 자리가 생기는 대로 나머지도 꺼내 놓겠습니다."
+K|pc_production_supply_basket_due,"도착: {0}일 차 · 품목 {1}종 · 미구매 {2}개"
+K|pc_production_supply_basket_summary,"품목 {0}종 · 합계 {1} C"
+K|pc_production_supply_basket_terms,"이 업체에서는 하루에 한 번 여러 품목을 묶어 주문할 수 있으며, 미결제 주문은 최대 3건까지 가능합니다. 배송에는 2일이 걸리고 품목별로 상자가 따로 도착합니다. 물품을 받을 때 결제하세요."
+K|pc_production_supply_blueprint_machine,"{0}용 설계도"
+K|production_supply_maximum,"최대"
+K|pc_production_supply_submit_basket,"이 업체에 주문하기"
+K|serverroom_catalog_empty,"오늘 예약할 수 있는 부품이 없습니다."
+K|serverroom_directed_terms,"고급 부품은 일반 구매가보다 25% 비쌉니다. 모델당 하루 1개씩 주문할 수 있으며 뤄시의 다른 예약 물품과 함께 다음 날 배송됩니다. 물품을 받을 때 결제하세요."
+K|serverroom_m2_delivery_partial_failed,"주문하신 물품 일부는 카운터에 놓았습니다. 다음 물품은 놓지 못했습니다: {0}."
+K|serverroom_overview_locked_count,"해금 대기 중인 서버 랙 · {0}개"
+K|serverroom_web_directed,"고급 부품"
+K|workroom_capacity_any,"제한 없음"
+K|workroom_machine_tier_display,"구성 T{0}"
+K|workroom_shop_position_save_failed,"입장 버튼의 위치를 저장할 수 없습니다."
+K|workroom_shortcut_failed,"작업실 바로가기 작업을 완료하지 못했습니다."
+K|workroom_storage_read_handbook_in_shop,"안내서는 상점에서 읽으세요."
