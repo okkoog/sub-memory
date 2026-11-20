@@ -1,4 +1,16 @@
-# Snake Ranch 0.6.6 — 玉米蛇供货收口与柜台分类 / Corn supply scope and counter classification
+# Snake Ranch 0.6.8 — 蛇夫人电话旧档迁移 / Snake Lady phone legacy migration
+
+## 蛇夫人电话 / Snake Lady phone
+
+- 旧存档里已经见过蛇夫人、但没有拿到号码的，读档时会自动补上 8848，不再出现“她不再来、电话也打不通”的死锁。
+- 预约明天到店不再同时压 7 天冷却；重复拨号只确认已有预约，不会重复排队。
+- 预约没能排上时会明确说“今天没记上”，不再把系统失败显示成玩家拒绝。
+- 她已经在店里时拨 8848，会提示当面说，不会进入无人接听的电话对话。
+
+- Saves that met the Snake Lady before the number key existed now receive 8848 on load, fixing the old deadlock where she never returned and the line never answered.
+- Booking tomorrow no longer arms the 7-day cooldown; a repeat call confirms the existing booking without adding another visit.
+- If the booking cannot be queued, the call says so instead of showing the player's declined option.
+- Calling 8848 while she is in the store tells you to speak in person instead of entering the no-answer dialogue.
 
 ## 柜台与鉴定 / Counter and inspection
 
@@ -7,6 +19,13 @@
 
 - The native BUY-only competitor is no longer treated as a corn seller and no longer displays snakes that cannot be taken or bought; corn is supplied only by the broke upper-level citizen, never by the inspectable scavenger.
 - Corn is marked inspectable on creation and load. The native magnifier can open the four-clue, single-choice inspection on corn at an eligible seller's counter. Owned corn remains observation-only; unowned counter corn opens only while a real SELL/SELLNBUY seller is current.
+
+## 鉴定图例 / Appraisal plate
+
+- 放大镜窗口新增“查看图例”，打开静态图例：100%/95%/80%/50% 纯度对照，以及假货的色块、接缝、边缘斑点、发灰四类缺陷；不读取当前这条蛇的线索，不会提前泄题。
+- 《养蛇手册》新增第 10 页《玉米蛇鉴定图例》，同一张图例随手册携带，随时可查。图例只说明表面证据，不改变线索概率、质询判定、价格或供货。
+- The inspection window now has **View plate**, opening a static reference: 100%/95%/80%/50% purity scales plus the four fake defects (colour patch, spray seam, edge specks, dull grey patch). It never reads the current snake's clue mask, so it cannot leak the answer.
+- The handbook now carries the same plate as chapter 10. The plate teaches surface evidence only; it does not change clue odds, challenge resolution, prices, or supply.
 
 ## 蛇夫人货单与喷枪 / Snake Lady stock and spray gun
 

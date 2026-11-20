@@ -102,6 +102,34 @@
           "color": "#484C45"
         }
       ]
+    },
+    {
+      "id": "snake_plate",
+      "elements": [
+        {
+          "type": "text",
+          "id": "series",
+          "loc": "handbook_header",
+          "style": "header",
+          "fontSize": 8,
+          "align": "left",
+          "x": 35,
+          "y": 27,
+          "w": 250,
+          "h": 16,
+          "wrap": false
+        },
+        {
+          "type": "line",
+          "id": "rule",
+          "x": 35,
+          "y": 46,
+          "x2": 286,
+          "y2": 46,
+          "thickness": 0.7,
+          "color": "#484C45"
+        }
+      ]
     }
   ],
   "pages": [
@@ -461,6 +489,46 @@
           "y": 120,
           "w": 250,
           "h": 246,
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "name": "corn_appraisal",
+      "template": "snake_plate",
+      "elements": [
+        {
+          "type": "text",
+          "id": "title",
+          "loc": "handbook_corn_id_title",
+          "style": "title",
+          "fontSize": 15,
+          "x": 35,
+          "y": 57,
+          "w": 250,
+          "h": 50,
+          "wrap": true
+        },
+        {
+          "type": "image",
+          "id": "plate",
+          "sprite": "snake_ranch:corn_appraisal_guide",
+          "fit": "fit",
+          "x": 35,
+          "y": 110,
+          "w": 250,
+          "h": 150
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "loc": "handbook_corn_id_body",
+          "style": "body",
+          "fontSize": 9,
+          "x": 35,
+          "y": 268,
+          "w": 250,
+          "h": 100,
           "wrap": true
         }
       ]
