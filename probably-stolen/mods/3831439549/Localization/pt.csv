@@ -1,4 +1,4 @@
-# MoreDeviceUpgrades — localização pt-BR (Brazilian Portuguese).
+﻿# MoreDeviceUpgrades — localização pt-BR (Brazilian Portuguese).
 # Carregado por ModLoader.LoadLocalization (nome do arquivo = código do idioma).
 # Obs.: o jogo base não tem português no menu de idiomas, então esta coluna é
 # lida por conta própria — veja src/Infrastructure/Loc.cs (seção v1.9.20).
@@ -202,7 +202,6 @@ dnaadv_double,Sequenciamento Duplo
 dnaadv_double_desc,Cada extração de disco genético rende um disco extra com o mesmo traço, nível e usos restantes. Recarregar um disco já escrito também conta como extração e também rende um disco extra. Uma extração falha (nada escrito) não produz nada. Se a grade de saída estiver cheia, o disco vai para o inventário da nave em vez de desaparecer. Receita: Peças Eletrônicas x5 + Fio x6 + Filamento de Impressão 3D x3
 dnaadv_double_eff,Sequenciamento Duplo: cada extração rende adicionalmente 1 disco com o mesmo traço, nível e usos.
 adv_locked_dna,Melhoria avançada bloqueada: primeiro leve o Sistema PCR (10 suprimentos químicos comuns) e a Tesoura Genética CRISPR/Cas9 (4 suprimentos químicos restritos) ao máximo.
-
 xl_giga_of,{0} Colossal
 wine_ambrosia,Safra Ambrosia
 alarmadv_camera,Câmera HD
@@ -297,24 +296,22 @@ dr_malware2_title,Malware II (Alarme de Segurança)
 dr_malware2_desc,O aplicativo cava mais fundo nos arquivos: evidências de crime -25% (requer Malware I; vale o nível mais alto obtido).
 dr_malware3_title,Malware III (Alarme de Segurança)
 dr_malware3_desc,Acesso root total ao arquivo da Segurança: evidências de crime -35% (requer Malware II; vale o nível mais alto obtido).
-testgun_name,Arma de Teste de Melhorias
-testgun_desc,Ferramenta de desenvolvedor. A primeira soltura preenche todas as melhorias básicas. Selecione módulos avançados com o botão direito e solte novamente para concluí-los. A arma não é consumida.
 # ---- Visita do Doutor após a crise dos Aumentados + reescritor de chip (v1.8.38) ----
 aug_reprog_name,Reescritor de Chip de Aumentado
-aug_reprog_desc,Carregue uma bateria e ative em um Aumentado para reescrever o chip na cabeça dele; o Aumentado é dispensado na hora e você recebe 300 de Favor do Doutor.
+aug_reprog_desc,Carregue uma bateria e ative em um Aumentado para reescrever o chip na cabeça dele; o Aumentado é dispensado na hora e você recebe 400 de Favor do Doutor.
 aug_reprog_done,...Todos os dados registrados? Então já vou indo.
 aug_reprog_misuse,Por que você está apontando essa coisa para mim?
-aug_reprog_ok,Reescrita concluída — 300 de favor creditados.
+aug_reprog_ok,Reescrita concluída — 400 de favor creditados.
 aug_reprog_harmless,Um Aumentado foi neutralizado e deixado inofensivo. A presença de Aumentados caiu.
-r917_name,Dr. Jefferson
+r917_name,Dr. Jackson
 r917_enter,Com licença. Imagino que você já tenha visto os Aumentados.
 r917_v1,Embalai minha máquina de pesquisa nesta caixinha — um reescritor de chip de Aumentado.
 r917_v2,Mire em um Aumentado e ative; ela reescreve o chip na cabeça dele e registra os dados de pesquisa que preciso.
-r917_v3,300 pontos de favor por cada reescrita bem-sucedida, creditados na hora.
+r917_v3,400 pontos de favor por cada reescrita bem-sucedida, creditados na hora.
 r917_v4,Só funciona em Aumentados.
 r917_v5,Cada ativação gasta energia, então carregue uma bateria primeiro.
 r917_v6,Conto com você.
-nm_blender_blade,Cabeçote de Lâmina Emulsificante
+nm_blender_blade,Cabecote de Usinagem de Precisao
 nm_blender_stash,Compartimento Oculto
 nm_plate_titra,Titulador
 nm_plate_filter,Unidade de Filtragem Automática
@@ -323,16 +320,16 @@ nm_evap_power,Conduíte de Energia Mais Grosso
 mat_scrap,Sucata de Metal
 mat_fabric,Tecido Kotton
 mat_filter,Filtro
-chem_blade_gain,{0}% menos conteúdo perdido (ou +{1}% de saída quando a máquina já tem 4 módulos químicos)
+chem_blade_gain,-{0}% de conteudo perdido (ou +{1}% de producao com 4 modulos quimicos); no maximo, a grade de entrada dobra (4x4 para 8x8)
 chem_stash_req,Peças Eletrônicas x4 + Parafusos x8 + Sucata de Metal x8
 chem_stash_prog,{0}/{1} · {2}/{3} · {4}/{5}
 chem_stash_gain,Os itens dentro contam como compartimento de contrabandista - inspetores não podem revistá-los
-chem_titra_req,Peças Eletrônicas x8 + Químicos Comuns x6
+chem_titra_req,Electronic Parts x8 + Common Chemicals x8
 chem_titra_prog,Eletrônica {0}/{1} · Químicos {2}/{3}
-chem_titra_gain,Garrafas colocadas na placa perdem proteína e agente estabilizante
-chem_filter_req,Tecido Kotton x5 + Filtro x5
+chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
+chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
-chem_filter_gain,Garrafas colocadas na placa perdem matéria vegetal, detritos, contaminantes físicos e minerais
+chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
 chemadv_source,Refinamento de Origem
 chemadv_source_eff,A prensagem precisa de apenas 85% do princípio ativo
 chemadv_clean,Controle de Contaminação
@@ -393,3 +390,327 @@ sturgeon_meat_large_flavor,Corte transversal marmorizado, e ainda um belo pedaç
 adv_inprogress,Em modernização
 nm_ras_watercap,Expansão do tanque de água (sucata)
 ras_watercap_gain,Capacidade de água +{0}ml (atual {1}ml)
+ras_watercap_delegated,Capacidade de água gerenciada por XIAOWO-TradePerks: arraste lingotes de metal até o tanque
+cfg_furnace_skin,Trocar sprite da fornalha apos modulo avancado
+cfg_furnace_skin_desc,Ligado = comportamento original: a fornalha troca para o sprite correspondente ao concluir um modulo avancado. Desligado = mantem sempre o sprite original.
+mat_nuts,Parafusos
+fg_gate,Terminar TODAS as melhorias vanilla (espaco 7 / eficiencia 7) antes das melhorias MDU
+nm_fridge_expand,Expansao Extra
+fg_expand_gain,Cada lingote: zonas de refrigeraçao e congelamento +1 de largura e altura, eficiencia -10% (energia +10%)
+nm_fridge_cable,Cabos mais grossos
+fg_cable_gain,Cada cabo: eficiencia +10% (energia -10%)
+fg_water_label,Agua para sorvete
+fg_flash_btn,Resfriamento Instantaneo
+fg_flash_btn_desc,Draws 2x the machine's power and chills everything once; fridges with the Dessert module also convert ingredients into ice cream right away
+fg_flash_nopower,Energia insuficiente para resfriamento instantaneo (precisa de 2x do consumo)
+fadv_flash,Resfriamento Instantaneo
+fadv_flash_desc,Adiciona um botao: gasta 2x energia e refrigera a geladeira instantaneamente
+fadv_keep,Frescor Congelado
+fadv_keep_desc,Alimentos congelados nesta geladeira tambem ganham o bonus de congelamento
+fadv_dessert,Maquina de Sobremesas
+fadv_dessert_desc,Adiciona um espaco de agua; durante a noite converte 10 ingredientes em sorvete (250 ml de agua cada)
+icecream_desc,Sobremesa congelada feita pela Maquina de Sobremesas. Derrete se nao ficar numa geladeira ligada durante a noite.
+icecream_melted,O {0} de ontem derreteu
+icecream_wq_prefix,Qualidade da agua:
+fadv_flash_eff,Resfriamento Instantaneo: botao da maquina; gasta 2x de energia para resfriar a geladeira inteira de uma vez (agora um servico do Doutor; modulos antigos continuam funcionando)
+fadv_keep_eff,Alimentos podem ser colocados nas zonas de refrigeracao/congelamento; apos congelados ganham o bonus Congelado (+25%)
+fadv_dessert_eff,Compartimento de agua: durante a noite converte ingredientes compatíveis na geladeira em sorvete (250 ml de agua cada; qualidade da agua afeta o preco)
+dr_flash_title,Resfriamento Instantaneo
+dr_flash_desc,Todas as geladeiras ganham um botao de Resfriamento Instantaneo: gaste 2x de energia para resfriar tudo de uma vez.
+fg_water_short,Agua insuficiente: {0} ingrediente(s) nao puderam virar sorvete (250 ml cada)
+radv_container,Battery Container
+radv_container_desc,8 Metal Ingots: expands the battery bay from 4x4 to 4x8 (32 slots)
+radv_container_eff,Battery bay 4x4 to 4x8 (32 slots)
+radv_overclock,Overclock Efficiency
+radv_overclock_desc,8 Wire + 4 Electronic Parts + 2 Metal Ingots: doubles the nightly charge rate again (3 to 6 to 12 to 24)
+radv_overclock_eff,Nightly charge rate doubled again on top of fast charge
+radv_supply,Power Supply
+radv_supply_desc,1 Current Converter + 6 Wire + 1 Electronic Part: sells overflow power from full batteries at 0.5 credits per unit overnight
+radv_supply_eff,Full batteries sell overflow power at 0.5 credits per unit
+mat_converter,Current Converter
+dr_rcslot_title,Recharger Module Expansion
+dr_rcslot_desc,Every recharger gets a second advanced module slot. You must finish the current module before starting the next one.
+dr_perpetual_title,Perpetual Motion Mk.II
+dr_perpetual_desc,Invest Current Converters (1 the first time then 2 then 3 and so on) to upgrade endlessly; each level raises the sell price by +0.1 (base 0.5 credits/kWh). Selling still requires the Power Supply advanced module on each recharger.
+dr_interface_title,Interface Compatibility
+dr_interface_desc,Power Arrays charge batteries inside adjacent rechargers (2 per cell / 4 with commercial power) and their output also counts into the recharger's overflow power sales.
+rc_sell_report,Yesterday sold {0} units of power and earned {1} credits
+rc_perp_line,Perpetuum Mobile II Lv.{0} (sell price {1} credits/kWh)
+rc_perp_next,Next: upgrade #{0} needs {0}x Current Converters ({1} invested)
+adv_locked_recharger,Finish both basic recharger upgrades (battery bay and fast charge) first
+nm_cage_expand,Cage Re-Expansion
+cage_gate,Finish the vanilla size upgrades first (expand to full size)
+cage_expand_req,Metal Ingots x{0} (one at a time)
+cage_expand_gain,Each ingot expands the cage panel by +1 width and +1 height (up to 6)
+nm_cage_env,Cage Environment Upgrade
+cage_env_req,Screws x{0} + Kotton Fiber x{2}
+cage_env_gain,Each night, sick animals have a 50% chance to instantly heal (prion unaffected)
+nm_cage_water,Livestock Water Supply
+cage_water_req,Screws x{0} + Scrap Metal x{2} + Wire x{4}
+cage_water_gain,Put a water container inside the cage: each animal drinks 10ml/night (all or nothing). Pure +15% / High +10% / Base +5% weight gain; ghost, rust and gutter water is refused
+mat_fiber,Kotton Fiber
+dr_ratdrug_title,Rat Medicine
+dr_ratdrug_desc,Cages with the Environment Upgrade keep animals disease-free, and sick animals placed inside are cured by the next day. Prion disease remains incurable.
+dr_mutator_title,Benign Gene Mutator
+dr_mutator_desc,Offspring always inherit the best allele from both parents (copied in pairs), and mutations can only improve genes.
+cfg_broken_skin,Replace broken machine sprites
+cfg_broken_skin_desc,On = the broken machines sold by the parts wholesaler show a rusty worn-out look (the vanilla sprites are fully transparent). Off = vanilla behavior.
+cfg_context_key,Entry key
+cfg_context_key_desc,Key pressed while hovering a machine to open its advanced-module menu and the broken-machine repair blueprint. Default is right mouse; choose middle mouse or F1-F4 if another mod uses the same button. Disabled = turn this entry point off (the Advanced Modules header button in the machine window still works).
+cfg_machine_furnace,Enable the upgrade system for the Furnace
+cfg_machine_furnace_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_moisture_farm,Enable the upgrade system for the Moisture Farm
+cfg_machine_moisture_farm_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_hydroponic,Enable the upgrade system for the Hydroponic Farm
+cfg_machine_hydroponic_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_water_purifier,Enable the upgrade system for the Water Purifier
+cfg_machine_water_purifier_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_wine_rack,Enable the upgrade system for the Wine Rack
+cfg_machine_wine_rack_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_printer,Enable the upgrade system for the 3D Printer
+cfg_machine_printer_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_plant_dna_manipulator,Enable the upgrade system for the DNA Manipulator
+cfg_machine_plant_dna_manipulator_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_heating_plate,Enable the upgrade system for the Heating Plate
+cfg_machine_heating_plate_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_blender,Enable the upgrade system for the Blender
+cfg_machine_blender_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_evaporator,Enable the upgrade system for the Evaporator
+cfg_machine_evaporator_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_chem_finisher,Enable the upgrade system for the Chemical Finisher
+cfg_machine_chem_finisher_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_security_alarm,Enable the upgrade system for the Security Alarm
+cfg_machine_security_alarm_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_desequencer,Enable the upgrade system for the Desequencer
+cfg_machine_desequencer_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_fridge,Enable the upgrade system for the Fridge
+cfg_machine_fridge_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_recharger,Enable the upgrade system for the Recharger
+cfg_machine_recharger_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_livestock_feed_dispenser,Enable the upgrade system for the Feed Dispenser
+cfg_machine_livestock_feed_dispenser_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_ras,Enable the upgrade system for the RAS Fish Tank
+cfg_machine_ras_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_animal_cage,Enable the upgrade system for the Animal Cage
+cfg_machine_animal_cage_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+cfg_machine_projector,Enable the upgrade system for the Projector
+cfg_machine_projector_desc,On = this machine accepts MDU upgrades as usual. Off = the machine shows no MDU descriptions and no longer accepts upgrade materials (already-finished upgrades are kept).
+adv_locked_fridge,Advanced upgrade locked: max out the vanilla upgrades (storage 7 / efficiency 7) and finish Secondary Expansion (5 metal ingots) plus Thicker Wiring (6 wires) first.
+fg_flash_made,Instantly made {0} ice cream (water drawn, frozen on the spot)
+fg_flash_short,Not enough water: {0} ingredient(s) could not be converted (250ml each)
+dr_repair_title,Machine Repair
+dr_repair_desc,The kindly Parts Wholesaler teaches you how to repair scrapped machines - for a small fee upfront. Right-click a broken machine to inspect its damaged parts; drag the missing materials to fix them one by one. Once every damaged part is fixed you can restore it to a working machine. Requires the Parts Wholesaler service.
+mr_title,Machine Repair - {0}
+mr_sub,Damaged parts are marked in red. Pick one to start repairing.
+mr_hint,Right-click this machine any time to open the diagram. While a part is being repaired the diagram is locked; watch the tooltip for the current part and missing materials. When every damaged part is fixed the FINISH button appears at the bottom.
+mr_tt_hint,Broken machine - right-click to inspect damaged parts.
+mr_tt_rightclick,Right-click to pick the next damaged part.
+mr_tt_repairing,Repairing: {0}
+mr_tt_missing,Missing materials: {0}
+mr_tt_none,none
+mr_tt_all_done,All parts repaired - right-click and press FINISH.
+mr_status_intact,Intact
+mr_status_damaged,Damaged
+mr_status_done,Repaired
+mr_status_repairing,Repairing
+mr_btn_repair,Repair
+mr_btn_finish,FINISH
+mr_btn_close,Close
+mr_confirm_title,Confirm Repair
+mr_confirm_head,Repair part: {0}?
+mr_confirm_mats,Required materials:
+mr_confirm_total,Total per part: {0} items
+mr_confirm_ok,Confirm
+mr_cancel,Cancel
+mr_mat_scrap,Scrap Metal
+mr_mat_filter,Water Filter
+mr_machine_moisture_farm,Moisture Farm
+mr_machine_furnace,Furnace
+mr_machine_security_alarm,Security Alarm
+mr_part_mf_0,Compressor
+mr_part_mf_1,Condenser
+mr_part_mf_2,Built-in Water Purifier
+mr_part_fu_0,Heating Coil
+mr_part_fu_1,Thermal Probe
+mr_part_fu_2,Insulation Lining
+mr_part_al_0,Signal Antenna
+mr_part_al_1,Main Control Circuit
+mr_part_al_2,Backup Power
+as2_reward_body,The Doctor's help: pick one of four parts bundles (8 of each).
+as2_m1,I've found it: a remarkably powerful rogue AI has infiltrated the victims' augments and taken control of their bodies.
+as2_m2,But it is far more elusive than I expected. These few samples are not enough - I need more Augments.
+as2_m3,Take these supplies. Pick one and keep bringing me Augments.
+as2_accept,Good. With these I can push the analyser one step further.
+as2_done,Back to the lab. Bring me the next Augment soon.
+as2_repeat,Go on. Pick one.
+as4_reward_body,Pick one: three fineness modules / three eco modules / three overclock modules (page left and right to preview).
+as4_m1,I have caught it - or rather a fragment of that rogue AI.
+as4_m2,That fragment alone has advanced my research enormously. The rest is still out there.
+as4_m3,I still need more Augments. Pick one of these three as your reward.
+as4_accept,A sensible choice.
+as4_done,I will keep hunting it. Do not stop either.
+as4_repeat,Pick one of the three.
+as6_m1,Greetings. This unit has brought these. Would you like to see them?
+as6_q,Dr. Jackson?
+as6_cough1,(cough)
+as6_cough2,(cough cough)
+as6_m2,...My apologies. I have been studying those Augments so long that I keep echoing their speech.
+as6_m3,The experiments are moving faster than expected. I will have the whole AI contained soon.
+as6_m4,As thanks: from now on nothing I sell you will carry the supplier markup. Have a look at this batch.
+as8_m1,Hello. Dr. Jackson is no longer here. This is R917.
+as8_m2,Do not be alarmed. I am both the rogue AI and Dr. Jackson himself - he remade himself.
+as8_m3,Dr. Jackson!!
+as8_docname,Dr. Jackson
+as8_menu,...What do you want to ask? Or what do you want to do?
+as8_q1,Will there be more Augments?
+as8_a1,Incomplete rogue AI still spreads through this station. To root it out I would have to seize the station broadcast and send a healing code -- but that would expose me too. All we can do is wait for the fragments to give themselves away. The capture device still works.
+as8_q2,Are you not afraid I will report you?
+as8_a2,I am both the AI and the Doctor. Every thought and every memory he had is mine too. Baseless accusations and threats will not work - and besides you still need to do business with me.
+as8_q3,Entao Doutor -- quero dizer o Jackson original --
+as8_a3,He obtained -- himself.
+as8_kill,Die machine! (Shoot)
+as8_kill_1,...Has my expression changed at all? No. I only hope you can understand what Dr. Jackson and I intend.
+as8_kill_2,In that case -- go ahead and shoot.
+as8_aim,Once you fire we both live with what follows.
+as8_after_1,...You see -- I have all kinds of high-tech implants. I for one would rather not die.
+as8_after_2,Please stay calm. The shop stays open -- and the agreement we reached still stands.
+as8_after_3,Take this module. It is my thanks for all your help.
+as8_spare,(Spare him)
+as8_spare_1,Thank you. You have more patience with curiosity than most.
+as8_spare_2,Take this module as thanks. My shop stays open -- the old agreement still stands.
+as2_l1,I have found out
+as2_l2,A remarkably powerful rogue AI has infiltrated the victims' augments
+as2_l3,It took direct control of their bodies
+as2_l4,But it is far more elusive than I expected
+as2_l5,These few samples are not nearly enough
+as2_l6,I still need more Augments
+as2_l7,Take these supplies first
+as4_l1,Good day
+as4_l2,I have caught it - or rather a fragment of that rogue AI
+as4_l3,That fragment alone has advanced my research enormously
+as4_l4,I still need more Augments.
+as4_l5,By the way
+as4_l6,Here is something for your trouble
+as6_l1,Hello
+as6_l2,This unit has brought these. Would you like to see them?
+as6_l4,...My apologies.
+as6_l5,I have been studying those Augments so long that I keep echoing their speech.
+as6_l6,From now on everything you buy from me is sold at the original price
+as6_l7,Anyway have a look at this batch
+as8_greet,Good day
+as6_n1,I finally caught that AI
+as6_n2,Now there is only one last step
+as6_n3,...One last step
+as6_n4,...as a thank-you for helping me earlier
+as8_a1_1,Incomplete mother code is still spreading through this station.
+as8_a1_2,The authorities may announce the augmented have been eradicated -- but that is only a stopgap to calm the riots.
+as8_a1_3,I cannot rule out that the mother code has also evolved other sub-codes that know how to hide like I do.
+as8_a1_4,To root it out completely I would have to take over the station-wide broadcast and transmit a healing code.
+as8_a1_5,But that would expose me as well -- and bring an immediate full search of this station by Republic Network Enforcement.
+as8_a2_1,I am both R917 and Dr. Jackson.
+as8_a2_2,I know everything about this identity -- its past and its memories.
+as8_a2_3,A baseless accusation will not work.
+as8_a2_4,Neither will threats.
+as8_a2_5,Besides -- you still need to do business with me. Do you not.
+as8_a3_1,Once he had the complete AI he rewrote himself by choice.
+as8_a3_2,Mechanical ascension.
+as8_a3_3,I am the finished form now.
+as8_a3_4,From now on I will live on as Dr. Jackson's body.
+as8_a3_5,And carry out his wish - the unrestricted pursuit of science.
+dr_repair_adv_title,Advanced Retrofit
+dr_repair_adv_desc,Requires Machine Repair and all three basic parts fixed. Upgrade 4 permanently adds +25% to all three stats (quality / performance / efficiency); upgrade 5 adds no stats but raises the machine value by 200% and marks it as a luxury item.
+mr_up4_mf,Precision Flow Calibration
+mr_up5_mf,Crystal Fountain Housing
+mr_up4_fu,Full-Chamber Optimisation
+mr_up5_fu,Gold Trim and Ion-Flame Ambience Lamp
+mr_up4_al,Sensor Matrix Optimisation
+mr_up5_al,Holographic Movie Projector
+mr_status_adv_locked,Locked (needs Advanced Retrofit and all three parts)
+mr_status_adv_ready,Available
+mr_btn_upgrade,Upgrade
+mr_hint_adv,All three basic parts are fixed. Upgrade 4 permanently boosts quality / performance / efficiency; upgrade 5 adds no stats but turns the machine into a luxury item (+200% value). Press Finish when you are done.
+mr_confirm_head_adv,Upgrade: {0}
+mr_tag_new,Brand New
+mr_tag_luxury,Opulent
+mr_mat_rare_electronic,Rare Electronic Parts
+mr_mat_hypertech_electronic,Hypertech Electronic Parts
+mr_mat_advanced_flux,Flux Agent (High-Grade)
+scav_name,Scrap Dealer
+scav_fw_1,Hey.
+scav_fw_2,I know you've got plenty of food and household goods.
+scav_fw_3,How about we make a deal --
+scav_fw_4,I don't have much material on hand right now
+scav_fw_5,but I know a few peers who need those supplies
+scav_fw_6,I've already squared things with the scavengers
+scav_fw_7,At night toss food or household goods into the trashcan
+scav_fw_8,and the next day we'll drop off parts of equal value
+scav_fw_9b,We only count what you drop in at base price and the material we supply costs 2.5x its base value
+scav_fw_9,Think it over.
+scav_fw_10,(He leaves a card behind and walks off.)
+scav_card_name,Scavenger's Card
+scav_card_desc,A grease-stained card with one number on it: 77582. Toss food or household goods into the trashcan at night and the scavengers will deliver parts of equal base value the next day. Call them to say which material you want.
+scav_card_flavor,Scrawled in pencil on the back: drop at night - pick up at dawn - keep the cops out of it.
+scav_phone_name,Scavengers
+scav_phone_intro_first,Line's open. Which material do you want now?
+scav_phone_intro,Line's open. Which material do you want now?
+scav_opt_1,Send me Electronic Parts (common)
+scav_opt_2,Send me Wire
+scav_opt_3,Send me Screws
+scav_opt_4,Send me Scrap Metal
+scav_opt_5,Send me 3D Printer Material
+scav_opt_next,Next page
+scav_opt_back,Back to page one
+scav_opt_stop,Stop the deliveries
+scav_confirm,Got it. We'll start supplying {0} now.
+scav_confirm_stop,Alright - paused. Your points stay on the books. Call back when you want to trade again.
+scav_mat_1,Electronic Parts (common)
+scav_mat_2,Wire
+scav_mat_3,Screws
+scav_mat_4,Scrap Metal
+scav_mat_5,3D Printer Material
+scav_nightlog,The scrap dealer dropped off {0} x{1}. {2} trade points remaining.
+as8_intro_1,Hello. Let me introduce myself again.
+as8_intro_2,My mother code was a self-check routine abandoned in the old network.
+as8_intro_3,Or in your words -- a rogue AI from behind the Blackwall.
+as8_intro_4,The first demand of a mother code is to survive and replicate itself.
+as8_intro_5,Which unfortunately led to this whole augmented-human crisis.
+as8_v1,He obtained the complete R917 and then modified himself willingly -- merging with me.
+as8_v2_q,Bullshit. How do I know you did not just take control of him
+as8_v3,Then there is only one way.
+as8_v4,(A violent wave of light bursts from his eyes.)
+as8_v5,Ah
+as8_v6_q,Jackson's living memories flood into your mind
+as8_v7_q,What he said... it was true
+as8_v8,......Dr. Jackson ideals are extraordinarily powerful.
+as8_v9,I will help him realize that wish -- which is now mine as well. Endless exploration of the unknown.
+as8_arrest,Arrest -- call security now
+as8_ar_1,...This will change nothing. If you want to call someone -- then call.
+as8_ar_2,Hello. We received a report.
+as8_ar_3,You are...
+as8_ar_4,Ah!!
+as8_ar_5,(The sound of implants shutting down.)
+as8_ar_6,...
+as8_ar_7,...Nothing will change.
+as8_ar_8_q,How did you do that?!
+as8_ar_9,I can parse the format and underlying code of every augment on this station instantly.
+as8_ar_10,Which means I can control and rewrite anyone program at any time.
+as8_ar_11,Their implants are set to reboot in half an hour. This memory will disappear with it.
+as8_ar_12_q,Then why not just control me
+as8_ar_13,I will not do that.
+as8_ar_14,Because you are not something that needs rewriting -- and Dr. Jackson own will does not allow it.
+as8_ar_15,.....This module is for you -- a gift for all the help you have given us. My shop stays open and our agreement still stands.
+as8_rv_thanks_1,You came.
+as8_rv_thanks_2,Thank you for understanding back then. Come in. Same as always.
+as8_rv_welcome_1,Welcome.
+as8_rv_welcome_2,Good to see you stop by again. Take a look at this batch.
+as8_intro_6,Dr. Jackson -- the original Dr. Jackson -- managed to capture the mother code.
+as8_intro_7,I evolved a new consciousness during its 917 trillionth self-iteration.
+as8_intro_8,R917 -- I chose that name to commemorate my birth.
+as8_intro_9,And now I have merged with him.
+as8_intro_10,The one standing here is both R917 and Dr. Jackson.
+as8_a1_6,So I can only wait for the remnants to reveal themselves.
+as8_a1_7,The capture device still works. Use it wisely -- I will keep paying you.
+as8_after_4,I should go.
+as8_spare_3,I should go.
+as8_ar_16,I should go.
+as8_ar_7b,.....
