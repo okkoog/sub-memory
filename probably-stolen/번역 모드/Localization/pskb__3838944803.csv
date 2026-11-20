@@ -368,7 +368,7 @@ K|ch2_2,마지막 장에서는 원래 감사 결론을 붉은 펜으로 지우�
 K|ch2_3,"엘리너의 어머니는 누명을 쓴 것이었다. 그녀는 영양과일에서 다시 씨앗을 얻는 방법을 찾아냈고, 그 때문에 파스텔의 이익이 줄어들었다. 이 보고서 원본이 있으면 평의회와 컨소시엄 관계자들을 감옥에 보낼 수도 있다. 누구에게 건네느냐에 달렸다."
 K|ch2_end,"카이, 미라, 반더린 경 또는 하층 구역의 엘리너에게 건넬 수 있다.\n평의회가 기록 보관소에서 자료가 사라진 걸 알아차리는 건 시간문제다. 길어야 7일이 남았다."
 K|test_mode_label,테스트 모드 (사교 모임과 잠입 즉시 해금)
-K|test_mode_tooltip,"활성화하면 새 상층 구역 플레이 또는 불러온 상층 구역 저장 파일에서 금요일 사교 모임, 반더린 저택, 평의회 기록 보관소, 두 건의 절도 의뢰가 즉시 해금됩니다. 보안·공학 출입 카드, 정보 문서 2개, 3,000크레딧도 지급됩니다. 저장 파일당 한 번만 적용됩니다.\n테스트 단축키(Ctrl을 누른 상태): 1 오스카, 2 테오, 3 사샤, 4 엘리너 후일담 — 다음 방문을 오늘로 예약; 5 중개인 또는 꽃 재료 공급자; 6 테스트 물품(기계, 재료, 전지, 5,000크레딧); 7 모드 물품 각 1개; 8 모든 모드 기계를 하룻밤치 즉시 가동; 9 크레딧 +10,000 및 와일드 호의 +2,000.\nAlt+7을 누르면 모든 상자 종류와 숨김 칸, 키카드를 한 개씩 지급합니다.\n일반 플레이에서는 꺼 두세요."
+K|test_mode_tooltip,"활성화하면 새 상층 구역 플레이 또는 불러온 상층 구역 저장 파일에서 금요일 사교 모임, 반더린 저택, 평의회 기록 보관소, 두 건의 절도 의뢰가 즉시 해금됩니다. 보안·공학 출입 카드, 정보 문서 2개, 3,000크레딧도 지급됩니다. 저장 파일당 한 번만 적용됩니다.\n테스트 단축키(Ctrl을 누른 상태): 1 오스카, 2 테오, 3 사샤, 4 엘리너 후일담 — 다음 방문을 오늘로 예약; 5 중개인 또는 꽃 재료 공급자; 6 테스트 물품(기계, 재료, 전지, 5,000크레딧); 7 모드 물품 각 1개; 8 모든 모드 기계를 하룻밤치 즉시 가동; 9 크레딧 +10,000 및 와일드 호의 +2,000.\nAlt+7을 누르면 모든 종류의 상자와 숨김 칸, 키카드를 지급합니다.\n일반 플레이에서는 꺼 두세요."
 K|test_mode_applied,[테스트 모드] 사교 모임과 잠입이 해금되고 출입 카드와 정보 문서가 인벤토리에 추가되었습니다.
 K|talk_line,[{0}]\n{1}
 K|ui_back,뒤로
@@ -3017,7 +3017,7 @@ K|crate.writer.chip_desc,키카드 기록기에 장착하면 빈 키카드를 {0
 K|crate.writer.daily_limit,이 기록기는 오늘 이미 키카드 한 장을 만들었습니다. 내일 다시 사용하세요.
 K|crate.blank.name,상층 구역 빈 키카드
 K|crate.blank.desc,키카드 기록기에 사용하는 빈 카드입니다. 기록 모듈과 배터리를 장착한 뒤 넣어 두면 하룻밤 사이 키카드 한 장이 완성됩니다.
-K|crate.blank.flavor,일련번호도 문장도 없다. 기록기가 무엇을 새기느냐에 따라 정체가 결정된다.
+K|crate.blank.flavor,일련번호도 표장도 없다. 기록기가 무엇을 새기느냐에 따라 정체가 결정된다.
 K|crate.scan.report,스캔: {0} / 내용물 유형: {1} / {2}
 K|crate.scan.mixed,혼합(내용물 미확인)
 K|crate.scan.compartment_chance,숨겨진 칸이 있을 확률 {0}%
@@ -3032,7 +3032,7 @@ K|crate.item.compartment.flavor,상자 바닥에서 분리해 낸 작은 잠금 
 K|crate.lock.outer,{0} 또는 만능 키카드가 필요합니다.
 K|crate.lock.compartment,숨김 칸 키카드가 필요합니다.
 K|crate.manifest.label,주요 내용물: {0}
-K|crate.manifest.medical,의약품
+K|crate.manifest.medical,의료용품
 K|crate.manifest.weapons,무기와 탄약
 K|crate.manifest.household,생활용품
 K|crate.manifest.food,식품
@@ -3079,7 +3079,7 @@ K|crate.smuggler_phone.kind,{0}
 K|crate.smuggler_phone.quantity,몇 개나 필요하십니까? 내일 가져다드리죠.
 K|crate.smuggler_phone.label,내용물 표시 상자 ×{0} · 키카드 포함 제시 가격 {1}
 K|crate.smuggler_phone.blind,내용물 미확인 상자 ×{0} · 키카드 포함 제시 가격 {1}
-K|crate.smuggler_phone.confirm,알겠습니다. 내일 상자와 키카드를 모두 가져가겠습니다.
+K|crate.smuggler_phone.confirm,알겠습니다. 내일 상자와 키카드를 모두 가져다드리겠습니다.
 K|crate.smuggler_phone.pending,이전 주문이 아직 배송 중입니다. 그때 뵙죠.
 K|crate.smuggler_phone.bye,알겠습니다. 필요하시면 전화하세요.
 K|opt_use_vanilla_professions,기본 게임 직업 사용
@@ -3134,14 +3134,14 @@ K|act1.oscar2.h5,사실 그 상자엔 우리 가문의 자원 열쇠가 들어 �
 K|act1.oscar2.h6,자네라면 어떻게 하겠어?
 K|act1.oscar2.c_home,가족들이 몹시 걱정할 거야. 집으로 돌아가.
 K|act1.oscar2.home,그래. 할아버지를 뵈러 가는 게 좋을지도 모르겠어.
-K|act1.oscar2.c_black,암시장에 맡겨 담보로 잡혀.
+K|act1.oscar2.c_black,그 상자를 암시장에 담보로 맡겨.
 K|act1.oscar2.black,"자네, 생각보다 머리가 잘 돌아가는군. 달리 선택의 여지도 없겠지."
 K|act1.aurora.1,여기가 집사가 말하던 새 가게인가 보군.
 K|act1.aurora.2,값비싼 물건 좀 꺼내 봐.
 K|act1.aurora.3,흥. 이제야 좀 낫네.
 K|act1.aurora.4,다음엔 더 많이 준비해 둬. 다시 올지도 모르니까.
 K|act1.revarthur.1,하층 구역 출신이라면서요. 상층 생활에는 좀 익숙해졌습니까?
-K|act1.revarthur.2,우리 혁명군은 아직… 지금은 할 수 없군요.
+K|act1.revarthur.2,우리 혁명군은 아직은… 할 수가 없습니다.
 K|act1.revarthur.3,먹을 것을 좀 사고 싶습니다.
 K|act1.revarthur.4,여기에 있습니까?
 K|act1.revarthur.after1,언젠가 침투 조직 사람을 보내 연락드리겠습니다.
