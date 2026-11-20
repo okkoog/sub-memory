@@ -1,4 +1,4 @@
-﻿# Upper Levels — English
+# Upper Levels — English
 # Format: key,value (split on the first comma only). \n means a line break.
 
 # ===== Difficulty screen =====
@@ -414,7 +414,7 @@ ch2_end,You could give it to Kai, Mira, Lord Vanderlin, or Eleanor in the Lower 
 
 # ----- Test mode -----
 test_mode_label,Test mode (unlock salon and heists immediately)
-test_mode_tooltip,When enabled, a new Upper Levels run (or a loaded Upper Levels save) immediately unlocks the Friday salon, the Vanderlin manor, the Council archive and both theft commissions, and gives security/engineering keycards, two intel files and 3000 credits. Applied once per save.\nTest hotkeys (hold Ctrl): 1 Oscar, 2 Theo, 3 Sasha, 4 Eleanor's epilogue: queue their next visit today; 5 broker or flower supplier; 6 test kit (machines, materials, cells, 5000 credits); 7 one of every mod item; 8 run all mod machines for one night instantly; 9 +10000 credits and +2000 Wild favour.\nTurn off for normal play.
+test_mode_tooltip,When enabled, a new Upper Levels run (or a loaded Upper Levels save) immediately unlocks the Friday salon, the Vanderlin manor, the Council archive and both theft commissions, and gives security/engineering keycards, two intel files and 3000 credits. Applied once per save.\nTest hotkeys (hold Ctrl): 1 Oscar, 2 Theo, 3 Sasha, 4 Eleanor's epilogue: queue their next visit today; 5 broker or flower supplier; 6 test kit (machines, materials, cells, 5000 credits); 7 one of every mod item; 8 run all mod machines for one night instantly; 9 +10000 credits and +2000 Wild favour.\nAlt+7 gives one of each crate and a compartment, plus keycards.\nTurn off for normal play.
 test_mode_applied,[Test mode] Salon and heists unlocked; keycards and intel added to your inventory
 
 # ===================== Panel layout (text + short buttons only) =====================
@@ -637,6 +637,18 @@ uc.consignment.1,Good afternoon. I buy for the consignment house at the end of t
 uc.consignment.2,I take anything except contraband, as long as it's presentable.
 uc.consignment.3,The price is {0}% below market, without the retail markup.
 uc.consignment.4,I brought {1} credits today.
+uc.fence.name,Black Market Fence
+uc.fence.1,I buy what others won't touch.
+uc.fence.2,Rare goods, luxury, and things without papers — 70% of value.
+uc.fence.3,I brought {1} credits today.
+uc.fence.discount,Black market fence -30%
+phone.fence.name,Black Market Fence
+phone.fence.intro1,The crate hunter gave me this number? Fine. Rare goods and luxury, 70% of value.
+phone.fence.intro2,Call when you have stock; I'll come tomorrow.
+phone.fence.hello,Got stock?
+phone.fence.ok,I'll come tomorrow.
+phone.fence.bye,Call when you have stock.
+phone.fence.cool,I'm out for a few days.
 uc.resident.name,Upper Levels Resident
 uc.resident.1,Good afternoon. Our cook is on leave, so I came to buy some food.
 uc.resident.2,Something decent, please. Snacks, drinks, wine, anything.
@@ -1364,6 +1376,7 @@ battle.risk,Minor injury {0}%  Major injury {1}%  Spotted {2}%
 battle.search,Search
 battle.found_corpse,"You find one that just died. To take it, put it in a pocket (it will not go in a backpack). Two a night at most."
 battle.found_scrap,You pick up some scrap worth selling.
+battle.found_crate,You spot a {0} on the ground.
 battle.found_nothing,You find nothing.
 battle.luck_saved,A stray round nearly grazes you. Lucky.
 battle.spotted_police,A Security patrol saw you. It will go on your file.
@@ -1508,27 +1521,81 @@ luxury.tip_cert,Comes with a Vanderlin trust certificate.
 
 crate.scenario.title,Crate Hunter
 crate.scenario.desc,You run a shop in the Upper Levels and spend most of your money on sealed crates. The black market brings a batch every few days. Nobody knows what's inside until it's open.
-crate.scenario.with1,A crate-opening bench
-crate.scenario.with2,Two common crates and one fine crate
-crate.scenario.with3,A smuggler who visits every few days
+crate.scenario.with1,Two common crates and two matching keycards
+crate.scenario.with2,A smuggler who visits every 5 days
+crate.scenario.with3,Six kinds of crates to unlock and search
+crate.scenario.with4,A Keycard Writer
+crate.writer.name,Keycard Writer
+crate.writer.desc,Insert a writing module and a battery. Place a blank keycard in the input and collect the finished card from the output.
+crate.writer.flavor,A desktop encoder with a slot and a status light on the front.
+crate.writer.chip_name,Writing Module · {0}
+crate.writer.chip_desc,Install in a Keycard Writer to turn a blank card into a {0}.
+crate.writer.daily_limit,This writer has already made a card today. Come back tomorrow.
+crate.blank.name,Upper Levels Blank Keycard
+crate.blank.desc,A blank for the Keycard Writer. Insert a writing module and a battery, then leave it overnight to make one keycard.
+crate.blank.flavor,No serial. No emblem. Whatever the writer makes of it, it becomes.
 crate.scenario.tag,Upper Levels mode
-crate.item.common.name,Common Sealed Crate
-crate.item.common.flavor,A wooden crate smuggled up from the lower decks, seal intact. Mostly household goods. Sometimes something else.
-crate.item.fine.name,Fine Sealed Crate
-crate.item.fine.flavor,A hard-shell case with latches and a security seal. The shipping cost more than most of what's inside.
-crate.item.noble.name,Noble Sealed Crate
-crate.item.noble.flavor,A lacquered chest carried out of some old family's house. Half the crest is scratched off. Sometimes it's an heirloom. Sometimes it's what they threw out.
+crate.scan.report,Scan: {0} | Theme: {1} | {2}
+crate.scan.mixed,Mixed (blind)
+crate.scan.compartment_chance,Possible hidden compartment {0}%
+crate.scan.compartment_none,No hidden compartment
+crate.item.common.name,Upper Levels Common Goods Crate
+crate.item.common.flavor,A sealed crate collected from Upper Levels households. Could be anything; mostly everyday goods, sometimes something good.
+crate.item.fine.name,Upper Levels Fine Goods Crate
+crate.item.fine.flavor,A sealed hard case with latches and a seal. Upper Levels goods, could be anything, with more of the valuable stuff.
+crate.item.noble.name,Upper Noble House Goods Crate
+crate.item.noble.flavor,A lacquered crate carried out of a noble house, the family crest half scraped off. Could be anything: an heirloom, or old things they no longer wanted.
 crate.item.bench.name,Crate Bench
-crate.item.bench.desc,A workbench for opening sealed crates. Leave them overnight to open them cleanly, or pry them open now.
+crate.item.bench.desc,A workbench for opening sealed crates with keycards. Open them now or leave them overnight.
 crate.item.bench.flavor,A hydraulic pry arm, a crowbar and a lot of loose nails. Runs on muscle, not power.
 crate.item.bench.note_name,Crate Bench Manual
-crate.item.bench.note_flavor,Put sealed crates on the bench.\nOvernight: opens up to 2 crates a night. Contents stay intact and are placed behind the counter in the morning (or elsewhere in the shop if full), so the bench stays free for more crates.\nPry Open: press the button to open the first crate right now. Each item has a 35% chance to end up shabby.\nCrates are contraband. Don't let anyone see them before you open them.
+crate.item.bench.note_flavor,Put sealed crates on the bench. Each crate uses one matching keycard.\nOpen up to 2 crates overnight or press the button to open 1 now.\nAll goods stay inside their crates. Take the goods out to free up the bench.
 crate.bench.label_work,Bench
 crate.bench.label_control,Open
 crate.bench.status_empty,Insert crates
 crate.bench.status_ready,Opening {0} tonight ({1} total)
-crate.bench.pry,Pry Open
+crate.bench.pry,Open now
+crate.bench.missing_key,The crates on the bench need their matching keycards.
 crate.open.empty,The crate was empty.
+crate.open.button,Open with keycard
+crate.open.failed,This crate can't be opened right now. You still have the keycard.
+crate.item.label_format,{0} (labeled)
+crate.item.blind_format,{0} (blind)
+crate.item.compartment.name,Locked Compartment
+crate.item.compartment.flavor,A small lockbox pulled from the bottom of a crate.
+crate.lock.outer,Requires {0} or a Universal Keycard.
+crate.lock.compartment,Requires a Compartment Keycard.
+crate.manifest.label,Mostly {0}
+crate.manifest.medical,medical supplies
+crate.manifest.weapons,weapons and ammunition
+crate.manifest.household,household goods
+crate.manifest.food,food
+crate.manifest.luxury,luxury goods
+crate.card.ordinary.name,Common Goods Keycard
+crate.card.ordinary.desc,Opens one common goods crate. Single use.
+crate.card.fine.name,Valuables Keycard
+crate.card.fine.desc,Opens one valuables crate. Single use.
+crate.card.noble.name,House Keycard
+crate.card.noble.desc,Opens one noble house crate. Single use.
+crate.card.weapons.name,Ordnance Keycard
+crate.card.weapons.desc,Opens one Republic Special Weapons Crate. Single use.
+crate.card.luxury.name,Conglomerate Keycard
+crate.card.luxury.desc,Opens one conglomerate luxury crate. Single use.
+crate.card.medical.name,Medical Keycard
+crate.card.medical.desc,Opens one Republic Special Medical Crate. Single use.
+crate.card.compartment.name,Compartment Keycard
+crate.card.compartment.desc,Opens one locked compartment. Single use.
+crate.card.universal.name,Universal Keycard
+crate.card.universal.desc,Opens any one Upper Levels labeled or blind crate. Single use.
+crate.open.window_title,Opening crate
+crate.open.done,Done: blue {0}, purple {1}, gold {2}, red {3}. Once you take everything, the empty crate goes away.
+crate.open.opened_suffix, (opened)
+crate.item.weapons.name,Republic Special Arms Crate
+crate.item.weapons.flavor,A sealed Republic quartermaster crate with its serial filed off. Mostly gun parts and ammunition.
+crate.item.luxury.name,Zaibatsu Luxury Crate
+crate.item.luxury.flavor,A lacquered crate out of a zaibatsu warehouse, wax seal still intact. Things only the rich have any use for.
+crate.item.medical.name,Republic Special Medical Crate
+crate.item.medical.flavor,A cold-chain case from a Republic field hospital, its temperature light still on. Drugs, tools, anything.
 crate.open.summary,{1} items. Best one: {0}.
 crate.pry.damaged,{0} damaged.
 crate.log.opened,The crate bench opened a sealed crate. {0}
@@ -1539,10 +1606,30 @@ crate.smuggler.first.3,I'll come by every few days. Here's today's stock.
 crate.smuggler.v1.1,This week's stock. Just cleared the checkpoint.
 crate.smuggler.v2.1,Same as always. Take your pick.
 crate.smuggler.v3.1,Rough trip this time. Crates got knocked around. Not my problem what's inside.
-crate.smuggler.noble,Got one from a noble house today. Don't ask which.
+crate.smuggler.noble,One special crate today. Don't ask where it came from.
 crate.smuggler.plain,Regular stock. Don't overthink it.
 crate.smuggler.accept,Deal. Whatever's inside is your luck.
 crate.smuggler.done,See you next week.
+crate.smuggler.level1,I know your face now. Five percent off and better odds I'll bring the cards.
+crate.smuggler.level2,You've been good to me. From now on I'll bring a card for every crate and an extra blind crate.
+crate.smuggler.level3,You're one of us now. I'll save you an extra special crate next time.
+crate.smuggler.order_arrive,Got what you ordered. Crates and cards are all here.
+crate.smuggler.warehouse,Eight crates and eight cards. Take the whole lot for twenty-five percent off.
+crate.smuggler.buyback,Got a sealed crate you bought? I'll pay {0}% of what you paid for it.
+crate.heritage.name,Heir
+crate.heritage.offer,This crate's been in my family for years. I've got its card too. They go together.
+crate.heritage.accept,Both are yours.
+crate.bundle.no_room,There's not enough space on the counter for this lot.
+act1.helios.crate,We had a spare crate in storage. The card's here too. Make an offer if you're interested.
+crate.oscar.waiting,There's no room for Oscar's reward. It will arrive on a later business day when you have room.
+crate.smuggler_phone.ask,Which crate? Phone orders cost ten percent more for the crates and the cards.
+crate.smuggler_phone.kind,{0}
+crate.smuggler_phone.quantity,How many? I'll bring them tomorrow.
+crate.smuggler_phone.label,Labelled crates ×{0} · {1} asking price with cards
+crate.smuggler_phone.blind,Blind crates ×{0} · {1} asking price with cards
+crate.smuggler_phone.confirm,Got it. I'll bring your crates and cards tomorrow.
+crate.smuggler_phone.pending,Your last order's still on the way. See you then.
+crate.smuggler_phone.bye,All right. Call if you need me.
 crate.smuggler.arrest.c1,I swear I don't know what's in them!
 crate.smuggler.arrest.s1,Then you can think about it at the station. The crates come with us.
 
@@ -1827,9 +1914,9 @@ perfume.phase2.c_no_flowers,Not this time.
 perfume.phase2.no_room,No room in the store. Viola took the rest of the flowers back.
 crate.phase2.1,Heard the store's yours. Now I can bring the big stuff.
 crate.phase2.2,Somebody upstairs cleared out a whole noble house's warehouse.
-crate.phase2.3,From now on, every run has three noble crates. Bring cash.
+crate.phase2.3,From now on I bring three special crates every trip. Have the money ready.
 crate.phase2.4,One bench won't keep up. Have this one.
-crate.smuggler.noble_batch,Three more from the noble lot. That's the whole batch.
+crate.smuggler.noble_batch,Three special crates this time. The whole lot is here.
 
 appraiser.buy.offer.1,If you say it's original, that settles it.
 appraiser.buy.offer.2,I was going to sell it anyway. {0} and it's yours.
@@ -1908,7 +1995,7 @@ readme.p2.body,· Rent is three times the Lower Levels, due every week. Keep som
 readme.p4.title,Kai Wild
 readme.p4.body,Kai is Joe's cousin. Anything you need up here goes through him.\n\nHis services are in the Wild network screen, under Upper Circle, paid with Wild's favor. Not sure what to buy? Start with the cheapest one in each column.\n\nHe'll also bring you an invitation to the Friday salon.
 readme.p5.title,Salon and factions
-readme.p5.body,"Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.\n\nEach week a regular visits; every item you sell them adds 0.1 to that column (regulars raise it to +60 at most):\n· Police: Superintendent Arthur, buys smokes and drinks\n· Infiltration Bureau: the Bureau liaison, buys medicine and tins\n· Republic: the tax inspector, collects a compliance fee\n· Vanderlin family: Oscar, buys luxury goods\nSelling to one side never costs you reputation with another."
+readme.p5.body,"Four factions run things up here: the Republic, the Helios Consortium, the Vanderlin family and the Revolution.\n\n· On Fridays after closing, visit the salon. Talk to each faction's representative and sell intel.\n· Get on someone's good side and they'll help you, and may ask you for favors.\n· Cross someone and it will cost you.\n\nThe first item you sell a regular on each visit earns +1 with their faction, up to +60.\n· Police: Superintendent Arthur, buys smokes and drinks\n· Infiltration Bureau: the Bureau liaison, buys medicine and tins\n· Republic: the tax inspector, collects a compliance fee\n· Vanderlin family: Oscar, buys luxury goods\n· Helios Consortium: the butler buys fresh food\nSelling to one side never costs you reputation with another."
 readme.p6.title,At night
 readme.p6.body,After closing you can go out: the salon, places only your profession knows about, and a few less respectable spots.\n\nNights are risky. You can get hurt, get seen, leave evidence. Know your limits. You still have a shop to open tomorrow.
 readme.p7.title,Around the shop
@@ -1918,6 +2005,8 @@ readme.p8.body,This is a beta. A lot isn't finished yet, and there are surely pr
 
 readme.header,UPPER LEVELS · README.md
 
+opt_use_vanilla_professions,Use vanilla professions
+opt_use_vanilla_professions_tip,On by default. Turn it off to show only professions from this mod when starting a new Upper Levels run.
 opt_allow_wanted,Wanted criminals in Upper Levels runs
 opt_allow_wanted_tip,On by default: wanted criminals show up like in vanilla. Turn it off if you do not want them. Also applies to saves in progress, starting the next day.
 opt_allow_aug,Augment crisis in Upper Levels runs
@@ -2031,9 +2120,23 @@ uc.water_resident.2,Got any bottled spring water? The sealed kind.
 uc.water_corp.name,Corporate Procurement Rep
 uc.water_corp.1,Our boardrooms and executive floors need water. High quality only.
 uc.water_corp.2,If the purity's right, the price isn't a problem.
-pex.give.smuggler,"Smuggler's bay (5×5; the organ dealer's enlarged bay also works) + 8 bags of ""Blue Blood"""
+pex.give.smuggler,"Smuggler's bay (5×5; the organ dealer's enlarged bay also works) + 3 bags of ""Blue Blood"" + 3 red-tier items (value ≥ 900)"
 pex.give.smuggler_big,"Large or small smuggler bay + 8 bags of ""Blue Blood"" (expansion kits used on it are returned)"
-pex.get.smuggler,Modded smuggler's bay (8x8, hidden from inspections)
+pex.get.smuggler,"Modded smuggler's bay (8x8, hidden from inspections)"
+pex.give.junk_card,10 Upper Levels junk + 1 electronic part
+pex.get.junk_card,1 random keycard
+pex.give.card_common,3 Common Goods Keycards
+pex.get.crate_common,1 Common blind crate
+pex.give.card_fine,3 Valuables Keycards
+pex.get.crate_fine,1 Fine blind crate
+pex.give.card_noble,3 House Keycards
+pex.get.crate_noble,1 Noble blind crate
+pex.give.card_weapons,3 Ordnance Keycards
+pex.get.crate_weapons,1 Republic Special Arms Crate
+pex.give.card_luxury,3 Conglomerate Keycards
+pex.get.crate_luxury,1 Zaibatsu Luxury Crate
+pex.give.card_medical,3 Medical Keycards
+pex.get.crate_medical,1 Republic Special Medical Crate
 salon_talk_leave,(Not now)
 salon_guest_line3,· {0} ({1}) standing {2}{3}
 salon_talked_short,, talked
@@ -2085,7 +2188,8 @@ ul_dialog_tourist_greet_5,Everyone said this area is ridiculously expensive. So 
 ul_dialog_tourist_deal_2,I heard I could have some fun around here?
 ul_dialog_tourist_weapon_greet_2,They said the shops up here cost a fortune, but I think it is charming.
 ul_dialog_tourist_weapon_greet_3,Exploring the richest part of the station today. So much culture!
-test_hotkey_update,"Test (last update): gave 5 bottles of ""Samurai"" (trade for Siyang at the private exchange), a materials neon sign (put it in the showcase; the seller it attracts brings the new materials) and the enlarged smuggler's bay (6×5)."
+test_hotkey_update,Crate test: 4 compartments and 4 Universal Keycards.
+test_hotkey_crates_space,Not enough space: received {0} compartments and {1} Universal Keycards.
 corpse_name_fresh,{0} (freshness {1}%)
 battle.found_corpse_old,You find one that has been lying here a few days (freshness {0}%). Two a night at most.
 battle.found_corpse_rotten,You find one, but it has already rotted. Nothing to harvest.
@@ -2443,6 +2547,68 @@ act1.name.landlord,Landlord
 act1.name.oldman,Old Gentleman
 act1.name.vbutler,Vanderlin Butler
 act1.name.helios,Helios Butler
+act1.name.odin,Odin
+act1.odin.1,Odin.
+act1.odin.2,Don't touch the alarm.
+act1.odin.3,My name is Odin. Odin Haraldson.
+act1.odin.4,I have a business proposition for you.
+act1.odin.5,Report me, and you'll never see me again.
+act1.odin.6,My people need supplies.
+act1.odin.7,I mean guns, ammunition, armor, poison, supply crates and keycards.
+act1.odin.8,We don't care if it's contraband, but our price may not be as good as elsewhere.
+act1.odin.9,Take this card. Call me when you have stock.
+act1.odin.bye,Call me when you have stock.
+act1.name.aurora,Aurora
+act1.name.revarthur,Arthur LaFleur
+act1.dex3.1,Hello, boss. On patrol again.
+act1.dex3.2,But this is the last patrol.
+act1.dex3.3,A few days ago I seized a big batch of contraband.
+act1.dex3.4,It came from... "the Righteous" warehouse. That's a real credit.
+act1.dex3.5,See? Lower Levels people really are worms.
+act1.dex3.p1,I...
+act1.dex3.6,Don't misunderstand. You're not included.
+act1.dex3.7,The higher-ups just ordered a sweep of anyone close to Weight.
+act1.dex3.8,I've been assigned to the battlefield too. Maybe that's an honor.
+act1.dex3.9,Got any weapons or medicine? I should bring some for self-defense.
+act1.dex3.bye,Stay safe.
+act1.oscar2.h0,"Hey, friend. You kept your promise, right?"
+act1.oscar2.g1,What? You gave the case to the butler?
+act1.oscar2.g2,I'm finished.
+act1.oscar2.h1,"I could kiss you, old friend."
+act1.oscar2.h2,"You're reliable. I didn't think you'd keep your word."
+act1.oscar2.h3,"Here's 1,600 credits, as an extra reward."
+act1.oscar2.h4,My grandfather is actually worried about where I am.
+act1.oscar2.h5,"To be honest, the case holds our family's resource key. I owe the black market a lot."
+act1.oscar2.h6,What do you think I should do?
+act1.oscar2.c_home,"Your family is probably worried sick. Go home."
+act1.oscar2.home,"Fine. Maybe I should go see my grandfather."
+act1.oscar2.c_black,Pawn it to the black market.
+act1.oscar2.black,"You're sharper than I thought. I guess I have no other choice."
+act1.aurora.1,So this is the new shop the butler mentioned.
+act1.aurora.2,Bring out something expensive.
+act1.aurora.3,Hmph. That's more like it.
+act1.aurora.4,Stock more next time. I might come again.
+act1.revarthur.1,"I heard you're from the Lower Levels. Fitting in up here now?"
+act1.revarthur.2,Our revolutionary forces can't... for now.
+act1.revarthur.3,I want some food.
+act1.revarthur.4,Do you have any?
+act1.revarthur.after1,I'll have the infiltration people come by sometime.
+act1.revarthur.after2,That's all.
+act1.revarthur.arrest.c1,"Wait, don't report me!"
+act1.revarthur.arrest.c2,I've barely had anything to do with the revolution for a long time.
+act1.revarthur.arrest.c3,"If you let me go, I'll put in a good word for you with the young revolutionaries."
+act1.revarthur.arrest.s1,(The police step forward.)
+act1.revarthur.bye,Thank you.
+act1.arthur2.1,"Busy as hell these days. Fighting, expeditions, meetings, and watching for thieves..."
+act1.arthur2.2,I need to relax too, boss.
+act1.arthur2.3,"Get me a pack of cigarettes later. Good liquor too."
+act1.arthur2.4,"That little cop, Dex..."
+act1.arthur2.5,He actually seized "the Righteous" warehouse!
+act1.arthur2.6,Made a huge mess for me.
+act1.arthur2.7,"But the kid meant well. The higher-ups want the department to deal with him; I've sent him to the battlefield for now."
+act1.arthur2.8,Now I'm stuck in the middle.
+act1.arthur2.9,Hope the kid comes back safe once the storm passes.
+act1.arthur2.10,"Fuck it. I don't want to think about it."
 act1.rep1.1,Hello. I'm with a relevant department of the Republic. We tolerate people from the Lower Levels.
 act1.rep1.2,That doesn't mean you're legal yet.
 act1.rep1.3,I have new instructions for you.
@@ -2764,10 +2930,10 @@ rep_perk_ULF_COUNCIL_RELIEF_name,Tax Relief
 rep_perk_ULF_COUNCIL_RELIEF_desc,The weekly compliance fee drops from 1% to 0.5% of your sales.
 rep_perk_ULF_COUNCIL_RELIEF_flavor,"""We know who pays on time."""
 rep_how_upper,Raise: sell to Upper Levels customers (+1 a day at most); trade two artworks at the private exchange once a week.\nLower: report Upper Levels customers.
-rep_how_police,"Raise: sell to Superintendent Arthur or Officer Dex (+0.1 per item, regulars raise it to +60 at most); requisitions; killing augments, reporting wanted criminals; alarm transmitter module.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
-rep_how_rev,"Raise: sell medicine and tins to the Bureau liaison (+0.1 per item, regulars raise it to +60 at most), more for filling his urgent request; selling organs to the field medic.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
+rep_how_police,"Raise: sell to Superintendent Arthur or Officer Dex (+1 on the first sale of each visit, up to +60); requisitions; killing augments, reporting wanted criminals; alarm transmitter module.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
+rep_how_rev,"Raise: sell medicine and tins to the Bureau liaison (+1 on the first sale of each visit, up to +60), more for filling his urgent request; selling organs to the field medic.\nLower: bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
 rep_how_council,"Raise: pay the compliance fee at the weekly visit (regulars raise it to +60 at most, +20 more the first time); pay 500 extra for more.\nLower: refusing the fee; bringing bodies home from the firefight zone (each one costs 0.5 with the Republic, the Police or the Infiltration Bureau at random, down to -60 at most)."
-rep_how_vanderlin,"Raise: sell luxury goods to Oscar (+0.1 per item, regulars raise it to +60 at most); more for finding the piece he asked for.\nLower: crossing the Vanderlin family."
+rep_how_vanderlin,"Raise: sell luxury goods to Oscar (+1 on the first sale of each visit, up to +60); more for finding the piece he asked for.\nLower: crossing the Vanderlin family."
 battle.corpse_pocket,"You brought the body in your pocket back to the shop. Nobody saw, so your reputation is unaffected."
 test_hotkey_regulars,"Test: Arthur, the Republic inspector, Oscar and the Bureau liaison all visit today."
 reg.arthur.interest,Tobacco & Alcohol
@@ -2796,7 +2962,7 @@ phone.cool_days,Call again in {0} days.
 phone.c_come,Can you come by tomorrow?
 phone.c_hang,"Never mind, wrong number."
 phone.no_answer,...No answer.
-rep_how_helios,"Raise: sell fresh food to the Helios butler (+0.1 per item, regulars raise it to +60 at most).\nLower: crossing the Helios household."
+rep_how_helios,"Raise: sell fresh food to the Helios butler (+1 on the first sale of each visit, up to +60).\nLower: crossing the Helios household."
 item_ul_smuggler_bay_small_name,Small Smuggler's Bay
 item_ul_smuggler_bay_small_desc,A cramped 3×3 smuggler's bay. Its contents are hidden from inspection.
 ul_kai_thorne_contact_title,Thorne's Number
@@ -2805,7 +2971,25 @@ ul_kai_doctor_contact_title,Private Doctor's Number
 ul_kai_doctor_contact_desc,Kai introduces you to an Upper Levels private doctor ({0}) and gives you a card. Call to book a visit the next day; he always brings an auto-suture kit (once every 7 days).
 phone.thorne.unlocked,Thorne's card is in your shop. Dial {0} on the phone.
 phone.doctor.unlocked,The private doctor's card is in your shop. Dial {0} on the phone.
-pex.give.organ_set,"One natural heart, left lung, right lung, left kidney and right kidney (no rotten ones)"
+item_ul_military_buyer_card_name,Military Trader's Card
+item_ul_military_buyer_card_flavor,An olive-green card with three shallow marks along one edge. The number on the back is {0}.
+phone.military.name,Military Trader
+phone.military.card_tip,"Dial {0} to have the military trader bring one high-grade crate and 2-3 blank keycards tomorrow (30% crate markup, 7-day cooldown)."
+phone.military.unlocked,The military trader's card is in your shop. Dial {0} on the phone.
+phone.military.intro1,"Kai gave you this number? Fine. One high-grade crate per visit, plus 2-3 blank keycards, 30% crate markup."
+phone.military.intro2,Call when you want stock; I'll bring it tomorrow.
+phone.military.hello,Which crate?
+phone.military.ok,I'll bring the goods tomorrow.
+phone.military.bye,"All right, call when you want stock."
+phone.military.cool,I'm out for the next few days. Call back later.
+ul_kai_military_contact_title,Military Trader's Number
+ul_kai_military_contact_desc,"Kai gives you the military trader's number ({0}) and a card. Book a visit the next day to buy Republic weapon, luxury or medical crates (30% markup, once every 7 days)."
+crate.military.visit,One high-grade crate today, plus 2-3 blank keycards. 30% markup on the crate.
+crate.military.arranged,I brought what you asked for. Just one. Pick.
+crate.military.accept,Deal. Keep it out of sight.
+crate.military.done,Come back when you have good stock.
+crate.military.premium,Military trader premium
+pex.give.organ_set,"One heart, left lung, right lung, left kidney and right kidney (all five must be intact natural organs)"
 pex.give.good_heart,1 natural heart in perfect condition
 pex.give.good_organ,Any 1 natural lung or kidney in perfect condition
 pex.get.rep_random,"+5 reputation with a random one of the Police, the Infiltration Bureau or the Republic"
@@ -2851,7 +3035,7 @@ trait.well_connected.desc,Start with 15 extra reputation with every faction.
 trait.alert.name,Vigilant
 trait.alert.desc,You are never robbed at night.
 trait.diplomatic.name,Silver Tongue
-trait.diplomatic.desc,"Reputation from trading is increased by 33%, and the daily cap on reputation from trading rises from 1 to 5. The bonus also applies to the reputation you earn per item sold to regulars."
+trait.diplomatic.desc,"Reputation from trading is increased by 33%, and the daily cap on reputation from trading rises from 1 to 5."
 trait.intimidating.name,Intimidating
 trait.intimidating.desc,All crimes you commit leave 33% less usable evidence.
 trait.proficient_scavenger.name,Proficient Scavenger
@@ -2950,10 +3134,11 @@ item_ul_relic_chest_desc,"A locked chest a late friend left in your keeping. Wha
 trait.cert.used,You have a residence certificate? ...Fine. Your papers are in order. No payment this time.
 trait.estate.name,Estate Agent
 trait.estate.n1,"Boss, a resident in the ring has passed away. The household needs clearing."
-trait.estate.n2,"If you want the job, tick ""Clear the estate"" on tonight's closing sheet and the lot will be brought over tomorrow."
+trait.estate.n2,"If you want the job, tick ""Clear the estate"" (uses your night out) or ""Hire someone"" (200) on tonight's closing sheet; the lot arrives tomorrow."
 trait.estate.d1,Here is everything we cleared out last night.
 trait.estate.d2,"Take what you like, or take the whole lot at forty percent of its value."
-trait.estate.service,Clear the estate (delivered tomorrow)
+trait.estate.service,Clear the estate (uses the night)
+trait.estate.paid_service,Hire someone (200)
 trait.estate.log,You took the estate job. The lot arrives tomorrow.
 trait.watch.service,Stand watch at the Vanderlin warehouse
 trait.watch.log,You guarded the Vanderlin warehouse all night and got {0} credits. You are worn out: one fewer customer today.
