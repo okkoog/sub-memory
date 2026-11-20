@@ -23,10 +23,18 @@ panel_liquid,Liquid
 panel_contents,Contents
 packing_title,Packing list · ×{0}
 packing_more,…and {0} more kinds
-packing_page,Page {0}/{1}
+packing_page,{2}: page {0}/{1}
+packing_page_plain,Page {0}/{1}
 ticket_no,Appraisal No.{0}
 cfg_enabled,Enable the mod
 cfg_enabled_tip,Turn off to get the original item tooltip back. No restart needed.
+cfg_section_general,General
+cfg_section_slip,Slip
+cfg_section_content,Content
+cfg_section_fold,Collapse
+cfg_section_tags,Tags
+cfg_section_classic,Classic style
+cfg_section_debug,Diagnostics
 cfg_style,Style
 cfg_style_tip,Ticket: an appraisal slip. Classic: grouped text in the game's own window.
 cfg_show_desc,Show item description
@@ -111,9 +119,13 @@ gene_expressed,Expressed
 gene_a,A
 gene_b,B
 cfg_collapse,Collapse some parts
-cfg_collapse_tip,"The slip shows just the essentials; the parts ticked below stay folded until you hold the expand key, which shows the full slip. A line at the bottom says what is folded."
+cfg_collapse_tip,"The slip shows just the essentials; the parts ticked below stay folded until you expand the slip with the expand key. A line at the bottom says what is folded."
 cfg_expand_key,Expand key
-cfg_expand_key_tip,Hold this key to show the full slip; let go to fold it again.
+cfg_expand_key_tip,"The key that shows the full slip: hold it, or press it to toggle (see Expand mode)."
+cfg_expand_mode,Expand mode
+cfg_expand_mode_tip,"Hold: the slip stays full while you hold the expand key. Toggle: press once to expand, press again to fold."
+cfg_page_key,Page key
+cfg_page_key_tip,"While the mouse is over an expanded storage, press this key to show its next page on the packing list. The page selected in the game window does not change. Does nothing if it is the same as the expand key."
 cfg_collapse_prices,Fold price details
 cfg_collapse_prices_tip,"The price details under the selling price (list price and so on). The big selling price, the purchase price and value per cell stay."
 cfg_collapse_contents,Fold contents
@@ -123,9 +135,9 @@ cfg_collapse_desc_tip,The item's own flavour text.
 cfg_collapse_mods,Fold mod info
 cfg_collapse_mods_tip,"The Mod info section added by other mods, and the mod source line."
 cfg_collapse_factors,Fold price factors
-cfg_collapse_factors_tip,"The lines in Mod info that end in a signed percentage (market events, black market premium and so on) stay folded until you hold the expand key; the rest of Mod info still shows. No need to tick this if Fold mod info is already ticked."
-cfg_show_on_key,Show the tooltip only while holding the expand key
-cfg_show_on_key_tip,"Moving the mouse over items shows nothing; hold the expand key to show the tooltip (the full slip). Applies to both styles."
+cfg_collapse_factors_tip,"The lines in Mod info that end in a signed percentage (market events, black market premium and so on) stay folded until you expand the slip; the rest of Mod info still shows. No need to tick this if Fold mod info is already ticked."
+cfg_show_on_key,Show the tooltip only when expanded
+cfg_show_on_key_tip,"Moving the mouse over items shows nothing; use the expand key to show the tooltip (the full slip). Applies to both styles."
 fold_view,Show {0}
 fold_sep,","
 fold_prices,price details

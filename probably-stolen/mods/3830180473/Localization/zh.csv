@@ -23,10 +23,18 @@ panel_liquid,液体
 panel_contents,内容物
 packing_title,装箱单 · {0} 件
 packing_more,…另有 {0} 种
-packing_page,第 {0}/{1} 页
+packing_page,{2} 翻页 {0}/{1}
+packing_page_plain,第 {0}/{1} 页
 ticket_no,估价单 No.{0}
 cfg_enabled,启用本模组
 cfg_enabled_tip,关闭后恢复原版物品详情，无需重启。
+cfg_section_general,常规
+cfg_section_slip,估价单
+cfg_section_content,显示内容
+cfg_section_fold,收起与展开
+cfg_section_tags,分类标签
+cfg_section_classic,经典风格
+cfg_section_debug,诊断
 cfg_style,外观风格
 cfg_style_tip,Ticket：估价单；Classic：在原版窗口里分组显示文字。
 cfg_show_desc,显示物品描述
@@ -111,9 +119,13 @@ gene_expressed,表现
 gene_a,A
 gene_b,B
 cfg_collapse,平时收起部分内容
-cfg_collapse_tip,估价单平时只显示要点，下面勾选的部分先收起来；按住展开键时显示完整的单子。底部会提示收起了哪些。
+cfg_collapse_tip,估价单平时只显示要点，下面勾选的部分先收起来；用展开键展开时显示完整的单子。底部会提示收起了哪些。
 cfg_expand_key,展开按键
-cfg_expand_key_tip,按住这个键时显示完整的估价单，松开收回。
+cfg_expand_key_tip,用这个键显示完整的估价单：按住还是按一下切换，见「展开方式」。
+cfg_expand_mode,展开方式
+cfg_expand_mode_tip,按住：按住展开键时展开，松开收回。按一下切换：按一下展开，再按一下收起。
+cfg_page_key,翻页按键
+cfg_page_key_tip,鼠标停在扩建过的储藏区上时，按这个键让装箱单看下一页，不改变游戏窗口里选中的页。和展开按键相同时不起作用。
 cfg_collapse_prices,收起价格明细
 cfg_collapse_prices_tip,售价下方的价格明细（标价等）。大字售价、进价和性价比不收起。
 cfg_collapse_contents,收起内容物
@@ -123,9 +135,9 @@ cfg_collapse_desc_tip,物品自带的介绍文字。
 cfg_collapse_mods,收起附加信息
 cfg_collapse_mods_tip,其他模组加的「附加信息」一节和模组来源。
 cfg_collapse_factors,收起价格影响因素
-cfg_collapse_factors_tip,附加信息里带正负百分比的那几行（市场事件、黑市溢价等），按住展开键才显示；附加信息的其他行照常显示。已经勾了「收起附加信息」时不用再勾这项。
-cfg_show_on_key,按住展开键才显示物品详情
-cfg_show_on_key_tip,平时鼠标划过物品不弹出物品详情，按住展开键才显示（显示的是完整的估价单）。两种外观都适用。
+cfg_collapse_factors_tip,附加信息里带正负百分比的那几行（市场事件、黑市溢价等），展开时才显示；附加信息的其他行照常显示。已经勾了「收起附加信息」时不用再勾这项。
+cfg_show_on_key,展开时才显示物品详情
+cfg_show_on_key_tip,平时鼠标划过物品不弹出物品详情，用展开键展开时才显示（显示的是完整的估价单）。两种外观都适用。
 fold_view,查看{0}
 fold_sep,、
 fold_prices,价格明细
