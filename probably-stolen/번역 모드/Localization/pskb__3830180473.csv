@@ -106,9 +106,9 @@ K|gene_expressed,발현
 K|gene_a,A
 K|gene_b,B
 K|cfg_collapse,일부 항목 접기
-K|cfg_collapse_tip,"감정서에는 중요한 정보만 남깁니다. 아래에서 선택한 항목은 펼치기 키를 누르는 동안만 모두 보이고, 손을 떼면 다시 접힙니다. 아래쪽에 접힌 항목 안내가 표시됩니다."
+K|cfg_collapse_tip,"감정서에는 핵심 정보만 표시됩니다. 아래에서 선택한 항목은 펼치기 키로 감정서를 펼칠 때만 나타납니다. 맨 아래에는 접힌 항목이 안내됩니다."
 K|cfg_expand_key,펼치기 키
-K|cfg_expand_key_tip,이 키를 누르고 있으면 감정서 전체가 표시되고 놓으면 다시 접힙니다.
+K|cfg_expand_key_tip,"감정서 전체를 표시하는 키입니다. 누르고 있거나 한 번씩 눌러 펼침 상태를 전환할 수 있습니다(펼치기 방식 설정 참조)."
 K|cfg_collapse_prices,가격 세부 정보 접기
 K|cfg_collapse_prices_tip,"판매가 아래의 작은 줄(정가, 칸당 가치 등)을 접습니다. 큰 판매가와 매입가는 유지됩니다."
 K|cfg_collapse_contents,내용물 접기
@@ -124,15 +124,27 @@ K|fold_contents,내용물
 K|fold_desc,물품 설명
 K|fold_mods,모드 정보
 K|cfg_collapse_factors,가격 변동 요인 접기
-K|cfg_collapse_factors_tip,"모드 정보에서 부호가 붙은 백분율(시장 이벤트, 암시장 할증 등)로 끝나는 항목은 펼치기 키를 누르고 있을 때만 표시됩니다. 다른 모드 정보는 계속 표시됩니다. 이미 '모드 정보 접기'를 켰다면 이 항목은 따로 켤 필요가 없습니다."
-K|cfg_show_on_key,펼치기 키를 누르는 동안에만 물품 상세 정보 표시
-K|cfg_show_on_key_tip,평소에는 물품 위에 마우스를 올려도 상세 정보가 나타나지 않습니다. 펼치기 키를 누르고 있어야 감정서 전체가 표시됩니다. 두 가지 표시 방식 모두에 적용됩니다.
+K|cfg_collapse_factors_tip,"모드 정보에서 부호가 붙은 백분율(시장 이벤트, 암시장 할증 등)로 끝나는 항목은 감정서를 펼칠 때만 표시됩니다. 다른 모드 정보는 그대로 표시됩니다. 이미 '모드 정보 접기'를 켰다면 이 설정은 필요하지 않습니다."
+K|cfg_show_on_key,"펼쳤을 때만 물품 상세 정보 표시"
+K|cfg_show_on_key_tip,"마우스를 물품 위에 올려도 상세 정보가 표시되지 않습니다. 펼치기 키를 사용하면 감정서 전체가 표시됩니다. 두 가지 표시 방식 모두에 적용됩니다."
 K|fold_factors,가격 변동 요인
 K|packing_title,포장 명세서 · ×{0}
 K|packing_more,…외 {0}종
-K|packing_page,{0}/{1}페이지
+K|packing_page,"{2}: {0}/{1}페이지"
 K|cfg_contents_layout,내용물 표시 방식
 K|cfg_contents_layout_tip,포장 명세서: 견적서 옆에 별도의 작은 명세서를 붙여 물품 이름과 수량을 표시합니다. 물품이 많아져도 견적서 크기는 변하지 않습니다. 격자: 기존처럼 견적서 안에 아이콘을 칸별로 표시합니다.
 K|sample_contraband,중급 밀수품
 K|cfg_text_colors,"텍스트 색상"
 K|cfg_text_colors_tip,"게임과 다른 모드에서 지정한 텍스트 색상을 종이에서도 읽기 쉽도록 조정해 유지합니다. 끄면 빨강·주황·노랑 경고를 제외한 글자를 종이의 잉크색으로 표시합니다."
+K|packing_page_plain,"{0}/{1}페이지"
+K|cfg_section_general,"일반"
+K|cfg_section_slip,"감정서"
+K|cfg_section_content,"표시 내용"
+K|cfg_section_fold,"접기·펼치기"
+K|cfg_section_tags,"분류 태그"
+K|cfg_section_classic,"기본 스타일"
+K|cfg_section_debug,"진단"
+K|cfg_expand_mode,"펼치기 방식"
+K|cfg_expand_mode_tip,"누르고 있기: 펼치기 키를 누르는 동안 감정서가 펼쳐집니다. 전환: 한 번 누르면 펼쳐지고 다시 누르면 접힙니다."
+K|cfg_page_key,"페이지 전환 키"
+K|cfg_page_key_tip,"마우스 커서가 확장된 보관함 위에 있을 때 이 키를 누르면 내용물 목록의 다음 페이지가 표시됩니다. 게임 창에서 선택한 페이지는 변경되지 않습니다. 펼치기 키와 같으면 동작하지 않습니다."
