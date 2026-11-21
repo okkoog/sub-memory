@@ -27,7 +27,7 @@ jobs:
           def u32(p): return struct.unpack_from('<I',b,p)[0]
           assert len(b)==16439808,("unexpected DLL size",len(b))
           pe=u32(0x3c)
-          assert b[pe:pe+4]==b'PE\\0\\0'
+          assert b[pe:pe+4]==b'PE\0\0'
           num=u16(pe+6); opts=u16(pe+20); oh=pe+24
           assert u16(oh) in (0x10b,0x20b)
           dd=oh+(112 if u16(oh)==0x20b else 96)
@@ -35,7 +35,7 @@ jobs:
           sect=[]
           for i in range(num):
               s=oh+opts+i*40
-              sect.append((u32(s+12),u32(s+16),u32(s+20),u32(s+8),b[s:s+8].split(b'\\0')[0].decode('ascii',errors='replace')))
+              sect.append((u32(s+12),u32(s+16),u32(s+20),u32(s+8),b[s:s+8].split(b'\0')[0].decode('ascii',errors='replace')))
           def rva_off(rva):
               for va,rawsize,rawptr,vs,name in sect:
                   if va<=rva<va+max(rawsize,vs):
@@ -50,7 +50,7 @@ jobs:
           streams={}
           for _ in range(sc):
               so=u32(pos); sz=u32(pos+4); pos+=8
-              end=b.index(b'\\0',pos)
+              end=b.index(b'\0',pos)
               name=b[pos:end].decode('ascii')
               pos=(end+4)&~3
               streams[name]=(meta+so,sz)
@@ -73,33 +73,33 @@ jobs:
                   if not n or idx+prefix+n>len(raw): raise ValueError('invalid length')
                   s=raw[idx+prefix:idx+prefix+n-1].decode('utf-16le','strict')
                   total+=1
-                  if re.search('[\\u3400-\\u9fff]',s):
+                  if re.search('[\u3400-\u9fff]',s):
                       tok=(0x70000000|idx)
-                      refs=t.count(b'\\x72'+struct.pack('<I',tok))
-                      inventory.append((idx,refs,s.replace('\\r','\\\\r').replace('\\n','\\\\n').replace('\\t','\\\\t')))
+                      refs=t.count(b'\x72'+struct.pack('<I',tok))
+                      inventory.append((idx,refs,s.replace('\r','\\r').replace('\n','\\n').replace('\t','\\t')))
                   idx+=prefix+n
               except Exception:
                   errors+=1
                   idx+=1
           inv=out/'Eleanor_v1.0.3_DLL_US_CJK_inventory_20261121.tsv'
           with inv.open('w',encoding='utf-8',newline='') as f:
-              w=csv.writer(f,delimiter='\\t')
+              w=csv.writer(f,delimiter='\t')
               w.writerow(['US_offset','candidate_ldstr_references','Chinese_original'])
               w.writerows(inventory)
           stats=out/'Eleanor_v1.0.3_DLL_STRUCTURE_AUDIT_20261121.md'
-          stats.write_text('# Fallen Heiress - Eleanor v1.0.3 DLL — static resource audit\\n\\n'
-             + '- Original file: \\x60'+str(src)+'\\x60\\n'
-             + '- Binary size: '+str(len(b))+' bytes\\n'
-             + '- SHA256: \\x60'+hashlib.sha256(b).hexdigest()+'\\x60\\n'
-             + '- CLR metadata streams: '+', '.join(streams)+'\\n'
-             + '- #US size: '+str(size)+' bytes\\n'
-             + '- Decoded #US entries (estimate): '+str(total)+'\\n'
-             + '- Entries containing CJK: '+str(len(inventory))+'\\n'
-             + '- CJK entries with possible ldstr references: '+str(sum(1 for x in inventory if x[1]>0))+'\\n'
-             + '- Parse recoveries: '+str(errors)+'\\n\\n'
+          stats.write_text('# Fallen Heiress - Eleanor v1.0.3 DLL — static resource audit\n\n'
+             + '- Original file: \x60'+str(src)+'\x60\n'
+             + '- Binary size: '+str(len(b))+' bytes\n'
+             + '- SHA256: \x60'+hashlib.sha256(b).hexdigest()+'\x60\n'
+             + '- CLR metadata streams: '+', '.join(streams)+'\n'
+             + '- #US size: '+str(size)+' bytes\n'
+             + '- Decoded #US entries (estimate): '+str(total)+'\n'
+             + '- Entries containing CJK: '+str(len(inventory))+'\n'
+             + '- CJK entries with possible ldstr references: '+str(sum(1 for x in inventory if x[1]>0))+'\n'
+             + '- Parse recoveries: '+str(errors)+'\n\n'
              + 'Note: ldstr reference counts are raw byte-pattern candidates, NOT method-level verified IL. '
              + 'Do not patch identifiers, branching strings, or embedded data without call-site analysis. '
-             + 'No source DLL or existing translated DLL modified.\\n',encoding='utf-8')
+             + 'No source DLL or existing translated DLL modified.\n',encoding='utf-8')
           print(stats.read_text())
           print('First twenty Chinese entries:',inventory[:20])
           PY
