@@ -6,7 +6,7 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
-> **현재 작업 대상: 3번 `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
+> **현재 작업 대상: 4번 `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
 >
 > **중요:** '적용 문자열 수'는 번역 진행률(%)이 아니다. 기존 DLL의 중국어 잔존 문자열에는 내부 판정값·원본 데이터 키·파일 경로·호칭 검색어 등이 섞여 있어 검수 전에는 정확한 번역 대상 총량을 산정할 수 없다. 따라서 분모 확인 전에는 %를 쓰지 않는다. 
 
@@ -14,13 +14,13 @@
 | ---: | --- | ---: | ---: | --- | --- |
 | **1 (정적 번역 종료)** | `lewd_meme2.1.0/MidnightPawn.dll` | 625 | 686 | **번역·검토 잔여 0개 — 내부 참조 139개 보존** | **미실시(게임 확인 필요)** |
 | **2 (정적 번역 종료)** | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 881 | 938 | **번역·문맥 미처리 0개 — 원문 보호 88개** | **미실시(게임 확인 필요)** |
-| 3 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 204 | 235 | 미완료 — 대기 | 미실시 |
+| **3 (정적 번역 종료)** | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 206 | 237 | **추가 번역 미처리 0개 — 내부 문자열 22개 보존, 경로 1개** | 미실시 |
 | 4 | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 908 | 1175 | 미완료 — 대기 | 미실시 |
 | 5 | `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` | 45 | 46 | 미완료 — 대기 | 미실시 |
 | 6 | `[SRW-STM]MentorToSarrona/MentorToSarrona.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 7 | `3843110449/GeorgioToElueym.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 8 | `3843110449/ToElueym.dll` | 1 | 1 | 미완료 — 대기 | 미실시 |
-| **합계** | **시험 DLL 8개** | **2,668** | **3,085** | **정적 번역 종료 2개 / 게임 검증 완료 0개** | **0개** |
+| **합계** | **시험 DLL 8개** | **2,670** | **3,087** | **정적 번역 종료 3개 / 게임 검증 완료 0개** | **0개** |
 
 ### 단계별 완료 기준 / 보고 양식
 
@@ -582,3 +582,10 @@
 - 333개 활성 한자 포함 원문을 전수 분류한 결과, 번역 추가 245개, 기능상 원문 유지 88개, 미처리/문맥 보류 **0개**. `ShadowTrade_remaining_inventory_20261121.tsv`의 전수 상태와 사용 메서드 기록 갱신. `ShadowTrade_DLL_sequential_batch4_20261121.tsv` 및 통합 대조표 반영.
 - 수정 전 DLL blob `ed37f838e7063dc9d701d064bf638621422c2901`, 파일 367616→375296바이트. 신규 85건 역디코딩·IL 85곳 재지정 및 이전 참조 0, 기존 #US와 비대상 메타데이터 불변 정적 검사 통과. 실제 CLR 로딩·인게임 UI/저장 데이터 **미검증**.
 - 2번 DLL '번역/정적 검사' 단계 종료, 게임 동작 검증은 별도. 세부 보고 `번역대조표/ShadowTrade_FINAL_STATIC_AUDIT_20261121.md`. 3번 작업은 `ItemPortraitHD.dll`.
+
+## 2026-11-21 — ItemPortraitHD.dll 순차 3번 정적 번역 종료
+
+- 기존 시험 DLL blob `ed9bea88730f8c54ac61a6dbf969eee710a5c81e`, 사용자 표시 문구 2개/활성 IL 2곳 한국어 DLL에 추가. 25개 한자 포함 활성 문자열 전수 분류: 추가 번역 2개, 내부 분류/설정값 22개 원문 보존, 이미 한국어인 문장의 폴더 경로 예시 1개 보존. 실제 미번역 표시 문구 0개.
+- 파일 크기 285696→286208바이트; 문자열 역디코딩 및 IL 참조 2곳 확인, 기존 #US 및 타 CLI 메타데이터 보존. 실제 게임 실행 검증 미실시. 원본 `TentacleMod/` 미변경.
+- 결과 `번역대조표/ItemPortraitHD_DLL_sequential_20261121.tsv`, 전수 목록 `ItemPortraitHD_remaining_inventory_20261121.tsv`, 보고서 `ItemPortraitHD_FINAL_STATIC_AUDIT_20261121.md`. 3번 정적 번역 종료, 다음 순서 4번 LewdMemeConfig.dll.
+- 8개 시험 DLL 누적 2670문구/IL 3087곳, 정적 번역 완료 3개.
