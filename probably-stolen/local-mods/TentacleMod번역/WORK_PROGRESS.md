@@ -33,7 +33,7 @@
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **3차 한국어 DLL 시험본**: 누적 193개 문자열, 223곳 IL 참조 수정; 게임 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
-| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275곳·툴팁 275곳·섹션 13종, 추가 UI·로그 문구 330곳, 본체 설명서 20개 비공백 줄 한국어 소스 번역**; DLL 미컴파일·게임 실행 미검증 |
+| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **한국어 DLL 시험본 366개 문자열/IL 542곳** 직접 반영(기존 한국어 소스 대조). 추가 소스 번역 보존, 실게임 로딩 미검증 |
 | `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
 | `[SRW-STM]MentorToSarrona/` | manifest v1.2.0, `MentorToSarrona.dll` 9,216바이트(소스/Localization 없음) | **manifest 설명 한국어화만 완료**; DLL 내부 대사 번역 미완료 |
 | `3843110449/` (GeorgioToElueym) | manifest v1.1.0, `GeorgioToElueym.dll` 11,776바이트 + `ToElueym.dll` 4,608바이트(소스/Localization 없음) | **manifest 이름·설명 한국어화만 완료**; DLL 내부 문구 번역 미완료 |
@@ -365,3 +365,10 @@
 - **대조표**: `번역대조표/DLL_additional_20261121.csv`는 전체 **1,034개 행**(기존 424 + 이번 610). 과거 초기 시험 DLL 적용분 205개는 별도 JSON 기록에 보존. 이번 3개 묶음에는 각각 중국어 원문·한국어·기존/신규 `#US` 오프셋·활성 참조 수가 있음.
 - **현 시점 남은 한자 포함 활성 문자열**: `MidnightPawn.dll` 337개/참조 545곳, `ShadowTrade.dll` 351개/참조 492곳, `ItemPortraitHD.dll` 36개/참조 74곳 = **총 724개/1,111곳**. 여기에는 내부 판정값·저장/호환 문자열 및 번역문 속 중국어 파일 경로도 포함되어 있으므로 **724개 모두 번역해야 한다는 뜻은 아님**.
 - **원본 보호 및 미검증**: `TentacleMod/` 원본 그대로. 수정 파일은 모두 `TentacleMod번역/` 하위 시험 DLL. C# 컴파일 또는 게임 로더·인게임 플레이 테스트를 실행하지 않았음. PE/CLI 메타데이터·`ldstr` 정적 검사를 실제 런타임 정상 구동으로 간주하지 않는다.
+
+## 2026-11-21 — LewdMemeConfig.dll 최초 DLL 반영(별도 메타데이터 복제)
+
+- **실제 적용**: 중국어 원본 C#와 이전 한국어 C# 소스의 동일 행·문자열 위치를 1:1 대조하여 DLL의 활성 `#US` 및 `ldstr`까지 확인된 **366개 설정/툴팁/UI·진단 문구, IL 참조 542곳**을 한국어 DLL 시험본에 반영. 연령 불분명한 관련 항목 14개는 별도 보류.
+- 원본 DLL에는 `#US` 뒤에 `#GUID` 및 `#Blob` 스트림이 있어 기존 방식으로 `#US` 끝에 문자열을 추가하면 메타데이터 파손. 따라서 **원본 메타데이터 전체 복제 후 마지막에 확장된 `#US` 복사본을 배치**하고 PE/CLI의 메타데이터 RVA·Size를 복제 영역으로 전환. 마지막 PE `.reloc` 섹션을 확장하면서 기존 Base Relocation 12바이트는 보존하고 discardable 속성을 제거. 다른 메타데이터 스트림은 바이트 동일성 검사.
+- 결과 파일 `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` 신규 생성, 대조표 `lewd_meme_config0.7.2-pre/번역대조표/LewdMemeConfig_DLL_20261121.tsv`, `번역대조표/DLL_additional_20261121.csv` 갱신. 원본 `TentacleMod/` 폴더는 변경하지 않음.
+- **정적 검증**: 원문/번역 및 플레이스홀더, 새 스트림 구조/기존 스트림 바이트 동일성, IL 문자열 참조 542곳, 비대상 IL 불변 확인. 복제 메타데이터 크기 273317바이트, DLL 314368→587776바이트. **실제 CLR 로드·게임 플레이 미검증**. 새 메타데이터 배치를 포함해 반드시 게임 실행 테스트가 필요.
