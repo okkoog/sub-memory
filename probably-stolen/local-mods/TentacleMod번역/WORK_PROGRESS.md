@@ -25,7 +25,7 @@
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
-| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275개·툴팁 275곳·섹션 13종 소스 번역 완료**, DLL 미컴파일·게임 실행 미검증 |
+| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275곳·툴팁 275곳·섹션 13종, 추가 디버그/진단 문구 138곳, 본체 설명서 20개 비공백 줄 한국어 소스 번역**; DLL 미컴파일·게임 실행 미검증 |
 | `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
 | `[SRW-STM]MentorToSarrona/` | manifest v1.2.0, `MentorToSarrona.dll` 9,216바이트(소스/Localization 없음) | **manifest 설명 한국어화만 완료**; DLL 내부 대사 번역 미완료 |
 | `3843110449/` (GeorgioToElueym) | manifest v1.1.0, `GeorgioToElueym.dll` 11,776바이트 + `ToElueym.dll` 4,608바이트(소스/Localization 없음) | **manifest 이름·설명 한국어화만 완료**; DLL 내부 문구 번역 미완료 |
@@ -184,6 +184,23 @@
 - **바이너리 한계**: 현재 GitHub 연결의 파일/Blob 읽기 기능은 비-UTF-8 바이너리 DLL에서 디코딩 오류가 발생하여 바이트를 확보할 수 없었음. `MentorToSarrona.dll`, `GeorgioToElueym.dll`, `ToElueym.dll`은 **읽기/패치/컴파일/실행 검증 불가**. 안전하거나 정상 동작한다고 판정하지 않았음. 정적 manifest 번역이 인게임 DLL 문자열을 번역해 주는 것은 아님.
 - **다음 작업**: DLL 바이너리를 안전하게 가져올 수 있게 되면 식별자/내부 비교 문자열을 보호하며 UI 표시 문자열만 수정, 테스트 DLL을 별도로 만들어 로딩 검사. 별도로 Sarrona의 실제 게임 적용·책 제목 표시 위치 검수 필요.
 
+## 2026-11-21 — lewd_meme_config 남은 UI·로그와 본체 설명서 번역
+
+- **범위**: 원본 `TentacleMod/lewd_meme_config0.7.2-pre/Source/`를 다시 조회한 뒤 한국어 `TentacleMod번역/lewd_meme_config0.7.2-pre/Source/`에 원본과 같은 상대 경로로 **별도 작업본** 생성. 원본 DLL 및 C# **변경 없음**.
+- **디버그 패널** `Integration/DebugPanel.cs` — 중국어 문자열 **94곳(고유 85)** 중 **93곳(고유 84)** 한국어로 번역. `未装配` 문자열 1개는 `expected != "未装配"` 내부 조건에 사용하므로 유지. `번역대조표/LewdMemeConfig_DebugPanel_strings.tsv`에서 85개 항목의 번역/보존 사유·발생 횟수 기록. 소스 생성 커밋 `3161100e0b400cb37a317857a3634f59e6231042`; 한글 글꼴 표시를 위해 OS 폰트 우선순위에 `Malgun Gothic` 추가(커밋 `bc9a055df501a36063a4796d4b4de9ce9e4d065a`). GUI 호환성 및 실제 렌더링 미검증.
+- **패널 연결 안내** `Integration/PanelConfig.cs` — 문구 **6곳**(커밋 `6efb3df2f2fa11f4bc8553a241ecd132d6ca185e`). `启用:` → `사용:` 등 기존 한국어 라벨과 일치시키고 설정 키 및 C# 제어문은 변경하지 않음.
+- **숙주 태그 선택기** `Integration/BroodTagPicker.cs` — **12곳**(고유 11), 선택/오류 표시 한국어(커밋 `790556bad00e46d841a1dc91d9315240dd91e1f0`). `MAIDEN_FEMALE` 식별자 및 실제 단축키 처리 코드는 그대로 유지.
+- **모드 초기화 로그** `ModEntry.cs` — **11곳**, API 양보, 연동 실패·대기 상태 안내 한국어(커밋 `7819f71ce65d0816259e02c20e53b199fb7e2545`).
+- **패널 행 오류** `Integration/PanelRowPatch.cs` — **1곳**(커밋 `a4b1b58fcdab7c5b6b5448752026ce2a498ee696`).
+- **연동 모드 버전 표기** `Config/FamilyMods.cs` — **7곳**(커밋 `386385e394d9006d462569eec2888f8c8fd8cf0c`).
+- **설정 등록 오류 로그** `Config/ConfigRegistry.cs` — **7곳**(고유 5, 커밋 `08261dd1c4ae37548f032095210f3180b03da5ce`). 기본 세력·직업·체형 등 **입력값으로 사용되는 중국어 CSV 문자열은 절대로 변경하지 않음**. 코드/기본값 검사 통과.
+- **버전 불일치 경고** `Logic/PanelMarks.cs` — **1곳**, `버전이 일치하지 않아 이 설정은 적용되지 않습니다`로 번역(커밋 `c368612d124100ba819f5b8cc1c1635ee54436f3`). `IsVersionMark`는 동일 상수로 비교하므로 코드 동작 보존. 해당 텍스트를 정확히 비교하는 `Tests/PanelMarksTests.cs`의 `VersionText` 기대값도 한국어로 함께 변경(커밋 `cdf3b7134dfbdf84bbdcc42e01ad40b90dc23e1e`). **단, 테스트 실제 실행은 못함**.
+- **위 항목 총계**: 기존 패널 라벨/툴팁 외 추가로 **138곳의 UI·로그 문자열** 번역(디버그 93 + 패널 6 + 선택기 12 + 초기화 11 + 패널 행 1 + 연동 버전 7 + 등록 오류 7 + 버전 경고 1). 서로 다른 원문은 84+6+11+11+1+7+5+1=**126개**. 원본 UI 문자열만 바꾼 파일은 `DebugPanel` 글꼴 설정 1곳을 제외하고 문자열 리터럴 외 코드가 동일하며, 번역본 재조회로 확인.
+- **촉수 본체 설명서** `Logic/ManualTextRenderer.cs` — 기존 `Template` 중국어 상수는 원본 기본값을 검증하는 테스트가 의존하므로 **그대로 보존**. 별도 `TemplateKo` 23개 문자열 조각(비공백 20줄)을 추가하고 `Patches/SpecialAndManualPatches.cs`의 `CreateNotePostfix`에서 `ManualTextRenderer.Template` 대신 **`TemplateKo`만 사용**하도록 변경. 한국어 템플릿은 원문 **`{cfg:...}` 22개 치환 자리의 종류·순서, `\\n` 및 `\\u3000` 이스케이프 구조를 보존**. 대조표 `번역대조표/LewdMemeConfig_ManualTextRenderer_template.tsv`. 커밋: 템플릿 `e464fb259efcae89d74c93f7c4476195225ed1cd`, 호출 위치 `737b1636de1444a34bc8ca278fec1971da2e5b83`. 수치 계산·렌더 함수·핵심 설정 ID는 변경하지 않음. 이 소스를 컴파일해 사용할 경우에만 한국어 설명서가 출력될 것으로 예상.
+- **독립 검사**: 원본과 한국어판의 C# 문자열 리터럴 바깥 부분을 비교하여 `PanelConfig`, `BroodTagPicker`, `ModEntry`, `PanelRowPatch`, `FamilyMods`, `ConfigRegistry`, `PanelMarks` 모두 동일 확인. `DebugPanel`은 한글 폰트 후보만 추가한 차이, `ManualTextRenderer`는 한국어 상수 추가, `SpecialAndManualPatches`는 설명서 템플릿 참조 한 곳만 교체. 모든 번역 매핑을 별도 TSV로 기록.
+- **중요한 미완료 사항**: `LewdMemeConfig.dll` **미컴파일 / 미수정**, 단독으로 실행할 수 있는 전체 한국어 빌드 미제작. 컴파일에 게임 Managed DLL 등 의존성이 필요. 실제 로더에서의 게임 실행·UI 글꼴·기능·모드 호환성은 검증하지 못했음. `SelfTestRunner.cs`의 진단 문구, `SpecialAndManualPatches.cs`의 나머지 중국어 문자열, 원본 테스트용 중국어 설명서와 내부 비교용 기본값은 아직 남아 있음. 이 작업을 **인게임 완료로 표시하면 안 됨**.
+- **다음 순서**: SelfTestRunner 및 잔여 실제 표시 문구 선별 → 게임 빌드 의존성 확보 시 안전한 컴파일/테스트 DLL 생성 → 인게임 기능·한국어 글꼴 검증.
+
 ## 기술 조사 (확인된 사실)
 
 - `MidnightPawn.dll`: CLR `#US` 문자열 힙에 중국어 문자열 764개; 원본 blob SHA `c27be30741564a51f57495a06681974bcc9421ca`.
@@ -218,7 +235,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. `lewdMemeBrood` Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 190/192개 (2키 미번역), SarronaTheDragon 551문구/553키(원본 빈 값 2개) 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 툴팁 275곳 소스 번역도 완료. 다음은 DLL 적용 방식 검토, 잔여 UI 문자열 조사, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
+5. `lewdMemeBrood` Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 190/192개 (2키 미번역), SarronaTheDragon 551문구/553키(원본 빈 값 2개) 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 툴팁 275곳 소스 번역도 완료. 추가 UI/로그 138곳과 본체 설명서 한국어 소스 작업본까지 완료. 다음은 SelfTestRunner 등의 남은 UI/로그 검수, 의존성 확보 후 컴파일 및 Brothel/Brood/Adult Goods 게임 적용 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
