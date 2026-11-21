@@ -20,17 +20,21 @@ by_source=collections.defaultdict(list)
 for r in rows: by_source[r['original']].append(r)
 inventory={}
 with (REVIEW/'RedLightDistrict_v1.1.1_active_CJK_strings_20261121.tsv').open(encoding='utf-8-sig',newline='') as f:
-    for x in csv.DictReader(f,delimiter='\t'):
-        idx=int(x['id'])
+    for line in list(f)[1:]:
+        if not line.strip():continue
+        x=line.rstrip('\r\n').split('\t')
+        assert len(x)==4
+        idx=int(x[0])
         assert idx not in inventory
-        inventory[idx]={'source':json.loads(x['original_json_string']),'sites':x['call_sites'].split('; ')}
+        inventory[idx]={'source':json.loads(x[1]),'sites':x[3].split('; ')}
 assert len(inventory)==3133
 reviewed={};id_count=0;matched_sites=0;skipped_compares=0;skipped_nonui=0
 for batch in (1,2,3):
     file=REVIEW/f'RedLightDistrict_v1.1.1_UI_reviewed_batch{batch:02d}_20261121.tsv'
-    with file.open(encoding='utf-8-sig',newline='') as f: data=list(csv.DictReader(f,delimiter='\t'))
+    with file.open(encoding='utf-8-sig',newline='') as f: data=[x.rstrip('\r\n').split('\t') for x in list(f)[1:] if x.strip()]
     for x in data:
-        idx=int(x['id']);val=json.loads(x['korean_value'])
+        assert len(x)==2
+        idx=int(x[0]);val=json.loads(x[1])
         assert idx in inventory and isinstance(val,str) and val.strip()
         id_count+=1
         inv=inventory[idx];accepted=0
@@ -53,8 +57,11 @@ direct={};manual_counts=[]
 for file in sorted(HERE.glob('manual_direct_batch*_20261121.tsv')):
     count=0
     with file.open(encoding='utf-8-sig',newline='') as f:
-        for r in csv.DictReader(f,delimiter='\t'):
-            key=r['key'];value=json.loads(r['korean_json'])
+        for line in list(f)[1:]:
+            if not line.strip():continue
+            r=line.rstrip('\r\n').split('\t')
+            assert len(r)==2
+            key=r[0];value=json.loads(r[1])
             assert key in by_key and key not in direct and isinstance(value,str) and value.strip(),key
             direct[key]=value;count+=1
     manual_counts.append((file.name,count))
