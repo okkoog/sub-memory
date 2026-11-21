@@ -19,7 +19,7 @@
 | --- | --- | --- |
 | `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **1차 한국어 DLL 시험본 업로드**: 64개 문자열, 74곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | **1차 한국어 DLL 시험본 업로드**: 59개 문자열, 65곳 참조 수정; 게임 실행 테스트 미실시 |
-| `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | CSV 우선 검토 필요 |
+| `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | **한국어 CSV 178개 키 전수 번역 완료(문자열 구조 검사 통과)**, 실제 게임 적용 미검증 |
 | `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/` | CSV/콘텐츠 우선 검토 필요 |
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
@@ -58,6 +58,13 @@
 - **대조표**: `번역대조표/ItemPortraitHD.json` (94쌍 중 82쌍 DLL 반영, 12쌍 내부 식별자/비교 가능성으로 보류)
 - **검증**: 한국어 문자열 82개, IL 참조 105개, 메타데이터 크기 및 토큰 검사 통과. 원본 169,984 → 275,968바이트. **게임 내 로딩/동작 미검증**.
 - **주의**: 원본 C# 소스가 존재하므로 차후에는 소스 기반으로 더 정확하게 UI 문자열과 내부 판정 문자열을 분리하고 재컴파일하는 방식을 우선 검토한다.
+
+### LewdMemeBrothel — 공식 Localization 번역
+
+- **커밋**: `8b82cb8e6f1679dd4458a833fdf0b6d8d45d0bb7`
+- **번역본**: `LewdMemeBrothel-0.10.4-candidate/Localization/ko.csv`
+- **검수 범위**: `Localization/zh.csv` 178개 전체 키를 한국어로 번역. 178개 전체 키 수/키 일치, 플레이스홀더 `{0}` 형식, `\\n` 표기 수 일치 확인(차이 0).
+- **미검증**: 모드가 자동으로 `ko.csv`를 읽는지, 한글이 게임 화면에 적용되는지 실제 구동 검사 필요. 공식 Localization만 수정했으며 DLL은 수정하지 않음.
 
 ## 기술 조사 (확인된 사실)
 
