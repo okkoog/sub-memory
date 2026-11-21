@@ -26,6 +26,7 @@
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
 | `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275개·툴팁 275곳·섹션 13종 소스 번역 완료**, DLL 미컴파일·게임 실행 미검증 |
+| `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
 
 | 기타 이미지 교체 패키지 | manifest, 이미지 등 | 문구 여부 확인 후 필요한 경우만 번역 |
 
@@ -39,8 +40,9 @@
 | 매음굴 확장 | `LewdMemeBrothel-0.10.4-candidate/Localization/ko.csv` | 원문 178키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
 | 촉수 번식 확장 | `lewdMemeBrood v0331/Localization/ko.csv` | 원문 566키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
 | 촉수 번식 상호작용 | `lewdMemeBrood v0331/Content/interactionLines.json` | 135줄 중 125개 대사 번역, 10개 보류 | JSON 구조·치환 변수 검사 통과, 실제 적용 미검증 |
+| 세로나의 용 모드 | `[SRW-STM]SarronaTheDragon/Localization/ko.csv` | 553키(551개 한국어 문구 + 원본 빈 값 2개) | 원본 키·치환 변수·Books loc 참조 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **744개 키**(Brothel 178 + Brood 566), 외부 JSON 번역 **125개 대사**는 별도 합산.
+- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -152,6 +154,18 @@
 - **상태·한계**: 여전히 `LewdMemeConfig.dll`은 미수정. 소스 작업본 2개만 만들었으며 관련 `GameManaged` 참조 DLL 확보와 컴파일/게임 테스트는 진행하지 못했음. 따라서 **인게임 번역 적용 완료가 아님**. 나머지 소스의 다른 UI 문자열/설정 등록용 동적 표시문구도 추가 점검 필요.
 - **번역 원칙**: 설명의 수식·수치·기본값·기능 비활성 조건·경로·설정 키·각 모드명은 의미를 유지하며 임의 순화·개작하지 않음.
 
+## 2026-11-21 — [SRW-STM]SarronaTheDragon 공식 Localization 전수 번역
+
+- 원본 폴더: `TentacleMod/[SRW-STM]SarronaTheDragon/` (원본 미수정). manifest ID `sarrona_the_dragon`, 버전 `0.9.3`. 공식 Localization 기반 작업.
+- 원본: `Localization/zh.csv` blob `36de22b9e3222ff70a6081076814dbe5e4bb359d`, `en.csv` blob `d15405d489bd3cb391a428f6a6a81321e00a6c43`. 모두 553개 키.
+- 한국어 번역본: `TentacleMod번역/[SRW-STM]SarronaTheDragon/Localization/ko.csv`, 커밋 `b12b0e2c914143a21c19544e3a44321137a58a35`. **원본 553키 모두 대응**, 551개 문구 한국어, 원본부터 값이 비어 있는 `milk_can_empty_flavor`, `milk_dryer_flavor` 두 키는 공백 유지.
+- 1:1 대조표: `번역대조표/Sarrona_001-140.tsv` (140키), `Sarrona_141-280.tsv` (140키), `Sarrona_281-420.tsv` (140키), `Sarrona_421-553.tsv` (133키). 총 553행, 키 중복 없음.
+- 번역 범위: 세로나 상인 대사, 용유/유제품, 양조와 용연향, 용 비늘과 용골 장비, 프린팅, 쥐/물고기 양식, 서적 매뉴얼, 구호물자와 정전 보관 이벤트. 아이템 키와 수식·치환 인자(`{0}`, `{0:0.#}`, `{0:0.##}` 등)는 유지.
+- GitHub 결과물 재조회 검사: 중·영·한 CSV 모두 553키 동일 순서; 키 누락·중복·추가 0, 플레이스홀더 불일치 0, 원본 공백 보존, 한자 잔존 0.
+- 책 JSON 4개에서 참조하는 `loc`, `nameLoc`, `descriptionLoc` 254곳 전부 번역 CSV에 대응함. `Books/*.json` 자체는 변경하지 않았음. 책 파일의 영어 `title` 메타데이터는 실행 중 용도 미확정이므로 변경하지 않음.
+- **런타임 적용 미검증**: 실제 게임에서 ko.csv 자동 로드 여부와 UI 페이지 출력/줄바꿈, 용어·자연스러움 2차 검수 필요. 숫자 표기는 중국어 숫자를 한글 숫자나 아라비아 숫자로 변환한 부분이 있어 일부 문자열은 숫자 정규식만으로 단순 비교 불가.
+- 다음 대상: 세로나의 실제 게임 적용과 서적 페이지 표시 검사, 2차 1:1 문맥 검수. `lewd_meme_config`는 소스 번역 완료지만 아직 DLL 미컴파일.
+
 ## 기술 조사 (확인된 사실)
 
 - `MidnightPawn.dll`: CLR `#US` 문자열 힙에 중국어 문자열 764개; 원본 blob SHA `c27be30741564a51f57495a06681974bcc9421ca`.
@@ -171,7 +185,7 @@
 - 새로 업로드된 `[SRW-STM]SarronaTheDragon`에 `Localization/en.csv`, `zh.csv`, Books JSON 4개가 있으므로 향후 **Localization 번역 우선**.
 - 다음 작업: 두 페이로드 포함 모드는 실행/설치/빌드하지 않기; 안전 후보 원본과 이전 로컬 파일의 버전·기능/키 비교 후 번역 진행. 사용자 환경에서 실제로 악성 행위가 수행됐는지는 검사하지 않았음.
 
-## 2026-11-21 신규 모드 4개 확인 요청 (미완료)
+## 2026-11-21 신규 모드 4개 확인 요청 (과거 기록 — 이후 실제 업로드 확인)
 
 - 사용자 비교 요청: **3842259965 vs 3843125702**, **3842247788 vs 3843142171**. 각 쌍은 중복 가능성이 있으므로 실제 `manifest.xml`, DLL/콘텐츠 파일, 버전·의존성·파일 해시를 비교한 후 하나만 번역 대상으로 선택해야 한다. **현재 네 ID의 대응 관계와 중복 여부는 확인되지 않았다.**
 - GitHub `main`의 최근 업로드 커밋 `d0ef108c66a44e7ffc6fca5dcd8743deffe7e6b4` (`Add new TentacleMod source mods`)은 부모 커밋 `b3745d302fe7ce51775c10b5d18d04b512a05feb`과 **트리 SHA가 동일**(`e5002a9a7843439a14e77bd5675912fe47ef0fb5`)하다. **변경 파일 0개인 빈 커밋**이며 새 모드 추가가 이루어졌다고 볼 수 없다.
@@ -186,7 +200,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. `lewdMemeBrood` 공식 Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 190/192개 번역 (2키 미번역). `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 툴팁 275곳 소스 번역도 완료. 다음은 DLL 적용 방식 검토, 잔여 UI 문자열 조사, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
+5. `lewdMemeBrood` Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 190/192개 (2키 미번역), SarronaTheDragon 551문구/553키(원본 빈 값 2개) 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 툴팁 275곳 소스 번역도 완료. 다음은 DLL 적용 방식 검토, 잔여 UI 문자열 조사, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
