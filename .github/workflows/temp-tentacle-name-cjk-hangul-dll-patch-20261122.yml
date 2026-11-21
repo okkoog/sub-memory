@@ -59,6 +59,8 @@ jobs:
                   }
                 }
                 if (replacements>1)throw new Exception("unexpected extra upper-bound checks in "+path);
+                var already=candidates.SelectMany(m=>m.Body.Instructions).Count(i=>i.OpCode==OpCodes.Ldc_I4 && i.Operand is int v && v==0xD7A3);
+                if(already>1 || (replacements==1 && already!=0))throw new Exception("unexpected Hangul check count in "+path);
                 if (replacements==1) {
                   var temp=path+".patch";
                   mod.Write(temp);
@@ -68,6 +70,8 @@ jobs:
                     .SelectMany(t=>t.Methods).Where(m=>m.Name.ToString()=="IsCjk"&&m.HasBody)
                     .SelectMany(m=>m.Body.Instructions).Any(i=>i.OpCode==OpCodes.Ldc_I4 && i.Operand is int n && n==0xD7A3))
                     throw new Exception("modified CJK check missing");
+                  patched++;
+                } else if (already==1) {
                   patched++;
                 }
                 report.Add("- `"+Path.GetFileName(path)+"`: "+replacements+" matched NameGen.IsCjk upper bound; "+(replacements==1?"DLL patched and re-read":"no matching original method, binary unchanged")+".");
