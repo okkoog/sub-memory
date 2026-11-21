@@ -69,6 +69,12 @@ jobs:
                       return {r[0]:r[1] for r in rs[1:] if len(r)>=2}
                   x,y=table(rows),table(rr)
                   out.append(f"- {k}: keys {len(x)} vs {len(y)}; common {len(x.keys()&y.keys())}; exact-value matches {sum(x[n]==y[n] for n in x.keys()&y.keys())}; changed {sum(x[n]!=y[n] for n in x.keys()&y.keys())}; new keys {len(x.keys()-y.keys())}; missing keys {len(y.keys()-x.keys())}")
+                  for changed_key in sorted(n for n in x.keys()&y.keys() if x[n]!=y[n]):
+                      out.append(f"  - changed value {changed_key}: version={x[changed_key]!r}; v1.0.3={y[changed_key]!r}")
+                  if x.keys()-y.keys():
+                      out.append(f"  - version only keys: {sorted(x.keys()-y.keys())!r}")
+                  if y.keys()-x.keys():
+                      out.append(f"  - v1.0.3 only keys: {sorted(y.keys()-x.keys())!r}")
               out.append("")
           report=output/"Eleanor_VARIANTS_CLR_AUDIT_20261121.md"
           report.write_text("\n".join(out),encoding="utf-8")
