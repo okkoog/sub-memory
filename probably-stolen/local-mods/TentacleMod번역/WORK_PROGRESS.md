@@ -6,7 +6,7 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
-> **현재 작업 대상: 5번 `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
+> **현재 작업 대상: 6번 `[SRW-STM]MentorToSarrona/MentorToSarrona.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
 >
 > **중요:** '적용 문자열 수'는 번역 진행률(%)이 아니다. 기존 DLL의 중국어 잔존 문자열에는 내부 판정값·원본 데이터 키·파일 경로·호칭 검색어 등이 섞여 있어 검수 전에는 정확한 번역 대상 총량을 산정할 수 없다. 따라서 분모 확인 전에는 %를 쓰지 않는다. 
 
@@ -16,11 +16,11 @@
 | **2 (정적 번역 종료)** | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 881 | 938 | **번역·문맥 미처리 0개 — 원문 보호 88개** | **미실시(게임 확인 필요)** |
 | **3 (정적 번역 종료)** | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 206 | 237 | **추가 번역 미처리 0개 — 내부 문자열 22개 보존, 경로 1개** | 미실시 |
 | **4 (정적 분류 종료)** | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 958 | 1228 | **설정·코드 원문 보호 68개 / 미분류 0개** | 미실시 |
-| 5 | `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` | 45 | 46 | 미완료 — 대기 | 미실시 |
+| **5 (정적 번역 종료)** | `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` | 64 | 68 | **번역 보류 0개 — 체형·세력 입력값 16개 보존** | 미실시 |
 | 6 | `[SRW-STM]MentorToSarrona/MentorToSarrona.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 7 | `3843110449/GeorgioToElueym.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 8 | `3843110449/ToElueym.dll` | 1 | 1 | 미완료 — 대기 | 미실시 |
-| **합계** | **시험 DLL 8개** | **2,720** | **3,140** | **정적 번역/분류 종료 4개 / 게임 검증 완료 0개** | **0개** |
+| **합계** | **시험 DLL 8개** | **2,739** | **3,162** | **정적 번역/분류 종료 5개 / 게임 검증 완료 0개** | **0개** |
 
 ### 단계별 완료 기준 / 보고 양식
 
@@ -596,3 +596,9 @@
 - 원본 DLL 변경하지 않고 `TentacleMod번역/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` 시험본만 갱신. 이전 blob `2b463eba254a59b3ac329291b95ec91a05832332`, 바이트 626688→634880. UTF-16LE 역디코딩 50건, IL 53곳 참조 교체, 기존 #US/타 메타데이터 보존.
 - 작업표 `LewdMemeConfig_remaining_inventory_20261121.tsv`, 수정표 `LewdMemeConfig_DLL_sequential_20261121.tsv`, 검수 `LewdMemeConfig_FINAL_STATIC_AUDIT_20261121.md`, 통합 CSV 갱신. 실제 게임·설정값 저장 동작 검증 미실시.
 - Config 누적 **958개/IL 1228곳**, 전체 8개 시험 DLL **2720개/IL 3140곳**. 4번의 **활성 한자 포함 문자열 전수 분류 종료**. 다른 DLL은 변경하지 않음. 다음 5번 LegacyContent.
+
+## 2026-11-21 — LegacyContent.dll 순차 5번 정적 번역 종료
+
+- 원본 시험 DLL blob `95a258e4354b212a828dbd358a096b85e78715d1`에서 한자 포함 활성 35문구를 전수 분류, 표시용 19개/IL 22곳을 실제 한국어 DLL에 반영. 체형·직업·세력 입력값 16개는 원문 보존. 파일 크기 70656→71168바이트.
+- UTF-16LE 역디코딩, 새 IL 토큰 22곳, 기존 참조 0곳, 다른 메타데이터 보존 확인. 실제 게임·CLR 테스트 미실시. 정적 분류/번역 완료.
+- `번역대조표/LewdMemeLegacyContent_DLL_sequential_20261121.tsv`, 전수 목록, 최종 검수 문서 및 통합 CSV 갱신. 8개 DLL 총 2739개/IL 3162곳. 다음 순서 6번 MentorToSarrona.
