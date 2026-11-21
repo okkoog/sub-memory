@@ -13,7 +13,7 @@
 | 순서 | 대상 DLL | 실제 수정 문자열 | IL 참조 수정 | 번역/정적 검수 상태 | 실게임 실행 검증 |
 | ---: | --- | ---: | ---: | --- | --- |
 | **1 (정적 번역 종료)** | `lewd_meme2.1.0/MidnightPawn.dll` | 625 | 686 | **번역·검토 잔여 0개 — 내부 참조 139개 보존** | **미실시(게임 확인 필요)** |
-| **2 (현재)** | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 721 | 775 | **진행 중 — 활성 중국어 248개(보존 88/연령 검토 44/추가 검토 116)** | 미실시 |
+| **2 (정적 번역 중단 사유 확인)** | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 721 | 775 | **미완료 — 보존 88개 / 원본 연령 판정 문제 관련 160개** | 미실시 |
 | 3 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 204 | 235 | 미완료 — 대기 | 미실시 |
 | 4 | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 908 | 1175 | 미완료 — 대기 | 미실시 |
 | 5 | `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` | 45 | 46 | 미완료 — 대기 | 미실시 |
@@ -559,3 +559,11 @@
 - `ShadowTrade_DLL_sequential_batch2_20261121.tsv`에 원문/한국어/IL 오프셋을 기록하고 `ShadowTrade_remaining_inventory_20261121.tsv`에서 각 행을 `배치2 DLL 번역`으로 전환. 통합 `DLL_additional_20261121.csv`도 갱신.
 - 정적 검사: 한국어 UTF-16LE 42개 역디코딩, 원본 활성 토큰 0곳/새 참조 42곳, 기존 `#US`·비대상 CLR 메타데이터 보존. 시험 DLL 360448→363008바이트. **실제 CLR 로더/Unity 실행 테스트는 미실시**.
 - 2번 DLL 누적 721문구/775곳, 전체 8개 시험 DLL 2508문구/2922곳. 활성 중국어 아직 **248개** (원문 보호 88, 연령/성적 문맥 44, 추가 검토 116); **2번은 미완료**, 다른 DLL에는 변경 없음.
+
+## 2026-11-21 — ShadowTrade.dll 검토 대상 248개 재분류 및 정적 완료 차단 사유
+
+- 순차 1~2차의 실제 바이너리 반영: **신규 85문구/IL 91곳**. ShadowTrade.dll 누적 **721문구/IL 775곳**, 전체 8개 시험 DLL **2508문구/2922곳**. 원본 `TentacleMod/` 무변경, 다른 DLL 작업 미착수.
+- 전수 활성이었던 한자 포함 333개 중 85개를 시험 DLL에 옮겼고, 잔여 248개는 **원본 판정·등록·검색에 사용되므로 보존할 88개** 및 **연령 판정이 미작동인 성적 대사 관련 160개**로 분류. 최종 `번역대조표/ShadowTrade_remaining_inventory_20261121.tsv` 모든 333개 행에 분류·원문·사용 메서드·이유 기록.
+- **원본 소스와 실제 시험 DLL 양쪽에서 차단 원인 확인:** `Source/MidnightPawn.Game/MaidenAgeFilter.cs`의 `IsYoung(bool,string)` 및 `IsYoungBody(string)`는 무조건 `false`를 반환. 실제 ShadowTrade.dll의 두 메서드는 IL `16 2A`(`ldc.i4.0; ret`). `YoungBodies`는 `萝莉`와 `少女`를 포함하며, `NonYoungBodies`에도 두 값이 들어 있음. 이 상태에서는 매입상 및 여아 관련 성적 대사를 **성인 전용**으로 구분할 신뢰할 수 있는 런타임 필터가 없음.
+- 따라서 **성인 여부를 코드로 보장하지 못한 대사의 번역을 임의로 완료 처리하거나, 남은 160개를 안전한 내부 식별자로 둔갑시키지 않음**. 원본 성인 판정 로직/데이터의 명시적 해결 없이는 이 모드의 전체 한국어화 완료를 선언할 수 없음. 기존 소스·게임 동작을 무단 수정하지 않음.
+- 상세 보고 `번역대조표/ShadowTrade_STATIC_REVIEW_BLOCKER_20261121.md`. PE/#US/IL 정적 검사 통과한 번역 DLL만 제공; 게임/CLR 실행 검증 미실시. **순차 작업 2번에서 정지(미완료), 3번으로 넘어가지 않음**.
