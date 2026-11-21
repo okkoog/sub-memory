@@ -823,3 +823,12 @@
 
 - `번역대조표/ARCHIVE_INTEGRITY_20261121.md` 작성. GitHub 재조회 기반으로 DailyWearWorkshop 누적 709개 ZIP(671,318바이트/14개 엔트리)과 Bai She 텍스트 오버레이 ZIP(3,588바이트/2개 엔트리) 각각 중앙 디렉터리/로컬 헤더/CRC32 검증 통과(불일치 0).
 - 위 결과는 **압축파일 구조 및 저장된 페이로드 손상 여부 검증**에 한정함. 번역 DLL의 Unity/CLR 정상 동작/세이브 기능은 여전히 미검증.
+
+## 2026-11-21 — 대형 미착수 DLL 접근 재확인, 엘리너 v1.0.3 부속 문서 현지화
+
+- **이번 배치 실제 DLL 번역 반영 0개 / IL 수정 0곳.** 15번째 `起飞攻速装.dll`은 기존 709개 완전 번역·활성 중국어 104개 기능 보존 분류 상태 그대로이며, 게임 테스트는 0건이다. 이를 DLL 번역 진척으로 계산하지 않는다.
+- **바이너리 접근 장애 재확인:** 연결된 GitHub `fetch_file(encoding=base64)`에서 `3842259965/probably_adult_goods.dll`(8,166,912B, blob `99be530f44c9249eb6f918497c44665293280489`), `3842247788/fallen_heiress_eleanor.dll`(16,418,816B, blob `3818727bb0fc48feca36da0d4732c67a98d76c6d`), `落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll`(16,439,808B, blob `a6fd94d95cad91c0d66374c93f7655a3bc2402cf`), `3843142171/fallen_heiress_eleanor.dll`(16,721,920B, blob `56bd6da9f82a4d40e1ce85f1cf69f7729a8069a4`), `Bai She's R18 Texture Pack 1.4.0/R18TexturePack.dll`(55,459,840B, blob `2746e5dc22479769f29523660bb195c7d9e7aab5`)는 모두 바이너리 본문 `content`가 빈 문자열. 반면 541,184B 번역 DLL은 실제 base64 내용이 반환돼 접근 가능. 8MB Git blob에 대한 일반 fetch는 UTF-8 텍스트 제한 오류로 실패. 이 환경의 직접 다운로드 역시 연결 실패. **바이너리 내용을 확보하지 못한 대형 DLL은 패치하지 않음.**
+- **LFS 별도:** `RedLightDistrict_v1.1.1/RedLightDistrict.dll`은 134B 포인터만 반환. 실파일 152,970,752B는 확보되지 않았다.
+- **부속 한국어화 완료(본 DLL과 별도):** `TentacleMod번역/落魄千金-埃莉诺 v1.0.3/manifest.xml`의 모드 이름·설명 한국어화 (원본 ID/버전/의존성/어셈블리 불변). `README_ko.txt`에 설치·기존 저장/스토리 초기화·언어 분기·분기 스토리·삭제 주의를 원문에 맞춰 번역했다. GitHub 커밋: `da728adefadc15b0b8aa680896d0ef802ec2d7f7`, `c76208582e92b1c92f4ceb872cb11068d918a0dd`. **원본 `TentacleMod/` 미수정.** 내장 zh/en 대사는 아직 한국어화되지 않았으므로 이 두 문서만을 완료 DLL로 오인하지 말 것.
+- **후속 최우선:** 같은 모드 ID 중복을 피하며 v1.0.3 원본 DLL 바이트를 확보해 #US/리소스·활성 IL 호출을 추출, 실제 표시 대사만 원문과 1:1 번역한 후 별도 DLL 작성·정적 검증. `3843142171`은 다른 ID 충돌·native 선언이 있으므로 안전하게 동일본으로 취급하지 않는다. 실제 Unity/CLR·저장/호환성 검증은 별도 필수.
+
