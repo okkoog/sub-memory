@@ -35,7 +35,7 @@ jobs:
             static void Main(string[] args){
               var rows=new List<string>{"version\tmethod\toffset\toriginal_json\tprevious\tfollowing"};
               for(int a=0;a<3;a++){
-                var version=args[a].Split('/')[4];
+                var version=Path.GetFileName(Path.GetDirectoryName(args[a]))!;
                 using var mod=ModuleDefMD.Load(args[a]);
                 int ct=0;
                 foreach(var m in mod.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody))){
