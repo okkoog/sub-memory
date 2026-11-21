@@ -1,12 +1,12 @@
 # 촉수 모드 한국어 번역 — 작업 기록
 
-> **업데이트: 2026-11-21 (KST)** · 이 파일은 다음 채팅에서 이어서 작업할 때 가장 먼저 읽을 인수인계 기록이다.
+> **업데이트: 2026-11-22 (KST)** · 이 파일은 다음 채팅에서 이어서 작업할 때 가장 먼저 읽을 인수인계 기록이다.
 >
 > **원본은 절대 수정하지 않는다.** 원본: `probably-stolen/local-mods/TentacleMod/`; 번역본: `probably-stolen/local-mods/TentacleMod번역/`.
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
-> **현시점 번역 완료 판정 정정(2026-11-21): 전체 번역은 아직 완료되지 않았다.** 원본 모드 폴더 20개를 복사해 둔 것과 한국어 DLL 20개를 생성한 것은 **모든 외부 사용자 표시 콘텐츠의 번역 완료를 뜻하지 않는다.** 후속 원본 대조에서 `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`이 번역 폴더에 아예 없던 사실을 확인하여 이번 차수에 새로 **게임용 설명 70개, 사용자 표시 분류명 52개, 대사 170개, 야간 장면 5개, manifest 표시 2개**를 한국어로 반영했다. 하지만 이 파일에는 **원문과 같은 미번역 대사 28개(198개 중), 원문 표시 체형 태그 1개(53개 중)**가 남았다. `可能是成人用品 v1.1.3/Localization/ko.csv`의 192개 원문 중 2개도 앞선 기록대로 중국어 직역 완료가 아니며, `RedLightDistrict`의 107개는 기능 보호 원문이다. 총 작업을 '전부 완역'으로 표시하지 않는다. 게임 확인은 사용자 판단 사항이므로 여기서는 **번역 대상과 남은 미번역 항목**만 기록한다.
+> **현시점 번역 완료 판정 정정(2026-11-21): 전체 번역은 아직 완료되지 않았다.** 원본 모드 폴더 20개를 복사해 둔 것과 한국어 DLL 20개를 생성한 것은 **모든 외부 사용자 표시 콘텐츠의 번역 완료를 뜻하지 않는다.** 후속 원본 대조에서 `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`이 번역 폴더에 아예 없던 사실을 확인하여 이번 차수에 새로 **게임용 설명 70개, 사용자 표시 분류명 52개, 대사 170개, 야간 장면 5개, manifest 표시 2개**를 한국어로 반영했다. 하지만 이 파일에는 **원문과 같은 미번역 대사 28개(198개 중), 표시 체형 태그 1개는 후속 작업에서 한국어로 수정하여 **표시 분류명 53/53개**이며, **미번역 대사 28개(198개 중)**는 남았다. `可能是成人用品 v1.1.3/Localization/ko.csv`의 192개 원문 중 2개도 앞선 기록대로 중국어 직역 완료가 아니며, `RedLightDistrict`의 107개는 기능 보호 원문이다. 총 작업을 '전부 완역'으로 표시하지 않는다. 게임 확인은 사용자 판단 사항이므로 여기서는 **번역 대상과 남은 미번역 항목**만 기록한다.
 
 > **2026-11-21 최종 아카이브 감사:** Brood 상호작용 대사 **135/135** 완료 및 `ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip` 독립 설치용 파일로 패키징(CRC 성공, 커밋 `dfaa9af938f8187f18e29f3037c1d23ac2e740c1`). 엘리너 v1.0.0/통합 v1.1.3 manifest는 원본 XML 전체에서 표시용 `Name`·`Description` 두 항목만 한국어화한 원형 구조로 재확인했으며, 두 ZIP에 최신 manifest 반영(CRC 성공, 커밋 `87ab5be1a926cbf4dfe360e61ddec6e22c8971db`). 검사서 `번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md`. 실제 게임 검증은 미실시.
 
@@ -991,6 +991,14 @@
 
 - **무작위 인명 원본 확인:** `TentacleMod/lewd_meme2.1.0/Content/names.txt` 및 `TentacleMod/LewdMemeShadowTrade1.6.4/Content/names.txt`는 같은 13행 원본(지역ID + 성 목록 + 이름 목록)이다. 한국어 번역 폴더에는 두 파일이 이전까지 존재하지 않았다. 각 지역의 성·이름을 원문 위치별로 대조해 **총 5,160개 인명 요소**, 지역별 항목 수와 3열 구조를 유지하며 한국어로 옮겼다. 중국(성260/이름1100), 일본(100/300), 한국(100/200), 영어권(100/300), 나머지 9개 지역(각 100/200). **두 대상의 `Content/names.txt`는 같은 번역 내용**. 중국어 지역ID 13개는 원본 문자열 조건에 쓰이므로 중국어 그대로 보존한다.
 - **직접 DLL 수정:** 한국어 성을 중국어 외 문자로 취급하여 이름 사이에 불필요한 구분자 `·`를 넣는 `NameGen.IsCjk` 판정 범위를 IL 상에서 `U+4E00..U+9FFF` → `U+4E00..U+D7A3`로 조정. 정확히 `ldc.i4` 상한 1곳씩을 `lewd_meme2.1.0/MidnightPawn.dll`, `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` 2개에 반영. 리소스나 데이터 ID 전역 치환은 하지 않았다. 분기·코드 확인 `번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md`. 두 `names.txt`와 수정 DLL 및 감사서 통합 ZIP **`ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip`**, GitHub Actions `44925410963` 성공. 앞서 만든 2,060개 중간 ZIP은 혼동 방지를 위해 삭제했다.
-- **게임 데이터 CSV:** `lewd_meme2.1.0/Data/物品定义.csv`의 실제 표시 아이템명 15/15개 한국어화. ID·가격·아이콘·크기·아이템 태그 등 비표시 게임 값 그대로. `可能是成人用品 v1.1.3/Data/物品标签价格.csv`의 한국어 아이템명 41/41개를 대응하는 `Localization/ko.csv`에서 개별 확인·재사용해 바꾸고, 설명·비고 9개도 번역. 필드명·가격·아이템 타입·태그·코드 키는 변경하지 않음. `起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃清单.json` 이름 50/50개 한국어화는 앞서 별도 기록, 이미지 파일 이름과 분류 ID는 보호. 15+41+50 아이템 데이터 통합 ZIP **`ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip`** 및 `번역대조표/Tentacle_EXTERNAL_DATA_15_41_50_AUDIT_20261122.md` 생성. GitHub Actions `44924266026` 성공.
+- **게임 데이터 CSV:** `lewd_meme2.1.0/Data/物品定义.csv`의 실제 표시 아이템명 15/15개 한국어화. ID·가격·아이콘·크기·아이템 태그 등 비표시 게임 값 그대로. `可能是成人用品 v1.1.3/Data/物品标签价格.csv`의 한국어 아이템명 41/41개를 대응하는 `Localization/ko.csv`에서 개별 확인·재사용해 바꾸고, 설명·비고 9개도 번역. **원본 DLL에서 헤더 첫 열 `id`만 검사하고 나머지 필드명은 무시함을 확인한 뒤**, 두 게임 CSV의 표시용 열 제목도 한국어로 변경. 가격·아이템 타입·태그·코드 키는 변경하지 않음. `起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃清单.json` 이름 50/50개 한국어화는 앞서 별도 기록, 이미지 파일 이름과 분류 ID는 보호. 15+41+50 아이템 데이터 통합 ZIP **`ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip`** 및 `번역대조표/Tentacle_EXTERNAL_DATA_15_41_50_AUDIT_20261122.md` 생성. GitHub Actions `44926051242` 최신 빌드 성공(초기 검증 `44924266026`).
 - **번역 데이터 검사:** `3842259965`, `LewdMemeBrothel`, `SarronaTheDragon`, `lewdMemeBrood`, `可能是成人用品 v1.1.3` 로컬 한국어 CSV의 중국어 직접 잔존 0줄. `RedLightDistrict`의 원문 인재 이름 1줄은 초상화 PNG 파일과 이름을 정확히 맞추기 위한 예시이며 보호. 다른 언어 원본 csv/진단 자료/바이너리 인코딩 `payload.txt`는 번역 폴더로 복사하지 않음.
-- **남은 작업 구분:** `LewdMemeLegacyContent/Content/content.json` 중 전 단계에 기록된 28개 민감 대사와 체형 표기 1개 및 관련 원문 출처 특수 표현이 남아 있어 **전체 프로젝트 100% 번역 완료라고 주장하지 않음**. 다른 파일이 바뀔 경우 변경 검사가 필요. 실제 게임 검증·설치 여부는 사용자 판단 사항이며 이 작업의 완료 기준에는 포함하지 않는다.
+- **남은 작업 구분:** `LewdMemeLegacyContent/Content/content.json` 중 전 단계에 기록된 28개 민감 대사와 관련 원문 출처 특수 표현이 남아 있어 **전체 프로젝트 100% 번역 완료라고 주장하지 않음**. 다른 파일이 바뀔 경우 변경 검사가 필요. 실제 게임 검증·설치 여부는 사용자 판단 사항이며 이 작업의 완료 기준에는 포함하지 않는다.
+
+## 2026-11-22 — DLL 파일 로더 호출부 확인, NPC 오류 표시 정리 및 최신 압축본
+
+- 원본 DLL의 실제 IL 검사서 `번역대조표/Tentacle_GAME_DATA_DLL_READ_AUDIT_20261122.md`: `MidnightPawn.Game.ItemCsv.Load`는 CSV 0열 `id`를 사전 키로 저장, 1열은 `ItemDef.Name`(표시 문자열), 2~7열은 가격·크기·아이콘·게임 분류·태그로 사용한다. `ProbablyAdultGoods.ItemSheet.EnsureLoaded`는 CSV **0열 ID, 2열 가격, 5열 게임 분류**만 읽어 `Rows`에 넣으며, **1열 한국어명과 7열 비고는 내부 조회에 사용하지 않는다**. 따라서 두 CSV의 이름과 비고만 번역, 내부 ID·게임 분류 값은 보존했음을 호출부로 뒷받침한다. `DailyWearWorkshop` 바이너리에서는 인형 JSON 파일명의 직접 `ldstr` 참조가 확인되지 않아 외부 로드 방식은 별도 판정 대상으로 남긴다.
+- 두 `NameGen` DLL에서 결측 이름이 중국어 `无名`으로 표시되던 사용자 표시 fallback을 **`무명`**으로 직접 수정했다. `MidnightPawn.dll`의 `RandomNameParts` 분할 fallback도 `무`+`명`으로 일치시켰다. `NameGen.EnsureLoaded`의 일반 진단 메시지는 이전 한국어 DLL에 이미 한국어였으므로 별도 중복 수정하지 않았다. 감사서 `번역대조표/NPC_NAMEGEN_KOREAN_FALLBACKS_AUDIT_20261122.md`, ZIP `ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip` 갱신, GitHub Actions `44926093343` 성공.
+- `LewdMemeLegacyContent/Content/content.json`의 마지막 비대사 표시 `labels.bodies[sister].display`를 `로리`로 번역하여 **표시 라벨 53/53개** 완성. `bodyId`는 원문 그대로. 대사 170/198, 원문 유지 28개는 변함없다. 검사서 `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md` 수정, `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_170of198_20261121.zip` 재압축 및 검증, GitHub Actions `44925696118` 성공.
+- `ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip` 최신판은 아이템 15개·41개 및 인형 50개 표시 이름과 한국어 CSV 헤더를 포함. 원본 게임 동작을 바꾸는 ID·가격·태그·이미지 파일명은 보존.
+- **최종 잔여:** 민감 문맥의 원문 대사 28개는 여전히 번역되지 않았다. 이 상태를 '완료'로 표시하지 않는다. 다른 데이터의 한국어화는 원본 파일 및 DLL 사용처 확인 근거를 함께 유지한다.
