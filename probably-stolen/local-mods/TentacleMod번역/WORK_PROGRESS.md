@@ -6,6 +6,8 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
+> **현시점 번역 완료 판정 정정(2026-11-21): 전체 번역은 아직 완료되지 않았다.** 원본 모드 폴더 20개를 복사해 둔 것과 한국어 DLL 20개를 생성한 것은 **모든 외부 사용자 표시 콘텐츠의 번역 완료를 뜻하지 않는다.** 후속 원본 대조에서 `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`이 번역 폴더에 아예 없던 사실을 확인하여 이번 차수에 새로 **게임용 설명 70개, 사용자 표시 분류명 52개, 대사 170개, 야간 장면 5개, manifest 표시 2개**를 한국어로 반영했다. 하지만 이 파일에는 **원문과 같은 미번역 대사 28개(198개 중), 원문 표시 체형 태그 1개(53개 중)**가 남았다. `可能是成人用品 v1.1.3/Localization/ko.csv`의 192개 원문 중 2개도 앞선 기록대로 중국어 직역 완료가 아니며, `RedLightDistrict`의 107개는 기능 보호 원문이다. 총 작업을 '전부 완역'으로 표시하지 않는다. 게임 확인은 사용자 판단 사항이므로 여기서는 **번역 대상과 남은 미번역 항목**만 기록한다.
+
 > **2026-11-21 최종 아카이브 감사:** Brood 상호작용 대사 **135/135** 완료 및 `ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip` 독립 설치용 파일로 패키징(CRC 성공, 커밋 `dfaa9af938f8187f18e29f3037c1d23ac2e740c1`). 엘리너 v1.0.0/통합 v1.1.3 manifest는 원본 XML 전체에서 표시용 `Name`·`Description` 두 항목만 한국어화한 원형 구조로 재확인했으며, 두 ZIP에 최신 manifest 반영(CRC 성공, 커밋 `87ab5be1a926cbf4dfe360e61ddec6e22c8971db`). 검사서 `번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md`. 실제 게임 검증은 미실시.
 
 > **2026-11-21 Brood 후속 마감:** `lewdMemeBrood v0331/Content/interactionLines.json` 실제 사용 대사 **135/135**를 원문 문맥별로 개별 번역했으며 `lines[].text`의 중국어 잔존 0개, 원문 `tags`/ `kind` 및 `{name}`·`{tentacle}` 변수 변경 0개를 확인했다. 이 작업은 DLL 작업과 별개로 외부 JSON에 반영했으며 실제 게임 검증은 미실시.
@@ -960,3 +962,21 @@
 - 두 ZIP을 같은 버전의 최종 한국어 DLL SHA256 `da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76` / `ca7ee69ba8b80f7e24a5bc127cce46ec1a4534c82a1f7f63f2fc0b8fee1c798c`와 최신 manifest로 재패키징. 각각 ZIP CRC 통과, 내부 DLL 바이트 정확 일치, 원본 manifest와 표시 필드 2개 외 차이 0. `번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md` 및 커밋 `87ab5be1a926cbf4dfe360e61ddec6e22c8971db`.
 - Brood v0.3.31의 한국어 대사 135개와 `README_ko.txt`, 원문·조건·변수 대조 검사서를 **`ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip`** 3개 엔트리로 패키징. 크기 **10,386바이트**, 원문 `kind`/ `tags` 변형 0, 원래 변수 불일치 0, 대사 원문과 동일한 미번역 텍스트 0, 대사 중국어 잔존 0, ZIP CRC 통과. 커밋 `dfaa9af938f8187f18e29f3037c1d23ac2e740c1`.
 - 최종 패키지는 모두 **원본 같은 버전에 덮어쓰는 교체 패치**다. 홍등가 ZIP은 대용량 Git LFS이고, **DLL과 `Localization/ko.csv` 동시 설치 필수**. 원본 게임·Unity/CLR 실행 및 세이브/충돌 테스트는 실시하지 않았으므로 정적 검사와 실사용 성공을 혼동하지 않는다.
+
+## 2026-11-21 — 실사용 외부 파일 누락 재조사: LegacyContent JSON 신규 번역과 DailyWearWorkshop 사용 안내
+
+### 누락 발견과 신규 번역
+- 원본 `TentacleMod/LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`(Git blob `2802bb5ee311555ff28572d647ca8ddaa82a743f`)은 이전에 DLL `LewdMemeLegacyContent.dll`을 직접 한국어화했음에도 번역 쪽 `Content/`가 **존재하지 않았다**. 따라서 이전 20 DLL/20 폴더 정적 완료를 `외부 대사까지 전체 완료`로 간주한 것은 잘못이다.
+- 현재 신규 파일 `TentacleMod번역/LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json` 작성. **descriptions.entries 72개 중 변경 번역 70개**, 변수 포맷만 있는 1개는 동일, 원문 공란 1개 그대로; **labels 53개 중 52개 번역**, `bodies/sister` 1개는 원문; **dialogue 198개 중 170개 한국어화**, `combos/sister/tsundere` 10개, `combos/sister/motherly` 10개, `bodyLines/sister` 8개 **미번역 28개 정확히 보존**. **descriptions.nightScenes 5개 모두 개별 번역**, `manifest.name`·`manifest.description` 2개 번역. JSON 전체 배열·인물 조건·게임용 ID·`addressWeights` 유지. 원문 대사 각 항목과 `{0}`, `{name}`, `{zone}` 등 플레이스홀더 전수 비교 불일치 0.
+- **미완료 범위 명시:** 인물 역할·연령을 암시하는 성적 표현과 연관된 위 28개 대사는 변경하지 않았다. 체형 표시 1개도 원문. 위 170/198은 100%가 아니며, 비활성·기능용 ID를 '번역 완료'로 계산하지 않는다.
+- 개인 대사·분파·성격 52 + 61 + 일반 57 = **170개** 1:1 번역(커밋 `79df28b611557115848d91ff186ff012387a3239`, `f184eb0440cef011516dc642e624acc7b4fa736a`, `4f094df6f160b34a0ba271625683c83d955c84be`). 별도 야간 장면 5개 커밋 `1d92aa63eb9801aa3f9658627673f67b874b439d`. UI 설명·직업명·세력명 등도 원문 개별 대조 후 번역. `README.md`의 중국어 `乳量`을 '모유량'으로 잘못 읽은 곳은 정확히 '가슴 크기'로 수정, 커밋 `b32f8fdbdc40b16c6dffd383eb10ce7f3a50dde1`.
+- 검사 근거 `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md`; 설치 안내 `LewdMemeLegacyContent-1.0.6-48sounds/README_ko.txt`. 개별 배포 `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_170of198_20261121.zip` **13,494바이트**, JSON/README/검사서 3개 엔트리, ZIP CRC 및 원본-번역 198개 키·변수 일치 검증 성공.
+
+### DailyWearWorkshop 외부 안내문
+- 원본 `TentacleMod/起飞攻速装-v1.1.3抢先体验版（修bug）/使用说明.txt`는 중국어였고 번역 폴더에는 DLL만 존재. 해당 설명서의 **설치법, 신발·양말 조합표, 조리·음료 레시피, 신규 NPC, 판매 규칙, 거래 보너스, 식물·아이템 기능, v0.8.3~v1.1.1 업데이트 내역**을 원문 순서대로 한국어 문서 `TentacleMod번역/起飞攻速装-v1.1.3抢先体验版（修bug）/使用说明.txt`로 번역, 커밋 `4d5a1385c3885849c2483d79848ed00dddda1994`.
+- 원본 `manifest.xml`은 `<ModVersion>1.1.1</ModVersion>`인 것을 확인. **폴더명에는 v1.1.3이 들어가지만 실제 모드 선언 버전은 1.1.1**이므로 임의로 바꾸지 않았다. ID `DailyWearWorkshop`, 버전, 지원 게임 버전, 선행 모드, DLL 지정, capabilities 원문 그대로 두고 표시 이름·설명 **2필드만** 한국어화한 `TentacleMod번역/起飞攻速装-v1.1.3抢先体验版（修bug）/manifest.xml` 신설, 커밋 `4a422a0d448230605c5d21e699039c389deb2d47`.
+- 개별 ZIP `ProbablyStolen_DailyWearWorkshop_v1.1.1_Manifest_Manual_KO_20261121.zip` **3,659바이트**, 번역 `manifest.xml`·`使用说明.txt` 2개 엔트리, ZIP CRC·ID/버전 일치 확인.
+
+### 패키징 및 다음 순서
+- 두 작업의 외부 콘텐츠 ZIP을 GitHub Actions `44916105429`로 **기존 원문과 대조, 재패키징, 전수 포맷 검증**하여 저장소 커밋 **`ef5aa55fde18e46e3ec2b0ec7e3509e66a87d858`**에 반영했다. 패키지 내부 원본 게임 DLL은 없으며 이전에 번역한 DLL 실적에 **중복 합산하지 않는다**.
+- **아직 작업 종료로 주장하지 않는다.** 남은 외부 JSON 대사 28개·체형 표시 1개와 구형 AdultGoods의 정확한 미번역 항목 2개를 보고서에 유지한다. 원본 폴더 구조 중 다른 읽기 가능한 텍스트/CSV/JSON이 누락돼 있는지 작업별로 추가 검사한다. 게임 적용 판단은 사용자의 범위다.
