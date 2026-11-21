@@ -344,7 +344,7 @@ namespace LewdMemeConfig
             new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptCost), Kind = PanelKind.Toggle, Section = "침식 촉수", SectionId = SecCorrupt,
                 Label = "사용: 침식 1회 소모량", Tooltip = "끄면 이 값에는 원본 기본값이 적용됩니다." },
             new PanelEntry { Key = CfgKeys.CorruptCost, Kind = PanelKind.SliderInt, Section = "침식 촉수", SectionId = SecCorrupt,
-                Label = "침식 1회 소모량", Tooltip = "침식 1회 소모량. 소모량이 음력 상한(침식 충전량 상한)보다 크면 충전량이 항상 부족해 침식이 절대 발동하지 않음", MinInt = 0, MaxInt = 999999 },
+                Label = "침식 1회 소모량", Tooltip = "침식 1회 소모량. 소모량이 음란력 상한(침식 충전량 상한)보다 크면 충전량이 항상 부족해 침식이 절대 발동하지 않음", MinInt = 0, MaxInt = 999999 },
             new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptWhitelist), Kind = PanelKind.Toggle, Section = "침식 촉수", SectionId = SecCorrupt,
                 Label = "사용: 침식 허용 목록 추가 (CSV)", Tooltip = "끄면 이 값에는 원본 기본값이 적용됩니다." },
             new PanelEntry { Key = CfgKeys.CorruptWhitelist, Kind = PanelKind.Input, Section = "침식 촉수", SectionId = SecCorrupt,
