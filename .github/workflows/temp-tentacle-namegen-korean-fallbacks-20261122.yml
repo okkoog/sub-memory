@@ -53,6 +53,7 @@ jobs:
                     if(method.Name.ToString()=="RandomName"&&original=="无名")value="무명";
                     if(method.Name.ToString()=="RandomNameParts"&&original=="无")value="무";
                     if(method.Name.ToString()=="RandomNameParts"&&original=="名字")value="명";
+                    if(method.Name.ToString()=="RandomNameParts"&&original=="이름")value="명";
                     if(value!=null) {
                       ins.Operand=value;
                       changed++;
