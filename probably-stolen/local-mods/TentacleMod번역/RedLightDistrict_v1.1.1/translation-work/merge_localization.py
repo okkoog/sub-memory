@@ -75,7 +75,16 @@ with DEST.open(encoding='utf-8-sig',newline='') as f:
         assert key in by_key and key not in existing and value
         existing[key]=value
 assert len(existing)>=22
-combined=dict(reviewed);combined.update(direct);combined.update(existing)
+# Keep the 22 original user-approved entries as an immutable baseline; newly
+# reviewed explicit key changes must supersede previous generated values.
+seed={}
+with (HERE/'Localization/ko.csv').open(encoding='utf-8-sig',newline='') as f:
+    for x in csv.reader(f):
+        if not x:continue
+        assert len(x)==2 and x[0] not in seed
+        seed[x[0]]=x[1]
+assert len(seed)==22 and set(seed)<=set(existing)
+combined=dict(existing);combined.update(reviewed);combined.update(direct);combined.update(seed)
 assert not (set(combined)-set(by_key))
 def variables(s):return sorted(re.findall(r'\{[^{}]+\}',s))
 for k,v in combined.items():
@@ -92,16 +101,17 @@ with DEST.open('w',encoding='utf-8',newline='') as f:
 with DEST.open(encoding='utf-8',newline='') as f:
     back={r[0]:r[1] for r in csv.reader(f) if r}
 assert back==combined
-assert all(back.get(k)==v for k,v in existing.items())
+assert set(existing)<=set(back)
+assert all(back.get(k)==v for k,v in seed.items())
 coverage=len(combined)
 AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization progress\n\n'
     +'- Source catalog: original TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv (untouched)\n'
     +f'- Total active IL occurrence keys: {len(rows)} (includes diagnostics, internal strings and logs)\n'
     +f'- Korean external ko.csv translations: {coverage}; untranslated/fallback occurrences: {len(rows)-coverage}\n'
     +f'- Reviewed historical source strings: {id_count}; mapped and selected IL sites: {matched_sites}; unique selected historical keys: {len(reviewed)}\n'
-    +f'- New manually reviewed direct keys: {len(direct)}; existing trusted ko.csv entries preserved: {len(existing)}\n'
+    +f'- New manually reviewed direct keys: {len(direct)}; original user-approved seed entries preserved: {len(seed)}; previously generated keys retained as fallback: {len(existing)}\n'
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
-    +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, existing translations validated.\n'
+    +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
     +'- No DLL files edited; ZIP contains only ko.csv and progress report.\n'
     +'- Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.\n\n'
     +'## Manually reviewed new key batches\n\n'
