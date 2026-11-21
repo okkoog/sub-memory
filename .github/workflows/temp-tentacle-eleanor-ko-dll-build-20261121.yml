@@ -1,0 +1,155 @@
+name: Tentacle Eleanor partial Korean DLL build
+on:
+  push:
+    paths:
+      - '.github/workflows/temp-tentacle-eleanor-ko-dll-build-20261121.yml'
+      - 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch01_20261121.tsv'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Sparse checkout original, reviewed translation and output directory
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3
+            probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Generate Korean-fallback embedded CSV from reviewed pairs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,re,hashlib
+          d=Path('probably-stolen/local-mods/TentacleMod번역/번역대조표')
+          en=(d/'Eleanor_v1.0.3_original_en_embedded_20261121.csv').read_bytes()
+          assert hashlib.sha256(en).hexdigest()=='6e2e935145dd255e7057ec8966b2cd9f610e475acc236ba94118be23dafb9125'
+          overrides={}
+          with (d/'Eleanor_v1.0.3_KO_reviewed_batch01_20261121.tsv').open(encoding='utf-8',newline='') as f:
+              r=csv.DictReader(f,delimiter='\t')
+              for x in r:
+                  k=x['key']; v=x['korean_value']
+                  assert k not in overrides and v.strip()
+                  assert '\r' not in v and '\n' not in v and '\t' not in v
+                  overrides[k]=v
+          old=en.decode('utf-8')
+          lines=old.splitlines(keepends=True)
+          seen=set(); new=[]
+          changes=[]
+          token=re.compile(r'\{[^{}]+\}')
+          for line in lines:
+              body=line.rstrip('\r\n')
+              trail=line[len(body):]
+              k,sep,v=body.partition(',')
+              if k in overrides:
+                  assert sep and k not in seen
+                  t=overrides[k]
+                  assert sorted(token.findall(v))==sorted(token.findall(t)),(k,'placeholder mismatch')
+                  new.append(k+','+t+trail)
+                  seen.add(k); changes.append(k)
+              else: new.append(line)
+          assert seen==set(overrides),(set(overrides)-seen)
+          assert len(changes)==55,len(changes)
+          modified=''.join(new).encode('utf-8')
+          Path('/tmp/Eleanor_ko_fallback_en.csv').write_bytes(modified)
+          print('Source lines',len(lines),'Reviewed substitutions',len(changes),'source bytes',len(en),'output bytes',len(modified))
+          PY
+      - name: Install .NET and dnlib writer
+        shell: bash
+        run: |
+          dotnet --version
+          dotnet new console --framework net8.0 -o /tmp/eleanor_dll_writer --force
+          dotnet add /tmp/eleanor_dll_writer/eleanor_dll_writer.csproj package dnlib --version 4.5.0
+          cat > /tmp/eleanor_dll_writer/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using dnlib.DotNet;
+          public class MainClass {
+              public static int Main(string[] args) {
+                  if (args.Length!=3) throw new ArgumentException("sourceDll, replacementCsv, outputDll");
+                  using var mod = ModuleDefMD.Load(args[0]);
+                  const string resourceName = "EleanorEmbedded/Localization/en.csv";
+                  int replaced=0;
+                  for (int i=0;i<mod.Resources.Count;i++) {
+                      if (mod.Resources[i].Name.ToString()==resourceName) {
+                          var prev=mod.Resources[i] as EmbeddedResource;
+                          if (prev==null) throw new Exception("Resource is not embedded");
+                          mod.Resources[i]=new EmbeddedResource(prev.Name, File.ReadAllBytes(args[1]), prev.Attributes);
+                          replaced++;
+                      }
+                  }
+                  if(replaced!=1) throw new Exception("Expected one en.csv managed resource, got "+replaced);
+                  Directory.CreateDirectory(Path.GetDirectoryName(args[2])!);
+                  mod.Write(args[2]);
+                  Console.WriteLine("Replaced managed en resource exactly once; wrote "+new FileInfo(args[2]).Length+" bytes");
+                  return 0;
+              }
+          }
+          CS
+          dotnet run --project /tmp/eleanor_dll_writer/eleanor_dll_writer.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' \
+            /tmp/Eleanor_ko_fallback_en.csv \
+            'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll'
+      - name: Independently compare CLR resources and validate ZIP
+        shell: bash
+        run: |
+          python3 -m pip install --quiet dnfile
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import dnfile,hashlib,json,csv,io
+          src=Path('probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
+          out=Path('probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
+          audit=Path('probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch01_DLL_STATIC_AUDIT_20261121.md')
+          en=Path('/tmp/Eleanor_ko_fallback_en.csv').read_bytes()
+          p0=dnfile.dnPE(str(src))
+          p1=dnfile.dnPE(str(out))
+          old={str(r.name):r.data for r in p0.net.resources}
+          new={str(r.name):r.data for r in p1.net.resources}
+          assert set(new)==set(old)
+          assert new['EleanorEmbedded/Localization/en.csv']==en
+          changed=[n for n in old if old[n]!=new[n]]
+          assert changed==['EleanorEmbedded/Localization/en.csv'],changed
+          assert p0.net.mdtables.MethodDef.num_rows==p1.net.mdtables.MethodDef.num_rows
+          assert p0.net.mdtables.TypeDef.num_rows==p1.net.mdtables.TypeDef.num_rows
+          origlines=old['EleanorEmbedded/Localization/en.csv'].decode('utf-8').splitlines()
+          newlines=en.decode('utf-8').splitlines()
+          assert len(origlines)==len(newlines)==1839
+          assert all(a.partition(',')[0]==b.partition(',')[0] for a,b in zip(origlines,newlines))
+          diff=sum(a!=b for a,b in zip(origlines,newlines))
+          assert diff==55,diff
+          audit.write_text('# Fallen Heiress - Eleanor v1.0.3 — Korean DLL Batch 1 (static test)\n\n'
+              + '- Original SHA256: '+hashlib.sha256(src.read_bytes()).hexdigest()+'\n'
+              + '- Patched SHA256: '+hashlib.sha256(out.read_bytes()).hexdigest()+'\n'
+              + '- Original bytes: '+str(src.stat().st_size)+'\n'
+              + '- Patched bytes: '+str(out.stat().st_size)+'\n'
+              + '- Embedded zh.csv: preserved byte-for-byte\n'
+              + '- Embedded en.csv: precisely 55 reviewed Korean substitutions; remaining English rows unchanged\n'
+              + '- CLR resource names/count: preserved; all non-target resources byte-identical\n'
+              + '- MethodDef/TypeDef row counts: preserved\n'
+              + '- CSV row count: 1839 unchanged, keys/order unchanged; placeholder tokens matched for each edited row\n'
+              + '- Korean game localization follows original non-zh branch (en resource); **English also displays partial Korean when this test DLL is enabled**.\n'
+              + '- Real CLR/Unity game load, UI, save, item compatibility: NOT TESTED. This is a partial trial build, not complete translation.\n',
+              encoding='utf-8')
+          z=Path('probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_55_20261121.zip')
+          guide='Partial test DLL with 55 manually reviewed Korean strings in embedded en.csv. Do not install beside same-ID Eleanor v1.0.0. This ZIP is an overlay, not a standalone mod. All other English content remains untranslated. English also uses the Korean-fallback string set. CLR/Unity runtime untested.'
+          with ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as f:
+              f.write(out,arcname='落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
+              f.write(audit,arcname='STATIC_AUDIT.md')
+              f.write('probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch01_20261121.tsv',arcname='KO_reviewed_batch01.tsv')
+              f.writestr('README.txt',guide)
+          with ZipFile(z) as f: assert f.testzip() is None
+          print(audit.read_text());print('ZIP bytes',z.stat().st_size)
+          PY
+      - name: Commit DLL trial overlay and audit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_55_20261121.zip' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch01_DLL_STATIC_AUDIT_20261121.md'
+          git diff --cached --quiet || (git commit -m 'build(tentacle): Eleanor 1.0.3 partial Korean DLL 55 reviewed strings' && git push)
