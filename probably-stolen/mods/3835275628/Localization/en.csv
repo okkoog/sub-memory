@@ -4,3 +4,7 @@ fridge_ingot_progress,{0}: +{1} points ({2}/100)
 fridge_ingot_levelup,{0} capacity: level {1} (+1 row of chill and freeze)
 fridge_ingot_widen,{0} capacity: level {1} (chill {2} wide, freeze {3} wide)
 fridge_power_levelup,{0}: power draw {1} -> {2} (efficiency {3}/{4})
+fridge_mod_name,Fridge Ingot Upgrade
+fridge_mod_desc,Drag metal ingots onto the fridge to upgrade past the vanilla level cap. Each ingot converts to points by purity (Perfect 100, Very Low 25); 100 points per level, leftovers carry over, up to level 20 (adjustable). Levels 1-15 add one row per level; from level 16 each level adds one column of width to both chilled and frozen zones. Storage level and power-efficiency upgrades share the same cap, so with both maxed out the power draw drops to the game's floor of 2 - further electronic components are rejected so nothing is wasted.
+cfg_max_levels_label,Fridge max level (shared cap for storage / efficiency)
+cfg_max_levels_tip,Storage: vanilla levels 1-7 use scrap metal, then metal ingots convert to points (100 points per level; 1 Perfect ingot or 4 Very Low). Efficiency: electronic components share this same cap, so with both maxed the power draw reaches the floor of 2. Levels 1-15 add a row each; from level 16 each adds one column of width to chilled and frozen zones.
