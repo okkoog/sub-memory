@@ -74,7 +74,12 @@ jobs:
                 } else if (already==1) {
                   patched++;
                 }
-                report.Add("- `"+Path.GetFileName(path)+"`: "+replacements+" matched NameGen.IsCjk upper bound; "+(replacements==1?"DLL patched and re-read":"no matching original method, binary unchanged")+".");
+                report.Add("- `"+Path.GetFileName(path)+"`: "+(replacements==1?"patched":"unchanged")+"; NameGen.IsCjk upper bound "+(replacements==1||already==1?"U+D7A3 (Hangul supported)":"unmatched")+".");
+                var constructors=mod.GetTypes().Where(t=>t.Name.ToString()=="NameGen").SelectMany(t=>t.Methods).Where(m=>m.Name.ToString()==".cctor" && m.HasBody).ToArray();
+                if(constructors.Length==1) {
+                  var keys=constructors[0].Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr).Select(i=>i.Operand?.ToString()??"").Where(v=>v.Length<20).ToArray();
+                  report.Add("- `"+Path.GetFileName(path)+"` NameGen fixed-region string literals: "+string.Join(", ",keys));
+                }
               }
               report.Add("- The precise original method and constants are verified with dnlib; no other intentional IL edits.");
               report.Add("- Runtime execution is not assessed here.");
