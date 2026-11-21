@@ -32,5 +32,7 @@ jobs:
           git add --sparse \
             'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv' \
             'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/LOCALIZATION_PROGRESS.md' \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/KEY_COVERAGE_AUDIT_20261121.tsv' \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/UNTRANSLATED_REVIEW_QUEUE_20261121.tsv' \
             'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RedLightDistrict_v1.1.1_Localization_KO_20261121.zip'
           git diff --cached --quiet || (git commit -m 'translate(rld): merge reviewed localization keys and validated standalone CSV ZIP' && git pull --rebase origin main && git push)
