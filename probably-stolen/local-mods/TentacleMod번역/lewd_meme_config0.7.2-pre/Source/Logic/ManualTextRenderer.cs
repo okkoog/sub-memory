@@ -59,7 +59,7 @@ namespace LewdMemeConfig
             "【본체의 다섯 구역, 왼쪽부터】\n" +
             "① 침식 구역 {cfg:layout.corrupt_cols}×{cfg:layout.brood_size}: 【촉수 침식】 태그가 있는 상자 / 기계만 수납\n" +
             "② 숙주 구역 {cfg:layout.brood_size}×{cfg:layout.brood_size}: 【여성 캐릭터】를 넣으면 매일 밤 조교가 자동 정산됨\n" +
-            "③ 생산물 구역 {cfg:layout.output_size}×{cfg:layout.output_size}: 생성된 유즙 / 정액이 이곳으로 나옴\n" +
+            "③ 생산물 구역 {cfg:layout.output_size}×{cfg:layout.output_size}: 생성된 모유 / 정액이 이곳으로 나옴\n" +
             "④ 촉수 구역 {cfg:layout.tool_cols}×{cfg:layout.brood_size}: 【촉수】 태그가 있는 도구(침식 촉수)만 수납\n" +
             "⑤ 메모 구역 2×2: 바로 이 종이가 있는 곳\n" +
             "\n" +
@@ -67,7 +67,7 @@ namespace LewdMemeConfig
             "· 성교 {cfg:nightly.sex_min_base}~{cfg:nightly.sex_max_base}회, 구강 성교 {cfg:nightly.oral_min_base}~{cfg:nightly.oral_max_base}회, 항문 성교 {cfg:nightly.anal_min_base}~{cfg:nightly.anal_max_base}회. 본체 레벨이 높을수록 횟수 증가\n" +
             "· 조교 수치 = 성교 + 구강 성교 + 항문 성교 횟수의 합계\n" +
             "· 정액 생산 확률 = {cfg:nightly.semen_chance_base}% + 조교 수치 10당 +10%(60이면 반드시 생산)\n" +
-            "· 수유 레벨 ≥1일 때만 【신비한 유즙】 생산, 가치 = {cfg:nightly.milk_value_base} + 레벨×{cfg:nightly.milk_value_per_lv}\n" +
+            "· 수유 레벨 ≥1일 때만 【신비한 모유】 생산, 가치 = {cfg:nightly.milk_value_base} + 레벨×{cfg:nightly.milk_value_per_lv}\n" +
             "· 매일 {cfg:nightly.ovulate_chance} 확률로 배란기에 진입, 임신 확률 = 그날 밤 성교 횟수%\n" +
             "· 임신 {cfg:nightly.gestation_days}일 후 초상화와 세력을 물려받은 딸 한 명을 출산\n" +
             "\n" +
