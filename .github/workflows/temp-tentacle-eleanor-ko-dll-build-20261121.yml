@@ -3,8 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/temp-tentacle-eleanor-ko-dll-build-20261121.yml'
-      - 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch01_20261121.tsv'
-      - 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch02_20261121.tsv'
+      - 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch*_20261121.tsv'
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,9 +29,12 @@ jobs:
           d=Path('probably-stolen/local-mods/TentacleMod번역/번역대조표')
           en=(d/'Eleanor_v1.0.3_original_en_embedded_20261121.csv').read_bytes()
           assert hashlib.sha256(en).hexdigest()=='6e2e935145dd255e7057ec8966b2cd9f610e475acc236ba94118be23dafb9125'
+          files=sorted(d.glob('Eleanor_v1.0.3_KO_reviewed_batch*_20261121.tsv'))
+          assert files and [int(x.stem.split('batch')[-1].split('_')[0]) for x in files]==list(range(1,len(files)+1))
+          Path('/tmp/eleanor_review_batch_count').write_text(str(len(files)))
           overrides={}
-          for batch in (1,2):
-              with (d/f'Eleanor_v1.0.3_KO_reviewed_batch{batch:02d}_20261121.tsv').open(encoding='utf-8',newline='') as f:
+          for fp in files:
+              with fp.open(encoding='utf-8',newline='') as f:
                   r=csv.DictReader(f,delimiter='\t')
                   for x in r:
                       k=x['key']; v=x['korean_value']
@@ -56,7 +58,8 @@ jobs:
                   seen.add(k); changes.append(k)
               else: new.append(line)
           assert seen==set(overrides),(set(overrides)-seen)
-          assert len(changes)==131,len(changes)
+          assert len(changes)==len(overrides),len(changes)
+          Path('/tmp/eleanor_review_count').write_text(str(len(changes)))
           modified=''.join(new).encode('utf-8')
           Path('/tmp/Eleanor_ko_fallback_en.csv').write_bytes(modified)
           print('Source lines',len(lines),'Reviewed substitutions',len(changes),'source bytes',len(en),'output bytes',len(modified))
@@ -105,9 +108,11 @@ jobs:
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
           import dnfile,hashlib,json,csv,io
+          count=int(Path('/tmp/eleanor_review_count').read_text())
+          batches=int(Path('/tmp/eleanor_review_batch_count').read_text())
           src=Path('probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
           out=Path('probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
-          audit=Path('probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch02_DLL_STATIC_AUDIT_20261121.md')
+          audit=Path(f'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch{batches:02d}_DLL_STATIC_AUDIT_20261121.md')
           en=Path('/tmp/Eleanor_ko_fallback_en.csv').read_bytes()
           p0=dnfile.dnPE(str(src))
           p1=dnfile.dnPE(str(out))
@@ -124,27 +129,27 @@ jobs:
           assert len(origlines)==len(newlines)==1839
           assert all(a.partition(',')[0]==b.partition(',')[0] for a,b in zip(origlines,newlines))
           diff=sum(a!=b for a,b in zip(origlines,newlines))
-          assert diff==131,diff
-          audit.write_text('# Fallen Heiress - Eleanor v1.0.3 — Korean DLL Batch 2 (static test)\n\n'
+          assert diff==count,diff
+          audit.write_text('# Fallen Heiress - Eleanor v1.0.3 — Korean DLL Batch '+str(batches)+' (static test)\n\n'
               + '- Original SHA256: '+hashlib.sha256(src.read_bytes()).hexdigest()+'\n'
               + '- Patched SHA256: '+hashlib.sha256(out.read_bytes()).hexdigest()+'\n'
               + '- Original bytes: '+str(src.stat().st_size)+'\n'
               + '- Patched bytes: '+str(out.stat().st_size)+'\n'
               + '- Embedded zh.csv: preserved byte-for-byte\n'
-              + '- Embedded en.csv: precisely 131 reviewed Korean substitutions (batch 1: 55; batch 2: 76); remaining English rows unchanged\n'
+              + '- Embedded en.csv: precisely '+str(count)+' manually reviewed Korean substitutions across '+str(batches)+' batches; remaining English rows unchanged\n'
               + '- CLR resource names/count: preserved; all non-target resources byte-identical\n'
               + '- MethodDef/TypeDef row counts: preserved\n'
               + '- CSV row count: 1839 unchanged, keys/order unchanged; placeholder tokens matched for each edited row\n'
               + '- Korean game localization follows original non-zh branch (en resource); **English also displays partial Korean when this test DLL is enabled**.\n'
               + '- Real CLR/Unity game load, UI, save, item compatibility: NOT TESTED. This is a partial trial build, not complete translation.\n',
               encoding='utf-8')
-          z=Path('probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_131_20261121.zip')
-          guide='Partial test DLL with 131 manually reviewed Korean strings in embedded en.csv. Do not install beside same-ID Eleanor v1.0.0. This ZIP is an overlay, not a standalone mod. All other English content remains untranslated. English also uses the Korean-fallback string set. CLR/Unity runtime untested.'
+          z=Path(f'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_{count}_20261121.zip')
+          guide='Partial test DLL with '+str(count)+' manually reviewed Korean strings in embedded en.csv. Do not install beside same-ID Eleanor v1.0.0. This ZIP is an overlay, not a standalone mod. All other English content remains untranslated. English also uses the Korean-fallback string set. CLR/Unity runtime untested.'
           with ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as f:
               f.write(out,arcname='落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll')
               f.write(audit,arcname='STATIC_AUDIT.md')
-              f.write('probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch01_20261121.tsv',arcname='KO_reviewed_batch01.tsv')
-              f.write('probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch02_20261121.tsv',arcname='KO_reviewed_batch02.tsv')
+              for i in range(1,batches+1):
+                  f.write(f'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch{i:02d}_20261121.tsv',arcname=f'KO_reviewed_batch{i:02d}.tsv')
               f.write('probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/manifest.xml',arcname='落魄千金-埃莉诺 v1.0.3/manifest.xml')
               f.write('probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/README_ko.txt',arcname='落魄千金-埃莉诺 v1.0.3/README_ko.txt')
               f.writestr('README.txt',guide)
@@ -156,5 +161,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_131_20261121.zip' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch02_DLL_STATIC_AUDIT_20261121.md'
-          git diff --cached --quiet || (git commit -m 'build(tentacle): Eleanor 1.0.3 partial Korean DLL 131 reviewed strings' && git push)
+          COUNT=$(cat /tmp/eleanor_review_count)
+          BATCH=$(printf '%02d' "$(cat /tmp/eleanor_review_batch_count)")
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' \
+            "probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_${COUNT}_20261121.zip" \
+            "probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch${BATCH}_DLL_STATIC_AUDIT_20261121.md"
+          git diff --cached --quiet || (git commit -m "build(tentacle): Eleanor 1.0.3 cumulative Korean DLL ${COUNT} reviewed strings" && git pull --rebase origin main && git push)
