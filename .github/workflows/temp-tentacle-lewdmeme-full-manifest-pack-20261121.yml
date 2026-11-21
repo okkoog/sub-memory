@@ -1,0 +1,94 @@
+name: Tentacle lewd_meme v2.1.0 complete 50-version Korean manifest patch
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-lewdmeme-full-manifest-pack-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/lewd_meme2.1.0/manifest.xml
+            probably-stolen/local-mods/TentacleMod/lewd_meme2.1.0/Localization/zh.csv
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_00_28_20261121.json
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_29_49_20261121.json
+            probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_LewdMeme_v2.1.0_DLL_Localization_KO_20261121.zip
+          sparse-checkout-cone-mode: false
+      - name: Original 50-section manifest alignment and functional XML safety
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,json,xml.etree.ElementTree as ET
+          root=Path('probably-stolen/local-mods')
+          source=(root/'TentacleMod/lewd_meme2.1.0/manifest.xml').read_text(encoding='utf-8')
+          dest=(root/'TentacleMod번역/lewd_meme2.1.0/manifest.xml').read_text(encoding='utf-8')
+          clean=lambda s:re.sub(r'<Description>[\s\S]*?</Description>','<Description/>',
+                           re.sub(r'<Name>[^<]*</Name>','<Name/>',s))
+          assert clean(source)==clean(dest)
+          src=source.split('<Description>',1)[1].split('</Description>',1)[0]
+          translated=dest.split('<Description>',1)[1].split('</Description>',1)[0]
+          origVersions=re.findall(r'(?m)^([12]\.\d+(?:\.\d+)?)版本更新介绍',src)
+          koVersions=re.findall(r'(?m)^([12]\.\d+(?:\.\d+)?) 업데이트 안내',translated)
+          assert len(origVersions)==len(koVersions)==49
+          assert origVersions==koVersions
+          assert len(translated)>len(src)
+          first=json.loads((root/'TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_00_28_20261121.json').read_text(encoding='utf-8'))
+          last=json.loads((root/'TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_29_49_20261121.json').read_text(encoding='utf-8'))
+          assert len(first['translation_sections'])==29 and len(last['translation_sections'])==21
+          assert first['translation_sections']+last['translation_sections']==translated.split('\n\n')
+          a=ET.fromstring(clean(source));b=ET.fromstring(dest)
+          assert a.findtext('ID')==b.findtext('ID')=='lewd_meme'
+          assert a.findtext('ModVersion')==b.findtext('ModVersion')=='2.1.0'
+          for tag in ['GameVersions','Prerequisites','Assemblies','Capabilities']:
+              assert ET.tostring(a.find(tag))==ET.tostring(b.find(tag)),tag
+          locale=(root/'TentacleMod번역/lewd_meme2.1.0/Localization/ko.csv').read_text(encoding='utf-8')
+          assert locale.count('\n')==2
+          print('50/50 blocks, original 49/49 version labels, exact ID/game/assembly/capabilities unchanged. Korean manifest XML parsed.')
+          PY
+      - name: Refresh version-exact DLL and Korean manifest overlay ZIP
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          z=root/'ProbablyStolen_LewdMeme_v2.1.0_DLL_Localization_KO_20261121.zip'
+          folder='lewd_meme2.1.0'
+          contents=[]
+          with ZipFile(z) as old:
+              assert old.testzip() is None
+              contents=[(name,old.read(name)) for name in old.namelist()]
+          assert all(name!=folder+'/manifest.xml' for name,data in contents)
+          contents.append((folder+'/manifest.xml',(root/folder/'manifest.xml').read_bytes()))
+          temp=z.with_suffix('.new')
+          with ZipFile(temp,'w',ZIP_DEFLATED,compresslevel=6) as f:
+              for name,data in contents:f.writestr(name,data)
+          with ZipFile(temp) as f:
+              assert f.testzip() is None and len(f.namelist())==4
+              assert f.read(folder+'/manifest.xml')==(root/folder/'manifest.xml').read_bytes()
+              assert f.read(folder+'/MidnightPawn.dll')==(root/folder/'MidnightPawn.dll').read_bytes()
+          temp.replace(z)
+          print(z.name,z.stat().st_size,hashlib.sha256(z.read_bytes()).hexdigest())
+          PY
+      - name: Publish the new exact manifest in the original-version overlay
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_LewdMeme_v2.1.0_DLL_Localization_KO_20261121.zip'
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(tentacle): complete all 50 lewd_meme v2.1.0 release sections and update DLL patch'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
