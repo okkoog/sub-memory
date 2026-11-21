@@ -33,7 +33,7 @@
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **3차 한국어 DLL 시험본**: 누적 193개 문자열, 223곳 IL 참조 수정; 게임 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
-| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **한국어 DLL 시험본 611개 문자열/IL 839곳** 직접 반영(기존 한국어 소스 대조). 추가 소스 번역 보존, 실게임 로딩 미검증 |
+| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **한국어 DLL 시험본 788개 문자열/IL 1048곳** 직접 반영(기존 한국어 소스 대조). 추가 소스 번역 보존, 실게임 로딩 미검증 |
 | `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
 | `[SRW-STM]MentorToSarrona/` | manifest v1.2.0, `MentorToSarrona.dll` 9,216바이트(소스/Localization 없음) | **manifest 설명 한국어화만 완료**; DLL 내부 대사 번역 미완료 |
 | `3843110449/` (GeorgioToElueym) | manifest v1.1.0, `GeorgioToElueym.dll` 11,776바이트 + `ToElueym.dll` 4,608바이트(소스/Localization 없음) | **manifest 이름·설명 한국어화만 완료**; DLL 내부 문구 번역 미완료 |
@@ -52,7 +52,7 @@
 | 촉수 번식 상호작용 | `lewdMemeBrood v0331/Content/interactionLines.json` | 135줄 중 125개 대사 번역, 10개 보류 | JSON 구조·치환 변수 검사 통과, 실제 적용 미검증 |
 | 세로나의 용 모드 | `[SRW-STM]SarronaTheDragon/Localization/ko.csv` | 553키(551개 한국어 문구 + 원본 빈 값 2개) | 원본 키·치환 변수·Books loc 참조 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **1,850개**, 변경된 IL 문자열 참조 **2,197곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
+- DLL 문자열 번역 합계 **2,027개**, 변경된 IL 문자열 참조 **2,406곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -388,3 +388,10 @@
 - `FamilyPanelKeys.cs` 원문/한국어 소스 같은 행의 `Tooltip = "..." + ThroughNote/TakeoverNote`를 C# 컴파일러의 상수 연결 규칙으로 복원해 기존 활성 `#US`와 1:1 대조. 연령 관련 문맥 혼합 4문구는 제외하고 **87개 설정 설명·IL 87곳**을 직접 DLL에 반영.
 - 설정 기본값 `开`/`关`, 세력/직업 판정 문자열은 보존. 한국어 설명 뒤에는 쓰기 동기화·원본 기능 복구 의미를 풀어서 추가. 기존 원문과 다른 메타데이터 스트림 보존, 새 `#US` 17096바이트 추가. DLL 594432→611840바이트.
 - `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll`, `lewd_meme_config0.7.2-pre/번역대조표/LewdMemeConfig_FamilyTooltip_DLL_20261121.tsv`, 통합 CSV 갱신. **정적 검증 통과, 게임 로더 검증 미실시**.
+
+## 2026-11-21 — Config DLL 기술 진단·도움말 번역
+
+- `#US` 중국어 원문과 활성 IL 사용 위치를 직접 대조하여 기술 진단·제어권/버전 안내·설정 저장·야간 정산·프린터 설명 **177개 문자열/IL 참조 209곳** 한국어로 변경. TSV에는 줄바꿈을 `\\n`으로 기록하고 DLL에는 실제 줄바꿈 문자 반영.
+- 활성 기본 설정값, 식별자, 세력 및 캐릭터 분기 판정값은 제외. 기존 `#US` 유지한 채 한국어 8791바이트 추가. PE/CLI 섹션 크기 갱신, DLL 611840→620544바이트.
+- 수정 DLL과 `LewdMemeConfig_system_DLL_20261121.tsv`, 통합 `DLL_additional_20261121.csv` 동기화. **정적 문자열·IL 검증 통과, 게임 로더/실플레이 테스트 미진행**.
+- Config 시험 DLL 누적 **788개 문자열/1048곳**, 4 DLL 전체 누적 **2027개/2406곳**.
