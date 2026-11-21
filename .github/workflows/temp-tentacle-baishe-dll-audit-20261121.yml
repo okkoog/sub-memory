@@ -1,0 +1,84 @@
+name: Tentacle Bai She texture-only 1.4.0 embedded text audit
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-baishe-dll-audit-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/Bai She's R18 Texture Pack 1.4.0/R18TexturePack.dll
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Enumerate all executable Chinese user strings without running DLL
+        shell: bash
+        run: |
+          dotnet new console -f net8.0 -o /tmp/baishe-audit --force
+          dotnet add /tmp/baishe-audit/baishe-audit.csproj package dnlib --version 4.5.0
+          cat >/tmp/baishe-audit/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Text;
+          using System.Text.Json;
+          using System.Collections.Generic;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P{
+              static void Main(string[] args){
+                  using var md=ModuleDefMD.Load(args[0]);
+                  var types=md.GetTypes().ToArray();
+                  var methods=types.SelectMany(t=>t.Methods.Where(m=>m.HasBody)).ToArray();
+                  var lines=new List<string>{"method\toffset\toriginal_json\tnext_opcode\tnext_operand"};
+                  int ldstr=0;
+                  foreach(var m in methods){
+                      var il=m.Body.Instructions;
+                      for(int k=0;k<il.Count;k++){
+                          if(il[k].OpCode!=OpCodes.Ldstr || il[k].Operand is not string str)continue;
+                          ldstr++;
+                          if(!str.Any(c=>c>='\u3400' && c<='\u9fff'))continue;
+                          var nxt=k+1<il.Count?il[k+1]:null;
+                          lines.Add(m.FullName+"\t"+il[k].Offset+"\t"+JsonSerializer.Serialize(str)+"\t"+
+                            (nxt?.OpCode.ToString()??"")+"\t"+
+                            JsonSerializer.Serialize(nxt?.Operand?.ToString()??""));
+                      }
+                  }
+                  File.WriteAllLines(args[1],lines,new UTF8Encoding(false));
+                  var report="# Bai She R18 Texture Pack 1.4.0 original DLL IL audit\n\n"+
+                      $"- Types: {types.Length}; method bodies: {methods.Length}; all ldstr calls: {ldstr}\n"+
+                      $"- CJK ldstr calls: {lines.Count-1}\n"+
+                      $"- Managed resources: {md.Resources.Count}\n"+
+                      $"- Embedded CSV resources: {md.Resources.Count(r=>r.Name.ToString().EndsWith(".csv",StringComparison.OrdinalIgnoreCase))}\n"+
+                      $"- Method-level complete CJK list: {Path.GetFileName(args[1])}\n"+
+                      "- DLL not executed; game/runtime test not performed.\n";
+                  File.WriteAllText(args[2],report,Encoding.UTF8);
+                  Console.WriteLine(report);
+              }
+          }
+          CS
+          dotnet run --project /tmp/baishe-audit/baishe-audit.csproj -- \
+            "probably-stolen/local-mods/TentacleMod/Bai She's R18 Texture Pack 1.4.0/R18TexturePack.dll" \
+            "probably-stolen/local-mods/TentacleMod번역/번역대조표/BaiShe_v1.4.0_CJK_IL_inventory_20261121.tsv" \
+            "probably-stolen/local-mods/TentacleMod번역/번역대조표/BaiShe_v1.4.0_CJK_DLL_STATIC_AUDIT_20261121.md"
+      - name: Commit audit and inventory
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/BaiShe_v1.4.0_CJK_IL_inventory_20261121.tsv \
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/BaiShe_v1.4.0_CJK_DLL_STATIC_AUDIT_20261121.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'audit(tentacle): verify runtime Chinese text in Bai She visual-only DLL'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
