@@ -1,0 +1,118 @@
+name: Tentacle source-faithful alternate-version DLL and locale overlay packages
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-unified-variant-patch-bundles-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/lewdMemeBrood v0331/manifest.xml
+            probably-stolen/local-mods/TentacleMod/LewdMemeBrothel-0.10.4-candidate/manifest.xml
+            probably-stolen/local-mods/TentacleMod/可能是成人用品 v1.1.3/manifest.xml
+            probably-stolen/local-mods/TentacleMod/3843125702/manifest.xml
+            probably-stolen/local-mods/TentacleMod/lewdMemeBrood v0331/Localization/zh.csv
+            probably-stolen/local-mods/TentacleMod/LewdMemeBrothel-0.10.4-candidate/Localization/zh.csv
+            probably-stolen/local-mods/TentacleMod/可能是成人用品 v1.1.3/Localization/zh.csv
+            probably-stolen/local-mods/TentacleMod번역/lewdMemeBrood v0331
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeBrothel-0.10.4-candidate
+            probably-stolen/local-mods/TentacleMod번역/可能是成人用品 v1.1.3
+            probably-stolen/local-mods/TentacleMod번역/3843125702
+          sparse-checkout-cone-mode: false
+      - name: Compare original source metadata, DLL and localization keys
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,xml.etree.ElementTree as ET
+          root=Path('probably-stolen/local-mods')
+          orig=root/'TentacleMod';ko=root/'TentacleMod번역'
+          configs=[
+            ('lewdMemeBrood v0331','claude.lewdMemeBrood','0.3.31','LewdMemeBrood.dll',566),
+            ('LewdMemeBrothel-0.10.4-candidate','lewd_meme_brothel','0.10.4','LewdMemeBrothel.dll',178),
+            ('可能是成人用品 v1.1.3','probably_adult_goods','1.03','probably_adult_goods.dll',192),
+            ('3843125702','probably_adult_goods','1.2.1','probably_adult_goods.dll',None)
+          ]
+          scrub=lambda s:re.sub(r'<Description>[\s\S]*?</Description>','<Description/>',
+                     re.sub(r'<Name>[^<]*</Name>','<Name/>',s))
+          def keys(file):
+              lines=file.read_text(encoding='utf-8-sig').splitlines()
+              return [s.partition(',')[0] for s in lines if s and not s.lstrip().startswith('#')]
+          for folder,mid,version,dll,count in configs:
+              a=(orig/folder/'manifest.xml').read_text(encoding='utf-8')
+              b=(ko/folder/'manifest.xml').read_text(encoding='utf-8')
+              assert scrub(a)==scrub(b),folder
+              old=ET.fromstring(a);new=ET.fromstring(b)
+              assert old.findtext('ID')==new.findtext('ID')==mid
+              assert old.findtext('ModVersion')==new.findtext('ModVersion')==version
+              for f in ['GameVersions','Prerequisites','Assemblies','Capabilities']:
+                  assert ET.tostring(old.find(f))==ET.tostring(new.find(f)),(folder,f)
+              assert (ko/folder/dll).stat().st_size>100000
+              if count is not None:
+                  src=keys(orig/folder/'Localization/zh.csv')
+                  dst=keys(ko/folder/'Localization/ko.csv')
+                  assert len(src)==len(dst)==count,(folder,len(src),len(dst))
+                  assert len(src)==len(set(src))==len(set(dst))
+                  assert src==dst,(folder,'key order mismatch')
+              print('Manifest and locale verified:',folder,mid,version,count)
+          PY
+      - name: Create four version-specific translated overlay ZIP files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib,json,re
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          items=[
+            ('ProbablyStolen_Brood_v0.3.31_DLL_CSV_135_JSON_KO_20261121.zip',
+             'lewdMemeBrood v0331',
+             ['LewdMemeBrood.dll','manifest.xml','Localization/ko.csv','Content/interactionLines.json','README_full_ko.txt']),
+            ('ProbablyStolen_Brothel_v0.10.4_DLL_CSV_KO_20261121.zip',
+             'LewdMemeBrothel-0.10.4-candidate',
+             ['LewdMemeBrothel.dll','manifest.xml','Localization/ko.csv','README_ko.txt']),
+            ('ProbablyStolen_AdultGoods_v1.03_DLL_CSV_KO_20261121.zip',
+             '可能是成人用品 v1.1.3',
+             ['probably_adult_goods.dll','manifest.xml','Localization/ko.csv','README.txt','README_ko.txt']),
+            ('ProbablyStolen_AdultGoods_v1.2.1_DLL_Manifest_KO_20261121.zip',
+             '3843125702',
+             ['probably_adult_goods.dll','manifest.xml','README_ko.txt'])
+          ]
+          for name,folder,files in items:
+              if folder=='lewdMemeBrood v0331':
+                  j=json.loads((root/folder/'Content/interactionLines.json').read_text(encoding='utf-8'))
+                  assert len(j['lines'])==135
+                  assert all(not re.search(r'[\u3400-\u9fff]',e['text']) for e in j['lines'])
+              z=root/name
+              with ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as f:
+                  for p in files:f.write(root/folder/p,arcname=folder+'/'+p)
+              with ZipFile(z) as verify:
+                  assert verify.testzip() is None
+                  assert len(verify.namelist())==len(files)
+                  for p in files:assert verify.read(folder+'/'+p)==(root/folder/p).read_bytes()
+              print(name,z.stat().st_size,hashlib.sha256(z.read_bytes()).hexdigest())
+          PY
+      - name: Commit four fully verified version-specific overlays
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Brood_v0.3.31_DLL_CSV_135_JSON_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Brothel_v0.10.4_DLL_CSV_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.03_DLL_CSV_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.2.1_DLL_Manifest_KO_20261121.zip'
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(tentacle): deliver verified Brood Brothel and two alternate AdultGoods patches'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
