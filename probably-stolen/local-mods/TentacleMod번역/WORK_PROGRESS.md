@@ -654,3 +654,9 @@
 - 원본 DLL 중국어 포함 활성 문자열 18개: **진단 문구 1개/IL 1곳**만 한국어 DLL에 직접 반영, 파일명·상품 분류·등록명에 해당할 가능성이 있는 나머지 17개는 보호. DLL 크기 58880→103424바이트. 기존 CSV의 190/192 번역과 혼동하지 않음.
 - 경로와 데이터 분류 문자열의 런타임 사용처가 아직 실측 검증되지 않았으므로 '모든 화면 한글화 완료'라고 주장하지 않음. 정적 메타데이터·IL 검증 통과, **실게임 실행 미실시**.
 - `번역대조표/ProbablyAdultGoods_DLL_FINAL_STATIC_AUDIT_20261121.md` 참고. 다음 순서 `[SRW-STM]SarronaTheDragon/SarronaTheDragon.dll`.
+
+## 2026-11-21 — 순차 12번 SarronaTheDragon.dll 영어 진단 번역
+
+- `SarronaTheDragon.dll` 원본(237056바이트, blob `d0cfa70ac02ef32004da72e61c2473d1aca78cd6`) #US에는 **중국어 문자열 0개**. 원본의 영어 문장 10개 후보 중 일반 진단/오류 메시지 **9개, 활성 IL 9곳**을 한국어 DLL에 반영했고, `Metal Printing Module`은 아이템 명칭 또는 등록 식별자 가능성 때문에 보호.
+- 한국어 번역 DLL 413696바이트. 기존 `Localization/ko.csv` 553키 및 책 번역은 DLL 실적과 별개. `#US` UTF-16LE 역디코딩/활성 IL 참조 및 비대상 메타데이터 불변 정적 검사 완료.
+- 원본 `TentacleMod/` 변경 없음. **실제 CLR/Unity 로드 및 인게임 확인 미실시**. 대조표: `번역대조표/SarronaTheDragon_DLL_sequential_20261121.tsv`.
