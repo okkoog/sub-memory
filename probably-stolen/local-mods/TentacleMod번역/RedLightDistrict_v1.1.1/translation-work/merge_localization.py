@@ -65,6 +65,9 @@ for file in sorted(HERE.glob('manual_direct_batch*_20261121.tsv')):
             direct[key]=value;count+=1
     manual_counts.append((file.name,count))
 assert len(manual_counts)>=3
+# The game uses File.ReadAllLines and expands literal backslash-n in ParseCsvValue.
+def decoded(value): return value.replace('\\n','\n')
+def encoded(value): return value.replace('\n','\\n')
 existing={}
 with DEST.open(encoding='utf-8-sig',newline='') as f:
     for r in csv.reader(f):
@@ -72,7 +75,7 @@ with DEST.open(encoding='utf-8-sig',newline='') as f:
         assert len(r)==2,r
         key,value=r
         assert key in by_key and key not in existing and value
-        existing[key]=value
+        existing[key]=decoded(value)
 assert len(existing)>=22
 # Keep the 22 original user-approved entries as an immutable baseline; newly
 # reviewed explicit key changes must supersede previous generated values.
@@ -113,10 +116,11 @@ for k,v in combined.items():
 with DEST.open('w',encoding='utf-8',newline='') as f:
     for row in rows:
         k=row['key']
-        if k in combined:f.write(k+',"'+combined[k].replace('"','""')+'"\r\n')
+        if k in combined:f.write(k+',"'+encoded(combined[k]).replace('"','""')+'"\r\n')
 with DEST.open(encoding='utf-8',newline='') as f:
-    back={r[0]:r[1] for r in csv.reader(f) if r}
+    back={r[0]:decoded(r[1]) for r in csv.reader(f) if r}
 assert back==combined
+assert len(DEST.read_bytes().split(b'\n'))-1==len(back)
 assert set(existing)-UNSAFE_NAMING_KEYS<=set(back)
 assert not (UNSAFE_NAMING_KEYS & set(back))
 assert all(back.get(k)==v for k,v in seed.items())
@@ -131,7 +135,7 @@ AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization p
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
     +'- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).\n'
     +'- No DLL files edited. Interim ZIP packaging is disabled until translation is complete.\n'
-    +'- Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.\n\n'
+    +'- Actual game runtime / save data compatibility NOT TESTED; line breaks serialized as literal backslash-n for the game parser.\n\n'
     +'## Manually reviewed new key batches\n\n'
     +''.join(f'- {name}: {count} entries\n' for name,count in manual_counts),encoding='utf-8')
 
