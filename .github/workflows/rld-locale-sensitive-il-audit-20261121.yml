@@ -1,0 +1,73 @@
+name: Red Light District internal-vs-display locale risk audit
+on:
+  push:
+    paths: [.github/workflows/rld-locale-sensitive-il-audit-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Inspect C# IL consumers of in-game label and data methods (no patches)
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/rld_sensitive --force
+          dotnet add /tmp/rld_sensitive/rld_sensitive.csproj package dnlib --version 4.5.0
+          cat > /tmp/rld_sensitive/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Text;
+          using System.IO;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static void Main(string[] args) {
+              using var md=ModuleDefMD.Load(args[0]);
+              var targets=new[]{
+                "TalentIntel::TypeName","TalentIntel::ParseFilterFromName",
+                "TalentIntel::CreateInvestigated","TalentIntel::CreateYanzhi","TalentIntel::CreateLuoli",
+                "TalentData::AgeStageName","TalentSystem::ActionLabel",
+                "TalentScenarioMaid::get_DisplayName",
+                "PatronSystem::IsPatronDisplayName","PatronSystem::CreatePatronClient",
+                "TalentSystem::.cctor","TalentData::.cctor",
+                "TalentScenarioMaid::ContainerByName","TalentScenarioMaid::WhereIsItem"
+              };
+              var all=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody).Select(m=>(type:t,method:m))).ToList();
+              var sb=new StringBuilder("# RedLightDistrict v1.1.1 original DLL — potential localization key usage\n\n");
+              foreach(var name in targets){
+                var arr=all.Where(x=>(x.type.FullName+"::"+x.method.Name).EndsWith(name,StringComparison.Ordinal)).ToList();
+                sb.AppendLine("## "+name+" (methods found "+arr.Count+")\n");
+                foreach(var x in arr){
+                  var instr=x.method.Body.Instructions;
+                  sb.AppendLine("### "+x.type.FullName+"::"+x.method.Name+" ("+instr.Count+" IL instructions)\n");
+                  foreach(var il in instr.Take(350)){sb.AppendLine("- "+il);}
+                  var callers=all.Where(y=>y.method.Body.Instructions.Any(i=>(i.OpCode==OpCodes.Call||i.OpCode==OpCodes.Callvirt)
+                    && i.Operand is IMethod m && m.FullName==x.method.FullName))
+                    .Select(y=>y.type.FullName+"::"+y.method.Name).Distinct().Take(45).ToArray();
+                  sb.AppendLine("Callers ("+callers.Length+" shown): "+string.Join("; ",callers)+"\n");
+                }
+              }
+              File.WriteAllText(args[1],sb.ToString(),Encoding.UTF8);
+              Console.WriteLine("Bytes "+sb.Length);
+            }
+          }
+          CS
+          dotnet run --project /tmp/rld_sensitive/rld_sensitive.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_LOCALIZATION_SENSITIVE_IL_AUDIT_20261121.md'
+      - name: Commit report
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_LOCALIZATION_SENSITIVE_IL_AUDIT_20261121.md'
+          git diff --cached --quiet || (git commit -m 'audit(rld): document IL consumers of translated display and internal labels' && git pull --rebase origin main && git push)
