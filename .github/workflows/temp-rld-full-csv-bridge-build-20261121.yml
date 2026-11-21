@@ -80,7 +80,7 @@ jobs:
               }
               var bound=mod.GetTypes().Single(t=>t.FullName=="RedLightDistrict.RedLightDistrictMod")
                   .Methods.Single(m=>m.Name.ToString()=="OnModAssetsLoaded");
-              if(!bound.HasBody || bound.IsStatic || bound.Parameters.Count!=1)throw new Exception("OnModAssetsLoaded signature changed");
+              if(!bound.HasBody || bound.MethodSig.Params.Count!=1)throw new Exception("OnModAssetsLoaded signature changed");
               var ownerType=(ITypeDefOrRef)((IField)bound.Body.Instructions.First(i=>i.OpCode==OpCodes.Ldfld &&
                   i.Operand is IField f && f.Name.ToString()=="Manifest").Operand).DeclaringType;
               var langMethod=source.GetTypes().Single(t=>t.FullName=="ProbablyEleanorFollowup.EmbeddedAssets")
@@ -143,7 +143,7 @@ jobs:
               il.Add(Instruction.Create(OpCodes.Ret));
               // Use loaded-mod instance captured by the mod's existing lifecycle callback.
               // No file access, reflection, native calls, or assembly-wide global replacements.
-              bound.Body.Instructions.Insert(0,Instruction.Create(OpCodes.Ldarg_1));
+              bound.Body.Instructions.Insert(0,Instruction.Create(bound.IsStatic?OpCodes.Ldarg_0:OpCodes.Ldarg_1));
               bound.Body.Instructions.Insert(1,Instruction.Create(OpCodes.Stsfld,owner));
               int patched=0;
               // Original instruction objects were audited before modification.
