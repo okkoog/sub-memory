@@ -25,7 +25,7 @@
 
 | 원본 폴더 | 원본 또는 자료 확인 | 작업 상태 |
 | --- | --- | --- |
-| `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **4차 한국어 DLL 시험본**: 누적 241개 문자열, 254곳 IL 참조 수정; 게임 실행 테스트 미실시 |
+| `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **5차 한국어 DLL 시험본**: 누적 428개 문자열, 471곳 IL 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | **3차 한국어 DLL 시험본**: 누적 195개 문자열, 208곳 IL 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | **한국어 CSV 178개 키 전수 번역 완료(문자열 구조 검사 통과)**, 실제 게임 적용 미검증 |
 | `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/`, manifest v0.3.31 | **Localization 566키 전수 번역**, 상호작용 JSON 135개 중 **125개 번역, 10개 보류** |
@@ -44,7 +44,7 @@
 
 | 모드 | 산출물 | 번역 실적 | 상태 |
 | --- | --- | --- | --- |
-| 촉수 본체 | `lewd_meme2.1.0/MidnightPawn.dll` | 문자열 241개/IL 참조 254곳 | 시험 DLL, 게임 테스트 미실시 |
+| 촉수 본체 | `lewd_meme2.1.0/MidnightPawn.dll` | 문자열 428개/IL 참조 471곳 | 시험 DLL, 게임 테스트 미실시 |
 | 암거래 확장 | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 문자열 195개/IL 참조 208곳 | 시험 DLL, 게임 테스트 미실시 |
 | 고해상도 초상화 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 문자열 193개/IL 참조 223곳 | 시험 DLL, 게임 테스트 미실시 |
 | 매음굴 확장 | `LewdMemeBrothel-0.10.4-candidate/Localization/ko.csv` | 원문 178키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
@@ -52,7 +52,7 @@
 | 촉수 번식 상호작용 | `lewdMemeBrood v0331/Content/interactionLines.json` | 135줄 중 125개 대사 번역, 10개 보류 | JSON 구조·치환 변수 검사 통과, 실제 적용 미검증 |
 | 세로나의 용 모드 | `[SRW-STM]SarronaTheDragon/Localization/ko.csv` | 553키(551개 한국어 문구 + 원본 빈 값 2개) | 원본 키·치환 변수·Books loc 참조 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **629개**, 변경된 IL 문자열 참조 **685곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
+- DLL 문자열 번역 합계 **816개**, 변경된 IL 문자열 참조 **902곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -332,3 +332,11 @@
 - **GitHub 재조회 검증**: 추가 네 배치의 원문↔번역 대조표와 수정 DLL을 재조회하여 각각 45/45, 73/73, 48/48, 81/81항목과 참조 수 47+73+49+81=250곳을 확인. 기존 `ldstr` 토큰 참조는 해당 247항목에서 0곳. 원본 모드는 미수정.
 - **현재 활성 중국어 문자열 잔존량** (`#US`에 중국어 한자가 있고 `ldstr` 토큰 참조가 확인된 경우): `MidnightPawn.dll` **524문구/762참조**, `ShadowTrade.dll` **774문구/948참조**, `ItemPortraitHD.dll` **36문구/74참조**. 세 DLL 합계 **1,334문구/1,784참조**. 중국어를 포함한 경로 예시, 원본 판정값, 체형·세력·이름 생성 데이터, 번역 보류 문구가 섞여 있으므로 **1,334개를 전부 번역 대상으로 집계하면 안 됨**.
 - **중요 검증 한계**: 파일의 PE/CLR 메타데이터 크기, 문자열 역디코딩, `ldstr` 참조를 기계적으로 검사했을 뿐, 전체 IL 동작 분석·게임 로더 실행·실제 화면 확인은 하지 못함. 현재 DLL은 여전히 시험본.
+
+## 2026-11-21 — DLL 2배 분량 작업 1차: MidnightPawn
+
+- 원문/번역 초안 `번역대조표/MidnightPawn_20261121_double_batch_draft.tsv`에서 NPC 식별명·직업명 20건을 제외하여 **187문구, 217곳 활성 IL 참조**를 `MidnightPawn.dll`에 직접 반영.
+- 번역 대상: 사용 화면, 숙주/촉수 설명, 기본 장치 설명, 고객 패널 및 상태 정보, 기록·기술 로그. 내부 판정/저장값으로 쓰일 가능성이 있는 NPC 이름, 세력 등은 남김.
+- **결과**: `lewd_meme2.1.0/MidnightPawn.dll`, `번역대조표/MidnightPawn_DLL_double_batch_20261121.tsv`, `번역대조표/DLL_additional_20261121.csv` 갱신. 원본 #US 문자열·원본 모드 파일 보존.
+- **정적 검증**: 원문 1:1 대조, 플레이스홀더 보존, 새 UTF-16LE 역디코딩, 활성 IL 참조 217곳 전환, 변경 외 IL 코드 불변. 신규 #US 6448바이트·PE/CLI 섹션/메타데이터 크기 반영. 크기 320000 → 326144바이트. **실제 게임 로딩 미검증**, 시험 DLL.
+- 세 시험 DLL 누적 816문구/902곳 IL 참조.
