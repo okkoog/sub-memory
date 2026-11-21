@@ -4,9 +4,9 @@
 - Total active IL occurrence keys: 3619 (includes diagnostics, internal strings and logs)
 - Korean external ko.csv translations: 814; untranslated/fallback occurrences: 2805
 - Reviewed historical source strings: 295; mapped and selected IL sites: 351; unique selected historical keys: 351
-- New manually reviewed direct keys: 449; existing trusted ko.csv entries preserved: 780
+- New manually reviewed direct keys: 449; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 814
 - Comparison/identifier sites withheld: 3; reviewed strings at non-UI sites withheld: 57
-- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, existing translations validated.
+- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.
 - No DLL files edited; ZIP contains only ko.csv and progress report.
 - Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.
 
