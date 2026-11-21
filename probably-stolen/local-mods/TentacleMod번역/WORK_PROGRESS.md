@@ -25,7 +25,7 @@
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
-| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275곳·툴팁 275곳·섹션 13종, 추가 디버그/진단 문구 138곳, 본체 설명서 20개 비공백 줄 한국어 소스 번역**; DLL 미컴파일·게임 실행 미검증 |
+| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275곳·툴팁 275곳·섹션 13종, 추가 UI·로그 문구 330곳, 본체 설명서 20개 비공백 줄 한국어 소스 번역**; DLL 미컴파일·게임 실행 미검증 |
 | `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
 | `[SRW-STM]MentorToSarrona/` | manifest v1.2.0, `MentorToSarrona.dll` 9,216바이트(소스/Localization 없음) | **manifest 설명 한국어화만 완료**; DLL 내부 대사 번역 미완료 |
 | `3843110449/` (GeorgioToElueym) | manifest v1.1.0, `GeorgioToElueym.dll` 11,776바이트 + `ToElueym.dll` 4,608바이트(소스/Localization 없음) | **manifest 이름·설명 한국어화만 완료**; DLL 내부 문구 번역 미완료 |
@@ -185,6 +185,16 @@
 - **독립 검사**: 원본과 한국어판의 C# 문자열 리터럴 바깥 부분을 비교하여 `PanelConfig`, `BroodTagPicker`, `ModEntry`, `PanelRowPatch`, `FamilyMods`, `ConfigRegistry`, `PanelMarks` 모두 동일 확인. `DebugPanel`은 한글 폰트 후보만 추가한 차이, `ManualTextRenderer`는 한국어 상수 추가, `SpecialAndManualPatches`는 설명서 템플릿 참조 한 곳만 교체. 모든 번역 매핑을 별도 TSV로 기록.
 - **중요한 미완료 사항**: `LewdMemeConfig.dll` **미컴파일 / 미수정**, 단독으로 실행할 수 있는 전체 한국어 빌드 미제작. 컴파일에 게임 Managed DLL 등 의존성이 필요. 실제 로더에서의 게임 실행·UI 글꼴·기능·모드 호환성은 검증하지 못했음. `SelfTestRunner.cs`의 진단 문구, `SpecialAndManualPatches.cs`의 나머지 중국어 문자열, 원본 테스트용 중국어 설명서와 내부 비교용 기본값은 아직 남아 있음. 이 작업을 **인게임 완료로 표시하면 안 됨**.
 - **다음 순서**: SelfTestRunner 및 잔여 실제 표시 문구 선별 → 게임 빌드 의존성 확보 시 안전한 컴파일/테스트 DLL 생성 → 인게임 기능·한국어 글꼴 검증.
+
+## 2026-11-21 — lewd_meme_config SelfTestRunner 및 SpecialAndManualPatches 소스 번역 추가
+
+- **작업 배경**: 기존 `PanelKeys.cs`/`FamilyPanelKeys.cs`의 설정 라벨·툴팁 작업 이후 남아 있던 C# 진단 메시지 및 일부 화면 출력 문자열을 1:1로 확인. **원본** `TentacleMod/lewd_meme_config0.7.2-pre/Source/` **변경 없음**, 번역 파일과 대조표는 `TentacleMod번역/`에만 기록.
+- **`Integration/SelfTestRunner.cs`**: 원본 중국어 리터럴 **132종(168곳)** 중 **130종(162곳)** 한국어 번역. `未装配`, `黑市` 2종(합계 6곳)은 패치 상태 및 세력 설정/조건 판정에 실제로 사용되는 문자열이므로 **원본대로 보존**. 한국어 안내 문구에 들어가는 `黑市`도 설정값과 일치하도록 원문 표기를 유지함. 기술 토큰 `GetBodyLevel`, `MAIDEN_FACTION`, `IPH`, `fatigue_enabled`, `PriceHint`, `Current` 등 유지. Git 커밋 `f55929a7db8c99a991fc8c8e496a5283290990a7`. 대조표 `번역대조표/LewdMemeConfig_SelfTestRunner_strings.tsv` (132종, 상태/원문/번역/출현 수), 대조표 최종 커밋 `a097e253ea79c8225de490db2bfd88d13e5d6fce`.
+- **`Patches/SpecialAndManualPatches.cs`**: 원본 중국어 리터럴 **44종(45곳)** 중 일반 오류·설명서·저장 복원·사용자 지정 이름 목록·효과 로그 등 **29종(30곳)** 한국어 번역. **4종(4곳) 세력 분기 조건** `上层区`, `治安部`, `黑市`, `革命军`은 **원문 그대로 보존**. 나머지 **11종(11곳)의 성적 묘사·대사**는 임의 순화·개작하지 않고 **미번역**으로 유지하여 별도 대조표에 보류 표시. 커밋 `be8e79e4f8ac414ce32f8c51e7fb682b767683c7`. 대조표 `번역대조표/LewdMemeConfig_SpecialAndManualPatches_strings.tsv` (44종, 보존/보류 구분).
+- **기존 번역 내용 보존**: `SpecialAndManualPatches.cs`의 설명서 출력은 `ManualTextRenderer.TemplateKo`를 그대로 호출하며 본체 한국어 매뉴얼 관련 이전 수정은 되돌리지 않았음.
+- **검증**: GitHub 반영본 다시 조회. `SelfTestRunner.cs` 리터럴 개수 원본/번역본 **413/413**, `SpecialAndManualPatches.cs` **106/106**. 문자열 리터럴 이외 C# 코드 부분 **두 파일 모두 동일** (`SpecialAndManualPatches.cs`의 기존 의도된 `Template`→`TemplateKo` 호출 차이 제외). 로직·설정 키·분기 조건 수정 없음. 소스 코드상 구조 검증이지 **컴파일/런타임 검증은 아님**.
+- **누적 이번 세션 추가**: 이전 번역한 기본 UI·로그 **138곳**에 이번 진단 **162곳** 및 후킹/설명서 로그 **30곳**을 추가하여 `lewd_meme_config` 소스에서 해당 분류의 번역 총 **330곳** (기존 설정 라벨 275곳, 툴팁 275곳과 별도). 원본 코드를 대상으로 한 자동 중문 잔존 검사는 운영상 식별자/테스트 기대값과 보류 대사를 구분해야 함.
+- **미완료**: `LewdMemeConfig.dll` 컴파일 및 게임 적용은 미실시, `SpecialAndManualPatches.cs`의 11개 서술형 문구 보류, 기타 패치 소스에 남은 실제 표시 문구 재점검 필요. 전체 번역/실게임 적용 완료로 집계 금지.
 
 ## 기술 조사 (확인된 사실)
 
