@@ -6,6 +6,8 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
+> **2026-11-21 최신 변경: RedLightDistrict 제외 지시 해제, 번역 및 보호 검수 재개.** `RedLightDistrict_v1.1.1`은 외부 로컬라이제이션을 지원하므로 기존 모드 제작자의 로컬키 DLL을 유지하고 한국어 CSV만 갱신한다. **3,619키 중 3,512키 한국어, 나머지 107키는 내부 비교·세이브·식별자 보호로 원문 유지**(미분류 수동 번역 대기 0). 기존 보관함 검색과 급식기/정수기 설명 비교에 연결된 위험 키 10개를 추가 보호했으며, 근거는 `RedLightDistrict_v1.1.1/translation-work/COMPARISON_SAFETY_REVIEW_20261121.md`에 기록했다. 기존 **17개 DLL 정적 작업 기록은 그대로**이며, RLD는 **별도의 외부 Localization 작업 실적**이다. 실제 게임 실행 검증은 미실시.
+
 > **2026-11-21 추가 진행(사용자 지시: RedLightDistrict 완전 제외):** 앞선 16개 DLL 정적 작업 이후, 별도 버전 `3842259965/probably_adult_goods.dll`(manifest v1.1.1)의 내장 Localization **181키**를 한국어화하고 실제 DLL에 `ko`/`ko-KR` 리소스 2개를 추가했다. 원본 코드 호출부 검수 후 화면 전용 중국어 툴팁 **10개 IL 참조**를 별도 치환해 정적 검증을 마쳤다. **현재 완료 17번째 DLL, 실게임 테스트는 모두 미실시.** 자세한 사항은 문서 말미의 v1.1.1 항목을 참조한다. RedLightDistrict 원본·번역 파일과 관련 스크립트는 이번 작업에서 수정하지 않았다.
 
 
@@ -883,3 +885,15 @@
 - **배포/커밋:** `TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_20261121.zip` **8,042,558바이트**(교체 DLL, 한국어 manifest/README, 참고 ko.csv, 감사 문서). GitHub 적용 커밋 **`585e772f93544ecf0c369ee8c2253bd03d26575c`**. 기타 모드 원본/번역 폴더의 DLL은 변경하지 않았다. **RedLightDistrict의 모든 작업은 사용자 요청으로 제외**했다.
 - **이번 작업 단위 보고:** 대상 `3842259965/probably_adult_goods.dll` / 내장 번역 검수 총 181키 / 반영 181키(원문 영문 기준 2 포함) / 중국어 잔여 `#US` 고유 18개(원문 기능 보호·추가 분류) / 보류 0개(내장 Localization) / 새 DLL 리소스 2개 + 직접 UI IL 10곳 / 실게임 검증 미실시 / 최종 커밋 위 참조. 이후에는 RedLightDistrict를 제외한 미작업 모드의 원본/버전 충돌 및 번역 상태를 한 단위씩 확인한다.
 
+
+## 2026-11-21 — RedLightDistrict v1.1.1 다시 포함: 3,512개 번역 유지, 비교·저장 안전성 교정
+
+- **범위 변경:** 앞선 작업 기록 중 'RedLightDistrict 제외'는 그 당시 사용자 요청에 따른 과거 정책이다. 지금은 사용자의 새로운 지시에 따라 다시 **포함**한다.
+- **원본/모드 구조:** `TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll`은 Git LFS 원본이다. 현재 v1.1.1은 원문 CJK `ldstr` 참조별로 키를 부여한 CSV 조회 브리지가 이미 적용돼 있으며, 해당 DLL은 수정하지 않았다. 한국어 데이터는 `TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv`에 저장한다.
+- **작업 재개 시점의 GitHub 검사:** 실제 `LOCALIZATION_PROGRESS.md`가 총 **3,619키 / 한국어 3,522키 / 내부 보호 97키 / 번역 대기 0키**, 수동 검수 `manual_direct_batch01`~`46`을 기록하고 있었다. 원본 `cn.csv`·한국어 CSV·전수 키 감사표를 직접 대조하여 키 수·중복 0·상태 전수 분류를 확인했다. 단순 미번역 키 97개로 해석하면 안 되며 코드/세이브 내부 값이 포함돼 있다.
+- **실제 결함 위험 발견:** `KEY_COVERAGE_AUDIT_20261121.tsv`의 'translated' 키 가운데 문자열 비교·찾기 호출과 연결된 **12개**를 발견. `translation-work/RLD_COMPARISON_IL_AUDIT_20261121.md`에서 원본 CLR `ContainerByName`, `RefreshShowerDescription`, `FindTankInCell`, `AppendFeederLine`, `AppendTankLine`의 실제 IL을 추출해 비교·설정 흐름을 검수했다.
+- **보호 대상 추가 10키:** 보관함 4종의 문자열 완전 일치 비교 4키를 원문 유지로 변경. 기존 저장된 설명에서 상태 영역을 `IndexOf`로 찾아 교체하는 급식기/정수기에서는 상태 문구·생성 헤더·검색 접두부 **각 3개, 총 6개**를 한 묶음으로 원문 유지해 중국어/한국어 접두부 혼합으로 인한 상태 줄 반복 누적 위험을 제거했다. 원본의 대조문만 보호하고 출력 헤더를 한국어로 두면 여전히 누적 문제가 생기므로 같은 접두부가 나오는 모든 호출을 포함했다.
+- **보호하지 않은 비교 6키:** 샤워실 `RefreshShowerDescription` 2개 및 정수기 `FindTankInCell` 4개는 저장된 짧은·긴 설명을 *같은 대상 문자열*과 비교하고 필요 시 그 설명을 다시 설정하는 용도로, 보관함 이름 검색과 구별해 한국어를 유지했다. 기존 저장 및 타 모드 동작은 실제 게임에서 반드시 확인할 것.
+- **실제 반영:** `translation-work/internal_string_reference.tsv`에 신규 보호 10개와 사유·한국어 참고안을 보관, `merge_localization.py`에 `COMPARISON_PROTECTION` 누락·번역 유입 검증 추가. GitHub Actions의 CSV 병합 및 키 검증 **성공**, 수정 `ko.csv` 재생성. **최신 결과 한국어 3,512 / 원문 보호 107 / 미분류 대기 0 / 합계 3,619키**. 원본 DLL/원본 CSV는 변경하지 않았다.
+- **문서 및 결과:** `RedLightDistrict_v1.1.1/LOCALIZATION_PROGRESS.md`, `KEY_COVERAGE_AUDIT_20261121.tsv`, `UNTRANSLATED_REVIEW_QUEUE_20261121.tsv`, `README_ko.txt`, `translation-work/COMPARISON_SAFETY_REVIEW_20261121.md` 갱신. 기능 비교 보호 추가 및 자동 검증 커밋 `daf115b602a38ee934885e331c3b25ec3d9c0b42`; 기록·검수 보강 `1e3c0d84d42f22966b261664d567f443afbfd663`, `1693fd49c7de5633cad5ab9a29ca29db9ff2fb2c`.
+- **단계 판정:** 외부 Localization 3,512개와 내부 107개 보존에 대한 **키·포맷·기능 비교 정적 검수 완료**. 실제 Unity/CLR 로더·게임 UI·기존 세이브·모드 충돌 **검증 미실시**. 별도의 한국어 DLL을 새로 만들지 않았으며 본 RLD CSV 작업을 앞서 집계한 '17개 DLL 완료' 실적에 추가 합산하지 않는다. 추가로 안전하게 치환할 수 있는 항목이 확인되기 전까지 107개를 일괄 한국어로 변경하지 않는다.
