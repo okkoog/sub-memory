@@ -108,10 +108,54 @@ jobs:
           print(stats.read_text())
           print('First twenty Chinese entries:',inventory[:20])
           PY
+      - name: Index managed resources and search for embedded Chinese dialogue
+        shell: bash
+        run: |
+          python3 -m pip install --quiet dnfile
+          python3 - <<'PY'
+          from pathlib import Path
+          import dnfile, re, hashlib, json, csv
+          src=Path("probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll")
+          out=Path("probably-stolen/local-mods/TentacleMod번역/번역대조표")
+          pe=dnfile.dnPE(str(src))
+          resources=pe.net.resources
+          lines=[]
+          snippets=[]
+          for i,r in enumerate(resources):
+              name=str(r.name)
+              d=r.data
+              if isinstance(d,bytes):
+                  size=len(d)
+                  sha=hashlib.sha256(d).hexdigest()
+                  kind='bytes'
+                  try: s=d.decode('utf-8-sig')
+                  except UnicodeError: s=''
+                  cjk=len(re.findall('[\u3400-\u9fff]',s))
+                  lines.append((i,name,kind,size,sha,cjk))
+                  if cjk>0:
+                      snippets.append({'name':name,'size':size,'cjk':cjk,'sample':s[:3000]})
+              elif isinstance(d,dnfile.resource.ResourceSet):
+                  lines.append((i,name,'ResourceSet',len(d.entries),'',0))
+                  for entry in d.entries:
+                      v=str(getattr(entry,'value',''))
+                      cjk=len(re.findall('[\u3400-\u9fff]',v))
+                      if cjk:
+                          snippets.append({'name':name+'/'+str(entry.name),'size':len(v),'cjk':cjk,'sample':v[:3000]})
+              else: lines.append((i,name,type(d).__name__,0,'',0))
+          with (out/'Eleanor_v1.0.3_CLR_resource_index_20261121.tsv').open('w',encoding='utf-8',newline='') as f:
+              w=csv.writer(f,delimiter='\t')
+              w.writerow(['index','resource_name','kind','byte_size_or_entry_count','sha256','utf8_cjk_count'])
+              w.writerows(lines)
+          (out/'Eleanor_v1.0.3_CLR_resource_text_samples_20261121.json').write_text(json.dumps(snippets,ensure_ascii=False,indent=2),encoding='utf-8')
+          print('CLR resource count',len(resources))
+          print('Resources with CJK text',len(snippets))
+          print('First 25 entries',lines[:25])
+          print('First 5 text samples',snippets[:5])
+          PY
       - name: Commit audit text only
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_US_CJK_inventory_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_STRUCTURE_AUDIT_20261121.md'
+          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_US_CJK_inventory_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_STRUCTURE_AUDIT_20261121.md' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_index_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_text_samples_20261121.json'
           git diff --cached --quiet || (git commit -m 'audit(tentacle): extract Eleanor v1.0.3 CLR user strings' && git push)
