@@ -6,6 +6,8 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
+> **2026-11-21 최종 아카이브 감사:** Brood 상호작용 대사 **135/135** 완료 및 `ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip` 독립 설치용 파일로 패키징(CRC 성공, 커밋 `dfaa9af938f8187f18e29f3037c1d23ac2e740c1`). 엘리너 v1.0.0/통합 v1.1.3 manifest는 원본 XML 전체에서 표시용 `Name`·`Description` 두 항목만 한국어화한 원형 구조로 재확인했으며, 두 ZIP에 최신 manifest 반영(CRC 성공, 커밋 `87ab5be1a926cbf4dfe360e61ddec6e22c8971db`). 검사서 `번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md`. 실제 게임 검증은 미실시.
+
 > **2026-11-21 Brood 후속 마감:** `lewdMemeBrood v0331/Content/interactionLines.json` 실제 사용 대사 **135/135**를 원문 문맥별로 개별 번역했으며 `lines[].text`의 중국어 잔존 0개, 원문 `tags`/ `kind` 및 `{name}`·`{tentacle}` 변수 변경 0개를 확인했다. 이 작업은 DLL 작업과 별개로 외부 JSON에 반영했으며 실제 게임 검증은 미실시.
 
 > **최종 갱신(2026-11-21): 원본 20개 모드 폴더 전부 번역본 쪽에도 대응 폴더 존재.** 기존 17개 한국어 DLL에 엘리너 독립 **v1.0.0** DLL 1개와 통합 **v1.1.3** DLL 1개를 추가하여 19개 번역 DLL로 확장했고, **RedLightDistrict v1.1.1 3,619개 원본 IL 호출 지점 전체를 실제 외부 로컬키 `ko.csv`에 연결하는 DLL**을 추가해 총 **한국어 수정 DLL 20개**의 정적 결과물을 확보했다. RLD는 기존 **214개 표시 문구만 치환한 불완전 DLL을 폐기하고 전면 브리지로 교체**했으며, 3,512키는 한국어, 내부 비교/저장 식별자 107키는 원문 보호한다. 최종 RLD DLL과 CSV **둘 다 반드시 설치**. 네 개 관련 DLL에 화면/설정/대사 예비 문구 17곳을 더 수정하고 ZIP을 재검증했다. Bai She의 55MB 이미지 DLL은 실제 한자 UI IL 0개/내장 CSV 0개이므로 원본 DLL 교체 없이 한국어 메타데이터만 제공. **원본 폴더 수정 0, 정적 검사 완료. 실게임 실행·세이브·호환성 검증은 전부 미실시.** 상세 최신 섹션은 문서 맨 아래 참조.
@@ -951,3 +953,10 @@
 - 적용 파일 `TentacleMod번역/lewdMemeBrood v0331/Content/interactionLines.json`; 커밋 `dd34f38cc0a7919c954a29cf2a44580934ad4bb0` 및 메타데이터 `208b5b93f07e77fdeec0c9e1aab3c9318a637e81`. 정적 검사서 `번역대조표/Brood_v0331_interaction_lines_COMPLETE_STATIC_AUDIT_20261121.md`, 커밋 `519edaa56a663dcb3912f63548c0b5a5148bf410`.
 - **최종 구분:** 외부 대사 데이터의 파일·키·원문 비교 기반 번역 종료. 실제 게임의 JSON 로딩 및 발화 화면 확인은 미실시, 실게임 검증 필요.
 
+
+## 2026-11-21 — 릴리스 ZIP과 원본 manifest 무결성 최종 재검사
+
+- 엘리너 독립 v1.0.0 및 통합 v1.1.3에 대한 번역 `manifest.xml`을 **원본 XML 형식·GameVersions·Prerequisites·Assemblies·Capabilities 전부 바이트 수준으로 보존**하고, 화면에 표시되는 `Name`·`Description` 내용만 한국어로 치환한 형태로 정돈했다. v1.0.0의 선행 모드는 원문 요구처럼 **Probably Adult Goods v1.1.0 정식판**으로 정확히 표기하며 '이상'이라는 추가 추정을 제거했다.
+- 두 ZIP을 같은 버전의 최종 한국어 DLL SHA256 `da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76` / `ca7ee69ba8b80f7e24a5bc127cce46ec1a4534c82a1f7f63f2fc0b8fee1c798c`와 최신 manifest로 재패키징. 각각 ZIP CRC 통과, 내부 DLL 바이트 정확 일치, 원본 manifest와 표시 필드 2개 외 차이 0. `번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md` 및 커밋 `87ab5be1a926cbf4dfe360e61ddec6e22c8971db`.
+- Brood v0.3.31의 한국어 대사 135개와 `README_ko.txt`, 원문·조건·변수 대조 검사서를 **`ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip`** 3개 엔트리로 패키징. 크기 **10,386바이트**, 원문 `kind`/ `tags` 변형 0, 원래 변수 불일치 0, 대사 원문과 동일한 미번역 텍스트 0, 대사 중국어 잔존 0, ZIP CRC 통과. 커밋 `dfaa9af938f8187f18e29f3037c1d23ac2e740c1`.
+- 최종 패키지는 모두 **원본 같은 버전에 덮어쓰는 교체 패치**다. 홍등가 ZIP은 대용량 Git LFS이고, **DLL과 `Localization/ko.csv` 동시 설치 필수**. 원본 게임·Unity/CLR 실행 및 세이브/충돌 테스트는 실시하지 않았으므로 정적 검사와 실사용 성공을 혼동하지 않는다.
