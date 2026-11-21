@@ -54,7 +54,7 @@ jobs:
                       }
                   }
                   if(translated.Count!=214)throw new Exception("reviewed count mismatch");
-                  var allow=new Regex(@"::(?:Build.*(?:Tooltip|Description|Dialogue|Panel)|ShowPanel|Append.*Line|Open.*Window|OpenPanel|Update.*Text|GetTooltip|Get.*Description|Make.*Tooltip|Refresh.*Label|Make.*Text|ShowTooltip|ShowDialog)",RegexOptions.Compiled);
+                  var allow=new Regex(@"::(?:Build.*(?:Tooltip|Description|Dialogue|Panel)|ShowPanel|Append.*Line|Open.*Window|OpenPanel|Update.*Text|GetTooltip|Get.*Description|Make.*Tooltip|Refresh.*Label|Make.*Text|ShowTooltip|ShowDialog)",RegexOptions.Compiled|RegexOptions.IgnoreCase);
                   using var md=ModuleDefMD.Load(args[0]);
                   var methods=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody).Select(m=>(key:t.FullName+"::"+m.Name,method:m)))
                       .GroupBy(x=>x.key).ToDictionary(g=>g.Key,g=>g.Select(x=>x.method).ToArray());
