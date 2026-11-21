@@ -1,0 +1,60 @@
+name: RLD final bridge package with corrected installation instructions
+on:
+  push:
+    paths: [.github/workflows/temp-rld-final-overlay-package-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_FULL_CSV_BRIDGE_DLL_AUDIT_20261121.md
+          sparse-checkout-cone-mode: false
+      - name: Assemble final bridge patch with Korean instructions and verify integrity
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib,csv
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          base=root/'RedLightDistrict_v1.1.1'
+          dll=base/'RedLightDistrict.dll'
+          assert dll.stat().st_size==153228288
+          assert hashlib.sha256(dll.read_bytes()).hexdigest()=='6089ad1d83d1a3131cc9e141d9c4dd7d66f8f2da6b0afde7010db403b4def03f'
+          with (base/'Localization/ko.csv').open(encoding='utf-8-sig',newline='') as f:
+              rows=list(csv.reader(f))
+          assert len(rows)==3512 and len({r[0] for r in rows})==3512
+          readme=(base/'README_ko.txt').read_text(encoding='utf-8')
+          assert 'DLL과 CSV 둘 다 필요' in readme and '6089ad1d83d1a313' in readme
+          assert '蛙娘.png' in (base/'RedLightDistrictPerson/README_ko.txt').read_text(encoding='utf-8')
+          archive=root/'ProbablyStolen_RLD_v1.1.1_DLL_Korean_CSV_Bridge_3512_20261121.zip'
+          with ZipFile(archive,'w',ZIP_DEFLATED,compresslevel=1) as f:
+              for path in ['RedLightDistrict.dll','manifest.xml','README_ko.txt','Localization/ko.csv','RedLightDistrictPerson/README_ko.txt']:
+                  f.write(base/path,arcname='RedLightDistrict_v1.1.1/'+path)
+              f.write(root/'번역대조표/RedLightDistrict_v1.1.1_FULL_CSV_BRIDGE_DLL_AUDIT_20261121.md',arcname='STATIC_AUDIT.md')
+          with ZipFile(archive) as f:
+              assert f.testzip() is None and len(f.namelist())==6
+          print('Final archive',archive.stat().st_size,'bytes, sha256',hashlib.sha256(archive.read_bytes()).hexdigest(),'6 verified files')
+          PY
+      - name: Publish final Git LFS archive
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RLD_v1.1.1_DLL_Korean_CSV_Bridge_3512_20261121.zip
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(rld): ship full bridge DLL and ko.csv with corrected Korean setup docs'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 5
+            done
+            exit 1
+          fi
