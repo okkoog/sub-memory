@@ -54,7 +54,7 @@ jobs:
               for a,b in zip(x,y):
                   assert a['id']==b['id']
                   label_changed+=a['display']!=b['display']
-          assert label_changed==52
+          assert label_changed==53
           dialogue_changed=dialogue_same=0
           def rows(x,y):
               global dialogue_changed,dialogue_same
@@ -83,7 +83,7 @@ jobs:
           assert clear(original_manifest)==clear(ko_manifest)
           assert '<ModVersion>1.1.1</ModVersion>' in ko_manifest
           assert (root/guide/'使用说明.txt').read_text(encoding='utf-8').count('v1.')>=10
-          print(f'Checked 70/72 descriptions, 52/53 display labels, 170/198 dialogues, 5 Korean-translated night scenes, original manifest identity preserved.')
+          print(f'Checked 70/72 descriptions, 53/53 display labels, 170/198 dialogues, 5 Korean-translated night scenes, original manifest identity preserved.')
           PY
       - name: Package each original-version overlay with integrity checks
         shell: bash
