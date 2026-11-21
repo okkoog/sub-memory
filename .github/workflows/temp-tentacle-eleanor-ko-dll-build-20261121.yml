@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/temp-tentacle-eleanor-ko-dll-build-20261121.yml'
-      # Reviewed batches are committed separately; rebuild only when workflow is updated to avoid binary-write races.
+      # Reviewed batches are committed separately; trigger only this workflow after batch13 closes all 1553 active keys.
   workflow_dispatch:
 permissions:
   contents: write
