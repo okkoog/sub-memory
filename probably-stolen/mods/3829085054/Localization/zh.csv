@@ -131,15 +131,15 @@ is_gp_unbound_allrestock,全箱上货快捷键已解除绑定
 is_gp_col_pair,配对可收纳容器
 is_gp_pair,配对容器
 is_gp_pair_list,已配对清单
-is_gp_pair_desc,点一下再点容器即可配对；配对后自动退出
-is_gp_pair_list_desc,查看并取消本箱已配对的容器
-is_msg_link_pick,请点击要配对的容器；配对后自动退出；按 Esc 取消
-is_msg_link_ok,已配对「{0}」，一键收纳会把里面的同类物品全部收走
-is_msg_link_off,已取消与「{0}」的配对
-is_msg_link_off_all,已取消全部 {0} 个配对
-is_msg_link_full,配对容器已满 {0} 个，请先取消配对容器后再进行配对。
-is_msg_link_lost,与「{0}」的配对已失效，容器不在了
+is_gp_pair_desc,点一下再点容器即可配对；配的是这一整类，一键收纳会收店里所有同款
+is_gp_pair_list_desc,查看并取消全店共用的配对清单
+is_msg_link_pick,请点击要配对的容器；配对的是这一整类，一键收纳会收店里所有同款；按 Esc 取消
+is_msg_link_ok,已配对「{0}」这一类，一键收纳会收店里所有同款容器里的同类物品
+is_msg_link_off,已取消「{0}」这一类的配对
+is_msg_link_off_all,已取消全部 {0} 类配对
+is_msg_link_full,已配对 {0} 类容器，请先取消一类后再配对
 is_msg_link_in_store,请回到店内再配对容器
+is_msg_link_list_in_store,请回到店内再打开配对清单
 is_msg_link_cancel,已退出容器配对
 is_msg_link_bad_not_container,这不是容器
 is_msg_link_bad_locked,这个容器上锁了，打不开
@@ -151,14 +151,12 @@ is_msg_link_bad_display,这是展示品，不能配对
 is_msg_link_bad_no_grid,这个容器里没有可放物品的格子
 is_msg_link_bad_unknown,这个容器不能配对
 is_link_unknown,容器
-is_link_win_title,已配对容器 · {0}
 is_link_win_title_plain,已配对容器
-is_link_win_count,共 {0} 个
+is_link_win_count,共 {0} 类容器
 is_link_win_none,还没有配对容器
 is_link_win_hint,在齿轮面板点「配对容器」开始
 is_link_win_row,{0}. {1}
-is_link_win_row_desc,点击取消与这个容器的配对
-is_link_win_missing,{0}（未找到）
+is_link_win_row_desc,点击取消「{0}」这一类的配对；店里现有 {1} 台可收
 is_link_win_unlink_all,全部取消配对
 is_link_win_unlink_all_desc,清空所有配对，不影响箱子里的物品
 

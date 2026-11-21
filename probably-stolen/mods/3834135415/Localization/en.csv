@@ -1,6 +1,7 @@
 # Vanilla Gun Expansion English
 powder_amount,Powder: {0}/{1} g
 shell_desc,"Reusable cases. Drag them onto gunpowder to load them. One case holds up to 5 rounds, and loading fewer still uses it up."
+shell_case_count,Cases: {0}/{1}
 shell_chip_bulk,Batch · {0} × {1} printer chip
 fill_title,Load cartridges
 fill_requires_press,Requires a Case Press Module.
@@ -14,6 +15,7 @@ casing_ledger_invalid,The recovery record could not be read. It has not been rep
 casing_claim,Send {0} to the shop · {1} waiting
 casing_claim_failed,Not enough room in the shop.
 casing_empty,No spare cases.
+casing_auto_sent,The range sent {0} empty cases back to the shop.
 vge_shell_22_metal_name,.22 Metal Empty Cases
 vge_shell_22_poly_name,.22 Polymer Empty Cases
 vge_shell_10_metal_name,10mm Metal Empty Cases
@@ -38,7 +40,10 @@ vge_boundary_chip_note,Top firepower and accuracy.
 chip_name_multi,3D Printer Chip (x{0} {1})
 printer_title_loaded,{0} · {1}
 gunmod_title_condition,{0} · {1}
-gunmod_repair,Repair
+gunmod_repair,Refurbish
+gunmod_repair_welder_tip,"Refurbish with the Plasma Cutter, no Gun Parts needed"
+gun_refurbish_menu,Refurbish
+powder_pour_menu,Pour Out a Pile
 gunmod_repair_tip,Restore condition: {0}% chance
 tooltip_quality,Print quality: {0}%
 client_rev_gunsmith_name,Revolution Gunsmith
@@ -113,8 +118,8 @@ hist_merc_rental,Went on a mission with a mercenary on day {0}
 rental_returned,The mercenary returned {0} (kills +{1}).
 rental_claim,Loss compensation claim
 rental_claim_gun,Lost gun: {0}
-rental_claim_full_1,"Bad luck on the job, your {0} didn't make it back. Here's the claim, I'm paying what it's worth."
-rental_claim_full_2,"Lost your {0} on the job. I know how this works, so here's the claim for the full amount."
+rental_claim_full_1,"Bad luck on the job, your {0} didn't make it back. Here's the claim, I'm paying what it's worth, less the rent."
+rental_claim_full_2,"Lost your {0} on the job. I know how this works, so here's the claim for the full amount, less the rent."
 rental_claim_short_1,"Things went sideways and I lost your {0}. Here's the claim, though cash is tight right now and that's all I can scrape together."
 rental_claim_short_2,"The job went bust with zero pay, and I lost your {0} too. Here's the claim, see if this number works for you."
 rental_claim_space,Clear a spot on the counter so I can set the claim down.
@@ -248,9 +253,38 @@ vge_gunpowder_name,Gunpowder
 vge_gunpowder_desc,Gunpowder measured in grams. Put it in cases to make rounds.
 vge_gunpowder_adv_name,Advanced Gunpowder
 vge_gunpowder_adv_desc,Advanced gunpowder measured in grams. Put it in cases to make rounds.
+vge_gunpowder_loose_name,Loose Gunpowder
+vge_gunpowder_loose_desc,"Loose gunpowder measured in grams, up to 30 g a pile. Put it in cases to make rounds, or drag it onto a gunpowder jar or another pile to combine them."
+vge_gunpowder_adv_loose_name,Loose Advanced Gunpowder
+vge_gunpowder_adv_loose_desc,"Loose advanced gunpowder measured in grams, up to 30 g a pile. Put it in cases to make rounds, or drag it onto an advanced gunpowder jar or another pile to combine them."
+vge_gunpowder_bottled_water_name,Bottle of Gunpowder (Standard)
+vge_gunpowder_adv_bottled_water_name,Bottle of Advanced Gunpowder (Standard)
+vge_gunpowder_small_bottled_water_name,Bottle of Gunpowder (Small)
+vge_gunpowder_adv_small_bottled_water_name,Bottle of Advanced Gunpowder (Small)
+vge_gunpowder_mini_bottle_name,Bottle of Gunpowder (Micro)
+vge_gunpowder_adv_mini_bottle_name,Bottle of Advanced Gunpowder (Micro)
+vge_gunpowder_large_bottled_water_name,Bottle of Gunpowder (Large)
+vge_gunpowder_adv_large_bottled_water_name,Bottle of Advanced Gunpowder (Large)
+vge_gunpowder_water_jug_name,Jug of Gunpowder
+vge_gunpowder_adv_water_jug_name,Jug of Advanced Gunpowder
+vge_gunpowder_med_bottle_red_name,Bottle of Gunpowder
+vge_gunpowder_adv_med_bottle_red_name,Bottle of Advanced Gunpowder
+vge_gunpowder_med_bottle_blue_name,Bottle of Gunpowder
+vge_gunpowder_adv_med_bottle_blue_name,Bottle of Advanced Gunpowder
+vge_gunpowder_med_bottle_violet_name,Bottle of Gunpowder
+vge_gunpowder_adv_med_bottle_violet_name,Bottle of Advanced Gunpowder
+vge_gunpowder_med_bottle_orange_name,Bottle of Gunpowder
+vge_gunpowder_adv_med_bottle_orange_name,Bottle of Advanced Gunpowder
+vge_gunpowder_med_bottle_small_pink_name,Bottle of Gunpowder
+vge_gunpowder_adv_med_bottle_small_pink_name,Bottle of Advanced Gunpowder
+powder_bottle_desc,"Gunpowder in a plastic bottle. Put it straight into cases to make rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary bottle again."
+powder_jug_desc,"Gunpowder in a plastic jug. Put it straight into cases to make rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary jug again."
 vge_module_ammo_press_name,Case Press Module
 vge_module_ammo_press_desc,Prints cases when fitted to a printer.
 vge_module_ammo_press_effect,Presses cases
+vge_module_nitration_name,Kotton Nitration Hydroponic Module
+vge_module_nitration_desc,"A module that nitrates Kotton Fiber into gunpowder when farming it. This module's unique effect doesn't affect other plants."
+vge_module_nitration_effect,Produce Loose Gunpowder instead of Kotton Fiber
 vge_ammo_chip_bulk_name,Advanced {0}
 upgrade_auto_feed_title,Auto Feed
 upgrade_auto_feed_desc,"Every night before work starts, 3D printers with a chip loaded restock the materials they need from your gunsmith storage bays."
@@ -271,6 +305,24 @@ manual_p4_title,Clashes and reputation
 manual_p5_title,Famous guns and gun oil
 manual_p6_title,"Paint, stickers and collectors"
 manual_p7_title,Range and league
+manual_page1_body,CHIPS\nThe Revolution Gunsmith visits every Monday once you've met him through Gunsmith on the Basic tab of Wild's Network or through the rebels. He sells frame chips, stun gun chips and gun mod chips. With Weapon Permit II he can bring frame chips for the Sentinel Mk. III and the Lancewell Revolver. The Peacemaker SMG and Rampart Shotgun chips need Permit III.\n\nFRAMES\nFrame chips need the CNC Module. If the recipe uses ingots, fit the Metal Printing Module too. Metal purity affects gun stats. Purer ingots print more gun mods and cases per batch, and perfect ones twice as many.\n\nOVERCLOCK\nOverclocked Printing in Wild's Network (Gunsmith group) adds an Overclock button to the 3D printer. It draws four times the power needed for the remaining work and finishes the item at once. Three uses per printer per day. Overclock Regulator cuts the draw from four times to twice the power.
+manual_page2_body,POWDER\nThe Revolution Gunsmith starts with 3-5 jars of regular and 1-2 of advanced powder per visit. Every 5 jars you buy, of either kind, add 25% of that visit's base stock, rounded to whole jars. At 20 jars he brings double. Each jar holds 30 g. An empty jar stays. Powder of the same grade pours into a jar, and loose piles combine into one pile of up to 30 g. Dr. Jackson sometimes sells a Kotton Nitration Hydroponic Module: fitted to a Hydroponic System growing kotton, it harvests loose gunpowder, 23 g for a small fiber, 30 g for a normal one and 39 g for a large one.\n\nCASES\nFit the Case Press Module in a printer's module bay to print empty cases. Metal cases and 12-gauge hulls need ingots and the Metal Printing Module. Non-lethal cases use plastic.\n\n.45 AFP AND 12-GAUGE\nEach visit, the Revolution Gunsmith tries to put out standard .45 AFP rounds and 12-gauge shells. Sometimes he also offers .45 AFP AP and non-lethal rounds. There must be room on the counter. The mercenary gun seller sells all three .45 AFP loads. The Security Requisition Officer sells 12-gauge shells (Weapon Permit III).
+manual_page3_body,LOADING\nEach round needs 1 g of powder. AP rounds use advanced gunpowder.\n- By hand, no printer needed: drag the cases onto the powder or vice versa. Box-select a batch to load it all at once.\n- In a printer with the Case Press Module: put the cases and powder in the printer. With Auto Feed on, the powder can stay in a gunsmith storage bay. Press the loading key for up to 60 rounds at a time.\n\nPACKING\nGun sellers carry empty boxes. The Revolution and Upper-Level Gunsmiths each bring one box of 40 rounds per visit. The ammo box chip prints two empty boxes per spool. The Box Dispenser makes them too.\nBuyers check the contents against the label. They may spot a short count, the wrong caliber or the wrong load.
+manual_page4_body,CHIP RACK\nA rack sits under the printer's chip slot, and the arrows beside the slot swap in the previous or next chip. Drag a Chip Rack Expansion Kit onto the printer to grow it, up to 3x3.\n\nGUN CABINET\nSold by the Retired Gunsmith and the Revolution Gunsmith. A new cabinet takes up 6x4 cells and starts with four weapon slots. Upgrade it with metal ingots for up to nine slots. It holds weapons and gun oil. The whole cabinet fits in a gunsmith storage bay.\n\nGUNSMITH STORAGE BAY\nOnce every tab is unlocked, you can fit three more of the vanilla Storage Bay Expansion Kits.\n\nGUN-MOD WINDOW\nClick a mod slot to list the gun mods in the shop and on the counter that fit. Click one to fit it. The old mod goes into the container the new one came from, then shop storage or the counter if needed. If none has room, the swap is cancelled. You can switch back to the vanilla window in the settings.
+manual_page5_body,WILD'S NETWORK, BASIC TAB, GUNSMITH GROUP\nMeet the Retired Gunsmith first for both upgrades.\n- Auto Feed (Weapon Permit II): each night a powered printer with a chip takes what it is missing from your gunsmith storage bays.\n- Auto Stock (Weapon Permit III): finished prints, frames included, go straight into a gunsmith bay with room, joining their own kind first.\n\nUPPER-LEVEL GUNSMITH (meet the Retired Gunsmith first)\nHis card goes on the counter. Call him on the store phone to book a visit for tomorrow or the day after, once every 5 days. He brings one vanilla or company gun from your highest permit tier, plus 3-4 premium gun mods, gun parts, gun oil, paint crates and sticker packs. There's a 10% chance the gun is famous.
+manual_page6_body,STREET CLASHES\nFrom night 12, a weapon permit in your display case can trigger a street clash the next day, raising weapon and ammo prices. The Revolution buys through lower-level and mercenary gun buyers (display Weapon Permits I and II respectively). Security sends a requisition officer. Each faction order you fill gives that side an edge.\n- Revolution win: 10% off at the Revolution Gunsmith for a week\n- Security win: someone visits once within the week to sell leftover ammo, priced by rounds left with 10% off\nEither way, displaying a Firearm or Heavy Firearm Neon Sign may bring war-damaged guns over the next five days.\n\nGUN BUYER REPUTATION\nOnly gun orders count towards reputation, not repairs. A New or Excellent gun earns reputation if its base Firepower, Style, Reliability, Ergonomics and Accuracy add up to at least those of a new gun of the same model. A Fair or Poor war-damaged gun costs reputation. It affects visits and order rewards, and drifts back toward neutral if you go a long time without such sales. Normally, display the matching permit to attract gun buyers: I for lower-level, II for mercenaries, III for upper-level.
+manual_page7_body,HISTORY\nA gun keeps its story: the street clash a war-damaged gun came out of, league wins, range records, mercenary missions\n- +4% each\n- Kills add +1% per 5 (at most +8%)\nWar-damaged guns carry kills. Guns from the mercenary seller have a base 50% chance to carry kills, affected by luck.\n- Two entries, 20 kills or three league top-three finishes make a famous gun, another +15%\n- History adds at most +40%\n\nUPKEEP\nA Plasma Cutter can refurbish a Poor gun to Fair without using Gun Parts. After 7 days without oil, a famous gun's bonus fades over the next 8 days. Its condition doesn't change. A can of gun oil has 5 uses. Apply it by hand or leave it in the gun cabinet. On nights the range is open, Range Famous Gun Upkeep oils famous guns on the lanes and in the locker when they're due.
+manual_page8_body,SHOWCASE\nFamous guns on display attract upper-level gun buyers. War-damaged guns attract lower-level buyers. With cabinet display on, guns in a displayed cabinet count too:\n- +15% for the first\n- +5% for each extra\n- up to three\nIf you have a famous gun in the shop, regular high-end gun orders from upper-level buyers offer a famous gun bonus. Repair, best gun and collector orders don't.\n\nMERCENARY RENTALS\nRent out up to two guns at once for 3-5 days. Requirements are on the tablet like a custom order. You get an IOU and upfront rent at 10% of the gun's value per day. Rent goes up 25% per bonus requirement met. The renter returns on the due date or next open day. The gun gains 2-8 kills and sometimes a mission record. If it's lost, the claim covers part or all of its value minus the rent.
+manual_page9_body,PAINT\nSpray cans come in Basic, Fine and Premium (5/4/3 uses). Use one on a gun or one of seven melee weapons for a choice of four paints. Each paint's rarity depends on the can: Common, Rare, Epic and Legendary add 10%, 20%, 40% and 60% to the price.\nEvery paint has a pattern number (#0-999) that sets where the pattern sits and where it chips. The worse the gun's condition, the more paint comes off (about half at Poor).\n\nSPRAY CANS\nThey come from paint crates, 2-4 a crate, each Basic 70%, Fine 25%, Premium 5%. The Upper-Level Gunsmith, the Revolution Gunsmith and thieves sell crates. With a Firearm or Heavy Firearm Neon Sign in the showcase, vanilla locked crates hold a can now and then.\nSelect a Box Cutter and click the weapon to scrape off paint and stickers. Neither is refunded.
+manual_page10_body,STICKERS\nA pack holds 5, a gun has 2 spots, +4% each. Small stickers fit nearly any gun, while medium and large ones need room on the gun. They also fit guns from other mods. The Upper-Level Gunsmith and thieves sell packs.\n\nCOLLECTOR\nAn eligible high-end order from an upper-level gun buyer has a 30% chance to be a collector's. He wants a big gun (size over 14) or one worth at least 300, in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a Premium can with uses left. 70% of collector orders match current stock and 30% are drawn at random from both kinds, so you may need to prepare another gun. He pays:\n- market price plus 300-350\n- another 150 for the requested Epic paint\nBoth bonuses scale with the market and markup. While he's at the counter, a Premium can offers that paint, but you have to pick it by hand.
+manual_page11_body,UNDERGROUND RANGE\nUnlock through Wild (Weapon Permit II). Start with 4 lanes from 30 Credits a night. Rent more from Wild to reach 6, 8 or 10. Each step adds 20 to the starting rent. Untick Range Rent at closing to stay shut that night. Buying out keeps the lanes you lease. Expansions are extra. Right-click .22, 10mm, .45 or 12-gauge guns and ammo to send them to the range.\n\nGuests pay a lane fee plus any loaner and rounds bought. Loaner fees follow the gun's value, counting 500 Credits at most. Lane and loaner fees grow with your shop, half as fast once they have doubled. Each lane takes two guests a night at most. Better guns draw more guests. Empty lanes and guns in poor condition draw fewer. Loaners wear from use. At an owned range, claim empty cases from regular ammo sales at the range terminal. Your own shooting never uses stock. Paper targets don't set records.
+manual_page12_body,SATURDAY LEAGUE\nOn league nights guests use no stock and pay no ammo fee. Sponsors also cover the rent and the upkeep. Owners can pay 200 to host and commit to opening that night. Sponsorship depends on turnout and full guests: each guest counts for up to 5 shots, and every 5 shots in total make one full guest. Entry is 50. The top three take prizes. Prizes and sponsorship grow with your shop.\n\nENERGY WEAPONS\nThe four Blue Shield and Echelon guns can go to the range too. They draw charge from the cell in the gun:\n- On a full charge: 10 shots from a standard or self-charging cell, 20 from an extended cell and 100 from a disposable one\n- Guests pay 17 Credits a shot for charging\nLeague nights use no charge and take no fee. Range Cell Cabinet (Wild's Network) adds a charging cabinet for energy cells only, up to thirty. A gun that runs dry on a lane gets the cabinet's cell with the most shots left. Like the shop charger, the cabinet gives each rechargeable cell 3 units a night, or 6 once you unlock commercial power. It doesn't charge while the shop has no power.
+manual_page13_body,FOUR COMPANIES, EIGHT GUNS\n- Meridian: the Lineguard Carbine and the Watchtower Support Gun, 10mm, fed from Sentinel Mk. III and Peacemaker magazines respectively\n- Frontier Arms: the Breakbranch Revolving Carbine (.45 AFP) and the Packhorse Revolving Shotgun (12 gauge), loaded by hand\n- Blue Shield: the Escort Stun Carbine and the Cordon Net Launcher\n- Echelon: the Hush Coil Carbine and the Boundary Coil Rifle\n\nHOW TO GET THEM\nThe Revolution Gunsmith only sells company gun frame chips with Deep content on: five may show up with Weapon Permit II, while the Watchtower, Packhorse and Boundary need Permit III. The Upper-Level Gunsmith brings finished guns from your highest permit tier. War-damaged guns from street clashes include the four from Meridian and Frontier Arms. Now and then, after the Security Requisition Officer has been in to sell surplus equipment, a Security Logistics Officer stops by with a used Lineguard or Watchtower.
+manual_page14_body,MODS\nEach gun only takes matching mods. Slots it can't use are sealed. Hover over one in the gun-mod window to see why. All stocks are factory parts and can't be removed.\n\nCELLS\nThe four Blue Shield and Echelon guns don't use bullets: load an energy cell into the magazine slot, and its charge acts as ammo. Hypertech Power Cells don't fit. If you sell a gun with a cell loaded, the cell's value is included.\n\nLUXURY\nThe Hush and the Boundary count as luxury goods: upper-level buyers take them, and putting them in a display case draws picky customers. With Permit II, an upper-level resident will occasionally drop by to sell an Echelon gun.
+manual_page15_body,WHO GETS IT\nA Fair or Poor used gun can come in with hidden damage, vanilla, company and other mods' guns alike, each kind only on a part of the gun you can see. New prints, frame builds and guns brought in for work never do. Up to 3 per gun, no kind twice:\n- war-damaged guns 40%\n- sold guns coming back around 25%\n- mercenary sellers' guns with kills 20%\n- rental returns 10%\n- guns fired at the range, with range wear on, 10% a night\n- other sellers' used guns 10%\nWar-damaged guns, mercenary guns with kills and other sellers' used guns arrive with 1-3. A comeback after a sale, a rental return or a night at the range adds at most one, even the first.\n\nWHAT IT COSTS\nFrom the start, each damage takes 10% off one stat, adding up:\n- Reliability: cracked frame, feed problems, burnt contacts\n- Accuracy: cracked grip/stock, dented barrel, rusted internals\nThe price drops only once found: cracked frame -15%, the rest -10%.\n\nCONDITION CAP\nEach damage lowers the condition cap one grade:\n- one: Excellent at most\n- two: Good\n- three: Fair\nEach repair raises it one grade again. At the cap, gun parts no longer refurbish it.
+manual_page16_body,INSPECT\nSelect the Magnifying Glass or Flashlight and click the gun. Use the Magnifying Glass for the frame, grip/stock and energy contacts. Use the Flashlight for rust, plus the barrel and feed on powder guns. When you spot a sign, tick the issue. Tick several or just one.\n\nCONFRONTING\nIf any tick is wrong, nothing is confirmed and you aren't told which. A failed confrontation on a seller's gun costs 2 reputation. There's no penalty on your own. Confirmed damage lowers the price. The extra 15% discount applies once per gun. You can check again. Damage to the frame, grip/stock or contacts shows faintly on the gun, darkens once confirmed and vanishes when repaired.\n\nREPAIR\nDrag the material onto the gun to fix found damage: one item, never fails, condition unchanged. Gun Parts for frame, rust, barrel and feed, 3D Printing Filament for grip/stock, Electronic Parts (Common) for contacts. The gun-mod window's Repair finds it too.
+manual_page17_body,"SETTINGS\nOpen this mod's settings from the mod list. ""Deep content"" and ""Printer chip rack"" need a restart. All other settings apply right away. ""Vanilla recipes use metal ingots"", ""Spray paint at random"" and ""Classic paint reveal"" are off by default, and the rest are on. Turning one off deletes nothing: active orders, scheduled visits and ongoing league rounds still finish.\n\nCRAFTING & MODDING\nIngot recipes, frame chip pity, print-quality prices, the kotton nitration module, the gun-mod window, random paint, the classic paint reveal, the printer chip rack.\n\nSTORAGE & DISPLAY\nGun cabinets in the showcase, what the Gunsmith Storage Bay holds and how it looks, ammo box art, auto-sealing and contents tooltips, printer titles, gun barcodes."
+manual_page18_body,VISITORS & STORY\nExtra ammo, materials and gun mods from vanilla vendors, the Retired Gunsmith's clearance, Odin's manual, the covert operation.\n\nDEEP CONTENT\nThe master switch controls the next three groups. Clashes & orders: street clashes, war-damaged guns, Security's surplus ammo, gun buyer reputation, mercenary rentals, collector orders, Aug hunts. Famous guns & circulation: buyers drawn by famous and war-damaged guns, famous gun upkeep, mercenary gun kill counts, sold guns returning to the market, parts from disassembly by condition, hidden damage. Paint & range: thieves' paint crates and sticker packs, spray cans in locked crates, range wear, buyers drawn by the range.
 op_log_kill_qm_rev,You shot the rebel quartermaster in your store. Revolution reputation -40.
 op_col_1_other_killed,"You killed Reno. The brass say the debt is one thing, the goods another."
 op_col_nocore_1,It never reached you? Then it's not on you.
@@ -317,9 +369,11 @@ clash_log_gunsmith_discount," The Revolution won. For one week, the Revolution G
 side_rev,the Revolution
 side_sec,Security
 hist_clash,Used by {1} in the street clash of day {0}
-hist_league,"Underground league, week {0}: place {1}"
+hist_league,Underground League #{0}: place {1}
 hist_record,Range record: {0} points
+hist_near_perfect,Near-perfect range run: {0} points
 hist_engaged,Kills: {0}
+hist_podium,League top-three finishes: {0}
 hist_maint,Last oiled: day {0}
 hist_maint_late,{0} days overdue for oil: this famous gun is losing value
 feature_history,History ({0})
@@ -515,7 +569,7 @@ upgrade_vge_range_rent3_desc,Rent another 2 lanes for 20 more Credits a day (ris
 upgrade_vge_range_return_title,Worn Gun Return
 upgrade_vge_range_return_desc,"After buying, switch this on at the upgrade card or under automatic handling at the range terminal. Loaners that wear down to Poor ship back that night. Leave it off to keep renting them out."
 upgrade_vge_range_refill_title,Range Auto Refill
-upgrade_vge_range_refill_desc,Allow the range to use loose rounds from your gunsmith storage bays for paying guests. The Nightly Report lists which rounds were sent and how many. Switch this off here to use only on-site stock.
+upgrade_vge_range_refill_desc,"When on, the range uses loose rounds from your gunsmith storage bays for paying guests and sends its collected empty cases back to the shop each morning."
 upgrade_vge_range_locker_title,Range Storage Locker
 upgrade_vge_range_locker_desc,"A 24x20 locker on the left side of the range. Visit at night to store or collect goods. Story items and time-limited procurement slips cannot be stored, even inside a bag. Put loose rounds or ammo boxes directly in the locker for the range to use them. Ammo in other containers stays in storage. Stored guns don't take up a lane."
 range_locker_title,Range Storage Locker
@@ -557,7 +611,7 @@ range_cond_unknown,Unknown
 range_host_book,"Host tonight's league ({0} Credits, and the range must open tonight)"
 range_host_reserved,Hosting confirmed. You paid {0} Credits and the range will stay open tonight.
 range_host_requires_open,The range is closed tonight. Reopen it before booking the league.
-range_league_open,League sponsored by {1} · Entry: {0} Credits
+range_league_open,"League #{2}, sponsored by {1} · Entry: {0} Credits"
 range_cond_0,New
 range_cond_1,Excellent
 range_cond_2,Good
@@ -572,7 +626,7 @@ range_lane_practice_title,Practice
 range_difficulty_easy,Casual
 range_difficulty_standard,Standard
 range_difficulty_hard,Expert
-range_practice_unranked,Unranked practice.
+range_practice_faster,Faster!
 range_zoom_hint,Hold right mouse to zoom at the pointer
 range_practice_no_stock,Practice doesn't use ammo from stock.
 range_league_enter,Enter (fee {0} Credits)
@@ -582,10 +636,7 @@ range_return_all,Return all range guns and ammo
 range_buyout,Buy Out ({0} Credits)
 range_send,Send to Range
 range_send_all,Send All to Range
-range_log_open,"{0} guests, {1} Credits"
-range_log_fees,lane fees {0} / gun rental fees {1} / ammo fees {2}
 range_log_declined,{0} declined
-range_log_host,{0} of it from hosting the league
 range_log_league_host,"league sponsorship: {0} Credits, {1} spectators, setup fee {2} prepaid"
 range_log_oil,oiled {0} due famous gun(s) for {1} Credits
 range_log_oil_unpaid,"not enough funds for {0} due famous gun(s) ({1} Credits), so none were oiled or charged"
@@ -601,10 +652,10 @@ range_buyer_1,"Shot a few rounds at the underground range last night and now I w
 range_buyer_2,The folks at the range said the guns came from you. I want to order one too.
 range_buyer_3,Tried one of your guns at the range. Felt good. Get me one.
 range_league_title,Underground Shooting League
-range_league_desc,"Saturday duck-shoot league. Renters can enter the venue's event, and owners can host it. The winner earns {0} Credits and a mark in the gun's history."
+range_league_desc,"Saturday duck-shoot league. Renters can enter the venue's event, and owners can host it. The winner earns {0} Credits and a mark in the gun's history. Three top-three finishes make a gun famous."
 range_game_title,Practice: {0}
 range_game_title_league,League: {0}
-range_game_sponsor,This league is sponsored by {0}
+range_game_sponsor,"League #{1}, sponsored by {0}"
 range_host_start_1,"Host: Welcome to the Underground Shooting League, brought to you by {0}! Mind the tin cat, it belongs to the judge."
 range_host_start_2,"Host: The tin ducks are in place, and {0} has sent someone to watch. Shooter, ready!"
 range_host_start_3,"Host: The {0} league night starts now! Keep that muzzle off the crowd."
@@ -664,6 +715,7 @@ range_host_out_1,Host: Not your night. Come back next Saturday!
 range_host_out_2,Host: Place {0}. The tin ducks win this round. See you next week!
 range_host_out_3,"Host: Place {0}. Good gun, though. Come back next week!"
 range_host_out_4,Host: Place {0}. That's it for tonight. See you Saturday!
+range_league_card_edition,Underground League #{0}
 range_league_card_place,Place {0}
 range_league_card_score,Score {0} · Hits {1}/{2}
 range_league_card_prize,Prize: {0} Credits
@@ -692,7 +744,7 @@ range_sponsor_tier_none,None
 range_return_ammo_confirm,Send the range ammo back to the shop? Marked ammo won't be used tonight. It ships at closing. Anything that won't fit waits until the next night.
 range_traffic_hint,Better guns on the benches draw more guests. Empty lanes and guns in poor condition draw fewer.
 range_record_min,— (starts at {0} points)
-range_record_notice,New range record: {0} points ({1})
+range_record_notice,New record for {1}: {0} points
 range_league_house,The range is hosting tonight. You don't need to pay the hosting fee.
 range_host_saturday,On Saturday nights you can host the league here for {0} Credits.
 range_league_entered,You've already entered tonight's league.
@@ -704,11 +756,10 @@ range_game_help,"Ducks: 30 seconds, up to {0} rounds. A hit on a target's body s
 range_game_penalty,Tin cat penalty -{0}
 range_game_score,Score: {0} · Scoring hits: {1}/{2}.
 range_paper_title,Paper practice: {0}
-range_paper_hud,Score {0} · Hits {1}/{2} · Loaded {3}/{4} · Reserve {5}
-range_paper_help,"Paper: no time limit. The closer to the centre, the higher the ring. Buckshot and nets count only the best ring per shot. Scores do not count toward league or duck records."
+range_paper_hud,Score {0} · Hits {1}/{2} · Loaded {3}/{4} · Reserve unlimited
+range_paper_help,"Paper: no time limit and no limit on shots. Lower the weapon to end the round when you are done. The closer to the centre, the higher the ring. Buckshot and nets count only the best ring per shot. Scores do not count toward league or duck records."
 range_paper_result,Score {0} · {1} hits · {2} rounds fired.
-range_game_record,New range record!
-range_log_night,Underground Range: {0}.
+range_game_record,New record for this model!
 range_log_sep,"; "
 range_log_short,short of ammo: {0} unhappy guests ({1})
 range_log_short_cal,{0} {1} rounds short
@@ -723,6 +774,8 @@ paint_direct_tip,"When on, using a spray can on a gun or melee weapon paints one
 paint_reveal_tip,Revealing the paints one by one. Click Show all to skip the remaining animation.
 paint_reveal_all,Show all
 cfg_paint_direct,Spray paint at random
+cfg_classic_paint_reveal,Classic paint reveal
+cfg_classic_paint_reveal_tip,"When on, spray cans go back to the original picking window: the four paints are revealed one by one, with no spray booth, light sign or display case."
 cfg_paint_direct_tip,"Using a spray can on a gun or melee weapon paints one of the options at random, without the selection window (that window has this switch too). When off, new options are revealed one by one for you to pick. Turn this off if you want to hand-pick a paint a collector asked for."
 skin_koi,Koi
 skin_magma,Magma
@@ -767,7 +820,7 @@ cabinet_style_6,Dusk
 type_famous,Famous
 type_war,War-Damaged
 feature_purity,Metal purity: {0}
-hist_war_repair,"Restore the condition to Good or better, then oil the gun to clear the war damage."
+hist_war_repair,"Refurbish the gun to Good or better, then oil it to clear the war damage."
 hist_war_oil,The condition is good enough. Oil the gun to clear its war damage.
 vge_gun_cabinet_flavor,Welded steel plates keep the guns under lock and key. The trouble too.
 vge_chip_rack_kit_flavor,"More slots on the printer, less rummaging through boxes."
@@ -778,6 +831,8 @@ vge_gun_oil_flavor,"An upper-level collector once said, ""A good gun lives on oi
 vge_paint_crate_flavor,Labeled as art supplies.
 vge_spray_can_flavor,Shake well before spraying. Never point it at anyone.
 vge_sticker_pack_flavor,Stick one on a gun and it's yours. At least it looks like yours.
+cfg_welder_refurbish,Refurbish guns with the Plasma Cutter
+cfg_welder_refurbish_tip,"Left-click a gun in Poor condition while holding a Plasma Cutter to refurbish it to Fair. No Gun Parts needed. When off, the Plasma Cutter can't refurbish guns."
 cfg_gun_mod_view,Gun-mod window: gun preview and click to fit
 cfg_gun_mod_view_tip,"The gun-mod window shows the gun (paint, stickers and fitted mods) with each slot box next to where it mounts. Click a box to list the mods in the shop and on the counter that fit there, with their stats, and click one to fit it. If the gun grows too big for where it lies, the mod won't fit (no room). The removed mod goes into the new one's container, or else into the shop or onto the counter. With no room anywhere, the mod won't fit. When off, you get the vanilla window."
 cfg_aug_tie_in,Aug hunt orders and silhouettes
@@ -802,6 +857,8 @@ cfg_range_traffic,Range crowd visits the shop
 cfg_range_traffic_tip,"Each guest last night raises the usual visit chance for lower-level and mercenary gun buyers by 0.4% of that chance, up to 20%. Four spectators count as one guest. Buyers sometimes mention the range. When off, there's no bonus."
 cfg_print_quality_price,Print quality affects gun price
 cfg_print_quality_price_tip,"A gun built on a printed frame is priced up or down by half the frame's print quality, up to +50%. When off, newly built guns get no such modifier. Stats and existing guns are unchanged."
+cfg_nitration,Dr. Jackson sells the Kotton Nitration Module
+cfg_nitration_tip,"Dr. Jackson sometimes sells a Kotton Nitration Hydroponic Module. Fitted to a Hydroponic System growing kotton, it yields loose gunpowder instead of Kotton Fiber: 23 g for a small fiber, 30 g for a normal one, 39 g for a large one. When off, he stops selling it; modules you already have keep working."
 cfg_gun_barcode,Show the barcode in gun tooltips
 cfg_gun_barcode_tip,"A gun's tooltip shows its barcode. When off, it is hidden. The gun's serial is unaffected."
 cfg_gun_circulation,Sold guns come back around
@@ -829,6 +886,7 @@ order_req_aug_hunt,Aug hunt
 range_host_aug,"Host: With the Augs acting up lately, we've added a few Aug silhouettes this week. Hit them for bonus points."
 paint_scrape_confirm,"Scrape the ""{1}"" paint off {0}? The spray paint is not refunded."
 tooltip_box_cutter_scrape,Select it and click a weapon you own to scrape off paint or peel off stickers.
+tooltip_welder_refurbish,Left-click to refurbish {0}
 sticker_scrape_confirm,"Peel the ""{1}"" sticker off {0}? The sticker is not returned."
 scrape_pick_title,Box cutter: take off which?
 scrape_pick_paint,Paint: {0}
@@ -839,10 +897,16 @@ gunmod_pick_title,{0}: pick a mod
 gunmod_remove,Remove
 gunmod_remove_tip,Remove this gun mod.
 gunmod_remove_no_room,No room in the shop.
+gunmod_remove_no_room_away,No room here.
 sticker_large,{0} (large)
 gunmod_old_stuck,You can't remove this mod. It isn't yours.
 gunmod_no_space,Not enough room for the modified gun.
 gunmod_none_gun,No known {0} fits this gun.
+gunmod_stats,Stats
+gunmod_order,Order
+gunmod_order_required,Required
+gunmod_order_pay,Pay
+gunmod_order_none,No one wants a gun
 vge_pistol_backplate_name,Pistol Grip Backplate
 vge_pistol_backplate_desc,"A thin grip insert for the Liberator, Nestfire, Ironcraft 10 and Sentinel Mk. III. Fits the stock slot."
 vge_shotgun_tube_name,Shotgun Drum Magazine
@@ -870,6 +934,25 @@ vge_ammo_box_confront_open_6,I'm not stupid. What did you pack in here?
 vge_ammo_box_confront_short,This box isn't even full!
 vge_ammo_box_confront_caliber,You packed this with the wrong caliber!
 vge_ammo_box_confront_type,You packed this with the wrong type of ammo!
+range_tablet_empty,Empty
+range_tablet_other,Other income
+range_tablet_next,Next: Saturday · Day {0}
+range_cal_tab,Range
+range_cal_guests,Guests
+range_cal_guests_of,{0}/{1}
+range_cal_lane_fees,Lane fees
+range_cal_rental_fees,Gun rental
+range_cal_ammo_fees,Ammo
+range_cal_charge_fees,Charging
+range_cal_sponsor_fees,League sponsors
+range_cal_shut,Tonight: closed
+range_cal_usage,Last night
+range_cal_lane,Lane
+range_cal_gun,Gun
+range_cal_condition,Condition
+range_cal_shots,Shots
+range_cal_income,Income
+range_cal_notes,Night notes
 range_terminal,Range terminal
 range_supply_hint,"View shared stock here. At a booth or locker, right-click ammo in your backpack to send it here for active lanes to use."
 range_league_unavailable,"You can't enter the league now. To practise, open Practice on the range terminal."
@@ -953,15 +1036,13 @@ upgrade_vge_range_cells_title,Range Cell Cabinet
 upgrade_vge_range_cells_desc,"Adds a charging cabinet to the range. It holds up to thirty energy cells and nothing else. When an energy gun on a lane runs dry, the cabinet swaps in the cell with the most shots left, even during business hours. Like the shop charger, the cabinet gives each rechargeable cell 3 units of charge a night, or 6 once you unlock ""{0}"". It doesn't charge while the shop has no power."
 range_cells_title,Range Cell Cabinet
 range_cells_load_failed,The cabinet contents could not be loaded. The saved contents have been preserved.
-range_log_charge,energy gun charging fees: {0} Credits
 range_log_power_short,not enough charge: {0} guests turned away
 range_log_cells_swapped,cells swapped in from the cabinet: {0}
 range_game_hud_recharge,Score {0}   {1}s left   Cell {2}/{3} shots   Reserve {4}
 range_game_hud_net,Score {0}   {1}s left   Cell {2}/{3} shots   Reserve {4}
 range_game_hud_single,Score {0}   {1}s left   Charge for {2} shots
-range_paper_hud_recharge,Score {0} · Hits {1}/{2} · Cell {3}/{4} shots · Reserve {5}
-range_paper_hud_net,Score {0} · Hits {1}/{2} · Cell {3}/{4} shots · Reserve {5}
-range_paper_hud_single,Score {0} · Hits {1}/{2} · Charge for {3} shots
+range_paper_hud_recharge,Score {0} · Hits {1}/{2} · Cell {3}/{4} shots · Reserve unlimited
+range_paper_hud_net,Score {0} · Hits {1}/{2} · Cell {3}/{4} shots · Reserve unlimited
 range_game_reloading_recharge,Changing cell...
 range_game_reloading_net,Changing cell...
 range_shoot_hint_recharge,Left click: fire · Swaps the cell by itself when empty (or press R) · Broken circle: spread
@@ -969,7 +1050,6 @@ range_shoot_hint_net,Left click: fire · R: change cell · Broken circle: spread
 range_shoot_hint_single,Left click: fire · One cell lasts the round · Broken circle: spread
 range_shoot_paper_hint_recharge,Fire at the centre sheet only · No time limit · Left click: fire · Auto-swaps empty cell
 range_shoot_paper_hint_net,Fire at the centre sheet only · No time limit · Left click: fire · R: change cell
-range_shoot_paper_hint_single,Fire at the centre sheet only · No time limit · Left click: fire · One cell lasts the round
 range_load_net,Restraint net
 range_head_status,Status
 range_head_host,League hosting
@@ -1005,7 +1085,7 @@ range_ammo_col_tonight,For tonight
 range_ammo_col_needed,Expected
 range_reserve_hint,Reserve guns take no lane.
 range_reserve_leaving,"Out of use tonight, ships at closing"
-range_stat_record,Range record
+range_stat_record,Model record
 range_stat_visitors,Guests last night
 range_stat_gun,Gun
 range_stat_caliber,Caliber
@@ -1039,8 +1119,6 @@ gunmod_sealed_vge_hush_barrel,Coil stack
 gunmod_sealed_vge_boundary_stock,Factory stock
 gunmod_sealed_vge_boundary_barrel,Coil stack
 gunmod_sealed_vge_boundary_underbarrel,No mount under the coil stack
-cfg_water_language_fix,Water grades survive a language switch
-cfg_water_language_fix_tip,"Fixes a vanilla fault: after switching languages, buyers who check water quality could refuse water that meets their requirements. When off, vanilla behaviour returns."
 manual_guns_title,Company guns and cells
 cfg_hidden_damage,Hidden damage
 cfg_hidden_damage_tip,"Fair or Poor used guns can come in with hidden damage, up to 3 per gun. Each takes 10% off one stat and lowers the condition cap one grade. The price drops only once it is found. The Magnifying Glass sees the outside, the Flashlight the inside: confront a seller to get the price down, or fix your own with the matching material. Mercenaries check every part. Upper-level buyers check the frame, grip or stock, and contacts. When off, no new damage appears. Old damage still caps condition, but it doesn't affect value or stats and buyers can't spot it. Turn the setting back on to restore its effects."
@@ -1084,10 +1162,10 @@ vge_box_dispenser_name,Box Dispenser
 vge_box_dispenser_flavor,A simple device that spits out empty ammo boxes once powered.
 vge_box_dispenser_button,Dispense
 range_lane_empty_hint,"Drag a gun from your backpack into the bench slot, or pick one from the standby guns or the locker. A lane without a gun only takes guests who bring their own, and draws fewer guests."
-range_lane_fee_hint,"The gun fee follows this gun's current value, condition included, and rises as the shop grows."
+range_lane_fee_hint,"The gun fee follows this gun's current value, condition included, counting 500 Credits at most. It rises as the shop grows, half as fast once it has doubled."
 range_practice_random_hint,Each session gets a random load. Target practice never uses stock.
 range_practice_level,Duck drill: {0}
-range_practice_quota,{0} in a full run ({1} fixed / {2} moving)
+range_practice_quota,Starts at {0} targets ({1} fixed / {2} moving)
 range_locker_drop_hint,Drop a gun or any other item on this button and it goes into the first free space in the locker.
 range_locker_stored,Put in the range locker: {0}
 range_locker_full,No room in the range locker: {0}
@@ -1105,6 +1183,7 @@ gunmod_repair_damage,Repair {0} · {1} ×1
 gunmod_repair_missing,Missing: {0} ×1
 gunmod_repair_blocked,Can't repair this gun now
 vge_ammo_box_actual,{0}: {1} rounds inside
+vge_ammo_box_fill,Fill with matching ammo
 op_bribe_goods,I'll overlook: {0}
 op_bribe_item,{0} ×{1}
 op_bribe_more,{0} more items

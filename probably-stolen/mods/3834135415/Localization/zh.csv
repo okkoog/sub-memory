@@ -1,6 +1,7 @@
 # 原版枪械拓展 简体中文
 powder_amount,火药余量：{0}/{1}克
 shell_desc,可复用的弹壳，拖到火药上就能装。一份最多装5发，不足5发也用掉一份。
+shell_case_count,弹壳数量：{0}/{1}
 shell_chip_bulk,批量 · {0}件{1}打印芯片
 fill_title,填装弹药
 fill_requires_press,需要弹壳压制模组。
@@ -14,6 +15,7 @@ casing_ledger_invalid,回收记录无法读取，原记录未被覆盖。
 casing_claim,将{0}送回店内 · 待领{1}个
 casing_claim_failed,店内空间不足。
 casing_empty,没有多余的弹壳。
+casing_auto_sent,靶场把{0}个空壳寄回了店里。
 vge_shell_22_metal_name,.22金属空壳
 vge_shell_22_poly_name,.22聚合物空壳
 vge_shell_10_metal_name,10毫米金属空壳
@@ -38,7 +40,10 @@ vge_boundary_chip_note,火力和精度都是最高档。
 chip_name_multi,3D打印机芯片（x{0} {1}）
 printer_title_loaded,{0}·{1}
 gunmod_title_condition,{0}·{1}
-gunmod_repair,修复
+gunmod_repair,翻新
+gunmod_repair_welder_tip,等离子切割机翻新，不耗零件
+gun_refurbish_menu,翻新
+powder_pour_menu,倒出一堆
 gunmod_repair_tip,翻新品相，成功率{0}%
 tooltip_quality,打印品质：{0}%
 client_rev_gunsmith_name,革命军枪匠
@@ -113,8 +118,8 @@ hist_merc_rental,第{0}天随佣兵出过任务
 rental_returned,佣兵归还了{0}（击杀+{1}）。
 rental_claim,遗失赔偿单
 rental_claim_gun,丢失的枪：{0}
-rental_claim_full_1,点背，你那把{0}折在活里了。给你赔偿单，我照价全赔。
-rental_claim_full_2,那把{0}丢在活上了，没带回来。道上的规矩我懂，拿赔偿单照价赔你。
+rental_claim_full_1,点背，你那把{0}折在活里了。给你赔偿单，枪价扣掉租金，剩下的我全赔。
+rental_claim_full_2,那把{0}丢在活上了，没带回来。道上的规矩我懂，拿赔偿单来，扣掉租金照价赔你。
 rental_claim_short_1,出了点岔子，那把{0}交代在活里了。赔偿单在这儿，就是我眼下手头紧，顶多只掏得出这个数。
 rental_claim_short_2,这趟活砸了，钱没挣着，连你的{0}也搭了进去。赔偿单给你，你看按这个数结成不成？
 rental_claim_space,柜台上腾块空地，我好放赔偿单。
@@ -248,9 +253,38 @@ vge_gunpowder_name,火药
 vge_gunpowder_desc,以克计量的火药。将其放入弹壳即可制作弹药。
 vge_gunpowder_adv_name,高级火药
 vge_gunpowder_adv_desc,以克计量的高级火药。将其放入弹壳即可制作弹药。
+vge_gunpowder_loose_name,散装火药
+vge_gunpowder_loose_desc,以克计量的散装火药，一堆最多30克。可以直接放入弹壳制作弹药，也能拖到火药罐或另一堆上合到一起。
+vge_gunpowder_adv_loose_name,散装高级火药
+vge_gunpowder_adv_loose_desc,以克计量的散装高级火药，一堆最多30克。可以直接放入弹壳制作弹药，也能拖到高级火药罐或另一堆上合到一起。
+vge_gunpowder_bottled_water_name,瓶装火药（标准）
+vge_gunpowder_adv_bottled_water_name,瓶装高级火药（标准）
+vge_gunpowder_small_bottled_water_name,瓶装火药（小）
+vge_gunpowder_adv_small_bottled_water_name,瓶装高级火药（小）
+vge_gunpowder_mini_bottle_name,瓶装火药（微型）
+vge_gunpowder_adv_mini_bottle_name,瓶装高级火药（微型）
+vge_gunpowder_large_bottled_water_name,瓶装火药（大）
+vge_gunpowder_adv_large_bottled_water_name,瓶装高级火药（大）
+vge_gunpowder_water_jug_name,桶装火药
+vge_gunpowder_adv_water_jug_name,桶装高级火药
+vge_gunpowder_med_bottle_red_name,火药瓶
+vge_gunpowder_adv_med_bottle_red_name,高级火药瓶
+vge_gunpowder_med_bottle_blue_name,火药瓶
+vge_gunpowder_adv_med_bottle_blue_name,高级火药瓶
+vge_gunpowder_med_bottle_violet_name,火药瓶
+vge_gunpowder_adv_med_bottle_violet_name,高级火药瓶
+vge_gunpowder_med_bottle_orange_name,火药瓶
+vge_gunpowder_adv_med_bottle_orange_name,高级火药瓶
+vge_gunpowder_med_bottle_small_pink_name,火药瓶
+vge_gunpowder_adv_med_bottle_small_pink_name,高级火药瓶
+powder_bottle_desc,装在塑料瓶里的火药。能直接放进弹壳做子弹，也能和同种火药互相倒。倒空后又是普通的空瓶。
+powder_jug_desc,装在塑料桶里的火药。能直接放进弹壳做子弹，也能和同种火药互相倒。倒空后又是普通的空桶。
 vge_module_ammo_press_name,弹壳压制模组
 vge_module_ammo_press_desc,一种能让打印机打印弹壳的模组。
 vge_module_ammo_press_effect,可压制弹壳
+vge_module_nitration_name,韧棉硝化水培模组
+vge_module_nitration_desc,一种在种植韧棉时直接将韧棉纤维硝化成火药的模组。其独特效果不影响其他植物。
+vge_module_nitration_effect,产出散装火药，而非韧棉纤维
 vge_ammo_chip_bulk_name,高级{0}
 upgrade_auto_feed_title,自动供料
 upgrade_auto_feed_desc,每晚开工前，装好芯片的3D打印机会从枪械师储藏区补齐所需的材料。
@@ -271,6 +305,24 @@ manual_p4_title,冲突与口碑
 manual_p5_title,名枪、来历与枪油
 manual_p6_title,涂装、贴纸与收藏家
 manual_p7_title,靶场与联赛
+manual_page1_body,芯片\n革命军枪匠每周一来访，经王尔德网络基础页的“枪械匠”引荐，或由革命军引荐。他卖框架芯片、电击枪芯片和改装件芯片。哨兵3型和兰斯维尔左轮的框架芯片有II级武器许可证就可能带来，“和平使者”冲锋枪和“壁垒”霰弹枪的要III级。\n\n框架\n打印框架要装CNC模组，配方里有锭的还要装金属打印模组。枪械属性受金属纯度影响。改装件和空壳用的锭越纯，一批出得越多，完美锭出双倍。\n\n超频\n王尔德网络“枪械匠”一组的“超频制造”给3D打印机加一个“超频”按钮：一次耗掉剩余工作量四倍的电，当场打完这一件，每台每天三次。“超频稳压”把四倍降到两倍。
+manual_page2_body,火药\n革命军枪匠起初每次带普通火药3至5罐、高级火药1至2罐。两种火药合计每买满5罐，他下次就多备当次基础数量的25%（四舍五入到整罐）。买满20罐后带双倍。每罐30克。用完的罐子会留下。同级的火药可以互相倒：拖到罐上就倒进罐里，拖到另一堆散装火药上就并成一堆（一堆最多30克）。杰克逊博士偶尔卖韧棉硝化水培模组：装在种韧棉的水培系统上，收获的就是散装火药，小型纤维折23克，普通30克，大型39克。\n\n空壳\n把弹壳压制模组装进打印机的模组槽，就能打印空壳。金属壳和12号空壳用锭和金属打印模组，非致命弹壳用塑料。\n\n.45 AFP和12号\n革命军枪匠每次来都会尝试摆出.45 AFP普通弹和12号霰弹，有时还摆.45 AFP穿甲弹和非致命弹，前提是柜台有空位。佣兵卖枪客也卖这三种.45 AFP弹药，治安部征用官卖12号霰弹（要III级武器许可证）。
+manual_page3_body,填装\n每发子弹需要1克火药。穿甲弹使用高级火药。\n- 手工装，不用打印机：把空壳和火药拖到一起。框选一批可以一起装。\n- 打印机装：装着压制模组时，把空壳和火药放入打印机（开着自动供料时火药也可以放在枪械师储藏区），按填装键，一次最多60发。\n\n装盒\n普通卖枪客卖空盒。革命军枪匠和上层区枪匠每次各带一盒弹药，每盒40发。空盒还能用芯片打印（1卷耗材出2个），或用弹药盒分发器领取。\n客人会对照标签验货，少装、口径或弹种不对都可能被识破。
+manual_page4_body,芯片库\n打印机芯片槽下面多了一个库，槽两边的箭头换上一张或下一张。把芯片库扩建套件拖到打印机上可以扩容，最大3×3。\n\n枪柜\n退休枪匠和革命军枪匠有卖。新柜占6×4格，最开始四个枪位，可使用金属锭升级，最多九格，能放武器与枪油。整柜能放进枪械师储藏区。\n\n枪械师储藏区\n页签全解锁后，原版的储藏区扩建套件还能再装3个。\n\n改枪窗口\n点改装件槽，列出店里和柜台上能装的改装件，点一下装上。换下的改装件先放回新件原来的容器，再试店内库存和柜台上。都没地方就不换。设置里可以换回原版窗口。
+manual_page5_body,王尔德网络基础页的“枪械匠”一组\n两项都要先认识退休枪匠。\n- 自动供料（II级武器许可证）：每晚给通电、装了芯片的打印机从枪械师储藏区补齐材料。\n- 自动入库（III级武器许可证）：打印成品连框架直接送进有空位的枪械师储藏区，先放已有同类的地方。\n\n上层区枪匠（要先认识退休枪匠）\n名片放在柜台上，用店里的电话约他明天或后天来，每约一次隔5天。他带一把你最高许可证那一档的原版枪或公司枪，有一成机会是名枪。另带3至4件高档改装件、枪零件、枪油、涂装箱和贴纸包。
+manual_page6_body,街头冲突\n从第12晚起，展示柜里有武器许可证，次日就可能发生街头冲突，武器和弹药涨价。革命军托下层区和佣兵买枪客采购（要摆I级、II级许可证），治安部派征用官上门。每完成一笔阵营采购，该方获得额外优势。\n- 革命军胜：革命军枪匠一周内九折\n- 治安部胜：一周内有人上门卖一次战后余弹，按剩余发数计价再打九折\n无论哪方赢，之后五天摆着枪械或重型枪械霓虹灯牌的店都可能收到战损枪。\n\n买枪客口碑\n只有交枪单算口碑，维修单不算。交出全新或极佳的枪，且火力、风格、可靠性、人机工效、精准度的基础值加起来不低于同型号新枪，口碑上升；交出品相一般或较差的战损枪，口碑下降。口碑影响来访和赏金，长期没有这样的成交就往中间回落。平时要靠展示柜里的对应许可证招来买枪客：I级下层区，II级佣兵，III级上层区。
+manual_page7_body,来历\n枪会记下自己的经历：街头冲突里流出的战损枪、联赛冠军、靶场纪录、随佣兵出过任务\n- 每条+4%\n- 击杀数每5人+1%（最多+8%）\n战损枪带击杀数。佣兵卖枪客的枪带击杀数的基础几率是50%，受运气影响。\n- 2条来历、击杀20人或联赛进前三3次就是名枪，再+15%\n- 来历加价合计最多+40%\n\n保养\n等离子切割机能把较差的枪翻新到一般，不费枪械零件。名枪7天没上油，加价会在之后8天里慢慢消退，品相不变。枪油每罐5次，可手动使用或放在枪柜里。“靶场名枪保养”只在营业夜给靶位和储物柜里到期的名枪上油。
+manual_page8_body,展示\n展示名枪能吸引上层区买枪客，展示战损枪能吸引下层区买枪客。开启枪柜展示时，摆在展示柜里的枪柜也算：\n- 第一把+15%\n- 之后每把+5%\n- 最多算3把\n店里有名枪时，上层区普通高档交枪单会加名枪赏金。维修单、要求最好枪的订单和收藏家单不加。\n\n佣兵租枪\n租期3至5天，同时最多租出两把。要求跟定制单一样列在平板上。交枪时收借条和租金，每天按枪价的10%算，每满足一条额外奖励条件，租金再多25%。佣兵到期来还枪，没开门就下次来。枪会多2至8次击杀，有时多一条任务来历。丢枪就凭赔偿单获赔，最多赔到枪价扣掉租金。
+manual_page9_body,涂装\n喷漆罐分低级、中级、高级，能用5/4/3次。对枪或七种近战武器使用，给出4款涂装，每款按罐子档次抽稀有度（普通/稀有/史诗/传说，加价+10%/+20%/+40%/+60%）。\n每款涂装带图案编号（#0至999），编号决定图案的位置和掉漆的地方。枪的品相越差掉漆越多（较差时大约掉一半）。\n\n喷漆罐\n来自涂装箱，每箱2至4罐，每罐低级70%、中级25%、高级5%。涂装箱上层区枪匠、革命军枪匠和小偷有卖。展示柜摆着枪械或重型枪械霓虹灯牌时，原版上锁箱里偶尔也有。\n选中美工刀点枪或近战武器，能刮掉涂装和贴纸，不退还。
+manual_page10_body,贴纸\n一包5张，每把枪2个位置，每张+4%。小号基本都贴得上，中号和大号要枪上有地方。兼容其它模组的枪。上层区枪匠和小偷有卖。\n\n收藏家\n上层区买枪客符合条件的高档单有30%变成收藏家单。他要大枪（大小超过14）或市价不低于300的枪，涂装要史诗或传说。店里要有能交的成枪，或者有能喷出合格成品的枪和还有次数的高级罐。收藏家单70%按当前库存选，30%从两类订单里随机选，可能要另外备枪。\n- 市价另加300至350\n- 点名的史诗款再加150\n两笔奖金照常随行情和加价变动。他在柜台前时，高级罐会给出点名款，要手挑才喷得中。
+manual_page11_body,地下靶场\n通过王尔德解锁（II级武器许可证）。起租4个靶位，日租30起。向王尔德加租可增至6、8、10个，每级起租价多20。结束营业时不勾租金，当晚休业。买断后已租的靶位都归你，扩建另买。右键送.22、10毫米、.45、12号枪和弹药到靶场。\n\n客人付靶位费，租枪和购买的弹药另算。租枪费按枪价算，枪价超过500信用点的按500算。靶位费和租枪费随店越做越大而上涨，翻倍以后再涨只涨一半。每个靶位每晚最多接两位客人。靶位上的枪越好，来的客人越多；空靶位和品相较差的枪会让客人变少。租枪会磨损。买断后，普通营业卖弹留下的弹壳可在靶场营业终端领取。玩家自己射击不扣库存。纸靶不计纪录。
+manual_page12_body,周六联赛\n联赛当晚顾客用弹不扣库存，也不收弹药费。场租和保养费由赞助方承担。业主可付200主办，确认后当晚保持营业。赞助看客流和满额客人：每位客人最多算5发，合计每5发算1位满额客人。报名费50，前三名有奖金。奖金和赞助也随店越做越大而上涨。\n\n能量武器\n蓝盾和梯队的四把枪也能送去靶场，消耗是枪中电池的电：\n- 电池满电时，普通和自充电池各能打10发，大容量电池20发，一次性电池100发\n- 客人每打一发另收17信用点充电费\n联赛当晚不耗电，也不收这笔钱。王尔德网络的“靶场电池柜”添一台充电柜，只放能量电池，最多三十块：靶位上的枪没电了就换上柜里还能打最多发的一块，可充电的和店里的充电器一样，每晚充3点电，解锁原版的商用电力后充6点，店里停电时不充。
+manual_page13_body,四家公司，八把枪\n- 子午线：“线卫”卡宾枪、“岗楼”支援枪，10毫米，分别用哨兵3型和“和平使者”的弹匣\n- 边境军工：“折枝”转轮卡宾枪（.45 AFP）、“驮兽”转轮霰弹枪（12号），手工装填\n- 蓝盾：“傍身”电击卡宾枪、“收束”捕网发射器\n- 梯队：“止鸣”线圈短枪、“定界”线圈步枪\n\n怎么来\n开启深度内容后，革命军枪匠才卖公司枪框架芯片：五把有II级武器许可证就可能带来，“岗楼”“驮兽”“定界”要III级。上层区枪匠带你最高许可证那一档的成品。街头冲突流出的战损枪里有子午线和边境军工的四把。卖剩余装备的治安部征用官走后，偶尔会来一位治安部后勤官，带旧的“线卫”“岗楼”。
+manual_page14_body,改装件\n每把枪只收合用的改装件。装不了的槽是封着的，在改枪窗口里悬停能看到原因。枪托都是原厂件，拆不下来。\n\n电池\n蓝盾和梯队的四把不用子弹：把能量电池装进弹匣槽，电量就是弹药。超科技能源单元装不进去。装着电池卖，电池的价钱一起算。\n\n奢侈品\n“止鸣”和“定界”算奢侈品：上层区的买家会收，摆进展示柜能招来挑剔的客人。有了II级许可证，偶尔有上层区住户上门转手梯队的枪。
+manual_page15_body,哪些枪会带\n品相一般或较差的旧枪进店时可能带暗伤，原版枪、公司枪和别的模组的枪都会，每种伤只出现在枪上看得见的部位。新打印的、框架装成的和订单客人拿来改的枪不会。一把最多3处，种类不重复：\n- 战损枪40%\n- 卖出后流回的枪25%\n- 佣兵卖枪客带击杀数的枪20%\n- 租出去还回来的枪10%\n- 开启靶场磨损时，当晚在靶场开过火的枪有10%几率多一处暗伤。\n- 其他卖家摆上柜台的旧枪10%\n战损枪、带击杀数的佣兵枪和其他卖家的旧枪，进货时可能带1到3处暗伤。之后每次流回、租还或在靶场过一晚，最多再添1处（第一处也是这样）。\n\n扣什么\n从带上起，每处让一项属性-10%，同一项相加：\n- 可靠性：机身裂纹、供弹不畅、触点烧蚀\n- 精准度：握把枪托开裂、枪管凹痕、内部锈蚀\n发现之后估价才降：机身裂纹-15%，其余-10%。\n\n品相上限\n每处让品相上限降一档：\n- 1处最多极佳\n- 2处最多良好\n- 3处最多一般\n修好一处升回一档。到了上限，枪械零件就翻新不上去了。
+manual_page16_body,查找\n选中放大镜或手电筒，再点枪。放大镜查机身、握把枪托和能量枪触点。手电筒查锈蚀，火药枪还可查枪管和供弹。看到痕迹就勾上对应的问题，可以勾好几项，也可以只勾一项。\n\n对质\n勾的有一项不对，这次就都不算，也不告诉你错在哪。卖家的枪，对质失败一次扣2声望。自己的枪不罚。认下的暗伤按真实价算，每把枪另便宜15%一次。可以复查。机身、握把枪托和触点的暗伤在枪上隐约看得出，确认后痕迹变深，修好就消失。\n\n修理\n找到的暗伤才能修：把料拖到枪上，耗一件，一次修好，品相不变。机身、锈蚀、枪管、供弹用枪械零件，握把枪托用3D打印耗材，触点用电子元件（普通）。改枪窗口的“修复”也会找对应的料。
+manual_page17_body,设置\n在模组列表里打开本mod的设置。“深度内容”和“打印机芯片库”改了要重启游戏，其余设置立刻生效。“原版配方改用金属锭”“喷漆直接随机”和“经典喷漆揭晓”默认关闭，其余默认开启。关掉一项不会删除已有的物品，已经来的订单、排上的来访和开了局的联赛照常走完。\n\n制造与改装\n金属锭配方、框架芯片保底、打印品质计价、韧棉硝化模组、改枪窗口、喷漆直接随机、经典喷漆揭晓、打印机芯片库。\n\n收纳与显示\n展示柜里的枪柜，枪械师储藏区的收纳和外观，弹药盒的外观、自动封装和内容提示，打印机标题，枪械条码。
+manual_page18_body,来客与剧情\n原版商人加卖的弹药、原料和改装件，退休枪匠清货，奥丁送来的上手说明，隐秘行动。\n\n深度内容\n总开关管着后面三组。冲突与订单：街头冲突、战损枪、治安部余弹、买枪客口碑、佣兵租枪、收藏家订单、猎改造体。名枪与流通：名枪和战损枪招客、名枪保养、佣兵枪击杀数、卖出的枪流回市面、拆枪零件按品相、暗伤。涂装与靶场：小偷的涂装箱和贴纸包、上锁箱里的喷漆罐、靶场磨损、靶场引流。
 op_log_kill_qm_rev,你在店里击毙了革命军军需官，革命军声望-40。
 op_col_1_other_killed,雷诺是你打死的。上头说，账归账，东西归东西。
 op_col_nocore_1,东西没送到你手上？那不怪你。
@@ -317,9 +369,11 @@ clash_log_gunsmith_discount,革命军打了胜仗。这一周革命军枪匠的�
 side_rev,革命军
 side_sec,治安部
 hist_clash,第{0}天街头冲突中为{1}所用
-hist_league,地下射击联赛第{0}周第{1}名
+hist_league,第{0}届地下射击联赛第{1}名
 hist_record,靶场纪录：{0}分
+hist_near_perfect,靶场几乎全中：{0}分
 hist_engaged,击杀{0}人
+hist_podium,联赛进前三{0}次
 hist_maint,上次上油：第{0}天
 hist_maint_late,保养已超期{0}天，名枪价值降低
 feature_history,来历{0}条
@@ -515,7 +569,7 @@ upgrade_vge_range_rent3_desc,再多租2个靶位，日租多20信用点（同样
 upgrade_vge_range_return_title,磨损枪械寄回服务
 upgrade_vge_range_return_desc,买下后，在升级卡或靶场终端的“自动处理”里开启：磨损到“较差”的租枪当晚寄回店里。不开就照常出租。
 upgrade_vge_range_refill_title,靶场自动补弹
-upgrade_vge_range_refill_desc,允许靶场为付费客人动用枪械师储藏区的自有散装弹药。夜间报告会列出送往靶场的弹种和发数。在这里关闭后，靶场只用场内库存。
+upgrade_vge_range_refill_desc,开着时，靶场为付费客人取用枪械师储藏区的自有散装弹药，每天早上把攒下的空壳寄回店里。
 upgrade_vge_range_locker_title,靶场储物柜
 upgrade_vge_range_locker_desc,靶场左侧的24×20格储物柜，只能夜间到场存取。不收剧情物品和有期限的采购单，装在包里也不行。营业用的子弹或弹药盒要直接放进柜内，放在别的容器中的弹药只算寄存。柜里的枪不占靶位。
 range_locker_title,靶场储物柜
@@ -557,7 +611,7 @@ range_cond_unknown,未知
 range_host_book,主办今晚联赛（{0}信用点，确认后当晚不能停业）
 range_host_reserved,今晚已确认主办，组织费{0}信用点已付，靶场将保持营业。
 range_host_requires_open,今晚已暂停营业。先恢复营业才能主办联赛。
-range_league_open,今晚由{1}赞助 · 报名费{0}信用点
+range_league_open,今晚第{2}届联赛由{1}赞助 · 报名费{0}信用点
 range_cond_0,全新
 range_cond_1,极佳
 range_cond_2,良好
@@ -572,7 +626,7 @@ range_lane_practice_title,试射
 range_difficulty_easy,休闲
 range_difficulty_standard,标准
 range_difficulty_hard,挑战
-range_practice_unranked,本局不计入纪录。
+range_practice_faster,提速！
 range_zoom_hint,按住右键跟随鼠标放大
 range_practice_no_stock,试枪不消耗库存弹药。
 range_league_enter,参赛（报名费{0}信用点）
@@ -582,10 +636,7 @@ range_return_all,寄回靶场枪械与弹药
 range_buyout,买断靶场（{0}信用点）
 range_send,送往靶场
 range_send_all,全部送往靶场
-range_log_open,{0}位客人，收入{1}信用点
-range_log_fees,靶位费{0}／租枪费{1}／弹药费{2}
 range_log_declined,{0}位未成交
-range_log_host,其中主办联赛{0}信用点
 range_log_league_host,联赛赞助{0}，观众{1}，组织费{2}已预付
 range_log_oil,保养了{0}把到期名枪，共收{1}信用点
 range_log_oil_unpaid,{0}把名枪保养到期，共需{1}信用点，余额不足，未保养也未扣费
@@ -601,10 +652,10 @@ range_buyer_1,昨晚在地下靶场打了几轮，手痒了。你这儿卖枪吧
 range_buyer_2,靶场的人说枪是从你这儿来的。我也想订一把。
 range_buyer_3,在靶场试了你的枪，挺顺手。给我也弄一把。
 range_league_title,地下射击联赛
-range_league_desc,每周六可打鸭子参赛。租场时由场方主办，买断后可自行主办。冠军奖金{0}信用点，还会写进枪械来历。
+range_league_desc,每周六可打鸭子参赛。租场时由场方主办，买断后可自行主办。冠军奖金{0}信用点，还会写进枪械来历。同一把枪3次进前三就成名枪。
 range_game_title,试射：{0}
 range_game_title_league,联赛：{0}
-range_game_sponsor,本届联赛由{0}赞助
+range_game_sponsor,第{1}届联赛由{0}赞助
 range_host_start_1,主持人：欢迎来到地下射击联赛！本届由{0}赞助。提醒一句，铁皮猫是裁判养的。
 range_host_start_2,主持人：铁皮鸭子已经就位，{0}的代表也到场了。射手，准备！
 range_host_start_3,主持人：{0}冠名的本周联赛，现在开始！枪口别对着观众。
@@ -664,6 +715,7 @@ range_host_out_1,主持人：今晚运气差了点，下周六再来！
 range_host_out_2,主持人：第{0}名。这轮铁皮鸭子赢了，下周找回场子！
 range_host_out_3,主持人：第{0}名。枪是好枪，下周再来！
 range_host_out_4,主持人：第{0}名。今晚就到这儿，下周六见！
+range_league_card_edition,第{0}届地下射击联赛
 range_league_card_place,第{0}名
 range_league_card_score,得分 {0}　·　命中 {1}/{2}
 range_league_card_prize,奖金 {0} 信用点
@@ -692,7 +744,7 @@ range_sponsor_tier_none,无
 range_return_ammo_confirm,把场内弹药寄回店里？标记后今晚就不再供弹，打烊结算时寄出。店里放不下的留到下一晚再寄。
 range_traffic_hint,靶位上的枪越好，来的客人越多。空靶位和品相较差的枪会让客人变少。
 range_record_min,—（{0}分起算）
-range_record_notice,靶场新纪录：{0}分（{1}）
+range_record_notice,{1}的新纪录：{0}分
 range_league_house,今晚是场方办的联赛，不用付主办费。
 range_host_saturday,每周六晚上可以在这里花{0}信用点主办联赛。
 range_league_entered,今晚已参赛。
@@ -704,11 +756,10 @@ range_game_help,打鸭：一局30秒，最多{0}发。打中靶子的身体得�
 range_game_penalty,铁皮猫扣分-{0}
 range_game_score,得分：{0} · 计分命中：{1}/{2}发。
 range_paper_title,纸靶练习：{0}
-range_paper_hud,得分：{0}　命中：{1}/{2}　已装：{3}/{4}　备弹：{5}
-range_paper_help,纸靶：不限时。越靠近靶心环数越高，霰弹和捕网一发只算最好的一环。成绩不计入联赛和打鸭纪录。
+range_paper_hud,得分：{0}　命中：{1}/{2}　已装：{3}/{4}　备弹：不限
+range_paper_help,纸靶：不限时，不限发数，打够了就收枪结算。越靠近靶心环数越高，霰弹和捕网一发只算最好的一环。成绩不计入联赛和打鸭纪录。
 range_paper_result,得分：{0} · 命中{1}发 · 射出{2}发。
-range_game_record,新的靶场纪录！
-range_log_night,地下靶场：{0}。
+range_game_record,这种枪的新纪录！
 range_log_sep,；
 range_log_short,弹药不够，{0}位客人感到不满（{1}）
 range_log_short_cal,{0}缺{1}发
@@ -723,6 +774,8 @@ paint_direct_tip,开启后，喷漆罐点到枪或近战武器上直接随机喷
 paint_reveal_tip,逐款揭晓中。点击“全部显示”可跳过剩余动画。
 paint_reveal_all,全部显示
 cfg_paint_direct,喷漆直接随机
+cfg_classic_paint_reveal,经典喷漆揭晓
+cfg_classic_paint_reveal_tip,开启后，喷漆罐用回原来的挑选窗口，四款涂装逐款揭晓，没有喷漆间、灯牌和展示柜。
 cfg_paint_direct_tip,喷漆罐点到枪或近战武器上时不弹出挑选窗口，直接从候选里随机喷一款（挑选窗口里也有这个开关）。关闭后，新的候选先逐个揭晓，再挑一款。想喷收藏家点名的那款，就关掉它手挑。
 skin_koi,锦鲤
 skin_magma,岩浆
@@ -767,7 +820,7 @@ cabinet_style_6,暗紫
 type_famous,名枪
 type_war,战损
 feature_purity,金属纯度：{0}
-hist_war_repair,先把品相修到良好，再上油去战损。
+hist_war_repair,先把品相翻新到良好，再上油去战损。
 hist_war_oil,品相已够，上油可去战损。
 vge_gun_cabinet_flavor,钢板焊接而成，能锁得住枪，也锁得住麻烦。
 vge_chip_rack_kit_flavor,让打印机多几个插槽，少几次翻箱倒柜。
@@ -778,6 +831,8 @@ vge_gun_oil_flavor,"上层区的收藏家曾说：“好枪是用油养出来的
 vge_paint_crate_flavor,标签上写着“艺术用品”。
 vge_spray_can_flavor,摇匀再喷。千万别对着人。
 vge_sticker_pack_flavor,贴在枪上，枪就成了你的。至少看起来是你的。
+cfg_welder_refurbish,等离子切割机翻新
+cfg_welder_refurbish_tip,拿着等离子切割机左键点品相较差的枪，能翻新到一般，不用枪械零件。关闭后不能用它翻新枪。
 cfg_gun_mod_view,改枪窗口：枪械预览与点选改装件
 cfg_gun_mod_view_tip,改枪窗口里画出这把枪（涂装、贴纸和已装的改装件），各改装件槽摆在装配位置旁边。点改装件槽，列出店里和柜台上能装在这里的改装件和属性，点一下装上。装上后枪变大、放的地方放不下就装不了（空间不足）。换下来的改装件放进新改装件所在的容器，放不下就放店里或柜台上，都没地方就装不了。关闭后使用原版改枪窗口。
 cfg_aug_tie_in,猎改造体订单和剪影靶
@@ -802,6 +857,8 @@ cfg_range_traffic,靶场引流
 cfg_range_traffic_tip,前一晚靶场每来1位客人，下层区和佣兵买枪客的来访几率就按原几率提高0.4%，最多提高20%。4名观众算1位客人。买枪客有时会提起靶场。关闭后没有这项加成。
 cfg_print_quality_price,打印品质影响成枪价格
 cfg_print_quality_price_tip,用打印的框架装成的枪，按框架打印品质的一半加价或减价，最多+50%。关闭后新装成的枪不再有这项加减价，属性和已有的枪不变。
+cfg_nitration,杰克逊博士卖韧棉硝化水培模组
+cfg_nitration_tip,杰克逊博士偶尔卖韧棉硝化水培模组。装在种韧棉的水培系统上，收获的就不是韧棉纤维，而是散装火药：小型纤维折23克，普通30克，大型39克。关闭后他不再卖，已有的模组照常能用。
 cfg_gun_barcode,枪械提示框显示条码
 cfg_gun_barcode_tip,枪械提示框里显示这把枪的条码。关闭后不显示，枪的编号不受影响。
 cfg_gun_circulation,卖出的枪流回市面
@@ -829,6 +886,7 @@ order_req_aug_hunt,猎改造体
 range_host_aug,主持人：最近改造体闹得凶，本周加了几块改造体剪影靶，打中有额外加分。
 paint_scrape_confirm,刮掉{0}上的“{1}”涂装？喷漆不会退还。
 tooltip_box_cutter_scrape,选中后点击自己的武器，可以刮掉上面的涂装、揭掉贴纸。
+tooltip_welder_refurbish,左键翻新{0}
 sticker_scrape_confirm,揭掉{0}上的“{1}”贴纸？贴纸不会退还。
 scrape_pick_title,美工刀：去掉哪一样？
 scrape_pick_paint,涂装：{0}
@@ -839,10 +897,16 @@ gunmod_pick_title,{0}：选择改装件
 gunmod_remove,卸下
 gunmod_remove_tip,把这件改装件卸下来。
 gunmod_remove_no_room,店里没有空间。
+gunmod_remove_no_room_away,这里没有空间。
 sticker_large,{0}（大号）
 gunmod_old_stuck,装着的这件不是你的，无法卸载。
 gunmod_no_space,改装后空间不足。
 gunmod_none_gun,没有已知能装在这把枪上的{0}。
+gunmod_stats,属性
+gunmod_order,订单
+gunmod_order_required,必需
+gunmod_order_pay,报酬
+gunmod_order_none,没有客人要枪
 vge_pistol_backplate_name,手枪握把贴背板
 vge_pistol_backplate_desc,一块薄薄的握把贴背板，适配“解放者”、“巢火”、“铁铸10”和哨兵3型。安装在枪托槽。
 vge_shotgun_tube_name,霰弹枪弹鼓
@@ -870,6 +934,25 @@ vge_ammo_box_confront_open_6,我又不傻。你往里面装了什么？
 vge_ammo_box_confront_short,这盒子弹根本没装满！
 vge_ammo_box_confront_caliber,你装的口径不对！
 vge_ammo_box_confront_type,你装的子弹种类不对！
+range_tablet_empty,空
+range_tablet_other,其他收入
+range_tablet_next,下场：第{0}天（周六）
+range_cal_tab,靶场
+range_cal_guests,客人
+range_cal_guests_of,{0}/{1}位
+range_cal_lane_fees,靶位费
+range_cal_rental_fees,租枪费
+range_cal_ammo_fees,弹药费
+range_cal_charge_fees,充电费
+range_cal_sponsor_fees,联赛赞助
+range_cal_shut,今晚：不营业
+range_cal_usage,昨夜使用
+range_cal_lane,靶位
+range_cal_gun,枪械
+range_cal_condition,品相
+range_cal_shots,发数
+range_cal_income,收入
+range_cal_notes,昨夜提醒
 range_terminal,靶场营业终端
 range_supply_hint,此处查看共用库存。操作靶台或储物柜时，可在背包中右键弹药送入，供各营业靶位使用。
 range_league_unavailable,现在不能报名联赛。打开靶场终端的“试射”页可进行练习。
@@ -953,15 +1036,13 @@ upgrade_vge_range_cells_title,靶场电池柜
 upgrade_vge_range_cells_desc,靶场里多一台充电柜，只放能量电池，最多三十块。靶位上的能量枪没电时，换上柜里还能打最多发的一块，营业中也照换。柜里的可充电电池和店里的充电器一样，每晚充3点电，解锁“{0}”后充6点，店里停电时不充。
 range_cells_title,靶场电池柜
 range_cells_load_failed,电池柜物品读取失败，原有存档内容已保留。
-range_log_charge,能量枪充电费：{0}信用点
 range_log_power_short,电量不够，少接了{0}位客人
 range_log_cells_swapped,电池柜给靶位换上了{0}块电池
 range_game_hud_recharge,得分：{0}　剩余：{1}秒　电池：{2}/{3}发　备用：{4}发
 range_game_hud_net,得分：{0}　剩余：{1}秒　电池：{2}/{3}发　备用：{4}发
 range_game_hud_single,得分：{0}　剩余：{1}秒　余电：{2}发
-range_paper_hud_recharge,得分：{0}　命中：{1}/{2}　电池：{3}/{4}发　备用：{5}发
-range_paper_hud_net,得分：{0}　命中：{1}/{2}　电池：{3}/{4}发　备用：{5}发
-range_paper_hud_single,得分：{0}　命中：{1}/{2}　余电：{3}发
+range_paper_hud_recharge,得分：{0}　命中：{1}/{2}　电池：{3}/{4}发　备用：不限
+range_paper_hud_net,得分：{0}　命中：{1}/{2}　电池：{3}/{4}发　备用：不限
 range_game_reloading_recharge,换电池中……
 range_game_reloading_net,换电池中……
 range_shoot_hint_recharge,左键射击 · 电池打空自动更换（也可按R键） · 虚线圈表示散布
@@ -969,7 +1050,6 @@ range_shoot_hint_net,左键射击 · 按R键换电池 · 虚线圈表示散布
 range_shoot_hint_single,左键射击 · 本局不用换电池 · 虚线圈表示散布
 range_shoot_paper_hint_recharge,只打中央圆靶 · 不限时 · 左键射击 · 电池打空自动更换
 range_shoot_paper_hint_net,只打中央圆靶 · 不限时 · 左键射击 · 按R键换电池
-range_shoot_paper_hint_single,只打中央圆靶 · 不限时 · 左键射击 · 本局不用换电池
 range_load_net,约束网
 range_head_status,营业状况
 range_head_host,联赛主办
@@ -1005,7 +1085,7 @@ range_ammo_col_tonight,今晚可用
 range_ammo_col_needed,预计需要
 range_reserve_hint,待用枪不占营业靶位。
 range_reserve_leaving,今晚停用，结算时寄回
-range_stat_record,靶场最高纪录
+range_stat_record,这种枪的纪录
 range_stat_visitors,昨晚到访
 range_stat_gun,枪械
 range_stat_caliber,口径
@@ -1039,8 +1119,6 @@ gunmod_sealed_vge_hush_barrel,线圈组
 gunmod_sealed_vge_boundary_stock,原厂枪托
 gunmod_sealed_vge_boundary_barrel,线圈组
 gunmod_sealed_vge_boundary_underbarrel,线圈组下面没有下挂位
-cfg_water_language_fix,切换语言后照常按水质收水
-cfg_water_language_fix_tip,修正原版的一处毛病：切换语言后，按水质收水的买家可能认不出合格的水。关闭后恢复原版的行为。
 manual_guns_title,公司枪与电池
 cfg_hidden_damage,暗伤
 cfg_hidden_damage_tip,品相一般或较差的旧枪进店时可能带暗伤，一把最多3处。每处让一项属性-10%、品相上限降一档，发现后估价才降。放大镜看外面，手电筒照里面：卖家的枪可以对质压价，自己的枪找到后用对应的料修好。佣兵会检查所有部位，上层区买家只查机身、握把或枪托和触点。关闭后不再出新的暗伤；已有的仍限制品相，但不影响估价和属性，买家也查不出。重新开启后照常生效。
@@ -1084,10 +1162,10 @@ vge_box_dispenser_name,弹药盒分发器
 vge_box_dispenser_flavor,一台简易装置，接上电就能吐出空弹药盒。
 vge_box_dispenser_button,出盒
 range_lane_empty_hint,把背包里的枪拖进靶台枪械槽，或从待用枪、储物柜里挑一把。没配枪的靶位只接待自带枪的客人，客流也会少。
-range_lane_fee_hint,租枪费按这把枪的现价算（品相也算在内），随店铺成长上涨。
+range_lane_fee_hint,租枪费按这把枪的现价算，品相也算在内，枪价超过500信用点的按500算。租枪费随店铺成长上涨，翻倍以后再涨只涨一半。
 range_practice_random_hint,开练时随机配弹，不用库存弹药。
 range_practice_level,打鸭难度：{0}
-range_practice_quota,共{0}靶，固定{1}，移动{2}
+range_practice_quota,起步{0}靶：固定{1}，移动{2}
 range_locker_drop_hint,把枪或其他物品拖到这个按钮上，就会放进储物柜第一个放得下的位置。
 range_locker_stored,已放进靶场储物柜：{0}
 range_locker_full,靶场储物柜放不下：{0}
@@ -1105,6 +1183,7 @@ gunmod_repair_damage,修理{0} · {1} ×1
 gunmod_repair_missing,缺料：{0} ×1
 gunmod_repair_blocked,现在不能修这把枪
 vge_ammo_box_actual,{0}：实际{1}发
+vge_ammo_box_fill,装入同类弹药
 op_bribe_goods,这次放过：{0}
 op_bribe_item,{0} ×{1}
 op_bribe_more,另有{0}件

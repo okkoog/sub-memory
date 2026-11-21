@@ -146,15 +146,15 @@ is_gp_unbound_allrestock,Stock All hotkey unbound.
 is_gp_col_pair,Paired Containers
 is_gp_pair,Pair Container
 is_gp_pair_list,Paired List
-is_gp_pair_desc,Click, then click a container to pair; the mode exits after pairing
-is_gp_pair_list_desc,View and unpair this box's containers
-is_msg_link_pick,Click a container to pair it; the mode exits after pairing; Esc to cancel
-is_msg_link_ok,Paired {0}, Stow will pull every matching item out of it
+is_gp_pair_desc,Click then click a container to pair its whole type; Stow pulls from every one of them
+is_gp_pair_list_desc,View and unpair the shared pairing list
+is_msg_link_pick,Click a container to pair; pairs the whole container type; Esc to cancel
+is_msg_link_ok,Paired {0} (whole type); Stow pulls matching items from every one of them
 is_msg_link_off,Unpaired {0}
-is_msg_link_off_all,Unpaired all {0} containers
-is_msg_link_full,Pairing full ({0} containers). Unpair some before pairing again.
-is_msg_link_lost,Pairing with {0} is gone, container no longer exists
+is_msg_link_off_all,Unpaired all {0} container types
+is_msg_link_full,Already paired {0} container types. Unpair one before pairing again.
 is_msg_link_in_store,Go back inside the store to pair containers
+is_msg_link_list_in_store,Go back inside the store to open the pairing list
 is_msg_link_cancel,Container pairing closed
 is_msg_link_bad_not_container,That is not a container
 is_msg_link_bad_locked,That container is locked
@@ -166,14 +166,12 @@ is_msg_link_bad_display,Display items cannot be paired
 is_msg_link_bad_no_grid,That container has no item slots
 is_msg_link_bad_unknown,That container cannot be paired
 is_link_unknown,container
-is_link_win_title,Paired Containers - {0}
 is_link_win_title_plain,Paired Containers
-is_link_win_count,{0} in total
+is_link_win_count,{0} container types
 is_link_win_none,No paired containers yet
 is_link_win_hint,Click "Pair Container" in the gear panel to start
 is_link_win_row,{0}. {1}
-is_link_win_row_desc,Click to unpair this container
-is_link_win_missing,{0} (not found)
+is_link_win_row_desc,Click to unpair {0}; {1} harvestable in store
 is_link_win_unlink_all,Unpair All
 is_link_win_unlink_all_desc,Clears every pair; items inside boxes are untouched
 

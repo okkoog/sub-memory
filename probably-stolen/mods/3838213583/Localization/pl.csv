@@ -5,7 +5,7 @@ counter.note.emberwake,Jaskrawa tabletka krążąca wśród nocnych zmian.
 counter.quiet_signal,Cichy sygnał
 counter.note.quiet_signal,Tabletka popularna po długiej zmianie.
 counter.velvet_static,Aksamitny szum
-counter.note.velvet_static,Różowy proszek z imprez na Aksamitnym Nabrzeżu.
+counter.note.velvet_static,Różowy proszek z imprez w Velvet Quay.
 counter.undertone,Podton
 counter.note.undertone,Klubowy proszek o barwie morskiej. Stali klienci cenią czystość.
 counter.glass_choir,Szklany chór
@@ -29,7 +29,7 @@ counter.note.sealpatch,"Zamknięta puszka żelu dla portowych medyków. Nałóż
 counter.steadyline,Pewny kurs
 counter.note.steadyline,"Lecznicza tabletka w kolorze mięty na burzliwe przeprawy. Weź ją rano po nocnym wyjściu, przed otwarciem rolety: tego dnia wyjście nie kosztuje cię żadnego klienta."
 counter.compound,Związek: {0}
-counter.instructions,Włóż cylinder z suchą substancją do urządzenia wykańczającego. Wybierz produkt {0} i uruchom wykańczanie. Pełny cylinder wystarcza na trzy porcje. Więcej zastosowań znajdziesz w podręczniku warsztatowym.
+counter.instructions,"Sucha substancja do: {0}. Włóż cylinder do wykańczarki chemicznej, wybierz pasujący produkt i naciśnij Wykończ. Pełny cylinder wystarcza na trzy porcje. Więcej zastosowań tych substancji znajdziesz w podręczniku warsztatowym."
 lab.yardglass,Szkło z bocznicy
 lab.note.yardglass,Fikcyjny krystaliczny stymulant z bocznic towarowych. Euforyzująca kontrabanda.
 lab.bridge,Tabletka Pomost
@@ -48,7 +48,7 @@ lab.warren,Surowica hodowlana
 lab.note.warren,Leczy zwykłą chorobę żywego szczura. Nie działa u nosicieli prionów.
 lab.afterimage,Powidok
 lab.note.afterimage,"Fioletowy proszek z przemytu, wytwarzany z półproduktu klinicznego. Cena zależy od czystości."
-lab.swab,Wymazówka dla szczurów
+lab.swab,Patyczek do wymazu dla szczurów
 lab.note.swab,Jednorazowy test żywego szczura na chorobę i obecność prionów.
 lab.lozenge,Pastylka portowa
 lab.note.lozenge,Przejściowo łagodzi objawy odstawienia nikotyny.
@@ -71,7 +71,7 @@ lab.burrowbalm,Maść do nory
 lab.note.burrowbalm,Przywraca do 20 punktów zdrowia rannemu żywemu szczurowi.
 lab.traumapack,Portowy pakiet urazowy
 lab.note.traumapack,"Stabilizuje ciężką, niestabilną ranę i zmniejsza jej ciężkość o dwa punkty."
-lab.orchardseal,Kit sadowniczy
+lab.orchardseal,Uszczelniacz sadowniczy
 lab.note.orchardseal,Odnawia do 15 punktów trwałości zużytego pustego opakowania po napoju Undertow. Rdza i wgniecenia pozostają.
 lab.reedbed,Saszetka klarująca
 lab.note.reedbed,Usuwa z próbki wody do 1 mL materii roślinnej. Pozostałe składniki zostają.
@@ -82,7 +82,7 @@ lab.note.echo,Sucha tabletka klubowa o silnej euforii i mocniejszym działaniu n
 lab.ghostink,Widmowy atrament
 lab.note.ghostink,Zakazany atrament analityczny. Ujawnia ukryty stan posiadanego wstrzykiwacza.
 lab.twinwatch,Tabletka podwójnej wachty
-lab.note.twinwatch,Tymczasowo łagodzi jednoczesne objawy odstawienia nikotyny i alkoholu.
+lab.note.twinwatch,Tymczasowo łagodzi jednoczesne objawy odstawienia nikotyny i alkoholu. Oba muszą być aktywne.
 lab.nursery,Emulsja hodowlana
 lab.note.nursery,Mleczna emulsja dla rannej ryby o sytości najwyżej 20%. Przywraca do 8 punktów zdrowia i 8 kalorii.
 lab.hushfare,Cichy przejazd
@@ -117,9 +117,20 @@ lab.sentinelcover,Zapas Strażnika
 lab.note.sentinelcover,"Gdy od zastrzyku Strażnika minęło co najmniej dziesięć dni, zmniejsza licznik o dwa."
 lab.returncare,Bilet powrotny
 lab.note.returncare,Tymczasowo łagodzi jednoczesne objawy odstawienia nikotyny i narkotyków.
-lab.accident.warning,"Sucha mieszanina Szkło z bocznicy grzechocze! Zmniejsz grzanie, wyłącz płytę albo zdejmij cylinder."
+lab.accident.warning,"Sucha partia Szkła z bocznicy grzechocze! Zmniejsz grzanie, wyłącz płytę albo zdejmij cylinder."
 lab.accident.risk,"Niebezpieczeństwo: Kreda dokowa i Żar podgrzane razem na sucho (poniżej 0,5 mL wody) powyżej 110 °C wybuchają, a wybuch kończy grę. Zostaw wodę w cylindrze; przy pierwszym ostrzeżeniu zdejmij go albo wyłącz płytę."
-lab.accident.countdown,"Sucha mieszanina Szkło z bocznicy grzechocze! Wybuch za {0} s: zmniejsz grzanie, wyłącz płytę albo zdejmij cylinder."
+lab.accident.countdown,"Sucha partia Szkła z bocznicy grzechocze! Wybuch za {0} s: zmniejsz grzanie, wyłącz płytę albo zdejmij cylinder."
 lab.accident.title,Wypadek w laboratorium
-lab.accident.body,Manometr pierwszy doleciał do sufitu. Płyta grzejna zajęła drugie miejsce. Ostatnia partia Szkło z bocznicy zabiła cię w wybuchu.
+lab.accident.body,Manometr pierwszy doleciał do sufitu. Płyta grzejna zajęła drugie miejsce. Twoja ostatnia partia Szkła z bocznicy zabiła cię w wybuchu.
 mod.title,Vanilla Overhaul - Advanced Chemistry
+finisher.search,Szukaj receptur
+finisher.tab.all,Wszystko
+finisher.tab.base,Bazowe
+finisher.tab.street,Ulica
+finisher.tab.care,Opieka
+finisher.tab.animals,Zwierzęta
+finisher.tab.lab,Lab.
+finisher.sort.ready,Gotowe najpierw
+finisher.sort.name,Od A do Z
+finisher.sort.volume,Wg objętości
+finisher.none,Brak pasujących receptur.
