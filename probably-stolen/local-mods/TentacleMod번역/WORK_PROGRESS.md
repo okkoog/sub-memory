@@ -27,6 +27,8 @@
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **CSV 192키 중 190키 한국어 번역, 2키 원문 보존(미번역)**, 구조 검사 통과. 런타임 미검증 |
 | `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **설정 라벨 275개·툴팁 275곳·섹션 13종 소스 번역 완료**, DLL 미컴파일·게임 실행 미검증 |
 | `[SRW-STM]SarronaTheDragon/` | 공식 Localization `zh.csv`/`en.csv`, Books JSON 4종, manifest v0.9.3 | **ko.csv 553키 전수 대응**(551개 문구 번역, 원본 공백 2키 보존); 키·변수·책 254곳 참조 검사 통과, 게임 테스트 미실시 |
+| `[SRW-STM]MentorToSarrona/` | manifest v1.2.0, `MentorToSarrona.dll` 9,216바이트(소스/Localization 없음) | **manifest 설명 한국어화만 완료**; DLL 내부 대사 번역 미완료 |
+| `3843110449/` (GeorgioToElueym) | manifest v1.1.0, `GeorgioToElueym.dll` 11,776바이트 + `ToElueym.dll` 4,608바이트(소스/Localization 없음) | **manifest 이름·설명 한국어화만 완료**; DLL 내부 문구 번역 미완료 |
 
 | 기타 이미지 교체 패키지 | manifest, 이미지 등 | 문구 여부 확인 후 필요한 경우만 번역 |
 
@@ -165,6 +167,22 @@
 - 책 JSON 4개에서 참조하는 `loc`, `nameLoc`, `descriptionLoc` 254곳 전부 번역 CSV에 대응함. `Books/*.json` 자체는 변경하지 않았음. 책 파일의 영어 `title` 메타데이터는 실행 중 용도 미확정이므로 변경하지 않음.
 - **런타임 적용 미검증**: 실제 게임에서 ko.csv 자동 로드 여부와 UI 페이지 출력/줄바꿈, 용어·자연스러움 2차 검수 필요. 숫자 표기는 중국어 숫자를 한글 숫자나 아라비아 숫자로 변환한 부분이 있어 일부 문자열은 숫자 정규식만으로 단순 비교 불가.
 - 다음 대상: 세로나의 실제 게임 적용과 서적 페이지 표시 검사, 2차 1:1 문맥 검수. `lewd_meme_config`는 소스 번역 완료지만 아직 DLL 미컴파일.
+
+## 2026-11-21 — Sarrona 매뉴얼 제목 및 신형 모드 manifest 표시 문구 번역
+
+- **범위**: 원본 파일은 `TentacleMod/`에 그대로 두고 모든 변경 파일을 `TentacleMod번역/`에 별도 작성. 이번 작업은 정적 UI/메타데이터 번역이며 신규 DLL 수정 없음.
+- **SarronaTheDragon v0.9.3 — Books 4개**:
+  - `Books/sarrona_manual_dairy.json`: `title` 'Dragon Milk and Saliva' → '용유와 용의 침', 커밋 `ece2fd53cad0a5b9d0657b2330fe1ec9022d6888`.
+  - `Books/sarrona_manual_forge.json`: `title` 'Furnace and Filter Guide' → '용광로와 용담 여과기', 커밋 `ee44dd819da8c90e4a358aade915c2020102610c`.
+  - `Books/sarrona_manual_husbandry.json`: `title` 'Raising Fish and Rats on Dragon Milk' → '용유로 물고기와 쥐 기르기', 커밋 `ec5fb2bc894f3d89af3a147e851ebd6717da41ab`.
+  - `Books/sarrona_manual_print.json`: `title` 'Printing with Dragon Bone' → '용골 프린팅', 커밋 `0d5c10666adcfb803da3700e16398dd1aa5873b1`.
+  - **검증**: JSON 4개 모두 다시 열어 파싱했고, `title`을 원래 값으로 치환해 비교하면 JSON 객체의 모든 다른 필드 및 배열 구조가 **원본과 동일**. `loc` 키, 페이지 좌표, 그림, 버튼, 제작법은 모두 보존. 이전에 완성한 `Localization/ko.csv`는 변경하지 않음. `title`의 실제 화면 사용처는 미확인.
+- **[SRW-STM]MentorToSarrona v1.2.0 — manifest 설명**: `[SRW-STM]MentorToSarrona/manifest.xml`, 커밋 `6ba8f0c01c0a1eb69efda9392db025bb361766c8`. 세로나 멘토 교체·그림/호칭/노트·SarronaTheDragon 0.9.1 연동 내용을 원문대로 한국어화. **원본 모드 Name/ID/어셈블리 변경 없음**.
+- **3843110449 / GeorgioToElueym v1.1.0 — manifest 이름·설명**: `3843110449/manifest.xml`, 커밋 `eef96a0c97dc2ba2be5423c004e323866f955e6f`. 조르지오→Elueym, 잭슨 박사→군벌, 초상화 교체/호칭/충돌 안내를 한국어화. **ID, 의존성, DLL 선언, 버전은 원문 그대로**. 게임 내 명칭과 대사는 DLL에서 바꾸는 것이므로 아직 한국어화되지 않음.
+- **[SRW-STM]SarronaTheDragon v0.9.3 — manifest 설명**: `[SRW-STM]SarronaTheDragon/manifest.xml`, 커밋 `7b7acf23e7de0f4048aac672989e3be1414abf56`. 대응 게임 버전(100-REV13, REV3 미지원), 세로나 거래·용유·제작 용도를 한국어화. **ModVersion, GameVersions, ID, DLL 경로 보존**.
+- **기계 검사**: 위 3개 XML은 `Name` 및 `Description` 요소 외의 바이트 내용이 원본과 동일. ModVersion·ID·GameVersions·Assemblies·Prerequisites 값이 원본과 동일한 것을 확인함. Books 4개도 `title` 외 변경 없음.
+- **바이너리 한계**: 현재 GitHub 연결의 파일/Blob 읽기 기능은 비-UTF-8 바이너리 DLL에서 디코딩 오류가 발생하여 바이트를 확보할 수 없었음. `MentorToSarrona.dll`, `GeorgioToElueym.dll`, `ToElueym.dll`은 **읽기/패치/컴파일/실행 검증 불가**. 안전하거나 정상 동작한다고 판정하지 않았음. 정적 manifest 번역이 인게임 DLL 문자열을 번역해 주는 것은 아님.
+- **다음 작업**: DLL 바이너리를 안전하게 가져올 수 있게 되면 식별자/내부 비교 문자열을 보호하며 UI 표시 문자열만 수정, 테스트 DLL을 별도로 만들어 로딩 검사. 별도로 Sarrona의 실제 게임 적용·책 제목 표시 위치 검수 필요.
 
 ## 기술 조사 (확인된 사실)
 
