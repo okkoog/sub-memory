@@ -6,6 +6,9 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
+> **2026-11-21 추가 진행(사용자 지시: RedLightDistrict 완전 제외):** 앞선 16개 DLL 정적 작업 이후, 별도 버전 `3842259965/probably_adult_goods.dll`(manifest v1.1.1)의 내장 Localization **181키**를 한국어화하고 실제 DLL에 `ko`/`ko-KR` 리소스 2개를 추가했다. 원본 코드 호출부 검수 후 화면 전용 중국어 툴팁 **10개 IL 참조**를 별도 치환해 정적 검증을 마쳤다. **현재 완료 17번째 DLL, 실게임 테스트는 모두 미실시.** 자세한 사항은 문서 말미의 v1.1.1 항목을 참조한다. RedLightDistrict 원본·번역 파일과 관련 스크립트는 이번 작업에서 수정하지 않았다.
+
+
 > **최신 현황(2026-11-21): 우선 15개 DLL 정적 검수 기록은 유지하며, 16번째 `fallen_heiress_eleanor.dll` v1.0.3의 내장 언어 1,839키 중 실제 문구 1,553키를 원문과 1:1 대조 번역하여 DLL에 독립 `ko.csv` 리소스와 `ko`·`ko-KR` 등록 IL 14개를 추가했다.** 개발 중 비활성 원문 자리표시자 286키는 그대로 보존. 원본 중국어·영어 내장 리소스도 모두 바이트 단위 보존했다. **16번째 DLL의 정적 Localization 번역은 종료했지만 실제 Unity/CLR/인게임 테스트는 0회**이다. 15번째 `起飞攻速装.dll`은 활성 중국어 813개 중 완전 번역 709개, 기능 보호 원문 104개의 정적 분류 종료 상태. **다음 대상 `RedLightDistrict_v1.1.1`의 Git LFS 실제 원본 152,970,752바이트 확보 및 CLR 리소스 감사를 완료했으며 활성 중국어 IL 참조 검사를 진행한다.** 다른 내부 식별자 또는 미검증 대상은 무단 일괄 치환하지 않는다.
 >
 > **중요:** '적용 문자열 수'는 번역 진행률(%)이 아니다. 기존 DLL의 중국어 잔존 문자열에는 내부 판정값·원본 데이터 키·파일 경로·호칭 검색어 등이 섞여 있어 검수 전에는 정확한 번역 대상 총량을 산정할 수 없다. 따라서 분모 확인 전에는 %를 쓰지 않는다. 
@@ -867,4 +870,16 @@
 - **정확한 완료 판정:** **이 v1.0.3의 내장 Localization 유효 문자열 정적 번역·패키징 완료**, 다른 DLL 또는 전체 프로젝트의 실게임 검증 완료를 뜻하지 않음. 기존 90개 `#US`에 포함된 내부 식별명·호칭은 일부 사용자 표시 가능성이 있어 단순 전체 치환 금지.
 - **이후 대상:** `RedLightDistrict_v1.1.1/RedLightDistrict.dll`의 실제 LFS 원본 접근에 성공. SHA256 `4f4f20a00e4754302c53879bfaeb7a7503df10e2f05ff6ad3744be31088159f8`/152,970,752바이트 검증. CLR MethodDef 1,859개, TypeDef 204개, 관리 리소스 1,617개(주로 이미지·음성) 확인. 기존 문서의 'LFS 본문 확보 불가'는 현재 해결됨. 정적 IL 한국어화 가능 여부를 추가 검수 중.
 - **실게임 검증 여전히 없음:** 대상 16개 게임 실행/기존 세이브/다른 모드 호환성 검증 0건. 정적 패치 성공과 게임 내 배포 안전성은 구분한다.
+
+
+## 2026-11-21 — 17번 Probably Adult Goods v1.1.1 한국어 DLL 정적 번역 (RedLightDistrict 제외)
+
+- **대상 원본:** `TentacleMod/3842259965/probably_adult_goods.dll` (manifest `ID=probably_adult_goods`, `ModVersion=1.1.1`). 원본 8,166,912바이트, SHA256 `60f586bd14b68b12ec1b68382a280957323cecff45e4afbf4d4cd29e637bdacf`. 원본 폴더는 수정하지 않았다. 같은 모드 ID를 쓰는 1.03/1.1.3/1.2.1 등 다른 버전과 동시에 활성화하지 않는다.
+- **실제 DLL 분석:** 기존 GitHub `fetch_file`은 8MB 바이너리 본문을 제공하지 않아 GitHub Actions에서 원본 바이트를 읽고 .NET/CLR 구조를 정적으로 검사했다. 기존 관리 리소스 **65개**, TypeDef **92개**, MethodDef **370개**. 내부 `ProbablyAdultGoods.Localization.zh.csv`(181키)와 `en.csv`(181키)를 독립 추출. 활성 중국어 포함 `ldstr` 고유 문자열 **28개 / 참조 32곳**을 메서드별 조사했다. 감사 목록: `번역대조표/AdultGoods_v1.1.1_DLL_STATIC_INVENTORY_20261121.md`, `...active_CJK_IL_inventory_20261121.tsv`, `...LOCALIZATION_IL_AUDIT_20261121.md`.
+- **181키 원문 대응:** 기존 `可能是成人用品 v1.1.3/Localization/ko.csv`(manifest상 구버전 1.03)를 참조하되 **중국어 원문이 완전히 같은 문구**로 확인된 104키 및 이름만 `*_flavor_alt`→`*_flavor`로 이동한 37키만 개별 재사용했다. 다른 38개 설정·아이템·손님 대사 등은 중국어를 읽고 개별 번역했다. 원문 표현 대신 제작자 **영문 내장 리소스 기준으로 대응한 2개 항목**은 중국어 직역 실적으로 계산하지 않고 감사표에서 별도 표시한다. **104 + 37 + 38 + 2 = 181개**, 누락/중복/추가 0, 기존 키 순서 및 포맷 인자 보존. 초안이 아닌 DLL 반영 소스: `TentacleMod번역/3842259965/Localization/ko.csv`, 출처 대조 `번역대조표/AdultGoods_v1.1.1_KO_MAPPING_AUDIT_20261121.md`.
+- **17번 실제 한국어 DLL:** `TentacleMod번역/3842259965/probably_adult_goods.dll` **8,205,824바이트**, SHA256 `38445f346ed1eeb2ff9005dafcb3df210eccffafdfb0732a8883fcff205aad8c`. 기존 모든 관리 리소스 **65개 바이트 동일**, 신규 `ProbablyAdultGoods.Localization.ko.csv`와 `ProbablyAdultGoods.Localization.ko-KR.csv` 두 개 추가(총 67개). 원본 `EmbeddedAssets.Inject`가 *.csv를 순회하고 `InjectCsv`·`BaseName`이 언어 키를 자동 등록하므로 로컬 언어 등록용 IL 후킹은 불필요하며 수정하지 않았다.
+- **표시 문구 10개만 DLL 직접 IL 수정:** `DragonCase.ProgressLine` **6곳**, `DragonCase.OnTooltip` **2곳**, `DragonDisplayCase.OnTooltip` **2곳**. 툴팁의 업그레이드 상태, 금속 재료, 순도 표시, 진열함 수집률을 한국어로 치환. 각 고유 원문이 정확히 한 호출부에 있는지 확인 후 해당 `ldstr`만 교체했고 내부 ID, 아이템 태그, 파일 경로, 설정 분기 등은 보호했다. 기존 중국어 `ldstr` 28개 중 화면 전용 **10개** 처리, 잔여 **18개/22참조**는 기능 보호 및 별도 검수 대상이며 전체 화면 한국어화로 오인하면 안 된다.
+- **정적 검증:** 원본/수정 .NET 구조, 기존 리소스 보존, 내장 KO CSV 181키/서식, 메서드별 한국어 `ldstr` 10개 역조회, ZIP 6개 엔트리 CRC32 검사 통과. `번역대조표/AdultGoods_v1.1.1_KO_DLL_STATIC_AUDIT_20261121.md`에 기록. **실제 Unity/CLR 게임 실행·UI 표시·세이브·타 모드 호환 검증 0건.** 정적 성공을 정상 게임 실행 보증으로 해석하지 않는다.
+- **배포/커밋:** `TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_20261121.zip` **8,042,558바이트**(교체 DLL, 한국어 manifest/README, 참고 ko.csv, 감사 문서). GitHub 적용 커밋 **`585e772f93544ecf0c369ee8c2253bd03d26575c`**. 기타 모드 원본/번역 폴더의 DLL은 변경하지 않았다. **RedLightDistrict의 모든 작업은 사용자 요청으로 제외**했다.
+- **이번 작업 단위 보고:** 대상 `3842259965/probably_adult_goods.dll` / 내장 번역 검수 총 181키 / 반영 181키(원문 영문 기준 2 포함) / 중국어 잔여 `#US` 고유 18개(원문 기능 보호·추가 분류) / 보류 0개(내장 Localization) / 새 DLL 리소스 2개 + 직접 UI IL 10곳 / 실게임 검증 미실시 / 최종 커밋 위 참조. 이후에는 RedLightDistrict를 제외한 미작업 모드의 원본/버전 충돌 및 번역 상태를 한 단위씩 확인한다.
 
