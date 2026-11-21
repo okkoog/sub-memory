@@ -1,0 +1,152 @@
+name: RedLightDistrict 214 manually reviewed UI strings DLL test build
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-rld-ko-ui-dll-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Patch only visually grounded method-level IL references, not global strings
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/rld_ko --force
+          dotnet add /tmp/rld_ko/rld_ko.csproj package dnlib --version 4.5.0
+          cat > /tmp/rld_ko/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.Text.Json;
+          using System.Text.RegularExpressions;
+          using System.IO;
+          using System.Collections.Generic;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+              static void Main(string[] args) {
+                  var all=new Dictionary<int,(string text,string[] sites)>();
+                  foreach(var line in File.ReadAllLines(args[1]).Skip(1)){
+                      if(string.IsNullOrWhiteSpace(line))continue;
+                      var parts=line.Split('\t');
+                      if(parts.Length!=4)throw new Exception("inventory columns");
+                      int id=int.Parse(parts[0]);
+                      all[id]=(JsonSerializer.Deserialize<string>(parts[1])!,parts[3].Split("; "));
+                  }
+                  var translated=new Dictionary<int,string>();
+                  for(int n=2;n<=3;n++){
+                      foreach(var line in File.ReadAllLines(args[n]).Skip(1)){
+                          if(string.IsNullOrWhiteSpace(line))continue;
+                          var parts=line.Split('\t');
+                          if(parts.Length!=2)throw new Exception("translation columns");
+                          int id=int.Parse(parts[0]);
+                          var ko=JsonSerializer.Deserialize<string>(parts[1])!;
+                          if(!all.ContainsKey(id) || translated.ContainsKey(id) || string.IsNullOrEmpty(ko))throw new Exception("invalid translation id:"+id);
+                          translated.Add(id,ko);
+                      }
+                  }
+                  if(translated.Count!=214)throw new Exception("reviewed count mismatch");
+                  var allow=new Regex(@"::(?:Build.*(?:Tooltip|Description|Dialogue|Panel)|ShowPanel|Append.*Line|Open.*Window|OpenPanel|Update.*Text|GetTooltip|Get.*Description|Make.*Tooltip|Refresh.*Label|Make.*Text|ShowTooltip|ShowDialog)",RegexOptions.Compiled);
+                  using var md=ModuleDefMD.Load(args[0]);
+                  var methods=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody).Select(m=>(key:t.FullName+"::"+m.Name,method:m)))
+                      .GroupBy(x=>x.key).ToDictionary(g=>g.Key,g=>g.Select(x=>x.method).ToArray());
+                  int actual=0;var patched=new List<string>();
+                  foreach(var kv in translated.OrderBy(x=>x.Key)) {
+                      var row=all[kv.Key];int local=0;
+                      foreach(var site in row.sites) {
+                          if(!allow.IsMatch(site))continue;
+                          int at=site.LastIndexOf('@');
+                          if(at<0)throw new Exception("missing offset for "+site);
+                          string methodKey=site.Substring(0,at);
+                          int offset=Convert.ToInt32(site.Substring(at+1),16);
+                          if(!methods.TryGetValue(methodKey,out var pool))throw new Exception("missing method "+methodKey);
+                          var matches=pool.SelectMany(m=>m.Body.Instructions.Where(x=>x.Offset==offset && x.OpCode==OpCodes.Ldstr && x.Operand is string s && s==row.text)).ToList();
+                          if(matches.Count!=1)throw new Exception("ambiguous site: "+site+" matches="+matches.Count);
+                          matches[0].Operand=kv.Value;
+                          local++;actual++;
+                          patched.Add(kv.Key+"\t"+site);
+                      }
+                      if(local==0)throw new Exception("No display-only caller for "+kv.Key);
+                  }
+                  if(actual!=262)throw new Exception("Patched IL call count "+actual+" expected 262");
+                  Directory.CreateDirectory(Path.GetDirectoryName(args[4])!);
+                  md.Write(args[4]);
+                  File.WriteAllLines(args[5],patched);
+                  using var verify=ModuleDefMD.Load(args[4]);
+                  if(md.GetTypes().Count()!=verify.GetTypes().Count())throw new Exception("CLR type count mismatch");
+                  Console.WriteLine("Patched 214 unique CJK strings at 262 display-only IL sites; source identifiers preserved.");
+              }
+          }
+          CS
+          dotnet run --project /tmp/rld_ko/rld_ko.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_active_CJK_strings_20261121.tsv' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_UI_reviewed_batch01_20261121.tsv' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_UI_reviewed_batch02_20261121.tsv' \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll' \
+            /tmp/rld_changed_sites.tsv
+      - name: Audit unchanged CLR data and prepare archive
+        shell: bash
+        run: |
+          python3 -m pip install --quiet dnfile
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib,dnfile,csv
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          original=Path('probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll')
+          patched=root/'RedLightDistrict_v1.1.1/RedLightDistrict.dll'
+          a=dnfile.dnPE(str(original));b=dnfile.dnPE(str(patched))
+          x={str(i.name):i.data for i in a.net.resources}
+          y={str(i.name):i.data for i in b.net.resources}
+          assert set(x)==set(y)
+          assert all(x[k]==y[k] for k in x), 'original managed resource changed'
+          assert a.net.mdtables.TypeDef.num_rows==b.net.mdtables.TypeDef.num_rows
+          assert a.net.mdtables.MethodDef.num_rows==b.net.mdtables.MethodDef.num_rows
+          sites=Path('/tmp/rld_changed_sites.tsv').read_text().splitlines()
+          assert len(sites)==262
+          ids=set(s.split('\t')[0] for s in sites)
+          assert len(ids)==214
+          audit=root/'번역대조표/RedLightDistrict_v1.1.1_UI_214_DLL_STATIC_AUDIT_20261121.md'
+          audit.write_text('# RedLightDistrict v1.1.1 partial UI Korean DLL audit\n\n'
+              +'- Original bytes: '+str(original.stat().st_size)+'; SHA256 '+hashlib.sha256(original.read_bytes()).hexdigest()+'\n'
+              +'- Patched bytes: '+str(patched.stat().st_size)+'; SHA256 '+hashlib.sha256(patched.read_bytes()).hexdigest()+'\n'
+              +'- Source Chinese IL strings: 3133 unique / 3619 live references\n'
+              +'- Human-reviewed UI strings translated: 214 unique, 262 specific IL caller sites\n'
+              +'- All original managed resources identical; TypeDef/MethodDef row counts preserved\n'
+              +'- Internal identifiers, registrations, file names, and non-UI callers of shared strings are not mass replaced\n'
+              +'- This is an incomplete UI translation; 2919 unique originally Chinese strings were not in the current translation batch (some are debug/identifier strings).\n'
+              +'- Unity/CLR loading, save data and compatibility NOT TESTED.\n',encoding='utf-8')
+          zipfile=root/'ProbablyStolen_RedLightDistrict_v1.1.1_DLL_KO_UI_214_20261121.zip'
+          with ZipFile(zipfile,'w',ZIP_DEFLATED,compresslevel=1) as z:
+              for f in ['RedLightDistrict.dll','manifest.xml','README_ko.txt']:
+                  z.write(root/'RedLightDistrict_v1.1.1'/f,arcname='RedLightDistrict_v1.1.1/'+f)
+              z.write(audit,arcname='STATIC_AUDIT.md')
+              for n in [1,2]:
+                  f=root/f'번역대조표/RedLightDistrict_v1.1.1_UI_reviewed_batch{n:02d}_20261121.tsv'
+                  z.write(f,arcname=f'UI_reviewed_batch{n:02d}.tsv')
+          with ZipFile(zipfile) as z:
+              assert z.testzip() is None and len(z.namelist())==6
+          print(audit.read_text());print('ZIP bytes',zipfile.stat().st_size)
+          PY
+      - name: Store original-sized translated binary and ZIP through Git LFS
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git lfs track 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll'
+          git lfs track 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RedLightDistrict_v1.1.1_DLL_KO_UI_214_20261121.zip'
+          git check-attr filter -- 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll'
+          git add --sparse .gitattributes \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RedLightDistrict_v1.1.1_DLL_KO_UI_214_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_UI_214_DLL_STATIC_AUDIT_20261121.md'
+          git diff --cached --quiet || (git commit -m 'build(tentacle): RedLightDistrict 214 selected UI strings in LFS DLL' && git pull --rebase origin main && git push)
