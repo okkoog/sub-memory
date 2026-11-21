@@ -1,0 +1,42 @@
+name: Build AllGirls compatibility ingot-purity fix
+on:
+  push:
+    branches: [build-allgirls-ingot-compat-20261120]
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-allgirls-ingot-compat.yml'
+      - 'probably-stolen/compat-build/**'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Compile standalone reflection helper
+        run: dotnet build probably-stolen/compat-build/IngotFixHelper.csproj --configuration Release
+      - name: Patch original v1.0.3 DLL in place with Mono.Cecil
+        run: |
+          dotnet run --project probably-stolen/compat-build/Patcher/Patcher.csproj --configuration Release -- \
+            probably-stolen/mods/3839921110/AllGirlsKoreanBountiesCompat.dll \
+            probably-stolen/compat-build/bin/Release/netstandard2.1/IngotFixHelper.dll \
+            dist/AllGirlsKoreanBountiesCompat.dll
+      - name: Prepare manifest and release files
+        run: |
+          cp probably-stolen/mods/3839921110/manifest.xml dist/manifest.xml
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('dist/manifest.xml')
+          s = p.read_text(encoding='utf-8-sig').replace('<ModVersion>1.0.3</ModVersion>', '<ModVersion>1.0.4</ModVersion>')
+          p.write_text(s, encoding='utf-8-sig')
+          PY
+          sha256sum dist/AllGirlsKoreanBountiesCompat.dll
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AllGirlsCompat-1.0.4-IngotPurity-DLL
+          path: dist/
+          if-no-files-found: error
