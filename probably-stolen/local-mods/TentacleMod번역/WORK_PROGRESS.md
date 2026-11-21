@@ -25,7 +25,7 @@
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **한국어 `ko.csv` 192개 키 유지; 189개 번역·3개 원문 유지**, 구조 검사 통과. 런타임 미검증 |
-| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | 설정 표시문구 조사 착수: `PanelKeys.cs` 라벨 182개·섹션 13개·툴팁 99개, `FamilyPanelKeys.cs` 라벨 93개·툴팁 93개. 아직 DLL 번역본 없음. |
+| `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **C# 소스의 설정 라벨 275개·섹션 13종 한국어 반영**, 툴팁 미완료; DLL 미컴파일·게임 실행 미검증 |
 
 | 기타 이미지 교체 패키지 | manifest, 이미지 등 | 문구 여부 확인 후 필요한 경우만 번역 |
 
@@ -116,11 +116,16 @@
 - **검증 범위**: GitHub에서 결과 CSV 재조회, 원본의 192키 동일성, 필드 수/CSV 형식 검사. 원문 수치 단위 `毫米`는 한국어에서 `mm`로 표기한 부분이 있음. **게임 적용 미확인**, 실제 텍스트 표시/UI 잘림·용어·문맥 2차 검수 필요.
 - **주의**: `cfg_specialty_desc_tip`에 따르면 모드의 '개선된 설명' 기능은 신규 생성 아이템에만 적용됨. 기존 아이템이 바뀌지 않을 수 있다.
 
-### lewd_meme_config 설정 화면 — 차기 작업
+### lewd_meme_config 설정 화면 — C# 소스 한국어 라벨 작업
 
-- `TentacleMod/lewd_meme_config0.7.2-pre/Source/Config/PanelKeys.cs`에서 `Section` 표시 섹션 13개, `Label` 182개, `Tooltip` 고유 99개 확인.
-- `FamilyPanelKeys.cs`에서 `Label` 93개, `Tooltip` 93개 확인. 소스가 있어 단순 DLL 블라인드 치환보다 UI 문자열 용도 확인이 쉬움.
-- **아직 컴파일·번역 DLL 생성 없음.** 원본 DLL을 임의 수정하지 말고, UI 표기만 매핑해 안전성 검사 후 수정·컴파일 경로를 결정할 것.
+- **모드 원본**: `TentacleMod/lewd_meme_config0.7.2-pre/` (manifest `0.7.2-pre`). DLL 원본과 Source 폴더는 **변경하지 않음**.
+- **한국어 소스 작업본 1**: `lewd_meme_config0.7.2-pre/Source/Config/PanelKeys.cs`. GitHub 커밋 `7813cb1664c771616b7c60f9eb7205def80881b8`. UI `Label` 문자열 182개와 `Section` 표시문구 13종(코드 내 지정 182곳)을 한국어로 교체함. 원본 파일 blob SHA `9000c74d2935e59fc74f9cde0da76a573f75318b`.
+- **한국어 소스 작업본 2**: `lewd_meme_config0.7.2-pre/Source/Config/FamilyPanelKeys.cs`. 커밋 `bff90b5061e056f06d2da3c6c4848629689e4dc0`. UI `Label` 문자열 93개를 한국어로 교체함. 원본 SHA `e68a68b8f97106acb27f5737224134af7388710d`.
+- **번역 대조표**: `번역대조표/LewdMemeConfig_PanelKeys_labels.tsv` (182개 라벨 + 13개 섹션), `번역대조표/LewdMemeConfig_FamilyPanelKeys_labels.tsv` (93개 라벨).
+- **검증**: 두 원본 소스와 한국어 작업본을 재조회 후 `Label`/`Section` 문자열 부분만 제거해 비교한 결과 나머지 소스 텍스트는 완전히 동일. 라벨 누락 0, 새 라벨 내 한자 잔존 0, C# 소스의 나머지 코드·영문 식별자·툴팁은 변경하지 않음.
+- **툴팁 미번역**: `PanelKeys.cs` 내 툴팁 지정 182곳(고유 99개), `FamilyPanelKeys.cs` 내 93곳(고유 93개), 합계 275곳. 다음 작업에서 원문 1:1 검수 후 한국어로 옮길 것.
+- **중요: 현재 파일은 소스 작업본이며 배포용 DLL이 아님.** 프로젝트의 `LewdMemeConfig.csproj`는 로컬 게임의 `Probably Stolen_Data/Managed`에 있는 Unity·게임 DLL 참조에 의존함. 이 참조가 확보되지 않아 빌드/실게임 동작은 미검증이며, 기존 `LewdMemeConfig.dll`에는 한국어가 적용되지 않음.
+
 
 ## 기술 조사 (확인된 사실)
 
@@ -145,7 +150,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. `lewdMemeBrood` 공식 Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 189/192개 번역 완료. 다음은 `lewd_meme_config` UI 라벨/툴팁 또는 타 DLL을 진행하고, Brothel/Brood/Adult Goods 실제 게임 적용을 확인.
+5. `lewdMemeBrood` 공식 Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 189/192개 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 다음은 툴팁 275곳 번역, DLL 적용 방식 검토, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
