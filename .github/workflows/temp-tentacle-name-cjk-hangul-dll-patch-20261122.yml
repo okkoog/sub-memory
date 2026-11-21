@@ -1,0 +1,128 @@
+name: Patch NPC name formatter for Korean name data (Tentacle)
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-name-cjk-hangul-dll-patch-20261122.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Ensure source name generators treat Korean letters as CJK for delimiter formatting
+        shell: bash
+        run: |
+          dotnet new console -o /tmp/name-hangul-patch --framework net8.0 --force
+          dotnet add /tmp/name-hangul-patch/name-hangul-patch.csproj package dnlib --version 4.5.0
+          cat > /tmp/name-hangul-patch/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.IO;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class Program {
+            static int Main(string[] args) {
+              string[] paths = {
+                "probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll",
+                "probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll"
+              };
+              Directory.CreateDirectory("probably-stolen/local-mods/TentacleMod번역/번역대조표");
+              var report = new System.Collections.Generic.List<string>() {
+                "# Tentacle NPC Korean name formatter static patch (2026-11-22)",
+                "",
+                "- Source Content/names.txt retains exact Chinese region identifiers required by the mods.",
+                "- Display names in the three selected regions use Korean rather than Han characters.",
+                "- Original NameGen.IsCjk compares Unicode U+4E00..U+9FFF. This patch only changes its upper bound to U+D7A3, including Hangul and avoiding inserted middle dots between Korean family and given names.",
+                "- This does not affect Roman-alphabet foreign name separation, default fallbacks or storage keys.",
+                ""
+              };
+              int patched=0;
+              foreach (var path in paths) {
+                using var mod=ModuleDefMD.Load(path);
+                var candidates=mod.GetTypes().Where(t=>t.Name.ToString()=="NameGen")
+                  .SelectMany(t=>t.Methods).Where(m=>m.Name.ToString()=="IsCjk" && m.HasBody).ToArray();
+                var replacements=0;
+                foreach (var m in candidates) {
+                  foreach (var ins in m.Body.Instructions) {
+                    if (ins.OpCode==OpCodes.Ldc_I4 && ins.Operand is int old && old==0x9FFF) {
+                      ins.Operand=0xD7A3;
+                      replacements++;
+                    }
+                  }
+                }
+                if (replacements>1)throw new Exception("unexpected extra upper-bound checks in "+path);
+                if (replacements==1) {
+                  var temp=path+".patch";
+                  mod.Write(temp);
+                  File.Move(temp,path,true);
+                  using var verify=ModuleDefMD.Load(path);
+                  if(!verify.GetTypes().Where(t=>t.Name.ToString()=="NameGen")
+                    .SelectMany(t=>t.Methods).Where(m=>m.Name.ToString()=="IsCjk"&&m.HasBody)
+                    .SelectMany(m=>m.Body.Instructions).Any(i=>i.OpCode==OpCodes.Ldc_I4 && i.Operand is int n && n==0xD7A3))
+                    throw new Exception("modified CJK check missing");
+                  patched++;
+                }
+                report.Add("- `"+Path.GetFileName(path)+"`: "+replacements+" matched NameGen.IsCjk upper bound; "+(replacements==1?"DLL patched and re-read":"no matching original method, binary unchanged")+".");
+              }
+              report.Add("- The precise original method and constants are verified with dnlib; no other intentional IL edits.");
+              report.Add("- Runtime execution is not assessed here.");
+              File.WriteAllText("probably-stolen/local-mods/TentacleMod번역/번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md",string.Join("\n",report)+"\n");
+              Console.WriteLine(string.Join("\n",report));
+              if (patched==0) return 1;
+              return 0;
+            }
+          }
+          CS
+          dotnet run --project /tmp/name-hangul-patch/name-hangul-patch.csproj -c Release
+      - name: Validate data shape and make ready-to-apply overlay
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          a=root/'lewd_meme2.1.0/Content/names.txt'
+          b=root/'LewdMemeShadowTrade1.6.4/Content/names.txt'
+          assert a.read_bytes()==b.read_bytes()
+          rows=a.read_text(encoding='utf-8-sig').splitlines()
+          assert len(rows)==13
+          expected={'中国':(260,1100),'日本':(100,300),'韩国':(100,200)}
+          assert set(expected)<=set(s.split('\t')[0] for s in rows)
+          for row in rows:
+              code,family,given=row.split('\t')
+              if code in expected:
+                  assert (len(family.split(',')),len(given.split(',')))==expected[code]
+                  assert all(not ('\u3400'<=ch<='\u9fff') for ch in family+given)
+          pack=root/'ProbablyStolen_Tentacle_NPC_Names_KO_2060_20261122.zip'
+          paths=[
+             'lewd_meme2.1.0/Content/names.txt',
+             'LewdMemeShadowTrade1.6.4/Content/names.txt',
+             'lewd_meme2.1.0/MidnightPawn.dll',
+             'LewdMemeShadowTrade1.6.4/ShadowTrade.dll',
+             '번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md'
+          ]
+          with ZipFile(pack,'w',ZIP_DEFLATED) as z:
+              for x in paths:z.write(root/x,arcname=x)
+          with ZipFile(pack) as z: assert z.testzip() is None and len(z.namelist())==len(paths)
+          print('Validated data',len(rows),'regions, ZIP size',pack.stat().st_size)
+          PY
+      - name: Commit adjusted DLLs and overlay
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll probably-stolen/local-mods/TentacleMod번역/번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Tentacle_NPC_Names_KO_2060_20261122.zip
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(tentacle): render Korean generated NPC names without CJK separator and package name data'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
