@@ -2,9 +2,9 @@
 
 - Source catalog: original TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv (untouched)
 - Total active IL occurrence keys: 3619 (includes diagnostics, internal strings and logs)
-- Korean external ko.csv translations: 1618; untranslated/fallback occurrences: 2001
+- Korean external ko.csv translations: 1718; untranslated/fallback occurrences: 1901
 - Reviewed historical source strings: 295; mapped and selected IL sites: 351; unique selected historical keys: 351
-- New manually reviewed direct keys: 1268; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 1550
+- New manually reviewed direct keys: 1368; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 1618
 - Comparison/identifier sites withheld: 3; reviewed strings at non-UI sites withheld: 57
 - Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.
 - Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).
@@ -39,13 +39,14 @@
 - manual_direct_batch24_20261121.tsv: 107 entries
 - manual_direct_batch25_20261121.tsv: 99 entries
 - manual_direct_batch26_20261121.tsv: 68 entries
+- manual_direct_batch27_20261121.tsv: 100 entries
 
 ## Complete per-key audit in source order
 
-- diagnostic-review: 1110
+- diagnostic-review: 1070
 - protected-internal: 58
 - protected-review: 44
-- translated: 1618
-- untranslated-review: 789
+- translated: 1718
+- untranslated-review: 729
 
 KEY_COVERAGE_AUDIT_20261121.tsv covers all 3619 keys once. UNTRANSLATED_REVIEW_QUEUE_20261121.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.
