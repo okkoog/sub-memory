@@ -818,3 +818,8 @@
 - `Bai She's R18 Texture Pack 1.4.0`은 제작자 설명상 텍스처만 제공하므로, `R18TexturePack.dll`은 수정하지 않고 이름/설명 한국어 `manifest.xml`과 전체 `README_ko.txt` 제작. 원본 ID/버전/필요 본편/Assembly 불변. ZIP `ProbablyStolen_BaiShe_R18_Pack_Korean_Metadata_20261121.zip` **3,588바이트**, 원본 모드에 적용할 텍스트 오버레이이며 단독 모드 아님.
 - `3842259965/probably_adult_goods.dll` 8,166,912바이트는 GitHub 연결을 통해 메타데이터만 조회되고 바이너리 content 빈 문자열, UTF-8 raw blob 호출 실패. `RedLightDistrict.dll`은 Git LFS 실제 152,970,752바이트 대신 134바이트 포인터만 접근 가능. 둘 다 실제 DLL 데이터 없이 번역/정적 수정 불가.
 - **미완료:** 나머지 대형 DLL 실데이터 확보, 각 버전 선택과 종속성 확인, Unity/CLR/게임 세이브 검증. 정적 완료 DLL이라도 실제 정상 동작을 보증하지 않음.
+
+## 2026-11-21 — 최신 누적 ZIP GitHub 재조회 CRC32 검증
+
+- `번역대조표/ARCHIVE_INTEGRITY_20261121.md` 작성. GitHub 재조회 기반으로 DailyWearWorkshop 누적 709개 ZIP(671,318바이트/14개 엔트리)과 Bai She 텍스트 오버레이 ZIP(3,588바이트/2개 엔트리) 각각 중앙 디렉터리/로컬 헤더/CRC32 검증 통과(불일치 0).
+- 위 결과는 **압축파일 구조 및 저장된 페이로드 손상 여부 검증**에 한정함. 번역 DLL의 Unity/CLR 정상 동작/세이브 기능은 여전히 미검증.
