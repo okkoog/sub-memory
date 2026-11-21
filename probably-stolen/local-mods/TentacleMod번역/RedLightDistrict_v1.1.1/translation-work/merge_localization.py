@@ -84,7 +84,24 @@ with (HERE/'Localization/ko.csv').open(encoding='utf-8-sig',newline='') as f:
         assert len(x)==2 and x[0] not in seed
         seed[x[0]]=x[1]
 assert len(seed)==22 and set(seed)<=set(existing)
+# Original DLL TypeName() emits item-name suffixes that ParseFilterFromName()
+# later parses by *Chinese* IndexOf literals. Translating only one side breaks
+# filtered boss target selection; preserve both sides until DLL locale-aware.
+UNSAFE_NAMING_KEYS={
+    'rld_3d805d46c1216c3f3652', # 颜值
+    'rld_259998749215c94824b1', # 身材
+    'rld_6bff630ce07b7f55aafe', # 气质
+    'rld_7882d7294814aa654018', # 处
+    'rld_ce6797512aa447acc035', # 萝莉
+    'rld_cc6325a044c8dc3fd83e', # 特性
+    'rld_95d4e06bc98f69224b3d', # 颜值(小)
+    'rld_fb980d761ea335c5e68e', # 身材(小)
+    'rld_f75092afdabf8b70989a', # 气质(小)
+    'rld_6a5bcff7c36497aa514f', # 少女
+}
+assert not (UNSAFE_NAMING_KEYS & set(seed))
 combined=dict(existing);combined.update(reviewed);combined.update(direct);combined.update(seed)
+for k in UNSAFE_NAMING_KEYS:combined.pop(k,None)
 assert not (set(combined)-set(by_key))
 def variables(s):return sorted(re.findall(r'\{[^{}]+\}',s))
 for k,v in combined.items():
@@ -112,6 +129,7 @@ AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization p
     +f'- New manually reviewed direct keys: {len(direct)}; original user-approved seed entries preserved: {len(seed)}; previously generated keys retained as fallback: {len(existing)}\n'
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
+    +'- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).\n'
     +'- No DLL files edited; ZIP contains ko.csv, progress report, exhaustive key audit and unresolved-key queue.\n'
     +'- Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.\n\n'
     +'## Manually reviewed new key batches\n\n'
