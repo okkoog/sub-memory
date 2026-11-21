@@ -35,7 +35,10 @@ jobs:
           translated=json.loads((root/legacy/'Content/content.json').read_text(encoding='utf-8'))
           assert source['schemaVersion']==translated['schemaVersion']
           assert source['addressWeights']==translated['addressWeights']
-          assert source['descriptions']['nightScenes']==translated['descriptions']['nightScenes']
+          assert len(source['descriptions']['nightScenes'])==len(translated['descriptions']['nightScenes'])==5
+          for original,localized in zip(source['descriptions']['nightScenes'],translated['descriptions']['nightScenes']):
+              assert original!=localized
+              assert sorted(re.findall(r'\{[^{}]+\}',original))==sorted(re.findall(r'\{[^{}]+\}',localized))
           assert list(source)==list(translated)
           patt=lambda s:sorted(re.findall(r'\{[^{}]+\}',s))
           assert len(source['descriptions']['entries'])==len(translated['descriptions']['entries'])==72
@@ -80,7 +83,7 @@ jobs:
           assert clear(original_manifest)==clear(ko_manifest)
           assert '<ModVersion>1.1.1</ModVersion>' in ko_manifest
           assert (root/guide/'使用说明.txt').read_text(encoding='utf-8').count('v1.')>=10
-          print(f'Checked 70/72 descriptions, 52/53 display labels, 170/198 dialogues, 5 original night scenes, original manifest identity preserved.')
+          print(f'Checked 70/72 descriptions, 52/53 display labels, 170/198 dialogues, 5 Korean-translated night scenes, original manifest identity preserved.')
           PY
       - name: Package each original-version overlay with integrity checks
         shell: bash
