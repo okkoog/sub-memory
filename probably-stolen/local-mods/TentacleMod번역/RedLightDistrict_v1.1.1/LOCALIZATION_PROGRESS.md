@@ -4,7 +4,7 @@
 - Total active IL occurrence keys: 3619 (includes diagnostics, internal strings and logs)
 - Korean external ko.csv translations: 3522; untranslated/fallback occurrences: 97
 - Reviewed historical source strings: 295; mapped and selected IL sites: 351; unique selected historical keys: 351
-- New manually reviewed direct keys: 3173; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 3523
+- New manually reviewed direct keys: 3173; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 3522
 - Comparison/identifier sites withheld: 3; reviewed strings at non-UI sites withheld: 57
 - Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.
 - Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).
