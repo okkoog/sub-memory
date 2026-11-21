@@ -1,0 +1,103 @@
+name: Tentacle ShadowTrade IronBlood and Doll PNG Korean documentation overlays
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-shadow-iron-docs-pack-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/LewdMemeShadowTrade1.6.4/manifest.xml
+            probably-stolen/local-mods/TentacleMod/IronBloodSheer/manifest.xml
+            probably-stolen/local-mods/TentacleMod/起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃立绘
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4
+            probably-stolen/local-mods/TentacleMod번역/IronBloodSheer
+            probably-stolen/local-mods/TentacleMod번역/起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃立绘
+          sparse-checkout-cone-mode: false
+      - name: Verify original manifest gameplay fields and PNG naming safety
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,xml.etree.ElementTree as ET
+          root=Path('probably-stolen/local-mods')
+          origin=root/'TentacleMod';ko=root/'TentacleMod번역'
+          scrub=lambda s:re.sub(r'<Description>[\s\S]*?</Description>','<Description/>',
+                        re.sub(r'<Name>[^<]*</Name>','<Name/>',s))
+          for path,ident,version in [
+            ('LewdMemeShadowTrade1.6.4','lewd_meme_remake','1.6.4'),
+            ('IronBloodSheer','ironblood_sheer','1.0.0')]:
+              src=(origin/path/'manifest.xml').read_text(encoding='utf-8')
+              dst=(ko/path/'manifest.xml').read_text(encoding='utf-8')
+              assert scrub(src)==scrub(dst),path
+              o,n=ET.fromstring(src),ET.fromstring(dst)
+              assert o.findtext('ID')==n.findtext('ID')==ident
+              assert o.findtext('ModVersion')==n.findtext('ModVersion')==version
+              for field in ['GameVersions','Prerequisites','Assemblies','Capabilities']:
+                  assert ET.tostring(o.find(field))==ET.tostring(n.find(field)),(path,field)
+          guide='起飞攻速装-v1.1.3抢先体验版（修bug）'
+          for directory in ['2000_低级违禁','2500_高级违禁']:
+              orig=origin/guide/'娃娃立绘'/directory/'放入PNG说明.txt'
+              translated=ko/guide/'娃娃立绘'/directory/'放入PNG说明.txt'
+              assert orig.exists() and translated.exists()
+              assert 'PNG' in translated.read_text(encoding='utf-8')
+          print('Two original manifests have unchanged IDs/version/prerequisites/capabilities. Doll folder rules translated, names preserved.')
+          PY
+      - name: Build three independent, exactly versioned ZIP overlays
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          mod='起飞攻速装-v1.1.3抢先体验版（修bug）'
+          configs=[
+            ('ProbablyStolen_ShadowTrade_v1.6.4_DLL_Docs_KO_20261121.zip',
+             'LewdMemeShadowTrade1.6.4',
+             ['ShadowTrade.dll','manifest.xml','README.md','docs/玩法指南.md',
+              'docs/开发指南.md','docs/审查报告.md']),
+            ('ProbablyStolen_IronBloodSheer_v1.0.0_DLL_Docs_KO_20261121.zip',
+             'IronBloodSheer',
+             ['ironblood_sheer.dll','manifest.xml','README.txt']),
+            ('ProbablyStolen_DailyWearWorkshop_Doll_PNG_Guide_KO_20261121.zip',
+             mod,
+             ['娃娃立绘/2000_低级违禁/放入PNG说明.txt',
+              '娃娃立绘/2500_高级违禁/放入PNG说明.txt'])
+          ]
+          for name,folder,files in configs:
+              z=root/name
+              with ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as f:
+                  for source in files:
+                      real=root/folder/source
+                      assert real.exists(),real
+                      f.write(real,arcname=folder+'/'+source)
+              with ZipFile(z) as check:
+                  assert check.testzip() is None
+                  assert len(check.namelist())==len(files)
+                  for source in files:assert check.read(folder+'/'+source)==(root/folder/source).read_bytes()
+              print(name,z.stat().st_size,hashlib.sha256(z.read_bytes()).hexdigest())
+          PY
+      - name: Publish three verified overlays
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_ShadowTrade_v1.6.4_DLL_Docs_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_IronBloodSheer_v1.0.0_DLL_Docs_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_DailyWearWorkshop_Doll_PNG_Guide_KO_20261121.zip'
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(tentacle): ship source-matched ShadowTrade and IronBlood Korean docs plus doll PNG guide'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
