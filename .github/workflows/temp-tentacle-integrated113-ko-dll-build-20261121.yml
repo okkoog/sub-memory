@@ -246,4 +246,13 @@ jobs:
             'probably-stolen/local-mods/TentacleMod번역/3843142171/fallen_heiress_eleanor.dll' \
             'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_DLL_KO_1734_20261121.zip' \
             'probably-stolen/local-mods/TentacleMod번역/번역대조표/Integrated_Eleanor_AdultGoods_v1.1.3_KO_DLL_STATIC_AUDIT_20261121.md'
-          git diff --cached --quiet || (git commit -m 'build(tentacle): complete integrated v1.1.3 isolated ko DLL for both modules' && git pull --rebase origin main && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(tentacle): complete integrated v1.1.3 isolated ko DLL for both modules'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            echo "Could not push verified integrated DLL after 5 attempts" >&2
+            exit 1
+          fi
