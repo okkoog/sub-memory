@@ -1,0 +1,382 @@
+# Adult Goods v1.1.1 embedded localization IL static audit
+
+Methods selected: 10
+
+## ProbablyAdultGoods.ModEntry::Init (0600009B)
+- IL_0000: ldarg.1 
+- IL_0001: stsfld ModManifest ProbablyAdultGoods.ModEntry::Manifest
+- IL_0006: ldarg.1 
+- IL_0007: newobj System.Void ModLog::.ctor(ModManifest)
+- IL_000C: stsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_0011: ldarg.1 
+- IL_0012: ldfld System.String ModManifest::ID
+- IL_0017: call ModConfig ModHelper::GetConfig(System.String)
+- IL_001C: dup 
+- IL_001D: ldstr "max_adult_cases"
+- IL_0022: ldc.i4.1 
+- IL_0023: ldstr "\u989D\u5916\u5185\u5BB9"
+- IL_0028: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_0
+- IL_002D: dup 
+- IL_002E: brtrue.s IL_0047: ldc.i4.1
+- IL_0030: pop 
+- IL_0031: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_0036: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_0()
+- IL_003C: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_0041: dup 
+- IL_0042: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_0
+- IL_0047: ldc.i4.1 
+- IL_0048: newobj System.Void System.Nullable`1<System.Int32>::.ctor(System.Int32)
+- IL_004D: ldc.i4.5 
+- IL_004E: newobj System.Void System.Nullable`1<System.Int32>::.ctor(System.Int32)
+- IL_0053: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_1
+- IL_0058: dup 
+- IL_0059: brtrue.s IL_0072: ldc.i4.0
+- IL_005B: pop 
+- IL_005C: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_0061: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_1()
+- IL_0067: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_006C: dup 
+- IL_006D: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_1
+- IL_0072: ldc.i4.0 
+- IL_0073: callvirt ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+- IL_0078: stsfld ConfigEntry`1<System.Int32> ProbablyAdultGoods.ModEntry::MaxAdultCases
+- IL_007D: dup 
+- IL_007E: ldstr "max_display_cases"
+- IL_0083: ldc.i4.1 
+- IL_0084: ldstr "\u989D\u5916\u5185\u5BB9"
+- IL_0089: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_2
+- IL_008E: dup 
+- IL_008F: brtrue.s IL_00A8: ldc.i4.1
+- IL_0091: pop 
+- IL_0092: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_0097: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_2()
+- IL_009D: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_00A2: dup 
+- IL_00A3: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_2
+- IL_00A8: ldc.i4.1 
+- IL_00A9: newobj System.Void System.Nullable`1<System.Int32>::.ctor(System.Int32)
+- IL_00AE: ldc.i4.5 
+- IL_00AF: newobj System.Void System.Nullable`1<System.Int32>::.ctor(System.Int32)
+- IL_00B4: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_3
+- IL_00B9: dup 
+- IL_00BA: brtrue.s IL_00D3: ldc.i4.0
+- IL_00BC: pop 
+- IL_00BD: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_00C2: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_3()
+- IL_00C8: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_00CD: dup 
+- IL_00CE: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_3
+- IL_00D3: ldc.i4.0 
+- IL_00D4: callvirt ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,System.Func`1<System.String>,System.Nullable`1<System.Int32>,System.Nullable`1<System.Int32>,System.Func`1<System.String>,System.Boolean)
+- IL_00D9: stsfld ConfigEntry`1<System.Int32> ProbablyAdultGoods.ModEntry::MaxDisplayCases
+- IL_00DE: dup 
+- IL_00DF: ldstr "loot_multiplier"
+- IL_00E4: ldc.r4 1
+- IL_00E9: ldstr "\u989D\u5916\u5185\u5BB9"
+- IL_00EE: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_4
+- IL_00F3: dup 
+- IL_00F4: brtrue.s IL_010D: ldc.r4 0.5
+- IL_00F6: pop 
+- IL_00F7: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_00FC: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_4()
+- IL_0102: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_0107: dup 
+- IL_0108: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_4
+- IL_010D: ldc.r4 0.5
+- IL_0112: newobj System.Void System.Nullable`1<System.Single>::.ctor(System.Single)
+- IL_0117: ldc.r4 4
+- IL_011C: newobj System.Void System.Nullable`1<System.Single>::.ctor(System.Single)
+- IL_0121: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_5
+- IL_0126: dup 
+- IL_0127: brtrue.s IL_0140: ldc.i4.1
+- IL_0129: pop 
+- IL_012A: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_012F: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_5()
+- IL_0135: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_013A: dup 
+- IL_013B: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_5
+- IL_0140: ldc.i4.1 
+- IL_0141: callvirt ConfigEntry`1<System.Single> ModConfig::Define(System.String,System.Single,System.String,System.Func`1<System.String>,System.Nullable`1<System.Single>,System.Nullable`1<System.Single>,System.Func`1<System.String>,System.Boolean)
+- IL_0146: stsfld ConfigEntry`1<System.Single> ProbablyAdultGoods.ModEntry::LootMultiplier
+- IL_014B: ldstr "curio_loot"
+- IL_0150: ldc.i4.0 
+- IL_0151: ldstr "\u989D\u5916\u5185\u5BB9"
+- IL_0156: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_6
+- IL_015B: dup 
+- IL_015C: brtrue.s IL_0175: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_7
+- IL_015E: pop 
+- IL_015F: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_0164: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_6()
+- IL_016A: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_016F: dup 
+- IL_0170: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_6
+- IL_0175: ldsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_7
+- IL_017A: dup 
+- IL_017B: brtrue.s IL_0194: ldc.i4.1
+- IL_017D: pop 
+- IL_017E: ldsfld ProbablyAdultGoods.ModEntry/<>c ProbablyAdultGoods.ModEntry/<>c::<>9
+- IL_0183: ldftn System.String ProbablyAdultGoods.ModEntry/<>c::<Init>b__7_7()
+- IL_0189: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_018E: dup 
+- IL_018F: stsfld System.Func`1<System.String> ProbablyAdultGoods.ModEntry/<>c::<>9__7_7
+- IL_0194: ldc.i4.1 
+- IL_0195: callvirt ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String,System.Func`1<System.String>,System.Func`1<System.String>,System.Boolean)
+- IL_019A: stsfld ConfigEntry`1<System.Boolean> ProbablyAdultGoods.ModEntry::CurioLoot
+- IL_019F: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_01A4: ldstr "Init."
+- IL_01A9: callvirt System.Void ModLog::Log(System.Object)
+- IL_01AE: ret 
+## ProbablyAdultGoods.ModEntry::OnEnable (0600009C)
+- IL_0000: ldc.i4.1 
+- IL_0001: stsfld System.Boolean ProbablyAdultGoods.ModEntry::ContentActive
+- IL_0006: ldsfld System.Action`1<ModItemDirectory> ProbablyAdultGoods.ModEntry/<>O::<0>__RegisterItems
+- IL_000B: dup 
+- IL_000C: brtrue.s IL_0021: call System.Void ModHook::add_OnModItemDirectoryInit(System.Action`1<ModItemDirectory>)
+- IL_000E: pop 
+- IL_000F: ldnull 
+- IL_0010: ldftn System.Void ProbablyAdultGoods.ModEntry::RegisterItems(ModItemDirectory)
+- IL_0016: newobj System.Void System.Action`1<ModItemDirectory>::.ctor(System.Object,System.IntPtr)
+- IL_001B: dup 
+- IL_001C: stsfld System.Action`1<ModItemDirectory> ProbablyAdultGoods.ModEntry/<>O::<0>__RegisterItems
+- IL_0021: call System.Void ModHook::add_OnModItemDirectoryInit(System.Action`1<ModItemDirectory>)
+- IL_0026: ldsfld System.Action`1<LoadedMod> ProbablyAdultGoods.ModEntry/<>O::<1>__OnAssetsLoaded
+- IL_002B: dup 
+- IL_002C: brtrue.s IL_0041: call System.Void ModHook::add_OnModAssetsLoaded(System.Action`1<LoadedMod>)
+- IL_002E: pop 
+- IL_002F: ldnull 
+- IL_0030: ldftn System.Void ProbablyAdultGoods.ModEntry::OnAssetsLoaded(LoadedMod)
+- IL_0036: newobj System.Void System.Action`1<LoadedMod>::.ctor(System.Object,System.IntPtr)
+- IL_003B: dup 
+- IL_003C: stsfld System.Action`1<LoadedMod> ProbablyAdultGoods.ModEntry/<>O::<1>__OnAssetsLoaded
+- IL_0041: call System.Void ModHook::add_OnModAssetsLoaded(System.Action`1<LoadedMod>)
+- IL_0046: ldsfld System.Action`1<LootRollContext> ProbablyAdultGoods.ModEntry/<>O::<2>__OnLootRolled
+- IL_004B: dup 
+- IL_004C: brtrue.s IL_0061: call System.Void ModHook::add_OnLootRolled(System.Action`1<LootRollContext>)
+- IL_004E: pop 
+- IL_004F: ldnull 
+- IL_0050: ldftn System.Void ProbablyAdultGoods.LootHooks::OnLootRolled(LootRollContext)
+- IL_0056: newobj System.Void System.Action`1<LootRollContext>::.ctor(System.Object,System.IntPtr)
+- IL_005B: dup 
+- IL_005C: stsfld System.Action`1<LootRollContext> ProbablyAdultGoods.ModEntry/<>O::<2>__OnLootRolled
+- IL_0061: call System.Void ModHook::add_OnLootRolled(System.Action`1<LootRollContext>)
+- IL_0066: ldsfld System.Action ProbablyAdultGoods.ModEntry/<>O::<3>__PatchLoadedItems
+- IL_006B: dup 
+- IL_006C: brtrue.s IL_0081: call System.Void ModHook::add_OnGameLoadedLate(System.Action)
+- IL_006E: pop 
+- IL_006F: ldnull 
+- IL_0070: ldftn System.Void ProbablyAdultGoods.ItemSheet::PatchLoadedItems()
+- IL_0076: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+- IL_007B: dup 
+- IL_007C: stsfld System.Action ProbablyAdultGoods.ModEntry/<>O::<3>__PatchLoadedItems
+- IL_0081: call System.Void ModHook::add_OnGameLoadedLate(System.Action)
+- IL_0086: ldsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<4>__OnTooltip
+- IL_008B: dup 
+- IL_008C: brtrue.s IL_00A1: call System.Void ModHook::add_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_008E: pop 
+- IL_008F: ldnull 
+- IL_0090: ldftn System.Void ProbablyAdultGoods.DragonCase::OnTooltip(RichTextBuilder,GameItem)
+- IL_0096: newobj System.Void System.Action`2<RichTextBuilder,GameItem>::.ctor(System.Object,System.IntPtr)
+- IL_009B: dup 
+- IL_009C: stsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<4>__OnTooltip
+- IL_00A1: call System.Void ModHook::add_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00A6: ldsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<5>__OnTooltip
+- IL_00AB: dup 
+- IL_00AC: brtrue.s IL_00C1: call System.Void ModHook::add_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00AE: pop 
+- IL_00AF: ldnull 
+- IL_00B0: ldftn System.Void ProbablyAdultGoods.DragonDisplayCase::OnTooltip(RichTextBuilder,GameItem)
+- IL_00B6: newobj System.Void System.Action`2<RichTextBuilder,GameItem>::.ctor(System.Object,System.IntPtr)
+- IL_00BB: dup 
+- IL_00BC: stsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<5>__OnTooltip
+- IL_00C1: call System.Void ModHook::add_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00C6: call System.Void ProbablyAdultGoods.AdultTypeBootstrap::EnsureTypeRegistered()
+- IL_00CB: call System.Void ProbablyAdultGoods.EventRegistration::RegisterEvents()
+- IL_00D0: call System.Void ProbablyAdultGoods.LootHooks::RegisterLoot()
+- IL_00D5: call System.Void ProbablyAdultGoods.ShowcaseClients::Register()
+- IL_00DA: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_00DF: ldstr "Enabled."
+- IL_00E4: callvirt System.Void ModLog::Log(System.Object)
+- IL_00E9: ret 
+## ProbablyAdultGoods.ModEntry::OnDisable (0600009D)
+- IL_0000: ldsfld System.Boolean ProbablyAdultGoods.ModEntry::ContentActive
+- IL_0005: brtrue.s IL_0008: ldsfld System.Action`1<ModItemDirectory> ProbablyAdultGoods.ModEntry/<>O::<0>__RegisterItems
+- IL_0007: ret 
+- IL_0008: ldsfld System.Action`1<ModItemDirectory> ProbablyAdultGoods.ModEntry/<>O::<0>__RegisterItems
+- IL_000D: dup 
+- IL_000E: brtrue.s IL_0023: call System.Void ModHook::remove_OnModItemDirectoryInit(System.Action`1<ModItemDirectory>)
+- IL_0010: pop 
+- IL_0011: ldnull 
+- IL_0012: ldftn System.Void ProbablyAdultGoods.ModEntry::RegisterItems(ModItemDirectory)
+- IL_0018: newobj System.Void System.Action`1<ModItemDirectory>::.ctor(System.Object,System.IntPtr)
+- IL_001D: dup 
+- IL_001E: stsfld System.Action`1<ModItemDirectory> ProbablyAdultGoods.ModEntry/<>O::<0>__RegisterItems
+- IL_0023: call System.Void ModHook::remove_OnModItemDirectoryInit(System.Action`1<ModItemDirectory>)
+- IL_0028: ldsfld System.Action`1<LoadedMod> ProbablyAdultGoods.ModEntry/<>O::<1>__OnAssetsLoaded
+- IL_002D: dup 
+- IL_002E: brtrue.s IL_0043: call System.Void ModHook::remove_OnModAssetsLoaded(System.Action`1<LoadedMod>)
+- IL_0030: pop 
+- IL_0031: ldnull 
+- IL_0032: ldftn System.Void ProbablyAdultGoods.ModEntry::OnAssetsLoaded(LoadedMod)
+- IL_0038: newobj System.Void System.Action`1<LoadedMod>::.ctor(System.Object,System.IntPtr)
+- IL_003D: dup 
+- IL_003E: stsfld System.Action`1<LoadedMod> ProbablyAdultGoods.ModEntry/<>O::<1>__OnAssetsLoaded
+- IL_0043: call System.Void ModHook::remove_OnModAssetsLoaded(System.Action`1<LoadedMod>)
+- IL_0048: ldsfld System.Action`1<LootRollContext> ProbablyAdultGoods.ModEntry/<>O::<2>__OnLootRolled
+- IL_004D: dup 
+- IL_004E: brtrue.s IL_0063: call System.Void ModHook::remove_OnLootRolled(System.Action`1<LootRollContext>)
+- IL_0050: pop 
+- IL_0051: ldnull 
+- IL_0052: ldftn System.Void ProbablyAdultGoods.LootHooks::OnLootRolled(LootRollContext)
+- IL_0058: newobj System.Void System.Action`1<LootRollContext>::.ctor(System.Object,System.IntPtr)
+- IL_005D: dup 
+- IL_005E: stsfld System.Action`1<LootRollContext> ProbablyAdultGoods.ModEntry/<>O::<2>__OnLootRolled
+- IL_0063: call System.Void ModHook::remove_OnLootRolled(System.Action`1<LootRollContext>)
+- IL_0068: ldsfld System.Action ProbablyAdultGoods.ModEntry/<>O::<3>__PatchLoadedItems
+- IL_006D: dup 
+- IL_006E: brtrue.s IL_0083: call System.Void ModHook::remove_OnGameLoadedLate(System.Action)
+- IL_0070: pop 
+- IL_0071: ldnull 
+- IL_0072: ldftn System.Void ProbablyAdultGoods.ItemSheet::PatchLoadedItems()
+- IL_0078: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+- IL_007D: dup 
+- IL_007E: stsfld System.Action ProbablyAdultGoods.ModEntry/<>O::<3>__PatchLoadedItems
+- IL_0083: call System.Void ModHook::remove_OnGameLoadedLate(System.Action)
+- IL_0088: ldsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<4>__OnTooltip
+- IL_008D: dup 
+- IL_008E: brtrue.s IL_00A3: call System.Void ModHook::remove_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_0090: pop 
+- IL_0091: ldnull 
+- IL_0092: ldftn System.Void ProbablyAdultGoods.DragonCase::OnTooltip(RichTextBuilder,GameItem)
+- IL_0098: newobj System.Void System.Action`2<RichTextBuilder,GameItem>::.ctor(System.Object,System.IntPtr)
+- IL_009D: dup 
+- IL_009E: stsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<4>__OnTooltip
+- IL_00A3: call System.Void ModHook::remove_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00A8: ldsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<5>__OnTooltip
+- IL_00AD: dup 
+- IL_00AE: brtrue.s IL_00C3: call System.Void ModHook::remove_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00B0: pop 
+- IL_00B1: ldnull 
+- IL_00B2: ldftn System.Void ProbablyAdultGoods.DragonDisplayCase::OnTooltip(RichTextBuilder,GameItem)
+- IL_00B8: newobj System.Void System.Action`2<RichTextBuilder,GameItem>::.ctor(System.Object,System.IntPtr)
+- IL_00BD: dup 
+- IL_00BE: stsfld System.Action`2<RichTextBuilder,GameItem> ProbablyAdultGoods.ModEntry/<>O::<5>__OnTooltip
+- IL_00C3: call System.Void ModHook::remove_OnCreateTooltipLate(System.Action`2<RichTextBuilder,GameItem>)
+- IL_00C8: call System.Void ProbablyAdultGoods.ShowcaseClients::Unregister()
+- IL_00CD: ldc.i4.0 
+- IL_00CE: stsfld System.Boolean ProbablyAdultGoods.ModEntry::ContentActive
+- IL_00D3: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_00D8: ldstr "Disabled."
+- IL_00DD: callvirt System.Void ModLog::Log(System.Object)
+- IL_00E2: ret 
+## ProbablyAdultGoods.ModEntry::RegisterItems (0600009E)
+- IL_0000: ldsfld System.Boolean ProbablyAdultGoods.ModEntry::ContentActive
+- IL_0005: brtrue.s IL_0008: ldarg.0
+- IL_0007: ret 
+- IL_0008: ldarg.0 
+- IL_0009: call System.Void ProbablyAdultGoods.ItemRegistry::Register(ModItemDirectory)
+- IL_000E: ret 
+## ProbablyAdultGoods.ModEntry::OnAssetsLoaded (0600009F)
+- IL_0000: ldarg.0 
+- IL_0001: brtrue.s IL_0006: ldarg.0
+- IL_0003: ldnull 
+- IL_0004: br.s IL_000C: brfalse.s IL_0025
+- IL_0006: ldarg.0 
+- IL_0007: ldfld ModManifest LoadedMod::Manifest
+- IL_000C: brfalse.s IL_0025: ret
+- IL_000E: ldarg.0 
+- IL_000F: ldfld ModManifest LoadedMod::Manifest
+- IL_0014: ldfld System.String ModManifest::ID
+- IL_0019: ldstr "probably_adult_goods"
+- IL_001E: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0023: brfalse.s IL_0026: ldarg.0
+- IL_0025: ret 
+- IL_0026: ldarg.0 
+- IL_0027: call System.Void ProbablyAdultGoods.EmbeddedAssets::Inject(LoadedMod)
+- IL_002C: call System.Void ProbablyAdultGoods.ItemCatalog::EnsureLoaded()
+- IL_0031: call System.Void ProbablyAdultGoods.ModLocale::ApplyManifestName()
+- IL_0036: ldarg.0 
+- IL_0037: call System.Void ProbablyAdultGoods.SpritePrep::Apply(LoadedMod)
+- IL_003C: ret 
+## ProbablyAdultGoods.ModEntry::.ctor (060000A0)
+- IL_0000: ldarg.0 
+- IL_0001: call System.Void System.Object::.ctor()
+- IL_0006: ret 
+## ProbablyAdultGoods.ModLocale::CurrentCode (060000A1)
+- IL_0000: call UnityEngine.Localization.Locale ModHelper::GetCurrentLocale()
+- IL_0005: dup 
+- IL_0006: brtrue.s IL_000C: call UnityEngine.Localization.LocaleIdentifier UnityEngine.Localization.Locale::get_Identifier()
+- IL_0008: pop 
+- IL_0009: ldnull 
+- IL_000A: br.s IL_0019: dup
+- IL_000C: call UnityEngine.Localization.LocaleIdentifier UnityEngine.Localization.Locale::get_Identifier()
+- IL_0011: stloc.0 
+- IL_0012: ldloca.s V_0
+- IL_0014: call System.String UnityEngine.Localization.LocaleIdentifier::get_Code()
+- IL_0019: dup 
+- IL_001A: brtrue.s IL_0022: stloc.1
+- IL_001C: pop 
+- IL_001D: ldstr "en"
+- IL_0022: stloc.1 
+- IL_0023: leave.s IL_002E: ldloc.1
+- IL_0025: pop 
+- IL_0026: ldstr "en"
+- IL_002B: stloc.1 
+- IL_002C: leave.s IL_002E: ldloc.1
+- IL_002E: ldloc.1 
+- IL_002F: ret 
+## ProbablyAdultGoods.ModLocale::IsChinese (060000A2)
+- IL_0000: call System.String ProbablyAdultGoods.ModLocale::CurrentCode()
+- IL_0005: stloc.0 
+- IL_0006: ldloc.0 
+- IL_0007: ldstr "zh"
+- IL_000C: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_0011: brtrue.s IL_0020: ldc.i4.1
+- IL_0013: ldloc.0 
+- IL_0014: ldstr "zh"
+- IL_0019: ldc.i4.5 
+- IL_001A: callvirt System.Boolean System.String::StartsWith(System.String,System.StringComparison)
+- IL_001F: ret 
+- IL_0020: ldc.i4.1 
+- IL_0021: ret 
+## ProbablyAdultGoods.ModLocale::LocalizedModName (060000A3)
+- IL_0000: ldstr "mod_name"
+- IL_0005: stloc.0 
+- IL_0006: ldstr "probably_adult_goods"
+- IL_000B: ldloc.0 
+- IL_000C: call System.Object[] System.Array::Empty<System.Object>()
+- IL_0011: call System.String ModHelper::GetLocalized(System.String,System.String,System.Object[])
+- IL_0016: stloc.1 
+- IL_0017: ldloc.1 
+- IL_0018: call System.Boolean System.String::IsNullOrEmpty(System.String)
+- IL_001D: brtrue.s IL_002A: call System.Boolean ProbablyAdultGoods.ModLocale::IsChinese()
+- IL_001F: ldloc.1 
+- IL_0020: ldloc.0 
+- IL_0021: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0026: brfalse.s IL_002A: call System.Boolean ProbablyAdultGoods.ModLocale::IsChinese()
+- IL_0028: ldloc.1 
+- IL_0029: ret 
+- IL_002A: call System.Boolean ProbablyAdultGoods.ModLocale::IsChinese()
+- IL_002F: brtrue.s IL_0037: ldstr "可能是成人用品"
+- IL_0031: ldstr "Probably Adult Goods"
+- IL_0036: ret 
+- IL_0037: ldstr "\u53EF\u80FD\u662F\u6210\u4EBA\u7528\u54C1"
+- IL_003C: ret 
+## ProbablyAdultGoods.ModLocale::ApplyManifestName (060000A4)
+- IL_0000: ldsfld ModManifest ProbablyAdultGoods.ModEntry::Manifest
+- IL_0005: brtrue.s IL_0008: call System.String ProbablyAdultGoods.ModLocale::LocalizedModName()
+- IL_0007: ret 
+- IL_0008: call System.String ProbablyAdultGoods.ModLocale::LocalizedModName()
+- IL_000D: stloc.0 
+- IL_000E: ldsfld ModManifest ProbablyAdultGoods.ModEntry::Manifest
+- IL_0013: ldloc.0 
+- IL_0014: stfld System.String ModManifest::Name
+- IL_0019: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_001E: dup 
+- IL_001F: brtrue.s IL_0023: ldstr "Manifest name set to: "
+- IL_0021: pop 
+- IL_0022: ret 
+- IL_0023: ldstr "Manifest name set to: "
+- IL_0028: ldloc.0 
+- IL_0029: call System.String System.String::Concat(System.String,System.String)
+- IL_002E: call System.Void ModLog::Log(System.Object)
+- IL_0033: ret 
