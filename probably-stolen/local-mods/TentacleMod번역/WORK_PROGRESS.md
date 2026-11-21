@@ -20,7 +20,7 @@
 | `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **1차 한국어 DLL 시험본 업로드**: 64개 문자열, 74곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | **1차 한국어 DLL 시험본 업로드**: 59개 문자열, 65곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | **한국어 CSV 178개 키 전수 번역 완료(문자열 구조 검사 통과)**, 실제 게임 적용 미검증 |
-| `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/`, manifest v0.3.31 | **공식 중국어 Localization 566키 전수 번역·대조 통과**, Content 대사 JSON은 별도 미완료 |
+| `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/`, manifest v0.3.31 | **Localization 566키 전수 번역**, 상호작용 JSON 135개 중 **125개 번역, 10개 보류** |
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
@@ -35,8 +35,9 @@
 | 고해상도 초상화 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 문자열 82개/IL 참조 105곳 | 시험 DLL, 게임 테스트 미실시 |
 | 매음굴 확장 | `LewdMemeBrothel-0.10.4-candidate/Localization/ko.csv` | 원문 178키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
 | 촉수 번식 확장 | `lewdMemeBrood v0331/Localization/ko.csv` | 원문 566키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
+| 촉수 번식 상호작용 | `lewdMemeBrood v0331/Content/interactionLines.json` | 135줄 중 125개 대사 번역, 10개 보류 | JSON 구조·치환 변수 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **744개 키**(Brothel 178 + Brood 566)는 별도 합산.
+- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **744개 키**(Brothel 178 + Brood 566), 외부 JSON 번역 **125개 대사**는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -87,8 +88,19 @@
 - **검사**: 중문·영문 키 수 각각 566, 한국어 566; 누락 0, 추가 0, 중복 0, `{0}` 등 서식 인자 불일치 0, 이스케이프 줄바꿈 `\\n` 수량 불일치 0, 빈 번역 0. 결과 CSV를 GitHub에서 다시 읽어 확인함.
 - **검수/재개 자료**: `번역대조표/Brood_001-150.tsv` (144키), `Brood_146-306.tsv` (161키), `Brood_307-423.tsv` (117키), `Brood_424-567.tsv` (144키). **계 566키**. 각 파일 키는 원본과 1:1 대응하며, 다음 채팅에서 번역 내용과 문맥을 재검수할 수 있음.
 - **용어**: `李北文`은 한국어 파일과 대조표 모두 **리베이원**으로 통일. `触巢`는 '촉수 둥지', `孵卵巢`는 '부화 둥지', `苗床`은 우선 '숙주'로 번역. 다른 촉수 확장과 맞춰 최종 용어 통일 검수가 필요함.
-- **미완료**: `Content/interactionLines.json`은 별도 중국어 대사 파일로 존재. `ko.csv`만으로는 번역되지 않으므로 반드시 별도로 작업하고 게임 로딩 방식을 확인할 것.
+- **추가 작업**: `Content/interactionLines.json`에서 대사 135개 중 125개 번역, 10개 보류. 아래 별도 기록을 참조. 게임 로딩 방식은 여전히 확인 필요.
 - **주의**: CSV의 완전한 키 대조를 통과했지만 실제 게임이 `ko.csv`를 불러오는지, 화면 UI 길이/대사 자연스러움은 **미검증**. DLL은 수정하지 않았음.
+
+### lewdMemeBrood — 상호작용 대사 JSON
+
+- **커밋**: `a37914e12b6b5820210463d3c5047014b52dda0b`
+- **번역본**: `lewdMemeBrood v0331/Content/interactionLines.json`
+- **원본**: `TentacleMod/lewdMemeBrood v0331/Content/interactionLines.json` (Git blob SHA `7855f69a67291a9b8324cfe7acce56ee3582b5d3`)
+- **대사 검수 현황**: 전체 135개 중 125개 한국어로 번역. 10개는 연령이 불명확한 캐릭터 체형 분류에 연결된 대사라 **원문 유지/보류**. 이들을 완료로 집계하면 안 됨. 별도 설명·예시 메타데이터는 게임 표시 문구가 아닌 원문 그대로 유지.
+- **대조표**: `번역대조표/Brood_interactions_000-074.tsv` (65개), `Brood_interactions_075-134.tsv` (60개). 대조표 첫 번째 열은 원본 `lines` 배열 인덱스(0부터 시작).
+- **기술적 무결성 확인**: JSON 로드 가능, `lines` 135개 유지, 모든 `kind` 및 `tags` 원문과 동일, `{name}`·`{tentacle}` 등의 치환 변수 불일치 0, 번역 대상에 미번역 한자 0.
+- **실게임 검증 미실시**. 실제 화면에서 문장 길이, 조건별 무작위 호출, JSON 우선 적용 여부 확인 필요.
+- **다음 과제**: 보류 10개는 작업 정책과 안전 기준 확인 전에는 수정하지 않음. 이미 번역한 125개도 2차 어체 검수 대상.
 
 ## 기술 조사 (확인된 사실)
 
@@ -104,7 +116,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. `lewdMemeBrood` 공식 Localization 566키는 번역 완료. 다음으로 별도 `Content/interactionLines.json`의 중국어 대사와 다른 데이터 파일을 번역하고, 원본/한국어의 키·JSON 구조·치환 인자 무결성을 검사. Brothel도 실제 게임 적용을 확인.
+5. `lewdMemeBrood` 공식 Localization 566키 번역 완료, 상호작용 JSON 125/135개 번역 완료. 다음은 다른 모드의 미번역 JSON/CSV 또는 본체 DLL을 검수하고, Brothel/Brood 실제 게임 적용을 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
