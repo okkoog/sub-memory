@@ -39,7 +39,7 @@ jobs:
                 "# Tentacle NPC Korean name formatter static patch (2026-11-22)",
                 "",
                 "- Source Content/names.txt retains exact Chinese region identifiers required by the mods.",
-                "- Display names in the three selected regions use Korean rather than Han characters.",
+                "- Display names in the all 13 regions use Korean rather than Han characters.",
                 "- Original NameGen.IsCjk compares Unicode U+4E00..U+9FFF. This patch only changes its upper bound to U+D7A3, including Hangul and avoiding inserted middle dots between Korean family and given names.",
                 "- This does not affect Roman-alphabet foreign name separation, default fallbacks or storage keys.",
                 ""
@@ -110,14 +110,18 @@ jobs:
           assert a.read_bytes()==b.read_bytes()
           rows=a.read_text(encoding='utf-8-sig').splitlines()
           assert len(rows)==13
-          expected={'中国':(260,1100),'日本':(100,300),'韩国':(100,200)}
-          assert set(expected)<=set(s.split('\t')[0] for s in rows)
+          expected={'中国':(260,1100),'日本':(100,300),'韩国':(100,200),'英语国家':(100,300)}
+          expected.update({x:(100,200) for x in ['东南亚南亚国家','中东国家','俄语国家','德语国家','意大利语国家','欧洲其他国家','法语国家','葡萄牙语国家','西班牙语国家']})
+          assert set(expected)==set(s.split('\t')[0] for s in rows)
+          count=0
           for row in rows:
               code,family,given=row.split('\t')
-              if code in expected:
-                  assert (len(family.split(',')),len(given.split(',')))==expected[code]
-                  assert all(not ('\u3400'<=ch<='\u9fff') for ch in family+given)
-          pack=root/'ProbablyStolen_Tentacle_NPC_Names_KO_2060_20261122.zip'
+              assert (len(family.split(',')),len(given.split(',')))==expected[code]
+              assert all(part and part.strip()==part for part in family.split(',')+given.split(','))
+              assert all(not ('\u3400'<=ch<='\u9fff') for ch in family+given)
+              count+=len(family.split(','))+len(given.split(','))
+          assert count==5160, count
+          pack=root/'ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip'
           paths=[
              'lewd_meme2.1.0/Content/names.txt',
              'LewdMemeShadowTrade1.6.4/Content/names.txt',
@@ -128,13 +132,13 @@ jobs:
           with ZipFile(pack,'w',ZIP_DEFLATED) as z:
               for x in paths:z.write(root/x,arcname=x)
           with ZipFile(pack) as z: assert z.testzip() is None and len(z.namelist())==len(paths)
-          print('Validated data',len(rows),'regions, ZIP size',pack.stat().st_size)
+          print('Validated data',len(rows),'regions and',count,'Korean display names, ZIP size',pack.stat().st_size)
           PY
       - name: Commit adjusted DLLs and overlay
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add --sparse probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll probably-stolen/local-mods/TentacleMod번역/번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Tentacle_NPC_Names_KO_2060_20261122.zip
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll probably-stolen/local-mods/TentacleMod번역/번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip
           if ! git diff --cached --quiet; then
             git commit -m 'fix(tentacle): render Korean generated NPC names without CJK separator and package name data'
             for attempt in 1 2 3 4 5; do
