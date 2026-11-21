@@ -50,7 +50,13 @@
 - common resource names: 46; version-only: 0; ref-only: 0
 - common resources same bytes: 44
 - EleanorEmbedded/Localization/zh.csv: keys 1826 vs 1838; common 1826; exact-value matches 1824; changed 2; new keys 0; missing keys 12
+  - changed value purity_wilde_visit_1_15: version='就交500信用点'; v1.0.3='今天先交500信用点，剩下的等事情定了再说'
+  - changed value purity_wilde_visit_1_6: version='保释的费用可不便宜'; v1.0.3='保释费用大概是两万，为了证明我有这个实力…'
+  - v1.0.3 only keys: ['cfg_first_run_label', 'cfg_first_run_section', 'cfg_first_run_tip', 'cfg_portrait_merchant_label', 'cfg_portrait_merchant_tip', 'cfg_portrait_section', 'first_run_reset_body', 'first_run_reset_no', 'first_run_reset_yes', 'name_eleanor', 'name_georgio', 'name_joe_wild']
 - EleanorEmbedded/Localization/en.csv: keys 1826 vs 1838; common 1826; exact-value matches 1824; changed 2; new keys 0; missing keys 12
+  - changed value purity_wilde_visit_1_15: version='500 Credits.'; v1.0.3="Five hundred today. The rest we settle once it's arranged."
+  - changed value purity_wilde_visit_1_6: version='Bail is not cheap.'; v1.0.3='Bail runs about twenty thousand. Call it proof I have the pull for it...'
+  - v1.0.3 only keys: ['cfg_first_run_label', 'cfg_first_run_section', 'cfg_first_run_tip', 'cfg_portrait_merchant_label', 'cfg_portrait_merchant_tip', 'cfg_portrait_section', 'first_run_reset_body', 'first_run_reset_no', 'first_run_reset_yes', 'name_eleanor', 'name_georgio', 'name_joe_wild']
 
 ## Resource and text comparison: integrated_v1.1.3 against v1.0.3
 - common resource names: 46; version-only: 58; ref-only: 0
