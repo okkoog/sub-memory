@@ -61,7 +61,13 @@ for file in sorted(HERE.glob('manual_direct_batch*_20261121.tsv')):
             r=line.rstrip('\r\n').split('\t')
             assert len(r)==2
             key=r[0];value=json.loads(r[1])
-            assert key in by_key and key not in direct and isinstance(value,str) and value.strip(),key
+            assert key in by_key and isinstance(value,str) and value.strip(),key
+            if key in direct:
+                # Batch 19 revisits five entries; one is a reviewed wording correction.
+                assert file.name=='manual_direct_batch19_20261121.tsv' and key in {
+                    'rld_b2382142c6a2f89a869a','rld_68dd4bfc0aaeed151cfa',
+                    'rld_27717340a49b3485f3fb','rld_f5a39c8e54dc3dde3931',
+                    'rld_73096f577f0739625422'},key
             direct[key]=value;count+=1
     manual_counts.append((file.name,count))
 assert len(manual_counts)>=3
