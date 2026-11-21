@@ -49,16 +49,16 @@ jobs:
                           refs++;
                       }
                   }
-                  var out=new StringBuilder();
-                  out.AppendLine("id\toriginal_json_string\tactive_refs\tcall_sites");
+                  var output=new StringBuilder();
+                  output.AppendLine("id\toriginal_json_string\tactive_refs\tcall_sites");
                   int row=0;
                   foreach(var entry in dict.OrderBy(k=>k.Key,StringComparer.Ordinal)){
                       row++;
                       var quoted=System.Text.Json.JsonSerializer.Serialize(entry.Key);
-                      out.Append(row).Append('\t').Append(quoted).Append('\t').Append(entry.Value.Count).Append('\t')
+                      output.Append(row).Append('\t').Append(quoted).Append('\t').Append(entry.Value.Count).Append('\t')
                          .Append(string.Join("; ",entry.Value)).AppendLine();
                   }
-                  File.WriteAllText(args[1],out.ToString(),Encoding.UTF8);
+                  File.WriteAllText(args[1],output.ToString(),Encoding.UTF8);
                   File.WriteAllText(args[2],
                       "# RedLightDistrict v1.1.1 — active Chinese IL strings\n\n"
                       +"- Original source DLL bytes: "+new FileInfo(args[0]).Length+"\n"
