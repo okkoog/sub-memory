@@ -116,6 +116,42 @@ jobs:
             'probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll' \
             'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_active_CJK_IL_inventory_20261121.tsv' \
             'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_DLL_STATIC_INVENTORY_20261121.md'
+      - name: Inspect localization loader and caller IL without running the DLL
+        shell: bash
+        run: |
+          cat > /tmp/adult111_audit/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static void Main(string[] args) {
+              using var md=ModuleDefMD.Load(args[0]);
+              using var w=new StreamWriter(args[1],false,new System.Text.UTF8Encoding(false));
+              w.WriteLine("# Adult Goods v1.1.1 embedded localization IL static audit\n");
+              var selected=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody).Select(m=>(t,m)))
+               .Where(x=>x.t.FullName.Contains("ModLocale") || x.m.Name.ToString().Contains("Localization") ||
+                        x.m.Name.ToString().Contains("Locale") || x.m.Name.ToString().Contains("Resource") ||
+                        x.t.FullName.EndsWith(".ModEntry") ||
+                        x.m.Body.Instructions.Any(i=>i.OpCode==OpCodes.Ldstr && i.Operand is string s && s.Contains("Localization")))
+               .ToArray();
+              w.WriteLine("Methods selected: "+selected.Length+"\n");
+              foreach(var x in selected) {
+                w.WriteLine("## "+x.t.FullName+"::"+x.m.Name+" ("+x.m.MDToken+")");
+                foreach (var il in x.m.Body.Instructions) {
+                  string op=il.Operand is string s?System.Text.Json.JsonSerializer.Serialize(s):(il.Operand?.ToString()??"");
+                  w.WriteLine($"- IL_{il.Offset:X4}: {il.OpCode} {op}");
+                }
+              }
+              Console.WriteLine("Selected methods: "+selected.Length);
+            }
+          }
+          CS
+          dotnet run --project /tmp/adult111_audit/adult111_audit.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_LOCALIZATION_IL_AUDIT_20261121.md'
       - name: Commit static audit text only
         shell: bash
         run: |
