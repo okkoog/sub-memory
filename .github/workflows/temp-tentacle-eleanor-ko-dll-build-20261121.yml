@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/temp-tentacle-eleanor-ko-dll-build-20261121.yml'
-      - 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_reviewed_batch*_20261121.tsv'
+      # Reviewed batches are committed separately; rebuild only when workflow is updated to avoid binary-write races.
   workflow_dispatch:
 permissions:
   contents: write
