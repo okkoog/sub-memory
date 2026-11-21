@@ -1,0 +1,928 @@
+{
+  "_说明": "触巢互动台词（已填充示例文本）。触手对苗床使用、主动吞噬时，会在苗床旁边弹一个原版提示框样式的小对话泡，从这里（以及其他 mod 用 BroodApi.RegisterLine 登记的句子）随机抽一句。kind：devour = 主动吞噬；use = 任意子触对苗床使用；use.white / use.red / use.green / use.yellow / use.aqua / use.purple = 指定颜色。tags：条件列表，全部满足才会抽到，空 = 不限；写法“御姐”（苗床有这个标签，或任一字符串标签的值等于它）、“MAIDEN_BODY=御姐”（指定体型）、“!MAIDEN_VIRGIN”（没有这个标签）；条件越多越容易被抽中。text 里 {name} = 苗床名字，{tentacle} = 子触名字。下面分五层：不挑人的通用句、按体型（萝莉/少女/御姐/少妇/熟女，每档 5 条）、按胸型（贫乳/普乳/巨乳）、按阵营（上层区/下层区/治安部/黑市/革命军）、非处女、按职业（拾荒者/矿工/雇佣兵等 20 种，每档 3 条）。全部可自由增删改；删掉某条 kind 就不弹该类。",
+  "_写法示例（不会被读取）": [
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "{tentacle}绕到{name}耳边……（在这里写你的台词）"
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "上层区"
+      ],
+      "text": "{name}……（在这里写你的台词）"
+    }
+  ],
+  "lines": [
+    {
+      "kind": "devour",
+      "tags": [],
+      "text": "{name}은(는) 생애 가장 강렬한 절정을 맞았다…… 촉수의 일부가 되면서."
+    },
+    {
+      "kind": "devour",
+      "tags": [],
+      "text": "촉수의 품에 안긴 {name}의 윤곽이 서서히 희미해지더니, 만족스러운 한숨만 남았다."
+    },
+    {
+      "kind": "devour",
+      "tags": [],
+      "text": "촉수들이 {name}을(를) 부드럽게 삼켰다. 항구에 도착한 배를 바다가 집어삼키듯."
+    },
+    {
+      "kind": "devour",
+      "tags": [],
+      "text": "{name}은(는) 저항하지 않았다. 그저 눈을 감고 서서히 받아들여지는 몸을 맡겼다."
+    },
+    {
+      "kind": "use",
+      "tags": [],
+      "text": "촉수가 {name}에게 살짝 닿았다. 체온을 확인하기라도 하듯."
+    },
+    {
+      "kind": "use",
+      "tags": [],
+      "text": "{name}은(는) 처음엔 몸을 굳혔지만 금세 그 온기 속에서 긴장을 풀었다."
+    },
+    {
+      "kind": "use",
+      "tags": [],
+      "text": "촉수가 천천히 조여 오자 {name}의 호흡이 자꾸만 끊겼다."
+    },
+    {
+      "kind": "use.white",
+      "tags": [],
+      "text": "분홍빛이 감도는 흰 촉수가 {name}에게 살짝 닿았다. 몸을 재는 듯하면서도 애교를 부리는 듯하다."
+    },
+    {
+      "kind": "use.white",
+      "tags": [],
+      "text": "부드러운 촉수에 감싸인 {name}의 호흡이 조금씩 느려졌다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [],
+      "text": "뜨겁게 달아오른 몸이 {name}을(를) 선반 깊숙이 밀어 넣었다. 그녀는 가장자리를 꼭 붙잡고 간신히 버텼다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [],
+      "text": "촉수가 {name}의 허리를 감쌌다. 그녀가 내뱉는 작은 신음이 끊어지는 숨소리로 변했다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [],
+      "text": "촉수가 {name}의 뒤로 돌아갔다. 마치 오래전부터 그 자리에 기다리고 있었던 것처럼 끈기 있게."
+    },
+    {
+      "kind": "use.green",
+      "tags": [],
+      "text": "촉수가 {name}을(를) 여러 겹 휘감았다. 그녀가 마침내 온몸의 힘을 놓을 때까지."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [],
+      "text": "촉수가 {name}의 아랫입술을 가볍게 두드렸다. 허락을 구하는 듯했다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [],
+      "text": "분비선에서 배어 나온 달고 비릿한 냄새에 {name}은(는) 현기증을 느끼고 무심코 침을 삼켰다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [],
+      "text": "차가운 촉수가 {name}의 피부에 닿았다. 한참 늦게 내리는 비처럼."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [],
+      "text": "촉수가 {name}을(를) 부드럽게 감싸며 지친 기색을 조금씩 씻어 냈다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [],
+      "text": "촉수가 {name}의 이마에 닿아 그녀가 차마 입 밖에 내지 못한 생각을 읽었다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [],
+      "text": "{name}의 몸은 이성보다 먼저 반응했고, 볼은 뜨겁게 달아올랐다."
+    },
+    {
+      "kind": "use.white",
+      "tags": [
+        "MAIDEN_BODY=萝莉"
+      ],
+      "text": "它把{name}整个圈进怀里，只从触手缝里漏出两声轻到发颤的呜咽。"
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BODY=萝莉"
+      ],
+      "text": "凉丝丝的触手裹住{name}，她迷迷糊糊地眯起眼，像只被哄睡的小动物。"
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BODY=萝莉"
+      ],
+      "text": "它读懂了{name}的逞强，于是什么都没问，只是更轻地拥紧了她。"
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BODY=萝莉"
+      ],
+      "text": "{name}被护在触手中央，踮起脚也够不到那阵滚烫的边缘，只能由着它把自己托起来。"
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_BODY=萝莉"
+      ],
+      "text": "{name}被一团团温柔地包住，最后连那声『有点怕』也一起，被轻轻收进了深处。"
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BODY=少女"
+      ],
+      "text": "{name}被抵进墙角时还在嘴硬，没几句就只剩下断断续续的求饶。"
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BODY=少女"
+      ],
+      "text": "它耐心地喂着{name}，她明明羞得不行，却还是张开了嘴。"
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_BODY=少女"
+      ],
+      "text": "它从身后缓缓圈住{name}，她咬住袖口，才没让那声呜咽传得太远。"
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BODY=少女"
+      ],
+      "text": "它低声说出{name}藏了一整天的心事，少女一下子炸了毛，耳根红得要滴血。"
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_BODY=少女"
+      ],
+      "text": "到最后{name}也没认输，只闭紧眼睛，任由自己被一点点抱进黑暗里。"
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "처음에는 {name}이(가) 여유롭게 눈썹을 치켜올렸다. 하지만 뜨거운 감촉이 허리에 닿자 처음으로 목소리가 떨렸다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "촉수가 관자놀이에 닿아 그녀의 생각을 천천히 되풀이했다. 당당하던 여성이 처음으로 당황해 눈길을 돌렸다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "{name}은(는) 이 정도쯤 버틸 수 있으리라 생각했다. 그러나 끈질긴 촉수의 포옹 속에서 먼저 꽉 쥔 손을 풀었다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "{name}은(는) 피하지 않고 오히려 조금 더 가까이 다가갔다. 달고 비릿한 향이 그녀의 여유를 서서히 삼키도록 내버려 두었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_BODY=御姐"
+      ],
+      "text": "{name}은(는) 미소를 띤 채 받아들여졌다. 다만 마지막의 만족스러운 한숨에는 약간의 몽롱함이 섞여 있었다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BODY=少妇"
+      ],
+      "text": "촉수가 {name}의 피로를 씻어 주자 그녀는 기분 좋게 눈을 가늘게 뜨고 오랜만에 한숨을 돌렸다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BODY=少妇"
+      ],
+      "text": "{name}은(는) 처음에는 입술을 다물고 거부했다. 하지만 달콤한 맛을 본 뒤 얼굴을 붉히며 다시 다가갔다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BODY=少妇"
+      ],
+      "text": "뜨거운 촉수의 품에 안긴 {name}의 발이 바닥에서 떨어졌다. 오랜만에 느낀 만족감에 그녀는 촉수 사이로 얼굴을 묻었다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_BODY=少妇"
+      ],
+      "text": "촉수가 뒤에서 {name}을(를) 다정하게 감쌌다. 마침내 지친 몸을 기대기로 한 사람을 받아 주는 듯했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_BODY=少妇"
+      ],
+      "text": "{name}은(는) 조금도 저항하지 않았다. 눈을 감고 그 부드러운 품에 몸을 맡겨 오랜만의 평온 속으로 돌아갔다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BODY=熟女"
+      ],
+      "text": "{name}은(는) 나른하게 뜨거운 촉수의 품에 몸을 기댔다. 목에서 낮고 허스키한 만족의 소리가 흘렀다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BODY=熟女"
+      ],
+      "text": "{name}은(는) 이 달콤함에 이미 익숙했다. 눈을 반쯤 감고 느긋하게 마주 다가갔다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BODY=熟女"
+      ],
+      "text": "촉수가 입을 열자 {name}은(는) 가볍게 웃으며 자기 속마음을 먼저 밝혔다. 자신의 욕망을 숨기는 법이 없었다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BODY=熟女"
+      ],
+      "text": "서늘한 기운이 퍼지자 {name}은(는) 기분 좋게 콧소리를 냈다. 물안개가 머리카락 끝을 촉촉하게 적시도록 내버려 두었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_BODY=熟女"
+      ],
+      "text": "{name}은(는) 만족스러운 한숨을 내쉬고 익숙한 부드러움 속으로 가라앉았다. 다시는 떠오르지 않았다."
+    },
+    {
+      "kind": "use.white",
+      "tags": [
+        "MAIDEN_BREAST=贫乳"
+      ],
+      "text": "{name}의 여윈 몸이 감싸이자 부드러운 덩어리 속으로 거의 파묻힐 듯했다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BREAST=贫乳"
+      ],
+      "text": "{name}은(는) 긴장한 나머지 숨소리마저 작아졌다. 가느다란 몸이 촉수 사이에서 살짝 떨렸다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BREAST=贫乳"
+      ],
+      "text": "촉수는 {name}이(가) 자신의 체형을 신경 쓰고 있음을 알아차렸다. 그리고 '이대로도 좋아'라고 말하듯 더 다정하게 다가갔다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BREAST=贫乳"
+      ],
+      "text": "서늘한 기운이 {name}의 등을 따라 퍼졌다. 그녀는 자기 몸을 꼭 감쌌지만 귓불은 솔직하게 붉어졌다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BREAST=普乳"
+      ],
+      "text": "달콤한 향에 취한 {name}이(가) 몸에서 힘을 풀고 기대 왔다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BREAST=普乳"
+      ],
+      "text": "촉수가 {name}을(를) 감싸자 처음엔 몸이 굳었지만 이내 뜨거운 품속에서 완전히 긴장이 풀렸다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BREAST=普乳"
+      ],
+      "text": "물안개가 {name}을(를) 감싸자 그녀는 기분 좋게 눈을 가늘게 떴다. 촉수가 조금씩 피로를 닦아 내도록 내버려 두었다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_BREAST=普乳"
+      ],
+      "text": "촉수가 끈기 있게 {name}을(를) 감쌌다. 그녀의 호흡이 촉수의 움직임과 서서히 겹쳐질 때까지."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_BREAST=巨乳"
+      ],
+      "text": "{name}의 몸이 살짝 들어 올려졌다. 뜨거운 감촉에 그녀는 촉수 사이로 얼굴을 파묻고 나지막이 신음했다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_BREAST=巨乳"
+      ],
+      "text": "촉수가 {name}의 몸을 살며시 감싸자 그녀는 숨을 들이켰다. 가슴이 오르내리는 모습이 한층 뚜렷해졌다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_BREAST=巨乳"
+      ],
+      "text": "촉수가 닿자마자 {name}은(는) 자신의 속마음을 들킨 걸 깨달았다. 이제 숨기지 않기로 하고 먼저 다가갔다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_BREAST=巨乳"
+      ],
+      "text": "{name}의 가장 뜨거운 곳에 시원한 촉수가 닿았다. 온몸에서 힘이 풀려 제대로 서 있기도 어려웠다."
+    },
+    {
+      "kind": "use",
+      "tags": [
+        "!MAIDEN_VIRGIN"
+      ],
+      "text": "{name}은(는) 이 감촉에 이미 익숙했다. 피하지 않고 나른하게 작은 콧소리만 냈다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "!MAIDEN_VIRGIN"
+      ],
+      "text": "{name}은(는) 조금도 어색해하지 않고 뜨거운 촉수에 먼저 다가갔다. 목에서 만족스러운 한숨이 흘렀다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "!MAIDEN_VIRGIN"
+      ],
+      "text": "{name}은(는) 미소를 띤 채 받아들여졌다. 언젠가는 이 부드러움이 자신을 통째로 삼키리라는 걸 이미 알고 있었다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "!MAIDEN_VIRGIN"
+      ],
+      "text": "촉수가 닿자마자 {name}은(는) 익숙한 듯 입을 벌리고 눈꼬리를 가늘게 접었다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_FACTION=上层区"
+      ],
+      "text": "상층 구역 출신인 {name}은(는) 처음엔 체면을 차렸다. 하지만 속마음을 들키자 귓불부터 붉어졌다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_FACTION=上层区"
+      ],
+      "text": "{name}은(는) 아랫입술을 깨물고 소리를 참았다. 그러나 곱게 자란 몸은 생각보다 훨씬 솔직했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_FACTION=上层区"
+      ],
+      "text": "마지막에 상류층 출신인 {name}에게 남은 건 만족스러운 한숨 하나였다. 체면 따위는 흔적도 없었다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_FACTION=下层区"
+      ],
+      "text": "하층 구역에서 거칠게 살아온 {name}은(는) 소리치지 않았다. 그저 촉수를 꼭 쥐고 모든 소리를 삼켰다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_FACTION=下层区"
+      ],
+      "text": "촉수가 {name}을(를) 감싸자 그녀는 드물게 힘을 뺐다. 그 품속에서 잠시나마 숨을 돌릴 수 있는 듯했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_FACTION=下层区"
+      ],
+      "text": "{name}은(는) 어둠의 덩어리를 바라보다 조용히 한숨을 쉬었다. 그러고는 눈을 감고 자신을 내맡겼다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_FACTION=治安部"
+      ],
+      "text": "경찰학교 출신인 {name}은(는) 온몸의 신경을 곤두세웠지만, 촉수가 입을 열자 방어심이 무너지기 시작했다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_FACTION=治安部"
+      ],
+      "text": "촉수가 느긋하게 {name}을(를) 휘감았다. 수년간 훈련한 그녀조차 물러날 힘을 낼 수 없었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_FACTION=治安部"
+      ],
+      "text": "{name}은(는) 마지막 순간까지 눈을 뜨고 있었다. 이 모든 게 환상이 아닌지 확인하듯. 그리고 마침내 몸을 맡겼다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_FACTION=黑市"
+      ],
+      "text": "{name}은(는) 산전수전 다 겪은 얼굴이었다. 하지만 달콤한 맛을 보자 눈을 가늘게 뜨고는 드물게 흥정을 멈췄다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_FACTION=黑市"
+      ],
+      "text": "촉수는 {name}이(가) 숨긴 약점을 꿰뚫었다. 노련한 상인도 처음으로 할 말을 잃었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_FACTION=黑市"
+      ],
+      "text": "{name}은(는) 이걸 이득이 남는 거래로 생각했을 것이다. 완전히 삼켜지고 나서야 뒤늦게 사지가 풀렸다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_FACTION=革命军"
+      ],
+      "text": "{name}은(는) 이를 악물고 굴복하지 않으려 했다. 하지만 뜨거운 감촉이 닿자 무릎에 힘이 풀렸다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_FACTION=革命军"
+      ],
+      "text": "촉수가 {name}의 완고함 속에 숨은 갈망을 읽었다. 그녀는 고개를 돌렸지만 부정하지 못했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_FACTION=革命军"
+      ],
+      "text": "{name}은(는) 마지막까지 발버둥 쳤다. 결국 오랜 시간 달래고 달랜 끝에 깊은 곳으로 이끌려 들어갔다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=拾荒者"
+      ],
+      "text": "쓰레기장에서 먹고살아 온 {name}은(는) 비명을 지르지 않고 촉수를 꽉 붙잡아 소리를 삼켰다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=拾荒者"
+      ],
+      "text": "촉수가 {name}을(를) 감싸자 그녀는 오랜만에 힘을 뺐다. 온종일 먼지 속을 헤맨 끝에 드디어 기댈 곳을 찾은 듯했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=拾荒者"
+      ],
+      "text": "{name}은(는) 그 그림자가 원하는 바를 알아차렸다. 한숨을 쉬고 눈을 감은 뒤 자신을 내맡겼다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=矿工"
+      ],
+      "text": "{name}의 거칠어진 손바닥이 촉수를 힘껏 밀어냈지만 뜨거운 감각에 결국 낮은 신음을 흘렸다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=矿工"
+      ],
+      "text": "촉수가 {name}을(를) 한 겹씩 끈기 있게 감쌌다. 마치 광산에서 쌓인 하루의 피로를 벗겨 주는 듯했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=矿工"
+      ],
+      "text": "말수가 적은 {name}은(는) 저항하지 않았다. 짧게 숨을 내쉰 뒤 부드러운 덩어리에 몸을 맡겼다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=雇佣兵"
+      ],
+      "text": "{name}은(는) 무장을 해제당한 사람 같았다. 촉수 앞에서는 싸움에 익숙한 솜씨도 아무 소용이 없었다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=雇佣兵"
+      ],
+      "text": "촉수는 {name}이(가) 위험 속에 살아오며 숨겼던 여린 면을 짚어 냈다. 그녀는 처음으로 말을 잃었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=雇佣兵"
+      ],
+      "text": "수많은 전투를 치른 {name}도 끝내 빠져나오지 못했다. 낮게 욕설을 내뱉더니 촉수 사이에서 힘이 풀렸다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=工程师"
+      ],
+      "text": "{name}은(는) 습관처럼 그 구조를 분석하려 했지만 정신이 또렷할수록 몸이 말을 듣지 않는다는 사실만 깨달았다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_JOB=工程师"
+      ],
+      "text": "차가운 감촉이 피부에 닿자 {name}의 정밀한 논리도 멈춰 섰다. 짧게 숨을 들이마시는 소리만 남았다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=工程师"
+      ],
+      "text": "{name}은(는) 삼켜지기 직전까지 빠져나갈 가능성을 머릿속으로 계산했다. 마지막 결론은 단 하나. 해법 없음."
+    },
+    {
+      "kind": "use.white",
+      "tags": [
+        "MAIDEN_JOB=护士"
+      ],
+      "text": "늘 다른 사람을 돌보던 {name}은(는) 이렇게 다정하게 감싸이자 먼저 눈가가 뜨거워졌다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_JOB=护士"
+      ],
+      "text": "촉수가 {name}의 야간 근무로 쌓인 피로를 씻어 주었다. 그녀는 기분 좋게 눈을 가늘게 뜨고 드물게 긴장을 풀었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=护士"
+      ],
+      "text": "{name}은(는) 저항하지 않았다. 마침내 누군가 자신을 받아 주는 듯한 안도감 속에서 부드러운 품에 가라앉았다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=医生"
+      ],
+      "text": "{name}은(는) 평소처럼 침착하게 촉수를 살펴보았다. 하지만 속마음을 읽힌 순간 호흡이 한 박자 어긋났다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_JOB=医生"
+      ],
+      "text": "촉수가 다가오자 {name}의 직업적인 후각이 이성보다 먼저 판단했다. 달고 비릿한 향에는 독이 없었다. 대신 중독될 만한 무언가가 있었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=医生"
+      ],
+      "text": "삶과 죽음을 숱하게 보아 온 {name}은(는) 마지막에도 작은 한숨만 내쉬었다. 그리고 늘 침착하던 두 눈을 감았다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_JOB=厨师"
+      ],
+      "text": "불 조절에 엄격한 {name}도 그 달콤한 향을 맡자 처음으로 정도를 잊었다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=厨师"
+      ],
+      "text": "그 뜨거운 기운은 약불에 오래 끓이는 것 같았다. {name}의 목소리는 서서히 부드럽고 달콤한 숨소리로 변했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=厨师"
+      ],
+      "text": "{name}은(는) 자신이 '식탁에 오르는' 쪽이 될 줄은 꿈에도 생각하지 못했을 것이다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=农场主"
+      ],
+      "text": "촉수가 덩굴처럼 {name}을(를) 타고 올랐다. 그녀는 잠시 놀랐지만 이내 너그럽게 웃으며 휘감기도록 내버려 두었다."
+    },
+    {
+      "kind": "use.white",
+      "tags": [
+        "MAIDEN_JOB=农场主"
+      ],
+      "text": "부드러운 덩어리에 감싸인 {name}은(는) 늘 든든하던 두 다리에 오랜만에 힘이 풀렸다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=农场主"
+      ],
+      "text": "{name}은(는) 어두운 덩어리를 풍작이라도 바라보듯 쳐다보았다. 그리고 안심한 듯 그 안으로 걸어 들어갔다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=小偷"
+      ],
+      "text": "몸놀림이 날랜 {name}은(는) 도망치려 했지만 촉수가 발목을 낚아채는 바람에 헛되이 두어 번 발버둥만 쳤다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=小偷"
+      ],
+      "text": "촉수가 {name}의 귓가에 속삭이며 과거를 낱낱이 들춰 냈다. 노련한 도둑의 얼굴이 순식간에 붉어졌다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=小偷"
+      ],
+      "text": "{name}은(는) 이번에도 무사히 빠져나갈 줄 알았을 것이다. 완전히 휘감기고 나서야 뒤늦게 살려 달라고 빌었다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_JOB=商人"
+      ],
+      "text": "{name}은(는) 처음엔 가격을 흥정하려 했다. 그러나 달콤한 맛을 보자 눈을 가늘게 뜨고 온갖 계산을 잊었다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=商人"
+      ],
+      "text": "촉수가 단 한마디로 {name}의 속셈을 꿰뚫었다. 영리한 상인도 드물게 말문이 막혔다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=商人"
+      ],
+      "text": "{name}은(는) 마지막까지 이 '거래'가 이득인지 계산했지만 이미 물릴 수 없는 상태였다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_JOB=清洁员"
+      ],
+      "text": "깔끔함을 중시하던 {name}은(는) 처음에는 끈적거린다며 싫어했다. 그러나 곧 시원한 촉수에 온몸이 풀리도록 내맡겼다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=清洁员"
+      ],
+      "text": "촉수가 끈기 있게 {name}을(를) 조금씩 휘감으며 그녀가 고수하던 청결 규칙을 모조리 흐트러뜨렸다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=清洁员"
+      ],
+      "text": "{name}은(는) 마지막까지 눈살을 찌푸렸지만 이내 눈을 감고 그 부드러운 덩어리에 통째로 삼켜졌다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=技师"
+      ],
+      "text": "정밀 기계를 다루던 {name}의 두 손은 이제 촉수를 헛되이 밀어낼 뿐이었다. 손끝은 쉴 새 없이 떨렸다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=技师"
+      ],
+      "text": "촉수가 기계를 조정하듯 정확하게 {name}의 몸에 닿았다. 하지만 그녀는 오히려 완전히 망가져 버린 듯했다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=技师"
+      ],
+      "text": "{name}은(는) 그 그림자를 바라봤다. 머릿속에 떠오른 마지막 생각은 하나였다. '이 구조는 이해할 수 없어.'"
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=文员"
+      ],
+      "text": "규칙을 지키며 살아온 {name}이(가) 도망치려는 순간 촉수가 오랫동안 억눌러 온 속마음을 짚어 냈다. 다리에 힘이 풀렸다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=文员"
+      ],
+      "text": "촉수가 하루 종일 팽팽하게 당겨져 있던 {name}의 신경을 느긋하게 풀어 주었다. 그녀는 드물게 흐트러진 소리를 냈다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=文员"
+      ],
+      "text": "{name}은(는) 옷자락을 쥐고 한참 망설였다. 그리고 눈을 꼭 감고 '착한 여자'라는 역할을 바깥에 남겨 두었다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=走私者"
+      ],
+      "text": "늘 검문소를 돌파하던 {name}이(가) 이번에는 통과하지 못했다. 촉수에 휘감긴 채 자신이 점점 가라앉는 모습을 지켜봐야 했다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=走私者"
+      ],
+      "text": "촉수가 {name}의 귓가에서 가장 깊숙이 숨겨 둔 비밀을 속삭이자 그녀의 자신감이 순식간에 사라졌다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=走私者"
+      ],
+      "text": "{name}은(는) 마지막까지 도망갈 길을 찾았지만 그 부드러운 덩어리가 모든 길목을 막아 놓았음을 깨달았다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=货运员"
+      ],
+      "text": "늘 무거운 짐을 나르던 {name}은(는) 지금은 촉수를 밀어낼 힘조차 내지 못하고 낮게 숨을 몰아쉬었다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=货运员"
+      ],
+      "text": "촉수가 {name}을(를) 여러 겹 감쌌다. 온종일 짊어졌던 무거운 짐을 내려 주는 것처럼."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=货运员"
+      ],
+      "text": "{name}은(는) 말없이 그림자를 바라보다 눈을 감았다. 그리고 자신도 짐을 '내려놓았다'."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_JOB=酒保"
+      ],
+      "text": "밤일에 익숙한 {name}도 그 달고 비릿한 향 앞에서는 누구보다 먼저 취기가 올랐다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=酒保"
+      ],
+      "text": "손님들의 속마음을 늘 듣던 {name}은(는) 처음으로 자신의 마음을 읽혔다. 귓불이 붉게 물들었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=酒保"
+      ],
+      "text": "{name}은(는) 마지막 독주 한 모금을 마신 것처럼 눈빛이 흐려졌다. 그 다정한 품에 취해 몸을 맡겼다."
+    },
+    {
+      "kind": "use.green",
+      "tags": [
+        "MAIDEN_JOB=维修工"
+      ],
+      "text": "손에 기계 기름이 가득 묻은 {name}도 촉수가 조금씩 조여 오자 풀어낼 틈을 하나도 찾지 못했다."
+    },
+    {
+      "kind": "use.red",
+      "tags": [
+        "MAIDEN_JOB=维修工"
+      ],
+      "text": "촉수는 정비라도 하듯 {name}의 몸을 꼼꼼하게 훑었다. 하지만 '수리'할수록 그녀의 몸에서는 힘이 빠졌다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=维修工"
+      ],
+      "text": "{name}은(는) 그림자를 바라보며 눈살을 찌푸리다 한숨을 쉬었다. '이 고장은 못 고치겠네.'"
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=研究员"
+      ],
+      "text": "{name}은(는) 촉수를 연구 대상으로 삼으려 했지만 오히려 속마음을 낱낱이 읽혔다. 실험 기록을 어디에 뒀는지도 잊었다."
+    },
+    {
+      "kind": "use.aqua",
+      "tags": [
+        "MAIDEN_JOB=研究员"
+      ],
+      "text": "차가운 감각이 피부에 닿자 {name}은(는) 처음으로 엄격한 이성 대신 본능적인 전율에 몸을 맡겼다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=研究员"
+      ],
+      "text": "{name}은(는) 마지막까지 무언가 중얼거리며 기록하고 있었다. 그 목소리가 부드러운 덩어리에 완전히 삼켜질 때까지."
+    },
+    {
+      "kind": "use.white",
+      "tags": [
+        "MAIDEN_JOB=学徒"
+      ],
+      "text": "어쩔 줄 모르던 {name}은(는) 도망치려 했지만 부드러운 덩어리가 살짝 감싸 안았다. 그녀는 얼굴을 붉힌 채 그 자리에 굳었다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=学徒"
+      ],
+      "text": "촉수가 {name}에게 인내심 있게 가르쳐 주었다. 한 마디 한 마디가 그녀가 인정하기 부끄러우면서도 자꾸 듣고 싶은 말이었다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=学徒"
+      ],
+      "text": "{name}은(는) 오랫동안 망설였다. 마지막에는 눈을 감고 주먹을 꼭 쥔 채 그 부드러운 덩어리 속으로 조금씩 이끌려 들어갔다."
+    },
+    {
+      "kind": "use.purple",
+      "tags": [
+        "MAIDEN_JOB=艺人"
+      ],
+      "text": "연기에 능숙한 {name}도 무대 안팎의 속내를 처음으로 간파당했다. 여유롭던 표정이 순식간에 무너졌다."
+    },
+    {
+      "kind": "use.yellow",
+      "tags": [
+        "MAIDEN_JOB=艺人"
+      ],
+      "text": "촉수가 가까워지자 {name}은(는) 반사적으로 턱을 치켜들었다. 다음 순간 참을 수 없는 작은 신음만 이어졌다."
+    },
+    {
+      "kind": "devour",
+      "tags": [
+        "MAIDEN_JOB=艺人"
+      ],
+      "text": "{name}은(는) 막이 내릴 때까지도 주도권을 되찾지 못했다. 그 부드러운 품 안에서 가장 진실한 연기를 끝까지 펼쳐 보였다."
+    }
+  ]
+}
