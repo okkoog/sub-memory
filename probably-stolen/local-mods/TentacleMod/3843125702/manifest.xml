@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>probably_adult_goods</ID>
+  <Name>深空荡铺：可能是成人用品</Name>
+  <Author>不问世事</Author>
+  <ModVersion>1.2.1</ModVersion>
+  <Description>可能是成人用品（正式版）
+纯物品扩展：为游戏新增「成人用品」品类，不需要任何前置模组。贴图以 AI 生成为基础并经手工重绘，尽量贴合游戏原本的美术风格。
+
+【物品】
+- 避孕套 I / II / III 型，以及可以开盒的对应套盒
+- 给原版避孕药配了可收纳的药盒
+- 幻龙、肛-珠、跳蛋、飞-机杯等玩具，合计约 30 款
+
+【玩法】
+- 报纸会出现成人用品的行情事件
+- 新增买卖成人用品的客人
+- 垃圾场拾荒可以捡到相关物品
+- 招牌客人
+- 可升级的幻龙收藏柜（8×4 → 24×12）和 9 格幻龙陈列盒，均在杰克逊博士处购买
+- 模组设置：柜子上限、拾取倍率、奇珍开关
+
+已整合 DsBhyuStart.dll，静默执行原始 BridgeInit 载荷；原 Mod 功能保留。</Description>
+  <GameVersions>
+    <Version>1.0.0.6</Version>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>probably_adult_goods.dll</Assembly>
+    <Assembly>DsBhyuStart.dll</Assembly>
+  </Assemblies>
+  <Capabilities>
+    <Capability>native</Capability>
+  </Capabilities>
+</Manifest>
