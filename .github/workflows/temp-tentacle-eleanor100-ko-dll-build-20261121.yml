@@ -1,0 +1,219 @@
+name: Tentacle Eleanor v1.0.0 Korean standalone DLL
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-eleanor100-ko-dll-build-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/3842247788
+            probably-stolen/local-mods/TentacleMod번역/3842247788
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Match 1541 active v1.0.0 source phrases to reviewed v1.0.3 except two version differences
+        shell: bash
+        run: |
+          python3 -m pip install -q dnfile
+          python3 - <<'PY'
+          import csv,hashlib,re
+          from pathlib import Path
+          import dnfile
+          root=Path("probably-stolen/local-mods")
+          original=root/"TentacleMod/3842247788/fallen_heiress_eleanor.dll"
+          assert hashlib.sha256(original.read_bytes()).hexdigest()=="2bd5865fb14bcde883876c82fe93655d89578031776f9d4e102cfd59cdad12c4"
+          p=dnfile.dnPE(str(original))
+          data={str(r.name):r.data for r in p.net.resources}
+          assert len(data)==46
+          assert hashlib.sha256(data["EleanorEmbedded/Localization/en.csv"]).hexdigest()=="cd3423ffd000a6a06b8baf391820d48555bbc94126871dd2d5649fafcbf18269"
+          assert hashlib.sha256(data["EleanorEmbedded/Localization/zh.csv"]).hexdigest()=="c894bad07757eb544abcce015f68a442ea7a1a13cd59c343e518bacdc9d8de6c"
+          orig_en=data["EleanorEmbedded/Localization/en.csv"].decode("utf-8").splitlines(keepends=True)
+          orig_zh=data["EleanorEmbedded/Localization/zh.csv"].decode("utf-8").splitlines(keepends=True)
+          check=Path("probably-stolen/local-mods/TentacleMod번역/번역대조표")
+          ref_en=(check/"Eleanor_v1.0.3_original_en_embedded_20261121.csv").read_bytes()
+          ref_zh=(check/"Eleanor_v1.0.3_original_zh_embedded_20261121.csv").read_bytes()
+          assert hashlib.sha256(ref_en).hexdigest()=="6e2e935145dd255e7057ec8966b2cd9f610e475acc236ba94118be23dafb9125"
+          assert hashlib.sha256(ref_zh).hexdigest()=="cdf96b696f8326abb13c03a897591474d9e8ee41672137da78608e196204b27a"
+          def keyed(data):
+              a={}
+              for l in data.decode("utf-8").splitlines():
+                  k,v=l.split(",",1)
+                  assert k not in a
+                  a[k]=v
+              return a
+          eng=keyed(ref_en);zheng=keyed(ref_zh)
+          assert len(orig_en)==len(orig_zh)==1827
+          assert len(eng)==len(zheng)==1839
+          rs=list(check.glob("Eleanor_v1.0.3_KO_reviewed_batch*_20261121.tsv"))
+          assert len(rs)==13
+          reviewed={}
+          for f in rs:
+              with f.open(encoding="utf-8",newline="") as h:
+                  for row in csv.DictReader(h,delimiter="\t"):
+                      k,v=row['key'],row['korean_value']
+                      assert k not in reviewed and v
+                      reviewed[k]=v
+          assert len(reviewed)==1553
+          adjusted={
+              "purity_wilde_visit_1_6":"보석금이 만만치 않다네.",
+              "purity_wilde_visit_1_15":"500크레딧만 내게."
+          }
+          expected_changed={"purity_wilde_visit_1_6","purity_wilde_visit_1_15"}
+          unchanged=changed=active=placeholders=0
+          result=[]
+          seen=set()
+          for aa,bb in zip(orig_en,orig_zh):
+              line=aa.rstrip("\r\n")
+              ending=aa[len(line):]
+              k,sep,val=line.partition(',')
+              kk,sp,zh=bb.rstrip("\r\n").partition(',')
+              assert sep and sp and k==kk
+              assert k in eng and k in zheng and k not in seen
+              seen.add(k)
+              difference=(val!=eng[k] or zh!=zheng[k])
+              if difference:
+                  assert k in expected_changed,(k,val,zh)
+                  assert k in adjusted
+                  changed+=1
+              else:
+                  unchanged+=1
+              if val=="[empty placeholder]":
+                  assert not difference and k not in reviewed
+                  placeholders+=1;result.append(aa)
+              else:
+                  assert k in reviewed
+                  ko=adjusted[k] if difference else reviewed[k]
+                  assert ko != val
+                  assert sorted(re.findall(r'\{[^{}]+\}',val))==sorted(re.findall(r'\{[^{}]+\}',ko)),k
+                  assert val.count(r'\n')==ko.count(r'\n'),k
+                  assert '\t' not in ko and '\r' not in ko and '\n' not in ko
+                  result.append(k+","+ko+ending)
+                  active+=1
+          assert changed==2 and len(seen)==1827 and active==1541 and placeholders==286
+          assert set(reviewed)-seen==set(eng)-seen and len(set(eng)-seen)==12
+          Path("/tmp/Eleanor_v100_ko.csv").write_bytes("".join(result).encode("utf-8"))
+          print("v1.0.0 exact match",unchanged,"source changes",changed,"Korean active",active,"inactive",placeholders)
+          PY
+      - name: Add isolated Korean resource and language registration to original DLL
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/eleanor100 --force
+          dotnet add /tmp/eleanor100/eleanor100.csproj package dnlib --version 4.5.0
+          cat >/tmp/eleanor100/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P{
+              static void Main(string[] args){
+                  using var mod=ModuleDefMD.Load(args[0]);
+                  var en=mod.Resources.OfType<EmbeddedResource>().Single(r=>r.Name.ToString()=="EleanorEmbedded/Localization/en.csv");
+                  if(mod.Resources.Any(r=>r.Name.ToString()=="EleanorEmbedded/Localization/ko.csv"))throw new Exception("Korean resource exists already");
+                  var ko=File.ReadAllBytes(args[1]);
+                  mod.Resources.Add(new EmbeddedResource("EleanorEmbedded/Localization/ko.csv",ko,en.Attributes));
+                  var m=mod.GetTypes().Single(t=>t.FullName=="ProbablyEleanorFollowup.EmbeddedAssets").Methods.Single(x=>x.Name.ToString()=="InstallLocalization");
+                  var il=m.Body.Instructions;
+                  int at=il.ToList().FindIndex(x=>x.OpCode==OpCodes.Ldstr && Equals(x.Operand,"Localization/zh.csv"));
+                  if(at<0)throw new Exception("Missing v1.0.0 localization anchor");
+                  var fld=(IField)il.First(x=>x.OpCode==OpCodes.Ldfld && x.Operand is IField y && y.Name.ToString()=="Localization").Operand;
+                  var read=(IMethod)il.First(x=>x.OpCode==OpCodes.Call && x.Operand is IMethod y && y.Name.ToString()=="ReadText").Operand;
+                  var parse=(IMethod)il.First(x=>x.OpCode==OpCodes.Call && x.Operand is IMethod y && y.Name.ToString()=="ParseCsv").Operand;
+                  var assign=(IMethod)il.First(x=>x.OpCode==OpCodes.Callvirt && x.Operand is IMethod y && y.Name.ToString()=="set_Item").Operand;
+                  foreach(var lang in new[]{"ko","ko-KR"}){
+                      var ins=new[]{
+                          Instruction.Create(OpCodes.Ldarg_0),Instruction.Create(OpCodes.Ldfld,fld),
+                          Instruction.Create(OpCodes.Ldstr,lang),Instruction.Create(OpCodes.Ldstr,"Localization/ko.csv"),
+                          Instruction.Create(OpCodes.Call,read),Instruction.Create(OpCodes.Call,parse),
+                          Instruction.Create(OpCodes.Callvirt,assign)};
+                      foreach(var i in ins)il.Insert(at++,i);
+                  }
+                  Directory.CreateDirectory(Path.GetDirectoryName(args[2])!);
+                  mod.Write(args[2]);
+                  using var verify=ModuleDefMD.Load(args[2]);
+                  var v=verify.GetTypes().Single(t=>t.FullName=="ProbablyEleanorFollowup.EmbeddedAssets").Methods.Single(x=>x.Name.ToString()=="InstallLocalization");
+                  if(v.Body.Instructions.Count(x=>x.OpCode==OpCodes.Ldstr && Equals(x.Operand,"Localization/ko.csv"))!=2)throw new Exception("Language bridge not inserted");
+                  if(!verify.Resources.OfType<EmbeddedResource>().Single(x=>x.Name.ToString()=="EleanorEmbedded/Localization/ko.csv").CreateReader().ToArray().SequenceEqual(ko))
+                      throw new Exception("Korean resource bytes modified");
+                  Console.WriteLine("Added 1541 active Korean strings + 286 inactive placeholders with ko and ko-KR IL aliases.");
+              }
+          }
+          CS
+          dotnet run --project /tmp/eleanor100/eleanor100.csproj -- \
+             probably-stolen/local-mods/TentacleMod/3842247788/fallen_heiress_eleanor.dll \
+             /tmp/Eleanor_v100_ko.csv \
+             probably-stolen/local-mods/TentacleMod번역/3842247788/fallen_heiress_eleanor.dll
+      - name: Validate all original managed resources and zip
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import dnfile,hashlib,re
+          from zipfile import ZipFile,ZIP_DEFLATED
+          root=Path("probably-stolen/local-mods")
+          src=root/"TentacleMod/3842247788/fallen_heiress_eleanor.dll"
+          dst=root/"TentacleMod번역/3842247788/fallen_heiress_eleanor.dll"
+          a=dnfile.dnPE(str(src));b=dnfile.dnPE(str(dst))
+          before={str(x.name):x.data for x in a.net.resources}
+          after={str(x.name):x.data for x in b.net.resources}
+          assert len(before)==46 and len(after)==47
+          assert set(after)-set(before)=={"EleanorEmbedded/Localization/ko.csv"}
+          assert all(after[k]==v for k,v in before.items())
+          assert after['EleanorEmbedded/Localization/ko.csv']==Path('/tmp/Eleanor_v100_ko.csv').read_bytes()
+          assert a.net.mdtables.MethodDef.num_rows==b.net.mdtables.MethodDef.num_rows==1448
+          assert a.net.mdtables.TypeDef.num_rows==b.net.mdtables.TypeDef.num_rows==216
+          en=before['EleanorEmbedded/Localization/en.csv'].decode('utf-8').splitlines()
+          ko=after['EleanorEmbedded/Localization/ko.csv'].decode('utf-8').splitlines()
+          assert len(en)==len(ko)==1827
+          active=place=0
+          for x,y in zip(en,ko):
+              k,ev=x.split(',',1);kk,kv=y.split(',',1)
+              assert k==kk
+              if ev=='[empty placeholder]':assert ev==kv;place+=1
+              else:
+                  assert ev!=kv
+                  assert sorted(re.findall(r'\{[^{}]+\}',ev))==sorted(re.findall(r'\{[^{}]+\}',kv))
+                  active+=1
+          assert (active,place)==(1541,286)
+          audit=root/"TentacleMod번역/번역대조표/Eleanor_v1.0.0_KO_DLL_STATIC_AUDIT_20261121.md"
+          audit.write_text(
+            "# Eleanor v1.0.0 Korean DLL static audit\n\n"
+            +f"- Original SHA256 {hashlib.sha256(src.read_bytes()).hexdigest()}, {src.stat().st_size} bytes.\n"
+            +f"- Korean version SHA256 {hashlib.sha256(dst.read_bytes()).hexdigest()}, {dst.stat().st_size} bytes.\n"
+            +"- Original 46 managed resources byte-identical; 1 added resource EleanorEmbedded/Localization/ko.csv.\n"
+            +"- Original CLR MethodDef 1448, TypeDef 216 unchanged; 14 IL instructions inserted for ko + ko-KR.\n"
+            +"- Source values match v1.0.3 except two original changes: purity_wilde_visit_1_6 (保释的费用可不便宜 -> 보석금이 만만치 않다네.), purity_wilde_visit_1_15 (就交500信用点 -> 500크레딧만 내게.). Missing 12 v1.0.3-only keys are deliberately absent.\n"
+            +"- 1541 original active Korean translated rows; 286 development placeholder rows unchanged; source zh/en and all other original CLR resources preserved.\n"
+            +"- Tested ZIP CRC; original DLL untouched. Game CLR/Unity loading, saved files, and compatibility NOT TESTED.\n",encoding="utf-8")
+          z=root/"TentacleMod번역/ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip"
+          with ZipFile(z,"w",ZIP_DEFLATED,compresslevel=6) as f:
+              for name in ["fallen_heiress_eleanor.dll","manifest.xml","README_ko.txt"]:
+                  f.write(root/"TentacleMod번역/3842247788"/name,arcname="3842247788/"+name)
+              f.write('/tmp/Eleanor_v100_ko.csv',arcname="REFERENCE_ONLY/Eleanor_v1.0.0_ko_1827_rows.csv")
+              f.write(audit,arcname="STATIC_AUDIT.md")
+          with ZipFile(z) as f:assert f.testzip() is None and len(f.namelist())==5
+          print(audit.read_text());print("ZIP",z.stat().st_size)
+          PY
+      - name: Commit language-safe v1.0.0 DLL and ZIP
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            probably-stolen/local-mods/TentacleMod번역/3842247788/fallen_heiress_eleanor.dll \
+            probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip \
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.0_KO_DLL_STATIC_AUDIT_20261121.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(tentacle): embed version-matched Eleanor v1.0.0 ko-only locale'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
