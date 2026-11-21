@@ -159,7 +159,7 @@
 - 원본 폴더: `TentacleMod/[SRW-STM]SarronaTheDragon/` (원본 미수정). manifest ID `sarrona_the_dragon`, 버전 `0.9.3`. 공식 Localization 기반 작업.
 - 원본: `Localization/zh.csv` blob `36de22b9e3222ff70a6081076814dbe5e4bb359d`, `en.csv` blob `d15405d489bd3cb391a428f6a6a81321e00a6c43`. 모두 553개 키.
 - 한국어 번역본: `TentacleMod번역/[SRW-STM]SarronaTheDragon/Localization/ko.csv`, 커밋 `b12b0e2c914143a21c19544e3a44321137a58a35`. **원본 553키 모두 대응**, 551개 문구 한국어, 원본부터 값이 비어 있는 `milk_can_empty_flavor`, `milk_dryer_flavor` 두 키는 공백 유지.
-- 1:1 대조표: `번역대조표/Sarrona_001-140.tsv` (140키), `Sarrona_141-280.tsv` (140키), `Sarrona_281-420.tsv` (140키), `Sarrona_421-553.tsv` (133키). 총 553행, 키 중복 없음.
+- 1:1 대조표: `번역대조표/Sarrona_001-140.tsv` (140키), `Sarrona_141-280.tsv` (140키), `Sarrona_281-420.tsv` (140키), `Sarrona_421-553.tsv` (133키). 총 553행, 키 중복 없음. **각 대조표 3열 `key / zh / ko`**로 작성했으며 원본 중국어·한국어 결과를 실제 파일에서 다시 읽어 553개 항목 각각 일치함을 검증(대조 누락 0, 원본 불일치 0).
 - 번역 범위: 세로나 상인 대사, 용유/유제품, 양조와 용연향, 용 비늘과 용골 장비, 프린팅, 쥐/물고기 양식, 서적 매뉴얼, 구호물자와 정전 보관 이벤트. 아이템 키와 수식·치환 인자(`{0}`, `{0:0.#}`, `{0:0.##}` 등)는 유지.
 - GitHub 결과물 재조회 검사: 중·영·한 CSV 모두 553키 동일 순서; 키 누락·중복·추가 0, 플레이스홀더 불일치 0, 원본 공백 보존, 한자 잔존 0.
 - 책 JSON 4개에서 참조하는 `loc`, `nameLoc`, `descriptionLoc` 254곳 전부 번역 CSV에 대응함. `Books/*.json` 자체는 변경하지 않았음. 책 파일의 영어 `title` 메타데이터는 실행 중 용도 미확정이므로 변경하지 않음.
