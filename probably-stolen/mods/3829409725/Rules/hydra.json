@@ -1,0 +1,747 @@
+{
+  "modes": [
+    {
+      "id": "acid",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_acid",
+      "mainLiquid": "acid",
+      "priority": 100,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "mineral",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "organic_waste",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "acid",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.organic_waste": 40,
+            "pipette.acid": 1
+          },
+          "produce": {
+            "mineral": 0.1
+          }
+        },
+        {
+          "id": "microbe",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "microbe",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "acid",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.microbe": 100,
+            "pipette.acid": 1
+          },
+          "produce": {
+            "water": 100
+          }
+        },
+        {
+          "id": "stabilizer",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "stabilizing_agent",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "acid",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.stabilizing_agent": 10,
+            "pipette.acid": 1
+          },
+          "produce": {
+            "debris": 10
+          }
+        },
+        {
+          "id": "protein",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "protein",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "acid",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.protein": 1,
+            "pipette.acid": 1
+          },
+          "produce": {
+            "debris": 1
+          }
+        },
+        {
+          "id": "neutralize",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "base",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "acid",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.base": 1,
+            "pipette.acid": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_base",
+      "mainLiquid": "base",
+      "priority": 100,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "mineral",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "organic_waste",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "base",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.organic_waste": 40,
+            "pipette.base": 1
+          },
+          "produce": {
+            "mineral": 0.1
+          }
+        },
+        {
+          "id": "microbe",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "microbe",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "base",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.microbe": 100,
+            "pipette.base": 1
+          },
+          "produce": {
+            "water": 100
+          }
+        },
+        {
+          "id": "stabilizer",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "stabilizing_agent",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "base",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.stabilizing_agent": 10,
+            "pipette.base": 1
+          },
+          "produce": {
+            "debris": 10
+          }
+        },
+        {
+          "id": "protein",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "protein",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "base",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.protein": 1,
+            "pipette.base": 1
+          },
+          "produce": {
+            "debris": 1
+          }
+        },
+        {
+          "id": "neutralize",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "acid",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "base",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.acid": 1,
+            "pipette.base": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "reducing",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_reducing",
+      "mainLiquid": "reducing_agent",
+      "priority": 100,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "nomore",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "dream_cap_extract",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "reducing_agent",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": {
+            "liquid": "lipobond_agent",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 0.25,
+          "catalyticMin": 1,
+          "conversion": true,
+          "consume": {
+            "target.dream_cap_extract": 1,
+            "pipette.reducing_agent": 1
+          },
+          "produce": {
+            "nomore": 0.6,
+            "debris": 0.4
+          },
+          "forbidOver": {
+            "alcohol": 0.1
+          },
+          "temperatureMin": 45,
+          "temperatureMax": 55
+        },
+        {
+          "id": "methylol",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "methylol",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "reducing_agent",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.methylol": 1,
+            "pipette.reducing_agent": 0.75
+          },
+          "produce": {
+            "fanta": 0.1
+          },
+          "temperatureMin": 110,
+          "temperatureMax": 130
+        }
+      ]
+    },
+    {
+      "id": "lipobond",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_lipobond",
+      "mainLiquid": "lipobond_agent",
+      "priority": 100,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "fat",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "fat",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "lipobond_agent",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.fat": 8,
+            "pipette.lipobond_agent": 1
+          },
+          "produce": {
+            "debris": 9
+          }
+        },
+        {
+          "id": "topup",
+          "kind": "topup",
+          "conversion": false,
+          "substrate": {
+            "liquid": "dream_cap_extract",
+            "locations": [
+              "target"
+            ]
+          },
+          "catalytic": {
+            "liquid": "lipobond_agent",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 0.25,
+          "catalyticMin": 0
+        }
+      ]
+    },
+    {
+      "id": "chlorine",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_chlorine",
+      "mainLiquid": "chlorine",
+      "priority": 100,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "sterilize",
+          "substrate": {
+            "liquid": "water",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "chlorine",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "kind": "reaction",
+          "targets": {
+            "microbe": {
+              "floor": {
+                "type": "absolute",
+                "value": 0
+              }
+            }
+          },
+          "potency": 5.1,
+          "labelKey": "hydra_stage_sterilize"
+        },
+        {
+          "id": "decontaminate",
+          "substrate": {
+            "liquid": "water",
+            "locations": [
+              "target"
+            ]
+          },
+          "reagent": {
+            "liquid": "chlorine",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "kind": "reaction",
+          "targets": {
+            "chemical_contaminant": {
+              "floor": {
+                "type": "share",
+                "value": 0.007
+              }
+            }
+          },
+          "potency": 5.1,
+          "labelKey": "hydra_stage_decontaminate"
+        }
+      ]
+    },
+    {
+      "id": "dream",
+      "implementation": "custom",
+      "detect": "substrate",
+      "otherModeLiquids": [
+        "nightmare_cap_mush",
+        "coffee_mush",
+        "acid",
+        "base",
+        "reducing_agent",
+        "lipobond_agent",
+        "chlorine",
+        "alcohol"
+      ],
+      "labelKey": "hydra_mode_dream",
+      "mainLiquid": "dream_cap_mush",
+      "priority": 90,
+      "minShare": 0.01,
+      "stages": [
+        {
+          "id": "extract",
+          "kind": "extract",
+          "substrate": {
+            "liquid": "dream_cap_mush",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": {
+            "liquid": "alcohol",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 5,
+          "catalyticMin": 1,
+          "conversion": true,
+          "byproduct": "plant_matter",
+          "yield": {
+            "max": 0.5,
+            "product": "dream_cap_extract"
+          },
+          "temperatureMin": 40,
+          "temperatureMax": 999,
+          "labelKey": "hydra_stage_dream"
+        }
+      ]
+    },
+    {
+      "id": "nightmare",
+      "implementation": "custom",
+      "detect": "substrate",
+      "otherModeLiquids": [
+        "dream_cap_mush",
+        "coffee_mush",
+        "acid",
+        "base",
+        "reducing_agent",
+        "lipobond_agent",
+        "chlorine",
+        "alcohol"
+      ],
+      "labelKey": "hydra_mode_nightmare",
+      "mainLiquid": "nightmare_cap_mush",
+      "priority": 90,
+      "minShare": 0.01,
+      "stages": [
+        {
+          "id": "extract",
+          "kind": "extract",
+          "substrate": {
+            "liquid": "nightmare_cap_mush",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": {
+            "liquid": "alcohol",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 5,
+          "catalyticMin": 1,
+          "conversion": true,
+          "byproduct": "plant_matter",
+          "yield": {
+            "max": 0.5,
+            "product": "nightmare_extract"
+          },
+          "temperatureMin": 40,
+          "temperatureMax": 999,
+          "labelKey": "hydra_stage_nightmare"
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "implementation": "custom",
+      "detect": "substrate",
+      "otherModeLiquids": [
+        "dream_cap_mush",
+        "nightmare_cap_mush",
+        "acid",
+        "base",
+        "reducing_agent",
+        "lipobond_agent",
+        "chlorine",
+        "alcohol"
+      ],
+      "labelKey": "hydra_mode_coffee",
+      "mainLiquid": "coffee_mush",
+      "priority": 90,
+      "minShare": 0.01,
+      "stages": [
+        {
+          "id": "extract",
+          "kind": "extract",
+          "substrate": {
+            "liquid": "coffee_mush",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalytic": {
+            "liquid": "alcohol",
+            "locations": [
+              "target",
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 5,
+          "catalyticMin": 1,
+          "conversion": true,
+          "byproduct": "plant_matter",
+          "yield": {
+            "max": 0.75,
+            "product": "caffeine"
+          },
+          "temperatureMin": 50,
+          "temperatureMax": 999,
+          "labelKey": "hydra_stage_coffee"
+        }
+      ]
+    },
+    {
+      "id": "fanta",
+      "implementation": "custom",
+      "detect": "fanta",
+      "otherModeLiquids": [
+        "dream_cap_mush",
+        "nightmare_cap_mush",
+        "coffee_mush",
+        "acid",
+        "base",
+        "reducing_agent",
+        "lipobond_agent",
+        "chlorine",
+        "alcohol"
+      ],
+      "labelKey": "hydra_mode_fanta",
+      "mainLiquid": "methylol",
+      "priority": 110,
+      "minShare": 0.01,
+      "stages": [
+        {
+          "id": "fanta",
+          "kind": "reaction",
+          "substrate": {
+            "liquid": "methylol",
+            "locations": [
+              "target"
+            ]
+          },
+          "additionalSubstrates": [
+            {
+              "liquid": "methylol",
+              "locations": [
+                "pipette"
+              ]
+            }
+          ],
+          "reagent": {
+            "liquid": "reducing_agent",
+            "locations": [
+              "target"
+            ]
+          },
+          "catalytic": null,
+          "conversion": true,
+          "consume": {
+            "target.methylol": 1,
+            "target.reducing_agent": 0.75
+          },
+          "produce": {
+            "fanta": 0.1
+          },
+          "temperatureMin": 110,
+          "temperatureMax": 130
+        }
+      ]
+    },
+    {
+      "id": "alcohol",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_alcohol",
+      "mainLiquid": "alcohol",
+      "priority": 80,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "topup",
+          "kind": "topup",
+          "conversion": false,
+          "substrate": {
+            "liquid": "dream_cap_mush",
+            "locations": [
+              "target"
+            ]
+          },
+          "additionalSubstrates": [
+            {
+              "liquid": "nightmare_cap_mush",
+              "locations": [
+                "target"
+              ]
+            },
+            {
+              "liquid": "coffee_mush",
+              "locations": [
+                "target"
+              ],
+              "ratio": 0.75
+            }
+          ],
+          "catalytic": {
+            "liquid": "alcohol",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalyticFullAt": 5,
+          "catalyticMin": 0,
+          "labelKey": "hydra_stage_alcohol_mixed"
+        }
+      ]
+    },
+    {
+      "id": "mineral",
+      "implementation": "custom",
+      "detect": "share",
+      "labelKey": "hydra_mode_mineral",
+      "mainLiquid": "mineral",
+      "priority": 70,
+      "minShare": 0.5,
+      "stages": [
+        {
+          "id": "balance",
+          "kind": "balance",
+          "conversion": false,
+          "balanceLiquid": "mineral",
+          "balanceRatio": 0.015,
+          "catalytic": {
+            "liquid": "mineral",
+            "locations": [
+              "pipette"
+            ]
+          },
+          "catalyticMin": 1,
+          "labelKey": "hydra_stage_mineral"
+        }
+      ]
+    }
+  ]
+}

@@ -11,6 +11,8 @@ mat_ingot,Barra de Metal
 mat_circuit,Peças Eletrônicas
 mat_wire,Fio
 mat_plastic,Filamento de Impressão 3D
+mat_yeast,Levedura de Vinho
+mat_yeast_bio,Biorreator de Levedura
 mat_chem_common,Suprimentos Químicos Comuns
 mat_chem_restricted,Suprimentos Químicos Restritos
 nm_dna_pcr,Sistema PCR (Reação em Cadeia da Polimerase)
@@ -227,11 +229,11 @@ dseq_out_label,Saída Estendida
 # --- Adega (wine_rack) - três básicos + dois módulos avançados (v1.8.21) ---
 nm_winrack_expand,Expansão do Armazenamento de Barras
 wradv_cellar,Conversão em Adega
-wradv_cellar_desc,Reconstrói o poço de envelhecimento em uma adega com temperatura controlada: garrafas ainda fermentando podem ser colocadas na estante (o jogo base só aceita vinho pronto). Elas terminam de fermentar na manhã seguinte e o resultado é sempre Safra Master. Garrafas já acima dessa qualidade (nível Ambrosia) nunca são rebaixadas. Receita: Peças Eletrônicas Raras x3 + Filamento de Impressão 3D x4 + Lâmpada UV x1
+wradv_cellar_desc,Reconstrói o poço de envelhecimento em uma adega com temperatura controlada: garrafas ainda fermentando podem ser colocadas na estante (o jogo base só aceita vinho pronto). Elas terminam de fermentar na manhã seguinte e o resultado é sempre Safra Master. Garrafas já acima dessa qualidade (nível Ambrosia) nunca são rebaixadas. Receita: Peças Eletrônicas x6 + Filamento de Impressão 3D x6 + Levedura de Vinho x12
 wradv_cellar_eff,Conversão em Adega: garrafas em fermentação podem ser colocadas na estante; elas ficam prontas na manhã seguinte, sempre como Safra Master.
 wradv_yeast,Levedura de Efeito Duplo
-wradv_yeast_desc,Semeia na estante uma cepa de levedura de efeito duplo: a fermentação avança o dobro do poder da levedura a cada noite, reduzindo o período padrão de 4 dias para 2 dias. Só afeta garrafas dentro da estante - vinho em outros lugares fermenta normalmente. Receita: Peças Eletrônicas Raras x3 + Filamento de Impressão 3D x3 + Soldador x2
-wradv_yeast_eff,Levedura de Efeito Duplo: velocidade de fermentação dobrada (2x poder de levedura por noite, 4 dias para 2).
+wradv_yeast_desc,Semeia na estante uma cepa de levedura de efeito duplo: os dias de envelhecimento contados para cada garrafa a cada noite são dobrados (os bônus de qualidade continuam somando por cima). Só afeta garrafas dentro da estante - vinho em outros lugares envelhece normalmente. Receita: Peças Eletrônicas x4 + Lingote de Metal x8 + Biorreator de Levedura x2
+wradv_yeast_eff,Levedura de Efeito Duplo: velocidade de envelhecimento dobrada (dias de envelhecimento por noite x2).
 adv_locked_wine,Melhoria avançada bloqueada: primeiro leve o Circuito de Controle (10 peças eletrônicas) e a Fiação de Energia (7 fios) ao máximo.
 # --- configurações do mod / item de história (v1.8.14) ---
 cfg_enabled,Melhoria de Peças
@@ -408,13 +410,13 @@ fadv_flash_desc,Adiciona um botao: gasta 2x energia e refrigera a geladeira inst
 fadv_keep,Frescor Congelado
 fadv_keep_desc,Alimentos congelados nesta geladeira tambem ganham o bonus de congelamento
 fadv_dessert,Maquina de Sobremesas
-fadv_dessert_desc,Adiciona um espaco de agua; durante a noite converte 10 ingredientes em sorvete (250 ml de agua cada)
+fadv_dessert_desc,Adiciona um slot de agua; a noite converte 10 ingredientes em sorvete (250ml de agua cada). Com o modulo instalado, tudo na geladeira (comida, ingredientes, sorvete) mantem apenas o traco Congelado - o traco Gelado e removido
 icecream_desc,Sobremesa congelada feita pela Maquina de Sobremesas. Derrete se nao ficar numa geladeira ligada durante a noite.
 icecream_melted,O {0} de ontem derreteu
 icecream_wq_prefix,Qualidade da agua:
 fadv_flash_eff,Resfriamento Instantaneo: botao da maquina; gasta 2x de energia para resfriar a geladeira inteira de uma vez (agora um servico do Doutor; modulos antigos continuam funcionando)
 fadv_keep_eff,Alimentos podem ser colocados nas zonas de refrigeracao/congelamento; apos congelados ganham o bonus Congelado (+25%)
-fadv_dessert_eff,Compartimento de agua: durante a noite converte ingredientes compatíveis na geladeira em sorvete (250 ml de agua cada; qualidade da agua afeta o preco)
+fadv_dessert_eff,Baia de gelo: a noite converte os ingredientes correspondentes na geladeira em sorvete (250ml de agua cada; a qualidade da agua afeta o preco); tudo na geladeira mantem apenas o traco Congelado
 dr_flash_title,Resfriamento Instantaneo
 dr_flash_desc,Todas as geladeiras ganham um botao de Resfriamento Instantaneo: gaste 2x de energia para resfriar tudo de uma vez.
 fg_water_short,Agua insuficiente: {0} ingrediente(s) nao puderam virar sorvete (250 ml cada)

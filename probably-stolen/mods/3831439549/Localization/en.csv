@@ -8,6 +8,8 @@ mat_ingot,Metal Ingot
 mat_circuit,Electronic Parts
 mat_wire,Wire
 mat_plastic,3D Printing Filament
+mat_yeast,Wine Yeast
+mat_yeast_bio,Yeast Bioreactor
 mat_chem_common,Common Chemical Supplies
 mat_chem_restricted,Restricted Chemical Supplies
 nm_dna_pcr,PCR System (Polymerase Chain Reaction)
@@ -224,11 +226,11 @@ dseq_out_label,Extended Output
 # --- Wine rack (wine_rack) - three basic + two advanced modules (v1.8.21) ---
 nm_winrack_expand,Ingot Storage Expansion
 wradv_cellar,Cellar Conversion
-wradv_cellar_desc,Rebuilds the aging well into a temperature-controlled cellar: still-fermenting bottles can be placed in the rack (vanilla only accepts finished wine). They finish fermenting the very next morning, and the result is always a Master Vintage. Bottles already above that quality (Ambrosia grade) are never downgraded. Recipe: Rare Electronic Parts x3 + 3D Printing Filament x4 + UV Lamp x1
+wradv_cellar_desc,Rebuilds the aging well into a temperature-controlled cellar: still-fermenting bottles can be placed in the rack (vanilla only accepts finished wine). They finish fermenting the very next morning, and the result is always a Master Vintage. Bottles already above that quality (Ambrosia grade) are never downgraded. Recipe: Electronic Parts x6 + 3D Printing Filament x6 + Wine Yeast x12
 wradv_cellar_eff,Cellar Conversion: fermenting bottles may be placed in the rack; they finish the next morning, always as a Master Vintage.
 wradv_yeast,Dual-Effect Yeast
-wradv_yeast_desc,Seeds the rack with a dual-effect yeast strain: fermentation advances twice the yeast power every night, halving the standard 4-day period to 2 days. Only affects bottles inside the rack - wine elsewhere ferments as usual. Recipe: Rare Electronic Parts x3 + 3D Printing Filament x3 + Welder x2
-wradv_yeast_eff,Dual-Effect Yeast: fermentation speed doubled (2x yeast power per night, 4 days to 2).
+wradv_yeast_desc,Seeds the rack with a dual-effect yeast strain: the aging days counted for each bottle every night are doubled (quality bonuses still stack on top). Only affects bottles inside the rack - wine elsewhere ages as usual. Recipe: Electronic Parts x4 + Metal Ingot x8 + Yeast Bioreactor x2
+wradv_yeast_eff,Dual-Effect Yeast: aging speed doubled (aging days added per bottle each night x2).
 adv_locked_wine,Advanced upgrade locked: max out the Control Circuit (10 electronic parts) and Power Wiring (7 wires) first.
 # --- mod settings / story item (v1.8.14) ---
 cfg_enabled,Parts Upgrade
@@ -405,7 +407,7 @@ fadv_flash_desc,Adds a machine button: draws 2x power and chills the fridge once
 fadv_keep,Frozen Freshness
 fadv_keep_desc,Food items also gain the frozen bonus tag after being frozen in this fridge
 fadv_dessert,Dessert Machine
-fadv_dessert_desc,Adds a water slot; overnight converts 10 ingredients into ice cream (water -250ml each)
+fadv_dessert_desc,Adds a water slot; overnight converts 10 ingredients into ice cream (water -250ml each). With this module installed, everything in the fridge (food, ingredients, ice cream) keeps only the Frozen trait - the Chilled trait is removed
 icecream_desc,Frozen dessert made by the Dessert Machine. Melts if not kept in a powered fridge overnight.
 icecream_melted,Yesterday's {0} melted away
 icecream_wq_prefix,Water quality:
@@ -421,7 +423,7 @@ icecream_nudka_name,Nudka Ice Cream
 icecream_wine_gloomberry_name,Gloomberry Wine Ice Cream
 fadv_flash_eff,Instant Chill: machine button that draws 2x power and chills the whole fridge once (now a Doctor service; legacy module fridges keep working)
 fadv_keep_eff,Food items can be placed in the chill/freeze zones; once frozen they gain the Frozen bonus (+25%)
-fadv_dessert_eff,Ice bay: overnight converts matching ingredients in the fridge into ice cream (250ml water each; water quality affects price)
+fadv_dessert_eff,Ice bay: overnight converts matching ingredients in the fridge into ice cream (250ml water each; water quality affects price); everything in the fridge keeps only the Frozen trait
 dr_flash_title,Instant Chill
 dr_flash_desc,All fridges gain an Instant Chill button: spend 2x power to chill everything once right away.
 fg_water_short,Not enough water: {0} ingredient(s) could not be turned into ice cream (250ml each)

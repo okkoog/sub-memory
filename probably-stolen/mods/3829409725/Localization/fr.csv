@@ -1,0 +1,118 @@
+﻿pipette_name,Pipette de laboratoire
+pipette_desc,"Capacité jusqu'à 100 ml, avec un volume de prélèvement réglable librement. Prélève quand elle est vide, se vide entièrement quand elle contient du liquide."
+pipette_flavor,"Clic droit puis Ouvrir pour calibrer ; une fois équipée, clic gauche prélève/vide, et un clic sur une zone vide ouvre la fenêtre de calibrage."
+pipette_tip_liquid,Liquide : {0} / {1}
+pipette_tip_dose,Prélèvement par usage : {0} ({1} %)
+pipette_tip_hint,Clic gauche sur la pipette pour régler · équipée : clic gauche prélève / clic droit verse
+pipette_win_title,Calibrage de la pipette
+pipette_win_value,Prélever {0}
+pipette_win_input_hint,Cliquez dans la case et saisissez un nombre (1-100 mL)
+pipette_win_confirm_hint,Confirmez pour enregistrer après chaque changement
+pipette_win_confirm,Confirmer
+pipette_win_close,Fermer
+pipette_win_last,Enregistré : {0}
+pipette_drag_draw,Prélèvera {0}
+pipette_drag_pour,Versera {0}
+pipette_drag_drain,Videra
+pipette_drag_faucet,Remplira
+pipette_drag_nothing,Aucun liquide à prélever
+pipette_drag_full,La cible est pleine
+super_name,Pipette automatique
+super_desc,Capacité jusqu'à 100 ml ; pipette appréciée adaptée à la plupart des réactions chimiques à résidu nul. Son corps porte une lueur bleue claire.
+super_flavor,Auto-équilibrage, profitez de la vie.
+mini_name,Micro-pipette
+mini_desc,Une pipette légère d'une capacité de 1 ml (1000 µL) avec un volume de prélèvement réglable librement.
+mini_flavor,
+pipette_win_input_hint_ul,"Cliquez dans la case, saisissez 1-1000 μL"
+pipette_win_input_hint_fmt,"Cliquez dans la case, saisissez {0}-{1} {2}"
+hydra_mode_acid,Mode : Acide
+hydra_mode_base,Mode : Base
+hydra_mode_none,Mode : non défini
+hydra_blocked,Fraction du composant principal sous 50 % — prélèvement impossible
+hydra_need_acid,Ne peut prélever qu'une solution acide (acide > 50 %)
+hydra_need_base,Ne peut prélever qu'une solution basique (base > 50 %)
+hydra_draw,Remplira {0}
+hydra_react,Consommera {0} ({1}) · {2}
+hydra_none,Rien à consommer dans la cible
+hydra_tip_mode,Mode : {0} (le composant principal doit être > 50 %)
+hydra_tip_rule,Change automatiquement de mode selon la composition de la solution aspirée ; lors de l'utilisation, équilibre automatiquement et termine immédiatement la réaction, mais l'environnement de réaction doit être préparé à l'avance.
+hydra_stage_1,Minéralisation
+hydra_stage_2,Désinfection
+hydra_stage_3,Stabilisateur
+hydra_stage_4,Protéine
+hydra_stage_5,Neutralisation
+hydra_stage_none,Aucun
+hydra_stage_fmt,Ce clic : {0} ({1}/{2})
+hydra_mode_reducing,Mode : agent réducteur
+hydra_mode_lipobond,Mode : agent lipobond
+hydra_stage_6,Dé-rêvage
+hydra_stage_7,Méthylation
+hydra_stage_8,Sédimentation lipidique
+hydra_reason_temp,La température de la cible ne correspond pas
+hydra_reason_missing,Il manque le réactif requis dans la cible
+hydra_reason_alcohol,La part d'alcool est trop élevée
+hydra_catalyst,"Transférera {0} agent lipobond (catalyseur, non consommé) · {1}"
+hydra_tip_hint,Équipée : clic gauche prélève / vide
+agent_name,Agent pipette
+agent_dialog_1,"Du matériel de labo, tout ça... tant que tu peux payer."
+agent_dialog_2,Pipettes et produits chimiques — vois ce qu'il te faut.
+config_thief_hydra_label,Les voleurs peuvent vendre des pipettes automatiques
+config_thief_hydra_tip,"Autorise les voleurs à proposer des pipettes automatiques. Désactivez si un mod de rafraîchissement refuse de rafraîchir les voleurs portant les callbacks d'autres mods."
+hydra_mode_chlorine,Mode : Chlore
+hydra_stage_chlorine,Chloration
+hydra_reason_water,La cible ne contient pas d'eau
+hydra_need_chlorine,Ne peut prélever qu'une solution chlorée (chlore > 50 %)
+hydra_mode_dream,Mode : Chapeau de rêve
+hydra_mode_coffee,Mode : Café
+hydra_stage_dream,Extraction du chapeau de rêve
+hydra_stage_coffee,Extraction du café
+hydra_reason_no_alcohol,La cible manque d'alcool
+hydra_extract_fmt,"Extraira {0} ({1}, {2} % du substrat sera converti) · {3}"
+hydra_extract_max,efficacité d'extraction maximale atteinte
+hydra_extract_notmax,"efficacité d'extraction {0} %, sous le maximum"
+hydra_need_dream,Ne peut prélever qu'une solution de chapeau de rêve (supérieure aux autres composants du mode)
+hydra_need_coffee,Ne peut prélever qu'une solution de café (supérieure aux autres composants du mode)
+hydra_draw_mode,Prélèvera {0} · {1}
+hydra_mode_alcohol,Mode : Alcool
+hydra_stage_alcohol,Extraction du chapeau de rêve (alcool)
+hydra_stage_dream_lipobond,Dé-rêvage du chapeau de rêve
+hydra_extract_already,Efficacité maximale déjà atteinte — aucun transfert supplémentaire nécessaire
+hydra_extract_low_eff,"Ce transfert ne suffit pas pour l'efficacité maximale ; efficacité actuelle {0} %"
+hydra_need_alcohol,Ne peut prélever qu'une solution alcoolisée (alcool > 50 %)
+hydra_topup_max_fmt,Transférera {0} pour atteindre l'efficacité maximale · {1}
+hydra_topup_low_fmt,"Transférera {0} (insuffisant pour l'efficacité maximale ; efficacité actuelle {1} %) · {2}"
+hydra_reason_space,Pas d'espace libre dans la cible
+hydra_reason_chlorine,Pas de chlore dans la pipette
+hydra_reason_contaminant_floor,"Les contaminants chimiques sont déjà sous 0,7 % — impossible d'en retirer davantage"
+config_merchant_chemicals_label,Le marchand de pipettes vend des produits chimiques
+config_merchant_chemicals_tip,"Si activé, le marchand de pipettes vend des produits chimiques courants et restreints aux chances d'origine ; désactivé par défaut."
+hydra_mode_nightmare,Mode : Poussière de cauchemar
+hydra_mode_fanta,Mode : Fanta
+hydra_stage_nightmare,Extraction de poussière de cauchemar
+hydra_stage_fanta,Synthèse de Fanta
+hydra_stage_alcohol_nightmare,Extraction de poussière de cauchemar (alcool)
+hydra_stage_alcohol_mixed,Extraction chapeau de rêve / poussière de cauchemar / café (alcool)
+hydra_need_nightmare,Ne peut prélever qu'une solution de poussière de cauchemar (supérieure aux autres composants du mode)
+hydra_need_fanta,Ne peut prélever qu'une solution précurseur de Fanta (méthylol dominant)
+hydra_reason_reducing,La cible manque d'agent réducteur
+hydra_reason_methylol,La cible a trop peu de méthylol ou trop de stabilisant
+hydra_fanta_fmt,Synthétisera {0} Fanta (consomme {1} méthylol) · {2}
+hydra_reason_temp_fmt,La température de la cible ne correspond pas (nécessite {0})
+hydra_temp_dream,≥40 °C
+hydra_temp_coffee,≥50 °C
+hydra_temp_nomore,45–55 °C
+hydra_temp_fanta,110–130 °C
+hydra_reason_lipobond_first,Ajoutez d'abord l'agent lipobond (le dé-rêvage nécessite son catalyse).
+hydra_stage_custom,Réaction personnalisée
+hydra_reason_missing_liquid,Il manque {0} dans la cible
+hydra_extract_detail_fmt,Extraire {0}{1}, produit {2}.
+hydra_extract_state_fmt,({0}, {1}% du matériau sera converti) · {2}
+hydra_fanta_eff_fmt,Synthétiser {0} Fanta (consomme {1} méthylol, conversion ratio {2}%) · {3}
+hydra_reaction_detail_fmt,Consomme {0}, produit {1}.
+hydra_fanta_ratio_fmt,(ratio de conversion {0}%)
+hydra_list_separator,; 
+hydra_stage_sterilize,Stériliser
+hydra_stage_decontaminate,Décontaminer
+pipette_calibrating_no_draw,Impossible d'aspirer pendant le calibrage de la pipette
+hydra_mode_mineral,Mode : Minéral
+hydra_stage_mineral,Équilibrage minéral

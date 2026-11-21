@@ -1,0 +1,2574 @@
+﻿{
+  "item": {
+    "name": "派遣终端",
+    "desc": "一台还能连上城外的旧终端。双击打开派遣面板，把店里的人送出去换点东西回来。",
+    "flavor": "信号断断续续，但足够把几个人送出去 —— 也足够让他们的名字从名单上消失。",
+    "value": 800,
+    "w": 3,
+    "h": 2,
+    "sprite": "dispatch_terminal"
+  },
+
+  "minDuration": 1,
+  "maxDuration": 5,
+  "defaultDuration": 3,
+  "maxMembers": 3,
+
+  "thirstPerDay": 15,
+  "hungerPerDay": 15,
+  "corruptionMin": 5,
+  "corruptionMax": 20,
+  "oneEmptyPenalty": 10,
+  "bothEmptyPenalty": 20,
+
+  // 还没有事件界面时，自动替玩家选第几个选项：0=A / 1=B / 2=C。
+  // 1 = 自动战斗 / 自动仔细搜刮 / 无视流浪汉 —— 比 0 温和，D 级不会白挨一场打。
+  "autoChoice": 1,
+
+  // ── 派遣门槛：HP 低于这个数就派不出去（0 = 不限制；下线的 HP 为 0，天然在门外）──
+  "minDispatchHp": 20,
+
+  // ── 归队回血：任务结算时每个队员 +这么多血（防「下线 → HP 0 → 永远派不出去」的死锁）──
+  "settleHeal": 20,
+
+  // ── 战斗数值（全部可配；调手感只改这里，不用重编译）──────────────────
+  "battle": {
+    "critChance": 0.10,         // 暴击概率（代理人与怪物同一条规则）
+    "critMultiplier": 1.20,     // 暴击后伤害 ×1.2
+    "damageVariance": 0.15,     // 代理人伤害浮动 ±15%（怪物走各自的 attackVariance）
+    "roundCap": 99,             // 回合上限：打满仍不分胜负 → 按全队阵亡结算
+    "fleeChance": 0.70,         // 战斗界面里「逃跑」的成功率
+    "enemyDefendChance": 0.30,  // 怪物每回合选择「防御」的概率
+    "damageColor": "#FF3B30",   // 扣血飘字颜色
+    "showHpBar": true           // 头顶血条（关掉就只剩数字）
+  },
+
+  // ── 怪物表：战斗事件只写 id，数值全在这里 ──────────────────────────
+  //   art   立绘名（Art/<art>.png），找不到图会退化成色块
+  //   drops 掉落物品 id：每只怪 8 种候选，只从原版「药品 / 食物 / 生活用品 / 材料」里挑，
+  //         按怪物强度分 T1~T5 五档（越厉害面值越高）；每只怪随机掉 2~5 件（可重复）
+  "monsters": [
+    { "id": "guaiwu1",    "name": "星神",     "hp": 400, "attack": 31,  "attackVariance": 2, "art": "guaiwu1",
+      "drops": ["surgery_tool", "blue_blood_bag", "black_injector", "bottled_water_premium",
+                "pheromone_perfume", "gene_scanner", "advanced_flux_agent", "rare_electronic"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu2",    "name": "腐鼠",     "hp": 28, "attack": 4,  "attackVariance": 2, "art": "guaiwu2",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu3",    "name": "鬣狗",     "hp": 34, "attack": 6,  "attackVariance": 2, "art": "guaiwu3",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu4",    "name": "蝰蛇",     "hp": 45, "attack": 7,  "attackVariance": 2, "art": "guaiwu4",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu5",    "name": "朱朱",     "hp": 40, "attack": 5,  "attackVariance": 2, "art": "guaiwu5",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu6",    "name": "树妖",     "hp": 50, "attack": 8,  "attackVariance": 2, "art": "guaiwu6",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu7",    "name": "咩咩",     "hp": 60, "attack": 9,  "attackVariance": 2, "art": "guaiwu7",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu8",    "name": "荆棘花",     "hp": 75, "attack": 6,  "attackVariance": 2, "art": "guaiwu8",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu9",    "name": "拾月",     "hp": 50, "attack": 10,  "attackVariance": 2, "art": "guaiwu9",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu10",    "name": "拾柒",     "hp": 100, "attack": 5,  "attackVariance": 2, "art": "guaiwu10",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu11",    "name": "页",     "hp": 70, "attack": 10,  "attackVariance": 2, "art": "guaiwu11",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu12",    "name": "画中人",     "hp": 80, "attack": 11,  "attackVariance": 2, "art": "guaiwu12",
+      "drops": ["hemostatic_bandage_item", "phagimycin_pill", "cup_noodle", "processed_cheese",
+                "hydroreed_filter", "toilet_paper", "gun_part", "rare_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu13",    "name": "红衣",     "hp": 100, "attack": 13,  "attackVariance": 2, "art": "guaiwu13",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu14",    "name": "裂口女",     "hp": 130, "attack": 9,  "attackVariance": 2, "art": "guaiwu14",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu15",    "name": "鸦",     "hp": 120, "attack": 15,  "attackVariance": 2, "art": "guaiwu15",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu16",    "name": "镜女",     "hp": 130, "attack": 16,  "attackVariance": 2, "art": "guaiwu16",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu17",    "name": "人鱼",     "hp": 140, "attack": 18,  "attackVariance": 2, "art": "guaiwu17",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu18",    "name": "僵僵",     "hp": 30, "attack": 5,  "attackVariance": 2, "art": "guaiwu18",
+      "drops": ["bandage_item", "fanta_pill", "bottled_water", "soda_red",
+                "water_tablet", "toothpaste", "scrap_metal", "common_ore"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu19",    "name": "吞噬",     "hp": 160, "attack": 17,  "attackVariance": 2, "art": "guaiwu19",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu20",    "name": "彩蝶",     "hp": 150, "attack": 18,  "attackVariance": 2, "art": "guaiwu20",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu21",    "name": "大眼",     "hp": 180, "attack": 15,  "attackVariance": 2, "art": "guaiwu21",
+      "drops": ["zyanide_pill", "rubbing_alcohol", "morsel", "beis_icecream",
+                "shampoo", "paper_towel", "common_electronic", "common_medical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu22",    "name": "双生无常",     "hp": 220, "attack": 13,  "attackVariance": 2, "art": "guaiwu22",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu23",    "name": "愈",     "hp": 200, "attack": 18,  "attackVariance": 2, "art": "guaiwu23",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu24",    "name": "守林人",     "hp": 190, "attack": 21,  "attackVariance": 2, "art": "guaiwu24",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu25",    "name": "收割者",     "hp": 250, "attack": 23,  "attackVariance": 2, "art": "guaiwu25",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu26",    "name": "法老",     "hp": 310, "attack": 19,  "attackVariance": 2, "art": "guaiwu26",
+      "drops": ["salve", "large_purple_injector", "small_raw_meat", "liquid_luck",
+                "packet_red_cigarette", "neuroactive_perfume", "common_chemical", "restricted_chemical"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu27",    "name": "蛟",     "hp": 270, "attack": 24,  "attackVariance": 2, "art": "guaiwu27",
+      "drops": ["surgery_tool", "blue_blood_bag", "black_injector", "bottled_water_premium",
+                "pheromone_perfume", "gene_scanner", "advanced_flux_agent", "rare_electronic"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu28",    "name": "杀戮天使",     "hp": 340, "attack": 27,  "attackVariance": 2, "art": "guaiwu27",
+      "drops": ["surgery_tool", "blue_blood_bag", "black_injector", "bottled_water_premium",
+                "pheromone_perfume", "gene_scanner", "advanced_flux_agent", "rare_electronic"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu29",    "name": "终焉使徒",     "hp": 420, "attack": 25,  "attackVariance": 2, "art": "guaiwu29",
+      "drops": ["surgery_tool", "blue_blood_bag", "black_injector", "bottled_water_premium",
+                "pheromone_perfume", "gene_scanner", "advanced_flux_agent", "rare_electronic"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+    { "id": "guaiwu30",    "name": "深渊之王",     "hp": 540, "attack": 23,  "attackVariance": 2, "art": "guaiwu30",
+      "drops": ["surgery_tool", "blue_blood_bag", "black_injector", "bottled_water_premium",
+                "pheromone_perfume", "gene_scanner", "advanced_flux_agent", "rare_electronic"],
+      "dropCountMin": 2, "dropCountMax": 5 },
+  ],
+
+  // ── 交易数值（人物事件）─────────────────────────────────────────────
+  //   价格 = 物品原版估价 × 倍率。buy 是你买他的，sell 是你卖给他的。
+  //   counterSlots = 柜台能同时摆几件（买下来还没拖走的东西）。
+  "trade": {
+    "buyMultiplier": 1.0,
+    "sellMultiplier": 0.6,
+    "defaultValue": 20,
+    "counterSlots": 8
+  },
+
+  // ── NPC 表：人物事件只写 id，数值 / 携带物 / 信用点全在这里 ─────────────
+  //   hp / attack 与 battle 段同一套规则（10% 暴击、浮动、格挡）——
+  //   交易谈崩了「杀人越货」时，这些人就是那 1~3 只怪。
+  //   items + itemCountMin/Max：从这些种类里抽几件带在身上。
+  //   creditsMin/Max：随身信用点（被他带着，杀掉才能抢到）。
+  "npcs": [
+    { "id": "hobo", "name": "流浪汉", "hp": 45, "attack": 10, "attackVariance": 3, "art": "hobo",
+      "items": ["cat_bar", "small_morsel", "bandage_item", "scrap_metal"],
+      "itemCountMin": 1, "itemCountMax": 3, "creditsMin": 40, "creditsMax": 220 },
+
+    { "id": "courier", "name": "信使", "hp": 40, "attack": 9, "attackVariance": 2, "art": "courier",
+      "items": ["small_bottled_water", "processed_meat", "bandage_item", "energy_drink"],
+      "itemCountMin": 1, "itemCountMax": 3, "creditsMin": 80, "creditsMax": 300 },
+
+    { "id": "npc_food_vendor", "name": "美食摊主", "hp": 50, "attack": 7, "attackVariance": 2, "art": "npc_food_vendor",
+      "items": ["cup_noodle", "processed_cheese", "morsel", "soda_red", "bottled_water", "small_raw_meat"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 120, "creditsMax": 420 },
+
+    { "id": "npc_herbalist", "name": "游方药师", "hp": 60, "attack": 9, "attackVariance": 3, "art": "npc_herbalist",
+      "items": ["bandage_item", "fanta_pill", "hemostatic_bandage_item", "zyanide_pill", "rubbing_alcohol"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 160, "creditsMax": 520 },
+
+    { "id": "npc_daily_goods", "name": "杂货贩子", "hp": 55, "attack": 8, "attackVariance": 2, "art": "npc_daily_goods",
+      "items": ["toothpaste", "water_tablet", "toilet_paper", "shampoo", "paper_towel"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 100, "creditsMax": 380 },
+
+    { "id": "scav_thug_npc", "name": "拾荒暴徒", "hp": 65, "attack": 14, "attackVariance": 3, "art": "mon_thug",
+      "items": ["scrap_metal", "printer_plastic", "common_ore", "wire", "gun_part"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 120, "creditsMax": 460 },
+
+    { "id": "street_dealer", "name": "黑市商人", "hp": 80, "attack": 18, "attackVariance": 4, "art": "street_dealer",
+      "items": ["zyanide_pill", "salve", "common_electronic", "common_medical", "restricted_chemical"],
+      "itemCountMin": 2, "itemCountMax": 5, "creditsMin": 320, "creditsMax": 900 },
+
+    { "id": "npc_scrap_broker", "name": "机械体", "hp": 90, "attack": 15, "attackVariance": 4, "art": "npc_scrap_broker",
+      "items": ["metal_ingot", "rare_ore", "gun_part", "junk", "common_chemical"],
+      "itemCountMin": 2, "itemCountMax": 5, "creditsMin": 280, "creditsMax": 760 },
+
+    { "id": "npc_mechanic", "name": "义体维修工", "hp": 110, "attack": 17, "attackVariance": 4, "art": "npc_mechanic",
+      "items": ["common_electronic", "common_medical", "salve", "wire", "large_purple_injector"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 400, "creditsMax": 1100 },
+
+    { "id": "npc_bounty_hunter", "name": "赏金猎人", "hp": 160, "attack": 22, "attackVariance": 5, "art": "npc_bounty_hunter",
+      "items": ["large_purple_injector", "surgery_tool", "restricted_chemical", "rare_electronic", "chem_scanner"],
+      "itemCountMin": 2, "itemCountMax": 4, "creditsMin": 900, "creditsMax": 2200 },
+
+    { "id": "npc_smuggler", "name": "走私船长", "hp": 190, "attack": 24, "attackVariance": 5, "art": "npc_smuggler",
+      "items": ["blue_blood_bag", "liquid_luck", "neuroactive_perfume", "advanced_flux_agent", "bottled_water_premium"],
+      "itemCountMin": 3, "itemCountMax": 5, "creditsMin": 1200, "creditsMax": 3000 },
+
+    { "id": "npc_warlord", "name": "废土军阀", "hp": 260, "attack": 26, "attackVariance": 6, "art": "npc_warlord",
+      "items": ["black_injector", "gene_scanner", "rare_electronic", "surgery_tool", "bottled_water_premium"],
+      "itemCountMin": 3, "itemCountMax": 5, "creditsMin": 2000, "creditsMax": 4800 },
+
+  ],
+
+  "equipment": [
+    { "item": "crowbar",              "attackBonus": 8,  "capacityBonus": 0, "label": "撬棍" },
+    { "item": "hatchet",              "attackBonus": 10, "capacityBonus": 0, "label": "手斧" },
+    { "item": "kitchen_cleaver",      "attackBonus": 9,  "capacityBonus": 0, "label": "菜刀" },
+    { "item": "combat_knife",         "attackBonus": 12, "capacityBonus": 0, "label": "战术匕首" },
+    { "item": "skinning_knife",       "attackBonus": 7,  "capacityBonus": 0, "label": "剥皮刀" },
+    { "item": "stun_baton",           "attackBonus": 10, "capacityBonus": 0, "label": "电击棍" },
+    { "item": "combat_machete",       "attackBonus": 14, "capacityBonus": 0, "label": "战术砍刀" },
+    { "item": "tazer",                "attackBonus": 10, "capacityBonus": 0, "label": "电击枪" },
+    { "item": "handmade_pistol",      "attackBonus": 14, "capacityBonus": 0, "label": "自制手枪" },
+    { "item": "revolver",             "attackBonus": 16, "capacityBonus": 0, "label": "左轮手枪" },
+    { "item": "smg",                  "attackBonus": 17, "capacityBonus": 0, "label": "冲锋枪" },
+    { "item": "shotgun",              "attackBonus": 18, "capacityBonus": 0, "label": "霰弹枪" },
+
+    { "item": "printed_gun",           "attackBonus": 12, "capacityBonus": 0, "label": "3D 打印枪" },
+    { "item": "heavy_handmade_pistol", "attackBonus": 14, "capacityBonus": 0, "label": "铁铸手枪" },
+    { "item": "glock_receiver",        "attackBonus": 15, "capacityBonus": 0, "label": "格洛克机匣" },
+    { "item": "stun_gun",              "attackBonus": 14, "capacityBonus": 0, "label": "电击枪" },
+
+    { "item": "fanny_pack",           "attackBonus": 0, "capacityBonus": 1,  "label": "腰包" },
+    { "item": "satchel",              "attackBonus": 0, "capacityBonus": 2,  "label": "挎包" },
+    { "item": "backpack_small",       "attackBonus": 0, "capacityBonus": 3,  "label": "小背包" },
+    { "item": "kids_backpack",        "attackBonus": 0, "capacityBonus": 4,  "label": "儿童背包" },
+    { "item": "backpack_medium",      "attackBonus": 0, "capacityBonus": 5,  "label": "中型背包" },
+    { "item": "backpack_medium_military", "attackBonus": 0, "capacityBonus": 6, "label": "军用中型背包" },
+    { "item": "backpack_large",       "attackBonus": 0, "capacityBonus": 7, "label": "大背包" },
+    { "item": "backpack_large_military",  "attackBonus": 0, "capacityBonus": 8, "label": "军用大背包" }
+  ],
+
+  "events": [
+    {
+      "id": "bt_t1_01",
+      "type": "battle",
+      "title": "湿透的腐鼠",
+      "body": "下水道口钻出一只湿透的腐鼠，肚子鼓得不像话。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu2"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_02",
+      "type": "battle",
+      "title": "刚死不久的",
+      "body": "一具刚死不久的僵僵站在路中间，关节发出咔哒声。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu18"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_03",
+      "type": "battle",
+      "title": "朱朱的窝",
+      "body": "墙角堆着朱朱啃剩的骨头，它正从里面探出头。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu5"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_04",
+      "type": "battle",
+      "title": "鬣狗巡街",
+      "body": "三只鬣狗沿着墙根走，鼻子贴地，已经把你们围住了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu3"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_05",
+      "type": "battle",
+      "title": "石堆里的蝰蛇",
+      "body": "石堆里滑出一条蝰蛇，鳞片在灯下泛着油光。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu4"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_06",
+      "type": "battle",
+      "title": "那丛花开得不对",
+      "body": "那丛「花」动了。花蕊里全是牙。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu8"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_07",
+      "type": "battle",
+      "title": "地面在动",
+      "body": "地面在动。不是地震，是腐鼠。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu2"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_08",
+      "type": "battle",
+      "title": "互相扶着的两个",
+      "body": "两个僵僵互相扶着走，像在散步，但眼睛是白的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu18"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_09",
+      "type": "battle",
+      "title": "追到一半",
+      "body": "鬣狗在追一只腐鼠，追到一半发现你们更大。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu3", "guaiwu2"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_10",
+      "type": "battle",
+      "title": "叠在一起晒太阳",
+      "body": "三只朱朱叠在一起晒太阳，被脚步声惊得散开。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu5"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_11",
+      "type": "battle",
+      "title": "蛇蜕旁",
+      "body": "腐鼠在啃蝰蛇蜕下的皮，蝰蛇就在旁边看着。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu2", "guaiwu4"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_12",
+      "type": "battle",
+      "title": "越挣扎缠得越紧",
+      "body": "僵僵卡在荆棘花丛里，越挣扎缠得越紧。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu8", "guaiwu18"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_13",
+      "type": "battle",
+      "title": "巷口三双眼睛",
+      "body": "巷口亮着三双眼睛，都不高，都在往前挪。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu18", "guaiwu2", "guaiwu5"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_14",
+      "type": "battle",
+      "title": "铁皮底下",
+      "body": "掀开铁皮，底下盘着两条蝰蛇和一堆蛋。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu4"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_15",
+      "type": "battle",
+      "title": "有组织的围猎",
+      "body": "鬣狗群有组织地分开了，一只绕后，两只正面。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu3"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_16",
+      "type": "battle",
+      "title": "半条街的花",
+      "body": "半条街的荆棘花都开了，开得整齐，像有人种的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu8"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_17",
+      "type": "battle",
+      "title": "老鼠搬家",
+      "body": "腐鼠叼着东西往一个方向跑，跑了十几只。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu2"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_18",
+      "type": "battle",
+      "title": "啃得正香",
+      "body": "朱朱在啃僵僵的腿，僵僵没什么反应。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu5", "guaiwu18"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_19",
+      "type": "battle",
+      "title": "缠住了",
+      "body": "一条蝰蛇缠住了鬣狗的后腿，两只都不肯松。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu4", "guaiwu3"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t1_20",
+      "type": "battle",
+      "title": "比人还高的花丛",
+      "body": "荆棘花丛比人还高，里面传出一声闷响，不像风。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu8", "guaiwu3", "guaiwu2"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_01",
+      "type": "battle",
+      "title": "没有叶子的树",
+      "body": "那棵「树」没有叶子，枝干是骨头做的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu6"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_02",
+      "type": "battle",
+      "title": "数东西的人",
+      "body": "拾柒蹲在废料堆上数东西，数的不是钱。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu10"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_03",
+      "type": "battle",
+      "title": "通风管里的羊叫",
+      "body": "羊叫是从通风管里传出来的，但这里没有农场。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu7"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_04",
+      "type": "battle",
+      "title": "一片一片放进嘴里",
+      "body": "月光下有个影子在捡地上的碎玻璃，一片一片放进嘴里。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu9"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_05",
+      "type": "battle",
+      "title": "同一个名字",
+      "body": "一页一页的纸从楼上飘下来，每张都写满同一个名字。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu11"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_06",
+      "type": "battle",
+      "title": "画里少了一个人",
+      "body": "墙上的画少了一个人，那个人正站在画框外面。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu12"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_07",
+      "type": "battle",
+      "title": "树在转头",
+      "body": "小径两侧的树都在缓慢转头。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu6"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_08",
+      "type": "battle",
+      "title": "分得很公平",
+      "body": "两个拾荒者打扮的东西在分一具尸体，分得很公平。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu10"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_09",
+      "type": "battle",
+      "title": "巷子两头都堵了",
+      "body": "咩咩是成群出现的。现在它们把巷子两头都堵了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu7"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_10",
+      "type": "battle",
+      "title": "配合了很久",
+      "body": "一个在捡，一个在数。配合得像干了很久。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu9", "guaiwu10"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_11",
+      "type": "battle",
+      "title": "纸片立起来了",
+      "body": "纸片越落越密，落到地上就立起来。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu11"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_12",
+      "type": "battle",
+      "title": "人全在走廊里",
+      "body": "整面墙的画都空了，人全在走廊里。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu12"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_13",
+      "type": "battle",
+      "title": "根须封门",
+      "body": "树妖的根须从地板缝里钻出来，已经把门封了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu6", "guaiwu9"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_14",
+      "type": "battle",
+      "title": "画里的绳子",
+      "body": "画中人牵着一只咩咩，画里的绳子是断的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu12", "guaiwu7"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_15",
+      "type": "battle",
+      "title": "纸贴成的衣服",
+      "body": "页贴在树妖身上，像给它穿了件衣服。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu11", "guaiwu6"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_16",
+      "type": "battle",
+      "title": "背靠背",
+      "body": "拾柒和拾月背靠背坐着，中间摆着一堆手指。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu10", "guaiwu9"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_17",
+      "type": "battle",
+      "title": "嘴里的东西一样",
+      "body": "三只咩咩同时抬起头，嘴里的东西一样。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu7"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_18",
+      "type": "battle",
+      "title": "昨天还没有",
+      "body": "这片林子长得太快了，昨天还没有。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu6"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_19",
+      "type": "battle",
+      "title": "三幅画",
+      "body": "三幅画挂在同一面墙上，画里的人都背对着你。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu12"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t2_20",
+      "type": "battle",
+      "title": "动作一模一样",
+      "body": "废料场上三个人形在翻找，动作一模一样。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu10", "guaiwu9", "guaiwu11"],
+      "monsterCountMin": 3,
+      "monsterCountMax": 3,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_01",
+      "type": "battle",
+      "title": "她漂亮吗",
+      "body": "她戴着口罩站在路灯下，问你觉得她漂亮吗。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu14"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_02",
+      "type": "battle",
+      "title": "一直没放下的手",
+      "body": "远处有个穿红衣服的人在招手，手一直没放下。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu13"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_03",
+      "type": "battle",
+      "title": "一只都没叫",
+      "body": "屋顶上落满了鸦，一只都没叫。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu15"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_04",
+      "type": "battle",
+      "title": "慢半拍",
+      "body": "每面碎镜子里都有她，动作比真人慢半拍。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu16"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_05",
+      "type": "battle",
+      "title": "缝隙里的眼睛",
+      "body": "天花板裂开一条缝，缝里有一只眼睛在转。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu21"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_06",
+      "type": "battle",
+      "title": "积水里的歌",
+      "body": "积水里有人在唱歌，调子很准，词听不懂。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu17"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_07",
+      "type": "battle",
+      "title": "镜中的第二个人",
+      "body": "走廊尽头立着一面全身镜，镜里有两个人。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu16"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_08",
+      "type": "battle",
+      "title": "晾衣绳上的红衣",
+      "body": "三件红衣服挂在晾衣绳上，风吹过时都在动。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu13"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_09",
+      "type": "battle",
+      "title": "压得往下坠",
+      "body": "鸦群落在电线上，把电线压得往下坠。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu15"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_10",
+      "type": "battle",
+      "title": "梳子是一把刀",
+      "body": "红衣在给裂口女梳头，梳子是一把刀。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu13", "guaiwu14"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_11",
+      "type": "battle",
+      "title": "啄食与笑",
+      "body": "鸦在啄食一条搁浅的人鱼，人鱼在笑。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu15", "guaiwu17"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_12",
+      "type": "battle",
+      "title": "只剩那只眼睛亮着",
+      "body": "走廊的灯全灭了，只剩那只眼睛亮着。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu21"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_13",
+      "type": "battle",
+      "title": "镜廊",
+      "body": "这条走廊两侧全是镜子，每面镜子里都有一个她。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu16"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_14",
+      "type": "battle",
+      "title": "练习微笑",
+      "body": "裂口女对着镜子练习微笑，镜子里的人没有嘴。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu14", "guaiwu16"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_15",
+      "type": "battle",
+      "title": "一个唱一个听",
+      "body": "水池里浮着两个人鱼，一个在唱，一个在听。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu17"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_16",
+      "type": "battle",
+      "title": "落在肩上",
+      "body": "红衣站在鸦群里，鸦落在她肩上，很熟的样子。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu13", "guaiwu15"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_17",
+      "type": "battle",
+      "title": "镜子里的走廊",
+      "body": "镜子里反射出的不是走廊，是一只眼睛。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu21", "guaiwu16"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_18",
+      "type": "battle",
+      "title": "两个方向",
+      "body": "歌声从两个方向来，你们站在中间。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu17"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_19",
+      "type": "battle",
+      "title": "两个声音同时问",
+      "body": "两个声音同时问：「我漂亮吗？」",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu14"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t3_20",
+      "type": "battle",
+      "title": "越来越重",
+      "body": "它们不叫，只是落在你肩上，越来越重。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu15", "guaiwu21"],
+      "monsterCountMin": 2,
+      "monsterCountMax": 2,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_01",
+      "type": "battle",
+      "title": "往一个方向流",
+      "body": "整间屋子的东西都在往一个方向流，包括光。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu19"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_02",
+      "type": "battle",
+      "title": "一个动另一个就停",
+      "body": "两个人并排站着，一个动，另一个就停。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu22"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_03",
+      "type": "battle",
+      "title": "翅膀上的脸",
+      "body": "蝴蝶翅膀上的花纹是一张脸，正在慢慢转过来。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu20"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_04",
+      "type": "battle",
+      "title": "愈合得比受伤快",
+      "body": "它身上所有的伤口都在愈合，愈合得比受伤快。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu23"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_05",
+      "type": "battle",
+      "title": "绿灯",
+      "body": "林子尽头有人举着灯，灯是绿的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu24"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_06",
+      "type": "battle",
+      "title": "比人高的镰刀",
+      "body": "它拖着一把比人高的镰刀，刀刃上全是缺口。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu25"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_07",
+      "type": "battle",
+      "title": "从里面推开",
+      "body": "石棺的盖子从里面被推开了，推得很慢。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu26"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_08",
+      "type": "battle",
+      "title": "墙在往里收",
+      "body": "走廊越走越窄，墙在往里收。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu19"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_09",
+      "type": "battle",
+      "title": "镜子里的那个在动",
+      "body": "只有一个。但镜子里的那个在动。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu22"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_10",
+      "type": "battle",
+      "title": "落在手背上",
+      "body": "一只蝴蝶落在你手背上，翅膀合拢，像在听。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu20"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_11",
+      "type": "battle",
+      "title": "还在长肉",
+      "body": "这间病房的病人早就死了，尸体还在长肉。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu23"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_12",
+      "type": "battle",
+      "title": "走到哪儿哪儿枯",
+      "body": "他沿着林线走，走到哪儿，哪儿的树就枯。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu24"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_13",
+      "type": "battle",
+      "title": "田里没有庄稼",
+      "body": "田里没有庄稼，只有一排排立着的影子。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu25"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_14",
+      "type": "battle",
+      "title": "壁画上的视线",
+      "body": "四壁的壁画上，所有人都在看着同一个方向。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu26"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_15",
+      "type": "battle",
+      "title": "没有嘴",
+      "body": "它没有嘴，但地上的东西一直在减少。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu19"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_16",
+      "type": "battle",
+      "title": "同时",
+      "body": "他们同时转头，同时停下，同时笑了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu22"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_17",
+      "type": "battle",
+      "title": "一只都没飞",
+      "body": "整片空地上落满了蝴蝶，一只都没飞。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu20"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_18",
+      "type": "battle",
+      "title": "每一道伤口",
+      "body": "你们砍出的每一道伤口，都在眼前合上。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu23"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_19",
+      "type": "battle",
+      "title": "亮了三次",
+      "body": "绿灯亮了三次，林子里安静下来。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu24"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t4_20",
+      "type": "battle",
+      "title": "像在丈量",
+      "body": "它举起镰刀，动作慢得像在丈量什么。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu25"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_01",
+      "type": "battle",
+      "title": "水面下",
+      "body": "水面下有什么在盘绕，一圈比一圈大。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu27"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_02",
+      "type": "battle",
+      "title": "六只翅膀",
+      "body": "六只翅膀，只有两只是干净的。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu28"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_03",
+      "type": "battle",
+      "title": "听不懂的话",
+      "body": "它说的话你们听不懂，但每个人的手都在抖。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu29"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_04",
+      "type": "battle",
+      "title": "天空裂开",
+      "body": "天空裂开一道缝，缝里有东西在往下看。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu1"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_05",
+      "type": "battle",
+      "title": "王座是空的",
+      "body": "王座是空的，但王座前的地面在起伏。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu30"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_06",
+      "type": "battle",
+      "title": "抬起来又落回去",
+      "body": "整条河被抬起来一次，又落回去。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu27"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_07",
+      "type": "battle",
+      "title": "没有声音",
+      "body": "它落地的时候没有声音，灰尘却全被压平了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu28"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_08",
+      "type": "battle",
+      "title": "金属在震",
+      "body": "它举起手，所有金属制品同时开始震动。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu29"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_09",
+      "type": "battle",
+      "title": "星星掉下来",
+      "body": "星星掉下来了，落在三百米外的楼顶。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu1"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_10",
+      "type": "battle",
+      "title": "深渊回望",
+      "body": "你们往下看的时候，下面也有一双眼睛往上看。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu30"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_11",
+      "type": "battle",
+      "title": "三指深的划痕",
+      "body": "墙上的划痕有三指深，高度在两米以上。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu27"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_12",
+      "type": "battle",
+      "title": "一盏接一盏",
+      "body": "翅膀展开时，走廊里的灯一盏接一盏地灭。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu28"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_13",
+      "type": "battle",
+      "title": "祈祷的对象",
+      "body": "它跪在地上祈祷，祈祷的对象是你们。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu29"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_14",
+      "type": "battle",
+      "title": "连逃跑的念头",
+      "body": "目光落下来的时候，你们连逃跑的念头都没有了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu1"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_15",
+      "type": "battle",
+      "title": "九百级台阶",
+      "body": "台阶有九百级，每一级都刻着一个名字。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu30"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_16",
+      "type": "battle",
+      "title": "它睡着了",
+      "body": "它睡着了。翻身的时候，整栋楼都在响。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu27"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_17",
+      "type": "battle",
+      "title": "说了一个字",
+      "body": "它说了一个字，你们身上所有伤口同时裂开。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu28"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_18",
+      "type": "battle",
+      "title": "往前走",
+      "body": "它只是往前走，挡路的东西就自己让开了。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu29"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_19",
+      "type": "battle",
+      "title": "很慢，但一直在落",
+      "body": "天上有东西在落下来，速度很慢，但一直在落。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu1"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+    {
+      "id": "bt_t5_20",
+      "type": "battle",
+      "title": "另一个天空",
+      "body": "脚下的地面塌了，下面是另一个天空。",
+      "weight": 10,
+      "minDay": 0,
+      "monsters": ["guaiwu30"],
+      "monsterCountMin": 1,
+      "monsterCountMax": 1,
+      "options": [
+        { "label": "手动战斗", "desc": "自己指挥，打得漂亮能少掉点血" },
+        { "label": "自动战斗", "desc": "交给队伍自己解决" },
+        { "label": "逃跑", "desc": "70% 成功；失败会被迫接战，逃跑本身也要消耗体力" }
+      ]
+    },
+
+    {
+      "id": "sc_shack",
+      "type": "house",
+      "title": "铁皮窝棚",
+      "poolId": "pool_shack",
+      "body": "风把铁皮吹得哐哐响，门是从里面顶住的。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_dump",
+      "type": "house",
+      "title": "露天垃圾场",
+      "poolId": "pool_dump",
+      "body": "垃圾堆成两三层楼高的山，底下埋着不少能换钱的东西。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_kiosk",
+      "type": "house",
+      "title": "废弃便利店",
+      "poolId": "pool_kiosk",
+      "body": "自动门卡在一半，货架上的东西早被扫荡过一轮，但仓库门还锁着。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_sewer",
+      "type": "house",
+      "title": "下水道检修口",
+      "poolId": "pool_sewer",
+      "body": "井盖是掀开的，下面黑得看不见底，只有流水声。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_flophouse",
+      "type": "house",
+      "title": "群租房",
+      "poolId": "pool_flophouse",
+      "body": "十几张床挤在一间屋里，人早跑了，褥子还是温的。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_backalley",
+      "type": "house",
+      "title": "后巷垃圾堆",
+      "poolId": "pool_backalley",
+      "body": "巷子尽头堆着一周的垃圾，苍蝇成群，下面压着东西。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_bus",
+      "type": "house",
+      "title": "报废巴士",
+      "poolId": "pool_bus",
+      "body": "一辆翻倒的巴士横在路中间，座椅底下塞满了杂物。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_church",
+      "type": "house",
+      "title": "废弃教堂",
+      "poolId": "pool_church",
+      "body": "长椅被劈成柴火，圣像倒在地上，供台后面还有一排柜子。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_school",
+      "type": "house",
+      "title": "小学教室",
+      "poolId": "pool_school",
+      "body": "课桌摆得整整齐齐，黑板上还留着最后一节课的板书。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_parking",
+      "type": "house",
+      "title": "地下停车场",
+      "poolId": "pool_parking",
+      "body": "柱子上一排弹孔，几辆车的后备箱全是敞开的。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_market",
+      "type": "house",
+      "title": "生鲜超市",
+      "poolId": "pool_market",
+      "body": "冷柜早就断电了，但干货区和仓库还有半仓。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_pharmacy",
+      "type": "house",
+      "title": "街角药店",
+      "poolId": "pool_pharmacy",
+      "body": "卷帘门被撬开一半，里面还有一股碘伏味。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_hardware",
+      "type": "house",
+      "title": "五金店",
+      "poolId": "pool_hardware",
+      "body": "电钻、线缆、成箱的螺丝，地上散着没卖完的货。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_laundry",
+      "type": "house",
+      "title": "自助洗衣房",
+      "poolId": "pool_laundry",
+      "body": "烘干机里还塞着别人的衣服，洗衣液堆在墙角。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_kitchen",
+      "type": "house",
+      "title": "餐馆后厨",
+      "poolId": "pool_kitchen",
+      "body": "油锅冷透了，冷藏室的封条居然还是好的。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_dorm",
+      "type": "house",
+      "title": "员工宿舍",
+      "poolId": "pool_dorm",
+      "body": "上下铺、铁皮柜、墙上贴着一张褪色的排班表。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_garage",
+      "type": "house",
+      "title": "修车行",
+      "poolId": "pool_garage",
+      "body": "举升机停在半空，货架上全是零件和油桶。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_grocery",
+      "type": "house",
+      "title": "杂货仓库",
+      "poolId": "pool_grocery",
+      "body": "整托盘的货码到顶，叉车还插在中间没拔出来。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_clinic",
+      "type": "house",
+      "title": "社区诊所",
+      "poolId": "pool_clinic",
+      "body": "候诊椅翻倒一片，药柜的锁被人撬过，但没撬开。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_hydroponics",
+      "type": "house",
+      "title": "小型水培棚",
+      "poolId": "pool_hydroponics",
+      "body": "营养液还在循环，一排排生菜长得比人还精神。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_ripperdoc",
+      "type": "house",
+      "title": "义体医生诊室",
+      "poolId": "pool_ripperdoc",
+      "body": "手术台上还铺着布，边上的器械托盘摆得整整齐齐。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_chemical",
+      "type": "house",
+      "title": "化工厂车间",
+      "poolId": "pool_chemical",
+      "body": "管道滴着不明液体，空气里有股甜味，戴着面具也挡不住。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_armory",
+      "type": "house",
+      "title": "军械维修点",
+      "poolId": "pool_armory",
+      "body": "枪架空了一半，剩下的都被拆成了一堆零件。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_pharm_lab",
+      "type": "house",
+      "title": "制药实验室",
+      "poolId": "pool_pharm_lab",
+      "body": "一排排培养皿在无菌柜里发着微光，标签写着看不懂的编号。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_farm",
+      "type": "house",
+      "title": "大型水培农场",
+      "poolId": "pool_farm",
+      "body": "几百米长的种植槽看不到头，空气湿得能拧出水。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_hotel",
+      "type": "house",
+      "title": "高档酒店套房",
+      "poolId": "pool_hotel",
+      "body": "地毯还是软的，迷你吧被撬了，衣柜里的箱子没锁。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_morgue",
+      "type": "house",
+      "title": "医院太平间",
+      "poolId": "pool_morgue",
+      "body": "抽屉拉开一半，冷气还在，标签上的名字被人划掉了。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_biolab",
+      "type": "house",
+      "title": "生化实验室",
+      "poolId": "pool_biolab",
+      "body": "生物危害标志半掩在锈里，感应门居然还有电。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_datacenter",
+      "type": "house",
+      "title": "数据中心",
+      "poolId": "pool_datacenter",
+      "body": "机柜指示灯还在闪，散热风扇的声音像有人在呼吸。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+    {
+      "id": "sc_depot",
+      "type": "house",
+      "title": "军械库",
+      "poolId": "pool_depot",
+      "body": "两道防爆门都开着，里面整齐得让人不安。",
+      "weight": 10,
+      "minDay": 0,
+      "options": [
+        { "label": "主动搜刮", "desc": "逐间搜查，收益最高，但要自己盯着" },
+        { "label": "自动仔细搜刮", "desc": "2~3 件物资，30% 概率踩陷阱（全员 -10 HP）" },
+        { "label": "自动安全搜刮", "desc": "1 件物资，没有风险" }
+      ]
+    },
+
+    {
+      "id": "npc_ev_hobo",
+      "type": "wanderer",
+      "title": "墙根下的人影",
+      "body": "墙根下缩着一个人影，抱着一只旧旅行袋。看见你们也没有跑 —— 大概是跑不动了。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["hobo"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_courier",
+      "type": "wanderer",
+      "title": "跑腿的",
+      "body": "一个穿着褪色制服的信使靠在电线杆上喘气，脚边放着一个封了三次的包裹。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["courier"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_food_vendor",
+      "type": "wanderer",
+      "title": "熟食摊",
+      "body": "折叠桌上摆着几盒还温着的速食，摊主用手挡着蒸汽，警惕地看着你们。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_food_vendor"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_herbalist",
+      "type": "wanderer",
+      "title": "游方药师",
+      "body": "一个背着木箱的人在街角摆摊，箱盖上用红漆写着「治百病」。他自己在咳嗽。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_herbalist"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_daily",
+      "type": "wanderer",
+      "title": "杂货摊",
+      "body": "地上铺着塑料布，摆满了牙膏、厕纸和净水片 —— 都是过日子要用的东西。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_daily_goods"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_thug",
+      "type": "wanderer",
+      "title": "路被堵了",
+      "body": "三个拾荒暴徒靠在墙边分东西，看见你们就站直了，其中一个掂了掂手里的钢管。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["scav_thug_npc"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_dealer",
+      "type": "wanderer",
+      "title": "黑市小贩",
+      "body": "路灯坏了，摊位还在。摊主把货一件件码开，动作很慢，眼睛一直没离开你们的手。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["street_dealer"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_broker",
+      "type": "wanderer",
+      "title": "废料掮客",
+      "body": "一个胖子坐在成堆的废料上抽烟，脚边码着几块金属锭，说是「刚从楼上掉下来的」。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_scrap_broker"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_mechanic",
+      "type": "wanderer",
+      "title": "义体维修工",
+      "body": "卷帘门后亮着一盏手术灯。维修工满手油污，正在给一条机械臂换关节。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_mechanic"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_hunter",
+      "type": "wanderer",
+      "title": "赏金猎人",
+      "body": "一个人站在路中间，胸前的徽章被磨得看不清了。他说他等你们很久了。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_bounty_hunter"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_smuggler",
+      "type": "wanderer",
+      "title": "走私船长",
+      "body": "货舱门半开着，里面码着不该出现在这里的箱子。船长叼着烟，示意你们靠近点谈。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_smuggler"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "npc_ev_warlord",
+      "type": "wanderer",
+      "title": "废土军阀",
+      "body": "十几个人围成一圈，中间那个坐着。他脚边放着一个打开了半截的箱子。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["npc_warlord"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+
+    {
+      "id": "wanderer",
+      "type": "wanderer",
+      "title": "流浪汉",
+      "body": "墙根下缩着一个人影，看不清脸。他把一只旧旅行袋抱在怀里，看见你们也没有跑 —— 大概是跑不动了。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["hobo"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "street_dealer",
+      "type": "wanderer",
+      "title": "黑市小贩",
+      "body": "路灯坏了，摊位还在。摊主把货一件件码开，动作很慢，眼睛一直没离开你们的手。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["street_dealer", "courier"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+    {
+      "id": "thug_parley",
+      "type": "wanderer",
+      "title": "暴徒谈判",
+      "body": "几个人堵在路口，没动手，也没让开。领头的那个在等你们先开口。",
+      "weight": 10,
+      "minDay": 0,
+      "npcs": ["scav_thug_npc", "hobo"],
+      "npcCountMin": 1,
+      "npcCountMax": 3,
+      "options": [
+        { "label": "查看", "desc": "凑近谈谈 —— 他可能有点东西要出手，也可能想抢你的" },
+        { "label": "无视", "desc": "绕过去，什么都不发生" }
+      ]
+    },
+  ],
+
+  "lootPools": [],
+
+  "fallbackLoot": ["scrap_metal", "bandage_item", "small_bottled_water"],
+
+  // ── 消耗品：把水 / 食物 / 医疗品拖到代理人身上（派遣面板队员槽位或角色页）直接使用 ──
+  "consumables": {
+    // 水按水质分档，每 100ml 生效一次。数组下标 = 原版水质档位：
+    //   0=纯水  1=优质水  2=基础水  3=幽灵水  4=铁锈水  5=沟渠水
+    "waterThirstPer100Ml":     [20, 10, 5, 5, 5, 5],
+    "waterCorruptionPer100Ml": [0, 0, 0, 5, 10, 20],
+    "waterHpPer100Ml":         [0, 0, 0, 0, 0, -2],
+
+    // 食物统一口径：每 100 卡路里 +5 饥饿值（原版食物都带 CALORIE_VALUE_TAG，一小口食物 140 卡）
+    "foodHungerPer100Kcal": 5,
+
+    // 兜底口径：没有卡路里标签的物品，按每 100 称重单位 +5 饥饿值
+    "foodHungerPer100Weight": 5,
+
+    // 医疗品表里没配的 MEDICAL 物品，按这个数回复生命（改成 0 = 没效果）
+    "medicalDefaultHp": 10,
+
+    // 医疗品逐个配置：hp = 回多少生命（负数掉血），corruption = 加多少侵蚀（可不填）
+    // ★ 下面这些数值是占位默认，请按自己的平衡手动改
+    "medical": [
+      { "item": "bandage_item",             "hp": 15 },
+      { "item": "hemostatic_bandage_item",  "hp": 25 },
+      { "item": "topical_bandage_item",     "hp": 20 },
+      { "item": "salve",                    "hp": 20 },
+      { "item": "rubbing_alcohol",          "hp": 5 },
+      { "item": "smelling_salt",            "hp": 10 },
+      { "item": "blood_bag",                "hp": 50 },
+      { "item": "blue_blood_bag",           "hp": 60 },
+      { "item": "black_injector",           "hp": 30 },
+      { "item": "pink_injector",            "hp": 25 },
+      { "item": "pink_alt_injector",        "hp": 25 },
+      { "item": "large_purple_injector",    "hp": 50 },
+      { "item": "pure_white_injector",      "hp": 80 },
+      { "item": "phagimycin_pill",          "hp": 10 },
+      { "item": "unlicensed_phagimycin_pill", "hp": 5 },
+      { "item": "fanta_pill",               "hp": 5 },
+      { "item": "caffeine_pill",            "hp": 0,  "corruption": 0 },
+      { "item": "dream_dust",               "hp": 10 },
+      { "item": "nightmare_dust",           "hp": -10 },
+      // 本 mod 自己的医疗品：只压侵蚀、不回血（侵蚀 -100 会夹到 0）。
+      // 抽卡 N 档能抽到，抽卡商人每次到店带 3~5 根。
+      { "item": "ds_erosion_suppressor",    "hp": 0, "corruption": -100, "label": "侵蚀抑制剂" }
+    ]
+  },
+
+  "text": [
+    { "key": "cond.healthy", "value": "健康" },
+    { "key": "cond.light",   "value": "轻伤" },
+    { "key": "cond.severe",  "value": "重伤" },
+    { "key": "cond.offline", "value": "下线" }
+  ]
+}

@@ -1,6 +1,14 @@
-# Snake Ranch 0.6.8 — 蛇夫人电话旧档迁移 / Snake Lady phone legacy migration
+# Snake Ranch 0.6.8-r3 — 电话加载保护与测试箱尺寸 / Phone load guard and test-kit footprint
+
+## 0.6.8-r3 加载保护与测试箱 / Load guard and test kit
+
+- 0.6.8 在 `OnEnable` 里提前访问 `PlayerStore.Instance`，无存档时会新建 `PlayerStore` 并碰到尚未生成的场景单例，异常会让整个 mod 加载失败。本版只在 store 未就绪时跳过电话安装，读档后再补；不改物品 ID、笼具标签、存档键，也不删除或重建任何蛇/笼/物品。
+- 测试箱改用蛇笼贴图和蛇笼同尺寸的外部占地（原生 4×3），不再固定 2×2；已有测试箱读档时同步修复图标与外部尺寸，容器内部网格、容量和内容不变。
+- 0.6.8 evaluated `PlayerStore.Instance` too early in `OnEnable`; with no store it constructed a new `PlayerStore` and touched scene singletons that were not ready, disabling the whole mod. This release defers phone installation until the store exists; item IDs, cage tags, save keys and existing snakes/cages/items are untouched.
+- The test kit now uses the snake-cage icon and the native cage's 4×3 footprint instead of a fixed 2×2. Existing saved kits are repaired on load without changing the internal grid, capacity or contents.
 
 ## 蛇夫人电话 / Snake Lady phone
+
 
 - 旧存档里已经见过蛇夫人、但没有拿到号码的，读档时会自动补上 8848，不再出现“她不再来、电话也打不通”的死锁。
 - 预约明天到店不再同时压 7 天冷却；重复拨号只确认已有预约，不会重复排队。
@@ -43,9 +51,9 @@
 - Adult, living corn snakes receive the `LUXURY_ITEM` and `FOOD` item-type tags; juveniles and dead snakes do not. `FOOD` is a classification tag only: it is not passed to `FoodItemHelper` and does not become edible or provide calories.
 - Adult corn snakes in old saves receive the tags on load. Seller forgery stock remains adult-only.
 
-本版完成离线构建、包门禁和上传前检查；没有启动游戏、安装、读写真实存档或上传，不声称已实机验证。历史版本说明保留在下方。
+本版完成离线构建、包门禁和上传前检查；测试箱的蛇笼外观与 4×3 外形已在作者本机实机确认，其他模块仍按下文边界未验证。未登录、未上传，未读写玩家存档。历史版本说明保留在下方。
 
-This release completed offline build, package gates and pre-upload checks; no game launch, install, real-save access or upload was performed, and no live-game verification is claimed. Historical release notes remain below.
+This release completed offline build, package gates and pre-upload checks. The test kit's snake-cage appearance and 4×3 footprint were confirmed in-game on the author's machine; other modules remain unverified as described below. No Steam login, upload or player-save access was performed.
 
 ---
 

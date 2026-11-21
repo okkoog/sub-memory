@@ -1,0 +1,120 @@
+tooltip_memory,Remembered: {0}
+tooltip_label,{0} ({1})
+tooltip_sep,"; "
+filter_durability_low,Filter durability depleted
+commissary_voucher_balance,Redeemable vouchers: {0}
+commissary_voucher_hint,Redeemable for items at the commissary
+settings_section_documents,Auto-discard documents
+settings_appraisal_slip,Appraisal slips
+settings_appraisal_slip_tip,Move appraisal slips on the front counter to the trash automatically
+settings_event_receipt,Event receipts
+settings_event_receipt_tip,Move event receipts on the front counter to the trash automatically
+settings_security_receipt,Security receipts
+settings_security_receipt_tip,Move security receipts on the front counter to the trash automatically
+settings_handwritten_note,Handwritten notes
+settings_handwritten_note_tip,Move handwritten notes on the front counter to the trash automatically (machine manuals excluded)
+settings_expedition_log,Expedition logs
+settings_expedition_log_tip,Move expedition logs on the front counter to the trash automatically
+settings_section_ui,UI and interaction
+settings_section_tool_batch,Tool box-selection batch
+settings_batch_labeler,Labeler box-selection batch
+settings_batch_labeler_tip,Box-select items sharing the same editable label category and apply that label in bulk
+settings_batch_blue_labeler,Blue labeler box-selection batch
+settings_batch_blue_labeler_tip,Box-select matching items with the blue labeler and apply one entered name to the whole group
+settings_batch_aquascan,Aquascan batch water labels
+settings_batch_aquascan_tip,Box-select liquid containers with Aquascan and match labels to current water quality
+settings_batch_screwdriver,Screwdriver box-selection batch
+settings_batch_screwdriver_tip,Box-select targets with the screwdriver and use it on each
+settings_batch_welder,Welder box-selection batch
+settings_batch_welder_tip,Box-select targets with the welder and use it on each
+settings_batch_wire_cutter,Wire cutter box-selection batch
+settings_batch_wire_cutter_tip,Box-select targets with the wire cutter and use it on each
+settings_batch_surgery,Surgery tool box-selection batch
+settings_batch_surgery_tip,Box-select targets with the surgery tool and use it on each
+settings_batch_blade,Blade box-selection batch
+settings_batch_blade_tip,Box-select targets with a blade tool and use it on each
+settings_batch_liquid_container,Liquid container box-selection
+settings_batch_liquid_container_tip,Box-select other containers with an equipped liquid container and run the vanilla pour/draw action on each
+settings_drag_slot_replace,Drag to replace battery or filter
+settings_drag_slot_replace_tip,Drag a battery onto a machine battery slot or a filter onto a filter container to swap with the installed item; empty slots still use vanilla insertion
+settings_tab_drag_chooser,Multi-tab container drag chooser
+settings_tab_drag_chooser_tip,Show a tab chooser while dragging over a multi-tab container; hover a tab and release to drop into it
+tab_chooser_title,Choose tab
+settings_transit_voucher,Show commissary vouchers at night
+settings_transit_voucher_tip,Show the voucher balance and commissary item quotas in the night travel window
+settings_tab_switch,Switch tabs with Left/Right
+settings_tab_switch_tip,Use Left/Right arrow keys while hovering a tab strip
+keybind_tab_left,Previous tab
+keybind_tab_left_tip,Switch to the previous tab
+keybind_tab_right,Next tab
+keybind_tab_right_tip,Switch to the next tab
+keybind_follow_modifier,Window follow modifier
+keybind_follow_modifier_tip,Hold while dragging an item so its windows follow after release; set to Left Mouse to disable following
+keybind_snap_modifier,Window snap modifier
+keybind_snap_modifier_tip,Hold while dragging a window to snap; set to Left Mouse to disable snapping
+keybind_boxselect_modifier,In-window box-select modifier
+keybind_boxselect_modifier_tip,Hold this key and drag with the left mouse button inside a window to box-select; snap takes priority on conflict
+keybind_multi_select_toggle,Add/remove selected item modifier
+keybind_multi_select_toggle_tip,Hold this key and click an item to add or remove it from the current box selection; only the exact bound key is used, e.g. LeftShift/LeftCtrl/LeftAlt
+mod_name,Pen's QoL Tweaks
+keybind_source,Source: {0}
+settings_chem_batch,Batch chem finisher output
+settings_chem_batch_tip,Show a quantity slider on the chem finisher to output multiple batches at once
+settings_chem_batch_default_max,Default chem slider to maximum
+settings_chem_batch_default_max_tip,On: default to maximum when the slider first appears or the recipe changes; off: default to minimum. Only applies when Batch chem finisher output is enabled
+settings_jackson_tablet_left,Jackson negotiation tablet on the left first
+settings_jackson_tablet_left_tip,Open the Jackson negotiation tablet on the left the first time, then keep the player's last position
+settings_filter_durability_warning,Filter durability warning
+settings_filter_durability_warning_tip,Show a pop near the filter container when its filter durability reaches zero
+settings_water_label_sync,Sync container labels after water changes
+settings_water_label_sync_tip,Update the water label automatically when the container's actual water quality changes
+settings_window_band_tolerance,Alt box-select inside windows
+settings_window_band_tolerance_tip,Hold Alt and drag with the left mouse button inside a window to box-select; snap modifier takes priority on conflict
+settings_window_follow,Window follow
+settings_window_follow_tip,Hold the follow modifier while dragging an item to reopen its window at the item; disabling also hides the keybind
+settings_window_snap,Window drag snap
+settings_window_snap_tip,Hold the snap modifier while dragging a window to snap to edges; disabling also hides the keybind
+settings_multi_select_toggle,Box-select add/remove item
+settings_multi_select_toggle_tip,Hold the modifier and click an item to add or remove it from the box selection; disabling also hides the keybind
+settings_labeler_memory,Labeler memory / right-click apply
+settings_labeler_memory_tip,Remember labels changed with the labeler and allow right-click quick apply; disabling clears and hides the memory
+settings_blue_labeler_memory,Blue labeler memory / prefill name
+settings_blue_labeler_memory_tip,Remember the last name confirmed in the blue labeler; prefill it for the same item type and allow right-click quick apply
+settings_section_trash,Trash and counter
+settings_trash_auto_pickup,Move trash items to the counter
+settings_trash_auto_pickup_tip,During the day move non-newspaper non-document trash items to the back counter
+trash_pickup_failed,Failed to pick up item
+settings_black_market_only,Only pick up black-market outputs
+settings_black_market_only_tip,When enabled trash pickup only handles black-market exchange outputs (vanilla output ID table)
+settings_section_farming,Farming
+settings_hydroponic_auto_replant,Automatic hydroponic replant
+settings_hydroponic_auto_replant_tip,After a hydroponic harvest, if the seed input slot is empty, move the frontmost seed by position from the output area back into the input slot
+settings_section_quick_actions,Quick actions
+settings_quick_buy_space,Quick buy
+settings_quick_buy_space_tip,Buy all items the customer has already placed on the counter with the configured quick buy key; it does not take items from storage or place items for you. Dialogue advance still takes priority while waiting
+settings_quick_sell_space,Quick sell
+settings_quick_sell_space_tip,Sell all items you have already placed on the counter that the customer wants with the configured quick sell key; you still need to place items on the counter first. Dialogue advance still takes priority while waiting
+settings_quick_appraisal_space,Quick appraisal
+settings_quick_appraisal_space_tip,Use the configured quick appraisal key to submit the current estimate when the appraisal panel is open and the input field is not being edited
+settings_quick_confront_space,Quick confront
+settings_quick_confront_space_tip,Use the configured quick confront key to submit the selected issues while the inspection panel is open; requires at least one selected issue and is disabled while trade is locked or dialogue is active
+settings_quick_pin,Quick pin
+settings_quick_pin_tip,Toggle pin on the hovered item with the configured key; batch-toggles selected items while box-selecting and never clicks through windows
+settings_batch_uv_filter,UV lamp box-selection batch
+settings_batch_uv_filter_tip,When the UV lamp is equipped, box-select liquid containers and apply the vanilla UV purification to each
+settings_section_machine,Machines and power
+settings_machine_auto_battery,Automatic battery replacement
+settings_machine_auto_battery_tip,When a machine or tool battery cannot supply power, find a usable battery in the front/back counters, battery hub, chargers, storage areas and external machine storage, then put the old battery back where the new one came from
+keybind_quick_buy,Quick buy
+keybind_quick_buy_tip,Buy all items the customer has already placed on the counter; does not take items from storage
+keybind_quick_sell,Quick sell
+keybind_quick_sell_tip,Sell items you have already placed on the counter that the customer wants; you still need to place items on the counter first
+keybind_quick_appraisal,Quick appraisal
+keybind_quick_appraisal_tip,Submit the current estimate when the appraisal panel is open and the input is not being edited
+keybind_quick_confront,Quick confront
+keybind_quick_confront_tip,Confront immediately when the inspection panel is open and at least one issue is selected
+keybind_quick_pin,Quick pin
+keybind_quick_pin_tip,Toggle pin on the hovered item; batch-toggles selected items while box-selecting
+settings_chem_close_recipe,Close recipe picker after selecting
+settings_chem_close_recipe_tip,Close the recipe picker immediately after selecting a recipe; the machine window and selected recipe stay active
+chem_batch_status_output_full,Not enough space
