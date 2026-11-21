@@ -6,6 +6,8 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
+> **최종 갱신(2026-11-21): 원본 20개 모드 폴더 전부 번역본 쪽에도 대응 폴더 존재.** 기존 17개 한국어 DLL에 엘리너 독립 **v1.0.0** DLL 1개와 통합 **v1.1.3** DLL 1개를 추가하여 19개 번역 DLL로 확장했고, **RedLightDistrict v1.1.1 3,619개 원본 IL 호출 지점 전체를 실제 외부 로컬키 `ko.csv`에 연결하는 DLL**을 추가해 총 **한국어 수정 DLL 20개**의 정적 결과물을 확보했다. RLD는 기존 **214개 표시 문구만 치환한 불완전 DLL을 폐기하고 전면 브리지로 교체**했으며, 3,512키는 한국어, 내부 비교/저장 식별자 107키는 원문 보호한다. 최종 RLD DLL과 CSV **둘 다 반드시 설치**. 네 개 관련 DLL에 화면/설정/대사 예비 문구 17곳을 더 수정하고 ZIP을 재검증했다. Bai She의 55MB 이미지 DLL은 실제 한자 UI IL 0개/내장 CSV 0개이므로 원본 DLL 교체 없이 한국어 메타데이터만 제공. **원본 폴더 수정 0, 정적 검사 완료. 실게임 실행·세이브·호환성 검증은 전부 미실시.** 상세 최신 섹션은 문서 맨 아래 참조.
+
 > **2026-11-21 최신 변경: RedLightDistrict 제외 지시 해제, 번역 및 보호 검수 재개.** `RedLightDistrict_v1.1.1`은 외부 로컬라이제이션을 지원하므로 기존 모드 제작자의 로컬키 DLL을 유지하고 한국어 CSV만 갱신한다. **3,619키 중 3,512키 한국어, 나머지 107키는 내부 비교·세이브·식별자 보호로 원문 유지**(미분류 수동 번역 대기 0). 기존 보관함 검색과 급식기/정수기 설명 비교에 연결된 위험 키 10개를 추가 보호했으며, 근거는 `RedLightDistrict_v1.1.1/translation-work/COMPARISON_SAFETY_REVIEW_20261121.md`에 기록했다. 기존 **17개 DLL 정적 작업 기록은 그대로**이며, RLD는 **별도의 외부 Localization 작업 실적**이다. 실제 게임 실행 검증은 미실시.
 
 > **2026-11-21 추가 진행(사용자 지시: RedLightDistrict 완전 제외):** 앞선 16개 DLL 정적 작업 이후, 별도 버전 `3842259965/probably_adult_goods.dll`(manifest v1.1.1)의 내장 Localization **181키**를 한국어화하고 실제 DLL에 `ko`/`ko-KR` 리소스 2개를 추가했다. 원본 코드 호출부 검수 후 화면 전용 중국어 툴팁 **10개 IL 참조**를 별도 치환해 정적 검증을 마쳤다. **현재 완료 17번째 DLL, 실게임 테스트는 모두 미실시.** 자세한 사항은 문서 말미의 v1.1.1 항목을 참조한다. RedLightDistrict 원본·번역 파일과 관련 스크립트는 이번 작업에서 수정하지 않았다.
@@ -897,3 +899,44 @@
 - **실제 반영:** `translation-work/internal_string_reference.tsv`에 신규 보호 10개와 사유·한국어 참고안을 보관, `merge_localization.py`에 `COMPARISON_PROTECTION` 누락·번역 유입 검증 추가. GitHub Actions의 CSV 병합 및 키 검증 **성공**, 수정 `ko.csv` 재생성. **최신 결과 한국어 3,512 / 원문 보호 107 / 미분류 대기 0 / 합계 3,619키**. 원본 DLL/원본 CSV는 변경하지 않았다.
 - **문서 및 결과:** `RedLightDistrict_v1.1.1/LOCALIZATION_PROGRESS.md`, `KEY_COVERAGE_AUDIT_20261121.tsv`, `UNTRANSLATED_REVIEW_QUEUE_20261121.tsv`, `README_ko.txt`, `translation-work/COMPARISON_SAFETY_REVIEW_20261121.md` 갱신. 기능 비교 보호 추가 및 자동 검증 커밋 `daf115b602a38ee934885e331c3b25ec3d9c0b42`; 기록·검수 보강 `1e3c0d84d42f22966b261664d567f443afbfd663`, `1693fd49c7de5633cad5ab9a29ca29db9ff2fb2c`.
 - **단계 판정:** 외부 Localization 3,512개와 내부 107개 보존에 대한 **키·포맷·기능 비교 정적 검수 완료**. 실제 Unity/CLR 로더·게임 UI·기존 세이브·모드 충돌 **검증 미실시**. 별도의 한국어 DLL을 새로 만들지 않았으며 본 RLD CSV 작업을 앞서 집계한 '17개 DLL 완료' 실적에 추가 합산하지 않는다. 추가로 안전하게 치환할 수 있는 항목이 확인되기 전까지 107개를 일괄 한국어로 변경하지 않는다.
+
+## 2026-11-21 — 전체 원본 20폴더 대응, 엘리너 구형·통합판 추가, 홍등가 3,619 호출 전면 연결, UI 마감 검수
+
+### 1. 폴더와 배포 변형 정리
+- 원본 `probably-stolen/local-mods/TentacleMod/`의 모드 폴더 **20개** 전수 목록과 `TentacleMod번역/`의 모드 폴더를 GitHub 원격 목록으로 비교. **번역 쪽에 빠진 원본 폴더 0개**. `번역대조표`는 별도 보조 폴더다. 이 사실은 DLL·게임 호환성 테스트 완료를 의미하지 않는다.
+- 이전 기록의 **17개 정적 한국어 DLL**에 이전에 누락된 `3842247788` 엘리너 독립판 v1.0.0 및 `3843142171` 엘리너/성인용품 통합판 v1.1.3을 추가했으며, 아래 홍등가 외부 CSV 브리지 DLL까지 합산하면 **한국어 수정 DLL 20개**가 된다. 동일 ID를 공유하는 각 버전은 **서로 대신 사용할 수 있는 선택지**이지 동시에 설치하는 구성 요소가 아니다.
+- `3843125702`의 `DsBhyuStart.dll` 및 여러 모드의 native `payload.txt`는 번역 UI 코드가 아닌 원본 실행 파일·네이티브 리소스다. 실행·수정·번역·검증 완료를 선언하지 않는다.
+
+### 2. 18번 — 엘리너 독립판 v1.0.0 실제 DLL
+- 원본 `TentacleMod/3842247788/fallen_heiress_eleanor.dll` **16,418,816바이트**, SHA256 `2bd5865fb14bcde883876c82fe93655d89578031776f9d4e102cfd59cdad12c4`. 원본 ID `probably_eleanor_followup`, ModVersion `1.0.0`.
+- 1.0.3의 중국어/영어 내장 리소스와 키·내용을 **직접 비교**. 공통 1,826키 중 1,824키 원문 완전 일치, 차이 2키 `purity_wilde_visit_1_6` 및 `purity_wilde_visit_1_15`는 구형의 실제 대사에 맞춰 별도로 한국어화. v1.0.3 추가 12키는 v1.0.0에 **생성하지 않음**. 총 내장 **1,827키 = 유효 문구 1,541키 한국어 + 비활성 자리표시자 286키 원문 유지**.
+- 원본 zh/en 포함 관리 리소스 **46개가 바이트 동일**, 새 `EleanorEmbedded/Localization/ko.csv`만 추가, `ko` 및 `ko-KR` 등록 IL 14개, MethodDef **1,448** / TypeDef **216** 불변 확인.
+- 결과 `TentacleMod번역/3842247788/fallen_heiress_eleanor.dll`, 최종 UI 보완 이후 **16,582,656바이트**, SHA256 `da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76`.
+- 최종 ZIP `ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip`, 한국어 manifest/README, 원문판 변형 검수 `번역대조표/Eleanor_VARIANTS_CLR_AUDIT_20261121.md`, `Eleanor_v1.0.0_KO_DLL_STATIC_AUDIT_20261121.md`. GitHub Actions 빌드 성공: `44912178976`.
+
+### 3. 19번 — 엘리너 + 성인용품 통합판 v1.1.3 실제 DLL
+- 원본 `TentacleMod/3843142171/fallen_heiress_eleanor.dll` **16,721,920바이트**, SHA256 `221f28b4e9492af24d4fa13aad995bd46eb0b759bf6777ad07fa02aad2d6f548`. 이 통합판의 모드 ID는 `probably_adult_goods`, ModVersion `1.1.3`, capability `native`. 단독 엘리너와 성인용품의 다른 버전과 **중복 활성화 금지**.
+- 원본 관리 리소스 **104개**를 비교: 엘리너 zh/en 내장 리소스가 번역 완료 v1.0.3과 바이트 단위 동일, 성인용품 zh/en 리소스도 번역 완료 v1.1.1과 바이트 단위 동일. 따라서 이미 개별 원문 대조한 **엘리너 1,553 유효 문구** 및 **성인용품 181키**를 버전 차이 없이 재사용, 286개 원본 비활성 자리표시자 불변.
+- 새 리소스 **3개**(`EleanorEmbedded/Localization/ko.csv`, `ProbablyAdultGoods.Localization.ko.csv`, `ProbablyAdultGoods.Localization.ko-KR.csv`). 엘리너 등록 IL 14개, 성인용품 원래 자동 CSV 리소스 로더 이용, 장비 UI 툴팁 중국어 표시 참조 10곳 한국어로 안전하게 수정. 모든 기존 104개 관리 리소스 바이트 동일, TypeDef **321** / MethodDef **1,918** 그대로.
+- 결과 `TentacleMod번역/3843142171/fallen_heiress_eleanor.dll`, 최종 UI 보완 이후 **16,927,744바이트**, SHA256 `ca7ee69ba8b80f7e24a5bc127cce46ec1a4534c82a1f7f63f2fc0b8fee1c798c`.
+- 최종 ZIP `ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_DLL_KO_1734_20261121.zip`, 한국어 manifest/README. 검사서 `번역대조표/Integrated_Eleanor_AdultGoods_v1.1.3_KO_DLL_STATIC_AUDIT_20261121.md`. GitHub Actions 빌드 성공 `44912057968`. **네이티브 payload 원본 유지·미실행**, 이 ZIP은 원본 설치 위에 DLL을 덮는 패치일 뿐 완전한 모드 파일 세트가 아니다.
+
+### 4. 20번 — RedLightDistrict v1.1.1: 핵심 미반영 결함 교정 및 전면 외부 Localization DLL
+- **이전 실질적 결함:** 기존 `TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll`은 UI **214개**의 호출 위치만 직접 번역한 시험본이었고, 별도로 완성한 `Localization/ko.csv`의 **3,512개 문자열을 전부 조회하는 기능은 없었다.** 단순히 CSV가 97% 작성됐다는 이전 보고만으로 전체 한국어화가 실제 적용된다고 말할 수 없었다.
+- **원본 정밀 검사:** 원본 LFS DLL **152,970,752바이트**, SHA256 `4f4f20a00e4754302c53879bfaeb7a7503df10e2f05ff6ad3744be31088159f8`. 원본 `Localization/cn.csv`의 **3,619개** 고유 위치 키가 원본 CLR MethodDef/IL 문자열과 **메서드 전체 서명, IL 오프셋, 중국어 원문 모두 3,619/3,619 정확 일치**. `RedLightDistrict_v1.1.1/translation-work/BRIDGE_FEASIBILITY_AUDIT_20261121.md`에 근거 보관.
+- **실제 DLL 완전 교체:** 원본 DLL을 기반으로 3,619개 원래 중국어 `ldstr`의 *각 사용 위치*를 `Read(key, original)` 호출로 바꾸고, `RedLightDistrict.Korean.CsvLookup.Read`에서 `LoadedMod.Localization["ko"]`를 조회하도록 한국어 브리지 타입+메서드+필드 각 1개만 추가. 게임 로더의 기존 `RedLightDistrictMod.OnModAssetsLoaded(LoadedMod)` 호출에서 owner를 획득하며, 키 누락·초기화 이전·빈 값에는 원래 중국어를 반환한다. 메서드별 수정으로 공유 ID·저장·정확한 이름 비교 등은 외부 CSV에 키가 없으면 유지된다.
+- **신규 패치 DLL:** `TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll` **153,228,288바이트**, SHA256 `6089ad1d83d1a3131cc9e141d9c4dd7d66f8f2da6b0afde7010db403b4def03f`. 기존 관리 리소스 **1,617개 전부 바이트 동일**; MethodDef +1, TypeDef +1, Field +1 검증. 참조 위치 3,619개를 역조회하여 추가 브리지 호출 3,619개 확인. 사용 가능한 외부 한국어 **3,512키**, 원문 보호 **107키**, 미분류 수동 검토 대기 **0키**.
+- **실제 사용법 수정:** `README_ko.txt`의 구형 “CSV만 복사” 안내를 폐기. **현재는 번역본 `RedLightDistrict.dll`과 `Localization/ko.csv`를 반드시 함께 설치해야 3,512키 브리지가 작동하도록 설계**되어 있다. `RedLightDistrictPerson/README_ko.txt`에 초상화 사용자 지정 한국어 안내를 추가하되, 인재 이름과 파일명은 내부 조회용 원문 그대로 보존.
+- **최종 배포 ZIP:** `TentacleMod번역/ProbablyStolen_RLD_v1.1.1_DLL_Korean_CSV_Bridge_3512_20261121.zip` Git LFS, **148,218,080바이트**, SHA256 `f9e6b603e343afeb7639d15c3a6c83f343f66e05fb6b7ff6c53d5337d874fe8f`. DLL, manifest, README, CSV, 초상화 README, 정적 감사 **6개 엔트리 ZIP CRC32 검증 통과**. 감사 `번역대조표/RedLightDistrict_v1.1.1_FULL_CSV_BRIDGE_DLL_AUDIT_20261121.md`. 빌드 `44912695080` 성공, 최종 패키지 `44912870685` 성공, 해당 커밋 `2be2d9d3dcf00218b6fed7b632e24e6dbc104975` / `70fd599cba847f76c190b96922856c6af68ad9bf`.
+- **중요 검증 제한:** 브리지 IL과 CSV는 정적 수준에서 정확하게 검증됐으나, 게임 모드 로더가 특정 시점에 `Localization` 딕셔너리를 채우는 실제 런타임 시점, 원본 타 모드 조합, 인게임 표시·세이브 호환성은 **아직 시험하지 않았다**. 브리지의 추정 작동을 실제 게임에서 검증 완료했다고 주장하지 않는다. 초기화 이전 호출에는 원문 fallback하도록 설계됨.
+
+### 5. 완료 후보의 마지막 화면 문구·내부 보호 분리
+- `번역대조표/Eleanor_VARIANTS_ACTIVE_CJK_IL_AUDIT_20261121.tsv`에서 원본 v1.0.0 **92곳**, 엘리너 v1.0.3 **93곳**, 통합 v1.1.3 **125곳** 한자 IL 직접 참조 목록을 추가 조사. 그중 `HomeStock::.cctor`의 아이템 이름↔ID 원문 표, `Loc::.cctor`의 명명 슬롯 토큰, `EmbeddedAssets::DisplayName`의 중국어 전용 분기, 데이터 파일 경로 및 내부 비교는 강제 번역하지 않았다. `Eleanor_v1.0.3_UI_LABEL_CALLFLOW_20261121.md`는 실제 표시 문자열과 내부 경로를 구분한 원본 IL 증거다.
+- 원문 키 누락 시 화면에 표시될 수 있는 `DownfallNote.TrySpawn`의 예비 문구 **각 1곳(엘리너 v1.0.0/v1.0.3/통합판)**을 한국어로 수정. 엘리너 v1.0.3/통합판의 `ModEntry.Init` 설정 그룹 `剧情`→`스토리`, `立绘`→`초상화`, 표시 수식어 `【正式版】`→`【정식판】` 각 1곳; 성인용품 v1.1.1/통합판에서 실제 설정 카테고리에 쓰이는 `额外内容`→`추가 콘텐츠` 각 **4곳**. 합계 **네 DLL에 추가 IL 치환 17곳(1+4+8+4)**.
+- `번역대조표/Tentacle_FINAL_UI_IL_AUDIT_20261121.md`는 원문 메서드별 exact match, 기존/신규 DLL SHA256, 관리 리소스 바이트 동일 검사를 보관. 최신 네 개 ZIP도 수정 DLL로 교체하고 CRC32·DLL 재일치 검증을 완료. GitHub Actions `44913560305` 성공, 커밋 **`940704654e89eb68842a00e39a5f4e8f520c0a51`**.
+- **최신 4 DLL SHA256:** 엘리너 v1.0.0 `da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76`; v1.0.3 `8a9a116882821298713826b3d357f4ccac4c04ee3fa3664c6671f2c29f95d690`; 통합 v1.1.3 `ca7ee69ba8b80f7e24a5bc127cce46ec1a4534c82a1f7f63f2fc0b8fee1c798c`; 성인용품 v1.1.1 `52d71c5cf2c8d8fa8c7e6ae5dc8809472b1813f2c139bd6f4438a1fa9735ddf6`.
+
+### 6. 이미지 전용 DLC 및 단계 종료 판정
+- `Bai She's R18 Texture Pack 1.4.0/R18TexturePack.dll` 원본 **55,459,840바이트**를 실제 dnlib 코드로 검사: 타입 6, 바디 메서드 9, 전체 `ldstr` 1개, **중국어 포함 `ldstr` 0개, 내장 CSV 0개**, 이미지 중심 관리 리소스 496개. **DLL 안에 직접 번역할 코드/로컬라이제이션 문구가 없어 DLL은 원본 유지**, 해당 `TentacleMod번역` 폴더의 한국어 manifest 및 README가 최종 메타데이터 번역이다. 감사 `번역대조표/BaiShe_v1.4.0_CJK_DLL_STATIC_AUDIT_20261121.md`.
+- **현재 작업 지시의 정적 번역·패키징/저장소 누락 확인 단계는 종료.** 확인 가능한 안전한 화면 원문은 분리 번역했고 내부 식별자/세이브 원문은 보호한다. 그러나 게임 모드를 실제 실행하지 못했고, 언어 적용 시점·중국어가 남는 화면·저장 호환·native payload 및 최신 원본 변경의 검증은 별도 실게임 환경에서만 확정된다.
+- **중복 배포 위험:** `probably_adult_goods`라는 동일 ID의 독립 v1.03, v1.1.1, v1.2.1, 통합 v1.1.3과 `probably_eleanor_followup` 독립 v1.0.0/v1.0.3은 선택 설치 대상이다. **여러 버전을 합쳐 한 게임 폴더에 설치하지 않는다.** 각각의 ZIP은 정확히 같은 버전 원본 위에 덮는 패치다.
