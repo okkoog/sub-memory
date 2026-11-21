@@ -1,0 +1,257 @@
+# Original Eleanor v1.0.3 Chinese-only IL user-visible candidates
+
+## ProbablyEleanorFollowup.DownfallNote::TrySpawn (1 methods)
+### System.Void ProbablyEleanorFollowup.DownfallNote::TrySpawn()
+- IL_0000: ldsfld System.Boolean ProbablyEleanorFollowup.ModEntry::ContentActive
+- IL_0005: brfalse.s IL_000E
+- IL_0007: call System.Boolean ProbablyEleanorFollowup.ModSave::get_StoreReady()
+- IL_000C: brtrue.s IL_0013
+- IL_000E: leave IL_0168
+- IL_0013: call System.String ProbablyEleanorFollowup.ModSave::get_Branch()
+- IL_0018: ldstr "prostitute"
+- IL_001D: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0022: brfalse.s IL_0029
+- IL_0024: leave IL_0168
+- IL_0029: call System.Int32 ProbablyEleanorFollowup.ModSave::get_Stage()
+- IL_002E: ldc.i4.4
+- IL_002F: beq.s IL_0036
+- IL_0031: leave IL_0168
+- IL_0036: call System.Int32 ProbablyEleanorFollowup.ModSave::get_DownfallHintDay()
+- IL_003B: ldc.i4.0
+- IL_003C: blt.s IL_0043
+- IL_003E: leave IL_0168
+- IL_0043: call System.Int32 ProbablyEleanorFollowup.ClientUtil::Today()
+- IL_0048: stloc.0
+- IL_0049: call System.Int32 ProbablyEleanorFollowup.ModSave::get_Stage2DoneDay()
+- IL_004E: stloc.1
+- IL_004F: ldloc.1
+- IL_0050: ldc.i4.0
+- IL_0051: bge.s IL_0073
+- IL_0053: ldloc.0
+- IL_0054: call System.Void ProbablyEleanorFollowup.ModSave::set_Stage2DoneDay(System.Int32)
+- IL_0059: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_005E: dup
+- IL_005F: brtrue.s IL_0064
+- IL_0061: pop
+- IL_0062: br.s IL_006E
+- IL_0064: ldstr "[downfall] Stage2DoneDay missing in Note stage -> set to today"
+- IL_0069: call System.Void ModLog::Log(System.Object)
+- IL_006E: leave IL_0168
+- IL_0073: ldloc.0
+- IL_0074: ldloc.1
+- IL_0075: ldc.i4.1
+- IL_0076: add
+- IL_0077: bge.s IL_007E
+- IL_0079: leave IL_0168
+- IL_007E: call EmporiumEntry EmporiumEntry::get_Instance()
+- IL_0083: stloc.2
+- IL_0084: ldloc.2
+- IL_0085: ldnull
+- IL_0086: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- IL_008B: brtrue.s IL_0095
+- IL_008D: ldloc.2
+- IL_008E: callvirt GameGridInventory EmporiumEntry::get_frontInvinvElement()
+- IL_0093: brtrue.s IL_009A
+- IL_0095: leave IL_0168
+- IL_009A: call PlayerStore PlayerStore::get_Instance()
+- IL_009F: stloc.3
+- IL_00A0: ldloc.3
+- IL_00A1: brtrue.s IL_00A8
+- IL_00A3: leave IL_0168
+- IL_00A8: ldstr "note_eleanor_downfall_hint_body"
+- IL_00AD: call System.Object[] System.Array::Empty<System.Object>()
+- IL_00B2: call System.String ProbablyEleanorFollowup.Loc::T(System.String,System.Object[])
+- IL_00B7: stloc.s V_4
+- IL_00B9: ldstr "note_eleanor_downfall_hint_body"
+- IL_00BE: call System.Boolean ProbablyEleanorFollowup.Loc::Has(System.String)
+- IL_00C3: brtrue.s IL_00E1
+- IL_00C5: ldstr "想要知道她去哪了？去垃圾场看看吧……"
+- IL_00CA: stloc.s V_4
+- IL_00CC: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_00D1: dup
+- IL_00D2: brtrue.s IL_00D7
+- IL_00D4: pop
+- IL_00D5: br.s IL_00E1
+- IL_00D7: ldstr "downfall hint note: missing key note_eleanor_downfall_hint_body, using built-in text"
+- IL_00DC: call System.Void ModLog::Log(System.Object)
+- IL_00E1: ldloc.s V_4
+- IL_00E3: call GameItem ProbablyEleanorFollowup.ItemRegistry::CreateDownfallHintNote(System.String)
+- IL_00E8: stloc.s V_5
+- IL_00EA: ldloc.s V_5
+- IL_00EC: brtrue.s IL_00F0
+- IL_00EE: leave.s IL_0168
+- IL_00F0: ldloc.3
+- IL_00F1: ldloc.s V_5
+- IL_00F3: ldc.i4.1
+- IL_00F4: ldc.i4.0
+- IL_00F5: ldc.i4.0
+- IL_00F6: ldc.i4.0
+- IL_00F7: callvirt System.Boolean PlayerStore::TryAddDirectSellingItemToTable(GameItem,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+- IL_00FC: brtrue.s IL_0115
+- IL_00FE: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0103: dup
+- IL_0104: brtrue.s IL_0109
+- IL_0106: pop
+- IL_0107: br.s IL_0113
+- IL_0109: ldstr "downfall hint note: front counter full, retry later"
+- IL_010E: call System.Void ModLog::Log(System.Object)
+- IL_0113: leave.s IL_0168
+- IL_0115: ldloc.0
+- IL_0116: call System.Void ProbablyEleanorFollowup.ModSave::set_DownfallHintDay(System.Int32)
+- IL_011B: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0120: dup
+- IL_0121: brtrue.s IL_0126
+- IL_0123: pop
+- IL_0124: br.s IL_0141
+- IL_0126: ldstr "downfall hint note placed on front counter (day "
+- IL_012B: ldloca.s V_0
+- IL_012D: call System.String System.Int32::ToString()
+- IL_0132: ldstr ")"
+- IL_0137: call System.String System.String::Concat(System.String,System.String,System.String)
+- IL_013C: call System.Void ModLog::Log(System.Object)
+- IL_0141: leave.s IL_0168
+- IL_0143: stloc.s V_6
+- IL_0145: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_014A: dup
+- IL_014B: brtrue.s IL_0150
+- IL_014D: pop
+- IL_014E: br.s IL_0166
+- IL_0150: ldstr "DownfallNote.TrySpawn: "
+- IL_0155: ldloc.s V_6
+- IL_0157: callvirt System.String System.Exception::get_Message()
+- IL_015C: call System.String System.String::Concat(System.String,System.String)
+- IL_0161: call System.Void ModLog::Log(System.Object)
+- IL_0166: leave.s IL_0168
+- IL_0168: ret
+Callers: System.Void ProbablyEleanorFollowup.DownfallNote::Tick(); System.Void ProbablyEleanorFollowup.Patch_HomeBeginDay::Postfix(); System.Void ProbablyEleanorFollowup.Patch_HomeOpenShutter::Postfix()
+
+## ProbablyEleanorFollowup.EmbeddedAssets::DisplayName (1 methods)
+### System.String ProbablyEleanorFollowup.EmbeddedAssets::DisplayName()
+- IL_0000: call System.Boolean ProbablyEleanorFollowup.EmbeddedAssets::HasSelectedLocale()
+- IL_0005: brtrue.s IL_000D
+- IL_0007: ldstr "落魄千金-埃莉诺"
+- IL_000C: ret
+- IL_000D: call System.Boolean ProbablyEleanorFollowup.EmbeddedAssets::IsChineseLocale()
+- IL_0012: brtrue.s IL_001A
+- IL_0014: ldstr "Fallen Heiress - Eleanor"
+- IL_0019: ret
+- IL_001A: ldstr "落魄千金-埃莉诺"
+- IL_001F: ret
+Callers: System.Void ProbablyEleanorFollowup.ModEntry::Init(ModManifest); System.Void ProbablyEleanorFollowup.ModEntry::OnModAssetsLoaded(LoadedMod)
+
+## ProbablyEleanorFollowup.ModEntry::Init (1 methods)
+### System.Void ProbablyEleanorFollowup.ModEntry::Init(ModManifest)
+- IL_0000: ldarg.1
+- IL_0001: call System.String ProbablyEleanorFollowup.EmbeddedAssets::DisplayName()
+- IL_0006: stfld System.String ModManifest::Name
+- IL_000B: ldarg.1
+- IL_000C: stsfld ModManifest ProbablyEleanorFollowup.ModEntry::Manifest
+- IL_0011: newobj System.Void ModManifest::.ctor()
+- IL_0016: dup
+- IL_0017: ldarg.1
+- IL_0018: ldfld System.String ModManifest::ID
+- IL_001D: stfld System.String ModManifest::ID
+- IL_0022: dup
+- IL_0023: ldarg.1
+- IL_0024: ldfld System.String ModManifest::Name
+- IL_0029: ldstr "【正式版】"
+- IL_002E: call System.String System.String::Concat(System.String,System.String)
+- IL_0033: stfld System.String ModManifest::Name
+- IL_0038: newobj System.Void ModLog::.ctor(ModManifest)
+- IL_003D: stsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0042: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0047: ldstr "[build] channel=release id=probably_eleanor_followup version="
+- IL_004C: ldarg.1
+- IL_004D: ldfld System.String ModManifest::ModVersion
+- IL_0052: ldstr " dll=fallen_heiress_eleanor.dll"
+- IL_0057: call System.String System.String::Concat(System.String,System.String,System.String)
+- IL_005C: callvirt System.Void ModLog::Log(System.Object)
+- IL_0061: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0066: ldstr "[contract] Portrait Studio 兼容契约: Docs/契约-PortraitStudio兼容.md（改 ClientSprites / HomePortrait / HomeAssetLoad 的公开面或字段名前先读这份）"
+- IL_006B: callvirt System.Void ModLog::Log(System.Object)
+- IL_0070: ldarg.1
+- IL_0071: ldfld System.String ModManifest::ID
+- IL_0076: call ModConfig ModHelper::GetConfig(System.String)
+- IL_007B: dup
+- IL_007C: ldstr "first_run_reset_prompt"
+- IL_0081: ldc.i4.1
+- IL_0082: ldstr "剧情"
+- IL_0087: ldsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_0
+- IL_008C: dup
+- IL_008D: brtrue.s IL_00A6
+- IL_008F: pop
+- IL_0090: ldsfld ProbablyEleanorFollowup.ModEntry/<>c ProbablyEleanorFollowup.ModEntry/<>c::<>9
+- IL_0095: ldftn System.String ProbablyEleanorFollowup.ModEntry/<>c::<Init>b__5_0()
+- IL_009B: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_00A0: dup
+- IL_00A1: stsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_0
+- IL_00A6: ldsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_1
+- IL_00AB: dup
+- IL_00AC: brtrue.s IL_00C5
+- IL_00AE: pop
+- IL_00AF: ldsfld ProbablyEleanorFollowup.ModEntry/<>c ProbablyEleanorFollowup.ModEntry/<>c::<>9
+- IL_00B4: ldftn System.String ProbablyEleanorFollowup.ModEntry/<>c::<Init>b__5_1()
+- IL_00BA: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_00BF: dup
+- IL_00C0: stsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_1
+- IL_00C5: ldc.i4.0
+- IL_00C6: callvirt ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String,System.Func`1<System.String>,System.Func`1<System.String>,System.Boolean)
+- IL_00CB: stsfld ConfigEntry`1<System.Boolean> ProbablyEleanorFollowup.ModEntry::FirstRunResetPrompt
+- IL_00D0: ldstr "portrait_use_mod_merchant"
+- IL_00D5: ldc.i4.1
+- IL_00D6: ldstr "立绘"
+- IL_00DB: ldsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_2
+- IL_00E0: dup
+- IL_00E1: brtrue.s IL_00FA
+- IL_00E3: pop
+- IL_00E4: ldsfld ProbablyEleanorFollowup.ModEntry/<>c ProbablyEleanorFollowup.ModEntry/<>c::<>9
+- IL_00E9: ldftn System.String ProbablyEleanorFollowup.ModEntry/<>c::<Init>b__5_2()
+- IL_00EF: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_00F4: dup
+- IL_00F5: stsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_2
+- IL_00FA: ldsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_3
+- IL_00FF: dup
+- IL_0100: brtrue.s IL_0119
+- IL_0102: pop
+- IL_0103: ldsfld ProbablyEleanorFollowup.ModEntry/<>c ProbablyEleanorFollowup.ModEntry/<>c::<>9
+- IL_0108: ldftn System.String ProbablyEleanorFollowup.ModEntry/<>c::<Init>b__5_3()
+- IL_010E: newobj System.Void System.Func`1<System.String>::.ctor(System.Object,System.IntPtr)
+- IL_0113: dup
+- IL_0114: stsfld System.Func`1<System.String> ProbablyEleanorFollowup.ModEntry/<>c::<>9__5_3
+- IL_0119: ldc.i4.0
+- IL_011A: callvirt ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String,System.Func`1<System.String>,System.Func`1<System.String>,System.Boolean)
+- IL_011F: stsfld ConfigEntry`1<System.Boolean> ProbablyEleanorFollowup.ModEntry::PortraitUseModMerchantArt
+- IL_0124: ldsfld ModLog ProbablyEleanorFollowup.ModEntry::Log
+- IL_0129: ldstr "Init."
+- IL_012E: callvirt System.Void ModLog::Log(System.Object)
+- IL_0133: ret
+Callers: 
+
+## ProbablyEleanorFollowup.SpriteGuard::Tick (0 methods)
+## ProbablyEleanorFollowup.Loc::.cctor (1 methods)
+### System.Void ProbablyEleanorFollowup.Loc::.cctor()
+- IL_0000: newobj System.Void System.Collections.Generic.Dictionary`2<System.String,System.String[]>::.ctor()
+- IL_0005: stloc.0
+- IL_0006: ldloc.0
+- IL_0007: ldstr "home_diary_continued"
+- IL_000C: ldc.i4.1
+- IL_000D: newarr System.String
+- IL_0012: dup
+- IL_0013: ldc.i4.0
+- IL_0014: ldstr "标题"
+- IL_0019: stelem.ref
+- IL_001A: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String[]>::Add(System.String,System.String[])
+- IL_001F: ldloc.0
+- IL_0020: ldstr "home_diary_times"
+- IL_0025: ldc.i4.1
+- IL_0026: newarr System.String
+- IL_002B: dup
+- IL_002C: ldc.i4.0
+- IL_002D: ldstr "次数"
+- IL_0032: stelem.ref
+- IL_0033: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String[]>::Add(System.String,System.String[])
+- IL_0038: ldloc.0
+- IL_0039: stsfld System.Collections.Generic.Dictionary`2<System.String,System.String[]> ProbablyEleanorFollowup.Loc::NamedSlots
+- IL_003E: ret
+Callers: 
+
