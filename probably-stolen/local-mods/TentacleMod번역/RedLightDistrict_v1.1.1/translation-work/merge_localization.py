@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Merge reviewed RLD translations into external ko.csv; never modify the original DLL."""
-import csv, json, re, collections, zipfile
+import csv, json, re, collections
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 BASE=HERE.parents[2]
@@ -8,7 +8,6 @@ SOURCE=BASE/'TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv'
 DEST=HERE.parent/'Localization/ko.csv'
 REVIEW=HERE.parent.parent/'번역대조표'
 AUDIT=HERE.parent/'LOCALIZATION_PROGRESS.md'
-ZIP=HERE.parent.parent/'ProbablyStolen_RedLightDistrict_v1.1.1_Localization_KO_20261121.zip'
 UI_RE=re.compile(r'::(?:Build.*(?:Tooltip|Description|Dialogue|Panel)|ShowPanel|Append.*Line|Open.*Window|OpenPanel|Update.*Text|GetTooltip|Get.*Description|Make.*Tooltip|Refresh.*Label|Make.*Text|ShowTooltip|ShowDialog)',re.I)
 COMPARE_RE=re.compile(r'::(?:op_Equality|op_Inequality|IndexOf|Contains|HasTrait|GetTag|IsPatronDisplayName|IsTag|TryGetValue)',re.I)
 with SOURCE.open(encoding='utf-8-sig',newline='') as f:
@@ -131,7 +130,7 @@ AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization p
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
     +'- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).\n'
-    +'- No DLL files edited; ZIP contains ko.csv, progress report, exhaustive key audit and unresolved-key queue.\n'
+    +'- No DLL files edited. Interim ZIP packaging is disabled until translation is complete.\n'
     +'- Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.\n\n'
     +'## Manually reviewed new key batches\n\n'
     +''.join(f'- {name}: {count} entries\n' for name,count in manual_counts),encoding='utf-8')
@@ -176,12 +175,5 @@ AUDIT.write_text(AUDIT.read_text(encoding='utf-8')
     +''.join('- '+status+': '+str(amount)+'\n' for status,amount in sorted(counts.items()))
     +'\nKEY_COVERAGE_AUDIT_20261121.tsv covers all '+str(len(rows))+' keys once. UNTRANSLATED_REVIEW_QUEUE_20261121.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.\n',encoding='utf-8')
 
-ZIP.parent.mkdir(parents=True,exist_ok=True)
-with zipfile.ZipFile(ZIP,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-    z.write(DEST,arcname='RedLightDistrict_v1.1.1/Localization/ko.csv')
-    z.write(AUDIT,arcname='LOCALIZATION_PROGRESS.md')
-    z.write(KEY_AUDIT,arcname='KEY_COVERAGE_AUDIT.tsv')
-    z.write(REVIEW_QUEUE,arcname='UNTRANSLATED_REVIEW_QUEUE.tsv')
-with zipfile.ZipFile(ZIP) as z: assert z.testzip() is None and len(z.namelist())==4
 print('source',len(rows),'prior-reviewed',id_count,'historical-sites',matched_sites,'manual',len(direct),
-      'existing',len(existing),'final',coverage,'remaining',len(rows)-coverage,'zip-bytes',ZIP.stat().st_size)
+      'existing',len(existing),'final',coverage,'remaining',len(rows)-coverage,'zip-disabled')
