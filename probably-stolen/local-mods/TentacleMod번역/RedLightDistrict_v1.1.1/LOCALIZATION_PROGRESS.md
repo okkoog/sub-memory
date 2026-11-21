@@ -2,9 +2,9 @@
 
 - Source catalog: original TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv (untouched)
 - Total active IL occurrence keys: 3619 (includes diagnostics, internal strings and logs)
-- Korean external ko.csv translations: 753; untranslated/fallback occurrences: 2866
+- Korean external ko.csv translations: 770; untranslated/fallback occurrences: 2849
 - Reviewed historical source strings: 295; mapped and selected IL sites: 351; unique selected historical keys: 351
-- New manually reviewed direct keys: 388; existing trusted ko.csv entries preserved: 732
+- New manually reviewed direct keys: 405; existing trusted ko.csv entries preserved: 753
 - Comparison/identifier sites withheld: 3; reviewed strings at non-UI sites withheld: 57
 - Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, existing translations validated.
 - No DLL files edited; ZIP contains only ko.csv and progress report.
@@ -18,3 +18,4 @@
 - manual_direct_batch04_20261121.tsv: 82 entries
 - manual_direct_batch05_20261121.tsv: 55 entries
 - manual_direct_batch06_20261121.tsv: 21 entries
+- manual_direct_batch07_20261121.tsv: 17 entries
