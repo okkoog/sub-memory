@@ -347,7 +347,7 @@ namespace LewdMemeConfig
                 OurKey = "brood.humanToEggChance", TargetMod = FamilyMods.Brood,
                 TargetKey = "humanToEggChance", Kind = PanelKind.SliderInt, Section = BroodSection, Carrier = CarrierKind.WriteThrough,
                 Label = "인간 임신의 알 임신 전환 확률 (둥지 확장)", MinInt = 0, MaxInt = 100, Default = 30,
-                Tooltip = "둥지 확장에서 인간의 임신이 알 임신으로 전환될 확률 %(기본 30)" + ThroughNote,
+                Tooltip = "둥지 확장에서 인간이 산란으로 전환될 확률 %(기본 30)" + ThroughNote,
             },
             new FamilyPanelEntry
             {
