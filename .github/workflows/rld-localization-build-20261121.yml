@@ -1,4 +1,4 @@
-name: Red Light District external ko localization package
+name: Red Light District external ko localization work
 on:
   push:
     paths:
@@ -20,11 +20,11 @@ jobs:
             probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1
             probably-stolen/local-mods/TentacleMod번역/번역대조표
           sparse-checkout-cone-mode: false
-      - name: Build and independently validate external ko.csv and ZIP (no DLL changes)
+      - name: Merge and validate Korean localization CSV (no ZIP, no DLL changes)
         shell: bash
         run: |
           python3 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/merge_localization.py'
-      - name: Commit localized CSV, audit and standalone ZIP
+      - name: Commit localization CSV and review audits (no ZIP)
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
@@ -33,6 +33,5 @@ jobs:
             'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv' \
             'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/LOCALIZATION_PROGRESS.md' \
             'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/KEY_COVERAGE_AUDIT_20261121.tsv' \
-            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/UNTRANSLATED_REVIEW_QUEUE_20261121.tsv' \
-            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RedLightDistrict_v1.1.1_Localization_KO_20261121.zip'
-          git diff --cached --quiet || (git commit -m 'translate(rld): merge reviewed localization keys and validated standalone CSV ZIP' && git pull --rebase origin main && git push)
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/UNTRANSLATED_REVIEW_QUEUE_20261121.tsv'
+          git diff --cached --quiet || (git commit -m 'translate(rld): merge reviewed localization keys and verified localization CSV' && git pull --rebase origin main && git push)
