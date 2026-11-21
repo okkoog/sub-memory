@@ -1,0 +1,36 @@
+name: Red Light District external ko localization package
+on:
+  push:
+    paths:
+      - '.github/workflows/rld-localization-build-20261121.yml'
+      - 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/*.py'
+      - 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/manual_direct_batch*.tsv'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  merge-localization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/Localization
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Build and independently validate external ko.csv and ZIP (no DLL changes)
+        shell: bash
+        run: |
+          python3 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/merge_localization.py'
+      - name: Commit localized CSV, audit and standalone ZIP
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv' \
+            'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/LOCALIZATION_PROGRESS.md' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_RedLightDistrict_v1.1.1_Localization_KO_20261121.zip'
+          git diff --cached --quiet || (git commit -m 'translate(rld): merge reviewed localization keys and validated standalone CSV ZIP' && git pull --rebase origin main && git push)
