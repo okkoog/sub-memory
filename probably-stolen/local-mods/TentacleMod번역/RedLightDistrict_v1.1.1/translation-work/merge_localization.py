@@ -118,7 +118,8 @@ with DEST.open('w',encoding='utf-8',newline='') as f:
 with DEST.open(encoding='utf-8',newline='') as f:
     back={r[0]:r[1] for r in csv.reader(f) if r}
 assert back==combined
-assert set(existing)<=set(back)
+assert set(existing)-UNSAFE_NAMING_KEYS<=set(back)
+assert not (UNSAFE_NAMING_KEYS & set(back))
 assert all(back.get(k)==v for k,v in seed.items())
 coverage=len(combined)
 AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization progress\n\n'
