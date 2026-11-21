@@ -819,16 +819,16 @@ namespace LewdMemeConfig
         {
             if (!Ready) return Skip(key, "패치 준비 전(저장 파일에 들어간 뒤 다시 실행)");
             if (!ModUsable(FamilyMods.MainMod)) return Skip(key, "lewd_meme 모드가 없거나 버전이 일치하지 않음");
-            if (!ModUsable(FamilyMods.Iph)) return Skip(key, "item_portrait_hd 缺席或版本不绑定");
+            if (!ModUsable(FamilyMods.Iph)) return Skip(key, "item_portrait_hd 모드가 없거나 버전이 일치하지 않음");
             if (legacyOverlay)
             {
-                if (!ModUsable(FamilyMods.Legacy)) return Skip(key, "lewd_meme_legacy_content 缺席或版本不绑定");
-                if (!LegacyContentLoaded()) return Skip(key, "legacy 内容目录未加载(叠加面未激活)");
+                if (!ModUsable(FamilyMods.Legacy)) return Skip(key, "lewd_meme_legacy_content 모드가 없거나 버전이 일치하지 않음");
+                if (!LegacyContentLoaded()) return Skip(key, "legacy 콘텐츠 목록을 불러오지 못함(추가 적용 기능이 활성화되지 않음)");
             }
             // legacy 变体:key 是伪键(无所属单元,EffectMode 恒 Own),换五键之一
             // 检查 main.maiden_attrs_iph 的 Dead/压制态(与属性组行同口径)
             EffectExpect mode = EffectMode(legacyOverlay ? CfgKeys.IphAttrHighChance : key, out string note);
-            if (mode != EffectExpect.Own) return Skip(key, note ?? "让位/压制中");
+            if (mode != EffectExpect.Own) return Skip(key, note ?? "다른 모드에 양보했거나 적용이 차단됨");
             ConfigRegistry reg = HookRuntime.Registry;
             string[] keys =
             {
@@ -863,17 +863,17 @@ namespace LewdMemeConfig
                     int intel = getInt(item, "MAIDEN_INTEL");
                     int charm = getInt(item, "MAIDEN_CHARM");
                     bool ok = InIphTestRanges(force) && InIphTestRanges(intel) && InIphTestRanges(charm);
-                    string detail = "三属性 tag " + force + "/" + intel + "/" + charm
-                        + (ok ? " 均落配置三档并集" : " 落在配置三档并集外(未重掷?)")
-                        + " [100,105]/[110,112]/[120,125](低波动断言:只验区间含入、"
-                        + "不依赖掷档;原版区间 [10,80] 在并集外,未装上必检出)";
+                    string detail = "능력치 태그 3개 " + force + "/" + intel + "/" + charm
+                        + (ok ? " 모두 설정한 세 구간의 합집합에 포함됨" : " 설정한 세 구간의 합집합 밖임(다시 추첨되지 않았나?)")
+                        + " [100,105]/[110,112]/[120,125](변동이 적은 검증: 구간에 포함되는지만 확인,"
+                        + "어느 구간을 뽑았는지는 확인하지 않음. 원본 구간 [10,80]은 합집합 밖이므로 패치가 누락되면 감지됨)";
                     // F2-R2 差量防掩蔽断言(游戏侧拿不到差量前值——postfix 在工厂
                     // 返回前跑,SpawnItem 返回时已是终值;经 MaidenAttrIphPatch 的
                     // 观察口记账断言,读点掩蔽必然表现为 Δ≡0 被第三条钉死[R3:
                     // 判据 = tag 落并集(rerolled,观察口外部事实),非观察口 Old*])
                     string deltaNote;
                     bool deltaOk = IphDeltaCheck(item.unitValue, force, intel, charm, out deltaNote);
-                    if (!deltaOk) return Fail(key, detail + ";差量检查失败: " + deltaNote);
+                    if (!deltaOk) return Fail(key, detail + "; 차이값 검사 실패: " + deltaNote);
                     TestResult result = ok
                         ? Pass(key, detail + ";" + deltaNote)
                         : Fail(key, detail);
@@ -881,7 +881,7 @@ namespace LewdMemeConfig
                     // 叠加共存(生成链 = 原版体 + IPH transpiler + 我方 postfix +
                     // legacy postfix,任一环破坏文本即 FAIL)
                     if (legacyOverlay && result.Pass && !SelfTestPlan.IsSkip(result.Detail))
-                        result = ItemTextOk(key, item, "属性重掷 + 文本叠加共存");
+                        result = ItemTextOk(key, item, "능력치 재추첨과 텍스트 추가 기능이 함께 적용됨");
                     return result;
                 }
                 finally
@@ -926,21 +926,21 @@ namespace LewdMemeConfig
             MaidenAttrIphPatch.AttrRerollTrace? t = MaidenAttrIphPatch.LastRerollTrace;
             if (t == null)
             {
-                note = "差量无记录(暗流交易在场跳过 = 设计态,身价归其公式;tag 断言已覆盖重掷本身)";
+                note = "차이 기록 없음(암거래가 있을 때 건너뛰는 것이 정상: 가격은 암거래 공식에 따르며, 태그 검증으로 재추첨 자체는 이미 확인함)";
                 return true;
             }
             MaidenAttrIphPatch.AttrRerollTrace tr = t.Value;
             if (unitValue != tr.OldUnitValue + tr.Delta)
             {
-                note = "unitValue=" + unitValue + " ≠ 观察口 OldUnitValue+Δ = " + (tr.OldUnitValue + tr.Delta)
-                    + "(差量未正确应用)";
+                note = "unitValue=" + unitValue + " ≠ 관측된 OldUnitValue+Δ = " + (tr.OldUnitValue + tr.Delta)
+                    + "(차이값이 올바르게 반영되지 않음)";
                 return false;
             }
             bool tagMatchesTrace = tr.NewForce == force && tr.NewIntel == intel && tr.NewCharm == charm;
             if (!tagMatchesTrace)
             {
-                note = "tag(" + force + "/" + intel + "/" + charm + ")与观察口记录("
-                    + tr.NewForce + "/" + tr.NewIntel + "/" + tr.NewCharm + ")不一致(观察口污染?)";
+                note = "tag(" + force + "/" + intel + "/" + charm + ")와 관측 기록("
+                    + tr.NewForce + "/" + tr.NewIntel + "/" + tr.NewCharm + ")이 일치하지 않음(관측 기록이 오염됐나?)";
                 return false;
             }
             // ③ 重掷已发生的独立证据:tag 落测试区间并集(与原版 [10,80] 零重叠)。
@@ -949,11 +949,11 @@ namespace LewdMemeConfig
             bool rerolled = InIphTestRanges(force) && InIphTestRanges(intel) && InIphTestRanges(charm);
             if (tr.Delta == 0 && rerolled)
             {
-                note = "重掷已发生(tag 落并集)而 Δ=0——读点掩蔽或 AttrDelta 公式回归"
-                    + "(值域零重叠 ⇒ new≠old 结构成立,Δ=0 无合法路径)";
+                note = "능력치를 다시 추첨했지만(태그가 구간에 포함됨) Δ=0임 — 값 조회 지점이 가려졌거나 AttrDelta 계산식에 문제가 생김"
+                    + "(값 구간이 겹치지 않으므로 new≠old가 보장되고 Δ=0일 수 없음)";
                 return false;
             }
-            note = "差量 Δ=" + tr.Delta + " 一致应用";
+            note = "차이값 Δ=" + tr.Delta + " 일치하게 적용됨";
             return true;
         }
 
@@ -966,7 +966,7 @@ namespace LewdMemeConfig
             {
                 long r = BrothelFunc<Func<string, long>>("BrothelItemCatalog", "ItemValue")(gearId);
                 return r == testValue ? Pass(k, "ItemValue(" + gearId + ")=" + r)
-                    : Fail(k, "ItemValue 期望 " + testValue + " 实际 " + r);
+                    : Fail(k, "ItemValue 예상 " + testValue + " 실제 " + r);
             });
         }
 
@@ -1022,8 +1022,8 @@ namespace LewdMemeConfig
         {
             if (!Ready) return Skip(key, "패치 준비 전(저장 파일에 들어간 뒤 다시 실행)");
             if (!ModUsable(FamilyMods.MainMod)) return Skip(key, "lewd_meme 모드가 없거나 버전이 일치하지 않음");
-            if (!ModUsable(FamilyMods.Legacy)) return Skip(key, "lewd_meme_legacy_content 缺席或版本不绑定");
-            if (!LegacyContentLoaded()) return Skip(key, "legacy 内容目录未加载(叠加面未激活)");
+            if (!ModUsable(FamilyMods.Legacy)) return Skip(key, "lewd_meme_legacy_content 모드가 없거나 버전이 일치하지 않음");
+            if (!LegacyContentLoaded()) return Skip(key, "legacy 콘텐츠 목록을 불러오지 못함(추가 적용 기능이 활성화되지 않음)");
             return null;
         }
 
@@ -1036,9 +1036,9 @@ namespace LewdMemeConfig
             bool nameOk = !string.IsNullOrEmpty(item.name);
             bool descOk = !string.IsNullOrEmpty(item.shortDescription);
             if (!nameOk || !descOk)
-                return Fail(key, "文本叠加破坏:name=\"" + item.name
+                return Fail(key, "텍스트 추가 기능으로 문자열 손상: name=\"" + item.name
                     + "\" shortDescription=\"" + item.shortDescription + "\"");
-            string flavor = string.IsNullOrEmpty(item.flavorText) ? "空" : "非空";
+            string flavor = string.IsNullOrEmpty(item.flavorText) ? "비어 있음" : "비어 있지 않음";
             return Pass(key, "「" + item.name + "」" + note + ";flavorText " + flavor);
         }
 
@@ -1073,7 +1073,7 @@ namespace LewdMemeConfig
                 k => SpawnOverlayAssert(k, itemId, it => it.unitValue,
                     testValue, "unitValue 예상 " + testValue + "(" + priceKey + ")"),
                 k => SpawnOverlayAssert(k, itemId, it => it.unitValue,
-                    vanillaValue, "让位回退 unitValue " + vanillaValue));
+                    vanillaValue, "기능 양보 후 원본 unitValue로 복귀 " + vanillaValue));
         }
 
         /// <summary>tentacle_body 行(TentacleBody.Create postfix 文本 + main.create
@@ -1095,13 +1095,13 @@ namespace LewdMemeConfig
             TestResult guard = LegacyGuard(key);
             if (guard != null) return guard;
             EffectExpect mode = EffectMode(CfgKeys.TabsPerLevel, out string note);
-            if (mode != EffectExpect.Own) return Skip(key, note ?? "让位/压制中");
+            if (mode != EffectExpect.Own) return Skip(key, note ?? "다른 모드에 양보했거나 적용이 차단됨");
             HookUnitDef createDef = null;
             foreach (HookUnitDef def in HookCatalog.Units)
                 if (def.Kind == CarrierKind.MainHook && def.Keys != null
                     && Array.IndexOf(def.Keys, CfgKeys.TabsPerLevel) >= 0)
                 { createDef = def; break; }
-            if (createDef == null) return Fail(key, "tabs_per_level 无 MainHook 消费单元(目录失配)");
+            if (createDef == null) return Fail(key, "tabs_per_level에 MainHook 소비 단위가 없음(목록 불일치)");
             var inst = HookRuntime.Installer;
             object original = CurrentBoxed(CfgKeys.TabsPerLevel);
             try
@@ -1110,8 +1110,8 @@ namespace LewdMemeConfig
                 inst.SetDesired(CfgKeys.TabsPerLevel, true); // 期望态 overlay:main.create 热对账装上
                 string state = ActualState(createDef);
                 if (state != HookState.Installed.ToString())
-                    return Fail(key, createDef.Id + " 期望态直拨后实际 " + state
-                        + "(transpile 匹配失败见 Player.log Dead 行)");
+                    return Fail(key, createDef.Id + " 예상 상태를 직접 변경한 뒤 실제 " + state
+                        + "(transpile 일치 실패. Player.log의 Dead 행 확인)");
                 int bodyLevel = ModReflect.StaticMethod<Func<int>>(
                     MainType("TentacleBody"), "GetBodyLevel")();
                 int expected = Math.Max(0, bodyLevel * 3 - 1);
@@ -1119,7 +1119,7 @@ namespace LewdMemeConfig
                     MainType("ItemFactory"), "GetInt");
                 return SpawnOverlayAssert(key, "tentacle_body",
                     it => getInt(it, "STORAGE_EXPANSION_TABS_INT"), expected,
-                    "页签 = bodyLevel(" + bodyLevel + ")×3-1(tabs_per_level=3)");
+                    "탭 수 = bodyLevel(" + bodyLevel + ")×3-1(tabs_per_level=3)");
             }
             catch (Exception ex)
             {
@@ -1141,11 +1141,11 @@ namespace LewdMemeConfig
             TestResult guard = LegacyGuard(key);
             if (guard != null) return guard;
             if (ModPresent(FamilyMods.Iph))
-                return Skip(key, "IPH 在场:create_maiden/fbb 池让位,阵营走其权重表(出口 = IPH 写透)");
+                return Skip(key, "IPH가 설치됨: create_maiden/fbb 후보군을 양보하고 세력은 IPH 가중치표로 결정됨(결과는 IPH에 기록)");
             return WithSpawnSetup(FamilyMods.MainMod, CfgKeys.Factions, "黑市", k =>
                 SpawnOverlayAssert(k, "maiden_lower",
                     it => MainGetStr()(it, "MAIDEN_FACTION") == "黑市" ? 1 : 0, 1,
-                    "阵营池单值「黑市」生效(maiden.factions)"));
+                    "세력 후보군을 '黑市' 하나로 설정한 결과 적용됨(maiden.factions)"));
         }
 
         /// <summary>maiden_overlay 行(叠加双向证据):我方 maiden.factions 单池生效
@@ -1159,11 +1159,11 @@ namespace LewdMemeConfig
             TestResult guard = LegacyGuard(key);
             if (guard != null) return guard;
             if (ModPresent(FamilyMods.Iph))
-                return Skip(key, "IPH 在场:create_maiden/fbb 池让位,阵营走其权重表(出口 = IPH 写透)");
+                return Skip(key, "IPH가 설치됨: create_maiden/fbb 후보군을 양보하고 세력은 IPH 가중치표로 결정됨(결과는 IPH에 기록)");
             return WithSpawnSetup(FamilyMods.MainMod, CfgKeys.Factions, "黑市", k =>
             {
                 GameItem item = ModHelper.SpawnItem("maiden_lower");
-                if (item == null) return Fail(k, "目录未注册物品 maiden_lower");
+                if (item == null) return Fail(k, "아이템 목록에 maiden_lower가 등록되지 않음");
                 try
                 {
                     var getStr = MainGetStr();
@@ -1171,11 +1171,11 @@ namespace LewdMemeConfig
                     bool adultOk = item.IsTag("MAIDEN_ADULT");
                     string personality = getStr(item, "MAIDEN_PERSONALITY");
                     if (faction != "黑市")
-                        return Fail(k, "MAIDEN_FACTION 期望 黑市 实际 " + faction + "(我方池未生效)");
+                        return Fail(k, "MAIDEN_FACTION 예상 黑市 / 실제 " + faction + "(이쪽 후보군 설정이 적용되지 않음)");
                     if (!adultOk || string.IsNullOrEmpty(personality))
-                        return Fail(k, "legacy 叠加面缺失:MAIDEN_ADULT=" + adultOk
-                            + " MAIDEN_PERSONALITY=\"" + personality + "\"(其 postfix 未叠加?)");
-                    return ItemTextOk(k, item, "我方池「黑市」生效 + legacy 叠加存活(ADULT/PERSONALITY)");
+                        return Fail(k, "legacy 추가 적용 기능 누락: MAIDEN_ADULT=" + adultOk
+                            + " MAIDEN_PERSONALITY=\"" + personality + "\"(해당 postfix가 적용되지 않았나?)");
+                    return ItemTextOk(k, item, "이쪽 후보군 '黑市' 적용 및 legacy 추가 적용 기능 유지(ADULT/PERSONALITY)");
                 }
                 finally
                 {
@@ -1216,28 +1216,28 @@ namespace LewdMemeConfig
                     SetValueBoxed(key, testValue);
                     string theirs1 = ReadTarget(e);
                     if (!SameText(theirs1, testValue))
-                        return Fail(key, "重写路径:对方=" + theirs1 + " 期望我方值 " + Describe(testValue));
+                        return Fail(key, "설정 다시 쓰기 경로: 상대 모드=" + theirs1 + " 이쪽 설정값 예상 " + Describe(testValue));
                     SetValueBoxed(key, original);
                     string theirs2 = ReadTarget(e);
                     return SameText(theirs2, original)
-                        ? Pass(key, "开关原开,值变化重写往返一致(未动快照锚点)")
-                        : Fail(key, "复原重写:对方=" + theirs2 + " 期望 " + Describe(original));
+                        ? Pass(key, "기존에 켜진 스위치의 설정을 바꿨다가 되돌려도 값이 일치함(저장한 원래 값에 영향 없음)")
+                        : Fail(key, "원래 상태로 되돌려 쓰기: 상대 모드=" + theirs2 + " 예상 " + Describe(original));
                 }
                 string before = ReadTarget(e);
                 SetValueBoxed(key, testValue);
                 reg.SetPlayerValue(switchKey, true);    // → Enable(快照 before + 写对方)
                 string enabled = ReadTarget(e);
                 if (!SameText(enabled, testValue))
-                    return Fail(key, "开启后对方=" + enabled + " 期望我方值 " + Describe(testValue));
+                    return Fail(key, "활성화한 뒤 상대 모드=" + enabled + " 이쪽 설정값 예상 " + Describe(testValue));
                 reg.SetPlayerValue(switchKey, false);   // → Disable(恢复快照 before)
                 string restored = ReadTarget(e);
                 return SameText(restored, before)
-                    ? Pass(key, "开启写入 + 关闭恢复快照一致(往返期间对方配置瞬态改写)")
-                    : Fail(key, "关闭后对方=" + restored + " 期望快照 " + (before ?? "null"));
+                    ? Pass(key, "활성화하면 상대 모드에 기록하고 비활성화하면 저장한 기존 값으로 복원됨(변경·복원 과정에서 상대 설정값을 일시적으로 수정함)")
+                    : Fail(key, "비활성화한 뒤 상대 모드=" + restored + " 저장한 기존 값 예상 " + (before ?? "null"));
             }
             catch (Exception ex)
             {
-                return Fail(key, "写透往返异常: " + ex.Message);
+                return Fail(key, "설정값 동기화·복원 중 예외: " + ex.Message);
             }
             finally
             {
@@ -1308,7 +1308,7 @@ namespace LewdMemeConfig
             if (!Ready) return Skip(key, "패치 준비 전(저장 파일에 들어간 뒤 다시 실행)");
             foreach (string mod in Requires(key).Split(','))
                 if (!ModPresent(mod.Trim()))
-                    return Skip(key, mod.Trim() + " 缺席");
+                    return Skip(key, mod.Trim() + " 없음");
 
             // 消费单元中「应装」的(MainHook/SubModHook 且非让位;VersionBlocked
             // 保留在列——期望态语义会把它对成 VersionBlocked,全部压制 → SKIP)
@@ -1319,12 +1319,12 @@ namespace LewdMemeConfig
                 if (def.Kind != CarrierKind.MainHook && def.Kind != CarrierKind.SubModHook) continue;
                 if (HookRuntime.RouteSnapshot[def.Id] != RouteDecision.Yield) loadable.Add(def);
             }
-            if (loadable.Count == 0) return Skip(key, "消费单元全部让位");
+            if (loadable.Count == 0) return Skip(key, "이 키를 사용하는 구성 단위가 모두 다른 모드에 양보함");
             bool allBlocked = true;
             foreach (HookUnitDef def in loadable)
                 if (HookRuntime.RouteSnapshot[def.Id] != RouteDecision.VersionBlocked)
                 { allBlocked = false; break; }
-            if (allBlocked) return Skip(key, "版本压制(面板已注明)");
+            if (allBlocked) return Skip(key, "버전이 일치하지 않아 적용 차단됨(패널에 안내 표시)");
 
             object original = CurrentBoxed(key);
             Action restoreSwitch = TurnOn(key);
@@ -1334,17 +1334,17 @@ namespace LewdMemeConfig
                 {
                     string expected = ExpectedState(def), actual = ActualState(def);
                     if (expected != actual)
-                        return Fail(key, "单元 " + def.Id + " 期望 " + expected + " 实际 " + actual);
+                        return Fail(key, "구성 단위 " + def.Id + " 예상 " + expected + " 실제 " + actual);
                 }
                 object test = Mutate(key, original);
                 object now = CurrentBoxed(key);
                 return Equals(now, test)
-                    ? Pass(key, "开关 on → 单元 Installed 且 Current 读回一致")
-                    : Fail(key, "Current 期望 " + Describe(test) + " 实际 " + Describe(now));
+                    ? Pass(key, "스위치를 켜면 구성 단위가 Installed 상태이며 Current를 다시 읽어도 값이 일치함")
+                    : Fail(key, "Current 예상 " + Describe(test) + " 실제 " + Describe(now));
             }
             catch (Exception ex)
             {
-                return Fail(key, "读取路径异常: " + ex.Message);
+                return Fail(key, "값 조회 경로에서 예외 발생: " + ex.Message);
             }
             finally
             {
@@ -1490,7 +1490,7 @@ namespace LewdMemeConfig
             else if (v is float f) reg.SetPlayerValue(key, f);
             else if (v is bool b) reg.SetPlayerValue(key, b);
             else if (v is string s) reg.SetPlayerValue(key, s);
-            else throw new InvalidOperationException("不支持的配置值类型: " + v.GetType().Name);
+            else throw new InvalidOperationException("지원하지 않는 설정값 자료형: " + v.GetType().Name);
         }
 
         private static void SetInt(string key, int v)
@@ -1507,7 +1507,7 @@ namespace LewdMemeConfig
         {
             foreach (System.Type t in ModReflect.Types(MainModResolver.MainModId))
                 if (t.Name == name) return t;
-            throw new MissingMemberException("主 mod 未暴露类型 " + name);
+            throw new MissingMemberException("본편 모드가 다음 타입을 제공하지 않음: " + name);
         }
 
         /// <summary>brothel 前置类型按名解析(调用前提 = ModUsable(brothel) 已过)。</summary>
@@ -1515,7 +1515,7 @@ namespace LewdMemeConfig
         {
             foreach (System.Type t in ModReflect.Types(FamilyMods.Brothel))
                 if (t.Name == name) return t;
-            throw new MissingMemberException("brothel 未暴露类型 " + name);
+            throw new MissingMemberException("brothel 모드가 다음 타입을 제공하지 않음: " + name);
         }
 
         private static T BrothelFunc<T>(string typeName, string method) where T : Delegate
@@ -1529,7 +1529,7 @@ namespace LewdMemeConfig
         {
             foreach (System.Type t in ModReflect.Types(FamilyMods.Remake))
                 if (t.Name == name) return t;
-            throw new MissingMemberException("lewd_meme_remake 未暴露类型 " + name);
+            throw new MissingMemberException("lewd_meme_remake 모드가 다음 타입을 제공하지 않음: " + name);
         }
 
         /// <summary>ST5 疲劳售价四档直测断言体:对方疲劳系统关闭时 ValueMul 恒 1
@@ -1540,11 +1540,11 @@ namespace LewdMemeConfig
         {
             System.Type t = RemakeType("MaidenFatigue");
             bool enabled = ModReflect.StaticMethod<Func<bool>>(t, "get_Enabled")();
-            if (!enabled) return Skip(key, "对方疲劳系统关闭(fatigue_enabled=关),ValueMul 恒 1");
+            if (!enabled) return Skip(key, "상대 모드 피로 시스템이 꺼져 있음(fatigue_enabled=끔). ValueMul은 항상 1");
             float r = ModReflect.StaticMethod<Func<int, float>>(t, "ValueMul")(fatigue);
             return r == expected
                 ? Pass(key, "ValueMul(" + fatigue + ")=" + r + "(" + note + ")")
-                : Fail(key, "ValueMul(" + fatigue + ") 期望 " + expected + " 实际 " + r + "(" + note + ")");
+                : Fail(key, "ValueMul(" + fatigue + ") 예상 " + expected + " 실제 " + r + "(" + note + ")");
         }
 
         // ------------------------------------------------------------------
