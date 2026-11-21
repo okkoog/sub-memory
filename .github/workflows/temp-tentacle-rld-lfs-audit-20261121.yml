@@ -1,0 +1,48 @@
+name: Tentacle RedLightDistrict Git LFS binary probe
+on:
+  push:
+    paths:
+      - '.github/workflows/temp-tentacle-rld-lfs-audit-20261121.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Check size and verify LFS content
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,struct
+          source=Path("probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll")
+          dest=Path("probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md")
+          data=source.read_bytes()
+          h=hashlib.sha256(data).hexdigest()
+          valid=(len(data)==152970752 and h=="4f4f20a00e4754302c53879bfaeb7a7503df10e2f05ff6ad3744be31088159f8")
+          sig=data[:2].hex()
+          dest.write_text("# RedLightDistrict v1.1.1 LFS binary access audit\n\n"
+             +f"- Size: {len(data)} bytes\n- SHA256: {h}\n- PE signature: {sig}\n"
+             +f"- Actual binary obtained: {valid}\n"
+             +"- Original source untouched. No game loading tests performed.\n",encoding="utf-8")
+          print(dest.read_text())
+          if not valid: raise RuntimeError("Git LFS original binary not actually downloaded")
+          PY
+      - name: Save audit file
+        shell: bash
+        if: always()
+        run: |
+          if [ ! -f 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md' ]; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md'
+          git diff --cached --quiet || (git commit -m 'audit(tentacle): check RedLightDistrict LFS binary access' && git pull --rebase origin main && git push)
