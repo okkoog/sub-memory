@@ -12,7 +12,7 @@
 
 | 순서 | 대상 DLL | 실제 수정 문자열 | IL 참조 수정 | 번역/정적 검수 상태 | 실게임 실행 검증 |
 | ---: | --- | ---: | ---: | --- | --- |
-| **1 (현재)** | `lewd_meme2.1.0/MidnightPawn.dll` | 600 | 657 | **진행 중 — 미처리 164개(보존 판정 139/호출부 검토 12/문맥 검토 13)** | 미실시 |
+| **1 (현재)** | `lewd_meme2.1.0/MidnightPawn.dll` | 608 | 667 | **진행 중 — 잔여 156개(보존 139/호출부 검토 4/문맥 검토 13)** | 미실시 |
 | 2 | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 636 | 684 | 미완료 — 대기 | 미실시 |
 | 3 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 204 | 235 | 미완료 — 대기 | 미실시 |
 | 4 | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 908 | 1175 | 미완료 — 대기 | 미실시 |
@@ -20,7 +20,7 @@
 | 6 | `[SRW-STM]MentorToSarrona/MentorToSarrona.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 7 | `3843110449/GeorgioToElueym.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 8 | `3843110449/ToElueym.dll` | 1 | 1 | 미완료 — 대기 | 미실시 |
-| **합계** | **시험 DLL 8개** | **2,398** | **2,802** | **검수 완료 확정 0개** | **0개** |
+| **합계** | **시험 DLL 8개** | **2,406** | **2,812** | **검수 완료 확정 0개** | **0개** |
 
 ### 단계별 완료 기준 / 보고 양식
 
@@ -508,3 +508,12 @@
 - **기술 검증:** 기존 `#US` 바이트 및 타 메타데이터 스트림 불변, 새 UTF-16LE 11건 역디코딩, 원래 `ldstr` 토큰 잔존 0, 신규 참조 14곳과 플레이스홀더 일치. DLL 334336→335360바이트. **실게임 실행·CLR 실제 로딩 테스트는 미실시.**
 - **갱신 파일:** `lewd_meme2.1.0/MidnightPawn.dll`, `번역대조표/MidnightPawn_DLL_sequential_batch3_20261121.tsv`, 통합 `DLL_additional_20261121.csv`, 전수 분류표, 이 진행 기록.
 - **누적:** MidnightPawn 600문구/657 IL 참조, 전체 8개 시험 DLL 2398문구/2802 참조. **1번 DLL 검토 미완료이므로 다음 모드로 이동하지 않음.**
+
+## 2026-11-21 — MidnightPawn.dll 순차 4차: 호출부 출력 대상 추가 번역
+
+- 기존 DLL blob `c93921f54ecfdf0a21b14fc591d7730d0e5f3441`, 원본 `TentacleMod/` 미변경. 3차까지 분류된 '호출부 추가 검토' 12건 가운데 **8개/IL 참조 10곳**을 사용처 확인 후 한국어 DLL에 직접 반영.
+- **사용처 근거:** `Show`(창 제목), `TryDeliver`(배송 위치 명칭), `Build`→`Text`(화면 라벨), `MakeBuyBonusFeature`·`MakeSemenFeature`→`SetPublicDisplay/SetActualDisplay`(표시 특성 이름), `DeliverItem`(항목 기본 이름), `CreateMilk`→`Log`(기록 메시지). 인게임 내부 비교·세이브 키는 변경하지 않음.
+- **대조표:** `번역대조표/MidnightPawn_DLL_sequential_batch4_20261121.tsv` 8개 원문↔한국어와 원본/신규 `#US` 오프셋, IL 참조 수. 통합 `DLL_additional_20261121.csv`에 동일 건 반영. 전수 분류표도 상태 이동 완료.
+- **검증:** 기존 `#US` 및 비대상 메타데이터 원형 보존, 한국어 레코드 UTF-16LE 역디코딩, 신규 IL 10곳, 원본 참조 0, 서식 변수 동일. DLL 335360→335360바이트. **실제 CLR 로딩/게임 실행 테스트는 미실시.**
+- **남은 실제 활성 중국어 156개:** 내부 식별자 보존 139, 문장 결합 호출부 추가 검토 4, 장문·대사 맥락 검토 13. 이 항목들의 처리 전에는 1번 DLL 완료로 선언하지 않음.
+- **누적:** MidnightPawn.dll 608개 문자열/IL 667곳; 8개 DLL 전체 2406개 문자열/IL 2812곳. 다른 DLL에는 변경 없음.
