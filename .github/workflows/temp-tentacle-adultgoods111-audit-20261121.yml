@@ -132,7 +132,7 @@ jobs:
               using var w=new StreamWriter(args[1],false,new System.Text.UTF8Encoding(false));
               w.WriteLine("# Adult Goods v1.1.1 embedded localization IL static audit\n");
               var selected=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody).Select(m=>(t,m)))
-               .Where(x=>x.t.FullName.Contains("ModLocale") || x.m.Name.ToString().Contains("Localization") ||
+               .Where(x=>(x.t.FullName.Contains("ModLocale") || x.t.FullName.Contains("EmbeddedAssets")) || x.m.Name.ToString().Contains("Localization") ||
                         x.m.Name.ToString().Contains("Locale") || x.m.Name.ToString().Contains("Resource") ||
                         x.t.FullName.EndsWith(".ModEntry") ||
                         x.m.Body.Instructions.Any(i=>i.OpCode==OpCodes.Ldstr && i.Operand is string s && s.Contains("Localization")))
