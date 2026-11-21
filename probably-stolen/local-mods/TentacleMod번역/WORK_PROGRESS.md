@@ -6,7 +6,7 @@
 
 ## 순차 완료 작업판 — 2026-11-21 (현재 적용 기준)
 
-> **현재 작업 대상: 4번 `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
+> **현재 작업 대상: 5번 `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll`**. 한 DLL의 번역 대상 전수 분류·번역·정적 검증이 끝나기 전 다른 DLL로 임의 이동하지 않는다. 이전의 모드 간 왕복식 작업을 중단한다.
 >
 > **중요:** '적용 문자열 수'는 번역 진행률(%)이 아니다. 기존 DLL의 중국어 잔존 문자열에는 내부 판정값·원본 데이터 키·파일 경로·호칭 검색어 등이 섞여 있어 검수 전에는 정확한 번역 대상 총량을 산정할 수 없다. 따라서 분모 확인 전에는 %를 쓰지 않는다. 
 
@@ -15,12 +15,12 @@
 | **1 (정적 번역 종료)** | `lewd_meme2.1.0/MidnightPawn.dll` | 625 | 686 | **번역·검토 잔여 0개 — 내부 참조 139개 보존** | **미실시(게임 확인 필요)** |
 | **2 (정적 번역 종료)** | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 881 | 938 | **번역·문맥 미처리 0개 — 원문 보호 88개** | **미실시(게임 확인 필요)** |
 | **3 (정적 번역 종료)** | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 206 | 237 | **추가 번역 미처리 0개 — 내부 문자열 22개 보존, 경로 1개** | 미실시 |
-| 4 | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 908 | 1175 | 미완료 — 대기 | 미실시 |
+| **4 (정적 분류 종료)** | `lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` | 958 | 1228 | **설정·코드 원문 보호 68개 / 미분류 0개** | 미실시 |
 | 5 | `LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` | 45 | 46 | 미완료 — 대기 | 미실시 |
 | 6 | `[SRW-STM]MentorToSarrona/MentorToSarrona.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 7 | `3843110449/GeorgioToElueym.dll` | 2 | 2 | 미완료 — 대기 | 미실시 |
 | 8 | `3843110449/ToElueym.dll` | 1 | 1 | 미완료 — 대기 | 미실시 |
-| **합계** | **시험 DLL 8개** | **2,670** | **3,087** | **정적 번역 종료 3개 / 게임 검증 완료 0개** | **0개** |
+| **합계** | **시험 DLL 8개** | **2,720** | **3,140** | **정적 번역/분류 종료 4개 / 게임 검증 완료 0개** | **0개** |
 
 ### 단계별 완료 기준 / 보고 양식
 
@@ -589,3 +589,10 @@
 - 파일 크기 285696→286208바이트; 문자열 역디코딩 및 IL 참조 2곳 확인, 기존 #US 및 타 CLI 메타데이터 보존. 실제 게임 실행 검증 미실시. 원본 `TentacleMod/` 미변경.
 - 결과 `번역대조표/ItemPortraitHD_DLL_sequential_20261121.tsv`, 전수 목록 `ItemPortraitHD_remaining_inventory_20261121.tsv`, 보고서 `ItemPortraitHD_FINAL_STATIC_AUDIT_20261121.md`. 3번 정적 번역 종료, 다음 순서 4번 LewdMemeConfig.dll.
 - 8개 시험 DLL 누적 2670문구/IL 3087곳, 정적 번역 완료 3개.
+
+## 2026-11-21 — LewdMemeConfig.dll 순차 4번 정적 분류 및 DLL 번역
+
+- 118개 활성 한자 포함 문자열 전수 분류 후 설정 도움말/사용자 표시 문구 **50개/IL 53곳** DLL에 직접 적용. 나머지 68개는 실제 설정 입력·원본 세력/직업/체형 키·태그 및 기존 한국어 문장의 코드 예시를 보호. `{cfg:...}` 자리표시자와 숫자, 줄바꿈 유지.
+- 원본 DLL 변경하지 않고 `TentacleMod번역/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll` 시험본만 갱신. 이전 blob `2b463eba254a59b3ac329291b95ec91a05832332`, 바이트 626688→634880. UTF-16LE 역디코딩 50건, IL 53곳 참조 교체, 기존 #US/타 메타데이터 보존.
+- 작업표 `LewdMemeConfig_remaining_inventory_20261121.tsv`, 수정표 `LewdMemeConfig_DLL_sequential_20261121.tsv`, 검수 `LewdMemeConfig_FINAL_STATIC_AUDIT_20261121.md`, 통합 CSV 갱신. 실제 게임·설정값 저장 동작 검증 미실시.
+- Config 누적 **958개/IL 1228곳**, 전체 8개 시험 DLL **2720개/IL 3140곳**. 4번의 **활성 한자 포함 문자열 전수 분류 종료**. 다른 DLL은 변경하지 않음. 다음 5번 LegacyContent.
