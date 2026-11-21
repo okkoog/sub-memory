@@ -1,0 +1,55 @@
+old_us_offset	ldstr_refs	zh	ko	source
+49942	1	transpiler 目标方法不在注入点表内: 	transpiler 대상 메서드가 삽입 지점 목록에 없음: 	Integration/TranspileCarrier.cs
+49992	1	transpiler 注入点未按期望命中: 	transpiler 삽입 지점 일치 횟수가 예상과 다름: 	Integration/TranspileCarrier.cs
+50046	1	(期望 	(예상 	Integration/TranspileCarrier.cs
+50056	1	 处,实得 	곳, 실제 	Integration/TranspileCarrier.cs
+50070	1	 处;目标方法 IL 与 1.9.2 基线不符)	곳; 대상 메서드 IL이 1.9.2 기준과 다름)	Integration/TranspileCarrier.cs
+50120	1	transpiler 注入点区间重叠: 	transpiler 삽입 지점 구간이 겹침: 	Integration/TranspileCarrier.cs
+50162	1	 与 	 및 	Integration/TranspileCarrier.cs
+50184	1	未知注入形态: 	알 수 없는 삽입 형식: 	Integration/TranspileCarrier.cs
+50424	1	写透快照恢复失败(	직접 기록 스냅샷 복원 실패(	Integration/WriteThroughCarrier.cs
+50444	1	写透目标 mod 未注册,跳过: 	직접 기록 대상 모드가 등록되지 않아 건너뜀: 	Integration/WriteThroughCarrier.cs
+50488	1	写透目标键缺席,跳过(版本漂移?): 	직접 기록 대상 키가 없어 건너뜀(버전 차이 가능성): 	Integration/WriteThroughCarrier.cs
+50528	1	写透值无法经公开通道回写: 	공개 인터페이스로 직접 기록 값을 되쓸 수 없음: 	Integration/WriteThroughCarrier.cs
+51756	2	版本不匹配,该项不生效	버전이 일치하지 않아 이 설정은 적용되지 않습니다	Logic/PanelMarks.cs
+51904	1	暗流交易	암거래	Logic/Router.cs
+51914	1	巢穴扩展	둥지 확장	Logic/Router.cs
+51924	1	物品高清立绘管理器	아이템 고해상도 초상화 관리자	Logic/Router.cs
+51844	1	未知装配单元 id: 	알 수 없는 패치 구성 요소 ID: 	Logic/Router.cs
+51888	1	,该配置不生效	 때문에 이 설정은 적용되지 않습니다	Logic/Router.cs
+51950	1	 项:通过 	개: 통과 	Logic/SelfTestPlan.cs
+51964	1	(其中 SKIP 	(그중 SKIP 	Logic/SelfTestPlan.cs
+51984	1	)/ 失败 	) / 실패 	Logic/SelfTestPlan.cs
+51998	1	Tier1·路由审计	Tier1·라우팅 검사	Logic/SelfTestPlan.cs
+52020	1	Tier2·静态直测	Tier2·정적 직접 검사	Logic/SelfTestPlan.cs
+52042	1	Tier2·物品直测	Tier2·아이템 직접 검사	Logic/SelfTestPlan.cs
+52064	1	Tier2·写透往返	Tier2·직접 기록 왕복 검사	Logic/SelfTestPlan.cs
+52086	1	Tier2·legacy叠加	Tier2·레거시 중첩 검사	Logic/SelfTestPlan.cs
+52116	1	Tier3·读取路径	Tier3·읽기 경로 검사	Logic/SelfTestPlan.cs
+55259	13	主 mod lewd_meme 未暴露类型 	본체 모드 lewd_meme에 타입이 노출되지 않음: 	Patches/AlarmPatch.cs
+58894	1	顾客性别改写为女性: 	고객 성별을 여성으로 변경: 	Patches/GenderRatioPatch.cs
+58934	1	性别改写失败: 	성별 변경 실패: 	Patches/GenderRatioPatch.cs
+58844	21	[lewd_meme_config→主mod] 	[lewd_meme_config→본체 모드] 	Patches/GenderRatioPatch.cs
+64432	1	特殊顾客追加名单读取失败,放行原版: 	특별 손님 추가 허용 목록 읽기 실패. 원본 동작 허용: 	Patches/SpecialAndManualPatches.cs
+64472	1	驯服阈值读取失败,放行原版: 	복종 임계값 읽기 실패. 원본 동작 허용: 	Patches/SpecialAndManualPatches.cs
+64840	1	排卵诱发剂阈值读取失败,保持原版委托: 	배란 유도제 임계값 읽기 실패. 원본 처리 유지: 	Patches/SpecialAndManualPatches.cs
+77530	1	排卵诱发剂	배란 유도제	Patches/SpecialAndManualPatches.cs
+77542	1	排卵诱发剂生效：	배란 유도제 적용: 	Patches/SpecialAndManualPatches.cs
+77560	1	 进入排卵期 (调教值 	 배란기에 진입 (조교 수치 	Patches/SpecialAndManualPatches.cs
+64882	1	名字库开关读取失败,放行原版: 	이름 목록 스위치 읽기 실패. 원본 동작 허용: 	Patches/SpecialAndManualPatches.cs
+64930	1	自定义名字库加载失败,回退原版: 	사용자 지정 이름 목록 불러오기 실패. 원본 목록 사용: 	Patches/SpecialAndManualPatches.cs
+65153	1	自定义名字库为空,回退原版 Content/names.txt	사용자 지정 이름 목록이 비어 있음. 원본 Content/names.txt를 사용	Patches/SpecialAndManualPatches.cs
+65217	1	自定义名字库无有效行(需 TSV: 地区<TAB>姓列表<TAB>名列表),回退原版	사용자 지정 이름 목록에 올바른 행이 없음(TSV 필요: 지역<TAB>성씨 목록<TAB>이름 목록). 원본 목록 사용	Patches/SpecialAndManualPatches.cs
+65319	1	自定义名字库已加载: 	사용자 지정 이름 목록을 불러옴: 	Patches/SpecialAndManualPatches.cs
+65441	1	说明书配置读取失败,保留原版描述: 	설명서 설정 읽기 실패. 원본 설명 유지: 	Patches/SpecialAndManualPatches.cs
+67692	1	说明书渲染失败,保留原版描述: 	설명서 표시 처리 실패. 원본 설명 유지: 	Patches/SpecialAndManualPatches.cs
+67726	1	读档修复延迟读取失败,沿用原版 1.5s: 	저장 파일 복구 지연 시간 읽기 실패. 원본 1.5초 사용: 	Patches/SpecialAndManualPatches.cs
+67772	1	读档修复: 已按 ui.reload_fix_delay=	저장 파일 복구: ui.reload_fix_delay=	Patches/SpecialAndManualPatches.cs
+67832	1	s 排队	초 후 실행 예약	Patches/SpecialAndManualPatches.cs
+67842	1	读档修复排队失败: 	저장 파일 복구 예약 실패: 	Patches/SpecialAndManualPatches.cs
+67890	1	本体布局检查异常	본체 배치 확인 중 오류	Patches/SpecialAndManualPatches.cs
+67946	1	刷新乳汁图标异常	모유 아이콘 갱신 중 오류	Patches/SpecialAndManualPatches.cs
+68002	1	读档修复异常	저장 파일 복구 중 오류	Patches/SpecialAndManualPatches.cs
+68016	1	触手登记异常	촉수 재등록 중 오류	Patches/SpecialAndManualPatches.cs
+68030	1	闹钟登记异常	알람 시계 재등록 중 오류	Patches/SpecialAndManualPatches.cs
+68044	1	陷阱登记异常	함정 재등록 중 오류	Patches/SpecialAndManualPatches.cs
