@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>lewd_meme_legacy_content</ID>
+  <Name>음란한 심우주: 더 많은 상호작용</Name>
+  <Author>今夜不能寐</Author>
+  <ModVersion>1.0.6</ModVersion>
+  <Description>최신 lewd_meme에 구버전 개조 콘텐츠를 복원하는 확장 모드입니다. 캐릭터 태그·속성, 단계별 설명, 더블 클릭 대사, 상호작용 음성, 툴팁 보강, 구버전 야간 보고서를 제공합니다. 더블 클릭 말풍선의 캔버스 간 크기 변경 때문에 글자가 흐려지는 문제도 수정합니다. lewd_meme를 함께 활성화해야 하며, 기존 DLL을 최신 본체 대신 사용하거나 신규 아이템 ID를 만들지 않습니다. 게임 0.46D Rev13에 맞춰 선행 모드 어셈블리 참조와 ModReflect를 사용하고 reflection-external 권한 선언은 제거했습니다. 구버전 야간 보고서는 기본적으로 꺼져 있으며, 모드 설정의 '구버전 야간 보고서 표시'에서 켤 수 있습니다. 다른 모드의 야간 보고서와 중복 표시되는 문제를 방지하기 위한 설정입니다. 다른 확장 모드와의 호환을 위해 본체의 기존 아이템·캐릭터 이름이나 세력·체형·모유량 항목을 덮어쓰지 않고, LEGACY_LC_* 및 자체 표시 태그만 사용합니다.</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites>
+    <Mod>lewd_meme</Mod>
+  </Prerequisites>
+  <Assemblies>
+    <Assembly>LewdMemeLegacyContent.dll</Assembly>
+  </Assemblies>
+  <Capabilities />
+</Manifest>
