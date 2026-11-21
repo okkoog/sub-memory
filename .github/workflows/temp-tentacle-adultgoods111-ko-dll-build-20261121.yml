@@ -1,0 +1,159 @@
+name: Tentacle Adult Goods v1.1.1 isolated Korean DLL build
+on:
+  push:
+    paths:
+      - '.github/workflows/temp-tentacle-adultgoods111-ko-dll-build-20261121.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout source and reviewed localization
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/3842259965
+            probably-stolen/local-mods/TentacleMod번역/3842259965
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Verify 181 reviewed Korean locale keys against original DLL source
+        shell: bash
+        run: |
+          python3 -m pip install --quiet dnfile
+          python3 - <<'PY'
+          from pathlib import Path
+          import dnfile,hashlib,re
+          original=Path('probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll')
+          korean=Path('probably-stolen/local-mods/TentacleMod번역/3842259965/Localization/ko.csv')
+          assert hashlib.sha256(original.read_bytes()).hexdigest()=='60f586bd14b68b12ec1b68382a280957323cecff45e4afbf4d4cd29e637bdacf'
+          p=dnfile.dnPE(str(original))
+          originals={str(r.name):r.data for r in p.net.resources}
+          zh=originals['ProbablyAdultGoods.Localization.zh.csv']
+          en=originals['ProbablyAdultGoods.Localization.en.csv']
+          assert hashlib.sha256(zh).hexdigest()=='41d3adcbde8e30f0fae63e2905471358d10014710a9a03813e8e8f7b7a6c3c84'
+          assert hashlib.sha256(en).hexdigest()=='3412bed2d6fb249198a31caec7335d45b2db8c8f2f5ee62bf91f0e874c0a4f7e'
+          def parse(b):
+              rows=[]
+              for line in b.decode('utf-8-sig').splitlines():
+                  if not line:continue
+                  k,sep,v=line.partition(',')
+                  assert sep and k and v
+                  rows.append((k,v))
+              assert len(set(k for k,v in rows))==len(rows)
+              return rows
+          src=parse(zh)
+          ko=parse(korean.read_bytes())
+          assert len(src)==len(ko)==181
+          assert [k for k,v in src]==[k for k,v in ko]
+          tokens=lambda s:sorted(re.findall(r'\{[^{}]+\}',s))
+          assert all(tokens(x[1])==tokens(y[1]) for x,y in zip(src,ko))
+          assert all('\r' not in v and '\n' not in v for k,v in ko)
+          assert all(v==v.strip() for k,v in ko)
+          print('Korean keys:',len(ko),'source byte hashes unchanged')
+          PY
+      - name: Build DLL with two independent Korean managed-resource aliases
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/adult111_build --force
+          dotnet add /tmp/adult111_build/adult111_build.csproj package dnlib --version 4.5.0
+          cat > /tmp/adult111_build/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static void Main(string[] args) {
+              byte[] ko=File.ReadAllBytes(args[1]);
+              using var md=ModuleDefMD.Load(args[0]);
+              var locales=new[]{"ProbablyAdultGoods.Localization.zh.csv","ProbablyAdultGoods.Localization.en.csv"};
+              foreach(var n in locales)if(md.Resources.OfType<EmbeddedResource>().Count(r=>r.Name.ToString()==n)!=1)throw new Exception("Original locale missing: "+n);
+              foreach(var n in new[]{"ProbablyAdultGoods.Localization.ko.csv","ProbablyAdultGoods.Localization.ko-KR.csv"}) {
+                if(md.Resources.Any(r=>r.Name.ToString()==n))throw new Exception("Already embedded "+n);
+                var en=md.Resources.OfType<EmbeddedResource>().Single(r=>r.Name.ToString()==locales[1]);
+                md.Resources.Add(new EmbeddedResource(n,ko,en.Attributes));
+              }
+              // Original EmbeddedAssets.Inject enumerates *.csv manifest resources;
+              // EmbeddedAssets.BaseName extracts the locale after its last dot.
+              var asset=md.GetTypes().Single(t=>t.FullName=="ProbablyAdultGoods.EmbeddedAssets");
+              var inject=asset.Methods.Single(m=>m.Name.ToString()=="Inject");
+              var csv=asset.Methods.Single(m=>m.Name.ToString()=="InjectCsv");
+              var basename=asset.Methods.Single(m=>m.Name.ToString()=="BaseName");
+              bool calls(MethodDef method,string target)=>method.Body.Instructions.Any(i=>i.Operand is IMethod m && m.Name.ToString()==target);
+              if(!calls(inject,"GetManifestResourceNames")||!calls(inject,"InjectCsv")||!calls(csv,"BaseName"))
+                throw new Exception("Original dynamic localization registration pattern changed");
+              if(!basename.HasBody)throw new Exception("No language parsing body");
+              Directory.CreateDirectory(Path.GetDirectoryName(args[2])!);
+              md.Write(args[2]);
+              using var check=ModuleDefMD.Load(args[2]);
+              foreach(var n in new[]{"ProbablyAdultGoods.Localization.ko.csv","ProbablyAdultGoods.Localization.ko-KR.csv"}){
+                var r=check.Resources.OfType<EmbeddedResource>().Single(x=>x.Name.ToString()==n);
+                if(!r.CreateReader().ToArray().SequenceEqual(ko))throw new Exception("KO resource bytes corrupted "+n);
+              }
+              Console.WriteLine("Added two Korean CSV managed resources to DLL; original method IL left unmodified.");
+            }
+          }
+          CS
+          dotnet run --project /tmp/adult111_build/adult111_build.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/Localization/ko.csv' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/probably_adult_goods.dll'
+      - name: Independently audit CLR resources and build ZIP
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import dnfile,hashlib
+          original=Path('probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll')
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          out=root/'3842259965/probably_adult_goods.dll'
+          ko=(root/'3842259965/Localization/ko.csv').read_bytes()
+          before=dnfile.dnPE(str(original))
+          after=dnfile.dnPE(str(out))
+          a={str(r.name):r.data for r in before.net.resources}
+          b={str(r.name):r.data for r in after.net.resources}
+          new={'ProbablyAdultGoods.Localization.ko.csv','ProbablyAdultGoods.Localization.ko-KR.csv'}
+          assert set(b)-set(a)==new
+          assert len(a)==65 and len(b)==67
+          assert all(b[k]==v for k,v in a.items()),'Original CLR resource modified'
+          assert all(b[k]==ko for k in new)
+          assert before.net.mdtables.MethodDef.num_rows==after.net.mdtables.MethodDef.num_rows==370
+          assert before.net.mdtables.TypeDef.num_rows==after.net.mdtables.TypeDef.num_rows==92
+          audit=root/'번역대조표/AdultGoods_v1.1.1_KO_DLL_STATIC_AUDIT_20261121.md'
+          audit.write_text(
+            '# Probably Adult Goods v1.1.1 — isolated Korean DLL static audit\n\n'
+            +'- Original size: '+str(original.stat().st_size)+' bytes; SHA256 '+hashlib.sha256(original.read_bytes()).hexdigest()+'\n'
+            +'- Korean DLL size: '+str(out.stat().st_size)+' bytes; SHA256 '+hashlib.sha256(out.read_bytes()).hexdigest()+'\n'
+            +'- Original managed resources: 65; rewritten DLL: 67. All 65 original resources byte-identical.\n'
+            +'- Two additional embedded locale resources: ProbablyAdultGoods.Localization.ko.csv and .ko-KR.csv (identical 181-key Korean CSV).\n'
+            +'- Original EmbeddedAssets.Inject dynamically enumerates .csv resources; InjectCsv derives language keys using BaseName. No IL patch required.\n'
+            +'- CLR MethodDef 370, TypeDef 92 unchanged. Chinese and English original resources byte-identical.\n'
+            +'- 104 old translations reused at same keys and identical Chinese text; 37 moved flavor translations reused by exact source-text match; 38 Chinese source descriptions newly translated; 2 values adapted from original English text, not Chinese-to-Korean literal translations.\n'
+            +'- Original source DLL and all other mods unchanged. Unity/CLR runtime loading, game UI, saving and compatibility NOT TESTED.\n',
+            encoding='utf-8')
+          zipfile=root/'ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_20261121.zip'
+          with ZipFile(zipfile,'w',ZIP_DEFLATED,compresslevel=6) as z:
+              for filename in ['probably_adult_goods.dll','manifest.xml','README_ko.txt']:
+                  z.write(root/'3842259965'/filename,arcname='3842259965/'+filename)
+              z.write(root/'3842259965/Localization/ko.csv',arcname='3842259965/Localization/ko.csv')
+              z.write(audit,arcname='STATIC_AUDIT.md')
+              z.write(root/'번역대조표/AdultGoods_v1.1.1_KO_MAPPING_AUDIT_20261121.md',arcname='KO_SOURCE_AUDIT.md')
+          with ZipFile(zipfile) as z:
+              assert z.testzip() is None
+              assert len(z.namelist())==6
+          print(audit.read_text(),zipfile.stat().st_size)
+          PY
+      - name: Commit revised DLL and tested overlay archive
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/probably_adult_goods.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_KO_DLL_STATIC_AUDIT_20261121.md'
+          git diff --cached --quiet || (git commit -m 'build(tentacle): add isolated ko aliases to Adult Goods v1.1.1 DLL' && git pull --rebase origin main && git push)
