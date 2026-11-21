@@ -156,5 +156,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_131_20261121.zip' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch01_DLL_STATIC_AUDIT_20261121.md'
+          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll' 'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.3_DLL_KO_Partial_131_20261121.zip' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_KO_batch02_DLL_STATIC_AUDIT_20261121.md'
           git diff --cached --quiet || (git commit -m 'build(tentacle): Eleanor 1.0.3 partial Korean DLL 131 reviewed strings' && git push)
