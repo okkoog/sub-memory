@@ -152,10 +152,27 @@ jobs:
           print('First 25 entries',lines[:25])
           print('First 5 text samples',snippets[:5])
           PY
+      - name: Export untouched embedded localization sources
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import dnfile, hashlib
+          src=Path("probably-stolen/local-mods/TentacleMod/落魄千金-埃莉诺 v1.0.3/fallen_heiress_eleanor.dll")
+          out=Path("probably-stolen/local-mods/TentacleMod번역/번역대조표")
+          pe=dnfile.dnPE(str(src))
+          for r in pe.net.resources:
+              if r.name in ('EleanorEmbedded/Localization/zh.csv','EleanorEmbedded/Localization/en.csv'):
+                  lang=str(r.name)[-6:-4]
+                  assert isinstance(r.data,bytes)
+                  fp=out/f"Eleanor_v1.0.3_original_{lang}_embedded_20261121.csv"
+                  fp.write_bytes(r.data)
+                  print(lang,len(r.data),hashlib.sha256(r.data).hexdigest(),fp)
+          PY
       - name: Commit audit text only
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_US_CJK_inventory_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_STRUCTURE_AUDIT_20261121.md' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_index_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_text_samples_20261121.json'
+          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_US_CJK_inventory_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_DLL_STRUCTURE_AUDIT_20261121.md' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_index_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_CLR_resource_text_samples_20261121.json' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_original_zh_embedded_20261121.csv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_v1.0.3_original_en_embedded_20261121.csv'
           git diff --cached --quiet || (git commit -m 'audit(tentacle): extract Eleanor v1.0.3 CLR user strings' && git push)
