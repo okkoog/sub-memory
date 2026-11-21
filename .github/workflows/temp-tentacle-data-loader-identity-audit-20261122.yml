@@ -65,6 +65,25 @@ jobs:
                 }
                 audit.Add("Found "+hit+" relevant literal-IL matches.");
               }
+              foreach(var f in files) {
+                using var mod=ModuleDefMD.Load(f);
+                var target=mod.GetTypes().Where(t=>t.Name.ToString() is "ItemSheet" or "ItemCsv").ToArray();
+                if(target.Length==0)continue;
+                audit.Add("## Complete IL for item CSV loaders: "+Path.GetFileName(f));
+                foreach(var t in target) {
+                  foreach(var m in t.Methods.Where(m=>m.HasBody && (m.Name.ToString().Contains("Load")||m.Name.ToString().Contains("Apply")||m.Name.ToString().Contains("Get")))) {
+                    audit.Add("### "+m.FullName);
+                    audit.Add("```text");
+                    int k=0;
+                    foreach(var inst in m.Body.Instructions) {
+                      string val=inst.Operand?.ToString()??"";
+                      audit.Add(k+": "+inst.OpCode+" "+val.Replace("\\n"," ").Substring(0,Math.Min(val.Length,180)));
+                      if(++k>=420){audit.Add("(remaining instructions omitted)");break;}
+                    }
+                    audit.Add("```");
+                  }
+                }
+              }
               var path="probably-stolen/local-mods/TentacleMod번역/번역대조표/Tentacle_GAME_DATA_DLL_READ_AUDIT_20261122.md";
               File.WriteAllText(path,string.Join("\n",audit)+"\n");
               Console.WriteLine("Audited four DLL assemblies and wrote static loader references.");
