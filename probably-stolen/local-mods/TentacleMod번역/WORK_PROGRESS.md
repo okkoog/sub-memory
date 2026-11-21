@@ -811,3 +811,10 @@
 - **검수 보고:** `번역대조표/DailyWearWorkshop_FINAL_STATIC_AUDIT_20261121.md`. 정적으로 식별 가능한 안전한 사용자 문구의 DLL 직접 패치 단계는 종료. 잔여 이름은 실제 UI에 노출될 가능성이 있으므로 이 분류만으로 모든 화면 한국어화가 보장되지는 않음.
 - **실행 미검증:** 실제 Unity/CLR 로드, 기존 세이브, 아이템 등록·이름 비교, 레시피·차·NPC/전시실 UI, 타 모드 호환 검증 0건. 배포 가능한 정상 작동 완성본으로 확정하지 않음.
 - **다음 조사 대상:** `TentacleMod/`에서 아직 번역 결과 폴더가 없는 원본 6개 및 `RedLightDistrict.dll` Git LFS 원본 미확보 문제. `3842259965`는 모드 ID `probably_adult_goods`의 별도 버전(문서상 1.1.1)이며, 같은 ID의 기존 다른 버전들과 동시 활성 불가하므로 중복 버전 판정이 먼저 필요.
+
+## 2026-11-21 — 원본 6개 모드 버전·모드 ID 충돌 분석 및 Bai She 표시 문구 번역
+
+- `번역대조표/MISSING_MODULE_VERSION_AUDIT_20261121.md`에 나머지 6개 원본 폴더의 `manifest.xml` 실제 ID·버전·DLL 크기와 기존 번역 패키지 중복을 기록. `probably_adult_goods` ID를 사용하는 버전 1.03/1.1.1/1.1.3/1.2.1을 동시에 활성화하면 안 되며, `probably_eleanor_followup` 1.0.0/1.0.3도 서로 구·신 버전 관계다.
+- `Bai She's R18 Texture Pack 1.4.0`은 제작자 설명상 텍스처만 제공하므로, `R18TexturePack.dll`은 수정하지 않고 이름/설명 한국어 `manifest.xml`과 전체 `README_ko.txt` 제작. 원본 ID/버전/필요 본편/Assembly 불변. ZIP `ProbablyStolen_BaiShe_R18_Pack_Korean_Metadata_20261121.zip` **3,588바이트**, 원본 모드에 적용할 텍스트 오버레이이며 단독 모드 아님.
+- `3842259965/probably_adult_goods.dll` 8,166,912바이트는 GitHub 연결을 통해 메타데이터만 조회되고 바이너리 content 빈 문자열, UTF-8 raw blob 호출 실패. `RedLightDistrict.dll`은 Git LFS 실제 152,970,752바이트 대신 134바이트 포인터만 접근 가능. 둘 다 실제 DLL 데이터 없이 번역/정적 수정 불가.
+- **미완료:** 나머지 대형 DLL 실데이터 확보, 각 버전 선택과 종속성 확인, Unity/CLR/게임 세이브 검증. 정적 완료 DLL이라도 실제 정상 동작을 보증하지 않음.
