@@ -89,6 +89,26 @@ jobs:
               if(!calls(inject,"GetManifestResourceNames")||!calls(inject,"InjectCsv")||!calls(csv,"BaseName"))
                 throw new Exception("Original dynamic localization registration pattern changed");
               if(!basename.HasBody)throw new Exception("No language parsing body");
+              // Translate only ten callsite-verified tooltip strings; preserve all category and save identifiers.
+              var displayOnly = new (string type,string method,string source,string korean)[] {
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","高纯度","고순도"),
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","极高纯度","초고순도"),
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","已投入：金属锭（","투입한 금속 주괴("),
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","、废金属 ",", 폐금속 "),
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","、金属螺丝 ",", 금속 나사 "),
+                ("ProbablyAdultGoods.DragonCase","ProgressLine","、超科技电子元件 ",", 초첨단 전자 부품 "),
+                ("ProbablyAdultGoods.DragonCase","OnTooltip","收藏柜已满级（24×12）","수집장이 최대 레벨에 도달함(24×12)"),
+                ("ProbablyAdultGoods.DragonCase","OnTooltip","升级到 Lv","업그레이드 목표 Lv."),
+                ("ProbablyAdultGoods.DragonDisplayCase","OnTooltip","幻龙陈列盒：","환룡 진열함: "),
+                ("ProbablyAdultGoods.DragonDisplayCase","OnTooltip","/9 种","/9종")
+              };
+              foreach(var entry in displayOnly) {
+                var type=md.GetTypes().Single(t=>t.FullName==entry.type);
+                var method=type.Methods.Single(m=>m.Name.ToString()==entry.method);
+                var matches=method.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr && Equals(i.Operand,entry.source)).ToArray();
+                if(matches.Length!=1)throw new Exception("Expected exactly one display-only site: "+entry.type+"::"+entry.method+" = "+entry.source);
+                matches[0].Operand=entry.korean;
+              }
               Directory.CreateDirectory(Path.GetDirectoryName(args[2])!);
               md.Write(args[2]);
               using var check=ModuleDefMD.Load(args[2]);
@@ -96,7 +116,14 @@ jobs:
                 var r=check.Resources.OfType<EmbeddedResource>().Single(x=>x.Name.ToString()==n);
                 if(!r.CreateReader().ToArray().SequenceEqual(ko))throw new Exception("KO resource bytes corrupted "+n);
               }
-              Console.WriteLine("Added two Korean CSV managed resources to DLL; original method IL left unmodified.");
+              foreach(var entry in displayOnly) {
+                var method=check.GetTypes().Single(t=>t.FullName==entry.type).Methods.Single(m=>m.Name.ToString()==entry.method);
+                if(method.Body.Instructions.Count(i=>i.OpCode==OpCodes.Ldstr && Equals(i.Operand,entry.korean))!=1 ||
+                   method.Body.Instructions.Any(i=>i.OpCode==OpCodes.Ldstr && Equals(i.Operand,entry.source)))
+                   throw new Exception("Display-only IL validation failed: "+entry.source);
+              }
+              Console.WriteLine("Added ko and ko-KR embedded resources and patched ten verified tooltip ldstr sites.");
+
             }
           }
           CS
@@ -133,7 +160,7 @@ jobs:
             +'- Korean DLL size: '+str(out.stat().st_size)+' bytes; SHA256 '+hashlib.sha256(out.read_bytes()).hexdigest()+'\n'
             +'- Original managed resources: 65; rewritten DLL: 67. All 65 original resources byte-identical.\n'
             +'- Two additional embedded locale resources: ProbablyAdultGoods.Localization.ko.csv and .ko-KR.csv (identical 181-key Korean CSV).\n'
-            +'- Original EmbeddedAssets.Inject dynamically enumerates .csv resources; InjectCsv derives language keys using BaseName. No IL patch required.\n'
+            +'- Original EmbeddedAssets.Inject dynamically enumerates .csv resources; InjectCsv derives language keys using BaseName. No localization-loader IL change required. Exactly 10 method-level display tooltip ldstr references patched: DragonCase.ProgressLine (6), DragonCase.OnTooltip (2), DragonDisplayCase.OnTooltip (2). All gameplay identifiers and other method IL strings left untouched.\n'
             +'- CLR MethodDef 370, TypeDef 92 unchanged. Chinese and English original resources byte-identical.\n'
             +'- 104 old translations reused at same keys and identical Chinese text; 37 moved flavor translations reused by exact source-text match; 38 Chinese source descriptions newly translated; 2 values adapted from original English text, not Chinese-to-Korean literal translations.\n'
             +'- Original source DLL and all other mods unchanged. Unity/CLR runtime loading, game UI, saving and compatibility NOT TESTED.\n',
