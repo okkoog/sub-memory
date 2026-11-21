@@ -13,7 +13,7 @@
 - descriptions.entries 72개: 비어 있지 않은 71개 중 70개 번역 변경, 변수만 있는 1개 원문과 동일, 1개는 원본부터 빈 값.
 - 캐릭터 표시 label 53개: 52개 한국어화, 1개 원문 유지.
 - dialogue 198개: 170개 한국어화, 28개 원문 유지.
-- descriptions.nightScenes 5개: 원문 유지.
+- descriptions.nightScenes 5개: 5개 모두 한국어화.
 - manifest 표시명/설명: 2개 한국어화.
 - game parser에 전달되는 id, bodyId, personalityId, factionId, tag/weight 구조는 변경하지 않았습니다.
 - {name}, {personality}, {faction}, {zone}, {0} 등 원본 변수와 배열 순서는 그대로 유지했습니다.
