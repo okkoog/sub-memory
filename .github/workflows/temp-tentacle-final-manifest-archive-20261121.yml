@@ -1,0 +1,91 @@
+name: Tentacle final Eleanor manifest structure and ZIP coherence
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-final-manifest-archive-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/3842247788/manifest.xml
+            probably-stolen/local-mods/TentacleMod/3843142171/manifest.xml
+            probably-stolen/local-mods/TentacleMod번역/3842247788
+            probably-stolen/local-mods/TentacleMod번역/3843142171
+            probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip
+            probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_DLL_KO_1734_20261121.zip
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Validate translated manifests against original XML structure and refresh ZIPs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib,re,xml.etree.ElementTree as ET
+          root=Path('probably-stolen/local-mods')
+          trans=root/'TentacleMod번역'
+          sets=[
+            ('3842247788','ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip','da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76'),
+            ('3843142171','ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_DLL_KO_1734_20261121.zip','ca7ee69ba8b80f7e24a5bc127cce46ec1a4534c82a1f7f63f2fc0b8fee1c798c')
+          ]
+          report=['# Final Eleanor variants manifest structure and ZIP consistency audit','']
+          def skeleton(s):
+              return re.sub(r'<Description>[^<]*</Description>','<Description>DESC</Description>',
+                      re.sub(r'<Name>[^<]*</Name>','<Name>NAME</Name>',s))
+          for folder,name,sha in sets:
+              src=(root/'TentacleMod'/folder/'manifest.xml').read_text(encoding='utf-8')
+              tr=(trans/folder/'manifest.xml').read_text(encoding='utf-8')
+              assert skeleton(src)==skeleton(tr),folder
+              a=ET.fromstring(src);b=ET.fromstring(tr)
+              for key in ['ID','ModVersion','Author']:
+                  assert a.findtext(key)==b.findtext(key),(folder,key)
+              assert ET.tostring(a.find('Prerequisites'))==ET.tostring(b.find('Prerequisites'))
+              assert ET.tostring(a.find('GameVersions'))==ET.tostring(b.find('GameVersions'))
+              assert ET.tostring(a.find('Assemblies'))==ET.tostring(b.find('Assemblies'))
+              assert ET.tostring(a.find('Capabilities'))==ET.tostring(b.find('Capabilities'))
+              dll=trans/folder/'fallen_heiress_eleanor.dll'
+              assert hashlib.sha256(dll.read_bytes()).hexdigest()==sha
+              z=trans/name
+              items=[]
+              with ZipFile(z) as f:
+                  assert f.testzip() is None
+                  for entry in f.namelist():
+                      body=tr.encode('utf-8') if entry==folder+'/manifest.xml' else f.read(entry)
+                      items.append((entry,body))
+              assert any(k==folder+'/manifest.xml' for k,v in items)
+              assert next(v for k,v in items if k==folder+'/fallen_heiress_eleanor.dll')==dll.read_bytes()
+              temp=z.with_suffix('.new')
+              with ZipFile(temp,'w',ZIP_DEFLATED,compresslevel=6) as f:
+                  for entry,body in items:f.writestr(entry,body)
+              with ZipFile(temp) as f:
+                  assert f.testzip() is None
+                  assert f.read(folder+'/manifest.xml')==tr.encode('utf-8')
+              temp.replace(z)
+              report.append(f'- {folder}: original XML structurally identical except localized Name/Description. Original ID {a.findtext("ID")}, Version {a.findtext("ModVersion")}. DLL SHA256 {sha}; refreshed archive {z.stat().st_size} bytes, ZIP CRC passed.')
+          audit=trans/'번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md'
+          audit.write_text('\n'.join(report)+'\n',encoding='utf-8')
+          print(audit.read_text())
+          PY
+      - name: Publish final coherent version-specific overlay archives
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Eleanor_v1.0.0_DLL_KO_1541_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_DLL_KO_1734_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/Eleanor_VARIANTS_FINAL_MANIFEST_ZIP_AUDIT_20261121.md'
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(tentacle): preserve exact Eleanor source manifest structure and coherent patches'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
