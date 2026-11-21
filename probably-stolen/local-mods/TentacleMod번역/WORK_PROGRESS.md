@@ -22,7 +22,7 @@
 | `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | CSV 우선 검토 필요 |
 | `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/` | CSV/콘텐츠 우선 검토 필요 |
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
-| `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | DLL 중국어 사용자 문자열 228개 발견, 소스 참조 가능 |
+| `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
 | 기타 이미지 교체 패키지 | manifest, 이미지 등 | 문구 여부 확인 후 필요한 경우만 번역 |
 
@@ -49,6 +49,15 @@
 - **대조표**: `번역대조표/ShadowTrade.json` (75쌍 중 59쌍 DLL 반영, 16쌍 내부 비교/식별 가능성으로 보류)
 - **검증**: 한국어 문자열 59개, IL 참조 65개, 메타데이터 크기 및 토큰 검사 통과. 원본 183,808 → 327,168바이트. **게임 내 로딩/동작 미검증**.
 
+
+### ItemPortraitHD.dll — 1차 시험본
+
+- **커밋**: `8a1e73e8fc0f15c56028c4b25ae73116fc47d85a`
+- **수정본**: `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll`
+- **원본 blob SHA**: `57ecff396d96c3f959b08ff775c1e373d3796159`
+- **대조표**: `번역대조표/ItemPortraitHD.json` (94쌍 중 82쌍 DLL 반영, 12쌍 내부 식별자/비교 가능성으로 보류)
+- **검증**: 한국어 문자열 82개, IL 참조 105개, 메타데이터 크기 및 토큰 검사 통과. 원본 169,984 → 275,968바이트. **게임 내 로딩/동작 미검증**.
+- **주의**: 원본 C# 소스가 존재하므로 차후에는 소스 기반으로 더 정확하게 UI 문자열과 내부 판정 문자열을 분리하고 재컴파일하는 방식을 우선 검토한다.
 
 ## 기술 조사 (확인된 사실)
 
