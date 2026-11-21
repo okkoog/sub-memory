@@ -41,7 +41,7 @@ jobs:
           first=json.loads((root/'TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_00_28_20261121.json').read_text(encoding='utf-8'))
           last=json.loads((root/'TentacleMod번역/번역대조표/LewdMeme_2.1.0_manifest_ko_sections_29_49_20261121.json').read_text(encoding='utf-8'))
           assert len(first['translation_sections'])==29 and len(last['translation_sections'])==21
-          assert first['translation_sections']+last['translation_sections']==translated.split('\n\n')
+          assert '\n\n'.join(first['translation_sections']+last['translation_sections'])==translated
           a=ET.fromstring(clean(source));b=ET.fromstring(dest)
           assert a.findtext('ID')==b.findtext('ID')=='lewd_meme'
           assert a.findtext('ModVersion')==b.findtext('ModVersion')=='2.1.0'
