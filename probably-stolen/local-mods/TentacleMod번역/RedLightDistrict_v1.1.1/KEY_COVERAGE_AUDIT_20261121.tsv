@@ -1701,16 +1701,16 @@ row	key	status	reason	original_json	korean_json	method	il_offset	next_operand
 1700	rld_69829acb98715b0c7fca	diagnostic-review	Log/diagnostics, not confirmed player-facing	"""[红灯区][人才情报] 注册 identifier 失败: """	""""""	System.Void RedLightDistrict.TalentIntel::RegisterToDirectory(ItemDirectory)	500	
 1701	rld_646cafa57637a5b83c89	diagnostic-review	Log/diagnostics, not confirmed player-facing	"""[红灯区][人才情报] 已消耗 1 个人才的情报(未知)"""	""""""	System.Boolean RedLightDistrict.TalentIntel::ConsumeOneUnknown()	72	System.Void RedLightDistrict.RLog::Info(System.String)
 1702	rld_a763ca823a59afcfe6a6	diagnostic-review	Log/diagnostics, not confirmed player-facing	"""[红灯区][人才情报] 消耗未知情报失败: """	""""""	System.Boolean RedLightDistrict.TalentIntel::ConsumeOneUnknown()	120	V_7
-1703	rld_3d805d46c1216c3f3652	translated	Korean key verified	"""颜值"""	"""외모"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	13	
-1704	rld_259998749215c94824b1	translated	Korean key verified	"""身材"""	"""체형"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	32	
-1705	rld_6bff630ce07b7f55aafe	translated	Korean key verified	"""气质"""	"""기질"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	51	
-1706	rld_7882d7294814aa654018	translated	Korean key verified	"""处"""	"""처녀"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	70	
-1707	rld_ce6797512aa447acc035	translated	Korean key verified	"""萝莉"""	"""로리"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	89	
-1708	rld_cc6325a044c8dc3fd83e	translated	Korean key verified	"""特性"""	"""특성"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	108	
-1709	rld_95d4e06bc98f69224b3d	translated	Korean key verified	"""颜值(小)"""	"""외모(소)"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	127	
-1710	rld_fb980d761ea335c5e68e	translated	Korean key verified	"""身材(小)"""	"""체형(소)"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	146	
-1711	rld_f75092afdabf8b70989a	translated	Korean key verified	"""气质(小)"""	"""기질(소)"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	165	
-1712	rld_6a5bcff7c36497aa514f	translated	Korean key verified	"""少女"""	"""소녀"""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	184	
+1703	rld_3d805d46c1216c3f3652	untranslated-review	Must inspect call-site context; may be player-visible	"""颜值"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	13	
+1704	rld_259998749215c94824b1	untranslated-review	Must inspect call-site context; may be player-visible	"""身材"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	32	
+1705	rld_6bff630ce07b7f55aafe	untranslated-review	Must inspect call-site context; may be player-visible	"""气质"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	51	
+1706	rld_7882d7294814aa654018	untranslated-review	Must inspect call-site context; may be player-visible	"""处"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	70	
+1707	rld_ce6797512aa447acc035	untranslated-review	Must inspect call-site context; may be player-visible	"""萝莉"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	89	
+1708	rld_cc6325a044c8dc3fd83e	untranslated-review	Must inspect call-site context; may be player-visible	"""特性"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	108	
+1709	rld_95d4e06bc98f69224b3d	untranslated-review	Must inspect call-site context; may be player-visible	"""颜值(小)"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	127	
+1710	rld_fb980d761ea335c5e68e	untranslated-review	Must inspect call-site context; may be player-visible	"""身材(小)"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	146	
+1711	rld_f75092afdabf8b70989a	untranslated-review	Must inspect call-site context; may be player-visible	"""气质(小)"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	165	
+1712	rld_6a5bcff7c36497aa514f	untranslated-review	Must inspect call-site context; may be player-visible	"""少女"""	""""""	System.String RedLightDistrict.TalentIntel::TypeName(System.String)	184	
 1713	rld_cab0891ddb48c0be0ba7	protected-review	Potential internal enum, dictionary key or named-asset look-up	"""颜值(小)"""	""""""	RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)	21	
 1714	rld_f2e46f40043ddf963794	protected-review	Potential internal enum, dictionary key or named-asset look-up	"""颜值"""	""""""	RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)	46	
 1715	rld_5348f52f5409ebcfe7e6	protected-review	Potential internal enum, dictionary key or named-asset look-up	"""身材(小)"""	""""""	RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)	80	
