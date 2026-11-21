@@ -112,18 +112,22 @@ with (HERE / 'internal_string_reference.tsv').open(encoding='utf-8', newline='')
     protected = {item['key']: item for item in csv.DictReader(reference_file, delimiter='\t')}
 assert set(protected) <= set(by_key)
 UNSAFE_NAMING_KEYS.update(protected)
-# The six entries below were originally translated. A targeted dnlib audit
-# demonstrated that four are operands in ContainerByName exact comparisons,
-# and two are IndexOf markers used to find/replace headers in saved descriptions.
-# Switching these lookup literals to Korean makes existing Chinese values fail
-# the comparison (or append a duplicate header after loading older saves).
+# The entries below were previously translated. The original .NET IL audit
+# proves four are exact-name container comparisons. The other six form a
+# mutually dependent status + generated header + IndexOf lookup for feeder/tank
+# long descriptions. All three occurrences of each header must agree with
+# historical saved Chinese text, otherwise repeated updates duplicate labels.
 COMPARISON_PROTECTION = {
     'rld_10348d760c2b2e5465e2', # front cabinet
     'rld_0c3fce20a7384ba2be04', # main warehouse
     'rld_cf1a6f889f4bcc975ed3', # showcase
     'rld_03e37f8200e9d8f405ee', # back hold
-    'rld_4270e752a74b229c8c22', # TalentFeeder AppendFeederLine IndexOf marker
-    'rld_445d455a701f81452b29', # TalentWaterTank AppendTankLine IndexOf marker
+    'rld_33a6ce61cfb86135c728', # feeder status
+    'rld_3d9a9a7c59284f7094b0', # feeder generated header
+    'rld_4270e752a74b229c8c22', # feeder IndexOf marker
+    'rld_560565bbfcde4ea2f6e5', # tank status
+    'rld_dd2d8d84624a3a346cba', # tank generated header
+    'rld_445d455a701f81452b29', # tank IndexOf marker
 }
 assert COMPARISON_PROTECTION <= set(protected), ('missing protected compare keys', COMPARISON_PROTECTION - set(protected))
 assert not (UNSAFE_NAMING_KEYS & set(seed))
