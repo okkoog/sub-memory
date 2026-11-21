@@ -564,7 +564,7 @@ namespace LewdMemeConfig
         private static void RunReloadRepair()
         {
             TryRepair(tentacleBody, "EnsureLayout", "본체 배치 확인 중 오류");
-            TryRepair(itemFactory, "RefreshMilkSprites", "유즙 아이콘 갱신 중 오류");
+            TryRepair(itemFactory, "RefreshMilkSprites", "모유 아이콘 갱신 중 오류");
             TryRepair(spriteInjector, "RepairAllAfterLoad", "저장 파일 복구 중 오류");
             TryRepair(corruptTentacle, "RescanAll", "촉수 재등록 중 오류");
             TryRepair(alarmRescanAll, "알람 시계 재등록 중 오류");
