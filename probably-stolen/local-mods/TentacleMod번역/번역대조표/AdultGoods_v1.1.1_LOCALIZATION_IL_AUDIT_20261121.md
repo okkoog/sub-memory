@@ -1,7 +1,472 @@
 # Adult Goods v1.1.1 embedded localization IL static audit
 
-Methods selected: 10
+Methods selected: 19
 
+## ProbablyAdultGoods.EmbeddedAssets::Inject (06000049)
+- IL_0000: ldtoken ProbablyAdultGoods.EmbeddedAssets
+- IL_0005: call System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+- IL_000A: callvirt System.Reflection.Assembly System.Type::get_Assembly()
+- IL_000F: stloc.0 
+- IL_0010: ldarg.0 
+- IL_0011: brtrue.s IL_0028: ldc.i4.0
+- IL_0013: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_0018: dup 
+- IL_0019: brtrue.s IL_001D: ldstr "EmbeddedAssets: loaded mod null, skip injection."
+- IL_001B: pop 
+- IL_001C: ret 
+- IL_001D: ldstr "EmbeddedAssets: loaded mod null, skip injection."
+- IL_0022: call System.Void ModLog::Log(System.Object)
+- IL_0027: ret 
+- IL_0028: ldc.i4.0 
+- IL_0029: stloc.1 
+- IL_002A: ldc.i4.0 
+- IL_002B: stloc.2 
+- IL_002C: ldloc.0 
+- IL_002D: callvirt System.String[] System.Reflection.Assembly::GetManifestResourceNames()
+- IL_0032: stloc.3 
+- IL_0033: ldc.i4.0 
+- IL_0034: stloc.s V_4
+- IL_0036: br.s IL_00AD: ldloc.s V_4
+- IL_0038: ldloc.3 
+- IL_0039: ldloc.s V_4
+- IL_003B: ldelem.ref 
+- IL_003C: stloc.s V_5
+- IL_003E: ldloc.s V_5
+- IL_0040: ldstr ".csv"
+- IL_0045: ldc.i4.5 
+- IL_0046: callvirt System.Boolean System.String::EndsWith(System.String,System.StringComparison)
+- IL_004B: brfalse.s IL_005B: ldloc.s V_5
+- IL_004D: ldloc.2 
+- IL_004E: ldloc.0 
+- IL_004F: ldloc.s V_5
+- IL_0051: ldarg.0 
+- IL_0052: call System.Int32 ProbablyAdultGoods.EmbeddedAssets::InjectCsv(System.Reflection.Assembly,System.String,LoadedMod)
+- IL_0057: add 
+- IL_0058: stloc.2 
+- IL_0059: br.s IL_0079: leave.s IL_00A7
+- IL_005B: ldloc.s V_5
+- IL_005D: ldstr ".png"
+- IL_0062: ldc.i4.5 
+- IL_0063: callvirt System.Boolean System.String::EndsWith(System.String,System.StringComparison)
+- IL_0068: brfalse.s IL_0079: leave.s IL_00A7
+- IL_006A: ldloc.0 
+- IL_006B: ldloc.s V_5
+- IL_006D: ldarg.0 
+- IL_006E: call System.Boolean ProbablyAdultGoods.EmbeddedAssets::InjectPng(System.Reflection.Assembly,System.String,LoadedMod)
+- IL_0073: brfalse.s IL_0079: leave.s IL_00A7
+- IL_0075: ldloc.1 
+- IL_0076: ldc.i4.1 
+- IL_0077: add 
+- IL_0078: stloc.1 
+- IL_0079: leave.s IL_00A7: ldloc.s V_4
+- IL_007B: stloc.s V_6
+- IL_007D: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_0082: dup 
+- IL_0083: brtrue.s IL_0088: ldstr "EmbeddedAssets failed "
+- IL_0085: pop 
+- IL_0086: br.s IL_00A5: leave.s IL_00A7
+- IL_0088: ldstr "EmbeddedAssets failed "
+- IL_008D: ldloc.s V_5
+- IL_008F: ldstr ": "
+- IL_0094: ldloc.s V_6
+- IL_0096: callvirt System.String System.Exception::get_Message()
+- IL_009B: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+- IL_00A0: call System.Void ModLog::Log(System.Object)
+- IL_00A5: leave.s IL_00A7: ldloc.s V_4
+- IL_00A7: ldloc.s V_4
+- IL_00A9: ldc.i4.1 
+- IL_00AA: add 
+- IL_00AB: stloc.s V_4
+- IL_00AD: ldloc.s V_4
+- IL_00AF: ldloc.3 
+- IL_00B0: ldlen 
+- IL_00B1: conv.i4 
+- IL_00B2: blt.s IL_0038: ldloc.3
+- IL_00B4: ldsfld ModLog ProbablyAdultGoods.ModEntry::Log
+- IL_00B9: dup 
+- IL_00BA: brtrue.s IL_00BE: ldc.i4.5
+- IL_00BC: pop 
+- IL_00BD: ret 
+- IL_00BE: ldc.i4.5 
+- IL_00BF: newarr System.String
+- IL_00C4: dup 
+- IL_00C5: ldc.i4.0 
+- IL_00C6: ldstr "EmbeddedAssets: injected "
+- IL_00CB: stelem.ref 
+- IL_00CC: dup 
+- IL_00CD: ldc.i4.1 
+- IL_00CE: ldloca.s V_1
+- IL_00D0: call System.String System.Int32::ToString()
+- IL_00D5: stelem.ref 
+- IL_00D6: dup 
+- IL_00D7: ldc.i4.2 
+- IL_00D8: ldstr " sprites, "
+- IL_00DD: stelem.ref 
+- IL_00DE: dup 
+- IL_00DF: ldc.i4.3 
+- IL_00E0: ldloca.s V_2
+- IL_00E2: call System.String System.Int32::ToString()
+- IL_00E7: stelem.ref 
+- IL_00E8: dup 
+- IL_00E9: ldc.i4.4 
+- IL_00EA: ldstr " localization entries."
+- IL_00EF: stelem.ref 
+- IL_00F0: call System.String System.String::Concat(System.String[])
+- IL_00F5: call System.Void ModLog::Log(System.Object)
+- IL_00FA: ret 
+## ProbablyAdultGoods.EmbeddedAssets::FindMod (0600004A)
+- IL_0000: newobj System.Void ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::.ctor()
+- IL_0005: stloc.0 
+- IL_0006: ldloc.0 
+- IL_0007: ldarg.0 
+- IL_0008: stfld ModManifest ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::manifest
+- IL_000D: call System.Collections.Generic.List`1<LoadedMod> ModLoader::get_Mods()
+- IL_0012: brfalse.s IL_002B: ldnull
+- IL_0014: call System.Collections.Generic.List`1<LoadedMod> ModLoader::get_Mods()
+- IL_0019: ldloc.0 
+- IL_001A: ldftn System.Boolean ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::<FindMod>b__0(LoadedMod)
+- IL_0020: newobj System.Void System.Predicate`1<LoadedMod>::.ctor(System.Object,System.IntPtr)
+- IL_0025: callvirt LoadedMod System.Collections.Generic.List`1<LoadedMod>::Find(System.Predicate`1<LoadedMod>)
+- IL_002A: ret 
+- IL_002B: ldnull 
+- IL_002C: ret 
+## ProbablyAdultGoods.EmbeddedAssets::ReadText (0600004B)
+- IL_0000: ldtoken ProbablyAdultGoods.EmbeddedAssets
+- IL_0005: call System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+- IL_000A: callvirt System.Reflection.Assembly System.Type::get_Assembly()
+- IL_000F: stloc.0 
+- IL_0010: ldstr "AdultGoodsEmbedded/"
+- IL_0015: ldarg.0 
+- IL_0016: ldc.i4.s 92
+- IL_0018: ldc.i4.s 47
+- IL_001A: callvirt System.String System.String::Replace(System.Char,System.Char)
+- IL_001F: call System.String System.String::Concat(System.String,System.String)
+- IL_0024: stloc.1 
+- IL_0025: ldloc.0 
+- IL_0026: ldloc.1 
+- IL_0027: call System.Byte[] ProbablyAdultGoods.EmbeddedAssets::ReadAll(System.Reflection.Assembly,System.String)
+- IL_002C: stloc.2 
+- IL_002D: ldloc.2 
+- IL_002E: brfalse.s IL_003C: ldarg.0
+- IL_0030: call System.Text.Encoding System.Text.Encoding::get_UTF8()
+- IL_0035: ldloc.2 
+- IL_0036: callvirt System.String System.Text.Encoding::GetString(System.Byte[])
+- IL_003B: ret 
+- IL_003C: ldarg.0 
+- IL_003D: ldc.i4.s 47
+- IL_003F: ldc.i4.s 46
+- IL_0041: callvirt System.String System.String::Replace(System.Char,System.Char)
+- IL_0046: ldc.i4.s 92
+- IL_0048: ldc.i4.s 46
+- IL_004A: callvirt System.String System.String::Replace(System.Char,System.Char)
+- IL_004F: stloc.3 
+- IL_0050: ldloc.0 
+- IL_0051: callvirt System.String[] System.Reflection.Assembly::GetManifestResourceNames()
+- IL_0056: stloc.s V_4
+- IL_0058: ldc.i4.0 
+- IL_0059: stloc.s V_5
+- IL_005B: br.s IL_008F: ldloc.s V_5
+- IL_005D: ldloc.s V_4
+- IL_005F: ldloc.s V_5
+- IL_0061: ldelem.ref 
+- IL_0062: stloc.s V_6
+- IL_0064: ldloc.s V_6
+- IL_0066: ldloc.3 
+- IL_0067: ldc.i4.5 
+- IL_0068: callvirt System.Boolean System.String::EndsWith(System.String,System.StringComparison)
+- IL_006D: brfalse.s IL_0089: ldloc.s V_5
+- IL_006F: ldloc.0 
+- IL_0070: ldloc.s V_6
+- IL_0072: call System.Byte[] ProbablyAdultGoods.EmbeddedAssets::ReadAll(System.Reflection.Assembly,System.String)
+- IL_0077: stloc.2 
+- IL_0078: ldloc.2 
+- IL_0079: brfalse.s IL_0087: ldnull
+- IL_007B: call System.Text.Encoding System.Text.Encoding::get_UTF8()
+- IL_0080: ldloc.2 
+- IL_0081: callvirt System.String System.Text.Encoding::GetString(System.Byte[])
+- IL_0086: ret 
+- IL_0087: ldnull 
+- IL_0088: ret 
+- IL_0089: ldloc.s V_5
+- IL_008B: ldc.i4.1 
+- IL_008C: add 
+- IL_008D: stloc.s V_5
+- IL_008F: ldloc.s V_5
+- IL_0091: ldloc.s V_4
+- IL_0093: ldlen 
+- IL_0094: conv.i4 
+- IL_0095: blt.s IL_005D: ldloc.s V_4
+- IL_0097: ldnull 
+- IL_0098: ret 
+## ProbablyAdultGoods.EmbeddedAssets::ReadAll (0600004C)
+- IL_0000: ldarg.0 
+- IL_0001: ldarg.1 
+- IL_0002: callvirt System.IO.Stream System.Reflection.Assembly::GetManifestResourceStream(System.String)
+- IL_0007: stloc.0 
+- IL_0008: ldloc.0 
+- IL_0009: brtrue.s IL_000F: ldloc.0
+- IL_000B: ldnull 
+- IL_000C: stloc.3 
+- IL_000D: leave.s IL_004D: ldloc.3
+- IL_000F: ldloc.0 
+- IL_0010: callvirt System.Int64 System.IO.Stream::get_Length()
+- IL_0015: conv.ovf.i 
+- IL_0016: newarr System.Byte
+- IL_001B: stloc.1 
+- IL_001C: ldc.i4.0 
+- IL_001D: stloc.2 
+- IL_001E: br.s IL_0039: ldloc.2
+- IL_0020: ldloc.0 
+- IL_0021: ldloc.1 
+- IL_0022: ldloc.2 
+- IL_0023: ldloc.1 
+- IL_0024: ldlen 
+- IL_0025: conv.i4 
+- IL_0026: ldloc.2 
+- IL_0027: sub 
+- IL_0028: callvirt System.Int32 System.IO.Stream::Read(System.Byte[],System.Int32,System.Int32)
+- IL_002D: stloc.s V_4
+- IL_002F: ldloc.s V_4
+- IL_0031: ldc.i4.0 
+- IL_0032: ble.s IL_003F: ldloc.1
+- IL_0034: ldloc.2 
+- IL_0035: ldloc.s V_4
+- IL_0037: add 
+- IL_0038: stloc.2 
+- IL_0039: ldloc.2 
+- IL_003A: ldloc.1 
+- IL_003B: ldlen 
+- IL_003C: conv.i4 
+- IL_003D: blt.s IL_0020: ldloc.0
+- IL_003F: ldloc.1 
+- IL_0040: stloc.3 
+- IL_0041: leave.s IL_004D: ldloc.3
+- IL_0043: ldloc.0 
+- IL_0044: brfalse.s IL_004C: endfinally
+- IL_0046: ldloc.0 
+- IL_0047: callvirt System.Void System.IDisposable::Dispose()
+- IL_004C: endfinally 
+- IL_004D: ldloc.3 
+- IL_004E: ret 
+## ProbablyAdultGoods.EmbeddedAssets::BaseName (0600004D)
+- IL_0000: ldarg.0 
+- IL_0001: ldc.i4.s 46
+- IL_0003: callvirt System.Int32 System.String::LastIndexOf(System.Char)
+- IL_0008: stloc.0 
+- IL_0009: ldloc.0 
+- IL_000A: ldc.i4.0 
+- IL_000B: bge.s IL_0010: ldarg.0
+- IL_000D: ldarg.0 
+- IL_000E: br.s IL_0018: stloc.1
+- IL_0010: ldarg.0 
+- IL_0011: ldc.i4.0 
+- IL_0012: ldloc.0 
+- IL_0013: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+- IL_0018: stloc.1 
+- IL_0019: ldloc.1 
+- IL_001A: ldc.i4.s 46
+- IL_001C: callvirt System.Int32 System.String::LastIndexOf(System.Char)
+- IL_0021: stloc.2 
+- IL_0022: ldloc.2 
+- IL_0023: ldc.i4.0 
+- IL_0024: bge.s IL_0028: ldloc.1
+- IL_0026: ldloc.1 
+- IL_0027: ret 
+- IL_0028: ldloc.1 
+- IL_0029: ldloc.2 
+- IL_002A: ldc.i4.1 
+- IL_002B: add 
+- IL_002C: callvirt System.String System.String::Substring(System.Int32)
+- IL_0031: ret 
+## ProbablyAdultGoods.EmbeddedAssets::InjectPng (0600004E)
+- IL_0000: ldarg.0 
+- IL_0001: ldarg.1 
+- IL_0002: call System.Byte[] ProbablyAdultGoods.EmbeddedAssets::ReadAll(System.Reflection.Assembly,System.String)
+- IL_0007: stloc.0 
+- IL_0008: ldloc.0 
+- IL_0009: brfalse.s IL_000F: ldc.i4.0
+- IL_000B: ldloc.0 
+- IL_000C: ldlen 
+- IL_000D: brtrue.s IL_0011: ldc.i4.2
+- IL_000F: ldc.i4.0 
+- IL_0010: ret 
+- IL_0011: ldc.i4.2 
+- IL_0012: ldc.i4.2 
+- IL_0013: ldc.i4.4 
+- IL_0014: ldc.i4.0 
+- IL_0015: newobj System.Void UnityEngine.Texture2D::.ctor(System.Int32,System.Int32,UnityEngine.TextureFormat,System.Boolean)
+- IL_001A: stloc.1 
+- IL_001B: ldloc.1 
+- IL_001C: ldloc.0 
+- IL_001D: call System.Boolean UnityEngine.ImageConversion::LoadImage(UnityEngine.Texture2D,System.Byte[])
+- IL_0022: brtrue.s IL_0026: ldloc.1
+- IL_0024: ldc.i4.0 
+- IL_0025: ret 
+- IL_0026: ldloc.1 
+- IL_0027: ldc.i4.0 
+- IL_0028: callvirt System.Void UnityEngine.Texture::set_filterMode(UnityEngine.FilterMode)
+- IL_002D: ldloc.1 
+- IL_002E: ldc.i4.1 
+- IL_002F: callvirt System.Void UnityEngine.Texture::set_wrapMode(UnityEngine.TextureWrapMode)
+- IL_0034: ldloc.1 
+- IL_0035: ldarg.1 
+- IL_0036: callvirt System.Void UnityEngine.Object::set_name(System.String)
+- IL_003B: ldarg.1 
+- IL_003C: call System.String ProbablyAdultGoods.EmbeddedAssets::BaseName(System.String)
+- IL_0041: stloc.2 
+- IL_0042: ldc.r4 100
+- IL_0047: ldloc.2 
+- IL_0048: call System.Int32 ProbablyAdultGoods.AdultIds::CellPixelsFor(System.String)
+- IL_004D: conv.r4 
+- IL_004E: mul 
+- IL_004F: ldc.r4 16
+- IL_0054: div 
+- IL_0055: stloc.3 
+- IL_0056: ldloc.1 
+- IL_0057: ldc.r4 0
+- IL_005C: ldc.r4 0
+- IL_0061: ldloc.1 
+- IL_0062: callvirt System.Int32 UnityEngine.Texture::get_width()
+- IL_0067: conv.r4 
+- IL_0068: ldloc.1 
+- IL_0069: callvirt System.Int32 UnityEngine.Texture::get_height()
+- IL_006E: conv.r4 
+- IL_006F: newobj System.Void UnityEngine.Rect::.ctor(System.Single,System.Single,System.Single,System.Single)
+- IL_0074: ldc.r4 0.5
+- IL_0079: ldc.r4 0.5
+- IL_007E: newobj System.Void UnityEngine.Vector2::.ctor(System.Single,System.Single)
+- IL_0083: ldloc.3 
+- IL_0084: ldc.i4.0 
+- IL_0085: ldc.i4.0 
+- IL_0086: call UnityEngine.Sprite UnityEngine.Sprite::Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType)
+- IL_008B: stloc.s V_4
+- IL_008D: ldloc.s V_4
+- IL_008F: ldnull 
+- IL_0090: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- IL_0095: brfalse.s IL_0099: ldloc.s V_4
+- IL_0097: ldc.i4.0 
+- IL_0098: ret 
+- IL_0099: ldloc.s V_4
+- IL_009B: ldloc.2 
+- IL_009C: callvirt System.Void UnityEngine.Object::set_name(System.String)
+- IL_00A1: ldarg.2 
+- IL_00A2: ldfld System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite> LoadedMod::Sprites
+- IL_00A7: ldloc.2 
+- IL_00A8: ldloc.s V_4
+- IL_00AA: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite>::set_Item(System.String,UnityEngine.Sprite)
+- IL_00AF: ldc.i4.1 
+- IL_00B0: ret 
+## ProbablyAdultGoods.EmbeddedAssets::InjectCsv (0600004F)
+- IL_0000: ldarg.0 
+- IL_0001: ldarg.1 
+- IL_0002: call System.Byte[] ProbablyAdultGoods.EmbeddedAssets::ReadAll(System.Reflection.Assembly,System.String)
+- IL_0007: stloc.0 
+- IL_0008: ldloc.0 
+- IL_0009: brfalse.s IL_000F: ldc.i4.0
+- IL_000B: ldloc.0 
+- IL_000C: ldlen 
+- IL_000D: brtrue.s IL_0011: ldarg.1
+- IL_000F: ldc.i4.0 
+- IL_0010: ret 
+- IL_0011: ldarg.1 
+- IL_0012: call System.String ProbablyAdultGoods.EmbeddedAssets::BaseName(System.String)
+- IL_0017: stloc.1 
+- IL_0018: ldarg.2 
+- IL_0019: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>> LoadedMod::Localization
+- IL_001E: ldloc.1 
+- IL_001F: ldloca.s V_2
+- IL_0021: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>>::TryGetValue(System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>&)
+- IL_0026: brtrue.s IL_0040: call System.Text.Encoding System.Text.Encoding::get_UTF8()
+- IL_0028: call System.StringComparer System.StringComparer::get_OrdinalIgnoreCase()
+- IL_002D: newobj System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::.ctor(System.Collections.Generic.IEqualityComparer`1<System.String>)
+- IL_0032: stloc.2 
+- IL_0033: ldarg.2 
+- IL_0034: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>> LoadedMod::Localization
+- IL_0039: ldloc.1 
+- IL_003A: ldloc.2 
+- IL_003B: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>>::set_Item(System.String,System.Collections.Generic.Dictionary`2<System.String,System.String>)
+- IL_0040: call System.Text.Encoding System.Text.Encoding::get_UTF8()
+- IL_0045: ldloc.0 
+- IL_0046: callvirt System.String System.Text.Encoding::GetString(System.Byte[])
+- IL_004B: ldc.i4.0 
+- IL_004C: stloc.3 
+- IL_004D: ldc.i4.s 10
+- IL_004F: ldc.i4.0 
+- IL_0050: callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)
+- IL_0055: stloc.s V_4
+- IL_0057: ldc.i4.0 
+- IL_0058: stloc.s V_5
+- IL_005A: br.s IL_00BE: ldloc.s V_5
+- IL_005C: ldloc.s V_4
+- IL_005E: ldloc.s V_5
+- IL_0060: ldelem.ref 
+- IL_0061: ldc.i4.s 13
+- IL_0063: callvirt System.String System.String::TrimEnd(System.Char)
+- IL_0068: stloc.s V_6
+- IL_006A: ldloc.s V_6
+- IL_006C: callvirt System.Int32 System.String::get_Length()
+- IL_0071: brfalse.s IL_00B8: ldloc.s V_5
+- IL_0073: ldloc.s V_6
+- IL_0075: ldc.i4.s 44
+- IL_0077: callvirt System.Int32 System.String::IndexOf(System.Char)
+- IL_007C: stloc.s V_7
+- IL_007E: ldloc.s V_7
+- IL_0080: ldc.i4.0 
+- IL_0081: ble.s IL_00B8: ldloc.s V_5
+- IL_0083: ldloc.s V_6
+- IL_0085: ldc.i4.0 
+- IL_0086: ldloc.s V_7
+- IL_0088: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+- IL_008D: callvirt System.String System.String::Trim()
+- IL_0092: stloc.s V_8
+- IL_0094: ldloc.s V_6
+- IL_0096: ldloc.s V_7
+- IL_0098: ldc.i4.1 
+- IL_0099: add 
+- IL_009A: callvirt System.String System.String::Substring(System.Int32)
+- IL_009F: stloc.s V_9
+- IL_00A1: ldloc.s V_8
+- IL_00A3: callvirt System.Int32 System.String::get_Length()
+- IL_00A8: brfalse.s IL_00B8: ldloc.s V_5
+- IL_00AA: ldloc.2 
+- IL_00AB: ldloc.s V_8
+- IL_00AD: ldloc.s V_9
+- IL_00AF: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::set_Item(System.String,System.String)
+- IL_00B4: ldloc.3 
+- IL_00B5: ldc.i4.1 
+- IL_00B6: add 
+- IL_00B7: stloc.3 
+- IL_00B8: ldloc.s V_5
+- IL_00BA: ldc.i4.1 
+- IL_00BB: add 
+- IL_00BC: stloc.s V_5
+- IL_00BE: ldloc.s V_5
+- IL_00C0: ldloc.s V_4
+- IL_00C2: ldlen 
+- IL_00C3: conv.i4 
+- IL_00C4: blt.s IL_005C: ldloc.s V_4
+- IL_00C6: ldloc.3 
+- IL_00C7: ret 
+## ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::.ctor (06000127)
+- IL_0000: ldarg.0 
+- IL_0001: call System.Void System.Object::.ctor()
+- IL_0006: ret 
+## ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::<FindMod>b__0 (06000128)
+- IL_0000: ldarg.1 
+- IL_0001: brfalse.s IL_0027: ldc.i4.0
+- IL_0003: ldarg.1 
+- IL_0004: ldfld ModManifest LoadedMod::Manifest
+- IL_0009: brfalse.s IL_0027: ldc.i4.0
+- IL_000B: ldarg.1 
+- IL_000C: ldfld ModManifest LoadedMod::Manifest
+- IL_0011: ldfld System.String ModManifest::ID
+- IL_0016: ldarg.0 
+- IL_0017: ldfld ModManifest ProbablyAdultGoods.EmbeddedAssets/<>c__DisplayClass1_0::manifest
+- IL_001C: ldfld System.String ModManifest::ID
+- IL_0021: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_0026: ret 
+- IL_0027: ldc.i4.0 
+- IL_0028: ret 
 ## ProbablyAdultGoods.ModEntry::Init (0600009B)
 - IL_0000: ldarg.1 
 - IL_0001: stsfld ModManifest ProbablyAdultGoods.ModEntry::Manifest
