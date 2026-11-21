@@ -1,0 +1,122 @@
+name: Tentacle NameGen Korean fallback UI translation and final archive
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-namegen-korean-fallbacks-20261122.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Patch targeted name generator display fallbacks and diagnostics in DLL
+        run: |
+          dotnet new console -o /tmp/tentacle-namegen-fallback --framework net8.0 --force
+          dotnet add /tmp/tentacle-namegen-fallback/tentacle-namegen-fallback.csproj package dnlib --version 4.5.0
+          cat >/tmp/tentacle-namegen-fallback/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class Program {
+            static void Main() {
+              var baseDir="probably-stolen/local-mods/TentacleMod번역";
+              string[] files={baseDir+"/lewd_meme2.1.0/MidnightPawn.dll",baseDir+"/LewdMemeShadowTrade1.6.4/ShadowTrade.dll"};
+              var map=new Dictionary<string,string>{
+                ["名字库读取失败（Content/names.txt 不存在）"]="이름 목록을 불러오지 못했습니다(Content/names.txt 파일 없음)",
+                ["名字库: "]="이름 목록: ",
+                [" 个地区"]="개 지역",
+                [" 个地区（仅中国/日本/韩国）"]="개 지역(중국·일본·한국만)",
+                ["名字库加载失败: "]="이름 목록 불러오기 오류: ",
+                ["无名"]="무명"
+              };
+              var audit=new List<string>{"# Tentacle NameGen UI fallback and diagnostics (2026-11-22)","","- Only String ldstr in class NameGen and named display/log methods were changed.","- Region filter strings 中国/日本/韩国 and file paths remain exact originals.","- Existing Hangul IsCjk check preserved.",""};
+              foreach(var file in files) {
+                using var module=ModuleDefMD.Load(file);
+                var types=module.GetTypes().Where(t=>t.Name.ToString()=="NameGen").ToArray();
+                if(types.Length!=1)throw new Exception("unexpected NameGen type count: "+file);
+                int changed=0,seen=0;
+                foreach(var method in types[0].Methods.Where(m=>m.HasBody)) {
+                  foreach(var ins in method.Body.Instructions.Where(x=>x.OpCode==OpCodes.Ldstr)) {
+                    var original=ins.Operand?.ToString()??"";
+                    string? value=null;
+                    if(method.Name.ToString()=="EnsureLoaded"&&map.TryGetValue(original,out var m))value=m;
+                    if(method.Name.ToString()=="RandomName"&&original=="无名")value="무명";
+                    if(method.Name.ToString()=="RandomNameParts"&&original=="无")value="무";
+                    if(method.Name.ToString()=="RandomNameParts"&&original=="名字")value="명";
+                    if(value!=null) {
+                      ins.Operand=value;
+                      changed++;
+                      audit.Add("- "+Path.GetFileName(file)+" / "+method.Name+" / `"+original+"` → `"+value+"`");
+                    }
+                    if(original=="中国"||original=="日本"||original=="韩国")seen++;
+                  }
+                }
+                var dest=file+".tmp";
+                if(changed>0) {module.Write(dest);File.Move(dest,file,true);}
+                using var verify=ModuleDefMD.Load(file);
+                var t=verify.GetTypes().Single(x=>x.Name.ToString()=="NameGen");
+                var chk=t.Methods.SelectMany(m=>m.HasBody?m.Body.Instructions:Enumerable.Empty<Instruction>())
+                  .Any(ins=>ins.OpCode==OpCodes.Ldstr && (ins.Operand?.ToString()=="名字库读取失败（Content/names.txt 不存在）"||ins.Operand?.ToString()=="无名"));
+                if(chk)throw new Exception("untranslated fallback remains in "+file);
+                if(!t.Methods.Where(x=>x.Name.ToString()=="IsCjk").SelectMany(m=>m.Body.Instructions)
+                  .Any(ins=>ins.OpCode==OpCodes.Ldc_I4 && ins.Operand is int n && n==0xD7A3))throw new Exception("lost Hangul name separator fix");
+                audit.Add("- "+Path.GetFileName(file)+": "+changed+" newly translated IL strings; region constant occurrences "+seen+" preserved in source before writing");
+              }
+              File.WriteAllText(baseDir+"/번역대조표/NPC_NAMEGEN_KOREAN_FALLBACKS_AUDIT_20261122.md",string.Join("\n",audit)+"\n");
+              Console.WriteLine(string.Join("\n",audit));
+            }
+          }
+          CS
+          dotnet run --project /tmp/tentacle-namegen-fallback/tentacle-namegen-fallback.csproj -c Release
+      - name: Refresh 5160-name overlay ZIP after DLL fallback translation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          a=root/'lewd_meme2.1.0/Content/names.txt'
+          b=root/'LewdMemeShadowTrade1.6.4/Content/names.txt'
+          assert a.read_bytes()==b.read_bytes()
+          rows=a.read_text(encoding='utf-8').splitlines()
+          assert len(rows)==13
+          assert sum(len(p.split(',')) for row in rows for p in row.split('\t')[1:])==5160
+          for row in rows:
+              group,fam,given=row.split('\t')
+              assert not any('\u3400'<=c<='\u9fff' for c in fam+given)
+          paths=['lewd_meme2.1.0/Content/names.txt','LewdMemeShadowTrade1.6.4/Content/names.txt',
+                 'lewd_meme2.1.0/MidnightPawn.dll','LewdMemeShadowTrade1.6.4/ShadowTrade.dll',
+                 '번역대조표/NPC_NAMEGEN_HANGUL_FORMATTER_AUDIT_20261122.md',
+                 '번역대조표/NPC_NAMEGEN_KOREAN_FALLBACKS_AUDIT_20261122.md']
+          zpath=root/'ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip'
+          with ZipFile(zpath,'w',ZIP_DEFLATED,compresslevel=6) as z:
+              for path in paths:z.write(root/path,arcname=path)
+          with ZipFile(zpath) as z:
+              assert z.testzip() is None and len(z.namelist())==len(paths)
+              assert all(z.read(path)==(root/path).read_bytes() for path in paths)
+          print('5160 names, two DLLs, audits; ZIP',zpath.stat().st_size,'sha256',hashlib.sha256(zpath.read_bytes()).hexdigest())
+          PY
+      - name: Commit final package and patched binaries
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll probably-stolen/local-mods/TentacleMod번역/번역대조표/NPC_NAMEGEN_KOREAN_FALLBACKS_AUDIT_20261122.md probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Tentacle_NPC_Names_KO_5160_20261122.zip
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(tentacle): localize NameGen failure and random-name fallback UI in both DLLs'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
