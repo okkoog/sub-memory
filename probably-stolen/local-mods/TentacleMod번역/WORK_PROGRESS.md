@@ -262,3 +262,11 @@
 - **코드 검수 특기 사항**: `TranspileCarrier.cs`의 주석 `名:值,…`, `SelfTestPlan.cs`의 주석 `关` 2곳 등 실행과 관계없는 원문 설명은 유지. `Logic/Router.cs`의 패널용 안내 문구 변경에 맞춰 `Tests/RouterTests.cs`의 기존 기대값 **6곳**도 한국어로 수정(커밋 `0760f06a476cc9725888653e2b69c85dda615837`). 테스트는 실행하지 않음.
 - **새 번역 소스 주요 커밋**: `HookRuntime` `f40b9e72339fe288c040e9a326ff121d31710a57`, `IphCompat` `e3acc16cdc35809c9fdc352be0a7d324cc9c7dbe`, `MainModResolver` `b84af5cec974acf811dc3b6a022f308686dfc7a0`, `TranspileCarrier` `a9651f3ea70b17ea8c8f64f54038c3806e8a7282`, `WriteThroughCarrier` `003072b2d2a1de76b80dc34fa44613a9747e76eb`, `AlarmPatch` `c1983e6e5245a88e59991b5b3b4975a7101ff620`, `LevelCapPatch` `5ddf7353a5d7d4885e432c0fbdda6e3f38fd3a79`, `GenderRatioPatch` `46d7b6ffcdbed5f84d096056f85f439c2d1f5f8c`, `Router` `f3ae644c40ecba3910b82d9cdca0098de36b7c16`, `SelfTestPlan` `f661d4dbc578aba9fe0c0d57225b3bf15aec2a37`.
 - **남은 작업**: `LewdMemeLegacyContent`의 JSON 사용자 표시 항목은 필드별 기능·연령 맥락을 분리 검수한 뒤 별도 진행. `lewd_meme_config`의 다른 패치 파일에 남은 실제 로그/화면 문구 선별과 일대일 검수 계속. 기존 미완료 DLL의 빌드·실행 검증은 별개. 어느 파일도 실제 게임 적용 완료로 분류하지 않는다.
+
+## 2026-11-21 — MidnightPawn.dll 활성 문자열 추가 번역
+
+- DLL 시험본 내 실제 `ldstr`로 참조되는 중국어 사용자 표시/진단 문자열 **56종, 58곳**을 1:1로 번역하고 수정 DLL에 반영함. 현재 대상은 초기화·오류·상태·디버그·야간 보고 등의 문구이며, 내부 판정 키로 추정되는 짧은 원문은 보류.
+- **변경 파일**: `lewd_meme2.1.0/MidnightPawn.dll`, `번역대조표/MidnightPawn_DLL_additional_20261121.tsv`. 대조표에 원래 문자열, 번역, 기존/신규 `#US` 오프셋, IL 참조 횟수를 기록함.
+- **기술 처리**: 기존 번역 DLL의 사용자 문자열 힙 뒤에 1976바이트를 추가하고 해당 IL 토큰 58개를 신규 오프셋에 연결. CLR 메타데이터 크기 및 PE 이미지/섹션 크기를 함께 갱신. DLL 용량 313344 → 315392바이트.
+- **정적 검증**: 기존 원문 및 `ldstr` 바이트 패턴 대조, 새 문자열 재디코딩, 전체 수정 토큰 재검증, `.text` 코드 바이트의 그 외 변경 없음(필수 CLI 메타데이터 크기 변경만 예외). **실제 CLR 로딩/게임 구동은 미검증**이며, 파일은 시험본이다.
+- **다음 단계**: 남은 문자열의 기능/표시 구분과 배치별 검수, 기존 DLL 이외 확장 DLL 작업 및 인게임 확인.
