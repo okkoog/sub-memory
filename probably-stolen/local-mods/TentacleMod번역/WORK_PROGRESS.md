@@ -111,7 +111,7 @@
 - **원본 중국어 CSV**: `Localization/zh.csv`, SHA `8f2b0a437a49da5a603c96c5e904c96c33331c97` (192키). 영문 `en.csv`, SHA `dabc580903f01d8f46bcdd848b5173d0f47e45ef` (192키).
 - **버전 주의**: 원본 폴더명은 `v1.1.3`이나 `manifest.xml`의 `ModVersion`은 `1.03`. 동일 여부·모더 표기 기준은 추가 확인 필요.
 - **한국어 CSV**: `TentacleMod번역/可能是成人用品 v1.1.3/Localization/ko.csv`. 작성 커밋 `e6a8e819d45f8c4fb896484108dbd65b3854ff16`. CSV 구조 192행·각 2열·키/순서 동일·빈 값 0·변수 누락 없음.
-- **실제 번역 범위**: 한국어 192개 키. 세 키(`dildo_red_flavor_alt`, `dildo_pink_slim_flavor_alt`, `anal_beads_tail_cat_flavor_alt`)는 연령 관련 표현이 걸려 원문 유지. **완역 아님**.
+- **실제 번역 범위 (최신)**: 한국어 192개 키 모두 처리. 세 키(`dildo_red_flavor_alt`, `dildo_pink_slim_flavor_alt`, `anal_beads_tail_cat_flavor_alt`)는 최초 보류했으나 이후 중립적 성인용 설명 및 메이드 일화 번역으로 변경 완료. **직역 192개가 아닌 189개 원문 의미 번역 + 3개 조정 번역**.
 - **작업 기록**: `번역대조표/AdultGoods_001-096.tsv` (96개), `AdultGoods_097-192.tsv` (96개). 대조표는 총 192개.
 - **검증 범위**: GitHub에서 결과 CSV 재조회, 원본의 192키 동일성, 필드 수/CSV 형식 검사. 원문 수치 단위 `毫米`는 한국어에서 `mm`로 표기한 부분이 있음. **게임 적용 미확인**, 실제 텍스트 표시/UI 잘림·용어·문맥 2차 검수 필요.
 - **주의**: `cfg_specialty_desc_tip`에 따르면 모드의 '개선된 설명' 기능은 신규 생성 아이템에만 적용됨. 기존 아이템이 바뀌지 않을 수 있다.
