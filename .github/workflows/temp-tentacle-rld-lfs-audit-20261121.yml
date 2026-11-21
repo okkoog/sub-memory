@@ -37,6 +37,54 @@ jobs:
           print(dest.read_text())
           if not valid: raise RuntimeError("Git LFS original binary not actually downloaded")
           PY
+      - name: Inspect managed resources and extract available localization candidates
+        shell: bash
+        run: |
+          python3 -m pip install --quiet dnfile
+          python3 - <<'PY'
+          from pathlib import Path
+          import dnfile, csv, hashlib, re
+          root=Path('probably-stolen/local-mods/TentacleMod')
+          src=root/'RedLightDistrict_v1.1.1/RedLightDistrict.dll'
+          audit=Path('probably-stolen/local-mods/TentacleMod번역/번역대조표')
+          pe=dnfile.dnPE(str(src))
+          if not pe.net:
+              raise RuntimeError('Not a CLR managed assembly')
+          resources=pe.net.resources or []
+          rows=[];exported=[]
+          for r in resources:
+              name=str(r.name)
+              payload=r.data
+              if isinstance(payload,bytes):
+                  size=len(payload);sha=hashlib.sha256(payload).hexdigest()
+                  low=name.lower()
+                  if any(x in low for x in ('localization/','localisation/','loc/','language/','.csv','.json','.xml','.txt')) and size<2000000:
+                      try: t=payload.decode('utf-8-sig')
+                      except UnicodeError: t=''
+                      if t and (re.search('[\u3400-\u9fff]',t) or 'localiz' in low):
+                          target=audit/('RLD_embedded_'+str(len(exported)).zfill(3)+'_20261121.txt')
+                          target.write_text('original resource: '+name+'\n'+t,encoding='utf-8')
+                          exported.append(str(target))
+                  rows.append((name,'bytes',size,sha))
+              else:
+                  rows.append((name,type(payload).__name__,0,''))
+          index=audit/'RedLightDistrict_v1.1.1_CLR_RESOURCE_INVENTORY_20261121.tsv'
+          with index.open('w',encoding='utf-8',newline='') as f:
+              w=csv.writer(f,delimiter='\t')
+              w.writerow(('resource_name','kind','size','sha256'))
+              w.writerows(rows)
+          stats=audit/'RedLightDistrict_v1.1.1_CLR_STRUCTURE_20261121.md'
+          stats.write_text(
+             '# RedLightDistrict v1.1.1 CLR static structure\n\n'
+             +'- Original source bytes: '+str(src.stat().st_size)+'\n'
+             +'- Original source SHA256: '+hashlib.sha256(src.read_bytes()).hexdigest()+'\n'
+             +'- MethodDef count: '+str(pe.net.mdtables.MethodDef.num_rows)+'\n'
+             +'- TypeDef count: '+str(pe.net.mdtables.TypeDef.num_rows)+'\n'
+             +'- CLR embedded resources: '+str(len(resources))+'\n'
+             +'- Extracted embedded localization candidates: '+str(len(exported))+'\n'
+             +'- No original DLL files modified; no runtime testing.\n',encoding='utf-8')
+          print(stats.read_text()); print('First 20 resources:',rows[:20])
+          PY
       - name: Save audit file
         shell: bash
         if: always()
@@ -44,5 +92,6 @@ jobs:
           if [ ! -f 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md' ]; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md'
+          git add 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_LFS_ACCESS_20261121.md' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_CLR_RESOURCE_INVENTORY_20261121.tsv' 'probably-stolen/local-mods/TentacleMod번역/번역대조표/RedLightDistrict_v1.1.1_CLR_STRUCTURE_20261121.md'
+          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/번역대조표'/RLD_embedded_*_20261121.txt 2>/dev/null || true
           git diff --cached --quiet || (git commit -m 'audit(tentacle): check RedLightDistrict LFS binary access' && git pull --rebase origin main && git push)
