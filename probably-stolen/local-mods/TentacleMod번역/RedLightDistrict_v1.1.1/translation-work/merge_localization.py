@@ -107,6 +107,11 @@ UNSAFE_NAMING_KEYS={
     'rld_f75092afdabf8b70989a', # 气质(小)
     'rld_6a5bcff7c36497aa514f', # 少女
 }
+# These literals also flow into resource, saved-name, trait or parser lookups.
+with (HERE / 'internal_string_reference.tsv').open(encoding='utf-8', newline='') as reference_file:
+    protected = {item['key']: item for item in csv.DictReader(reference_file, delimiter='\t')}
+assert set(protected) <= set(by_key)
+UNSAFE_NAMING_KEYS.update(protected)
 assert not (UNSAFE_NAMING_KEYS & set(seed))
 combined=dict(existing);combined.update(reviewed);combined.update(direct);combined.update(seed)
 for k in UNSAFE_NAMING_KEYS:combined.pop(k,None)
@@ -140,7 +145,7 @@ AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization p
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
     +'- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).\n'
-    +'- No DLL files edited. Interim ZIP packaging is disabled until translation is complete.\n'
+    +f'- Reviewed internal literals kept original at runtime: {len(protected)}. Korean references and usage are recorded in translation-work/internal_string_reference.tsv.\n'
     +'- Actual game runtime / save data compatibility NOT TESTED; line breaks serialized as literal backslash-n for the game parser.\n\n'
     +'## Manually reviewed new key batches\n\n'
     +''.join(f'- {name}: {count} entries\n' for name,count in manual_counts),encoding='utf-8')
@@ -154,6 +159,8 @@ def classify(row):
     k=row['key']; orig=row['original']; method=row['method']; next_op=row['next_operand']
     if k in combined:
         return 'translated','Korean key verified'
+    if k in protected:
+        return 'protected-internal', protected[k]['usage']
     if DIRECT_COMPARE.search(next_op):
         return 'protected-internal','Exact-match / contains / trait-lookup operand'
     if re.search(r'(?:\.cctor|ParseFilterFromName|::ContainerByName\(|::FindMaidData\()',method) and len(orig)<50:
@@ -174,7 +181,7 @@ with KEY_AUDIT.open('w',encoding='utf-8',newline='') as f, \
     for index,row in enumerate(rows,1):
         status,reason=classify(row);counts[status]+=1
         record=(index,row['key'],status,reason,json.dumps(row['original'],ensure_ascii=False),
-                json.dumps(combined.get(row['key'],''),ensure_ascii=False),
+                json.dumps(combined.get(row['key'], protected.get(row['key'], {}).get('korean_reference', '')),ensure_ascii=False),
                 row['method'],row['IL_offset'],row['next_operand'])
         writer.writerow(record)
         if status=='untranslated-review':queue.writerow(record)
