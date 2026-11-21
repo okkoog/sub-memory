@@ -670,3 +670,12 @@
 ## 2026-11-21 — IronBloodSheer.dll 정적 번역
 
 - 이미지 교체 패키지 `IronBloodSheer/ironblood_sheer.dll`은 활성 중국어가 0개였으며, 초기화/이미지 탐색 오류 등 영어 진단 **10개/IL 10곳**을 한국어 DLL에 반영. 시험 DLL 15872바이트, 다른 메타데이터 보존 정적 검사 통과, **게임 실행 미실시**.
+
+## 2026-11-21 — 14개 한국어 DLL 시험본 분할 ZIP 저장
+
+- 이전 우선 8개 DLL: `ProbablyStolen_Tentacle_DLLs_KO_StaticChecked_20261121.zip` (기존 커밋 `a4578f2ff8da9b7737fb79f61b4548c7ebd64712`).
+- 이후 신규 6개 DLL: `ProbablyStolen_Tentacle_Korean_DLL_New6_StaticChecked_20261121.zip` (본 커밋). 내부 파일은 `LewdMemeBrothel.dll`, `LewdMemeBrood.dll`, 두 버전의 `probably_adult_goods.dll`(서로 다른 폴더), `SarronaTheDragon.dll`, `ironblood_sheer.dll`, `READ_ME_FIRST.txt` 총 7개. ZIP 총 1,619,498바이트, 각 파일 CRC 재검증 완료.
+- 6개 신규 DLL의 실제 수정 문구는 148+290+1+9+9+10 = **467개**, 기존 8개 누적 2,739개를 더한 전체 시험 DLL 14개 기준 **3,206개** (중복 패치/정정은 해당 누적 문서 기준, 실행 검증 여부와 무관).
+- **모든 DLL은 정적 문자열/IL 검증만 통과한 시험본**이다. CLR/Unity 로더, 게임 UI, 저장 및 실제 모드 호환성 테스트는 모두 미실시. 최신 ZIP도 정상 게임 실행을 보증하지 않는다. 새 ZIP에는 모드 원본 파일/리소스/네이티브 BridgeInit 파일이 포함되지 않는다.
+- 미완료 대상 예: `RedLightDistrict_v1.1.1/RedLightDistrict.dll`은 Git LFS 포인터 134바이트뿐이며 실제 원본 크기는 152,970,752바이트로 표시된다. `起飞攻速装-v1.1.3抢先体验版（修bug）/起飞攻速装.dll`은 813개 활성 중국어 #US 문구를 확인했지만 DLL 번역 미착수. `3842247788`, `3843142171`, `落魄千金-埃莉诺 v1.0.3` 등의 엘리너 대형 DLL도 별도 미작업. `Bai She's R18 Texture Pack 1.4.0` 대형 DLL 별도 검토 필요.
+- 원본 내 `3843125702/DsBhyuStart.dll`은 native BridgeInit 로더로서 작업 대상에서 제외했고 실행·보안 분석도 하지 않았다. 이 폴더와 다른 `probably_adult_goods` ID가 중복되는 패키지를 동시에 설치 가능한지는 별도 확인이 필요하다.
