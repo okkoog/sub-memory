@@ -570,7 +570,7 @@ namespace LewdMemeConfig
 
         private static readonly SpawnItemEntry[] SpawnItems =
         {
-            new SpawnItemEntry { Label = "유즙", ItemId = "wondrous_milk" },
+            new SpawnItemEntry { Label = "모유", ItemId = "wondrous_milk" },
             new SpawnItemEntry { Label = "정액", ItemId = "tentacle_semen" },
             new SpawnItemEntry { Label = "배란 주사", ItemId = "ovulation_shot" },
             new SpawnItemEntry { Label = "촉수 상자", ItemId = "tentacle_box" },
