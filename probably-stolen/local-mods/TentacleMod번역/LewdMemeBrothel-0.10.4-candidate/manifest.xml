@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>lewd_meme_brothel</ID>
+  <Name>음란한 심우주: 손안의 유곽</Name>
+  <Author>今夜不能寐</Author>
+  <ModVersion>0.10.4</ModVersion>
+  <Description>'와일드의 인맥'에서 유곽 직업을 해금하면 실물 아이템인 '손안의 유곽'과 메이드복 한 벌을 받습니다. 아이템을 열면 여러 장을 넘길 수 있는 보관함형 단말기가 나옵니다. 각 페이지는 오늘 예약한 고객 한 명을 나타내며, 위에는 기본 게임 행인 NPC 초상화를 사용합니다. 마우스를 올리면 고객이 원하는 특성과 예산을 볼 수 있습니다. 아래의 '묘상' 칸에는 캐릭터 한 명만, 4×4 '판매 권유' 칸에는 개수 제한 없이 아이템을 넣을 수 있습니다. '접객'을 누르면 해당 페이지가 잠기며 숙박료와 추가 판매 성패는 다음 날 공개됩니다. 고객이 원하는 특성 태그에 하나씩 일치할 때마다 고객 예산이 10% 증가합니다. 권유 상품 총액이 예산을 넘는다면 특성 태그가 5개 이상 맞아야만 50% 확률로 빚을 지고 구입합니다. 숙박료는 캐릭터의 오른쪽 클릭 메뉴에서 0~9999로 설정합니다. 숙박료가 고객 예산을 초과한 캐릭터는 해당 페이지에 배치할 수 없습니다. 하루 예약 인원 = 기본 2명 + 고객층 확장(확장마다 +2명, 고객이 요구하는 태그도 각각 +1개) + 진열장에 있는 캐릭터(1명당 +1명). 영업 장부도 두 페이지로 구성됩니다. 첫 페이지는 고객별 거래 내역, 두 번째는 전날 밤 캐릭터 한 명의 접객 보고와 고객 만족도, 무작위 잠자리 불평입니다. 본편 lewd_meme는 반드시 함께 활성화해야 합니다. lewd_meme_legacy_content는 추가 태그만 제공하므로 없어도 실행할 수 있습니다.</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites>
+    <Mod>lewd_meme</Mod>
+  </Prerequisites>
+  <Assemblies>
+    <Assembly>LewdMemeBrothel.dll</Assembly>
+  </Assemblies>
+  <Capabilities>
+    <Capability>reflection-external</Capability>
+  </Capabilities>
+</Manifest>
