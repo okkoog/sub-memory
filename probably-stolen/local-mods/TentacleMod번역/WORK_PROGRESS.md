@@ -20,7 +20,7 @@
 | `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **1차 한국어 DLL 시험본 업로드**: 64개 문자열, 74곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | **1차 한국어 DLL 시험본 업로드**: 59개 문자열, 65곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | **한국어 CSV 178개 키 전수 번역 완료(문자열 구조 검사 통과)**, 실제 게임 적용 미검증 |
-| `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/` | CSV/콘텐츠 우선 검토 필요 |
+| `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/`, manifest v0.3.31 | **공식 중국어 Localization 566키 전수 번역·대조 통과**, Content 대사 JSON은 별도 미완료 |
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
@@ -34,8 +34,9 @@
 | 암거래 확장 | `LewdMemeShadowTrade1.6.4/ShadowTrade.dll` | 문자열 59개/IL 참조 65곳 | 시험 DLL, 게임 테스트 미실시 |
 | 고해상도 초상화 | `ItemPortraitHD_v1.3.0/ItemPortraitHD.dll` | 문자열 82개/IL 참조 105곳 | 시험 DLL, 게임 테스트 미실시 |
 | 매음굴 확장 | `LewdMemeBrothel-0.10.4-candidate/Localization/ko.csv` | 원문 178키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
+| 촉수 번식 확장 | `lewdMemeBrood v0331/Localization/ko.csv` | 원문 566키 모두 번역 | CSV 구조 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **178개 키**는 별도 합산.
+- DLL 문자열 번역 합계 **205개**, 변경된 IL 문자열 참조 **244곳**. 공식 CSV 번역 **744개 키**(Brothel 178 + Brood 566)는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -76,6 +77,19 @@
 - **검수 범위**: `Localization/zh.csv` 178개 전체 키를 한국어로 번역. 178개 전체 키 수/키 일치, 플레이스홀더 `{0}` 형식, `\\n` 표기 수 일치 확인(차이 0).
 - **미검증**: 모드가 자동으로 `ko.csv`를 읽는지, 한글이 게임 화면에 적용되는지 실제 구동 검사 필요. 공식 Localization만 수정했으며 DLL은 수정하지 않음.
 
+### lewdMemeBrood — 공식 Localization 번역 (2026-11-21)
+
+- **한국어 CSV 커밋**: `31bb64610daf1d979734259f88ecaeff4ee27070` (이후 인명 용어 통일 커밋 `b31e6b1dcc6b4b79e73a0f7aa644d2926ea880b0`)
+- **저장 경로**: `lewdMemeBrood v0331/Localization/ko.csv`
+- **원본 파일**: `TentacleMod/lewdMemeBrood v0331/Localization/zh.csv` (Git blob SHA `e06627af1d7d6ecd3ae0682efc40f9dad33aee26`), 영문 `en.csv` SHA `c6ef1a95666cb9b512de7fa9521bacfd10037888`
+- **모드 버전**: manifest `0.3.31`
+- **범위**: 중국어 원본 CSV의 실제 키 **566개 전부 번역**. 아이템·둥지·알·부화·유전자/적응·야간 보고·연출·이북문(Li Beiwen) 스토리·설정·디버그·촉수 말풍선 포함.
+- **검사**: 중문·영문 키 수 각각 566, 한국어 566; 누락 0, 추가 0, 중복 0, `{0}` 등 서식 인자 불일치 0, 이스케이프 줄바꿈 `\\n` 수량 불일치 0, 빈 번역 0. 결과 CSV를 GitHub에서 다시 읽어 확인함.
+- **검수/재개 자료**: `번역대조표/Brood_001-150.tsv` (144키), `Brood_146-306.tsv` (161키), `Brood_307-423.tsv` (117키), `Brood_424-567.tsv` (144키). **계 566키**. 각 파일 키는 원본과 1:1 대응하며, 다음 채팅에서 번역 내용과 문맥을 재검수할 수 있음.
+- **용어**: `李北文`은 한국어 파일과 대조표 모두 **리베이원**으로 통일. `触巢`는 '촉수 둥지', `孵卵巢`는 '부화 둥지', `苗床`은 우선 '숙주'로 번역. 다른 촉수 확장과 맞춰 최종 용어 통일 검수가 필요함.
+- **미완료**: `Content/interactionLines.json`은 별도 중국어 대사 파일로 존재. `ko.csv`만으로는 번역되지 않으므로 반드시 별도로 작업하고 게임 로딩 방식을 확인할 것.
+- **주의**: CSV의 완전한 키 대조를 통과했지만 실제 게임이 `ko.csv`를 불러오는지, 화면 UI 길이/대사 자연스러움은 **미검증**. DLL은 수정하지 않았음.
+
 ## 기술 조사 (확인된 사실)
 
 - `MidnightPawn.dll`: CLR `#US` 문자열 힙에 중국어 문자열 764개; 원본 blob SHA `c27be30741564a51f57495a06681974bcc9421ca`.
@@ -90,7 +104,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. 남은 문자열은 본체부터 순차적으로 1:1 검수. `lewdMemeBrood` 등 CSV 지원 모드는 DLL 수정 전에 Localization부터 확인. 이미 번역한 Brothel도 실제 게임 적용을 확인.
+5. `lewdMemeBrood` 공식 Localization 566키는 번역 완료. 다음으로 별도 `Content/interactionLines.json`의 중국어 대사와 다른 데이터 파일을 번역하고, 원본/한국어의 키·JSON 구조·치환 인자 무결성을 검사. Brothel도 실제 게임 적용을 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
