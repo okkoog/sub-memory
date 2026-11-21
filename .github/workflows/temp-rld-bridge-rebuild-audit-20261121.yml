@@ -1,0 +1,119 @@
+name: RLD original CLR localization bridge feasibility audit
+on:
+  push:
+    paths: [.github/workflows/temp-rld-bridge-rebuild-audit-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work
+          sparse-checkout-cone-mode: false
+      - name: Convert source key-catalog to machine-verifiable lookup
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,csv,collections
+          from pathlib import Path
+          p=Path('probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv')
+          with p.open(encoding='utf-8-sig',newline='') as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==3619,len(rows)
+          assert len(set(r['key'] for r in rows))==3619
+          with Path('/tmp/rld_key_sites.jsonl').open('w',encoding='utf-8') as f:
+              for r in rows:
+                  assert r['method'] and r['original'] and r['key']
+                  f.write(json.dumps({'key':r['key'],'method':r['method'],'offset':int(r['IL_offset']),'text':r['original']},ensure_ascii=False)+'\n')
+          print('source rows',len(rows),'unique methods',len(set(r['method'] for r in rows)))
+          PY
+      - name: Inspect assembly member references and compare Cecil site signatures to dnlib
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/rld_bridge_audit --force
+          dotnet add /tmp/rld_bridge_audit/rld_bridge_audit.csproj package dnlib --version 4.5.0
+          cat >/tmp/rld_bridge_audit/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.Text;
+          using System.Text.Json;
+          using System.IO;
+          using System.Collections.Generic;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          record Site(string key,string method,int offset,string text);
+          class P{
+            static void Main(string[] args){
+              var raw=File.ReadLines(args[1]).Where(x=>!string.IsNullOrWhiteSpace(x))
+                .Select(x=>JsonSerializer.Deserialize<Site>(x)!).ToList();
+              using var md=ModuleDefMD.Load(args[0]);
+              var all=md.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody)).ToArray();
+              var map=all.GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.ToArray());
+              var lines=new List<string>{"# RLD original CLR bridge feasibility and source-site audit","",
+                $"- Original methods {all.Length}; source rows {raw.Count}",
+                $"- Method signatures in dnlib {map.Count}",""};
+              int hit=0,missingMethods=0,missingOffset=0,missingText=0;
+              var issue=new List<string>();
+              foreach(var r in raw){
+                if(!map.TryGetValue(r.method,out var targets)){missingMethods++;if(issue.Count<25)issue.Add("METHOD "+r.method);continue;}
+                var ins=targets.SelectMany(m=>m.Body.Instructions).Where(i=>i.Offset==r.offset).ToArray();
+                if(ins.Length!=1){missingOffset++;if(issue.Count<25)issue.Add("OFFSET "+r.method+" "+r.offset);continue;}
+                if(ins[0].OpCode!=OpCodes.Ldstr||!Equals(ins[0].Operand,r.text)){
+                   missingText++;if(issue.Count<25)issue.Add("TEXT "+r.method+" "+r.offset+" got="+ins[0].Operand);continue;
+                }
+                hit++;
+              }
+              lines.Add($"- Exact method+offset+ldstr matches: {hit}/{raw.Count}");
+              lines.Add($"- Missing methods {missingMethods}; offsets {missingOffset}; string mismatches {missingText}");
+              lines.Add("");
+              lines.Add("## First mismatches");
+              lines.AddRange(issue.Select(x=>"- "+x));lines.Add("");
+              lines.Add("## Referenced mod localization and loader members");
+              foreach(var m in md.GetTypes().SelectMany(t=>t.Methods).Where(m=>m.HasBody)){
+                var interesting=m.Body.Instructions
+                  .Where(i=>i.Operand is IMemberRef ir && (
+                        ir.FullName.Contains("ModLoader::") || ir.FullName.Contains("LoadedMod::")
+                        || ir.FullName.Contains("ModHelper::GetLocalized") ||
+                        ir.FullName.Contains("::get_Localization") || ir.FullName.Contains("::set_Localization")
+                        || ir.FullName.Contains("::get_Manifest")))
+                  .Select(i=>i.Operand!.ToString()).Distinct().ToList();
+                if(interesting.Count>0){
+                  lines.Add("- "+m.FullName);
+                  foreach(var n in interesting)lines.Add("  - "+n);
+                }
+              }
+              lines.Add("");
+              lines.Add("## Assembly refs");
+              lines.AddRange(md.GetAssemblyRefs().Select(x=>"- "+x.FullName));
+              File.WriteAllLines(args[2],lines,new UTF8Encoding(false));
+              Console.WriteLine("exact matches="+hit+", failed="+(missingMethods+missingOffset+missingText));
+              if(hit!=3619)Console.WriteLine(string.Join("\n",issue.Take(6)));
+            }
+          }
+          CS
+          dotnet run --project /tmp/rld_bridge_audit/rld_bridge_audit.csproj -- \
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/RedLightDistrict.dll \
+            /tmp/rld_key_sites.jsonl \
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/BRIDGE_FEASIBILITY_AUDIT_20261121.md
+      - name: Commit audit
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/translation-work/BRIDGE_FEASIBILITY_AUDIT_20261121.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'audit(rld): verify full 3619 localization IL sites and loader symbols'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
