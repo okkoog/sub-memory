@@ -204,7 +204,7 @@ namespace LewdMemeConfig
             foreach (System.Type t in ModReflect.Types(MainModResolver.MainModId))
                 if (t.Name == name)
                     return t;
-            throw new MissingMemberException("主 mod lewd_meme 未暴露类型 " + name);
+            throw new MissingMemberException("본편 모드 lewd_meme가 다음 타입을 제공하지 않음: " + name);
         }
 
         // ------------------------------------------------------------------
@@ -231,7 +231,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("特殊顾客追加名单读取失败,放行原版: " + ex.Message);
+                LogMainWarning("특별 손님 추가 허용 목록 읽기 실패. 원본 동작 허용: " + ex.Message);
                 return true;
             }
             if (SpecialMatcher.IsExtraSpecial(client.identifier, client.spriteName,
@@ -264,7 +264,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("驯服阈值读取失败,放行原版: " + ex.Message);
+                LogMainWarning("복종 임계값 읽기 실패. 원본 동작 허용: " + ex.Message);
                 return true;
             }
             if (threshold == 60) return true; // 默认 = 原版字面量 60
@@ -274,7 +274,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("更新少女描述失败: " + ex.Message); // 原版 catch 同文案
+                LogMainWarning("소녀 설명 갱신 실패: " + ex.Message); // 原版 catch 同文案
             }
             return false;
         }
@@ -334,7 +334,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("排卵诱发剂阈值读取失败,保持原版委托: " + ex.Message);
+                LogMainWarning("배란 유도제 임계값 읽기 실패. 원본 처리 유지: " + ex.Message);
                 return;
             }
             if (threshold == 60) return; // 默认:原版委托(字面量 60)零漂移
@@ -353,8 +353,8 @@ namespace LewdMemeConfig
                         : name + OvuTameText + name + OvuTailText;
                     target.ModifyTag("MAIDEN_OVULATING", delegate (TagState s) { s.Enable(); }, false);
                     ifSetInt(target, "MAIDEN_PREGNANT_DAYS", 0);
-                    toastShow(message, "排卵诱发剂");
-                    LogMain("排卵诱发剂生效：" + name + " 进入排卵期 (调教值 " + trainValue + ")");
+                    toastShow(message, "배란 유도제");
+                    LogMain("배란 유도제 적용: " + name + " 배란기에 진입 (조교 수치 " + trainValue + ")");
                     ModHelper.PlaySound(MainModResolver.MainModId, "semen_apply");
                     self.Destroy();
                 }
@@ -383,7 +383,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("名字库开关读取失败,放行原版: " + ex.Message);
+                LogMainWarning("이름 목록 스위치 읽기 실패. 원본 동작 허용: " + ex.Message);
                 return true;
             }
             if (!useCustom)
@@ -403,7 +403,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("自定义名字库加载失败,回退原版: " + ex.Message);
+                LogMainWarning("사용자 지정 이름 목록 불러오기 실패. 원본 목록 사용: " + ex.Message);
             }
             return true;
         }
@@ -418,14 +418,14 @@ namespace LewdMemeConfig
         {
             if (!ModHelper.ModDataFileExists(ModEntry.Id, CustomNamesPath))
             {
-                LogMainWarning("自定义名字库不存在(ModData/" + ModEntry.Id + "/" + CustomNamesPath
-                    + "),回退原版 Content/names.txt");
+                LogMainWarning("사용자 지정 이름 목록이 없음(ModData/" + ModEntry.Id + "/" + CustomNamesPath
+                    + "). 원본 Content/names.txt를 사용");
                 return false;
             }
             string text = ModHelper.ReadModDataFileText(ModEntry.Id, CustomNamesPath);
             if (string.IsNullOrEmpty(text))
             {
-                LogMainWarning("自定义名字库为空,回退原版 Content/names.txt");
+                LogMainWarning("사용자 지정 이름 목록이 비어 있음. 원본 Content/names.txt를 사용");
                 return false;
             }
             List<string[]> regions = new List<string[]>();
@@ -444,12 +444,12 @@ namespace LewdMemeConfig
             }
             if (regions.Count == 0)
             {
-                LogMainWarning("自定义名字库无有效行(需 TSV: 地区<TAB>姓列表<TAB>名列表),回退原版");
+                LogMainWarning("사용자 지정 이름 목록에 올바른 행이 없음(TSV 필요: 지역<TAB>성씨 목록<TAB>이름 목록). 원본 목록 사용");
                 return false;
             }
             ModReflect.SetStatic(nameGen, "regions", regions);
             ModReflect.SetStatic(nameGen, "loaded", true);
-            LogMain("自定义名字库已加载: " + regions.Count + " 个地区 (ModData/" + ModEntry.Id + "/" + CustomNamesPath + ")");
+            LogMain("사용자 지정 이름 목록을 불러옴: " + regions.Count + "개 지역 (ModData/" + ModEntry.Id + "/" + CustomNamesPath + ")");
             return true;
         }
 
@@ -493,7 +493,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("说明书配置读取失败,保留原版描述: " + ex.Message);
+                LogMainWarning("설명서 설정 읽기 실패. 원본 설명 유지: " + ex.Message);
                 return;
             }
             try
@@ -504,7 +504,7 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("说明书渲染失败,保留原版描述: " + ex.Message);
+                LogMainWarning("설명서 표시 처리 실패. 원본 설명 유지: " + ex.Message);
             }
         }
 
@@ -530,19 +530,19 @@ namespace LewdMemeConfig
             }
             catch (Exception ex)
             {
-                LogMainWarning("读档修复延迟读取失败,沿用原版 1.5s: " + ex.Message);
+                LogMainWarning("저장 파일 복구 지연 시간 읽기 실패. 원본 1.5초 사용: " + ex.Message);
                 delay = 1.5f;
             }
             if (delay < 0f) delay = 0f;
             try
             {
                 ModHelper.Delay(ModEntry.Id, delay, RunReloadRepair);
-                LogMain("读档修复: 已按 ui.reload_fix_delay="
-                    + delay.ToString("0.###", CultureInfo.InvariantCulture) + "s 排队");
+                LogMain("저장 파일 복구: ui.reload_fix_delay="
+                    + delay.ToString("0.###", CultureInfo.InvariantCulture) + "초 후 실행 예약");
             }
             catch (Exception ex)
             {
-                LogMainWarning("读档修复排队失败: " + ex.Message);
+                LogMainWarning("저장 파일 복구 예약 실패: " + ex.Message);
             }
             __result = EmptyCoroutine();
             return false;
@@ -563,12 +563,12 @@ namespace LewdMemeConfig
         /// </summary>
         private static void RunReloadRepair()
         {
-            TryRepair(tentacleBody, "EnsureLayout", "本体布局检查异常");
-            TryRepair(itemFactory, "RefreshMilkSprites", "刷新乳汁图标异常");
-            TryRepair(spriteInjector, "RepairAllAfterLoad", "读档修复异常");
-            TryRepair(corruptTentacle, "RescanAll", "触手登记异常");
-            TryRepair(alarmRescanAll, "闹钟登记异常");
-            TryRepair(trapRescanAll, "陷阱登记异常");
+            TryRepair(tentacleBody, "EnsureLayout", "본체 배치 확인 중 오류");
+            TryRepair(itemFactory, "RefreshMilkSprites", "유즙 아이콘 갱신 중 오류");
+            TryRepair(spriteInjector, "RepairAllAfterLoad", "저장 파일 복구 중 오류");
+            TryRepair(corruptTentacle, "RescanAll", "촉수 재등록 중 오류");
+            TryRepair(alarmRescanAll, "알람 시계 재등록 중 오류");
+            TryRepair(trapRescanAll, "함정 재등록 중 오류");
         }
 
         /// <summary>单段修复:调用 + 原版同文案异常日志(吞掉,不阻断后续段)。</summary>
@@ -612,13 +612,13 @@ namespace LewdMemeConfig
         private static void LogMain(object msg)
         {
             if (mainLog != null) mainLog(msg);
-            else UnityEngine.Debug.Log("[lewd_meme_config→主mod] " + msg);
+            else UnityEngine.Debug.Log("[lewd_meme_config→본편 모드] " + msg);
         }
 
         private static void LogMainWarning(object msg)
         {
             if (mainLogWarning != null) mainLogWarning(msg);
-            else UnityEngine.Debug.LogWarning("[lewd_meme_config→主mod] " + msg);
+            else UnityEngine.Debug.LogWarning("[lewd_meme_config→본편 모드] " + msg);
         }
     }
 }
