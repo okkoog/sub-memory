@@ -1,0 +1,81 @@
+name: Tentacle external display data catalog Korean ZIP verification
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-external-display-data-zip-20261122.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/lewd_meme2.1.0/Data/物品定义.csv
+            probably-stolen/local-mods/TentacleMod/可能是成人用品 v1.1.3/Data/物品标签价格.csv
+            probably-stolen/local-mods/TentacleMod/起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃清单.json
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0/Data/物品定义.csv
+            probably-stolen/local-mods/TentacleMod번역/可能是成人用品 v1.1.3/Data/物品标签价格.csv
+            probably-stolen/local-mods/TentacleMod번역/起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃清单.json
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Audit strict data field preservation and build overlay
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,csv
+          from zipfile import ZipFile,ZIP_DEFLATED
+          base=Path('probably-stolen/local-mods')
+          src=base/'TentacleMod'
+          tr=base/'TentacleMod번역'
+          files=[
+              'lewd_meme2.1.0/Data/物品定义.csv',
+              '可能是成人用品 v1.1.3/Data/物品标签价格.csv',
+              '起飞攻速装-v1.1.3抢先体验版（修bug）/娃娃清单.json'
+          ]
+          with (src/files[0]).open(encoding='utf-8-sig',newline='') as f: a=list(csv.reader(f))
+          with (tr/files[0]).open(encoding='utf-8-sig',newline='') as f: b=list(csv.reader(f))
+          assert len(a)==len(b)==16
+          assert a[0]==b[0]
+          assert all(len(x)==len(y)==8 and x[:1]+x[2:]==y[:1]+y[2:] and x[1]!=y[1] for x,y in zip(a[1:],b[1:]))
+          with (src/files[1]).open(encoding='utf-8-sig',newline='') as f: c=list(csv.reader(f))
+          with (tr/files[1]).open(encoding='utf-8-sig',newline='') as f: d=list(csv.reader(f))
+          assert len(c)==len(d)==42
+          assert c[0]==d[0]
+          assert all(len(x)==len(y)==8 and x[0]==y[0] and x[2:7]==y[2:7] and x[1]!=y[1] and (x[7]=='' or x[7]!=y[7]) for x,y in zip(c[1:],d[1:]))
+          old=json.loads((src/files[2]).read_text(encoding='utf-8-sig'))
+          new=json.loads((tr/files[2]).read_text(encoding='utf-8-sig'))
+          assert len(old)==len(new)==50
+          assert all(set(x)==set(y) and x['name']!=y['name'] and all(x[k]==y[k] for k in x if k!='name') for x,y in zip(old,new))
+          assert all(not any('\u3400'<=ch<='\u9fff' for ch in x['name']) for x in new)
+          doc=tr/'번역대조표/Tentacle_EXTERNAL_DATA_15_41_50_AUDIT_20261122.md'
+          doc.write_text("""# Tentacle game data display-name localization (2026-11-22)
+          
+          - lewd_meme v2.1.0: 15/15 item names translated; all source id/price/dimensions/icons/categories/tags preserved.
+          - Probably Adult Goods v1.1.3: 41/41 catalog names and 9/9 explanatory notes translated. Official ko.csv names reused by ID; original field headers, type tags, prices and codes unchanged.
+          - DailyWearWorkshop: 50/50 doll display names translated; IDs, prices, category, original exact image filenames, width, height unchanged.
+          - Source rows, category tokens, import keys and variable formats were verified against original game data without reordering.
+          - Only display fields were translated; operational labels retained in Chinese where required. Names displayed during gameplay depend on the mod's file loader.
+          """.replace('          ','').strip()+"\n",encoding='utf-8')
+          dest=tr/'ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip'
+          with ZipFile(dest,'w',ZIP_DEFLATED) as z:
+              for file in files:z.write(tr/file,arcname=file)
+              z.write(doc,arcname='STATIC_AUDIT.md')
+          with ZipFile(dest) as z:assert z.testzip() is None and len(z.namelist())==4
+          print('CSV/JSON static audit OK; zip bytes:',dest.stat().st_size)
+          PY
+      - name: Commit archive and audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip probably-stolen/local-mods/TentacleMod번역/번역대조표/Tentacle_EXTERNAL_DATA_15_41_50_AUDIT_20261122.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'package(tentacle): deliver verified 106 display names across three gameplay catalogs'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
