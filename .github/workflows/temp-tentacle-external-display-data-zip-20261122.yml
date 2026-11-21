@@ -37,12 +37,12 @@ jobs:
           with (src/files[0]).open(encoding='utf-8-sig',newline='') as f: a=[row for row in csv.reader(f) if row]
           with (tr/files[0]).open(encoding='utf-8-sig',newline='') as f: b=[row for row in csv.reader(f) if row]
           assert len(a)==len(b)==16
-          assert a[0]==b[0]
+          assert a[0][0]==b[0][0]=='id' and b[0]==['id','이름','가격','너비','높이','아이콘','분류','태그']
           assert all(len(x)==len(y)==8 and x[:1]+x[2:]==y[:1]+y[2:] and x[1]!=y[1] for x,y in zip(a[1:],b[1:]))
           with (src/files[1]).open(encoding='utf-8-sig',newline='') as f: c=[row for row in csv.reader(f) if row]
           with (tr/files[1]).open(encoding='utf-8-sig',newline='') as f: d=[row for row in csv.reader(f) if row]
           assert len(c)==len(d)==42
-          assert c[0]==d[0]
+          assert c[0][0]==d[0][0]=='id' and d[0]==['id','한국어명','기본 가격','격자 크기(너비x높이)','모드 풀 태그','게임 내 유형','기능 태그','비고']
           assert all(len(x)==len(y)==8 and x[0]==y[0] and x[2:7]==y[2:7] and x[1]!=y[1] and (x[7]=='' or x[7]!=y[7]) for x,y in zip(c[1:],d[1:]))
           old=json.loads((src/files[2]).read_text(encoding='utf-8-sig'))
           new=json.loads((tr/files[2]).read_text(encoding='utf-8-sig'))
@@ -56,7 +56,7 @@ jobs:
           - Probably Adult Goods v1.1.3: 41/41 catalog names and 9/9 explanatory notes translated. Official ko.csv names reused by ID; original field headers, type tags, prices and codes unchanged.
           - DailyWearWorkshop: 50/50 doll display names translated; IDs, prices, category, original exact image filenames, width, height unchanged.
           - Source rows, category tokens, import keys and variable formats were verified against original game data without reordering.
-          - Only display fields were translated; operational labels retained in Chinese where required. Names displayed during gameplay depend on the mod's file loader.
+          - Display field headers are Korean where source DLL loading checks only first field `id`; operational categories, file and ID tokens retained in Chinese where required. Names displayed during gameplay depend on the mod's file loader.
           """.replace('          ','').strip()+"\n",encoding='utf-8')
           dest=tr/'ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip'
           with ZipFile(dest,'w',ZIP_DEFLATED) as z:
