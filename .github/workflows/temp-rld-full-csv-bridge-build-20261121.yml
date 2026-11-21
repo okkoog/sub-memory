@@ -158,6 +158,10 @@ jobs:
                   patched++;
               }
               if(patched!=3619)throw new Exception("Only patched "+patched);
+              // The extra ldstr + call lengthens methods that originally had short
+              // branch targets; widen branches before dnlib writes expanded IL.
+              foreach(var method in mod.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody)))
+                  method.Body.SimplifyBranches();
               Directory.CreateDirectory(Path.GetDirectoryName(args[3])!);
               mod.Write(args[3]);
               using var verify=ModuleDefMD.Load(args[3]);
