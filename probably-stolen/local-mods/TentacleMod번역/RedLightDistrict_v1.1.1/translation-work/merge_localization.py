@@ -112,14 +112,57 @@ AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization p
     +f'- New manually reviewed direct keys: {len(direct)}; original user-approved seed entries preserved: {len(seed)}; previously generated keys retained as fallback: {len(existing)}\n'
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
-    +'- No DLL files edited; ZIP contains only ko.csv and progress report.\n'
+    +'- No DLL files edited; ZIP contains ko.csv, progress report, exhaustive key audit and unresolved-key queue.\n'
     +'- Actual game runtime / save data compatibility and CSV parser support for multi-line text NOT TESTED.\n\n'
     +'## Manually reviewed new key batches\n\n'
     +''.join(f'- {name}: {count} entries\n' for name,count in manual_counts),encoding='utf-8')
+
+# Complete original-key audit in cn.csv source order. Never hide unresolved keys.
+KEY_AUDIT=HERE.parent/'KEY_COVERAGE_AUDIT_20261121.tsv'
+REVIEW_QUEUE=HERE.parent/'UNTRANSLATED_REVIEW_QUEUE_20261121.tsv'
+CJK=re.compile(r'[\u3400-\u9fff]')
+DIRECT_COMPARE=re.compile(r'(?:op_Equality|op_Inequality|String::Contains|String::IndexOf|::HasTrait|::IsPatronDisplayName)',re.I)
+def classify(row):
+    k=row['key']; orig=row['original']; method=row['method']; next_op=row['next_operand']
+    if k in combined:
+        return 'translated','Korean key verified'
+    if DIRECT_COMPARE.search(next_op):
+        return 'protected-internal','Exact-match / contains / trait-lookup operand'
+    if re.search(r'(?:\.cctor|ParseFilterFromName|::ContainerByName\(|::FindMaidData\()',method) and len(orig)<50:
+        return 'protected-review','Potential internal enum, dictionary key or named-asset look-up'
+    if orig.startswith(('[红灯区]','[BallDiag]','[RLD','[DEBUG')) or (
+        next_op.find('::Info(')>=0 or next_op.find('::Warning(')>=0 or next_op.find('::Error(')>=0):
+        return 'diagnostic-review','Log/diagnostics, not confirmed player-facing'
+    if not CJK.search(orig) and re.fullmatch(r'[A-Za-z0-9_ ./+\-=:(){}\[\]@#%!?,;<>]+',orig):
+        return 'technical-review','No CJK, token / asset or technical value'
+    return 'untranslated-review','Must inspect call-site context; may be player-visible'
+counts=collections.Counter()
+with KEY_AUDIT.open('w',encoding='utf-8',newline='') as f, \
+     REVIEW_QUEUE.open('w',encoding='utf-8',newline='') as fq:
+    writer=csv.writer(f,delimiter='\t')
+    queue=csv.writer(fq,delimiter='\t')
+    header=('row','key','status','reason','original_json','korean_json','method','il_offset','next_operand')
+    writer.writerow(header);queue.writerow(header)
+    for index,row in enumerate(rows,1):
+        status,reason=classify(row);counts[status]+=1
+        record=(index,row['key'],status,reason,json.dumps(row['original'],ensure_ascii=False),
+                json.dumps(combined.get(row['key'],''),ensure_ascii=False),
+                row['method'],row['IL_offset'],row['next_operand'])
+        writer.writerow(record)
+        if status=='untranslated-review':queue.writerow(record)
+assert sum(counts.values())==len(rows)
+assert counts['translated']==coverage
+AUDIT.write_text(AUDIT.read_text(encoding='utf-8')
+    +'\n## Complete per-key audit in source order\n\n'
+    +''.join('- '+status+': '+str(amount)+'\n' for status,amount in sorted(counts.items()))
+    +'\nKEY_COVERAGE_AUDIT_20261121.tsv covers all '+str(len(rows))+' keys once. UNTRANSLATED_REVIEW_QUEUE_20261121.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.\n',encoding='utf-8')
+
 ZIP.parent.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(ZIP,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     z.write(DEST,arcname='RedLightDistrict_v1.1.1/Localization/ko.csv')
     z.write(AUDIT,arcname='LOCALIZATION_PROGRESS.md')
-with zipfile.ZipFile(ZIP) as z: assert z.testzip() is None and len(z.namelist())==2
+    z.write(KEY_AUDIT,arcname='KEY_COVERAGE_AUDIT.tsv')
+    z.write(REVIEW_QUEUE,arcname='UNTRANSLATED_REVIEW_QUEUE.tsv')
+with zipfile.ZipFile(ZIP) as z: assert z.testzip() is None and len(z.namelist())==4
 print('source',len(rows),'prior-reviewed',id_count,'historical-sites',matched_sites,'manual',len(direct),
       'existing',len(existing),'final',coverage,'remaining',len(rows)-coverage,'zip-bytes',ZIP.stat().st_size)
