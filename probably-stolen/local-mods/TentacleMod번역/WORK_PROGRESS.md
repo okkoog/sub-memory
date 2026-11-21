@@ -660,3 +660,9 @@
 - `SarronaTheDragon.dll` 원본(237056바이트, blob `d0cfa70ac02ef32004da72e61c2473d1aca78cd6`) #US에는 **중국어 문자열 0개**. 원본의 영어 문장 10개 후보 중 일반 진단/오류 메시지 **9개, 활성 IL 9곳**을 한국어 DLL에 반영했고, `Metal Printing Module`은 아이템 명칭 또는 등록 식별자 가능성 때문에 보호.
 - 한국어 번역 DLL 413696바이트. 기존 `Localization/ko.csv` 553키 및 책 번역은 DLL 실적과 별개. `#US` UTF-16LE 역디코딩/활성 IL 참조 및 비대상 메타데이터 불변 정적 검사 완료.
 - 원본 `TentacleMod/` 변경 없음. **실제 CLR/Unity 로드 및 인게임 확인 미실시**. 대조표: `번역대조표/SarronaTheDragon_DLL_sequential_20261121.tsv`.
+
+## 2026-11-21 — 신형 3843125702 성인용품 DLL 추가 정적 번역
+
+- `3843125702/probably_adult_goods.dll` 원본 v1.2.1에서 중국어 포함 활성 28개 확인: 수집장·환룡 진열함·자원 투입·CSV 오류 표시 9개/IL 9곳을 한국어 DLL로 반영. 나머지 19개는 기능성 검색어/상품 유형/경로로 보호. 기존 v1.1.3 DLL과 별도 모드 폴더이므로 서로 혼동하지 않음.
+- `3843125702/DsBhyuStart.dll`은 BridgeInit 네이티브 로더로, 실제 구동/보안 검증을 실시하지 않았으며 번역 대상에서 제외. `TentacleMod/` 원본 변경 없음.
+- 정적 검사는 통과했으나 CLR/Unity 실행 검증 없음. 보고서 `번역대조표/AdultGoods_3843125702_DLL_STATIC_AUDIT_20261121.md`.
