@@ -426,3 +426,12 @@
 - `번역대조표/DLL_additional_20261121.csv` 및 개별 `번역대조표/ShadowTrade_DLL_resumed_20261121.tsv`, `번역대조표/ItemPortraitHD_DLL_resumed_20261121.tsv`, `lewd_meme_config0.7.2-pre/번역대조표/LewdMemeConfig_DLL_resumed_20261121.tsv`에 원문·한국어·`#US` 오프셋·`ldstr` 참조 수 저장. 개별 TSV는 개행을 `\\n`으로 기록하며 DLL 원문에는 실제 개행 반영.
 - 각 DLL에서 원본 `#US` 유지, 새 UTF-16LE 문자열 추가, 활성 IL 참조만 새 오프셋으로 전환. 플레이스홀더 일치·메타데이터 크기·비대상 코드 불변 검증. **Unity/CLR 실제 실행 테스트는 미실시**. 원본 `TentacleMod/` 폴더 변경 없음.
 - DLL 4개 누적 **2305문구/IL 2704곳**.
+
+## 2026-11-21 — LewdMemeLegacyContent.dll 한국어 DLL 첫 배치
+
+- **원본**: `TentacleMod/LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` (SHA `d2999194029f0a185d560af9eccda290a386fdd3`; 39424바이트), 원본 수정 없음.
+- **신규 시험 DLL**: `TentacleMod번역/LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll` (70656바이트). 콘텐츠 로딩·패치 진단·말풍선·야간 보고·설정 UI 관련 활성 `ldstr` **45개 문자열/IL 참조 46곳** 한국어 반영. 내부 분기 문자열 및 인명/세력명/호칭/체형 비교값 보존.
+- **검수**: `번역대조표/LewdMemeLegacyContent_DLL_20261121.tsv`(45행), `번역대조표/DLL_additional_20261121.csv`(동일 건 추가). 원문·번역·원본 및 신규 #US 오프셋·활성 IL 참조 기록.
+- **패치 구현**: PE 원래 메타데이터 전체 복제 후 끝에 기존 #US를 보존한 확장 #US 스트림을 덧붙이고, CLI 메타데이터 RVA·크기 및 마지막 .reloc 크기·메모리 속성 갱신. 새 문자열을 참조하는 `ldstr` 토큰만 변경.
+- **정적 검사**: 45문구 UTF-16LE 역디코딩, 46곳 신규 참조 일치, 원래 토큰 참조 0, 다른 메타데이터 스트림 일치, 형식 변수 보존. **CLR/실제 게임 로더 검증 미수행**, 시험본.
+- **DLL 누적**: 기존 4개 2,305문구/2,704참조 → 이번 1개 45문구/46참조 추가 → **5개 DLL 2350문구/2750참조**.
