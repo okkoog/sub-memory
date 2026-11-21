@@ -18,7 +18,7 @@
 | 원본 폴더 | 원본 또는 자료 확인 | 작업 상태 |
 | --- | --- | --- |
 | `lewd_meme2.1.0/` | `MidnightPawn.dll`, `manifest.xml` (mod v2.1.0), `Data/物品定义.csv` | **1차 한국어 DLL 시험본 업로드**: 64개 문자열, 74곳 참조 수정; 게임 실행 테스트 미실시 |
-| `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | 중국어 DLL 사용자 문자열 969개 발견, 아직 번역본 미반영 |
+| `LewdMemeShadowTrade1.6.4/` | `ShadowTrade.dll`, 문서/데이터 | **1차 한국어 DLL 시험본 업로드**: 59개 문자열, 65곳 참조 수정; 게임 실행 테스트 미실시 |
 | `LewdMemeBrothel-0.10.4-candidate/` | DLL 및 `Localization/en.csv`, `zh.csv` | CSV 우선 검토 필요 |
 | `lewdMemeBrood v0331/` | DLL, `Localization/`, `Content/` | CSV/콘텐츠 우선 검토 필요 |
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
@@ -40,6 +40,15 @@
 - **수정 방식**: 원본 `#US` 힙을 보존하며 새 한국어 문자열을 별도 메타데이터 영역으로 재배치하고, `ldstr` IL 토큰만 변경. 원본 184,320바이트 → 수정본 313,344바이트
 - **구조 검사**: 새 `#US` 문자열을 다시 읽고 변경된 IL 토큰 74개가 정확한 오프셋을 가리키는지 확인. **실행/로딩 검사는 하지 못함**. PE/CLR 로더와 게임 내 UI/기능 테스트가 반드시 필요
 - **주의**: 후보 DLL이 정상 로딩되어도 모든 화면 문구가 번역된 것이 아님. 중국어 문자열 다수가 그대로 남아 있음. 원본은 변경하지 않았음
+
+### ShadowTrade.dll — 1차 시험본
+
+- **커밋**: `88b114cb9745e12ca0bd9067e471bdb9e6cfc421`
+- **수정본**: `LewdMemeShadowTrade1.6.4/ShadowTrade.dll`
+- **원본 blob SHA**: `c400f9dc58750d6b8494725e91e159626611c41c`
+- **대조표**: `번역대조표/ShadowTrade.json` (75쌍 중 59쌍 DLL 반영, 16쌍 내부 비교/식별 가능성으로 보류)
+- **검증**: 한국어 문자열 59개, IL 참조 65개, 메타데이터 크기 및 토큰 검사 통과. 원본 183,808 → 327,168바이트. **게임 내 로딩/동작 미검증**.
+
 
 ## 기술 조사 (확인된 사실)
 
