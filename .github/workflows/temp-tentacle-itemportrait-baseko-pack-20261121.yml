@@ -1,0 +1,98 @@
+name: Tentacle ItemPortraitHD docs and base lewd_meme Korean locale overlays
+on:
+  push:
+    paths: [.github/workflows/temp-tentacle-itemportrait-baseko-pack-20261121.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/ItemPortraitHD_v1.3.0/manifest.xml
+            probably-stolen/local-mods/TentacleMod/lewd_meme2.1.0/Localization/zh.csv
+            probably-stolen/local-mods/TentacleMod번역/ItemPortraitHD_v1.3.0
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0
+          sparse-checkout-cone-mode: false
+      - name: Validate full in-game display manifest and base localization
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,re,xml.etree.ElementTree as ET
+          b=Path('probably-stolen/local-mods')
+          ko=b/'TentacleMod번역'
+          origin=b/'TentacleMod'
+          d='ItemPortraitHD_v1.3.0'
+          a=(origin/d/'manifest.xml').read_text(encoding='utf-8')
+          c=(ko/d/'manifest.xml').read_text(encoding='utf-8')
+          scrub=lambda s:re.sub(r'<Description>[\s\S]*?</Description>','<Description/>',
+                         re.sub(r'<Name>[^<]*</Name>','<Name/>',s))
+          assert scrub(a)==scrub(c)
+          old=ET.fromstring(a);new=ET.fromstring(c)
+          assert old.findtext('ID')==new.findtext('ID')=='item_portrait_hd'
+          assert old.findtext('ModVersion')==new.findtext('ModVersion')=='1.3.0'
+          for field in ['GameVersions','Prerequisites','Assemblies','Capabilities']:
+              assert ET.tostring(old.find(field))==ET.tostring(new.find(field)),field
+          required=['README.md','Portraits/使用说明.txt','Docs/立绘使用说明.md',
+                    'Docs/配置与兼容.md','Docs/开发说明.md','ItemPortraitHD.dll','manifest.xml']
+          assert all((ko/d/p).is_file() for p in required)
+          assert (ko/d/'ItemPortraitHD.dll').stat().st_size>=100000
+          base='lewd_meme2.1.0'
+          z=(origin/base/'Localization/zh.csv').read_text(encoding='utf-8-sig').splitlines()
+          v=(ko/base/'Localization/ko.csv').read_text(encoding='utf-8-sig').splitlines()
+          assert len(z)==len(v)==2
+          a=[s.partition(',')[0] for s in z]
+          b=[s.partition(',')[0] for s in v]
+          assert a==b==['type_tentacle_corrupt','type_tentacle_tool']
+          assert all(s.partition(',')[2] for s in v)
+          assert (ko/base/'MidnightPawn.dll').stat().st_size>=180000
+          print('ItemPortraitHD original manifest IDs, prerequisites and native capability fields preserved. Three docs and PNG instruction present. Base localization 2/2.')
+          PY
+      - name: Package complete overlays and assert binary checksums
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import hashlib
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          plans=[
+            ('ProbablyStolen_ItemPortraitHD_v1.3.0_DLL_Docs_KO_20261121.zip',
+             'ItemPortraitHD_v1.3.0',
+             ['ItemPortraitHD.dll','manifest.xml','README.md',
+              'Portraits/使用说明.txt','Docs/立绘使用说明.md',
+              'Docs/配置与兼容.md','Docs/开发说明.md']),
+            ('ProbablyStolen_LewdMeme_v2.1.0_DLL_Localization_KO_20261121.zip',
+             'lewd_meme2.1.0',
+             ['MidnightPawn.dll','Localization/ko.csv','README_ko.txt'])
+          ]
+          for name,folder,filenames in plans:
+              z=root/name
+              with ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as zip:
+                  for n in filenames:zip.write(root/folder/n,arcname=folder+'/'+n)
+              with ZipFile(z) as check:
+                  assert check.testzip() is None and len(check.namelist())==len(filenames)
+                  for n in filenames:assert check.read(folder+'/'+n)==(root/folder/n).read_bytes()
+              print(name,z.stat().st_size,hashlib.sha256(z.read_bytes()).hexdigest())
+          PY
+      - name: Commit both new overlay ZIPs
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_ItemPortraitHD_v1.3.0_DLL_Docs_KO_20261121.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_LewdMeme_v2.1.0_DLL_Localization_KO_20261121.zip'
+          if ! git diff --cached --quiet; then
+            git commit -m 'pack(tentacle): bundle ItemPortraitHD Korean user/dev docs and base lewd_meme ko keys'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
