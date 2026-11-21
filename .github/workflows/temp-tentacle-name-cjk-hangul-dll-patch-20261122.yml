@@ -76,6 +76,14 @@ jobs:
                 }
                 report.Add("- `"+Path.GetFileName(path)+"`: "+(replacements==1?"patched":"unchanged")+"; NameGen.IsCjk upper bound "+(replacements==1||already==1?"U+D7A3 (Hangul supported)":"unmatched")+".");
                 var constructors=mod.GetTypes().Where(t=>t.Name.ToString()=="NameGen").SelectMany(t=>t.Methods).Where(m=>m.Name.ToString()==".cctor" && m.HasBody).ToArray();
+                var genTypes=mod.GetTypes().Where(t=>t.Name.ToString()=="NameGen").ToArray();
+                foreach(var gt in genTypes) {
+                  report.Add("- `"+Path.GetFileName(path)+"` NameGen methods: "+string.Join(", ",gt.Methods.Select(m=>m.Name.ToString())));
+                  foreach(var gm in gt.Methods.Where(m=>m.HasBody && m.Name.ToString()!=".cctor")) {
+                    var labels=gm.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr).Select(i=>i.Operand?.ToString()??"").Where(v=>v.Length<30).Take(18).ToArray();
+                    if(labels.Length>0)report.Add("  - "+gm.Name+": "+string.Join(", ",labels));
+                  }
+                }
                 if(constructors.Length==1) {
                   var keys=constructors[0].Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr).Select(i=>i.Operand?.ToString()??"").Where(v=>v.Length<20).ToArray();
                   report.Add("- `"+Path.GetFileName(path)+"` NameGen fixed-region string literals: "+string.Join(", ",keys));
