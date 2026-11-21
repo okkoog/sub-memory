@@ -1,0 +1,320 @@
+# RLD v1.1.1 translated string comparison/static callsite review
+
+## RedLightDistrict.TalentScenarioMaid::ContainerByName
+
+- IL_0000: ldarg.0 
+- IL_0001: ldstr "\u524D\u67DC"
+- IL_0006: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_000B: brtrue.s IL_0036: ldarg.1
+- IL_000D: ldarg.0 
+- IL_000E: ldstr "\u4E3B\u4ED3"
+- IL_0013: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_0018: brtrue.s IL_003D: ldarg.1
+- IL_001A: ldarg.0 
+- IL_001B: ldstr "\u5C55\u793A\u67DC"
+- IL_0020: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_0025: brtrue.s IL_0044: ldarg.1
+- IL_0027: ldarg.0 
+- IL_0028: ldstr "\u540E\u8231"
+- IL_002D: call System.Boolean System.String::op_Equality(System.String,System.String)
+- IL_0032: brtrue.s IL_004B: ldarg.1
+- IL_0034: br.s IL_0052: ldnull
+- IL_0036: ldarg.1 
+- IL_0037: callvirt GameGridInventory EmporiumEntry::get_frontInvinvElement()
+- IL_003C: ret 
+- IL_003D: ldarg.1 
+- IL_003E: callvirt GameGridInventory EmporiumEntry::get_invElement()
+- IL_0043: ret 
+- IL_0044: ldarg.1 
+- IL_0045: callvirt GameGridInventory EmporiumEntry::get_showcaseElement()
+- IL_004A: ret 
+- IL_004B: ldarg.1 
+- IL_004C: callvirt GameGridInventory EmporiumEntry::get_backInvinvElement()
+- IL_0051: ret 
+- IL_0052: ldnull 
+- IL_0053: ret 
+## RedLightDistrict.ShowerRoom::RefreshShowerDescription
+
+- IL_0000: ldarg.0 
+- IL_0001: brtrue.s IL_0004: nop
+- IL_0003: ret 
+- IL_0004: nop 
+- IL_0005: ldarg.0 
+- IL_0006: callvirt System.String GameItem::get_shortDescription()
+- IL_000B: ldstr "\u6DCB\u6D74\u95F4\uFF08\u5BB6\u5177\uFF09\n\u62D6\u5165\u6C34\u6216\u6E05\u6D01\u65E5\u7528\u54C1\u8865\u5145\u6E05\u6D01\u503C\uFF08\u4E0A\u96503000\uFF09\n\u62D6\u5165\u4EBA\u624D\u6D88\u8017\u6E05\u6D01\u503C\u4E3A\u5176\u6C90\u6D74"
+- IL_0010: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0015: brfalse.s IL_0022: leave.s IL_0027
+- IL_0017: ldarg.0 
+- IL_0018: ldstr "\u6DCB\u6D74\u95F4\uFF08\u5BB6\u5177\uFF09\n\u62D6\u5165\u6C34\u6216\u6E05\u6D01\u65E5\u7528\u54C1\u8865\u5145\u6E05\u6D01\u503C\uFF08\u4E0A\u96503000\uFF09\n\u62D6\u5165\u4EBA\u624D\u6D88\u8017\u6E05\u6D01\u503C\u4E3A\u5176\u6C90\u6D74"
+- IL_001D: callvirt System.Void GameItem::set_shortDescription(System.String)
+- IL_0022: leave.s IL_0027: nop
+- IL_0024: pop 
+- IL_0025: leave.s IL_0027: nop
+- IL_0027: nop 
+- IL_0028: ldarg.0 
+- IL_0029: callvirt System.String GameItem::get_longDescription()
+- IL_002E: ldstr "\u6DCB\u6D74\u95F4\uFF08\u5BB6\u5177\uFF09\n\u62D6\u5165\u6C34\u6216\u6E05\u6D01\u65E5\u7528\u54C1\u8865\u5145\u6E05\u6D01\u503C\uFF08\u4E0A\u96503000\uFF09\n\u62D6\u5165\u4EBA\u624D\u6D88\u8017\u6E05\u6D01\u503C\u4E3A\u5176\u6C90\u6D74"
+- IL_0033: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0038: brfalse.s IL_0045: leave.s IL_004A
+- IL_003A: ldarg.0 
+- IL_003B: ldstr "\u6DCB\u6D74\u95F4\uFF08\u5BB6\u5177\uFF09\n\u62D6\u5165\u6C34\u6216\u6E05\u6D01\u65E5\u7528\u54C1\u8865\u5145\u6E05\u6D01\u503C\uFF08\u4E0A\u96503000\uFF09\n\u62D6\u5165\u4EBA\u624D\u6D88\u8017\u6E05\u6D01\u503C\u4E3A\u5176\u6C90\u6D74"
+- IL_0040: callvirt System.Void GameItem::set_longDescription(System.String)
+- IL_0045: leave.s IL_004A: ret
+- IL_0047: pop 
+- IL_0048: leave.s IL_004A: ret
+- IL_004A: ret 
+## RedLightDistrict.TalentWaterTank::FindTankInCell
+
+- IL_0000: ldarg.0 
+- IL_0001: brtrue.s IL_0005: nop
+- IL_0003: ldnull 
+- IL_0004: ret 
+- IL_0005: nop 
+- IL_0006: ldarg.0 
+- IL_0007: call GameGridInventory RedLightDistrict.TalentPrison::GetAnyInnerInventory(GameItem)
+- IL_000C: stloc.0 
+- IL_000D: ldloc.0 
+- IL_000E: brfalse.s IL_008F: leave.s IL_0094
+- IL_0010: ldloc.0 
+- IL_0011: callvirt System.Collections.Generic.List`1<GameItem> GameInventory::get_childItems()
+- IL_0016: brfalse.s IL_008F: leave.s IL_0094
+- IL_0018: ldc.i4.0 
+- IL_0019: stloc.1 
+- IL_001A: br.s IL_0081: ldloc.1
+- IL_001C: ldloc.0 
+- IL_001D: callvirt System.Collections.Generic.List`1<GameItem> GameInventory::get_childItems()
+- IL_0022: ldloc.1 
+- IL_0023: callvirt GameItem System.Collections.Generic.List`1<GameItem>::get_Item(System.Int32)
+- IL_0028: stloc.2 
+- IL_0029: ldloc.2 
+- IL_002A: call System.Boolean RedLightDistrict.TalentWaterTank::IsTankItem(GameItem)
+- IL_002F: brfalse.s IL_007D: ldloc.1
+- IL_0031: ldloc.2 
+- IL_0032: callvirt System.String GameItem::get_shortDescription()
+- IL_0037: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_003C: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0041: brfalse.s IL_004E: leave.s IL_0053
+- IL_0043: ldloc.2 
+- IL_0044: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_0049: callvirt System.Void GameItem::set_shortDescription(System.String)
+- IL_004E: leave.s IL_0053: nop
+- IL_0050: pop 
+- IL_0051: leave.s IL_0053: nop
+- IL_0053: nop 
+- IL_0054: ldloc.2 
+- IL_0055: callvirt System.String GameItem::get_longDescription()
+- IL_005A: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_005F: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_0064: brfalse.s IL_0071: leave.s IL_0076
+- IL_0066: ldloc.2 
+- IL_0067: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_006C: callvirt System.Void GameItem::set_longDescription(System.String)
+- IL_0071: leave.s IL_0076: ldloc.2
+- IL_0073: pop 
+- IL_0074: leave.s IL_0076: ldloc.2
+- IL_0076: ldloc.2 
+- IL_0077: stloc.3 
+- IL_0078: leave IL_010B: ldloc.3
+- IL_007D: ldloc.1 
+- IL_007E: ldc.i4.1 
+- IL_007F: add 
+- IL_0080: stloc.1 
+- IL_0081: ldloc.1 
+- IL_0082: ldloc.0 
+- IL_0083: callvirt System.Collections.Generic.List`1<GameItem> GameInventory::get_childItems()
+- IL_0088: callvirt System.Int32 System.Collections.Generic.List`1<GameItem>::get_Count()
+- IL_008D: blt.s IL_001C: ldloc.0
+- IL_008F: leave.s IL_0094: nop
+- IL_0091: pop 
+- IL_0092: leave.s IL_0094: nop
+- IL_0094: nop 
+- IL_0095: ldarg.0 
+- IL_0096: call GameSlotInventory AnimalCage::GetDispenserSlot(GameItem)
+- IL_009B: stloc.s V_4
+- IL_009D: ldloc.s V_4
+- IL_009F: brtrue.s IL_00A4: ldloc.s V_4
+- IL_00A1: ldnull 
+- IL_00A2: br.s IL_00AB: stloc.s V_5
+- IL_00A4: ldloc.s V_4
+- IL_00A6: callvirt GameItem GameSlotInventory::get_childItem()
+- IL_00AB: stloc.s V_5
+- IL_00AD: ldloc.s V_5
+- IL_00AF: call System.Boolean RedLightDistrict.TalentWaterTank::IsTankItem(GameItem)
+- IL_00B4: brfalse.s IL_0104: leave.s IL_0109
+- IL_00B6: ldloc.s V_5
+- IL_00B8: callvirt System.String GameItem::get_shortDescription()
+- IL_00BD: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_00C2: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_00C7: brfalse.s IL_00D5: leave.s IL_00DA
+- IL_00C9: ldloc.s V_5
+- IL_00CB: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_00D0: callvirt System.Void GameItem::set_shortDescription(System.String)
+- IL_00D5: leave.s IL_00DA: nop
+- IL_00D7: pop 
+- IL_00D8: leave.s IL_00DA: nop
+- IL_00DA: nop 
+- IL_00DB: ldloc.s V_5
+- IL_00DD: callvirt System.String GameItem::get_longDescription()
+- IL_00E2: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_00E7: call System.Boolean System.String::op_Inequality(System.String,System.String)
+- IL_00EC: brfalse.s IL_00FA: leave.s IL_00FF
+- IL_00EE: ldloc.s V_5
+- IL_00F0: ldstr "\u56DA\u5BA4\u4E13\u5C5E\u996E\u6C34\u673A\uFF0C\u4E3A\u4EBA\u624D\u63D0\u4F9B\u6D01\u51C0\u996E\u7528\u6C34\u3002\u53CC\u51FB\u53EF\u4ECE\u6C34\u74F6\u5012\u5165\u5B58\u6C34\uFF0C\u6216\u628A\u6C34\u53D6\u51FA\u3002\u62D6\u5165\u5E9F\u91D1\u5C5E(\u002B2000ml)\u6216\u91D1\u5C5E\u952D(\u002B6000ml)\u53EF\u6269\u5BB9\u50A8\u6C34\u4E0A\u9650\uFF0C\u6700\u9AD8 50000ml\u3002\u810F\u6C34(\u6C9F\u6E20\u6C34/\u94C1\u9508\u6C34)\u4E0D\u80FD\u5B58\u5165\u3002"
+- IL_00F5: callvirt System.Void GameItem::set_longDescription(System.String)
+- IL_00FA: leave.s IL_00FF: ldloc.s V_5
+- IL_00FC: pop 
+- IL_00FD: leave.s IL_00FF: ldloc.s V_5
+- IL_00FF: ldloc.s V_5
+- IL_0101: stloc.3 
+- IL_0102: leave.s IL_010B: ldloc.3
+- IL_0104: leave.s IL_0109: ldnull
+- IL_0106: pop 
+- IL_0107: leave.s IL_0109: ldnull
+- IL_0109: ldnull 
+- IL_010A: ret 
+- IL_010B: ldloc.3 
+- IL_010C: ret 
+## RedLightDistrict.TalentFeeder::AppendFeederLine
+
+- IL_0000: ldarg.0 
+- IL_0001: brfalse.s IL_000B: leave.s IL_007D
+- IL_0003: ldarg.0 
+- IL_0004: callvirt System.String GameItem::get_longDescription()
+- IL_0009: brtrue.s IL_000D: ldarg.0
+- IL_000B: leave.s IL_007D: ret
+- IL_000D: ldarg.0 
+- IL_000E: call GameItem RedLightDistrict.TalentFeeder::FindFeederInCell(GameItem)
+- IL_0013: brtrue.s IL_001D: ldarg.0
+- IL_0015: ldstr "\n\u4EBA\u624D\u5582\u98DF\u5668\uFF1A\u672A\u653E\u5165\uFF08\u5411\u4EBA\u624D\u8D29\u5B50\u8D2D\u4E70\u540E\u62D6\u5165\u56DA\u5BA4\uFF09"
+- IL_001A: stloc.0 
+- IL_001B: br.s IL_004B: ldarg.0
+- IL_001D: ldarg.0 
+- IL_001E: call System.Int32 RedLightDistrict.TalentFeeder::GetFeederKcal(GameItem)
+- IL_0023: stloc.3 
+- IL_0024: ldstr "\n\u4EBA\u624D\u5582\u98DF\u5668\uFF1A"
+- IL_0029: ldloca.s V_3
+- IL_002B: call System.String System.Int32::ToString()
+- IL_0030: ldstr " kcal"
+- IL_0035: ldloc.3 
+- IL_0036: ldc.i4.0 
+- IL_0037: ble.s IL_0040: ldstr "（空·人才每晚无处进食）"
+- IL_0039: ldstr ""
+- IL_003E: br.s IL_0045: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+- IL_0040: ldstr "\uFF08\u7A7A\u00B7\u4EBA\u624D\u6BCF\u665A\u65E0\u5904\u8FDB\u98DF\uFF09"
+- IL_0045: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+- IL_004A: stloc.0 
+- IL_004B: ldarg.0 
+- IL_004C: callvirt System.String GameItem::get_longDescription()
+- IL_0051: stloc.1 
+- IL_0052: ldloc.1 
+- IL_0053: ldstr "\n\u4EBA\u624D\u5582\u98DF\u5668\uFF1A"
+- IL_0058: callvirt System.Int32 System.String::IndexOf(System.String)
+- IL_005D: stloc.2 
+- IL_005E: ldloc.2 
+- IL_005F: ldc.i4.0 
+- IL_0060: blt.s IL_006B: ldarg.0
+- IL_0062: ldloc.1 
+- IL_0063: ldc.i4.0 
+- IL_0064: ldloc.2 
+- IL_0065: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+- IL_006A: stloc.1 
+- IL_006B: ldarg.0 
+- IL_006C: ldloc.1 
+- IL_006D: ldloc.0 
+- IL_006E: call System.String System.String::Concat(System.String,System.String)
+- IL_0073: callvirt System.Void GameItem::set_longDescription(System.String)
+- IL_0078: leave.s IL_007D: ret
+- IL_007A: pop 
+- IL_007B: leave.s IL_007D: ret
+- IL_007D: ret 
+## RedLightDistrict.TalentWaterTank::AppendTankLine
+
+- IL_0000: ldarg.0 
+- IL_0001: brfalse.s IL_000B: leave IL_00C5
+- IL_0003: ldarg.0 
+- IL_0004: callvirt System.String GameItem::get_longDescription()
+- IL_0009: brtrue.s IL_0010: ldarg.0
+- IL_000B: leave IL_00C5: ret
+- IL_0010: ldarg.0 
+- IL_0011: call GameItem RedLightDistrict.TalentWaterTank::FindTankInCell(GameItem)
+- IL_0016: stloc.1 
+- IL_0017: ldloc.1 
+- IL_0018: brtrue.s IL_0022: ldc.i4.0
+- IL_001A: ldstr "\n\u4EBA\u624D\u7CFB\u7EDF\u996E\u6C34\u673A\uFF1A\u672A\u653E\u5165\uFF08\u5411\u4EBA\u624D\u8D29\u5B50\u8D2D\u4E70\u540E\u62D6\u5165\u56DA\u5BA4\uFF09"
+- IL_001F: stloc.0 
+- IL_0020: br.s IL_0093: ldarg.0
+- IL_0022: ldc.i4.0 
+- IL_0023: stloc.s V_4
+- IL_0025: ldloc.1 
+- IL_0026: call System.Int32 WaterHelper::GetCurrentCapacityML(GameItem)
+- IL_002B: stloc.s V_4
+- IL_002D: leave.s IL_0032: ldloc.1
+- IL_002F: pop 
+- IL_0030: leave.s IL_0032: ldloc.1
+- IL_0032: ldloc.1 
+- IL_0033: call System.Int32 RedLightDistrict.TalentWaterTank::GetTankCapacityML(GameItem)
+- IL_0038: stloc.s V_5
+- IL_003A: ldc.i4.6 
+- IL_003B: newarr System.String
+- IL_0040: dup 
+- IL_0041: ldc.i4.0 
+- IL_0042: ldstr "\n\u4EBA\u624D\u7CFB\u7EDF\u996E\u6C34\u673A\uFF1A"
+- IL_0047: stelem.ref 
+- IL_0048: dup 
+- IL_0049: ldc.i4.1 
+- IL_004A: ldloca.s V_4
+- IL_004C: call System.String System.Int32::ToString()
+- IL_0051: stelem.ref 
+- IL_0052: dup 
+- IL_0053: ldc.i4.2 
+- IL_0054: ldstr "/"
+- IL_0059: stelem.ref 
+- IL_005A: dup 
+- IL_005B: ldc.i4.3 
+- IL_005C: ldloca.s V_5
+- IL_005E: call System.String System.Int32::ToString()
+- IL_0063: stelem.ref 
+- IL_0064: dup 
+- IL_0065: ldc.i4.4 
+- IL_0066: ldstr "ml"
+- IL_006B: stelem.ref 
+- IL_006C: dup 
+- IL_006D: ldc.i4.5 
+- IL_006E: ldloc.s V_4
+- IL_0070: ldc.i4.0 
+- IL_0071: ble.s IL_0087: ldstr "（空·人才口渴无处可喝）"
+- IL_0073: ldloc.s V_4
+- IL_0075: ldloc.s V_5
+- IL_0077: bge.s IL_0080: ldstr "（已满）"
+- IL_0079: ldstr ""
+- IL_007E: br.s IL_008C: stelem.ref
+- IL_0080: ldstr "\uFF08\u5DF2\u6EE1\uFF09"
+- IL_0085: br.s IL_008C: stelem.ref
+- IL_0087: ldstr "\uFF08\u7A7A\u00B7\u4EBA\u624D\u53E3\u6E34\u65E0\u5904\u53EF\u559D\uFF09"
+- IL_008C: stelem.ref 
+- IL_008D: call System.String System.String::Concat(System.String[])
+- IL_0092: stloc.0 
+- IL_0093: ldarg.0 
+- IL_0094: callvirt System.String GameItem::get_longDescription()
+- IL_0099: stloc.2 
+- IL_009A: ldloc.2 
+- IL_009B: ldstr "\n\u4EBA\u624D\u7CFB\u7EDF\u996E\u6C34\u673A\uFF1A"
+- IL_00A0: callvirt System.Int32 System.String::IndexOf(System.String)
+- IL_00A5: stloc.3 
+- IL_00A6: ldloc.3 
+- IL_00A7: ldc.i4.0 
+- IL_00A8: blt.s IL_00B3: ldarg.0
+- IL_00AA: ldloc.2 
+- IL_00AB: ldc.i4.0 
+- IL_00AC: ldloc.3 
+- IL_00AD: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+- IL_00B2: stloc.2 
+- IL_00B3: ldarg.0 
+- IL_00B4: ldloc.2 
+- IL_00B5: ldloc.0 
+- IL_00B6: call System.String System.String::Concat(System.String,System.String)
+- IL_00BB: callvirt System.Void GameItem::set_longDescription(System.String)
+- IL_00C0: leave.s IL_00C5: ret
+- IL_00C2: pop 
+- IL_00C3: leave.s IL_00C5: ret
+- IL_00C5: ret 
