@@ -52,7 +52,7 @@
 | 촉수 번식 상호작용 | `lewdMemeBrood v0331/Content/interactionLines.json` | 135줄 중 125개 대사 번역, 10개 보류 | JSON 구조·치환 변수 검사 통과, 실제 적용 미검증 |
 | 세로나의 용 모드 | `[SRW-STM]SarronaTheDragon/Localization/ko.csv` | 553키(551개 한국어 문구 + 원본 빈 값 2개) | 원본 키·치환 변수·Books loc 참조 검사 통과, 실제 적용 미검증 |
 
-- DLL 문자열 번역 합계 **2,258개**, 변경된 IL 문자열 참조 **2,652곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
+- DLL 문자열 번역 합계 **2,305개**, 변경된 IL 문자열 참조 **2,704곳**. 공식 CSV 번역 **1,295개 비어 있지 않은 문구**(Brothel 178 + Brood 566 + Sarrona 551; Sarrona 원본 빈 값 2키 별도), 외부 JSON 번역 **125개 대사**는 별도 합산.
 - 원문/번역 대조표: `번역대조표/MidnightPawn.json` (78쌍), `번역대조표/ShadowTrade.json` (75쌍), `번역대조표/ItemPortraitHD.json` (94쌍). 대조표의 전체 행이 DLL에 반영된 것은 아님.
 - 각 JSON에는 기능에 영향을 줄 수 있어 보류한 원문도 포함되어 있음. 정확한 반영 수는 이 문서의 DLL별 기록을 따를 것.
 - DLL과 CSV 모두 게임 실행/표시 테스트 전 결과물이다. 번역 품질에 대한 2차 문맥·용어 검수도 필요하다.
@@ -417,3 +417,12 @@
 - 통합 `번역대조표/DLL_additional_20261121.csv`는 **2,053개 대조 행**(초기 DLL 실험분 등 별도 기록 건수는 제외).
 - 최신 `MidnightPawn` 및 `LewdMemeConfig`에서 활성 한자 포함 문자열 각각 **208개**, **136개**; 기존 확인된 `ShadowTrade` 351개, `ItemPortraitHD` 36개를 합치면 **731개**. 이 중 한국어 안내의 중국어 파일 경로·게임 데이터 식별자·번역하면 안 되는 내부 값 등이 포함되어 전부 번역 대상은 아님.
 - **주의**: 원본 `TentacleMod/` 폴더는 건드리지 않음. 시험 DLL의 정적 검사만 수행했고, 실제 CLR 로딩·Unity 게임 내 기능·배포 안정성을 입증한 것은 아님.
+
+## 2026-11-21 — 중단 복구 이후 후속 DLL 배치
+
+- 중단 전 대량 배치 495문구/IL 542곳을 GitHub 업로드본으로 재검증: Config 87/87·177/177·102/102, MidnightPawn 129/129 모두 통과. 기존 커밋·작업 손실 없음.
+- 추가 **47개 중국어 원문/한국어 문구, 활성 IL 참조 52곳**을 실제 한국어 DLL 시험본에 반영. 내역: `ShadowTrade.dll` 18개/20곳, `ItemPortraitHD.dll` 11개/12곳, `LewdMemeConfig.dll` 18개/20곳.
+- 처리 대상: 매입 명단·치안부 대사·통 사용 안내, 초상화 관리자 UI 라벨, 설정 호환 패치의 숙주 생성 진단. 게임 세력·체형·지역 설정값과 성적 내용이 섞인 미성년 가능 문구는 제외.
+- `번역대조표/DLL_additional_20261121.csv` 및 개별 `번역대조표/ShadowTrade_DLL_resumed_20261121.tsv`, `번역대조표/ItemPortraitHD_DLL_resumed_20261121.tsv`, `lewd_meme_config0.7.2-pre/번역대조표/LewdMemeConfig_DLL_resumed_20261121.tsv`에 원문·한국어·`#US` 오프셋·`ldstr` 참조 수 저장. 개별 TSV는 개행을 `\\n`으로 기록하며 DLL 원문에는 실제 개행 반영.
+- 각 DLL에서 원본 `#US` 유지, 새 UTF-16LE 문자열 추가, 활성 IL 참조만 새 오프셋으로 전환. 플레이스홀더 일치·메타데이터 크기·비대상 코드 불변 검증. **Unity/CLR 실제 실행 테스트는 미실시**. 원본 `TentacleMod/` 폴더 변경 없음.
+- DLL 4개 누적 **2305문구/IL 2704곳**.
