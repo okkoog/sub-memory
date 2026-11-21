@@ -24,7 +24,7 @@
 | `LewdMemeLegacyContent-1.0.6-48sounds/` | DLL, `Content/content.json` | 번역 적용 방식 검토 필요 |
 | `ItemPortraitHD_v1.3.0/` | DLL, C# Source/, 설정 설명 | **1차 한국어 DLL 시험본 업로드**: 82개 문자열, 105곳 참조 수정; 실행 테스트 미실시 |
 | `RedLightDistrict_v1.1.1/` | 대용량 DLL, Git LFS 포인터 | 실제 LFS 바이너리를 확보한 뒤 분석 필요 |
-| `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **한국어 `ko.csv` 192개 키 유지; 189개 번역·3개 원문 유지**, 구조 검사 통과. 런타임 미검증 |
+| `可能是成人用品 v1.1.3/` | 공식 Localization `zh.csv`/`en.csv`, manifest 내부 버전 `1.03` | **한국어 `ko.csv` 192개 키 유지; 192개 한국어화 (3개 중립적 성인 설명으로 대체)**, 구조 검사 통과. 런타임 미검증 |
 | `lewd_meme_config0.7.2-pre/` | DLL + C# Source/ | **C# 소스의 설정 라벨 275개·섹션 13종 한국어 반영**, 툴팁 미완료; DLL 미컴파일·게임 실행 미검증 |
 
 | 기타 이미지 교체 패키지 | manifest, 이미지 등 | 문구 여부 확인 후 필요한 경우만 번역 |
@@ -111,8 +111,8 @@
 - **원본 중국어 CSV**: `Localization/zh.csv`, SHA `8f2b0a437a49da5a603c96c5e904c96c33331c97` (192키). 영문 `en.csv`, SHA `dabc580903f01d8f46bcdd848b5173d0f47e45ef` (192키).
 - **버전 주의**: 원본 폴더명은 `v1.1.3`이나 `manifest.xml`의 `ModVersion`은 `1.03`. 동일 여부·모더 표기 기준은 추가 확인 필요.
 - **한국어 CSV**: `TentacleMod번역/可能是成人用品 v1.1.3/Localization/ko.csv`. 작성 커밋 `e6a8e819d45f8c4fb896484108dbd65b3854ff16`. CSV 구조 192행·각 2열·키/순서 동일·빈 값 0·변수 누락 없음.
-- **실제 번역 범위**: 한국어 189개 키. 세 키(`dildo_red_flavor_alt`, `dildo_pink_slim_flavor_alt`, `anal_beads_tail_cat_flavor_alt`)는 연령 관련 표현이 걸려 원문 유지. **완역 아님**.
-- **작업 기록**: `번역대조표/AdultGoods_001-096.tsv` (94개), `AdultGoods_097-192.tsv` (95개). 대조표는 총 189개.
+- **실제 번역 범위**: 한국어 192개 키. 세 키(`dildo_red_flavor_alt`, `dildo_pink_slim_flavor_alt`, `anal_beads_tail_cat_flavor_alt`)는 연령 관련 표현이 걸려 원문 유지. **완역 아님**.
+- **작업 기록**: `번역대조표/AdultGoods_001-096.tsv` (96개), `AdultGoods_097-192.tsv` (96개). 대조표는 총 192개.
 - **검증 범위**: GitHub에서 결과 CSV 재조회, 원본의 192키 동일성, 필드 수/CSV 형식 검사. 원문 수치 단위 `毫米`는 한국어에서 `mm`로 표기한 부분이 있음. **게임 적용 미확인**, 실제 텍스트 표시/UI 잘림·용어·문맥 2차 검수 필요.
 - **주의**: `cfg_specialty_desc_tip`에 따르면 모드의 '개선된 설명' 기능은 신규 생성 아이템에만 적용됨. 기존 아이템이 바뀌지 않을 수 있다.
 
@@ -126,6 +126,13 @@
 - **툴팁 미번역**: `PanelKeys.cs` 내 툴팁 지정 182곳(고유 99개), `FamilyPanelKeys.cs` 내 93곳(고유 93개), 합계 275곳. 다음 작업에서 원문 1:1 검수 후 한국어로 옮길 것.
 - **중요: 현재 파일은 소스 작업본이며 배포용 DLL이 아님.** 프로젝트의 `LewdMemeConfig.csproj`는 로컬 게임의 `Probably Stolen_Data/Managed`에 있는 Unity·게임 DLL 참조에 의존함. 이 참조가 확보되지 않아 빌드/실게임 동작은 미검증이며, 기존 `LewdMemeConfig.dll`에는 한국어가 적용되지 않음.
 
+
+### 2026-11-21 — 성인용품 설명 3개 보류 해소
+
+- **한국어 CSV 수정 커밋**: `bc7e9b093a650bf35d2e113255b80d5e166cf762`.
+- 원문 그대로 남겨 두었던 `dildo_red_flavor_alt`, `dildo_pink_slim_flavor_alt`, `anal_beads_tail_cat_flavor_alt`를 모두 한국어화했다. 앞의 2개는 미성년자 관련 성적 표현을 옮기지 않고 **성인용품의 규격에 대한 중립적 설명으로 대체**했다. 세 번째는 메이드의 연회·소송 이야기와 풍자적 뉘앙스를 유지해 번역했다.
+- `Localization/ko.csv`는 **192개 키 모두 한국어**이며, `번역대조표/AdultGoods_001-096.tsv` 및 `AdultGoods_097-192.tsv`에도 각 2개/1개 대응을 추가함.
+- 원문을 그대로 직역한 192/192 완전 직역이 아니라 **189개 번역 + 3개 안전한 한국어 표현으로 조정**한 결과. 플레이 테스트는 별도 필요.
 
 ## 기술 조사 (확인된 사실)
 
@@ -161,7 +168,7 @@
 2. 대상 DLL을 원본에서 읽어 별도 한국어 수정 DLL로 생성. 원본 파일에는 쓰기 금지.
 3. 수정한 DLL의 PE/CLR 메타데이터, 모든 새 문자열 참조, 원본과 번역본 차이를 기계적으로 검증.
 4. 성공한 DLL만 `TentacleMod번역/<원본 하위 폴더>/<DLL 파일명>`에 업로드. 각 DLL별 변경 건수와 검사 결과를 이 문서에 반영.
-5. `lewdMemeBrood` 공식 Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 189/192개 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 다음은 툴팁 275곳 번역, DLL 적용 방식 검토, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
+5. `lewdMemeBrood` 공식 Localization 566키, 상호작용 JSON 125/135개, Probably Adult Goods 192/192개 번역 완료. `lewd_meme_config` 설정 라벨 275개·섹션 13종 소스 번역 완료; 다음은 툴팁 275곳 번역, DLL 적용 방식 검토, Brothel/Brood/Adult Goods 실제 게임 적용 확인.
 6. 게임 실행 확인 전에는 **임시 테스트본**으로 표시하고, 오류·미번역 범위를 반드시 기록.
 7. 새 채팅에서는 **이 파일 → 원본 SHA/해당 모드 자료 → 대조표 → 시험 파일** 순서로 확인하고 재작업 범위를 결정. CSV 및 DLL 변경 후 즉시 이 파일 갱신.
 
