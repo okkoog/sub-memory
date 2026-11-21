@@ -546,7 +546,7 @@ namespace LewdMemeConfig
             {
                 if (label != null) return;
                 font = Font.CreateDynamicFontFromOSFont(
-                    new[] { "Microsoft YaHei", "SimHei", "Arial" }, 15);
+                    new[] { "Malgun Gothic", "Microsoft YaHei", "SimHei", "Arial" }, 15);
                 label = new GUIStyle(GUI.skin.label) { font = font, fontSize = 14, wordWrap = false };
                 button = new GUIStyle(GUI.skin.button) { font = font, fontSize = 14, wordWrap = false };
                 header = new GUIStyle(GUI.skin.label)
