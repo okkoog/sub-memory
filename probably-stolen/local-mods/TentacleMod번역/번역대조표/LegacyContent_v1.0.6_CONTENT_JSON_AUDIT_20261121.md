@@ -13,12 +13,12 @@
 | `descriptions.entries` | 72 | 70 | 2 (one variable-only layout already language-neutral, one originally empty string) |
 | `labels.*[].display` | 53 | 52 | 1 (`bodies/sister`) |
 | `dialogue.*` | 198 | 170 | 28 (`combos/sister/tsundere` 10; `combos/sister/motherly` 10; `bodyLines/sister` 8) |
-| `descriptions.nightScenes` | 5 | 0 | 5 |
+| `descriptions.nightScenes` | 5 | 5 | 0 |
 | `manifest.name` / `manifest.description` | 2 | 2 | 0 |
 
 - The item names, UI tooltips, narrative descriptions, per-faction and per-stage descriptions, perk text, night report, cloned character name patterns, category labels and English/Chinese manifest fields were individually translated where indicated above.
 - All 170 changed dialogue lines underwent exact named-format-placeholder comparison (including `{0}`), with **zero placeholder mismatches**.
-- 28 remaining original dialogue lines are explicitly counted as untranslated and **must not** be presented as complete. The 5 unchanged night-scene lines also remain untranslated.
+- 28 remaining original dialogue lines are explicitly counted as untranslated and **must not** be presented as complete. The 5 adult night-scene lines were separately translated, with exact `{name}`, `{zone}`, `{sensitivity}` placeholder comparison.
 - `addressWeights` body IDs and preference weights are not display prose; the original values are preserved and are not counted in the translation numerator.
 
 ## Independent checks before packaging
