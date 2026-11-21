@@ -148,7 +148,7 @@ namespace LewdMemeConfig
                 OurKey = "remake.corruption_box_settlement", TargetMod = FamilyMods.Remake,
                 TargetKey = "corruption_box_settlement", Kind = PanelKind.Choice, Section = RemakeSection, Carrier = CarrierKind.WriteThrough,
                 Label = "침식 구역 숙주 상자 야간 정산 (암거래)", Choices = OnOffChoices, Default = "关",
-                Tooltip = "암거래 침식 구역의 숙주 상자 속 캐릭터를 원본 본체의 야간 정산으로 처리(생산물이 본체 생산 구역에 들어가고 원본 보고서 및 경험치에 포함되며 해당 캐릭터의 유즙과 피로도 추가로 반영; 다른 보관함은 대상 아님; 기본 꺼짐)" + ThroughNote,
+                Tooltip = "암거래 침식 구역의 숙주 상자 속 캐릭터를 원본 본체의 야간 정산으로 처리(생산물이 본체 생산 구역에 들어가고 원본 보고서 및 경험치에 포함되며 해당 캐릭터의 모유과 피로도 추가로 반영; 다른 보관함은 대상 아님; 기본 꺼짐)" + ThroughNote,
             },
             new FamilyPanelEntry
             {
@@ -161,22 +161,22 @@ namespace LewdMemeConfig
             {
                 OurKey = "remake.auto_barrel_milk_wondrous", TargetMod = FamilyMods.Remake,
                 TargetKey = "auto_barrel_milk_wondrous", Kind = PanelKind.Choice, Section = RemakeSection, Carrier = CarrierKind.WriteThrough,
-                Label = "신비한 유즙 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
-                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 신비한 유즙이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
+                Label = "신비한 모유 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
+                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 신비한 모유이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = "remake.auto_barrel_milk_rich", TargetMod = FamilyMods.Remake,
                 TargetKey = "auto_barrel_milk_rich", Kind = PanelKind.Choice, Section = RemakeSection, Carrier = CarrierKind.WriteThrough,
-                Label = "농축 유즙 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
-                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 농축 유즙이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
+                Label = "농축 모유 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
+                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 농축 모유이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = "remake.auto_barrel_milk_diluted", TargetMod = FamilyMods.Remake,
                 TargetKey = "auto_barrel_milk_diluted", Kind = PanelKind.Choice, Section = RemakeSection, Carrier = CarrierKind.WriteThrough,
-                Label = "맑고 달콤한 유즙 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
-                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 맑고 달콤한 유즙이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
+                Label = "맑고 달콤한 모유 통 자동 생성 (암거래)", Choices = OnOffChoices, Default = "开",
+                Tooltip = "암거래의 야간 정산 후 생산 구역을 확인해 맑고 달콤한 모유이 최소 3병이면 통 포장을 자동으로 새로 생성(기본 켜짐; 끄면 신규 생성만 금지)" + ThroughNote,
             },
 
             // ---- 暗流交易联动·差分接管(0.6.0 R4,remake 1.5.19 const 内联 → SubModHook
@@ -188,92 +188,92 @@ namespace LewdMemeConfig
             {
                 OurKey = CfgKeys.RemakeMilkPriceRich, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "농축 유즙 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 150,
-                Tooltip = "작은 가슴의 숙주가 생산하는 농축 유즙의 단가(기본 150; 야간 생산과 아이템 목록 생성기 두 경로에서 동시에 적용)" + TakeoverNote,
+                Label = "농축 모유 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 150,
+                Tooltip = "작은 가슴의 숙주가 생산하는 농축 모유의 단가(기본 150; 야간 생산과 아이템 목록 생성기 두 경로에서 동시에 적용)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkPriceWondrous, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "신비한 유즙 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 80,
-                Tooltip = "보통 크기 가슴의 숙주가 생산하는 신비한 유즙의 단가(기본 80)" + TakeoverNote,
+                Label = "신비한 모유 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 80,
+                Tooltip = "보통 크기 가슴의 숙주가 생산하는 신비한 모유의 단가(기본 80)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkPriceDiluted, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "맑고 달콤한 유즙 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 50,
-                Tooltip = "큰 가슴의 숙주가 생산하는 맑고 달콤한 유즙의 단가(기본 50)" + TakeoverNote,
+                Label = "맑고 달콤한 모유 단가 (암거래)", MinInt = 0, MaxInt = 999999, Default = 50,
+                Tooltip = "큰 가슴의 숙주가 생산하는 맑고 달콤한 모유의 단가(기본 50)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkFeedDiluted, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "맑고 달콤한 유즙 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 20,
-                Tooltip = "맑고 달콤한 유즙을 숙주에게 먹일 때 감소하는 피로도(기본 20)" + TakeoverNote,
+                Label = "맑고 달콤한 모유 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 20,
+                Tooltip = "맑고 달콤한 모유을 숙주에게 먹일 때 감소하는 피로도(기본 20)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkFeedWondrous, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "신비한 유즙 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 30,
-                Tooltip = "신비한 유즙을 숙주에게 먹일 때 감소하는 피로도(기본 30)" + TakeoverNote,
+                Label = "신비한 모유 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 30,
+                Tooltip = "신비한 모유을 숙주에게 먹일 때 감소하는 피로도(기본 30)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkFeedRich, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "농축 유즙 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 25,
-                Tooltip = "농축 유즙을 숙주에게 먹일 때 감소하는 피로도(기본 25)" + TakeoverNote,
+                Label = "농축 모유 급여 시 피로 회복량 (암거래)", MinInt = 0, MaxInt = 100, Default = 25,
+                Tooltip = "농축 모유을 숙주에게 먹일 때 감소하는 피로도(기본 25)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkDrinkCredit, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderInt, Section = RemakeSection,
-                Label = "유즙 음용 시 획득 크레딧 (암거래)", MinInt = 0, MaxInt = 999999, Default = 30,
-                Tooltip = "종류별 유즙 중 한 병을 직접 마실 때 획득하는 크레딧(기본 30, 병은 동시에 소멸)" + TakeoverNote,
+                Label = "모유 음용 시 획득 크레딧 (암거래)", MinInt = 0, MaxInt = 999999, Default = 30,
+                Tooltip = "종류별 모유 중 한 병을 직접 마실 때 획득하는 크레딧(기본 30, 병은 동시에 소멸)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceRichBase, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "농축 유즙 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
-                Tooltip = "작은 가슴의 숙주가 매일 밤 농축 유즙을 생산할 기본 확률(기본 0.3)" + TakeoverNote,
+                Label = "농축 모유 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
+                Tooltip = "작은 가슴의 숙주가 매일 밤 농축 모유을 생산할 기본 확률(기본 0.3)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceRichPerLact, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "농축 유즙 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
-                Tooltip = "농축 유즙 생산 확률의 수유 레벨당 증가량(기본 0.3, 원본의 세 종류가 공유하는 계수)" + TakeoverNote,
+                Label = "농축 모유 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
+                Tooltip = "농축 모유 생산 확률의 수유 레벨당 증가량(기본 0.3, 원본의 세 종류가 공유하는 계수)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceWondrousBase, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "신비한 유즙 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.5f,
-                Tooltip = "보통 크기 가슴의 숙주가 매일 밤 신비한 유즙을 생산할 기본 확률(기본 0.5)" + TakeoverNote,
+                Label = "신비한 모유 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.5f,
+                Tooltip = "보통 크기 가슴의 숙주가 매일 밤 신비한 모유을 생산할 기본 확률(기본 0.5)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceWondrousPerLact, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "신비한 유즙 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
-                Tooltip = "신비한 유즙 생산 확률의 수유 레벨당 증가량(기본 0.3)" + TakeoverNote,
+                Label = "신비한 모유 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
+                Tooltip = "신비한 모유 생산 확률의 수유 레벨당 증가량(기본 0.3)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceDilutedBase, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "맑고 달콤한 유즙 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.7f,
-                Tooltip = "큰 가슴의 숙주가 매일 밤 맑고 달콤한 유즙을 생산할 기본 확률(기본 0.7)" + TakeoverNote,
+                Label = "맑고 달콤한 모유 생산 확률 (기본)", MinFloat = 0f, MaxFloat = 1f, Default = 0.7f,
+                Tooltip = "큰 가슴의 숙주가 매일 밤 맑고 달콤한 모유을 생산할 기본 확률(기본 0.7)" + TakeoverNote,
             },
             new FamilyPanelEntry
             {
                 OurKey = CfgKeys.RemakeMilkChanceDilutedPerLact, TargetMod = FamilyMods.Remake,
                 Carrier = CarrierKind.SubModHook, Kind = PanelKind.SliderFloat, Section = RemakeSection,
-                Label = "맑고 달콤한 유즙 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
-                Tooltip = "맑고 달콤한 유즙 생산 확률의 수유 레벨당 증가량(기본 0.3)" + TakeoverNote,
+                Label = "맑고 달콤한 모유 생산 확률 (레벨당)", MinFloat = 0f, MaxFloat = 1f, Default = 0.3f,
+                Tooltip = "맑고 달콤한 모유 생산 확률의 수유 레벨당 증가량(기본 0.3)" + TakeoverNote,
             },
             // ST4(2026-11-17)全链废弃 5 键条目:remake.semen_base /
             // remake.semen_train_factor(1.6.1 SemenProduction 类整体删除,精液
@@ -797,8 +797,8 @@ namespace LewdMemeConfig
             {
                 OurKey = "iph.body_affects_breast_size", TargetMod = FamilyMods.Iph,
                 TargetKey = "body_affects_breast_size", Kind = PanelKind.Toggle, Section = IphSection, Carrier = CarrierKind.WriteThrough,
-                Label = "체형에 따른 유즙량 조정 (초상화 관리자)", Default = true,
-                Tooltip = "기본 켜짐: 새로 생성된 숙주의 유즙량을 체형-유즙량 확률 행렬로 결정함. 끄면 본편 모드의 원래 값인 유즙량 3종류 각각 1/3 확률로 복귀. 메인 패널의 가슴 크기 후보군을 양보한 뒤에는 이 설정이 유즙량 분포를 결정함" + ThroughNote,
+                Label = "체형에 따른 모유량 조정 (초상화 관리자)", Default = true,
+                Tooltip = "기본 켜짐: 새로 생성된 숙주의 모유량을 체형-모유량 확률 행렬로 결정함. 끄면 본편 모드의 원래 값인 모유량 3종류 각각 1/3 확률로 복귀. 메인 패널의 가슴 크기 후보군을 양보한 뒤에는 이 설정이 모유량 분포를 결정함" + ThroughNote,
             },
             new FamilyPanelEntry
             {
