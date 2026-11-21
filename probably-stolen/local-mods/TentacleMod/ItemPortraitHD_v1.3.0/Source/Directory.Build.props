@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <ItemPortraitHDBuildRoot Condition="'$(TEMP)' != ''">$(TEMP)\ProbablyStolenItemPortraitHD\$(MSBuildProjectName)</ItemPortraitHDBuildRoot>
+    <BaseIntermediateOutputPath Condition="'$(ItemPortraitHDBuildRoot)' != ''">$(ItemPortraitHDBuildRoot)\obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath Condition="'$(ItemPortraitHDBuildRoot)' != ''">$(ItemPortraitHDBuildRoot)\bin\</BaseOutputPath>
+  </PropertyGroup>
+</Project>

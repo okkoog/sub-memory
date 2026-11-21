@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <!-- 编译与 NuGet 中间产物放在模组目录外，避免被游戏的模组检查扫描。 -->
+    <RemakeBuildRoot Condition="'$(RemakeBuildRoot)' == ''">$([System.IO.Path]::GetTempPath())lewd_meme_remake-build\$([MSBuild]::StableStringHash('$(MSBuildThisFileDirectory)'))\</RemakeBuildRoot>
+    <BaseIntermediateOutputPath>$(RemakeBuildRoot)obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(RemakeBuildRoot)bin\</BaseOutputPath>
+  </PropertyGroup>
+</Project>

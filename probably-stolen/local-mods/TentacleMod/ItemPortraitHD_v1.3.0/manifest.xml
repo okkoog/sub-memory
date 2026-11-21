@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>item_portrait_hd</ID>
+  <Name>淫色深空：苗床高清立绘管理器</Name>
+  <Author>Local</Author>
+  <ModVersion>1.3.0</ModVersion>
+  <Description>【安装说明】仅原版 lewd_meme 为运行必需。其他列出的立绘包仅表示兼容支持及来源追踪范围，不需要作为必装前置，无需全部订阅或启用；未安装这些立绘包也可使用本管理器。清单保留其 ID 是为了声明来源访问范围。
+
+【已适配立绘包（可选）】少女当铺、深空当铺·女性立绘美化、白蛇角色美化及其 R18 扩展、角色娘化和语音、All Girls（all_girls）、边缘当铺：可能是偷渡（probably_rimworld）、精致日式立绘。白蛇 R18 作为独立来源读取其内嵌 PNG；无需添加扩展为强制前置。
+
+为 lewd_meme 的角色物品提供 128/256 纹理、自选立绘、完整 4×4 占格及透明区点击拖动。默认 F7 打开管理器，快捷键可在游戏选项中修改；支持导入其他模组立绘到自定义来源及阵营目录、体型来源与权重配置。
+
+【顶部兼容开关，默认关闭】“仅高清重建：立绘完全由原模组选取”：关闭本管理器全部自动选图，由原模组选图后重建为当前 128/256 档位，无需识别来源或阵营；保留 F7 手动替换、4×4 画布和缓存。</Description>
+  <GameVersions><Version>0.46</Version><Version>0.46D</Version></GameVersions>
+  <Prerequisites>
+    <Mod>lewd_meme</Mod>
+    <Mod>cute_portraits</Mod>
+    <Mod>local_space_pawn_portraits</Mod>
+    <Mod>baishe_all_characters_feminized</Mod>
+    <Mod>AllGirls</Mod>
+    <Mod>all_girls</Mod>
+    <Mod>probably_rimworld</Mod>
+    <Mod>refined_anime_portraits</Mod>
+  </Prerequisites>
+  <Assemblies><Assembly>ItemPortraitHD.dll</Assembly></Assemblies>
+  <Capabilities>
+    <Capability>files</Capability>
+  </Capabilities>
+</Manifest>
+

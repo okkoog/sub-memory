@@ -1,0 +1,188 @@
+network.tab,青楼
+network.profession.title,青楼职业
+network.profession.description,获得青楼经营资格，并得到一部“掌上青楼”和一件女仆装。默认每天 2 位预约客人；展示柜每多一位少女 +1 位。
+network.capacity.title,扩建客源 {0}
+network.capacity.description,每天预约客人提升到 {0}（+2），并让每位客人多要一个特征标签。已经买过的扩建会保留。
+trait.fallbackGentle,温柔
+trait.fallbackTalkative,健谈
+
+palm.name,掌上青楼
+palm.description,一部能看见今日预约客人的掌上终端。点开后按页安排少女与推销品，过夜费与推销的结果要到第二天才知道。
+palm.flavor,屏幕边缘留着一圈唇印。
+palm.windowTitle,掌上青楼
+palm.tab,{0}
+palm.guestPanel,客人
+palm.maidensPanel,少女
+palm.goodsPanel,推销
+palm.guestName,第 {0} 位客人
+palm.requirementLine,想要：{0}
+palm.budgetLine,预算 {0} 信用点
+palm.budgetHit,预算 {0} · 命中 {1} → {2}
+palm.dealLine,过夜费 {0} · 推销 {1}
+palm.lockedLine,已接客，明晚揭晓结果
+palm.result.sold,揭晓：推销成功 · 服务 {0} + 商品 {1}
+palm.result.goodsFailed,揭晓：推销没卖出去 · 服务 {0} + 商品 {1}
+palm.result.noGoods,揭晓：只接了客 · 服务 {0}
+palm.hint.noGoods,还没有放推销品
+palm.hint.sure,总价在预算内，必定卖出
+palm.hint.debt,超出预算，但命中 ≥5 个标签，有一半机会被负债买下
+palm.hint.unsellable,超出预算且命中不足 5 个标签，卖不出去
+palm.tooltip,第 {0} 位客人\n想要：{1}\n基础预算：{2} 信用点\n每命中一个标签，客人预算 +10%；过夜费不能超过基础预算。\n推销总价超过预算时，只有命中 ≥5 个标签才有一半机会被负债买下。\n过夜费在少女右键菜单里设（0-{3}）。
+palm.serve,接客
+palm.serveTooltip,把少女放进“少女”格、把要推销的东西放进“推销”格，再按这里锁客。结果要等下一晚才知道。
+palm.waiting,等待接客
+palm.emptyPage,今日没有这一页的预约
+palm.emptyHint,这一页空着
+palm.error.noGuest,这一页今天没有客人。
+palm.itemTooltip,今日已预约 {0} 位客人，可预约上限 {1} 位。\n点开后逐页安排：少女格只放一位少女，推销格 4×4 不限件数；命中标签让客人预算 +10%，过夜费与推销结果都在第二天揭晓。
+error.palmMissing,找不到掌上青楼，请重新解锁青楼职业。
+error.pageMissing,这一页不存在或已经失效。
+error.guestResolved,这位客人已经处理过了。
+error.noMaiden,请先把少女放进这一页的“少女”格。
+error.feeTooHigh,客人被迷惑之前可不会接受天价
+error.saveFailed,这一步没有保存成功，请稍后再试。
+
+report.summary,第 {0} 日掌上青楼结算：接待 {1} 位客人，过夜费收入 {2}，推销收入 {3}，合计 {4} 信用点。
+report.nightLog,掌上青楼：接待 {0} 位客人，收入 {1} 信用点。
+
+ui.refresh,刷新
+ui.close,关闭
+ui.ok,确定
+
+gear.title,服饰
+gear.unknown,未知服饰
+gear.slot.head,头饰
+gear.slot.body,身体
+gear.slot.accessory,配件
+gear.slot.unknown,未知部位
+gear.trait.maid,女仆
+gear.trait.catEars,猫耳
+gear.trait.catTail,猫尾
+gear.trait.revealing,情趣
+gear.trait.bunny,兔耳
+gear.trait.garter,腿环
+gear.tooltip,部位：{0} · 标签：{1}\n拖到少女身上即可直接更换。
+gear.maidDress.name,女仆装
+gear.maidDress.description,带围裙和蕾丝边的贴身女仆装，能把少女衬得更乖巧。
+gear.maidDress.flavor,“欢迎回来，主人。”
+gear.catEars.name,猫耳发箍
+gear.catEars.description,毛茸茸的猫耳发箍，戴上后会多出一点猫的娇气。
+gear.catEars.flavor,耳朵会随着情绪轻轻抖动。
+gear.catTailPlug.name,猫尾肛塞
+gear.catTailPlug.description,末端带着细长猫尾的饰品，适合搭配猫耳。
+gear.catTailPlug.flavor,尾巴会随着步伐慢慢摇晃。
+gear.laceDress.name,蕾丝开襟睡袍
+gear.laceDress.description,轻薄得几乎遮不住什么的蕾丝睡袍。
+gear.laceDress.flavor,布料少得很有说服力。
+gear.bunnyEars.name,兔耳发饰
+gear.bunnyEars.description,柔软垂落的兔耳发饰。
+gear.bunnyEars.flavor,看起来比猫耳更温顺。
+gear.laceGarter.name,蕾丝腿环
+gear.laceGarter.description,系在大腿上的蕾丝腿环，能强调腿部线条。
+gear.laceGarter.flavor,轻轻一扯就会松开。
+
+tag.mastery.oral,口交天才
+tag.mastery.vaginal,性交高手
+tag.mastery.anal,肛交上瘾
+tag.mastery.succubus,榨精魅魔
+tag.private.whiteTiger,白虎穴
+tag.private.bun,馒头穴
+tag.private.butterfly,蝴蝶穴
+
+maiden.gearLine,{0}：{1}
+maiden.feeLine,过夜费：{0} 信用点
+maiden.statsLine,接客次数：口交 {0} · 性交 {1} · 肛交 {2}
+maiden.masteryLine,精通：{0}
+maiden.succubusLine,精通：榨精魅魔（无视需求多满足 1 个标签）
+maiden.privateLine,私处：{0}
+maiden.rightClickHint,右键可以在原版菜单里全脱或改过夜费。
+maiden.menu.noGear,她身上没有可以脱下的服饰。
+context.strip,全脱
+context.fee,设定过夜费（{0}）
+fee.windowTitle,设定过夜费
+fee.current,当前过夜费：{0} 信用点
+fee.hint,输入 0-9999 后按“确定”。高于客人预算时她不能放进少女格。
+fee.confirm,确定
+fee.invalid,请输入 0 到 9999 之间的整数。
+wardrobe.empty,空
+
+wardrobe.error.notEligible,目标必须是女性角色。
+wardrobe.error.wrongSlot,这件服饰不能放进这个部位。
+wardrobe.error.itemUnavailable,服饰已不在可用库存中。
+wardrobe.error.duplicateSource,同一件服饰不能同时放入多个部位。
+wardrobe.error.nothingStaged,还没有放入要更换的服饰。
+wardrobe.error.unknownCurrent,少女身上存在无法识别的旧服饰。
+wardrobe.error.counterUnavailable,柜台当前不可用。
+wardrobe.error.counterFull,替换失败，请先清理柜台。
+wardrobe.error.replaceFailed,替换服饰失败，原有状态未改变。
+wardrobe.error.applyFailed,写入服饰状态失败，已恢复原状态。
+
+ledger.name,青楼营业账本
+ledger.description,记录青楼上一夜接待、过夜费与推销收入的实体账本。
+ledger.flavor,纸页间还夹着一点香粉味。
+ledger.windowTitle,青楼营业账本
+ledger.pageTitle,昨夜账目
+ledger.dayStamp,第 {0} 日
+ledger.dayUnknown,未结账
+ledger.summaryLine,接待 {0} 位 · 过夜费 {1} · 推销 {2} · 合计 {3} 信用点
+ledger.guestSection,来客明细
+ledger.col.guest,来客
+ledger.col.maiden,少女
+ledger.col.match,命中
+ledger.col.fee,过夜费
+ledger.col.goods,推销
+ledger.col.income,收入
+ledger.feeValue,{0}
+ledger.goodsSold,{0}（卖出 {1}）
+ledger.goodsFailed,{0}（没卖出 {1}）
+ledger.goodsMore, 等 {0} 件
+ledger.incomeValue,{0} + {1}
+ledger.moreGuests,另有 {0} 位来客未列出
+ledger.prev,← 上一页
+ledger.next,下一页 →
+ledger.page,第 {0} / {1} 页
+report.page2.title,侍奉汇报
+report.page2.subtitle,第 {0} 日 · 昨夜的一位少女
+report.page2.maiden,少女：{0}
+report.page2.guest,客人：{0}
+report.page2.deal,命中 {0} 个标签 · 过夜费 {1} · 推销 {2}
+report.page2.satisfaction,客人满意度 {0}/100 {1}
+report.page2.empty,昨夜没有完成侍奉的少女。
+report.quote.line,“{0}{1}{2}”
+report.quote.a1,这位客人一进门就急得不行，
+report.quote.a2,他憋了很久才来，
+report.quote.a3,客人看着挺紧张，
+report.quote.a4,他倒是很客气，
+report.quote.b1,那根又粗又大的肉棒差点没让我合拢，
+report.quote.b2,尺寸比我想的夸张，顶得我腿都软了，
+report.quote.b3,比起尺寸，他那双手和技巧更厉害，
+report.quote.b4,说实话那话儿小得可怜，不过他很卖力，
+report.quote.b5,尺寸不算大，可他很懂怎么让女人舒服，
+report.quote.c1,最后还是把他伺候得心满意足。
+report.quote.c2,该给的过夜费一分没少，我也算没白忙。
+report.quote.c3,至少他走的时候是笑着的。
+report.quote.mastery,（现在我可是熟练工，这点场面不算什么。）
+report.quote.succubus,（魅魔的招牌可不是白挂的，他连魂都快被吸走了。）
+ledger.noReport,还没有完成过青楼夜间结算。
+ledger.noGuests,昨夜没有完成接待的来客。
+ledger.noGoods,未推销商品
+ledger.openFailed,账本页面打开失败，请稍后再试。
+ledger.tooltip,双击查看上一夜的青楼营业情况。
+ledger.merchantRole,固定服饰商人
+ledger.merchantVisits,来访 {0} 次 · 成交 {1} 次
+ledger.merchantQuote,“多买两件嘛，姐姐也要吃饭的。”
+ledger.merchantProfile,有着岛国血脉，却没能跟上星际时代，只能在深空里自己讨生活的服饰商人。
+
+merchant.name,寐空 梦
+merchant.first.1,我听说你打算开拓业务，那我这些东西你应该用得上吧宝贝~
+merchant.first.2,第一次来就给你算便宜点。多挑几件嘛，姐姐也要吃饭的。
+merchant.visit.1,宝贝，我又把新货带来了。别只看呀，多买两件好不好？
+merchant.visit.2,这些款式都很适合你家姑娘。买嘛买嘛，姐姐还等着开张呢~
+merchant.visit.3,生意不好做呀。你要是多拿几件，姐姐下次还能给你带更好的。
+merchant.accept.1,就这么点呀？再挑一件嘛，宝贝~
+merchant.accept.2,嗯，这才对。姐姐最喜欢你这么爽快的客人了。
+merchant.accept.3,再多买一件啦，我保证你家客人会喜欢。
+merchant.done,下次有好货我还来找你。可别把姐姐忘了呀~
+
+sofa.storage,旧版青楼沙发
+sofa.storage.description,0.6.0 之前的沙发储物格。更新后载入存档会把里面的少女退回库存，然后把空沙发收走。

@@ -1,0 +1,188 @@
+network.tab,Brothel
+network.profession.title,Brothel License
+network.profession.description,Unlocks the brothel trade and grants the Palm Brothel plus one maid dress. Two guests are booked every day by default; each maiden in the showcase adds one more.
+network.capacity.title,Expand Clientele {0}
+network.capacity.description,Raises the daily guest count to {0} (+2) and makes every guest want one more trait. Expansions you already bought are kept.
+trait.fallbackGentle,Gentle
+trait.fallbackTalkative,Talkative
+
+palm.name,Palm Brothel
+palm.description,A palm-sized terminal that shows today's bookings. Turn its pages to seat a maiden and pitch goods; the overnight fee and whether the pitch sells are only revealed the next day.
+palm.flavor,There is a lip print along the edge of the screen.
+palm.windowTitle,Palm Brothel
+palm.tab,{0}
+palm.guestPanel,Guest
+palm.maidensPanel,Maiden
+palm.goodsPanel,Pitch
+palm.guestName,Guest {0}
+palm.requirementLine,Wants: {0}
+palm.budgetLine,Budget {0} credits
+palm.budgetHit,Budget {0} · {1} hit(s) → {2}
+palm.dealLine,Fee {0} · Pitch {1}
+palm.lockedLine,Seated. The result is revealed next night.
+palm.result.sold,Revealed: pitch sold · service {0} + goods {1}
+palm.result.goodsFailed,Revealed: pitch not sold · service {0} + goods {1}
+palm.result.noGoods,Revealed: seated only · service {0}
+palm.hint.noGoods,No goods staged yet
+palm.hint.sure,Within budget — sells for sure
+palm.hint.debt,Over budget, but 5+ tags means a 50% chance the guest goes into debt
+palm.hint.unsellable,Over budget and fewer than 5 tags — will not sell
+palm.tooltip,Guest {0}\nWants: {1}\nBase budget: {2} credits\nEach matched tag raises the budget by 10%; the overnight fee cannot exceed the base budget.\nIf the pitch is over budget, it only sells when 5+ tags are hit (50%).\nSet the overnight fee in the maiden's right-click menu (0-{3}).
+palm.serve,Serve
+palm.serveTooltip,Drag a maiden into the "Maiden" slot and goods into the "Pitch" grid, then press here to lock the page. The result is revealed the next night.
+palm.waiting,Waiting to be served
+palm.emptyPage,No booking on this page today
+palm.emptyHint,This page is empty
+palm.error.noGuest,There is no guest on this page today.
+palm.itemTooltip,{0} guest(s) booked today, up to {1} per day.\nOpen it to work page by page: one maiden per slot, a 4×4 pitch grid with no item limit; each matched tag raises the budget by 10%, and both the overnight fee and the pitch result are revealed the next day.
+error.palmMissing,The Palm Brothel is missing. Unlock the brothel license again.
+error.pageMissing,That page no longer exists.
+error.guestResolved,That guest has already been handled.
+error.noMaiden,Drag a maiden into this page's "Maiden" slot first.
+error.feeTooHigh,A guest won't pay an outrageous fee before he is smitten.
+error.saveFailed,That step was not saved. Try again in a moment.
+
+report.summary,Day {0} Palm Brothel settlement: {1} guest(s) served, {2} from overnight fees, {3} from goods, {4} credits in total.
+report.nightLog,Palm Brothel: {0} guest(s) served, {1} credits earned.
+
+ui.refresh,Refresh
+ui.close,Close
+ui.ok,OK
+
+gear.title,Garments
+gear.unknown,Unknown garment
+gear.slot.head,Head
+gear.slot.body,Body
+gear.slot.accessory,Accessory
+gear.slot.unknown,Unknown slot
+gear.trait.maid,Maid
+gear.trait.catEars,Cat ears
+gear.trait.catTail,Cat tail
+gear.trait.revealing,Revealing
+gear.trait.bunny,Bunny ears
+gear.trait.garter,Garter
+gear.tooltip,Slot: {0} · Tag: {1}\nDrag it onto a maiden to dress her.
+gear.maidDress.name,Maid Dress
+gear.maidDress.description,A snug maid dress with an apron and lace trim that makes any maiden look obedient.
+gear.maidDress.flavor,"“Welcome home, master.”"
+gear.catEars.name,Cat Ear Headband
+gear.catEars.description,A fluffy cat ear headband that adds a little feline vanity.
+gear.catEars.flavor,The ears twitch with her mood.
+gear.catTailPlug.name,Cat Tail Plug
+gear.catTailPlug.description,A plug with a slender cat tail; pairs well with the cat ears.
+gear.catTailPlug.flavor,The tail sways with every step.
+gear.laceDress.name,Lace Open Robe
+gear.laceDress.description,A thin lace robe that barely covers anything.
+gear.laceDress.flavor,There is very little fabric, and it makes a strong case.
+gear.bunnyEars.name,Bunny Ear Clip
+gear.bunnyEars.description,Soft drooping bunny ears.
+gear.bunnyEars.flavor,They look meeker than the cat ears.
+gear.laceGarter.name,Lace Garter
+gear.laceGarter.description,A lace garter on the thigh that underlines the leg line.
+gear.laceGarter.flavor,One light pull and it comes loose.
+
+tag.mastery.oral,Oral Genius
+tag.mastery.vaginal,Intercourse Expert
+tag.mastery.anal,Anal Addict
+tag.mastery.succubus,Seminal Succubus
+tag.private.whiteTiger,Shaved Pussy
+tag.private.bun,Mound Pussy
+tag.private.butterfly,Butterfly Pussy
+
+maiden.gearLine,{0}: {1}
+maiden.feeLine,Overnight fee: {0} credits
+maiden.statsLine,Times served: oral {0} · vaginal {1} · anal {2}
+maiden.masteryLine,Mastery: {0}
+maiden.succubusLine,Mastery: Seminal Succubus (ignores one requirement and counts it as met)
+maiden.privateLine,Pussy: {0}
+maiden.rightClickHint,Right-click and use the vanilla menu to strip her or change her fee.
+maiden.menu.noGear,She is not wearing anything that can be taken off.
+context.strip,Strip All
+context.fee,Set fee ({0})
+fee.windowTitle,Overnight Fee
+fee.current,Current fee: {0} credits
+fee.hint,Enter 0-9999 and press Confirm. She cannot be seated for a guest whose budget is lower.
+fee.confirm,Confirm
+fee.invalid,Enter a whole number between 0 and 9999.
+wardrobe.empty,Empty
+
+wardrobe.error.notEligible,The target must be a female character.
+wardrobe.error.wrongSlot,That garment does not belong in this slot.
+wardrobe.error.itemUnavailable,The garment is no longer in a usable inventory.
+wardrobe.error.duplicateSource,The same garment cannot fill two slots at once.
+wardrobe.error.nothingStaged,No garment has been staged yet.
+wardrobe.error.unknownCurrent,The maiden is wearing a garment this version cannot identify.
+wardrobe.error.counterUnavailable,The counter is not available right now.
+wardrobe.error.counterFull,Replacement failed. Clear some space on the counter first.
+wardrobe.error.replaceFailed,Replacing the garment failed; nothing changed.
+wardrobe.error.applyFailed,Writing the garment state failed; the previous state was restored.
+
+ledger.name,Brothel Ledger
+ledger.description,A physical ledger of last night's guests, overnight fees and goods income.
+ledger.flavor,The pages still smell faintly of powder.
+ledger.windowTitle,Brothel Ledger
+ledger.pageTitle,Last Night's Books
+ledger.dayStamp,Day {0}
+ledger.dayUnknown,Unsettled
+ledger.summaryLine,{0} guest(s) · fees {1} · goods {2} · {3} credits total
+ledger.guestSection,Guest details
+ledger.col.guest,Guest
+ledger.col.maiden,Maiden
+ledger.col.match,Hits
+ledger.col.fee,Fee
+ledger.col.goods,Goods
+ledger.col.income,Income
+ledger.feeValue,{0}
+ledger.goodsSold,{0} (sold {1})
+ledger.goodsFailed,{0} (not sold {1})
+ledger.goodsMore, +{0} more
+ledger.incomeValue,{0} + {1}
+ledger.moreGuests,{0} more guest(s) not listed
+ledger.prev,← Prev
+ledger.next,Next →
+ledger.page,Page {0} / {1}
+report.page2.title,Service Report
+report.page2.subtitle,Day {0} · one maiden from last night
+report.page2.maiden,Maiden: {0}
+report.page2.guest,Guest: {0}
+report.page2.deal,{0} tag(s) matched · fee {1} · pitch {2}
+report.page2.satisfaction,Guest satisfaction {0}/100 {1}
+report.page2.empty,No maiden finished a service last night.
+report.quote.line,“{0}{1}{2}”
+report.quote.a1,He was in a hurry the moment he walked in,
+report.quote.a2,He had been holding it in for a long time,
+report.quote.a3,He looked nervous,
+report.quote.a4,He was polite enough,
+report.quote.b1,his thick, huge cock nearly would not fit,
+report.quote.b2,he was bigger than I expected and left my legs shaking,
+report.quote.b3,his hands and technique were even better than his size,
+report.quote.b4,honestly his cock was pitifully small, but he tried so hard,
+report.quote.b5,he was not huge, but he knew exactly how to please a woman,
+report.quote.c1,and in the end I sent him away satisfied.
+report.quote.c2,the fee was paid in full, so it was not wasted work.
+report.quote.c3,at least he left smiling.
+report.quote.mastery,(I am a seasoned hand now; this is nothing to me.)
+report.quote.succubus,(The succubus brand is not for show — I nearly drained his soul.)
+ledger.noReport,No nightly settlement has been completed yet.
+ledger.noGuests,No guest was served last night.
+ledger.noGoods,No goods pitched
+ledger.openFailed,The ledger page failed to open. Try again later.
+ledger.tooltip,Double-click to read last night's brothel books.
+ledger.merchantRole,Fixed garment merchant
+ledger.merchantVisits,{0} visit(s) · {1} sale(s)
+ledger.merchantQuote,"“Buy two more, a girl has to eat.”"
+ledger.merchantProfile,A garment merchant with island blood who could not keep up with the interstellar age and makes her own way in deep space.
+
+merchant.name,Mikong Meng
+merchant.first.1,I heard you want to expand your business, so these should be useful, sweetie~
+merchant.first.2,First visit, so I'll be generous. Pick a few more, a girl has to eat.
+merchant.visit.1,Sweetie, I brought new stock again. Don't just stare, buy a couple?
+merchant.visit.2,These styles suit your girls. Come on, buy some, I'm waiting to open shop~
+merchant.visit.3,Business is hard. Take a few more and I'll bring you better stock next time.
+merchant.accept.1,That's all? Pick one more, sweetie~
+merchant.accept.2,Now that's right. I love decisive customers like you.
+merchant.accept.3,One more, I promise your guests will like it.
+merchant.done,I'll come back when I have good stock. Don't forget me~
+
+sofa.storage,Old Brothel Sofa
+sofa.storage.description,The sofa storage from 0.6.0 and earlier. Loading a save after the update returns its maidens to your inventory and then removes the empty sofa.

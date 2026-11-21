@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>lewd_meme_legacy_content</ID>
+  <Name>淫色深空：可能更有互动</Name>
+  <Author>今夜不能寐</Author>
+  <ModVersion>1.0.6</ModVersion>
+  <Description>为最新版 lewd_meme 恢复旧版魔改内容层：标签、人物属性、阶段描述、双击对话、互动娇喘、提示补充与旧版夜报。修复双击浮动气泡跨画布缩放导致的文字发虚。必须同时启用 lewd_meme；不使用旧 DLL 替换新版主体，不新增物品 ID。适配游戏 0.46D Rev13：以前置程序集引用与 ModReflect 取代 reflection-external，清单不再声明能力。旧版夜报默认关闭，可在模组设置的“显示旧版夜报”中开启，避免与其他模组的夜报叠加。兼容其他子模组：不改写主模组现有物品与人物名字，也不覆盖主模组的势力/体型/乳量词条，只写本模组的 LEGACY_LC_* 与自有展示标签。</Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites>
+    <Mod>lewd_meme</Mod>
+  </Prerequisites>
+  <Assemblies>
+    <Assembly>LewdMemeLegacyContent.dll</Assembly>
+  </Assemblies>
+  <Capabilities />
+</Manifest>
