@@ -217,5 +217,10 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           ROOT='probably-stolen/local-mods/TentacleMod번역'
           MOD="$ROOT/RedLightDistrict_v1.1.1"
+          ZIP="$ROOT/ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip"
+          git lfs track "$ZIP"
+          git add --sparse .gitattributes
+          git check-attr filter -- "$ZIP" | grep -q 'filter: lfs'
           git add --sparse "$MOD/RedLightDistrict.dll" "$MOD/Localization/ko.csv" "$MOD/README_ko.txt" "$MOD/LOCALIZATION_PROGRESS.md" "$MOD/KEY_COVERAGE_AUDIT_20261122.tsv" "$MOD/UNTRANSLATED_REVIEW_QUEUE_20261122.tsv" "$MOD/DISPLAY_ALIAS_KEYS_20261122.tsv" "$ROOT/번역대조표/RLD_FINAL_RESULT_20261122.json" "$ROOT/번역대조표/RLD_PATRON_GUARD_RESULT_20261122.json" "$ROOT/ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip"
+          git show ":$ZIP" | head -c 128 | grep -q 'version https://git-lfs.github.com/spec/v1'
           git diff --cached --quiet || (git commit -m 'Finalize RLD Korean overlay with read-only identity guard and verified ZIP' && git push origin main)
