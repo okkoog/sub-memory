@@ -1,0 +1,3169 @@
+[
+  {
+    "type": "CommonTooltipHelper",
+    "fields": [
+      {
+        "Name": {
+          "String": "UNIQUE_TYPE_STRING",
+          "Data": "VU5JUVVFX1RZUEVfU1RSSU5H",
+          "Length": 18,
+          "DataLength": 18
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "TECHNICAL_EQUIPMENT_TAG",
+          "Data": "VEVDSE5JQ0FMX0VRVUlQTUVOVF9UQUc=",
+          "Length": 23,
+          "DataLength": 23
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "IMPROVISED_EQUIPMENT_TAG",
+          "Data": "SU1QUk9WSVNFRF9FUVVJUE1FTlRfVEFH",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "TACTICAL_EQUIPMENT_TAG",
+          "Data": "VEFDVElDQUxfRVFVSVBNRU5UX1RBRw==",
+          "Length": 22,
+          "DataLength": 22
+        },
+        "type": "System.String"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void CommonTooltipHelper::AddUniqueTypeTooltip(GameItem,System.String)",
+        "hasBody": true,
+        "token": 100665907
+      },
+      {
+        "signature": "System.Void CommonTooltipHelper::CreateItemTypeTooltip(RichTextBuilder,GameItem)",
+        "hasBody": true,
+        "token": 100665908
+      },
+      {
+        "signature": "System.Void CommonTooltipHelper::.ctor()",
+        "hasBody": true,
+        "token": 100665909
+      },
+      {
+        "signature": "System.Void CommonTooltipHelper::.cctor()",
+        "hasBody": true,
+        "token": 100665910
+      }
+    ]
+  },
+  {
+    "type": "MindReprogrammerHelper/PerkHoverTooltip",
+    "fields": [
+      {
+        "Name": {
+          "String": "perk",
+          "Data": "cGVyaw==",
+          "Length": 4,
+          "DataLength": 4
+        },
+        "type": "StartingPerk"
+      },
+      {
+        "Name": {
+          "String": "hovered",
+          "Data": "aG92ZXJlZA==",
+          "Length": 7,
+          "DataLength": 7
+        },
+        "type": "System.Boolean"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100682212
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::OnPointerExit(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100682213
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::OnDisable()",
+        "hasBody": true,
+        "token": 100682214
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::Update()",
+        "hasBody": true,
+        "token": 100682215
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::Release()",
+        "hasBody": true,
+        "token": 100682216
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::FollowMouse(PerkUIController)",
+        "hasBody": true,
+        "token": 100682217
+      },
+      {
+        "signature": "System.Void MindReprogrammerHelper/PerkHoverTooltip::.ctor()",
+        "hasBody": true,
+        "token": 100682218
+      }
+    ]
+  },
+  {
+    "type": "TooltipUseHelper",
+    "fields": [],
+    "methods": [
+      {
+        "signature": "System.Void TooltipUseHelper::HandleUseTooltip(GameItem,GameItem,RichTextBuilder)",
+        "hasBody": true,
+        "token": 100667547
+      },
+      {
+        "signature": "System.Boolean TooltipUseHelper::HasUseTooltip(GameItem,GameItem)",
+        "hasBody": true,
+        "token": 100667548
+      },
+      {
+        "signature": "System.Void TooltipUseHelper::.ctor()",
+        "hasBody": true,
+        "token": 100667549
+      }
+    ]
+  },
+  {
+    "type": "NewGamePerkTooltip",
+    "fields": [
+      {
+        "Name": {
+          "String": "frame",
+          "Data": "ZnJhbWU=",
+          "Length": 5,
+          "DataLength": 5
+        },
+        "type": "NewGamePanelFrame"
+      },
+      {
+        "Name": {
+          "String": "rect",
+          "Data": "cmVjdA==",
+          "Length": 4,
+          "DataLength": 4
+        },
+        "type": "UnityEngine.RectTransform"
+      },
+      {
+        "Name": {
+          "String": "outer",
+          "Data": "b3V0ZXI=",
+          "Length": 5,
+          "DataLength": 5
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "fill",
+          "Data": "ZmlsbA==",
+          "Length": 4,
+          "DataLength": 4
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "border",
+          "Data": "Ym9yZGVy",
+          "Length": 6,
+          "DataLength": 6
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "nameText",
+          "Data": "bmFtZVRleHQ=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "TMPro.TextMeshProUGUI"
+      },
+      {
+        "Name": {
+          "String": "costText",
+          "Data": "Y29zdFRleHQ=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "TMPro.TextMeshProUGUI"
+      },
+      {
+        "Name": {
+          "String": "headerRule",
+          "Data": "aGVhZGVyUnVsZQ==",
+          "Length": 10,
+          "DataLength": 10
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "linesHost",
+          "Data": "bGluZXNIb3N0",
+          "Length": 9,
+          "DataLength": 9
+        },
+        "type": "UnityEngine.RectTransform"
+      },
+      {
+        "Name": {
+          "String": "lockRule",
+          "Data": "bG9ja1J1bGU=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "lockIcon",
+          "Data": "bG9ja0ljb24=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "UnityEngine.UI.Image"
+      },
+      {
+        "Name": {
+          "String": "lockText",
+          "Data": "bG9ja1RleHQ=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "TMPro.TextMeshProUGUI"
+      },
+      {
+        "Name": {
+          "String": "lineObjects",
+          "Data": "bGluZU9iamVjdHM=",
+          "Length": 11,
+          "DataLength": 11
+        },
+        "type": "System.Collections.Generic.List`1<UnityEngine.GameObject>"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Boolean NewGamePerkTooltip::get_IsShown()",
+        "hasBody": true,
+        "token": 100668683
+      },
+      {
+        "signature": "NewGamePerkTooltip NewGamePerkTooltip::Create(NewGamePanelFrame,UnityEngine.Transform,UnityEngine.Sprite)",
+        "hasBody": true,
+        "token": 100668684
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::Build(UnityEngine.Sprite)",
+        "hasBody": true,
+        "token": 100668685
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::Show(StartingPerk,StartingPerk)",
+        "hasBody": true,
+        "token": 100668686
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::Hide()",
+        "hasBody": true,
+        "token": 100668687
+      },
+      {
+        "signature": "System.String NewGamePerkTooltip::CostLabel(System.Int32)",
+        "hasBody": true,
+        "token": 100668688
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::Update()",
+        "hasBody": true,
+        "token": 100668689
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::Follow()",
+        "hasBody": true,
+        "token": 100668690
+      },
+      {
+        "signature": "System.Void NewGamePerkTooltip::.ctor()",
+        "hasBody": true,
+        "token": 100668691
+      }
+    ]
+  },
+  {
+    "type": "CustomUITooltipTrigger",
+    "fields": [
+      {
+        "Name": {
+          "String": "tooltipText",
+          "Data": "dG9vbHRpcFRleHQ=",
+          "Length": 11,
+          "DataLength": 11
+        },
+        "type": "System.String"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void CustomUITooltipTrigger::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100671720
+      },
+      {
+        "signature": "System.Void CustomUITooltipTrigger::OnPointerExit(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100671721
+      },
+      {
+        "signature": "System.Void CustomUITooltipTrigger::OnDisable()",
+        "hasBody": true,
+        "token": 100671722
+      },
+      {
+        "signature": "System.Void CustomUITooltipTrigger::.ctor()",
+        "hasBody": true,
+        "token": 100671723
+      }
+    ]
+  },
+  {
+    "type": "TabletTooltipTrigger",
+    "fields": [
+      {
+        "Name": {
+          "String": "provider",
+          "Data": "cHJvdmlkZXI=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "System.Func`1<System.String>"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void TabletTooltipTrigger::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100673688
+      },
+      {
+        "signature": "System.Void TabletTooltipTrigger::OnPointerExit(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100673689
+      },
+      {
+        "signature": "System.Void TabletTooltipTrigger::OnDisable()",
+        "hasBody": true,
+        "token": 100673690
+      },
+      {
+        "signature": "System.Void TabletTooltipTrigger::.ctor()",
+        "hasBody": true,
+        "token": 100673691
+      }
+    ]
+  },
+  {
+    "type": "GameItem",
+    "fields": [
+      {
+        "Name": {
+          "String": "<parentInventory>k__BackingField",
+          "Data": "PHBhcmVudEludmVudG9yeT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "GameInventory"
+      },
+      {
+        "Name": {
+          "String": "<shape>k__BackingField",
+          "Data": "PHNoYXBlPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 22,
+          "DataLength": 22
+        },
+        "type": "GridShape"
+      },
+      {
+        "Name": {
+          "String": "<modifiedShape>k__BackingField",
+          "Data": "PG1vZGlmaWVkU2hhcGU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "GridShape"
+      },
+      {
+        "Name": {
+          "String": "<modifiedXOrigin>k__BackingField",
+          "Data": "PG1vZGlmaWVkWE9yaWdpbj5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "<modifiedYOrigin>k__BackingField",
+          "Data": "PG1vZGlmaWVkWU9yaWdpbj5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "<state>k__BackingField",
+          "Data": "PHN0YXRlPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 22,
+          "DataLength": 22
+        },
+        "type": "TagSystem"
+      },
+      {
+        "Name": {
+          "String": "<modifiedState>k__BackingField",
+          "Data": "PG1vZGlmaWVkU3RhdGU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "TagSystem"
+      },
+      {
+        "Name": {
+          "String": "<identifier>k__BackingField",
+          "Data": "PGlkZW50aWZpZXI+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<identifierName>k__BackingField",
+          "Data": "PGlkZW50aWZpZXJOYW1lPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 31,
+          "DataLength": 31
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<uniqueId>k__BackingField",
+          "Data": "PHVuaXF1ZUlkPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 25,
+          "DataLength": 25
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "<name>k__BackingField",
+          "Data": "PG5hbWU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 21,
+          "DataLength": 21
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<shortDescription>k__BackingField",
+          "Data": "PHNob3J0RGVzY3JpcHRpb24+a19fQmFja2luZ0ZpZWxk",
+          "Length": 33,
+          "DataLength": 33
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<longDescription>k__BackingField",
+          "Data": "PGxvbmdEZXNjcmlwdGlvbj5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<flavorText>k__BackingField",
+          "Data": "PGZsYXZvclRleHQ+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<unitCount>k__BackingField",
+          "Data": "PHVuaXRDb3VudD5rX19CYWNraW5nRmllbGQ=",
+          "Length": 26,
+          "DataLength": 26
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "<unitValue>k__BackingField",
+          "Data": "PHVuaXRWYWx1ZT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 26,
+          "DataLength": 26
+        },
+        "type": "System.Int64"
+      },
+      {
+        "Name": {
+          "String": "<lateUnitValue>k__BackingField",
+          "Data": "PGxhdGVVbml0VmFsdWU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "System.Int64"
+      },
+      {
+        "Name": {
+          "String": "<unitBaseValue>k__BackingField",
+          "Data": "PHVuaXRCYXNlVmFsdWU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "System.Int64"
+      },
+      {
+        "Name": {
+          "String": "<backupUnitValue>k__BackingField",
+          "Data": "PGJhY2t1cFVuaXRWYWx1ZT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.Int64"
+      },
+      {
+        "Name": {
+          "String": "<recipeManager>k__BackingField",
+          "Data": "PHJlY2lwZU1hbmFnZXI+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "RecipeManager"
+      },
+      {
+        "Name": {
+          "String": "<customText>k__BackingField",
+          "Data": "PGN1c3RvbVRleHQ+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<contentWindow>k__BackingField",
+          "Data": "PGNvbnRlbnRXaW5kb3c+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "PixelWindow"
+      },
+      {
+        "Name": {
+          "String": "<examineWindow>k__BackingField",
+          "Data": "PGV4YW1pbmVXaW5kb3c+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "PixelWindow"
+      },
+      {
+        "Name": {
+          "String": "<forceDisableActivate>k__BackingField",
+          "Data": "PGZvcmNlRGlzYWJsZUFjdGl2YXRlPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 37,
+          "DataLength": 37
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<forceDisableUse>k__BackingField",
+          "Data": "PGZvcmNlRGlzYWJsZVVzZT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<activateDefault>k__BackingField",
+          "Data": "PGFjdGl2YXRlRGVmYXVsdD5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<isCombatBackpack>k__BackingField",
+          "Data": "PGlzQ29tYmF0QmFja3BhY2s+a19fQmFja2luZ0ZpZWxk",
+          "Length": 33,
+          "DataLength": 33
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<spritePath>k__BackingField",
+          "Data": "PHNwcml0ZVBhdGg+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<spriteAtlasPath>k__BackingField",
+          "Data": "PHNwcml0ZUF0bGFzUGF0aD5rX19CYWNraW5nRmllbGQ=",
+          "Length": 32,
+          "DataLength": 32
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<spriteChanged>k__BackingField",
+          "Data": "PHNwcml0ZUNoYW5nZWQ+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<useSpriteFromMod>k__BackingField",
+          "Data": "PHVzZVNwcml0ZUZyb21Nb2Q+a19fQmFja2luZ0ZpZWxk",
+          "Length": 33,
+          "DataLength": 33
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<isDebugMenu>k__BackingField",
+          "Data": "PGlzRGVidWdNZW51PmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 28,
+          "DataLength": 28
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<soundDragStart>k__BackingField",
+          "Data": "PHNvdW5kRHJhZ1N0YXJ0PmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 31,
+          "DataLength": 31
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundDragEnd>k__BackingField",
+          "Data": "PHNvdW5kRHJhZ0VuZD5rX19CYWNraW5nRmllbGQ=",
+          "Length": 29,
+          "DataLength": 29
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundContainerOpen>k__BackingField",
+          "Data": "PHNvdW5kQ29udGFpbmVyT3Blbj5rX19CYWNraW5nRmllbGQ=",
+          "Length": 35,
+          "DataLength": 35
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundContainerClose>k__BackingField",
+          "Data": "PHNvdW5kQ29udGFpbmVyQ2xvc2U+a19fQmFja2luZ0ZpZWxk",
+          "Length": 36,
+          "DataLength": 36
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundSelect>k__BackingField",
+          "Data": "PHNvdW5kU2VsZWN0PmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 28,
+          "DataLength": 28
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundExamineOpen>k__BackingField",
+          "Data": "PHNvdW5kRXhhbWluZU9wZW4+a19fQmFja2luZ0ZpZWxk",
+          "Length": 33,
+          "DataLength": 33
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundToggle>k__BackingField",
+          "Data": "PHNvdW5kVG9nZ2xlPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 28,
+          "DataLength": 28
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundActivate>k__BackingField",
+          "Data": "PHNvdW5kQWN0aXZhdGU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "<soundUse>k__BackingField",
+          "Data": "PHNvdW5kVXNlPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 25,
+          "DataLength": 25
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "ITEM_TYPE_STRING",
+          "Data": "SVRFTV9UWVBFX1NUUklORw==",
+          "Length": 16,
+          "DataLength": 16
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "itemFeatures",
+          "Data": "aXRlbUZlYXR1cmVz",
+          "Length": 12,
+          "DataLength": 12
+        },
+        "type": "System.Collections.Generic.List`1<ItemFeature>"
+      },
+      {
+        "Name": {
+          "String": "itemTypes",
+          "Data": "aXRlbVR5cGVz",
+          "Length": 9,
+          "DataLength": 9
+        },
+        "type": "System.Collections.Generic.List`1<System.String>"
+      },
+      {
+        "Name": {
+          "String": "warnedMisalignedSprites",
+          "Data": "d2FybmVkTWlzYWxpZ25lZFNwcml0ZXM=",
+          "Length": 23,
+          "DataLength": 23
+        },
+        "type": "System.Collections.Generic.HashSet`1<System.String>"
+      },
+      {
+        "Name": {
+          "String": "<bonusAccuracy>k__BackingField",
+          "Data": "PGJvbnVzQWNjdXJhY3k+a19fQmFja2luZ0ZpZWxk",
+          "Length": 30,
+          "DataLength": 30
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "<effects>k__BackingField",
+          "Data": "PGVmZmVjdHM+a19fQmFja2luZ0ZpZWxk",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "System.Collections.Generic.List`1<CombatAbilityEffect>"
+      },
+      {
+        "Name": {
+          "String": "<triggerOverwatch>k__BackingField",
+          "Data": "PHRyaWdnZXJPdmVyd2F0Y2g+a19fQmFja2luZ0ZpZWxk",
+          "Length": 33,
+          "DataLength": 33
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "<canUseOutsideCombat>k__BackingField",
+          "Data": "PGNhblVzZU91dHNpZGVDb21iYXQ+a19fQmFja2luZ0ZpZWxk",
+          "Length": 36,
+          "DataLength": 36
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "CONTENT_TABS_STRING",
+          "Data": "Q09OVEVOVF9UQUJTX1NUUklORw==",
+          "Length": 19,
+          "DataLength": 19
+        },
+        "type": "System.String"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "GameItem GameItem::Create(System.String,System.String,PixelWindow)",
+        "hasBody": true,
+        "token": 100675389
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<GraphNodeStorage> GameItem::get_parents()",
+        "hasBody": true,
+        "token": 100675390
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<GraphNodeStorage> GameItem::get_children()",
+        "hasBody": true,
+        "token": 100675391
+      },
+      {
+        "signature": "GameInventory GameItem::get_parentInventory()",
+        "hasBody": true,
+        "token": 100675392
+      },
+      {
+        "signature": "System.Void GameItem::set_parentInventory(GameInventory)",
+        "hasBody": true,
+        "token": 100675393
+      },
+      {
+        "signature": "GraphNodeWindow GameItem::get_child()",
+        "hasBody": true,
+        "token": 100675394
+      },
+      {
+        "signature": "GridShape GameItem::get_shape()",
+        "hasBody": true,
+        "token": 100675395
+      },
+      {
+        "signature": "System.Void GameItem::set_shape(GridShape)",
+        "hasBody": true,
+        "token": 100675396
+      },
+      {
+        "signature": "GridShape GameItem::get_modifiedShape()",
+        "hasBody": true,
+        "token": 100675397
+      },
+      {
+        "signature": "System.Void GameItem::set_modifiedShape(GridShape)",
+        "hasBody": true,
+        "token": 100675398
+      },
+      {
+        "signature": "System.Int32 GameItem::get_modifiedXOrigin()",
+        "hasBody": true,
+        "token": 100675399
+      },
+      {
+        "signature": "System.Void GameItem::set_modifiedXOrigin(System.Int32)",
+        "hasBody": true,
+        "token": 100675400
+      },
+      {
+        "signature": "System.Int32 GameItem::get_modifiedYOrigin()",
+        "hasBody": true,
+        "token": 100675401
+      },
+      {
+        "signature": "System.Void GameItem::set_modifiedYOrigin(System.Int32)",
+        "hasBody": true,
+        "token": 100675402
+      },
+      {
+        "signature": "TagSystem GameItem::get_state()",
+        "hasBody": true,
+        "token": 100675403
+      },
+      {
+        "signature": "System.Void GameItem::set_state(TagSystem)",
+        "hasBody": true,
+        "token": 100675404
+      },
+      {
+        "signature": "TagSystem GameItem::get_modifiedState()",
+        "hasBody": true,
+        "token": 100675405
+      },
+      {
+        "signature": "System.Void GameItem::set_modifiedState(TagSystem)",
+        "hasBody": true,
+        "token": 100675406
+      },
+      {
+        "signature": "System.String GameItem::get_identifier()",
+        "hasBody": true,
+        "token": 100675407
+      },
+      {
+        "signature": "System.Void GameItem::set_identifier(System.String)",
+        "hasBody": true,
+        "token": 100675408
+      },
+      {
+        "signature": "System.String GameItem::get_identifierName()",
+        "hasBody": true,
+        "token": 100675409
+      },
+      {
+        "signature": "System.Void GameItem::set_identifierName(System.String)",
+        "hasBody": true,
+        "token": 100675410
+      },
+      {
+        "signature": "System.Int32 GameItem::get_uniqueId()",
+        "hasBody": true,
+        "token": 100675411
+      },
+      {
+        "signature": "System.Void GameItem::set_uniqueId(System.Int32)",
+        "hasBody": true,
+        "token": 100675412
+      },
+      {
+        "signature": "System.String GameItem::get_name()",
+        "hasBody": true,
+        "token": 100675413
+      },
+      {
+        "signature": "System.Void GameItem::set_name(System.String)",
+        "hasBody": true,
+        "token": 100675414
+      },
+      {
+        "signature": "System.String GameItem::get_shortDescription()",
+        "hasBody": true,
+        "token": 100675415
+      },
+      {
+        "signature": "System.Void GameItem::set_shortDescription(System.String)",
+        "hasBody": true,
+        "token": 100675416
+      },
+      {
+        "signature": "System.String GameItem::get_longDescription()",
+        "hasBody": true,
+        "token": 100675417
+      },
+      {
+        "signature": "System.Void GameItem::set_longDescription(System.String)",
+        "hasBody": true,
+        "token": 100675418
+      },
+      {
+        "signature": "System.String GameItem::get_flavorText()",
+        "hasBody": true,
+        "token": 100675419
+      },
+      {
+        "signature": "System.Void GameItem::set_flavorText(System.String)",
+        "hasBody": true,
+        "token": 100675420
+      },
+      {
+        "signature": "System.Int32 GameItem::get_unitCount()",
+        "hasBody": true,
+        "token": 100675421
+      },
+      {
+        "signature": "System.Void GameItem::set_unitCount(System.Int32)",
+        "hasBody": true,
+        "token": 100675422
+      },
+      {
+        "signature": "System.Int64 GameItem::get_unitValue()",
+        "hasBody": true,
+        "token": 100675423
+      },
+      {
+        "signature": "System.Void GameItem::set_unitValue(System.Int64)",
+        "hasBody": true,
+        "token": 100675424
+      },
+      {
+        "signature": "System.Int64 GameItem::get_lateUnitValue()",
+        "hasBody": true,
+        "token": 100675425
+      },
+      {
+        "signature": "System.Void GameItem::set_lateUnitValue(System.Int64)",
+        "hasBody": true,
+        "token": 100675426
+      },
+      {
+        "signature": "System.Int64 GameItem::get_unitBaseValue()",
+        "hasBody": true,
+        "token": 100675427
+      },
+      {
+        "signature": "System.Void GameItem::set_unitBaseValue(System.Int64)",
+        "hasBody": true,
+        "token": 100675428
+      },
+      {
+        "signature": "System.Int64 GameItem::get_backupUnitValue()",
+        "hasBody": true,
+        "token": 100675429
+      },
+      {
+        "signature": "System.Void GameItem::set_backupUnitValue(System.Int64)",
+        "hasBody": true,
+        "token": 100675430
+      },
+      {
+        "signature": "CombatAbility GameItem::get_ability()",
+        "hasBody": true,
+        "token": 100675431
+      },
+      {
+        "signature": "System.Void GameItem::set_ability(CombatAbility)",
+        "hasBody": true,
+        "token": 100675432
+      },
+      {
+        "signature": "RecipeManager GameItem::get_recipeManager()",
+        "hasBody": true,
+        "token": 100675433
+      },
+      {
+        "signature": "System.Void GameItem::set_recipeManager(RecipeManager)",
+        "hasBody": true,
+        "token": 100675434
+      },
+      {
+        "signature": "System.String GameItem::get_customText()",
+        "hasBody": true,
+        "token": 100675435
+      },
+      {
+        "signature": "System.Void GameItem::set_customText(System.String)",
+        "hasBody": true,
+        "token": 100675436
+      },
+      {
+        "signature": "PixelWindow GameItem::get_contentWindow()",
+        "hasBody": true,
+        "token": 100675437
+      },
+      {
+        "signature": "System.Void GameItem::set_contentWindow(PixelWindow)",
+        "hasBody": true,
+        "token": 100675438
+      },
+      {
+        "signature": "PixelWindow GameItem::get_examineWindow()",
+        "hasBody": true,
+        "token": 100675439
+      },
+      {
+        "signature": "System.Void GameItem::set_examineWindow(PixelWindow)",
+        "hasBody": true,
+        "token": 100675440
+      },
+      {
+        "signature": "System.Boolean GameItem::get_forceDisableActivate()",
+        "hasBody": true,
+        "token": 100675441
+      },
+      {
+        "signature": "System.Void GameItem::set_forceDisableActivate(System.Boolean)",
+        "hasBody": true,
+        "token": 100675442
+      },
+      {
+        "signature": "System.Boolean GameItem::get_forceDisableUse()",
+        "hasBody": true,
+        "token": 100675443
+      },
+      {
+        "signature": "System.Void GameItem::set_forceDisableUse(System.Boolean)",
+        "hasBody": true,
+        "token": 100675444
+      },
+      {
+        "signature": "System.Boolean GameItem::get_activateDefault()",
+        "hasBody": true,
+        "token": 100675445
+      },
+      {
+        "signature": "System.Void GameItem::set_activateDefault(System.Boolean)",
+        "hasBody": true,
+        "token": 100675446
+      },
+      {
+        "signature": "System.Boolean GameItem::get_isCombatBackpack()",
+        "hasBody": true,
+        "token": 100675447
+      },
+      {
+        "signature": "System.Void GameItem::set_isCombatBackpack(System.Boolean)",
+        "hasBody": true,
+        "token": 100675448
+      },
+      {
+        "signature": "System.String GameItem::get_spritePath()",
+        "hasBody": true,
+        "token": 100675449
+      },
+      {
+        "signature": "System.Void GameItem::set_spritePath(System.String)",
+        "hasBody": true,
+        "token": 100675450
+      },
+      {
+        "signature": "System.String GameItem::get_spriteAtlasPath()",
+        "hasBody": true,
+        "token": 100675451
+      },
+      {
+        "signature": "System.Void GameItem::set_spriteAtlasPath(System.String)",
+        "hasBody": true,
+        "token": 100675452
+      },
+      {
+        "signature": "System.Boolean GameItem::get_spriteChanged()",
+        "hasBody": true,
+        "token": 100675453
+      },
+      {
+        "signature": "System.Void GameItem::set_spriteChanged(System.Boolean)",
+        "hasBody": true,
+        "token": 100675454
+      },
+      {
+        "signature": "System.Boolean GameItem::get_useSpriteFromMod()",
+        "hasBody": true,
+        "token": 100675455
+      },
+      {
+        "signature": "System.Void GameItem::set_useSpriteFromMod(System.Boolean)",
+        "hasBody": true,
+        "token": 100675456
+      },
+      {
+        "signature": "System.Boolean GameItem::get_isDebugMenu()",
+        "hasBody": true,
+        "token": 100675457
+      },
+      {
+        "signature": "System.Void GameItem::set_isDebugMenu(System.Boolean)",
+        "hasBody": true,
+        "token": 100675458
+      },
+      {
+        "signature": "System.String GameItem::get_soundDragStart()",
+        "hasBody": true,
+        "token": 100675459
+      },
+      {
+        "signature": "System.Void GameItem::set_soundDragStart(System.String)",
+        "hasBody": true,
+        "token": 100675460
+      },
+      {
+        "signature": "System.String GameItem::get_soundDragEnd()",
+        "hasBody": true,
+        "token": 100675461
+      },
+      {
+        "signature": "System.Void GameItem::set_soundDragEnd(System.String)",
+        "hasBody": true,
+        "token": 100675462
+      },
+      {
+        "signature": "System.String GameItem::get_soundContainerOpen()",
+        "hasBody": true,
+        "token": 100675463
+      },
+      {
+        "signature": "System.Void GameItem::set_soundContainerOpen(System.String)",
+        "hasBody": true,
+        "token": 100675464
+      },
+      {
+        "signature": "System.String GameItem::get_soundContainerClose()",
+        "hasBody": true,
+        "token": 100675465
+      },
+      {
+        "signature": "System.Void GameItem::set_soundContainerClose(System.String)",
+        "hasBody": true,
+        "token": 100675466
+      },
+      {
+        "signature": "System.String GameItem::get_soundSelect()",
+        "hasBody": true,
+        "token": 100675467
+      },
+      {
+        "signature": "System.Void GameItem::set_soundSelect(System.String)",
+        "hasBody": true,
+        "token": 100675468
+      },
+      {
+        "signature": "System.String GameItem::get_soundExamineOpen()",
+        "hasBody": true,
+        "token": 100675469
+      },
+      {
+        "signature": "System.Void GameItem::set_soundExamineOpen(System.String)",
+        "hasBody": true,
+        "token": 100675470
+      },
+      {
+        "signature": "System.String GameItem::get_soundToggle()",
+        "hasBody": true,
+        "token": 100675471
+      },
+      {
+        "signature": "System.Void GameItem::set_soundToggle(System.String)",
+        "hasBody": true,
+        "token": 100675472
+      },
+      {
+        "signature": "System.String GameItem::get_soundActivate()",
+        "hasBody": true,
+        "token": 100675473
+      },
+      {
+        "signature": "System.Void GameItem::set_soundActivate(System.String)",
+        "hasBody": true,
+        "token": 100675474
+      },
+      {
+        "signature": "System.String GameItem::get_soundUse()",
+        "hasBody": true,
+        "token": 100675475
+      },
+      {
+        "signature": "System.Void GameItem::set_soundUse(System.String)",
+        "hasBody": true,
+        "token": 100675476
+      },
+      {
+        "signature": "System.Void GameItem::.ctor(System.String,PixelWindow)",
+        "hasBody": true,
+        "token": 100675477
+      },
+      {
+        "signature": "System.Void GameItem::AddClientItemBuyingFeature()",
+        "hasBody": true,
+        "token": 100675478
+      },
+      {
+        "signature": "GameItem GameItem::CloneLinked()",
+        "hasBody": true,
+        "token": 100675479
+      },
+      {
+        "signature": "GameItem GameItem::SetSprite(System.String,System.String)",
+        "hasBody": true,
+        "token": 100675480
+      },
+      {
+        "signature": "GameItem GameItem::SetSpriteQuick(System.String,System.String)",
+        "hasBody": true,
+        "token": 100675481
+      },
+      {
+        "signature": "GameItem GameItem::SetShape(GridShape)",
+        "hasBody": true,
+        "token": 100675482
+      },
+      {
+        "signature": "GameItem GameItem::SetSpriteAndShape(System.String,System.String)",
+        "hasBody": true,
+        "token": 100675483
+      },
+      {
+        "signature": "GridShapeBuilder GameItem::BuildShapeFromSprite(System.String,System.String)",
+        "hasBody": true,
+        "token": 100675484
+      },
+      {
+        "signature": "System.Void GameItem::WarnIfSliceNotGridAligned(System.String,System.String,UnityEngine.Rect,System.Int32)",
+        "hasBody": true,
+        "token": 100675485
+      },
+      {
+        "signature": "GameItem GameItem::SetSpriteAndShapeFromMod(System.String,System.String)",
+        "hasBody": true,
+        "token": 100675486
+      },
+      {
+        "signature": "System.Int64 GameItem::GetValue(System.Collections.Generic.List`1<GameCharacterItem>,GameCharacterItem,System.Boolean)",
+        "hasBody": true,
+        "token": 100675487
+      },
+      {
+        "signature": "GameItem GameItem::SetValue(System.Int64)",
+        "hasBody": true,
+        "token": 100675488
+      },
+      {
+        "signature": "System.Int64 GameItem::ValueModifier(GameItem,System.Collections.Generic.List`1<GameCharacterItem>,GameCharacterItem)",
+        "hasBody": true,
+        "token": 100675489
+      },
+      {
+        "signature": "GameItem GameItem::SetUnitCount(System.Int32)",
+        "hasBody": true,
+        "token": 100675490
+      },
+      {
+        "signature": "GameItem GameItem::SetAmount(System.Int32)",
+        "hasBody": true,
+        "token": 100675491
+      },
+      {
+        "signature": "GameItem GameItem::SetStack(System.Int32)",
+        "hasBody": true,
+        "token": 100675492
+      },
+      {
+        "signature": "GameItem GameItem::SetContentWindow(PixelWindow)",
+        "hasBody": true,
+        "token": 100675493
+      },
+      {
+        "signature": "GameItem GameItem::SetExamineWindow(PixelWindow)",
+        "hasBody": true,
+        "token": 100675494
+      },
+      {
+        "signature": "GameItem GameItem::Transform(System.Action`1<GameItem>)",
+        "hasBody": true,
+        "token": 100675495
+      },
+      {
+        "signature": "System.Boolean GameItem::AddParent(GraphNodeStorage)",
+        "hasBody": true,
+        "token": 100675496
+      },
+      {
+        "signature": "System.Boolean GameItem::RemoveParent(GraphNodeStorage)",
+        "hasBody": true,
+        "token": 100675497
+      },
+      {
+        "signature": "System.Boolean GameItem::IsAdjacent(GameItem)",
+        "hasBody": true,
+        "token": 100675498
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<T> GameItem::FindAdjacentType<T>()",
+        "hasBody": true,
+        "token": 100675499
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<System.ValueTuple`2<GameItem,System.Int32>> GameItem::GetAdjacentGameItemsWithTouchingSides()",
+        "hasBody": true,
+        "token": 100675500
+      },
+      {
+        "signature": "System.Int32 GameItem::CountTouchingSides(GridShape,GridShape)",
+        "hasBody": true,
+        "token": 100675501
+      },
+      {
+        "signature": "System.Boolean GameItem::MayHaveValidInventorySlot(GameItem)",
+        "hasBody": true,
+        "token": 100675502
+      },
+      {
+        "signature": "SlotMarker GameItem::TryFindOneValidInventorySlot(GameItem)",
+        "hasBody": true,
+        "token": 100675503
+      },
+      {
+        "signature": "System.Void GameItem::Destroy()",
+        "hasBody": false,
+        "token": 100675504
+      },
+      {
+        "signature": "System.Void GameItem::Validate()",
+        "hasBody": false,
+        "token": 100675505
+      },
+      {
+        "signature": "System.String GameItem::GetDisplayName(System.Boolean)",
+        "hasBody": true,
+        "token": 100675506
+      },
+      {
+        "signature": "System.Boolean GameItem::IsTag(System.String)",
+        "hasBody": true,
+        "token": 100675507
+      },
+      {
+        "signature": "System.Boolean GameItem::IsOneOfTags(System.Collections.Generic.List`1<System.String>)",
+        "hasBody": true,
+        "token": 100675508
+      },
+      {
+        "signature": "TagState GameItem::GetTagReadonly(System.String)",
+        "hasBody": true,
+        "token": 100675509
+      },
+      {
+        "signature": "GameItem GameItem::ModifyTag(System.String,System.Action`1<TagState>,System.Boolean)",
+        "hasBody": true,
+        "token": 100675510
+      },
+      {
+        "signature": "System.Boolean GameItem::EnableTag(System.String,System.Boolean)",
+        "hasBody": true,
+        "token": 100675511
+      },
+      {
+        "signature": "System.Boolean GameItem::DisableTag(System.String,System.Boolean)",
+        "hasBody": true,
+        "token": 100675512
+      },
+      {
+        "signature": "System.Boolean GameItem::SetEnableDisableTag(System.String,System.Boolean)",
+        "hasBody": true,
+        "token": 100675513
+      },
+      {
+        "signature": "System.Boolean GameItem::IsTag<T>(T)",
+        "hasBody": true,
+        "token": 100675514
+      },
+      {
+        "signature": "TagState GameItem::GetTagReadonly<T>(T)",
+        "hasBody": true,
+        "token": 100675515
+      },
+      {
+        "signature": "GameItem GameItem::ModifyTag<T>(T,System.Action`1<TagState>)",
+        "hasBody": true,
+        "token": 100675516
+      },
+      {
+        "signature": "System.Boolean GameItem::EnableTag<T>(T)",
+        "hasBody": true,
+        "token": 100675517
+      },
+      {
+        "signature": "System.Boolean GameItem::DisableTag<T>(T)",
+        "hasBody": true,
+        "token": 100675518
+      },
+      {
+        "signature": "GameItem GameItem::SetName(System.String)",
+        "hasBody": true,
+        "token": 100675519
+      },
+      {
+        "signature": "System.Boolean GameItem::MayToggleSlotItem()",
+        "hasBody": true,
+        "token": 100675520
+      },
+      {
+        "signature": "System.Boolean GameItem::CanToggleSlotItem()",
+        "hasBody": true,
+        "token": 100675521
+      },
+      {
+        "signature": "System.Void GameItem::ToggleSlotItem()",
+        "hasBody": true,
+        "token": 100675522
+      },
+      {
+        "signature": "System.Boolean GameItem::MayActivateSlotItem()",
+        "hasBody": true,
+        "token": 100675523
+      },
+      {
+        "signature": "System.Boolean GameItem::CanActivateSlotItem()",
+        "hasBody": true,
+        "token": 100675524
+      },
+      {
+        "signature": "System.Void GameItem::ActivateSlotItem()",
+        "hasBody": true,
+        "token": 100675525
+      },
+      {
+        "signature": "System.Boolean GameItem::MaySelectSlotItem()",
+        "hasBody": true,
+        "token": 100675526
+      },
+      {
+        "signature": "System.Boolean GameItem::CanSelectSlotItem()",
+        "hasBody": true,
+        "token": 100675527
+      },
+      {
+        "signature": "System.Boolean GameItem::MayTarget(GameItem)",
+        "hasBody": true,
+        "token": 100675528
+      },
+      {
+        "signature": "System.Boolean GameItem::CanTarget(GameItem)",
+        "hasBody": true,
+        "token": 100675529
+      },
+      {
+        "signature": "System.Void GameItem::Target(GameItem)",
+        "hasBody": true,
+        "token": 100675530
+      },
+      {
+        "signature": "System.Boolean GameItem::MayParentShapeModifier()",
+        "hasBody": true,
+        "token": 100675531
+      },
+      {
+        "signature": "System.ValueTuple`2<GridShape,GridShape> GameItem::GetParentShapeModifier(GameItem,SlotMarker,GridShape,TagSystem)",
+        "hasBody": true,
+        "token": 100675532
+      },
+      {
+        "signature": "System.ValueTuple`2<System.Collections.Generic.List`1<ItemStateModifier>,System.Collections.Generic.List`1<ItemStateModifier>> GameItem::GetParentStateModifier(GameItem,SlotMarker,GridShape,TagSystem)",
+        "hasBody": true,
+        "token": 100675533
+      },
+      {
+        "signature": "System.Boolean GameItem::MayRemove()",
+        "hasBody": true,
+        "token": 100675534
+      },
+      {
+        "signature": "System.Int32 GameItem::MaxNumRemove()",
+        "hasBody": true,
+        "token": 100675535
+      },
+      {
+        "signature": "System.Int32 GameItem::MaxNumAdd()",
+        "hasBody": true,
+        "token": 100675536
+      },
+      {
+        "signature": "System.Int32 GameItem::MaxNumAdd(SlotMarker)",
+        "hasBody": true,
+        "token": 100675537
+      },
+      {
+        "signature": "System.Boolean GameItem::MayStack(GameItem)",
+        "hasBody": true,
+        "token": 100675538
+      },
+      {
+        "signature": "SlotMarker GameItem::GetStackSlot(GameItem)",
+        "hasBody": true,
+        "token": 100675539
+      },
+      {
+        "signature": "SlotMarker GameItem::GetIncompleteSlotInInventory()",
+        "hasBody": true,
+        "token": 100675540
+      },
+      {
+        "signature": "GameItem GameItem::GetSplitItem(System.Int32)",
+        "hasBody": true,
+        "token": 100675541
+      },
+      {
+        "signature": "System.Boolean GameItem::CheckIsStateValid(GameInventory,SlotMarker,GridShape,TagSystem)",
+        "hasBody": true,
+        "token": 100675542
+      },
+      {
+        "signature": "System.Boolean GameItem::CheckValidShapeState()",
+        "hasBody": true,
+        "token": 100675543
+      },
+      {
+        "signature": "System.Void GameItem::SyncModifiedState()",
+        "hasBody": true,
+        "token": 100675544
+      },
+      {
+        "signature": "System.Void GameItem::ValidateShapeState()",
+        "hasBody": true,
+        "token": 100675545
+      },
+      {
+        "signature": "System.ValueTuple`4<GridShape,System.Int32,System.Int32,TagSystem> GameItem::ComputeModifiedShapeState(GridShape,GridShape,System.Collections.Generic.List`1<ItemStateModifier>,System.Collections.Generic.List`1<ItemStateModifier>,GameItem)",
+        "hasBody": true,
+        "token": 100675546
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<GameItem> GameItem::GetSiblingItems()",
+        "hasBody": true,
+        "token": 100675547
+      },
+      {
+        "signature": "GameItem GameItem::TryAcceptAll(GameItem)",
+        "hasBody": true,
+        "token": 100675548
+      },
+      {
+        "signature": "GameItem GameItem::ExpelAll()",
+        "hasBody": true,
+        "token": 100675549
+      },
+      {
+        "signature": "GameItem GameItem::TryUnloadAll()",
+        "hasBody": true,
+        "token": 100675550
+      },
+      {
+        "signature": "GameItem GameItem::TryUnloadAll(System.Boolean)",
+        "hasBody": true,
+        "token": 100675551
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<GameItem> GameItem::FindAllChildItems()",
+        "hasBody": true,
+        "token": 100675552
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<CraftingRecipe> GameItem::FindAllRecipes()",
+        "hasBody": true,
+        "token": 100675553
+      },
+      {
+        "signature": "System.Int32 GameItem::get_bonusAccuracy()",
+        "hasBody": true,
+        "token": 100675554
+      },
+      {
+        "signature": "System.Void GameItem::set_bonusAccuracy(System.Int32)",
+        "hasBody": true,
+        "token": 100675555
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<CombatAbilityEffect> GameItem::get_effects()",
+        "hasBody": true,
+        "token": 100675556
+      },
+      {
+        "signature": "System.Void GameItem::set_effects(System.Collections.Generic.List`1<CombatAbilityEffect>)",
+        "hasBody": true,
+        "token": 100675557
+      },
+      {
+        "signature": "System.Boolean GameItem::get_triggerOverwatch()",
+        "hasBody": true,
+        "token": 100675558
+      },
+      {
+        "signature": "System.Void GameItem::set_triggerOverwatch(System.Boolean)",
+        "hasBody": true,
+        "token": 100675559
+      },
+      {
+        "signature": "System.Boolean GameItem::get_canUseOutsideCombat()",
+        "hasBody": true,
+        "token": 100675560
+      },
+      {
+        "signature": "System.Void GameItem::set_canUseOutsideCombat(System.Boolean)",
+        "hasBody": true,
+        "token": 100675561
+      },
+      {
+        "signature": "CombatAbilityEffect/TargetType GameItem::GetPrimaryTarget()",
+        "hasBody": true,
+        "token": 100675562
+      },
+      {
+        "signature": "System.Boolean GameItem::IsAlwaysAccurate()",
+        "hasBody": true,
+        "token": 100675563
+      },
+      {
+        "signature": "System.Void GameItem::AddAmenities(System.String,System.Int32,System.Int32)",
+        "hasBody": true,
+        "token": 100675564
+      },
+      {
+        "signature": "System.Void GameItem::EnableProficiency(System.String)",
+        "hasBody": true,
+        "token": 100675565
+      },
+      {
+        "signature": "System.Void GameItem::EnableManufacturer(System.String)",
+        "hasBody": true,
+        "token": 100675566
+      },
+      {
+        "signature": "System.Void GameItem::DisplayManufacturer(RichTextBuilder,System.String)",
+        "hasBody": true,
+        "token": 100675567
+      },
+      {
+        "signature": "System.Void GameItem::SetType(System.String)",
+        "hasBody": true,
+        "token": 100675568
+      },
+      {
+        "signature": "System.Void GameItem::AccumulateFeatureStages(System.Int64&,System.Int64&,System.Double&,System.Boolean)",
+        "hasBody": true,
+        "token": 100675569
+      },
+      {
+        "signature": "System.Int64 GameItem::ComposeStagedValue(System.Int64,System.Int64,System.Int64,System.Double,System.Int32,System.Int32)",
+        "hasBody": true,
+        "token": 100675570
+      },
+      {
+        "signature": "System.Int64 GameItem::GetNegociatedValue()",
+        "hasBody": true,
+        "token": 100675571
+      },
+      {
+        "signature": "System.Int64 GameItem::GetDonationCreditValue()",
+        "hasBody": true,
+        "token": 100675572
+      },
+      {
+        "signature": "System.Int64 GameItem::GetCurrentValue(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int64)",
+        "hasBody": true,
+        "token": 100675573
+      },
+      {
+        "signature": "System.Int64 GameItem::CheckValueSafe(System.Int64)",
+        "hasBody": true,
+        "token": 100675574
+      },
+      {
+        "signature": "System.Int64 GameItem::GetComplexeItemValue()",
+        "hasBody": true,
+        "token": 100675575
+      },
+      {
+        "signature": "System.Int64 GameItem::GetRefreshedValue()",
+        "hasBody": true,
+        "token": 100675576
+      },
+      {
+        "signature": "System.Int64 GameItem::GetBaseValue()",
+        "hasBody": true,
+        "token": 100675577
+      },
+      {
+        "signature": "System.Int32 GameItem::GetItemMiscValue(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)",
+        "hasBody": true,
+        "token": 100675578
+      },
+      {
+        "signature": "System.Boolean GameItem::IsApplyMarkUp()",
+        "hasBody": true,
+        "token": 100675579
+      },
+      {
+        "signature": "System.Int32 GameItem::GetCurrentChildValue(System.Boolean,System.Boolean,System.Boolean,System.Boolean)",
+        "hasBody": true,
+        "token": 100675580
+      },
+      {
+        "signature": "System.Int64 GameItem::GetInheritableClientMarketMod()",
+        "hasBody": true,
+        "token": 100675581
+      },
+      {
+        "signature": "System.Void GameItem::ApplyContrabandFeatureToChildren()",
+        "hasBody": true,
+        "token": 100675582
+      },
+      {
+        "signature": "System.Void GameItem::RemoveContrabandFeature()",
+        "hasBody": true,
+        "token": 100675583
+      },
+      {
+        "signature": "System.Void GameItem::RemoveContrabandFeatureFromChildren()",
+        "hasBody": true,
+        "token": 100675584
+      },
+      {
+        "signature": "System.Boolean GameItem::IsInsideContainerPlacedForSelling()",
+        "hasBody": true,
+        "token": 100675585
+      },
+      {
+        "signature": "System.Boolean GameItem::IsAlreadyContainFeatureWithId(System.String)",
+        "hasBody": true,
+        "token": 100675586
+      },
+      {
+        "signature": "ItemFeature GameItem::FindItemFeatureByID(System.String)",
+        "hasBody": true,
+        "token": 100675587
+      },
+      {
+        "signature": "System.Void GameItem::RemoveItemFeatureByID(System.String)",
+        "hasBody": true,
+        "token": 100675588
+      },
+      {
+        "signature": "ItemFeature GameItem::FindItemFeatureByCategory(System.String)",
+        "hasBody": true,
+        "token": 100675589
+      },
+      {
+        "signature": "System.Int32 GameItem::GetIndexByCategory(System.String)",
+        "hasBody": true,
+        "token": 100675590
+      },
+      {
+        "signature": "ItemFeature GameItem::GetWeightItemFeature()",
+        "hasBody": true,
+        "token": 100675591
+      },
+      {
+        "signature": "System.Void GameItem::OnAddedToClientArea()",
+        "hasBody": true,
+        "token": 100675592
+      },
+      {
+        "signature": "System.Void GameItem::OnAddedToShowcaseArea()",
+        "hasBody": true,
+        "token": 100675593
+      },
+      {
+        "signature": "System.Void GameItem::OnAddedToWeightedArea(System.Boolean)",
+        "hasBody": true,
+        "token": 100675594
+      },
+      {
+        "signature": "System.Void GameItem::OnRemovedFromWeightedArea()",
+        "hasBody": true,
+        "token": 100675595
+      },
+      {
+        "signature": "System.Void GameItem::AddFeatureRelatedToBuyer()",
+        "hasBody": true,
+        "token": 100675596
+      },
+      {
+        "signature": "System.Void GameItem::RemoveFeatureRelatedToBuyer()",
+        "hasBody": true,
+        "token": 100675597
+      },
+      {
+        "signature": "System.Void GameItem::RemoveFeatureRelatedToEvent()",
+        "hasBody": true,
+        "token": 100675598
+      },
+      {
+        "signature": "System.Void GameItem::RemoveFeatureTemporaryBuying()",
+        "hasBody": true,
+        "token": 100675599
+      },
+      {
+        "signature": "System.Void GameItem::RemoveFeatureTemporarySelling()",
+        "hasBody": true,
+        "token": 100675600
+      },
+      {
+        "signature": "System.Void GameItem::RemoveFeatureByCategory(System.String)",
+        "hasBody": true,
+        "token": 100675601
+      },
+      {
+        "signature": "System.Void GameItem::AddFeatureRelatedToEvent()",
+        "hasBody": true,
+        "token": 100675602
+      },
+      {
+        "signature": "System.Void GameItem::SetGameItemType(System.String)",
+        "hasBody": true,
+        "token": 100675603
+      },
+      {
+        "signature": "System.Boolean GameItem::IsGameItemType(System.String)",
+        "hasBody": true,
+        "token": 100675604
+      },
+      {
+        "signature": "System.Void GameItem::RemoveGameItemType(System.String)",
+        "hasBody": true,
+        "token": 100675605
+      },
+      {
+        "signature": "System.Void GameItem::RemoveAllGameItemType()",
+        "hasBody": true,
+        "token": 100675606
+      },
+      {
+        "signature": "System.Void GameItem::TransferGameItemTypeFrom(GameItem,System.Boolean)",
+        "hasBody": true,
+        "token": 100675607
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<System.String> GameItem::GetGameItemType()",
+        "hasBody": true,
+        "token": 100675608
+      },
+      {
+        "signature": "System.Boolean GameItem::HaveType(System.String)",
+        "hasBody": true,
+        "token": 100675609
+      },
+      {
+        "signature": "System.Void GameItem::AddItemFeature(ItemFeature)",
+        "hasBody": true,
+        "token": 100675610
+      },
+      {
+        "signature": "System.Void GameItem::RemoveItemFeature(ItemFeature)",
+        "hasBody": true,
+        "token": 100675611
+      },
+      {
+        "signature": "System.Void GameItem::RemoveTemporaryClientFeature()",
+        "hasBody": true,
+        "token": 100675612
+      },
+      {
+        "signature": "System.Void GameItem::CloseContentWindow(System.Boolean)",
+        "hasBody": true,
+        "token": 100675613
+      },
+      {
+        "signature": "System.Void GameItem::RememberContentWindowPositionIfMine(PixelWindow)",
+        "hasBody": true,
+        "token": 100675614
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<MachineryTabs> GameItem::FindContentTabs()",
+        "hasBody": true,
+        "token": 100675615
+      },
+      {
+        "signature": "System.String GameItem::GetContentTabsSelection()",
+        "hasBody": true,
+        "token": 100675616
+      },
+      {
+        "signature": "System.Void GameItem::ApplyContentTabsSelection(System.String)",
+        "hasBody": true,
+        "token": 100675617
+      },
+      {
+        "signature": "System.Void GameItem::RememberContentTabs()",
+        "hasBody": true,
+        "token": 100675618
+      },
+      {
+        "signature": "System.Void GameItem::RestoreContentTabsIfMine(PixelWindow)",
+        "hasBody": true,
+        "token": 100675619
+      },
+      {
+        "signature": "System.Void GameItem::RestoreContentWindowPosition()",
+        "hasBody": true,
+        "token": 100675620
+      },
+      {
+        "signature": "GraphNodeStorage GameItem::GetRootNode(GraphNodeStorage)",
+        "hasBody": true,
+        "token": 100675621
+      },
+      {
+        "signature": "System.Boolean GameItem::IsRootedInBackInv()",
+        "hasBody": true,
+        "token": 100675622
+      },
+      {
+        "signature": "System.Boolean GameItem::IsRootedInSmugglerBay()",
+        "hasBody": true,
+        "token": 100675623
+      },
+      {
+        "signature": "GameInventory GameItem::GetParentWithIdentifier(System.String)",
+        "hasBody": true,
+        "token": 100675624
+      },
+      {
+        "signature": "GameInventory GameItem::FindParentWithIdentifier(GraphNodeStorage,System.String)",
+        "hasBody": true,
+        "token": 100675625
+      },
+      {
+        "signature": "System.Int32 GameItem::GetUniqueID()",
+        "hasBody": true,
+        "token": 100675626
+      },
+      {
+        "signature": "System.Void GameItem::RemoveAllFeature()",
+        "hasBody": true,
+        "token": 100675627
+      },
+      {
+        "signature": "System.Boolean GameItem::IsConditionActive(System.String)",
+        "hasBody": true,
+        "token": 100675628
+      },
+      {
+        "signature": "System.Boolean GameItem::IsID(System.String)",
+        "hasBody": true,
+        "token": 100675629
+      },
+      {
+        "signature": "System.Int32 GameItem::GetItemSize()",
+        "hasBody": true,
+        "token": 100675630
+      },
+      {
+        "signature": "System.Int32 GameItem::GetModifiedItemSize()",
+        "hasBody": true,
+        "token": 100675631
+      },
+      {
+        "signature": "System.Void GameItem::.cctor()",
+        "hasBody": true,
+        "token": 100675632
+      },
+      {
+        "signature": "System.Void GameItem::<.ctor>b__177_0(GameItem,GameInventory,SlotMarker)",
+        "hasBody": true,
+        "token": 100675633
+      }
+    ]
+  },
+  {
+    "type": "GameItemElement",
+    "fields": [
+      {
+        "Name": {
+          "String": "<handler>k__BackingField",
+          "Data": "PGhhbmRsZXI+a19fQmFja2luZ0ZpZWxk",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<inner>k__BackingField",
+          "Data": "PGlubmVyPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 22,
+          "DataLength": 22
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<fakeInner>k__BackingField",
+          "Data": "PGZha2VJbm5lcj5rX19CYWNraW5nRmllbGQ=",
+          "Length": 26,
+          "DataLength": 26
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<middle>k__BackingField",
+          "Data": "PG1pZGRsZT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 23,
+          "DataLength": 23
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<rotator>k__BackingField",
+          "Data": "PHJvdGF0b3I+a19fQmFja2luZ0ZpZWxk",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<background>k__BackingField",
+          "Data": "PGJhY2tncm91bmQ+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "stackCountText",
+          "Data": "c3RhY2tDb3VudFRleHQ=",
+          "Length": 14,
+          "DataLength": 14
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "stackCountTextBackground",
+          "Data": "c3RhY2tDb3VudFRleHRCYWNrZ3JvdW5k",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "pinOverlayNodes",
+          "Data": "cGluT3ZlcmxheU5vZGVz",
+          "Length": 15,
+          "DataLength": 15
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "<fakeMiddle>k__BackingField",
+          "Data": "PGZha2VNaWRkbGU+a19fQmFja2luZ0ZpZWxk",
+          "Length": 27,
+          "DataLength": 27
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<fakeRotator>k__BackingField",
+          "Data": "PGZha2VSb3RhdG9yPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 28,
+          "DataLength": 28
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "<fakeBackground>k__BackingField",
+          "Data": "PGZha2VCYWNrZ3JvdW5kPmtfX0JhY2tpbmdGaWVsZA==",
+          "Length": 31,
+          "DataLength": 31
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "fakeStackCountText",
+          "Data": "ZmFrZVN0YWNrQ291bnRUZXh0",
+          "Length": 18,
+          "DataLength": 18
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "fakeStackCountTextBackground",
+          "Data": "ZmFrZVN0YWNrQ291bnRUZXh0QmFja2dyb3VuZA==",
+          "Length": 28,
+          "DataLength": 28
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "fakePinOverlayNodes",
+          "Data": "ZmFrZVBpbk92ZXJsYXlOb2Rlcw==",
+          "Length": 19,
+          "DataLength": 19
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "fakePinOverlayVisible",
+          "Data": "ZmFrZVBpbk92ZXJsYXlWaXNpYmxl",
+          "Length": 21,
+          "DataLength": 21
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "markOverlayNode",
+          "Data": "bWFya092ZXJsYXlOb2Rl",
+          "Length": 15,
+          "DataLength": 15
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "fakeMarkOverlayNode",
+          "Data": "ZmFrZU1hcmtPdmVybGF5Tm9kZQ==",
+          "Length": 19,
+          "DataLength": 19
+        },
+        "type": "TreeNodeRender"
+      },
+      {
+        "Name": {
+          "String": "markHiddenWithBackground",
+          "Data": "bWFya0hpZGRlbldpdGhCYWNrZ3JvdW5k",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "playingFrameNodes",
+          "Data": "cGxheWluZ0ZyYW1lTm9kZXM=",
+          "Length": 17,
+          "DataLength": 17
+        },
+        "type": "TreeNodeRender[]"
+      },
+      {
+        "Name": {
+          "String": "fakePlayingFrameNodes",
+          "Data": "ZmFrZVBsYXlpbmdGcmFtZU5vZGVz",
+          "Length": 21,
+          "DataLength": 21
+        },
+        "type": "TreeNodeRender[]"
+      },
+      {
+        "Name": {
+          "String": "<tempShape>k__BackingField",
+          "Data": "PHRlbXBTaGFwZT5rX19CYWNraW5nRmllbGQ=",
+          "Length": 26,
+          "DataLength": 26
+        },
+        "type": "GridShapeBuilder"
+      },
+      {
+        "Name": {
+          "String": "spriteMods",
+          "Data": "c3ByaXRlTW9kcw==",
+          "Length": 10,
+          "DataLength": 10
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "fakeSpriteMods",
+          "Data": "ZmFrZVNwcml0ZU1vZHM=",
+          "Length": 14,
+          "DataLength": 14
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "innateSpriteMods",
+          "Data": "aW5uYXRlU3ByaXRlTW9kcw==",
+          "Length": 16,
+          "DataLength": 16
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "innateFakeSpriteMods",
+          "Data": "aW5uYXRlRmFrZVNwcml0ZU1vZHM=",
+          "Length": 20,
+          "DataLength": 20
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "validateLock",
+          "Data": "dmFsaWRhdGVMb2Nr",
+          "Length": 12,
+          "DataLength": 12
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "noSpriteModifiers",
+          "Data": "bm9TcHJpdGVNb2RpZmllcnM=",
+          "Length": 17,
+          "DataLength": 17
+        },
+        "type": "System.Collections.Generic.List`1<ItemSpriteModifier>"
+      },
+      {
+        "Name": {
+          "String": "innerNodeBuffer",
+          "Data": "aW5uZXJOb2RlQnVmZmVy",
+          "Length": 15,
+          "DataLength": 15
+        },
+        "type": "System.Collections.Generic.List`1<TreeNodeRender>"
+      },
+      {
+        "Name": {
+          "String": "destroyed",
+          "Data": "ZGVzdHJveWVk",
+          "Length": 9,
+          "DataLength": 9
+        },
+        "type": "System.Boolean"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Boolean GameItemElement::get_canResize()",
+        "hasBody": true,
+        "token": 100675634
+      },
+      {
+        "signature": "System.Int32 GameItemElement::get_widthPixels()",
+        "hasBody": true,
+        "token": 100675635
+      },
+      {
+        "signature": "System.Int32 GameItemElement::get_heightPixels()",
+        "hasBody": true,
+        "token": 100675636
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_handler()",
+        "hasBody": true,
+        "token": 100675637
+      },
+      {
+        "signature": "System.Void GameItemElement::set_handler(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675638
+      },
+      {
+        "signature": "UnityEngine.RectTransform GameItemElement::get_rectTransform()",
+        "hasBody": true,
+        "token": 100675639
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_inner()",
+        "hasBody": true,
+        "token": 100675640
+      },
+      {
+        "signature": "System.Void GameItemElement::set_inner(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675641
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_fakeInner()",
+        "hasBody": true,
+        "token": 100675642
+      },
+      {
+        "signature": "System.Void GameItemElement::set_fakeInner(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675643
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_middle()",
+        "hasBody": true,
+        "token": 100675644
+      },
+      {
+        "signature": "System.Void GameItemElement::set_middle(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675645
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_rotator()",
+        "hasBody": true,
+        "token": 100675646
+      },
+      {
+        "signature": "System.Void GameItemElement::set_rotator(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675647
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_background()",
+        "hasBody": true,
+        "token": 100675648
+      },
+      {
+        "signature": "System.Void GameItemElement::set_background(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675649
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_fakeMiddle()",
+        "hasBody": true,
+        "token": 100675650
+      },
+      {
+        "signature": "System.Void GameItemElement::set_fakeMiddle(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675651
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_fakeRotator()",
+        "hasBody": true,
+        "token": 100675652
+      },
+      {
+        "signature": "System.Void GameItemElement::set_fakeRotator(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675653
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::get_fakeBackground()",
+        "hasBody": true,
+        "token": 100675654
+      },
+      {
+        "signature": "System.Void GameItemElement::set_fakeBackground(TreeNodeRender)",
+        "hasBody": true,
+        "token": 100675655
+      },
+      {
+        "signature": "GridShapeBuilder GameItemElement::get_tempShape()",
+        "hasBody": true,
+        "token": 100675656
+      },
+      {
+        "signature": "System.Void GameItemElement::set_tempShape(GridShapeBuilder)",
+        "hasBody": true,
+        "token": 100675657
+      },
+      {
+        "signature": "System.Void GameItemElement::.ctor(System.String,System.String,System.String,PixelWindow)",
+        "hasBody": true,
+        "token": 100675658
+      },
+      {
+        "signature": "System.Int32 GameItemElement::WidthPixelsClamp(System.Int32)",
+        "hasBody": true,
+        "token": 100675659
+      },
+      {
+        "signature": "System.Int32 GameItemElement::HeightPixelsClamp(System.Int32)",
+        "hasBody": true,
+        "token": 100675660
+      },
+      {
+        "signature": "System.Void GameItemElement::ResizePixels(System.Int32,System.Int32)",
+        "hasBody": true,
+        "token": 100675661
+      },
+      {
+        "signature": "System.Int32 GameItemElement::XClamp(System.Int32)",
+        "hasBody": true,
+        "token": 100675662
+      },
+      {
+        "signature": "System.Int32 GameItemElement::YClamp(System.Int32)",
+        "hasBody": true,
+        "token": 100675663
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdateRectTransform()",
+        "hasBody": true,
+        "token": 100675664
+      },
+      {
+        "signature": "System.Void GameItemElement::Validate()",
+        "hasBody": true,
+        "token": 100675665
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<ItemSpriteModifier> GameItemElement::SortedByPriority(System.Collections.Generic.List`1<ItemSpriteModifier>)",
+        "hasBody": true,
+        "token": 100675666
+      },
+      {
+        "signature": "UnityEngine.Sprite GameItemElement::ResolveSpriteByName(System.String)",
+        "hasBody": true,
+        "token": 100675667
+      },
+      {
+        "signature": "UnityEngine.Sprite GameItemElement::ResolveItemSprite()",
+        "hasBody": true,
+        "token": 100675668
+      },
+      {
+        "signature": "System.Void GameItemElement::ValidatePartialSprite()",
+        "hasBody": true,
+        "token": 100675669
+      },
+      {
+        "signature": "System.Void GameItemElement::ApplyAnimationFrame(UnityEngine.Sprite)",
+        "hasBody": true,
+        "token": 100675670
+      },
+      {
+        "signature": "System.Void GameItemElement::HandleModSprite()",
+        "hasBody": true,
+        "token": 100675671
+      },
+      {
+        "signature": "System.Void GameItemElement::ValidateSelect(System.Boolean)",
+        "hasBody": true,
+        "token": 100675672
+      },
+      {
+        "signature": "System.Void GameItemElement::ValidateSelectLocked(System.Boolean)",
+        "hasBody": true,
+        "token": 100675673
+      },
+      {
+        "signature": "System.Collections.Generic.IEnumerable`1<TreeNodeRender> GameItemElement::GetActiveInnateSpriteMods()",
+        "hasBody": true,
+        "token": 100675674
+      },
+      {
+        "signature": "System.Void GameItemElement::HandleInnateModSprite()",
+        "hasBody": true,
+        "token": 100675675
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdateModSprite(System.Int32,UnityEngine.Sprite,UnityEngine.Vector2,System.Int32,System.Boolean,ItemSpriteModifier)",
+        "hasBody": true,
+        "token": 100675676
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdateInnateModSprite(System.Int32,UnityEngine.Sprite,UnityEngine.Vector2,System.Int32,System.Boolean,ItemSpriteModifier)",
+        "hasBody": true,
+        "token": 100675677
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdateFakeReal(System.Int32)",
+        "hasBody": true,
+        "token": 100675678
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdatePinOverlay()",
+        "hasBody": true,
+        "token": 100675679
+      },
+      {
+        "signature": "System.Void GameItemElement::PlacePinOverlayNode(System.Collections.Generic.List`1<TreeNodeRender>,System.Int32,TreeNodeRender,UnityEngine.Vector2,System.Int32,System.Boolean)",
+        "hasBody": true,
+        "token": 100675680
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdateMarkOverlay()",
+        "hasBody": true,
+        "token": 100675681
+      },
+      {
+        "signature": "TreeNodeRender GameItemElement::PlaceMarkOverlayNode(TreeNodeRender,TreeNodeRender,UnityEngine.Color,System.Int32,System.Boolean)",
+        "hasBody": true,
+        "token": 100675682
+      },
+      {
+        "signature": "System.Void GameItemElement::RefreshPlayingFrame()",
+        "hasBody": true,
+        "token": 100675683
+      },
+      {
+        "signature": "System.Void GameItemElement::UpdatePlayingFrameOverlay()",
+        "hasBody": true,
+        "token": 100675684
+      },
+      {
+        "signature": "System.Void GameItemElement::SetFrameNodesEnabled(TreeNodeRender[],System.Boolean)",
+        "hasBody": true,
+        "token": 100675685
+      },
+      {
+        "signature": "TreeNodeRender[] GameItemElement::PlaceFrameNodes(TreeNodeRender[],TreeNodeRender,UnityEngine.Color,System.Single,System.Boolean)",
+        "hasBody": true,
+        "token": 100675686
+      },
+      {
+        "signature": "System.Void GameItemElement::PlaceFrameEdge(TreeNodeRender,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)",
+        "hasBody": true,
+        "token": 100675687
+      },
+      {
+        "signature": "System.Void GameItemElement::ToggleBackground(System.Boolean,System.Single,System.Single)",
+        "hasBody": true,
+        "token": 100675688
+      },
+      {
+        "signature": "System.Void GameItemElement::ToggleFakeBackground(System.Boolean,UnityEngine.Vector4)",
+        "hasBody": true,
+        "token": 100675689
+      },
+      {
+        "signature": "System.Void GameItemElement::ToggleFakeBackground(System.Boolean,System.Single,System.Single)",
+        "hasBody": true,
+        "token": 100675690
+      },
+      {
+        "signature": "System.Boolean GameItemElement::Attach(PixelElement)",
+        "hasBody": true,
+        "token": 100675691
+      },
+      {
+        "signature": "System.Boolean GameItemElement::Detach(PixelElement)",
+        "hasBody": true,
+        "token": 100675692
+      },
+      {
+        "signature": "System.Void GameItemElement::GridFlipX()",
+        "hasBody": true,
+        "token": 100675693
+      },
+      {
+        "signature": "System.Void GameItemElement::GridFlipY()",
+        "hasBody": true,
+        "token": 100675694
+      },
+      {
+        "signature": "System.Void GameItemElement::GridRotCCW()",
+        "hasBody": true,
+        "token": 100675695
+      },
+      {
+        "signature": "System.Void GameItemElement::GridRotCW()",
+        "hasBody": true,
+        "token": 100675696
+      },
+      {
+        "signature": "System.Void GameItemElement::GridRot180()",
+        "hasBody": true,
+        "token": 100675697
+      },
+      {
+        "signature": "System.Void GameItemElement::FlipX()",
+        "hasBody": true,
+        "token": 100675698
+      },
+      {
+        "signature": "System.Void GameItemElement::FlipY()",
+        "hasBody": true,
+        "token": 100675699
+      },
+      {
+        "signature": "System.Void GameItemElement::RotCCW()",
+        "hasBody": true,
+        "token": 100675700
+      },
+      {
+        "signature": "System.Void GameItemElement::RotCW()",
+        "hasBody": true,
+        "token": 100675701
+      },
+      {
+        "signature": "System.Void GameItemElement::Rot180()",
+        "hasBody": true,
+        "token": 100675702
+      },
+      {
+        "signature": "System.ValueTuple`2<System.Single,System.Single> GameItemElement::GetCenteredPosition()",
+        "hasBody": true,
+        "token": 100675703
+      },
+      {
+        "signature": "System.Void GameItemElement::SetCenteredPosition(System.Single,System.Single)",
+        "hasBody": true,
+        "token": 100675704
+      },
+      {
+        "signature": "System.Void GameItemElement::MovePosition(System.Single,System.Single)",
+        "hasBody": true,
+        "token": 100675705
+      },
+      {
+        "signature": "UnityEngine.Vector2 GameItemElement::GetFakeRotatorCenteredPosition()",
+        "hasBody": true,
+        "token": 100675706
+      },
+      {
+        "signature": "UnityEngine.Vector2 GameItemElement::GetRotatorCenteredPosition()",
+        "hasBody": true,
+        "token": 100675707
+      },
+      {
+        "signature": "System.Void GameItemElement::Destroy()",
+        "hasBody": true,
+        "token": 100675708
+      },
+      {
+        "signature": "System.Boolean GameItemElement::IsDestroyed()",
+        "hasBody": true,
+        "token": 100675709
+      },
+      {
+        "signature": "System.Boolean GameItemElement::HasTooltip()",
+        "hasBody": true,
+        "token": 100675710
+      },
+      {
+        "signature": "RichTextBuilder GameItemElement::GetTooltipBasic()",
+        "hasBody": true,
+        "token": 100675711
+      },
+      {
+        "signature": "RichText GameItemElement::GetTooltip()",
+        "hasBody": true,
+        "token": 100675712
+      },
+      {
+        "signature": "RichText GameItemElement::GetTooltipAdvanced()",
+        "hasBody": true,
+        "token": 100675713
+      },
+      {
+        "signature": "System.Void GameItemElement::.cctor()",
+        "hasBody": true,
+        "token": 100675714
+      },
+      {
+        "signature": "System.Boolean GameItemElement::<ResolveSpriteByName>b__75_0(LoadedMod)",
+        "hasBody": true,
+        "token": 100675715
+      }
+    ]
+  },
+  {
+    "type": "TooltipListener",
+    "fields": [],
+    "methods": [
+      {
+        "signature": "System.Boolean TooltipListener::HasTooltip()",
+        "hasBody": false,
+        "token": 100675842
+      },
+      {
+        "signature": "RichText TooltipListener::GetTooltip()",
+        "hasBody": false,
+        "token": 100675843
+      },
+      {
+        "signature": "RichText TooltipListener::GetTooltipAdvanced()",
+        "hasBody": false,
+        "token": 100675844
+      }
+    ]
+  },
+  {
+    "type": "ItemTooltipHandler",
+    "fields": [
+      {
+        "Name": {
+          "String": "current",
+          "Data": "Y3VycmVudA==",
+          "Length": 7,
+          "DataLength": 7
+        },
+        "type": "ItemTooltipHandler"
+      },
+      {
+        "Name": {
+          "String": "key",
+          "Data": "a2V5",
+          "Length": 3,
+          "DataLength": 3
+        },
+        "type": "UnityEngine.KeyCode"
+      },
+      {
+        "Name": {
+          "String": "tooltipTranslation",
+          "Data": "dG9vbHRpcFRyYW5zbGF0aW9u",
+          "Length": 18,
+          "DataLength": 18
+        },
+        "type": "UnityEngine.Vector2"
+      },
+      {
+        "Name": {
+          "String": "BASE_TOOLTIP_CHAR_WIDTH",
+          "Data": "QkFTRV9UT09MVElQX0NIQVJfV0lEVEg=",
+          "Length": 23,
+          "DataLength": 23
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "MACHINE_TOOLTIP_WIDTH_MULT",
+          "Data": "TUFDSElORV9UT09MVElQX1dJRFRIX01VTFQ=",
+          "Length": 26,
+          "DataLength": 26
+        },
+        "type": "System.Single"
+      },
+      {
+        "Name": {
+          "String": "advanced",
+          "Data": "YWR2YW5jZWQ=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "currentTooltipListener",
+          "Data": "Y3VycmVudFRvb2x0aXBMaXN0ZW5lcg==",
+          "Length": 22,
+          "DataLength": 22
+        },
+        "type": "TooltipListener"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void ItemTooltipHandler::Awake()",
+        "hasBody": true,
+        "token": 100677365
+      },
+      {
+        "signature": "System.Collections.Generic.List`1<UnityEngine.KeyCode> ItemTooltipHandler::get_keyListeners()",
+        "hasBody": true,
+        "token": 100677366
+      },
+      {
+        "signature": "System.Void ItemTooltipHandler::OnEventPress(System.Collections.Generic.ISet`1<UnityEngine.KeyCode>)",
+        "hasBody": true,
+        "token": 100677367
+      },
+      {
+        "signature": "System.Void ItemTooltipHandler::OnEventRelease(System.Collections.Generic.ISet`1<UnityEngine.KeyCode>)",
+        "hasBody": true,
+        "token": 100677368
+      },
+      {
+        "signature": "System.Boolean ItemTooltipHandler::OnEventUpdate()",
+        "hasBody": true,
+        "token": 100677369
+      },
+      {
+        "signature": "System.Void ItemTooltipHandler::OnEventReset()",
+        "hasBody": true,
+        "token": 100677370
+      },
+      {
+        "signature": "System.Void ItemTooltipHandler::.ctor()",
+        "hasBody": true,
+        "token": 100677371
+      }
+    ]
+  },
+  {
+    "type": "TooltipContainer",
+    "fields": [
+      {
+        "Name": {
+          "String": "content",
+          "Data": "Y29udGVudA==",
+          "Length": 7,
+          "DataLength": 7
+        },
+        "type": "System.String"
+      },
+      {
+        "Name": {
+          "String": "interactable",
+          "Data": "aW50ZXJhY3RhYmxl",
+          "Length": 12,
+          "DataLength": 12
+        },
+        "type": "Interactable"
+      },
+      {
+        "Name": {
+          "String": "showTooltip",
+          "Data": "c2hvd1Rvb2x0aXA=",
+          "Length": 11,
+          "DataLength": 11
+        },
+        "type": "System.Boolean"
+      },
+      {
+        "Name": {
+          "String": "tooltipInterfaceInstance",
+          "Data": "dG9vbHRpcEludGVyZmFjZUluc3RhbmNl",
+          "Length": 24,
+          "DataLength": 24
+        },
+        "type": "TooltipInterface"
+      },
+      {
+        "Name": {
+          "String": "isPaused",
+          "Data": "aXNQYXVzZWQ=",
+          "Length": 8,
+          "DataLength": 8
+        },
+        "type": "System.Boolean"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void TooltipContainer::Awake()",
+        "hasBody": true,
+        "token": 100678087
+      },
+      {
+        "signature": "System.Void TooltipContainer::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100678088
+      },
+      {
+        "signature": "System.Void TooltipContainer::OnPointerExit(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100678089
+      },
+      {
+        "signature": "System.Void TooltipContainer::Update()",
+        "hasBody": true,
+        "token": 100678090
+      },
+      {
+        "signature": "System.Void TooltipContainer::UpdateTooltip()",
+        "hasBody": true,
+        "token": 100678091
+      },
+      {
+        "signature": "System.Void TooltipContainer::OnDisable()",
+        "hasBody": true,
+        "token": 100678092
+      },
+      {
+        "signature": "System.Void TooltipContainer::.ctor()",
+        "hasBody": true,
+        "token": 100678093
+      }
+    ]
+  },
+  {
+    "type": "TooltipInterface",
+    "fields": [],
+    "methods": [
+      {
+        "signature": "System.String TooltipInterface::GetTooltip()",
+        "hasBody": false,
+        "token": 100678094
+      },
+      {
+        "signature": "System.Boolean TooltipInterface::IsTooltipEnabled()",
+        "hasBody": false,
+        "token": 100678095
+      },
+      {
+        "signature": "System.Void TooltipInterface::.ctor()",
+        "hasBody": true,
+        "token": 100678096
+      }
+    ]
+  },
+  {
+    "type": "TooltipManager",
+    "fields": [
+      {
+        "Name": {
+          "String": "_instance",
+          "Data": "X2luc3RhbmNl",
+          "Length": 9,
+          "DataLength": 9
+        },
+        "type": "TooltipManager"
+      },
+      {
+        "Name": {
+          "String": "content",
+          "Data": "Y29udGVudA==",
+          "Length": 7,
+          "DataLength": 7
+        },
+        "type": "TMPro.TextMeshProUGUI"
+      },
+      {
+        "Name": {
+          "String": "rectTransform",
+          "Data": "cmVjdFRyYW5zZm9ybQ==",
+          "Length": 13,
+          "DataLength": 13
+        },
+        "type": "UnityEngine.RectTransform"
+      },
+      {
+        "Name": {
+          "String": "tooltipCanvas",
+          "Data": "dG9vbHRpcENhbnZhcw==",
+          "Length": 13,
+          "DataLength": 13
+        },
+        "type": "UnityEngine.Canvas"
+      },
+      {
+        "Name": {
+          "String": "tooltipGameobject",
+          "Data": "dG9vbHRpcEdhbWVvYmplY3Q=",
+          "Length": 17,
+          "DataLength": 17
+        },
+        "type": "UnityEngine.GameObject"
+      },
+      {
+        "Name": {
+          "String": "tooltipHomeParent",
+          "Data": "dG9vbHRpcEhvbWVQYXJlbnQ=",
+          "Length": 17,
+          "DataLength": 17
+        },
+        "type": "UnityEngine.Transform"
+      },
+      {
+        "Name": {
+          "String": "tooltipHomeSiblingIndex",
+          "Data": "dG9vbHRpcEhvbWVTaWJsaW5nSW5kZXg=",
+          "Length": 23,
+          "DataLength": 23
+        },
+        "type": "System.Int32"
+      },
+      {
+        "Name": {
+          "String": "tooltipHomeScale",
+          "Data": "dG9vbHRpcEhvbWVTY2FsZQ==",
+          "Length": 16,
+          "DataLength": 16
+        },
+        "type": "UnityEngine.Vector3"
+      },
+      {
+        "Name": {
+          "String": "tooltipOwner",
+          "Data": "dG9vbHRpcE93bmVy",
+          "Length": 12,
+          "DataLength": 12
+        },
+        "type": "UnityEngine.Component"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void TooltipManager::Awake()",
+        "hasBody": true,
+        "token": 100678097
+      },
+      {
+        "signature": "System.Boolean TooltipManager::EnsureTooltipLayer()",
+        "hasBody": true,
+        "token": 100678098
+      },
+      {
+        "signature": "System.Void TooltipManager::Start()",
+        "hasBody": true,
+        "token": 100678099
+      },
+      {
+        "signature": "System.Void TooltipManager::Update()",
+        "hasBody": true,
+        "token": 100678100
+      },
+      {
+        "signature": "System.Boolean TooltipManager::IsOwnerGone()",
+        "hasBody": true,
+        "token": 100678101
+      },
+      {
+        "signature": "System.Void TooltipManager::SetAndShowTooltip(System.String)",
+        "hasBody": true,
+        "token": 100678102
+      },
+      {
+        "signature": "System.Void TooltipManager::SetAndShowTooltip(System.String,UnityEngine.Component)",
+        "hasBody": true,
+        "token": 100678103
+      },
+      {
+        "signature": "System.Void TooltipManager::HideTooltip()",
+        "hasBody": true,
+        "token": 100678104
+      },
+      {
+        "signature": "System.Void TooltipManager::HideTooltip(UnityEngine.Component)",
+        "hasBody": true,
+        "token": 100678105
+      },
+      {
+        "signature": "System.Void TooltipManager::UpdateTooltipPosition()",
+        "hasBody": true,
+        "token": 100678106
+      },
+      {
+        "signature": "System.Void TooltipManager::.ctor()",
+        "hasBody": true,
+        "token": 100678107
+      }
+    ]
+  },
+  {
+    "type": "ModRowHoverTooltip",
+    "fields": [
+      {
+        "Name": {
+          "String": "text",
+          "Data": "dGV4dA==",
+          "Length": 4,
+          "DataLength": 4
+        },
+        "type": "System.String"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void ModRowHoverTooltip::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100678813
+      },
+      {
+        "signature": "System.Void ModRowHoverTooltip::OnPointerExit(UnityEngine.EventSystems.PointerEventData)",
+        "hasBody": true,
+        "token": 100678814
+      },
+      {
+        "signature": "System.Void ModRowHoverTooltip::OnDisable()",
+        "hasBody": true,
+        "token": 100678815
+      },
+      {
+        "signature": "System.Void ModRowHoverTooltip::.ctor()",
+        "hasBody": true,
+        "token": 100678816
+      }
+    ]
+  }
+]

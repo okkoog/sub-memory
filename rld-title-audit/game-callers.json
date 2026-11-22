@@ -1,0 +1,6520 @@
+[
+  {
+    "method": "RichTextBuilder CharacterItemDirectory/<>c::<Humanoid>b__5_2(GameItem,GameInventory,SlotMarker,GridShape,TagSystem)",
+    "calls": [
+      {
+        "index": 10,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 5,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 6,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 7,
+            "op": "brfalse",
+            "arg": "@4F4"
+          },
+          {
+            "n": 8,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 11,
+            "op": "ldstr",
+            "arg": " ("
+          },
+          {
+            "n": 12,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldstr",
+            "arg": "class_name"
+          },
+          {
+            "n": 14,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 15,
+            "op": "callvirt",
+            "arg": "System.String TagState::get_valueString()"
+          },
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": ")"
+          }
+        ]
+      },
+      {
+        "index": 474,
+        "target": "System.String CombatAbilityEffect::get_name()",
+        "context": [
+          {
+            "n": 469,
+            "op": "br",
+            "arg": "@4D8"
+          },
+          {
+            "n": 470,
+            "op": "ldloca.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 471,
+            "op": "call",
+            "arg": "CombatAbilityEffect System.Collections.Generic.List`1/Enumerator<CombatAbilityEffect>::get_Current()"
+          },
+          {
+            "n": 472,
+            "op": "stloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 473,
+            "op": "ldloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 474,
+            "op": "callvirt",
+            "arg": "System.String CombatAbilityEffect::get_name()"
+          },
+          {
+            "n": 475,
+            "op": "stloc.s",
+            "arg": "V_8"
+          },
+          {
+            "n": 476,
+            "op": "ldloc.s",
+            "arg": "V_8"
+          },
+          {
+            "n": 477,
+            "op": "brfalse.s",
+            "arg": "@449"
+          },
+          {
+            "n": 478,
+            "op": "ldloc.s",
+            "arg": "V_8"
+          },
+          {
+            "n": 479,
+            "op": "callvirt",
+            "arg": "System.Int32 System.String::get_Length()"
+          },
+          {
+            "n": 480,
+            "op": "brtrue.s",
+            "arg": "@470"
+          }
+        ]
+      },
+      {
+        "index": 546,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 541,
+            "op": "constrained.",
+            "arg": "System.Collections.Generic.List`1/Enumerator<CombatAbilityEffect>"
+          },
+          {
+            "n": 542,
+            "op": "callvirt",
+            "arg": "System.Void System.IDisposable::Dispose()"
+          },
+          {
+            "n": 543,
+            "op": "endfinally",
+            "arg": ""
+          },
+          {
+            "n": 544,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 545,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 546,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 547,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 548,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 549,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 550,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 551,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 552,
+            "op": "ldc.i4.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`4<PixelWindow,GameSlotInventory,GameSlotInventory,ButtonElement> DirectoryUtils::CreatePasteDispencerWindow()",
+    "calls": [
+      {
+        "index": 25,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 20,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 22,
+            "op": "ldstr",
+            "arg": "Machine Output"
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 24,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 25,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 26,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Energy Credit"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Energy Credit"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 33,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 34,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 35,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          },
+          {
+            "n": 36,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 37,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          },
+          {
+            "n": 38,
+            "op": "stloc.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 39,
+            "op": "ldstr",
+            "arg": "Dispence"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`5<PixelWindow,GameSlotInventory,GameSlotInventory,ButtonElement,ButtonElement> DirectoryUtils::CreateWaterFountainWindow()",
+    "calls": [
+      {
+        "index": 39,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 34,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 36,
+            "op": "ldstr",
+            "arg": "Liquid Container"
+          },
+          {
+            "n": 37,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 38,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 39,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 40,
+            "op": "stloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 41,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 43,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 44,
+            "op": "ldstr",
+            "arg": "Energy Credit"
+          },
+          {
+            "n": 45,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 47,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 42,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 43,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 44,
+            "op": "ldstr",
+            "arg": "Energy Credit"
+          },
+          {
+            "n": 45,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 46,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 47,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 48,
+            "op": "stloc.s",
+            "arg": "V_8"
+          },
+          {
+            "n": 49,
+            "op": "ldloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 50,
+            "op": "ldloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 51,
+            "op": "ldc.i4.s",
+            "arg": "10"
+          },
+          {
+            "n": 52,
+            "op": "ldc.i4.s",
+            "arg": "10"
+          },
+          {
+            "n": 53,
+            "op": "callvirt",
+            "arg": "System.Boolean GridPixelElement::Attach(PixelElement,System.Int32,System.Int32)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameSlotInventory,ButtonElement> DirectoryUtils::CreateTrashPileWindow()",
+    "calls": [
+      {
+        "index": 39,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 34,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 36,
+            "op": "ldstr",
+            "arg": "Loot"
+          },
+          {
+            "n": 37,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 38,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 39,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 40,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 41,
+            "op": "ldloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 42,
+            "op": "ldloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 43,
+            "op": "ldc.i4.s",
+            "arg": "10"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4.s",
+            "arg": "10"
+          },
+          {
+            "n": 45,
+            "op": "callvirt",
+            "arg": "System.Boolean GridPixelElement::Attach(PixelElement,System.Int32,System.Int32)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameInventory,GameInventory> DirectoryUtils::CreateEquipmentWindow(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 15,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 10,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 12,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 13,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 14,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 15,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 16,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 17,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 20,
+            "op": "ldstr",
+            "arg": "Battery"
+          },
+          {
+            "n": 21,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 23,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 18,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 20,
+            "op": "ldstr",
+            "arg": "Battery"
+          },
+          {
+            "n": 21,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 22,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 23,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 24,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 25,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 28,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`2<PixelWindow,GameInventory> DirectoryUtils::CreateModuleInv(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 20,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 15,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 17,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 18,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 19,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 20,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 21,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 24,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 25,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ldloc.3",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameInventory,GameInventory> DirectoryUtils::CreateNavSystemWindow(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 20,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 15,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 17,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 18,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 19,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 20,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 21,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 24,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 25,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ldloc.3",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 70,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 65,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 66,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 67,
+            "op": "ldstr",
+            "arg": "Nav Disks"
+          },
+          {
+            "n": 68,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 69,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 70,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 71,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 72,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 73,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 74,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 75,
+            "op": "stloc.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 76,
+            "op": "ldloc.s",
+            "arg": "V_6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameInventory,GameInventory> DirectoryUtils::CreatePropulsionSystemWindow(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 25,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 20,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 22,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 24,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 25,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 26,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Fuel Intake"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Fuel Intake"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 33,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 34,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 35,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 38,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 39,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameInventory,GameInventory> DirectoryUtils::CreateAutonomousMedicalSystemWindow(System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 25,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 20,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 22,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 24,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 25,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 26,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Patient"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Patient"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 33,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 34,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 35,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 38,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 39,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`3<PixelWindow,GameInventory,GameInventory> DirectoryUtils::CreateArmorConditionerSystemWindow(System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 25,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 20,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 22,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 23,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 24,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 25,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 26,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Armor"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 30,
+            "op": "ldstr",
+            "arg": "Armor"
+          },
+          {
+            "n": 31,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 33,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 34,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 35,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 38,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 39,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`4<PixelWindow,GameInventory,GameInventory,GameInventory> DirectoryUtils::CreateBioPrinterSystemWindow(System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 30,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 25,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 27,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 29,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 30,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 31,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Target Specimen"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Target Specimen"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 37,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 38,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 39,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 40,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Output"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 46,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Output"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 45,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 46,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 47,
+            "op": "stloc.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 48,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 51,
+            "op": "stloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 52,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`4<PixelWindow,GameInventory,GameInventory,GameInventory> DirectoryUtils::CreateWaterRecyclerSystemWindow(System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 30,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 25,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 27,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 29,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 30,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 31,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Internal Tank"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Internal Tank"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 37,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 38,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 39,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 40,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Bottling"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 46,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Bottling"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 45,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 46,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 47,
+            "op": "stloc.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 48,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 51,
+            "op": "stloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 52,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.ValueTuple`4<PixelWindow,GameInventory,GameInventory,GameInventory> DirectoryUtils::CreateHydroponicSystemWindow(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int32)",
+    "calls": [
+      {
+        "index": 30,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 25,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 27,
+            "op": "ldstr",
+            "arg": "Modules"
+          },
+          {
+            "n": 28,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 29,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 30,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 31,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 32,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Seed Intake"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 33,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 35,
+            "op": "ldstr",
+            "arg": "Seed Intake"
+          },
+          {
+            "n": 36,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 37,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 38,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 39,
+            "op": "stloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 40,
+            "op": "ldc.i4.m1",
+            "arg": ""
+          },
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Output"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          }
+        ]
+      },
+      {
+        "index": 46,
+        "target": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)",
+        "context": [
+          {
+            "n": 41,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "newobj",
+            "arg": "System.Void TagElement::.ctor(System.Int32,System.Boolean)"
+          },
+          {
+            "n": 43,
+            "op": "ldstr",
+            "arg": "Output"
+          },
+          {
+            "n": 44,
+            "op": "ldc.i4",
+            "arg": "10000"
+          },
+          {
+            "n": 45,
+            "op": "ldc.i4",
+            "arg": "12822958"
+          },
+          {
+            "n": 46,
+            "op": "call",
+            "arg": "TagElement TagElement::SetText(System.String,System.Int32,RenderHandler/ColorPalette)"
+          },
+          {
+            "n": 47,
+            "op": "stloc.s",
+            "arg": "V_6"
+          },
+          {
+            "n": 48,
+            "op": "ldc.i4.8",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "newobj",
+            "arg": "System.Void GameGridInventory::.ctor(System.Int32,System.Int32)"
+          },
+          {
+            "n": 51,
+            "op": "stloc.s",
+            "arg": "V_7"
+          },
+          {
+            "n": 52,
+            "op": "newobj",
+            "arg": "System.Void GameSlotInventory::.ctor()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 PlayerAbilityItemDirectory/<>c::<CreateStandardCombatAbilityItem>b__10_1(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 13,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 8,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "brtrue.s",
+            "arg": "@1C"
+          },
+          {
+            "n": 10,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 12,
+            "op": "br.s",
+            "arg": "@21"
+          },
+          {
+            "n": 13,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 14,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": "character"
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 18,
+            "op": "callvirt",
+            "arg": "System.String TagState::get_valueString()"
+          },
+          {
+            "n": 19,
+            "op": "ldloc.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void PlayerAbilityItemDirectory/<>c::<CreateStandardCombatAbilityItem>b__10_2(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 12,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 7,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "brtrue.s",
+            "arg": "@16"
+          },
+          {
+            "n": 9,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "br.s",
+            "arg": "@1B"
+          },
+          {
+            "n": 12,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 13,
+            "op": "stfld",
+            "arg": "System.String PlayerAbilityItemDirectory/<>c__DisplayClass10_0::characterName"
+          },
+          {
+            "n": 14,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.String PlayerAbilityItemDirectory/<>c__DisplayClass10_0::characterName"
+          },
+          {
+            "n": 16,
+            "op": "brfalse.s",
+            "arg": "@41"
+          },
+          {
+            "n": 17,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "ldstr",
+            "arg": "character"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 PlayerAbilityItemDirectory/<>c::<CreateGenericCombatAbilityItem>b__11_3(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 13,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 8,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "brtrue.s",
+            "arg": "@1C"
+          },
+          {
+            "n": 10,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 12,
+            "op": "br.s",
+            "arg": "@21"
+          },
+          {
+            "n": 13,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 14,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": "character"
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 18,
+            "op": "callvirt",
+            "arg": "System.String TagState::get_valueString()"
+          },
+          {
+            "n": 19,
+            "op": "ldloc.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void PlayerAbilityItemDirectory/<>c::<CreateGenericCombatAbilityItem>b__11_4(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 12,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 7,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "brtrue.s",
+            "arg": "@16"
+          },
+          {
+            "n": 9,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "br.s",
+            "arg": "@1B"
+          },
+          {
+            "n": 12,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 13,
+            "op": "stfld",
+            "arg": "System.String PlayerAbilityItemDirectory/<>c__DisplayClass11_0::characterName"
+          },
+          {
+            "n": 14,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.String PlayerAbilityItemDirectory/<>c__DisplayClass11_0::characterName"
+          },
+          {
+            "n": 16,
+            "op": "brfalse.s",
+            "arg": "@41"
+          },
+          {
+            "n": 17,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "ldstr",
+            "arg": "character"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 UnusedDirectory/<>c::<CreateStandardCombatAbilityItem>b__94_3(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 13,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 8,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "brtrue.s",
+            "arg": "@1C"
+          },
+          {
+            "n": 10,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 12,
+            "op": "br.s",
+            "arg": "@21"
+          },
+          {
+            "n": 13,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 14,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": "character"
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 18,
+            "op": "callvirt",
+            "arg": "System.String TagState::get_valueString()"
+          },
+          {
+            "n": 19,
+            "op": "ldloc.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void UnusedDirectory/<>c::<CreateStandardCombatAbilityItem>b__94_4(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 12,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 7,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "brtrue.s",
+            "arg": "@16"
+          },
+          {
+            "n": 9,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "br.s",
+            "arg": "@1B"
+          },
+          {
+            "n": 12,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 13,
+            "op": "stfld",
+            "arg": "System.String UnusedDirectory/<>c__DisplayClass94_0::characterName"
+          },
+          {
+            "n": 14,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.String UnusedDirectory/<>c__DisplayClass94_0::characterName"
+          },
+          {
+            "n": 16,
+            "op": "brfalse.s",
+            "arg": "@41"
+          },
+          {
+            "n": 17,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "ldstr",
+            "arg": "character"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void UnusedDirectory/<>c::<TestCoin>b__97_0(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 7,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 2,
+            "op": "callvirt",
+            "arg": "System.Collections.Generic.List`1/Enumerator<GameItem> System.Collections.Generic.List`1<GameItem>::GetEnumerator()"
+          },
+          {
+            "n": 3,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 4,
+            "op": "br.s",
+            "arg": "@1F"
+          },
+          {
+            "n": 5,
+            "op": "ldloca.s",
+            "arg": "V_0"
+          },
+          {
+            "n": 6,
+            "op": "call",
+            "arg": "GameItem System.Collections.Generic.List`1/Enumerator<GameItem>::get_Current()"
+          },
+          {
+            "n": 7,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 8,
+            "op": "call",
+            "arg": "System.Void Debug::Log(System.Object)"
+          },
+          {
+            "n": 9,
+            "op": "ldloca.s",
+            "arg": "V_0"
+          },
+          {
+            "n": 10,
+            "op": "call",
+            "arg": "System.Boolean System.Collections.Generic.List`1/Enumerator<GameItem>::MoveNext()"
+          },
+          {
+            "n": 11,
+            "op": "brtrue.s",
+            "arg": "@E"
+          },
+          {
+            "n": 12,
+            "op": "leave.s",
+            "arg": "@38"
+          },
+          {
+            "n": 13,
+            "op": "ldloca.s",
+            "arg": "V_0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void AbilityItemHelper::CreateToolTipFromEffects(RichTextBuilder,GameItem)",
+    "calls": [
+      {
+        "index": 406,
+        "target": "System.String CombatAbilityEffect::get_name()",
+        "context": [
+          {
+            "n": 401,
+            "op": "ldc.i4.s",
+            "arg": "10"
+          },
+          {
+            "n": 402,
+            "op": "beq.s",
+            "arg": "@46E"
+          },
+          {
+            "n": 403,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 404,
+            "op": "ldstr",
+            "arg": "with "
+          },
+          {
+            "n": 405,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 406,
+            "op": "callvirt",
+            "arg": "System.String CombatAbilityEffect::get_name()"
+          },
+          {
+            "n": 407,
+            "op": "ldstr",
+            "arg": " "
+          },
+          {
+            "n": 408,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+          },
+          {
+            "n": 409,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 410,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 411,
+            "op": "callvirt",
+            "arg": "System.Int32 CombatAbilityEffect::get_duration()"
+          },
+          {
+            "n": 412,
+            "op": "brfalse",
+            "arg": "@512"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void CurrentConverterHelper::CreateTooltip(RichTextBuilder,GameItem)",
+    "calls": [
+      {
+        "index": 72,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 67,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 68,
+            "op": "newarr",
+            "arg": "System.Object"
+          },
+          {
+            "n": 69,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 70,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 71,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 72,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 73,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 74,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 75,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 76,
+            "op": "ldloc.3",
+            "arg": ""
+          },
+          {
+            "n": 77,
+            "op": "box",
+            "arg": "System.Int32"
+          },
+          {
+            "n": 78,
+            "op": "stelem.ref",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void HypertechBatteryHelper::CreateTooltip(RichTextBuilder,GameItem)",
+    "calls": [
+      {
+        "index": 78,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 73,
+            "op": "ldc.i4.2",
+            "arg": ""
+          },
+          {
+            "n": 74,
+            "op": "newarr",
+            "arg": "System.Object"
+          },
+          {
+            "n": 75,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 76,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 77,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 78,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 79,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 80,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 81,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 82,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 83,
+            "op": "box",
+            "arg": "System.Int32"
+          },
+          {
+            "n": 84,
+            "op": "stelem.ref",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void MindReprogrammerHelper/PerkHoverTooltip::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)",
+    "calls": [
+      {
+        "index": 15,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 10,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipTitle"
+          },
+          {
+            "n": 12,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldfld",
+            "arg": "StartingPerk MindReprogrammerHelper/PerkHoverTooltip::perk"
+          },
+          {
+            "n": 14,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDisplayName()"
+          },
+          {
+            "n": 15,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 16,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 17,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipDescription"
+          },
+          {
+            "n": 18,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "ldfld",
+            "arg": "StartingPerk MindReprogrammerHelper/PerkHoverTooltip::perk"
+          },
+          {
+            "n": 20,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 21,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 16,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 17,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipDescription"
+          },
+          {
+            "n": 18,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "ldfld",
+            "arg": "StartingPerk MindReprogrammerHelper/PerkHoverTooltip::perk"
+          },
+          {
+            "n": 20,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 21,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 22,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipCost"
+          },
+          {
+            "n": 24,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 25,
+            "op": "ldfld",
+            "arg": "StartingPerk MindReprogrammerHelper/PerkHoverTooltip::perk"
+          },
+          {
+            "n": 26,
+            "op": "ldflda",
+            "arg": "System.Int32 StartingPerk::cost"
+          },
+          {
+            "n": 27,
+            "op": "call",
+            "arg": "System.String System.Int32::ToString()"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldstr",
+            "arg": " "
+          },
+          {
+            "n": 29,
+            "op": "ldstr",
+            "arg": "perk_points"
+          },
+          {
+            "n": 30,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 31,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedPerkTable(System.String,System.Object[])"
+          },
+          {
+            "n": 32,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 33,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 34,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipIncompatible"
+          },
+          {
+            "n": 36,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 38,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "ldc.i4.1",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 37,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 32,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 33,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 34,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipIncompatible"
+          },
+          {
+            "n": 36,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 38,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 40,
+            "op": "stfld",
+            "arg": "System.Boolean MindReprogrammerHelper/PerkHoverTooltip::hovered"
+          },
+          {
+            "n": 41,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 42,
+            "op": "call",
+            "arg": "System.Void MindReprogrammerHelper/PerkHoverTooltip::FollowMouse(PerkUIController)"
+          },
+          {
+            "n": 43,
+            "op": "ldloc.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void MindReprogrammerHelper/PerkHoverTooltip::FollowMouse(PerkUIController)",
+    "calls": [
+      {
+        "index": 6,
+        "target": "UnityEngine.Vector3 UIHelper::GetTooltipPositionSimple()",
+        "context": [
+          {
+            "n": 1,
+            "op": "ldfld",
+            "arg": "UnityEngine.GameObject PerkUIController::startingPerkTooltip"
+          },
+          {
+            "n": 2,
+            "op": "ldnull",
+            "arg": ""
+          },
+          {
+            "n": 3,
+            "op": "call",
+            "arg": "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)"
+          },
+          {
+            "n": 4,
+            "op": "brfalse.s",
+            "arg": "@F"
+          },
+          {
+            "n": 5,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 6,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UIHelper::GetTooltipPositionSimple()"
+          },
+          {
+            "n": 7,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "ldloca.s",
+            "arg": "V_0"
+          },
+          {
+            "n": 9,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "ldfld",
+            "arg": "UnityEngine.GameObject PerkUIController::startingPerkTooltip"
+          },
+          {
+            "n": 11,
+            "op": "callvirt",
+            "arg": "UnityEngine.Transform UnityEngine.GameObject::get_transform()"
+          },
+          {
+            "n": 12,
+            "op": "callvirt",
+            "arg": "UnityEngine.Vector3 UnityEngine.Transform::get_position()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void ToolboxHelper::RefreshSlots(GameItem,System.Collections.Generic.List`1<GameSlotInventory>,System.Collections.Generic.List`1<MachineryLabel>,PixelWindow)",
+    "calls": [
+      {
+        "index": 23,
+        "target": "MachineryLabel MachineryLabel::SetText(System.String)",
+        "context": [
+          {
+            "n": 18,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 19,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 20,
+            "op": "br.s",
+            "arg": "@3A"
+          },
+          {
+            "n": 21,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "call",
+            "arg": "System.String ToolboxHelper::SlotLabel(System.Int32)"
+          },
+          {
+            "n": 23,
+            "op": "callvirt",
+            "arg": "MachineryLabel MachineryLabel::SetText(System.String)"
+          },
+          {
+            "n": 24,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 25,
+            "op": "ldarg.2",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "callvirt",
+            "arg": "MachineryLabel System.Collections.Generic.List`1<MachineryLabel>::get_Item(System.Int32)"
+          },
+          {
+            "n": 28,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "brtrue.s",
+            "arg": "@51"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "MachineryLabel MachineryLabel::SetTextColor(UnityEngine.Color)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "brtrue.s",
+            "arg": "@51"
+          },
+          {
+            "n": 30,
+            "op": "ldsfld",
+            "arg": "UnityEngine.Color MachineryStyle::BUTTON_TEXT_DISABLED"
+          },
+          {
+            "n": 31,
+            "op": "br.s",
+            "arg": "@56"
+          },
+          {
+            "n": 32,
+            "op": "ldsfld",
+            "arg": "UnityEngine.Color MachineryStyle::LABEL_TEXT"
+          },
+          {
+            "n": 33,
+            "op": "callvirt",
+            "arg": "MachineryLabel MachineryLabel::SetTextColor(UnityEngine.Color)"
+          },
+          {
+            "n": 34,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 36,
+            "op": "brfalse.s",
+            "arg": "@82"
+          },
+          {
+            "n": 37,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 38,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "callvirt",
+            "arg": "GameSlotInventory System.Collections.Generic.List`1<GameSlotInventory>::get_Item(System.Int32)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void VendingFountainHelper/<>c__DisplayClass5_0::<VendingFountain>b__16(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 62,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 57,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 58,
+            "op": "callvirt",
+            "arg": "System.Int32 TagState::GetInt()"
+          },
+          {
+            "n": 59,
+            "op": "box",
+            "arg": "System.Int32"
+          },
+          {
+            "n": 60,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 61,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 62,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 63,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 64,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void VendingMachineHelper/<>c__DisplayClass18_0::<VendingMachine>b__12(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 47,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 42,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 43,
+            "op": "callvirt",
+            "arg": "System.Int32 TagState::GetInt()"
+          },
+          {
+            "n": 44,
+            "op": "box",
+            "arg": "System.Int32"
+          },
+          {
+            "n": 45,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 46,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 47,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 48,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void MachineChemFinisher/<>c__DisplayClass1_0::<ChemFinisher>b__3(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 10,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 5,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 6,
+            "op": "ldfld",
+            "arg": "MachineryText MachineChemFinisher/<>c__DisplayClass1_0::targetLabel"
+          },
+          {
+            "n": 7,
+            "op": "ldstr",
+            "arg": "mech_chem_finisher_no_target"
+          },
+          {
+            "n": 8,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 9,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 10,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 11,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 12,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldfld",
+            "arg": "MachineryText MachineChemFinisher/<>c__DisplayClass1_0::statusLabel"
+          },
+          {
+            "n": 14,
+            "op": "ldstr",
+            "arg": "mech_turbo_booster_status"
+          },
+          {
+            "n": 15,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "newarr",
+            "arg": "System.Object"
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 19,
+            "op": "ldstr",
+            "arg": "mech_chem_finisher_status_no_target"
+          },
+          {
+            "n": 20,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 21,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 22,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 24,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 25,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldfld",
+            "arg": "GameItem MachineChemFinisher/<>c__DisplayClass1_0::machine"
+          },
+          {
+            "n": 29,
+            "op": "ldstr",
+            "arg": "SELECTED_CHEM_ID_TAG"
+          },
+          {
+            "n": 30,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 33,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "ldfld",
+            "arg": "MachineryText MachineChemFinisher/<>c__DisplayClass1_0::targetLabel"
+          },
+          {
+            "n": 36,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "ldfld",
+            "arg": "System.String ChemFinisherRecipe::displayName"
+          },
+          {
+            "n": 38,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 39,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 40,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 41,
+            "op": "ldfld",
+            "arg": "MachineryStack MachineChemFinisher/<>c__DisplayClass1_0::controlGrid"
+          },
+          {
+            "n": 42,
+            "op": "callvirt",
+            "arg": "System.Void MachineryStack::Validate()"
+          },
+          {
+            "n": 43,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 44,
+            "op": "ldfld",
+            "arg": "GameItem MachineChemFinisher/<>c__DisplayClass1_0::machine"
+          }
+        ]
+      },
+      {
+        "index": 61,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 56,
+            "op": "ldstr",
+            "arg": "mech_turbo_booster_status_ready"
+          },
+          {
+            "n": 57,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 58,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 59,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 60,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 61,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 62,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 63,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 64,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 65,
+            "op": "ldfld",
+            "arg": "GameSlotInventory MachineChemFinisher/<>c__DisplayClass1_0::containerSlot"
+          },
+          {
+            "n": 66,
+            "op": "callvirt",
+            "arg": "GameItem GameSlotInventory::get_childItem()"
+          },
+          {
+            "n": 67,
+            "op": "brfalse.s",
+            "arg": "@12C"
+          }
+        ]
+      },
+      {
+        "index": 88,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 83,
+            "op": "ldstr",
+            "arg": "mech_chem_finisher_status_wet_ingredient"
+          },
+          {
+            "n": 84,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 85,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 86,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 87,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 88,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 89,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 90,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 91,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 92,
+            "op": "ldfld",
+            "arg": "MachineryText MachineChemFinisher/<>c__DisplayClass1_0::statusLabel"
+          },
+          {
+            "n": 93,
+            "op": "ldstr",
+            "arg": "mech_turbo_booster_status"
+          },
+          {
+            "n": 94,
+            "op": "ldc.i4.1",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 103,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 98,
+            "op": "ldstr",
+            "arg": "mech_chem_finisher_status_not_enough_reagent"
+          },
+          {
+            "n": 99,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 100,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 101,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 102,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 103,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 104,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 105,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void MachineHeatingPlate/<>c__DisplayClass5_0::<HeatingPlate>b__4(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 97,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 92,
+            "op": "ldfld",
+            "arg": "GameItem MachineHeatingPlate/<>c__DisplayClass5_0::machine"
+          },
+          {
+            "n": 93,
+            "op": "ldstr",
+            "arg": "CURRENT_TARGET_TEMP"
+          },
+          {
+            "n": 94,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 95,
+            "op": "callvirt",
+            "arg": "System.Int32 TagState::GetInt()"
+          },
+          {
+            "n": 96,
+            "op": "call",
+            "arg": "System.String MetaHelper::FormatTemperature(System.Int32)"
+          },
+          {
+            "n": 97,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 98,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 99,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 100,
+            "op": "ldfld",
+            "arg": "GameSlotInventory MachineHeatingPlate/<>c__DisplayClass5_0::containerSlot"
+          },
+          {
+            "n": 101,
+            "op": "callvirt",
+            "arg": "GameItem GameSlotInventory::get_childItem()"
+          },
+          {
+            "n": 102,
+            "op": "brfalse.s",
+            "arg": "@15D"
+          },
+          {
+            "n": 103,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 117,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 112,
+            "op": "ldstr",
+            "arg": "CONTAINER_TEMP_TAG"
+          },
+          {
+            "n": 113,
+            "op": "callvirt",
+            "arg": "TagState GameItem::GetTagReadonly(System.String)"
+          },
+          {
+            "n": 114,
+            "op": "callvirt",
+            "arg": "System.Double TagState::GetDouble()"
+          },
+          {
+            "n": 115,
+            "op": "conv.i4",
+            "arg": ""
+          },
+          {
+            "n": 116,
+            "op": "call",
+            "arg": "System.String MetaHelper::FormatTemperature(System.Int32)"
+          },
+          {
+            "n": 117,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 118,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 119,
+            "op": "br.s",
+            "arg": "@178"
+          },
+          {
+            "n": 120,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 121,
+            "op": "ldfld",
+            "arg": "MachineryText MachineHeatingPlate/<>c__DisplayClass5_0::tempLabel"
+          },
+          {
+            "n": 122,
+            "op": "ldstr",
+            "arg": "mech_heating_plate_temp_na"
+          },
+          {
+            "n": 123,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          }
+        ]
+      },
+      {
+        "index": 125,
+        "target": "MachineryText MachineryText::SetText(System.String)",
+        "context": [
+          {
+            "n": 120,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 121,
+            "op": "ldfld",
+            "arg": "MachineryText MachineHeatingPlate/<>c__DisplayClass5_0::tempLabel"
+          },
+          {
+            "n": 122,
+            "op": "ldstr",
+            "arg": "mech_heating_plate_temp_na"
+          },
+          {
+            "n": 123,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 124,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 125,
+            "op": "callvirt",
+            "arg": "MachineryText MachineryText::SetText(System.String)"
+          },
+          {
+            "n": 126,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 127,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 128,
+            "op": "brtrue.s",
+            "arg": "@17C"
+          },
+          {
+            "n": 129,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 130,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 131,
+            "op": "ldfld",
+            "arg": "GameSlotInventory MachineHeatingPlate/<>c__DisplayClass5_0::containerSlot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void MachineHydroponic/<>c__DisplayClass10_0::<Hydroponic>b__2(GameItem,GameInventory,SlotMarker)",
+    "calls": [
+      {
+        "index": 50,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 45,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 46,
+            "op": "newarr",
+            "arg": "System.Object"
+          },
+          {
+            "n": 47,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 48,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 51,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 52,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedMechanic(System.String,System.Object[])"
+          },
+          {
+            "n": 53,
+            "op": "callvirt",
+            "arg": "System.Void GameItem::set_name(System.String)"
+          },
+          {
+            "n": 54,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 55,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 56,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void NewGamePerkTooltip::Show(StartingPerk,StartingPerk)",
+    "calls": [
+      {
+        "index": 11,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 6,
+            "op": "callvirt",
+            "arg": "System.Void UnityEngine.GameObject::SetActive(System.Boolean)"
+          },
+          {
+            "n": 7,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI NewGamePerkTooltip::nameText"
+          },
+          {
+            "n": 9,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDisplayName()"
+          },
+          {
+            "n": 11,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 12,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI NewGamePerkTooltip::costText"
+          },
+          {
+            "n": 14,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.Int32 StartingPerk::cost"
+          },
+          {
+            "n": 16,
+            "op": "call",
+            "arg": "System.String NewGamePerkTooltip::CostLabel(System.Int32)"
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 12,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI NewGamePerkTooltip::costText"
+          },
+          {
+            "n": 14,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.Int32 StartingPerk::cost"
+          },
+          {
+            "n": 16,
+            "op": "call",
+            "arg": "System.String NewGamePerkTooltip::CostLabel(System.Int32)"
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 18,
+            "op": "ldc.r4",
+            "arg": "16"
+          },
+          {
+            "n": 19,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 20,
+            "op": "ldc.r4",
+            "arg": "480"
+          },
+          {
+            "n": 21,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "stloc.2",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 124,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 119,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 120,
+            "op": "call",
+            "arg": "TMPro.TextMeshProUGUI NewGameUIElements::NewText(NewGamePanelFrame,UnityEngine.Transform,System.String,System.Single,System.Single,System.Single,System.Single,FontLoader/FontRole,System.Single,UnityEngine.Color,TMPro.TextAlignmentOptions,System.Boolean)"
+          },
+          {
+            "n": 121,
+            "op": "stloc.s",
+            "arg": "V_17"
+          },
+          {
+            "n": 122,
+            "op": "ldloc.s",
+            "arg": "V_17"
+          },
+          {
+            "n": 123,
+            "op": "ldloc.s",
+            "arg": "V_16"
+          },
+          {
+            "n": 124,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 125,
+            "op": "ldloc.s",
+            "arg": "V_17"
+          },
+          {
+            "n": 126,
+            "op": "ldloc.s",
+            "arg": "V_16"
+          },
+          {
+            "n": 127,
+            "op": "ldloc.s",
+            "arg": "V_5"
+          },
+          {
+            "n": 128,
+            "op": "ldc.r4",
+            "arg": "Infinity"
+          },
+          {
+            "n": 129,
+            "op": "callvirt",
+            "arg": "UnityEngine.Vector2 TMPro.TMP_Text::GetPreferredValues(System.String,System.Single,System.Single)"
+          },
+          {
+            "n": 130,
+            "op": "ldfld",
+            "arg": "System.Single UnityEngine.Vector2::y"
+          }
+        ]
+      },
+      {
+        "index": 275,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 270,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 271,
+            "op": "ldarg.2",
+            "arg": ""
+          },
+          {
+            "n": 272,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDisplayName()"
+          },
+          {
+            "n": 273,
+            "op": "stelem.ref",
+            "arg": ""
+          },
+          {
+            "n": 274,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedOrDefault(System.String,System.String,System.String,System.Object[])"
+          },
+          {
+            "n": 275,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 276,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 277,
+            "op": "ldc.r4",
+            "arg": "22"
+          },
+          {
+            "n": 278,
+            "op": "add",
+            "arg": ""
+          },
+          {
+            "n": 279,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 280,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 281,
+            "op": "ldloc.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void NewGamePerkTooltip::Follow()",
+    "calls": [
+      {
+        "index": 0,
+        "target": "UnityEngine.Vector3 UIHelper::GetTooltipPositionSimple()",
+        "context": [
+          {
+            "n": 0,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UIHelper::GetTooltipPositionSimple()"
+          },
+          {
+            "n": 1,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 2,
+            "op": "ldc.r4",
+            "arg": "25"
+          },
+          {
+            "n": 3,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 4,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 5,
+            "op": "ldfld",
+            "arg": "UnityEngine.RectTransform NewGamePerkTooltip::rect"
+          },
+          {
+            "n": 6,
+            "op": "callvirt",
+            "arg": "UnityEngine.Rect UnityEngine.RectTransform::get_rect()"
+          },
+          {
+            "n": 7,
+            "op": "stloc.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 8,
+            "op": "ldloca.s",
+            "arg": "V_4"
+          },
+          {
+            "n": 9,
+            "op": "call",
+            "arg": "System.Single UnityEngine.Rect::get_width()"
+          },
+          {
+            "n": 10,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 11,
+            "op": "call",
+            "arg": "UnityEngine.Transform UnityEngine.Component::get_transform()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void StartingPerkElement::SetTooltipContent(StartingPerk)",
+    "calls": [
+      {
+        "index": 4,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 0,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 1,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipTitle"
+          },
+          {
+            "n": 2,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 3,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDisplayName()"
+          },
+          {
+            "n": 4,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 5,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 6,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipDescription"
+          },
+          {
+            "n": 7,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 9,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 10,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 11,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipCost"
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 4,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 5,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 6,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipDescription"
+          },
+          {
+            "n": 7,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "callvirt",
+            "arg": "System.String StartingPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 9,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 10,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 11,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipCost"
+          },
+          {
+            "n": 12,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 13,
+            "op": "ldflda",
+            "arg": "System.Int32 StartingPerk::cost"
+          },
+          {
+            "n": 14,
+            "op": "call",
+            "arg": "System.String System.Int32::ToString()"
+          },
+          {
+            "n": 15,
+            "op": "ldstr",
+            "arg": " "
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 15,
+            "op": "ldstr",
+            "arg": " "
+          },
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": "perk_points"
+          },
+          {
+            "n": 17,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 18,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedPerkTable(System.String,System.Object[])"
+          },
+          {
+            "n": 19,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 20,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 21,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 22,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipIncompatible"
+          },
+          {
+            "n": 23,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 24,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 25,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 19,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 20,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 21,
+            "op": "call",
+            "arg": "PerkUIController PerkUIController::get_Instance()"
+          },
+          {
+            "n": 22,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI PerkUIController::startingPerkTooltipIncompatible"
+          },
+          {
+            "n": 23,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 24,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 25,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void CustomUIManager::ShowTooltip(System.String,CustomUITooltipTrigger)",
+    "calls": [
+      {
+        "index": 57,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 52,
+            "op": "call",
+            "arg": "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)"
+          },
+          {
+            "n": 53,
+            "op": "brfalse.s",
+            "arg": "@E7"
+          },
+          {
+            "n": 54,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 55,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI CustomUIManager::tooltipText"
+          },
+          {
+            "n": 56,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 57,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 58,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 59,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI CustomUIManager::tooltipText"
+          },
+          {
+            "n": 60,
+            "op": "callvirt",
+            "arg": "UnityEngine.UI.LayoutElement UnityEngine.Component::GetComponent<UnityEngine.UI.LayoutElement>()"
+          },
+          {
+            "n": 61,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 62,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 63,
+            "op": "ldnull",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void ReputationUIManager::UpdateTooltipPosition()",
+    "calls": [
+      {
+        "index": 19,
+        "target": "UnityEngine.Vector3 UIHelper::GetTooltipPosition(System.Single,System.Single,System.Single,System.Single)",
+        "context": [
+          {
+            "n": 14,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 15,
+            "op": "ldloca.s",
+            "arg": "V_1"
+          },
+          {
+            "n": 16,
+            "op": "call",
+            "arg": "System.Single UnityEngine.Rect::get_height()"
+          },
+          {
+            "n": 17,
+            "op": "ldc.r4",
+            "arg": "10"
+          },
+          {
+            "n": 18,
+            "op": "ldc.r4",
+            "arg": "10"
+          },
+          {
+            "n": 19,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UIHelper::GetTooltipPosition(System.Single,System.Single,System.Single,System.Single)"
+          },
+          {
+            "n": 20,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "ldloca.s",
+            "arg": "V_0"
+          },
+          {
+            "n": 22,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "ldfld",
+            "arg": "UnityEngine.GameObject ReputationUIManager::reputationTooltip"
+          },
+          {
+            "n": 24,
+            "op": "callvirt",
+            "arg": "UnityEngine.Transform UnityEngine.GameObject::get_transform()"
+          },
+          {
+            "n": 25,
+            "op": "callvirt",
+            "arg": "UnityEngine.Vector3 UnityEngine.Transform::get_position()"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void ReputationUIManager::UpdateToolTipContent(StoreReputationPerk)",
+    "calls": [
+      {
+        "index": 4,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkTitle"
+          },
+          {
+            "n": 2,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 3,
+            "op": "callvirt",
+            "arg": "System.String StoreReputationPerk::GetLocalizedPerkName()"
+          },
+          {
+            "n": 4,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 5,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 6,
+            "op": "ldfld",
+            "arg": "System.Boolean StoreReputationPerk::isUnlocked"
+          },
+          {
+            "n": 7,
+            "op": "brtrue.s",
+            "arg": "@21"
+          },
+          {
+            "n": 8,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "ldfld",
+            "arg": "System.Boolean StoreReputationPerk::isAlwaysActive"
+          },
+          {
+            "n": 10,
+            "op": "brfalse.s",
+            "arg": "@52"
+          },
+          {
+            "n": 11,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 16,
+            "op": "ldstr",
+            "arg": "ui_rep_active"
+          },
+          {
+            "n": 17,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 18,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedUI(System.String,System.Object[])"
+          },
+          {
+            "n": 19,
+            "op": "ldstr",
+            "arg": " "
+          },
+          {
+            "n": 20,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+          },
+          {
+            "n": 21,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 22,
+            "op": "br.s",
+            "arg": "@81"
+          },
+          {
+            "n": 23,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 24,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkTitle"
+          },
+          {
+            "n": 25,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 27,
+            "op": "ldstr",
+            "arg": " "
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 28,
+            "op": "ldstr",
+            "arg": "ui_rep_inactive"
+          },
+          {
+            "n": 29,
+            "op": "call",
+            "arg": "System.Object[] System.Array::Empty<System.Object>()"
+          },
+          {
+            "n": 30,
+            "op": "call",
+            "arg": "System.String LocHelper::GetLocalizedUI(System.String,System.Object[])"
+          },
+          {
+            "n": 31,
+            "op": "ldstr",
+            "arg": " "
+          },
+          {
+            "n": 32,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+          },
+          {
+            "n": 33,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 34,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 35,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkTitle"
+          },
+          {
+            "n": 36,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 38,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "ldflda",
+            "arg": "System.Int32 StoreReputationPerk::perkThreshold"
+          }
+        ]
+      },
+      {
+        "index": 43,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 38,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "ldflda",
+            "arg": "System.Int32 StoreReputationPerk::perkThreshold"
+          },
+          {
+            "n": 40,
+            "op": "call",
+            "arg": "System.String System.Int32::ToString()"
+          },
+          {
+            "n": 41,
+            "op": "ldstr",
+            "arg": "/200"
+          },
+          {
+            "n": 42,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 43,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 44,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 45,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkdescription"
+          },
+          {
+            "n": 46,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 47,
+            "op": "callvirt",
+            "arg": "System.String StoreReputationPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 48,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 49,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 48,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 43,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 44,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 45,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkdescription"
+          },
+          {
+            "n": 46,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 47,
+            "op": "callvirt",
+            "arg": "System.String StoreReputationPerk::GetLocalizedDescription()"
+          },
+          {
+            "n": 48,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 49,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkFlavorText"
+          },
+          {
+            "n": 51,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 52,
+            "op": "callvirt",
+            "arg": "System.String StoreReputationPerk::GetLocalizedFlavorText()"
+          },
+          {
+            "n": 53,
+            "op": "call",
+            "arg": "System.String LocHelper::WrapInLocalizedQuotes(System.String)"
+          },
+          {
+            "n": 54,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          }
+        ]
+      },
+      {
+        "index": 54,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 49,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI ReputationUIManager::perkFlavorText"
+          },
+          {
+            "n": 51,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 52,
+            "op": "callvirt",
+            "arg": "System.String StoreReputationPerk::GetLocalizedFlavorText()"
+          },
+          {
+            "n": 53,
+            "op": "call",
+            "arg": "System.String LocHelper::WrapInLocalizedQuotes(System.String)"
+          },
+          {
+            "n": 54,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 55,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder ItemBehaviourManager::UseTooltip(GameItem)",
+    "calls": [
+      {
+        "index": 17,
+        "target": "RichTextBuilder ItemUseBehaviour::GetTooltip(GameItem)",
+        "context": [
+          {
+            "n": 12,
+            "op": "callvirt",
+            "arg": "System.Boolean ItemUseBehaviour::CheckFilter(GameItem)"
+          },
+          {
+            "n": 13,
+            "op": "brtrue.s",
+            "arg": "@23"
+          },
+          {
+            "n": 14,
+            "op": "leave.s",
+            "arg": "@44"
+          },
+          {
+            "n": 15,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 16,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 17,
+            "op": "callvirt",
+            "arg": "RichTextBuilder ItemUseBehaviour::GetTooltip(GameItem)"
+          },
+          {
+            "n": 18,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "ldloc.3",
+            "arg": ""
+          },
+          {
+            "n": 20,
+            "op": "brtrue.s",
+            "arg": "@30"
+          },
+          {
+            "n": 21,
+            "op": "leave.s",
+            "arg": "@44"
+          },
+          {
+            "n": 22,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "brtrue.s",
+            "arg": "@37"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder ItemBehaviourManager::TargetTooltip(GameItem,GameItem)",
+    "calls": [
+      {
+        "index": 19,
+        "target": "RichTextBuilder ItemTargetBehaviour::GetTooltip(GameItem,GameItem)",
+        "context": [
+          {
+            "n": 14,
+            "op": "brtrue.s",
+            "arg": "@24"
+          },
+          {
+            "n": 15,
+            "op": "leave.s",
+            "arg": "@46"
+          },
+          {
+            "n": 16,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 17,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "ldarg.2",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "callvirt",
+            "arg": "RichTextBuilder ItemTargetBehaviour::GetTooltip(GameItem,GameItem)"
+          },
+          {
+            "n": 20,
+            "op": "stloc.3",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "ldloc.3",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "brtrue.s",
+            "arg": "@32"
+          },
+          {
+            "n": 23,
+            "op": "leave.s",
+            "arg": "@46"
+          },
+          {
+            "n": 24,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 25,
+            "op": "brtrue.s",
+            "arg": "@39"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder ItemTargetBehaviour::GetTooltip(GameItem,GameItem)",
+    "calls": [
+      {
+        "index": 23,
+        "target": "System.String ItemTargetBehaviour::TargetTooltip(GameItem,GameItem)",
+        "context": [
+          {
+            "n": 18,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 19,
+            "op": "brtrue.s",
+            "arg": "@4C"
+          },
+          {
+            "n": 20,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 22,
+            "op": "ldarg.2",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "callvirt",
+            "arg": "System.String ItemTargetBehaviour::TargetTooltip(GameItem,GameItem)"
+          },
+          {
+            "n": 24,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 25,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "brfalse.s",
+            "arg": "@4C"
+          },
+          {
+            "n": 27,
+            "op": "ldc.i4.s",
+            "arg": "100"
+          },
+          {
+            "n": 28,
+            "op": "newobj",
+            "arg": "System.Void RichTextBuilder::.ctor(System.Int32)"
+          },
+          {
+            "n": 29,
+            "op": "ldloc.2",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichText GameSlotInventory::GetTooltipAdvanced()",
+    "calls": [
+      {
+        "index": 1,
+        "target": "RichText GameSlotInventory::GetTooltip()",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "call",
+            "arg": "RichText GameSlotInventory::GetTooltip()"
+          },
+          {
+            "n": 2,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void GameItemElement::ValidateSelectLocked(System.Boolean)",
+    "calls": [
+      {
+        "index": 152,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 147,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 148,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 149,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 150,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 151,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 152,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 153,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 154,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 155,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 156,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 157,
+            "op": "callvirt",
+            "arg": "System.Int32 System.String::get_Length()"
+          },
+          {
+            "n": 158,
+            "op": "ldc.i4.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 174,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 169,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 170,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 171,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 172,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 173,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 174,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 175,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 176,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountTextBackground"
+          },
+          {
+            "n": 177,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 178,
+            "op": "ldloc.2",
+            "arg": ""
+          },
+          {
+            "n": 179,
+            "op": "callvirt",
+            "arg": "System.Int32 System.String::get_Length()"
+          },
+          {
+            "n": 180,
+            "op": "ldc.i4.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 196,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 191,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 192,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 193,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 194,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 195,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 196,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 197,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 198,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::fakeStackCountText"
+          },
+          {
+            "n": 199,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 200,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 201,
+            "op": "callvirt",
+            "arg": "System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)"
+          },
+          {
+            "n": 202,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 209,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 204,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 205,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 206,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountTextBackground"
+          },
+          {
+            "n": 207,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 208,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 209,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 210,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 211,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::fakeStackCountTextBackground"
+          },
+          {
+            "n": 212,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 213,
+            "op": "ldc.i4.0",
+            "arg": ""
+          },
+          {
+            "n": 214,
+            "op": "callvirt",
+            "arg": "System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)"
+          },
+          {
+            "n": 215,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void GameItemElement::UpdateFakeReal(System.Int32)",
+    "calls": [
+      {
+        "index": 21,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 16,
+            "op": "call",
+            "arg": "System.String System.Int32::ToString()"
+          },
+          {
+            "n": 17,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 18,
+            "op": "brtrue.s",
+            "arg": "@38"
+          },
+          {
+            "n": 19,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 20,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 21,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 22,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 24,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 25,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 26,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 27,
+            "op": "ble.s",
+            "arg": "@57"
+          }
+        ]
+      },
+      {
+        "index": 42,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 37,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 38,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 39,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountText"
+          },
+          {
+            "n": 40,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 41,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 42,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 43,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 44,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::stackCountTextBackground"
+          },
+          {
+            "n": 45,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 46,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 47,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 48,
+            "op": "ble.s",
+            "arg": "@97"
+          }
+        ]
+      },
+      {
+        "index": 73,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 68,
+            "op": "call",
+            "arg": "System.String System.Int32::ToString()"
+          },
+          {
+            "n": 69,
+            "op": "dup",
+            "arg": ""
+          },
+          {
+            "n": 70,
+            "op": "brtrue.s",
+            "arg": "@D1"
+          },
+          {
+            "n": 71,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 72,
+            "op": "ldstr",
+            "arg": ""
+          },
+          {
+            "n": 73,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 74,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 75,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::fakeStackCountText"
+          },
+          {
+            "n": 76,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 77,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 78,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 79,
+            "op": "cgt",
+            "arg": ""
+          }
+        ]
+      },
+      {
+        "index": 88,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 83,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 84,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 85,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::fakeStackCountText"
+          },
+          {
+            "n": 86,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 87,
+            "op": "callvirt",
+            "arg": "System.String TMPro.TMP_Text::get_text()"
+          },
+          {
+            "n": 88,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 89,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 90,
+            "op": "ldfld",
+            "arg": "TreeNodeRender GameItemElement::fakeStackCountTextBackground"
+          },
+          {
+            "n": 91,
+            "op": "callvirt",
+            "arg": "TMPro.TextMeshProUGUI TreeNodeRender::get_text()"
+          },
+          {
+            "n": 92,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 93,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 94,
+            "op": "cgt",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder GameItemElement::GetTooltipBasic()",
+    "calls": [
+      {
+        "index": 2,
+        "target": "System.Int32 PlantGeneticsHelper::GetTooltipWidth(GameItem,System.Int32)",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "ldc.i4.s",
+            "arg": "40"
+          },
+          {
+            "n": 2,
+            "op": "call",
+            "arg": "System.Int32 PlantGeneticsHelper::GetTooltipWidth(GameItem,System.Int32)"
+          },
+          {
+            "n": 3,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 4,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 5,
+            "op": "ldstr",
+            "arg": "MACHINE_MANUAL_TAG"
+          },
+          {
+            "n": 6,
+            "op": "call",
+            "arg": "System.Boolean GameItem::IsTag(System.String)"
+          },
+          {
+            "n": 7,
+            "op": "brfalse.s",
+            "arg": "@20"
+          },
+          {
+            "n": 8,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 9,
+            "op": "conv.r4",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "ldc.r4",
+            "arg": "2"
+          },
+          {
+            "n": 11,
+            "op": "mul",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichText GameItemElement::GetTooltip()",
+    "calls": [
+      {
+        "index": 1,
+        "target": "RichTextBuilder GameItemElement::GetTooltipBasic()",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "call",
+            "arg": "RichTextBuilder GameItemElement::GetTooltipBasic()"
+          },
+          {
+            "n": 2,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 3,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 4,
+            "op": "call",
+            "arg": "GameInventory GameItem::get_parentInventory()"
+          },
+          {
+            "n": 5,
+            "op": "brfalse.s",
+            "arg": "@47"
+          },
+          {
+            "n": 6,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 7,
+            "op": "call",
+            "arg": "System.Func`6<GameItem,GameInventory,SlotMarker,GridShape,TagSystem,RichTextBuilder> GameItemFunc::get_tooltipRichTextFunc()"
+          },
+          {
+            "n": 8,
+            "op": "brfalse.s",
+            "arg": "@47"
+          },
+          {
+            "n": 9,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "call",
+            "arg": "System.Func`6<GameItem,GameInventory,SlotMarker,GridShape,TagSystem,RichTextBuilder> GameItemFunc::get_tooltipRichTextFunc()"
+          },
+          {
+            "n": 11,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichText GameItemElement::GetTooltipAdvanced()",
+    "calls": [
+      {
+        "index": 1,
+        "target": "RichTextBuilder GameItemElement::GetTooltipBasic()",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "call",
+            "arg": "RichTextBuilder GameItemElement::GetTooltipBasic()"
+          },
+          {
+            "n": 2,
+            "op": "stloc.0",
+            "arg": ""
+          },
+          {
+            "n": 3,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 4,
+            "op": "call",
+            "arg": "GameInventory GameItem::get_parentInventory()"
+          },
+          {
+            "n": 5,
+            "op": "brfalse.s",
+            "arg": "@47"
+          },
+          {
+            "n": 6,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 7,
+            "op": "call",
+            "arg": "System.Func`6<GameItem,GameInventory,SlotMarker,GridShape,TagSystem,RichTextBuilder> GameItemFunc::get_tooltipRichTextFunc()"
+          },
+          {
+            "n": 8,
+            "op": "brfalse.s",
+            "arg": "@47"
+          },
+          {
+            "n": 9,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "call",
+            "arg": "System.Func`6<GameItem,GameInventory,SlotMarker,GridShape,TagSystem,RichTextBuilder> GameItemFunc::get_tooltipRichTextFunc()"
+          },
+          {
+            "n": 11,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "RichText SelectableElement::GetTooltipAdvanced()",
+    "calls": [
+      {
+        "index": 1,
+        "target": "RichText SelectableElement::GetTooltip()",
+        "context": [
+          {
+            "n": 0,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 1,
+            "op": "callvirt",
+            "arg": "RichText SelectableElement::GetTooltip()"
+          },
+          {
+            "n": 2,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean ItemTooltipHandler::OnEventUpdate()",
+    "calls": [
+      {
+        "index": 67,
+        "target": "RichText TooltipListener::GetTooltipAdvanced()",
+        "context": [
+          {
+            "n": 62,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UnityEngine.Input::get_mousePosition()"
+          },
+          {
+            "n": 63,
+            "op": "call",
+            "arg": "UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)"
+          },
+          {
+            "n": 64,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 65,
+            "op": "ldfld",
+            "arg": "UnityEngine.Vector2 ItemTooltipHandler::tooltipTranslation"
+          },
+          {
+            "n": 66,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 67,
+            "op": "callvirt",
+            "arg": "RichText TooltipListener::GetTooltipAdvanced()"
+          },
+          {
+            "n": 68,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 69,
+            "op": "callvirt",
+            "arg": "System.Void OverlayHandler::ShowTooltip(UnityEngine.Vector2,UnityEngine.Vector2,RichText,System.Int32)"
+          },
+          {
+            "n": 70,
+            "op": "br.s",
+            "arg": "@EC"
+          },
+          {
+            "n": 71,
+            "op": "ldsfld",
+            "arg": "OverlayHandler OverlayHandler::current"
+          },
+          {
+            "n": 72,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UnityEngine.Input::get_mousePosition()"
+          },
+          {
+            "n": 73,
+            "op": "call",
+            "arg": "UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)"
+          }
+        ]
+      },
+      {
+        "index": 77,
+        "target": "RichText TooltipListener::GetTooltip()",
+        "context": [
+          {
+            "n": 72,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UnityEngine.Input::get_mousePosition()"
+          },
+          {
+            "n": 73,
+            "op": "call",
+            "arg": "UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)"
+          },
+          {
+            "n": 74,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 75,
+            "op": "ldfld",
+            "arg": "UnityEngine.Vector2 ItemTooltipHandler::tooltipTranslation"
+          },
+          {
+            "n": 76,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 77,
+            "op": "callvirt",
+            "arg": "RichText TooltipListener::GetTooltip()"
+          },
+          {
+            "n": 78,
+            "op": "ldloc.1",
+            "arg": ""
+          },
+          {
+            "n": 79,
+            "op": "callvirt",
+            "arg": "System.Void OverlayHandler::ShowTooltip(UnityEngine.Vector2,UnityEngine.Vector2,RichText,System.Int32)"
+          },
+          {
+            "n": 80,
+            "op": "br.s",
+            "arg": "@EC"
+          },
+          {
+            "n": 81,
+            "op": "ldsfld",
+            "arg": "OverlayHandler OverlayHandler::current"
+          },
+          {
+            "n": 82,
+            "op": "callvirt",
+            "arg": "System.Void OverlayHandler::HideTooltip()"
+          },
+          {
+            "n": 83,
+            "op": "ldarg.0",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void RaidScene::StealCharacterInventory(GameCharacterItem)",
+    "calls": [
+      {
+        "index": 23,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 18,
+            "op": "callvirt",
+            "arg": "System.Void StealPixelElement::Validate()"
+          },
+          {
+            "n": 19,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 20,
+            "op": "ldfld",
+            "arg": "PixelWindow RaidScene::selectionInventoryWindow"
+          },
+          {
+            "n": 21,
+            "op": "ldstr",
+            "arg": "Inventory ("
+          },
+          {
+            "n": 22,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 23,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 24,
+            "op": "ldstr",
+            "arg": ")"
+          },
+          {
+            "n": 25,
+            "op": "call",
+            "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+          },
+          {
+            "n": 26,
+            "op": "callvirt",
+            "arg": "PixelWindow PixelWindow::SetTitle(System.String)"
+          },
+          {
+            "n": 27,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 28,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 29,
+            "op": "callvirt",
+            "arg": "PixelWindow GameItem::get_examineWindow()"
+          }
+        ]
+      },
+      {
+        "index": 47,
+        "target": "System.String GameItem::get_name()",
+        "context": [
+          {
+            "n": 42,
+            "op": "ldfld",
+            "arg": "StealPixelElement RaidScene::stealAbilitySelectElement"
+          },
+          {
+            "n": 43,
+            "op": "callvirt",
+            "arg": "System.Void StealPixelElement::Validate()"
+          },
+          {
+            "n": 44,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 45,
+            "op": "ldfld",
+            "arg": "PixelWindow RaidScene::selectionAbilityWindow"
+          },
+          {
+            "n": 46,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 47,
+            "op": "callvirt",
+            "arg": "System.String GameItem::get_name()"
+          },
+          {
+            "n": 48,
+            "op": "callvirt",
+            "arg": "PixelWindow PixelWindow::SetTitle(System.String)"
+          },
+          {
+            "n": 49,
+            "op": "pop",
+            "arg": ""
+          },
+          {
+            "n": 50,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 51,
+            "op": "call",
+            "arg": "System.Void RaidScene::UpdateArrow()"
+          },
+          {
+            "n": 52,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void TooltipContainer::UpdateTooltip()",
+    "calls": [
+      {
+        "index": 45,
+        "target": "System.String TooltipInterface::GetTooltip()",
+        "context": [
+          {
+            "n": 40,
+            "op": "callvirt",
+            "arg": "System.Boolean TooltipInterface::IsTooltipEnabled()"
+          },
+          {
+            "n": 41,
+            "op": "brfalse.s",
+            "arg": "@9F"
+          },
+          {
+            "n": 42,
+            "op": "ldsfld",
+            "arg": "TooltipManager TooltipManager::_instance"
+          },
+          {
+            "n": 43,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 44,
+            "op": "ldfld",
+            "arg": "TooltipInterface TooltipContainer::tooltipInterfaceInstance"
+          },
+          {
+            "n": 45,
+            "op": "callvirt",
+            "arg": "System.String TooltipInterface::GetTooltip()"
+          },
+          {
+            "n": 46,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 47,
+            "op": "callvirt",
+            "arg": "System.Void TooltipManager::SetAndShowTooltip(System.String,UnityEngine.Component)"
+          },
+          {
+            "n": 48,
+            "op": "ret",
+            "arg": ""
+          },
+          {
+            "n": 49,
+            "op": "ldsfld",
+            "arg": "TooltipManager TooltipManager::_instance"
+          },
+          {
+            "n": 50,
+            "op": "callvirt",
+            "arg": "System.Void TooltipManager::HideTooltip()"
+          },
+          {
+            "n": 51,
+            "op": "ret",
+            "arg": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void TooltipManager::SetAndShowTooltip(System.String,UnityEngine.Component)",
+    "calls": [
+      {
+        "index": 10,
+        "target": "System.Void TMPro.TMP_Text::set_text(System.String)",
+        "context": [
+          {
+            "n": 5,
+            "op": "ldc.i4.1",
+            "arg": ""
+          },
+          {
+            "n": 6,
+            "op": "callvirt",
+            "arg": "System.Void UnityEngine.GameObject::SetActive(System.Boolean)"
+          },
+          {
+            "n": 7,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 8,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI TooltipManager::content"
+          },
+          {
+            "n": 9,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 10,
+            "op": "callvirt",
+            "arg": "System.Void TMPro.TMP_Text::set_text(System.String)"
+          },
+          {
+            "n": 11,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 12,
+            "op": "ldfld",
+            "arg": "TMPro.TextMeshProUGUI TooltipManager::content"
+          },
+          {
+            "n": 13,
+            "op": "ldarg.1",
+            "arg": ""
+          },
+          {
+            "n": 14,
+            "op": "callvirt",
+            "arg": "UnityEngine.Vector2 TMPro.TMP_Text::GetPreferredValues(System.String)"
+          },
+          {
+            "n": 15,
+            "op": "ldfld",
+            "arg": "System.Single UnityEngine.Vector2::x"
+          },
+          {
+            "n": 16,
+            "op": "ldc.r4",
+            "arg": "240"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "method": "System.Void TooltipManager::UpdateTooltipPosition()",
+    "calls": [
+      {
+        "index": 38,
+        "target": "UnityEngine.Vector3 UIHelper::GetTooltipPosition(System.Single,System.Single)",
+        "context": [
+          {
+            "n": 33,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 34,
+            "op": "ldloca.s",
+            "arg": "V_2"
+          },
+          {
+            "n": 35,
+            "op": "call",
+            "arg": "System.Single UnityEngine.Rect::get_height()"
+          },
+          {
+            "n": 36,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 37,
+            "op": "mul",
+            "arg": ""
+          },
+          {
+            "n": 38,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UIHelper::GetTooltipPosition(System.Single,System.Single)"
+          },
+          {
+            "n": 39,
+            "op": "br.s",
+            "arg": "@A3"
+          },
+          {
+            "n": 40,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 41,
+            "op": "ldfld",
+            "arg": "UnityEngine.RectTransform TooltipManager::rectTransform"
+          },
+          {
+            "n": 42,
+            "op": "callvirt",
+            "arg": "UnityEngine.Rect UnityEngine.RectTransform::get_rect()"
+          },
+          {
+            "n": 43,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 44,
+            "op": "ldloca.s",
+            "arg": "V_2"
+          }
+        ]
+      },
+      {
+        "index": 56,
+        "target": "UnityEngine.Vector3 UIHelper::GetTooltipPositionScreenBounds(System.Single,System.Single)",
+        "context": [
+          {
+            "n": 51,
+            "op": "stloc.2",
+            "arg": ""
+          },
+          {
+            "n": 52,
+            "op": "ldloca.s",
+            "arg": "V_2"
+          },
+          {
+            "n": 53,
+            "op": "call",
+            "arg": "System.Single UnityEngine.Rect::get_height()"
+          },
+          {
+            "n": 54,
+            "op": "ldloc.0",
+            "arg": ""
+          },
+          {
+            "n": 55,
+            "op": "mul",
+            "arg": ""
+          },
+          {
+            "n": 56,
+            "op": "call",
+            "arg": "UnityEngine.Vector3 UIHelper::GetTooltipPositionScreenBounds(System.Single,System.Single)"
+          },
+          {
+            "n": 57,
+            "op": "stloc.1",
+            "arg": ""
+          },
+          {
+            "n": 58,
+            "op": "ldloca.s",
+            "arg": "V_1"
+          },
+          {
+            "n": 59,
+            "op": "ldarg.0",
+            "arg": ""
+          },
+          {
+            "n": 60,
+            "op": "ldfld",
+            "arg": "UnityEngine.GameObject TooltipManager::tooltipGameobject"
+          },
+          {
+            "n": 61,
+            "op": "callvirt",
+            "arg": "UnityEngine.Transform UnityEngine.GameObject::get_transform()"
+          },
+          {
+            "n": 62,
+            "op": "callvirt",
+            "arg": "UnityEngine.Vector3 UnityEngine.Transform::get_position()"
+          }
+        ]
+      }
+    ]
+  }
+]

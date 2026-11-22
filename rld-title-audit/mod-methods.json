@@ -1,0 +1,7441 @@
+[
+  {
+    "method": "GameItem RedLightDistrict.TalentAccessory::CreateItem(System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "token": 100664085,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "call",
+        "arg": "GameItem ItemDirectory::CreateEmptyItem(System.String)"
+      },
+      {
+        "n": 2,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "brtrue.s",
+        "arg": "@11"
+      },
+      {
+        "n": 5,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "leave",
+        "arg": "@126"
+      },
+      {
+        "n": 8,
+        "op": "ldarg.s",
+        "arg": "spriteKey"
+      },
+      {
+        "n": 9,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentAccessory::EnsureIcon(System.String)"
+      },
+      {
+        "n": 10,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "ldstr",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldarg.s",
+        "arg": "spriteKey"
+      },
+      {
+        "n": 13,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetSprite(System.String,System.String)"
+      },
+      {
+        "n": 14,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "n": 18,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "n": 21,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentAccessory/AccessoryDef RedLightDistrict.TalentAccessory::Find(System.String)"
+      },
+      {
+        "n": 24,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_7815ecc366427d58f0ab()"
+      },
+      {
+        "n": 26,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 27,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "brfalse.s",
+        "arg": "@8D"
+      },
+      {
+        "n": 29,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 30,
+        "op": "ldfld",
+        "arg": "System.Int32 RedLightDistrict.TalentAccessory/AccessoryDef::TemperamentBonus"
+      },
+      {
+        "n": 31,
+        "op": "brfalse.s",
+        "arg": "@69"
+      },
+      {
+        "n": 32,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_fc1f90aaf128b8129013()"
+      },
+      {
+        "n": 34,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 35,
+        "op": "ldflda",
+        "arg": "System.Int32 RedLightDistrict.TalentAccessory/AccessoryDef::TemperamentBonus"
+      },
+      {
+        "n": 36,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 37,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_6b2d63c56511434a9776()"
+      },
+      {
+        "n": 38,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 39,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 41,
+        "op": "ldfld",
+        "arg": "System.Int32 RedLightDistrict.TalentAccessory/AccessoryDef::NightlyObedience"
+      },
+      {
+        "n": 42,
+        "op": "brfalse.s",
+        "arg": "@8D"
+      },
+      {
+        "n": 43,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 44,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_08c3478249b400235d5f()"
+      },
+      {
+        "n": 45,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 46,
+        "op": "ldflda",
+        "arg": "System.Int32 RedLightDistrict.TalentAccessory/AccessoryDef::NightlyObedience"
+      },
+      {
+        "n": 47,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 48,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_f1bb4be4256eed23b053()"
+      },
+      {
+        "n": 49,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 50,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 51,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 52,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_15241af63cba72618eb5()"
+      },
+      {
+        "n": 53,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 54,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 55,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 56,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 57,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_shortDescription(System.String)"
+      },
+      {
+        "n": 58,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 59,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 60,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_longDescription(System.String)"
+      },
+      {
+        "n": 61,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 62,
+        "op": "ldarg.2",
+        "arg": ""
+      },
+      {
+        "n": 63,
+        "op": "ldarg.3",
+        "arg": ""
+      },
+      {
+        "n": 64,
+        "op": "newobj",
+        "arg": "System.Void GridShapeBuilder::.ctor(System.Int32,System.Int32)"
+      },
+      {
+        "n": 65,
+        "op": "ldarg.2",
+        "arg": ""
+      },
+      {
+        "n": 66,
+        "op": "ldarg.3",
+        "arg": ""
+      },
+      {
+        "n": 67,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 68,
+        "op": "call",
+        "arg": "GridShapeBuilder GridShapeBuilder::SetDataFill(System.Int32,System.Int32,System.Byte)"
+      },
+      {
+        "n": 69,
+        "op": "callvirt",
+        "arg": "GridShape GridShapeBuilder::Build()"
+      },
+      {
+        "n": 70,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_shape(GridShape)"
+      },
+      {
+        "n": 71,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "ldstr",
+        "arg": "HOUSEHOLD_GOOD"
+      },
+      {
+        "n": 73,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::SetGameItemType(System.String)"
+      },
+      {
+        "n": 74,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 75,
+        "op": "ldstr",
+        "arg": "WEAPON"
+      },
+      {
+        "n": 76,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::SetGameItemType(System.String)"
+      },
+      {
+        "n": 77,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 78,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 79,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetValue(System.Int64)"
+      },
+      {
+        "n": 80,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 81,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 82,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 83,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_unitValue(System.Int64)"
+      },
+      {
+        "n": 84,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 85,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 86,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_unitBaseValue(System.Int64)"
+      },
+      {
+        "n": 87,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 88,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 89,
+        "op": "conv.i8",
+        "arg": ""
+      },
+      {
+        "n": 90,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_lateUnitValue(System.Int64)"
+      },
+      {
+        "n": 91,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 92,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 93,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_backupUnitValue(System.Int64)"
+      },
+      {
+        "n": 94,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 95,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 96,
+        "op": "leave.s",
+        "arg": "@126"
+      },
+      {
+        "n": 97,
+        "op": "stloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 98,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_1e7031262b4b28fe70ec()"
+      },
+      {
+        "n": 99,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 100,
+        "op": "ldstr",
+        "arg": "): "
+      },
+      {
+        "n": 101,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 102,
+        "op": "callvirt",
+        "arg": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 103,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 104,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 105,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 106,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 107,
+        "op": "leave.s",
+        "arg": "@126"
+      },
+      {
+        "n": 108,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 109,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "token": 100664221,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "call",
+        "arg": "GameItem ItemDirectory::CreateEmptyItem(System.String)"
+      },
+      {
+        "n": 2,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "brtrue.s",
+        "arg": "@11"
+      },
+      {
+        "n": 5,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "leave",
+        "arg": "@CE"
+      },
+      {
+        "n": 8,
+        "op": "ldarg.s",
+        "arg": "spriteKey"
+      },
+      {
+        "n": 9,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentEquipment::EnsureIcon(System.String)"
+      },
+      {
+        "n": 10,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "ldstr",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldarg.s",
+        "arg": "spriteKey"
+      },
+      {
+        "n": 13,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetSprite(System.String,System.String)"
+      },
+      {
+        "n": 14,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "n": 18,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "n": 21,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "ldarg.2",
+        "arg": ""
+      },
+      {
+        "n": 24,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_shortDescription(System.String)"
+      },
+      {
+        "n": 25,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 26,
+        "op": "ldarg.2",
+        "arg": ""
+      },
+      {
+        "n": 27,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_longDescription(System.String)"
+      },
+      {
+        "n": 28,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "ldarg.3",
+        "arg": ""
+      },
+      {
+        "n": 30,
+        "op": "ldarg.s",
+        "arg": "height"
+      },
+      {
+        "n": 31,
+        "op": "newobj",
+        "arg": "System.Void GridShapeBuilder::.ctor(System.Int32,System.Int32)"
+      },
+      {
+        "n": 32,
+        "op": "ldarg.3",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "ldarg.s",
+        "arg": "height"
+      },
+      {
+        "n": 34,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 35,
+        "op": "call",
+        "arg": "GridShapeBuilder GridShapeBuilder::SetDataFill(System.Int32,System.Int32,System.Byte)"
+      },
+      {
+        "n": 36,
+        "op": "callvirt",
+        "arg": "GridShape GridShapeBuilder::Build()"
+      },
+      {
+        "n": 37,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_shape(GridShape)"
+      },
+      {
+        "n": 38,
+        "op": "ldstr",
+        "arg": "gitype"
+      },
+      {
+        "n": 39,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 40,
+        "op": "brtrue.s",
+        "arg": "@81"
+      },
+      {
+        "n": 41,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 42,
+        "op": "ldstr",
+        "arg": "HOUSEHOLD_GOOD"
+      },
+      {
+        "n": 43,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::SetGameItemType(System.String)"
+      },
+      {
+        "n": 44,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 45,
+        "op": "ldstr",
+        "arg": "LUXURY_ITEM"
+      },
+      {
+        "n": 46,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::SetGameItemType(System.String)"
+      },
+      {
+        "n": 47,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 49,
+        "op": "callvirt",
+        "arg": "GameItem GameItem::SetValue(System.Int64)"
+      },
+      {
+        "n": 50,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 51,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 52,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 53,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_unitValue(System.Int64)"
+      },
+      {
+        "n": 54,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 55,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 56,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_unitBaseValue(System.Int64)"
+      },
+      {
+        "n": 57,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 58,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 59,
+        "op": "conv.i8",
+        "arg": ""
+      },
+      {
+        "n": 60,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_lateUnitValue(System.Int64)"
+      },
+      {
+        "n": 61,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 62,
+        "op": "ldarg.s",
+        "arg": "price"
+      },
+      {
+        "n": 63,
+        "op": "callvirt",
+        "arg": "System.Void GameItem::set_backupUnitValue(System.Int64)"
+      },
+      {
+        "n": 64,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 65,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 66,
+        "op": "leave.s",
+        "arg": "@CE"
+      },
+      {
+        "n": 67,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 68,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_d84e3cf0cba50e7db928()"
+      },
+      {
+        "n": 69,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 70,
+        "op": "ldstr",
+        "arg": "): "
+      },
+      {
+        "n": 71,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "callvirt",
+        "arg": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 73,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 74,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 75,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 76,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 77,
+        "op": "leave.s",
+        "arg": "@CE"
+      },
+      {
+        "n": 78,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 79,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixInitDirectory(ItemDirectory)",
+    "token": 100664492,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldstr",
+        "arg": "ItemDirectory.InitDirectory"
+      },
+      {
+        "n": 1,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::MarkGameWorldReady(System.String)"
+      },
+      {
+        "n": 2,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_d162a362bb7b89c81044()"
+      },
+      {
+        "n": 3,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 4,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentSystem::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 6,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentPrison::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 8,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentSignboard::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 10,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentEquipment::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 12,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentAccessory::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 14,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.SewingMachine::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 16,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightChemFinisher::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 18,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.MilkingRoom::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 20,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 21,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.ShowerRoom::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 22,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.KuchikamiWine::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 24,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.LuckyMilk::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 26,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 27,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.SemenVial::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 28,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RldChemInjectors::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 30,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 31,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentCassette::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 32,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentIntel::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "n": 34,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentPrison::ForceRefreshPrisonInnerSet()"
+      },
+      {
+        "n": 35,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.MilkingRoom::ForceRefreshMilkingInnerSet()"
+      },
+      {
+        "n": 36,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixTooltipGetTooltip(TooltipInterface,System.String&)",
+    "token": 100664526,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "brtrue.s",
+        "arg": "@9"
+      },
+      {
+        "n": 3,
+        "op": "leave",
+        "arg": "@EB"
+      },
+      {
+        "n": 4,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTip"
+      },
+      {
+        "n": 7,
+        "op": "call",
+        "arg": "System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "n": 8,
+        "op": "brfalse.s",
+        "arg": "@1C"
+      },
+      {
+        "n": 9,
+        "op": "leave",
+        "arg": "@EB"
+      },
+      {
+        "n": 10,
+        "op": "call",
+        "arg": "System.Single UnityEngine.Time::get_realtimeSinceStartup()"
+      },
+      {
+        "n": 11,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "ldsfld",
+        "arg": "System.Single RedLightDistrict.TalentPatches::_lastTipAt"
+      },
+      {
+        "n": 14,
+        "op": "sub",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "ldc.r4",
+        "arg": "2"
+      },
+      {
+        "n": 16,
+        "op": "bge.un.s",
+        "arg": "@35"
+      },
+      {
+        "n": 17,
+        "op": "leave",
+        "arg": "@EB"
+      },
+      {
+        "n": 18,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTip"
+      },
+      {
+        "n": 21,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "stsfld",
+        "arg": "System.Single RedLightDistrict.TalentPatches::_lastTipAt"
+      },
+      {
+        "n": 23,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 24,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "ldstr",
+        "arg": "\n"
+      },
+      {
+        "n": 26,
+        "op": "ldstr",
+        "arg": " | "
+      },
+      {
+        "n": 27,
+        "op": "callvirt",
+        "arg": "System.String System.String::Replace(System.String,System.String)"
+      },
+      {
+        "n": 28,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 30,
+        "op": "callvirt",
+        "arg": "System.Int32 System.String::get_Length()"
+      },
+      {
+        "n": 31,
+        "op": "ldc.i4",
+        "arg": "400"
+      },
+      {
+        "n": 32,
+        "op": "ble.s",
+        "arg": "@78"
+      },
+      {
+        "n": 33,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 34,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 35,
+        "op": "ldc.i4",
+        "arg": "400"
+      },
+      {
+        "n": 36,
+        "op": "callvirt",
+        "arg": "System.String System.String::Substring(System.Int32,System.Int32)"
+      },
+      {
+        "n": 37,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_965f87f3f276389372d1()"
+      },
+      {
+        "n": 38,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 39,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "ldc.i4.7",
+        "arg": ""
+      },
+      {
+        "n": 41,
+        "op": "newarr",
+        "arg": "System.String"
+      },
+      {
+        "n": 42,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 43,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 44,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_437242e9bb09a37389c5()"
+      },
+      {
+        "n": 45,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 46,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 47,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 49,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_69b93dd342f988985880()"
+      },
+      {
+        "n": 51,
+        "op": "callvirt",
+        "arg": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "n": 52,
+        "op": "brtrue.s",
+        "arg": "@9D"
+      },
+      {
+        "n": 53,
+        "op": "ldstr",
+        "arg": "false"
+      },
+      {
+        "n": 54,
+        "op": "br.s",
+        "arg": "@A2"
+      },
+      {
+        "n": 55,
+        "op": "ldstr",
+        "arg": "true"
+      },
+      {
+        "n": 56,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 57,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 58,
+        "op": "ldc.i4.2",
+        "arg": ""
+      },
+      {
+        "n": 59,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_a67b4475b58499df9288()"
+      },
+      {
+        "n": 60,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 61,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 62,
+        "op": "ldc.i4.3",
+        "arg": ""
+      },
+      {
+        "n": 63,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 64,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 65,
+        "op": "ldstr",
+        "arg": "kcal"
+      },
+      {
+        "n": 66,
+        "op": "callvirt",
+        "arg": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "n": 67,
+        "op": "brtrue.s",
+        "arg": "@C2"
+      },
+      {
+        "n": 68,
+        "op": "ldstr",
+        "arg": "false"
+      },
+      {
+        "n": 69,
+        "op": "br.s",
+        "arg": "@C7"
+      },
+      {
+        "n": 70,
+        "op": "ldstr",
+        "arg": "true"
+      },
+      {
+        "n": 71,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 73,
+        "op": "ldc.i4.4",
+        "arg": ""
+      },
+      {
+        "n": 74,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_7f4662ba27addd258bb3()"
+      },
+      {
+        "n": 75,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 76,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 77,
+        "op": "ldc.i4.5",
+        "arg": ""
+      },
+      {
+        "n": 78,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 79,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 80,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 81,
+        "op": "ldc.i4.6",
+        "arg": ""
+      },
+      {
+        "n": 82,
+        "op": "ldstr",
+        "arg": "]"
+      },
+      {
+        "n": 83,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 84,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "n": 85,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 86,
+        "op": "leave.s",
+        "arg": "@EB"
+      },
+      {
+        "n": 87,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 88,
+        "op": "leave.s",
+        "arg": "@EB"
+      },
+      {
+        "n": 89,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PrefixTooltipBuild()",
+    "token": 100664549,
+    "il": [
+      {
+        "n": 0,
+        "op": "call",
+        "arg": "System.Int32 System.Environment::get_TickCount()"
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldsfld",
+        "arg": "System.Int32 RedLightDistrict.TalentPatches::_lastBuildEnterCrumb"
+      },
+      {
+        "n": 4,
+        "op": "sub",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "ldc.i4",
+        "arg": "150"
+      },
+      {
+        "n": 6,
+        "op": "bge.s",
+        "arg": "@16"
+      },
+      {
+        "n": 7,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 8,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "stsfld",
+        "arg": "System.Int32 RedLightDistrict.TalentPatches::_lastBuildEnterCrumb"
+      },
+      {
+        "n": 10,
+        "op": "ldstr",
+        "arg": "build enter last="
+      },
+      {
+        "n": 11,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTipId"
+      },
+      {
+        "n": 12,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 13,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 14,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 15,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 17,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixTooltipBuild()",
+    "token": 100664550,
+    "il": [
+      {
+        "n": 0,
+        "op": "call",
+        "arg": "System.Int32 System.Environment::get_TickCount()"
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldsfld",
+        "arg": "System.Int32 RedLightDistrict.TalentPatches::_lastBuildCrumb"
+      },
+      {
+        "n": 4,
+        "op": "sub",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "ldc.i4",
+        "arg": "300"
+      },
+      {
+        "n": 6,
+        "op": "bge.s",
+        "arg": "@16"
+      },
+      {
+        "n": 7,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 8,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "stsfld",
+        "arg": "System.Int32 RedLightDistrict.TalentPatches::_lastBuildCrumb"
+      },
+      {
+        "n": 10,
+        "op": "ldstr",
+        "arg": "tooltip build ok last="
+      },
+      {
+        "n": 11,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTipId"
+      },
+      {
+        "n": 12,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 13,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 14,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 15,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "leave.s",
+        "arg": "@35"
+      },
+      {
+        "n": 17,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetTooltip(GameItem,RichText&)",
+    "token": 100664551,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "brfalse.s",
+        "arg": "@E"
+      },
+      {
+        "n": 6,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_identifier()"
+      },
+      {
+        "n": 8,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "leave.s",
+        "arg": "@13"
+      },
+      {
+        "n": 10,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "leave.s",
+        "arg": "@13"
+      },
+      {
+        "n": 12,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 14,
+        "op": "brtrue.s",
+        "arg": "@3B"
+      },
+      {
+        "n": 15,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastGetTipId"
+      },
+      {
+        "n": 17,
+        "op": "beq.s",
+        "arg": "@3B"
+      },
+      {
+        "n": 18,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastGetTipId"
+      },
+      {
+        "n": 20,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 21,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "ldstr",
+        "arg": "GetTooltip enter id="
+      },
+      {
+        "n": 23,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 24,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 25,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 26,
+        "op": "leave.s",
+        "arg": "@40"
+      },
+      {
+        "n": 27,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "leave.s",
+        "arg": "@40"
+      },
+      {
+        "n": 29,
+        "op": "ldstr",
+        "arg": "tiprt"
+      },
+      {
+        "n": 30,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 31,
+        "op": "brtrue.s",
+        "arg": "@4E"
+      },
+      {
+        "n": 32,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 34,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 35,
+        "op": "ldloca.s",
+        "arg": "V_2"
+      },
+      {
+        "n": 36,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)"
+      },
+      {
+        "n": 37,
+        "op": "brfalse",
+        "arg": "@206"
+      },
+      {
+        "n": 38,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 39,
+        "op": "brfalse",
+        "arg": "@206"
+      },
+      {
+        "n": 40,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 41,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 42,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 43,
+        "op": "ble",
+        "arg": "@206"
+      },
+      {
+        "n": 44,
+        "op": "ldstr",
+        "arg": "tipnull"
+      },
+      {
+        "n": 45,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 46,
+        "op": "brfalse.s",
+        "arg": "@91"
+      },
+      {
+        "n": 47,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 49,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 51,
+        "op": "brfalse.s",
+        "arg": "@8F"
+      },
+      {
+        "n": 52,
+        "op": "ldstr",
+        "arg": "GetTooltip TIPNULL id="
+      },
+      {
+        "n": 53,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 54,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 55,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 56,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 57,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 58,
+        "op": "ldstr",
+        "arg": "tipbuild"
+      },
+      {
+        "n": 59,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 60,
+        "op": "brtrue",
+        "arg": "@1D5"
+      },
+      {
+        "n": 61,
+        "op": "ldsfld",
+        "arg": "System.Collections.Generic.Dictionary`2<System.String,RichText> RedLightDistrict.TalentPatches::_ownRtCache"
+      },
+      {
+        "n": 62,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 63,
+        "op": "ldloca.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 64,
+        "op": "callvirt",
+        "arg": "System.Boolean System.Collections.Generic.Dictionary`2<System.String,RichText>::TryGetValue(System.String,RichText&)"
+      },
+      {
+        "n": 65,
+        "op": "brfalse.s",
+        "arg": "@D2"
+      },
+      {
+        "n": 66,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 67,
+        "op": "brfalse.s",
+        "arg": "@D2"
+      },
+      {
+        "n": 68,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 69,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 70,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 71,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "brfalse.s",
+        "arg": "@CA"
+      },
+      {
+        "n": 73,
+        "op": "ldstr",
+        "arg": "GetTooltip HARD-CACHED id="
+      },
+      {
+        "n": 74,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 75,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 76,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 77,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 78,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 79,
+        "op": "leave",
+        "arg": "@208"
+      },
+      {
+        "n": 80,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 81,
+        "op": "ldc.i4.s",
+        "arg": "30"
+      },
+      {
+        "n": 82,
+        "op": "call",
+        "arg": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentPatches::WrapLines(System.Collections.Generic.List`1<System.String>,System.Int32)"
+      },
+      {
+        "n": 83,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 84,
+        "op": "ldstr",
+        "arg": "\n"
+      },
+      {
+        "n": 85,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 86,
+        "op": "callvirt",
+        "arg": "System.String[] System.Collections.Generic.List`1<System.String>::ToArray()"
+      },
+      {
+        "n": 87,
+        "op": "call",
+        "arg": "System.String System.String::Join(System.String,System.String[])"
+      },
+      {
+        "n": 88,
+        "op": "stloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 89,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 90,
+        "op": "stloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 91,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 92,
+        "op": "callvirt",
+        "arg": "System.Collections.Generic.List`1/Enumerator<System.String> System.Collections.Generic.List`1<System.String>::GetEnumerator()"
+      },
+      {
+        "n": 93,
+        "op": "stloc.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 94,
+        "op": "br.s",
+        "arg": "@123"
+      },
+      {
+        "n": 95,
+        "op": "ldloca.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 96,
+        "op": "call",
+        "arg": "System.String System.Collections.Generic.List`1/Enumerator<System.String>::get_Current()"
+      },
+      {
+        "n": 97,
+        "op": "stloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 98,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 99,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 100,
+        "op": "brtrue.s",
+        "arg": "@123"
+      },
+      {
+        "n": 101,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 102,
+        "op": "callvirt",
+        "arg": "System.Int32 System.String::get_Length()"
+      },
+      {
+        "n": 103,
+        "op": "ldloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 104,
+        "op": "ble.s",
+        "arg": "@123"
+      },
+      {
+        "n": 105,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 106,
+        "op": "callvirt",
+        "arg": "System.Int32 System.String::get_Length()"
+      },
+      {
+        "n": 107,
+        "op": "stloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 108,
+        "op": "ldloca.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 109,
+        "op": "call",
+        "arg": "System.Boolean System.Collections.Generic.List`1/Enumerator<System.String>::MoveNext()"
+      },
+      {
+        "n": 110,
+        "op": "brtrue.s",
+        "arg": "@FD"
+      },
+      {
+        "n": 111,
+        "op": "leave.s",
+        "arg": "@13C"
+      },
+      {
+        "n": 112,
+        "op": "ldloca.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 113,
+        "op": "constrained.",
+        "arg": "System.Collections.Generic.List`1/Enumerator<System.String>"
+      },
+      {
+        "n": 114,
+        "op": "callvirt",
+        "arg": "System.Void System.IDisposable::Dispose()"
+      },
+      {
+        "n": 115,
+        "op": "endfinally",
+        "arg": ""
+      },
+      {
+        "n": 116,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 117,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 118,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 119,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 120,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 121,
+        "op": "ldloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 122,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 123,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 124,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 125,
+        "op": "newobj",
+        "arg": "System.Void RichText::.ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Boolean)"
+      },
+      {
+        "n": 126,
+        "op": "stloc.s",
+        "arg": "V_8"
+      },
+      {
+        "n": 127,
+        "op": "ldsfld",
+        "arg": "System.Collections.Generic.Dictionary`2<System.String,RichText> RedLightDistrict.TalentPatches::_ownRtCache"
+      },
+      {
+        "n": 128,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 129,
+        "op": "ldloc.s",
+        "arg": "V_8"
+      },
+      {
+        "n": 130,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.Dictionary`2<System.String,RichText>::set_Item(System.String,RichText)"
+      },
+      {
+        "n": 131,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 132,
+        "op": "ldloc.s",
+        "arg": "V_8"
+      },
+      {
+        "n": 133,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 134,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 135,
+        "op": "brfalse.s",
+        "arg": "@1B4"
+      },
+      {
+        "n": 136,
+        "op": "ldc.i4.6",
+        "arg": ""
+      },
+      {
+        "n": 137,
+        "op": "newarr",
+        "arg": "System.String"
+      },
+      {
+        "n": 138,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 139,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 140,
+        "op": "ldstr",
+        "arg": "GetTooltip HARD-RT id="
+      },
+      {
+        "n": 141,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 142,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 143,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 144,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 145,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 146,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 147,
+        "op": "ldc.i4.2",
+        "arg": ""
+      },
+      {
+        "n": 148,
+        "op": "ldstr",
+        "arg": " w="
+      },
+      {
+        "n": 149,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 150,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 151,
+        "op": "ldc.i4.3",
+        "arg": ""
+      },
+      {
+        "n": 152,
+        "op": "ldloca.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 153,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 154,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 155,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 156,
+        "op": "ldc.i4.4",
+        "arg": ""
+      },
+      {
+        "n": 157,
+        "op": "ldstr",
+        "arg": " h="
+      },
+      {
+        "n": 158,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 159,
+        "op": "dup",
+        "arg": ""
+      },
+      {
+        "n": 160,
+        "op": "ldc.i4.5",
+        "arg": ""
+      },
+      {
+        "n": 161,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 162,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 163,
+        "op": "stloc.s",
+        "arg": "V_12"
+      },
+      {
+        "n": 164,
+        "op": "ldloca.s",
+        "arg": "V_12"
+      },
+      {
+        "n": 165,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 166,
+        "op": "stelem.ref",
+        "arg": ""
+      },
+      {
+        "n": 167,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "n": 168,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 169,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 170,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 171,
+        "op": "leave.s",
+        "arg": "@208"
+      },
+      {
+        "n": 172,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 173,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 174,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 175,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 176,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 177,
+        "op": "brfalse.s",
+        "arg": "@1D0"
+      },
+      {
+        "n": 178,
+        "op": "ldstr",
+        "arg": "GetTooltip HARD-NULL id="
+      },
+      {
+        "n": 179,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 180,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 181,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 182,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 183,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 184,
+        "op": "leave.s",
+        "arg": "@208"
+      },
+      {
+        "n": 185,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 186,
+        "op": "ldloca.s",
+        "arg": "V_3"
+      },
+      {
+        "n": 187,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltip(System.String,RichTextBuilder&)"
+      },
+      {
+        "n": 188,
+        "op": "brfalse.s",
+        "arg": "@206"
+      },
+      {
+        "n": 189,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 190,
+        "op": "brfalse.s",
+        "arg": "@206"
+      },
+      {
+        "n": 191,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 192,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 193,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 194,
+        "op": "callvirt",
+        "arg": "RichText RichTextBuilder::Build(System.Int32)"
+      },
+      {
+        "n": 195,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 196,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 197,
+        "op": "brfalse.s",
+        "arg": "@1FE"
+      },
+      {
+        "n": 198,
+        "op": "ldstr",
+        "arg": "GetTooltip HARD-BUILD id="
+      },
+      {
+        "n": 199,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 200,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 201,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 202,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 203,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 204,
+        "op": "leave.s",
+        "arg": "@208"
+      },
+      {
+        "n": 205,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 206,
+        "op": "leave.s",
+        "arg": "@206"
+      },
+      {
+        "n": 207,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 208,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 209,
+        "op": "ldloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 210,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixModSourceTooltip(RichTextBuilder,GameItem)",
+    "token": 100664553,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "brfalse.s",
+        "arg": "@C"
+      },
+      {
+        "n": 4,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_identifier()"
+      },
+      {
+        "n": 6,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "leave.s",
+        "arg": "@11"
+      },
+      {
+        "n": 8,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "leave.s",
+        "arg": "@11"
+      },
+      {
+        "n": 10,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::IsRldOwnItemId(System.String)"
+      },
+      {
+        "n": 12,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "ldstr",
+        "arg": "mssrc"
+      },
+      {
+        "n": 14,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 15,
+        "op": "brfalse.s",
+        "arg": "@51"
+      },
+      {
+        "n": 16,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 18,
+        "op": "brtrue.s",
+        "arg": "@4A"
+      },
+      {
+        "n": 19,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 21,
+        "op": "beq.s",
+        "arg": "@4A"
+      },
+      {
+        "n": 22,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 24,
+        "op": "ldstr",
+        "arg": "mssrc NATIVE-ALL id="
+      },
+      {
+        "n": 25,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 26,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 27,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 28,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 30,
+        "op": "leave",
+        "arg": "@F2"
+      },
+      {
+        "n": 31,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 32,
+        "op": "brtrue.s",
+        "arg": "@7E"
+      },
+      {
+        "n": 33,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 34,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 35,
+        "op": "brtrue.s",
+        "arg": "@7A"
+      },
+      {
+        "n": 36,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 37,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 38,
+        "op": "beq.s",
+        "arg": "@7A"
+      },
+      {
+        "n": 39,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 41,
+        "op": "ldstr",
+        "arg": "mssrc NATIVE id="
+      },
+      {
+        "n": 42,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 43,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 44,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 45,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 46,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 47,
+        "op": "leave.s",
+        "arg": "@F2"
+      },
+      {
+        "n": 48,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 49,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "call",
+        "arg": "System.Boolean EmporiumOption::get_ShowModSourceInTooltip()"
+      },
+      {
+        "n": 51,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 52,
+        "op": "leave.s",
+        "arg": "@8B"
+      },
+      {
+        "n": 53,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 54,
+        "op": "leave.s",
+        "arg": "@8B"
+      },
+      {
+        "n": 55,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 56,
+        "op": "brfalse.s",
+        "arg": "@AF"
+      },
+      {
+        "n": 57,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 58,
+        "op": "brfalse.s",
+        "arg": "@AF"
+      },
+      {
+        "n": 59,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 60,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_fac220147d76b2861c91()"
+      },
+      {
+        "n": 61,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 62,
+        "op": "ldc.i4",
+        "arg": "4365501"
+      },
+      {
+        "n": 63,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 64,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 65,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 66,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 67,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 68,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 69,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 70,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 71,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "leave.s",
+        "arg": "@AF"
+      },
+      {
+        "n": 73,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 74,
+        "op": "leave.s",
+        "arg": "@AF"
+      },
+      {
+        "n": 75,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 76,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 77,
+        "op": "brtrue.s",
+        "arg": "@E9"
+      },
+      {
+        "n": 78,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 79,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 80,
+        "op": "beq.s",
+        "arg": "@E9"
+      },
+      {
+        "n": 81,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 82,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastMsId"
+      },
+      {
+        "n": 83,
+        "op": "ldstr",
+        "arg": "mssrc OWN"
+      },
+      {
+        "n": 84,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 85,
+        "op": "brtrue.s",
+        "arg": "@D4"
+      },
+      {
+        "n": 86,
+        "op": "ldstr",
+        "arg": "-SETTING-OFF"
+      },
+      {
+        "n": 87,
+        "op": "br.s",
+        "arg": "@D9"
+      },
+      {
+        "n": 88,
+        "op": "ldstr",
+        "arg": ""
+      },
+      {
+        "n": 89,
+        "op": "ldstr",
+        "arg": " id="
+      },
+      {
+        "n": 90,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 91,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 92,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 93,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 94,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 95,
+        "op": "leave.s",
+        "arg": "@F2"
+      },
+      {
+        "n": 96,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 97,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 98,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 99,
+        "op": "leave.s",
+        "arg": "@F2"
+      },
+      {
+        "n": 100,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 101,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)",
+    "token": 100664555,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 5,
+        "op": "brfalse.s",
+        "arg": "@D"
+      },
+      {
+        "n": 6,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 8,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 10,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "n": 11,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "brfalse.s",
+        "arg": "@7E"
+      },
+      {
+        "n": 14,
+        "op": "newobj",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::.ctor()"
+      },
+      {
+        "n": 15,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 16,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "ldfld",
+        "arg": "System.String RedLightDistrict.TalentEquipment/EquipDef::Name"
+      },
+      {
+        "n": 18,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 19,
+        "op": "brtrue.s",
+        "arg": "@37"
+      },
+      {
+        "n": 20,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 21,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "ldfld",
+        "arg": "System.String RedLightDistrict.TalentEquipment/EquipDef::Name"
+      },
+      {
+        "n": 23,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "n": 24,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 26,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.TalentEquipment::ClothingDescription(RedLightDistrict.TalentEquipment/EquipDef)"
+      },
+      {
+        "n": 27,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 30,
+        "op": "brtrue.s",
+        "arg": "@4E"
+      },
+      {
+        "n": 31,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 32,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "n": 34,
+        "op": "leave.s",
+        "arg": "@53"
+      },
+      {
+        "n": 35,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 36,
+        "op": "leave.s",
+        "arg": "@53"
+      },
+      {
+        "n": 37,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 38,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_160576cd764ccb694b23()"
+      },
+      {
+        "n": 39,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "ldflda",
+        "arg": "System.Int64 RedLightDistrict.TalentEquipment/EquipDef::Price"
+      },
+      {
+        "n": 41,
+        "op": "call",
+        "arg": "System.String System.Int64::ToString()"
+      },
+      {
+        "n": 42,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 43,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "n": 44,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 45,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 46,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 47,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 49,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "cgt",
+        "arg": ""
+      },
+      {
+        "n": 51,
+        "op": "stloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 52,
+        "op": "leave.s",
+        "arg": "@DD"
+      },
+      {
+        "n": 53,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 54,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentAccessory/AccessoryDef RedLightDistrict.TalentAccessory::Find(System.String)"
+      },
+      {
+        "n": 55,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 56,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 57,
+        "op": "brfalse.s",
+        "arg": "@D3"
+      },
+      {
+        "n": 58,
+        "op": "newobj",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::.ctor()"
+      },
+      {
+        "n": 59,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 60,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 61,
+        "op": "ldfld",
+        "arg": "System.String RedLightDistrict.TalentAccessory/AccessoryDef::Name"
+      },
+      {
+        "n": 62,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 63,
+        "op": "brtrue.s",
+        "arg": "@A9"
+      },
+      {
+        "n": 64,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 65,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 66,
+        "op": "ldfld",
+        "arg": "System.String RedLightDistrict.TalentAccessory/AccessoryDef::Name"
+      },
+      {
+        "n": 67,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "n": 68,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 69,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_a6da58b45edd9452eb12()"
+      },
+      {
+        "n": 70,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 71,
+        "op": "ldflda",
+        "arg": "System.Int32 RedLightDistrict.TalentAccessory/AccessoryDef::NightlyObedience"
+      },
+      {
+        "n": 72,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 73,
+        "op": "ldstr",
+        "arg": "）。"
+      },
+      {
+        "n": 74,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "n": 75,
+        "op": "callvirt",
+        "arg": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "n": 76,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 77,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 78,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 79,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 80,
+        "op": "stloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 81,
+        "op": "leave.s",
+        "arg": "@DD"
+      },
+      {
+        "n": 82,
+        "op": "leave.s",
+        "arg": "@DB"
+      },
+      {
+        "n": 83,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 84,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 85,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 86,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 87,
+        "op": "leave.s",
+        "arg": "@DB"
+      },
+      {
+        "n": 88,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 89,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 90,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 91,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltip(System.String,RichTextBuilder&)",
+    "token": 100664556,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "ldloca.s",
+        "arg": "V_0"
+      },
+      {
+        "n": 5,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)"
+      },
+      {
+        "n": 6,
+        "op": "brfalse.s",
+        "arg": "@18"
+      },
+      {
+        "n": 7,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 8,
+        "op": "brfalse.s",
+        "arg": "@18"
+      },
+      {
+        "n": 9,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 10,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 11,
+        "op": "brtrue.s",
+        "arg": "@1A"
+      },
+      {
+        "n": 12,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 14,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "n": 16,
+        "op": "brfalse.s",
+        "arg": "@24"
+      },
+      {
+        "n": 17,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 18,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 19,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "ldc.i4.s",
+        "arg": "100"
+      },
+      {
+        "n": 21,
+        "op": "newobj",
+        "arg": "System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "n": 22,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 24,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "n": 25,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 26,
+        "op": "cgt.un",
+        "arg": ""
+      },
+      {
+        "n": 27,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 29,
+        "op": "brtrue.s",
+        "arg": "@45"
+      },
+      {
+        "n": 30,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 31,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentAccessory/AccessoryDef RedLightDistrict.TalentAccessory::Find(System.String)"
+      },
+      {
+        "n": 32,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "cgt.un",
+        "arg": ""
+      },
+      {
+        "n": 34,
+        "op": "br.s",
+        "arg": "@46"
+      },
+      {
+        "n": 35,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 36,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 37,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 38,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 39,
+        "op": "br",
+        "arg": "@106"
+      },
+      {
+        "n": 40,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 41,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 42,
+        "op": "callvirt",
+        "arg": "System.String System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)"
+      },
+      {
+        "n": 43,
+        "op": "stloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 44,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 45,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 46,
+        "op": "brtrue",
+        "arg": "@102"
+      },
+      {
+        "n": 47,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "brtrue.s",
+        "arg": "@6F"
+      },
+      {
+        "n": 49,
+        "op": "ldc.i4",
+        "arg": "12895408"
+      },
+      {
+        "n": 50,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 51,
+        "op": "br.s",
+        "arg": "@8E"
+      },
+      {
+        "n": 52,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 53,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 54,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 55,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 56,
+        "op": "sub",
+        "arg": ""
+      },
+      {
+        "n": 57,
+        "op": "ceq",
+        "arg": ""
+      },
+      {
+        "n": 58,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 59,
+        "op": "and",
+        "arg": ""
+      },
+      {
+        "n": 60,
+        "op": "brfalse.s",
+        "arg": "@87"
+      },
+      {
+        "n": 61,
+        "op": "ldc.i4",
+        "arg": "4366987"
+      },
+      {
+        "n": 62,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 63,
+        "op": "br.s",
+        "arg": "@8E"
+      },
+      {
+        "n": 64,
+        "op": "ldc.i4",
+        "arg": "8950922"
+      },
+      {
+        "n": 65,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 66,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 67,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 68,
+        "op": "brtrue.s",
+        "arg": "@A7"
+      },
+      {
+        "n": 69,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 70,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 71,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 72,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 73,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 74,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 75,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 76,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 77,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 78,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 79,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 80,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 81,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 82,
+        "op": "br.s",
+        "arg": "@E6"
+      },
+      {
+        "n": 83,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 84,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 85,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 86,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 87,
+        "op": "sub",
+        "arg": ""
+      },
+      {
+        "n": 88,
+        "op": "ceq",
+        "arg": ""
+      },
+      {
+        "n": 89,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 90,
+        "op": "and",
+        "arg": ""
+      },
+      {
+        "n": 91,
+        "op": "brfalse.s",
+        "arg": "@D3"
+      },
+      {
+        "n": 92,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 93,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 94,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddEmptyLine(System.Int32)"
+      },
+      {
+        "n": 95,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 96,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 97,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 98,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 99,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 100,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 101,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 102,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 103,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 104,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 105,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 106,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 107,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 108,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 109,
+        "op": "br.s",
+        "arg": "@E6"
+      },
+      {
+        "n": 110,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 111,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 112,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 113,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 114,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 115,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 116,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 117,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 118,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 119,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 120,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 121,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 122,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 123,
+        "op": "leave.s",
+        "arg": "@102"
+      },
+      {
+        "n": 124,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 125,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 126,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 127,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 128,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 129,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 130,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 131,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 132,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 133,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 134,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 135,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 136,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 137,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 138,
+        "op": "leave.s",
+        "arg": "@100"
+      },
+      {
+        "n": 139,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 140,
+        "op": "leave.s",
+        "arg": "@100"
+      },
+      {
+        "n": 141,
+        "op": "leave.s",
+        "arg": "@102"
+      },
+      {
+        "n": 142,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 143,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 144,
+        "op": "add",
+        "arg": ""
+      },
+      {
+        "n": 145,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 146,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 147,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 148,
+        "op": "callvirt",
+        "arg": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "n": 149,
+        "op": "blt",
+        "arg": "@4E"
+      },
+      {
+        "n": 150,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 151,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 152,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 153,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 154,
+        "op": "stloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 155,
+        "op": "leave.s",
+        "arg": "@122"
+      },
+      {
+        "n": 156,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 157,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 158,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 159,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 160,
+        "op": "leave.s",
+        "arg": "@120"
+      },
+      {
+        "n": 161,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 162,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 163,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 164,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetTooltipBasic(GameItemElement,RichTextBuilder&)",
+    "token": 100664558,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 2,
+        "op": "ldnull",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 8,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "brfalse.s",
+        "arg": "@3F"
+      },
+      {
+        "n": 10,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 11,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_identifier()"
+      },
+      {
+        "n": 12,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "leave.s",
+        "arg": "@17"
+      },
+      {
+        "n": 14,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 15,
+        "op": "leave.s",
+        "arg": "@17"
+      },
+      {
+        "n": 16,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 18,
+        "op": "brtrue.s",
+        "arg": "@3F"
+      },
+      {
+        "n": 19,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "ldsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTipId"
+      },
+      {
+        "n": 21,
+        "op": "beq.s",
+        "arg": "@3F"
+      },
+      {
+        "n": 22,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 23,
+        "op": "stsfld",
+        "arg": "System.String RedLightDistrict.TalentPatches::_lastTipId"
+      },
+      {
+        "n": 24,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 26,
+        "op": "ldstr",
+        "arg": "hover tip id="
+      },
+      {
+        "n": 27,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 30,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 31,
+        "op": "brfalse.s",
+        "arg": "@57"
+      },
+      {
+        "n": 32,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 33,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 34,
+        "op": "brtrue.s",
+        "arg": "@57"
+      },
+      {
+        "n": 35,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 36,
+        "op": "ldstr",
+        "arg": "redlight_"
+      },
+      {
+        "n": 37,
+        "op": "callvirt",
+        "arg": "System.Boolean System.String::StartsWith(System.String)"
+      },
+      {
+        "n": 38,
+        "op": "br.s",
+        "arg": "@58"
+      },
+      {
+        "n": 39,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "stsfld",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::_gtbTraceEnabled"
+      },
+      {
+        "n": 41,
+        "op": "leave.s",
+        "arg": "@62"
+      },
+      {
+        "n": 42,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 43,
+        "op": "leave.s",
+        "arg": "@62"
+      },
+      {
+        "n": 44,
+        "op": "ldstr",
+        "arg": "tip"
+      },
+      {
+        "n": 45,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 46,
+        "op": "brfalse.s",
+        "arg": "@70"
+      },
+      {
+        "n": 47,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 49,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "ldloca.s",
+        "arg": "V_3"
+      },
+      {
+        "n": 51,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltip(System.String,RichTextBuilder&)"
+      },
+      {
+        "n": 52,
+        "op": "brfalse.s",
+        "arg": "@9B"
+      },
+      {
+        "n": 53,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 54,
+        "op": "brfalse.s",
+        "arg": "@9B"
+      },
+      {
+        "n": 55,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 56,
+        "op": "brfalse.s",
+        "arg": "@90"
+      },
+      {
+        "n": 57,
+        "op": "ldstr",
+        "arg": "hover tip OWN-SHORT id="
+      },
+      {
+        "n": 58,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 59,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 60,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 61,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 62,
+        "op": "stsfld",
+        "arg": "RichTextBuilder RedLightDistrict.TalentPatches::_lastOwnBuilder"
+      },
+      {
+        "n": 63,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 64,
+        "op": "ldloc.3",
+        "arg": ""
+      },
+      {
+        "n": 65,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 66,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 67,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 68,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 69,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 70,
+        "op": "stloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 71,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 72,
+        "op": "brfalse",
+        "arg": "@17B"
+      },
+      {
+        "n": 73,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 74,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentFeeder::IsFeederItem(GameItem)"
+      },
+      {
+        "n": 75,
+        "op": "brfalse",
+        "arg": "@17B"
+      },
+      {
+        "n": 76,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 77,
+        "op": "brfalse.s",
+        "arg": "@C5"
+      },
+      {
+        "n": 78,
+        "op": "ldstr",
+        "arg": "hover tip IsTag-ok id="
+      },
+      {
+        "n": 79,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 80,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 81,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 82,
+        "op": "ldc.i4.s",
+        "arg": "100"
+      },
+      {
+        "n": 83,
+        "op": "newobj",
+        "arg": "System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "n": 84,
+        "op": "stloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 85,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 86,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 87,
+        "op": "callvirt",
+        "arg": "System.String GameItem::GetDisplayName(System.Boolean)"
+      },
+      {
+        "n": 88,
+        "op": "stloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 89,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 90,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 91,
+        "op": "brtrue.s",
+        "arg": "@F4"
+      },
+      {
+        "n": 92,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 93,
+        "op": "ldloc.s",
+        "arg": "V_6"
+      },
+      {
+        "n": 94,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 95,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 96,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 97,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 98,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 99,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 100,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 101,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 102,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 103,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 104,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 105,
+        "op": "leave.s",
+        "arg": "@F9"
+      },
+      {
+        "n": 106,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 107,
+        "op": "leave.s",
+        "arg": "@F9"
+      },
+      {
+        "n": 108,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 109,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 110,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_longDescription()"
+      },
+      {
+        "n": 111,
+        "op": "stloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 112,
+        "op": "ldloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 113,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 114,
+        "op": "brtrue.s",
+        "arg": "@11F"
+      },
+      {
+        "n": 115,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 116,
+        "op": "ldloc.s",
+        "arg": "V_7"
+      },
+      {
+        "n": 117,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 118,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 119,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 120,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 121,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 122,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 123,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 124,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 125,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 126,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 127,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 128,
+        "op": "leave.s",
+        "arg": "@124"
+      },
+      {
+        "n": 129,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 130,
+        "op": "leave.s",
+        "arg": "@124"
+      },
+      {
+        "n": 131,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 132,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 133,
+        "op": "ldc.i4.4",
+        "arg": ""
+      },
+      {
+        "n": 134,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddEmptyLine(System.Int32)"
+      },
+      {
+        "n": 135,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 136,
+        "op": "leave.s",
+        "arg": "@133"
+      },
+      {
+        "n": 137,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 138,
+        "op": "leave.s",
+        "arg": "@133"
+      },
+      {
+        "n": 139,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 140,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 141,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 142,
+        "op": "call",
+        "arg": "System.Void MachineFeedDispenser::CreateTooltip(RichTextBuilder,GameItem)"
+      },
+      {
+        "n": 143,
+        "op": "leave.s",
+        "arg": "@159"
+      },
+      {
+        "n": 144,
+        "op": "stloc.s",
+        "arg": "V_8"
+      },
+      {
+        "n": 145,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_991d66fb8b1f4122b19c()"
+      },
+      {
+        "n": 146,
+        "op": "ldloc.s",
+        "arg": "V_8"
+      },
+      {
+        "n": 147,
+        "op": "callvirt",
+        "arg": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 148,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 149,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 150,
+        "op": "leave.s",
+        "arg": "@159"
+      },
+      {
+        "n": 151,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 152,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 153,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 154,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentFeeder::AppendStorageLine(RichTextBuilder,GameItem)"
+      },
+      {
+        "n": 155,
+        "op": "leave.s",
+        "arg": "@168"
+      },
+      {
+        "n": 156,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 157,
+        "op": "leave.s",
+        "arg": "@168"
+      },
+      {
+        "n": 158,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 159,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentFeeder::DumpTooltip(RichTextBuilder)"
+      },
+      {
+        "n": 160,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 161,
+        "op": "ldloc.s",
+        "arg": "V_5"
+      },
+      {
+        "n": 162,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 163,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 164,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 165,
+        "op": "leave",
+        "arg": "@41B"
+      },
+      {
+        "n": 166,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 167,
+        "op": "brfalse.s",
+        "arg": "@1B8"
+      },
+      {
+        "n": 168,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 169,
+        "op": "ldstr",
+        "arg": "talent_redlight"
+      },
+      {
+        "n": 170,
+        "op": "call",
+        "arg": "System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "n": 171,
+        "op": "brfalse.s",
+        "arg": "@1B8"
+      },
+      {
+        "n": 172,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 173,
+        "op": "brfalse.s",
+        "arg": "@19F"
+      },
+      {
+        "n": 174,
+        "op": "ldstr",
+        "arg": "hover tip TALENT id="
+      },
+      {
+        "n": 175,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 176,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 177,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 178,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 179,
+        "op": "call",
+        "arg": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)"
+      },
+      {
+        "n": 180,
+        "op": "stloc.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 181,
+        "op": "ldloc.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 182,
+        "op": "brfalse.s",
+        "arg": "@1B8"
+      },
+      {
+        "n": 183,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 184,
+        "op": "ldloc.s",
+        "arg": "V_10"
+      },
+      {
+        "n": 185,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 186,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 187,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 188,
+        "op": "leave",
+        "arg": "@41B"
+      },
+      {
+        "n": 189,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 190,
+        "op": "brfalse",
+        "arg": "@31E"
+      },
+      {
+        "n": 191,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 192,
+        "op": "ldstr",
+        "arg": "redlight_sewing"
+      },
+      {
+        "n": 193,
+        "op": "call",
+        "arg": "System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "n": 194,
+        "op": "brfalse",
+        "arg": "@31E"
+      },
+      {
+        "n": 195,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 196,
+        "op": "brfalse.s",
+        "arg": "@1E2"
+      },
+      {
+        "n": 197,
+        "op": "ldstr",
+        "arg": "hover tip SEWING id="
+      },
+      {
+        "n": 198,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 199,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 200,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 201,
+        "op": "ldc.i4.s",
+        "arg": "100"
+      },
+      {
+        "n": 202,
+        "op": "newobj",
+        "arg": "System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "n": 203,
+        "op": "stloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 204,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 205,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 206,
+        "op": "callvirt",
+        "arg": "System.String GameItem::GetDisplayName(System.Boolean)"
+      },
+      {
+        "n": 207,
+        "op": "stloc.s",
+        "arg": "V_12"
+      },
+      {
+        "n": 208,
+        "op": "ldloc.s",
+        "arg": "V_12"
+      },
+      {
+        "n": 209,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 210,
+        "op": "brtrue.s",
+        "arg": "@215"
+      },
+      {
+        "n": 211,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 212,
+        "op": "ldloc.s",
+        "arg": "V_12"
+      },
+      {
+        "n": 213,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 214,
+        "op": "ldc.i4",
+        "arg": "12895408"
+      },
+      {
+        "n": 215,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 216,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 217,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 218,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 219,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 220,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 221,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 222,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 223,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 224,
+        "op": "leave.s",
+        "arg": "@21A"
+      },
+      {
+        "n": 225,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 226,
+        "op": "leave.s",
+        "arg": "@21A"
+      },
+      {
+        "n": 227,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 228,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 229,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_longDescription()"
+      },
+      {
+        "n": 230,
+        "op": "stloc.s",
+        "arg": "V_13"
+      },
+      {
+        "n": 231,
+        "op": "ldloc.s",
+        "arg": "V_13"
+      },
+      {
+        "n": 232,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 233,
+        "op": "brtrue.s",
+        "arg": "@244"
+      },
+      {
+        "n": 234,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 235,
+        "op": "ldloc.s",
+        "arg": "V_13"
+      },
+      {
+        "n": 236,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 237,
+        "op": "ldc.i4",
+        "arg": "8950922"
+      },
+      {
+        "n": 238,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 239,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 240,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 241,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 242,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 243,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 244,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 245,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 246,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 247,
+        "op": "leave.s",
+        "arg": "@249"
+      },
+      {
+        "n": 248,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 249,
+        "op": "leave.s",
+        "arg": "@249"
+      },
+      {
+        "n": 250,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 251,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 252,
+        "op": "ldc.i4.2",
+        "arg": ""
+      },
+      {
+        "n": 253,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddEmptyLine(System.Int32)"
+      },
+      {
+        "n": 254,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 255,
+        "op": "leave.s",
+        "arg": "@258"
+      },
+      {
+        "n": 256,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 257,
+        "op": "leave.s",
+        "arg": "@258"
+      },
+      {
+        "n": 258,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 259,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 260,
+        "op": "call",
+        "arg": "System.Int32 RedLightDistrict.SewingMachine::ReadProgress(GameItem)"
+      },
+      {
+        "n": 261,
+        "op": "stloc.s",
+        "arg": "V_14"
+      },
+      {
+        "n": 262,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 263,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_ea7961282f8e49369198()"
+      },
+      {
+        "n": 264,
+        "op": "ldloca.s",
+        "arg": "V_14"
+      },
+      {
+        "n": 265,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 266,
+        "op": "ldstr",
+        "arg": "/"
+      },
+      {
+        "n": 267,
+        "op": "ldc.i4.3",
+        "arg": ""
+      },
+      {
+        "n": 268,
+        "op": "stloc.s",
+        "arg": "V_16"
+      },
+      {
+        "n": 269,
+        "op": "ldloca.s",
+        "arg": "V_16"
+      },
+      {
+        "n": 270,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 271,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 272,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 273,
+        "op": "ldc.i4",
+        "arg": "4366987"
+      },
+      {
+        "n": 274,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 275,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 276,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 277,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 278,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 279,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 280,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 281,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 282,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 283,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 284,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentData RedLightDistrict.SewingMachine::GetInnerWorker(GameItem)"
+      },
+      {
+        "n": 285,
+        "op": "stloc.s",
+        "arg": "V_15"
+      },
+      {
+        "n": 286,
+        "op": "ldloc.s",
+        "arg": "V_15"
+      },
+      {
+        "n": 287,
+        "op": "brfalse.s",
+        "arg": "@2F3"
+      },
+      {
+        "n": 288,
+        "op": "ldloc.s",
+        "arg": "V_15"
+      },
+      {
+        "n": 289,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.SewingMachine::CanWorkNow(RedLightDistrict.TalentData)"
+      },
+      {
+        "n": 290,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 291,
+        "op": "ceq",
+        "arg": ""
+      },
+      {
+        "n": 292,
+        "op": "stloc.s",
+        "arg": "V_17"
+      },
+      {
+        "n": 293,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 294,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_75dcc4182de4c46d0821()"
+      },
+      {
+        "n": 295,
+        "op": "ldloc.s",
+        "arg": "V_15"
+      },
+      {
+        "n": 296,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)"
+      },
+      {
+        "n": 297,
+        "op": "ldloc.s",
+        "arg": "V_17"
+      },
+      {
+        "n": 298,
+        "op": "brtrue.s",
+        "arg": "@2C9"
+      },
+      {
+        "n": 299,
+        "op": "ldstr",
+        "arg": ""
+      },
+      {
+        "n": 300,
+        "op": "br.s",
+        "arg": "@2CE"
+      },
+      {
+        "n": 301,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_b9d37e01d5d4d7bd3242()"
+      },
+      {
+        "n": 302,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "n": 303,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 304,
+        "op": "ldloc.s",
+        "arg": "V_17"
+      },
+      {
+        "n": 305,
+        "op": "brtrue.s",
+        "arg": "@2DF"
+      },
+      {
+        "n": 306,
+        "op": "ldc.i4",
+        "arg": "4367018"
+      },
+      {
+        "n": 307,
+        "op": "br.s",
+        "arg": "@2E4"
+      },
+      {
+        "n": 308,
+        "op": "ldc.i4",
+        "arg": "12472652"
+      },
+      {
+        "n": 309,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 310,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 311,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 312,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 313,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 314,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 315,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 316,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 317,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 318,
+        "op": "br.s",
+        "arg": "@30D"
+      },
+      {
+        "n": 319,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 320,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_813ee0bee257c509400a()"
+      },
+      {
+        "n": 321,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 322,
+        "op": "ldc.i4",
+        "arg": "8950922"
+      },
+      {
+        "n": 323,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 324,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 325,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 326,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 327,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 328,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 329,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 330,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 331,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 332,
+        "op": "leave.s",
+        "arg": "@312"
+      },
+      {
+        "n": 333,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 334,
+        "op": "leave.s",
+        "arg": "@312"
+      },
+      {
+        "n": 335,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 336,
+        "op": "ldloc.s",
+        "arg": "V_11"
+      },
+      {
+        "n": 337,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 338,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 339,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 340,
+        "op": "leave",
+        "arg": "@41B"
+      },
+      {
+        "n": 341,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 342,
+        "op": "brfalse.s",
+        "arg": "@357"
+      },
+      {
+        "n": 343,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 344,
+        "op": "ldstr",
+        "arg": "redlight_chem_finisher"
+      },
+      {
+        "n": 345,
+        "op": "call",
+        "arg": "System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "n": 346,
+        "op": "brfalse.s",
+        "arg": "@357"
+      },
+      {
+        "n": 347,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 348,
+        "op": "brfalse.s",
+        "arg": "@342"
+      },
+      {
+        "n": 349,
+        "op": "ldstr",
+        "arg": "hover tip CHEMFIN id="
+      },
+      {
+        "n": 350,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 351,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 352,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 353,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 354,
+        "op": "call",
+        "arg": "RichTextBuilder RedLightDistrict.RedLightChemFinisher::BuildTooltip(GameItem)"
+      },
+      {
+        "n": 355,
+        "op": "stloc.s",
+        "arg": "V_18"
+      },
+      {
+        "n": 356,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 357,
+        "op": "ldloc.s",
+        "arg": "V_18"
+      },
+      {
+        "n": 358,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 359,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 360,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 361,
+        "op": "leave",
+        "arg": "@41B"
+      },
+      {
+        "n": 362,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 363,
+        "op": "brfalse.s",
+        "arg": "@395"
+      },
+      {
+        "n": 364,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 365,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.ShowerRoom::IsShowerItem(GameItem)"
+      },
+      {
+        "n": 366,
+        "op": "brfalse.s",
+        "arg": "@395"
+      },
+      {
+        "n": 367,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 368,
+        "op": "brfalse.s",
+        "arg": "@377"
+      },
+      {
+        "n": 369,
+        "op": "ldstr",
+        "arg": "hover tip SHOWER id="
+      },
+      {
+        "n": 370,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 371,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 372,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 373,
+        "op": "ldc.i4.s",
+        "arg": "100"
+      },
+      {
+        "n": 374,
+        "op": "newobj",
+        "arg": "System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "n": 375,
+        "op": "stloc.s",
+        "arg": "V_19"
+      },
+      {
+        "n": 376,
+        "op": "ldloc.s",
+        "arg": "V_4"
+      },
+      {
+        "n": 377,
+        "op": "ldloca.s",
+        "arg": "V_19"
+      },
+      {
+        "n": 378,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentPanel::BuildShowerTooltip(GameItem,RichTextBuilder&)"
+      },
+      {
+        "n": 379,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 380,
+        "op": "ldloc.s",
+        "arg": "V_19"
+      },
+      {
+        "n": 381,
+        "op": "stind.ref",
+        "arg": ""
+      },
+      {
+        "n": 382,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 383,
+        "op": "stloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 384,
+        "op": "leave",
+        "arg": "@41B"
+      },
+      {
+        "n": 385,
+        "op": "leave.s",
+        "arg": "@39A"
+      },
+      {
+        "n": 386,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 387,
+        "op": "leave.s",
+        "arg": "@39A"
+      },
+      {
+        "n": 388,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 389,
+        "op": "brfalse.s",
+        "arg": "@406"
+      },
+      {
+        "n": 390,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 391,
+        "op": "brfalse.s",
+        "arg": "@406"
+      },
+      {
+        "n": 392,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 393,
+        "op": "ldloca.s",
+        "arg": "V_20"
+      },
+      {
+        "n": 394,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)"
+      },
+      {
+        "n": 395,
+        "op": "brfalse.s",
+        "arg": "@406"
+      },
+      {
+        "n": 396,
+        "op": "ldloc.s",
+        "arg": "V_20"
+      },
+      {
+        "n": 397,
+        "op": "brfalse.s",
+        "arg": "@406"
+      },
+      {
+        "n": 398,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 399,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 400,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.TalentPatches::ProbeItem(GameItem,System.String)"
+      },
+      {
+        "n": 401,
+        "op": "ldstr",
+        "arg": "durtag"
+      },
+      {
+        "n": 402,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 403,
+        "op": "brtrue.s",
+        "arg": "@3E3"
+      },
+      {
+        "n": 404,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 405,
+        "op": "callvirt",
+        "arg": "TagSystem GameItem::get_state()"
+      },
+      {
+        "n": 406,
+        "op": "stloc.s",
+        "arg": "V_21"
+      },
+      {
+        "n": 407,
+        "op": "ldloc.s",
+        "arg": "V_21"
+      },
+      {
+        "n": 408,
+        "op": "brfalse.s",
+        "arg": "@3DE"
+      },
+      {
+        "n": 409,
+        "op": "ldloc.s",
+        "arg": "V_21"
+      },
+      {
+        "n": 410,
+        "op": "ldstr",
+        "arg": "RLD_DURABILITY"
+      },
+      {
+        "n": 411,
+        "op": "ldstr",
+        "arg": "RLD_DURABILITY"
+      },
+      {
+        "n": 412,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RldTags::RegisterTag(System.Object,System.String,System.String)"
+      },
+      {
+        "n": 413,
+        "op": "leave.s",
+        "arg": "@3E3"
+      },
+      {
+        "n": 414,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 415,
+        "op": "leave.s",
+        "arg": "@3E3"
+      },
+      {
+        "n": 416,
+        "op": "nop",
+        "arg": ""
+      },
+      {
+        "n": 417,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 418,
+        "op": "callvirt",
+        "arg": "TagSystem GameItem::get_state()"
+      },
+      {
+        "n": 419,
+        "op": "stloc.s",
+        "arg": "V_22"
+      },
+      {
+        "n": 420,
+        "op": "ldloc.s",
+        "arg": "V_22"
+      },
+      {
+        "n": 421,
+        "op": "brfalse.s",
+        "arg": "@401"
+      },
+      {
+        "n": 422,
+        "op": "ldloc.s",
+        "arg": "V_22"
+      },
+      {
+        "n": 423,
+        "op": "ldstr",
+        "arg": "RLD_CLOTHING_UID"
+      },
+      {
+        "n": 424,
+        "op": "ldstr",
+        "arg": "RLD_CLOTHING_UID"
+      },
+      {
+        "n": 425,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RldTags::RegisterTag(System.Object,System.String,System.String)"
+      },
+      {
+        "n": 426,
+        "op": "leave.s",
+        "arg": "@406"
+      },
+      {
+        "n": 427,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 428,
+        "op": "leave.s",
+        "arg": "@406"
+      },
+      {
+        "n": 429,
+        "op": "ldloc.2",
+        "arg": ""
+      },
+      {
+        "n": 430,
+        "op": "brfalse.s",
+        "arg": "@419"
+      },
+      {
+        "n": 431,
+        "op": "ldstr",
+        "arg": "hover tip PASSTHROUGH id="
+      },
+      {
+        "n": 432,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 433,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 434,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 435,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 436,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 437,
+        "op": "ldloc.s",
+        "arg": "V_9"
+      },
+      {
+        "n": 438,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixGetTooltipBasicDurability(GameItemElement,RichTextBuilder&)",
+    "token": 100664559,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldstr",
+        "arg": "tip"
+      },
+      {
+        "n": 1,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 2,
+        "op": "brfalse.s",
+        "arg": "@E"
+      },
+      {
+        "n": 3,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 4,
+        "op": "ldarg.0",
+        "arg": ""
+      },
+      {
+        "n": 5,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "brtrue.s",
+        "arg": "@15"
+      },
+      {
+        "n": 8,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 9,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 10,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_identifier()"
+      },
+      {
+        "n": 11,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 14,
+        "op": "brfalse.s",
+        "arg": "@26"
+      },
+      {
+        "n": 15,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 16,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 17,
+        "op": "call",
+        "arg": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "n": 18,
+        "op": "brtrue.s",
+        "arg": "@30"
+      },
+      {
+        "n": 19,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 20,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 21,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 22,
+        "op": "brtrue.s",
+        "arg": "@36"
+      },
+      {
+        "n": 23,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 24,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "call",
+        "arg": "System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)"
+      },
+      {
+        "n": 26,
+        "op": "stloc.2",
+        "arg": ""
+      },
+      {
+        "n": 27,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "call",
+        "arg": "System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)"
+      },
+      {
+        "n": 29,
+        "op": "stloc.3",
+        "arg": ""
+      },
+      {
+        "n": 30,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 31,
+        "op": "ldind.ref",
+        "arg": ""
+      },
+      {
+        "n": 32,
+        "op": "call",
+        "arg": "System.String RedLightDistrict.Korean.CsvLookup::rld_99844e145a6c045d38fe()"
+      },
+      {
+        "n": 33,
+        "op": "ldloca.s",
+        "arg": "V_2"
+      },
+      {
+        "n": 34,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 35,
+        "op": "ldstr",
+        "arg": "/"
+      },
+      {
+        "n": 36,
+        "op": "ldloca.s",
+        "arg": "V_3"
+      },
+      {
+        "n": 37,
+        "op": "call",
+        "arg": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 38,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 39,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 40,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 41,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 42,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 43,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 44,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 45,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 46,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 47,
+        "op": "ldc.i4.m1",
+        "arg": ""
+      },
+      {
+        "n": 48,
+        "op": "callvirt",
+        "arg": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "n": 49,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 50,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 51,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 52,
+        "op": "leave.s",
+        "arg": "@77"
+      },
+      {
+        "n": 53,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixMachineTooltipSkip(RichTextBuilder,GameItem)",
+    "token": 100664560,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "brfalse.s",
+        "arg": "@F"
+      },
+      {
+        "n": 2,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.TalentFeeder::IsFeederItem(GameItem)"
+      },
+      {
+        "n": 4,
+        "op": "brfalse.s",
+        "arg": "@F"
+      },
+      {
+        "n": 5,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 7,
+        "op": "leave.s",
+        "arg": "@16"
+      },
+      {
+        "n": 8,
+        "op": "leave.s",
+        "arg": "@14"
+      },
+      {
+        "n": 9,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 10,
+        "op": "leave.s",
+        "arg": "@14"
+      },
+      {
+        "n": 11,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 13,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 14,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixCreateEquipmentTooltip(RichTextBuilder,GameItem)",
+    "token": 100664565,
+    "il": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 1,
+        "op": "brtrue.s",
+        "arg": "@7"
+      },
+      {
+        "n": 2,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 3,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 4,
+        "op": "leave.s",
+        "arg": "@63"
+      },
+      {
+        "n": 5,
+        "op": "ldarg.1",
+        "arg": ""
+      },
+      {
+        "n": 6,
+        "op": "callvirt",
+        "arg": "System.String GameItem::get_identifier()"
+      },
+      {
+        "n": 7,
+        "op": "stloc.0",
+        "arg": ""
+      },
+      {
+        "n": 8,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 9,
+        "op": "call",
+        "arg": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "n": 10,
+        "op": "brtrue.s",
+        "arg": "@5C"
+      },
+      {
+        "n": 11,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 12,
+        "op": "ldstr",
+        "arg": "redlight_"
+      },
+      {
+        "n": 13,
+        "op": "callvirt",
+        "arg": "System.Boolean System.String::StartsWith(System.String)"
+      },
+      {
+        "n": 14,
+        "op": "brfalse.s",
+        "arg": "@5C"
+      },
+      {
+        "n": 15,
+        "op": "ldstr",
+        "arg": "equiptip"
+      },
+      {
+        "n": 16,
+        "op": "call",
+        "arg": "System.Boolean RedLightDistrict.RldKill::Off(System.String)"
+      },
+      {
+        "n": 17,
+        "op": "brfalse.s",
+        "arg": "@48"
+      },
+      {
+        "n": 18,
+        "op": "ldstr",
+        "arg": "equip tip NATIVE(id="
+      },
+      {
+        "n": 19,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 20,
+        "op": "ldstr",
+        "arg": ") [off_equiptip]"
+      },
+      {
+        "n": 21,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "n": 22,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 23,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 24,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 25,
+        "op": "leave.s",
+        "arg": "@63"
+      },
+      {
+        "n": 26,
+        "op": "ldstr",
+        "arg": "equip tip SKIP redlight item id="
+      },
+      {
+        "n": 27,
+        "op": "ldloc.0",
+        "arg": ""
+      },
+      {
+        "n": 28,
+        "op": "call",
+        "arg": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "arg": "System.Void RedLightDistrict.RedLightDistrictMod::Crumb(System.String)"
+      },
+      {
+        "n": 30,
+        "op": "ldc.i4.0",
+        "arg": ""
+      },
+      {
+        "n": 31,
+        "op": "stloc.1",
+        "arg": ""
+      },
+      {
+        "n": 32,
+        "op": "leave.s",
+        "arg": "@63"
+      },
+      {
+        "n": 33,
+        "op": "leave.s",
+        "arg": "@61"
+      },
+      {
+        "n": 34,
+        "op": "pop",
+        "arg": ""
+      },
+      {
+        "n": 35,
+        "op": "leave.s",
+        "arg": "@61"
+      },
+      {
+        "n": 36,
+        "op": "ldc.i4.1",
+        "arg": ""
+      },
+      {
+        "n": 37,
+        "op": "ret",
+        "arg": ""
+      },
+      {
+        "n": 38,
+        "op": "ldloc.1",
+        "arg": ""
+      },
+      {
+        "n": 39,
+        "op": "ret",
+        "arg": ""
+      }
+    ]
+  }
+]
