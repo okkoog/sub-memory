@@ -1,0 +1,26 @@
+홍등가 특성 한국어 표시 수정 — 2026-11-22
+
+수정 범위:
+- 상태창 특성명: 기존 TalentPanel.ShowPanel -> CsvLookup 연결 유지.
+- 인재 아이템 툴팁 특성명: TalentPanel.BuildTalentTooltipBuilder 내 표시 직전에 기존 UiLateLookup.TraitName() 연결.
+- 의상 15종, 장신구 4종 이름: 앞선 DLL 직접 로컬키 조회 변경 유지.
+- 특성 내부 문자열, 언락 여부, 저장 ID, 기존 메이드 이름은 수정하지 않음.
+- 새 Harmony 후킹/신규 DLL 메서드 추가 없음.
+
+설치:
+1. 게임을 완전히 종료하고 기존 RedLightDistrict.dll과 Localization/ko.csv를 백업하세요.
+2. 이 폴더의 RedLightDistrict.dll을 실제 홍등가 모드 폴더의 동일 파일과 교체하세요.
+3. 다음 세 파일도 해당 홍등가 모드 폴더(=Localization 폴더의 상위)에 복사하세요.
+   - Localization_MissingKeys_Only.csv
+   - Apply_Localization_MissingKeys.ps1
+   - Apply_Localization_MissingKeys.cmd
+4. Apply_Localization_MissingKeys.cmd를 실행하세요.
+   - 기존 ko.csv를 덮어쓰지 않고, 없는 정확한 41개 표시 키만 추가합니다.
+   - 기존 번역/사용자 수정 행은 삭제하거나 변경하지 않습니다.
+   - 추가할 항목이 있으면 ko.csv.backup_날짜 형태로 백업합니다.
+   - 다른 모드 경로에 설치했다면 PS1 파일에 -ModDirectory "<설치폴더>" 인수를 줄 수 있습니다.
+5. 게임을 새로 시작하고, 공개된 특성명이 표시되는지 확인하세요.
+   - 예: 听话 → 고분고분함 (rld_display_e98b511ac9df76a6d02c)
+   - 잠겨 있는 특성의 □□ 표시는 원래 비공개 처리이므로 유지합니다.
+
+주의: DLL은 GitHub Actions에서 컴파일/IL 비교/리소스 및 ZIP 무결성 검증을 통과했지만, 게임 실행을 통한 검증은 수행되지 않았습니다.
