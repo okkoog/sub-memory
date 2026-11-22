@@ -96,4 +96,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add --sparse "$MOD/ItemPortraitHD.dll" "$ROOT/번역대조표/ItemPortraitHD_FINAL_RESULT_20261122.json" "$ROOT/ProbablyStolen_ItemPortraitHD_v1.3.0_KO_Final_20261122.zip"
           git commit -m 'Finalize neutral ItemPortraitHD config group localization'
+          git pull --rebase origin main
           git push origin main
