@@ -1002,3 +1002,9 @@
 - `LewdMemeLegacyContent/Content/content.json`의 마지막 비대사 표시 `labels.bodies[sister].display`를 `로리`로 번역하여 **표시 라벨 53/53개** 완성. `bodyId`는 원문 그대로. 대사 170/198, 원문 유지 28개는 변함없다. 검사서 `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md` 수정, `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_170of198_20261121.zip` 재압축 및 검증, GitHub Actions `44925696118` 성공.
 - `ProbablyStolen_Tentacle_Display_Data_KO_15_41_50_20261122.zip` 최신판은 아이템 15개·41개 및 인형 50개 표시 이름과 한국어 CSV 헤더를 포함. 원본 게임 동작을 바꾸는 ID·가격·태그·이미지 파일명은 보존.
 - **최종 잔여:** 민감 문맥의 원문 대사 28개는 여전히 번역되지 않았다. 이 상태를 '완료'로 표시하지 않는다. 다른 데이터의 한국어화는 원본 파일 및 DLL 사용처 확인 근거를 함께 유지한다.
+
+## 2026-11-22 — LegacyContent 체형 표시명 두 글자 규칙 위반 수정
+
+- 사용자에게 이전에 약속한 `labels.bodies[].display` 두 글자 통일 규칙이 지켜지지 않은 항목 **2개**를 확인해 수정: `mature_sister`는 `성숙한 여성`→`누님`(원문 `御姐`), `wife`는 `유부녀`→`아내`(원문 `人妻`). 기존 `sister=로리`, `mature_woman=숙녀`, `beauty=누나`는 유지. 이제 체형 표시명 5개 전부 두 글자.
+- 파일: `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`의 표시 문자열 2개만 변경. `bodyId`/각 `id`/대사 198개/조건·변수·기타 게임 데이터는 변경하지 않음. GitHub 커밋 `37c969075614dcb10a9d4461a58558d8bd7f693c`; 감사 기록 `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md` 수정 커밋 `99ca7addeea3cd93084f04b0bf670b9d4af53afd`.
+- **주의:** 이전 `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_170of198_20261121.zip`의 내용은 이번 표시명 2곳 수정이 반영되지 않은 이전 패키지이므로 현재 JSON보다 구버전. 최신 설치본 사용 시 별도 재압축 필요. 28개 원문 대사는 그대로 남아 있으며 전체 완역으로 표시하지 않음. 게임 실행 검증은 미실시.
