@@ -50,19 +50,26 @@ jobs:
               var sig=MethodSig.CreateStatic(mod.CorLibTypes.Int32,mod.CorLibTypes.String,mod.CorLibTypes.String,mod.CorLibTypes.String);
               var helper=new MethodDefUser("FirstIndex",sig,MethodImplAttributes.IL|MethodImplAttributes.Managed,MethodAttributes.Assembly|MethodAttributes.Static|MethodAttributes.HideBySig);helperType.Methods.Add(helper);
               IMethod? indexOf=null;
-              var edits=new Dictionary<string,(int idx, string generated, string old)>();
+              var edits=new Dictionary<string,(int idx, string generated, string fallback, string read)>();
+              var readMethod=bridge.Methods.Single(m=>m.Name=="Read"&&m.MethodSig.Params.Count==2);
               foreach(var (tn,mn,oldkey,newkey) in targets){
                 var m=mod.GetTypes().Single(t=>t.FullName=="RedLightDistrict."+tn).Methods.Single(m=>m.Name==mn);
-                var ins=m.Body.Instructions;var old=ins.Single(i=>i.OpCode==OpCodes.Call&&i.Operand is IMethod mr&&mr.Name==oldkey);
-                var generated=bridge.Methods.Single(m=>m.Name==newkey);
-                Need(ins.Count(i=>i.OpCode==OpCodes.Call&&i.Operand is IMethod mr&&mr.Name==newkey)==1,"Generated header getter "+tn);
-                int off=ins.IndexOf(old)+1;
+                var ins=m.Body.Instructions;
+                var old=ins.Single(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,oldkey));
+                var generated=ins.Single(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,newkey));
+                int oi=ins.IndexOf(old),gi=ins.IndexOf(generated),off=oi+3;
+                Need(ins[oi+1].OpCode==OpCodes.Ldstr&&ins[gi+1].OpCode==OpCodes.Ldstr&&Equals(ins[oi+1].Operand,ins[gi+1].Operand),"Matching original prefixes "+tn);
+                Need(ins[oi+2].OpCode==OpCodes.Call&&Raw(ins[oi+2].Operand)==readMethod.FullName&&ins[gi+2].OpCode==OpCodes.Call&&Raw(ins[gi+2].Operand)==readMethod.FullName,"Exact inlined CSV bridge "+tn);
+                string fallback=(string)ins[gi+1].Operand;
                 var call=ins[off];Need(call.OpCode==OpCodes.Callvirt&&Raw(call.Operand)=="System.Int32 System.String::IndexOf(System.String)","Exact search "+tn);
                 indexOf=(IMethod)call.Operand;
                 Need(!ins.Any(i=>i.Operand is Instruction t&&t==call||i.Operand is IList<Instruction> ar&&ar.Contains(call)),"Branch bypasses inserted prefix");
                 Need(!m.Body.ExceptionHandlers.Any(e=>e.TryStart==call||e.TryEnd==call||e.HandlerStart==call||e.HandlerEnd==call||e.FilterStart==call),"Exception boundary at search");
-                edits.Add(m.FullName,(off,generated.FullName,Raw(call.Operand)));
-                ins.Insert(off,Instruction.Create(OpCodes.Call,generated));call.OpCode=OpCodes.Call;call.Operand=helper;
+                edits.Add(m.FullName,(off,newkey,fallback,readMethod.FullName));
+                ins.Insert(off,Instruction.Create(OpCodes.Ldstr,newkey));
+                ins.Insert(off+1,Instruction.Create(OpCodes.Ldstr,fallback));
+                ins.Insert(off+2,Instruction.Create(OpCodes.Call,readMethod));
+                call.OpCode=OpCodes.Call;call.Operand=helper;
                 m.Body.SimplifyBranches();m.Body.OptimizeBranches();
               }
               Need(indexOf!=null,"IndexOf anchor");
@@ -79,16 +86,16 @@ jobs:
                 var x=g.Value[j];var y=updated[g.Key][j];Need(x.HasBody==y.HasBody,"Body "+g.Key);if(!x.HasBody)continue;
                 var a1=x.Body.Instructions.ToArray();var b1=y.Body.Instructions.ToArray();
                 bool changed=edits.TryGetValue(x.FullName,out var e);
-                Need(b1.Length==a1.Length+(changed?1:0),"Instruction count "+g.Key);
+                Need(b1.Length==a1.Length+(changed?3:0),"Instruction count "+g.Key);
                 var ax=a1.Select((v,k)=>(v,k)).ToDictionary(z=>z.v,z=>z.k);
-                var bx=b1.Select((v,k)=>(v,k)).ToDictionary(z=>z.v,z=>changed&&z.k>e.idx?z.k-1:z.k);
+                var bx=b1.Select((v,k)=>(v,k)).ToDictionary(z=>z.v,z=>changed&&z.k>=e.idx?Math.Max(e.idx,z.k-3):z.k);
                 Need(x.Body.Variables.Select(v=>v.Type.FullName).SequenceEqual(y.Body.Variables.Select(v=>v.Type.FullName)),"Locals "+g.Key);
                 Need(x.Body.ExceptionHandlers.Select(h=>EH(h,ax)).SequenceEqual(y.Body.ExceptionHandlers.Select(h=>EH(h,bx))),"EH "+g.Key);
                 for(int i=0;i<a1.Length;i++){
                   if(changed&&i==e.idx){
-                    Need(b1[i].OpCode==OpCodes.Call&&Raw(b1[i].Operand)==e.generated&&b1[i+1].OpCode==OpCodes.Call&&Raw(b1[i+1].Operand)==helper.FullName,"Exact replacement "+g.Key);continue;
+                    Need(b1[i].OpCode==OpCodes.Ldstr&&Raw(b1[i].Operand)==e.generated&&b1[i+1].OpCode==OpCodes.Ldstr&&Raw(b1[i+1].Operand)==e.fallback&&b1[i+2].OpCode==OpCodes.Call&&Raw(b1[i+2].Operand)==e.read&&b1[i+3].OpCode==OpCodes.Call&&Raw(b1[i+3].Operand)==helper.FullName,"Exact replacement "+g.Key);continue;
                   }
-                  var v=a1[i];var w=b1[changed&&i>=e.idx?i+1:i];
+                  var v=a1[i];var w=b1[changed&&i>=e.idx?i+3:i];
                   Need(v.OpCode==w.OpCode||(v.Operand is Instruction&&v.OpCode.Name.Replace(".s","")==w.OpCode.Name.Replace(".s","")),"Opcode "+g.Key);
                   Need(Op(v.Operand,ax)==Op(w.Operand,bx),"Operand "+g.Key+" "+i);
                 }compared++;
@@ -96,7 +103,7 @@ jobs:
               var ress=src.Resources.OfType<EmbeddedResource>().ToDictionary(r=>r.Name.ToString(),r=>Hash(r.CreateReader().ToArray()));
               var rest=output.Resources.OfType<EmbeddedResource>().ToDictionary(r=>r.Name.ToString(),r=>Hash(r.CreateReader().ToArray()));
               Need(ress.Count==rest.Count&&ress.All(x=>rest.TryGetValue(x.Key,out var s)&&x.Value==s),"Embedded resource bytes");
-              // Run the emitted helper as a standalone managed assembly with identical body, proving both old and new, mixed, absent, and empty-header inputs.
+              // Check the emitted helper instruction count and reference algorithm cases.
               var helperOut=output.GetTypes().Single(t=>t.FullName==helperType.FullName).Methods.Single();
               Need(helperOut.Body.Instructions.Count==22,"Helper instruction count");
               int Ref(string s,string oldName,string newName){int i=s.IndexOf(oldName),j=s.IndexOf(newName);return i<0?j:j<0?i:Math.Min(i,j);}
