@@ -167,8 +167,17 @@ jobs:
           ext_final=[]
           for row in ext:
               path,field,value=row[1],row[3],row[4]
-              assert 'README' in path or 'manifest' in path or 'RedLightDistrictPerson' in path,(path,field)
-              ext_final.append({'path':path,'field':field,'reason':'Original example filename, author or technical reference preserved; not an unclassified screen label.'})
+              display_path=row[2]
+              cjk=set(re.findall(r'[\u3400-\u9fff]+',value))
+              if path.endswith('Localization\\ko.csv'):
+                  assert 'rld_a5147769186a4179e97d' in field and cjk=={'巴绮'}
+                  assert translations['rld_a5147769186a4179e97d']==value
+                  why='Original exact portrait-name example in otherwise Korean help text.'
+              else:
+                  assert display_path.endswith(('RedLightDistrictPerson\\README.txt','RedLightDistrictPerson\\README_ko.txt')) and cjk=={'蛙娘'}
+                  assert value in (mod/'RedLightDistrictPerson'/display_path.rsplit('\\',1)[1]).read_text(encoding='utf-8-sig')
+                  why='Original exact portrait filename and NPC name example kept.'
+              ext_final.append({'path':display_path,'field':field,'reason':why})
           j.update(externalAuditVerified=ext_final,externalUnclassified=0)
           report.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           # The merge tool must be safe against this DLL and cannot silently undo verified aliases.
@@ -189,15 +198,15 @@ jobs:
               +'키 대조: KEY_COVERAGE_AUDIT_20261122.tsv, DISPLAY_ALIAS_KEYS_20261122.tsv. 결과: ../번역대조표/RLD_FINAL_RESULT_20261122.json\n',encoding='utf-8')
           # Ensure final archive is the actual LFS-backed DLL and exact verified CSV, not pointer text.
           out=root/'ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip'
-          files=['RedLightDistrict.dll','manifest.xml','README_ko.txt','Localization/ko.csv','RedLightDistrictPerson/README_ko.txt']
+          files=['RedLightDistrict.dll','manifest.xml','README_ko.txt','Localization/ko.csv','RedLightDistrictPerson/README_ko.txt','RedLightDistrictPerson/README.txt']
           with ZipFile(out,'w',ZIP_DEFLATED,compresslevel=1) as z:
               for f in files:z.write(mod/f,'RedLightDistrict_v1.1.1/'+f)
               z.write(report,'STATIC_AUDIT.json')
           with ZipFile(out) as z:
-              assert z.testzip() is None and len(z.namelist())==6
+              assert z.testzip() is None and len(z.namelist())==7
               for file in files:
                   with z.open('RedLightDistrict_v1.1.1/'+file) as fp:assert hashlib.sha256(fp.read()).hexdigest()==gethash(mod/file)
-          j['archive']={'path':out.name,'sha256':gethash(out),'files':6,'size':out.stat().st_size,'crc':'pass','matchesAllOverlayFiles':True}
+          j['archive']={'path':out.name,'sha256':gethash(out),'files':7,'size':out.stat().st_size,'crc':'pass','matchesAllOverlayFiles':True}
           report.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print('Verified final archive',j['archive'])
           PY
