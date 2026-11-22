@@ -1,0 +1,353 @@
+{
+  "baselineSha256": "340af7f28d406e3345db410bf8ed68c58db5bd4ebf5b9d341286a97ff0c08396",
+  "sites": [
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9644,
+      "source": "성인 체형 선택 가중치입니다. 쉼표로 구분하며 입력 항목 순서는 원문 데이터 키 `萝莉,少女,御姐,少妇,熟女`입니다(기본값은 모두 20으로 균등 분포). 0은 해당 항목을 선택하지 않도록 설정하지만, 모든 값을 0으로 할 수는 없습니다. IPH는 가중치가 0인 항목도 작은 확률로 균등 추첨할 수 있습니다. 전체 값이 0이면 기본값으로, 해당 추첨 범위의 합계가 0이면 균등 추첨으로 돌아가므로 완전한 제외는 아닙니다. 이는 IPH의 설계이며 체형 간 상대적인 비율만 조절합니다. 기본 패널의 체형 후보군 설정이 양보한 후에는 이 항목이 체형 분포를 제어합니다. 활성화하면 이 패널의 값을, 비활성화하면 이전 상대 모드의 값을 사용합니다.",
+      "target": "성인 체형 선택 가중치입니다. 쉼표로 구분하며 입력 항목 순서는 원문 데이터 키 `萝莉,少女,御姐,少妇,熟女`입니다(기본값은 모두 20으로 균등 분포). 0은 해당 항목을 선택하지 않도록 설정하지만, 모든 값을 0으로 할 수는 없습니다. IPH는 가중치가 0인 항목도 작은 확률로 균등 추첨할 수 있습니다. 전체 값이 0이면 기본값으로, 해당 추첨 범위의 합계가 0이면 균등 추첨으로 돌아가므로 완전한 제외는 아닙니다. 이는 IPH의 설계이며 체형 간 상대적인 비율만 조절합니다. 기본 패널의 체형 후보군 설정이 양보한 후에는 이 항목이 체형 분포를 제어합니다. 활성화하면 이 패널의 값을, 비활성화하면 이전 상대 모드의 값을 사용합니다.",
+      "action": "already",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 36,
+      "source": "顾客",
+      "target": "고객",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1027,
+      "source": "价格",
+      "target": "가격",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 5836,
+      "source": "成长",
+      "target": "성장",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6494,
+      "source": "掉落",
+      "target": "드롭",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7295,
+      "source": "少女生成",
+      "target": "소녀 생성",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8178,
+      "source": "세력:기본가 형식의 키-값 쌍. 쉼표로 구분(기본값 上层区:100,治安部:50,黑市:50,革命军:50,其他:10; 본편 모드의 기본가 메서드에 주입되며 초상화 관리자 사용 중에도 적용됨)",
+      "target": "세력:기본가 형식의 키-값 쌍. 쉼표로 구분(기본값 上层区:100,治安部:50,黑市:50,革命军:50,其他:10; 본편 모드의 기본가 메서드에 주입되며 초상화 관리자 사용 중에도 적용됨)",
+      "action": "already",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8487,
+      "source": "무작위 세력 후보군. 쉼표로 구분(기본값 下层区,上层区,治安部,黑市,革命军; 초상화 관리자 사용 중에는 적용되지 않으며 관리자는 초상화 수에 가중치를 둬 세력을 추첨함)",
+      "target": "무작위 세력 후보군. 쉼표로 구분(기본값 下层区,上层区,治安部,黑市,革命军; 초상화 관리자 사용 중에는 적용되지 않으며 관리자는 초상화 수에 가중치를 둬 세력을 추첨함)",
+      "action": "already",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8781,
+      "source": "무작위 체형 후보군. 쉼표로 구분하며 기본 입력 문자열은 `萝莉,少女,御姐,少妇,熟女`입니다. 아이템 초상화 관리자 사용 중에는 적용되지 않으며, 체형 분포는 연동 설정의 '성인 체형 가중치 CSV'에서 관리합니다.",
+      "target": "무작위 체형 후보군. 쉼표로 구분하며 기본 입력 문자열은 `萝莉,少女,御姐,少妇,熟女`입니다. 아이템 초상화 관리자 사용 중에는 적용되지 않으며, 체형 분포는 연동 설정의 '성인 체형 가중치 CSV'에서 관리합니다.",
+      "action": "already",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8928,
+      "source": "무작위 가슴 크기 후보군. 쉼표로 구분(기본값 贫乳,普乳,巨乳; 초상화 관리자 사용 중에는 적용되지 않으며, 가슴 크기 분포는 연동 설정의 '체형에 따른 모유량'이 담당함)",
+      "target": "무작위 가슴 크기 후보군. 쉼표로 구분(기본값 贫乳,普乳,巨乳; 초상화 관리자 사용 중에는 적용되지 않으며, 가슴 크기 분포는 연동 설정의 '체형에 따른 모유량'이 담당함)",
+      "action": "already",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 10861,
+      "source": "闹钟",
+      "target": "알람시계",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12062,
+      "source": "陷阱",
+      "target": "함정",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13082,
+      "source": "界面",
+      "target": "인터페이스",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13779,
+      "source": "天赋",
+      "target": "특성",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 105,
+      "source": "乳汁",
+      "target": "모유",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 135,
+      "source": "精液",
+      "target": "정액",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 165,
+      "source": "排卵针",
+      "target": "배란 주사",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 195,
+      "source": "触手箱",
+      "target": "촉수 상자",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 255,
+      "source": "触手闹钟",
+      "target": "촉수 알람시계",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 285,
+      "source": "井盖",
+      "target": "맨홀 뚜껑",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 376,
+      "source": "空针管",
+      "target": "빈 주사기",
+      "action": "patch",
+      "classification": "B",
+      "reason": "Section/Label/Tooltip→Define 및 GUI 표시, Key/SectionId와 별도"
+    },
+    {
+      "token": "06000180",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::MaidenTooltipPrefix(RichTextBuilder,GameItem)",
+      "offset": 203,
+      "source": "【触手】",
+      "target": "【촉수】",
+      "action": "patch",
+      "classification": "B",
+      "reason": "툴팁 AddLine 표시"
+    },
+    {
+      "token": "060000B5",
+      "method": "LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::FatigueMulCase(System.String,System.Int32,System.Single,System.String)",
+      "offset": 30,
+      "source": "상대 모드의 피로도 시스템이 꺼져 있음(fatigue_enabled=关). ValueMul은 항상 1",
+      "target": "상대 모드의 피로도 시스템이 꺼져 있음(fatigue_enabled=关). ValueMul은 항상 1",
+      "action": "already",
+      "classification": "B",
+      "reason": "원본 Source/Integration/SelfTestRunner.cs:1539–1564: Skip(key, detail) 진단 결과 Detail에 저장. 현재 이미 한국어이며 설정 토큰 원문 보존. 추가 번역 불필요."
+    },
+    {
+      "token": "06000184",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String)",
+      "offset": 334,
+      "source": "[重要物品]",
+      "target": "[중요 아이템]",
+      "action": "patch",
+      "classification": "B",
+      "reason": "원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+    },
+    {
+      "token": "06000184",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String)",
+      "offset": 367,
+      "source": "[容器]",
+      "target": "[용기]",
+      "action": "patch",
+      "classification": "B",
+      "reason": "원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+    },
+    {
+      "token": "06000184",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String)",
+      "offset": 400,
+      "source": "[机器]",
+      "target": "[기계]",
+      "action": "patch",
+      "classification": "B",
+      "reason": "원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+    },
+    {
+      "token": "060001B7",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose()",
+      "offset": 32,
+      "source": "少女职业池",
+      "target": "소녀 직업 후보군",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "060001B8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 32,
+      "source": "少女阵营池",
+      "target": "소녀 세력 후보군",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "060001B8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 74,
+      "source": "少女体型池",
+      "target": "소녀 체형 후보군",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "060001B8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 116,
+      "source": "少女胸部池",
+      "target": "소녀 가슴 크기 후보군",
+      "action": "patch",
+      "classification": "B"
+    },
+    {
+      "token": "0600011F",
+      "method": "System.Void LewdMemeConfig.Router::.cctor()",
+      "offset": 16,
+      "source": "暗流交易",
+      "target": "암류 거래",
+      "action": "patch",
+      "classification": "B",
+      "reason": "LewdMemeConfig Router.OwnerNames 사전 value. 원본 Source/Logic/Router.cs:96–103,197–216 OwnerDisplay 및 패널 비활성 안내용. FamilyMods key 별도."
+    },
+    {
+      "token": "0600011F",
+      "method": "System.Void LewdMemeConfig.Router::.cctor()",
+      "offset": 32,
+      "source": "巢穴扩展",
+      "target": "촉수 둥지 확장",
+      "action": "patch",
+      "classification": "B",
+      "reason": "LewdMemeConfig Router.OwnerNames 사전 value. 원본 Source/Logic/Router.cs:96–103,197–216 OwnerDisplay 및 패널 비활성 안내용. FamilyMods key 별도."
+    },
+    {
+      "token": "0600011F",
+      "method": "System.Void LewdMemeConfig.Router::.cctor()",
+      "offset": 48,
+      "source": "物品高清立绘管理器",
+      "target": "아이템 고해상도 초상화 관리자",
+      "action": "patch",
+      "classification": "B",
+      "reason": "LewdMemeConfig Router.OwnerNames 사전 value. 원본 Source/Logic/Router.cs:96–103,197–216 OwnerDisplay 및 패널 비활성 안내용. FamilyMods key 별도."
+    },
+    {
+      "token": "06000356",
+      "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass27_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+      "offset": 184,
+      "source": "排卵诱发剂",
+      "target": "배란 유도제",
+      "action": "patch",
+      "classification": "B",
+      "reason": "LewdMemeConfig <OvulationShotTamePostfix>b__0 toastShow Action<string,string> 두 번째 제목 인자."
+    },
+    {
+      "token": "06000055",
+      "method": "System.Void LewdMemeConfig.DebugPanel::.cctor()",
+      "offset": 407,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch",
+      "classification": "C display",
+      "reason": "독립 디버그 버튼 Label 값. ItemId와 구분."
+    },
+    {
+      "token": "060001B4",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 1153,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch",
+      "classification": "C display",
+      "reason": "EnsureResolved IL_0008 ItemFactory, IL_00C2 LogShape, IL_00C7 StaticMethod, IL_01B8 ifLogShape 바인딩; IL_0486 Invoke는 LogShape 진단 출력 인자."
+    }
+  ],
+  "scope": "Reviewed B/C direct callsites only. Shared section/choice UI boundaries remain separate; no final completion claim."
+}
