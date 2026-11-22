@@ -1,0 +1,110 @@
+[
+  {
+    "method": "System.Boolean RedLightDistrict.RldChemInjectors::HandleInjectorDrag(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "refs": [
+      {
+        "i": 321,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)",
+    "refs": [
+      {
+        "i": 733,
+        "callee": "System.String RedLightDistrict.Korean.UiLateLookup::TraitName(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+    "refs": [
+      {
+        "i": 10,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::PostfixGetTooltip(GameItemElement,RichText&)",
+    "refs": [
+      {
+        "i": 57,
+        "callee": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)"
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetTooltipBasic(GameItemElement,RichTextBuilder&)",
+    "refs": [
+      {
+        "i": 540,
+        "callee": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentSystem::ApplyDataToItem(GameItem,RedLightDistrict.TalentData)",
+    "refs": [
+      {
+        "i": 39,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentSystem::CreateTalentItem(RedLightDistrict.TalentData)",
+    "refs": [
+      {
+        "i": 257,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentSystem::RespawnTalentItem(RedLightDistrict.TalentData)",
+    "refs": [
+      {
+        "i": 110,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "refs": [
+      {
+        "i": 463,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTarget::ApplyDrag(GameItem,GameItem)",
+    "refs": [
+      {
+        "i": 1600,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "refs": [
+      {
+        "i": 313,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::StockTrafficker(System.Boolean)",
+    "refs": [
+      {
+        "i": 102,
+        "callee": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      }
+    ]
+  }
+]
