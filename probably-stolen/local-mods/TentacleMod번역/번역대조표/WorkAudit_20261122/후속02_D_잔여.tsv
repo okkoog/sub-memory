@@ -1,0 +1,224 @@
+"모드"	"DLL"	"문자열/키"	"판정"	"호출부"	"잔여 이유"
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"萝莉"	"D"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0052 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0008 [token 06000014]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"少女"	"D"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_005A [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0010 [token 06000014]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"御姐"	"D"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0062 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0018 [token 06000014]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"少妇"	"D"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_006A [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0020 [token 06000014]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"熟女"	"D"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0072 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0028 [token 06000014]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"不限性别"	"D"	"ItemPortraitHD.FinalPortraits/Pool ItemPortraitHD.FinalPortraits::Current() @ IL_0010 [token 0600002A]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_053F [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_0578 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_05B4 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_05ED [token 06000072]
+LocGenderHelper/LocGender ItemPortraitHD.OriginalCompat::ToolGender() @ IL_0017 [token 060000C8]
+System.String ItemPortraitHD.RandomPortraits::PickFactionCore(System.String[],System.String) @ IL_00F6 [token 0600014E]
+System.String ItemPortraitHD.RandomPortraits::PickFinalFaction(System.String[],System.String) @ IL_006F [token 06000155]
+ItemPortraitHD.Source ItemPortraitHD.RandomPortraits::PickProvider(System.String,System.String) @ IL_0025 [token 06000156]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Boolean System.String::op_Inequality(System.String,System.String) / callvirt ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,Sy / stelem.ref "
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"立绘"	"D"	"System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_013A [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_01AF [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_0236 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_03F7 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_045F [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_04BA [token 06000072]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,Sy / callvirt ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String, / callvirt ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,Syst"
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"체형에 지정된 출처가 없을 때 이 확률에 따라 Portraits/来源名/阵营 안의 PNG를 사용합니다(기본값 0%). 모든 사용자 지정 출처를 합친 뒤 전체 가중치에 따라 세력을 선택하고, 이어서 가중치에 따라 이미지를 선택합니다. 세력 제한이 없는 이미지는 각 세력에 1/5씩 가중치를 기여합니다. 사용자 지정 출처를 명시하면 이 확률을 건너뜁니다. 확률 판정에 실패하거나 사용 가능한 이미지가 없으면 일반 절차로 돌아갑니다. 신규 아이템에만 적용됩니다."	"D"	"System.String ItemPortraitHD.ModEntry/<>c::<Init>b__26_21() @ IL_0000 [token 06000215]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 외부/다중 반환"
+"lewdMemeBrood v0331"	"LewdMemeBrood.dll"	"白"	"D"	"System.Void BroodMainCycle.BodyActions/<>c::<RegisterTests>b__14_0() @ IL_003D [token 0600004E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewdMemeBrood v0331"	"LewdMemeBrood.dll"	"紫"	"D"	"System.Void BroodMainCycle.BodyActions/<>c::<RegisterTests>b__14_0() @ IL_0054 [token 0600004E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"神奇乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @ IL_0005 [token 06000078]
+System.Void MidnightPawn.Game.ModSettings::Init() @ IL_01C1 [token 06000185]
+System.Void MidnightPawn.Game.TentacleBody::CreateReportNote() @ IL_0066 [token 06000271]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void ModLog::Log(System.Object) / 출력 인자 / brtrue.s IL_1e"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"浓缩乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateRichMilk() @ IL_0005 [token 06000079]
+System.Void MidnightPawn.Game.ModSettings::Init() @ IL_01D7 [token 06000185]
+System.Void MidnightPawn.Game.TentacleBody::CreateReportNote() @ IL_0074 [token 06000271]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void ModLog::Log(System.Object) / 출력 인자 / brtrue.s IL_1e"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"清甜乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateDilutedMilk() @ IL_0005 [token 0600007A]
+System.Void MidnightPawn.Game.ModSettings::Init() @ IL_01ED [token 06000185]
+System.Void MidnightPawn.Game.TentacleBody::CreateReportNote() @ IL_006D [token 06000271]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void ModLog::Log(System.Object) / 출력 인자 / brtrue.s IL_1e"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"桶装触手精液"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateSemenBarrel() @ IL_0005 [token 0600007B]
+System.Void MidnightPawn.Game.TentacleBody::FinalizeNightBarrels(GameGridInventory) @ IL_004E [token 0600026C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / 소비처 미확정"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"桶装神奇乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateWondrousMilkBarrel() @ IL_0005 [token 0600007C]
+System.Void MidnightPawn.Game.TentacleBody::FinalizeNightBarrels(GameGridInventory) @ IL_000C [token 0600026C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / 소비처 미확정"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"桶装浓缩乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateRichMilkBarrel() @ IL_0005 [token 0600007D]
+System.Void MidnightPawn.Game.TentacleBody::FinalizeNightBarrels(GameGridInventory) @ IL_0022 [token 0600026C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / 소비처 미확정"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"桶装清甜乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateDilutedMilkBarrel() @ IL_0005 [token 0600007E]
+System.Void MidnightPawn.Game.TentacleBody::FinalizeNightBarrels(GameGridInventory) @ IL_0038 [token 0600026C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / 소비처 미확정"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"名片"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreatePhoneCard() @ IL_00D8 [token 0600008D]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"苗床收购回执"	"D"	"System.Void MidnightPawn.Game.MaidenBuyer::SpawnReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64) @ IL_0025 [token 060000E2]
+System.Void MidnightPawn.Game.MaidenBuyer::SpawnReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64) @ IL_0047 [token 060000E2]
+System.Void MidnightPawn.Game.MaidenBuyer::RepairReceipts() @ IL_0042 [token 060000E3]
+System.Void MidnightPawn.Game.MaidenBuyer::RepairReceipts() @ IL_0050 [token 060000E3]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt TagState TagState::SetString(System.String) / callvirt System.Void GameItem::set_name(System.String) / call System.Boolean System.String::op_Inequality(System.String,System.String)"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"收购商"	"D"	"System.String MidnightPawn.Game.MaidenBuyerText::BuyerDisplayName(System.String) @ IL_0006 [token 060000F8]
+System.String MidnightPawn.Game.MaidenLedger::BuildRecord(GameItem,StoreClient,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int64,System.Int64) @ IL_018E [token 06000153]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt Dialogue Dialogue::SetText(System.String,System.String) / call Dialogue Dialogue::SetText(System.String,System.String) / 추적 경계"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"要"	"D"	"System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String) @ IL_00D3 [token 06000106]
+System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String) @ IL_0071 [token 06000108]
+System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String) @ IL_00A9 [token 06000108]
+System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String) @ IL_00FD [token 06000108]
+System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String) @ IL_0044 [token 0600010A]
+System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String) @ IL_00A9 [token 0600010A]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"非处女"	"D"	"System.String MidnightPawn.Game.MaidenBuyerText::VirginState(System.Boolean,System.Boolean) @ IL_001D [token 06000113]
+System.String MidnightPawn.Game.MaidenLedger::VirginState(GameItem) @ IL_0035 [token 0600015B]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref  / 소비처 미확정 / call System.Boolean System.String::IsNullOrEmpty(System.String)"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"苗床"	"D"	"System.String MidnightPawn.Game.MaidenFatigue::Name(GameItem) @ IL_0003 [token 0600012F]
+System.String MidnightPawn.Game.MaidenFatigue::Name(GameItem) @ IL_0037 [token 0600012F]
+System.String MidnightPawn.Game.MaidenText::Name(GameItem) @ IL_002A [token 06000177]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void ModLog::Log(System.Object) / call System.Void PlayerStore::AddNightLog(System.String,System.String) / callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(!0)"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"苗床名册"	"D"	"GameItem MidnightPawn.Game.MaidenLedger::SpawnLedger(System.Boolean) @ IL_008F [token 06000142]
+System.Void MidnightPawn.Game.MaidenLedger::RepairLedgerItem(GameItem) @ IL_0006 [token 06000143]
+System.Void MidnightPawn.Game.MaidenLedger::RepairExisting(System.Boolean) @ IL_0011 [token 06000146]
+System.Void MidnightPawn.Game.MaidenLedger::RepairExisting(System.Boolean) @ IL_002B [token 06000146]
+PaperBookData MidnightPawn.Game.MaidenLedger::BuildBook(System.String) @ IL_000C [token 0600014A]
+PaperBookData MidnightPawn.Game.MaidenLedger::BuildBook(System.String) @ IL_0047 [token 0600014A]
+PaperBookData MidnightPawn.Game.MaidenLedger::BuildBook(System.String) @ IL_008C [token 0600014A]
+PaperBookData MidnightPawn.Game.MaidenLedger::BuildBook(System.String) @ IL_00BE [token 0600014A]
+System.Void MidnightPawn.Game.MaidenLedger::AddSummaryPage(PaperBookData,System.Int32,System.Int64,System.Int64,System.Int32,System.Collections.Generic.List`1<System.String>) @ IL_002B [token 0600014D]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Boolean MidnightPawn.Api.TentacleApi::DeliverItem(GameItem,System.String) / callvirt System.Void GameItem::set_name(System.String) / 출력 인자"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"普乳"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_00C7 [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"开"	"D"	"System.Void MidnightPawn.Game.ModSettings::Init() @ IL_001A [token 06000185]
+ConfigEntry`1<System.String> MidnightPawn.Game.ModSettings::DefineBarrel(ModConfig,System.String,System.String,System.Int32) @ IL_0016 [token 06000186]
+System.Boolean MidnightPawn.Game.ModSettings::get_CorruptionBoxSettlement() @ IL_001D [token 06000189]
+System.Void MidnightPawn.Game.ModSettings::.cctor() @ IL_0043 [token 0600018E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,Sy / call System.Boolean System.String::Equals(System.String,System.String,System.StringComparison) / stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"关"	"D"	"System.Void MidnightPawn.Game.ModSettings::Init() @ IL_014D [token 06000185]
+System.Boolean MidnightPawn.Game.ModSettings::On(ConfigEntry`1<System.String>,System.Boolean) @ IL_0015 [token 06000187]
+System.Void MidnightPawn.Game.ModSettings::.cctor() @ IL_004B [token 0600018E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt ConfigEntry`1<System.String> ModConfig::Define(System.String,System.String,System.String,Sy / call System.Boolean System.String::Equals(System.String,System.String,System.StringComparison) / stelem.ref "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"触手精液"	"D"	"System.Void MidnightPawn.Game.ModSettings::Init() @ IL_01AB [token 06000185]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 외부/다중 반환"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"治安部线人"	"D"	"System.Void MidnightPawn.Game.SecurityLiaison::EnsurePhoneClient() @ IL_0034 [token 06000200]
+System.Void MidnightPawn.Game.SecurityLiaison::EnsurePhoneClient() @ IL_009F [token 06000200]
+Dialogue MidnightPawn.Game.SecurityLiaison::BuildPhoneDialog(StorePhoneClient) @ IL_000B [token 06000203]
+System.Void MidnightPawn.Game.SecurityLiaison::BuildRefuse(Dialogue,System.String,System.Int32,System.Int32) @ IL_00C6 [token 06000206]
+System.Void MidnightPawn.Game.SecurityLiaison::ScheduleVisit(System.String,System.Int32) @ IL_00DE [token 0600020F]
+System.Void MidnightPawn.Game.SecurityLiaison::CompleteIntro() @ IL_0079 [token 0600021A]
+StoreClient MidnightPawn.Game.SecurityLiaison::CreateVisitClient(System.String) @ IL_0029 [token 0600022C]
+System.Void MidnightPawn.Game.SecurityLiaison::DebugSchedule(System.String) @ IL_0034 [token 06000237]
+System.Void MidnightPawn.Game.SecurityLiaison::DebugUnlock() @ IL_0034 [token 06000238]
+System.Void MidnightPawn.Game.SecurityLiaison/PatchPhoneDict::Postfix(System.Collections.Generic.Dictionary`2<System.Int64,StorePhoneClient>&) @ IL_0023 [token 0600023A]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref  / callvirt Dialogue Dialogue::SetText(System.String,System.String)"
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"1 名双处女的下层区苗床"	"D"	"System.String MidnightPawn.Game.SecurityLiaison::NeedSummary(System.Int32) @ IL_0022 [token 06000204]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stloc.0 "
+"LewdMemeShadowTrade1.6.4"	"ShadowTrade.dll"	"1 名苗床出生的女儿（调教值 > 200）"	"D"	"System.String MidnightPawn.Game.SecurityLiaison::NeedSummary(System.Int32) @ IL_0032 [token 06000204]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stloc.0 "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"无"	"D"	"System.Void MidnightPawn.ModConst::.cctor() @ IL_0008 [token 06000004]
+System.String MidnightPawn.Game.ArchivePaper::PrereqText(MidnightPawn.Game.CodexEntry) @ IL_000D [token 06000085]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref  / callvirt PaperUI PaperUI::SetText(System.String,System.String)"
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"侵染"	"D"	"System.Void MidnightPawn.ModConst::.cctor() @ IL_0010 [token 06000004]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"微荧"	"D"	"System.Void MidnightPawn.ModConst::.cctor() @ IL_0018 [token 06000004]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"明耀"	"D"	"System.Void MidnightPawn.ModConst::.cctor() @ IL_0020 [token 06000004]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"恒昼"	"D"	"System.Void MidnightPawn.ModConst::.cctor() @ IL_0028 [token 06000004]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"拾荒"	"D"	"System.Void MidnightPawn.ModSettings::Define(System.String) @ IL_0011 [token 06000022]
+System.Void MidnightPawn.ModSettings::Define(System.String) @ IL_007B [token 06000022]
+System.Void MidnightPawn.ModSettings::Define(System.String) @ IL_00E0 [token 06000022]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt ConfigEntry`1<System.Single> ModConfig::Define(System.String,System.Single,System.String,Sy / callvirt ConfigEntry`1<System.Int32> ModConfig::Define(System.String,System.Int32,System.String,Syst"
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"闹钟"	"D"	"GameItem MidnightPawn.Game.AlarmClock::CreateAlarm() @ IL_000C [token 0600002E]
+GameItem MidnightPawn.Game.AlarmClock::CreateAlarm() @ IL_00A2 [token 0600002E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"苗床"	"D"	"System.Void MidnightPawn.Game.AlarmClock::NightlyTickOnce(GameItem) @ IL_00BB [token 0600003E]
+System.String MidnightPawn.Game.AlarmClock::MaidenNameInAlarm() @ IL_009D [token 06000040]
+System.String MidnightPawn.Game.AlarmClock::MaidenNameInAlarm() @ IL_00E0 [token 06000040]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void ModLog::Log(System.Object) / brtrue.s IL_1e / callvirt System.String System.Object::ToString()"
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手本体"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_002D [token 060000C9]
+System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @ IL_0060 [token 06000158]
+System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String) @ IL_0013 [token 060001A6]
+GameItem MidnightPawn.Game.TentacleBody::Create() @ IL_0023 [token 0600020B]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"侵蚀性触手"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_0099 [token 060000C9]
+GameItem MidnightPawn.Game.CorruptTentacle::Create() @ IL_000C [token 060000D6]
+GameItem MidnightPawn.Game.CorruptTentacle::Create() @ IL_013E [token 060000D6]
+System.Void MidnightPawn.Game.CorruptTentacle::RegrowIfEaten(GameItem) @ IL_0022 [token 060000E1]
+System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String) @ IL_0022 [token 060001A6]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手档案"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_0123 [token 060000C9]
+System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String) @ IL_0040 [token 060001A6]
+GameItem MidnightPawn.Game.TentacleArchive::Create() @ IL_00FB [token 060001FE]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手苗床箱"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_0185 [token 060000C9]
+GameItem MidnightPawn.Game.ItemFactory::CreateTentacleBox() @ IL_005B [token 06000124]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手落穴陷阱"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_0224 [token 060000C9]
+GameItem MidnightPawn.Game.TentacleTrap::CreateTrap() @ IL_0023 [token 06000276]
+GameItem MidnightPawn.Game.TentacleTrap::CreateTrap() @ IL_016C [token 06000276]
+System.Void MidnightPawn.Game.TentacleTrap::NightlyTickOnce(GameItem) @ IL_00B2 [token 06000287]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手3D打印机"	"D"	"System.Void MidnightPawn.Game.Codex::RegisterOwn() @ IL_027B [token 060000C9]
+GameItem MidnightPawn.Game.TentaclePrinter::CreatePrinter() @ IL_0023 [token 0600024F]
+GameItem MidnightPawn.Game.TentaclePrinter::CreatePrinter() @ IL_013D [token 0600024F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt PaperUI PaperUI::SetText(System.String,System.String) / call System.Boolean System.String::IsNullOrEmpty(System.String) / stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"[重要物品]"	"D"	"System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem) @ IL_01B2 [token 060000DF]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"[容器]"	"D"	"System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem) @ IL_01D3 [token 060000DF]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"[机器]"	"D"	"System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem) @ IL_01F4 [token 060000DF]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"乳汁"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateMilk() @ IL_0180 [token 06000121]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"精液"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateSemen() @ IL_01CC [token 06000123]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"苗床箱"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateTentacleBox() @ IL_00F5 [token 06000124]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"说明书"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateNote() @ IL_007F [token 06000125]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"排卵诱发剂"	"D"	"GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @ IL_000B [token 06000126]
+GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot() @ IL_00F9 [token 06000126]
+System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__12_2(GameItem,GameItem) @ IL_009C [token 06000149]
+System.Void MidnightPawn.Game.TentaclePrinter::NeedleIntoShot(GameItem,GameItem) @ IL_003A [token 0600024E]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / stelem.ref  / 출력 인자"
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"垃圾场"	"D"	"System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext) @ IL_005B [token 06000158]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stind.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"贫乳"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_00F2 [token 06000196]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"普乳"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_00FA [token 06000196]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"御姐"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_0125 [token 06000196]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"少妇"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_012D [token 06000196]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"熟女"	"D"	"System.Void MidnightPawn.Game.MaidenTraits::.cctor() @ IL_0135 [token 06000196]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"触手起源"	"D"	"System.String MidnightPawn.Game.Perks/<>c::<Register>b__1_0() @ IL_0000 [token 060001AB]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 외부/다중 반환"
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"空针管"	"D"	"GameItem MidnightPawn.Game.TentaclePrinter::CreateNeedle() @ IL_000C [token 0600024C]
+GameItem MidnightPawn.Game.TentaclePrinter::CreateNeedle() @ IL_0097 [token 0600024C]
+System.Void MidnightPawn.Game.TentaclePrinter::.cctor() @ IL_0008 [token 06000268]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / stelem.ref "
+"lewd_meme2.1.0"	"MidnightPawn.dll"	"井盖"	"D"	"GameItem MidnightPawn.Game.TentacleTrap::CreateManhole() @ IL_000C [token 06000274]
+GameItem MidnightPawn.Game.TentacleTrap::CreateManhole() @ IL_0097 [token 06000274]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void GameItem::set_name(System.String) / stelem.ref "
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"下层区,上层区,治安部,黑市,革命军"	"D"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_008C [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_003B [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0025 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0048 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0018 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Void LewdMemeConfig.ConfigRegistry::Register<System.String>(System.String,T) / newobj System.Void System.ValueTuple`2<System.String,System.String>::.ctor(!0,!1) / call T LewdMemeConfig.MaidenPatch::Cfg<System.String>(System.String,T)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人"	"D"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_009C [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_0050 [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose() @ IL_0025 [token 060001B7]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0021 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_003D [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Void LewdMemeConfig.ConfigRegistry::Register<System.String>(System.String,T) / newobj System.Void System.ValueTuple`2<System.String,System.String>::.ctor(!0,!1) / call T LewdMemeConfig.MaidenPatch::Cfg<System.String>(System.String,T)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"萝莉,少女,御姐,少妇,熟女"	"D"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_00AC [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_0065 [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_004F [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_006E [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0062 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Void LewdMemeConfig.ConfigRegistry::Register<System.String>(System.String,T) / newobj System.Void System.ValueTuple`2<System.String,System.String>::.ctor(!0,!1) / call T LewdMemeConfig.MaidenPatch::Cfg<System.String>(System.String,T)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"贫乳,普乳,巨乳"	"D"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_00BC [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_007A [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0079 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0094 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0087 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Void LewdMemeConfig.ConfigRegistry::Register<System.String>(System.String,T) / newobj System.Void System.ValueTuple`2<System.String,System.String>::.ctor(!0,!1) / call T LewdMemeConfig.MaidenPatch::Cfg<System.String>(System.String,T)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"黑市"	"D"	"LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::LegacyMaidenPoolsOverlay() @ IL_0036 [token 060000A1]
+LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::LegacyMaidenOverlayEvidence() @ IL_0036 [token 060000A2]
+System.Int64 LewdMemeConfig.SelfTestRunner/<>c::<LegacyMaidenPoolsOverlay>b__34_1(GameItem) @ IL_0010 [token 0600029B]
+LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner/<>c::<LegacyMaidenOverlayEvidence>b__35_0(System.String) @ IL_0046 [token 0600029C]
+System.Void LewdMemeConfig.SpecialAndManualPatches::UpdateMaidenDescriptionBody(GameItem,System.Int32) @ IL_0079 [token 060001EC]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: isinst System.Int32 / unbox.any System.Int32 / isinst System.Single"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"상대 모드의 피로도 시스템이 꺼져 있음(fatigue_enabled=关). ValueMul은 항상 1"	"D"	"LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::FatigueMulCase(System.String,System.Int32,System.Single,System.String) @ IL_001E [token 060000B5]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Boolean System.String::StartsWith(System.String,System.StringComparison) / brfalse.s IL_10 / stelem.ref "
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"暗流交易"	"D"	"System.Void LewdMemeConfig.Router::.cctor() @ IL_0010 [token 0600011F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Add(!0,!1"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"巢穴扩展"	"D"	"System.Void LewdMemeConfig.Router::.cctor() @ IL_0020 [token 0600011F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Add(!0,!1"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"物品高清立绘管理器"	"D"	"System.Void LewdMemeConfig.Router::.cctor() @ IL_0030 [token 0600011F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Add(!0,!1"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"lou_locker,卢的储物柜"	"D"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_00B8 [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Boolean System.String::IsNullOrEmpty(System.String) / callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"crate,storage,supplybox,supply_box,物资箱,货箱,物证柜,储藏区"	"D"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_0105 [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Boolean System.String::IsNullOrEmpty(System.String) / callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[重要物品]"	"D"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_014E [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[容器]"	"D"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_016F [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[机器]"	"D"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_0190 [token 06000184]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女职业池"	"D"	"System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose() @ IL_0020 [token 060001B7]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_001C [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0038 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Action`1<System.Object>::Invoke(!0) / brtrue.s IL_1e / callvirt System.String System.Object::ToString()"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女阵营池"	"D"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0020 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0043 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0013 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Action`1<System.Object>::Invoke(!0) / brtrue.s IL_1e / callvirt System.String System.Object::ToString()"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女体型池"	"D"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_004A [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0069 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_005D [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Action`1<System.Object>::Invoke(!0) / brtrue.s IL_1e / callvirt System.String System.Object::ToString()"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女胸部池"	"D"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0074 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_008F [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0082 [token 060001C1]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Action`1<System.Object>::Invoke(!0) / brtrue.s IL_1e / callvirt System.String System.Object::ToString()"
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"排卵诱发剂"	"D"	"System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass27_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem) @ IL_00B8 [token 06000356]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Void System.Action`2<System.String,System.String>::Invoke(!0,!1)"
+"RedLightDistrict_v1.1.1"	"RedLightDistrict.dll"	"rld_102f641e1e10fea431ff"	"D"	"System.Void RedLightDistrict.PatronSystem::RollReturningForDay(System.Int32,System.Boolean) @ IL_0051 [token 060001AC]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: callvirt System.Boolean System.Collections.Generic.List`1<System.String>::Contains(!0) / call System.Boolean System.String::IsNullOrEmpty(System.String)"
+"[SRW-STM]MentorToSarrona"	"MentorToSarrona.dll"	"塞萝娜的笔记"	"D"	"System.String MentorToSarrona.ModEntry::RenameText(System.String) @ IL_000B [미확인]"	"실제 DLL IL 보고서에서 모든 원문+메서드+오프셋 앵커 확인 불가; 누락 보고서 또는 제네릭 메서드 대조 필요"
+"[SRW-STM]MentorToSarrona"	"MentorToSarrona.dll"	"塞萝娜的手册"	"D"	"System.String MentorToSarrona.ModEntry::RenameText(System.String) @ IL_001A [미확인]"	"실제 DLL IL 보고서에서 모든 원문+메서드+오프셋 앵커 확인 불가; 누락 보고서 또는 제네릭 메서드 대조 필요"
+"[SRW-STM]MentorToSarrona"	"MentorToSarrona.dll"	"塞萝娜"	"D"	"System.String MentorToSarrona.ModEntry::RenameText(System.String) @ IL_0029 [미확인]"	"실제 DLL IL 보고서에서 모든 원문+메서드+오프셋 앵커 확인 불가; 누락 보고서 또는 제네릭 메서드 대조 필요"
+"[SRW-STM]MentorToSarrona"	"MentorToSarrona.dll"	"她"	"D"	"System.String MentorToSarrona.ModEntry::RewriteLocalizedText(System.String,System.String,System.String) @ IL_002C [미확인]"	"실제 DLL IL 보고서에서 모든 원문+메서드+오프셋 앵커 확인 불가; 누락 보고서 또는 제네릭 메서드 대조 필요"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"贤者模式"	"D"	"System.Void DailyWear.Items::PerfumeFeature(ItemFeature,System.Boolean) @ IL_0026 [token 06000041]
+System.Void DailyWear.Items::PerfumeFeature(ItemFeature,System.Boolean) @ IL_0031 [token 06000041]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call System.Void ModReflect::Set(System.Object,System.String,System.Object)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"起飞攻速装"	"D"	"System.Void DailyWear.Plugin::OnInitializeMelon() @ IL_0021 [token 06000064]
+DailyWearOfficialSupport.OfficialConfigEntry`1<T> DailyWearOfficialSupport.OfficialConfigCategory::CreateEntry(System.String,T,System.String,System.String,System.Boolean,System.Boolean,DailyWearOfficialSupport.ValueValidator) @ IL_0049 [token 060000E9]
+DailyWearOfficialSupport.OfficialConfigEntry`1<T> DailyWearOfficialSupport.OfficialConfigCategory::CreateEntry(System.String,T,System.String,System.String,System.Boolean,System.Boolean,DailyWearOfficialSupport.ValueValidator) @ IL_00C3 [token 060000E9]
+System.Void DailyWearKitchen.ThiefAppearance::Start() @ IL_0005 [token 06000367]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 소비처 미확정 / callvirt ConfigEntry`1<System.Boolean> ModConfig::Define(System.String,System.Boolean,System.String, / callvirt ConfigEntry`1<System.Single> ModConfig::Define(System.String,System.Single,System.String,Sy"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"砧板制作材料"	"D"	"System.Void DailyWearKitchen.Crafting::Build(GameItem) @ IL_0007 [token 06000187]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void PixelWindow::.ctor(System.Boolean,System.String,WindowStyle)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"种子"	"D"	"System.Void DailyWearKitchen.Plants::Definitions() @ IL_0021 [token 0600021F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 외부/다중 반환 / callvirt GameItem GameItem::SetName(System.String) / callvirt System.Void GameItem::set_name(System.String)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"回甘果（中）"	"D"	"System.Void DailyWearKitchen.Plants::Definitions() @ IL_0072 [token 0600021F]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: 외부/다중 반환 / callvirt GameItem GameItem::SetName(System.String) / callvirt System.Void GameItem::set_name(System.String)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"酸成分生产"	"D"	"System.Void DailyWearKitchen.Plants::Register() @ IL_0011 [token 06000221]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void PlantTrait::.ctor(System.String,System.String,System.Int32,System.String)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"无"	"D"	"System.Void DailyWearKitchen.ScentLabels::RegisterReady() @ IL_003F [token 0600030C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"原味（伪）"	"D"	"System.Void DailyWearKitchen.ScentLabels::RegisterReady() @ IL_0047 [token 0600030C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref "
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"原味"	"D"	"System.Void DailyWearKitchen.ScentLabels::RegisterReady() @ IL_004F [token 0600030C]
+System.Void DailyWearKitchen.ScentLabels::RegisterReady() @ IL_00D2 [token 0600030C]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: stelem.ref  / callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Add(!0,!1"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"搅拌杵袜子"	"D"	"System.Void DailyWearKitchen.SockMount::Build(GameItem) @ IL_0024 [token 0600031A]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void PixelWindow::.ctor(System.Boolean,System.String,WindowStyle)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"材料"	"D"	"System.Void DailyWearKitchen.Tea::Init(GameItem) @ IL_0070 [token 06000335]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call MachineryPanel MachineHelper::Panel(System.String,PixelElement,System.String,System.Boolean)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"浸泡"	"D"	"System.Void DailyWearKitchen.Tea::Init(GameItem) @ IL_0089 [token 06000335]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: call MachineryPanel MachineHelper::Panel(System.String,PixelElement,System.String,System.Boolean)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"展厅物品暂存"	"D"	"System.Void DailyWearKitchen.ExhibitionStore::Ensure() @ IL_01E6 [token 06000455]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void PixelWindow::.ctor(System.Boolean,System.String,WindowStyle)"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"选择遮罩"	"D"	"UnityEngine.RectTransform DailyWearKitchen.ExhibitionUI::Dialog(System.String) @ IL_000A [token 06000474]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void UnityEngine.GameObject::.ctor(System.String,System.Type[])"
+"起飞攻速装-v1.1.3抢先体验版（修bug）"	"起飞攻速装.dll"	"选择面板"	"D"	"UnityEngine.RectTransform DailyWearKitchen.ExhibitionUI::Dialog(System.String) @ IL_0082 [token 06000474]"	"실제 ldstr 위치 확인, 추가 소비 경로 미확정: newobj System.Void UnityEngine.GameObject::.ctor(System.String,System.Type[])"
