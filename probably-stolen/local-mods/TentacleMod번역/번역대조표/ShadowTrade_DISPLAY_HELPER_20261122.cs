@@ -97,7 +97,7 @@ namespace MidnightPawn.Game {
         internal static void Install() {
             var harmony = new Harmony("lewd_meme_remake.ko.display");
             try {
-                harmony.Patch(AccessTools.Method(typeof(ModConfigWindow), "BuildEntry"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "ChoiceTranspiler"));
+                harmony.Patch(AccessTools.Method(typeof(ModConfigWindow), "BuildEntry"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "ChoiceTranspiler") { priority = Priority.Low });
                 harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialogUIManager"), "DisplayClientText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
                 harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialogUIManager"), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
                 harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialoguePhoneUIManager"), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
