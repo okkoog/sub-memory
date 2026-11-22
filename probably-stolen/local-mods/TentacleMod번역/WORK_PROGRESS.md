@@ -1017,3 +1017,11 @@
 - **수정 커밋:** 대사 반영 `5ed3c134ae4fa7590f9457b07915bfefcfa44bcb`, 설치 안내문 `3cffc14fd756027b0b39b0a5a2893be731aba585`, 검수 보고 `f161d35f0ae1ff2a3abd2fdb70bb74518db199d3`. 자세한 검수: `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md`.
 - **최종 배포 ZIP:** `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_198of198_20261122.zip`(44,349바이트, `Content/content.json`/`README_ko.txt`/감사서 3개 엔트리, 각 엔트리 CRC32 검증). 신규 ZIP 저장소 커밋 `b93e26a7e56afaa2ce765a795eb57b056ca4f65a`. 이전 `...170of198_20261121.zip`은 이력용 구버전으로, 설치 시 **198of198 최종판**을 사용해야 함.
 - **범위 한정:** LegacyContent 외부 JSON 대사 번역이 완료된 것이며 DLL 본체 또는 모든 다른 모드의 실제 게임 호환성까지 검증했다는 뜻은 아니다.
+
+## 2026-11-22 — Brood 자체 검사 체형 단계 표제 5개 DLL 번역 완료
+
+- 전 단계에서 `lewdMemeBrood v0331/LewdMemeBrood.dll`의 한자 포함 활성 306개 중 290개를 번역하고 원문 보존한 16개를 다시 검수. 이 가운데 **표시용 단계 표제 5개**는 실제 IL `<RegisterTests>b__8_0()`에서 각 `Check.That(Boolean,String)`의 출력용 두 번째 인자로 직접 사용됨을 확인. 소스 `MAIDEN_BODY`와 별도 체형 일치 비교값에는 영향 없음.
+- 반영: `萝莉 → 少女`→`로리 → 소녀`, `少女 → 御姐`→`소녀 → 누님`, `御姐 → 少妇`→`누님 → 새댁`, `少妇 → 熟女`→`새댁 → 숙녀`, `熟女为止`→`숙녀까지`. 각 원문 표제 참조 1곳만 한국어화; 11개의 판정용 원문은 보존. 외부 JSON 대사 135/135 및 ko.csv 기존 작업분도 새 통합 ZIP에 포함.
+- 검증: Github Actions `44969878249`(실제 IL 호출부 감사)와 `44969985828`(5개 문구 dnlib 패치·재검증·압축) 모두 성공. 검사서 `번역대조표/Brood_STAGE_5_IL_CALLSITE_AUDIT_20261122.md` 및 `Brood_STAGE_5_KO_PATCH_AUDIT_20261122.md`. 패치 DLL SHA256 `70b85c118c739c69d7c4307a171cf20f9e64beaa37c1bb48e5642f9a73d8fae8`; 실제 CLR/Unity 실행 미검증.
+- 최종 파일 `TentacleMod번역/ProbablyStolen_Brood_v0.3.31_KO_Final_DLL_JSON_20261122.zip` 158,777바이트. 기존 `ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip`은 JSON 전용 이전 패키지이며 이번 최종 ZIP이 DLL까지 포함한 최신본.
+- **후속 작업:** Probably Adult Goods v1.1.1의 `dildo_red_flavor`, `dildo_pink_slim_flavor` 2키는 기존 감사표에 중국어를 배제하고 영어 리소스를 기준으로 번역한 것으로 기록되어 있으므로 의미 불일치 별도 검토 대상. 기계적 치환이나 내부 원문 필드 변경 없이 정확한 원문·번역 차이를 확인한다.
