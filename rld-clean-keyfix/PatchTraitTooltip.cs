@@ -77,6 +77,22 @@ class P {
     Need(traits.Length==22,"22 trait display IDs");
     using var baseline=ModuleDefMD.Load(input);
     using var patch=ModuleDefMD.Load(input);
+    // Clothes/accessories are translated directly at their name-building point, not through a game hook.
+    foreach(var entry in new[]{
+      (type:"RedLightDistrict.TalentEquipment",helper:"EquipmentName"),
+      (type:"RedLightDistrict.TalentAccessory",helper:"AccessoryName")
+    }) {
+      foreach(var methodName in new[]{"CreateItem","DisplayName"}) {
+        var existing=M(patch,entry.type,methodName);
+        Need(existing.Body.Instructions.Any(i=>i.Operand is IMethod call && call.FullName.Contains("RedLightDistrict.Korean.UiLateLookup::"+entry.helper)),
+          "No late CsvLookup connection in "+entry.type+"."+methodName);
+      }
+    }
+    var tooltipPrefix=M(patch,"RedLightDistrict.TalentPatches","PrefixGetTooltipBasic");
+    Need(tooltipPrefix.MethodSig.Params[0].FullName=="GameItemElement","Expected original GameItemElement signature");
+    // Prior faulty build inserted GameItem calls on ldarg.0 (GameItemElement). Reject such a build.
+    Need(!tooltipPrefix.Body.Instructions.Take(40).Any(i=>i.Operand is IMethod c&&c.FullName=="System.String GameItem::get_identifier()"),
+      "Rejected incompatible previous GameItemElement/GameItem IL patch");
     var target=M(patch,"RedLightDistrict.TalentPanel","BuildTalentTooltipBuilder");
     var oldTarget=M(baseline,"RedLightDistrict.TalentPanel","BuildTalentTooltipBuilder");
     var helper=M(patch,"RedLightDistrict.Korean.UiLateLookup","TraitName");
