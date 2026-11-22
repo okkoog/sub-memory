@@ -1,0 +1,1352 @@
+[
+  {
+    "method": "System.Single RedLightDistrict.SewingMachine::get_ScanSec()",
+    "token": 100663919,
+    "il": 17
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::BoostRescan(System.Single)",
+    "token": 100663920,
+    "il": 15
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RegisterToDirectory(ItemDirectory)",
+    "token": 100663921,
+    "il": 33
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+    "token": 100663922,
+    "il": 244
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsMachine(GameItem)",
+    "token": 100663923,
+    "il": 17
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)",
+    "token": 100663924,
+    "il": 4
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsLiveMachineElement(GameItemElement)",
+    "token": 100663925,
+    "il": 53
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsMachineInnerInventory(GameInventory)",
+    "token": 100663926,
+    "il": 17
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsProductSlotTarget(GameItem)",
+    "token": 100663927,
+    "il": 17
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsProductInnerInventory(GameInventory)",
+    "token": 100663928,
+    "il": 17
+  },
+  {
+    "method": "GameInventory RedLightDistrict.SewingMachine::GetProductSlot(GameItem)",
+    "token": 100663929,
+    "il": 256
+  },
+  {
+    "method": "GameInventory RedLightDistrict.SewingMachine::ResolveProductInventory(MachineryPanel)",
+    "token": 100663930,
+    "il": 37
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RegisterProductSlot(GameItem,GameInventory)",
+    "token": 100663931,
+    "il": 15
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::InsertProductToSlot(GameItem,GameItem)",
+    "token": 100663932,
+    "il": 111
+  },
+  {
+    "method": "GameInventory RedLightDistrict.SewingMachine::GetMachineInner(GameItem)",
+    "token": 100663933,
+    "il": 95
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::GetMachineOfInner(GameInventory)",
+    "token": 100663934,
+    "il": 24
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::CanWorkNow(RedLightDistrict.TalentData)",
+    "token": 100663935,
+    "il": 11
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::RejectReason(RedLightDistrict.TalentData)",
+    "token": 100663936,
+    "il": 19
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::InnerRejectReason(GameItem,GameInventory)",
+    "token": 100663937,
+    "il": 38
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.SewingMachine::ReadProgress(GameItem)",
+    "token": 100663938,
+    "il": 35
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::StampProgress(GameItem,System.Int32)",
+    "token": 100663939,
+    "il": 60
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::HandleTalentDrop(GameItem,GameItem)",
+    "token": 100663940,
+    "il": 133
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.SewingMachine::InnerTalentCount(GameInventory)",
+    "token": 100663941,
+    "il": 41
+  },
+  {
+    "method": "RedLightDistrict.TalentData RedLightDistrict.SewingMachine::GetInnerWorker(GameItem)",
+    "token": 100663942,
+    "il": 82
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::NightlyTick()",
+    "token": 100663943,
+    "il": 352
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::ProduceClothing(GameItem)",
+    "token": 100663944,
+    "il": 114
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.SewingMachine::UnlockedMachineCount()",
+    "token": 100663945,
+    "il": 13
+  },
+  {
+    "method": "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachines()",
+    "token": 100663946,
+    "il": 3
+  },
+  {
+    "method": "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachinesFresh()",
+    "token": 100663947,
+    "il": 4
+  },
+  {
+    "method": "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachines(System.Boolean)",
+    "token": 100663948,
+    "il": 4
+  },
+  {
+    "method": "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::ScanMachines(System.Collections.Generic.List`1<GameItem>,System.Boolean)",
+    "token": 100663949,
+    "il": 81
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::AddMachine(System.Collections.Generic.List`1<GameItem>,GameItem,System.Collections.Generic.HashSet`1<System.String>)",
+    "token": 100663950,
+    "il": 42
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::ScanFallbackSources(EmporiumEntry,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.HashSet`1<System.String>)",
+    "token": 100663951,
+    "il": 173
+  },
+  {
+    "method": "System.Collections.Generic.HashSet`1<RedLightDistrict.TalentData> RedLightDistrict.SewingMachine::ScanMachines()",
+    "token": 100663952,
+    "il": 59
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::IsTalentItemInsideMachine(GameItem)",
+    "token": 100663953,
+    "il": 88
+  },
+  {
+    "method": "System.Collections.Generic.Dictionary`2<RedLightDistrict.TalentData,GameItem> RedLightDistrict.SewingMachine::ScanMachinesInCells()",
+    "token": 100663954,
+    "il": 15
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.SewingMachine::CountPlayerOwnedMachines()",
+    "token": 100663955,
+    "il": 29
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.SewingMachine::TotalMachineCount()",
+    "token": 100663956,
+    "il": 34
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::IconDir()",
+    "token": 100663957,
+    "il": 17
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::TryResolveIcon(System.String,UnityEngine.Sprite&)",
+    "token": 100663958,
+    "il": 135
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::EnsureIcon()",
+    "token": 100663959,
+    "il": 185
+  },
+  {
+    "method": "System.Single RedLightDistrict.SewingMachine::get_GraceUntil()",
+    "token": 100663960,
+    "il": 2
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RegisterDriver(RedLightDistrict.SewingMachineVfxDriver)",
+    "token": 100663961,
+    "il": 9
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::UnregisterDriver(RedLightDistrict.SewingMachineVfxDriver)",
+    "token": 100663962,
+    "il": 9
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::RunKeyOf(System.String,System.Int32,System.Int32,System.Int32)",
+    "token": 100663963,
+    "il": 41
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::IdleKeyOf(System.String,System.Int32)",
+    "token": 100663964,
+    "il": 7
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::TryParseMachineKey(System.String,GameItem&,System.Int32&,System.Int32&,System.Int32&)",
+    "token": 100663965,
+    "il": 198
+  },
+  {
+    "method": "System.String RedLightDistrict.SewingMachine::UidOf(GameItem)",
+    "token": 100663966,
+    "il": 19
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RefreshUidMap()",
+    "token": 100663967,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RefreshUidMap(System.Collections.Generic.List`1<GameItem>)",
+    "token": 100663968,
+    "il": 36
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::MarkCacheUsed(System.String)",
+    "token": 100663969,
+    "il": 7
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::PruneCache(System.Collections.Generic.HashSet`1<System.String>)",
+    "token": 100663970,
+    "il": 81
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::PruneOrphans(System.Collections.Generic.HashSet`1<System.String>)",
+    "token": 100663971,
+    "il": 149
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::DestroyCached(System.String)",
+    "token": 100663972,
+    "il": 29
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::HardClearCache()",
+    "token": 100663973,
+    "il": 57
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RestoreInnerShapeFor(GameItem)",
+    "token": 100663974,
+    "il": 205
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RestoreInnerShape()",
+    "token": 100663975,
+    "il": 33
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::OnSceneChanged()",
+    "token": 100663976,
+    "il": 41
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::PostfixLoadGame()",
+    "token": 100663977,
+    "il": 28
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::TickVfx()",
+    "token": 100663978,
+    "il": 89
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::EnsureDrivers(System.Collections.Generic.List`1<GameItem>)",
+    "token": 100663979,
+    "il": 23
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::TryAttach(GameItem)",
+    "token": 100663980,
+    "il": 39
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::OnMachineCreated(GameItem)",
+    "token": 100663981,
+    "il": 24
+  },
+  {
+    "method": "UnityEngine.Sprite RedLightDistrict.SewingMachine::EnsureSpriteFor(System.String,System.Int32,System.Int32,System.Int32)",
+    "token": 100663982,
+    "il": 44
+  },
+  {
+    "method": "UnityEngine.Sprite RedLightDistrict.SewingMachine::GetRunSprite(System.String,System.Int32,System.Int32,System.Int32)",
+    "token": 100663983,
+    "il": 112
+  },
+  {
+    "method": "UnityEngine.Sprite RedLightDistrict.SewingMachine::MakeBobSprite(UnityEngine.Sprite,System.Int32)",
+    "token": 100663984,
+    "il": 143
+  },
+  {
+    "method": "UnityEngine.Sprite RedLightDistrict.SewingMachine::GetStoppedSprite(System.String,System.Int32)",
+    "token": 100663985,
+    "il": 105
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::DrawProgressDots(UnityEngine.Color32[],System.Int32,System.Int32,System.Int32)",
+    "token": 100663986,
+    "il": 88
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::DrawDisc(UnityEngine.Color32[],System.Int32,System.Int32,System.Single,System.Single,System.Single,UnityEngine.Color32)",
+    "token": 100663987,
+    "il": 78
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::EnsureRunBase()",
+    "token": 100663988,
+    "il": 142
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::.cctor()",
+    "token": 100663989,
+    "il": 21
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c::.cctor()",
+    "token": 100663990,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c::.ctor()",
+    "token": 100663991,
+    "il": 3
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine/<>c::<RegisterToDirectory>b__36_0()",
+    "token": 100663992,
+    "il": 2
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass54_0::.ctor()",
+    "token": 100663993,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass54_0::<StampProgress>b__0(TagState)",
+    "token": 100663994,
+    "il": 9
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass69_0::.ctor()",
+    "token": 100663995,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass69_0::<ScanMachinesInCells>b__0(GameItem)",
+    "token": 100663996,
+    "il": 121
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachineVfxDriver::OnEnable()",
+    "token": 100663997,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachineVfxDriver::OnDisable()",
+    "token": 100663998,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachineVfxDriver::Invalidate()",
+    "token": 100663999,
+    "il": 10
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachineVfxDriver::Update()",
+    "token": 100664000,
+    "il": 301
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachineVfxDriver::.ctor()",
+    "token": 100664001,
+    "il": 3
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentData::get_IsLactating()",
+    "token": 100664189,
+    "il": 5
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentData::get_LactationPeriodText()",
+    "token": 100664190,
+    "il": 17
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)",
+    "token": 100664191,
+    "il": 13
+  },
+  {
+    "method": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentData::GetHiddenTraits()",
+    "token": 100664192,
+    "il": 36
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentData::.ctor()",
+    "token": 100664193,
+    "il": 100
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentData::get_IsPregnant()",
+    "token": 100664194,
+    "il": 7
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "token": 100664195,
+    "il": 23
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()",
+    "token": 100664196,
+    "il": 27
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)",
+    "token": 100664197,
+    "il": 6
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentData::AddSemenML(System.Int32)",
+    "token": 100664198,
+    "il": 22
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentData::DrainSemenML(System.Int32)",
+    "token": 100664199,
+    "il": 19
+  },
+  {
+    "method": "System.Single RedLightDistrict.TalentData::get_SemenRatio()",
+    "token": 100664200,
+    "il": 6
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentData::AgeStageName(RedLightDistrict.TalentAgeStage)",
+    "token": 100664201,
+    "il": 15
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentData::ToGrade(System.Int32)",
+    "token": 100664202,
+    "il": 47
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentData::GetContrabandLevel()",
+    "token": 100664203,
+    "il": 16
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentData::GetContrabandText()",
+    "token": 100664204,
+    "il": 20
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentData::RewindAge(System.Int32)",
+    "token": 100664205,
+    "il": 68
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentData::StageTotalDays(RedLightDistrict.TalentAgeStage)",
+    "token": 100664206,
+    "il": 13
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentData::.cctor()",
+    "token": 100664207,
+    "il": 95
+  },
+  {
+    "method": "RedLightDistrict.TalentEquipment/EquipDef[] RedLightDistrict.TalentEquipment::get_SewableDefs()",
+    "token": 100664210,
+    "il": 27
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::AppliedBonus(RedLightDistrict.TalentData,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664211,
+    "il": 24
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::ClothingDescription(RedLightDistrict.TalentEquipment/EquipDef)",
+    "token": 100664212,
+    "il": 6
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::BonusSummary(RedLightDistrict.TalentEquipment/EquipDef)",
+    "token": 100664213,
+    "il": 70
+  },
+  {
+    "method": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+    "token": 100664214,
+    "il": 30
+  },
+  {
+    "method": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::FindBySpriteKey(System.String)",
+    "token": 100664215,
+    "il": 30
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)",
+    "token": 100664216,
+    "il": 10
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::DressWith(RedLightDistrict.TalentData,System.Random)",
+    "token": 100664217,
+    "il": 71
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::BonusOf(System.String,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664218,
+    "il": 11
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::IconDir()",
+    "token": 100664219,
+    "il": 17
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::RegisterToDirectory(ItemDirectory)",
+    "token": 100664220,
+    "il": 76
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "token": 100664221,
+    "il": 80
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "token": 100664222,
+    "il": 5
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)",
+    "token": 100664223,
+    "il": 10
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::HandleEquipDrag(GameItem,GameItem,System.Boolean)",
+    "token": 100664224,
+    "il": 242
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::UnequipToBackpack(RedLightDistrict.TalentData,System.String)",
+    "token": 100664225,
+    "il": 191
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::GiveToBackpack(System.String,System.Int32,System.String)",
+    "token": 100664226,
+    "il": 109
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::SetItemDurabilityTag(GameItem,System.Int32)",
+    "token": 100664227,
+    "il": 77
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::ReadItemDurability(GameItem)",
+    "token": 100664228,
+    "il": 18
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::GetTagInt(GameItem,System.String)",
+    "token": 100664229,
+    "il": 19
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)",
+    "token": 100664230,
+    "il": 20
+  },
+  {
+    "method": "System.Int64 RedLightDistrict.TalentEquipment::PriceWithDurability(GameItem,System.Int64)",
+    "token": 100664231,
+    "il": 51
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::CountEquipmentItemsInWorld(System.String)",
+    "token": 100664232,
+    "il": 73
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::NewClothingUid()",
+    "token": 100664233,
+    "il": 24
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::ReadClothingUid(GameItem)",
+    "token": 100664234,
+    "il": 31
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::StampClothingUid(GameItem,System.String)",
+    "token": 100664235,
+    "il": 52
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::EnsureClothingUidTagRegistered()",
+    "token": 100664236,
+    "il": 43
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::CountClothingByUidInWorld(System.String)",
+    "token": 100664237,
+    "il": 70
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::BreakClothing(RedLightDistrict.TalentData)",
+    "token": 100664238,
+    "il": 102
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::ReturnOnRemoval(RedLightDistrict.TalentData)",
+    "token": 100664239,
+    "il": 115
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::ApplyEquipStatBonus(RedLightDistrict.TalentData)",
+    "token": 100664240,
+    "il": 52
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::RemoveEquipStatBonus(RedLightDistrict.TalentData)",
+    "token": 100664241,
+    "il": 53
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::SyncEquipStatBonus(RedLightDistrict.TalentData)",
+    "token": 100664242,
+    "il": 96
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664243,
+    "il": 13
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664244,
+    "il": 23
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentEquipment::GetEquipBonusSuffix(RedLightDistrict.TalentData,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664245,
+    "il": 50
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::TryResolveIcon(System.String,UnityEngine.Sprite&)",
+    "token": 100664246,
+    "il": 28
+  },
+  {
+    "method": "System.Byte[] RedLightDistrict.TalentEquipment::LoadIconBytes(RedLightDistrict.TalentEquipment/EquipDef)",
+    "token": 100664247,
+    "il": 56
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::EnsureIcon(System.String)",
+    "token": 100664248,
+    "il": 208
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment::.cctor()",
+    "token": 100664249,
+    "il": 263
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/EquipDef::.ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32,System.Int32,System.Int32,System.Int32)",
+    "token": 100664250,
+    "il": 36
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentEquipment/EquipDef::BonusFor(RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "token": 100664251,
+    "il": 15
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0::.ctor()",
+    "token": 100664252,
+    "il": 3
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0::<RegisterToDirectory>b__0()",
+    "token": 100664253,
+    "il": 16
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0::.ctor()",
+    "token": 100664254,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0::<SetItemDurabilityTag>b__0(TagState)",
+    "token": 100664255,
+    "il": 6
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0::.ctor()",
+    "token": 100664256,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0::<StampClothingUid>b__0(TagState)",
+    "token": 100664257,
+    "il": 9
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPanel::get_IsOpen()",
+    "token": 100664446,
+    "il": 17
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::CloseSelf()",
+    "token": 100664447,
+    "il": 11
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::PrefixDoubleClickAction(GameItem,UnityEngine.Vector2)",
+    "token": 100664448,
+    "il": 18
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::PostfixDoubleClickAction(GameItem,UnityEngine.Vector2)",
+    "token": 100664449,
+    "il": 48
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPanel::PrefixItemContextPress(System.Collections.Generic.ISet`1<UnityEngine.KeyCode>)",
+    "token": 100664450,
+    "il": 40
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)",
+    "token": 100664451,
+    "il": 1206
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::OnUnequipClicked(RedLightDistrict.TalentData,GameItem,System.String)",
+    "token": 100664452,
+    "il": 24
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::OnUnequipAccessoryClicked(RedLightDistrict.TalentData,GameItem,System.String)",
+    "token": 100664453,
+    "il": 24
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::AddContraceptionToggle(CustomUIBuilder,RedLightDistrict.TalentData,GameItem,System.Boolean)",
+    "token": 100664454,
+    "il": 53
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::ApplyContraceptionStyle(CustomUIElement)",
+    "token": 100664455,
+    "il": 33
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::OnContraceptionToggled(RedLightDistrict.TalentData,GameItem)",
+    "token": 100664456,
+    "il": 49
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::AddReleaseControl(CustomUIBuilder,RedLightDistrict.TalentData,GameItem,System.Boolean)",
+    "token": 100664457,
+    "il": 50
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::ApplyReleaseStyle(CustomUIElement)",
+    "token": 100664458,
+    "il": 37
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::OnReleaseClicked(RedLightDistrict.TalentData,GameItem)",
+    "token": 100664459,
+    "il": 54
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::DoRelease(RedLightDistrict.TalentData,GameItem)",
+    "token": 100664460,
+    "il": 101
+  },
+  {
+    "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+    "token": 100664461,
+    "il": 813
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::PostfixGetTooltip(GameItemElement,RichText&)",
+    "token": 100664462,
+    "il": 70
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildPrisonTooltip(GameItem,RichText&)",
+    "token": 100664463,
+    "il": 374
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildSewingTooltip(GameItem,RichText&)",
+    "token": 100664464,
+    "il": 211
+  },
+  {
+    "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildShowerTooltipBuilder(GameItem)",
+    "token": 100664465,
+    "il": 156
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildShowerTooltip(GameItem,RichTextBuilder&)",
+    "token": 100664466,
+    "il": 13
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildShowerTooltip(GameItem,RichText&)",
+    "token": 100664467,
+    "il": 15
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildEquipmentTooltip(GameItem,RichText&)",
+    "token": 100664468,
+    "il": 248
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildAccessoryTooltip(GameItem,RichText&)",
+    "token": 100664469,
+    "il": 237
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPanel::GetAgeText(RedLightDistrict.TalentData)",
+    "token": 100664470,
+    "il": 18
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPanel::BuildTagText(RedLightDistrict.TalentData)",
+    "token": 100664471,
+    "il": 36
+  },
+  {
+    "method": "RenderHandler/ColorPalette RedLightDistrict.TalentPanel::TraitColor(RedLightDistrict.TalentData,System.String,System.Boolean)",
+    "token": 100664472,
+    "il": 20
+  },
+  {
+    "method": "RenderHandler/ColorPalette RedLightDistrict.TalentPanel::DurabilityColor(System.Int32,System.Int32)",
+    "token": 100664473,
+    "il": 23
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c::.cctor()",
+    "token": 100664474,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c::.ctor()",
+    "token": 100664475,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c::<ShowPanel>b__9_0()",
+    "token": 100664476,
+    "il": 7
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass12_0::.ctor()",
+    "token": 100664477,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass12_0::<AddContraceptionToggle>b__0()",
+    "token": 100664478,
+    "il": 6
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass15_0::.ctor()",
+    "token": 100664479,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass15_0::<AddReleaseControl>b__0()",
+    "token": 100664480,
+    "il": 6
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_0::.ctor()",
+    "token": 100664481,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_0::<ShowPanel>b__1()",
+    "token": 100664482,
+    "il": 7
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_1::.ctor()",
+    "token": 100664483,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_1::<ShowPanel>b__2()",
+    "token": 100664484,
+    "il": 10
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_2::.ctor()",
+    "token": 100664485,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_2::<ShowPanel>b__3()",
+    "token": 100664486,
+    "il": 11
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::get_IsSelected()",
+    "token": 100664777,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid::get_DisplayName()",
+    "token": 100664778,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid::get_Description()",
+    "token": 100664779,
+    "il": 2
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::HasSaveMarker(PlayerStore)",
+    "token": 100664780,
+    "il": 26
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::ResetSelection()",
+    "token": 100664781,
+    "il": 23
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::ResetGrant()",
+    "token": 100664782,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::TryGrantNow()",
+    "token": 100664783,
+    "il": 19
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::OnUpdate()",
+    "token": 100664784,
+    "il": 78
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::EnsureMaidSoon(System.Int32)",
+    "token": 100664785,
+    "il": 12
+  },
+  {
+    "method": "System.Collections.IEnumerator RedLightDistrict.TalentScenarioMaid::EnsureMaidSoonCo(System.Int32)",
+    "token": 100664786,
+    "il": 6
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::EnsureDefaultOutfit()",
+    "token": 100664787,
+    "il": 212
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::DoGrant(EmporiumEntry)",
+    "token": 100664788,
+    "il": 340
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentScenarioMaid::CreateGrantItem(System.String)",
+    "token": 100664789,
+    "il": 22
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::PlaceIntoBackstock(GameItem,EmporiumEntry)",
+    "token": 100664790,
+    "il": 31
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::TryPlaceInto(GameGridInventory,GameItem,EmporiumEntry)",
+    "token": 100664791,
+    "il": 47
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::EnsureMaidResident()",
+    "token": 100664792,
+    "il": 347
+  },
+  {
+    "method": "RedLightDistrict.TalentData RedLightDistrict.TalentScenarioMaid::FindMaidData()",
+    "token": 100664793,
+    "il": 45
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::IsInRenderedContainer(GameItem,EmporiumEntry)",
+    "token": 100664794,
+    "il": 40
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::ContainerHas(System.Object,GameItem)",
+    "token": 100664795,
+    "il": 23
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid::WhereIsItem(GameItem,EmporiumEntry)",
+    "token": 100664796,
+    "il": 72
+  },
+  {
+    "method": "System.Object RedLightDistrict.TalentScenarioMaid::ContainerByName(System.String,EmporiumEntry)",
+    "token": 100664797,
+    "il": 31
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::SafeDestroy(GameItem)",
+    "token": 100664798,
+    "il": 10
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid::InRenderList(GameItem,EmporiumEntry,System.Int32&)",
+    "token": 100664799,
+    "il": 52
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::TickMaidVerify(RedLightDistrict.TalentData,EmporiumEntry)",
+    "token": 100664800,
+    "il": 124
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixOnNewGameClick(MainMenuUIController)",
+    "token": 100664801,
+    "il": 10
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PrefixOnNewGameClick(MainMenuUIController)",
+    "token": 100664802,
+    "il": 10
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::EnsureScenarioIcon()",
+    "token": 100664803,
+    "il": 78
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixOnScenarioContinue(MainMenuUIController,StartingScenario)",
+    "token": 100664804,
+    "il": 20
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::RegisterScenario()",
+    "token": 100664805,
+    "il": 153
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PrefixStartNewGame()",
+    "token": 100664806,
+    "il": 13
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixLoadGame(PlayerStore)",
+    "token": 100664807,
+    "il": 29
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PrefixHandleInitialItem(System.Boolean&)",
+    "token": 100664808,
+    "il": 31
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixHandleInitialItem(System.Boolean)",
+    "token": 100664809,
+    "il": 28
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixGenerateData(SavePreviewData&)",
+    "token": 100664810,
+    "il": 67
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::PostfixGetStartDisplayName(NewGameData/StartType,System.String,System.String&)",
+    "token": 100664811,
+    "il": 11
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::Apply(HarmonyLib.Harmony)",
+    "token": 100664812,
+    "il": 197
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::.cctor()",
+    "token": 100664813,
+    "il": 73
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<>c::.cctor()",
+    "token": 100664814,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<>c::.ctor()",
+    "token": 100664815,
+    "il": 3
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_0()",
+    "token": 100664816,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_1()",
+    "token": 100664817,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_2()",
+    "token": 100664818,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_3()",
+    "token": 100664819,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_4()",
+    "token": 100664820,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_5()",
+    "token": 100664821,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_6()",
+    "token": 100664822,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_7()",
+    "token": 100664823,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_8()",
+    "token": 100664824,
+    "il": 2
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_9()",
+    "token": 100664825,
+    "il": 2
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_10()",
+    "token": 100664826,
+    "il": 3
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_11()",
+    "token": 100664827,
+    "il": 2
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::.ctor(System.Int32)",
+    "token": 100664828,
+    "il": 6
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.IDisposable.Dispose()",
+    "token": 100664829,
+    "il": 1
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::MoveNext()",
+    "token": 100664830,
+    "il": 84
+  },
+  {
+    "method": "System.Object RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.Generic.IEnumerator<System.Object>.get_Current()",
+    "token": 100664831,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.IEnumerator.Reset()",
+    "token": 100664832,
+    "il": 2
+  },
+  {
+    "method": "System.Object RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.IEnumerator.get_Current()",
+    "token": 100664833,
+    "il": 3
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::OnNamedCleared(RedLightDistrict.TalentData,System.Int32)",
+    "token": 100665061,
+    "il": 83
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::NightlyTraitEffects(System.Int32)",
+    "token": 100665062,
+    "il": 106
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToEscape(RedLightDistrict.TalentData)",
+    "token": 100665063,
+    "il": 8
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToObedienceRefusal(RedLightDistrict.TalentData)",
+    "token": 100665064,
+    "il": 8
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToLowObedience(RedLightDistrict.TalentData)",
+    "token": 100665065,
+    "il": 8
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)",
+    "token": 100665066,
+    "il": 12
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)",
+    "token": 100665067,
+    "il": 14
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "token": 100665068,
+    "il": 2
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToAbuse(RedLightDistrict.TalentData)",
+    "token": 100665069,
+    "il": 8
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::PatronPriceMultiplier(RedLightDistrict.TalentData)",
+    "token": 100665070,
+    "il": 10
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodDrinkCost(System.Int32,RedLightDistrict.TalentData)",
+    "token": 100665071,
+    "il": 27
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodCost(RedLightDistrict.TalentData)",
+    "token": 100665072,
+    "il": 4
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyDrinkCost(RedLightDistrict.TalentData)",
+    "token": 100665073,
+    "il": 4
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::RefusalChanceMultiplier(RedLightDistrict.TalentData)",
+    "token": 100665074,
+    "il": 10
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::ReturningChanceBonus(RedLightDistrict.TalentData)",
+    "token": 100665075,
+    "il": 24
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::DailyReturnBonus(System.Boolean)",
+    "token": 100665076,
+    "il": 6
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::AnyOwnedTalentHasTrait(System.String)",
+    "token": 100665077,
+    "il": 53
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::ApplyNightlyStatTraits(RedLightDistrict.TalentData)",
+    "token": 100665078,
+    "il": 107
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentTraits::TryGiveCheapItem()",
+    "token": 100665079,
+    "il": 73
+  },
+  {
+    "method": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::GetCheapItemIds()",
+    "token": 100665080,
+    "il": 172
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::IsPickableId(System.String)",
+    "token": 100665081,
+    "il": 72
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)",
+    "token": 100665082,
+    "il": 19
+  }
+]

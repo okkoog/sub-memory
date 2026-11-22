@@ -1,0 +1,5151 @@
+[
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::AddAllyTalentBalls(System.Collections.Generic.List`1<GameItem>,UnityEngine.Vector2[],System.Int32&)",
+    "at": 49,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 40,
+        "il": "ldnull "
+      },
+      {
+        "index": 41,
+        "il": "call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)"
+      },
+      {
+        "index": 42,
+        "il": "brfalse.s @AD"
+      },
+      {
+        "index": 43,
+        "il": "ldloc.s V_8"
+      },
+      {
+        "index": 44,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 45,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 46,
+        "il": "brtrue.s @AD"
+      },
+      {
+        "index": 47,
+        "il": "ldloc.s V_8"
+      },
+      {
+        "index": 48,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 49,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 50,
+        "il": "brfalse.s @AD"
+      },
+      {
+        "index": 51,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 52,
+        "il": "ldloc.s V_8"
+      },
+      {
+        "index": 53,
+        "il": "ldfld System.String RedLightDistrict.TalentData::PortraitTemplate"
+      },
+      {
+        "index": 54,
+        "il": "ldloc.s V_8"
+      },
+      {
+        "index": 55,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 56,
+        "il": "call UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::Resolve(UnityEngine.Sprite,System.String,System.String)"
+      },
+      {
+        "index": 57,
+        "il": "stloc.s V_9"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "at": 390,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 381,
+        "il": "callvirt System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData> System.Collections.Generic.List`1<RedLightDistrict.TalentData>::GetEnumerator()"
+      },
+      {
+        "index": 382,
+        "il": "stloc.s V_33"
+      },
+      {
+        "index": 383,
+        "il": "br.s @4C4"
+      },
+      {
+        "index": 384,
+        "il": "ldloca.s V_33"
+      },
+      {
+        "index": 385,
+        "il": "call RedLightDistrict.TalentData System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::get_Current()"
+      },
+      {
+        "index": 386,
+        "il": "stloc.s V_34"
+      },
+      {
+        "index": 387,
+        "il": "ldloc.s V_34"
+      },
+      {
+        "index": 388,
+        "il": "brfalse.s @4C4"
+      },
+      {
+        "index": 389,
+        "il": "ldloc.s V_34"
+      },
+      {
+        "index": 390,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 391,
+        "il": "brtrue.s @4C4"
+      },
+      {
+        "index": 392,
+        "il": "ldloc.s V_34"
+      },
+      {
+        "index": 393,
+        "il": "ldfld System.String RedLightDistrict.TalentData::PortraitKey"
+      },
+      {
+        "index": 394,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 395,
+        "il": "brtrue.s @4C4"
+      },
+      {
+        "index": 396,
+        "il": "ldloc.s V_34"
+      },
+      {
+        "index": 397,
+        "il": "call GameItem RedLightDistrict.TalentPrison::FindTalentItemAnywhere(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 398,
+        "il": "brfalse.s @4C4"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "at": 501,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 492,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 493,
+        "il": "call System.Boolean RedLightDistrict.TalentPortraitTemplate::Ensure(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 494,
+        "il": "pop "
+      },
+      {
+        "index": 495,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 496,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 497,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 498,
+        "il": "brtrue.s @5F9"
+      },
+      {
+        "index": 499,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 500,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 501,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 502,
+        "il": "brfalse.s @5F9"
+      },
+      {
+        "index": 503,
+        "il": "ldloc.s V_11"
+      },
+      {
+        "index": 504,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 505,
+        "il": "ldfld System.String RedLightDistrict.TalentData::PortraitTemplate"
+      },
+      {
+        "index": 506,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 507,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 508,
+        "il": "call UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::Resolve(UnityEngine.Sprite,System.String,System.String)"
+      },
+      {
+        "index": 509,
+        "il": "stloc.s V_39"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "at": 535,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 526,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 527,
+        "il": "stloc.s V_42"
+      },
+      {
+        "index": 528,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 529,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::EquipStatsBoosted"
+      },
+      {
+        "index": 530,
+        "il": "brfalse.s @655"
+      },
+      {
+        "index": 531,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 532,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 533,
+        "il": "ldloc.s V_40"
+      },
+      {
+        "index": 534,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 535,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 536,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 537,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 538,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 539,
+        "il": "ldloc.s V_41"
+      },
+      {
+        "index": 540,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 541,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 542,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 543,
+        "il": "ldloc.s V_10"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "at": 541,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 532,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 533,
+        "il": "ldloc.s V_40"
+      },
+      {
+        "index": 534,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 535,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 536,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 537,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 538,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 539,
+        "il": "ldloc.s V_41"
+      },
+      {
+        "index": 540,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 541,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 542,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 543,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 544,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 545,
+        "il": "ldloc.s V_42"
+      },
+      {
+        "index": 546,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 547,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 548,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 549,
+        "il": "ldloc.s V_10"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "at": 547,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 538,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 539,
+        "il": "ldloc.s V_41"
+      },
+      {
+        "index": 540,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 541,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 542,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 543,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 544,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 545,
+        "il": "ldloc.s V_42"
+      },
+      {
+        "index": 546,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 547,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 548,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 549,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 550,
+        "il": "call System.Int64 RedLightDistrict.TalentTrafficker::ComputeSalePrice(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 551,
+        "il": "stloc.s V_12"
+      },
+      {
+        "index": 552,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 553,
+        "il": "ldloc.s V_40"
+      },
+      {
+        "index": 554,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 555,
+        "il": "ldloc.s V_10"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.PatronSystem::OnPatronBought(System.Object,GameItem,System.Int32)",
+    "at": 108,
+    "callee": "System.Double RedLightDistrict.TalentTraits::ReturningChanceBonus(RedLightDistrict.TalentData)",
+    "context": [
+      {
+        "index": 99,
+        "il": "mul "
+      },
+      {
+        "index": 100,
+        "il": "add "
+      },
+      {
+        "index": 101,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 102,
+        "il": "brtrue.s @11F"
+      },
+      {
+        "index": 103,
+        "il": "ldc.r8 1"
+      },
+      {
+        "index": 104,
+        "il": "br.s @128"
+      },
+      {
+        "index": 105,
+        "il": "ldc.r8 2"
+      },
+      {
+        "index": 106,
+        "il": "mul "
+      },
+      {
+        "index": 107,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 108,
+        "il": "call System.Double RedLightDistrict.TalentTraits::ReturningChanceBonus(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 109,
+        "il": "add "
+      },
+      {
+        "index": 110,
+        "il": "stloc.s V_7"
+      },
+      {
+        "index": 111,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 112,
+        "il": "ldfld System.Boolean RedLightDistrict.PatronData::IsReturning"
+      },
+      {
+        "index": 113,
+        "il": "brfalse @1E1"
+      },
+      {
+        "index": 114,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 115,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 116,
+        "il": "call RedLightDistrict.ReturningPatron RedLightDistrict.PatronSystem::FindReturning(RedLightDistrict.TalentWorldData,RedLightDistrict.PatronData)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.PatronSystem::TagTalent(GameItem,RedLightDistrict.TalentData,RedLightDistrict.PatronData,System.Int32)",
+    "at": 3,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 1,
+        "il": "brfalse.s @1B"
+      },
+      {
+        "index": 2,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 3,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 4,
+        "il": "brtrue.s @1B"
+      },
+      {
+        "index": 5,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 6,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @1B"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 9,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 10,
+        "il": "brfalse.s @1C"
+      },
+      {
+        "index": 11,
+        "il": "ret "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.PatronSystem::TagTalent(GameItem,RedLightDistrict.TalentData,RedLightDistrict.PatronData,System.Int32)",
+    "at": 9,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 1,
+        "il": "brfalse.s @1B"
+      },
+      {
+        "index": 2,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 3,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 4,
+        "il": "brtrue.s @1B"
+      },
+      {
+        "index": 5,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 6,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @1B"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 9,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 10,
+        "il": "brfalse.s @1C"
+      },
+      {
+        "index": 11,
+        "il": "ret "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 13,
+        "il": "ldarg.2 "
+      },
+      {
+        "index": 14,
+        "il": "ldfld RedLightDistrict.PatronRequirement RedLightDistrict.PatronData::FixedReq"
+      },
+      {
+        "index": 15,
+        "il": "call System.Boolean RedLightDistrict.PatronSystem::Meets(RedLightDistrict.TalentData,RedLightDistrict.PatronRequirement)"
+      },
+      {
+        "index": 16,
+        "il": "brtrue.s @2B"
+      },
+      {
+        "index": 17,
+        "il": "ret "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.PatronSystem::RefpriceOneTalent(GameItem,RedLightDistrict.TalentData)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brfalse.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 3,
+        "il": "brtrue.s @B"
+      },
+      {
+        "index": 4,
+        "il": "leave @2A0"
+      },
+      {
+        "index": 5,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 6,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @23"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 9,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 10,
+        "il": "brtrue.s @23"
+      },
+      {
+        "index": 11,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 12,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 13,
+        "il": "brfalse.s @28"
+      },
+      {
+        "index": 14,
+        "il": "leave @2A0"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.PatronSystem::RefpriceOneTalent(GameItem,RedLightDistrict.TalentData)",
+    "at": 12,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()",
+    "context": [
+      {
+        "index": 3,
+        "il": "brtrue.s @B"
+      },
+      {
+        "index": 4,
+        "il": "leave @2A0"
+      },
+      {
+        "index": 5,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 6,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @23"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 9,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 10,
+        "il": "brtrue.s @23"
+      },
+      {
+        "index": 11,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 12,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 13,
+        "il": "brfalse.s @28"
+      },
+      {
+        "index": 14,
+        "il": "leave @2A0"
+      },
+      {
+        "index": 15,
+        "il": "call RedLightDistrict.PatronData RedLightDistrict.PatronSystem::get_CurrentPatron()"
+      },
+      {
+        "index": 16,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 17,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 18,
+        "il": "brfalse @134"
+      },
+      {
+        "index": 19,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 20,
+        "il": "ldfld System.Int32 RedLightDistrict.PatronData::TagIndex"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.PatronSystem::IsTalentBuyable(GameItem,RedLightDistrict.PatronData)",
+    "at": 27,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 18,
+        "il": "dup "
+      },
+      {
+        "index": 19,
+        "il": "brtrue.s @2E"
+      },
+      {
+        "index": 20,
+        "il": "pop "
+      },
+      {
+        "index": 21,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 22,
+        "il": "call RedLightDistrict.TalentData RedLightDistrict.TalentSystem::ResolveOwnerByGuid(GameItem)"
+      },
+      {
+        "index": 23,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "brfalse.s @4A"
+      },
+      {
+        "index": 26,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 27,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 28,
+        "il": "brtrue.s @4A"
+      },
+      {
+        "index": 29,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 30,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 31,
+        "il": "brtrue.s @4A"
+      },
+      {
+        "index": 32,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 33,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 34,
+        "il": "brfalse.s @4E"
+      },
+      {
+        "index": 35,
+        "il": "ldc.i4.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.PatronSystem::IsTalentBuyable(GameItem,RedLightDistrict.PatronData)",
+    "at": 33,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()",
+    "context": [
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "brfalse.s @4A"
+      },
+      {
+        "index": 26,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 27,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 28,
+        "il": "brtrue.s @4A"
+      },
+      {
+        "index": 29,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 30,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 31,
+        "il": "brtrue.s @4A"
+      },
+      {
+        "index": 32,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 33,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 34,
+        "il": "brfalse.s @4E"
+      },
+      {
+        "index": 35,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 36,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 37,
+        "il": "leave.s @62"
+      },
+      {
+        "index": 38,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 39,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 40,
+        "il": "ldfld RedLightDistrict.PatronRequirement RedLightDistrict.PatronData::FixedReq"
+      },
+      {
+        "index": 41,
+        "il": "call System.Boolean RedLightDistrict.PatronSystem::Meets(RedLightDistrict.TalentData,RedLightDistrict.PatronRequirement)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.RldChemInjectors::HandleInjectorDrag(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 147,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 138,
+        "il": "clt "
+      },
+      {
+        "index": 139,
+        "il": "brtrue.s @1A6"
+      },
+      {
+        "index": 140,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_ef965ea9d9875c6ba3c6()"
+      },
+      {
+        "index": 141,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 142,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_765bf425de05fc3adaaa()"
+      },
+      {
+        "index": 143,
+        "il": "call System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "index": 144,
+        "il": "stloc.s V_4"
+      },
+      {
+        "index": 145,
+        "il": "br @364"
+      },
+      {
+        "index": 146,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 147,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 148,
+        "il": "brfalse.s @1BA"
+      },
+      {
+        "index": 149,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_a7dcd5b738fa985423e6()"
+      },
+      {
+        "index": 150,
+        "il": "stloc.s V_4"
+      },
+      {
+        "index": 151,
+        "il": "br @364"
+      },
+      {
+        "index": 152,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 153,
+        "il": "ldfld System.String RedLightDistrict.RldChemInjectors/Def::Id"
+      },
+      {
+        "index": 154,
+        "il": "stloc.s V_6"
+      },
+      {
+        "index": 155,
+        "il": "ldloc.s V_6"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.RldChemInjectors::CanMilk(GameItem)",
+    "at": 9,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsLactating()",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "call RedLightDistrict.TalentData RedLightDistrict.TalentSystem::ResolveOwnerData(GameItem)"
+      },
+      {
+        "index": 2,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 3,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 4,
+        "il": "brfalse.s @1D"
+      },
+      {
+        "index": 5,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 6,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsLactated"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @1A"
+      },
+      {
+        "index": 8,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 9,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsLactating()"
+      },
+      {
+        "index": 10,
+        "il": "br.s @1E"
+      },
+      {
+        "index": 11,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 12,
+        "il": "br.s @1E"
+      },
+      {
+        "index": 13,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 14,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 15,
+        "il": "leave.s @26"
+      },
+      {
+        "index": 16,
+        "il": "pop "
+      },
+      {
+        "index": 17,
+        "il": "ldc.i4.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixInitDirectory(ItemDirectory)",
+    "at": 11,
+    "callee": "System.Void RedLightDistrict.TalentEquipment::RegisterToDirectory(ItemDirectory)",
+    "context": [
+      {
+        "index": 2,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_d162a362bb7b89c81044()"
+      },
+      {
+        "index": 3,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.Void RedLightDistrict.TalentSystem::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 6,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 7,
+        "il": "call System.Void RedLightDistrict.TalentPrison::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 9,
+        "il": "call System.Void RedLightDistrict.TalentSignboard::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 10,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 11,
+        "il": "call System.Void RedLightDistrict.TalentEquipment::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "call System.Void RedLightDistrict.TalentAccessory::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 14,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 15,
+        "il": "call System.Void RedLightDistrict.SewingMachine::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 16,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 17,
+        "il": "call System.Void RedLightDistrict.RedLightChemFinisher::RegisterToDirectory(ItemDirectory)"
+      },
+      {
+        "index": 18,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 19,
+        "il": "call System.Void RedLightDistrict.MilkingRoom::RegisterToDirectory(ItemDirectory)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::IsSelfMadeItemForPricing(GameItem)",
+    "at": 9,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brfalse.s @23"
+      },
+      {
+        "index": 2,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 3,
+        "il": "callvirt System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 4,
+        "il": "ldstr talent_redlight"
+      },
+      {
+        "index": 5,
+        "il": "call System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "index": 6,
+        "il": "brtrue.s @21"
+      },
+      {
+        "index": 7,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 8,
+        "il": "callvirt System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 9,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 10,
+        "il": "ret "
+      },
+      {
+        "index": 11,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 12,
+        "il": "ret "
+      },
+      {
+        "index": 13,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 14,
+        "il": "ret "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetCurrentValue(GameItem,System.Int64&,System.Boolean&,System.Boolean,System.Boolean,System.Boolean,System.Int64)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @39"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 9,
+        "il": "brtrue.s @19"
+      },
+      {
+        "index": 10,
+        "il": "ldnull "
+      },
+      {
+        "index": 11,
+        "il": "br.s @1F"
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 14,
+        "il": "call System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetNegociatedValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @39"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 9,
+        "il": "brtrue.s @19"
+      },
+      {
+        "index": 10,
+        "il": "ldnull "
+      },
+      {
+        "index": 11,
+        "il": "br.s @1F"
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 14,
+        "il": "call System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetComplexeItemValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @39"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 9,
+        "il": "brtrue.s @19"
+      },
+      {
+        "index": 10,
+        "il": "ldnull "
+      },
+      {
+        "index": 11,
+        "il": "br.s @1F"
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 14,
+        "il": "call System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetRefreshedValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @39"
+      },
+      {
+        "index": 8,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 9,
+        "il": "brtrue.s @19"
+      },
+      {
+        "index": 10,
+        "il": "ldnull "
+      },
+      {
+        "index": 11,
+        "il": "br.s @1F"
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 14,
+        "il": "call System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetCurrentValue(GameItem,System.Int64&,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int64)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @15"
+      },
+      {
+        "index": 8,
+        "il": "leave.s @35"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "ldind.i8 "
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "call System.Int64 RedLightDistrict.TalentEquipment::PriceWithDurability(GameItem,System.Int64)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetCurrentValue(GameItem,System.Int64&,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int64)",
+    "at": 14,
+    "callee": "System.Int64 RedLightDistrict.TalentEquipment::PriceWithDurability(GameItem,System.Int64)",
+    "context": [
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @15"
+      },
+      {
+        "index": 8,
+        "il": "leave.s @35"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "ldind.i8 "
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "call System.Int64 RedLightDistrict.TalentEquipment::PriceWithDurability(GameItem,System.Int64)"
+      },
+      {
+        "index": 15,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 16,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 17,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 18,
+        "il": "stind.i8 "
+      },
+      {
+        "index": 19,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 20,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 21,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 22,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_8a895b0697c7995e1e42()"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetNegociatedValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @15"
+      },
+      {
+        "index": 8,
+        "il": "leave.s @2A"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "ldind.i8 "
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "ldloc.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetComplexeItemValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @15"
+      },
+      {
+        "index": 8,
+        "il": "leave.s @2A"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "ldind.i8 "
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "ldloc.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetRefreshedValue(GameItem,System.Int64&)",
+    "at": 6,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 0,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 1,
+        "il": "brtrue.s @6"
+      },
+      {
+        "index": 2,
+        "il": "ldnull "
+      },
+      {
+        "index": 3,
+        "il": "br.s @C"
+      },
+      {
+        "index": 4,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 5,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 6,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 7,
+        "il": "brtrue.s @15"
+      },
+      {
+        "index": 8,
+        "il": "leave.s @2A"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "ldind.i8 "
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "ldloc.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::PrefixGetBaseValue(GameItem,System.Int64&)",
+    "at": 12,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 3,
+        "il": "callvirt System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 4,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 5,
+        "il": "leave.s @E"
+      },
+      {
+        "index": 6,
+        "il": "pop "
+      },
+      {
+        "index": 7,
+        "il": "leave.s @E"
+      },
+      {
+        "index": 8,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 9,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 10,
+        "il": "brtrue.s @43"
+      },
+      {
+        "index": 11,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 13,
+        "il": "brtrue.s @26"
+      },
+      {
+        "index": 14,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 15,
+        "il": "call System.Boolean RedLightDistrict.TalentAccessory::IsAccessory(System.String)"
+      },
+      {
+        "index": 16,
+        "il": "brfalse.s @43"
+      },
+      {
+        "index": 17,
+        "il": "nop "
+      },
+      {
+        "index": 18,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 19,
+        "il": "callvirt System.Int64 GameItem::get_unitValue()"
+      },
+      {
+        "index": 20,
+        "il": "stloc.3 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)",
+    "at": 10,
+    "callee": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+    "context": [
+      {
+        "index": 1,
+        "il": "ldnull "
+      },
+      {
+        "index": 2,
+        "il": "stind.ref "
+      },
+      {
+        "index": 3,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 4,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 5,
+        "il": "brfalse.s @D"
+      },
+      {
+        "index": 6,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 7,
+        "il": "ret "
+      },
+      {
+        "index": 8,
+        "il": "nop "
+      },
+      {
+        "index": 9,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 10,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 13,
+        "il": "brfalse.s @7E"
+      },
+      {
+        "index": 14,
+        "il": "newobj System.Void System.Collections.Generic.List`1<System.String>::.ctor()"
+      },
+      {
+        "index": 15,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 16,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 17,
+        "il": "ldfld System.String RedLightDistrict.TalentEquipment/EquipDef::Name"
+      },
+      {
+        "index": 18,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List`1<System.String>&)",
+    "at": 26,
+    "callee": "System.String RedLightDistrict.TalentEquipment::ClothingDescription(RedLightDistrict.TalentEquipment/EquipDef)",
+    "context": [
+      {
+        "index": 17,
+        "il": "ldfld System.String RedLightDistrict.TalentEquipment/EquipDef::Name"
+      },
+      {
+        "index": 18,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 19,
+        "il": "brtrue.s @37"
+      },
+      {
+        "index": 20,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 21,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 22,
+        "il": "ldfld System.String RedLightDistrict.TalentEquipment/EquipDef::Name"
+      },
+      {
+        "index": 23,
+        "il": "callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 24,
+        "il": "nop "
+      },
+      {
+        "index": 25,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 26,
+        "il": "call System.String RedLightDistrict.TalentEquipment::ClothingDescription(RedLightDistrict.TalentEquipment/EquipDef)"
+      },
+      {
+        "index": 27,
+        "il": "stloc.3 "
+      },
+      {
+        "index": 28,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 29,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 30,
+        "il": "brtrue.s @4E"
+      },
+      {
+        "index": 31,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 32,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 33,
+        "il": "callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 34,
+        "il": "leave.s @53"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltip(System.String,RichTextBuilder&)",
+    "at": 15,
+    "callee": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+    "context": [
+      {
+        "index": 6,
+        "il": "brfalse.s @18"
+      },
+      {
+        "index": 7,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 8,
+        "il": "brfalse.s @18"
+      },
+      {
+        "index": 9,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 10,
+        "il": "callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 11,
+        "il": "brtrue.s @1A"
+      },
+      {
+        "index": 12,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 13,
+        "il": "ret "
+      },
+      {
+        "index": 14,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 15,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 16,
+        "il": "brfalse.s @24"
+      },
+      {
+        "index": 17,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 18,
+        "il": "ret "
+      },
+      {
+        "index": 19,
+        "il": "nop "
+      },
+      {
+        "index": 20,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 21,
+        "il": "newobj System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "index": 22,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 23,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltip(System.String,RichTextBuilder&)",
+    "at": 24,
+    "callee": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+    "context": [
+      {
+        "index": 15,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 16,
+        "il": "brfalse.s @24"
+      },
+      {
+        "index": 17,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 18,
+        "il": "ret "
+      },
+      {
+        "index": 19,
+        "il": "nop "
+      },
+      {
+        "index": 20,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 21,
+        "il": "newobj System.Void RichTextBuilder::.ctor(System.Int32)"
+      },
+      {
+        "index": 22,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 23,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 24,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 25,
+        "il": "ldnull "
+      },
+      {
+        "index": 26,
+        "il": "cgt.un "
+      },
+      {
+        "index": 27,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 28,
+        "il": "ldloc.2 "
+      },
+      {
+        "index": 29,
+        "il": "brtrue.s @45"
+      },
+      {
+        "index": 30,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 31,
+        "il": "call RedLightDistrict.TalentAccessory/AccessoryDef RedLightDistrict.TalentAccessory::Find(System.String)"
+      },
+      {
+        "index": 32,
+        "il": "ldnull "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetTooltipBasicDurability(GameItemElement,RichTextBuilder&)",
+    "at": 17,
+    "callee": "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+    "context": [
+      {
+        "index": 8,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 9,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 10,
+        "il": "callvirt System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 11,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 12,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 13,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 14,
+        "il": "brfalse.s @26"
+      },
+      {
+        "index": 15,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 16,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 17,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 18,
+        "il": "brtrue.s @30"
+      },
+      {
+        "index": 19,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 20,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 21,
+        "il": "ldind.ref "
+      },
+      {
+        "index": 22,
+        "il": "brtrue.s @36"
+      },
+      {
+        "index": 23,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetTooltipBasicDurability(GameItemElement,RichTextBuilder&)",
+    "at": 25,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)",
+    "context": [
+      {
+        "index": 16,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 17,
+        "il": "call RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)"
+      },
+      {
+        "index": 18,
+        "il": "brtrue.s @30"
+      },
+      {
+        "index": 19,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 20,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 21,
+        "il": "ldind.ref "
+      },
+      {
+        "index": 22,
+        "il": "brtrue.s @36"
+      },
+      {
+        "index": 23,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)"
+      },
+      {
+        "index": 26,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 27,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 28,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)"
+      },
+      {
+        "index": 29,
+        "il": "stloc.3 "
+      },
+      {
+        "index": 30,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 31,
+        "il": "ldind.ref "
+      },
+      {
+        "index": 32,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_99844e145a6c045d38fe()"
+      },
+      {
+        "index": 33,
+        "il": "ldloca.s V_2"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentPatches::PostfixGetTooltipBasicDurability(GameItemElement,RichTextBuilder&)",
+    "at": 28,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)",
+    "context": [
+      {
+        "index": 19,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 20,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 21,
+        "il": "ldind.ref "
+      },
+      {
+        "index": 22,
+        "il": "brtrue.s @36"
+      },
+      {
+        "index": 23,
+        "il": "leave.s @77"
+      },
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)"
+      },
+      {
+        "index": 26,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 27,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 28,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)"
+      },
+      {
+        "index": 29,
+        "il": "stloc.3 "
+      },
+      {
+        "index": 30,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 31,
+        "il": "ldind.ref "
+      },
+      {
+        "index": 32,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_99844e145a6c045d38fe()"
+      },
+      {
+        "index": 33,
+        "il": "ldloca.s V_2"
+      },
+      {
+        "index": 34,
+        "il": "call System.String System.Int32::ToString()"
+      },
+      {
+        "index": 35,
+        "il": "ldstr /"
+      },
+      {
+        "index": 36,
+        "il": "ldloca.s V_3"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSaveStore::CarryEquippedClothing()",
+    "at": 45,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::CountEquipmentItemsInWorld(System.String)",
+    "context": [
+      {
+        "index": 36,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 37,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 38,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 39,
+        "il": "brtrue @1A9"
+      },
+      {
+        "index": 40,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 41,
+        "il": "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 42,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 43,
+        "il": "brfalse @1A9"
+      },
+      {
+        "index": 44,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 45,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::CountEquipmentItemsInWorld(System.String)"
+      },
+      {
+        "index": 46,
+        "il": "stloc.s V_6"
+      },
+      {
+        "index": 47,
+        "il": "ldloc.s V_6"
+      },
+      {
+        "index": 48,
+        "il": "brfalse.s @11C"
+      },
+      {
+        "index": 49,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 50,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 51,
+        "il": "add "
+      },
+      {
+        "index": 52,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 53,
+        "il": "ldc.i4.6 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSaveStore::CarryEquippedClothing()",
+    "at": 62,
+    "callee": "System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)",
+    "context": [
+      {
+        "index": 53,
+        "il": "ldc.i4.6 "
+      },
+      {
+        "index": 54,
+        "il": "newarr System.String"
+      },
+      {
+        "index": 55,
+        "il": "dup "
+      },
+      {
+        "index": 56,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 57,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_5405526693e296192756()"
+      },
+      {
+        "index": 58,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 59,
+        "il": "dup "
+      },
+      {
+        "index": 60,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 61,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 62,
+        "il": "call System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)"
+      },
+      {
+        "index": 63,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 64,
+        "il": "dup "
+      },
+      {
+        "index": 65,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 66,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_00e7b49e5455485602b2()"
+      },
+      {
+        "index": 67,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 68,
+        "il": "dup "
+      },
+      {
+        "index": 69,
+        "il": "ldc.i4.3 "
+      },
+      {
+        "index": 70,
+        "il": "ldloc.3 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSaveStore::CarryEquippedClothing()",
+    "at": 107,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)",
+    "context": [
+      {
+        "index": 98,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 99,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 100,
+        "il": "stfld System.String RedLightDistrict.TalentData::EquippedClothingId"
+      },
+      {
+        "index": 101,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 102,
+        "il": "ldloca.s V_4"
+      },
+      {
+        "index": 103,
+        "il": "call System.Int32 System.Collections.Generic.KeyValuePair`2<System.String,System.Int32>::get_Value()"
+      },
+      {
+        "index": 104,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 105,
+        "il": "bgt.s @138"
+      },
+      {
+        "index": 106,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 107,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)"
+      },
+      {
+        "index": 108,
+        "il": "br.s @13F"
+      },
+      {
+        "index": 109,
+        "il": "ldloca.s V_4"
+      },
+      {
+        "index": 110,
+        "il": "call System.Int32 System.Collections.Generic.KeyValuePair`2<System.String,System.Int32>::get_Value()"
+      },
+      {
+        "index": 111,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::ClothingDurability"
+      },
+      {
+        "index": 112,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 113,
+        "il": "call System.Void RedLightDistrict.TalentEquipment::SyncEquipStatBonus(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 114,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 115,
+        "il": "ldc.i4.1 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSaveStore::CarryEquippedClothing()",
+    "at": 113,
+    "callee": "System.Void RedLightDistrict.TalentEquipment::SyncEquipStatBonus(RedLightDistrict.TalentData)",
+    "context": [
+      {
+        "index": 104,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 105,
+        "il": "bgt.s @138"
+      },
+      {
+        "index": 106,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 107,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)"
+      },
+      {
+        "index": 108,
+        "il": "br.s @13F"
+      },
+      {
+        "index": 109,
+        "il": "ldloca.s V_4"
+      },
+      {
+        "index": 110,
+        "il": "call System.Int32 System.Collections.Generic.KeyValuePair`2<System.String,System.Int32>::get_Value()"
+      },
+      {
+        "index": 111,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::ClothingDurability"
+      },
+      {
+        "index": 112,
+        "il": "ldloc.3 "
+      },
+      {
+        "index": 113,
+        "il": "call System.Void RedLightDistrict.TalentEquipment::SyncEquipStatBonus(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 114,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 115,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 116,
+        "il": "add "
+      },
+      {
+        "index": 117,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 118,
+        "il": "ldc.i4.7 "
+      },
+      {
+        "index": 119,
+        "il": "newarr System.String"
+      },
+      {
+        "index": 120,
+        "il": "dup "
+      },
+      {
+        "index": 121,
+        "il": "ldc.i4.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSaveStore::CarryEquippedClothing()",
+    "at": 127,
+    "callee": "System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)",
+    "context": [
+      {
+        "index": 118,
+        "il": "ldc.i4.7 "
+      },
+      {
+        "index": 119,
+        "il": "newarr System.String"
+      },
+      {
+        "index": 120,
+        "il": "dup "
+      },
+      {
+        "index": 121,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 122,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_61db2f326d76d59441be()"
+      },
+      {
+        "index": 123,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 124,
+        "il": "dup "
+      },
+      {
+        "index": 125,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 126,
+        "il": "ldloc.s V_5"
+      },
+      {
+        "index": 127,
+        "il": "call System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)"
+      },
+      {
+        "index": 128,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 129,
+        "il": "dup "
+      },
+      {
+        "index": 130,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 131,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_5b6163cb0e761e252ff7()"
+      },
+      {
+        "index": 132,
+        "il": "stelem.ref "
+      },
+      {
+        "index": 133,
+        "il": "dup "
+      },
+      {
+        "index": 134,
+        "il": "ldc.i4.3 "
+      },
+      {
+        "index": 135,
+        "il": "ldloc.3 "
+      }
+    ]
+  },
+  {
+    "caller": "RedLightDistrict.TalentMood RedLightDistrict.TalentState::Eval(RedLightDistrict.TalentData,GameItem)",
+    "at": 15,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()",
+    "context": [
+      {
+        "index": 6,
+        "il": "brfalse.s @F"
+      },
+      {
+        "index": 7,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 8,
+        "il": "ret "
+      },
+      {
+        "index": 9,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 10,
+        "il": "brfalse.s @2C"
+      },
+      {
+        "index": 11,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsNamed"
+      },
+      {
+        "index": 13,
+        "il": "brtrue.s @2C"
+      },
+      {
+        "index": 14,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 15,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 16,
+        "il": "brtrue.s @2C"
+      },
+      {
+        "index": 17,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 18,
+        "il": "call System.Boolean RedLightDistrict.PatronSystem::HasCurrentPatronWantTag(GameItem)"
+      },
+      {
+        "index": 19,
+        "il": "brfalse.s @2C"
+      },
+      {
+        "index": 20,
+        "il": "ldc.i4.6 "
+      },
+      {
+        "index": 21,
+        "il": "ret "
+      },
+      {
+        "index": 22,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 23,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsPregnant()"
+      }
+    ]
+  },
+  {
+    "caller": "RedLightDistrict.TalentMood RedLightDistrict.TalentState::Eval(RedLightDistrict.TalentData,GameItem)",
+    "at": 23,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsPregnant()",
+    "context": [
+      {
+        "index": 14,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 15,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsUnsellableToPatron()"
+      },
+      {
+        "index": 16,
+        "il": "brtrue.s @2C"
+      },
+      {
+        "index": 17,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 18,
+        "il": "call System.Boolean RedLightDistrict.PatronSystem::HasCurrentPatronWantTag(GameItem)"
+      },
+      {
+        "index": 19,
+        "il": "brfalse.s @2C"
+      },
+      {
+        "index": 20,
+        "il": "ldc.i4.6 "
+      },
+      {
+        "index": 21,
+        "il": "ret "
+      },
+      {
+        "index": 22,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 23,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsPregnant()"
+      },
+      {
+        "index": 24,
+        "il": "brfalse.s @36"
+      },
+      {
+        "index": 25,
+        "il": "ldc.i4.7 "
+      },
+      {
+        "index": 26,
+        "il": "ret "
+      },
+      {
+        "index": 27,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 28,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsSick"
+      },
+      {
+        "index": 29,
+        "il": "brtrue.s @5E"
+      },
+      {
+        "index": 30,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 31,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsSedated"
+      }
+    ]
+  },
+  {
+    "caller": "GameItem RedLightDistrict.TalentSystem::CreateTalentItem(RedLightDistrict.TalentData)",
+    "at": 47,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 38,
+        "il": "ldloca.s V_9"
+      },
+      {
+        "index": 39,
+        "il": "call RedLightDistrict.TalentData System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::get_Current()"
+      },
+      {
+        "index": 40,
+        "il": "stloc.s V_10"
+      },
+      {
+        "index": 41,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 42,
+        "il": "brfalse.s @A5"
+      },
+      {
+        "index": 43,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 44,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 45,
+        "il": "beq.s @A5"
+      },
+      {
+        "index": 46,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 47,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 48,
+        "il": "brtrue.s @A5"
+      },
+      {
+        "index": 49,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 50,
+        "il": "ldfld System.String RedLightDistrict.TalentData::PortraitKey"
+      },
+      {
+        "index": 51,
+        "il": "call System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 52,
+        "il": "brtrue.s @A5"
+      },
+      {
+        "index": 53,
+        "il": "ldloc.s V_10"
+      },
+      {
+        "index": 54,
+        "il": "call GameItem RedLightDistrict.TalentPrison::FindTalentItemAnywhere(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 55,
+        "il": "brfalse.s @A5"
+      }
+    ]
+  },
+  {
+    "caller": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)",
+    "at": 43,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsPregnant()",
+    "context": [
+      {
+        "index": 34,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_2e4c8c4ebefedf53d6ad()"
+      },
+      {
+        "index": 35,
+        "il": "callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 36,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 37,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::IsContracepted"
+      },
+      {
+        "index": 38,
+        "il": "brfalse.s @88"
+      },
+      {
+        "index": 39,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 40,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_306b1f882a001171ad62()"
+      },
+      {
+        "index": 41,
+        "il": "callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 42,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 43,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsPregnant()"
+      },
+      {
+        "index": 44,
+        "il": "brfalse.s @B0"
+      },
+      {
+        "index": 45,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 46,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_f84728e34dcae65c2bb0()"
+      },
+      {
+        "index": 47,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 48,
+        "il": "ldflda System.Int32 RedLightDistrict.TalentData::PregnancyDays"
+      },
+      {
+        "index": 49,
+        "il": "call System.String System.Int32::ToString()"
+      },
+      {
+        "index": 50,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_303ef9916ba281192dbb()"
+      },
+      {
+        "index": 51,
+        "il": "call System.String System.String::Concat(System.String,System.String,System.String)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 23,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 14,
+        "il": "call System.Boolean RedLightDistrict.TalentPrison::IsTraffickerStock(GameItem)"
+      },
+      {
+        "index": 15,
+        "il": "brfalse.s @32"
+      },
+      {
+        "index": 16,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_2dacfcd1b649f9b365f6()"
+      },
+      {
+        "index": 17,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 18,
+        "il": "leave @60E"
+      },
+      {
+        "index": 19,
+        "il": "leave.s @37"
+      },
+      {
+        "index": 20,
+        "il": "pop "
+      },
+      {
+        "index": 21,
+        "il": "leave.s @37"
+      },
+      {
+        "index": 22,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 23,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 24,
+        "il": "brfalse.s @4E"
+      },
+      {
+        "index": 25,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_bcc560ab03f158a1d304()"
+      },
+      {
+        "index": 26,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 27,
+        "il": "leave @60E"
+      },
+      {
+        "index": 28,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 29,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::HasInteractedToday"
+      },
+      {
+        "index": 30,
+        "il": "brfalse.s @65"
+      },
+      {
+        "index": 31,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_b9e66cdc75c123aca493()"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 44,
+    "callee": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToAbuse(RedLightDistrict.TalentData)",
+    "context": [
+      {
+        "index": 35,
+        "il": "ldarg.2 "
+      },
+      {
+        "index": 36,
+        "il": "call System.Boolean RedLightDistrict.TalentSystem::CanChoose(RedLightDistrict.TalentData,RedLightDistrict.TalentSystem/TalentAction)"
+      },
+      {
+        "index": 37,
+        "il": "brtrue.s @7D"
+      },
+      {
+        "index": 38,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_17ae1ae57cff669837e2()"
+      },
+      {
+        "index": 39,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 40,
+        "il": "leave @60E"
+      },
+      {
+        "index": 41,
+        "il": "newobj System.Void System.Random::.ctor()"
+      },
+      {
+        "index": 42,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 43,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 44,
+        "il": "call System.Boolean RedLightDistrict.TalentTraits::ImmuneToAbuse(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 45,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 46,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 47,
+        "il": "call RedLightDistrict.TalentSystem/StatSnapshot RedLightDistrict.TalentSystem/StatSnapshot::Take(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 48,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 49,
+        "il": "ldnull "
+      },
+      {
+        "index": 50,
+        "il": "stloc.3 "
+      },
+      {
+        "index": 51,
+        "il": "ldnull "
+      },
+      {
+        "index": 52,
+        "il": "stloc.s V_4"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 80,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 71,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Health"
+      },
+      {
+        "index": 72,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 73,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 74,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 75,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 76,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 77,
+        "il": "ldc.i4.s 20"
+      },
+      {
+        "index": 78,
+        "il": "ldc.i4.s 30"
+      },
+      {
+        "index": 79,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 80,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 81,
+        "il": "add "
+      },
+      {
+        "index": 82,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 83,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 84,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 85,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 86,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 87,
+        "il": "brtrue @493"
+      },
+      {
+        "index": 88,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 121,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 112,
+        "il": "br @493"
+      },
+      {
+        "index": 113,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 114,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 115,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 116,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 117,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 118,
+        "il": "ldc.i4.s 10"
+      },
+      {
+        "index": 119,
+        "il": "ldc.i4.s 15"
+      },
+      {
+        "index": 120,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 121,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 122,
+        "il": "add "
+      },
+      {
+        "index": 123,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 124,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 125,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 126,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 127,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 128,
+        "il": "brtrue @493"
+      },
+      {
+        "index": 129,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 162,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 153,
+        "il": "br @493"
+      },
+      {
+        "index": 154,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 155,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 156,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 157,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 158,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 159,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 160,
+        "il": "ldc.i4.5 "
+      },
+      {
+        "index": 161,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 162,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 163,
+        "il": "add "
+      },
+      {
+        "index": 164,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 165,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 166,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 167,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 168,
+        "il": "br @493"
+      },
+      {
+        "index": 169,
+        "il": "call PlayerStore PlayerStore::get_Instance()"
+      },
+      {
+        "index": 170,
+        "il": "stloc.s V_9"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 194,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 185,
+        "il": "stfld System.Int32 PlayerStore::playerCash"
+      },
+      {
+        "index": 186,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 187,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 188,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Affection"
+      },
+      {
+        "index": 189,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 190,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 191,
+        "il": "ldc.i4.5 "
+      },
+      {
+        "index": 192,
+        "il": "ldc.i4.s 10"
+      },
+      {
+        "index": 193,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 194,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 195,
+        "il": "add "
+      },
+      {
+        "index": 196,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 197,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 198,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 199,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Affection"
+      },
+      {
+        "index": 200,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_1145cce525c281c9e94a()"
+      },
+      {
+        "index": 201,
+        "il": "ldc.i4.s 30"
+      },
+      {
+        "index": 202,
+        "il": "stloc.s V_10"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 217,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 208,
+        "il": "br @493"
+      },
+      {
+        "index": 209,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 210,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 211,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Affection"
+      },
+      {
+        "index": 212,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 213,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 214,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 215,
+        "il": "ldc.i4.5 "
+      },
+      {
+        "index": 216,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 217,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 218,
+        "il": "add "
+      },
+      {
+        "index": 219,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 220,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 221,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 222,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Affection"
+      },
+      {
+        "index": 223,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 224,
+        "il": "callvirt System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentData::GetHiddenTraits()"
+      },
+      {
+        "index": 225,
+        "il": "stloc.s V_11"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 283,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 274,
+        "il": "br @493"
+      },
+      {
+        "index": 275,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 276,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 277,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 278,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 279,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 280,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 281,
+        "il": "ldc.i4.8 "
+      },
+      {
+        "index": 282,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 283,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 284,
+        "il": "add "
+      },
+      {
+        "index": 285,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 286,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 287,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 288,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 289,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 290,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 291,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 297,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 288,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 289,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 290,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 291,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 292,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 293,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 294,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 295,
+        "il": "ldc.i4.5 "
+      },
+      {
+        "index": 296,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 297,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 298,
+        "il": "add "
+      },
+      {
+        "index": 299,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 300,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 301,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 302,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 303,
+        "il": "br @493"
+      },
+      {
+        "index": 304,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 305,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 312,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 303,
+        "il": "br @493"
+      },
+      {
+        "index": 304,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 305,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 306,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 307,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 308,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 309,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 310,
+        "il": "ldc.i4.5 "
+      },
+      {
+        "index": 311,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 312,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 313,
+        "il": "add "
+      },
+      {
+        "index": 314,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 315,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 316,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 317,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Obedience"
+      },
+      {
+        "index": 318,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 319,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 320,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Spirit"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 338,
+    "callee": "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)",
+    "context": [
+      {
+        "index": 329,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Spirit"
+      },
+      {
+        "index": 330,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 331,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 332,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 333,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 334,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 335,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 336,
+        "il": "ldc.i4.8 "
+      },
+      {
+        "index": 337,
+        "il": "call System.Int32 RedLightDistrict.TalentSystem::Rand(System.Random,System.Int32,System.Int32)"
+      },
+      {
+        "index": 338,
+        "il": "call System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 339,
+        "il": "add "
+      },
+      {
+        "index": 340,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 341,
+        "il": "ldc.i4.s 100"
+      },
+      {
+        "index": 342,
+        "il": "call System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 343,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 344,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 345,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 346,
+        "il": "call System.Boolean RedLightDistrict.TalentSexScene::TryPlay(RedLightDistrict.TalentData,GameItem)"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "at": 363,
+    "callee": "System.Int32 RedLightDistrict.TalentData::AddSemenML(System.Int32)",
+    "context": [
+      {
+        "index": 354,
+        "il": "pop "
+      },
+      {
+        "index": 355,
+        "il": "ldnull "
+      },
+      {
+        "index": 356,
+        "il": "br.s @3FA"
+      },
+      {
+        "index": 357,
+        "il": "callvirt System.String System.Object::ToString()"
+      },
+      {
+        "index": 358,
+        "il": "call System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "index": 359,
+        "il": "call System.Void UnityEngine.Debug::LogError(System.Object)"
+      },
+      {
+        "index": 360,
+        "il": "leave.s @406"
+      },
+      {
+        "index": 361,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 362,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 363,
+        "il": "callvirt System.Int32 RedLightDistrict.TalentData::AddSemenML(System.Int32)"
+      },
+      {
+        "index": 364,
+        "il": "pop "
+      },
+      {
+        "index": 365,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 366,
+        "il": "ldfld System.Boolean RedLightDistrict.TalentData::HasVirginTag"
+      },
+      {
+        "index": 367,
+        "il": "brfalse.s @439"
+      },
+      {
+        "index": 368,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 369,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 370,
+        "il": "stfld System.Boolean RedLightDistrict.TalentData::HasVirginTag"
+      },
+      {
+        "index": 371,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_35335707a043905f5ba3()"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::CollectInternalSemen(GameItem,GameItem)",
+    "at": 14,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 5,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 6,
+        "il": "call RedLightDistrict.TalentData RedLightDistrict.TalentSystem::GetTalentByItem(GameItem)"
+      },
+      {
+        "index": 7,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 8,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 9,
+        "il": "brtrue.s @1C"
+      },
+      {
+        "index": 10,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_79ff7e1f74c4fee88885()"
+      },
+      {
+        "index": 11,
+        "il": "call System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "index": 12,
+        "il": "ret "
+      },
+      {
+        "index": 13,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 14,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 15,
+        "il": "brfalse.s @44"
+      },
+      {
+        "index": 16,
+        "il": "call StoreUIManager StoreUIManager::get_Instance()"
+      },
+      {
+        "index": 17,
+        "il": "dup "
+      },
+      {
+        "index": 18,
+        "il": "brtrue.s @2F"
+      },
+      {
+        "index": 19,
+        "il": "pop "
+      },
+      {
+        "index": 20,
+        "il": "br.s @3E"
+      },
+      {
+        "index": 21,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_90731386635f8c527598()"
+      },
+      {
+        "index": 22,
+        "il": "ldstr cc7755"
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentTarget::IsDraggable(GameItem)",
+    "at": 11,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 2,
+        "il": "brfalse.s @A"
+      },
+      {
+        "index": 3,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 4,
+        "il": "ret "
+      },
+      {
+        "index": 5,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 6,
+        "il": "brtrue.s @10"
+      },
+      {
+        "index": 7,
+        "il": "ldnull "
+      },
+      {
+        "index": 8,
+        "il": "br.s @16"
+      },
+      {
+        "index": 9,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 10,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 11,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 12,
+        "il": "brfalse.s @1F"
+      },
+      {
+        "index": 13,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 14,
+        "il": "ret "
+      },
+      {
+        "index": 15,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 16,
+        "il": "brtrue.s @25"
+      },
+      {
+        "index": 17,
+        "il": "ldnull "
+      },
+      {
+        "index": 18,
+        "il": "br.s @2B"
+      },
+      {
+        "index": 19,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::ApplyDrag(GameItem,GameItem)",
+    "at": 18,
+    "callee": "System.Boolean RedLightDistrict.TalentData::get_IsDead()",
+    "context": [
+      {
+        "index": 9,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 10,
+        "il": "call RedLightDistrict.TalentData RedLightDistrict.TalentSystem::GetTalentByItem(GameItem)"
+      },
+      {
+        "index": 11,
+        "il": "stloc.0 "
+      },
+      {
+        "index": 12,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 13,
+        "il": "brtrue.s @34"
+      },
+      {
+        "index": 14,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_af14fb8d611e790e960a()"
+      },
+      {
+        "index": 15,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 16,
+        "il": "ret "
+      },
+      {
+        "index": 17,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 18,
+        "il": "callvirt System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 19,
+        "il": "brfalse.s @47"
+      },
+      {
+        "index": 20,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_5b669e2500face42a7e5()"
+      },
+      {
+        "index": 21,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 22,
+        "il": "ret "
+      },
+      {
+        "index": 23,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 24,
+        "il": "call System.Boolean RedLightDistrict.TalentTarget::TalentIsOwned(GameItem)"
+      },
+      {
+        "index": 25,
+        "il": "brtrue.s @5A"
+      },
+      {
+        "index": 26,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_d9bbb34ae40f6485d5d7()"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::ApplyDrag(GameItem,GameItem)",
+    "at": 52,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 43,
+        "il": "call System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "index": 44,
+        "il": "call System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 45,
+        "il": "ret "
+      },
+      {
+        "index": 46,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 47,
+        "il": "brtrue.s @8D"
+      },
+      {
+        "index": 48,
+        "il": "ldnull "
+      },
+      {
+        "index": 49,
+        "il": "br.s @93"
+      },
+      {
+        "index": 50,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 51,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 52,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 53,
+        "il": "brfalse.s @A4"
+      },
+      {
+        "index": 54,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 55,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 56,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 57,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::HandleEquipDrag(GameItem,GameItem,System.Boolean)"
+      },
+      {
+        "index": 58,
+        "il": "pop "
+      },
+      {
+        "index": 59,
+        "il": "ret "
+      },
+      {
+        "index": 60,
+        "il": "ldarg.1 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::ApplyDrag(GameItem,GameItem)",
+    "at": 57,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::HandleEquipDrag(GameItem,GameItem,System.Boolean)",
+    "context": [
+      {
+        "index": 48,
+        "il": "ldnull "
+      },
+      {
+        "index": 49,
+        "il": "br.s @93"
+      },
+      {
+        "index": 50,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 51,
+        "il": "call System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 52,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 53,
+        "il": "brfalse.s @A4"
+      },
+      {
+        "index": 54,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 55,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 56,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 57,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::HandleEquipDrag(GameItem,GameItem,System.Boolean)"
+      },
+      {
+        "index": 58,
+        "il": "pop "
+      },
+      {
+        "index": 59,
+        "il": "ret "
+      },
+      {
+        "index": 60,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 61,
+        "il": "brtrue.s @AA"
+      },
+      {
+        "index": 62,
+        "il": "ldnull "
+      },
+      {
+        "index": 63,
+        "il": "br.s @B0"
+      },
+      {
+        "index": 64,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 65,
+        "il": "call System.String GameItem::get_identifier()"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 109,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 100,
+        "il": "brfalse.s @103"
+      },
+      {
+        "index": 101,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 102,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 103,
+        "il": "beq.s @100"
+      },
+      {
+        "index": 104,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 105,
+        "il": "br.s @104"
+      },
+      {
+        "index": 106,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 107,
+        "il": "br.s @104"
+      },
+      {
+        "index": 108,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 109,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 110,
+        "il": "stloc.s V_6"
+      },
+      {
+        "index": 111,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 112,
+        "il": "brfalse.s @116"
+      },
+      {
+        "index": 113,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 114,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 115,
+        "il": "beq.s @133"
+      },
+      {
+        "index": 116,
+        "il": "br.s @150"
+      },
+      {
+        "index": 117,
+        "il": "ldarg.0 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 123,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 114,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 115,
+        "il": "beq.s @133"
+      },
+      {
+        "index": 116,
+        "il": "br.s @150"
+      },
+      {
+        "index": 117,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 118,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 119,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 120,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 121,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 122,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 123,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 124,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 125,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_27717340a49b3485f3fb()"
+      },
+      {
+        "index": 126,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 127,
+        "il": "br.s @16B"
+      },
+      {
+        "index": 128,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 129,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 130,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 131,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Body"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 134,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 125,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_27717340a49b3485f3fb()"
+      },
+      {
+        "index": 126,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 127,
+        "il": "br.s @16B"
+      },
+      {
+        "index": 128,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 129,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 130,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 131,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 132,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 133,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 134,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 135,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 136,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_f5a39c8e54dc3dde3931()"
+      },
+      {
+        "index": 137,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 138,
+        "il": "br.s @16B"
+      },
+      {
+        "index": 139,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 140,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 141,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 142,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 145,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 136,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_f5a39c8e54dc3dde3931()"
+      },
+      {
+        "index": 137,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 138,
+        "il": "br.s @16B"
+      },
+      {
+        "index": 139,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 140,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 141,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 142,
+        "il": "ldfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 143,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 144,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 145,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 146,
+        "il": "stfld System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 147,
+        "il": "call System.String RedLightDistrict.Korean.CsvLookup::rld_73096f577f0739625422()"
+      },
+      {
+        "index": 148,
+        "il": "stloc.s V_5"
+      },
+      {
+        "index": 149,
+        "il": "ldarg.0 "
+      },
+      {
+        "index": 150,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 151,
+        "il": "brfalse.s @185"
+      },
+      {
+        "index": 152,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 153,
+        "il": "ldc.i4.1 "
+      }
+    ]
+  },
+  {
+    "caller": "System.Void RedLightDistrict.TalentTarget::HandleSemenToTalent(RedLightDistrict.TalentData,GameItem,GameItem)",
+    "at": 173,
+    "callee": "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+    "context": [
+      {
+        "index": 164,
+        "il": "brfalse.s @19A"
+      },
+      {
+        "index": 165,
+        "il": "ldloc.s V_4"
+      },
+      {
+        "index": 166,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 167,
+        "il": "beq.s @197"
+      },
+      {
+        "index": 168,
+        "il": "ldc.i4.2 "
+      },
+      {
+        "index": 169,
+        "il": "br.s @19B"
+      },
+      {
+        "index": 170,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 171,
+        "il": "br.s @19B"
+      },
+      {
+        "index": 172,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 173,
+        "il": "call System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 174,
+        "il": "ldloc.s V_6"
+      },
+      {
+        "index": 175,
+        "il": "sub "
+      },
+      {
+        "index": 176,
+        "il": "stloc.s V_7"
+      },
+      {
+        "index": 177,
+        "il": "ldloc.s V_7"
+      },
+      {
+        "index": 178,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 179,
+        "il": "ble.s @1C3"
+      },
+      {
+        "index": 180,
+        "il": "ldstr (+"
+      },
+      {
+        "index": 181,
+        "il": "ldloca.s V_7"
+      }
+    ]
+  },
+  {
+    "caller": "GameItem RedLightDistrict.TalentTrafficker::StockSupplyItem(PlayerStore,System.String,System.String,System.Int64,System.Int32)",
+    "at": 45,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 36,
+        "il": "callvirt System.Boolean GameItem::DisableTag(System.String,System.Boolean)"
+      },
+      {
+        "index": 37,
+        "il": "pop "
+      },
+      {
+        "index": 38,
+        "il": "leave.s @5D"
+      },
+      {
+        "index": 39,
+        "il": "pop "
+      },
+      {
+        "index": 40,
+        "il": "leave.s @5D"
+      },
+      {
+        "index": 41,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 42,
+        "il": "ldloca.s V_1"
+      },
+      {
+        "index": 43,
+        "il": "call System.Boolean RedLightDistrict.TalentTrafficker::CounterHasRoomFor(GameItem,System.String&)"
+      },
+      {
+        "index": 44,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 45,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 46,
+        "il": "brtrue.s @75"
+      },
+      {
+        "index": 47,
+        "il": "ldarg.1 "
+      },
+      {
+        "index": 48,
+        "il": "call System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)"
+      },
+      {
+        "index": 49,
+        "il": "br.s @76"
+      },
+      {
+        "index": 50,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 51,
+        "il": "stloc.2 "
+      },
+      {
+        "index": 52,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 53,
+        "il": "ceq "
+      }
+    ]
+  },
+  {
+    "caller": "System.Boolean RedLightDistrict.TalentTrafficker::IsTradeSupplyItem(GameItem)",
+    "at": 29,
+    "callee": "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+    "context": [
+      {
+        "index": 20,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 21,
+        "il": "ldstr dream_dust"
+      },
+      {
+        "index": 22,
+        "il": "call System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "index": 23,
+        "il": "brtrue.s @56"
+      },
+      {
+        "index": 24,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 25,
+        "il": "ldstr birth_control_pill"
+      },
+      {
+        "index": 26,
+        "il": "call System.Boolean System.String::op_Equality(System.String,System.String)"
+      },
+      {
+        "index": 27,
+        "il": "brtrue.s @56"
+      },
+      {
+        "index": 28,
+        "il": "ldloc.0 "
+      },
+      {
+        "index": 29,
+        "il": "call System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)"
+      },
+      {
+        "index": 30,
+        "il": "ldc.i4.0 "
+      },
+      {
+        "index": 31,
+        "il": "cgt.un "
+      },
+      {
+        "index": 32,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 33,
+        "il": "br.s @58"
+      },
+      {
+        "index": 34,
+        "il": "ldc.i4.1 "
+      },
+      {
+        "index": 35,
+        "il": "stloc.1 "
+      },
+      {
+        "index": 36,
+        "il": "ldloc.1 "
+      },
+      {
+        "index": 37,
+        "il": "conv.u1 "
+      }
+    ]
+  }
+]
