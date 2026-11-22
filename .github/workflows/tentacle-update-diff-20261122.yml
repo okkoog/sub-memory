@@ -1,0 +1,96 @@
+name: Tentacle update three-way DLL audit
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/tentacle-update-diff-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/lewd_meme2.1.0
+            probably-stolen/local-mods/TentacleMod/lewd_meme_config0.7.2-pre
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme2.1.0
+            probably-stolen/local-mods/TentacleMod번역/lewd_meme_config0.7.2-pre
+            probably-stolen/local-mods/TentacleMod-Update/lewd_meme 2.3.1
+            probably-stolen/local-mods/TentacleMod-Update/lewd_meme_config
+      - name: Extract exact method and IL callsite comparisons without changing binaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console --framework net8.0 -o /tmp/tentacle-diff --force
+          dotnet add /tmp/tentacle-diff/tentacle-diff.csproj package dnlib --version 4.5.0
+          cat >/tmp/tentacle-diff/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Text.Json;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static string Hash(string p)=>Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(p))).ToLowerInvariant();
+            static bool Text(string s)=>s.Any(c=>c>='\u3400'&&c<='\u9fff'||c>='\uac00'&&c<='\ud7a3');
+            static string Operand(Instruction i,Dictionary<Instruction,int> ix,bool normalize=false)=>i.Operand switch {
+              null=>"", Instruction j=>"@"+ix[j], IList<Instruction> a=>string.Join(",",a.Select(x=>"@"+ix[x])),
+              string s when i.OpCode==OpCodes.Ldstr&&normalize=>"<literal>", _=>i.Operand.ToString()??""
+            };
+            static object Dump(MethodDef m) {
+              var ins=m.Body.Instructions;
+              var ix=ins.Select((i,n)=>(i,n)).ToDictionary(x=>x.i,x=>x.n);
+              return new {name=m.FullName,token=m.MDToken.Raw.ToString("X8"),locals=m.Body.Variables.Select(x=>x.Type.FullName).ToArray(),il=ins.Select((i,n)=>new {index=n,offset=i.Offset,opcode=i.OpCode.Name,operand=Operand(i,ix)}).ToArray()};
+            }
+            static Dictionary<string,MethodDef[]> Methods(ModuleDefMD m)=>m.GetTypes().SelectMany(t=>t.Methods).Where(x=>x.HasBody).GroupBy(x=>x.FullName).ToDictionary(x=>x.Key,x=>x.ToArray());
+            static string[] Shape(MethodDef m) {
+              var ins=m.Body.Instructions;
+              var ix=ins.Select((i,n)=>(i,n)).ToDictionary(x=>x.i,x=>x.n);
+              return ins.Select(i=>i.OpCode.Name+"|"+Operand(i,ix,true)).ToArray();
+            }
+            static void Main(string[] a) {
+              using var original=ModuleDefMD.Load(a[0]); using var korean=ModuleDefMD.Load(a[1]); using var newer=ModuleDefMD.Load(a[2]);
+              var o=Methods(original);var k=Methods(korean);var n=Methods(newer);
+              var direct=new List<object>();var changed=new List<object>();var added=new List<object>();var candidates=new List<object>();var helpers=new List<object>();
+              foreach(var pair in k.Where(x=>!o.ContainsKey(x.Key)))foreach(var m in pair.Value)helpers.Add(Dump(m));
+              foreach(var pair in n)foreach(var m in pair.Value){
+                var il=m.Body.Instructions;
+                var lits=il.Select((i,index)=>(i,index)).Where(x=>x.i.OpCode==OpCodes.Ldstr&&x.i.Operand is string s&&Text(s)).ToArray();
+                bool ok=o.TryGetValue(pair.Key,out var om)&&om.Length==1&&pair.Value.Length==1;
+                bool kk=k.TryGetValue(pair.Key,out var km)&&km.Length==1&&ok;
+                bool sameNew=ok&&Shape(om![0]).SequenceEqual(Shape(m));
+                bool sameKo=kk&&Shape(om![0]).SequenceEqual(Shape(km![0]));
+                bool exactNew=sameNew&&om![0].Body.Instructions.Select(x=>x.OpCode==OpCodes.Ldstr?x.Operand as string:null).SequenceEqual(il.Select(x=>x.OpCode==OpCodes.Ldstr?x.Operand as string:null));
+                if(!ok&&lits.Length>0)added.Add(Dump(m));
+                else if(!exactNew&&(lits.Length>0||om![0].Body.Instructions.Any(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&Text(s))))changed.Add(new {old=Dump(om![0]),ko=kk?Dump(km![0]):null,current=Dump(m)});
+                else if(kk&&!sameKo)changed.Add(new {old=Dump(om![0]),ko=Dump(km![0]),current=Dump(m)});
+                foreach(var (i,index) in lits){
+                  string s=(string)i.Operand;
+                  string? target=null;
+                  if(sameNew&&sameKo&&Equals(om![0].Body.Instructions[index].Operand,s))target=km![0].Body.Instructions[index].Operand as string;
+                  var c=new {method=m.FullName,token=m.MDToken.Raw.ToString("X8"),index,offset=i.Offset,source=s,target,anchorExact=sameNew&&sameKo,context=il.Skip(Math.Max(0,index-5)).Take(11).Select(x=>x.OpCode.Name+" "+x.Operand).ToArray()};
+                  if(target!=null&&target!=s)direct.Add(c);else candidates.Add(c);
+                }
+              }
+              var opt=new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping};
+              var stats=new{oldMethods=o.Values.Sum(x=>x.Length),koMethods=k.Values.Sum(x=>x.Length),newMethods=n.Values.Sum(x=>x.Length),oldSHA=Hash(a[0]),koSHA=Hash(a[1]),newSHA=Hash(a[2]),direct=direct.Count,remaining=candidates.Count,changed=changed.Count,added=added.Count,helpers=helpers.Count};
+              File.WriteAllText(a[3],JsonSerializer.Serialize(new{stats,direct,candidates,changed,added,helpers},opt));
+              Console.WriteLine(JsonSerializer.Serialize(stats));
+            }
+          }
+          CS
+          root='probably-stolen/local-mods'
+          mkdir audit
+          dotnet run --project /tmp/tentacle-diff -- "$root/TentacleMod/lewd_meme2.1.0/MidnightPawn.dll" "$root/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll" "$root/TentacleMod-Update/lewd_meme 2.3.1/MidnightPawn.dll" audit/MidnightPawn.json
+          dotnet run --project /tmp/tentacle-diff -- "$root/TentacleMod/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll" "$root/TentacleMod번역/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll" "$root/TentacleMod-Update/lewd_meme_config/LewdMemeConfig.dll" audit/LewdMemeConfig.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tentacle-update-three-way-audit
+          path: audit/
+          if-no-files-found: error
