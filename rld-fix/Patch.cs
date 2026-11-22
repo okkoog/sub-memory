@@ -102,7 +102,7 @@ class P {
     // Existing displayed equipped clothing: name is resolved by stable garment ID on each view.
     Add(display.FullName,9,i=>Need(i.OpCode==OpCodes.Ret,"Outfit DisplayName return"),Instruction.Create(OpCodes.Ldarg_0),Instruction.Create(OpCodes.Call,clothingName));
     // Tooltip of saved clothing: translate local displayed copy by item ID without touching stored name.
-    var ident=tooltip.Body.Instructions.Single(i=>i.Operand is IMethod m&&m.FullName=="System.String GameItem::get_identifier()");
+    var ident=tooltip.Body.Instructions.First(i=>i.Operand is IMethod m&&m.FullName=="System.String GameItem::get_identifier()");
     Add(tooltip.FullName,12,i=>Need(i.OpCode.Name.StartsWith("stloc"),"Equipment tooltip display sink"),Instruction.Create(OpCodes.Ldarg_0),Instruction.Create(OpCodes.Callvirt,(IMethod)ident.Operand),Instruction.Create(OpCodes.Call,clothingName));
     // Trait entries: display the aliases, not the internal strings used by Contains/HasTrait/TraitColor.
     Add(show.FullName,748,i=>Need(i.OpCode.Name.StartsWith("ldloc")&&i.Operand?.ToString()=="V_22","Talent panel trait colour sink"),Instruction.Create(OpCodes.Call,traitName));
