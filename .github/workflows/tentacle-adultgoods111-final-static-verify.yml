@@ -1,0 +1,152 @@
+name: Adult Goods 1.1.1 final static verification
+on:
+  push:
+    paths:
+      - '.github/workflows/tentacle-adultgoods111-final-static-verify.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/3842259965
+            probably-stolen/local-mods/TentacleMod번역/3842259965
+            probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+      - name: Verify exact build and all managed IL and resources without executing game DLL
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/adult_final --force
+          dotnet add /tmp/adult_final/adult_final.csproj package dnlib --version 4.5.0
+          cat >/tmp/adult_final/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Text;
+          using System.Text.Json;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static string Hash(byte[] b)=>Convert.ToHexString(SHA256.HashData(b)).ToLowerInvariant();
+            static void Need(bool value,string s){if(!value)throw new Exception(s);}
+            static string Oper(object? o)=>o switch {null=>"",Instruction i=>"IL_"+i.Offset.ToString("X4"),IList<Instruction> a=>string.Join(",",a.Select(i=>"IL_"+i.Offset.ToString("X4"))),_=>o.ToString()??""};
+            static void Main(string[] a){
+              var orig=File.ReadAllBytes(a[0]);var koDll=File.ReadAllBytes(a[1]);var ko=File.ReadAllBytes(a[2]);
+              Need(Hash(orig)=="60f586bd14b68b12ec1b68382a280957323cecff45e4afbf4d4cd29e637bdacf","Original hash");
+              Need(Hash(koDll)=="fe15e5a2801bb2b7fa298753cac2898b2ef86effcdebc9a0f059563585189634","Final hash");
+              using var o=ModuleDefMD.Load(orig);using var n=ModuleDefMD.Load(koDll);
+              var ot=o.GetTypes().OrderBy(t=>t.FullName).ToArray();var nt=n.GetTypes().OrderBy(t=>t.FullName).ToArray();
+              Need(ot.Select(x=>x.FullName).SequenceEqual(nt.Select(x=>x.FullName)),"Types");
+              var om=ot.SelectMany(t=>t.Methods).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              var nm=nt.SelectMany(t=>t.Methods).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              Need(om.Keys.ToHashSet().SetEquals(nm.Keys)&&om.All(x=>x.Value.Length==nm[x.Key].Length),"Methods");
+              var diffs=new List<object>();var counts=new Dictionary<string,int>();
+              var remain=new List<object>();var dataRefs=new List<object>();
+              var allowed=new Dictionary<(string,string),string>{
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","高纯度"),"고순도"},
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","极高纯度"),"초고순도"},
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","已投入：金属锭（"),"투입한 금속 주괴("},
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","、废金属 "),", 폐금속 "},
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","、金属螺丝 "),", 금속 나사 "},
+                {("ProbablyAdultGoods.DragonCase::ProgressLine","、超科技电子元件 "),", 초첨단 전자 부품 "},
+                {("ProbablyAdultGoods.DragonCase::OnTooltip","收藏柜已满级（24×12）"),"수집장이 최대 레벨에 도달함(24×12)"},
+                {("ProbablyAdultGoods.DragonCase::OnTooltip","升级到 Lv"),"업그레이드 목표 Lv."},
+                {("ProbablyAdultGoods.DragonDisplayCase::OnTooltip","幻龙陈列盒："),"환룡 진열함: "},
+                {("ProbablyAdultGoods.DragonDisplayCase::OnTooltip","/9 种"),"/9종"},
+                {("ProbablyAdultGoods.ModEntry::Init","额外内容"),"추가 콘텐츠"},
+                {("ProbablyAdultGoods.ItemSheet::EnsureLoaded","物品标签价格.csv missing."),"物品标签价格.csv 파일을 찾을 수 없습니다."}
+              };
+              foreach(var pair in om)for(int index=0;index<pair.Value.Length;index++){
+                var m=pair.Value[index];var k=nm[pair.Key][index];Need(m.HasBody==k.HasBody,"Body");
+                if(!m.HasBody)continue;
+                string method=m.DeclaringType.FullName+"::"+m.Name;
+                var mi=m.Body.Instructions;var ni=k.Body.Instructions;
+                Need(mi.Count==ni.Count&&m.Body.Variables.Count==k.Body.Variables.Count&&m.Body.ExceptionHandlers.Count==k.Body.ExceptionHandlers.Count,"Body shape "+method);
+                for(int i=0;i<mi.Count;i++){
+                  var x=mi[i];var y=ni[i];Need(x.OpCode==y.OpCode&&x.Offset==y.Offset,"Opcode or offset "+method);
+                  if(Oper(x.Operand)!=Oper(y.Operand)){
+                    Need(x.OpCode==OpCodes.Ldstr&&x.Operand is string&&y.Operand is string&&allowed.TryGetValue((method,(string)x.Operand),out var expected)&&expected==(string)y.Operand,"Unexpected operand "+method+" "+x.Offset);
+                    diffs.Add(new {method,offset=x.Offset,old=Oper(x.Operand),newText=Oper(y.Operand)});
+                    counts[method]=counts.GetValueOrDefault(method)+1;
+                  }
+                  if(y.OpCode==OpCodes.Ldstr&&y.Operand is string s&&s.Any(c=>c>='\u3400'&&c<='\u9fff')){
+                    bool protectedValue=method=="ProbablyAdultGoods.ItemSheet::.cctor"||
+                      (method=="ProbablyAdultGoods.ItemSheet::EnsureLoaded"&&(s=="Data/物品标签价格.csv"||s=="物品标签价格.csv 파일을 찾을 수 없습니다."))||
+                      (method=="ProbablyAdultGoods.ModLocale::LocalizedModName"&&s=="可能是成人用品");
+                    Need(protectedValue,"Unexpected CJK "+method+" "+s);
+                    remain.Add(new {method,offset=y.Offset,text=s});
+                  }
+                  if(y.Operand is IMethod call&&(call.Name=="ReadText"||call.Name=="ReadModFileText"))
+                    dataRefs.Add(new {method,offset=y.Offset,call=call.FullName,near=ni.Skip(Math.Max(0,i-6)).Take(7).Select(z=>Oper(z.Operand)).ToArray()});
+                }
+              }
+              Need(diffs.Count==15,"Expected 15 translated sites, observed "+diffs.Count);
+              Need(counts.GetValueOrDefault("ProbablyAdultGoods.ModEntry::Init")==4,"Setting labels");
+              Need(counts.GetValueOrDefault("ProbablyAdultGoods.ItemSheet::EnsureLoaded")==1,"Diagnostic");
+              Need(remain.Count==18,"Expected 18 protected/fallback/filename references: "+remain.Count);
+              var ar=o.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              var br=n.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              Need(ar.Count==65&&br.Count==67&&ar.All(x=>br.ContainsKey(x.Key)&&x.Value.SequenceEqual(br[x.Key])),"Original resource bytes");
+              foreach(var alias in new[]{"ko","ko-KR"})Need(br["ProbablyAdultGoods.Localization."+alias+".csv"].SequenceEqual(ko),"Korean alias");
+              Dictionary<string,string> Csv(byte[] b){return Encoding.UTF8.GetString(b).TrimStart('\uFEFF').Split('\n').Select(x=>x.TrimEnd('\r')).Where(x=>x.Length>0).Select(x=>x.Split(',',2)).ToDictionary(x=>x[0],x=>x[1]);}
+              var zh=Csv(ar["ProbablyAdultGoods.Localization.zh.csv"]);var en=Csv(ar["ProbablyAdultGoods.Localization.en.csv"]);var kr=Csv(ko);
+              Need(kr.Count==181&&kr.Keys.ToHashSet().SetEquals(zh.Keys)&&kr.Keys.ToHashSet().SetEquals(en.Keys)&&kr.Values.All(x=>!string.IsNullOrWhiteSpace(x)),"Localization key and value integrity");
+              Need(kr["mod_name"]=="아마도 성인용품","Localized name");
+              var data=br.Where(x=>x.Key.Contains(".Data.")&&x.Key.EndsWith(".csv")).Select(x=>new {name=x.Key,hash=Hash(x.Value),header=Encoding.UTF8.GetString(x.Value).Split('\n')[0].TrimEnd('\r'),rowCount=Encoding.UTF8.GetString(x.Value).Split('\n').Count(z=>z.Trim().Length>0),cjkCount=Encoding.UTF8.GetString(x.Value).Count(c=>c>='\u3400'&&c<='\u9fff')}).ToArray();
+              File.WriteAllText(a[3],JsonSerializer.Serialize(new {original=Hash(orig),translation=Hash(koDll),typeCount=ot.Length,methodCount=om.Values.Sum(x=>x.Length),originalResources=ar.Count,finalResources=br.Count,localeKeys=kr.Count,koAliases=2,changedSites=diffs.Count,protectedRefs=remain.Count,diffs,remain,dataRefs,data},new JsonSerializerOptions{WriteIndented=true}));
+            }
+          }
+          CS
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          dotnet run --project /tmp/adult_final/adult_final.csproj -- \
+            'probably-stolen/local-mods/TentacleMod/3842259965/probably_adult_goods.dll' \
+            "$ROOT/3842259965/probably_adult_goods.dll" \
+            "$ROOT/3842259965/Localization/ko.csv" \
+            "$ROOT/번역대조표/AdultGoods_v1.1.1_FINAL_20261122.json"
+      - name: Verify existing installation archive and current translation files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib,json,xml.etree.ElementTree as ET
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          folder=root/'3842259965'
+          archive=root/'ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip'
+          audit=root/'번역대조표/AdultGoods_v1.1.1_FINAL_20261122.json'
+          src=Path('probably-stolen/local-mods/TentacleMod/3842259965')
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          assert sha(archive.read_bytes())=='f6f4266519b917c542be1a1962b180cc7912aedfc03fcd82d5877999a6c15a4f'
+          o=ET.parse(src/'manifest.xml').getroot()
+          n=ET.parse(folder/'manifest.xml').getroot()
+          assert n.findtext('ModVersion')=='1.1.1'
+          for x in ['ID','Author','ModVersion','GameVersions','Prerequisites','Assemblies','Capabilities']:
+              assert ET.tostring(o.find(x))==ET.tostring(n.find(x)),x
+          assert all(not any('\u3400'<=c<='\u9fff' for c in n.findtext(x)) for x in ['Name','Description'])
+          with ZipFile(archive) as z:
+              assert z.testzip() is None
+              for p in ['probably_adult_goods.dll','manifest.xml','Localization/ko.csv']:
+                  assert z.read('3842259965/'+p)==(folder/p).read_bytes(),p
+              entries=z.namelist()
+          report=json.loads(audit.read_text())
+          report['archive']={'path':archive.name,'sha256':sha(archive.read_bytes()),'crc':'pass','entries':entries,'gameFilesMatch':True}
+          report['manifest']='ID/version/author/dependencies/assemblies/capabilities preserved; Korean Name and Description'
+          report['runtime']='not tested'
+          audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({k:v for k,v in report.items() if k not in ['diffs','remain','dataRefs']},ensure_ascii=False,indent=2))
+          PY
+      - name: Commit verification evidence only
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse 'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_FINAL_20261122.json'
+          git diff --cached --quiet || (git commit -m 'audit(tentacle): independently verify final Adult Goods 1.1.1 DLL and archive' && git push origin main)
