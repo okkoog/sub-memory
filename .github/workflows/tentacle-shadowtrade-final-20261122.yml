@@ -28,6 +28,19 @@ jobs:
             probably-stolen/Managed/UnityEngine.dll
             probably-stolen/Managed/UnityEngine.UI.dll
             probably-stolen/Managed/Assembly-CSharp-firstpass.dll
+      - name: Rebuild only from the verified direct-patch baseline
+        shell: bash
+        run: |
+          MOD='probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll'
+          CUR=$(sha256sum "$MOD" | cut -d' ' -f1)
+          if [ "$CUR" = '0bef61d390ffa9f3377a7001678ebafad9eb0b2f2200ffce83e2ff4f9110fe55' ]; then
+            git fetch --depth=1 origin b3591462747a5ced49be0eff273cb525fa0801ec
+            git show "b3591462747a5ced49be0eff273cb525fa0801ec:$MOD" > "$MOD.new"
+            test "$(sha256sum "$MOD.new" | cut -d' ' -f1)" = '7d4064f4e67ee072d926ec1bac3666f7fd5e3687e5fe8a5a62fd61145ef98f9d'
+            mv "$MOD.new" "$MOD"
+          elif [ "$CUR" != '7d4064f4e67ee072d926ec1bac3666f7fd5e3687e5fe8a5a62fd61145ef98f9d' ]; then
+            echo "Unexpected ShadowTrade DLL hash, refusing to rebuild"; exit 1
+          fi
       - name: Compile display-only helper against existing game API
         shell: bash
         run: |
@@ -83,6 +96,9 @@ jobs:
               using var original=ModuleDefMD.Load(raw);using var target=ModuleDefMD.Load(raw);using var donor=ModuleDefMD.Load(a[2]);using var game=ModuleDefMD.Load(a[3]);
               Need(Hash(File.ReadAllBytes(a[3]))=="6398d44aa1675e1f02b63bc668868f970e0f5d3ae5a50f2aced8d06ca084e3b5","Game baseline");
               var type=donor.GetTypes().Single(t=>t.FullName=="MidnightPawn.Game.ShadowTradeDisplayKo");
+              var donorInstall=type.Methods.Single(m=>m.Name=="Install").Body.Instructions;
+              var pri=donorInstall.Select((i,k)=>(i,k)).Single(x=>x.i.OpCode==OpCodes.Stfld&&Raw(x.i.Operand).Contains("HarmonyMethod::priority"));
+              Need(pri.k>0&&donorInstall[pri.k-1].IsLdcI4()&&donorInstall[pri.k-1].GetLdcI4Value()==200,"Low-priority dropdown transpiler, preserves earlier Config patch");
               Need(type.Fields.Count==0&&type.NestedTypes.Count==0&&type.Methods.All(m=>m.IsStatic&&m.HasBody&&!m.HasGenericParameters),"Helper shape");
               var importer=new Importer(target,ImporterOptions.TryToUseTypeDefs);
               var tnew=new TypeDefUser(type.Namespace,type.Name,target.CorLibTypes.Object.TypeDefOrRef){Attributes=type.Attributes};target.Types.Add(tnew);
@@ -259,6 +275,31 @@ jobs:
           assert all(all(not ('\u3400'<=ch<='\u9fff') for ch in row[c]) for row in y for c in [1,2])
           with (root/'번역대조표/WorkAudit_20261122/외부_내장자료.tsv').open(encoding='utf-8-sig',newline='') as f:
               ext=[row for row in csv.reader(f,delimiter='\t') if row and row[0]==name]
+          import re
+          assert len(ext)==21
+          regionkeys={row[0] for row in x}
+          docnames={p.stem for p in (mod/'docs').glob('*.md')}
+          ext_verified=[]
+          for row in ext:
+              path,field,value=row[1],row[3],row[4]
+              cjk=set(re.findall(r'[\u3400-\u9fff]+',value))
+              if path.endswith('manifest.xml') and field=='Author':
+                  assert cjk=={'白银','原作','扫地机','扩展'}
+                  why='Original author identity and attribution, preserved.'
+              elif (path.endswith('manifest.xml') and field=='Description') or (path.endswith('README.md') and field=='3'):
+                  assert cjk=={'白银','扫地机'}
+                  why='Korean translation with original author names.'
+              elif path.endswith('README.md'):
+                  assert cjk and cjk<=docnames
+                  why='Existing linked original document filename, preserved.'
+              elif path.endswith('Content\\names.txt'):
+                  assert value in regionkeys
+                  why='Original region identifier, used by name-data loader/filter.'
+              elif path.endswith('docs\\开发指南.md'):
+                  assert cjk=={'子模组接入指南'}
+                  why='Existing prerequisite documentation filename reference.'
+              else:raise AssertionError(row)
+              ext_verified.append({'path':path,'field':field,'sourceTokens':sorted(cjk),'reason':why})
           files=['ShadowTrade.dll','manifest.xml','README.md','Content/names.txt']+[str(p.relative_to(mod)) for p in sorted((mod/'docs').rglob('*')) if p.is_file()]
           zpath=root/'ProbablyStolen_ShadowTrade_v1.6.4_KO_Final_20261122.zip'
           with ZipFile(zpath,'w',ZIP_DEFLATED,compresslevel=6) as z:
@@ -266,7 +307,7 @@ jobs:
           with ZipFile(zpath) as z:
               assert z.testzip() is None and set(z.namelist())=={name+'/'+f for f in files}
               for f in files:assert z.read(name+'/'+f)==(mod/f).read_bytes()
-          r.update(directLiteralPatches=d['changedSites'],totalLiteralPatches=d['changedSites']+r['literalPatches'],remainingOriginalCjk=len(r['protectedCjk']),originalDllHash=hashlib.sha256((src/'ShadowTrade.dll').read_bytes()).hexdigest(),nameEntries=names,nameGroups=len(y),externalAuditRows=ext,manifestVersion=b.findtext('ModVersion'),archive={'path':zpath.name,'sha256':hashlib.sha256(zpath.read_bytes()).hexdigest(),'files':len(files),'crc':'pass','matchesAllOverlayFiles':True})
+          r.update(directLiteralPatches=d['changedSites'],totalLiteralPatches=d['changedSites']+r['literalPatches'],remainingOriginalCjk=len(r['protectedCjk']),originalDllHash=hashlib.sha256((src/'ShadowTrade.dll').read_bytes()).hexdigest(),nameEntries=names,nameGroups=len(y),externalAuditRows=ext,externalAuditVerified=ext_verified,externalUnclassified=0,remainingAuditedDisplaySites=0,choiceTranspilerPriority='Low (200), after normal-priority LewdMemeConfig',manifestVersion=b.findtext('ModVersion'),archive={'path':zpath.name,'sha256':hashlib.sha256(zpath.read_bytes()).hexdigest(),'files':len(files),'crc':'pass','matchesAllOverlayFiles':True})
           report.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print({k:v for k,v in r.items() if not isinstance(v,list)})
           PY
