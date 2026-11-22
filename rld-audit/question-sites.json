@@ -1,0 +1,1533 @@
+[
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartMatch(System.Int32,System.Int32)",
+    "index": 233,
+    "offset": 639,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @284",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.6 ",
+      "ldstr [literal len=12 sha=9d3c56cf0f6b474765c0ad65c39f6a0d9bfccea9216e10578ce15789c95a23f2]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::AddAllyTalentBalls(System.Collections.Generic.List`1<GameItem>,UnityEngine.Vector2[],System.Int32&)",
+    "index": 157,
+    "offset": 384,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @185",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_c40b28568d751aed2bdf()"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartScout(System.Collections.Generic.List`1<GameItem>)",
+    "index": 235,
+    "offset": 737,
+    "length": 1,
+    "context": [
+      "ldc.i4.3 ",
+      "ldloc.s V_7",
+      "brtrue.s @2E8",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @2F8",
+      "ldloc.s V_7",
+      "callvirt System.String GameItem::get_identifier()",
+      "dup "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartScout(System.Collections.Generic.List`1<GameItem>)",
+    "index": 242,
+    "offset": 755,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @2F8",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=12 sha=9d3c56cf0f6b474765c0ad65c39f6a0d9bfccea9216e10578ce15789c95a23f2]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartScout(System.Collections.Generic.List`1<GameItem>)",
+    "index": 462,
+    "offset": 1316,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @529",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.6 ",
+      "ldstr [literal len=12 sha=9d3c56cf0f6b474765c0ad65c39f6a0d9bfccea9216e10578ce15789c95a23f2]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "index": 723,
+    "offset": 2118,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @84B",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_8d08eed072b702aa2b98()"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.BallMinigame::StartStrike(GameItem,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.List`1<GameItem>,RedLightDistrict.TalentData)",
+    "index": 1206,
+    "offset": 3372,
+    "length": 1,
+    "context": [
+      "callvirt System.Int32 System.String::get_Length()",
+      "ldc.i4.0 ",
+      "bgt.s @D33",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @D35",
+      "ldloc.s V_20",
+      "stelem.ref ",
+      "dup "
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.KuchikamiWine::LabelTierFromWater(GameItem)",
+    "index": 4,
+    "offset": 8,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "ldc.i4 -999",
+      "stloc.1 ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.2 ",
+      "ldarg.0 ",
+      "call System.Int32 WaterHelper::GetWaterPurity(GameItem)",
+      "stloc.0 "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.RedLightDistrictMod::Init(ModManifest)",
+    "index": 105,
+    "offset": 321,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @146",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_088860a74c64ed794c8a()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void ModLog::Log(System.Object)",
+      "ldsfld ModLog RedLightDistrict.MLog::L"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.RedLightDistrictMod::Init(ModManifest)",
+    "index": 163,
+    "offset": 522,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @20F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_e15dee8e494927192e2d()"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.PatronSystem::FactionOf(RedLightDistrict.PatronType)",
+    "index": 64,
+    "offset": 133,
+    "length": 1,
+    "context": [
+      "ldlen ",
+      "conv.i4 ",
+      "blt.s @44",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_4",
+      "ldloc.2 ",
+      "call System.String StoreReputation::GetFactionNameByID(System.String)",
+      "stloc.s V_4"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.PatronSystem::FactionPortraitKey(RedLightDistrict.PatronType)",
+    "index": 12,
+    "offset": 26,
+    "length": 1,
+    "context": [
+      "stloc.1 ",
+      "ldnull ",
+      "stloc.2 ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.3 ",
+      "ldc.i4.0 ",
+      "stloc.s V_4",
+      "br.s @61"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.PatronSystem::ShouldMuteDialogue(System.String,System.String&)",
+    "index": 30,
+    "offset": 65,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @46",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819]",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "stind.ref ",
+      "ldc.i4.1 "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.PatronSystem::AgeText(RedLightDistrict.TalentData)",
+    "index": 18,
+    "offset": 63,
+    "length": 1,
+    "context": [
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_9542207db0919241d587()",
+      "stloc.0 ",
+      "br.s @45",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.PatronSystem::DeclineRansom(RedLightDistrict.PatronData,RedLightDistrict.TalentData)",
+    "index": 2,
+    "offset": 3,
+    "length": 1,
+    "context": [
+      "ldarg.1 ",
+      "brtrue.s @A",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @10",
+      "ldarg.1 ",
+      "call System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)",
+      "stloc.0 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_0fd3007c8a3ac0761dba()"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.RldPtr::Show(System.Object)",
+    "index": 13,
+    "offset": 33,
+    "length": 1,
+    "context": [
+      "stloc.1 ",
+      "leave.s @29",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.1 ",
+      "leave.s @29",
+      "ldloc.1 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.SewingMachine::InsertProductToSlot(GameItem,GameItem)",
+    "index": 48,
+    "offset": 109,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @72",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819]",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "br.s @E5"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.SewingMachine::RestoreInnerShapeFor(GameItem)",
+    "index": 107,
+    "offset": 260,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @109",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String)",
+      "call System.Void RedLightDistrict.MLog::Warning(System.String)",
+      "leave.s @12F",
+      "stloc.s V_10"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.ShowerRoom::ShowerDebugResolve(RedLightDistrict.TalentData)",
+    "index": 41,
+    "offset": 92,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @61",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_a5ce090a53532470cccf()"
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentAudio::ResolveVoiceSet(RedLightDistrict.TalentData)",
+    "index": 50,
+    "offset": 109,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @72",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_7b20615c1361b2a3827d()",
+      "ldloc.2 ",
+      "call System.String RedLightDistrict.TalentAudio::VoiceNameOf(System.Int32)",
+      "call System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentData::AgeStageName(RedLightDistrict.TalentAgeStage)",
+    "index": 13,
+    "offset": 58,
+    "length": 1,
+    "context": [
+      "ret ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_e07e7ca28de21b6d2ba3()",
+      "ret ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentEquipment::UnequipToBackpack(RedLightDistrict.TalentData,System.String)",
+    "index": 5,
+    "offset": 14,
+    "length": 1,
+    "context": [
+      "ldstr [literal len=10 sha=7de2af25f5f4b03e50539b40650916688b19a8d6d689933e70567a2b8d2a7ba9]",
+      "ldarg.0 ",
+      "brtrue.s @15",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @1B",
+      "ldarg.0 ",
+      "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId",
+      "call System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::NotifyFishFeedBlocked(GameItem)",
+    "index": 22,
+    "offset": 63,
+    "length": 1,
+    "context": [
+      "ldarg.0 ",
+      "callvirt System.String GameItem::get_identifier()",
+      "br.s @44",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String)",
+      "call System.Void RedLightDistrict.TalentFeeder::FeederDebug(System.String)",
+      "leave.s @53",
+      "pop "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::LogCellFeederState(GameItem,GameItem)",
+    "index": 31,
+    "offset": 76,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @51",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::DumpCageWindow(PixelWindow,GameItem)",
+    "index": 40,
+    "offset": 111,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @7B",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @7B",
+      "ldstr null",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "br.s @87"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::DumpCageWindow(PixelWindow,GameItem)",
+    "index": 56,
+    "offset": 163,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @A8",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]",
+      "ldloc.2 ",
+      "call System.String RedLightDistrict.RldPtr::Show(System.Object)",
+      "call System.String System.String::Concat(System.String,System.String,System.String)"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::WalkAndLog(GridPixelElement,System.Int32,GameSlotInventory)",
+    "index": 87,
+    "offset": 204,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @D8",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @D8",
+      "ldstr null",
+      "stloc.s V_7",
+      "ldloc.s V_4"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::StoreFoodInFeeder(GameItem,GameItem)",
+    "index": 93,
+    "offset": 202,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @CF",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff]",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.TalentFeeder::FeederDebug(System.String)",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_eaaa5cf8f8f516b81618()"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::StoreFoodInFeeder(GameItem,GameItem)",
+    "index": 103,
+    "offset": 237,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @F2",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "leave @357",
+      "ldarg.1 "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::StoreFoodInFeeder(GameItem,GameItem)",
+    "index": 119,
+    "offset": 295,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @12C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff]",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.TalentFeeder::FeederDebug(System.String)",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_3d434e37c653b2ca5784()"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::StoreFoodInFeeder(GameItem,GameItem)",
+    "index": 129,
+    "offset": 330,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @14F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "leave @357",
+      "ldarg.1 "
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentFeeder::TryNightlyFeed(RedLightDistrict.TalentData)",
+    "index": 233,
+    "offset": 570,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @23F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "ldstr [literal len=6 sha=244497fddca320f9f57421399657c3b24d196cf08ccba936f8e1daecff436f34]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentFeeder::AppendStorageLine(RichTextBuilder,GameItem)",
+    "index": 95,
+    "offset": 201,
+    "length": 1,
+    "context": [
+      "brtrue.s @C9",
+      "ldloc.s V_5",
+      "br.s @CE",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldloc.s V_6",
+      "ldc.i4.0 ",
+      "bgt.s @DA",
+      "ldstr [literal len=0 sha=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentGrabFix::PostfixAlphaHitTest(UnityEngine.UI.Image,System.Single)",
+    "index": 58,
+    "offset": 135,
+    "length": 1,
+    "context": [
+      "ldnull ",
+      "call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+      "brtrue.s @8E",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @99",
+      "ldarg.0 ",
+      "callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()",
+      "callvirt System.String UnityEngine.Object::get_name()"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::SafeId(GameItem)",
+    "index": 9,
+    "offset": 16,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @15",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @21",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::SafeId(GameItem)",
+    "index": 13,
+    "offset": 25,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @21",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @21",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::SafeGoName(UnityEngine.GameObject)",
+    "index": 11,
+    "offset": 26,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @22",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @22",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::FmtSize(UnityEngine.RectTransform)",
+    "index": 30,
+    "offset": 85,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @5D",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @5D",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::GoInfo(UnityEngine.GameObject)",
+    "index": 58,
+    "offset": 123,
+    "length": 1,
+    "context": [
+      "stloc.1 ",
+      "leave.s @83",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.1 ",
+      "leave.s @83",
+      "ldloc.1 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentMagnifier::TplInfo(UnityEngine.Component)",
+    "index": 99,
+    "offset": 244,
+    "length": 1,
+    "context": [
+      "stloc.3 ",
+      "leave.s @FC",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.3 ",
+      "leave.s @FC",
+      "ldloc.3 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentMagnifier::InspectPost(InspectionUIManager,GameItem)",
+    "index": 173,
+    "offset": 469,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @1DA",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String)",
+      "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "ldloc.2 "
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixStartDialogue(Dialogue,System.Boolean,System.Boolean&)",
+    "index": 68,
+    "offset": 149,
+    "length": 1,
+    "context": [
+      "brtrue.s @95",
+      "ldloc.0 ",
+      "br.s @9A",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldloc.2 ",
+      "call System.Boolean System.String::IsNullOrEmpty(System.String)",
+      "brtrue.s @AF",
+      "ldstr [literal len=1 sha=ad9464da161a8d5ae3709ec94baad99de11664bfadb5d02d94caf72fa3bea203]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixSetCustomNameSyncTalentName(GameItem,System.String)",
+    "index": 81,
+    "offset": 184,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @BD",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.6 ",
+      "ldstr [literal len=1 sha=ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::SafePatch(HarmonyLib.Harmony,System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)",
+    "index": 10,
+    "offset": 19,
+    "length": 1,
+    "context": [
+      "pop ",
+      "leave @A2",
+      "stloc.0 ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.1 ",
+      "ldarg.1 ",
+      "ldnull ",
+      "call System.Boolean System.Reflection.MethodBase::op_Inequality(System.Reflection.MethodBase,System.Reflection.MethodBase)"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixPlayerStoreBuyItem(GameItem)",
+    "index": 28,
+    "offset": 64,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @45",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_50b34c8da2c477c3d177()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "leave.s @6E"
+    ]
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentPatches::SumNegociationModifiers(GameItem,System.String&)",
+    "index": 89,
+    "offset": 189,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @C2",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.1 ",
+      "ldstr [literal len=1 sha=245843abef9e72e7efac30138a994bf6301e7e1d7d7042a33d42e863d2638811]"
+    ]
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentPatches::SumNegociationModifiers(GameItem,System.String&)",
+    "index": 101,
+    "offset": 211,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @D8",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.3 ",
+      "ldstr [literal len=9 sha=62e23a13d6ba1cb9797f23d2f445dc565fa7ac272b50dc5513526ae6551ab092]"
+    ]
+  },
+  {
+    "method": "System.Int64 RedLightDistrict.TalentPatches::ApplyNegociationModifiers(GameItem)",
+    "index": 35,
+    "offset": 69,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @4A",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.1 ",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::LogEquipPriceDiag(GameItem,System.Int64,System.Int64,System.String)",
+    "index": 8,
+    "offset": 18,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @17",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldc.i4.0 ",
+      "conv.i8 ",
+      "stloc.1 "
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPatches::PrefixIsClientBuyingThisItem(StoreClient,GameItem,System.Boolean&)",
+    "index": 65,
+    "offset": 161,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @A6",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_c74cd6b533e70f15e487()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "ldc.i4.0 "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPatches::SafeClientName(System.String)",
+    "index": 9,
+    "offset": 20,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @1C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @1C",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPatches::SafeDialogTitle(Dialogue)",
+    "index": 13,
+    "offset": 25,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @21",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @21",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::LogTauntReturn(GameItem,System.Int64,System.String,System.Int64)",
+    "index": 12,
+    "offset": 26,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @1F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @25",
+      "pop ",
+      "leave.s @25"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::LogTauntReturn(GameItem,System.Int64,System.String,System.Int64)",
+    "index": 30,
+    "offset": 61,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @42",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.1 ",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixDispenserIn(GameSlotInventory,GameItem&)",
+    "index": 36,
+    "offset": 74,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @4F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]",
+      "ldloc.0 ",
+      "call System.String RedLightDistrict.RldPtr::Show(System.Object)",
+      "call System.String System.String::Concat(System.String,System.String,System.String)"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPatches::PostfixDispenserIn(GameSlotInventory,GameItem&)",
+    "index": 59,
+    "offset": 128,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @85",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr [literal len=1 sha=334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b]",
+      "ldarg.1 ",
+      "ldind.ref ",
+      "call System.String RedLightDistrict.RldPtr::Show(System.Object)"
+    ]
+  },
+  {
+    "method": "SlotMarker RedLightDistrict.TalentPrison::TryMakeFurnitureSlot(GameGridInventory,GameItem)",
+    "index": 37,
+    "offset": 74,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @4F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_87256d4f1eef19cca87d()"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPrison::Ptr(System.Object)",
+    "index": 5,
+    "offset": 10,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @12",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @12",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPrison::SizeOf(GameGridInventory)",
+    "index": 17,
+    "offset": 52,
+    "length": 1,
+    "context": [
+      "stloc.1 ",
+      "leave.s @3C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.1 ",
+      "leave.s @3C",
+      "ldloc.1 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentPrison::TryComputeFreeRect(GameGridInventory,GameItem,System.Int32&,System.Int32&,System.String&)",
+    "index": 119,
+    "offset": 294,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @12B",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+      "ldstr [literal len=1 sha=c3641f8544d7c02f3580b07c0f9887f0c6a27ff5ab1d4a3e29caf197cfc299ae]",
+      "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+      "ldloc.s V_12"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentPrison::ShapeInfo(GameGridInventory)",
+    "index": 56,
+    "offset": 125,
+    "length": 1,
+    "context": [
+      "stloc.1 ",
+      "leave.s @85",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.1 ",
+      "leave.s @85",
+      "ldloc.1 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPrison::ReportPlaceFail(GameItem,GameGridInventory,System.String,System.String)",
+    "index": 62,
+    "offset": 134,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @94",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @94",
+      "ldloc.s V_5",
+      "call System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)",
+      "stloc.s V_6"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPrison::ReportCellFull(GameItem,GameGridInventory,System.String)",
+    "index": 74,
+    "offset": 142,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @9C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @9C",
+      "ldloc.s V_6",
+      "call System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)",
+      "stloc.s V_7"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPrison::FeedDebugResolve(RedLightDistrict.TalentData)",
+    "index": 8,
+    "offset": 18,
+    "length": 1,
+    "context": [
+      "brtrue.s @11",
+      "ret ",
+      "nop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldarg.0 ",
+      "call System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)",
+      "stloc.0 "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPrison::FeedDebugResolve(RedLightDistrict.TalentData)",
+    "index": 29,
+    "offset": 64,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @45",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.2 ",
+      "ldloc.1 ",
+      "brfalse.s @54",
+      "ldloc.1 "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentScenarioMaid::EnsureMaidResident()",
+    "index": 325,
+    "offset": 807,
+    "length": 1,
+    "context": [
+      "ldc.i4.7 ",
+      "ldloc.s V_8",
+      "brtrue.s @32E",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "br.s @33E",
+      "ldloc.s V_8",
+      "ldfld System.String RedLightDistrict.TalentData::EquippedClothingId",
+      "dup "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentSystem::DoInteract(RedLightDistrict.TalentData,GameItem,RedLightDistrict.TalentSystem/TalentAction)",
+    "index": 497,
+    "offset": 1399,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @57C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=1 sha=f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819]"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTarget::TagDiag(GameItem,System.String)",
+    "index": 0,
+    "offset": 0,
+    "length": 1,
+    "context": [
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldarg.0 ",
+      "ldarg.1 ",
+      "callvirt TagState GameItem::GetTagReadonly(System.String)",
+      "stloc.s V_4",
+      "ldloc.s V_4",
+      "brfalse.s @25"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTarget::TagDiag(GameItem,System.String)",
+    "index": 45,
+    "offset": 110,
+    "length": 1,
+    "context": [
+      "leave.s @6E",
+      "pop ",
+      "leave.s @6E",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.3 ",
+      "ldarg.1 ",
+      "call System.String TagSystem::StringToDisplayString(System.String)",
+      "dup "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTarget::ProbeSummary(GameItem)",
+    "index": 14,
+    "offset": 36,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @29",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+      "pop ",
+      "ldloc.0 ",
+      "ldstr [literal len=8 sha=a6cb6fe00fee39a69e7ae146ec370902c1163be96ebd4258939b8cc97662c919]"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixTarget(GameItem,GameItem)",
+    "index": 409,
+    "offset": 935,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @3AC",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=2 sha=daac4fe11107edcf95bf1a410cad0818298b73a5a936de3ac1da954c4fdd8ffd]"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixTarget(GameItem,GameItem)",
+    "index": 459,
+    "offset": 1038,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @413",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=2 sha=daac4fe11107edcf95bf1a410cad0818298b73a5a936de3ac1da954c4fdd8ffd]"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixTarget(GameItem,GameItem)",
+    "index": 516,
+    "offset": 1159,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @48C",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=2 sha=daac4fe11107edcf95bf1a410cad0818298b73a5a936de3ac1da954c4fdd8ffd]"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixTarget(GameItem,GameItem)",
+    "index": 573,
+    "offset": 1282,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @507",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=2 sha=daac4fe11107edcf95bf1a410cad0818298b73a5a936de3ac1da954c4fdd8ffd]"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixTarget(GameItem,GameItem)",
+    "index": 707,
+    "offset": 1595,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @640",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.6 ",
+      "ldstr [literal len=2 sha=daac4fe11107edcf95bf1a410cad0818298b73a5a936de3ac1da954c4fdd8ffd]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTarget::ApplyDrag(GameItem,GameItem)",
+    "index": 1376,
+    "offset": 3408,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @D55",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.2 ",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_d264165e155c462aa148()"
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTarget::PrefixSlotAcceptUnchecked(SlotMarker,System.Int32&)",
+    "index": 196,
+    "offset": 454,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @1CB",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=17 sha=26a7a0916be9ea3233def70c90f914560cbe0de6844ac076f63961830cc4e563]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::DumpQueue(System.String)",
+    "index": 26,
+    "offset": 71,
+    "length": 1,
+    "context": [
+      "ldc.i4.0 ",
+      "stloc.3 ",
+      "br.s @8D",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_4",
+      "ldloc.1 ",
+      "ldloc.3 ",
+      "callvirt StoreClient System.Collections.Generic.List`1<StoreClient>::get_Item(System.Int32)"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::TickPostPurchaseMark()",
+    "index": 55,
+    "offset": 154,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @9F",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_2003ed356bb6c5520338()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "br @1C6"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::TickPostPurchaseMark()",
+    "index": 77,
+    "offset": 222,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @E3",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_7ff1be40b2160c652bc8()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "br @1C6"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::TickPostPurchaseMark()",
+    "index": 111,
+    "offset": 316,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @141",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.4 ",
+      "ldstr [literal len=5 sha=d1bcacd62eac39523b8024766f50ecae32be3213e1387116b0eb7d20e4f374e6]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::TickPostPurchaseMark()",
+    "index": 161,
+    "offset": 434,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @1B7",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_27a2ed5ba85d50676fc7()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "ldloc.s V_4"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::HealBoughtTalentMarks()",
+    "index": 55,
+    "offset": 144,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @95",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_e086a0e9fdaa27516d44()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "ldloc.3 "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::ClearUnsoldStock()",
+    "index": 163,
+    "offset": 434,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @1B7",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_8620c504383dc3c798cd()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "br @286"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::ClearUnsoldStock()",
+    "index": 236,
+    "offset": 626,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @277",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_87f41d0c71e8cb3a321d()",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.RLog::Info(System.String)",
+      "ldloca.s V_19"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::ClearUnsoldStock()",
+    "index": 264,
+    "offset": 712,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @2CD",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "ldstr /",
+      "ldloc.s V_24",
+      "callvirt System.String GameItem::get_name()",
+      "dup "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTrafficker::ClearUnsoldStock()",
+    "index": 271,
+    "offset": 733,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @2E2",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)",
+      "leave.s @2F1",
+      "pop "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTrafficker::AgeName(RedLightDistrict.TalentData)",
+    "index": 18,
+    "offset": 63,
+    "length": 1,
+    "context": [
+      "call System.String RedLightDistrict.Korean.CsvLookup::rld_1ae02765b8d56c153f63()",
+      "stloc.0 ",
+      "br.s @45",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)",
+    "index": 10,
+    "offset": 20,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @19",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @25",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]"
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)",
+    "index": 14,
+    "offset": 29,
+    "length": 1,
+    "context": [
+      "stloc.0 ",
+      "leave.s @25",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "leave.s @25",
+      "ldloc.0 ",
+      "ret "
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentWaterTank::UpgradeTank(GameItem,GameItem)",
+    "index": 196,
+    "offset": 526,
+    "length": 1,
+    "context": [
+      "dup ",
+      "brtrue.s @213",
+      "pop ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stelem.ref ",
+      "dup ",
+      "ldc.i4.8 ",
+      "ldstr [literal len=1 sha=f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819]"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentWaterTank::DumpCageState(System.String,GameItem,PixelWindow)",
+    "index": 118,
+    "offset": 293,
+    "length": 1,
+    "context": [
+      "call System.String System.String::Concat(System.String,System.String,System.String)",
+      "call System.Void RedLightDistrict.TalentWaterTank::CageDump(System.String)",
+      "br.s @19E",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_6",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_7",
+      "ldloc.s V_5"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentWaterTank::DumpCageState(System.String,GameItem,PixelWindow)",
+    "index": 120,
+    "offset": 300,
+    "length": 1,
+    "context": [
+      "br.s @19E",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_6",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_7",
+      "ldloc.s V_5",
+      "callvirt System.String GameItem::get_identifier()",
+      "stloc.s V_6"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentWaterTank::DumpCageState(System.String,GameItem,PixelWindow)",
+    "index": 312,
+    "offset": 813,
+    "length": 1,
+    "context": [
+      "stloc.s V_18",
+      "ldloc.s V_18",
+      "brfalse @410",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_19",
+      "ldloc.s V_18",
+      "callvirt System.String GameItem::get_identifier()",
+      "stloc.s V_19"
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentWaterTank::DumpCageState(System.String,GameItem,PixelWindow)",
+    "index": 334,
+    "offset": 872,
+    "length": 1,
+    "context": [
+      "ldstr talent_redlight",
+      "call System.Boolean System.String::op_Inequality(System.String,System.String)",
+      "brtrue @410",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.s V_21",
+      "ldloc.s V_18",
+      "callvirt System.String GameItem::get_name()",
+      "stloc.s V_21"
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentWaterTank::TryNightlyDrink(RedLightDistrict.TalentData)",
+    "index": 7,
+    "offset": 13,
+    "length": 1,
+    "context": [
+      "brfalse.s @D",
+      "ldc.i4.0 ",
+      "ret ",
+      "ldstr [literal len=1 sha=8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1]",
+      "stloc.0 ",
+      "ldarg.0 ",
+      "call System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)",
+      "stloc.0 "
+    ]
+  }
+]
