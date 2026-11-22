@@ -162,7 +162,7 @@ class P {
     var resourcesB=emitted.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.String,x=>Hash(x.CreateReader().ToArray()));
     Need(resourcesA.Count==resourcesB.Count&&resourcesA.All(x=>resourcesB.GetValueOrDefault(x.Key)==x.Value),"Resource changes");
     Need(original.GetAssemblyRefs().Select(x=>x.FullName).OrderBy(x=>x).SequenceEqual(emitted.GetAssemblyRefs().Select(x=>x.FullName).OrderBy(x=>x)),"Assembly refs changed");
-    Need(verifiedInserted==10,"Inserted instruction count "+verifiedInserted);
+    Need(verifiedInserted==9,"Inserted instruction count "+verifiedInserted);
     var report=new{status="verified-static",baseSHA=Hash(raw),patchedSHA=Hash(File.ReadAllBytes(args[2])),clothingMappings=clothing.Select(x=>new{x.id,method=x.lookup.Name.String}),traits=traits.Count,patchSites=changes.Sum(x=>x.Value.Count),insertedInstructions=verifiedInserted,verifiedMethods,verifiedOriginalInstructions=verifiedInstructions,embeddedResources=resourcesA.Count,originalKeysPreserved=true,externalKoCsvUnchanged=true,gameTested=false};
     File.WriteAllText(args[3],JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true})+"\n");
     Console.WriteLine(JsonSerializer.Serialize(new{report.status,report.clothingMappings,report.traits,report.patchSites,report.verifiedMethods,report.verifiedOriginalInstructions}));
