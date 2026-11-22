@@ -1,7 +1,7 @@
 # Probably Adult Goods v1.1.1 — isolated Korean DLL static audit
 
 - Original size: 8166912 bytes; SHA256 60f586bd14b68b12ec1b68382a280957323cecff45e4afbf4d4cd29e637bdacf
-- Korean DLL size: 8205824 bytes; SHA256 38445f346ed1eeb2ff9005dafcb3df210eccffafdfb0732a8883fcff205aad8c
+- Korean DLL size: 8205312 bytes; SHA256 5c865ed935cbef9bd69a52f4225813dfd37d976f86a00a01793dadbea90e739f
 - Original managed resources: 65; rewritten DLL: 67. All 65 original resources byte-identical.
 - Two additional embedded locale resources: ProbablyAdultGoods.Localization.ko.csv and .ko-KR.csv (identical 181-key Korean CSV).
 - Original EmbeddedAssets.Inject dynamically enumerates .csv resources; InjectCsv derives language keys using BaseName. No localization-loader IL change required. Exactly 10 method-level display tooltip ldstr references patched: DragonCase.ProgressLine (6), DragonCase.OnTooltip (2), DragonDisplayCase.OnTooltip (2). All gameplay identifiers and other method IL strings left untouched.
