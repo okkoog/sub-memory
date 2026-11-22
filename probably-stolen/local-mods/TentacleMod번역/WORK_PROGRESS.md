@@ -53,7 +53,8 @@
 - Brood 잔여 B 4건 재검토(2026-11-22): 현재 DLL SHA256 `268a3fb54498f1ffeeeccd7d09641b937710c23725b0d7b9dc4be025235d1494`가 후속02 결과와 동일하여 침식 진단 표제 1곳 기존 반영 확인. 기존 한국어 진단 설명 1건은 유지. 색상 진단 표제 2곳(白→흰색, 紫→보라색)은 별도 변경 코드 작성 및 임시 복사본 검증 완료: 메서드 1,740개 대조, 지정 2곳 외 IL 변경 없음, 기존 입력 DLL 불변. [검증 기록](번역대조표/Brood_DIAGNOSTIC_RESULT_20261122.json), [변경 코드](번역대조표/Brood_DiagnosticLabels_20261122.cs), [Actions](https://github.com/okkoog/sub-memory/actions/runs/44989040921). 검증된 임시 DLL은 배포하지 않았으며 저장소의 설치 DLL/ZIP은 그대로이다. 전체 완료 처리하지 않음.
 - **MentorToSarrona v1.2.0 정적 감사 종료:** 표시 결과 4곳 수정, 검색 원문 4곳 보호, 메서드 19개 대조, 지정 외 IL 및 리소스 동일. ZIP 4개 파일 CRC 및 원격 커밋 확인. 실제 게임 미검증. 커밋 `ac4928d87cc5d38c41883d79f16db796f3ff8aa4`, [최종 ZIP](ProbablyStolen_MentorToSarrona_v1.2.0_KO_Final_20261122.zip), [검수 기록](번역대조표/Mentor_FINAL_RESULT_20261122.json).
 - **Eleanor 독립판 v1.0.3 정적 감사 종료:** 한국어 모드명 전용 로캘 분기 1종, 로그 3종 수정. 기존 1,515개 메서드(본문 1,511개) 중 4개 수정 및 신규 로캘 헬퍼 1개, 나머지 IL 동일. 내장 리소스 47개 바이트 동일. 중국어·영어·로캘 미선택 이름 경로 유지. ZIP 5파일 CRC 및 원격 커밋 확인. 실제 게임 미검증. 커밋 `397b39759f182135215c7152d3e7efa6259faaca`, [최종 ZIP](ProbablyStolen_Eleanor_v1.0.3_KO_Final_20261122.zip), [검수 기록](번역대조표/Eleanor_FINAL_RESULT_20261122.json).
-- 사용자 지시에 따라 Brood 배포 작업 보류. 잔여: Brood B 4(정적 검수 완료, 설치 DLL/ZIP 미갱신), ItemPortraitHD B 2. 다음 작업: ItemPortraitHD.
+- Brood 추가 용어 수정: `tagEditor.body.wife` → 부인, `tagEditor.body.mature` → 숙녀. CSV 원격 반영 및 재검증 완료(`4d3d2a284d15046586265ad21f08e7de89203017`). [최신 통합 검수 기록](번역대조표/Brood_FINAL_NEUTRAL_AUDIT_20261122.json). 진단 문자열 2곳은 임시 DLL 정적 검수 완료이나 설치 DLL 및 ZIP 미갱신 상태 유지.
+- 잔여: Brood B 4(정적 검수 완료, 설치 DLL/ZIP 미갱신), ItemPortraitHD B 2.
 
 1. 아래 판정표와 호출부 자료에서 유지된 모드의 B 및 C 출력 경계만 취합한다. 삭제 변형과 완료 모드는 제외한다. 기존 후속02 패치 반영분을 중복 처리하지 않는다.
 2. 현재 번역 DLL 및 외부/내장 자료를 대조하여 이미 반영·보호·실제 미적용 표시 위치를 구별하고 대상 목록과 실제 잔여를 확정한다.
