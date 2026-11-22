@@ -1,0 +1,68 @@
+{
+  "inputHash": "676596224ab4bc9dc5fabaedfee76156cdfd24b04787128a450f7f275c01b474",
+  "finalDllSHA256": "6d9e669aa62f267e989327b98a191403cddb31585c813a5be38f9ca6a4a2695e",
+  "methodsCompared": 19,
+  "changes": 4,
+  "protectedSearchSites": [
+    {
+      "method": "System.String MentorToSarrona.ModEntry::RenameText(System.String)",
+      "offset": 6,
+      "value": "导师笔记"
+    },
+    {
+      "method": "System.String MentorToSarrona.ModEntry::RenameText(System.String)",
+      "offset": 21,
+      "value": "导师手册"
+    },
+    {
+      "method": "System.String MentorToSarrona.ModEntry::RenameText(System.String)",
+      "offset": 36,
+      "value": "导师"
+    },
+    {
+      "method": "System.String MentorToSarrona.ModEntry::RewriteLocalizedText(System.String,System.String,System.String)",
+      "offset": 39,
+      "value": "他"
+    }
+  ],
+  "sitePlan": [
+    {
+      "Method": "RenameText",
+      "Offset": 11,
+      "Search": "导师笔记",
+      "Before": "塞萝娜的笔记",
+      "After": "세로나의 노트"
+    },
+    {
+      "Method": "RenameText",
+      "Offset": 26,
+      "Search": "导师手册",
+      "Before": "塞萝娜的手册",
+      "After": "세로나의 안내서"
+    },
+    {
+      "Method": "RenameText",
+      "Offset": 41,
+      "Search": "导师",
+      "Before": "塞萝娜",
+      "After": "세로나"
+    },
+    {
+      "Method": "RewriteLocalizedText",
+      "Offset": 44,
+      "Search": "他",
+      "Before": "她",
+      "After": "그녀"
+    }
+  ],
+  "resourceCount": 0,
+  "actualGameRuntimeTest": false,
+  "scope": "Existing replacement output arguments only; search operands and other IL preserved",
+  "archive": {
+    "path": "ProbablyStolen_MentorToSarrona_v1.2.0_KO_Final_20261122.zip",
+    "sha256": "dcbb01097a6a96ae75607c6d87e39a750538bc75eafb777fab6d86b87e14f46e",
+    "files": 4,
+    "crc": "pass",
+    "matchesAllOverlayFiles": true
+  }
+}
