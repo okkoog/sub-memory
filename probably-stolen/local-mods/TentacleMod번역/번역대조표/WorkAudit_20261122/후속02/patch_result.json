@@ -1,0 +1,296 @@
+{
+  "dlls": [
+    {
+      "relative": "3842259965/probably_adult_goods.dll",
+      "oldHash": "c41e42003b4e9394e10eff64278542f1a153873b0cd52c1f8f5c49d6df498f2c",
+      "newHash": "fe15e5a2801bb2b7fa298753cac2898b2ef86effcdebc9a0f059563585189634",
+      "patched": 1
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "oldHash": "d7884b63ab305620446d6d74588435829bc11a3badc0c3b176574b23ff4a6568",
+      "newHash": "fbc7a4356c60ac270e8c55f5e5d98922786ee24bd9f7490d3dce2de0b475e5a2",
+      "patched": 4
+    },
+    {
+      "relative": "3843142171/fallen_heiress_eleanor.dll",
+      "oldHash": "e12558b3d3f89f58d682bd103e2802eda660edf8d68b3b193ea20757abeabac2",
+      "newHash": "046cc1f24b69c20ccfd9438a8b3c8d09f96063ae20974ce4171fc431085a9c0d",
+      "patched": 1
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "oldHash": "f31b45983291beaad8d9d7a433c1aa7cc422485a2d55f0260831dac82adcebf9",
+      "newHash": "1d93ae5ae4eee8c2afcededa8be444c22d20a5f65e5b7437ddbad141ec114f8e",
+      "patched": 5
+    },
+    {
+      "relative": "lewdMemeBrood v0331/LewdMemeBrood.dll",
+      "oldHash": "70b85c118c739c69d7c4307a171cf20f9e64beaa37c1bb48e5642f9a73d8fae8",
+      "newHash": "268a3fb54498f1ffeeeccd7d09641b937710c23725b0d7b9dc4be025235d1494",
+      "patched": 1
+    },
+    {
+      "relative": "\u53EF\u80FD\u662F\u6210\u4EBA\u7528\u54C1 v1.1.3/probably_adult_goods.dll",
+      "oldHash": "00038d149d00a5fa4c66d6c6cd077825aa8e5472f76dc2f4801fe22138a07520",
+      "newHash": "cf04f0bd5d6b07cbd1bb5800c9122ec081fb4f99f2e71eb7f697ba538c87849d",
+      "patched": 2
+    },
+    {
+      "relative": "\u8D77\u98DE\u653B\u901F\u88C5-v1.1.3\u62A2\u5148\u4F53\u9A8C\u7248\uFF08\u4FEEbug\uFF09/\u8D77\u98DE\u653B\u901F\u88C5.dll",
+      "oldHash": "c3dff923a3cd9a990185191599314c4ff11b445dd0f29484ab957140d12121c9",
+      "newHash": "dba7d2b6fd23ac4e9a20a40d31e4f990e0e9f0035c6b6df8fb349da1345548ef",
+      "patched": 1
+    }
+  ],
+  "sites": [
+    {
+      "relative": "3842259965/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ItemSheet::EnsureLoaded()",
+      "offset": 67,
+      "old": "\u7269\u54C1\u6807\u7B7E\u4EF7\u683C.csv missing.",
+      "newText": "\u7269\u54C1\u6807\u7B7E\u4EF7\u683C.csv \uD30C\uC77C\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.",
+      "sink": "System.Void ModLog::Log(System.Object)"
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 35,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Int32\u003E ModConfig::Define(System.String,System.Int32,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Nullable\u00601\u003CSystem.Int32\u003E,System.Nullable\u00601\u003CSystem.Int32\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 132,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Int32\u003E ModConfig::Define(System.String,System.Int32,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Nullable\u00601\u003CSystem.Int32\u003E,System.Nullable\u00601\u003CSystem.Int32\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 233,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Single\u003E ModConfig::Define(System.String,System.Single,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Nullable\u00601\u003CSystem.Single\u003E,System.Nullable\u00601\u003CSystem.Single\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 337,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Boolean\u003E ModConfig::Define(System.String,System.Boolean,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "3843142171/fallen_heiress_eleanor.dll",
+      "method": "System.Void ProbablyAdultGoods.ItemSheet::EnsureLoaded()",
+      "offset": 67,
+      "old": "\u7269\u54C1\u6807\u7B7E\u4EF7\u683C.csv missing.",
+      "newText": "\u7269\u54C1\u6807\u7B7E\u4EF7\u683C.csv \uD30C\uC77C\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.",
+      "sink": "System.Void ModLog::Log(System.Object)"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "method": "System.Boolean MidnightPawn.Game.AlarmClock::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 105,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 264,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 695,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 179,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "method": "System.Boolean MidnightPawn.Game.TentacleTrap::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 105,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)"
+    },
+    {
+      "relative": "lewdMemeBrood v0331/LewdMemeBrood.dll",
+      "method": "System.Void BroodMainCycle.Devour/\u003C\u003Ec::\u003CRegisterTests\u003Eb__18_2()",
+      "offset": 53,
+      "old": "\u4FB5\u8680",
+      "newText": "\uCE68\uC2DD",
+      "sink": "System.Void BroodMainCycle.Check::Eq\u003CSystem.Int32\u003E(System.Int32,System.Int32,System.String)"
+    },
+    {
+      "relative": "\u53EF\u80FD\u662F\u6210\u4EBA\u7528\u54C1 v1.1.3/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 35,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Boolean\u003E ModConfig::Define(System.String,System.Boolean,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "\u53EF\u80FD\u662F\u6210\u4EBA\u7528\u54C1 v1.1.3/probably_adult_goods.dll",
+      "method": "System.Void ProbablyAdultGoods.ModEntry::Init(ModManifest)",
+      "offset": 119,
+      "old": "\u989D\u5916\u5185\u5BB9",
+      "newText": "\uCD94\uAC00 \uCF58\uD150\uCE20",
+      "sink": "ConfigEntry\u00601\u003CSystem.Boolean\u003E ModConfig::Define(System.String,System.Boolean,System.String,System.Func\u00601\u003CSystem.String\u003E,System.Func\u00601\u003CSystem.String\u003E,System.Boolean)"
+    },
+    {
+      "relative": "\u8D77\u98DE\u653B\u901F\u88C5-v1.1.3\u62A2\u5148\u4F53\u9A8C\u7248\uFF08\u4FEEbug\uFF09/\u8D77\u98DE\u653B\u901F\u88C5.dll",
+      "method": "System.Void DailyWearKitchen.Wardrobes::Build(GameItem)",
+      "offset": 23,
+      "old": "\u6298\u53E0\u8863\u67DC",
+      "newText": "\uC811\uC774\uC2DD \uC637\uC7A5",
+      "sink": "PixelWindow PixelWindow::SetTitle(System.String)"
+    }
+  ],
+  "scan": [
+    {
+      "relative": "3842247788/fallen_heiress_eleanor.dll",
+      "status": "read",
+      "methodCount": 1444,
+      "groups": 8,
+      "sha256": "da1b92d321ac6b4217846c580d2ba8e09bd0aa98db9498ff540d156f7b7eca76"
+    },
+    {
+      "relative": "3842259965/probably_adult_goods.dll",
+      "status": "read",
+      "methodCount": 370,
+      "groups": 3,
+      "sha256": "c41e42003b4e9394e10eff64278542f1a153873b0cd52c1f8f5c49d6df498f2c"
+    },
+    {
+      "relative": "3843110449/GeorgioToElueym.dll",
+      "status": "read",
+      "methodCount": 23,
+      "groups": 2,
+      "sha256": "fa9a8b7d0780e5f776c8662b5dca910da59b6cd92af799cd3dcf9b5c5d009739"
+    },
+    {
+      "relative": "3843110449/ToElueym.dll",
+      "status": "read",
+      "methodCount": 6,
+      "groups": 0,
+      "sha256": "e40309fd34299801721e2cbe93be1db7c6be978f989d3ce09932f35449c586c9"
+    },
+    {
+      "relative": "3843125702/probably_adult_goods.dll",
+      "status": "read",
+      "methodCount": 374,
+      "groups": 5,
+      "sha256": "d7884b63ab305620446d6d74588435829bc11a3badc0c3b176574b23ff4a6568"
+    },
+    {
+      "relative": "3843142171/fallen_heiress_eleanor.dll",
+      "status": "read",
+      "methodCount": 1908,
+      "groups": 11,
+      "sha256": "e12558b3d3f89f58d682bd103e2802eda660edf8d68b3b193ea20757abeabac2"
+    },
+    {
+      "relative": "IronBloodSheer/ironblood_sheer.dll",
+      "status": "read",
+      "methodCount": 20,
+      "groups": 0,
+      "sha256": "3a3aff2d6e64775bfce698f1eaa89991304956fceb3c311c0b060295b902d1a6"
+    },
+    {
+      "relative": "ItemPortraitHD_v1.3.0/ItemPortraitHD.dll",
+      "status": "read",
+      "methodCount": 807,
+      "groups": 19,
+      "sha256": "4d02455b210a03a56179cb8be967740d0f9f5d6b7703bf86f6f37aa5d7bd058f"
+    },
+    {
+      "relative": "lewd_meme_config0.7.2-pre/LewdMemeConfig.dll",
+      "status": "read",
+      "methodCount": 881,
+      "groups": 25,
+      "sha256": "340af7f28d406e3345db410bf8ed68c58db5bd4ebf5b9d341286a97ff0c08396"
+    },
+    {
+      "relative": "lewd_meme2.1.0/MidnightPawn.dll",
+      "status": "read",
+      "methodCount": 732,
+      "groups": 65,
+      "sha256": "f31b45983291beaad8d9d7a433c1aa7cc422485a2d55f0260831dac82adcebf9"
+    },
+    {
+      "relative": "lewdMemeBrood v0331/LewdMemeBrood.dll",
+      "status": "read",
+      "methodCount": 1740,
+      "groups": 13,
+      "sha256": "70b85c118c739c69d7c4307a171cf20f9e64beaa37c1bb48e5642f9a73d8fae8"
+    },
+    {
+      "relative": "LewdMemeBrothel-0.10.4-candidate/LewdMemeBrothel.dll",
+      "status": "read",
+      "methodCount": 519,
+      "groups": 1,
+      "sha256": "dec160466f904be6fed5d94b944d65e5746cd6ca3b807eea85ec5523e2d67ac8"
+    },
+    {
+      "relative": "LewdMemeLegacyContent-1.0.6-48sounds/LewdMemeLegacyContent.dll",
+      "status": "read",
+      "methodCount": 136,
+      "groups": 4,
+      "sha256": "6c46f8af394e31a44bf21e37f77df8bdba8bba465b7fc4abf1a6fcf759bb3d82"
+    },
+    {
+      "relative": "LewdMemeShadowTrade1.6.4/ShadowTrade.dll",
+      "status": "read",
+      "methodCount": 651,
+      "groups": 67,
+      "sha256": "1b4394015721028cf6f21a9fa8c44fae68eaa49b83079422566b7c9d6b5356db"
+    },
+    {
+      "relative": "RedLightDistrict_v1.1.1/RedLightDistrict.dll",
+      "status": "read",
+      "methodCount": 1860,
+      "groups": 655,
+      "sha256": "6089ad1d83d1a3131cc9e141d9c4dd7d66f8f2da6b0afde7010db403b4def03f"
+    },
+    {
+      "relative": "\u53EF\u80FD\u662F\u6210\u4EBA\u7528\u54C1 v1.1.3/probably_adult_goods.dll",
+      "status": "read",
+      "methodCount": 248,
+      "groups": 4,
+      "sha256": "00038d149d00a5fa4c66d6c6cd077825aa8e5472f76dc2f4801fe22138a07520"
+    },
+    {
+      "relative": "\u843D\u9B44\u5343\u91D1-\u57C3\u8389\u8BFA v1.0.3/fallen_heiress_eleanor.dll",
+      "status": "read",
+      "methodCount": 1511,
+      "groups": 8,
+      "sha256": "8a9a116882821298713826b3d357f4ccac4c04ee3fa3664c6671f2c29f95d690"
+    },
+    {
+      "relative": "\u8D77\u98DE\u653B\u901F\u88C5-v1.1.3\u62A2\u5148\u4F53\u9A8C\u7248\uFF08\u4FEEbug\uFF09/\u8D77\u98DE\u653B\u901F\u88C5.dll",
+      "status": "read",
+      "methodCount": 1199,
+      "groups": 36,
+      "sha256": "c3dff923a3cd9a990185191599314c4ff11b445dd0f29484ab957140d12121c9"
+    }
+  ]
+}
