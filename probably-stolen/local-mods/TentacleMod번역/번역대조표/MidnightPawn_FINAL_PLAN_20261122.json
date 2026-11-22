@@ -1,0 +1,2850 @@
+{
+  "baselineSha256": "1d93ae5ae4eee8c2afcededa8be444c22d20a5f65e5b7437ddbad141ec114f8e",
+  "sites": [
+    {
+      "token": "06000004",
+      "method": "System.Void MidnightPawn.ModConst::.cctor()",
+      "offset": 8,
+      "source": "无",
+      "target": "없음",
+      "action": "protect"
+    },
+    {
+      "token": "06000004",
+      "method": "System.Void MidnightPawn.ModConst::.cctor()",
+      "offset": 16,
+      "source": "侵染",
+      "target": "侵染",
+      "action": "protect"
+    },
+    {
+      "token": "06000004",
+      "method": "System.Void MidnightPawn.ModConst::.cctor()",
+      "offset": 24,
+      "source": "微荧",
+      "target": "微荧",
+      "action": "protect"
+    },
+    {
+      "token": "06000004",
+      "method": "System.Void MidnightPawn.ModConst::.cctor()",
+      "offset": 32,
+      "source": "明耀",
+      "target": "明耀",
+      "action": "protect"
+    },
+    {
+      "token": "06000004",
+      "method": "System.Void MidnightPawn.ModConst::.cctor()",
+      "offset": 40,
+      "source": "恒昼",
+      "target": "恒昼",
+      "action": "protect"
+    },
+    {
+      "token": "06000022",
+      "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+      "offset": 17,
+      "source": "拾荒",
+      "target": "폐품 수집",
+      "action": "patch"
+    },
+    {
+      "token": "06000022",
+      "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+      "offset": 123,
+      "source": "拾荒",
+      "target": "폐품 수집",
+      "action": "patch"
+    },
+    {
+      "token": "06000022",
+      "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+      "offset": 224,
+      "source": "拾荒",
+      "target": "폐품 수집",
+      "action": "patch"
+    },
+    {
+      "token": "0600002E",
+      "method": "GameItem MidnightPawn.Game.AlarmClock::CreateAlarm()",
+      "offset": 12,
+      "source": "闹钟",
+      "target": "알람 시계",
+      "action": "patch"
+    },
+    {
+      "token": "0600002E",
+      "method": "GameItem MidnightPawn.Game.AlarmClock::CreateAlarm()",
+      "offset": 162,
+      "source": "闹钟",
+      "target": "알람 시계",
+      "action": "patch"
+    },
+    {
+      "token": "06000038",
+      "method": "System.Boolean MidnightPawn.Game.AlarmClock::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 39,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000038",
+      "method": "System.Boolean MidnightPawn.Game.AlarmClock::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 80,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000038",
+      "method": "System.Boolean MidnightPawn.Game.AlarmClock::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 105,
+      "source": "侵蚀",
+      "target": "침식",
+      "action": "already"
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void MidnightPawn.Game.AlarmClock::NightlyTickOnce(GameItem)",
+      "offset": 187,
+      "source": "苗床",
+      "target": "숙주",
+      "action": "patch"
+    },
+    {
+      "token": "06000040",
+      "method": "System.String MidnightPawn.Game.AlarmClock::MaidenNameInAlarm()",
+      "offset": 157,
+      "source": "苗床",
+      "target": "숙주",
+      "action": "patch"
+    },
+    {
+      "token": "06000040",
+      "method": "System.String MidnightPawn.Game.AlarmClock::MaidenNameInAlarm()",
+      "offset": 224,
+      "source": "苗床",
+      "target": "숙주",
+      "action": "patch"
+    },
+    {
+      "token": "06000085",
+      "method": "System.String MidnightPawn.Game.ArchivePaper::PrereqText(MidnightPawn.Game.CodexEntry)",
+      "offset": 13,
+      "source": "无",
+      "target": "없음",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 45,
+      "source": "触手本体",
+      "target": "촉수 본체",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 153,
+      "source": "侵蚀性触手",
+      "target": "침식성 촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 291,
+      "source": "触手档案",
+      "target": "묘상 기록부",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 389,
+      "source": "触手苗床箱",
+      "target": "촉수 묘상 상자",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 548,
+      "source": "触手落穴陷阱",
+      "target": "촉수 함정",
+      "action": "patch"
+    },
+    {
+      "token": "060000C9",
+      "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+      "offset": 635,
+      "source": "触手3D打印机",
+      "target": "촉수 3D 프린터",
+      "action": "patch"
+    },
+    {
+      "token": "060000D6",
+      "method": "GameItem MidnightPawn.Game.CorruptTentacle::Create()",
+      "offset": 12,
+      "source": "侵蚀性触手",
+      "target": "침식성 촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000D6",
+      "method": "GameItem MidnightPawn.Game.CorruptTentacle::Create()",
+      "offset": 318,
+      "source": "侵蚀性触手",
+      "target": "침식성 촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000DC",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::OnSemenUsed(GameItem,GameItem)",
+      "offset": 70,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000DC",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::OnSemenUsed(GameItem,GameItem)",
+      "offset": 192,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 216,
+      "source": "卢的储物柜",
+      "target": "卢的储物柜",
+      "action": "protect"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 329,
+      "source": "物资箱",
+      "target": "物资箱",
+      "action": "protect"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 342,
+      "source": "货箱",
+      "target": "货箱",
+      "action": "protect"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 355,
+      "source": "物证柜",
+      "target": "物证柜",
+      "action": "protect"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 370,
+      "source": "储藏区",
+      "target": "储藏区",
+      "action": "protect"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 434,
+      "source": "[重要物品]",
+      "target": "[중요 물품]",
+      "action": "patch"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 467,
+      "source": "[容器]",
+      "target": "[용기]",
+      "action": "patch"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::IsCorruptible(GameItem)",
+      "offset": 500,
+      "source": "[机器]",
+      "target": "[기계]",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 21,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 103,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 182,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 220,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 264,
+      "source": "侵蚀",
+      "target": "침식",
+      "action": "already"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 511,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 551,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 604,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 695,
+      "source": "侵蚀",
+      "target": "침식",
+      "action": "already"
+    },
+    {
+      "token": "060000E0",
+      "method": "System.Boolean MidnightPawn.Game.CorruptTentacle::TryCorrupt(GameItem,GameItem)",
+      "offset": 835,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000E1",
+      "method": "System.Void MidnightPawn.Game.CorruptTentacle::RegrowIfEaten(GameItem)",
+      "offset": 34,
+      "source": "侵蚀性触手",
+      "target": "침식성 촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060000EF",
+      "method": "System.Boolean MidnightPawn.Game.DeflowerTracker::AddSex(GameItem,System.Int32)",
+      "offset": 158,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "060000F0",
+      "method": "System.Boolean MidnightPawn.Game.DeflowerTracker::AddAnal(GameItem,System.Int32)",
+      "offset": 175,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 306,
+      "source": "工具",
+      "target": "工具",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 327,
+      "source": "武器",
+      "target": "武器",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 348,
+      "source": "材料",
+      "target": "材料",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 369,
+      "source": "食物",
+      "target": "食物",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 390,
+      "source": "饮料",
+      "target": "饮料",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 411,
+      "source": "零食",
+      "target": "零食",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 432,
+      "source": "文件",
+      "target": "文件",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 448,
+      "source": "文档",
+      "target": "文档",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 469,
+      "source": "种子",
+      "target": "种子",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 490,
+      "source": "触手",
+      "target": "촉수",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 511,
+      "source": "日用品",
+      "target": "日用品",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 529,
+      "source": "奢侈品",
+      "target": "奢侈品",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 547,
+      "source": "违禁品",
+      "target": "违禁品",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 565,
+      "source": "医疗品",
+      "target": "医疗品",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 583,
+      "source": "医疗用具",
+      "target": "医疗用具",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 598,
+      "source": "近战武器",
+      "target": "近战武器",
+      "action": "protect"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.ItemDef::MapType(System.String)",
+      "offset": 613,
+      "source": "触手侵蚀",
+      "target": "触手侵蚀",
+      "action": "protect"
+    },
+    {
+      "token": "0600010C",
+      "method": "System.Void MidnightPawn.Game.ItemCsv::Load()",
+      "offset": 29,
+      "source": "Data/物品定义.csv",
+      "target": "Data/物品定义.csv",
+      "action": "protect"
+    },
+    {
+      "token": "0600010C",
+      "method": "System.Void MidnightPawn.Game.ItemCsv::Load()",
+      "offset": 48,
+      "source": "아이템 정의표가 없습니다(Data/物品定义.csv). 모두 코드에 내장된 기본값을 사용합니다.",
+      "target": "아이템 정의표가 없습니다(Data/物品定义.csv). 모두 코드에 내장된 기본값을 사용합니다.",
+      "action": "protect"
+    },
+    {
+      "token": "06000118",
+      "method": "System.Boolean MidnightPawn.Game.ItemDelivery::DeliverOrDestroy(GameItem,System.String)",
+      "offset": 67,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 12,
+      "source": "少女",
+      "target": "소녀",
+      "action": "protect"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 352,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 399,
+      "source": "少女",
+      "target": "소녀",
+      "action": "protect"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 413,
+      "source": "萝莉",
+      "target": "萝莉",
+      "action": "protect"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 438,
+      "source": "巨乳",
+      "target": "巨乳",
+      "action": "protect"
+    },
+    {
+      "token": "06000120",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+      "offset": 955,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "06000121",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMilk()",
+      "offset": 12,
+      "source": "神奇乳汁",
+      "target": "신비한 모유",
+      "action": "patch"
+    },
+    {
+      "token": "06000121",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMilk()",
+      "offset": 384,
+      "source": "乳汁",
+      "target": "모유",
+      "action": "patch"
+    },
+    {
+      "token": "06000123",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateSemen()",
+      "offset": 11,
+      "source": "触手精液",
+      "target": "촉수 정액",
+      "action": "patch"
+    },
+    {
+      "token": "06000123",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateSemen()",
+      "offset": 460,
+      "source": "精液",
+      "target": "정액",
+      "action": "patch"
+    },
+    {
+      "token": "06000124",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateTentacleBox()",
+      "offset": 91,
+      "source": "触手苗床箱",
+      "target": "촉수 묘상 상자",
+      "action": "patch"
+    },
+    {
+      "token": "06000124",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateTentacleBox()",
+      "offset": 245,
+      "source": "苗床箱",
+      "target": "묘상 상자",
+      "action": "patch"
+    },
+    {
+      "token": "06000125",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateNote()",
+      "offset": 127,
+      "source": "说明书",
+      "target": "사용 설명서",
+      "action": "patch"
+    },
+    {
+      "token": "06000126",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot()",
+      "offset": 11,
+      "source": "排卵诱发剂",
+      "target": "배란 유도제",
+      "action": "patch"
+    },
+    {
+      "token": "06000126",
+      "method": "GameItem MidnightPawn.Game.ItemFactory::CreateOvulationShot()",
+      "offset": 249,
+      "source": "排卵诱发剂",
+      "target": "배란 유도제",
+      "action": "patch"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 352,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 373,
+      "source": "雇佣兵",
+      "target": "雇佣兵",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 394,
+      "source": "工程师",
+      "target": "工程师",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 415,
+      "source": "农场主",
+      "target": "农场主",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 436,
+      "source": "清洁员",
+      "target": "清洁员",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 457,
+      "source": "走私者",
+      "target": "走私者",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 478,
+      "source": "货运员",
+      "target": "货运员",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 499,
+      "source": "维修工",
+      "target": "维修工",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 520,
+      "source": "研究员",
+      "target": "研究员",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 541,
+      "source": "矿工",
+      "target": "矿工",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 562,
+      "source": "护士",
+      "target": "护士",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 583,
+      "source": "医生",
+      "target": "医生",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 604,
+      "source": "厨师",
+      "target": "厨师",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 625,
+      "source": "小偷",
+      "target": "小偷",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 646,
+      "source": "商人",
+      "target": "商人",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 667,
+      "source": "技师",
+      "target": "技师",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 688,
+      "source": "文员",
+      "target": "文员",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 709,
+      "source": "酒保",
+      "target": "酒保",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 730,
+      "source": "学徒",
+      "target": "学徒",
+      "action": "protect"
+    },
+    {
+      "token": "0600012C",
+      "method": "System.String MidnightPawn.Game.ItemFactory::JobTagOf(System.String)",
+      "offset": 751,
+      "source": "艺人",
+      "target": "艺人",
+      "action": "protect"
+    },
+    {
+      "token": "0600012F",
+      "method": "System.Int32 MidnightPawn.Game.ItemFactory::FactionBase(System.String)",
+      "offset": 1,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600012F",
+      "method": "System.Int32 MidnightPawn.Game.ItemFactory::FactionBase(System.String)",
+      "offset": 17,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600012F",
+      "method": "System.Int32 MidnightPawn.Game.ItemFactory::FactionBase(System.String)",
+      "offset": 30,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600012F",
+      "method": "System.Int32 MidnightPawn.Game.ItemFactory::FactionBase(System.String)",
+      "offset": 43,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "06000132",
+      "method": "System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem)",
+      "offset": 84,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "06000132",
+      "method": "System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem)",
+      "offset": 111,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "06000132",
+      "method": "System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem)",
+      "offset": 138,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "06000132",
+      "method": "System.Void MidnightPawn.Game.ItemFactory::UpdateMaidenDescription(GameItem)",
+      "offset": 165,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "06000149",
+      "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__12_2(GameItem,GameItem)",
+      "offset": 156,
+      "source": "排卵诱发剂",
+      "target": "배란 유도제",
+      "action": "patch"
+    },
+    {
+      "token": "06000158",
+      "method": "System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext)",
+      "offset": 91,
+      "source": "垃圾场",
+      "target": "쓰레기장",
+      "action": "patch"
+    },
+    {
+      "token": "06000158",
+      "method": "System.Void MidnightPawn.Game.LootHook::OnLootRolled(LootRollContext)",
+      "offset": 96,
+      "source": "触手本体",
+      "target": "촉수 본체",
+      "action": "patch"
+    },
+    {
+      "token": "06000159",
+      "method": "System.Void MidnightPawn.Game.LootHook::SpawnMaiden()",
+      "offset": 23,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 8,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 34,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 66,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 111,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 143,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 162,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 181,
+      "source": "教会",
+      "target": "教会",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 200,
+      "source": "卡特尔",
+      "target": "卡特尔",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 220,
+      "source": "下层",
+      "target": "下层",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 232,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 239,
+      "source": "上层",
+      "target": "上层",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 251,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 258,
+      "source": "治安",
+      "target": "治安",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 270,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 277,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 289,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 296,
+      "source": "革命",
+      "target": "革命",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 308,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 315,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 327,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 334,
+      "source": "教会",
+      "target": "教会",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 346,
+      "source": "教会",
+      "target": "教会",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 353,
+      "source": "卡特",
+      "target": "卡特",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 365,
+      "source": "卡特尔",
+      "target": "卡特尔",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 372,
+      "source": "下层",
+      "target": "下层",
+      "action": "protect"
+    },
+    {
+      "token": "0600015B",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionCn(System.String)",
+      "offset": 383,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 120,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 138,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 153,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 168,
+      "source": "卡特尔",
+      "target": "卡特尔",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 183,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 198,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015C",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::NativeFactionTag(System.String)",
+      "offset": 213,
+      "source": "教会",
+      "target": "教会",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 8,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 34,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 66,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 98,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 117,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 136,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 168,
+      "source": "教会",
+      "target": "教会",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 187,
+      "source": "卡特尔",
+      "target": "卡特尔",
+      "action": "protect"
+    },
+    {
+      "token": "0600015D",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::FactionFromSprite(System.String)",
+      "offset": 193,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 8,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 47,
+      "source": "巡查",
+      "target": "巡查",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 66,
+      "source": "公司保安",
+      "target": "公司保安",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 98,
+      "source": "守卫",
+      "target": "守卫",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 117,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 136,
+      "source": "矿工",
+      "target": "矿工",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 155,
+      "source": "护士",
+      "target": "护士",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 187,
+      "source": "医生",
+      "target": "医生",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 219,
+      "source": "工程师",
+      "target": "工程师",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 251,
+      "source": "维修工",
+      "target": "维修工",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 283,
+      "source": "厨师",
+      "target": "厨师",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 302,
+      "source": "农场主",
+      "target": "农场主",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 334,
+      "source": "研究员",
+      "target": "研究员",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 366,
+      "source": "货运员",
+      "target": "货运员",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 398,
+      "source": "商人",
+      "target": "商人",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 417,
+      "source": "走私者",
+      "target": "走私者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 449,
+      "source": "小偷",
+      "target": "小偷",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 481,
+      "source": "文员",
+      "target": "文员",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 513,
+      "source": "清洁员",
+      "target": "清洁员",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 558,
+      "source": "艺人",
+      "target": "艺人",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 590,
+      "source": "学徒",
+      "target": "学徒",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 622,
+      "source": "酒保",
+      "target": "酒保",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 641,
+      "source": "恋人",
+      "target": "恋人",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 660,
+      "source": "间谍",
+      "target": "间谍",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 692,
+      "source": "牧师",
+      "target": "牧师",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 724,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 743,
+      "source": "长者",
+      "target": "长者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 775,
+      "source": "病人",
+      "target": "病人",
+      "action": "protect"
+    },
+    {
+      "token": "0600015E",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::JobCn(System.String)",
+      "offset": 781,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 179,
+      "source": "巡查",
+      "target": "巡查",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 200,
+      "source": "守卫",
+      "target": "守卫",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 221,
+      "source": "护士",
+      "target": "护士",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 242,
+      "source": "医生",
+      "target": "医生",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 260,
+      "source": "厨师",
+      "target": "厨师",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 278,
+      "source": "工程师",
+      "target": "工程师",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 293,
+      "source": "维修工",
+      "target": "维修工",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 308,
+      "source": "农场主",
+      "target": "农场主",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 323,
+      "source": "研究员",
+      "target": "研究员",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 338,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 423,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 436,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 449,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600015F",
+      "method": "System.String MidnightPawn.Game.MaidenIdentity::SpriteFor(System.String,System.String)",
+      "offset": 462,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "06000163",
+      "method": "System.Void MidnightPawn.Game.MaidenIdentity::ApplyIdentity(GameItem,System.String,System.String,System.String,System.String)",
+      "offset": 195,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600017D",
+      "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "offset": 51,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "0600017D",
+      "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "offset": 86,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "06000181",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::DoSweetTalk()",
+      "offset": 33,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000181",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::DoSweetTalk()",
+      "offset": 242,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000182",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::DoBlock()",
+      "offset": 39,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000186",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel/<>c::<Build>b__46_0()",
+      "offset": 5,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 472,
+      "source": "【触手】",
+      "target": "【촉수】",
+      "action": "patch"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 686,
+      "source": "【触手侵蚀】",
+      "target": "【촉수 침식】",
+      "action": "patch"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 708,
+      "source": "【触手】",
+      "target": "【촉수】",
+      "action": "patch"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 1091,
+      "source": "【女儿】",
+      "target": "【딸】",
+      "action": "patch"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 8,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 16,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 24,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 32,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 40,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 60,
+      "source": "拾荒者",
+      "target": "拾荒者",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 68,
+      "source": "矿工",
+      "target": "矿工",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 76,
+      "source": "雇佣兵",
+      "target": "雇佣兵",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 84,
+      "source": "工程师",
+      "target": "工程师",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 92,
+      "source": "护士",
+      "target": "护士",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 100,
+      "source": "医生",
+      "target": "医生",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 108,
+      "source": "厨师",
+      "target": "厨师",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 116,
+      "source": "农场主",
+      "target": "农场主",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 124,
+      "source": "小偷",
+      "target": "小偷",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 133,
+      "source": "商人",
+      "target": "商人",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 142,
+      "source": "清洁员",
+      "target": "清洁员",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 151,
+      "source": "技师",
+      "target": "技师",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 160,
+      "source": "文员",
+      "target": "文员",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 169,
+      "source": "走私者",
+      "target": "走私者",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 178,
+      "source": "货运员",
+      "target": "货运员",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 187,
+      "source": "酒保",
+      "target": "酒保",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 196,
+      "source": "维修工",
+      "target": "维修工",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 205,
+      "source": "研究员",
+      "target": "研究员",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 214,
+      "source": "学徒",
+      "target": "学徒",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 223,
+      "source": "艺人",
+      "target": "艺人",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 242,
+      "source": "贫乳",
+      "target": "贫乳",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 250,
+      "source": "普乳",
+      "target": "普乳",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 258,
+      "source": "巨乳",
+      "target": "巨乳",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 277,
+      "source": "萝莉",
+      "target": "萝莉",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 285,
+      "source": "少女",
+      "target": "소녀",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 293,
+      "source": "御姐",
+      "target": "御姐",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 301,
+      "source": "少妇",
+      "target": "少妇",
+      "action": "protect"
+    },
+    {
+      "token": "06000196",
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "offset": 309,
+      "source": "熟女",
+      "target": "熟女",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 8,
+      "source": "拾荒客",
+      "target": "拾荒客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 60,
+      "source": "治安部盘查员",
+      "target": "治安部盘查员",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 79,
+      "source": "公司保安",
+      "target": "公司保安",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 111,
+      "source": "守卫",
+      "target": "守卫",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 156,
+      "source": "革命军战士",
+      "target": "革命军战士",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 175,
+      "source": "扒手",
+      "target": "扒手",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 220,
+      "source": "食物窃贼",
+      "target": "食物窃贼",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 252,
+      "source": "小偷",
+      "target": "小偷",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 284,
+      "source": "可疑的商人",
+      "target": "可疑的商人",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 303,
+      "source": "上层区药剂师",
+      "target": "上层区药剂师",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 335,
+      "source": "上层区访客",
+      "target": "上层区访客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 367,
+      "source": "上层区公民",
+      "target": "上层区公民",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 386,
+      "source": "拾荒客（货箱）",
+      "target": "拾荒客（货箱）",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 405,
+      "source": "水贩",
+      "target": "水贩",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 424,
+      "source": "下层区化学家",
+      "target": "下层区化学家",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 443,
+      "source": "矿工",
+      "target": "矿工",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 462,
+      "source": "废料客",
+      "target": "废料客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 481,
+      "source": "雇佣兵",
+      "target": "雇佣兵",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 500,
+      "source": "粮站供应商",
+      "target": "粮站供应商",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 519,
+      "source": "星际客",
+      "target": "星际客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 551,
+      "source": "面色惨白的拾荒客",
+      "target": "面色惨白的拾荒客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 570,
+      "source": "瘾君子拾荒客",
+      "target": "瘾君子拾荒客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 589,
+      "source": "贫穷的拾荒客",
+      "target": "贫穷的拾荒客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 608,
+      "source": "拾荒客（普通）",
+      "target": "拾荒客（普通）",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 640,
+      "source": "游客",
+      "target": "游客",
+      "action": "protect"
+    },
+    {
+      "token": "06000197",
+      "method": "System.String MidnightPawn.Game.NpcExtras::IdentityCn(System.String)",
+      "offset": 659,
+      "source": "顾客",
+      "target": "顾客",
+      "action": "protect"
+    },
+    {
+      "token": "0600019B",
+      "method": "System.Boolean MidnightPawn.Game.NpcExtras::Block(GameItem)",
+      "offset": 153,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060001A6",
+      "method": "System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String)",
+      "offset": 19,
+      "source": "触手本体",
+      "target": "촉수 본체",
+      "action": "patch"
+    },
+    {
+      "token": "060001A6",
+      "method": "System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String)",
+      "offset": 34,
+      "source": "侵蚀性触手",
+      "target": "침식성 촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060001A6",
+      "method": "System.Void MidnightPawn.Game.Perks::OnNewGameStarted(System.String)",
+      "offset": 64,
+      "source": "触手档案",
+      "target": "묘상 기록부",
+      "action": "patch"
+    },
+    {
+      "token": "060001AB",
+      "method": "System.String MidnightPawn.Game.Perks/<>c::<Register>b__1_0()",
+      "offset": 0,
+      "source": "触手起源",
+      "target": "촉수의 기원",
+      "action": "patch"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 689,
+      "source": "卢",
+      "target": "卢",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 714,
+      "source": "博士",
+      "target": "博士",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 722,
+      "source": "警官",
+      "target": "警官",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 730,
+      "source": "师傅",
+      "target": "师傅",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 738,
+      "source": "王尔德",
+      "target": "王尔德",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 746,
+      "source": "塞尔皮科",
+      "target": "塞尔皮科",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 754,
+      "source": "埃莉诺",
+      "target": "埃莉诺",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 762,
+      "source": "内利斯",
+      "target": "内利斯",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 770,
+      "source": "乔治奥",
+      "target": "乔治奥",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 778,
+      "source": "巡检",
+      "target": "巡检",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 787,
+      "source": "治安官",
+      "target": "治安官",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 796,
+      "source": "信使",
+      "target": "信使",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 805,
+      "source": "房东",
+      "target": "房东",
+      "action": "protect"
+    },
+    {
+      "token": "060001C0",
+      "method": "System.Void MidnightPawn.Game.SpecialClients::.cctor()",
+      "offset": 814,
+      "source": "程爷",
+      "target": "程爷",
+      "action": "protect"
+    },
+    {
+      "token": "060001FE",
+      "method": "GameItem MidnightPawn.Game.TentacleArchive::Create()",
+      "offset": 251,
+      "source": "触手档案",
+      "target": "묘상 기록부",
+      "action": "patch"
+    },
+    {
+      "token": "0600020B",
+      "method": "GameItem MidnightPawn.Game.TentacleBody::Create()",
+      "offset": 35,
+      "source": "触手本体",
+      "target": "촉수 본체",
+      "action": "patch"
+    },
+    {
+      "token": "0600021E",
+      "method": "System.Void MidnightPawn.Game.TentacleBody::ProduceDaughter(GameItem)",
+      "offset": 325,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000249",
+      "method": "System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem)",
+      "offset": 13,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000249",
+      "method": "System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem)",
+      "offset": 45,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000249",
+      "method": "System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem)",
+      "offset": 76,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000249",
+      "method": "System.Boolean MidnightPawn.Game.TentacleEffects::TryApplySemen(GameItem)",
+      "offset": 277,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "0600024C",
+      "method": "GameItem MidnightPawn.Game.TentaclePrinter::CreateNeedle()",
+      "offset": 12,
+      "source": "空针管",
+      "target": "빈 주사기",
+      "action": "patch"
+    },
+    {
+      "token": "0600024C",
+      "method": "GameItem MidnightPawn.Game.TentaclePrinter::CreateNeedle()",
+      "offset": 151,
+      "source": "空针管",
+      "target": "빈 주사기",
+      "action": "patch"
+    },
+    {
+      "token": "0600024E",
+      "method": "System.Void MidnightPawn.Game.TentaclePrinter::NeedleIntoShot(GameItem,GameItem)",
+      "offset": 37,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "0600024E",
+      "method": "System.Void MidnightPawn.Game.TentaclePrinter::NeedleIntoShot(GameItem,GameItem)",
+      "offset": 58,
+      "source": "排卵诱发剂",
+      "target": "배란 유도제",
+      "action": "patch"
+    },
+    {
+      "token": "0600024F",
+      "method": "GameItem MidnightPawn.Game.TentaclePrinter::CreatePrinter()",
+      "offset": 35,
+      "source": "触手3D打印机",
+      "target": "촉수 3D 프린터",
+      "action": "patch"
+    },
+    {
+      "token": "0600024F",
+      "method": "GameItem MidnightPawn.Game.TentaclePrinter::CreatePrinter()",
+      "offset": 317,
+      "source": "触手3D打印机",
+      "target": "촉수 3D 프린터",
+      "action": "patch"
+    },
+    {
+      "token": "06000263",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::MakeOneNeedle(GameItem)",
+      "offset": 85,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000263",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::MakeOneNeedle(GameItem)",
+      "offset": 114,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 35,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 72,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 113,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean MidnightPawn.Game.TentaclePrinter::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 179,
+      "source": "侵蚀",
+      "target": "침식",
+      "action": "already"
+    },
+    {
+      "token": "06000268",
+      "method": "System.Void MidnightPawn.Game.TentaclePrinter::.cctor()",
+      "offset": 8,
+      "source": "空针管",
+      "target": "빈 주사기",
+      "action": "patch"
+    },
+    {
+      "token": "06000273",
+      "method": "System.Void MidnightPawn.Game.TentaclePrinter/<>c__DisplayClass17_0::<BuildWindow>b__3()",
+      "offset": 123,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000274",
+      "method": "GameItem MidnightPawn.Game.TentacleTrap::CreateManhole()",
+      "offset": 12,
+      "source": "井盖",
+      "target": "맨홀 뚜껑",
+      "action": "patch"
+    },
+    {
+      "token": "06000274",
+      "method": "GameItem MidnightPawn.Game.TentacleTrap::CreateManhole()",
+      "offset": 151,
+      "source": "井盖",
+      "target": "맨홀 뚜껑",
+      "action": "patch"
+    },
+    {
+      "token": "06000276",
+      "method": "GameItem MidnightPawn.Game.TentacleTrap::CreateTrap()",
+      "offset": 35,
+      "source": "触手落穴陷阱",
+      "target": "촉수 함정",
+      "action": "patch"
+    },
+    {
+      "token": "06000276",
+      "method": "GameItem MidnightPawn.Game.TentacleTrap::CreateTrap()",
+      "offset": 364,
+      "source": "触手落穴陷阱",
+      "target": "촉수 함정",
+      "action": "patch"
+    },
+    {
+      "token": "06000281",
+      "method": "System.Boolean MidnightPawn.Game.TentacleTrap::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 39,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000281",
+      "method": "System.Boolean MidnightPawn.Game.TentacleTrap::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 80,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "06000281",
+      "method": "System.Boolean MidnightPawn.Game.TentacleTrap::TryConvert(GameItem,GameItem,System.Int32,System.Int32)",
+      "offset": 105,
+      "source": "侵蚀",
+      "target": "침식",
+      "action": "already"
+    },
+    {
+      "token": "06000287",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::NightlyTickOnce(GameItem)",
+      "offset": 178,
+      "source": "触手落穴陷阱",
+      "target": "촉수 함정",
+      "action": "patch"
+    },
+    {
+      "token": "06000287",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::NightlyTickOnce(GameItem)",
+      "offset": 311,
+      "source": "少女",
+      "target": "소녀",
+      "action": "patch"
+    },
+    {
+      "token": "0600028A",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::.cctor()",
+      "offset": 8,
+      "source": "上层区",
+      "target": "上层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600028A",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::.cctor()",
+      "offset": 16,
+      "source": "下层区",
+      "target": "下层区",
+      "action": "protect"
+    },
+    {
+      "token": "0600028A",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::.cctor()",
+      "offset": 24,
+      "source": "黑市",
+      "target": "黑市",
+      "action": "protect"
+    },
+    {
+      "token": "0600028A",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::.cctor()",
+      "offset": 32,
+      "source": "治安部",
+      "target": "治安部",
+      "action": "protect"
+    },
+    {
+      "token": "0600028A",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap::.cctor()",
+      "offset": 40,
+      "source": "革命军",
+      "target": "革命军",
+      "action": "protect"
+    },
+    {
+      "token": "06000296",
+      "method": "System.Void MidnightPawn.Game.TentacleTrap/<>c__DisplayClass17_0::<BuildWindow>b__4()",
+      "offset": 113,
+      "source": "触手",
+      "target": "촉수",
+      "action": "patch"
+    },
+    {
+      "token": "060002A0",
+      "method": "System.Void MidnightPawn.Game.TypeNameRegistry::RegisterOwn()",
+      "offset": 5,
+      "source": "触手侵蚀",
+      "target": "触手侵蚀",
+      "action": "protect"
+    },
+    {
+      "token": "060002A0",
+      "method": "System.Void MidnightPawn.Game.TypeNameRegistry::RegisterOwn()",
+      "offset": 25,
+      "source": "触手",
+      "target": "촉수",
+      "action": "display-boundary"
+    }
+  ],
+  "display": {
+    "下层区": "하층 구역",
+    "上层区": "상층 구역",
+    "治安部": "치안부",
+    "黑市": "암시장",
+    "革命军": "혁명군",
+    "游客": "관광객",
+    "教会": "교회",
+    "卡特尔": "카르텔",
+    "下层": "하층",
+    "上层": "상층",
+    "治安": "치안",
+    "革命": "혁명",
+    "卡特": "카르텔",
+    "拾荒者": "폐품 수집가",
+    "雇佣兵": "용병",
+    "工程师": "엔지니어",
+    "农场主": "농장주",
+    "清洁员": "청소부",
+    "走私者": "밀수업자",
+    "货运员": "화물 운송인",
+    "维修工": "정비공",
+    "研究员": "연구원",
+    "矿工": "광부",
+    "护士": "간호사",
+    "医生": "의사",
+    "厨师": "요리사",
+    "小偷": "도둑",
+    "商人": "상인",
+    "技师": "기술자",
+    "文员": "사무원",
+    "酒保": "바텐더",
+    "学徒": "견습생",
+    "艺人": "예술인",
+    "巡查": "순찰대원",
+    "公司保安": "기업 경비원",
+    "守卫": "경비병",
+    "恋人": "연인",
+    "间谍": "첩자",
+    "牧师": "목사",
+    "长者": "연장자",
+    "病人": "환자",
+    "拾荒客": "폐품 수집가",
+    "治安部盘查员": "치안부 검문관",
+    "革命军战士": "혁명군 병사",
+    "扒手": "소매치기",
+    "食物窃贼": "식품 도둑",
+    "可疑的商人": "수상한 상인",
+    "上层区药剂师": "상층 구역 약사",
+    "上层区访客": "상층 구역 방문객",
+    "上层区公民": "상층 구역 시민",
+    "拾荒客（货箱）": "화물 상자 폐품 수집가",
+    "水贩": "물 장수",
+    "下层区化学家": "하층 구역 화학자",
+    "废料客": "폐기물 수집가",
+    "粮站供应商": "식량 공급소 상인",
+    "星际客": "성간 여행객",
+    "面色惨白的拾荒客": "창백한 폐품 수집가",
+    "瘾君子拾荒客": "중독된 폐품 수집가",
+    "贫穷的拾荒客": "가난한 폐품 수집가",
+    "拾荒客（普通）": "일반 폐품 수집가",
+    "顾客": "고객",
+    "萝莉": "로리",
+    "少女": "소녀",
+    "御姐": "누님",
+    "少妇": "젊은 부인",
+    "熟女": "성숙한 여성",
+    "贫乳": "작은 가슴",
+    "普乳": "보통 가슴",
+    "巨乳": "큰 가슴",
+    "无": "없음",
+    "侵染": "침식",
+    "微荧": "미광",
+    "明耀": "명광",
+    "恒昼": "영원한 낮",
+    "垃圾场": "쓰레기장"
+  },
+  "anchors": [
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 287,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 380,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 407,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 417,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 427,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 437,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 447,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)",
+      "kind": "value"
+    },
+    {
+      "token": "0600017A",
+      "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+      "offset": 658,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "kind": "value"
+    },
+    {
+      "token": "0600017D",
+      "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "offset": 57,
+      "opcode": "ldarg.3",
+      "operand": "",
+      "kind": "value"
+    },
+    {
+      "token": "0600017D",
+      "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+      "offset": 58,
+      "opcode": "ldarg.s",
+      "operand": "body",
+      "kind": "value"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 941,
+      "opcode": "ldloc.s",
+      "operand": "V_14",
+      "kind": "value"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 980,
+      "opcode": "ldloc.s",
+      "operand": "V_15",
+      "kind": "value"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 1019,
+      "opcode": "ldloc.s",
+      "operand": "V_17",
+      "kind": "value"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 1058,
+      "opcode": "ldloc.s",
+      "operand": "V_16",
+      "kind": "value"
+    },
+    {
+      "token": "0600018A",
+      "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+      "offset": 1635,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "kind": "value"
+    },
+    {
+      "token": "060001EA",
+      "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+      "offset": 233,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "kind": "value"
+    },
+    {
+      "token": "0600019A",
+      "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+      "offset": 96,
+      "opcode": "ldarg.1",
+      "operand": "",
+      "kind": "value"
+    },
+    {
+      "token": "0600029D",
+      "method": "System.Void MidnightPawn.Game.PatchTypeDisplayName::Postfix(System.String,System.String&)",
+      "offset": 13,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.TypeNameRegistry::DisplayNameOf(System.String)",
+      "kind": "type"
+    }
+  ],
+  "counts": {
+    "protect": 227,
+    "patch": 94,
+    "already": 5,
+    "display-boundary": 1
+  }
+}
