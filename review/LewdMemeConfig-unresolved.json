@@ -1,0 +1,893 @@
+[
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 31,
+  "offset": 67,
+  "source": "开",
+  "context": [
+   "stsfld System.String[] LewdMemeConfig.FamilyPanelKeys::PercentChoices",
+   "ldc.i4.2 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 开",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 关",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 35,
+  "offset": 75,
+  "source": "关",
+  "context": [
+   "ldc.i4.0 ",
+   "ldstr 开",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 关",
+   "stelem.ref ",
+   "stsfld System.String[] LewdMemeConfig.FamilyPanelKeys::OnOffChoices",
+   "ldc.i4.3 ",
+   "newarr System.String",
+   "dup "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2597,
+  "offset": 8122,
+  "source": "水晶单价(tearlaments)",
+  "context": [
+   "stfld LewdMemeConfig.PanelKind LewdMemeConfig.FamilyPanelEntry::Kind",
+   "dup ",
+   "ldstr tearlaments 联动",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldstr 水晶单价(tearlaments)",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.i4.1 ",
+   "stfld System.Int32 LewdMemeConfig.FamilyPanelEntry::MinInt",
+   "dup "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2610,
+  "offset": 8167,
+  "source": "Aquashard Crystal 的单价(tearl 15 原版 800;巢穴区每夜进贡产出物);开启后以本面板值接管,关闭恢复其原版行为",
+  "context": [
+   "dup ",
+   "ldc.i4 800",
+   "box System.Int32",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default",
+   "dup ",
+   "ldstr Aquashard Crystal 的单价(tearl 15 原版 800;巢穴区每夜进贡产出物);开启后以本面板值接管,关闭恢复其原版行为",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 73",
+   "newobj System.Void LewdMemeConfig.FamilyPanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2632,
+  "offset": 8234,
+  "source": "水晶每晚产出率(tearlaments)",
+  "context": [
+   "stfld LewdMemeConfig.PanelKind LewdMemeConfig.FamilyPanelEntry::Kind",
+   "dup ",
+   "ldstr tearlaments 联动",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldstr 水晶每晚产出率(tearlaments)",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.r4 0",
+   "stfld System.Single LewdMemeConfig.FamilyPanelEntry::MinFloat",
+   "dup "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2645,
+  "offset": 8283,
+  "source": "巢穴区每位 Tearlaments 少女每夜产出 Aquashard 的概率(tearl 15 原版 1.0 = 100%;manifest 描述的 20% 已过时,以代码为准);开启后以本面板值接管,关闭恢复其原版行为",
+  "context": [
+   "dup ",
+   "ldc.r4 1",
+   "box System.Single",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default",
+   "dup ",
+   "ldstr 巢穴区每位 Tearlaments 少女每夜产出 Aquashard 的概率(tearl 15 原版 1.0 = 100%;manifest 描述的 20% 已过时,以代码为准);开启后以本面板值接管,关闭恢复其原版行为",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 74",
+   "newobj System.Void LewdMemeConfig.FamilyPanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2667,
+  "offset": 8350,
+  "source": "水晶每少女产量(tearlaments)",
+  "context": [
+   "stfld LewdMemeConfig.PanelKind LewdMemeConfig.FamilyPanelEntry::Kind",
+   "dup ",
+   "ldstr tearlaments 联动",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldstr 水晶每少女产量(tearlaments)",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.i4.0 ",
+   "stfld System.Int32 LewdMemeConfig.FamilyPanelEntry::MinInt",
+   "dup "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2680,
+  "offset": 8388,
+  "source": "产出判定命中时每位 Tearlaments 少女产出的 Aquashard 数量(tearl 15 原版 1);开启后以本面板值接管,关闭恢复其原版行为",
+  "context": [
+   "dup ",
+   "ldc.i4.1 ",
+   "box System.Int32",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default",
+   "dup ",
+   "ldstr 产出判定命中时每位 Tearlaments 少女产出的 Aquashard 数量(tearl 15 原版 1);开启后以本面板值接管,关闭恢复其原版行为",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 75",
+   "newobj System.Void LewdMemeConfig.FamilyPanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2918,
+  "offset": 9121,
+  "source": "不限制（原版）",
+  "context": [
+   "ldloc.0 ",
+   "ldc.i4.4 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 不限制（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 仅日本",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2922,
+  "offset": 9129,
+  "source": "仅日本",
+  "context": [
+   "ldc.i4.0 ",
+   "ldstr 不限制（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 仅日本",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.2 ",
+   "ldstr 仅中国",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2926,
+  "offset": 9137,
+  "source": "仅中国",
+  "context": [
+   "ldc.i4.1 ",
+   "ldstr 仅日本",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.2 ",
+   "ldstr 仅中国",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.3 ",
+   "ldstr 仅中日韩",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 2930,
+  "offset": 9145,
+  "source": "仅中日韩",
+  "context": [
+   "ldc.i4.2 ",
+   "ldstr 仅中国",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.3 ",
+   "ldstr 仅中日韩",
+   "stelem.ref ",
+   "stfld System.String[] LewdMemeConfig.FamilyPanelEntry::Choices",
+   "ldloc.0 ",
+   "ldstr 不限制（原版）",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3073,
+  "offset": 9585,
+  "source": "仅女性（原版）",
+  "context": [
+   "ldloc.0 ",
+   "ldc.i4.2 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 仅女性（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 不限性别",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3077,
+  "offset": 9593,
+  "source": "不限性别",
+  "context": [
+   "ldc.i4.0 ",
+   "ldstr 仅女性（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 不限性别",
+   "stelem.ref ",
+   "stfld System.String[] LewdMemeConfig.FamilyPanelEntry::Choices",
+   "ldloc.0 ",
+   "ldstr 不限性别",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3118,
+  "offset": 9715,
+  "source": "仅女性（原版）",
+  "context": [
+   "ldloc.0 ",
+   "ldc.i4.2 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 仅女性（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 不限性别",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3122,
+  "offset": 9723,
+  "source": "不限性别",
+  "context": [
+   "ldc.i4.0 ",
+   "ldstr 仅女性（原版）",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 不限性别",
+   "stelem.ref ",
+   "stfld System.String[] LewdMemeConfig.FamilyPanelEntry::Choices",
+   "ldloc.0 ",
+   "ldstr 不限性别",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3163,
+  "offset": 9845,
+  "source": "原版行为",
+  "context": [
+   "ldloc.0 ",
+   "ldc.i4.2 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 原版行为",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 保留游戏原分布",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3167,
+  "offset": 9853,
+  "source": "保留游戏原分布",
+  "context": [
+   "ldc.i4.0 ",
+   "ldstr 原版行为",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldstr 保留游戏原分布",
+   "stelem.ref ",
+   "stfld System.String[] LewdMemeConfig.FamilyPanelEntry::Choices",
+   "ldloc.0 ",
+   "ldstr 原版行为",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3448,
+  "offset": 10755,
+  "source": "拾荒抓苗床基准线",
+  "context": [
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldc.i4.3 ",
+   "stfld LewdMemeConfig.CarrierKind LewdMemeConfig.FamilyPanelEntry::Carrier",
+   "dup ",
+   "ldstr 拾荒抓苗床基准线",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.r4 0.05",
+   "box System.Single",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3461,
+  "offset": 10804,
+  "source": "拾荒抓苗床的概率基准线(官方键 maiden_loot_chance,默认 0.05)。周末/垃圾场事件/连续空手在它上面加成,手里苗床越多越难抓——实际概率见触手本体悬停;开启后以本面板为准,关闭恢复开启前对方值",
+  "context": [
+   "stfld System.Single LewdMemeConfig.FamilyPanelEntry::MinFloat",
+   "dup ",
+   "ldc.r4 0.25",
+   "stfld System.Single LewdMemeConfig.FamilyPanelEntry::MaxFloat",
+   "dup ",
+   "ldstr 拾荒抓苗床的概率基准线(官方键 maiden_loot_chance,默认 0.05)。周末/垃圾场事件/连续空手在它上面加成,手里苗床越多越难抓——实际概率见触手本体悬停;开启后以本面板为准,关闭恢复开启前对方值",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 97",
+   "newobj System.Void LewdMemeConfig.FamilyPanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3486,
+  "offset": 10882,
+  "source": "苗床充足线",
+  "context": [
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldc.i4.3 ",
+   "stfld LewdMemeConfig.CarrierKind LewdMemeConfig.FamilyPanelEntry::Carrier",
+   "dup ",
+   "ldstr 苗床充足线",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.i4.s 12",
+   "box System.Int32",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3499,
+  "offset": 10921,
+  "source": "手里的苗床少于这个数:掷 1 次;达到:掷 3 次要中 2 次;达到两倍:掷 3 次要全中(官方键 maiden_enough_line,默认 12);开启后以本面板为准,关闭恢复开启前对方值",
+  "context": [
+   "stfld System.Int32 LewdMemeConfig.FamilyPanelEntry::MinInt",
+   "dup ",
+   "ldc.i4.s 30",
+   "stfld System.Int32 LewdMemeConfig.FamilyPanelEntry::MaxInt",
+   "dup ",
+   "ldstr 手里的苗床少于这个数:掷 1 次;达到:掷 3 次要中 2 次;达到两倍:掷 3 次要全中(官方键 maiden_enough_line,默认 12);开启后以本面板为准,关闭恢复开启前对方值",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 98",
+   "newobj System.Void LewdMemeConfig.FamilyPanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3524,
+  "offset": 10999,
+  "source": "捡到排卵诱发剂的概率",
+  "context": [
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Section",
+   "dup ",
+   "ldc.i4.3 ",
+   "stfld LewdMemeConfig.CarrierKind LewdMemeConfig.FamilyPanelEntry::Carrier",
+   "dup ",
+   "ldstr 捡到排卵诱发剂的概率",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Label",
+   "dup ",
+   "ldc.r4 0.04",
+   "box System.Single",
+   "stfld System.Object LewdMemeConfig.FamilyPanelEntry::Default"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "token": "06000034",
+  "index": 3537,
+  "offset": 11048,
+  "source": "带着触手本体拾荒、没抓到苗床时顺手捡到一支排卵诱发剂的概率,设 0 就只能靠触手3D打印机生产(官方键 ovulation_loot_chance,默认 0.04;垃圾场来源,与本 mod「掉落」分区医疗组掉落键来源不同、并存不冲突);开启后以本面板为准,关闭恢复开启前对方值",
+  "context": [
+   "stfld System.Single LewdMemeConfig.FamilyPanelEntry::MinFloat",
+   "dup ",
+   "ldc.r4 0.1",
+   "stfld System.Single LewdMemeConfig.FamilyPanelEntry::MaxFloat",
+   "dup ",
+   "ldstr 带着触手本体拾荒、没抓到苗床时顺手捡到一支排卵诱发剂的概率,设 0 就只能靠触手3D打印机生产(官方键 ovulation_loot_chance,默认 0.04;垃圾场来源,与本 mod「掉落」分区医疗组掉落键来源不同、并存不冲突);开启后以本面板为准,关闭恢复开启前对方值",
+   "stfld System.String LewdMemeConfig.FamilyPanelEntry::Tooltip",
+   "stelem.ref ",
+   "stsfld System.Collections.Generic.IReadOnlyList`1<LewdMemeConfig.FamilyPanelEntry> LewdMemeConfig.FamilyPanelKeys::Entries",
+   "ret "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "token": "0600003E",
+  "index": 1825,
+  "offset": 5940,
+  "source": "触手等级读值上限(2.1.0 起官方无等级上限,默认 999 = 不封顶;调低于 999 时等级读取与显示按此值封顶,经验累积不受阻;每级所需经验由下方公式三键决定)",
+  "context": [
+   "stfld System.String LewdMemeConfig.PanelEntry::SectionId",
+   "dup ",
+   "ldstr 等级上限",
+   "stfld System.String LewdMemeConfig.PanelEntry::Label",
+   "dup ",
+   "ldstr 触手等级读值上限(2.1.0 起官方无等级上限,默认 999 = 不封顶;调低于 999 时等级读取与显示按此值封顶,经验累积不受阻;每级所需经验由下方公式三键决定)",
+   "stfld System.String LewdMemeConfig.PanelEntry::Tooltip",
+   "dup ",
+   "ldc.i4.1 ",
+   "stfld System.Int32 LewdMemeConfig.PanelEntry::MinInt",
+   "dup "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "token": "0600003E",
+  "index": 2007,
+  "offset": 6527,
+  "source": "开启=在掉落判定前恢复 1.6.x 的医疗组排卵针掉落分支(概率用下方值);关闭=2.1.0 原版行为(医疗组不再掉排卵针)。注:官方另有垃圾场拾荒顺手捡排卵剂来源(「主 mod 官方设置(拾荒)」分区可调),与本键来源不同、并存不冲突",
+  "context": [
+   "stfld System.String LewdMemeConfig.PanelEntry::SectionId",
+   "dup ",
+   "ldstr 恢复:医疗组排卵针掉落(1.7.0 已从原版移除)",
+   "stfld System.String LewdMemeConfig.PanelEntry::Label",
+   "dup ",
+   "ldstr 开启=在掉落判定前恢复 1.6.x 的医疗组排卵针掉落分支(概率用下方值);关闭=2.1.0 原版行为(医疗组不再掉排卵针)。注:官方另有垃圾场拾荒顺手捡排卵剂来源(「主 mod 官方设置(拾荒)」分区可调),与本键来源不同、并存不冲突",
+   "stfld System.String LewdMemeConfig.PanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 79",
+   "newobj System.Void LewdMemeConfig.PanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "token": "0600003E",
+  "index": 2058,
+  "offset": 6696,
+  "source": "开启=恢复 1.6.x 的医疗组排卵针掉落分支并按下方关键词判定医疗组;关闭=2.1.0 原版行为",
+  "context": [
+   "stfld System.String LewdMemeConfig.PanelEntry::SectionId",
+   "dup ",
+   "ldstr 恢复:医疗组排卵针掉落(自定义关键词)",
+   "stfld System.String LewdMemeConfig.PanelEntry::Label",
+   "dup ",
+   "ldstr 开启=恢复 1.6.x 的医疗组排卵针掉落分支并按下方关键词判定医疗组;关闭=2.1.0 原版行为",
+   "stfld System.String LewdMemeConfig.PanelEntry::Tooltip",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.s 81",
+   "newobj System.Void LewdMemeConfig.PanelEntry::.ctor()"
+  ]
+ },
+ {
+  "method": "LewdMemeConfig.MainModResolveResult LewdMemeConfig.MainModResolver::Resolve()",
+  "token": "0600006D",
+  "index": 86,
+  "offset": 259,
+  "source": " 不在受支持版本(2.3.1),主 mod 家族钩子全部压制(VersionBlocked,不写不装)。",
+  "context": [
+   "stloc.s V_4",
+   "ldstr 主 mod lewd_meme v",
+   "ldloc.3 ",
+   "ldloc.s V_4",
+   "brtrue.s IL_010A: ldstr \" 受支持。\"",
+   "ldstr  不在受支持版本(2.3.1),主 mod 家族钩子全部压制(VersionBlocked,不写不装)。",
+   "br.s IL_010F: ldloc.0",
+   "ldstr  受支持。",
+   "ldloc.0 ",
+   "brtrue.s IL_0119: ldstr \" 检测到 lewd_meme_remake 启用在场,夜间数值组将让位。\"",
+   "ldsfld System.String System.String::Empty"
+  ]
+ },
+ {
+  "method": "System.Boolean LewdMemeConfig.LootPatch::OnLootRolledPrefix(LootRollContext)",
+  "token": "06000198",
+  "index": 33,
+  "offset": 91,
+  "source": "战利品：医疗类里翻到一支排卵诱发剂 (",
+  "context": [
+   "ldfld System.Single LewdMemeConfig.LootPatch/LootCfg::MedShotChance",
+   "bge.un.s IL_0075: ldc.i4.0",
+   "ldarg.0 ",
+   "ldstr ovulation_shot",
+   "stfld System.String LootRollContext::itemId",
+   "ldstr 战利品：医疗类里翻到一支排卵诱发剂 (",
+   "ldarg.0 ",
+   "ldfld System.String LootRollContext::groupId",
+   "ldstr )",
+   "call System.String System.String::Concat(System.String,System.String,System.String)",
+   "call System.Void LewdMemeConfig.LootPatch::LogMain(System.Object)"
+  ]
+ },
+ {
+  "method": "System.Boolean LewdMemeConfig.LootPatch::OnLootRolledPrefix(LootRollContext)",
+  "token": "06000198",
+  "index": 46,
+  "offset": 126,
+  "source": "掉落判定失败(med 拦截): ",
+  "context": [
+   "leave.s IL_0097: ldloc.2",
+   "ldc.i4.1 ",
+   "stloc.2 ",
+   "leave.s IL_0097: ldloc.2",
+   "stloc.3 ",
+   "ldstr 掉落判定失败(med 拦截): ",
+   "ldloc.3 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)",
+   "call System.Void LewdMemeConfig.LootPatch::LogMainWarning(System.Object)",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+  "token": "060001B0",
+  "index": 190,
+  "offset": 666,
+  "source": "少女",
+  "context": [
+   "ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.0 ",
+   "ldstr MAIDEN_ANAL_VIRGIN",
+   "callvirt System.Void System.Action`2<GameItem,System.String>::Invoke(GameItem,System.String)",
+   "ldloc.s V_7",
+   "ldstr 少女",
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_02B4: ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.s V_7",
+   "ldstr 萝莉",
+   "call System.Boolean System.String::op_Equality(System.String,System.String)"
+  ]
+ },
+ {
+  "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+  "token": "060001B0",
+  "index": 194,
+  "offset": 680,
+  "source": "萝莉",
+  "context": [
+   "ldloc.s V_7",
+   "ldstr 少女",
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_02B4: ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.s V_7",
+   "ldstr 萝莉",
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brfalse.s IL_02C4: ldloc.s V_6",
+   "ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.0 ",
+   "ldstr MAIDEN_YOUNG"
+  ]
+ },
+ {
+  "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+  "token": "060001B0",
+  "index": 202,
+  "offset": 710,
+  "source": "巨乳",
+  "context": [
+   "ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.0 ",
+   "ldstr MAIDEN_YOUNG",
+   "callvirt System.Void System.Action`2<GameItem,System.String>::Invoke(GameItem,System.String)",
+   "ldloc.s V_6",
+   "ldstr 巨乳",
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brfalse.s IL_02E2: ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldsfld System.Action`2<GameItem,System.String> LewdMemeConfig.MaidenPatch::ifEnable",
+   "ldloc.0 ",
+   "ldstr MAIDEN_BIG_BREAST"
+  ]
+ },
+ {
+  "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+  "token": "060001B0",
+  "index": 328,
+  "offset": 1136,
+  "source": "少女立绘注入: ",
+  "context": [
+   "ldsfld System.Action`3<GameItem,System.String,System.String> LewdMemeConfig.MaidenPatch::ifSetStr",
+   "ldloc.0 ",
+   "ldstr MAIDEN_SPRITE_SRC",
+   "ldloc.s V_13",
+   "callvirt System.Void System.Action`3<GameItem,System.String,System.String>::Invoke(GameItem,System.String,System.String)",
+   "ldstr 少女立绘注入: ",
+   "ldloc.s V_13",
+   "ldstr  -> ",
+   "ldloc.s V_12",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "call System.Void LewdMemeConfig.MaidenPatch::LogMain(System.Object)"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::CreateNotePostfix(GameItem)",
+  "token": "060001EC",
+  "index": 50,
+  "offset": 114,
+  "source": "【本体的五个区，从左到右】\n① 侵蚀区 {cfg:layout.corrupt_cols}×{cfg:layout.brood_size}：只收带【触手侵蚀】的箱子 / 机器\n② 苗床区 {cfg:layout.brood_size}×{cfg:layout.brood_size}：把【女性角色】放进来，每晚自动结算调教\n③ 产出区 {cfg:layout.output_size}×{cfg:layout.output_size}：产出的乳汁 / 精液落在这里\n④ 触手区 {cfg:layout.tool_cols}×{cfg:layout.brood_size}：只收带【触手】标签的工具（侵蚀性触手）\n⑤ 便签区 2×2：就是这张纸\n\n【每晚结算（每个苗床）】\n· 性爱 {cfg:nightly.sex_min_base}~{cfg:nightly.sex_max_base} 次、口交 {cfg:nightly.oral_min_base}~{cfg:nightly.oral_max_base} 次、肛交 {cfg:nightly.anal_min_base}~{cfg:nightly.anal_max_base} 次，本体等级越高越多\n· 调教值 = 性交 + 口交 + 肛交次数之和\n· 精液产出率 = {cfg:nightly.semen_chance_base}% + 调教值每 10 点 +10%（60 点必定产出）\n· 泌乳等级 ≥1 才产【神奇乳汁】，价值 = {cfg:nightly.milk_value_base} + 等级×{cfg:nightly.milk_value_per_lv}\n· 每天 {cfg:nightly.ovulate_chance} 概率进入排卵期，受孕率 = 当晚性交次数%\n· 怀孕 {cfg:nightly.gestation_days} 天后产下一个继承立绘和势力的女儿\n\n【触手区】\n· 侵蚀性触手每天自动回 {cfg:corrupt.daily_recharge} 点淫力；把【触手精液】拖到它身上 +{cfg:corrupt.semen_recharge}（可多瓶一起拖）\n· 淫力满 {cfg:corrupt.max_charge} 时，把下面这些【拖到它身上】，可以侵蚀成【触手苗床箱】：\n　工程铸造厂物资箱 / 后勤服务部物资箱 / 医疗舱物资箱 /\n　治安部物证柜 / 治安部物资箱 / 储藏区 / 储藏区（扩建）\n· 带【重要物品】标签的东西（剧情道具之类）一律侵蚀不了\n\n本体的侵蚀区是暗格，盘查时里面的东西不会被搜出来。",
+  "context": [
+   "call System.String System.String::Concat(System.String,System.String)",
+   "call System.Void LewdMemeConfig.SpecialAndManualPatches::LogMainWarning(System.Object)",
+   "leave.s IL_00A9: ret",
+   "nop ",
+   "ldarg.0 ",
+   "ldstr 【本体的五个区，从左到右】\n① 侵蚀区 {cfg:layout.corrupt_cols}×{cfg:layout.brood_size}：只收带【触手侵蚀】的箱子 / 机器\n② 苗床区 {cfg:layout.brood_size}×{cfg:layout.brood_size}：把【女性角色】放进来，每晚自动结算调教\n③ 产出区 {cfg:layout.output_size}×{cfg:layout.output_size}：产出的乳汁 / 精液落在这里\n④ 触手区 {cfg:layout.tool_cols}×{cfg:layout.brood_size}：只收带【触手】标签的工具（侵蚀性触手）\n⑤ 便签区 2×2：就是这张纸\n\n【每晚结算（每个苗床）】\n· 性爱 {cfg:nightly.sex_min_base}~{cfg:nightly.sex_max_base} 次、口交 {cfg:nightly.oral_min_base}~{cfg:nightly.oral_max_base} 次、肛交 {cfg:nightly.anal_min_base}~{cfg:nightly.anal_max_base} 次，本体等级越高越多\n· 调教值 = 性交 + 口交 + 肛交次数之和\n· 精液产出率 = {cfg:nightly.semen_chance_base}% + 调教值每 10 点 +10%（60 点必定产出）\n· 泌乳等级 ≥1 才产【神奇乳汁】，价值 = {cfg:nightly.milk_value_base} + 等级×{cfg:nightly.milk_value_per_lv}\n· 每天 {cfg:nightly.ovulate_chance} 概率进入排卵期，受孕率 = 当晚性交次数%\n· 怀孕 {cfg:nightly.gestation_days} 天后产下一个继承立绘和势力的女儿\n\n【触手区】\n· 侵蚀性触手每天自动回 {cfg:corrupt.daily_recharge} 点淫力；把【触手精液】拖到它身上 +{cfg:corrupt.semen_recharge}（可多瓶一起拖）\n· 淫力满 {cfg:corrupt.max_charge} 时，把下面这些【拖到它身上】，可以侵蚀成【触手苗床箱】：\n　工程铸造厂物资箱 / 后勤服务部物资箱 / 医疗舱物资箱 /\n　治安部物证柜 / 治安部物资箱 / 储藏区 / 储藏区（扩建）\n· 带【重要物品】标签的东西（剧情道具之类）一律侵蚀不了\n\n本体的侵蚀区是暗格，盘查时里面的东西不会被搜出来。",
+   "ldloc.0 ",
+   "ldftn System.String LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass27_0::<CreateNotePostfix>b__0(System.String)",
+   "newobj System.Void System.Func`2<System.String,System.String>::.ctor(System.Object,System.IntPtr)",
+   "call System.String LewdMemeConfig.ManualTextRenderer::Render(System.String,System.Func`2<System.String,System.String>)",
+   "callvirt System.Void GameItem::set_shortDescription(System.String)"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::RunReloadRepair()",
+  "token": "060001EF",
+  "index": 2,
+  "offset": 10,
+  "source": "读档修复异常",
+  "context": [
+   "ldsfld System.Type LewdMemeConfig.SpecialAndManualPatches::sessionType",
+   "ldstr RepairAfterLoad",
+   "ldstr 读档修复异常",
+   "call System.Void LewdMemeConfig.SpecialAndManualPatches::TryRepair(System.Type,System.String,System.String)",
+   "ret "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 27,
+  "offset": 81,
+  "source": "目光迷离地望着着你，主动手指抓握、双腿缠绕着你的触手，不断在上面摩挲，张嘴呼出一道香风，主动张开双臂，对你露出最为脆弱且不设防的小腹，让你的一根触手卷起排卵诱发剂，快速地扎在了她的小腹，并且将其全部注入子宫。\n\n“嗯啊♥~~主人♥~~来吧♥~~我想要怀上♥~~嗯♥~~主人的女儿♥~~噫噫噫♥~~”",
+  "context": [
+   "ldloc.1 ",
+   "ldarg.0 ",
+   "ldfld System.Int32 LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::threshold",
+   "blt.s IL_0063: ldloc.0",
+   "ldloc.0 ",
+   "ldstr 目光迷离地望着着你，主动手指抓握、双腿缠绕着你的触手，不断在上面摩挲，张嘴呼出一道香风，主动张开双臂，对你露出最为脆弱且不设防的小腹，让你的一根触手卷起排卵诱发剂，快速地扎在了她的小腹，并且将其全部注入子宫。\n\n“嗯啊♥~~主人♥~~来吧♥~~我想要怀上♥~~嗯♥~~主人的女儿♥~~噫噫噫♥~~”",
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "br.s IL_0074: stloc.2",
+   "ldloc.0 "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 29,
+  "offset": 87,
+  "source": "的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+  "context": [
+   "ldfld System.Int32 LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::threshold",
+   "blt.s IL_0063: ldloc.0",
+   "ldloc.0 ",
+   "ldstr 目光迷离地望着着你，主动手指抓握、双腿缠绕着你的触手，不断在上面摩挲，张嘴呼出一道香风，主动张开双臂，对你露出最为脆弱且不设防的小腹，让你的一根触手卷起排卵诱发剂，快速地扎在了她的小腹，并且将其全部注入子宫。\n\n“嗯啊♥~~主人♥~~来吧♥~~我想要怀上♥~~嗯♥~~主人的女儿♥~~噫噫噫♥~~”",
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "br.s IL_0074: stloc.2",
+   "ldloc.0 ",
+   "ldstr 恶狠狠地盯着你，被触手牢牢缠绕捆绑的四肢不断发力，张嘴想要继续威胁咒骂你，而同时你的一根触手卷起排卵诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“呃啊♥~~你这怪物♥~~对我♥~~嗯♥~~用了♥~~什么♥~~噫噫噫♥~~”",
+   "ldloc.0 "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 33,
+  "offset": 100,
+  "source": "恶狠狠地盯着你，被触手牢牢缠绕捆绑的四肢不断发力，张嘴想要继续威胁咒骂你，而同时你的一根触手卷起排卵诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“呃啊♥~~你这怪物♥~~对我♥~~嗯♥~~用了♥~~什么♥~~噫噫噫♥~~”",
+  "context": [
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "br.s IL_0074: stloc.2",
+   "ldloc.0 ",
+   "ldstr 恶狠狠地盯着你，被触手牢牢缠绕捆绑的四肢不断发力，张嘴想要继续威胁咒骂你，而同时你的一根触手卷起排卵诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“呃啊♥~~你这怪物♥~~对我♥~~嗯♥~~用了♥~~什么♥~~噫噫噫♥~~”",
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "stloc.2 ",
+   "ldarg.2 "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 35,
+  "offset": 106,
+  "source": "的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+  "context": [
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "br.s IL_0074: stloc.2",
+   "ldloc.0 ",
+   "ldstr 恶狠狠地盯着你，被触手牢牢缠绕捆绑的四肢不断发力，张嘴想要继续威胁咒骂你，而同时你的一根触手卷起排卵诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“呃啊♥~~你这怪物♥~~对我♥~~嗯♥~~用了♥~~什么♥~~噫噫噫♥~~”",
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "stloc.2 ",
+   "ldarg.2 ",
+   "ldstr MAIDEN_OVULATING",
+   "ldsfld System.Action`1<TagState> LewdMemeConfig.SpecialAndManualPatches/<>c::<>9__23_1"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 59,
+  "offset": 184,
+  "source": "排卵诱发剂",
+  "context": [
+   "ldstr MAIDEN_PREGNANT_DAYS",
+   "ldc.i4.0 ",
+   "callvirt System.Void System.Action`3<GameItem,System.String,System.Int32>::Invoke(GameItem,System.String,System.Int32)",
+   "ldsfld System.Action`2<System.String,System.String> LewdMemeConfig.SpecialAndManualPatches::toastShow",
+   "ldloc.2 ",
+   "ldstr 排卵诱发剂",
+   "callvirt System.Void System.Action`2<System.String,System.String>::Invoke(System.String,System.String)",
+   "ldc.i4.5 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 65,
+  "offset": 202,
+  "source": "排卵诱发剂生效：",
+  "context": [
+   "callvirt System.Void System.Action`2<System.String,System.String>::Invoke(System.String,System.String)",
+   "ldc.i4.5 ",
+   "newarr System.String",
+   "dup ",
+   "ldc.i4.0 ",
+   "ldstr 排卵诱发剂生效：",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 ",
+   "ldloc.0 ",
+   "stelem.ref "
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.SpecialAndManualPatches/<>c__DisplayClass23_0::<OvulationShotTamePostfix>b__0(GameItem,GameItem)",
+  "token": "06000352",
+  "index": 73,
+  "offset": 214,
+  "source": " 进入排卵期 (调教值 ",
+  "context": [
+   "ldc.i4.1 ",
+   "ldloc.0 ",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.2 ",
+   "ldstr  进入排卵期 (调教值 ",
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.3 ",
+   "ldloca.s V_1",
+   "call System.String System.Int32::ToString()"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.ValuePostfixPatches::TryApplySemenPostfix(GameItem,System.Boolean)",
+  "token": "06000218",
+  "index": 31,
+  "offset": 81,
+  "source": "精液声望倍率修正失败: ",
+  "context": [
+   "conv.r8 ",
+   "mul ",
+   "stfld System.Double StoreClient::tradeReputationMultiplier",
+   "leave.s IL_0068: ret",
+   "stloc.3 ",
+   "ldstr 精液声望倍率修正失败: ",
+   "ldloc.3 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)",
+   "call System.Void LewdMemeConfig.ValuePostfixPatches::LogMainWarning(System.Object)",
+   "leave.s IL_0068: ret"
+  ]
+ },
+ {
+  "method": "System.Void LewdMemeConfig.ValuePostfixPatches/<>c__DisplayClass17_0::<MilkCreditPostfix>b__0(GameItem,GameInventory,SlotMarker)",
+  "token": "06000374",
+  "index": 4,
+  "offset": 12,
+  "source": "饮下一瓶神奇乳汁",
+  "context": [
+   "ldarg.0 ",
+   "ldfld System.Int32 LewdMemeConfig.ValuePostfixPatches/<>c__DisplayClass17_0::credit",
+   "ldc.i4.1 ",
+   "call System.Void ModHelper::AddCredit(System.Int32,System.Boolean)",
+   "ldstr 饮下一瓶神奇乳汁",
+   "call System.Void LewdMemeConfig.ValuePostfixPatches::LogMain(System.Object)",
+   "ldarg.1 ",
+   "callvirt System.Void GameItem::Destroy()",
+   "ret "
+  ]
+ }
+]

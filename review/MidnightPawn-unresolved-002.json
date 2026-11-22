@@ -1,0 +1,652 @@
+[
+ {
+  "token": "060000E0",
+  "index": 31,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "拾荒者",
+  "after": [
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E1",
+  "index": 238,
+  "method": "GameItem MidnightPawn.Game.ItemFactory::CreateMaidenOfFaction(System.String)",
+  "source": "少女立绘注入: ",
+  "after": [
+   "ldloc.s V_13",
+   "ldstr  -> ",
+   "ldloc.s V_12"
+  ]
+ },
+ {
+  "token": "06000298",
+  "index": 3,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateMilk>b__9_2(GameItem,GameInventory,SlotMarker)",
+  "source": "饮下一瓶神奇乳汁",
+  "after": [
+   "callvirt System.Void GameItem::Destroy()",
+   "ret "
+  ]
+ },
+ {
+  "token": "0600029A",
+  "index": 0,
+  "method": "System.Boolean MidnightPawn.Game.ItemFactory/<>c::<CreateSemen>b__11_1(GameItem,GameInventory,SlotMarker)",
+  "source": "精液: mayActivate 被调用 -> true",
+  "after": []
+ },
+ {
+  "token": "0600029B",
+  "index": 0,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateSemen>b__11_2(GameItem,GameInventory,SlotMarker)",
+  "source": "精液: 激活生效",
+  "after": [
+   "callvirt System.Void GameItem::Destroy()",
+   "ret "
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 25,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "目光迷离地望着着你，主动手指抓握、双腿缠绕着你的触手，不断在上面摩挲，张嘴呼出一道香风，主动张开双臂，对你露出最为脆弱且不设防的小腹，让你的一根触手卷起排卵诱发剂，快速地扎在了她的小腹，并且将其全部注入子宫。\n\n“嗯啊♥~~主人♥~~来吧♥~~我想要怀上♥~~嗯♥~~主人的女儿♥~~噫噫噫♥~~”",
+  "after": [
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 27,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "stloc.2 ",
+   "br.s IL_0063: ldarg.2"
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 32,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "恶狠狠地盯着你，被触手牢牢缠绕捆绑的四肢不断发力，张嘴想要继续威胁咒骂你，而同时你的一根触手卷起排卵诱发剂，快速地扎在了她的后颈，并且将其全部注入。\n\n“呃啊♥~~你这怪物♥~~对我♥~~嗯♥~~用了♥~~什么♥~~噫噫噫♥~~”",
+  "after": [
+   "ldloc.0 ",
+   "ldstr 的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 34,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "的身体在你触手的包裹下左右扭动，小腹不断起伏抽搐，直接进入了排卵期。",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+   "stloc.2 ",
+   "ldarg.2 "
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 56,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "排卵诱发剂",
+  "after": [
+   "call System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)",
+   "ldc.i4.5 ",
+   "newarr System.String"
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 62,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": "排卵诱发剂生效：",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060002A5",
+  "index": 70,
+  "method": "System.Void MidnightPawn.Game.ItemFactory/<>c::<CreateOvulationShot>b__14_2(GameItem,GameItem)",
+  "source": " 进入排卵期 (调教值 ",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.3 "
+  ]
+ },
+ {
+  "token": "06000112",
+  "index": 57,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Build(System.Single,UnityEngine.Vector2)",
+  "source": "苗床档案 · —",
+  "after": [
+   "ldc.r4 15",
+   "ldstr #5B2A4E",
+   "ldstr left"
+  ]
+ },
+ {
+  "token": "06000117",
+  "index": 75,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "source": "苗床档案 · ",
+  "after": [
+   "ldsfld GameItem MidnightPawn.Game.MaidenPanel::maiden",
+   "ldloc.0 ",
+   "ldloc.s V_4"
+  ]
+ },
+ {
+  "token": "06000117",
+  "index": 94,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "source": "第 ",
+  "after": [
+   "ldloca.s V_12",
+   "call System.String System.Int32::ToString()",
+   "ldstr  天"
+  ]
+ },
+ {
+  "token": "06000117",
+  "index": 265,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "source": "调教中",
+  "after": [
+   "br.s IL_032E: stelem.ref",
+   "ldstr 非调教中",
+   "stelem.ref "
+  ]
+ },
+ {
+  "token": "06000117",
+  "index": 267,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "source": "非调教中",
+  "after": [
+   "stelem.ref ",
+   "stloc.s V_13",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "token": "06000117",
+  "index": 308,
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "source": "尚未捕获（还站在柜台前）。",
+  "after": [
+   "stloc.s V_14",
+   "ldsfld PaperUI MidnightPawn.Game.MaidenPanel::ui",
+   "ldstr cap_text"
+  ]
+ },
+ {
+  "token": "0600011A",
+  "index": 38,
+  "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+  "source": "少女",
+  "after": [
+   "ret "
+  ]
+ },
+ {
+  "token": "0600011B",
+  "index": 39,
+  "method": "System.String MidnightPawn.Game.MaidenPanel::TraitsOf(GameItem)",
+  "source": "【改造体】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "leave.s IL_0088: ldloc.0"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 50,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "破处 {0} 次   后庭破处 {1} 次",
+  "after": [
+   "ldloc.3 ",
+   "box System.Int32",
+   "ldloc.s V_4"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 115,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "昨晚：",
+  "after": [
+   "ldloc.s V_5",
+   "call System.String System.String::Concat(System.String,System.String)",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 131,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "触手本体 tooltip 失败: ",
+  "after": [
+   "ldloc.s V_6",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 180,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "　（已充满）",
+  "after": [
+   "stelem.ref ",
+   "call System.String System.String::Concat(System.String[])",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 214,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "触手 tooltip 失败: ",
+  "after": [
+   "ldloc.s V_9",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 263,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "精液 tooltip 失败: ",
+  "after": [
+   "ldloc.s V_10",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 291,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【触手】",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String)",
+   "stloc.s V_11",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 309,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "触手系 tooltip 失败: ",
+  "after": [
+   "ldloc.s V_12",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 350,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "姓名：",
+  "after": [
+   "ldloc.s V_13",
+   "call System.String System.String::Concat(System.String,System.String)",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 419,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【女儿】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "ldarg.1 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 427,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【处女】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "ldarg.1 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 435,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【处女丧失】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "ldarg.1 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 443,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【肛门处女】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "ldarg.1 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 451,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【肛门处女丧失】",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "pop ",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 510,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "武力 {0}  智力 {1}  魅力 {2}",
+  "after": [
+   "ldloc.s V_24",
+   "box System.Int32",
+   "ldloc.s V_25"
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 656,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "【排卵期】",
+  "after": [
+   "ldc.i4.0 ",
+   "ldc.i4 8035658",
+   "ldc.i4.0 "
+  ]
+ },
+ {
+  "token": "06000123",
+  "index": 694,
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "source": "少女 tooltip 追加失败: ",
+  "after": [
+   "ldloc.s V_34",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000133",
+  "index": 15,
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "source": "某一天",
+  "after": [
+   "br.s IL_0043: stloc.1",
+   "ldstr 第 ",
+   "ldloca.s V_0"
+  ]
+ },
+ {
+  "token": "06000133",
+  "index": 17,
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "source": "第 ",
+  "after": [
+   "ldloca.s V_0",
+   "call System.String System.Int32::ToString()",
+   "ldstr  天"
+  ]
+ },
+ {
+  "token": "06000133",
+  "index": 43,
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "source": "未知地点",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.4 "
+  ]
+ },
+ {
+  "token": "06000133",
+  "index": 55,
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "source": "某种方法",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.6 "
+  ]
+ },
+ {
+  "token": "06000133",
+  "index": 73,
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "source": "写捕捉记录失败: ",
+  "after": [
+   "ldloc.3 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "0600017C",
+  "index": 27,
+  "method": "System.String MidnightPawn.Game.StatRegistry::SafeFormat(MidnightPawn.Game.StatEntry,System.Int32)",
+  "source": "统计「",
+  "after": [
+   "ldarg.0 ",
+   "ldfld System.String MidnightPawn.Game.StatEntry::Id",
+   "ldstr 」格式化失败: "
+  ]
+ },
+ {
+  "token": "0600017C",
+  "index": 30,
+  "method": "System.String MidnightPawn.Game.StatRegistry::SafeFormat(MidnightPawn.Game.StatEntry,System.Int32)",
+  "source": "」格式化失败: ",
+  "after": [
+   "ldloc.1 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 1,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "当前",
+  "after": [
+   "pop ",
+   "ldsfld MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9",
+   "ldftn System.Int32 MidnightPawn.Game.StatRegistry/<>c::<RegisterOwn>b__17_0(MidnightPawn.Game.StatContext)"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 2,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "当前捕获的女性角色数量",
+  "after": [
+   "pop ",
+   "ldsfld MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9",
+   "ldftn System.Int32 MidnightPawn.Game.StatRegistry/<>c::<RegisterOwn>b__17_0(MidnightPawn.Game.StatContext)"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 18,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "当前",
+  "after": [
+   "ldstr 破处女性数量",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_1",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 19,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "破处女性数量",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_1",
+   "dup ",
+   "brtrue.s IL_0069: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 35,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "当前",
+  "after": [
+   "ldstr 肛门破处女性数量",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_2",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 36,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "肛门破处女性数量",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_2",
+   "dup ",
+   "brtrue.s IL_00A4: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 70,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "女性数量",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String,System.String)",
+   "ldloc.1 ",
+   "ldftn System.Int32 MidnightPawn.Game.StatRegistry/<>c__DisplayClass17_0::<RegisterOwn>b__14(MidnightPawn.Game.StatContext)"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 90,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "累计",
+  "after": [
+   "ldstr 累计破处次数",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_3",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 91,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "累计破处次数",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_3",
+   "dup ",
+   "brtrue.s IL_014C: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 107,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "累计",
+  "after": [
+   "ldstr 累计后庭破处次数",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_4",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 108,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "累计后庭破处次数",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_4",
+   "dup ",
+   "brtrue.s IL_0187: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 124,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 触手本体等级",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_5",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 125,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手本体等级",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_5",
+   "dup ",
+   "brtrue.s IL_01C2: ldstr \"Lv.{0}\""
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 141,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 触手本体经验",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_6",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 142,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手本体经验",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_6",
+   "dup ",
+   "brtrue.s IL_0201: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 166,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 触手武力",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_8",
+   "dup "
+  ]
+ }
+]

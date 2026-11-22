@@ -1,0 +1,7215 @@
+[
+ {
+  "method": "System.Void MidnightPawn.Game.MaidenPanel::Refresh()",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 1,
+      "offset": 5,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     },
+     {
+      "index": 2,
+      "offset": 7,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 3,
+      "offset": 12,
+      "opcode": "callvirt",
+      "operand": "System.Boolean PaperUI::get_IsAlive()"
+     }
+    ],
+    "ko": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 1,
+      "offset": 5,
+      "opcode": "brfalse",
+      "operand": "@10"
+     },
+     {
+      "index": 2,
+      "offset": 10,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 3,
+      "offset": 15,
+      "opcode": "callvirt",
+      "operand": "System.Boolean PaperUI::get_IsAlive()"
+     }
+    ],
+    "oldStart": 1,
+    "oldEnd": 2
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 2,
+      "offset": 7,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 3,
+      "offset": 12,
+      "opcode": "callvirt",
+      "operand": "System.Boolean PaperUI::get_IsAlive()"
+     },
+     {
+      "index": 4,
+      "offset": 17,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     },
+     {
+      "index": 5,
+      "offset": 19,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 6,
+      "offset": 24,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     }
+    ],
+    "ko": [
+     {
+      "index": 2,
+      "offset": 10,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 3,
+      "offset": 15,
+      "opcode": "callvirt",
+      "operand": "System.Boolean PaperUI::get_IsAlive()"
+     },
+     {
+      "index": 4,
+      "offset": 20,
+      "opcode": "brfalse",
+      "operand": "@10"
+     },
+     {
+      "index": 5,
+      "offset": 25,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 6,
+      "offset": 30,
+      "opcode": "brfalse",
+      "operand": "@10"
+     }
+    ],
+    "oldStart": 4,
+    "oldEnd": 5
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 4,
+      "offset": 17,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     },
+     {
+      "index": 5,
+      "offset": 19,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 6,
+      "offset": 24,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     },
+     {
+      "index": 7,
+      "offset": 26,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 8,
+      "offset": 31,
+      "opcode": "call",
+      "operand": "System.Boolean MidnightPawn.Game.ItemLife::IsAlive(GameItem)"
+     }
+    ],
+    "ko": [
+     {
+      "index": 4,
+      "offset": 20,
+      "opcode": "brfalse",
+      "operand": "@10"
+     },
+     {
+      "index": 5,
+      "offset": 25,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 6,
+      "offset": 30,
+      "opcode": "brfalse",
+      "operand": "@10"
+     },
+     {
+      "index": 7,
+      "offset": 35,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 8,
+      "offset": 40,
+      "opcode": "call",
+      "operand": "System.Boolean MidnightPawn.Game.ItemLife::IsAlive(GameItem)"
+     }
+    ],
+    "oldStart": 6,
+    "oldEnd": 7
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 7,
+      "offset": 26,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 8,
+      "offset": 31,
+      "opcode": "call",
+      "operand": "System.Boolean MidnightPawn.Game.ItemLife::IsAlive(GameItem)"
+     },
+     {
+      "index": 9,
+      "offset": 36,
+      "opcode": "brtrue.s",
+      "operand": "@11"
+     },
+     {
+      "index": 10,
+      "offset": 38,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 39,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     }
+    ],
+    "ko": [
+     {
+      "index": 7,
+      "offset": 35,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 8,
+      "offset": 40,
+      "opcode": "call",
+      "operand": "System.Boolean MidnightPawn.Game.ItemLife::IsAlive(GameItem)"
+     },
+     {
+      "index": 9,
+      "offset": 45,
+      "opcode": "brtrue",
+      "operand": "@11"
+     },
+     {
+      "index": 10,
+      "offset": 50,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 51,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     }
+    ],
+    "oldStart": 9,
+    "oldEnd": 10
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 47,
+      "offset": 188,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 48,
+      "offset": 190,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 49,
+      "offset": 191,
+      "opcode": "blt.s",
+      "operand": "@55"
+     },
+     {
+      "index": 50,
+      "offset": 193,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 51,
+      "offset": 195,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.ModConst::BRAND_STAGES"
+     }
+    ],
+    "ko": [
+     {
+      "index": 47,
+      "offset": 200,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 48,
+      "offset": 202,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 49,
+      "offset": 203,
+      "opcode": "blt",
+      "operand": "@55"
+     },
+     {
+      "index": 50,
+      "offset": 208,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 51,
+      "offset": 210,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.ModConst::BRAND_STAGES"
+     }
+    ],
+    "oldStart": 49,
+    "oldEnd": 50
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 52,
+      "offset": 200,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 53,
+      "offset": 201,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 54,
+      "offset": 202,
+      "opcode": "blt.s",
+      "operand": "@57"
+     },
+     {
+      "index": 55,
+      "offset": 204,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 56,
+      "offset": 205,
+      "opcode": "stloc.s",
+      "operand": "V_8"
+     }
+    ],
+    "ko": [
+     {
+      "index": 52,
+      "offset": 215,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 53,
+      "offset": 216,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 54,
+      "offset": 217,
+      "opcode": "blt",
+      "operand": "@57"
+     },
+     {
+      "index": 55,
+      "offset": 222,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 56,
+      "offset": 223,
+      "opcode": "stloc.s",
+      "operand": "V_8"
+     }
+    ],
+    "oldStart": 54,
+    "oldEnd": 55
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 68,
+      "offset": 249,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 69,
+      "offset": 254,
+      "opcode": "stloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 70,
+      "offset": 256,
+      "opcode": "leave.s",
+      "operand": "@73"
+     },
+     {
+      "index": 71,
+      "offset": 258,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 72,
+      "offset": 259,
+      "opcode": "leave.s",
+      "operand": "@73"
+     }
+    ],
+    "ko": [
+     {
+      "index": 68,
+      "offset": 267,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 69,
+      "offset": 272,
+      "opcode": "stloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 70,
+      "offset": 274,
+      "opcode": "leave",
+      "operand": "@73"
+     },
+     {
+      "index": 71,
+      "offset": 279,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 72,
+      "offset": 280,
+      "opcode": "leave",
+      "operand": "@73"
+     }
+    ],
+    "oldStart": 70,
+    "oldEnd": 71
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 70,
+      "offset": 256,
+      "opcode": "leave.s",
+      "operand": "@73"
+     },
+     {
+      "index": 71,
+      "offset": 258,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 72,
+      "offset": 259,
+      "opcode": "leave.s",
+      "operand": "@73"
+     },
+     {
+      "index": 73,
+      "offset": 261,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 74,
+      "offset": 266,
+      "opcode": "ldstr",
+      "operand": "m_title"
+     }
+    ],
+    "ko": [
+     {
+      "index": 70,
+      "offset": 274,
+      "opcode": "leave",
+      "operand": "@73"
+     },
+     {
+      "index": 71,
+      "offset": 279,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 72,
+      "offset": 280,
+      "opcode": "leave",
+      "operand": "@73"
+     },
+     {
+      "index": 73,
+      "offset": 285,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 74,
+      "offset": 290,
+      "opcode": "ldstr",
+      "operand": "m_title"
+     }
+    ],
+    "oldStart": 72,
+    "oldEnd": 73
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 80,
+      "offset": 285,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 81,
+      "offset": 287,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)"
+     },
+     {
+      "index": 82,
+      "offset": 292,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 83,
+      "offset": 297,
+      "opcode": "callvirt",
+      "operand": "PaperUI PaperUI::SetText(System.String,System.String)"
+     }
+    ],
+    "ko": [
+     {
+      "index": 80,
+      "offset": 309,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 81,
+      "offset": 311,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)"
+     },
+     {
+      "index": 82,
+      "offset": 316,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 83,
+      "offset": 321,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 84,
+      "offset": 326,
+      "opcode": "callvirt",
+      "operand": "PaperUI PaperUI::SetText(System.String,System.String)"
+     }
+    ],
+    "oldStart": 82,
+    "oldEnd": 82
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 89,
+      "offset": 320,
+      "opcode": "ldloc.s",
+      "operand": "V_12"
+     },
+     {
+      "index": 90,
+      "offset": 322,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 91,
+      "offset": 323,
+      "opcode": "bge.s",
+      "operand": "@94"
+     },
+     {
+      "index": 92,
+      "offset": 325,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 93,
+      "offset": 330,
+      "opcode": "br.s",
+      "operand": "@99"
+     }
+    ],
+    "ko": [
+     {
+      "index": 90,
+      "offset": 349,
+      "opcode": "ldloc.s",
+      "operand": "V_12"
+     },
+     {
+      "index": 91,
+      "offset": 351,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 92,
+      "offset": 352,
+      "opcode": "bge",
+      "operand": "@95"
+     },
+     {
+      "index": 93,
+      "offset": 357,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 94,
+      "offset": 362,
+      "opcode": "br",
+      "operand": "@100"
+     }
+    ],
+    "oldStart": 91,
+    "oldEnd": 92
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 91,
+      "offset": 323,
+      "opcode": "bge.s",
+      "operand": "@94"
+     },
+     {
+      "index": 92,
+      "offset": 325,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 93,
+      "offset": 330,
+      "opcode": "br.s",
+      "operand": "@99"
+     },
+     {
+      "index": 94,
+      "offset": 332,
+      "opcode": "ldstr",
+      "operand": "第 "
+     },
+     {
+      "index": 95,
+      "offset": 337,
+      "opcode": "ldloca.s",
+      "operand": "V_12"
+     }
+    ],
+    "ko": [
+     {
+      "index": 92,
+      "offset": 352,
+      "opcode": "bge",
+      "operand": "@95"
+     },
+     {
+      "index": 93,
+      "offset": 357,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 94,
+      "offset": 362,
+      "opcode": "br",
+      "operand": "@100"
+     },
+     {
+      "index": 95,
+      "offset": 367,
+      "opcode": "ldstr",
+      "operand": "제 "
+     },
+     {
+      "index": 96,
+      "offset": 372,
+      "opcode": "ldloca.s",
+      "operand": "V_12"
+     }
+    ],
+    "oldStart": 93,
+    "oldEnd": 94
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 109,
+      "offset": 378,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 110,
+      "offset": 380,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)"
+     },
+     {
+      "index": 111,
+      "offset": 385,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 112,
+      "offset": 386,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 110,
+      "offset": 413,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 111,
+      "offset": 415,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)"
+     },
+     {
+      "index": 112,
+      "offset": 420,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 113,
+      "offset": 425,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 114,
+      "offset": 426,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 111,
+    "oldEnd": 111
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 124,
+      "offset": 406,
+      "opcode": "ldloc.3",
+      "operand": ""
+     },
+     {
+      "index": 125,
+      "offset": 407,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 126,
+      "offset": 412,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 127,
+      "offset": 413,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 126,
+      "offset": 446,
+      "opcode": "ldloc.3",
+      "operand": ""
+     },
+     {
+      "index": 127,
+      "offset": 447,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 128,
+      "offset": 452,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 129,
+      "offset": 457,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 130,
+      "offset": 458,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 126,
+    "oldEnd": 126
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 129,
+      "offset": 415,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 130,
+      "offset": 417,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 131,
+      "offset": 422,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 132,
+      "offset": 423,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 132,
+      "offset": 460,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 133,
+      "offset": 462,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 134,
+      "offset": 467,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 135,
+      "offset": 472,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 136,
+      "offset": 473,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 131,
+    "oldEnd": 131
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 134,
+      "offset": 425,
+      "opcode": "ldloc.s",
+      "operand": "V_5"
+     },
+     {
+      "index": 135,
+      "offset": 427,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 136,
+      "offset": 432,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 137,
+      "offset": 433,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 138,
+      "offset": 475,
+      "opcode": "ldloc.s",
+      "operand": "V_5"
+     },
+     {
+      "index": 139,
+      "offset": 477,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 140,
+      "offset": 482,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 141,
+      "offset": 487,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 142,
+      "offset": 488,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 136,
+    "oldEnd": 136
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 139,
+      "offset": 435,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 140,
+      "offset": 437,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 141,
+      "offset": 442,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 142,
+      "offset": 443,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 144,
+      "offset": 490,
+      "opcode": "ldloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 145,
+      "offset": 492,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 146,
+      "offset": 497,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 147,
+      "offset": 502,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 148,
+      "offset": 503,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 141,
+    "oldEnd": 141
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 144,
+      "offset": 445,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 145,
+      "offset": 447,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 146,
+      "offset": 452,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 147,
+      "offset": 453,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 150,
+      "offset": 505,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 151,
+      "offset": 507,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenPanel::Or(System.String)"
+     },
+     {
+      "index": 152,
+      "offset": 512,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 153,
+      "offset": 517,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 154,
+      "offset": 518,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 146,
+    "oldEnd": 146
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 213,
+      "offset": 656,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 214,
+      "offset": 658,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 215,
+      "offset": 659,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 216,
+      "offset": 660,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 220,
+      "offset": 721,
+      "opcode": "ldloc.s",
+      "operand": "V_8"
+     },
+     {
+      "index": 221,
+      "offset": 723,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 222,
+      "offset": 724,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 223,
+      "offset": 729,
+      "opcode": "stelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 224,
+      "offset": 730,
+      "opcode": "dup",
+      "operand": ""
+     }
+    ],
+    "oldStart": 215,
+    "oldEnd": 215
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 262,
+      "offset": 796,
+      "opcode": "ldc.i4.s",
+      "operand": "22"
+     },
+     {
+      "index": 263,
+      "offset": 798,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 264,
+      "offset": 800,
+      "opcode": "brtrue.s",
+      "operand": "@267"
+     },
+     {
+      "index": 265,
+      "offset": 802,
+      "opcode": "ldstr",
+      "operand": "调教中"
+     },
+     {
+      "index": 266,
+      "offset": 807,
+      "opcode": "br.s",
+      "operand": "@268"
+     }
+    ],
+    "ko": [
+     {
+      "index": 270,
+      "offset": 866,
+      "opcode": "ldc.i4.s",
+      "operand": "22"
+     },
+     {
+      "index": 271,
+      "offset": 868,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 272,
+      "offset": 870,
+      "opcode": "brtrue",
+      "operand": "@275"
+     },
+     {
+      "index": 273,
+      "offset": 875,
+      "opcode": "ldstr",
+      "operand": "조교 중"
+     },
+     {
+      "index": 274,
+      "offset": 880,
+      "opcode": "br",
+      "operand": "@276"
+     }
+    ],
+    "oldStart": 264,
+    "oldEnd": 265
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 264,
+      "offset": 800,
+      "opcode": "brtrue.s",
+      "operand": "@267"
+     },
+     {
+      "index": 265,
+      "offset": 802,
+      "opcode": "ldstr",
+      "operand": "调教中"
+     },
+     {
+      "index": 266,
+      "offset": 807,
+      "opcode": "br.s",
+      "operand": "@268"
+     },
+     {
+      "index": 267,
+      "offset": 809,
+      "opcode": "ldstr",
+      "operand": "非调教中"
+     },
+     {
+      "index": 268,
+      "offset": 814,
+      "opcode": "stelem.ref",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 272,
+      "offset": 870,
+      "opcode": "brtrue",
+      "operand": "@275"
+     },
+     {
+      "index": 273,
+      "offset": 875,
+      "opcode": "ldstr",
+      "operand": "조교 중"
+     },
+     {
+      "index": 274,
+      "offset": 880,
+      "opcode": "br",
+      "operand": "@276"
+     },
+     {
+      "index": 275,
+      "offset": 885,
+      "opcode": "ldstr",
+      "operand": "조교 중 아님"
+     },
+     {
+      "index": 276,
+      "offset": 890,
+      "opcode": "stelem.ref",
+      "operand": ""
+     }
+    ],
+    "oldStart": 266,
+    "oldEnd": 267
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 270,
+      "offset": 817,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 271,
+      "offset": 818,
+      "opcode": "stloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 272,
+      "offset": 820,
+      "opcode": "br.s",
+      "operand": "@287"
+     },
+     {
+      "index": 273,
+      "offset": 822,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 274,
+      "offset": 827,
+      "opcode": "ldstr",
+      "operand": "vl"
+     }
+    ],
+    "ko": [
+     {
+      "index": 278,
+      "offset": 893,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 279,
+      "offset": 894,
+      "opcode": "stloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 280,
+      "offset": 896,
+      "opcode": "br",
+      "operand": "@295"
+     },
+     {
+      "index": 281,
+      "offset": 901,
+      "opcode": "ldsfld",
+      "operand": "PaperUI MidnightPawn.Game.MaidenPanel::ui"
+     },
+     {
+      "index": 282,
+      "offset": 906,
+      "opcode": "ldstr",
+      "operand": "vl"
+     }
+    ],
+    "oldStart": 272,
+    "oldEnd": 273
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 289,
+      "offset": 865,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 290,
+      "offset": 866,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 291,
+      "offset": 867,
+      "opcode": "bge.s",
+      "operand": "@297"
+     },
+     {
+      "index": 292,
+      "offset": 869,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 293,
+      "offset": 871,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.Game.MaidenPanel::ROWS"
+     }
+    ],
+    "ko": [
+     {
+      "index": 297,
+      "offset": 944,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 298,
+      "offset": 945,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 299,
+      "offset": 946,
+      "opcode": "bge",
+      "operand": "@305"
+     },
+     {
+      "index": 300,
+      "offset": 951,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 301,
+      "offset": 953,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.Game.MaidenPanel::ROWS"
+     }
+    ],
+    "oldStart": 291,
+    "oldEnd": 292
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 294,
+      "offset": 876,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 295,
+      "offset": 877,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 296,
+      "offset": 878,
+      "opcode": "blt.s",
+      "operand": "@273"
+     },
+     {
+      "index": 297,
+      "offset": 880,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 298,
+      "offset": 885,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_CAPTURE_LOG"
+     }
+    ],
+    "ko": [
+     {
+      "index": 302,
+      "offset": 958,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 303,
+      "offset": 959,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 304,
+      "offset": 960,
+      "opcode": "blt",
+      "operand": "@281"
+     },
+     {
+      "index": 305,
+      "offset": 965,
+      "opcode": "ldsfld",
+      "operand": "GameItem MidnightPawn.Game.MaidenPanel::maiden"
+     },
+     {
+      "index": 306,
+      "offset": 970,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_CAPTURE_LOG"
+     }
+    ],
+    "oldStart": 296,
+    "oldEnd": 297
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 301,
+      "offset": 897,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 302,
+      "offset": 899,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 303,
+      "offset": 904,
+      "opcode": "brfalse.s",
+      "operand": "@310"
+     },
+     {
+      "index": 304,
+      "offset": 906,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 305,
+      "offset": 908,
+      "opcode": "brtrue.s",
+      "operand": "@308"
+     }
+    ],
+    "ko": [
+     {
+      "index": 309,
+      "offset": 982,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 310,
+      "offset": 984,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 311,
+      "offset": 989,
+      "opcode": "brfalse",
+      "operand": "@318"
+     },
+     {
+      "index": 312,
+      "offset": 994,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 313,
+      "offset": 996,
+      "opcode": "brtrue",
+      "operand": "@316"
+     }
+    ],
+    "oldStart": 303,
+    "oldEnd": 304
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 303,
+      "offset": 904,
+      "opcode": "brfalse.s",
+      "operand": "@310"
+     },
+     {
+      "index": 304,
+      "offset": 906,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 305,
+      "offset": 908,
+      "opcode": "brtrue.s",
+      "operand": "@308"
+     },
+     {
+      "index": 306,
+      "offset": 910,
+      "opcode": "ldstr",
+      "operand": "—"
+     },
+     {
+      "index": 307,
+      "offset": 915,
+      "opcode": "br.s",
+      "operand": "@309"
+     }
+    ],
+    "ko": [
+     {
+      "index": 311,
+      "offset": 989,
+      "opcode": "brfalse",
+      "operand": "@318"
+     },
+     {
+      "index": 312,
+      "offset": 994,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 313,
+      "offset": 996,
+      "opcode": "brtrue",
+      "operand": "@316"
+     },
+     {
+      "index": 314,
+      "offset": 1001,
+      "opcode": "ldstr",
+      "operand": "—"
+     },
+     {
+      "index": 315,
+      "offset": 1006,
+      "opcode": "br",
+      "operand": "@317"
+     }
+    ],
+    "oldStart": 305,
+    "oldEnd": 306
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 305,
+      "offset": 908,
+      "opcode": "brtrue.s",
+      "operand": "@308"
+     },
+     {
+      "index": 306,
+      "offset": 910,
+      "opcode": "ldstr",
+      "operand": "—"
+     },
+     {
+      "index": 307,
+      "offset": 915,
+      "opcode": "br.s",
+      "operand": "@309"
+     },
+     {
+      "index": 308,
+      "offset": 917,
+      "opcode": "ldstr",
+      "operand": "尚未捕获（还站在柜台前）。"
+     },
+     {
+      "index": 309,
+      "offset": 922,
+      "opcode": "stloc.s",
+      "operand": "V_14"
+     }
+    ],
+    "ko": [
+     {
+      "index": 313,
+      "offset": 996,
+      "opcode": "brtrue",
+      "operand": "@316"
+     },
+     {
+      "index": 314,
+      "offset": 1001,
+      "opcode": "ldstr",
+      "operand": "—"
+     },
+     {
+      "index": 315,
+      "offset": 1006,
+      "opcode": "br",
+      "operand": "@317"
+     },
+     {
+      "index": 316,
+      "offset": 1011,
+      "opcode": "ldstr",
+      "operand": "아직 포획하지 않았습니다(진열대 앞에 있음)."
+     },
+     {
+      "index": 317,
+      "offset": 1016,
+      "opcode": "stloc.s",
+      "operand": "V_14"
+     }
+    ],
+    "oldStart": 307,
+    "oldEnd": 308
+   }
+  ],
+  "newInstructionCount": 324,
+  "oldInstructionCount": 324
+ },
+ {
+  "method": "System.String MidnightPawn.Game.MaidenPanel::DisplayNameOf(GameItem,System.String,System.String,System.String,System.String)",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 3,
+      "offset": 11,
+      "opcode": "stloc.0",
+      "operand": ""
+     },
+     {
+      "index": 4,
+      "offset": 12,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 13,
+      "opcode": "brfalse.s",
+      "operand": "@10"
+     },
+     {
+      "index": 6,
+      "offset": 15,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 16,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 3,
+      "offset": 11,
+      "opcode": "stloc.0",
+      "operand": ""
+     },
+     {
+      "index": 4,
+      "offset": 12,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 13,
+      "opcode": "brfalse",
+      "operand": "@10"
+     },
+     {
+      "index": 6,
+      "offset": 18,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 19,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 5,
+    "oldEnd": 6
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 6,
+      "offset": 15,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 16,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 8,
+      "offset": 17,
+      "opcode": "beq.s",
+      "operand": "@24"
+     },
+     {
+      "index": 9,
+      "offset": 19,
+      "opcode": "br.s",
+      "operand": "@28"
+     },
+     {
+      "index": 10,
+      "offset": 21,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 22,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     }
+    ],
+    "ko": [
+     {
+      "index": 6,
+      "offset": 18,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 19,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 8,
+      "offset": 20,
+      "opcode": "beq",
+      "operand": "@24"
+     },
+     {
+      "index": 9,
+      "offset": 25,
+      "opcode": "br",
+      "operand": "@30"
+     },
+     {
+      "index": 10,
+      "offset": 30,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 31,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     }
+    ],
+    "oldStart": 8,
+    "oldEnd": 10
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 10,
+      "offset": 21,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 22,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 12,
+      "offset": 27,
+      "opcode": "brtrue.s",
+      "operand": "@15"
+     },
+     {
+      "index": 13,
+      "offset": 29,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 14,
+      "offset": 30,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 10,
+      "offset": 30,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 31,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 12,
+      "offset": 36,
+      "opcode": "brtrue",
+      "operand": "@15"
+     },
+     {
+      "index": 13,
+      "offset": 41,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 14,
+      "offset": 42,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 12,
+    "oldEnd": 13
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 16,
+      "offset": 32,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     },
+     {
+      "index": 17,
+      "offset": 37,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 18,
+      "offset": 42,
+      "opcode": "brtrue.s",
+      "operand": "@22"
+     },
+     {
+      "index": 19,
+      "offset": 44,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 20,
+      "offset": 45,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     }
+    ],
+    "ko": [
+     {
+      "index": 16,
+      "offset": 44,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     },
+     {
+      "index": 17,
+      "offset": 49,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 18,
+      "offset": 54,
+      "opcode": "brtrue",
+      "operand": "@22"
+     },
+     {
+      "index": 19,
+      "offset": 59,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 20,
+      "offset": 60,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     }
+    ],
+    "oldStart": 18,
+    "oldEnd": 19
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 23,
+      "offset": 56,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 24,
+      "offset": 57,
+      "opcode": "ldarg.3",
+      "operand": ""
+     },
+     {
+      "index": 25,
+      "offset": 58,
+      "opcode": "ldarg.s",
+      "operand": "body"
+     },
+     {
+      "index": 26,
+      "offset": 60,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     }
+    ],
+    "ko": [
+     {
+      "index": 23,
+      "offset": 71,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 24,
+      "offset": 72,
+      "opcode": "ldarg.3",
+      "operand": ""
+     },
+     {
+      "index": 25,
+      "offset": 73,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 26,
+      "offset": 78,
+      "opcode": "ldarg.s",
+      "operand": "body"
+     },
+     {
+      "index": 27,
+      "offset": 80,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     }
+    ],
+    "oldStart": 25,
+    "oldEnd": 25
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 24,
+      "offset": 57,
+      "opcode": "ldarg.3",
+      "operand": ""
+     },
+     {
+      "index": 25,
+      "offset": 58,
+      "opcode": "ldarg.s",
+      "operand": "body"
+     },
+     {
+      "index": 26,
+      "offset": 60,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 27,
+      "offset": 65,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 25,
+      "offset": 73,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 26,
+      "offset": 78,
+      "opcode": "ldarg.s",
+      "operand": "body"
+     },
+     {
+      "index": 27,
+      "offset": 80,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 28,
+      "offset": 85,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 29,
+      "offset": 90,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 26,
+    "oldEnd": 26
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 28,
+      "offset": 66,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 29,
+      "offset": 67,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 30,
+      "offset": 72,
+      "opcode": "brtrue.s",
+      "operand": "@33"
+     },
+     {
+      "index": 31,
+      "offset": 74,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 32,
+      "offset": 75,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 30,
+      "offset": 91,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 31,
+      "offset": 92,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 32,
+      "offset": 97,
+      "opcode": "brtrue",
+      "operand": "@35"
+     },
+     {
+      "index": 33,
+      "offset": 102,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 34,
+      "offset": 103,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 30,
+    "oldEnd": 31
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 34,
+      "offset": 77,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     },
+     {
+      "index": 35,
+      "offset": 82,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 36,
+      "offset": 83,
+      "opcode": "brtrue.s",
+      "operand": "@39"
+     },
+     {
+      "index": 37,
+      "offset": 85,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 38,
+      "offset": 86,
+      "opcode": "ldstr",
+      "operand": "少女"
+     }
+    ],
+    "ko": [
+     {
+      "index": 36,
+      "offset": 105,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::get_name()"
+     },
+     {
+      "index": 37,
+      "offset": 110,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 38,
+      "offset": 111,
+      "opcode": "brtrue",
+      "operand": "@41"
+     },
+     {
+      "index": 39,
+      "offset": 116,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 40,
+      "offset": 117,
+      "opcode": "ldstr",
+      "operand": "소녀"
+     }
+    ],
+    "oldStart": 36,
+    "oldEnd": 37
+   }
+  ],
+  "newInstructionCount": 40,
+  "oldInstructionCount": 40
+ },
+ {
+  "method": "System.Void MidnightPawn.Game.MaidenTooltip::OnTooltip(RichTextBuilder,GameItem)",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brfalse.s",
+      "operand": "@4"
+     },
+     {
+      "index": 2,
+      "offset": 3,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 4,
+      "opcode": "brtrue.s",
+      "operand": "@5"
+     }
+    ],
+    "ko": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brfalse",
+      "operand": "@4"
+     },
+     {
+      "index": 2,
+      "offset": 6,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 7,
+      "opcode": "brtrue",
+      "operand": "@5"
+     }
+    ],
+    "oldStart": 1,
+    "oldEnd": 2
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brfalse.s",
+      "operand": "@4"
+     },
+     {
+      "index": 2,
+      "offset": 3,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 4,
+      "opcode": "brtrue.s",
+      "operand": "@5"
+     },
+     {
+      "index": 4,
+      "offset": 6,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 7,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brfalse",
+      "operand": "@4"
+     },
+     {
+      "index": 2,
+      "offset": 6,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 7,
+      "opcode": "brtrue",
+      "operand": "@5"
+     },
+     {
+      "index": 4,
+      "offset": 12,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 13,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 3,
+    "oldEnd": 4
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 43,
+      "offset": 110,
+      "opcode": "ldloc.3",
+      "operand": ""
+     },
+     {
+      "index": 44,
+      "offset": 111,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 45,
+      "offset": 112,
+      "opcode": "bgt.s",
+      "operand": "@49"
+     },
+     {
+      "index": 46,
+      "offset": 114,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 47,
+      "offset": 116,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 43,
+      "offset": 116,
+      "opcode": "ldloc.3",
+      "operand": ""
+     },
+     {
+      "index": 44,
+      "offset": 117,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 45,
+      "offset": 118,
+      "opcode": "bgt",
+      "operand": "@49"
+     },
+     {
+      "index": 46,
+      "offset": 123,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 47,
+      "offset": 125,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 45,
+    "oldEnd": 46
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 46,
+      "offset": 114,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 47,
+      "offset": 116,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 48,
+      "offset": 117,
+      "opcode": "ble.s",
+      "operand": "@67"
+     },
+     {
+      "index": 49,
+      "offset": 119,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 120,
+      "opcode": "ldstr",
+      "operand": "破处 {0} 次   后庭破处 {1} 次"
+     }
+    ],
+    "ko": [
+     {
+      "index": 46,
+      "offset": 123,
+      "opcode": "ldloc.s",
+      "operand": "V_4"
+     },
+     {
+      "index": 47,
+      "offset": 125,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 48,
+      "offset": 126,
+      "opcode": "ble",
+      "operand": "@67"
+     },
+     {
+      "index": 49,
+      "offset": 131,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 132,
+      "opcode": "ldstr",
+      "operand": "첫 성교 {0}회   첫 항문 성교 {1}회"
+     }
+    ],
+    "oldStart": 48,
+    "oldEnd": 49
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 111,
+      "offset": 259,
+      "opcode": "ldloc.s",
+      "operand": "V_5"
+     },
+     {
+      "index": 112,
+      "offset": 261,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 113,
+      "offset": 266,
+      "opcode": "brtrue.s",
+      "operand": "@129"
+     },
+     {
+      "index": 114,
+      "offset": 268,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 115,
+      "offset": 269,
+      "opcode": "ldstr",
+      "operand": "昨晚："
+     }
+    ],
+    "ko": [
+     {
+      "index": 111,
+      "offset": 271,
+      "opcode": "ldloc.s",
+      "operand": "V_5"
+     },
+     {
+      "index": 112,
+      "offset": 273,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 113,
+      "offset": 278,
+      "opcode": "brtrue",
+      "operand": "@129"
+     },
+     {
+      "index": 114,
+      "offset": 283,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 115,
+      "offset": 284,
+      "opcode": "ldstr",
+      "operand": "지난밤:"
+     }
+    ],
+    "oldStart": 113,
+    "oldEnd": 114
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 127,
+      "offset": 294,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 128,
+      "offset": 299,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 129,
+      "offset": 300,
+      "opcode": "leave.s",
+      "operand": "@137"
+     },
+     {
+      "index": 130,
+      "offset": 302,
+      "opcode": "stloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 131,
+      "offset": 304,
+      "opcode": "ldstr",
+      "operand": "触手本体 tooltip 失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 127,
+      "offset": 309,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 128,
+      "offset": 314,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 129,
+      "offset": 315,
+      "opcode": "leave",
+      "operand": "@137"
+     },
+     {
+      "index": 130,
+      "offset": 320,
+      "opcode": "stloc.s",
+      "operand": "V_6"
+     },
+     {
+      "index": 131,
+      "offset": 322,
+      "opcode": "ldstr",
+      "operand": "촉수 본체 툴팁 처리 실패: "
+     }
+    ],
+    "oldStart": 129,
+    "oldEnd": 130
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 134,
+      "offset": 316,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 135,
+      "offset": 321,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 136,
+      "offset": 326,
+      "opcode": "leave.s",
+      "operand": "@137"
+     },
+     {
+      "index": 137,
+      "offset": 328,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 138,
+      "offset": 329,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 134,
+      "offset": 334,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 135,
+      "offset": 339,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 136,
+      "offset": 344,
+      "opcode": "leave",
+      "operand": "@137"
+     },
+     {
+      "index": 137,
+      "offset": 349,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 138,
+      "offset": 350,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 136,
+    "oldEnd": 137
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 175,
+      "offset": 415,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 176,
+      "offset": 417,
+      "opcode": "ldc.i4.s",
+      "operand": "100"
+     },
+     {
+      "index": 177,
+      "offset": 419,
+      "opcode": "bge.s",
+      "operand": "@180"
+     },
+     {
+      "index": 178,
+      "offset": 421,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 179,
+      "offset": 426,
+      "opcode": "br.s",
+      "operand": "@181"
+     }
+    ],
+    "ko": [
+     {
+      "index": 175,
+      "offset": 436,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 176,
+      "offset": 438,
+      "opcode": "ldc.i4.s",
+      "operand": "100"
+     },
+     {
+      "index": 177,
+      "offset": 440,
+      "opcode": "bge",
+      "operand": "@180"
+     },
+     {
+      "index": 178,
+      "offset": 445,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 179,
+      "offset": 450,
+      "opcode": "br",
+      "operand": "@181"
+     }
+    ],
+    "oldStart": 177,
+    "oldEnd": 178
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 177,
+      "offset": 419,
+      "opcode": "bge.s",
+      "operand": "@180"
+     },
+     {
+      "index": 178,
+      "offset": 421,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 179,
+      "offset": 426,
+      "opcode": "br.s",
+      "operand": "@181"
+     },
+     {
+      "index": 180,
+      "offset": 428,
+      "opcode": "ldstr",
+      "operand": "　（已充满）"
+     },
+     {
+      "index": 181,
+      "offset": 433,
+      "opcode": "stelem.ref",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 177,
+      "offset": 440,
+      "opcode": "bge",
+      "operand": "@180"
+     },
+     {
+      "index": 178,
+      "offset": 445,
+      "opcode": "ldstr",
+      "operand": ""
+     },
+     {
+      "index": 179,
+      "offset": 450,
+      "opcode": "br",
+      "operand": "@181"
+     },
+     {
+      "index": 180,
+      "offset": 455,
+      "opcode": "ldstr",
+      "operand": "　(가득 참)"
+     },
+     {
+      "index": 181,
+      "offset": 460,
+      "opcode": "stelem.ref",
+      "operand": ""
+     }
+    ],
+    "oldStart": 179,
+    "oldEnd": 180
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 184,
+      "offset": 440,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 185,
+      "offset": 442,
+      "opcode": "ldc.i4.s",
+      "operand": "100"
+     },
+     {
+      "index": 186,
+      "offset": 444,
+      "opcode": "bge.s",
+      "operand": "@189"
+     },
+     {
+      "index": 187,
+      "offset": 446,
+      "opcode": "ldc.i4",
+      "operand": "4367018"
+     },
+     {
+      "index": 188,
+      "offset": 451,
+      "opcode": "br.s",
+      "operand": "@190"
+     }
+    ],
+    "ko": [
+     {
+      "index": 184,
+      "offset": 467,
+      "opcode": "ldloc.s",
+      "operand": "V_7"
+     },
+     {
+      "index": 185,
+      "offset": 469,
+      "opcode": "ldc.i4.s",
+      "operand": "100"
+     },
+     {
+      "index": 186,
+      "offset": 471,
+      "opcode": "bge",
+      "operand": "@189"
+     },
+     {
+      "index": 187,
+      "offset": 476,
+      "opcode": "ldc.i4",
+      "operand": "4367018"
+     },
+     {
+      "index": 188,
+      "offset": 481,
+      "opcode": "br",
+      "operand": "@190"
+     }
+    ],
+    "oldStart": 186,
+    "oldEnd": 187
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 186,
+      "offset": 444,
+      "opcode": "bge.s",
+      "operand": "@189"
+     },
+     {
+      "index": 187,
+      "offset": 446,
+      "opcode": "ldc.i4",
+      "operand": "4367018"
+     },
+     {
+      "index": 188,
+      "offset": 451,
+      "opcode": "br.s",
+      "operand": "@190"
+     },
+     {
+      "index": 189,
+      "offset": 453,
+      "opcode": "ldc.i4",
+      "operand": "8035658"
+     },
+     {
+      "index": 190,
+      "offset": 458,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 186,
+      "offset": 471,
+      "opcode": "bge",
+      "operand": "@189"
+     },
+     {
+      "index": 187,
+      "offset": 476,
+      "opcode": "ldc.i4",
+      "operand": "4367018"
+     },
+     {
+      "index": 188,
+      "offset": 481,
+      "opcode": "br",
+      "operand": "@190"
+     },
+     {
+      "index": 189,
+      "offset": 486,
+      "opcode": "ldc.i4",
+      "operand": "8035658"
+     },
+     {
+      "index": 190,
+      "offset": 491,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 188,
+    "oldEnd": 189
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 210,
+      "offset": 490,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 211,
+      "offset": 495,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 212,
+      "offset": 496,
+      "opcode": "leave.s",
+      "operand": "@220"
+     },
+     {
+      "index": 213,
+      "offset": 498,
+      "opcode": "stloc.s",
+      "operand": "V_9"
+     },
+     {
+      "index": 214,
+      "offset": 500,
+      "opcode": "ldstr",
+      "operand": "触手 tooltip 失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 210,
+      "offset": 523,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 211,
+      "offset": 528,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 212,
+      "offset": 529,
+      "opcode": "leave",
+      "operand": "@220"
+     },
+     {
+      "index": 213,
+      "offset": 534,
+      "opcode": "stloc.s",
+      "operand": "V_9"
+     },
+     {
+      "index": 214,
+      "offset": 536,
+      "opcode": "ldstr",
+      "operand": "촉수 툴팁 처리 실패: "
+     }
+    ],
+    "oldStart": 212,
+    "oldEnd": 213
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 217,
+      "offset": 512,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 218,
+      "offset": 517,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 219,
+      "offset": 522,
+      "opcode": "leave.s",
+      "operand": "@220"
+     },
+     {
+      "index": 220,
+      "offset": 524,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 221,
+      "offset": 525,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 217,
+      "offset": 548,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 218,
+      "offset": 553,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 219,
+      "offset": 558,
+      "opcode": "leave",
+      "operand": "@220"
+     },
+     {
+      "index": 220,
+      "offset": 563,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 221,
+      "offset": 564,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 219,
+    "oldEnd": 220
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 223,
+      "offset": 531,
+      "opcode": "ldstr",
+      "operand": "tentacle_semen"
+     },
+     {
+      "index": 224,
+      "offset": 536,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::op_Equality(System.String,System.String)"
+     },
+     {
+      "index": 225,
+      "offset": 541,
+      "opcode": "brfalse.s",
+      "operand": "@270"
+     },
+     {
+      "index": 226,
+      "offset": 543,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 227,
+      "offset": 544,
+      "opcode": "ldc.i4.2",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 223,
+      "offset": 570,
+      "opcode": "ldstr",
+      "operand": "tentacle_semen"
+     },
+     {
+      "index": 224,
+      "offset": 575,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::op_Equality(System.String,System.String)"
+     },
+     {
+      "index": 225,
+      "offset": 580,
+      "opcode": "brfalse",
+      "operand": "@270"
+     },
+     {
+      "index": 226,
+      "offset": 585,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 227,
+      "offset": 586,
+      "opcode": "ldc.i4.2",
+      "operand": ""
+     }
+    ],
+    "oldStart": 225,
+    "oldEnd": 226
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 259,
+      "offset": 611,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 260,
+      "offset": 616,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 261,
+      "offset": 617,
+      "opcode": "leave.s",
+      "operand": "@269"
+     },
+     {
+      "index": 262,
+      "offset": 619,
+      "opcode": "stloc.s",
+      "operand": "V_10"
+     },
+     {
+      "index": 263,
+      "offset": 621,
+      "opcode": "ldstr",
+      "operand": "精液 tooltip 失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 259,
+      "offset": 653,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 260,
+      "offset": 658,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 261,
+      "offset": 659,
+      "opcode": "leave",
+      "operand": "@269"
+     },
+     {
+      "index": 262,
+      "offset": 664,
+      "opcode": "stloc.s",
+      "operand": "V_10"
+     },
+     {
+      "index": 263,
+      "offset": 666,
+      "opcode": "ldstr",
+      "operand": "정액 툴팁 처리 실패: "
+     }
+    ],
+    "oldStart": 261,
+    "oldEnd": 262
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 266,
+      "offset": 633,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 267,
+      "offset": 638,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 268,
+      "offset": 643,
+      "opcode": "leave.s",
+      "operand": "@269"
+     },
+     {
+      "index": 269,
+      "offset": 645,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 270,
+      "offset": 646,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 266,
+      "offset": 678,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 267,
+      "offset": 683,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 268,
+      "offset": 688,
+      "opcode": "leave",
+      "operand": "@269"
+     },
+     {
+      "index": 269,
+      "offset": 693,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 270,
+      "offset": 694,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 268,
+    "oldEnd": 269
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 272,
+      "offset": 652,
+      "opcode": "ldstr",
+      "operand": "tentacle_box"
+     },
+     {
+      "index": 273,
+      "offset": 657,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::op_Equality(System.String,System.String)"
+     },
+     {
+      "index": 274,
+      "offset": 662,
+      "opcode": "brtrue.s",
+      "operand": "@279"
+     },
+     {
+      "index": 275,
+      "offset": 664,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 276,
+      "offset": 665,
+      "opcode": "ldstr",
+      "operand": "TENTACLE_CORRUPTION"
+     }
+    ],
+    "ko": [
+     {
+      "index": 272,
+      "offset": 700,
+      "opcode": "ldstr",
+      "operand": "tentacle_box"
+     },
+     {
+      "index": 273,
+      "offset": 705,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::op_Equality(System.String,System.String)"
+     },
+     {
+      "index": 274,
+      "offset": 710,
+      "opcode": "brtrue",
+      "operand": "@279"
+     },
+     {
+      "index": 275,
+      "offset": 715,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 276,
+      "offset": 716,
+      "opcode": "ldstr",
+      "operand": "TENTACLE_CORRUPTION"
+     }
+    ],
+    "oldStart": 274,
+    "oldEnd": 275
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 276,
+      "offset": 665,
+      "opcode": "ldstr",
+      "operand": "TENTACLE_CORRUPTION"
+     },
+     {
+      "index": 277,
+      "offset": 670,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 278,
+      "offset": 675,
+      "opcode": "brfalse.s",
+      "operand": "@316"
+     },
+     {
+      "index": 279,
+      "offset": 677,
+      "opcode": "nop",
+      "operand": ""
+     },
+     {
+      "index": 280,
+      "offset": 678,
+      "opcode": "ldarg.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 276,
+      "offset": 716,
+      "opcode": "ldstr",
+      "operand": "TENTACLE_CORRUPTION"
+     },
+     {
+      "index": 277,
+      "offset": 721,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 278,
+      "offset": 726,
+      "opcode": "brfalse",
+      "operand": "@316"
+     },
+     {
+      "index": 279,
+      "offset": 731,
+      "opcode": "nop",
+      "operand": ""
+     },
+     {
+      "index": 280,
+      "offset": 732,
+      "opcode": "ldarg.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 278,
+    "oldEnd": 279
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 287,
+      "offset": 694,
+      "opcode": "ldstr",
+      "operand": "TENTACLE"
+     },
+     {
+      "index": 288,
+      "offset": 699,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 289,
+      "offset": 704,
+      "opcode": "brfalse.s",
+      "operand": "@294"
+     },
+     {
+      "index": 290,
+      "offset": 706,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 291,
+      "offset": 708,
+      "opcode": "ldstr",
+      "operand": "【触手】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 287,
+      "offset": 748,
+      "opcode": "ldstr",
+      "operand": "TENTACLE"
+     },
+     {
+      "index": 288,
+      "offset": 753,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 289,
+      "offset": 758,
+      "opcode": "brfalse",
+      "operand": "@294"
+     },
+     {
+      "index": 290,
+      "offset": 763,
+      "opcode": "ldloc.s",
+      "operand": "V_11"
+     },
+     {
+      "index": 291,
+      "offset": 765,
+      "opcode": "ldstr",
+      "operand": "【촉수】"
+     }
+    ],
+    "oldStart": 289,
+    "oldEnd": 290
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 305,
+      "offset": 736,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 306,
+      "offset": 741,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 307,
+      "offset": 742,
+      "opcode": "leave.s",
+      "operand": "@315"
+     },
+     {
+      "index": 308,
+      "offset": 744,
+      "opcode": "stloc.s",
+      "operand": "V_12"
+     },
+     {
+      "index": 309,
+      "offset": 746,
+      "opcode": "ldstr",
+      "operand": "触手系 tooltip 失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 305,
+      "offset": 793,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 306,
+      "offset": 798,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 307,
+      "offset": 799,
+      "opcode": "leave",
+      "operand": "@315"
+     },
+     {
+      "index": 308,
+      "offset": 804,
+      "opcode": "stloc.s",
+      "operand": "V_12"
+     },
+     {
+      "index": 309,
+      "offset": 806,
+      "opcode": "ldstr",
+      "operand": "촉수 계열 툴팁 처리 실패: "
+     }
+    ],
+    "oldStart": 307,
+    "oldEnd": 308
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 312,
+      "offset": 758,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 313,
+      "offset": 763,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 314,
+      "offset": 768,
+      "opcode": "leave.s",
+      "operand": "@315"
+     },
+     {
+      "index": 315,
+      "offset": 770,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 316,
+      "offset": 771,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 312,
+      "offset": 818,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 313,
+      "offset": 823,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 314,
+      "offset": 828,
+      "opcode": "leave",
+      "operand": "@315"
+     },
+     {
+      "index": 315,
+      "offset": 833,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 316,
+      "offset": 834,
+      "opcode": "ldarg.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 314,
+    "oldEnd": 315
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 317,
+      "offset": 772,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_FEMALE"
+     },
+     {
+      "index": 318,
+      "offset": 777,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 319,
+      "offset": 782,
+      "opcode": "brtrue.s",
+      "operand": "@321"
+     },
+     {
+      "index": 320,
+      "offset": 784,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 321,
+      "offset": 785,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 317,
+      "offset": 835,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_FEMALE"
+     },
+     {
+      "index": 318,
+      "offset": 840,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 319,
+      "offset": 845,
+      "opcode": "brtrue",
+      "operand": "@321"
+     },
+     {
+      "index": 320,
+      "offset": 850,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 321,
+      "offset": 851,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "oldStart": 319,
+    "oldEnd": 320
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 346,
+      "offset": 859,
+      "opcode": "ldloc.s",
+      "operand": "V_13"
+     },
+     {
+      "index": 347,
+      "offset": 861,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 348,
+      "offset": 866,
+      "opcode": "brtrue.s",
+      "operand": "@364"
+     },
+     {
+      "index": 349,
+      "offset": 868,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 350,
+      "offset": 869,
+      "opcode": "ldstr",
+      "operand": "姓名："
+     }
+    ],
+    "ko": [
+     {
+      "index": 346,
+      "offset": 925,
+      "opcode": "ldloc.s",
+      "operand": "V_13"
+     },
+     {
+      "index": 347,
+      "offset": 927,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 348,
+      "offset": 932,
+      "opcode": "brtrue",
+      "operand": "@364"
+     },
+     {
+      "index": 349,
+      "offset": 937,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 350,
+      "offset": 938,
+      "opcode": "ldstr",
+      "operand": "이름:"
+     }
+    ],
+    "oldStart": 348,
+    "oldEnd": 349
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 370,
+      "offset": 920,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 371,
+      "offset": 922,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 372,
+      "offset": 927,
+      "opcode": "brtrue.s",
+      "operand": "@381"
+     },
+     {
+      "index": 373,
+      "offset": 929,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 374,
+      "offset": 931,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "ko": [
+     {
+      "index": 370,
+      "offset": 989,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 371,
+      "offset": 991,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 372,
+      "offset": 996,
+      "opcode": "brtrue",
+      "operand": "@382"
+     },
+     {
+      "index": 373,
+      "offset": 1001,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 374,
+      "offset": 1003,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "oldStart": 372,
+    "oldEnd": 373
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 375,
+      "offset": 936,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 376,
+      "offset": 941,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 377,
+      "offset": 943,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 378,
+      "offset": 948,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 375,
+      "offset": 1008,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 376,
+      "offset": 1013,
+      "opcode": "ldloc.s",
+      "operand": "V_14"
+     },
+     {
+      "index": 377,
+      "offset": 1015,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 378,
+      "offset": 1020,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 379,
+      "offset": 1025,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "oldStart": 377,
+    "oldEnd": 377
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 381,
+      "offset": 959,
+      "opcode": "ldloc.s",
+      "operand": "V_15"
+     },
+     {
+      "index": 382,
+      "offset": 961,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 383,
+      "offset": 966,
+      "opcode": "brtrue.s",
+      "operand": "@392"
+     },
+     {
+      "index": 384,
+      "offset": 968,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 385,
+      "offset": 970,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "ko": [
+     {
+      "index": 382,
+      "offset": 1036,
+      "opcode": "ldloc.s",
+      "operand": "V_15"
+     },
+     {
+      "index": 383,
+      "offset": 1038,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 384,
+      "offset": 1043,
+      "opcode": "brtrue",
+      "operand": "@394"
+     },
+     {
+      "index": 385,
+      "offset": 1048,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 386,
+      "offset": 1050,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "oldStart": 383,
+    "oldEnd": 384
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 386,
+      "offset": 975,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 387,
+      "offset": 980,
+      "opcode": "ldloc.s",
+      "operand": "V_15"
+     },
+     {
+      "index": 388,
+      "offset": 982,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 389,
+      "offset": 987,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 387,
+      "offset": 1055,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 388,
+      "offset": 1060,
+      "opcode": "ldloc.s",
+      "operand": "V_15"
+     },
+     {
+      "index": 389,
+      "offset": 1062,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 390,
+      "offset": 1067,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 391,
+      "offset": 1072,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "oldStart": 388,
+    "oldEnd": 388
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 392,
+      "offset": 998,
+      "opcode": "ldloc.s",
+      "operand": "V_17"
+     },
+     {
+      "index": 393,
+      "offset": 1000,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 394,
+      "offset": 1005,
+      "opcode": "brtrue.s",
+      "operand": "@403"
+     },
+     {
+      "index": 395,
+      "offset": 1007,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 396,
+      "offset": 1009,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "ko": [
+     {
+      "index": 394,
+      "offset": 1083,
+      "opcode": "ldloc.s",
+      "operand": "V_17"
+     },
+     {
+      "index": 395,
+      "offset": 1085,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 396,
+      "offset": 1090,
+      "opcode": "brtrue",
+      "operand": "@406"
+     },
+     {
+      "index": 397,
+      "offset": 1095,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 398,
+      "offset": 1097,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "oldStart": 394,
+    "oldEnd": 395
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 397,
+      "offset": 1014,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 398,
+      "offset": 1019,
+      "opcode": "ldloc.s",
+      "operand": "V_17"
+     },
+     {
+      "index": 399,
+      "offset": 1021,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 400,
+      "offset": 1026,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 399,
+      "offset": 1102,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 400,
+      "offset": 1107,
+      "opcode": "ldloc.s",
+      "operand": "V_17"
+     },
+     {
+      "index": 401,
+      "offset": 1109,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 402,
+      "offset": 1114,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 403,
+      "offset": 1119,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "oldStart": 399,
+    "oldEnd": 399
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 403,
+      "offset": 1037,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 404,
+      "offset": 1039,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 405,
+      "offset": 1044,
+      "opcode": "brtrue.s",
+      "operand": "@414"
+     },
+     {
+      "index": 406,
+      "offset": 1046,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 407,
+      "offset": 1048,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "ko": [
+     {
+      "index": 406,
+      "offset": 1130,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 407,
+      "offset": 1132,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 408,
+      "offset": 1137,
+      "opcode": "brtrue",
+      "operand": "@418"
+     },
+     {
+      "index": 409,
+      "offset": 1142,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 410,
+      "offset": 1144,
+      "opcode": "ldstr",
+      "operand": "【"
+     }
+    ],
+    "oldStart": 405,
+    "oldEnd": 406
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 408,
+      "offset": 1053,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 409,
+      "offset": 1058,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 410,
+      "offset": 1060,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 411,
+      "offset": 1065,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 411,
+      "offset": 1149,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 412,
+      "offset": 1154,
+      "opcode": "ldloc.s",
+      "operand": "V_16"
+     },
+     {
+      "index": 413,
+      "offset": 1156,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 414,
+      "offset": 1161,
+      "opcode": "callvirt",
+      "operand": "System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+     },
+     {
+      "index": 415,
+      "offset": 1166,
+      "opcode": "ldstr",
+      "operand": "】"
+     }
+    ],
+    "oldStart": 410,
+    "oldEnd": 410
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 415,
+      "offset": 1077,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_DAUGHTER"
+     },
+     {
+      "index": 416,
+      "offset": 1082,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 417,
+      "offset": 1087,
+      "opcode": "brfalse.s",
+      "operand": "@422"
+     },
+     {
+      "index": 418,
+      "offset": 1089,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 419,
+      "offset": 1091,
+      "opcode": "ldstr",
+      "operand": "【女儿】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 419,
+      "offset": 1178,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_DAUGHTER"
+     },
+     {
+      "index": 420,
+      "offset": 1183,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 421,
+      "offset": 1188,
+      "opcode": "brfalse",
+      "operand": "@426"
+     },
+     {
+      "index": 422,
+      "offset": 1193,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 423,
+      "offset": 1195,
+      "opcode": "ldstr",
+      "operand": "【딸】"
+     }
+    ],
+    "oldStart": 417,
+    "oldEnd": 418
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 423,
+      "offset": 1103,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_VIRGIN"
+     },
+     {
+      "index": 424,
+      "offset": 1108,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 425,
+      "offset": 1113,
+      "opcode": "brfalse.s",
+      "operand": "@430"
+     },
+     {
+      "index": 426,
+      "offset": 1115,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 427,
+      "offset": 1117,
+      "opcode": "ldstr",
+      "operand": "【处女】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 427,
+      "offset": 1207,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_VIRGIN"
+     },
+     {
+      "index": 428,
+      "offset": 1212,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 429,
+      "offset": 1217,
+      "opcode": "brfalse",
+      "operand": "@434"
+     },
+     {
+      "index": 430,
+      "offset": 1222,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 431,
+      "offset": 1224,
+      "opcode": "ldstr",
+      "operand": "【처녀】"
+     }
+    ],
+    "oldStart": 425,
+    "oldEnd": 426
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 431,
+      "offset": 1129,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_VIRGIN_LOST"
+     },
+     {
+      "index": 432,
+      "offset": 1134,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 433,
+      "offset": 1139,
+      "opcode": "brfalse.s",
+      "operand": "@438"
+     },
+     {
+      "index": 434,
+      "offset": 1141,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 435,
+      "offset": 1143,
+      "opcode": "ldstr",
+      "operand": "【处女丧失】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 435,
+      "offset": 1236,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_VIRGIN_LOST"
+     },
+     {
+      "index": 436,
+      "offset": 1241,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 437,
+      "offset": 1246,
+      "opcode": "brfalse",
+      "operand": "@442"
+     },
+     {
+      "index": 438,
+      "offset": 1251,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 439,
+      "offset": 1253,
+      "opcode": "ldstr",
+      "operand": "【처녀 상실】"
+     }
+    ],
+    "oldStart": 433,
+    "oldEnd": 434
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 439,
+      "offset": 1155,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_ANAL_VIRGIN"
+     },
+     {
+      "index": 440,
+      "offset": 1160,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 441,
+      "offset": 1165,
+      "opcode": "brfalse.s",
+      "operand": "@446"
+     },
+     {
+      "index": 442,
+      "offset": 1167,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 443,
+      "offset": 1169,
+      "opcode": "ldstr",
+      "operand": "【肛门处女】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 443,
+      "offset": 1265,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_ANAL_VIRGIN"
+     },
+     {
+      "index": 444,
+      "offset": 1270,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 445,
+      "offset": 1275,
+      "opcode": "brfalse",
+      "operand": "@450"
+     },
+     {
+      "index": 446,
+      "offset": 1280,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 447,
+      "offset": 1282,
+      "opcode": "ldstr",
+      "operand": "【항문 처녀】"
+     }
+    ],
+    "oldStart": 441,
+    "oldEnd": 442
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 447,
+      "offset": 1181,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_ANAL_VIRGIN_LOST"
+     },
+     {
+      "index": 448,
+      "offset": 1186,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 449,
+      "offset": 1191,
+      "opcode": "brfalse.s",
+      "operand": "@454"
+     },
+     {
+      "index": 450,
+      "offset": 1193,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 451,
+      "offset": 1195,
+      "opcode": "ldstr",
+      "operand": "【肛门处女丧失】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 451,
+      "offset": 1294,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_ANAL_VIRGIN_LOST"
+     },
+     {
+      "index": 452,
+      "offset": 1299,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 453,
+      "offset": 1304,
+      "opcode": "brfalse",
+      "operand": "@458"
+     },
+     {
+      "index": 454,
+      "offset": 1309,
+      "opcode": "ldloc.s",
+      "operand": "V_18"
+     },
+     {
+      "index": 455,
+      "offset": 1311,
+      "opcode": "ldstr",
+      "operand": "【항문 처녀 상실】"
+     }
+    ],
+    "oldStart": 449,
+    "oldEnd": 450
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 500,
+      "offset": 1337,
+      "opcode": "ldloc.s",
+      "operand": "V_24"
+     },
+     {
+      "index": 501,
+      "offset": 1339,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 502,
+      "offset": 1340,
+      "opcode": "bgt.s",
+      "operand": "@509"
+     },
+     {
+      "index": 503,
+      "offset": 1342,
+      "opcode": "ldloc.s",
+      "operand": "V_25"
+     },
+     {
+      "index": 504,
+      "offset": 1344,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 504,
+      "offset": 1453,
+      "opcode": "ldloc.s",
+      "operand": "V_24"
+     },
+     {
+      "index": 505,
+      "offset": 1455,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 506,
+      "offset": 1456,
+      "opcode": "bgt",
+      "operand": "@513"
+     },
+     {
+      "index": 507,
+      "offset": 1461,
+      "opcode": "ldloc.s",
+      "operand": "V_25"
+     },
+     {
+      "index": 508,
+      "offset": 1463,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 502,
+    "oldEnd": 503
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 503,
+      "offset": 1342,
+      "opcode": "ldloc.s",
+      "operand": "V_25"
+     },
+     {
+      "index": 504,
+      "offset": 1344,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 505,
+      "offset": 1345,
+      "opcode": "bgt.s",
+      "operand": "@509"
+     },
+     {
+      "index": 506,
+      "offset": 1347,
+      "opcode": "ldloc.s",
+      "operand": "V_26"
+     },
+     {
+      "index": 507,
+      "offset": 1349,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 507,
+      "offset": 1461,
+      "opcode": "ldloc.s",
+      "operand": "V_25"
+     },
+     {
+      "index": 508,
+      "offset": 1463,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 509,
+      "offset": 1464,
+      "opcode": "bgt",
+      "operand": "@513"
+     },
+     {
+      "index": 510,
+      "offset": 1469,
+      "opcode": "ldloc.s",
+      "operand": "V_26"
+     },
+     {
+      "index": 511,
+      "offset": 1471,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 505,
+    "oldEnd": 506
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 506,
+      "offset": 1347,
+      "opcode": "ldloc.s",
+      "operand": "V_26"
+     },
+     {
+      "index": 507,
+      "offset": 1349,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 508,
+      "offset": 1350,
+      "opcode": "ble.s",
+      "operand": "@529"
+     },
+     {
+      "index": 509,
+      "offset": 1352,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 510,
+      "offset": 1353,
+      "opcode": "ldstr",
+      "operand": "武力 {0}  智力 {1}  魅力 {2}"
+     }
+    ],
+    "ko": [
+     {
+      "index": 510,
+      "offset": 1469,
+      "opcode": "ldloc.s",
+      "operand": "V_26"
+     },
+     {
+      "index": 511,
+      "offset": 1471,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 512,
+      "offset": 1472,
+      "opcode": "ble",
+      "operand": "@533"
+     },
+     {
+      "index": 513,
+      "offset": 1477,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 514,
+      "offset": 1478,
+      "opcode": "ldstr",
+      "operand": "무력 {0}  지능 {1}  매력 {2}"
+     }
+    ],
+    "oldStart": 508,
+    "oldEnd": 509
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 563,
+      "offset": 1499,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 564,
+      "offset": 1501,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 565,
+      "offset": 1502,
+      "opcode": "blt.s",
+      "operand": "@571"
+     },
+     {
+      "index": 566,
+      "offset": 1504,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 567,
+      "offset": 1506,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.ModConst::BRAND_STAGES"
+     }
+    ],
+    "ko": [
+     {
+      "index": 567,
+      "offset": 1624,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 568,
+      "offset": 1626,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 569,
+      "offset": 1627,
+      "opcode": "blt",
+      "operand": "@575"
+     },
+     {
+      "index": 570,
+      "offset": 1632,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 571,
+      "offset": 1634,
+      "opcode": "ldsfld",
+      "operand": "System.String[] MidnightPawn.ModConst::BRAND_STAGES"
+     }
+    ],
+    "oldStart": 565,
+    "oldEnd": 566
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 568,
+      "offset": 1511,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 569,
+      "offset": 1512,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 570,
+      "offset": 1513,
+      "opcode": "blt.s",
+      "operand": "@573"
+     },
+     {
+      "index": 571,
+      "offset": 1515,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 572,
+      "offset": 1516,
+      "opcode": "stloc.s",
+      "operand": "V_30"
+     }
+    ],
+    "ko": [
+     {
+      "index": 572,
+      "offset": 1639,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 573,
+      "offset": 1640,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 574,
+      "offset": 1641,
+      "opcode": "blt",
+      "operand": "@577"
+     },
+     {
+      "index": 575,
+      "offset": 1646,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 576,
+      "offset": 1647,
+      "opcode": "stloc.s",
+      "operand": "V_30"
+     }
+    ],
+    "oldStart": 570,
+    "oldEnd": 571
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 600,
+      "offset": 1590,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 601,
+      "offset": 1592,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 602,
+      "offset": 1593,
+      "opcode": "bge.s",
+      "operand": "@605"
+     },
+     {
+      "index": 603,
+      "offset": 1595,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 604,
+      "offset": 1596,
+      "opcode": "stloc.s",
+      "operand": "V_32"
+     }
+    ],
+    "ko": [
+     {
+      "index": 604,
+      "offset": 1721,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 605,
+      "offset": 1723,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 606,
+      "offset": 1724,
+      "opcode": "bge",
+      "operand": "@609"
+     },
+     {
+      "index": 607,
+      "offset": 1729,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 608,
+      "offset": 1730,
+      "opcode": "stloc.s",
+      "operand": "V_32"
+     }
+    ],
+    "oldStart": 602,
+    "oldEnd": 603
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 605,
+      "offset": 1598,
+      "opcode": "ldloc.s",
+      "operand": "V_31"
+     },
+     {
+      "index": 606,
+      "offset": 1600,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 607,
+      "offset": 1602,
+      "opcode": "ble.s",
+      "operand": "@610"
+     },
+     {
+      "index": 608,
+      "offset": 1604,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 609,
+      "offset": 1606,
+      "opcode": "stloc.s",
+      "operand": "V_31"
+     }
+    ],
+    "ko": [
+     {
+      "index": 609,
+      "offset": 1732,
+      "opcode": "ldloc.s",
+      "operand": "V_31"
+     },
+     {
+      "index": 610,
+      "offset": 1734,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 611,
+      "offset": 1736,
+      "opcode": "ble",
+      "operand": "@614"
+     },
+     {
+      "index": 612,
+      "offset": 1741,
+      "opcode": "ldloc.s",
+      "operand": "V_32"
+     },
+     {
+      "index": 613,
+      "offset": 1743,
+      "opcode": "stloc.s",
+      "operand": "V_31"
+     }
+    ],
+    "oldStart": 607,
+    "oldEnd": 608
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 617,
+      "offset": 1633,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 618,
+      "offset": 1635,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 619,
+      "offset": 1636,
+      "opcode": "call",
+      "operand": "System.String System.String::Format(System.String,System.Object,System.Object,System.Object)"
+     },
+     {
+      "index": 620,
+      "offset": 1641,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 621,
+      "offset": 1770,
+      "opcode": "ldloc.s",
+      "operand": "V_30"
+     },
+     {
+      "index": 622,
+      "offset": 1772,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 623,
+      "offset": 1773,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 624,
+      "offset": 1778,
+      "opcode": "call",
+      "operand": "System.String System.String::Format(System.String,System.Object,System.Object,System.Object)"
+     },
+     {
+      "index": 625,
+      "offset": 1783,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     }
+    ],
+    "oldStart": 619,
+    "oldEnd": 619
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 652,
+      "offset": 1712,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_OVULATING"
+     },
+     {
+      "index": 653,
+      "offset": 1717,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 654,
+      "offset": 1722,
+      "opcode": "brfalse.s",
+      "operand": "@668"
+     },
+     {
+      "index": 655,
+      "offset": 1724,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 656,
+      "offset": 1725,
+      "opcode": "ldstr",
+      "operand": "【排卵期】"
+     }
+    ],
+    "ko": [
+     {
+      "index": 657,
+      "offset": 1854,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_OVULATING"
+     },
+     {
+      "index": 658,
+      "offset": 1859,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 659,
+      "offset": 1864,
+      "opcode": "brfalse",
+      "operand": "@673"
+     },
+     {
+      "index": 660,
+      "offset": 1869,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 661,
+      "offset": 1870,
+      "opcode": "ldstr",
+      "operand": "【배란기】"
+     }
+    ],
+    "oldStart": 654,
+    "oldEnd": 655
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 669,
+      "offset": 1750,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_PREGNANT"
+     },
+     {
+      "index": 670,
+      "offset": 1755,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 671,
+      "offset": 1760,
+      "opcode": "brfalse.s",
+      "operand": "@692"
+     },
+     {
+      "index": 672,
+      "offset": 1762,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 673,
+      "offset": 1763,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_PREGNANT_DAYS"
+     }
+    ],
+    "ko": [
+     {
+      "index": 674,
+      "offset": 1895,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_PREGNANT"
+     },
+     {
+      "index": 675,
+      "offset": 1900,
+      "opcode": "callvirt",
+      "operand": "System.Boolean GameItem::IsTag(System.String)"
+     },
+     {
+      "index": 676,
+      "offset": 1905,
+      "opcode": "brfalse",
+      "operand": "@697"
+     },
+     {
+      "index": 677,
+      "offset": 1910,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 678,
+      "offset": 1911,
+      "opcode": "ldstr",
+      "operand": "MAIDEN_PREGNANT_DAYS"
+     }
+    ],
+    "oldStart": 671,
+    "oldEnd": 672
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 690,
+      "offset": 1806,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 691,
+      "offset": 1811,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 692,
+      "offset": 1812,
+      "opcode": "leave.s",
+      "operand": "@700"
+     },
+     {
+      "index": 693,
+      "offset": 1814,
+      "opcode": "stloc.s",
+      "operand": "V_34"
+     },
+     {
+      "index": 694,
+      "offset": 1816,
+      "opcode": "ldstr",
+      "operand": "少女 tooltip 追加失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 695,
+      "offset": 1954,
+      "opcode": "callvirt",
+      "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+     },
+     {
+      "index": 696,
+      "offset": 1959,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 697,
+      "offset": 1960,
+      "opcode": "leave",
+      "operand": "@705"
+     },
+     {
+      "index": 698,
+      "offset": 1965,
+      "opcode": "stloc.s",
+      "operand": "V_34"
+     },
+     {
+      "index": 699,
+      "offset": 1967,
+      "opcode": "ldstr",
+      "operand": "소녀 툴팁 추가 실패: "
+     }
+    ],
+    "oldStart": 692,
+    "oldEnd": 693
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 697,
+      "offset": 1828,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 698,
+      "offset": 1833,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 699,
+      "offset": 1838,
+      "opcode": "leave.s",
+      "operand": "@700"
+     },
+     {
+      "index": 700,
+      "offset": 1840,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 702,
+      "offset": 1979,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 703,
+      "offset": 1984,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 704,
+      "offset": 1989,
+      "opcode": "leave",
+      "operand": "@705"
+     },
+     {
+      "index": 705,
+      "offset": 1994,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 699,
+    "oldEnd": 700
+   }
+  ],
+  "newInstructionCount": 701,
+  "oldInstructionCount": 701
+ },
+ {
+  "method": "System.Boolean MidnightPawn.Game.NameGen::IsCjk(System.String)",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 11,
+      "offset": 20,
+      "opcode": "blt.s",
+      "operand": "@17"
+     },
+     {
+      "index": 12,
+      "offset": 22,
+      "opcode": "ldloc.2",
+      "operand": ""
+     },
+     {
+      "index": 13,
+      "offset": 23,
+      "opcode": "ldc.i4",
+      "operand": "40959"
+     },
+     {
+      "index": 14,
+      "offset": 28,
+      "opcode": "bgt.s",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 30,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 11,
+      "offset": 20,
+      "opcode": "blt.s",
+      "operand": "@17"
+     },
+     {
+      "index": 12,
+      "offset": 22,
+      "opcode": "ldloc.2",
+      "operand": ""
+     },
+     {
+      "index": 13,
+      "offset": 23,
+      "opcode": "ldc.i4",
+      "operand": "55203"
+     },
+     {
+      "index": 14,
+      "offset": 28,
+      "opcode": "bgt.s",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 30,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 13,
+    "oldEnd": 14
+   }
+  ],
+  "newInstructionCount": 27,
+  "oldInstructionCount": 27
+ },
+ {
+  "method": "System.Void MidnightPawn.Game.NpcExtras::WriteCapture(GameItem,System.String,System.String)",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brtrue.s",
+      "operand": "@3"
+     },
+     {
+      "index": 2,
+      "offset": 3,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 4,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 0,
+      "offset": 0,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 1,
+      "offset": 1,
+      "opcode": "brtrue",
+      "operand": "@3"
+     },
+     {
+      "index": 2,
+      "offset": 6,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 7,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "oldStart": 1,
+    "oldEnd": 2
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 6,
+      "offset": 11,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.ItemFactory::GetStr(GameItem,System.String)"
+     },
+     {
+      "index": 7,
+      "offset": 16,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 8,
+      "offset": 21,
+      "opcode": "brtrue.s",
+      "operand": "@10"
+     },
+     {
+      "index": 9,
+      "offset": 23,
+      "opcode": "leave",
+      "operand": "@79"
+     },
+     {
+      "index": 10,
+      "offset": 28,
+      "opcode": "call",
+      "operand": "System.Int32 MidnightPawn.Game.ItemLife::Today()"
+     }
+    ],
+    "ko": [
+     {
+      "index": 6,
+      "offset": 14,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.ItemFactory::GetStr(GameItem,System.String)"
+     },
+     {
+      "index": 7,
+      "offset": 19,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 8,
+      "offset": 24,
+      "opcode": "brtrue",
+      "operand": "@10"
+     },
+     {
+      "index": 9,
+      "offset": 29,
+      "opcode": "leave",
+      "operand": "@80"
+     },
+     {
+      "index": 10,
+      "offset": 34,
+      "opcode": "call",
+      "operand": "System.Int32 MidnightPawn.Game.ItemLife::Today()"
+     }
+    ],
+    "oldStart": 8,
+    "oldEnd": 9
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 12,
+      "offset": 34,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 13,
+      "offset": 35,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 14,
+      "offset": 36,
+      "opcode": "bge.s",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 38,
+      "opcode": "ldstr",
+      "operand": "某一天"
+     },
+     {
+      "index": 16,
+      "offset": 43,
+      "opcode": "br.s",
+      "operand": "@22"
+     }
+    ],
+    "ko": [
+     {
+      "index": 12,
+      "offset": 40,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 13,
+      "offset": 41,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 14,
+      "offset": 42,
+      "opcode": "bge",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 47,
+      "opcode": "ldstr",
+      "operand": "어느 날"
+     },
+     {
+      "index": 16,
+      "offset": 52,
+      "opcode": "br",
+      "operand": "@22"
+     }
+    ],
+    "oldStart": 14,
+    "oldEnd": 15
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 14,
+      "offset": 36,
+      "opcode": "bge.s",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 38,
+      "opcode": "ldstr",
+      "operand": "某一天"
+     },
+     {
+      "index": 16,
+      "offset": 43,
+      "opcode": "br.s",
+      "operand": "@22"
+     },
+     {
+      "index": 17,
+      "offset": 45,
+      "opcode": "ldstr",
+      "operand": "第 "
+     },
+     {
+      "index": 18,
+      "offset": 50,
+      "opcode": "ldloca.s",
+      "operand": "V_0"
+     }
+    ],
+    "ko": [
+     {
+      "index": 14,
+      "offset": 42,
+      "opcode": "bge",
+      "operand": "@17"
+     },
+     {
+      "index": 15,
+      "offset": 47,
+      "opcode": "ldstr",
+      "operand": "어느 날"
+     },
+     {
+      "index": 16,
+      "offset": 52,
+      "opcode": "br",
+      "operand": "@22"
+     },
+     {
+      "index": 17,
+      "offset": 57,
+      "opcode": "ldstr",
+      "operand": "제 "
+     },
+     {
+      "index": 18,
+      "offset": 62,
+      "opcode": "ldloca.s",
+      "operand": "V_0"
+     }
+    ],
+    "oldStart": 16,
+    "oldEnd": 17
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 38,
+      "offset": 95,
+      "opcode": "ldc.i4.3",
+      "operand": ""
+     },
+     {
+      "index": 39,
+      "offset": 96,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 40,
+      "offset": 97,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 41,
+      "offset": 98,
+      "opcode": "brtrue.s",
+      "operand": "@44"
+     }
+    ],
+    "ko": [
+     {
+      "index": 38,
+      "offset": 107,
+      "opcode": "ldc.i4.3",
+      "operand": ""
+     },
+     {
+      "index": 39,
+      "offset": 108,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 40,
+      "offset": 109,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 41,
+      "offset": 114,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 42,
+      "offset": 115,
+      "opcode": "brtrue",
+      "operand": "@45"
+     }
+    ],
+    "oldStart": 40,
+    "oldEnd": 40
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 39,
+      "offset": 96,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 40,
+      "offset": 97,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 41,
+      "offset": 98,
+      "opcode": "brtrue.s",
+      "operand": "@44"
+     },
+     {
+      "index": 42,
+      "offset": 100,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 43,
+      "offset": 101,
+      "opcode": "ldstr",
+      "operand": "未知地点"
+     }
+    ],
+    "ko": [
+     {
+      "index": 40,
+      "offset": 109,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 41,
+      "offset": 114,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 42,
+      "offset": 115,
+      "opcode": "brtrue",
+      "operand": "@45"
+     },
+     {
+      "index": 43,
+      "offset": 120,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 44,
+      "offset": 121,
+      "opcode": "ldstr",
+      "operand": "알 수 없는 장소"
+     }
+    ],
+    "oldStart": 41,
+    "oldEnd": 42
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 51,
+      "offset": 117,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 52,
+      "offset": 118,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 53,
+      "offset": 119,
+      "opcode": "brtrue.s",
+      "operand": "@56"
+     },
+     {
+      "index": 54,
+      "offset": 121,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 55,
+      "offset": 122,
+      "opcode": "ldstr",
+      "operand": "某种方法"
+     }
+    ],
+    "ko": [
+     {
+      "index": 52,
+      "offset": 137,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 53,
+      "offset": 138,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 54,
+      "offset": 139,
+      "opcode": "brtrue",
+      "operand": "@57"
+     },
+     {
+      "index": 55,
+      "offset": 144,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 56,
+      "offset": 145,
+      "opcode": "ldstr",
+      "operand": "어떤 방법"
+     }
+    ],
+    "oldStart": 53,
+    "oldEnd": 54
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 69,
+      "offset": 160,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 70,
+      "offset": 165,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::Log(System.Object)"
+     },
+     {
+      "index": 71,
+      "offset": 170,
+      "opcode": "leave.s",
+      "operand": "@79"
+     },
+     {
+      "index": 72,
+      "offset": 172,
+      "opcode": "stloc.3",
+      "operand": ""
+     },
+     {
+      "index": 73,
+      "offset": 173,
+      "opcode": "ldstr",
+      "operand": "写捕捉记录失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 70,
+      "offset": 183,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 71,
+      "offset": 188,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::Log(System.Object)"
+     },
+     {
+      "index": 72,
+      "offset": 193,
+      "opcode": "leave",
+      "operand": "@80"
+     },
+     {
+      "index": 73,
+      "offset": 198,
+      "opcode": "stloc.3",
+      "operand": ""
+     },
+     {
+      "index": 74,
+      "offset": 199,
+      "opcode": "ldstr",
+      "operand": "포획 기록 작성 실패: "
+     }
+    ],
+    "oldStart": 71,
+    "oldEnd": 72
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 76,
+      "offset": 184,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 77,
+      "offset": 189,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 78,
+      "offset": 194,
+      "opcode": "leave.s",
+      "operand": "@79"
+     },
+     {
+      "index": 79,
+      "offset": 196,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 77,
+      "offset": 210,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 78,
+      "offset": 215,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 79,
+      "offset": 220,
+      "opcode": "leave",
+      "operand": "@80"
+     },
+     {
+      "index": 80,
+      "offset": 225,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 78,
+    "oldEnd": 79
+   }
+  ],
+  "newInstructionCount": 80,
+  "oldInstructionCount": 80
+ },
+ {
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 3,
+      "offset": 15,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_0"
+     },
+     {
+      "index": 4,
+      "offset": 20,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 21,
+      "opcode": "brtrue.s",
+      "operand": "@12"
+     },
+     {
+      "index": 6,
+      "offset": 23,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 24,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 3,
+      "offset": 15,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_0"
+     },
+     {
+      "index": 4,
+      "offset": 20,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 5,
+      "offset": 21,
+      "opcode": "brtrue",
+      "operand": "@12"
+     },
+     {
+      "index": 6,
+      "offset": 26,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 7,
+      "offset": 27,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 5,
+    "oldEnd": 6
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 19,
+      "offset": 73,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_1"
+     },
+     {
+      "index": 20,
+      "offset": 78,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 21,
+      "offset": 79,
+      "opcode": "brtrue.s",
+      "operand": "@28"
+     },
+     {
+      "index": 22,
+      "offset": 81,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 23,
+      "offset": 82,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 19,
+      "offset": 76,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_1"
+     },
+     {
+      "index": 20,
+      "offset": 81,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 21,
+      "offset": 82,
+      "opcode": "brtrue",
+      "operand": "@28"
+     },
+     {
+      "index": 22,
+      "offset": 87,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 23,
+      "offset": 88,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 21,
+    "oldEnd": 22
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 35,
+      "offset": 131,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_2"
+     },
+     {
+      "index": 36,
+      "offset": 136,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 37,
+      "offset": 137,
+      "opcode": "brtrue.s",
+      "operand": "@44"
+     },
+     {
+      "index": 38,
+      "offset": 139,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 39,
+      "offset": 140,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 35,
+      "offset": 137,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_2"
+     },
+     {
+      "index": 36,
+      "offset": 142,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 37,
+      "offset": 143,
+      "opcode": "brtrue",
+      "operand": "@44"
+     },
+     {
+      "index": 38,
+      "offset": 148,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 39,
+      "offset": 149,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 37,
+    "oldEnd": 38
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 48,
+      "offset": 174,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 49,
+      "offset": 175,
+      "opcode": "stloc.0",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 176,
+      "opcode": "br.s",
+      "operand": "@80"
+     },
+     {
+      "index": 51,
+      "offset": 178,
+      "opcode": "newobj",
+      "operand": "System.Void MidnightPawn.Game.StatRegistry/<>c__DisplayClass15_0::.ctor()"
+     },
+     {
+      "index": 52,
+      "offset": 183,
+      "opcode": "stloc.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 48,
+      "offset": 183,
+      "opcode": "ldc.i4.1",
+      "operand": ""
+     },
+     {
+      "index": 49,
+      "offset": 184,
+      "opcode": "stloc.0",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 185,
+      "opcode": "br",
+      "operand": "@81"
+     },
+     {
+      "index": 51,
+      "offset": 190,
+      "opcode": "newobj",
+      "operand": "System.Void MidnightPawn.Game.StatRegistry/<>c__DisplayClass15_0::.ctor()"
+     },
+     {
+      "index": 52,
+      "offset": 195,
+      "opcode": "stloc.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 50,
+    "oldEnd": 51
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 65,
+      "offset": 228,
+      "opcode": "ldfld",
+      "operand": "System.Int32 MidnightPawn.Game.StatRegistry/<>c__DisplayClass15_0::s"
+     },
+     {
+      "index": 66,
+      "offset": 233,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 67,
+      "offset": 234,
+      "opcode": "ldstr",
+      "operand": "女性数量"
+     },
+     {
+      "index": 68,
+      "offset": 239,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String,System.String)"
+     }
+    ],
+    "ko": [
+     {
+      "index": 65,
+      "offset": 240,
+      "opcode": "ldfld",
+      "operand": "System.Int32 MidnightPawn.Game.StatRegistry/<>c__DisplayClass15_0::s"
+     },
+     {
+      "index": 66,
+      "offset": 245,
+      "opcode": "ldelem.ref",
+      "operand": ""
+     },
+     {
+      "index": 67,
+      "offset": 246,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::KoreanDisplayValue(System.String)"
+     },
+     {
+      "index": 68,
+      "offset": 251,
+      "opcode": "ldstr",
+      "operand": "여성 수"
+     },
+     {
+      "index": 69,
+      "offset": 256,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String,System.String)"
+     }
+    ],
+    "oldStart": 67,
+    "oldEnd": 67
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 82,
+      "offset": 278,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 83,
+      "offset": 279,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 84,
+      "offset": 280,
+      "opcode": "blt.s",
+      "operand": "@51"
+     },
+     {
+      "index": 85,
+      "offset": 282,
+      "opcode": "ldstr",
+      "operand": "total_deflower"
+     },
+     {
+      "index": 86,
+      "offset": 287,
+      "opcode": "ldstr",
+      "operand": "累计"
+     }
+    ],
+    "ko": [
+     {
+      "index": 83,
+      "offset": 295,
+      "opcode": "ldlen",
+      "operand": ""
+     },
+     {
+      "index": 84,
+      "offset": 296,
+      "opcode": "conv.i4",
+      "operand": ""
+     },
+     {
+      "index": 85,
+      "offset": 297,
+      "opcode": "blt",
+      "operand": "@51"
+     },
+     {
+      "index": 86,
+      "offset": 302,
+      "opcode": "ldstr",
+      "operand": "total_deflower"
+     },
+     {
+      "index": 87,
+      "offset": 307,
+      "opcode": "ldstr",
+      "operand": "누적"
+     }
+    ],
+    "oldStart": 84,
+    "oldEnd": 85
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 88,
+      "offset": 297,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_3"
+     },
+     {
+      "index": 89,
+      "offset": 302,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 90,
+      "offset": 303,
+      "opcode": "brtrue.s",
+      "operand": "@97"
+     },
+     {
+      "index": 91,
+      "offset": 305,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 92,
+      "offset": 306,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 89,
+      "offset": 317,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_3"
+     },
+     {
+      "index": 90,
+      "offset": 322,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 91,
+      "offset": 323,
+      "opcode": "brtrue",
+      "operand": "@98"
+     },
+     {
+      "index": 92,
+      "offset": 328,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 93,
+      "offset": 329,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 90,
+    "oldEnd": 91
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 104,
+      "offset": 355,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_4"
+     },
+     {
+      "index": 105,
+      "offset": 360,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 106,
+      "offset": 361,
+      "opcode": "brtrue.s",
+      "operand": "@113"
+     },
+     {
+      "index": 107,
+      "offset": 363,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 108,
+      "offset": 364,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 105,
+      "offset": 378,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_4"
+     },
+     {
+      "index": 106,
+      "offset": 383,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 107,
+      "offset": 384,
+      "opcode": "brtrue",
+      "operand": "@114"
+     },
+     {
+      "index": 108,
+      "offset": 389,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 109,
+      "offset": 390,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 106,
+    "oldEnd": 107
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 120,
+      "offset": 413,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_5"
+     },
+     {
+      "index": 121,
+      "offset": 418,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 122,
+      "offset": 419,
+      "opcode": "brtrue.s",
+      "operand": "@129"
+     },
+     {
+      "index": 123,
+      "offset": 421,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 124,
+      "offset": 422,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "ko": [
+     {
+      "index": 121,
+      "offset": 439,
+      "opcode": "ldsfld",
+      "operand": "System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__15_5"
+     },
+     {
+      "index": 122,
+      "offset": 444,
+      "opcode": "dup",
+      "operand": ""
+     },
+     {
+      "index": 123,
+      "offset": 445,
+      "opcode": "brtrue",
+      "operand": "@130"
+     },
+     {
+      "index": 124,
+      "offset": 450,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 125,
+      "offset": 451,
+      "opcode": "ldsfld",
+      "operand": "MidnightPawn.Game.StatRegistry/<>c MidnightPawn.Game.StatRegistry/<>c::<>9"
+     }
+    ],
+    "oldStart": 122,
+    "oldEnd": 123
+   }
+  ],
+  "newInstructionCount": 234,
+  "oldInstructionCount": 134
+ },
+ {
+  "method": "System.Void MidnightPawn.Game.PatchTypeDisplayName::Postfix(System.String,System.String&)",
+  "changes": [
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 2,
+      "offset": 2,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 3,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 4,
+      "offset": 8,
+      "opcode": "brfalse.s",
+      "operand": "@6"
+     },
+     {
+      "index": 5,
+      "offset": 10,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 6,
+      "offset": 11,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 2,
+      "offset": 2,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 3,
+      "offset": 3,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 4,
+      "offset": 8,
+      "opcode": "brfalse",
+      "operand": "@6"
+     },
+     {
+      "index": 5,
+      "offset": 13,
+      "opcode": "ret",
+      "operand": ""
+     },
+     {
+      "index": 6,
+      "offset": 14,
+      "opcode": "nop",
+      "operand": ""
+     }
+    ],
+    "oldStart": 4,
+    "oldEnd": 5
+   },
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 7,
+      "offset": 12,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 8,
+      "offset": 13,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.TypeNameRegistry::DisplayNameOf(System.String)"
+     },
+     {
+      "index": 9,
+      "offset": 18,
+      "opcode": "stloc.1",
+      "operand": ""
+     },
+     {
+      "index": 10,
+      "offset": 19,
+      "opcode": "ldloc.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 7,
+      "offset": 15,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 8,
+      "offset": 16,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.TypeNameRegistry::DisplayNameOf(System.String)"
+     },
+     {
+      "index": 9,
+      "offset": 21,
+      "opcode": "ldloc.0",
+      "operand": ""
+     },
+     {
+      "index": 10,
+      "offset": 22,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.ModConst::LocalizedOwnTypeDisplay(System.String,System.String)"
+     },
+     {
+      "index": 11,
+      "offset": 27,
+      "opcode": "stloc.1",
+      "operand": ""
+     },
+     {
+      "index": 12,
+      "offset": 28,
+      "opcode": "ldloc.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 9,
+    "oldEnd": 9
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 10,
+      "offset": 19,
+      "opcode": "ldloc.1",
+      "operand": ""
+     },
+     {
+      "index": 11,
+      "offset": 20,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 12,
+      "offset": 25,
+      "opcode": "brfalse.s",
+      "operand": "@14"
+     },
+     {
+      "index": 13,
+      "offset": 27,
+      "opcode": "leave.s",
+      "operand": "@25"
+     },
+     {
+      "index": 14,
+      "offset": 29,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 15,
+      "offset": 30,
+      "opcode": "ldloc.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 12,
+      "offset": 28,
+      "opcode": "ldloc.1",
+      "operand": ""
+     },
+     {
+      "index": 13,
+      "offset": 29,
+      "opcode": "call",
+      "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+     },
+     {
+      "index": 14,
+      "offset": 34,
+      "opcode": "brfalse",
+      "operand": "@16"
+     },
+     {
+      "index": 15,
+      "offset": 39,
+      "opcode": "leave",
+      "operand": "@27"
+     },
+     {
+      "index": 16,
+      "offset": 44,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 17,
+      "offset": 45,
+      "opcode": "ldloc.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 12,
+    "oldEnd": 14
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 15,
+      "offset": 30,
+      "opcode": "ldloc.1",
+      "operand": ""
+     },
+     {
+      "index": 16,
+      "offset": 31,
+      "opcode": "stind.ref",
+      "operand": ""
+     },
+     {
+      "index": 17,
+      "offset": 32,
+      "opcode": "leave.s",
+      "operand": "@25"
+     },
+     {
+      "index": 18,
+      "offset": 34,
+      "opcode": "stloc.2",
+      "operand": ""
+     },
+     {
+      "index": 19,
+      "offset": 35,
+      "opcode": "ldstr",
+      "operand": "分类名替换失败: "
+     }
+    ],
+    "ko": [
+     {
+      "index": 17,
+      "offset": 45,
+      "opcode": "ldloc.1",
+      "operand": ""
+     },
+     {
+      "index": 18,
+      "offset": 46,
+      "opcode": "stind.ref",
+      "operand": ""
+     },
+     {
+      "index": 19,
+      "offset": 47,
+      "opcode": "leave",
+      "operand": "@27"
+     },
+     {
+      "index": 20,
+      "offset": 52,
+      "opcode": "stloc.2",
+      "operand": ""
+     },
+     {
+      "index": 21,
+      "offset": 53,
+      "opcode": "ldstr",
+      "operand": "분류 이름 교체 실패: "
+     }
+    ],
+    "oldStart": 17,
+    "oldEnd": 18
+   },
+   {
+    "tag": "replace",
+    "old": [
+     {
+      "index": 22,
+      "offset": 46,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 23,
+      "offset": 51,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 24,
+      "offset": 56,
+      "opcode": "leave.s",
+      "operand": "@25"
+     },
+     {
+      "index": 25,
+      "offset": 58,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 24,
+      "offset": 64,
+      "opcode": "call",
+      "operand": "System.String System.String::Concat(System.String,System.String)"
+     },
+     {
+      "index": 25,
+      "offset": 69,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.ModCtx::LogWarning(System.Object)"
+     },
+     {
+      "index": 26,
+      "offset": 74,
+      "opcode": "leave",
+      "operand": "@27"
+     },
+     {
+      "index": 27,
+      "offset": 79,
+      "opcode": "ret",
+      "operand": ""
+     }
+    ],
+    "oldStart": 24,
+    "oldEnd": 25
+   }
+  ],
+  "newInstructionCount": 26,
+  "oldInstructionCount": 26
+ }
+]

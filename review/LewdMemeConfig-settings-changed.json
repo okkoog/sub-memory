@@ -1,0 +1,137 @@
+[
+ {
+  "key": "tearl.aquashard_value",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2597,
+  "source": "水晶单价(tearlaments)",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "tearl.aquashard_value",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2610,
+  "source": "Aquashard Crystal 的单价(tearl 15 原版 800;巢穴区每夜进贡产出物);开启后以本面板值接管,关闭恢复其原版行为",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "tearl.aquashard_chance",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2632,
+  "source": "水晶每晚产出率(tearlaments)",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "tearl.aquashard_chance",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2645,
+  "source": "巢穴区每位 Tearlaments 少女每夜产出 Aquashard 的概率(tearl 15 原版 1.0 = 100%;manifest 描述的 20% 已过时,以代码为准);开启后以本面板值接管,关闭恢复其原版行为",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "tearl.aquashard_units",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2667,
+  "source": "水晶每少女产量(tearlaments)",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "tearl.aquashard_units",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 2680,
+  "source": "产出判定命中时每位 Tearlaments 少女产出的 Aquashard 数量(tearl 15 原版 1);开启后以本面板值接管,关闭恢复其原版行为",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.maiden_loot_chance",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3448,
+  "source": "拾荒抓苗床基准线",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.maiden_loot_chance",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3461,
+  "source": "拾荒抓苗床的概率基准线(官方键 maiden_loot_chance,默认 0.05)。周末/垃圾场事件/连续空手在它上面加成,手里苗床越多越难抓——实际概率见触手本体悬停;开启后以本面板为准,关闭恢复开启前对方值",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.maiden_enough_line",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3486,
+  "source": "苗床充足线",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.maiden_enough_line",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3499,
+  "source": "手里的苗床少于这个数:掷 1 次;达到:掷 3 次要中 2 次;达到两倍:掷 3 次要全中(官方键 maiden_enough_line,默认 12);开启后以本面板为准,关闭恢复开启前对方值",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.ovulation_loot_chance",
+  "field": "Label",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3524,
+  "source": "捡到排卵诱发剂的概率",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "main.ovulation_loot_chance",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+  "index": 3537,
+  "source": "带着触手本体拾荒、没抓到苗床时顺手捡到一支排卵诱发剂的概率,设 0 就只能靠触手3D打印机生产(官方键 ovulation_loot_chance,默认 0.04;垃圾场来源,与本 mod「掉落」分区医疗组掉落键来源不同、并存不冲突);开启后以本面板为准,关闭恢复开启前对方值",
+  "previousSource": null,
+  "previousTarget": null
+ },
+ {
+  "key": "progress.level_cap",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "index": 1825,
+  "source": "触手等级读值上限(2.1.0 起官方无等级上限,默认 999 = 不封顶;调低于 999 时等级读取与显示按此值封顶,经验累积不受阻;每级所需经验由下方公式三键决定)",
+  "previousSource": "触手等级上限(原版 5;升级不再被上限拦截,等级读取与显示按此值封顶;每级所需经验由下方公式三键决定)",
+  "previousTarget": "촉수 레벨 상한(원본 5; 레벨업 자체는 상한으로 차단하지 않고 레벨 조회와 표시만 이 값으로 제한함; 레벨별 필요 경험치는 아래 수식의 설정 3개로 결정)"
+ },
+ {
+  "key": "loot.med_shot_chance.enabled",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "index": 2007,
+  "source": "开启=在掉落判定前恢复 1.6.x 的医疗组排卵针掉落分支(概率用下方值);关闭=2.1.0 原版行为(医疗组不再掉排卵针)。注:官方另有垃圾场拾荒顺手捡排卵剂来源(「主 mod 官方设置(拾荒)」分区可调),与本键来源不同、并存不冲突",
+  "previousSource": "开启=在掉落判定前恢复 1.6.x 的医疗组排卵针掉落分支(概率用下方值);关闭=1.9.2 原版行为(医疗组不再掉排卵针)",
+  "previousTarget": "켜기=드롭 판정 전에 1.6.x의 의료 그룹 배란 주사 드롭 분기를 복원(확률은 아래 값 사용); 끄기=1.9.2 원본 동작(의료 그룹에서 배란 주사가 더는 드롭되지 않음)"
+ },
+ {
+  "key": "loot.med_keywords.enabled",
+  "field": "Tooltip",
+  "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+  "index": 2058,
+  "source": "开启=恢复 1.6.x 的医疗组排卵针掉落分支并按下方关键词判定医疗组;关闭=2.1.0 原版行为",
+  "previousSource": "开启=恢复 1.6.x 的医疗组排卵针掉落分支并按下方关键词判定医疗组;关闭=1.9.2 原版行为",
+  "previousTarget": "켜기=1.6.x의 의료 그룹 배란 주사 드롭 분기를 복원하고 아래 키워드로 의료 그룹을 판정; 끄기=1.9.2 원본 동작"
+ }
+]

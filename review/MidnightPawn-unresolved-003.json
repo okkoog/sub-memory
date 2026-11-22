@@ -1,0 +1,211 @@
+[
+ {
+  "token": "0600017D",
+  "index": 167,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手武力",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_8",
+   "dup ",
+   "brtrue.s IL_025A: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 183,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 触手智力",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_9",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 184,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手智力",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_9",
+   "dup ",
+   "brtrue.s IL_0295: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 200,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 触手魅力",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_10",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 201,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手魅力",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_10",
+   "dup ",
+   "brtrue.s IL_02D0: ldnull"
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 217,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "触手",
+  "after": [
+   "ldstr 侵蚀力",
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_11",
+   "dup "
+  ]
+ },
+ {
+  "token": "0600017D",
+  "index": 218,
+  "method": "System.Void MidnightPawn.Game.StatRegistry::RegisterOwn()",
+  "source": "侵蚀力",
+  "after": [
+   "ldsfld System.Func`2<MidnightPawn.Game.StatContext,System.Int32> MidnightPawn.Game.StatRegistry/<>c::<>9__17_11",
+   "dup ",
+   "brtrue.s IL_030B: ldnull"
+  ]
+ },
+ {
+  "token": "0600017F",
+  "index": 4,
+  "method": "GameItem MidnightPawn.Game.TentacleArchive::Create()",
+  "source": "触手档案",
+  "after": [
+   "ldloc.0 ",
+   "ldstr 记录你这个触手怪都干了些什么的档案。",
+   "callvirt System.Void GameItem::set_shortDescription(System.String)"
+  ]
+ },
+ {
+  "token": "060001D7",
+  "index": 20,
+  "method": "System.Boolean MidnightPawn.Game.TentacleStats::RecordErosion(System.String)",
+  "source": "侵蚀力 +1：",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060001D7",
+  "index": 28,
+  "method": "System.Boolean MidnightPawn.Game.TentacleStats::RecordErosion(System.String)",
+  "source": "（当前 ",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.3 "
+  ]
+ },
+ {
+  "token": "060001D8",
+  "index": 49,
+  "method": "System.Void MidnightPawn.Game.TentacleStats::EnsureLoaded()",
+  "source": "读侵蚀记录失败: ",
+  "after": [
+   "ldloc.s V_4",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060001D9",
+  "index": 9,
+  "method": "System.Void MidnightPawn.Game.TentacleStats::SaveEroded()",
+  "source": "存侵蚀记录失败: ",
+  "after": [
+   "ldloc.0 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060001F7",
+  "index": 41,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::Apply(System.Double)",
+  "source": "交易影响个人好感失败: ",
+  "after": [
+   "ldloc.s V_4",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060001F8",
+  "index": 107,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::ApplyToGuest(System.String,System.Double)",
+  "source": "交易影响「{0}」：派系声望 {1:+0.###;-0.###;0} → 好感 {2}（现 {3}）、信任 {4}（现 {5}）",
+  "after": [
+   "ldc.i4.6 ",
+   "newarr System.Object",
+   "dup "
+  ]
+ },
+ {
+  "token": "060001F8",
+  "index": 160,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::ApplyToGuest(System.String,System.Double)",
+  "source": "她对你的观感变了：好感 ",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060001F8",
+  "index": 173,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::ApplyToGuest(System.String,System.Double)",
+  "source": "、信任 ",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.4 "
+  ]
+ },
+ {
+  "token": "060001F8",
+  "index": 189,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::ApplyToGuest(System.String,System.Double)",
+  "source": "触手",
+  "after": [
+   "call System.Void MidnightPawn.Game.Toast::Show(System.String,System.String)",
+   "ldc.i4.1 ",
+   "stloc.s V_10"
+  ]
+ },
+ {
+  "token": "060001F8",
+  "index": 195,
+  "method": "System.Boolean MidnightPawn.Game.TradeSocial::ApplyToGuest(System.String,System.Double)",
+  "source": "写个人好感失败: ",
+  "after": [
+   "ldloc.s V_11",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "06000201",
+  "index": 19,
+  "method": "System.Void MidnightPawn.Game.PatchTypeDisplayName::Postfix(System.String,System.String&)",
+  "source": "分类名替换失败: ",
+  "after": [
+   "ldloc.2 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ }
+]

@@ -1,0 +1,642 @@
+[
+ {
+  "token": "06000018",
+  "index": 5,
+  "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+  "source": "拾荒",
+  "after": [
+   "ldsfld System.Func`1<System.String> MidnightPawn.ModSettings/<>c::<>9__18_0",
+   "dup ",
+   "brtrue.s IL_0035: ldc.r4 0.05"
+  ]
+ },
+ {
+  "token": "06000018",
+  "index": 34,
+  "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+  "source": "拾荒",
+  "after": [
+   "ldsfld System.Func`1<System.String> MidnightPawn.ModSettings/<>c::<>9__18_2",
+   "dup ",
+   "brtrue.s IL_009F: ldc.i4.2"
+  ]
+ },
+ {
+  "token": "06000018",
+  "index": 63,
+  "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+  "source": "拾荒",
+  "after": [
+   "ldsfld System.Func`1<System.String> MidnightPawn.ModSettings/<>c::<>9__18_4",
+   "dup ",
+   "brtrue.s IL_0105: ldc.r4 0"
+  ]
+ },
+ {
+  "token": "06000018",
+  "index": 91,
+  "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+  "source": "顾客",
+  "after": [
+   "ldsfld System.Func`1<System.String> MidnightPawn.ModSettings/<>c::<>9__18_6",
+   "dup ",
+   "brtrue.s IL_0171: ldc.r4 0.5"
+  ]
+ },
+ {
+  "token": "06000018",
+  "index": 117,
+  "method": "System.Void MidnightPawn.ModSettings::Define(System.String)",
+  "source": "模组配置已注册：捕捉苗床概率 = ",
+  "after": [
+   "call System.Single MidnightPawn.ModSettings::get_MaidenChance()",
+   "stloc.0 ",
+   "ldloca.s V_0"
+  ]
+ },
+ {
+  "token": "0600024A",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_0()",
+  "source": "捕捉苗床的概率　【",
+  "after": [
+   "ldloca.s V_0",
+   "call System.String System.Int32::ToString()",
+   "ldstr %】"
+  ]
+ },
+ {
+  "token": "0600024B",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_1()",
+  "source": "拾荒抓苗床的基准线。周末、垃圾场事件、连续空手会在它上面加成；手里苗床越多越难抓到。",
+  "after": []
+ },
+ {
+  "token": "0600024C",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_2()",
+  "source": "苗床充足线　【",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String,System.String)",
+   "ret "
+  ]
+ },
+ {
+  "token": "0600024C",
+  "index": 5,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_2()",
+  "source": " 个】",
+  "after": [
+   "call System.String System.String::Concat(System.String,System.String,System.String)",
+   "ret "
+  ]
+ },
+ {
+  "token": "0600024D",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_3()",
+  "source": "手里的苗床少于这个数：掷 1 次；达到：掷 3 次要中 2 次；达到它的两倍：掷 3 次要全中。",
+  "after": []
+ },
+ {
+  "token": "0600024E",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_4()",
+  "source": "捡到排卵诱发剂的概率　【",
+  "after": [
+   "ldloca.s V_0",
+   "call System.String System.Int32::ToString()",
+   "ldstr %】"
+  ]
+ },
+ {
+  "token": "0600024F",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_5()",
+  "source": "带着触手本体拾荒、没抓到苗床时，顺手捡到一支排卵诱发剂的概率。设为 0 就只能靠触手3D打印机生产。",
+  "after": []
+ },
+ {
+  "token": "06000250",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_6()",
+  "source": "女性顾客的概率　【",
+  "after": [
+   "ldloca.s V_0",
+   "call System.String System.Int32::ToString()",
+   "ldstr %】"
+  ]
+ },
+ {
+  "token": "06000251",
+  "index": 0,
+  "method": "System.String MidnightPawn.ModSettings/<>c::<Define>b__18_7()",
+  "source": "随机顾客被换成女性的概率。50%~100%（默认 100%）。\n调低后会有部分顾客保持原样（可能是男性），这样娘化立绘也有机会用上。\n注意：其他模组的角色不受这个影响，永远保持原样。",
+  "after": []
+ },
+ {
+  "token": "0600003D",
+  "index": 59,
+  "method": "System.Void MidnightPawn.Game.PatchAllFemaleClients::ForceFemale(StoreClient)",
+  "source": "设置女性立绘失败: ",
+  "after": [
+   "ldloc.3 ",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "0600007F",
+  "index": 78,
+  "method": "System.Void MidnightPawn.Game.ClientPool::SaveSocial(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Double,System.Double)",
+  "source": "回写社交值失败: ",
+  "after": [
+   "ldloc.s V_4",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 3,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": "具有侵蚀能力的触手。淫力满 ",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int32)",
+   "ldstr  时，可以把特定物品侵蚀成你身体的一部分。每天自动恢复 ",
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)"
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 7,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": " 时，可以把特定物品侵蚀成你身体的一部分。每天自动恢复 ",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)",
+   "ldc.i4.s 10",
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int32)"
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 11,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": " 点淫力。",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)",
+   "pop ",
+   "ldloc.0 "
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 18,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": "侵蚀力：",
+  "after": [
+   "call System.Int32 MidnightPawn.Game.TentacleStats::get_Erosion()",
+   "stloc.1 ",
+   "ldloca.s V_1"
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 30,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": "── 可以被侵蚀的物品 ──",
+  "after": [
+   "callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)",
+   "pop ",
+   "ldsfld MidnightPawn.Game.Codex/CorruptKind[] MidnightPawn.Game.Codex::CorruptKinds"
+  ]
+ },
+ {
+  "token": "060000A4",
+  "index": 56,
+  "method": "System.String MidnightPawn.Game.Codex::BuildTentacleIntro()",
+  "source": "（未侵蚀）",
+  "after": [
+   "br.s IL_00B2: call System.String System.String::Concat(System.String,System.String,System.String)",
+   "ldstr ",
+   "call System.String System.String::Concat(System.String,System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060000A5",
+  "index": 17,
+  "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+  "source": "拥有特性【触手起源】",
+  "after": [
+   "ldsfld System.Func`1<System.Boolean> MidnightPawn.Game.Codex/<>c::<>9__27_0",
+   "dup ",
+   "brtrue.s IL_0079: callvirt MidnightPawn.Game.CodexEntry MidnightPawn.Game.CodexEntry::Requires(System.String,System.Func`1<System.Boolean>)"
+  ]
+ },
+ {
+  "token": "060000A5",
+  "index": 49,
+  "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+  "source": "【触手起源】开局赠送；之后可以由触手本体重新长出。",
+  "after": [
+   "callvirt MidnightPawn.Game.CodexEntry MidnightPawn.Game.CodexEntry::ObtainedBy(System.String)",
+   "ldstr tentacle_body",
+   "ldstr 拥有【触手本体】"
+  ]
+ },
+ {
+  "token": "060000A5",
+  "index": 150,
+  "method": "System.Void MidnightPawn.Game.Codex::RegisterOwn()",
+  "source": "持有原版【3D 打印机】",
+  "after": [
+   "ldsfld System.Func`1<System.Boolean> MidnightPawn.Game.Codex/<>c::<>9__27_1",
+   "dup ",
+   "brtrue.s IL_02B0: callvirt MidnightPawn.Game.CodexEntry MidnightPawn.Game.CodexEntry::Requires(System.String,System.Func`1<System.Boolean>)"
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 13,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "物资箱",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 19,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "医疗物资箱",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 25,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "储藏箱",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 31,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "治安部物证柜",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 37,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "闹钟",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 43,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "井盖",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "dup "
+  ]
+ },
+ {
+  "token": "060000A7",
+  "index": 49,
+  "method": "System.Void MidnightPawn.Game.Codex::.cctor()",
+  "source": "3D打印机",
+  "after": [
+   "newobj System.Void MidnightPawn.Game.Codex/CorruptKind::.ctor(System.String,System.String)",
+   "stelem MidnightPawn.Game.Codex/CorruptKind",
+   "stsfld MidnightPawn.Game.Codex/CorruptKind[] MidnightPawn.Game.Codex::CorruptKinds"
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 83,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人格跳过：不在白名单（",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 128,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人格跳过：非女性 (",
+  "after": [
+   "ldloca.s V_2",
+   "constrained. LocGenderHelper/LocGender",
+   "callvirt System.String System.Object::ToString()"
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 158,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人放入格子失败: ",
+  "after": [
+   "ldloc.s V_5",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 171,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人",
+  "after": [
+   "stloc.s V_4",
+   "ldc.i4.0 ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 196,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人格已显示: ",
+  "after": [
+   "ldloc.s V_4",
+   "call System.String System.String::Concat(System.String,System.String)",
+   "call System.Void MidnightPawn.ModCtx::Log(System.Object)"
+  ]
+ },
+ {
+  "token": "060000C3",
+  "index": 202,
+  "method": "System.Void MidnightPawn.Game.GuestBox::Show()",
+  "source": "客人格显示失败: ",
+  "after": [
+   "ldloc.s V_6",
+   "callvirt System.String System.Exception::get_Message()",
+   "call System.String System.String::Concat(System.String,System.String)"
+  ]
+ },
+ {
+  "token": "060000C6",
+  "index": 113,
+  "method": "GameItem MidnightPawn.Game.GuestBox::BuildGuestItem(StoreClient)",
+  "source": "顾客是改造体: ",
+  "after": [
+   "stelem.ref ",
+   "dup ",
+   "ldc.i4.1 "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 1,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "上层区",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0049: ldstr \"治安部盘查员\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 5,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "治安部",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0049: ldstr \"治安部盘查员\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 9,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "黑市",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_004F: ldstr \"小偷\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 13,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "革命军",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0055: ldstr \"革命军战士\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 17,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "游客",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_005B: ldstr \"游客\"",
+   "br.s IL_0061: ldstr \"拾荒客（普通）\""
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 21,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "上层区访客",
+  "after": [
+   "ret ",
+   "ldstr 治安部盘查员",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 23,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "治安部盘查员",
+  "after": [
+   "ret ",
+   "ldstr 小偷",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 25,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "小偷",
+  "after": [
+   "ret ",
+   "ldstr 革命军战士",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 27,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "革命军战士",
+  "after": [
+   "ret ",
+   "ldstr 游客",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 29,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "游客",
+  "after": [
+   "ret ",
+   "ldstr 拾荒客（普通）",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000DF",
+  "index": 31,
+  "method": "System.String MidnightPawn.Game.ItemFactory::IdentityOfFaction(System.String)",
+  "source": "拾荒客（普通）",
+  "after": [
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 1,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "上层区",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0049: ldstr \"巡查\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 5,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "治安部",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0049: ldstr \"巡查\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 9,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "黑市",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_004F: ldstr \"小偷\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 13,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "革命军",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_0055: ldstr \"战士\"",
+   "ldarg.0 "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 17,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "游客",
+  "after": [
+   "call System.Boolean System.String::op_Equality(System.String,System.String)",
+   "brtrue.s IL_005B: ldstr \"游客\"",
+   "br.s IL_0061: ldstr \"拾荒者\""
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 21,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "访客",
+  "after": [
+   "ret ",
+   "ldstr 巡查",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 23,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "巡查",
+  "after": [
+   "ret ",
+   "ldstr 小偷",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 25,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "小偷",
+  "after": [
+   "ret ",
+   "ldstr 战士",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 27,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "战士",
+  "after": [
+   "ret ",
+   "ldstr 游客",
+   "ret "
+  ]
+ },
+ {
+  "token": "060000E0",
+  "index": 29,
+  "method": "System.String MidnightPawn.Game.ItemFactory::JobOfFaction(System.String)",
+  "source": "游客",
+  "after": [
+   "ret ",
+   "ldstr 拾荒者",
+   "ret "
+  ]
+ }
+]

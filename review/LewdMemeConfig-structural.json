@@ -1,0 +1,160 @@
+[
+ {
+  "method": "System.Void LewdMemeConfig.PanelRowPatch::Install(System.Action`1<System.String>)",
+  "changes": [
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 19,
+      "offset": 67,
+      "opcode": "callvirt",
+      "operand": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+     },
+     {
+      "index": 20,
+      "offset": 72,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 21,
+      "offset": 73,
+      "opcode": "leave.s",
+      "operand": "@34"
+     },
+     {
+      "index": 22,
+      "offset": 75,
+      "opcode": "stloc.1",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 19,
+      "offset": 67,
+      "opcode": "callvirt",
+      "operand": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+     },
+     {
+      "index": 20,
+      "offset": 72,
+      "opcode": "pop",
+      "operand": ""
+     },
+     {
+      "index": 21,
+      "offset": 73,
+      "opcode": "ldsfld",
+      "operand": "HarmonyLib.Harmony LewdMemeConfig.PanelRowPatch::harmony"
+     },
+     {
+      "index": 22,
+      "offset": 78,
+      "opcode": "ldarg.0",
+      "operand": ""
+     },
+     {
+      "index": 23,
+      "offset": 79,
+      "opcode": "call",
+      "operand": "System.Void LewdMemeConfig.ConfigDisplayKo::Install(HarmonyLib.Harmony,System.Action`1<System.String>)"
+     },
+     {
+      "index": 24,
+      "offset": 84,
+      "opcode": "leave.s",
+      "operand": "@37"
+     },
+     {
+      "index": 25,
+      "offset": 86,
+      "opcode": "stloc.1",
+      "operand": ""
+     }
+    ],
+    "oldStart": 21,
+    "oldEnd": 21
+   }
+  ],
+  "newInstructionCount": 35,
+  "oldInstructionCount": 35
+ },
+ {
+  "method": "System.Void LewdMemeConfig.PanelRowPatch::MarkedRow(CustomUIBuilder,ModConfig,ConfigEntry,System.String)",
+  "changes": [
+   {
+    "tag": "insert",
+    "old": [
+     {
+      "index": 49,
+      "offset": 141,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 142,
+      "opcode": "callvirt",
+      "operand": "System.String[] ConfigEntry::get_Choices()"
+     },
+     {
+      "index": 51,
+      "offset": 147,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 52,
+      "offset": 148,
+      "opcode": "ldarg.2",
+      "operand": ""
+     }
+    ],
+    "ko": [
+     {
+      "index": 49,
+      "offset": 141,
+      "opcode": "ldarg.2",
+      "operand": ""
+     },
+     {
+      "index": 50,
+      "offset": 142,
+      "opcode": "callvirt",
+      "operand": "System.String[] ConfigEntry::get_Choices()"
+     },
+     {
+      "index": 51,
+      "offset": 147,
+      "opcode": "ldarg.1",
+      "operand": ""
+     },
+     {
+      "index": 52,
+      "offset": 148,
+      "opcode": "call",
+      "operand": "System.String[] LewdMemeConfig.ConfigDisplayKo::Choices(System.String[],ModConfig)"
+     },
+     {
+      "index": 53,
+      "offset": 153,
+      "opcode": "ldc.i4.0",
+      "operand": ""
+     },
+     {
+      "index": 54,
+      "offset": 154,
+      "opcode": "ldarg.2",
+      "operand": ""
+     }
+    ],
+    "oldStart": 51,
+    "oldEnd": 51
+   }
+  ],
+  "newInstructionCount": 90,
+  "oldInstructionCount": 90
+ }
+]
