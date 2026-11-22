@@ -48,7 +48,7 @@ jobs:
            foreach(var (key,m) in a){
            if(!b.TryGetValue(key,out var n))continue;
            var x=m.Body.Instructions;var y=n.Body.Instructions;
-           if(x.Count!=y.Count){if(x.Any(i=>i.Operand is IMethod z&&z.DeclaringType.FullName=="DailyWearKitchen.Definition"&&z.Name==".ctor"))throw new Exception("Definition method shape changed: "+key);continue;}
+           if(x.Count!=y.Count){var ids=x.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&s.StartsWith("dwk_")).Select(i=>(string)i.Operand).OrderBy(s=>s).ToArray();var ids2=y.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&s.StartsWith("dwk_")).Select(i=>(string)i.Operand).OrderBy(s=>s).ToArray();Check(ids.SequenceEqual(ids2),"Changed identifier literals in structurally changed method: "+key);Console.WriteLine("STRUCTURE_DIFFERENT_ID_LITERALS_PRESERVED "+key+" COUNT="+ids.Length);continue;}
            for(int i=0;i<x.Count;i++){
            if(x[i].OpCode!=OpCodes.Newobj||x[i].Operand is not IMethod ctor||ctor.DeclaringType.FullName!="DailyWearKitchen.Definition"||ctor.Name!=".ctor")continue;
            Check(ctor.MethodSig.Params.Count==9,"unexpected definition constructor");
