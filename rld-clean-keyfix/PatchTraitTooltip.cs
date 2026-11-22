@@ -90,9 +90,10 @@ class P {
     }
     var tooltipPrefix=M(patch,"RedLightDistrict.TalentPatches","PrefixGetTooltipBasic");
     Need(tooltipPrefix.MethodSig.Params[0].FullName=="GameItemElement","Expected original GameItemElement signature");
-    // Prior faulty build inserted GameItem calls on ldarg.0 (GameItemElement). Reject such a build.
-    Need(!tooltipPrefix.Body.Instructions.Take(40).Any(i=>i.Operand is IMethod c&&c.FullName=="System.String GameItem::get_identifier()"),
-      "Rejected incompatible previous GameItemElement/GameItem IL patch");
+    // Require the untouched baseline tooltip prefix, not the previous bloated injection.
+    // This original method legitimately calls GameItem::get_identifier(); that call alone is NOT evidence of invalid IL.
+    Need(tooltipPrefix.Body.Instructions.Count==439 && tooltipPrefix.Body.Instructions[0].OpCode==OpCodes.Ldnull,
+      "Requires unmodified baseline tooltip prefix, without previously injected name rewriting");
     var target=M(patch,"RedLightDistrict.TalentPanel","BuildTalentTooltipBuilder");
     var oldTarget=M(baseline,"RedLightDistrict.TalentPanel","BuildTalentTooltipBuilder");
     var helper=M(patch,"RedLightDistrict.Korean.UiLateLookup","TraitName");
