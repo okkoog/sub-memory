@@ -1008,3 +1008,12 @@
 - 사용자에게 이전에 약속한 `labels.bodies[].display` 두 글자 통일 규칙이 지켜지지 않은 항목 **2개**를 확인해 수정: `mature_sister`는 `성숙한 여성`→`누님`(원문 `御姐`), `wife`는 `유부녀`→`아내`(원문 `人妻`). 기존 `sister=로리`, `mature_woman=숙녀`, `beauty=누나`는 유지. 이제 체형 표시명 5개 전부 두 글자.
 - 파일: `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`의 표시 문자열 2개만 변경. `bodyId`/각 `id`/대사 198개/조건·변수·기타 게임 데이터는 변경하지 않음. GitHub 커밋 `37c969075614dcb10a9d4461a58558d8bd7f693c`; 감사 기록 `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md` 수정 커밋 `99ca7addeea3cd93084f04b0bf670b9d4af53afd`.
 - **주의:** 이전 `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_170of198_20261121.zip`의 내용은 이번 표시명 2곳 수정이 반영되지 않은 이전 패키지이므로 현재 JSON보다 구버전. 최신 설치본 사용 시 별도 재압축 필요. 28개 원문 대사는 그대로 남아 있으며 전체 완역으로 표시하지 않음. 게임 실행 검증은 미실시.
+
+## 2026-11-22 — LegacyContent 미번역 28개 복구 및 외부 대사 198/198 완료
+
+- **번역원:** 사용자와 앞선 대화에서 이미 완성한 28개 한국어 번역을 복구하여 별도 신규 의역 없이 그대로 JSON에 반영. 정확한 대상은 `dialogue.combos[0].lines` 10개(츤데레), `dialogue.combos[1].lines` 10개(다정한 성격), `dialogue.bodyLines[0].lines` 8개(체형별 공통).
+- **최종 대사:** `LewdMemeLegacyContent-1.0.6-48sounds/Content/content.json`의 **대사 198/198개 한국어화**, 중국어 잔존 대사 **0개**. 표시 라벨 53/53, descriptions.entries 70/72(나머지 원래 빈 값 1·변수 전용 1), nightScenes 5/5, manifest 표시명/설명 2/2. 체형 라벨 5개는 `로리`·`누님`·`아내`·`숙녀`·`누나` 두 글자 규칙 유지.
+- **원본/정적 감사:** 원본 blob `2802bb5ee311555ff28572d647ca8ddaa82a743f`는 무변경. 번역 JSON blob `a917a6d9a612e9c7b83e3aa4a66795095f684b61`. JSON 원본 대비 표시 텍스트 변경 328개(라벨 53, 대사 198, 설명 70, 야간 장면 5, manifest 2). **키·배열 순서·구조 불일치 0, `{...}` 치환 변수 불일치 0**. `bodyId`, `personalityId`, 설정 ID, `addressWeights` 등 모두 보존. 실제 게임 실행 검증은 미실시.
+- **수정 커밋:** 대사 반영 `5ed3c134ae4fa7590f9457b07915bfefcfa44bcb`, 설치 안내문 `3cffc14fd756027b0b39b0a5a2893be731aba585`, 검수 보고 `f161d35f0ae1ff2a3abd2fdb70bb74518db199d3`. 자세한 검수: `번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md`.
+- **최종 배포 ZIP:** `ProbablyStolen_LegacyContent_v1.0.6_Content_KO_198of198_20261122.zip`(44,349바이트, `Content/content.json`/`README_ko.txt`/감사서 3개 엔트리, 각 엔트리 CRC32 검증). 신규 ZIP 저장소 커밋 `b93e26a7e56afaa2ce765a795eb57b056ca4f65a`. 이전 `...170of198_20261121.zip`은 이력용 구버전으로, 설치 시 **198of198 최종판**을 사용해야 함.
+- **범위 한정:** LegacyContent 외부 JSON 대사 번역이 완료된 것이며 DLL 본체 또는 모든 다른 모드의 실제 게임 호환성까지 검증했다는 뜻은 아니다.
