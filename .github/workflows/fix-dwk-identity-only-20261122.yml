@@ -1,0 +1,120 @@
+name: Repair DailyWear item identity only
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-dwk-identity-only-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod/起飞攻速装-v1.1.3抢先体验版（修bug）/起飞攻速装.dll
+            probably-stolen/local-mods/TentacleMod번역/起飞攻速装-v1.1.3抢先体验版（修bug）/起飞攻速装.dll
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/DailyWearWorkshop_FINAL_RESULT_20261122.json
+      - name: Restore identified definition IDs and verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console --framework net8.0 -o /tmp/dwk-fix --force
+          dotnet add /tmp/dwk-fix/dwk-fix.csproj package dnlib --version 4.5.0
+          cat >/tmp/dwk-fix/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.IO;
+          using System.Security.Cryptography;
+          using System.Text.Json;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class Program{
+           static void Check(bool ok,string why){if(!ok)throw new Exception(why);}
+           static string Hash(byte[] b)=>Convert.ToHexString(SHA256.HashData(b)).ToLowerInvariant();
+           static string FileHash(string p)=>Hash(File.ReadAllBytes(p));
+           static string Sig(Instruction i,IList<Instruction> il){var o=i.Operand;return i.OpCode.Code+"|"+(o is Instruction t?"branch:"+il.IndexOf(t):o is IList<Instruction> ts?"switch:"+string.Join(",",ts.Select(t=>il.IndexOf(t))):o is Local l?"local:"+l.Index:o is Parameter p?"param:"+p.Index:o?.ToString()??"");}
+           static Dictionary<string,MethodDef> Map(ModuleDefMD m){var d=new Dictionary<string,MethodDef>();foreach(var g in m.GetTypes().SelectMany(t=>t.Methods).Where(x=>x.HasBody).GroupBy(x=>x.FullName)){int n=0;foreach(var x in g)d.Add(g.Key+"#"+n++,x);}return d;}
+           static Dictionary<string,string> Resources(ModuleDefMD m)=>m.Resources.Select((x,i)=>(x,i)).ToDictionary(x=>x.i+":"+x.x.Name, x=>x.x is EmbeddedResource e?Hash(e.CreateReader().ToArray()):x.x.ToString()??"");
+           static void Main(string[] args){
+           using var o=ModuleDefMD.Load(args[0]);using var k=ModuleDefMD.Load(args[1]);
+           Check(FileHash(args[0])=="723346b99acc1a4b76809b79d3189c389aa34abbbb5744b1b08d1c8b2bf38584","Unexpected original");
+           Check(FileHash(args[1])=="8c615ea880439fa641bfe20cf17f06d3dfbfe1b17cdf845a176fd715c16181a3","Unexpected translation");
+           var a=Map(o);var b=Map(k);var fixes=new List<object>();var changed=new HashSet<string>();var other=new List<object>();int constructors=0;
+           foreach(var (key,m) in a){
+           if(!b.TryGetValue(key,out var n))continue;
+           var x=m.Body.Instructions;var y=n.Body.Instructions;
+           if(x.Count!=y.Count){if(x.Any(i=>i.Operand is IMethod z&&z.DeclaringType.FullName=="DailyWearKitchen.Definition"&&z.Name==".ctor"))throw new Exception("Definition method shape changed: "+key);continue;}
+           for(int i=0;i<x.Count;i++){
+           if(x[i].OpCode!=OpCodes.Newobj||x[i].Operand is not IMethod ctor||ctor.DeclaringType.FullName!="DailyWearKitchen.Definition"||ctor.Name!=".ctor")continue;
+           Check(ctor.MethodSig.Params.Count==9,"unexpected definition constructor");
+           Check(y[i].OpCode==OpCodes.Newobj&&y[i].Operand is IMethod cc&&cc.FullName==ctor.FullName,"constructor mismatch "+key);
+           constructors++;
+           // Straight-line constructor arguments: 9 single-load operands. Dynamic definitions are left intact unless a changed identifier can be proven.
+           int j=i-9;
+           if(j<0||x[j].OpCode!=OpCodes.Ldstr||x[j].Operand is not string id||!id.StartsWith("dwk_"))continue;
+           Check(Enumerable.Range(j,i-j).All(t=>x[t].OpCode.Code==y[t].OpCode.Code),"argument shape mismatch "+key);
+           Check(y[j].Operand is string,"id operand not string");
+           string current=(string)y[j].Operand;
+           if(id==current)continue;
+           Check(x[j+1].OpCode==OpCodes.Ldstr&&y[j+1].OpCode==OpCodes.Ldstr,"display name not separable "+key);
+           Check(y[j+1].Operand is string name&&name!=id,"display name not localized "+key);
+           fixes.Add(new{method=m.FullName,index=j,offset=x[j].Offset,id,incorrectId=current,displayName=(string)y[j+1].Operand});
+           changed.Add(key+"@"+j);y[j].Operand=id;
+           }
+           }
+           Check(fixes.Count>0,"No fixes");
+           Check(fixes.Any(f=>JsonSerializer.Serialize(f).Contains("dwk_yangsheng_cup")),"Known cup missing");
+           // Report remaining original identifier literal changes, without exposing non-identifier content.
+           foreach(var (key,m) in a){if(!b.TryGetValue(key,out var n)||m.Body.Instructions.Count!=n.Body.Instructions.Count)continue;var x=m.Body.Instructions;var y=n.Body.Instructions;for(int i=0;i<x.Count;i++){if(x[i].OpCode==OpCodes.Ldstr&&x[i].Operand is string s&&s.StartsWith("dwk_")&&y[i].OpCode==OpCodes.Ldstr&&s!=y[i].Operand as string){other.Add(new{method=m.FullName,index=i,offset=x[i].Offset,original=s,role="non-restored occurrence (may be display name)"});}}}
+           k.Write(args[2]);
+           using var before=ModuleDefMD.Load(args[1]);using var after=ModuleDefMD.Load(args[2]);
+           var bm=Map(before);var am=Map(after);Check(bm.Keys.ToHashSet().SetEquals(am.Keys),"method list changed");
+           int diff=0;
+           foreach(var (key,m) in bm){var n=am[key];var x=m.Body.Instructions;var y=n.Body.Instructions;Check(x.Count==y.Count,"IL count "+key);for(int i=0;i<x.Count;i++){if(Sig(x[i],x)==Sig(y[i],y))continue;Check(changed.Contains(key+"@"+i),"Unexpected IL difference "+key+" "+i);Check(y[i].Operand is string id&&id.StartsWith("dwk_"),"Invalid restored ID");diff++;}Check(m.Body.ExceptionHandlers.Count==n.Body.ExceptionHandlers.Count,"handler count");}
+           Check(diff==fixes.Count,"Fix count mismatch");
+           var res=Resources(before);var res2=Resources(after);Check(res.Count==res2.Count&&res.All(x=>res2.TryGetValue(x.Key,out var v)&&x.Value==v),"Resource difference");
+           var result=new{originalSha256=FileHash(args[0]),previousSha256=FileHash(args[1]),fixedSha256=FileHash(args[2]),comparedMethods=bm.Count,comparedResources=res.Count,definitionConstructors=constructors,restoredIds=fixes,remainingChangedDwkLiterals=other,verifiedILChanges=diff,actualGameRuntimeTest=false};
+           File.WriteAllText(args[3],JsonSerializer.Serialize(result,new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping}));
+           Console.WriteLine("RESTORED_IDS="+fixes.Count+" METHODS="+bm.Count+" RESOURCES="+res.Count+" OTHER_LITERAL_CHANGES="+other.Count);
+           foreach(var f in fixes)Console.WriteLine(JsonSerializer.Serialize(f,new JsonSerializerOptions{Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping}));
+           }
+          }
+          CS
+          P=probably-stolen/local-mods
+          D='起飞攻速装-v1.1.3抢先体验版（修bug）/起飞攻速装.dll'
+          dotnet run --project /tmp/dwk-fix -- "$P/TentacleMod/$D" "$P/TentacleMod번역/$D" /tmp/dwk-fix/fixed.dll /tmp/dwk-fix/report.json
+          mkdir -p deliver
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json,shutil
+          root=pathlib.Path('probably-stolen/local-mods/TentacleMod번역')
+          dll=root/'起飞攻速装-v1.1.3抢先体验版（修bug）'/'起飞攻速装.dll'
+          fixed=pathlib.Path('/tmp/dwk-fix/fixed.dll').read_bytes()
+          report=json.loads(pathlib.Path('/tmp/dwk-fix/report.json').read_text())
+          assert hashlib.sha256(fixed).hexdigest()==report['fixedSha256']
+          z=pathlib.Path('deliver/DailyWearWorkshop_v1.1.3_ID_Fix_DLL_only.zip')
+          with zipfile.ZipFile(z,'w',zipfile.ZIP_DEFLATED) as f:f.writestr(dll.name,fixed)
+          with zipfile.ZipFile(z) as f:assert f.testzip() is None and f.namelist()==[dll.name] and f.read(dll.name)==fixed
+          dll.write_bytes(fixed)
+          report['zipSha256']=hashlib.sha256(z.read_bytes()).hexdigest()
+          (root/'번역대조표/DailyWearWorkshop_ID_FIX_20261122.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          shutil.copyfile(z,root/z.name)
+          PY
+      - name: Commit fixed DLL and single-file ZIP
+        run: |
+          set -euo pipefail
+          P=probably-stolen/local-mods/TentacleMod번역
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse "$P/起飞攻速装-v1.1.3抢先体验版（修bug）/起飞攻速装.dll" "$P/번역대조표/DailyWearWorkshop_ID_FIX_20261122.json" "$P/DailyWearWorkshop_v1.1.3_ID_Fix_DLL_only.zip"
+          git commit -m 'Restore DailyWear definition identity without reverting Korean display names'
+          git push origin main
+      - uses: actions/upload-artifact@v7
+        with:
+          path: deliver/DailyWearWorkshop_v1.1.3_ID_Fix_DLL_only.zip
+          archive: false
+          if-no-files-found: error
