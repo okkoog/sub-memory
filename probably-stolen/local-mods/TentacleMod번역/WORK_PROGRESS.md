@@ -20,11 +20,11 @@
 ## 2. 현재 대상과 최신 상태 — 감사 후속 06 완료
 
 - 사용자 지시(2026-11-22): Adult Goods는 `3842259965` v1.1.1, Eleanor는 `落魄千金-埃莉诺 v1.0.3` 독립판만 유지. 나머지 네 변형(`3842247788`, `3843125702`, `3843142171`, `可能是成人用品 v1.1.3`)의 원본·번역 폴더와 해당 ZIP 삭제. 삭제 변형은 재작업하지 않는다. 기존 감사 자료는 역사 근거로 보존.
-- 현재 잔여 B 완료 처리 대기 4건(기존 212건 중 삭제 변형 18건, 종료 Adult Goods 2건, 종료 DailyWearWorkshop 81건, 종료 MidnightPawn 27건, 종료 LewdMemeConfig 34건, 종료 ShadowTrade 16건, 종료 RLD 15건, 종료 Elueym 5건, 종료 Mentor 4건, 종료 Eleanor 독립판 4건, 종료 ItemPortraitHD 2건 제외). 이 중 Brood 4건은 정적 검수 완료/배포 미완료, C 직접 출력 0곳(기존 53곳 중 MidnightPawn 42곳, LewdMemeConfig 2곳, ShadowTrade 7곳, RLD 2곳 제외). 서로 다른 단위이므로 합산하지 않는다.
-- LewdMemeLegacyContent, LewdMemeBrothel, IronBloodSheer, SarronaTheDragon은 게임 표시 번역 감사 기준 종료(실게임 검사 별도). 작성자명·원제·원본 설명서 및 기능 보호값은 번역 대상 제외. 잔여 완료 처리 대상 1개. 전체 16개 중 종료/대상 없음 15개(이미지 전용 포함).
+- 현재 유지 대상 감사 범위의 잔여 B 0건 및 C 직접 출력 0곳. 기존 212건 및 53곳의 판정은 역사 감사 자료이며, 삭제 변형·기존 반영·보호·실제 수정은 별도로 처리 완료. 서로 다른 단위이므로 합산하지 않는다.
+- LewdMemeLegacyContent, LewdMemeBrothel, IronBloodSheer, SarronaTheDragon은 게임 표시 번역 감사 기준 종료(실게임 검사 별도). 작성자명·원제·원본 설명서 및 기능 보호값은 번역 대상 제외. 잔여 완료 처리 대상 0개. 전체 16개 중 종료/대상 없음 16개(이미지 전용 포함).
 - 아래 911건 및 20 DLL은 삭제 전 역사 감사 분모이다. 현재 원본·번역 대응 모드 폴더는 각각 16개(이미지 전용 포함). Adult Goods v1.2.1은 native 로더 보안/실행 미검증으로 제외; v1.1.1을 최종 작업 기준으로 사용한다.
 
-**기존 911건 감사 범위의 미분류 작업 종료. 전체 번역 및 실제 B/C 패치는 미완료.**
+**기존 911건 감사 범위의 미분류 종료. 유지 대상 16개 모드의 B/C 표시 항목 정적 감사 및 개별 배포 반영 종료. 실제 게임 검증 및 삭제 변형 포함 구 통합 ZIP 재구성은 별도.**
 
 | 구분 | 건수 | 상태 |
 | --- | ---: | --- |
@@ -41,7 +41,7 @@
 - 280곳은 기존 1,555곳에 추가할 분모가 아니다. 이전 보호 수치와도 단순 합산하지 않는다.
 - 후속02에서 DLL 7개/출력 위치 15곳 수정, ZIP 8개 갱신 및 정적 검사 성공. 후속03~06은 판정 작업으로 DLL/CSV/JSON 및 ZIP 신규 수정 없음.
 
-## 3. 다음 작업 — 실제 번역 반영 및 검증
+## 3. 모드별 최종 반영 및 검증
 
 - **Adult Goods v1.1.1 (3842259965) 종료:** 현재 최종 DLL의 원본 대비 15개 출력 IL 수정, 181/181 로컬키 및 ko/ko-KR 두 별칭, TypeDef 92/MethodDef 370 및 원본 리소스 65개 불변, ZIP CRC와 설치 파일 바이트 일치 독립 검증 성공. 잔여 CJK 18곳은 기능 매핑 14곳, 파일 경로 2곳, 이미 번역된 진단의 원본 파일명 1곳, 중국어 언어 분기 1곳으로 보호. 데이터 CSV는 ID/가격/유형 매핑만 이용하고 통계 자료는 읽기 호출 없음. 실제 미번역 표시 후보 0. [검증 자료](번역대조표/AdultGoods_v1.1.1_FINAL_20261122.json), [최종 ZIP](ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip), Actions 44982001711 성공. 구 빌드의 자동 덮어쓰기로 복구되었던 구형 DLL을 최종 검증본으로 재복구하고 해당 빌드를 수동 전용으로 전환. 실게임 확인만 남음.
 - **DailyWearWorkshop (起飞攻速装, 폴더 v1.1.3 / manifest v1.1.1) 종료:** B 후보 81건, 114개 기존 감사 호출부 전부 확인. 84개 실제 표시 호출부 수정, 1곳 기존 반영, 29곳 보호/미사용/원제 병기. 피규어 50개 기존 원본 파일명→레거시 ID 별칭 복구, JSON 표시 이름을 DLL 이름과 일치시킴(원본 ID·가격·분류·파일 경로 보존). 기존 1,199개 메서드 전체 IL 구조/피연산자 대조, 추가 별칭 처리 검증, 최종 ZIP 6파일 CRC 및 바이트 대조 성공. [최종 결과](번역대조표/DailyWearWorkshop_FINAL_RESULT_20261122.json), [최종 ZIP](ProbablyStolen_DailyWearWorkshop_KO_Final_20261122.zip), 커밋 `0f57d40c7828180360933c721087737e71266c17`, Actions 44982496107 성공. 실게임 사용 검증만 남음.
@@ -50,12 +50,12 @@
 - **ShadowTrade v1.6.4 종료:** B 16건/C 직접 출력 7곳의 감사 호출부를 대조. 실제 리터럴 57곳, DLL 내부 출력 경계 및 설치/해제 헬퍼 호출 90곳(표시 변환 88곳, 설치/해제 2곳), 게임 UI 고객명 분리 5곳 및 설정 선택 배열 표시 분리 1곳을 처리. 원본 세력/선호/비교/저장 및 연령 판정 로직 불변, 651개 기존 메서드 정적 대조, 추가 헬퍼 8개 검증, 잔여 원문 직접 위치 156곳 보호. 외부 자료 21건은 작성자·파일명·지역 키로 판정 완료(미분류 0), 이름 5,160개/13그룹 및 manifest 식별자 보존. 설정 패널은 LewdMemeConfig 기존 정상 우선순위 이후 Low(200) 적용으로 표시 전용 변환을 합성하도록 수정. 최종 ZIP 7파일 CRC·바이트 일치, 실제 감사 미반영 표시 0. [검증 자료](번역대조표/ShadowTrade_FINAL_RESULT_20261122.json), [최종 ZIP](ProbablyStolen_ShadowTrade_v1.6.4_KO_Final_20261122.zip), 커밋 `f88a1b4974bd653e1523927839812fafd6db2c6e`, [Actions 44984572720](https://github.com/okkoog/sub-memory/actions/runs/44984572720) 성공 및 최종 DLL/ZIP/보고서 원격 재조회 완료. 실게임 UI·저장·호환 검증 미실시. RLD의 고객명 UI 후속 패치가 겹칠 경우 ShadowTrade의 모드 범위/기존 출력 및 Harmony 순서도 보존할 것.
 - **RedLightDistrict v1.1.1 정적 감사 종료:** B 15건/C 직접 출력 2곳 처리, 원본 3,619키 중 3,528키 한국어·91키 보호, 표시 전용 별칭 24키(총 3,552행). 기존 급식기·정수기 검색 2곳, 타입명 비교 10곳, 소비 표시 검색 4곳 구/신 표기 양쪽 인식. 특성·고객명·메이드 표시 경계 분리, 고객 ID 생성 함수 부작용 발견 후 원본 고유 접두사만 검사하도록 수정(저장 필드·ID 생성기 불변). 기존 1,860개 메서드와 리소스 1,617개 검증, 최종 가드 수정 후 1,872개 메서드 재대조. 외부 사례 3건 원본 초상화 파일명 예시로 확정, 미분류 0. CSV 재생성 시 동일 값/바이트 확인. 최종 ZIP 7파일, Git LFS DLL/ZIP 포인터 및 SHA-256 실물 대응, CRC 통과, 원격 재조회 완료. 커밋 `6aee5772b7c57c2f4ef4dd094428b41466550d60`, [최종 ZIP](ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip), [감사 결과](번역대조표/RLD_FINAL_RESULT_20261122.json), [Actions 44987562351](https://github.com/okkoog/sub-memory/actions/runs/44987562351). 실제 게임 로드·권한 검사·Harmony 합성·저장 호환은 미실시. 기존 중간 브리지 ZIP 대신 최종 ZIP 사용.
 - **3843110449 (Elueym v1.1.0) 정적 감사 종료:** B 5종/9곳 표시 결과 변경, 중국어 검색 인자 5곳 보호. 주 DLL 23개 메서드 대조, 보조 DLL 6개 메서드 검사 및 바이너리 불변 확인, 참조 알고리즘 13개 사례 통과. ZIP 5파일 CRC 및 원격 커밋 확인. 원본 검색어와 Textures 유지; 한국어 원문 검색 별칭은 미검증이라 추가하지 않음. 실제 게임 실행 미검증. 커밋 `c1d677accf54e423e7c1cdaa0a6d2d2940260aa0`, [최종 ZIP](ProbablyStolen_Elueym_v1.1.0_KO_Final_20261122.zip), [검수 결과](번역대조표/Elueym_FINAL_RESULT_20261122.json), [Actions 44988038428](https://github.com/okkoog/sub-memory/actions/runs/44988038428).
-- Brood 잔여 B 4건 재검토(2026-11-22): 현재 DLL SHA256 `268a3fb54498f1ffeeeccd7d09641b937710c23725b0d7b9dc4be025235d1494`가 후속02 결과와 동일하여 침식 진단 표제 1곳 기존 반영 확인. 기존 한국어 진단 설명 1건은 유지. 색상 진단 표제 2곳(白→흰색, 紫→보라색)은 별도 변경 코드 작성 및 임시 복사본 검증 완료: 메서드 1,740개 대조, 지정 2곳 외 IL 변경 없음, 기존 입력 DLL 불변. [검증 기록](번역대조표/Brood_DIAGNOSTIC_RESULT_20261122.json), [변경 코드](번역대조표/Brood_DiagnosticLabels_20261122.cs), [Actions](https://github.com/okkoog/sub-memory/actions/runs/44989040921). 검증된 임시 DLL은 배포하지 않았으며 저장소의 설치 DLL/ZIP은 그대로이다. 전체 완료 처리하지 않음.
+- **Brood v0.3.31 정적 감사 종료:** 잔여 B 4건 중 침식 진단 표제 1곳 기존 반영, 기존 한국어 진단 설명 1건 유지, 색상 진단 표제 2곳(白→흰색, 紫→보라색) 실제 설치 DLL에 반영. 메서드 본문 1,740개 대조, 지정 외 IL 및 내장 리소스 불변 검증. DLL SHA256 `49bc545e33f0bb9d28516599e8b97e42e546c444f0083795eee0ab2cece0ac05`는 기존 임시 검증본과 동일. 최종 ZIP 5파일 CRC 통과, DLL/최신 CSV/JSON/README 바이트 일치, 원격 재조회 완료. [검증 자료](번역대조표/Brood_FINAL_NEUTRAL_AUDIT_20261122.json), [최종 ZIP](ProbablyStolen_Brood_v0.3.31_KO_Final_DLL_JSON_20261122.zip), 커밋 `5d4c9d1986d8dce314722df4444ecbd99caee1b3`, [Actions 44990939865](https://github.com/okkoog/sub-memory/actions/runs/44990939865) 성공. 실제 게임 실행 미검증. 이전 Brood ZIP은 역사 자료로 유지하며 최종 ZIP 사용.
 - **MentorToSarrona v1.2.0 정적 감사 종료:** 표시 결과 4곳 수정, 검색 원문 4곳 보호, 메서드 19개 대조, 지정 외 IL 및 리소스 동일. ZIP 4개 파일 CRC 및 원격 커밋 확인. 실제 게임 미검증. 커밋 `ac4928d87cc5d38c41883d79f16db796f3ff8aa4`, [최종 ZIP](ProbablyStolen_MentorToSarrona_v1.2.0_KO_Final_20261122.zip), [검수 기록](번역대조표/Mentor_FINAL_RESULT_20261122.json).
 - **Eleanor 독립판 v1.0.3 정적 감사 종료:** 한국어 모드명 전용 로캘 분기 1종, 로그 3종 수정. 기존 1,515개 메서드(본문 1,511개) 중 4개 수정 및 신규 로캘 헬퍼 1개, 나머지 IL 동일. 내장 리소스 47개 바이트 동일. 중국어·영어·로캘 미선택 이름 경로 유지. ZIP 5파일 CRC 및 원격 커밋 확인. 실제 게임 미검증. 커밋 `397b39759f182135215c7152d3e7efa6259faaca`, [최종 ZIP](ProbablyStolen_Eleanor_v1.0.3_KO_Final_20261122.zip), [검수 기록](번역대조표/Eleanor_FINAL_RESULT_20261122.json).
-- Brood 추가 용어 수정: `tagEditor.body.wife` → 부인, `tagEditor.body.mature` → 숙녀. CSV 원격 반영 및 재검증 완료(`4d3d2a284d15046586265ad21f08e7de89203017`). [최신 통합 검수 기록](번역대조표/Brood_FINAL_NEUTRAL_AUDIT_20261122.json). 진단 문자열 2곳은 임시 DLL 정적 검수 완료이나 설치 DLL 및 ZIP 미갱신 상태 유지.
+- Brood 추가 용어 수정: `tagEditor.body.wife` → 부인, `tagEditor.body.mature` → 숙녀. CSV 원격 반영 및 재검증 완료(`4d3d2a284d15046586265ad21f08e7de89203017`), 최신 최종 ZIP에도 포함 확인.
 - ItemPortraitHD v1.3.0 정적 검수 종료: 설정 그룹 `立绘` → 초상화 6곳, 기존 한국어 설명 및 실제 경로 원문 유지. 메서드 807개 대조, 내장 리소스 동일, ZIP 8파일 CRC 및 원격 커밋 확인. 실게임 미검증. 커밋 `e3393e6c4b8c21fe4257323be61a4468f92d5c40`, [최종 ZIP](ProbablyStolen_ItemPortraitHD_v1.3.0_KO_Final_20261122.zip), [검수 기록](번역대조표/ItemPortraitHD_FINAL_RESULT_20261122.json).
-- 잔여: Brood B 4(정적 검수 완료, 설치 DLL/ZIP 미갱신). 미분류 0건. 실제 게임 검증은 별도.
+- 잔여: 유지 대상 감사상 B 0건, C 직접 출력 0곳, 미분류 0건. 실제 게임 검증 및 구 통합 ZIP 재구성은 별도.
 
 1. 아래 판정표와 호출부 자료에서 유지된 모드의 B 및 C 출력 경계만 취합한다. 삭제 변형과 완료 모드는 제외한다. 기존 후속02 패치 반영분을 중복 처리하지 않는다.
 2. 현재 번역 DLL 및 외부/내장 자료를 대조하여 이미 반영·보호·실제 미적용 표시 위치를 구별하고 대상 목록과 실제 잔여를 확정한다.
