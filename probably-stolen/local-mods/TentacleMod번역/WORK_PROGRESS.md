@@ -1025,3 +1025,8 @@
 - 검증: Github Actions `44969878249`(실제 IL 호출부 감사)와 `44969985828`(5개 문구 dnlib 패치·재검증·압축) 모두 성공. 검사서 `번역대조표/Brood_STAGE_5_IL_CALLSITE_AUDIT_20261122.md` 및 `Brood_STAGE_5_KO_PATCH_AUDIT_20261122.md`. 패치 DLL SHA256 `70b85c118c739c69d7c4307a171cf20f9e64beaa37c1bb48e5642f9a73d8fae8`; 실제 CLR/Unity 실행 미검증.
 - 최종 파일 `TentacleMod번역/ProbablyStolen_Brood_v0.3.31_KO_Final_DLL_JSON_20261122.zip` 158,777바이트. 기존 `ProbablyStolen_Brood_v0.3.31_Interaction_KO_135_20261121.zip`은 JSON 전용 이전 패키지이며 이번 최종 ZIP이 DLL까지 포함한 최신본.
 - **후속 작업:** Probably Adult Goods v1.1.1의 `dildo_red_flavor`, `dildo_pink_slim_flavor` 2키는 기존 감사표에 중국어를 배제하고 영어 리소스를 기준으로 번역한 것으로 기록되어 있으므로 의미 불일치 별도 검토 대상. 기계적 치환이나 내부 원문 필드 변경 없이 정확한 원문·번역 차이를 확인한다.
+
+### Brood 수정 DLL 추가 동등성 검증 (2026-11-22)
+
+- 최종 ZIP에서 사용한 수정 DLL을 적용 전 한국어 시험 DLL(커밋 `f9340a1e7f9f12a1c71f5a2d11e814cd7805b0a2`, 516,096바이트)과 dnlib 기준 **전 메서드 IL 일대일 비교**하여 성공. TypeDef **278개**, MethodDef **1,741개**, FieldDef **1,346개** 모두 동일. 모든 메서드의 명령어 opcode·피연산자 동일, 단 `RegisterTests`에서 출력용 `ldstr` 5개만 정확하게 바뀜. 예상 밖 IL 변경 **0개**. 관리 리소스 수 **0개** 유지. (dnlib 재직렬화로 DLL 물리 파일 크기는 달라짐.)
+- 감사 기록 `번역대조표/Brood_STAGE_5_STRICT_IL_DIFF_20261122.md` 생성; GitHub Actions `44970203204` 성공. 실게임 로드·저장 호환 검증은 미실시.
