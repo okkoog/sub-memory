@@ -29,6 +29,14 @@ jobs:
           MOD="$ROOT/lewd_meme_config0.7.2-pre"
           mkdir -p /tmp/cfghelper
           cp "$MOD/Source/Integration/ConfigDisplayKo.cs" /tmp/cfghelper/
+          # ModReflect is exposed through the game mod loader. The compile-only shim is never embedded.
+          cat >/tmp/cfghelper/ModReflectCompileOnly.cs <<'CS'
+          using System;
+          using System.Reflection;
+          internal static class ModReflect {
+            internal static MethodBase Target(Type type, string name, Type[] parameters = null) { throw new NotSupportedException(); }
+          }
+          CS
           MANAGED="$PWD/probably-stolen/Managed"
           cat >/tmp/cfghelper/cfghelper.csproj <<EOF
           <Project Sdk="Microsoft.NET.Sdk">
@@ -77,6 +85,8 @@ jobs:
               Need(type.Fields.Count==0&&type.NestedTypes.Count==0&&type.Methods.All(m=>m.IsStatic&&m.HasBody&&!m.HasGenericParameters),"Helper shape");
               var importer=new Importer(target,ImporterOptions.TryToUseTypeDefs);
               var tnew=new TypeDefUser(type.Namespace,type.Name,target.CorLibTypes.Object.TypeDefOrRef){Attributes=type.Attributes};target.Types.Add(tnew);
+              var existingInstall=target.GetTypes().Single(t=>t.FullName=="LewdMemeConfig.PanelRowPatch").Methods.Single(m=>m.Name=="Install");
+              var actualTarget=(IMethod)existingInstall.Body.Instructions.Single(i=>i.Operand is IMethod mr&&mr.FullName.Contains("ModReflect::Target")).Operand;
               var mapping=new Dictionary<MethodDef,MethodDef>();
               foreach(var d in type.Methods){
                 var m=new MethodDefUser(d.Name,importer.Import(d.MethodSig),d.ImplAttributes,d.Attributes);
@@ -88,6 +98,7 @@ jobs:
                   Parameter p=>dst.Parameters[p.Index],
                   MethodDef d when mapping.ContainsKey(d)=>mapping[d],
                   ITypeDefOrRef t when t.FullName==type.FullName=>tnew,
+                  IMethod m when m.DeclaringType.FullName=="ModReflect"&&m.Name=="Target"=>actualTarget,
                   IMethod m=>importer.Import(m),IField f=>importer.Import(f),ITypeDefOrRef t=>importer.Import(t),
                   MethodSig s=>importer.Import(s),_=>o
                 };
