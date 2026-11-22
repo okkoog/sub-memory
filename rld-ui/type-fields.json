@@ -1,0 +1,1451 @@
+[
+  {
+    "type": "RedLightDistrict.SewingMachine",
+    "fields": [
+      {
+        "name": "MACHINE_ID",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MACHINE_NAME",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MACHINE_PRICE",
+        "type": "System.Int64",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "OUTER_W",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "OUTER_H",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "INNER_W",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "INNER_H",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MACHINE_SLOT_ID",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MACHINE_PRODUCT_SLOT_ID",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "PROD_W",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "PROD_H",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SuppressProductSlotGuard",
+        "type": "System.Boolean",
+        "attrs": "Assembly, Static"
+      },
+      {
+        "name": "_productSlotByMachine",
+        "type": "System.Collections.Generic.Dictionary`2<System.Object,GameInventory>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "PROGRESS_MAX",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "PROGRESS_TAG",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SPRITE_KEY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_FILE",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_SUBDIR",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "RUN0_SUFFIX",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "RUN1_SUFFIX",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "IDLE_SUFFIX",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_RUN0_FILE",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_RUN1_FILE",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "NEEDLE_SEC",
+        "type": "System.Single",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "BOB_SEC",
+        "type": "System.Single",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "BOB_PX",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "VFX_TICK_SEC",
+        "type": "System.Single",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SCAN_SEC_DEFAULT",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SCAN_BOOST_SEC",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SCAN_BOOST_HOLD",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_scanBoostUntil",
+        "type": "System.Single",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "MACHINE_DESC",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "TALENTS_PER_UNLOCK",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_icons",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_iconSrcLogged",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_iconDir",
+        "type": "System.String",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_runTex",
+        "type": "UnityEngine.Texture2D[]",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_runSpriteBase",
+        "type": "UnityEngine.Sprite[]",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_runCache",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_cacheIdle",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_byUid",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,GameItem>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_emptyTicks",
+        "type": "System.Int32",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_vfxTimer",
+        "type": "System.Single",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "ENABLED",
+        "type": "System.Boolean",
+        "attrs": "Assembly, Static"
+      },
+      {
+        "name": "GRACE_SEC",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_graceUntil",
+        "type": "System.Single",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_liveDrivers",
+        "type": "System.Collections.Generic.HashSet`1<RedLightDistrict.SewingMachineVfxDriver>",
+        "attrs": "Assembly, Static, InitOnly"
+      },
+      {
+        "name": "UNUSED_TARGET_SEC",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "EMPTY_PRUNE_TARGET_SEC",
+        "type": "System.Single",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "FALLBACK_EVERY",
+        "type": "System.Int32",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_tickCount",
+        "type": "System.Int32",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "PROGRESS_SUFFIX",
+        "type": "System.String",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "APPLY_FAIL_LIMIT",
+        "type": "System.Int32",
+        "attrs": "Assembly, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_orphans",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_orphanIdle",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "ORPHAN_KEEP",
+        "type": "System.Int32",
+        "attrs": "Private, Static, Literal, HasDefault"
+      }
+    ],
+    "properties": [
+      {
+        "name": "ScanSec",
+        "type": "System.Single ()"
+      },
+      {
+        "name": "GraceUntil",
+        "type": "System.Single ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.SewingMachine/<>c",
+    "fields": [
+      {
+        "name": "<>9",
+        "type": "RedLightDistrict.SewingMachine/<>c",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "<>9__36_0",
+        "type": "System.Func`1<GameItem>",
+        "attrs": "Public, Static"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.SewingMachine/<>c__DisplayClass54_0",
+    "fields": [
+      {
+        "name": "v",
+        "type": "System.Int32",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.SewingMachine/<>c__DisplayClass69_0",
+    "fields": [
+      {
+        "name": "map",
+        "type": "System.Collections.Generic.Dictionary`2<RedLightDistrict.TalentData,GameItem>",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.SewingMachineVfxDriver",
+    "fields": [
+      {
+        "name": "Element",
+        "type": "GameItemElement",
+        "attrs": "Public"
+      },
+      {
+        "name": "Uid",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "LastKey",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "ApplyFail",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "_needleFrame",
+        "type": "System.Int32",
+        "attrs": "Private"
+      },
+      {
+        "name": "_bobPos",
+        "type": "System.Int32",
+        "attrs": "Private"
+      },
+      {
+        "name": "_needleTimer",
+        "type": "System.Single",
+        "attrs": "Private"
+      },
+      {
+        "name": "_bobTimer",
+        "type": "System.Single",
+        "attrs": "Private"
+      },
+      {
+        "name": "_vfxTimer",
+        "type": "System.Single",
+        "attrs": "Private"
+      },
+      {
+        "name": "_restored",
+        "type": "System.Boolean",
+        "attrs": "Private"
+      },
+      {
+        "name": "_nullWarned",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_lastErrLog",
+        "type": "System.Single",
+        "attrs": "Private, Static"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentData",
+    "fields": [
+      {
+        "name": "UniqueId",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "Name",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "PortraitKey",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "PortraitTemplate",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "EquippedClothingId",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "EquippedClothingUid",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "TraffickerClothingId",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "EquippedAccessoryIds",
+        "type": "System.Collections.Generic.List`1<System.String>",
+        "attrs": "Public"
+      },
+      {
+        "name": "EquipStatsBoosted",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "EquipBonusScheme",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "AppliedBeautyBonus",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "AppliedBodyBonus",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "AppliedTemperamentBonus",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "AppliedAccessoryTemperamentBonus",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+        "attrs": "Public"
+      },
+      {
+        "name": "ClothingDurability",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "AgeStage",
+        "type": "RedLightDistrict.TalentAgeStage",
+        "attrs": "Public"
+      },
+      {
+        "name": "AgeProgressDays",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "VoiceSet",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Beauty",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Body",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Temperament",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Skill",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Spirit",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Food",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Drink",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Cleanliness",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Health",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Obedience",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "Affection",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "InternalSemenML",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "HasVirginTag",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsNamed",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsSick",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsLowSpirit",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsRefusing",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsLowObedience",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsCleanFreakRefusing",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsSedated",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsContracepted",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsLactated",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "IsOvulating",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "HasMilked",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "LactationPeriodDays",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "PregnancyDays",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "PregnancySrc",
+        "type": "RedLightDistrict.PregnancySource",
+        "attrs": "Public"
+      },
+      {
+        "name": "HasInteractedToday",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "InPrisonCell",
+        "type": "System.Boolean",
+        "attrs": "Public"
+      },
+      {
+        "name": "Traits",
+        "type": "System.Collections.Generic.List`1<System.String>",
+        "attrs": "Public"
+      },
+      {
+        "name": "UnlockedTraits",
+        "type": "System.Collections.Generic.List`1<System.String>",
+        "attrs": "Public"
+      },
+      {
+        "name": "PendingPickpocketDay",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "PurchasePrice",
+        "type": "System.Int64",
+        "attrs": "Public"
+      },
+      {
+        "name": "CumulativeRevenue",
+        "type": "System.Int64",
+        "attrs": "Public"
+      },
+      {
+        "name": "PositiveTraits",
+        "type": "System.String[]",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "NegativeTraits",
+        "type": "System.String[]",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "PREGNANCY_DAYS",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SPIRIT_MAX",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "SEMIN_MAX_ML",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      }
+    ],
+    "properties": [
+      {
+        "name": "IsLactating",
+        "type": "System.Boolean ()"
+      },
+      {
+        "name": "LactationPeriodText",
+        "type": "System.String ()"
+      },
+      {
+        "name": "IsPregnant",
+        "type": "System.Boolean ()"
+      },
+      {
+        "name": "IsDead",
+        "type": "System.Boolean ()"
+      },
+      {
+        "name": "IsUnsellableToPatron",
+        "type": "System.Boolean ()"
+      },
+      {
+        "name": "SemenRatio",
+        "type": "System.Single ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment",
+    "fields": [
+      {
+        "name": "EQUIPMENTS",
+        "type": "RedLightDistrict.TalentEquipment/EquipDef[]",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "CLOTHING_ID",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CLOTHING_NAME",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CLOTHING_SPRITE_KEY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_FILE",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MAID_ID",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "EQUIP_PRICE",
+        "type": "System.Int64",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "EQUIP_DURABILITY_MAX",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "DURABILITY_TAG",
+        "type": "System.String",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CLOTHING_UID_TAG",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "EQUIP_BEAUTY_BONUS",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "EQUIP_BONUS_STAT_NAMES",
+        "type": "System.String[]",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "BONUS_SCHEME_PER_STAT",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_GRID_W",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "ICON_SUBDIR",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_icons",
+        "type": "System.Collections.Generic.Dictionary`2<System.String,UnityEngine.Sprite>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_iconLogged",
+        "type": "System.Collections.Generic.HashSet`1<System.String>",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_iconDir",
+        "type": "System.String",
+        "attrs": "Private, Static"
+      }
+    ],
+    "properties": [
+      {
+        "name": "SewableDefs",
+        "type": "RedLightDistrict.TalentEquipment/EquipDef[] ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment/AppearanceStat",
+    "fields": [
+      {
+        "name": "value__",
+        "type": "System.Int32",
+        "attrs": "Public, SpecialName, RTSpecialName"
+      },
+      {
+        "name": "Beauty",
+        "type": "RedLightDistrict.TalentEquipment/AppearanceStat",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "Body",
+        "type": "RedLightDistrict.TalentEquipment/AppearanceStat",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "Temperament",
+        "type": "RedLightDistrict.TalentEquipment/AppearanceStat",
+        "attrs": "Public, Static, Literal, HasDefault"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment/EquipDef",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "System.String",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "Name",
+        "type": "System.String",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "IconFile",
+        "type": "System.String",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "SpriteKey",
+        "type": "System.String",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "FullTag",
+        "type": "System.String",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "Sewable",
+        "type": "System.Boolean",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "Price",
+        "type": "System.Int64",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "DurabilityMax",
+        "type": "System.Int32",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "BeautyBonus",
+        "type": "System.Int32",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "BodyBonus",
+        "type": "System.Int32",
+        "attrs": "Public, InitOnly"
+      },
+      {
+        "name": "TemperamentBonus",
+        "type": "System.Int32",
+        "attrs": "Public, InitOnly"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0",
+    "fields": [
+      {
+        "name": "def",
+        "type": "RedLightDistrict.TalentEquipment/EquipDef",
+        "attrs": "Public"
+      },
+      {
+        "name": "id",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "name",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "key",
+        "type": "System.String",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0",
+    "fields": [
+      {
+        "name": "value",
+        "type": "System.Int32",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0",
+    "fields": [
+      {
+        "name": "payload",
+        "type": "System.String",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel",
+    "fields": [
+      {
+        "name": "_current",
+        "type": "RedLightDistrict.TalentData",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_releaseArmedId",
+        "type": "System.String",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_releaseElem",
+        "type": "CustomUIElement",
+        "attrs": "Private, Static"
+      }
+    ],
+    "properties": [
+      {
+        "name": "IsOpen",
+        "type": "System.Boolean ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c",
+    "fields": [
+      {
+        "name": "<>9",
+        "type": "RedLightDistrict.TalentPanel/<>c",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "<>9__9_0",
+        "type": "System.Action",
+        "attrs": "Public, Static"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass12_0",
+    "fields": [
+      {
+        "name": "data",
+        "type": "RedLightDistrict.TalentData",
+        "attrs": "Public"
+      },
+      {
+        "name": "item",
+        "type": "GameItem",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass15_0",
+    "fields": [
+      {
+        "name": "data",
+        "type": "RedLightDistrict.TalentData",
+        "attrs": "Public"
+      },
+      {
+        "name": "item",
+        "type": "GameItem",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_0",
+    "fields": [
+      {
+        "name": "data",
+        "type": "RedLightDistrict.TalentData",
+        "attrs": "Public"
+      },
+      {
+        "name": "item",
+        "type": "GameItem",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_1",
+    "fields": [
+      {
+        "name": "aid",
+        "type": "System.String",
+        "attrs": "Public"
+      },
+      {
+        "name": "CS$<>8__locals1",
+        "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_0",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_2",
+    "fields": [
+      {
+        "name": "cfg",
+        "type": "System.ValueTuple`3<System.String,RedLightDistrict.TalentSystem/TalentAction,System.Int32>",
+        "attrs": "Public"
+      },
+      {
+        "name": "CS$<>8__locals2",
+        "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_0",
+        "attrs": "Public"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentScenarioMaid",
+    "fields": [
+      {
+        "name": "SaveMarker",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MaidScenarioId",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "MAID_PORTRAIT_KEY",
+        "type": "System.String",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_maidOutfitEnsured",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_maidDiagLogged",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_maidHeartbeatLogged",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_maidAutoClothed",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "selected",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "grantedThisStart",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "pendingGrant",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "newGameInit",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_scenarioIconSprite",
+        "type": "UnityEngine.Sprite",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_scenarioIconWarnLogged",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "START_ITEMS",
+        "type": "System.ValueTuple`2<System.String,System.Int32>[]",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_maidResidentAttempts",
+        "type": "System.Int32",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "_maidHeavyFrame",
+        "type": "System.Int32",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "MAID_HEAVY_FRAME_STRIDE",
+        "type": "System.Int32",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_maidRenderLatched",
+        "type": "System.Boolean",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "PLACE_ORDER",
+        "type": "System.String[]",
+        "attrs": "Private, Static, InitOnly"
+      },
+      {
+        "name": "_maidVerifyFrames",
+        "type": "System.Int32",
+        "attrs": "Private, Static"
+      }
+    ],
+    "properties": [
+      {
+        "name": "IsSelected",
+        "type": "System.Boolean ()"
+      },
+      {
+        "name": "DisplayName",
+        "type": "System.String ()"
+      },
+      {
+        "name": "Description",
+        "type": "System.String ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.TalentScenarioMaid/<>c",
+    "fields": [
+      {
+        "name": "<>9",
+        "type": "RedLightDistrict.TalentScenarioMaid/<>c",
+        "attrs": "Public, Static, InitOnly"
+      },
+      {
+        "name": "<>9__51_0",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_1",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_2",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_3",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_4",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_5",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_6",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_7",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_8",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_9",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_10",
+        "type": "System.Action",
+        "attrs": "Public, Static"
+      },
+      {
+        "name": "<>9__51_11",
+        "type": "System.Func`1<System.String>",
+        "attrs": "Public, Static"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "type": "RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26",
+    "fields": [
+      {
+        "name": "<>1__state",
+        "type": "System.Int32",
+        "attrs": "Private"
+      },
+      {
+        "name": "<>2__current",
+        "type": "System.Object",
+        "attrs": "Private"
+      },
+      {
+        "name": "frames",
+        "type": "System.Int32",
+        "attrs": "Public"
+      },
+      {
+        "name": "<i>5__2",
+        "type": "System.Int32",
+        "attrs": "Private"
+      }
+    ],
+    "properties": [
+      {
+        "name": "System.Collections.Generic.IEnumerator<System.Object>.Current",
+        "type": "System.Object ()"
+      },
+      {
+        "name": "System.Collections.IEnumerator.Current",
+        "type": "System.Object ()"
+      }
+    ]
+  },
+  {
+    "type": "RedLightDistrict.TalentTraits",
+    "fields": [
+      {
+        "name": "T_PICKPOCKET",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_VIGOROUS",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_QUICK_LEARNER",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_TIDY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_STUNNING",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_GRACEFUL",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_ELEGANT",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_DEPRESSION",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_CHARMING",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_THRIFTY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_OBEDIENT",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_AIRHEAD",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_EXTRACT",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_SALES_STAR",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_MASOCHIST",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_CLEAN_FREAK",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CLEAN_FREAK_THRESHOLD",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_BINGE",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_LAZY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_SELF_HARM",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_CLUMSY",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_BAD_REVIEW",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "T_TAILOR",
+        "type": "System.String",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CheapMinValue",
+        "type": "System.Int64",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "CheapMaxValue",
+        "type": "System.Int64",
+        "attrs": "Private, Static, Literal, HasDefault"
+      },
+      {
+        "name": "_cheapIds",
+        "type": "System.Collections.Generic.List`1<System.String>",
+        "attrs": "Private, Static"
+      },
+      {
+        "name": "SALES_STAR_PRICE_MULT",
+        "type": "System.Double",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "BASE_FOOD_COST",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      },
+      {
+        "name": "BASE_DRINK_COST",
+        "type": "System.Int32",
+        "attrs": "Public, Static, Literal, HasDefault"
+      }
+    ],
+    "properties": []
+  }
+]
