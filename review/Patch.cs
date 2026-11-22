@@ -26,7 +26,7 @@ class P {
     static MethodDef Method(ModuleDefMD m,string name)=>Methods(m).Single(x=>x.FullName==name);
     static string Canon(string s)=>Regex.Replace(Regex.Replace(s,@"DisplayClass\d+_","DisplayClass#_"),@"b__\d+_","b__#_");
     static string Shape(Instruction i,bool ignoreText=false,bool compiler=false){
-       string op=OpName(i),v=i.Operand switch{null=>"",Instruction=>"@",IList<Instruction>=>"@switch",_=>i.Operand.ToString()??""};
+       string op=OpName(i),v=i.Operand switch{null=>"",Instruction _ => "@",IList<Instruction> _ => "@switch",_=>i.Operand.ToString()??""};
        if(ignoreText&&i.OpCode==OpCodes.Ldstr)v="<literal>";
        if(compiler)v=Canon(Regex.Replace(v,@"<>9__\d+_","<>9__#_"));
        return op+"|"+v;
