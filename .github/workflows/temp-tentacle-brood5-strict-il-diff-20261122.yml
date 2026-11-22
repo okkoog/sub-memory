@@ -1,0 +1,133 @@
+name: Compare Brood reserialized DLL with exact five-label original
+on:
+  push:
+    paths:
+      - .github/workflows/temp-tentacle-brood5-strict-il-diff-20261122.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/lewdMemeBrood v0331
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+          sparse-checkout-cone-mode: false
+      - name: Load pre-patch reference DLL from pinned commit
+        shell: bash
+        run: |
+          git fetch --depth=1 origin f9340a1e7f9f12a1c71f5a2d11e814cd7805b0a2
+          git show 'f9340a1e7f9f12a1c71f5a2d11e814cd7805b0a2:probably-stolen/local-mods/TentacleMod번역/lewdMemeBrood v0331/LewdMemeBrood.dll' > /tmp/brood-prepatch.dll
+          test "$(wc -c </tmp/brood-prepatch.dll)" = "516096"
+      - name: Verify all IL instructions, method signatures and resources
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 --force -o /tmp/brood5-diff
+          dotnet add /tmp/brood5-diff/brood5-diff.csproj package dnlib --version 4.5.0
+          cat > /tmp/brood5-diff/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class Program {
+            static int Main() {
+              var beforePath="/tmp/brood-prepatch.dll";
+              var afterPath="probably-stolen/local-mods/TentacleMod번역/lewdMemeBrood v0331/LewdMemeBrood.dll";
+              using var before=ModuleDefMD.Load(beforePath);
+              using var after=ModuleDefMD.Load(afterPath);
+              var oldTypes=before.GetTypes().ToArray();
+              var newTypes=after.GetTypes().ToArray();
+              if(oldTypes.Length!=newTypes.Length)throw new Exception("TypeDef count changed");
+              var oldMethods=oldTypes.SelectMany(x=>x.Methods).ToArray();
+              var newMethods=newTypes.SelectMany(x=>x.Methods).ToArray();
+              if(oldMethods.Length!=newMethods.Length)throw new Exception("MethodDef count changed");
+              var oldFields=oldTypes.SelectMany(x=>x.Fields).ToArray();
+              var newFields=newTypes.SelectMany(x=>x.Fields).ToArray();
+              if(oldFields.Length!=newFields.Length)throw new Exception("FieldDef count changed");
+              var trans=new Dictionary<string,string>{
+                ["萝莉 → 少女"]="로리 → 소녀",
+                ["少女 → 御姐"]="소녀 → 누님",
+                ["御姐 → 少妇"]="누님 → 새댁",
+                ["少妇 → 熟女"]="새댁 → 숙녀",
+                ["熟女为止"]="숙녀까지"};
+              var changed=trans.Keys.ToDictionary(x=>x,x=>0);
+              var errors=new List<string>();
+              for(int i=0;i<oldMethods.Length;i++) {
+                var o=oldMethods[i]; var n=newMethods[i];
+                if(o.FullName!=n.FullName)errors.Add("Signature changed: "+o.FullName);
+                if(o.HasBody!=n.HasBody){errors.Add("Body presence changed: "+o.FullName);continue;}
+                if(!o.HasBody)continue;
+                var oi=o.Body.Instructions;var ni=n.Body.Instructions;
+                if(oi.Count!=ni.Count){errors.Add("Instruction count changed: "+o.FullName);continue;}
+                string Norm(Instruction ins, IList<Instruction> instr) {
+                  if(ins.Operand is Instruction dest)return "BR:"+instr.IndexOf(dest);
+                  if(ins.Operand is IList<Instruction> destinations)return "SW:"+string.Join(",",destinations.Select(dest=>instr.IndexOf(dest)));
+                  if(ins.Operand is Local local)return "LOC:"+local.Index;
+                  if(ins.Operand is Parameter prm)return "PARAM:"+prm.Index;
+                  if(ins.Operand is IMethod method)return "METHOD:"+method.FullName;
+                  if(ins.Operand is IField field)return "FIELD:"+field.FullName;
+                  if(ins.Operand is ITypeDefOrRef tr)return "TYPE:"+tr.FullName;
+                  return ins.Operand?.ToString()??"";
+                }
+                for(int j=0;j<oi.Count;j++) {
+                  var a=oi[j];var b=ni[j];
+                  if(a.OpCode!=b.OpCode){errors.Add("Op changed "+o.FullName+" ins#"+j);continue;}
+                  var valA=Norm(a,oi);var valB=Norm(b,ni);
+                  if(valA==valB)continue;
+                  if(a.OpCode==OpCodes.Ldstr&&trans.TryGetValue(valA,out var expected)&&expected==valB&&o.Name.ToString().Contains("RegisterTests")) {
+                    changed[valA]++;continue;
+                  }
+                  errors.Add("Unexpected operand change "+o.FullName+" ins#"+j+" "+valA+" -> "+valB);
+                }
+              }
+              if(errors.Count>0)throw new Exception(string.Join("\n",errors.Take(20)));
+              if(changed.Values.Any(x=>x!=1))throw new Exception("Missing/duplicate expected edits: "+string.Join(",",changed.Select(x=>x.Key+":"+x.Value)));
+              if(before.Resources.Count!=after.Resources.Count)throw new Exception("Resource count changed");
+              for(int i=0;i<before.Resources.Count;i++){
+                var o=before.Resources[i];var n=after.Resources[i];
+                if(o.Name!=n.Name||o.ResourceType!=n.ResourceType)throw new Exception("Resource changed: "+o.Name);
+                if(o is EmbeddedResource e && n is EmbeddedResource f && !e.GetResourceData().SequenceEqual(f.GetResourceData()))
+                  throw new Exception("Resource bytes changed: "+o.Name);
+              }
+              var lines=new []{
+                "# Brood five stage labels — strict before/after IL and resource diff",
+                "",
+                "- Reference commit: `f9340a1e7f9f12a1c71f5a2d11e814cd7805b0a2` (prepatch 516,096-byte Korean DLL)",
+                "- TypeDef count: "+oldTypes.Length+" unchanged",
+                "- MethodDef count: "+oldMethods.Length+" unchanged",
+                "- FieldDef count: "+oldFields.Length+" unchanged",
+                "- Managed resources: "+before.Resources.Count+" unchanged, embedded bytes identical",
+                "- All method instruction opcodes and operand values identical except the five listed `ldstr` display labels in `RegisterTests`.",
+                "- Intended display-string changes: "+string.Join("; ",changed.Select(x=>x.Key+" -> "+trans[x.Key]))+".",
+                "- Unexpected IL changes: 0",
+                "- Note: This compares parsed CIL semantics and resources; binary layout and metadata offsets can differ with dnlib reserialization.",
+                "- Actual game/CLR execution untested."
+              };
+              var path="probably-stolen/local-mods/TentacleMod번역/번역대조표/Brood_STAGE_5_STRICT_IL_DIFF_20261122.md";
+              File.WriteAllText(path,string.Join("\n",lines)+"\n");
+              Console.WriteLine(string.Join("\n",lines));
+              return 0;
+            }
+          }
+          CS
+          dotnet run --project /tmp/brood5-diff/brood5-diff.csproj -c Release
+      - name: Commit strict diff audit
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse probably-stolen/local-mods/TentacleMod번역/번역대조표/Brood_STAGE_5_STRICT_IL_DIFF_20261122.md
+          git commit -m 'audit(tentacle): confirm only five Brood display IL literals changed'
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
