@@ -1,0 +1,2435 @@
+{
+  "previousDllHash": "7d4064f4e67ee072d926ec1bac3666f7fd5e3687e5fe8a5a62fd61145ef98f9d",
+  "finalDllHash": "0bef61d390ffa9f3377a7001678ebafad9eb0b2f2200ffce83e2ff4f9110fe55",
+  "comparedMethods": 651,
+  "literalPatches": 6,
+  "insertedCalls": 90,
+  "embeddedHelperMethods": 8,
+  "gameNameBoundaries": 5,
+  "gameChoiceBoundaries": 1,
+  "unchangedResources": 0,
+  "boundaries": [
+    {
+      "token": "060000C1",
+      "method": "StoreClient MidnightPawn.Game.MaidenBuyer::CreateBuyer(System.Int32,System.Int32)",
+      "offset": 321,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/<>c__DisplayClass10_0::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000C1",
+      "method": "StoreClient MidnightPawn.Game.MaidenBuyer::CreateBuyer(System.Int32,System.Int32)",
+      "offset": 374,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/<>c__DisplayClass10_0::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000C1",
+      "method": "StoreClient MidnightPawn.Game.MaidenBuyer::CreateBuyer(System.Int32,System.Int32)",
+      "offset": 424,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/<>c__DisplayClass10_0::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000CF",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::RefreshAcceptLine(StoreClient,GameItem)",
+      "offset": 45,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000CF",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::RefreshAcceptLine(StoreClient,GameItem)",
+      "offset": 129,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000D7",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::ShowSecurityRefusal(StoreClient)",
+      "offset": 44,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000D7",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::ShowSecurityRefusal(StoreClient)",
+      "offset": 57,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000D8",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::HandleSale(StoreClient,GameItem,System.Int32)",
+      "offset": 408,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::MaidenSummary(GameItem)",
+      "offset": 34,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer::TagStr(GameItem,System.String)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::MaidenSummary(GameItem)",
+      "offset": 45,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer::TagStr(GameItem,System.String)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::MaidenSummary(GameItem)",
+      "offset": 56,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer::TagStr(GameItem,System.String)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000DF",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::MaidenSummary(GameItem)",
+      "offset": 67,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer::TagStr(GameItem,System.String)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000E4",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::BuildReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "offset": 13,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000E4",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::BuildReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "offset": 42,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000E4",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::BuildReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "offset": 90,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/Check::Label",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000E4",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::BuildReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "offset": 96,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/Check::Expected",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "060000E4",
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::BuildReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "offset": 102,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/Check::Actual",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 175,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 193,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 224,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 242,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 260,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 445,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000150",
+      "method": "System.String MidnightPawn.Game.MaidenLedger::DescribeData(System.String[])",
+      "offset": 469,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000170",
+      "method": "System.String MidnightPawn.Game.MaidenText::Fill(System.String,GameItem,System.Boolean)",
+      "offset": 23,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenText::Faction(GameItem)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000170",
+      "method": "System.String MidnightPawn.Game.MaidenText::Fill(System.String,GameItem,System.Boolean)",
+      "offset": 39,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenText::Job(GameItem)",
+      "helper": "Display",
+      "reason": "Audited output-only field/call load, preserve stored and compared values"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 73,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 87,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 118,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 132,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 160,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 174,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 197,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 216,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 239,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000106",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeFactionPref(System.String,System.String)",
+      "offset": 258,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 73,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 87,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 118,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 132,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 155,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 174,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 197,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 211,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 239,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000108",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBodyPref(System.String,System.String)",
+      "offset": 258,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 73,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 87,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 118,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 132,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 155,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 174,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 197,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 211,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 239,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "0600010A",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeVirginPref(System.String,System.String)",
+      "offset": 253,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Preference value in existing display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 73,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 87,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 118,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 137,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 165,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 179,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 207,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 221,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 249,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000107",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeJobPref(System.String,System.String)",
+      "offset": 263,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 73,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 87,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 118,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 132,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 155,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 174,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 197,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 211,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 239,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000109",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeBreastPref(System.String,System.String)",
+      "offset": 253,
+      "opcode": "ldarg.0",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Job/breast preference display concatenation"
+    },
+    {
+      "token": "06000102",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeNeutral(System.String[])",
+      "offset": 106,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Neutral preference display value"
+    },
+    {
+      "token": "06000102",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeNeutral(System.String[])",
+      "offset": 122,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Neutral preference display value"
+    },
+    {
+      "token": "06000102",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeNeutral(System.String[])",
+      "offset": 138,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Neutral preference display value"
+    },
+    {
+      "token": "06000102",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeNeutral(System.String[])",
+      "offset": 154,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Neutral preference display value"
+    },
+    {
+      "token": "06000102",
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::DescribeNeutral(System.String[])",
+      "offset": 170,
+      "opcode": "ldelem.ref",
+      "operand": "",
+      "helper": "Display",
+      "reason": "Neutral preference display value"
+    },
+    {
+      "token": "0600016C",
+      "method": "System.String MidnightPawn.Game.MaidenText::Pregnancy(GameItem)",
+      "offset": 57,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenText::Faction(GameItem)",
+      "helper": "Display",
+      "reason": "Display-only semantic field, not source attribute"
+    },
+    {
+      "token": "0600016C",
+      "method": "System.String MidnightPawn.Game.MaidenText::Pregnancy(GameItem)",
+      "offset": 74,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenText::Job(GameItem)",
+      "helper": "Display",
+      "reason": "Display-only semantic field, not source attribute"
+    },
+    {
+      "token": "0600016D",
+      "method": "System.String MidnightPawn.Game.MaidenText::Birth(GameItem,GameItem)",
+      "offset": 8,
+      "opcode": "call",
+      "operand": "System.String MidnightPawn.Game.MaidenText::Faction(GameItem)",
+      "helper": "Display",
+      "reason": "Display-only semantic field, not source attribute"
+    },
+    {
+      "token": "060000BF",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::OnGenerateCustomerVeryLate(StoreClientManager)",
+      "offset": 354,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Log/dialogue display name"
+    },
+    {
+      "token": "060000C0",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::DebugSpawn()",
+      "offset": 94,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Log/dialogue display name"
+    },
+    {
+      "token": "060000D0",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::ResetAcceptLine(StoreClient)",
+      "offset": 28,
+      "opcode": "ldfld",
+      "operand": "System.String StoreClient::displayName",
+      "helper": "Display",
+      "reason": "Log/dialogue display name"
+    },
+    {
+      "token": "060000EB",
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer/<>c__DisplayClass10_0::<CreateBuyer>b__3()",
+      "offset": 1,
+      "opcode": "ldfld",
+      "operand": "System.String MidnightPawn.Game.MaidenBuyer/<>c__DisplayClass10_0::displayName",
+      "helper": "Display",
+      "reason": "Toast buyer name"
+    },
+    {
+      "token": "06000008",
+      "method": "System.Void MidnightPawn.ModEntry::Init(ModManifest)",
+      "offset": 137,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.Game.ModSettings::Init()",
+      "helper": "Install",
+      "reason": "Install mod-scoped display patches after settings initialize"
+    },
+    {
+      "token": "0600000E",
+      "method": "System.Void MidnightPawn.ModEntry::OnDisable()",
+      "offset": 271,
+      "opcode": "call",
+      "operand": "System.Void MidnightPawn.Game.MaidenTooltip::Unregister()",
+      "helper": "Uninstall",
+      "reason": "Remove only own display patch ID on disable"
+    }
+  ],
+  "protectedCjk": [
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 8,
+      "source": "萝莉",
+      "oldToken": "060000BE",
+      "oldOffset": 8,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 16,
+      "source": "少女",
+      "oldToken": "060000BE",
+      "oldOffset": 16,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 35,
+      "source": "御姐",
+      "oldToken": "060000BE",
+      "oldOffset": 35,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 43,
+      "source": "少妇",
+      "oldToken": "060000BE",
+      "oldOffset": 43,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 51,
+      "source": "熟女",
+      "oldToken": "060000BE",
+      "oldOffset": 51,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 59,
+      "source": "萝莉",
+      "oldToken": "060000BE",
+      "oldOffset": 59,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenAgeFilter::.cctor()",
+      "token": "060000BE",
+      "offset": 67,
+      "source": "少女",
+      "oldToken": "060000BE",
+      "oldOffset": 67,
+      "reason": "Original classification input; age logic untouched."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 71,
+      "source": "下层区",
+      "oldToken": "060000C6",
+      "oldOffset": 71,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 79,
+      "source": "上层区",
+      "oldToken": "060000C6",
+      "oldOffset": 79,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 87,
+      "source": "治安部",
+      "oldToken": "060000C6",
+      "oldOffset": 87,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 95,
+      "source": "革命军",
+      "oldToken": "060000C6",
+      "oldOffset": 95,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 133,
+      "source": "下层区",
+      "oldToken": "060000C6",
+      "oldOffset": 133,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 141,
+      "source": "黑市",
+      "oldToken": "060000C6",
+      "oldOffset": 141,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 149,
+      "source": "治安部",
+      "oldToken": "060000C6",
+      "oldOffset": 149,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 157,
+      "source": "革命军",
+      "oldToken": "060000C6",
+      "oldOffset": 157,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 195,
+      "source": "下层区",
+      "oldToken": "060000C6",
+      "oldOffset": 195,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 203,
+      "source": "上层区",
+      "oldToken": "060000C6",
+      "oldOffset": 203,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 211,
+      "source": "黑市",
+      "oldToken": "060000C6",
+      "oldOffset": 211,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 219,
+      "source": "革命军",
+      "oldToken": "060000C6",
+      "oldOffset": 219,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 254,
+      "source": "下层区",
+      "oldToken": "060000C6",
+      "oldOffset": 254,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 262,
+      "source": "上层区",
+      "oldToken": "060000C6",
+      "oldOffset": 262,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 270,
+      "source": "黑市",
+      "oldToken": "060000C6",
+      "oldOffset": 270,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 278,
+      "source": "治安部",
+      "oldToken": "060000C6",
+      "oldOffset": 278,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 313,
+      "source": "上层区",
+      "oldToken": "060000C6",
+      "oldOffset": 313,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 321,
+      "source": "黑市",
+      "oldToken": "060000C6",
+      "oldOffset": 321,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 329,
+      "source": "治安部",
+      "oldToken": "060000C6",
+      "oldOffset": 329,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickFactionPreference(System.String)",
+      "token": "060000C6",
+      "offset": 337,
+      "source": "革命军",
+      "oldToken": "060000C6",
+      "oldOffset": 337,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickVirgin()",
+      "token": "060000C9",
+      "offset": 14,
+      "source": "处女",
+      "oldToken": "060000C9",
+      "oldOffset": 14,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickVirgin()",
+      "token": "060000C9",
+      "offset": 25,
+      "source": "双处女",
+      "oldToken": "060000C9",
+      "oldOffset": 25,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyer::PickVirgin()",
+      "token": "060000C9",
+      "offset": 31,
+      "source": "肛门处女",
+      "oldToken": "060000C9",
+      "oldOffset": 31,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::RefreshAcceptLine(StoreClient,GameItem)",
+      "token": "060000CF",
+      "offset": 102,
+      "source": "治安部",
+      "oldToken": "060000CF",
+      "oldOffset": 97,
+      "reason": "Original comparison or shared check field; receipt display copy translated."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::HandleSale(StoreClient,GameItem,System.Int32)",
+      "token": "060000D8",
+      "offset": 83,
+      "source": "治安部",
+      "oldToken": "060000D8",
+      "oldOffset": 83,
+      "reason": "Original comparison or shared check field; receipt display copy translated."
+    },
+    {
+      "method": "System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check> MidnightPawn.Game.MaidenBuyer::Evaluate(StoreClient,GameItem)",
+      "token": "060000D9",
+      "offset": 400,
+      "source": "处女",
+      "oldToken": "060000D9",
+      "oldOffset": 400,
+      "reason": "Original comparison or shared check field; receipt display copy translated."
+    },
+    {
+      "method": "System.Boolean MidnightPawn.Game.MaidenBuyer::VirginMatches(GameItem,System.String)",
+      "token": "060000DB",
+      "offset": 25,
+      "source": "双处女",
+      "oldToken": "060000DB",
+      "oldOffset": 25,
+      "reason": "Original comparison or shared check field; receipt display copy translated."
+    },
+    {
+      "method": "System.Boolean MidnightPawn.Game.MaidenBuyer::VirginMatches(GameItem,System.String)",
+      "token": "060000DB",
+      "offset": 38,
+      "source": "肛门处女",
+      "oldToken": "060000DB",
+      "oldOffset": 38,
+      "reason": "Original comparison or shared check field; receipt display copy translated."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::SpawnReceipt(StoreClient,GameItem,System.Collections.Generic.List`1<MidnightPawn.Game.MaidenBuyer/Check>,System.Int32,System.Double,System.Boolean,System.Int64,System.Int64)",
+      "token": "060000E2",
+      "offset": 37,
+      "source": "苗床收购回执",
+      "oldToken": "060000E2",
+      "oldOffset": 37,
+      "reason": "Original stored receipt title and exact comparison; visible title translated separately."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::RepairReceipts()",
+      "token": "060000E3",
+      "offset": 66,
+      "source": "苗床收购回执",
+      "oldToken": "060000E3",
+      "oldOffset": 66,
+      "reason": "Original stored receipt title and exact comparison; visible title translated separately."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::.cctor()",
+      "token": "060000E5",
+      "offset": 51,
+      "source": "御姐",
+      "oldToken": "060000E5",
+      "oldOffset": 51,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::.cctor()",
+      "token": "060000E5",
+      "offset": 59,
+      "source": "少妇",
+      "oldToken": "060000E5",
+      "oldOffset": 59,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::.cctor()",
+      "token": "060000E5",
+      "offset": 67,
+      "source": "熟女",
+      "oldToken": "060000E5",
+      "oldOffset": 67,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::.cctor()",
+      "token": "060000E5",
+      "offset": 75,
+      "source": "少女",
+      "oldToken": "060000E5",
+      "oldOffset": 75,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenBuyer::.cctor()",
+      "token": "060000E5",
+      "offset": 83,
+      "source": "萝莉",
+      "oldToken": "060000E5",
+      "oldOffset": 83,
+      "reason": "Original preference selection token."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "token": "060000F7",
+      "offset": 54,
+      "source": "黑市",
+      "oldToken": "060000F7",
+      "oldOffset": 54,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "token": "060000F7",
+      "offset": 62,
+      "source": "上层区",
+      "oldToken": "060000F7",
+      "oldOffset": 62,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "token": "060000F7",
+      "offset": 70,
+      "source": "治安部",
+      "oldToken": "060000F7",
+      "oldOffset": 70,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "token": "060000F7",
+      "offset": 78,
+      "source": "革命军",
+      "oldToken": "060000F7",
+      "oldOffset": 78,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::FactionName(System.String)",
+      "token": "060000F7",
+      "offset": 86,
+      "source": "下层区",
+      "oldToken": "060000F7",
+      "oldOffset": 86,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenBuyerText::BuyerDisplayName(System.String)",
+      "token": "060000F8",
+      "offset": 6,
+      "source": "收购商",
+      "oldToken": "060000F8",
+      "oldOffset": 6,
+      "reason": "Shared raw identity, dialogue and game name display copies translated."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::YoungPairLines(System.String,System.String)",
+      "token": "0600010C",
+      "offset": 1,
+      "source": "黑市",
+      "oldToken": "0600010C",
+      "oldOffset": 1,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::YoungPairLines(System.String,System.String)",
+      "token": "0600010C",
+      "offset": 14,
+      "source": "上层区",
+      "oldToken": "0600010C",
+      "oldOffset": 14,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::YoungPairLines(System.String,System.String)",
+      "token": "0600010C",
+      "offset": 27,
+      "source": "治安部",
+      "oldToken": "0600010C",
+      "oldOffset": 27,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::YoungPairLines(System.String,System.String)",
+      "token": "0600010C",
+      "offset": 40,
+      "source": "革命军",
+      "oldToken": "0600010C",
+      "oldOffset": 40,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 200,
+      "source": "黑市|下层区",
+      "oldToken": "0600010D",
+      "oldOffset": 200,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 216,
+      "source": "黑市|上层区",
+      "oldToken": "0600010D",
+      "oldOffset": 216,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 232,
+      "source": "黑市|治安部",
+      "oldToken": "0600010D",
+      "oldOffset": 232,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 248,
+      "source": "黑市|革命军",
+      "oldToken": "0600010D",
+      "oldOffset": 248,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 269,
+      "source": "上层区|黑市",
+      "oldToken": "0600010D",
+      "oldOffset": 269,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 290,
+      "source": "治安部|黑市",
+      "oldToken": "0600010D",
+      "oldOffset": 290,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 311,
+      "source": "革命军|黑市",
+      "oldToken": "0600010D",
+      "oldOffset": 311,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 332,
+      "source": "下层区|黑市",
+      "oldToken": "0600010D",
+      "oldOffset": 332,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 353,
+      "source": "黑市|黑市",
+      "oldToken": "0600010D",
+      "oldOffset": 353,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 374,
+      "source": "上层区|下层区",
+      "oldToken": "0600010D",
+      "oldOffset": 374,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 390,
+      "source": "上层区|上层区",
+      "oldToken": "0600010D",
+      "oldOffset": 390,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 406,
+      "source": "上层区|治安部",
+      "oldToken": "0600010D",
+      "oldOffset": 406,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 422,
+      "source": "上层区|革命军",
+      "oldToken": "0600010D",
+      "oldOffset": 422,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 443,
+      "source": "治安部|下层区",
+      "oldToken": "0600010D",
+      "oldOffset": 443,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 459,
+      "source": "治安部|上层区",
+      "oldToken": "0600010D",
+      "oldOffset": 459,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 475,
+      "source": "治安部|革命军",
+      "oldToken": "0600010D",
+      "oldOffset": 475,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 491,
+      "source": "治安部|治安部",
+      "oldToken": "0600010D",
+      "oldOffset": 491,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 512,
+      "source": "革命军|下层区",
+      "oldToken": "0600010D",
+      "oldOffset": 512,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 528,
+      "source": "革命军|上层区",
+      "oldToken": "0600010D",
+      "oldOffset": 528,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 544,
+      "source": "革命军|治安部",
+      "oldToken": "0600010D",
+      "oldOffset": 544,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 560,
+      "source": "革命军|革命军",
+      "oldToken": "0600010D",
+      "oldOffset": 560,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 581,
+      "source": "下层区|下层区",
+      "oldToken": "0600010D",
+      "oldOffset": 581,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 597,
+      "source": "下层区|上层区",
+      "oldToken": "0600010D",
+      "oldOffset": 597,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 613,
+      "source": "下层区|治安部",
+      "oldToken": "0600010D",
+      "oldOffset": 613,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String[] MidnightPawn.Game.MaidenBuyerText::AdultPairLines(System.String,System.String)",
+      "token": "0600010D",
+      "offset": 629,
+      "source": "下层区|革命军",
+      "oldToken": "0600010D",
+      "oldOffset": 629,
+      "reason": "Exact faction dispatch comparisons, unchanged."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenLedger::BuildRecord(GameItem,StoreClient,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Int64,System.Int64)",
+      "token": "06000153",
+      "offset": 398,
+      "source": "收购商",
+      "oldToken": "06000153",
+      "oldOffset": 398,
+      "reason": "Stored ledger fields; display transformation at DescribeData."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenLedger::VirginState(GameItem)",
+      "token": "0600015B",
+      "offset": 29,
+      "source": "双处女",
+      "oldToken": "0600015B",
+      "oldOffset": 29,
+      "reason": "Stored ledger fields; display transformation at DescribeData."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenLedger::VirginState(GameItem)",
+      "token": "0600015B",
+      "offset": 38,
+      "source": "处女",
+      "oldToken": "0600015B",
+      "oldOffset": 38,
+      "reason": "Stored ledger fields; display transformation at DescribeData."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenLedger::VirginState(GameItem)",
+      "token": "0600015B",
+      "offset": 47,
+      "source": "肛门处女",
+      "oldToken": "0600015B",
+      "oldOffset": 47,
+      "reason": "Stored ledger fields; display transformation at DescribeData."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenLedger::VirginState(GameItem)",
+      "token": "0600015B",
+      "offset": 53,
+      "source": "非处女",
+      "oldToken": "0600015B",
+      "oldOffset": 53,
+      "reason": "Stored ledger fields; display transformation at DescribeData."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::FactionFlavor(System.String)",
+      "token": "06000173",
+      "offset": 1,
+      "source": "上层区",
+      "oldToken": "06000173",
+      "oldOffset": 1,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::FactionFlavor(System.String)",
+      "token": "06000173",
+      "offset": 14,
+      "source": "治安部",
+      "oldToken": "06000173",
+      "oldOffset": 14,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::FactionFlavor(System.String)",
+      "token": "06000173",
+      "offset": 27,
+      "source": "黑市",
+      "oldToken": "06000173",
+      "oldOffset": 27,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::FactionFlavor(System.String)",
+      "token": "06000173",
+      "offset": 40,
+      "source": "革命军",
+      "oldToken": "06000173",
+      "oldOffset": 40,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BodyFlavorAdult(System.String)",
+      "token": "06000175",
+      "offset": 1,
+      "source": "御姐",
+      "oldToken": "06000175",
+      "oldOffset": 1,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BodyFlavorAdult(System.String)",
+      "token": "06000175",
+      "offset": 14,
+      "source": "少妇",
+      "oldToken": "06000175",
+      "oldOffset": 14,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BodyFlavorAdult(System.String)",
+      "token": "06000175",
+      "offset": 27,
+      "source": "熟女",
+      "oldToken": "06000175",
+      "oldOffset": 27,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BodyFlavorYoung(System.String)",
+      "token": "06000176",
+      "offset": 1,
+      "source": "少女",
+      "oldToken": "06000176",
+      "oldOffset": 1,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BodyFlavorYoung(System.String)",
+      "token": "06000176",
+      "offset": 14,
+      "source": "萝莉",
+      "oldToken": "06000176",
+      "oldOffset": 14,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::Faction(GameItem)",
+      "token": "06000178",
+      "offset": 22,
+      "source": "下层区",
+      "oldToken": "06000178",
+      "oldOffset": 22,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 352,
+      "source": "拾荒者",
+      "oldToken": "0600017A",
+      "oldOffset": 352,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 373,
+      "source": "雇佣兵",
+      "oldToken": "0600017A",
+      "oldOffset": 373,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 394,
+      "source": "工程师",
+      "oldToken": "0600017A",
+      "oldOffset": 394,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 415,
+      "source": "维修工",
+      "oldToken": "0600017A",
+      "oldOffset": 415,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 436,
+      "source": "农场主",
+      "oldToken": "0600017A",
+      "oldOffset": 436,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 457,
+      "source": "研究员",
+      "oldToken": "0600017A",
+      "oldOffset": 457,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 478,
+      "source": "走私者",
+      "oldToken": "0600017A",
+      "oldOffset": 478,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 499,
+      "source": "清洁员",
+      "oldToken": "0600017A",
+      "oldOffset": 499,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 520,
+      "source": "货运员",
+      "oldToken": "0600017A",
+      "oldOffset": 520,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 541,
+      "source": "矿工",
+      "oldToken": "0600017A",
+      "oldOffset": 541,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 562,
+      "source": "技师",
+      "oldToken": "0600017A",
+      "oldOffset": 562,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 583,
+      "source": "护士",
+      "oldToken": "0600017A",
+      "oldOffset": 583,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 604,
+      "source": "医生",
+      "oldToken": "0600017A",
+      "oldOffset": 604,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 625,
+      "source": "厨师",
+      "oldToken": "0600017A",
+      "oldOffset": 625,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 646,
+      "source": "酒保",
+      "oldToken": "0600017A",
+      "oldOffset": 646,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 667,
+      "source": "商人",
+      "oldToken": "0600017A",
+      "oldOffset": 667,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 688,
+      "source": "小偷",
+      "oldToken": "0600017A",
+      "oldOffset": 688,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 709,
+      "source": "文员",
+      "oldToken": "0600017A",
+      "oldOffset": 709,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 730,
+      "source": "学徒",
+      "oldToken": "0600017A",
+      "oldOffset": 730,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::JobFlavor(System.String)",
+      "token": "0600017A",
+      "offset": 751,
+      "source": "艺人",
+      "oldToken": "0600017A",
+      "oldOffset": 751,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BreastFlavor(System.String)",
+      "token": "0600017B",
+      "offset": 1,
+      "source": "贫乳",
+      "oldToken": "0600017B",
+      "oldOffset": 1,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.MaidenText::BreastFlavor(System.String)",
+      "token": "0600017B",
+      "offset": 14,
+      "source": "巨乳",
+      "oldToken": "0600017B",
+      "oldOffset": 14,
+      "reason": "Original dispatch/identity token; output field translation at display-only boundaries."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 9,
+      "source": "拾荒者",
+      "oldToken": "06000184",
+      "oldOffset": 9,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 17,
+      "source": "矿工",
+      "oldToken": "06000184",
+      "oldOffset": 17,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 25,
+      "source": "雇佣兵",
+      "oldToken": "06000184",
+      "oldOffset": 25,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 33,
+      "source": "工程师",
+      "oldToken": "06000184",
+      "oldOffset": 33,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 41,
+      "source": "护士",
+      "oldToken": "06000184",
+      "oldOffset": 41,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 49,
+      "source": "医生",
+      "oldToken": "06000184",
+      "oldOffset": 49,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 57,
+      "source": "厨师",
+      "oldToken": "06000184",
+      "oldOffset": 57,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 65,
+      "source": "农场主",
+      "oldToken": "06000184",
+      "oldOffset": 65,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 73,
+      "source": "小偷",
+      "oldToken": "06000184",
+      "oldOffset": 73,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 82,
+      "source": "商人",
+      "oldToken": "06000184",
+      "oldOffset": 82,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 91,
+      "source": "清洁员",
+      "oldToken": "06000184",
+      "oldOffset": 91,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 100,
+      "source": "技师",
+      "oldToken": "06000184",
+      "oldOffset": 100,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 109,
+      "source": "文员",
+      "oldToken": "06000184",
+      "oldOffset": 109,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 118,
+      "source": "走私者",
+      "oldToken": "06000184",
+      "oldOffset": 118,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 127,
+      "source": "货运员",
+      "oldToken": "06000184",
+      "oldOffset": 127,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 136,
+      "source": "酒保",
+      "oldToken": "06000184",
+      "oldOffset": 136,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 145,
+      "source": "维修工",
+      "oldToken": "06000184",
+      "oldOffset": 145,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 154,
+      "source": "研究员",
+      "oldToken": "06000184",
+      "oldOffset": 154,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 163,
+      "source": "学徒",
+      "oldToken": "06000184",
+      "oldOffset": 163,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 172,
+      "source": "艺人",
+      "oldToken": "06000184",
+      "oldOffset": 172,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 191,
+      "source": "贫乳",
+      "oldToken": "06000184",
+      "oldOffset": 191,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 199,
+      "source": "普乳",
+      "oldToken": "06000184",
+      "oldOffset": 199,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.MaidenTraits::.cctor()",
+      "token": "06000184",
+      "offset": 207,
+      "source": "巨乳",
+      "oldToken": "06000184",
+      "oldOffset": 207,
+      "reason": "Original attribute selection values."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.ModSettings::Init()",
+      "token": "06000185",
+      "offset": 26,
+      "source": "开",
+      "oldToken": "06000185",
+      "oldOffset": 26,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.ModSettings::Init()",
+      "token": "06000185",
+      "offset": 333,
+      "source": "关",
+      "oldToken": "06000185",
+      "oldOffset": 333,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "ConfigEntry`1<System.String> MidnightPawn.Game.ModSettings::DefineBarrel(ModConfig,System.String,System.String,System.Int32)",
+      "token": "06000186",
+      "offset": 22,
+      "source": "开",
+      "oldToken": "06000186",
+      "oldOffset": 22,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Boolean MidnightPawn.Game.ModSettings::On(ConfigEntry`1<System.String>,System.Boolean)",
+      "token": "06000187",
+      "offset": 21,
+      "source": "关",
+      "oldToken": "06000187",
+      "oldOffset": 21,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Boolean MidnightPawn.Game.ModSettings::get_CorruptionBoxSettlement()",
+      "token": "06000189",
+      "offset": 29,
+      "source": "开",
+      "oldToken": "06000189",
+      "oldOffset": 29,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Single MidnightPawn.Game.ModSettings::get_FatigueScale()",
+      "token": "0600018B",
+      "offset": 31,
+      "source": "宽松",
+      "oldToken": "0600018B",
+      "oldOffset": 31,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Single MidnightPawn.Game.ModSettings::get_FatigueScale()",
+      "token": "0600018B",
+      "offset": 44,
+      "source": "严苛",
+      "oldToken": "0600018B",
+      "oldOffset": 44,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.ModSettings::.cctor()",
+      "token": "0600018E",
+      "offset": 67,
+      "source": "开",
+      "oldToken": "0600018E",
+      "oldOffset": 67,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.ModSettings::.cctor()",
+      "token": "0600018E",
+      "offset": 75,
+      "source": "关",
+      "oldToken": "0600018E",
+      "oldOffset": 75,
+      "reason": "Configuration choice/default/comparison, displayed copy translated for this mod only."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.NameGen::.cctor()",
+      "token": "0600019F",
+      "offset": 6,
+      "source": "中国",
+      "oldToken": "0600019F",
+      "oldOffset": 6,
+      "reason": "Original name-data region key."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.NameGen::.cctor()",
+      "token": "0600019F",
+      "offset": 18,
+      "source": "日本",
+      "oldToken": "0600019F",
+      "oldOffset": 18,
+      "reason": "Original name-data region key."
+    },
+    {
+      "method": "System.Void MidnightPawn.Game.NameGen::.cctor()",
+      "token": "0600019F",
+      "offset": 30,
+      "source": "韩国",
+      "oldToken": "0600019F",
+      "oldOffset": 30,
+      "reason": "Original name-data region key."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.SecurityLiaison::DeliverArchive(System.Collections.Generic.List`1<GameItem>)",
+      "token": "06000224",
+      "offset": 79,
+      "source": "革命军",
+      "oldToken": "06000224",
+      "oldOffset": 79,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.SecurityLiaison::DeliverArchive(System.Collections.Generic.List`1<GameItem>)",
+      "token": "06000224",
+      "offset": 128,
+      "source": "黑市",
+      "oldToken": "06000224",
+      "oldOffset": 128,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.SecurityLiaison::DeliverStall(System.Collections.Generic.List`1<GameItem>)",
+      "token": "06000225",
+      "offset": 68,
+      "source": "革命军",
+      "oldToken": "06000225",
+      "oldOffset": 68,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.String MidnightPawn.Game.SecurityLiaison::DeliverStall(System.Collections.Generic.List`1<GameItem>)",
+      "token": "06000225",
+      "offset": 100,
+      "source": "黑市",
+      "oldToken": "06000225",
+      "oldOffset": 100,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.Boolean MidnightPawn.Game.SecurityLiaison::IsSecurityMaiden(GameItem)",
+      "token": "0600022A",
+      "offset": 14,
+      "source": "治安部",
+      "oldToken": "0600022A",
+      "oldOffset": 14,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.Int32 MidnightPawn.Game.TentacleBody::TryProduceMilk(GameGridInventory,GameItem,System.Int32)",
+      "token": "06000278",
+      "offset": 22,
+      "source": "贫乳",
+      "oldToken": "06000278",
+      "oldOffset": 22,
+      "reason": "Original condition comparison."
+    },
+    {
+      "method": "System.Int32 MidnightPawn.Game.TentacleBody::TryProduceMilk(GameGridInventory,GameItem,System.Int32)",
+      "token": "06000278",
+      "offset": 35,
+      "source": "巨乳",
+      "oldToken": "06000278",
+      "oldOffset": 35,
+      "reason": "Original condition comparison."
+    }
+  ],
+  "runtime": "not tested",
+  "directLiteralPatches": 51,
+  "totalLiteralPatches": 57,
+  "remainingOriginalCjk": 156,
+  "originalDllHash": "90819a19792b80dfa7a6d8c3fa1f5749980ae8b7239491785add87d44b6f9501",
+  "nameEntries": 5160,
+  "nameGroups": 13,
+  "externalAuditRows": [
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\manifest.xml",
+      "LewdMemeShadowTrade1.6.4\\manifest.xml",
+      "Author",
+      "白银（原作）/ 扫地机（扩展）",
+      "D",
+      "소비 경로 미확정"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\manifest.xml",
+      "LewdMemeShadowTrade1.6.4\\manifest.xml",
+      "Description",
+      "원작자 白银, 확장 제작자 扫地机의 비공식 확장 모드입니다. lewd_meme 1.9.2 이상을 함께 활성화해야 하며, 제작자가 확인한 선행 모드 버전은 1.9.2입니다.\n\n【1.6.4】야간 행동·임신 판정·출산·생산은 원본 모드 방식을 유지하고 모유 3종과 피로도를 추가합니다. 추가 모유 한 병을 생산할 때 먼저 생산 구역의 원본 신비한 모유 한 병을 차감합니다. 병이 없으면 신비한 모유 통에서 사용 횟수 1을 차감합니다. 차감할 원본 재료가 없어도 추가 생산은 진행하며, 같은 종류의 기존 통에 먼저 보충하고 실패하면 차감한 원본 재료를 반환합니다. 피로도는 이 모드의 매입 가치에만 영향을 줍니다. 밤 시작 시 피로도 90 이상인 캐릭터는 그날 밤 행동, 양측 생산, 임신 판정, 임신 기간 진행과 출산이 모두 중단되고 피로도 5를 회복합니다.\n치안부 이야기의 규제품 보상은 기존 등록 키와 완료 단계에 따라 계속 적용됩니다. 새 아이템 초기화와 구형 저장 데이터의 규제품 등록, 정액 통의 등록 누락을 수정했습니다. 게임 기본 규제품 추가 가격과 사건 금액 면제도 유지하며 보상을 다시 얻기 위해 같은 아이템을 제출할 필요가 없습니다.\n촉수 본체, 정산을 켠 묘상 상자, 알람시계, 작동 중인 함정은 같은 피로도 규칙을 사용합니다. 다른 위치에서는 매일 25를 회복합니다. 레벨 1~10의 피로도 계수는 단계별로 감소하며 11부터는 피로도가 더 쌓이지 않습니다. 처녀 상태 상실에 따른 추가 피로도도 더 이상 부과하지 않습니다.\n\n촉수 본체의 야간 정산이 끝나면 생산 구역 전체를 스캔합니다. 정액 8병 이상, 추가 모유 각 3병 이상이면 통을 새로 만들 수 있습니다. 원본과 확장 모드의 신비한 모유도 합산하여 동일한 통에 넣으며, 원본 병 제품이 누락되던 문제를 수정했습니다. 네 옵션으로 새 통 생성 여부를 따로 설정하지만 기존 통은 계속 자동 보충됩니다. 통 최대 용량은 1,000회이며 사용할 때 수량을 입력해 한꺼번에 꺼낼 수 있습니다. 침식 구역의 묘상 상자는 옵션에 따라 원본 정산 루프를 호출할 수 있습니다. 상자 내부 모든 보관 페이지를 확인하고 경험치·원본 야간 보고 이전에 일괄 정산합니다. 주 묘상 구역이 비어 있어도 적용되며 기본값은 꺼짐입니다.\n\n묘상 매입상, 거래 명부, 치안부 전용 번호 26535, 이야기 규제품, 보고 메모와 툴팁 확장을 유지합니다. 처녀 상태 상실 회피, 생산량 배율, 자체 야간 및 구역 API는 삭제했습니다. 치안부 최종장에는 원본의 딸 식별자를 사용하며 오래된 출생 태그도 자동 보완합니다.\n\n모드 ID·네임스페이스·아이템 ID 및 구형 세이브 키를 유지합니다. DLL과 어셈블리 이름은 ShadowTrade이며 업데이트 후 게임을 재시작하고 ShadowTrade.dll을 한 개만 남겨야 합니다. 자세한 내용은 README.md와 docs 폴더를 확인하세요. 원작자의 리소스 저작권을 존중하며 요청 시 삭제합니다. 개인 플레이·학습·교류 목적에만 제공하고 상업적 사용을 금지합니다.",
+      "D",
+      "manifest 표시 필드. 원작자명·원제 병기 등 의도적 보존 여부 검토"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "3",
+      "원작자: 白银 / 확장 제작자: 扫地机",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "13",
+      "모드 ID는 계속 `lewd_meme_remake`입니다. 네임스페이스, 아이템 ID, 기존 세이브 키도 유지했습니다. 이전에 생성된 캐릭터, 모유, 통, 명부와 진행 중인 이야기를 계속 사용할 수 있습니다. 이전 버전의 딸 관련 태그에는 원본 게임의 식별자가 자동 보완됩니다. 어셈블리 이름 변경과 이번 버전의 인터페이스 삭제는 외부 확장에 영향을 줄 수 있으므로 [개발 안내](docs/开发指南.md)를 확인하세요.",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "28",
+      "- [게임 플레이 안내](docs/玩法指南.md): 모유 생산, 피로도, 통 보관, 매입상, 치안부 및 거래 명부",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "29",
+      "- [개발 안내](docs/开发指南.md): 빌드, 공개 인터페이스, 데이터 식별자, 검증 진입점",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "LewdMemeShadowTrade1.6.4\\README.md",
+      "30",
+      "- [검토 보고서](docs/审查报告.md): 완료된 정리 작업, 호환성 관련 결정, 남겨 둔 후크와 미해결 사항",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "1",
+      "东南亚南亚国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "2",
+      "中东国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "3",
+      "中国",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "4",
+      "俄语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "5",
+      "德语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "6",
+      "意大利语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "7",
+      "日本",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "8",
+      "欧洲其他国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "9",
+      "法语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "10",
+      "英语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "11",
+      "葡萄牙语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "12",
+      "西班牙语国家",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "LewdMemeShadowTrade1.6.4\\Content\\names.txt",
+      "13",
+      "韩国",
+      "D",
+      "NameGen 원본 데이터 행, 지역 식별과 표시 분리 확인"
+    ],
+    [
+      "LewdMemeShadowTrade1.6.4",
+      "LewdMemeShadowTrade1.6.4\\docs\\开发指南.md",
+      "LewdMemeShadowTrade1.6.4\\docs\\开发指南.md",
+      "41",
+      "훈련, 통계, 딸 판정, 촉수 본체 레벨·경험치, 일반적인 안전한 아이템 배치는 선행 모드의 `MidnightPawn.Api.TentacleApi`를 사용합니다. 정확한 사용법은 실제 DLL과 선행 모드 폴더의 《子模组接入指南.md》를 기준으로 해야 합니다. 제작자가 확인한 1.9.2 DLL의 공개 레벨 인터페이스는 여전히 5로 제한돼 있습니다. 따라서 이 확장은 공개 인터페이스 값과 원본의 `body_lv` 저장값 중 **큰 값**을 사용하며, 확장 자체에서 레벨 상한을 두지 않습니다. 원본 모드 파일은 변경하지 않습니다. 차기 공개 인터페이스가 더 높은 레벨을 반환하면 그대로 지원합니다.",
+      "D",
+      "사용 안내의 표기·파일명·예시와 번역 누락 구별 필요"
+    ]
+  ],
+  "manifestVersion": "1.6.4",
+  "archive": {
+    "path": "ProbablyStolen_ShadowTrade_v1.6.4_KO_Final_20261122.zip",
+    "sha256": "98a73e325976e4f4899e846cd77b5ea273476abf63cd8077bbdf1115bb82d010",
+    "files": 7,
+    "crc": "pass",
+    "matchesAllOverlayFiles": true
+  }
+}
