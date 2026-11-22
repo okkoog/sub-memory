@@ -1,0 +1,107 @@
+name: ShadowTrade audited direct output patch
+on:
+  push:
+    paths: ['.github/workflows/tentacle-shadowtrade-direct-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4/ShadowTrade.dll
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/ShadowTrade_DIRECT_PLAN_20261122.json
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/WorkAudit_20261122
+            probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Patch exact audited display callsites; preserve data and comparison values
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/cfg_direct --force
+          dotnet add /tmp/cfg_direct/cfg_direct.csproj package dnlib --version 4.5.0
+          cat >/tmp/cfg_direct/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Text.Json;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            record Site(string token,string method,uint offset,string source,string target,string action,string classification,string reason);
+            static void Need(bool b,string why){if(!b)throw new Exception(why);}
+            static string Hash(byte[] b)=>Convert.ToHexString(SHA256.HashData(b)).ToLowerInvariant();
+            static bool Cjk(string s)=>s.Any(c=>c>='\u3400'&&c<='\u9fff');
+            static string Op(object? x,Dictionary<Instruction,int> map)=>x switch{null=>"",Instruction i=>"@"+map[i],IList<Instruction> a=>string.Join(",",a.Select(i=>"@"+map[i])),_=>x.ToString()??""};
+            static string EH(ExceptionHandler e,Dictionary<Instruction,int> map){
+              string I(Instruction? i)=>i==null?"-":map[i].ToString();
+              return string.Join("|",e.HandlerType.ToString(),I(e.TryStart),I(e.TryEnd),I(e.HandlerStart),I(e.HandlerEnd),I(e.FilterStart),e.CatchType?.FullName??"");
+            }
+            static void Main(string[] a){
+              byte[] bytes=File.ReadAllBytes(a[0]);using var plan=JsonDocument.Parse(File.ReadAllText(a[1]));
+              Need(Hash(bytes)==plan.RootElement.GetProperty("baselineSha256").GetString(),"Unexpected DLL baseline "+Hash(bytes));
+              var sites=plan.RootElement.GetProperty("sites").Deserialize<Site[]>()!;
+              using var before=ModuleDefMD.Load(bytes);using var m=ModuleDefMD.Load(bytes);
+              var methods=m.GetTypes().SelectMany(t=>t.Methods).Where(x=>x.HasBody).ToDictionary(x=>x.MDToken.Raw.ToString("X8"));
+              var expected=new Dictionary<(string,int),string>();var reviewed=new List<object>();
+              foreach(var s in sites){
+                var method=s.token==""?methods.Values.SingleOrDefault(x=>x.FullName==s.method):methods.GetValueOrDefault(s.token);
+                Need(method!=null&&method.FullName==s.method,"Method "+s.method);
+                var ins=method!.Body.Instructions.SingleOrDefault(x=>x.Offset==s.offset);
+                Need(ins!=null&&ins.OpCode==OpCodes.Ldstr&&Equals(ins.Operand,s.source),"Anchor "+s.method+" "+s.offset+" observed "+ins?.Operand);
+                // PanelKeys section is a shared grouping/ID input: do not alter it. The header needs an output-only patch.
+                bool deferred=false;
+                string action=deferred?"defer-section-boundary":s.action;
+                if(action=="patch"){expected.Add((method.MDToken.Raw.ToString("X8"),method.Body.Instructions.IndexOf(ins!)),s.target);ins!.Operand=s.target;}
+                reviewed.Add(new{token=method.MDToken.Raw.ToString("X8"),s.method,s.offset,s.source,s.target,action,result=(string)ins!.Operand});
+              }
+              string temp=a[0]+".new";m.Write(temp);using var check=ModuleDefMD.Load(temp);
+              var old=before.GetTypes().SelectMany(t=>t.Methods).GroupBy(x=>x.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(x=>x.MDToken.Raw).ToArray());
+              var now=check.GetTypes().SelectMany(t=>t.Methods).GroupBy(x=>x.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(x=>x.MDToken.Raw).ToArray());
+              Need(old.Count==now.Count&&old.All(x=>now.TryGetValue(x.Key,out var z)&&x.Value.Length==z.Length),"Method collection");
+              Need(before.GetTypes().Select(x=>x.FullName).SequenceEqual(check.GetTypes().Select(x=>x.FullName)),"Type collection");
+              int compared=0,changed=0;var active=new List<object>();
+              foreach(var pair in old)for(int n=0;n<pair.Value.Length;n++){
+                var o=pair.Value[n];var k=now[pair.Key][n];Need(o.HasBody==k.HasBody,"Body availability");if(!o.HasBody)continue;
+                var oi=o.Body.Instructions.ToList();var ni=k.Body.Instructions.ToList();
+                Need(oi.Count==ni.Count&&o.Body.Variables.Count==k.Body.Variables.Count&&o.Body.ExceptionHandlers.Count==k.Body.ExceptionHandlers.Count,"Body "+o.FullName);
+                var xmap=oi.Select((v,i)=>(v,i)).ToDictionary(x=>x.v,x=>x.i);var ymap=ni.Select((v,i)=>(v,i)).ToDictionary(x=>x.v,x=>x.i);
+                Need(o.Body.ExceptionHandlers.Select(e=>EH(e,xmap)).SequenceEqual(k.Body.ExceptionHandlers.Select(e=>EH(e,ymap))),"EH "+o.FullName);
+                Need(o.Body.Variables.Select(v=>v.Type.FullName).SequenceEqual(k.Body.Variables.Select(v=>v.Type.FullName)),"Locals "+o.FullName);
+                for(int i=0;i<oi.Count;i++){
+                  var x=oi[i];var y=ni[i];Need(x.OpCode==y.OpCode,"Opcode "+o.FullName+" "+i);
+                  var key=(o.MDToken.Raw.ToString("X8"),i);
+                  var ex=expected.TryGetValue(key,out var v)?v:Op(x.Operand,xmap);
+                  Need(ex==Op(y.Operand,ymap),"Operand "+o.FullName+" "+i);
+                  if(expected.ContainsKey(key))changed++;
+                  if(y.OpCode==OpCodes.Ldstr&&y.Operand is string s&&Cjk(s))active.Add(new{token=k.MDToken.Raw.ToString("X8"),method=k.FullName,offset=y.Offset,source=s,previousToken=o.MDToken.Raw.ToString("X8"),previousOffset=x.Offset});
+                }compared++;
+              }
+              Need(changed==expected.Count,"Changed sites");
+              var ar=before.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              var br=check.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              Need(ar.Count==br.Count&&ar.All(x=>br.TryGetValue(x.Key,out var v)&&x.Value.SequenceEqual(v)),"Resources");
+              File.Move(temp,a[0],true);
+              var names=new HashSet<string>{"DescribeFactionPref","DescribeBodyPref","DescribeVirginPref","FactionPairLine","AdultPairLines","YoungPairLines","FactionName","BuyerDisplayName","Evaluate","Fill","AddRecordRow","DescribeData","SpawnReceipt","RepairReceipts","BuildBook","MakeCheck","BuildRecord","CreateBuyer","RenderReceipt","Name","VirginState"};
+              var selected=check.GetTypes().SelectMany(t=>t.Methods).Where(m=>m.HasBody&&(names.Contains(m.Name.ToString())||m.Body.Instructions.Any(i=>i.Operand is IMethod im&&(im.Name=="FactionName"||im.Name=="BuyerDisplayName"||im.Name=="DescribeData"||im.Name=="VirginState"||im.Name=="FactionPairLine"||im.Name=="DescribeFactionPref"||im.Name=="DescribeBodyPref"||im.Name=="DescribeVirginPref"))||m.Body.Instructions.Any(i=>i.Operand is IField ff&&ff.FullName.Contains("MaidenBuyer/Check::")))).Select(x=>new{method=x.FullName,token=x.MDToken.Raw.ToString("X8"),instructions=x.Body.Instructions.Select(i=>new{offset=i.Offset,opcode=i.OpCode.Name,operand=i.Operand?.ToString()??""}).ToArray()}).ToArray();
+              var options=new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping};
+              File.WriteAllText(a[2],JsonSerializer.Serialize(new{previousDllHash=Hash(bytes),finalDllHash=Hash(File.ReadAllBytes(a[0])),comparedMethods=compared,changedSites=changed,unchangedResources=ar.Count,reviewed,remainingCjk=active,displayBoundaryIL=selected,remaining="Inspect remaining Chinese literals and shared output boundaries; do not alter storage and equality tokens",runtime="not tested"},options)+"\n");
+              Console.WriteLine("Verified "+compared+" methods; "+changed+" exact display literals; remaining CJK "+active.Count);
+            }
+          }
+          CS
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          dotnet run --project /tmp/cfg_direct/cfg_direct.csproj -- "$ROOT/LewdMemeShadowTrade1.6.4/ShadowTrade.dll" "$ROOT/번역대조표/ShadowTrade_DIRECT_PLAN_20261122.json" "$ROOT/번역대조표/ShadowTrade_DIRECT_RESULT_20261122.json" 'probably-stolen/Managed/Assembly-CSharp.dll'
+      - name: Commit verified direct patch and audit evidence
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          git add --sparse "$ROOT/LewdMemeShadowTrade1.6.4/ShadowTrade.dll" "$ROOT/번역대조표/ShadowTrade_DIRECT_RESULT_20261122.json"
+          git diff --cached --quiet || (git commit -m 'Patch audited ShadowTrade direct output callsites preserving shared values' && git push origin main)
