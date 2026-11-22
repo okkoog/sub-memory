@@ -5,7 +5,7 @@ on:
     paths: ['.github/workflows/tentacle-update-diff-20261122.yml']
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -67,7 +67,7 @@ jobs:
                 bool sameNew=ok&&Shape(om![0]).SequenceEqual(Shape(m));
                 bool sameKo=kk&&Shape(om![0]).SequenceEqual(Shape(km![0]));
                 bool exactNew=sameNew&&om![0].Body.Instructions.Select(x=>x.OpCode==OpCodes.Ldstr?x.Operand as string:null).SequenceEqual(il.Select(x=>x.OpCode==OpCodes.Ldstr?x.Operand as string:null));
-                if(!ok&&lits.Length>0)added.Add(Dump(m));
+                if(!ok){if(lits.Length>0)added.Add(Dump(m));}
                 else if(!exactNew&&(lits.Length>0||om![0].Body.Instructions.Any(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&Text(s))))changed.Add(new {old=Dump(om![0]),ko=kk?Dump(km![0]):null,current=Dump(m)});
                 else if(kk&&!sameKo)changed.Add(new {old=Dump(om![0]),ko=Dump(km![0]),current=Dump(m)});
                 foreach(var (i,index) in lits){
@@ -89,6 +89,22 @@ jobs:
           mkdir audit
           dotnet run --project /tmp/tentacle-diff -- "$root/TentacleMod/lewd_meme2.1.0/MidnightPawn.dll" "$root/TentacleMod번역/lewd_meme2.1.0/MidnightPawn.dll" "$root/TentacleMod-Update/lewd_meme 2.3.1/MidnightPawn.dll" audit/MidnightPawn.json
           dotnet run --project /tmp/tentacle-diff -- "$root/TentacleMod/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll" "$root/TentacleMod번역/lewd_meme_config0.7.2-pre/LewdMemeConfig.dll" "$root/TentacleMod-Update/lewd_meme_config/LewdMemeConfig.dll" audit/LewdMemeConfig.json
+      - name: Store compact audit in dedicated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,pathlib
+          for p in pathlib.Path('audit').glob('*.json'):
+              j=json.loads(p.read_text())
+              slim={'stats':j['stats'],'direct':[{k:v for k,v in x.items() if k!='context'} for x in j['direct']],'candidates':j['candidates'],'helpers':j['helpers']}
+              (p.parent/(p.stem+'-compact.json')).write_text(json.dumps(slim,ensure_ascii=False,indent=1))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f audit
+          git commit -m "Record three-way DLL audit"
+          git push origin HEAD:refs/heads/tentacle-update-audit-20261122
       - uses: actions/upload-artifact@v4
         with:
           name: tentacle-update-three-way-audit
