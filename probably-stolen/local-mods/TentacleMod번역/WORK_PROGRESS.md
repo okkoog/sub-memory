@@ -20,8 +20,8 @@
 ## 2. 현재 대상과 최신 상태 — 감사 후속 06 완료
 
 - 사용자 지시(2026-11-22): Adult Goods는 `3842259965` v1.1.1, Eleanor는 `落魄千金-埃莉诺 v1.0.3` 독립판만 유지. 나머지 네 변형(`3842247788`, `3843125702`, `3843142171`, `可能是成人用品 v1.1.3`)의 원본·번역 폴더와 해당 ZIP 삭제. 삭제 변형은 재작업하지 않는다. 기존 감사 자료는 역사 근거로 보존.
-- 현재 잔여 B 검수 후보 84건(기존 212건 중 삭제 변형 18건, 종료 Adult Goods 2건, 종료 DailyWearWorkshop 81건, 종료 MidnightPawn 27건 제외), C 직접 출력 11곳(기존 53곳 중 MidnightPawn 42곳 제외). 서로 다른 단위이므로 합산하지 않는다.
-- LewdMemeLegacyContent, LewdMemeBrothel, IronBloodSheer, SarronaTheDragon은 게임 표시 번역 감사 기준 종료(실게임 검사 별도). 작성자명·원제·원본 설명서 및 기능 보호값은 번역 대상 제외. 잔여 검수 모드 8개. 전체 16개 중 종료/대상 없음 8개(이미지 전용 포함).
+- 현재 잔여 B 검수 후보 50건(기존 212건 중 삭제 변형 18건, 종료 Adult Goods 2건, 종료 DailyWearWorkshop 81건, 종료 MidnightPawn 27건, 종료 LewdMemeConfig 34건 제외), C 직접 출력 9곳(기존 53곳 중 MidnightPawn 42곳, LewdMemeConfig 2곳 제외). 서로 다른 단위이므로 합산하지 않는다.
+- LewdMemeLegacyContent, LewdMemeBrothel, IronBloodSheer, SarronaTheDragon은 게임 표시 번역 감사 기준 종료(실게임 검사 별도). 작성자명·원제·원본 설명서 및 기능 보호값은 번역 대상 제외. 잔여 검수 모드 7개. 전체 16개 중 종료/대상 없음 9개(이미지 전용 포함).
 - 아래 911건 및 20 DLL은 삭제 전 역사 감사 분모이다. 현재 원본·번역 대응 모드 폴더는 각각 16개(이미지 전용 포함). Adult Goods v1.2.1은 native 로더 보안/실행 미검증으로 제외; v1.1.1을 최종 작업 기준으로 사용한다.
 
 **기존 911건 감사 범위의 미분류 작업 종료. 전체 번역 및 실제 B/C 패치는 미완료.**
@@ -46,7 +46,8 @@
 - **Adult Goods v1.1.1 (3842259965) 종료:** 현재 최종 DLL의 원본 대비 15개 출력 IL 수정, 181/181 로컬키 및 ko/ko-KR 두 별칭, TypeDef 92/MethodDef 370 및 원본 리소스 65개 불변, ZIP CRC와 설치 파일 바이트 일치 독립 검증 성공. 잔여 CJK 18곳은 기능 매핑 14곳, 파일 경로 2곳, 이미 번역된 진단의 원본 파일명 1곳, 중국어 언어 분기 1곳으로 보호. 데이터 CSV는 ID/가격/유형 매핑만 이용하고 통계 자료는 읽기 호출 없음. 실제 미번역 표시 후보 0. [검증 자료](번역대조표/AdultGoods_v1.1.1_FINAL_20261122.json), [최종 ZIP](ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip), Actions 44982001711 성공. 구 빌드의 자동 덮어쓰기로 복구되었던 구형 DLL을 최종 검증본으로 재복구하고 해당 빌드를 수동 전용으로 전환. 실게임 확인만 남음.
 - **DailyWearWorkshop (起飞攻速装, 폴더 v1.1.3 / manifest v1.1.1) 종료:** B 후보 81건, 114개 기존 감사 호출부 전부 확인. 84개 실제 표시 호출부 수정, 1곳 기존 반영, 29곳 보호/미사용/원제 병기. 피규어 50개 기존 원본 파일명→레거시 ID 별칭 복구, JSON 표시 이름을 DLL 이름과 일치시킴(원본 ID·가격·분류·파일 경로 보존). 기존 1,199개 메서드 전체 IL 구조/피연산자 대조, 추가 별칭 처리 검증, 최종 ZIP 6파일 CRC 및 바이트 대조 성공. [최종 결과](번역대조표/DailyWearWorkshop_FINAL_RESULT_20261122.json), [최종 ZIP](ProbablyStolen_DailyWearWorkshop_KO_Final_20261122.zip), 커밋 `0f57d40c7828180360933c721087737e71266c17`, Actions 44982496107 성공. 실게임 사용 검증만 남음.
 - **MidnightPawn v2.1.0 종료:** 기존 감사 327 호출부의 결과 분류(94 수정, 5 기존 반영, 227 보호, 1 출력 경계 처리), 별도 출력 경계 18곳 및 표시 매핑 75건, 원본 비교/저장값 보호. 이전 DLL 732개 메서드 구조 대조, 원문 CJK 보호 위치 228곳. 외부 자료 아이템명 15개, NPC 이름 5,160개/13그룹, 현지화 유형 키 2개 검증, 최종 ZIP 6파일 CRC 및 설치 오버레이 바이트 일치. [검증 자료](번역대조표/MidnightPawn_FINAL_RESULT_20261122.json), [최종 ZIP](ProbablyStolen_MidnightPawn_v2.1.0_KO_Final_20261122.zip), 커밋 `d0c4df7c9307a861b9e1905e24a7b6aa804b6e90`, [Actions 44982982337](https://github.com/okkoog/sub-memory/actions/runs/44982982337) 성공. 2026-11-22 main에서 결과 파일 및 DLL/ZIP 재조회 완료. 실게임 사용 검증 미실시.
-- 다음 작업: LewdMemeConfig v0.7.2-pre (B 34건/C 직접 출력 2곳). 잔여 모드 중 작업량 우선순위를 유지하며 실제 DLL과 기존 번역 대조 및 적용·정적 검증 진행.
+- **LewdMemeConfig v0.7.2-pre 종료:** B 34건/C 직접 출력 2곳 검토. 직접 표시/진단 31개 호출부 실제 수정(후속 21+2+8), 기존 한국어 문구/원문 입력 예시 6곳 유지. 섹션 헤더 1개 및 드롭다운 표시 배열 2개 출력 경계에서 이 모드에만 한국어 표시 복사본 제공, 원본 ID/비교값/선택값/저장값 보호. 기존 881개 메서드 및 추가 7개 헬퍼의 정적 검사, 잔여 원문 위치 272곳 보호/예시 분류 및 헬퍼 조회 키 28곳 확인, 미분류 0 및 감사상 미적용 표시 후보 0. 최종 설치 ZIP 3파일 CRC·파일 바이트 비교 통과. [검증 자료](번역대조표/LewdMemeConfig_FINAL_RESULT_20261122.json), [최종 ZIP](ProbablyStolen_LewdMemeConfig_v0.7.2-pre_KO_Final_20261122.zip), 커밋 `a37eb39dcc01755049ba7f3a0c38ccbddeb740db`, [Actions 44983882556](https://github.com/okkoog/sub-memory/actions/runs/44983882556) 성공. 최종 DLL/ZIP/결과 원격 재조회 완료. 실게임에서 UI 패치 적용 및 저장/선택 재확인 필요.
+- 다음 작업: LewdMemeShadowTrade1.6.4 (B 16건/C 직접 출력 7곳). 다른 잔여 모드: RLD B 15/C 2, 3843110449 B 5, Brood B 4, MentorToSarrona B 4, Eleanor 독립판 B 4, ItemPortraitHD B 2. 작업량 우선순위를 유지하며 실제 DLL과 기존 번역 대조 및 적용·정적 검증 진행.
 
 1. 아래 판정표와 호출부 자료에서 유지된 모드의 B 및 C 출력 경계만 취합한다. 삭제 변형과 완료 모드는 제외한다. 기존 후속02 패치 반영분을 중복 처리하지 않는다.
 2. 현재 번역 DLL 및 외부/내장 자료를 대조하여 이미 반영·보호·실제 미적용 표시 위치를 구별하고 대상 목록과 실제 잔여를 확정한다.
@@ -70,7 +71,7 @@
 감사 자료: [WorkAudit_20261122/](번역대조표/WorkAudit_20261122/)
 
 - [원본 감사보고서](번역대조표/WorkAudit_20261122/감사보고서.md) / [DLL 문자열별](번역대조표/WorkAudit_20261122/DLL_문자열별.tsv) / [DLL 호출위치](번역대조표/WorkAudit_20261122/DLL_호출위치.tsv)
-- [후속01 판정](번역대조표/WorkAudit_20261122/후속01_판정.tsv) / [후속02 판정](번역대조표/WorkAudit_20261122/후속02_판정.tsv) / [후속03 판정](번역대조표/WorkAudit_20261122/후속03_판정.tsv) / [후속04 판정](번역대조표/WorkAudit_20261122/후속04_판정.tsv)
+- [후속01 D 재판정](번역대조표/WorkAudit_20261122/후속01_D_재판정.tsv) / [후속02 판정](번역대조표/WorkAudit_20261122/후속02_판정.tsv) / [후속03 판정](번역대조표/WorkAudit_20261122/후속03_판정.tsv) / [후속04 판정](번역대조표/WorkAudit_20261122/후속04_판정.tsv)
 - [후속02 실제 패치 결과](번역대조표/WorkAudit_20261122/후속02/patch_result.json) / [ZIP 검증](번역대조표/WorkAudit_20261122/후속02/archive_result.json)
 - [후속04 D 잔여](번역대조표/WorkAudit_20261122/후속04_D_잔여.tsv) — 0건.
 - [후속06 C 분리표](번역대조표/WorkAudit_20261122/후속06_C_용도분리.tsv) / [C 호출부](번역대조표/WorkAudit_20261122/후속06_C_호출부.tsv) / [C 잔여](번역대조표/WorkAudit_20261122/후속06_C_잔여.tsv)(0건) / [최종 분류 보고서](번역대조표/WorkAudit_20261122/후속06_보고서.md)
