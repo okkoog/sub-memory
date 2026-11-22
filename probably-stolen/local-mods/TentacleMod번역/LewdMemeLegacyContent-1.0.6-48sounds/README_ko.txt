@@ -11,8 +11,8 @@
 
 2. 현재 번역 상태 (원본 JSON 구조 기준)
 - descriptions.entries 72개: 비어 있지 않은 71개 중 70개 번역 변경, 변수만 있는 1개 원문과 동일, 1개는 원본부터 빈 값.
-- 캐릭터 표시 label 53개: 52개 한국어화, 1개 원문 유지.
-- dialogue 198개: 170개 한국어화, 28개 원문 유지.
+- 캐릭터 표시 label 53개: 53개 한국어화. 체형 표시명 5개는 모두 두 글자(로리·누님·아내·숙녀·누나).
+- dialogue 198개: 198개 한국어화(기존 170개 + 추가 28개), 중국어 대사 잔존 0개.
 - descriptions.nightScenes 5개: 5개 모두 한국어화.
 - manifest 표시명/설명: 2개 한국어화.
 - game parser에 전달되는 id, bodyId, personalityId, factionId, tag/weight 구조는 변경하지 않았습니다.
@@ -24,5 +24,5 @@
 - 원본 설치 파일의 Content/content.json만 교체하는 추가 번역 패치입니다.
 
 4. 작업 기록
-번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md
+번역대조표/LegacyContent_v1.0.6_CONTENT_JSON_AUDIT_20261121.md (2026-11-22 최종 검수 반영)
 게임 구동 여부는 본 번역 파일의 텍스트 검수와 별개입니다.
