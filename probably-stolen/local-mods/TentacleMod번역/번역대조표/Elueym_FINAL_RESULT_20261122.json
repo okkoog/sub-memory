@@ -1,0 +1,123 @@
+{
+  "inputHash": "fa9a8b7d0780e5f776c8662b5dca910da59b6cd92af799cd3dcf9b5c5d009739",
+  "finalDllSHA256": "461e387ce0670324105abf489606acd52412307fc4785ab8f69d633b09fc4503",
+  "secondarySHA256": "e40309fd34299801721e2cbe93be1db7c6be978f989d3ce09932f35449c586c9",
+  "mainMethodsCompared": 23,
+  "secondaryMethods": 6,
+  "patchedSites": 9,
+  "uniqueOutputGroups": 5,
+  "protectedSearchSites": 5,
+  "protectedSites": [
+    {
+      "token": 100663304,
+      "method": "System.String GeorgioToElueym.ModEntry::RenameText(System.String)",
+      "offset": 6,
+      "value": "乔治奥"
+    },
+    {
+      "token": 100663304,
+      "method": "System.String GeorgioToElueym.ModEntry::RenameText(System.String)",
+      "offset": 36,
+      "value": "杰克逊博士"
+    },
+    {
+      "token": 100663304,
+      "method": "System.String GeorgioToElueym.ModEntry::RenameText(System.String)",
+      "offset": 66,
+      "value": "STM博士"
+    },
+    {
+      "token": 100663304,
+      "method": "System.String GeorgioToElueym.ModEntry::RenameText(System.String)",
+      "offset": 96,
+      "value": "杰克逊投资"
+    },
+    {
+      "token": 100663305,
+      "method": "System.String GeorgioToElueym.ModEntry::RewriteLocalizedText(System.String,System.String,System.String)",
+      "offset": 37,
+      "value": "他"
+    }
+  ],
+  "resourceCount": 0,
+  "referenceCases": 13,
+  "secondaryUnchanged": true,
+  "remainingUnclassifiedOutput": 0,
+  "actualGameRuntimeTest": false,
+  "scope": "Audited output operands only. Korean-source aliases not added without verified original game localization; original mod search and behavior unchanged.",
+  "sites": [
+    {
+      "token": 100663304,
+      "offset": 11,
+      "from": "艾露姆",
+      "to": "Elueym",
+      "input": "乔治奥"
+    },
+    {
+      "token": 100663304,
+      "offset": 41,
+      "from": "“军阀”",
+      "to": "“군벌”",
+      "input": "杰克逊博士"
+    },
+    {
+      "token": 100663304,
+      "offset": 56,
+      "from": "“军阀”",
+      "to": "“군벌”",
+      "input": "Dr. Jackson"
+    },
+    {
+      "token": 100663304,
+      "offset": 71,
+      "from": "“军阀”",
+      "to": "“군벌”",
+      "input": "STM博士"
+    },
+    {
+      "token": 100663304,
+      "offset": 86,
+      "from": "“军阀”",
+      "to": "“군벌”",
+      "input": "Dr. STM"
+    },
+    {
+      "token": 100663304,
+      "offset": 101,
+      "from": "“军阀”投资",
+      "to": "“군벌” 투자",
+      "input": "杰克逊投资"
+    },
+    {
+      "token": 100663304,
+      "offset": 116,
+      "from": "“军阀” Investment",
+      "to": "“군벌” 투자",
+      "input": "Jackson Investment"
+    },
+    {
+      "token": 100663304,
+      "offset": 131,
+      "from": "“军阀” Investment",
+      "to": "“군벌” 투자",
+      "input": "STM Investment"
+    },
+    {
+      "token": 100663305,
+      "offset": 42,
+      "from": "她",
+      "to": "그녀",
+      "input": "他"
+    }
+  ],
+  "manifestIdentityPreserved": true,
+  "externalReview": "Original author name and retained English character name; archive replaces DLLs and manifest, preserves original textures.",
+  "archive": {
+    "path": "ProbablyStolen_Elueym_v1.1.0_KO_Final_20261122.zip",
+    "sha256": "f65ed80391f124285b5c7a2dea6dce99916b5a807fe0cdb397d970ddee92f409",
+    "size": 9487,
+    "files": 5,
+    "crc": "pass",
+    "matchesAllOverlayFiles": true
+  }
+}
