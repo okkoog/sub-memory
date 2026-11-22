@@ -1,0 +1,65 @@
+"모드"	"DLL"	"문자열/키"	"판정"	"호출부"	"잔여 이유"
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"萝莉"	"A"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0052 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0008 [token 06000014]"	"원본 ItemPortraitHD Source/AdultBodySources.cs:11,58–66: Bodies 배열 및 Array.IndexOf(...,body) 인덱스 비교. 후속02 IL 두 앵커 일치. 입력 값 유지."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"少女"	"A"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_005A [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0010 [token 06000014]"	"원본 ItemPortraitHD Source/AdultBodySources.cs:11,58–66: Bodies 배열 및 Array.IndexOf(...,body) 인덱스 비교. 후속02 IL 두 앵커 일치. 입력 값 유지."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"御姐"	"A"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0062 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0018 [token 06000014]"	"원본 ItemPortraitHD Source/AdultBodySources.cs:11,58–66: Bodies 배열 및 Array.IndexOf(...,body) 인덱스 비교. 후속02 IL 두 앵커 일치. 입력 값 유지."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"少妇"	"A"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_006A [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0020 [token 06000014]"	"원본 ItemPortraitHD Source/AdultBodySources.cs:11,58–66: Bodies 배열 및 Array.IndexOf(...,body) 인덱스 비교. 후속02 IL 두 앵커 일치. 입력 값 유지."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"熟女"	"A"	"System.String ItemPortraitHD.AdultBodySources::PickBreastForBody(System.String[],System.String) @ IL_0072 [token 0600000C]
+System.Void ItemPortraitHD.AdultBodySources::.cctor() @ IL_0028 [token 06000014]"	"원본 ItemPortraitHD Source/AdultBodySources.cs:11,58–66: Bodies 배열 및 Array.IndexOf(...,body) 인덱스 비교. 후속02 IL 두 앵커 일치. 입력 값 유지."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"不限性别"	"A"	"ItemPortraitHD.FinalPortraits/Pool ItemPortraitHD.FinalPortraits::Current() @ IL_0010 [token 0600002A]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_053F [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_0578 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_05B4 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_05ED [token 06000072]
+LocGenderHelper/LocGender ItemPortraitHD.OriginalCompat::ToolGender() @ IL_0017 [token 060000C8]
+System.String ItemPortraitHD.RandomPortraits::PickFactionCore(System.String[],System.String) @ IL_00F6 [token 0600014E]
+System.String ItemPortraitHD.RandomPortraits::PickFinalFaction(System.String[],System.String) @ IL_006F [token 06000155]
+ItemPortraitHD.Source ItemPortraitHD.RandomPortraits::PickProvider(System.String,System.String) @ IL_0025 [token 06000156]"	"원본 Source/ModEntry.cs:70–75의 옵션 기본값·옵션 배열; FinalPortraits.cs:55, OriginalCompat.cs:387, RandomPortraits.cs:142,243,270에서 동일 값으로 성별 필터 분기. 해당 설정값 보호."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"立绘"	"B"	"System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_013A [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_01AF [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_0236 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_03F7 [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_045F [token 06000072]
+System.Void ItemPortraitHD.ModEntry::Init(ModManifest) @ IL_04BA [token 06000072]"	"원본 Source/ModEntry.cs:47–69 여러 Config.Define의 카테고리 표시 인자; 설정 식별자(resolution 등)와 구별. 카테고리 전체 일관성 및 API 그룹 사용 검사 후 패치할 후보."
+"ItemPortraitHD_v1.3.0"	"ItemPortraitHD.dll"	"체형에 지정된 출처가 없을 때 이 확률에 따라 Portraits/来源名/阵营 안의 PNG를 사용합니다(기본값 0%). 모든 사용자 지정 출처를 합친 뒤 전체 가중치에 따라 세력을 선택하고, 이어서 가중치에 따라 이미지를 선택합니다. 세력 제한이 없는 이미지는 각 세력에 1/5씩 가중치를 기여합니다. 사용자 지정 출처를 명시하면 이 확률을 건너뜁니다. 확률 판정에 실패하거나 사용 가능한 이미지가 없으면 일반 절차로 돌아갑니다. 신규 아이템에만 적용됩니다."	"B"	"System.String ItemPortraitHD.ModEntry/<>c::<Init>b__26_21() @ IL_0000 [token 06000215]"	"원본 Source/ModEntry.cs:63–64 LocalChance 설명 콜백. 현재 이미 한국어; 실제 폴더 경로 구성요소 원문 유지, 추가 번역 대상 아님."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"下层区,上层区,治安部,黑市,革命军"	"A"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_008C [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_003B [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0025 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0048 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0018 [token 060001C1]"	"원본 lewd_meme_config Source/Patches/MaidenPatch.cs:500–533,617–639,650–675 및 Config/ConfigRegistry.cs:RegisterMaiden: 기본 CSV를 SplitCsv로 읽고 배열/설정 필드에 실제 쓰기, 항목 비교·검증에 사용. 내부 기본값 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人"	"A"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_009C [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_0050 [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose() @ IL_0025 [token 060001B7]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0021 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_003D [token 060001C1]"	"원본 lewd_meme_config Source/Patches/MaidenPatch.cs:500–533,617–639,650–675 및 Config/ConfigRegistry.cs:RegisterMaiden: 기본 CSV를 SplitCsv로 읽고 배열/설정 필드에 실제 쓰기, 항목 비교·검증에 사용. 내부 기본값 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"萝莉,少女,御姐,少妇,熟女"	"A"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_00AC [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_0065 [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_004F [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_006E [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0062 [token 060001C1]"	"원본 lewd_meme_config Source/Patches/MaidenPatch.cs:500–533,617–639,650–675 및 Config/ConfigRegistry.cs:RegisterMaiden: 기본 CSV를 SplitCsv로 읽고 배열/설정 필드에 실제 쓰기, 항목 비교·검증에 사용. 내부 기본값 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"贫乳,普乳,巨乳"	"A"	"System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden() @ IL_00BC [token 0600002A]
+System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String) @ IL_007A [token 060001B6]
+System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0079 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0094 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0087 [token 060001C1]"	"원본 lewd_meme_config Source/Patches/MaidenPatch.cs:500–533,617–639,650–675 및 Config/ConfigRegistry.cs:RegisterMaiden: 기본 CSV를 SplitCsv로 읽고 배열/설정 필드에 실제 쓰기, 항목 비교·검증에 사용. 내부 기본값 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"상대 모드의 피로도 시스템이 꺼져 있음(fatigue_enabled=关). ValueMul은 항상 1"	"B"	"LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::FatigueMulCase(System.String,System.Int32,System.Single,System.String) @ IL_001E [token 060000B5]"	"원본 Source/Integration/SelfTestRunner.cs:1539–1564: Skip(key, detail) 진단 결과 Detail에 저장. 현재 이미 한국어이며 설정 토큰 원문 보존. 추가 번역 불필요."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"lou_locker,卢的储物柜"	"A"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_00B8 [token 06000184]"	"원본 Source/Patches/CorruptPatch.cs:99–106,659–690: Blacklisted/Whitelisted에 직접 전달되는 ID·이름 검색 기본 목록. 내부 비교 문자열 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"crate,storage,supplybox,supply_box,物资箱,货箱,物证柜,储藏区"	"A"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_0105 [token 06000184]"	"원본 Source/Patches/CorruptPatch.cs:99–106,659–690: Blacklisted/Whitelisted에 직접 전달되는 ID·이름 검색 기본 목록. 내부 비교 문자열 유지."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[重要物品]"	"B"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_014E [token 06000184]"	"원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[容器]"	"B"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_016F [token 06000184]"	"원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"[机器]"	"B"	"System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String) @ IL_0190 [token 06000184]"	"원본 Source/Patches/CorruptPatch.cs:693–730: 태그 검사는 영문 상수로 실행; 중국어 표제는 text4에 연결되어 LogMain에만 전달. 해당 진단 표제 번역 후보."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女职业池"	"B"	"System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose() @ IL_0020 [token 060001B7]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_001C [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0038 [token 060001C1]"	"원본 Source/Patches/MaidenPatch.cs:547–578,617–639,650–675,787–793: 세 번째 label 인자는 로그·실패 진단에 전달되고 실제 배열 처리에는 fieldName, key, def를 사용. 로그 표제 후보; 명시된 세 호출 위치만 수정 검토."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女阵营池"	"B"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0020 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0043 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0013 [token 060001C1]"	"원본 Source/Patches/MaidenPatch.cs:547–578,617–639,650–675,787–793: 세 번째 label 인자는 로그·실패 진단에 전달되고 실제 배열 처리에는 fieldName, key, def를 사용. 로그 표제 후보; 명시된 세 호출 위치만 수정 검토."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女体型池"	"B"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_004A [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_0069 [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_005D [token 060001C1]"	"원본 Source/Patches/MaidenPatch.cs:547–578,617–639,650–675,787–793: 세 번째 label 인자는 로그·실패 진단에 전달되고 실제 배열 처리에는 fieldName, key, def를 사용. 로그 표제 후보; 명시된 세 호출 위치만 수정 검토."
+"lewd_meme_config0.7.2-pre"	"LewdMemeConfig.dll"	"少女胸部池"	"B"	"System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose() @ IL_0074 [token 060001B8]
+System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean) @ IL_008F [token 060001C0]
+System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>) @ IL_0082 [token 060001C1]"	"원본 Source/Patches/MaidenPatch.cs:547–578,617–639,650–675,787–793: 세 번째 label 인자는 로그·실패 진단에 전달되고 실제 배열 처리에는 fieldName, key, def를 사용. 로그 표제 후보; 명시된 세 호출 위치만 수정 검토."
