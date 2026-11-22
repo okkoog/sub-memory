@@ -1,11 +1,11 @@
 {
   "baseline": "45f3f40c401dc9cc99bd5261509df30d5e9b814b67422386676eb372e482e72b",
-  "finalDllHash": "2b8df0fea0f4a69b3c001fbb8f481da87984530b0b10ee1ebd96d423f0418f9f",
+  "finalDllHash": "2c1c579523058dca9d5e1a7b2ef7162fbdcca48e64be183a45df564d721cd100",
   "comparedMethods": 1861,
   "embeddedResources": 1617,
   "insertCount": 49,
   "replaceCount": 14,
-  "helperMethods": 12,
+  "helperMethods": 11,
   "parserSites": 10,
   "markerSites": 4,
   "displaySites": 5,
@@ -345,6 +345,46 @@
     "rld_f667308df730237865c9",
     "rld_fd858c4efd27a7c29cc9"
   ],
-  "csvSHA256": "a3c53e8702c8b14c986b9a714ee8a9a59f62ee4d1805f355d3c6e6b3808d0a79",
-  "scope": "Static reviewed display boundaries; actual game loader, UI and save compatibility remain untested."
+  "csvSHA256": "909fcba8d513045c60939c22d6d84ce9da1c12c86b8065d2ce516113920ecabb",
+  "scope": "Static reviewed display boundaries; actual game loader, UI and save compatibility remain untested.",
+  "previousDisplayDllHash": "2b8df0fea0f4a69b3c001fbb8f481da87984530b0b10ee1ebd96d423f0418f9f",
+  "patronGuardPurePrefix": true,
+  "patronGuardPrefix": "redlight_patron_",
+  "patronGuardReplacements": 2,
+  "patronGuardComparedMethods": 1872,
+  "statusSearchSites": 2,
+  "statusAddedKeys": [
+    "rld_33a6ce61cfb86135c728",
+    "rld_3d9a9a7c59284f7094b0",
+    "rld_560565bbfcde4ea2f6e5",
+    "rld_dd2d8d84624a3a346cba"
+  ],
+  "statusReferenceTests": 6,
+  "remainingUnclassifiedOriginalKeys": 0,
+  "externalAuditVerified": [
+    {
+      "path": "RedLightDistrict_v1.1.1\\Localization\\ko.csv",
+      "field": "2282행/2열 [rld_a5147769186a4179e97d]",
+      "reason": "Original exact portrait-name example in otherwise Korean help text."
+    },
+    {
+      "path": "RedLightDistrict_v1.1.1\\RedLightDistrictPerson\\README.txt",
+      "field": "6",
+      "reason": "Original exact portrait filename and NPC name example kept."
+    },
+    {
+      "path": "RedLightDistrict_v1.1.1\\RedLightDistrictPerson\\README_ko.txt",
+      "field": "6",
+      "reason": "Original exact portrait filename and NPC name example kept."
+    }
+  ],
+  "externalUnclassified": 0,
+  "archive": {
+    "path": "ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip",
+    "sha256": "d5761b199b51d28a938d5ff361662a945960e12fd4dde644544284baf02c255f",
+    "files": 7,
+    "size": 148224360,
+    "crc": "pass",
+    "matchesAllOverlayFiles": true
+  }
 }

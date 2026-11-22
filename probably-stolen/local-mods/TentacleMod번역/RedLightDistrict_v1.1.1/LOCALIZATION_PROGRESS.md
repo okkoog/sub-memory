@@ -1,68 +1,9 @@
-# Red Light District v1.1.1 — external Korean Localization progress
+# Red Light District v1.1.1 — 최종 정적 한국어 검수 (2026-11-22)
 
-- Source catalog: original TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv (untouched)
-- Total active IL occurrence keys: 3619 (includes diagnostics, internal strings and logs)
-- Korean external ko.csv translations: 3512; untranslated/fallback occurrences: 107
-- Reviewed historical source strings: 295; mapped and selected IL sites: 351; unique selected historical keys: 351
-- New manually reviewed direct keys: 3173; original user-approved seed entries preserved: 22; previously generated keys retained as fallback: 3516
-- Comparison/identifier sites withheld: 3; reviewed strings at non-UI sites withheld: 57
-- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.
-- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).
-- Reviewed internal literals kept original at runtime: 107. Korean references and usage are recorded in translation-work/internal_string_reference.tsv.
-- Actual game runtime / save data compatibility NOT TESTED; line breaks serialized as literal backslash-n for the game parser.
-
-## Manually reviewed new key batches
-
-- manual_direct_batch01_20261121.tsv: 51 entries
-- manual_direct_batch02_20261121.tsv: 99 entries
-- manual_direct_batch03_20261121.tsv: 80 entries
-- manual_direct_batch04_20261121.tsv: 82 entries
-- manual_direct_batch05_20261121.tsv: 55 entries
-- manual_direct_batch06_20261121.tsv: 21 entries
-- manual_direct_batch07_20261121.tsv: 17 entries
-- manual_direct_batch08_20261121.tsv: 10 entries
-- manual_direct_batch09_20261121.tsv: 34 entries
-- manual_direct_batch10_20261121.tsv: 12 entries
-- manual_direct_batch11_20261121.tsv: 2 entries
-- manual_direct_batch12_20261121.tsv: 26 entries
-- manual_direct_batch13_20261121.tsv: 23 entries
-- manual_direct_batch14_20261121.tsv: 35 entries
-- manual_direct_batch15_20261121.tsv: 39 entries
-- manual_direct_batch16_20261121.tsv: 18 entries
-- manual_direct_batch17_20261121.tsv: 14 entries
-- manual_direct_batch18_20261121.tsv: 46 entries
-- manual_direct_batch19_20261121.tsv: 50 entries
-- manual_direct_batch20_20261121.tsv: 41 entries
-- manual_direct_batch21_20261121.tsv: 60 entries
-- manual_direct_batch22_20261121.tsv: 100 entries
-- manual_direct_batch23_20261121.tsv: 84 entries
-- manual_direct_batch24_20261121.tsv: 107 entries
-- manual_direct_batch25_20261121.tsv: 99 entries
-- manual_direct_batch26_20261121.tsv: 68 entries
-- manual_direct_batch27_20261121.tsv: 100 entries
-- manual_direct_batch28_20261121.tsv: 72 entries
-- manual_direct_batch29_20261121.tsv: 60 entries
-- manual_direct_batch30_20261121.tsv: 88 entries
-- manual_direct_batch31_20261121.tsv: 52 entries
-- manual_direct_batch32_20261121.tsv: 96 entries
-- manual_direct_batch33_20261121.tsv: 77 entries
-- manual_direct_batch34_20261121.tsv: 80 entries
-- manual_direct_batch35_20261121.tsv: 85 entries
-- manual_direct_batch36_20261121.tsv: 157 entries
-- manual_direct_batch37_20261121.tsv: 99 entries
-- manual_direct_batch38_20261121.tsv: 131 entries
-- manual_direct_batch39_20261121.tsv: 109 entries
-- manual_direct_batch40_20261121.tsv: 129 entries
-- manual_direct_batch41_20261121.tsv: 95 entries
-- manual_direct_batch42_20261121.tsv: 88 entries
-- manual_direct_batch43_20261121.tsv: 94 entries
-- manual_direct_batch44_20261121.tsv: 132 entries
-- manual_direct_batch45_20261121.tsv: 124 entries
-- manual_direct_batch46_20261121.tsv: 37 entries
-
-## Complete per-key audit in source order
-
-- protected-internal: 107
-- translated: 3512
-
-KEY_COVERAGE_AUDIT_20261121.tsv covers all 3619 keys once. UNTRANSLATED_REVIEW_QUEUE_20261121.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.
+- 원본 활성 키 3,619개 중 번역 3,528개, 원문 보호 91개. 표시 전용 별칭 24개(총 CSV 3,552행).
+- 급식기/정수기 상태 두 곳 및 기존 저장 헤더, 비교용 타입명 10곳, 소비 표시 4곳을 구/신 표기 각각 처리.
+- 특성·고객명·메이드 버튼 및 툴팁 출력 경계 처리. 원본 식별자/장부·특성·연령 및 조건 분기 보호.
+- 고객 ID는 고유한 원본 접두사만 검사하며 ID 생성 함수 호출·저장값 변경 없음.
+- 기존 메서드 1,860개와 관리 리소스 1,617개 정적 검증. 기존 91개 보호 키 및 신규 표시 24개 전수 대조.
+- 게임 실행, 실제 모드 로더 권한 검사, Harmony 합성, 저장 호환성은 미검증.
+키 대조: KEY_COVERAGE_AUDIT_20261122.tsv, DISPLAY_ALIAS_KEYS_20261122.tsv. 결과: ../번역대조표/RLD_FINAL_RESULT_20261122.json

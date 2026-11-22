@@ -1,0 +1,37 @@
+{
+  "finalDllHash": "2c1c579523058dca9d5e1a7b2ef7162fbdcca48e64be183a45df564d721cd100",
+  "comparedMethods": 1872,
+  "changed": 2,
+  "removedWrapper": "System.String RedLightDistrict.PatronSystem::KoDisplayPatronIdentifier()",
+  "patronGuardPurePrefix": true,
+  "patronPrefix": "redlight_patron_",
+  "guardIL": [
+    "ldarg.0 ",
+    "brfalse.s IL_0023: ldarg.1",
+    "ldarg.0 ",
+    "ldfld System.String StoreClient::identifier",
+    "call System.Boolean System.String::IsNullOrEmpty(System.String)",
+    "brtrue.s IL_0023: ldarg.1",
+    "ldarg.0 ",
+    "ldfld System.String StoreClient::identifier",
+    "ldstr redlight_patron_",
+    "ldc.i4.4 ",
+    "callvirt System.Boolean System.String::StartsWith(System.String,System.StringComparison)",
+    "brtrue.s IL_0025: ldarg.1",
+    "ldarg.1 ",
+    "ret ",
+    "ldarg.1 ",
+    "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayPatronName(System.String)",
+    "ret "
+  ],
+  "scannerEvidence": [
+    {
+      "method": "System.String ModCapability::DisplayName(System.String)",
+      "value": "dynamic-code"
+    },
+    {
+      "method": "System.Void ModCapability::.cctor()",
+      "value": "dynamic-code"
+    }
+  ]
+}
