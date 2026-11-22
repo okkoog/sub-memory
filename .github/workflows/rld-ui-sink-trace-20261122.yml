@@ -86,7 +86,7 @@ jobs:
               Save("ui-sinks.json",calls);
               Save("external-ui-readers.json",refs);
               Save("name-trait-fields.json",direct);
-              var sought=methods.Where(m=>Regex.IsMatch(m.FullName,@"(?i)(TalentEquipment|TalentTraits|TalentData|SewingMachine|TalentPanel).*(?:\.cctor|::(Build|Create|Get|Name|Make|MakeItem|Equip|Cloth|Outfit|Trait|Apply|Set|Refresh|Update|Description|Init|Register))")).ToArray();
+              var sought=methods.Where(m=>Regex.IsMatch(m.FullName,@"(?i)(TalentEquipment|TalentAccessory|TalentTraits|TalentData|TalentPanel|TalentPatches|TraitCatalog|TalentSystem|DisplayBoundaryKo|CsvLookup::Read)") && Regex.IsMatch(m.FullName,@"(?i)(\.cctor|::(?:ShowPanel|DisplayName|BuildTagText|TryOwnTooltipLines|TraitColor|CreateItem|RegisterToDirectory|HasTrait|Read|DisplayTrait|LocalizedTrait|TraitDisplay|TranslateTrait|BuildTraits|GenerateTraits|GetHiddenTraits))")).ToArray();
               Save("focused-methods.json",sought.Select(m=>new{method=m.FullName,token=m.MDToken.Raw,code=m.Body.Instructions.Select((i,n)=>new{at=n,offset=i.Offset,il=F(i)})}));
               Save("summary.json",new{types=types.Length,methods=methods.Length,focusMethods=keyMethods.Length,sinks=calls.Count,externalUiReaders=refs.Count,namedFields=direct.Count,fullFocusedMethods=sought.Length,sinkCallers=calls.Select(x=>x.GetType().GetProperty("caller")!.GetValue(x)).Distinct().Count()});
               Console.WriteLine(JsonSerializer.Serialize(new{focusMethods=keyMethods.Length,sinks=calls.Count,readers=refs.Count,namedFields=direct.Count,fullFocusedMethods=sought.Length}));
@@ -102,7 +102,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add --sparse -f rld-ui
           git commit -m "Trace outfit and trait name UI producers and sinks"
-          git push origin HEAD:refs/heads/rld-ui-sink-audit-20261122
+          git push origin HEAD:refs/heads/rld-ui-sink-deep-audit-20261122
       - uses: actions/upload-artifact@v4
         with:
           name: rld-ui-outfit-trait-sink-audit
