@@ -1,0 +1,91 @@
+name: Build clean RLD clothing and trait direct localization DLL
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/rld-clean-localkeys-build-20261122.yml']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rld-clean-localkeys-20261122
+          lfs: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .gitattributes
+            rld-ui-fix
+            rld-clean-keyfix
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv
+      - name: Read exact RLD clean UI base via LFS
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install --local
+          git lfs pull --include='rld-ui-fix/RedLightDistrict.dll' --exclude=''
+          echo '86ad3f461f263dd04199edf8dad7e8c3f2e017b0c8a013462eef8034733bda47  rld-ui-fix/RedLightDistrict.dll' | sha256sum -c
+      - name: Compile exact trait local key patch and reject incompatible previous code
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console -f net8.0 -o /tmp/rld-clean --force
+          dotnet add /tmp/rld-clean/rld-clean.csproj package dnlib --version 4.5.0
+          cp rld-clean-keyfix/PatchTraitTooltip.cs /tmp/rld-clean/Program.cs
+          dotnet build /tmp/rld-clean/rld-clean.csproj -c Release
+          mkdir -p rld-clean-keyfix/verified
+          dotnet /tmp/rld-clean/bin/Release/net8.0/rld-clean.dll \
+            rld-ui-fix/RedLightDistrict.dll \
+            rld-ui-fix/plan.json \
+            rld-clean-keyfix/RedLightDistrict.dll \
+            rld-clean-keyfix/verified/report.json \
+            rld-clean-keyfix/verified/traits.json
+      - name: Validate output, exact localization keys, and package DLL only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import pathlib, hashlib, json, csv, zipfile
+          p=pathlib.Path('rld-clean-keyfix')
+          dll=(p/'RedLightDistrict.dll').read_bytes()
+          report=json.loads((p/'verified/report.json').read_text())
+          assert dll[:2]==b'MZ' and len(dll)>100000000
+          assert hashlib.sha256(dll).hexdigest()==report['outputSha256']
+          assert report['methodsAdded']==0 and report['methodsChanged']==1 and report['newHarmonyPatches']==0
+          assert report['keysMatched']==22 and report['storedTraitIdsUntouched']
+          plan=json.loads(pathlib.Path('rld-ui-fix/plan.json').read_text())
+          assert len(plan['equipment'])==15 and len(plan['accessory'])==4 and len(plan['traits'])==22
+          with pathlib.Path('probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv').open(encoding='utf-8-sig',newline='') as f:
+            keys=dict(csv.reader(f))
+          for group in ('equipment','accessory','traits'):
+            for row in plan[group]:
+              assert keys.get(row['key']) and keys[row['key']]!=row['source']
+          pkg=p/'verified/RedLightDistrict_Clean_Direct_LocalKeys_DLL_Only.zip'
+          with zipfile.ZipFile(pkg,'w',zipfile.ZIP_DEFLATED,compresslevel=4) as z:
+            z.writestr('RedLightDistrict.dll',dll)
+          with zipfile.ZipFile(pkg) as z:
+            assert z.namelist()==['RedLightDistrict.dll'] and z.testzip() is None
+            assert hashlib.sha256(z.read('RedLightDistrict.dll')).hexdigest()==report['outputSha256']
+          print('ALL CHECKS PASSED: 19 item display keys, 22 trait display keys, untouched CSV, no unsafe GameItemElement hook; size=',len(dll),'sha=',report['outputSha256'])
+          PY
+      - name: Publish actual full DLL using Git LFS to isolated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs track 'rld-clean-keyfix/RedLightDistrict.dll'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse .gitattributes rld-clean-keyfix/RedLightDistrict.dll rld-clean-keyfix/verified/report.json rld-clean-keyfix/verified/traits.json
+          pointer=$(git show :rld-clean-keyfix/RedLightDistrict.dll)
+          grep -Fxq 'version https://git-lfs.github.com/spec/v1' <<< "$pointer"
+          grep -Fxq "oid sha256:$(sha256sum rld-clean-keyfix/RedLightDistrict.dll|cut -d' ' -f1)" <<< "$pointer"
+          git commit -m 'Build clean RLD item and trait key lookup, discard invalid tooltip IL'
+          git push origin HEAD:refs/heads/rld-clean-localkeys-20261122
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RLD-Clean-Direct-LocalKeys
+          path: rld-clean-keyfix/verified/RedLightDistrict_Clean_Direct_LocalKeys_DLL_Only.zip
+          if-no-files-found: error
+          retention-days: 7
