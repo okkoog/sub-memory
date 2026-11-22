@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Merge reviewed RLD translations into external ko.csv; never modify the original DLL."""
-import csv, json, re, collections
+import csv, json, re, collections, hashlib
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 BASE=HERE.parents[2]
@@ -74,14 +74,25 @@ assert len(manual_counts)>=3
 # The game uses File.ReadAllLines and expands literal backslash-n in ParseCsvValue.
 def decoded(value): return value.replace('\\n','\n')
 def encoded(value): return value.replace('\n','\\n')
-existing={}
+final_plan=json.loads((REVIEW/'RLD_FINAL_PLAN_20261122.json').read_text(encoding='utf-8'))
+final_result=json.loads((REVIEW/'RLD_FINAL_RESULT_20261122.json').read_text(encoding='utf-8'))
+assert hashlib.sha256((HERE.parent/'RedLightDistrict.dll').read_bytes()).hexdigest()==final_result['finalDllHash'], 'Install verified final DLL before rebuilding CSV'
+assert final_result.get('patronGuardPurePrefix') is True
+alias_catalog={r['key']:r for r in final_plan['aliases']}
+approved=set(r['displayKey'] for r in final_plan['parser']) | set(r['key'] for r in final_plan['direct']) | {
+    'rld_33a6ce61cfb86135c728','rld_3d9a9a7c59284f7094b0',
+    'rld_560565bbfcde4ea2f6e5','rld_dd2d8d84624a3a346cba'}
+assert len(approved)==16
+existing={}; existing_aliases={}
 with DEST.open(encoding='utf-8-sig',newline='') as f:
     for r in csv.reader(f):
         if not r:continue
         assert len(r)==2,r
         key,value=r
-        assert key in by_key and key not in existing and value
-        existing[key]=decoded(value)
+        assert key in by_key or key in alias_catalog, key
+        assert key not in existing and key not in existing_aliases and value, key
+        if key in alias_catalog:existing_aliases[key]=decoded(value)
+        else:existing[key]=decoded(value)
 assert len(existing)>=22
 # Keep the 22 original user-approved entries as an immutable baseline; newly
 # reviewed explicit key changes must supersede previous generated values.
@@ -112,6 +123,8 @@ with (HERE / 'internal_string_reference.tsv').open(encoding='utf-8', newline='')
     protected = {item['key']: item for item in csv.DictReader(reference_file, delimiter='\t')}
 assert set(protected) <= set(by_key)
 UNSAFE_NAMING_KEYS.update(protected)
+UNSAFE_NAMING_KEYS.difference_update(approved)
+protected={k:v for k,v in protected.items() if k not in approved}
 # The entries below were previously translated. The original .NET IL audit
 # proves four are exact-name container comparisons. The other six form a
 # mutually dependent status + generated header + IndexOf lookup for feeder/tank
@@ -129,9 +142,15 @@ COMPARISON_PROTECTION = {
     'rld_dd2d8d84624a3a346cba', # tank generated header
     'rld_445d455a701f81452b29', # tank IndexOf marker
 }
+COMPARISON_PROTECTION.difference_update(approved)
 assert COMPARISON_PROTECTION <= set(protected), ('missing protected compare keys', COMPARISON_PROTECTION - set(protected))
 assert not (UNSAFE_NAMING_KEYS & set(seed))
-combined=dict(existing);combined.update(reviewed);combined.update(direct);combined.update(seed)
+combined=dict(reviewed);combined.update(direct);combined.update(seed);combined.update(existing)
+for row in final_plan['direct']:combined.setdefault(row['key'],decoded(row['target']))
+for row in final_plan['parser']:combined.setdefault(row['displayKey'],decoded(row['target']))
+aliases={key:existing_aliases.get(key,decoded(row['target'])) for key,row in alias_catalog.items()}
+assert approved <= set(combined)
+assert len(aliases)==24 and not (set(aliases)&set(by_key))
 for k in UNSAFE_NAMING_KEYS:combined.pop(k,None)
 assert not (COMPARISON_PROTECTION & set(combined)), ('comparison lookup keys translated', COMPARISON_PROTECTION & set(combined))
 assert not (set(combined)-set(by_key))
@@ -143,35 +162,41 @@ for k,v in combined.items():
     assert '\t' not in v and original!=v,('invalid',k)
     for token in ('<color=','</color>','<b>','</b>'):
         assert original.count(token)==v.count(token),('markup',k)
+for key,value in aliases.items():
+    original=alias_catalog[key]['source']
+    assert variables(original)==variables(value) and original.count('\n')==value.count('\n'),key
+    assert value and '\t' not in value,key
 with DEST.open('w',encoding='utf-8',newline='') as f:
     for row in rows:
         k=row['key']
         if k in combined:f.write(k+',"'+encoded(combined[k]).replace('"','""')+'"\r\n')
+    for k,v in aliases.items():f.write(k+',"'+encoded(v).replace('"','""')+'"\r\n')
 with DEST.open(encoding='utf-8',newline='') as f:
     back={r[0]:decoded(r[1]) for r in csv.reader(f) if r}
-assert back==combined
+assert back=={**combined,**aliases}
 assert len(DEST.read_bytes().split(b'\n'))-1==len(back)
 assert set(existing)-UNSAFE_NAMING_KEYS<=set(back)
 assert not (UNSAFE_NAMING_KEYS & set(back))
-assert all(back.get(k)==v for k,v in seed.items())
+assert all(back.get(k)==v for k,v in existing.items() if k not in UNSAFE_NAMING_KEYS)
+assert all(back.get(k)==v for k,v in existing_aliases.items())
 coverage=len(combined)
 AUDIT.write_text('# Red Light District v1.1.1 — external Korean Localization progress\n\n'
     +'- Source catalog: original TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv (untouched)\n'
     +f'- Total active IL occurrence keys: {len(rows)} (includes diagnostics, internal strings and logs)\n'
-    +f'- Korean external ko.csv translations: {coverage}; untranslated/fallback occurrences: {len(rows)-coverage}\n'
+    +f'- Korean original occurrence keys: {coverage}; protected originals: {len(rows)-coverage}; display-only alias keys: {len(aliases)}; CSV rows: {coverage+len(aliases)}\n'
     +f'- Reviewed historical source strings: {id_count}; mapped and selected IL sites: {matched_sites}; unique selected historical keys: {len(reviewed)}\n'
     +f'- New manually reviewed direct keys: {len(direct)}; original user-approved seed entries preserved: {len(seed)}; previously generated keys retained as fallback: {len(existing)}\n'
     +f'- Comparison/identifier sites withheld: {skipped_compares}; reviewed strings at non-UI sites withheld: {skipped_nonui}\n'
     +'- Untranslated keys retain original Chinese through the mod fallback. Key format, variables, line breaks, CSV quoting, original seed translations validated.\n'
-    +'- Original TalentIntel.TypeName exact-name parser: 10 interface strings intentionally left Chinese to preserve boss filtering (see IL audit).\n'
+    +'- TalentIntel.TypeName display labels and exact old/new comparisons use the verified final DLL; raw search keys remain protected.\n'
     +f'- Reviewed internal literals kept original at runtime: {len(protected)}. Korean references and usage are recorded in translation-work/internal_string_reference.tsv.\n'
     +'- Actual game runtime / save data compatibility NOT TESTED; line breaks serialized as literal backslash-n for the game parser.\n\n'
     +'## Manually reviewed new key batches\n\n'
     +''.join(f'- {name}: {count} entries\n' for name,count in manual_counts),encoding='utf-8')
 
 # Complete original-key audit in cn.csv source order. Never hide unresolved keys.
-KEY_AUDIT=HERE.parent/'KEY_COVERAGE_AUDIT_20261121.tsv'
-REVIEW_QUEUE=HERE.parent/'UNTRANSLATED_REVIEW_QUEUE_20261121.tsv'
+KEY_AUDIT=HERE.parent/'KEY_COVERAGE_AUDIT_20261122.tsv'
+REVIEW_QUEUE=HERE.parent/'UNTRANSLATED_REVIEW_QUEUE_20261122.tsv'
 CJK=re.compile(r'[\u3400-\u9fff]')
 DIRECT_COMPARE=re.compile(r'(?:op_Equality|op_Inequality|String::Contains|String::IndexOf|::HasTrait|::IsPatronDisplayName)',re.I)
 def classify(row):
@@ -209,7 +234,7 @@ assert counts['translated']==coverage
 AUDIT.write_text(AUDIT.read_text(encoding='utf-8')
     +'\n## Complete per-key audit in source order\n\n'
     +''.join('- '+status+': '+str(amount)+'\n' for status,amount in sorted(counts.items()))
-    +'\nKEY_COVERAGE_AUDIT_20261121.tsv covers all '+str(len(rows))+' keys once. UNTRANSLATED_REVIEW_QUEUE_20261121.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.\n',encoding='utf-8')
+    +'\nKEY_COVERAGE_AUDIT_20261122.tsv covers all '+str(len(rows))+' keys once. UNTRANSLATED_REVIEW_QUEUE_20261122.tsv holds unresolved manual-review cases. These triage classifications DO NOT prove that diagnostic or protected keys can never appear in the UI.\n',encoding='utf-8')
 
 print('source',len(rows),'prior-reviewed',id_count,'historical-sites',matched_sites,'manual',len(direct),
       'existing',len(existing),'final',coverage,'remaining',len(rows)-coverage,'zip-disabled')
