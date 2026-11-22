@@ -1,0 +1,212 @@
+name: RLD final pure identity guard and verified installation ZIP
+on:
+  push:
+    paths: ['.github/workflows/rld-final-package-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/manifest.xml
+            probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Verify exact LFS object before final identity correction
+        run: |
+          git lfs pull --include='probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll' --exclude=''
+          test "$(sha256sum 'probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/RedLightDistrict.dll' | cut -d' ' -f1)" = '2b8df0fea0f4a69b3c001fbb8f481da87984530b0b10ee1ebd96d423f0418f9f'
+      - name: Verify read-only patron name guard without advancing unique ID generation
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/rldguard --force
+          dotnet add /tmp/rldguard/rldguard.csproj package dnlib --version 4.5.0
+          cat >/tmp/rldguard/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Security.Cryptography;
+          using System.Text.Json;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static void Need(bool b,string m){if(!b)throw new Exception(m);}
+            static string Hash(byte[] b)=>Convert.ToHexString(SHA256.HashData(b)).ToLowerInvariant();
+            static string Raw(object? x)=>x?.ToString()??"";
+            static string Op(object? o,Dictionary<Instruction,int> ix)=>o switch{null=>"",Instruction i=>"@"+ix[i],IList<Instruction> a=>string.Join(",",a.Select(i=>"@"+ix[i])),_=>Raw(o)};
+            static string EH(ExceptionHandler e,Dictionary<Instruction,int> m){string I(Instruction? i)=>i==null?"-":m[i].ToString();return string.Join("|",e.HandlerType.ToString(),I(e.TryStart),I(e.TryEnd),I(e.HandlerStart),I(e.HandlerEnd),I(e.FilterStart),e.CatchType?.FullName??"");}
+            static void Main(string[] a){
+              using var source=ModuleDefMD.Load(a[0]);using var target=ModuleDefMD.Load(a[0]);using var game=ModuleDefMD.Load(a[2]);
+              var patron=target.GetTypes().Single(t=>t.FullName=="RedLightDistrict.PatronSystem");
+              var generator=patron.Methods.Single(m=>m.Name=="PatronIdentifier");
+              var wrapper=patron.Methods.Single(m=>m.Name=="KoDisplayPatronIdentifier");
+              Need(generator.Body.Instructions.Count(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,"redlight_patron_"))==1,"Exact unique prefix");
+              Need(generator.Body.Instructions.Any(i=>i.OpCode==OpCodes.Stsfld&&Raw(i.Operand).Contains("::_patronIdSeq")),"Generator is mutating; must never be called in display helper");
+              var type=target.GetTypes().Single(t=>t.FullName=="RedLightDistrict.Korean.DisplayBoundaryKo");
+              var display=type.Methods.Single(m=>m.Name=="DisplayPatronName");
+              var starts=display.Body.Instructions.First(i=>i.OpCode==OpCodes.Callvirt&&Raw(i.Operand)=="System.Boolean System.String::StartsWith(System.String,System.StringComparison)");
+              var guard=type.Methods.Single(m=>m.Name=="CustomerName");
+              var list=guard.Body.Instructions;
+              var wrapperCall=list.Single(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand)==wrapper.FullName);
+              var eq=list.Single(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand)=="System.Boolean System.String::Equals(System.String,System.String,System.StringComparison)");
+              int n=list.IndexOf(wrapperCall),k=list.IndexOf(eq);
+              Need(k==n+2&&list[n-1].OpCode==OpCodes.Ldfld&&Raw(list[n-1].Operand)=="System.String StoreClient::identifier"&&list[n+1].IsLdcI4()&&list[n+1].GetLdcI4Value()==4,"Guard stack verified");
+              wrapperCall.OpCode=OpCodes.Ldstr;wrapperCall.Operand="redlight_patron_";eq.OpCode=OpCodes.Callvirt;eq.Operand=starts.Operand;
+              Need(!target.GetTypes().SelectMany(t=>t.Methods).Where(m=>m.HasBody&&m!=wrapper).Any(m=>m.Body.Instructions.Any(i=>i.Operand is IMethod&&Raw(i.Operand)==wrapper.FullName)),"No reference to removed wrapper");
+              string removed=wrapper.FullName;patron.Methods.Remove(wrapper);
+              var temp=a[0]+".new";target.Write(temp);using var output=ModuleDefMD.Load(temp);
+              var old=source.GetTypes().SelectMany(t=>t.Methods).Where(m=>m.FullName!=removed).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              var dest=output.GetTypes().SelectMany(t=>t.Methods).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              Need(old.Count==dest.Count&&old.All(v=>dest.TryGetValue(v.Key,out var z)&&z.Length==v.Value.Length),"All original and other helper methods preserved");
+              int count=0,changed=0;
+              foreach(var pair in old)for(int j=0;j<pair.Value.Length;j++){
+                var s=pair.Value[j];var t=dest[pair.Key][j];Need(s.HasBody==t.HasBody,"Body");if(!s.HasBody)continue;
+                var x=s.Body.Instructions.ToArray();var y=t.Body.Instructions.ToArray();Need(x.Length==y.Length,"Count "+s.FullName);
+                var ax=x.Select((v,i)=>(v,i)).ToDictionary(z=>z.v,z=>z.i);var bx=y.Select((v,i)=>(v,i)).ToDictionary(z=>z.v,z=>z.i);
+                Need(s.Body.Variables.Select(v=>v.Type.FullName).SequenceEqual(t.Body.Variables.Select(v=>v.Type.FullName)),"Locals");
+                Need(s.Body.ExceptionHandlers.Select(h=>EH(h,ax)).SequenceEqual(t.Body.ExceptionHandlers.Select(h=>EH(h,bx))),"EH");
+                for(int i=0;i<x.Length;i++){
+                  if(s.FullName==guard.FullName&&i==n){Need(y[i].OpCode==OpCodes.Ldstr&&Equals(y[i].Operand,"redlight_patron_"),"Prefix");changed++;}
+                  else if(s.FullName==guard.FullName&&i==k){Need(y[i].OpCode==OpCodes.Callvirt&&Raw(y[i].Operand)==Raw(starts.Operand),"StartsWith");changed++;}
+                  else Need(x[i].OpCode==y[i].OpCode&&Op(x[i].Operand,ax)==Op(y[i].Operand,bx),"Unexpected diff "+s.FullName+" "+i);
+                }count++;
+              }
+              Need(changed==2,"Exactly two IL replacements");
+              var hType=output.GetTypes().Single(t=>t.FullName==type.FullName);var h=hType.Methods.Single(m=>m.Name=="CustomerName");
+              Need(!h.Body.Instructions.Any(i=>i.Operand is IMethod&&Raw(i.Operand).Contains("PatronIdentifier("))&&!h.Body.Instructions.Any(i=>i.OpCode==OpCodes.Stfld||i.OpCode==OpCodes.Stsfld),"Guard is read-only");
+              Need(!output.GetTypes().SelectMany(t=>t.Methods).Any(m=>m.FullName==removed),"No generator wrapper");
+              var rs=source.Resources.OfType<EmbeddedResource>().ToDictionary(r=>r.Name.ToString(),r=>Hash(r.CreateReader().ToArray()));var rt=output.Resources.OfType<EmbeddedResource>().ToDictionary(r=>r.Name.ToString(),r=>Hash(r.CreateReader().ToArray()));Need(rs.Count==1617&&rs.Count==rt.Count&&rs.All(x=>rt.GetValueOrDefault(x.Key)==x.Value),"All resources identical");
+              // Collect actual capability-rule evidence for review without claiming a live loader test.
+              var scanner=game.GetTypes().Where(t=>t.Name.ToString().Contains("ModScanner")||t.FullName.Contains("ModCapability")).SelectMany(t=>t.Methods).Where(m=>m.HasBody).SelectMany(m=>m.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&(s.Contains("Reflection.Emit")||s.Contains("dynamic-code")||s.Contains("DynamicMethod")||s.Contains("OpCodes"))).Select(i=>new{method=m.FullName,value=Raw(i.Operand)})).ToArray();
+              File.Move(temp,a[0],true);
+              File.WriteAllText(a[1],JsonSerializer.Serialize(new{finalDllHash=Hash(File.ReadAllBytes(a[0])),comparedMethods=count,changed=2,removedWrapper=removed,patronGuardPurePrefix=true,patronPrefix="redlight_patron_",guardIL=h.Body.Instructions.Select(i=>i.OpCode.Name+" "+Raw(i.Operand)).ToArray(),scannerEvidence=scanner},new JsonSerializerOptions{WriteIndented=true})+"\n");
+            }
+          }
+          CS
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          dotnet run --project /tmp/rldguard/rldguard.csproj -- "$ROOT/RedLightDistrict_v1.1.1/RedLightDistrict.dll" "$ROOT/번역대조표/RLD_PATRON_GUARD_RESULT_20261122.json" probably-stolen/Managed/Assembly-CSharp.dll
+      - name: Canonicalize CSV without changing wording and package validated files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,json,hashlib,io,re,xml.etree.ElementTree as ET
+          from zipfile import ZipFile,ZIP_DEFLATED
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          mod=root/'RedLightDistrict_v1.1.1'
+          report=root/'번역대조표/RLD_FINAL_RESULT_20261122.json'
+          j=json.loads(report.read_text())
+          g=json.loads((root/'번역대조표/RLD_PATRON_GUARD_RESULT_20261122.json').read_text())
+          plan=json.loads((root/'번역대조표/RLD_FINAL_PLAN_20261122.json').read_text())
+          status=json.loads((root/'번역대조표/RLD_STATUS_RESULT_20261122.json').read_text())
+          assert g['patronGuardPurePrefix'] and g['changed']==2 and j['embeddedResources']==1617
+          gethash=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+          assert gethash(mod/'RedLightDistrict.dll')==g['finalDllHash']
+          def getrows(p,mode='source'):
+              with p.open(encoding='utf-8-sig',newline='') as f:
+                  return list(csv.DictReader(f)) if mode=='source' else list(csv.reader(f,delimiter='\t' if mode=='tsv' else ','))
+          source_path=Path('probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1')
+          source=getrows(source_path/'Localization/cn.csv')
+          by_key={r['key']:r for r in source}
+          ko=getrows(mod/'Localization/ko.csv','csv')
+          translations=dict(ko);aliases={r['key']:r for r in plan['aliases']}
+          assert len(ko)==len(translations)==3552 and len(by_key)==3619 and len(aliases)==24
+          assert set(translations)-set(by_key)==set(aliases)
+          assert len(set(by_key)-set(translations))==91
+          refs=getrows(mod/'translation-work/internal_string_reference.tsv','tsv')
+          ref={x[0]:x[1:] for x in refs[1:]}
+          assert set(by_key)-set(translations)<=ref.keys()
+          def encode(s):return s.replace('\n',r'\n')
+          def decode(s):return s.replace(r'\n','\n')
+          def variables(s):return sorted(re.findall(r'\{[^{}]+\}',s))
+          for k,v in translations.items():
+              original=by_key[k]['original'] if k in by_key else aliases[k]['source']
+              assert v and variables(original)==variables(decode(v)),('variables',k)
+          # Keep the exact established game parser format (unquoted key, quoted value).
+          p=mod/'Localization/ko.csv'
+          ordered=[r['key'] for r in source if r['key'] in translations]+list(aliases)
+          p.write_bytes(''.join(k+',"'+translations[k].replace('"','""')+'"\r\n' for k in ordered).encode('utf-8'))
+          assert dict(getrows(p,'csv'))==translations
+          # Update historical readme for the actual released DLL and current counts.
+          readme=mod/'README_ko.txt'
+          old=readme.read_text()
+          old=old.replace('6089ad1d83d1a3131cc9e141d9c4dd7d66f8f2da6b0afde7010db403b4def03f',g['finalDllHash'])
+          old=old.replace('한국어 번역 3,512키. 나머지 107키는','한국어 번역 원본 3,528키와 표시 전용 별칭 24키. 나머지 원본 91키는')
+          old=old.replace('한국어 CSV 3,512개와 보호 원문 107개','원본 한국어 CSV 3,528개와 보호 원문 91개(표시 전용 별칭 24개 별도)')
+          old=old.replace('LOCALIZATION_PROGRESS.md: 외부 ko.csv 실제 반영 수.','LOCALIZATION_PROGRESS.md: 원본 키 3,619개 및 별칭 24개 최종 검수.')
+          old=old.replace('translation-work/COMPARISON_SAFETY_REVIEW_20261121.md: 보관함·급식기·정수기 내부 문자열 보호.','기존 중국어 저장값과 한국어 표시값을 모두 인식하도록 비교 경계를 분리했으며 저장 문자열과 고객 ID 생성은 그대로 유지했습니다.')
+          readme.write_text(old,encoding='utf-8')
+          manifest=ET.parse(mod/'manifest.xml').getroot();original=ET.parse(source_path/'manifest.xml').getroot()
+          for k in ('ID','Author','ModVersion','GameVersions','Prerequisites','Assemblies','Capabilities'):
+              assert ET.tostring(manifest.find(k))==ET.tostring(original.find(k)),k
+          j.update(previousDisplayDllHash=j['finalDllHash'],finalDllHash=g['finalDllHash'],patronGuardPurePrefix=True,patronGuardPrefix=g['patronPrefix'],patronGuardReplacements=g['changed'],patronGuardComparedMethods=g['comparedMethods'],helperMethods=j['helperMethods']-1,csvSHA256=gethash(p),statusSearchSites=status['searchSites'],statusAddedKeys=status['addedKeys'],statusReferenceTests=status['referenceCases'],remainingUnclassifiedOriginalKeys=0)
+          # Audit all original occurrence keys and separate each display alias.
+          audit=mod/'KEY_COVERAGE_AUDIT_20261122.tsv'
+          queue=mod/'UNTRANSLATED_REVIEW_QUEUE_20261122.tsv'
+          header=('row','key','status','reason','original_json','korean_json','method','il_offset','next_operand')
+          with audit.open('w',encoding='utf-8',newline='') as f,queue.open('w',encoding='utf-8',newline='') as q:
+              w=csv.writer(f,delimiter='\t');w.writerow(header);csv.writer(q,delimiter='\t').writerow(header)
+              for i,row in enumerate(source,1):
+                  k=row['key'];exists=k in translations
+                  w.writerow((i,k,'translated' if exists else 'protected-internal','Audited source key; existing wording preserved' if exists else ref[k][1],json.dumps(row['original'],ensure_ascii=False),json.dumps(translations.get(k,ref.get(k,['',''])[0]),ensure_ascii=False),row['method'],row['IL_offset'],row['next_operand']))
+          with (mod/'DISPLAY_ALIAS_KEYS_20261122.tsv').open('w',encoding='utf-8',newline='') as f:
+              w=csv.writer(f,delimiter='\t');w.writerow(('key','original','Korean','scope'))
+              for k,row in aliases.items():w.writerow((k,row['source'],translations[k],'UI display copy only; original identity not replaced'))
+          # Original user-authored identity strings, filename examples and manifest comments are not translation omissions.
+          extern=getrows(root/'번역대조표/WorkAudit_20261122/외부_내장자료.tsv','tsv')
+          ext=[r for r in extern if r and r[0]=='RedLightDistrict_v1.1.1']
+          assert len(ext)==3,(len(ext),[r[:4] for r in ext])
+          ext_final=[]
+          for row in ext:
+              path,field,value=row[1],row[3],row[4]
+              assert 'README' in path or 'manifest' in path or 'RedLightDistrictPerson' in path,(path,field)
+              ext_final.append({'path':path,'field':field,'reason':'Original example filename, author or technical reference preserved; not an unclassified screen label.'})
+          j.update(externalAuditVerified=ext_final,externalUnclassified=0)
+          report.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          # The merge tool must be safe against this DLL and cannot silently undo verified aliases.
+          import subprocess,sys
+          before_map=dict(translations)
+          subprocess.run([sys.executable,str(mod/'translation-work/merge_localization.py')],check=True)
+          assert dict(getrows(p,'csv'))==before_map,'merge changed a previously verified key or wording'
+          assert gethash(p)==j['csvSHA256'],'merge changed canonical file bytes'
+          # Current audit status replaces the merge-generated prose, without discarding old batch evidence.
+          progress=mod/'LOCALIZATION_PROGRESS.md'
+          progress.write_text('# Red Light District v1.1.1 — 최종 정적 한국어 검수 (2026-11-22)\n\n'
+              +'- 원본 활성 키 3,619개 중 번역 3,528개, 원문 보호 91개. 표시 전용 별칭 24개(총 CSV 3,552행).\n'
+              +'- 급식기/정수기 상태 두 곳 및 기존 저장 헤더, 비교용 타입명 10곳, 소비 표시 4곳을 구/신 표기 각각 처리.\n'
+              +'- 특성·고객명·메이드 버튼 및 툴팁 출력 경계 처리. 원본 식별자/장부·특성·연령 및 조건 분기 보호.\n'
+              +'- 고객 ID는 고유한 원본 접두사만 검사하며 ID 생성 함수 호출·저장값 변경 없음.\n'
+              +'- 기존 메서드 1,860개와 관리 리소스 1,617개 정적 검증. 기존 91개 보호 키 및 신규 표시 24개 전수 대조.\n'
+              +'- 게임 실행, 실제 모드 로더 권한 검사, Harmony 합성, 저장 호환성은 미검증.\n'
+              +'키 대조: KEY_COVERAGE_AUDIT_20261122.tsv, DISPLAY_ALIAS_KEYS_20261122.tsv. 결과: ../번역대조표/RLD_FINAL_RESULT_20261122.json\n',encoding='utf-8')
+          # Ensure final archive is the actual LFS-backed DLL and exact verified CSV, not pointer text.
+          out=root/'ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip'
+          files=['RedLightDistrict.dll','manifest.xml','README_ko.txt','Localization/ko.csv','RedLightDistrictPerson/README_ko.txt']
+          with ZipFile(out,'w',ZIP_DEFLATED,compresslevel=1) as z:
+              for f in files:z.write(mod/f,'RedLightDistrict_v1.1.1/'+f)
+              z.write(report,'STATIC_AUDIT.json')
+          with ZipFile(out) as z:
+              assert z.testzip() is None and len(z.namelist())==6
+              for file in files:
+                  with z.open('RedLightDistrict_v1.1.1/'+file) as fp:assert hashlib.sha256(fp.read()).hexdigest()==gethash(mod/file)
+          j['archive']={'path':out.name,'sha256':gethash(out),'files':6,'size':out.stat().st_size,'crc':'pass','matchesAllOverlayFiles':True}
+          report.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('Verified final archive',j['archive'])
+          PY
+      - name: Commit verified final DLL, CSV, audit and LFS ZIP
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          MOD="$ROOT/RedLightDistrict_v1.1.1"
+          git add --sparse "$MOD/RedLightDistrict.dll" "$MOD/Localization/ko.csv" "$MOD/README_ko.txt" "$MOD/LOCALIZATION_PROGRESS.md" "$MOD/KEY_COVERAGE_AUDIT_20261122.tsv" "$MOD/UNTRANSLATED_REVIEW_QUEUE_20261122.tsv" "$MOD/DISPLAY_ALIAS_KEYS_20261122.tsv" "$ROOT/번역대조표/RLD_FINAL_RESULT_20261122.json" "$ROOT/번역대조표/RLD_PATRON_GUARD_RESULT_20261122.json" "$ROOT/ProbablyStolen_RLD_v1.1.1_KO_Final_20261122.zip"
+          git diff --cached --quiet || (git commit -m 'Finalize RLD Korean overlay with read-only identity guard and verified ZIP' && git push origin main)
