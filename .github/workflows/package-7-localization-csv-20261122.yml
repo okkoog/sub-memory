@@ -1,0 +1,41 @@
+name: Package 7 Localization CSVs (2026-11-22)
+on:
+  push:
+    branches: [pack-localization-7csv-20261122]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Collect exactly seven updated Korean localization CSVs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil, hashlib, csv, sys
+          root = Path("probably-stolen/번역 모드/Localization")
+          dest = Path("PS_Localization_7CSV")
+          dest.mkdir(exist_ok=True)
+          ids = ["3829957165","3831045337","3831439549","3837113302","3838352006","3839701139","3840982832"]
+          for id in ids:
+              src = root / f"pskb__{id}.csv"
+              assert src.exists(), f"Missing {src}"
+              data = src.read_bytes()
+              assert b"K|" in data, f"Invalid localization CSV: {src}"
+              target = dest / src.name
+              shutil.copyfile(src, target)
+              print(f"{src.name}: {len(data)} bytes; sha256={hashlib.sha256(data).hexdigest()}")
+          assert len(list(dest.iterdir())) == 7
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen_Localization_7CSV_20261122
+          path: PS_Localization_7CSV/*.csv
+          if-no-files-found: error
+          retention-days: 10
+          compression-level: 6
