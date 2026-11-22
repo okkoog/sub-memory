@@ -98,10 +98,10 @@ namespace MidnightPawn.Game {
             var harmony = new Harmony("lewd_meme_remake.ko.display");
             try {
                 harmony.Patch(AccessTools.Method(typeof(ModConfigWindow), "BuildEntry"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "ChoiceTranspiler"));
-                harmony.Patch(AccessTools.Method(typeof(DialogUIManager), "DisplayClientText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
-                harmony.Patch(AccessTools.Method(typeof(DialogUIManager), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
-                harmony.Patch(AccessTools.Method(typeof(DialoguePhoneUIManager), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
-                harmony.Patch(AccessTools.Method(typeof(NegociationUIManager), "RefreshClientHeader"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
+                harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialogUIManager"), "DisplayClientText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
+                harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialogUIManager"), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
+                harmony.Patch(AccessTools.Method(AccessTools.TypeByName("DialoguePhoneUIManager"), "PlayClientSingleText"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
+                harmony.Patch(AccessTools.Method(AccessTools.TypeByName("NegociationUIManager"), "RefreshClientHeader"), transpiler: new HarmonyMethod(typeof(ShadowTradeDisplayKo), "CustomerTranspiler"));
             } catch (Exception ex) {
                 harmony.UnpatchAll("lewd_meme_remake.ko.display");
                 UnityEngine.Debug.LogWarning("[ShadowTrade KO] Display patch installation failed: " + ex.Message);
