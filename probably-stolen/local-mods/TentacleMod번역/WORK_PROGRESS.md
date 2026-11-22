@@ -1030,3 +1030,10 @@
 
 - 최종 ZIP에서 사용한 수정 DLL을 적용 전 한국어 시험 DLL(커밋 `f9340a1e7f9f12a1c71f5a2d11e814cd7805b0a2`, 516,096바이트)과 dnlib 기준 **전 메서드 IL 일대일 비교**하여 성공. TypeDef **278개**, MethodDef **1,741개**, FieldDef **1,346개** 모두 동일. 모든 메서드의 명령어 opcode·피연산자 동일, 단 `RegisterTests`에서 출력용 `ldstr` 5개만 정확하게 바뀜. 예상 밖 IL 변경 **0개**. 관리 리소스 수 **0개** 유지. (dnlib 재직렬화로 DLL 물리 파일 크기는 달라짐.)
 - 감사 기록 `번역대조표/Brood_STAGE_5_STRICT_IL_DIFF_20261122.md` 생성; GitHub Actions `44970203204` 성공. 실게임 로드·저장 호환 검증은 미실시.
+
+## 2026-11-22 — Probably Adult Goods v1.1.1 중국어 원문 2키 복원
+
+- `dildo_red_flavor` 및 `dildo_pink_slim_flavor`: 기존 영어 원문 기준 번역을, 동일 중국어 문장에 대응하는 기존 v1.1.3 `*_flavor_alt` 한국어 검수본으로 교체. 추가 179키 변동 없음. 원본 중국어·영어 DLL 리소스 불변.
+- v1.1.1 단독판 `3842259965/probably_adult_goods.dll`와 v1.1.3 통합판 `3843142171/fallen_heiress_eleanor.dll`의 ko 및 ko-KR 내장 로컬라이제이션 2개 별칭 업데이트. 다른 CLR 리소스 바이트·메서드 IL 변동 없음 (dnlib 로드/재검증).
+- 두 버전별 최종 ZIP을 별도 생성·CRC 및 내부 항목 바이트 대조 성공. 추가 감사 기록 `번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md`. 실게임/CLR·세이브 호환 검증은 미실시.
+

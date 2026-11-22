@@ -10,7 +10,7 @@
 - 원본 EleanorEmbedded/Localization/zh.csv 및 en.csv는 엘리너 독립판 v1.0.3과 바이트까지 동일합니다. 기존에 원문을 대조해 번역한 유효 키 1,553개를 그대로 사용하고 개발용 비활성 placeholder 286개를 유지합니다.
 - 별도 EleanorEmbedded/Localization/ko.csv를 내장하고 한국어 사전 ko/ko-KR를 등록하는 IL을 추가했습니다.
 - 통합된 ProbablyAdultGoods.Localization.zh.csv 및 en.csv는 Adult Goods v1.1.1과 바이트까지 동일합니다. 기존 검수한 181개를 ko/ko-KR 독립 리소스로 추가했습니다.
-- Adult Goods 진열장 표시 전용 10개 IL 문자열도 한국어로 수정합니다. 내부 ID, 저장·판정용 문자열은 바꾸지 않습니다.
+- Adult Goods 진열장 표시 전용 10개 IL 문자열도 한국어로 수정합니다. 내부 ID, 저장·판정용 문자열은 바꾸지 않습니다. 2026-11-22에 Adult Goods 설명 2개를 중국어 원문 기준으로 복원했습니다.
 
 ■ 사용
 1. 반드시 원본 3843142171 v1.1.3 모드를 먼저 설치하고 원본 파일을 보관하세요.

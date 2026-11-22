@@ -4,7 +4,7 @@
 - Output: `TentacleMod번역/3842259965/Localization/ko.csv` (181 keys, original key order, CRLF).
 - Previously reviewed Korean strings reused only where original Chinese text is byte-for-byte identical to the source text in the earlier v1.03 localization file: 104 same-key values and 37 moved `*_flavor_alt` → `*_flavor` values.
 - Newly translated independently against original Chinese: 38 UI, visitor dialogue, item cabinet and settings values.
-- Two item-description entries are adapted from the **original English localization** rather than the Chinese source and must not be counted as literal Chinese-to-Korean translations.
+- CORRECTION 2026-11-22: The two item descriptions originally adapted from English have now been replaced with the existing independently reviewed Korean renderings of the original Chinese, using the corresponding v1.1.3 *_flavor_alt entries.
 - Original 1.1.1 DLL has 181 locale rows, whereas the older v1.03 version used for translation reuse has 192 rows. A pure key-based mass replacement would be incorrect.
 - This file is currently a **source input only**, not a DLL patch. It must be embedded in a separately rebuilt 1.1.1 DLL and the Korean language must be registered in the original localization loader.
 - Original Chinese and English resources, item identifiers, file paths and CLR program logic must remain untouched except for necessary Korean resource registration. Game/Unity loading untested.
@@ -46,10 +46,10 @@
 | `used_condom_003_flavor` | prior verified Korean, exact Chinese value at used_condom_003_flavor_alt |
 | `used_condom_003_desc` | prior verified Korean, same key and exact Chinese value |
 | `dildo_red_name` | prior verified Korean, same key and exact Chinese value |
-| `dildo_red_flavor` | English embedded resource (Chinese wording excluded) |
+| `dildo_red_flavor` | Original Chinese; reviewed Korean from v1.1.3 `dildo_red_flavor_alt` |
 | `dildo_red_desc` | prior verified Korean, same key and exact Chinese value |
 | `dildo_pink_slim_name` | prior verified Korean, same key and exact Chinese value |
-| `dildo_pink_slim_flavor` | English embedded resource (Chinese wording excluded) |
+| `dildo_pink_slim_flavor` | Original Chinese; reviewed Korean from v1.1.3 `dildo_pink_slim_flavor_alt` |
 | `dildo_pink_slim_desc` | prior verified Korean, same key and exact Chinese value |
 | `dildo_pink_thick_name` | prior verified Korean, same key and exact Chinese value |
 | `dildo_pink_thick_flavor` | prior verified Korean, exact Chinese value at dildo_pink_thick_flavor_alt |
