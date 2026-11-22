@@ -137,7 +137,7 @@ class P{
    var equal=All(now).Where(x=>x.HasBody).SelectMany(x=>x.Body.Instructions).Select(i=>i.Operand).OfType<IMethod>().First(x=>x.FullName=="System.Boolean System.String::op_Equality(System.String,System.String)");
    var ty=new TypeDefUser("RedLightDistrict.Korean","UiLateLookup",now.CorLibTypes.Object.TypeDefOrRef){Attributes=TypeAttributes.NotPublic|TypeAttributes.Abstract|TypeAttributes.Sealed|TypeAttributes.BeforeFieldInit};
    now.Types.Add(ty);
-   var e=AddMethod(now,ty,"EquipmentName",2), c=AddMethod(now,ty,"AccessoryName",2), t=AddMethod(now,ty,"TraitName",1);
+   var e=AddMethod(now,ty,"EquipmentName",2);var c=AddMethod(now,ty,"AccessoryName",2);var t=AddMethod(now,ty,"TraitName",1);
    Emit(e,plan.equipment,read,equal,false);Emit(c,plan.accessory,read,equal,false);Emit(t,plan.traits,read,equal,true);
    var changed=new[]{
      M(now,"RedLightDistrict.TalentEquipment","DisplayName").FullName,
@@ -150,7 +150,7 @@ class P{
    DisplayName(now,"TalentEquipment","EquipDef",e);DisplayName(now,"TalentAccessory","AccessoryDef",c);
    CreateItem(now,"TalentEquipment",e);CreateItem(now,"TalentAccessory",c);
    TraitUi(now,t);Tooltip(now);
-   var om=All(old).ToDictionary(x=>x.FullName),nm=All(now).ToDictionary(x=>x.FullName);
+   var om=All(old).ToDictionary(x=>x.FullName);var nm=All(now).ToDictionary(x=>x.FullName);
    Need(nm.Count==om.Count+3&&nm.Keys.Except(om.Keys).ToHashSet().SetEquals(ty.Methods.Select(x=>x.FullName)),"Method inventory");
    foreach(var x in om.Where(x=>!changed.Contains(x.Key)))Same(x.Value,nm[x.Key]);
    Directory.CreateDirectory(Path.GetDirectoryName(a[2])!);now.Write(a[2]);
