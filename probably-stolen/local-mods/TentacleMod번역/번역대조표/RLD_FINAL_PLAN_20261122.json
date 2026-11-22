@@ -1,0 +1,290 @@
+{
+  "baselineSha256": "45f3f40c401dc9cc99bd5261509df30d5e9b814b67422386676eb372e482e72b",
+  "originalSiteCount": 3619,
+  "priorCsvCount": 3520,
+  "direct": [
+    {
+      "key": "rld_7882d7294814aa654018",
+      "target": "처녀",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_ce6797512aa447acc035",
+      "target": "로리",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_95d4e06bc98f69224b3d",
+      "target": "외모(소)",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_fb980d761ea335c5e68e",
+      "target": "체형(소)",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_f75092afdabf8b70989a",
+      "target": "기질(소)",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_6a5bcff7c36497aa514f",
+      "target": "소녀",
+      "reason": "Existing reviewed label; dual parser matches old and displayed value"
+    },
+    {
+      "key": "rld_ece4c627c3df95fc713e",
+      "target": "섭취 완료",
+      "reason": "Readable-name registration argument, ID unchanged"
+    },
+    {
+      "key": "rld_1a94f48794eadafb8eb5",
+      "target": "[섭취 완료]",
+      "reason": "Existing consumed-item marker; dual legacy and localized checks"
+    }
+  ],
+  "aliases": [
+    {
+      "key": "rld_display_102f641e1e10fea431ff",
+      "source": "万人迷",
+      "target": "만인의 연인"
+    },
+    {
+      "key": "rld_display_bc03e08b46482b7a2966",
+      "source": "差评服务",
+      "target": "불친절한 서비스"
+    },
+    {
+      "key": "rld_display_d8eb5bc17c64c004f95c",
+      "source": "裁缝",
+      "target": "재봉사"
+    },
+    {
+      "key": "rld_display_148447ccc5bc854a4aaf",
+      "source": "顺手牵羊",
+      "target": "슬쩍하기"
+    },
+    {
+      "key": "rld_display_9db7c70220dc08c81c16",
+      "source": "精力充沛",
+      "target": "활력 충만"
+    },
+    {
+      "key": "rld_display_dfcee520a3b8f07a039a",
+      "source": "无师自通",
+      "target": "독학의 달인"
+    },
+    {
+      "key": "rld_display_8f69da9b8bf553c30e52",
+      "source": "爱干净",
+      "target": "깔끔함"
+    },
+    {
+      "key": "rld_display_5b532e0d9e8ac20a7efa",
+      "source": "节约",
+      "target": "절약"
+    },
+    {
+      "key": "rld_display_3c265c6df72141d7167d",
+      "source": "榨取",
+      "target": "착취"
+    },
+    {
+      "key": "rld_display_1b0ec971311878278680",
+      "source": "销冠",
+      "target": "판매왕"
+    },
+    {
+      "key": "rld_display_b7847986338caf835fd9",
+      "source": "绝色",
+      "target": "절세미인"
+    },
+    {
+      "key": "rld_display_2cb9d5a1b289d47e2baa",
+      "source": "曼妙",
+      "target": "빼어난 몸매"
+    },
+    {
+      "key": "rld_display_82783ec552db3983a8e7",
+      "source": "优雅",
+      "target": "우아함"
+    },
+    {
+      "key": "rld_display_e98b511ac9df76a6d02c",
+      "source": "听话",
+      "target": "고분고분함"
+    },
+    {
+      "key": "rld_display_0f7aa46fdaeb993ddbea",
+      "source": "傻白甜",
+      "target": "순진무구"
+    },
+    {
+      "key": "rld_display_ba93355a20373b99953e",
+      "source": "抖M",
+      "target": "마조히스트"
+    },
+    {
+      "key": "rld_display_b1bbb45b21f7784f770a",
+      "source": "玉玉症",
+      "target": "우울증"
+    },
+    {
+      "key": "rld_display_a3a3764ff0eac74a7009",
+      "source": "洁癖",
+      "target": "결벽증"
+    },
+    {
+      "key": "rld_display_62de8b20264b1b63741e",
+      "source": "暴食",
+      "target": "폭식"
+    },
+    {
+      "key": "rld_display_373d080758162dc6c79b",
+      "source": "懒惰",
+      "target": "게으름"
+    },
+    {
+      "key": "rld_display_d91049754e992c578424",
+      "source": "自残",
+      "target": "자해"
+    },
+    {
+      "key": "rld_display_9b49366c057e1fd0769b",
+      "source": "笨拙",
+      "target": "서투름"
+    },
+    {
+      "key": "rld_display_patron_prefix",
+      "source": "寻欢客（",
+      "target": "유흥객("
+    },
+    {
+      "key": "rld_display_maid_name",
+      "source": "女仆",
+      "target": "메이드"
+    }
+  ],
+  "parser": [
+    {
+      "key": "rld_cab0891ddb48c0be0ba7",
+      "source": "颜值(小)",
+      "target": "외모(소)",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_95d4e06bc98f69224b3d"
+    },
+    {
+      "key": "rld_f2e46f40043ddf963794",
+      "source": "颜值",
+      "target": "외모",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_3d805d46c1216c3f3652"
+    },
+    {
+      "key": "rld_5348f52f5409ebcfe7e6",
+      "source": "身材(小)",
+      "target": "체형(소)",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_fb980d761ea335c5e68e"
+    },
+    {
+      "key": "rld_246a0bafb6b324f38f9d",
+      "source": "身材",
+      "target": "체형",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_259998749215c94824b1"
+    },
+    {
+      "key": "rld_5172a81b0819602ee333",
+      "source": "气质(小)",
+      "target": "기질(소)",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_f75092afdabf8b70989a"
+    },
+    {
+      "key": "rld_7e8f8b2ce7148bb1d2e7",
+      "source": "气质",
+      "target": "기질",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_6bff630ce07b7f55aafe"
+    },
+    {
+      "key": "rld_581f7de14b5645f9aff6",
+      "source": "处",
+      "target": "처녀",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_7882d7294814aa654018"
+    },
+    {
+      "key": "rld_690e97b643335ffe21a5",
+      "source": "萝莉",
+      "target": "로리",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_ce6797512aa447acc035"
+    },
+    {
+      "key": "rld_5b3694efd83a6d264e92",
+      "source": "少女",
+      "target": "소녀",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_6a5bcff7c36497aa514f"
+    },
+    {
+      "key": "rld_490133fab5da1163947b",
+      "source": "特性",
+      "target": "특성",
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "displayKey": "rld_cc6325a044c8dc3fd83e"
+    }
+  ],
+  "boundaries": [
+    {
+      "token": "06000483",
+      "method": "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)",
+      "offset": 2673,
+      "opcode": "ldloc.s",
+      "operand": "V_21",
+      "helper": "DisplayTrait"
+    },
+    {
+      "token": "0600048D",
+      "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+      "offset": 1859,
+      "opcode": "ldloc.s",
+      "operand": "V_14",
+      "helper": "DisplayTrait"
+    },
+    {
+      "token": "06000435",
+      "method": "System.Void RedLightDistrict.TalentIntelUI::RenderAllyTalentPicker(CustomUIBuilder,System.Collections.Generic.List`1<GameItem>,System.Action,System.String,System.Single)",
+      "offset": 436,
+      "opcode": "ldloc.s",
+      "operand": "V_4",
+      "helper": "DisplayMaid"
+    },
+    {
+      "token": "0600048D",
+      "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+      "offset": 49,
+      "opcode": "callvirt",
+      "operand": "System.String GameItem::GetDisplayName(System.Boolean)",
+      "helper": "DisplayMaid"
+    },
+    {
+      "token": "060001BD",
+      "method": "System.Void RedLightDistrict.PatronSystem::BuildRansomDialogue(RedLightDistrict.PatronData,RedLightDistrict.TalentData,System.Int64)",
+      "offset": 234,
+      "opcode": "ldloc.2",
+      "operand": "",
+      "helper": "DisplayPatronName"
+    }
+  ],
+  "markerSearchKeys": [
+    "rld_19dfc7988ec9df531523",
+    "rld_0215199e6cec3ae3fbc1",
+    "rld_69b93dd342f988985880",
+    "rld_979a1b3ad08de7959bf6"
+  ],
+  "markerDisplayKey": "rld_1a94f48794eadafb8eb5"
+}
