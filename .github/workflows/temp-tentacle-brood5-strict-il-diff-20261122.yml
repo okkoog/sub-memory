@@ -93,8 +93,11 @@ jobs:
               for(int i=0;i<before.Resources.Count;i++){
                 var o=before.Resources[i];var n=after.Resources[i];
                 if(o.Name!=n.Name||o.ResourceType!=n.ResourceType)throw new Exception("Resource changed: "+o.Name);
-                if(o is EmbeddedResource e && n is EmbeddedResource f && !e.GetResourceData().SequenceEqual(f.GetResourceData()))
-                  throw new Exception("Resource bytes changed: "+o.Name);
+                if(o is EmbeddedResource e && n is EmbeddedResource f) {
+                  var er=e.CreateReader(); var fr=f.CreateReader();
+                  if(er.Length!=fr.Length || !er.ReadBytes((int)er.Length).SequenceEqual(fr.ReadBytes((int)fr.Length)))
+                    throw new Exception("Resource bytes changed: "+o.Name);
+                }
               }
               var lines=new []{
                 "# Brood five stage labels — strict before/after IL and resource diff",
