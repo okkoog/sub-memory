@@ -1,0 +1,20 @@
+{
+  "baselineSha256": "86ad3f461f263dd04199edf8dad7e8c3f2e017b0c8a013462eef8034733bda47",
+  "patchedSha256": "7024ae479e51fa0d30f40beac7f4f39d41ce8513a325a47008728fed6b8da104",
+  "outputSize": 153361920,
+  "verifiedGameMethod": "System.String GameItem::GetDisplayName(System.Boolean)",
+  "tooltipTitleCallSites": 2,
+  "patchMethod": "System.Void RedLightDistrict.TalentPatches::Apply(HarmonyLib.Harmony)",
+  "addedMethods": [
+    "System.Void RedLightDistrict.TalentPatches::InstallKoreanTitlePostfix(HarmonyLib.Harmony)",
+    "System.Void RedLightDistrict.TalentPatches::PostfixKoreanItemDisplayName(GameItem,System.String\u0026)"
+  ],
+  "nameRowCount": 19,
+  "changedExistingMethods": 1,
+  "unchangedExistingMethodsVerified": 5481,
+  "resourcesVerified": 1617,
+  "allMethodsReopenedAndCompared": true,
+  "identityAndSavedNameRemainUntouched": true,
+  "runtimeTested": false,
+  "behavior": "Display-only: if ID is one of 19 RLD clothing/accessory IDs and display result equals original Chinese, look up live ko.csv key. No item fields or save data modified."
+}
