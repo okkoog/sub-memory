@@ -134,7 +134,7 @@ static class P {
        apply.Body.Instructions.Insert(0,Instruction.Create(OpCodes.Ldarg_0));
        apply.Body.Instructions.Insert(1,Instruction.Create(OpCodes.Call,install));
        apply.Body.SimplifyBranches();apply.Body.OptimizeBranches();
-       var om=All(old).ToDictionary(x=>x.FullName),nm=All(mod).ToDictionary(x=>x.FullName);
+       var om=All(old).ToDictionary(x=>x.FullName); var nm=All(mod).ToDictionary(x=>x.FullName);
        Need(nm.Count==om.Count+2,"Old method inventory plus two new helpers");
        foreach(var m in om.Where(x=>x.Key!=apply.FullName))Same(m.Value,nm[m.Key]);
        Need(apply.Body.Instructions.Count==om[apply.FullName].Body.Instructions.Count+2,"Only two installation instructions added");
