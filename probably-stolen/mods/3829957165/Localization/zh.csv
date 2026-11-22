@@ -4,7 +4,7 @@ tooltip_sep,；
 filter_durability_low,滤芯耐久不足
 commissary_voucher_balance,配给券余额：{0}
 commissary_voucher_hint,可在配给站兑换物品
-settings_section_documents,自动丢弃单据
+settings_section_documents,单据自动处理
 settings_appraisal_slip,鉴定单
 settings_appraisal_slip_tip,外柜台上的鉴定单自动移入垃圾桶
 settings_event_receipt,事件回执单
@@ -16,7 +16,7 @@ settings_handwritten_note_tip,外柜台上的手写便签自动移入垃圾桶�
 settings_expedition_log,探险日志
 settings_expedition_log_tip,外柜台上的探险日志自动移入垃圾桶
 settings_section_ui,界面与交互
-settings_section_tool_batch,工具框选批量
+settings_section_tool_batch,标签机与批量工具
 settings_batch_labeler,标签机框选批量
 settings_batch_labeler_tip,装备标签机时框选共享同一标签类别的物品，并批量套用该标签
 settings_batch_blue_labeler,蓝色标签机框选批量
@@ -40,7 +40,7 @@ settings_drag_slot_replace_tip,拖拽电池到机器电池槽、过滤器到过�
 settings_tab_drag_chooser,多标签容器拖放选择
 settings_tab_drag_chooser_tip,拖动物品经过多标签页容器时显示标签选择窗口；悬停标签后松手放入对应标签页
 tab_chooser_title,选择标签页
-settings_transit_voucher,夜间出行显示配给券
+settings_transit_voucher,夜间出行显示配给券余额
 settings_transit_voucher_tip,夜间出行选择窗口显示配给券余额和配给站物品配额
 settings_tab_switch,标签页左右键切换
 settings_tab_switch_tip,鼠标悬停在标签栏时用左右方向键切换
@@ -89,9 +89,9 @@ settings_black_market_only_tip,开启时垃圾桶自动拾取只处理黑市兑�
 settings_section_farming,种植与养殖
 settings_hydroponic_auto_replant,水培自动补种
 settings_hydroponic_auto_replant_tip,水培作物收获后，如果种子输入槽为空，自动把输出区位置最前的种子放回输入槽
-settings_section_quick_actions,快捷操作
+settings_section_quick_actions,交易与快捷操作
 settings_quick_buy_space,快速购买
-settings_quick_buy_space_tip,按设置的快捷购买键购买柜台上客户已放出的全部物品；不会从库存自动取货，仍需先把物品放到柜台。对话等待时优先推进对话
+settings_quick_buy_space_tip,按设置的快捷购买键购买柜台上客户出售、玩家已放在内柜台的全部物品；仍需先把物品放到柜台。对话等待时优先推进对话
 settings_quick_sell_space,快速出售
 settings_quick_sell_space_tip,按设置的快捷出售键出售柜台上玩家已放置、且客户要买的全部物品；仍需先把物品放到柜台。对话等待时优先推进对话
 settings_quick_appraisal_space,快速鉴定
@@ -131,3 +131,13 @@ save_rescue_notice,已拯救存档卸载模组{1}容器中的 {0} 件物品，�
 save_rescue_destinations,去向：垃圾桶 {0} 件，内柜台 {1} 件，失败 {2} 件；排除文档 {3} 件。
 settings_save_rescue_exclude_documents,读档救援排除文档类物品
 settings_save_rescue_exclude_documents_tip,开启后从已卸载模组容器救出物品时，跳过带 DOCUMENT 标签或类型的纸条、说明书、单据等
+settings_barter_pager,显示多页交易/库存翻页按钮
+settings_barter_pager_tip,在 Barter 多报价组或官方库存多页时，于柜台窗口两侧显示翻页按钮
+settings_filter_auto_replace,滤芯耐久耗尽自动更换
+settings_filter_auto_replace_tip,滤芯耐久耗尽时，从水罐所在储藏区直接散放的备用滤芯中自动更换；只检查同一储藏区，不搜索全局库存
+settings_filter_reapply_on_replace,更换滤芯后立即再次过滤
+settings_filter_reapply_on_replace_tip,任何来源更换滤芯后（自动、快捷或手动），立即用新滤芯重新过滤水罐中的现有液体；不依赖自动换芯开关
+settings_filter_empty_container_target,空滤芯容器点击液体容器过滤
+settings_filter_empty_container_target_tip,装备空的滤芯容器点击另一个液体容器时，消耗该空容器内滤芯耐久，原地过滤目标液体，不转移液体
+settings_section_filters,滤芯与水处理
+settings_section_save,存档与救援

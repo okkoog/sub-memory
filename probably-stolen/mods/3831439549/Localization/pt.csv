@@ -49,7 +49,8 @@ pui_basic_hint,Filtro de água: +10% de qualidade cada
 pui_slot_hint,Arraste barras de metal para adicionar slots de filtro (pureza maior = mais progresso)
 pui_slot_maxed,Slots de filtro no máximo ({0} slots)
 pui_ingot,Progresso do slot {0}%
-pui_filter,Filtros instalados: avançado {0} / técnico {1} / básico {2}
+pui_filter,Filtros de água instalados: {0}
+pui_filter_legacy,Filtros antigos (save antigo): {0}
 nm_furnace_ingot,Adicionar Revestimento Refratário
 nm_furnace_circuit,Adicionar Sensor de Temperatura de Fusão
 nm_moisture_circuit,Instalar Sonda de Qualidade da Água
@@ -249,7 +250,7 @@ cfg_tooltip_detail_desc,Quando desligado, a descrição da máquina mostra apena
 cfg_lang,Idioma (este mod)
 cfg_lang_desc,auto segue o idioma do jogo e passa para português do Brasil automaticamente quando o idioma do sistema é português. Escolha um código para forçar.
 cfg_ws_broken,Sucateiro traz máquinas quebradas
-cfg_ws_broken_desc,Ligado = comportamento do sucateiro original: após a saudação ele pode colocar no balcão um alarme quebrado (sempre), uma fornalha quebrada (66%) ou uma fazenda de umidade quebrada (33%); podem ser consertadas. Desligado = somente peças.
+cfg_ws_broken_desc,Ligado = após a saudação, cada uma das três máquinas quebradas (alarme, fornalha, fazenda de umidade) tem 33% de chance de aparecer no balcão -- pode não aparecer nenhuma; podem ser consertadas. Desligado = somente peças.
 adv_compact_slot,Módulos avançados {0}/{1}
 adv_compact_name,Módulo avançado - {0}
 adv_compact_undone, - não concluído
@@ -328,10 +329,10 @@ chem_stash_prog,{0}/{1} · {2}/{3} · {4}/{5}
 chem_stash_gain,Os itens dentro contam como compartimento de contrabandista - inspetores não podem revistá-los
 chem_titra_req,Electronic Parts x8 + Common Chemicals x8
 chem_titra_prog,Eletrônica {0}/{1} · Químicos {2}/{3}
-chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
+chem_titra_gain,Frascos colocados na placa perdem proteína e estabilizante. Não pode ser usado para purificar água.
 chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
-chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
+chem_filter_gain,Frascos colocados na placa perdem matéria vegetal, detritos, contaminantes físicos, minerais e gordura. Não pode ser usado para purificar água.
 chem_clean_on,Limpeza auto: ON
 chem_clean_off,Limpeza auto: OFF
 chem_clean_desc,Interruptor geral da unidade de titulação e do filtro. Desligado, nenhum dos dois remove componentes (útil quando um reagente precisa manter as impurezas). Clique para alternar.
@@ -352,10 +353,10 @@ pharmabox_desc,Pacote lacrado de fábrica com 4 doses. Abra com chave de fenda o
 pharmabox_open_full,Sem espaço para tirar o conteúdo
 pharmabox_open_part,Espaço insuficiente - só parte foi retirada
 dr_sourcerefine2_title,Refinamento de Origem II
-dr_sourcerefine2_desc,A prensagem precisa de apenas 75% do princípio ativo (vale o melhor entre este e o módulo Refinamento de Origem; eles não se acumulam)
+dr_sourcerefine2_desc,A prensagem em máquinas com o módulo Refinamento de Origem precisa de apenas 75% do princípio ativo (vale o menor entre este e os 85% do módulo, não se acumulam; sem o módulo nada muda — segue 2ml dentro / 2ml fora)
 dr_labstd_title,Padrão de Laboratório
 dr_labstd_desc,Produtos com pureza de 99,9% ou mais ganham uma etiqueta extra de Alta Pureza de Laboratório (+185%).
-chemadv_source_desc,A prensagem do mesmo produto precisa de apenas 85% do princípio ativo
+chemadv_source_desc,A prensagem do mesmo produto precisa de apenas 85% do princípio ativo; com este módulo, o Refinamento de Origem II do Dr. baixa para 75% (vale o menor valor, não se acumulam)
 chemadv_clean_desc,Grau de pureza do produto +1 (máximo: Puro de Laboratório)
 chemadv_pack_desc,A prensagem consome x4 de reagente e gera uma caixa de comprimidos lacrada com 4 doses (preço da caixa = valor base da droga x5)
 chem_blade_gain2,Ganho de conteúdo: +5%

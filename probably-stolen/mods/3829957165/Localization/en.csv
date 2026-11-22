@@ -4,7 +4,7 @@ tooltip_sep,"; "
 filter_durability_low,Filter durability depleted
 commissary_voucher_balance,Redeemable vouchers: {0}
 commissary_voucher_hint,Redeemable for items at the commissary
-settings_section_documents,Auto-discard documents
+settings_section_documents,Document Auto-discard
 settings_appraisal_slip,Appraisal slips
 settings_appraisal_slip_tip,Move appraisal slips on the front counter to the trash automatically
 settings_event_receipt,Event receipts
@@ -15,8 +15,8 @@ settings_handwritten_note,Handwritten notes
 settings_handwritten_note_tip,Move handwritten notes on the front counter to the trash automatically (machine manuals excluded)
 settings_expedition_log,Expedition logs
 settings_expedition_log_tip,Move expedition logs on the front counter to the trash automatically
-settings_section_ui,UI and interaction
-settings_section_tool_batch,Tool box-selection batch
+settings_section_ui,Interface & Interaction
+settings_section_tool_batch,Labeler & Batch Tools
 settings_batch_labeler,Labeler box-selection batch
 settings_batch_labeler_tip,Box-select items sharing the same editable label category and apply that label in bulk
 settings_batch_blue_labeler,Blue labeler box-selection batch
@@ -40,7 +40,7 @@ settings_drag_slot_replace_tip,Drag a battery onto a machine battery slot or a f
 settings_tab_drag_chooser,Multi-tab container drag chooser
 settings_tab_drag_chooser_tip,Show a tab chooser while dragging over a multi-tab container; hover a tab and release to drop into it
 tab_chooser_title,Choose tab
-settings_transit_voucher,Show commissary vouchers at night
+settings_transit_voucher,Show commissary voucher balance at night
 settings_transit_voucher_tip,Show the voucher balance and commissary item quotas in the night travel window
 settings_tab_switch,Switch tabs with Left/Right
 settings_tab_switch_tip,Use Left/Right arrow keys while hovering a tab strip
@@ -80,18 +80,18 @@ settings_labeler_memory,Labeler memory / right-click apply
 settings_labeler_memory_tip,Remember labels changed with the labeler and allow right-click quick apply; disabling clears and hides the memory
 settings_blue_labeler_memory,Blue labeler memory / prefill name
 settings_blue_labeler_memory_tip,Remember the last name confirmed in the blue labeler; prefill it for the same item type and allow right-click quick apply
-settings_section_trash,Trash and counter
+settings_section_trash,Trash & Counters
 settings_trash_auto_pickup,Move trash items to the counter
 settings_trash_auto_pickup_tip,During the day move non-newspaper non-document trash items to the back counter
 trash_pickup_failed,Failed to pick up item
 settings_black_market_only,Only pick up black-market outputs
 settings_black_market_only_tip,When enabled trash pickup only handles black-market exchange outputs (vanilla output ID table)
-settings_section_farming,Farming
+settings_section_farming,Farming & Ranching
 settings_hydroponic_auto_replant,Automatic hydroponic replant
 settings_hydroponic_auto_replant_tip,After a hydroponic harvest, if the seed input slot is empty, move the frontmost seed by position from the output area back into the input slot
-settings_section_quick_actions,Quick actions
+settings_section_quick_actions,Trading & Quick Actions
 settings_quick_buy_space,Quick buy
-settings_quick_buy_space_tip,Buy all items the customer has already placed on the counter with the configured quick buy key; it does not take items from storage or place items for you. Dialogue advance still takes priority while waiting
+settings_quick_buy_space_tip,Buy all items the customer is selling that the player has placed on the inner counter with the configured quick buy key; items still have to be placed on the counter first. Dialogue advance still takes priority while waiting
 settings_quick_sell_space,Quick sell
 settings_quick_sell_space_tip,Sell all items you have already placed on the counter that the customer wants with the configured quick sell key; you still need to place items on the counter first. Dialogue advance still takes priority while waiting
 settings_quick_appraisal_space,Quick appraisal
@@ -102,7 +102,7 @@ settings_quick_pin,Quick pin
 settings_quick_pin_tip,Toggle pin on the hovered item with the configured key; batch-toggles selected items while box-selecting and never clicks through windows
 settings_batch_uv_filter,UV lamp box-selection batch
 settings_batch_uv_filter_tip,When the UV lamp is equipped, box-select liquid containers and apply the vanilla UV purification to each
-settings_section_machine,Machines and power
+settings_section_machine,Machines & Power
 settings_machine_auto_battery,Automatic battery replacement
 settings_machine_auto_battery_tip,When a machine or tool battery cannot supply power, find a usable battery in the front/back counters, battery hub, chargers, storage areas and external machine storage, then put the old battery back where the new one came from
 keybind_quick_buy,Quick buy
@@ -131,3 +131,13 @@ save_rescue_notice,Rescued {0} item(s) from the uninstalled mod ({1}) container.
 save_rescue_destinations,Destinations: trashcan {0}, inner counter {1}, failed {2}; documents excluded {3}.
 settings_save_rescue_exclude_documents,Exclude documents from save rescue
 settings_save_rescue_exclude_documents_tip,When rescuing items from an uninstalled mod container, skip items tagged or typed as DOCUMENT, such as notes, manuals and slips.
+settings_barter_pager,Show multi-page trade/stock arrows
+settings_barter_pager_tip,Show side arrows when a Barter offer has multiple sets or the official stock pager has multiple pages.
+settings_filter_auto_replace,Auto-replace exhausted filters
+settings_filter_auto_replace_tip,When the filter runs out, replace it with a spare filter lying directly in the same storage area as the water tank. Does not search global inventory.
+settings_filter_reapply_on_replace,Re-filter immediately after replacing a filter
+settings_filter_reapply_on_replace_tip,After any filter replacement (automatic, quick or manual), immediately filter the water already in the tank with the new filter. Independent of auto-replacement.
+settings_filter_empty_container_target,Filter liquid containers with an empty filter container
+settings_filter_empty_container_target_tip,With an empty filter container equipped, click another liquid container to consume the source filter's durability and filter the target's liquid in place without transferring liquid.
+settings_section_filters,Filters & Water Treatment
+settings_section_save,Save Rescue

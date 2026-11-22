@@ -74,8 +74,8 @@ K|ui_close,닫기
 K|talk_continue,계속
 K|talk_narration,지문
 K|talk_got_intel,[획득: {0} 관련 정보]
-K|social_notify_up,{0} 호감도 +{1}
-K|social_notify_down,{0} 호감도 -{1}
+K|social_notify_up,{0} 평판 +{1}
+K|social_notify_down,{0} 평판 -{1}
 K|tier_ally,동맹
 K|tier_friendly,우호
 K|tier_neutral,중립
@@ -368,7 +368,7 @@ K|ch2_2,마지막 장에서는 원래 감사 결론을 붉은 펜으로 지우�
 K|ch2_3,"엘리너의 어머니는 누명을 쓴 것이었다. 그녀는 영양과일에서 다시 씨앗을 얻는 방법을 찾아냈고, 그 때문에 파스텔의 이익이 줄어들었다. 이 보고서 원본이 있으면 평의회와 컨소시엄 관계자들을 감옥에 보낼 수도 있다. 누구에게 건네느냐에 달렸다."
 K|ch2_end,"카이, 미라, 반더린 경 또는 하층 구역의 엘리너에게 건넬 수 있다.\n평의회가 기록 보관소에서 자료가 사라진 걸 알아차리는 건 시간문제다. 길어야 7일이 남았다."
 K|test_mode_label,테스트 모드 (사교 모임과 잠입 즉시 해금)
-K|test_mode_tooltip,"활성화하면 새 상층 구역 플레이 또는 불러온 상층 구역 저장 파일에서 금요일 사교 모임, 반더린 저택, 평의회 기록 보관소, 두 건의 절도 의뢰가 즉시 해금됩니다. 보안·공학 출입 카드, 정보 문서 2개, 3,000크레딧도 지급됩니다. 저장 파일당 한 번만 적용됩니다.\n테스트 단축키(Ctrl을 누른 상태): 1 오스카, 2 테오, 3 사샤, 4 엘리너 후일담 — 다음 방문을 오늘로 예약; 5 중개인 또는 꽃 재료 공급자; 6 테스트 물품(기계, 재료, 전지, 5,000크레딧); 7 모드 물품 각 1개; 8 모든 모드 기계를 하룻밤치 즉시 가동; 9 크레딧 +10,000 및 와일드 호의 +2,000.\n일반 플레이에서는 꺼 두세요."
+K|test_mode_tooltip,"활성화하면 새 상층 구역 플레이 또는 불러온 상층 구역 저장 파일에서 금요일 사교 모임, 반더린 저택, 평의회 기록 보관소, 두 건의 절도 의뢰가 즉시 해금됩니다. 보안·공학 출입 카드, 정보 문서 2개, 3,000크레딧도 지급됩니다. 저장 파일당 한 번만 적용됩니다.\n테스트 단축키(Ctrl을 누른 상태): 1 오스카, 2 테오, 3 사샤, 4 엘리너 후일담 — 다음 방문을 오늘로 예약; 5 중개인 또는 꽃 재료 공급자; 6 테스트 물품(기계, 재료, 전지, 5,000크레딧); 7 모드 물품 각 1개; 8 모든 모드 기계를 하룻밤치 즉시 가동; 9 크레딧 +10,000 및 와일드 호의 +2,000.\nAlt+7을 누르면 모든 종류의 상자와 숨김 칸, 키카드를 지급합니다.\n일반 플레이에서는 꺼 두세요."
 K|test_mode_applied,[테스트 모드] 사교 모임과 잠입이 해금되고 출입 카드와 정보 문서가 인벤토리에 추가되었습니다.
 K|talk_line,[{0}]\n{1}
 K|ui_back,뒤로
@@ -416,10 +416,10 @@ K|faction_infiltration_name,혁명군 침투 조직
 K|perk_notify_contract,평의회 조달 대금 입금: +{0}크레딧
 K|perk_notify_audit,평의회 감사 벌금: {0}크레딧
 K|rep_perk_ULF_COUNCIL_STAMP_name,승인 도장
-K|rep_perk_ULF_COUNCIL_STAMP_desc,평의회가 당신에게 들어온 신고 몇 건을 묵살합니다. 매일 아침 증거 수치가 추가로 2 감소합니다.
+K|rep_perk_ULF_COUNCIL_STAMP_desc,공화국이 당신에 대한 신고 몇 건을 묵살합니다. 매일 아침 증거 수치가 추가로 2 감소합니다.
 K|rep_perk_ULF_COUNCIL_STAMP_flavor,할로 사무총장에 따르면 서류가 책상에 머무는 기간은 언제든 협상할 수 있다고 한다.
 K|rep_perk_ULF_COUNCIL_CONTRACT_name,공공 조달 계약
-K|rep_perk_ULF_COUNCIL_CONTRACT_desc,7일마다 평의회에서 조달 대금 300크레딧을 받습니다.
+K|rep_perk_ULF_COUNCIL_CONTRACT_desc,7일마다 공화국에서 조달 대금 300크레딧을 받습니다.
 K|rep_perk_ULF_COUNCIL_CONTRACT_flavor,평의회 건물에서 교체한 가구와 장비를 앞으로 당신이 먼저 고를 수 있다.
 K|rep_perk_ULF_COUNCIL_AUDIT_name,정기 감사
 K|rep_perk_ULF_COUNCIL_AUDIT_desc,7일마다 감사를 받아 200크레딧의 벌금을 냅니다. 현금이 부족하면 남은 현금만큼 징수됩니다.
@@ -439,18 +439,18 @@ K|rep_perk_ULF_HELIOS_PRICEWAR_flavor,길 건너 새로 생긴 위탁 판매점 
 K|rep_perk_ULF_HELIOS_BLACKLIST_name,컨소시엄 블랙리스트
 K|rep_perk_ULF_HELIOS_BLACKLIST_desc,헬리오스와 관계있는 사람들 모두 당신의 가게를 피합니다. 매일 손님 한 명이 덜 방문합니다.
 K|rep_perk_ULF_HELIOS_BLACKLIST_flavor,헬리오스 산하 모든 회사에 같은 내용의 내부 공문이 전달됐다.
-K|rep_perk_ULF_VANDERLIN_REGULAR_name,사교 모임 단골
-K|rep_perk_ULF_VANDERLIN_REGULAR_desc,금요일 사교 모임에서 대화할 때 호감도가 추가로 1 상승합니다.
-K|rep_perk_ULF_VANDERLIN_REGULAR_flavor,반더린 경이 당신의 이름을 기억한다. 여기서는 그것만으로도 충분하다.
+K|rep_perk_ULF_VANDERLIN_REGULAR_name,구세대 부호
+K|rep_perk_ULF_VANDERLIN_REGULAR_desc,사치품을 구매하는 상층 구역 손님들의 예산이 10% 증가합니다.
+K|rep_perk_ULF_VANDERLIN_REGULAR_flavor,반더린 가문이 당신을 언급했다. 이제 다른 명문가들도 당신을 신뢰한다.
 K|rep_perk_ULF_VANDERLIN_INTRO_name,가문 인맥 소개
 K|rep_perk_ULF_VANDERLIN_INTRO_desc,매일 25% 확률로 구매력이 높은 수집가가 추가 방문합니다.
 K|rep_perk_ULF_VANDERLIN_INTRO_flavor,반더린 가문의 친구라면 우리에게도 친구지.
 K|rep_perk_ULF_VANDERLIN_COLD_name,냉대
-K|rep_perk_ULF_VANDERLIN_COLD_desc,금요일 사교 모임에서 대화로 얻는 호감도가 절반으로 감소합니다.
+K|rep_perk_ULF_VANDERLIN_COLD_desc,수집가와 몰락 귀족 중 절반이 더는 방문하지 않습니다.
 K|rep_perk_ULF_VANDERLIN_COLD_flavor,당신이 다가갈 때마다 사람들은 급한 볼일이 생겼다며 자리를 피한다.
-K|rep_perk_ULF_VANDERLIN_FEUD_name,가문과의 불화
-K|rep_perk_ULF_VANDERLIN_FEUD_desc,반더린 저택의 경비가 강화됩니다. 이곳에 잠입할 때 발각되거나 체포될 확률이 1.5배가 됩니다.
-K|rep_perk_ULF_VANDERLIN_FEUD_flavor,저택에 새 문지기가 들어왔다. 낯선 얼굴을 하나하나 유심히 살핀다.
+K|rep_perk_ULF_VANDERLIN_FEUD_name,거래 금지 명단
+K|rep_perk_ULF_VANDERLIN_FEUD_desc,귀중품 도매상의 도매 가격이 15% 상승합니다.
+K|rep_perk_ULF_VANDERLIN_FEUD_flavor,도매상은 상층 구역의 누군가가 자신에게 귀띔했다고 말한다.
 K|heist_state_clean,상태: 발각되지 않음
 K|heist_state_spotted,상태: [발각됨] 이후 모든 행동의 위험도 2배
 K|heist_state_lockdown,경계 강화: 위험도 ×1.5
@@ -609,7 +609,7 @@ K|uc.doctor.2,병원에서 납품업체를 바꾸는 바람에 이 재고를 처
 K|uc.doctor.3,모두 정식 유통품이며 거래 서류도 갖춰져 있습니다.
 K|uc.researcher.name,연구소 연구원
 K|uc.researcher.1,안녕하세요. 헬리오스 연구소에서 일합니다.
-K|uc.researcher.2,연구실 장비를 교체하고 있어요. 쓰던 시약과 계측 도구를 저렴하게 드리겠습니다.
+K|uc.researcher.2,연구실에서 재고를 정리하고 있어요. 남은 시약과 여분의 표본을 저렴하게 드리겠습니다.
 K|uc.researcher.3,화학 재료가 있다면 시세대로 사겠습니다.
 K|uc.moving.name,이사하는 주민
 K|uc.moving.1,"다음 달에 고리 구역 반대편으로 이사하는데, 새집이 좁아 물건을 다 가져갈 수 없어요."
@@ -1236,7 +1236,7 @@ K|scenario.organ.title,장기 밀매상
 K|scenario.organ.desc,상층 구역에서는 값싸고 합법적인 장기 출력이 가능합니다. 하지만 부자들은 천연 장기를 원합니다. 그런 장기는 시신에서만 얻을 수 있습니다.
 K|scenario.organ.with1,해부 기계와 배터리 1개
 K|scenario.organ.with2,장기 냉장 보관함
-K|scenario.organ.with3,교전 지역의 위치
+K|scenario.organ.with3,진료소의 손과 연결됩니다. 손이 매주 장기를 사러 방문합니다.
 K|scenario.organ.tag,고위험
 K|item_ul_organ_heart_name,천연 심장
 K|item_ul_organ_heart_flavor,출력기로 만들지 않은 심장. 상층 구역 진료소에서는 이런 장기만 취급한다.
@@ -1274,12 +1274,12 @@ K|battle.tries_left,오늘 밤 남은 수색 횟수: {0}/{1}회
 K|battle.wounded,"부상을 입었습니다. 붕대 등으로 상처를 치료하면 수색을 계속할 수 있습니다."
 K|battle.risk,경상 {0}%  중상 {1}%  발각 {2}%
 K|battle.search,수색
-K|battle.found_corpse,"방금 숨이 끊어진 시신 한 구를 발견했다. 포장할 필요는 없다. 떠날 때 가게로 끌고 간다."
+K|battle.found_corpse,방금 숨이 끊어진 시신 한 구를 발견했습니다. 가져가려면 배낭이 아닌 주머니에 넣으세요. 하룻밤에 최대 두 구까지 가져갈 수 있습니다.
 K|battle.found_scrap,팔 만한 폐품 몇 개를 주웠다.
 K|battle.found_nothing,아무것도 찾지 못했다.
 K|battle.luck_saved,유탄이 스쳐 지나갈 뻔했다. 운이 좋았다.
-K|battle.spotted_police,치안부 순찰대에게 목격당했다. 이 일은 당신의 기록에 남을 것이다.
-K|battle.spotted_rev,혁명군 대원에게 목격당했다. 결국 경찰에게 소식이 전해질 것이다.
+K|battle.spotted_police,"경찰 순찰대에게 목격당했습니다. 이 일은 당신의 기록에 남을 것입니다. 경찰 평판 -{0}"
+K|battle.spotted_rev,"혁명군 관계자에게 목격당했습니다. 그들은 이곳을 뒤지는 사람을 달가워하지 않습니다. 혁명군 평판 -{0}"
 K|battle.fight_tonight,오늘 밤 교전 지역에서 총격전이 벌어지고 있습니다.
 K|npc_clinic_name,쏜
 K|clinic.intro.1,"백탑 진료소 구매 담당, 쏜입니다."
@@ -1416,26 +1416,26 @@ K|luxury.tip_fake,인증서 없음. 위조품이다.
 K|luxury.tip_cert,반더린 가문 신탁 인증서가 포함되어 있다.
 K|crate.scenario.title,봉인 상자 개봉광
 K|crate.scenario.desc,상층 구역에서 가게를 운영하면서 수입 대부분을 봉인된 상자에 쏟아붓습니다. 암시장에서는 며칠에 한 번씩 상자를 가져옵니다. 열어 보기 전에는 아무도 내용물을 알 수 없습니다.
-K|crate.scenario.with1,봉인 상자 개봉 작업대
-K|crate.scenario.with2,일반 봉인 상자 2개와 고급 봉인 상자 1개
-K|crate.scenario.with3,며칠마다 방문하는 밀수업자
+K|crate.scenario.with1,일반 물품 상자 2개와 각각에 맞는 키카드 2장
+K|crate.scenario.with2,5일마다 방문하는 밀수업자
+K|crate.scenario.with3,키카드로 열고 내용물을 확인할 수 있는 상자 6종
 K|crate.scenario.tag,상층 구역 모드
-K|crate.item.common.name,일반 봉인 상자
-K|crate.item.common.flavor,하층 구역에서 밀수해 온 나무 상자. 봉인은 온전하다. 대개 생활용품이 들어 있지만 가끔 다른 물건도 나온다.
-K|crate.item.fine.name,고급 봉인 상자
-K|crate.item.fine.flavor,잠금장치와 보안 봉인이 달린 단단한 상자. 안에 든 물건 대부분보다 운송비가 더 비쌌다.
-K|crate.item.noble.name,명문가 봉인 상자
-K|crate.item.noble.flavor,오래된 명문가 저택에서 나온 옻칠 상자. 가문의 문장이 절반쯤 긁혀 있다. 가보일 수도 있고 그들이 버린 잡동사니일 수도 있다.
+K|crate.item.common.name,상층 구역 일반 물품 상자
+K|crate.item.common.flavor,상층 구역 주민들에게서 수집한 봉인 상자. 무엇이 들었을지는 알 수 없다. 대개 생활용품이지만 가끔 값나가는 물건도 나온다.
+K|crate.item.fine.name,상층 구역 귀중품 상자
+K|crate.item.fine.flavor,걸쇠와 봉인이 달린 단단한 밀봉 상자. 상층 구역에서 온 물건으로 무엇이든 들어 있을 수 있지만 귀중품의 비중이 높다.
+K|crate.item.noble.name,상층 명문가 물품 상자
+K|crate.item.noble.flavor,명문가 저택에서 나온 옻칠 상자. 가문의 문장이 반쯤 긁혀 있다. 가보가 들어 있을 수도 있고 더는 필요 없는 오래된 물건이 들었을 수도 있다.
 K|crate.item.bench.name,봉인 상자 개봉 작업대
-K|crate.item.bench.desc,봉인 상자를 열기 위한 작업대. 하룻밤 두면 내용물을 손상 없이 꺼낼 수 있고 즉시 강제로 열 수도 있습니다.
+K|crate.item.bench.desc,키카드로 봉인 상자를 여는 작업대입니다. 지금 바로 열거나 하룻밤 두고 개봉할 수 있습니다.
 K|crate.item.bench.flavor,"유압식 지렛대와 쇠지렛대 하나, 그리고 널려 있는 못들. 전력이 아니라 사람의 힘으로 작동한다."
 K|crate.item.bench.note_name,상자 개봉 작업대 설명서
-K|crate.item.bench.note_flavor,작업대에 봉인 상자를 놓으세요.\n야간 개봉: 하룻밤에 최대 상자 2개를 엽니다. 내용물은 손상 없이 다음 날 아침 카운터 뒤에 놓입니다. 공간이 부족하면 점포의 다른 곳에 놓이므로 작업대가 비워집니다.\n즉시 강제 개봉: 버튼을 누르면 첫 번째 상자를 즉시 엽니다. 각 물품에는 35% 확률로 상태가 낡음으로 떨어질 위험이 있습니다.\n봉인 상자는 불법 물품입니다. 열기 전에는 다른 사람에게 들키지 않도록 주의하세요.
+K|crate.item.bench.note_flavor,봉인 상자를 작업대 위에 놓으세요. 상자마다 맞는 키카드 한 장이 필요합니다.\n하룻밤에 최대 2개를 열거나 버튼을 눌러 지금 상자 1개를 열 수 있습니다.\n내용물은 개봉한 상자 안에 그대로 남습니다. 물건을 모두 꺼내면 작업대 공간이 확보됩니다.
 K|crate.bench.label_work,작업대
 K|crate.bench.label_control,개봉
 K|crate.bench.status_empty,봉인 상자를 넣으세요
 K|crate.bench.status_ready,오늘 밤 {0}개 개봉 예정(총 {1}개)
-K|crate.bench.pry,강제 개봉
+K|crate.bench.pry,지금 열기
 K|crate.open.empty,상자가 비어 있습니다.
 K|crate.open.summary,물품 {1}개 획득. 최고 가치 물품: {0}.
 K|crate.pry.damaged,물품 {0}개가 손상되었습니다.
@@ -1447,7 +1447,7 @@ K|crate.smuggler.first.3,며칠마다 들르겠습니다. 오늘 가져온 물�
 K|crate.smuggler.v1.1,이번 주 물건입니다. 방금 검문소를 통과했죠.
 K|crate.smuggler.v2.1,언제나처럼요. 골라 보세요.
 K|crate.smuggler.v3.1,이번에는 운송이 험했어요. 상자가 좀 부딪혔지만 내용물은 제 책임이 아닙니다.
-K|crate.smuggler.noble,오늘은 명문가 저택에서 가져온 상자도 하나 있습니다. 어느 가문인지는 묻지 마세요.
+K|crate.smuggler.noble,오늘 특수 상자를 하나 가져왔습니다. 어디서 구했는지는 묻지 마세요.
 K|crate.smuggler.plain,일반 물건입니다. 너무 큰 기대는 마세요.
 K|crate.smuggler.accept,거래됐습니다. 안에 뭐가 들었는지는 운에 맡기세요.
 K|crate.smuggler.done,다음 주에 뵙죠.
@@ -1729,9 +1729,9 @@ K|perfume.phase2.c_no_flowers,[이번에는 사지 않는다]
 K|perfume.phase2.no_room,점포에 공간이 부족해 남은 꽃은 비올라가 다시 가져갔습니다.
 K|crate.phase2.1,점포가 당신 소유가 됐다면서요? 이제 큰 물건도 가져올 수 있겠군요.
 K|crate.phase2.2,상층 구역 누군가가 명문가의 창고 하나를 통째로 비웠대요.
-K|crate.phase2.3,이제부터는 매번 명문가 봉인 상자 세 개를 가져올 겁니다. 현금을 준비하세요.
+K|crate.phase2.3,이제부터는 방문할 때마다 특수 상자 세 개를 가져오겠습니다. 돈을 준비해 두세요.
 K|crate.phase2.4,작업대 하나로는 감당이 안 될 테니 이것도 가져가세요.
-K|crate.smuggler.noble_batch,명문가 물건 중 남은 세 상자입니다. 이걸로 전부예요.
+K|crate.smuggler.noble_batch,이번에는 특수 상자 세 개입니다. 이번 물량은 이게 전부예요.
 K|appraiser.buy.offer.1,당신이 진품이라고 한다면 안심이죠.
 K|appraiser.buy.offer.2,어차피 팔려고 했던 물건이에요. {0}크레딧에 가져가세요.
 K|appraiser.buy.c_yes,[구매한다 ({0}크레딧)]
@@ -1802,7 +1802,7 @@ K|readme.p2.body,· 임대료는 하층 구역의 세 배이며 매주 납부해
 K|readme.p4.title,카이 와일드
 K|readme.p4.body,카이는 조 와일드의 사촌입니다. 상층 구역에서 필요한 일이 있으면 대부분 카이를 통하면 됩니다.\n\n서비스 이용 방식은 조 와일드와 마찬가지로 전화 연락입니다. 와일드 인맥 화면의 '상층 사교계'에서 와일드의 호의로 서비스를 구매할 수 있습니다. 급수관 연결 같은 점포 설비도 카이를 통해 해결할 수 있습니다. 무엇부터 구매할지 모르겠다면 각 열에서 가장 저렴한 서비스부터 살펴보세요.\n\n카이는 금요일 사교 모임 초대장도 가져다줍니다.
 K|readme.p5.title,사교 모임과 세력
-K|readme.p5.body,"상층 구역에는 공화국, 헬리오스 컨소시엄, 반더린 가문, 혁명군이라는 네 세력이 영향력을 행사합니다.\n\n· 금요일 영업이 끝나면 사교 모임에 참석해 각 세력의 대표와 대화하고 정보를 판매할 수 있습니다.\n· 좋은 관계를 맺은 세력은 도움을 주거나 부탁을 할 수도 있습니다.\n· 반대로 적대 관계가 되면 그만한 대가를 치러야 합니다."
+K|readme.p5.body,"상층 구역에는 공화국, 헬리오스 컨소시엄, 반더린 가문, 혁명군이라는 네 세력이 영향력을 행사합니다.\n\n· 금요일 영업이 끝나면 사교 모임에 참석해 각 세력의 대표와 대화하고 정보를 판매할 수 있습니다.\n· 좋은 관계를 맺은 세력은 도움을 주거나 부탁을 할 수도 있습니다.\n· 반대로 적대 관계가 되면 그만한 대가를 치러야 합니다.\n\n단골손님이 방문할 때 첫 번째 물품 판매로 해당 세력의 평판이 +1 증가합니다(최대 +60).\n· 경찰: 아서 경감이 담배와 술을 구매\n· 혁명군 잠입국: 연락책이 의약품과 통조림을 구매\n· 공화국: 세무 조사관이 준수 부담금을 징수\n· 반더린 가문: 오스카가 사치품을 구매\n· 헬리오스 컨소시엄: 집사가 신선식품을 구매\n한 세력에 물건을 팔아도 다른 세력의 평판은 떨어지지 않습니다."
 K|readme.p6.title,밤 시간대
 K|readme.p6.body,"영업이 끝나면 밖으로 나갈 수 있습니다. 사교 모임과 직업별 장소, 그리고 그다지 떳떳하지 못한 곳에도 갈 수 있죠.\n\n밤 외출에는 위험이 따릅니다. 다치거나 목격당할 수도 있고 증거를 남길 수도 있습니다. 무리하지 마세요. 내일도 가게 문을 열어야 하니까요."
 K|readme.p7.title,점포 사용 안내
@@ -1828,7 +1828,7 @@ K|item_ul_smuggler_bay_name,대형 밀수 은닉함
 K|item_ul_smuggler_bay_desc,일반형보다 한 칸 더 넓게 개조한 밀수 은닉함. 내부 물품은 단속 시 수색 대상에서 제외됩니다.
 K|heist_loot_carried,물품 {0}개를 점포로 가져왔습니다.
 K|heist_loot_no_room,점포에 공간이 부족해 물품 {0}개를 두고 왔습니다.
-K|pex.name_contact,비공개 교환회 연락책
+K|pex.name_contact,케사
 K|pex.intro.1,좋은 저녁입니다. 작은 모임을 대표해 왔습니다.
 K|pex.intro.2,상층 구역에는 장부에 남기거나 남의 눈에 띄면 곤란한 물건들이 있습니다.
 K|pex.intro.3,그래서 지인들끼리만 이용하는 비공개 교환회를 운영하고 있죠.
@@ -1921,8 +1921,8 @@ K|uc.water_resident.2,밀봉된 생수 있나요? 개봉하지 않은 걸로요.
 K|uc.water_corp.name,기업 구매 담당자
 K|uc.water_corp.1,회의실과 임원 전용 층에 쓸 물이 필요합니다. 고품질만 취급합니다.
 K|uc.water_corp.2,순도만 맞으면 가격은 문제없습니다.
-K|pex.give.smuggler,밀수 은닉함 1개 + 분홍색 주사기 8개
-K|pex.give.smuggler_big,"대형 밀수 은닉함 1개 + 분홍색 주사기 8개 (사용했던 확장 키트는 반환됨)"
+K|pex.give.smuggler,"밀수 은닉함(5×5, 장기 거래상의 확장형 은닉함도 가능) + '블루 블러드' 혈액 주머니 3개 + 붉은 등급 물품 3개(감정가 900 이상)"
+K|pex.give.smuggler_big,대형 또는 소형 밀수 은닉함 + '블루 블러드' 혈액 주머니 8개(사용한 확장 키트는 반환됨)
 K|pex.get.smuggler,"개조된 밀수 은닉함(8×8, 단속 시 내용물 은닉)"
 K|salon_talk_leave,(지금은 그만둔다)
 K|salon_guest_line3,· {0} ({1}) 호감도 {2}{3}
@@ -1975,9 +1975,9 @@ K|ul_dialog_tourist_greet_5,다들 여기가 터무니없이 비싸다고 하더
 K|ul_dialog_tourist_deal_2,이 근처에서 재미 좀 볼 수 있다고 들었는데요?
 K|ul_dialog_tourist_weapon_greet_2,"이쪽 가게들은 물건값이 엄청나다던데, 전 오히려 매력적인 것 같아요."
 K|ul_dialog_tourist_weapon_greet_3,오늘은 정거장에서 가장 부유한 구역을 구경하고 있어요. 문화적인 분위기가 물씬 풍기네요!
-K|test_hotkey_update,"테스트(최근 업데이트): 《해부의 기초》, 《가게 운영 수칙》, 그림이 있는 단골손님 명부를 지급합니다. 카이가 오늘 정산과 납품을 위해 방문하며, 명부가 없으면 생성하고 오늘 단골손님 한 명이 방문합니다. 크레딧 +5,000. 예약 주문을 시험하려면 Ctrl+F12로 가게 매입 이후 단계를 해금하세요."
+K|test_hotkey_update,상자 테스트: 잠긴 숨김 칸 4개와 만능 키카드 4장을 지급했습니다.
 K|corpse_name_fresh,"{0} (신선도 {1}%)"
-K|battle.found_corpse_old,"며칠째 방치된 시신 한 구를 발견했다. (신선도 {0}%) 이곳을 떠날 때 가게로 끌고 간다."
+K|battle.found_corpse_old,며칠째 방치된 시신 한 구를 발견했습니다(신선도 {0}%). 하룻밤에 최대 두 구까지 가져갈 수 있습니다.
 K|battle.found_corpse_rotten,"시신 한 구를 발견했지만 이미 부패했다. 채취할 만한 것이 없다."
 K|bdoc.name,"불법 의사"
 K|bdoc.1,"불빛을 보고 왔어."
@@ -1986,7 +1986,7 @@ K|item_ul_organ_printer_name,"3D 장기 출력기"
 K|item_ul_organ_printer_desc,"바이오 잉크와 세포 표본으로 장기를 출력합니다. 전력이 공급되는 밤에만 작동합니다."
 K|item_ul_organ_printer_flavor,"출력된 장기는 제대로 작동한다. 다만 누가 봐도 출력물이다."
 K|item_ul_organ_printer_note_name,"장기 출력기 설명서"
-K|item_ul_organ_printer_note_flavor,"잉크/표본 칸에 바이오 잉크와 세포 표본을 넣고 출력할 장기를 선택하면, 전력이 공급되는 밤에 작업합니다. 심장은 잉크 2개와 2박이 필요하며, 폐와 신장은 각각 잉크 1개와 1박이 필요합니다. 출력할 때마다 세포 표본도 1개 소모합니다. 출력 상태는 무작위입니다. (온전함 60%, 손상 30%, 파손 10%)\n세포 표본은 직접 채취해야 합니다. 부패하지 않은 천연 장기를 표본 채취 칸에 넣으면 전력이 공급되는 밤에 채취하며 장기는 소모됩니다. 온전한 장기는 8개, 손상된 장기는 6개, 파손된 장기는 3개의 표본을 얻습니다. 칸에 장기가 있으면 표본 채취가 출력보다 먼저 진행됩니다.\n출력 장기의 가치는 천연 장기의 30%이며, 부패하지 않아 냉장이 필요 없습니다. 판매 허가증이 없으면 중급 금지 물품으로 취급되어 불법 의사만 방문당 1개를 구매합니다.\n카이에게서 장기 판매 허가증을 구매하면 합법적인 상품이 됩니다. 장기 은행 담당자는 3일마다 주문을 가져오며, 기한 내 납품하면 대금 2배와 상층부 평판을 얻습니다. 사립 병원은 7일마다 온전한 장기 3개를 요구하는 대량 주문을 가져오고, 각 장기를 2.5배 가격에 구매합니다. 네온 간판을 진열장에 놓으면 주문 주기가 2일로 줄고, 성형외과 구매자가 폐와 신장을 사러 옵니다.\n[모듈 효과]:\n  효율: 전력 소모량\n  성능: 출력 속도 (1%마다 하루를 추가로 진행할 확률 +1%)\n  품질: 출력 상태 (계수: 0.5)"
+K|item_ul_organ_printer_note_flavor,"잉크/표본 칸에 바이오 잉크와 세포 표본을 넣고 출력할 장기를 선택하면, 전력이 공급되는 밤에 작업합니다. 심장은 잉크 2개와 2박이 필요하며, 폐와 신장은 각각 잉크 1개와 1박이 필요합니다. 출력할 때마다 세포 표본도 1개 소모합니다. 출력 상태는 무작위입니다. (온전함 60%, 손상 30%, 파손 10%)\n세포 표본은 직접 채취해야 합니다. 부패하지 않은 천연 장기를 표본 채취 칸에 넣으면 전력이 공급되는 밤에 채취하며 장기는 소모됩니다. 온전한 장기는 8개, 손상된 장기는 6개, 파손된 장기는 3개의 표본을 얻습니다. 칸에 장기가 있으면 표본 채취가 출력보다 먼저 진행됩니다.\n출력 장기의 가치는 천연 장기의 50%이며, 부패하지 않아 냉장이 필요 없습니다. 판매 허가증이 없으면 중급 금지 물품으로 취급되어 불법 의사만 방문당 1개를 구매합니다.\n카이에게서 장기 판매 허가증을 구매하면 합법적인 상품이 됩니다. 장기 은행 담당자는 3일마다 주문을 가져오며, 기한 내 납품하면 대금 2배와 상층부 평판을 얻습니다. 사립 병원은 7일마다 온전한 장기 3개를 요구하는 대량 주문을 가져오고, 각 장기를 2.5배 가격에 구매합니다. 네온 간판을 진열장에 놓으면 주문 주기가 2일로 줄고, 성형외과 구매자가 폐와 신장을 사러 옵니다.\n[모듈 효과]:\n  효율: 전력 소모량\n  성능: 출력 속도 (1%마다 하루를 추가로 진행할 확률 +1%)\n  품질: 출력 상태 (계수: 0.5)"
 K|item_ul_bioink_name,"바이오 잉크"
 K|item_ul_bioink_desc,"3D 장기 출력기의 소모품."
 K|item_ul_organ_license_name,"장기 판매 허가증"
@@ -2010,7 +2010,7 @@ K|obank.name,"성형외과 구매자"
 K|obank.1,"간판을 보고 왔습니다."
 K|obank.2,"규정에 맞는 출력된 폐나 신장이 있습니까? 심장은 필요 없습니다."
 K|ul_kai_organ_license_title,"장기 판매 허가"
-K|ul_kai_organ_license_desc,"카이가 필요한 서류를 처리해 줍니다. 출력된 장기가 금지 물품이 아닌 합법적인 상품이 됩니다. 장기 은행 담당자가 주문을 가져오며 기한 내 납품하면 대금 2배와 상층부 평판을 얻습니다. 사립 병원도 7일마다 대량 주문을 맡깁니다. 허가증과 장기 은행 네온 간판도 받습니다. 간판을 진열장에 놓으면 주문이 더 자주 들어오고, 성형외과 구매자가 폐와 신장을 사러 옵니다."
+K|ul_kai_organ_license_desc,"카이가 필요한 서류를 처리해 줍니다. 출력된 장기가 금지 물품이 아닌 합법적인 상품이 되며, 밀러 박사가 3D 장기 출력기를 판매하기 시작합니다. 장기 은행 담당자가 주문을 가져오며 기한 내 납품하면 대금 2배와 상층부 평판을 얻습니다. 사립 병원도 7일마다 대량 주문을 맡깁니다. 허가증과 장기 은행 네온 간판도 받습니다. 간판을 진열장에 놓으면 주문이 더 자주 들어오고, 성형외과 구매자가 폐와 신장을 사러 옵니다."
 K|printer_label_organ,"표본 채취용 장기"
 K|printer_status_organ,"표본 채취 중"
 K|ocoord.name,"장기 은행 담당자"
@@ -2053,9 +2053,9 @@ K|phosp.slip_desc,"사립 병원의 다음 방문 때 납품하세요: {0}. 온�
 K|phosp.new,"사립 병원 대량 주문: {0}. 다음 주에 수령하며 총대금은 {1}크레딧입니다."
 K|phosp.delivered,"대량 주문 물품 1개 납품: 추가 대금 {0}크레딧."
 K|phosp.complete,"대량 주문 전량 납품: 추가 대금 {0}크레딧, 상층부 평판 +{1}."
-K|item_ul_printed_heart_desc,"3D 출력된 심장. 천연 심장 가치의 30%이며 부패하지 않아 냉장할 필요가 없다."
-K|item_ul_printed_lung_desc,"3D 출력된 폐. 천연 폐 가치의 30%이며 부패하지 않아 냉장할 필요가 없다."
-K|item_ul_printed_kidney_desc,"3D 출력된 신장. 천연 신장 가치의 30%이며 부패하지 않아 냉장할 필요가 없다."
+K|item_ul_printed_heart_desc,"3D 출력된 심장. 천연 심장 가치의 50%이며 부패하지 않아 냉장할 필요가 없다."
+K|item_ul_printed_lung_desc,"3D 출력된 폐. 천연 폐 가치의 50%이며 부패하지 않아 냉장할 필요가 없다."
+K|item_ul_printed_kidney_desc,"3D 출력된 신장. 천연 신장 가치의 50%이며 부패하지 않아 냉장할 필요가 없다."
 K|organprint.reissued,"카이가 장기 판매 허가증과 간판을 재발급해 가게에 놓아두었습니다."
 K|dissector_status_nopower,"신선도 {0}% ({1})"
 K|dissector_nopower_empty,"전력 공급원 없음"
@@ -2070,7 +2070,7 @@ K|ogguide.header,"장기 해체 입문서"
 K|ogguide.p1.title,"시작하기 전에"
 K|ogguide.p1.body,"상층 구역에는 3D 프린터로 만든 장기가 넘쳐납니다. 값싸고 합법적이죠. 하지만 부자들이 원하는 건 천연 장기입니다. 천연 장기는 시신에서만 얻을 수 있습니다.\n\n이 책에서는 두 가지 길을 소개합니다.\n\n검은 길: 밤에 교전 지역에서 시신을 수습하고 천연 장기를 적출해 암시장 구매자에게 팝니다. 돈은 빨리 벌지만 위험도 큽니다.\n\n흰 길: 3D 프린터로 장기를 출력합니다. 허가증이 있으면 합법적으로 거래할 수 있습니다. 수익은 적어도 발 뻗고 잘 수 있죠.\n\n두 길을 모두 택해도 됩니다."
 K|ogguide.p2.title,"검은 길: 장기 확보"
-K|ogguide.k.corpse,"밤에 교전 지역을 수색하세요. 격전이 벌어진 날에는 시신을 더 많이, 더 신선한 상태로 발견할 수 있습니다. 조용한 밤에는 오래된 시신이 대부분입니다. 수색 중 다칠 수 있지만 치료한 뒤 계속 수색할 수 있습니다."
+K|ogguide.k.corpse,"밤에 교전 지역을 수색하세요. 교전이 격렬한 날에는 시신을 더 많이, 더 신선한 상태로 발견할 수 있습니다. 조용한 밤에는 오래된 시신이 대부분입니다. 수색 중 다칠 수 있지만 치료한 뒤 계속 수색할 수 있습니다. 가져갈 시신은 배낭이 아닌 주머니에 넣으세요. 하룻밤에 최대 두 구까지 운반할 수 있으며, 시신 한 구마다 공화국·경찰·혁명군 잠입국 중 무작위 한 세력의 평판이 0.5 감소합니다."
 K|ogguide.k.dissector,"시신을 넣으면 전력이 공급되는 밤에 해체 작업을 합니다. 한 구에서 보통 장기 1~2개, 운이 좋으면 3~4개를 얻습니다. 시신이 신선할수록 장기 상태도 좋습니다. 시신은 오래 보관할 수 없으니 빨리 처리하세요."
 K|ogguide.k.cooler,"밖에 둔 장기는 날마다 상태가 나빠지고 4일째에 부패합니다. 냉장 보관함에 넣으면 상태가 유지됩니다."
 K|ogguide.p3.title,"천연 장기"
@@ -2092,7 +2092,7 @@ K|ogguide.k.license,"카이에게서 1,400크레딧에 구입합니다. 허가�
 K|ogguide.k.order,"허가증이 있으면 장기 은행 담당자가 3일마다 주문을 가져옵니다. 기한 내 납품하면 보수 2배와 상층 구역 평판을 얻습니다. 사립 병원은 7일마다 상태가 온전한 장기 3개를 요구하는 대량 주문을 넣습니다."
 K|ogguide.k.sign,"허가증을 구입하면 함께 받습니다. 진열장에 놓으면 주문이 2일마다 들어오고, 성형외과에서도 폐와 신장을 사러 옵니다."
 K|ogguide.p7.title,"몇 가지 주의사항"
-K|ogguide.p7.body,"· 출력 장기의 가격은 천연 장기의 3분의 1이지만 부패하지 않아 냉장 보관할 필요가 없습니다.\n\n· 장기 해체기와 프린터는 모두 밤에 전력이 필요합니다.\n\n· 밀수업자 비밀 수납칸에 넣어 둔 밀수품은 검문 대상에서 제외됩니다.\n\n· 천연 장기를 너무 많이 쌓아 두지 마세요. 결국 썩고, 적발되면 더 곤란해집니다.\n\n· 범죄 기록은 매일 지워 두세요. 치안부가 문 앞에 찾아온 뒤에는 늦습니다."
+K|ogguide.p7.body,"· 출력 장기의 가격은 천연 장기의 절반이지만 부패하지 않아 냉장 보관할 필요가 없습니다.\n\n· 장기 해체기와 프린터는 모두 밤에 전력이 필요합니다.\n\n· 밀수업자 비밀 수납칸에 넣어 둔 밀수품은 검문 대상에서 제외됩니다.\n\n· 천연 장기를 너무 많이 쌓아 두지 마세요. 결국 썩고, 적발되면 더 곤란해집니다.\n\n· 범죄 기록은 매일 지워 두세요. 치안부가 문 앞에 찾아온 뒤에는 늦습니다."
 K|ogguide.reissued,"가게에 장기 거래상 입문 안내서인 《장기 해체 입문서》가 놓였습니다."
 K|diff_restored,이 저장 파일에서 누락됐던 상층 구역 난이도가 복구됐습니다.
 K|diff_restored_guess,이 저장 파일에서 상층 구역 난이도가 누락됐습니다. 원래 설정을 확인할 수 없어 보통 난이도로 복구했습니다.
@@ -2167,8 +2167,8 @@ K|ncguide.k.dubious,"웨이트가 1일 차에 빌려준 1,500크레딧과 4일 �
 K|ncguide.p3.title,정산
 K|ncguide.p3.body,웨이트는 방문할 때 먼저 지난주의 물품을 정산합니다.\n\n· 계산대에서 판매한 물품: 판매가의 60%를 웨이트가 가져갑니다.\n· 가게에서 사라졌지만 계산대에서 판매하지 않은 물품(다른 곳에서 판매했거나 사용한 물품): 표시 가격에 판매한 것으로 계산합니다.\n· 아직 가게에 있는 물품: 계속 판매합니다.\n\n정산 후 새 물품을 가져옵니다.\n\n웨이트에게 줄 현금이 부족하면 미지급액은 다음번에 정산합니다.
 K|ncguide.p4.title,거주와 세금
-K|ncguide.n.roster,납세 명세서
-K|ncguide.k.roster,1일 차에 공화국 공무원에게서 받습니다. 설명에 현재 거주 일수가 표시됩니다.
+K|ncguide.n.roster,거주 기간
+K|ncguide.k.roster,공화국 공무원이 처음 방문한 1일 차부터 계산합니다. 공무원은 7일 차에 다시 와서 보유 현금의 30%를 '공화국 지원금'으로 징수합니다.
 K|ncguide.n.wish,60일
 K|ncguide.k.wish,60일 동안 문제없이 거주해야 상층 구역 영구 거주 허가증을 구입할 수 있습니다. 밀수품이 있다면 미리 처리하세요.
 K|ncguide.n.favor,공화국 지원금
@@ -2176,7 +2176,7 @@ K|ncguide.k.favor,공화국 공무원이 다시 찾아와 보유 현금에 따�
 K|ncguide.p5.title,단골손님
 K|ncguide.p5.body,· 브루스: 상층 구역에서 40년을 살았고 지금은 재활용 시설을 돌아다니는 노인입니다. 물건을 구입하면 사흘마다 정가보다 30% 저렴하게 새 물품을 가져옵니다. 그를 도와주면 은혜를 기억합니다.\n\n· 헬리오스 가문 집사: 아가씨를 위해 4일마다 신선한 식품을 사러 옵니다. 통조림은 사지 않으며 돈을 후하게 냅니다.\n\n· 덱스 경관: 이 구역을 순찰합니다. 고등급 밀수품을 소지한 판매자를 신고하면 압수 수량에 따라 보상금을 지급합니다.
 K|ncguide.p6.title,물품 조달처
-K|ncguide.p6.body,"상층 구역의 판매자들이 가게에 찾아옵니다.\n\n· 이사하는 주민: 생활용품\n· 즉석식품 배달원: 갓 만든 음식\n· 개인 의사: 의약품\n· 유산 관리인, 경매장 직원, 수집가, 몰락 귀족: 희귀 물품\n\n진열장에 사치품과 희귀 물품을 놓으면 부유한 손님을 끌어들일 수 있습니다. 손님들의 예산은 대략 진열된 물품 중 가장 비싼 물건 하나를 살 수 있는 수준입니다."
+K|ncguide.p6.body,"상층 구역의 판매자들이 가게에 찾아옵니다.\n\n· 이사하는 주민: 생활용품\n· 즉석식품 배달원: 갓 만든 음식\n· 개인 의사: 의약품\n· 유산 관리인, 경매장 직원, 수집가, 몰락 귀족: 사치품\n\n진열장에 사치품을 놓으면 부유한 손님을 끌어들일 수 있습니다. 손님들의 예산은 대략 진열된 물품 중 가장 비싼 물건 하나를 살 수 있는 수준입니다."
 K|ncguide.p7.title,몇 가지 조언
 K|ncguide.p7.body,"· 기본 판매 가격이 적정 가격입니다. 상층 구역 손님들은 겉모습과 체면을 중시합니다.\n\n· 가게에 빈자리를 남겨 두세요. 웨이트가 배달한 물품이 전부 들어가지 않으면 일부만 맡기고 돌아갑니다.\n\n· 하다스겐 아이스크림은 냉동실에, 샐러드와 샌드위치, 케이크는 냉장실에 넣으세요. 밖에 하룻밤 두면 가치가 떨어집니다.\n\n· 다른 사람이 보관해 달라고 맡긴 물건은 판매할 수 없습니다. 분실하지 않도록 주의하세요."
 K|regulars.roster_desc,단골손님들의 정보가 기록되어 있습니다. 클릭하면 읽을 수 있습니다.
@@ -2226,11 +2226,11 @@ K|regulars.story.14.5,청 어르신의 손자가 정거장에 찾아온다고 �
 K|regulars.story.15.3,지 여사는 의회에서 서류 업무를 맡는다. 입이 무거워 직장 이야기는 '지루하다'는 말밖에 하지 않는다.
 K|regulars.story.15.5,지 여사는 의회에서 곧 몇몇 가게를 감사할 예정이지만 당신 가게는 명단에 없다고 귀띔했다.
 K|ncguide.reissued,가게에 새 점주를 위한 입문서 《가게 운영 수칙》이 한 권 놓였습니다.
-K|ul_kai_organ_route_title,암거래 경로
-K|ul_kai_organ_route_desc,"카이가 진료소의 손을 소개하고 교전 구역으로 가는 길을 알려 줍니다. 구매하면 해부 장비, 장기 냉장고, 《해부의 기초》 한 권을 받습니다. 밤에 교전 구역에서 시신을 수거해 장기를 적출하고, 손 같은 구매자에게 팔 수 있습니다. 밀러 박사도 3D 장기 출력기를 판매하기 시작합니다. 장기 거래상으로 시작했다면 이미 해금돼 있어 구매할 필요가 없습니다."
+K|ul_kai_organ_route_title,장비 및 해부 안내
+K|ul_kai_organ_route_desc,"누구나 교전 지역에 갈 수 있지만 시신을 가져와도 장비가 없으면 해부할 수 없습니다. 카이가 해부 장비와 장기 냉장고 두 대, 채혈 도구, 《해부의 기초》를 보내 주고 진료소의 손을 소개합니다. 손은 일주일에 한 번 장기를 사러 방문합니다(명함과 전화번호는 별도 구매). 장기 거래상으로 시작했다면 이미 해금된 항목입니다."
 K|net_group_organ,장기 거래
-K|organ.route.unlocked,"카이가 해부 장비와 장기 냉장고, 《해부의 기초》를 가져왔습니다. 오늘 밤부터 교전 구역에 갈 수 있습니다."
-K|organ.route.compensated,전에 구매한 장기 판매 허가증에 선행 단계가 누락돼 있어 카이가 암거래 경로를 무료로 추가했습니다. 해부 장비와 장기 냉장고는 가게에 놓였습니다.
+K|organ.route.unlocked,"카이가 해부 장비, 장기 냉장고, 채혈 도구와 《해부의 기초》를 가져왔습니다. 진료소의 손이 매주 한 번 찾아옵니다."
+K|organ.route.compensated,이전에 구매한 장기 판매 허가증에 선행 단계가 누락돼 있어 카이가 '장비 및 해부 안내'를 무료로 제공했습니다. 해부 장비와 장기 냉장고는 가게에 놓였습니다.
 K|regulars.wish_feature,단골손님의 희망 물품
 K|regulars.reserve_feature,단골손님의 예약 주문
 K|ul_kai_police_donation_title,치안부 기부금
@@ -2294,39 +2294,39 @@ K|item_ul_gauze_dressing_flavor,진짜 면으로 만든 거즈를 무균 포장�
 K|item_ul_coffee_beans_name,봉지 커피 원두
 K|item_ul_coffee_beans_flavor,나무에서 자란 진짜 원두. 합성 커피만 마시던 사람이라면 냄새 한 번으로 차이를 알아챈다.
 K|item_ul_honey_jar_name,천연 벌꿀(한 병)
-K|item_ul_honey_jar_flavor,진짜 벌이 만든 꿀. 정거장 전체에서 1년에 겨우 수십 병만 생산된다.
+K|item_ul_honey_jar_flavor,벌이 만든 꿀. 정거장 전체에서 1년에 겨우 수십 병만 생산된다.
 K|item_ul_salad_bowl_name,신선한 채소 샐러드
-K|item_ul_salad_bowl_flavor,오늘 아침 수경 재배 선반에서 딴 채소에 진짜 올리브유로 만든 드레싱을 뿌렸다. 상층 구역 사람들의 점심 식사다.
+K|item_ul_salad_bowl_flavor,오늘 아침 수경 재배 선반에서 딴 채소에 올리브유로 만든 드레싱을 뿌렸다. 상층 구역 사람들의 점심 식사다.
 K|item_ul_chicken_sandwich_name,로스트 치킨 샌드위치
 K|item_ul_chicken_sandwich_flavor,최상층 농장에서 기른 닭과 오늘 아침 구운 빵으로 만들었다. 업무용 빌딩에서는 누구나 하나씩 들고 다닌다.
 K|item_ul_haadasgen_name,하다스겐 아이스크림
-K|item_ul_haadasgen_flavor,진짜 우유와 바닐라 꼬투리로 만들었다. 하층 구역의 베이 제품과 달리 바깥에 두면 실제로 녹는다.
+K|item_ul_haadasgen_flavor,우유와 바닐라 꼬투리로 만들었다. 하층 구역의 베이 제품과 달리 바깥에 두면 실제로 녹는다.
 K|item_ul_cream_cake_name,진짜 생크림 케이크(한 조각)
-K|item_ul_cream_cake_flavor,진짜 우유를 휘핑해 만든 생크림. 정거장 전체에 젖소가 열두 마리뿐이다. 상층 구역의 오후 다과 시간에 한 조각씩 먹는다.
+K|item_ul_cream_cake_flavor,우유를 휘핑해 만든 생크림. 정거장 전체에 젖소가 열두 마리뿐이다. 상층 구역의 오후 다과 시간에 한 조각씩 먹는다.
 K|item_ul_wheat_bread_name,갓 구운 통밀빵
-K|item_ul_wheat_bread_flavor,진짜 밀을 제분해 오늘 아침 구워 냈다. 하층 구역에서는 빵이 튜브에서 나온다.
+K|item_ul_wheat_bread_flavor,밀을 제분해 오늘 아침 구워 냈다. 하층 구역에서는 빵이 튜브에서 나온다.
 K|item_ul_orange_juice_name,갓 짠 오렌지 주스(한 병)
-K|item_ul_orange_juice_flavor,온실에서 자란 진짜 오렌지를 눈앞에서 짜 준다. 하층 구역 사람들은 감미료를 넣은 주스를 마신다.
+K|item_ul_orange_juice_flavor,온실에서 기른 오렌지를 눈앞에서 짜 준다. 하층 구역 사람들은 감미료를 넣은 주스를 마신다.
 K|item_ul_farm_eggs_name,농장 달걀(6개입)
 K|item_ul_farm_eggs_flavor,최상층 농장의 암탉이 낳았다. 껍데기에는 아직 지푸라기가 조금 묻어 있다.
 K|ngoods.perfume_desc,사용하면 현재 손님과의 거래 수익이 {0}% 증가합니다. 향수 효과는 한 번에 한 종류만 받을 수 있습니다.
 K|ngoods.perfume_desc_refill,사용하면 현재 손님과의 거래 수익이 {0}% 증가합니다. 향수 효과는 한 번에 한 종류만 받을 수 있습니다. 사용량은 자동으로 보충됩니다.
 K|ngoods.melted,녹음
-K|ngoods.melted_log,하다스겐 아이스크림 {0}개를 냉동실에 넣지 않아 녹았습니다. 현재 가치는 원래 가격의 30%입니다.
+K|ngoods.melted_log,하다스겐 아이스크림 {0}개를 냉동실에 넣지 않아 녹았습니다. 현재 가치는 원래 가격의 90%입니다.
 K|ngoods.sentinel_done,약물 카트리지가 연결부에 딸깍 끼워진다. 손의 떨림이 멎었다.
-K|item_ul_haadasgen_desc,냉장고의 냉동 칸에 넣으면 보관할 수 있고 조금 더 비싸게 팔 수 있습니다. 밖에 하룻밤 두면 녹아 가치가 30%로 떨어집니다.
-K|item_ul_hemostatic_gel_desc,안정되지 않은 상처에 사용하면 출혈이 멎고 상처 단계가 1단계 감소합니다.
+K|item_ul_haadasgen_desc,냉장고의 냉동 칸에 넣으면 보관할 수 있고 조금 더 비싸게 팔 수 있습니다. 밖에 하룻밤 두면 녹아 가치가 90%로 떨어집니다.
+K|item_ul_hemostatic_gel_desc,상처가 불안정할 때 사용하면 출혈을 멈추고 상처 단계를 2단계 낮춥니다. 일회용입니다.
 K|item_ul_suture_kit_desc,안정되지 않은 상처에 사용하면 출혈이 멎고 상처 단계가 2단계 감소합니다. 2회 사용 가능합니다.
 K|item_ul_gauze_dressing_desc,안정되지 않은 상처에 사용하면 출혈이 멎고 상처 단계가 1단계 감소합니다. 한 상자당 3회 사용 가능합니다.
 K|item_ul_disinfect_wipes_desc,안정되지 않은 상처에 사용하면 상태를 안정시킵니다. 한 상자당 5회 사용 가능합니다.
 K|item_ul_pain_patch_desc,안정되지 않은 상처에 사용하면 상태를 안정시키며 중독되지 않습니다. 한 상자당 5회 사용 가능합니다.
-K|item_ul_allergy_pen_desc,안정되지 않은 상처에 사용하면 출혈이 멎고 상처 단계가 1단계 감소합니다.
+K|item_ul_allergy_pen_desc,부상 직후 사용하면 한 번의 주사로 수색을 계속할 수 있습니다. 상처를 안정시키거나 상처 단계를 낮추지는 않습니다.
 K|item_ul_antidote_injector_desc,마약류 금단 증상을 완화하며 기본 게임의 노모어보다 효과가 2배 오래 지속됩니다.
 K|item_ul_rejection_suppressant_desc,센티널 붕괴 증후군에만 효과가 있으며 정품 이뮤니백스 주사와 같은 효과를 냅니다.
 K|uc.deli.name,즉석식품 배달원
 K|uc.deli.1,안녕하세요. 산책로 끝의 즉석식품점에서 왔습니다. 오늘 배달 물품이에요.
-K|uc.deli.2,모두 오늘 아침에 만들었습니다. 진짜 채소에 진짜 고기를 썼어요.
-K|uc.deli.3,"아이스크림은 냉동실에, 샐러드와 케이크는 냉장실에 넣으세요. 밖에 두면 오래가지 못합니다."
+K|uc.deli.2,즉석식품은 오늘 아침에 만들었어요. 진짜 채소에 진짜 고기를 썼죠. 나머지는 어차피 오는 길이라 가게에서 가져온 식료품이에요.
+K|uc.deli.3,즉석식품은 냉장고에 넣으세요. 아이스크림이 있다면 냉동실에 넣고요. 여기에 그냥 두면 오래가지 못합니다.
 K|act1.name.republic,공화국 공무원
 K|act1.name.weight,웨이트
 K|act1.name.dex,덱스 경관
@@ -2339,7 +2339,7 @@ K|act1.rep1.1,안녕하십니까. 저는 공화국의 관련 부서 소속입니
 K|act1.rep1.2,하지만 그렇다고 아직 합법적인 신분이 됐다는 뜻은 아닙니다.
 K|act1.rep1.3,새로운 지시 사항을 알려 드리겠습니다.
 K|act1.rep1.4,60일 동안 문제없이 거주해야 상층 구역 영구 거주 허가증을 구입할 자격이 생깁니다.
-K|act1.rep1.5,여기 납세 명세서입니다. 행운을 빕니다.
+K|act1.rep1.5,행운을 빕니다.
 K|act1.w1.1,두 블록을 돌아다녔는데 배터리 하나를 못 사겠군.
 K|act1.w1.2,이번 정전 때문에 아주 죽을 맛이야.
 K|act1.w1.3,근데 당신 가게는 왜 이렇게 텅 비었어?
@@ -2368,7 +2368,7 @@ K|act1.dex1.4,통상적인 절차에 따라……
 K|act1.dex1.5,저희가 신변 안전을 보장해 드리겠습니다.
 K|act1.dex1.6,가게에 밀수품이 있다면 미리 처리해 두시는 게 좋을 겁니다.
 K|act1.oscar.1,"이봐, 친구! 새로 가게를 연 거지?"
-K|act1.oscar.2,"난 오스카 반더린이야. 그래, 그 반더린 가문 맞아."
+K|act1.oscar.2,"전 반더린 가문 사람입니다. 그래요, 바로 그 반더린 가문이죠."
 K|act1.oscar.3,집안에서 무슨 '재정 규율'이라는 걸 시행한다지 뭐야.
 K|act1.oscar.4,할아버지가 집 안 물건을 하나하나 조사하기 시작했거든.
 K|act1.oscar.5,쫓아오는 놈들이 바로 뒤에 있어. 시간이 없어.
@@ -2382,7 +2382,7 @@ K|act1.bruce1.1,"사장님, 안녕하세요! 물건 좀 사시겠어요?"
 K|act1.bruce1.2,전 상층 구역 재활용 시설들을 돌아다니며 일해요.
 K|act1.bruce1.3,"유통기한이 임박한 고급 식품, 폐기된 도구, 주인이 없는 물건 같은 것들이죠."
 K|act1.bruce1.4,이런 물건들이 의외로 값이 꽤 나가거든요.
-K|act1.bruce1.5,가격만 잘 쳐 주시면 또 올게요.
+K|act1.bruce1.5,일단 한번 살펴보세요.
 K|act1.bruce.r.1,"사장님, 저 또 왔어요. 브루스요."
 K|act1.bruce.r.2,오늘 재활용 시설에서 꽤 건졌어요. 한번 보세요.
 K|act1.landlord.1,네가 새로 들어온 놈이냐?
@@ -2396,7 +2396,7 @@ K|act1.landlord.no,안 돼.
 K|act1.landlord.c_ok,알겠습니다.
 K|act1.landlord.bye,흥.
 K|act1.w3.1,임대료 이야기는 들었어.
-K|act1.w3.2,첫 주 임대료는 이 웨이트가 해결해 주지.
+K|act1.w3.2,첫 주 임대료는 이 '정도'에게 맡겨 두게.
 K|act1.w3.3,자네 집주인은 나한테 신세 진 게 좀 있거든.
 K|act1.w3.4,"이런 게 바로 친절이라는 거야, 꼬마."
 K|act1.w3.5,물건도 좀 더 가져왔어. 내 창고에 너무 오래 쌓여 있던 것들이야.
@@ -2406,7 +2406,7 @@ K|act1.w3.8,"며칠 뒤에 보자고, 꼬마."
 K|act1.w3.9,행운을 빌어.
 K|act1.old1.1,"안녕하시오, 사장 양반. 오늘은 물건 좀 사겠소?"
 K|act1.old1.2,이 위쪽에서 40년을 살았는데 이제는 날 알아보는 사람도 없다오.
-K|act1.old1.3,오래 간직해 온 물건들이오. 한번 봐 주시오.
+K|act1.old1.3,오래 간직해 온 물건들이오. 한번 살펴보시겠소?
 K|act1.old1.c_look,[물건을 살펴본다]
 K|act1.old1.yes,다리가 예전 같지 않아 멀리 다니기 힘들다오. 사흘에 한 번씩 물건을 가져올 테니 싸게라도 사 주시오.
 K|act1.old1.c_no,[돌려보낸다]
@@ -2425,7 +2425,7 @@ K|act1.vb.give,감사합니다. 어르신께서 이 은혜를 기억하실 겁�
 K|act1.vb.c_deny,[상자 이야기를 숨긴다] 본 적 없습니다.
 K|act1.vb.deny,그렇습니까…… 실례했습니다.
 K|act1.kai.1,안녕하세요. 상층 구역에 오신 걸 환영합니다.
-K|act1.kai.2,"저는 카이 와일드입니다. 맞아요, 하층 구역의 조 와일드와 사촌이죠."
+K|act1.kai.2,"저는 카이 와일드입니다. 맞아요, 하층 구역에 있는 조 와일드의 형제죠."
 K|act1.kai.3,정확히는 조의 사촌 동생입니다.
 K|act1.kai.4,상층 구역은 겉보기엔 깨끗하죠. 여기 도둑들은 물건을 고르는 눈이 더 높을 뿐이에요.
 K|act1.kai.5,값비싼 물건 하나만 도둑맞아도 작은 가게는 문을 닫을 수 있어요.
@@ -2478,7 +2478,7 @@ K|act1.w4.p1,정말 고맙습니다.
 K|act1.w4.4,이건 자네 몫의 배당금이고 이쪽은 내 몫이야.
 K|act1.w4.5,오는 길에 물건도 좀 더 가져왔으니 받아 둬.
 K|act1.w4.6,내 사업에는 더 희귀한 물건이 필요해.
-K|act1.w4.7,내가 다음에 올 때까지 그런 물건을 준비해 둔다면……
+K|act1.w4.7,다음에 내가 올 때까지 약과 무기를 좀 준비해 준다면……
 K|act1.w4.8,내가 자네를 잘못 보지 않았다는 뜻이겠지.
 K|act1.w4.9,"그럼 이만. 다음에 보자고, 점주."
 K|act1.helios.1,하층 구역 출신이 여기 가게를 열었다고 들었는데?
@@ -2507,7 +2507,682 @@ K|item_ul_tax_list_flavor,"치안 유지비, 공화국 정착세, 반더린 구�
 K|act1.oldr.gift_notify,브루스가 {0}을(를) 선물했습니다. 계산대에 놓였습니다.
 K|act1.oldr.bye,"그럼 이만 가 보겠소, 젊은 사장 양반."
 K|act1.old2.5,고맙소.
-K|ul_dialog_minor_lottery_2,상층 구역으로 이사한 뒤로 하층 구역에는 한 번도 돌아가지 않았어요.
+K|ul_dialog_minor_lottery_2,당신도 복권에 당첨돼서 상층 구역에 올라왔죠? 가게를 보면 알 수 있어요.
 K|ul_dialog_minor_lottery_6,그래도 가끔은 하층 구역의 저렴하면서도 정겨운 음식이 그리워요. 이곳은 뭐든 너무 비싸거든요.
 K|act1.kai.card_fixed,카이의 명함이 가게에 놓였습니다. 이제 와일드의 전화와 인맥 서비스를 이용할 수 있습니다.
 K|kai.consign.kept,남은 물품 {0}개는 가져서 직접 파세요. 대신 그 물품들의 보증금은 돌려주지 않겠습니다.
+K|act1.bruce1.bye,"다음에 또 들르겠네, 젊은 사장."
+K|act1.name.arthur,아서 경감
+K|act1.arthur.1,불시 점검을 하러 온 건 아니야.
+K|act1.arthur.2,"긴장 풀어, 사장."
+K|act1.arthur.3,담배 두 갑. 좋은 술도 있으면 함께 주고.
+K|act1.arthur.4,이렇게 되는대로 사는 것도 나쁘진 않더군. 한 달 전까지만 해도 술에는 입도 안 댔는데.
+K|act1.arthur.5,요즘 위쪽 사정이 엉망이야.
+K|act1.arthur.6,"공화국과 혁명군은 계속 싸우고, 기업들은 전쟁으로 돈을 벌어들이고, 오래된 명문가들은 수십 년 전의 추억에나 빠져 있지."
+K|act1.arthur.7,우리 경찰은 그 사이에 끼어 있어. 혁명군이 밀고 들어오면 전선을 지키라고 내몰리는 건 우리야.
+K|act1.arthur.8,동료 몇 명은 벌써 실종됐어.
+K|act1.arthur.9,정말 엿 같군.
+K|act1.arthur.bye1,몸조심해.
+K|act1.arthur.bye2,잘 지내라고.
+K|act1.w5.1,이젠 내게도 불운이 닥쳤군!
+K|act1.w5.2,요즘 혁명군이 아주 난리야.
+K|act1.w5.3,이 전쟁은 대체 언제 끝나는 거지?
+K|act1.w5.4,내 장사도 거기에 휘말렸어.
+K|act1.w5.5,마음씨 좋은 '정도'도 당분간 정거장을 떠나야겠어.
+K|act1.w5.6,마지막으로 물건을 조금 가져왔네. 이건 선물이야.
+K|act1.w5.7,친구 연락처일세. 미리 이야기는 해 뒀어.
+K|act1.w5.8,받아 두게. 귀중품을 취급하는 친구야.
+K|act1.w5.9,"이만 가겠네. 몸조심하게, 사장."
+K|act1.w5.kept,웨이트가 남긴 위탁 판매 물품은 이제 모두 당신 것입니다. 수익을 나눌 필요가 없습니다.
+K|dealer.name,귀중품 도매상
+K|item_ul_dealer_card_name,금박 명함
+K|item_ul_dealer_card_flavor,웨이트의 친구인 귀중품 도매상의 명함. 뒷면에 {0}이라고 적혀 있다.
+K|dealer.card_tip,가게 전화기로 {0}에 전화해 주문하세요. 도매가로 구매한 물품은 다음 날 배달됩니다.
+K|dealer.intro.1,웨이트에게 이야기 들었어. 자네가 새로 가게를 맡은 사람인가?
+K|dealer.intro.2,"난 귀중품을 취급하네. 시가, 향수, 최고급 의약품 같은 것들이지. 상층 구역에서는 없어서는 안 될 물건들이야."
+K|dealer.intro.3,물건이 필요하면 이 번호로 전화하게. 다음 날 도매가로 보내 주지.
+K|dealer.intro.4,처음에는 소량씩 주문하게. 거래 실적이 쌓이면 대량 주문도 받겠네.
+K|dealer.intro.5,이번에는 첫 거래 기념으로 소량을 특별가에 보내 주지.
+K|dealer.reg.1,귀중품이라면 말해 보게.
+K|dealer.reg.2,이번에는 얼마나 필요한가?
+K|dealer.c_small,소량 주문(약 {0}크레딧 상당)
+K|dealer.c_big,대량 주문(약 {0}크레딧 상당)
+K|dealer.c_hang,다음에 주문한다.
+K|dealer.ready,내일 배달하지. 돈을 준비해 두게.
+K|dealer.bye,그러지.
+K|dealer.cool.1,지난번 주문한 물건을 아직 구하는 중이네.
+K|dealer.cool.2,{0}일 뒤에 다시 전화하게.
+K|dealer.courier.name,도매상 배달원
+K|dealer.courier.1,도매상에서 보냈습니다. 도매가이니 물건은 전부 인수하셔야 합니다.
+K|dealer.courier.done,대금 확인했습니다. 좋은 하루 보내십시오.
+K|act1.oscar.fee,여기 800크레딧이 있어.
+K|item_ul_roast_beef_name,저온 로스트비프
+K|item_ul_roast_beef_flavor,속이 아직 분홍빛인 소고기. 하층 구역 사람들은 평생 피트만 먹기도 한다.
+K|item_ul_grilled_salmon_name,연어 구이
+K|item_ul_grilled_salmon_flavor,양식 수조에서 헤엄치던 생선이다. 바삭하게 구운 껍질에 레몬 한 조각을 곁들였다.
+K|item_ul_veg_soup_name,텃밭 채소 수프
+K|item_ul_veg_soup_flavor,"당근과 호박, 셀러리. 모두 수경재배 선반에서 키워 아침 내내 끓였다."
+K|item_ul_pork_sausage_name,수제 돼지고기 소시지
+K|item_ul_pork_sausage_flavor,돼지고기 소시지 세 개를 한 묶음으로 묶었다.
+K|item_ul_roast_veggies_name,구운 채소 모둠
+K|item_ul_roast_veggies_flavor,"피망, 주키니, 방울토마토를 가장자리가 그을릴 때까지 구웠다. 이곳 사람들은 이런 걸 '가벼운 음식'이라고 부른다."
+K|item_ul_lamb_skewers_name,양고기 꼬치
+K|item_ul_lamb_skewers_flavor,살코기와 지방이 섞인 양고기를 숯불에 구웠다. 두 꼬치가 들어 있다.
+K|item_ul_chicken_pie_name,닭고기 버섯 파이
+K|item_ul_chicken_pie_flavor,살짝만 건드려도 부서지는 바삭한 파이 껍질. 안에는 크림을 넣은 닭고기와 버섯이 가득하다.
+K|item_ul_meat_pasta_name,볼로네제 파스타
+K|item_ul_meat_pasta_flavor,토마토와 다진 소고기를 푹 끓인 소스에 치즈를 한 줌 얹었다.
+K|item_ul_antibiotic_ampoule_desc,상처가 불안정할 때 사용하면 감염을 막고 상처를 안정시킵니다.
+K|battle.drag,[시신을 끌고 돌아간다]
+K|battle.drag_hint,바닥에 시신 {0}구가 있습니다. 하룻밤에 최대 두 구까지 직접 주머니에 넣어 가져올 수 있습니다(배낭에는 넣을 수 없으며 바닥에 남긴 시신은 현장에 그대로 있습니다). 가져온 시신 한 구마다 공화국·경찰·혁명군 잠입국 중 무작위 한 세력의 평판이 0.5 감소합니다(최저 -60). 더 많이 소지했다면 가장 신선한 두 구만 남습니다.
+K|battle.drag_done,가장 신선한 시신 한 구를 선택했다. 이곳을 떠날 때 끌고 돌아갈 것이다.
+K|battle.dragged,오늘 밤은 이미 시신 한 구를 운반하기로 했다. 더는 가져갈 수 없다.
+K|item_ul_blood_kit_name,채혈 도구 세트
+K|item_ul_blood_kit_flavor,"퇴역한 진료소에서 나온 채혈 도구 한 벌. 튜브, 바늘, 수동 펌프, 클램프가 검은 상자에 담겨 있다."
+K|item_ul_blood_kit_desc,채혈하지 않은 시신에 끌어다 놓으면 피 한 봉지를 채취할 수 있습니다. 시신이 신선할수록 더 큰 혈액 주머니를 얻습니다.
+K|item_ul_blood_bag_s_name,혈액 주머니(소형)
+K|item_ul_blood_bag_s_flavor,라벨에는 혈액형과 날짜만 적혀 있다. 어디서 가져온 피인지는 없다.
+K|item_ul_blood_bag_m_name,혈액 주머니(중형)
+K|item_ul_blood_bag_m_flavor,상층 구역 진료소에서는 피가 어디서 왔는지 묻지 않는다. 오늘 채취한 것인지만 확인할 뿐이다.
+K|item_ul_blood_bag_l_name,혈액 주머니(대형)
+K|item_ul_blood_bag_l_flavor,가득 찬 혈액 주머니. 수술 한 번에 쓸 수 있는 양이다.
+K|blood.done,완료. {0}을(를) 획득했다.
+K|blood.bled_tip,이미 채혈함
+K|item_ul_mat_aluminum_name,압축 '알루미늄' 덩어리
+K|item_ul_mat_aluminum_flavor,상층 구역에서 하루 동안 나온 음료수 캔을 하나로 압축했다. 녹이면 다시 쓸 만한 알루미늄이 된다.
+K|item_ul_mat_copper_name,구리 배관 자투리
+K|item_ul_mat_copper_flavor,개보수 공사 중 뜯어낸 진짜 구리 배관을 일정한 길이로 잘라 철사로 묶었다.
+K|item_ul_mat_glass_name,폐유리 조각(자루)
+K|item_ul_mat_glass_flavor,"와인병, 향수병, 꽃병 조각을 색깔별로 분류했다. 녹여서 다시 유리 제품을 만들 수 있다."
+K|item_ul_mat_carbon_name,탄소섬유 자투리
+K|item_ul_mat_carbon_flavor,맞춤형 호버카와 자전거를 만들고 남은 조각. 가볍고 단단하다.
+K|item_ul_mat_cotton_name,진짜 면직물 자투리
+K|item_ul_mat_cotton_flavor,재단소 바닥에서 나온 진짜 면직물 자투리를 묶었다. 하층 구역에서는 이것도 좋은 옷감 취급을 받을 것이다.
+K|item_ul_mat_magnet_name,회수한 희토류 자석
+K|item_ul_mat_magnet_flavor,버려진 스피커와 모터에서 빼냈다. 몇 개는 너무 세게 달라붙어 떼어 내기도 힘들다.
+K|item_ul_junk_perfume_bottle_name,빈 향수병
+K|item_ul_junk_perfume_bottle_flavor,향수 한 방울 남지 않은 고급 브랜드 병. 아직 희미하게 좋은 향이 난다.
+K|item_ul_junk_smartband_name,고장 난 스마트 밴드
+K|item_ul_junk_smartband_flavor,끊어진 스트랩과 금이 간 화면. 주인은 버리기 전에 닦지도 않았다.
+K|item_ul_junk_cigar_box_name,빈 시가 상자
+K|item_ul_junk_cigar_box_flavor,시가는 다 없어졌지만 상자는 여전히 좋은 나무로 만들어졌다. 바닥에 담뱃가루가 조금 남았다.
+K|item_ul_junk_toothbrush_name,고장 난 전동 칫솔
+K|item_ul_junk_toothbrush_flavor,금도금 손잡이는 갈라지고 칫솔모는 납작하게 닳았다. 상층 구역 사람들은 이런 걸 석 달마다 바꾼다.
+K|battle.event.title,교전이 벌어진 밤
+K|battle.event.desc,오늘 밤 이 구역에서 혁명군과 경찰이 교전 중입니다.
+K|battle.event.corpse,시신 발견 확률 상승(30% → 55%)
+K|battle.event.fresh,더 신선한 시신 발견
+K|battle.event.injury,부상 확률 2배
+K|battle.event.spot,순찰대에 발각될 확률 2배
+K|ul_dialog_minor_lottery_3,나도 그랬어요. 몇 년 전에 복권에 당첨됐지만 상금이 들어오자마자 공화국이 가져가 버렸죠.
+K|ul_dialog_minor_lottery_4,제게 남은 건 거주 허가증과 상층 구역에서 일할 직장뿐이었어요.
+K|ul_dialog_minor_lottery_5,몇 년이 걸렸지만 이제 겨우 자리를 잡았어요. 당신도 그럴 거예요.
+K|ngoods.adrenaline_done,심장이 다시 힘차게 뛴다. 당분간 더 움직일 수 있을 것 같다.
+K|battle.corpse_one_only,하룻밤에 시신은 한 구만 가져올 수 있습니다. 가지고 있던 나머지 {0}구는 현장에 두고 왔습니다.
+K|test_hotkey_night_done,테스트: 현재 {0}일 차 밤입니다. 외출할 수 있습니다.
+K|test_hotkey_night_busy,"테스트: 지금은 시간을 건너뛸 수 없습니다(셔터 작동, 체포 또는 총격전 진행 중). 잠시 후 다시 시도하세요."
+K|test_hotkey_night_outside,테스트: 먼저 가게로 돌아가세요.
+K|battle.corpse_carried_rep,"시신 {0}구를 가게로 끌고 돌아왔습니다. 경찰 -{1}, 혁명군 침투 조직 -{2}, 공화국 -{3}(시신 운반으로 낮아지는 평판은 최저 {4})."
+K|reg.notify,{0}: {1}
+K|reg.notify.up,{0} +{1}
+K|reg.notify.down,{0} -{1}
+K|reg.notify.sep,", "
+K|reg.notify.capped,({0} 평판이 +{1}에 도달하여 단골손님 거래로는 더 올릴 수 없음)
+K|reg.arthur.hi1,"또 나야. 늘 먹던 걸로 줘. 담배, 그리고 술이 있으면 술도."
+K|reg.arthur.hi2,이번 주에도 두 명이 더 사라졌어. 묻지 마. 담배나 줘.
+K|reg.arthur.hi3,근무 마치고 나면 오고 싶은 곳이 여기밖에 없군. 마실 만한 술 있어?
+K|reg.tax.hi1,정기 방문입니다. 공화국 세무서에서 나왔습니다.
+K|reg.tax.hi2,지난 방문 이후 매출이 {0}크레딧이군요. 준수 부담금 {1}%를 적용하면 납부액은 {2}크레딧입니다.
+K|reg.tax.pay,{0}크레딧 납부
+K|reg.tax.extra,{0}크레딧 납부(공화국 지원금 {1}크레딧 추가)
+K|reg.tax.refuse,이번에는 내지 않는다.
+K|reg.tax.thanks,납부 확인했습니다. 서류도 이상 없군요. 다음 주에 뵙겠습니다.
+K|reg.tax.extra_thanks,……공화국은 후원자를 잊지 않습니다. 보고서에 적어 두죠.
+K|reg.tax.refused,물론 '자발적' 납부입니다. 있었던 그대로 보고하겠습니다.
+K|reg.oscar.hi1,오랜 친구! 할아버지가 또 소장품 재고를 조사하신다네. 제대로 된 물건 몇 점을 채워 넣어야겠어.
+K|reg.oscar.hi2,남에게 내보일 만한 물건 있어? 진품이어야 하네. 우리 집안 사람들은 눈썰미가 좋거든.
+K|reg.oscar.hi3,"또 왔네. 이번에는 돈을 넉넉히 가져왔다고, 정말이야."
+K|reg.oscar.remind,"부탁했던 {0}, 구했나?"
+K|reg.oscar.ask,"아, 다음에 {0} 하나 따로 빼 줄 수 있겠나? 집안에 그게 하나 부족해서."
+K|reg.oscar.bye,"좋아, 거래 성립이야. 우리끼리만 알고 있자고."
+K|reg.liaison.name,침투 조직 연락책
+K|reg.liaison.hi1,문 쪽은 보지 마. 물건만 사고 바로 나갈 거야.
+K|reg.liaison.hi2,약이든 통조림이든 뭐든 좋아. 아래쪽 사람들이 기다리고 있어.
+K|reg.liaison.hi3,돈은 많지 않아. 적당한 값에 주면 우리도 잊지 않겠어.
+K|reg.liaison.remind,지난번에 말한 {0} 있어? 그걸 기다리는 사람 목숨이 걸렸어.
+K|reg.liaison.ask,다음번에 {0} 하나 구해 줄 수 있겠어? 급한 일이야.
+K|reg.liaison.bye,고마워. 오늘 날 본 적 없는 거야.
+K|rep_perk_ULF_COUNCIL_RELIEF_name,세금 감면
+K|rep_perk_ULF_COUNCIL_RELIEF_desc,주간 준수 부담금이 매출액의 1%에서 0.5%로 감소합니다.
+K|rep_perk_ULF_COUNCIL_RELIEF_flavor,"""제때 납부하는 사람이 누군지 우리는 알고 있지."""
+K|rep_how_upper,"상승: 상층 구역 손님에게 판매(하루 최대 +1), 주 1회 비공개 거래소에서 미술품 2점 거래.\n하락: 상층 구역 손님 신고."
+K|rep_how_police,"상승: 아서 경감 또는 덱스 경관 방문 시 첫 번째 물품 판매로 +1(최대 +60), 징발 의뢰, 증강체 처치, 수배범 신고, 경보 송신기 모듈.\n하락: 교전 지역에서 시신을 가져오기(시신마다 공화국·경찰·혁명군 잠입국 중 무작위 한 세력 -0.5, 최저 -60)."
+K|rep_how_rev,"상승: 혁명군 잠입국 연락책 방문 시 의약품·통조림 첫 판매로 +1(최대 +60), 긴급 의뢰 달성 시 추가 상승, 야전 의무병에게 장기 판매.\n하락: 교전 지역에서 시신을 가져오기(시신마다 공화국·경찰·혁명군 잠입국 중 무작위 한 세력 -0.5, 최저 -60)."
+K|rep_how_council,"상승: 주간 방문 시 준수 부담금 납부(단골손님 거래로는 최대 +60, 첫 납부 시 +20 추가), 500크레딧 추가 납부로 더 상승.\n하락: 부담금 납부 거부, 교전 지역에서 시신을 가져오기(시신마다 공화국·경찰·혁명군 잠입국 중 무작위 한 세력 -0.5, 최저 -60)."
+K|rep_how_vanderlin,"상승: 오스카 방문 시 사치품 첫 판매로 +1(최대 +60), 부탁한 물건을 구해 주면 추가 상승.\n하락: 반더린 가문과 적대."
+K|battle.corpse_pocket,주머니에 넣은 시신을 가게로 가져왔습니다. 아무에게도 들키지 않아 평판에 영향이 없습니다.
+K|test_hotkey_regulars,"테스트: 오늘 아서, 공화국 세무 조사관, 오스카, 침투 조직 연락책이 모두 방문합니다."
+K|reg.arthur.interest,담배 및 주류
+K|pex.give.organ4,천연 장기 4개(인공 제작품 및 부패한 장기 제외)
+K|item_ul_thorne_card_name,쏜의 명함
+K|item_ul_thorne_card_flavor,진료소의 쏜이 준 명함. 뒷면에 {0}번이 적혀 있다.
+K|item_ul_doctor_card_name,개인 의사 명함
+K|item_ul_doctor_card_flavor,상층 구역 개인 의사의 명함. 왕진 연락처: {0}
+K|phone.thorne.card_tip,가게 전화기로 {0}에 전화하면 쏜이 다음 날 장기를 사러 옵니다(재호출 대기 6일).
+K|phone.doctor.card_tip,가게 전화기로 {0}에 전화하면 개인 의사가 다음 날 방문합니다(재호출 대기 7일).
+K|phone.thorne.name,쏜(진료소)
+K|phone.doctor.name,개인 의사
+K|phone.thorne.intro1,"아, 당신이군. 명함을 간직했네. 잘했어."
+K|phone.thorne.intro2,장기가 많이 쌓이면 전화해. 시간 내서 들를 테니.
+K|phone.thorne.hello,"진료소, 쏜입니다. 무슨 일이죠?"
+K|phone.thorne.ok,그럼 내일 보죠. 차갑게 보관해 둬요.
+K|phone.thorne.bye,그렇다면 전화선을 차지하지 마세요.
+K|phone.thorne.cool,얼마 전에 방문했잖아요.
+K|phone.doctor.intro1,"여보세요, 개인 진료소입니다."
+K|phone.doctor.intro2,의약품이 필요하거나 왕진을 원하면 이 번호로 예약하세요.
+K|phone.doctor.hello,개인 진료소입니다. 말씀하세요.
+K|phone.doctor.ok,알겠습니다. 내일 구급 봉합 키트를 챙겨 방문하죠.
+K|phone.doctor.bye,알겠습니다. 안녕히 계세요.
+K|phone.doctor.cool,이번 주 왕진 예약은 이미 다 찼습니다.
+K|phone.cool_days,{0}일 뒤에 다시 전화하세요.
+K|phone.c_come,내일 방문해 주실 수 있나요?
+K|phone.c_hang,아닙니다. 전화 잘못 걸었어요.
+K|phone.no_answer,……응답이 없다.
+K|rep_how_helios,상승: 헬리오스 집사 방문 시 신선식품 첫 판매로 +1(최대 +60).\n하락: 헬리오스 가문과 적대.
+K|item_ul_smuggler_bay_small_name,소형 밀수 은닉함
+K|item_ul_smuggler_bay_small_desc,3×3 크기의 비좁은 밀수 은닉함. 안에 보관한 물품은 단속 시 수색 대상에서 제외됩니다.
+K|ul_kai_thorne_contact_title,쏜의 연락처
+K|ul_kai_thorne_contact_desc,카이가 쏜의 개인 연락처({0})와 명함을 줍니다. 장기를 준비한 뒤 전화하면 쏜이 다음 날 찾아와 매입합니다(6일에 한 번).
+K|ul_kai_doctor_contact_title,개인 의사 연락처
+K|ul_kai_doctor_contact_desc,"카이가 상층 구역 개인 의사({0})를 소개하고 명함을 줍니다. 전화하면 다음 날 왕진을 예약할 수 있고, 의사는 자동 봉합 키트를 반드시 가져옵니다(7일에 한 번)."
+K|phone.thorne.unlocked,쏜의 명함이 가게에 있습니다. 전화기로 {0}에 전화하세요.
+K|phone.doctor.unlocked,개인 의사 명함이 가게에 있습니다. 전화기로 {0}에 전화하세요.
+K|pex.give.organ_set,온전한 천연 장기 5개: 심장·왼쪽 폐·오른쪽 폐·왼쪽 신장·오른쪽 신장 각 1개
+K|pex.give.good_heart,상태가 완벽한 천연 심장 1개
+K|pex.give.good_organ,상태가 완벽한 천연 폐 또는 신장 아무거나 1개
+K|pex.get.rep_random,경찰·혁명군 침투 조직·공화국 중 무작위 한 세력의 평판 +5
+K|pex.give.melon,선물용 멜론 1개
+K|pex.get.samurai,실험용 페로몬 '사무라이' 1병
+K|pex.give.samurai10,실험용 페로몬 '사무라이' 10병
+K|pex.get.siyang,자동으로 리필되는 '쓰양' 향수 1병
+K|pex.give.junk10,"상층 구역 폐품 10개(재활용장에서 나오는 종류, 아무거나)"
+K|pex.get.cigar,루비스트 시가 1상자
+K|act1.dex.bye,"좋아, 난 돌아갈게. 무슨 일이 있으면 경찰서로 전화해."
+K|battle.corpse_limit,하룻밤에 시신은 {0}구까지만 가져올 수 있습니다. 나머지 {1}구는 현장에 두고 왔습니다.
+K|battle.corpse_carried_rep2,시신 {0}구를 가게로 가져왔습니다. {1}.
+K|reg.stay.done,오늘은 여기까지입니다.
+K|act1.dex0.1,*무전 소리*
+K|act1.dex0.2,"안녕하십니까, 사장님. 저는 경찰 소속 덱스입니다. 이 구역을 순찰하고 있죠."
+K|act1.dex0.3,통상 절차에 따라 안내드리겠습니다……
+K|act1.dex0.4,카운터 아래에 경보 버튼이 있습니다.
+K|act1.dex0.5,현재 수배 중인 범죄자 명단입니다.
+K|act1.dex0.6,"이들 중 누군가 가게에 찾아오면,"
+K|act1.dex0.7,<u><b>절대로 그들의 말을 듣지 마십시오!</u></b>
+K|act1.dex0.8,그들이 떠나기 전에 경보를 눌러 신고하십시오.
+K|act1.dex0.9,나머지는 저희가 처리하겠습니다.
+K|act1.dex0.10,확실히 본인이라는 확신이 있을 때만 신고하십시오.
+K|act1.dex0.11,허위 신고에는 벌금이 부과됩니다.
+K|act1.dex0.12,안전하게 영업하시기 바랍니다.
+K|act1.dex1.again,"사장님, 오늘도 순찰 중입니다."
+K|act1.dex1.goods,탄약과 붕대를 좀 더 가져왔는데 필요한 게 있는지 보십시오.
+K|act1.w5.buy,그리고 물건도 조금 사 가겠습니다. 약이나 무기라면 뭐든 보여 주십시오.
+K|act1.bruce.samurai,"아, 재활용 처리장에서 이상한 향수병도 하나 찾았어요. 제겐 쓸모없으니 드리겠습니다."
+K|pex.give.samurai5,사용하지 않은 '사무라이' 실험용 페로몬 농축액 5병(사용한 병은 인정하지 않음)
+K|ul_item_business_permit_desc,공화국에서 발급한 허가증. 상층 구역에서 합법적으로 영업하려면 필요하다.
+K|ul_dialog_info_bad_harvest_mid,{0}일 뒤 상층 구역의 대규모 뉴트리프루트 농장에 흉작이 발생할 겁니다.
+K|ul_name_cartel_handler,6구역 담당자
+K|ul_dialog_tourist_junk_deal_1,여기 사람들은 뭘 버리나요? 그런 잡동사니라도 남은 게 있습니까?
+K|ul_dialog_tourist_junk_deal_2,상층 구역 재활용 처리장 물건을 찾고 있어요. 폐품이든 재활용 자재든 좋습니다.
+K|ul_dialog_tourist_junk_deal_3,상층 구역 생활의 흔적이라도 갖고 싶어요. 빈 향수병 하나만 있어도 대단하겠죠!
+K|ul_dialog_tourist_junk_deal_4,상층 구역 폐품이나 재활용 자재가 있습니까? 이야기거리로 삼기 좋겠는데요!
+K|battle.no_route,해부 장비가 없으니 시신을 가져와도 아직 쓸모가 없습니다. 카이의 네트워크('상층 인맥' 탭)에서 '장비 및 해부 안내'를 {0}크레딧에 판매합니다. 장비 두 대와 매주 장기를 사러 오는 구매자를 확보할 수 있습니다.
+K|trait.model_citizen.name,경찰의 친구
+K|trait.model_citizen.desc,경찰 평판이 40 추가된 상태로 시작합니다. 일주일에 한 번 경찰 관계자가 무기와 의료 물자 묶음을 팔러 옵니다.
+K|trait.well_connected.name,넓은 인맥
+K|trait.well_connected.desc,모든 세력 평판이 15 추가된 상태로 시작합니다.
+K|trait.alert.name,경계 태세
+K|trait.alert.desc,밤에 도둑을 맞지 않습니다.
+K|trait.diplomatic.name,능숙한 화술
+K|trait.diplomatic.desc,거래로 얻는 평판이 33% 증가하고 거래 평판의 일일 상한이 1에서 5로 증가합니다.
+K|trait.intimidating.name,위압적
+K|trait.intimidating.desc,범죄를 저질러도 활용 가능한 증거가 33% 적게 남습니다.
+K|trait.proficient_scavenger.name,숙련된 수색꾼
+K|trait.proficient_scavenger.desc,"재활용 처리장과 교전 지역 방문마다 수색 횟수가 2회 늘어납니다. 보통 처리장에서는 5~7회, 교전 지역에서는 4~6회 수색할 수 있습니다."
+K|trait.ul_dealer_regular.name,상인의 단골
+K|trait.ul_dealer_regular.desc,"고급품 상인에게 1,000크레딧 이상 지출하면 대량 주문을 받을 수 있으며 재방문 대기 시간이 7일에서 5일로 줄어듭니다."
+K|trait.ul_surgeon_hands.name,외과의의 손길
+K|trait.ul_surgeon_hands.desc,시신 해부로 온전한 장기를 얻을 확률이 15% 증가합니다.
+K|trait.ul_estate_clearing.name,유품 정리
+K|trait.ul_estate_clearing.desc,"일주일에 한 번 상층 구역 주민의 사망 소식을 듣습니다. 그날 밤 집을 정리하기로 선택하면 다음 날 물건 8~12개(총 가치 1,000~1,500)가 가게로 배송됩니다. 원하는 물건만 사거나 전체를 가치의 40%에 매입할 수 있습니다. 배송일에는 무작위 손님이 평소보다 적게 찾아옵니다."
+K|trait.ul_night_watch.name,야간 경비
+K|trait.ul_night_watch.desc,영업 종료 후 반더린 창고를 밤새 경비하고 100크레딧을 받을 수 있습니다. 3일 연속 경비하면 세 번째 밤에 400크레딧을 추가로 받고 연속 횟수는 초기화됩니다. 경비 다음 날에는 손님이 1명 적게 옵니다. 20% 확률로 누군가 눈감아 달라며 800크레딧을 더 제안하지만 수락하면 범죄 증거가 400 증가합니다. 야간 경비는 밤 외출로 취급됩니다.
+K|trait.saving.name,웨이트의 호의
+K|trait.saving.desc,첫날 웨이트가 방문한 뒤 600크레딧을 추가로 받습니다.
+K|trait.sawyer_crew.name,케사의 일원
+K|trait.sawyer_crew.desc,"처음부터 사설 거래소가 잠금 해제됩니다. 가게가 훼손되지 않았다면 청소비가 항상 무료이며, 훼손된 경우에도 복구 비용이 크게 줄어듭니다."
+K|trait.revolution_sympathizer.name,혁명 동조자
+K|trait.revolution_sympathizer.desc,혁명 잠입국 평판이 25 추가된 상태로 시작합니다. 잠입국의 시장 의뢰를 더 자주 받습니다.
+K|trait.wild_favorite.name,카이의 총애
+K|trait.wild_favorite.desc,"카이의 네트워크에서 모든 업그레이드 가격이 10%, 보험료가 50% 할인됩니다."
+K|trait.lucky.name,마지막 행운
+K|trait.lucky.desc,기본 행운 +15. 행운의 동전 및 액체 행운과 중첩됩니다.
+K|trait.ul_bleeder.name,숙련된 채혈
+K|trait.ul_bleeder.desc,"채혈 도구로 시신에서 얻는 혈액 주머니가 한 단계 커집니다(소형→중형, 중형→대형). 원래 대형 주머니가 나오는 시신에서는 소형 주머니를 하나 더 얻습니다."
+K|trait.ul_weight_trust.name,웨이트의 신뢰
+K|trait.ul_weight_trust.desc,웨이트가 작별 인사를 한 뒤 3일마다 위탁 판매 물품 3개를 보내옵니다. 판매 금액의 절반을 받습니다.
+K|trait.ul_socialite_friend.name,사교계 인사의 절친
+K|trait.ul_socialite_friend.desc,일주일에 한 번 사교계 친구가 방문합니다. 향수와 사치품만 구매하며 예산이 일반 사교계 손님의 1.5배입니다. 첫 방문 때 '어스' 향수 한 병을 선물합니다.
+K|trait.ul_residence_cert.name,거주 증명서
+K|trait.ul_residence_cert.desc,공증된 임시 거주 증명서를 가지고 시작합니다. 7일 차 공화국 관리에게 제출하면 '공화국 후원금'을 내지 않아도 됩니다. 희귀 아이템으로 판매할 수도 있습니다(약 500크레딧).
+K|trait.ul_neon_signs.name,네온 간판
+K|trait.ul_neon_signs.desc,자재·가정용품·식품·의약품 네온 간판 4개를 가지고 시작합니다. 진열장에 설치하면 해당 유형 물품을 파는 상인들이 찾아옵니다.
+K|trait.ascetic.name,금욕주의자
+K|trait.ascetic.desc,기본 소지품 공간이 24×10칸에서 16×10칸으로 줄어듭니다.
+K|trait.awful_negotiator.name,협상 능력 부족
+K|trait.awful_negotiator.desc,손님과 흥정할 수 없으며 거래 수익에 영구적으로 7% 불이익을 받습니다.
+K|trait.blabbermouth.name,수다쟁이
+K|trait.blabbermouth.desc,저지른 모든 범죄에서 활용 가능한 증거가 33% 더 많이 남습니다. 암시장 및 혁명 잠입국 평판 획득량이 50% 줄어듭니다.
+K|trait.minimalist.name,미니멀리스트
+K|trait.minimalist.desc,기본 소지품 공간이 24×10칸에서 20×10칸으로 줄어듭니다.
+K|trait.maimed.name,중상자
+K|trait.maimed.desc,재활용 처리장이나 교전 지역을 방문할 수 없습니다. 수색도 시신 수거도 불가능합니다.
+K|trait.wild_bad_side.name,카이에게 찍힘
+K|trait.wild_bad_side.desc,"카이의 네트워크에서 모든 업그레이드 가격이 20%, 보험료가 50% 증가합니다."
+K|trait.ul_no_referral.name,보증인 없음
+K|trait.ul_no_referral.desc,카이의 네트워크가 7일 차가 아니라 14일 차에 열립니다.
+K|trait.ul_witness.name,교전 지역의 목격자
+K|trait.ul_witness.desc,누군가 교전 지역에서 당신을 봤습니다. 시신을 3구 가져올 때마다 다음 날 그가 찾아와 입막음 대가로 150크레딧을 요구합니다. 거절하면 경찰 평판이 5 감소합니다.
+K|trait.bad_lease.name,불리한 임대 계약
+K|trait.bad_lease.desc,초기 임대료가 100크레딧 높습니다.
+K|trait.agoraphobia.name,광장 공포증
+K|trait.agoraphobia.desc,밤 외출 후 2일 동안 쉬어야 합니다. 5일 차에 외출했다면 6~7일 차에는 집에 있어야 하며 8일 차부터 다시 외출할 수 있습니다.
+K|trait.unlucky.name,불운의 징크스
+K|trait.unlucky.desc,기본 행운 -15. 다른 행운 보너스로 상쇄할 수 있습니다.
+K|trait.ul_old_enemy.name,오랜 원수
+K|trait.ul_old_enemy.desc,하층 구역에서 알던 원수가 7일마다 찾아와 가치 100 이상인 물건을 요구합니다. 거절하면 그날 밤 가게가 훼손되고 가치 100 미만인 물건 하나를 잃습니다.
+K|trait.ul_return_law.name,반품법
+K|trait.ul_return_law.desc,"상층 구역의 소비자 보호법에 따라 판매한 물건은 3일 안에 이유 없이 반품할 수 있습니다. 구매자 약 15%가 물건을 가져와 전액 환불을 요구하며, 반품받은 물건은 다시 팔 수 있습니다. 환불할 돈이 없으면 물품 가치의 50%에 해당하는 범죄 증거가 남습니다."
+K|trait.ul_lower_rat.name,하층 구역 출신 불청객
+K|trait.ul_lower_rat.desc,상층 구역에서 당신을 좋아하는 사람이 없어 모든 손님의 예산이 10% 줄어듭니다. 거주 기간 60일을 모두 채우면 이 특성이 사라집니다.
+K|trait.ul_vanderlin_due.name,반더린의 개발비
+K|trait.ul_vanderlin_due.desc,반더린 가문의 집사가 매주 '개발비' 200크레딧을 걷으러 옵니다. 전액을 못 내면 가진 돈을 모두 가져가고 반더린 평판이 2 감소합니다. 반더린 평판이 100에 도달하면 이 특성이 사라집니다.
+K|trait.colorful_character.name,개성 넘치는 인물
+K|trait.colorful_character.desc,특성 슬롯이 4개에서 7개로 3개 늘어납니다. 이 특성도 슬롯 하나를 차지하므로 다른 특성은 최대 6개까지 고를 수 있습니다.
+K|trait.hoarder.name,물건 수집광
+K|trait.hoarder.desc,시작할 때 기본 소지품 공간 하단에 옮길 수 없는 잡동사니 더미 3개가 있습니다. 하나씩 치우면 재활용품과 재료를 얻습니다.
+K|trait.aug_menace.name,증강체의 위협
+K|trait.aug_menace.desc,처음부터 증강체 콘텐츠가 열립니다. 증강체 처치 보상이 25% 증가합니다. 증강체의 위협은 끝나지 않으며 난이도와 관계없이 너무 많은 증강체를 놓치면 게임이 끝납니다.
+K|trait.ul_fresh_only.name,신선한 시신만
+K|trait.ul_fresh_only.desc,발견하는 시신의 신선도가 항상 75% 이상이지만 발견 확률이 20% 감소합니다.
+K|trait.ul_friend_relic.name,친구의 유품
+K|trait.ul_friend_relic.desc,"세상을 떠난 친구가 잠긴 상자를 맡겼습니다(보관 공간 5×5칸, 내용물 가치는 처음 1,000크레딧이며 하루 100크레딧씩 증가). 잠긴 상태로는 판매할 수 없습니다. 매주 헬리오스 컨소시엄 관계자가 상자를 찾으러 와서 현재 가치의 20%를 뇌물로 주지 않으면 강제로 가져갑니다. 쇠지렛대로 언제든 열 수 있으며 안에서는 현재 가치만큼의 도난품(범죄 열기 100%)이 나오고 빈 상자는 판매하거나 버릴 수 있습니다. 계속 지키면 60일 차에 주인이 찾아와 후하게 감사 표시를 합니다."
+K|trait.saving.given,웨이트가 떠나면서 {0}크레딧을 추가로 쥐여 줍니다.
+K|trait.police.name,경찰의 친구
+K|trait.police.1,"사장님, 접니다. 경찰서에서 재고를 정리한다기에 가장 먼저 사장님 생각이 나더군요."
+K|trait.police.2,전부 정식 절차를 거친 물건입니다. 골라 보세요.
+K|trait.friend.name,사교계 인사의 친구
+K|trait.friend.first,그 친구가 당신 가게 이야기를 어찌나 하던지요. 첫 방문이니까 '어스' 향수 한 병 드릴게요.
+K|trait.friend.hi1,또 왔어요. 이번 주에 새로 들어온 향수가 있나요?
+K|trait.friend.hi2,가장 좋은 걸 보여 주세요. 오늘은 돈을 넉넉히 가져왔어요.
+K|trait.witness.name,교전 지역의 목격자
+K|trait.witness.1,"사장님, 교전 지역에서 벌어진 일을 전부 봤어요."
+K|trait.witness.2,150크레딧만 주면 난 거기에 없었던 겁니다.
+K|trait.witness.pay,{0}크레딧 지급
+K|trait.witness.refuse,거절
+K|trait.witness.paid,현명하네요. 다음에 봅시다.
+K|trait.witness.refused,좋아요. 그럼 경찰과 이야기 좀 하러 가야겠군요.
+K|trait.due.1,반더린 가문이 이 구역에서 하는 일은 상인 여러분의 지원 덕분에 가능한 겁니다.
+K|trait.due.2,이번 주 개발비는 {0}크레딧입니다. 납부 명단에 적어 두었습니다.
+K|trait.due.short,전액을 내지 못해 집사가 {0}크레딧을 가져갔습니다. 반더린 가문 평판 -2.
+K|trait.due.over,반더린 가문이 이제 당신을 인정합니다. 집사가 개발비를 받으러 오지 않습니다.
+K|item_ul_residence_cert_item_name,공화국 임시 거주 증명서
+K|item_ul_residence_cert_item_desc,도장이 찍힌 임시 거주 증명서. 7일 차에 공화국 관리에게 제출하면 '공화국 후원금'을 내지 않아도 됩니다. 희귀 아이템으로 판매할 수도 있습니다.
+K|item_ul_relic_chest_name,친구의 상자
+K|item_ul_relic_chest_desc,세상을 떠난 친구가 맡긴 잠긴 상자. 내용물의 가치는 시간이 갈수록 높아지며 잠긴 상태로는 판매할 수 없습니다. 가게에 쇠지렛대가 있을 때 상자를 '사용'하면 열 수 있습니다. 같은 가치의 도난품을 얻고 빈 상자가 남습니다.
+K|trait.cert.used,거주 증명서가 있다고요? ……좋습니다. 서류가 완비됐으니 이번엔 납부하지 않아도 됩니다.
+K|trait.estate.name,유품 정리 중개인
+K|trait.estate.n1,"사장님, 거주 구역 주민 한 분이 돌아가셨습니다. 집을 정리해야 해요."
+K|trait.estate.n2,이 일을 맡으시려면 오늘 밤 영업 종료 서류에서 '유품 정리'(야간 외출 사용) 또는 '유품 정리 대행 고용'(200)을 선택하세요. 물건은 내일 도착합니다.
+K|trait.estate.d1,어젯밤 정리한 물건 전부 가져왔습니다.
+K|trait.estate.d2,원하는 물건만 고르시거나 전부 가치의 40%에 사 가세요.
+K|trait.estate.service,유품 정리(오늘 밤 외출 사용)
+K|trait.estate.log,유품 정리 일을 맡았습니다. 물건은 내일 도착합니다.
+K|trait.watch.service,반더린 창고 야간 경비
+K|trait.watch.log,반더린 창고를 밤새 경비하고 {0}크레딧을 받았습니다. 피로로 오늘 손님이 한 명 적게 찾아옵니다.
+K|trait.watch.name,창고 관계자
+K|trait.watch.b1,어젯밤 경비 서셨죠? 마침 당신이 졸고 있는 사이에 화물이 하나 나갔더군요.
+K|trait.watch.b2,이거 받으시고 앞으로도 그런 식으로 '졸아' 주세요.
+K|trait.watch.take,{0} 받기
+K|trait.watch.refuse,거절
+K|trait.watch.taken,현명하시군요. 우린 만난 적 없는 겁니다.
+K|trait.watch.refused,……맘대로 하세요. 난 여기 온 적 없습니다.
+K|trait.trust.name,배달원
+K|trait.trust.1,웨이트 씨가 이것들을 가져다주라고 하셨습니다. 늘 하던 방식 그대로래요.
+K|trait.trust.2,반값에 넘긴다고 하셨어요. 얼마에 되팔든 수익은 전부 당신 몫입니다.
+K|trait.enemy.name,하층 구역에서 온 오랜 원수
+K|trait.enemy.1,"이야, 상층 구역까지 올라왔네? 아주 잘살고 있나 봐."
+K|trait.enemy.2,어떻게 해야 하는지는 알겠지. 괜찮은 물건 하나 내놓으면 그냥 돌아갈게.
+K|trait.enemy.give,물건 하나 건네기
+K|trait.enemy.refuse,거절
+K|trait.enemy.given,좋아. 다음 주에 보자고.
+K|trait.enemy.refused,그래? 오늘 밤 문단속 잘해.
+K|trait.enemy.took,오랜 원수가 {0}을(를) 가져갔습니다.
+K|trait.enemy.log,밤사이 오랜 원수가 가게를 엉망으로 만들었습니다.
+K|trait.enemy.log_item,밤사이 오랜 원수가 가게를 엉망으로 만들고 {0}을(를) 훔쳐 갔습니다.
+K|trait.return.name,반품하러 온 손님
+K|trait.return.1,"사장님, 며칠 전에 여기서 산 물건 있잖아요. 이제 필요 없어졌어요."
+K|trait.return.2,소비자 보호법에 따라 3일 이내에는 이유를 묻지 않고 반품할 수 있어요. {0}크레딧 돌려주세요.
+K|trait.return.short,환불금을 지급하지 못했습니다. 범죄 증거 {0}이(가) 기록됐습니다.
+K|trait.relic.helios,헬리오스 조사관
+K|trait.relic.h1,출처가 불분명한 상자를 보관 중이라고 들었습니다. 컨소시엄에서 관심이 많습니다.
+K|trait.relic.h2,{0}크레딧을 주면 아무것도 찾지 못했다고 보고하겠습니다. 아니면 지금 압수하겠습니다.
+K|trait.relic.pay,{0}크레딧 지급
+K|trait.relic.refuse,거절
+K|trait.relic.paid,좋습니다. 다음 주에도 다시 '확인하러' 오겠습니다.
+K|trait.relic.refused,그럼 규정대로 하겠습니다. 이제 상자는 컨소시엄 소유입니다.
+K|trait.relic.seized,헬리오스 관계자가 상자를 강제로 가져갔습니다.
+K|trait.relic.owner,상자의 주인
+K|trait.relic.o1,그에게 무슨 일이 생기면 믿을 만한 사람에게 상자가 맡겨져 있을 거라고 했어요.
+K|trait.relic.o2,60일 동안 지켜 주셨군요. 이건 그 수고에 대한 보답입니다.
+K|trait.relic.pried,상자를 강제로 열었습니다. 안에는 약 {0}크레딧 상당의 도난품이 들어 있었습니다.
+K|trait.rat.over,상층 구역에 60일 동안 거주해 더 이상 외지인 취급을 받지 않습니다. 손님들의 예산이 정상으로 돌아왔습니다.
+K|trait.ul_who_is_he.name,그는 누구인가?
+K|trait.ul_who_is_he.desc,?
+K|who.name,???
+K|who.dots,……
+K|who.c_gift,[사치품 하나 건네기(원하는 물건을 카운터에 먼저 올려 두세요. 없으면 가장 싼 물건을 가져갑니다)]
+K|who.c_cash,[{0}크레딧 건네기]
+K|item_ul_who_note_name,쪽지
+K|item_ul_who_note_desc,그가 남긴 쪽지. 단어 하나만 적혀 있습니다: {0}
+K|who.note.1,주세요
+K|who.note.2,말아
+K|who.note.3,잊지
+K|who.note.4,구역을
+K|who.note.5,하층
+K|who.note.6,그
+K|who.note.7,제발
+K|who.mentor.1,오랜만이군.
+K|who.mentor.2,상층 구역에도 너 같은 사람이 있을 줄은 몰랐어.
+K|who.mentor.3,누군가 네 이름으로 하층 구역에 식량을 기부하고 있어. 상층 구역의 고급 물품과 교환해서 마련했다더군.
+K|who.mentor.4,배급소에 줄 선 사람들이 온통 네 이야기뿐이야.
+K|who.mentor.p1,……내가?
+K|who.mentor.5,겸손 떨지 마. 아래 사람들은 다 기억하고 있어.
+K|item_ul_relic_chest_open_name,강제로 연 상자
+K|item_ul_relic_chest_open_desc,자물쇠가 부서진 빈 상자. 팔거나 버릴 수 있습니다.
+K|trait.relic.need_crowbar,이 자물쇠를 부수려면 쇠지렛대가 필요합니다.
+K|tag.ul_household,상층 구역 가정용품
+K|loot.search,수색
+K|loot.searched_suffix, (수색 완료)
+K|loot.window_title,수색 중인 시신
+K|loot.rep,"{0} 관계자가 당신이 시신의 주머니를 뒤지는 모습을 목격했습니다: 평판 -{1}"
+K|loot.empty,아무것도 없습니다. 수색한 시신은 가게로 가져갈 수 없습니다.
+K|loot.done,"수색 완료: 파랑 {0}, 보라 {1}, 금색 {2}, 빨강 {3}. 수색한 시신은 가져갈 수 없으니 필요한 물건을 챙기세요."
+K|loot.cut,수색을 마치기 전에 떠났습니다. 물품 {0}개를 발견하지 못했습니다.
+K|loot.spilled,시신에 남아 있던 물품 {0}개가 가게로 이동했습니다.
+K|test_hotkey_battle,테스트: 교전 지역에 시신 {0}구를 배치했습니다(신선도 100%·75%·35%·부패 각 2구).
+K|test_hotkey_battle_closed,테스트: 지금은 교전 지역에 접근할 수 없습니다.
+K|item_ul_mil_biscuit_name,군용 압축 비스킷
+K|item_ul_mil_biscuit_flavor,한 덩어리가 한 끼 식사. 맛은 형편없지만 버틸 수는 있다.
+K|item_ul_mayo_tube_name,튜브형 마요네즈
+K|item_ul_mayo_tube_flavor,군용 고열량 마요네즈. 한 번 짜 먹는 양이 반 끼 식사에 해당한다. 이상하게도 이걸 주운 사람은 아무도 팔려고 하지 않는다.
+K|item_ul_mre_name,자가 발열 전투식량
+K|item_ul_mre_flavor,끈을 당기면 저절로 따뜻해진다.
+K|item_ul_beef_stew_can_name,소고기 스튜 통조림
+K|item_ul_beef_stew_can_flavor,장교 식당에서 나온 물건. 소고기 덩어리가 들어 있다.
+K|item_ul_officer_chocolate_name,장교용 전투식량 초콜릿
+K|item_ul_officer_chocolate_flavor,포장지에 아직 부대 번호가 적혀 있다.
+K|item_ul_wagyu_vacuum_name,진공 포장 A5 와규
+K|item_ul_wagyu_vacuum_flavor,누가 이런 걸 교전 지역까지 가져왔는지 아무도 모른다. 냉장 보관할 것.
+K|item_ul_tourniquet_name,야전 지혈대
+K|item_ul_tourniquet_flavor,한 손으로도 조일 수 있다.
+K|item_ul_ifak_name,개인 응급처치 키트
+K|item_ul_ifak_flavor,"붕대와 지혈 분말, 가위가 주머니 하나에 들어 있다."
+K|item_ul_adrenaline_pen_name,아드레날린 자동 주사기
+K|item_ul_adrenaline_pen_flavor,허벅지에 꽂아 사용한다. 10초 안에 효과가 나타난다.
+K|item_ul_defibrillator_name,빨간색 휴대용 제세동기
+K|item_ul_defibrillator_flavor,"빨간 외장, 화면의 청록색 심장박동 파형, 아직 따뜻한 전극 패드. 배터리는 한 칸 남았다."
+K|item_ul_iv_kit_name,야전 정맥 주입 키트
+K|item_ul_iv_kit_flavor,"혈장, 주삿바늘, 거치대가 상자 하나에 들어 있다."
+K|item_ul_regen_serum_name,실험용 재생 혈청
+K|item_ul_regen_serum_flavor,헬리오스의 제조 번호가 적혀 있다. 정식으로 판매된 적이 없는 물건이다.
+K|item_ul_tactical_knife_name,전술 접이식 칼
+K|item_ul_tactical_knife_flavor,칼등에 톱니가 있다.
+K|item_ul_carbon_baton_name,탄소섬유 진압봉
+K|item_ul_carbon_baton_flavor,경찰 지급품. 강철 진압봉의 절반 무게다.
+K|item_ul_entrench_tool_name,야전 삽
+K|item_ul_entrench_tool_flavor,참호를 파기 위해 만들었지만 사람을 상대할 때도 쓸 수 있다.
+K|item_ul_thermal_scope_name,열화상 조준경
+K|item_ul_thermal_scope_flavor,무광 검정 외장. 접안렌즈에는 청록색과 보라색의 열상이 보인다. 소총에서 떼어 낸 물건이라 당신 총에는 맞지 않는다.
+K|item_ul_holo_butterfly_name,홀로그램 발리송
+K|item_ul_holo_butterfly_flavor,"칼날에 홀로그램 처리가 되어 있어 돌릴 때마다 색이 바뀐다. 펼쳤다 접었다, 손을 멈추기 어렵다."
+K|item_ul_rail_rifle_name,레일건 소총 시제품
+K|item_ul_rail_rifle_flavor,일련번호도 제조사 표식도 없다.
+K|item_ul_canteen_name,군용 수통
+K|item_ul_canteen_flavor,찌그러졌지만 물은 새지 않는다.
+K|item_ul_storm_lighter_name,방풍 라이터
+K|item_ul_storm_lighter_flavor,여성의 이름이 새겨져 있다.
+K|item_ul_tac_flashlight_name,전술 손전등
+K|item_ul_tac_flashlight_flavor,3가지 조명 모드와 점멸 기능.
+K|item_ul_mil_blanket_name,군용 보온 담요(말림)
+K|item_ul_mil_blanket_flavor,돌돌 말아 끈으로 묶었다. 은색 면이 안쪽을 향하게 한다.
+K|item_ul_comm_headset_name,소음 차단 통신 헤드셋
+K|item_ul_comm_headset_flavor,통신 채널에서 아직도 누군가 소리치고 있다.
+K|item_ul_gilded_compass_name,금도금 군용 나침반
+K|item_ul_gilded_compass_flavor,뒷면에 훈장 수여식 날짜가 새겨져 있다.
+K|item_ul_fmj_rounds_name,"FMJ 완전피갑탄(5.56×45mm, 상자)"
+K|item_ul_fmj_rounds_flavor,가장 흔한 소총탄. 군대에서는 상자째 지급한다. 한 상자에 30발.
+K|item_ul_buckshot_box_name,"벅샷 탄약(12게이지, 상자)"
+K|item_ul_buckshot_box_flavor,탄환 하나에 산탄 9개. 한 상자에 10발.
+K|item_ul_hollowpoint_rounds_name,"할로포인트탄(9×19mm, 상자)"
+K|item_ul_hollowpoint_rounds_flavor,명중하면 탄두가 펼쳐진다. 경찰은 민간인에게 판매를 허용하지 않는다. 한 상자에 25발.
+K|item_ul_incendiary_rounds_name,"소이탄(7.62×39mm, 상자)"
+K|item_ul_incendiary_rounds_flavor,탄두 끝에 인이 들어 있어 상자가 따뜻하게 느껴진다. 한 상자에 20발.
+K|item_ul_he_rounds_name,"고폭탄(12.7×99mm, 상자)"
+K|item_ul_he_rounds_flavor,한 발 한 발이 작은 폭탄이다. 떨어뜨리지 말 것. 한 상자에 5발.
+K|item_ul_ap_rounds_name,"철갑탄(7.62×51mm, 상자)"
+K|item_ul_ap_rounds_flavor,텅스텐 탄심으로 장갑판을 관통한다. 한 상자에 20발.
+K|item_ul_brass_casings_name,황동 탄피(봉지)
+K|item_ul_brass_casings_flavor,녹이면 품질 좋은 황동을 얻을 수 있다.
+K|item_ul_kevlar_scrap_name,케블라 자투리
+K|item_ul_kevlar_scrap_flavor,방탄복을 만들고 남은 조각.
+K|item_ul_mil_circuit_name,군용 회로기판
+K|item_ul_mil_circuit_flavor,드론에서 떼어 낸 물건이다.
+K|item_ul_ceramic_plate_name,깨진 세라믹 방탄판
+K|item_ul_ceramic_plate_flavor,탄환 한 발은 막아 냈다. 그래도 재활용할 가치는 있다.
+K|item_ul_titanium_billet_name,티타늄 총열 소재
+K|item_ul_titanium_billet_flavor,무기 공장에서 흘러나온 가공 전 소재.
+K|item_ul_mil_powercell_name,군용 고에너지 전력 셀
+K|item_ul_mil_powercell_flavor,이거 하나로 가정용 발전소 전체를 돌릴 수 있다.
+K|ul_item_bottle_hot_sauce_flavor,작은 핫소스 병. 거의 어떤 요리든 맛을 살릴 수 있다.
+K|blood.battle_rep,{0} 관계자가 교전 지역에서 당신이 시신의 피를 빼내는 모습을 목격했습니다: 평판 -1
+K|uc.fence.name,암시장 장물상
+K|uc.fence.1,남들이 손대기 꺼리는 물건이라도 난 사들이지.
+K|uc.fence.2,"희귀품이든 사치품이든 출처가 불분명한 물건이든, 시세의 70%에 매입해."
+K|uc.fence.3,오늘은 {1}크레딧을 가져왔어.
+K|uc.fence.discount,암시장 매입가 -30%
+K|phone.fence.name,암시장 장물상
+K|phone.fence.intro1,상자 사냥꾼이 내 번호를 줬다고? 좋아. 희귀품과 사치품은 시세의 70%에 사들이지.
+K|phone.fence.intro2,팔 물건이 있으면 전화해. 다음 날 찾아가지.
+K|phone.fence.hello,팔 물건 있어?
+K|phone.fence.ok,내일 찾아가지.
+K|phone.fence.bye,물건이 생기면 전화해.
+K|phone.fence.cool,며칠 동안은 자리를 비워.
+K|battle.found_crate,땅에 {0}이(가) 놓여 있습니다.
+K|crate.scenario.with4,키카드 기록기 1대
+K|crate.writer.name,키카드 기록기
+K|crate.writer.desc,기록 모듈과 배터리를 장착하세요. 입력 칸에 빈 키카드를 넣으면 출력 칸에서 완성된 카드를 꺼낼 수 있습니다.
+K|crate.writer.flavor,전면에 카드 투입구와 상태 표시등이 달린 탁상형 기록 장치.
+K|crate.writer.chip_name,기록 모듈 · {0}
+K|crate.writer.chip_desc,키카드 기록기에 장착하면 빈 키카드를 {0}(으)로 만들 수 있습니다.
+K|crate.writer.daily_limit,이 기록기는 오늘 이미 키카드 한 장을 만들었습니다. 내일 다시 사용하세요.
+K|crate.blank.name,상층 구역 빈 키카드
+K|crate.blank.desc,키카드 기록기에 사용하는 빈 카드입니다. 기록 모듈과 배터리를 장착한 뒤 넣어 두면 하룻밤 사이 키카드 한 장이 완성됩니다.
+K|crate.blank.flavor,일련번호도 표장도 없다. 기록기가 무엇을 새기느냐에 따라 정체가 결정된다.
+K|crate.scan.report,스캔: {0} / 내용물 유형: {1} / {2}
+K|crate.scan.mixed,혼합(내용물 미확인)
+K|crate.scan.compartment_chance,숨겨진 칸이 있을 확률 {0}%
+K|crate.scan.compartment_none,숨겨진 칸 없음
+K|crate.bench.missing_key,작업대에 놓인 상자를 열려면 각각에 맞는 키카드가 필요합니다.
+K|crate.open.button,키카드로 열기
+K|crate.open.failed,지금은 이 상자를 열 수 없습니다. 키카드는 소모되지 않았습니다.
+K|crate.item.label_format,{0} (내용물 표시)
+K|crate.item.blind_format,{0} (내용물 미확인)
+K|crate.item.compartment.name,잠긴 숨김 칸
+K|crate.item.compartment.flavor,상자 바닥에서 분리해 낸 작은 잠금 상자.
+K|crate.lock.outer,{0} 또는 만능 키카드가 필요합니다.
+K|crate.lock.compartment,숨김 칸 키카드가 필요합니다.
+K|crate.manifest.label,주요 내용물: {0}
+K|crate.manifest.medical,의료용품
+K|crate.manifest.weapons,무기와 탄약
+K|crate.manifest.household,생활용품
+K|crate.manifest.food,식품
+K|crate.manifest.luxury,사치품
+K|crate.card.ordinary.name,일반 물품 키카드
+K|crate.card.ordinary.desc,일반 물품 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.fine.name,귀중품 키카드
+K|crate.card.fine.desc,귀중품 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.noble.name,명문가 키카드
+K|crate.card.noble.desc,명문가 물품 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.weapons.name,군수품 키카드
+K|crate.card.weapons.desc,공화국 특수 무기 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.luxury.name,재벌 키카드
+K|crate.card.luxury.desc,재벌 사치품 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.medical.name,의료용 키카드
+K|crate.card.medical.desc,공화국 특수 의료 상자 하나를 엽니다. 일회용입니다.
+K|crate.card.compartment.name,숨김 칸 키카드
+K|crate.card.compartment.desc,잠긴 숨김 칸 하나를 엽니다. 일회용입니다.
+K|crate.card.universal.name,만능 키카드
+K|crate.card.universal.desc,상층 구역의 내용물 표시 상자나 미확인 상자 중 하나를 엽니다. 일회용입니다.
+K|crate.open.window_title,상자 개봉 중
+K|crate.open.done,"개봉 완료: 파란색 {0}개, 보라색 {1}개, 금색 {2}개, 빨간색 {3}개. 내용물을 모두 꺼내면 빈 상자는 사라집니다."
+K|crate.open.opened_suffix, (개봉됨)
+K|crate.item.weapons.name,공화국 특수 무기 상자
+K|crate.item.weapons.flavor,일련번호가 지워진 공화국 군수품 봉인 상자. 안에는 주로 총기 부품과 탄약이 들어 있다.
+K|crate.item.luxury.name,재벌 사치품 상자
+K|crate.item.luxury.flavor,재벌 창고에서 흘러나온 옻칠 상자. 밀랍 봉인도 그대로다. 부자들 아니면 쓸 일도 없는 물건이 들어 있다.
+K|crate.item.medical.name,공화국 특수 의료 상자
+K|crate.item.medical.flavor,공화국 야전병원에서 나온 냉장 운송 상자. 온도 표시등이 아직 켜져 있다. 약품이든 의료 장비든 뭐든 들어 있을 수 있다.
+K|crate.smuggler.level1,이젠 낯익은 얼굴이군요. 앞으로 5% 깎아 드리고 키카드도 더 가져올 가능성이 높아질 겁니다.
+K|crate.smuggler.level2,그동안 거래를 잘해 주셨으니 앞으로는 상자마다 키카드를 하나씩 드리겠습니다. 미확인 상자도 하나 더 가져오죠.
+K|crate.smuggler.level3,이젠 우리 식구나 다름없죠. 다음에는 특수 상자를 하나 더 챙겨 두겠습니다.
+K|crate.smuggler.order_arrive,주문하신 물건을 가져왔습니다. 상자와 키카드 모두 여기 있어요.
+K|crate.smuggler.warehouse,상자 여덟 개에 키카드 여덟 장입니다. 전부 가져가시면 25% 할인해 드리죠.
+K|crate.smuggler.buyback,전에 사서 아직 개봉하지 않은 상자 있습니까? 구매하셨던 가격의 {0}%에 다시 사들이겠습니다.
+K|crate.heritage.name,상속인
+K|crate.heritage.offer,이 상자는 오랫동안 우리 집안에 있던 겁니다. 키카드도 있어요. 둘은 함께 사셔야 합니다.
+K|crate.heritage.accept,둘 다 당신 겁니다.
+K|crate.bundle.no_room,이 물건들을 전부 올려놓기에는 카운터 공간이 부족합니다.
+K|act1.helios.crate,창고에 여분의 상자가 하나 있었습니다. 키카드도 같이 가져왔으니 관심 있으시면 가격을 제시해 보세요.
+K|crate.oscar.waiting,오스카가 준 보상을 놓을 자리가 없습니다. 공간을 비우면 다음 영업일에 도착합니다.
+K|crate.smuggler_phone.ask,어떤 상자를 원하십니까? 전화 주문은 상자와 키카드 가격에 10%가 추가됩니다.
+K|crate.smuggler_phone.kind,{0}
+K|crate.smuggler_phone.quantity,몇 개나 필요하십니까? 내일 가져다드리죠.
+K|crate.smuggler_phone.label,내용물 표시 상자 ×{0} · 키카드 포함 제시 가격 {1}
+K|crate.smuggler_phone.blind,내용물 미확인 상자 ×{0} · 키카드 포함 제시 가격 {1}
+K|crate.smuggler_phone.confirm,알겠습니다. 내일 상자와 키카드를 모두 가져다드리겠습니다.
+K|crate.smuggler_phone.pending,이전 주문이 아직 배송 중입니다. 그때 뵙죠.
+K|crate.smuggler_phone.bye,알겠습니다. 필요하시면 전화하세요.
+K|opt_use_vanilla_professions,기본 게임 직업 사용
+K|opt_use_vanilla_professions_tip,기본적으로 켜져 있습니다. 끄면 상층 구역에서 새 게임을 시작할 때 이 모드에 추가된 직업만 표시됩니다.
+K|pex.give.junk_card,상층 구역 폐품 10개 + 전자 부품 1개
+K|pex.get.junk_card,무작위 키카드 1장
+K|pex.give.card_common,일반 물품 키카드 3장
+K|pex.get.crate_common,일반 물품 미확인 상자 1개
+K|pex.give.card_fine,귀중품 키카드 3장
+K|pex.get.crate_fine,귀중품 미확인 상자 1개
+K|pex.give.card_noble,명문가 키카드 3장
+K|pex.get.crate_noble,명문가 미확인 상자 1개
+K|pex.give.card_weapons,군수품 키카드 3장
+K|pex.get.crate_weapons,공화국 특수 무기 상자 1개
+K|pex.give.card_luxury,재벌 키카드 3장
+K|pex.get.crate_luxury,재벌 사치품 상자 1개
+K|pex.give.card_medical,의료용 키카드 3장
+K|pex.get.crate_medical,공화국 특수 의료 상자 1개
+K|test_hotkey_crates_space,공간 부족: 숨김 칸 {0}개와 만능 키카드 {1}장을 지급했습니다.
+K|act1.name.odin,오딘
+K|act1.odin.1,오딘.
+K|act1.odin.2,경보 장치는 건드리지 마.
+K|act1.odin.3,내 이름은 오딘. 오딘 하랄드손이다.
+K|act1.odin.4,사업 제안 하나 하러 왔다.
+K|act1.odin.5,날 신고하면 다시는 날 볼 수 없을 거다.
+K|act1.odin.6,우리 쪽 사람들에게 보급품이 필요해.
+K|act1.odin.7,"총기, 탄약, 방어구, 독극물, 보급품 상자와 키카드 말이야."
+K|act1.odin.8,밀수품이든 아니든 상관없지만 다른 곳보다 값을 잘 쳐주지는 못할 수도 있어.
+K|act1.odin.9,이 명함을 받아. 물건이 생기면 전화해.
+K|act1.odin.bye,물건이 생기면 전화해.
+K|act1.name.aurora,오로라
+K|act1.name.revarthur,아서 라플뢰르
+K|act1.dex3.1,"안녕하세요, 사장님. 오늘도 순찰 중입니다."
+K|act1.dex3.2,그런데 이번이 마지막 순찰이겠네요.
+K|act1.dex3.3,며칠 전에 밀수품을 대량으로 적발했거든요.
+K|act1.dex3.4,그게 하필… '정도'의 창고에서 나온 물건들이었어요. 정말 큰 공을 세운 셈이죠.
+K|act1.dex3.5,거 봐요. 역시 하층 구역에서 올라온 사람들은 벌레 같은 놈들이라니까요.
+K|act1.dex3.p1,저는…
+K|act1.dex3.6,오해하지 마세요. 사장님은 해당되지 않아요.
+K|act1.dex3.7,윗선에서 웨이트와 가까운 사람들을 모조리 조사하라는 명령이 내려왔거든요.
+K|act1.dex3.8,저도 교전 지역으로 배치됐어요. 어쩌면 영광스러운 일이겠죠.
+K|act1.dex3.9,무기나 약품은 없나요? 몸을 지킬 물건 좀 챙겨 가야겠어요.
+K|act1.dex3.bye,몸조심하세요.
+K|act1.oscar2.h0,"안녕, 친구. 약속은 잘 지킨 거지?"
+K|act1.oscar2.g1,뭐라고? 그 상자를 집사한테 넘겼다고?
+K|act1.oscar2.g2,난 이제 끝장이야.
+K|act1.oscar2.h1,"자네한테 입맞춤이라도 하고 싶군, 친구."
+K|act1.oscar2.h2,정말 믿음직하군. 약속을 지켜 줄 줄은 몰랐어.
+K|act1.oscar2.h3,"추가 보상으로 1,600크레딧을 주지."
+K|act1.oscar2.h4,할아버지도 사실은 내가 어디 있는지 많이 걱정하셔.
+K|act1.oscar2.h5,사실 그 상자엔 우리 가문의 자원 열쇠가 들어 있어. 내가 암시장에 빚을 잔뜩 졌거든.
+K|act1.oscar2.h6,자네라면 어떻게 하겠어?
+K|act1.oscar2.c_home,가족들이 몹시 걱정할 거야. 집으로 돌아가.
+K|act1.oscar2.home,그래. 할아버지를 뵈러 가는 게 좋을지도 모르겠어.
+K|act1.oscar2.c_black,그 상자를 암시장에 담보로 맡겨.
+K|act1.oscar2.black,"자네, 생각보다 머리가 잘 돌아가는군. 달리 선택의 여지도 없겠지."
+K|act1.aurora.1,여기가 집사가 말하던 새 가게인가 보군.
+K|act1.aurora.2,값비싼 물건 좀 꺼내 봐.
+K|act1.aurora.3,흥. 이제야 좀 낫네.
+K|act1.aurora.4,다음엔 더 많이 준비해 둬. 다시 올지도 모르니까.
+K|act1.revarthur.1,하층 구역 출신이라면서요. 상층 생활에는 좀 익숙해졌습니까?
+K|act1.revarthur.2,우리 혁명군은 아직은… 할 수가 없습니다.
+K|act1.revarthur.3,먹을 것을 좀 사고 싶습니다.
+K|act1.revarthur.4,여기에 있습니까?
+K|act1.revarthur.after1,언젠가 침투 조직 사람을 보내 연락드리겠습니다.
+K|act1.revarthur.after2,이상입니다.
+K|act1.revarthur.arrest.c1,"잠깐, 신고하지 마세요!"
+K|act1.revarthur.arrest.c2,난 오래전부터 혁명군과 거의 관계가 없었어요.
+K|act1.revarthur.arrest.c3,날 보내 주시면 혁명군의 젊은 친구들에게 당신을 좋게 말해 두겠습니다.
+K|act1.revarthur.arrest.s1,(경찰이 앞으로 나선다.)
+K|act1.revarthur.bye,감사합니다.
+K|act1.arthur2.1,"요즘 정말 눈코 뜰 새가 없어. 전투에 원정에 회의에, 도둑놈들까지 감시해야 하니…"
+K|act1.arthur2.2,"사장, 나도 좀 쉬어야겠어."
+K|act1.arthur2.3,이따 담배 한 갑 가져다줘. 좋은 술도 있으면 좋고.
+K|act1.arthur2.4,"그 젊은 경찰, 덱스 말이야…"
+K|act1.arthur2.5,기어이 '정도'의 창고를 적발했지 뭐야!
+K|act1.arthur2.6,덕분에 내가 아주 곤란해졌어.
+K|act1.arthur2.7,"그 녀석도 좋은 뜻으로 한 일이긴 해. 윗선에서는 경찰서에 그놈을 처리하라고 하는데, 일단 교전 지역으로 보내 놨어."
+K|act1.arthur2.8,이젠 내가 양쪽 사이에 끼었군.
+K|act1.arthur2.9,잠잠해지고 나면 그 녀석이 무사히 돌아왔으면 좋겠어.
+K|act1.arthur2.10,젠장. 그만 생각하자.
+K|item_ul_military_buyer_card_name,군수품 거래상의 명함
+K|item_ul_military_buyer_card_flavor,한쪽 모서리에 얕은 자국 세 개가 찍힌 올리브색 명함. 뒷면에 {0}번이 적혀 있다.
+K|phone.military.name,군수품 거래상
+K|phone.military.card_tip,"군수품 거래상의 명함입니다. 더 이상 전화는 받지 않으며 일주일에 한 번 방문합니다."
+K|phone.military.unlocked,군수품 거래상의 명함이 가게에 있습니다. 전화로 {0}번을 누르세요.
+K|phone.military.intro1,카이가 번호를 줬다고? 좋아. 방문할 때마다 고급 상자 한 개와 빈 키카드 2~3장을 가져가지. 상자는 30% 할증이야.
+K|phone.military.intro2,물건이 필요하면 전화해. 다음 날 가져다주지.
+K|phone.military.hello,어떤 상자를 원하지?
+K|phone.military.ok,내일 물건을 가져갈게.
+K|phone.military.bye,좋아. 물건이 필요하면 다시 전화해.
+K|phone.military.cool,며칠 동안 밖에 나가 있어. 나중에 다시 전화해.
+K|ul_kai_military_contact_title,군수품 거래상 연락처
+K|ul_kai_military_contact_desc,"군수품 거래상은 더 이상 전화는 받지 않으며 특수 상자와 상층부 빈 키카드를 가지고 일주일에 한 번 방문합니다."
+K|crate.military.visit,오늘은 고급 상자 한 개와 빈 키카드 2~3장을 가져왔어. 상자에는 30% 할증이 붙어.
+K|crate.military.arranged,주문한 물건을 가져왔어. 한 개뿐이니까 골라 봐.
+K|crate.military.accept,거래 성립이야. 남들 눈에 띄지 않게 해.
+K|crate.military.done,좋은 물건이 생기면 다시 찾아와.
+K|crate.military.premium,군수품 거래상 할증
+K|trait.estate.paid_service,유품 정리 대행 고용(200)
+
+K|test_hotkey_module_kits,모듈 확장 키트: {0}개 지급했습니다.
+K|test_hotkey_all_machines,모드 추가 기계: {0}/{1}대 지급했습니다.
+K|battle.spotted_council,"공화국 감찰관에게 목격당했습니다. 이 구역은 그들의 감시 대상입니다. 공화국 평판 -{0}"
+K|ul_kai_crate_route_title,"물자 상자 경로"
+K|ul_kai_crate_route_desc,"카이가 키카드 기록 장치를 마련해 줍니다. 밀러 박사는 항상 기록 장치 1대, 상층부 빈 키카드 2장, 일반·고급·귀족 상자용 칩을 판매합니다. 다른 칩도 가끔 판매합니다. 기본 게임의 디시퀀서로도 이 빈 키카드에 상층부 키카드를 기록할 수 있습니다. 상자는 직접 찾아야 합니다."

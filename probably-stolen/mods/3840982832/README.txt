@@ -1,6 +1,6 @@
 垃圾场拓展 / Scrapyard Expansion
 作者 / Author: Cycbloom
-版本 / Version: 1.0.10
+版本 / Version: 1.0.11
 清单目标游戏版本 / Manifest target game version: 1.0.0 (covers 1.0 revisions)
 
 订阅安装：等待Steam下载，在游戏模组菜单启用并重启。
@@ -8,6 +8,7 @@
 manifest.xml应直接位于Mods/DumpingGroundMap内，不要多套一层content。
 Localization/zh.csv、en.csv及LootTables/regions.json必须随DLL一起安装；不要只复制DLL。中英文切换后重新打开界面；编辑词条或掉落表后重启游戏。
 选区、声望解锁区域和中大奖会播放原版音效，音量沿用游戏设置。
+核废料委托附赠企业交接纸条。留在垃圾场地面、离场时清走的核废料会降低垃圾场声望；装进容器通过店内垃圾桶清运不扣。已解锁区域与已领取奖励保留，持续福利按当前声望判断，重新达标后恢复；已付费预约的次日同行照常生效。纸条使用清晰正文字体，已有纸条重新打开也适用。
 地面扩展默认关闭，包括旧版本升级；需要时在「拾荒地面」中开启，应用并重启游戏。关闭时由原版或其他模组管理地面，地图、掉落和声望照常使用；已有宽高偏好会保留。
 与「储物窗口拖动缩放 / Container Window Scale」联用时，对方启用地面缩放则由它管理拖动位置与缩放，本模组暂停对齐及焚化炉避让；格子数量仍可由本模组扩展。
 工坊版与手动版不要同时保留；本地同ID版本会优先加载。
@@ -26,6 +27,7 @@ Localization/zh.csv、en.csv及LootTables/regions.json必须随DLL一起安装�
 新增场景美术及封面使用AI辅助生成。
 
 Native mod loader; enable in the Mods menu and restart. No required mods.
+Nuclear waste contracts include a corporate handover note. Only waste cleared from the scrapyard ground costs reputation, including waste inside containers left there. Container disposal through the shop trashcan is free of reputation penalties. Unlocked areas and received rewards remain; ongoing benefits require current reputation, while paid next-day outings stay valid. Existing disposal notes use the clearer body font when reopened.
 Install Localization and LootTables alongside the DLL. Selection, area unlocks and jackpots reuse vanilla sound effects and the game's volume settings.
 Ground expansion is off by default, including upgrades. Enable it in the Ground settings if wanted, then apply and restart. Disabling leaves Ground size and position to the game or other mods; regional scavenging and reputation remain available.
 With Container Window Scale's Ground scaling enabled, that mod controls position and scale; this mod only optionally adds cells and does not realign the window.

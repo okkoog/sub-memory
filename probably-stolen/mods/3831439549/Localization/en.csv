@@ -46,7 +46,8 @@ pui_basic_hint,Water filter: +10% quality each
 pui_slot_hint,Drag metal ingots to add filter slots (higher purity = more progress)
 pui_slot_maxed,Filter slots maxed ({0} slots)
 pui_ingot,Slot progress {0}%
-pui_filter,Filters installed: advanced {0} / technical {1} / basic {2}
+pui_filter,Water filters installed: {0}
+pui_filter_legacy,Legacy filters (old save): {0}
 nm_furnace_ingot,Add Refractory Lining
 nm_furnace_circuit,Add Smelting Temperature Sensor
 nm_moisture_circuit,Install Water Quality Probe
@@ -246,7 +247,7 @@ cfg_tooltip_detail_desc,When off, the machine tooltip only shows "Advanced modul
 cfg_lang,Language (this mod)
 cfg_lang_desc,auto follows the game language and switches to Brazilian Portuguese automatically when your system language is Portuguese. Pick a code to force one.
 cfg_ws_broken,Scrapper brings broken machines
-cfg_ws_broken_desc,On = vanilla scrapper behavior: after his greeting he may put a broken alarm (always), a broken furnace (66%) or a broken moisture farm (33%) on the counter; they can be repaired. Off = parts only.
+cfg_ws_broken_desc,On = after his greeting each of the three broken machines (broken alarm, broken furnace, broken moisture farm) has a 33% chance to appear on the counter, and none may appear at all; they can be repaired. Off = parts only.
 adv_compact_slot,Advanced modules {0}/{1}
 adv_compact_name,Advanced module - {0}
 adv_compact_undone, - unfinished
@@ -325,10 +326,10 @@ chem_stash_prog,{0}/{1} · {2}/{3} · {4}/{5}
 chem_stash_gain,Items inside count as a smuggler bay - inspectors cannot search them
 chem_titra_req,Electronic Parts x8 + Common Chemicals x8
 chem_titra_prog,Electronics {0}/{1} · Chemicals {2}/{3}
-chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
+chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent. Cannot be used to purify water.
 chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
-chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
+chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat. Cannot be used to purify water.
 chem_clean_on,Auto-clean: ON
 chem_clean_off,Auto-clean: OFF
 chem_clean_desc,Master switch for the titration unit and the filter. Turned off, neither removes any component (use it when a reagent must keep its impurities). Click to toggle.
@@ -349,10 +350,10 @@ pharmabox_desc,Factory-sealed pack of 4 doses. Pry it open with a screwdriver or
 pharmabox_open_full,No room to take the contents out
 pharmabox_open_part,Not enough room - only part was taken out
 dr_sourcerefine2_title,Source Refinement II
-dr_sourcerefine2_desc,Pressing needs only 75% of the active ingredient (takes the better of this and the Source Refinement module; they do not stack)
+dr_sourcerefine2_desc,Finishers with the Source Refinement module need only 75% of the active ingredient (lower of this and the module's 85%, they do not stack; finishers without the module are unaffected and still take 2ml in / 2ml out)
 dr_labstd_title,Lab Standard
 dr_labstd_desc,Products at 99.9% purity or above gain an extra Lab High-Purity tag (+185%).
-chemadv_source_desc,Pressing the same product needs only 85% of the active ingredient
+chemadv_source_desc,Pressing the same product needs only 85% of the active ingredient; with this module installed, Dr's Source Refinement II lowers it further to 75% (takes the lower value, no stacking)
 chemadv_clean_desc,Finished product purity grade +1 (caps at Lab Pure)
 chemadv_pack_desc,Pressing consumes x4 reagent and outputs a sealed pill box with 4 doses (box price = drug base value x5)
 chem_blade_gain2,Content gain: +5%

@@ -47,7 +47,8 @@ pui_basic_hint,滤水器：每个 +10% 质量
 pui_slot_hint,拖入金属锭扩充滤芯槽位（纯度越高，进度越多）
 pui_slot_maxed,滤芯槽位已满（{0} 槽）
 pui_ingot,扩槽进度 {0}%
-pui_filter,已装滤芯：高效 {0} / 技术 {1} / 滤水器 {2}
+pui_filter,已装滤水器：{0}
+pui_filter_legacy,旧档遗留滤芯（占槽）：{0}
 nm_furnace_ingot,增加保温炉衬
 nm_furnace_circuit,增加冶炼温度传感器
 nm_moisture_circuit,加装水质检测探头
@@ -247,7 +248,7 @@ cfg_tooltip_detail_desc,关闭后机器说明栏只显示「高级模块 x/y」�
 cfg_lang,语言（本 mod）
 cfg_lang_desc,auto = 跟随游戏语言；系统语言为葡萄牙语时自动切到巴西葡语。也可强制指定某个语言码。
 cfg_ws_broken,废料客捎带坏机器
-cfg_ws_broken_desc,开启时保持原版拾荒者口径：问候后随机上柜坏警报器（必带）、坏熔炉（66%）或坏潮湿农场（33%），修复可正常使用。关闭后他只卖三种零件。
+cfg_ws_broken_desc,开启时：问候后三台废旧机器（坏警报器 / 坏熔炉 / 坏潮湿农场）各有 33% 概率上柜，也可能一台都不给，修复后可正常使用。关闭后他只卖三种零件。
 adv_compact_slot,高级模块 {0}/{1}
 adv_compact_name,高级模块-{0}
 adv_compact_undone,-未完成
@@ -326,10 +327,10 @@ chem_stash_prog,{0}/{1} · {2}/{3} · {4}/{5}
 chem_stash_gain,机内物品视为走私者箱，治安官搜不出
 chem_titra_req,电子元件×8 + 普通化学品×8
 chem_titra_prog,电子元件 {0}/{1} · 化学品 {2}/{3}
-chem_titra_gain,置入的瓶子自动去除蛋白质与稳定剂
+chem_titra_gain,置入的瓶子自动去除蛋白质与稳定剂。不可用来净化纯水。
 chem_filter_req,韧棉织物×8 + 过滤器×8
 chem_filter_prog,{0}/{1} · {2}/{3}
-chem_filter_gain,置入的瓶子自动去除植物物质、碎屑、物理污染物、矿物质、脂肪
+chem_filter_gain,置入的瓶子自动去除植物物质、碎屑、物理污染物、矿物质、脂肪。不可用来净化纯水。
 chem_clean_on,自动清杂：开
 chem_clean_off,自动清杂：关
 chem_clean_desc,滴定仪与过滤装置的总开关。关闭后两个装置都不再清除任何组分（某些试剂需要保留杂质时用）。点一下切换。
@@ -350,10 +351,10 @@ pharmabox_desc,封装好的成品药盒，内含 4 份。可用螺丝刀或剪�
 pharmabox_open_full,没有空间取出药盒里的东西
 pharmabox_open_part,空间不足，只取出了一部分
 dr_sourcerefine2_title,源头改良 II
-dr_sourcerefine2_desc,成型机压制同一份成品只需要 75% 的有效成分（与「源头改良」模块取最低值，不叠乘）
+dr_sourcerefine2_desc,已装「源头改良」模块的成型机，压制同一份成品只需 75% 的有效成分（与模块的 85% 取更低值，不叠乘；没装模块的成型机不受影响，仍按原版 2ml 进 2ml 出）
 dr_labstd_title,实验室标准
 dr_labstd_desc,纯度 ≥99.9% 的成品额外获得「实验室高纯」标签（+185%）。
-chemadv_source_desc,压制同一份成品所需的有效成分降到 85%
+chemadv_source_desc,压制同一份成品所需的有效成分降到 85%；装上本模块后，博士「源头改良 II」才会把它继续压到 75%（取更低值，不叠乘）
 chemadv_clean_desc,压制出的成品纯度阶级 +1 级，最高「实验室纯品」
 chemadv_pack_desc,压制消耗 ×4 的原料，输出改为药盒（内含 4 份，盒价 = 药品原价值 ×5）
 chem_blade_gain2,内容物增加：5%

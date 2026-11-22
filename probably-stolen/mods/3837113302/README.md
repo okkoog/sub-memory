@@ -1,6 +1,32 @@
-# Snake Ranch 0.7.4 — 修复武器静养恢复被误判中断 / Fix weapon isolation-rest false interruption
+# Snake Ranch 0.7.6 — 开局保底蛇笼、周访不再烧电话冷却、货单明细文案 / Start-guarantee cage, walk-ins no longer burn phone cooldown, explicit stock lists
 
-## 0.7.4 本次更新 / This release
+## 0.7.6 本次更新 / This release
+
+- 养蛇开局保底蛇笼：玩家一个蛇笼都没有时，每周三日常上门（含首访）会**优先**摆一个蛇笼上架；一旦拥有任何蛇笼，日常货单恢复原样，8848 仍是加急设备通道。开局不再"17 天见不到笼"。
+- 修复"NPC 一直来、一直占用打电话冷却"：旧逻辑在**每次**上门（含周三日常访）都调用 UseService() 把 8848 打进 5 天冷却，于是每周三她一来电话就又被锁 5 天，永远约不上。现在只有**预约的设备单送达**才启动冷却；日常上门与首访交号都不烧冷却。
+- 货单优先级：设备单里蛇笼排在捕蛇夹/喷涂枪之前；日常访里保底笼排在蛇/蛋/王蛇货/清洁补给之前。柜台格子不够时后面的货**顺延到下次访**重试，不再硬塞。原生柜台没有翻页功能、商人带太多会卡到页外是游戏本体限制，模组侧只能靠优先级+顺延缓解，无法替原生加翻页。
+- 文案写清两条货单（中英同步）：预约 8848＝明天带捕蛇夹、蛇笼、玉米喷涂枪各一件，不带蛇蛋，送达后才进 5 天冷却；每周三日常＝公母眼镜蛇、强化蛋、王蛇货、清洁补给，没笼时额外带一个蛇笼，不占电话冷却。对话尾提示与电话簿口径一致。
+- 商人集成套件 250 断言（+8）：保底笼上架/有笼抑制/单格柜台笼优先/工具顺延/全 blocked 笼不记收据/日常访不烧冷却/仅设备单送达烧冷却。无新增物品 ID；仅新增一个周访保底笼标记键（snake_ranch.merchant.stock_cage_weekly），旧档缺失视为未供，直接兼容。
+
+- Rancher-start cage guarantee: while the player owns no snake cage at all, the Wednesday walk-in (including the first visit) places one cage FIRST; once any cage is owned the natural stock returns to its usual line and 8848 stays the express equipment channel. No more "day 17 and still no cage for sale".
+- Fixed "the NPC keeps coming and eats the phone cooldown": the old code called UseService() on EVERY arrival (including the Wednesday walk-in), re-arming the 5-day 8848 cooldown each week so booking was impossible forever. Now only a delivered booked equipment run starts the cooldown; walk-ins and the first number handout never burn it.
+- Stock priority: on equipment runs the cage precedes the catching tool/spray gun; on walk-ins the guarantee cage precedes snakes/eggs/king goods/cleaners. When the counter lacks cells, later goods defer to the next visit instead of being forced in. The native counter has no pagination and an over-loaded merchant spills off-page - a base-game limit the mod can only mitigate with priority + deferral, not fix by adding pages.
+- Both stock lists are now spelled out (zh/en together): booking 8848 = tomorrow's one catching tool, one cage, one corn spray gun, no snakes or eggs, cooldown only after delivery; Wednesday walk-in = male/female cobras, gene eggs, king cobra goods, cleaning supplies, plus one cage if you own none, never burning the phone cooldown. Dialogue tails and the phone book agree.
+- Merchant integration suite at 250 assertions (+8): guarantee placement / owned-cage suppression / cage-first on a one-slot counter / tool deferral / fully-blocked cage records no receipt / walk-in never arms cooldown / only the equipment run arms it. No new item IDs; one new weekly-guarantee marker key (snake_ranch.merchant.stock_cage_weekly), absent in old saves and treated as unsupplied, so they load compatibly.
+
+## 0.7.5 修复蛇蜕拖拽合并无效与 0 耐久空壳残余 / Fix shed drag-merge and 0-durability ghost packs
+
+- 修复蛇蜕滤材拖拽合并始终无效：旧门禁要求合并双方都挂在容器里，而真实拖拽时源物品被拿在光标/手上（parentInventory 为空），于是每次拖拽都被判"不可合并"。0.6.9 的跨容器修复只补了回调存在性，没碰这条门禁，所以实机依旧合不了。现在源允许手持，目标仍需在容器内；锁定/装机的源依旧拒绝。
+- 修复"没碰却自动合并、留下 0/200 空壳"：合并改为可验证事务——先把源从原容器 Expel 再 Destroy，销毁后校验源确实不再被任何容器跟踪；若原生 Destroy 只打标记仍把源留在格子里，就清掉残余槽位而保留合并结果；若销毁失败则全量回滚双方耐久与收据，并把源放回原容器，绝不落半状态。
+- 新增空壳清理：读档与每次合并后扫一遍，剩余 0g 且挂在储藏格/笼格/手持的蛇蜕直接移除（0g 无材料无收据义务）；装在机器滤窗里的空袋交给原生滤材逻辑，不动。旧档里遗留的 0/200 残余读档即清。
+- 蛇蜕集成套件补 9 条定向断言（手持源合并、Destroy 残留清槽、销毁失败回原位、读档扫空壳、滤窗空袋保留、清理幂等），套件重新纳入门禁；无新增本地化键、无新增物品 ID、无存档键结构改动。
+
+- Fixed shed-filter drag-merge never firing: the old gate required BOTH packs to sit in a container, but a real drag holds the source in the cursor (parentInventory null), so every drag was rejected as "cannot merge". The 0.6.9 cross-container fix only restored callback presence and never touched this gate, hence no effect in game. The source may now be held; the target must still be stored; locked/installed sources are still refused.
+- Fixed "untouched packs auto-merge and leave a 0/200 ghost": merging is now a verifiable transaction - the source is Expelled from its container before Destroy, then verified to be untracked everywhere; if native Destroy only flags the item and leaves it listed, the residual slot is cleared while keeping the merge; if Destroy fails, both durabilities and receipts roll back fully and the source is put back into its original container. No half-states.
+- Added an empty-pack sweep: on load and after every merge, shed packs with 0g remaining that sit in storage/cage grids or in hand are removed (0g carries no material and no receipt obligation); empty bags installed in a machine filter window are left to native filter handling. Legacy 0/200 ghosts in old saves are cleared on load.
+- The shed integration suite gains 9 targeted assertions (held-source merge, residual-slot clearing, destroy-failure put-back, load sweep, machine-window bag preserved, idempotent sweep) and is back in the gate; no new localization keys, no new item IDs, no save-key structure changes.
+
+## 0.7.4 修复武器静养恢复被误判中断 / Fix weapon isolation-rest false interruption
 
 - 修复武器形态静养恢复"单独笼养、饱腹充足却永远 0/2、挂着被取出笼中断"的问题：游戏内部同笼重插、读档重建、形状校验都会走 RemoveParent，旧逻辑一触发就立即当作"被取出笼"把夜数归零并禁止当日计数，若该内部重插每夜发生就永远无法累积。
 - 取出改为对账判定：RemoveParent 只记一笔 pending（原笼+当日）；回到原笼撤销 pending 不算中断；进别的笼按"已移动到另一笼"中断；夜结算/读档对账时真不在笼内才写"被取出笼，静养中断"。玩家真取出依旧中断，误报消失。
