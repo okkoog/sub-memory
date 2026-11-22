@@ -47,7 +47,7 @@ jobs:
           p=pathlib.Path('/tmp/rld-safe-test/Localization/ko.csv')
           with p.open(encoding='utf-8-sig',newline='') as f: rows=list(csv.reader(f))
           m=dict(rows)
-          assert len(rows)==41 and len(m)==41
+          assert len(rows)==42 and len(m)==42
           assert m['rld_0c709a656b8604731f59']=='메이드'
           assert m['rld_display_e98b511ac9df76a6d02c']=='내 번역'
           assert m['rld_092ed1524c83d3f79781']=='달빛 아래의 벨벳 하녀'
