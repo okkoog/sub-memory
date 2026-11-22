@@ -60,7 +60,7 @@ jobs:
               foreach(var e in old.Body.ExceptionHandlers)body.ExceptionHandlers.Add(new ExceptionHandler(e.HandlerType){TryStart=M(e.TryStart),TryEnd=M(e.TryEnd),HandlerStart=M(e.HandlerStart),HandlerEnd=M(e.HandlerEnd),FilterStart=M(e.FilterStart),CatchType=e.CatchType});
               var title=methods["System.String ProbablyEleanorFollowup.EmbeddedAssets::DisplayName()"];
               var ti=title.Body.Instructions;
-              Need(ti.Count==11&&ti.Count(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,"落魄千金-埃莉诺"))==2&&ti.Any(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,"Fallen Heiress - Eleanor")),"Title original routes");
+              Need(ti.Count==10&&ti.Count(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,"落魄千金-埃莉诺"))==2&&ti.Any(i=>i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,"Fallen Heiress - Eleanor")),"Title original routes");
               var target=ti.Single(i=>i.Offset==0x000D);
               Need(target.Operand?.ToString()==old.FullName&&ti.Any(i=>i.Operand==target),"Selected locale branch");
               // Only the selected-locale branch calls the Korean detector. No-locale and zh fallback remain intact.
