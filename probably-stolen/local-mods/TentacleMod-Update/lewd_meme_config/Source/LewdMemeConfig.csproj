@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>LewdMemeConfig</AssemblyName>
+    <RootNamespace>LewdMemeConfig</RootNamespace>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <LangVersion>latest</LangVersion>
+    <GameManaged>$(MSBuildThisFileDirectory)..\..\..\Probably Stolen_Data\Managed</GameManaged>
+    <!-- 0.8.0:主 mod DLL(前置 lewd_meme 已声明,unlisted-reference 合法解析;
+         仅 TentacleApi 读接口,数值注入仍走 Harmony/ModReflect。Private=false
+         绝不复制进本 mod 目录;worktree 构建用 -p:MainModDll= 绝对路径覆盖
+         (同 GameManaged 模式)。 -->
+    <MainModDll>$(MSBuildThisFileDirectory)..\..\..\Mods\lewd_meme\MidnightPawn.dll</MainModDll>
+    <!-- 编译对齐游戏自带的框架程序集，保证与游戏运行时类型一致（同 ItemPortraitHD）。 -->
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 测试 runner 是 net8.0 控制台工程，不进 mod 程序集（同 ItemPortraitHD 先例）。 -->
+    <Compile Remove="Tests\**\*.cs" />
+    <Reference Include="mscorlib"><HintPath>$(GameManaged)\mscorlib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="netstandard"><HintPath>$(GameManaged)\netstandard.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System"><HintPath>$(GameManaged)\System.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Core"><HintPath>$(GameManaged)\System.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameManaged)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManaged)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GameManaged)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <!-- 调试面板(Task 14):IMGUI 窗口(GUI/GUIStyle/GUILayout)与热键轮询(Input)。
+         游戏自带模块,合法 UnityEngine 通道,零能力声明不受影响。 -->
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GameManaged)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(GameManaged)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <!-- 面板让位标记的绿色小字(0.6.0 R4/F2):CustomUIElement.text 是
+         TextMeshProUGUI,fontSize 缩放需该类型(MaskableGraphic 基类在
+         UnityEngine.UI);游戏自带模块(12/10 规则下 TMPro/UnityEngine.UI 属
+         面板层合法类型),零能力声明不受影响。 -->
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(GameManaged)\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(GameManaged)\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <!-- 0.8.0 API 借道:主 mod TentacleApi 1.2.0 读接口(自检读数单路径,
+         版本防御交 VersionGuard 单一闸门)。 -->
+    <Reference Include="MidnightPawn"><HintPath>$(MainModDll)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

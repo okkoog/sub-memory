@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- 测试工程不引用任何游戏 DLL；GameManaged 仅保持与标准构建命令的兼容。
+         通配链接 Config/ 与 Logic/（preflight Ruling 4）：后续任务新增纯逻辑文件零 csproj 维护；
+         Integration/ 与 Patches/ 依赖游戏/Harmony 类型，不进测试工程。 -->
+    <GameManaged Condition="'$(GameManaged)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\Probably Stolen_Data\Managed</GameManaged>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Config\*.cs" LinkBase="Config" />
+    <Compile Include="..\Logic\*.cs" LinkBase="Logic" />
+    <!-- VersionGuard 是纯逻辑(无游戏类型),但住在 Integration/,通配不覆盖,显式链接。 -->
+    <Compile Include="..\Integration\VersionGuard.cs" Link="VersionGuard.cs" />
+    <!-- HookInstaller(Logic/ 通配已含)引用 HarmonyLib(12 月规则下合法目标),
+          按 ItemPortraitHD 先例引用 0Harmony(PatchHub/Bootstrap.Compose 已随
+          其宿主删除,M2c 装配编排迁 Integration/HookRuntime.cs,不进测试工程)。 -->
+    <Reference Include="0Harmony"><HintPath>$(GameManaged)\0Harmony.dll</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+</Project>

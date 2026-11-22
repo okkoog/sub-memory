@@ -1,0 +1,490 @@
+using System.Collections.Generic;
+
+namespace LewdMemeConfig
+{
+    /// <summary>面板控件形态(数值键保留 Slider 枚举承载 min/max 钳制元数据,
+    /// Define 时统一走 string 文本框——NumericInput;Input = CSV 文本框;
+    /// EnumKeyCode = KeyCode 枚举下拉[0.7.1 拾取器:游戏原生 DefineEnum&lt;KeyCode&gt;
+    /// 通道,Brood 热键先例 Settings.cs:130;注册表层存 KeyCode 名串往返转换,
+    /// 仅 FamilyPanelKeys 使用——主面板暂无此形态])。</summary>
+    internal enum PanelKind { Toggle, SliderInt, SliderFloat, Choice, Input, EnumKeyCode }
+
+    /// <summary>
+    /// 一个玩家面板条目的定义(纯数据)。值条目(90,Task 14b +printer 5)语义同
+    /// 0.4.0;开关条目(87 子项)是 0.5.0 开关体系的面板形态(Kind=Toggle,
+    /// Key = 开关键名)。SectionId = 分区英文标识(开关体系映射用,每条目必填)。
+    /// 默认值不在此重复——Define 时从 ConfigRegistry 同源读取(验收红线:三处同源)。
+    /// </summary>
+    internal sealed class PanelEntry
+    {
+        public string Key; public PanelKind Kind; public string Section; public string Label; public string Tooltip;
+        public string SectionId;                              // 分区英文 id(开关映射)
+        public int MinInt; public int MaxInt;                 // SliderInt(文本框钳制用)
+        public float MinFloat; public float MaxFloat;         // SliderFloat(同上)
+        public string[] Choices;                              // 仅 Choice(gender_scope)
+    }
+
+    /// <summary>
+    /// 玩家面板键定义表(0.5.0):182 条目 = 93 值 + 89 子项开关,13 分区编译期固定
+    /// (Task 14b 解除面板冻结:仅追加「打印机」分区 5 值 + 5 开关;loot.med_* 双键
+    /// 随 1.7.1 适配重定位为「恢复 1.6.x 医疗组排卵针掉落」opt-in,默认关 = 1.9.2
+    /// 原版零漂移;0.7.0 T8:virgin_chance 两行废弃;T9:exp_per_level 两行废弃,
+    /// +成长公式三键 +互动阈值 +初始处女——max_charge/min 系放弃键等 tooltip
+    /// 注记随 T9 落地)。完整性由 PanelKeysTests 锁定。总开关/分区开关已按作者裁定移除
+    /// ——游戏面板是 Apply 模型(控件互相独立、程序化改其他开关无法刷新显示),
+    /// 层级联动 UI 上无法实现;开关语义(spec §4.2 修订,0.6.0 三层取值链):每键
+    /// 子开关默认关,只压玩家层(主 mod 面板动态层照常穿透、默认层恒可及——0.5.x
+    /// 的 override 层已随服务面拆除删除),开关键自身豁免(ConfigRegistry.PlayerLayerAllowed)。
+    /// 排除原则不变:9 个布局尺寸键不上面板(误改破坏主 mod 布局逻辑)。
+    /// </summary>
+    internal static class PanelKeys
+    {
+        // -- 分区英文 id(开关键与 SectionIdOf 映射的唯一事实源) --
+        internal const string SecClient  = "client";
+        internal const string SecPrice   = "price";
+        internal const string SecNightly = "nightly";
+        internal const string SecProgress= "progress";
+        internal const string SecLoot    = "loot";
+        internal const string SecMaiden  = "maiden";
+        internal const string SecSpecial = "special";
+        internal const string SecCorrupt = "corrupt";
+        internal const string SecAlarm   = "alarm";
+        internal const string SecTrap    = "trap";
+        internal const string SecUi      = "ui";
+        internal const string SecPerk    = "perk";
+        internal const string SecPrinter = "printer";
+
+        internal const string SectionSwitchSuffix = ".enabled";
+
+        public static readonly IReadOnlyList<PanelEntry> Entries = new[]
+        {
+
+            // -- 顾客(7 值 + 5 子项 = 12)--
+            new PanelEntry { Key = CfgKeys.GenderScope, Kind = PanelKind.Choice, Section = "顾客", SectionId = SecClient,
+                Label = "全女性世界", Tooltip = "全女性世界档位(0=原版行为,详见档位说明)", Choices = PlayerChoices.Labels },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.FemaleRewriteChance), Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "启用:女性改写概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.FemaleRewriteChance, Kind = PanelKind.SliderFloat, Section = "顾客", SectionId = SecClient,
+                Label = "女性改写概率", Tooltip = "女性改写概率(档位“关闭”时的基础概率)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = CfgKeys.GuestDisplayEnabled, Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "特殊顾客入口显示", Tooltip = "特殊顾客入口显示" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ClientPoolSize), Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "启用:顾客池规模", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ClientPoolSize, Kind = PanelKind.SliderInt, Section = "顾客", SectionId = SecClient,
+                Label = "顾客池规模", Tooltip = "每日随机顾客池规模", MinInt = 1, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenPriceMod), Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "启用:精液买价修正", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenPriceMod, Kind = PanelKind.SliderFloat, Section = "顾客", SectionId = SecClient,
+                Label = "精液买价修正", Tooltip = "精液买价修正 %(负=降价)", MinFloat = -100f, MaxFloat = 999f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenBonusMod), Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "启用:精液卖价加成", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenBonusMod, Kind = PanelKind.SliderFloat, Section = "顾客", SectionId = SecClient,
+                Label = "精液卖价加成", Tooltip = "精液卖价加成 %", MinFloat = -100f, MaxFloat = 999f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenRepMult), Kind = PanelKind.Toggle, Section = "顾客", SectionId = SecClient,
+                Label = "启用:精液声望倍率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenRepMult, Kind = PanelKind.SliderFloat, Section = "顾客", SectionId = SecClient,
+                Label = "精液声望倍率", Tooltip = "精液声望倍率", MinFloat = 0.1f, MaxFloat = 999f },
+
+            // -- 价格(5 值 + 5 子项 = 10)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PriceMilk), Kind = PanelKind.Toggle, Section = "价格", SectionId = SecPrice,
+                Label = "启用:乳汁售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PriceMilk, Kind = PanelKind.SliderInt, Section = "价格", SectionId = SecPrice,
+                Label = "乳汁售价", Tooltip = "乳汁售价(remake / 巢穴扩展启用时此配置不生效:remake 接管乳汁产出,Brood 创建后重算价值)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PriceMilkCredit), Kind = PanelKind.Toggle, Section = "价格", SectionId = SecPrice,
+                Label = "启用:乳汁饮用信用", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PriceMilkCredit, Kind = PanelKind.SliderInt, Section = "价格", SectionId = SecPrice,
+                Label = "乳汁饮用信用", Tooltip = "乳汁饮用信用(remake / 巢穴扩展启用时此配置不生效)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PriceSemen), Kind = PanelKind.Toggle, Section = "价格", SectionId = SecPrice,
+                Label = "启用:精液售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PriceSemen, Kind = PanelKind.SliderInt, Section = "价格", SectionId = SecPrice,
+                Label = "精液售价", Tooltip = "精液售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PriceTentacleBox), Kind = PanelKind.Toggle, Section = "价格", SectionId = SecPrice,
+                Label = "启用:触手箱售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PriceTentacleBox, Kind = PanelKind.SliderInt, Section = "价格", SectionId = SecPrice,
+                Label = "触手箱售价", Tooltip = "触手箱售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PriceOvulationShot), Kind = PanelKind.Toggle, Section = "价格", SectionId = SecPrice,
+                Label = "启用:排卵针售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PriceOvulationShot, Kind = PanelKind.SliderInt, Section = "价格", SectionId = SecPrice,
+                Label = "排卵针售价", Tooltip = "排卵针售价", MinInt = 0, MaxInt = 999999 },
+
+            // -- 夜间结算(24 值 + 24 子项 = 48)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SexMinBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:性交次数下限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SexMinBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "性交次数下限(基础)", Tooltip = "每夜性交次数下限 = 基础 + (触手等级-1)×每级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SexPerLevelMin), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:性交次数下限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SexPerLevelMin, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "性交次数下限(每级)", Tooltip = "性交次数下限的每触手等级增量(1.9.2 该数值已内联进上限常量,暂不可调)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SexMaxBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:性交次数上限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SexMaxBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "性交次数上限(基础)", Tooltip = "每夜性交次数上限 = 基础 + (触手等级-1)×每级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SexPerLevelMax), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:性交次数上限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SexPerLevelMax, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "性交次数上限(每级)", Tooltip = "性交次数上限的每触手等级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.OralMinBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:口交次数下限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.OralMinBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "口交次数下限(基础)", Tooltip = "每夜口交次数下限 = 基础 + (触手等级-1)×每级增量(1.9.2 该数值已内联/无条件,暂不可调)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.OralPerLevelMin), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:口交次数下限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.OralPerLevelMin, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "口交次数下限(每级)", Tooltip = "口交次数下限的每触手等级增量(1.9.2 该数值已内联进上限常量,暂不可调)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.OralMaxBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:口交次数上限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.OralMaxBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "口交次数上限(基础)", Tooltip = "每夜口交次数上限 = 基础 + (触手等级-1)×每级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.OralPerLevelMax), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:口交次数上限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.OralPerLevelMax, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "口交次数上限(每级)", Tooltip = "口交次数上限的每触手等级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AnalMinBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:肛交次数下限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AnalMinBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "肛交次数下限(基础)", Tooltip = "每夜肛交次数下限 = 基础 + (触手等级-1)×每级增量(1.9.2 该数值已内联/无条件,暂不可调)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AnalPerLevelMin), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:肛交次数下限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AnalPerLevelMin, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "肛交次数下限(每级)", Tooltip = "肛交次数下限的每触手等级增量(1.9.2 该数值已内联进上限常量,暂不可调)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AnalMaxBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:肛交次数上限(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AnalMaxBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "肛交次数上限(基础)", Tooltip = "每夜肛交次数上限 = 基础 + (触手等级-1)×每级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AnalPerLevelMax), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:肛交次数上限(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AnalPerLevelMax, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "肛交次数上限(每级)", Tooltip = "肛交次数上限的每触手等级增量", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.OvulateChance), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:排卵期进入概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.OvulateChance, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "排卵期进入概率", Tooltip = "少女每晚进入排卵期的概率(默认 1/7)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ConceivePerSex), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:单次受孕概率上限", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ConceivePerSex, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "单次受孕概率上限", Tooltip = "受孕概率 = 次数×该值(clamp 0-1)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.GestationDays), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:妊娠天数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.GestationDays, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "妊娠天数", Tooltip = "妊娠天数", MinInt = 1, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.LactationCap), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:每日泌乳上限", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.LactationCap, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "每日泌乳上限", Tooltip = "少女每日泌乳次数上限", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.MilkValueBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:乳汁单价(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.MilkValueBase, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "乳汁单价(基础)", Tooltip = "乳汁售价 = 基础 + 触手等级×每级加成", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.MilkValuePerLv), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:乳汁单价(每级)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.MilkValuePerLv, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "乳汁单价(每级)", Tooltip = "乳汁单价的每触手等级加成", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenChanceBase), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:精液产出概率(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenChanceBase, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "精液产出概率(基础)", Tooltip = "精液产出概率 = min(上限, 基础 + 调教值×每点)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenChancePerTrain), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:精液产出概率(每调教)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenChancePerTrain, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "精液产出概率(每调教)", Tooltip = "精液产出概率的每点调教值增量", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SemenChanceCap), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:精液产出概率上限", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SemenChanceCap, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "精液产出概率上限", Tooltip = "精液产出概率的上限", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.DaughterValue), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:女儿售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.DaughterValue, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "女儿售价", Tooltip = "产出的少女(女儿)售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ExpMultiplier), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:触手经验倍率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ExpMultiplier, Kind = PanelKind.SliderFloat, Section = "夜间结算", SectionId = SecNightly,
+                Label = "触手经验倍率", Tooltip = "触手经验获取倍率", MinFloat = 0.1f, MaxFloat = 999f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrainTameThreshold), Kind = PanelKind.Toggle, Section = "夜间结算", SectionId = SecNightly,
+                Label = "启用:调教驯服阈值", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrainTameThreshold, Kind = PanelKind.SliderInt, Section = "夜间结算", SectionId = SecNightly,
+                Label = "调教驯服阈值", Tooltip = "调教值达到该阈值算驯服", MinInt = 0, MaxInt = 999999 },
+
+            // -- 成长(5 值 + 5 子项 = 10;0.7.0 T9:exp_per_level CSV 两行废弃
+            //    ——1.9.2 已删 EXP_NEED 静态数组,经验表公式化进 ExpNeedForLevel,
+            //    由公式三键接管[默认 100/3/100 = 原版逐字];level_cap 面板范围
+            //    收窄 1-999,语义注记更新:1.9.2 升级循环无上限拦截[10000 次
+            //    防死循环],读取与显示经 GetBodyLevel clamp 按此值封顶)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.LevelCap), Kind = PanelKind.Toggle, Section = "成长", SectionId = SecProgress,
+                Label = "启用:等级上限", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.LevelCap, Kind = PanelKind.SliderInt, Section = "成长", SectionId = SecProgress,
+                Label = "等级上限", Tooltip = "触手等级读值上限(2.1.0 起官方无等级上限,默认 999 = 不封顶;调低于 999 时等级读取与显示按此值封顶,经验累积不受阻;每级所需经验由下方公式三键决定)", MinInt = 1, MaxInt = 999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ExpBase), Kind = PanelKind.Toggle, Section = "成长", SectionId = SecProgress,
+                Label = "启用:升级经验(基础)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ExpBase, Kind = PanelKind.SliderInt, Section = "成长", SectionId = SecProgress,
+                Label = "升级经验(基础)", Tooltip = "每级升级所需经验 = 基础 + 档数×每档增量,档数 = (等级-1)÷分级步长向下取整(默认 100,原版公式逐字)", MinInt = 10, MaxInt = 1000 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ExpDivisor), Kind = PanelKind.Toggle, Section = "成长", SectionId = SecProgress,
+                Label = "启用:升级经验(分级步长)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ExpDivisor, Kind = PanelKind.SliderInt, Section = "成长", SectionId = SecProgress,
+                Label = "升级经验(分级步长)", Tooltip = "每 N 级升一档经验需求(默认 3:lv1-3 需 100,lv4-6 需 200,lv7-9 需 300)", MinInt = 1, MaxInt = 10 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.ExpStep), Kind = PanelKind.Toggle, Section = "成长", SectionId = SecProgress,
+                Label = "启用:升级经验(每档增量)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.ExpStep, Kind = PanelKind.SliderInt, Section = "成长", SectionId = SecProgress,
+                Label = "升级经验(每档增量)", Tooltip = "每升一档增加的升级经验(默认 100;设 0 = 恒为基础值的平曲线)", MinInt = 0, MaxInt = 1000 },
+
+            // -- 掉落(2 值 + 2 子项 = 4;0.8.0 退役三键:拾荒概率基准线 → 「主 mod
+            //    官方设置(拾荒)」分区写透键接管;拾荒组名/掉落节流窗口 —— 2.1.0
+            //    拾荒重写后机制死(帧节流 + ScavengeRoll 分档判定,无组过滤);
+            //    med 双键 Task 14b 重定位:1.7.0 起原版已删除医疗组排卵针掉落
+            //    分支,两键为「恢复 1.6.x 行为」opt-in,任一 med 开关键开启 =
+            //    prefix 前置医疗分支(1.6.1 语义)并吞掉原方法,全关(默认)=
+            //    放行 2.1.0 原版拾荒逻辑,零漂移)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.MedShotChance), Kind = PanelKind.Toggle, Section = "掉落", SectionId = SecLoot,
+                Label = "恢复:医疗组排卵针掉落(1.7.0 已从原版移除)", Tooltip = "开启=在掉落判定前恢复 1.6.x 的医疗组排卵针掉落分支(概率用下方值);关闭=2.1.0 原版行为(医疗组不再掉排卵针)。注:官方另有垃圾场拾荒顺手捡排卵剂来源(「主 mod 官方设置(拾荒)」分区可调),与本键来源不同、并存不冲突" },
+            new PanelEntry { Key = CfgKeys.MedShotChance, Kind = PanelKind.SliderFloat, Section = "掉落", SectionId = SecLoot,
+                Label = "医疗组掉排卵针概率", Tooltip = "恢复开启时,医疗物资组掉排卵针的概率(1.6.x 原版 0.1);恢复关闭时无效;仅对组名含医疗关键词的掉落源生效(垃圾场拾荒组不触发,与 1.6.1 原版一致)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.MedKeywords), Kind = PanelKind.Toggle, Section = "掉落", SectionId = SecLoot,
+                Label = "恢复:医疗组排卵针掉落(自定义关键词)", Tooltip = "开启=恢复 1.6.x 的医疗组排卵针掉落分支并按下方关键词判定医疗组;关闭=2.1.0 原版行为" },
+            new PanelEntry { Key = CfgKeys.MedKeywords, Kind = PanelKind.Input, Section = "掉落", SectionId = SecLoot,
+                Label = "医疗组关键词(CSV)", Tooltip = "恢复开启时判定为医疗物资的物品组关键词,逗号分隔(1.6.x 默认 med,drug,pharma,chem);恢复关闭时无效;仅对组名含医疗关键词的掉落源生效(垃圾场拾荒组不触发,与 1.6.1 原版一致)" },
+
+            // -- 少女生成(13 值 + 12 子项 = 25;T8:virgin_chance 两行废弃删除——
+            //    1.9.2 无条件处女,数值段五键/faction_base 拆往 transpiler 单元后
+            //    IPH 在场也生效[共存 Own],tooltip 不再注明立绘管理器不生效;
+            //    池三键与 portrait_size 的让位注明保留[仍在 create_maiden 单元];
+            //    T9:+互动阈值一对 +初始处女 Toggle[自开关反向分派,关闭=接管])--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AttrHighChance), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:高属性概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AttrHighChance, Kind = PanelKind.SliderFloat, Section = "少女生成", SectionId = SecMaiden,
+                Label = "高属性概率", Tooltip = "属性掷骰落进高档区间的概率(默认 1%;经主 mod 属性掷骰方法注入,物品立绘管理器在场同样生效;其分区的属性五键可同开,后处理恒胜)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AttrMidChance), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:中属性概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AttrMidChance, Kind = PanelKind.SliderFloat, Section = "少女生成", SectionId = SecMaiden,
+                Label = "中属性概率", Tooltip = "属性掷骰落进中档区间的累计阈值概率(默认 6%,含高档;经主 mod 属性掷骰方法注入,物品立绘管理器在场同样生效;其分区的属性五键可同开,后处理恒胜)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AttrHighRange), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:高属性区间(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AttrHighRange, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "高属性区间(CSV)", Tooltip = "高属性掷骰区间「下,上」(默认 70,80;经主 mod 属性掷骰方法注入,物品立绘管理器在场同样生效;其分区的属性五键可同开,后处理恒胜)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AttrMidRange), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:中属性区间(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AttrMidRange, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "中属性区间(CSV)", Tooltip = "中属性掷骰区间「下,上」(默认 60,70;经主 mod 属性掷骰方法注入,物品立绘管理器在场同样生效;其分区的属性五键可同开,后处理恒胜)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AttrLowRange), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:低属性区间(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AttrLowRange, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "低属性区间(CSV)", Tooltip = "低属性掷骰区间「下,上」(默认 10,60;经主 mod 属性掷骰方法注入,物品立绘管理器在场同样生效;其分区的属性五键可同开,后处理恒胜)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.FactionBase), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:阵营基价(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.FactionBase, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "阵营基价(CSV)", Tooltip = "阵营:基价 键值对,逗号分隔(默认 上层区:100,治安部:50,黑市:50,革命军:50,其他:10;经主 mod 基价方法注入,物品立绘管理器在场同样生效)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.InteractThreshold), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:互动上限属性阈值", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.InteractThreshold, Kind = PanelKind.SliderInt, Section = "少女生成", SectionId = SecMaiden,
+                Label = "互动上限属性阈值", Tooltip = "少女可互动次数上限 = 1 + 情感/信任/催眠/调教值各自达到该阈值的项数(默认 60,原版四阈值同源)", MinInt = 0, MaxInt = 100 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.Factions), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:阵营池(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.Factions, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "阵营池(CSV)", Tooltip = "随机阵营池,逗号分隔(默认 下层区,上层区,治安部,黑市,革命军;物品立绘管理器在场时不生效,默认其按立绘数量加权抽阵营)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.Jobs), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:职业池(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.Jobs, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "职业池(CSV)", Tooltip = "随机职业池,逗号分隔(默认 20 项,见主 mod)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.Bodies), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:体型池(CSV)", Tooltip = "关闭=该值用原版默认(物品立绘管理器在场时该配置不生效)" },
+            new PanelEntry { Key = CfgKeys.Bodies, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "体型池(CSV)", Tooltip = "随机体型池,逗号分隔(默认 萝莉,少女,御姐,少妇,熟女;物品立绘管理器在场时不生效,体型分布改由联动分区的「成年体型权重 CSV」接管)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.Breasts), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:胸部池(CSV)", Tooltip = "关闭=该值用原版默认(物品立绘管理器在场时该配置不生效)" },
+            new PanelEntry { Key = CfgKeys.Breasts, Kind = PanelKind.Input, Section = "少女生成", SectionId = SecMaiden,
+                Label = "胸部池(CSV)", Tooltip = "随机胸部池,逗号分隔(默认 贫乳,普乳,巨乳;物品立绘管理器在场时不生效,乳量分布改由联动分区的「体型影响乳量」接管)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PortraitSize), Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "启用:立绘尺寸", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PortraitSize, Kind = PanelKind.SliderInt, Section = "少女生成", SectionId = SecMaiden,
+                Label = "立绘尺寸", Tooltip = "生成立绘的像素尺寸(默认 64;物品立绘管理器启用时不生效)", MinInt = 16, MaxInt = 999999 },
+            new PanelEntry { Key = CfgKeys.InitialVirgin, Kind = PanelKind.Toggle, Section = "少女生成", SectionId = SecMaiden,
+                Label = "初始处女", Tooltip = "开启(默认)= 生成的少女保持处女与肛处女(1.9.2 原版行为);关闭 = 生成的少女不再带处女标记(影响初夜溢价类身价与相关文案)" },
+
+            // -- 特殊顾客与名字(4 值 + 3 子项 = 7)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SpecialExtraIds), Kind = PanelKind.Toggle, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "启用:追加特殊顾客 id(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SpecialExtraIds, Kind = PanelKind.Input, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "追加特殊顾客 id(CSV)", Tooltip = "追加进特殊顾客白名单的物品 id,逗号分隔(默认空=不追加)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SpecialExtraSprites), Kind = PanelKind.Toggle, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "启用:追加特殊顾客立绘(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SpecialExtraSprites, Kind = PanelKind.Input, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "追加特殊顾客立绘(CSV)", Tooltip = "追加进特殊顾客立绘池的路径,逗号分隔(默认空=不追加)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.SpecialExtraKeywords), Kind = PanelKind.Toggle, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "启用:追加特殊顾客关键词(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.SpecialExtraKeywords, Kind = PanelKind.Input, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "追加特殊顾客关键词(CSV)", Tooltip = "命中特殊顾客判定的追加关键词,逗号分隔(默认空=不追加)" },
+            new PanelEntry { Key = CfgKeys.NamesUseCustomFile, Kind = PanelKind.Toggle, Section = "特殊顾客与名字", SectionId = SecSpecial,
+                Label = "启用自定义名字库", Tooltip = "启用 ModData/lewd_meme_config/names_custom.txt 自定义名字库(从兼容层切换需手动复制该文件)" },
+
+            // -- 侵蚀触手(7 值 + 7 子项 = 14)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptMaxCharge), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:侵蚀充能上限", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptMaxCharge, Kind = PanelKind.SliderInt, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "侵蚀充能上限", Tooltip = "侵蚀充能上限;上限>100 需同时启用『读取充能』『写入充能』两开关,否则充能实际封顶 100", MinInt = 10, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptInitialCharge), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:初始充能", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptInitialCharge, Kind = PanelKind.SliderInt, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "初始充能", Tooltip = "侵蚀触手创建时的初始充能(超出上限会被充能上限钳制;默认 100)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptDaily), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:每日侵蚀回充", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptDaily, Kind = PanelKind.SliderInt, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "每日侵蚀回充", Tooltip = "每日侵蚀回充", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptSemen), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:精液侵蚀回充", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptSemen, Kind = PanelKind.SliderInt, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "精液侵蚀回充", Tooltip = "精液侵蚀回充", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptCost), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:单次侵蚀消耗", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptCost, Kind = PanelKind.SliderInt, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "单次侵蚀消耗", Tooltip = "单次侵蚀消耗;消耗 > 淫力上限(侵蚀充能上限)时充能永远不够,侵蚀永不触发", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptWhitelist), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:侵蚀白名单追加(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptWhitelist, Kind = PanelKind.Input, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "侵蚀白名单追加(CSV)", Tooltip = "可被侵蚀物品白名单的追加项,逗号分隔(默认空=不追加);名单仅在『启用:侵蚀白名单追加(CSV)』开关开启时生效(开启 = 装配侵蚀判定接管单元;开其他侵蚀开关不装配名单判定)" },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.CorruptBlacklist), Kind = PanelKind.Toggle, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "启用:侵蚀黑名单追加(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.CorruptBlacklist, Kind = PanelKind.Input, Section = "侵蚀触手", SectionId = SecCorrupt,
+                Label = "侵蚀黑名单追加(CSV)", Tooltip = "不可侵蚀物品黑名单的追加项,逗号分隔(默认空=不追加);名单仅在『启用:侵蚀黑名单追加(CSV)』开关开启时生效(开启 = 装配侵蚀判定接管单元;开其他侵蚀开关不装配名单判定)" },
+
+            // -- 闹钟(7 值 + 7 子项 = 14)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmPrice), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:闹钟售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmPrice, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "闹钟售价", Tooltip = "闹钟售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmTentaclePrice), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:触手闹钟售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmTentaclePrice, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "触手闹钟售价", Tooltip = "触手闹钟售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmNpcSellChance), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:闹钟上架概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmNpcSellChance, Kind = PanelKind.SliderFloat, Section = "闹钟", SectionId = SecAlarm,
+                Label = "闹钟上架概率", Tooltip = "闹钟被 NPC 上架的概率(全部路径)", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmOralPerNight), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:每夜口交次数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmOralPerNight, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "每夜口交次数", Tooltip = "闹钟每夜口交次数", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmSexPerNight), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:每夜性交次数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmSexPerNight, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "每夜性交次数", Tooltip = "闹钟每夜性交次数", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmAnalPerNight), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:每夜肛交次数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmAnalPerNight, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "每夜肛交次数", Tooltip = "闹钟每夜肛交次数", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.AlarmSemenOutput), Kind = PanelKind.Toggle, Section = "闹钟", SectionId = SecAlarm,
+                Label = "启用:精液产出瓶数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.AlarmSemenOutput, Kind = PanelKind.SliderInt, Section = "闹钟", SectionId = SecAlarm,
+                Label = "精液产出瓶数", Tooltip = "闹钟每夜精液产出瓶数(1.9.2 产出无条件每苗床一瓶,暂不可调)", MinInt = 0, MaxInt = 999999 },
+
+            // -- 陷阱(6 值 + 6 子项 = 12)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapPrice), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:井盖售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapPrice, Kind = PanelKind.SliderInt, Section = "陷阱", SectionId = SecTrap,
+                Label = "井盖售价", Tooltip = "井盖售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapTrapPrice), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:捕捉陷阱售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapTrapPrice, Kind = PanelKind.SliderInt, Section = "陷阱", SectionId = SecTrap,
+                Label = "捕捉陷阱售价", Tooltip = "捕捉陷阱售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapNpcSellChanceScav), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:井盖上架概率(拾荒)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapNpcSellChanceScav, Kind = PanelKind.SliderFloat, Section = "陷阱", SectionId = SecTrap,
+                Label = "井盖上架概率(拾荒)", Tooltip = "拾荒者买走井盖的上架概率", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapNpcSellChanceThief), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:井盖上架概率(小偷)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapNpcSellChanceThief, Kind = PanelKind.SliderFloat, Section = "陷阱", SectionId = SecTrap,
+                Label = "井盖上架概率(小偷)", Tooltip = "小偷买走井盖的上架概率", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapSemenChance), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:苗床产精液概率", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapSemenChance, Kind = PanelKind.SliderFloat, Section = "陷阱", SectionId = SecTrap,
+                Label = "苗床产精液概率", Tooltip = "陷阱苗床产精液概率", MinFloat = 0f, MaxFloat = 1f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.TrapTacticChances), Kind = PanelKind.Toggle, Section = "陷阱", SectionId = SecTrap,
+                Label = "启用:策略捕捉率(CSV)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.TrapTacticChances, Kind = PanelKind.Input, Section = "陷阱", SectionId = SecTrap,
+                Label = "策略捕捉率(CSV)", Tooltip = "三档捕捉策略的捕捉概率,逗号分隔(默认 0.1,0.2,0.3)" },
+
+            // -- 界面(4 值 + 4 子项 = 8)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.UiReportWidth), Kind = PanelKind.Toggle, Section = "界面", SectionId = SecUi,
+                Label = "启用:夜报窗口宽", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.UiReportWidth, Kind = PanelKind.SliderInt, Section = "界面", SectionId = SecUi,
+                Label = "夜报窗口宽", Tooltip = "夜报窗口宽", MinInt = 200, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.UiReportHeight), Kind = PanelKind.Toggle, Section = "界面", SectionId = SecUi,
+                Label = "启用:夜报窗口高", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.UiReportHeight, Kind = PanelKind.SliderInt, Section = "界面", SectionId = SecUi,
+                Label = "夜报窗口高", Tooltip = "夜报窗口高", MinInt = 120, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.UiReportDelay), Kind = PanelKind.Toggle, Section = "界面", SectionId = SecUi,
+                Label = "启用:夜报弹出延迟(秒)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.UiReportDelay, Kind = PanelKind.SliderFloat, Section = "界面", SectionId = SecUi,
+                Label = "夜报弹出延迟(秒)", Tooltip = "夜报弹出延迟(秒)", MinFloat = 0f, MaxFloat = 999f },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.UiReloadFixDelay), Kind = PanelKind.Toggle, Section = "界面", SectionId = SecUi,
+                Label = "启用:读档修复延迟(秒)", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.UiReloadFixDelay, Kind = PanelKind.SliderFloat, Section = "界面", SectionId = SecUi,
+                Label = "读档修复延迟(秒)", Tooltip = "读档修复延迟(秒)", MinFloat = 0f, MaxFloat = 999f },
+
+            // -- 天赋(2 值 + 2 子项 = 4)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PerkDailyFemales), Kind = PanelKind.Toggle, Section = "天赋", SectionId = SecPerk,
+                Label = "启用:触手起源每日女客数", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PerkDailyFemales, Kind = PanelKind.SliderInt, Section = "天赋", SectionId = SecPerk,
+                Label = "触手起源每日女客数", Tooltip = "触手起源每日女客数(0=关闭)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PerkScavBonus), Kind = PanelKind.Toggle, Section = "天赋", SectionId = SecPerk,
+                Label = "启用:拾荒天赋加成", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PerkScavBonus, Kind = PanelKind.SliderInt, Section = "天赋", SectionId = SecPerk,
+                Label = "拾荒天赋加成", Tooltip = "拾荒天赋加成", MinInt = 0, MaxInt = 999999 },
+
+            // -- 打印机(5 值 + 5 子项 = 10;主 mod 1.7.1 新增「触手3D打印机」线,
+            //    Task 14b 接管——分区语境为主 mod 参数,非子 mod 联动;默认全关 =
+            //    打印机线纯原版)--
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PrinterPrice), Kind = PanelKind.Toggle, Section = "打印机", SectionId = SecPrinter,
+                Label = "启用:触手打印机售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PrinterPrice, Kind = PanelKind.SliderInt, Section = "打印机", SectionId = SecPrinter,
+                Label = "触手打印机售价", Tooltip = "触手3D打印机的售价(侵蚀 3D 打印机所得)", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PrinterNeedlePrice), Kind = PanelKind.Toggle, Section = "打印机", SectionId = SecPrinter,
+                Label = "启用:空针管售价", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PrinterNeedlePrice, Kind = PanelKind.SliderInt, Section = "打印机", SectionId = SecPrinter,
+                Label = "空针管售价", Tooltip = "打印机产出的空针管售价", MinInt = 0, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PrinterGrid), Kind = PanelKind.Toggle, Section = "打印机", SectionId = SecPrinter,
+                Label = "启用:打印机区格边长", Tooltip = "关闭=该值用原版默认(仅影响新造打印机)" },
+            new PanelEntry { Key = CfgKeys.PrinterGrid, Kind = PanelKind.SliderInt, Section = "打印机", SectionId = SecPrinter,
+                Label = "打印机区格边长", Tooltip = "材料/苗床/产出三区的方格边长(原版 12×12;仅影响新造的打印机,已放置的不变;小于 12 可能影响材料识别)", MinInt = 12, MaxInt = 64 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PrinterRecipeCost), Kind = PanelKind.Toggle, Section = "打印机", SectionId = SecPrinter,
+                Label = "启用:空针管所需进度", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PrinterRecipeCost, Kind = PanelKind.SliderInt, Section = "打印机", SectionId = SecPrinter,
+                Label = "空针管所需进度", Tooltip = "每造一支空针管消耗的打印进度(每份耗材 + 触手精液抽取原料;原版 15)", MinInt = 1, MaxInt = 999999 },
+            new PanelEntry { Key = ItemSwitchKey(CfgKeys.PrinterBaseProgress), Kind = PanelKind.Toggle, Section = "打印机", SectionId = SecPrinter,
+                Label = "启用:每苗床基础进度", Tooltip = "关闭=该值用原版默认" },
+            new PanelEntry { Key = CfgKeys.PrinterBaseProgress, Kind = PanelKind.SliderFloat, Section = "打印机", SectionId = SecPrinter,
+                Label = "每苗床基础进度", Tooltip = "苗床区每名少女每夜提供的基础打印进度(智力加成另算;原版 3)", MinFloat = 0f, MaxFloat = 999f },
+        };
+
+        // ---- 开关键命名与映射 API(Task 3/4/5 消费)----
+
+        internal static string SectionSwitchKey(string sectionId) => sectionId + SectionSwitchSuffix;
+        internal static string ItemSwitchKey(string key) => key + ".enabled";
+
+        /// <summary>是否任一层开关键(master / section.enabled / key.enabled)。</summary>
+        internal static bool IsSwitchKey(string key)
+        {
+            return key.EndsWith(SectionSwitchSuffix, System.StringComparison.Ordinal);
+        }
+
+        private static List<string> keysWithSwitch;            // 有子项开关的值键(惰性)
+
+        /// <summary>配有子项开关的值键(87 个:排除 Choice/Toggle 3 键——它们
+        /// 本身即开关语义,不受开关管辖;Task 14b +printer 5)。</summary>
+        internal static IReadOnlyList<string> NumericKeysWithSwitch
+        {
+            get { BuildMapsIfNeeded(); return keysWithSwitch; }
+        }
+
+        private static void BuildMapsIfNeeded()
+        {
+            if (keysWithSwitch != null) return;
+            var withSwitch = new List<string>();
+            foreach (var e in Entries)
+            {
+                if (IsSwitchKey(e.Key)) continue;
+                if (e.Kind == PanelKind.SliderInt || e.Kind == PanelKind.SliderFloat || e.Kind == PanelKind.Input)
+                    withSwitch.Add(e.Key);
+            }
+            keysWithSwitch = withSwitch;
+        }
+    }
+}
