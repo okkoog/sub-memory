@@ -315,7 +315,7 @@ K|dialogue.glm.judge.no,안 살래. 오늘 충분히 피곤하니 더 괴롭히�
 K|dialogue.glm.judge.ok,음. 좀 비싸네…… 됐어. 실랑이할 기운도 없어.
 K|dialogue.glm.judge.shutter,야…… 아직 말 안 끝났는데. 됐어. 나도 위층으로 돌아가야지.
 K|dialogue.glm.judge.up,조금 아꼈네. 다른 물건도 보자.
-K|dialogue.glm.judge.wrong,내가 찾는 게 아니야. 너무 묻지 말고 다른 걸 줘.
+K|dialogue.glm.judge.wrong,"식품이나 생활용품, 야간 근무에 쓸 도구가 필요해. 다른 건 뭐가 있어?"
 K|dialogue.glm.phone.1,……여보세요? 위층이야. 짧게 말해.
 K|dialogue.glm.phone.2,물건 이야기는 퇴근하고 하자.
 K|dialogue.glm.repeat.1,또 나야. 이번 달 야간 근무는 유난히 기네.
@@ -958,7 +958,7 @@ K|ds.machine.place.03h,밤에 문 너머로 기계가 조용히 웅웅거리며 
 K|ds.machine.place.03s,밤에 칸막이 벽에 귀를 대고 기계가 일정하게 도는 소리를 듣다가 3분을 세고서야 마음이 놓였어요. 이제 이 기계가 주인님을 위해 만들어 내는 물건은 외부인의 손을 거칠 필요가 없겠네요.
 K|ds.machine.place.more,"작업대 옆에 기계가 또 하나 연결됐어요! 옆방이 점점 진짜 작업장처럼 보이네요!"
 K|ds.machine.place.sys,"{机器名}이(가) {位置名}에 연결되었습니다."
-K|ds.meal.already,"어라? 주인님, 오늘은 이미 배부르게 드셨잖아요? 더 드시면 배탈 나실 수도 있어요. 이건 도시락에 담아 내일 가게에서 드시는 게 어때요?"
+K|ds.meal.already,"오늘 저녁은 이미 같이 먹었잖아요. 이건 내일 가게에서 드실 수 있도록 포장해 둘까요?"
 K|ds.meal.eat.b1,"뜨거울 때 드세요, 주인님! 바깥의 퍽퍽한 합성 배급식보다 따뜻한 밥 한 끼가 훨씬 든든하죠. 오늘은 채소도 싱싱해서 고기도 잘게 썰어 넣었어요. 배불리 드셔야 내일 가게 일도 힘내서 하시죠!"
 K|ds.meal.eat.b2,"화구가 두 개니 정말 편하네요! 한쪽에서는 국을 끓이고 다른 쪽에서는 채소를 볶을 수 있으니 불 조절도 딱 좋아요. 주인님, 드셔 보세요. 요리 솜씨가 점점 전문 주방장 같아지지 않나요?"
 K|ds.meal.eat.h1,"가장 부드러운 고기는 몰래 주인님 그릇 맨 아래에 넣어 뒀어요. 저도 조금 떠서 같이 먹을게요…… 음, 따뜻하고 맛있어요. 이렇게 마주 앉아 밥을 먹는 게 세상에서 제일 행복해요!"
@@ -1137,7 +1137,7 @@ K|ds.ui.annex.slot_b,"B · 생산 설비"
 K|ds.ui.annex.storage_label,"보관 선반 · 보관 물자 / 생산 재료 / 출하 대기"
 K|ds.ui.annex.water_label,"정수 시설 · 급수 및 정수 필터 관리"
 K|ds.ui.audit.attach.01,"따끈하고 푸짐한 집밥."
-K|ds.ui.audit.attach.02,"\n섭취 시 [따뜻한 식사의 기운] 획득(오늘 다음 거래 손님의 호감도 +15%, 중첩 불가). 하루 한 번만 섭취 가능."
+K|ds.ui.audit.attach.02,"\n하루에 포장한 식사 한 개를 먹을 수 있습니다. 집에서 먹는 저녁 식사는 별개입니다. [따뜻한 식사의 기운]은 다음 거래 손님의 호감도 +15%를 제공하며, 영업일마다 한 번 적용됩니다."
 K|ds.ui.audit.bottle.01,"자동 병입 장치에 전기가 공급되지 않아 병입이 중단됐습니다. 기존 물과 빈 병은 유지됩니다."
 K|ds.ui.audit.bottle.02,"이번 급수분의 순도는 {0}%로, 병입 기준인 {1}%에 미달합니다. 남은 물은 물탱크에 보관합니다."
 K|ds.ui.audit.bottle.03,물 
@@ -1481,8 +1481,8 @@ K|ds.ui.loc.home,"거주지"
 K|ds.ui.manual.summary,"시설 사용 및 조작 방법을 안내합니다."
 K|ds.ui.manual.title,"{0} 사용 설명서"
 K|ds.ui.meal.available_title,"남겨 둔 식사 · 1인분"
-K|ds.ui.meal.eat_now,"앉아서 식사하기(내일 따뜻한 식사의 기운 획득)"
-K|ds.ui.meal.empty_title,"식탁 · 오늘 식사 완료"
+K|ds.ui.meal.eat_now,"여기서 저녁 먹기 (내일의 따뜻한 식사의 기운)"
+K|ds.ui.meal.empty_title,"식탁 · 오늘 저녁 식사 완료"
 K|ds.ui.meal.inspect,"주변 둘러보기"
 K|ds.ui.meal.keep_later,"나중에 먹기"
 K|ds.ui.meal.pack_to_store,"포장해서 가게로 보내기"
@@ -1965,7 +1965,7 @@ K|item.deepseek_home_key.name,"불 켜진 방 · 열쇠"
 K|item.deepseek_home_meal.description,"따뜻한 집밥 한 끼. 섭취하면 하루 동안 니코틴, 알코올, 약물 금단 증상을 완화한다."
 K|item.deepseek_home_meal.name,"DeepSeek의 집밥"
 K|meal.action.consume,"섭취"
-K|meal.status.eaten_today,"오늘은 이미 식사했습니다"
+K|meal.status.eaten_today,"오늘의 포장 식사를 이미 먹었습니다."
 K|meal.tooltip.addiction,"니코틴, 알코올, 약물 금단 증상도 하루 동안 완화합니다."
 K|meal.tooltip.effect,"섭취 시 [따뜻한 식사의 기운] 획득(오늘 다음 거래 손님의 호감도 +15%, 중첩 불가). 하루 한 번만 섭취 가능."
 K|phone.deepseek.away,"……전화를 받지 않습니다. 며칠 뒤 다시 시도하세요."
@@ -2564,3 +2564,11 @@ K|ds.ui.water.hint_upgrade,정밀 여과에는 2레벨 정수 시설이 필요�
 K|ds.ui.water.hint_fine,다음 급수분 정밀 여과에 필요한 고급 정수 필터 내구도: {0}
 K|ds.ui.water.hint_uv,미생물이 검출됐습니다. 다음 급수 전에 자외선 살균등을 켜세요.
 K|ds.ui.water.hint_next,필터 장착 완료. 다음 급수부터 적용됩니다.
+K|settings.ds_ask_return.label,"외출 후 집에 들를지 확인"
+K|settings.ds_ask_return.description,"집 방문 경로가 해금되면 야간 장소에서 나올 때 집으로 갈지 가게로 돌아갈지 선택할 수 있습니다. 끄면 다른 모드의 동작을 포함해 해당 장소의 기존 복귀 방식이 적용됩니다. 야간 지도에서 딥시크의 집을 방문하는 것은 여전히 가능합니다."
+K|phone.deepseek.plan_ready,"오늘 밤 할 일 목록을 준비했어요. 어떤 일부터 처리할까요?"
+K|phone.deepseek.favor_ready,"알겠어요. 카운터에 오실 손님을 위해 아껴 둘게요."
+K|meal.notice.shared,"식사를 마쳤습니다. 해당 영업일의 따뜻한 식사의 기운은 이미 적용되었습니다."
+K|phone.page.prompt,"또 어떤 일이 있으세요?"
+K|phone.page.next,"다른 선택지 ({0}/{1})"
+K|phone.page.first,"첫 페이지로 돌아가기"
