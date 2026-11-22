@@ -230,9 +230,7 @@ jobs:
           for f in "$ZIP" "$DLL"; do
             git show ":$f" > /tmp/rld-lfs-pointer
             test "$(wc -c < /tmp/rld-lfs-pointer)" -lt 256
-            grep -q '^version https://git-lfs.github.com/spec/v1
-          git diff --cached --quiet || (git commit -m 'Finalize RLD Korean overlay with read-only identity guard and verified ZIP' && git push origin main)
- /tmp/rld-lfs-pointer
-            grep -q "^oid sha256:$(sha256sum "$f" | cut -d' ' -f1)$" /tmp/rld-lfs-pointer
+            grep -Fxq 'version https://git-lfs.github.com/spec/v1' /tmp/rld-lfs-pointer
+            grep -Fxq "oid sha256:$(sha256sum "$f" | cut -d' ' -f1)" /tmp/rld-lfs-pointer
           done
           git diff --cached --quiet || (git commit -m 'Finalize RLD Korean overlay with read-only identity guard and verified ZIP' && git push origin main)
