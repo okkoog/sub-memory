@@ -191,8 +191,8 @@ jobs:
           s=mapping.read_text(encoding='utf-8')
           s=s.replace('Two item-description entries are adapted from the **original English localization** rather than the Chinese source and must not be counted as literal Chinese-to-Korean translations.',
                       'CORRECTION 2026-11-22: The two item descriptions originally adapted from English have now been replaced with the existing independently reviewed Korean renderings of the original Chinese, using the corresponding v1.1.3 *_flavor_alt entries.')
-          s=s.replace('| \`dildo_red_flavor\` | English embedded resource (Chinese wording excluded) |','| \`dildo_red_flavor\` | Original Chinese; reviewed Korean from v1.1.3 \`dildo_red_flavor_alt\` |')
-          s=s.replace('| \`dildo_pink_slim_flavor\` | English embedded resource (Chinese wording excluded) |','| \`dildo_pink_slim_flavor\` | Original Chinese; reviewed Korean from v1.1.3 \`dildo_pink_slim_flavor_alt\` |')
+          s=s.replace('| `dildo_red_flavor` | English embedded resource (Chinese wording excluded) |','| `dildo_red_flavor` | Original Chinese; reviewed Korean from v1.1.3 `dildo_red_flavor_alt` |')
+          s=s.replace('| `dildo_pink_slim_flavor` | English embedded resource (Chinese wording excluded) |','| `dildo_pink_slim_flavor` | Original Chinese; reviewed Korean from v1.1.3 `dildo_pink_slim_flavor_alt` |')
           assert 'English embedded resource (Chinese wording excluded)' not in s
           mapping.write_text(s,encoding='utf-8')
           for path in [root/'3842259965/README_ko.txt',root/'3842259965/README.txt']:
@@ -226,13 +226,13 @@ jobs:
             '|---|---|---|'
           ]
           for k,r in changes.items():
-            lines.append('| \`'+k+'\` | English source | Original Chinese via \`'+r['reused_key']+'\` |')
+            lines.append('| `'+k+'` | English source | Original Chinese via `'+r['reused_key']+'` |')
           lines+=['','## Relevant output files',
-            '- \`3842259965/Localization/ko.csv\`',
-            '- \`3842259965/probably_adult_goods.dll\`',
-            '- \`3843142171/fallen_heiress_eleanor.dll\`',
-            '- \`ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip\`',
-            '- \`ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_KO_ChineseRestored_20261122.zip\`',
+            '- `3842259965/Localization/ko.csv`',
+            '- `3842259965/probably_adult_goods.dll`',
+            '- `3843142171/fallen_heiress_eleanor.dll`',
+            '- `ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip`',
+            '- `ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_KO_ChineseRestored_20261122.zip`',
             '']
           audit_file.write_text('\n'.join(lines),encoding='utf-8')
           pack=[
@@ -262,9 +262,9 @@ jobs:
           progress=root/'WORK_PROGRESS.md'
           with progress.open('a',encoding='utf-8') as out:
             out.write('\n## 2026-11-22 — Probably Adult Goods v1.1.1 중국어 원문 2키 복원\n\n')
-            out.write('- \`dildo_red_flavor\` 및 \`dildo_pink_slim_flavor\`: 기존 영어 원문 기준 번역을, 동일 중국어 문장에 대응하는 기존 v1.1.3 \`*_flavor_alt\` 한국어 검수본으로 교체. 추가 179키 변동 없음. 원본 중국어·영어 DLL 리소스 불변.\n')
-            out.write('- v1.1.1 단독판 \`3842259965/probably_adult_goods.dll\`와 v1.1.3 통합판 \`3843142171/fallen_heiress_eleanor.dll\`의 ko 및 ko-KR 내장 로컬라이제이션 2개 별칭 업데이트. 다른 CLR 리소스 바이트·메서드 IL 변동 없음 (dnlib 로드/재검증).\n')
-            out.write('- 두 버전별 최종 ZIP을 별도 생성·CRC 및 내부 항목 바이트 대조 성공. 추가 감사 기록 \`번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md\`. 실게임/CLR·세이브 호환 검증은 미실시.\n\n')
+            out.write('- `dildo_red_flavor` 및 `dildo_pink_slim_flavor`: 기존 영어 원문 기준 번역을, 동일 중국어 문장에 대응하는 기존 v1.1.3 `*_flavor_alt` 한국어 검수본으로 교체. 추가 179키 변동 없음. 원본 중국어·영어 DLL 리소스 불변.\n')
+            out.write('- v1.1.1 단독판 `3842259965/probably_adult_goods.dll`와 v1.1.3 통합판 `3843142171/fallen_heiress_eleanor.dll`의 ko 및 ko-KR 내장 로컬라이제이션 2개 별칭 업데이트. 다른 CLR 리소스 바이트·메서드 IL 변동 없음 (dnlib 로드/재검증).\n')
+            out.write('- 두 버전별 최종 ZIP을 별도 생성·CRC 및 내부 항목 바이트 대조 성공. 추가 감사 기록 `번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md`. 실게임/CLR·세이브 호환 검증은 미실시.\n\n')
           PY
       - name: Commit both DLLs, exact CSV changes, README audit and final ZIPs
         shell: bash
