@@ -154,10 +154,10 @@ jobs:
               var init=entry.Methods.Single(m=>m.Name=="Init");var hook=originalInstructions[init].Single(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand).Contains("ModSettings::Init()"));
               Insert(init,hook,tnew.Methods.Single(m=>m.Name=="Install"),"Install mod-scoped display patches after settings initialize");
               var disable=entry.Methods.Single(m=>m.Name=="OnDisable");
-              // OnDisable log/cleanup is not modified. Attach Uninstall before every final return via an existing terminal instruction.
-              var di=originalInstructions[disable];Need(di.Count(i=>i.OpCode==OpCodes.Ret)==1&&di[^1].OpCode==OpCodes.Ret,"Disable final return");
-              Need(!di.Any(i=>i.Operand is Instruction t&&t==di[^1]),"Disable branch may skip uninstall");
-              Insert(disable,di[^2],tnew.Methods.Single(m=>m.Name=="Uninstall"),"Remove only own display patch ID on disable");
+              // Uninstall after the existing tooltip cleanup, before the terminal try/catch.
+              var di=originalInstructions[disable];
+              var unregister=di.Single(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand).Contains("MaidenTooltip::Unregister()"));
+              Insert(disable,unregister,tnew.Methods.Single(m=>m.Name=="Uninstall"),"Remove only own display patch ID on disable");
               foreach(var grp in calls.GroupBy(x=>x.Key.Item1)){
                 var m=grp.Key;
                 foreach(var p in grp.OrderByDescending(x=>x.Key.Item2)){var i=originalInstructions[m][p.Key.Item2];m.Body.Instructions.Insert(m.Body.Instructions.IndexOf(i)+1,Instruction.Create(OpCodes.Call,p.Value));}
