@@ -1,0 +1,5092 @@
+[
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::OnNamedCleared(RedLightDistrict.TalentData,System.Int32)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brtrue.s",
+        "operand": "@4"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 5,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_b8a410b27f2ea2af573e()"
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "brfalse",
+        "operand": "@A2"
+      },
+      {
+        "index": 7,
+        "offset": 20,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 21,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 22,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 23,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 11,
+        "offset": 28,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 29,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 30,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 14,
+        "offset": 35,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 15,
+        "offset": 40,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 41,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 42,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 18,
+        "offset": 43,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 19,
+        "offset": 48,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 49,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 21,
+        "offset": 50,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 22,
+        "offset": 55,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 23,
+        "offset": 60,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 24,
+        "offset": 61,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 25,
+        "offset": 62,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 26,
+        "offset": 63,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 27,
+        "offset": 68,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 28,
+        "offset": 69,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 29,
+        "offset": 70,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 30,
+        "offset": 75,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 31,
+        "offset": 80,
+        "opcode": "ldc.i4.6",
+        "operand": ""
+      },
+      {
+        "index": 32,
+        "offset": 81,
+        "opcode": "newarr",
+        "operand": "System.String"
+      },
+      {
+        "index": 33,
+        "offset": 86,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 34,
+        "offset": 87,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 35,
+        "offset": 88,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_fdcfb011d8deaabf1419()"
+      },
+      {
+        "index": 36,
+        "offset": 93,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 94,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 38,
+        "offset": 95,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 39,
+        "offset": 96,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 40,
+        "offset": 97,
+        "opcode": "ldflda",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 41,
+        "offset": 102,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 42,
+        "offset": 107,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 43,
+        "offset": 108,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 44,
+        "offset": 109,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 45,
+        "offset": 110,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_13a008d44e97531eb1db()"
+      },
+      {
+        "index": 46,
+        "offset": 115,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 47,
+        "offset": 116,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 48,
+        "offset": 117,
+        "opcode": "ldc.i4.3",
+        "operand": ""
+      },
+      {
+        "index": 49,
+        "offset": 118,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 50,
+        "offset": 119,
+        "opcode": "ldflda",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 51,
+        "offset": 124,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 52,
+        "offset": 129,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 53,
+        "offset": 130,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 54,
+        "offset": 131,
+        "opcode": "ldc.i4.4",
+        "operand": ""
+      },
+      {
+        "index": 55,
+        "offset": 132,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_eb0647c6cd8fa3cf32e3()"
+      },
+      {
+        "index": 56,
+        "offset": 137,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 57,
+        "offset": 138,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 58,
+        "offset": 139,
+        "opcode": "ldc.i4.5",
+        "operand": ""
+      },
+      {
+        "index": 59,
+        "offset": 140,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 60,
+        "offset": 141,
+        "opcode": "ldflda",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 61,
+        "offset": 146,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 62,
+        "offset": 151,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 63,
+        "offset": 152,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "index": 64,
+        "offset": 157,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 65,
+        "offset": 162,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 66,
+        "offset": 163,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_6dbe923ea176e6f66285()"
+      },
+      {
+        "index": 67,
+        "offset": 168,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 68,
+        "offset": 173,
+        "opcode": "brtrue.s",
+        "operand": "@B0"
+      },
+      {
+        "index": 69,
+        "offset": 175,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 70,
+        "offset": 176,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 71,
+        "offset": 177,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 72,
+        "offset": 178,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 73,
+        "offset": 179,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 74,
+        "offset": 180,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 75,
+        "offset": 185,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_7b7b75eb6cbcc6f5000c()"
+      },
+      {
+        "index": 76,
+        "offset": 190,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 77,
+        "offset": 191,
+        "opcode": "ldflda",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 78,
+        "offset": 196,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 79,
+        "offset": 201,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_4755b56c9fce0308b886()"
+      },
+      {
+        "index": 80,
+        "offset": 206,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "index": 81,
+        "offset": 211,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 82,
+        "offset": 216,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::NightlyTraitEffects(System.Int32)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "call",
+        "operand": "RedLightDistrict.TalentWorldData RedLightDistrict.TalentSaveStore::get_Data()"
+      },
+      {
+        "index": 1,
+        "offset": 5,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 7,
+        "opcode": "brfalse.s",
+        "operand": "@11"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "ldfld",
+        "operand": "System.Collections.Generic.List`1<RedLightDistrict.TalentData> RedLightDistrict.TalentWorldData::Talents"
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "brtrue.s",
+        "operand": "@16"
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "leave",
+        "operand": "@151"
+      },
+      {
+        "index": 8,
+        "offset": 22,
+        "opcode": "newobj",
+        "operand": "System.Void System.Random::.ctor()"
+      },
+      {
+        "index": 9,
+        "offset": 27,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 28,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 29,
+        "opcode": "stloc.2",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 30,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 31,
+        "opcode": "ldfld",
+        "operand": "System.Collections.Generic.List`1<RedLightDistrict.TalentData> RedLightDistrict.TalentWorldData::Talents"
+      },
+      {
+        "index": 14,
+        "offset": 36,
+        "opcode": "callvirt",
+        "operand": "System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData> System.Collections.Generic.List`1<RedLightDistrict.TalentData>::GetEnumerator()"
+      },
+      {
+        "index": 15,
+        "offset": 41,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 42,
+        "opcode": "br",
+        "operand": "@109"
+      },
+      {
+        "index": 17,
+        "offset": 47,
+        "opcode": "ldloca.s",
+        "operand": "V_3"
+      },
+      {
+        "index": 18,
+        "offset": 49,
+        "opcode": "call",
+        "operand": "RedLightDistrict.TalentData System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::get_Current()"
+      },
+      {
+        "index": 19,
+        "offset": 54,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 20,
+        "offset": 56,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 21,
+        "offset": 58,
+        "opcode": "brfalse",
+        "operand": "@109"
+      },
+      {
+        "index": 22,
+        "offset": 63,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 23,
+        "offset": 65,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 24,
+        "offset": 70,
+        "opcode": "ldc.i4",
+        "operand": "-2147483648"
+      },
+      {
+        "index": 25,
+        "offset": 75,
+        "opcode": "beq",
+        "operand": "@109"
+      },
+      {
+        "index": 26,
+        "offset": 80,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 27,
+        "offset": 82,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 28,
+        "offset": 87,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 29,
+        "offset": 88,
+        "opcode": "bgt",
+        "operand": "@109"
+      },
+      {
+        "index": 30,
+        "offset": 93,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 31,
+        "offset": 95,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 32,
+        "offset": 100,
+        "opcode": "stloc.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 33,
+        "offset": 102,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 34,
+        "offset": 104,
+        "opcode": "ldc.i4",
+        "operand": "-2147483648"
+      },
+      {
+        "index": 35,
+        "offset": 109,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::PendingPickpocketDay"
+      },
+      {
+        "index": 36,
+        "offset": 114,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 115,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 38,
+        "offset": 117,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Random::Next(System.Int32)"
+      },
+      {
+        "index": 39,
+        "offset": 122,
+        "opcode": "ldc.i4.s",
+        "operand": "50"
+      },
+      {
+        "index": 40,
+        "offset": 124,
+        "opcode": "blt.s",
+        "operand": "@9B"
+      },
+      {
+        "index": 41,
+        "offset": 126,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_e3602c409e8fd23d23e3()"
+      },
+      {
+        "index": 42,
+        "offset": 131,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 43,
+        "offset": 133,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 44,
+        "offset": 138,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_c693dd31b79679b76148()"
+      },
+      {
+        "index": 45,
+        "offset": 143,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "index": 46,
+        "offset": 148,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 47,
+        "offset": 153,
+        "opcode": "br.s",
+        "operand": "@109"
+      },
+      {
+        "index": 48,
+        "offset": 155,
+        "opcode": "call",
+        "operand": "GameItem RedLightDistrict.TalentTraits::TryGiveCheapItem()"
+      },
+      {
+        "index": 49,
+        "offset": 160,
+        "opcode": "stloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 50,
+        "offset": 162,
+        "opcode": "ldloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 51,
+        "offset": 164,
+        "opcode": "brfalse.s",
+        "operand": "@FF"
+      },
+      {
+        "index": 52,
+        "offset": 166,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 53,
+        "offset": 167,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 54,
+        "offset": 168,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 55,
+        "offset": 169,
+        "opcode": "stloc.2",
+        "operand": ""
+      },
+      {
+        "index": 56,
+        "offset": 170,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_a3dd3473617d01a46ca6()"
+      },
+      {
+        "index": 57,
+        "offset": 175,
+        "opcode": "ldloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 58,
+        "offset": 177,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)"
+      },
+      {
+        "index": 59,
+        "offset": 182,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_448a87bc48da03578d84()"
+      },
+      {
+        "index": 60,
+        "offset": 187,
+        "opcode": "ldloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 61,
+        "offset": 189,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentTarget::GetItemBaseValue(GameItem)"
+      },
+      {
+        "index": 62,
+        "offset": 194,
+        "opcode": "stloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 63,
+        "offset": 196,
+        "opcode": "ldloca.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 64,
+        "offset": 198,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 65,
+        "offset": 203,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "index": 66,
+        "offset": 208,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 67,
+        "offset": 213,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 68,
+        "offset": 215,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.TalentSystem::TalentLabel(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 69,
+        "offset": 220,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_776aeee973b035881f7e()"
+      },
+      {
+        "index": 70,
+        "offset": 225,
+        "opcode": "ldloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 71,
+        "offset": 227,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)"
+      },
+      {
+        "index": 72,
+        "offset": 232,
+        "opcode": "ldstr",
+        "operand": "]"
+      },
+      {
+        "index": 73,
+        "offset": 237,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "index": 74,
+        "offset": 242,
+        "opcode": "ldstr",
+        "operand": "#7FC97F"
+      },
+      {
+        "index": 75,
+        "offset": 247,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 76,
+        "offset": 248,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.TalentSystem::ReportNightLog(System.String,System.String,System.String)"
+      },
+      {
+        "index": 77,
+        "offset": 253,
+        "opcode": "br.s",
+        "operand": "@109"
+      },
+      {
+        "index": 78,
+        "offset": 255,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_28bcd534cf6db74ac7ea()"
+      },
+      {
+        "index": 79,
+        "offset": 260,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 80,
+        "offset": 265,
+        "opcode": "ldloca.s",
+        "operand": "V_3"
+      },
+      {
+        "index": 81,
+        "offset": 267,
+        "opcode": "call",
+        "operand": "System.Boolean System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::MoveNext()"
+      },
+      {
+        "index": 82,
+        "offset": 272,
+        "opcode": "brtrue",
+        "operand": "@2F"
+      },
+      {
+        "index": 83,
+        "offset": 277,
+        "opcode": "leave.s",
+        "operand": "@125"
+      },
+      {
+        "index": 84,
+        "offset": 279,
+        "opcode": "ldloca.s",
+        "operand": "V_3"
+      },
+      {
+        "index": 85,
+        "offset": 281,
+        "opcode": "constrained.",
+        "operand": "System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>"
+      },
+      {
+        "index": 86,
+        "offset": 287,
+        "opcode": "callvirt",
+        "operand": "System.Void System.IDisposable::Dispose()"
+      },
+      {
+        "index": 87,
+        "offset": 292,
+        "opcode": "endfinally",
+        "operand": ""
+      },
+      {
+        "index": 88,
+        "offset": 293,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 89,
+        "offset": 294,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 90,
+        "offset": 295,
+        "opcode": "ble.s",
+        "operand": "@12E"
+      },
+      {
+        "index": 91,
+        "offset": 297,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.TalentSaveStore::Save()"
+      },
+      {
+        "index": 92,
+        "offset": 302,
+        "opcode": "leave.s",
+        "operand": "@151"
+      },
+      {
+        "index": 93,
+        "offset": 304,
+        "opcode": "stloc.s",
+        "operand": "V_8"
+      },
+      {
+        "index": 94,
+        "offset": 306,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_abad2f6de634a3e43cf6()"
+      },
+      {
+        "index": 95,
+        "offset": 311,
+        "opcode": "ldloc.s",
+        "operand": "V_8"
+      },
+      {
+        "index": 96,
+        "offset": 313,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 97,
+        "offset": 314,
+        "opcode": "brtrue.s",
+        "operand": "@140"
+      },
+      {
+        "index": 98,
+        "offset": 316,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 99,
+        "offset": 317,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 100,
+        "offset": 318,
+        "opcode": "br.s",
+        "operand": "@145"
+      },
+      {
+        "index": 101,
+        "offset": 320,
+        "opcode": "callvirt",
+        "operand": "System.String System.Object::ToString()"
+      },
+      {
+        "index": 102,
+        "offset": 325,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "index": 103,
+        "offset": 330,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.MLog::Error(System.String)"
+      },
+      {
+        "index": 104,
+        "offset": 335,
+        "opcode": "leave.s",
+        "operand": "@151"
+      },
+      {
+        "index": 105,
+        "offset": 337,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToEscape(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@F"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_b2486c3c40175f364a58()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToObedienceRefusal(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@F"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_9025b871a6ae32435a86()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToLowObedience(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@F"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_005face9d66fca25f6ea()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@10"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_971e48597b944ba2e552()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "brtrue.s",
+        "operand": "@12"
+      },
+      {
+        "index": 6,
+        "offset": 16,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 18,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 20,
+        "opcode": "mul",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 21,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@10"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_f667308df730237865c9()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "brtrue.s",
+        "operand": "@12"
+      },
+      {
+        "index": 6,
+        "offset": 16,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 18,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 20,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 21,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 22,
+        "opcode": "div",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 23,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::ImmuneToAbuse(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@F"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_375cf96d4b43b8108392()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::PatronPriceMultiplier(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@10"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_3f22208dfb3931c57853()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "brtrue.s",
+        "operand": "@1A"
+      },
+      {
+        "index": 6,
+        "offset": 16,
+        "opcode": "ldc.r8",
+        "operand": "1"
+      },
+      {
+        "index": 7,
+        "offset": 25,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 26,
+        "opcode": "ldc.r8",
+        "operand": "1.2"
+      },
+      {
+        "index": 9,
+        "offset": 35,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodDrinkCost(System.Int32,RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brtrue.s",
+        "operand": "@5"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 5,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 6,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 7,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 8,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_b2a14ee5c374005ef94f()"
+      },
+      {
+        "index": 8,
+        "offset": 13,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 9,
+        "offset": 18,
+        "opcode": "brfalse.s",
+        "operand": "@18"
+      },
+      {
+        "index": 10,
+        "offset": 20,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 21,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 22,
+        "opcode": "div",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 23,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 14,
+        "offset": 24,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 15,
+        "offset": 25,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_6e8ffdc88ed79362c849()"
+      },
+      {
+        "index": 16,
+        "offset": 30,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 17,
+        "offset": 35,
+        "opcode": "brfalse.s",
+        "operand": "@38"
+      },
+      {
+        "index": 18,
+        "offset": 37,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 38,
+        "opcode": "conv.r8",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 39,
+        "opcode": "ldc.r8",
+        "operand": "1.5"
+      },
+      {
+        "index": 21,
+        "offset": 48,
+        "opcode": "mul",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 49,
+        "opcode": "call",
+        "operand": "System.Double System.Math::Round(System.Double)"
+      },
+      {
+        "index": 23,
+        "offset": 54,
+        "opcode": "conv.i4",
+        "operand": ""
+      },
+      {
+        "index": 24,
+        "offset": 55,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 25,
+        "offset": 56,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 26,
+        "offset": 57,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodCost(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldc.i4",
+        "operand": "400"
+      },
+      {
+        "index": 1,
+        "offset": 5,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodDrinkCost(System.Int32,RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 3,
+        "offset": 11,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::NightlyDrinkCost(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldc.i4",
+        "operand": "400"
+      },
+      {
+        "index": 1,
+        "offset": 5,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodDrinkCost(System.Int32,RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 3,
+        "offset": 11,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Int32 RedLightDistrict.TalentTraits::RefusalChanceMultiplier(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brfalse.s",
+        "operand": "@10"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_75faed925bc594cec348()"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 5,
+        "offset": 14,
+        "opcode": "brtrue.s",
+        "operand": "@12"
+      },
+      {
+        "index": 6,
+        "offset": 16,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 18,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::ReturningChanceBonus(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brtrue.s",
+        "operand": "@D"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldc.r8",
+        "operand": "0"
+      },
+      {
+        "index": 3,
+        "offset": 12,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 13,
+        "opcode": "ldc.r8",
+        "operand": "0"
+      },
+      {
+        "index": 5,
+        "offset": 22,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 23,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 24,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_723e7378a7ed35d14c64()"
+      },
+      {
+        "index": 8,
+        "offset": 29,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 9,
+        "offset": 34,
+        "opcode": "brfalse.s",
+        "operand": "@30"
+      },
+      {
+        "index": 10,
+        "offset": 36,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 37,
+        "opcode": "ldc.r8",
+        "operand": "0.5"
+      },
+      {
+        "index": 12,
+        "offset": 46,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 47,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 14,
+        "offset": 48,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 15,
+        "offset": 49,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_9509a15363787523d47b()"
+      },
+      {
+        "index": 16,
+        "offset": 54,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 17,
+        "offset": 59,
+        "opcode": "brfalse.s",
+        "operand": "@49"
+      },
+      {
+        "index": 18,
+        "offset": 61,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 62,
+        "opcode": "ldc.r8",
+        "operand": "0.5"
+      },
+      {
+        "index": 20,
+        "offset": 71,
+        "opcode": "sub",
+        "operand": ""
+      },
+      {
+        "index": 21,
+        "offset": 72,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 73,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 23,
+        "offset": 74,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Double RedLightDistrict.TalentTraits::DailyReturnBonus(System.Boolean)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brtrue.s",
+        "operand": "@D"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ldc.r8",
+        "operand": "0"
+      },
+      {
+        "index": 3,
+        "offset": 12,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 13,
+        "opcode": "ldc.r8",
+        "operand": "0.5"
+      },
+      {
+        "index": 5,
+        "offset": 22,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::AnyOwnedTalentHasTrait(System.String)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "call",
+        "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "brfalse.s",
+        "operand": "@A"
+      },
+      {
+        "index": 3,
+        "offset": 8,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "nop",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 11,
+        "opcode": "call",
+        "operand": "RedLightDistrict.TalentWorldData RedLightDistrict.TalentSaveStore::get_Data()"
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 17,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 18,
+        "opcode": "brtrue.s",
+        "operand": "@17"
+      },
+      {
+        "index": 10,
+        "offset": 20,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 21,
+        "opcode": "br.s",
+        "operand": "@1D"
+      },
+      {
+        "index": 12,
+        "offset": 23,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 24,
+        "opcode": "ldfld",
+        "operand": "System.Collections.Generic.List`1<RedLightDistrict.TalentData> RedLightDistrict.TalentWorldData::Talents"
+      },
+      {
+        "index": 14,
+        "offset": 29,
+        "opcode": "brtrue.s",
+        "operand": "@23"
+      },
+      {
+        "index": 15,
+        "offset": 31,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 32,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 33,
+        "opcode": "leave.s",
+        "operand": "@71"
+      },
+      {
+        "index": 18,
+        "offset": 35,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 36,
+        "opcode": "ldfld",
+        "operand": "System.Collections.Generic.List`1<RedLightDistrict.TalentData> RedLightDistrict.TalentWorldData::Talents"
+      },
+      {
+        "index": 20,
+        "offset": 41,
+        "opcode": "callvirt",
+        "operand": "System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData> System.Collections.Generic.List`1<RedLightDistrict.TalentData>::GetEnumerator()"
+      },
+      {
+        "index": 21,
+        "offset": 46,
+        "opcode": "stloc.2",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 47,
+        "opcode": "br.s",
+        "operand": "@51"
+      },
+      {
+        "index": 23,
+        "offset": 49,
+        "opcode": "ldloca.s",
+        "operand": "V_2"
+      },
+      {
+        "index": 24,
+        "offset": 51,
+        "opcode": "call",
+        "operand": "RedLightDistrict.TalentData System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::get_Current()"
+      },
+      {
+        "index": 25,
+        "offset": 56,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 26,
+        "offset": 57,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 27,
+        "offset": 58,
+        "opcode": "brfalse.s",
+        "operand": "@51"
+      },
+      {
+        "index": 28,
+        "offset": 60,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 29,
+        "offset": 61,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::get_IsDead()"
+      },
+      {
+        "index": 30,
+        "offset": 66,
+        "opcode": "brtrue.s",
+        "operand": "@51"
+      },
+      {
+        "index": 31,
+        "offset": 68,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 32,
+        "offset": 69,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 33,
+        "offset": 70,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 34,
+        "offset": 75,
+        "opcode": "brfalse.s",
+        "operand": "@51"
+      },
+      {
+        "index": 35,
+        "offset": 77,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 36,
+        "offset": 78,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 79,
+        "opcode": "leave.s",
+        "operand": "@71"
+      },
+      {
+        "index": 38,
+        "offset": 81,
+        "opcode": "ldloca.s",
+        "operand": "V_2"
+      },
+      {
+        "index": 39,
+        "offset": 83,
+        "opcode": "call",
+        "operand": "System.Boolean System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>::MoveNext()"
+      },
+      {
+        "index": 40,
+        "offset": 88,
+        "opcode": "brtrue.s",
+        "operand": "@31"
+      },
+      {
+        "index": 41,
+        "offset": 90,
+        "opcode": "leave.s",
+        "operand": "@6A"
+      },
+      {
+        "index": 42,
+        "offset": 92,
+        "opcode": "ldloca.s",
+        "operand": "V_2"
+      },
+      {
+        "index": 43,
+        "offset": 94,
+        "opcode": "constrained.",
+        "operand": "System.Collections.Generic.List`1/Enumerator<RedLightDistrict.TalentData>"
+      },
+      {
+        "index": 44,
+        "offset": 100,
+        "opcode": "callvirt",
+        "operand": "System.Void System.IDisposable::Dispose()"
+      },
+      {
+        "index": 45,
+        "offset": 105,
+        "opcode": "endfinally",
+        "operand": ""
+      },
+      {
+        "index": 46,
+        "offset": 106,
+        "opcode": "leave.s",
+        "operand": "@6F"
+      },
+      {
+        "index": 47,
+        "offset": 108,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 48,
+        "offset": 109,
+        "opcode": "leave.s",
+        "operand": "@6F"
+      },
+      {
+        "index": 49,
+        "offset": 111,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 50,
+        "offset": 112,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 51,
+        "offset": 113,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 114,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentTraits::ApplyNightlyStatTraits(RedLightDistrict.TalentData)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "brtrue.s",
+        "operand": "@4"
+      },
+      {
+        "index": 2,
+        "offset": 3,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 4,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 5,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_76aef5ac967fc4d06533()"
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "brfalse.s",
+        "operand": "@28"
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 18,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Spirit"
+      },
+      {
+        "index": 10,
+        "offset": 24,
+        "opcode": "ldc.i4.s",
+        "operand": "10"
+      },
+      {
+        "index": 11,
+        "offset": 26,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 27,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 28,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 14,
+        "offset": 30,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 15,
+        "offset": 35,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Spirit"
+      },
+      {
+        "index": 16,
+        "offset": 40,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 41,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_db217685c66fad2e301b()"
+      },
+      {
+        "index": 18,
+        "offset": 46,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 19,
+        "offset": 51,
+        "opcode": "brfalse.s",
+        "operand": "@51"
+      },
+      {
+        "index": 20,
+        "offset": 53,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 21,
+        "offset": 54,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 55,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 23,
+        "offset": 60,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 24,
+        "offset": 61,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 25,
+        "offset": 62,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)"
+      },
+      {
+        "index": 26,
+        "offset": 67,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 27,
+        "offset": 68,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 28,
+        "offset": 69,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 29,
+        "offset": 71,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 30,
+        "offset": 76,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Skill"
+      },
+      {
+        "index": 31,
+        "offset": 81,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 32,
+        "offset": 82,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_7b8adf9c35973a59810e()"
+      },
+      {
+        "index": 33,
+        "offset": 87,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 34,
+        "offset": 92,
+        "opcode": "brfalse.s",
+        "operand": "@75"
+      },
+      {
+        "index": 35,
+        "offset": 94,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 36,
+        "offset": 95,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 96,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Cleanliness"
+      },
+      {
+        "index": 38,
+        "offset": 101,
+        "opcode": "ldc.i4.s",
+        "operand": "10"
+      },
+      {
+        "index": 39,
+        "offset": 103,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 40,
+        "offset": 104,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 41,
+        "offset": 105,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 42,
+        "offset": 107,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 43,
+        "offset": 112,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Cleanliness"
+      },
+      {
+        "index": 44,
+        "offset": 117,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 45,
+        "offset": 118,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_05f1e39201ce39376827()"
+      },
+      {
+        "index": 46,
+        "offset": 123,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 47,
+        "offset": 128,
+        "opcode": "brfalse.s",
+        "operand": "@96"
+      },
+      {
+        "index": 48,
+        "offset": 130,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 49,
+        "offset": 131,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 50,
+        "offset": 132,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 51,
+        "offset": 133,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 52,
+        "offset": 138,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 53,
+        "offset": 139,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 54,
+        "offset": 140,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 55,
+        "offset": 145,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Beauty"
+      },
+      {
+        "index": 56,
+        "offset": 150,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 57,
+        "offset": 151,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_804ea28bd1357b985d07()"
+      },
+      {
+        "index": 58,
+        "offset": 156,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 59,
+        "offset": 161,
+        "opcode": "brfalse.s",
+        "operand": "@B7"
+      },
+      {
+        "index": 60,
+        "offset": 163,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 61,
+        "offset": 164,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 62,
+        "offset": 165,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 63,
+        "offset": 166,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 64,
+        "offset": 171,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 65,
+        "offset": 172,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 66,
+        "offset": 173,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 67,
+        "offset": 178,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Body"
+      },
+      {
+        "index": 68,
+        "offset": 183,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 69,
+        "offset": 184,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_ca413fbec396c79e12a6()"
+      },
+      {
+        "index": 70,
+        "offset": 189,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 71,
+        "offset": 194,
+        "opcode": "brfalse.s",
+        "operand": "@D8"
+      },
+      {
+        "index": 72,
+        "offset": 196,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 73,
+        "offset": 197,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 74,
+        "offset": 198,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 75,
+        "offset": 199,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 76,
+        "offset": 204,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 77,
+        "offset": 205,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 78,
+        "offset": 206,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)"
+      },
+      {
+        "index": 79,
+        "offset": 211,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Temperament"
+      },
+      {
+        "index": 80,
+        "offset": 216,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 81,
+        "offset": 217,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_fd858c4efd27a7c29cc9()"
+      },
+      {
+        "index": 82,
+        "offset": 222,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 83,
+        "offset": 227,
+        "opcode": "brfalse.s",
+        "operand": "@FC"
+      },
+      {
+        "index": 84,
+        "offset": 229,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 85,
+        "offset": 230,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 86,
+        "offset": 231,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Spirit"
+      },
+      {
+        "index": 87,
+        "offset": 236,
+        "opcode": "ldc.i4.s",
+        "operand": "10"
+      },
+      {
+        "index": 88,
+        "offset": 238,
+        "opcode": "sub",
+        "operand": ""
+      },
+      {
+        "index": 89,
+        "offset": 239,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 90,
+        "offset": 240,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 91,
+        "offset": 242,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 92,
+        "offset": 247,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Spirit"
+      },
+      {
+        "index": 93,
+        "offset": 252,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 94,
+        "offset": 253,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_09e6d63dabcc724f744d()"
+      },
+      {
+        "index": 95,
+        "offset": 258,
+        "opcode": "callvirt",
+        "operand": "System.Boolean RedLightDistrict.TalentData::HasTrait(System.String)"
+      },
+      {
+        "index": 96,
+        "offset": 263,
+        "opcode": "brfalse.s",
+        "operand": "@120"
+      },
+      {
+        "index": 97,
+        "offset": 265,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 98,
+        "offset": 266,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 99,
+        "offset": 267,
+        "opcode": "ldfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Health"
+      },
+      {
+        "index": 100,
+        "offset": 272,
+        "opcode": "ldc.i4.s",
+        "operand": "10"
+      },
+      {
+        "index": 101,
+        "offset": 274,
+        "opcode": "sub",
+        "operand": ""
+      },
+      {
+        "index": 102,
+        "offset": 275,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 103,
+        "offset": 276,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 104,
+        "offset": 278,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Clamp(System.Int32,System.Int32,System.Int32)"
+      },
+      {
+        "index": 105,
+        "offset": 283,
+        "opcode": "stfld",
+        "operand": "System.Int32 RedLightDistrict.TalentData::Health"
+      },
+      {
+        "index": 106,
+        "offset": 288,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentTraits::TryGiveCheapItem()",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "call",
+        "operand": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::GetCheapItemIds()"
+      },
+      {
+        "index": 1,
+        "offset": 5,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 7,
+        "opcode": "brfalse.s",
+        "operand": "@11"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 6,
+        "offset": 15,
+        "opcode": "brtrue.s",
+        "operand": "@19"
+      },
+      {
+        "index": 7,
+        "offset": 17,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 18,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 9,
+        "offset": 20,
+        "opcode": "leave",
+        "operand": "@AE"
+      },
+      {
+        "index": 10,
+        "offset": 25,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 26,
+        "opcode": "newobj",
+        "operand": "System.Void System.Random::.ctor()"
+      },
+      {
+        "index": 12,
+        "offset": 31,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 13,
+        "offset": 32,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 14,
+        "offset": 37,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Random::Next(System.Int32)"
+      },
+      {
+        "index": 15,
+        "offset": 42,
+        "opcode": "callvirt",
+        "operand": "System.String System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)"
+      },
+      {
+        "index": 16,
+        "offset": 47,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 48,
+        "opcode": "call",
+        "operand": "GameItem DirectoryMaster::Item(System.String,System.Boolean)"
+      },
+      {
+        "index": 18,
+        "offset": 53,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 54,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 55,
+        "opcode": "brtrue.s",
+        "operand": "@3E"
+      },
+      {
+        "index": 21,
+        "offset": 57,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 58,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 23,
+        "offset": 60,
+        "opcode": "leave.s",
+        "operand": "@AE"
+      },
+      {
+        "index": 24,
+        "offset": 62,
+        "opcode": "call",
+        "operand": "EmporiumEntry EmporiumEntry::get_Instance()"
+      },
+      {
+        "index": 25,
+        "offset": 67,
+        "opcode": "stloc.2",
+        "operand": ""
+      },
+      {
+        "index": 26,
+        "offset": 68,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 27,
+        "offset": 69,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 28,
+        "offset": 70,
+        "opcode": "call",
+        "operand": "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)"
+      },
+      {
+        "index": 29,
+        "offset": 75,
+        "opcode": "brtrue.s",
+        "operand": "@55"
+      },
+      {
+        "index": 30,
+        "offset": 77,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 31,
+        "offset": 78,
+        "opcode": "callvirt",
+        "operand": "GameGridInventory EmporiumEntry::get_backInvinvElement()"
+      },
+      {
+        "index": 32,
+        "offset": 83,
+        "opcode": "brtrue.s",
+        "operand": "@5A"
+      },
+      {
+        "index": 33,
+        "offset": 85,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 34,
+        "offset": 86,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 35,
+        "offset": 88,
+        "opcode": "leave.s",
+        "operand": "@AE"
+      },
+      {
+        "index": 36,
+        "offset": 90,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 91,
+        "opcode": "callvirt",
+        "operand": "GameGridInventory EmporiumEntry::get_backInvinvElement()"
+      },
+      {
+        "index": 38,
+        "offset": 96,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 39,
+        "offset": 97,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 40,
+        "offset": 98,
+        "opcode": "callvirt",
+        "operand": "SlotMarker GameGridInventory::TryFindOneValidInventorySlot(GameItem,System.Boolean)"
+      },
+      {
+        "index": 41,
+        "offset": 103,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 42,
+        "offset": 104,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 43,
+        "offset": 105,
+        "opcode": "brfalse.s",
+        "operand": "@7B"
+      },
+      {
+        "index": 44,
+        "offset": 107,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 45,
+        "offset": 108,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 46,
+        "offset": 109,
+        "opcode": "callvirt",
+        "operand": "System.Int32 SlotMarker::TryAcceptOnce(System.Int32)"
+      },
+      {
+        "index": 47,
+        "offset": 114,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 48,
+        "offset": 115,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 49,
+        "offset": 116,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 50,
+        "offset": 118,
+        "opcode": "leave.s",
+        "operand": "@AE"
+      },
+      {
+        "index": 51,
+        "offset": 120,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 121,
+        "opcode": "leave.s",
+        "operand": "@7B"
+      },
+      {
+        "index": 53,
+        "offset": 123,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 54,
+        "offset": 124,
+        "opcode": "callvirt",
+        "operand": "GameGridInventory EmporiumEntry::get_backInvinvElement()"
+      },
+      {
+        "index": 55,
+        "offset": 129,
+        "opcode": "castclass",
+        "operand": "GameInventory"
+      },
+      {
+        "index": 56,
+        "offset": 134,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 57,
+        "offset": 135,
+        "opcode": "callvirt",
+        "operand": "System.Boolean GameInventory::UncheckedAccept(GameItem)"
+      },
+      {
+        "index": 58,
+        "offset": 140,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 59,
+        "offset": 141,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 60,
+        "offset": 142,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 61,
+        "offset": 144,
+        "opcode": "leave.s",
+        "operand": "@AE"
+      },
+      {
+        "index": 62,
+        "offset": 146,
+        "opcode": "stloc.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 63,
+        "offset": 148,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_6e988ba486351ff0cfb4()"
+      },
+      {
+        "index": 64,
+        "offset": 153,
+        "opcode": "ldloc.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 65,
+        "offset": 155,
+        "opcode": "callvirt",
+        "operand": "System.String System.Exception::get_Message()"
+      },
+      {
+        "index": 66,
+        "offset": 160,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "index": 67,
+        "offset": 165,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "index": 68,
+        "offset": 170,
+        "opcode": "leave.s",
+        "operand": "@AC"
+      },
+      {
+        "index": 69,
+        "offset": 172,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 70,
+        "offset": 173,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 71,
+        "offset": 174,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 72,
+        "offset": 176,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::GetCheapItemIds()",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldsfld",
+        "operand": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::_cheapIds"
+      },
+      {
+        "index": 1,
+        "offset": 5,
+        "opcode": "brfalse.s",
+        "operand": "@D"
+      },
+      {
+        "index": 2,
+        "offset": 7,
+        "opcode": "ldsfld",
+        "operand": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::_cheapIds"
+      },
+      {
+        "index": 3,
+        "offset": 12,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 13,
+        "opcode": "newobj",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::.ctor()"
+      },
+      {
+        "index": 5,
+        "offset": 18,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 19,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 20,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 21,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 22,
+        "opcode": "call",
+        "operand": "System.Collections.Generic.List`1<System.String> DirectoryMaster::GetIdentifierList<GameItem>(System.String)"
+      },
+      {
+        "index": 10,
+        "offset": 27,
+        "opcode": "stloc.2",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 28,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 29,
+        "opcode": "brfalse",
+        "operand": "@136"
+      },
+      {
+        "index": 13,
+        "offset": 34,
+        "opcode": "newobj",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::.ctor()"
+      },
+      {
+        "index": 14,
+        "offset": 39,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 15,
+        "offset": 40,
+        "opcode": "ldloc.2",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 41,
+        "opcode": "callvirt",
+        "operand": "System.Collections.Generic.List`1/Enumerator<System.String> System.Collections.Generic.List`1<System.String>::GetEnumerator()"
+      },
+      {
+        "index": 17,
+        "offset": 46,
+        "opcode": "stloc.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 18,
+        "offset": 48,
+        "opcode": "br.s",
+        "operand": "@43"
+      },
+      {
+        "index": 19,
+        "offset": 50,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 20,
+        "offset": 52,
+        "opcode": "call",
+        "operand": "System.String System.Collections.Generic.List`1/Enumerator<System.String>::get_Current()"
+      },
+      {
+        "index": 21,
+        "offset": 57,
+        "opcode": "stloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 22,
+        "offset": 59,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 23,
+        "offset": 60,
+        "opcode": "ldloc.s",
+        "operand": "V_6"
+      },
+      {
+        "index": 24,
+        "offset": 62,
+        "opcode": "callvirt",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 25,
+        "offset": 67,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 26,
+        "offset": 69,
+        "opcode": "call",
+        "operand": "System.Boolean System.Collections.Generic.List`1/Enumerator<System.String>::MoveNext()"
+      },
+      {
+        "index": 27,
+        "offset": 74,
+        "opcode": "brtrue.s",
+        "operand": "@32"
+      },
+      {
+        "index": 28,
+        "offset": 76,
+        "opcode": "leave.s",
+        "operand": "@5C"
+      },
+      {
+        "index": 29,
+        "offset": 78,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 30,
+        "offset": 80,
+        "opcode": "constrained.",
+        "operand": "System.Collections.Generic.List`1/Enumerator<System.String>"
+      },
+      {
+        "index": 31,
+        "offset": 86,
+        "opcode": "callvirt",
+        "operand": "System.Void System.IDisposable::Dispose()"
+      },
+      {
+        "index": 32,
+        "offset": 91,
+        "opcode": "endfinally",
+        "operand": ""
+      },
+      {
+        "index": 33,
+        "offset": 92,
+        "opcode": "newobj",
+        "operand": "System.Void System.Random::.ctor()"
+      },
+      {
+        "index": 34,
+        "offset": 97,
+        "opcode": "stloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 35,
+        "offset": 99,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 36,
+        "offset": 100,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 37,
+        "offset": 105,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 38,
+        "offset": 106,
+        "opcode": "sub",
+        "operand": ""
+      },
+      {
+        "index": 39,
+        "offset": 107,
+        "opcode": "stloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 40,
+        "offset": 109,
+        "opcode": "br.s",
+        "operand": "@A6"
+      },
+      {
+        "index": 41,
+        "offset": 111,
+        "opcode": "ldloc.s",
+        "operand": "V_4"
+      },
+      {
+        "index": 42,
+        "offset": 113,
+        "opcode": "ldloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 43,
+        "offset": 115,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 44,
+        "offset": 116,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 45,
+        "offset": 117,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Random::Next(System.Int32)"
+      },
+      {
+        "index": 46,
+        "offset": 122,
+        "opcode": "stloc.s",
+        "operand": "V_8"
+      },
+      {
+        "index": 47,
+        "offset": 124,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 48,
+        "offset": 125,
+        "opcode": "ldloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 49,
+        "offset": 127,
+        "opcode": "callvirt",
+        "operand": "System.String System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)"
+      },
+      {
+        "index": 50,
+        "offset": 132,
+        "opcode": "stloc.s",
+        "operand": "V_9"
+      },
+      {
+        "index": 51,
+        "offset": 134,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 135,
+        "opcode": "ldloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 53,
+        "offset": 137,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 54,
+        "offset": 138,
+        "opcode": "ldloc.s",
+        "operand": "V_8"
+      },
+      {
+        "index": 55,
+        "offset": 140,
+        "opcode": "callvirt",
+        "operand": "System.String System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)"
+      },
+      {
+        "index": 56,
+        "offset": 145,
+        "opcode": "callvirt",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::set_Item(System.Int32,System.String)"
+      },
+      {
+        "index": 57,
+        "offset": 150,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 58,
+        "offset": 151,
+        "opcode": "ldloc.s",
+        "operand": "V_8"
+      },
+      {
+        "index": 59,
+        "offset": 153,
+        "opcode": "ldloc.s",
+        "operand": "V_9"
+      },
+      {
+        "index": 60,
+        "offset": 155,
+        "opcode": "callvirt",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::set_Item(System.Int32,System.String)"
+      },
+      {
+        "index": 61,
+        "offset": 160,
+        "opcode": "ldloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 62,
+        "offset": 162,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 63,
+        "offset": 163,
+        "opcode": "sub",
+        "operand": ""
+      },
+      {
+        "index": 64,
+        "offset": 164,
+        "opcode": "stloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 65,
+        "offset": 166,
+        "opcode": "ldloc.s",
+        "operand": "V_7"
+      },
+      {
+        "index": 66,
+        "offset": 168,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 67,
+        "offset": 169,
+        "opcode": "bgt.s",
+        "operand": "@6F"
+      },
+      {
+        "index": 68,
+        "offset": 171,
+        "opcode": "ldloc.3",
+        "operand": ""
+      },
+      {
+        "index": 69,
+        "offset": 172,
+        "opcode": "callvirt",
+        "operand": "System.Collections.Generic.List`1/Enumerator<System.String> System.Collections.Generic.List`1<System.String>::GetEnumerator()"
+      },
+      {
+        "index": 70,
+        "offset": 177,
+        "opcode": "stloc.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 71,
+        "offset": 179,
+        "opcode": "br.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 72,
+        "offset": 181,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 73,
+        "offset": 183,
+        "opcode": "call",
+        "operand": "System.String System.Collections.Generic.List`1/Enumerator<System.String>::get_Current()"
+      },
+      {
+        "index": 74,
+        "offset": 188,
+        "opcode": "stloc.s",
+        "operand": "V_10"
+      },
+      {
+        "index": 75,
+        "offset": 190,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 76,
+        "offset": 191,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 77,
+        "offset": 196,
+        "opcode": "ldc.i4.s",
+        "operand": "40"
+      },
+      {
+        "index": 78,
+        "offset": 198,
+        "opcode": "bge.s",
+        "operand": "@126"
+      },
+      {
+        "index": 79,
+        "offset": 200,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 80,
+        "offset": 201,
+        "opcode": "ldc.i4",
+        "operand": "220"
+      },
+      {
+        "index": 81,
+        "offset": 206,
+        "opcode": "bge.s",
+        "operand": "@126"
+      },
+      {
+        "index": 82,
+        "offset": 208,
+        "opcode": "ldloc.s",
+        "operand": "V_10"
+      },
+      {
+        "index": 83,
+        "offset": 210,
+        "opcode": "call",
+        "operand": "System.Boolean RedLightDistrict.TalentTraits::IsPickableId(System.String)"
+      },
+      {
+        "index": 84,
+        "offset": 215,
+        "opcode": "brfalse.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 85,
+        "offset": 217,
+        "opcode": "ldloc.1",
+        "operand": ""
+      },
+      {
+        "index": 86,
+        "offset": 218,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 87,
+        "offset": 219,
+        "opcode": "add",
+        "operand": ""
+      },
+      {
+        "index": 88,
+        "offset": 220,
+        "opcode": "stloc.1",
+        "operand": ""
+      },
+      {
+        "index": 89,
+        "offset": 221,
+        "opcode": "ldloc.s",
+        "operand": "V_10"
+      },
+      {
+        "index": 90,
+        "offset": 223,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 91,
+        "offset": 224,
+        "opcode": "call",
+        "operand": "GameItem DirectoryMaster::Item(System.String,System.Boolean)"
+      },
+      {
+        "index": 92,
+        "offset": 229,
+        "opcode": "stloc.s",
+        "operand": "V_11"
+      },
+      {
+        "index": 93,
+        "offset": 231,
+        "opcode": "ldloc.s",
+        "operand": "V_11"
+      },
+      {
+        "index": 94,
+        "offset": 233,
+        "opcode": "brtrue.s",
+        "operand": "@ED"
+      },
+      {
+        "index": 95,
+        "offset": 235,
+        "opcode": "leave.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 96,
+        "offset": 237,
+        "opcode": "ldloc.s",
+        "operand": "V_11"
+      },
+      {
+        "index": 97,
+        "offset": 239,
+        "opcode": "call",
+        "operand": "System.Int32 ContrabandHelper::GetContrabandLevel(GameItem)"
+      },
+      {
+        "index": 98,
+        "offset": 244,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 99,
+        "offset": 245,
+        "opcode": "ble.s",
+        "operand": "@F9"
+      },
+      {
+        "index": 100,
+        "offset": 247,
+        "opcode": "leave.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 101,
+        "offset": 249,
+        "opcode": "ldloc.s",
+        "operand": "V_11"
+      },
+      {
+        "index": 102,
+        "offset": 251,
+        "opcode": "call",
+        "operand": "System.Int32 RedLightDistrict.TalentTarget::GetItemBaseValue(GameItem)"
+      },
+      {
+        "index": 103,
+        "offset": 256,
+        "opcode": "conv.i8",
+        "operand": ""
+      },
+      {
+        "index": 104,
+        "offset": 257,
+        "opcode": "stloc.s",
+        "operand": "V_12"
+      },
+      {
+        "index": 105,
+        "offset": 259,
+        "opcode": "ldloc.s",
+        "operand": "V_12"
+      },
+      {
+        "index": 106,
+        "offset": 261,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 107,
+        "offset": 262,
+        "opcode": "conv.i8",
+        "operand": ""
+      },
+      {
+        "index": 108,
+        "offset": 263,
+        "opcode": "blt.s",
+        "operand": "@118"
+      },
+      {
+        "index": 109,
+        "offset": 265,
+        "opcode": "ldloc.s",
+        "operand": "V_12"
+      },
+      {
+        "index": 110,
+        "offset": 267,
+        "opcode": "ldc.i4.s",
+        "operand": "100"
+      },
+      {
+        "index": 111,
+        "offset": 269,
+        "opcode": "conv.i8",
+        "operand": ""
+      },
+      {
+        "index": 112,
+        "offset": 270,
+        "opcode": "bgt.s",
+        "operand": "@118"
+      },
+      {
+        "index": 113,
+        "offset": 272,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 114,
+        "offset": 273,
+        "opcode": "ldloc.s",
+        "operand": "V_10"
+      },
+      {
+        "index": 115,
+        "offset": 275,
+        "opcode": "callvirt",
+        "operand": "System.Void System.Collections.Generic.List`1<System.String>::Add(System.String)"
+      },
+      {
+        "index": 116,
+        "offset": 280,
+        "opcode": "leave.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 117,
+        "offset": 282,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 118,
+        "offset": 283,
+        "opcode": "leave.s",
+        "operand": "@11D"
+      },
+      {
+        "index": 119,
+        "offset": 285,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 120,
+        "offset": 287,
+        "opcode": "call",
+        "operand": "System.Boolean System.Collections.Generic.List`1/Enumerator<System.String>::MoveNext()"
+      },
+      {
+        "index": 121,
+        "offset": 292,
+        "opcode": "brtrue.s",
+        "operand": "@B5"
+      },
+      {
+        "index": 122,
+        "offset": 294,
+        "opcode": "leave.s",
+        "operand": "@136"
+      },
+      {
+        "index": 123,
+        "offset": 296,
+        "opcode": "ldloca.s",
+        "operand": "V_5"
+      },
+      {
+        "index": 124,
+        "offset": 298,
+        "opcode": "constrained.",
+        "operand": "System.Collections.Generic.List`1/Enumerator<System.String>"
+      },
+      {
+        "index": 125,
+        "offset": 304,
+        "opcode": "callvirt",
+        "operand": "System.Void System.IDisposable::Dispose()"
+      },
+      {
+        "index": 126,
+        "offset": 309,
+        "opcode": "endfinally",
+        "operand": ""
+      },
+      {
+        "index": 127,
+        "offset": 310,
+        "opcode": "leave.s",
+        "operand": "@152"
+      },
+      {
+        "index": 128,
+        "offset": 312,
+        "opcode": "stloc.s",
+        "operand": "V_13"
+      },
+      {
+        "index": 129,
+        "offset": 314,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_991d010d293973e0894a()"
+      },
+      {
+        "index": 130,
+        "offset": 319,
+        "opcode": "ldloc.s",
+        "operand": "V_13"
+      },
+      {
+        "index": 131,
+        "offset": 321,
+        "opcode": "callvirt",
+        "operand": "System.String System.Exception::get_Message()"
+      },
+      {
+        "index": 132,
+        "offset": 326,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "index": 133,
+        "offset": 331,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "index": 134,
+        "offset": 336,
+        "opcode": "leave.s",
+        "operand": "@152"
+      },
+      {
+        "index": 135,
+        "offset": 338,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 136,
+        "offset": 339,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 137,
+        "offset": 344,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 138,
+        "offset": 345,
+        "opcode": "ble.s",
+        "operand": "@161"
+      },
+      {
+        "index": 139,
+        "offset": 347,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 140,
+        "offset": 348,
+        "opcode": "stsfld",
+        "operand": "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::_cheapIds"
+      },
+      {
+        "index": 141,
+        "offset": 353,
+        "opcode": "ldc.i4.5",
+        "operand": ""
+      },
+      {
+        "index": 142,
+        "offset": 354,
+        "opcode": "newarr",
+        "operand": "System.String"
+      },
+      {
+        "index": 143,
+        "offset": 359,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 144,
+        "offset": 360,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 145,
+        "offset": 361,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_462c93b928680b474117()"
+      },
+      {
+        "index": 146,
+        "offset": 366,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 147,
+        "offset": 367,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 148,
+        "offset": 368,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 149,
+        "offset": 369,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 150,
+        "offset": 370,
+        "opcode": "callvirt",
+        "operand": "System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()"
+      },
+      {
+        "index": 151,
+        "offset": 375,
+        "opcode": "stloc.s",
+        "operand": "V_14"
+      },
+      {
+        "index": 152,
+        "offset": 377,
+        "opcode": "ldloca.s",
+        "operand": "V_14"
+      },
+      {
+        "index": 153,
+        "offset": 379,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 154,
+        "offset": 384,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 155,
+        "offset": 385,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 156,
+        "offset": 386,
+        "opcode": "ldc.i4.2",
+        "operand": ""
+      },
+      {
+        "index": 157,
+        "offset": 387,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_a93db732d4941e5e4dff()"
+      },
+      {
+        "index": 158,
+        "offset": 392,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 159,
+        "offset": 393,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 160,
+        "offset": 394,
+        "opcode": "ldc.i4.3",
+        "operand": ""
+      },
+      {
+        "index": 161,
+        "offset": 395,
+        "opcode": "ldloca.s",
+        "operand": "V_1"
+      },
+      {
+        "index": 162,
+        "offset": 397,
+        "opcode": "call",
+        "operand": "System.String System.Int32::ToString()"
+      },
+      {
+        "index": 163,
+        "offset": 402,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 164,
+        "offset": 403,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 165,
+        "offset": 404,
+        "opcode": "ldc.i4.4",
+        "operand": ""
+      },
+      {
+        "index": 166,
+        "offset": 405,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_812c0d9ebcfb323f9589()"
+      },
+      {
+        "index": 167,
+        "offset": 410,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 168,
+        "offset": 411,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "index": 169,
+        "offset": 416,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 170,
+        "offset": 421,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 171,
+        "offset": 422,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.Boolean RedLightDistrict.TalentTraits::IsPickableId(System.String)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "call",
+        "operand": "System.Boolean System.String::IsNullOrEmpty(System.String)"
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "brfalse.s",
+        "operand": "@A"
+      },
+      {
+        "index": 3,
+        "offset": 8,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 11,
+        "opcode": "ldstr",
+        "operand": "redlight_"
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::StartsWith(System.String)"
+      },
+      {
+        "index": 8,
+        "offset": 21,
+        "opcode": "brfalse.s",
+        "operand": "@19"
+      },
+      {
+        "index": 9,
+        "offset": 23,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 24,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 25,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 26,
+        "opcode": "ldstr",
+        "operand": "wage_"
+      },
+      {
+        "index": 13,
+        "offset": 31,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::StartsWith(System.String)"
+      },
+      {
+        "index": 14,
+        "offset": 36,
+        "opcode": "brfalse.s",
+        "operand": "@28"
+      },
+      {
+        "index": 15,
+        "offset": 38,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 39,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 40,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 18,
+        "offset": 41,
+        "opcode": "callvirt",
+        "operand": "System.String System.String::ToLowerInvariant()"
+      },
+      {
+        "index": 19,
+        "offset": 46,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 47,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 21,
+        "offset": 48,
+        "opcode": "ldstr",
+        "operand": "book"
+      },
+      {
+        "index": 22,
+        "offset": 53,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 23,
+        "offset": 58,
+        "opcode": "brtrue.s",
+        "operand": "@63"
+      },
+      {
+        "index": 24,
+        "offset": 60,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 25,
+        "offset": 61,
+        "opcode": "ldstr",
+        "operand": "guide"
+      },
+      {
+        "index": 26,
+        "offset": 66,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 27,
+        "offset": 71,
+        "opcode": "brtrue.s",
+        "operand": "@63"
+      },
+      {
+        "index": 28,
+        "offset": 73,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 29,
+        "offset": 74,
+        "opcode": "ldstr",
+        "operand": "paper"
+      },
+      {
+        "index": 30,
+        "offset": 79,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 31,
+        "offset": 84,
+        "opcode": "brtrue.s",
+        "operand": "@63"
+      },
+      {
+        "index": 32,
+        "offset": 86,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 33,
+        "offset": 87,
+        "opcode": "ldstr",
+        "operand": "note"
+      },
+      {
+        "index": 34,
+        "offset": 92,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 35,
+        "offset": 97,
+        "opcode": "brfalse.s",
+        "operand": "@65"
+      },
+      {
+        "index": 36,
+        "offset": 99,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 37,
+        "offset": 100,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 38,
+        "offset": 101,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 39,
+        "offset": 102,
+        "opcode": "ldstr",
+        "operand": "cage"
+      },
+      {
+        "index": 40,
+        "offset": 107,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 41,
+        "offset": 112,
+        "opcode": "brtrue.s",
+        "operand": "@99"
+      },
+      {
+        "index": 42,
+        "offset": 114,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 43,
+        "offset": 115,
+        "opcode": "ldstr",
+        "operand": "container"
+      },
+      {
+        "index": 44,
+        "offset": 120,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 45,
+        "offset": 125,
+        "opcode": "brtrue.s",
+        "operand": "@99"
+      },
+      {
+        "index": 46,
+        "offset": 127,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 47,
+        "offset": 128,
+        "opcode": "ldstr",
+        "operand": "crate"
+      },
+      {
+        "index": 48,
+        "offset": 133,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 49,
+        "offset": 138,
+        "opcode": "brtrue.s",
+        "operand": "@99"
+      },
+      {
+        "index": 50,
+        "offset": 140,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 51,
+        "offset": 141,
+        "opcode": "ldstr",
+        "operand": "box"
+      },
+      {
+        "index": 52,
+        "offset": 146,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 53,
+        "offset": 151,
+        "opcode": "brfalse.s",
+        "operand": "@9B"
+      },
+      {
+        "index": 54,
+        "offset": 153,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 55,
+        "offset": 154,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 56,
+        "offset": 155,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 57,
+        "offset": 156,
+        "opcode": "ldstr",
+        "operand": "sign"
+      },
+      {
+        "index": 58,
+        "offset": 161,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 59,
+        "offset": 166,
+        "opcode": "brtrue.s",
+        "operand": "@C2"
+      },
+      {
+        "index": 60,
+        "offset": 168,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 61,
+        "offset": 169,
+        "opcode": "ldstr",
+        "operand": "poster"
+      },
+      {
+        "index": 62,
+        "offset": 174,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 63,
+        "offset": 179,
+        "opcode": "brtrue.s",
+        "operand": "@C2"
+      },
+      {
+        "index": 64,
+        "offset": 181,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 65,
+        "offset": 182,
+        "opcode": "ldstr",
+        "operand": "signboard"
+      },
+      {
+        "index": 66,
+        "offset": 187,
+        "opcode": "callvirt",
+        "operand": "System.Boolean System.String::Contains(System.String)"
+      },
+      {
+        "index": 67,
+        "offset": 192,
+        "opcode": "brfalse.s",
+        "operand": "@C4"
+      },
+      {
+        "index": 68,
+        "offset": 194,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 69,
+        "offset": 195,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 70,
+        "offset": 196,
+        "opcode": "ldc.i4.1",
+        "operand": ""
+      },
+      {
+        "index": 71,
+        "offset": 197,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)",
+    "il": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_name()"
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 7,
+        "opcode": "brtrue.s",
+        "operand": "@19"
+      },
+      {
+        "index": 4,
+        "offset": 9,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 11,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_identifier()"
+      },
+      {
+        "index": 7,
+        "offset": 16,
+        "opcode": "dup",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 17,
+        "opcode": "brtrue.s",
+        "operand": "@19"
+      },
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 20,
+        "opcode": "ldstr",
+        "operand": "?"
+      },
+      {
+        "index": 11,
+        "offset": 25,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 26,
+        "opcode": "leave.s",
+        "operand": "@25"
+      },
+      {
+        "index": 13,
+        "offset": 28,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 14,
+        "offset": 29,
+        "opcode": "ldstr",
+        "operand": "?"
+      },
+      {
+        "index": 15,
+        "offset": 34,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 35,
+        "opcode": "leave.s",
+        "operand": "@25"
+      },
+      {
+        "index": 17,
+        "offset": 37,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 18,
+        "offset": 38,
+        "opcode": "ret",
+        "operand": ""
+      }
+    ]
+  }
+]

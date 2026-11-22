@@ -1,0 +1,909 @@
+[
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+    "index": 41,
+    "callee": "GameItem ItemDirectory::CreateEmptyItem(System.String)",
+    "before": [
+      {
+        "index": 30,
+        "offset": 65,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_ff75904f16606bd7f9fd()"
+      },
+      {
+        "index": 31,
+        "offset": 70,
+        "opcode": "stelem.ref",
+        "operand": ""
+      },
+      {
+        "index": 32,
+        "offset": 71,
+        "opcode": "call",
+        "operand": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "index": 33,
+        "offset": 76,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "index": 34,
+        "offset": 81,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 35,
+        "offset": 82,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 36,
+        "offset": 83,
+        "opcode": "leave",
+        "operand": "@278"
+      },
+      {
+        "index": 37,
+        "offset": 88,
+        "opcode": "leave.s",
+        "operand": "@5D"
+      },
+      {
+        "index": 38,
+        "offset": 90,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 39,
+        "offset": 91,
+        "opcode": "leave.s",
+        "operand": "@5D"
+      },
+      {
+        "index": 40,
+        "offset": 93,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 41,
+        "offset": 94,
+        "opcode": "call",
+        "operand": "GameItem ItemDirectory::CreateEmptyItem(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+    "index": 53,
+    "callee": "GameItem GameItem::SetName(System.String)",
+    "before": [
+      {
+        "index": 42,
+        "offset": 99,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 43,
+        "offset": 100,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 44,
+        "offset": 101,
+        "opcode": "brtrue.s",
+        "operand": "@6E"
+      },
+      {
+        "index": 45,
+        "offset": 103,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 46,
+        "offset": 104,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 47,
+        "offset": 105,
+        "opcode": "leave",
+        "operand": "@278"
+      },
+      {
+        "index": 48,
+        "offset": 110,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 49,
+        "offset": 111,
+        "opcode": "ldstr",
+        "operand": "redlight_sewing"
+      },
+      {
+        "index": 50,
+        "offset": 116,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 51,
+        "offset": 121,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 122,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_8125e5320d1510b3b107()"
+      },
+      {
+        "index": 53,
+        "offset": 127,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+    "index": 57,
+    "callee": "System.Void GameItem::set_shortDescription(System.String)",
+    "before": [
+      {
+        "index": 46,
+        "offset": 104,
+        "opcode": "stloc.3",
+        "operand": ""
+      },
+      {
+        "index": 47,
+        "offset": 105,
+        "opcode": "leave",
+        "operand": "@278"
+      },
+      {
+        "index": 48,
+        "offset": 110,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 49,
+        "offset": 111,
+        "opcode": "ldstr",
+        "operand": "redlight_sewing"
+      },
+      {
+        "index": 50,
+        "offset": 116,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 51,
+        "offset": 121,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 122,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_8125e5320d1510b3b107()"
+      },
+      {
+        "index": 53,
+        "offset": 127,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "index": 54,
+        "offset": 132,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 55,
+        "offset": 133,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 56,
+        "offset": 134,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_067afe3a3e0559074502()"
+      },
+      {
+        "index": 57,
+        "offset": 139,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_shortDescription(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+    "index": 60,
+    "callee": "System.Void GameItem::set_longDescription(System.String)",
+    "before": [
+      {
+        "index": 49,
+        "offset": 111,
+        "opcode": "ldstr",
+        "operand": "redlight_sewing"
+      },
+      {
+        "index": 50,
+        "offset": 116,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 51,
+        "offset": 121,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 52,
+        "offset": 122,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_8125e5320d1510b3b107()"
+      },
+      {
+        "index": 53,
+        "offset": 127,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "index": 54,
+        "offset": 132,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 55,
+        "offset": 133,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 56,
+        "offset": 134,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_067afe3a3e0559074502()"
+      },
+      {
+        "index": 57,
+        "offset": 139,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_shortDescription(System.String)"
+      },
+      {
+        "index": 58,
+        "offset": 144,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 59,
+        "offset": 145,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.Korean.CsvLookup::rld_da6d3ebc9101da1d4bf6()"
+      },
+      {
+        "index": 60,
+        "offset": 150,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_longDescription(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "index": 1,
+    "callee": "GameItem ItemDirectory::CreateEmptyItem(System.String)",
+    "before": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "call",
+        "operand": "GameItem ItemDirectory::CreateEmptyItem(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "index": 20,
+    "callee": "GameItem GameItem::SetName(System.String)",
+    "before": [
+      {
+        "index": 9,
+        "offset": 19,
+        "opcode": "call",
+        "operand": "System.Void RedLightDistrict.TalentEquipment::EnsureIcon(System.String)"
+      },
+      {
+        "index": 10,
+        "offset": 24,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 11,
+        "offset": 25,
+        "opcode": "ldstr",
+        "operand": ""
+      },
+      {
+        "index": 12,
+        "offset": 30,
+        "opcode": "ldarg.s",
+        "operand": "spriteKey"
+      },
+      {
+        "index": 13,
+        "offset": 32,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetSprite(System.String,System.String)"
+      },
+      {
+        "index": 14,
+        "offset": 37,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 15,
+        "offset": 38,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 39,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 40,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 18,
+        "offset": 45,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 46,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 47,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "index": 24,
+    "callee": "System.Void GameItem::set_shortDescription(System.String)",
+    "before": [
+      {
+        "index": 13,
+        "offset": 32,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetSprite(System.String,System.String)"
+      },
+      {
+        "index": 14,
+        "offset": 37,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 15,
+        "offset": 38,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 16,
+        "offset": 39,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 40,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 18,
+        "offset": 45,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 46,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 47,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "index": 21,
+        "offset": 52,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 53,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 23,
+        "offset": 54,
+        "opcode": "ldarg.2",
+        "operand": ""
+      },
+      {
+        "index": 24,
+        "offset": 55,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_shortDescription(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "index": 27,
+    "callee": "System.Void GameItem::set_longDescription(System.String)",
+    "before": [
+      {
+        "index": 16,
+        "offset": 39,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 17,
+        "offset": 40,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_identifier(System.String)"
+      },
+      {
+        "index": 18,
+        "offset": 45,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 19,
+        "offset": 46,
+        "opcode": "ldarg.1",
+        "operand": ""
+      },
+      {
+        "index": 20,
+        "offset": 47,
+        "opcode": "callvirt",
+        "operand": "GameItem GameItem::SetName(System.String)"
+      },
+      {
+        "index": 21,
+        "offset": 52,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 22,
+        "offset": 53,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 23,
+        "offset": 54,
+        "opcode": "ldarg.2",
+        "operand": ""
+      },
+      {
+        "index": 24,
+        "offset": 55,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_shortDescription(System.String)"
+      },
+      {
+        "index": 25,
+        "offset": 60,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 26,
+        "offset": 61,
+        "opcode": "ldarg.2",
+        "operand": ""
+      },
+      {
+        "index": 27,
+        "offset": 62,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_longDescription(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+    "index": 11,
+    "callee": "System.Void GameItem::set_longDescription(System.String)",
+    "before": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "call",
+        "operand": "RedLightDistrict.TalentData RedLightDistrict.TalentSystem::ResolveOwnerData(GameItem)"
+      },
+      {
+        "index": 2,
+        "offset": 6,
+        "opcode": "stloc.0",
+        "operand": ""
+      },
+      {
+        "index": 3,
+        "offset": 7,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 4,
+        "offset": 8,
+        "opcode": "brtrue.s",
+        "operand": "@C"
+      },
+      {
+        "index": 5,
+        "offset": 10,
+        "opcode": "ldnull",
+        "operand": ""
+      },
+      {
+        "index": 6,
+        "offset": 11,
+        "opcode": "ret",
+        "operand": ""
+      },
+      {
+        "index": 7,
+        "offset": 12,
+        "opcode": "nop",
+        "operand": ""
+      },
+      {
+        "index": 8,
+        "offset": 13,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 9,
+        "offset": 14,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 10,
+        "offset": 15,
+        "opcode": "call",
+        "operand": "System.String RedLightDistrict.TalentSystem::BuildDescription(RedLightDistrict.TalentData)"
+      },
+      {
+        "index": 11,
+        "offset": 20,
+        "opcode": "callvirt",
+        "operand": "System.Void GameItem::set_longDescription(System.String)"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildPrisonTooltip(GameItem,RichText&)",
+    "index": 324,
+    "callee": "System.String GameItem::get_shortDescription()",
+    "before": [
+      {
+        "index": 313,
+        "offset": 716,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 314,
+        "offset": 717,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 315,
+        "offset": 718,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "index": 316,
+        "offset": 723,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 317,
+        "offset": 724,
+        "opcode": "leave.s",
+        "operand": "@2D9"
+      },
+      {
+        "index": 318,
+        "offset": 726,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 319,
+        "offset": 727,
+        "opcode": "leave.s",
+        "operand": "@2D9"
+      },
+      {
+        "index": 320,
+        "offset": 729,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 321,
+        "offset": 730,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::NextLine()"
+      },
+      {
+        "index": 322,
+        "offset": 735,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 323,
+        "offset": 736,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 324,
+        "offset": 737,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_shortDescription()"
+      }
+    ]
+  },
+  {
+    "method": "System.Void RedLightDistrict.TalentPanel::BuildSewingTooltip(GameItem,RichText&)",
+    "index": 161,
+    "callee": "System.String GameItem::get_shortDescription()",
+    "before": [
+      {
+        "index": 150,
+        "offset": 337,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 151,
+        "offset": 338,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 152,
+        "offset": 339,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 153,
+        "offset": 340,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 154,
+        "offset": 341,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 155,
+        "offset": 342,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "index": 156,
+        "offset": 347,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 157,
+        "offset": 348,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 158,
+        "offset": 349,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::NextLine()"
+      },
+      {
+        "index": 159,
+        "offset": 354,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 160,
+        "offset": 355,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 161,
+        "offset": 356,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_shortDescription()"
+      }
+    ]
+  },
+  {
+    "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildShowerTooltipBuilder(GameItem)",
+    "index": 118,
+    "callee": "System.String GameItem::get_shortDescription()",
+    "before": [
+      {
+        "index": 107,
+        "offset": 244,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 108,
+        "offset": 245,
+        "opcode": "ldc.i4.0",
+        "operand": ""
+      },
+      {
+        "index": 109,
+        "offset": 246,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 110,
+        "offset": 247,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 111,
+        "offset": 248,
+        "opcode": "ldc.i4.m1",
+        "operand": ""
+      },
+      {
+        "index": 112,
+        "offset": 249,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::AddLine(System.String,System.Boolean,RenderHandler/ColorPalette,System.Boolean,System.Boolean,System.Boolean,System.Boolean,RenderHandler/ColorPalette,RenderHandler/ColorPalette,RenderHandler/ColorPalette)"
+      },
+      {
+        "index": 113,
+        "offset": 254,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 114,
+        "offset": 255,
+        "opcode": "ldloc.0",
+        "operand": ""
+      },
+      {
+        "index": 115,
+        "offset": 256,
+        "opcode": "callvirt",
+        "operand": "RichTextBuilder RichTextBuilder::NextLine()"
+      },
+      {
+        "index": 116,
+        "offset": 261,
+        "opcode": "pop",
+        "operand": ""
+      },
+      {
+        "index": 117,
+        "offset": 262,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 118,
+        "offset": 263,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_shortDescription()"
+      }
+    ]
+  },
+  {
+    "method": "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)",
+    "index": 1,
+    "callee": "System.String GameItem::get_name()",
+    "before": [
+      {
+        "index": 0,
+        "offset": 0,
+        "opcode": "ldarg.0",
+        "operand": ""
+      },
+      {
+        "index": 1,
+        "offset": 1,
+        "opcode": "callvirt",
+        "operand": "System.String GameItem::get_name()"
+      }
+    ]
+  }
+]

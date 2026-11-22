@@ -1,0 +1,478 @@
+{
+  "typeList": [
+    {
+      "type": "RedLightDistrict.MbPortraitBank",
+      "methods": [
+        "System.Boolean RedLightDistrict.MbPortraitBank::TryPick(System.Collections.Generic.HashSet`1<System.String>,System.String&,System.String&,UnityEngine.Sprite&)",
+        "System.Boolean RedLightDistrict.MbPortraitBank::IsDeprecatedTemplate(System.String)",
+        "UnityEngine.Sprite RedLightDistrict.MbPortraitBank::Resolve(System.String)",
+        "UnityEngine.Sprite RedLightDistrict.MbPortraitBank::ResolveBlink(System.String)",
+        "System.Boolean RedLightDistrict.MbPortraitBank::TryGetStateBytes(System.String,System.String,System.Byte[]&)",
+        "System.Boolean RedLightDistrict.MbPortraitBank::TryGetSymbolTileBytes(System.String,System.String,System.Byte[]&)",
+        "System.Int32 RedLightDistrict.MbPortraitBank::get_BlinkCount()",
+        "System.Int32 RedLightDistrict.MbPortraitBank::get_Count()",
+        "System.Boolean RedLightDistrict.MbPortraitBank::TryGetAux(System.String,System.String,System.Byte[]&)",
+        "System.Boolean RedLightDistrict.MbPortraitBank::TryDecodePng(System.Byte[],UnityEngine.Texture2D&)",
+        "System.Void RedLightDistrict.MbPortraitBank::EnsureLoaded()",
+        "UnityEngine.Sprite RedLightDistrict.MbPortraitBank::GetOrCreate(System.String)",
+        "UnityEngine.Sprite RedLightDistrict.MbPortraitBank::Build(System.String,System.Byte[],System.Boolean)",
+        "System.String RedLightDistrict.MbPortraitBank::NameOf(System.String)",
+        "System.Void RedLightDistrict.MbPortraitBank::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.MbPortraitBank/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.MbPortraitBank/<>c::.cctor()",
+        "System.Void RedLightDistrict.MbPortraitBank/<>c::.ctor()",
+        "System.Single RedLightDistrict.MbPortraitBank/<>c::<EnsureLoaded>b__33_0(System.String)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.SewingMachine",
+      "methods": [
+        "System.Single RedLightDistrict.SewingMachine::get_ScanSec()",
+        "System.Void RedLightDistrict.SewingMachine::BoostRescan(System.Single)",
+        "System.Void RedLightDistrict.SewingMachine::RegisterToDirectory(ItemDirectory)",
+        "GameItem RedLightDistrict.SewingMachine::CreateMachineItem()",
+        "System.Boolean RedLightDistrict.SewingMachine::IsMachine(GameItem)",
+        "System.Boolean RedLightDistrict.SewingMachine::IsMachineId(System.String)",
+        "System.Boolean RedLightDistrict.SewingMachine::IsLiveMachineElement(GameItemElement)",
+        "System.Boolean RedLightDistrict.SewingMachine::IsMachineInnerInventory(GameInventory)",
+        "System.Boolean RedLightDistrict.SewingMachine::IsProductSlotTarget(GameItem)",
+        "System.Boolean RedLightDistrict.SewingMachine::IsProductInnerInventory(GameInventory)",
+        "GameInventory RedLightDistrict.SewingMachine::GetProductSlot(GameItem)",
+        "GameInventory RedLightDistrict.SewingMachine::ResolveProductInventory(MachineryPanel)",
+        "System.Void RedLightDistrict.SewingMachine::RegisterProductSlot(GameItem,GameInventory)",
+        "System.Boolean RedLightDistrict.SewingMachine::InsertProductToSlot(GameItem,GameItem)",
+        "GameInventory RedLightDistrict.SewingMachine::GetMachineInner(GameItem)",
+        "GameItem RedLightDistrict.SewingMachine::GetMachineOfInner(GameInventory)",
+        "System.Boolean RedLightDistrict.SewingMachine::CanWorkNow(RedLightDistrict.TalentData)",
+        "System.String RedLightDistrict.SewingMachine::RejectReason(RedLightDistrict.TalentData)",
+        "System.String RedLightDistrict.SewingMachine::InnerRejectReason(GameItem,GameInventory)",
+        "System.Int32 RedLightDistrict.SewingMachine::ReadProgress(GameItem)",
+        "System.Void RedLightDistrict.SewingMachine::StampProgress(GameItem,System.Int32)",
+        "System.Boolean RedLightDistrict.SewingMachine::HandleTalentDrop(GameItem,GameItem)",
+        "System.Int32 RedLightDistrict.SewingMachine::InnerTalentCount(GameInventory)",
+        "RedLightDistrict.TalentData RedLightDistrict.SewingMachine::GetInnerWorker(GameItem)",
+        "System.Void RedLightDistrict.SewingMachine::NightlyTick()",
+        "System.String RedLightDistrict.SewingMachine::ProduceClothing(GameItem)",
+        "System.Int32 RedLightDistrict.SewingMachine::UnlockedMachineCount()",
+        "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachines()",
+        "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachinesFresh()",
+        "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::GetAllMachines(System.Boolean)",
+        "System.Collections.Generic.List`1<GameItem> RedLightDistrict.SewingMachine::ScanMachines(System.Collections.Generic.List`1<GameItem>,System.Boolean)",
+        "System.Void RedLightDistrict.SewingMachine::AddMachine(System.Collections.Generic.List`1<GameItem>,GameItem,System.Collections.Generic.HashSet`1<System.String>)",
+        "System.Void RedLightDistrict.SewingMachine::ScanFallbackSources(EmporiumEntry,System.Collections.Generic.List`1<GameItem>,System.Collections.Generic.HashSet`1<System.String>)",
+        "System.Collections.Generic.HashSet`1<RedLightDistrict.TalentData> RedLightDistrict.SewingMachine::ScanMachines()",
+        "System.Boolean RedLightDistrict.SewingMachine::IsTalentItemInsideMachine(GameItem)",
+        "System.Collections.Generic.Dictionary`2<RedLightDistrict.TalentData,GameItem> RedLightDistrict.SewingMachine::ScanMachinesInCells()",
+        "System.Int32 RedLightDistrict.SewingMachine::CountPlayerOwnedMachines()",
+        "System.Int32 RedLightDistrict.SewingMachine::TotalMachineCount()",
+        "System.String RedLightDistrict.SewingMachine::IconDir()",
+        "System.Boolean RedLightDistrict.SewingMachine::TryResolveIcon(System.String,UnityEngine.Sprite&)",
+        "System.Void RedLightDistrict.SewingMachine::EnsureIcon()",
+        "System.Single RedLightDistrict.SewingMachine::get_GraceUntil()",
+        "System.Void RedLightDistrict.SewingMachine::RegisterDriver(RedLightDistrict.SewingMachineVfxDriver)",
+        "System.Void RedLightDistrict.SewingMachine::UnregisterDriver(RedLightDistrict.SewingMachineVfxDriver)",
+        "System.String RedLightDistrict.SewingMachine::RunKeyOf(System.String,System.Int32,System.Int32,System.Int32)",
+        "System.String RedLightDistrict.SewingMachine::IdleKeyOf(System.String,System.Int32)",
+        "System.Boolean RedLightDistrict.SewingMachine::TryParseMachineKey(System.String,GameItem&,System.Int32&,System.Int32&,System.Int32&)",
+        "System.String RedLightDistrict.SewingMachine::UidOf(GameItem)",
+        "System.Void RedLightDistrict.SewingMachine::RefreshUidMap()",
+        "System.Void RedLightDistrict.SewingMachine::RefreshUidMap(System.Collections.Generic.List`1<GameItem>)",
+        "System.Void RedLightDistrict.SewingMachine::MarkCacheUsed(System.String)",
+        "System.Void RedLightDistrict.SewingMachine::PruneCache(System.Collections.Generic.HashSet`1<System.String>)",
+        "System.Void RedLightDistrict.SewingMachine::PruneOrphans(System.Collections.Generic.HashSet`1<System.String>)",
+        "System.Void RedLightDistrict.SewingMachine::DestroyCached(System.String)",
+        "System.Void RedLightDistrict.SewingMachine::HardClearCache()",
+        "System.Void RedLightDistrict.SewingMachine::RestoreInnerShapeFor(GameItem)",
+        "System.Void RedLightDistrict.SewingMachine::RestoreInnerShape()",
+        "System.Void RedLightDistrict.SewingMachine::OnSceneChanged()",
+        "System.Void RedLightDistrict.SewingMachine::PostfixLoadGame()",
+        "System.Void RedLightDistrict.SewingMachine::TickVfx()",
+        "System.Void RedLightDistrict.SewingMachine::EnsureDrivers(System.Collections.Generic.List`1<GameItem>)",
+        "System.Void RedLightDistrict.SewingMachine::TryAttach(GameItem)",
+        "System.Void RedLightDistrict.SewingMachine::OnMachineCreated(GameItem)",
+        "UnityEngine.Sprite RedLightDistrict.SewingMachine::EnsureSpriteFor(System.String,System.Int32,System.Int32,System.Int32)",
+        "UnityEngine.Sprite RedLightDistrict.SewingMachine::GetRunSprite(System.String,System.Int32,System.Int32,System.Int32)",
+        "UnityEngine.Sprite RedLightDistrict.SewingMachine::MakeBobSprite(UnityEngine.Sprite,System.Int32)",
+        "UnityEngine.Sprite RedLightDistrict.SewingMachine::GetStoppedSprite(System.String,System.Int32)",
+        "System.Void RedLightDistrict.SewingMachine::DrawProgressDots(UnityEngine.Color32[],System.Int32,System.Int32,System.Int32)",
+        "System.Void RedLightDistrict.SewingMachine::DrawDisc(UnityEngine.Color32[],System.Int32,System.Int32,System.Single,System.Single,System.Single,UnityEngine.Color32)",
+        "System.Void RedLightDistrict.SewingMachine::EnsureRunBase()",
+        "System.Void RedLightDistrict.SewingMachine::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.SewingMachine/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.SewingMachine/<>c::.cctor()",
+        "System.Void RedLightDistrict.SewingMachine/<>c::.ctor()",
+        "GameItem RedLightDistrict.SewingMachine/<>c::<RegisterToDirectory>b__36_0()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.SewingMachine/<>c__DisplayClass54_0",
+      "methods": [
+        "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass54_0::.ctor()",
+        "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass54_0::<StampProgress>b__0(TagState)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.SewingMachine/<>c__DisplayClass69_0",
+      "methods": [
+        "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass69_0::.ctor()",
+        "System.Void RedLightDistrict.SewingMachine/<>c__DisplayClass69_0::<ScanMachinesInCells>b__0(GameItem)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.SewingMachineVfxDriver",
+      "methods": [
+        "System.Void RedLightDistrict.SewingMachineVfxDriver::OnEnable()",
+        "System.Void RedLightDistrict.SewingMachineVfxDriver::OnDisable()",
+        "System.Void RedLightDistrict.SewingMachineVfxDriver::Invalidate()",
+        "System.Void RedLightDistrict.SewingMachineVfxDriver::Update()",
+        "System.Void RedLightDistrict.SewingMachineVfxDriver::.ctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment",
+      "methods": [
+        "RedLightDistrict.TalentEquipment/EquipDef[] RedLightDistrict.TalentEquipment::get_SewableDefs()",
+        "System.Int32 RedLightDistrict.TalentEquipment::AppliedBonus(RedLightDistrict.TalentData,RedLightDistrict.TalentEquipment/AppearanceStat)",
+        "System.String RedLightDistrict.TalentEquipment::ClothingDescription(RedLightDistrict.TalentEquipment/EquipDef)",
+        "System.String RedLightDistrict.TalentEquipment::BonusSummary(RedLightDistrict.TalentEquipment/EquipDef)",
+        "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::Find(System.String)",
+        "RedLightDistrict.TalentEquipment/EquipDef RedLightDistrict.TalentEquipment::FindBySpriteKey(System.String)",
+        "System.Int32 RedLightDistrict.TalentEquipment::DurabilityMaxOf(System.String)",
+        "System.Void RedLightDistrict.TalentEquipment::DressWith(RedLightDistrict.TalentData,System.Random)",
+        "System.Int32 RedLightDistrict.TalentEquipment::BonusOf(System.String,RedLightDistrict.TalentEquipment/AppearanceStat)",
+        "System.String RedLightDistrict.TalentEquipment::IconDir()",
+        "System.Void RedLightDistrict.TalentEquipment::RegisterToDirectory(ItemDirectory)",
+        "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+        "System.Boolean RedLightDistrict.TalentEquipment::IsEquipment(System.String)",
+        "System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)",
+        "System.Boolean RedLightDistrict.TalentEquipment::HandleEquipDrag(GameItem,GameItem,System.Boolean)",
+        "System.Boolean RedLightDistrict.TalentEquipment::UnequipToBackpack(RedLightDistrict.TalentData,System.String)",
+        "System.Boolean RedLightDistrict.TalentEquipment::GiveToBackpack(System.String,System.Int32,System.String)",
+        "System.Void RedLightDistrict.TalentEquipment::SetItemDurabilityTag(GameItem,System.Int32)",
+        "System.Int32 RedLightDistrict.TalentEquipment::ReadItemDurability(GameItem)",
+        "System.Int32 RedLightDistrict.TalentEquipment::GetTagInt(GameItem,System.String)",
+        "System.Int32 RedLightDistrict.TalentEquipment::GetItemDurability(GameItem)",
+        "System.Int64 RedLightDistrict.TalentEquipment::PriceWithDurability(GameItem,System.Int64)",
+        "System.Int32 RedLightDistrict.TalentEquipment::CountEquipmentItemsInWorld(System.String)",
+        "System.String RedLightDistrict.TalentEquipment::NewClothingUid()",
+        "System.String RedLightDistrict.TalentEquipment::ReadClothingUid(GameItem)",
+        "System.Void RedLightDistrict.TalentEquipment::StampClothingUid(GameItem,System.String)",
+        "System.Void RedLightDistrict.TalentEquipment::EnsureClothingUidTagRegistered()",
+        "System.Int32 RedLightDistrict.TalentEquipment::CountClothingByUidInWorld(System.String)",
+        "System.Void RedLightDistrict.TalentEquipment::BreakClothing(RedLightDistrict.TalentData)",
+        "System.Boolean RedLightDistrict.TalentEquipment::ReturnOnRemoval(RedLightDistrict.TalentData)",
+        "System.Void RedLightDistrict.TalentEquipment::ApplyEquipStatBonus(RedLightDistrict.TalentData)",
+        "System.Void RedLightDistrict.TalentEquipment::RemoveEquipStatBonus(RedLightDistrict.TalentData)",
+        "System.Void RedLightDistrict.TalentEquipment::SyncEquipStatBonus(RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentEquipment::BaseAppearance(RedLightDistrict.TalentData,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+        "System.Int32 RedLightDistrict.TalentEquipment::GrowAppearanceBase(RedLightDistrict.TalentData,System.Int32,System.Int32,RedLightDistrict.TalentEquipment/AppearanceStat)",
+        "System.String RedLightDistrict.TalentEquipment::GetEquipBonusSuffix(RedLightDistrict.TalentData,RedLightDistrict.TalentEquipment/AppearanceStat)",
+        "System.Boolean RedLightDistrict.TalentEquipment::TryResolveIcon(System.String,UnityEngine.Sprite&)",
+        "System.Byte[] RedLightDistrict.TalentEquipment::LoadIconBytes(RedLightDistrict.TalentEquipment/EquipDef)",
+        "System.Void RedLightDistrict.TalentEquipment::EnsureIcon(System.String)",
+        "System.Void RedLightDistrict.TalentEquipment::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment/AppearanceStat",
+      "methods": []
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment/EquipDef",
+      "methods": [
+        "System.Void RedLightDistrict.TalentEquipment/EquipDef::.ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Int64,System.Int32,System.Int32,System.Int32,System.Int32)",
+        "System.Int32 RedLightDistrict.TalentEquipment/EquipDef::BonusFor(RedLightDistrict.TalentEquipment/AppearanceStat)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0::.ctor()",
+        "GameItem RedLightDistrict.TalentEquipment/<>c__DisplayClass31_0::<RegisterToDirectory>b__0()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0::.ctor()",
+        "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass38_0::<SetItemDurabilityTag>b__0(TagState)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0::.ctor()",
+        "System.Void RedLightDistrict.TalentEquipment/<>c__DisplayClass46_0::<StampClothingUid>b__0(TagState)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentOutfitPortrait",
+      "methods": [
+        "System.Void RedLightDistrict.TalentOutfitPortrait::Invalidate()",
+        "System.String RedLightDistrict.TalentOutfitPortrait::BuildKey(System.String,System.String)",
+        "UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::Resolve(UnityEngine.Sprite,System.String,System.String)",
+        "System.String RedLightDistrict.TalentOutfitPortrait::HairTagOf(System.String)",
+        "System.String RedLightDistrict.TalentOutfitPortrait::OutfitTagOf(System.String)",
+        "UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::LoadFullSprite(System.String,UnityEngine.Sprite)",
+        "UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::ResolveHd(UnityEngine.Sprite,System.String,System.String)",
+        "UnityEngine.Sprite RedLightDistrict.TalentOutfitPortrait::LoadFullSpriteHd(System.String,UnityEngine.Sprite)",
+        "System.Void RedLightDistrict.TalentOutfitPortrait::AddLayer(System.Collections.Generic.List`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Byte[]>>,System.String,System.String)",
+        "System.String RedLightDistrict.TalentOutfitPortrait::Root()",
+        "System.String RedLightDistrict.TalentOutfitPortrait::Safe(System.String)",
+        "System.Void RedLightDistrict.TalentOutfitPortrait::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentOutfitPortrait/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.TalentOutfitPortrait/<>c::.cctor()",
+        "System.Void RedLightDistrict.TalentOutfitPortrait/<>c::.ctor()",
+        "System.Boolean RedLightDistrict.TalentOutfitPortrait/<>c::<Safe>b__21_0(System.Char)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel",
+      "methods": [
+        "System.Boolean RedLightDistrict.TalentPanel::get_IsOpen()",
+        "System.Void RedLightDistrict.TalentPanel::CloseSelf()",
+        "System.Void RedLightDistrict.TalentPanel::PrefixDoubleClickAction(GameItem,UnityEngine.Vector2)",
+        "System.Void RedLightDistrict.TalentPanel::PostfixDoubleClickAction(GameItem,UnityEngine.Vector2)",
+        "System.Boolean RedLightDistrict.TalentPanel::PrefixItemContextPress(System.Collections.Generic.ISet`1<UnityEngine.KeyCode>)",
+        "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)",
+        "System.Void RedLightDistrict.TalentPanel::OnUnequipClicked(RedLightDistrict.TalentData,GameItem,System.String)",
+        "System.Void RedLightDistrict.TalentPanel::OnUnequipAccessoryClicked(RedLightDistrict.TalentData,GameItem,System.String)",
+        "System.Void RedLightDistrict.TalentPanel::AddContraceptionToggle(CustomUIBuilder,RedLightDistrict.TalentData,GameItem,System.Boolean)",
+        "System.Void RedLightDistrict.TalentPanel::ApplyContraceptionStyle(CustomUIElement)",
+        "System.Void RedLightDistrict.TalentPanel::OnContraceptionToggled(RedLightDistrict.TalentData,GameItem)",
+        "System.Void RedLightDistrict.TalentPanel::AddReleaseControl(CustomUIBuilder,RedLightDistrict.TalentData,GameItem,System.Boolean)",
+        "System.Void RedLightDistrict.TalentPanel::ApplyReleaseStyle(CustomUIElement)",
+        "System.Void RedLightDistrict.TalentPanel::OnReleaseClicked(RedLightDistrict.TalentData,GameItem)",
+        "System.Void RedLightDistrict.TalentPanel::DoRelease(RedLightDistrict.TalentData,GameItem)",
+        "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+        "System.Void RedLightDistrict.TalentPanel::PostfixGetTooltip(GameItemElement,RichText&)",
+        "System.Void RedLightDistrict.TalentPanel::BuildPrisonTooltip(GameItem,RichText&)",
+        "System.Void RedLightDistrict.TalentPanel::BuildSewingTooltip(GameItem,RichText&)",
+        "RichTextBuilder RedLightDistrict.TalentPanel::BuildShowerTooltipBuilder(GameItem)",
+        "System.Void RedLightDistrict.TalentPanel::BuildShowerTooltip(GameItem,RichTextBuilder&)",
+        "System.Void RedLightDistrict.TalentPanel::BuildShowerTooltip(GameItem,RichText&)",
+        "System.Void RedLightDistrict.TalentPanel::BuildEquipmentTooltip(GameItem,RichText&)",
+        "System.Void RedLightDistrict.TalentPanel::BuildAccessoryTooltip(GameItem,RichText&)",
+        "System.String RedLightDistrict.TalentPanel::GetAgeText(RedLightDistrict.TalentData)",
+        "System.String RedLightDistrict.TalentPanel::BuildTagText(RedLightDistrict.TalentData)",
+        "RenderHandler/ColorPalette RedLightDistrict.TalentPanel::TraitColor(RedLightDistrict.TalentData,System.String,System.Boolean)",
+        "RenderHandler/ColorPalette RedLightDistrict.TalentPanel::DurabilityColor(System.Int32,System.Int32)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c::.cctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c::<ShowPanel>b__9_0()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass12_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass12_0::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass12_0::<AddContraceptionToggle>b__0()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass15_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass15_0::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass15_0::<AddReleaseControl>b__0()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_0::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_0::<ShowPanel>b__1()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_1",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_1::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_1::<ShowPanel>b__2()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPanel/<>c__DisplayClass9_2",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_2::.ctor()",
+        "System.Void RedLightDistrict.TalentPanel/<>c__DisplayClass9_2::<ShowPanel>b__3()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPortrait",
+      "methods": [
+        "System.String RedLightDistrict.TalentPortrait::PersonDir()",
+        "System.Void RedLightDistrict.TalentPortrait::EnsureDir()",
+        "System.String[] RedLightDistrict.TalentPortrait::GetAvailable()",
+        "System.Boolean RedLightDistrict.TalentPortrait::TryPickRandom(System.Collections.Generic.HashSet`1<System.String>,System.String&,System.String&,UnityEngine.Sprite&)",
+        "UnityEngine.Sprite RedLightDistrict.TalentPortrait::Resolve(System.String)",
+        "System.Boolean RedLightDistrict.TalentPortrait::TryResolve(System.String,UnityEngine.Sprite&)",
+        "UnityEngine.Sprite RedLightDistrict.TalentPortrait::GetOrCreate(System.String,System.String,System.String)",
+        "System.String RedLightDistrict.TalentPortrait::FindPersonFile(System.String)",
+        "UnityEngine.Sprite RedLightDistrict.TalentPortrait::Generate(System.String,System.String)",
+        "UnityEngine.Texture2D RedLightDistrict.TalentPortrait::ResampleTo(UnityEngine.Texture2D,System.Int32,System.Int32)",
+        "System.Byte RedLightDistrict.TalentPortrait::ClampByte(System.Single)",
+        "System.Void RedLightDistrict.TalentPortrait::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPortrait/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPortrait/<>c::.cctor()",
+        "System.Void RedLightDistrict.TalentPortrait/<>c::.ctor()",
+        "System.Boolean RedLightDistrict.TalentPortrait/<>c::<PersonDir>b__5_0(System.String)",
+        "System.Single RedLightDistrict.TalentPortrait/<>c::<TryPickRandom>b__8_1(System.String)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPortrait/<>c__DisplayClass8_0",
+      "methods": [
+        "System.Void RedLightDistrict.TalentPortrait/<>c__DisplayClass8_0::.ctor()",
+        "System.Boolean RedLightDistrict.TalentPortrait/<>c__DisplayClass8_0::<TryPickRandom>b__0(System.String)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentPortraitTemplate",
+      "methods": [
+        "System.Boolean RedLightDistrict.TalentPortraitTemplate::IsDeprecated(System.String)",
+        "System.Boolean RedLightDistrict.TalentPortraitTemplate::IsDeprecatedPortraitKey(System.String)",
+        "System.String RedLightDistrict.TalentPortraitTemplate::Normalize(System.String)",
+        "System.String RedLightDistrict.TalentPortraitTemplate::FromLegacyBankKey(System.String)",
+        "System.Boolean RedLightDistrict.TalentPortraitTemplate::Ensure(RedLightDistrict.TalentData)",
+        "System.Boolean RedLightDistrict.TalentPortraitTemplate::IsKnown(System.String)",
+        "System.Void RedLightDistrict.TalentPortraitTemplate::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentScenarioMaid",
+      "methods": [
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::get_IsSelected()",
+        "System.String RedLightDistrict.TalentScenarioMaid::get_DisplayName()",
+        "System.String RedLightDistrict.TalentScenarioMaid::get_Description()",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::HasSaveMarker(PlayerStore)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::ResetSelection()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::ResetGrant()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::TryGrantNow()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::OnUpdate()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::EnsureMaidSoon(System.Int32)",
+        "System.Collections.IEnumerator RedLightDistrict.TalentScenarioMaid::EnsureMaidSoonCo(System.Int32)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::EnsureDefaultOutfit()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::DoGrant(EmporiumEntry)",
+        "GameItem RedLightDistrict.TalentScenarioMaid::CreateGrantItem(System.String)",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::PlaceIntoBackstock(GameItem,EmporiumEntry)",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::TryPlaceInto(GameGridInventory,GameItem,EmporiumEntry)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::EnsureMaidResident()",
+        "RedLightDistrict.TalentData RedLightDistrict.TalentScenarioMaid::FindMaidData()",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::IsInRenderedContainer(GameItem,EmporiumEntry)",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::ContainerHas(System.Object,GameItem)",
+        "System.String RedLightDistrict.TalentScenarioMaid::WhereIsItem(GameItem,EmporiumEntry)",
+        "System.Object RedLightDistrict.TalentScenarioMaid::ContainerByName(System.String,EmporiumEntry)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::SafeDestroy(GameItem)",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid::InRenderList(GameItem,EmporiumEntry,System.Int32&)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::TickMaidVerify(RedLightDistrict.TalentData,EmporiumEntry)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixOnNewGameClick(MainMenuUIController)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PrefixOnNewGameClick(MainMenuUIController)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::EnsureScenarioIcon()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixOnScenarioContinue(MainMenuUIController,StartingScenario)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::RegisterScenario()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PrefixStartNewGame()",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixLoadGame(PlayerStore)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PrefixHandleInitialItem(System.Boolean&)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixHandleInitialItem(System.Boolean)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixGenerateData(SavePreviewData&)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::PostfixGetStartDisplayName(NewGameData/StartType,System.String,System.String&)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::Apply(HarmonyLib.Harmony)",
+        "System.Void RedLightDistrict.TalentScenarioMaid::.cctor()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentScenarioMaid/<>c",
+      "methods": [
+        "System.Void RedLightDistrict.TalentScenarioMaid/<>c::.cctor()",
+        "System.Void RedLightDistrict.TalentScenarioMaid/<>c::.ctor()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_0()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_1()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_2()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_3()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_4()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_5()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_6()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_7()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_8()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_9()",
+        "System.Void RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_10()",
+        "System.String RedLightDistrict.TalentScenarioMaid/<>c::<RegisterScenario>b__51_11()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26",
+      "methods": [
+        "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::.ctor(System.Int32)",
+        "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.IDisposable.Dispose()",
+        "System.Boolean RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::MoveNext()",
+        "System.Object RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.Generic.IEnumerator<System.Object>.get_Current()",
+        "System.Void RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.IEnumerator.Reset()",
+        "System.Object RedLightDistrict.TalentScenarioMaid/<EnsureMaidSoonCo>d__26::System.Collections.IEnumerator.get_Current()"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TalentTraits",
+      "methods": [
+        "System.Void RedLightDistrict.TalentTraits::OnNamedCleared(RedLightDistrict.TalentData,System.Int32)",
+        "System.Void RedLightDistrict.TalentTraits::NightlyTraitEffects(System.Int32)",
+        "System.Boolean RedLightDistrict.TalentTraits::ImmuneToEscape(RedLightDistrict.TalentData)",
+        "System.Boolean RedLightDistrict.TalentTraits::ImmuneToObedienceRefusal(RedLightDistrict.TalentData)",
+        "System.Boolean RedLightDistrict.TalentTraits::ImmuneToLowObedience(RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentTraits::GainAffection(RedLightDistrict.TalentData,System.Int32)",
+        "System.Int32 RedLightDistrict.TalentTraits::SkillGain(RedLightDistrict.TalentData,System.Int32)",
+        "System.Int32 RedLightDistrict.TalentTraits::ObedienceGain(RedLightDistrict.TalentData,System.Int32)",
+        "System.Boolean RedLightDistrict.TalentTraits::ImmuneToAbuse(RedLightDistrict.TalentData)",
+        "System.Double RedLightDistrict.TalentTraits::PatronPriceMultiplier(RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodDrinkCost(System.Int32,RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentTraits::NightlyFoodCost(RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentTraits::NightlyDrinkCost(RedLightDistrict.TalentData)",
+        "System.Int32 RedLightDistrict.TalentTraits::RefusalChanceMultiplier(RedLightDistrict.TalentData)",
+        "System.Double RedLightDistrict.TalentTraits::ReturningChanceBonus(RedLightDistrict.TalentData)",
+        "System.Double RedLightDistrict.TalentTraits::DailyReturnBonus(System.Boolean)",
+        "System.Boolean RedLightDistrict.TalentTraits::AnyOwnedTalentHasTrait(System.String)",
+        "System.Void RedLightDistrict.TalentTraits::ApplyNightlyStatTraits(RedLightDistrict.TalentData)",
+        "GameItem RedLightDistrict.TalentTraits::TryGiveCheapItem()",
+        "System.Collections.Generic.List`1<System.String> RedLightDistrict.TalentTraits::GetCheapItemIds()",
+        "System.Boolean RedLightDistrict.TalentTraits::IsPickableId(System.String)",
+        "System.String RedLightDistrict.TalentTraits::SafeName(GameItem)"
+      ]
+    },
+    {
+      "type": "RedLightDistrict.TraffickerPortrait",
+      "methods": [
+        "UnityEngine.Sprite RedLightDistrict.TraffickerPortrait::GetSprite()",
+        "System.Void RedLightDistrict.TraffickerPortrait::WarmUp()",
+        "System.Boolean RedLightDistrict.TraffickerPortrait::TryResolve(System.String,UnityEngine.Sprite&)",
+        "System.Void RedLightDistrict.TraffickerPortrait::EnsureRegistered(UnityEngine.Sprite)",
+        "System.Void RedLightDistrict.TraffickerPortrait::EnsureSprite()",
+        "System.Byte[] RedLightDistrict.TraffickerPortrait::LoadEmbeddedPng()"
+      ]
+    }
+  ],
+  "focusedMethods": 315,
+  "literalSites": 14,
+  "outputSinkCount": 13,
+  "localizationCallCount": 660,
+  "localizedHelpers": []
+}
