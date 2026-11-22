@@ -1,0 +1,22 @@
+{
+  "originalSha256": "a224760a2ae651e07adb467014dbb0053d1c6b8942879644b2afbad614237f25",
+  "patchedSha256": "86ad3f461f263dd04199edf8dad7e8c3f2e017b0c8a013462eef8034733bda47",
+  "originalMethods": 5479,
+  "addedMethods": 3,
+  "modifiedMethods": [
+    "GameItem RedLightDistrict.TalentAccessory::CreateItem(System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "GameItem RedLightDistrict.TalentEquipment::CreateItem(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.Int64)",
+    "System.Boolean RedLightDistrict.TalentPatches::TryOwnTooltipLines(System.String,System.Collections.Generic.List\u00601\u003CSystem.String\u003E\u0026)",
+    "System.String RedLightDistrict.TalentAccessory::DisplayName(System.String)",
+    "System.String RedLightDistrict.TalentEquipment::DisplayName(System.String)",
+    "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)"
+  ],
+  "equipment": 15,
+  "accessories": 4,
+  "traits": 22,
+  "resourcesVerified": 1617,
+  "unmodifiedMethodsVerified": 5473,
+  "allOutputMethodsVerified": true,
+  "runtimeTested": false,
+  "note": "Existing saved clothing item names are not retrospectively rewritten"
+}
