@@ -1,0 +1,127 @@
+name: Mentor name and handbook localization final audit
+on:
+  push:
+    paths: ['.github/workflows/tentacle-mentor-final-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  final:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/[[]SRW-STM]MentorToSarrona
+            probably-stolen/local-mods/TentacleMod/[[]SRW-STM]MentorToSarrona/manifest.xml
+      - name: Apply four verified replacement results
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          MOD="$ROOT/[SRW-STM]MentorToSarrona"
+          mkdir -p "$ROOT/번역대조표"
+          dotnet new console --framework net8.0 -o /tmp/mentor --force
+          dotnet add /tmp/mentor/mentor.csproj package dnlib --version 4.5.0
+          cat >/tmp/mentor/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.IO;
+          using System.Collections.Generic;
+          using System.Security.Cryptography;
+          using System.Text.Json;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            record Site(string Method,uint Offset,string Search,string Before,string After);
+            static void Need(bool b,string s){if(!b)throw new Exception(s);}
+            static string Hash(string p)=>Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(p))).ToLowerInvariant();
+            static string Op(object? o,Dictionary<Instruction,int> ix)=>o switch{null=>"",Instruction i=>"@"+ix[i],IList<Instruction> a=>string.Join(",",a.Select(i=>"@"+ix[i])),_=>o.ToString()??""};
+            static bool Cjk(string s)=>s.Any(c=>c>='\u3400'&&c<='\u9fff');
+            static void Main(string[] args){
+              string p=args[0],report=args[1],inputHash=Hash(p);
+              var specs=new[]{new Site("RenameText",0x000B,"导师笔记","塞萝娜的笔记","세로나의 노트"),new Site("RenameText",0x001A,"导师手册","塞萝娜的手册","세로나의 안내서"),new Site("RenameText",0x0029,"导师","塞萝娜","세로나"),new Site("RewriteLocalizedText",0x002C,"他","她","그녀")};
+              using var before=ModuleDefMD.Load(p);using var edit=ModuleDefMD.Load(p);
+              var a=before.GetTypes().SelectMany(t=>t.Methods).ToDictionary(m=>m.FullName);
+              var mds=edit.GetTypes().SelectMany(t=>t.Methods).ToArray();
+              var approved=new Dictionary<string,Site[]>();
+              foreach(var s in specs){
+                var m=mds.Single(m=>m.DeclaringType.FullName=="MentorToSarrona.ModEntry"&&m.Name==s.Method);
+                var il=m.Body.Instructions;
+                var i=il.Single(x=>x.Offset==s.Offset);int n=il.IndexOf(i);
+                Need(i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,s.Before),"Output anchor "+s);
+                Need(n>0&&il[n-1].OpCode==OpCodes.Ldstr&&Equals(il[n-1].Operand,s.Search),"Search anchor "+s);
+                Need(n+1<il.Count&&(il[n+1].OpCode==OpCodes.Call||il[n+1].OpCode==OpCodes.Callvirt)&&il[n+1].Operand?.ToString()=="System.String System.String::Replace(System.String,System.String)","Replace sink "+s);
+                i.Operand=s.After;
+                approved[m.FullName]=specs.Where(x=>x.Method==s.Method).ToArray();
+              }
+              string tmp=p+".new";edit.Write(tmp);using var output=ModuleDefMD.Load(tmp);
+              var b=output.GetTypes().SelectMany(t=>t.Methods).ToDictionary(m=>m.FullName);
+              Need(a.Keys.ToHashSet().SetEquals(b.Keys),"Method identities");
+              int compared=0,changes=0;
+              foreach(var kv in a){
+                var x=kv.Value;var y=b[kv.Key];Need(x.HasBody==y.HasBody,"Body");if(!x.HasBody)continue;
+                var xi=x.Body.Instructions;var yi=y.Body.Instructions;Need(xi.Count==yi.Count,"Instruction count");
+                var xm=xi.Select((v,k)=>(v,k)).ToDictionary(z=>z.v,z=>z.k);
+                var ym=yi.Select((v,k)=>(v,k)).ToDictionary(z=>z.v,z=>z.k);
+                for(int n=0;n<xi.Count;n++){
+                  Need(xi[n].OpCode==yi[n].OpCode,"Opcode");
+                  var s=approved.GetValueOrDefault(kv.Key)?.SingleOrDefault(s=>s.Offset==xi[n].Offset);
+                  if(s!=null){Need(Equals(xi[n].Operand,s.Before)&&Equals(yi[n].Operand,s.After),"Approved output");changes++;}
+                  else Need(Op(xi[n].Operand,xm)==Op(yi[n].Operand,ym),"Unexpected operand "+kv.Key+" "+n);
+                }
+                Need(x.Body.Variables.Select(v=>v.Type.FullName).SequenceEqual(y.Body.Variables.Select(v=>v.Type.FullName)),"Locals");
+                string EH(ExceptionHandler e,Dictionary<Instruction,int> map){string I(Instruction? i)=>i==null?"-":map[i].ToString();return string.Join("|",e.HandlerType,I(e.TryStart),I(e.TryEnd),I(e.HandlerStart),I(e.HandlerEnd),I(e.FilterStart),e.CatchType?.FullName??"");}
+                Need(x.Body.ExceptionHandlers.Select(e=>EH(e,xm)).SequenceEqual(y.Body.ExceptionHandlers.Select(e=>EH(e,ym))),"Exception handlers");
+                compared++;
+              }
+              Need(changes==4,"Four exact changes");
+              var remaining=b.Values.Where(m=>m.HasBody).SelectMany(m=>m.Body.Instructions.Where(i=>i.OpCode==OpCodes.Ldstr&&i.Operand is string s&&Cjk(s)).Select(i=>new{method=m.FullName,offset=i.Offset,value=(string)i.Operand})).ToArray();
+              Need(remaining.Length==4&&remaining.All(x=>specs.Any(s=>s.Search==x.value)),"Remaining Chinese search values only");
+              var oldRes=before.Resources.OfType<EmbeddedResource>().ToDictionary(e=>e.Name.ToString(),e=>Convert.ToHexString(SHA256.HashData(e.CreateReader().ToArray())));
+              var newRes=output.Resources.OfType<EmbeddedResource>().ToDictionary(e=>e.Name.ToString(),e=>Convert.ToHexString(SHA256.HashData(e.CreateReader().ToArray())));
+              Need(before.Resources.Count==output.Resources.Count&&oldRes.Count==newRes.Count&&oldRes.All(kv=>newRes.GetValueOrDefault(kv.Key)==kv.Value),"Resources");
+              File.Move(tmp,p,true);
+              File.WriteAllText(report,JsonSerializer.Serialize(new{inputHash,finalDllSHA256=Hash(p),methodsCompared=compared,changes,protectedSearchSites=remaining,sitePlan=specs,resourceCount=oldRes.Count,actualGameRuntimeTest=false,scope="Existing replacement output arguments only; search operands and other IL preserved"},new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping})+"\n");
+            }
+          }
+          CS
+          dotnet run --project /tmp/mentor/mentor.csproj -- "$MOD/MentorToSarrona.dll" "$ROOT/번역대조표/Mentor_FINAL_RESULT_20261122.json"
+      - name: Verify overlay archive and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,hashlib,xml.etree.ElementTree as ET
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          mod=root/'[SRW-STM]MentorToSarrona'
+          original=Path('probably-stolen/local-mods/TentacleMod/[SRW-STM]MentorToSarrona/manifest.xml')
+          p=root/'번역대조표/Mentor_FINAL_RESULT_20261122.json'
+          j=json.loads(p.read_text())
+          sha=lambda x:hashlib.sha256(x.read_bytes()).hexdigest()
+          assert sha(mod/'MentorToSarrona.dll')==j['finalDllSHA256']
+          a,b=ET.parse(original).getroot(),ET.parse(mod/'manifest.xml').getroot()
+          for k in ('ID','Author','ModVersion','GameVersions','Prerequisites','Assemblies','Capabilities'):
+              assert ET.tostring(a.find(k))==ET.tostring(b.find(k)),k
+          readme=mod/'README_ko.txt'
+          readme.write_text('MentorToSarrona v1.2.0 한국어 수정본\n원본 모드의 DLL과 manifest.xml을 덮어쓰고 기존 Textures 및 나머지 파일을 유지하세요.\n일치하는 검색값 4곳은 보존하고 결과값만 변경했습니다. 게임 실행 미검증.\n',encoding='utf-8')
+          out=root/'ProbablyStolen_MentorToSarrona_v1.2.0_KO_Final_20261122.zip'
+          files=['MentorToSarrona.dll','manifest.xml','README_ko.txt']
+          with ZipFile(out,'w',ZIP_DEFLATED) as z:
+              for f in files:z.write(mod/f,mod.name+'/'+f)
+              z.write(p,'STATIC_AUDIT.json')
+          with ZipFile(out) as z:
+              assert z.testzip() is None and len(z.namelist())==4
+              for f in files:assert hashlib.sha256(z.read(mod.name+'/'+f)).hexdigest()==sha(mod/f)
+          j['archive']={'path':out.name,'sha256':sha(out),'files':4,'crc':'pass','matchesAllOverlayFiles':True}
+          p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          git add --sparse -- ":(literal)$ROOT/[SRW-STM]MentorToSarrona/MentorToSarrona.dll" ":(literal)$ROOT/[SRW-STM]MentorToSarrona/README_ko.txt" "$ROOT/번역대조표/Mentor_FINAL_RESULT_20261122.json" "$ROOT/ProbablyStolen_MentorToSarrona_v1.2.0_KO_Final_20261122.zip"
+          git diff --cached --quiet || (git commit -m 'Finalize Mentor names and handbook translation with exact IL validation' && git push origin main)
