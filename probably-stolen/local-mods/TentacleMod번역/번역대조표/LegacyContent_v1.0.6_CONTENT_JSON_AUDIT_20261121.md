@@ -18,7 +18,7 @@
 
 - The item names, UI tooltips, narrative descriptions, per-faction and per-stage descriptions, perk text, night report, cloned character name patterns, category labels and English/Chinese manifest fields were individually translated where indicated above.
 - All 170 changed dialogue lines underwent exact named-format-placeholder comparison (including `{0}`), with **zero placeholder mismatches**.
-- Label `bodies/sister` displays `로리` in Korean; its operational ID `sister` is untouched.
+- The five `labels.bodies[].display` values follow the agreed two-Hangul-syllable rule: `sister`=`로리`, `mature_sister`=`누님`, `wife`=`아내`, `mature_woman`=`숙녀`, `beauty`=`누나`. The operational IDs are unchanged. (`mature_sister`: `성숙한 여성`→`누님`; `wife`: `유부녀`→`아내`; corrected 2026-11-22.)
 - 28 remaining original dialogue lines are explicitly counted as untranslated and **must not** be presented as complete. The 5 adult night-scene lines were separately translated, with exact `{name}`, `{zone}`, `{sensitivity}` placeholder comparison.
 - `addressWeights` body IDs and preference weights are not display prose; the original values are preserved and are not counted in the translation numerator.
 
