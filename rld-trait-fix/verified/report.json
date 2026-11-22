@@ -1,0 +1,17 @@
+{
+  "inputSha256": "77241d011e46a4bb6fcbb3a06edfae70c30aea33f26c5a698adcb4dc1e51cdde",
+  "outputSha256": "a381faa30d8dcb0ae97e1bca0a64ae528b0eae3b23b44b34bf7b5fd0898ebd8f",
+  "size": 153361920,
+  "methodsAdded": 0,
+  "methodsChanged": 1,
+  "methodsUnchanged": 5481,
+  "resourcesVerified": 1617,
+  "statusAlreadyCallsTraitName": true,
+  "tooltipNowCallsTraitName": true,
+  "keysMatched": 22,
+  "newHarmonyPatches": 0,
+  "storedTraitIdsUntouched": true,
+  "lockedTraitsKeepHiddenMarker": true,
+  "gameRuntimeTested": false,
+  "note": "Tooltip BuildTalentTooltipBuilder unlocked trait rendering now calls existing UiLateLookup.TraitName(key), which calls CsvLookup.Read against the 22 rld_display_ keys in mod Localization/ko.csv. Status ShowPanel already contained this call. No names or trait mechanics mutated."
+}
