@@ -33,7 +33,13 @@ jobs:
           # This variant is independently checked against its historical source mapping; original Chinese v1.1.3
           # is available as the counterpart in the original mod tree, but is not needed to alter any source.
           def readrows(p):
-              return list(csv.reader(io.StringIO(p.read_text(encoding='utf-8-sig')),strict=True))
+              rows=[]
+              for line in p.read_text(encoding='utf-8-sig').splitlines():
+                  if not line:continue
+                  k,sep,value=line.partition(',')
+                  assert k and sep
+                  rows.append((k,value))
+              return rows
           src=readrows(chinese)
           old=readrows(file)
           from113=readrows(approved)
