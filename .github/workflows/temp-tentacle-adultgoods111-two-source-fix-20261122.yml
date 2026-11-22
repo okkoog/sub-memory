@@ -1,0 +1,286 @@
+name: Restore Adult Goods v1.1.1 Chinese-source KO descriptions in both DLLs
+on:
+  push:
+    paths:
+      - .github/workflows/temp-tentacle-adultgoods111-two-source-fix-20261122.yml
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/3842259965
+            probably-stolen/local-mods/TentacleMod번역/3843142171
+            probably-stolen/local-mods/TentacleMod번역/可能是成人用品 v1.1.3
+            probably-stolen/local-mods/TentacleMod번역/번역대조표
+            probably-stolen/local-mods/TentacleMod번역/WORK_PROGRESS.md
+          sparse-checkout-cone-mode: false
+      - name: Recover exact two reviewed Chinese-derived Korean lines, check both Chinese original versions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv, io, re
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          file=root/'3842259965/Localization/ko.csv'
+          approved=root/'可能是成人用品 v1.1.3/Localization/ko.csv'
+          chinese=root/'번역대조표/AdultGoods_v1.1.1_original_zh_embedded_20261121.csv'
+          zh113=Path('probably-stolen/local-mods/TentacleMod/可能是成人用品 v1.1.3/Localization/zh.csv')
+          # This variant is independently checked against its historical source mapping; original Chinese v1.1.3
+          # is available as the counterpart in the original mod tree, but is not needed to alter any source.
+          def readrows(p):
+              return list(csv.reader(io.StringIO(p.read_text(encoding='utf-8-sig')),strict=True))
+          src=readrows(chinese)
+          old=readrows(file)
+          from113=readrows(approved)
+          keys=lambda rows:[r[0] for r in rows]
+          assert len(src)==len(old)==181 and keys(src)==keys(old) and len(set(keys(old)))==181
+          previous={k:v for k,v,*extra in old}
+          external={k:v for k,v,*extra in from113}
+          originals={k:v for k,v,*extra in src}
+          target={'dildo_red_flavor':'dildo_red_flavor_alt','dildo_pink_slim_flavor':'dildo_pink_slim_flavor_alt'}
+          old_expected={
+              'dildo_red_flavor':'선명한 붉은색 제품. 어둠 속에서는 으스스하지만, 대낮에는 팔 수 있다.',
+              'dildo_pink_slim_flavor':'가느다란 분홍색 제품. 좁은 공간과 긴장한 사람에게 어울린다.'
+          }
+          assert all(previous[k]==old_expected[k] for k in target)
+          assert all(external[k2] and external[k2]!=previous[k] for k,k2 in target.items())
+          assert originals['dildo_red_flavor']=='只有未经初潮的女孩才会选择它。'
+          assert originals['dildo_pink_slim_flavor']=='只适合腔室狭窄的萝莉。'
+          assert all(not re.findall(r'\{[^{}]+\}',external[other]) for other in target.values())
+          lines=file.read_text(encoding='utf-8-sig').splitlines(keepends=True)
+          count=0
+          replacements={}
+          for i,line in enumerate(lines):
+              key,sep,value=line.partition(',')
+              if key not in target:continue
+              new=external[target[key]]
+              original_value=value.rstrip('\r\n')
+              assert original_value==old_expected[key]
+              newline=value[len(original_value):]
+              lines[i]=key+sep+new+newline
+              replacements[key]={'old':original_value,'new':new,'source_zh':originals[key],'reused_key':target[key]}
+              count+=1
+          assert count==2
+          file.write_text(''.join(lines),encoding='utf-8')
+          updated=readrows(file)
+          diffs=[k for (k,v),(kk,vv) in zip(old,updated) if k==kk and v!=vv]
+          assert diffs==list(target)
+          assert len(updated)==181 and keys(updated)==keys(old)
+          assert all(sorted(re.findall(r'\{[^{}]+\}',v))==sorted(re.findall(r'\{[^{}]+\}',vv)) for (_,v),(_,vv) in zip(old,updated))
+          import json
+          Path('/tmp/adult_goods_two_changed.json').write_text(json.dumps(replacements,ensure_ascii=False,indent=2),encoding='utf-8')
+          print('Confirmed 2 exact Chinese-source text restorations, 179 other values and 181 IDs unchanged')
+          PY
+      - name: Replace existing KO embedded resources in standalone and integrated DLL without touching any IL
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 --force -o /tmp/adultgoods-ko-two
+          dotnet add /tmp/adultgoods-ko-two/adultgoods-ko-two.csproj package dnlib --version 4.5.0
+          cat >/tmp/adultgoods-ko-two/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class Program {
+            static string Digest(byte[] raw)=>Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant();
+            static object Canonical(Instruction ins, IList<Instruction> instructions) {
+              if(ins.Operand is Instruction dest)return "BR:"+instructions.IndexOf(dest);
+              if(ins.Operand is IList<Instruction> targets)return "SW:"+string.Join(",",targets.Select(x=>instructions.IndexOf(x)));
+              if(ins.Operand is Local loc)return "LOC:"+loc.Index;
+              if(ins.Operand is Parameter parm)return "PARAM:"+parm.Index;
+              if(ins.Operand is IMethod method)return "M:"+method.FullName;
+              if(ins.Operand is IField field)return "F:"+field.FullName;
+              if(ins.Operand is ITypeDefOrRef tref)return "T:"+tref.FullName;
+              return ins.Operand?.ToString()??"";
+            }
+            static string[] Snapshot(ModuleDefMD m) {
+              return m.GetTypes().SelectMany(t=>t.Methods).Select(method=>{
+                 if(!method.HasBody)return method.FullName+"|no body";
+                 var body=method.Body.Instructions;
+                 return method.FullName+"|"+string.Join("|",body.Select(x=>x.OpCode.Name+":"+Canonical(x,body)));
+              }).ToArray();
+            }
+            static void Run(string path,byte[] ko,int methods,int resourceCount) {
+              byte[] before=File.ReadAllBytes(path);
+              using var md=ModuleDefMD.Load(path);
+              if(md.GetTypes().SelectMany(t=>t.Methods).Count()!=methods || md.Resources.Count!=resourceCount)
+                throw new Exception("Unexpected assembly layout: "+path);
+              var snap=Snapshot(md);
+              var oldResources=md.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              var names=new[]{"ProbablyAdultGoods.Localization.ko.csv","ProbablyAdultGoods.Localization.ko-KR.csv"};
+              var existing=names.Select(n=>md.Resources.OfType<EmbeddedResource>().Single(r=>r.Name.ToString()==n)).ToArray();
+              if(!existing[0].CreateReader().ToArray().SequenceEqual(existing[1].CreateReader().ToArray()))
+                 throw new Exception("KO aliases disagree in "+path);
+              var old=existing[0].CreateReader().ToArray();
+              var oldText=System.Text.Encoding.UTF8.GetString(old);
+              var newText=System.Text.Encoding.UTF8.GetString(ko);
+              var oldRows=oldText.Split('\n');
+              var newRows=newText.Split('\n');
+              if(oldRows.Length!=newRows.Length)throw new Exception("KO row count unexpectedly changed");
+              var diff=new List<string>();
+              for(int i=0;i<oldRows.Length;i++){
+                 var x=oldRows[i].TrimEnd('\r');var y=newRows[i].TrimEnd('\r');
+                 if(x!=y)diff.Add(x.Split(',')[0]);
+              }
+              if(diff.Count!=2 || !diff.Contains("dildo_red_flavor") || !diff.Contains("dildo_pink_slim_flavor"))
+                 throw new Exception("KO resource has unexpected divergence: "+string.Join(",",diff));
+              for(int i=0;i<md.Resources.Count;i++){
+                var r=md.Resources[i];
+                if(!names.Contains(r.Name.ToString()))continue;
+                var oldRes=(EmbeddedResource)r;
+                md.Resources[i]=new EmbeddedResource(r.Name.ToString(),ko,oldRes.Attributes);
+              }
+              string tmp=path+".tmp";
+              md.Write(tmp);
+              using var verify=ModuleDefMD.Load(tmp);
+              if(verify.Resources.Count!=resourceCount ||
+                 verify.GetTypes().SelectMany(t=>t.Methods).Count()!=methods)
+                 throw new Exception("Method or resource count changed");
+              var afterSnap=Snapshot(verify);
+              if(!snap.SequenceEqual(afterSnap))throw new Exception("Method IL changed unexpectedly");
+              foreach(var r in verify.Resources.OfType<EmbeddedResource>()){
+                var b=r.CreateReader().ToArray();
+                var name=r.Name.ToString();
+                if(names.Contains(name)){
+                  if(!b.SequenceEqual(ko))throw new Exception("KO resource wrong "+name);
+                } else {
+                  if(!b.SequenceEqual(oldResources[name]))throw new Exception("Non-KO resource changed "+name);
+                }
+              }
+              File.Move(tmp,path,true);
+              Console.WriteLine(path+" before="+Digest(before)+" after="+Digest(File.ReadAllBytes(path))+
+                " resources="+resourceCount+" methods="+methods+" IL changes=0");
+            }
+            static int Main(string[] args) {
+              var ko=File.ReadAllBytes(args[0]);
+              Run(args[1],ko,370,67);
+              Run(args[2],ko,1918,107);
+              return 0;
+            }
+          }
+          CS
+          dotnet run --project /tmp/adultgoods-ko-two/adultgoods-ko-two.csproj -c Release -- \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/Localization/ko.csv' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/probably_adult_goods.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/3843142171/fallen_heiress_eleanor.dll'
+      - name: Update audit notes and build independently validated version-specific ZIPs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import csv,hashlib,json,io
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          audit=root/'번역대조표'
+          changes=json.loads(Path('/tmp/adult_goods_two_changed.json').read_text(encoding='utf-8'))
+          mapping=audit/'AdultGoods_v1.1.1_KO_MAPPING_AUDIT_20261121.md'
+          s=mapping.read_text(encoding='utf-8')
+          s=s.replace('Two item-description entries are adapted from the **original English localization** rather than the Chinese source and must not be counted as literal Chinese-to-Korean translations.',
+                      'CORRECTION 2026-11-22: The two item descriptions originally adapted from English have now been replaced with the existing independently reviewed Korean renderings of the original Chinese, using the corresponding v1.1.3 *_flavor_alt entries.')
+          s=s.replace('| \`dildo_red_flavor\` | English embedded resource (Chinese wording excluded) |','| \`dildo_red_flavor\` | Original Chinese; reviewed Korean from v1.1.3 \`dildo_red_flavor_alt\` |')
+          s=s.replace('| \`dildo_pink_slim_flavor\` | English embedded resource (Chinese wording excluded) |','| \`dildo_pink_slim_flavor\` | Original Chinese; reviewed Korean from v1.1.3 \`dildo_pink_slim_flavor_alt\` |')
+          assert 'English embedded resource (Chinese wording excluded)' not in s
+          mapping.write_text(s,encoding='utf-8')
+          for path in [root/'3842259965/README_ko.txt',root/'3842259965/README.txt']:
+            if not path.exists():continue
+            s=path.read_text(encoding='utf-8')
+            s=s.replace('- 181키 가운데 2키는 중국어 직역이 아니라 제작자가 제공한 영어 원문을 기준으로 번역했습니다.',
+                        '- 181키 모두 중국어 원문 기준으로 대응합니다. 과거 영어판으로 대체했던 2개 설명은 중국어 원문에 맞춰 복구했습니다.')
+            path.write_text(s,encoding='utf-8')
+          integrated=root/'3843142171/README_ko.txt'
+          s=integrated.read_text(encoding='utf-8')
+          s=s.replace('- Adult Goods 진열장 표시 전용 10개 IL 문자열도 한국어로 수정합니다. 내부 ID, 저장·판정용 문자열은 바꾸지 않습니다.',
+                      '- Adult Goods 진열장 표시 전용 10개 IL 문자열도 한국어로 수정합니다. 내부 ID, 저장·판정용 문자열은 바꾸지 않습니다. 2026-11-22에 Adult Goods 설명 2개를 중국어 원문 기준으로 복원했습니다.')
+          integrated.write_text(s,encoding='utf-8')
+          ko=root/'3842259965/Localization/ko.csv'
+          rows=list(csv.reader(io.StringIO(ko.read_text(encoding='utf-8-sig'))))
+          assert len(rows)==181 and len(set(r[0] for r in rows))==181
+          lookup={r[0]:r[1] for r in rows}
+          assert all(lookup[k]==v['new'] for k,v in changes.items())
+          audit_file=audit/'AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md'
+          lines=[
+            '# Probably Adult Goods v1.1.1 Chinese-source restoration (2026-11-22)',
+            '',
+            '- Exactly 2 Korean description values changed; all 181 keys and the remaining 179 values retained.',
+            '- The original v1.1.1 Chinese and English embedded localization resources were not changed.',
+            '- Korean renderings were reused from the original-Chinese-aligned corresponding *_flavor_alt entries in the existing reviewed v1.1.3 Korean file.',
+            '- Standalone v1.1.1 and integrated v1.1.3 rewritten DLLs contain identical updated Korean resources in both ko/ko-KR aliases.',
+            '- dnlib read-back verified TypeDef/MethodDef resource counts, full unchanged method-IL instruction snapshots, and all non-Korean resource bytes unchanged.',
+            '- In-game Unity/CLR loading, save-game and native payload were NOT tested.',
+            '',
+            '| Key | Previous basis | New basis |',
+            '|---|---|---|'
+          ]
+          for k,r in changes.items():
+            lines.append('| \`'+k+'\` | English source | Original Chinese via \`'+r['reused_key']+'\` |')
+          lines+=['','## Relevant output files',
+            '- \`3842259965/Localization/ko.csv\`',
+            '- \`3842259965/probably_adult_goods.dll\`',
+            '- \`3843142171/fallen_heiress_eleanor.dll\`',
+            '- \`ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip\`',
+            '- \`ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_KO_ChineseRestored_20261122.zip\`',
+            '']
+          audit_file.write_text('\n'.join(lines),encoding='utf-8')
+          pack=[
+            ('ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip',[
+              ('3842259965/probably_adult_goods.dll','3842259965/probably_adult_goods.dll'),
+              ('3842259965/manifest.xml','3842259965/manifest.xml'),
+              ('3842259965/README_ko.txt','3842259965/README_ko.txt'),
+              ('3842259965/Localization/ko.csv','3842259965/Localization/ko.csv'),
+              ('번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md','SOURCE_AUDIT.md'),
+            ]),
+            ('ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_KO_ChineseRestored_20261122.zip',[
+              ('3843142171/fallen_heiress_eleanor.dll','3843142171/fallen_heiress_eleanor.dll'),
+              ('3843142171/manifest.xml','3843142171/manifest.xml'),
+              ('3843142171/README_ko.txt','3843142171/README_ko.txt'),
+              ('3842259965/Localization/ko.csv','REFERENCE_ONLY/AdultGoods_KO_181.csv'),
+              ('번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md','SOURCE_AUDIT.md'),
+            ])
+          ]
+          for dest,files in pack:
+            zipfile=root/dest
+            with ZipFile(zipfile,'w',ZIP_DEFLATED,compresslevel=6) as z:
+              for source,name in files:z.write(root/source,arcname=name)
+            with ZipFile(zipfile) as check:
+              assert check.testzip() is None and len(check.namelist())==len(files)
+              assert all(check.read(name)==(root/source).read_bytes() for source,name in files)
+            print(dest,zipfile.stat().st_size,hashlib.sha256(zipfile.read_bytes()).hexdigest())
+          progress=root/'WORK_PROGRESS.md'
+          with progress.open('a',encoding='utf-8') as out:
+            out.write('\n## 2026-11-22 — Probably Adult Goods v1.1.1 중국어 원문 2키 복원\n\n')
+            out.write('- \`dildo_red_flavor\` 및 \`dildo_pink_slim_flavor\`: 기존 영어 원문 기준 번역을, 동일 중국어 문장에 대응하는 기존 v1.1.3 \`*_flavor_alt\` 한국어 검수본으로 교체. 추가 179키 변동 없음. 원본 중국어·영어 DLL 리소스 불변.\n')
+            out.write('- v1.1.1 단독판 \`3842259965/probably_adult_goods.dll\`와 v1.1.3 통합판 \`3843142171/fallen_heiress_eleanor.dll\`의 ko 및 ko-KR 내장 로컬라이제이션 2개 별칭 업데이트. 다른 CLR 리소스 바이트·메서드 IL 변동 없음 (dnlib 로드/재검증).\n')
+            out.write('- 두 버전별 최종 ZIP을 별도 생성·CRC 및 내부 항목 바이트 대조 성공. 추가 감사 기록 \`번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md\`. 실게임/CLR·세이브 호환 검증은 미실시.\n\n')
+          PY
+      - name: Commit both DLLs, exact CSV changes, README audit and final ZIPs
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/Localization/ko.csv' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/probably_adult_goods.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/README_ko.txt' \
+            'probably-stolen/local-mods/TentacleMod번역/3842259965/README.txt' \
+            'probably-stolen/local-mods/TentacleMod번역/3843142171/fallen_heiress_eleanor.dll' \
+            'probably-stolen/local-mods/TentacleMod번역/3843142171/README_ko.txt' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_KO_MAPPING_AUDIT_20261121.md' \
+            'probably-stolen/local-mods/TentacleMod번역/번역대조표/AdultGoods_v1.1.1_2_CHINESE_SOURCE_CORRECTIONS_20261122.md' \
+            'probably-stolen/local-mods/TentacleMod번역/WORK_PROGRESS.md' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip' \
+            'probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_Integrated_Eleanor_AdultGoods_v1.1.3_KO_ChineseRestored_20261122.zip'
+          git commit -m 'fix(tentacle): restore two Chinese-source Adult Goods descriptions in standalone and integrated DLLs'
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
