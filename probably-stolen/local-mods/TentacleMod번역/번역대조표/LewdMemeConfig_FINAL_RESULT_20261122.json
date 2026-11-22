@@ -1,0 +1,5740 @@
+{
+  "previousDllHash": "b8f1977a9efb059ffc0f46f3133cf199dcf3e939f79c2c55c18dd7fb43539ee0",
+  "finalDllHash": "f4f5ebd6277b8cc19d053510947eac379f8a540d3ec60615483757494d1316c9",
+  "comparedMethods": 888,
+  "changedSites": 8,
+  "unchangedResources": 0,
+  "reviewed": [
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 28,
+      "source": "少女职业池",
+      "target": "소녀 직업 후보군",
+      "action": "patch",
+      "result": "소녀 직업 후보군"
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 67,
+      "source": "少女阵营池",
+      "target": "소녀 세력 후보군",
+      "action": "patch",
+      "result": "소녀 세력 후보군"
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 105,
+      "source": "少女体型池",
+      "target": "소녀 체형 후보군",
+      "action": "patch",
+      "result": "소녀 체형 후보군"
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 143,
+      "source": "少女胸部池",
+      "target": "소녀 가슴 크기 후보군",
+      "action": "patch",
+      "result": "소녀 가슴 크기 후보군"
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 19,
+      "source": "少女阵营池",
+      "target": "소녀 세력 후보군",
+      "action": "patch",
+      "result": "소녀 세력 후보군"
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 56,
+      "source": "少女职业池",
+      "target": "소녀 직업 후보군",
+      "action": "patch",
+      "result": "소녀 직업 후보군"
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 93,
+      "source": "少女体型池",
+      "target": "소녀 체형 후보군",
+      "action": "patch",
+      "result": "소녀 체형 후보군"
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 130,
+      "source": "少女胸部池",
+      "target": "소녀 가슴 크기 후보군",
+      "action": "patch",
+      "result": "소녀 가슴 크기 후보군"
+    }
+  ],
+  "remainingCjk": [
+    {
+      "token": "0600002A",
+      "method": "System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden()",
+      "offset": 86,
+      "source": "上层区:100,治安部:50,黑市:50,革命军:50,其他:10",
+      "previousToken": "0600002A",
+      "previousOffset": 86,
+      "reason": "Raw configuration defaults."
+    },
+    {
+      "token": "0600002A",
+      "method": "System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden()",
+      "offset": 140,
+      "source": "下层区,上层区,治安部,黑市,革命军",
+      "previousToken": "0600002A",
+      "previousOffset": 140,
+      "reason": "Raw configuration defaults."
+    },
+    {
+      "token": "0600002A",
+      "method": "System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden()",
+      "offset": 156,
+      "source": "拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人",
+      "previousToken": "0600002A",
+      "previousOffset": 156,
+      "reason": "Raw configuration defaults."
+    },
+    {
+      "token": "0600002A",
+      "method": "System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden()",
+      "offset": 172,
+      "source": "萝莉,少女,御姐,少妇,熟女",
+      "previousToken": "0600002A",
+      "previousOffset": 172,
+      "reason": "Raw configuration defaults."
+    },
+    {
+      "token": "0600002A",
+      "method": "System.Void LewdMemeConfig.ConfigRegistry::RegisterMaiden()",
+      "offset": 188,
+      "source": "贫乳,普乳,巨乳",
+      "previousToken": "0600002A",
+      "previousOffset": 188,
+      "reason": "Raw configuration defaults."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 67,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 67,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 75,
+      "source": "关",
+      "previousToken": "06000034",
+      "previousOffset": 75,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 176,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 176,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 216,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 216,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 286,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 286,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 396,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 396,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 506,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 506,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 546,
+      "source": "关",
+      "previousToken": "06000034",
+      "previousOffset": 546,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 616,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 616,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 656,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 656,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 726,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 726,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 766,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 766,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 836,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 836,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 876,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 876,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 946,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 946,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 986,
+      "source": "开",
+      "previousToken": "06000034",
+      "previousOffset": 986,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1052,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1052,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1164,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1164,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1273,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1273,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1382,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1382,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1488,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1488,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1594,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1594,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1700,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1700,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1809,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1809,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 1925,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 1925,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2041,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2041,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2157,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2157,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2273,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2273,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2389,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2389,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2505,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2505,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2614,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2614,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2730,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2730,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2846,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2846,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 2962,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 2962,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3078,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 3078,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3194,
+      "source": "暗流交易联动",
+      "previousToken": "06000034",
+      "previousOffset": 3194,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3303,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3303,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3420,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3420,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3537,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3537,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3654,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3654,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3771,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3771,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 3888,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 3888,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4005,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4005,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4121,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4121,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4238,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4238,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4359,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4359,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4475,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4475,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4576,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4576,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4673,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4673,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4789,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4789,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4905,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4905,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 4995,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000034",
+      "previousOffset": 4995,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5084,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5084,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5193,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5193,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5298,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5298,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5404,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5404,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5509,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5509,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5614,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5614,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5720,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5720,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5824,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5824,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 5928,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 5928,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6037,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6037,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6149,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6149,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6258,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6258,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6363,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6363,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6469,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6469,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6581,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6581,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6693,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6693,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6805,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6805,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 6917,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 6917,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7029,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 7029,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7141,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 7141,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7245,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 7245,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7349,
+      "source": "掌上青楼联动",
+      "previousToken": "06000034",
+      "previousOffset": 7349,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7453,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 7453,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7569,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 7569,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7681,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 7681,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7793,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 7793,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 7899,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 7899,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8005,
+      "source": "tearlaments 联动",
+      "previousToken": "06000034",
+      "previousOffset": 8005,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8115,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8115,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8216,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8216,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8318,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8318,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8447,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8447,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8548,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8548,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8649,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8649,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8751,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8751,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8788,
+      "source": "不限制（原版）",
+      "previousToken": "06000034",
+      "previousOffset": 8788,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8796,
+      "source": "仅日本",
+      "previousToken": "06000034",
+      "previousOffset": 8796,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8804,
+      "source": "仅中国",
+      "previousToken": "06000034",
+      "previousOffset": 8804,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8812,
+      "source": "仅中日韩",
+      "previousToken": "06000034",
+      "previousOffset": 8812,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8824,
+      "source": "不限制（原版）",
+      "previousToken": "06000034",
+      "previousOffset": 8824,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 8896,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 8896,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9012,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9012,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9113,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9113,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9215,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9215,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9252,
+      "source": "仅女性（原版）",
+      "previousToken": "06000034",
+      "previousOffset": 9252,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9260,
+      "source": "不限性别",
+      "previousToken": "06000034",
+      "previousOffset": 9260,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9272,
+      "source": "不限性别",
+      "previousToken": "06000034",
+      "previousOffset": 9272,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9345,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9345,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9382,
+      "source": "仅女性（原版）",
+      "previousToken": "06000034",
+      "previousOffset": 9382,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9390,
+      "source": "不限性别",
+      "previousToken": "06000034",
+      "previousOffset": 9390,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9402,
+      "source": "不限性别",
+      "previousToken": "06000034",
+      "previousOffset": 9402,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9475,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9475,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9512,
+      "source": "原版行为",
+      "previousToken": "06000034",
+      "previousOffset": 9512,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9520,
+      "source": "保留游戏原分布",
+      "previousToken": "06000034",
+      "previousOffset": 9520,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9532,
+      "source": "原版行为",
+      "previousToken": "06000034",
+      "previousOffset": 9532,
+      "reason": "Raw choice/default value; display array copied, original array and selected index retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9604,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9604,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9644,
+      "source": "성인 체형 선택 가중치입니다. 쉼표로 구분하며 입력 항목 순서는 원문 데이터 키 `萝莉,少女,御姐,少妇,熟女`입니다(기본값은 모두 20으로 균등 분포). 0은 해당 항목을 선택하지 않도록 설정하지만, 모든 값을 0으로 할 수는 없습니다. IPH는 가중치가 0인 항목도 작은 확률로 균등 추첨할 수 있습니다. 전체 값이 0이면 기본값으로, 해당 추첨 범위의 합계가 0이면 균등 추첨으로 돌아가므로 완전한 제외는 아닙니다. 이는 IPH의 설계이며 체형 간 상대적인 비율만 조절합니다. 기본 패널의 체형 후보군 설정이 양보한 후에는 이 항목이 체형 분포를 제어합니다. 활성화하면 이 패널의 값을, 비활성화하면 이전 상대 모드의 값을 사용합니다.",
+      "previousToken": "06000034",
+      "previousOffset": 9644,
+      "reason": "Already Korean; contains intentionally preserved raw CSV input examples."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9704,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9704,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9805,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9805,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 9901,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 9901,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 10017,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 10017,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 10133,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 10133,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 10222,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 10222,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000034",
+      "method": "System.Void LewdMemeConfig.FamilyPanelKeys::.cctor()",
+      "offset": 10311,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000034",
+      "previousOffset": 10311,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 36,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 36,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 122,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 122,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 192,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 192,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 284,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 284,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 359,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 359,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 429,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 429,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 522,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 522,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 592,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 592,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 689,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 689,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 760,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 760,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 858,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 858,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 929,
+      "source": "顾客",
+      "previousToken": "0600003E",
+      "previousOffset": 929,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1027,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1027,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1098,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1098,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1192,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1192,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1263,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1263,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1357,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1357,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1428,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1428,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1522,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1522,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1593,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1593,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1687,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1687,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 1758,
+      "source": "价格",
+      "previousToken": "0600003E",
+      "previousOffset": 1758,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 5836,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 5836,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 5907,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 5907,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6001,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6001,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6072,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6072,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6167,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6167,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6238,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6238,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6329,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6329,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6400,
+      "source": "成长",
+      "previousToken": "0600003E",
+      "previousOffset": 6400,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6494,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6494,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6565,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6565,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6663,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6663,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6734,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6734,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6832,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6832,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6903,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6903,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 6979,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 6979,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7050,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 7050,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7126,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 7126,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7197,
+      "source": "掉落",
+      "previousToken": "0600003E",
+      "previousOffset": 7197,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7295,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7295,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7366,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7366,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7464,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7464,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7535,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7535,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7633,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7633,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7704,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7704,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7780,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7780,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7851,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7851,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7927,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7927,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 7998,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 7998,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8074,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8074,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8145,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8145,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8178,
+      "source": "세력:기본가 형식의 키-값 쌍. 쉼표로 구분(기본값 上层区:100,治安部:50,黑市:50,革命军:50,其他:10; 본편 모드의 기본가 메서드에 주입되며 초상화 관리자 사용 중에도 적용됨)",
+      "previousToken": "0600003E",
+      "previousOffset": 8178,
+      "reason": "Already Korean; contains intentionally preserved raw CSV input examples."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8221,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8221,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8292,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8292,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8383,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8383,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8454,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8454,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8487,
+      "source": "무작위 세력 후보군. 쉼표로 구분(기본값 下层区,上层区,治安部,黑市,革命军; 초상화 관리자 사용 중에는 적용되지 않으며 관리자는 초상화 수에 가중치를 둬 세력을 추첨함)",
+      "previousToken": "0600003E",
+      "previousOffset": 8487,
+      "reason": "Already Korean; contains intentionally preserved raw CSV input examples."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8530,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8530,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8601,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8601,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8677,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8677,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8748,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8748,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8781,
+      "source": "무작위 체형 후보군. 쉼표로 구분하며 기본 입력 문자열은 `萝莉,少女,御姐,少妇,熟女`입니다. 아이템 초상화 관리자 사용 중에는 적용되지 않으며, 체형 분포는 연동 설정의 '성인 체형 가중치 CSV'에서 관리합니다.",
+      "previousToken": "0600003E",
+      "previousOffset": 8781,
+      "reason": "Already Korean; contains intentionally preserved raw CSV input examples."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8824,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8824,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8895,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8895,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8928,
+      "source": "무작위 가슴 크기 후보군. 쉼표로 구분(기본값 贫乳,普乳,巨乳; 초상화 관리자 사용 중에는 적용되지 않으며, 가슴 크기 분포는 연동 설정의 '체형에 따른 모유량'이 담당함)",
+      "previousToken": "0600003E",
+      "previousOffset": 8928,
+      "reason": "Already Korean; contains intentionally preserved raw CSV input examples."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 8971,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 8971,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 9042,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 9042,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 9132,
+      "source": "少女生成",
+      "previousToken": "0600003E",
+      "previousOffset": 9132,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 10861,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 10861,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 10935,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 10935,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11032,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11032,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11106,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11106,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11203,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11203,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11277,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11277,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11378,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11378,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11452,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11452,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11549,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11549,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11623,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11623,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11720,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11720,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11794,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11794,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11891,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11891,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 11965,
+      "source": "闹钟",
+      "previousToken": "0600003E",
+      "previousOffset": 11965,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12062,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12062,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12136,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12136,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12233,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12233,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12307,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12307,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12404,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12404,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12478,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12478,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12579,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12579,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12653,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12653,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12754,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12754,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12828,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12828,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 12929,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 12929,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13003,
+      "source": "陷阱",
+      "previousToken": "0600003E",
+      "previousOffset": 13003,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13082,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13082,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13156,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13156,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13257,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13257,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13331,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13331,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13429,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13429,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13503,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13503,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13604,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13604,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13678,
+      "source": "界面",
+      "previousToken": "0600003E",
+      "previousOffset": 13678,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13779,
+      "source": "天赋",
+      "previousToken": "0600003E",
+      "previousOffset": 13779,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13853,
+      "source": "天赋",
+      "previousToken": "0600003E",
+      "previousOffset": 13853,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 13950,
+      "source": "天赋",
+      "previousToken": "0600003E",
+      "previousOffset": 13950,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "0600003E",
+      "method": "System.Void LewdMemeConfig.PanelKeys::.cctor()",
+      "offset": 14024,
+      "source": "天赋",
+      "previousToken": "0600003E",
+      "previousOffset": 14024,
+      "reason": "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained."
+    },
+    {
+      "token": "06000041",
+      "method": "System.Void LewdMemeConfig.PlayerChoices::.cctor()",
+      "offset": 8,
+      "source": "关闭",
+      "previousToken": "06000041",
+      "previousOffset": 8,
+      "reason": "Raw scope choice and reverse mapping; display array translated separately."
+    },
+    {
+      "token": "06000041",
+      "method": "System.Void LewdMemeConfig.PlayerChoices::.cctor()",
+      "offset": 16,
+      "source": "仅普通顾客",
+      "previousToken": "06000041",
+      "previousOffset": 16,
+      "reason": "Raw scope choice and reverse mapping; display array translated separately."
+    },
+    {
+      "token": "06000041",
+      "method": "System.Void LewdMemeConfig.PlayerChoices::.cctor()",
+      "offset": 24,
+      "source": "顾客+特殊顾客",
+      "previousToken": "06000041",
+      "previousOffset": 24,
+      "reason": "Raw scope choice and reverse mapping; display array translated separately."
+    },
+    {
+      "token": "06000041",
+      "method": "System.Void LewdMemeConfig.PlayerChoices::.cctor()",
+      "offset": 32,
+      "source": "全体人类角色",
+      "previousToken": "06000041",
+      "previousOffset": 32,
+      "reason": "Raw scope choice and reverse mapping; display array translated separately."
+    },
+    {
+      "token": "06000056",
+      "method": "System.Collections.Generic.List`1<LewdMemeConfig.KeyTest> LewdMemeConfig.DebugPanel::QuickGroupTests(System.String)",
+      "offset": 441,
+      "source": "掌上青楼联动",
+      "previousToken": "06000056",
+      "previousOffset": 441,
+      "reason": "Original group identity, retained with matching FamilyPanelKeys section."
+    },
+    {
+      "token": "060000EF",
+      "method": "LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::LegacyMaidenPoolsOverlay()",
+      "offset": 54,
+      "source": "黑市",
+      "previousToken": "060000EF",
+      "previousOffset": 54,
+      "reason": "Raw faction test fixture or equality operand."
+    },
+    {
+      "token": "060000F0",
+      "method": "LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::LegacyMaidenOverlayEvidence()",
+      "offset": 54,
+      "source": "黑市",
+      "previousToken": "060000F0",
+      "previousOffset": 54,
+      "reason": "Raw faction test fixture or equality operand."
+    },
+    {
+      "token": "06000103",
+      "method": "LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner::FatigueMulCase(System.String,System.Int32,System.Single,System.String)",
+      "offset": 30,
+      "source": "상대 모드의 피로도 시스템이 꺼져 있음(fatigue_enabled=关). ValueMul은 항상 1",
+      "previousToken": "06000103",
+      "previousOffset": 30,
+      "reason": "Already Korean; literal config switch token retained."
+    },
+    {
+      "token": "06000137",
+      "method": "System.Int64 LewdMemeConfig.SelfTestRunner/<>c::<LegacyMaidenPoolsOverlay>b__34_1(GameItem)",
+      "offset": 16,
+      "source": "黑市",
+      "previousToken": "06000137",
+      "previousOffset": 16,
+      "reason": "Raw faction test fixture or equality operand."
+    },
+    {
+      "token": "06000138",
+      "method": "LewdMemeConfig.TestResult LewdMemeConfig.SelfTestRunner/<>c::<LegacyMaidenOverlayEvidence>b__35_0(System.String)",
+      "offset": 70,
+      "source": "黑市",
+      "previousToken": "06000138",
+      "previousOffset": 70,
+      "reason": "Raw faction test fixture or equality operand."
+    },
+    {
+      "token": "060001C0",
+      "method": "System.ValueTuple`2<System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.Int32>,System.Int32> LewdMemeConfig.MaidenRoll::ParseFactionBases(System.String,System.Int32)",
+      "offset": 100,
+      "source": "其他",
+      "previousToken": "060001C0",
+      "previousOffset": 100,
+      "reason": "Raw faction parsing key."
+    },
+    {
+      "token": "06000207",
+      "method": "System.Void LewdMemeConfig.TranspilePlan::.cctor()",
+      "offset": 6147,
+      "source": "上层区:100,治安部:50,黑市:50,革命军:50,其他:10",
+      "previousToken": "06000207",
+      "previousOffset": 6147,
+      "reason": "Original matching/rewrite input or raw faction default."
+    },
+    {
+      "token": "06000207",
+      "method": "System.Void LewdMemeConfig.TranspilePlan::.cctor()",
+      "offset": 6202,
+      "source": "上层区",
+      "previousToken": "06000207",
+      "previousOffset": 6202,
+      "reason": "Original matching/rewrite input or raw faction default."
+    },
+    {
+      "token": "06000207",
+      "method": "System.Void LewdMemeConfig.TranspilePlan::.cctor()",
+      "offset": 6312,
+      "source": "治安部",
+      "previousToken": "06000207",
+      "previousOffset": 6312,
+      "reason": "Original matching/rewrite input or raw faction default."
+    },
+    {
+      "token": "06000207",
+      "method": "System.Void LewdMemeConfig.TranspilePlan::.cctor()",
+      "offset": 6422,
+      "source": "其他",
+      "previousToken": "06000207",
+      "previousOffset": 6422,
+      "reason": "Original matching/rewrite input or raw faction default."
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String)",
+      "offset": 184,
+      "source": "lou_locker,卢的储物柜",
+      "previousToken": "06000265",
+      "previousOffset": 184,
+      "reason": "Original search/blacklist values."
+    },
+    {
+      "token": "06000265",
+      "method": "System.Boolean LewdMemeConfig.CorruptPatch::IsCorruptibleBody(GameItem,System.String,System.String)",
+      "offset": 261,
+      "source": "crate,storage,supplybox,supply_box,物资箱,货箱,物证柜,储藏区",
+      "previousToken": "06000265",
+      "previousOffset": 261,
+      "reason": "Original search/blacklist values."
+    },
+    {
+      "token": "060002BC",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 12,
+      "source": "少女",
+      "previousToken": "060002BC",
+      "previousOffset": 12,
+      "reason": "Original item identity or internally consumed attribute token."
+    },
+    {
+      "token": "060002BC",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 486,
+      "source": "下层区",
+      "previousToken": "060002BC",
+      "previousOffset": 486,
+      "reason": "Original item identity or internally consumed attribute token."
+    },
+    {
+      "token": "060002BC",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 548,
+      "source": "少女",
+      "previousToken": "060002BC",
+      "previousOffset": 548,
+      "reason": "Original item identity or internally consumed attribute token."
+    },
+    {
+      "token": "060002BC",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 562,
+      "source": "萝莉",
+      "previousToken": "060002BC",
+      "previousOffset": 562,
+      "reason": "Original item identity or internally consumed attribute token."
+    },
+    {
+      "token": "060002BC",
+      "method": "GameItem LewdMemeConfig.MaidenPatch::CreateMaidenBody(System.String,LewdMemeConfig.MaidenPatch/MaidenCfg)",
+      "offset": 591,
+      "source": "巨乳",
+      "previousToken": "060002BC",
+      "previousOffset": 591,
+      "reason": "Original item identity or internally consumed attribute token."
+    },
+    {
+      "token": "060002BE",
+      "method": "System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String)",
+      "offset": 59,
+      "source": "下层区,上层区,治安部,黑市,革命军",
+      "previousToken": "060002BE",
+      "previousOffset": 59,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002BE",
+      "method": "System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String)",
+      "offset": 80,
+      "source": "拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人",
+      "previousToken": "060002BE",
+      "previousOffset": 80,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002BE",
+      "method": "System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String)",
+      "offset": 101,
+      "source": "萝莉,少女,御姐,少妇,熟女",
+      "previousToken": "060002BE",
+      "previousOffset": 101,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002BE",
+      "method": "System.Nullable`1<System.ValueTuple`2<System.String,System.String>> LewdMemeConfig.MaidenPatch::PoolMeta(System.String)",
+      "offset": 122,
+      "source": "贫乳,普乳,巨乳",
+      "previousToken": "060002BE",
+      "previousOffset": 122,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002BF",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteJobsAtCompose()",
+      "offset": 37,
+      "source": "拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人",
+      "previousToken": "060002BF",
+      "previousOffset": 37,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C0",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 37,
+      "source": "下层区,上层区,治安部,黑市,革命军",
+      "previousToken": "060002C0",
+      "previousOffset": 37,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C0",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 79,
+      "source": "萝莉,少女,御姐,少妇,熟女",
+      "previousToken": "060002C0",
+      "previousOffset": 79,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C0",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WriteFbbAtCompose()",
+      "offset": 121,
+      "source": "贫乳,普乳,巨乳",
+      "previousToken": "060002C0",
+      "previousOffset": 121,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 33,
+      "source": "拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人",
+      "previousToken": "060002C8",
+      "previousOffset": 33,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 72,
+      "source": "下层区,上层区,治安部,黑市,革命军",
+      "previousToken": "060002C8",
+      "previousOffset": 72,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 110,
+      "source": "萝莉,少女,御姐,少妇,熟女",
+      "previousToken": "060002C8",
+      "previousOffset": 110,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C8",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::OnConfigChanged(System.String,System.Boolean,System.Boolean)",
+      "offset": 148,
+      "source": "贫乳,普乳,巨乳",
+      "previousToken": "060002C8",
+      "previousOffset": 148,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 24,
+      "source": "下层区,上层区,治安部,黑市,革命军",
+      "previousToken": "060002C9",
+      "previousOffset": 24,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 61,
+      "source": "拾荒者,矿工,雇佣兵,工程师,护士,医生,厨师,农场主,小偷,商人,清洁员,技师,文员,走私者,货运员,酒保,维修工,研究员,学徒,艺人",
+      "previousToken": "060002C9",
+      "previousOffset": 61,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 98,
+      "source": "萝莉,少女,御姐,少妇,熟女",
+      "previousToken": "060002C9",
+      "previousOffset": 98,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "060002C9",
+      "method": "System.Void LewdMemeConfig.MaidenPatch::WritePoolOrExp(System.String,System.Collections.Generic.List`1<System.String>)",
+      "offset": 135,
+      "source": "贫乳,普乳,巨乳",
+      "previousToken": "060002C9",
+      "previousOffset": 135,
+      "reason": "Raw pool CSV; not the diagnostic label."
+    },
+    {
+      "token": "06000302",
+      "method": "System.Boolean LewdMemeConfig.RemakePatches::TryProduceMilkPrefix(GameGridInventory,GameItem,System.Int32,System.Int32&)",
+      "offset": 248,
+      "source": "贫乳",
+      "previousToken": "06000302",
+      "previousOffset": 248,
+      "reason": "Raw body attribute comparison."
+    },
+    {
+      "token": "06000302",
+      "method": "System.Boolean LewdMemeConfig.RemakePatches::TryProduceMilkPrefix(GameGridInventory,GameItem,System.Int32,System.Int32&)",
+      "offset": 262,
+      "source": "巨乳",
+      "previousToken": "06000302",
+      "previousOffset": 262,
+      "reason": "Raw body attribute comparison."
+    },
+    {
+      "token": "0600031A",
+      "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::UpdateMaidenDescriptionBody(GameItem,System.Int32)",
+      "offset": 95,
+      "source": "上层区",
+      "previousToken": "0600031A",
+      "previousOffset": 95,
+      "reason": "Raw faction equality operand; narrative output has separate Korean literals."
+    },
+    {
+      "token": "0600031A",
+      "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::UpdateMaidenDescriptionBody(GameItem,System.Int32)",
+      "offset": 108,
+      "source": "治安部",
+      "previousToken": "0600031A",
+      "previousOffset": 108,
+      "reason": "Raw faction equality operand; narrative output has separate Korean literals."
+    },
+    {
+      "token": "0600031A",
+      "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::UpdateMaidenDescriptionBody(GameItem,System.Int32)",
+      "offset": 121,
+      "source": "黑市",
+      "previousToken": "0600031A",
+      "previousOffset": 121,
+      "reason": "Raw faction equality operand; narrative output has separate Korean literals."
+    },
+    {
+      "token": "0600031A",
+      "method": "System.Void LewdMemeConfig.SpecialAndManualPatches::UpdateMaidenDescriptionBody(GameItem,System.Int32)",
+      "offset": 134,
+      "source": "革命军",
+      "previousToken": "0600031A",
+      "previousOffset": 134,
+      "reason": "Raw faction equality operand; narrative output has separate Korean literals."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 1,
+      "source": "顾客",
+      "previousToken": "06000384",
+      "previousOffset": 1,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 20,
+      "source": "价格",
+      "previousToken": "06000384",
+      "previousOffset": 20,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 39,
+      "source": "成长",
+      "previousToken": "06000384",
+      "previousOffset": 39,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 58,
+      "source": "掉落",
+      "previousToken": "06000384",
+      "previousOffset": 58,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 77,
+      "source": "少女生成",
+      "previousToken": "06000384",
+      "previousOffset": 77,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 96,
+      "source": "闹钟",
+      "previousToken": "06000384",
+      "previousOffset": 96,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 115,
+      "source": "陷阱",
+      "previousToken": "06000384",
+      "previousOffset": 115,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 134,
+      "source": "界面",
+      "previousToken": "06000384",
+      "previousOffset": 134,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 153,
+      "source": "天赋",
+      "previousToken": "06000384",
+      "previousOffset": 153,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 172,
+      "source": "暗流交易联动",
+      "previousToken": "06000384",
+      "previousOffset": 172,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 191,
+      "source": "巢穴扩展联动",
+      "previousToken": "06000384",
+      "previousOffset": 191,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 210,
+      "source": "掌上青楼联动",
+      "previousToken": "06000384",
+      "previousOffset": 210,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 229,
+      "source": "tearlaments 联动",
+      "previousToken": "06000384",
+      "previousOffset": 229,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 248,
+      "source": "物品高清立绘管理器联动",
+      "previousToken": "06000384",
+      "previousOffset": 248,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 267,
+      "source": "开",
+      "previousToken": "06000384",
+      "previousOffset": 267,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 286,
+      "source": "关",
+      "previousToken": "06000384",
+      "previousOffset": 286,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 299,
+      "source": "关闭",
+      "previousToken": "06000384",
+      "previousOffset": 299,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 318,
+      "source": "不限制（原版）",
+      "previousToken": "06000384",
+      "previousOffset": 318,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 337,
+      "source": "仅日本",
+      "previousToken": "06000384",
+      "previousOffset": 337,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 356,
+      "source": "仅中国",
+      "previousToken": "06000384",
+      "previousOffset": 356,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 375,
+      "source": "仅中日韩",
+      "previousToken": "06000384",
+      "previousOffset": 375,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 394,
+      "source": "仅女性（原版）",
+      "previousToken": "06000384",
+      "previousOffset": 394,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 413,
+      "source": "不限性别",
+      "previousToken": "06000384",
+      "previousOffset": 413,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 432,
+      "source": "原版行为",
+      "previousToken": "06000384",
+      "previousOffset": 432,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 451,
+      "source": "保留游戏原分布",
+      "previousToken": "06000384",
+      "previousOffset": 451,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 470,
+      "source": "仅普通顾客",
+      "previousToken": "06000384",
+      "previousOffset": 470,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 489,
+      "source": "顾客+特殊顾客",
+      "previousToken": "06000384",
+      "previousOffset": 489,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    },
+    {
+      "token": "06000384",
+      "method": "System.String LewdMemeConfig.ConfigDisplayKo::Translate(System.String)",
+      "offset": 508,
+      "source": "全体人类角色",
+      "previousToken": "06000384",
+      "previousOffset": 508,
+      "reason": "Exact original lookup key in scoped UI translator, not output."
+    }
+  ],
+  "displayBoundaryIL": [
+    {
+      "method": "CustomUIWindow ModConfigWindow::Open(LoadedMod)",
+      "token": "06003A7E",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": "newobj",
+          "operand": "System.Void ModConfigWindow/<>c__DisplayClass7_0::.ctor()"
+        },
+        {
+          "offset": 5,
+          "opcode": "stloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 6,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 7,
+          "opcode": "brtrue.s",
+          "operand": "IL_000B: ldloc.0"
+        },
+        {
+          "offset": 9,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 10,
+          "opcode": "ret",
+          "operand": ""
+        },
+        {
+          "offset": 11,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 13,
+          "opcode": "ldfld",
+          "operand": "ModManifest LoadedMod::Manifest"
+        },
+        {
+          "offset": 18,
+          "opcode": "ldfld",
+          "operand": "System.String ModManifest::ID"
+        },
+        {
+          "offset": 23,
+          "opcode": "call",
+          "operand": "ModConfig ModConfig::Find(System.String)"
+        },
+        {
+          "offset": 28,
+          "opcode": "stfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 33,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 34,
+          "opcode": "ldfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 39,
+          "opcode": "brfalse.s",
+          "operand": "IL_0036: ldstr \"[ModConfig] '\""
+        },
+        {
+          "offset": 41,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 42,
+          "opcode": "ldfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 47,
+          "opcode": "callvirt",
+          "operand": "System.Boolean ModConfig::get_HasEntries()"
+        },
+        {
+          "offset": 52,
+          "opcode": "brtrue.s",
+          "operand": "IL_0057: call CustomUIManager CustomUIManager::get_Instance()"
+        },
+        {
+          "offset": 54,
+          "opcode": "ldstr",
+          "operand": "[ModConfig] '"
+        },
+        {
+          "offset": 59,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 60,
+          "opcode": "ldfld",
+          "operand": "ModManifest LoadedMod::Manifest"
+        },
+        {
+          "offset": 65,
+          "opcode": "ldfld",
+          "operand": "System.String ModManifest::ID"
+        },
+        {
+          "offset": 70,
+          "opcode": "ldstr",
+          "operand": "' has no configuration entries"
+        },
+        {
+          "offset": 75,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String,System.String)"
+        },
+        {
+          "offset": 80,
+          "opcode": "call",
+          "operand": "System.Void UnityEngine.Debug::Log(System.Object)"
+        },
+        {
+          "offset": 85,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 86,
+          "opcode": "ret",
+          "operand": ""
+        },
+        {
+          "offset": 87,
+          "opcode": "call",
+          "operand": "CustomUIManager CustomUIManager::get_Instance()"
+        },
+        {
+          "offset": 92,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 93,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 94,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 95,
+          "opcode": "call",
+          "operand": "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)"
+        },
+        {
+          "offset": 100,
+          "opcode": "brfalse.s",
+          "operand": "IL_0072: call StoreUIManager StoreUIManager::get_Instance()"
+        },
+        {
+          "offset": 102,
+          "opcode": "ldstr",
+          "operand": "[ModConfig] No CustomUIManager in the scene, cannot open the configuration panel"
+        },
+        {
+          "offset": 107,
+          "opcode": "call",
+          "operand": "System.Void Debug::LogError(System.Object)"
+        },
+        {
+          "offset": 112,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 113,
+          "opcode": "ret",
+          "operand": ""
+        },
+        {
+          "offset": 114,
+          "opcode": "call",
+          "operand": "StoreUIManager StoreUIManager::get_Instance()"
+        },
+        {
+          "offset": 119,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 120,
+          "opcode": "call",
+          "operand": "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)"
+        },
+        {
+          "offset": 125,
+          "opcode": "stloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 126,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 127,
+          "opcode": "brtrue.s",
+          "operand": "IL_0088: ldstr \"meta\""
+        },
+        {
+          "offset": 129,
+          "opcode": "ldstr",
+          "operand": "menu"
+        },
+        {
+          "offset": 134,
+          "opcode": "br.s",
+          "operand": "IL_008D: stloc.3"
+        },
+        {
+          "offset": 136,
+          "opcode": "ldstr",
+          "operand": "meta"
+        },
+        {
+          "offset": 141,
+          "opcode": "stloc.3",
+          "operand": ""
+        },
+        {
+          "offset": 142,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 143,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 144,
+          "opcode": "stfld",
+          "operand": "CustomUIWindow ModConfigWindow/<>c__DisplayClass7_0::window"
+        },
+        {
+          "offset": 149,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 150,
+          "opcode": "ldstr",
+          "operand": "mod_config:"
+        },
+        {
+          "offset": 155,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 156,
+          "opcode": "ldfld",
+          "operand": "ModManifest LoadedMod::Manifest"
+        },
+        {
+          "offset": 161,
+          "opcode": "ldfld",
+          "operand": "System.String ModManifest::ID"
+        },
+        {
+          "offset": 166,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String)"
+        },
+        {
+          "offset": 171,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 172,
+          "opcode": "ldfld",
+          "operand": "ModManifest LoadedMod::Manifest"
+        },
+        {
+          "offset": 177,
+          "opcode": "ldfld",
+          "operand": "System.String ModManifest::Name"
+        },
+        {
+          "offset": 182,
+          "opcode": "ldloc.3",
+          "operand": ""
+        },
+        {
+          "offset": 183,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 184,
+          "opcode": "ldfld",
+          "operand": "UnityEngine.GameObject CustomUIManager::optionUIPrefab"
+        },
+        {
+          "offset": 189,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 190,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIManager::CreateWindow(System.String,System.String,System.String,UnityEngine.GameObject,CustomUIManager/Style)"
+        },
+        {
+          "offset": 195,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 196,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 197,
+          "opcode": "ceq",
+          "operand": ""
+        },
+        {
+          "offset": 199,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::SetCloseOnEscape(System.Boolean)"
+        },
+        {
+          "offset": 204,
+          "opcode": "stloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 206,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 208,
+          "opcode": "ldc.r4",
+          "operand": "0"
+        },
+        {
+          "offset": 213,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginScrollFlexible(System.Single)"
+        },
+        {
+          "offset": 218,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 219,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 220,
+          "opcode": "ldfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 225,
+          "opcode": "callvirt",
+          "operand": "System.Collections.Generic.IEnumerable`1<System.String> ModConfig::get_Sections()"
+        },
+        {
+          "offset": 230,
+          "opcode": "callvirt",
+          "operand": "System.Collections.Generic.IEnumerator`1<System.String> System.Collections.Generic.IEnumerable`1<System.String>::GetEnumerator()"
+        },
+        {
+          "offset": 235,
+          "opcode": "stloc.s",
+          "operand": "V_5"
+        },
+        {
+          "offset": 237,
+          "opcode": "br",
+          "operand": "IL_0191: ldloc.s V_5"
+        },
+        {
+          "offset": 242,
+          "opcode": "ldloc.s",
+          "operand": "V_5"
+        },
+        {
+          "offset": 244,
+          "opcode": "callvirt",
+          "operand": "System.String System.Collections.Generic.IEnumerator`1<System.String>::get_Current()"
+        },
+        {
+          "offset": 249,
+          "opcode": "stloc.s",
+          "operand": "V_6"
+        },
+        {
+          "offset": 251,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 253,
+          "opcode": "ldc.r4",
+          "operand": "4"
+        },
+        {
+          "offset": 258,
+          "opcode": "ldc.i4.3",
+          "operand": ""
+        },
+        {
+          "offset": 259,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginRow(System.Single,UnityEngine.TextAnchor)"
+        },
+        {
+          "offset": 264,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 265,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 267,
+          "opcode": "ldloc.s",
+          "operand": "V_6"
+        },
+        {
+          "offset": 269,
+          "opcode": "ldstr",
+          "operand": "section_"
+        },
+        {
+          "offset": 274,
+          "opcode": "ldloc.s",
+          "operand": "V_6"
+        },
+        {
+          "offset": 276,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String)"
+        },
+        {
+          "offset": 281,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddHeader(System.String,System.String)"
+        },
+        {
+          "offset": 286,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 287,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 289,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 294,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 295,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 297,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 298,
+          "opcode": "ldc.i4.2",
+          "operand": ""
+        },
+        {
+          "offset": 299,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddSeparator(System.String,System.Int32)"
+        },
+        {
+          "offset": 304,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 305,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 306,
+          "opcode": "ldfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 311,
+          "opcode": "callvirt",
+          "operand": "System.Collections.Generic.IReadOnlyList`1<ConfigEntry> ModConfig::get_Entries()"
+        },
+        {
+          "offset": 316,
+          "opcode": "callvirt",
+          "operand": "System.Collections.Generic.IEnumerator`1<ConfigEntry> System.Collections.Generic.IEnumerable`1<ConfigEntry>::GetEnumerator()"
+        },
+        {
+          "offset": 321,
+          "opcode": "stloc.s",
+          "operand": "V_7"
+        },
+        {
+          "offset": 323,
+          "opcode": "br.s",
+          "operand": "IL_016D: ldloc.s V_7"
+        },
+        {
+          "offset": 325,
+          "opcode": "ldloc.s",
+          "operand": "V_7"
+        },
+        {
+          "offset": 327,
+          "opcode": "callvirt",
+          "operand": "ConfigEntry System.Collections.Generic.IEnumerator`1<ConfigEntry>::get_Current()"
+        },
+        {
+          "offset": 332,
+          "opcode": "stloc.s",
+          "operand": "V_8"
+        },
+        {
+          "offset": 334,
+          "opcode": "ldloc.s",
+          "operand": "V_8"
+        },
+        {
+          "offset": 336,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Section()"
+        },
+        {
+          "offset": 341,
+          "opcode": "ldloc.s",
+          "operand": "V_6"
+        },
+        {
+          "offset": 343,
+          "opcode": "call",
+          "operand": "System.Boolean System.String::op_Equality(System.String,System.String)"
+        },
+        {
+          "offset": 348,
+          "opcode": "brfalse.s",
+          "operand": "IL_016D: ldloc.s V_7"
+        },
+        {
+          "offset": 350,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 352,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 353,
+          "opcode": "ldfld",
+          "operand": "ModConfig ModConfigWindow/<>c__DisplayClass7_0::config"
+        },
+        {
+          "offset": 358,
+          "opcode": "ldloc.s",
+          "operand": "V_8"
+        },
+        {
+          "offset": 360,
+          "opcode": "call",
+          "operand": "System.Void ModConfigWindow::BuildEntry(CustomUIBuilder,ModConfig,ConfigEntry)"
+        },
+        {
+          "offset": 365,
+          "opcode": "ldloc.s",
+          "operand": "V_7"
+        },
+        {
+          "offset": 367,
+          "opcode": "callvirt",
+          "operand": "System.Boolean System.Collections.IEnumerator::MoveNext()"
+        },
+        {
+          "offset": 372,
+          "opcode": "brtrue.s",
+          "operand": "IL_0145: ldloc.s V_7"
+        },
+        {
+          "offset": 374,
+          "opcode": "leave.s",
+          "operand": "IL_0184: ldloc.s V_4"
+        },
+        {
+          "offset": 376,
+          "opcode": "ldloc.s",
+          "operand": "V_7"
+        },
+        {
+          "offset": 378,
+          "opcode": "brfalse.s",
+          "operand": "IL_0183: endfinally"
+        },
+        {
+          "offset": 380,
+          "opcode": "ldloc.s",
+          "operand": "V_7"
+        },
+        {
+          "offset": 382,
+          "opcode": "callvirt",
+          "operand": "System.Void System.IDisposable::Dispose()"
+        },
+        {
+          "offset": 387,
+          "opcode": "endfinally",
+          "operand": ""
+        },
+        {
+          "offset": 388,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 390,
+          "opcode": "ldc.r4",
+          "operand": "12"
+        },
+        {
+          "offset": 395,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddSpace(System.Single)"
+        },
+        {
+          "offset": 400,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 401,
+          "opcode": "ldloc.s",
+          "operand": "V_5"
+        },
+        {
+          "offset": 403,
+          "opcode": "callvirt",
+          "operand": "System.Boolean System.Collections.IEnumerator::MoveNext()"
+        },
+        {
+          "offset": 408,
+          "opcode": "brtrue",
+          "operand": "IL_00F2: ldloc.s V_5"
+        },
+        {
+          "offset": 413,
+          "opcode": "leave.s",
+          "operand": "IL_01AB: ldloc.s V_4"
+        },
+        {
+          "offset": 415,
+          "opcode": "ldloc.s",
+          "operand": "V_5"
+        },
+        {
+          "offset": 417,
+          "opcode": "brfalse.s",
+          "operand": "IL_01AA: endfinally"
+        },
+        {
+          "offset": 419,
+          "opcode": "ldloc.s",
+          "operand": "V_5"
+        },
+        {
+          "offset": 421,
+          "opcode": "callvirt",
+          "operand": "System.Void System.IDisposable::Dispose()"
+        },
+        {
+          "offset": 426,
+          "opcode": "endfinally",
+          "operand": ""
+        },
+        {
+          "offset": 427,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 429,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 434,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 435,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 437,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 438,
+          "opcode": "ldc.i4.2",
+          "operand": ""
+        },
+        {
+          "offset": 439,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddSeparator(System.String,System.Int32)"
+        },
+        {
+          "offset": 444,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 445,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 447,
+          "opcode": "ldc.r4",
+          "operand": "12"
+        },
+        {
+          "offset": 452,
+          "opcode": "ldc.i4.4",
+          "operand": ""
+        },
+        {
+          "offset": 453,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginRow(System.Single,UnityEngine.TextAnchor)"
+        },
+        {
+          "offset": 458,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 459,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 461,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 466,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 467,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 469,
+          "opcode": "ldstr",
+          "operand": "ui_modcfg_reset"
+        },
+        {
+          "offset": 474,
+          "opcode": "call",
+          "operand": "System.Object[] System.Array::Empty<System.Object>()"
+        },
+        {
+          "offset": 479,
+          "opcode": "call",
+          "operand": "System.String LocHelper::GetLocalizedUI(System.String,System.Object[])"
+        },
+        {
+          "offset": 484,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 485,
+          "opcode": "ldftn",
+          "operand": "System.Void ModConfigWindow/<>c__DisplayClass7_0::<Open>b__0()"
+        },
+        {
+          "offset": 491,
+          "opcode": "newobj",
+          "operand": "System.Void System.Action::.ctor(System.Object,System.IntPtr)"
+        },
+        {
+          "offset": 496,
+          "opcode": "ldstr",
+          "operand": "reset"
+        },
+        {
+          "offset": 501,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddButton(System.String,System.Action,System.String)"
+        },
+        {
+          "offset": 506,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 507,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 509,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 514,
+          "opcode": "ldc.r4",
+          "operand": "220"
+        },
+        {
+          "offset": 519,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 524,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 525,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 527,
+          "opcode": "ldstr",
+          "operand": "option_apply"
+        },
+        {
+          "offset": 532,
+          "opcode": "call",
+          "operand": "System.Object[] System.Array::Empty<System.Object>()"
+        },
+        {
+          "offset": 537,
+          "opcode": "call",
+          "operand": "System.String LocHelper::GetLocalizedMainMenu(System.String,System.Object[])"
+        },
+        {
+          "offset": 542,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 543,
+          "opcode": "ldftn",
+          "operand": "System.Void ModConfigWindow/<>c__DisplayClass7_0::<Open>b__1()"
+        },
+        {
+          "offset": 549,
+          "opcode": "newobj",
+          "operand": "System.Void System.Action::.ctor(System.Object,System.IntPtr)"
+        },
+        {
+          "offset": 554,
+          "opcode": "ldstr",
+          "operand": "apply"
+        },
+        {
+          "offset": 559,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddButton(System.String,System.Action,System.String)"
+        },
+        {
+          "offset": 564,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 565,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 567,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 572,
+          "opcode": "ldc.r4",
+          "operand": "220"
+        },
+        {
+          "offset": 577,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 582,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 583,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 585,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 590,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 591,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 593,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 598,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 599,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 601,
+          "opcode": "ldc.r4",
+          "operand": "0"
+        },
+        {
+          "offset": 606,
+          "opcode": "ldc.i4.4",
+          "operand": ""
+        },
+        {
+          "offset": 607,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginRow(System.Single,UnityEngine.TextAnchor)"
+        },
+        {
+          "offset": 612,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 613,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 615,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 620,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 621,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 623,
+          "opcode": "ldstr",
+          "operand": "ui_mods_restart_note"
+        },
+        {
+          "offset": 628,
+          "opcode": "call",
+          "operand": "System.Object[] System.Array::Empty<System.Object>()"
+        },
+        {
+          "offset": 633,
+          "opcode": "call",
+          "operand": "System.String LocHelper::GetLocalizedUI(System.String,System.Object[])"
+        },
+        {
+          "offset": 638,
+          "opcode": "ldstr",
+          "operand": "restart_note"
+        },
+        {
+          "offset": 643,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddWarning(System.String,System.String)"
+        },
+        {
+          "offset": 648,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 649,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 651,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 656,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 657,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 659,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 664,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 665,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 666,
+          "opcode": "ldloc.s",
+          "operand": "V_4"
+        },
+        {
+          "offset": 668,
+          "opcode": "callvirt",
+          "operand": "CustomUIWindow CustomUIBuilder::Show()"
+        },
+        {
+          "offset": 673,
+          "opcode": "stfld",
+          "operand": "CustomUIWindow ModConfigWindow/<>c__DisplayClass7_0::window"
+        },
+        {
+          "offset": 678,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 679,
+          "opcode": "ldfld",
+          "operand": "CustomUIWindow ModConfigWindow/<>c__DisplayClass7_0::window"
+        },
+        {
+          "offset": 684,
+          "opcode": "ldstr",
+          "operand": "restart_note"
+        },
+        {
+          "offset": 689,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIWindow::Get(System.String)"
+        },
+        {
+          "offset": 694,
+          "opcode": "dup",
+          "operand": ""
+        },
+        {
+          "offset": 695,
+          "opcode": "brtrue.s",
+          "operand": "IL_02BC: ldc.i4.0"
+        },
+        {
+          "offset": 697,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 698,
+          "opcode": "br.s",
+          "operand": "IL_02C3: ldloc.0"
+        },
+        {
+          "offset": 700,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 701,
+          "opcode": "call",
+          "operand": "CustomUIElement CustomUIElement::SetVisible(System.Boolean)"
+        },
+        {
+          "offset": 706,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 707,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 708,
+          "opcode": "ldfld",
+          "operand": "CustomUIWindow ModConfigWindow/<>c__DisplayClass7_0::window"
+        },
+        {
+          "offset": 713,
+          "opcode": "ret",
+          "operand": ""
+        }
+      ]
+    },
+    {
+      "method": "System.Void ModConfigWindow::BuildEntry(CustomUIBuilder,ModConfig,ConfigEntry)",
+      "token": "06003A7F",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 1,
+          "opcode": "callvirt",
+          "operand": "System.Func`1<System.String> ConfigEntry::get_Label()"
+        },
+        {
+          "offset": 6,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 7,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 12,
+          "opcode": "call",
+          "operand": "System.String ModConfigWindow::Safe<System.String>(System.Func`1<System.String>,System.String)"
+        },
+        {
+          "offset": 17,
+          "opcode": "stloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 18,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 19,
+          "opcode": "callvirt",
+          "operand": "System.Func`1<System.String> ConfigEntry::get_Tooltip()"
+        },
+        {
+          "offset": 24,
+          "opcode": "brfalse.s",
+          "operand": "IL_0059: ldarg.0"
+        },
+        {
+          "offset": 26,
+          "opcode": "ldstr",
+          "operand": "modcfg:"
+        },
+        {
+          "offset": 31,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 32,
+          "opcode": "callvirt",
+          "operand": "System.String ModConfig::get_ModId()"
+        },
+        {
+          "offset": 37,
+          "opcode": "ldstr",
+          "operand": ":"
+        },
+        {
+          "offset": 42,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 43,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 48,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+        },
+        {
+          "offset": 53,
+          "opcode": "stloc.3",
+          "operand": ""
+        },
+        {
+          "offset": 54,
+          "opcode": "ldsfld",
+          "operand": "System.Collections.Generic.Dictionary`2<System.String,System.Func`1<System.String>> TMPIconHover::CustomLinks"
+        },
+        {
+          "offset": 59,
+          "opcode": "ldloc.3",
+          "operand": ""
+        },
+        {
+          "offset": 60,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 61,
+          "opcode": "callvirt",
+          "operand": "System.Func`1<System.String> ConfigEntry::get_Tooltip()"
+        },
+        {
+          "offset": 66,
+          "opcode": "callvirt",
+          "operand": "System.Void System.Collections.Generic.Dictionary`2<System.String,System.Func`1<System.String>>::set_Item(System.String,System.Func`1<System.String>)"
+        },
+        {
+          "offset": 71,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 72,
+          "opcode": "ldstr",
+          "operand": " <link=\""
+        },
+        {
+          "offset": 77,
+          "opcode": "ldloc.3",
+          "operand": ""
+        },
+        {
+          "offset": 78,
+          "opcode": "ldstr",
+          "operand": "\"><sprite name=\"info\" tint=1></link>"
+        },
+        {
+          "offset": 83,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+        },
+        {
+          "offset": 88,
+          "opcode": "stloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 89,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 90,
+          "opcode": "ldc.r4",
+          "operand": "4"
+        },
+        {
+          "offset": 95,
+          "opcode": "ldc.i4.3",
+          "operand": ""
+        },
+        {
+          "offset": 96,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginRow(System.Single,UnityEngine.TextAnchor)"
+        },
+        {
+          "offset": 101,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 102,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 103,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 104,
+          "opcode": "ldstr",
+          "operand": "label_"
+        },
+        {
+          "offset": 109,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 110,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 115,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String)"
+        },
+        {
+          "offset": 120,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddLabel(System.String,System.String)"
+        },
+        {
+          "offset": 125,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 126,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 127,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 132,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 133,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 134,
+          "opcode": "callvirt",
+          "operand": "System.Type ConfigEntry::get_ValueType()"
+        },
+        {
+          "offset": 139,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 140,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 141,
+          "opcode": "callvirt",
+          "operand": "System.Object ConfigEntry::get_BoxedValue()"
+        },
+        {
+          "offset": 146,
+          "opcode": "stloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 147,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 148,
+          "opcode": "ldtoken",
+          "operand": "System.Boolean"
+        },
+        {
+          "offset": 153,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 158,
+          "opcode": "call",
+          "operand": "System.Boolean System.Type::op_Equality(System.Type,System.Type)"
+        },
+        {
+          "offset": 163,
+          "opcode": "brfalse.s",
+          "operand": "IL_00C3: ldloc.1"
+        },
+        {
+          "offset": 165,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 166,
+          "opcode": "ldstr",
+          "operand": ""
+        },
+        {
+          "offset": 171,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 172,
+          "opcode": "unbox.any",
+          "operand": "System.Boolean"
+        },
+        {
+          "offset": 177,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 178,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 179,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 184,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddToggle(System.String,System.Boolean,System.Action`1<System.Boolean>,System.String)"
+        },
+        {
+          "offset": 189,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 190,
+          "opcode": "br",
+          "operand": "IL_0195: ldarg.0"
+        },
+        {
+          "offset": 195,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 196,
+          "opcode": "call",
+          "operand": "System.Boolean ModConfigWindow::IsNumber(System.Type)"
+        },
+        {
+          "offset": 201,
+          "opcode": "brfalse.s",
+          "operand": "IL_011B: ldarg.2"
+        },
+        {
+          "offset": 203,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 204,
+          "opcode": "callvirt",
+          "operand": "System.Boolean ConfigEntry::get_HasRange()"
+        },
+        {
+          "offset": 209,
+          "opcode": "brfalse.s",
+          "operand": "IL_011B: ldarg.2"
+        },
+        {
+          "offset": 211,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 212,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 213,
+          "opcode": "callvirt",
+          "operand": "System.Single ConfigEntry::get_Min()"
+        },
+        {
+          "offset": 218,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 219,
+          "opcode": "callvirt",
+          "operand": "System.Single ConfigEntry::get_Max()"
+        },
+        {
+          "offset": 224,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 225,
+          "opcode": "call",
+          "operand": "System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()"
+        },
+        {
+          "offset": 230,
+          "opcode": "call",
+          "operand": "System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)"
+        },
+        {
+          "offset": 235,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 236,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 237,
+          "opcode": "ldtoken",
+          "operand": "System.Int32"
+        },
+        {
+          "offset": 242,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 247,
+          "opcode": "call",
+          "operand": "System.Boolean System.Type::op_Equality(System.Type,System.Type)"
+        },
+        {
+          "offset": 252,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 253,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 258,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddSlider(System.Single,System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.String)"
+        },
+        {
+          "offset": 263,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 264,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 265,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 270,
+          "opcode": "ldc.r4",
+          "operand": "224"
+        },
+        {
+          "offset": 275,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 280,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 281,
+          "opcode": "br.s",
+          "operand": "IL_0195: ldarg.0"
+        },
+        {
+          "offset": 283,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 284,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 289,
+          "opcode": "brfalse.s",
+          "operand": "IL_016A: ldarg.0"
+        },
+        {
+          "offset": 291,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 292,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 297,
+          "opcode": "ldlen",
+          "operand": ""
+        },
+        {
+          "offset": 298,
+          "opcode": "brfalse.s",
+          "operand": "IL_016A: ldarg.0"
+        },
+        {
+          "offset": 300,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 301,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 302,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 307,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 308,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 309,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 314,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 315,
+          "opcode": "call",
+          "operand": "System.String ConfigEntry::Format(System.Object)"
+        },
+        {
+          "offset": 320,
+          "opcode": "call",
+          "operand": "System.Int32 System.Array::IndexOf<System.String>(System.String[],System.String)"
+        },
+        {
+          "offset": 325,
+          "opcode": "call",
+          "operand": "System.Int32 UnityEngine.Mathf::Max(System.Int32,System.Int32)"
+        },
+        {
+          "offset": 330,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 331,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 332,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 337,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddDropdown(System.Collections.Generic.IList`1<System.String>,System.Int32,System.Action`1<System.Int32>,System.String)"
+        },
+        {
+          "offset": 342,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 343,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 344,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 349,
+          "opcode": "ldc.r4",
+          "operand": "245"
+        },
+        {
+          "offset": 354,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 359,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 360,
+          "opcode": "br.s",
+          "operand": "IL_0195: ldarg.0"
+        },
+        {
+          "offset": 362,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 363,
+          "opcode": "ldstr",
+          "operand": ""
+        },
+        {
+          "offset": 368,
+          "opcode": "ldloc.2",
+          "operand": ""
+        },
+        {
+          "offset": 369,
+          "opcode": "call",
+          "operand": "System.String ConfigEntry::Format(System.Object)"
+        },
+        {
+          "offset": 374,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 375,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 376,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 381,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 382,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddInput(System.String,System.String,System.Action`1<System.String>,System.String,System.Action`1<System.String>)"
+        },
+        {
+          "offset": 387,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 388,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 389,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 394,
+          "opcode": "ldc.r4",
+          "operand": "245"
+        },
+        {
+          "offset": 399,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 404,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 405,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 406,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 411,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 412,
+          "opcode": "ret",
+          "operand": ""
+        }
+      ]
+    },
+    {
+      "method": "System.Void LewdMemeConfig.PanelRowPatch::Install(System.Action`1<System.String>)",
+      "token": "060000C3",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": "ldstr",
+          "operand": "lewd_meme_config.panel"
+        },
+        {
+          "offset": 5,
+          "opcode": "newobj",
+          "operand": "System.Void HarmonyLib.Harmony::.ctor(System.String)"
+        },
+        {
+          "offset": 10,
+          "opcode": "stsfld",
+          "operand": "HarmonyLib.Harmony LewdMemeConfig.PanelRowPatch::harmony"
+        },
+        {
+          "offset": 15,
+          "opcode": "ldtoken",
+          "operand": "ModConfigWindow"
+        },
+        {
+          "offset": 20,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 25,
+          "opcode": "ldstr",
+          "operand": "BuildEntry"
+        },
+        {
+          "offset": 30,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 31,
+          "opcode": "call",
+          "operand": "System.Reflection.MethodBase ModReflect::Target(System.Type,System.String,System.Type[])"
+        },
+        {
+          "offset": 36,
+          "opcode": "stloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 37,
+          "opcode": "ldsfld",
+          "operand": "HarmonyLib.Harmony LewdMemeConfig.PanelRowPatch::harmony"
+        },
+        {
+          "offset": 42,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 43,
+          "opcode": "ldtoken",
+          "operand": "LewdMemeConfig.PanelRowPatch"
+        },
+        {
+          "offset": 48,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 53,
+          "opcode": "ldstr",
+          "operand": "BuildEntryPrefix"
+        },
+        {
+          "offset": 58,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 59,
+          "opcode": "newobj",
+          "operand": "System.Void HarmonyLib.HarmonyMethod::.ctor(System.Type,System.String,System.Type[])"
+        },
+        {
+          "offset": 64,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 65,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 66,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 67,
+          "opcode": "callvirt",
+          "operand": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+        },
+        {
+          "offset": 72,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 73,
+          "opcode": "ldsfld",
+          "operand": "HarmonyLib.Harmony LewdMemeConfig.PanelRowPatch::harmony"
+        },
+        {
+          "offset": 78,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 79,
+          "opcode": "call",
+          "operand": "System.Void LewdMemeConfig.ConfigDisplayKo::Install(HarmonyLib.Harmony,System.Action`1<System.String>)"
+        },
+        {
+          "offset": 84,
+          "opcode": "leave.s",
+          "operand": "IL_0078: ret"
+        },
+        {
+          "offset": 86,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 87,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 88,
+          "opcode": "stsfld",
+          "operand": "HarmonyLib.Harmony LewdMemeConfig.PanelRowPatch::harmony"
+        },
+        {
+          "offset": 93,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 94,
+          "opcode": "brfalse.s",
+          "operand": "IL_0076: leave.s IL_0078"
+        },
+        {
+          "offset": 96,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 97,
+          "opcode": "ldstr",
+          "operand": "패널 구성 요소 세 가지의 설치 실패. 수치 항목은 기본 게임 표시 방식으로 복귀: "
+        },
+        {
+          "offset": 102,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 103,
+          "opcode": "callvirt",
+          "operand": "System.String System.Exception::get_Message()"
+        },
+        {
+          "offset": 108,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String)"
+        },
+        {
+          "offset": 113,
+          "opcode": "callvirt",
+          "operand": "System.Void System.Action`1<System.String>::Invoke(System.String)"
+        },
+        {
+          "offset": 118,
+          "opcode": "leave.s",
+          "operand": "IL_0078: ret"
+        },
+        {
+          "offset": 120,
+          "opcode": "ret",
+          "operand": ""
+        }
+      ]
+    },
+    {
+      "method": "System.Boolean LewdMemeConfig.PanelRowPatch::BuildEntryPrefix(CustomUIBuilder,ModConfig,ConfigEntry)",
+      "token": "060000C5",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 1,
+          "opcode": "brfalse.s",
+          "operand": "IL_0018: ldc.i4.1"
+        },
+        {
+          "offset": 3,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 4,
+          "opcode": "brfalse.s",
+          "operand": "IL_0018: ldc.i4.1"
+        },
+        {
+          "offset": 6,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 7,
+          "opcode": "callvirt",
+          "operand": "System.String ModConfig::get_ModId()"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldstr",
+          "operand": "lewd_meme_config"
+        },
+        {
+          "offset": 17,
+          "opcode": "call",
+          "operand": "System.Boolean System.String::op_Inequality(System.String,System.String)"
+        },
+        {
+          "offset": 22,
+          "opcode": "brfalse.s",
+          "operand": "IL_001C: ldarg.2"
+        },
+        {
+          "offset": 24,
+          "opcode": "ldc.i4.1",
+          "operand": ""
+        },
+        {
+          "offset": 25,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 26,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 28,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 29,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 34,
+          "opcode": "call",
+          "operand": "System.String LewdMemeConfig.PanelMarks::For(System.String)"
+        },
+        {
+          "offset": 39,
+          "opcode": "stloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 40,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 41,
+          "opcode": "callvirt",
+          "operand": "System.Type ConfigEntry::get_ValueType()"
+        },
+        {
+          "offset": 46,
+          "opcode": "ldtoken",
+          "operand": "System.Int32"
+        },
+        {
+          "offset": 51,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 56,
+          "opcode": "call",
+          "operand": "System.Boolean System.Type::op_Equality(System.Type,System.Type)"
+        },
+        {
+          "offset": 61,
+          "opcode": "brfalse.s",
+          "operand": "IL_0055: ldarg.2"
+        },
+        {
+          "offset": 63,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 64,
+          "opcode": "callvirt",
+          "operand": "System.Boolean ConfigEntry::get_HasRange()"
+        },
+        {
+          "offset": 69,
+          "opcode": "brfalse.s",
+          "operand": "IL_0055: ldarg.2"
+        },
+        {
+          "offset": 71,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 72,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 73,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 74,
+          "opcode": "ldc.i4.1",
+          "operand": ""
+        },
+        {
+          "offset": 75,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 76,
+          "opcode": "call",
+          "operand": "System.Void LewdMemeConfig.PanelRowPatch::TripleRow(CustomUIBuilder,ModConfig,ConfigEntry,System.Boolean,System.String)"
+        },
+        {
+          "offset": 81,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 82,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 83,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 85,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 86,
+          "opcode": "callvirt",
+          "operand": "System.Type ConfigEntry::get_ValueType()"
+        },
+        {
+          "offset": 91,
+          "opcode": "ldtoken",
+          "operand": "System.Single"
+        },
+        {
+          "offset": 96,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 101,
+          "opcode": "call",
+          "operand": "System.Boolean System.Type::op_Equality(System.Type,System.Type)"
+        },
+        {
+          "offset": 106,
+          "opcode": "brfalse.s",
+          "operand": "IL_0082: ldloc.0"
+        },
+        {
+          "offset": 108,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 109,
+          "opcode": "callvirt",
+          "operand": "System.Boolean ConfigEntry::get_HasRange()"
+        },
+        {
+          "offset": 114,
+          "opcode": "brfalse.s",
+          "operand": "IL_0082: ldloc.0"
+        },
+        {
+          "offset": 116,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 117,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 118,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 119,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 120,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 121,
+          "opcode": "call",
+          "operand": "System.Void LewdMemeConfig.PanelRowPatch::TripleRow(CustomUIBuilder,ModConfig,ConfigEntry,System.Boolean,System.String)"
+        },
+        {
+          "offset": 126,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 127,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 128,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 130,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 131,
+          "opcode": "brfalse.s",
+          "operand": "IL_0092: ldc.i4.1"
+        },
+        {
+          "offset": 133,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 134,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 135,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 136,
+          "opcode": "ldloc.0",
+          "operand": ""
+        },
+        {
+          "offset": 137,
+          "opcode": "call",
+          "operand": "System.Void LewdMemeConfig.PanelRowPatch::MarkedRow(CustomUIBuilder,ModConfig,ConfigEntry,System.String)"
+        },
+        {
+          "offset": 142,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 143,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 144,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 146,
+          "opcode": "ldc.i4.1",
+          "operand": ""
+        },
+        {
+          "offset": 147,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 148,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 150,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 151,
+          "opcode": "ldc.i4.1",
+          "operand": ""
+        },
+        {
+          "offset": 152,
+          "opcode": "stloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 153,
+          "opcode": "leave.s",
+          "operand": "IL_009B: ldloc.1"
+        },
+        {
+          "offset": 155,
+          "opcode": "ldloc.1",
+          "operand": ""
+        },
+        {
+          "offset": 156,
+          "opcode": "ret",
+          "operand": ""
+        }
+      ]
+    },
+    {
+      "method": "System.Void LewdMemeConfig.PanelRowPatch::MarkedRow(CustomUIBuilder,ModConfig,ConfigEntry,System.String)",
+      "token": "060000C7",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 1,
+          "opcode": "ldc.r4",
+          "operand": "4"
+        },
+        {
+          "offset": 6,
+          "opcode": "ldc.i4.3",
+          "operand": ""
+        },
+        {
+          "offset": 7,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::BeginRow(System.Single,UnityEngine.TextAnchor)"
+        },
+        {
+          "offset": 12,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 14,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 15,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 16,
+          "opcode": "ldarg.3",
+          "operand": ""
+        },
+        {
+          "offset": 17,
+          "opcode": "call",
+          "operand": "System.String LewdMemeConfig.PanelRowPatch::LabelText(ModConfig,ConfigEntry,System.String)"
+        },
+        {
+          "offset": 22,
+          "opcode": "ldstr",
+          "operand": "label_"
+        },
+        {
+          "offset": 27,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 28,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 33,
+          "opcode": "call",
+          "operand": "System.String System.String::Concat(System.String,System.String)"
+        },
+        {
+          "offset": 38,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddLabel(System.String,System.String)"
+        },
+        {
+          "offset": 43,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 44,
+          "opcode": "ldarg.3",
+          "operand": ""
+        },
+        {
+          "offset": 45,
+          "opcode": "brfalse.s",
+          "operand": "IL_003A: ldarg.0"
+        },
+        {
+          "offset": 47,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 48,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 53,
+          "opcode": "call",
+          "operand": "System.Void LewdMemeConfig.PanelRowPatch::EnsureRichText(CustomUIElement)"
+        },
+        {
+          "offset": 58,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 59,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddFlexibleSpace()"
+        },
+        {
+          "offset": 64,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 65,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 66,
+          "opcode": "callvirt",
+          "operand": "System.Type ConfigEntry::get_ValueType()"
+        },
+        {
+          "offset": 71,
+          "opcode": "ldtoken",
+          "operand": "System.Boolean"
+        },
+        {
+          "offset": 76,
+          "opcode": "call",
+          "operand": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+        },
+        {
+          "offset": 81,
+          "opcode": "call",
+          "operand": "System.Boolean System.Type::op_Equality(System.Type,System.Type)"
+        },
+        {
+          "offset": 86,
+          "opcode": "brfalse.s",
+          "operand": "IL_007B: ldarg.2"
+        },
+        {
+          "offset": 88,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 89,
+          "opcode": "ldstr",
+          "operand": ""
+        },
+        {
+          "offset": 94,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 95,
+          "opcode": "callvirt",
+          "operand": "System.Object ConfigEntry::get_BoxedValue()"
+        },
+        {
+          "offset": 100,
+          "opcode": "unbox.any",
+          "operand": "System.Boolean"
+        },
+        {
+          "offset": 105,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 106,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 107,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 112,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddToggle(System.String,System.Boolean,System.Action`1<System.Boolean>,System.String)"
+        },
+        {
+          "offset": 117,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 118,
+          "opcode": "br",
+          "operand": "IL_0105: ldarg.0"
+        },
+        {
+          "offset": 123,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 124,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 129,
+          "opcode": "brfalse.s",
+          "operand": "IL_00D5: ldarg.0"
+        },
+        {
+          "offset": 131,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 132,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 137,
+          "opcode": "ldlen",
+          "operand": ""
+        },
+        {
+          "offset": 138,
+          "opcode": "brfalse.s",
+          "operand": "IL_00D5: ldarg.0"
+        },
+        {
+          "offset": 140,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 141,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 142,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 147,
+          "opcode": "ldarg.1",
+          "operand": ""
+        },
+        {
+          "offset": 148,
+          "opcode": "call",
+          "operand": "System.String[] LewdMemeConfig.ConfigDisplayKo::Choices(System.String[],ModConfig)"
+        },
+        {
+          "offset": 153,
+          "opcode": "ldc.i4.0",
+          "operand": ""
+        },
+        {
+          "offset": 154,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 155,
+          "opcode": "callvirt",
+          "operand": "System.String[] ConfigEntry::get_Choices()"
+        },
+        {
+          "offset": 160,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 161,
+          "opcode": "callvirt",
+          "operand": "System.Object ConfigEntry::get_BoxedValue()"
+        },
+        {
+          "offset": 166,
+          "opcode": "call",
+          "operand": "System.String ConfigEntry::Format(System.Object)"
+        },
+        {
+          "offset": 171,
+          "opcode": "call",
+          "operand": "System.Int32 System.Array::IndexOf<System.String>(System.String[],System.String)"
+        },
+        {
+          "offset": 176,
+          "opcode": "call",
+          "operand": "System.Int32 UnityEngine.Mathf::Max(System.Int32,System.Int32)"
+        },
+        {
+          "offset": 181,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 182,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 183,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 188,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddDropdown(System.Collections.Generic.IList`1<System.String>,System.Int32,System.Action`1<System.Int32>,System.String)"
+        },
+        {
+          "offset": 193,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 194,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 195,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 200,
+          "opcode": "ldc.r4",
+          "operand": "245"
+        },
+        {
+          "offset": 205,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 210,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 211,
+          "opcode": "br.s",
+          "operand": "IL_0105: ldarg.0"
+        },
+        {
+          "offset": 213,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 214,
+          "opcode": "ldstr",
+          "operand": ""
+        },
+        {
+          "offset": 219,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 220,
+          "opcode": "callvirt",
+          "operand": "System.Object ConfigEntry::get_BoxedValue()"
+        },
+        {
+          "offset": 225,
+          "opcode": "call",
+          "operand": "System.String ConfigEntry::Format(System.Object)"
+        },
+        {
+          "offset": 230,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 231,
+          "opcode": "ldarg.2",
+          "operand": ""
+        },
+        {
+          "offset": 232,
+          "opcode": "callvirt",
+          "operand": "System.String ConfigEntry::get_Key()"
+        },
+        {
+          "offset": 237,
+          "opcode": "ldnull",
+          "operand": ""
+        },
+        {
+          "offset": 238,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::AddInput(System.String,System.String,System.Action`1<System.String>,System.String,System.Action`1<System.String>)"
+        },
+        {
+          "offset": 243,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 244,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 245,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIBuilder::get_Last()"
+        },
+        {
+          "offset": 250,
+          "opcode": "ldc.r4",
+          "operand": "245"
+        },
+        {
+          "offset": 255,
+          "opcode": "callvirt",
+          "operand": "CustomUIElement CustomUIElement::SetFixedWidth(System.Single)"
+        },
+        {
+          "offset": 260,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 261,
+          "opcode": "ldarg.0",
+          "operand": ""
+        },
+        {
+          "offset": 262,
+          "opcode": "callvirt",
+          "operand": "CustomUIBuilder CustomUIBuilder::End()"
+        },
+        {
+          "offset": 267,
+          "opcode": "pop",
+          "operand": ""
+        },
+        {
+          "offset": 268,
+          "opcode": "ret",
+          "operand": ""
+        }
+      ]
+    }
+  ],
+  "runtime": "not tested",
+  "originalDllHash": "0187ef135dac07ddd80676b679674c633d56567088f453721db290f3fe697313",
+  "directPatchSites": 21,
+  "extraDebugLabels": 2,
+  "additionalDiagnosticSites": 8,
+  "totalNewDirectLiteralPatches": 31,
+  "alreadyKorean": 6,
+  "scopedHeaderBoundary": 1,
+  "scopedChoiceBoundaries": 2,
+  "originalMethodCount": 881,
+  "embeddedHelperMethods": 7,
+  "protectedOriginalCjkSites": 272,
+  "helperLookupCjkSites": 28,
+  "protectedCategoryCounts": {
+    "Raw configuration defaults.": 5,
+    "Raw choice/default value; display array copied, original array and selected index retained.": 22,
+    "Shared section identifier; header display-only translation inserted, original section_ ID and equality retained.": 196,
+    "Already Korean; contains intentionally preserved raw CSV input examples.": 5,
+    "Raw scope choice and reverse mapping; display array translated separately.": 4,
+    "Original group identity, retained with matching FamilyPanelKeys section.": 1,
+    "Raw faction test fixture or equality operand.": 4,
+    "Already Korean; literal config switch token retained.": 1,
+    "Raw faction parsing key.": 1,
+    "Original matching/rewrite input or raw faction default.": 4,
+    "Original search/blacklist values.": 2,
+    "Original item identity or internally consumed attribute token.": 5,
+    "Raw pool CSV; not the diagnostic label.": 16,
+    "Raw body attribute comparison.": 2,
+    "Raw faction equality operand; narrative output has separate Korean literals.": 4
+  },
+  "remainingUnclassified": 0,
+  "remainingAuditedDisplaySites": 0,
+  "manifestVersion": "0.7.2-pre",
+  "archive": {
+    "path": "ProbablyStolen_LewdMemeConfig_v0.7.2-pre_KO_Final_20261122.zip",
+    "sha256": "3a958d27ab68c3c26d578d639d97f5d1bfb10d14085e817dbc0a88a0f31233ec",
+    "files": 3,
+    "crc": "pass",
+    "matchesAllOverlayFiles": true
+  }
+}

@@ -43,6 +43,7 @@ namespace LewdMemeConfig
                 harmony = new Harmony(PatchId);
                 MethodBase original = ModReflect.Target(typeof(ModConfigWindow), "BuildEntry");
                 harmony.Patch(original, prefix: new HarmonyMethod(typeof(PanelRowPatch), nameof(BuildEntryPrefix)));
+                ConfigDisplayKo.Install(harmony, log);
             }
             catch (Exception ex)
             {
@@ -167,7 +168,7 @@ namespace LewdMemeConfig
             }
             else if (entry.Choices != null && entry.Choices.Length != 0)
             {
-                b.AddDropdown(entry.Choices,
+                b.AddDropdown(ConfigDisplayKo.Choices(entry.Choices, config),
                     Mathf.Max(0, Array.IndexOf(entry.Choices, ConfigEntry.Format(entry.BoxedValue))),
                     null, entry.Key);
                 b.Last.SetFixedWidth(245f);
