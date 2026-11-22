@@ -1,0 +1,109 @@
+name: RLD inspect untranslated outfit and trait UI sinks
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/rld-ui-sink-trace-20261122.yml']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .gitattributes
+            probably-stolen/local-mods/TentacleMod-Update/.gitattributes
+            probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll
+      - name: Verify exact DLL before examining UI paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install --local
+          git lfs pull --include='probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll' --exclude=''
+          echo 'a224760a2ae651e07adb467014dbb0053d1c6b8942879644b2afbad614237f25  probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll' | sha256sum -c
+      - name: Extract UI producers and consumers
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console -f net8.0 --force -o /tmp/rldui
+          dotnet add /tmp/rldui/rldui.csproj package dnlib --version 4.5.0
+          cat >/tmp/rldui/Program.cs <<'CS'
+          using System;
+          using System.IO;
+          using System.Linq;
+          using System.Collections.Generic;
+          using System.Text.Json;
+          using System.Text.RegularExpressions;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            static string O(Instruction i) => i.Operand switch {null=>"",string s=>s,Instruction b=>"@"+b.Offset.ToString("X"),IList<Instruction> ls=>string.Join(",",ls.Select(x=>"@"+x.Offset.ToString("X"))),_=>i.Operand.ToString()??""};
+            static string F(Instruction i)=>i.OpCode.Name+" "+O(i);
+            static bool Display(string s)=>Regex.IsMatch(s,@"(?i)talent|trait|equip|cloth|outfit|dress|wear|apparel|costume|sewing|display|tooltip|name|panel|itemfactory|maid");
+            static bool MainType(string s)=>Regex.IsMatch(s,@"(?i)TalentEquipment|TalentTraits|TalentData|TalentPanel|TalentTooltip|SewingMachine|TalentScenarioMaid");
+            static bool Sink(string s)=>Regex.IsMatch(s,@"(?i)(GameItem|GameItemData|TalentData|EquipDef|TraitDef|UIText|TextMeshPro|Text|Tooltip|UIManager|Panel|ItemInfo|RichTextBuilder).*?(?:set_.*?(?:name|description|text)|::.*?(?:Append|AddText|SetText|Show|AddRow|AddLine|AddLabel|SetLabel|Refresh|Display|Draw|Tooltip))|(?:::get_name|::get_displayName|::get_shortDescription)|::[A-Za-z]+(?:Name|Description)\b");
+            static object Range(IList<Instruction> a,int n,int left=10,int right=12)=>a.Skip(Math.Max(0,n-left)).Take(Math.Min(a.Count,n+right+1)-Math.Max(0,n-left)).Select((i,j)=>new{index=Math.Max(0,n-left)+j,il=F(i)});
+            static void Main(string[] args){
+              using var mod=ModuleDefMD.Load(args[0]);
+              var types=mod.GetTypes().Where(t=>Display(t.FullName)).ToArray();
+              var methods=mod.GetTypes().SelectMany(t=>t.Methods.Where(m=>m.HasBody)).ToArray();
+              var keyMethods=methods.Where(m=>MainType(m.DeclaringType.FullName)).ToArray();
+              var list=keyMethods.Select(m=>new{method=m.FullName,token=m.MDToken.Raw,il=m.Body.Instructions.Count}).ToArray();
+              var defs=types.Where(t=>MainType(t.FullName)).Select(t=>new{
+                type=t.FullName,
+                fields=t.Fields.Select(f=>new{name=f.Name.String,type=f.FieldType.FullName,attrs=f.Attributes.ToString()}).ToArray(),
+                properties=t.Properties.Select(x=>new{name=x.Name.String,type=x.PropertySig?.ToString()}).ToArray()
+              });
+              var calls=new List<object>();
+              var refs=new List<object>();
+              var direct=new List<object>();
+              foreach(var m in methods){
+                var il=m.Body.Instructions;
+                for(int n=0;n<il.Count;n++){
+                  var i=il[n];
+                  if(i.Operand is IMethod method){
+                    var s=method.FullName;
+                    if(Sink(s)&& (MainType(m.DeclaringType.FullName)||Regex.IsMatch(s,@"(?i)GameItem::set_(?:name|shortDescription)|GameItem::set_(?:identifier|customName)|TalentData::.*?(?:Trait|Cloth|Name)|TalentEquipment::.*?(?:Name|Description)"))){
+                        calls.Add(new{caller=m.FullName,at=n,callee=s,context=Range(il,n,13,8)});
+                    }
+                    if(Regex.IsMatch(s,@"(?i)TalentEquipment|TalentTraits|TalentData::(?:get_|set_|ToString|Add|Remove)|TraitDef|EquipDef")&&!MainType(m.DeclaringType.FullName)&&Regex.IsMatch(m.FullName,@"(?i)UI|Window|Panel|Tooltip|Shop|Merchant|Sew|Craft|Item")){
+                        refs.Add(new{caller=m.FullName,at=n,callee=s,context=Range(il,n,9,8)});
+                    }
+                  }
+                  if(i.Operand is IField field && MainType(m.DeclaringType.FullName) && Regex.IsMatch(field.Name.String,@"(?i)Name|Trait|Outfit|Cloth|Label|Description")){
+                      direct.Add(new{method=m.FullName,at=n,field=field.FullName,opcode=i.OpCode.Name,context=Range(il,n,5,6)});
+                  }
+                }
+              }
+              void Save(string file,object value)=>File.WriteAllText("rld-ui/"+file,JsonSerializer.Serialize(value,new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping})+"\n");
+              Directory.CreateDirectory("rld-ui");
+              Save("method-index.json",list);
+              Save("type-fields.json",defs);
+              Save("ui-sinks.json",calls);
+              Save("external-ui-readers.json",refs);
+              Save("name-trait-fields.json",direct);
+              var sought=methods.Where(m=>Regex.IsMatch(m.FullName,@"(?i)(TalentEquipment|TalentTraits|TalentData|SewingMachine|TalentPanel).*(?:\.cctor|::(Build|Create|Get|Name|Make|MakeItem|Equip|Cloth|Outfit|Trait|Apply|Set|Refresh|Update|Description|Init|Register))")).ToArray();
+              Save("focused-methods.json",sought.Select(m=>new{method=m.FullName,token=m.MDToken.Raw,code=m.Body.Instructions.Select((i,n)=>new{at=n,offset=i.Offset,il=F(i)})}));
+              Save("summary.json",new{types=types.Length,methods=methods.Length,focusMethods=keyMethods.Length,sinks=calls.Count,externalUiReaders=refs.Count,namedFields=direct.Count,fullFocusedMethods=sought.Length,sinkCallers=calls.Select(x=>x.GetType().GetProperty("caller")!.GetValue(x)).Distinct().Count()});
+              Console.WriteLine(JsonSerializer.Serialize(new{focusMethods=keyMethods.Length,sinks=calls.Count,readers=refs.Count,namedFields=direct.Count,fullFocusedMethods=sought.Length}));
+            }
+          }
+          CS
+          dotnet run --project /tmp/rldui -- 'probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll'
+      - name: Preserve report separately from production mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f rld-ui
+          git commit -m "Trace outfit and trait name UI producers and sinks"
+          git push origin HEAD:refs/heads/rld-ui-sink-audit-20261122
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rld-ui-outfit-trait-sink-audit
+          path: rld-ui/
