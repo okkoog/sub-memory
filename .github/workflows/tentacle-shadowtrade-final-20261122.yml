@@ -1,0 +1,280 @@
+name: ShadowTrade final Korean display and package
+on:
+  push:
+    paths: ['.github/workflows/tentacle-shadowtrade-final-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            probably-stolen/local-mods/TentacleMod번역/LewdMemeShadowTrade1.6.4
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/ShadowTrade_DIRECT_RESULT_20261122.json
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/ShadowTrade_BOUNDARY_PLAN_20261122.json
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/ShadowTrade_DISPLAY_HELPER_20261122.cs
+            probably-stolen/local-mods/TentacleMod번역/번역대조표/WorkAudit_20261122/외부_내장자료.tsv
+            probably-stolen/local-mods/TentacleMod/LewdMemeShadowTrade1.6.4/manifest.xml
+            probably-stolen/local-mods/TentacleMod/LewdMemeShadowTrade1.6.4/ShadowTrade.dll
+            probably-stolen/local-mods/TentacleMod/LewdMemeShadowTrade1.6.4/Content/names.txt
+            probably-stolen/Managed/Assembly-CSharp.dll
+            probably-stolen/Managed/0Harmony.dll
+            probably-stolen/Managed/UnityEngine.CoreModule.dll
+            probably-stolen/Managed/UnityEngine.dll
+            probably-stolen/Managed/UnityEngine.UI.dll
+            probably-stolen/Managed/Assembly-CSharp-firstpass.dll
+      - name: Compile display-only helper against existing game API
+        shell: bash
+        run: |
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          MOD="$ROOT/LewdMemeShadowTrade1.6.4"
+          mkdir -p /tmp/cfghelper
+          cp "$ROOT/번역대조표/ShadowTrade_DISPLAY_HELPER_20261122.cs" /tmp/cfghelper/
+          MANAGED="$PWD/probably-stolen/Managed"
+          cat >/tmp/cfghelper/cfghelper.csproj <<EOF
+          <Project Sdk="Microsoft.NET.Sdk">
+            <PropertyGroup><TargetFramework>net472</TargetFramework><LangVersion>latest</LangVersion><Optimize>true</Optimize><DebugType>none</DebugType><GenerateAssemblyInfo>false</GenerateAssemblyInfo></PropertyGroup>
+            <ItemGroup>
+              <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all"/>
+              <Reference Include="Assembly-CSharp"><HintPath>$MANAGED/Assembly-CSharp.dll</HintPath></Reference>
+              <Reference Include="Assembly-CSharp-firstpass"><HintPath>$MANAGED/Assembly-CSharp-firstpass.dll</HintPath></Reference>
+              <Reference Include="0Harmony"><HintPath>$MANAGED/0Harmony.dll</HintPath></Reference>
+              <Reference Include="UnityEngine.CoreModule"><HintPath>$MANAGED/UnityEngine.CoreModule.dll</HintPath></Reference>
+              <Reference Include="UnityEngine"><HintPath>$MANAGED/UnityEngine.dll</HintPath></Reference>
+              <Reference Include="UnityEngine.UI"><HintPath>$MANAGED/UnityEngine.UI.dll</HintPath></Reference>
+            </ItemGroup>
+          </Project>
+          EOF
+          dotnet build /tmp/cfghelper/cfghelper.csproj -c Release
+      - name: Apply audited IL anchors and verify exact method and data preservation
+        shell: bash
+        run: |
+          dotnet new console --framework net8.0 -o /tmp/stfinal --force
+          dotnet add /tmp/stfinal/stfinal.csproj package dnlib --version 4.5.0
+          cat >/tmp/stfinal/Program.cs <<'CS'
+          using System;
+          using System.Linq;
+          using System.IO;
+          using System.Collections.Generic;
+          using System.Text.Json;
+          using System.Security.Cryptography;
+          using dnlib.DotNet;
+          using dnlib.DotNet.Emit;
+          class P {
+            record Literal(string token,string method,uint offset,string source,string target,string action);
+            record Boundary(string token,string method,uint offset,string opcode,string operand,string reason);
+            static void Need(bool x,string why){if(!x)throw new Exception(why);}
+            static string Hash(byte[] x)=>Convert.ToHexString(SHA256.HashData(x)).ToLowerInvariant();
+            static string Raw(object? x)=>x?.ToString()??"";
+            static string Op(object? x,Dictionary<Instruction,int> m)=>x switch{null=>"",Instruction i=>"@"+m[i],IList<Instruction> a=>string.Join(",",a.Select(i=>"@"+m[i])),_=>Raw(x)};
+            static string EH(ExceptionHandler e,Dictionary<Instruction,int> m){
+              string I(Instruction? i)=>i==null?"-":m[i].ToString();
+              return string.Join("|",e.HandlerType.ToString(),I(e.TryStart),I(e.TryEnd),I(e.HandlerStart),I(e.HandlerEnd),I(e.FilterStart),e.CatchType?.FullName??"");
+            }
+            static bool Cjk(string s)=>s.Any(c=>c>='\u3400'&&c<='\u9fff');
+            static void Main(string[] a) {
+              byte[] raw=File.ReadAllBytes(a[0]);using var plan=JsonDocument.Parse(File.ReadAllText(a[1]));
+              Need(Hash(raw)==plan.RootElement.GetProperty("baselineSha256").GetString(),"Unexpected previous DLL");
+              using var original=ModuleDefMD.Load(raw);using var target=ModuleDefMD.Load(raw);using var donor=ModuleDefMD.Load(a[2]);using var game=ModuleDefMD.Load(a[3]);
+              Need(Hash(File.ReadAllBytes(a[3]))=="6398d44aa1675e1f02b63bc668868f970e0f5d3ae5a50f2aced8d06ca084e3b5","Game baseline");
+              var type=donor.GetTypes().Single(t=>t.FullName=="MidnightPawn.Game.ShadowTradeDisplayKo");
+              Need(type.Fields.Count==0&&type.NestedTypes.Count==0&&type.Methods.All(m=>m.IsStatic&&m.HasBody&&!m.HasGenericParameters),"Helper shape");
+              var importer=new Importer(target,ImporterOptions.TryToUseTypeDefs);
+              var tnew=new TypeDefUser(type.Namespace,type.Name,target.CorLibTypes.Object.TypeDefOrRef){Attributes=type.Attributes};target.Types.Add(tnew);
+              var mapping=new Dictionary<MethodDef,MethodDef>();
+              foreach(var d in type.Methods){var m=new MethodDefUser(d.Name,importer.Import(d.MethodSig),d.ImplAttributes,d.Attributes);tnew.Methods.Add(m);mapping.Add(d,m);}
+              object? ImportOperand(object? o,MethodDef dst,Dictionary<Instruction,Instruction> ins,Dictionary<Local,Local> locals)=>o switch{
+                null=>null,Instruction i=>ins[i],IList<Instruction> seq=>seq.Select(i=>ins[i]).ToArray(),Local l=>locals[l],
+                Parameter p=>dst.Parameters[p.Index],MethodDef d when mapping.ContainsKey(d)=>mapping[d],
+                ITypeDefOrRef t when t.FullName==type.FullName=>tnew,
+                IMethod m=>importer.Import(m),IField f=>importer.Import(f),ITypeDefOrRef t=>importer.Import(t),MethodSig s=>importer.Import(s),_=>o
+              };
+              foreach(var d in type.Methods){
+                var m=mapping[d];var ob=d.Body;var body=new CilBody{InitLocals=ob.InitLocals,MaxStack=ob.MaxStack};m.Body=body;
+                var locals=new Dictionary<Local,Local>();foreach(var l in ob.Variables){var z=new Local(importer.Import(l.Type));locals.Add(l,z);body.Variables.Add(z);}
+                var ins=ob.Instructions.ToDictionary(i=>i,i=>new Instruction(i.OpCode));
+                foreach(var i in ob.Instructions){var n=ins[i];n.Operand=ImportOperand(i.Operand,m,ins,locals);body.Instructions.Add(n);}
+                Instruction? At(Instruction? i)=>i==null?null:ins[i];
+                foreach(var e in ob.ExceptionHandlers)body.ExceptionHandlers.Add(new ExceptionHandler(e.HandlerType){TryStart=At(e.TryStart),TryEnd=At(e.TryEnd),HandlerStart=At(e.HandlerStart),HandlerEnd=At(e.HandlerEnd),FilterStart=At(e.FilterStart),CatchType=e.CatchType==null?null:importer.Import(e.CatchType)});
+              }
+              var mtable=target.GetTypes().SelectMany(t=>t.Methods).Where(x=>x.HasBody&&x.DeclaringType!=tnew).ToDictionary(x=>x.MDToken.Raw.ToString("X8"));
+              var originalInstructions=mtable.Values.ToDictionary(m=>m,m=>m.Body.Instructions.ToArray());
+              var literals=new Dictionary<(MethodDef,int),string>();
+              var calls=new Dictionary<(MethodDef,int),MethodDef>();
+              var log=new List<object>();
+              MethodDef Find(string token,string method){var m=mtable[token];Need(m.FullName==method,"Method "+method);return m;}
+              Instruction AtOff(MethodDef m,uint off)=>originalInstructions[m].Single(i=>i.Offset==off);
+              var disp=tnew.Methods.Single(m=>m.Name=="Display");
+              void Insert(MethodDef m,Instruction i,MethodDef helper,string reason){
+                int index=Array.IndexOf(originalInstructions[m],i);Need(index>=0,"Original anchor");
+                Need(!calls.ContainsKey((m,index)),"Duplicate anchor "+m.FullName+" "+i.Offset);
+                calls.Add((m,index),helper);
+                log.Add(new{token=m.MDToken.Raw.ToString("X8"),method=m.FullName,offset=i.Offset,opcode=i.OpCode.Name,operand=Raw(i.Operand),helper=helper.Name.ToString(),reason});
+              }
+              foreach(var s in plan.RootElement.GetProperty("patch").Deserialize<Literal[]>()!){
+                var m=Find(s.token,s.method);var i=AtOff(m,s.offset);Need(i.OpCode==OpCodes.Ldstr&&Equals(i.Operand,s.source),"Literal "+m.FullName+" "+s.offset);
+                literals.Add((m,Array.IndexOf(originalInstructions[m],i)),s.target);i.Operand=s.target;
+              }
+              foreach(var s in plan.RootElement.GetProperty("boundaries").Deserialize<Boundary[]>()!){
+                var m=Find(s.token,s.method);var i=AtOff(m,s.offset);Need(i.OpCode.Name==s.opcode&&Raw(i.Operand)==s.operand,"Boundary "+s.method+" "+s.offset);
+                Insert(m,i,disp,s.reason);
+              }
+              MethodDef M(string typeName,string name)=>mtable.Values.Single(m=>m.DeclaringType.FullName=="MidnightPawn.Game."+typeName&&m.Name==name);
+              foreach(var name in new[]{"DescribeJobPref","DescribeBreastPref"}){
+                var m=M("MaidenBuyerText",name);var ins=originalInstructions[m];int count=0;
+                for(int i=0;i<ins.Length-2;i++)if(ins[i].OpCode==OpCodes.Ldarg_0){
+                  Need(ins[i+1].OpCode==OpCodes.Ldstr&&ins[i+2].OpCode==OpCodes.Call&&Raw(ins[i+2].Operand).Contains("System.String::Concat"),"Preference concat");
+                  Insert(m,ins[i],disp,"Job/breast preference display concatenation");count++;
+                }Need(count==10,"Preference output count "+name+" "+count);
+              }
+              var neutral=M("MaidenBuyerText","DescribeNeutral");var ne=originalInstructions[neutral];int nn=0;
+              for(int i=2;i<ne.Length-1;i++)if(ne[i].OpCode==OpCodes.Ldelem_Ref&&ne[i-1].OpCode==OpCodes.Ldc_I4_1&&ne[i-2].OpCode==OpCodes.Ldarg_0&&ne[i+1].OpCode==OpCodes.Call&&Raw(ne[i+1].Operand).Contains("System.String::Concat")){
+                Insert(neutral,ne[i],disp,"Neutral preference display value");nn++;
+              }Need(nn==5,"Neutral display count "+nn);
+              foreach(var name in new[]{"Pregnancy","Birth"}){
+                var m=M("MaidenText",name);
+                var anchors=originalInstructions[m].Where(i=>i.OpCode==OpCodes.Call&&(Raw(i.Operand).Contains("MaidenText::Faction(")||Raw(i.Operand).Contains("MaidenText::Job("))).ToArray();
+                Need(anchors.Length==(name=="Pregnancy"?2:1),"Narrative display fields "+name);
+                foreach(var i in anchors)Insert(m,i,disp,"Display-only semantic field, not source attribute");
+              }
+              foreach(var name in new[]{"OnGenerateCustomerVeryLate","DebugSpawn","ResetAcceptLine"}){
+                var m=M("MaidenBuyer",name);var anchors=originalInstructions[m].Where(i=>i.OpCode==OpCodes.Ldfld&&Raw(i.Operand)=="System.String StoreClient::displayName").ToArray();
+                Need(anchors.Length==1,"Buyer display field "+name);Insert(m,anchors[0],disp,"Log/dialogue display name");
+              }
+              var arrival=mtable.Values.Where(m=>m.DeclaringType.FullName.StartsWith("MidnightPawn.Game.MaidenBuyer/")&&originalInstructions[m].Any(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand).Contains("MaidenBuyerText::ArrivalToast("))).ToArray();
+              Need(arrival.Length==1,"Arrival closure");
+              var av=originalInstructions[arrival[0]].Single(i=>i.OpCode==OpCodes.Ldfld&&Raw(i.Operand).Contains("::displayName"));
+              Insert(arrival[0],av,disp,"Toast buyer name");
+              var entry=target.GetTypes().Single(t=>t.FullName=="MidnightPawn.ModEntry");
+              var init=entry.Methods.Single(m=>m.Name=="Init");var hook=originalInstructions[init].Single(i=>i.OpCode==OpCodes.Call&&Raw(i.Operand).Contains("ModSettings::Init()"));
+              Insert(init,hook,tnew.Methods.Single(m=>m.Name=="Install"),"Install mod-scoped display patches after settings initialize");
+              var disable=entry.Methods.Single(m=>m.Name=="OnDisable");
+              // OnDisable log/cleanup is not modified. Attach Uninstall before every final return via an existing terminal instruction.
+              var di=originalInstructions[disable];Need(di.Count(i=>i.OpCode==OpCodes.Ret)==1&&di[^1].OpCode==OpCodes.Ret,"Disable final return");
+              Need(!di.Any(i=>i.Operand is Instruction t&&t==di[^1]),"Disable branch may skip uninstall");
+              Insert(disable,di[^2],tnew.Methods.Single(m=>m.Name=="Uninstall"),"Remove only own display patch ID on disable");
+              foreach(var grp in calls.GroupBy(x=>x.Key.Item1)){
+                var m=grp.Key;
+                foreach(var p in grp.OrderByDescending(x=>x.Key.Item2)){var i=originalInstructions[m][p.Key.Item2];m.Body.Instructions.Insert(m.Body.Instructions.IndexOf(i)+1,Instruction.Create(OpCodes.Call,p.Value));}
+                m.Body.SimplifyBranches();m.Body.OptimizeBranches();
+              }
+              var expectedGame=new[]{("DialogUIManager","DisplayClientText",2),("DialogUIManager","PlayClientSingleText",1),("DialoguePhoneUIManager","PlayClientSingleText",1),("NegociationUIManager","RefreshClientHeader",1)};
+              foreach(var (tn,mn,n) in expectedGame){
+                var m=game.GetTypes().Single(t=>t.Name==tn).Methods.Single(m=>m.Name==mn&&m.HasBody);
+                Need(m.Body.Instructions.Count(i=>i.OpCode==OpCodes.Ldfld&&Raw(i.Operand)=="System.String StoreClient::displayName")==n,"Game name UI anchor "+tn+" "+mn);
+              }
+              var cfg=game.GetTypes().Single(t=>t.Name=="ModConfigWindow").Methods.Single(m=>m.Name=="BuildEntry");
+              var cg=cfg.Body.Instructions.Where(i=>Raw(i.Operand).Contains("ConfigEntry::get_Choices()")).ToArray();
+              Need(cg.Length==4&&cg[2].Offset==0x12e&&cg[3].Offset==0x135,"Config display array anchor");
+              var temp=a[0]+".new";target.Write(temp);using var read=ModuleDefMD.Load(temp);
+              var om=original.GetTypes().SelectMany(t=>t.Methods).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              var nm=read.GetTypes().SelectMany(t=>t.Methods).GroupBy(m=>m.FullName).ToDictionary(g=>g.Key,g=>g.OrderBy(m=>m.MDToken.Raw).ToArray());
+              Need(nm.Count==om.Count+type.Methods.Count&&om.All(v=>nm.TryGetValue(v.Key,out var z)&&z.Length==v.Value.Length),"All old methods retained");
+              var protectedCjk=new List<object>();int compared=0,seenLiteral=0,seenCalls=0;
+              foreach(var pair in om)for(int n=0;n<pair.Value.Length;n++){
+                var o=pair.Value[n];var k=nm[pair.Key][n];Need(o.HasBody==k.HasBody,"Body "+o.FullName);if(!o.HasBody)continue;
+                var current=mtable[o.MDToken.Raw.ToString("X8")];var x=o.Body.Instructions.ToArray();var y=k.Body.Instructions.ToArray();
+                int extra=calls.Count(p=>p.Key.Item1==current);
+                Need(y.Length==x.Length+extra,"Instruction count "+o.FullName);
+                var xm=x.Select((i,k)=>(i,k)).ToDictionary(z=>z.i,z=>z.k);var ym=new Dictionary<Instruction,int>();var indices=new int[x.Length];int pos=0;
+                for(int i=0;i<x.Length;i++){indices[i]=pos;ym.Add(y[pos++],i);if(calls.ContainsKey((current,i)))ym.Add(y[pos++],i);}
+                Need(pos==y.Length,"Mapped lengths");
+                Need(o.Body.Variables.Select(l=>l.Type.FullName).SequenceEqual(k.Body.Variables.Select(l=>l.Type.FullName)),"Locals "+o.FullName);
+                Need(o.Body.ExceptionHandlers.Select(e=>EH(e,xm)).SequenceEqual(k.Body.ExceptionHandlers.Select(e=>EH(e,ym))),"EH "+o.FullName);
+                for(int i=0;i<x.Length;i++){
+                  var u=x[i];var v=y[indices[i]];
+                  Need(u.OpCode==v.OpCode||(u.Operand is Instruction&&u.OpCode.Name.Replace(".s","")==v.OpCode.Name.Replace(".s","")),"Opcode "+o.FullName+" "+i);
+                  string ex=Op(u.Operand,xm);
+                  if(literals.TryGetValue((current,i),out var value)){ex=value;seenLiteral++;}
+                  Need(ex==Op(v.Operand,ym),"Operand "+o.FullName+" "+i);
+                  if(calls.TryGetValue((current,i),out var loc)){var p=y[indices[i]+1];Need(p.OpCode==OpCodes.Call&&Raw(p.Operand)==loc.FullName,"Inserted exact helper call");seenCalls++;}
+                  if(v.OpCode==OpCodes.Ldstr&&v.Operand is string s&&Cjk(s))protectedCjk.Add(new{method=k.FullName,token=k.MDToken.Raw.ToString("X8"),offset=v.Offset,source=s,oldToken=o.MDToken.Raw.ToString("X8"),oldOffset=u.Offset});
+                }compared++;
+              }
+              Need(seenLiteral==literals.Count&&seenCalls==calls.Count,"Exact edit counts");
+              var rr=read.GetTypes().Single(t=>t.FullName==type.FullName);
+              foreach(var dm in type.Methods){
+                var m=rr.Methods.Single(m=>m.Name==dm.Name&&m.MethodSig.Params.Count==dm.MethodSig.Params.Count);
+                Need(dm.Body.Instructions.Count==m.Body.Instructions.Count,"Helper body "+dm.Name);
+                var xm=dm.Body.Instructions.Select((i,k)=>(i,k)).ToDictionary(x=>x.i,x=>x.k);var ym=m.Body.Instructions.Select((i,k)=>(i,k)).ToDictionary(x=>x.i,x=>x.k);
+                for(int i=0;i<dm.Body.Instructions.Count;i++)Need(dm.Body.Instructions[i].OpCode==m.Body.Instructions[i].OpCode&&Op(dm.Body.Instructions[i].Operand,xm)==Op(m.Body.Instructions[i].Operand,ym),"Helper IL "+dm.Name+" "+i);
+              }
+              Need(!read.GetAssemblyRefs().Any(x=>x.Name=="cfghelper"),"No helper runtime assembly dependency");
+              var ar=original.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());var br=read.Resources.OfType<EmbeddedResource>().ToDictionary(x=>x.Name.ToString(),x=>x.CreateReader().ToArray());
+              Need(ar.Count==br.Count&&ar.All(x=>br.TryGetValue(x.Key,out var z)&&x.Value.SequenceEqual(z)),"Resources unchanged");
+              File.Move(temp,a[0],true);
+              var opts=new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping};
+              File.WriteAllText(a[4],JsonSerializer.Serialize(new{previousDllHash=Hash(raw),finalDllHash=Hash(File.ReadAllBytes(a[0])),comparedMethods=compared,literalPatches=seenLiteral,insertedCalls=seenCalls,embeddedHelperMethods=rr.Methods.Count,gameNameBoundaries=5,gameChoiceBoundaries=1,unchangedResources=ar.Count,boundaries=log,protectedCjk,runtime="not tested"},opts)+"\n");
+            }
+          }
+          CS
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          MOD="$ROOT/LewdMemeShadowTrade1.6.4"
+          dotnet run --project /tmp/stfinal/stfinal.csproj -- "$MOD/ShadowTrade.dll" "$ROOT/번역대조표/ShadowTrade_BOUNDARY_PLAN_20261122.json" /tmp/cfghelper/bin/Release/net472/cfghelper.dll probably-stolen/Managed/Assembly-CSharp.dll "$ROOT/번역대조표/ShadowTrade_FINAL_RESULT_20261122.json"
+      - name: Verify residual source identities and package installation overlay
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import json,hashlib,csv,xml.etree.ElementTree as E
+          root=Path('probably-stolen/local-mods/TentacleMod번역')
+          name='LewdMemeShadowTrade1.6.4'
+          mod=root/name;src=Path('probably-stolen/local-mods/TentacleMod')/name
+          report=root/'번역대조표/ShadowTrade_FINAL_RESULT_20261122.json'
+          r=json.loads(report.read_text());d=json.loads((root/'번역대조표/ShadowTrade_DIRECT_RESULT_20261122.json').read_text())
+          assert d['changedSites']==51 and d['comparedMethods']==r['comparedMethods']==651
+          assert r['literalPatches']==6 and r['insertedCalls']>=80
+          assert len(r['protectedCjk'])==len(d['remainingCjk'])-6==156
+          def k(x):return (x['method'],x['source'])
+          assert Counter(k(x) for x in r['protectedCjk'])==Counter(k(x) for x in d['remainingCjk'] if x['source']!='要')
+          def reason(x):
+              m,s=x['method'],x['source']
+              if 'MaidenAgeFilter::.cctor' in m:return 'Original classification input; age logic untouched.'
+              if 'MaidenBuyer::PickFactionPreference' in m or 'MaidenBuyer::PickVirgin' in m or 'MaidenBuyer::.cctor' in m:return 'Original preference selection token.'
+              if 'MaidenBuyer::RefreshAcceptLine' in m or 'MaidenBuyer::HandleSale' in m or 'MaidenBuyer::VirginMatches' in m or 'MaidenBuyer::Evaluate' in m:return 'Original comparison or shared check field; receipt display copy translated.'
+              if 'MaidenBuyer::SpawnReceipt' in m or 'MaidenBuyer::RepairReceipts' in m:return 'Original stored receipt title and exact comparison; visible title translated separately.'
+              if 'MaidenBuyerText::FactionName' in m or 'MaidenBuyerText::BuyerDisplayName' in m:return 'Shared raw identity, dialogue and game name display copies translated.'
+              if 'MaidenBuyerText::YoungPairLines' in m or 'MaidenBuyerText::AdultPairLines' in m:return 'Exact faction dispatch comparisons, unchanged.'
+              if 'MaidenLedger::BuildRecord' in m or 'MaidenLedger::VirginState' in m:return 'Stored ledger fields; display transformation at DescribeData.'
+              if any('MaidenText::'+x in m for x in ['FactionFlavor','BodyFlavorAdult','BodyFlavorYoung','Faction(','JobFlavor','BreastFlavor']):return 'Original dispatch/identity token; output field translation at display-only boundaries.'
+              if 'MaidenTraits::.cctor' in m:return 'Original attribute selection values.'
+              if 'ModSettings::' in m:return 'Configuration choice/default/comparison, displayed copy translated for this mod only.'
+              if 'NameGen::.cctor' in m:return 'Original name-data region key.'
+              if 'SecurityLiaison::Deliver' in m or 'SecurityLiaison::IsSecurityMaiden' in m or 'TentacleBody::TryProduceMilk' in m:return 'Original condition comparison.'
+              raise AssertionError(str(x))
+          for x in r['protectedCjk']:x['reason']=reason(x)
+          a,b=E.parse(src/'manifest.xml').getroot(),E.parse(mod/'manifest.xml').getroot()
+          for q in ['ID','Author','ModVersion','GameVersions','Prerequisites','Assemblies','Capabilities']:assert E.tostring(a.find(q))==E.tostring(b.find(q)),q
+          def rows(p):return [l.split('\t') for l in p.read_text(encoding='utf-8-sig').splitlines() if l.strip()]
+          x,y=rows(src/'Content/names.txt'),rows(mod/'Content/names.txt')
+          assert all(len(a)==len(b)==3 and a[0]==b[0] and all(len(a[c].split(','))==len(b[c].split(',')) for c in [1,2]) for a,b in zip(x,y)) and len(x)==len(y)
+          names=sum(len(row[c].split(',')) for row in y for c in [1,2])
+          assert all(all(not ('\u3400'<=ch<='\u9fff') for ch in row[c]) for row in y for c in [1,2])
+          with (root/'번역대조표/WorkAudit_20261122/외부_내장자료.tsv').open(encoding='utf-8-sig',newline='') as f:
+              ext=[row for row in csv.reader(f,delimiter='\t') if row and row[0]==name]
+          files=['ShadowTrade.dll','manifest.xml','README.md','Content/names.txt']+[str(p.relative_to(mod)) for p in sorted((mod/'docs').rglob('*')) if p.is_file()]
+          zpath=root/'ProbablyStolen_ShadowTrade_v1.6.4_KO_Final_20261122.zip'
+          with ZipFile(zpath,'w',ZIP_DEFLATED,compresslevel=6) as z:
+              for file in files:z.write(mod/file,name+'/'+file)
+          with ZipFile(zpath) as z:
+              assert z.testzip() is None and set(z.namelist())=={name+'/'+f for f in files}
+              for f in files:assert z.read(name+'/'+f)==(mod/f).read_bytes()
+          r.update(directLiteralPatches=d['changedSites'],totalLiteralPatches=d['changedSites']+r['literalPatches'],remainingOriginalCjk=len(r['protectedCjk']),originalDllHash=hashlib.sha256((src/'ShadowTrade.dll').read_bytes()).hexdigest(),nameEntries=names,nameGroups=len(y),externalAuditRows=ext,manifestVersion=b.findtext('ModVersion'),archive={'path':zpath.name,'sha256':hashlib.sha256(zpath.read_bytes()).hexdigest(),'files':len(files),'crc':'pass','matchesAllOverlayFiles':True})
+          report.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print({k:v for k,v in r.items() if not isinstance(v,list)})
+          PY
+      - name: Commit verified final DLL and ZIP only
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT='probably-stolen/local-mods/TentacleMod번역'
+          git add --sparse "$ROOT/LewdMemeShadowTrade1.6.4/ShadowTrade.dll" "$ROOT/번역대조표/ShadowTrade_FINAL_RESULT_20261122.json" "$ROOT/ProbablyStolen_ShadowTrade_v1.6.4_KO_Final_20261122.zip"
+          git diff --cached --quiet || (git commit -m 'Finalize ShadowTrade exact Korean display boundaries and verified overlay' && git push origin main)
