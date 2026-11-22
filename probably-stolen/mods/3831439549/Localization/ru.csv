@@ -329,6 +329,9 @@ chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
 chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
 chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
+chem_clean_on,Автоочистка: ВКЛ
+chem_clean_off,Автоочистка: ВЫКЛ
+chem_clean_desc,Общий выключатель титратора и фильтра. Когда выключен, ни один из них не удаляет компоненты (нужно, если реагенту положено сохранять примеси). Нажмите для переключения.
 chemadv_source,Улучшение сырья
 chemadv_source_eff,Для прессования нужно только 85% активного вещества
 chemadv_clean,Контроль загрязнений
@@ -342,7 +345,7 @@ pharmabox_zyanide_pill_name,Цианидная таблетка (коробка)
 pharmabox_birth_control_pill_name,Противозачаточная таблетка (коробка)
 pharmabox_fanta_pill_name,Фентаниловая таблетка (коробка)
 pharmabox_pink_alt_injector_name,Розовый альт-инъектор (коробка)
-pharmabox_desc,Заводская упаковка на 4 дозы.
+pharmabox_desc,Заводская упаковка на 4 дозы. Вскрывается отвёрткой или кусачками.
 pharmabox_open_full,Нет места чтобы вынуть содержимое
 pharmabox_open_part,Мало места — вынута только часть
 dr_sourcerefine2_title,Улучшение сырья II
@@ -367,9 +370,9 @@ feed_refine_gain,Калорийность закладываемой еды +{0}
 nm_ras_expand,Доп. расширение рыбного бассейна
 ras_expand_gain,+1 к длине и ширине за штуку, до 5
 nm_ras_selfclean,Система самоочистки воды
-ras_clean_req,Провод×12 + фильтр×5 + продвинутый фильтр×1 (заполнить все)
+ras_clean_req,Провод×12 + УФ-лампа×1 + Обычная химия×4 (заполнить все)
 ras_clean_prog,Провод {0}/{1} + УФ-лампа {2}/{3} + обычный химикат {4}/{5}
-ras_selfclean_gain,Вода не убывает, качество не портится
+ras_selfclean_gain,Запоминает объём и качество воды перед ночью и восстанавливает их к утру (вода не создаётся)
 ras_selfclean_short,Система самоочистки: {0} ({1})
 nm_ras_nightlight,Ночная подсветка
 ras_light_req,Электроника×4 + пластик×6 + слиток×2 (заполнить все)

@@ -1379,8 +1379,9 @@ battle.found_scrap,You pick up some scrap worth selling.
 battle.found_crate,You spot a {0} on the ground.
 battle.found_nothing,You find nothing.
 battle.luck_saved,A stray round nearly grazes you. Lucky.
-battle.spotted_police,A Security patrol saw you. It will go on your file.
-battle.spotted_rev,Someone from the Revolution saw you. Word will reach the police.
+battle.spotted_police,"A police patrol saw you, and it will go on your file. Police reputation -{0}"
+battle.spotted_rev,"Someone from the Revolution saw you, and they don't like people picking through this place. Revolution reputation -{0}"
+battle.spotted_council,"A Republic inspector saw you. This block is theirs to watch. Republic reputation -{0}"
 battle.fight_tonight,There's fighting in the firefight zone tonight.
 npc_clinic_name,Thorne
 clinic.intro.1,White Tower Clinic, procurement. Thorne.
@@ -2226,7 +2227,7 @@ obank.name,Cosmetic Clinic Buyer
 obank.1,Saw your sign.
 obank.2,Any compliant printed lungs or kidneys? We have no use for hearts.
 ul_kai_organ_license_title,Organ Sales License
-ul_kai_organ_license_desc,Kai sorts out the paperwork. Printed organs become legal goods (not contraband). An organ bank coordinator visits with orders (double pay plus Upper Levels reputation for on-time delivery), and a private hospital comes every 7 days with a big order. You also get a sales permit and an organ bank neon sign: in the showcase, orders come more often and a cosmetic clinic buyer comes for lungs and kidneys.
+ul_kai_organ_license_desc,Kai sorts out the paperwork. Printed organs become legal goods (not contraband), and Dr. Miller starts selling the 3D organ printer. An organ bank coordinator visits with orders (double pay plus Upper Levels reputation for on-time delivery), and a private hospital comes every 7 days with a big order. You also get a sales permit and an organ bank neon sign: in the showcase, orders come more often and a cosmetic clinic buyer comes for lungs and kidneys.
 printer_label_organ,Sample Organ
 printer_status_organ,Sampling
 ocoord.name,Organ Bank Coordinator
@@ -2441,10 +2442,12 @@ regulars.story.15.3,Ms. Ji is a clerk at the Council. Tight-lipped; she only say
 regulars.story.15.5,The Council is about to audit a few shops, she says. Yours isn't on the list.
 ncguide.reissued,There's a copy of Shopkeeping Rules in the shop: a new shopkeeper's starter handbook.
 ul_kai_organ_route_title,Machines and Dissection Notes
-ul_kai_organ_route_desc,"Anyone can go to the Firefight Zone, but a body is no use without the machines. Kai sends over two machines (a dissector and an organ cooler), a bloodletting kit and a copy of Dissection Essentials, and introduces you to Thorne from the clinic, who comes by once a week to buy organs (his card and phone number are sold separately). Dr. Miller also starts selling the 3D organ printer. Organ dealers start with this."
+ul_kai_organ_route_desc,"Anyone can go to the Firefight Zone, but a body is no use without the machines. Kai sends over two machines (a dissector and an organ cooler), a bloodletting kit and a copy of Dissection Essentials, and introduces you to Thorne from the clinic, who comes by once a week to buy organs (his card and phone number are sold separately). Organ dealers start with this."
 net_group_organ,Organ Trade
 organ.route.unlocked,"Kai dropped off a dissector, an organ cooler, a bloodletting kit and a copy of Dissection Essentials. Thorne from the clinic will come by once a week."
 organ.route.compensated,The organ sales license you bought was missing a step: Kai threw in "Machines and Dissection Notes" for free. The dissector and cooler are in the shop.
+ul_kai_crate_route_title,Crate Route
+ul_kai_crate_route_desc,"Kai sets you up with a key-card writer. Dr. Miller always stocks a writer, two Upper Levels blanks, and chips for ordinary, fine, and noble crates. Other chips show up occasionally. A vanilla desequencer can also write Upper Levels key cards from these blanks. You'll have to find crates yourself."
 regulars.wish_feature,Regular's wish
 regulars.reserve_feature,Regular's reservation
 ul_kai_police_donation_title,Precinct Donation
@@ -2976,7 +2979,7 @@ phone.doctor.unlocked,The private doctor's card is in your shop. Dial {0} on the
 item_ul_military_buyer_card_name,Military Trader's Card
 item_ul_military_buyer_card_flavor,An olive-green card with three shallow marks along one edge. The number on the back is {0}.
 phone.military.name,Military Trader
-phone.military.card_tip,"Dial {0} to have the military trader bring one high-grade crate and 2-3 blank keycards tomorrow (30% crate markup, 7-day cooldown)."
+phone.military.card_tip,The quartermaster's card. He doesn't take calls any more; he comes by once a week.
 phone.military.unlocked,The military trader's card is in your shop. Dial {0} on the phone.
 phone.military.intro1,"Kai gave you this number? Fine. One high-grade crate per visit, plus 2-3 blank keycards, 30% crate markup."
 phone.military.intro2,Call when you want stock; I'll bring it tomorrow.
@@ -2985,7 +2988,7 @@ phone.military.ok,I'll bring the goods tomorrow.
 phone.military.bye,"All right, call when you want stock."
 phone.military.cool,I'm out for the next few days. Call back later.
 ul_kai_military_contact_title,Military Trader's Number
-ul_kai_military_contact_desc,"Kai gives you the military trader's number ({0}) and a card. Book a visit the next day to buy Republic weapon, luxury or medical crates (30% markup, once every 7 days)."
+ul_kai_military_contact_desc,"The quartermaster doesn't take calls any more; he comes by once a week with special crates and Upper Levels blank cards."
 crate.military.visit,One high-grade crate today, plus 2-3 blank keycards. 30% markup on the crate.
 crate.military.arranged,I brought what you asked for. Just one. Pick.
 crate.military.accept,Deal. Keep it out of sight.
@@ -3209,7 +3212,7 @@ tag.ul_household,Upper Levels household goods
 loot.search,Search
 loot.searched_suffix, (searched)
 loot.window_title,Body being searched
-loot.rep,Someone from {0} saw you go through a dead man's pockets: -0.05
+loot.rep,Someone from {0} saw you go through a dead man's pockets: -{1}
 loot.empty,Nothing on him. A searched body can't be taken back to the store.
 loot.done,"Done searching: blue {0}, purple {1}, gold {2}, red {3}. A searched body can't be taken back, so grab what you want."
 loot.cut,You left before finishing; {0} item(s) never turned up.

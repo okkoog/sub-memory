@@ -1,0 +1,92 @@
+moh_menu_button,多出料口…
+moh_btn_transfer_all,立即全部转移
+moh_btn_copy,复制设置
+moh_btn_paste,粘贴设置
+moh_btn_filter,过滤…
+moh_btn_unlink,断开
+moh_btn_move_up,上移
+moh_btn_move_down,下移
+moh_btn_connect,+ 连接
+moh_btn_pick_item,点选物品添加
+moh_btn_stop_pick,停止点选
+moh_btn_clear_list,清空列表
+moh_lbl_links,已连接的出料口（最上面优先）
+moh_lbl_no_links,还没有连接出料口。
+moh_lbl_no_candidates,没有其它可连接的出料斗。
+moh_lbl_add_outlet,添加出料口
+moh_lbl_outlet,出料斗
+moh_lbl_place_unknown,未知位置
+moh_place_store,商店
+moh_dangling,（未找到，可能已被移走）
+moh_link_summary_all,全部物品
+moh_link_summary_allow,只送 {0} 种：{1}
+moh_link_summary_block,排除 {0} 种：{1}
+moh_link_summary_allow_short,只送 {0} 种
+moh_link_summary_block_short,排除 {0} 种
+moh_list_separator,、
+moh_filter_mode_label,过滤模式
+moh_filter_list_label,列表中的物品
+moh_filter_mode_all_hint,全部物品都会送往这个出料口，列表不使用。
+moh_filter_all,全部物品
+moh_filter_allow,只送列表中的
+moh_filter_block,排除列表中的
+moh_filter_empty_allow,列表为空：不会送任何物品
+moh_filter_empty_block,列表为空：送所有物品
+moh_pick_hint,点击商店里的物品把它加入列表；Esc 或右键取消点选。
+moh_pick_add,点击加入：{0}
+moh_pick_already,已在列表中：{0}
+moh_pick_cannot,不能使用该物品：{0}
+moh_pick_full,列表已满（最多 {0} 种物品）。
+moh_chip_remove,点击移除 {0}
+moh_tooltip_title,多出料口（{0}）
+moh_cfg_numbers_label,在料斗图标上显示编号
+moh_cfg_numbers_tooltip,默认开启：每个进料斗/出料斗图标显示原版 #N 自定义名编号。关闭后图标不显示编号；编号本身仍保存在物品上，不受影响。
+moh_cfg_enabled_label,启用多出料口分流
+moh_cfg_enabled_tooltip,默认开启：带有多个出料口链接的进料斗会把物品依次分配给各出料口。关闭后完全使用原版单口行为（已保存的链接数据仍保留，再次开启即恢复）。
+moh_selftest_header,多路分流料斗 自检
+moh_selftest_pass,通过
+moh_selftest_fail,失败
+moh_selftest_skip,跳过
+moh_msg_linked,已添加出料口连接。
+moh_msg_unlinked,已断开全部出料口。
+moh_msg_parse_error,多出料口数据无法解析，已按无数据处理（原版单口行为）。
+moh_tooltip_entry_hint,左键（双击）或右键「设置」打开同一个统一配置页。
+moh_link_empty_allow_hint,这个出料口在列表里加入物品前不会收到任何物品。
+moh_lbl_outlets,出料口（{0}）
+moh_btn_collapse,收起
+moh_filter_panel_title,过滤 · {0} {1}
+moh_hint_unified,提示：把进料斗拖到出料斗上可直接追加连接；Esc 关闭本窗口。
+moh_title_connected_multi,已连接 {0}：{1}
+moh_cfg_scale_label,编号大小
+moh_cfg_scale_tooltip,只影响料斗图标上的编号大小（50%=原版一半，150%=原版 1.5 倍，300%=原版 3 倍）；关闭「在料斗图标上显示编号」时无效。
+moh_filter_cond_all,搬运全部物品
+moh_filter_cond_white_items,白名单物品
+moh_filter_cond_white_types,白名单类型
+moh_filter_cond_black_items,黑名单物品
+moh_filter_cond_black_types,黑名单类型
+moh_filter_group_white_items,白名单物品
+moh_filter_group_black_items,黑名单物品
+moh_filter_group_white_types,白名单类型
+moh_filter_group_black_types,黑名单类型
+moh_filter_list_empty,列表为空。
+moh_filter_flags_none,未勾选任何搬运条件：这个出料口不会搬运任何物品。
+moh_filter_black_priority,黑名单条件优先于白名单/全部物品。
+moh_filter_type_grid_missing,无法读取游戏物品类型列表。
+moh_filter_feedback_sep,；
+moh_filter_summary_all,搬运全部物品
+moh_filter_summary_white_items,白名单物品 {0}
+moh_filter_summary_white_types,白名单类型 {0}
+moh_filter_summary_black_items,黑名单物品 {0}
+moh_filter_summary_black_types,黑名单类型 {0}
+moh_filter_summary_none,不搬运任何物品
+moh_filter_msg_black_item_removed,黑名单中的{0}物品已移除
+moh_filter_msg_white_item_removed,白名单中的{0}物品已移除
+moh_filter_msg_white_type_removed,白名单类型中的{0}类型已移除
+moh_filter_msg_black_type_removed,黑名单类型中的{0}类型已移除
+moh_link_none_hint,未勾选任何搬运条件：这个出料口不会搬运任何物品。
+moh_pick_add_black,点击加入黑名单：{0}
+moh_filter_summary_sep," + "
+moh_filter_msg_item_list_full,物品列表已满（最多 {0} 个）：{1}
+moh_filter_msg_type_list_full,类型列表已满（最多 {0} 个）：{1}
+moh_resize_handle_tooltip,以窗口左上角为基准缩放（50%-150%）：按住向右下拖动放大、向左上拖动缩小；滚轮上滚放大/下滚缩小；双击恢复 100%（50% 时窗口面积为 1/4）
+moh_resize_title,{0:0}%  {1}

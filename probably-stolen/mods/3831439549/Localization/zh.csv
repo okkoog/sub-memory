@@ -330,6 +330,9 @@ chem_titra_gain,置入的瓶子自动去除蛋白质与稳定剂
 chem_filter_req,韧棉织物×8 + 过滤器×8
 chem_filter_prog,{0}/{1} · {2}/{3}
 chem_filter_gain,置入的瓶子自动去除植物物质、碎屑、物理污染物、矿物质、脂肪
+chem_clean_on,自动清杂：开
+chem_clean_off,自动清杂：关
+chem_clean_desc,滴定仪与过滤装置的总开关。关闭后两个装置都不再清除任何组分（某些试剂需要保留杂质时用）。点一下切换。
 chemadv_source,源头改良
 chemadv_source_eff,压制所需有效成分降至 85%
 chemadv_clean,污染管控法
@@ -343,7 +346,7 @@ pharmabox_zyanide_pill_name,氰化物片 药盒
 pharmabox_birth_control_pill_name,避孕药 药盒
 pharmabox_fanta_pill_name,芬太尼片 药盒
 pharmabox_pink_alt_injector_name,粉色注射剂 药盒
-pharmabox_desc,封装好的成品药盒，内含 4 份。
+pharmabox_desc,封装好的成品药盒，内含 4 份。可用螺丝刀或剪线钳撬开。
 pharmabox_open_full,没有空间取出药盒里的东西
 pharmabox_open_part,空间不足，只取出了一部分
 dr_sourcerefine2_title,源头改良 II
@@ -368,9 +371,9 @@ feed_refine_gain,投入食品获得的热量 +{0}%
 nm_ras_expand,鱼塘额外扩建
 ras_expand_gain,每件鱼缸长宽各 +1，上限 5
 nm_ras_selfclean,水体自洁设备
-ras_clean_req,线缆×12 + 滤水器×5 + 高级滤水器×1（放满才生效）
+ras_clean_req,线缆×12 + 紫外线灯×1 + 普通化学品×4（放满才生效）
 ras_clean_prog,线缆 {0}/{1} + 紫外线灯 {2}/{3} + 普通化学品 {4}/{5}
-ras_selfclean_gain,水体不会减少、水质不会变差
+ras_selfclean_gain,过夜前记录水量与水质，次日恢复原样（只保持不变差，不会凭空补水）
 ras_selfclean_short,水体自洁设备：{0}（{1}）
 nm_ras_nightlight,夜间光系统
 ras_light_req,电子元件×4 + 3D打印材料×6 + 金属锭×2（放满才生效）

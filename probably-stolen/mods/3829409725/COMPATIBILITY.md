@@ -1,4 +1,4 @@
-# Pipette Mod Compatibility Guide
+﻿# Pipette Mod Compatibility Guide
 
 ## 1. Overview
 
@@ -6,7 +6,7 @@
 |---|---|
 | Main mod ID | `Pen_mod_pipette` |
 | Game version | `0.46D` |
-| Main assembly | `C60314247483` |
+| Main mod version | `1.1.4` |
 | Rule file | `Rules/hydra.json` |
 | External patch file | `PipetteReactions.json` |
 | Patch type | JSON data patch |
@@ -20,6 +20,18 @@ At startup the Pipette Mod:
 5. recompiles and validates the affected reactions.
 
 Patches only change rules in memory. They never write back to `hydra.json` or any source file.
+
+### Generic external-rule reload
+
+The pipette mod does not ship mod-specific compatibility JSON. It only recognizes the standard file:
+
+```text
+Mods/<ModFolder>/PipetteReactions.json
+```
+
+If a third-party liquid is registered after the pipette mod initializes, the mod rescans every enabled mod's `PipetteReactions.json` when the liquid registry count changes. This mechanism does not check mod IDs or liquid IDs and works for any mod that provides rules in the same format.
+
+Compatibility rules for CorpPresence or other mods must be supplied by that mod or a separate patch mod. The main mod package does not include such JSON.
 
 ---
 
@@ -281,6 +293,7 @@ Troubleshooting order:
 - unknown JSON fields are ignored;
 - patches cannot execute arbitrary code;
 - pure data mods without a DLL are not supported;
+- the main mod does not bundle mod-specific compatibility JSON;
 - patches never modify the original `hydra.json`.
 
 ---

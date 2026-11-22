@@ -54,9 +54,6 @@
           "consume": {
             "target.microbe": 100,
             "pipette.acid": 1
-          },
-          "produce": {
-            "water": 100
           }
         },
         {
@@ -187,9 +184,6 @@
           "consume": {
             "target.microbe": 100,
             "pipette.base": 1
-          },
-          "produce": {
-            "water": 100
           }
         },
         {
@@ -739,7 +733,8 @@
             ]
           },
           "catalyticMin": 1,
-          "labelKey": "hydra_stage_mineral"
+          "labelKey": "hydra_stage_mineral",
+          "balanceUsePlantMin": true
         }
       ]
     }

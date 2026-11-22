@@ -332,6 +332,9 @@ chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
 chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
 chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
+chem_clean_on,Limpeza auto: ON
+chem_clean_off,Limpeza auto: OFF
+chem_clean_desc,Interruptor geral da unidade de titulação e do filtro. Desligado, nenhum dos dois remove componentes (útil quando um reagente precisa manter as impurezas). Clique para alternar.
 chemadv_source,Refinamento de Origem
 chemadv_source_eff,A prensagem precisa de apenas 85% do princípio ativo
 chemadv_clean,Controle de Contaminação
@@ -345,7 +348,7 @@ pharmabox_zyanide_pill_name,Caixa de Comprimidos de Cianeto
 pharmabox_birth_control_pill_name,Caixa de Anticoncepcional
 pharmabox_fanta_pill_name,Caixa de Comprimidos de Fentanil
 pharmabox_pink_alt_injector_name,Caixa de Injetor Pink Alt
-pharmabox_desc,Pacote lacrado de fábrica com 4 doses.
+pharmabox_desc,Pacote lacrado de fábrica com 4 doses. Abra com chave de fenda ou alicate de corte.
 pharmabox_open_full,Sem espaço para tirar o conteúdo
 pharmabox_open_part,Espaço insuficiente - só parte foi retirada
 dr_sourcerefine2_title,Refinamento de Origem II
@@ -370,9 +373,9 @@ feed_refine_gain,Comida colocada rende +{0}% de calorias
 nm_ras_expand,Expansão Extra do Tanque de Peixes
 ras_expand_gain,+1 de comprimento e de largura cada, até 5
 nm_ras_selfclean,Unidade de Autolimpeza da Água
-ras_clean_req,Fio x12 + Filtro de Água x5 + Filtro de Água Avançado x1 (todos preenchidos para funcionar)
+ras_clean_req,Fio x12 + Lâmpada UV x1 + Produto químico comum x4 (todos preenchidos para funcionar)
 ras_clean_prog,Fio {0}/{1} + Lâmpada UV {2}/{3} + Químico comum {4}/{5}
-ras_selfclean_gain,A água nunca baixa e a qualidade nunca se degrada
+ras_selfclean_gain,Registra o volume e a qualidade da água antes da noite e restaura tudo ao amanhecer (mantém a água como estava, nunca cria água)
 ras_selfclean_short,Sistema de autolimpeza: {0} ({1})
 nm_ras_nightlight,Sistema de Iluminação Noturna
 ras_light_req,Peças Eletrônicas x4 + Filamento de Impressão x6 + Barra de Metal x2 (todos preenchidos para funcionar)

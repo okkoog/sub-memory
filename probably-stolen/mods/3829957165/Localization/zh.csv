@@ -118,3 +118,16 @@ keybind_quick_pin_tip,固定/取消固定鼠标悬浮物品；框选时批量处
 settings_chem_close_recipe,选择配方后关闭配方窗口
 settings_chem_close_recipe_tip,选择配方后立即关闭配方选择窗口；机器窗口和已选配方保持不变
 chem_batch_status_output_full,空间不足
+settings_batch_yeast_bioreactor_tip,装备酵母生物反应器时框选可发酵酒瓶，逐瓶开始发酵
+yeast_bioreactor_preview,预计品质：{0}（评分 {1}）
+settings_charger_auto_rotate,充能器自动轮换电池
+settings_charger_auto_rotate_tip,充能器内电池充满后，优先使用机器替换下来的旧电池，再从仓库/柜台寻找空电池或低电量电池
+settings_quick_buy_anti_mistouch,快速购买防误触
+settings_quick_buy_anti_mistouch_tip,开启后快速购买改为同时按下 Ctrl 和空格，原快捷购买键被忽略；默认关闭
+save_cleanup_notice,【Pen 的便利性优化】读档安全修复：发现并移除了 {0} 个失效的物品子引用。没有删除物品本身；这样做是为了避免引用不存在节点导致读档中断。
+save_cleanup_confirm,知道了
+save_cleanup_notice_both,【Pen 的便利性优化】读档安全修复：清理了 {0} 个失效引用，并从已卸载模组（{2}）中救出 {1} 件物品，放入实际打开的垃圾桶。
+save_rescue_notice,已拯救存档卸载模组{1}容器中的 {0} 件物品，追回物品放置在垃圾桶，请尽快拾取。
+save_rescue_destinations,去向：垃圾桶 {0} 件，内柜台 {1} 件，失败 {2} 件；排除文档 {3} 件。
+settings_save_rescue_exclude_documents,读档救援排除文档类物品
+settings_save_rescue_exclude_documents_tip,开启后从已卸载模组容器救出物品时，跳过带 DOCUMENT 标签或类型的纸条、说明书、单据等

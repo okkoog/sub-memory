@@ -1394,8 +1394,9 @@ battle.found_scrap,你捡到一些能卖的零碎。
 battle.found_crate,地上有一只{0}。
 battle.found_nothing,什么也没找到。
 battle.luck_saved,差点被流弹擦到。运气不错。
-battle.spotted_police,警察局的巡逻看见你了。这事会记进你的档案。
-battle.spotted_rev,革命渗透部的人看见你了。早晚会传到警察局那边。
+battle.spotted_police,警察局的巡逻看见你了，这事会记进你的档案。警察局声望 -{0}
+battle.spotted_rev,革命渗透部的人看见你了，他们不喜欢有人在这儿翻东西。革命渗透部声望 -{0}
+battle.spotted_council,共和国的巡查看见你了，这片街区归他们管。共和国声望 -{0}
 battle.fight_tonight,今晚交火区有交火。
 npc_clinic_name,索恩
 clinic.intro.1,白塔诊所，采购部，索恩。
@@ -2241,7 +2242,7 @@ obank.name,整形诊所采购
 obank.1,看到你的招牌了。
 obank.2,有合规的打印肺、肾吗？心脏我们用不上。
 ul_kai_organ_license_title,器官销售许可
-ul_kai_organ_license_desc,凯替你办好手续。打印的器官变成合法货（不算违禁品）。器官库协调员会定期上门派订单（按时交货给 2 倍报酬和上层区声望），私立医院每 7 天来要一次大单。另给一张合法销售证和一块器官库霓虹灯牌：摆进橱窗，订单更勤，还会有整形诊所的人来收肺和肾。
+ul_kai_organ_license_desc,凯替你办好手续。打印的器官变成合法货（不算违禁品），米勒博士也会开始卖 3D 器官打印机。器官库协调员会定期上门派订单（按时交货给 2 倍报酬和上层区声望），私立医院每 7 天来要一次大单。另给一张合法销售证和一块器官库霓虹灯牌：摆进橱窗，订单更勤，还会有整形诊所的人来收肺和肾。
 printer_label_organ,取样器官
 printer_status_organ,取样中
 ocoord.name,器官库协调员
@@ -2456,10 +2457,12 @@ regulars.story.15.3,季女士在理事会做文书，嘴很严，只说工作“
 regulars.story.15.5,她说理事会最近要查几家店的账，你的不在名单上。
 ncguide.reissued,店里多了一本《开店守则》，新店主的入行手册。
 ul_kai_organ_route_title,机器和解体说明
-ul_kai_organ_route_desc,交火区谁都能去，可尸体带回来得有机器才拆得了。买下后凯送来两台机器（解剖机、器官冷藏箱）、一个放血器和一本《解体要点》，再介绍你认识诊所的索恩：他每周上门收一次器官（他的名片和电话要另买）。米勒博士也会开始卖 3D 器官打印机。器官贩子开局自带，不用买。
+ul_kai_organ_route_desc,交火区谁都能去，可尸体带回来得有机器才拆得了。买下后凯送来两台机器（解剖机、器官冷藏箱）、一个放血器和一本《解体要点》，再介绍你认识诊所的索恩：他每周上门收一次器官（他的名片和电话要另买）。器官贩子开局自带，不用买。
 net_group_organ,器官门路
 organ.route.unlocked,凯送来了解剖机、冷藏箱、放血器和一本《解体要点》。诊所的索恩以后每周上门一次。
 organ.route.compensated,以前买的器官销售许可缺了前面一步：凯补送了"机器和解体说明"，解剖机和冷藏箱已经放进店里。
+ul_kai_crate_route_title,开箱门路
+ul_kai_crate_route_desc,凯给你牵线，送一台写卡机。米勒博士每次备一台写卡机、两张上层区空白钥匙卡，以及普通、贵重和世家箱的写卡模组。其余写卡模组偶尔有货。原版密码解析器也能用上层区白卡造钥匙卡。封箱得自己去找。
 regulars.wish_feature,熟客心愿
 regulars.reserve_feature,熟客预订
 ul_kai_police_donation_title,警局捐款
@@ -2991,7 +2994,7 @@ phone.doctor.unlocked,私人医生的名片放在店里了。用电话拨 {0}。
 item_ul_military_buyer_card_name,军需贩子的名片
 item_ul_military_buyer_card_flavor,一张军绿色名片，边上压了三道浅印。背面写着 {0}。
 phone.military.name,军需贩子
-phone.military.card_tip,拨 {0} 约军需贩子明天带一只高级箱和 2–3 张空白卡来（箱加价三成，冷却 7 天）。
+phone.military.card_tip,军需贩子的名片。他现在不接电话了，每周自己上门。
 phone.military.unlocked,军需贩子的名片放在店里了。用电话拨 {0}。
 phone.military.intro1,凯给你的号？行。一次带一只高级箱，另带 2–3 张空白卡，箱子加价三成。
 phone.military.intro2,要货就打这个号，明天带来。
@@ -3000,7 +3003,7 @@ phone.military.ok,明天把货带过去。
 phone.military.bye,行，要货再打。
 phone.military.cool,我这几天都在外面。晚点再打。
 ul_kai_military_contact_title,军需贩子的联系方式
-ul_kai_military_contact_desc,凯给你军需贩子的号码（{0}）和名片。打电话约他第二天来收武器、弹药和药品（每 7 天能约一次）。
+ul_kai_military_contact_desc,军需贩子现在不接电话了，每周自己上门卖特种箱和上层区白卡。
 crate.military.visit,今天带了高级箱，另带 2–3 张空白卡。箱子加价三成。
 crate.military.arranged,你要的货带来了。就一只，挑吧。
 crate.military.accept,成交。别让人看见。
@@ -3224,7 +3227,7 @@ tag.ul_household,上层区日用品
 loot.search,搜索
 loot.searched_suffix,（已搜）
 loot.window_title,被搜索的尸体
-loot.rep,翻死人的口袋，{0} 的人看见了：-0.05
+loot.rep,翻死人的口袋，{0} 的人看见了：-{1}
 loot.empty,什么都没摸到。搜过的尸体带不回店。
 loot.done,搜完了：蓝 {0}、紫 {1}、金 {2}、红 {3}。搜过的尸体带不回店，东西记得拿走。
 loot.cut,没搜完就走了，还有 {0} 件没翻出来。

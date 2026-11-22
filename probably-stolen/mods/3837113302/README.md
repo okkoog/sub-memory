@@ -1,4 +1,102 @@
-# Snake Ranch 0.6.8-r3 — 电话加载保护与测试箱尺寸 / Phone load guard and test-kit footprint
+# Snake Ranch 0.7.4 — 修复武器静养恢复被误判中断 / Fix weapon isolation-rest false interruption
+
+## 0.7.4 本次更新 / This release
+
+- 修复武器形态静养恢复"单独笼养、饱腹充足却永远 0/2、挂着被取出笼中断"的问题：游戏内部同笼重插、读档重建、形状校验都会走 RemoveParent，旧逻辑一触发就立即当作"被取出笼"把夜数归零并禁止当日计数，若该内部重插每夜发生就永远无法累积。
+- 取出改为对账判定：RemoveParent 只记一笔 pending（原笼+当日）；回到原笼撤销 pending 不算中断；进别的笼按"已移动到另一笼"中断；夜结算/读档对账时真不在笼内才写"被取出笼，静养中断"。玩家真取出依旧中断，误报消失。
+- 新增纯规则层 SnakeRestRules 与 9 条定向断言；无新增本地化键、无新增物品 ID；仅新增两个静养对账标记键（SR_REST_REMOVED_CYCLE / SR_REST_REMOVED_FROM），旧档缺失视为无 pending，直接兼容。
+
+- Fixed weapon-form isolation rest showing "taken out of the cage, rest interrupted" and staying at 0/2 forever even when the snake sits alone in a cage with enough fullness: native internal same-cage re-inserts, load rebuilds and shape validation all call RemoveParent, and the old logic treated every such call as a real removal, zeroing the night counter and blocking that cycle; a nightly internal re-insert therefore never let progress accumulate.
+- Removal is now reconciled instead of instant: RemoveParent only records a pending removal (source cage + day); returning to the same cage clears it without a break; entering a different cage breaks as "moved to another cage"; only when the snake is genuinely out of any cage at the night/load reconciliation point is "taken out of the cage" written. Real player removals still interrupt; false positives are gone.
+- Added the pure rule layer SnakeRestRules with 9 targeted assertions; no new localization keys and no new item IDs; only two new rest reconciliation marker keys (SR_REST_REMOVED_CYCLE / SR_REST_REMOVED_FROM), which old saves lack and are treated as no pending removal, so they load compatibly.
+
+## 0.7.3 鼠蛇四阶像素图标与三吱儿奢侈品蛋 / Rat-snake stage icons and the Three Squeaks luxury egg
+
+- 挑战者鼠四阶段换上专属像素图标，尺寸逐阶放大：32×32 → 64×48 → 80×64 → 96×64，终阶与王蛇最大档同尺寸；第四阶改用新的盘蛇图。硬边平涂工艺，与原生蛇贴图同质感，不再发糊。
+- 鼠蛇（四阶）每 2 天产一枚「三吱儿」：占 2×2 共四格、售价 666、奢侈品食物（可食用、营养 120）、不能孵化；玻璃壳内蜷着一只熟睡小鼠。
+- 三吱儿文案取自同名传闻菜：剥壳吱一声、蘸料吱一声、入口吱一声，然后就被吃掉了；小鼠随外壳破开而死去，卵碰到什么隐约还有点感觉。
+- 产蛋走夜结算：成为鼠蛇的首夜只起钟不产蛋；笼内有空位放笼内，否则放玩家柜台/仓库；满位不丢蛋、下一夜重试；离线不补产。
+- 中英文案同步；新增物品 ID `snake_ranch.rat_snake_egg` 与一个产蛋日标记键；未改动原有存档键结构或原生容器容量。
+
+- The four challenger-rat stages now use dedicated pixel icons that grow step by step: 32×32 → 64×48 → 80×64 → 96×64, with the final stage matching the king cobra's largest tier; stage four uses the new coiled-serpent art. Hard-edged flat coloring matches the native snake textures instead of looking blurry.
+- A rat-snake (stage four) lays one "Three Squeaks" egg every 2 days: it occupies 2×2 (four cells), sells for 666, is a luxury food (edible, nutrition 120) and cannot hatch; a sleeping mouse is curled inside the glass shell.
+- The Three Squeaks text follows the rumored dish of the same name: one squeak as the shell is peeled, one as it is dipped, one as it is placed in the mouth - then it is eaten; the mouse dies as the shell breaks, and the egg still faintly feels whatever touches it.
+- Laying runs in the night settlement: the first night as a rat-snake only starts the clock; the egg goes into the cage if there is space, otherwise onto the player's counter/warehouse; a full inventory never loses the egg and retries next night; offline time is not caught up.
+- Chinese and English text updated together; one new item ID `snake_ranch.rat_snake_egg` and one lay-day marker key were added; no existing save-key structure or native container capacity was changed.
+
+## 0.7.2 蛇夫人每周三固定上门、电话冷却 5 天 / Snake lady fixed Wednesday visits, 5-day phone cooldown
+
+- 蛇夫人现在每周三固定上门（游戏内星期以 dayCounter%7 计，周日=0），不打电话也会来，不受电话冷却限制；上门走自然来访全货单：公母眼镜蛇、强化蛋、王蛇货与清洁补给照常补货。
+- 修复强化蛋断供：0.6.3 起首访后自动到访被永久关闭，强化蛋的每 7 天补批逻辑再也走不到；周三固定访恢复自然货单后，强化蛋按原节奏续供。
+- 电话 8848 保留为加急预约通道：冷却从 7 天缩短到 5 天，旧存档里剩余的 7 天冷却读档时自动钳到 5 天；预约明天上门的设备单（捕蛇夹、蛇笼、玉米喷涂枪）不变。
+- 电话簿里冷却中的号码直接显示剩余天数「蛇夫人 8848（冷却 X 天）」，冷却结束恢复原名；预约日恰好撞上每周三时只来一次，按全货单算。
+- 蛇夫人对话尾部新增每周三上门提示；禁用模组会清掉周访排队与标记，重新启用后自动回到周三节奏。
+- 中英文案同步；未改动物品 ID、存档键结构或原生容器容量（仅新增一个周访日期标记键）。
+
+- The snake lady now keeps a fixed Wednesday counter visit (the game's week is dayCounter%7 with Sunday=0). She comes without a phone call and ignores the phone cooldown, walking the full natural stock: cobra pair, gene eggs, king cobra goods and cleaning supplies restock as usual.
+- Fixed the gene-egg drought: since 0.6.3 the first visit permanently disabled automatic returns, so the seven-day egg restock branch was unreachable. The Wednesday visit restores the natural stock line and eggs resume their original cadence.
+- 8848 stays an express booking channel: cooldown shortened from 7 to 5 days, and a legacy seven-day remainder clamps to 5 on load. Booking tomorrow's equipment run (catching tool, cage, corn spray gun) is unchanged.
+- The phone book now shows the remaining cooldown right in the contact name, "Snake Lady 8848 (cooldown Xd)", restoring the plain name when ready. If a booking lands on the same Wednesday she still only turns up once, with the full stock.
+- Her visit dialogue now mentions the Wednesday schedule. Disabling the mod clears the weekly queue and marker; re-enabling it resumes the Wednesday grid automatically.
+- Chinese and English text updated together. No item IDs, save-key structure or native container capacities were changed (one new weekly due-date marker key only).
+
+## 0.7.1 挑战者鼠登阶与鼠蛇、蛇吞鼠反咬 / Challenger rat ascension, rat-snake and counter-bite
+
+- 挑战者鼠每次从护蛋蛇口中活下来并吞下蛋，算一次登阶成功：升一阶，寿命翻倍。四阶寿命依次为 2×、4×、8×、16×，年龄地板同步下移，读档后不会因原寿命判定老死。
+- 每阶有独立名称与描述。第三阶描述为“半鼠半蛇，盘踞笼中。它抬起头看着你：你才是挑战者！”；第四阶为“它是三次挑战登阶之鼠，得到了祂的注视。”
+- 第四阶成为鼠蛇：不死（免疫老死、饿死与伤害），不可繁殖、不产毒，不再作为猎物被蛇捕食；只作为收藏品，按阶加价 +0% / +25% / +50% / +150%，武器形态同样生效。
+- 蛇吞鼠时有 10% 概率被反咬，损失 25% 最大生命，生命钳在最低 1 点，永不致死；夜报与蛇的提示会记录累计被咬次数。鼠蛇不参与该判定。
+- 旧存档中已获得护蛋强档的挑战者鼠，读档时按第一阶补齐寿命与阶段标签，不迁移、不删除、不重置原有体重和价格加成。
+- 本版中英文案同步；暂用原生鼠图标占位，四阶段专属像素图标后续补齐。未改动物品 ID、存档键或原生容器容量。
+
+- Each successful egg-guard survival (the rat survives the guard snake and swallows the egg) advances one stage and doubles lifespan: 2×, 4×, 8× and 16× at the four stages, with the age floor lowered in step so a loaded save cannot age the rat out.
+- Every stage has its own name and description. Stage three reads "Half rat, half snake, coiled in the cage. It lifts its head and looks at you: you are the challenger!"; stage four reads "It is the rat that climbed three challenges, and it has received His gaze."
+- Stage four becomes a rat-snake: immortal (immune to old age, starvation and damage), unable to breed or produce venom, and no longer valid prey for snakes. It is a collectible only, priced at +0% / +25% / +50% / +150% by stage, weapon forms included.
+- When a snake swallows a rat there is a 10% chance of a counter-bite: 25% of max health is lost, health is clamped to at least 1 and the snake can never die from it. The night report and the snake's tooltip track the cumulative bite count. Rat-snakes are excluded.
+- Existing saves with a strong-tier challenger rat are upgraded to stage one on load, with lifespan and stage tags filled in; weight and price bonuses are not migrated, deleted or reset.
+- Chinese and English text updated together. The native rat icon is used as a placeholder and the four stage pixel icons will follow. No item IDs, save keys or native container capacities were changed.
+
+## 0.7.0 眼镜蛇/王蛇纯色变异、日常蜷缩与概率设置 / Cobra & king pure-color morphs, idle coil and probability settings
+
+- 眼镜蛇/王蛇新增纯色变异：参照真实蛇色的独立七色——赤红、白、墨黑、橄榄青绿、金黄、灰银、橄榄褐（与玉米品系完全解耦，玉米不变）。新刷始祖默认 1/10 概率携带，颜色均匀 1/7；蛇蛋与子代按单基因遗传继承显色。
+- 带色个体只按稀有度加售价（白化最贵，橄榄褐/灰银平价），不含任何鉴定/伪造/线索机制；武器形态同样享溢价。旧存档无颜色标签视为原色，不迁移、不删档。
+- 日常蜷缩：眼镜蛇/王蛇在普通日常状态约 50/50 蜷缩打盹（复用静养球贴图，纯外观），与饱腹/消化、功能静养、蛇杖、交配蛇球互不重叠；提示文案明确区分“蜷着打盹”与隔离静养。
+- 游戏选项新增三个概率滑条，软下限即基线、只能上调：拾荒捡蛋 1–20%（默认 1%）、变异倍率 ×1–×50（默认 ×1）、纯色变异 1–100%（默认 10%），防止调太低玩不到内容。
+- 中英文案同步；本版未改动物品 ID、存档键或原生容器容量。
+
+- Cobras and king cobras gain solid pure-color morphs in a realistic, cobra-specific seven-color palette — Crimson, White, Black, Olive Teal, Gold, Silver and Olive Brown — fully decoupled from the corn morph system (corn is unchanged). Newly spawned founders carry a morph at a default 1/10 chance with a uniform 1/7 color pick; eggs and offspring inherit the color through single-locus inheritance.
+- Colored snakes only receive a rarity price premium (albino dearest; olive brown / silver common), with no inspection, forgery or clue mechanics; weapon forms share the premium. Old saves without a color tag stay wild-type — no migration, no save deletion.
+- Idle coil: in the plain daily state cobras/king cobras curl up dozing about 50/50 (reusing the rest-ball art, cosmetic only). It never overlaps fed/digestion, functional isolation rest, snake staffs or mating balls; the tooltip distinguishes "curled up dozing" from isolation rest.
+- Three new probability sliders in game options, each with a soft floor at the baseline and upward-only adjustment: scavenger egg 1–20% (default 1%), mutation multiplier ×1–×50 (default ×1), pure-color morph 1–100% (default 10%), so the content cannot be tuned out of reach.
+- Chinese and English text updated together. No item IDs, save keys or native container capacities were changed.
+
+本版完成离线构建与包门禁；助手未启动游戏、未读写真实存档、未上传工坊，实机验证由作者本地进行。
+
+This release completed offline build and package gates; no game launch, real-save access or workshop upload was performed by the assistant, and live verification is left to the author's local test.
+
+## 0.6.9-r1 护蛋挑战者、蛇蜕跨容器合并与蛇毒收购 / Egg-guard challenger, cross-container shed merge and venom purchase
+
+- 护蛋挑战同一蛇笼每夜最多触发一次；第一只老鼠触发后，当夜其余老鼠不再挑战。普通未受保护受精蛋被偷只触发弱档“偷蛋鼠”，护蛋成功才给强档“挑战者·吞蛋鼠”。
+- 弱档“偷蛋鼠”为 +10% 体重（最多 +50 克）、+10% 基础售价（最多 +50）；强档“挑战者·吞蛋鼠”为 +50% 体重（最多 +300 克）、+50% 基础售价。弱档可升强档，强档不被弱档覆盖。
+- 护蛋失败夜报会写明“护蛋蛇咬死了一只偷蛋鼠；这枚蛋没有丢”，被咬死老鼠的尸检说明写“死于护蛋蛇”；护蛋成功夜报写明老鼠撑过护蛋蛇并吞下蛇蛋。
+- 两包蛇蜕不再要求放在同一个容器，直接拖到另一包蛇蜕上即可合并剩余量；跨容器合并失败会回滚双方耐久和收据，不重复加量。
+- 蛇夫人不再被低层市民的随机禁运标志挡住蛇毒；她的收购预算下限提高到 900，旧存档里的蛇夫人蓝图读档后会修正。
+- 启动路径加固：`OnEnable`、物品注册以及商人和升级注册都会先检查 `PlayerStore.HasInstance`，无存档或主菜单阶段不会提前创建 `PlayerStore`。
+- 本地化初始化修复：玉米品类注册延迟到游戏内首次创建玉米特征时进行，`OnEnable` 不再触发 `ItemConditionList` 静态构造，避免本地化未就绪时打断主菜单语言下拉与读档面板接线。
+- 以上中英文文案同步；本版未改动物品 ID、存档键或原生容器容量。
+
+- Egg-guard challenges trigger at most once per cage per night: after the first rat, the rest do not challenge that night. An ordinary unprotected fertile egg only produces the weak “Egg Thief” rat; the strong “Challenger” rat is earned only by surviving the guard snake.
+- Weak “Egg Thief”: +10% weight (max +50 g), +10% base price (max +50). Strong “Challenger”: +50% weight (max +300 g), +50% base price. Weak can upgrade to strong; strong is never overwritten by weak.
+- A failed guard writes that the guard snake killed one egg-thief rat and the egg was not lost; the dead rat's tooltip says it died to the guard snake. A successful guard writes that the rat survived the guard snake and swallowed the egg.
+- Two shed packs no longer need to be in the same container; drag one onto the other to combine remaining material. A failed cross-container merge rolls back both durability and receipts without adding material twice.
+- The Snake Lady is no longer blocked from buying venom by the lower-level citizen's random contraband refusal. Her purchase budget floor is now 900, and old saved Snake Lady blueprints are repaired on load.
+- Startup hardening: `OnEnable`, item registration, merchant registration and upgrade registration all check `PlayerStore.HasInstance` first, so no `PlayerStore` is created while no save or main menu is active.
+- Localization-init fix: corn category registration is deferred to the first in-game corn feature creation; `OnEnable` no longer triggers the `ItemConditionList` static initializer, so localization startup is not interrupted before the main-menu locale dropdown and load panel wire up.
+- Chinese and English text updated together. No item IDs, save keys or native container capacities were changed.
+
+本版完成离线构建、包门禁和上传前检查；没有启动游戏、安装、读写真实存档或上传，不声称已实机验证。
+
+This release completed offline build, package gates and pre-upload checks; no game launch, install, real-save access or upload was performed, and no live-game verification is claimed.
 
 ## 0.6.8-r3 加载保护与测试箱 / Load guard and test kit
 
@@ -51,9 +149,9 @@
 - Adult, living corn snakes receive the `LUXURY_ITEM` and `FOOD` item-type tags; juveniles and dead snakes do not. `FOOD` is a classification tag only: it is not passed to `FoodItemHelper` and does not become edible or provide calories.
 - Adult corn snakes in old saves receive the tags on load. Seller forgery stock remains adult-only.
 
-本版完成离线构建、包门禁和上传前检查；测试箱的蛇笼外观与 4×3 外形已在作者本机实机确认，其他模块仍按下文边界未验证。未登录、未上传，未读写玩家存档。历史版本说明保留在下方。
+本版完成离线构建、包门禁和上传前检查；没有启动游戏、安装、读写真实存档或上传，不声称已实机验证。历史版本说明保留在下方。
 
-This release completed offline build, package gates and pre-upload checks. The test kit's snake-cage appearance and 4×3 footprint were confirmed in-game on the author's machine; other modules remain unverified as described below. No Steam login, upload or player-save access was performed.
+This release completed offline build, package gates and pre-upload checks; no game launch, install, real-save access or upload was performed, and no live-game verification is claimed. Historical release notes remain below.
 
 ---
 

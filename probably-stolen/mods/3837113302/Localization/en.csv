@@ -163,7 +163,22 @@ cfg_egg_stock,Bastard eggs per Snake Lady visit
 cfg_egg_stock_help,How many bastard eggs each visit stocks; 0 stocks none.
 cfg_gameplay,Gameplay
 cfg_scav_percent,Scavenging snake encounter chance
-cfg_scav_percent_help,Base snake-encounter percentage per valid scavenge while carrying a Snake Catching Kit. Efficiency changes the actual rate; a separate mutually exclusive 1% safe egg roll remains. No kit means no mod snake events.
+cfg_scav_percent_help,Base snake-encounter percentage per valid scavenge while carrying a Snake Catching Kit. Efficiency changes the actual rate; a separate mutually exclusive safe-egg roll (configurable below) remains. No kit means no mod snake events.
+cfg_scav_egg,Scavenging safe-egg chance
+cfg_scav_egg_help,Percentage per valid scavenge (while carrying a Snake Catching Kit) that yields a safe fertile egg instead of a snake encounter; mutually exclusive with the snake-encounter roll. Minimum 1% so eggs stay reachable; raise it to hunt eggs more often.
+cfg_mutation_mult,Mutation chance multiplier
+cfg_mutation_mult_help,Multiplies the per-growth-step cobra-to-king mutation chance. x1 keeps the base rate (about 0.1% per 100g step); x10 makes mutation roughly ten times more likely. Minimum x1 so mutation stays reachable.
+cfg_pure_color,Pure-color morph chance
+cfg_pure_color_help,Percentage of newly spawned cobra/king founders carrying a solid pure-color morph (uniform across the seven colours). Colour passes to eggs and offspring and adds a rarity price premium; no inspection or forgery mechanics. Minimum 1%; raise it to see morphs more often.
+pure_color_morph,Pure-color morph: {0}
+pure_color_red,Crimson
+pure_color_white,White
+pure_color_black,Black
+pure_color_teal,Olive Teal
+pure_color_gold,Gold
+pure_color_silver,Silver
+pure_color_olive,Olive Brown
+idle_coil_tip,Curled up dozing (cosmetic; not isolation rest)
 cfg_test_start,Test start
 cfg_test_start_help,When enabled, a new game starts with test snakes and supplies for quick playtesting.
 cfg_test_start_name,Prepare a test scenario on new game
@@ -217,7 +232,7 @@ handbook_care_title,Health and isolation
 handbook_desc,The Snake Lady’s practical notes on feeding, health, breeding, cages and products. Activate to read.
 handbook_eggs_body,Sell eggs, or place them in a suitable owned space where incubation starts automatically. Common/King eggs take 8/16 base nights, or as little as 2/4 with full temperature upgrades and enough water.\nCommon cobras lay King eggs at a base 1% chance, up to 2% with cultivation and mating groups. Species is decided when laid, not rerolled on hatching. King pairs produce King eggs.\nAfter the first King hatches, the Snake Lady offers one opposite-sex juvenile for 5000 credits from the following week. No prepayment; it returns until bought, once only.\nCorn-snake eggs display the embryo coat and purity. Their fixed pattern seed persists through hatching; mouse treats improve vibrancy and collectible value after hatching without rerolling the coat.
 handbook_eggs_title,Eggs and rare Kings
-handbook_feeding_body,Unmarked live rats are the main diet. Snakes eat smallest first until the meal target is met; protected rats, dead rats and invalid stacks are excluded.\nRat meals usually digest over 2–4 nights. No new meal starts during digestion. A pending meal, absorbed reserves and hunger are separate resources.\nNative-classified meat and meat-filled feeders sustain snakes and slower growth, but cannot fund cobra or king breeding. Corn snakes grow and breed on meat; mice only improve colour vibrancy and collectible value. Loose meat outside cages provides 40% energy; live rats keep their normal benefit.\nPut meat in the opened cage grid. The feeder socket holds a feeder device, not loose meat. Native meat tags support added meat types beyond vanilla IDs.
+handbook_feeding_body,Unmarked live rats are the main diet. Snakes eat smallest first until the meal target is met; protected rats, dead rats and invalid stacks are excluded.\nRat meals usually digest over 2–4 nights. No new meal starts during digestion. A pending meal, absorbed reserves and hunger are separate resources.\nNative-classified meat and meat-filled feeders sustain snakes and slower growth, but cannot fund cobra or king breeding. Corn snakes grow and breed on meat; mice only improve colour vibrancy and collectible value. Loose meat outside cages provides 40% energy; live rats keep their normal benefit.\nPut meat in the opened cage grid. The feeder socket holds a feeder device, not loose meat. Native meat tags support added meat types beyond vanilla IDs.\nA challenger rat that survives the egg guard doubles its lifespan each ascension; at stage four it becomes a rat-snake: immortal, unable to breed or produce venom, and valued purely as a collectible with a rarity premium. A snake swallowing a rat may be bitten back, losing health but never dying.
 handbook_feeding_title,Feeding and pauses
 handbook_header,THE SNAKE LADY’S FIELD NOTES
 handbook_name,Snake Handbook
@@ -499,7 +514,7 @@ scavenge_stage_growing,Growing
 scavenge_stage_juvenile,Juvenile
 scavenge_stage_subadult,Subadult
 scavenge_staged_name,{0} ({1})
-shed_desc,Fits water-filter slots that accept {0}; filtering consumes the remaining membrane. Drag onto another shed bag in the same inventory to combine remaining material. Used material is not restored. Cannot be sold directly.
+shed_desc,Fits water-filter slots that accept {0}; filtering consumes the remaining membrane. Drag onto another shed pack to combine the remaining material; the two packs do not need to be in the same container. Used material is not restored. Cannot be sold directly.
 shed_merge_hint,Save 60g of remaining usable membrane, gather the other materials and talk to the Snake Lady. Choose the {0} commission; its dialogue option lists the full recipe.
 shed_name,Shed membrane
 shed_order_accepted,Got them. I will deliver your {0} when I visit at least seven days from now. Leave some room; there is no extra charge.
@@ -636,10 +651,28 @@ venom_tip_wine_mid, / source premium
 venom_tip_wine_tail, (added); once the source runs out the value returns to the fixed base.
 weapon_prefix,Starving 
 
-egg_guard_enclosed,An adult snake coils around these eggs. A rat trying to eat one has a 95% chance of being killed; survivors eat the egg and gain a one-time boost. Snake and eggs can be dragged separately.
-egg_guard_pending,Protected by an adult snake; space or the current pose prevents gathering. Rats trying to eat an egg still have a 95% chance of being killed; survivors eat it and gain a one-time boost.
+egg_guard_enclosed,An adult snake coils around these eggs. Each cage allows at most one egg-thief challenge per night: the rat has a 95% chance of being killed; a survivor eats the egg and gains the Challenger boost. Snake and eggs can be dragged separately.
+egg_guard_pending,Protected by an adult snake; space or the current pose prevents gathering. Each cage allows at most one egg-thief challenge per night: the rat still has a 95% chance of being killed; a survivor eats the egg and gains the Challenger boost.
 egg_thief_rat_name,Egg Thief Rat
-egg_thief_rat_tooltip,Egg boost: gained {0} g once; base sale value permanently +{1}.
+egg_thief_rat_tooltip,Egg thief: gained {0} g once; base sale value +{1}.
+egg_challenger_rat_name,Challenger Egg Thief
+egg_challenger_rat_tooltip,Challenger: gained {0} g once; base sale value +{1}.
+egg_guard_rat_killed,A rat tried to steal a guarded egg and was killed by the guard snake; the egg was saved.
+egg_guard_rat_survived,A rat survived the guard snake, swallowed the egg, and earned the Challenger title.
+egg_guard_killed_tooltip,Killed by a guard snake.
+rat_ascend_name_2,Ascendant Rat - First Step
+rat_ascend_name_3,Ascendant Rat - Final Step
+rat_ascend_name_4,Rat-Serpent
+rat_ascend_desc_1,It survived the guardian snake's jaws. For the first time, it is no longer prey.
+rat_ascend_desc_2,Scales crawl up its spine and its tail grows long. It is learning the taste of serpents.
+rat_ascend_desc_3,Half rat and half serpent coiled in its cage. It raises its head to you: YOU are the challenger!
+rat_ascend_desc_4,It is the rat that ascended three challenges, and it has drawn His gaze.
+rat_ascend_tooltip,Ascension {0}/4 · lifespan x{1}
+rat_snake_tooltip,Rat-Serpent: collectible, immortal, cannot breed.
+rat_ascend_log,{0} reached ascension stage {1}; lifespan doubled to x{2}.
+rat_ascend_log_4,A rat completed its third ascension and became a Rat-Serpent - the rat that ascended three challenges, and it has drawn His gaze.
+rat_bite_night_log,A snake was bitten back while swallowing a rat: {0} health lost ({1} remaining).
+rat_bite_tooltip,Bitten by rats: {0} times.
 
 egg_quality_label,Quality: {0}
 egg_quality_fragile,Fragile
@@ -734,6 +767,8 @@ phone_snake_lady_cool_hello,You again.
 phone_snake_lady_cooling,I only just left. Ask me again in {0} days.
 phone_snake_lady_told,She writes her number on the receipt: 8848 — call me if you miss me.
 merchant_phone_hint,(Call 8848 to have her bring catching tools, cages or the corn spray gun tomorrow. Walk-in stock is separate.)
+merchant_weekly_hint,(I stop by every Wednesday with snakes and eggs. No call needed.)
+phone_snake_lady_cooldown_suffix, (cooldown {0}d)
 item_corn_spray_gun_name,"Corn Spray Gun"
 item_corn_spray_gun_desc,"Spray pigment onto an adult corn snake; the public label still claims 100% purity."
 ui_corn_inspect_title,"Inspect Corn"
@@ -774,3 +809,9 @@ corn_guide_l2,Fake: 1 colour patch, 2 spray seam, 3 edge specks, 4 dull grey pat
 corn_guide_l3,The plate is surface evidence only; a challenge still picks one clue and the answer is never revealed in advance.
 corn_guide_l4,Owned corn is observation-only; it cannot be challenged.
 corn_guide_missing,The plate could not be loaded; check the mod files.
+rat_snake_egg_name,Three Squeaks
+rat_snake_egg_desc,A luxury egg laid by a rat-snake - a glass-thin shell with a sleeping mouse curled inside. Cannot hatch.
+rat_snake_egg_lore,One squeak as the shell is peeled; one as it is dipped; one as it is placed in the mouth - then it is eaten. The mouse dies as the shell breaks; the egg still faintly feels whatever touches it.
+rat_snake_egg_flavor,Three Squeaks - a dish that exists only in rumor.
+rat_snake_egg_laid,{0} laid a Three Squeaks egg.
+rat_snake_egg_tooltip,Luxury food. Cannot hatch. One every 2 days.

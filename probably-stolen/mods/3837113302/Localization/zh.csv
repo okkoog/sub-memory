@@ -163,7 +163,22 @@ cfg_egg_stock,蛇夫人每次来访王八蛋数量
 cfg_egg_stock_help,每次蛇夫人来访上架的王八蛋数量；0 表示不上架。
 cfg_gameplay,玩法
 cfg_scav_percent,拾荒遇蛇概率
-cfg_scav_percent_help,携带捕蛇夹时，每次真实有效拾荒的基础遇蛇百分比；效率模块影响实际值，另有互斥1%安全蛋。未携带不触发本模组蛇事件。
+cfg_scav_percent_help,携带捕蛇夹时，每次真实有效拾荒的基础遇蛇百分比；效率模块影响实际值，另有互斥的安全蛋掷点（见下方可配）。未携带不触发本模组蛇事件。
+cfg_scav_egg,拾荒安全蛋概率
+cfg_scav_egg_help,携带捕蛇夹时，每次真实有效拾荒产出安全受精蛋（而非遇蛇）的百分比；与遇蛇掷点互斥。下限1%保证能捡到蛋；调高可更频繁体验捡蛋。
+cfg_mutation_mult,变异概率倍率
+cfg_mutation_mult_help,眼镜蛇→王蛇每增长一档变异概率的倍率。×1保持基础值（约每100g档0.1%）；×10约提高十倍。下限×1保证变异可达。
+cfg_pure_color,纯色变异概率
+cfg_pure_color_help,新刷眼镜蛇/王蛇始祖携带纯色变异的百分比（七色均匀）。颜色会遗传给蛋与子代，并按稀有度加价；不含鉴定/伪造机制。下限1%；调高可更常见到变色。
+pure_color_morph,纯色变异：{0}
+pure_color_red,赤红
+pure_color_white,白
+pure_color_black,墨黑
+pure_color_teal,橄榄青绿
+pure_color_gold,金黄
+pure_color_silver,灰银
+pure_color_olive,橄榄褐
+idle_coil_tip,蜷着打盹（仅外观；非隔离静养）
 cfg_test_start,测试开局
 cfg_test_start_help,开启后，新游戏开始时会自动准备测试用蛇与物资，方便试玩。
 cfg_test_start_name,新游戏自动准备测试场景
@@ -217,7 +232,7 @@ handbook_care_title,健康与静养
 handbook_desc,蛇夫人写给新手的养蛇笔记。激活阅读：喂食、健康、繁殖、蛇笼与产物。
 handbook_eggs_body,蛇蛋可卖，放入自有养殖空间会自动开始孵化，无需点击；离开可信空间会暂停，放回后继续。普通蛋基础8夜，王蛇蛋16夜；满温控并供水足时最快2夜、4夜。\n普通蛇产蛋时有1%基础王蛇蛋机会，培养和蛇球最高2%；蛋种产下时确定，普通蛋不会孵化时重新变异。王蛇同种配对出王蛇蛋。\n首次王蛇孵化后，蛇夫人下周起带一条异性幼王蛇，5000信用点；未买继续带，限购一次，不用预付。\n玉米蛇蛋显示胚胎配色与纯度，固定种子花纹随蛋保存，孵化保持一致；鼠餐只提升孵出后的花色鲜艳度和收藏估值，不重掷花色。
 handbook_eggs_title,孵蛋与稀有王蛇
-handbook_feeding_body,未标记活鼠是主食。蛇从小到大连续捕食，达到本餐需要就停；不吃保护标记鼠、死鼠或非法堆叠。\n鼠餐消化通常2–4夜，期间不续餐。有食物不等于要不停吃，未消化鼠餐、已吸收储备和饥饿是不同的账。\n原生判为肉类的食物和装肉的饲料机可维生、较慢成长；眼镜蛇和王蛇的肉餐不能支付繁殖；玉米蛇肉饲正常成长和繁殖，鼠餐仅提升花色鲜艳度与收藏估值。非笼散肉只获40%热量，活鼠不减。\n把肉放进打开后的笼内主格；食槽孔装喂食器设备，不直接装肉。按原生肉类标记接收扩展肉类，不限原版名称。
+handbook_feeding_body,未标记活鼠是主食。蛇从小到大连续捕食，达到本餐需要就停；不吃保护标记鼠、死鼠或非法堆叠。\n鼠餐消化通常2–4夜，期间不续餐。有食物不等于要不停吃，未消化鼠餐、已吸收储备和饥饿是不同的账。\n原生判为肉类的食物和装肉的饲料机可维生、较慢成长；眼镜蛇和王蛇的肉餐不能支付繁殖；玉米蛇肉饲正常成长和繁殖，鼠餐仅提升花色鲜艳度与收藏估值。非笼散肉只获40%热量，活鼠不减。\n把肉放进打开后的笼内主格；食槽孔装喂食器设备，不直接装肉。按原生肉类标记接收扩展肉类，不限原版名称。\n护蛋成功的挑战者鼠每升一阶寿命翻倍；第四阶成为鼠蛇，不死，也不可繁殖或产毒，只作为收藏品按稀有度加价。蛇吞鼠时可能被反咬一口，掉血但不致死。
 handbook_feeding_title,怎么喂，为什么不吃
 handbook_header,蛇夫人的养殖笔记
 handbook_name,养蛇手册
@@ -499,7 +514,7 @@ scavenge_stage_growing,成长期
 scavenge_stage_juvenile,幼体
 scavenge_stage_subadult,亚成体
 scavenge_staged_name,{0}（{1}）
-shed_desc,可装入接收「{0}」的水滤槽，过滤会消耗剩余滤材。拖到同一空间的另一包蛇蜕上，可合并剩余量；用过的部分不会恢复，不能直接出售。
+shed_desc,可装入接收「{0}」的水滤槽，过滤会消耗剩余滤材。拖到另一包蛇蜕上即可合并剩余量，不要求放在同一个容器；用过的部分不会恢复，不能直接出售。
 shed_merge_hint,攒够60g剩余有效蛇蜕后，带齐材料与蛇夫人交谈，选择加工「{0}」；配方见该对话选项。
 shed_name,蛇蜕滤材
 shed_order_accepted,收到了。材料我带走，满一周后我再来，把「{0}」直接给你；记得留个空位，不用再付钱。
@@ -636,10 +651,28 @@ venom_tip_wine_mid, / 来源溢价
 venom_tip_wine_tail,（相加）；来源耗尽后回到固定价值。
 weapon_prefix,饿疯了的
 
-egg_guard_enclosed,成年蛇盘绕护蛋。老鼠偷吃时有95%概率被咬死；幸存则吃掉蛋并一次性强化。蛇与蛋可分别拖动。
-egg_guard_pending,已受成年蛇保护；空间不足或当前姿态不可用，暂未围拢。老鼠偷吃仍有95%概率被咬死；幸存则吃蛋并一次性强化。
-egg_thief_rat_name,吞蛋鼠
-egg_thief_rat_tooltip,吞蛋强化：一次增加{0}克体重，基础售价永久增加{1}。
+egg_guard_enclosed,成年蛇盘绕护蛋。每笼每夜最多一次偷蛋挑战：老鼠有95%概率被咬死；幸存则吃掉蛋，获得「挑战者」强化。蛇与蛋可分别拖动。
+egg_guard_pending,已受成年蛇保护；空间不足或当前姿态不可用，暂未围拢。每笼每夜最多一次偷蛋挑战：老鼠仍有95%概率被咬死；幸存则吃蛋并获得「挑战者」强化。
+egg_thief_rat_name,偷蛋鼠
+egg_thief_rat_tooltip,偷蛋鼠：一次增加{0}克体重，基础售价增加{1}。
+egg_challenger_rat_name,挑战者·吞蛋鼠
+egg_challenger_rat_tooltip,挑战者：一次增加{0}克体重，基础售价增加{1}。
+egg_guard_rat_killed,一只老鼠偷吃护蛋蛇看守的蛇蛋，被当场咬死；这枚蛋没有丢。
+egg_guard_rat_survived,一只老鼠撑过了护蛋蛇，吞下蛇蛋，获得「挑战者」称号。
+egg_guard_killed_tooltip,死于护蛋蛇。
+rat_ascend_name_2,登阶之鼠·初阶
+rat_ascend_name_3,登阶之鼠·终阶
+rat_ascend_name_4,鼠蛇
+rat_ascend_desc_1,它从护蛋蛇口中活了下来。第一次，它不再是食物。
+rat_ascend_desc_2,鳞片沿脊背爬起，尾巴变得修长。它开始记住蛇的味道。
+rat_ascend_desc_3,半鼠半蛇，盘踞笼中。它抬起头看着你：你才是挑战者！
+rat_ascend_desc_4,它是三次挑战登阶之鼠，得到了祂的注视。
+rat_ascend_tooltip,登阶 {0}/4 · 寿命 ×{1}
+rat_snake_tooltip,鼠蛇：收藏品，不死，不繁殖。
+rat_ascend_log,{0}登上了第 {1} 阶，寿命翻倍至 ×{2}。
+rat_ascend_log_4,一只老鼠完成了第三次登阶，化为鼠蛇——它是三次挑战登阶之鼠，得到了祂的注视。
+rat_bite_night_log,一条蛇吞鼠时被反咬，损失 {0} 生命（剩余 {1}）。
+rat_bite_tooltip,被鼠咬伤：已累计 {0} 次。
 
 egg_quality_label,品质：{0}
 egg_quality_fragile,脆弱
@@ -734,6 +767,8 @@ phone_snake_lady_cool_hello,又是你呀。
 phone_snake_lady_cooling,我刚离开没几天，{0} 天后再打来吧。
 phone_snake_lady_told,她把号码写在收据背面：8848。想我了就打。
 merchant_phone_hint,（想买捕蛇夹、蛇笼或玉米喷涂枪，就打 8848 约她明天带来；自然来访只带其余货物。）
+merchant_weekly_hint,（我每周三固定上门，不打电话也会来，照常带蛇和蛋。）
+phone_snake_lady_cooldown_suffix,（冷却 {0} 天）
 item_corn_spray_gun_name,"玉米喷涂枪"
 item_corn_spray_gun_desc,"把着色剂喷到成年玉米蛇表面；喷涂后公开标签仍宣称 100% 纯色。"
 ui_corn_inspect_title,"检查玉米"
@@ -774,3 +809,9 @@ corn_guide_l2,假货四处：① 色块　② 接缝　③ 边缘斑点　④ �
 corn_guide_l3,图例只是表面观察；质询仍要选一项，系统不会预先告诉你。
 corn_guide_l4,自有玉米只能观察，不能向客户质询。
 corn_guide_missing,图例加载失败，请检查模组文件。
+rat_snake_egg_name,三吱儿
+rat_snake_egg_desc,鼠蛇所产的奢侈品卵，壳薄如玻璃，内蜷一只熟睡小鼠。不能孵化。
+rat_snake_egg_lore,剥开外壳时吱一声，蘸料时吱一声，放嘴里时吱一声——然后就被吃掉了。小鼠随外壳破开而死去；卵碰到什么，隐约还有点感觉。
+rat_snake_egg_flavor,三吱儿，一道只存在于传闻里的菜。
+rat_snake_egg_laid,{0} 产下了一枚三吱儿。
+rat_snake_egg_tooltip,奢侈品食物·不能孵化·每 2 天一枚。

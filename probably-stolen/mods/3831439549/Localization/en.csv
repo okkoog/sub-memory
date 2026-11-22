@@ -329,6 +329,9 @@ chem_titra_gain,Bottles placed in the plate lose protein and stabilizing agent
 chem_filter_req,Kotton Fabric x8 + Filter x8
 chem_filter_prog,{0}/{1} · {2}/{3}
 chem_filter_gain,Bottles placed in the plate lose plant matter, debris, physical contaminants, minerals and fat
+chem_clean_on,Auto-clean: ON
+chem_clean_off,Auto-clean: OFF
+chem_clean_desc,Master switch for the titration unit and the filter. Turned off, neither removes any component (use it when a reagent must keep its impurities). Click to toggle.
 chemadv_source,Source Refinement
 chemadv_source_eff,Pressing needs only 85% of the active ingredient
 chemadv_clean,Contamination Control
@@ -342,7 +345,7 @@ pharmabox_zyanide_pill_name,Zyanide Pill Box
 pharmabox_birth_control_pill_name,Birth Control Box
 pharmabox_fanta_pill_name,Fentanyl Pill Box
 pharmabox_pink_alt_injector_name,Pink Alt Injector Box
-pharmabox_desc,Factory-sealed pack of 4 doses.
+pharmabox_desc,Factory-sealed pack of 4 doses. Pry it open with a screwdriver or a wire cutter.
 pharmabox_open_full,No room to take the contents out
 pharmabox_open_part,Not enough room - only part was taken out
 dr_sourcerefine2_title,Source Refinement II
@@ -367,9 +370,9 @@ feed_refine_gain,Food put in yields +{0}% calories
 nm_ras_expand,Fish Tank Extra Expansion
 ras_expand_gain,+1 to length and width each, up to 5
 nm_ras_selfclean,Water Self-Cleaning Unit
-ras_clean_req,Wire x12 + Water Filter x5 + Advanced Water Filter x1 (all filled to take effect)
+ras_clean_req,Wire x12 + UV lamp x1 + Common chemical x4 (all filled to take effect)
 ras_clean_prog,Wire {0}/{1} + UV lamp {2}/{3} + Common chemical {4}/{5}
-ras_selfclean_gain,Water never drops and quality never degrades
+ras_selfclean_gain,Records water volume and quality before the night and restores them at dawn (keeps the water as it was, never creates water)
 ras_selfclean_short,Self-cleaning system: {0} ({1})
 nm_ras_nightlight,Night Lighting System
 ras_light_req,Electronic Parts x4 + Printer Plastic x6 + Metal Ingot x2 (all filled to take effect)

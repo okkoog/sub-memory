@@ -98,14 +98,14 @@ Notes:
 
 - Special types (melee / frame / gun part) are handled by vanilla `FinishPrinting`; as long as the matching `PRINTER_*_CHIP_TAG` is kept in the snapshot, the batch and quality logic works;
 - The output count lives in `PROGRESS_ITEM_TARGET_ITEM_COUNT_TAG` and is used after switching jobs;
-- **Only the three prefixes above are snapshotted.** If you store job data under a custom tag (for example `MYMOD_PRINT_TARGET`), the integrated chip will not copy it.
+- The three prefixes above use the protocol snapshot. **All other tags** (for example Gunsmith Plus `GP_CHIP_*`, custom upgrade/quality tags, dynamic chips' extra tags) are stored through the instance-tag channel `PEN_PC_TAGS_<i>` / `PEN_IC_TAGS_<i>`: apart from `PEN_*`, ownership/lock/pin/container tags and `PRINTER_/PROGRESS_/REQUIRED_`, every tag keeps its type, value, enabled state and display name, and is restored on activation/unload.
 
 ## 3. Two-way drag and absorption rules
 
 - **Both directions absorb**: drag a chip onto the integrated chip, or drag the integrated chip onto a chip;
 - Reverse absorption works even inside the same inventory (the vanilla chip-swap hook is bypassed by this mod's narrow patch);
 - **Only player-owned chips are absorbed**: the item needs `IS_OWNED_TAG` and its ancestor containers must also belong to the player; unowned chips on counters/shelves are rejected;
-- Dragging the same target (desequencer) or the same job snapshot (printer) again shows **"This chip's data is already included"** and does **not** consume the chip;
+- **Entry identity is the source chip id.** Dragging the same id again (even with a different upgrade level/quality/other tags) shows **"This chip's data is already included"** and does **not** consume, replace or add an entry; the first absorbed instance data is kept;
 - Two integrated chips never absorb each other;
 - A desequencer chip's target must be a registered `ACCESS_CARD`; a printer chip's output item must be registered;
 - If the source mod is uninstalled, the corresponding entries are **purged on the next save load** (including target items/materials that no longer exist), so the save never keeps dangling item ids; when no entry is usable the chip becomes inert and never feeds an invalid job to a machine.
@@ -117,7 +117,7 @@ The following are ignored or rejected:
 1. Describing the target with your own tag instead of `DESEQUENCER_TARGET_ID_TAG` (desequencer) or `PRINTER_CHIP_TAG` + `PROGRESS_ITEM_TARGET_ITEM_ID_TAG` (printer);
 2. A desequencer target that is not an `ACCESS_CARD`, is `blank_keycard`, or is not registered;
 3. A printer chip with no output item id, or whose output item is not registered;
-4. Printer job data stored under a custom tag outside `PRINTER_` / `PROGRESS_` / `REQUIRED_` (it will not be snapshotted);
+4. Non-protocol tags are preserved too; only `PEN_*`, ownership/lock/pin/container tags are intentionally excluded (they describe the item's context and must not be copied);
 5. Items of type `MACHINE`, items with `CONTAINER_TAG`, or items with `DESEQUENCER_STATE_TAG` (a desequencer that has run a night carries target tags itself);
 6. Chips not owned by the player (counter/shelf/unowned containers);
 7. Items that already carry `PEN_IC_COUNT` or `PEN_PC_COUNT` (i.e. the other integrated chip, including copies of this mod's items);
