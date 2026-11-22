@@ -47,8 +47,8 @@ jobs:
             static Dictionary<string,string> Dolls(ModuleDefMD md){
               var m=md.GetTypes().Single(t=>t.FullName=="DailyWearKitchen.DollContent").Methods.Single(m=>m.Name=="Define");
               var i=m.Body.Instructions;var d=new Dictionary<string,string>();
-              for(int k=0;k<i.Count-1;k++)if(i[k].OpCode==OpCodes.Ldstr&&i[k].Operand is string s&&System.Text.RegularExpressions.Regex.IsMatch(s,@"^dwk_doll_\d{3}$")){
-                Need(i[k+1].OpCode==OpCodes.Ldstr,"Doll definition name anchor");d.Add(s,(string)i[k+1].Operand);
+              for(int k=1;k<i.Count-2;k++)if(i[k-1].OpCode==OpCodes.Ldsfld&&i[k-1].Operand.ToString()!.Contains("Catalog::All")&&i[k].OpCode==OpCodes.Ldstr&&i[k].Operand is string s&&System.Text.RegularExpressions.Regex.IsMatch(s,@"^dwk_doll_\d{3}$")){
+                Need(i[k+1].OpCode==OpCodes.Ldstr,"Doll definition name anchor");int q=k+1;if(Equals(i[q].Operand,s)){q++;Need(i[q].OpCode==OpCodes.Ldstr,"Repeated original ID before name");}d.Add(s,(string)i[q].Operand);
               }
               Need(d.Count==50,"50 legacy definitions");return d;
             }
