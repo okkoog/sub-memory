@@ -1,0 +1,88 @@
+name: RLD 22 trait local-key UI output fix
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/rld-trait-display-localkey-build-20261122.yml']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rld-traits-direct-localkey-20261122
+          lfs: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .gitattributes
+            rld-trait-fix
+            rld-direct-key
+            rld-ui-fix/plan.json
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv
+      - name: Fetch exact preexisting item-name fixed DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install --local
+          git lfs pull --include='rld-direct-key/RedLightDistrict.dll' --exclude=''
+          echo '77241d011e46a4bb6fcbb3a06edfae70c30aea33f26c5a698adcb4dc1e51cdde  rld-direct-key/RedLightDistrict.dll' | sha256sum -c
+      - name: Build IL patch, verify only trait UI display call changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console -f net8.0 -o /tmp/rld-trait-display --force
+          dotnet add /tmp/rld-trait-display/rld-trait-display.csproj package dnlib --version 4.5.0
+          cp rld-trait-fix/PatchMissingTraitTooltip.cs /tmp/rld-trait-display/Program.cs
+          dotnet build /tmp/rld-trait-display/rld-trait-display.csproj -c Release
+          mkdir -p rld-trait-fix/verified
+          dotnet /tmp/rld-trait-display/bin/Release/net8.0/rld-trait-display.dll \
+            rld-direct-key/RedLightDistrict.dll \
+            rld-ui-fix/plan.json \
+            rld-trait-fix/RedLightDistrict.dll \
+            rld-trait-fix/verified/report.json \
+            rld-trait-fix/verified/traits.json
+      - name: Verify output and all 22 localization keys; package DLL alone
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv,pathlib,json,hashlib,zipfile
+          root=pathlib.Path("rld-trait-fix")
+          report=json.loads((root/"verified/report.json").read_text())
+          dll=(root/"RedLightDistrict.dll").read_bytes()
+          assert dll[:2]==b"MZ" and len(dll)>100000000
+          assert hashlib.sha256(dll).hexdigest()==report["outputSha256"]
+          assert report["keysMatched"]==22 and report["methodsChanged"]==1 and report["methodsAdded"]==0 and report["newHarmonyPatches"]==0
+          path=pathlib.Path("probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv")
+          with path.open(encoding="utf-8-sig",newline="") as f: ko=dict(csv.reader(f))
+          traits=json.loads((root/"verified/traits.json").read_text())
+          missing=[r["key"] for r in traits if not ko.get(r["key"]) or ko[r["key"]]==r["source"]]
+          assert not missing, f"Missing untranslated trait display keys: {missing}"
+          output=root/"verified/RedLightDistrict_Trait_LocalKey_Fix_DLL_Only.zip"
+          with zipfile.ZipFile(output,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=4) as z:z.writestr("RedLightDistrict.dll",dll)
+          with zipfile.ZipFile(output) as z:
+              assert z.testzip() is None
+              assert hashlib.sha256(z.read("RedLightDistrict.dll")).hexdigest()==report["outputSha256"]
+          print("Verified 22 existing display localization keys, untouched CSV, output sha",report["outputSha256"])
+          PY
+      - name: Upload exact validated DLL to isolated GitHub LFS branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs track 'rld-trait-fix/RedLightDistrict.dll'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse .gitattributes rld-trait-fix/RedLightDistrict.dll rld-trait-fix/verified/report.json rld-trait-fix/verified/traits.json
+          pointer=$(git show :rld-trait-fix/RedLightDistrict.dll)
+          grep -Fxq 'version https://git-lfs.github.com/spec/v1' <<< "$pointer"
+          grep -Fxq "oid sha256:$(sha256sum rld-trait-fix/RedLightDistrict.dll|cut -d' ' -f1)" <<< "$pointer"
+          git commit -m 'Connect unlocked trait tooltip names to existing 22 RLD localization keys'
+          git push origin HEAD:refs/heads/rld-traits-direct-localkey-20261122
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RLD-Trait-LocalKey-DLL-Only
+          path: rld-trait-fix/verified/RedLightDistrict_Trait_LocalKey_Fix_DLL_Only.zip
+          if-no-files-found: error
+          retention-days: 7
