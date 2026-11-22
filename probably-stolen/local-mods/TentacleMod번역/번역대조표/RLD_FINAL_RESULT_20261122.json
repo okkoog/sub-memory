@@ -1,0 +1,350 @@
+{
+  "baseline": "45f3f40c401dc9cc99bd5261509df30d5e9b814b67422386676eb372e482e72b",
+  "finalDllHash": "2b8df0fea0f4a69b3c001fbb8f481da87984530b0b10ee1ebd96d423f0418f9f",
+  "comparedMethods": 1861,
+  "embeddedResources": 1617,
+  "insertCount": 49,
+  "replaceCount": 14,
+  "helperMethods": 12,
+  "parserSites": 10,
+  "markerSites": 4,
+  "displaySites": 5,
+  "gameNameSites": 5,
+  "lifecycleSites": 2,
+  "modType": "RedLightDistrict.RedLightDistrictMod",
+  "patronIdentifierIL": [
+    "ldstr redlight_patron_",
+    "ldsfld System.String RedLightDistrict.PatronSystem::_patronIdSalt",
+    "ldstr _",
+    "ldsfld System.Int32 RedLightDistrict.PatronSystem::_patronIdSeq",
+    "dup ",
+    "ldc.i4.1 ",
+    "add ",
+    "stsfld System.Int32 RedLightDistrict.PatronSystem::_patronIdSeq",
+    "stloc.0 ",
+    "ldloca.s V_0",
+    "call System.String System.Int32::ToString()",
+    "call System.String System.String::Concat(System.String,System.String,System.String,System.String)",
+    "ret "
+  ],
+  "runtime": "not tested",
+  "changes": [
+    {
+      "method": "System.Void RedLightDistrict.TalentPanel::ShowPanel(RedLightDistrict.TalentData,GameItem)",
+      "token": "06000483",
+      "offset": 2675,
+      "added": [
+        "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayTrait(System.String)"
+      ],
+      "reason": "Display argument only; saved identity untouched"
+    },
+    {
+      "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+      "token": "0600048D",
+      "offset": 1861,
+      "added": [
+        "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayTrait(System.String)"
+      ],
+      "reason": "Display argument only; saved identity untouched"
+    },
+    {
+      "method": "System.Void RedLightDistrict.TalentIntelUI::RenderAllyTalentPicker(CustomUIBuilder,System.Collections.Generic.List`1<GameItem>,System.Action,System.String,System.Single)",
+      "token": "06000435",
+      "offset": 438,
+      "added": [
+        "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayMaid(System.String)"
+      ],
+      "reason": "Display argument only; saved identity untouched"
+    },
+    {
+      "method": "RichTextBuilder RedLightDistrict.TalentPanel::BuildTalentTooltipBuilder(GameItem)",
+      "token": "0600048D",
+      "offset": 54,
+      "added": [
+        "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayMaid(System.String)"
+      ],
+      "reason": "Display argument only; saved identity untouched"
+    },
+    {
+      "method": "System.Void RedLightDistrict.PatronSystem::BuildRansomDialogue(RedLightDistrict.PatronData,RedLightDistrict.TalentData,System.Int64)",
+      "token": "060001BD",
+      "offset": 235,
+      "added": [
+        "call System.String RedLightDistrict.Korean.DisplayBoundaryKo::DisplayPatronName(System.String)"
+      ],
+      "reason": "Display argument only; saved identity untouched"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 39,
+      "added": [
+        "ldstr rld_95d4e06bc98f69224b3d",
+        "ldstr 颜值(小)",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 74,
+      "added": [
+        "ldstr rld_3d805d46c1216c3f3652",
+        "ldstr 颜值",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 124,
+      "added": [
+        "ldstr rld_fb980d761ea335c5e68e",
+        "ldstr 身材(小)",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 159,
+      "added": [
+        "ldstr rld_259998749215c94824b1",
+        "ldstr 身材",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 209,
+      "added": [
+        "ldstr rld_f75092afdabf8b70989a",
+        "ldstr 气质(小)",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 244,
+      "added": [
+        "ldstr rld_6bff630ce07b7f55aafe",
+        "ldstr 气质",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 294,
+      "added": [
+        "ldstr rld_7882d7294814aa654018",
+        "ldstr 处",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 329,
+      "added": [
+        "ldstr rld_ce6797512aa447acc035",
+        "ldstr 萝莉",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 364,
+      "added": [
+        "ldstr rld_6a5bcff7c36497aa514f",
+        "ldstr 少女",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "RedLightDistrict.TalentIntel/BossFilter RedLightDistrict.TalentIntel::ParseFilterFromName(System.String)",
+      "token": "0600041D",
+      "offset": 399,
+      "added": [
+        "ldstr rld_cc6325a044c8dc3fd83e",
+        "ldstr 特性",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Check old source and displayed label using original comparison type"
+    },
+    {
+      "method": "System.Void RedLightDistrict.TalentTarget::MarkEaten(GameItem,System.Int32)",
+      "token": "0600068D",
+      "offset": 84,
+      "added": [
+        "ldstr rld_1a94f48794eadafb8eb5",
+        "ldstr [已食用]",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Recognize legacy and current marker without duplicate append"
+    },
+    {
+      "method": "System.Void RedLightDistrict.TalentTarget::MarkEaten(GameItem,System.Int32)",
+      "token": "0600068D",
+      "offset": 346,
+      "added": [
+        "ldstr rld_1a94f48794eadafb8eb5",
+        "ldstr [已食用]",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Recognize legacy and current marker without duplicate append"
+    },
+    {
+      "method": "System.Void RedLightDistrict.TalentPatches::PostfixTooltipGetTooltip(TooltipInterface,System.String&)",
+      "token": "060004CE",
+      "offset": 185,
+      "added": [
+        "ldstr rld_1a94f48794eadafb8eb5",
+        "ldstr [已食用]",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Recognize legacy and current marker without duplicate append"
+    },
+    {
+      "method": "System.String RedLightDistrict.TalentTarget::TagDiag(GameItem,System.String)",
+      "token": "0600068C",
+      "offset": 279,
+      "added": [
+        "ldstr rld_1a94f48794eadafb8eb5",
+        "ldstr [已食用]",
+        "call System.String RedLightDistrict.Korean.CsvLookup::Read(System.String,System.String)"
+      ],
+      "reason": "Recognize legacy and current marker without duplicate append"
+    },
+    {
+      "method": "System.Void RedLightDistrict.RedLightDistrictMod::OnEnable()",
+      "token": "06000149",
+      "offset": 0,
+      "added": [
+        "call System.Void RedLightDistrict.Korean.DisplayBoundaryKo::Install()"
+      ],
+      "reason": "Own ID-only UI patch lifecycle"
+    },
+    {
+      "method": "System.Void RedLightDistrict.RedLightDistrictMod::OnDisable()",
+      "token": "0600014A",
+      "offset": 0,
+      "added": [
+        "call System.Void RedLightDistrict.Korean.DisplayBoundaryKo::Uninstall()"
+      ],
+      "reason": "Own ID-only UI patch lifecycle"
+    }
+  ],
+  "sourceKeys": 3619,
+  "sourceTranslated": 3528,
+  "displayAliases": 24,
+  "protectedOriginalKeys": 91,
+  "totalCsvRows": 3552,
+  "protectedKeys": [
+    "rld_005face9d66fca25f6ea",
+    "rld_0215199e6cec3ae3fbc1",
+    "rld_03e37f8200e9d8f405ee",
+    "rld_05f1e39201ce39376827",
+    "rld_09e6d63dabcc724f744d",
+    "rld_0c3fce20a7384ba2be04",
+    "rld_0c709a656b8604731f59",
+    "rld_0f7aa46fdaeb993ddbea",
+    "rld_102f641e1e10fea431ff",
+    "rld_10348d760c2b2e5465e2",
+    "rld_12dd1fe42069516359f8",
+    "rld_148447ccc5bc854a4aaf",
+    "rld_15ae3bbe632a72354239",
+    "rld_1968994eccd3fe4bc60f",
+    "rld_19dfc7988ec9df531523",
+    "rld_1b0ec971311878278680",
+    "rld_23273a431e2a58c41e37",
+    "rld_246a0bafb6b324f38f9d",
+    "rld_272a5629b63e229a3fac",
+    "rld_289f9520524e48c4e10a",
+    "rld_2cb9d5a1b289d47e2baa",
+    "rld_317a48be4378f6aff8d8",
+    "rld_373d080758162dc6c79b",
+    "rld_375cf96d4b43b8108392",
+    "rld_391e80c448107acf383f",
+    "rld_3c265c6df72141d7167d",
+    "rld_3f22208dfb3931c57853",
+    "rld_41f010b5ae1ab5801897",
+    "rld_4270e752a74b229c8c22",
+    "rld_43288a04c3d53e057b48",
+    "rld_439ca7932172eddc4676",
+    "rld_445d455a701f81452b29",
+    "rld_490133fab5da1163947b",
+    "rld_512781d2984d079bca7d",
+    "rld_5172a81b0819602ee333",
+    "rld_5348f52f5409ebcfe7e6",
+    "rld_581f7de14b5645f9aff6",
+    "rld_5b3694efd83a6d264e92",
+    "rld_5b532e0d9e8ac20a7efa",
+    "rld_5bdd9eb6ded121f0a782",
+    "rld_62aab433249227da4e74",
+    "rld_62de8b20264b1b63741e",
+    "rld_690e97b643335ffe21a5",
+    "rld_69b93dd342f988985880",
+    "rld_6cf3ba5f890ca8e9395a",
+    "rld_6dbe923ea176e6f66285",
+    "rld_6e8ffdc88ed79362c849",
+    "rld_70853c89fe693238cc84",
+    "rld_723e7378a7ed35d14c64",
+    "rld_7529f1ffa27cc9a91773",
+    "rld_75faed925bc594cec348",
+    "rld_76aef5ac967fc4d06533",
+    "rld_7b8adf9c35973a59810e",
+    "rld_7e8f8b2ce7148bb1d2e7",
+    "rld_804ea28bd1357b985d07",
+    "rld_82783ec552db3983a8e7",
+    "rld_88672b55ea3e15e6f877",
+    "rld_8f69da9b8bf553c30e52",
+    "rld_9025b871a6ae32435a86",
+    "rld_9509a15363787523d47b",
+    "rld_971e48597b944ba2e552",
+    "rld_979a1b3ad08de7959bf6",
+    "rld_9b49366c057e1fd0769b",
+    "rld_9db7c70220dc08c81c16",
+    "rld_9dc9635fb332594ae594",
+    "rld_a3a3764ff0eac74a7009",
+    "rld_a6c735dbdf4e4832fd85",
+    "rld_b1bbb45b21f7784f770a",
+    "rld_b2486c3c40175f364a58",
+    "rld_b2a14ee5c374005ef94f",
+    "rld_b5d17319159606c9c3b7",
+    "rld_b6e992d6345585a0fc66",
+    "rld_b7847986338caf835fd9",
+    "rld_b8a410b27f2ea2af573e",
+    "rld_ba93355a20373b99953e",
+    "rld_bc03e08b46482b7a2966",
+    "rld_ca413fbec396c79e12a6",
+    "rld_cab0891ddb48c0be0ba7",
+    "rld_cf1a6f889f4bcc975ed3",
+    "rld_d185781d0397cfb8fac4",
+    "rld_d3741f3d9583c0b416dd",
+    "rld_d8eb5bc17c64c004f95c",
+    "rld_d91049754e992c578424",
+    "rld_db217685c66fad2e301b",
+    "rld_db87c63be753a212604f",
+    "rld_dfcee520a3b8f07a039a",
+    "rld_e60924590a8d98f1a0fb",
+    "rld_e98b511ac9df76a6d02c",
+    "rld_f2e46f40043ddf963794",
+    "rld_f667308df730237865c9",
+    "rld_fd858c4efd27a7c29cc9"
+  ],
+  "csvSHA256": "a3c53e8702c8b14c986b9a714ee8a9a59f62ee4d1805f355d3c6e6b3808d0a79",
+  "scope": "Static reviewed display boundaries; actual game loader, UI and save compatibility remain untested."
+}
