@@ -1,0 +1,1842 @@
+[
+  {
+    "name": "System.Void RedLightDistrict.RedLightDistrictMod::OnDisable()",
+    "body": [
+      {
+        "n": 0,
+        "op": "ldsfld",
+        "v": "ModLog RedLightDistrict.MLog::L"
+      },
+      {
+        "n": 1,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 2,
+        "op": "brtrue.s",
+        "v": "@B"
+      },
+      {
+        "n": 3,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 4,
+        "op": "br.s",
+        "v": "@15"
+      },
+      {
+        "n": 5,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_d1db30580ff5b875d5fb()"
+      },
+      {
+        "n": 6,
+        "op": "call",
+        "v": "System.Void ModLog::Log(System.Object)"
+      },
+      {
+        "n": 7,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 8,
+        "op": "call",
+        "v": "System.AppDomain System.AppDomain::get_CurrentDomain()"
+      },
+      {
+        "n": 9,
+        "op": "ldsfld",
+        "v": "System.UnhandledExceptionEventHandler RedLightDistrict.RedLightDistrictMod/<>O::<0>__OnUnhandled"
+      },
+      {
+        "n": 10,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 11,
+        "op": "brtrue.s",
+        "v": "@36"
+      },
+      {
+        "n": 12,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 13,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 14,
+        "op": "ldftn",
+        "v": "System.Void RedLightDistrict.RedLightDistrictMod::OnUnhandled(System.Object,System.UnhandledExceptionEventArgs)"
+      },
+      {
+        "n": 15,
+        "op": "newobj",
+        "v": "System.Void System.UnhandledExceptionEventHandler::.ctor(System.Object,System.IntPtr)"
+      },
+      {
+        "n": 16,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 17,
+        "op": "stsfld",
+        "v": "System.UnhandledExceptionEventHandler RedLightDistrict.RedLightDistrictMod/<>O::<0>__OnUnhandled"
+      },
+      {
+        "n": 18,
+        "op": "callvirt",
+        "v": "System.Void System.AppDomain::remove_UnhandledException(System.UnhandledExceptionEventHandler)"
+      },
+      {
+        "n": 19,
+        "op": "leave.s",
+        "v": "@40"
+      },
+      {
+        "n": 20,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 21,
+        "op": "leave.s",
+        "v": "@40"
+      },
+      {
+        "n": 22,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 23,
+        "op": "ldsfld",
+        "v": "UnityEngine.Application/LogCallback RedLightDistrict.RedLightDistrictMod/<>O::<1>__OnLog"
+      },
+      {
+        "n": 24,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 25,
+        "op": "brtrue.s",
+        "v": "@5C"
+      },
+      {
+        "n": 26,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 27,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 28,
+        "op": "ldftn",
+        "v": "System.Void RedLightDistrict.RedLightDistrictMod::OnLog(System.String,System.String,UnityEngine.LogType)"
+      },
+      {
+        "n": 29,
+        "op": "newobj",
+        "v": "System.Void UnityEngine.Application/LogCallback::.ctor(System.Object,System.IntPtr)"
+      },
+      {
+        "n": 30,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 31,
+        "op": "stsfld",
+        "v": "UnityEngine.Application/LogCallback RedLightDistrict.RedLightDistrictMod/<>O::<1>__OnLog"
+      },
+      {
+        "n": 32,
+        "op": "call",
+        "v": "System.Void UnityEngine.Application::remove_logMessageReceived(UnityEngine.Application/LogCallback)"
+      },
+      {
+        "n": 33,
+        "op": "leave.s",
+        "v": "@66"
+      },
+      {
+        "n": 34,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 35,
+        "op": "leave.s",
+        "v": "@66"
+      },
+      {
+        "n": 36,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 37,
+        "op": "ldftn",
+        "v": "System.Void RedLightDistrict.RedLightDistrictMod::OnGameLoadedInit()"
+      },
+      {
+        "n": 38,
+        "op": "newobj",
+        "v": "System.Void System.Action::.ctor(System.Object,System.IntPtr)"
+      },
+      {
+        "n": 39,
+        "op": "call",
+        "v": "System.Void ModHook::remove_OnGameLoadedInit(System.Action)"
+      },
+      {
+        "n": 40,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 41,
+        "op": "ldftn",
+        "v": "System.Void RedLightDistrict.RedLightDistrictMod::OnModAssetsLoaded(LoadedMod)"
+      },
+      {
+        "n": 42,
+        "op": "newobj",
+        "v": "System.Void System.Action`1<LoadedMod>::.ctor(System.Object,System.IntPtr)"
+      },
+      {
+        "n": 43,
+        "op": "call",
+        "v": "System.Void ModHook::remove_OnModAssetsLoaded(System.Action`1<LoadedMod>)"
+      },
+      {
+        "n": 44,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RldCoroutine::StopTicker()"
+      },
+      {
+        "n": 45,
+        "op": "leave.s",
+        "v": "@92"
+      },
+      {
+        "n": 46,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 47,
+        "op": "leave.s",
+        "v": "@92"
+      },
+      {
+        "n": 48,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 49,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 50,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.TalentSystem::FlushDataTags(System.Boolean)"
+      },
+      {
+        "n": 51,
+        "op": "leave.s",
+        "v": "@9E"
+      },
+      {
+        "n": 52,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 53,
+        "op": "leave.s",
+        "v": "@9E"
+      },
+      {
+        "n": 54,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 55,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.TalentSaveStore::Save()"
+      },
+      {
+        "n": 56,
+        "op": "leave.s",
+        "v": "@A9"
+      },
+      {
+        "n": 57,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 58,
+        "op": "leave.s",
+        "v": "@A9"
+      },
+      {
+        "n": 59,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Flush()"
+      },
+      {
+        "n": 60,
+        "op": "ldsfld",
+        "v": "HarmonyLib.Harmony RedLightDistrict.RldHarmony::Inst"
+      },
+      {
+        "n": 61,
+        "op": "brfalse.s",
+        "v": "@C9"
+      },
+      {
+        "n": 62,
+        "op": "ldsfld",
+        "v": "HarmonyLib.Harmony RedLightDistrict.RldHarmony::Inst"
+      },
+      {
+        "n": 63,
+        "op": "ldsfld",
+        "v": "HarmonyLib.Harmony RedLightDistrict.RldHarmony::Inst"
+      },
+      {
+        "n": 64,
+        "op": "callvirt",
+        "v": "System.String HarmonyLib.Harmony::get_Id()"
+      },
+      {
+        "n": 65,
+        "op": "callvirt",
+        "v": "System.Void HarmonyLib.Harmony::UnpatchAll(System.String)"
+      },
+      {
+        "n": 66,
+        "op": "leave.s",
+        "v": "@CE"
+      },
+      {
+        "n": 67,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 68,
+        "op": "leave.s",
+        "v": "@CE"
+      },
+      {
+        "n": 69,
+        "op": "ret",
+        "v": ""
+      }
+    ]
+  },
+  {
+    "name": "System.Void RedLightDistrict.TalentAudio::ApplyDragHook(HarmonyLib.Harmony)",
+    "body": [
+      {
+        "n": 0,
+        "op": "ldsfld",
+        "v": "System.Boolean RedLightDistrict.TalentAudio::_hooksApplied"
+      },
+      {
+        "n": 1,
+        "op": "brfalse.s",
+        "v": "@8"
+      },
+      {
+        "n": 2,
+        "op": "ret",
+        "v": ""
+      },
+      {
+        "n": 3,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 4,
+        "op": "stsfld",
+        "v": "System.Boolean RedLightDistrict.TalentAudio::_hooksApplied"
+      },
+      {
+        "n": 5,
+        "op": "ldtoken",
+        "v": "ItemMouseDragHandler"
+      },
+      {
+        "n": 6,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 7,
+        "op": "ldstr",
+        "v": "StartDrag"
+      },
+      {
+        "n": 8,
+        "op": "ldsfld",
+        "v": "System.Type[] System.Type::EmptyTypes"
+      },
+      {
+        "n": 9,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 10,
+        "op": "call",
+        "v": "System.Reflection.MethodInfo HarmonyLib.AccessTools::Method(System.Type,System.String,System.Type[],System.Type[])"
+      },
+      {
+        "n": 11,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 12,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 13,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 14,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodInfo::op_Inequality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)"
+      },
+      {
+        "n": 15,
+        "op": "brfalse.s",
+        "v": "@5E"
+      },
+      {
+        "n": 16,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 17,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 18,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 19,
+        "op": "ldtoken",
+        "v": "RedLightDistrict.TalentAudio"
+      },
+      {
+        "n": 20,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 21,
+        "op": "ldstr",
+        "v": "PostfixStartDrag"
+      },
+      {
+        "n": 22,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 23,
+        "op": "newobj",
+        "v": "System.Void HarmonyLib.HarmonyMethod::.ctor(System.Type,System.String,System.Type[])"
+      },
+      {
+        "n": 24,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 25,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 26,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 27,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 28,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_fb2c3c384ffc00bb6967()"
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 30,
+        "op": "br.s",
+        "v": "@68"
+      },
+      {
+        "n": 31,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_1e49ff5738acd32ed9a8()"
+      },
+      {
+        "n": 32,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 33,
+        "op": "leave.s",
+        "v": "@82"
+      },
+      {
+        "n": 34,
+        "op": "stloc.1",
+        "v": ""
+      },
+      {
+        "n": 35,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_26f633d2ef607403e8cc()"
+      },
+      {
+        "n": 36,
+        "op": "ldloc.1",
+        "v": ""
+      },
+      {
+        "n": 37,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 38,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 39,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 40,
+        "op": "leave.s",
+        "v": "@82"
+      },
+      {
+        "n": 41,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 42,
+        "op": "ldtoken",
+        "v": "ItemMouseDragHandler"
+      },
+      {
+        "n": 43,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 44,
+        "op": "ldstr",
+        "v": "EndDrag"
+      },
+      {
+        "n": 45,
+        "op": "ldsfld",
+        "v": "System.Type[] System.Type::EmptyTypes"
+      },
+      {
+        "n": 46,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 47,
+        "op": "call",
+        "v": "System.Reflection.MethodInfo HarmonyLib.AccessTools::Method(System.Type,System.String,System.Type[],System.Type[])"
+      },
+      {
+        "n": 48,
+        "op": "stloc.2",
+        "v": ""
+      },
+      {
+        "n": 49,
+        "op": "ldloc.2",
+        "v": ""
+      },
+      {
+        "n": 50,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 51,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodInfo::op_Inequality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)"
+      },
+      {
+        "n": 52,
+        "op": "brfalse.s",
+        "v": "@D3"
+      },
+      {
+        "n": 53,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 54,
+        "op": "ldloc.2",
+        "v": ""
+      },
+      {
+        "n": 55,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 56,
+        "op": "ldtoken",
+        "v": "RedLightDistrict.TalentAudio"
+      },
+      {
+        "n": 57,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 58,
+        "op": "ldstr",
+        "v": "PostfixEndDrag"
+      },
+      {
+        "n": 59,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 60,
+        "op": "newobj",
+        "v": "System.Void HarmonyLib.HarmonyMethod::.ctor(System.Type,System.String,System.Type[])"
+      },
+      {
+        "n": 61,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 62,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 63,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 64,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 65,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_d388de4b26140b36b144()"
+      },
+      {
+        "n": 66,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 67,
+        "op": "br.s",
+        "v": "@DD"
+      },
+      {
+        "n": 68,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_052f71e2ef878ab1799f()"
+      },
+      {
+        "n": 69,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 70,
+        "op": "leave.s",
+        "v": "@F7"
+      },
+      {
+        "n": 71,
+        "op": "stloc.3",
+        "v": ""
+      },
+      {
+        "n": 72,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_4dbdc600a931c93b6be6()"
+      },
+      {
+        "n": 73,
+        "op": "ldloc.3",
+        "v": ""
+      },
+      {
+        "n": 74,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 75,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 76,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 77,
+        "op": "leave.s",
+        "v": "@F7"
+      },
+      {
+        "n": 78,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 79,
+        "op": "ldtoken",
+        "v": "TreeNodeRender"
+      },
+      {
+        "n": 80,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 81,
+        "op": "ldstr",
+        "v": "OnBeginDrag"
+      },
+      {
+        "n": 82,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 83,
+        "op": "newarr",
+        "v": "System.Type"
+      },
+      {
+        "n": 84,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 85,
+        "op": "ldc.i4.0",
+        "v": ""
+      },
+      {
+        "n": 86,
+        "op": "ldtoken",
+        "v": "UnityEngine.EventSystems.PointerEventData"
+      },
+      {
+        "n": 87,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 88,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 89,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 90,
+        "op": "call",
+        "v": "System.Reflection.MethodInfo HarmonyLib.AccessTools::Method(System.Type,System.String,System.Type[],System.Type[])"
+      },
+      {
+        "n": 91,
+        "op": "stloc.s",
+        "v": "V_4"
+      },
+      {
+        "n": 92,
+        "op": "ldloc.s",
+        "v": "V_4"
+      },
+      {
+        "n": 93,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 94,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodInfo::op_Inequality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)"
+      },
+      {
+        "n": 95,
+        "op": "brfalse.s",
+        "v": "@159"
+      },
+      {
+        "n": 96,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 97,
+        "op": "ldloc.s",
+        "v": "V_4"
+      },
+      {
+        "n": 98,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 99,
+        "op": "ldtoken",
+        "v": "RedLightDistrict.TalentAudio"
+      },
+      {
+        "n": 100,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 101,
+        "op": "ldstr",
+        "v": "PostfixBeginDrag"
+      },
+      {
+        "n": 102,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 103,
+        "op": "newobj",
+        "v": "System.Void HarmonyLib.HarmonyMethod::.ctor(System.Type,System.String,System.Type[])"
+      },
+      {
+        "n": 104,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 105,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 106,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 107,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 108,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_c0c8db357bf195b1c2e3()"
+      },
+      {
+        "n": 109,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 110,
+        "op": "br.s",
+        "v": "@163"
+      },
+      {
+        "n": 111,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_47ed714ebb2bc19f06cf()"
+      },
+      {
+        "n": 112,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 113,
+        "op": "leave.s",
+        "v": "@17F"
+      },
+      {
+        "n": 114,
+        "op": "stloc.s",
+        "v": "V_5"
+      },
+      {
+        "n": 115,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_aee80075bf37b6aaebe5()"
+      },
+      {
+        "n": 116,
+        "op": "ldloc.s",
+        "v": "V_5"
+      },
+      {
+        "n": 117,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 118,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 119,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 120,
+        "op": "leave.s",
+        "v": "@17F"
+      },
+      {
+        "n": 121,
+        "op": "ret",
+        "v": ""
+      }
+    ]
+  },
+  {
+    "name": "System.Void RedLightDistrict.TalentGrabFix::Apply(HarmonyLib.Harmony)",
+    "body": [
+      {
+        "n": 0,
+        "op": "ldc.i4.0",
+        "v": ""
+      },
+      {
+        "n": 1,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 2,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 3,
+        "op": "callvirt",
+        "v": "System.Void HarmonyLib.Harmony::PatchAll()"
+      },
+      {
+        "n": 4,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 5,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 6,
+        "op": "add",
+        "v": ""
+      },
+      {
+        "n": 7,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 8,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_72c776b289c461f5f4a8()"
+      },
+      {
+        "n": 9,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 10,
+        "op": "leave.s",
+        "v": "@30"
+      },
+      {
+        "n": 11,
+        "op": "stloc.1",
+        "v": ""
+      },
+      {
+        "n": 12,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_dfb9aeec7d3da59c07d4()"
+      },
+      {
+        "n": 13,
+        "op": "ldloc.1",
+        "v": ""
+      },
+      {
+        "n": 14,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 15,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 16,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 17,
+        "op": "leave.s",
+        "v": "@30"
+      },
+      {
+        "n": 18,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 19,
+        "op": "ldtoken",
+        "v": "GameItemElement"
+      },
+      {
+        "n": 20,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 21,
+        "op": "ldstr",
+        "v": "ResolveSpriteByName"
+      },
+      {
+        "n": 22,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 23,
+        "op": "newarr",
+        "v": "System.Type"
+      },
+      {
+        "n": 24,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 25,
+        "op": "ldc.i4.0",
+        "v": ""
+      },
+      {
+        "n": 26,
+        "op": "ldtoken",
+        "v": "System.String"
+      },
+      {
+        "n": 27,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 28,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 29,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 30,
+        "op": "call",
+        "v": "System.Reflection.MethodInfo HarmonyLib.AccessTools::Method(System.Type,System.String,System.Type[],System.Type[])"
+      },
+      {
+        "n": 31,
+        "op": "stloc.2",
+        "v": ""
+      },
+      {
+        "n": 32,
+        "op": "ldloc.2",
+        "v": ""
+      },
+      {
+        "n": 33,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 34,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodInfo::op_Inequality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)"
+      },
+      {
+        "n": 35,
+        "op": "brfalse.s",
+        "v": "@89"
+      },
+      {
+        "n": 36,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 37,
+        "op": "ldloc.2",
+        "v": ""
+      },
+      {
+        "n": 38,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 39,
+        "op": "ldtoken",
+        "v": "RedLightDistrict.TalentGrabFix"
+      },
+      {
+        "n": 40,
+        "op": "call",
+        "v": "System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)"
+      },
+      {
+        "n": 41,
+        "op": "ldstr",
+        "v": "PostfixResolveSprite"
+      },
+      {
+        "n": 42,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 43,
+        "op": "newobj",
+        "v": "System.Void HarmonyLib.HarmonyMethod::.ctor(System.Type,System.String,System.Type[])"
+      },
+      {
+        "n": 44,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 45,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 46,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 47,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 48,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 49,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 50,
+        "op": "add",
+        "v": ""
+      },
+      {
+        "n": 51,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 52,
+        "op": "br.s",
+        "v": "@93"
+      },
+      {
+        "n": 53,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_ea8dca54bc74c4a14a00()"
+      },
+      {
+        "n": 54,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 55,
+        "op": "leave.s",
+        "v": "@AD"
+      },
+      {
+        "n": 56,
+        "op": "stloc.3",
+        "v": ""
+      },
+      {
+        "n": 57,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_3bb543c1bf6fd65af4ac()"
+      },
+      {
+        "n": 58,
+        "op": "ldloc.3",
+        "v": ""
+      },
+      {
+        "n": 59,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 60,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 61,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 62,
+        "op": "leave.s",
+        "v": "@AD"
+      },
+      {
+        "n": 63,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_95f96a9ad7e6fcb3b025()"
+      },
+      {
+        "n": 64,
+        "op": "ldloca.s",
+        "v": "V_0"
+      },
+      {
+        "n": 65,
+        "op": "call",
+        "v": "System.String System.Int32::ToString()"
+      },
+      {
+        "n": 66,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_babd472f47e436dae0ed()"
+      },
+      {
+        "n": 67,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String,System.String)"
+      },
+      {
+        "n": 68,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 69,
+        "op": "ret",
+        "v": ""
+      }
+    ]
+  },
+  {
+    "name": "System.Void RedLightDistrict.TalentPatches::SafePatch(HarmonyLib.Harmony,System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)",
+    "body": [
+      {
+        "n": 0,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 1,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 2,
+        "op": "ldarg.2",
+        "v": ""
+      },
+      {
+        "n": 3,
+        "op": "ldarg.3",
+        "v": ""
+      },
+      {
+        "n": 4,
+        "op": "ldarg.s",
+        "v": "transpiler"
+      },
+      {
+        "n": 5,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 6,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 7,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 8,
+        "op": "leave",
+        "v": "@A2"
+      },
+      {
+        "n": 9,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 10,
+        "op": "ldstr",
+        "v": "?"
+      },
+      {
+        "n": 11,
+        "op": "stloc.1",
+        "v": ""
+      },
+      {
+        "n": 12,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 13,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 14,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodBase::op_Inequality(System.Reflection.MethodBase,System.Reflection.MethodBase)"
+      },
+      {
+        "n": 15,
+        "op": "brfalse.s",
+        "v": "@30"
+      },
+      {
+        "n": 16,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 17,
+        "op": "callvirt",
+        "v": "System.Type System.Reflection.MemberInfo::get_DeclaringType()"
+      },
+      {
+        "n": 18,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 19,
+        "op": "call",
+        "v": "System.Boolean System.Type::op_Inequality(System.Type,System.Type)"
+      },
+      {
+        "n": 20,
+        "op": "brtrue.s",
+        "v": "@37"
+      },
+      {
+        "n": 21,
+        "op": "ldstr",
+        "v": ""
+      },
+      {
+        "n": 22,
+        "op": "br.s",
+        "v": "@4C"
+      },
+      {
+        "n": 23,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 24,
+        "op": "callvirt",
+        "v": "System.Type System.Reflection.MemberInfo::get_DeclaringType()"
+      },
+      {
+        "n": 25,
+        "op": "callvirt",
+        "v": "System.String System.Reflection.MemberInfo::get_Name()"
+      },
+      {
+        "n": 26,
+        "op": "ldstr",
+        "v": "."
+      },
+      {
+        "n": 27,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 28,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 29,
+        "op": "callvirt",
+        "v": "System.String System.Reflection.MemberInfo::get_Name()"
+      },
+      {
+        "n": 30,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 31,
+        "op": "stloc.1",
+        "v": ""
+      },
+      {
+        "n": 32,
+        "op": "leave.s",
+        "v": "@5D"
+      },
+      {
+        "n": 33,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 34,
+        "op": "leave.s",
+        "v": "@5D"
+      },
+      {
+        "n": 35,
+        "op": "ldc.i4.6",
+        "v": ""
+      },
+      {
+        "n": 36,
+        "op": "newarr",
+        "v": "System.String"
+      },
+      {
+        "n": 37,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 38,
+        "op": "ldc.i4.0",
+        "v": ""
+      },
+      {
+        "n": 39,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_3fed2735355bc3713978()"
+      },
+      {
+        "n": 40,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 41,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 42,
+        "op": "ldc.i4.1",
+        "v": ""
+      },
+      {
+        "n": 43,
+        "op": "ldloc.1",
+        "v": ""
+      },
+      {
+        "n": 44,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 45,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 46,
+        "op": "ldc.i4.2",
+        "v": ""
+      },
+      {
+        "n": 47,
+        "op": "ldstr",
+        "v": " ⇒ "
+      },
+      {
+        "n": 48,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 49,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 50,
+        "op": "ldc.i4.3",
+        "v": ""
+      },
+      {
+        "n": 51,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 52,
+        "op": "callvirt",
+        "v": "System.Type System.Exception::GetType()"
+      },
+      {
+        "n": 53,
+        "op": "callvirt",
+        "v": "System.String System.Reflection.MemberInfo::get_Name()"
+      },
+      {
+        "n": 54,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 55,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 56,
+        "op": "ldc.i4.4",
+        "v": ""
+      },
+      {
+        "n": 57,
+        "op": "ldstr",
+        "v": ": "
+      },
+      {
+        "n": 58,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 59,
+        "op": "dup",
+        "v": ""
+      },
+      {
+        "n": 60,
+        "op": "ldc.i4.5",
+        "v": ""
+      },
+      {
+        "n": 61,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 62,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 63,
+        "op": "stelem.ref",
+        "v": ""
+      },
+      {
+        "n": 64,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String[])"
+      },
+      {
+        "n": 65,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 66,
+        "op": "leave.s",
+        "v": "@A2"
+      },
+      {
+        "n": 67,
+        "op": "ret",
+        "v": ""
+      }
+    ]
+  },
+  {
+    "name": "System.Void RedLightDistrict.TalentTarget::PatchCore(HarmonyLib.Harmony,System.Reflection.MethodInfo,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,System.String)",
+    "body": [
+      {
+        "n": 0,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 1,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 2,
+        "op": "call",
+        "v": "System.Boolean System.Reflection.MethodInfo::op_Equality(System.Reflection.MethodInfo,System.Reflection.MethodInfo)"
+      },
+      {
+        "n": 3,
+        "op": "brfalse.s",
+        "v": "@1B"
+      },
+      {
+        "n": 4,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_006f168d92171e7ddab6()"
+      },
+      {
+        "n": 5,
+        "op": "ldarg.s",
+        "v": "label"
+      },
+      {
+        "n": 6,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 7,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Warning(System.String)"
+      },
+      {
+        "n": 8,
+        "op": "ret",
+        "v": ""
+      },
+      {
+        "n": 9,
+        "op": "nop",
+        "v": ""
+      },
+      {
+        "n": 10,
+        "op": "ldarg.0",
+        "v": ""
+      },
+      {
+        "n": 11,
+        "op": "ldarg.1",
+        "v": ""
+      },
+      {
+        "n": 12,
+        "op": "ldarg.2",
+        "v": ""
+      },
+      {
+        "n": 13,
+        "op": "ldarg.3",
+        "v": ""
+      },
+      {
+        "n": 14,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 15,
+        "op": "ldnull",
+        "v": ""
+      },
+      {
+        "n": 16,
+        "op": "callvirt",
+        "v": "System.Reflection.MethodInfo HarmonyLib.Harmony::Patch(System.Reflection.MethodBase,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod,HarmonyLib.HarmonyMethod)"
+      },
+      {
+        "n": 17,
+        "op": "pop",
+        "v": ""
+      },
+      {
+        "n": 18,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_6c8c84292c973a3acd61()"
+      },
+      {
+        "n": 19,
+        "op": "ldarg.s",
+        "v": "label"
+      },
+      {
+        "n": 20,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String)"
+      },
+      {
+        "n": 21,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.RLog::Info(System.String)"
+      },
+      {
+        "n": 22,
+        "op": "leave.s",
+        "v": "@5A"
+      },
+      {
+        "n": 23,
+        "op": "stloc.0",
+        "v": ""
+      },
+      {
+        "n": 24,
+        "op": "call",
+        "v": "System.String RedLightDistrict.Korean.CsvLookup::rld_8ba2509e1ccbee791109()"
+      },
+      {
+        "n": 25,
+        "op": "ldarg.s",
+        "v": "label"
+      },
+      {
+        "n": 26,
+        "op": "ldstr",
+        "v": ": "
+      },
+      {
+        "n": 27,
+        "op": "ldloc.0",
+        "v": ""
+      },
+      {
+        "n": 28,
+        "op": "callvirt",
+        "v": "System.String System.Exception::get_Message()"
+      },
+      {
+        "n": 29,
+        "op": "call",
+        "v": "System.String System.String::Concat(System.String,System.String,System.String,System.String)"
+      },
+      {
+        "n": 30,
+        "op": "call",
+        "v": "System.Void RedLightDistrict.MLog::Error(System.String)"
+      },
+      {
+        "n": 31,
+        "op": "leave.s",
+        "v": "@5A"
+      },
+      {
+        "n": 32,
+        "op": "ret",
+        "v": ""
+      }
+    ]
+  }
+]
