@@ -1,0 +1,109 @@
+name: Build RLD clothing and traits display-only test DLL
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/rld-clothing-trait-fix-build-20261122.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rld-clothing-trait-fix-20261122
+          lfs: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .gitattributes
+            rld-fix
+            probably-stolen/local-mods/TentacleMod-Update/.gitattributes
+            probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll
+            probably-stolen/local-mods/TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/manifest.xml
+            probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1/README_ko.txt
+      - name: Fetch uploaded RLD DLL without replacing any source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs pull --include='probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll' --exclude=''
+          echo 'a224760a2ae651e07adb467014dbb0053d1c6b8942879644b2afbad614237f25  probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll' | sha256sum -c
+      - name: Review exact 22 trait display aliases and produce mapping
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv,json,pathlib,re
+          root=pathlib.Path('probably-stolen/local-mods')
+          with (root/'TentacleMod/RedLightDistrict_v1.1.1/Localization/cn.csv').open(encoding='utf-8-sig',newline='') as f:catalog={r['key']:r for r in csv.DictReader(f)}
+          with (root/'TentacleMod번역/RedLightDistrict_v1.1.1/Localization/ko.csv').open(encoding='utf-8-sig',newline='') as f:translations=dict(csv.reader(f))
+          aliases={key:catalog[key.replace('rld_display_','rld_')]['original'] for key in translations if key.startswith('rld_display_') and key not in ('rld_display_patron_prefix','rld_display_maid_name')}
+          assert len(aliases)==22 and len(set(aliases.values()))==22 and len(set(aliases))==22
+          assert all(any('\u3400'<=c<='\u9fff' for c in value) for value in aliases.values())
+          assert all(k in translations and translations[k] for k in aliases)
+          mapping={name:key for key,name in aliases.items()}
+          pathlib.Path('rld-fix/traits-map.json').write_text(json.dumps(mapping,ensure_ascii=False,indent=1)+'\n')
+          print('Exact trait display aliases:',len(mapping),'original internal names preserved')
+          PY
+      - name: Patch only five proven output boundaries and verify unchanged IL
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet new console --framework net8.0 -o /tmp/rld-display --force
+          dotnet add /tmp/rld-display/rld-display.csproj package dnlib --version 4.5.0
+          cp rld-fix/Patch.cs /tmp/rld-display/Program.cs
+          dotnet build /tmp/rld-display/rld-display.csproj -c Release
+          dotnet /tmp/rld-display/bin/Release/net8.0/rld-display.dll \
+            'probably-stolen/local-mods/TentacleMod-Update/RedLightDistrict/RedLightDistrict.dll' \
+            'rld-fix/traits-map.json' 'rld-fix/RedLightDistrict.dll' 'rld-fix/verification.json'
+      - name: Construct and verify installable test package
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import pathlib,zipfile,json,hashlib
+          root=pathlib.Path('probably-stolen/local-mods/TentacleMod번역/RedLightDistrict_v1.1.1')
+          output=pathlib.Path('rld-fix')
+          r=json.loads((output/'verification.json').read_text())
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          assert r['status']=='verified-static' and r['patchSites']==5 and r['traits']==22 and len(r['clothingMappings'])==15
+          dll=(output/'RedLightDistrict.dll').read_bytes()
+          assert dll[:2]==b'MZ' and sha(dll)==r['patchedSHA']
+          z=output/'RedLightDistrict_v1.1.1_ClothingTraits_KO_Test.zip'
+          contents={
+            'RedLightDistrict/RedLightDistrict.dll':dll,
+            'RedLightDistrict/Localization/ko.csv':(root/'Localization/ko.csv').read_bytes(),
+            'RedLightDistrict/manifest.xml':(root/'manifest.xml').read_bytes(),
+            'RedLightDistrict/README_ko.txt':(root/'README_ko.txt').read_bytes()
+          }
+          with zipfile.ZipFile(z,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as out:
+             for name,data in contents.items():out.writestr(name,data)
+          with zipfile.ZipFile(z) as out:
+             assert out.testzip() is None and len(out.namelist())==4
+             assert all(sha(out.read(name))==sha(data) for name,data in contents.items())
+          r['zipSHA256']=sha(z.read_bytes())
+          r['zipSize']=z.stat().st_size
+          r['zipFiles']=list(contents)
+          (output/'verification.json').write_text(json.dumps(r,ensure_ascii=False,indent=1)+'\n')
+          print('Full ZIP contents and CRC verified; actual game runtime NOT tested')
+          PY
+      - name: Upload tested static candidate as downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RLD-v1.1.1-ClothingTraits-KO-Test
+          path: rld-fix/RedLightDistrict_v1.1.1_ClothingTraits_KO_Test.zip
+          if-no-files-found: error
+      - name: Preserve isolated test binaries in LFS
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git lfs track 'rld-fix/RedLightDistrict.dll'
+          git lfs track 'rld-fix/RedLightDistrict_v1.1.1_ClothingTraits_KO_Test.zip'
+          git add --sparse .gitattributes rld-fix
+          git commit -m 'Stage RLD clothing and trait localized display test DLL with IL verification'
+          git push origin HEAD:refs/heads/rld-clothing-trait-fix-20261122
