@@ -10,13 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
       - name: Extract referenced AdultGoods package
         shell: bash
         run: |
           set -e
           mkdir -p inspection/package inspection/out
           zip_file="probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip"
+          git lfs pull -I "$zip_file" -X ""
           unzip -q "$zip_file" -d inspection/package
           find inspection/package -type f | sort > inspection/out/file-list.txt
           find inspection/package -type f -iname '*.csv' -exec cp --parents '{}' inspection/out/ \; || true
