@@ -1,4 +1,20 @@
-# Snake Ranch 0.7.6 — 开局保底蛇笼、周访不再烧电话冷却、货单明细文案 / Start-guarantee cage, walk-ins no longer burn phone cooldown, explicit stock lists
+# Snake Ranch 0.7.7 — 补丁守卫不再整体初始化失败、蛇笼跨档交易等级备份自愈 / Patch guard keeps the mod alive, cage level backup & self-heal across save trades
+
+## 0.7.7 本次更新 / This release
+
+- 修复部分模组共存环境下**整个模组初始化失败**的问题：旧逻辑里任一 IL 补丁发现游戏代码结构与预期不符就直接抛异常，Harmony 的整批补丁会被中止，连带 `Init failed`，表现为蛇夫人不出现、模组全部功能失效（日志里的 `egg thief ValueModifier base contract mismatch`）。现在所有 IL 补丁统一走**失效降级守卫**：契约不符只跳过该条补丁并输出带上下文的诊断，其余补丁与模组本体照常运行。
+- 蛋贼价格补丁兼容两种 IL 形态：`unitValue` 读取无论是 `callvirt` 属性 getter 还是 `ldfld` 后备字段都能识别；找不到锚点时只降级，不再抛异常。
+- 五处 IL 契约补丁（蛋贼价格、蛇笼三处上限、胎数提示）改为**逐条独立注册**，任何一条失败都不会影响其它补丁；模组停用时逐条摘除自己注册的补丁，不动模组加载器的整体生命周期。
+- 新增**蛇笼跨档交易等级备份与读档自愈**：蛇笼用金属锭扩建成功后，把已达到的最高等级记在物品标签上；读档解码后若发现等级或格子低于备份值，自动补回等级标签并把格子撑到对应尺寸。只认本模组蛇笼 `snake_ranch.snake_cage`，不修改其它模组 DLL、不改原生存档格式、不新增外部账本；容器尚未挂载网格时静默跳过，8 级笼不产生任何变化与日志。
+- 门禁补强：新增 **IL 套用审计**（对真实游戏 IL 跑全部 transpiler 并做故障注入，57 断言），补上过去"只审补丁绑定、不审 IL 能否套用"的缺口；蛇笼兼容规则新增 15 断言，规则套件 1039 断言全通过。
+- 无新增物品 ID；仅新增一个物品标签 `SR_CAGE_LEVEL_BACKUP`，旧档缺失视为未备份，直接兼容。
+
+- Fixed the mod failing to initialise entirely in some mod-loadout combinations: previously any IL patch that found an unexpected game code shape threw immediately, which aborted Harmony's whole patch pass and took `Init` down with it — the Snake Lady never appeared and every feature went dark (the `egg thief ValueModifier base contract mismatch` line in the log). All IL patches now run through a **fail-soft guard**: a broken contract skips only that one patch and prints a bounded diagnostic, while every other patch and the mod itself keep running.
+- The egg-thief price patch now accepts both IL shapes of the `unitValue` read — a `callvirt` property getter or an `ldfld` backing field — and degrades instead of throwing when no anchor exists.
+- The five IL contract patches (egg-thief price, three cage limits, litter tooltip) are now **registered one by one**, so a single failure cannot affect the others; on disable the mod removes exactly its own transpilers and never touches the loader's assembly-wide lifecycle.
+- Added **cage level backup and post-load self-heal across save trades**: after a metal-ingot expansion succeeds, the highest level reached is stored on the item itself; after save decoding, if the level or the grid is below that backup, the level tag is restored and the grid is grown to the matching size. Only this mod's own cage `snake_ranch.snake_cage` is touched — no other mod's DLL, no change to the native save format, no external ledger. It stays silent when the container has no grid attached yet, and an 8-level cage is left completely unchanged.
+- Gate hardening: a new **IL application audit** runs every transpiler against the real game IL with fault injection (57 assertions), closing the old gap where only patch bindings were audited and IL applicability was not; cage compatibility rules add 15 assertions, and the rules suite passes 1039.
+- No new item IDs; only one new item tag `SR_CAGE_LEVEL_BACKUP`, absent in old saves and treated as "no backup", fully compatible.# Snake Ranch 0.7.6 — 开局保底蛇笼、周访不再烧电话冷却、货单明细文案 / Start-guarantee cage, walk-ins no longer burn phone cooldown, explicit stock lists
 
 ## 0.7.6 本次更新 / This release
 

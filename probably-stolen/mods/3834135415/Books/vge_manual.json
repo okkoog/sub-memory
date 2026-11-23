@@ -9,169 +9,134 @@
     { "type": "button", "id": "zoom", "action": "zoom", "x": 273.5, "y": 3.5, "w": 14, "h": 15 },
     { "type": "button", "id": "flip_left", "action": "flip_left", "x": 102.5, "y": 380, "w": 16, "h": 16 },
     { "type": "button", "id": "flip_right", "action": "flip_right", "x": 197.5, "y": 380.5, "w": 14, "h": 15 },
-    { "type": "text", "id": "page_indicator", "action": "page_indicator", "style": "page_number", "align": "center", "valign": "middle", "wrap": false, "x": 119, "y": 374, "w": 76, "h": 25 }
+    { "type": "text", "id": "page_indicator", "action": "page_indicator", "style": "page_number", "align": "center", "valign": "middle", "wrap": false, "x": 119, "y": 374, "w": 76, "h": 25 },
+    { "type": "button", "id": "vge_tab_guns", "action": "vge_tab_guns", "sprite": "vge_tab_guns", "x": 314, "y": 20, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_ammo", "action": "vge_tab_ammo", "sprite": "vge_tab_ammo", "x": 314, "y": 50, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_workshop", "action": "vge_tab_workshop", "sprite": "vge_tab_workshop", "x": 314, "y": 80, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_conflict", "action": "vge_tab_conflict", "sprite": "vge_tab_conflict", "x": 314, "y": 110, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_famous", "action": "vge_tab_famous", "sprite": "vge_tab_famous", "x": 314, "y": 140, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_paint", "action": "vge_tab_paint", "sprite": "vge_tab_paint", "x": 314, "y": 170, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_range", "action": "vge_tab_range", "sprite": "vge_tab_range", "x": 314, "y": 200, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_company", "action": "vge_tab_company", "sprite": "vge_tab_company", "x": 314, "y": 230, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_flaws", "action": "vge_tab_flaws", "sprite": "vge_tab_flaws", "x": 314, "y": 260, "w": 22, "h": 27 },
+    { "type": "button", "id": "vge_tab_settings", "action": "vge_tab_settings", "sprite": "vge_tab_settings", "x": 314, "y": 290, "w": 22, "h": 27 }
   ],
   "pages": [
     {
-      "name": "Page 1",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p1_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page1_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 2",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p2_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page2_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 3",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p2_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page3_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 4",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p3_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page4_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 5",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p3_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page5_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 6",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p4_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page6_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 7",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p5_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page7_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 8",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p5_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page8_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 9",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p6_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page9_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 10",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p6_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page10_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 11",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p7_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page11_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 12",
-      "elements": [
-        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p7_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
-        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page12_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
-      ]
-    },
-    {
-      "name": "Page 13",
+      "name": "guns",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
         { "type": "text", "id": "title", "loc": "manual_guns_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page13_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_guns_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     },
     {
-      "name": "Page 14",
+      "name": "ammo",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_guns_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_ammo_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page14_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_ammo_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     },
     {
-      "name": "Page 15",
+      "name": "workshop",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_damage_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_workshop_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page15_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_workshop_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     },
     {
-      "name": "Page 16",
+      "name": "conflict",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_damage_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_conflict_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page16_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_conflict_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     },
     {
-      "name": "Page 17",
+      "name": "famous",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p8_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_famous_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page17_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_famous_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     },
     {
-      "name": "Page 18",
+      "name": "famous 2",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
-        { "type": "text", "id": "title", "loc": "manual_p8_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "text", "id": "title", "loc": "manual_famous_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
         { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
-        { "type": "text", "id": "body", "loc": "manual_page18_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+        { "type": "text", "id": "body", "loc": "manual_famous_body2", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "paint",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_paint_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_paint_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "range",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_range_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_range_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "range 2",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_range_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_range_body2", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "company",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_company_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_company_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "flaws",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_flaws_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_flaws_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "flaws 2",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_flaws_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_flaws_body2", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
+      "name": "settings",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_settings_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_settings_body", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
       ]
     }
   ],

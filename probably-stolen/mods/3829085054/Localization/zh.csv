@@ -127,12 +127,18 @@ is_gp_unbound_restock,一键上货快捷键已解除绑定
 is_gp_unbound_allstow,全箱收纳快捷键已解除绑定
 is_gp_unbound_allrestock,全箱上货快捷键已解除绑定
 
-# ===== 容器配对（2026-11-18）=====
-is_gp_col_pair,配对可收纳容器
+# ===== 收纳规则页签（2026-11-22）=====
+is_gp_tab_settings,快捷键与开关
+is_gp_tab_rules,收纳规则
+is_gp_sec_pair,配对
+is_gp_sec_excl,排除
+is_gp_sec_rej,拒收
+is_rules_pair_note,配对后，允许一键收纳这类容器内的物品
+is_rules_excl_note,只排除选中的容器，该容器内的物品不再被一键收纳\n排除容器清单只在当前存档生效
+is_rules_rej_note,一键收纳不再收纳这种物品，\n仍可以通过把该物品拖动到格子上存入
+is_rules_shared_note,清单是全局的，上限均为 10 个。
 is_gp_pair,配对容器
-is_gp_pair_list,已配对清单
-is_gp_pair_desc,点一下再点容器即可配对；配的是这一整类，一键收纳会收店里所有同款
-is_gp_pair_list_desc,查看并取消全店共用的配对清单
+is_gp_pair_list,配对容器清单
 is_msg_link_pick,请点击要配对的容器；配对的是这一整类，一键收纳会收店里所有同款；按 Esc 取消
 is_msg_link_ok,已配对「{0}」这一类，一键收纳会收店里所有同款容器里的同类物品
 is_msg_link_off,已取消「{0}」这一类的配对
@@ -143,22 +149,68 @@ is_msg_link_list_in_store,请回到店内再打开配对清单
 is_msg_link_cancel,已退出容器配对
 is_msg_link_bad_not_container,这不是容器
 is_msg_link_bad_locked,这个容器上锁了，打不开
-is_msg_link_bad_bay,储藏区/机器区/走私格用开关设置，不用配对
-is_msg_link_bad_box,不能与收纳箱配对
-is_msg_link_bad_self,不能与本箱配对
+is_msg_link_bad_bay,储藏区/机器区/走私格用开关设置，不需要配对或排除
+is_msg_link_bad_box,不能选收纳箱
+is_msg_link_bad_self,不能选收纳箱本体
 is_msg_link_bad_owned,这不是你的容器
-is_msg_link_bad_display,这是展示品，不能配对
+is_msg_link_bad_display,这是展示品，不能配对或排除
 is_msg_link_bad_no_grid,这个容器里没有可放物品的格子
-is_msg_link_bad_unknown,这个容器不能配对
+is_msg_link_bad_unknown,这个容器不能被配对或排除
 is_link_unknown,容器
-is_link_win_title_plain,已配对容器
-is_link_win_count,共 {0} 类容器
-is_link_win_none,还没有配对容器
-is_link_win_hint,在齿轮面板点「配对容器」开始
+is_link_win_title_plain,配对容器清单
+is_link_win_count,已配对 {0} 类容器
+is_link_win_count_excl,已配对 {0} 类容器 · 已排除 {1} 个容器
+is_link_win_hint,在规则窗口点「配对容器」开始
 is_link_win_row,{0}. {1}
 is_link_win_row_desc,点击取消「{0}」这一类的配对；店里现有 {1} 台可收
+is_link_win_row_desc_excl,点击取消「{0}」这一类的配对；现有 {1} 台可收，已排除 {2} 台
 is_link_win_unlink_all,全部取消配对
 is_link_win_unlink_all_desc,清空所有配对，不影响箱子里的物品
+is_gp_excl,排除容器
+is_gp_excl_list,排除容器清单
+is_msg_excl_pick,请点击不参与一键收纳的容器；排除后自动退出；按 Esc 取消
+is_msg_excl_ok,已排除这一台「{0}」，一键收纳不会收它，其他「{0}」仍然会收
+is_msg_excl_off,已恢复「{0}」，一键收纳会重新收它
+is_msg_excl_off_all,已恢复全部 {0} 台排除的容器
+is_msg_excl_fail,排除失败，请再试一次
+is_msg_excl_full,排除名单已满 {0} 台，请先在清单里恢复几台
+is_msg_excl_unpaired,「{0}」还没配对，先点「配对容器」把这一类配上
+is_msg_excl_in_store,请回到店内再排除容器
+is_msg_excl_cancel,已退出容器排除
+is_msg_excl_list_in_store,请回到店内再打开排除容器清单
+is_excl_win_title,排除容器清单
+is_excl_win_count,已排除 {0} 个容器
+is_excl_win_hint,在规则窗口点「排除容器」开始
+is_excl_win_row,{0}. {1}
+is_excl_win_row_desc,点击恢复这一台，一键收纳会重新收它
+is_excl_win_row_desc_missing,这一台现在不在场景里；点击恢复后，它再出现时会重新参与一键收纳
+is_excl_win_restore_all,全部取消排除
+is_excl_win_restore_all_desc,清空排除名单，所有同款容器重新参与一键收纳
+
+# ===== 拒收物品（2026-11-22）=====
+is_gp_rej,拒收物品
+is_gp_rej_list,拒收物品清单
+is_msg_rej_pick,请点击不想被一键收纳的物品；拒收后自动退出；按 Esc 取消
+is_msg_rej_ok,已拒收「{0}」，一键收纳不会再收这类物品；箱里已有的不动
+is_msg_rej_off,已取消拒收「{0}」，一键收纳会重新收这类物品
+is_msg_rej_off_all,已取消全部 {0} 种拒收
+is_msg_rej_full,已拒收 {0} 种物品，请先在清单里取消一种
+is_msg_rej_fail,拒收失败，请再试一次
+is_msg_rej_in_store,请回到店内再设置拒收物品
+is_msg_rej_list_in_store,请回到店内再打开拒收物品清单
+is_msg_rej_cancel,已退出物品拒收
+is_msg_rej_box,收纳箱本身不会被一键收纳，不用拒收
+is_msg_rej_owned,这不是你的物品，不在一键收纳范围内
+is_msg_rej_display,展示柜里的物品不会被一键收纳，不用拒收
+is_msg_rej_drag,「{0}」已被设为拒收，请点具体格子存入
+is_msg_rej_drag_all,选中的 {0} 件都已设为拒收，请点具体格子存入
+is_rej_win_title,拒收物品清单
+is_rej_win_count,已拒收 {0} 种物品
+is_rej_win_hint,在规则窗口点「拒收物品」开始
+is_rej_win_row,{0}. {1}
+is_rej_win_row_desc,点击取消拒收「{0}」，一键收纳会重新收这类物品
+is_rej_win_all,全部取消拒收
+is_rej_win_all_desc,清空拒收清单，不影响箱子里的物品
 
 
 # ===== 物品 tooltip（BoxTooltip）=====
@@ -186,27 +238,26 @@ is_cfg_allow_animals_desc,"开启后老鼠、鱼等动物可存入。每只动�
 is_gp_bay_storage,可吸纳储藏区
 is_gp_bay_machine,可吸纳机器区
 is_gp_bay_smuggler,可吸纳走私格
-is_msg_need_store,进入店铺后才能修改此设置
 
 # ===== 开关开启提示（2026-11-10，只在开启时弹）=====
 is_toast_opt_pull,吸纳同类，一键收纳会从其他收纳箱取货
 is_toast_opt_guard,禁止被吸纳，其他箱不会再从本箱取货
 is_toast_opt_restockguard,本箱不参与全箱上架
 is_toast_opt_keepone,自动上货时每格留一件，手动点击照常取出
-is_toast_opt_baystor,可吸纳储藏区（所有收纳箱生效）
-is_toast_opt_baymach,可吸纳机器区（所有收纳箱生效）
-is_toast_opt_baysmug,可吸纳走私格（所有收纳箱生效）
-is_toast_opt_hidename,隐藏格子下方的名字
+is_toast_opt_baystor,可吸纳储藏区（所有存档生效）
+is_toast_opt_baymach,可吸纳机器区（所有存档生效）
+is_toast_opt_baysmug,可吸纳走私格（所有存档生效）
+is_toast_opt_hidename,已隐藏所有收纳箱的名字
 
 # ===== 开关关闭提示（2026-11-10 用户要求：开启/关闭都弹）=====
 is_toast_off_pull,吸纳同类，一键收纳不再从其他收纳箱取货
 is_toast_off_guard,允许被吸纳，其他箱可以再次从本箱取货
 is_toast_off_restockguard,本箱参与全箱上架
 is_toast_off_keepone,自动上货不再保留最后一件
-is_toast_off_baystor,不再吸纳储藏区（所有收纳箱生效）
-is_toast_off_baymach,不再吸纳机器区（所有收纳箱生效）
-is_toast_off_baysmug,不再吸纳走私格（所有收纳箱生效）
-is_toast_off_hidename,显示格子下方的名字
+is_toast_off_baystor,不再吸纳储藏区（所有存档生效）
+is_toast_off_baymach,不再吸纳机器区（所有存档生效）
+is_toast_off_baysmug,不再吸纳走私格（所有存档生效）
+is_toast_off_hidename,已显示所有收纳箱的名字
 
 # ===== 手册（2026-11-16）=====
 # 手册与入口。手册由 Books/itemstorage_manual.json 定义，从齿轮面板标题栏的
@@ -226,7 +277,7 @@ is_gp_keep_one_desc,自动出口给同类留最后 1 件，保住开格记录；
 is_gp_bay_storage_desc,一键收纳会把储藏区里的东西一起收进来（所有分页）。所有收纳箱生效
 is_gp_bay_machine_desc,收机器区里玩家丢进去的散件，机器本身不会被收走。所有收纳箱生效
 is_gp_bay_smuggler_desc,收走私格里的物品。所有收纳箱生效
-is_gp_hide_name_desc,不显示格子下方的名字，箱子照常使用
+is_gp_hide_name_desc,所有收纳箱都不显示名字（所有存档生效），箱子照常使用
 
 # ===== 手册正文（4 页 × 标题/小节/正文）=====
 is_mn_p1_title,收纳箱使用手册
@@ -236,7 +287,7 @@ is_mn_p2_title,收纳箱使用手册
 is_mn_p2_s1,齿轮按钮快捷键和开关
 is_mn_p2_b1,1. 一键收纳：仅收纳本箱，且只收箱内已有的种类。\n\n2. 全箱收纳：所有箱子按获得顺序依次装货，同样只收已有种类。\n\n3. 一键上货：仅从本箱取货上柜。\n\n4. 全箱上货：全部箱子共同供货。\n\n5. 上货需店内有顾客，只摆顾客想买且买得起的商品；柜台摆满即停，跳过锁定格。\n\n6. 四个按钮均可在齿轮面板绑定快捷键。\n\n7. 吸纳同类：收纳时从其他箱子取同类，先把箱内同类未满的格子补满，剩下的才另开新格；动物格不参与。\n\n8. 禁止被吸纳：其他箱子的一键收纳无法从本箱取货。\n\n9. 不参与全箱上货：全箱上货跳过本箱，本箱的按钮与快捷键照常可用。\n\n10. 上货至少留一件：自动出货每格保留 1 件，手动取走不受限。
 is_mn_p3_title,收纳箱使用手册
-is_mn_p3_b1,11. 可吸纳储藏区 / 机器区 / 走私格：收纳时一并收取对应区域的物品，机器本体不动；对全部收纳箱生效。\n\n12. 隐藏名字：显示或隐藏收纳箱体上的名字。\n\n13. 配对容器：可以对一键收纳功能进行拓展，额外指定可以被一键收纳的容器。\n\n14. 已配对清单：可以查看该收纳箱已配对的容器，并取消配对。
+is_mn_p3_b1,11. 可吸纳储藏区 / 机器区 / 走私格：收纳时一并收取对应区域的物品，机器本体不动；对所有存档的所有收纳箱生效（换档、开新档都保留）。\n\n12. 隐藏名字：显示或隐藏所有收纳箱的名字，所有存档共用。\n\n13. 配对容器：点一下再点容器，这一整类都成为一键收纳的来源，店里所有同款（含之后新买的）都算。\n\n14. 排除容器：同款里只想留几台时，点一下再点那一台，它就不参与一键收纳，其他同款照收。\n\n15. 拒收物品：点一下再点物品，这类物品不再被自动收进来——一键收纳、全箱收纳、容器配对都跳过；拖到箱体也不会存入，想存请点具体格子。\n\n16. 配对容器 / 拒收物品两张清单全局共用一份，换存档、开新档都保留；排除容器清单按台记，只在设置它的存档生效。三张都能逐条取消，也能一键全部取消。
 is_mn_p4_title,收纳箱使用手册
 is_mn_p4_s1,锁定与整理
 is_mn_p4_b1,1. 点击格子下方的名字条可锁定该格，再次点击解除。\n\n2. 锁定格不参与自动上货，也不接收自动分配；手动存取不受影响。\n\n3. 点击标题栏的三道杠按钮：格中物品会依次向前排队。\n\n4. 整理时锁定格物品会留在原位。
