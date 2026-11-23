@@ -1,0 +1,50 @@
+name: Package Korean localization update 3 CSV (2026-11-23)
+on:
+  push:
+    branches: [package-localization-3csv-20261123]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare three corrected localization files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, shutil, csv
+          base = Path("probably-stolen/번역 모드/Localization")
+          dst = Path("PS_Korean_Localization_20261123")
+          dst.mkdir()
+          expected = ["ko.csv", "pskb__3831439549.csv", "pskb__3834588749.csv"]
+          for name in expected:
+              src = base / name
+              assert src.is_file(), f"Missing {src}"
+              data = src.read_bytes()
+              assert len(data) > 10
+              with src.open("r", encoding="utf-8-sig", newline="") as f:
+                  rows = list(csv.reader(f))
+              if name == "ko.csv":
+                  keys = [r[0] for r in rows if r and r[0].startswith("is_")]
+                  assert len(set(keys)) == len(keys)
+                  assert len(keys) == 255, (name, len(keys))
+              elif name == "pskb__3834588749.csv":
+                  keys = [r[0] for r in rows if r and r[0].startswith("K|")]
+                  assert len(keys) == 8 and len(set(keys)) == 8
+              else:
+                  keys = [r[0] for r in rows if r and r[0].startswith("K|")]
+                  assert len(keys) == 732
+              shutil.copyfile(src, dst / name)
+              print(f"{name}: {len(data)} bytes sha256={hashlib.sha256(data).hexdigest()}")
+          assert len(list(dst.glob("*.csv"))) == 3
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ProbablyStolen_Korean_Localization_Update_20261123_3CSV
+          path: PS_Korean_Localization_20261123/*.csv
+          if-no-files-found: error
+          retention-days: 10
+          compression-level: 6
