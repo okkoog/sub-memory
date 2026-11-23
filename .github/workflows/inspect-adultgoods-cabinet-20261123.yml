@@ -1,0 +1,57 @@
+name: Inspect Adult Goods Collection Cabinet
+on:
+  push:
+    branches: [inspect-adult-goods-collection-20261123]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Extract referenced AdultGoods package
+        shell: bash
+        run: |
+          set -e
+          mkdir -p inspection/package inspection/out
+          zip_file="probably-stolen/local-mods/TentacleMod번역/ProbablyStolen_AdultGoods_v1.1.1_DLL_KO_181_ChineseRestored_20261122.zip"
+          unzip -q "$zip_file" -d inspection/package
+          find inspection/package -type f | sort > inspection/out/file-list.txt
+          find inspection/package -type f -iname '*.csv' -exec cp --parents '{}' inspection/out/ \; || true
+          find inspection/package -type f -iname '*readme*' -exec cp --parents '{}' inspection/out/ \; || true
+      - name: Decompile DLLs and extract cabinet logic
+        shell: bash
+        run: |
+          mkdir -p inspection/out/decompiled
+          dotnet tool install ilspycmd --tool-path "$PWD/.ilspy" || true
+          while IFS= read -r -d '' dll; do
+            name="$(basename "$dll" .dll)"
+            echo "Decompiler input: $dll" >> inspection/out/decompile-log.txt
+            if [ -x .ilspy/ilspycmd ]; then
+              .ilspy/ilspycmd -p -o "inspection/out/decompiled/$name" "$dll" >> inspection/out/decompile-log.txt 2>&1 || true
+            fi
+          done < <(find inspection/package -type f -iname '*.dll' -print0)
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('inspection/out')
+          pattern=re.compile(r'display|cabinet|collection|collect|dragon|shelf|showcase|reward|bonus|complete|unlock|finish|filled|capacity|幻龙|陈列|展柜|收集|集齐|奖励|收纳|dragonrack|dragonbox',re.I)
+          with (root/'matches.txt').open('w',encoding='utf-8') as w:
+            for p in sorted(root.rglob('*')):
+              if not p.is_file() or p.name=='matches.txt':continue
+              if p.suffix.lower() not in ('.cs','.csv','.json','.md','.txt','.xml'):continue
+              try: ls=p.read_text(encoding='utf-8-sig').splitlines()
+              except Exception: continue
+              for i,line in enumerate(ls):
+                if pattern.search(line):
+                  w.write(f'{p}:{i+1}: {line[:800]}\n')
+          print((root/'matches.txt').stat().st_size)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AdultGoods-Collection-Cabinet-Inspection
+          path: inspection/out/
+          if-no-files-found: error
+          retention-days: 2
