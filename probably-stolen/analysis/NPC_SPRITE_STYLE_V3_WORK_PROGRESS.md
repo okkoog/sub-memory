@@ -143,3 +143,83 @@ Use existing V3 character-specific module and measured V4 registration module un
 - Semantic/material batch 1: 6/30 previously manifested sprites directly inspected; 21 local ROIs measured, 2 valid visible hair-crown-to-chin pairs. No exact shoulder/torso measurement yet; do not mark stage complete. Next select clearly adult non-explicit sprites with less occluded head/shoulders and diverse attire/pose from remaining manifest (not these 6); annotate face landmarks, observable garment/body contours separately, and compare matched plain-material vs boundary patches.
 - Remaining manifest: All Girls 2,10,16,20,24,100,101,104,110,120,125,143,150,164,175,183; More Girls elf,machine_girl,dark_elf,angel,ghost,jester,idol,ballet. Assess eligibility before using; skip ambiguous or non-general images. Do not claim inspection before doing it.
 - Full V4 finalization and generation comparison remain incomplete. No generated test images in this batch. No original mod files touched.
+
+
+## 2026-11-24 KST — semantic/material verification, batch 2 (5 eligible, 2 deferred)
+Continued remaining manifest only, without repeating global pixel geometry or batch 1 annotations. Seven files screened. Five selected for non-explicit face, posture, hair, costume, and material analysis; All Girls 10 and 100 deferred from semantic/material use because adult-reference eligibility is not established with sufficient confidence. Do not infer age from proportions or use those two as prompt references. No additional PNG files added.
+Source blobs:
+- All Girls 2: 5e198915452c7c774e67f1bf722c6536359597a6
+- All Girls 16: e035a25cfbac64d0f27ed9334179ca9819e9bdf7
+- All Girls 110: be4decfa433b51711876196d998872813660d1f0
+- More Girls machine_girl: 730ffaa198eea3f69c4c78466095efdecd3ae865
+- More Girls idol: 348d17c5b343af1feca4e18f04d33c2cdb4e5741
+- Deferred 10: 322441ef9beb332f73344df522646fc853a5430a; 100: 7b7f33ce14e62e402d2c60b294768aa0cd2ccc48.
+
+### Additional semantic landmarks (manual approximation, ~5–10 px)
+Same definitions as batch 1; iris Y may differ due to head tilt. Hair crown is not skull crown. These are approximate rendering landmarks, not measured human anatomical proportions.
+| Sprite | Main hair crown Y | Chin Y | Iris centers X | Iris center Y | Inter-iris horizontal separation | H | Pose / occlusion |
+|---|---:|---:|---|---|---:|---:|---|
+| 2 | ~188 | ~411 | ~540,607 | ~342,342 | ~67 | ~223 | frontal, raised hands hold drape, shoulder outlines partially visible |
+| 16 | ~188 | ~382 | ~537,603 | ~315,313 | ~66 | ~194 | asymmetric arm elevation, jacket and hair interrupt shoulders |
+| machine_girl | ~188 | ~399 | ~536,615 | ~315,315 | ~79 | ~211 | frontal, headset and overlapping hair; shoulders partly visible |
+| 110 | ~198 | ~440 | ~534,620 | ~367,352 | ~86 | ~242 | forward leaning, head tilt and central hair lock; do not treat as neutral standing pose |
+| idol | ~205 | ~493 | ~510,599 | ~406,404 | ~89 | ~288 | frontal, hat sets top registration, hair and costume ruffles interrupt shoulders |
+
+- Seven valid visible crown-to-chin spans across both batches: 194, 206, 211, 223, 242, 243, 288 px (median 223, range 194–288, 29.6–43.9% of 656 px registered height). Five batch-2 horizontal iris separations ~66–89 px. All 11 inspected samples span ~66–89 px horizontally. These are approximate illustrative ranges, not target tolerances.
+- Approximate crown-to-chin / visible iris separation depends on hair volume, camera framing, head tilt and expression. Do not use the observed span to enforce a single scale for the entire character.
+- Observable outer shoulder/upper-arm contour only (NOT shoulder joint width): 2 at y~480: x~444–706, ~262 px; idol at y~570: x~390–715, ~325 px; machine_girl has shoulder contour interruptions from hair, so omit. These two measurements are at different pose-dependent heights and cannot establish a comparable anatomical ratio. For 16, asymmetry prevents meaningful same-row shoulder comparison; 110 leans forward, so neutral standing comparison is invalid. No shoulder/torso population statistics claimed.
+- 110 provides a clear counterexample to exclusively upright dialogue composition: face remains eye-level readable but head and shoulders lean/tilt, and hands terminate at bottom. Allow restrained conversational posture variation rather than forcing mirrored frontal symmetry.
+- machine_girl is a material-specific sci-fi example: pale cool hair, dark technical collar, cyan circuitry, bright compact emissive shapes; preserve localized colored light and discrete circuit patterns rather than applying a uniform neon wash.
+- 2 features irregular dark hair locks, dense textile glitter and pale layered drape. 16 uses very sharp irregular reflection streaks on dark sleeves. Idol uses clean hat/ruffle silhouettes, repeated dot patterns and distinct bow stripes. 110 shows softer low-contrast transitions on hair and clothing with defined fold edges. All reinforce material-dependent variation.
+
+### Local pixel measurements (31 additional ROIs)
+Same method as batch 1, [x0,y0,x1,y1) exclusive, alpha>=250, RGB4 bins, adjacent-pair d=max channel difference. Every rectangle has 100% qualifying coverage. Labels describe intended sampling, not verified full material segmentation. In particular, 16's initial hair-plain rectangle intersects a face/hair boundary (dominant bin fdd), and 2's nominal plain textile contains dense reflections; exclude these from clean plain-vs-boundary conclusions. Keep raw data for audit.
+| Sprite | Region | ROI | n | Bins | Top bin (%) | d50 | d90 | edge16% |
+|---|---|---|---:|---:|---|---:|---:|---:|
+| 2 | hair local | 645,274,657,300 | 312 | 17 | 225 (32.7) | 5 | 26 | 17.2 |
+| 2 | hair glint | 550,249,578,273 | 672 | 40 | 547 (34.8) | 5 | 38 | 27.2 |
+| 2 | cheek | 543,365,557,376 | 154 | 1 | fba (100) | 1 | 1 | 0 |
+| 2 | blue glitter textile A | 524,700,544,719 | 380 | 55 | 138 (19.7) | 10 | 56 | 41.7 |
+| 2 | blue glitter textile B | 512,743,543,763 | 620 | 69 | 138 (21) | 8 | 55 | 34.2 |
+| 2 | white drape | 340,736,362,762 | 572 | 22 | cce (19.1) | 4 | 27 | 17.5 |
+| 2 | neck jewelry | 556,437,586,458 | 630 | 210 | faa (12.9) | 26 | 84 | 61.2 |
+| 16 | hair/face mixed boundary (not plain hair) | 586,251,601,271 | 300 | 56 | fdd (43) | 5 | 65 | 33.6 |
+| 16 | hair glint | 526,231,556,252 | 630 | 15 | fff (31.7) | 3 | 22 | 16.9 |
+| 16 | cheek | 572,335,586,345 | 140 | 1 | fdd (100) | 1 | 1 | 0 |
+| 16 | sleeve local | 783,389,799,401 | 192 | 29 | 335 (31.3) | 4 | 35 | 23.3 |
+| 16 | sleeve reflection | 751,352,781,380 | 840 | 52 | fff (16.1) | 11 | 59 | 43.7 |
+| 16 | collar hardware | 551,393,585,404 | 374 | 64 | 112 (13.4) | 22 | 126 | 58.5 |
+| machine_girl | hair plain | 550,252,561,275 | 253 | 6 | 89c (90.5) | 1 | 6 | 4.7 |
+| machine_girl | hair glint | 543,226,574,247 | 651 | 20 | 89c (35.5) | 4 | 24 | 19.8 |
+| machine_girl | cheek | 548,343,565,351 | 136 | 3 | c9a (58.8) | 1 | 3 | 0 |
+| machine_girl | collar local | 609,418,621,432 | 168 | 36 | 348 (45.8) | 5 | 55 | 25.2 |
+| machine_girl | cyan circuit boundary | 551,420,596,453 | 1485 | 78 | 113 (8.8) | 21 | 122 | 55.9 |
+| machine_girl | headset | 468,319,480,343 | 288 | 98 | fff (6.3) | 36 | 120 | 71.9 |
+| 110 | hair plain | 547,270,560,288 | 234 | 3 | caa (66.2) | 1 | 1 | 0 |
+| 110 | hair glint | 535,235,555,258 | 460 | 11 | dcc (42.4) | 2 | 15 | 9.5 |
+| 110 | cheek | 550,402,566,414 | 192 | 1 | eaa (100) | 1 | 1 | 0 |
+| 110 | light fabric | 568,744,582,764 | 280 | 10 | 767 (50.4) | 1 | 12 | 8.7 |
+| 110 | fabric fold | 548,704,581,725 | 693 | 22 | a89 (54.5) | 3 | 26 | 20 |
+| idol | hair plain | 454,300,470,325 | 400 | 8 | 868 (68) | 2 | 10 | 3.2 |
+| idol | hair glint | 514,269,549,292 | 805 | 36 | 868 (24.5) | 6 | 39 | 26.1 |
+| idol | cheek | 527,432,543,444 | 192 | 1 | fdc (100) | 1 | 1 | 0 |
+| idol | bow local | 506,535,523,546 | 187 | 18 | 48e (55.1) | 2 | 62 | 18.8 |
+| idol | bow seam | 510,552,542,567 | 480 | 80 | 48e (45) | 5 | 77 | 35.3 |
+| idol | hat band | 590,234,620,249 | 450 | 52 | 336 (37.1) | 4 | 71 | 29.6 |
+| idol | hat patterned cloth | 594,209,620,224 | 390 | 16 | aac (44.1) | 3 | 14 | 7.6 |
+
+Paired-region evidence (descriptive only, not random samples): hair edge16% local to highlight increases for 2 (17.2 to 27.2), machine_girl (4.7 to 19.8), 110 (0 to 9.5), idol (3.2 to 26.1). Dark sleeve local to reflection for 16: 23.3 to 43.7. 110 fabric local to fold: 8.7 to 20.0. Idol bow local to seam: 18.8 to 35.3. Five deliberately selected quiet cheek ROIs all have d50=1 and edge16=0. These are not whole-face statistics. The two glitter patches in 2 have high local edge rates (34.2–41.7%), showing that a decorated textile may intentionally violate the flat plain-cloth rule. Emissive circuitry and headset in machine_girl have very high edge rates (55.9,71.9%); localized jewelry/hardware in 2/16 likewise (61.2,58.5%). Do not globally imitate those texture densities.
+
+### V4 incremental refinement (batch 2)
+- Keep the fixed registration and adult character identity, but treat head scale, hair volume, headwear and pose as separate controls. Use approximate semantic measurements only for diagnostic comparison, not universal mandatory targets.
+- Retain readable conversational face and controlled pose; small forward lean, head tilt and asymmetrical hand positions can be appropriate.
+- Distinguish low-frequency base color/shadow construction from high-frequency decoration. Plain interior surfaces should not be covered by noise or randomly scattered highlights; hair glints are clustered on individual locks, reflective garment strokes follow fold curvature, gems and metallic edges form compact sharp shapes, glitter is restricted to the textile that calls for it.
+- For technical clothing, localize saturated emissive lines and small bright cores to circuits, devices and seams; use darker surrounding material for contrast. Do not turn the whole sprite into neon lighting.
+- Preserve character-dependent makeup, expression, iris color and hair palette. Avoid copying specific reference identities, outfits or accessories into unrelated characters.
+- Full V4 prompt still pending further eligible samples and validation.
+
+### Resume point after batch 2
+- Completed stage 2 geometry/global color: 30/30, unchanged; do not rerun.
+- Semantic/material stage: 13/30 manifest entries screened; 11 analyzed (6 previous + 5 new), 2 deferred (10,100), 17 not yet screened. Total 52 local ROIs (21+31), including flagged mixed boundaries. Seven approximate visible crown/chin pairs. Comparable anatomical shoulder/torso ratios still not established.
+- Remaining unscreened All Girls: 20,24,101,104,120,125,143,150,164,175,183 (11). More Girls: elf,dark_elf,angel,ghost,jester,ballet (6).
+- Next: screen remaining eligible adult non-explicit NPC references; prioritize visibly different outfits and clearer shoulder contours, small inspection batches, record evidence not raw images. Then consolidate findings and finalize prompt before generation testing. No original mods changed, no test generation completed.
