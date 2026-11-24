@@ -223,3 +223,111 @@ Paired-region evidence (descriptive only, not random samples): hair edge16% loca
 - Semantic/material stage: 13/30 manifest entries screened; 11 analyzed (6 previous + 5 new), 2 deferred (10,100), 17 not yet screened. Total 52 local ROIs (21+31), including flagged mixed boundaries. Seven approximate visible crown/chin pairs. Comparable anatomical shoulder/torso ratios still not established.
 - Remaining unscreened All Girls: 20,24,101,104,120,125,143,150,164,175,183 (11). More Girls: elf,dark_elf,angel,ghost,jester,ballet (6).
 - Next: screen remaining eligible adult non-explicit NPC references; prioritize visibly different outfits and clearer shoulder contours, small inspection batches, record evidence not raw images. Then consolidate findings and finalize prompt before generation testing. No original mods changed, no test generation completed.
+
+
+## 2026-11-24 KST — semantic/material verification, batch 3 and V4 consolidation
+
+All 17 previously unscreened manifest entries fetched and screened. Four directly inspected at source resolution for nonsexual face, hair and head-accessory rendering; thirteen screened on two 1:4 overview sheets only. No source PNGs or sheets saved. Adult-reference scope retained; age is not inferred from anatomy. Revealing costume/body regions are not used to derive anatomical prescriptions.
+
+### Source provenance and screening
+| Sprite | Blob SHA | Scope / overview observation |
+|---|---|---|
+| 20 | 0de3d2edb0a1e00226e31c56bd3a8b7c41b3e75d | Detailed face/hair |
+| 24 | 47c753f14b7d2b56fd75f220622735975e7d9b57 | Detailed face/hair/headgear |
+| elf | ff370e8110d28f47301078c67074d5e3ccd1e0f8 | Detailed face/hair/flower |
+| jester | 441a9acab0c7a2735c1f15859af706e432b46203 | Detailed face/hair/hat/ruffle |
+| 101 | 5431dd3f03a9872d0af5f5699e4f870174bcb59d | Overview: flower, warm curls |
+| 104 | 044540d6df1e22d2196bf63a63bdc4690c5a9390 | Overview: coral hair, obscured eye |
+| 120 | 479fb083ee73c65f9816379c922ed5eacfd5861a | Overview only; eligibility not established |
+| 125 | 881d0109084850d8f223386539db93bf0e0ba68e | Overview: teacup masks lower face |
+| dark_elf | 829516a503000d0a5cb1e2b39788ce8ab907faa7 | Overview: dark palette, red eyes, pointed ears |
+| angel | 306ed547d83643c639e336f7f1f1570f9a849bbb | Overview: halo and wings |
+| 143 | bb5cec2965c438cf7bd6d0afeb8c6ce5a7a5a321 | Overview: golden curls, blue/gold trim |
+| 150 | dae6190e082bc2a026b8ecaf59fead0d5f6f817e | Overview: dark bob, purple palette |
+| 164 | 3a7f368cc5ae03c704c23a5058cc6f20af0b3f86 | Overview: seated pose and wheelchair |
+| 175 | 7df86373c748eb6b65cb3bfba749d3a8a00ae2eb | Overview only; eligibility not established |
+| 183 | 611aa464087df669932faaab2e6efd056975e887 | Overview: flowing pale hair and red ornaments |
+| ghost | 399ebf6ba7369ba9b377dfc07d6a96bbb928519c | Overview: supernatural palette/wisps; not baseline anatomy |
+| ballet | 9323009c1d71ea0b56b0fde94ff96315db8d67f8 | Overview only; eligibility not established |
+
+### Approximate landmarks (face/hair only, source coordinates)
+Same definitions as preceding batches. H=visible main hair crown to chin, NOT skull height. Approximate to ~5–10 px.
+| Sprite | Crown Y | Chin Y | Iris X | Iris Y | Horizontal separation | H |
+|---|---:|---:|---|---|---:|---:|
+| 20 | 188 | 380 | 527,588 | 320,321 | 61 | 192 |
+| 24 | 194 | 407 | 515,NA | 337,NA | NA | 213 |
+| elf | 188 | 418 | 539,617 | 343,343 | 78 | 230 |
+| jester | NA (hat) | 493 | 529,621 | 412,413 | 92 | NA |
+
+Ten valid approximate visible crown/chin spans across detailed batches: 192,194,206,211,213,223,230,242,243,288 px (median 218, range 192–288). Eye separation observed range extends to ~61–92 px. Not anatomical targets; hair volume, headwear, crop, expression and pose affect results. No comparable anatomical shoulder/torso ratios established.
+- 20: warm brown broad flat hair masses, abrupt curved shadows and clustered warm irregular highlights; fine cheek hatching, expression-specific iris symbols.
+- 24: pale cool hair, fine colored contours, narrow bright streaks, one eye partly obscured by fringe; angular dark headgear and saturated stripes. Equal eye visibility not required.
+- elf: layered pale locks, colored gray-purple contours, sharply tapered upper lash shape and cool layered irises; flower/jewels form compact high-frequency accents.
+- jester: contrasting two-tone hair, broad curved red/purple hat folds, repeated motifs, pale layered ruffles, differently colored irises. Hat dimensions are not head dimensions.
+- Overview screening supports variation in silhouette due to hair, wings, props and seated equipment. No precise measurements inferred from overview sheets.
+
+### Local pixel measurements (17 additional ROIs)
+Prior verified PNG decoder, alpha>=250, RGB4 bins and adjacent-pair max RGB channel delta. Bounds [x0,y0,x1,y1). All coverage 100% except elf flower boundary (96%). Mixed patches explicitly retained and excluded from clean comparisons.
+| Sprite | Region | ROI | n | Bins | Top bin (%) | d50 | d90 | edge16% |
+|---|---|---|---:|---:|---|---:|---:|---:|
+| 20 | hair local | 538,211,554,233 | 352 | 1 | a77 (100) | 0 | 1 | 0 |
+| 20 | hair glint | 536,251,558,270 | 418 | 29 | a77 (32.3) | 6 | 30 | 26.7 |
+| 20 | cheek | 542,337,552,346 | 90 | 2 | fed (97.8) | 0 | 1 | 0 |
+| 24 | hair local | 552,263,565,285 | 286 | 13 | eef (47.6) | 1 | 3 | 4.3 |
+| 24 | hair glint | 535,221,559,244 | 552 | 9 | eef (74.8) | 1 | 13 | 7.8 |
+| 24 | cheek | 530,356,540,365 | 90 | 2 | fee (57.8) | 1 | 1 | 0 |
+| 24 | headgear stripe | 423,220,432,247 | 243 | 28 | 545 (37.9) | 4 | 73 | 25.8 |
+| elf | hair local | 563,248,579,270 | 352 | 5 | dde (90.1) | 1 | 2 | 0.6 |
+| elf | hair glint | 549,219,573,243 | 576 | 18 | fff (29) | 4 | 28 | 20.2 |
+| elf | cheek | 544,375,556,385 | 120 | 1 | fdc (100) | 1 | 1 | 0 |
+| elf | flower boundary | 666,251,686,275 | 461 | 156 | bbd (10.8) | 21 | 103 | 58.7 |
+| jester | hair local (mixed edge) | 544,335,554,355 | 200 | 42 | fd4 (28) | 10 | 83 | 38.4 |
+| jester | hair glint | 542,298,560,324 | 468 | 28 | fc3 (44.7) | 3 | 13 | 8.7 |
+| jester | cheek | 548,440,560,450 | 120 | 1 | fdc (100) | 1 | 1 | 0 |
+| jester | hat local (mixed folds) | 364,296,380,312 | 256 | 36 | 64a (33.2) | 2 | 53 | 21.9 |
+| jester | hat motif | 383,224,411,251 | 756 | 57 | fe6 (50.5) | 2 | 36 | 18.2 |
+| jester | ruffle edge | 555,514,581,538 | 624 | 87 | fff (22.3) | 11 | 87 | 43.6 |
+
+Three new local-to-glint hair pairs increase edge16 (20: 0→26.7; 24: 4.3→7.8; elf: 0.6→20.2). Jester nominal local hair patch includes strong edges, so its reverse result is not a clean pair. Four quiet cheek patches all edge16=0, d90=1. Headgear stripe, flower boundary and ruffle edge have much stronger transitions. Total 69 manually selected ROIs; purposive samples, not population statistics.
+
+## V4 consolidated production prompt — registration verified, style evidence-based, generation validation pending
+
+### Shared style (fixed)
+Create a clearly adult Japanese 2D anime visual-novel NPC dialogue sprite for a consistent game character collection, not a promotional illustration or scene. Preserve the individual's recognizable adult physique and identity. Use compact stylized proportions, short natural neck, simplified smooth contours and readable body regions. Avoid fashion-illustration elongation, photorealistic anatomy, exaggerated perspective or fixed universal head/body and shoulder ratios.
+
+Use an eye-level, mostly frontal conversational composition with a readable face. Allow natural small head tilts, slight forward lean, asymmetric gestures, held items, seated poses and character-specific posture. Keep the pose legible rather than cinematic. Preserve headwear, hair, props and accessibility equipment as part of the silhouette; never mistake their dimensions for anatomy. Natural waist/hip/upper-thigh crop depends on identity and pose.
+
+Use fine colored line art responsive to local hue and value, selective dark contours at overlaps, and especially strong upper eyelash silhouettes. Construct eyes with dark wine or purple-black upper lashes, sharply tapered outer tips, layered irises with dark upper values and brighter lower colors, compact discrete reflections. Preserve individual eye shape, brow angle, eye visibility, color, expression and makeup. Use compact nose and mouth and fine diagonal cheek hatching where appropriate. Do not force identical eyes or perfectly mirrored features, or copy another character's iris symbols.
+
+Construct hair from overlapping broad coherent locks, layered tapered tips, sparse thin inner strand lines and compact irregular highlight clusters following lock curvature. Use broad stable base-color areas and deliberate shadow masses; place thin bright streaks selectively, rather than covering every lock in noise. Hair volume is independent of face scale.
+
+Build shading from coherent flat or gently transitioning color masses, clear curved cel-like primary shadows and restrained contact shadows at overlaps. Keep quiet interiors clean; use local smooth transitions only where material or form benefits. Avoid global airbrush gradients, random noise, photographic skin textures, excessive contour details and uniform shine.
+
+Distinct material treatments: matte cloth with broad simple fold masses; polished fabric and armor with controlled irregular reflection streaks or separated bands; metal/jewelry with sharp compact edge highlights; decorated textile with confined repeating motifs, embroidery or glitter where appropriate; technical hardware with small localized saturated emission and dark surrounding contrast. Lace/translucency character-specific, not a universal opacity rule. Do not spread accessory-level edge density across plain surfaces.
+
+### Character-specific module (replace per character)
+Adult character identity: [name / explicit adult version].
+Recognizable facial features, hair silhouette and palette: [details].
+Individual adult build and outfit silhouette: [details, no universal body ratio].
+Costume layers, materials, colors and identity accessories: [details].
+Personality, expression and conversational pose: [details].
+Use identity references for recognizable features, hairstyle, costume, colors, accessories and personality, not as a substitute for the shared rendering system. Reconstruct composition, contour, eyes, shading and material treatment in this NPC sprite visual language. Do not import unrelated reference-character accessories or motifs.
+
+### Output registration (fixed, measured)
+Exact 1152 x 844 RGBA landscape canvas; transparent background, one character. Entire nonzero-alpha silhouette occupies rows 188–843 inclusive, exactly 656 px tall; rows 0–187 transparent. Center complete silhouette horizontally within 0.5 px of canvas center 575.5, not face. Preserve aspect ratio and individual width. Observed width range 448–800 px; IQR 559.5–654 px, descriptive only. Character-specific anatomical crop. No scene, frame, text, logo, panel, extra figure or opaque background. Clean antialiasing. If generator cannot guarantee exact registration, proportionally scale alpha bbox and place on transparent canvas; verify bounds afterward. Do not alter interior opacity solely to match alpha statistics.
+
+### Validation rubric
+1. Hard registration: canvas, alpha bounds, center verified numerically; pass/fail.
+2. Identity: recognizable adult identity, hair, outfit, expression, accessories, no feature leakage from other reference characters.
+3. Dialogue composition: readable face, coherent conversational pose, no cinematic perspective, identity-specific crop.
+4. Face: upper lash shape, layered iris/reflections, compact features, blush and colored contours.
+5. Hair/shading: large lock structure, quiet base areas, clustered highlights, controlled transitions, no global texture noise.
+6. Materials: compare visually justified matched quiet patches vs glints/folds/trim, not universal ROI thresholds.
+7. Do not treat global alpha width or visible hair height as anatomy. Comparable anatomical shoulder/torso widths remain unestablished; full semantic segmentation not completed. Further representative, eligible and suitably clothed references are needed for defensible ratios. Production prompt leaves those dimensions character-dependent.
+
+### Resume point after batch 3
+- Geometry/global palette complete 30/30, unchanged; do not repeat.
+- Manifest screening 30/30: all 17 previously unscreened entries now screened.
+- Detailed semantic/material 15/30 total (11 earlier + 4 face/hair/head-accessory); 69 local ROIs; 10 approximate visible crown/chin pairs. 13 overview-only this batch, including three deferred from detailed use, plus two earlier deferred. Screening is not detailed measurement.
+- V4 consolidated prompt drafted above. Registration measured; style evidence-based, not a claim of full anatomy/segmentation or validated generation fidelity.
+- Next: generation comparison on distinct clearly adult character identities in separate test outputs; record actual rubric pass/fail and revise only for observed failures. No test images generated in this batch. No original mod or localization files modified.
