@@ -1,0 +1,284 @@
+# !dump    ← 需要摸原版图集时把行首 # 去掉（会在 ModData\PortraitRetexture 下生成 dump_*.tsv）
+# ══════════════════════════════════════════════════════════════════════════
+# 原版立绘替换 · 整张立绘清单
+#
+# 一行一条，用【Tab】分三段：   立绘 key <Tab> 文件 <Tab> 参数
+#   · 参数可省略；行首 # 是注释；空行忽略
+#   · 文件路径相对 mod 根目录，统一放 Art\
+#   · 221 个立绘 key 的完整对照：art\立绘替换包_工坊拆出\_清单.tsv
+#
+# 参数（逗号分隔）：
+#   point   强制 Point 采样（像素风）
+#   smooth  强制 Bilinear 采样（高分辨率重绘，6 倍图建议显式写上）
+#   都不写 = 自动：尺寸变了 → Bilinear + 比例 PPU；尺寸没变 → Point
+#
+# ★ 画布必须 1728×1266（288:211 的 6 倍），人物底边贴齐、人物高约 933。
+#   规格与构图模板见 art\立绘替换包_工坊拆出\（_说明.md / 构图模板\ / 原版对照\）
+# ══════════════════════════════════════════════════════════════════════════
+
+# ── 当前生效：导师（mentor）基础立绘 ────────────────────────────────────
+# 教程里逐句换脸见 faces.tsv；这里保证对话外/其它场景也是新形象。
+
+# ── 原版通缉令底板（666x930，图集通路）──────────────────────────────
+# 同尺寸 1:1 替换，用 point 保持像素质感；九宫格位置画死在图里，别挪。
+# ── 基础立绘：客户「初次出现」和「对话结束后」都显示这张（不然会闪回原版）──
+# 每个 key 用该角色第一句台词用的那张脸，保证和逐句换脸的首帧一致。
+mentor	Art/faces/mentor_1.png	smooth
+wanted	Art/wanted.png	point
+admin	Art/faces/admin_1.png	smooth
+blackmailer	Art/faces/blackmailer_1.png	smooth
+wanted1	Art/faces/wanted_1.png	smooth
+wanted2	Art/faces/wanted2_2.png	smooth
+wanted3	Art/faces/wanted3_1.png	smooth
+wanted4	Art/faces/wanted4_1.png	smooth
+wanted5	Art/faces/wanted5_1.png	smooth
+lou_sec	Art/faces/wanted5_4.png	smooth
+wanted6	Art/faces/wanted6_1.png	smooth
+wanted7	Art/faces/wanted7_1.png	smooth
+wanted8	Art/faces/wanted8_1.png	smooth
+wanted9	Art/faces/wanted9_1.png	smooth
+cartel_handler	Art/base/cartel_handler_1.png	smooth
+case_enjoyer	Art/base/case_enjoyer_1.png	smooth
+eleanor1	Art/base/eleanor1_1.png	smooth
+eleanor2	Art/base/eleanor2_1.png	smooth
+eleanor3	Art/base/eleanor3_1.png	smooth
+eleanor_scav	Art/base/eleanor_scav_1.png	smooth
+eleanor_rev	Art/base/eleanor_rev_1.png	smooth
+george	Art/base/george_1.png	smooth
+inventor	Art/base/inventor_3.png	smooth
+joe	Art/base/joe_1.png	smooth
+serpico	Art/base/serpico_1.png	smooth
+serpico_rev	Art/base/serpico_rev_1.png	smooth
+serpico_scav	Art/base/serpico_scav_1.png	smooth
+sawyer	Art/base/sawyer_1.png	smooth
+officer_lun	Art/base/officer_lun_1.png	smooth
+femaleFarmer1	Art/base/femaleFarmer_1.png	smooth
+femaleFarmer2	Art/base/femaleFarmer_2.png	smooth
+sec1	Art/base/sec1_1.png	smooth
+sec2	Art/base/sec2_1.png	smooth
+sec3	Art/base/sec3_1.png	smooth
+sec4	Art/base/sec4_1.png	smooth
+sec5	Art/base/sec5_1.png	smooth
+sec6	Art/base/sec6_1.png	smooth
+
+# —— 杂鱼/小配角（2026-11-09，用户提供；随机池成员单独指定）——
+courrier	Art/base/courrier_1.png	smooth
+femaleBM1	Art/base/femaleBM1_1.png	smooth
+femaleBM2	Art/base/femaleBM2_1.png	smooth
+femaleBM3	Art/base/femaleBM3_1.png	smooth
+femaleBM4	Art/base/femaleBM4_1.png	smooth
+femaleBM5	Art/base/femaleBM5_1.png	smooth
+femaleChef1	Art/base/femaleChef1_1.png	smooth
+femaleChef2	Art/base/femaleChef2_1.png	smooth
+femaleEng1	Art/base/femaleEng1_1.png	smooth
+femaleEng2	Art/base/femaleEng2_1.png	smooth
+maleEng1	Art/base/maleEng1_1.png	smooth
+maleEng2	Art/base/maleEng2_1.png	smooth
+maleEng3	Art/base/maleEng3_1.png	smooth
+maleEng4	Art/base/maleEng4_1.png	smooth
+maleEng5	Art/base/maleEng5_1.png	smooth
+maleEng6	Art/base/maleEng6_1.png	smooth
+
+# —— 第二批杂鱼（2026-11-09 深夜）——
+femaleMerc1	Art/base/femaleMerc1_1.png	smooth
+femaleMerc2	Art/base/femaleMerc2_1.png	smooth
+femaleMerc3	Art/base/femaleMerc3_1.png	smooth
+femaleMerc4	Art/base/femaleMerc4_1.png	smooth
+maleChef1	Art/base/maleChef1_1.png	smooth
+maleChef2	Art/base/maleChef2_1.png	smooth
+maleChef3	Art/base/maleChef3_1.png	smooth
+maleFarmer2	Art/base/maleFarmer2_1.png	smooth
+maleFarmer3	Art/base/maleFarmer3_1.png	smooth
+maleFarmer4	Art/base/maleFarmer4_1.png	smooth
+maleMerc1	Art/base/maleMerc1_1.png	smooth
+maleMerc2	Art/base/maleMerc2_1.png	smooth
+maleMerc4	Art/base/maleMerc4_1.png	smooth
+maleFarmer1	Art/base/maleFarmer1_1.png	smooth
+maleMerc3	Art/base/maleMerc3_1.png	smooth
+# 特务专用精灵：游戏里 OperativeSprite() 返回 maleMerc3（和随机佣兵共用），
+# 这里打补丁改成 "operative"，让特务和随机男佣兵彻底分开。new = 新增 key，无原版可对照。
+operative	Art/base/operative_1.png	smooth,new
+
+# —— 11.11 批次（femaleLower/maleLower/maleBM 三个池 + 具名 NPC + merchant 第二变体）——
+drjackson	Art/base/drjackson_1.png	smooth,scene
+femaleLower1	Art/base/femaleLower1_1.png	smooth
+femaleLower10	Art/base/femaleLower10_1.png	smooth
+femaleLower11	Art/base/femaleLower11_1.png	smooth
+femaleLower12	Art/base/femaleLower12_1.png	smooth
+femaleLower13	Art/base/femaleLower13_1.png	smooth
+femaleLower14	Art/base/femaleLower14_1.png	smooth
+femaleLower2	Art/base/femaleLower2_1.png	smooth
+femaleLower3	Art/base/femaleLower3_1.png	smooth
+femaleLower4	Art/base/femaleLower4_1.png	smooth
+femaleLower5	Art/base/femaleLower5_1.png	smooth
+femaleLower6	Art/base/femaleLower6_1.png	smooth
+femaleLower7	Art/base/femaleLower7_1.png	smooth
+femaleLower8	Art/base/femaleLower8_1.png	smooth
+femaleLower9	Art/base/femaleLower9_1.png	smooth
+grandpa_cheng	Art/base/grandpa_cheng_1.png	smooth
+greytide	Art/base/greytide_1.png	smooth
+landlord	Art/base/landlord_1.png	smooth
+maleBM1	Art/base/maleBM1_1.png	smooth
+maleBM2	Art/base/maleBM2_1.png	smooth
+maleBM3	Art/base/maleBM3_1.png	smooth
+maleBM4	Art/base/maleBM4_1.png	smooth
+maleBM5	Art/base/maleBM5_1.png	smooth
+maleBM6	Art/base/maleBM6_1.png	smooth
+maleLower1	Art/base/maleLower1_1.png	smooth
+maleLower10	Art/base/maleLower10_1.png	smooth
+maleLower11	Art/base/maleLower11_1.png	smooth
+maleLower2	Art/base/maleLower2_1.png	smooth
+maleLower3	Art/base/maleLower3_1.png	smooth
+maleLower4	Art/base/maleLower4_1.png	smooth
+maleLower5	Art/base/maleLower5_1.png	smooth
+maleLower6	Art/base/maleLower6_1.png	smooth
+maleLower7	Art/base/maleLower7_1.png	smooth
+maleLower8	Art/base/maleLower8_1.png	smooth
+maleLower9	Art/base/maleLower9_1.png	smooth
+merchant	Art/base/merchant_1.png	smooth
+merchant2	Art/base/merchant2_1.png	smooth,new
+miner2	Art/base/miner2_1.png	smooth
+nellis	Art/base/nellis_1.png	smooth
+spy	Art/base/spy_1.png	smooth
+# 商店大背景实际用的是 drjackson2（level1 里 inventor_scene 上的 SpriteRenderer）
+drjackson2	Art/base/drjackson2_1.png	smooth,scene
+
+# —— 11.13 part1（med/rev/sci/sec/secOff/miner1，入前已做外圈 2px×30% 柔化）——
+femaleMed1	Art/base/femaleMed1_1.png	smooth
+femaleMed2	Art/base/femaleMed2_1.png	smooth
+femaleRev1	Art/base/femaleRev1_1.png	smooth
+femaleRev2	Art/base/femaleRev2_1.png	smooth
+femaleRev3	Art/base/femaleRev3_1.png	smooth
+femaleRev4	Art/base/femaleRev4_1.png	smooth
+femaleRev5	Art/base/femaleRev5_1.png	smooth
+femaleRev6	Art/base/femaleRev6_1.png	smooth
+femaleRev7	Art/base/femaleRev7_1.png	smooth
+femaleSci1	Art/base/femaleSci1_1.png	smooth
+femaleSci2	Art/base/femaleSci2_1.png	smooth
+femaleSec1	Art/base/femaleSec1_1.png	smooth
+femaleSec2	Art/base/femaleSec2_1.png	smooth
+femaleSec3	Art/base/femaleSec3_1.png	smooth
+femaleSec4	Art/base/femaleSec4_1.png	smooth
+femaleSec5	Art/base/femaleSec5_1.png	smooth
+femaleSecCorpo1	Art/base/femaleSecCorpo1_1.png	smooth
+femaleSecCorpo2	Art/base/femaleSecCorpo2_1.png	smooth
+femaleSecOff1	Art/base/femaleSecOff1_1.png	smooth
+femaleSecOff2	Art/base/femaleSecOff2_1.png	smooth
+maleMed1	Art/base/maleMed1_1.png	smooth
+maleMed2	Art/base/maleMed2_1.png	smooth
+maleRev1	Art/base/maleRev1_1.png	smooth
+maleRev2	Art/base/maleRev2_1.png	smooth
+maleRev3	Art/base/maleRev3_1.png	smooth
+maleRev4	Art/base/maleRev4_1.png	smooth
+maleSci1	Art/base/maleSci1_1.png	smooth
+maleSci2	Art/base/maleSci2_1.png	smooth
+maleSecCorpo1	Art/base/maleSecCorpo1_1.png	smooth
+maleSecCorpo2	Art/base/maleSecCorpo2_1.png	smooth
+maleSecOff1	Art/base/maleSecOff1_1.png	smooth
+maleSecOff2	Art/base/maleSecOff2_1.png	smooth
+maleSecOff3	Art/base/maleSecOff3_1.png	smooth
+miner1	Art/base/miner1_1.png	smooth
+sample	Art/base/sample_1.png	smooth,scene
+# ── 最后 5 个：复用已有美术（2026-11-14）──
+trailer_rev1	Art/base/trailer_rev1_1.png	smooth
+trailer_rev2	Art/base/trailer_rev2_1.png	smooth
+trailer_scav1	Art/base/trailer_scav1_1.png	smooth
+waffle_enjoyer	Art/base/waffle_enjoyer_1.png	smooth
+# ── 11.14 picture 批次（77 张）──
+augBMFemale1	Art/base/augBMFemale1_1.png	smooth
+augBMFemale2	Art/base/augBMFemale2_1.png	smooth
+augBMFemale3	Art/base/augBMFemale3_1.png	smooth
+augBMMale1	Art/base/augBMMale1_1.png	smooth
+augBMMale2	Art/base/augBMMale2_1.png	smooth
+augBMMale3	Art/base/augBMMale3_1.png	smooth
+augLLFemale1	Art/base/augLLFemale1_1.png	smooth
+augLLFemale2	Art/base/augLLFemale2_1.png	smooth
+augLLFemale3	Art/base/augLLFemale3_1.png	smooth
+augLLMale1	Art/base/augLLMale1_1.png	smooth
+augLLMale2	Art/base/augLLMale2_1.png	smooth
+augLLMale3	Art/base/augLLMale3_1.png	smooth
+augULFemale1	Art/base/augULFemale1_1.png	smooth
+augULFemale2	Art/base/augULFemale2_1.png	smooth
+augULFemale3	Art/base/augULFemale3_1.png	smooth
+augULMale1	Art/base/augULMale1_1.png	smooth
+augULMale2	Art/base/augULMale2_1.png	smooth
+augULMale3	Art/base/augULMale3_1.png	smooth
+femaleScav1	Art/base/femaleScav1_1.png	smooth
+femaleScav10	Art/base/femaleScav10_1.png	smooth
+femaleScav11	Art/base/femaleScav11_1.png	smooth
+femaleScav12	Art/base/femaleScav12_1.png	smooth
+femaleScav13	Art/base/femaleScav13_1.png	smooth
+femaleScav14	Art/base/femaleScav14_1.png	smooth
+femaleScav2	Art/base/femaleScav2_1.png	smooth
+femaleScav3	Art/base/femaleScav3_1.png	smooth
+femaleScav4	Art/base/femaleScav4_1.png	smooth
+femaleScav5	Art/base/femaleScav5_1.png	smooth
+femaleScav6	Art/base/femaleScav6_1.png	smooth
+femaleScav7	Art/base/femaleScav7_1.png	smooth
+femaleScav8	Art/base/femaleScav8_1.png	smooth
+femaleScav9	Art/base/femaleScav9_1.png	smooth
+femaleUpper1	Art/base/femaleUpper1_1.png	smooth
+femaleUpper10	Art/base/femaleUpper10_1.png	smooth
+femaleUpper11	Art/base/femaleUpper11_1.png	smooth
+femaleUpper12	Art/base/femaleUpper12_1.png	smooth
+femaleUpper13	Art/base/femaleUpper13_1.png	smooth
+femaleUpper2	Art/base/femaleUpper2_1.png	smooth
+femaleUpper3	Art/base/femaleUpper3_1.png	smooth
+femaleUpper4	Art/base/femaleUpper4_1.png	smooth
+femaleUpper5	Art/base/femaleUpper5_1.png	smooth
+femaleUpper6	Art/base/femaleUpper6_1.png	smooth
+femaleUpper7	Art/base/femaleUpper7_1.png	smooth
+femaleUpper8	Art/base/femaleUpper8_1.png	smooth
+femaleUpper9	Art/base/femaleUpper9_1.png	smooth
+maleScav1	Art/base/maleScav1_1.png	smooth
+maleScav10	Art/base/maleScav10_1.png	smooth
+maleScav11	Art/base/maleScav11_1.png	smooth
+maleScav12	Art/base/maleScav12_1.png	smooth
+maleScav13	Art/base/maleScav13_1.png	smooth
+maleScav2	Art/base/maleScav2_1.png	smooth
+maleScav3	Art/base/maleScav3_1.png	smooth
+maleScav4	Art/base/maleScav4_1.png	smooth
+maleScav5	Art/base/maleScav5_1.png	smooth
+maleScav6	Art/base/maleScav6_1.png	smooth
+maleScav7	Art/base/maleScav7_1.png	smooth
+maleScav8	Art/base/maleScav8_1.png	smooth
+maleScav9	Art/base/maleScav9_1.png	smooth
+maleSec1	Art/base/maleSec1_1.png	smooth
+maleSec2	Art/base/maleSec2_1.png	smooth
+maleSec3	Art/base/maleSec3_1.png	smooth
+maleSec4	Art/base/maleSec4_1.png	smooth
+maleSec5	Art/base/maleSec5_1.png	smooth
+maleSec6	Art/base/maleSec6_1.png	smooth
+maleUpper1	Art/base/maleUpper1_1.png	smooth
+maleUpper2	Art/base/maleUpper2_1.png	smooth
+maleUpper3	Art/base/maleUpper3_1.png	smooth
+maleUpper4	Art/base/maleUpper4_1.png	smooth
+maleUpper5	Art/base/maleUpper5_1.png	smooth
+maleUpper6	Art/base/maleUpper6_1.png	smooth
+maleUpper7	Art/base/maleUpper7_1.png	smooth
+maleUpper8	Art/base/maleUpper8_1.png	smooth
+maleUpper9	Art/base/maleUpper9_1.png	smooth
+retired_aquafarmer	Art/base/retired_aquafarmer_1.png	smooth
+retired_chemist	Art/base/retired_chemist_1.png	smooth
+retired_farmer	Art/base/retired_farmer_1.png	smooth
+shadyMerchant	Art/base/shadyMerchant_1.png	smooth
+lotteryRep	Art/base/lotteryRep_1.png	smooth,new
+scavElder	Art/base/scavElder_1.png	smooth,new
+scavElder2	Art/base/scavElder2_1.png	smooth,new
+scavElder3	Art/base/scavElder3_1.png	smooth,new
+femaleSci3	Art/base/femaleSci3_1.png	smooth,new
+femaleSci4	Art/base/femaleSci4_1.png	smooth,new
+femaleSci5	Art/base/femaleSci5_1.png	smooth,new
+femaleFarmer3	Art/base/femaleFarmer3_1.png	smooth,new
+femaleFarmer4	Art/base/femaleFarmer4_1.png	smooth,new
+wounded1	Art/base/wounded1_1.png	smooth,new
+wounded2	Art/base/wounded2_1.png	smooth,new
+wounded3	Art/base/wounded3_1.png	smooth,new
+wounded4	Art/base/wounded4_1.png	smooth,new
+femaleUpper14	Art/base/femaleUpper14_1.png	smooth,new
+femaleMerc5	Art/base/femaleMerc5_1.png	smooth,new
+femaleMed3	Art/base/femaleMed3_1.png	smooth,new
+tapeMerchant	Art/base/tapeMerchant_1.png	smooth,new
+dr_jackson	Art/ui/dr_jackson.png	smooth,ui
+femaleMed4	Art/base/femaleMed4_1.png	smooth,new
+femaleMed5	Art/base/femaleMed5_1.png	smooth,new

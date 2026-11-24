@@ -12,10 +12,10 @@ fill_confirm,确认填装
 fill_failed,装填失败：弹壳或火药可能不够/没有空位。什么都没消耗。
 casing_recovery,弹壳回收
 casing_ledger_invalid,回收记录无法读取，原记录未被覆盖。
-casing_claim,将{0}送回店内 · 待领{1}个
+casing_claim,将{0}送回店内 · 待领{1}份（{2}发弹药）
 casing_claim_failed,店内空间不足。
 casing_empty,没有多余的弹壳。
-casing_auto_sent,靶场把{0}个弹壳寄回了店里。
+casing_auto_sent,靶场把{0}份弹壳（{1}发弹药）寄回了店里。
 vge_shell_22_metal_name,.22金属弹壳
 vge_shell_22_poly_name,.22聚合物弹壳
 vge_shell_10_metal_name,10毫米金属弹壳
@@ -128,7 +128,7 @@ rental_claim_note_missing,借条找不着就算了。直接把赔偿单卖给我
 rental_claim_paid,成交。咱们两清了。
 rental_floor_paid,佣兵为遗失的{0}支付了{1}信用点的保底赔偿。
 cfg_collector_orders,收藏家订单
-cfg_collector_orders_tip,上层区买枪客符合条件的高档单有30%会变成收藏家单。收藏家要史诗或传说涂装的大枪（大小超过14）或值钱的枪（市价不低于700）。店里须有合格成枪，或合适的枪和还有使用次数的高级喷漆罐。收藏家单中70%按当前库存选单，30%从两类完整订单池随机选，可能需要临时备货。关闭后不再出新单。
+cfg_collector_orders_tip,上层区买枪客符合条件的高档单有30%会变成收藏家单。收藏家要史诗或传说涂装、市价不低于700的枪。店里须有合格成枪，或合适的枪和还有使用次数的高级喷漆罐。关闭后不再出新单。
 cfg_range_wear,靶场磨损
 cfg_range_wear_tip,靶场里的出租枪每被客人打100发掉一档品相（靶场枪械养护套件和靶场守则能减缓）。关闭后不再磨损，磨损枪械寄回服务和这两项升级也就用不上了。
 cfg_disassembly_condition,拆枪零件按品相
@@ -252,11 +252,11 @@ cabinet_capacity_title,{0} · {1}/{2}格
 vge_gunpowder_name,火药
 vge_gunpowder_desc,以克计量的火药。将其放入弹壳即可制作弹药。
 vge_gunpowder_adv_name,高级火药
-vge_gunpowder_adv_desc,以克计量的高级火药。将其放入弹壳即可制作弹药。
+vge_gunpowder_adv_desc,以克计量的高级火药。放进金属弹壳能做穿甲弹。
 vge_gunpowder_loose_name,散装火药
 vge_gunpowder_loose_desc,以克计量的散装火药，一堆最多30克。可以直接放入弹壳制作弹药，也能拖到火药罐或另一堆上合到一起。
 vge_gunpowder_adv_loose_name,散装高级火药
-vge_gunpowder_adv_loose_desc,以克计量的散装高级火药，一堆最多30克。可以直接放入弹壳制作弹药，也能拖到高级火药罐或另一堆上合到一起。
+vge_gunpowder_adv_loose_desc,以克计量的散装高级火药，一堆最多30克。可以直接放进金属弹壳做穿甲弹，也能拖到高级火药罐或另一堆上合到一起。
 vge_gunpowder_bottled_water_name,瓶装火药（标准）
 vge_gunpowder_adv_bottled_water_name,瓶装高级火药（标准）
 vge_gunpowder_small_bottled_water_name,瓶装火药（小）
@@ -279,6 +279,8 @@ vge_gunpowder_med_bottle_small_pink_name,火药瓶
 vge_gunpowder_adv_med_bottle_small_pink_name,高级火药瓶
 powder_bottle_desc,装在塑料瓶里的火药。能直接放进弹壳做子弹，也能和同种火药互相倒。倒空后又是普通的空瓶。
 powder_jug_desc,装在塑料桶里的火药。能直接放进弹壳做子弹，也能和同种火药互相倒。倒空后又是普通的空桶。
+powder_adv_bottle_desc,装在塑料瓶里的高级火药。能直接放进金属弹壳做穿甲弹，也能和同种火药互相倒。倒空后又是普通的空瓶。
+powder_adv_jug_desc,装在塑料桶里的高级火药。能直接放进金属弹壳做穿甲弹，也能和同种火药互相倒。倒空后又是普通的空桶。
 vge_module_ammo_press_name,弹壳压制模组
 vge_module_ammo_press_desc,一种能让打印机打印弹壳的模组。
 vge_module_ammo_press_effect,可压制弹壳
@@ -310,7 +312,7 @@ manual_famous_title,名枪与来历
 manual_famous_body,<color=#9E1F1A>来历</color>\n- 枪会记下经历，比如冲突流出、联赛冠军、靶场纪录、随佣兵出任务\n- 战损枪带击杀数，佣兵卖的枪有概率携带\n\n<color=#9E1F1A>成为名枪</color>\n- 2条来历、击杀20人或联赛进前三3次，就是名枪\n\n<color=#9E1F1A>保养</color>\n- 名枪7天没上枪油保养，加价会在之后8天里慢慢消退\n- 枪油可放入枪柜自动保养\n- “靶场名枪保养”升级会给靶场里到期的名枪自动上油
 manual_famous_body2,<color=#9E1F1A>展示和买家</color>\n- 名枪与战损枪，会分别吸引上层区与下层区的买家\n- 店里有名枪时，上层区的高档交枪单会附加名枪赏金\n- 有的高档单会变成名枪收藏单，只收名枪，付市价两倍\n\n<color=#9E1F1A>佣兵租枪</color>\n- 租期3到5天，最多同时租出两把\n- 交枪时收借条和租金，每天是枪价的10%\n- 还回来的枪多几次击杀，有时多一条来历\n- 枪丢了凭赔偿单获赔
 manual_paint_title,涂装、贴纸与收藏家
-manual_paint_body,<color=#9E1F1A>涂装</color>\n- 喷漆罐分低、中、高三级，能用5、4、3次，可对枪或近战武器用\n- 稀有度分普通、稀有、史诗、传说，加价10%到60%\n- 武器品相越差掉漆越多，美工刀可以刮掉涂装与贴纸\n\n<color=#9E1F1A>喷漆罐从哪来</color>\n- 上层区枪匠、革命军枪匠和小偷卖涂装箱，每箱2到4罐\n- 上锁箱内偶尔也有\n\n<color=#9E1F1A>贴纸</color>\n- 一包5张，每把枪能贴2张，每张加价4%\n- 上层区枪匠和小偷有卖\n\n<color=#9E1F1A>收藏家</color>\n- 上层区会有收藏家单\n- 他要史诗或传说涂装的枪，或市价700以上的大枪\n- 报酬是市价加100到200，涂中他点名的史诗款再加150\n- 他在柜台前时，高级罐会给出点名涂装
+manual_paint_body,<color=#9E1F1A>涂装</color>\n- 喷漆罐分低、中、高三级，能用5、4、3次，可对枪或近战武器用\n- 稀有度分普通、稀有、史诗、传说，加价10%到60%\n- 武器品相越差掉漆越多，美工刀可以刮掉涂装与贴纸\n\n<color=#9E1F1A>喷漆罐从哪来</color>\n- 上层区枪匠、革命军枪匠和小偷卖涂装箱，每箱2到4罐\n- 上锁箱内偶尔也有\n\n<color=#9E1F1A>贴纸</color>\n- 一包5张，每把枪能贴2张，每张加价4%\n- 上层区枪匠和小偷有卖\n\n<color=#9E1F1A>收藏家</color>\n- 上层区会有收藏家单\n- 他要史诗或传说涂装、市价700以上的枪\n- 报酬是市价加100到200，涂中他点名的史诗款再加150\n- 他在柜台前时，高级罐会给出点名涂装
 manual_range_title,靶场与联赛
 manual_range_body,<color=#9E1F1A>第1步：租靶场</color>\n- 在王尔德网络解锁，要II级武器许可证，4-10个靶位\n\n<color=#9E1F1A>第2步：摆枪送弹</color>\n- 右键将枪和弹药送到靶场\n- 靶位上的枪越好，客人越多，每个靶位每晚最多接两位客人\n- 有的客人自带枪，没带弹的会买对应口径的子弹\n\n<color=#9E1F1A>第3步：营业收钱</color>\n- 客人付靶位费，租枪和买子弹另算\n- 枪越值钱，租枪费越高，租出的枪会磨损\n- 买断后，子弹留下的弹壳可在营业终端领取
 manual_range_body2,<color=#9E1F1A>周六联赛</color>\n- 买断后可以付200主办，当晚保持营业，客人越多，赞助费越多\n- 当晚用弹不扣库存，场租和电费由赞助方付\n- 报名费50，前三名有奖金\n\n<color=#9E1F1A>能量武器</color>\n- 蓝盾和梯队的四把枪也能送靶场，使用电池，每发弹药13信用点充电费\n\n<color=#9E1F1A>靶场电池柜</color>\n- 王尔德网络的“靶场电池柜”添一台充电柜，最多放30块电池\n- 靶位上的枪没电了，会自动换上柜里的电池\n- 可充电的电池每晚充3点，有商用电力充6点
@@ -441,7 +443,6 @@ feature_paint,涂装：{0}（{1} #{2}）
 vge_paint_crate_name,涂装箱
 vge_paint_crate_desc,神秘的喷漆箱，内含2至4罐喷漆。
 order_req_skin,涂装：{0}
-collector_order_big,我想要把够大、够唬人的枪，还得是史诗或传说涂装。我按它的价值付钱，再加一笔。涂的要是“{0}”，我再多给。
 collector_order_value,我想要把值钱的枪，至少值{1}信用点，还得是史诗或传说涂装。我按它的价值付钱，再加一笔。涂的要是“{0}”，我再多给。
 collector_1,我收藏枪。别拿便宜货糊弄我。
 collector_2,听说你的店里出过好涂装。我是来收藏的。
@@ -719,7 +720,7 @@ range_host_out_3,主持人：第{0}名。枪是好枪，下周再来！
 range_host_out_4,主持人：第{0}名。今晚就到这儿，下周六见！
 range_league_card_edition,第{0}届地下射击联赛
 range_league_card_place,第{0}名
-range_league_card_score,得分 {0}　·　命中 {1}/{2}
+range_league_card_score,得分 {0}　·　命中 {1}/{2}发
 range_league_card_prize,奖金 {0} 信用点
 range_league_card_table,名次表
 range_league_board_next,再得{0}分升到第{1}名

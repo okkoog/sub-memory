@@ -1,0 +1,68 @@
+# 文本替换（运行时覆盖原版本地化，不改客户端文件）
+# 三列：表名 / key / 新文本；两列则默认 Dialogue 表
+
+# ── 程大爷 → 程大娘（名字 + 所有提到她的台词，含第三人称「他」→「她」）──
+ClientName	name_grandpa_cheng	程大娘	Granny Cheng
+Dialogue	dialog_cheng_intro_3	我是程大娘，也在这区里经营着一家小店。	I'm Granny Cheng. I run a little shop in this district too.
+Dialogue	dialog_cheng_ref_1	你好，是程大娘让我来这里的。	Hi, Granny Cheng sent me here.
+Dialogue	dialog_cheng_ref_3	程大娘那里常备着一些过了期但还能凑合用的药。	Granny Cheng always keeps some expired-but-still-usable medicine on hand.
+Dialogue	dialog_cheng_ref_4	而且她卖得一向公道。	And she has always charged a fair price.
+Dialogue	dialog_cheng_ref_5	有时碰上付不起钱的人，她甚至还肯赊账。	Sometimes she even lets people buy on credit when they can't pay.
+Dialogue	dialog_cheng_ref_7	可她现在没货了。	But she's out of stock right now.
+Dialogue	dialog_cheng_ref_8	所以她让我来找你。	So she sent me to you.
+Dialogue	dialog_sawyer_cheng_2	你认识程大娘，对吧？	You know Granny Cheng, right?
+Dialogue	dialog_sawyer_cheng_3	我小时候流落街头，是她给了我饭吃。	When I was a kid living on the street, she was the one who fed me.
+Dialogue	dialog_sawyer_cheng_4	要不是她，我早就饿死了。	If not for her, I'd have starved long ago.
+Dialogue	dialog_sawyer_cheng_5	我听说她最近总是很晚才开店，	I heard she's been opening up really late lately,
+Dialogue	dialog_sawyer_cheng_7	说实话，我很担心她。	Honestly, I'm worried about her.
+Dialogue	dialog_sawyer_cheng_8	帮我多留意一下她，好吗？	Keep an eye on her for me, will you?
+Dialogue	dialog_wild_cheng_3	你应该认识程大娘吧？	You know Granny Cheng, I take it?
+Dialogue	dialog_wild_cheng_4	她昨晚在睡梦中去世了。	She passed away in her sleep last night.
+Dialogue	dialog_wild_cheng_5	她是个好人，也是下层区社区真正的顶梁柱。	She was a good woman, and a real pillar of the lower level community.
+Dialogue	dialog_wild_cheng_6	有件东西，留给你纪念她。	There's something she left for you, to remember her by.
+# ── 屠夫（wanted2，本 mod 里是女版）：被捕时治安部那句 ──
+Dialogue	dialog_wanted2_arrest_sec	靠！她力气也太大了！快多叫点人来！	Damn! She's way stronger than she looks! Get more people over here!
+# ── 女化 NPC 的第三人称：他 → 她（2026-11-13）──
+Dialogue	dialog_georgio_intro2_3	今天，乔治奥给你带来了一项她亲自完成的发明……	Today Georgio brings you an invention she finished herself...
+Dialogue	dialog_georgio_nuclear_3	她有私吞吗？没有！她给你带回来了。	Did she pocket any of it? No! She brought it all back to you.
+Dialogue	dialog_georgio_payback_4	好了，乔治奥要回到她的飞船上去了……	All right, Georgio has to get back to her ship now...
+Dialogue	dialog_georgio_serpico_food_favor_choice	[请她帮个忙（下层区声望{0}+）]	[Ask her for a favor (Lower Level reputation {0}+)]
+Dialogue	dialog_inventor_intro_4	直到她被捕了！	Until she was arrested!
+Dialogue	dialog_wild_upgrade_reminder_2	杰克逊博士也告诉我，你同样没有去拜访过她。	Dr. Jackson told me too - you haven't gone to visit her either.
+Dialogue	dialog_mentor_intro_4	*她从夹克口袋里掏出几张便签，放在了柜台上。*	*She pulls a few sticky notes from her jacket pocket and sets them on the counter.*
+Dialogue	dialog_serpico6_arrest_sec_1	她要掏枪！她要掏枪！	She's going for her gun! She's going for her gun!
+Dialogue	dialog_serpico6_arrest_sec_4	把她铐起来。	Cuff her.
+Dialogue	dialog_wanted5_5	你也知道，她这人不太愿意开口。	You know how she is - not exactly the talkative type.
+Dialogue	dialog_georgio_serpico_food_decline	没关系，朋友。乔治奥相信你会亲自喂饱她。	That's all right, friend. Georgio trusts you'll feed her yourself.
+# ── 改造体鉴别指南：第三条视觉特征（芯片 → 附耳触手）──
+# ── 埃莉诺的叔叔 → 姑姑（贴图是女脸）──
+ClientName	name_eleanor_uncle	埃莉诺的姑姑	Eleanor's Aunt
+# ── 埃莉诺的叔叔 → 姑姑（台词部分补全）──
+Dialogue	dialog_eleanor_uncle_1	你好啊。你认识埃莉诺，对吧？我是她的……姑姑。	Hello there. You know Eleanor, don't you? I'm her... aunt.
+Dialogue	dialog_eleanor_warned_1	我姑姑？我根本没有姑姑。	My aunt? I don't have an aunt.
+Dialogue	dialog_eleanor_warned_2	她给我留了个箱子？还是被报了失窃的？	She left a crate for me? The one reported stolen?
+Dialogue	dialog_eleanor_warned_player	<i>*告诉她那个自称是她姑姑的女人的事*</i>	<i>*Tell her about the woman claiming to be her aunt*</i>
+Dialogue	dialog_eleanor_freed_2	那个箱子不是我的，我也根本没有姑姑。	That crate isn't mine, and I don't have an aunt.
+
+# ── 全女性化补完（保守版：只改称呼与单个「他」，「他们」保持原样；可逐条删）──
+ClientName	name_wounded_man	受伤的女人	Wounded Woman
+Dialogue	dialog_cheng2_6	她还说，以后不该再由我来维护它了。	She also said I shouldn't be the one maintaining it anymore.
+Dialogue	dialog_cheng2_7	我看，她是在劝我退休。	I think she's telling me to retire.
+Dialogue	dialog_georgio_loan_3	她正在建造一艘宇宙飞船！好去整个星系拾荒……	She's building a starship! To go scavenging across the whole system...
+Dialogue	dialog_georgio_nuclear_2	她看到你昨晚把东西落在垃圾场了……	She saw you leave something behind at the dumping ground last night...
+Dialogue	dialog_georgio_serpico_letter_3	她托乔治奥把这封信交给你。乔治奥没偷看。嗯，没怎么看。	She asked Georgio to bring you this letter. Georgio didn't peek. Well - not much.
+Dialogue	dialog_loan_shark2_player_soon	[请她一周后再来]	[Ask her to come back in a week]
+Dialogue	dialog_lou_disguise_4	还记得我那位“客人”吗？她总算肯开口了。	Remember that "client" of mine? She finally decided to talk.
+Dialogue	dialog_lou_disguise_5	她告诉了我一个人的下落，我跟那人有笔账要算。	She told me where to find someone. I have a debt to settle with them.
+Dialogue	dialog_lun_crim_arrest_sec_2	抓住她！	Grab her!
+Dialogue	dialog_lynching_greeting_2	有个人做得太过火了，我们得给她点颜色看看。	Someone has gone too far. We ought to teach her a lesson.
+Dialogue	dialog_nellis2_11	别人爱怎么骂怎么骂，但她接掌指挥权后，生活质量已经在慢慢改善了。	Let them say what they like - since she took command, living conditions have been slowly improving.
+Dialogue	dialog_nellis2_6	认为她只为上层区服务。	They think she only serves the upper levels.
+Dialogue	dialog_nellis2_7	但她真的是在竭尽全力维持这个空间站的运转。	But she really is doing everything she can to keep this station running.
+Dialogue	dialog_serpico5_3	她涉嫌腐败，我们已经签发了逮捕令。	She is suspected of corruption. We have already issued an arrest warrant.
+Dialogue	dialog_serpico5_4	此外，她还被发现在执勤期间饮酒。	She was also found drinking while on duty.
+Dialogue	dialog_serpico5_5	如果见到她，务必立即举报。	If you see her, report it immediately.
+Dialogue	dialog_serpico5_6	不要试图与她交谈。	Do not attempt to talk to her.
+Dialogue	dialog_serpico5_7	她可能携带武器，非常危险。	She may be armed and is extremely dangerous.
+Dialogue	dialog_serpico_end_rev_arrest_sec_3	把她装袋带走。	Bag her and take her away.
+Dialogue	dialog_serpico_officer_return_3	她的悬赏金已经提高到{0}信用点了。	Her bounty has been raised to {0} credits.

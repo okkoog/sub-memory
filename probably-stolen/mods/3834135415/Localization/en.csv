@@ -12,10 +12,10 @@ fill_confirm,Confirm loading
 fill_failed,"Couldn't load. There may not be enough cases, powder or room. Nothing was used."
 casing_recovery,Casing recovery
 casing_ledger_invalid,The recovery record could not be read. It has not been replaced.
-casing_claim,Send {0} to the shop · {1} waiting
+casing_claim,Send {0} to the shop · {1} waiting ({2} rounds' worth)
 casing_claim_failed,Not enough room in the shop.
 casing_empty,No spare cases.
-casing_auto_sent,The range sent {0} empty cases back to the shop.
+casing_auto_sent,The range sent back empty cases: {0} ({1} rounds' worth).
 vge_shell_22_metal_name,.22 Metal Empty Cases
 vge_shell_22_poly_name,.22 Polymer Empty Cases
 vge_shell_10_metal_name,10mm Metal Empty Cases
@@ -128,7 +128,7 @@ rental_claim_note_missing,Forget the IOU. Just sell me the claim and we'll settl
 rental_claim_paid,Deal. We're square.
 rental_floor_paid,The mercenary paid the minimum compensation for {0}: {1} Credits.
 cfg_collector_orders,Collector orders
-cfg_collector_orders_tip,"30% of eligible high-end orders from the upper-level gun buyer become collector orders. The collector wants a big gun (size over 14) or a valuable one (worth at least 700), in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a usable Premium spray can. Of collector orders, 70% match current stock and 30% draw from the full pools of both kinds, so they may need preparation. When off, no new orders appear."
+cfg_collector_orders_tip,"30% of eligible high-end orders from the upper-level gun buyer become collector orders. The collector wants a gun worth at least 700, in Epic or Legendary paint. The shop must have a qualifying finished gun, or a suitable gun and a usable Premium spray can. When off, no new orders appear."
 cfg_range_wear,Range wear
 cfg_range_wear_tip,"Loaners at the range lose a condition grade every 100 rounds guests fire with them (Range Gun Care Kit and Range Rules slow it down). When off, they do not wear, so Worn Gun Return and those two upgrades do nothing."
 cfg_disassembly_condition,Disassembly parts by condition
@@ -252,11 +252,11 @@ cabinet_capacity_title,{0} · {1}/{2} slots
 vge_gunpowder_name,Gunpowder
 vge_gunpowder_desc,Gunpowder measured in grams. Put it in cases to make rounds.
 vge_gunpowder_adv_name,Advanced Gunpowder
-vge_gunpowder_adv_desc,Advanced gunpowder measured in grams. Put it in cases to make rounds.
+vge_gunpowder_adv_desc,Advanced gunpowder measured in grams. Put it in metal cases to make armor-piercing rounds.
 vge_gunpowder_loose_name,Loose Gunpowder
 vge_gunpowder_loose_desc,"Loose gunpowder measured in grams, up to 30 g a pile. Put it in cases to make rounds, or drag it onto a gunpowder jar or another pile to combine them."
 vge_gunpowder_adv_loose_name,Loose Advanced Gunpowder
-vge_gunpowder_adv_loose_desc,"Loose advanced gunpowder measured in grams, up to 30 g a pile. Put it in cases to make rounds, or drag it onto an advanced gunpowder jar or another pile to combine them."
+vge_gunpowder_adv_loose_desc,"Loose advanced gunpowder measured in grams, up to 30 g a pile. Put it in metal cases to make armor-piercing rounds, or drag it onto an advanced gunpowder jar or another pile to combine them."
 vge_gunpowder_bottled_water_name,Bottle of Gunpowder (Standard)
 vge_gunpowder_adv_bottled_water_name,Bottle of Advanced Gunpowder (Standard)
 vge_gunpowder_small_bottled_water_name,Bottle of Gunpowder (Small)
@@ -279,6 +279,8 @@ vge_gunpowder_med_bottle_small_pink_name,Bottle of Gunpowder
 vge_gunpowder_adv_med_bottle_small_pink_name,Bottle of Advanced Gunpowder
 powder_bottle_desc,"Gunpowder in a plastic bottle. Put it straight into cases to make rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary bottle again."
 powder_jug_desc,"Gunpowder in a plastic jug. Put it straight into cases to make rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary jug again."
+powder_adv_bottle_desc,"Advanced gunpowder in a plastic bottle. Put it straight into metal cases to make armor-piercing rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary bottle again."
+powder_adv_jug_desc,"Advanced gunpowder in a plastic jug. Put it straight into metal cases to make armor-piercing rounds, or pour it to and from the same kind of powder. Once empty, it is an ordinary jug again."
 vge_module_ammo_press_name,Case Press Module
 vge_module_ammo_press_desc,Prints cases when fitted to a printer.
 vge_module_ammo_press_effect,Presses cases
@@ -310,7 +312,7 @@ manual_famous_title,Famous guns and history
 manual_famous_body,<color=#9E1F1A>History</color>\n- Guns remember what they've been through, like coming out of a clash, league wins, range records or missions with mercenaries\n- War-damaged guns carry kills, and guns sold by mercenaries may too\n\n<color=#9E1F1A>Becoming famous</color>\n- 2 history entries, 20 kills or 3 league top-three finishes make a gun famous\n\n<color=#9E1F1A>Upkeep</color>\n- If a famous gun goes 7 days without gun oil, its bonus fades over the next 8 days\n- Gun oil can go in a gun cabinet for automatic upkeep\n- The Range Famous Gun Upkeep upgrade oils due famous guns at the range automatically
 manual_famous_body2,<color=#9E1F1A>Display and buyers</color>\n- Famous guns draw upper-level buyers, and war-damaged guns draw lower-level ones\n- With a famous gun in the shop, high-end gun orders from upper-level buyers add a famous gun bonus\n- Some high-end orders become famous gun collector orders: famous guns only, at twice the market price\n\n<color=#9E1F1A>Mercenary rentals</color>\n- 3 to 5 days, up to two guns at once\n- When you hand the gun over, you get an IOU and the rent, 10% of the gun's price per day\n- Guns come back with a few more kills, sometimes a new history entry\n- If a gun is lost, the claim pays you back
 manual_paint_title,Paint, stickers and collectors
-manual_paint_body,<color=#9E1F1A>Paint</color>\n- Spray cans come in Basic, Fine and Premium, with 5, 4 and 3 uses. Use them on guns or melee weapons\n- Rarities are Common, Rare, Epic and Legendary, adding 10% to 60% to the price\n- The worse the weapon's condition, the more paint chips off. A Box Cutter scrapes off paint and stickers\n\n<color=#9E1F1A>Where spray cans come from</color>\n- The Upper-Level Gunsmith, the Revolution Gunsmith and thieves sell paint crates, 2 to 4 cans each\n- Locked crates sometimes hold them too\n\n<color=#9E1F1A>Stickers</color>\n- 5 per pack, 2 per gun, +4% each\n- The Upper-Level Gunsmith and thieves sell them\n\n<color=#9E1F1A>Collector</color>\n- Upper-level buyers sometimes place collector orders\n- He wants a gun in Epic or Legendary paint, or a big gun worth 700 or more\n- He pays market price plus 100 to 200, and 150 more for the Epic paint he names\n- While he's at the counter, Premium cans offer the paint he named
+manual_paint_body,<color=#9E1F1A>Paint</color>\n- Spray cans come in Basic, Fine and Premium, with 5, 4 and 3 uses. Use them on guns or melee weapons\n- Rarities are Common, Rare, Epic and Legendary, adding 10% to 60% to the price\n- The worse the weapon's condition, the more paint chips off. A Box Cutter scrapes off paint and stickers\n\n<color=#9E1F1A>Where spray cans come from</color>\n- The Upper-Level Gunsmith, the Revolution Gunsmith and thieves sell paint crates, 2 to 4 cans each\n- Locked crates sometimes hold them too\n\n<color=#9E1F1A>Stickers</color>\n- 5 per pack, 2 per gun, +4% each\n- The Upper-Level Gunsmith and thieves sell them\n\n<color=#9E1F1A>Collector</color>\n- Upper-level buyers sometimes place collector orders\n- He wants a gun in Epic or Legendary paint, worth 700 or more\n- He pays market price plus 100 to 200, and 150 more for the Epic paint he names\n- While he's at the counter, Premium cans offer the paint he named
 manual_range_title,Range and league
 manual_range_body,<color=#9E1F1A>Step 1: Rent the range</color>\n- Unlock it on Wild's Network. Needs Weapon Permit II. 4-10 lanes\n\n<color=#9E1F1A>Step 2: Send guns and ammo</color>\n- Right-click guns and ammo to send them to the range\n- Better guns on the lanes draw more guests. Each lane takes up to two guests a night\n- Some guests bring their own guns, and those without ammo buy rounds of the right caliber\n\n<color=#9E1F1A>Step 3: Open and get paid</color>\n- Guests pay a lane fee. Loaner guns and rounds are extra\n- The pricier the gun, the higher the loaner fee. Loaners wear down\n- Once you buy out the range, collect the cases left by the rounds at the range terminal
 manual_range_body2,<color=#9E1F1A>Saturday league</color>\n- Once you own the range, pay 200 to host and stay open that night. More guests bring more sponsorship\n- That night, ammo used doesn't come out of stock, and the sponsor pays rent and power\n- Entry is 50. The top three win prizes\n\n<color=#9E1F1A>Energy weapons</color>\n- The four Blue Shield and Echelon guns can go to the range too. They use cells, with a 13 Credit charging fee per shot\n\n<color=#9E1F1A>Range cell cabinet</color>\n- Range Cell Cabinet on Wild's Network adds a charging cabinet that holds up to 30 cells\n- When a gun on a lane runs dry, it switches to a cell from the cabinet\n- Rechargeable cells gain 3 a night, or 6 with commercial power
@@ -441,7 +443,6 @@ feature_paint,Paint: {0} ({1} #{2})
 vge_paint_crate_name,Paint Crate
 vge_paint_crate_desc,A mystery crate with 2-4 spray cans inside.
 order_req_skin,Paint: {0}
-collector_order_big,"I want something big and intimidating, in Epic or Legendary paint. I'll pay what it's worth and a premium on top, more if it's ""{0}""."
 collector_order_value,"I want a valuable gun, worth at least {1} Credits, in Epic or Legendary paint. I'll pay what it's worth and a premium on top, more if it's ""{0}""."
 collector_1,I collect guns. None of the cheap stuff.
 collector_2,I was told good paint jobs come through your store. I'm a collector.
@@ -719,7 +720,7 @@ range_host_out_3,"Host: Place {0}. Good gun, though. Come back next week!"
 range_host_out_4,Host: Place {0}. That's it for tonight. See you Saturday!
 range_league_card_edition,Underground League #{0}
 range_league_card_place,Place {0}
-range_league_card_score,Score {0} · Hits {1}/{2}
+range_league_card_score,Score {0} · Hits {1}/{2} shots
 range_league_card_prize,Prize: {0} Credits
 range_league_card_table,Standings
 range_league_board_next,{0} pts to Place {1}

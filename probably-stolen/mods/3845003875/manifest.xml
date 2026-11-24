@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModManifest>
+  <ID>PortraitRetextureEdgeFix</ID>
+  <Name>深空荡铺：可能是麦的</Name>
+  <Author>深空荡铺：可能是麦的</Author>
+  <ModVersion>1.0.1</ModVersion>
+  <Description><![CDATA[
+《深空当铺：可能是偷的》立绘替换 mod · v1.0.1（正式版）
+
+【作者】
+绘图：小小苓、不知所云的神兽咩、小小社
+程序：Aggressive153+DeepSeek
+
+把游戏里能出场的 221 个 NPC 立绘全部换成新绘制的插画，通缉令、杰克逊博士店铺场景图全量替换。微调新立绘的台词。不修改任何游戏文件，全部运行时替换，不依赖其他 mod。
+
+【内容】
+· 全立绘覆盖：剧情 NPC、通缉犯 1~9、上层区／下层区／拾荒者／商人／农夫／厨师／工程师／医护／科研／治安部／革命军／改造体，以及程大娘（未出现）、屠夫、特务、黑市商人等特殊角色
+· 部分对话差分
+· 场景图及卡片
+· 部分台词微调，以及改造人新贴图适配
+· 避免同天撞脸
+· 默认关闭游戏的「像素完美相机」；模组默认适配 2K 分辨率，1080P 需在 设置 → 显示 里打开这一选项
+
+【兼容性】
+对应游戏版本 0.46D，无前置 mod，不占用额外能力。请勿和别的立绘替换 mod 同时启用，两者会互相覆盖。贴图按需加载，正常游玩显存占用大约 100~250 MB。
+※ 目前已知和部分模组有冲突，可加群 1131848712 或在评论区反馈，后续会做适配和优化。
+
+【关于模组】
+立绘、插图由画师生成；文本改写、贴图管线与运行时替换由作者与 AI 协助完成。所有贴图都是运行时替换，不含也不修改任何游戏原始资源。部分贴图有白边问题，后续优化。
+※ 由于测试难度问题，特殊人物任务线只测了部分，如遇到串贴图的问题也欢迎反馈。
+]]></Description>
+  <GameVersions>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>PortraitRetextureEdgeFix.dll</Assembly>
+  <Assembly>FrozenHarbor.dll</Assembly></Assemblies>
+  <Capabilities><Capability>native</Capability><Capability>files</Capability></Capabilities>
+</ModManifest>
