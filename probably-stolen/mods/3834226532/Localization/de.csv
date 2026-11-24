@@ -1,4 +1,4 @@
-﻿# Start-Spezialisierung: Distributor
+# Start-Spezialisierung: Distributor
 # Begriffe laut offizieller englischer Fassung: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Vertriebspartner
 dsp_distributor_description,"Während deiner Ausbildung unter dem Mentor hast du bereits mit den Lieferantenvertretern gearbeitet. Wer die Lieferkette kontrolliert, ist einen Schritt voraus."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, Tage entfernt
 dsp_foreknowledge_price_tag,Preis
 dsp_foreknowledge_price_name,Preisänderung
 dsp_prohibition_name,Alkoholverbot
-dsp_prohibition_description,Jeder Alkohol gilt als Schmuggelware mittlerer Stufe. Gärender Wein wird für 50 verkauft und gilt als Alkohol- und Tabakware.
+dsp_prohibition_description,Jeder Alkohol gilt als Schmuggelware niedriger Stufe. Gärender Wein wird für 50 verkauft und gilt als Alkohol- und Tabakware.
 dsp_tobacco_tax_name,Tabaksteuer
 dsp_tobacco_tax_description,Zigaretten bekommen 50% Aufschlag im Einzelhandel. Du bekommst davon aber nur 20% des Aufschlags.
 dsp_blood_donor_name,Blutspendestation
-dsp_blood_donor_description,Du kannst an der Rationierungsstation Blut spenden und erhältst dafür eine Essensmarke im Wert von 40. Blutbeutel lassen sich ebenfalls in eine Essensmarke im Wert von 40 tauschen.
+dsp_blood_donor_description,Einmal pro Tag kannst du mit einer Blutkonserve Blut spenden und erhältst eine zusätzliche Blutkonserve. Dadurch verpasst du am nächsten Tag einen Kunden.
 dsp_force_open_name,Rohe Gewalt
 dsp_force_open_description,"Du kannst Materialkisten mit einem Plasmaschneider oder einer Brechstange aufbrechen. Die Brechstange geht dabei kaputt, zerstört aber weniger vom Inhalt."
 dsp_vendetta_name,Blutrache
@@ -422,6 +422,7 @@ dsp_service_professional,Profi
 dsp_vendetta_no_weapon,"Vendetta: In dem Rucksack, den du mitnimmst, ist keine Waffe - heute Nacht kommst du nicht raus."
 dsp_vendetta_removed,"Vendetta: ein Profi hat das für dich geregelt, der Perk ist weg."
 dsp_blood_donor_menu,Blut spenden
+dsp_blood_donor_daily,Einmal pro Tag
 dsp_blood_donor_done,"Blutspende erledigt: eine Blutkonserve mehr, dafür verpasst du morgen einen Kunden."
 dsp_blood_donor_already,Du hast heute schon Blut gespendet.
 dsp_blood_donor_no_space,Kein Platz für eine weitere Blutkonserve.
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (gerade kein Kunde da)
 dsp_blood_donor_row_done,Heute schon gespendet
 dsp_hydro_open_menu,Öffnen
 dsp_hydro_manual_name,Das Geheimnis der Rohr-Hydroponik
-dsp_hydro_manual_desc,Ohne sie kannst du keine Pflanzen im Wasserhahn anbauen.\nEin Doppelklick auf dieses Dokument öffnet ebenfalls die Rohr-Hydroponik.
+dsp_hydro_manual_desc,"Ohne sie kannst du keine Pflanzen im Wasserhahn anbauen.\nEin Doppelklick auf dieses Dokument öffnet ebenfalls die Rohr-Hydroponik.\nDu musst die Wasserleitung freischalten, bevor du etwas anbauen kannst."
 dsp_unlicensed_name,Betrieb ohne Lizenz
-dsp_unlicensed_description,Der Beamte der Handelskommission kommt am fünften Tag.
+dsp_unlicensed_description,Der Beamte der Handelskommission kommt am dritten Tag.
 dsp_water_vending_name,Wasserautomat
 dsp_water_vending_description,Du startest mit einem Wasserautomaten vor dem Laden. Kunden können außerhalb der Öffnungszeiten selbst Trinkwasser kaufen.
 dsp_lucky_supply_name,Glücksnachschub
@@ -646,6 +647,97 @@ dsp_vanessa_1_4,"Das brauchen wir nicht, nimm es."
 dsp_hydro_alcohol_smooth_name,Alkoholfluss
 dsp_hydro_alcohol_smooth_description,"Dank des Aufstiegs der Rohr-Hydroponik sind die Wasserleitungen von Schilf, Nutrifrucht und fermentierten Blühbeeren überwuchert. Die meisten Verunreinigungen im Rohrwasser wurden durch Stärke und Alkohol ersetzt."
 dsp_blood_donor_redeem,Einlösen
-dsp_blood_donor_redeem_done,Eingelöst: Der Blutbeutel wurde zu einer Essensmarke im Wert von 40.
+dsp_blood_donor_redeem_done,Eingelöst: Die Blutkonserve wurde zu einer Lebensmittelmarke im Wert von 40.
 dsp_around_world_80_name,In 80 Tagen um die Welt
 dsp_around_world_80_description,Du startest an Tag 80. In der folgenden Woche erlebst du alle Ereignisse der ersten 80 Tage. Du beginnst mit 1000 Credits und 15 Ruf bei jeder Fraktion. Warnung: möglicherweise fehlerhaft.
+dsp_universal_liquid_name,Universelle Flüssigkeit
+dsp_universal_liquid_description,"Du kannst Nudka als Schraubenzieher, Plasmaschneider, Seitenschneider oder Modulextraktor verwenden. Du startest mit einer Flasche Nudka."
+dsp_beer_hall_orator_name,Bierkeller-Redner
+dsp_beer_hall_orator_description,"Du beginnst mit einem Kasten Red-Imp-Bier. Jede Flasche Bier, die du verkaufst, bringt 0,1 Ruf."
+dsp_manifest_destiny_name,Manifest Destiny
+dsp_manifest_destiny_description,"Du erhältst Glück in Höhe des aktuellen Tages, bis zu 50. Du beginnst mit je einem von allen Süßigkeiten."
+dsp_tokyo_3_name,Tokyo-3
+dsp_tokyo_3_description,Deine Miete ist um die Hälfte erhöht und die Immobilienpreise sind verdoppelt. Du beginnst mit einer Neonreklame für Schusswaffen.
+dsp_double_minded_name,Wankelmütig
+dsp_double_minded_description,An ungeraden Tagen erhältst du einen Handelsbonus von 5% beim Handel mit Frauen; an geraden Tagen gilt er für Männer.
+dsp_double_minded_bonus,Geschlecht passend: +X% Handelsbonus
+dsp_berserker_name,Berserker
+dsp_berserker_description,Traumstaub lässt dich nachts schlafwandeln. Leichte Verletzungen behindern deine Handlungen nicht.
+dsp_vampire_name,Vampir
+dsp_vampire_description,"Du musst regelmäßig Blutkonserven trinken, sonst erleidest du einen Handelsnachteil von -8%. Blaues Blut verleiht dir das Merkmal „Silberzunge“, bis du wieder durstig bist."
+dsp_vampire_penalty,Durstig: -X% Handelsnachteil
+dsp_fifth_republic_name,Die 5. Republik
+dsp_fifth_republic_description,"Jede Woche erscheint das Ereignis „Budgeterhöhung der Sicherheitsbehörde“. An dem Tag, an dem es erscheint, gibt es immer eine Überraschungsinspektion."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Du beginnst mit einem Verkaufsautomaten und einem Wasserspender. Du hast Lou einst gemeldet, und sie wird bald zurückkehren."
+dsp_new_world_name,Schöne neue Welt
+
+dsp_new_world_description,Die Sicherheitsbehörde wird in Ministerium der Liebe umbenannt. Das Ministerium hat andere Rufbelohnungen und -strafen als im Original und prüft nie.
+
+dsp_new_world_faction,Ministerium der Liebe
+
+dsp_new_world_rep_loyal_name,Loyalität
+
+dsp_new_world_rep_loyal_desc,Rufstrafen anderer Fraktionen können nicht wirken.
+dsp_new_world_rep_loyal_flavor,Liebesministerium ++gut.
+
+dsp_new_world_rep_scheduled_name,Im Plan
+
+dsp_new_world_rep_scheduled_desc,Freundliche Gespräche finden nur montags statt.
+dsp_new_world_rep_scheduled_flavor,Ein planmäßiger Besuch ist für alle bequemer.
+
+dsp_new_world_rep_assembly_name,Versammlungsort
+
+dsp_new_world_rep_assembly_desc,Die Rufbelohnungen anderer Fraktionen bei 20 und 0 sind immer aktiv.
+dsp_new_world_rep_assembly_flavor,"Hier gibt es keine langohrigen Vögel, denn auf der Station gibt es überhaupt keine Vögel."
+
+dsp_new_world_rep_surplus_name,Ministeriumsüberschuss
+
+dsp_new_world_rep_surplus_desc,Überschusshändler des Ministeriums kommen gelegentlich vorbei und verkaufen ausgemusterte Ausrüstung.
+dsp_new_world_rep_surplus_flavor,"Von der Stationsliebe beobachtet zu werden, ist nicht immer etwas Schlechtes."
+
+dsp_new_world_rep_requisition_name,Requirierungsbefehl
+
+dsp_new_world_rep_requisition_desc,Requirierungsbeamte des Ministeriums kommen gelegentlich vorbei und kaufen Nahrung und medizinische Güter.
+dsp_new_world_rep_requisition_flavor,Auch die Stationsliebe muss ihre Waren irgendwo beschaffen. Sie zahlt dir einen fairen Preis.
+
+dsp_new_world_rep_repentance_name,Reuechance
+
+dsp_new_world_rep_repentance_desc,Erhalte 50 % mehr Ruf durch Meldungen.
+dsp_new_world_rep_repentance_flavor,Du brauchst mehr Vertrauen. Du kannst es dir bei anderen holen.
+
+dsp_new_world_rep_restricted_name,Eingeschränkte Kommunikation
+
+dsp_new_world_rep_restricted_desc,Das Telefon ist nicht verfügbar.
+dsp_new_world_rep_restricted_flavor,Hier ist das Ministerium der Liebe. Ihre Nachricht wird aufgezeichnet.
+
+dsp_new_world_rep_reeducation_name,Umerziehung
+
+dsp_new_world_rep_reeducation_desc,"Wenn du diese Stufe zum ersten Mal erreichst, erhältst du die Perks Vorbildlicher Bürger und Plappermaul."
+dsp_new_world_rep_reeducation_flavor,"Herzlichen Glückwunsch, Bürger. Sie haben sich selbst besiegt."
+
+dsp_new_world_rep_veto_name,Veto
+
+dsp_new_world_rep_veto_desc,Jeden Tag 5 Ruf bei allen anderen Fraktionen verlieren.
+dsp_new_world_rep_veto_flavor,Sie sind ein Spion. Von Anfang an.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,Das Fragezeichen ist nicht die eigentliche Frage. Das Gleichheitszeichen ist es.
+
+dsp_jackie_chan_name,Jackie Chan
+
+dsp_jackie_chan_description,Du kannst Gegenstände mit der Eigenschaft „Müll“ zu wertvolleren Waffen kombinieren. Der Klingelton wird durch eine asiatische Melodie ersetzt. Rechtsklick auf Müll kombiniert den Müll im selben Behälter.
+
+dsp_jackie_merge,Verarbeiten
+
+dsp_jackie_done,Aus {0} Müllgegenständen (Wert {1}) wurde {2}.
+
+dsp_jackie_no_junk,Du hast keine Müllgegenstände.
+
+dsp_jackie_no_weapon,Daraus lässt sich keine Nahkampfwaffe bauen.
+
+dsp_jackie_no_space,Kein Platz für die Waffe.
+
+dsp_new_world_crime_poor,Schlechter Eindruck im Gespräch

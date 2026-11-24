@@ -1,4 +1,4 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distributore
 dsp_distributor_description,"Durante la formazione sotto Il Mentore lavoravi già con gli agenti dei fornitori. Controllare la filiera ti dà un passo di vantaggio."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, giorni
 dsp_foreknowledge_price_tag,prezzo
 dsp_foreknowledge_price_name,Variazione di prezzo
 dsp_prohibition_name,Proibizionismo
-dsp_prohibition_description,Ogni alcol conta come contrabbando di livello medio. Il vino in fermentazione vale 50 e conta come alcolici e tabacchi.
+dsp_prohibition_description,Ogni alcol conta come contrabbando di livello basso. Il vino in fermentazione vale 50 e conta come alcolici e tabacchi.
 dsp_tobacco_tax_name,Tassa sul tabacco
 dsp_tobacco_tax_description,Le sigarette hanno un ricarico del 50% al dettaglio. Ma tu ne ricevi solo il 20%.
 dsp_blood_donor_name,Stazione di donazione del sangue
-dsp_blood_donor_description,Puoi donare il sangue alla stazione di razionamento per ricevere un buono pasto del valore di 40. Anche le sacche di sangue possono essere scambiate con un buono pasto del valore di 40.
+dsp_blood_donor_description,Una volta al giorno puoi usare una sacca di sangue per donare sangue e ricevere una sacca di sangue extra. Così il giorno dopo perderai un cliente.
 dsp_force_open_name,Forza bruta
 dsp_force_open_description,"Puoi aprire le casse di rifornimenti con la forza usando una tagliatrice al plasma o un piede di porco. Il piede di porco si rompe durante il lavoro, ma distrugge meno di quello che c'è dentro."
 dsp_vendetta_name,Vendetta
@@ -422,6 +422,7 @@ dsp_service_professional,Professionista
 dsp_vendetta_no_weapon,"Vendetta: non c'è nessun'arma nello zaino che porti, stasera non esci."
 dsp_vendetta_removed,Vendetta: un professionista ha sistemato tutto. Il tratto non c'è più.
 dsp_blood_donor_menu,Dona il sangue
+dsp_blood_donor_daily,Una volta al giorno
 dsp_blood_donor_done,Donazione completata: una sacca di sangue in più e domani perdi un cliente.
 dsp_blood_donor_already,Oggi hai già donato il sangue.
 dsp_blood_donor_no_space,Non c'è spazio per un'altra sacca di sangue.
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (nessun cliente adesso)
 dsp_blood_donor_row_done,Hai già donato oggi
 dsp_hydro_open_menu,Apri
 dsp_hydro_manual_name,Il segreto dell'idroponica nel tubo
-dsp_hydro_manual_desc,Senza di essa non puoi coltivare piante nel rubinetto.\nUn doppio clic su questo documento apre anche l'idroponica nel tubo.
+dsp_hydro_manual_desc,Senza di essa non puoi coltivare piante nel rubinetto.\nUn doppio clic su questo documento apre anche l'idroponica nel tubo.\nDevi sbloccare la conduttura dell'acqua per poter coltivare.
 dsp_unlicensed_name,Attività senza licenza
-dsp_unlicensed_description,Il funzionario della commissione arriva il quinto giorno.
+dsp_unlicensed_description,Il funzionario della commissione arriva il terzo giorno.
 dsp_water_vending_name,Distributore d'acqua
 dsp_water_vending_description,Inizi con un distributore d'acqua fuori dal negozio. I clienti possono comprare acqua da soli fuori orario.
 dsp_lucky_supply_name,Rifornimento fortunato
@@ -649,3 +650,87 @@ dsp_blood_donor_redeem,Scambia
 dsp_blood_donor_redeem_done,Scambiato: la sacca di sangue è diventata un buono pasto del valore di 40.
 dsp_around_world_80_name,Il giro del mondo in 80 giorni
 dsp_around_world_80_description,Inizi al giorno 80. Nella settimana seguente affronterai tutti gli eventi dei primi 80 giorni. Inizi con 1000 crediti e 15 di reputazione con ogni fazione. Avvertenza: potrebbe essere buggato.
+dsp_universal_liquid_name,Liquido universale
+dsp_universal_liquid_description,"Puoi usare il Nudka come cacciavite, tagliatrice al plasma, tronchese o estrattore di moduli. Inizi con una bottiglia di Nudka."
+dsp_beer_hall_orator_name,Oratore della birreria
+dsp_beer_hall_orator_description,"Inizi con una cassa di birra Red Imp. Ogni bottiglia di birra venduta garantisce 0,1 reputazione."
+dsp_manifest_destiny_name,Destino manifesto
+dsp_manifest_destiny_description,"Ottieni fortuna pari al giorno corrente, fino a 50. Inizi con uno di ogni dolce."
+dsp_tokyo_3_name,Tokyo-3
+dsp_tokyo_3_description,Il tuo affitto aumenta della metà e i prezzi degli immobili raddoppiano. Inizi con un'insegna al neon per armi da fuoco.
+dsp_double_minded_name,Doppio pensiero
+dsp_double_minded_description,Nei giorni dispari ottieni un bonus commerciale del 5% commerciando con donne; nei giorni pari vale per gli uomini.
+dsp_double_minded_bonus,Genere corrispondente: +X% bonus commerciale
+dsp_berserker_name,Berserker
+dsp_berserker_description,La polvere dei sogni ti fa sonnambulare di notte. Le ferite lievi non ostacolano le tue azioni.
+dsp_vampire_name,Vampiro
+dsp_vampire_description,"Devi bere regolarmente sacche di sangue, altrimenti subisci una penalità commerciale del -8%. Bere sangue blu ti conferisce il tratto Lingua d'argento finché non avrai di nuovo sete."
+dsp_vampire_penalty,Assetato: -X% penalità commerciale
+dsp_fifth_republic_name,La 5ª Repubblica
+dsp_fifth_republic_description,"Ogni settimana appare un evento ""Aumento del budget della sicurezza"". Il giorno in cui appare, c'è sempre un'ispezione a sorpresa."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Inizi con un distributore automatico e un distributore d'acqua. Una volta hai denunciato Lou, e tornerà presto."
+dsp_new_world_name,Il mondo nuovo
+
+dsp_new_world_description,Il Dipartimento della Sicurezza diventa Ministero dell'Amore. Il Ministero ha ricompense e penalità di reputazione diverse dall'originale e non ispeziona mai.
+
+dsp_new_world_faction,Ministero dell'Amore
+
+dsp_new_world_rep_loyal_name,Lealtà
+
+dsp_new_world_rep_loyal_desc,Le penalità di reputazione delle altre fazioni non hanno effetto.
+dsp_new_world_rep_loyal_flavor,Ministero dell'Amore ++bene.
+
+dsp_new_world_rep_scheduled_name,In programma
+
+dsp_new_world_rep_scheduled_desc,I colloqui amichevoli avvengono solo il lunedì.
+dsp_new_world_rep_scheduled_flavor,Una visita programmata è più comoda per tutti.
+
+dsp_new_world_rep_assembly_name,Luogo di ritrovo
+
+dsp_new_world_rep_assembly_desc,Le ricompense di reputazione a 20 e 0 delle altre fazioni sono sempre attive.
+dsp_new_world_rep_assembly_flavor,"Qui non ci sono uccelli dalle orecchie lunghe, perché sulla stazione non ci sono affatto uccelli."
+
+dsp_new_world_rep_surplus_name,Eccedenza del Ministero
+
+dsp_new_world_rep_surplus_desc,I mercanti di eccedenze del Ministero passano ogni tanto a vendere equipaggiamento dismesso.
+dsp_new_world_rep_surplus_flavor,Essere osservati dall'Amore della stazione non è sempre una brutta cosa.
+
+dsp_new_world_rep_requisition_name,Ordine di requisizione
+
+dsp_new_world_rep_requisition_desc,Gli ufficiali di requisizione del Ministero passano ogni tanto ad acquistare cibo e forniture mediche.
+dsp_new_world_rep_requisition_flavor,Anche l'Amore della stazione deve rifornirsi da qualche parte. Ti pagheranno un prezzo giusto.
+
+dsp_new_world_rep_repentance_name,Occasione di pentirsi
+
+dsp_new_world_rep_repentance_desc,Ottieni il 50% di reputazione in più dalle segnalazioni.
+dsp_new_world_rep_repentance_flavor,Hai bisogno di più fiducia. Puoi prenderla dagli altri.
+
+dsp_new_world_rep_restricted_name,Comunicazioni limitate
+
+dsp_new_world_rep_restricted_desc,Il telefono non è disponibile.
+dsp_new_world_rep_restricted_flavor,Qui è il Ministero dell'Amore. Il suo messaggio sarà registrato.
+
+dsp_new_world_rep_reeducation_name,Rieducazione
+
+dsp_new_world_rep_reeducation_desc,La prima volta che raggiungi questo livello ottieni i tratti Cittadino modello e Linguaccia.
+dsp_new_world_rep_reeducation_flavor,"Congratulazioni, cittadino. Hai sconfitto te stesso."
+
+dsp_new_world_rep_veto_name,Veto
+
+dsp_new_world_rep_veto_desc,Ogni giorno perdi 5 di reputazione con tutte le altre fazioni.
+dsp_new_world_rep_veto_flavor,Sei una spia. Fin dall'inizio.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,Il punto interrogativo non è la vera domanda. Il segno uguale lo è.
+
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Puoi combinare gli oggetti con la proprietà spazzatura in armi più preziose. La suoneria del telefono viene sostituita con una melodia a tema asiatico. Clic destro sulla spazzatura combina la spazzatura nello stesso contenitore.
+dsp_jackie_merge,Combina
+dsp_jackie_done,Hai combinato {0} oggetto/i spazzatura (valore {1}) in {2}.
+dsp_jackie_no_junk,Non hai oggetti spazzatura.
+dsp_jackie_no_weapon,Nessun'arma da mischia ottenibile da questi materiali.
+dsp_jackie_no_space,Non c'è spazio per l'arma.
+dsp_new_world_crime_poor,Cattiva condotta durante il colloquio

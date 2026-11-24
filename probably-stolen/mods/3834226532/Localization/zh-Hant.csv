@@ -1,4 +1,4 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,經銷商
 dsp_distributor_description,在跟隨導師訓練期間，你提前打點好了和各個廠家代表之間的關係。把握供貨渠道足以讓你快人一步。
@@ -408,11 +408,11 @@ dsp_foreknowledge_when_after, 天後
 dsp_foreknowledge_price_tag,價格
 dsp_foreknowledge_price_name,價格變動
 dsp_prohibition_name,禁酒令
-dsp_prohibition_description,所有酒水都被視為中級違禁品。發酵中的酒售價為50信用點且視為菸酒類。
+dsp_prohibition_description,所有酒水都被視為初級違禁品。發酵中的酒售價為50信用點且視為菸酒類。
 dsp_tobacco_tax_name,菸草稅
 dsp_tobacco_tax_description,香菸獲得50%零售加價。但你只能獲得這一部分額外加價的20%。
 dsp_blood_donor_name,捐血站
-dsp_blood_donor_description,你可以在配給站捐血來獲得 40 額度的食物券。血袋也可以被兌換為 40 額度的食物券。
+dsp_blood_donor_description,每天一次，你可以使用血袋進行獻血來獲得額外一個血袋。這會讓你在第二天錯過一個顧客。
 dsp_force_open_name,暴力破拆
 dsp_force_open_description,你可以用等離子切割機或撬棍強行打開物資箱。使用撬棍會將撬棍損毀，但破壞的內部物品更少。
 dsp_vendetta_name,仇家
@@ -421,6 +421,7 @@ dsp_service_professional,專業人士
 dsp_vendetta_no_weapon,仇家：出門帶的背包裡沒有武器，今晚出不了門。
 dsp_vendetta_removed,仇家：專業人士替你打點好了，這個特質被移除。
 dsp_blood_donor_menu,獻血
+dsp_blood_donor_daily,每日限一次
 dsp_blood_donor_done,獻血完成：多了一個血袋，明天會少一個顧客。
 dsp_blood_donor_already,今天已經獻過血了。
 dsp_blood_donor_no_space,血袋沒地方放了。
@@ -440,7 +441,7 @@ dsp_revolutionary_influence_slip_body,奧丁臨走前壓低了聲音：三天之
 dsp_service_professional_tooltip,讓你的仇家不再打擾你。
 dsp_scav_drone_name,拾荒無人機
 dsp_scav_drone_description,你擁有額外兩個口袋。拾荒時獲得垃圾的機率下降。
-dsp_trust_fund_name,KFC信託基金
+dsp_trust_fund_name,信託基金
 dsp_trust_fund_description,每周四獲得50信用點。
 dsp_snake_oil_name,蛇油
 dsp_snake_oil_description,開局獲得20瓶澱粉夢塵，它們不算作違禁品。
@@ -526,9 +527,9 @@ dsp_newspaper_stand_no_customer_hint,（現在沒有顧客）
 dsp_blood_donor_row_done,今天已經獻過血了
 dsp_hydro_open_menu,打開
 dsp_hydro_manual_name,水管水培之秘訣
-dsp_hydro_manual_desc,沒了它你就沒法在水管裡種植物了。\n雙擊此文件也可以打開水管水培介面。
+dsp_hydro_manual_desc,沒了它你就沒法在水管裡種植物了。\n雙擊此文件也可以打開水管水培介面。\n你需要開通水管才能進行水培。
 dsp_unlicensed_name,無證經營
-dsp_unlicensed_description,貿易委員會官員在第五天就會上門。
+dsp_unlicensed_description,貿易委員會官員在第三天就會上門。
 dsp_water_vending_name,自動售水機
 dsp_water_vending_description,初始自帶一台安置於店外的自動售水機。允許顧客在非營業時間自助購買飲用水。
 dsp_lucky_supply_name,幸運補給
@@ -648,3 +649,87 @@ dsp_blood_donor_redeem,兌換
 dsp_blood_donor_redeem_done,兌換完成：血袋換成了 40 額度的食物券。
 dsp_around_world_80_name,80天環遊地球
 dsp_around_world_80_description,從第 80 天開始遊戲。接下來你會遭遇前 80 天發生的所有事件。開局獲得 1000 信用點和 15 點所有派系聲望。警告：可能有 bug。
+dsp_universal_liquid_name,萬能液體
+dsp_universal_liquid_description,你可以將努特加當做螺絲刀/等離子切割機/剪線鉗/模組提取器使用。初始攜帶一瓶努特加。
+dsp_beer_hall_orator_name,啤酒館演說家
+dsp_beer_hall_orator_description,初始獲得一箱紅魔鬼啤酒。每賣出一瓶啤酒會獲得0.1聲望。
+dsp_manifest_destiny_name,昭昭天命
+dsp_manifest_destiny_description,獲得和天數相等的幸運，至多50。初始獲得所有甜食各一份。
+dsp_tokyo_3_name,第三新東京市
+dsp_tokyo_3_description,房租提高一半，房價翻倍。初始獲得槍械霓虹燈牌。
+dsp_double_minded_name,搖擺
+dsp_double_minded_description,在奇數日和女性交易時獲得5%交易獎勵，在偶數日則改為和男性。
+dsp_double_minded_bonus,性別匹配：+X% 交易獎勵
+dsp_berserker_name,狂戰士
+dsp_berserker_description,服用夢塵會讓你在夜間夢遊。輕傷不會阻礙你的行動。
+dsp_vampire_name,吸血鬼
+dsp_vampire_description,你需要定期吸取血袋，否則會受到-8%交易懲罰。吸取藍血會使你獲得舌燦蓮花特質直到你再次飢渴。
+dsp_vampire_penalty,飢渴：-X% 交易懲罰
+dsp_fifth_republic_name,第五共和國
+dsp_fifth_republic_description,每週都會出現「治安部預算增加」事件。出現「治安部預算增加」事件的當天一定會有突擊檢查。
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,初始獲得自動售貨機、售水機。你曾經舉報過盧，她會在不久後回來。
+dsp_new_world_name,美麗新世界
+
+dsp_new_world_description,治安部更名為仁愛部。仁愛部擁有和原版不同的聲望獎勵和懲罰而且不會「檢查」。
+
+dsp_new_world_faction,仁愛部
+
+dsp_new_world_rep_loyal_name,忠誠
+
+dsp_new_world_rep_loyal_desc,其他派系的聲望懲罰無法生效。
+dsp_new_world_rep_loyal_flavor,愛部++好。
+
+dsp_new_world_rep_scheduled_name,計劃內
+
+dsp_new_world_rep_scheduled_desc,友好談話只在週一進行。
+dsp_new_world_rep_scheduled_flavor,定時上門對誰都更方便。
+
+dsp_new_world_rep_assembly_name,集會場所
+
+dsp_new_world_rep_assembly_desc,其他派系的20和0點聲望獎勵總會生效。
+dsp_new_world_rep_assembly_flavor,這裡沒有長耳朵的鳥，因爲空間站根本就沒有鳥。
+
+dsp_new_world_rep_surplus_name,仁愛部盈餘
+
+dsp_new_world_rep_surplus_desc,仁愛部盈餘物資商人偶爾造訪，出售退役裝備。
+dsp_new_world_rep_surplus_flavor,被空間站仁愛部盯着並不總是一件壞事。
+
+dsp_new_world_rep_requisition_name,徵用令
+
+dsp_new_world_rep_requisition_desc,仁愛部徵用官偶爾造訪，收購食物、醫療物資。
+dsp_new_world_rep_requisition_flavor,即使是空間站仁愛部也得找人進貨，他們會付給你公道的價格。
+
+dsp_new_world_rep_repentance_name,悔過機會
+
+dsp_new_world_rep_repentance_desc,獲得50%舉報聲望獎勵。
+dsp_new_world_rep_repentance_flavor,你需要更多信任，從別人身上可以獲得它。
+
+dsp_new_world_rep_restricted_name,受限交流
+
+dsp_new_world_rep_restricted_desc,電話不可用。
+dsp_new_world_rep_restricted_flavor,這裡是仁愛部，您的留言將會被轉入錄音。
+
+dsp_new_world_rep_reeducation_name,思想改造
+
+dsp_new_world_rep_reeducation_desc,首次到達這一等級時，獲得模範公民和大嘴巴特質。
+dsp_new_world_rep_reeducation_flavor,恭喜你公民，你已經戰勝了自己。
+
+dsp_new_world_rep_veto_name,否決
+
+dsp_new_world_rep_veto_desc,每天減少5點所有其他派系聲望。
+dsp_new_world_rep_veto_flavor,你是一個間諜，從最開始就是。
+
+dsp_new_world_rep_twoplustwo_name,2+2=？
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,問號不是真正的問題，等號才是。
+
+dsp_jackie_chan_name,成龍
+dsp_jackie_chan_description,你可以將帶有垃圾屬性的物品拼合成價值更高的武器。電話鈴聲會被一段亞洲主題旋律取代。右鍵拼合同一容器中的垃圾。
+dsp_jackie_merge,拼合
+dsp_jackie_done,用 {0} 件垃圾（價值 {1}）拼出了 {2}。
+dsp_jackie_no_junk,身上沒有垃圾物品。
+dsp_jackie_no_weapon,找不到可以拼成的近戰武器。
+dsp_jackie_no_space,武器沒地方放了。
+dsp_new_world_crime_poor,在談話中表現不佳

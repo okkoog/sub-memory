@@ -1,4 +1,4 @@
-﻿# Стартовая специализация: Дистрибьютор
+# Стартовая специализация: Дистрибьютор
 # Термины по официальной английской локализации: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Дистрибьютор
 dsp_distributor_description,"Пока вы учились у Наставника, вы уже работали с представителями поставщиков. Контроль над цепочкой поставок ставит вас на шаг впереди."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, дней спустя
 dsp_foreknowledge_price_tag,цена
 dsp_foreknowledge_price_name,Изменение цены
 dsp_prohibition_name,Сухой закон
-dsp_prohibition_description,Весь алкоголь считается контрабандой средней категории. Бражка стоит 50 и считается алкоголем и табаком.
+dsp_prohibition_description,Весь алкоголь считается контрабандой низкой категории. Бражка стоит 50 и считается алкоголем и табаком.
 dsp_tobacco_tax_name,Налог на табак
 dsp_tobacco_tax_description,Сигареты получают 50% розничной наценки. Но вам достаётся только 20% этой наценки.
 dsp_blood_donor_name,Пункт сдачи крови
-dsp_blood_donor_description,Вы можете сдать кровь на распределительной станции и получить продовольственный талон номиналом 40. Пакеты крови также можно обменять на продовольственный талон номиналом 40.
+dsp_blood_donor_description,"Раз в день вы можете сдать кровь, использовав пакет с кровью, и получить ещё один пакет с кровью. Из-за этого на следующий день вы потеряете одного клиента."
 dsp_force_open_name,Грубая сила
 dsp_force_open_description,"Вы можете вскрыть ящики с припасами плазменным резаком или ломом. Лом при этом сломается, но уничтожит меньше содержимого."
 dsp_vendetta_name,Вендетта
@@ -422,9 +422,10 @@ dsp_service_professional,Профессионал
 dsp_vendetta_no_weapon,"Вендетта: в рюкзаке, который вы берёте, нет оружия - сегодня вечером вы никуда не пойдёте."
 dsp_vendetta_removed,Вендетта: профессионал всё уладил. Перк снят.
 dsp_blood_donor_menu,Сдать кровь
-dsp_blood_donor_done,"Донорство завершено: на один пакет крови больше, а завтра вы упустите одного клиента."
+dsp_blood_donor_daily,Раз в день
+dsp_blood_donor_done,"Донорство завершено: на один пакет с кровью больше, а завтра вы упустите одного клиента."
 dsp_blood_donor_already,Вы уже сдавали кровь сегодня.
-dsp_blood_donor_no_space,Для ещё одного пакета крови нет места.
+dsp_blood_donor_no_space,Для ещё одного пакета с кровью нет места.
 dsp_revolutionary_influence_name,Влияние Революции
 dsp_revolutionary_influence_description,"Если ваша репутация с Революцией составляет 20 или выше, Один после сделки расскажет вам о событии, которое Революция задумала в ближайшие три дня."
 dsp_cracker_name,Взломщик
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (сейчас нет покупателя)
 dsp_blood_donor_row_done,Сегодня уже сдавали кровь
 dsp_hydro_open_menu,Открыть
 dsp_hydro_manual_name,Секрет гидропоники в кране
-dsp_hydro_manual_desc,Без неё выращивать растения в водопроводном кране нельзя.\nДвойной щелчок по этому документу тоже открывает гидропонию в кране.
+dsp_hydro_manual_desc,"Без неё выращивать растения в водопроводном кране нельзя.\nДвойной щелчок по этому документу тоже открывает гидропонию в кране.\nЧтобы выращивать растения, нужно открыть водопровод."
 dsp_unlicensed_name,Работа без лицензии
-dsp_unlicensed_description,Чиновник торговой комиссии приходит на пятый день.
+dsp_unlicensed_description,Чиновник торговой комиссии приходит на третий день.
 dsp_water_vending_name,Автомат с водой
 dsp_water_vending_description,Вы начинаете с автоматом с водой у входа в магазин. Клиенты могут сами покупать питьевую воду в нерабочее время.
 dsp_lucky_supply_name,Поставка удачи
@@ -646,6 +647,97 @@ dsp_vanessa_1_4,"Это нам не нужно, забирай."
 dsp_hydro_alcohol_smooth_name,Алкогольный поток
 dsp_hydro_alcohol_smooth_description,"Благодаря популярности гидропоники в трубах водопровод заполонили тростник, питафрукт и забродившие блумберри. Большинство примесей в воде из труб заменено крахмалом и спиртом."
 dsp_blood_donor_redeem,Обменять
-dsp_blood_donor_redeem_done,Обменяно: пакет крови стал продовольственным талоном номиналом 40.
+dsp_blood_donor_redeem_done,Обменяно: пакет с кровью стал продуктовой карточкой номиналом 40.
 dsp_around_world_80_name,Вокруг света за 80 дней
 dsp_around_world_80_description,Вы начинаете на 80-й день. В течение следующей недели вы столкнётесь со всеми событиями первых 80 дней. Вы начинаете с 1000 кредитов и 15 репутации у каждой фракции. Внимание: возможны ошибки.
+dsp_universal_liquid_name,Универсальная жидкость
+dsp_universal_liquid_description,"Вы можете использовать Нудку как отвёртку, плазменный резак, кусачки для проводов или извлекатель модулей. Вы начинаете с одной бутылкой Нудки."
+dsp_beer_hall_orator_name,Пивной оратор
+dsp_beer_hall_orator_description,"Вы начинаете с ящика пива «Красный бес». Каждая проданная бутылка пива приносит 0,1 репутации."
+dsp_manifest_destiny_name,Явное предначертание
+dsp_manifest_destiny_description,"Вы получаете удачу, равную текущему дню, до 50. Вы начинаете с одной единицей каждого лакомства."
+dsp_tokyo_3_name,Токио-3
+dsp_tokyo_3_description,"Ваша аренда увеличена наполовину, а цены на недвижимость удвоены. Вы начинаете с неоновой вывеской «Оружие»."
+dsp_double_minded_name,Двойственность
+dsp_double_minded_description,В нечётные дни вы получаете 5% торгового бонуса при торговле с женщинами; в чётные — с мужчинами.
+dsp_double_minded_bonus,Совпадение пола: +X% торгового бонуса
+dsp_berserker_name,Берсерк
+dsp_berserker_description,Приём пыльцы снов заставляет вас лунатить ночью. Лёгкие ранения не мешают вашим действиям.
+dsp_vampire_name,Вампир
+dsp_vampire_description,"Вы должны регулярно пить пакеты с кровью, иначе получаете -8% торгового штрафа. Синяя кровь даёт вам черту «Серебряный язык», пока вы снова не почувствуете жажду."
+dsp_vampire_penalty,Жажда: -X% торгового штрафа
+dsp_fifth_republic_name,Пятая республика
+dsp_fifth_republic_description,Каждую неделю появляется событие «Увеличение бюджета службы безопасности». В день его появления всегда проходит внезапная проверка.
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Вы начинаете с торговым автоматом и автоматом по продаже воды. Вы когда-то донесли на Лу, и она скоро вернётся."
+dsp_new_world_name,О дивный новый мир
+
+dsp_new_world_description,"Департамент безопасности переименовывается в Министерство любви. У Министерства другие награды и штрафы репутации, и оно никогда не проверяет."
+
+dsp_new_world_faction,Министерство любви
+
+dsp_new_world_rep_loyal_name,Лояльность
+
+dsp_new_world_rep_loyal_desc,Штрафы репутации других фракций не действуют.
+dsp_new_world_rep_loyal_flavor,Министерство любви ++хорошо.
+
+dsp_new_world_rep_scheduled_name,По плану
+
+dsp_new_world_rep_scheduled_desc,Дружеские беседы проходят только по понедельникам.
+dsp_new_world_rep_scheduled_flavor,Запланированный визит удобнее для всех.
+
+dsp_new_world_rep_assembly_name,Место собраний
+
+dsp_new_world_rep_assembly_desc,Награды репутации 20 и 0 других фракций действуют всегда.
+dsp_new_world_rep_assembly_flavor,"Здесь нет длинноухих птиц, потому что на станции вообще нет птиц."
+
+dsp_new_world_rep_surplus_name,Излишки Министерства
+
+dsp_new_world_rep_surplus_desc,Торговцы излишками Министерства иногда заходят и продают списанное снаряжение.
+dsp_new_world_rep_surplus_flavor,Когда за тобой следит Любовь станции — это не всегда плохо.
+
+dsp_new_world_rep_requisition_name,Приказ о реквизиции
+
+dsp_new_world_rep_requisition_desc,Офицеры реквизиции Министерства иногда заходят и скупают еду и медикаменты.
+dsp_new_world_rep_requisition_flavor,Даже Любви станции нужно где-то закупаться. Тебе заплатят честную цену.
+
+dsp_new_world_rep_repentance_name,Шанс на раскаяние
+
+dsp_new_world_rep_repentance_desc,Вы получаете на 50% больше репутации за доносы.
+dsp_new_world_rep_repentance_flavor,Тебе нужно больше доверия. Его можно взять у других.
+
+dsp_new_world_rep_restricted_name,Ограниченная связь
+
+dsp_new_world_rep_restricted_desc,Телефон недоступен.
+dsp_new_world_rep_restricted_flavor,Это Министерство любви. Ваше сообщение будет записано.
+
+dsp_new_world_rep_reeducation_name,Перевоспитание
+
+dsp_new_world_rep_reeducation_desc,При первом достижении этого уровня вы получаете черты «Образцовый гражданин» и «Болтун».
+dsp_new_world_rep_reeducation_flavor,"Поздравляем, гражданин. Вы победили самого себя."
+
+dsp_new_world_rep_veto_name,Вето
+
+dsp_new_world_rep_veto_desc,Каждый день вы теряете 5 репутации у всех остальных фракций.
+dsp_new_world_rep_veto_flavor,Ты шпион. С самого начала.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,Вопросительный знак — не настоящий вопрос. Настоящий — знак равенства.
+
+dsp_jackie_chan_name,Джеки Чан
+
+dsp_jackie_chan_description,Вы можете объединять предметы со свойством «мусор» в более ценное оружие. Рингтон телефона заменяется мелодией в азиатском стиле. Щелчок правой кнопкой по мусору объединяет мусор в том же контейнере.
+
+dsp_jackie_merge,Собрать
+
+dsp_jackie_done,Собрано из {0} мусорных предметов (стоимость {1}) — {2}.
+
+dsp_jackie_no_junk,У вас нет мусорных предметов.
+
+dsp_jackie_no_weapon,Из этого нельзя собрать оружие ближнего боя.
+
+dsp_jackie_no_space,Нет места для оружия.
+
+dsp_new_world_crime_poor,Плохое поведение во время беседы

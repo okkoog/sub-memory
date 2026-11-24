@@ -1,4 +1,4 @@
-﻿# Specjalizacja startowa: Dystrybutor
+# Specjalizacja startowa: Dystrybutor
 # Terminologia wg oficjalnego angielskiego: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Dystrybutor
 dsp_distributor_description,"Podczas szkolenia u Mentora pracowałeś już z przedstawicielami dostawców. Kontrola łańcucha dostaw daje ci przewagę."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, dni
 dsp_foreknowledge_price_tag,cena
 dsp_foreknowledge_price_name,Zmiana ceny
 dsp_prohibition_name,Prohibicja
-dsp_prohibition_description,Każdy alkohol to kontrabanda średniego stopnia. Fermentujące wino sprzedaje się za 50 i liczy jako wyroby alkoholowe i tytoniowe.
+dsp_prohibition_description,Każdy alkohol to kontrabanda niskiego stopnia. Fermentujące wino sprzedaje się za 50 i liczy jako wyroby alkoholowe i tytoniowe.
 dsp_tobacco_tax_name,Podatek od tytoniu
 dsp_tobacco_tax_description,Papierosy mają 50% narzutu detalicznego. Ale dostajesz tylko 20% tego narzutu.
 dsp_blood_donor_name,Stacja krwiodawstwa
-dsp_blood_donor_description,Możesz oddać krew w stacji racjonowania i otrzymać bon żywnościowy o wartości 40. Worki krwi również można wymienić na bon żywnościowy o wartości 40.
+dsp_blood_donor_description,"Raz dziennie możesz oddać krew, używając torby na krew, i otrzymać dodatkową torbę na krew. Sprawi to, że następnego dnia stracisz jednego klienta."
 dsp_force_open_name,Brutalna siła
 dsp_force_open_description,"Możesz otworzyć skrzynie z zapasami przecinakiem plazmowym albo łomem. Łom przy tym pęknie, ale zniszczy mniej zawartości."
 dsp_vendetta_name,Wendeta
@@ -422,9 +422,10 @@ dsp_service_professional,Profesjonalista
 dsp_vendetta_no_weapon,"Wendeta: w plecaku, który bierzesz, nie ma broni - dziś wieczorem nie wyjdziesz."
 dsp_vendetta_removed,Wendeta: profesjonalista to załatwił. Ta cecha zniknęła.
 dsp_blood_donor_menu,Oddaj krew
-dsp_blood_donor_done,"Krew oddana: jeden worek z krwią więcej, a jutro ominie cię jeden klient."
+dsp_blood_donor_daily,Raz dziennie
+dsp_blood_donor_done,"Krew oddana: jedna torba na krew więcej, a jutro ominie cię jeden klient."
 dsp_blood_donor_already,Dziś już oddałeś krew.
-dsp_blood_donor_no_space,Nie ma miejsca na kolejny worek z krwią.
+dsp_blood_donor_no_space,Nie ma miejsca na kolejną torbę na krew.
 dsp_revolutionary_influence_name,Wpływ Rewolucji
 dsp_revolutionary_influence_description,"Jeśli twoja reputacja u Rewolucji wynosi 20 lub więcej, Odin po transakcji powie ci, jakie wydarzenie Rewolucja planuje w ciągu trzech dni."
 dsp_cracker_name,Otwieracz skrzyń
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (teraz nie ma klienta)
 dsp_blood_donor_row_done,Już oddano dziś krew
 dsp_hydro_open_menu,Otwórz
 dsp_hydro_manual_name,Sekret hydroponiki w rurze
-dsp_hydro_manual_desc,Bez niego nie uprawiasz roślin w kranie.\nDwukrotne kliknięcie tego dokumentu otwiera też hydroponikę w rurze.
+dsp_hydro_manual_desc,"Bez niego nie uprawiasz roślin w kranie.\nDwukrotne kliknięcie tego dokumentu otwiera też hydroponikę w rurze.\nMusisz odblokować wodociąg, aby uprawiać rośliny."
 dsp_unlicensed_name,Działalność bez licencji
-dsp_unlicensed_description,Urzędnik komisji handlowej przychodzi piątego dnia.
+dsp_unlicensed_description,Urzędnik komisji handlowej przychodzi trzeciego dnia.
 dsp_water_vending_name,Automat z wodą
 dsp_water_vending_description,Zaczynasz z automatem z wodą przed sklepem. Klienci mogą sami kupować wodę pitną poza godzinami otwarcia.
 dsp_lucky_supply_name,Zapas szczęścia
@@ -646,6 +647,97 @@ dsp_vanessa_1_4,"Tego nie potrzebujemy, weź to."
 dsp_hydro_alcohol_smooth_name,Przepływ alkoholu
 dsp_hydro_alcohol_smooth_description,"Dzięki popularności hydroponiki w rurach wodociągi zostały opanowane przez trzciny, Nutriowoc i sfermentowane bluberries. Większość zanieczyszczeń w wodzie z rur zastąpiono skrobią i alkoholem."
 dsp_blood_donor_redeem,Wymień
-dsp_blood_donor_redeem_done,Wymieniono: worek krwi stał się bonem żywnościowym o wartości 40.
+dsp_blood_donor_redeem_done,Wymieniono: torba na krew stała się kartką żywnościową o wartości 40.
 dsp_around_world_80_name,W 80 dni dookoła świata
 dsp_around_world_80_description,Zaczynasz w 80. dniu. W kolejnym tygodniu przeżyjesz wszystkie wydarzenia z pierwszych 80 dni. Zaczynasz z 1000 kredytów i 15 reputacji u każdej frakcji. Uwaga: może zawierać błędy.
+dsp_universal_liquid_name,Uniwersalny płyn
+dsp_universal_liquid_description,"Możesz używać Pożywódki jako śrubokręta, przecinaka plazmowego, nożyc do drutu albo ekstraktora modułów. Zaczynasz z jedną butelką Pożywódki."
+dsp_beer_hall_orator_name,Mówca piwny
+dsp_beer_hall_orator_description,"Zaczynasz z kratką piwa Bordowy Bies. Każda sprzedana butelka piwa daje 0,1 reputacji."
+dsp_manifest_destiny_name,Przeznaczenie
+dsp_manifest_destiny_description,"Otrzymujesz szczęście równe obecnemu dniowi, do 50. Zaczynasz z jednym egzemplarzem każdego słodycza."
+dsp_tokyo_3_name,Tokyo-3
+dsp_tokyo_3_description,"Twój czynsz rośnie o połowę, a ceny nieruchomości się podwajają. Zaczynasz z neonową reklamą broni palnej."
+dsp_double_minded_name,Dwulicowość
+dsp_double_minded_description,W dni nieparzyste zyskujesz 5% premii handlowej przy handlu z kobietami; w dni parzyste dotyczy to mężczyzn.
+dsp_double_minded_bonus,Zgodna płeć: +X% premii handlowej
+dsp_berserker_name,Berserker
+dsp_berserker_description,"Zażycie pyłu snów sprawia, że lunatykujesz nocą. Lekkie rany nie utrudniają twoich działań."
+dsp_vampire_name,Wampir
+dsp_vampire_description,"Musisz regularnie pić krew z toreb na krew, inaczej otrzymujesz -8% kary handlowej. Picie niebieskiej krwi daje ci cechę Srebrny język, dopóki znów nie poczujesz pragnienia."
+dsp_vampire_penalty,Spragniony: -X% kary handlowej
+dsp_fifth_republic_name,V Republika
+dsp_fifth_republic_description,"Co tydzień pojawia się wydarzenie „Zwiększenie budżetu ochrony“. W dniu, w którym się pojawia, zawsze odbywa się niezapowiedziana inspekcja."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Zaczynasz z automatem sprzedażowym i dystrybutorem wody. Kiedyś zgłosiłeś Lou, a ona wkrótce wróci."
+dsp_new_world_name,Nowy wspaniały świat
+
+dsp_new_world_description,Departament Bezpieczeństwa zostaje przemianowany na Ministerstwo Miłości. Ministerstwo ma inne niż w oryginale nagrody i kary reputacji i nigdy nie kontroluje.
+
+dsp_new_world_faction,Ministerstwo Miłości
+
+dsp_new_world_rep_loyal_name,Lojalność
+
+dsp_new_world_rep_loyal_desc,Kary reputacji innych frakcji nie działają.
+dsp_new_world_rep_loyal_flavor,Ministerstwo Miłości ++dobrze.
+
+dsp_new_world_rep_scheduled_name,W planie
+
+dsp_new_world_rep_scheduled_desc,Przyjacielskie rozmowy odbywają się tylko w poniedziałki.
+dsp_new_world_rep_scheduled_flavor,Zaplanowana wizyta jest wygodniejsza dla wszystkich.
+
+dsp_new_world_rep_assembly_name,Miejsce zgromadzeń
+
+dsp_new_world_rep_assembly_desc,Nagrody reputacji 20 i 0 innych frakcji są zawsze aktywne.
+dsp_new_world_rep_assembly_flavor,"Nie ma tu długouchych ptaków, bo na stacji nie ma w ogóle ptaków."
+
+dsp_new_world_rep_surplus_name,Nadwyżka Ministerstwa
+
+dsp_new_world_rep_surplus_desc,Handlarze nadwyżek Ministerstwa czasem odwiedzają sklep i sprzedają wycofany sprzęt.
+dsp_new_world_rep_surplus_flavor,Bycie obserwowanym przez Miłość stacji nie zawsze jest złe.
+
+dsp_new_world_rep_requisition_name,Nakaz rekwizycji
+
+dsp_new_world_rep_requisition_desc,Oficerowie rekwizycyjni Ministerstwa czasem odwiedzają sklep i kupują żywność oraz zaopatrzenie medyczne.
+dsp_new_world_rep_requisition_flavor,Nawet Miłość stacji musi skądś brać towar. Zapłacą ci uczciwą cenę.
+
+dsp_new_world_rep_repentance_name,Szansa na skruchę
+
+dsp_new_world_rep_repentance_desc,Otrzymujesz o 50% więcej reputacji za donosy.
+dsp_new_world_rep_repentance_flavor,Potrzebujesz więcej zaufania. Możesz je wziąć od innych.
+
+dsp_new_world_rep_restricted_name,Ograniczona komunikacja
+
+dsp_new_world_rep_restricted_desc,Telefon jest niedostępny.
+dsp_new_world_rep_restricted_flavor,Tu Ministerstwo Miłości. Twoja wiadomość zostanie nagrana.
+
+dsp_new_world_rep_reeducation_name,Reedukacja
+
+dsp_new_world_rep_reeducation_desc,Przy pierwszym osiągnięciu tego poziomu otrzymujesz cechy Wzorcowy obywatel i Gaduła.
+dsp_new_world_rep_reeducation_flavor,"Gratulacje, obywatelu. Pokonałeś samego siebie."
+
+dsp_new_world_rep_veto_name,Weto
+
+dsp_new_world_rep_veto_desc,Codziennie tracisz 5 reputacji u wszystkich pozostałych frakcji.
+dsp_new_world_rep_veto_flavor,Jesteś szpiegiem. Od samego początku.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,Znak zapytania nie jest prawdziwym pytaniem. Znak równości jest.
+
+dsp_jackie_chan_name,Jackie Chan
+
+dsp_jackie_chan_description,Możesz łączyć przedmioty o właściwości „śmieci” w bardziej wartościowe bronie. Dzwonek telefonu zostaje zastąpiony melodią o azjatyckim klimacie. Kliknięcie prawym przyciskiem na śmieci łączy śmieci w tym samym pojemniku.
+
+dsp_jackie_merge,Połącz
+
+dsp_jackie_done,Połączono {0} przedmiot(ów) śmieci (wartość {1}) w {2}.
+
+dsp_jackie_no_junk,Nie masz przedmiotów śmieci.
+
+dsp_jackie_no_weapon,Nie da się z tego zrobić broni wręcz.
+
+dsp_jackie_no_space,Brak miejsca na broń.
+
+dsp_new_world_crime_poor,Złe zachowanie podczas rozmowy

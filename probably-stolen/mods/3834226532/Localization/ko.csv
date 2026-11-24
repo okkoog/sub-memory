@@ -1,4 +1,4 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,유통업자
 dsp_distributor_description,"스승 밑에서 수련하던 시절 당신은 이미 공급업자 담당자들을 상대해 왔습니다. 공급망을 쥐고 있으면 한발 앞서 나갈 수 있습니다."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, 일 뒤
 dsp_foreknowledge_price_tag,가격
 dsp_foreknowledge_price_name,가격 변동
 dsp_prohibition_name,금주법
-dsp_prohibition_description,모든 술이 중급 밀수품으로 취급된다. 발효 중인 술은 50에 팔리며 주류·담배류로 취급된다.
+dsp_prohibition_description,모든 술이 초급 밀수품으로 취급된다. 발효 중인 술은 50에 팔리며 주류·담배류로 취급된다.
 dsp_tobacco_tax_name,담배세
 dsp_tobacco_tax_description,담배에 소매가 50% 할증이 붙는다. 다만 그 할증분의 20%만 받는다.
 dsp_blood_donor_name,헌혈소
-dsp_blood_donor_description,배급소에서 헌혈하면 40 액면가의 식량 배급권을 받을 수 있다. 혈혈주머니도 40 액면가의 식량 배급권으로 교환할 수 있다.
+dsp_blood_donor_description,"하루에 한 번, 혈액팩을 사용해 헌혈하면 혈액팩을 하나 더 받습니다. 그 대신 다음 날 손님 한 명을 놓습니다."
 dsp_force_open_name,강제 개봉
 dsp_force_open_description,플라즈마 커터나 크로우바로 보급 상자를 강제로 열 수 있습니다. 크로우바는 이 과정에서 부러지지만 안에 있는 물건은 덜 망가집니다.
 dsp_vendetta_name,원한
@@ -422,6 +422,7 @@ dsp_service_professional,전문가
 dsp_vendetta_no_weapon,원한: 들고 나갈 가방에 무기가 없어 오늘 밤에는 나갈 수 없습니다.
 dsp_vendetta_removed,원한: 전문가가 알아서 처리했습니다. 이 특성은 제거되었습니다.
 dsp_blood_donor_menu,헌혈하기
+dsp_blood_donor_daily,하루 한 번
 dsp_blood_donor_done,"헌혈 완료: 혈액팩이 하나 늘고, 내일은 손님 한 명을 놓칩니다."
 dsp_blood_donor_already,오늘은 이미 헌혈했습니다.
 dsp_blood_donor_no_space,혈액팩을 둘 자리가 없습니다.
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (지금 손님이 없음)
 dsp_blood_donor_row_done,오늘은 이미 헌혈했다
 dsp_hydro_open_menu,열기
 dsp_hydro_manual_name,수도 수경의 비결
-dsp_hydro_manual_desc,이것이 없으면 수도꼭지에서 식물을 기를 수 없다.\n이 문서를 더블 클릭해도 수도 수경 화면을 열 수 있다.
+dsp_hydro_manual_desc,이것이 없으면 수도꼭지에서 식물을 기를 수 없다.\n이 문서를 더블 클릭해도 수도 수경 화면을 열 수 있다.\n수경 재배를 하려면 수도관을 개방해야 한다.
 dsp_unlicensed_name,무허가 영업
-dsp_unlicensed_description,무역 위원회 담당자가 5일째에 방문합니다.
+dsp_unlicensed_description,무역 위원회 담당자가 3일째에 방문합니다.
 dsp_water_vending_name,자동 물 판매기
 dsp_water_vending_description,가게 밖에 자동 물 판매기가 함께 제공됩니다. 영업시간 외에도 손님이 직접 식수를 살 수 있습니다.
 dsp_lucky_supply_name,행운 보급
@@ -646,6 +647,98 @@ dsp_vanessa_1_4,"이건 우리에게 필요 없다, 가져라."
 dsp_hydro_alcohol_smooth_name,알코올 순조
 dsp_hydro_alcohol_smooth_description,파이프 수경 재배의 유행으로 수도 시스템은 갈대·영양과일·발효된 블룸베리로 뒤덮였다. 파이프 물의 불순물 대부분이 전분과 알코올로 대체되었다.
 dsp_blood_donor_redeem,교환
-dsp_blood_donor_redeem_done,교환 완료: 혈액주머니가 40 액면가의 식량 배급권이 되었다.
+dsp_blood_donor_redeem_done,교환 완료: 혈액팩이 40 액면가의 식량 배급권이 되었다.
 dsp_around_world_80_name,80일간의 세계 일주
 dsp_around_world_80_description,80일차부터 게임이 시작된다. 이후 일주일 동안 처음 80일 동안 일어난 모든 이벤트를 겪는다. 시작 시 1000 크레딧과 모든 파벌 평판 15를 얻는다. 경고: 버그가 있을 수 있음.
+dsp_universal_liquid_name,만능 액체
+dsp_universal_liquid_description,"누드카를 드라이버, 플라즈마 커터, 와이어 커터, 모듈 추출기로 쓸 수 있다. 시작 시 누드카 한 병을 갖는다."
+dsp_beer_hall_orator_name,비어홀 연설가
+dsp_beer_hall_orator_description,시작 시 Red Imp 맥주 한 상자를 가진다. 맥주를 한 병 팔 때마다 평판 0.1을 얻는다.
+dsp_manifest_destiny_name,명백한 운명
+dsp_manifest_destiny_description,현재 일수와 같은 만큼의 행운을 얻는다(최대 50). 시작 시 모든 단 것을 하나씩 가진다.
+dsp_tokyo_3_name,제3신도쿄시
+dsp_tokyo_3_description,"집세가 절반 오르고, 부동산 가격이 두 배가 된다. 시작 시 총기 네온 간판을 가진다."
+dsp_double_minded_name,이중적인 마음
+dsp_double_minded_description,"홀수일에는 여성과 거래할 때 5% 거래 보너스, 짝수일에는 남성과 거래할 때 5% 거래 보너스."
+dsp_double_minded_bonus,성별 일치: +X% 거래 보너스
+dsp_berserker_name,버서커
+dsp_berserker_description,꿈가루를 복용하면 밤에 몽유한다. 가벼운 부상은 행동을 방해하지 않는다.
+dsp_vampire_name,뱀파이어
+dsp_vampire_description,"정기적으로 혈액팩을 마셔야 하며, 그렇지 않으면 -8% 거래 패널티를 받는다. 푸른 피를 마시면 다시 목마를 때까지 감언이설 특성을 얻는다."
+dsp_vampire_penalty,목마름: -X% 거래 패널티
+dsp_fifth_republic_name,제5공화국
+dsp_fifth_republic_description,"매주 ""치안부 예산 증가"" 이벤트가 발생한다. 그 이벤트가 발생한 날에는 반드시 불시 검사가 있다."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"시작 시 자동판매기와 물 판매기를 가진다. 한때 루를 고발한 적이 있어, 그녀는 곧 돌아온다."
+dsp_new_world_name,멋진 신세계
+
+dsp_new_world_description,"치안부가 애정부로 개명됩니다. 애정부는 원작과 다른 평판 보상과 처벌을 가지며, 검사를 하지 않습니다."
+
+dsp_new_world_faction,애정부
+
+dsp_new_world_rep_loyal_name,충성
+
+dsp_new_world_rep_loyal_desc,다른 파벌의 평판 처벌이 적용되지 않습니다.
+dsp_new_world_rep_loyal_flavor,애정부++좋음.
+
+dsp_new_world_rep_scheduled_name,계획 내
+
+dsp_new_world_rep_scheduled_desc,친절한 대화는 월요일에만 진행됩니다.
+dsp_new_world_rep_scheduled_flavor,정해진 방문이 모두에게 더 편하다.
+
+dsp_new_world_rep_assembly_name,집회 장소
+
+dsp_new_world_rep_assembly_desc,다른 파벌의 평판 20과 0 보상이 항상 적용됩니다.
+dsp_new_world_rep_assembly_flavor,여기엔 긴 귀를 가진 새가 없다. 우주 정거장엔 새 자체가 없으니까.
+
+dsp_new_world_rep_surplus_name,인애부 잉여
+
+dsp_new_world_rep_surplus_desc,인애부 잉여 물자 상인이 가끔 방문해 퇴역 장비를 판매합니다.
+dsp_new_world_rep_surplus_flavor,정거장 애정부의 감시를 받는 게 항상 나쁜 것만은 아니다.
+
+dsp_new_world_rep_requisition_name,징발령
+
+dsp_new_world_rep_requisition_desc,인애부 징발관이 가끔 방문해 식량과 의료 물자를 매입합니다.
+dsp_new_world_rep_requisition_flavor,애정부도 물건을 조달할 곳이 필요하다. 그들은 정당한 값을 치를 것이다.
+
+dsp_new_world_rep_repentance_name,회개의 기회
+
+dsp_new_world_rep_repentance_desc,신고로 얻는 평판이 50% 증가합니다.
+dsp_new_world_rep_repentance_flavor,너에겐 더 많은 신뢰가 필요하다. 다른 사람에게서 얻으면 된다.
+
+dsp_new_world_rep_restricted_name,제한된 교신
+
+dsp_new_world_rep_restricted_desc,전화를 사용할 수 없습니다.
+dsp_new_world_rep_restricted_flavor,여기는 애정부입니다. 귀하의 통화 내용은 녹음됩니다.
+
+dsp_new_world_rep_reeducation_name,사상 개조
+
+dsp_new_world_rep_reeducation_desc,이 단계에 처음 도달할 때 모범 시민과 입슼 특성을 얻습니다.
+dsp_new_world_rep_reeducation_flavor,"축하합니다, 시민. 당신은 스스로를 이겼습니다."
+
+dsp_new_world_rep_veto_name,거부권
+
+dsp_new_world_rep_veto_desc,매일 다른 모든 파벌의 평판이 5 감소합니다.
+dsp_new_world_rep_veto_flavor,너는 스파이다. 처음부터 줄곧.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,물음표는 진짜 질문이 아니다. 등호가 진짜 질문이다.
+
+dsp_jackie_chan_name,장구리
+
+dsp_jackie_chan_description,쓰레기 속성의 아이템을 조합해 더 가치 높은 무기로 만들 수 있다. 전화 벨소리가 아시아풍 멜로디로 바뀐다. 쓰레기를 우클릭하면 같은 보관함 안의 쓰레기를 함께 조합한다.
+
+dsp_jackie_merge,합치기
+
+dsp_jackie_done,쓰레기 {0}개(가치 {1})를 모아 {2}(을)를 만들었습니다.
+
+dsp_jackie_no_junk,쓰레기 물품이 없습니다.
+
+dsp_jackie_no_weapon,합치는 근접 무기가 없습니다.
+
+dsp_jackie_no_space,무기를 놓을 곳이 없습니다.
+
+dsp_new_world_crime_poor,대화 중 태도 불량
+

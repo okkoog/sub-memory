@@ -1,4 +1,4 @@
-﻿# Starting specialization: Distributor
+# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distributor
 dsp_distributor_description,"While training under The Mentor you already worked the supplier reps. Controlling the supply chain puts you a step ahead."
@@ -408,11 +408,11 @@ dsp_foreknowledge_when_after, days out
 dsp_foreknowledge_price_tag,price
 dsp_foreknowledge_price_name,Price change
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,All alcohol counts as mid-level contraband. Wine that is still fermenting sells for 50 credits and counts as liquor-and-tobacco goods.
+dsp_prohibition_description,All alcohol counts as low-level contraband. Wine that is still fermenting sells for 50 credits and counts as liquor-and-tobacco goods.
 dsp_tobacco_tax_name,Tobacco Tax
 dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Blood Donation Station
-dsp_blood_donor_description,You can donate blood at the ration station to receive a food stamp worth 40. Blood bags can also be exchanged for a food stamp worth 40.
+dsp_blood_donor_description,"Once per day, you can use a blood bag to donate blood and receive one extra blood bag. This makes you miss one customer the next day."
 dsp_force_open_name,Brute Force
 dsp_force_open_description,Force supply crates open with a welder, wire cutter or crowbar; the crowbar breaks but ruins less inside.
 dsp_vendetta_name,Vendetta
@@ -421,6 +421,7 @@ dsp_service_professional,Professional
 dsp_vendetta_no_weapon,"Vendetta: there is no weapon in the backpack you take, so you cannot go out tonight."
 dsp_vendetta_removed,Vendetta: a professional sorted it out. The perk is gone.
 dsp_blood_donor_menu,Donate blood
+dsp_blood_donor_daily,Once per day
 dsp_blood_donor_done,Donation done: one more blood bag, and you will miss one customer tomorrow.
 dsp_blood_donor_already,You already donated blood today.
 dsp_blood_donor_no_space,No room for another blood bag.
@@ -526,9 +527,9 @@ dsp_newspaper_stand_no_customer_hint, (no customer right now)
 dsp_blood_donor_row_done,Already donated today
 dsp_hydro_open_menu,Open
 dsp_hydro_manual_name,The Secret of Pipe Hydroponics
-dsp_hydro_manual_desc,Without it you cannot grow plants in the water pipe.\nDouble-clicking this document also opens the pipe hydroponics screen.
+dsp_hydro_manual_desc,Without it you cannot grow plants in the water pipe.\nDouble-clicking this document also opens the pipe hydroponics screen.\nYou need to unlock the water pipe before you can grow anything.
 dsp_unlicensed_name,Unlicensed Operation
-dsp_unlicensed_description,The trade commission officer visits on day five.
+dsp_unlicensed_description,The trade commission officer visits on day three.
 dsp_water_vending_name,Water Vending Machine
 dsp_water_vending_description,You start with a water vending machine outside the shop. Customers can buy drinking water on their own outside business hours.
 dsp_lucky_supply_name,Lucky Supply
@@ -648,3 +649,87 @@ dsp_blood_donor_redeem,Redeem
 dsp_blood_donor_redeem_done,Redeemed: the blood bag became a food stamp worth 40.
 dsp_around_world_80_name,Around the World in 80 Days
 dsp_around_world_80_description,You start on day 80. Over the following week you will encounter all the events of the first 80 days. You start with 1000 credits and 15 reputation with every faction. Warning: may be buggy.
+dsp_universal_liquid_name,Universal Liquid
+dsp_universal_liquid_description,"You can use Nudka as a screwdriver, plasma cutter, wire cutter, or module extractor. Start with one bottle of Nudka."
+dsp_beer_hall_orator_name,Beer Hall Orator
+dsp_beer_hall_orator_description,Start with a case of Red Imp Beer. Each bottle of beer you sell grants 0.1 reputation.
+dsp_manifest_destiny_name,Manifest Destiny
+dsp_manifest_destiny_description,"You gain luck equal to the current day, up to 50. Start with one of every treat."
+dsp_tokyo_3_name,Tokyo-3
+dsp_tokyo_3_description,Your rent is increased by half and property prices are doubled. Start with a firearm neon sign.
+dsp_double_minded_name,Double-minded
+dsp_double_minded_description,On odd days you gain a 5% trade bonus when trading with women; on even days it switches to men.
+dsp_double_minded_bonus,Gender match: +X% trade bonus
+dsp_berserker_name,Berserker
+dsp_berserker_description,Taking dream dust makes you sleepwalk at night. Light injuries do not hinder your actions.
+dsp_vampire_name,Vampire
+dsp_vampire_description,"You must regularly drink blood bags, or suffer a -8% trade penalty. Drinking blue blood grants you the Silvertongue trait until you are thirsty again."
+dsp_vampire_penalty,Thirsty: -X% trade penalty
+dsp_fifth_republic_name,The 5th Republic
+dsp_fifth_republic_description,"A ""Security Budget Increase"" event appears every week. On the day that event appears, there is always a surprise inspection."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Start with a vending machine and a water vending machine. You once reported Lou, and she will come back soon."
+dsp_new_world_name,Brave New World
+
+dsp_new_world_description,"The Security Department is renamed the Ministry of Love. The Ministry has different reputation rewards and penalties than vanilla, and it never inspects."
+
+dsp_new_world_faction,Ministry of Love
+
+dsp_new_world_rep_loyal_name,Loyalty
+
+dsp_new_world_rep_loyal_desc,Reputation penalties from other factions cannot take effect.
+dsp_new_world_rep_loyal_flavor,Love Dept. ++good.
+
+dsp_new_world_rep_scheduled_name,On Schedule
+
+dsp_new_world_rep_scheduled_desc,Friendly talks only happen on Mondays.
+dsp_new_world_rep_scheduled_flavor,A scheduled visit is more convenient for everyone.
+
+dsp_new_world_rep_assembly_name,Assembly Grounds
+
+dsp_new_world_rep_assembly_desc,Other factions' 20 and 0 reputation rewards are always active.
+dsp_new_world_rep_assembly_flavor,"There are no long-eared birds here, because there are no birds on the station at all."
+
+dsp_new_world_rep_surplus_name,Ministry Surplus
+
+dsp_new_world_rep_surplus_desc,"Ministry surplus merchants occasionally visit, selling decommissioned equipment."
+dsp_new_world_rep_surplus_flavor,Being watched by Station Love isn't always a bad thing.
+
+dsp_new_world_rep_requisition_name,Requisition Order
+
+dsp_new_world_rep_requisition_desc,"Ministry requisition officers occasionally visit, buying food and medical supplies."
+dsp_new_world_rep_requisition_flavor,Even Station Love has to source its goods somewhere. They'll pay you a fair price.
+
+dsp_new_world_rep_repentance_name,Chance to Repent
+
+dsp_new_world_rep_repentance_desc,Gain 50% more reputation from reporting.
+dsp_new_world_rep_repentance_flavor,You need more trust. You can get it from others.
+
+dsp_new_world_rep_restricted_name,Restricted Communication
+
+dsp_new_world_rep_restricted_desc,The telephone is unavailable.
+dsp_new_world_rep_restricted_flavor,This is the Ministry of Love. Your message will be recorded.
+
+dsp_new_world_rep_reeducation_name,Reeducation
+
+dsp_new_world_rep_reeducation_desc,"The first time you reach this level, you gain the Model Citizen and Blabbermouth perks."
+dsp_new_world_rep_reeducation_flavor,"Congratulations, citizen. You have conquered yourself."
+
+dsp_new_world_rep_veto_name,Veto
+
+dsp_new_world_rep_veto_desc,Lose 5 reputation with every other faction each day.
+dsp_new_world_rep_veto_flavor,"You are a spy. You always have been, from the very beginning."
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,The question mark is not the real question. The equals sign is.
+
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,You can combine junk items into more valuable weapons. The phone ringtone is replaced with an Asian-themed melody. Right-click junk to combine the junk in the same container.
+dsp_jackie_merge,Combine
+dsp_jackie_done,Combined {0} junk item(s) (worth {1}) into {2}.
+dsp_jackie_no_junk,You have no junk items.
+dsp_jackie_no_weapon,No melee weapon can be combined from this.
+dsp_jackie_no_space,No room for the weapon.
+dsp_new_world_crime_poor,Poor Conduct During the Talk

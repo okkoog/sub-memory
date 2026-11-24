@@ -4,8 +4,22 @@
 《深空当铺：可能是偷的 / Probably Stolen》Eleanor 个人剧情线重制 MOD。
 
 - 游戏版本：1.0.0.15（当前 public/open_beta 构建）；版本号只写入日志，不再按游戏更新停用剧情。0.46D / 1.0.0.13 / 1.0.0.14 继续兼容。
-- MOD版本：1.32
+- MOD版本：1.34
 - 语言：简体中文 / English / 日本語 / 한국어（剧情与 UI 均已翻译）
+
+## 1.34：修复第 5 章警告场景卡住叫号
+
+- 修复第 5 章假叔叔警告场景重复让同一顾客离场的问题：原版 `OnDismiss` 回调里再次调用 `DismissCurrentClient`，会让下一次叫号的动画锁多计一次；柜台已无人却永久显示“现在无法呼叫下一位顾客”。
+- 所有警告分支（先不提、告诉她后接受赠礼、拒绝或关闭赠礼报价窗、直接结束当天）现在都只提交一次章节进度并走一次正常离场。
+- 读档和次晨开店时自动清除没有当前顾客的残留叫号锁；已受影响的存档无需重开或回退。
+- 合并创意工坊 1.33 的 CG 字体、立绘管理器兼容和旧档内容清理；不改当前路线、剧情、选项结果、目标日、结局或排期。
+
+## 1.33：CG 字体、立绘管理器兼容与旧档章节清理
+
+- CG 与路线结局页的标题/正文/按钮改为按游戏当前语言取字体（简中 NotoSansSC、日文 NotoSansJP、韩文 NotoSansKR、英文 NotoSans），不再出现缺字方框。
+- 立绘清理不再把其他启用 MOD 提供的 `cp_portrait_*` 立绘键改回基础键；与少女当铺/立绘管理器一起启用时保留玩家选择的立绘，不再回原皮。
+- 删除不再播放的旧档兼容章节与死文本：旧侍从 m12–m28、旧革命军 R01–R14、旧互动/关系选择、旧 ID 映射及对应旧工具；只保留当前 v2 复用的 6 个侍从共享块（m11/m23/world）。旧档继续按原有暂停/重置逻辑处理。
+- 不改当前路线、剧情、选项结果、目标日、结局或排期；保留 1.32 卢式晨间闭店约会、1.31 韩语校对、1.30 后宫 v2 香水覆盖及更早修复。
 
 ## 1.32：莉迪亚闭店约会改为原版卢式晨间来访
 
@@ -559,9 +573,9 @@
 
 订阅后，在游戏内启用并重启。MOD 会显示为 Local 或 Workshop 来源，取决于安装位置。
 
-## 旧存档
+## 存档支持
 
-已使用本 MOD 的存档会在游戏完成读取后恢复埃莉诺剧情。若剧情数据版本不兼容，本 MOD 会保留原有数据并暂停这条剧情，可换回兼容版本继续。
+本 MOD 支持从 1.03 左右剧情重制后开始的周目。读取重制前的 MOD 存档时，埃莉诺剧情会暂停，原有进度保留。继续旧剧情需使用当时的 MOD 版本。
 
 为了不破坏已经推进到中后期的原版 Eleanor 剧情，本 MOD 默认**不会**接管这类存档。第一次开店时会出现一个“下层区档案员”事件，询问是否重置：
 
@@ -593,7 +607,7 @@ pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Sto
 pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Stolen_Data\Managed' -Maid
 ```
 
-测试在内存中替换渲染、本地化等边界，保留原生交易完成判断、对话衔接和占格碰撞检查；覆盖 13 个交易章节的自动/手动收尾、第二幕第 7–11 章的原生收购/砍价/回礼与存档去重，以及手镯旧占格迁移。不会修改游戏文件或存档，实机交互仍需验收。
+测试在内存中替换渲染、本地化等边界。使用 `-ReleaseQA` 检查当前路线的选项和排期。测试不会写入游戏存档。
 
 ## 0.66 原版兼容
 
@@ -632,13 +646,12 @@ pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Sto
 ## 美术与立绘兼容
 
 - 本 MOD 已内置经作者授权的《少女当铺 / CutePortraits》Eleanor 基础立绘：`cp_portrait_eleanor1/2/3/scav/rev`。**不再检测或依赖外部《少女当铺》**，也不需要为其他替换立绘的 MOD 做兼容；建议不要同时启用《少女当铺》，避免重复贴图或覆盖。
-- **莉迪亚：** 始终使用 `er_portrait_lydia_female_beauty`；约会服 `er_portrait_lydia_date_female_beauty`。`_vanilla` 只作为旧档迁移键，载入时升级为美化；仅美化文件缺失时才回退 `femaleUpper10` 防崩溃。
-- **母亲索菲娅：** 始终使用 `er_portrait_mother_female_beauty`（日常）与 `er_portrait_mother_home_female_beauty`（私服，独立入口）；不显示 `_vanilla`。仅美化文件缺失时才回退 `femaleUpper3`。
+- **莉迪亚：** 日常使用 `er_portrait_lydia_female_beauty`，约会使用 `er_portrait_lydia_date_female_beauty`。美化文件缺失时会回退到 `femaleUpper10`。
+- **母亲索菲娅：** 日常使用 `er_portrait_mother_female_beauty`，私服使用 `er_portrait_mother_home_female_beauty`。美化文件缺失时会回退到 `femaleUpper3`。
 - **埃莉诺服装：** 女仆 `er_portrait_eleanor_maid_female_beauty`；礼服 `er_portrait_eleanor_gala_female_beauty`；基础常服走内置 `cp_portrait_eleanor*`。
 - **革命线：** 公开/队伍场合绿色正装 `eleanor_rev`（少女当铺设计，内置 `cp_portrait_eleanor_rev`）；R06 第一次杀人后的私下/亲密场合用黑色战术背心 `er_portrait_eleanor_revolution_undersuit_female_beauty`（用户设计，v3 已导入）。资源缺失时回退绿色正装；现在与革命结局 CG/宣传图一致。
 - **恋爱线：** 亲密私服与婚礼结局CG已接入；统一为E1，营养果开源只切换背景台词，不新增另一套结局。
 - **表情差分：** 当前运行目录包含 104 张 `er_expr_*` 表情资源（Eleanor、Lydia、Sophia 及服装差分）；与中性底图的定位和 alpha 校验已完成。实际游戏切换仍记录为未实机抽检。
-- **旧档迁移：** `cp_portrait_*`、莉迪亚/母亲 `_vanilla`、`femaleUpper10`/`femaleUpper3` 等历史键在载入时解析到内置美化；未内置的通用 `cp_portrait_*` 回退原版常服；私服键保持私服选择。
 - 资源缺失时保留防崩溃回退：莉迪亚→`femaleUpper10`，母亲→`femaleUpper3`，女仆/礼服→当前常服，战术背心→`eleanor_rev`。
 - 实现位于 `src/PortraitCompat.cs`：从本 MOD 的 `LoadedMod.Sprites` 读取内置 `cp_portrait_*` / `er_portrait_*`，桥接到游戏 SpriteDict；不再查找 CutePortraits 的 LoadedMod。
 - Credits：CutePortraits by 远风肆业（Steam Workshop 3829696854），included with the author's permission。

@@ -1,4 +1,4 @@
-﻿# Especialização inicial: Distribuidor
+# Especialização inicial: Distribuidor
 # Terminologia conforme o inglês oficial: Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,Distribuidor
 dsp_distributor_description,"Enquanto treinava sob o Mentor, você já cuidava dos representantes dos fornecedores. Controlar a cadeia de suprimentos te coloca um passo à frente."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, dias
 dsp_foreknowledge_price_tag,preço
 dsp_foreknowledge_price_name,Mudança de preço
 dsp_prohibition_name,Lei Seca
-dsp_prohibition_description,Todo álcool conta como contrabando de nível médio. O vinho em fermentação vale 50 e conta como álcool e tabaco.
+dsp_prohibition_description,Todo álcool conta como contrabando de nível baixo. O vinho em fermentação vale 50 e conta como álcool e tabaco.
 dsp_tobacco_tax_name,Imposto sobre o Tabaco
 dsp_tobacco_tax_description,Os cigarros recebem 50% de acréscimo no varejo. Mas você só recebe 20% desse acréscimo.
 dsp_blood_donor_name,Posto de doação de sangue
-dsp_blood_donor_description,Você pode doar sangue na estação de racionamento para receber um cupom de comida no valor de 40. Bolsas de sangue também podem ser trocadas por um cupom de comida no valor de 40.
+dsp_blood_donor_description,"Uma vez por dia, você pode usar uma bolsa de sangue para doar sangue e receber uma bolsa de sangue extra. Isso fará você perder um cliente no dia seguinte."
 dsp_force_open_name,Força Bruta
 dsp_force_open_description,"Você pode arrombar caixas de suprimentos com um cortador de plasma ou um pé de cabra. O pé de cabra quebra no processo, mas destrói menos do que há lá dentro."
 dsp_vendetta_name,Vingança
@@ -422,6 +422,7 @@ dsp_service_professional,Profissional
 dsp_vendetta_no_weapon,"Vingança: não há arma na mochila que você leva, então não sai hoje à noite."
 dsp_vendetta_removed,Vingança: um profissional resolveu a situação. O traço foi removido.
 dsp_blood_donor_menu,Doar sangue
+dsp_blood_donor_daily,Uma vez por dia
 dsp_blood_donor_done,Doação concluída: uma bolsa de sangue a mais e você perde um cliente amanhã.
 dsp_blood_donor_already,Você já doou sangue hoje.
 dsp_blood_donor_no_space,Não há espaço para outra bolsa de sangue.
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (nenhum cliente agora)
 dsp_blood_donor_row_done,Já doou hoje
 dsp_hydro_open_menu,Abrir
 dsp_hydro_manual_name,O segredo da hidroponia no cano
-dsp_hydro_manual_desc,Sem ela você não cultiva plantas na torneira.\nUm duplo clique neste documento também abre a hidroponia no cano.
+dsp_hydro_manual_desc,Sem ela você não cultiva plantas na torneira.\nUm duplo clique neste documento também abre a hidroponia no cano.\nVocê precisa liberar o encanamento de água para poder cultivar.
 dsp_unlicensed_name,Operação sem licença
-dsp_unlicensed_description,O oficial da comissão comercial chega no quinto dia.
+dsp_unlicensed_description,O oficial da comissão comercial chega no terceiro dia.
 dsp_water_vending_name,Máquina de água
 dsp_water_vending_description,Você começa com uma máquina de água do lado de fora da loja. Clientes podem comprar água potável sozinhos fora do horário.
 dsp_lucky_supply_name,Suprimento da sorte
@@ -649,3 +650,87 @@ dsp_blood_donor_redeem,Trocar
 dsp_blood_donor_redeem_done,Trocado: a bolsa de sangue virou um cupom de comida no valor de 40.
 dsp_around_world_80_name,A volta ao mundo em 80 dias
 dsp_around_world_80_description,Você começa no dia 80. Na semana seguinte você vive todos os eventos dos primeiros 80 dias. Você começa com 1000 créditos e 15 de reputação com cada facção. Aviso: pode ter bugs.
+dsp_universal_liquid_name,Líquido universal
+dsp_universal_liquid_description,"Você pode usar o Nudka como chave de fenda, cortador de plasma, alicate de corte ou extrator de módulos. Você começa com uma garrafa de Nudka."
+dsp_beer_hall_orator_name,Orador da cervejaria
+dsp_beer_hall_orator_description,"Você começa com um engradado de cerveja Red Imp. Cada garrafa de cerveja vendida concede 0,1 de reputação."
+dsp_manifest_destiny_name,Destino Manifesto
+dsp_manifest_destiny_description,"Você ganha sorte igual ao dia atual, até 50. Você começa com um de cada doce."
+dsp_tokyo_3_name,Tóquio-3
+dsp_tokyo_3_description,Seu aluguel aumenta pela metade e os preços dos imóveis dobram. Você começa com um letreiro de neon de armas de fogo.
+dsp_double_minded_name,Dupla opinião
+dsp_double_minded_description,Nos dias ímpares você ganha 5% de bônus de comércio ao negociar com mulheres; nos dias pares passa para os homens.
+dsp_double_minded_bonus,Gênero correspondente: +X% de bônus de comércio
+dsp_berserker_name,Berserker
+dsp_berserker_description,Tomar pó dos sonhos faz você sonambular à noite. Ferimentos leves não atrapalham suas ações.
+dsp_vampire_name,Vampiro
+dsp_vampire_description,"Você precisa beber bolsas de sangue regularmente, ou sofre uma penalidade de comércio de -8%. Beber sangue azul concede a você a característica Língua de Prata até ficar com sede de novo."
+dsp_vampire_penalty,Sedento: -X% de penalidade de comércio
+dsp_fifth_republic_name,A 5ª República
+dsp_fifth_republic_description,"Toda semana aparece um evento de ""Aumento do orçamento da segurança"". No dia em que ele aparece, sempre há uma inspeção surpresa."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Você começa com uma máquina de venda e uma máquina de venda de água. Você uma vez denunciou Lou, e ela voltará em breve."
+dsp_new_world_name,Admirável Mundo Novo
+
+dsp_new_world_description,O Departamento de Segurança passa a se chamar Ministério do Amor. O Ministério tem recompensas e penalidades de reputação diferentes das originais e nunca inspeciona.
+
+dsp_new_world_faction,Ministério do Amor
+
+dsp_new_world_rep_loyal_name,Lealdade
+
+dsp_new_world_rep_loyal_desc,As penalidades de reputação de outras facções não têm efeito.
+dsp_new_world_rep_loyal_flavor,Ministério do Amor ++bem.
+
+dsp_new_world_rep_scheduled_name,No cronograma
+
+dsp_new_world_rep_scheduled_desc,As conversas amigáveis só acontecem às segundas-feiras.
+dsp_new_world_rep_scheduled_flavor,Uma visita agendada é mais conveniente para todos.
+
+dsp_new_world_rep_assembly_name,Local de reunião
+
+dsp_new_world_rep_assembly_desc,As recompensas de reputação de 20 e 0 das outras facções estão sempre ativas.
+dsp_new_world_rep_assembly_flavor,"Não há pássaros de orelhas longas aqui, porque na estação não há pássaro nenhum."
+
+dsp_new_world_rep_surplus_name,Excedente do Ministério
+
+dsp_new_world_rep_surplus_desc,Os mercadores de excedentes do Ministério aparecem de vez em quando vendendo equipamento desativado.
+dsp_new_world_rep_surplus_flavor,Ser vigiado pelo Amor da estação nem sempre é ruim.
+
+dsp_new_world_rep_requisition_name,Ordem de requisição
+
+dsp_new_world_rep_requisition_desc,Os oficiais de requisição do Ministério aparecem de vez em quando comprando comida e suprimentos médicos.
+dsp_new_world_rep_requisition_flavor,Até o Amor da estação precisa comprar em algum lugar. Vão te pagar um preço justo.
+
+dsp_new_world_rep_repentance_name,Chance de se arrepender
+
+dsp_new_world_rep_repentance_desc,Você ganha 50% mais reputação por denúncias.
+dsp_new_world_rep_repentance_flavor,Você precisa de mais confiança. Pode conseguir com os outros.
+
+dsp_new_world_rep_restricted_name,Comunicação restrita
+
+dsp_new_world_rep_restricted_desc,O telefone não está disponível.
+dsp_new_world_rep_restricted_flavor,Aqui é o Ministério do Amor. Sua mensagem será gravada.
+
+dsp_new_world_rep_reeducation_name,Reeducação
+
+dsp_new_world_rep_reeducation_desc,"Na primeira vez que você atinge este nível, recebe os traços Cidadão Exemplar e Falastrão."
+dsp_new_world_rep_reeducation_flavor,"Parabéns, cidadão. Você venceu a si mesmo."
+
+dsp_new_world_rep_veto_name,Veto
+
+dsp_new_world_rep_veto_desc,Você perde 5 de reputação com todas as outras facções a cada dia.
+dsp_new_world_rep_veto_flavor,Você é um espião. Desde o começo.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,O ponto de interrogação não é a verdadeira pergunta. O sinal de igual é.
+
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Você pode combinar itens com a propriedade lixo em armas mais valiosas. O toque do telefone é substituído por uma melodia de tema asiático. Clique com o botão direito no lixo para combinar o lixo no mesmo contêiner.
+dsp_jackie_merge,Combinar
+dsp_jackie_done,Combinou {0} item(ns) de lixo (valor {1}) em {2}.
+dsp_jackie_no_junk,Você não tem itens de lixo.
+dsp_jackie_no_weapon,Nenhuma arma corpo a corpo pode ser combinada.
+dsp_jackie_no_space,Sem espaço para a arma.
+dsp_new_world_crime_poor,Má conduta durante a conversa

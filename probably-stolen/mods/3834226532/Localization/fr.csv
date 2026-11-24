@@ -1,4 +1,4 @@
-﻿# Spécialité de départ : Distributeur
+# Spécialité de départ : Distributeur
 # Terminologie reprise de la localisation officielle du jeu : Faveurs de Wild / Brasserie du Diable carmin / Labo de chimie des strates inférieures / Pharmacie des strates supérieures / Coopérative minière GP / Agrandissement de vitrine I
 dsp_distributor_name,Distributeur
 dsp_distributor_description,"Pendant votre formation auprès du Mentor, vous avez déjà travaillé avec les représentants des fournisseurs. Contrôler la chaîne d'approvisionnement vous donne une longueur d'avance."
@@ -409,11 +409,11 @@ dsp_foreknowledge_when_after, jours plus tard
 dsp_foreknowledge_price_tag,prix
 dsp_foreknowledge_price_name,Changement de prix
 dsp_prohibition_name,Prohibition
-dsp_prohibition_description,Tout alcool compte comme contrebande de niveau moyen. Le vin en fermentation se vend 50 et compte comme produit alcoolisé et tabac.
+dsp_prohibition_description,Tout alcool compte comme contrebande de niveau faible. Le vin en fermentation se vend 50 et compte comme produit alcoolisé et tabac.
 dsp_tobacco_tax_name,Taxe sur le tabac
 dsp_tobacco_tax_description,Les cigarettes gagnent 50% de marge au détail. Mais vous n'en touchez que 20%.
 dsp_blood_donor_name,Station de don du sang
-dsp_blood_donor_description,Vous pouvez donner votre sang à la station de ravitaillement pour recevoir un bon alimentaire d'une valeur de 40. Les poches de sang peuvent également être échangées contre un bon alimentaire d'une valeur de 40.
+dsp_blood_donor_description,"Une fois par jour, vous pouvez utiliser une poche de sang pour donner du sang et recevoir une poche de sang supplémentaire. Cela vous fera manquer un client le lendemain."
 dsp_force_open_name,Force brute
 dsp_force_open_description,"Vous pouvez forcer les caisses de ravitaillement avec une torche à plasma ou un pied-de-biche. Le pied-de-biche se casse au passage, mais détruit moins de ce qu'elles contiennent."
 dsp_vendetta_name,Vendetta
@@ -422,6 +422,7 @@ dsp_service_professional,Professionnel
 dsp_vendetta_no_weapon,"Vendetta : il n'y a pas d'arme dans le sac que vous prenez, vous ne sortirez pas ce soir."
 dsp_vendetta_removed,Vendetta : un professionnel s'est occupé de tout. Cet atout a disparu.
 dsp_blood_donor_menu,Donner du sang
+dsp_blood_donor_daily,Une fois par jour
 dsp_blood_donor_done,"Don effectué : une poche de sang en plus, et un client en moins demain."
 dsp_blood_donor_already,Vous avez déjà donné votre sang aujourd'hui.
 dsp_blood_donor_no_space,Plus de place pour une autre poche de sang.
@@ -527,9 +528,9 @@ dsp_newspaper_stand_no_customer_hint, (aucun client pour le moment)
 dsp_blood_donor_row_done,Déjà donné aujourd'hui
 dsp_hydro_open_menu,Ouvrir
 dsp_hydro_manual_name,Le secret de l'hydroponie sur tuyau
-dsp_hydro_manual_desc,"Sans elle, impossible de cultiver des plantes dans le robinet.\nUn double-clic sur ce document ouvre aussi l'hydroponie sur tuyau."
+dsp_hydro_manual_desc,"Sans elle, impossible de cultiver des plantes dans le robinet.\nUn double-clic sur ce document ouvre aussi l'hydroponie sur tuyau.\nVous devez débloquer la conduite d'eau pour pouvoir cultiver."
 dsp_unlicensed_name,Commerce sans licence
-dsp_unlicensed_description,Le fonctionnaire de la commission arrive le cinquième jour.
+dsp_unlicensed_description,Le fonctionnaire de la commission arrive le troisième jour.
 dsp_water_vending_name,Distributeur d'eau
 dsp_water_vending_description,Vous commencez avec un distributeur d'eau devant la boutique. Les clients peuvent acheter de l'eau seuls hors des heures d'ouverture.
 dsp_lucky_supply_name,Ravitaillement chanceux
@@ -649,3 +650,87 @@ dsp_blood_donor_redeem,Échanger
 dsp_blood_donor_redeem_done,Échangé : la poche de sang est devenue un bon alimentaire d'une valeur de 40.
 dsp_around_world_80_name,Le Tour du monde en 80 jours
 dsp_around_world_80_description,"Vous commencez au jour 80. La semaine suivante, vous vivez tous les événements des 80 premiers jours. Vous commencez avec 1000 crédits et 15 de réputation auprès de chaque faction. Avertissement : peut être bogué."
+dsp_universal_liquid_name,Liquide universel
+dsp_universal_liquid_description,"Vous pouvez utiliser le Nudka comme tournevis, torche à plasma, coupe-fil ou extracteur de modules. Vous commencez avec une bouteille de Nudka."
+dsp_beer_hall_orator_name,Orateur de brasserie
+dsp_beer_hall_orator_description,"Vous commencez avec un pack de bières du Diable carmin. Chaque bouteille de bière vendue rapporte 0,1 de réputation."
+dsp_manifest_destiny_name,Destinée manifeste
+dsp_manifest_destiny_description,"Vous gagnez une chance égale au jour actuel, jusqu'à 50. Vous commencez avec un exemplaire de chaque friandise."
+dsp_tokyo_3_name,Tokyo-3
+dsp_tokyo_3_description,Votre loyer augmente de moitié et les prix de l'immobilier doublent. Vous commencez avec une enseigne néon d'armes à feu.
+dsp_double_minded_name,Double jeu
+dsp_double_minded_description,"Les jours impairs, vous gagnez un bonus de commerce de 5% en commerçant avec les femmes ; les jours pairs, il s'applique aux hommes."
+dsp_double_minded_bonus,Genre correspondant : +X% de bonus de commerce
+dsp_berserker_name,Berserker
+dsp_berserker_description,La poussière de rêve vous fait somnambuler la nuit. Les blessures légères ne gênent pas vos actions.
+dsp_vampire_name,Vampire
+dsp_vampire_description,"Vous devez régulièrement boire des poches de sang, sinon vous subissez une pénalité de commerce de -8%. Boire du sang bleu vous confère le trait Langue d'argent jusqu'à votre prochaine soif."
+dsp_vampire_penalty,Assoiffé : -X% de pénalité de commerce
+dsp_fifth_republic_name,La 5e République
+dsp_fifth_republic_description,"Chaque semaine, un événement « Augmentation du budget de la sécurité » apparaît. Le jour où il apparaît, il y a toujours une inspection surprise."
+dsp_nine_eleven_name,9-ELEVEn
+dsp_nine_eleven_description,"Vous commencez avec un distributeur automatique et un distributeur d'eau. Vous avez autrefois dénoncé Lou, et elle reviendra bientôt."
+dsp_new_world_name,Le Meilleur des mondes
+
+dsp_new_world_description,Le Département de la Sécurité devient le Ministère de l'Amour. Le Ministère a des récompenses et pénalités de réputation différentes de l'original et n'inspecte jamais.
+
+dsp_new_world_faction,Ministère de l'Amour
+
+dsp_new_world_rep_loyal_name,Loyauté
+
+dsp_new_world_rep_loyal_desc,Les pénalités de réputation des autres factions ne peuvent pas s'appliquer.
+dsp_new_world_rep_loyal_flavor,Ministère de l'Amour ++bien.
+
+dsp_new_world_rep_scheduled_name,Au programme
+
+dsp_new_world_rep_scheduled_desc,Les conversations amicales n'ont lieu que le lundi.
+dsp_new_world_rep_scheduled_flavor,Une visite programmée est plus pratique pour tout le monde.
+
+dsp_new_world_rep_assembly_name,Lieu de rassemblement
+
+dsp_new_world_rep_assembly_desc,Les récompenses de réputation à 20 et 0 des autres factions sont toujours actives.
+dsp_new_world_rep_assembly_flavor,"Il n'y a pas d'oiseaux aux longues oreilles ici, parce qu'il n'y a pas d'oiseaux du tout sur la station."
+
+dsp_new_world_rep_surplus_name,Excédent du Ministère
+
+dsp_new_world_rep_surplus_desc,Des marchands d'excédent du Ministère passent parfois vendre de l'équipement réformé.
+dsp_new_world_rep_surplus_flavor,Être surveillé par l'Amour de la station n'est pas toujours une mauvaise chose.
+
+dsp_new_world_rep_requisition_name,Ordre de réquisition
+
+dsp_new_world_rep_requisition_desc,Des officiers de réquisition du Ministère passent parfois acheter nourriture et fournitures médicales.
+dsp_new_world_rep_requisition_flavor,Même l'Amour de la station doit s'approvisionner quelque part. Ils te paieront un prix honnête.
+
+dsp_new_world_rep_repentance_name,Chance de se repentir
+
+dsp_new_world_rep_repentance_desc,Gagnez 50 % de réputation en plus en dénonçant.
+dsp_new_world_rep_repentance_flavor,Tu as besoin de plus de confiance. Tu peux la prendre aux autres.
+
+dsp_new_world_rep_restricted_name,Communication restreinte
+
+dsp_new_world_rep_restricted_desc,Le téléphone est indisponible.
+dsp_new_world_rep_restricted_flavor,Ici le Ministère de l'Amour. Votre message sera enregistré.
+
+dsp_new_world_rep_reeducation_name,Rééducation
+
+dsp_new_world_rep_reeducation_desc,"La première fois que vous atteignez ce niveau, vous obtenez les traits Citoyen modèle et Grande gueule."
+dsp_new_world_rep_reeducation_flavor,"Félicitations, citoyen. Vous vous êtes vaincu vous-même."
+
+dsp_new_world_rep_veto_name,Veto
+
+dsp_new_world_rep_veto_desc,Perdez 5 de réputation avec toutes les autres factions chaque jour.
+dsp_new_world_rep_veto_flavor,Tu es un espion. Depuis le début.
+
+dsp_new_world_rep_twoplustwo_name,2+2=?
+
+dsp_new_world_rep_twoplustwo_desc,…
+dsp_new_world_rep_twoplustwo_flavor,Le point d'interrogation n'est pas la vraie question. Le signe égal l'est.
+
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Vous pouvez combiner des objets ayant la propriété « déchet » en armes plus précieuses. La sonnerie de téléphone est remplacée par une mélodie à thème asiatique. Un clic droit sur un déchet combine les déchets du même conteneur.
+dsp_jackie_merge,Combiner
+dsp_jackie_done,Combinaison de {0} objet(s) déchet (valeur {1}) en {2}.
+dsp_jackie_no_junk,Vous n'avez aucun objet déchet.
+dsp_jackie_no_weapon,Aucune arme de mêlée ne peut être combinée.
+dsp_jackie_no_space,Pas de place pour l'arme.
+dsp_new_world_crime_poor,Mauvaise attitude pendant la conversation
