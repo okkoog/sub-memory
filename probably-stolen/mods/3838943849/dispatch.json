@@ -9,13 +9,25 @@
     "sprite": "dispatch_terminal"
   },
 
+  // ── 角色终端：把这台设备摆在店里，把角色卡拖到它上面就算「收录」 ──
+  // 收录进来的卡收在一台隐形收纳柜里（不占店里的格子），双击设备打开图鉴。
+  "characterTerminal": {
+    "name": "角色终端",
+    "desc": "一台能归档代理人的旧机器。把代理人卡拖上去即可收录，双击查看。",
+    "flavor": "格子里的每一个人都在等你派他们出去。",
+    "value": 200,
+    "w": 3,
+    "h": 2,
+    "sprite": "character_terminal"
+  },
+
   "minDuration": 1,
   "maxDuration": 5,
   "defaultDuration": 3,
   "maxMembers": 3,
 
-  "thirstPerDay": 15,
-  "hungerPerDay": 15,
+  "thirstPerDay": 10,
+  "hungerPerDay": 10,
   "corruptionMin": 5,
   "corruptionMax": 20,
   "oneEmptyPenalty": 10,

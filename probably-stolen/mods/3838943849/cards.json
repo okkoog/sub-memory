@@ -162,7 +162,7 @@
       // ★ 感兴趣的标签必须写成【一个】数组，元素之间用逗号隔开。
       //   写成 [ "A" ],[ "B" ] 这种是语法错误，整份 cards.json 会读不进去。
       //   ZZZ 是所有卡共有的系列标签 —— 抽到它等于「全都要」，想只锁某一类就删掉 "ZZZ"。
-      "buys": [ "音擎", "邦布", "代理人" ],
+      "buys": [ "音擎", "邦布", "代理人" "干员" ],
       "pickTags": 3,               // 每次从上面随机挑 1~3 个标签（挑中的才会买）
       "multiplier": 1.0,
       "portraitHeight": 2.11,
@@ -220,7 +220,7 @@
       "group": "duo",
       "budgetMin": 3000,
       "budgetMax": 5000,
-      "buys": [ "音擎", "邦布", "代理人" ],
+      "buys": [ "音擎", "邦布", "代理人" "干员" ],
       "pickTags": 3,
       "multiplier": 1.0,
       "portraitHeight": 2.11,
@@ -1598,9 +1598,11 @@
     "crypto_module_sec"
   ],
 
-  // ── 3. UP 候选名单（每 7 天从这张名单里随机换一位，只写 ur 里的 id）──
-  //  顺序已经不再有意义了：每过 7 天，存档里预抽好的「下期 UP」转正，
-  //  然后立刻从这张名单里再随机抽一张当下期 UP（保证不跟刚转正的那张重复）。
+  // ── 3. UP 候选名单（★多卡池版本起已废弃，不必再维护）──────────────
+  //  UP 名单现在跟着「池」走，写在 pools.json 每个池自己的 upOrder 里：
+  //  留空 = 本池全部 UR 随机轮换（常驻池就是这么用的，永远留空）。
+  //  这一段留着只为一件事：0.3.3 及更早的老存档迁移时按序号找回当期 UP。
+  //  新存档完全不看它 —— 整段删掉也没影响（删了会自动当成「全部 UR」）。
   "upOrder": [ "ellen", "zhuyuan", "qingyi", "jian", "Robin", "Kafka", "ailisi", "yifulin", "yaojiayin", "banji", "fuboyouye", "xide", "yuguo", "xingjianya", "yixuan", "weiweian", "gelisi", "keleida", "lina", "11hao", "maoyou", "kaisa", "bonisi", "liu", "laite", "youzhen", "jufufu", "aofeisi", "lycaon" ],
 
   // ── 3.5 UP 冷却（一张卡当过 UP 之后，要空过几轮才会重新进随机池）──
@@ -1658,6 +1660,11 @@
     { "id": "shibaiping01",   "name": "001", "value": 300, "kind": "代理人", "faction": "失败品", "hp": 100, "attack": 5, "capacity": 5, "tags": ["赝品"], "sprite": "shibaiping01", "art": "shibaiping01",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
     { "id": "shibaiping02",   "name": "002", "value": 300, "kind": "代理人", "faction": "失败品", "hp": 100, "attack": 5, "capacity": 5, "tags": ["赝品"], "sprite": "shibaiping02", "art": "shibaiping02",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
     { "id": "shibaiping03",   "name": "003", "value": 300, "kind": "代理人", "faction": "失败品", "hp": 100, "attack": 5, "capacity": 5, "tags": ["赝品"], "sprite": "shibaiping03", "art": "shibaiping03",  "desc": "R 级代理人卡，失败品。——一个意外生成的失败产物" },
+    { "id": "qiuli",   "name": "秋栗", "value": 300, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 5, "capacity": 5, "sprite": "qiuli", "art": "qiuli",  "desc": "四 星干员卡，终末地工业。——Z7行动组，秋栗，很高兴加入这次行动！请期待我的表现！" },
+    { "id": "yingshi",   "name": "萤石", "value": 300, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 5, "capacity": 5, "sprite": "yingshi", "art": "yingshi",  "desc": "四 星干员卡，终末地工业。——扰乱？牵制？还是……一步到位？" },
+    { "id": "kaqier",   "name": "卡契尔", "value": 300, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 5, "capacity": 5, "sprite": "kaqier", "art": "kaqier",  "desc": "四 星干员卡，终末地工业。——需要掩护吗？我会全力以赴的" },
+    { "id": "antaer",   "name": "安塔尔", "value": 300, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 5, "capacity": 5, "sprite": "antaer", "art": "antaer",  "desc": "四 星干员卡，终末地工业。——轮到我出任务了么？正好，我也想找机会测试浮游炮的改造成效" },
+    { "id": "aitela",   "name": "埃特拉", "value": 300, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 5, "capacity": 5, "sprite": "aitela", "art": "aitela",  "desc": "四 星干员卡，终末地工业。——呃……我感觉自己的身上正在承受整个世界的重担……主要是膝盖……" },
     // { "id": "vipcard", "name": "便利店金卡", "value": 180, "kind": "收藏品", "sprite": "vipcard", "desc": "储值卡，余额不详。" }
   ],
 
@@ -1675,6 +1682,17 @@
     { "id": "biaosubu",  "name": "邦布·飚速布", "value": 500, "w": 2, "h": 2, "kind": "邦布", "sprite": "biaosubu", "art": "biaosubu",  "desc": "S 级邦布卡，飚速布。——骑上导弹精准冲刺，带着惊喜冲向敌人引爆自己" },
     { "id": "aimilian",  "name": "邦布·艾米利安", "value": 500, "w": 2, "h": 2, "kind": "邦布", "sprite": "aimilian", "art": "aimilian",  "desc": "S 级邦布卡，艾米利安。——牢记欠债还钱，要让欠款一亿倍奉还" },
     { "id": "aquan",  "name": "邦布·阿全", "value": 500, "w": 2, "h": 2, "kind": "邦布", "sprite": "aquan", "art": "aquan",  "desc": "S 级邦布卡，阿全。——驾着钻机全速向前，一心掘进突破地心" },
+    { "id": "zhouxue",   "name": "昼雪", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 10, "capacity": 5, "sprite": "zhouxue", "art": "zhouxue",  "desc": "五 星干员卡，罗德岛。——风速适中，能见度良好，是滑雪的好天气" },
+    { "id": "saixi",   "name": "赛希", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "寂语修会", "hp": 100, "attack": 10, "capacity": 5, "sprite": "saixi", "art": "saixi",  "desc": "五 星干员卡，寂语修会。——当我们彼此联结，智慧便会涌现" },
+    { "id": "peilika",   "name": "佩丽卡", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 10, "capacity": 5, "sprite": "peilika", "art": "peilika",  "desc": "五 星干员卡，终末地工业。——我们曾这样不断抵抗……期待着你能再一次归来" },
+    { "id": "puqiena",   "name": "噗切娜", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "环塔商会", "hp": 100, "attack": 10, "capacity": 5, "sprite": "puqiena", "art": "puqiena",  "desc": "五 星干员卡，环塔商会。——又到我……‘你好。’……呃，怎么又睡着了！" },
+    { "id": "miminuo",   "name": "米米诺", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "联盟工团", "hp": 100, "attack": 10, "capacity": 5, "sprite": "miminuo", "art": "miminuo",  "desc": "五 星干员卡，联盟工团。——谁在呼叫火力支援！……啊？我听错了？" },
+    { "id": "langwei",   "name": "狼卫", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "狼群氏族", "hp": 100, "attack": 10, "capacity": 5, "sprite": "langwei", "art": "langwei",  "desc": "五 星干员卡，狼群氏族。——我知道力量并不代表一切，但在塔卫二，没有力量通常不是什么好事" },
+    { "id": "dapan",   "name": "大潘", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 10, "capacity": 5, "sprite": "dapan", "art": "dapan",  "desc": "五 星干员卡，宏山科学院。——不会的菜式就得多练！这可不是为了出风头，我掌勺就图个做得敞亮，吃得爽心！" },
+    { "id": "huguang",   "name": "弧光", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "众生长地", "hp": 100, "attack": 10, "capacity": 5, "sprite": "huguang", "art": "huguang",  "desc": "五 星干员卡，众生长地。——我叫伊库特，代号是弧光，你好。我不会说什么漂亮话，就祝你像涨水的河流一样奔涌吧" },
+    { "id": "alieshen",   "name": "阿列什", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "联盟工团", "hp": 100, "attack": 10, "capacity": 5, "sprite": "alieshen", "art": "alieshen",  "desc": "五 星干员卡，联盟工团。——抛出去的竿随时可以收回，人一旦陷入漩涡，就无法轻易脱身" },
+    { "id": "aiweiwenna",   "name": "艾维文娜", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "环塔商会", "hp": 100, "attack": 10, "capacity": 5, "sprite": "aiweiwenna", "art": "aiweiwenna",  "desc": "五 星干员卡，环塔商会。——信使要护送许多秘密，每一个秘密都有昂贵的价格，但比它们更昂贵的，是……我的守口如瓶" },
+    { "id": "chenqianyu",   "name": "陈千语", "value": 1000, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 10, "capacity": 5, "sprite": "chenqianyu", "art": "chenqianyu",  "desc": "五 星干员卡，终末地工业。——看来我不只在武学上有天赋嘛，当你的干员是不是也是一把好手？" },
     { "id": "nike",   "name": "妮可·德玛拉", "value": 1000, "kind": "代理人", "faction": "狡兔屋", "hp": 100, "attack": 10, "capacity": 2, "sprite": "nike", "art": "nike",  "desc": "A 级代理人卡，狡兔屋。——一生的请求！" },
     { "id": "anbi",   "name": "安比·德玛拉", "value": 1000, "kind": "代理人", "faction": "狡兔屋", "hp": 100, "attack": 10, "capacity": 2, "sprite": "anbi", "art": "anbi",  "desc": "A 级代理人卡，狡兔屋。——目标确认，开始行动" },
     { "id": "kelin",   "name": "可琳·威克斯", "value": 1000, "kind": "代理人", "faction": "维多利亚家政", "hp": 100, "attack": 10, "capacity": 5, "sprite": "kelin", "art": "kelin",  "desc": "A 级代理人卡，维多利亚家政。——拜托了，请好好听可琳说话！" },
@@ -1718,6 +1736,25 @@
     { "id": "weiweian",   "name": "薇薇安·班希", "value": 2000, "kind": "代理人", "faction": "反舌鸟", "hp": 100, "attack": 15, "capacity": 5, "sprite": "weiweian", "art": "weiweian",  "desc": "S 级代理人卡，反舌鸟。——真希望『法厄同』大人的目光只在我身上停留" },
     { "id": "Robin",   "name": "知更鸟", "value": 2000, "kind": "代理人", "faction": "未明界域", "hp": 100, "attack": 15, "capacity": 5, "sprite": "Robin", "art": "Robin",  "desc": "S 级代理人卡，未明界域。——我相信…精彩的演出从来都不是一个人的独奏，而是大家共同的乐章" },
     { "id": "Kafka",   "name": "卡芙卡", "value": 2000, "kind": "代理人", "faction": "未明界域", "hp": 100, "attack": 15, "capacity": 5, "sprite": "Kafka", "art": "Kafka",  "desc": "S 级代理人卡，未明界域。——过去与未来、此地与异界，都如此相似——正如『剧本』所言" },
+    { "id": "laiwanding",   "name": "莱万汀", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "laiwanding", "art": "laiwanding",  "desc": "六 星干员卡，罗德岛。——火焰，照亮黄昏" },
+    { "id": "jieerpeita",   "name": "洁尔佩塔", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "jieerpeita", "art": "jieerpeita",  "desc": "六 星干员卡，罗德岛。——你好呀！你身上有一股令人怀念的气味……好像一封没有写完的信，我很好奇它会去往哪里" },
+    { "id": "aierdaila",   "name": "艾尔黛拉", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "aierdaila", "art": "aierdaila",  "desc": "六 星干员卡，罗德岛。——我们必须了解脚下的这颗星球，就像……我们应该更加了解我们自己。对吧，前辈？" },
+    { "id": "lifeng",   "name": "黎风", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 15, "capacity": 5, "sprite": "lifeng", "art": "lifeng",  "desc": "六 星干员卡，宏山科学院。——我来终末地就是为了学东西的！只是……这里的东西多得有点儿学不完啊……要加把劲！" },
+    { "id": "bieli",   "name": "别礼", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "塞什卡", "hp": 100, "attack": 15, "capacity": 5, "sprite": "bieli", "art": "bieli",  "desc": "六 星干员卡，塞什卡。——我，即是战争的……什么来着？" },
+    { "id": "yujin",   "name": "余烬", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "铁誓军", "hp": 100, "attack": 15, "capacity": 5, "sprite": "yujin", "art": "yujin",  "desc": "六 星干员卡，铁誓军。——出发吧，战争没有终点，也没有退路" },
+    { "id": "junwei",   "name": "骏卫", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "junwei", "art": "junwei",  "desc": "六 星干员卡，罗德岛。——事态紧急，我希望尽快了解你的作战计划……最好就是现在" },
+    { "id": "yifeng",   "name": "伊冯", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "终末地工业", "hp": 100, "attack": 15, "capacity": 5, "sprite": "yifeng", "art": "yifeng",  "desc": "六 星干员卡，终末地工业。——这把铳手感不错！嗯……设计上还有拓展空间，我会把它改成我的专属款！" },
+    { "id": "tangtang",   "name": "汤汤", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "清波寨", "hp": 100, "attack": 15, "capacity": 5, "sprite": "tangtang", "art": "tangtang",  "desc": "六 星干员卡，清波寨。——大当家在此，你、你，还有你，都听我指挥！" },
+    { "id": "luoqian",   "name": "洛茜", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "狼群氏族", "hp": 100, "attack": 15, "capacity": 5, "sprite": "luoqian", "art": "luoqian",  "desc": "六 星干员卡，狼群氏族。——对于精锐来说小菜一碟！" },
+    { "id": "zhuangfangyi",   "name": "庄方宜", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 15, "capacity": 5, "sprite": "zhuangfangyi", "art": "zhuangfangyi",  "desc": "六 星干员卡，宏山科学院。——能咬牙坚持下来，就不算输" },
+    { "id": "mifu",   "name": "弭弗", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 15, "capacity": 5, "sprite": "mifu", "art": "mifu",  "desc": "六 星干员卡，宏山科学院。——我们是过命的交情，对吧？" },
+    { "id": "kamiao",   "name": "卡缪", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "塞什卡", "hp": 100, "attack": 15, "capacity": 5, "sprite": "kamiao", "art": "kamiao",  "desc": "六 星干员卡，塞什卡。——自最深的黑暗中，夺回一滴血" },
+    { "id": "jue",   "name": "诀", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "应龙特勤队", "hp": 100, "attack": 15, "capacity": 5, "sprite": "jue", "art": "jue",  "desc": "六 星干员卡，应龙特勤队。——定不辱应龙之名" },
+    { "id": "linuo",   "name": "梨诺", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "环塔商会", "hp": 100, "attack": 15, "capacity": 5, "sprite": "linuo", "art": "linuo",  "desc": "六 星干员卡，环塔商会。——Twinkle-twinkle！新的演出马上开始！" },
+    { "id": "futinuosi",   "name": "提弗洛斯", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "futinuosi", "art": "futinuosi",  "desc": "六 星干员卡，罗德岛。——好故事和好猎手一样，先瞄准的，都是心脏" },
+    { "id": "si",   "name": "祀", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 15, "capacity": 5, "sprite": "si", "art": "si",  "desc": "六 星干员卡，宏山科学院。——哼，惹了麻烦，才想起来找我？" },
+    { "id": "minghe",   "name": "明河", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "宏山科学院", "hp": 100, "attack": 15, "capacity": 5, "sprite": "minghe", "art": "minghe",  "desc": "六 星干员卡，宏山科学院。——执锐披坚，就不讲点到为止了" },
+    { "id": "xiaoke",   "name": "小刻", "value": 2000, "w": 3, "h": 3, "kind": "干员", "faction": "罗德岛", "hp": 100, "attack": 15, "capacity": 5, "sprite": "xiaoke", "art": "xiaoke",  "desc": "六 星干员卡，罗德岛。——从那里到这里……哇，原来小刻已经走过这么远的路，打败过这么多坏蛋了吗？" },
     // ↓ 这一张演示「kind + tags 一起用」：它带 ZZZ / UR / 代理人 / 限定 / 绝版 五条标签。
     //   想收「限定」货的顾客，buys 写 [ "限定" ] 就能专挑这一类。
     { "id": "lycaon",  "name": "冯·莱卡恩", "value": 2000, "kind": "代理人", "faction": "维多利亚家政", "hp": 100, "attack": 15, "capacity": 5, "sprite": "lycaon", "art": "lycaon",  "desc": "S 级代理人卡，维多利亚家政。——执事莱卡恩，感谢您的指名",
