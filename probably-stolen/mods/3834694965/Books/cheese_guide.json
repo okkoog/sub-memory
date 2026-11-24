@@ -1,0 +1,966 @@
+{
+  "id": "cheese_guide",
+  "title": "Marlowe Aged Cheese Appraisal Guide",
+  "background": "notebook_manual",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    {
+      "type": "button",
+      "id": "close",
+      "action": "close",
+      "x": 290,
+      "y": 10,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "button",
+      "id": "zoom",
+      "action": "zoom",
+      "x": 266.5,
+      "y": 11,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "button",
+      "id": "flip_left",
+      "action": "flip_left",
+      "x": 124,
+      "y": 380,
+      "w": 16,
+      "h": 16
+    },
+    {
+      "type": "button",
+      "id": "flip_right",
+      "action": "flip_right",
+      "x": 176,
+      "y": 380.5,
+      "w": 14,
+      "h": 15
+    },
+    {
+      "type": "text",
+      "id": "page_indicator",
+      "action": "page_indicator",
+      "style": "page_number",
+      "align": "center",
+      "valign": "middle",
+      "fontSize": 9,
+      "color": "#797470",
+      "x": 140.5,
+      "y": 374.25,
+      "w": 32.9,
+      "h": 25
+    }
+  ],
+  "templates": [],
+  "pages": [
+    {
+      "name": "Introduction",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 76,
+          "w": 258,
+          "h": 130,
+          "text": "Marlowe was a dairy in the livestock quarter of the Lower Levels that aged hard cheese in wax for years. It closed after only a few batches, and no one on the Station has the pastures or the patience to make a wheel like these today.\n\nThis guide will provide everything you need to know to appraise the value of any Marlowe cheese wheel.",
+          "translations": {
+            "ja": "マーロウは、下層世界の牧畜区画にあった乳製品工房で、固いチーズを蝋に包んで何年も熟成させていました。何度か仕込んだだけで閉業し、今のステーションには、同じホールを作る牧草地も根気もある者はいません。\n\n本ガイドでは、あらゆるマーロウのチーズのホールの価格を判断するために必要な情報を掲載いたします。",
+            "zh": "马洛是下层区畜牧区的一家乳制品工坊，把硬质奶酪裹上蜡熟成多年。它只做了几批就关门了，如今空间站里没人有牧场或耐心去做同样的整轮奶酪。\n\n本指南将提供鉴定任何马洛整轮奶酪价值所需的全部信息。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 212,
+          "w": 150,
+          "h": 56,
+          "text": "Regardless of condition, a Marlowe wheel has a base value of 500 Credits, and a minimum value of 100 Credits.",
+          "translations": {
+            "ja": "状態に関わらず、マーロウのホールの基本価格は500クレジットで、最低価格は100クレジットです。",
+            "zh": "无论品相如何，马洛整轮奶酪的基础价值均为500信用点，且最低价值为100信用点。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 206,
+          "y": 208,
+          "w": 84,
+          "h": 160,
+          "sprite": "hg_full",
+          "fit": "stretch"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Rind",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "1. Rind",
+          "translations": {
+            "ja": "1. 外皮",
+            "zh": "1. 外皮"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 90,
+          "w": 258,
+          "h": 26,
+          "text": "The color of the rind tells how long a wheel has aged. The darker the rind, the older and the more valuable the wheel.",
+          "translations": {
+            "ja": "外皮の色で、ホールがどれだけ熟成したかが分かります。外皮が黒いほど古く、価値が高くなります。",
+            "zh": "外皮的颜色表明这轮奶酪熟成了多久。外皮越黑，年份越久，也越值钱。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 124,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_rind_pale",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 124,
+          "w": 170,
+          "h": 63,
+          "text": "Pale Yellow Rind: Aged 3 Years\n(No Change)",
+          "translations": {
+            "ja": "淡い黄色の外皮：熟成3年\n（変化なし）",
+            "zh": "淡黄色外皮：熟成3年\n（价格不变）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 202,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_rind_orange",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 202,
+          "w": 170,
+          "h": 63,
+          "text": "Orange-Brown Rind: Aged 8 Years\n(+110 Credits)",
+          "translations": {
+            "ja": "橙褐色の外皮：熟成8年\n（+110クレジット）",
+            "zh": "橙褐色外皮：熟成8年\n（+110信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 280,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_rind_dark",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 280,
+          "w": 170,
+          "h": 63,
+          "text": "Dark Gray Rind: Aged 15 Years\n(+260 Credits)",
+          "translations": {
+            "ja": "暗い灰黒色の外皮：熟成15年\n（+260クレジット）",
+            "zh": "深灰黑色外皮：熟成15年\n（+260信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Seal",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "2. Seal",
+          "translations": {
+            "ja": "2. 封",
+            "zh": "2. 封蜡"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 90,
+          "w": 258,
+          "h": 26,
+          "text": "The seal around the side of the wheel shows which line it came from. Plain red wax is standard; the other two were made in smaller batches.",
+          "translations": {
+            "ja": "ホールの側面を包む封で、どの系列のものかが分かります。赤い蝋が標準で、ほかの2つは少ない量で作られました。",
+            "zh": "包在奶酪侧面的封层表明它出自哪个系列。红蜡是标准款，另外两种产量更少。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 124,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_seal_red",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 124,
+          "w": 170,
+          "h": 63,
+          "text": "Red Wax: Standard\n(No Change)",
+          "translations": {
+            "ja": "赤い蝋：標準\n（変化なし）",
+            "zh": "红蜡：标准款\n（价格不变）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 202,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_seal_black",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 202,
+          "w": 170,
+          "h": 63,
+          "text": "Black Wax: Reserve\n(+60 Credits)",
+          "translations": {
+            "ja": "黒い蝋：リザーブ\n（+60クレジット）",
+            "zh": "黑蜡：珍藏款\n（+60信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 280,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_seal_cloth",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 280,
+          "w": 170,
+          "h": 63,
+          "text": "Cloth and Twine: Farmhouse\n(+130 Credits)",
+          "translations": {
+            "ja": "布巻きと麻ひも：ファームハウス\n（+130クレジット）",
+            "zh": "布包麻绳：农家款\n（+130信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Mold",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "3. Mold",
+          "translations": {
+            "ja": "3. カビ",
+            "zh": "3. 霉"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 90,
+          "w": 258,
+          "h": 26,
+          "text": "A soft white bloom on the rind is a good sign. Blue-green spots mean the wheel has turned. Do not eat it.",
+          "translations": {
+            "ja": "外皮に出る白くふわふわしたカビは、良い印です。青緑のカビの点は、傷んでいる印です。食べないでください。",
+            "zh": "外皮上柔软的白霉是好兆头。青绿色的霉点表示这轮奶酪已经变质。千万不要吃。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 124,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_mold_none",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 124,
+          "w": 170,
+          "h": 63,
+          "text": "No Mold\n(No Change)",
+          "translations": {
+            "ja": "カビなし\n（変化なし）",
+            "zh": "无霉\n（价格不变）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 202,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_mold_white",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 202,
+          "w": 170,
+          "h": 63,
+          "text": "White Mold (Good Bloom)\n(+60 Credits)",
+          "translations": {
+            "ja": "白カビ（良い花）\n（+60クレジット）",
+            "zh": "白霉（好花）\n（+60信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 280,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_mold_blue",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 280,
+          "w": 170,
+          "h": 63,
+          "text": "Blue-Green Mold\n(-120 Credits)",
+          "translations": {
+            "ja": "青緑のカビ\n（-120クレジット）",
+            "zh": "青绿霉\n（-120信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Cracks",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "4. Cracks",
+          "translations": {
+            "ja": "4. ひび",
+            "zh": "4. 裂纹"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 90,
+          "w": 258,
+          "h": 26,
+          "text": "A hairline crack is only skin deep. A deep crack runs into the paste and lets the air in.",
+          "translations": {
+            "ja": "ヘアラインのひびは、表面だけです。深い割れは、中身まで届き、空気を入れてしまいます。",
+            "zh": "发丝裂纹只在表面。深裂会伸进奶酪内部，让空气进去。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 124,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_crack_none",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 124,
+          "w": 170,
+          "h": 63,
+          "text": "No Cracks\n(No Change)",
+          "translations": {
+            "ja": "ひびなし\n（変化なし）",
+            "zh": "无裂纹\n（价格不变）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 202,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_crack_hair",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 202,
+          "w": 170,
+          "h": 63,
+          "text": "Hairline Cracks\n(-45 Credits)",
+          "translations": {
+            "ja": "ヘアラインのひび\n（-45クレジット）",
+            "zh": "发丝裂纹\n（-45信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 280,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_crack_deep",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 280,
+          "w": 170,
+          "h": 63,
+          "text": "Deep Crack\n(-130 Credits)",
+          "translations": {
+            "ja": "深い割れ\n（-130クレジット）",
+            "zh": "深裂\n（-130信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Cut",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "5. Cut",
+          "translations": {
+            "ja": "5. 切り欠き",
+            "zh": "5. 缺口"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 90,
+          "w": 258,
+          "h": 26,
+          "text": "A wheel is worth the most whole. A missing wedge shows the paste inside, with its round holes (eyes).",
+          "translations": {
+            "ja": "ホールは、丸ごとのときがいちばん高く売れます。欠けた所からは、中身と丸い穴（目）が見えます。",
+            "zh": "整轮的奶酪最值钱。缺掉一块的地方能看到里面的奶酪体和圆孔（气孔）。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 124,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_cut_whole",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 124,
+          "w": 170,
+          "h": 63,
+          "text": "Whole Wheel\n(No Change)",
+          "translations": {
+            "ja": "丸ごとのホール\n（変化なし）",
+            "zh": "完整的整轮\n（价格不变）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 202,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_cut_eighth",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 202,
+          "w": 170,
+          "h": 63,
+          "text": "One Eighth Missing\n(-90 Credits)",
+          "translations": {
+            "ja": "八分の一が欠けている\n（-90クレジット）",
+            "zh": "缺了八分之一\n（-90信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 280,
+          "w": 84,
+          "h": 63,
+          "sprite": "hg_cut_quarter",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 280,
+          "w": 170,
+          "h": 63,
+          "text": "One Quarter Missing\n(-190 Credits)",
+          "translations": {
+            "ja": "四分の一が欠けている\n（-190クレジット）",
+            "zh": "缺了四分之一\n（-190信用点）"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Stamp",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "6. Stamp",
+          "translations": {
+            "ja": "6. 刻印",
+            "zh": "6. 印记"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 92,
+          "w": 258,
+          "h": 36,
+          "text": "Every genuine Marlowe wheel has this stamp pressed into its rind, at the back of the top face: a round ring around two wheat ears spreading in a V.",
+          "translations": {
+            "ja": "マーロウのホールには、上面の奥の外皮に、必ずこの刻印が押されています。輪に囲まれた、V字に広がる2本の麦の穂です。",
+            "zh": "每轮正品马洛奶酪的外皮上，顶面后方都压有这个印记：圆环围着两穗呈V字散开的麦穗。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 132,
+          "w": 96,
+          "h": 72,
+          "sprite": "hg_stamp_genuine",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 205,
+          "w": 116,
+          "h": 12,
+          "text": "Genuine",
+          "translations": {
+            "ja": "正規",
+            "zh": "正品"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "x": 162,
+          "y": 132,
+          "w": 96,
+          "h": 72,
+          "sprite": "hg_stamp_fake_a",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 162,
+          "y": 205,
+          "w": 116,
+          "h": 12,
+          "text": "Parallel Ears",
+          "translations": {
+            "ja": "穂が平行",
+            "zh": "麦穗平行"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "x": 28,
+          "y": 224,
+          "w": 96,
+          "h": 72,
+          "sprite": "hg_stamp_fake_b",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 297,
+          "w": 116,
+          "h": 12,
+          "text": "Square Ring",
+          "translations": {
+            "ja": "四角い枠",
+            "zh": "方形外框"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#355271"
+        },
+        {
+          "type": "image",
+          "x": 162,
+          "y": 224,
+          "w": 96,
+          "h": 72,
+          "sprite": "hg_stamp_fake_c",
+          "fit": "stretch"
+        },
+        {
+          "type": "text",
+          "x": 162,
+          "y": 297,
+          "w": 116,
+          "h": 12,
+          "text": "Three Ears",
+          "translations": {
+            "ja": "穂が3本",
+            "zh": "三穗麦穗"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 6,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 318,
+          "w": 258,
+          "h": 44,
+          "text": "If any part of the stamp is different, the wheel is counterfeit. A counterfeit never earns the Rind or Seal bonus, and is worth -100 Credits.",
+          "translations": {
+            "ja": "刻印のどこかが違う場合、そのホールは偽物です。偽物には、外皮と封のボーナスが付かず、-100クレジットです。",
+            "zh": "印记只要有任何一处不同，这轮奶酪就是赝品。赝品无法获得外皮和封层的加成，价值为-100信用点。"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 5.5,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    },
+    {
+      "name": "Examples",
+      "elements": [
+        {
+          "type": "text",
+          "x": 28,
+          "y": 74,
+          "w": 258,
+          "h": 14,
+          "text": "Appraisal Examples",
+          "translations": {
+            "ja": "鑑定例",
+            "zh": "鉴定示例"
+          },
+          "style": "label",
+          "align": "left",
+          "valign": "middle",
+          "fontSize": 7.5,
+          "color": "#355271"
+        },
+        {
+          "type": "text",
+          "x": 28,
+          "y": 96,
+          "w": 124,
+          "h": 150,
+          "text": "Base Value: +500\nOrange-Brown Rind: +110\nCloth and Twine: +130\nWhite Mold: +60\nHairline Cracks: -45\nOne Eighth Missing: -90\n------------------\n<b>Total: 665</b>",
+          "translations": {
+            "ja": "基本価格：+500\n橙褐色の外皮：+110\n布巻きと麻ひも：+130\n白カビ：+60\nヘアラインのひび：-45\n八分の一の欠け：-90\n------------------\n<b>合計：665</b>",
+            "zh": "基础价值：+500\n橙褐色外皮：+110\n布包麻绳：+130\n白霉：+60\n发丝裂纹：-45\n缺了八分之一：-90\n------------------\n<b>总计：665</b>"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 6,
+          "color": "#373541"
+        },
+        {
+          "type": "text",
+          "x": 162,
+          "y": 96,
+          "w": 124,
+          "h": 190,
+          "text": "Base Value: +500\nCounterfeit Stamp: -100\nBlue-Green Mold: -120\nDeep Crack: -130\nOne Quarter Missing: -190\n------------------\nSubtotal: -40\n------------------\nThis item cannot go below 100\n<b>Final Value: 100</b>",
+          "translations": {
+            "ja": "基本価格：+500\n偽の刻印：-100\n青緑のカビ：-120\n深い割れ：-130\n四分の一の欠け：-190\n------------------\n小計：-40\n------------------\nこのアイテムは100を下回れない\n<b>最終価格：100</b>",
+            "zh": "基础价值：+500\n赝品印记：-100\n青绿霉：-120\n深裂：-130\n缺了四分之一：-190\n------------------\n小计：-40\n------------------\n该物品不能低于100\n<b>最终价值：100</b>"
+          },
+          "style": "body",
+          "align": "left",
+          "valign": "top",
+          "fontSize": 6,
+          "color": "#373541"
+        }
+      ],
+      "template": "guide_page",
+      "slots": {
+        "header": "Station Trade Commission",
+        "title": "Marlowe Aged Cheese Appraisal Guide",
+        "body": ""
+      }
+    }
+  ],
+  "item": {
+    "id": "ryohto.cheese_guide",
+    "nameLoc": "cheese_guide_name",
+    "descriptionLoc": "cheese_guide_desc",
+    "sprite": "guide_cheese",
+    "value": 50
+  }
+}
