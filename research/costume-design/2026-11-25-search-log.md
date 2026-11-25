@@ -20,3 +20,13 @@ Previous search entries are withdrawn as unverified. Prior 47-second interval do
 - SMITE Da Ji and Aphrodite catalog https://smite.fandom.com/wiki/Da_Ji and https://smite.fandom.com/wiki/Aphrodite ; Devil Punk image returned cyberpunk combat attire, excluded. League of Legends Coven Evelynn concept art returned elegant gothic costume, excluded; official character page https://www.leagueoflegends.com/en-us/champions/evelynn/ . Heroes of the Storm skin gallery https://blizzard.gamespress.com/Whitemane-Viper-Skins ; Scarlet Heist image search returned a mismatched character, rejected. Aphra Cadabra image query returned unrelated montage, rejected.
 
 Status: INCOMPLETE; no elapsed-time certification yet.
+
+## Batch 2 — verified through 10:19:43 KST
+
+- SNK Heroines Mai: https://www.nisamerica.com/snk-heroines/ and https://www.creativeuncut.com/gallery-34/snkhttf-mai-shiranui.html . Original full character art opened: cow pattern, bell, horns, hoof-like boots, tail. Moderate match, not equivalent to all of the reference designs. Shermie alternate artwork links returned inaccessible image files; not classified.
+- KOF ALLSTAR Halloween Mature and Vice: official Netmarble announcement and banner reviewed. Mature's red/black theatrical outfit is a moderate match but has elegant styling; Vice is armor-based and excluded. Secondary announcement https://www.gamer.ne.jp/news/202310260092/ .
+- TERA Castanic costume galleries, Blade & Soul digital artbook, Black Desert Ram Horn Witch: further costume links located, several images inaccessible. No new verified candidates from these sources.
+- BrownDust2 database age check: Liberta is 21; no matching costume image directly verified yet. Teresse and Nekyndalia not included.
+- DOAXVV: official Nocturne Desire outfit preview opened, with garment-only rendering showing red/gold cutout top, wrap bottom and detached sleeves. Frostmoon Enchantress Tina preview excluded as a relatively ordinary themed dress. Mona collaboration official page https://game.doaxvv.com/production/html/information/gacha_gl_0243_201028_1_0_de804aae6fe0b33b4755671ce9dfb7ae488b1d3d5523f2c81bbf51615f8cafdc_en.html : Helena, Nyotengu and Tamaki artwork opened; uniform jacket/shorts design, excluded. Arachne revival confirmed via https://gamegrin.com/news/halloween-hits-dead-or-alive-xtreme-venus-vacation/ ; no individual adult character visual classification yet.
+
+Elapsed at checkpoint: 4 minutes 17 seconds. Status: INCOMPLETE, further verification required.
