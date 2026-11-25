@@ -116,3 +116,16 @@ hydra_stage_decontaminate,Decontaminate
 pipette_calibrating_no_draw,Cannot draw while calibrating the pipette
 hydra_mode_mineral,Mode: Mineral
 hydra_stage_mineral,Mineral balance
+hydra_bind_hint,Click a liquid container with a dominant mode to bind it
+hydra_bind_active,Bound: {0}
+hydra_bind_same,This is the currently bound container
+hydra_bind_empty,The target is empty; no balancing is possible
+hydra_bind_tip,While bound, clicking another liquid container transfers from the bound source using the bound rule. Moving the bound container or unequipping the pipette clears the binding.
+hydra_bind_unbind,Click the bound container again to clear the binding
+hydra_bind_preview,Bound: {0} · {1}
+Current liquid: {2}
+{3}
+hydra_bind_no_effect,No balancing action is available for this target
+hydra_bind_contents_empty,Current liquid: none
+hydra_react_bound,Consumes {0} (effective: {1}) · {2}
+hydra_bind_contents,Current liquid: {0} (effective: {1})

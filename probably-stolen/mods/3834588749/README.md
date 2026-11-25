@@ -4,8 +4,16 @@
 《深空当铺：可能是偷的 / Probably Stolen》Eleanor 个人剧情线重制 MOD。
 
 - 游戏版本：1.0.0.15（当前 public/open_beta 构建）；版本号只写入日志，不再按游戏更新停用剧情。0.46D / 1.0.0.13 / 1.0.0.14 继续兼容。
-- MOD版本：1.37
+- MOD版本：1.38
 - 语言：简体中文 / English / 日本語 / 한국어（剧情与 UI 均已翻译）
+
+## 1.38：立绘兼容与双角色首句名字修复
+
+- 修复与少女当铺/立绘管理器一起启用时，角色入场后完全停下时已选立绘被改回默认/原生立绘的问题。
+- Auto 模式不再覆盖其他立绘来源；本 MOD 不再改写不属于自己角色的立绘键。
+- 修复双角色到访时后场角色第一句固定显示“治安部警官”：在原生 SEC 名字牌初始化后再次写入同伴名。
+- 真正的保安双人场景仍显示“治安部警官”，不受影响。
+- 不改剧情、路线、选项结果、目标日、结局或排期；保留 1.37 及更早修复。
 
 ## 1.37：放行旧路线进度，不再暂停存档
 
@@ -721,7 +729,7 @@ pwsh -File tools/test_runtime_flows.ps1 -Managed '<游戏根目录>\Probably Sto
 ### 维护规则
 
 - 文本源是 `Content/*.json`；修改后运行 `python tools/build_content.py` 与 `python tools/check_project.py`。
-- 改剧情、选项、日期、路线或结局时，必须同步更新 `docs/route_map.html` 与 `docs/ROUTE_MAP_MAINTENANCE.md`，并运行 `python tools/check_route_map.py`。
+- 路线图仅在作者明确要求维护时更新；默认不随剧情改动或发布同步，也不需要运行 `python tools/check_route_map.py`。
 - 不运行 `tools/legacy/parse_v06.py`；它会用旧台本覆盖当前内容源。
 - 文档新增、移动或归档时同步 `docs/INDEX.md`；历史材料放入 `docs/archive/`，不要留在根目录。
 - 线上工坊/Nexus 文案以作者在平台手写的版本为准；仓库内 `WORKSHOP_*`、`NEXUS_*` 只是 AI 记录或打包输入。

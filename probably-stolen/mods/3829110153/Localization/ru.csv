@@ -1535,7 +1535,7 @@ gameplay.fish.grade.4,Высший сорт
 gameplay.fish.processing.multiplier,Унаследованное качество рыбы: стоимость ×{0}
 gameplay.fishing.level.max,Рыбалка: ур. {0}  Опыт: {1} (максимальный уровень)
 gameplay.fishing.level.progress,Рыбалка: ур. {0}  Опыт: {1}/{2}  Следующий уровень: {3}
-gameplay.fishing.level.rules,Каждая забранная рыба даёт 10 опыта. Для максимального уровня нужно 9 500 опыта. Сорт целой рыбы определяется при первой поимке и наследуется основным мясом при разделке. Разведённая рыба по умолчанию имеет IV сорт. Дикая биологическая рыба появляется взрослой; особенности применяются один раз при поимке.
+gameplay.fishing.level.rules,Каждая забранная рыба даёт 10 опыта. Для максимального уровня нужно 9 500 опыта. Сорт целой рыбы определяется при первой поимке и наследуется основным мясом при разделке. При вылуплении сорт каждого яйца повышается или понижается на одну ступень относительно сорта матери с вероятностью 25% в каждом случае. В остальных 50% и при выходе за границы сорт сохраняется. Дикая биологическая рыба появляется взрослой; особенности применяются один раз при поимке.
 gameplay.ship_mentor.can_wait,"Если не хватает, можешь отдавать частями."
 gameplay.ship_mentor.fixed,"Корабль, который ты просил починить, готов. Ремонт обошёлся в 1 000 кредитов."
 gameplay.ship_mentor.insufficient,Недостаточно кредитов. Оплата не произведена.
@@ -3488,3 +3488,475 @@ worm.housing.harvest.help,После ночи все мёртвые черви �
 item.gf_worm_mash.name,Корм из червей
 item.gf_worm_mash.short,Мясной корм из измельчённых в кашицу червей.
 item.gf_worm_mash.flavor,
+fish.breeding.stamina,Выносливость
+fish.breeding.burst,Рывок
+fish.breeding.agility,Ловкость
+fish.breeding.resilience,Стойкость
+item.gf_fish_training_tank.name,Тренировочная система рыбоводства
+item.gf_fish_training_tank.short,Выберите упражнение для автоматической тренировки рыб каждую ночь. Внешний вид зависит от упражнения. Тренировку можно остановить в любое время.
+farm.training.stop,Остановить тренировку
+item.gf_fish_training_tank.flavor,
+fish.training.attribute,{0} (тренировка +{1})
+fish.training.count,Тренировки {0}/{1}
+fish.tooltip.water_high,Качество воды: высокое
+fish.tooltip.water_medium,Качество воды: среднее
+fish.tooltip.water_low,Качество воды: низкое
+fish.tooltip.purifies,Очистка: {0} мл на 100 г за ночь
+fish.tooltip.pellet,Устойчивость к загрязнённому корму
+fish.tooltip.meat,Рост на мясе +{0}%
+fish.tooltip.plump,Упитанная · масса при поимке +{0}% (до предела вида)
+fish.tooltip.giant,Гигантская · масса при поимке +{0}% (до предела вида)
+fish.tooltip.roe,Икряная · несёт икру
+fish.tooltip.scarred,В шрамах · здоровье при поимке −{0}%
+fish.tooltip.crystalized,Кристаллизация · цена ×{0}
+fish.tooltip.training,Тренировки {0}/{1}
+fish.duel.title,Поединок рыб
+fish.duel.button.start,Начать
+fish.duel.place,Поместите сюда живую взрослую рыбу и нажмите «Начать».
+fish.duel.health,Здоровье в бою {0}/{1}
+fish.duel.dodge,Уклонение
+fish.duel.fear,Страх
+fish.duel.role.attack,Атака
+fish.duel.role.defense,Защита
+fish.duel.role.agile,Ловкость
+fish.duel.guard,Стойка {0}
+fish.duel.opponent,Рыба соперника
+fish.duel.player,Ваша рыба
+fish.duel.match.even,Одинаковые типы
+fish.duel.match.advantage,У вашей рыбы преимущество
+fish.duel.match.disadvantage,У соперника преимущество
+fish.duel.exchange.approach,Сближение
+fish.duel.exchange,Столкновение и отход
+fish.duel.exchange.break,Защита пробита
+fish.duel.exchange.retreat,Рыба медлит
+fish.duel.morale,Решимость {0}
+fish.duel.record,Побед: {0} (надбавка к цене {1}%)
+fish.training.failure.food,голода
+fish.training.failure.health,недостатка здоровья
+fish.training.failure,Прошлой ночью {0} пропустил тренировку «{2}» из-за {1}.
+fish.duel.feed.title,Ход боя
+fish.duel.feed.start,Бой начался.
+fish.duel.feed.hit,{0} наносит {1} урона.
+fish.duel.feed.break,Защита пробита.
+fish.duel.feed.draw,Бой закончился вничью.
+fish.duel.feed.win,{0} побеждает.
+fish.duel.feed.clash,{0} и {1} обмениваются ударами: {2} / {3} урона.
+fish.duel.feed.dodge,{0} уклоняется от атаки.
+fish.duel.feed.guard,Защита рыбы {0} пробита.
+fish.duel.feed.timeout,Время вышло. Бой закончился вничью.
+fish.duel.feed.reflect,Рыба {0} отражает {1} урона.
+fish.duel.feed.action.approach,Рыба {0} сближается.
+fish.duel.feed.action.align,Рыба {0} смещается для атаки.
+fish.duel.feed.action.windup,Рыба {0} готовится к рывку.
+fish.duel.feed.action.heavy_windup,{0} применяет приём «Тяжёлый замах».
+fish.duel.feed.action.counter_windup,{0} применяет приём «Ответ в просвет».
+fish.duel.feed.action.rush,Рыба {0} бросается вперёд.
+fish.duel.feed.action.sidestep,{0} применяет приём «Боковой уход».
+fish.duel.feed.action.hold_guard,{0} применяет приём «Защитная стойка».
+fish.duel.feed.action.intercept,{0} применяет приём «Перехват».
+fish.duel.feed.action.cancel_target,Рыба {0} отменяет рывок: цель сместилась.
+fish.duel.feed.action.cancel_guard,Рыба {0} замечает защиту и отменяет рывок.
+fish.duel.feed.action.miss,Рыба {0} промахивается.
+fish.duel.feed.action.regroup,Рыба {0} отходит и приходит в себя.
+fish.duel.feed.action.shield_retreat,{0} применяет приём «Защитный отход».
+fish.duel.feed.action.wall_slide,{0} применяет приём «Скольжение вдоль стены».
+fish.duel.feed.action.dodge_return,Рыба {0} возвращается после уклонения.
+fish.duel.feed.action.fear_retreat,{0} применяет приём «Отступление от страха».
+fish.duel.feed.action.guard_stabilize,Рыба {0} восстанавливает равновесие после блока.
+fish.duel.feed.action.swim,Рыба {0} отплывает и восстанавливает защиту.
+fish.duel.feed.action.wall_follow,{0} применяет приём «Манёвр вдоль стены».
+fish.duel.feed.action.glide,Рыба {0} скользит и замедляется.
+fish.duel.feed.action.face,Рыба {0} разворачивается к сопернику.
+fish.duel.feed.action.resume,Рыба {0} завершает восстановление и оценивает соперника.
+fish.duel.feed.action.keep_retreat,Рыба {0} продолжает отступать после удара.
+fish.duel.feed.stun,Рыба {0} оглушена.
+fish.duel.feed.action.flank_counter,{0} применяет приём «Ответ с фланга».
+fish.duel.feed.species_skill,{0} применяет приём «{1}».
+fish.duel.skill.gf_horned_swordfish.piercing_charge,Водный прорыв
+fish.duel.skill.gf_glass_fish.transparent_flank,Прозрачный обход
+fish.duel.skill.gf_volcanic_fish.thermal_recoil,Тепловая отдача
+fish.duel.skill.gf_rans_nightmare.dark_ambush,Теневой налёт
+fish.duel.skill.gf_wuzhiqi.fin_break,Рывок сквозь защиту
+fish.duel.skill.eel.serpentine_slip,Змеиный обход
+fish.duel.skill.electric_eel.close_discharge,Разряд в упор
+fish.duel.skill.gf_blue_crystal_fish.crystal_shards,Кристальные осколки
+fish.duel.skill.gf_electric_eel.flash_feint,Световая приманка
+fish.duel.skill.gf_ferrite_jellyfish.tentacle_snare,Захват щупальцами
+fish.duel.skill.gf_golden_fish.golden_deflection,Золотое отражение
+fish.duel.skill.gf_goldfish.fin_lure,Обман плавником
+fish.duel.skill.gf_large_yellow_croaker.steady_sink,Устойчивая стойка
+fish.duel.skill.gf_lofurin.veil_turn,Поворот под вуалью
+fish.duel.skill.gf_muspels_son.ember_guard,Угольная защита
+fish.duel.skill.gf_niorun.wing_glide,Крылатое скольжение
+fish.duel.skill.gf_purifier_fish.reserve_water,Запас воды
+fish.duel.skill.gf_rainbow_fish.color_switch,Цветной зигзаг
+fish.duel.skill.gf_ratfish.bottom_gap,Проход у дна
+fish.duel.skill.gf_redtail_fish.tail_sweep,Взмах красного хвоста
+fish.duel.skill.gf_sardine.scatter_shadow,Рассеивание теней
+fish.duel.skill.gf_small_yellow_croaker.quick_cut,Резкий поворот
+fish.duel.skill.gf_snakehead.line_ambush,Засада на пути
+fish.duel.skill.gf_space_rocket_fish.rocket_wake,Ракетный след
+fish.duel.skill.gf_star_puffer.star_puff,Раздувание и толчок
+fish.duel.skill.graft_tilapia.turnback_ram,Таран с разворота
+fish.duel.skill.gutter_tilapia.wall_steal,Манёвр у стены
+fish.duel.skill.sturgeon.armored_brace,Защита твёрдой чешуёй
+fish.duel.skill.tilapia.steady_morale,Возврат самообладания
+fish.duel.close_space,"Недостаточно места для возврата рыбы. Освободите ячейки или заберите рыбу вручную, затем закройте окно."
+fish.duel.fighting_lock,Идёт поединок рыб. Дождитесь его окончания.
+fish.tournament.title,Турнир рыб
+fish.tournament.quarter,Четвертьфинал
+fish.tournament.semi,Полуфинал
+fish.tournament.final,Финал
+fish.tournament.champion,Чемпион
+fish.tournament.confirm_start,Подтвердить рыбу и начать
+fish.tournament.start,Начать раунд
+fish.tournament.missing,Заявленная рыба отсутствует или больше не подходит для участия. Вам засчитано поражение в турнире.
+fish.tournament.space,На арене недостаточно места. Освободите место и повторите попытку.
+fish.tournament.transfer,Не удалось поместить заявленную рыбу на арену. Бой ещё не начался.
+fish.tournament.pending,Не определено
+fish.tournament.player,Вы
+fish.tournament.loss_mark,П
+fish.tournament.win_mark,В
+fish.tournament.not_registered,Вы ещё не зарегистрированы. Дождитесь визита организатора турнира.
+fish.tournament.finished,Турнир завершён. Чемпион: {0}
+fish.tournament.choose,Поместите живую взрослую рыбу. После подтверждения она закрепляется за турниром; отсутствие или непригодность означает поражение.
+fish.tournament.status,Турнир {0} · Рыба: {1} · {2}
+fish.tournament.fighting,Бой идёт
+fish.tournament.ready,Ожидание начала
+fish.tournament.draw,Ничья. Повторный бой с тем же соперником.
+fish.tournament.ongoing,У вас уже есть незавершённый турнир. Утерянный пропуск можно восстановить.
+fish.tournament.registration_open,На этот турнир открыта бесплатная регистрация.
+fish.tournament.next_cycle,Вы уже участвовали в этом турнире. Следующий откроется в день {0}.
+fish.tournament.have_pass,"У вас уже есть пропуск. Дважды щёлкните по нему, чтобы продолжить турнир."
+fish.tournament.pass_space,Освободите место для заявки.
+fish.tournament.registered,Откройте заявку двойным щелчком.
+fish.tournament.organizer.invitation,"Хочешь попробовать себя в рыбном турнире? Вот доска регистрации. Каждый день на ней можно узнать, какие соревнования проходят. За победу получишь приз."
+fish.tournament.organizer.register,"Получить доску регистрации"
+fish.tournament.organizer.leave,В другой раз
+item.gf_duel_tournament_pass.name,Доска записи на турнир
+item.gf_duel_tournament_pass.short,"Дважды щёлкните по доске, чтобы выбрать турнир и заявить взрослую рыбу."
+item.gf_duel_tournament_pass.flavor,Каждый день открывается отдельный турнир.
+fish.tournament.expand,Развернуть
+fish.tournament.collapse,Свернуть
+fish.tournament.play,Смотреть
+fish.tournament.pause,Пауза
+fish.tournament.skip,Итоги раунда
+fish.tournament.retrieve,Забрать рыбу
+fish.tournament.preparing,Подготовка раунда
+fish.tournament.start_round,Начать: {0}
+fish.tournament.rematch,Начать переигровку
+fish.tournament.watch,Наблюдение: {0} против {1}
+fish.tournament.playback,Повтор: {0} против {1}
+fish.tournament.round_done,"Раунд завершён. Нажмите кнопку, чтобы продолжить."
+fish.tournament.no_record,Для этого прежнего боя нет записи.
+fish.tournament.round_title,Турнир {0} · {1}
+fish.tournament.ended,Турнир завершён
+fish.tournament.lost_watch,"Вы выбыли, но можете продолжить просмотр."
+fish.tournament.recording,Расчёт {0}/{1}
+fish.tournament.match_ready,"Выберите рыбу, затем начните раунд."
+fish.tournament.saved_replay,Позиция просмотра восстановлена.
+fish.tournament.replay_complete,Запись просмотрена до конца.
+fish.tournament.confirm_round,Подтвердить и начать
+fish.tournament.take_after,"Поставьте просмотр на паузу или дождитесь конца раунда, прежде чем забирать рыбу."
+fish.tournament.legacy_keep,Прежние результаты сохранены. Записи доступны только для новых раундов.
+fish.tournament.profile,Сведения
+fish.tournament.match,Бой
+fish.tournament.watch_match,Смотреть этот бой
+fish.tournament.previous_match,Предыдущий бой
+fish.tournament.next_match,Следующий бой
+fish.tournament.no_fish,Рыба не выбрана
+fish.tournament.inspect_hint,Просмотр сведений не переключает бой.
+fish.tournament.profile_skill.active_reflection,"Ищет возможность, пока действует отражение урона."
+fish.tournament.profile_skill.attack_ready,"Срабатывает, когда атака готова и соблюдена нужная дистанция."
+fish.tournament.profile_skill.disengaged,Срабатывает после выхода из ближнего боя.
+fish.tournament.profile_skill.dodge_success,Срабатывает после успешного уклонения.
+fish.tournament.profile_skill.enemy_charge_committed,"Срабатывает, когда противник уже выбрал траекторию рывка."
+fish.tournament.profile_skill.enemy_charge_started,"Срабатывает, когда противник начинает рывок."
+fish.tournament.profile_skill.enemy_close,Срабатывает при приближении противника.
+fish.tournament.profile_skill.enemy_flanking,"Срабатывает, когда противник пытается зайти сзади."
+fish.tournament.profile_skill.enemy_heavy_committed,"Срабатывает, когда противник начинает тяжёлую атаку с разгоном."
+fish.tournament.profile_skill.enemy_intercept,"Срабатывает, когда противник готовится перехватить."
+fish.tournament.profile_skill.enemy_turning,Срабатывает при развороте противника.
+fish.tournament.profile_skill.enemy_wall_retreat,"Срабатывает, когда противник отступает вдоль стенки."
+fish.tournament.profile_skill.enemy_windup,"Срабатывает, когда противник начинает подготовку атаки."
+fish.tournament.profile_skill.guard_broken,Срабатывает при пробитии защиты.
+fish.tournament.profile_skill.incoming_contact,Срабатывает перед лобовым столкновением.
+fish.tournament.profile_skill.incoming_guard_break,"Срабатывает перед атакой, способной пробить защиту."
+fish.tournament.profile_skill.low_guard_at_wall,Срабатывает у стенки при слабой защите.
+fish.tournament.profile_skill.own_normal_attack_missed,Срабатывает после промаха обычной атакой.
+fish.tournament.profile_skill.own_recovery_ended,Срабатывает после завершения восстановления.
+fish.tournament.profile_skill.pressured,Срабатывает под длительным давлением.
+fish.tournament.profile_skill.repeat_approach,Срабатывает после повторных сближений с противником.
+fish.tournament.profile_skill.retreat,Срабатывает при отступлении.
+fish.tournament.profile_skill.shared_wall,"Срабатывает, когда обе рыбы находятся у одной стенки."
+fish.tournament.skill,Навык
+fish.tournament.no_skill,Нет особого навыка
+fish.tournament.registration_title,Доска записи на турнир
+fish.tournament.registration_list,Турниры
+fish.tournament.registration_detail,Сведения о турнире
+fish.tournament.registration_fish,Рыба участника
+fish.tournament.previous_page,Назад
+fish.tournament.next_page,Вперёд
+fish.tournament.rewards,Призы
+fish.tournament.form_space,"Освободите место, чтобы забрать рыбу."
+fish.tournament.cup_dock,Кубок тофу-пудинга
+fish.tournament.cup_deep,Кубок глубин
+fish.tournament.cup_undercurrent,Турнир подводного течения
+fish.tournament.legacy_cup,Прежний турнир
+fish.tournament.runner_up,Второе место
+fish.tournament.reward_lines,"Победитель: {0} кредитов + {3} ×2
+Второе место: {1} кредитов + {3} ×1
+Полуфиналист: {2} кредитов"
+fish.tournament.today,Сегодня
+fish.tournament.opens_day,Открытие на 8-й день
+fish.tournament.history,История
+fish.tournament.active,В процессе
+fish.tournament.event_day,День {0}
+fish.tournament.form_rules,"Восемь участников · Три раунда на выбывание · Бесплатно
+Нужна живая взрослая рыба"
+fish.tournament.form_drop,Поместите живую взрослую рыбу
+fish.tournament.enter_today,Подтвердить участие
+fish.tournament.entry_unavailable,Вы уже подали заявку сегодня или участвуете в другом турнире.
+fish.tournament.claim_reward,Получить призы
+fish.tournament.resume_event,Продолжить турнир
+fish.tournament.reward_pending,Остались призы. Освободите место и повторите.
+fish.tournament.rank_top_four,Четвёрка лучших
+fish.tournament.rank_top_eight,Восьмёрка лучших
+fish.tournament.rank_status,Место: {0}
+fish.tournament.claim_available,Есть призы к получению
+fish.tournament.claim_none,Нет неполученных призов
+fish.tournament.picker_empty,Рыба не выбрана
+fish.tournament.reward_credits,{0} кредитов
+fish.tournament.entry_open,Открыта запись
+fish.tournament.pick_fish,Выбрать рыбу
+fish.tournament.close_picker,Свернуть отсек
+fish.tournament.no_active,Нет текущих турниров
+fish.tournament.no_history,Нет завершённых турниров
+fish.tournament.rank_rewards,Призы за места
+fish.tournament.enter_hint,"Подтвердите, чтобы открыть сетку турнира"
+fish.tournament.board_next,Следующий матч: {0}
+fish.tournament.finish_before_close,"Завершите турнир, прежде чем закрывать арену."
+fish.tournament.story_dock,Сладкое или солёное? Победитель на неделю выбирает проигравшему вкус тофу-пудинга.
+fish.tournament.story_deep,"Докеры уверены, что в прилив рыбы дерутся лучше. Проигравший несёт ночную вахту за победителя."
+fish.tournament.story_dark,"Запись начинается, когда гаснут огни причала. Победитель рассказывает историю, проигравший угощает всех."
+fish.tournament.history_log,История боёв
+fish.tournament.history_round,{0} · Соперник: {1} · {2}
+fish.tournament.history_win,Победа
+fish.tournament.history_loss,Поражение
+fish.tournament.history_unknown_fish,Рыба участника не записана
+fish.tournament.history_fish,Рыба участника: {0}
+fish.tournament.history_pending,К получению: {0}
+fish.tournament.cup_theme_001,"Кубок тофу"
+fish.tournament.story_theme_001,"Сладкий или солёный? Пусть рыбы решат! Победитель выберет, какой тофу-пудинг все рестораны станции будут подавать целую неделю."
+fish.tournament.cup_theme_002,"Битва за кинзу"
+fish.tournament.story_theme_002,"«Кинза лучше всего», — заявил анонимный поклонник, оплативший турнир. Каждый участник получит порцию питательного напитка со вкусом кинзы."
+fish.tournament.cup_theme_003,"Кубок ранних пташек и полуночников"
+fish.tournament.story_theme_003,"Хочешь изменить расписание утреннего эфира? Участвуй в турнире! Победитель выберет время утренней трансляции на следующий месяц."
+fish.tournament.cup_theme_004,"Кубок двух бульонов"
+fish.tournament.story_theme_004,"Острый бульон или мягкий? Какой тебе больше нравится? — Хот-пот в Центральном районе (скидка 20% на всё в честь открытия)"
+fish.tournament.cup_theme_005,"Кубок кошек и собак"
+fish.tournament.story_theme_005,"Кошки или собаки? Кто тебе больше нравится? Победитель получит питомца (от Джорджио)."
+fish.tournament.cup_theme_006,"Кубок ананасовой пиццы"
+fish.tournament.story_theme_006,"Место ли ананасу на пицце? Кто-то считает, что это так же странно, как клубничный мапо-тофу, но организаторам явно нравится пицца с ананасом."
+fish.tournament.cup_theme_007,"Кубок чая с шариками"
+fish.tournament.story_theme_007,"Любители шариков тапиоки и кокосового желе считают свою добавку душой молочного чая. Победитель получит годовой запас купонов на молочный чай от «Пути панды»."
+fish.tournament.cup_theme_008,"Кубок отмены понедельника"
+fish.tournament.story_theme_008,"Ассоциация против понедельников устроила рыбий турнир в знак протеста и потратила весь понедельник на подготовку."
+fish.tournament.cup_theme_009,"Кубок душа"
+fish.tournament.story_theme_009,"Ассоциация любителей купания спорила, что мыть первым: голову или тело. В итоге порядок решили определить рыбьим турниром."
+fish.tournament.cup_theme_010,"Кубок хрустящей картошки"
+fish.tournament.story_theme_010,"Картошка фри вкуснее всего сразу из фритюрницы. Мы собрались, чтобы прославить её, но каждый назвал своё любимое заведение. Так встреча «Картофельное попурри» превратилась в турнир."
+fish.tournament.cup_theme_011,"Кубок колы со льдом"
+fish.tournament.story_theme_011,"Безо льда кола теряет душу. Этот турнир устроили в честь появления колы."
+fish.tournament.cup_theme_012,"Кубок курицы и яйца"
+fish.tournament.story_theme_012,"Философское общество провело тридцать шесть турниров из-за этого вопроса. На этот раз ответ определят рыбы."
+fish.tournament.cup_theme_013,"Кубок туалетного рулона"
+fish.tournament.story_theme_013,"Как вешать рулон, концом наружу или внутрь? Жилой район просит обе стороны остыть у аквариума."
+fish.tournament.cup_theme_014,"Кубок громкой лапши"
+fish.tournament.story_theme_014,"Общества этикета и гастрономии устроили матч. Единственное ясное правило велит не выливать лапшу в аквариум."
+fish.tournament.cup_theme_015,"Кубок помидоров с яйцом"
+fish.tournament.story_theme_015,"Что жарить первым, яйца или помидоры? Повара оставили лопатки на кухне и принесли рыб."
+fish.tournament.cup_theme_016,"Кубок достатка господина Вана"
+fish.tournament.story_theme_016,"Хозяин Ван из верхнего района говорит, что разбогател. В честь этого он устроил турнир."
+fish.tournament.cup_theme_017,"Кубок второго товара за полцены"
+fish.tournament.story_theme_017,"Вторая покупка за полцены! Универмаг празднует годовщину и даёт всем участникам скидку 50% на вторую покупку."
+fish.tournament.cup_theme_018,"Кубок распродажи"
+fish.tournament.story_theme_018,"Не проходите мимо фестиваля новинок! Торговая компания устроила турнир, чтобы привлечь покупателей на распродажу залежавшегося товара. Начальник настаивает, что это презентация новинок."
+fish.tournament.cup_theme_019,"Кубок ещё одной бутылки"
+fish.tournament.story_theme_019,"Представитель компании показывает на сцене, как открывать бутылку. Красная газировка уже на призовом столе."
+fish.tournament.cup_theme_020,"Кубок пожизненной гарантии"
+fish.tournament.story_theme_020,"Турнир спонсирует ремонтная компания. Перед открытием мастер починил вывеску соседнего магазина. Приз на этот раз — новенький ящик с инструментами."
+fish.tournament.cup_theme_021,"Кубок первых во Вселенной"
+fish.tournament.story_theme_021,"Агентство напечатало на афише «Первые во Вселенной» таким крупным шрифтом, что его собственное название едва поместилось."
+fish.tournament.cup_theme_022,"Кубок счастливой консервы"
+fish.tournament.story_theme_022,"Пищевая компания устроила на турнире дегустацию новинки. Победитель получит порцию икры."
+fish.tournament.cup_theme_023,"Кубок золотой улыбки"
+fish.tournament.story_theme_023,"Стоматологическая клиника спонсирует турнир и прислала партию зубной пасты. Перед матчами ведущий поделится советами по уходу за зубами."
+fish.tournament.cup_theme_024,"Кубок почётных покупателей"
+fish.tournament.story_theme_024,"Торговый центр пригласил особо важных покупателей. Большинство хотело знать, остались ли свободные места."
+fish.tournament.cup_theme_025,"Кубок круглосуточной лавки"
+fish.tournament.story_theme_025,"Круглосуточный магазин угощает ночными закусками. Все участники турнира могут присоединиться к ночной вечеринке."
+fish.tournament.cup_theme_026,"Кубок весёлого банкротства"
+fish.tournament.story_theme_026,"На пресс-конференции торговой палаты ведущий прочитал «новое начало» вместо «скорого банкротства»."
+fish.tournament.cup_theme_027,"Кубок двух по цене одного"
+fish.tournament.story_theme_027,"Сеть рыбных магазинов принесла промышленный корм. Хозяин говорит, что рыбы заняты и вместо них выступит товар спонсора."
+fish.tournament.cup_theme_028,"Кубок столетней лавки"
+fish.tournament.story_theme_028,"Столетняя рыбная лавка достала старую семейную фотографию. Рыба на ней до сих пор лучше всего привлекает покупателей."
+fish.tournament.cup_theme_029,"Кубок рекламного места"
+fish.tournament.story_theme_029,"Агентство показало перед матчем десятисекундный ролик. Наконец все снова смотрят на аквариум."
+fish.tournament.cup_theme_030,"Кубок полного возврата"
+fish.tournament.story_theme_030,"Общество потребителей и союз торговцев проводят бой вместе. Перед началом судья попросил убрать чеки."
+fish.tournament.cup_theme_031,"Кубок годовщины станции"
+fish.tournament.story_theme_031,"Жилой район устроил турнир к годовщине станции. На стенде висят фотографии прошлых юбилейных турниров. Там появится и победитель этого года."
+fish.tournament.cup_theme_032,"Кубок пятничного безделья"
+fish.tournament.story_theme_032,"Традиция Общества взаимопомощи работников. Участники могут взять на работе полдня отгула без объяснения причин!"
+fish.tournament.cup_theme_033,"Кубок соседей"
+fish.tournament.story_theme_033,"После каждого боя кто-нибудь спорит о результате. На следующий турнир эти люди записываются первыми."
+fish.tournament.cup_theme_034,"Кубок ночной вечеринки"
+fish.tournament.story_theme_034,"Ночная смена принесла любимые прожекторы и приготовила энергетики в качестве призов."
+fish.tournament.cup_theme_035,"Кубок счастливой пенсии"
+fish.tournament.story_theme_035,"Ветераны на пенсии приходят на встречу старых друзей. Если их слушать, они будут рассказывать о прошлом финале до закрытия."
+fish.tournament.cup_theme_036,"Кубок новосёлов"
+fish.tournament.story_theme_036,"Первое занятие новых жителей – смотреть рыбный бой. Второе – запоминать имена соседей."
+fish.tournament.cup_theme_037,"Кубок урожая"
+fish.tournament.story_theme_037,"В сельскохозяйственном отсеке снова собирают урожай. В честь сбора урожая устроили турнир."
+fish.tournament.cup_theme_038,"Кубок переработки"
+fish.tournament.story_theme_038,"Экологическое общество проводит рыбный бой и у входа учит распознавать металл, пригодный для переработки."
+fish.tournament.cup_theme_039,"Кубок карнавала питомцев"
+fish.tournament.story_theme_039,"Бой проходит в самом центре карнавала. Общество любителей животных выделило на призы партию промышленного корма для рыб."
+fish.tournament.cup_theme_040,"Кубок летних брызг"
+fish.tournament.story_theme_040,"На празднике искусственного лета вода повсюду. Судья напоминает, что особенно важно не забыть про воду в аквариуме."
+fish.tournament.cup_theme_041,"Кубок зимнего очага"
+fish.tournament.story_theme_041,"Старая зимняя традиция. В этом году организаторы приготовили лапшу в стаканчиках, якобы с особым зимним вкусом."
+fish.tournament.cup_theme_042,"Полуночный кубок"
+fish.tournament.story_theme_042,"Тема турнира – обратный отсчёт до полуночи. Рядом стоят старые часы, показывающие пять разных времён."
+fish.tournament.cup_theme_043,"Кубок восходящей звезды"
+fish.tournament.story_theme_043,"Многие известные тренеры начинали здесь. Запишись на турнир и стань новым мастером рыбьих боёв!"
+fish.tournament.cup_theme_044,"Кубок непобедимых"
+fish.tournament.story_theme_044,"Организаторы обещают, что каждый может стать легендой. Судья просит сначала пройти первый четвертьфинал."
+fish.tournament.cup_theme_045,"Приглашение из дальнего космоса"
+fish.tournament.story_theme_045,"Афишу вывесили объединения из нескольких секторов. Принесите рыбу, которой доверяете больше всего."
+fish.tournament.cup_theme_046,"Кубок защиты титула"
+fish.tournament.story_theme_046,"Тема матча – защита титула. Когда появится турнирная сетка, зрители быстро выберут, за кого болеть."
+fish.tournament.cup_theme_047,"Кубок бронзовых новичков"
+fish.tournament.story_theme_047,"Вечно проигрываешь в рыбьих боях? Записывайся. Здесь тебя ждут соперники твоего уровня."
+fish.tournament.cup_theme_048,"Кубок выживания"
+fish.tournament.story_theme_048,"Три раунда на выбывание оставляют мало права на ошибку. К финалу зрители обычно выглядят уставшими сильнее рыб."
+fish.tournament.cup_theme_049,"Великая рыбная схватка"
+fish.tournament.story_theme_049,"Название громкое, а мест в сегодняшней сетке всего восемь."
+fish.tournament.cup_theme_050,"Кубок легендарных мастеров"
+fish.tournament.story_theme_050,"Судья-ветеран принёс к трибунам старые турнирные архивы. Сегодняшняя сетка определит своего чемпиона."
+fish.tournament.cup_theme_051,"Кубок межзвёздной вершины"
+fish.tournament.story_theme_051,"Открытый турнир под эгидой Галактической лиги. На афише оставили место для имени чемпиона."
+fish.tournament.cup_theme_052,"Кубок арбузных семечек"
+fish.tournament.story_theme_052,"Фруктовое общество так и не решило, надо ли выплёвывать семечки. Посмотрим, кто лучше управляется с рыбами."
+fish.tournament.cup_theme_053,"Кубок ядовитого гриба"
+fish.tournament.story_theme_053,"Любители грибов обсуждают находки у арены. Судья хочет узнать, кто уронил дикорастущий образец в воду."
+fish.tournament.cup_theme_054,"Кубок главных лентяев"
+fish.tournament.story_theme_054,"Турнир планировали проводить раз в месяц. За три года с первого турнира он состоялся всего три раза."
+fish.tournament.cup_theme_055,"Кубок левшей"
+fish.tournament.story_theme_055,"Общество левшей принимает всех. Столы регистрации и призов переставляли с одной стороны на другую до самого начала."
+fish.tournament.cup_theme_056,"Кубок лапши с яйцом"
+fish.tournament.story_theme_056,"Любители лапши с яйцом и без него перенесли спор к аквариуму. Спонсор добавил лапшу в стакане в призы."
+fish.tournament.cup_theme_057,"Кубок без завтрака"
+fish.tournament.story_theme_057,"Общество завтрака и лига его противников редко собираются вместе. Ведущий выясняет, кто пришёл натощак."
+fish.tournament.cup_theme_058,"Кубок «Сначала душ»"
+fish.tournament.story_theme_058,"Что делать первым по возвращении домой, принять душ или прилечь? Общество бытовых привычек одолжило целый набор для рыбных боёв."
+fish.tournament.cup_theme_059,"Кубок лысых чемпионов"
+fish.tournament.story_theme_059,"На ежегодный праздник Межзвёздного клуба лысых приглашают тренеров с любыми причёсками. Главное, принести рыбу."
+fish.tournament.cup_theme_060,"Кубок битвы подушками"
+fish.tournament.story_theme_060,"Любители мягких и твёрдых подушек принесли свои подушки. На трибунах уже засыпает целый ряд."
+fish.tournament.cup_theme_061,"Кубок мороженого"
+fish.tournament.story_theme_061,"Любители ванили, шоколада и клубники разделили трибуны на три части. На столе лежит мороженое всех трёх вкусов."
+fish.tournament.cup_theme_062,"Кубок первого укуса"
+fish.tournament.story_theme_062,"Съесть печенье или слизать начинку? Общество любителей закусок пригласило рыб, которые никогда не ответят."
+fish.tournament.cup_theme_063,"Кубок бессонной ночи"
+fish.tournament.story_theme_063,"Турнир Общества полуночников начинается в три часа ночи. Чтобы всё прошло как надо, организаторы приготовили кофе для всех участников."
+fish.tournament.cup_theme_064,"Кубок долгожданной пятницы"
+fish.tournament.story_theme_064,"Рыбный бой о том, как уйти с работы вовремя. Ведущий трижды посмотрел на часы перед выходом."
+fish.tournament.cup_theme_065,"Кубок спасительного кофе"
+fish.tournament.story_theme_065,"Любители кофе и чая снова спорят, что бодрит лучше. На этот раз кофейные зёрна уже в списке призов."
+fish.tournament.cup_theme_066,"Кубок храпа"
+fish.tournament.story_theme_066,"Общество изучения сна приглашает посмотреть рыбный бой. Киномеханика попросили убавить звук записи храпа перед началом."
+fish.tournament.cup_theme_067,"Кубок больших денег"
+fish.tournament.story_theme_067,"Матч спонсирует финансовая компания. Суммы указаны на доске регистрации. Ведущего попросили проверять каждую цифру перед объявлением."
+fish.tournament.cup_theme_068,"Кубок «За счёт хозяина»"
+fish.tournament.story_theme_068,"Сеть ресторанов празднует рекорд продаж и выставила икру в качестве приза. В меню больше звёздочек, чем мест на трибунах."
+fish.tournament.cup_theme_069,"Кубок неизменных цен"
+fish.tournament.story_theme_069,"Магазин выставил ценники десятилетней давности. Выяснилось, что и тогда никто не хотел платить за крупный шрифт."
+fish.tournament.cup_theme_070,"Кубок продажи в убыток"
+fish.tournament.story_theme_070,"Магазин хозяйственных товаров устроил распродажу. Говорит, что теряет деньги на каждой продаже, и приготовил для победителей партию маленьких пустых банок."
+fish.tournament.cup_theme_071,"Кубок золотой должности"
+fish.tournament.story_theme_071,"Ресторанная группа устроила ярмарку вакансий у трибун. Тренеры на входе заявили, что пришли только на бой."
+fish.tournament.cup_theme_072,"Кубок быстрой доставки"
+fish.tournament.story_theme_072,"Межзвёздная служба доставки отмечает открытие маршрута. К удивлению курьера, вывеска спонсора прибыла на два дня раньше груза."
+fish.tournament.cup_theme_073,"Кубок скидки в девяносто процентов"
+fish.tournament.story_theme_073,"Магазин напечатал рекламу на обороте доски регистрации. Чтобы узнать призы, зрителям всё равно придётся её перевернуть."
+fish.tournament.cup_theme_074,"Кубок золотого аквариума"
+fish.tournament.story_theme_074,"Производитель выставил позолоченный аквариум. На доске перечислено, что участники действительно смогут забрать домой."
+fish.tournament.cup_theme_075,"Кубок внезапного богатства"
+fish.tournament.story_theme_075,"Лотерейная компания завалила вход листовками и выделила на турнир несколько билетов."
+fish.tournament.cup_theme_076,"Кубок защиты зубов"
+fish.tournament.story_theme_076,"Производитель зубной пасты спонсирует рыбный бой. Возможно, серьёзнее всего о зубах говорят сами рыбы."
+fish.tournament.cup_theme_077,"Кубок суперскидок"
+fish.tournament.story_theme_077,"Три универмага проводят бой вместе. До самого начала они спорили, чья вывеска должна висеть в центре."
+fish.tournament.cup_theme_078,"Кубок сбежавшего начальника"
+fish.tournament.story_theme_078,"Турагентство устроило рыбный бой в первый день после открытия. Перед уходом сотрудники ещё пытались связаться с начальником."
+fish.tournament.cup_theme_079,"Кубок роскошного ремонта"
+fish.tournament.story_theme_079,"Мебельная компания выставила стул и дорогую подушку. После начала боя на стул так никто и не сел."
+fish.tournament.cup_theme_080,"Кубок лучшего продавца"
+fish.tournament.story_theme_080,"Ежегодное событие Межзвёздного общества продавцов. Ведущий так долго говорил о спонсорах, что кто-то из зрителей назвал свою цену."
+fish.tournament.cup_theme_081,"Кубок начала учёбы"
+fish.tournament.story_theme_081,"Открытый турнир в честь начала занятий. Маркер с прилавка пригодился, чтобы записать порядок боёв."
+fish.tournament.cup_theme_082,"Кубок выпускников"
+fish.tournament.story_theme_082,"После выпускной фотографии все заметили, что в центре стоит аквариум. Организаторы приготовили музыкальную кассету на память о прощальном турнире."
+fish.tournament.cup_theme_083,"Кубок одиночек"
+fish.tournament.story_theme_083,"Традиция общества взаимопомощи одиночек. На регистрации спросили только, какую рыбу принесли, к большой радости ведущего."
+fish.tournament.cup_theme_084,"Кубок Дня святого Валентина"
+fish.tournament.story_theme_084,"Торговая улица расставила места парами и включила мороженое в призы."
+fish.tournament.cup_theme_085,"Кубок первого апреля"
+fish.tournament.story_theme_085,"Организатор обещает сюрприз. Всё переспросив, судья убедился хотя бы в том, что список призов настоящий."
+fish.tournament.cup_theme_086,"Кубок благодарности"
+fish.tournament.story_theme_086,"Совет жителей пригласил всех на рыбный бой и выставил сувениры, сделанные местными жителями."
+fish.tournament.cup_theme_087,"Кубок зелёной галактики"
+fish.tournament.story_theme_087,"Стенд у благотворительного турнира рассказывает о переработке космического мусора. Призы предоставил пункт переработки."
+fish.tournament.cup_theme_088,"Кубок удачной пятницы"
+fish.tournament.story_theme_088,"Тема взята из пятницы тринадцатого. Организаторы трижды просмотрели сетку, пытаясь выяснить, где скрывается неудача."
+fish.tournament.cup_theme_089,"Кубок хэллоуинских тыкв"
+fish.tournament.story_theme_089,"Вокруг арены расставили тыквы. Победители смогут забрать с собой немного света в виде мерцающей приманки."
+fish.tournament.cup_theme_090,"Кубок пельменей солнцестояния"
+fish.tournament.story_theme_090,"Общество любителей пельменей всё ещё спорит о начинке. К счастью, судье нужно решить только, какая рыба победила."
+fish.tournament.cup_theme_091,"Кубок тёмной лошадки"
+fish.tournament.story_theme_091,"Принимают новичков и знаменитостей. Зрители обычно болеют за незнакомое имя в сетке."
+fish.tournament.cup_theme_092,"Кубок миллиона кредитов"
+fish.tournament.story_theme_092,"Клуб вписал миллион в название. Настоящие призовые указаны на доске. Судья попросил зрителей отложить калькуляторы."
+fish.tournament.cup_theme_093,"Кубок лучшего новичка"
+fish.tournament.story_theme_093,"Зрители любят внезапные успехи новичков. Ветеранам тоже предлагают проверить свою форму."
+fish.tournament.cup_theme_094,"Кубок открытого вызова"
+fish.tournament.story_theme_094,"Постоянный победитель арены устроил открытый турнир. Чтобы взять титул, надо пройти всю сетку."
+fish.tournament.cup_theme_095,"Кубок победной серии"
+fish.tournament.story_theme_095,"Чтобы выиграть три раза подряд, начните с первого боя. Призы за полуфинал и выше указаны на доске."
+fish.tournament.cup_theme_096,"Кубок второго шанса"
+fish.tournament.story_theme_096,"Открытый турнир о возвращении, с новой сеткой с четвертьфиналов. Старым соперникам обычно есть о чём поговорить."
+fish.tournament.cup_theme_097,"Кубок последнего места"
+fish.tournament.story_theme_097,"Трибуны особенно поддерживают тех, кого обычно не замечают. Хороший бой заслуживает аплодисментов."
+fish.tournament.cup_theme_098,"Кубок короля золотых рыбок"
+fish.tournament.story_theme_098,"Общество аквариумистов оформило зал. Золотую корону выставили рядом с аквариумом для фотографий."
+fish.tournament.cup_theme_099,"Кубок чемпионов"
+fish.tournament.story_theme_099,"Фотографии прошлых чемпионов заняли целую стену. Сегодняшняя сетка определит нового победителя."
+fish.tournament.cup_theme_100,"Кубок сотого турнира"
+fish.tournament.story_theme_100,"Лига выставила старые сетки в честь сотого открытого турнира. Сегодняшние результаты, как обычно, попадут в историю."
+fish.tournament.cup_theme_101,"Открытый турнир портового района"
+fish.tournament.cup_theme_102,"Кубок рыбоводов"
+fish.tournament.cup_theme_103,"Кубок Серебряной бухты"
+fish.tournament.cup_theme_104,"Тур «Звёздное кольцо»"
+fish.tournament.cup_theme_105,"Кубок мастерских"
+fish.tournament.story_theme_101,"Портовый комитет предоставил старый грузовой зал для открытого турнира всей станции."
+fish.tournament.story_theme_102,"Рыбоводческие хозяйства собираются обменяться опытом и показать своих лучших взрослых рыб."
+fish.tournament.story_theme_103,"Океанариум Серебряной бухты проводит турнир и выставляет у арены свои первые записи о разведении рыб. Потомки нескольких из них сегодня тоже выступят."
+fish.tournament.story_theme_104,"Тур «Звёздное кольцо» добрался до нашей станции. В зоне ожидания можно посмотреть записи прошлого этапа."
+fish.tournament.story_theme_105,"Несколько портовых ремонтных мастерских вместе устроили турнир. Победитель получит инструменты от мастерских."
+processing.station.materials,"Материалы"
+processing.station.craft,"Изготовление"
+processing.station.manual,"Руководство"
+processing.station.start,"Начать изготовление"

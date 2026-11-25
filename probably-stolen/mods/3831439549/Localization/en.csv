@@ -378,8 +378,8 @@ feed_refine_gain,Food put in yields +{0}% calories
 nm_ras_expand,Fish Tank Extra Expansion
 ras_expand_gain,+1 to length and width each, up to 5
 nm_ras_selfclean,Water Self-Cleaning Unit
-ras_clean_req,Wire x12 + UV lamp x1 + Common chemical x4 (all filled to take effect)
-ras_clean_prog,Wire {0}/{1} + UV lamp {2}/{3} + Common chemical {4}/{5}
+ras_clean_req,Wire x12 + Screws x10 + Common Chemical Supplies x4 (all filled to take effect)
+ras_clean_prog,Wire {0}/{1} + Screws {2}/{3} + Common Chemical Supplies {4}/{5}
 ras_selfclean_gain,Records water volume and quality before the night and restores them at dawn (keeps the water as it was, never creates water)
 ras_selfclean_short,Self-cleaning system: {0} ({1})
 nm_ras_nightlight,Night Lighting System
@@ -418,7 +418,7 @@ fadv_flash_desc,Adds a machine button: draws 2x power and chills the fridge once
 fadv_keep,Frozen Freshness
 fadv_keep_desc,Food items also gain the frozen bonus tag after being frozen in this fridge
 fadv_dessert,Dessert Machine
-fadv_dessert_desc,Adds a water slot; overnight converts 10 ingredients into ice cream (water -250ml each). With this module installed, everything in the fridge (food, ingredients, ice cream) keeps only the Frozen trait - the Chilled trait is removed
+fadv_dessert_desc,Adds an Ice Cream Water slot to the fridge window (water containers only). Put water plus any of the 10 bottled drinks/snacks (Diet Juice - Fizzy Milksub - Energy Drink - Red Soda - Cat Choco Bar - L'EAT Snackbar - Red Devil Beer - Glowberry Wine - Nudka - Gloomberry Wine) into the chill or freeze zone; each night every piece uses 250ml of water and turns into one ice cream. Ice cream value = ingredient price x1.4 (alcohol x1.3) + the price of that 250ml of water, then the water-quality and frozen bonuses apply, so it is worth clearly more than the raw item. If water runs short nothing converts that night and a night log tells you. Once installed everything in the fridge keeps only the Frozen trait (the Chilled trait is removed)
 icecream_desc,Frozen dessert made by the Dessert Machine. Melts if not kept in a powered fridge overnight.
 icecream_melted,Yesterday's {0} melted away
 icecream_wq_prefix,Water quality:
@@ -544,6 +544,7 @@ mr_confirm_ok,Confirm
 mr_cancel,Cancel
 mr_mat_scrap,Scrap Metal
 mr_mat_filter,Water Filter
+mr_mat_uv,UV Lamp
 mr_machine_moisture_farm,Moisture Farm
 mr_machine_furnace,Furnace
 mr_machine_security_alarm,Security Alarm
@@ -736,6 +737,8 @@ as8_ar_16,I should go.
 as8_ar_7b,.....
 cfg_docstory_off,Disable Doctor Storyline
 cfg_docstory_off_desc,When on, this save never gets the Doctor's visits: no Favor Card, no Augment Reprogrammer, and no Augment story chain (the four stages at 2/6/10/13). Only applies to NEW saves -- start a new game after changing it; existing and loaded saves are unaffected. Off by default (the storyline runs as usual).
+cfg_hard,Hard mode (new saves only)
+cfg_hard_desc,When on: (1) every advanced module and every functional basic upgrade costs twice the materials (pure capacity upgrades are excluded); (2) quality / performance / efficiency bonuses are halved; (3) capacity effects and the extra power draw that upgrades add stay unchanged. Only applies at the moment a NEW save is created -- changing it mid-save has no effect. Off by default (normal difficulty).
 prnmat_on,MatUpg: ON
 prnmat_off,MatUpg: OFF
 prnmat_desc,Master switch for this printer's MDU upgrades. ON: materials you drag on are consumed as upgrade material first (metal ingots will NOT go to printing). OFF: nothing is consumed — every material falls back to vanilla behaviour (input tray / chip slot / back to your hand). Click to toggle.

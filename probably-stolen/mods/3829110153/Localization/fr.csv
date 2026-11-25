@@ -1586,7 +1586,7 @@ gameplay.fish.grade.4,Catégorie spéciale
 gameplay.fish.processing.multiplier,Qualité du poisson hérité: valeur ×{0}
 gameplay.fishing.level.max,Pêche Lv.{0} et/ou {1} (Niveau maximum)
 gameplay.fishing.level.progress,Pêche Lv.{0} et/ou {1}/{2} Niveau suivant: {3}
-gameplay.fishing.level.rules,"Chaque poisson revendiqué accorde 10 XP. Le niveau maximum nécessite 9500 XP. La qualité du poisson entier est fixée à la première prise et héritée de sa principale viande filetée. Poissons de race par défaut à la catégorie IV. Les poissons biologiques sauvages frayent au stade adulte de leur espèce, avec des traits appliqués une fois lorsqu'ils sont capturés."
+gameplay.fishing.level.rules,"Chaque poisson revendiqué accorde 10 XP. Le niveau maximum nécessite 9500 XP. La qualité du poisson entier est fixée à la première prise et héritée de sa principale viande filetée. À l’éclosion chaque œuf a 25 % de chances de gagner un grade et 25 % d’en perdre un par rapport à sa mère. Dans les 50 % restants ou si une limite est atteinte dans le sens du tirage le grade reste identique. Les poissons biologiques sauvages frayent au stade adulte de leur espèce, avec des traits appliqués une fois lorsqu'ils sont capturés."
 gameplay.ship_mentor.can_wait,"Si vous n'en avez pas assez, vous pouvez me rembourser avec le temps."
 gameplay.ship_mentor.fixed,Le vaisseau que vous m'avez demandé de réparer est prêt. La facture de réparation s'élève à 1 000 crédits.
 gameplay.ship_mentor.insufficient,Vous n'avez pas assez de crédits. Aucun paiement n'a été effectué.
@@ -3478,3 +3478,475 @@ worm.housing.harvest.help,"Après la nuit, tous les vers morts et les vers vivan
 item.gf_worm_mash.name,Aliment à base de vers
 item.gf_worm_mash.short,Un aliment carné fabriqué en réduisant des vers en bouillie.
 item.gf_worm_mash.flavor,
+fish.breeding.stamina,Endurance
+fish.breeding.burst,Explosivité
+fish.breeding.agility,Agilité
+fish.breeding.resilience,Résilience
+item.gf_fish_training_tank.name,Système d’aquaculture d’entraînement
+item.gf_fish_training_tank.short,Choisissez un exercice pour entraîner automatiquement les poissons chaque nuit. L’apparence du système dépend de l’exercice. Vous pouvez arrêter l’entraînement à tout moment.
+farm.training.stop,Arrêter l’entraînement
+item.gf_fish_training_tank.flavor,
+fish.training.attribute,{0} (entraînement +{1})
+fish.training.count,Séances d’entraînement {0}/{1}
+fish.tooltip.water_high,Qualité de l’eau : élevée
+fish.tooltip.water_medium,Qualité de l’eau : moyenne
+fish.tooltip.water_low,Qualité de l’eau : faible
+fish.tooltip.purifies,Purifie {0} mL par 100 g par nuit
+fish.tooltip.pellet,Insensible aux effets du fourrage pollué
+fish.tooltip.meat,Croissance avec viande +{0}%
+fish.tooltip.plump,Dodue · Poids à la capture +{0}% (limite de l’espèce)
+fish.tooltip.giant,Géante · Poids à la capture +{0}% (limite de l’espèce)
+fish.tooltip.roe,Gravide · Porte des œufs
+fish.tooltip.scarred,Couverte de cicatrices · Santé à la capture −{0}%
+fish.tooltip.crystalized,Cristallisée · Valeur ×{0}
+fish.tooltip.training,Entraînement {0}/{1}
+fish.duel.title,Duel de poissons
+fish.duel.button.start,Commencer
+fish.duel.place,"Placez un poisson adulte vivant ici, puis cliquez sur Commencer."
+fish.duel.health,Santé en duel {0}/{1}
+fish.duel.dodge,Esquive
+fish.duel.fear,Peur
+fish.duel.role.attack,Attaque
+fish.duel.role.defense,Défense
+fish.duel.role.agile,Agilité
+fish.duel.guard,Garde {0}
+fish.duel.opponent,Poisson adverse
+fish.duel.player,Votre poisson
+fish.duel.match.even,Types identiques
+fish.duel.match.advantage,Votre poisson a l’avantage
+fish.duel.match.disadvantage,Le poisson adverse a l’avantage
+fish.duel.exchange.approach,Approche
+fish.duel.exchange,Choc et recul
+fish.duel.exchange.break,Garde brisée
+fish.duel.exchange.retreat,Un poisson hésite
+fish.duel.morale,Combativité {0}
+fish.duel.record,{0} victoires (bonus de prix de {1} %)
+fish.training.failure.food,un manque de nourriture
+fish.training.failure.health,un manque de santé
+fish.training.failure,"Cette nuit, {0} a raté son entraînement « {2} » en raison de {1}."
+fish.duel.feed.title,Suivi du combat
+fish.duel.feed.start,Le combat commence.
+fish.duel.feed.hit,{0} inflige {1} dégâts.
+fish.duel.feed.break,Une garde est brisée.
+fish.duel.feed.draw,Le combat se termine sur un match nul.
+fish.duel.feed.win,{0} remporte le combat.
+fish.duel.feed.clash,{0} et {1} échangent des coups et subissent {2} / {3} dégâts.
+fish.duel.feed.dodge,{0} esquive la charge.
+fish.duel.feed.guard,La garde de {0} est brisée.
+fish.duel.feed.timeout,Temps écoulé. Le combat se termine sur un match nul.
+fish.duel.feed.reflect,{0} renvoie {1} dégâts.
+fish.duel.feed.action.approach,{0} se rapproche.
+fish.duel.feed.action.align,{0} se décale pour trouver un angle.
+fish.duel.feed.action.windup,{0} prépare son attaque.
+fish.duel.feed.action.heavy_windup,{0} utilise Charge puissante.
+fish.duel.feed.action.counter_windup,{0} utilise Contre sur ouverture.
+fish.duel.feed.action.rush,{0} se lance dans sa charge.
+fish.duel.feed.action.sidestep,{0} utilise Esquive latérale.
+fish.duel.feed.action.hold_guard,{0} utilise Posture de garde.
+fish.duel.feed.action.intercept,{0} utilise Interception.
+fish.duel.feed.action.cancel_target,{0} perd son ouverture et annule sa charge.
+fish.duel.feed.action.cancel_guard,{0} voit la garde adverse et annule sa charge.
+fish.duel.feed.action.miss,{0} manque sa charge.
+fish.duel.feed.action.regroup,{0} recule et se ressaisit.
+fish.duel.feed.action.shield_retreat,{0} utilise Repli défensif.
+fish.duel.feed.action.wall_slide,{0} utilise Glissade le long du mur.
+fish.duel.feed.action.dodge_return,{0} revient après son esquive.
+fish.duel.feed.action.fear_retreat,{0} utilise Recul de peur.
+fish.duel.feed.action.guard_stabilize,{0} se stabilise après avoir encaissé le coup.
+fish.duel.feed.action.swim,{0} s’éloigne pour récupérer sa garde.
+fish.duel.feed.action.wall_follow,{0} utilise Détour le long du mur.
+fish.duel.feed.action.glide,{0} glisse et ralentit.
+fish.duel.feed.action.face,{0} se tourne vers son adversaire.
+fish.duel.feed.action.resume,{0} termine sa récupération et observe son adversaire.
+fish.duel.feed.action.keep_retreat,{0} poursuit son repli après le coup.
+fish.duel.feed.stun,{0} est étourdi.
+fish.duel.feed.action.flank_counter,{0} utilise Contre de flanc.
+fish.duel.feed.species_skill,{0} utilise {1}.
+fish.duel.skill.gf_horned_swordfish.piercing_charge,Percée aquatique
+fish.duel.skill.gf_glass_fish.transparent_flank,Contournement transparent
+fish.duel.skill.gf_volcanic_fish.thermal_recoil,Recul thermique
+fish.duel.skill.gf_rans_nightmare.dark_ambush,Assaut de l’ombre
+fish.duel.skill.gf_wuzhiqi.fin_break,Ruée brise-garde
+fish.duel.skill.eel.serpentine_slip,Contournement sinueux
+fish.duel.skill.electric_eel.close_discharge,Électrochoc de près
+fish.duel.skill.gf_blue_crystal_fish.crystal_shards,Éclats de cristal
+fish.duel.skill.gf_electric_eel.flash_feint,Leurre éclair
+fish.duel.skill.gf_ferrite_jellyfish.tentacle_snare,Entrave des tentacules
+fish.duel.skill.gf_golden_fish.golden_deflection,Déviation dorée
+fish.duel.skill.gf_goldfish.fin_lure,Leurre des nageoires
+fish.duel.skill.gf_large_yellow_croaker.steady_sink,Ancrage défensif
+fish.duel.skill.gf_lofurin.veil_turn,Virage voilé
+fish.duel.skill.gf_muspels_son.ember_guard,Garde des braises
+fish.duel.skill.gf_niorun.wing_glide,Glissade ailée
+fish.duel.skill.gf_purifier_fish.reserve_water,Réserve d’eau
+fish.duel.skill.gf_rainbow_fish.color_switch,Virage changeant
+fish.duel.skill.gf_ratfish.bottom_gap,Passage par le fond
+fish.duel.skill.gf_redtail_fish.tail_sweep,Balayage de queue rouge
+fish.duel.skill.gf_sardine.scatter_shadow,Dispersion des ombres
+fish.duel.skill.gf_small_yellow_croaker.quick_cut,Virage vif
+fish.duel.skill.gf_snakehead.line_ambush,Embuscade en ligne
+fish.duel.skill.gf_space_rocket_fish.rocket_wake,Sillage-fusée
+fish.duel.skill.gf_star_puffer.star_puff,Gonflement répulsif
+fish.duel.skill.graft_tilapia.turnback_ram,Charge de retour
+fish.duel.skill.gutter_tilapia.wall_steal,Déplacement le long du mur
+fish.duel.skill.sturgeon.armored_brace,Garde d’écailles dures
+fish.duel.skill.tilapia.steady_morale,Retour au calme
+fish.duel.close_space,Il manque de la place pour rendre les poissons. Libérez des cases ou récupérez-les avant de fermer le panneau.
+fish.duel.fighting_lock,Un duel de poissons est en cours. Attendez la fin du combat.
+fish.tournament.title,Tournoi de poissons
+fish.tournament.quarter,Quarts de finale
+fish.tournament.semi,Demi-finales
+fish.tournament.final,Finale
+fish.tournament.champion,Champion
+fish.tournament.confirm_start,Confirmer le poisson et commencer
+fish.tournament.start,Commencer la manche
+fish.tournament.missing,Votre poisson est absent ou ne remplit plus les conditions. Vous perdez ce tournoi par forfait.
+fish.tournament.space,L’arène manque de place. Libérez de l’espace et réessayez.
+fish.tournament.transfer,Le poisson n’a pas pu entrer dans l’arène. Le combat n’a pas commencé.
+fish.tournament.pending,À déterminer
+fish.tournament.player,Vous
+fish.tournament.loss_mark,D
+fish.tournament.win_mark,V
+fish.tournament.not_registered,Vous n’êtes pas inscrit. Attendez la visite de l’organisateur.
+fish.tournament.finished,Tournoi terminé. Champion : {0}
+fish.tournament.choose,Placez un poisson adulte vivant. La confirmation l’engage pour tout le tournoi ; son absence ou son inéligibilité entraîne un forfait.
+fish.tournament.status,Tournoi {0} · Poisson : {1} · {2}
+fish.tournament.fighting,Combat en cours
+fish.tournament.ready,En attente du combat
+fish.tournament.draw,Égalité. Rejouez contre le même adversaire.
+fish.tournament.ongoing,Un tournoi est déjà en cours. Un laissez-passer perdu peut être remplacé.
+fish.tournament.registration_open,Les inscriptions à ce tournoi sont gratuites.
+fish.tournament.next_cycle,Vous avez déjà participé à ce tournoi. Le prochain ouvre au jour {0}.
+fish.tournament.have_pass,Vous avez déjà un laissez-passer. Double-cliquez dessus pour continuer ce tournoi.
+fish.tournament.pass_space,Libérez une place pour le formulaire.
+fish.tournament.registered,Double-cliquez sur le formulaire pour voir le tournoi du jour.
+fish.tournament.organizer.invitation,"Tu veux essayer un tournoi de poissons ? Voici le tableau des inscriptions. Consulte-le chaque jour pour voir les épreuves au programme. Si tu gagnes, tu auras un prix."
+fish.tournament.organizer.register,"Prendre le tableau des inscriptions"
+fish.tournament.organizer.leave,Une prochaine fois
+item.gf_duel_tournament_pass.name,Tableau des inscriptions
+item.gf_duel_tournament_pass.short,Double-cliquez sur le tableau pour choisir un tournoi et inscrire un poisson adulte vivant.
+item.gf_duel_tournament_pass.flavor,Un tournoi distinct ouvre chaque jour.
+fish.tournament.expand,Déployer
+fish.tournament.collapse,Replier
+fish.tournament.play,Lire
+fish.tournament.pause,Pause
+fish.tournament.skip,Résultats du tour
+fish.tournament.retrieve,Reprendre le poisson
+fish.tournament.preparing,Préparation du tour
+fish.tournament.start_round,Commencer : {0}
+fish.tournament.rematch,Lancer la revanche
+fish.tournament.watch,En direct : {0} contre {1}
+fish.tournament.playback,Rediffusion : {0} contre {1}
+fish.tournament.round_done,Tour terminé. Cliquez pour continuer.
+fish.tournament.no_record,Cet ancien combat ne possède pas de rediffusion.
+fish.tournament.round_title,Tournoi {0} · {1}
+fish.tournament.ended,Tournoi terminé
+fish.tournament.lost_watch,"Vous êtes éliminé, mais vous pouvez continuer à regarder."
+fish.tournament.recording,Simulation {0}/{1}
+fish.tournament.match_ready,"Choisissez votre poisson, puis commencez ce tour."
+fish.tournament.saved_replay,Position de lecture restaurée.
+fish.tournament.replay_complete,Rediffusion terminée.
+fish.tournament.confirm_round,Confirmer et commencer
+fish.tournament.take_after,Mettez en pause ou attendez la fin du tour avant de reprendre votre poisson.
+fish.tournament.legacy_keep,Les anciens résultats sont conservés. Seuls les nouveaux tours disposent de rediffusions.
+fish.tournament.profile,Fiche
+fish.tournament.match,Combat
+fish.tournament.watch_match,Voir ce combat
+fish.tournament.previous_match,Combat précédent
+fish.tournament.next_match,Combat suivant
+fish.tournament.no_fish,Aucun poisson choisi
+fish.tournament.inspect_hint,Consulter une fiche ne change pas le combat affiché.
+fish.tournament.profile_skill.active_reflection,Cherche une ouverture pendant que le renvoi de dégâts est actif.
+fish.tournament.profile_skill.attack_ready,Se déclenche lorsque l’attaque est prête et que la distance requise est respectée.
+fish.tournament.profile_skill.disengaged,Se déclenche après une sortie du corps à corps.
+fish.tournament.profile_skill.dodge_success,Se déclenche après une esquive réussie.
+fish.tournament.profile_skill.enemy_charge_committed,Se déclenche lorsque l’adversaire a fixé sa trajectoire de charge.
+fish.tournament.profile_skill.enemy_charge_started,Se déclenche lorsque l’adversaire commence sa charge.
+fish.tournament.profile_skill.enemy_close,Se déclenche lorsque l’adversaire approche.
+fish.tournament.profile_skill.enemy_flanking,Se déclenche lorsque l’adversaire tente de contourner par l’arrière.
+fish.tournament.profile_skill.enemy_heavy_committed,Se déclenche lorsque l’adversaire engage une charge lourde.
+fish.tournament.profile_skill.enemy_intercept,Se déclenche lorsque l’adversaire prépare une interception.
+fish.tournament.profile_skill.enemy_turning,Se déclenche lorsque l’adversaire fait demi-tour.
+fish.tournament.profile_skill.enemy_wall_retreat,Se déclenche lorsque l’adversaire recule le long d’une paroi.
+fish.tournament.profile_skill.enemy_windup,Se déclenche lorsque l’adversaire commence à préparer son attaque.
+fish.tournament.profile_skill.guard_broken,Se déclenche lorsque la garde est brisée.
+fish.tournament.profile_skill.incoming_contact,Se déclenche juste avant un contact frontal.
+fish.tournament.profile_skill.incoming_guard_break,Se déclenche juste avant une attaque capable de briser la garde.
+fish.tournament.profile_skill.low_guard_at_wall,Se déclenche près d’une paroi lorsque la garde est faible.
+fish.tournament.profile_skill.own_normal_attack_missed,Se déclenche après une attaque normale manquée.
+fish.tournament.profile_skill.own_recovery_ended,Se déclenche à la fin de la récupération.
+fish.tournament.profile_skill.pressured,Se déclenche sous une pression prolongée.
+fish.tournament.profile_skill.repeat_approach,Se déclenche après plusieurs approches successives de l’adversaire.
+fish.tournament.profile_skill.retreat,Se déclenche pendant la retraite.
+fish.tournament.profile_skill.shared_wall,Se déclenche lorsque les deux poissons sont près de la même paroi.
+fish.tournament.skill,Compétence
+fish.tournament.no_skill,Aucune compétence propre à l’espèce
+fish.tournament.registration_title,Tableau des inscriptions
+fish.tournament.registration_list,Tournois
+fish.tournament.registration_detail,Détails du tournoi
+fish.tournament.registration_fish,Poisson engagé
+fish.tournament.previous_page,Page précédente
+fish.tournament.next_page,Page suivante
+fish.tournament.rewards,Prix
+fish.tournament.form_space,Libérez de la place pour reprendre votre poisson.
+fish.tournament.cup_dock,Coupe du tofu soyeux
+fish.tournament.cup_deep,Coupe des marées profondes
+fish.tournament.cup_undercurrent,Tournoi du courant de fond
+fish.tournament.legacy_cup,Ancien tournoi
+fish.tournament.runner_up,Deuxième place
+fish.tournament.reward_lines,"Victoire : {0} crédits + {3} ×2
+Deuxième : {1} crédits + {3} ×1
+Demi-finale : {2} crédits"
+fish.tournament.today,Aujourd’hui
+fish.tournament.opens_day,Ouverture au jour 8
+fish.tournament.history,Historique
+fish.tournament.active,En cours
+fish.tournament.event_day,Jour {0}
+fish.tournament.form_rules,"Huit inscrits · Trois tours éliminatoires · Entrée gratuite
+Poisson adulte vivant requis"
+fish.tournament.form_drop,Déposez un poisson adulte vivant
+fish.tournament.enter_today,Confirmer l’inscription
+fish.tournament.entry_unavailable,Vous êtes déjà inscrit aujourd’hui ou un tournoi est en cours.
+fish.tournament.claim_reward,Récupérer les prix
+fish.tournament.resume_event,Reprendre le tournoi
+fish.tournament.reward_pending,Il reste des prix. Libérez de la place puis réessayez.
+fish.tournament.rank_top_four,Demi-finaliste
+fish.tournament.rank_top_eight,Quart de finaliste
+fish.tournament.rank_status,Classement : {0}
+fish.tournament.claim_available,Prix à récupérer
+fish.tournament.claim_none,Aucun prix à récupérer
+fish.tournament.picker_empty,Aucun poisson sélectionné
+fish.tournament.reward_credits,{0} crédits
+fish.tournament.entry_open,Inscriptions ouvertes
+fish.tournament.pick_fish,Choisir un poisson
+fish.tournament.close_picker,Replier le compartiment
+fish.tournament.no_active,Aucun tournoi en cours
+fish.tournament.no_history,Aucun tournoi terminé
+fish.tournament.rank_rewards,Prix par classement
+fish.tournament.enter_hint,Confirmez pour ouvrir le tableau des quarts de finale
+fish.tournament.board_next,Prochain match : {0}
+fish.tournament.finish_before_close,Terminez le tournoi avant de fermer l’arène.
+fish.tournament.story_dock,Sucré ou salé ? Le vainqueur choisit le parfum du tofu du perdant pendant une semaine.
+fish.tournament.story_deep,"Au quai, on dit que les poissons se battent mieux à marée haute. Le perdant prend le quart de nuit du vainqueur."
+fish.tournament.story_dark,Les inscriptions ouvrent à l’extinction des lampes du quai. Le vainqueur raconte la soirée et le perdant paie sa tournée.
+fish.tournament.history_log,Historique des combats
+fish.tournament.history_round,{0} · Adversaire : {1} · {2}
+fish.tournament.history_win,Victoire
+fish.tournament.history_loss,Défaite
+fish.tournament.history_unknown_fish,Poisson engagé non enregistré
+fish.tournament.history_fish,Poisson engagé : {0}
+fish.tournament.history_pending,À récupérer : {0}
+fish.tournament.cup_theme_001,"Coupe du tofu soyeux"
+fish.tournament.story_theme_001,"Sucré ou salé ? Que les poissons tranchent ! Le vainqueur choisira le tofu soyeux que tous les restaurants de la station serviront pendant une semaine."
+fish.tournament.cup_theme_002,"Duel de la coriandre"
+fish.tournament.story_theme_002,"« La coriandre, c’est ce qu’il y a de mieux », affirme son admirateur anonyme, qui finance le tournoi. Chaque participant recevra une boisson nutritive à la coriandre."
+fish.tournament.cup_theme_003,"Coupe des lève-tôt et des couche-tard"
+fish.tournament.story_theme_003,"Tu veux changer l’horaire de l’émission du matin ? Inscris-toi ! Le vainqueur choisira l’heure de diffusion pendant un mois."
+fish.tournament.cup_theme_004,"Coupe de la fondue à deux bouillons"
+fish.tournament.story_theme_004,"Bouillon épicé ou doux, lequel préfères-tu ? — Fondue du quartier central (20 % de remise sur tout pour l’ouverture)"
+fish.tournament.cup_theme_005,"Coupe chats contre chiens"
+fish.tournament.story_theme_005,"Chats ou chiens, lesquels préfères-tu ? Le vainqueur recevra un animal de compagnie (offert par Georgio)."
+fish.tournament.cup_theme_006,"Coupe de la pizza à l’ananas"
+fish.tournament.story_theme_006,"L’ananas a-t-il sa place sur une pizza ? Certains trouvent ça aussi étrange qu’un tofu mapo à la fraise. Les organisateurs préfèrent visiblement la pizza à l’ananas."
+fish.tournament.cup_theme_007,"Coupe du thé aux perles"
+fish.tournament.story_theme_007,"Les perles de tapioca et la gelée de coco prétendent toutes deux être l’âme du thé au lait. Le vainqueur recevra un an de bons de réduction chez Panda Way."
+fish.tournament.cup_theme_008,"Coupe sans lundi"
+fish.tournament.story_theme_008,"L’association anti-lundi organise un tournoi de poissons pour protester contre le lundi. Elle a passé tout son lundi à le préparer."
+fish.tournament.cup_theme_009,"Coupe de la douche"
+fish.tournament.story_theme_009,"L’association des baigneurs se demandait s’il fallait commencer par les cheveux ou le corps. Elle a fini par laisser les poissons décider de l’ordre."
+fish.tournament.cup_theme_010,"Coupe des frites croustillantes"
+fish.tournament.story_theme_010,"Les frites sont meilleures à la sortie de la friteuse. On s’est réunis pour les célébrer, mais chacun avait son adresse préférée. C’est ainsi que le rassemblement « Pot-pourri de frites » a tourné au tournoi."
+fish.tournament.cup_theme_011,"Coupe du cola glacé"
+fish.tournament.story_theme_011,"Sans glaçons, le cola perd son âme. Ce tournoi a été organisé pour célébrer la naissance du cola."
+fish.tournament.cup_theme_012,"Coupe de la poule et de l’œuf"
+fish.tournament.story_theme_012,"La société de philosophie a déjà organisé trente-six tournois autour de cette question. Cette fois, les poissons donneront la réponse."
+fish.tournament.cup_theme_013,"Coupe du rouleau de papier"
+fish.tournament.story_theme_013,"Le papier doit-il pendre devant ou derrière ? Le quartier demande aux deux camps de se calmer devant l’aquarium."
+fish.tournament.cup_theme_014,"Coupe des nouilles bruyantes"
+fish.tournament.story_theme_014,"Les associations de bonnes manières et de gastronomie s’unissent. La seule règle claire est de ne pas verser les nouilles dans l’aquarium."
+fish.tournament.cup_theme_015,"Coupe des tomates aux œufs"
+fish.tournament.story_theme_015,"Faut-il cuire les œufs ou les tomates en premier ? Les cuisiniers ont laissé leurs spatules et apporté des poissons."
+fish.tournament.cup_theme_016,"Coupe de la fortune de Wang"
+fish.tournament.story_theme_016,"Le patron Wang du quartier supérieur affirme avoir fait fortune. Il organise ce tournoi pour fêter ça."
+fish.tournament.cup_theme_017,"Coupe du deuxième à moitié prix"
+fish.tournament.story_theme_017,"Deuxième achat à moitié prix ! Pour son anniversaire, le grand magasin offre cette remise à tous les participants."
+fish.tournament.cup_theme_018,"Coupe du déstockage"
+fish.tournament.story_theme_018,"Ne manquez pas le festival des nouveautés ! La société de négoce organise ce tournoi pour attirer du monde à son déstockage. Le patron tient à appeler ça un lancement."
+fish.tournament.cup_theme_019,"Coupe de la prochaine bouteille"
+fish.tournament.story_theme_019,"Le représentant montre sur scène comment ouvrir une bouteille. Le soda rouge est déjà sur la table des prix."
+fish.tournament.cup_theme_020,"Coupe de la garantie à vie"
+fish.tournament.story_theme_020,"Une société de réparation parraine le tournoi. Avant l’ouverture, un technicien a réparé l’enseigne du magasin voisin avec sa boîte à outils. Le prix est une boîte à outils toute neuve."
+fish.tournament.cup_theme_021,"Coupe du numéro un de l’univers"
+fish.tournament.story_theme_021,"L’agence a imprimé « numéro un de l’univers » en si gros caractères que son propre nom tient à peine sur l’affiche."
+fish.tournament.cup_theme_022,"Coupe de la conserve porte-bonheur"
+fish.tournament.story_theme_022,"L’entreprise agroalimentaire profite du tournoi pour faire goûter son nouveau produit. Le vainqueur recevra une portion de caviar."
+fish.tournament.cup_theme_023,"Coupe du sourire en or"
+fish.tournament.story_theme_023,"La clinique dentaire parraine le tournoi et a envoyé du dentifrice. L’animateur donnera quelques conseils d’hygiène dentaire avant les matchs."
+fish.tournament.cup_theme_024,"Coupe des super membres"
+fish.tournament.story_theme_024,"Le centre commercial a invité ses membres VIP. La plupart veulent surtout savoir s’il reste des places."
+fish.tournament.cup_theme_025,"Coupe ouverte toute la nuit"
+fish.tournament.story_theme_025,"L’épicerie ouverte jour et nuit fournit les en-cas. Tous les participants au tournoi peuvent se joindre à la fête nocturne."
+fish.tournament.cup_theme_026,"Coupe de la faillite en fête"
+fish.tournament.story_theme_026,"À la conférence de presse du syndicat des commerçants, le présentateur a prononcé « nouveau départ » à la place de « faillite imminente »."
+fish.tournament.cup_theme_027,"Coupe du deuxième offert"
+fish.tournament.story_theme_027,"La chaîne d’aquariophilie a apporté des aliments industriels pour poissons. Le patron dit que ses poissons sont trop occupés et envoie le produit du sponsor à leur place."
+fish.tournament.cup_theme_028,"Coupe de la boutique centenaire"
+fish.tournament.story_theme_028,"La poissonnerie centenaire a ressorti une vieille photo de famille. Le poisson dessus est toujours sa meilleure publicité."
+fish.tournament.cup_theme_029,"Coupe de l’espace publicitaire"
+fish.tournament.story_theme_029,"L’agence a diffusé dix secondes de publicité avant le combat. L’aquarium est enfin redevenu le centre de l’attention."
+fish.tournament.cup_theme_030,"Coupe du remboursement intégral"
+fish.tournament.story_theme_030,"L’association des consommateurs et les commerçants organisent le combat ensemble. L’arbitre leur demande de ranger leurs reçus avant de commencer."
+fish.tournament.cup_theme_031,"Coupe anniversaire de la station"
+fish.tournament.story_theme_031,"Le quartier résidentiel organise un tournoi pour l’anniversaire de la station. Les photos des éditions précédentes sont affichées au tableau, où figurera aussi le vainqueur de cette année."
+fish.tournament.cup_theme_032,"Coupe du vendredi tranquille"
+fish.tournament.story_theme_032,"Une tradition de l’association d’entraide des travailleurs. En participant au tournoi, tu peux demander une demi-journée de congé sans avoir à te justifier !"
+fish.tournament.cup_theme_033,"Coupe des voisins"
+fish.tournament.story_theme_033,"Il y a toujours quelqu’un pour contester le résultat. Au tournoi suivant, les mêmes s’inscrivent les premiers."
+fish.tournament.cup_theme_034,"Coupe de la fête nocturne"
+fish.tournament.story_theme_034,"L’équipe de nuit a apporté ses éclairages de scène préférés et prévu des boissons énergisantes comme prix."
+fish.tournament.cup_theme_035,"Coupe de la retraite heureuse"
+fish.tournament.story_theme_035,"Les vétérans à la retraite traitent l’arène comme une réunion d’anciens. Avec un auditeur, ils peuvent raconter la dernière finale jusqu’à la fermeture."
+fish.tournament.cup_theme_036,"Coupe de bienvenue"
+fish.tournament.story_theme_036,"La première activité des nouveaux résidents est de regarder un combat. La seconde est d’apprendre les noms des voisins."
+fish.tournament.cup_theme_037,"Coupe des récoltes"
+fish.tournament.story_theme_037,"C’est de nouveau l’heure des récoltes dans la serre agricole. Un tournoi a été organisé pour les célébrer."
+fish.tournament.cup_theme_038,"Coupe du recyclage"
+fish.tournament.story_theme_038,"L’association écologiste organise le combat et apprend aux visiteurs à reconnaître à l’entrée les déchets métalliques recyclables."
+fish.tournament.cup_theme_039,"Coupe du carnaval des animaux"
+fish.tournament.story_theme_039,"Le combat se tient en plein carnaval. L’association des animaux a prévu des aliments industriels pour poissons comme récompenses."
+fish.tournament.cup_theme_040,"Coupe des éclaboussures"
+fish.tournament.story_theme_040,"La fête de l’été artificiel a mis de l’eau partout. L’arbitre rappelle que celle de l’aquarium des poissons est particulièrement importante."
+fish.tournament.cup_theme_041,"Coupe du foyer d’hiver"
+fish.tournament.story_theme_041,"Une vieille tradition hivernale. Cette année, les organisateurs ont prévu des nouilles en gobelet, paraît-il dans un parfum réservé à l’hiver."
+fish.tournament.cup_theme_042,"Coupe de minuit"
+fish.tournament.story_theme_042,"Le thème est le compte à rebours de minuit. Les vieilles horloges à côté indiquent cinq heures différentes."
+fish.tournament.cup_theme_043,"Coupe des étoiles montantes"
+fish.tournament.story_theme_043,"De nombreux dresseurs connus ont commencé ici. Inscris-toi au tournoi et deviens le prochain maître des combats de poissons !"
+fish.tournament.cup_theme_044,"Coupe des invaincus"
+fish.tournament.story_theme_044,"Selon l’organisation, chacun peut devenir une légende. L’arbitre recommande de gagner d’abord le premier quart de finale."
+fish.tournament.cup_theme_045,"Invitation de l’espace lointain"
+fish.tournament.story_theme_045,"Des associations de plusieurs secteurs ont posé cette affiche. Venez avec le poisson auquel vous faites le plus confiance."
+fish.tournament.cup_theme_046,"Coupe de la défense du titre"
+fish.tournament.story_theme_046,"Le thème est la défense du titre. Une fois le tableau affiché, le public saura vite qui encourager."
+fish.tournament.cup_theme_047,"Coupe des débutants de bronze"
+fish.tournament.story_theme_047,"Tu perds toujours tes combats de poissons ? Inscris-toi, tu trouveras ici des adversaires à ta mesure."
+fish.tournament.cup_theme_048,"Coupe de la survie"
+fish.tournament.story_theme_048,"Trois tours éliminatoires laissent peu de marge. À la finale, les spectateurs ont souvent l’air plus fatigués que les poissons."
+fish.tournament.cup_theme_049,"Grande mêlée des poissons"
+fish.tournament.story_theme_049,"Le nom prend toute l’affiche, mais il n’y a que huit places au tableau aujourd’hui."
+fish.tournament.cup_theme_050,"Coupe des maîtres légendaires"
+fish.tournament.story_theme_050,"L’arbitre vétéran a apporté les archives des anciens tournois. Le tableau d’aujourd’hui désignera son propre champion."
+fish.tournament.cup_theme_051,"Coupe du sommet interstellaire"
+fish.tournament.story_theme_051,"Un tournoi ouvert parrainé par la Ligue galactique. Une place est réservée sur l’affiche au nom du champion."
+fish.tournament.cup_theme_052,"Coupe du pépin de pastèque"
+fish.tournament.story_theme_052,"L’association des fruits n’arrive toujours pas à décider s’il faut recracher les pépins. Voyons quel camp maîtrise le mieux les poissons."
+fish.tournament.cup_theme_053,"Coupe du champignon toxique"
+fish.tournament.story_theme_053,"Les mycologues discutent près de l’arène. L’arbitre veut surtout savoir qui a laissé tomber un spécimen sauvage dans l’eau."
+fish.tournament.cup_theme_054,"Coupe des paresseux galactiques"
+fish.tournament.story_theme_054,"Le tournoi devait avoir lieu chaque mois. En trois ans, il n’a eu lieu que trois fois."
+fish.tournament.cup_theme_055,"Coupe des gauchers"
+fish.tournament.story_theme_055,"L’association des gauchers accueille tout le monde. Les tables des prix et des inscriptions changeaient encore de côté juste avant le départ."
+fish.tournament.cup_theme_056,"Coupe de l’œuf dans les nouilles"
+fish.tournament.story_theme_056,"Les camps de l’œuf et des nouilles nature ont porté leur querelle devant l’aquarium. Le sponsor a ajouté des nouilles en gobelet aux prix."
+fish.tournament.cup_theme_057,"Coupe sans petit-déjeuner"
+fish.tournament.story_theme_057,"L’association du petit-déjeuner et la ligue qui le saute sont enfin réunies. L’animateur demande qui est venu le ventre vide."
+fish.tournament.cup_theme_058,"Coupe de la douche d’abord"
+fish.tournament.story_theme_058,"En rentrant, douche ou sieste d’abord ? L’association des habitudes a emprunté toute une installation de combat pour trancher."
+fish.tournament.cup_theme_059,"Coupe des chauves"
+fish.tournament.story_theme_059,"Le club interstellaire des chauves tient sa fête annuelle. Toutes les coiffures sont les bienvenues avec leur poisson."
+fish.tournament.cup_theme_060,"Coupe de la bataille d’oreillers"
+fish.tournament.story_theme_060,"Les deux camps ont apporté leurs oreillers, mous ou fermes. Une rangée entière commence déjà à s’endormir."
+fish.tournament.cup_theme_061,"Coupe de la crème glacée"
+fish.tournament.story_theme_061,"Vanille, chocolat et fraise se partagent les gradins en trois. Les trois parfums de glace sont sur la table."
+fish.tournament.cup_theme_062,"Coupe du premier côté"
+fish.tournament.story_theme_062,"Croquer le biscuit ou lécher la crème ? Le cercle d’étude des goûters a invité des poissons qui ne répondront jamais."
+fish.tournament.cup_theme_063,"Coupe des nuits blanches"
+fish.tournament.story_theme_063,"L’association des couche-tard lance son tournoi à trois heures du matin. Les organisateurs ont prévu du café pour tous les concurrents."
+fish.tournament.cup_theme_064,"Coupe du vendredi enfin"
+fish.tournament.story_theme_064,"Un combat sur le thème de la fin du travail à l’heure. Le présentateur a consulté sa montre trois fois avant d’entrer."
+fish.tournament.cup_theme_065,"Coupe du café salvateur"
+fish.tournament.story_theme_065,"Le café et le thé se disputent encore le titre de boisson la plus tonique. Les grains de café figurent déjà sur la liste des prix."
+fish.tournament.cup_theme_066,"Coupe du ronflement"
+fish.tournament.story_theme_066,"Le centre du sommeil invite à regarder les poissons. Le projectionniste doit baisser le volume des ronflements enregistrés avant le match."
+fish.tournament.cup_theme_067,"Coupe des gros portefeuilles"
+fish.tournament.story_theme_067,"Une société financière sponsorise le combat. Les vrais montants sont sur le tableau. Le présentateur doit vérifier chaque chiffre avant de l’annoncer."
+fish.tournament.cup_theme_068,"Coupe du patron qui régale"
+fish.tournament.story_theme_068,"La chaîne de restaurants fête un record de ventes et offre du caviar. Il y a plus d’astérisques au menu que de sièges dans les gradins."
+fish.tournament.cup_theme_069,"Coupe sans hausse des prix"
+fish.tournament.story_theme_069,"L’épicerie expose ses étiquettes d’il y a dix ans. Personne ne voulait payer pour des étiquettes plus grandes à l’époque non plus."
+fish.tournament.cup_theme_070,"Coupe de la vente à perte"
+fish.tournament.story_theme_070,"Le magasin d’articles ménagers liquide ses stocks. Il affirme perdre de l’argent à chaque vente et a sorti un lot de petites boîtes vides pour les prix."
+fish.tournament.cup_theme_071,"Coupe du poste en or"
+fish.tournament.story_theme_071,"Le groupe de restauration a installé un stand de recrutement. Les dresseurs qui entrent disent qu’ils viennent seulement pour le combat."
+fish.tournament.cup_theme_072,"Coupe de la livraison express"
+fish.tournament.story_theme_072,"Le transporteur interstellaire inaugure une nouvelle route. À sa surprise, l’enseigne du sponsor est arrivée deux jours avant la cargaison."
+fish.tournament.cup_theme_073,"Coupe à moins quatre-vingt-dix pour cent"
+fish.tournament.story_theme_073,"Le magasin a imprimé sa promotion au dos du tableau. Pour voir les prix du tournoi, il faut toujours le retourner."
+fish.tournament.cup_theme_074,"Coupe de l’aquarium doré"
+fish.tournament.story_theme_074,"Le fabricant expose un aquarium plaqué or. Le tableau énumère ce que les participants peuvent vraiment emporter."
+fish.tournament.cup_theme_075,"Coupe du millionnaire en une nuit"
+fish.tournament.story_theme_075,"La loterie a empilé des prospectus à l’entrée et fourni quelques billets pour le tournoi."
+fish.tournament.cup_theme_076,"Coupe des dents à protéger"
+fish.tournament.story_theme_076,"Une marque d’hygiène dentaire sponsorise le combat avec du dentifrice. Peut-être que les poissons eux-mêmes discutent des dents le plus sérieusement."
+fish.tournament.cup_theme_077,"Coupe de la super remise"
+fish.tournament.story_theme_077,"Trois grands magasins organisent le combat. Au départ, ils se disputaient encore la place centrale pour leur enseigne."
+fish.tournament.cup_theme_078,"Coupe du patron en fuite"
+fish.tournament.story_theme_078,"L’agence de voyages organise un combat le jour de sa réouverture. Avant de partir, les employés essayaient encore de joindre le patron."
+fish.tournament.cup_theme_079,"Coupe de la rénovation de luxe"
+fish.tournament.story_theme_079,"Un fabricant de meubles a sorti une chaise et un coussin coûteux. Dès le début du combat, personne ne s’y est assis."
+fish.tournament.cup_theme_080,"Coupe du meilleur vendeur"
+fish.tournament.story_theme_080,"Le rendez-vous annuel de l’association des vendeurs interstellaires. Le présentateur a parlé si longtemps des sponsors que quelqu’un dans le public a fait une offre."
+fish.tournament.cup_theme_081,"Coupe de la rentrée"
+fish.tournament.story_theme_081,"Un tournoi ouvert pour la rentrée. Quelqu’un a pris un marqueur au stand pour noter l’ordre des combats."
+fish.tournament.cup_theme_082,"Coupe de la remise des diplômes"
+fish.tournament.story_theme_082,"Après la photo de promotion, tout le monde a remarqué que l’aquarium occupait le centre. Une cassette rappelle ce tournoi d’adieu."
+fish.tournament.cup_theme_083,"Coupe des célibataires"
+fish.tournament.story_theme_083,"Une tradition de l’association d’entraide des célibataires. La seule question à l’inscription concernait le poisson apporté, et l’animateur en est ravi."
+fish.tournament.cup_theme_084,"Coupe de la Saint-Valentin"
+fish.tournament.story_theme_084,"Le quartier commerçant a disposé les sièges par paires et prévu de la glace dans les prix."
+fish.tournament.cup_theme_085,"Coupe du poisson d’avril"
+fish.tournament.story_theme_085,"L’organisateur promet une surprise. Après plusieurs vérifications, l’arbitre confirme au moins que la liste des prix est authentique."
+fish.tournament.cup_theme_086,"Coupe des remerciements"
+fish.tournament.story_theme_086,"Le comité des habitants invite tout le monde à observer le combat et expose les souvenirs confectionnés par le quartier."
+fish.tournament.cup_theme_087,"Coupe de la galaxie verte"
+fish.tournament.story_theme_087,"Un panneau près du tournoi caritatif explique le recyclage des débris spatiaux. Le centre de tri a fourni les prix."
+fish.tournament.cup_theme_088,"Coupe du vendredi chanceux"
+fish.tournament.story_theme_088,"Inspirée du vendredi treize. Les organisateurs ont vérifié trois fois le tableau pour voir où pouvait se cacher la malchance."
+fish.tournament.cup_theme_089,"Coupe des citrouilles d’Halloween"
+fish.tournament.story_theme_089,"Des citrouilles décorent l’arène. Des appâts scintillants permettront aux gagnants de rapporter un peu de lumière."
+fish.tournament.cup_theme_090,"Coupe des raviolis du solstice"
+fish.tournament.story_theme_090,"L’association des raviolis discute encore de la garniture. Heureusement, l’arbitre doit seulement décider quel poisson gagne."
+fish.tournament.cup_theme_091,"Coupe de l’outsider"
+fish.tournament.story_theme_091,"Les débutants comme les vétérans peuvent participer. Le public préfère souvent soutenir le nom inconnu du tableau."
+fish.tournament.cup_theme_092,"Coupe du million de crédits"
+fish.tournament.story_theme_092,"Le club a mis un million dans le nom. Le tableau indique les vrais prix. L’arbitre demande au public de ranger ses budgets."
+fish.tournament.cup_theme_093,"Coupe des meilleurs débutants"
+fish.tournament.story_theme_093,"Le public adore les révélations. Les vétérans peuvent aussi venir mettre leur forme à l’épreuve."
+fish.tournament.cup_theme_094,"Coupe du défi ouvert"
+fish.tournament.story_theme_094,"Un habitué victorieux organise un tournoi ouvert. Pour le titre, il faut tout de même gagner chaque tour du tableau."
+fish.tournament.cup_theme_095,"Coupe de la série victorieuse"
+fish.tournament.story_theme_095,"Pour gagner trois fois de suite, commencez par le premier combat. Les prix à partir des demi-finales figurent sur le tableau."
+fish.tournament.cup_theme_096,"Coupe de la seconde chance"
+fish.tournament.story_theme_096,"Un tournoi ouvert sur le thème du retour, avec un nouveau tableau dès les quarts. Les anciens rivaux trouvent toujours de quoi parler."
+fish.tournament.cup_theme_097,"Coupe de la dernière place"
+fish.tournament.story_theme_097,"Les gradins ont un faible pour les concurrents qu’on oublie d’habitude. Tout bon combat mérite les applaudissements."
+fish.tournament.cup_theme_098,"Coupe du roi des poissons rouges"
+fish.tournament.story_theme_098,"L’association aquariophile décore l’arène. Le personnel a posé la couronne dorée à côté de l’aquarium pour les photos."
+fish.tournament.cup_theme_099,"Coupe des champions"
+fish.tournament.story_theme_099,"Les photos des anciens champions couvrent un mur. Le tableau d’aujourd’hui désignera le sien."
+fish.tournament.cup_theme_100,"Coupe du centième tournoi"
+fish.tournament.story_theme_100,"La ligue présente les anciens tableaux pour célébrer son centième tournoi ouvert. Les résultats du jour rejoindront les archives comme d’habitude."
+fish.tournament.cup_theme_101,"Open du quartier portuaire"
+fish.tournament.cup_theme_102,"Coupe des éleveurs"
+fish.tournament.cup_theme_103,"Tournoi sur invitation de la Baie d’argent"
+fish.tournament.cup_theme_104,"Circuit de l’Anneau stellaire"
+fish.tournament.cup_theme_105,"Coupe des ateliers"
+fish.tournament.story_theme_101,"Le comité portuaire prête son ancien hall de fret pour un tournoi ouvert à toute la station."
+fish.tournament.story_theme_102,"Les élevages se retrouvent pour partager leur expérience et présenter leurs plus beaux poissons adultes."
+fish.tournament.story_theme_103,"L’aquarium de la Baie d’argent organise le tournoi et expose près de l’arène ses premiers registres d’élevage. Des descendants de plusieurs de ces poissons concourront aujourd’hui."
+fish.tournament.story_theme_104,"Le circuit de l’Anneau stellaire fait escale dans notre station. Les enregistrements de l’étape précédente sont disponibles dans la zone d’attente."
+fish.tournament.story_theme_105,"Plusieurs ateliers de réparation du port ont mis leur argent en commun pour organiser ce tournoi. Le vainqueur recevra des outils fournis par les ateliers."
+processing.station.materials,"Matériaux"
+processing.station.craft,"Fabrication"
+processing.station.manual,"Manuel"
+processing.station.start,"Lancer la fabrication"

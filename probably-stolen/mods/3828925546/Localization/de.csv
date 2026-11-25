@@ -1,0 +1,31 @@
+machine_name,Selbstlernender Verstärker
+machine_desc,Treibt die Selbstlernmodule in dieser Maschine jede Nacht voran.
+tooltip_note,"Höhere Effizienz senkt den Stromverbrauch; alle {0} % Qualität gewähren 1 zusätzlichen Fortschritt; höhere Leistung erhöht die Chance, dass ein Modul die Eigenschaft Lernalgorithmus erhält."
+note_title,Anleitung: {0}
+note_short,"· Stromsteckplatz: Eine Batterie einlegen.\n· Modulschacht: Module einlegen; Module können die Eigenschaft Lernalgorithmus erhalten.\n· Notizsteckplatz: Dieses Blatt kann entfernt und jederzeit gelesen werden.\n· Grundriss 3x3; in einem Maschinenraum platzieren und an den Strom anschließen."
+note_flavor,"[Moduleffekte]\nEffizienz: Höhere Effizienz senkt den Stromverbrauch\nQualität: +1 zusätzlicher Fortschritt pro {0} %\nLeistung: Höhere Leistung erhöht die Chance für Module ohne die Eigenschaft, diese zu erhalten\n\n[Hinweis]\nNur Module mit der Eigenschaft „Lernalgorithmus“ werden vorangetrieben, begrenzt durch das Lernlimit dieses Moduls.\n[Erlangung des Lernalgorithmus]\nBedingungen: 1. kein KNOTEN (NODE); 2. kein Lernalgorithmus; 3. weniger als 2 Effekte; 4. der erste Effekt ist nicht {3}, {4}, {5}, {6} oder {7}; 5. nur {11}, {12}, {13}, {14}, {15} und {16} sowie kompatible Module mit MODULE_TAG; {1}, {2}, {9}, {10} sind ausgeschlossen."
+training_preview,Heutiges Training: {0}
+night_log,{0}: {1} Module weiterentwickelt
+learning_gain,{0} hat die Eigenschaft Lernalgorithmus erhalten
+settings_section_advance,Fortschritte
+settings_base_advances,Zusätzliche Fortschritte
+settings_base_advances_tip,"Bereich 0-9, Standard 1"
+settings_quality_per_advance,Qualitäts-zu-Fortschritt-Umwandlung (niedriger ist schneller)
+settings_quality_per_advance_tip,"Alle X % Qualität gewähren 1 zusätzlichen Lernfortschritt (Bereich 10-200, Standard 50 %)"
+settings_learning_only_at_night,Lernalgorithmus nur über Nacht vergeben
+settings_section_power,Strom
+settings_base_power,Basisstrom
+settings_base_power_tip,"Basisstromverbrauch der Standardformel (Bereich 1-100, Standard 10)"
+tooltip_note_no_grant,"Höhere Effizienz senkt den Stromverbrauch; alle {0} % Qualität gewähren 1 zusätzlichen Fortschritt."
+note_short_no_grant,"· Stromsteckplatz: Eine Batterie einlegen.\n· Modulschacht: Module einlegen.\n· Notizsteckplatz: Dieses Blatt kann entfernt und jederzeit gelesen werden.\n· Grundriss 3x3; in einem Maschinenraum platzieren und an den Strom anschließen."
+note_flavor_no_grant,"[Moduleffekte]\nEffizienz: Höhere Effizienz senkt den Stromverbrauch\nQualität: +1 zusätzlicher Fortschritt pro {0} %\n\n[Hinweis]\nNur Module mit der Eigenschaft „Lernalgorithmus“ werden vorangetrieben, begrenzt durch das Lernlimit dieses Moduls."
+learning_cap_preview,{0} von {1} Modul(en) voraussichtlich verbessert; {2} Modul(e) erhalten möglicherweise die Eigenschaft
+learning_cap_preview_off,{0} von {1} Modul(en) voraussichtlich verbessert; Eigenschaftsvergabe ist deaktiviert
+settings_learning_only_at_night_tip,"Nur aktiv, während die Eigenschaftsvergabe aktiviert ist: Ein = Turbo kann nicht vergeben; Aus = Turbo kann vergeben"
+settings_learning_grant,Vergabe der Eigenschaft Lernalgorithmus erlauben
+settings_learning_grant_tip,"Aus: Weder über Nacht noch durch Turbo wird die Eigenschaft vergeben; Module, die sie bereits haben, entwickeln sich weiterhin weiter."
+settings_section_stock,Dr.-Jackson-Angebot
+settings_stock_chance,Erzeugungschance
+settings_stock_chance_tip,"Bereich 0–100 %, Standard 25 %"
+settings_stock_max,Maximale Anzahl
+settings_stock_max_tip,"Bereich 1–3, Standard 1"

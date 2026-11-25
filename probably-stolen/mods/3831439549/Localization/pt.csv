@@ -381,8 +381,8 @@ feed_refine_gain,Comida colocada rende +{0}% de calorias
 nm_ras_expand,Expansão Extra do Tanque de Peixes
 ras_expand_gain,+1 de comprimento e de largura cada, até 5
 nm_ras_selfclean,Unidade de Autolimpeza da Água
-ras_clean_req,Fio x12 + Lâmpada UV x1 + Produto químico comum x4 (todos preenchidos para funcionar)
-ras_clean_prog,Fio {0}/{1} + Lâmpada UV {2}/{3} + Químico comum {4}/{5}
+ras_clean_req,Fio x12 + Parafusos x10 + Suprimentos Químicos Comuns x4 (todos preenchidos para funcionar)
+ras_clean_prog,Fio {0}/{1} + Parafusos {2}/{3} + Químico comum {4}/{5}
 ras_selfclean_gain,Registra o volume e a qualidade da água antes da noite e restaura tudo ao amanhecer (mantém a água como estava, nunca cria água)
 ras_selfclean_short,Sistema de autolimpeza: {0} ({1})
 nm_ras_nightlight,Sistema de Iluminação Noturna
@@ -421,7 +421,7 @@ fadv_flash_desc,Adiciona um botao: gasta 2x energia e refrigera a geladeira inst
 fadv_keep,Frescor Congelado
 fadv_keep_desc,Alimentos congelados nesta geladeira tambem ganham o bonus de congelamento
 fadv_dessert,Maquina de Sobremesas
-fadv_dessert_desc,Adiciona um slot de agua; a noite converte 10 ingredientes em sorvete (250ml de agua cada). Com o modulo instalado, tudo na geladeira (comida, ingredientes, sorvete) mantem apenas o traco Congelado - o traco Gelado e removido
+fadv_dessert_desc,Adiciona um slot de Agua para Sorvete na janela da geladeira (apenas recipientes de agua). Coloque agua e qualquer uma das 10 bebidas/salgadinhos (Diet Juice - Fizzy Milksub - Energy Drink - Red Soda - Cat Choco Bar - L'EAT Snackbar - Red Devil Beer - Glowberry Wine - Nudka - Gloomberry Wine) na zona de frio ou congelamento: a cada noite cada porcao consome 250ml de agua e vira um sorvete. Valor = preco do ingrediente x1.4 (alcool x1.3) + o preco desses 250ml de agua, depois os bonus de qualidade da agua e de congelado, entao vale bem mais que o item cru. Se faltar agua nada converte naquela noite e sai um relatorio. Com o modulo instalado tudo na geladeira mantem apenas o traco Congelado
 icecream_desc,Sobremesa congelada feita pela Maquina de Sobremesas. Derrete se nao ficar numa geladeira ligada durante a noite.
 icecream_melted,O {0} de ontem derreteu
 icecream_wq_prefix,Qualidade da agua:
@@ -537,6 +537,7 @@ mr_confirm_ok,Confirm
 mr_cancel,Cancel
 mr_mat_scrap,Scrap Metal
 mr_mat_filter,Water Filter
+mr_mat_uv,Lampada UV
 mr_machine_moisture_farm,Moisture Farm
 mr_machine_furnace,Furnace
 mr_machine_security_alarm,Security Alarm
@@ -729,6 +730,8 @@ as8_ar_16,I should go.
 as8_ar_7b,.....
 cfg_docstory_off,Desativar a história do Doutor
 cfg_docstory_off_desc,Quando ligado, este save nunca recebe as visitas do Doutor: sem Cartão de Favor, sem Reprogramador de Aumentos e sem a cadeia de história dos Aumentados (as quatro etapas em 2/6/10/13). Só vale para saves NOVOS -- comece um novo jogo depois de mudar; saves existentes e carregados não são afetados. Desligado por padrão (a história corre normalmente).
+cfg_hard,Modo difícil (apenas saves novos)
+cfg_hard_desc,Quando ligado: (1) todos os módulos avançados e melhorias básicas funcionais custam o dobro de materiais (melhorias puramente de capacidade ficam de fora); (2) os bônus de qualidade / desempenho / eficiência são reduzidos pela metade; (3) os efeitos de capacidade e o consumo extra de energia das melhorias permanecem iguais. Só vale no momento em que um save NOVO é criado -- mudar no meio do jogo não tem efeito. Desligado por padrão (dificuldade normal).
 prnmat_on,MatUpg: ON
 prnmat_off,MatUpg: OFF
 prnmat_desc,Interruptor geral dos upgrades MDU desta impressora. ON: os materiais arrastados são consumidos primeiro como material de upgrade (lingotes não vão para a impressao). OFF: nada é consumido, tudo volta ao comportamento original (bandeja / slot de chip). Clique para alternar.

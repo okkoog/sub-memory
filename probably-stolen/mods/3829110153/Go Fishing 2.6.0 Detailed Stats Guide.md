@@ -1,6 +1,6 @@
-# Go Fishing 2.5.4 Detailed Stats Guide
+# Go Fishing 2.6.0 Detailed Stats Guide
 
-Applicable to: Go Fishing 2.5.4 source and configuration as of November 17, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.5.4 Mod Guide.md>); the two can be read together.
+Applicable to: Go Fishing 2.6.0 source and configuration as of November 25, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.6.0 Mod Guide.md>); the two can be read together.
 
 All amounts are in credits, weights in grams, food calories in kcal, and power in device energy points. The defined base price, formula quote, and shop transaction price in the tables are explained separately. Market conditions, native quality traits, actual weight, and rounding may continue to affect interface prices.
 
@@ -8,6 +8,8 @@ All amounts are in credits, weights in grams, food calories in kcal, and power i
 
 ## Table of Contents
 
+- [Fish tournaments](#fish-tournaments)
+- [Tournament schedule and prizes](#tournament-schedule-and-prizes)
 1. [Fish Species, Defined Weight & Base Price](#1-fish-species-defined-weight--base-price)
 2. [Six-Stage Growth & Farming Physiology](#2-six-stage-growth--farming-physiology)
 3. [Farming Markup & Profit Calculation](#3-farming-markup--profit-calculation)
@@ -428,7 +430,7 @@ The 5000 kcal for feed comes from built-in reserve; the adult worm is a separate
 
 ## 6. Fishing XP, Grade & Traits
 
-Each collected fish grants 10 XP; max level 9500 XP. If relying solely on this collection count, you need 950 fish. The grade column is the actual player display name: grade 4, 3, 2, 1, special correspond to 1.00/1.10/1.25/1.50/2.00× price coefficients. Bred fish default to grade 4, i.e., 1×.
+Each collected fish grants 10 XP; max level 9500 XP. If relying solely on this collection count, you need 950 fish. The grade column is the actual player display name: grade 4, 3, 2, 1, special correspond to 1.00/1.10/1.25/1.50/2.00× price coefficients. At hatching, each egg has a 25% chance to rise one grade, a 50% chance to stay at the mother’s grade, and a 25% chance to drop one grade. Rolls beyond the grade limits keep her grade. Fry from one egg share a grade, and old eggs without a recorded mother’s grade still hatch at grade 4.
 
 | Fishing level | Cumulative XP | Grade 4 | Grade 3 | Grade 2 | Grade 1 | Special |
 |---|---|---|---|---|---|---|
@@ -915,3 +917,76 @@ This table identifies paths relative to the FishingGameplay source-project root.
 Stage naming, native weight pricing, age and maintenance settlement are also cross-checked against the current game's Assembly-CSharp. After vanilla, integration mods, or later config updates, re-verify tables against the new version.
 
 This version does not itemize all hidden-key drop chains, all boss-battle-specific targets, native upgrade consumable prices, or reagent actual medical duration; these unverified contents are not filled in as guessed numbers. For ordinary operation and flow, pair with the mechanics guide.
+
+## Selective breeding
+
+Keep one adult female and one eligible male of the same species in a separate tank to choose the parents. When several males qualify, a father is chosen at random at fertilization.
+
+Each newly caught fish or newly separated juvenile rolls its four base attributes once within its species ranges. Fixed pedigree bonuses are added after the roll and totals can exceed 100. Roe and fry groups preview the resulting ranges. The two parents contribute 2/4/8 points each for a one-, two-, or three-star factor. Each grandparent contributes 1/2/4 points. The fish’s own factor appears before the parentheses, followed by its mother’s and father’s factors in that order. Fish and roe already present before this update retain their previous attribute rules.
+
+## Training Aquaculture System
+
+The device keeps the selected training color until you change the activity or choose **Stop Training**. Stopping restores its original appearance.
+
+Buy the system for 1,500 credits from the Aquaculture section of the Fisheries Terminal. A large water tank comes preinstalled. Choose a training activity once to use it each night until you change it or stop training. The selection is saved with the device. With power and sufficient water, eligible individual fish train after normal husbandry if health is at least 50% and fullness is at least 75%. The base grid is 16 × 4. Each fish can train eight times. Successful sessions 1–2 add 8–12 points each, sessions 3–5 add 12–17 each, and sessions 6–8 add 16–22 each. Each successful session costs 10% of maximum fullness. Farmed fish train before their adult factor assessment.
+
+
+## Fish tournaments
+
+- From game day 8, the organizer can visit when you do not have a tournament entry board. Double-click the board to see the event and its prizes. One event opens per day on a 40-day cycle.
+- Place one live adult fish in the entry slot and confirm to enter the eight-player bracket. Start each round manually. Draws go to a rematch. The arena stays open until the tournament ends, and you can watch and advance the remaining matches after elimination.
+- Claim prizes from the board's tournament history. Rewards are recorded when you enter. Credits and items are tracked separately, so you can make room and claim any outstanding items later.
+- At the end, the game returns your fish to its original slot or available inventory first. If neither can accept it, retrieve your fish from the entry board's selection slot. Recordings are loaded when selected.
+
+## Processing and manuals in 2.6.0
+
+- The processing station uses the vanilla genuine Immunivax factory. Its effect follows the vanilla Sentinel requirement.
+- Performance modules use the vanilla random-effect factory. Outputs in one batch share a roll. Start a separate batch for a new roll.
+- The processing manual and A Veteran’s Experience display a placeholder if a glyph is unavailable. The processing manual's category buttons use the manual font, and the station panel labels follow the game language.
+
+## Tournament schedule and prizes
+
+The first cycle runs on days 8–47 and restarts on day 48. Quarter-final elimination awards no prize.
+
+| First-cycle day | Event | Champion | Runner-up | Semifinalist |
+| --- | --- | --- | --- | --- |
+| 8 | Tofu Pudding Cup | 625 credits + Processed milk ×2 | 275 credits + Processed milk ×1 | 115 credits |
+| 9 | Station Anniversary Cup | 775 credits + Eleanor's Pocket Watch ×1 | 340 credits | 145 credits |
+| 10 | Boss Wang's Prosperity Cup | 850 credits + Gleaming Pirate Gold Coin ×1 | 370 credits | 160 credits |
+| 11 | Early to Bed or Up All Night Cup | 675 credits + Coffee beans ×2 | 295 credits + Coffee beans ×1 | 125 credits |
+| 12 | Port District Open | 850 credits + Durable Glass Bait ×2 | 375 credits + Durable Glass Bait ×1 | 160 credits |
+| 13 | Rising Star Cup | 1025 credits + Fish Mince Bait ×3 | 450 credits + Fish Mince Bait ×1 | 190 credits |
+| 14 | Split Hot Pot Cup | 700 credits + Hot sauce ×2 | 305 credits + Hot sauce ×1 | 130 credits |
+| 15 | Harvest Festival Cup | 750 credits + Nutrifruit seed packet ×2 | 330 credits + Nutrifruit seed packet ×1 | 140 credits |
+| 16 | Second Item Half Price Cup | 875 credits + Food stamp ×2 | 385 credits + Food stamp ×1 | 165 credits |
+| 17 | Cats vs. Dogs Cup | 725 credits + Industrial fish feed ×2 | 315 credits + Industrial fish feed ×1 | 135 credits |
+| 18 | Deep Space Invitational | 1075 credits + Olivia's Champagne ×1 | 470 credits | 200 credits |
+| 19 | Breeders’ Exchange Cup | 875 credits + Industrial fish feed ×2 | 385 credits + Industrial fish feed ×1 | 165 credits |
+| 20 | Pineapple Pizza Cup | 750 credits + Processed cheese ×2 | 330 credits + Processed cheese ×1 | 140 credits |
+| 21 | Late-Night Party Cup | 850 credits + Energy drink ×2 | 370 credits + Energy drink ×1 | 160 credits |
+| 22 | Lifetime Warranty Cup | 950 credits + Toolbox ×1 | 415 credits + Toolbox ×1 | 180 credits |
+| 23 | Shower Order Cup | 650 credits + Shampoo ×2 | 285 credits + Shampoo ×1 | 120 credits |
+| 24 | Bronze Rookie Cup | 1125 credits + Glass Bait ×2 | 495 credits + Glass Bait ×1 | 210 credits |
+| 25 | Bubble Tea Cup | 600 credits + Processed milk ×2 | 260 credits + Processed milk ×1 | 110 credits |
+| 26 | Silver Bay Invitational | 900 credits + Potent Glass Bait ×3 | 395 credits + Potent Glass Bait ×1 | 170 credits |
+| 27 | Pet Carnival Cup | 800 credits + Industrial fish feed ×2 | 350 credits + Industrial fish feed ×1 | 150 credits |
+| 28 | Golden Smile Cup | 850 credits + Toothpaste ×2 | 370 credits + Toothpaste ×1 | 160 credits |
+| 29 | Abolish Monday Cup | 625 credits + Energy drink ×2 | 275 credits + Energy drink ×1 | 115 credits |
+| 30 | Interstellar Summit Cup | 1350 credits + Music cassette No. 10 ×1 | 460 credits | 195 credits |
+| 31 | Crispy Fries Cup | 675 credits + Hot sauce ×2 | 295 credits + Hot sauce ×1 | 125 credits |
+| 32 | Winter Hearth Cup | 850 credits + Cup noodles ×2 | 370 credits + Cup noodles ×1 | 160 credits |
+| 33 | Clearance Cup | 900 credits + Large Empty Can ×3 | 395 credits + Large Empty Can ×1 | 170 credits |
+| 34 | Star Ring Tour | 950 credits + Potent Shiny Bait ×4 | 415 credits + Potent Shiny Bait ×2 | 180 credits |
+| 35 | Galactic Slacker Cup | 725 credits + Ice cream ×2 | 315 credits + Ice cream ×1 | 135 credits |
+| 36 | Cilantro Showdown | 650 credits + Hot sauce ×1 | 285 credits + Hot sauce ×1 | 120 credits |
+| 37 | Friday Slacking Cup | 800 credits + Fish Mince Bait ×2 | 350 credits + Fish Mince Bait ×1 | 150 credits |
+| 38 | Buy One, Get One Cup | 950 credits + Industrial fish feed ×2 | 415 credits + Industrial fish feed ×1 | 180 credits |
+| 39 | Bald and Proud Cup | 675 credits + Shampoo ×2 | 295 credits + Shampoo ×1 | 125 credits |
+| 40 | Iced Cola Cup | 700 credits + Red soda ×2 | 305 credits + Red soda ×1 | 130 credits |
+| 41 | Workshops Cup | 900 credits + Toolbox ×1 | 395 credits | 170 credits |
+| 42 | Golden Fish Tank Cup | 900 credits + Durable Shiny Bait ×2 | 395 credits + Durable Shiny Bait ×1 | 170 credits |
+| 43 | Chicken or Egg Cup | 725 credits + Small Empty Can ×2 | 315 credits + Small Empty Can ×1 | 135 credits |
+| 44 | All-Nighter Champion Cup | 600 credits + Boxed Drip Coffee ×1 | 260 credits | 110 credits |
+| 45 | Lucky Can Cup | 825 credits + Caviar ×1 | 360 credits + Caviar ×1 | 155 credits |
+| 46 | Everything Below Cost Cup | 800 credits + Small Empty Can ×3 | 350 credits + Small Empty Can ×1 | 150 credits |
+| 47 | Never Closed Cup | 900 credits + Cup noodles ×2 | 395 credits + Cup noodles ×1 | 170 credits |
