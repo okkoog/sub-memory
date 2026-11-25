@@ -3842,11 +3842,12 @@ navy.term.unload_empty,No loot to unload in gear box.
 navy.term.restock_ok,Restocked from store: Ammo +{0}, Meds +{1}, Food +{2}.
 navy.term.restock_none,Already stocked or no matching supplies in store.
 navy.liaison.name,Logistics Officer Hansen
-navy.liaison.ok,"Boss, I brought back all gear boxes and loot for {0}! Clean run — everything is on your counter."
-navy.liaison.ok_injured,"Boss, {0} made it back with loot, though someone took a hit — sent them to recover and brought all boxes to your counter."
-navy.liaison.mixed,"Boss, mixed results for {0} today. Full battle report is here, and all gear boxes are on your counter."
-navy.liaison.fail,"Bad news, boss — {0} had to abort and fall back. Everyone survived; I brought their gear boxes back to your counter."
-navy.liaison.box_tip,Hansen placed {0} returned gear box(es) on your counter (or use Unload Loot in the terminal).
+navy.liaison.ok,"Boss, {0} made it back. Clean run. I brought their gearboxes."
+navy.liaison.ok_injured,"Boss, {0} brought back loot. Someone took a hit, so I sent them to recover. I have their gearboxes here."
+navy.liaison.mixed,"Mixed results for {0} today, boss. I brought the report and their gearboxes."
+navy.liaison.fail,"Boss, {0} had to pull back. Everyone made it and I have their gearboxes. Check the report for damage."
+navy.liaison.box_tip,Hansen placed {0} gearboxes on the counter. Check the names and double-click to open.
+navy.liaison.box_waiting,{0} gearboxes did not fit. Open them by member name in the Navy Terminal.
 navy.log.radio_note,· Radio order: {0}
 navy.log.no_ammo,"· Critical mistake: {0} had ZERO ammo and could not fire!"
 navy.log.combat_ok,"· Firepower edge: {0} held the line (Power {1} vs Danger {2})."
@@ -4259,6 +4260,8 @@ navy.liaison.merc_line,{0} is back. They kept {2} under contract; the other {1} 
 navy.liaison.vault_again,You haven't cleared the storage yet. Leaving it here.
 navy.liaison.vault_tip,Storage is on the counter. It goes once it's empty.
 navy.liaison.vault_left,{0} items left in the storage. It stays on the counter.
+navy.liaison.vault_waiting,{0} contract loot items are waiting. Open the Navy Terminal and select Claim Contract Loot.
+navy.term.btn_vault,Claim Contract Loot ({0})
 navy.liaison.vault_full,"Storage full. {0} items didn't fit."
 navy.merc.indep_refund,Outsourced company contract voided. {0} credits refunded.
 ul_kai_upper_fixer_title,Kai's Upper Fixers
@@ -4269,3 +4272,13 @@ ul_kai_launder_desc,"Kai's accountants bury your dirty paper trail: costs {0} cr
 ul_kai_launder_desc_clean,"Kai's accountants bury your dirty paper trail: costs {0} credits + {1}% of your current total crime value, immediately wipes {2}% of every offense, and cuts your investigation level in half. {3}-day cooldown.\nYour books are clean right now (0 crime · 0/100 investigation)—no wash needed."
 kai_launder_done,"Kai's backroom wash complete: cleared {0} crime value ({1} remaining), investigation down to {2}/100."
 kai_launder_clean,Your books were already clean; Kai's people signed off on them anyway.
+item_ul_navy_armory_case_name,Navy Standard Armory Case
+item_ul_navy_armory_case_desc,"Exclusive Republic Navy Contractor classified case (10×7, 70 slots). Holds weapons, body armor, and helmets only; exempt from police inspections and usable directly for Navy requisition turn-ins."
+item_ul_navy_armory_case_flavor,"A matte navy-blue hard-shell rifle case lined with dense foam and stamped with a Naval Logistics inspection-waiver seal."
+item_ul_navy_armor_locker_name,Navy Spec-Ops Armor Locker
+item_ul_navy_armor_locker_desc,"Heavy classified equipment locker issued to Rank 3 Navy Contractors (12×8, 96 slots). Holds weapons, body armor, and helmets only; exempt from police inspections and usable directly for Navy requisition turn-ins."
+item_ul_navy_armor_locker_flavor,"A brass-cornered naval locker embossed with the anchor crest, deep enough for full exo-rigs and heavy firearms."
+item_ul_navy_heavy_case_name,Fleet Strategic Armory Vault
+item_ul_navy_heavy_case_desc,"Flagship-grade classified armory vault for Phase 2 Fleet Contractors (16×9, 144 slots). Holds weapons, body armor, and helmets only; exempt from police inspections and usable directly for Navy requisition turn-ins."
+item_ul_navy_heavy_case_flavor,"A twin-bolted armored chest pulled from a fleet armory, shielded so even Security scanners return a blank silhouette."
+navy.armory_case.granted,"Naval Logistics delivered an exclusive classified container: {0} (stored in your warehouse)."

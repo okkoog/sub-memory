@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"抜き打ち検査が増える。ただし�
 dsp_no_trash_name,密輸ゴミ箱
 dsp_no_trash_description,ゴミ箱は密輸用の隠し場所に改造され、清掃サービスでは片付けられなくなる。閉店前にカウンターの外へ物を置いておけば、これまで通り持ち去られる。
 dsp_former_assistant_name,元助手
+dsp_former_assistant_discount_name,元助手
 dsp_former_assistant_description,最初からジャクソン投資Iが解放される。ジャクソン博士との取引で10%の取引ボーナスを得る。3日に1回、彼に電話して店へ来てもらえる。
 dsp_former_assistant_contact,ジャクソン博士
 dsp_former_assistant_bonus_buy,"ジャクソン博士との取引：買値 -10%"
@@ -113,8 +114,8 @@ dsp_no_trash_janitor_4,"とはいえ、地下取引に加わりたいなら歓�
 dsp_underground_trade_name,地下取引
 dsp_snack_addiction_name,間食依存
 dsp_snack_addiction_description,"定期的に間食しないと、8%の取引ペナルティを受ける。この依存症は治せる……が、本当に必要だろうか？"
-dsp_snack_addiction_log_start,零食依存：{0}日後に離脱症状が始まります
-dsp_snack_addiction_log_cure,零食依存：また禁断症状、取引が不利（{0}日後に克服）
+dsp_snack_addiction_log_start,間食依存：{0}日後に離脱症状が始まります
+dsp_snack_addiction_log_cure,間食依存：また禁断症状、取引が不利（{0}日後に克服）
 dsp_snack_addiction_withdrawal,"間食依存：また欲しくなってきた。取引が悪化する。"
 dsp_snack_addiction_cured,"間食依存：ずいぶん長く間食していない。依存は治まった。"
 dsp_snack_addiction_suppressed,"間食をかじる。手の震えが止まった。"
@@ -413,7 +414,7 @@ dsp_prohibition_description,すべての酒は初級の密輸品として扱わ�
 dsp_tobacco_tax_name,煙草税
 dsp_tobacco_tax_description,タバコに小売価格50%の上乗せが付く。ただし受け取れるのは上乗せ分の20%だけ。
 dsp_blood_donor_name,献血ステーション
-dsp_blood_donor_description,1日1回、血液バッグを使って献血すると、血液バッグを追加で1つ獲得できる。翌日は客が1人減る。
+dsp_blood_donor_description,配給所で献血すると血液バッグを1つ獲得できるが、その代わり客を1人逃す。血液バッグは40フードスタンプ分の残高に交換できる。
 dsp_force_open_name,強行開封
 dsp_force_open_description,プラズマカッターかバールで物資箱をこじ開けられる。バールはその際に壊れてしまうが、中身を壊す量は少なくて済む。
 dsp_vendetta_name,因縁
@@ -590,19 +591,6 @@ dsp_preset_save,プリセット保存
 dsp_preset_load,プリセット読込
 dsp_preset_export,エクスポート
 dsp_preset_rename,名前変更
-d,e
-名,
-名,
-N,
-N,
-N,
-N,
-N,
-名,
-이,
-N,
-И,
-N,
 dsp_preset_open,プリセット
 dsp_preset_window_title,開始時プリセット
 dsp_preset_thanks,プレイありがとう
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,これは我々には不要だ、持っていけ。
 dsp_hydro_alcohol_smooth_name,アルコール順調
 dsp_hydro_alcohol_smooth_description,パイプ水耕の人気により、水道は葦や栄養果、発酵したブルームベリーに占拠された。配管内の水の不純物の大部分は、デンプンとアルコールに置き換えられている。
 dsp_blood_donor_redeem,交換
-dsp_blood_donor_redeem_done,交換完了：血液バッグが40額面のフードスタンプになった。
+dsp_blood_donor_redeem_done,交換完了：血液バッグが40フードスタンプ分の残高になった。
 dsp_around_world_80_name,80日間世界一周
 dsp_around_world_80_description,80日目からゲームが始まる。その後一週間で、最初の80日間に起きたすべてのイベントを経験する。開始時に1000クレジットと全派閥の声望15を得る。警告：バグの可能性あり。
 dsp_universal_liquid_name,万能液体
@@ -666,11 +654,19 @@ dsp_berserker_description,夢の粉を服用すると夜に夢遊する。軽傷
 dsp_vampire_name,吸血鬼
 dsp_vampire_description,定期的に血液バッグを吸わないと-8%の取引ペナルティを受ける。青い血を吸うと、再び喉が渇くまで舌先三寸の特性を得る。
 dsp_vampire_penalty,渇き：-X% 取引ペナルティ
+dsp_vampire_bc_soon,吸血鬼：{0}日後に渇き
+dsp_vampire_bc_now,吸血鬼：渇き中
+dsp_vampire_bc_bags,血液パック {0}
+dsp_tainted_witness_name,訳あり証人
+dsp_tainted_witness_description,改造体を殺害するか有効な通報をした後、調査進捗-10
+dsp_summon_anytime_name,呼べば即来
+dsp_summon_anytime_description,すべての連絡先がすぐに来店する。連絡先のクールダウンが1日短くなる。
+dsp_summon_anytime_line,どけ。
 dsp_fifth_republic_name,第五共和国
 dsp_fifth_republic_description,毎週「治安部の予算増加」イベントが発生する。そのイベントが発生した日は必ず抜き打ち検査がある。
 dsp_nine_eleven_name,9-ELEVEn
 dsp_nine_eleven_description,開始時に自動販売機と給水機を所持。かつてルウを密告したことがあり、彼女はまもなく戻ってくる。
-dsp_new_world_name,素晴らしき新世界
+dsp_new_world_name,すばらしい新世界
 
 dsp_new_world_description,治安部は愛情省に改名される。愛情省の評判報酬と罰則は原作と異なり、検査は一切行われない。
 
@@ -728,7 +724,7 @@ dsp_new_world_rep_twoplustwo_flavor,疑問符は本当の問いではない。�
 
 dsp_jackie_chan_name,ジャッキー・チャン
 
-dsp_jackie_chan_description,ゴミ属性のアイテムを組み合わせて、より価値の高い武器にできる。電話の着信音がアジア風のメロディに置き換わる。ゴミを右クリックすると、同じコンテナ内のゴミをまとめて組み合わせる。
+dsp_jackie_chan_description,同じコンテナ内のゴミ属性のアイテムを右クリックで武器に組み合わせられる。電話の着信音がアジア風のメロディに置き換わる。
 
 dsp_jackie_merge,組み合わせ
 

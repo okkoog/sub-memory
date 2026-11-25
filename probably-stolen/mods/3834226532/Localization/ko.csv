@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"검문이 더 자주 이루어집니다. �
 dsp_no_trash_name,밀수 쓰레기통
 dsp_no_trash_description,쓰레기통이 밀수 은닉처로 개조되어 청소 서비스가 더 이상 비우지 않는다. 폐점 전에 카운터 밖에 물건을 두면 그대로 가져가진다.
 dsp_former_assistant_name,전직 비서
+dsp_former_assistant_discount_name,전직 비서
 dsp_former_assistant_description,시작부터 잭슨 투자 I이 해금됩니다. 잭슨 박사와 거래할 때 10% 거래 보너스를 받습니다. 3일마다 한 번 그를 불러 가게로 오게 할 수 있습니다.
 dsp_former_assistant_contact,잭슨 박사
 dsp_former_assistant_bonus_buy,"잭슨 박사와 거래: 구매가 -10%"
@@ -413,7 +414,7 @@ dsp_prohibition_description,모든 술이 초급 밀수품으로 취급된다. �
 dsp_tobacco_tax_name,담배세
 dsp_tobacco_tax_description,담배에 소매가 50% 할증이 붙는다. 다만 그 할증분의 20%만 받는다.
 dsp_blood_donor_name,헌혈소
-dsp_blood_donor_description,"하루에 한 번, 혈액팩을 사용해 헌혈하면 혈액팩을 하나 더 받습니다. 그 대신 다음 날 손님 한 명을 놓습니다."
+dsp_blood_donor_description,"배급소에서 헌혈하면 혈액팩을 하나 받지만, 그 대신 손님 한 명을 놓칩니다. 혈액팩은 40 식량 배급권 잔액으로 교환할 수 있습니다."
 dsp_force_open_name,강제 개봉
 dsp_force_open_description,플라즈마 커터나 크로우바로 보급 상자를 강제로 열 수 있습니다. 크로우바는 이 과정에서 부러지지만 안에 있는 물건은 덜 망가집니다.
 dsp_vendetta_name,원한
@@ -590,19 +591,6 @@ dsp_preset_save,프리셋 저장
 dsp_preset_load,프리셋 불러오기
 dsp_preset_export,내보내기
 dsp_preset_rename,이름 변경
-d,t
-名,
-名,
-N,
-N,
-N,
-N,
-N,
-名,
-이,
-N,
-И,
-N,
 dsp_preset_open,프리셋
 dsp_preset_window_title,시작 프리셋
 dsp_preset_thanks,플레이 감사합니다
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,"이건 우리에게 필요 없다, 가져라."
 dsp_hydro_alcohol_smooth_name,알코올 순조
 dsp_hydro_alcohol_smooth_description,파이프 수경 재배의 유행으로 수도 시스템은 갈대·영양과일·발효된 블룸베리로 뒤덮였다. 파이프 물의 불순물 대부분이 전분과 알코올로 대체되었다.
 dsp_blood_donor_redeem,교환
-dsp_blood_donor_redeem_done,교환 완료: 혈액팩이 40 액면가의 식량 배급권이 되었다.
+dsp_blood_donor_redeem_done,교환 완료: 혈액팩이 40 식량 배급권 잔액이 되었다.
 dsp_around_world_80_name,80일간의 세계 일주
 dsp_around_world_80_description,80일차부터 게임이 시작된다. 이후 일주일 동안 처음 80일 동안 일어난 모든 이벤트를 겪는다. 시작 시 1000 크레딧과 모든 파벌 평판 15를 얻는다. 경고: 버그가 있을 수 있음.
 dsp_universal_liquid_name,만능 액체
@@ -666,6 +654,14 @@ dsp_berserker_description,꿈가루를 복용하면 밤에 몽유한다. 가벼�
 dsp_vampire_name,뱀파이어
 dsp_vampire_description,"정기적으로 혈액팩을 마셔야 하며, 그렇지 않으면 -8% 거래 패널티를 받는다. 푸른 피를 마시면 다시 목마를 때까지 감언이설 특성을 얻는다."
 dsp_vampire_penalty,목마름: -X% 거래 패널티
+dsp_vampire_bc_soon,뱀파이어: {0}일 후 갈증
+dsp_vampire_bc_now,뱀파이어: 갈증
+dsp_vampire_bc_bags,혈액팩 {0}
+dsp_tainted_witness_name,오점 증인
+dsp_tainted_witness_description,"개조체를 처치하거나 유효한 신고를 한 후, 조사 진행도 -10"
+dsp_summon_anytime_name,즉시 호출
+dsp_summon_anytime_description,모든 연락처가 즉시 방문합니다. 연락처의 쿨다운이 1일 줄어듭니다.
+dsp_summon_anytime_line,비켜.
 dsp_fifth_republic_name,제5공화국
 dsp_fifth_republic_description,"매주 ""치안부 예산 증가"" 이벤트가 발생한다. 그 이벤트가 발생한 날에는 반드시 불시 검사가 있다."
 dsp_nine_eleven_name,9-ELEVEn
@@ -728,7 +724,7 @@ dsp_new_world_rep_twoplustwo_flavor,물음표는 진짜 질문이 아니다. 등
 
 dsp_jackie_chan_name,장구리
 
-dsp_jackie_chan_description,쓰레기 속성의 아이템을 조합해 더 가치 높은 무기로 만들 수 있다. 전화 벨소리가 아시아풍 멜로디로 바뀐다. 쓰레기를 우클릭하면 같은 보관함 안의 쓰레기를 함께 조합한다.
+dsp_jackie_chan_description,같은 보관함 안의 쓰레기 속성 아이템을 우클릭으로 무기로 조합할 수 있다. 전화 벨소리가 아시아풍 멜로디로 바뀐다.
 
 dsp_jackie_merge,합치기
 

@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"Kontrollen sind häufiger. Solange dein Ruf
 dsp_no_trash_name,Schmuggel-Mülltonne
 dsp_no_trash_description,"Die Mülltonne wird zum Schmuggelversteck umgebaut und vom Reinigungsservice nicht mehr geleert. Du kannst Gegenstände vor Ladenschluss trotzdem draußen vor dem Tresen liegen lassen, damit sie mitgenommen werden."
 dsp_former_assistant_name,Ehemaliger Assistent
+dsp_former_assistant_discount_name,Ehemaliger Assistent
 dsp_former_assistant_description,"Schaltet Jackson-Investition I von Anfang an frei. Beim Handel mit Dr. Jackson bekommst du 10% Handelsbonus. Alle 3 Tage kannst du ihn anrufen, damit er kommt und mit deinem Laden handelt."
 dsp_former_assistant_contact,Dr. Jackson
 dsp_former_assistant_bonus_buy,"Handel mit Dr. Jackson: Einkaufspreis -10%"
@@ -413,7 +414,7 @@ dsp_prohibition_description,Jeder Alkohol gilt als Schmuggelware niedriger Stufe
 dsp_tobacco_tax_name,Tabaksteuer
 dsp_tobacco_tax_description,Zigaretten bekommen 50% Aufschlag im Einzelhandel. Du bekommst davon aber nur 20% des Aufschlags.
 dsp_blood_donor_name,Blutspendestation
-dsp_blood_donor_description,Einmal pro Tag kannst du mit einer Blutkonserve Blut spenden und erhältst eine zusätzliche Blutkonserve. Dadurch verpasst du am nächsten Tag einen Kunden.
+dsp_blood_donor_description,"Du kannst an der Rationsstation Blut spenden und erhältst eine Blutkonserve, dadurch verpasst du aber einen Kunden. Eine Blutkonserve kann in ein Guthaben von 40 Lebensmittelmarken umgewandelt werden."
 dsp_force_open_name,Rohe Gewalt
 dsp_force_open_description,"Du kannst Materialkisten mit einem Plasmaschneider oder einer Brechstange aufbrechen. Die Brechstange geht dabei kaputt, zerstört aber weniger vom Inhalt."
 dsp_vendetta_name,Blutrache
@@ -590,19 +591,6 @@ dsp_preset_save,Preset speichern
 dsp_preset_load,Preset laden
 dsp_preset_export,Exportieren
 dsp_preset_rename,Umbenennen
-d,p
-名,
-名,
-N,:
-N,:
-N,:
-N,r
-N,:
-名,
-이,
-N,a
-И,
-N,:
 dsp_preset_open,Presets
 dsp_preset_window_title,Start-Presets
 dsp_preset_thanks,Danke fürs Spielen
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,"Das brauchen wir nicht, nimm es."
 dsp_hydro_alcohol_smooth_name,Alkoholfluss
 dsp_hydro_alcohol_smooth_description,"Dank des Aufstiegs der Rohr-Hydroponik sind die Wasserleitungen von Schilf, Nutrifrucht und fermentierten Blühbeeren überwuchert. Die meisten Verunreinigungen im Rohrwasser wurden durch Stärke und Alkohol ersetzt."
 dsp_blood_donor_redeem,Einlösen
-dsp_blood_donor_redeem_done,Eingelöst: Die Blutkonserve wurde zu einer Lebensmittelmarke im Wert von 40.
+dsp_blood_donor_redeem_done,Eingelöst: Die Blutkonserve wurde zu einem Guthaben von 40 Lebensmittelmarken.
 dsp_around_world_80_name,In 80 Tagen um die Welt
 dsp_around_world_80_description,Du startest an Tag 80. In der folgenden Woche erlebst du alle Ereignisse der ersten 80 Tage. Du beginnst mit 1000 Credits und 15 Ruf bei jeder Fraktion. Warnung: möglicherweise fehlerhaft.
 dsp_universal_liquid_name,Universelle Flüssigkeit
@@ -666,6 +654,14 @@ dsp_berserker_description,Traumstaub lässt dich nachts schlafwandeln. Leichte V
 dsp_vampire_name,Vampir
 dsp_vampire_description,"Du musst regelmäßig Blutkonserven trinken, sonst erleidest du einen Handelsnachteil von -8%. Blaues Blut verleiht dir das Merkmal „Silberzunge“, bis du wieder durstig bist."
 dsp_vampire_penalty,Durstig: -X% Handelsnachteil
+dsp_vampire_bc_soon,Vampir: durstig in {0} Tag(en)
+dsp_vampire_bc_now,Vampir: durstig
+dsp_vampire_bc_bags,Blutbeutel {0}
+dsp_tainted_witness_name,Belasteter Zeuge
+dsp_tainted_witness_description,Nach dem Töten eines Augs oder einer gültigen Meldung: Ermittlungsfortschritt -10
+dsp_summon_anytime_name,Stets verfügbar
+dsp_summon_anytime_description,Alle Kontakte kommen sofort vorbei. Die Abklingzeit der Kontakte ist um einen Tag kürzer.
+dsp_summon_anytime_line,Platz da.
 dsp_fifth_republic_name,Die 5. Republik
 dsp_fifth_republic_description,"Jede Woche erscheint das Ereignis „Budgeterhöhung der Sicherheitsbehörde“. An dem Tag, an dem es erscheint, gibt es immer eine Überraschungsinspektion."
 dsp_nine_eleven_name,9-ELEVEn
@@ -728,7 +724,7 @@ dsp_new_world_rep_twoplustwo_flavor,Das Fragezeichen ist nicht die eigentliche F
 
 dsp_jackie_chan_name,Jackie Chan
 
-dsp_jackie_chan_description,Du kannst Gegenstände mit der Eigenschaft „Müll“ zu wertvolleren Waffen kombinieren. Der Klingelton wird durch eine asiatische Melodie ersetzt. Rechtsklick auf Müll kombiniert den Müll im selben Behälter.
+dsp_jackie_chan_description,Du kannst mit Rechtsklick Gegenstände mit der Eigenschaft „Müll“ im selben Behälter zu Waffen kombinieren. Dein Klingelton wird durch eine asiatische Melodie ersetzt.
 
 dsp_jackie_merge,Verarbeiten
 
@@ -740,4 +736,4 @@ dsp_jackie_no_weapon,Daraus lässt sich keine Nahkampfwaffe bauen.
 
 dsp_jackie_no_space,Kein Platz für die Waffe.
 
-dsp_new_world_crime_poor,Schlechter Eindruck im Gespräch
+dsp_new_world_crime_poor,Schlechter Eindruck im Gespräch

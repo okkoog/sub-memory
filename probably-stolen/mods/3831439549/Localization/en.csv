@@ -737,8 +737,10 @@ as8_ar_16,I should go.
 as8_ar_7b,.....
 cfg_docstory_off,Disable Doctor Storyline
 cfg_docstory_off_desc,When on, this save never gets the Doctor's visits: no Favor Card, no Augment Reprogrammer, and no Augment story chain (the four stages at 2/6/10/13). Only applies to NEW saves -- start a new game after changing it; existing and loaded saves are unaffected. Off by default (the storyline runs as usual).
-cfg_hard,Hard mode (new saves only)
-cfg_hard_desc,When on: (1) every advanced module and every functional basic upgrade costs twice the materials (pure capacity upgrades are excluded); (2) quality / performance / efficiency bonuses are halved; (3) capacity effects and the extra power draw that upgrades add stay unchanged. Only applies at the moment a NEW save is created -- changing it mid-save has no effect. Off by default (normal difficulty).
+cfg_hard,Hard mode
+cfg_hard_desc,When on: (1) every advanced module and every functional basic upgrade costs twice the materials (pure capacity upgrades are excluded); (2) quality / performance / efficiency bonuses are halved; (3) capacity effects and the extra power draw that upgrades add stay unchanged. Saves created before 1.9.108 follow this switch immediately; saves created from now on lock the value at creation, so changing it mid-save has no effect (start a new save to change difficulty). Off by default (normal difficulty).
+hm_hint,Hard mode: each level takes 2 materials; quality / performance / efficiency bonuses are halved (the numbers printed inside advanced module descriptions only take effect at half)
+hm_adv_hint,Hard mode: the quality / performance / efficiency percentages above take effect at half (recipe costs are already shown doubled).
 prnmat_on,MatUpg: ON
 prnmat_off,MatUpg: OFF
 prnmat_desc,Master switch for this printer's MDU upgrades. ON: materials you drag on are consumed as upgrade material first (metal ingots will NOT go to printing). OFF: nothing is consumed — every material falls back to vanilla behaviour (input tray / chip slot / back to your hand). Click to toggle.

@@ -1,6 +1,6 @@
-# Go Fishing 2.6.0 Detailed Stats Guide
+# Go Fishing 2.6.1 Detailed Stats Guide
 
-Applicable to: Go Fishing 2.6.0 source and configuration as of November 25, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.6.0 Mod Guide.md>); the two can be read together.
+Applicable to: Go Fishing 2.6.1 source and configuration as of November 25, 2026, covering farming, voyages, processing, reagents and crystal nautilites. It is the numeric supplement to the [Mechanics Guide](<Go Fishing 2.6.1 Mod Guide.md>); the two can be read together.
 
 All amounts are in credits, weights in grams, food calories in kcal, and power in device energy points. The defined base price, formula quote, and shop transaction price in the tables are explained separately. Market conditions, native quality traits, actual weight, and rounding may continue to affect interface prices.
 
@@ -938,7 +938,7 @@ Buy the system for 1,500 credits from the Aquaculture section of the Fisheries T
 - Claim prizes from the board's tournament history. Rewards are recorded when you enter. Credits and items are tracked separately, so you can make room and claim any outstanding items later.
 - At the end, the game returns your fish to its original slot or available inventory first. If neither can accept it, retrieve your fish from the entry board's selection slot. Recordings are loaded when selected.
 
-## Processing and manuals in 2.6.0
+## Processing and manuals in 2.6.1
 
 - The processing station uses the vanilla genuine Immunivax factory. Its effect follows the vanilla Sentinel requirement.
 - Performance modules use the vanilla random-effect factory. Outputs in one batch share a roll. Start a separate batch for a new roll.
@@ -990,3 +990,13 @@ The first cycle runs on days 8–47 and restarts on day 48. Quarter-final elimin
 | 45 | Lucky Can Cup | 825 credits + Caviar ×1 | 360 credits + Caviar ×1 | 155 credits |
 | 46 | Everything Below Cost Cup | 800 credits + Small Empty Can ×3 | 350 credits + Small Empty Can ×1 | 150 credits |
 | 47 | Never Closed Cup | 900 credits + Cup noodles ×2 | 395 credits + Cup noodles ×1 | 170 credits |
+
+### Overnight training and feeding
+After normal overnight hunger drain, eligible fish train before the native feeding check. Training costs 10% of maximum fullness. Fish below 75% fullness at the training check skip that night's training and can still eat normally. Native food compatibility and feeding limits apply.
+
+### Daily potion orders
+Unfinished ordinary potion orders expire when you actually end the night. If Contact a potion customer is checked, a new order is generated for the next day. Opening the night screen does not refresh orders. Special potion story tasks retain their progress.
+
+
+### Simultaneous attack-role stuns
+Both attacks still deal damage normally. If two attack-role fish would stun each other in the same step, only one applies stun. A lead of more than two simulation frames wins; otherwise burst contributes 60% and resilience 40% to a seeded roll, bounded to 25–75%. Stun remains one second, followed by one second of immunity.

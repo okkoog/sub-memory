@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"As inspeções são mais frequentes. Enquan
 dsp_no_trash_name,Lixeira de contrabando
 dsp_no_trash_description,A lata de lixo vira um esconderijo de contrabandista que o serviço de limpeza não esvazia mais. Você ainda pode deixar itens fora do balcão antes de fechar para que sejam levados.
 dsp_former_assistant_name,Ex-Assistente
+dsp_former_assistant_discount_name,Ex-Assistente
 dsp_former_assistant_description,Desbloqueia Jackson Investment I desde o início. Você ganha um bônus de negociação de 10% ao negociar com o Dr. Jackson. A cada 3 dias você pode ligar para ele e pedir que venha negociar na sua loja.
 dsp_former_assistant_contact,Dr. Jackson
 dsp_former_assistant_bonus_buy,"Negociando com o Dr. Jackson: preço de compra -10%"
@@ -413,7 +414,7 @@ dsp_prohibition_description,Todo álcool conta como contrabando de nível baixo.
 dsp_tobacco_tax_name,Imposto sobre o Tabaco
 dsp_tobacco_tax_description,Os cigarros recebem 50% de acréscimo no varejo. Mas você só recebe 20% desse acréscimo.
 dsp_blood_donor_name,Posto de doação de sangue
-dsp_blood_donor_description,"Uma vez por dia, você pode usar uma bolsa de sangue para doar sangue e receber uma bolsa de sangue extra. Isso fará você perder um cliente no dia seguinte."
+dsp_blood_donor_description,"Você pode doar sangue na estação de rações para receber uma bolsa de sangue, mas isso fará você perder um cliente. Uma bolsa de sangue pode ser trocada por um saldo de 40 cupons de comida."
 dsp_force_open_name,Força Bruta
 dsp_force_open_description,"Você pode arrombar caixas de suprimentos com um cortador de plasma ou um pé de cabra. O pé de cabra quebra no processo, mas destrói menos do que há lá dentro."
 dsp_vendetta_name,Vingança
@@ -590,19 +591,6 @@ dsp_preset_save,Salvar predefinição
 dsp_preset_load,Carregar predefinição
 dsp_preset_export,Exportar
 dsp_preset_rename,Renomear
-d,e
-名,
-名,
-N,
-N,
-N,
-N,
-N,
-名,
-이,
-N,
-И,
-N,
 dsp_preset_open,Presets
 dsp_preset_window_title,Predefinições
 dsp_preset_thanks,Obrigado por jogar
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,"Isso nós não precisamos, fique com."
 dsp_hydro_alcohol_smooth_name,Fluxo alcoólico
 dsp_hydro_alcohol_smooth_description,"Graças à ascensão da hidroponia em canos, os encanamentos foram tomados por juncos, Nutrifruta e bloomberries fermentadas. A maioria das impurezas na água dos canos foi substituída por amido e álcool."
 dsp_blood_donor_redeem,Trocar
-dsp_blood_donor_redeem_done,Trocado: a bolsa de sangue virou um cupom de comida no valor de 40.
+dsp_blood_donor_redeem_done,Trocado: a bolsa de sangue virou um saldo de 40 cupons de comida.
 dsp_around_world_80_name,A volta ao mundo em 80 dias
 dsp_around_world_80_description,Você começa no dia 80. Na semana seguinte você vive todos os eventos dos primeiros 80 dias. Você começa com 1000 créditos e 15 de reputação com cada facção. Aviso: pode ter bugs.
 dsp_universal_liquid_name,Líquido universal
@@ -666,6 +654,14 @@ dsp_berserker_description,Tomar pó dos sonhos faz você sonambular à noite. Fe
 dsp_vampire_name,Vampiro
 dsp_vampire_description,"Você precisa beber bolsas de sangue regularmente, ou sofre uma penalidade de comércio de -8%. Beber sangue azul concede a você a característica Língua de Prata até ficar com sede de novo."
 dsp_vampire_penalty,Sedento: -X% de penalidade de comércio
+dsp_vampire_bc_soon,Vampiro: sede em {0} dia(s)
+dsp_vampire_bc_now,Vampiro: sedento
+dsp_vampire_bc_bags,bolsas de sangue {0}
+dsp_tainted_witness_name,Testemunha comprometida
+dsp_tainted_witness_description,Depois de matar um aumentado ou fazer uma denúncia válida: progresso da investigação -10
+dsp_summon_anytime_name,Sempre disponível
+dsp_summon_anytime_description,Todos os contatos vêm imediatamente. O tempo de espera dos contatos é reduzido em um dia.
+dsp_summon_anytime_line,Sai da frente.
 dsp_fifth_republic_name,A 5ª República
 dsp_fifth_republic_description,"Toda semana aparece um evento de ""Aumento do orçamento da segurança"". No dia em que ele aparece, sempre há uma inspeção surpresa."
 dsp_nine_eleven_name,9-ELEVEn
@@ -726,11 +722,11 @@ dsp_new_world_rep_twoplustwo_name,2+2=?
 dsp_new_world_rep_twoplustwo_desc,…
 dsp_new_world_rep_twoplustwo_flavor,O ponto de interrogação não é a verdadeira pergunta. O sinal de igual é.
 
-dsp_jackie_chan_name,Jackie Chan
-dsp_jackie_chan_description,Você pode combinar itens com a propriedade lixo em armas mais valiosas. O toque do telefone é substituído por uma melodia de tema asiático. Clique com o botão direito no lixo para combinar o lixo no mesmo contêiner.
-dsp_jackie_merge,Combinar
-dsp_jackie_done,Combinou {0} item(ns) de lixo (valor {1}) em {2}.
-dsp_jackie_no_junk,Você não tem itens de lixo.
-dsp_jackie_no_weapon,Nenhuma arma corpo a corpo pode ser combinada.
-dsp_jackie_no_space,Sem espaço para a arma.
-dsp_new_world_crime_poor,Má conduta durante a conversa
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Você pode clicar com o botão direito para combinar itens com a propriedade lixo do mesmo contêiner em armas. O toque do telefone é substituído por uma melodia de tema asiático.
+dsp_jackie_merge,Combinar
+dsp_jackie_done,Combinou {0} item(ns) de lixo (valor {1}) em {2}.
+dsp_jackie_no_junk,Você não tem itens de lixo.
+dsp_jackie_no_weapon,Nenhuma arma corpo a corpo pode ser combinada.
+dsp_jackie_no_space,Sem espaço para a arma.
+dsp_new_world_crime_poor,Má conduta durante a conversa

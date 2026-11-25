@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"Les inspections sont plus fréquentes. Tant
 dsp_no_trash_name,Poubelle de contrebande
 dsp_no_trash_description,La poubelle devient une cache de contrebandier que le service de nettoyage ne vide plus. Vous pouvez toujours laisser des objets hors du comptoir avant la fermeture pour qu'ils soient emportés.
 dsp_former_assistant_name,Ancien assistant
+dsp_former_assistant_discount_name,Ancien assistant
 dsp_former_assistant_description,Débloque Investissement I dès le départ. Vous obtenez un bonus commercial de 10 % avec le Dr Jackson. Tous les 3 jours, vous pouvez l'appeler pour qu'il vienne commercer dans votre boutique.
 dsp_former_assistant_contact,Dr Jackson
 dsp_former_assistant_bonus_buy,"Commerce avec le Dr Jackson : prix d'achat -10 %"
@@ -413,7 +414,7 @@ dsp_prohibition_description,Tout alcool compte comme contrebande de niveau faibl
 dsp_tobacco_tax_name,Taxe sur le tabac
 dsp_tobacco_tax_description,Les cigarettes gagnent 50% de marge au détail. Mais vous n'en touchez que 20%.
 dsp_blood_donor_name,Station de don du sang
-dsp_blood_donor_description,"Une fois par jour, vous pouvez utiliser une poche de sang pour donner du sang et recevoir une poche de sang supplémentaire. Cela vous fera manquer un client le lendemain."
+dsp_blood_donor_description,"Vous pouvez donner du sang à la station de rations pour obtenir une poche de sang, mais cela vous fera manquer un client. Une poche de sang peut être échangée contre un crédit de 40 bons alimentaires."
 dsp_force_open_name,Force brute
 dsp_force_open_description,"Vous pouvez forcer les caisses de ravitaillement avec une torche à plasma ou un pied-de-biche. Le pied-de-biche se casse au passage, mais détruit moins de ce qu'elles contiennent."
 dsp_vendetta_name,Vendetta
@@ -590,19 +591,6 @@ dsp_preset_save,Enregistrer le préréglage
 dsp_preset_load,Charger le préréglage
 dsp_preset_export,Exporter
 dsp_preset_rename,Renommer
-d,r
-名,
-名,
-N,
-N,
-N,
-N,e
-N,
-名,
-이,
-N,:
-И,
-N,
 dsp_preset_open,Presets
 dsp_preset_window_title,Préréglages
 dsp_preset_thanks,Merci d'avoir joué
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,"On n'a pas besoin de ça, prends-le."
 dsp_hydro_alcohol_smooth_name,Débit d'alcool
 dsp_hydro_alcohol_smooth_description,"Grâce à l'essor de l'hydroponie sur tuyau, les canalisations ont été envahies par les roseaux, le Nutrifruit et les baies de floraison fermentées. La plupart des impuretés de l'eau des canalisations ont été remplacées par de l'amidon et de l'alcool."
 dsp_blood_donor_redeem,Échanger
-dsp_blood_donor_redeem_done,Échangé : la poche de sang est devenue un bon alimentaire d'une valeur de 40.
+dsp_blood_donor_redeem_done,Échangé : la poche de sang est devenue un crédit de 40 bons alimentaires.
 dsp_around_world_80_name,Le Tour du monde en 80 jours
 dsp_around_world_80_description,"Vous commencez au jour 80. La semaine suivante, vous vivez tous les événements des 80 premiers jours. Vous commencez avec 1000 crédits et 15 de réputation auprès de chaque faction. Avertissement : peut être bogué."
 dsp_universal_liquid_name,Liquide universel
@@ -666,6 +654,14 @@ dsp_berserker_description,La poussière de rêve vous fait somnambuler la nuit. 
 dsp_vampire_name,Vampire
 dsp_vampire_description,"Vous devez régulièrement boire des poches de sang, sinon vous subissez une pénalité de commerce de -8%. Boire du sang bleu vous confère le trait Langue d'argent jusqu'à votre prochaine soif."
 dsp_vampire_penalty,Assoiffé : -X% de pénalité de commerce
+dsp_vampire_bc_soon,Vampire : soif dans {0} jour(s)
+dsp_vampire_bc_now,Vampire : assoiffé
+dsp_vampire_bc_bags,poches de sang {0}
+dsp_tainted_witness_name,Témoin compromis
+dsp_tainted_witness_description,Après avoir tué un augmenté ou fait un signalement valide : progression de l'enquête -10
+dsp_summon_anytime_name,Toujours disponible
+dsp_summon_anytime_description,Tous les contacts viennent immédiatement. Le délai de rappel des contacts est réduit d'un jour.
+dsp_summon_anytime_line,Pousse-toi.
 dsp_fifth_republic_name,La 5e République
 dsp_fifth_republic_description,"Chaque semaine, un événement « Augmentation du budget de la sécurité » apparaît. Le jour où il apparaît, il y a toujours une inspection surprise."
 dsp_nine_eleven_name,9-ELEVEn
@@ -726,11 +722,11 @@ dsp_new_world_rep_twoplustwo_name,2+2=?
 dsp_new_world_rep_twoplustwo_desc,…
 dsp_new_world_rep_twoplustwo_flavor,Le point d'interrogation n'est pas la vraie question. Le signe égal l'est.
 
-dsp_jackie_chan_name,Jackie Chan
-dsp_jackie_chan_description,Vous pouvez combiner des objets ayant la propriété « déchet » en armes plus précieuses. La sonnerie de téléphone est remplacée par une mélodie à thème asiatique. Un clic droit sur un déchet combine les déchets du même conteneur.
-dsp_jackie_merge,Combiner
-dsp_jackie_done,Combinaison de {0} objet(s) déchet (valeur {1}) en {2}.
-dsp_jackie_no_junk,Vous n'avez aucun objet déchet.
-dsp_jackie_no_weapon,Aucune arme de mêlée ne peut être combinée.
-dsp_jackie_no_space,Pas de place pour l'arme.
-dsp_new_world_crime_poor,Mauvaise attitude pendant la conversation
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Vous pouvez faire un clic droit pour combiner les objets ayant la propriété « déchet » du même conteneur en armes. Votre sonnerie de téléphone est remplacée par une mélodie à thème asiatique.
+dsp_jackie_merge,Combiner
+dsp_jackie_done,Combinaison de {0} objet(s) déchet (valeur {1}) en {2}.
+dsp_jackie_no_junk,Vous n'avez aucun objet déchet.
+dsp_jackie_no_weapon,Aucune arme de mêlée ne peut être combinée.
+dsp_jackie_no_space,Pas de place pour l'arme.
+dsp_new_world_crime_poor,Mauvaise attitude pendant la conversation

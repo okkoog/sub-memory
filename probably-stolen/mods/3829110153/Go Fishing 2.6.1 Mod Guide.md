@@ -1,8 +1,8 @@
-# Go Fishing 2.6.0 Mod Guide
+# Go Fishing 2.6.1 Mod Guide
 
-Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.6.0 Detailed Stats Guide](<Go Fishing 2.6.0 Detailed Stats Guide.md>).
+Detailed parameters, the full fish species tables, and calculation examples are in [Go Fishing 2.6.1 Detailed Stats Guide](<Go Fishing 2.6.1 Detailed Stats Guide.md>).
 
-Applies to the standalone "Go Fishing" 2.6.0. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
+Applies to the standalone "Go Fishing" 2.6.1. No ItemForge or standalone English patch is required. Chinese, English, Russian and French follow the game language. The current manifest lists Fishing Cuisine Expansion as a prerequisite.
 
 ## Table of Contents
 
@@ -303,7 +303,7 @@ Drag a battery into the designated battery slot; each craft consumes 4 power and
 
 ## Processing Station
 
-Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.6.0 Detailed Stats Guide.md>).
+Double-click the processing station to open its panel, place the recipe's materials into the input slots, and craft. The full 58-recipe table is in chapter 9 of the [Detailed Stats Guide](<Go Fishing 2.6.1 Detailed Stats Guide.md>).
 
 Matching rule: the material types must exactly match a recipe (extra, missing, or unrelated materials will not match), and each material only needs to reach the recipe's minimum count — it does not have to equal it exactly. With surplus materials you can craft multiple outputs at once: the plus/minus buttons around the count box switch freely between 1 and 10 portions regardless of current stock; the check against materials happens when you click start, and a mismatched recipe or insufficient materials shows a notice instead of failing silently. The station only accepts the material forms a recipe names — for example, the fish meat mash recipes take whole small yellow croakers or sardines, while most advanced recipes take fish organs and processed materials such as conductive tendons, heat glands, and purification sacs; a whole fish of another kind will not match.
 
@@ -348,7 +348,7 @@ Each opened stone has a 30% chance of arriving with one cut. You can see its act
 3. Select **Polish** to finish the stone. The marker travels out and back in four seconds, two seconds each way. The three green zones vary in width and are randomly placed. Confirm once per zone on either pass. A mistimed click leaves a crack immediately, and each zone still missed at the end leaves one crack.
 4. Once polishing starts, cutting is locked and you must finish before selling or bartering. Reopening restores the layout and scored zones. Zero, one, two or three cracks yield 120%, 95%, 75% or 60% of the current appraisal, respectively.
 
-You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.6.0 Detailed Stats Guide.md>).
+You can sell a stone before starting polish. All nautilites are materials. A revealed gem core adds the gemstone tag, and an opened stone with an appraisal above 1,000 credits qualifies as a luxury item. For quotes, odds and valuation, see chapter 11 of the [Detailed Stats Guide](<Go Fishing 2.6.1 Detailed Stats Guide.md>).
 
 ## Research Codex & Integrations
 
@@ -390,7 +390,7 @@ Fishing Cuisine Expansion is a declared prerequisite. The other entries add inte
 
 ---
 
-Applicable version: Standalone 2.6.0. Verification date: November 25, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.
+Applicable version: Standalone 2.6.1. Verification date: November 25, 2026. This document is compiled from current content config, Chinese resources, and source mechanics; it does not represent that all flows have been individually play-tested. Actual product quotes, dynamic state, and operation gates follow the current in-game interface.
 
 ## Selective breeding
 
@@ -412,8 +412,18 @@ Buy the system for 1,500 credits from the Aquaculture section of the Fisheries T
 - Claim prizes from the board's tournament history. Rewards are recorded when you enter. Credits and items are tracked separately, so you can make room and claim any outstanding items later.
 - At the end, the game returns your fish to its original slot or available inventory first. If neither can accept it, retrieve your fish from the entry board's selection slot. Recordings are loaded when selected.
 
-## Processing and manuals in 2.6.0
+## Processing and manuals in 2.6.1
 
 - The processing station uses the vanilla genuine Immunivax factory. Its effect follows the vanilla Sentinel requirement.
 - Performance modules use the vanilla random-effect factory. Outputs in one batch share a roll. Start a separate batch for a new roll.
 - The processing manual and A Veteran’s Experience display a placeholder if a glyph is unavailable. The processing manual's category buttons use the manual font, and the station panel labels follow the game language.
+
+### Overnight training and feeding
+After normal overnight hunger drain, eligible fish train before the native feeding check. Training costs 10% of maximum fullness. Fish below 75% fullness at the training check skip that night's training and can still eat normally. Native food compatibility and feeding limits apply.
+
+### Daily potion orders
+Unfinished ordinary potion orders expire when you actually end the night. If Contact a potion customer is checked, a new order is generated for the next day. Opening the night screen does not refresh orders. Special potion story tasks retain their progress.
+
+
+### Simultaneous attack-role stuns
+Both attacks still deal damage normally. If two attack-role fish would stun each other in the same step, only one applies stun. A lead of more than two simulation frames wins; otherwise burst contributes 60% and resilience 40% to a seeded roll, bounded to 25–75%. Stun remains one second, followed by one second of immunity.

@@ -17,6 +17,7 @@ dsp_tacit_understanding_description,盤查更加頻繁。但只要治安部聲�
 dsp_no_trash_name,走私垃圾桶
 dsp_no_trash_description,垃圾桶被改造為走私暗格，且不再被清潔服務清理。你仍然可以在閉店前將物品放到櫃檯外，使其被撿走。
 dsp_former_assistant_name,前助理
+dsp_former_assistant_discount_name,前助理
 dsp_former_assistant_description,初始解鎖傑克遜投資I。你在和傑克遜博士交易時獲得10%的交易獎勵。每3天一次，你可以通過電話聯繫博士上門交易。
 dsp_former_assistant_contact,傑克遜博士
 dsp_former_assistant_bonus_buy,與傑克遜博士交易：買入價格 -10%
@@ -412,7 +413,7 @@ dsp_prohibition_description,所有酒水都被視為初級違禁品。發酵中�
 dsp_tobacco_tax_name,菸草稅
 dsp_tobacco_tax_description,香菸獲得50%零售加價。但你只能獲得這一部分額外加價的20%。
 dsp_blood_donor_name,捐血站
-dsp_blood_donor_description,每天一次，你可以使用血袋進行獻血來獲得額外一個血袋。這會讓你在第二天錯過一個顧客。
+dsp_blood_donor_description,你可以在配給站獻血來獲得一個血袋，但這會使你錯過一個顧客。血袋可以被兌換為40食品券額度。
 dsp_force_open_name,暴力破拆
 dsp_force_open_description,你可以用等離子切割機或撬棍強行打開物資箱。使用撬棍會將撬棍損毀，但破壞的內部物品更少。
 dsp_vendetta_name,仇家
@@ -589,19 +590,6 @@ dsp_preset_save,存預設
 dsp_preset_load,取預設
 dsp_preset_export,匯出
 dsp_preset_rename,命名
-d,p
-名,：
-名,：
-N,m
-N,m
-N,m
-N,m
-N,m
-名,：
-이,:
-N,z
-И,я
-N,m
 dsp_preset_open,存讀預設
 dsp_preset_window_title,開局預設
 dsp_preset_thanks,感謝遊玩
@@ -646,7 +634,7 @@ dsp_vanessa_1_4,這個我們不需要，給你。
 dsp_hydro_alcohol_smooth_name,酒精暢通
 dsp_hydro_alcohol_smooth_description,由於水管水培的盛行，供水系統已經被蘆葦、營養果和發酵的螢光莓佔領了。水管供水中大部分的雜質被澱粉和酒精取代。
 dsp_blood_donor_redeem,兌換
-dsp_blood_donor_redeem_done,兌換完成：血袋換成了 40 額度的食物券。
+dsp_blood_donor_redeem_done,兌換完成：血袋換成了 40 食品券額度。
 dsp_around_world_80_name,80天環遊地球
 dsp_around_world_80_description,從第 80 天開始遊戲。接下來你會遭遇前 80 天發生的所有事件。開局獲得 1000 信用點和 15 點所有派系聲望。警告：可能有 bug。
 dsp_universal_liquid_name,萬能液體
@@ -665,6 +653,14 @@ dsp_berserker_description,服用夢塵會讓你在夜間夢遊。輕傷不會阻
 dsp_vampire_name,吸血鬼
 dsp_vampire_description,你需要定期吸取血袋，否則會受到-8%交易懲罰。吸取藍血會使你獲得舌燦蓮花特質直到你再次飢渴。
 dsp_vampire_penalty,飢渴：-X% 交易懲罰
+dsp_vampire_bc_soon,吸血鬼 {0}天後飢渴
+dsp_vampire_bc_now,吸血鬼 飢渴中
+dsp_vampire_bc_bags,血袋 {0}
+dsp_tainted_witness_name,污點證人
+dsp_tainted_witness_description,擊殺改造體或有效舉報後，調查進度-10
+dsp_summon_anytime_name,隨叫隨到
+dsp_summon_anytime_description,所有聯絡人會立刻上門。聯絡人的冷卻減少一天。
+dsp_summon_anytime_line,別擋道。
 dsp_fifth_republic_name,第五共和國
 dsp_fifth_republic_description,每週都會出現「治安部預算增加」事件。出現「治安部預算增加」事件的當天一定會有突擊檢查。
 dsp_nine_eleven_name,9-ELEVEn
@@ -725,11 +721,11 @@ dsp_new_world_rep_twoplustwo_name,2+2=？
 dsp_new_world_rep_twoplustwo_desc,…
 dsp_new_world_rep_twoplustwo_flavor,問號不是真正的問題，等號才是。
 
-dsp_jackie_chan_name,成龍
-dsp_jackie_chan_description,你可以將帶有垃圾屬性的物品拼合成價值更高的武器。電話鈴聲會被一段亞洲主題旋律取代。右鍵拼合同一容器中的垃圾。
-dsp_jackie_merge,拼合
-dsp_jackie_done,用 {0} 件垃圾（價值 {1}）拼出了 {2}。
-dsp_jackie_no_junk,身上沒有垃圾物品。
-dsp_jackie_no_weapon,找不到可以拼成的近戰武器。
-dsp_jackie_no_space,武器沒地方放了。
-dsp_new_world_crime_poor,在談話中表現不佳
+dsp_jackie_chan_name,成龍
+dsp_jackie_chan_description,你可以右鍵將同一容器中帶有垃圾屬性的物品拼合成武器。你的電話鈴聲會被一段亞洲主題旋律取代。
+dsp_jackie_merge,拼合
+dsp_jackie_done,用 {0} 件垃圾（價值 {1}）拼出了 {2}。
+dsp_jackie_no_junk,身上沒有垃圾物品。
+dsp_jackie_no_weapon,找不到可以拼成的近戰武器。
+dsp_jackie_no_space,武器沒地方放了。
+dsp_new_world_crime_poor,在談話中表現不佳

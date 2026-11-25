@@ -3857,11 +3857,12 @@ navy.term.unload_empty,装备箱内暂无待卸战利品。
 navy.term.restock_ok,已从仓库自动补给：弹药 +{0}、医疗 +{1}、口粮 +{2}。
 navy.term.restock_none,无需补给或仓库内暂无对应弹药/医疗/口粮。
 navy.liaison.name,后勤联络官 · 汉森
-navy.liaison.ok,老板，我替归队的 {0} 把装备箱和战利品一并押运回来了！这趟打得漂亮，箱子全摆上柜台了，你慢慢清点。
-navy.liaison.ok_injured,老板，{0} 带着战利品回来了，不过有人挂了彩——我先把人送去休整，所有装备箱都给你扛上柜台了。
-navy.liaison.mixed,老板，今天归队的 {0} 有赢有输，详细战报我都整理好了，装备箱全部放在柜台上。
-navy.liaison.fail,老板，坏消息——{0} 这趟行动受挫撤回来了。万幸人全带回来了，我替他们把装备箱送回柜台，你看看战报和损毁情况吧。
-navy.liaison.box_tip,汉森已将 {0} 只归队装备箱摆上柜台（也可进海军终端点「一键卸货」）。
+navy.liaison.ok,老板，{0} 归队了。这趟打得漂亮，他们的装备箱我一并带回来了。
+navy.liaison.ok_injured,老板，{0} 带着战利品回来了。有人挂了彩，我先送人去休整，装备箱交给你。
+navy.liaison.mixed,老板，今天归队的 {0} 有赢有输。战报和装备箱都带回来了。
+navy.liaison.fail,老板，{0} 这趟行动受挫撤回来了。人都回来了，装备箱也带回来了。你看看战报和损毁情况吧。
+navy.liaison.box_tip,汉森摆上了 {0} 只队员的装备箱。认准箱上的名字，双击打开。
+navy.liaison.box_waiting,柜台没摆下的 {0} 只装备箱，可以在海军终端按队员名字打开。
 navy.log.radio_note,· 无线电指令：{0}
 navy.log.no_ammo,· 严重失误：「{0}」未携带弹药，全程无法开火只能近身搏斗！
 navy.log.combat_ok,· 火力压制：依靠「{0}」打出有效压制（小队战力 {1} 对阵危度 {2}）。
@@ -4274,6 +4275,8 @@ navy.liaison.merc_line,{0}那边收队了。按合同扣了 {2} 件，剩下 {1}
 navy.liaison.vault_again,上回的东西还没拿完，储藏区我先放这儿。
 navy.liaison.vault_tip,储藏区放柜台上了，拿空会自动收走。
 navy.liaison.vault_left,储藏区里还剩 {0} 件，先留在柜台。
+navy.liaison.vault_waiting,还有 {0} 件兵团战利品。去海军终端点「领取兵团战利品」。
+navy.term.btn_vault,领取兵团战利品（{0}）
 navy.liaison.vault_full,储藏区满了，{0} 件没装下。
 navy.merc.indep_refund,外包兵团合同作废，退回预付 {0} 信用点。
 ul_kai_upper_fixer_title,凯的善后人
@@ -4284,3 +4287,13 @@ ul_kai_launder_desc,凯找人把你的黑市流水做平：按基础费 {0} 信�
 ul_kai_launder_desc_clean,凯找人把你的黑市流水做平：按基础费 {0} 信用点 + 当前总涉案额的 {1}% 收费，立刻抹掉 {2}% 涉案金额，并把当前调查进度压掉一半。冷却 {3} 天。\n当前账面干净（涉案额 0 · 调查度 0/100），暂无需平账。
 kai_launder_done,凯的暗账平账完成：已抹平 {0} 涉案额（剩余 {1}），调查度降至 {2}/100。
 kai_launder_clean,账面本来就干净，凯的人替你复核了一遍。
+item_ul_navy_armory_case_name,海军制式军械保密箱
+item_ul_navy_armory_case_desc,共和国海军承包商专属保密枪箱（10×7，共 70 格）。只允许存放武器、护甲与头盔，享受军方豁免不被警方盘查，且可直接用于军需征购交货。
+item_ul_navy_armory_case_flavor,深蓝色硬壳阻燃枪箱，箱盖内衬高密度防震海绵，角上焊着海军后勤署的免检封签。
+item_ul_navy_armor_locker_name,海军特勤重装保密箱
+item_ul_navy_armor_locker_desc,共和国海军 3 级承包商配发的重装保密箱（12×8，共 96 格）。只允许存放武器、护甲与头盔，享受军方豁免不被警方盘查，且可直接用于军需征购交货。
+item_ul_navy_armor_locker_flavor,四边包覆黄铜加强角的海军方形装备箱，箱盖正中压印着锚与麦穗徽章，能轻松装下整套外骨骼与重型武器。
+item_ul_navy_heavy_case_name,舰队战略军械保密柜
+item_ul_navy_heavy_case_desc,舰队级海军承包商专属重装甲军械柜（16×9，共 144 格）。只允许存放武器、护甲与头盔，享受军方豁免不被警方盘查，且可直接用于军需征购交货。
+item_ul_navy_heavy_case_flavor,舰船军械库拆下来的双锁装甲存储柜，带生物识别密封条，连治安部的扫描仪也读不出里面的金属信号。
+navy.armory_case.granted,海军后勤处已配发专属保密容器：{0}（已送入店铺仓库）。

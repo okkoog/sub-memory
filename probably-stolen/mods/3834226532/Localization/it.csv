@@ -18,6 +18,7 @@ dsp_tacit_understanding_description,"Le ispezioni sono più frequenti. Finché l
 dsp_no_trash_name,Bidone di contrabbando
 dsp_no_trash_description,Il bidone diventa un nascondiglio da contrabbandiere che il servizio di pulizia non svuota più. Puoi comunque lasciare oggetti fuori dal bancone prima della chiusura perché vengano presi.
 dsp_former_assistant_name,Ex assistente
+dsp_former_assistant_discount_name,Ex assistente
 dsp_former_assistant_description,Sblocca Investimento Jackson I fin dall'inizio. Ottieni un bonus commerciale del 10% quando tratti con il Dott. Jackson. Ogni 3 giorni puoi chiamarlo per farlo venire a commerciare nel tuo negozio.
 dsp_former_assistant_contact,Dott. Jackson
 dsp_former_assistant_bonus_buy,"Commercio con il Dott. Jackson: prezzo d'acquisto -10%"
@@ -413,7 +414,7 @@ dsp_prohibition_description,Ogni alcol conta come contrabbando di livello basso.
 dsp_tobacco_tax_name,Tassa sul tabacco
 dsp_tobacco_tax_description,Le sigarette hanno un ricarico del 50% al dettaglio. Ma tu ne ricevi solo il 20%.
 dsp_blood_donor_name,Stazione di donazione del sangue
-dsp_blood_donor_description,Una volta al giorno puoi usare una sacca di sangue per donare sangue e ricevere una sacca di sangue extra. Così il giorno dopo perderai un cliente.
+dsp_blood_donor_description,"Puoi donare sangue alla stazione dei razionamenti per ottenere una sacca di sangue, ma questo ti farà perdere un cliente. Una sacca di sangue può essere scambiata per un credito di 40 buoni pasto."
 dsp_force_open_name,Forza bruta
 dsp_force_open_description,"Puoi aprire le casse di rifornimenti con la forza usando una tagliatrice al plasma o un piede di porco. Il piede di porco si rompe durante il lavoro, ma distrugge meno di quello che c'è dentro."
 dsp_vendetta_name,Vendetta
@@ -590,19 +591,6 @@ dsp_preset_save,Salva preset
 dsp_preset_load,Carica preset
 dsp_preset_export,Esporta
 dsp_preset_rename,Rinomina
-d,s
-名,
-名,
-N,
-N,
-N,
-N,
-N,
-名,
-이,
-N,
-И,
-N,
 dsp_preset_open,Presets
 dsp_preset_window_title,Presettaggi
 dsp_preset_thanks,Grazie per aver giocato
@@ -647,7 +635,7 @@ dsp_vanessa_1_4,"Questo non ci serve, prendilo."
 dsp_hydro_alcohol_smooth_name,Flusso alcolico
 dsp_hydro_alcohol_smooth_description,"Grazie all'ascesa dell'idroponica nei tubi, le tubature sono state invase da canne, Nutrifrutto e bloomberry fermentate. La maggior parte delle impurezze nell'acqua dei tubi è stata sostituita da amido e alcol."
 dsp_blood_donor_redeem,Scambia
-dsp_blood_donor_redeem_done,Scambiato: la sacca di sangue è diventata un buono pasto del valore di 40.
+dsp_blood_donor_redeem_done,Scambiato: la sacca di sangue è diventata un credito di 40 buoni pasto.
 dsp_around_world_80_name,Il giro del mondo in 80 giorni
 dsp_around_world_80_description,Inizi al giorno 80. Nella settimana seguente affronterai tutti gli eventi dei primi 80 giorni. Inizi con 1000 crediti e 15 di reputazione con ogni fazione. Avvertenza: potrebbe essere buggato.
 dsp_universal_liquid_name,Liquido universale
@@ -666,6 +654,14 @@ dsp_berserker_description,La polvere dei sogni ti fa sonnambulare di notte. Le f
 dsp_vampire_name,Vampiro
 dsp_vampire_description,"Devi bere regolarmente sacche di sangue, altrimenti subisci una penalità commerciale del -8%. Bere sangue blu ti conferisce il tratto Lingua d'argento finché non avrai di nuovo sete."
 dsp_vampire_penalty,Assetato: -X% penalità commerciale
+dsp_vampire_bc_soon,Vampiro: sete tra {0} giorno/i
+dsp_vampire_bc_now,Vampiro: assetato
+dsp_vampire_bc_bags,sacche di sangue {0}
+dsp_tainted_witness_name,Testimone compromesso
+dsp_tainted_witness_description,Dopo aver ucciso un aumentato o aver presentato una denuncia valida: progresso delle indagini -10
+dsp_summon_anytime_name,Sempre reperibile
+dsp_summon_anytime_description,Tutti i contatti vengono subito. Il tempo di attesa dei contatti è ridotto di un giorno.
+dsp_summon_anytime_line,Levati.
 dsp_fifth_republic_name,La 5ª Repubblica
 dsp_fifth_republic_description,"Ogni settimana appare un evento ""Aumento del budget della sicurezza"". Il giorno in cui appare, c'è sempre un'ispezione a sorpresa."
 dsp_nine_eleven_name,9-ELEVEn
@@ -726,11 +722,11 @@ dsp_new_world_rep_twoplustwo_name,2+2=?
 dsp_new_world_rep_twoplustwo_desc,…
 dsp_new_world_rep_twoplustwo_flavor,Il punto interrogativo non è la vera domanda. Il segno uguale lo è.
 
-dsp_jackie_chan_name,Jackie Chan
-dsp_jackie_chan_description,Puoi combinare gli oggetti con la proprietà spazzatura in armi più preziose. La suoneria del telefono viene sostituita con una melodia a tema asiatico. Clic destro sulla spazzatura combina la spazzatura nello stesso contenitore.
-dsp_jackie_merge,Combina
-dsp_jackie_done,Hai combinato {0} oggetto/i spazzatura (valore {1}) in {2}.
-dsp_jackie_no_junk,Non hai oggetti spazzatura.
-dsp_jackie_no_weapon,Nessun'arma da mischia ottenibile da questi materiali.
-dsp_jackie_no_space,Non c'è spazio per l'arma.
-dsp_new_world_crime_poor,Cattiva condotta durante il colloquio
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,Puoi fare clic destro per combinare in armi gli oggetti con la proprietà spazzatura nello stesso contenitore. La suoneria del telefono viene sostituita con una melodia a tema asiatico.
+dsp_jackie_merge,Combina
+dsp_jackie_done,Hai combinato {0} oggetto/i spazzatura (valore {1}) in {2}.
+dsp_jackie_no_junk,Non hai oggetti spazzatura.
+dsp_jackie_no_weapon,Nessun'arma da mischia ottenibile da questi materiali.
+dsp_jackie_no_space,Non c'è spazio per l'arma.
+dsp_new_world_crime_poor,Cattiva condotta durante il colloquio

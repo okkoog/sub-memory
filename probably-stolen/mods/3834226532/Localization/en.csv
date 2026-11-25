@@ -17,6 +17,7 @@ dsp_tacit_understanding_description,"Inspections are more frequent. As long as y
 dsp_no_trash_name,Smuggling Trash Can
 dsp_no_trash_description,The trash can is converted into a smuggler stash that the janitorial service no longer cleans. You can still leave items outside the counter before closing so that they get picked up.
 dsp_former_assistant_name,Former Assistant
+dsp_former_assistant_discount_name,Former Assistant
 dsp_former_assistant_description,Unlocks Jackson Investment I from the start. You get a 10% trade bonus when dealing with Dr. Jackson. Once every 3 days you can call him to come and trade with your store.
 dsp_former_assistant_contact,Dr. Jackson
 dsp_former_assistant_bonus_buy,"Trading with Dr. Jackson: buy price -10%"
@@ -412,7 +413,7 @@ dsp_prohibition_description,All alcohol counts as low-level contraband. Wine tha
 dsp_tobacco_tax_name,Tobacco Tax
 dsp_tobacco_tax_description,Cigarettes get a 50% retail mark-up. But you only get 20% of that extra mark-up.
 dsp_blood_donor_name,Blood Donation Station
-dsp_blood_donor_description,"Once per day, you can use a blood bag to donate blood and receive one extra blood bag. This makes you miss one customer the next day."
+dsp_blood_donor_description,"You can donate blood at the ration station to get one blood bag, but this makes you miss one customer. A blood bag can be redeemed for 40 food stamp credit."
 dsp_force_open_name,Brute Force
 dsp_force_open_description,Force supply crates open with a welder, wire cutter or crowbar; the crowbar breaks but ruins less inside.
 dsp_vendetta_name,Vendetta
@@ -589,19 +590,6 @@ dsp_preset_save,Save preset
 dsp_preset_load,Load preset
 dsp_preset_export,Export
 dsp_preset_rename,Rename
-d,_
-名,
-名,
-N,e
-N,e
-N, 
-N,b
-N,e
-名,
-이,
-N,w
-И,:
-N,e
 dsp_preset_open,Presets
 dsp_preset_window_title,Starting presets
 dsp_preset_thanks,Thanks for playing
@@ -646,7 +634,7 @@ dsp_vanessa_1_4,"We don't need this, take it."
 dsp_hydro_alcohol_smooth_name,Alcohol Flow
 dsp_hydro_alcohol_smooth_description,"Thanks to the rise of pipe hydroponics, the water mains have been overrun by reeds, nutrifruit and fermented bloomberries. Most of the impurities in the pipe water have been replaced by starch and alcohol."
 dsp_blood_donor_redeem,Redeem
-dsp_blood_donor_redeem_done,Redeemed: the blood bag became a food stamp worth 40.
+dsp_blood_donor_redeem_done,Redeemed: the blood bag became 40 food stamp credit.
 dsp_around_world_80_name,Around the World in 80 Days
 dsp_around_world_80_description,You start on day 80. Over the following week you will encounter all the events of the first 80 days. You start with 1000 credits and 15 reputation with every faction. Warning: may be buggy.
 dsp_universal_liquid_name,Universal Liquid
@@ -665,6 +653,14 @@ dsp_berserker_description,Taking dream dust makes you sleepwalk at night. Light 
 dsp_vampire_name,Vampire
 dsp_vampire_description,"You must regularly drink blood bags, or suffer a -8% trade penalty. Drinking blue blood grants you the Silvertongue trait until you are thirsty again."
 dsp_vampire_penalty,Thirsty: -X% trade penalty
+dsp_vampire_bc_soon,Vampire: thirsty in {0} day(s)
+dsp_vampire_bc_now,Vampire: thirsty
+dsp_vampire_bc_bags,blood bags {0}
+dsp_tainted_witness_name,Tainted Witness
+dsp_tainted_witness_description,"After killing an augmented or filing a valid report, investigation progress -10"
+dsp_summon_anytime_name,Summon Anytime
+dsp_summon_anytime_description,All contacts come over immediately. Contact cooldowns are reduced by one day.
+dsp_summon_anytime_line,Move it.
 dsp_fifth_republic_name,The 5th Republic
 dsp_fifth_republic_description,"A ""Security Budget Increase"" event appears every week. On the day that event appears, there is always a surprise inspection."
 dsp_nine_eleven_name,9-ELEVEn
@@ -725,11 +721,11 @@ dsp_new_world_rep_twoplustwo_name,2+2=?
 dsp_new_world_rep_twoplustwo_desc,…
 dsp_new_world_rep_twoplustwo_flavor,The question mark is not the real question. The equals sign is.
 
-dsp_jackie_chan_name,Jackie Chan
-dsp_jackie_chan_description,You can combine junk items into more valuable weapons. The phone ringtone is replaced with an Asian-themed melody. Right-click junk to combine the junk in the same container.
-dsp_jackie_merge,Combine
-dsp_jackie_done,Combined {0} junk item(s) (worth {1}) into {2}.
-dsp_jackie_no_junk,You have no junk items.
-dsp_jackie_no_weapon,No melee weapon can be combined from this.
-dsp_jackie_no_space,No room for the weapon.
-dsp_new_world_crime_poor,Poor Conduct During the Talk
+dsp_jackie_chan_name,Jackie Chan
+dsp_jackie_chan_description,You can right-click to combine items with the junk property in the same container into weapons. Your phone ringtone is replaced with an Asian-themed melody.
+dsp_jackie_merge,Combine
+dsp_jackie_done,Combined {0} junk item(s) (worth {1}) into {2}.
+dsp_jackie_no_junk,You have no junk items.
+dsp_jackie_no_weapon,No melee weapon can be combined from this.
+dsp_jackie_no_space,No room for the weapon.
+dsp_new_world_crime_poor,Poor Conduct During the Talk

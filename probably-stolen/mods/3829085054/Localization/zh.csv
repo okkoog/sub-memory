@@ -251,6 +251,8 @@ is_cfg_slot_mode_name,槽位数量
 is_cfg_slot_mode_desc,"本条改动收纳箱每页的格子数，分为 16 格和 25 格。总容量 = 每页格数 × 分页数（25 格 5 页 = 125，16 格 5 页 = 80）；切到 16 格时超出容量的部分会被冻结，物品不会丢失，切回即恢复。"
 is_cfg_allow_animals_name,允许存放动物
 is_cfg_allow_animals_desc,"开启后老鼠、鱼等动物可存入。每只动物都单独保存年龄、体重、基因，为了保住这些属性，这类数据无法合并。十箱塞满（10 箱 × 125 格 × 999 只）约占 4.2 GB 存档，会非常非常卡。正常游玩建议存入的动物不要超过 200 只（约 0.7 MB）。关闭时（默认）拒收动物，箱内原有的仍可取出。"
+is_cfg_doctor_no_box_name,博士不卖收纳箱
+is_cfg_doctor_no_box_desc,"开启后，杰克逊博士的货源里不再出现收纳箱（地图拜访与来访都不补）。已有的收纳箱不受影响，新档仍会配发 1 个。"
 is_gp_bay_storage,可吸纳储藏区
 is_gp_bay_machine,可吸纳机器区
 is_gp_bay_smuggler,可吸纳走私格
