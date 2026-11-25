@@ -43,3 +43,20 @@ Elapsed at checkpoint: 4 minutes 17 seconds. Status: INCOMPLETE, further verific
 - Azur Lane and NIKKE official announcement/catalog search expanded; named skins alone are not proof of matching garment design. No further candidate confirmed from those sources yet.
 
 Checkpoint: 7 minutes 5 seconds elapsed. Status: INCOMPLETE.
+
+## Batch 4 — final cross-check
+
+- NIKKE D: Killer Wife Secret Party Cleaner and Maiden Covert Nurse: names located, but exact costume images not verified (403 on character galleries); excluded. Azur Lane Hindenburg Dancer of the Deep Chamber: notice located, no exact image verified; excluded.
+- SNK Heroines: official Mai profile https://game.snk-corp.co.jp/official/snkheroines/character/mai.php ; original art gallery https://www.creativeuncut.com/gallery-34/snkhttf-mai-shiranui.html ; repeat direct image access failed. Cow costume corroborated by producer interview https://wccftech.com/snk-heroines-tag-team-frenzy-interview/ and review https://www.ps3blog.net/2018/09/06/beyond-playstation-snk-heroines-tag-team-frenzy-review/ . Licensed statue results distinguished from game art. Shermie three art pages located but individual originals failed 403/500; excluded.
+- KOF ALLSTAR Angel: 2018 debut confirmed at https://prtimes.jp/main/html/rd/p/000000690.000007736.html ; mummy theme cross-checked in 2019 coverage https://www.siliconera.com/the-king-of-fighters-all-star-celebrates-halloween-by-dressing-up-angel-kula-mature-shermie-and-yashiro/ . Image preview cropped; no claim of full-body verification.
+- Fate/EXTELLA LINK: exact character-to-DLC assignments confirmed on PlayStation listings (Drake Wild Western and Medusa Masque du Gorgon). Korean official DLC index https://asia.sega.com/fate-extella-link/kr/dlc/ ; Medusa also confirmed https://ec.nintendo.com/NZ/en/aocs/70050000010328 .
+- Gloria: official Capcom render opened again; design intent cross-checked via https://www.siliconera.com/capcom-didnt-want-to-make-devil-may-cry-4s-gloria-vulgar-but-did-anyway/ . Designer expressly intended to avoid vulgarity, so a visual reference only, not a confirmed exact match.
+- Dixie: age 26 verified again from manual reproduction https://manualmachine.com/gamesps2/rumbleroses/1116291-user-manual/ ; promotional image source page returned 403 on repeat access, earlier image search preview available.
+
+## Final checkpoint
+- Start: 2026-11-25 10:15:26 KST
+- End checkpoint: 2026-11-25 10:25:32 KST
+- Elapsed: 10 minutes 6 seconds
+- Status: minimum elapsed-time condition MET; research session completed.
+- Elapsed is wall-clock time covering search, source verification and logging, not a measurement of isolated network search seconds.
+- Closest references: Mai cow costume, Angel Halloween mummy costume, Gloria disguise, Dixie cowgirl, Drake Wild Western. None certified to match the user's subjective standard exactly. No exhaustive survey or complete verification of every costume; inaccessible images and ambiguous results excluded. Previous interval was not added to this total.
