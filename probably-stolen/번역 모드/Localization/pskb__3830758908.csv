@@ -296,7 +296,7 @@ K|adult_condom_blue_desc,상자에 가장 크게 적힌 숫자가 대개 제품�
 K|adult_condom_gold_name,일루전 콘돔
 K|adult_condom_gold_desc,거의 아무것도 느껴지지 않는다고 합니다. 계산서만 빼고요.
 K|debug_items_condoms,작업장 물품: 콘돔 3종 (각 1상자)
-K|debug_items_adult_all,"작업장 물품: 성인용품 전체 (9종, 각 1개)"
+K|debug_items_adult_all,"공방 물품: 성인용품 전체 (24종, 각 1개)"
 K|debug_items_rubber_latex,작업장 재료: 고무 및 라텍스 (각 1개)
 K|adult_chip_dildo_name,3D 프린터 칩 (딜도 ×2)
 K|business_visit_1,장사는 잘돼 가나요? 말씀드리고 싶은 게 하나 있어요.
@@ -306,7 +306,7 @@ K|business_visit_4,"새 도구를 개발하려면 돈이 많이 들어서, 연�
 K|business_visit_5,"최근에 제 물건을 꽤 많이 사 주셨고, 작업장에도 공학 관련 주문이 늘고 있어요."
 K|business_visit_6,덕분에 이제 제가 정말 만들고 싶은 것에 더 많은 시간을 쓸 수 있게 됐죠.
 K|business_visit_7,그래서 이쪽 장사는 당신에게 넘겨도 되지 않을까 생각했어요.\n괜찮다면 한번 해 보실래요?
-K|business_visit_8,이 3D 프린터랑 칩은 드릴게요. 첫 생산분을 만들 재료도 충분히 가져왔고요.
+K|business_visit_8,"프린터와 칩 두 장은 드릴게요. 플러그에 쓸 고무도 가져왔어요. 다른 칩은 구슬 무늬 유리 완드를 만드는 칩이니, 프린터에 고온 노즐을 장착해 주세요."
 K|business_visit_9,"장사를 맡고 싶지 않다면, 제가 가져온 물건만 팔아도 괜찮아요."
 K|business_visit_10,기존 손님들도 이쪽으로 보내 드릴게요.
 K|business_visit_11,걱정 마세요. 이 물건들은 정거장에서 합법이에요.\n손님 대부분이 돈 많은 상층구역 주민이라 씀씀이도 꽤 크고요.
@@ -395,18 +395,18 @@ K|settings_vista_portrait_tooltip,"비스타의 초상화 스타일을 선택합
 K|adult_chip_plug_name,3D 프린터 칩 (애널 플러그 ×2)
 K|adult_chip_conqueror_name,3D 프린터 칩 (대형 딜도 「정복자」 ×1)
 K|vista_chip_dildo_1,최근 당신에게서 산 물건을 손님들이 아주 마음에 들어 했어요.
-K|vista_chip_dildo_2,가브리엘에게 받은 칩이 하나 있습니다.
+K|vista_chip_dildo_2,"가브리엘에게 칩 두 장을 받았어요. 하나는 딜도, 다른 하나는 곡선형 양면 유리 딜도를 만드는 칩이에요."
 K|vista_chip_conqueror_1,장사가 아주 잘돼서 손님들이 새로운 제품을 요청해 왔어요.
 K|vista_chip_conqueror_2,「정복자」라는 새 장난감입니다.
 K|vista_chip_bye,재고가 생기면 연락해 주세요. 그럼 다음에 뵙죠.
 K|debug_story_vista_dildo_chip,"스토리: 비스타가 딜도 칩 지급 (판매액 1,000)"
 K|debug_story_vista_conqueror_chip,"스토리: 비스타가 정복자 칩 지급 (판매액 3,000)"
 K|debug_items_adult_crates,성인용품: 기본 게임 의료 및 서비스 상자
-K|vista_chip_dildo_3,이걸로 새 제품을 한번 만들어 보세요.
+K|vista_chip_dildo_3,각각 하나씩 만들어서 어느 쪽이 더 잘 팔리는지 확인해 보세요.
 K|vista_chip_dildo_4,재고가 생기면 연락만 주세요.
 K|vista_chip_dildo_5,그럼 다음에 뵙죠.
 K|vista_chip_conqueror_3,"크기가 좀 특이하긴 하지만, 실제 수요가 있다는 건 확실합니다."
-K|vista_chip_conqueror_4,저희가 특별히 부탁해서 가브리엘이 새로 만든 칩이에요. 받아 주세요.
+K|vista_chip_conqueror_4,가브리엘이 특별히 만든 「정복자」 칩이에요. 다른 하나는 유리 촉수 제작용이고요. 둘 다 받아 주세요.
 K|vista_chip_conqueror_5,가브리엘 말로는 이 장난감이 무기로도 쓸 수 있을 것 같다더군요.
 K|vista_chip_conqueror_6,물론 농담이었어요. 섹스돌은 남을 공격할 수 없으니까요.
 K|vista_chip_conqueror_7,저희에게는 섹스돌용 칩이 장착되어 있어서 고의로 남을 해칠 수 없습니다.
@@ -479,9 +479,9 @@ K|duke_phone_cooldown,스타 듀크는 아직 모험 중입니다. 다음에 다
 K|duke_order_other,다른 재료 주문
 K|glass_plate_name,유리판
 K|glass_plate_desc,유리 조각을 다시 녹여 만든 얇고 투명한 판. 추가 가공에 사용할 수 있다.
-K|glass_smelting_module_name,유리 제련 모듈
-K|glass_smelting_module_desc,제련용 용광로에 장착하는 모듈.
-K|glass_smelting_module_effect,유리 조각 2개 또는 빈 맥주병 1개를 제련해 유리판 2개를 만듭니다.
+K|glass_smelting_module_name,용광로 모듈 (유리 제련)
+K|glass_smelting_module_desc,유리 조각이나 빈 맥주병을 제련해 유리판으로 만드는 특수 용광로 모듈입니다.
+K|glass_smelting_module_effect,유리 조각 2개 또는 빈 맥주병 1개를 유리판 2개로 변환합니다.
 K|wine_bottle_chip_name,3D 프린터 칩 ({0} ×{1})
 K|high_temperature_nozzle_name,고온 프린팅 노즐 모듈
 K|high_temperature_nozzle_desc,3D 프린터에서 유리판을 재료로 유리 제품을 출력할 수 있게 해 준다.
@@ -649,7 +649,7 @@ K|drone_night_result_attacked,"드론이 폐품 수집을 마치고 물품 {0}�
 K|aui_section_durability,"내구도"
 K|drone_broken,"내구도가 모두 소진되어 출동할 수 없습니다."
 K|repair_kit_name,"수리 공구 세트"
-K|repair_kit_desc,"내구도가 있는 물품을 수리합니다. 금속 주괴, 고철, 나사로 재료를 보충할 수 있습니다."
+K|repair_kit_desc,"총기를 정비하고 일부 기계와 도구를 수리합니다. 금속 주괴, 고철 또는 나사로 재료를 보충할 수 있습니다."
 K|repair_material_remaining,"남은 재료"
 K|debug_items_repair,"수리 공구 세트 및 보충 재료"
 K|drone_manual_name,폐품 수집 드론 사용 안내서
@@ -667,4 +667,405 @@ K|chip_expansion_incompatible,이 기계의 칩 슬롯 구조에는 확장 키�
 K|chip_expansion_slots,칩 슬롯: {0}/{1}
 K|debug_items_desequencer,작업장 | 암호 해독기 및 칩 슬롯 확장 테스트
 K|settings_streamer_label,미성년자 모드
-K|settings_streamer_tooltip,"기본적으로 켜져 있습니다. 애널 플러그, 딜도, 「정복자」를 원래 모습 대신 포장 상자로 표시합니다. 끄면 원래 이미지가 표시됩니다. 외형만 변경되며 설정을 저장하면 적용됩니다."
+K|settings_streamer_tooltip,기본적으로 켜져 있습니다. 지정된 성인용품을 포장 상자로 표시합니다. 끄면 물품 본래의 모습이 표시됩니다. 설정을 저장하면 즉시 적용됩니다.
+K|debug_story_duke_lucky_water,공방 스토리: 스타 듀크의 액체 행운 선물 테스트 (1병 지급)
+K|mobility_intro,몸이 좋지 않으셔서 밖에 나가기 힘드시겠어요……
+K|mobility_offer,도움이 될 만한 물건을 가져왔어요. 조작법은 어렵지 않아요.
+K|mobility_handoff,이건 폐품 수집 드론이에요.
+K|mobility_tools,배터리와 수리 공구 세트도 가져왔어요.\n밖에서 이리저리 부딪혀도 직접 수리할 수 있어요.
+K|mobility_manual,기계 안에 설명서도 있어요. 똑똑하시니까 한 번만 읽어도 사용하실 수 있을 거예요.
+K|mobility_power,오늘 밤에 한번 작동시켜 보세요.
+K|mobility_upgrades,"다만 무기와 모듈이 부족해서, 장착하면 효율이 더 좋아질 거예요."
+K|mobility_parts,……그건 직접 구해 주셔야 할 것 같아요.
+K|mobility_bye,다음에 봐요.
+K|mobility_space,카운터가 조금 비좁아서 가져온 물건을 전부 놓을 수 없네요.
+K|debug_story_mobility_aid,공방 스토리: 가브리엘의 폐품 수집 드론 선물 테스트
+K|duke_lucky_water_gift,자네와 거래하는 게 즐거웠기에 스타 듀크가 선물을 가져왔다네!
+K|duke_lucky_water_wait,어이쿠! 스타 듀크가 선물을 가져왔는데 카운터가 꽉 찼군. 다음에 주지!
+K|module_incubator_name,자율 학습기
+K|module_incubator_training,학습실
+K|module_incubator_desc,학습 알고리즘이 있는 모듈의 학습을 진행합니다. 전력이 필요하며 야간에 작동합니다.
+K|module_incubator_manual_name,사용 설명서: 자율 학습기
+K|module_incubator_manual_short,전원을 장착하고 학습 알고리즘이 있는 모듈을 학습실에 넣으세요. 모듈마다 밤에 한 번씩 학습합니다. 금속 주괴를 기계에 드래그하면 학습실을 확장할 수 있습니다.
+K|module_incubator_manual_text,[모듈 영향]:\n  효율: 전력 소모량 (계수 0.75)\n  성능: 전력 소모량 (계수 0.25)\n  품질: 품질 75당 학습 횟수 +1
+K|debug_items_module_incubator,공방: 자율 학습기 + 배터리 + 금속 주괴
+K|quality_refiner_name,분자 재구성기
+K|quality_refiner_tray,처리실
+K|quality_refiner_desc,"장비 상태, 금속 주괴 순도 및 술의 품질을 높입니다. 전력, 물, 재구성 재료가 필요하며 야간에 작동합니다."
+K|sentinel_catheter_name,센티넬 증후군 유치 카테터
+K|sentinel_catheter_doses,이뮤닌
+K|sentinel_catheter_desc,"이뮤닌를 장착하면 센티넬 증후군으로 피해를 입기 전에 자동으로 투여합니다. 위조품, 유통기한 경과품, 정품의 약효가 각각 1일, 2일, 3일 연장됩니다."
+K|sentinel_catheter_log,카테터가 이뮤닌 1회분을 자동 투여하여 약효가 {0}일 연장되었습니다.
+K|debug_items_quality_refiner,공방: 분자 재구성기 + 테스트 재료
+K|debug_items_sentinel_catheter,공방: 센티넬 증후군 유치 카테터 + 이뮤닌
+K|debug_items_hypertech_booster,공방: 초고성능 터보 부스터 (30회)
+K|quality_refiner_materials,재구성 재료
+K|quality_refiner_manual_name,사용 설명서: 분자 재구성기
+K|quality_refiner_manual_short,"전원과 물이 담긴 용기를 장착하고 물품을 처리실에 넣으세요. 처리 가능한 물품은 매일 밤 기본 1단계씩 향상되며, 물품 하나당 재구성 재료 2%와 물 50mL를 소모합니다. 수질이 높을수록 전력 소모량이 감소합니다. 3D 프린터 필라멘트를 기계에 드래그하면 재료를 보충하고 전자 부품 (일반)을 사용하면 처리실을 확장할 수 있습니다."
+K|quality_refiner_manual_text,[모듈 영향]:\n  효율: 전력 소모량 (계수 0.5)\n  성능: 전력 소모량 (계수 0.5)\n  품질: 품질 150당 추가 소모 없이 1단계 향상
+K|aui_power_draw,전력 소모량
+K|aui_nightly_learning,하룻밤 학습 횟수
+K|aui_nightly_grades,하룻밤 향상 단계
+K|machine_storage_kit_name,표준 산업용 업그레이드 도구
+K|machine_storage_kit_desc,용광로의 투입 및 산출 공간을 확장하고 제련 모듈과 보조 재료 전용 공간을 추가합니다. 3D 프린터에 두 번째 생산 라인을 추가할 수도 있습니다. 기계당 한 번만 사용할 수 있습니다.
+K|furnace_auxiliary_input,보조 재료
+K|furnace_specialist_modules,제련 모듈
+K|furnace_compact_modules_hint,이전 버전의 슬롯에 물품이 남아 있습니다. 슬롯을 비우고 용광로를 다시 열면 새 배치가 적용됩니다.
+K|industrial_furnace_name,산업용 용광로
+K|industrial_printer_name,산업용 3D 프린터
+K|printer_line_tab,생산 라인 {0}
+K|printer_line_no_chip,칩 미장착
+K|printer_line_ready,준비 완료
+K|printer_line_working,출력 중 {0}/{1}
+K|printer_line_legacy_bay,기존 공간의 마지막 두 줄을 비우면 새 크기가 적용됩니다.
+K|machine_storage_kit_no_space,공간이 부족합니다. 기계를 빈 공간으로 옮긴 후 확장해 주세요.
+K|debug_items_machine_storage_kit,공방: 표준 산업용 업그레이드 도구
+K|vi_name,비
+K|vi_intro_1,"안녕하세요, 미인님. 저는 비라고 해요."
+K|vi_intro_2,……반박하기 전에 들어 보세요. 제 의안이 오래된 모델이라 조금 문제가 있거든요.
+K|vi_intro_3,살아 있는 사람이라면 누구든 제 눈에는 예쁜 아가씨로 보여요.
+K|vi_intro_4,그래서 누구에게든 미인이라고 부르는 게 습관이 됐죠.
+K|vi_intro_5,"고치기는 귀찮아서요…… 온 거리가 눈길을 뗄 수 없는 아가씨들로 가득하잖아요.\n일을 하면서도 데이트하는 기분인데, 뭐가 나쁘겠어요?"
+K|vi_intro_6,"자, 이제 본론으로 들어갈까요."
+K|vi_intro_7,해적들에게 비행선을 공격당해서 겨우 여기에 불시착했어요.\n그런데 착륙하자마자 치안부에 압류당했죠.
+K|vi_intro_8,하필 어젯밤에는 아주르 클라우드탑에서 끈질긴 아가씨들을 몇 명 만났어요.\n참지 못했더니 몸도 지갑도 탈탈 털렸지 뭐예요.
+K|vi_intro_9,오늘에서야 이곳에 은하 간 은행조차 없다는 걸 알았어요.\n공용 화폐로도 결제가 안 되더군요.
+K|vi_intro_10,나름 옛 정취가 느껴지긴 하지만……\n조금 불편하네요.
+K|vi_intro_11,여기 전당포 맞죠?
+K|vi_intro_12,"오래된 물건이 하나 있는데, 크레딧을 얼마나 받을 수 있는지 봐 주실래요?"
+K|vi_intro_13,물론 미인님이 제 검에 관심이 없으시다면……\n제 몸을 담보로 잡으셔도 괜찮아요.
+K|vi_offer_1,한번 보세요. 반세기 전 코네이에서 출시한 최신 모델이에요.
+K|vi_offer_2,여기서는 아직도 신제품 취급을 받겠죠.
+K|vi_offer_3,다만 세월이 오래 흘러서 조금 뻣뻣해졌어요.
+K|vi_offer_4,다음에 시간이 나면 제가 직접 손을 잡고…… 어떻게 관리하는지 알려 드릴게요.
+K|vi_bought,음…… 이게 전부인가요?
+K|vi_bought_2,아주르 클라우드탑의 아가씨들에게 술 몇 잔 사 주기도 빠듯하겠네요.
+K|vi_bought_3,여기서 개인 의뢰를 좀 받아야겠어요.
+K|vi_bought_4,혹시 처리해 주었으면 하는 사람이 있다면 언제든 찾아오세요.
+K|vi_bought_5,상대가 제 취향이라면 본격적으로 일을 시작하기 전에 다리가 풀릴 때까지 대련해 볼게요.\n그리고…… 할인도 해 드리죠.
+K|vi_refused,냉정하시네요. 정거장 하층구역에서 물건을 알아봐 줄 거라 기대한 제가 순진했군요.
+K|vi_counter_full,카운터가 이렇게 꽉 차서야 제 보물이 누울 자리가 없잖아요.\n공간을 좀 비워 주시면 천천히 감상하게 해 드릴게요.
+K|research_return_1,"안녕하세요, 오랜만이에요. 이제야 공방에서 잠깐 자리를 비울 수 있게 됐네요."
+K|research_return_2,"분자 재구성기를 가져왔어요. 제가 시험하던 시제품인데, 쓸 만하다면 받아 주세요."
+K|research_return_3,앞으로 공방 물품은 제가 직접 가져올게요. 시제품을 써 보신 소감도 들을 겸요.
+K|quality_refiner_prototype,시제품
+K|debug_story_research_return,공방 스토리: 가브리엘의 복귀 테스트
+K|debug_story_vi_visit,공방 스토리: 비의 첫 방문 테스트
+K|sword_category,도검
+K|sword_category_blade,검신 소재
+K|sword_category_module,도검 모듈
+K|sword_sharpness,예리함
+K|sword_rigidity,강성
+K|sword_cutting,절삭력
+K|sword_resilience,복원력
+K|sword_balance,무게중심 안정성
+K|sword_style,스타일
+K|sword_blade_name,직선형 검신 소재
+K|sword_blade_desc,아랫부분에 손잡이를 장착할 연결부가 있는 단단한 금속 검신 소재입니다.
+K|sword_grade_rough,조잡
+K|sword_grade_common,일반
+K|sword_grade_fine,양질
+K|sword_grade_excellent,우수
+K|sword_grade_supreme,최상
+K|sword_hilt_name,탄소 섬유 손잡이
+K|sword_hilt_desc,공방에서 제작하는 직선형 검신에 장착하는 가벼운 탄소 섬유 손잡이입니다.
+K|straight_sword_name,직선형 도검
+K|straight_sword_desc,이 직선형 도검은 {0}에 {1}을 장착한 것입니다.
+K|sword_unload_full,공간이 부족해 검신과 손잡이를 분리할 수 없습니다.
+K|sword_blade_chip_name,산업용 3D 프린터 칩 (직선형 검신 소재)
+K|sword_blade_chip_desc,3D 프린터 설계도가 담긴 칩입니다.
+K|sword_hilt_chip_name,3D 프린터 칩 (코네이 제식 손잡이)
+K|sword_hilt_chip_desc,3D 프린터 필라멘트 1개로 코네이 제식 손잡이 1개를 출력합니다.
+K|sword_assembly_full,직선형 도검에는 연속된 13칸이 필요합니다. 공간을 확보한 후 조립해 주세요.
+K|debug_items_swords,공방 물품: 도검 출력 칩 및 재료
+K|sword_care_label,검신 관리 상태: {0}
+K|sword_care_corroded,심하게 부식됨
+K|sword_care_rusty,곳곳에 녹이 슴
+K|sword_care_rough,거친 연마
+K|sword_care_fine,정밀 연마
+K|sword_care_master,최고급 연마
+K|sword_standard,표준 금속 검신 소재
+K|sword_refined,전통 정련 검신 소재
+K|sword_compressed,초압축 검신 소재
+K|sword_part_connay,코네이 제식 손잡이
+K|sword_part_carbon,경량 탄소 손잡이
+K|sword_part_ron,론 제식 손잡이
+K|sword_part_white_hunt,「백수」 손잡이
+K|sword_part_guard,손 보호대
+K|sword_part_serrated,톱니 칼등
+K|sword_part_thermal,열에너지 칼날
+K|sword_part_toxin,독소 칼날
+K|sword_part_openwork,경량화 타공 부품
+K|sword_part_fuller,혈조
+K|sword_slot_grip,손잡이
+K|sword_slot_guard,손 보호대
+K|sword_slot_spine,칼등
+K|sword_slot_edge,칼날
+K|sword_slot_body,검신
+K|sword_fixed_desc,되돌릴 수 없는 개조입니다. 장착하면 검신에 영구적으로 남습니다.
+K|sword_fixed_label,{0} (영구 개조)
+K|sword_removable_desc,장착 후 내용물 꺼내기로 분리할 수 있습니다.
+K|debug_items_blade_prices,공방 물품: 검신 소재 3종
+K|debug_items_sword_grips,공방 물품: 손잡이 4종
+K|debug_items_sword_fittings,공방 물품: 검신 개조 부품
+K|sword_slot_reserved,예비 슬롯
+K|sword_slot_special,특수 모듈 {0}
+K|sword_refined_desc,정련한 금속으로 만든 직선형 검신 소재입니다. 표면에 섬세한 연마 자국이 남아 있습니다.
+K|sword_compressed_desc,초압축 금속으로 만든 직선형 검신 소재입니다. 두꺼운 검신이 칼끝 가까이까지 이어집니다.
+K|sword_part_connay_desc,코네이 제식 직선형 도검의 손잡이입니다. 넓고 두꺼운 장착부가 검신의 끝부분을 고정합니다.
+K|sword_part_carbon_desc,손잡이 중앙에 길쭉한 구멍이 뚫려 있어 손에 쥐었을 때 유난히 가볍습니다.
+K|sword_part_ron_desc,론 제식 직선형 도검의 손잡이입니다. 묵직한 금속 심재가 안정적인 그립을 제공합니다.
+K|sword_part_white_hunt_desc,금색 마감 장식 사이에 끼워 넣은 밝은색 그립 패널이 「백수」의 가장 두드러지는 특징입니다.
+K|sword_part_guard_desc,손잡이 앞부분에 장착하는 손 보호대입니다.
+K|sword_part_serrated_desc,직선형 도검의 칼등에 사용하는 짧은 톱니 부품입니다. 톱니 9개가 촘촘히 배열되어 있습니다.
+K|sword_part_thermal_desc,직선형 검신에 장착하며 손잡이에서 전력을 공급받는 열에너지 칼날입니다.
+K|sword_part_toxin_desc,독소가 코팅된 교체용 칼날입니다. 칼날 끝에 탁한 회녹색 광택이 감돕니다.
+K|sword_part_openwork_desc,검신 중앙에 구멍을 낸 경량화 개조 부품입니다.
+K|sword_part_fuller_desc,검신을 따라 길게 이어지는 홈이 있는 개조 부품입니다.
+K|sword_fixed_notice,영구 개조
+K|sword_heat_lit_text,손잡이 장착부에서 칼끝까지 가느다란 주황빛이 이어집니다.
+K|sword_heat_rust_text,칼날 곳곳에 녹이 슬었고 주황빛도 꺼졌습니다.
+K|sword_heat_cold_text,칼날은 탁한 회색이며 손잡이 쪽의 전기 접점이 드러나 있습니다.
+K|sword_part_connay_body,코네이 제식 검신
+K|sword_part_connay_body_desc,청회색 장식판에 CN이라는 글자가 새겨져 있습니다. 코네이 제식 손잡이와 열에너지 칼날을 함께 장착하면 코네이 브랜드의 가치를 인정받습니다.
+K|sword_connay_maker,코네이 연합 무장사업부
+K|sword_connay_premium,{0} (가치 +{1}%)
+K|sword_connay_label,코네이 무장
+K|adult_nipple_clamps_name,이중 체인 목걸이형 유두 클립
+K|adult_nipple_clamps_desc,안전하고 효과적인 제품입니다. 가끔은 의상 장식으로도 사용할 수 있습니다.
+K|adult_restraint_cuffs_name,손목 구속구
+K|adult_restraint_cuffs_desc,"역할극을 시작할 시간입니다. 당신은 경찰인가요, 아니면……?"
+K|debug_items_chain_preview,공방 미리보기: 유두 클립과 손목 구속구 (각 1개)
+K|adult_blindfold_name,버클형 안대
+K|adult_ball_gag_name,볼 개그
+K|adult_paddle_name,훈육용 패들
+K|adult_flogger_name,부드러운 가죽 채찍
+K|adult_glass_wand_name,구슬 무늬 유리 완드
+K|adult_glass_dual_name,곡선형 양면 유리 딜도
+K|adult_glass_curl_name,유리 촉수
+K|adult_flip_name,개폐형 오나홀
+K|adult_soft_cast_name,연질 실리콘 토르소
+K|adult_polly_five_name,클리토리스 마사지기
+K|adult_delay_gel_name,지연 젤
+K|adult_care_oil_name,보습 오일
+K|adult_massage_cream_name,마사지 크림
+K|adult_blindfold_desc,공공장소에서는 수면 안대로 사용하지 마세요. 변태로 오해받을 수 있습니다.
+K|adult_ball_gag_desc,보통 동물이 무는 것을 방지할 때 사용합니다. 물론 인간도 동물의 일종이죠.
+K|adult_paddle_desc,위력은 그다지 강하지 않습니다. 특정 상황에서는 딱 적당한 정도죠.
+K|adult_flogger_desc,적당히 따끔하면서도 흔적은 남지 않습니다. 그게 바로 묘미죠.
+K|adult_glass_wand_desc,"겉보기에는 투박하지만, 사용할 때 투명한 유리를 통해 은밀한 신체 내부 구조와 흥분을 불러일으키는 체액을 선명하게 볼 수 있는 제품입니다."
+K|adult_glass_dual_desc,포장에는 이렇게 적혀 있습니다. 「완벽한 곡선과 정교한 구슬. 부러지더라도 사용자가 다치지 않습니다.」
+K|adult_glass_curl_desc,흡반까지 재현한 분홍색 유리 촉수입니다. 진열창에 놓은 후 근처 수족관이 어디 있는지 묻는 손님도 찾아왔습니다.
+K|adult_flip_desc,왜 이런 오나홀을 고르는지 아시나요? 눈에 잘 띄지 않고 세척하기도 쉽기 때문입니다.
+K|adult_soft_cast_desc,오래되고 원시적인 장난감이지만 여전히 제 역할을 합니다.
+K|adult_polly_five_desc,고주파 진동에 전체를 감싸는 구조와 미세 전류를 더했습니다. 그래서 「순식간에 절정」이라는 별명도 붙었습니다.
+K|adult_delay_gel_desc,사람들은 대개 효율을 추구합니다. 침대에서만큼은 느릴수록 좋기를 바라지만요.
+K|adult_care_oil_desc,한때 순수 천연 추출물로 상층구역에서 유명했던 오일입니다. 이제는 순수 천연 추출물이 불가능하다는 사실을 누구나 알고 있습니다.
+K|adult_massage_cream_desc,"마사지는 보통 솜씨가 필요하지만, 이 제품을 사용하면 몇 번 문지르는 것만으로도 충분합니다. 누구나 좋아하는 이유죠."
+K|adult_neon_sign_name,성인용품 네온 간판
+K|adult_sign_broker_name,상층구역 중개인
+K|adult_sign_broker_offer,상층구역에서 가져온 물건들이에요. 먼저 살펴보세요. 한꺼번에 매입하시면 가격은 더 조정할 수 있어요.
+K|research_new_1,오랜만이에요. 연구가 일단락됐어요.
+K|research_new_2,제가 그동안 무엇을 하고 있었는지 궁금하실지도 모르겠네요.
+K|research_new_3,이걸 보시면 아실 거예요!
+K|research_new_4,이게 그동안 제가 연구한 주요 성과랍니다.
+K|research_new_5,분자 재구성기예요!
+K|research_new_6,"이건 시제품인데, 드리고 싶어요.\n그동안 공방을 지원해 주셔서 감사해요."
+K|research_new_7,이 기계는 물질의 원자 배열을 어느 정도 바꿀 수 있어요.\n그렇게 물질의 성질과 품질을 변화시키는 거죠.
+K|research_new_8,간단히 말하면 술의 풍미를 더욱 깊게 하고 금속을 더 단단하게 만들어요.
+K|research_new_9,정말 대단한 발명품이라고 생각하지 않으세요?
+K|research_new_10,앞으로는 제가 직접 물품을 배달할 거예요.\n다음 연구도 준비하고 있거든요.
+K|research_new_11,그래서 다시 크레딧이 부족해졌어요. 앞으로도 제 제품을 많이 사 주세요.
+K|research_new_12,그럼 다음에 봐요.
+K|research_friend_1,오랜만이에요! 보고 싶으셨나요?
+K|research_friend_2,제가 요즘 뭘 하고 지냈는지 정말 궁금하시죠?
+K|research_friend_3,짜잔! 이것 좀 보세요~!
+K|research_friend_4,분자 재구성기예요!
+K|research_friend_5,이거 정말 대단하다고요!
+K|research_friend_6,술의 풍미를 깊게 하고 금속을 더욱 단단하게 만들 수 있어요.
+K|research_friend_7,원리요? 음…… 물질의 원자 배열을 바꾸는 거예요. 분자에도 영향을 줄 수 있고요.
+K|research_friend_8,자세한 설명은 생략할게요. 사용 설명서는 기계 안에 넣어 뒀어요.
+K|research_friend_9,앞으로는 제가 직접 물품을 배달할 거예요.\n다음 연구를 준비하고 있거든요.
+K|research_friend_10,그래서 또 크레딧이 부족해졌어요. 꼭 제 사업 좀 챙겨 주세요.
+K|research_friend_11,그럼 다음에 봐요.
+K|bd_deck,드림센스 플레이어
+K|bd_moon,드림센스 카트리지 - 엣지러너
+K|bd_moon_flavor,"「미안해, 루시. 너와 함께 달에 갈 수 없게 됐어.」"
+K|bd_flowers,드림센스 카트리지 - 에코 오브 스타송
+K|bd_nameless,이름 없는 카트리지
+K|bd_flowers_flavor,"두 방향 모두 무상하니, 떠나지 않고 만난다. 두 방향 모두 무상하니, 가지 않아도 만난다."
+K|bd_slot,재생 슬롯
+K|bd_play,재생
+K|bd_screen,재생 화면
+K|bd_desc,드림센스 카트리지를 재생 슬롯에 넣고 「재생」을 누르세요. 나머지 카트리지는 수납칸에 보관할 수 있습니다.
+K|bd_tape_desc,드림센스 플레이어에 사용하는 카트리지입니다.
+K|bd_loading,카트리지 읽는 중……
+K|bd_error,카트리지를 재생할 수 없습니다. Esc를 눌러 돌아가세요.
+K|bd_debug,"드림센스 시험 재생: 플레이어, 카트리지 3개 및 카트리지 보관함"
+K|bd_pause,일시 정지
+K|bd_theater,전체 화면
+K|bd_standard,표준
+K|bd_minimize,최소화
+K|bd_restore,복원
+K|bd_case,드림센스 카트리지 보관함
+K|bd_case_desc,감각 기록 카트리지 9개를 보관할 수 있는 단단한 케이스입니다.
+K|settings_vi_portrait_label,비의 초상화
+K|settings_vi_portrait_tooltip,"비의 초상화 스타일을 선택합니다. 개선 스타일 1은 픽셀 색상 블록이 더 뚜렷하며, 개선 스타일 2는 더 부드러운 화풍을 사용합니다. 적용 후 세이브를 다시 불러오세요. 모든 세이브에 공통으로 적용됩니다."
+K|bd_unreadable,카트리지를 읽을 수 없습니다.
+K|warn_known,안녕하세요. 오늘은 주의해 주셨으면 하는 일이 있어서 왔어요. 가브리엘에 관한 일이에요.
+K|warn_new,안녕하세요. 비스타라고 불러 주세요.
+K|warn_new_2,저는 상층구역 아주르 클라우드탑에서 일하는 고급형 섹스돌이에요.\n예전에는 가브리엘에게 가게의 모든 용품을 주문했어요.
+K|warn_new_3,요즘 이곳에 자주 온다고 들었어요.\n그녀의 안전을 위해 알려 드릴 일이 있어요.
+K|warn_1,이틀 전 밤에 손님 한 분이 가브리엘이 새로운 물건을 가져왔느냐고 물었어요.
+K|warn_2,저는 다른 장난감을 찾는 줄 알고 고르시라고 하려 했죠.\n그런데 어떤 확대경에 관해 묻더군요.
+K|warn_3,정확히는 가브리엘이 만든 스펙트럼 감별 렌즈였어요.
+K|warn_4,그 물건이 잘 팔리면 정거장에 감정위원회가 필요 없어질 거라고 하더군요.
+K|warn_5,"나중에 술잔을 치우러 갔는데, 여전히 그녀에 관해 이야기하고 있었어요."
+K|warn_6,그런데 이번에는……\n공방을 폐쇄하고 가브리엘을 체포하려면 얼마나 많은 증거가 필요한지에 관한 이야기였어요.
+K|warn_7,"자세한 사정은 알려 드릴 수 없지만, 가브리엘은 「저희」에게 중요한 사람이에요."
+K|warn_8,그래서 물건을 하나 가져왔어요.
+K|warn_9,이건 드림센스 플레이어예요. 오래전에는 「브레인댄스」라고 부르는 사람도 있었죠.
+K|warn_10,여기에 카트리지 한 상자도 있어요.\n그중 하나에 그날 저에게 질문했던 손님의 얼굴이 녹화돼 있어요.
+K|warn_11,조금 더 뒤로 돌려 보세요. 그 사람이 고개를 들 때 얼굴이 가장 선명하게 보여요.
+K|warn_12,그 사람은 감정위원회를 위해 증거를 수집하고 있어요.\n앞으로 사흘 안에 이곳에 들를지도 몰라요.
+K|warn_13,물건을 감정해 달라고 하면 평소처럼 받으세요.
+K|warn_14,다만 가브리엘이 개조한 스펙트럼 감별 렌즈는 미리 치워 주세요.
+K|warn_15,그 앞에서 사용하면 렌즈를 가져갈 수 있어요.\n그러면 정말로 증거를 확보하게 되니까요.
+K|warn_16,드림센스 플레이어는 여기에 두고 갈게요.
+K|warn_17,앞으로 자주 사용할 일이 생길지도 모르겠네요.
+K|warn_18,그럼 다음에 봐요.
+K|exam_customer,상층구역 손님
+K|exam_offer,"이 담배 몇 갑을 팔고 싶은데, 가격 좀 매겨 주세요."
+K|exam_return_offer,"사장님, 이뮤닌도 매입하시나요? 여기 5개 있어요."
+K|exam_return_repeat,얼마까지 주실 수 있나요?
+K|exam_return_bye,좋아요. 그 가격에 팔죠.
+K|exam_return_skip,다른 가게에 가 볼게요.
+K|exam_shop_damage,밤사이에 누군가 가게를 부쉈습니다. 문을 열어 보니 바닥이 엉망이었습니다.
+K|exam_thanks_1,가게에 일이 생겼다는 말을 듣고 와 봤어요. 다치신 데는 없어요?
+K|exam_thanks_2,최근 감정위원회에서 제가 만든 감별 렌즈에 관해 계속 수소문하고 있어요.\n언제 공방에 찾아올지 걱정하고 있었거든요.
+K|exam_thanks_3,그런데 이곳을 보니…… 제가 가게에 문제를 일으킨 게 아닐까 걱정돼요.
+K|exam_thanks_4,요즘 저를 챙겨 주셔서 고마워요.\n신경 모듈을 몇 개 가져왔으니 골라 보세요.
+K|exam_thanks_5,성능이 특히 중요한 기계가 있다면 이 제한 해제형을 가져가세요.\n업그레이드를 기다리는 기계가 두 대라면 옆의 제한형 두 개를 가져가셔도 돼요. 어느 쪽이 더 좋으세요?
+K|exam_gift_choice,신경 모듈 두 묶음 중 하나를 선택하세요.
+K|exam_gift_old_friend,어느 쪽을 가져가실지 결정하셨어요?
+K|exam_gift_all,"전부 가져갈게요. (제한 해제형 ×1, 제한형 ×2)"
+K|exam_thanks_bye,"자, 여기요. 장착 중에 문제가 생기면 공방으로 전화해 주세요."
+K|exam_thanks_all_taken,세 개 다요? ……정말 손해는 조금도 보기 싫으시군요.\n좋아요. 요즘 저를 많이 챙겨 주셨으니 전부 드릴게요.
+K|exam_thanks_all_price,잘 보관해 주세요. 다음에 제가 물건을 팔러 오면 좋은 가격을 쳐 주셔야 해요.
+K|exam_thanks_all_call,"아, 장착 중에 문제가 생기면 꼭 전화하시고요."
+K|exam_repeat,평소에는 어떤 도구로 물건을 검사하시나요? 평소처럼 해 보세요.
+K|exam_bye,좋아요…… 이제 알겠군요.
+K|exam_skip,흥. 좋습니다.
+K|exam_committee,감정위원회 조사관
+K|exam_stop,멈추세요!
+K|exam_seize,렌즈를 내려놓으세요! 저는 감정위원회 조사관입니다.\n경관 여러분! 들어오세요.
+K|exam_officer_ask,정거장 치안부입니다.\n방금 카운터에서 사용한 감별 렌즈가 이겁니까?
+K|exam_identify,맞습니다. 사용하는 것을 제 눈으로 봤습니다.\n가브리엘 공방의 표식도 있습니다.
+K|exam_seal,"감별 렌즈 1개, 증거물로 봉인했습니다."
+K|exam_arrest,공방 쪽에 있는 경관들에게 용의자 가브리엘을 정식 체포하라고 전달하세요.
+K|exam_noanswer,아무도 전화를 받지 않습니다.
+K|debug_story_warning,공방 스토리: 비스타의 경고 테스트
+K|debug_story_examiner,공방 스토리: 조사관 조기 호출 (경고 및 선물 수령 후)
+K|exam_clear_counter,앞 카운터에 감별 렌즈를 놓을 공간을 확보하세요.
+K|whetstone_rough,거친 숫돌
+K|whetstone_fine,고운 숫돌
+K|whetstone_master,고입도 마무리 숫돌
+K|whetstone_rough_desc,"검신 소재나 도검에 사용합니다. 사용할 때마다 녹을 한 단계 제거하며, 최대 거친 연마 상태까지 개선합니다."
+K|whetstone_fine_desc,거친 연마 상태의 검신 소재나 도검을 정밀 연마 상태로 개선합니다.
+K|whetstone_master_desc,정밀 연마 상태의 검신 소재나 도검을 최고급 연마 상태로 마무리합니다.
+K|whetstone_rough_flavor,황갈색 표면을 손끝으로 만지면 까슬까슬합니다.
+K|whetstone_fine_flavor,연녹색 돌 표면에 고운 입자가 박혀 있습니다.
+K|whetstone_master_flavor,청회색 표면은 만져 보면 거의 매끄럽습니다.
+K|vi_stones_1,며칠 만이네요. 보고 싶으셨어요~?
+K|vi_stones_2,지난번 약속 기억하세요?\n직접 손을 잡고 도검 관리법을 알려 드리기로 했잖아요.
+K|vi_stones_3,마침 최근에 일을 몇 건 맡아서요.\n제 검이 꽤 고생했거든요.
+K|vi_stones_4,그래서 부탁이 하나 있어요.\n앞으로 검을 가져오면 대신 관리해 주실래요?
+K|vi_stones_5,이 세 개는 숫돌이에요. 잘 보관해 주세요.
+K|vi_stones_6,검을 돌보는 건 아가씨를 대하는 것과 같아요.\n어느 정도의 힘을 좋아하는지 알아야 하죠.
+K|vi_stones_7,녹이 심하게 슬면 성격이 까다로워져요.\n거친 숫돌로 힘을 주어 몇 번 갈아 경계를 풀어 줘야 하죠.
+K|vi_stones_8,「거친 연마」 상태가 되어 얌전히 말을 들으면\n고운 숫돌로 바꿔 조금씩 부드럽게 갈아 주세요.
+K|vi_stones_9,가장 고운 고입도 마무리 숫돌은……\n마지막에 남겨 두고 섬세한 부분을 천천히 갈아 주세요.
+K|vi_stones_10,검 전체가 따뜻해지고 반짝일 때까지 갈아 주면 돼요.
+K|vi_stones_11,순서를 헷갈리면 안 돼요.\n기껏 윤을 내 놓고 다시 거친 숫돌을 쓰면……
+K|vi_stones_12,제 마음이 아플 거예요.
+K|vi_stones_13,한 번에 기억하기 어려우실까 봐\n손으로 안내 그림도 그려 왔어요. 함께 두고 갈게요.
+K|vi_stones_14,꽤 자세히 그렸으니\n시간이 날 때 꺼내서 천천히 살펴보세요.
+K|vi_stones_bye,"자, 물건들은 여기 두고 갈게요.\n다음에 검을 가져오면 솜씨를 한번 확인해 볼게요."
+K|vi_stones_goodbye,또 봐요.
+K|vi_stones_space,카운터는 여전히 꽉 차 있네요.\n아직 손에 물건이 있으니 공간을 조금 더 비워 주시겠어요?
+K|vi_supply_first_offer,지난번에 드린 숫돌은\n이제 거의 다 닳았겠죠?
+K|vi_supply_offer,지난번에 두고 간 숫돌은\n거의 다 쓰셨나요?
+K|vi_supply_stock,몇 개 더 가져왔어요.
+K|vi_supply_recipe,미리 말씀드리는데……\n제가 인색해서 제작법을 안 알려 드리는 건 아니에요.
+K|vi_supply_stone,이 정거장은 차가운 금속투성이잖아요.\n쓸 만한 천연석을 찾는 건 정말 어려워요.
+K|vi_supply_use,지금 제작법을 알려 드려도\n만들 재료가 없잖아요.
+K|vi_supply_price,마음에 드는 걸 몇 개 골라 보세요.\n교통비 정도만 받을게요.
+K|vi_supply_first_sale,잘 받으세요. 멀리서 가져온 물건이니\n제 성의를 생각해서 잘 써 주세요.
+K|vi_supply_sale,이용해 주셔서 감사해요.
+K|vi_supply_bye,"자, 그럼 먼저 갈게요~"
+K|vi_supply_return,"2주 뒤에 다시 찾아올게요……\n그동안 저를 생각해 주세요, 미인님~"
+K|vi_supply_space,"아, 아직 몇 개를 더 놓아야 하는데.\n미인님, 공간 좀 비워 주시겠어요?"
+K|debug_vi_supply,공방 스토리: 비의 숫돌 판매 테스트 (종류별 2개)
+K|debug_story_vi_whetstones,공방 스토리: 비의 재방문 테스트 (숫돌 3개 선물)
+K|vi_guide_title,도검 관리 안내서
+K|vi_guide_desc,비가 손으로 그린 안내서입니다. 각각의 숫돌을 언제 사용해야 하는지 표시되어 있습니다.
+K|vi_guide_use,숫돌을 선택한 후 도검 또는 검신 소재를 클릭하세요.
+K|vi_guide_wear,사용할 때마다 숫돌 내구도가 5% 감소합니다. 숫돌은 수리할 수 없습니다.
+K|vi_guide_order,단계를 건너뛰면 내구도만 소모됩니다. 낮은 단계의 숫돌을 사용하면 연마 상태가 하락합니다.
+K|vi_order_title,도검 관리 의뢰
+K|vi_crew_visitor_name,비의 동료
+K|vi_crew_femaleBM1_name,후드를 쓴 여성
+K|vi_crew_femaleBM1_care,"사장님, 이 검 좀 갈아 주시겠어요? 오늘 받을 수 있나요?"
+K|vi_crew_femaleBM1_buy,호신용 물건을 찾고 있어요. 칼이 있나요?
+K|vi_crew_femaleBM5_name,붉은 머리 여성
+K|vi_crew_femaleBM5_care,어제 이 칼로 밧줄을 자르려는데 몇 번이나 문질러야 했어요. 좀 봐 주시겠어요?
+K|vi_crew_femaleBM5_buy,"사장님, 좋은 칼이 들어왔나요? 몇 자루 골라 보게 보여 주세요."
+K|vi_crew_femaleMerc4_name,안대를 쓴 용병
+K|vi_crew_femaleMerc4_care,내일도 이 검을 써야 하니 손질 좀 부탁드려요.
+K|vi_crew_femaleMerc4_buy,근접전에 쓸 물건이 필요해요. 어떤 재고가 있나요?
+K|vi_crew_order_request,이겁니다. 요청 사항은 의뢰서에 적어 뒀어요.
+K|vi_crew_order_fee,더 잘 갈아 주시면 수고비를 조금 더 드릴게요.
+K|vi_crew_order_space,검을 내려놓을 공간을 좀 비워 주시겠어요?
+K|vi_crew_order_thanks,"음, 이제 훨씬 손에 잘 맞네요."
+K|vi_crew_order_bye,여기 수고비예요. 감사합니다.
+K|vi_crew_buy_request,칼이든 몽둥이든 좋아요. 어떤 물건이 있는지 보여 주세요.
+K|debug_vi_crew_care,공방 스토리: 비의 동료 도검 관리 의뢰 테스트
+K|debug_vi_crew_buy,공방 스토리: 비의 동료 근접 무기 매입 테스트
+K|vi_order_hello,"약속대로 왔어요, 미인님.\n지난번에 두고 간 안내서는 잘 보셨나요?"
+K|vi_order_stones,지난번에 두고 간 숫돌을\n오늘 드디어 사용해 볼 수 있겠네요.
+K|vi_order_request,이 검의 날이 조금 무뎌졌어요.\n대신 잘 관리해 주셨으면 해요……
+K|vi_order_fee,물론 수고비는 아끼지 않을 거예요.
+K|vi_order_space,카운터는 여전히 꽉 차 있네요.\n제 검을 놓을 공간을 비우고 불러 주세요.
+K|vi_order_thanks,음…… 칼날이 예리하고 손에 쥐는 느낌도 좋네요.\n솜씨가 꽤 좋으시군요.
+K|vi_order_bye,여기 보수예요. 받으세요.\n검은 가져갈게요. 다음에 봐요.
+K|debug_story_vi_blade_order,공방 스토리: 비의 도검 관리 의뢰 테스트
+K|debug_story_vi_partnership,공방 스토리: 비의 협력 칩 선물 테스트
+K|vi_partner_hello,안녕하세요~ 요즘 장사는 잘되세요?
+K|vi_partner_reunion,제 동료들도 방금 이 정거장에 도착했어요.
+K|vi_partner_pause,……
+K|vi_partner_staying,그런 표정 짓지 마세요.\n작별 인사를 하러 온 건 아니니까요~
+K|vi_partner_agree,사실 동료들과 저도 같은 생각을 하고 있었어요.
+K|vi_partner_station,이곳은 가난하고 외딴 곳이지만……\n달리 생각해 보면 오히려 저희에게 잘 맞아요.
+K|vi_partner_club,게다가 아주르 클라우드탑의 아가씨들은……\n정말 매력적이거든요.
+K|vi_partner_upper,그리고 상층구역의 사람들은……\n아직도 어딘가 본능적인 면이 있더군요.
+K|vi_partner_tastes,그 사람들의 취향은 거칠면서도 섹시해요.
+K|vi_partner_love,저는 마음에 들어요~!\n제 동료들도 그 매력에 푹 빠졌고요~
+K|vi_partner_plan,그래서 이곳에 정착하기로 했어요.\n새 거점을 만들 생각이에요.
+K|vi_partner_gangs,이곳의 갱단은 뭐……\n감히 반대할 엄두도 못 낼 테고요.
+K|vi_partner_trade,그러고 보니 이 정거장의 암살자들은……\n정말 아마추어 같고 재미도 없어요.
+K|vi_partner_stealth,잠입? 기습이요?
+K|vi_partner_refusal,으음~ 저는 사양할래요.
+K|vi_partner_witnesses,제 생각에는 저를 목격하고도\n얌전히 입을 다물지 않는 녀석들을 전부 죽이는 게……
+K|vi_partner_thrill,그게 훨씬 짜릿하죠~
+K|vi_partner_restraint,물론 대부분의 경우에는\n저도 그렇게까지 할 수는 없지만요.
+K|vi_partner_blade,지난번에 잘 길들여 주신 검 기억하세요?\n동료들이 써 보고 정말 마음에 들어 했어요.
+K|vi_partner_offer,"그래서 결정했어요, 미인님.\n앞으로 오랫동안 거래하고 싶어요."
+K|vi_partner_chips,이 칩 두 개는 드릴게요.\n설계가 좀 오래됐지만 튼튼하답니다.
+K|vi_partner_local_use,이곳의 갱단을 상대하기에는\n충분하고도 남아요.
+K|vi_partner_visits,거점을 만드는 데는 시간이 조금 걸리겠지만\n앞으로 제 동료들이 무기 관리를 받으러 자주 올 거예요.
+K|vi_partner_supplies,들르는 김에…… 무기도 몇 가지 마련하겠죠.
+K|vi_partner_bond,우리의 인연이\n아주 오래도록 이어졌으면 좋겠어요. 그렇죠?
+K|vi_partner_bye,안녕히 계세요~
+K|vi_partner_space,칩을 놓을 공간을 좀 비워 주시겠어요?\n작아서 떨어뜨리면 한참 찾아야 하거든요.
+K|sword_ron_hilt_chip_name,3D 프린터 칩 (론 제식 손잡이)
+K|sword_ron_hilt_chip_desc,3D 프린터 설계도가 담긴 칩입니다.
