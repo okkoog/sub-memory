@@ -3,10 +3,10 @@
 Ever wonder why the retired traders never actually retire? In Better Merchants, retired traders, suppliers, and some new faces sell their goods after hours at 10 new shops alongside Dr. Jackson.
 
 ### New Night Shops:
-- Retired traders stop visiting your store and sell from their own shops, after one thank-you visit with a discounted first batch
+- Retired traders sell from their own shops, after one thank-you visit with a discounted first batch, and keep visiting your store as in the game
 - Suppliers you could only reach by phone open night shops with the Night Shop upgrade; Shareholder adds a discount there
 - A couple of shadier dealers set up shop too, once you know where to look
-- A setting brings back the old store visits
+- A setting for each trader stops their store visits
 
 ### Merchants:
 - Greenhouse, Arms & Ammo, Water Shop and Gutter Market
@@ -16,18 +16,18 @@ Ever wonder why the retired traders never actually retire? In Better Merchants, 
 ### How the shops work:
 - Fire sales, shop specials, troubles, price hikes, thefts and closing days keep you shopping around
 - Stock shows everything before duplicates and favours what you use most
-- Other mods' goods sell at the shops that fit them
+- Auto-stock: other mods' items sell at the shop that fits their type, with a toggle for each type and each mod
 - A setting lets Dr. Jackson keep selling his full stock
 - Prices follow your difficulty's markups
 
 All settings are under the gear button in the Mods menu.
 
-### What's new in 2.0.1:
+### What's new in 2.0.4:
+- The Greenhouse sells the hatchet
+- Per-trader store visit settings
+- Difficulty markup on every good; Unmarked Stall now +50%
 - New night shops: the Hypertech Den and Gutter Market
 - A facelift for most shops
-- Renamed: Arms & Ammo, Underground Chemist and Ashvin Clinic
-- Other mods' goods sell at the shops that fit them
-- Shop events, new settings, fixes and tweaks
 
 ### Future plans:
 - Thieves who sell what they stole after a robbery

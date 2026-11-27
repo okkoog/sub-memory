@@ -233,6 +233,7 @@ debug_story_status,Workshop story | Spending and event status
 debug_story_visit,Workshop story | Queue introduction or regular visit
 debug_story_rep,Workshop story | Raise Upper District reputation to the first visit threshold
 debug_story_4999,Workshop story | Set total spending to 4999
+debug_story_duke_lucky_water,Workshop story | Test the Duke's Liquid Luck gift (grants one bottle)
 debug_story_compiler,Workshop story | Replay compiler gift (grants gifts again)
 debug_story_matrix,Workshop story | Regrant the one-week note and matrix
 debug_story_medicine,Workshop story | Replay first medicine delivery (3 doses)
@@ -293,7 +294,7 @@ adult_condom_blue_desc,The biggest number on the box usually describes the small
 adult_condom_gold_name,Illusion Condoms
 adult_condom_gold_desc,They say you can barely feel a thing. Except the bill.
 debug_items_condoms,Workshop items: Three condom brands (1 box each)
-debug_items_adult_all,"Workshop items: All adult products (9 types, 1 each)"
+debug_items_adult_all,"Workshop items: All adult products (24 types, 1 each)"
 debug_items_rubber_latex,Workshop materials: Rubber and Latex (1 each)
 adult_chip_dildo_name,3D Printer Chip (Dildo ×2)
 business_visit_1,How is business? There is something I wanted to talk to you about.
@@ -303,7 +304,7 @@ business_visit_4,"But developing new tools gets expensive, so I started making t
 business_visit_5,"You have bought quite a lot from me lately, and the workshop is getting more engineering orders too."
 business_visit_6,Now I can finally spend more time making the things I really want to make.
 business_visit_7,"So I thought I could pass this side of the business on to you.\nGive it a try, if you like."
-business_visit_8,This 3D printer and chip are for you. I brought enough materials for a first batch too.
+business_visit_8,The printer and both chips are yours. I brought rubber for the plug. The other chip makes a beaded glass wand. Fit a high-temperature nozzle for that one.
 business_visit_9,"If you would rather not take over the business, you can sell the things I brought you instead."
 business_visit_10,I will send my old customers your way as well.
 business_visit_11,"Do not worry, these products are legal on the station.\nMost customers are wealthy Upper-Level residents, and they are happy to spend."
@@ -392,18 +393,18 @@ settings_vista_portrait_tooltip,Choose Vista’s portrait style. Enhanced style 
 adult_chip_plug_name,3D Printer Chip (Butt Plug ×2)
 adult_chip_conqueror_name,3D Printer Chip (Giant Dildo “Conqueror” ×1)
 vista_chip_dildo_1,Our clients have been very pleased with what we have bought from you recently.
-vista_chip_dildo_2,Here is a chip I got from Gabrielle.
+vista_chip_dildo_2,"I got two chips from Gabrielle. One makes dildos, the other makes curved double-ended glass dildos."
 vista_chip_conqueror_1,"Business has been going very well, so our clients have made a new request."
 vista_chip_conqueror_2,A new toy called the “Conqueror.”
 vista_chip_bye,Call me when you have stock. Until next time.
 debug_story_vista_dildo_chip,"Story: Vista gives the dildo chip (1,000 sales)"
 debug_story_vista_conqueror_chip,"Story: Vista gives the Conqueror chip (3,000 sales)"
 debug_items_adult_crates,Adult products: vanilla medical and service crates
-vista_chip_dildo_3,You could try using it to make some new products.
+vista_chip_dildo_3,Try making one of each and see which sells better.
 vista_chip_dildo_4,Just contact me when you have stock.
 vista_chip_dildo_5,"Until next time, then."
 vista_chip_conqueror_3,"The size is unusual, but rest assured, there is a genuine demand for it."
-vista_chip_conqueror_4,We asked Gabrielle to make this new chip especially for us. Please take it.
+vista_chip_conqueror_4,Gabrielle made this Conqueror chip specially. This other one's for a glass tentacle. Take them both.
 vista_chip_conqueror_5,Gabrielle said this toy might even serve as a weapon.
 vista_chip_conqueror_6,"Of course, that was only a joke. Sex dolls are incapable of assault."
 vista_chip_conqueror_7,"We are fitted with sex-doll chips, which prevent us from deliberately harming others."
@@ -476,9 +477,9 @@ duke_referral_bye,I’ll head back to the workshop now. See you next time!
 duke_phone_cooldown,The Star Duke is still out adventuring. Talk later.
 glass_plate_name,Glass Plate
 glass_plate_desc,"A thin, clear sheet made from remelted glass shards, ready for further processing."
-glass_smelting_module_name,Glass Smelting Module
-glass_smelting_module_desc,A module designed for the smelting furnace.
-glass_smelting_module_effect,Smelts 2 glass shards or 1 empty beer bottle into 2 glass plates.
+glass_smelting_module_name,Furnace Module (Glass Smelting)
+glass_smelting_module_desc,A special furnace module that turns glass shards or empty beer bottles into glass plates.
+glass_smelting_module_effect,Converts 2 glass shards or 1 empty beer bottle into 2 glass plates
 wine_bottle_chip_name,3D Printer Chip ({0} ×{1})
 high_temperature_nozzle_name,High-Temperature Printing Nozzle Module
 high_temperature_nozzle_desc,Allows the printer to use glass plates to print glass products.
@@ -609,6 +610,17 @@ magnifier_fuel_seal_unknown,Unrecognized maker’s mark
 magnifier_appraisal_progress,Scanned {0}/{1}
 gabrielle_old_friend_discount,Childhood Friend Discount
 drone_name,Scavenging Drone
+mobility_intro,"With your health, getting out must be difficult…"
+mobility_offer,I brought you a little help. It’s easy to use.
+mobility_handoff,This is a scavenging drone.
+mobility_tools,"Here’s the battery and the repair kit.\nIf it gets knocked about out there, you can fix it yourself."
+mobility_manual,"There’s a manual inside, too. You’re quick. One look and you’ll know what to do."
+mobility_power,You could send it out tonight and see how it does.
+mobility_upgrades,"It could still use a weapon and some modules, though. It’d get more done that way."
+mobility_parts,…Think you could track those down yourself?
+mobility_bye,See you next time.
+mobility_space,The counter’s a little crowded. I can’t fit everything I brought you.
+debug_story_mobility_aid,Workshop story | Test Gabrielle's scavenging drone gift
 drone_desc,A scavenging drone with work and standby modes. It scavenges at night in work mode and returns to the front counter next morning.
 drone_module_bay,Modules
 drone_weapon_bay,Armament
@@ -646,7 +658,7 @@ drone_night_result_attacked,The drone completed its scavenging mission and broug
 aui_section_durability,Durability
 drone_broken,Durability depleted. Unable to deploy.
 repair_kit_name,Repair Tool Kit
-repair_kit_desc,"Repairs items with durability. Refill with metal ingots, scrap metal or screws."
+repair_kit_desc,"Refurbishes firearms and repairs some machines and tools. Refill with metal ingots, scrap metal or screws."
 repair_material_remaining,Materials remaining
 debug_items_repair,Repair tool kit and refill materials
 drone_manual_name,How To: The Scavenging Drone
@@ -664,4 +676,393 @@ chip_expansion_incompatible,This machine has an incompatible chip-slot layout. T
 chip_expansion_slots,Chip slots: {0}/{1}
 debug_items_desequencer,Workshop | Desequencer and chip expansion test
 settings_streamer_label,Minor Mode
-settings_streamer_tooltip,"Enabled by default. Shows boxed versions of the butt plug, dildo and Conqueror. Turn off to display original artwork. Visuals only; applies when settings are saved."
+settings_streamer_tooltip,On by default. Displays selected adult products in boxes. Turn off to show the items themselves. Takes effect when settings are saved.
+duke_lucky_water_gift,"You've been a pleasure to do business with, so the Duke brought you a gift!"
+duke_lucky_water_wait,"Oh! The Duke brought you a gift, but your counter's full. Next time!"
+module_incubator_name,Autonomous Iterator
+module_incubator_training,Iteration Chamber
+module_incubator_desc,Advances the progress of modules with a Learning Algorithm. Requires Energy. Overnight.
+module_incubator_manual_name,How To: The Autonomous Iterator
+module_incubator_manual_short,Insert a power source and place modules with a Learning Algorithm in the Iteration Chamber. Each module learns once overnight. Drag a Metal Ingot onto the machine to expand the bay.
+module_incubator_manual_text,[Module Impact]:\n  Efficiency: Power Consumption (Ratio 0.75)\n  Performance: Power Consumption (Ratio 0.25)\n  Quality: +1 learning use per 75 Quality
+debug_items_module_incubator,Workshop | Autonomous Iterator + Battery + Metal Ingots
+quality_refiner_name,Molecular Reconstructor
+quality_refiner_tray,Treatment Bay
+quality_refiner_desc,"Improves equipment condition, Metal Ingot purity, and wine quality. Requires Energy, water, and reconstruction material. Overnight."
+sentinel_catheter_name,Sentinel Catheter
+sentinel_catheter_doses,Immunivax
+sentinel_catheter_desc,"Load Immunivax to inject automatically before Sentinel Syndrome causes damage. Extends counterfeit, expired and genuine doses by 1, 2 and 3 days respectively."
+sentinel_catheter_log,The catheter used one Immunivax dose automatically and extended its effect by {0} days.
+debug_items_quality_refiner,Workshop | Molecular Reconstructor + Test Supplies
+debug_items_sentinel_catheter,Workshop | Sentinel Catheter + Immunivax
+debug_items_hypertech_booster,Workshop | Hypertech Turbo Booster (30 uses)
+quality_refiner_materials,Reconstruction Material
+quality_refiner_manual_name,How To: The Molecular Reconstructor
+quality_refiner_manual_short,"Insert a power source and a container filled with water, then load the Treatment Bay. Each eligible item gains one grade overnight and uses 2% reconstruction material and 50 mL of water. Cleaner water reduces power consumption. Drag 3D Printing Filament onto the machine to refill it, or Electronic Parts (Common) to expand the bay."
+quality_refiner_manual_text,[Module Impact]:\n  Efficiency: Power Consumption (Ratio 0.5)\n  Performance: Power Consumption (Ratio 0.5)\n  Quality: +1 grade per 150 Quality at no extra cost
+aui_power_draw,Power consumption
+aui_nightly_learning,Learning uses per night
+aui_nightly_grades,Grades per night
+machine_storage_kit_name,Standard Industrial Upgrade Tool
+machine_storage_kit_desc,Expands furnace storage and adds bays for smelting modules and additives. Can also add a second production line to a 3D Printer. One upgrade per machine.
+furnace_auxiliary_input,Additives
+furnace_specialist_modules,Smelting Modules
+furnace_compact_modules_hint,This save uses legacy slots. Clear them and reopen the Furnace to update the layout.
+industrial_furnace_name,Industrial Furnace
+industrial_printer_name,Industrial 3D Printer
+printer_line_tab,Line {0}
+printer_line_no_chip,No chip
+printer_line_ready,Ready
+printer_line_working,Printing {0}/{1}
+printer_line_legacy_bay,Clear the last two rows of the old bay to use the new size.
+machine_storage_kit_no_space,Not enough space. Move the machine to a clear area before expanding it.
+debug_items_machine_storage_kit,Workshop | Standard Industrial Upgrade Tool
+vi_name,Vi
+vi_intro_1,"Hello, gorgeous. I'm Vi."
+vi_intro_2,"…Before you correct me, these ocular implants of mine are an old model. They have a little glitch."
+vi_intro_3,"Look alive, and you look like a pretty girl to me."
+vi_intro_4,So I call everyone “gorgeous.” Force of habit.
+vi_intro_5,Never got around to fixing them… Imagine a whole street full of girls you can't take your eyes off.\nEven work feels like a date. What's not to like?
+vi_intro_6,"Anyway, down to business."
+vi_intro_7,Pirates shot up my airship. I barely managed to land her here.\nSecurity impounded her the moment I touched down.
+vi_intro_8,"Then last night at Azure Cloudtop, a few little vipers wrapped themselves around me and wouldn't let go.\nI gave in. They left me drained in every sense, wallet included."
+vi_intro_9,Only today did I find out you don't even have an interstellar bank.\nCan't pay in standard currency either.
+vi_intro_10,"Rather quaint, in its way…\nJust a teensy bit inconvenient."
+vi_intro_11,"This is a pawnshop, right?"
+vi_intro_12,I've got an antique here. See what it'll fetch in credits.
+vi_intro_13,"Of course, if my sword doesn't interest you, gorgeous…\nI could always put up this body of mine as collateral."
+vi_offer_1,Take a look. This was Connay's latest model half a century ago.
+vi_offer_2,I suppose it still counts as “new” around here.
+vi_offer_3,"She's getting on a bit, though. A little stiff in the joints."
+vi_offer_4,"Next time we have a moment, I'll put my hands over yours… and show you how to take good care of her."
+vi_bought,Mm… Is that all?
+vi_bought_2,That'll barely buy a few drinks for the girls at Azure Cloudtop.
+vi_bought_3,Looks like I'll have to take on some private work around here.
+vi_bought_4,"If there's someone you'd like “taken care of,” you know where to find me."
+vi_bought_5,"If she's my type, I'll “spar” with her till her knees go weak before I get down to business.\nAnd you… get a discount."
+vi_refused,"Cold, aren't you? I was naive to expect anyone on the station's lower levels to know quality when they see it."
+vi_counter_full,Where's my darling supposed to lie down with your counter as full as that?\nMake a little room and I'll let you take your time admiring her.
+research_return_1,"Hi, it's been a while. I can finally get away from the workshop for a bit."
+research_return_2,I brought a Molecular Reconstructor. It's the prototype I've been testing. It's yours if you can use it.
+research_return_3,I'll bring the workshop stock myself from now on. You can tell me how the prototype's working out.
+quality_refiner_prototype,Prototype
+debug_story_research_return,Workshop story | Test Gabrielle's return
+debug_story_vi_visit,Workshop story | Test Vi's first visit
+sword_category,Sword
+sword_category_blade,Blade blank
+sword_category_module,Sword mod
+sword_sharpness,Sharpness
+sword_rigidity,Rigidity
+sword_cutting,Cutting ability
+sword_resilience,Resilience
+sword_balance,Balance stability
+sword_style,Style
+sword_blade_name,Straight blade blank
+sword_blade_desc,A solid metal blade blank with a socket for a hilt at the base.
+sword_grade_rough,Rough
+sword_grade_common,Common
+sword_grade_fine,Fine
+sword_grade_excellent,Excellent
+sword_grade_supreme,Supreme
+sword_hilt_name,Carbon-fiber hilt
+sword_hilt_desc,A lightweight carbon-fiber hilt for the workshop's straight blades.
+straight_sword_name,Straight sword
+straight_sword_desc,This straight sword pairs the {0} with the {1}.
+sword_unload_full,Not enough room to separate the blade and hilt.
+sword_blade_chip_name,Industrial 3D printer chip (straight blade blank)
+sword_blade_chip_desc,A chip that contains the 3D printer blueprint.
+sword_hilt_chip_name,3D printer chip (Connay service hilt)
+sword_hilt_chip_desc,Prints one Connay service hilt from one unit of 3D printer filament.
+sword_assembly_full,The sword needs 13 cells in a row. Clear some space before assembly.
+debug_items_swords,Workshop items | Sword printing chips and materials
+sword_care_label,Blade care: {0}
+sword_care_corroded,Severely corroded
+sword_care_rusty,Rust-spotted
+sword_care_rough,Rough polish
+sword_care_fine,Fine polish
+sword_care_master,Master polish
+sword_standard,Standard metal blade
+sword_refined,Traditionally refined blade
+sword_compressed,Hypercompressed blade
+sword_part_connay,Connay service hilt
+sword_part_carbon,Skeletonized carbon hilt
+sword_part_ron,Ron service hilt
+sword_part_white_hunt,White Hunt hilt
+sword_part_guard,Sword guard
+sword_part_serrated,Serrated spine
+sword_part_thermal,Thermal edge
+sword_part_toxin,Toxin edge
+sword_part_openwork,Openwork
+sword_part_fuller,Fuller
+sword_slot_grip,Hilt
+sword_slot_guard,Guard
+sword_slot_spine,Spine
+sword_slot_edge,Edge
+sword_slot_body,Blade body
+sword_fixed_desc,Irreversible modification. Stays on this blade permanently.
+sword_fixed_label,{0} (irreversible modification)
+sword_removable_desc,Can be removed with Unload.
+debug_items_blade_prices,Workshop items – three blades
+debug_items_sword_grips,Workshop items – four hilts
+debug_items_sword_fittings,Workshop items – blade fittings
+sword_slot_reserved,Reserved
+sword_slot_special,Special mod {0}
+sword_refined_desc,Fine grinding marks run along the face of this refined metal blank.
+sword_compressed_desc,An ultracompressed metal blank with a thick spine that runs almost to the tip.
+sword_part_connay_desc,A Connay service hilt with a broad collar at the base of the blade.
+sword_part_carbon_desc,A long opening in the grip makes this carbon hilt unusually light.
+sword_part_ron_desc,The Ron service hilt has a heavy metal core that steadies the grip.
+sword_part_white_hunt_desc,Pale grip panels and gold end caps give the White Hunt its distinctive look.
+sword_part_guard_desc,A guard plate that sits just ahead of the hilt.
+sword_part_serrated_desc,A short strip of nine closely spaced teeth for the spine of a straight blade.
+sword_part_thermal_desc,"A thermal edge strip for a straight blade, powered through the hilt."
+sword_part_toxin_desc,A replacement edge with a toxin coating and a muted gray-green sheen.
+sword_part_openwork_desc,A lightweight blade-body insert with an open center.
+sword_part_fuller_desc,A grooved insert that runs lengthwise along the blade.
+sword_fixed_notice,Irreversible modification
+sword_heat_lit_text,A fine orange line runs from the collar to the tip.
+sword_heat_rust_text,Rust freckles the edge strip. Its orange light has gone out.
+sword_heat_cold_text,The edge strip is dull gray. The contacts at its base are exposed.
+sword_part_connay_body,Connay service blade body
+sword_part_connay_body_desc,The initials CN are cut into the blue-grey inlay. Pair it with a Connay service hilt and a thermal edge to qualify for the maker’s premium.
+sword_connay_maker,Connay Joint Armaments Division
+sword_connay_premium,{0} (value +{1}%)
+sword_connay_label,Connay Arms
+adult_nipple_clamps_name,Twin-chain nipple clamp collar
+adult_nipple_clamps_desc,Safe and effective. Occasionally doubles as an accessory for your outfit.
+adult_restraint_cuffs_name,Wrist restraints
+adult_restraint_cuffs_desc,"Time for some roleplay. Are you the officer, or…?"
+debug_items_chain_preview,Workshop preview | Nipple clamps and wrist restraints (1 each)
+adult_blindfold_name,Buckled blindfold
+adult_ball_gag_name,Ball gag
+adult_paddle_name,Discipline paddle
+adult_flogger_name,Soft leather flogger
+adult_glass_wand_name,Beaded glass wand
+adult_glass_dual_name,Curved double-ended glass dildo
+adult_glass_curl_name,Glass tentacle
+adult_flip_name,Flip-open masturbator
+adult_soft_cast_name,Soft molded torso
+adult_polly_five_name,Clitoral massager
+adult_delay_gel_name,Delay gel
+adult_care_oil_name,Nourishing oil
+adult_massage_cream_name,Massage cream
+adult_blindfold_desc,Please don't use it as a sleep mask in public. People will think you're a pervert.
+adult_ball_gag_desc,"Usually used on animals to stop them biting. Humans, of course, are animals too."
+adult_paddle_desc,"It doesn't pack much of a punch. For certain occasions, that's just right."
+adult_flogger_desc,"Just enough sting, and no marks. That's the fun of it."
+adult_glass_wand_desc,"It looks rather crude. In use, though, you can see right through it, down to the intimate anatomy and the fluids that set the pulse racing."
+adult_glass_dual_desc,"The box reads, “A perfect curve and finely crafted spheres. Even if it breaks, the user will come to no harm.”"
+adult_glass_curl_desc,"A pink glass tentacle, suckers and all. After it went in the window, someone came in asking for directions to the aquarium shop."
+adult_flip_desc,Know why people pick this sleeve? It's discreet and easy to clean.
+adult_soft_cast_desc,"An old, primitive toy. Still does the job."
+adult_polly_five_desc,"High-frequency vibration, a wraparound design and a weak current. No wonder they call it the “Instant O”."
+adult_delay_gel_desc,"Most of the time, people want efficiency. In bed, though, the slower the better."
+adult_care_oil_desc,"This oil used to be famous in the Upper Levels for its all-natural extracts. These days, everyone knows that “all-natural” is out of the question."
+adult_massage_cream_desc,"Massage usually takes skill. With this, a few strokes are enough to make anyone surrender. No wonder everyone likes it."
+adult_neon_sign_name,Adult Goods Neon Sign
+adult_sign_broker_name,"Upper-Level Broker"
+adult_sign_broker_offer,"I brought this lot down from the Upper Levels. Take a look. There's room on the price if you take the lot."
+research_new_1,It's been a while. I've just wrapped up this round of research.
+research_new_2,Maybe you've been wondering what I've been working on.
+research_new_3,Take a look at this and you'll see!
+research_new_4,This is what I have to show for all those days of work.
+research_new_5,A molecular reconstructor!
+research_new_6,This one's the prototype. I'd like you to have it.\nThank you for supporting the workshop all this time.
+research_new_7,"To a certain extent, this machine can rearrange the atoms in a material.\nThat changes its properties and quality."
+research_new_8,"In short, it gives wine more body and makes metal harder."
+research_new_9,"Quite an invention, don't you think?"
+research_new_10,I'll make the deliveries myself from now on.\nI'm getting my next research project ready.
+research_new_11,So I'm running short on credits again. I hope you'll keep buying from me.
+research_new_12,"Well then, until next time."
+research_friend_1,Long time no see! Miss me?
+research_friend_2,Dying to know what I've been up to lately?
+research_friend_3,Ta-da! Look what I've got!
+research_friend_4,A molecular reconstructor!
+research_friend_5,This thing's a real beauty!
+research_friend_6,It gives wine more body and makes metal harder.
+research_friend_7,"How does it work? Well… it rearranges the atoms in a material. It can affect the molecules, too."
+research_friend_8,I'll spare you the details. I tossed the instructions inside the machine.
+research_friend_9,I'll be making the deliveries myself from now on.\nI'm getting my next research project ready.
+research_friend_10,"Which means I'm short on credits again. Do send a little business my way, won't you?"
+research_friend_11,"Well then, see you next time."
+bd_deck,Dreamsense Player
+bd_moon,Dreamsense Cartridge - Edgerunners
+bd_moon_flavor,"“I'm sorry, Lucy. I can't take you to the moon with me.”"
+bd_flowers,Dreamsense Cartridge - Echo of Starsong
+bd_nameless,Unnamed Cartridge
+bd_flowers_flavor,"Neither path endures. We meet without setting out. Neither path endures. Without setting out, we meet."
+bd_slot,Playback slot
+bd_play,Play
+bd_screen,Playback
+bd_desc,Insert a cartridge in the playback slot and press Play. Spare cartridges go in storage.
+bd_tape_desc,For use with the sensory playback headset.
+bd_loading,Reading cartridge…
+bd_error,Cannot play this cartridge. Press Esc to return.
+bd_debug,"Sensory playback: headset, three cartridges and case"
+bd_pause,Pause
+bd_theater,Fullscreen
+bd_standard,Standard
+bd_minimize,Minimize
+bd_restore,Restore
+bd_case,Dreamsense Cartridge Case
+bd_case_desc,A hard case for nine sensory recordings.
+settings_vi_portrait_label,Vi portrait
+settings_vi_portrait_tooltip,Choose Vi’s portrait style. Enhanced style 1 uses more pronounced pixel clusters; enhanced style 2 has a softer finish. Apply and reload your save. This setting is shared across all saves.
+bd_unreadable,The cartridge cannot be read.
+warn_known,Hello. There's something I'd like you to keep an eye out for. It's about Gabrielle.
+warn_new,Hello. You can call me Vista.
+warn_new_2,I'm a high-end sex doll at Azure Cloudtop in the Upper Level.\nWe used to order all our equipment from Gabrielle.
+warn_new_3,"I hear she comes here often these days.\nFor her safety, there's something I need to tell you."
+warn_1,"Two nights ago, a guest asked me if Gabrielle had delivered anything new."
+warn_2,I thought he wanted a different toy. I was about to offer him a choice.\nIt turned out he meant some kind of magnifier.
+warn_3,"Gabrielle's Spectral Inspection Lens, to be precise."
+warn_4,"He said if it sold well, the station would have no need for an Appraisal Committee."
+warn_5,"Later, when I went to collect the glasses, I heard them still talking about her."
+warn_6,Only this time it was about…\nhow much evidence they'd need to shut down the workshop and arrest Gabrielle.
+warn_7,"I can't tell you exactly why, but Gabrielle is important to “us.”"
+warn_8,So I've brought you something.
+warn_9,"This is a Dreamsense Player. A long time ago, some people called it a “braindance.”"
+warn_10,"Here's a case of cartridges, too.\nOne of them shows the face of the guest who questioned me that night."
+warn_11,Watch a little further. You get the clearest look when he lifts his head.
+warn_12,He's gathering evidence for the Appraisal Committee.\nHe may stop by sometime in the next three days.
+warn_13,"If he asks you to appraise his goods, take them as usual."
+warn_14,"Just put away the Spectral Inspection Lens Gabrielle modified, please."
+warn_15,"If you use it in front of him, he can take it away.\nThen they'll really have their evidence."
+warn_16,I'll leave the Dreamsense Player here with you.
+warn_17,You may find you need it quite often from now on.
+warn_18,Until next time.
+exam_customer,Upper-Level Customer
+exam_offer,I'm looking to sell these packs of cigarettes. Give me a price.
+exam_return_offer,Do you buy Immunivax? I’ve got five doses.
+exam_return_repeat,What can you offer?
+exam_return_bye,Deal.
+exam_return_skip,I’ll try another shop.
+exam_shop_damage,Someone vandalized the shop overnight. The floor was a mess at opening time.
+exam_thanks_1,"I heard something happened at your shop, so I came to check on you. Are you hurt?"
+exam_thanks_2,The Appraisal Committee’s been asking around about that inspection lens I made.\nI kept wondering when they’d turn up at my workshop.
+exam_thanks_3,Seeing your place like this… I’m worried I might have brought trouble to your door.
+exam_thanks_4,Thanks for looking out for me lately.\nI’ve brought some neural modules. Take your pick.
+exam_thanks_5,"If you’ve got a machine that needs all the performance it can get, take this uncapped one.\nIf you have two machines waiting for an upgrade, you can have both capped ones beside it. Which would suit you better?"
+exam_gift_choice,Choose one bundle of neural modules.
+exam_gift_old_friend,Decided which ones you want?
+exam_gift_all,I’ll take them all (1 uncapped + 2 capped)
+exam_thanks_bye,"Here you go. If you run into trouble fitting them, give me a call at the workshop."
+exam_thanks_all_taken,All three? …You never do pass up a good deal.\nAll right. You’ve looked out for me lately. Take them all.
+exam_thanks_all_price,"Hang on to those. Next time I bring something in to sell, you’d better give me a good price."
+exam_thanks_all_call,"Oh, and give me a call if you run into trouble installing them."
+exam_repeat,How do you usually check your stock? Go ahead as you normally would.
+exam_bye,Right… That tells me enough.
+exam_skip,Hmph. Fine.
+exam_committee,Appraisal Committee Investigator
+exam_stop,Hold it!
+exam_seize,Put the lens down! I'm an investigator with the Appraisal Committee.\nOfficers! Come on in.
+exam_officer_ask,Station Security.\nIs this the inspection lens that was just used at the counter?
+exam_identify,"Yes. I saw him use it myself.\nIt bears the mark of Gabrielle's Workshop, too."
+exam_seal,"One inspection lens, sealed as evidence."
+exam_arrest,"Tell the officers at the workshop to place the suspect, Gabrielle, under arrest."
+exam_noanswer,No one answers.
+debug_story_warning,Workshop story — Vista brings a warning
+debug_story_examiner,Workshop story — Call the investigator early (after the warning and gifts)
+exam_clear_counter,Make room on the front counter for the inspection lens.
+whetstone_rough,Coarse Whetstone
+whetstone_fine,Fine Whetstone
+whetstone_master,High-Grit Finishing Stone
+whetstone_rough_desc,"Removes one stage of rust per use from a blade blank or sword, up to a rough polish."
+whetstone_fine_desc,Refines a rough-polished blade blank or sword to a fine polish.
+whetstone_master_desc,Gives a fine-polished blade blank or sword its final master polish.
+whetstone_rough_flavor,The ochre surface feels gritty under a fingertip.
+whetstone_fine_flavor,Fine grains are embedded in the pale green stone.
+whetstone_master_flavor,The blue-grey face feels almost smooth.
+vi_stones_1,It's been a few days. Miss me~?
+vi_stones_2,Remember my little promise?\nI'd guide your hands and show you how to care for a blade.
+vi_stones_3,"I've taken a few jobs lately,\nand they've been hard on my blade."
+vi_stones_4,"So I have a favor to ask.\nWhen I bring her by, would you look after her for me?"
+vi_stones_5,These three are whetstones. Keep them safe for me.
+vi_stones_6,Tending to a blade is like tending to a girl.\nYou've got to know how firm a touch she likes.
+vi_stones_7,"When she's all rusty, she puts up a fight.\nA couple of firm strokes with the coarse stone will get her guard down."
+vi_stones_8,"Once she's at “Rough polish” and behaving herself,\ntake the fine stone and give her a gentler touch."
+vi_stones_9,As for that high-grit finishing stone…\nSave it for last. Go slowly over her most sensitive spots.
+vi_stones_10,Keep at it till she's warm all over and gleaming.
+vi_stones_11,"Mind the order, won't you?\nImagine getting her all glossy, then going at her with the coarse stone again…"
+vi_stones_12,"Oh, that'd break my heart."
+vi_stones_13,"It's a lot to remember in one go,\nso I drew you a little guide. Here, keep it."
+vi_stones_14,I put quite a bit of detail in there.\nTake it out when you've got a moment and have a good long look.
+vi_stones_bye,"Right, I'll leave these here with you.\nNext time I bring my blade, I'll see what those hands of yours can do."
+vi_stones_goodbye,See you around.
+vi_stones_space,"Your counter's as full as ever.\nMake a little room for me, won't you? My hands are still full."
+vi_supply_first_offer,Those whetstones I gave you last time…\nI bet they're nearly worn down by now?
+vi_supply_offer,Nearly used up the stones\nI left you last time?
+vi_supply_stock,I brought you a few more.
+vi_supply_recipe,Before you say anything…\nI'm not keeping the recipe to myself because I'm stingy.
+vi_supply_stone,It's all cold metal on this station.\nGood luck finding a decent piece of natural stone here.
+vi_supply_use,"Even if I gave you the recipe now,\nwhat would you make them out of?"
+vi_supply_price,Pick a few you like.\nJust cover my fare.
+vi_supply_first_sale,"There you go. I came a long way with those,\nso put them to good use for me, won't you?"
+vi_supply_sale,Thanks for the business.
+vi_supply_bye,"Well, I'm off~"
+vi_supply_return,"I'll see you in two weeks…\nMiss me while I'm gone, gorgeous~"
+vi_supply_space,"Still got a few in my hands.\nMake a little room for me, gorgeous?"
+debug_vi_supply,Workshop | Test Vi's whetstone sale (two of each)
+debug_story_vi_whetstones,Workshop story | Test Vi’s return (three whetstones)
+vi_guide_title,Blade Care Guide
+vi_guide_desc,A loose sheet of Vi’s sketches showing when to use each whetstone.
+vi_guide_use,"Select a stone, then a sword or blade blank."
+vi_guide_wear,Each use costs 5% stone durability. Stones cannot be repaired.
+vi_guide_order,Skipping a grade wastes durability. A coarser stone lowers the finish.
+vi_order_title,Blade maintenance
+vi_crew_visitor_name,Vi’s associate
+vi_crew_femaleBM1_name,Hooded Woman
+vi_crew_femaleBM1_care,Could you sharpen this for me? Can I pick it up today?
+vi_crew_femaleBM1_buy,I’m after something for protection. Got any knives?
+vi_crew_femaleBM5_name,Red-haired Woman
+vi_crew_femaleBM5_care,Tried cutting a rope with this yesterday. Had to saw at it. Could you take a look?
+vi_crew_femaleBM5_buy,Got any good blades in? Let me see a few.
+vi_crew_femaleMerc4_name,Eyepatched Mercenary
+vi_crew_femaleMerc4_care,I’ll need this blade tomorrow. Could you give it a once-over?
+vi_crew_femaleMerc4_buy,I need something for close quarters. What have you got in stock?
+vi_crew_order_request,This one. I wrote down what I need.
+vi_crew_order_fee,I’ll pay a bit extra for a finer edge.
+vi_crew_order_space,Could you clear a spot so I can set this down?
+vi_crew_order_thanks,Mm. That feels better.
+vi_crew_order_bye,Here’s your pay. Thanks.
+vi_crew_buy_request,"A blade, a club… Let me see what you’ve got."
+debug_vi_crew_care,Workshop story | Test blade maintenance for Vi’s crew
+debug_vi_crew_buy,Workshop story | Test a melee weapon buyer from Vi’s crew
+vi_order_hello,"Here I am, beautiful. Just like I promised.\nDid you get a good look at that guide I left you?"
+vi_order_stones,Those whetstones I left with you last time?\nYou'll get to put them to work today.
+vi_order_request,She's lost a little of her edge.\nI need you to take good care of her for me…
+vi_order_fee,"Of course, I won't skimp on your fee."
+vi_order_space,Your counter's as full as ever.\nMake a little room for my blade and give me a shout.
+vi_order_thanks,"Mm… a keen edge, and she sits so sweetly in the hand.\nYou've got quite a touch."
+vi_order_bye,"Here, you've earned this.\nI'll take her with me. Until next time."
+debug_story_vi_blade_order,Workshop story | Test Vi's blade commission
+debug_story_vi_partnership,Workshop story | Test Vi’s partnership gift
+vi_partner_hello,Hey there~ How’s business?
+vi_partner_reunion,"My girls just got to the station, too."
+vi_partner_pause,…
+vi_partner_staying,"Oh, don’t give me that look.\nI didn’t come to say goodbye~"
+vi_partner_agree,Turns out the girls and I had the same idea.
+vi_partner_station,"This place is broke and a long way from anywhere…\nCome to think of it, that rather suits us."
+vi_partner_club,"Besides, the girls at Azure Cloudtop…\nGod, they’re tempting."
+vi_partner_upper,And those Upper Level types of yours…\nThere’s still something downright primal about them.
+vi_partner_tastes,Their tastes are savage. And sexy.
+vi_partner_love,I like it~!\nThe girls can’t get enough of it either~
+vi_partner_plan,So we’re putting down roots.\nWe’ll set up a new base here.
+vi_partner_gangs,As for the local gangs…\nI doubt any of them would dare object.
+vi_partner_trade,"Speaking of which, the assassins on this station…\nSuch amateurs. Such a bore."
+vi_partner_stealth,Sneak around? Take someone by surprise?
+vi_partner_refusal,Mmm~ I’ll pass.
+vi_partner_witnesses,"Now, if someone sees me\nand won’t keep that pretty mouth shut, I say kill every last one of them…"
+vi_partner_thrill,That’s more my idea of fun~
+vi_partner_restraint,"Of course, most of the time,\neven I can’t go quite that far."
+vi_partner_blade,Remember that sword you “tamed” for me?\nThe girls tried her out. They’re absolutely smitten.
+vi_partner_offer,"So I’ve made up my mind, darling.\nI want to keep doing business with you."
+vi_partner_chips,"These two chips are yours.\nOlder designs, I know, but they’re built to last."
+vi_partner_local_use,More than enough\nto handle the local gangs around here.
+vi_partner_visits,"Getting the base set up will take a little time.\nAfter that, my girls will be regulars here for weapon maintenance."
+vi_partner_supplies,And while they’re here… they’ll pick up a few things to round out their arsenals.
+vi_partner_bond,"I do hope we’ll stay entangled like this\nfor a long, long time. Don’t you?"
+vi_partner_bye,Bye-bye~
+vi_partner_space,"Clear me a little space for the chips, would you?\nIf one falls, we’ll be looking for it all day."
+sword_ron_hilt_chip_name,3D printer chip (Ron service hilt)
+sword_ron_hilt_chip_desc,A chip that contains the 3D printer blueprint.

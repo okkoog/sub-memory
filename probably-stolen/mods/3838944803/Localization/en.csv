@@ -1446,7 +1446,7 @@ crate.scenario.with2,A smuggler who visits every 5 days
 crate.scenario.with3,Six kinds of crates to unlock and search
 crate.scenario.with4,A Keycard Writer
 crate.writer.name,Keycard Writer
-crate.writer.desc,Insert a writing module and a battery. Place an Upper Levels blank keycard in the input and collect the finished card from the output.
+crate.writer.desc,Insert a writing module and a battery. Place an Upper Levels blank keycard in the input and collect the finished card from the output. Crafted cards can only open crates and cannot be traded for blind crates at the Private Exchange.
 crate.writer.flavor,A desktop encoder with a slot and a status light on the front.
 crate.writer.chip_name,Writing Module · {0}
 crate.writer.chip_desc,Install in a Keycard Writer to turn an Upper Levels blank keycard into a {0}.
@@ -1509,6 +1509,8 @@ crate.card.compartment.name,Compartment Keycard
 crate.card.compartment.desc,Opens one locked compartment. Single use.
 crate.card.universal.name,Universal Keycard
 crate.card.universal.desc,Opens any one Upper Levels labeled or blind crate. Single use.
+crate.card.crafted_name,{0} (Crafted)
+crate.card.crafted_note,[Crafted Card] For opening crates only; cannot be traded for blind crates at the Private Exchange.
 crate.open.window_title,Opening crate
 crate.open.done,Done: blue {0}, purple {1}, gold {2}, red {3}. Once you take everything, the empty crate goes away.
 crate.open.opened_suffix, (opened)
@@ -1669,6 +1671,8 @@ navy.reyes.v3.2,Cut contractors and you cut the sailors' rations.
 navy.reyes.menu,Got the orders?
 navy.reyes.menu_more,Anything else?
 navy.reyes.c_done,[That's all]
+navy.reyes.c_refresh,[Recheck goods for delivery]
+navy.reyes.refresh,All right. Let me check again.
 navy.reyes.c_deliver,[Deliver: {0}]
 navy.reyes.got,Counted. {0} credits, wired to your account.
 navy.reyes.c_intel,[Hand over: {0}]
@@ -2027,8 +2031,10 @@ uc.water_corp.2,If the purity's right, the price isn't a problem.
 pex.give.smuggler,"Smuggler's bay (5×5; the organ dealer's enlarged bay also works) + 3 bags of ""Blue Blood"" + 3 red-tier items (value ≥ 900)"
 pex.give.smuggler_big,"Large or small smuggler bay + 8 bags of ""Blue Blood"" (expansion kits used on it are returned)"
 pex.get.smuggler,"Modded smuggler's bay (8x8, hidden from inspections)"
-pex.give.junk_card,10 Upper Levels junk + 10 electronic materials
+pex.give.junk_card,10 pieces of Upper Levels junk + 1 electronic component
 pex.get.junk_card,1 random keycard
+pex.give.junk10,10 pieces of Upper Levels junk (keycard exchange takes priority)
+pex.get.cigar,1 box of Luvist cigars
 pex.give.card_common,3 original Common Goods Keycards (no crafted cards)
 pex.get.crate_common,1 Common blind crate
 pex.give.card_fine,3 original Valuables Keycards (no crafted cards)
@@ -2991,8 +2997,6 @@ pex.give.melon,1 gift melon
 pex.get.samurai,"1 bottle of ""Samurai"" experimental pheromone"
 pex.give.samurai10,"10 bottles of ""Samurai"" experimental pheromone"
 pex.get.siyang,"1 bottle of ""Siyang"" self-refilling perfume"
-pex.give.junk10,Any 10 pieces of Upper Levels junk (the kinds from the recycling station)
-pex.get.cigar,1 box of Luvist cigars
 act1.dex.bye,"Right, I'm heading back. Call the station if anything comes up."
 battle.corpse_limit,You can bring back {0} bodies a night. The other {1} you were carrying got left behind.
 battle.corpse_carried_rep2,You bring {0} body(s) back to the shop. {1}.
@@ -3997,6 +4001,7 @@ navy.depot.btn_buy_stock,{0} · {1}c ({2}/{3})
 navy.depot.btn_soldout,{0} (Sold Out)
 navy.depot.btn_lock,{0} (Lv.{1})
 navy.depot.err_cash,Not enough credits (need {0}c).
+navy.depot.err_full,Store storage is full. Purchase canceled and nothing was charged.
 navy.depot.err_stock,Daily quota reached for {0}—restocks tomorrow morning.
 navy.depot.bought,"Bought {0} (-{1}c), sent to warehouse."
 # ---- Navy 10 cyberware implants & gear tooltip specs ----
@@ -4282,3 +4287,200 @@ item_ul_navy_heavy_case_name,Fleet Strategic Armory Vault
 item_ul_navy_heavy_case_desc,"Flagship-grade classified armory vault for Phase 2 Fleet Contractors (16×9, 144 slots). Holds weapons, body armor, and helmets only; exempt from police inspections and usable directly for Navy requisition turn-ins."
 item_ul_navy_heavy_case_flavor,"A twin-bolted armored chest pulled from a fleet armory, shielded so even Security scanners return a blank silhouette."
 navy.armory_case.granted,"Naval Logistics delivered an exclusive classified container: {0} (stored in your warehouse)."
+trait_tabs.general,General
+trait_tabs.organ,Organ Dealer
+trait_tabs.crate,Crate Hunter
+trait_tabs.navy,Navy
+trait.ul_trait_crate_p01.name,Listening for Springs
+trait.ul_trait_crate_p01.desc,"Scans flag loss-making crates. Every 3 days, swap one for another crate of the same tier."
+trait.ul_trait_crate_p07.name,Black-Market Opening Service
+trait.ul_trait_crate_p07.desc,"A client brings a crate every 6 days. Charge 350 credits or buy one red-tier item at 85% of its value."
+trait.ul_trait_crate_p13.name,Keycard Reverse Engineering
+trait.ul_trait_crate_p13.desc,"Dismantle a factory keycard to recover an Upper Levels blank and write the same type without chips for two nights."
+trait.ul_trait_crate_p14.name,Quartermaster's Backdoor Order
+trait.ul_trait_crate_p14.desc,"Buy specialty crates and Upper Levels blanks at base price. Pay 200 credits to reserve a crate type for next week."
+trait.ul_trait_crate_p17.name,Empty-Crate Salvager
+trait.ul_trait_crate_p17.desc,"Recover a lock assembly for every 3 properly opened and emptied crates. Sell it or use it at the private exchange."
+trait.ul_trait_crate_n06.name,Clumsy Prying
+trait.ul_trait_crate_n06.desc,"The last item in each crate has a 25% chance to be damaged. It loses 30% of its value and wealthy collectors refuse it."
+trait.ul_trait_crate_n07.name,Walls Have Ears
+trait.ul_trait_crate_n07.desc,"Starting with the third outer crate opened each day: −3 Upper Levels reputation and +200 crime evidence per crate."
+trait.ul_trait_crate_n02.name,Worn Write Head
+trait.ul_trait_crate_n02.desc,"After every 3 successful writes, service the machine with 1 electronic component. Maintenance leaves the blank intact."
+trait.ul_trait_crate_n10.name,Customs Blacklist
+trait.ul_trait_crate_n10.desc,"Unopened crates gain 1 contraband level, up to level 4."
+trait.ul_trait_crate_n14.name,No Smuggler Returns
+trait.ul_trait_crate_n14.desc,"The smuggler stops buying back unopened crates."
+trait.ul_trait_crate_u07.name,Compartment Hunter
+trait.ul_trait_crate_u07.desc,"Premium and family blind crates yield cheap outer loot. Hidden compartments are more common and contain two red-tier items when a pair fits the value cap."
+trait.ul_trait_crate_u09.name,Aged Crates
+trait.ul_trait_crate_u09.desc,"Crates need two nights in the shop before opening. Extra nights improve loot value and the chance of red-tier items."
+trait.ul_trait_crate_u10.name,The First Family Heirloom
+trait.ul_trait_crate_u10.desc,"Start with a locked 4×4 heirloom crate. Open it early for loot, or return it intact after buying the shop to earn a permanent discount."
+trait.ul_trait_navy_p09.name,Scrap and Reforge
+trait.ul_trait_navy_p09.desc,"Use the ammo press overnight to recycle guns or armor below 50% durability into rare components."
+trait.ul_trait_navy_p12.name,Route Intelligence Office
+trait.ul_trait_navy_p12.desc,"The first two route refreshes each day are free. Lock a faction to get at least two of its routes."
+trait.ul_trait_navy_p13.name,Trusted Mercenaries
+trait.ul_trait_navy_p13.desc,"After two expedition wins, a company's retainer is halved in exchange for one additional low-value loot item."
+trait.ul_trait_navy_p14.name,Inspection Tip-Off
+trait.ul_trait_navy_p14.desc,"Receive a warning the night before Reyes's surprise inspection. Cooperate and pass to reduce suspicion and collect compensation."
+trait.ul_trait_navy_p19.name,Quartermaster's Rush Order
+trait.ul_trait_navy_p19.desc,"Receive a weekly 48-hour order for one item. Deliver on time for extra profit and promotion progress. No late penalty."
+trait.ul_trait_navy_n02.name,Military Deadlines
+trait.ul_trait_navy_n02.desc,"While taking Navy requisitions, deadlines are shorter. Go 14 days without fulfilling one and lose a deposit and gain suspicion."
+trait.ul_trait_navy_n08.name,Fleet Requisition Tax
+trait.ul_trait_navy_n08.desc,"Until you break with the Republic, each expedition victory forfeits the most valuable non-mission loot item."
+trait.ul_trait_navy_n13.name,Substandard Press Mold
+trait.ul_trait_navy_n13.desc,"The ammo press cannot use military power cells for overdrive production."
+trait.ul_trait_navy_n14.name,Picky Arms Buyers
+trait.ul_trait_navy_n14.desc,"Carlos and Victor refuse guns and armor below 85% durability."
+trait.ul_trait_navy_n16.name,Route Lockdown
+trait.ul_trait_navy_n16.desc,"Route refreshes are no longer free. Pay for at most one refresh a day."
+trait.ul_trait_navy_u02.name,Weakness of Flesh
+trait.ul_trait_navy_u02.desc,"Expedition members lose 30% of their base health in exchange for higher gear and augmentation bonus caps."
+trait.ul_trait_navy_u03.name,Independent Arms Dealer
+trait.ul_trait_navy_u03.desc,"Procurement premiums are halved, but arms buyers visit every two days with double budgets and higher offers."
+trait.ul_trait_navy_u09.name,Exclusive Mercenary Contract
+trait.ul_trait_navy_u09.desc,"Pay five times the retainer to secure one company. Future trips have no retainer or loot cut, and all other companies refuse your business."
+trait.ul_trait_organ_p01.name,Cold-Chain Packing
+trait.ul_trait_organ_p01.desc,"Natural organs keep for one additional day outside cold storage."
+trait.ul_trait_organ_p02.name,Experienced Sampler
+trait.ul_trait_organ_p02.desc,"Each sampling cycle yields one additional cell sample."
+trait.ul_trait_organ_p03.name,Supply Regular
+trait.ul_trait_organ_p03.desc,"Bio-ink suppliers bring two additional units per visit."
+trait.ul_trait_organ_p04.name,Insulated Body Bags
+trait.ul_trait_organ_p04.desc,"Fresh bodies retain their initial freshness for one additional day."
+trait.ul_trait_organ_p05.name,Efficient Workbench
+trait.ul_trait_organ_p05.desc,"The dissector uses 20% less overnight power."
+trait.ul_trait_organ_p06.name,Second Inspection
+trait.ul_trait_organ_p06.desc,"When a printed organ first rolls ruined quality, it has a 50% chance to improve to damaged."
+trait.ul_trait_organ_n01.name,Cold-Chain Dependence
+trait.ul_trait_organ_n01.desc,"Natural organs outside cold storage lose an additional day of freshness each morning. Incompatible with Cold-Chain Packing."
+trait.ul_trait_organ_n02.name,Aging Power Supply
+trait.ul_trait_organ_n02.desc,"The dissector uses 25% more overnight power. Incompatible with Efficient Workbench."
+trait.ul_trait_organ_n03.name,Wasteful Cartridges
+trait.ul_trait_organ_n03.desc,"Each printed heart costs one additional unit of bio-ink."
+trait.ul_trait_organ_n04.name,Strict Grading
+trait.ul_trait_organ_n04.desc,"Thorn only buys natural organs in pristine condition."
+trait.ul_trait_organ_n05.name,Sampling Loss
+trait.ul_trait_organ_n05.desc,"Sampling yields two fewer cell samples, to a minimum of one. Incompatible with Experienced Sampler."
+trait.ul_trait_organ_n06.name,Clinic on a Budget
+trait.ul_trait_organ_n06.desc,"Thorn's purchasing budget is reduced by 25% per visit."
+trait.ul_trait_organ_n07.name,Printer Power Leak
+trait.ul_trait_organ_n07.desc,"The organ printer consumes 25% more power on both printing and sampling nights."
+trait.ul_trait_organ_u01.name,Quality over Quantity
+trait.ul_trait_organ_u01.desc,"Dissection yields at most two natural organs, but pristine quality is 20 percentage points more likely."
+trait.ul_trait_organ_u02.name,Printer Specialist
+trait.ul_trait_organ_u02.desc,"Printed lungs and kidneys are 15 percentage points more likely to be pristine, but printed hearts take one extra night."
+trait.ul_trait_organ_u03.name,Hospital Supplier
+trait.ul_trait_organ_u03.desc,"Private hospital print orders pay 20% more, but Thorn's purchasing budget falls by 20%."
+trait.ul_trait_organ_u04.name,Same-Day Sales
+trait.ul_trait_organ_u04.desc,"Natural organs are worth 20% more on production day and 15% less from the next day onward. Refrigeration affects freshness only."
+trait.ul_trait_crate_p02.name,Nose for Compartments
+trait.ul_trait_crate_p02.desc,"Premium and family crates are more likely to contain hidden compartments."
+trait.ul_trait_crate_p04.name,Resealed without a Trace
+trait.ul_trait_crate_p04.desc,"Sell back one crate resealed with its original contents per smuggler visit. Incompatible with No Smuggler Returns."
+trait.ul_trait_crate_p12.name,Estate Auction Regular
+trait.ul_trait_crate_p12.desc,"Receive 15% off the first family crate offered at each estate auction."
+trait.ul_trait_crate_n09.name,Fence's Cut
+trait.ul_trait_crate_n09.desc,"The fence takes an extra 15% from purchases of crate loot."
+trait.ul_trait_crate_n05.name,Mandatory Smuggler Offer
+trait.ul_trait_crate_n05.desc,"The smuggler brings a full-price crate each visit. Refusing raises the price of the next offer."
+trait.ul_trait_crate_n20.name,Missed Pickup Fee
+trait.ul_trait_crate_n20.desc,"Miss a prepaid crate pickup and a one-time fee is added before you can claim it."
+trait.ul_trait_crate_u02.name,Trade Up Crates
+trait.ul_trait_crate_u02.desc,"Trade two unopened crates of the same tier for one crate of the next tier. The two offered crates are consumed by the trade."
+trait.ul_trait_crate_u05.name,Steady Returns
+trait.ul_trait_crate_u05.desc,"Blind-crate returns fall within a steadier range, with no jackpots or hidden compartments. Incompatible with Compartment Hunter."
+trait.ul_trait_navy_p01.name,Armorer's Press
+trait.ul_trait_navy_p01.desc,"Military power-cell overdrive doubles ammo press output. Incompatible with Substandard Press Mold."
+trait.ul_trait_navy_p07.name,Field Salvage Repairs
+trait.ul_trait_navy_p07.desc,"Successful expeditions bring back one additional gear repair material."
+trait.ul_trait_navy_p17.name,Emergency Medical Evac
+trait.ul_trait_navy_p17.desc,"A failed expedition protects equipment taken along by squad members."
+trait.ul_trait_navy_n04.name,Suspicious Command
+trait.ul_trait_navy_n04.desc,"Repeated expedition failures and overdue orders generate 50% more suspicion."
+trait.ul_trait_navy_n11.name,Downgraded Armory Case
+trait.ul_trait_navy_n11.desc,"The starter armory case is issued at your first promotion."
+trait.ul_trait_navy_n09.name,Strict Caliber Check
+trait.ul_trait_navy_n09.desc,"An armed expedition member must carry ammunition that matches their weapon's caliber."
+trait.ul_trait_navy_u04.name,Pay in Loot
+trait.ul_trait_navy_u04.desc,"Mercenary retainers are reduced, but companies take one extra loot item after a successful expedition."
+trait.ul_trait_navy_u05.name,High-Risk Route Gambler
+trait.ul_trait_navy_u05.desc,"The four daily routes are all high or extreme danger. Standard route unlock requirements still apply."
+trait.ul_trait_crate_p03.name,Second Swipe
+trait.ul_trait_crate_p03.desc,"If the loot is worth less than the crate's standard purchase price, recover a worn card good for one more crate of that type."
+trait.ul_trait_crate_p08.name,Thermal Scanner
+trait.ul_trait_crate_p08.desc,"Start with a modified scanner that can detect red-tier loot or marked stolen goods inside unopened crates."
+trait.ul_trait_crate_p09.name,Expert Pryer
+trait.ul_trait_crate_p09.desc,"Open common, premium, or specialty crates when no eligible keycard is available. Each regular item has a 30% chance to lose 30% of its value. Adds 180 crime evidence."
+trait.ul_trait_crate_p19.name,Lucky Melon
+trait.ul_trait_crate_p19.desc,"Display up to two Upper Levels gift melons to shift blind crates away from the worst outcome and toward the jackpot. Opening a crate also attracts a luxury buyer that day."
+trait.ul_trait_crate_p20.name,Bulk Buyer
+trait.ul_trait_crate_p20.desc,"Open 20 crates to unlock the smuggler's bulk clearance early. Trade three unopened common crates for one premium blind crate during a visit."
+trait.ul_trait_crate_n03.name,Blind Crates Only
+trait.ul_trait_crate_n03.desc,"Suppliers offer common, premium, and family crates only as blind crates. Specialty crates are unaffected."
+trait.ul_trait_crate_n11.name,The Owner Comes Knocking
+trait.ul_trait_crate_n11.desc,"After five family or luxury crates, an enforcer visits the next day. Hand over red-tier loot, pay 600 credits, or face reputation and crime penalties."
+trait.ul_trait_crate_n12.name,Lead-Lined Crates
+trait.ul_trait_crate_n12.desc,"Scanners cannot read a sealed crate's main loot category or compartment odds."
+trait.ul_trait_crate_n16.name,Crate Addiction
+trait.ul_trait_crate_n16.desc,"Dismiss a crate vendor without buying a crate and lose your nighttime outing. Customers are less patient when bargaining the next day."
+trait.ul_trait_crate_u01.name,All-Blind Wager
+trait.ul_trait_crate_u01.desc,"Crates cost 25% less, and common, premium, and family crates come blind. The worst outcomes pay less, and jackpots pay more."
+trait.ul_trait_navy_p04.name,Double-Entry Master
+trait.ul_trait_navy_p04.desc,"Covertly diverting a requisition adds no Reyes suspicion. Every two successful diversions grant one extra promotion point."
+trait.ul_trait_navy_p05.name,Honorary Legion Adviser
+trait.ul_trait_navy_p05.desc,"Up to two of your own operatives can run a separate mission on the same night as a top-tier legion. Returning legions take two fewer loot items."
+trait.ul_trait_navy_p10.name,Precision Tuner
+trait.ul_trait_navy_p10.desc,"Fully repairing a weapon or armor has a 35% chance to tune it. Tuned gear improves expedition firepower or defense and earns higher offers from the dedicated arms buyers."
+trait.ul_trait_navy_p18.name,Expanded Armory Clearance
+trait.ul_trait_navy_p18.desc,"Navy contractors start with the 70-cell case, with upgrades issued at levels 2 and 4. With expedition access, cases can also hold military ammunition, power cells, and tactical accessories."
+trait.ul_trait_navy_n01.name,No Outsourcing
+trait.ul_trait_navy_n01.desc,"Mercenary dispatch is disabled. Only your own operatives can run expeditions."
+trait.ul_trait_navy_n07.name,Veteran's Medical Discharge
+trait.ul_trait_navy_n07.desc,"The expedition starter operative must be recruited manually. Navy contractors also start without their usual starter weapon and backpack."
+crate.trait.lead_scan,"Lead lining blocks the scanner."
+crate.trait.worn_card,"{0} (Worn Backup)"
+crate.trait.noise_warning,"The neighbors complained about the noise from opening crates."
+crate.trait.scan_red,"Red-tier loot detected."
+crate.trait.scan_no_red,"No red-tier loot detected."
+crate.trait.scan_heat,"Hot stolen goods detected."
+crate.trait.scan_no_heat,"No hot stolen goods detected."
+crate.trait.melon_buyer,"Luxury Collector"
+crate.trait.melon_greeting,"I heard you're displaying those Upper Levels gift melons. I'd like to see your nicer goods while I'm here."
+crate.trait.bulk_exchange,"Trade three sealed common crates for a premium blind crate"
+crate.trait.bulk_browse,"Browse the stock"
+crate.trait.bulk_stock,"Let's see what I've got today."
+crate.trait.addiction_warning,"You let a crate vendor leave without buying. You cannot go out tonight, and customers will bargain harder tomorrow."
+crate.trait.owner_name,"Family Enforcer"
+crate.trait.owner_ask,"Some of those crates held family property. Hand it over or pay six hundred."
+crate.trait.owner_goods,"Hand over traced red-tier loot"
+crate.trait.owner_pay,"Pay 600 credits"
+crate.trait.owner_refuse,"Refuse"
+crate.trait.owner_done,"I'll report back to the family."
+crate.trait.commission_name,"Crate Opening Client"
+crate.trait.commission_intro,"I brought a crate. Open it for me and I'll pay 350. If you want what's inside, we can discuss that too."
+crate.trait.commission_open,"Accept and open the crate"
+crate.trait.commission_pass,"Decline the commission"
+crate.trait.commission_offer,"Do you want the fee, or the freshly revealed item at 85% of its value?"
+crate.trait.commission_reveal,"Red-tier loot: {0}. Buyout price: {1}."
+crate.trait.commission_fee,"Take the 350-credit opening fee"
+crate.trait.commission_buy,"Buy the red-tier item at 85% of its value"
+crate.trait.commission_done,"We have a deal."
+navy.trait.outsourcing_disabled,"Your contract prohibits mercenary dispatch."
+navy.trait.refresh_used,"Today's refresh has been used"
+navy.trait.exclusive_only,"Your exclusive contract prevents other companies from deploying."
+navy.trait.deadline_penalty,"No deliveries in 14 days. Command collects a financial penalty and adds 20 suspicion."
+navy.trait.buyout_button,"Sign {0} exclusively ({1} credits, permanently locks other companies)"
+navy.trait.buyout_confirm,"Click again to permanently buy out {0} ({1} credits, locks all other companies)"
+navy.trait.buyout_done,"Exclusive buyout signed with {0} ({1} credits): 0 upfront fee and 0% loot cut!"
+navy.trait.buyout_badge,Exclusive
+navy.trait.buyout_voided,"Your exclusive buyout with {0} was voided upon defection; you may sign another eligible company."
+crate.trait.aging_wait,This crate must spend two nights in your shop before it can be opened.
+navy.trait.tuned,Tuned gear grants +10 expedition firepower or defense.
+navy.trait.tuned_proc,"Precision tuning triggered: {0} is now Tuned (+10 expedition firepower or defense)!"
+mach_status_output_pending,Output pending
+mach_log_output_full,{0}: Output and storage are full. Make room for the next delivery.
+crate.counter.wholesale_full,There is not enough room in storage or the showcase for the other pages. The stock is still at the counter. No payment was taken.

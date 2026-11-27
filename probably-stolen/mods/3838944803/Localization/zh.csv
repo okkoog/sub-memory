@@ -1461,7 +1461,7 @@ crate.scenario.with2,一个每 5 天上门的走私贩
 crate.scenario.with3,六类封箱，用钥匙卡逐件开货
 crate.scenario.with4,一台密钥写卡机
 crate.writer.name,密钥写卡机
-crate.writer.desc,装入写卡模组并接通电源，在输入格放入上层区空白钥匙卡即可写入对应权限，完成后从输出格取卡。
+crate.writer.desc,装入写卡模组并接通电源，在输入格放入上层区空白钥匙卡即可写入对应权限，完成后从输出格取卡。写入的自写卡仅可用于开箱，不可用于私人交换会兑换盲箱。
 crate.writer.flavor,结构紧凑的桌面式磁卡编码器，正面只有一道插卡槽和一盏双色状态灯。
 crate.writer.chip_name,写卡模组 · {0}
 crate.writer.chip_desc,用于密钥写卡机的专用编码模组，可将上层区空白钥匙卡写入为{0}。
@@ -1524,6 +1524,8 @@ crate.card.compartment.name,夹层钥匙卡
 crate.card.compartment.desc,用于开启箱底上锁夹层的专用钥匙卡。使用后即被消耗。
 crate.card.universal.name,万能钥匙卡
 crate.card.universal.desc,可开启任意上层区标签箱或盲箱的最高权限钥匙卡。使用后即被消耗。
+crate.card.crafted_name,{0}（自写）
+crate.card.crafted_note,【自写卡】仅可用于开箱，不可用于私人交换会兑换盲箱。
 crate.open.window_title,正在开箱
 crate.open.done,开启完毕：蓝 {0}、紫 {1}、金 {2}、红 {3}。取空箱内物品并关闭窗口后，空箱会自动移除。
 crate.open.opened_suffix,（已开）
@@ -1684,6 +1686,8 @@ navy.reyes.v3.2,要砍承包商，就得委屈我们海军的口粮了。
 navy.reyes.menu,单子带来了吗？
 navy.reyes.menu_more,还有吗？
 navy.reyes.c_done,[就这些]
+navy.reyes.c_refresh,[重新检查交货库存]
+navy.reyes.refresh,好，我再核对一下。
 navy.reyes.c_deliver,[交货：{0}]
 navy.reyes.got,清点完毕。{0} 信用点，已经打到你账上。
 navy.reyes.c_intel,[交一份{0}]
@@ -2042,8 +2046,10 @@ uc.water_corp.2,纯度够高，价钱好说。
 pex.give.smuggler,走私者暗格（5×5 标准型或 6×5 加大型均可）+ 3 袋“蓝血” + 3 件高价值物品（单件估值 ≥ 900）
 pex.give.smuggler_big,加大或小号走私者暗格 + 8 袋“蓝血”（曾装在上面的扩建套件会一并退回）
 pex.get.smuggler,走私者暗格（改进，8×8 隐藏储藏区）
-pex.give.junk_card,10 件上层区废弃杂物 + 10 份电子材料
+pex.give.junk_card,10 件上层区废弃杂物 + 1 个电子元件
 pex.get.junk_card,1 张随机钥匙卡
+pex.give.junk10,10 件上层区废弃杂物（优先结算钥匙卡配方）
+pex.get.cigar,1 盒路维斯特雪茄
 pex.give.card_common,3 张原生普通物品钥匙卡（不含自写卡）
 pex.get.crate_common,1 只普通盲箱
 pex.give.card_fine,3 张原生贵重物品钥匙卡（不含自写卡）
@@ -3006,8 +3012,6 @@ pex.give.melon,1 个礼盒蜜瓜
 pex.get.samurai,1 瓶“武士”实验信息素原液
 pex.give.samurai10,10 瓶“武士”实验信息素原液
 pex.get.siyang,1 瓶“思扬”自动补充香水
-pex.give.junk10,任意 10 件上层区废弃杂物（空香水瓶、坏电动牙刷等）
-pex.get.cigar,1 盒路维斯特雪茄
 act1.dex.bye,行，我先回去了。有事打警察局。
 battle.corpse_limit,一晚最多带回 {0} 具，随身另外的 {1} 具扔在原地了。
 battle.corpse_carried_rep2,你把 {0} 具尸体带回了店里。{1}。
@@ -4012,6 +4016,7 @@ navy.depot.btn_buy_stock,{0} · {1}c ({2}/{3})
 navy.depot.btn_soldout,{0}（今日售罄）
 navy.depot.btn_lock,{0}（{1}级）
 navy.depot.err_cash,信用点不足（需要 {0}c）。
+navy.depot.err_full,店铺仓储空间已满，未能采购，未扣款。
 navy.depot.err_stock,{0} 今日配额已购满，明早补货。
 navy.depot.bought,已购入 {0}（-{1}c），已送入店铺仓库。
 # ---- Navy 10 cyberware implants & gear tooltip specs ----
@@ -4297,3 +4302,200 @@ item_ul_navy_heavy_case_name,舰队战略军械保密柜
 item_ul_navy_heavy_case_desc,舰队级海军承包商专属重装甲军械柜（16×9，共 144 格）。只允许存放武器、护甲与头盔，享受军方豁免不被警方盘查，且可直接用于军需征购交货。
 item_ul_navy_heavy_case_flavor,舰船军械库拆下来的双锁装甲存储柜，带生物识别密封条，连治安部的扫描仪也读不出里面的金属信号。
 navy.armory_case.granted,海军后勤处已配发专属保密容器：{0}（已送入店铺仓库）。
+trait_tabs.general,通用特性
+trait_tabs.organ,器官贩子
+trait_tabs.crate,开箱狂人
+trait_tabs.navy,海军
+trait.ul_trait_crate_p01.name,听音辨簧
+trait.ul_trait_crate_p01.desc,"扫描时识别亏损封箱，每 3 天可找走私贩原价换一只同档箱。"
+trait.ul_trait_crate_p07.name,黑市代拆台
+trait.ul_trait_crate_p07.desc,"每 6 天有客人委托代拆。可领 350 信用点，或按估价的 85% 买下一件红货。"
+trait.ul_trait_crate_p13.name,以卡养卡
+trait.ul_trait_crate_p13.desc,"拆解非自写钥匙卡可回收上层区白卡，并在接下来两晚免芯片写出同类卡。"
+trait.ul_trait_crate_p14.name,军需官的后门单
+trait.ul_trait_crate_p14.desc,"特种箱和上层区白卡按原价出售。可预付 200 信用点指定下周的特种箱类别。"
+trait.ul_trait_crate_p17.name,空箱拆件商
+trait.ul_trait_crate_p17.desc,"每拿空 3 个正规开启的封箱，回收 1 套锁芯组件。可出售或用于私人交换。"
+trait.ul_trait_crate_n06.name,手笨拆损
+trait.ul_trait_crate_n06.desc,"每箱最后揭开的物品有 25% 概率受损，估价降至七折，高预算收藏家拒收。"
+trait.ul_trait_crate_n07.name,隔墙有耳
+trait.ul_trait_crate_n07.desc,"每天从第 3 个外箱起，每多拆一箱，上层区声望 −3，犯罪证据 +200。"
+trait.ul_trait_crate_n02.name,老化磁头
+trait.ul_trait_crate_n02.desc,"每成功写卡 3 次后，消耗 1 个电子元件维护机器。维护不会损坏白卡。"
+trait.ul_trait_crate_n10.name,海关黑名单
+trait.ul_trait_crate_n10.desc,"未开封的封箱违禁等级提高 1 级，最高 4 级。"
+trait.ul_trait_crate_n14.name,走私贩拒收退货
+trait.ul_trait_crate_n14.desc,"走私贩停止回购未开封的封箱。"
+trait.ul_trait_crate_u07.name,夹层猎人
+trait.ul_trait_crate_u07.desc,"贵重与世家盲箱的外层只出便宜货，但夹层更常见。能凑出符合估价上限的组合时，夹层会出两件红货。"
+trait.ul_trait_crate_u09.name,捂箱熟成
+trait.ul_trait_crate_u09.desc,"封箱入店存满两晚才能开。再多存几晚可提高开箱估值和红货概率。"
+trait.ul_trait_crate_u10.name,初代对赌遗箱
+trait.ul_trait_crate_u10.desc,"开局得到一只 4×4 加密遗箱。提前拆开可留战利品，守到买店并归还可获得长期折扣。"
+trait.ul_trait_navy_p09.name,以旧换新
+trait.ul_trait_navy_p09.desc,"用弹药复装机过夜分解耐久低于 50% 的枪械或护甲，回收稀有复装原料。"
+trait.ul_trait_navy_p12.name,航线情报局
+trait.ul_trait_navy_p12.desc,"每天前两次航线刷新免费。锁定阵营可保证刷出至少两条对应航线。"
+trait.ul_trait_navy_p13.name,嫡系雇佣兵
+trait.ul_trait_navy_p13.desc,"同一兵团取得两次远征胜利后，预付款减半，并从战利品中多抽一件低价货。"
+trait.ul_trait_navy_p14.name,临检内线预警
+trait.ul_trait_navy_p14.desc,"雷耶斯突击临检前一晚发来预警。配合临检并通过可降低怀疑度并获得补偿。"
+trait.ul_trait_navy_p19.name,军需官的加急特单
+trait.ul_trait_navy_p19.desc,"每周多一张 48 小时的单品加急单。按期交付有额外利润和晋升进度，逾期无罚。"
+trait.ul_trait_navy_n02.name,军法死线
+trait.ul_trait_navy_n02.desc,"参与军需征购时，订单时限缩短。连续 14 天未成功交单会扣保证金并提高怀疑度。"
+trait.ul_trait_navy_n08.name,舰队公产税
+trait.ul_trait_navy_n08.desc,"与共和国决裂前，每次远征获胜会被划走一件价值最高的非任务战利品。"
+trait.ul_trait_navy_n13.name,劣质复装模具
+trait.ul_trait_navy_n13.desc,"弹药复装机无法使用军规高能电池芯过载压制。"
+trait.ul_trait_navy_n14.name,军火买家挑食
+trait.ul_trait_navy_n14.desc,"卡洛斯和维克多拒收耐久度低于 85% 的枪械和护甲。"
+trait.ul_trait_navy_n16.name,航线封锁令
+trait.ul_trait_navy_n16.desc,"航线刷新不再免费，每天最多付费刷新一次。"
+trait.ul_trait_navy_u02.name,血肉苦弱
+trait.ul_trait_navy_u02.desc,"远征队员基础生命值降低 30%，装备和义体的加成上限提高。"
+trait.ul_trait_navy_u03.name,自由军火商
+trait.ul_trait_navy_u03.desc,"征购利润溢价减半，但专属军火买家每两天来访，预算翻倍并提高收购价。"
+trait.ul_trait_navy_u09.name,买断本命军团
+trait.ul_trait_navy_u09.desc,"付五倍预付款签下一支兵团，之后免预付、免抽成，但其余兵团永久停止合作。"
+trait.ul_trait_organ_p01.name,恒温保鲜
+trait.ul_trait_organ_p01.desc,"原生器官离开冷藏箱后多保鲜一天。"
+trait.ul_trait_organ_p02.name,取样老手
+trait.ul_trait_organ_p02.desc,"每次取样多产 1 份细胞样本。"
+trait.ul_trait_organ_p03.name,耗材熟客
+trait.ul_trait_organ_p03.desc,"生物墨水供应商每次来访多带两份生物墨水。"
+trait.ul_trait_organ_p04.name,保温尸袋
+trait.ul_trait_organ_p04.desc,"带回的新鲜遗体多保持一天初始新鲜度。"
+trait.ul_trait_organ_p05.name,节能工作台
+trait.ul_trait_organ_p05.desc,"解剖机的夜间用电减少 20%。"
+trait.ul_trait_organ_p06.name,品相复检
+trait.ul_trait_organ_p06.desc,"打印成品首次判定为损坏时，有一半概率改为受损。"
+trait.ul_trait_organ_n01.name,冷链依赖
+trait.ul_trait_organ_n01.desc,"原生器官在冷藏箱外每日额外损失一天新鲜度。与恒温保鲜互斥。"
+trait.ul_trait_organ_n02.name,老式电源
+trait.ul_trait_organ_n02.desc,"解剖机的夜间用电增加 25%。与节能工作台互斥。"
+trait.ul_trait_organ_n03.name,耗材浪费
+trait.ul_trait_organ_n03.desc,"打印心脏多消耗一份生物墨水。"
+trait.ul_trait_organ_n04.name,验货严苛
+trait.ul_trait_organ_n04.desc,"索恩只收完好品相的原生器官。"
+trait.ul_trait_organ_n05.name,取样损耗
+trait.ul_trait_organ_n05.desc,"每次取样少产两份细胞样本，最低仍产一份。与取样老手互斥。"
+trait.ul_trait_organ_n06.name,诊所紧账
+trait.ul_trait_organ_n06.desc,"索恩的单次收购预算减少 25%。"
+trait.ul_trait_organ_n07.name,打印机漏电
+trait.ul_trait_organ_n07.desc,"器官打印机在打印和取样时多消耗 25% 电力。"
+trait.ul_trait_organ_u01.name,少而精
+trait.ul_trait_organ_u01.desc,"每次解剖最多产两件原生器官，完好概率提高 20 个百分点。"
+trait.ul_trait_organ_u02.name,打印专精
+trait.ul_trait_organ_u02.desc,"打印肺或肾的完好概率提高 15 个百分点，打印心脏多花一晚。"
+trait.ul_trait_organ_u03.name,医院专供
+trait.ul_trait_organ_u03.desc,"私立医院的打印订单报酬提高 20%，索恩的散单预算减少 20%。"
+trait.ul_trait_organ_u04.name,当天出货
+trait.ul_trait_organ_u04.desc,"当天产出的原生器官估价提高 20%，从第二天起估价额外降低 15%。冷藏只影响新鲜度。"
+trait.ul_trait_crate_p02.name,夹层嗅觉
+trait.ul_trait_crate_p02.desc,"贵重和世家封箱的夹层出现概率提高。"
+trait.ul_trait_crate_p04.name,拆封无痕
+trait.ul_trait_crate_p04.desc,"每次走私贩到访可回售一只原样封回的箱子。与走私贩拒收退货互斥。"
+trait.ul_trait_crate_p12.name,遗产拍卖行熟客
+trait.ul_trait_crate_p12.desc,"遗产拍卖行的首只世家箱享八五折。"
+trait.ul_trait_crate_n09.name,黑市收货人抽水
+trait.ul_trait_crate_n09.desc,"黑市收货人收购战利品时额外扣 15%。"
+trait.ul_trait_crate_n05.name,走私贩的硬摊派
+trait.ul_trait_crate_n05.desc,"走私贩每次来会带一只不参加折扣的封箱，拒绝购买会增加下一次的报价。"
+trait.ul_trait_crate_n20.name,放鸽子违约金
+trait.ul_trait_crate_n20.desc,"错过已经付定金的箱子时，取回订单前需要补交一次手续费。"
+trait.ul_trait_crate_u02.name,以箱换箱
+trait.ul_trait_crate_u02.desc,"可以用两只未开封的同档箱换一只更高档的箱。交出的箱子随交易结清。"
+trait.ul_trait_crate_u05.name,反向保底
+trait.ul_trait_crate_u05.desc,"盲箱收益收窄到稳定区间，失去大奖和夹层。与夹层猎人互斥。"
+trait.ul_trait_navy_p01.name,军械士官长的压床
+trait.ul_trait_navy_p01.desc,"用军规高能电池芯过载复装时产量翻倍。与劣质复装模具互斥。"
+trait.ul_trait_navy_p07.name,战场拾荒维修流
+trait.ul_trait_navy_p07.desc,"成功远征额外带回一份军械维修耗材。"
+trait.ul_trait_navy_p17.name,紧急医疗撤离航线
+trait.ul_trait_navy_p17.desc,"失败远征优先保住队员出发时携带的装备。"
+trait.ul_trait_navy_n04.name,多疑的上级
+trait.ul_trait_navy_n04.desc,"重复失败和逾期交单造成的怀疑度额外提高 50%。"
+trait.ul_trait_navy_n11.name,保密箱降配
+trait.ul_trait_navy_n11.desc,"开局保密箱延后到第一次晋升发放。"
+trait.ul_trait_navy_n09.name,严格口径洁癖
+trait.ul_trait_navy_n09.desc,"选用枪械的出征队员必须装配匹配口径的弹药才能派出。"
+trait.ul_trait_navy_u04.name,以战养兵
+trait.ul_trait_navy_u04.desc,"佣兵预付款减少，成功远征后佣兵优先多抽一件战利品。"
+trait.ul_trait_navy_u05.name,极危赌徒
+trait.ul_trait_navy_u05.desc,"每日四条常规航线只出现高危和极危。航线解锁条件照常。"
+trait.ul_trait_crate_p03.name,一卡双刷
+trait.ul_trait_crate_p03.desc,"用钥匙卡开箱后，如果开出的货值低于标准进价，返还一张可再开一次同类箱的磨损备份卡。"
+trait.ul_trait_crate_p08.name,热感透视仪
+trait.ul_trait_crate_p08.desc,"开局获得改装扫描仪，可检查未开封箱内是否有红货或带热度的赃物。"
+trait.ul_trait_crate_p09.name,撬锁老手
+trait.ul_trait_crate_p09.desc,"找不到可用钥匙卡时，可直接打开普通、贵重或特种箱。箱内每件商品有 30% 概率打七折，涉案额 +180。"
+trait.ul_trait_crate_p19.name,蜜瓜吉祥物
+trait.ul_trait_crate_p19.desc,"展示上层礼盒蜜瓜可降低盲箱血亏档权重、提高大奖权重，最多计两颗。开箱当天还会吸引专收奢侈品的名媛。"
+trait.ul_trait_crate_p20.name,清仓大户
+trait.ul_trait_crate_p20.desc,"开满 20 只箱后提前解锁走私贩整批清仓。走私贩来访时也可用 3 只未开封普通箱换 1 只贵重盲箱。"
+trait.ul_trait_crate_n03.name,非盲不欢
+trait.ul_trait_crate_n03.desc,"普通、贵重和世家封箱的供货只提供盲箱。特种箱照常供应。"
+trait.ul_trait_crate_n11.name,失主找上门
+trait.ul_trait_crate_n11.desc,"每拆 5 只世家箱或财阀奢侈品箱，次日会有人追讨红货。可交货、赔 600 信用点，或承担声望和涉案惩罚。"
+trait.ul_trait_crate_n12.name,铅衬内壁
+trait.ul_trait_crate_n12.desc,"扫描仪无法读出封箱的主货类或夹层概率。"
+trait.ul_trait_crate_n16.name,开箱成瘾
+trait.ul_trait_crate_n16.desc,"送走带箱卖家却一箱未买，当晚无法外出，次日顾客议价耐心下降。"
+trait.ul_trait_crate_u01.name,全盲豪赌协议
+trait.ul_trait_crate_u01.desc,"封箱按七五折供应，普通、贵重和世家箱改为盲箱。血亏档收益更低，最高大奖收益更高。"
+trait.ul_trait_navy_p04.name,双面账本大师
+trait.ul_trait_navy_p04.desc,"秘密转运军需单时不增加雷耶斯怀疑度。每成功转运两次，额外获得 1 点晋升进度。"
+trait.ul_trait_navy_p05.name,军团荣誉顾问
+trait.ul_trait_navy_p05.desc,"一级军团出征时，允许 1～2 名自家队员同晚并行出击。军团凯旋时少抽两件战利品。"
+trait.ul_trait_navy_p10.name,精调膛线匠师
+trait.ul_trait_navy_p10.desc,"把枪械或护甲修满耐久时有 35% 概率获得精调。精调装备提高远征火力或防御，并提高专属军火买家的收购估价。"
+trait.ul_trait_navy_p18.name,军械保密箱特批扩容
+trait.ul_trait_navy_p18.desc,"海军承包商开局即发 70 格保密箱，二级和四级提前发放下一档。获得远征权限后，保密箱可额外存放军规弹药、电池芯和战术配件。"
+trait.ul_trait_navy_n01.name,严禁外包
+trait.ul_trait_navy_n01.desc,"禁止派遣雇佣兵。远征只能由自家队员完成。"
+trait.ul_trait_navy_n07.name,老部下伤退
+trait.ul_trait_navy_n07.desc,"起步队员不会自动入队，需手动招募。以海军承包商开局时，也会少起步武器和背包。"
+crate.trait.lead_scan,"铅衬屏蔽，扫描仪读不出箱内信息。"
+crate.trait.worn_card,"{0}（磨损备份）"
+crate.trait.noise_warning,"邻居投诉店里拆箱太吵。"
+crate.trait.scan_red,"检测到红货。"
+crate.trait.scan_no_red,"未检测到红货。"
+crate.trait.scan_heat,"检测到带热度的赃物。"
+crate.trait.scan_no_heat,"未检测到带热度的赃物。"
+crate.trait.melon_buyer,"来看蜜瓜的名媛"
+crate.trait.melon_greeting,"听说你这儿摆了上层区的礼盒蜜瓜。我也想顺便看看有什么上档次的货。"
+crate.trait.bulk_exchange,"用三只未开封普通箱换一只贵重盲箱"
+crate.trait.bulk_browse,"直接看货"
+crate.trait.bulk_stock,"来，看看今天的货。"
+crate.trait.addiction_warning,"送走了箱贩却没开张。今晚不能外出，明天顾客也更难议价。"
+crate.trait.owner_name,"财阀追货人"
+crate.trait.owner_ask,"你拆的那些箱子里有我们家的东西。交出来，或者出六百。"
+crate.trait.owner_goods,"交出一件追踪到的红货"
+crate.trait.owner_pay,"付 600 信用点"
+crate.trait.owner_refuse,"拒绝"
+crate.trait.owner_done,"这事我会回去汇报。"
+crate.trait.commission_name,"委托拆箱的客人"
+crate.trait.commission_intro,"我带了只箱。你替我拆开，我付三百五。里头要是有你想要的，咱们也能谈。"
+crate.trait.commission_open,"接下委托，拆箱"
+crate.trait.commission_pass,"婉拒委托"
+crate.trait.commission_offer,"你想拿工钱，还是按八五折买下刚拆出来的货？"
+crate.trait.commission_reveal,"箱内红货：{0}。买断价：{1}。"
+crate.trait.commission_fee,"领取 350 信用点代拆费"
+crate.trait.commission_buy,"按八五折买下这件红货"
+crate.trait.commission_done,"就这么说定了。"
+navy.trait.outsourcing_disabled,"军方契约禁止外包。"
+navy.trait.refresh_used,"今日刷新已用完"
+navy.trait.exclusive_only,"你的独家合同禁止其他兵团出征。"
+navy.trait.deadline_penalty,"已连续 14 天未交单。后勤署扣缴保证金，怀疑度 +20。"
+navy.trait.buyout_button,"买断 {0}（{1} 信用点，其余兵团永久停用）"
+navy.trait.buyout_confirm,"再次点击确认永久买断 {0}（扣 {1} 信用点，其余兵团停用）"
+navy.trait.buyout_done,已签署独家买断合约：{0}（支付 {1} 信用点），此后免预付、免抽成！
+navy.trait.buyout_badge,专属买断
+navy.trait.buyout_voided,随决裂生效，与 {0} 的独家买断合约已自动作废，可重新选择可合作的兵团签约。
+crate.trait.aging_wait,封箱入店未满两晚，还不能开。
+navy.trait.tuned,精调装备：远征火力或防御 +10。
+navy.trait.tuned_proc,精调膛线触发：{0} 已升级为【精调装备】（远征火力/防御 +10）！
+mach_status_output_pending,待出料
+mach_log_output_full,{0}：输出格／仓库已满，空出位置后下次交付。
+crate.counter.wholesale_full,仓库和展示柜没有足够空间接收隐藏页商品。本批货仍在柜台，未扣款。

@@ -233,6 +233,7 @@ debug_story_status,L'histoire de l'atelier dépenses et l'état des événements
 debug_story_visit,Histoire de l'atelier Queue introduction ou visite régulière
 debug_story_rep,L'histoire de la conférence d'un atelier augmente la réputation de la région supérieure au premier seuil de visite
 debug_story_4999,Les dépenses totales de l'atelier sont fixées à 4999
+debug_story_duke_lucky_water,Histoire de l’atelier | Tester le cadeau du Duc (une bouteille de chance liquide)
 debug_story_compiler,L'histoire de l'atelier Replay compiler cadeau (grandes cadeaux à nouveau)
 debug_story_matrix,L'histoire de l'atelier Regrant la note d'une semaine et la matrice
 debug_story_medicine,Replay de la première livraison de médicaments (3 doses)
@@ -293,7 +294,7 @@ adult_condom_blue_desc,Le plus gros chiffre sur la boîte indique généralement
 adult_condom_gold_name,Préservatifs « Illusion »
 adult_condom_gold_desc,Il paraît qu’on ne sent presque rien. Sauf au moment de payer.
 debug_items_condoms,Articles de atelier: Trois marques de préservatifs (1 boîte chacune)
-debug_items_adult_all,"Articles de atelier: Tous les produits adultes (9 types, 1 chacune)"
+debug_items_adult_all,"Articles de atelier: Tous les produits adultes (24 types, 1 chacune)"
 debug_items_rubber_latex,Matériaux de l’atelier : caoutchouc et latex (1 de chaque)
 adult_chip_dildo_name,Puce d’imprimante 3D (gode ×2)
 business_visit_1,Qu'est-ce que c'est ? il y a quelque chose que je voulais vous parler.
@@ -303,7 +304,7 @@ business_visit_4,"Mais développer de nouveaux outils devient coûteux, donc j'a
 business_visit_5,"Vous avez acheté beaucoup de moi récemment, et le atelier est en train de recevoir plus d'ordres d'ingénierie aussi."
 business_visit_6,"Maintenant, je peux enfin passer plus de temps à faire les choses que je veux vraiment faire."
 business_visit_7,"Je pensais donc que je pouvais passer ce côté de l'entreprise à vous.\nFaites un essai, si vous le souhaitez."
-business_visit_8,Cette imprimante 3D et le chip sont pour vous. j'ai apporté suffisamment de matériaux pour un premier lot aussi.
+business_visit_8,L'imprimante et les deux puces sont à toi. J'ai apporté du caoutchouc pour le plug. L'autre puce imprime une baguette en verre perlée. Il te faudra une buse haute température.
 business_visit_9,"Si vous préférez ne pas prendre l'entreprise, vous pouvez vendre les choses que je vous ai apportées au lieu."
 business_visit_10,Je vais aussi envoyer mes anciens clients sur votre chemin.
 business_visit_11,"Ne vous inquiétez pas, ces produits sont légalement sur la gare.\nLa plupart des clients sont riches résidents de haut niveau, et ils sont heureux de dépenser."
@@ -392,18 +393,18 @@ settings_vista_portrait_tooltip,"Choisissez le portrait de Vista. Le style retra
 adult_chip_plug_name,Puce d’imprimante 3D (plug anal ×2)
 adult_chip_conqueror_name,Puce d’imprimante 3D (gode géant « Conquérant » ×1)
 vista_chip_dildo_1,Nos clients sont très satisfaits de ce que nous avons acheté de vous récemment.
-vista_chip_dildo_2,Voici un fichier que j'ai reçu de Gabrielle.
+vista_chip_dildo_2,"Gabrielle m'a confié deux puces. L'une imprime des godes, l'autre des godes doubles en verre courbé."
 vista_chip_conqueror_1,"Les affaires se sont bien déroulées, donc nos clients ont fait une nouvelle demande."
 vista_chip_conqueror_2,Un nouveau jouet appelé le « Conquérant ».
 vista_chip_bye,Appelez-moi quand vous avez des stocks. jusqu'à la prochaine fois.
 debug_story_vista_dildo_chip,Histoire : Vista remet la puce du gode (1 000 crédits de ventes)
 debug_story_vista_conqueror_chip,Histoire : Vista remet la puce du Conquérant (3 000 crédits de ventes)
 debug_items_adult_crates,Produits pour adultes: vanille médicale et service crates
-vista_chip_dildo_3,Vous pouvez essayer de l'utiliser pour fabriquer de nouveaux produits.
+vista_chip_dildo_3,Essaie d'en fabriquer un de chaque pour voir lequel se vend le mieux.
 vista_chip_dildo_4,Contactez-moi lorsque vous avez des stocks.
 vista_chip_dildo_5,Jusqu’à la prochaine fois.
 vista_chip_conqueror_3,"La taille est inhabituelle, mais repos assuré, il y a une vraie demande pour elle."
-vista_chip_conqueror_4,Nous avons demandé à Gabrielle de faire ce nouveau chip spécialement pour nous.
+vista_chip_conqueror_4,Gabrielle a conçu cette puce exprès pour le Conquérant. L'autre sert à imprimer un tentacule en verre. Garde les deux.
 vista_chip_conqueror_5,Gabrielle a dit que ce jouet pourrait même servir d'arme.
 vista_chip_conqueror_6,"Bien sûr, ce n'était qu'une blague. les poupées sexuelles sont incapables d'agresser."
 vista_chip_conqueror_7,"Nous sommes équipés de chips sex-doll, ce qui nous empêche de délibérément nuire aux autres."
@@ -476,9 +477,9 @@ duke_referral_bye,"Bon, je retourne à l’atelier. À la prochaine !"
 duke_phone_cooldown,Le Duc stellaire est encore en pleine aventure. On en reparlera.
 glass_plate_name,Plaque de verre
 glass_plate_desc,"Une plaque mince et transparente faite d’éclats de verre refondus, prête à être transformée."
-glass_smelting_module_name,Module de fusion du verre
-glass_smelting_module_desc,Un module conçu pour le four de fusion.
-glass_smelting_module_effect,Fait fondre 2 éclats de verre ou 1 bouteille de bière vide pour produire 2 plaques de verre.
+glass_smelting_module_name,Module de four (Fusion du verre)
+glass_smelting_module_desc,Un module spécial qui permet au four de transformer des éclats de verre ou des bouteilles de bière vides en plaques de verre.
+glass_smelting_module_effect,Transforme 2 éclats de verre ou 1 bouteille de bière vide en 2 plaques de verre
 wine_bottle_chip_name,Puce d’imprimante 3D ({0} ×{1})
 high_temperature_nozzle_name,Module de buse d’impression à haute température
 high_temperature_nozzle_desc,Permet à l’imprimante d’utiliser des plaques de verre pour imprimer des objets en verre.
@@ -609,6 +610,17 @@ magnifier_fuel_seal_unknown,Marque du fabricant inconnue
 magnifier_appraisal_progress,Analysé {0}/{1}
 gabrielle_old_friend_discount,Remise d’amie d’enfance
 drone_name,Drone récupérateur
+mobility_intro,"Avec ta santé, ça ne doit pas être facile de sortir…"
+mobility_offer,"Je t’ai apporté un petit coup de main. Tu verras, il est facile à utiliser."
+mobility_handoff,C’est un drone récupérateur.
+mobility_tools,"Voilà la batterie et le kit de réparation.\nS’il prend des coups dehors, tu pourras le réparer toi-même."
+mobility_manual,"La notice est à l’intérieur. Comme tu comprends vite, un coup d’œil te suffira."
+mobility_power,"Tu peux l’envoyer travailler dès ce soir, pour voir."
+mobility_upgrades,"Il lui manque quand même une arme et quelques modules. Avec ça, il serait plus efficace."
+mobility_parts,…Tu crois que tu pourrais te les procurer de ton côté ?
+mobility_bye,À la prochaine.
+mobility_space,Ton comptoir est un peu encombré. Je n’ai pas la place de poser tout ce que je t’ai apporté.
+debug_story_mobility_aid,Histoire de l’atelier | Tester le don du drone de Gabrielle
 drone_desc,"Drone récupérateur à modes travail et veille. En travail, il récupère la nuit et revient au comptoir extérieur le lendemain matin."
 drone_module_bay,Modules
 drone_weapon_bay,Armement
@@ -646,7 +658,7 @@ drone_night_result_attacked,Le drone a terminé sa mission de récupération et 
 aui_section_durability,Durabilité
 drone_broken,Durabilité épuisée. Déploiement impossible.
 repair_kit_name,Kit de réparation
-repair_kit_desc,"Répare les objets ayant une durabilité. Se recharge avec des lingots de métal, de la ferraille ou des vis."
+repair_kit_desc,"Remet en état les armes à feu et répare certaines machines et certains outils. Se recharge avec des lingots de métal, de la ferraille ou des vis."
 repair_material_remaining,Matériaux restants
 debug_items_repair,Kit de réparation et matériaux de recharge
 drone_manual_name,Mode d’emploi : drone récupérateur
@@ -664,4 +676,393 @@ chip_expansion_incompatible,Les emplacements de puces de cette machine sont inco
 chip_expansion_slots,Emplacements de puces : {0}/{1}
 debug_items_desequencer,Atelier | Test du décodeur et des emplacements de puces
 settings_streamer_label,Mode mineurs
-settings_streamer_tooltip,"Activé par défaut. Affiche le plug anal, le godemiché et le Conquérant dans leur emballage. Désactivez-le pour voir les images originales. Apparence uniquement ; appliqué à l’enregistrement des paramètres."
+settings_streamer_tooltip,Activé par défaut. Affiche certains articles pour adultes en boîte. Désactivez-le pour voir les articles. Prend effet à l’enregistrement.
+duke_lucky_water_gift,"C'est un plaisir de faire affaire avec toi, alors le Duc t'a apporté un cadeau !"
+duke_lucky_water_wait,"Oh ! Le Duc t'a apporté un cadeau, mais ton comptoir est plein. Ce sera pour la prochaine fois !"
+module_incubator_name,Itérateur autonome
+module_incubator_training,Chambre d’itération
+module_incubator_desc,Fait progresser les modules dotés d’un algorithme d’apprentissage. Nécessite de l’énergie. Fonctionne la nuit.
+module_incubator_manual_name,Mode d’emploi : Itérateur autonome
+module_incubator_manual_short,Installez une source d’énergie et placez les modules dotés d’un algorithme d’apprentissage dans la chambre d’itération. Chaque module apprend une fois par nuit. Déposez un lingot de métal sur la machine pour agrandir la chambre.
+module_incubator_manual_text,"[Effet des modules] :\n  Efficacité : consommation d’énergie (coef. 0,75)\n  Performance : consommation d’énergie (coef. 0,25)\n  Qualité : +1 apprentissage par tranche de 75 pts de qualité"
+debug_items_module_incubator,Atelier | Itérateur autonome + batterie + lingots de métal
+quality_refiner_name,Reconstructeur moléculaire
+quality_refiner_tray,Compartiment de traitement
+quality_refiner_desc,"Améliore l’état de l’équipement, la pureté des lingots et la qualité du vin. Nécessite de l’énergie, de l’eau et du matériau de reconstruction. Fonctionne la nuit."
+sentinel_catheter_name,Cathéter du syndrome Sentinelle
+sentinel_catheter_doses,Immunivax
+sentinel_catheter_desc,"Chargez de l’Immunivax pour l’injecter avant que le syndrome Sentinelle cause des dégâts. Les doses contrefaites, périmées et authentiques durent respectivement 1, 2 et 3 jours de plus."
+sentinel_catheter_log,Le cathéter a administré une dose d’Immunivax et prolongé son effet de {0} jours.
+debug_items_quality_refiner,Atelier | Reconstructeur moléculaire + matériel de test
+debug_items_sentinel_catheter,Atelier | Cathéter du syndrome Sentinelle + Immunivax
+debug_items_hypertech_booster,Atelier | Turbocompresseur hypertech (30 utilisations)
+quality_refiner_materials,Matériau de reconstruction
+quality_refiner_manual_name,Mode d’emploi : Reconstructeur moléculaire
+quality_refiner_manual_short,"Installez une source d’énergie et un récipient rempli d’eau, puis chargez le compartiment de traitement. Chaque objet admissible gagne un rang par nuit et consomme 2 % de matériau de reconstruction et 50 ml d’eau. Une eau plus pure réduit la consommation d’énergie. Déposez du filament d’impression 3D sur la machine pour la recharger, ou des composants électroniques (communs) pour agrandir le compartiment."
+quality_refiner_manual_text,"[Effet des modules] :\n  Efficacité : consommation d’énergie (coef. 0,5)\n  Performance : consommation d’énergie (coef. 0,5)\n  Qualité : +1 rang par tranche de 150 pts de qualité, sans coût supplémentaire"
+aui_power_draw,Consommation d’énergie
+aui_nightly_learning,Apprentissages par nuit
+aui_nightly_grades,Rangs par nuit
+machine_storage_kit_name,Outil d’amélioration industrielle standard
+machine_storage_kit_desc,Agrandit les compartiments du four et ajoute des emplacements pour les modules de fusion et les additifs. Peut aussi ajouter une seconde ligne de production à une imprimante 3D. Une amélioration par machine.
+furnace_auxiliary_input,Additifs
+furnace_specialist_modules,Modules de fusion
+furnace_compact_modules_hint,Libérez les anciennes cases et rouvrez le four pour mettre à jour la disposition.
+industrial_furnace_name,Four industriel
+industrial_printer_name,Imprimante 3D industrielle
+printer_line_tab,Ligne {0}
+printer_line_no_chip,Sans puce
+printer_line_ready,Prête
+printer_line_working,Impression {0}/{1}
+printer_line_legacy_bay,Libérez les deux dernières rangées de l’ancien compartiment pour passer au nouveau format.
+machine_storage_kit_no_space,Espace insuffisant. Déplacez la machine vers un emplacement dégagé avant de l’agrandir.
+debug_items_machine_storage_kit,Atelier | Outil d’amélioration industrielle standard
+vi_name,Vi
+vi_intro_1,"Bonjour, beauté. Moi, c'est Vi."
+vi_intro_2,"…Avant de me contredire, sache que mes implants oculaires sont un vieux modèle. Ils ont un petit défaut."
+vi_intro_3,"Pour peu qu'on soit en vie, on a l'air d'une jolie fille à mes yeux."
+vi_intro_4,J'ai donc pris l'habitude d'appeler tout le monde « beauté ».
+vi_intro_5,"Je n'ai jamais eu le courage de les faire réparer… Pense à toutes ces filles à croquer dans la rue.\nMême au boulot, j'ai l'impression d'être en galante compagnie. C'est plutôt agréable, non ?"
+vi_intro_6,"Bon, parlons affaires."
+vi_intro_7,"Des pirates ont criblé mon aéronef de tirs. J'ai tout juste réussi à me poser ici.\nÀ peine au sol, la Sûreté me l'a saisi."
+vi_intro_8,"Et hier soir, à l'Azure Cloudtop, quelques petites vipères se sont enroulées autour de moi sans vouloir me lâcher.\nJ'ai cédé. Elles m'ont épuisée et m'ont fait les poches par la même occasion."
+vi_intro_9,Ce n'est qu'aujourd'hui que j'ai appris qu'il n'y avait même pas de banque interstellaire ici.\nImpossible de payer en monnaie standard non plus.
+vi_intro_10,Ça a un petit côté rétro…\nTout juste un peu embarrassant.
+vi_intro_11,"C'est bien un prêteur sur gages, ici ?"
+vi_intro_12,J'ai une antiquité. Dis-moi combien de crédits tu pourrais m'en donner.
+vi_intro_13,"Cela dit, si mon épée ne te tente pas, beauté…\nJe peux aussi te laisser mon corps en gage."
+vi_offer_1,Regarde un peu. C'était le tout dernier modèle de chez Connay il y a un demi-siècle.
+vi_offer_2,"Ici, ça doit encore passer pour une « nouveauté »."
+vi_offer_3,Les années se font un peu sentir. Elle est un peu raide aux jointures.
+vi_offer_4,"La prochaine fois qu'on aura un moment, je te guiderai la main… pour te montrer comment la bichonner."
+vi_bought,Hmm… C'est tout ?
+vi_bought_2,Ça me paiera à peine quelques verres pour les filles de l'Azure Cloudtop.
+vi_bought_3,Il va falloir que je prenne quelques contrats en privé par ici.
+vi_bought_4,"Si tu veux te « débarrasser » de quelqu'un, viens me trouver."
+vi_bought_5,"Si elle est à mon goût, on commencera par une petite « lutte » jusqu'à ce qu'elle en ait les jambes en coton. Ensuite je passe aux choses sérieuses.\nEt toi… tu auras droit à une remise."
+vi_refused,Quel accueil glacial. J'étais bien naïve de croire qu'on saurait apprécier une belle pièce dans les bas quartiers de la station.
+vi_counter_full,"Avec un comptoir aussi encombré, où veux-tu que mon trésor s'allonge ?\nFais un peu de place, et je te laisserai l'admirer tout à loisir."
+research_return_1,"Bonjour, ça faisait longtemps. Je peux enfin m'absenter un peu de l'atelier."
+research_return_2,Je t'ai apporté un reconstructeur moléculaire. C'est le prototype que je testais. Tu peux le garder.
+research_return_3,"Désormais, je passerai moi-même te livrer. Tu pourras me dire comment tourne le prototype."
+quality_refiner_prototype,Prototype
+debug_story_research_return,Histoire de l’atelier | Tester le retour de Gabrielle
+debug_story_vi_visit,Histoire de l’atelier | Tester la première visite de Vi
+sword_category,Épée
+sword_category_blade,Lame nue
+sword_category_module,Module d’épée
+sword_sharpness,Tranchant
+sword_rigidity,Rigidité
+sword_cutting,Capacité de coupe
+sword_resilience,Résilience
+sword_balance,Stabilité de l’équilibre
+sword_style,Style
+sword_blade_name,Lame droite nue
+sword_blade_desc,Une ébauche en métal plein avec un logement pour la poignée à la base.
+sword_grade_rough,Grossière
+sword_grade_common,Ordinaire
+sword_grade_fine,Soignée
+sword_grade_excellent,Excellente
+sword_grade_supreme,Suprême
+sword_hilt_name,Poignée en fibre de carbone
+sword_hilt_desc,Une poignée légère en fibre de carbone pour les lames droites de l’atelier.
+straight_sword_name,Épée droite
+straight_sword_desc,"Cette épée droite réunit deux pièces de l’atelier, « {0} » et « {1} »."
+sword_unload_full,Pas assez de place pour séparer la lame et la poignée.
+sword_blade_chip_name,Puce d’imprimante 3D industrielle (lame droite)
+sword_blade_chip_desc,Cette puce renferme un modèle numérique destiné aux imprimantes 3D.
+sword_hilt_chip_name,Puce d’imprimante 3D (poignée réglementaire Connay)
+sword_hilt_chip_desc,Imprime une poignée réglementaire Connay avec une unité de filament.
+sword_assembly_full,L’épée nécessite 13 cases alignées. Faites de la place avant l’assemblage.
+debug_items_swords,Atelier | Puces et matériaux pour épées
+sword_care_label,Entretien : {0}
+sword_care_corroded,Très corrodée
+sword_care_rusty,Tachetée de rouille
+sword_care_rough,Polissage grossier
+sword_care_fine,Polissage fin
+sword_care_master,Polissage de maître
+sword_standard,Lame métallique standard
+sword_refined,Lame affinée traditionnelle
+sword_compressed,Lame hypercomprimée
+sword_part_connay,Poignée réglementaire Connay
+sword_part_carbon,Poignée en carbone ajouré
+sword_part_ron,Poignée réglementaire Ron
+sword_part_white_hunt,Poignée « Chasse blanche »
+sword_part_guard,Garde
+sword_part_serrated,Dos dentelé
+sword_part_thermal,Tranchant thermique
+sword_part_toxin,Tranchant toxique
+sword_part_openwork,Ajours
+sword_part_fuller,Gouttière
+sword_slot_grip,Poignée
+sword_slot_guard,Garde
+sword_slot_spine,Dos
+sword_slot_edge,Tranchant
+sword_slot_body,Corps de lame
+sword_fixed_desc,Modification irréversible. Reste fixée à cette lame.
+sword_fixed_label,{0} (modification irréversible)
+sword_removable_desc,Se retire avec la commande de déchargement.
+debug_items_blade_prices,Atelier – trois lames
+debug_items_sword_grips,Atelier – quatre poignées
+debug_items_sword_fittings,Atelier – modifications de lame
+sword_slot_reserved,Réservé
+sword_slot_special,Module spécial {0}
+sword_refined_desc,De fines traces de meulage parcourent les flancs de cette ébauche en métal affiné.
+sword_compressed_desc,Une ébauche en métal hypercomprimé dont le dos épais se prolonge presque jusqu’à la pointe.
+sword_part_connay_desc,Une poignée réglementaire Connay à large virole au pied de la lame.
+sword_part_carbon_desc,Une longue ouverture dans la poignée rend ce modèle en carbone particulièrement léger.
+sword_part_ron_desc,Une âme métallique massive stabilise la prise de cette poignée réglementaire Ron.
+sword_part_white_hunt_desc,Les plaquettes claires et les embouts dorés distinguent la poignée Chasse blanche.
+sword_part_guard_desc,Une plaque de garde qui se place devant la poignée.
+sword_part_serrated_desc,Une courte bande de neuf dents serrées pour le dos d’une lame droite.
+sword_part_thermal_desc,"Un tranchant thermique pour lame droite, alimenté par la poignée."
+sword_part_toxin_desc,Un tranchant de rechange enduit de toxine aux reflets gris-vert.
+sword_part_openwork_desc,"Un insert de lame allégé, ouvert en son centre."
+sword_part_fuller_desc,Un insert rainuré qui court dans la longueur de la lame.
+sword_fixed_notice,Modification irréversible
+sword_heat_lit_text,Un fin trait orange court de la virole à la pointe.
+sword_heat_rust_text,La rouille parsème le tranchant. Sa lueur orange s’est éteinte.
+sword_heat_cold_text,Le tranchant est gris terne. Les contacts à sa base sont à nu.
+sword_part_connay_body,Corps de lame réglementaire Connay
+sword_part_connay_body_desc,Les initiales CN sont gravées dans la plaque bleu-gris. L’arme bénéficie d’une plus-value de marque si elle est aussi équipée d’une poignée réglementaire Connay et d’un tranchant thermique.
+sword_connay_maker,Direction conjointe de l’armement Connay
+sword_connay_premium,{0} (valeur +{1} %)
+sword_connay_label,Armement Connay
+adult_nipple_clamps_name,Collier à pinces à seins et double chaîne
+adult_nipple_clamps_desc,"Un produit sûr et efficace. À l'occasion, il peut aussi agrémenter une tenue."
+adult_restraint_cuffs_name,Bracelets de contention
+adult_restraint_cuffs_desc,"Place au jeu de rôle. Tu fais la police, ou… ?"
+debug_items_chain_preview,Essai de l’atelier | Pinces et bracelets (1 de chaque)
+adult_blindfold_name,Bandeau à boucle
+adult_ball_gag_name,Bâillon boule
+adult_paddle_name,Palette de discipline
+adult_flogger_name,Fouet en cuir souple
+adult_glass_wand_name,Baguette en verre perlée
+adult_glass_dual_name,Gode double en verre courbé
+adult_glass_curl_name,Tentacule en verre
+adult_flip_name,Masturbateur à clapet
+adult_soft_cast_name,Buste moulé souple
+adult_polly_five_name,Masseur clitoridien
+adult_delay_gel_name,Gel retardant
+adult_care_oil_name,Huile nourrissante
+adult_massage_cream_name,Crème de massage
+adult_blindfold_desc,Évitez de vous en servir comme masque de sommeil en public. Vous passeriez pour un pervers.
+adult_ball_gag_desc,"On s'en sert d'habitude sur les animaux pour éviter les morsures. Il faut dire que l'être humain est un animal, lui aussi."
+adult_paddle_desc,"Ça ne fait pas bien mal. Pour certaines occasions, c'est juste ce qu'il faut."
+adult_flogger_desc,"Ça pique juste assez, sans laisser de traces. C'est tout le plaisir."
+adult_glass_wand_desc,"L'objet paraît grossier. À l'usage, le verre laisse pourtant voir les structures internes et les fluides qui font battre le cœur plus vite."
+adult_glass_dual_desc,"Sur la boîte : « Une courbe parfaite, des sphères délicates. Même en cas de casse, aucun risque de blessure. »"
+adult_glass_curl_desc,"Un tentacule en verre rose, ventouses comprises. Depuis qu'il est en vitrine, quelqu'un est venu demander où se trouvait la boutique d'aquariophilie."
+adult_flip_desc,Tu sais pourquoi on choisit ce modèle ? Il est discret et facile à nettoyer.
+adult_soft_cast_desc,Un jouet aussi ancien que rudimentaire. Il fait toujours son effet.
+adult_polly_five_desc,"Des vibrations à haute fréquence, une forme enveloppante et un faible courant. D'où son surnom : « l'extase minute »."
+adult_delay_gel_desc,"En général, on recherche l'efficacité. Au lit, en revanche, plus ça prend de temps, mieux c'est."
+adult_care_oil_desc,"Cette huile était réputée dans les niveaux supérieurs pour ses extraits entièrement naturels. Aujourd'hui, tout le monde sait que le « tout naturel » est devenu impossible."
+adult_massage_cream_desc,"Un massage demande du doigté. Avec cette crème, quelques caresses suffisent pour que l'autre rende les armes. Tout le monde l'adore."
+adult_neon_sign_name,Enseigne néon pour articles érotiques
+adult_sign_broker_name,"Courtier des niveaux supérieurs"
+adult_sign_broker_offer,"Ce lot vient des niveaux supérieurs. Examinez-le. Si vous prenez le tout, on peut discuter du prix."
+research_new_1,Ça fait longtemps. Je viens de terminer cette phase de recherche.
+research_new_2,Tu te demandes peut-être sur quoi je travaillais.
+research_new_3,Regarde ça et tu comprendras !
+research_new_4,Voilà le fruit de toutes ces journées de travail.
+research_new_5,Un reconstructeur moléculaire !
+research_new_6,C'est le prototype. Je voudrais te l'offrir.\nMerci d'avoir soutenu l'atelier pendant tout ce temps.
+research_new_7,"Cette machine peut, dans une certaine mesure, réorganiser les atomes d'une matière.\nElle en modifie ainsi les propriétés et la qualité."
+research_new_8,"Bref, elle donne du corps au vin et rend le métal plus dur."
+research_new_9,"C'est une sacrée invention, tu ne trouves pas ?"
+research_new_10,Désormais je reprendrai les livraisons moi-même.\nJe prépare déjà mes prochaines recherches.
+research_new_11,"Du coup, mes crédits fondent à nouveau. J'espère que tu continueras à m'acheter mes produits."
+research_new_12,"Sur ce, à la prochaine."
+research_friend_1,Ça fait un bail ! Je t'ai manqué ?
+research_friend_2,"Tu meurs d'envie de savoir ce que je fabriquais, hein ?"
+research_friend_3,Tadam ! Regarde un peu !
+research_friend_4,Un reconstructeur moléculaire !
+research_friend_5,"Tu vas voir, c'est quelque chose !"
+research_friend_6,Elle donne du corps au vin et rend le métal plus dur.
+research_friend_7,Le principe ? Eh bien… elle réorganise les atomes de la matière et peut aussi agir sur les molécules.
+research_friend_8,Je te passe les détails. J'ai glissé la notice dans la machine.
+research_friend_9,Je vais reprendre les livraisons moi-même.\nJe prépare déjà mes prochaines recherches.
+research_friend_10,"Alors, je recommence à manquer de crédits. Pense à passer commande chez moi, hein ?"
+research_friend_11,"Allez, à la prochaine."
+bd_deck,Casque de lecture onirique
+bd_moon,Cartouche onirique - Edgerunners
+bd_moon_flavor,"« Pardon, Lucy. Je ne peux pas t’emmener sur la Lune avec moi. »"
+bd_flowers,Cartouche onirique - Echo of Starsong
+bd_nameless,Cartouche sans nom
+bd_flowers_flavor,"Aucune des deux voies ne demeure. On se rencontre sans partir. Aucune des deux voies ne demeure. Sans partir, on se rencontre."
+bd_slot,Cartouche à lire
+bd_play,Lire
+bd_screen,Lecture
+bd_desc,Insérez une cartouche dans le lecteur et appuyez sur Lecture. Rangez les autres dans le compartiment de stockage.
+bd_tape_desc,Pour casque de lecture onirique.
+bd_loading,Lecture de la cartouche…
+bd_error,Lecture impossible. Appuyez sur Échap.
+bd_debug,"Lecture onirique : casque, trois cartouches et étui"
+bd_pause,Pause
+bd_theater,Plein écran
+bd_standard,Standard
+bd_minimize,Réduire
+bd_restore,Agrandir
+bd_case,Étui à cartouches oniriques
+bd_case_desc,Un étui rigide pour neuf cartouches oniriques.
+settings_vi_portrait_label,Portrait de Vi
+settings_vi_portrait_tooltip,"Choisissez le portrait de Vi. Le style retravaillé 1 accentue les pixels, tandis que le 2 offre un rendu plus doux. Appliquez le réglage et rechargez votre partie. Ce choix est commun à toutes les sauvegardes."
+bd_unreadable,La cartouche est illisible.
+warn_known,Bonjour. Je suis venue te demander de faire attention à quelque chose. Ça concerne Gabrielle.
+warn_new,Bonjour. Tu peux m’appeler Vista.
+warn_new_2,"Je suis une poupée de compagnie haut de gamme à l’Azure Cloudtop, dans les Niveaux Supérieurs.\nAutrefois, nous commandions tout notre matériel à Gabrielle."
+warn_new_3,"On m’a dit qu’elle passait souvent ici ces derniers temps.\nPour sa sécurité, il faut que je te parle."
+warn_1,"Avant-hier soir, un client m’a demandé si Gabrielle nous avait livré quelque chose de nouveau."
+warn_2,"J’ai cru qu’il voulait changer de jouet. J’allais lui proposer d’en choisir un.\nEn fait, il parlait d’une sorte de loupe."
+warn_3,La loupe d’inspection spectrale que Gabrielle a fabriquée.
+warn_4,"D’après lui, si elle se vend bien, la station n’aura plus besoin de la commission d’expertise."
+warn_5,"Plus tard, en revenant chercher les verres, je les ai entendus. Ils parlaient encore d’elle."
+warn_6,"Mais cette fois, ils se demandaient…\ncombien de preuves il leur faudrait pour fermer l’atelier et arrêter Gabrielle."
+warn_7,"Je ne peux pas t’expliquer pourquoi, mais Gabrielle compte beaucoup pour « nous »."
+warn_8,Alors je t’ai apporté quelque chose.
+warn_9,"C’est un casque de lecture onirique. Il y a longtemps, certains appelaient ça une « danse sensorielle »."
+warn_10,"Voici aussi un étui de cartouches.\nSur l’une d’elles, on voit le visage du client qui m’a interrogée ce soir-là."
+warn_11,Regarde un peu plus loin. C’est quand il relève la tête qu’on le voit le mieux.
+warn_12,Il recueille des preuves pour la commission d’expertise.\nIl pourrait passer ici dans les trois jours qui viennent.
+warn_13,"S’il te demande d’examiner sa marchandise, prends-la comme d’habitude."
+warn_14,Pense simplement à ranger d’abord la loupe d’inspection spectrale que Gabrielle a modifiée.
+warn_15,"Si tu t’en sers devant lui, il pourra l’emporter.\nAlors là, ils l’auront vraiment, leur preuve."
+warn_16,Je te laisse le casque.
+warn_17,"Tu risques d’en avoir souvent besoin, à l’avenir."
+warn_18,À la prochaine.
+exam_customer,Client des quartiers hauts
+exam_offer,Je voudrais vendre ces paquets de cigarettes. Combien vous m’en donnez ?
+exam_return_offer,Vous rachetez de l’Immunivax ? J’ai cinq doses.
+exam_return_repeat,Vous en proposez combien ?
+exam_return_bye,Marché conclu.
+exam_return_skip,Je vais voir ailleurs.
+exam_shop_damage,"La boutique a été saccagée cette nuit. À l’ouverture, le sol était jonché de débris."
+exam_thanks_1,J’ai entendu dire qu’il s’était passé quelque chose à la boutique. Je suis venue voir comment tu allais. Tu n’as rien ?
+exam_thanks_2,"Ces derniers temps, la commission d’évaluation se renseigne sur la loupe d’inspection que j’ai fabriquée.\nJe me demandais quand ils allaient débarquer à l’atelier."
+exam_thanks_3,Quand je vois ta boutique dans cet état… j’ai peur de t’avoir attiré des ennuis.
+exam_thanks_4,Merci d’avoir veillé sur moi ces derniers temps.\nJ’ai quelques modules neuronaux. Je te laisse choisir.
+exam_thanks_5,"Si tu as une machine qui a besoin de beaucoup de puissance, prends ce module débridé.\nSi tu as deux machines à équiper, les deux modules bridés juste à côté sont pour toi. Qu’est-ce qui t’arrange ?"
+exam_gift_choice,Choisissez un lot de modules neuronaux.
+exam_gift_old_friend,Tu as choisi ?
+exam_gift_all,Je prends tout (1 débridé + 2 bridés)
+exam_thanks_bye,"Tiens. Si tu as du mal à les installer, appelle-moi à l’atelier."
+exam_thanks_all_taken,"Les trois ? …Tu ne perds jamais le nord, toi.\nAllez, avec tout ce que tu as fait pour moi ces derniers temps, ils sont à toi."
+exam_thanks_all_price,"Range-les bien. La prochaine fois que je viens te vendre quelque chose, fais-moi un bon prix, hein ?"
+exam_thanks_all_call,"Ah, et si tu as du mal à les installer, appelle-moi."
+exam_repeat,"Comment vérifiez-vous vos marchandises, d’habitude ? Allez-y."
+exam_bye,Bon… Je sais à quoi m’en tenir.
+exam_skip,Hum. Soit.
+exam_committee,Enquêteur de la commission d’expertise
+exam_stop,Plus un geste !
+exam_seize,Posez cette loupe ! Je suis enquêteur pour la commission d’expertise.\nAgents ! Vous pouvez entrer.
+exam_officer_ask,Service de sécurité.\nC’est bien cette loupe d’inspection qui vient de servir au comptoir ?
+exam_identify,Oui. Je l’ai vu s’en servir.\nElle porte aussi la marque de l’atelier de Gabrielle.
+exam_seal,"Une loupe d’inspection, placée sous scellés comme pièce à conviction."
+exam_arrest,"Prévenez les agents à l’atelier. Qu’ils procèdent à l’arrestation de la suspecte, Gabrielle."
+exam_noanswer,Personne ne répond.
+debug_story_warning,Atelier — L’avertissement de Vista
+debug_story_examiner,Atelier — Avancer la visite de l’enquêteur (après la remise du matériel)
+exam_clear_counter,Faites de la place sur le comptoir avant pour la loupe.
+whetstone_rough,Pierre grossière
+whetstone_fine,Pierre fine
+whetstone_master,Pierre de finition à grain très fin
+whetstone_rough_desc,"Élimine un degré de rouille par passage sur une lame ou une épée, jusqu’au polissage grossier."
+whetstone_fine_desc,Fait passer une lame ou une épée du polissage grossier au polissage fin.
+whetstone_master_desc,Donne à une lame ou une épée déjà finement polie un polissage de maître.
+whetstone_rough_flavor,La surface ocre est rêche sous le doigt.
+whetstone_fine_flavor,De minuscules grains sont incrustés dans la pierre vert pâle.
+whetstone_master_flavor,La face gris-bleu est presque lisse au toucher.
+vi_stones_1,Ça fait quelques jours. Je t'ai manqué~ ?
+vi_stones_2,Tu te souviens de ma promesse ?\nJe devais guider tes mains pour t'apprendre à choyer une lame.
+vi_stones_3,"J'ai pris quelques contrats ces derniers temps,\net ma lame en a vu de belles."
+vi_stones_4,"Alors j'ai un petit service à te demander.\nQuand je passerai avec elle, tu voudras bien t'en occuper ?"
+vi_stones_5,Ces trois-là sont des pierres à aiguiser. Garde-les précieusement.
+vi_stones_6,"Choyer une lame, c'est comme choyer une fille.\nTout est dans la pression des doigts."
+vi_stones_7,"Quand la rouille la raidit, elle résiste.\nDeux coups bien fermes de pierre grossière et elle baisse la garde."
+vi_stones_8,"Au « Polissage grossier », elle se laisse faire.\nPrends alors la pierre fine et vas-y tout en douceur."
+vi_stones_9,Quant à la pierre de finition à grain très fin…\nGarde-la pour la fin. Effleure lentement ses points sensibles.
+vi_stones_10,Continue jusqu'à ce qu'elle soit toute chaude et brillante.
+vi_stones_11,"Ne te trompe pas d'ordre, hein ?\nSi tu reprenais la pierre grossière alors qu'elle brille de partout…"
+vi_stones_12,"Oh, ça me fendrait le cœur."
+vi_stones_13,"Ça fait beaucoup à retenir d'un coup,\nalors je t'ai dessiné un petit guide. Tiens, il est à toi."
+vi_stones_14,"J'ai soigné les détails.\nQuand tu auras un moment, prends le temps de les examiner."
+vi_stones_bye,"Bon, je te laisse tout ça.\nQuand je reviendrai avec ma lame, je verrai ce que valent tes mains."
+vi_stones_goodbye,À bientôt.
+vi_stones_space,"Ton comptoir est toujours aussi encombré.\nFais-moi un peu de place, tu veux ? J'ai encore les mains pleines."
+vi_supply_first_offer,"Les pierres que je t’ai données la dernière fois…\nElles doivent être bien usées, non ?"
+vi_supply_offer,Tu as presque usé les pierres\nque je t’ai laissées l’autre fois ?
+vi_supply_stock,Je t’en ai rapporté quelques-unes.
+vi_supply_recipe,"Que ce soit dit…\nSi je garde la recette, ce n’est pas par radinerie."
+vi_supply_stone,"Sur cette station, il n’y a que du métal froid.\nBon courage pour y trouver un beau morceau de pierre naturelle !"
+vi_supply_use,"Même si je te donnais la recette maintenant,\ntu n’aurais pas de quoi les fabriquer."
+vi_supply_price,Choisis celles qui te plaisent.\nTu me paies juste le trajet.
+vi_supply_first_sale,"Tiens. Je les ai rapportées de si loin pour toi…\nFais-en bon usage, d’accord ?"
+vi_supply_sale,Merci pour ton achat.
+vi_supply_bye,"Bon, je file~"
+vi_supply_return,"Je repasse dans deux semaines…\nPense un peu à moi, beauté~"
+vi_supply_space,"J’en ai encore quelques-unes dans les mains.\nTu me fais une petite place, beauté ?"
+debug_vi_supply,Atelier | Tester la vente de pierres de Vi (deux de chaque)
+debug_story_vi_whetstones,Histoire de l’atelier | Tester le retour de Vi (trois pierres à aiguiser)
+vi_guide_title,Guide d’entretien des lames
+vi_guide_desc,"Sur cette feuille, Vi a dessiné quand utiliser chaque pierre."
+vi_guide_use,"Choisissez une pierre, puis une épée ou une ébauche de lame."
+vi_guide_wear,Chaque usage coûte 5 % de durabilité à la pierre. Elle est irréparable.
+vi_guide_order,Sauter un grain use la pierre en vain. Revenir à un grain plus gros dégrade le poli.
+vi_order_title,Entretien de la lame
+vi_crew_visitor_name,Partenaire de Vi
+vi_crew_femaleBM1_name,Femme à capuche
+vi_crew_femaleBM1_care,Vous pouvez m’affûter cette lame ? Je peux la récupérer aujourd’hui ?
+vi_crew_femaleBM1_buy,Je cherche de quoi me défendre. Vous avez des couteaux ?
+vi_crew_femaleBM5_name,Femme rousse
+vi_crew_femaleBM5_care,"Hier, j’ai voulu couper une corde avec ça. J’ai dû m’y reprendre à plusieurs fois. Vous pouvez y jeter un œil ?"
+vi_crew_femaleBM5_buy,Vous avez de bonnes lames ? Montrez-m’en quelques-unes.
+vi_crew_femaleMerc4_name,Mercenaire au bandeau
+vi_crew_femaleMerc4_care,Il me faut cette lame pour demain. Vous pouvez me la remettre en état ?
+vi_crew_femaleMerc4_buy,Il me faut quelque chose pour le corps à corps. Qu’est-ce que vous avez en stock ?
+vi_crew_order_request,C’est celle-ci. J’ai noté ce qu’il me faut.
+vi_crew_order_fee,Je vous paierai un peu plus si vous soignez le fil.
+vi_crew_order_space,Vous pouvez me faire une petite place pour la poser ?
+vi_crew_order_thanks,"Ah, ça va mieux comme ça."
+vi_crew_order_bye,"Tenez, pour le travail. Merci."
+vi_crew_buy_request,"Un couteau, une matraque… Montrez-moi ce que vous avez."
+debug_vi_crew_care,Histoire de l’atelier | Tester l’entretien pour les compagnes de Vi
+debug_vi_crew_buy,Histoire de l’atelier | Tester l’achat d’armes par les compagnes de Vi
+vi_order_hello,"Me voilà, ma belle. Chose promise…\nTu as bien lu le guide que je t’ai laissé ?"
+vi_order_stones,Tu te souviens des pierres que je t’ai laissées ?\nElles vont te servir aujourd’hui.
+vi_order_request,Ma lame a perdu un peu de son fil.\nJ’aimerais que tu me la bichonnes…
+vi_order_fee,"Pour le salaire, je ne vais pas lésiner."
+vi_order_space,Ton comptoir est toujours aussi encombré.\nFais une petite place à ma lame et appelle-moi quand c’est prêt.
+vi_order_thanks,"Mmm… un fil bien net, et quelle douceur en main.\nTu as des doigts de fée."
+vi_order_bye,"Tiens, voilà ton dû.\nJe reprends ma lame. À la prochaine."
+debug_story_vi_blade_order,Atelier | Tester la commande de Vi
+debug_story_vi_partnership,Atelier | Tester le cadeau de partenariat de Vi
+vi_partner_hello,"Coucou~ Alors, les affaires ?"
+vi_partner_reunion,Mes sœurs aussi viennent d’arriver à la station.
+vi_partner_pause,…
+vi_partner_staying,"Oh, ne fais pas cette tête.\nJe ne viens pas te dire adieu~"
+vi_partner_agree,"Figure-toi que les filles et moi, on a eu la même idée."
+vi_partner_station,"Ici, c’est pauvre et c’est loin de tout…\nMais à bien y réfléchir, ça nous arrange."
+vi_partner_club,"Et puis, les filles de l’Azure Cloudtop…\nComment veux-tu que je leur résiste ?"
+vi_partner_upper,"Et tes gens du niveau supérieur,\nau fond, ils ont encore quelque chose de franchement primitif."
+vi_partner_tastes,Leurs petits penchants sont sauvages. Et sexy.
+vi_partner_love,"Moi, j’adore~ !\nEt mes sœurs en raffolent aussi~"
+vi_partner_plan,Alors on va prendre racine ici\net y établir notre nouvelle base.
+vi_partner_gangs,Quant aux gangs du coin…\nje doute qu’ils osent y trouver à redire.
+vi_partner_trade,"Au fait, les tueurs à gages de cette station…\nQuel amateurisme. Et qu’est-ce qu’on s’ennuie."
+vi_partner_stealth,Se faufiler ? Attaquer par surprise ?
+vi_partner_refusal,Mmm~ Très peu pour moi.
+vi_partner_witnesses,"À mon avis, tous ceux qui me voient\net qui ne savent pas tenir leur jolie langue, autant les tuer tous…"
+vi_partner_thrill,"Ça, au moins, ça me défoule~"
+vi_partner_restraint,"Évidemment, la plupart du temps,\nje ne peux pas me permettre d’aller jusque-là."
+vi_partner_blade,Tu te souviens de la lame que tu m’as « dressée » ?\nMes sœurs l’ont essayée. Elles en sont folles.
+vi_partner_offer,"Alors c’est décidé, beauté.\nToi et moi, on va faire affaire pour longtemps."
+vi_partner_chips,"Ces deux puces sont pour toi.\nLes modèles datent un peu, mais ils sont increvables."
+vi_partner_local_use,"Pour tenir tête aux gangs du coin,\nça suffira largement."
+vi_partner_visits,"Il nous faudra un peu de temps pour installer la base.\nEnsuite, mes sœurs viendront souvent te confier leurs armes pour l’entretien."
+vi_partner_supplies,Et au passage… elles en achèteront quelques-unes chez toi.
+vi_partner_bond,"J’espère que toi et moi, on restera enlacés\npour très, très longtemps. Ça te dirait ?"
+vi_partner_bye,Bye-bye~
+vi_partner_space,"Tu me fais un peu de place pour les puces ?\nSi j’en laisse tomber une, on va passer la journée à la chercher."
+sword_ron_hilt_chip_name,Puce d’imprimante 3D (poignée réglementaire Ron)
+sword_ron_hilt_chip_desc,Cette puce renferme un modèle numérique destiné aux imprimantes 3D.

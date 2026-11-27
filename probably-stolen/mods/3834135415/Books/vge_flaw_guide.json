@@ -1,0 +1,78 @@
+{
+  "id": "vge_flaw_guide",
+  "title": "Hidden Damage Appraisal Guide",
+  "background": "vge_manual_page",
+  "width": 628,
+  "height": 804,
+  "chrome": [
+    { "type": "text", "id": "header", "loc": "flaw_guide_title", "style": "header", "color": "#9E1F1A", "align": "center", "wrap": false, "x": 38, "y": 32, "w": 240, "h": 18 },
+    { "type": "button", "id": "close", "action": "close", "x": 297, "y": 2, "w": 14, "h": 15 },
+    { "type": "button", "id": "zoom", "action": "zoom", "x": 274, "y": 3, "w": 14, "h": 15 },
+    { "type": "button", "id": "flip_left", "action": "flip_left", "x": 102, "y": 380, "w": 14, "h": 15 },
+    { "type": "button", "id": "flip_right", "action": "flip_right", "x": 198, "y": 380, "w": 14, "h": 15 },
+    { "type": "text", "id": "page_indicator", "action": "page_indicator", "style": "title", "align": "center", "valign": "middle", "wrap": false, "x": 118, "y": 376, "w": 78, "h": 23 }
+  ],
+  "pages": [
+    {
+      "name": "origins",
+      "elements": [
+        { "type": "text", "id": "title", "loc": "flaw_guide_origin_title", "style": "title", "align": "center", "wrap": false, "x": 36, "y": 55, "w": 248, "h": 20 },
+        { "type": "text", "id": "origins", "loc": "flaw_guide_origin", "style": "body", "x": 40, "y": 94, "w": 244, "h": 83 },
+        { "type": "image", "id": "kit", "sprite": "vge_flaw_kit", "x": 42, "y": 183, "w": 236, "h": 60 },
+        { "type": "text", "id": "effects", "loc": "flaw_guide_effect", "style": "body", "x": 40, "y": 267, "w": 244, "h": 76 }
+      ]
+    },
+    {
+      "name": "magnifier",
+      "elements": [
+        { "type": "text", "id": "title", "loc": "flaw_guide_lens_title", "style": "title", "align": "center", "wrap": false, "x": 36, "y": 55, "w": 248, "h": 20 },
+        { "type": "text", "id": "how", "loc": "flaw_guide_lens_hint", "style": "body", "x": 38, "y": 81, "w": 246, "h": 27 },
+        { "type": "image", "id": "frame", "sprite": "vge_flaw_frame", "x": 38, "y": 110, "w": 244, "h": 56 },
+        { "type": "text", "id": "frame_caption", "loc": "flaw_guide_frame", "style": "body", "align": "center", "x": 38, "y": 168, "w": 244, "h": 24 },
+        { "type": "image", "id": "grip", "sprite": "vge_flaw_grip", "x": 38, "y": 194, "w": 244, "h": 56 },
+        { "type": "text", "id": "grip_caption", "loc": "flaw_guide_grip", "style": "body", "align": "center", "x": 38, "y": 252, "w": 244, "h": 24 },
+        { "type": "image", "id": "contacts", "sprite": "vge_flaw_contacts", "x": 38, "y": 278, "w": 244, "h": 56 },
+        { "type": "text", "id": "contacts_caption", "loc": "flaw_guide_contacts", "style": "body", "align": "center", "x": 38, "y": 336, "w": 244, "h": 24 }
+      ]
+    },
+    {
+      "name": "flashlight",
+      "elements": [
+        { "type": "text", "id": "title", "loc": "flaw_guide_light_title", "style": "title", "align": "center", "wrap": false, "x": 36, "y": 55, "w": 248, "h": 20 },
+        { "type": "text", "id": "how", "loc": "flaw_guide_light_hint", "style": "body", "x": 38, "y": 81, "w": 246, "h": 27 },
+        { "type": "image", "id": "rust", "sprite": "vge_flaw_rust", "x": 38, "y": 110, "w": 244, "h": 56 },
+        { "type": "text", "id": "rust_caption", "loc": "flaw_guide_rust", "style": "body", "align": "center", "x": 38, "y": 168, "w": 244, "h": 24 },
+        { "type": "image", "id": "barrel", "sprite": "vge_flaw_barrel", "x": 38, "y": 194, "w": 244, "h": 56 },
+        { "type": "text", "id": "barrel_caption", "loc": "flaw_guide_barrel", "style": "body", "align": "center", "x": 38, "y": 252, "w": 244, "h": 24 },
+        { "type": "image", "id": "feed", "sprite": "vge_flaw_feed", "x": 38, "y": 278, "w": 244, "h": 56 },
+        { "type": "text", "id": "feed_caption", "loc": "flaw_guide_feed", "style": "body", "align": "center", "x": 38, "y": 336, "w": 244, "h": 24 }
+      ]
+    },
+    {
+      "name": "counter",
+      "elements": [
+        { "type": "text", "id": "title", "loc": "flaw_guide_deal_title", "style": "title", "align": "center", "wrap": false, "x": 36, "y": 55, "w": 248, "h": 20 },
+        { "type": "flow", "id": "verdicts", "x": 40, "y": 86, "w": 244, "h": 58, "spacing": 4 },
+        { "type": "text", "id": "confront", "loc": "flaw_guide_confront", "style": "body", "flow": "verdicts", "autoHeight": true, "w": 0, "h": 0 },
+        { "type": "text", "id": "repair", "loc": "flaw_guide_repair", "style": "body", "flow": "verdicts", "autoHeight": true, "w": 0, "h": 0 },
+        { "type": "image", "id": "screwdriver", "sprite": "items_tool/screwdriver_s", "x": 90, "y": 147, "w": 16, "h": 48 },
+        { "type": "image", "id": "oil", "sprite": "vge_gun_oil", "x": 214, "y": 155, "w": 16, "h": 32 },
+        { "type": "text", "id": "screwdriver_caption", "loc": "flaw_guide_screwdriver", "style": "body", "align": "center", "x": 38, "y": 199, "w": 120, "h": 34 },
+        { "type": "text", "id": "oil_caption", "loc": "flaw_guide_oil", "style": "body", "align": "center", "x": 162, "y": 199, "w": 120, "h": 34 },
+        { "type": "text", "id": "materials_hint", "loc": "flaw_guide_materials", "style": "body", "x": 40, "y": 238, "w": 244, "h": 25 },
+        { "type": "image", "id": "materials", "sprite": "vge_flaw_materials", "x": 40, "y": 268, "w": 240, "h": 36 },
+        { "type": "text", "id": "filament_caption", "loc": "flaw_guide_filament", "style": "body", "align": "center", "x": 40, "y": 309, "w": 80, "h": 50 },
+        { "type": "text", "id": "electronics_caption", "loc": "flaw_guide_electronics", "style": "body", "align": "center", "x": 120, "y": 309, "w": 80, "h": 50 },
+        { "type": "text", "id": "parts_caption", "loc": "flaw_guide_parts", "style": "body", "align": "center", "x": 200, "y": 309, "w": 80, "h": 50 }
+      ]
+    }
+  ],
+  "item": {
+    "id": "vge_flaw_guide",
+    "nameLoc": "vge_flaw_guide_name",
+    "descriptionLoc": "vge_flaw_guide_desc",
+    "sprite": "vge_flaw_guide",
+    "value": 50,
+    "important": true
+  }
+}

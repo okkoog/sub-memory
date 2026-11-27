@@ -41,6 +41,15 @@
       ]
     },
     {
+      "name": "ammo 2",
+      "elements": [
+        { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
+        { "type": "text", "id": "title", "loc": "manual_ammo_title", "style": "title", "align": "center", "wrap": false, "x": 28, "y": 49, "w": 262, "h": 21 },
+        { "type": "flow", "id": "body_flow", "x": 35, "y": 86, "w": 253, "h": 290, "spacing": 4 },
+        { "type": "text", "id": "body", "loc": "manual_ammo_body2", "flow": "body_flow", "style": "body", "autoHeight": true, "w": 0, "h": 0 }
+      ]
+    },
+    {
       "name": "workshop",
       "elements": [
         { "type": "text", "id": "header", "loc": "manual_header", "style": "header", "align": "center", "wrap": false, "x": 72, "y": 34, "w": 173, "h": 20 },
