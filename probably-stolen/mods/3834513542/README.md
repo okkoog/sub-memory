@@ -4,24 +4,21 @@ Move water around your inventory grids automatically, and build a purification s
 
 ### Upgrade your water line:
 - The Faucet keeps a container full from your water line
-- Wild upgrades raise your line up to High Quality, and the Main Line Siphon also lets you pick a lower grade
+- Raise your line to High Quality with the Industrial Filter and two siphon kits for your store's faucet, sold by the water merchant and the Hypertech Smuggler; the Upper Pipe Siphon also lets you pick a lower grade
 - Basic pipes move water between containers in a grid
 
 ### Automate:
 - Smart pipes move water by grade, and smart bridge pipes move it between grids like hoppers
-- Overnight pipes run once a night, in hopper order
+- Overnight pipes run once a night, with the same order setting as hoppers
 - The Pure Module lets a purifier reach Pure water
 - The Algae Biofilter turns piped water into nutrient water for hydroponic racks, [Grow Racks](https://steamcommunity.com/sharedfiles/filedetails/?id=3834513637) included
-- Put an aquascanner in a tank's slot and its label stays true
 - Also included: the Water Bottler, Compact Tank and Cistern
 
-All settings, item prices, tank size, shop stock and the Algae Biofilter's power use included, are under the gear button in the Mods menu.
+All settings are under the gear button in the Mods menu.
 
-### What's new in 1.1.3:
-- Balance settings: prices, tank size, stock, Cistern chance
-- Line Selector merged into the Main Line Siphon
-- Line upgrade prices are now settings
-- Main Line Siphon costs 4000, Upper Pipe Siphon 10000
+### What's new in 1.2.0:
+- Works on Shop Expansion shelves
+- Siphons are now kits for your store's faucet, and the grade choice comes with the Upper Pipe Siphon
 
 ### Future plans:
 - Glass chemistry pipes
@@ -31,9 +28,12 @@ Should work with these mods:
 - [AquaSense](https://steamcommunity.com/sharedfiles/filedetails/?id=3828878417): replaces putting scanners in tanks for auto-scanning
 - [Better Liquid Scanner](https://steamcommunity.com/sharedfiles/filedetails/?id=3831472187)
 - [Agri Expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=3832249311): the lower purifier cap applies
+- [Shop Expansion](https://steamcommunity.com/sharedfiles/filedetails/?id=3842868337): faucets, pipes and machines run on its shelves, not on the back counter
 
 Not compatible with these mods:
 - [Pure Water Purifier](https://steamcommunity.com/sharedfiles/filedetails/?id=3832771405): Target and the Pure module may do nothing
+
+Shop Expansion support by Mr. Viking.
 
 ---
 
@@ -52,5 +52,7 @@ If you like this mod, a rating is much appreciated.
 + [Automated Vending](https://steamcommunity.com/sharedfiles/filedetails/?id=3834513599): pipes fill the Fountain Pipe System
 
 If you find any bugs, compatibility issues, want the mod in your language, or want to request a feature, please comment or start a discussion!
+
+**Found a bug? Please report it in the [Bug reports discussion](https://steamcommunity.com/workshop/filedetails/discussion/3834513542/574932244729416295/).**
 
 Built with AI assistance.

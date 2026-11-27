@@ -11,19 +11,14 @@ winery_yeast_super,Super yeast
 winery_yeast_reusable,Reusable yeast
 winery_yeast_red,Red yeast (contraband)
 winery_yeast_quality,Quality Yeast
-winery_yeast_custom,Custom
-winery_label_custom_yeast_a,Custom yeast 1
-winery_label_custom_yeast_b,Custom yeast 2
-winery_custom_yeast_none,None
 winery_label_crop,Crop
 winery_crop_berry,Bloomberry
 winery_crop_nutrifruit,Nutrifruit
-winery_label_custom_yeast,Custom yeast
 winery_check_on,[x] {0}
 winery_check_off,[ ] {0}
 quality_yeast_name,Quality Yeast
 quality_yeast_desc,A wine yeast bred for quality rather than speed.
-quality_yeast_flavor,The road past Master Vintage starts here.
+quality_yeast_flavor,One is all it takes to start down the road past Master Vintage.
 brewery_name,Brewery
 brewery_desc,Brews beer inside a Bottling Line.
 brewery_label_recipe,Recipe
@@ -153,10 +148,33 @@ fermenter_why_other_crop,The input holds {0}: choose it as the Winery's crop.
 fermenter_why_recipe_nofit,Idle: the Recipe's fruits and the yeast do not fit one bottle.
 fermenter_why_huge_nutrifruit,Idle: {0} does not fit a wine bottle.
 fermenter_any_beer_yeast,yeast (not red yeast or Quality Yeast)
-fermenter_any_wine_yeast,"plain, super or reusable yeast"
+fermenter_any_wine_yeast,"plain, super or reusable yeast (not Quality Yeast)"
 fermenter_tip_demand_one,Ingredients for 1 bottle.
 fermenter_why_more,And {0} more: see the tooltip.
 fermenter_unknown_item,an item from a removed mod
+age_well_kit_name,Age Well Expansion Kit
+age_well_kit_desc,"Use on an Age Well to add {0} rows to its wine grid. Up to {1} kits per Age Well."
+age_well_port_name,Age Well Hopper Port
+age_well_port_desc,Use on an Age Well to add a slot for an outlet hopper. What the hopper delivers goes into the wine grid and takes no cell. One per Age Well.
+age_well_port_label,Hopper
+age_well_tip_kits,Kits: {0}/{1}
+age_well_tip_port_fitted,Hopper port: fitted
+age_well_tip_port_none,Hopper port: none
+age_well_kit_refused_mdu,"{0} cannot go on {1}: More Device Upgrades sets the size of the Age Well"
+quality_yeast_reusable_name,Reusable Quality Yeast
+quality_yeast_reusable_desc,"A Quality Yeast that is never used up. Leave it in a Bottling Line input with its Winery set to Quality Yeast, and it earns the Grandmaster Vintage bonus every bottle. One is enough."
+super_yeast_reusable_name,Reusable Super Yeast
+super_yeast_reusable_desc,A super yeast that is never used up. Leave it in an input and it ferments every bottle at super yeast speed.
+bottler_label_input_port,Supply
+bottler_label_output_port,Dispatch
+bottler_label_control,Control
+port_label_splitter,Splitter
+port_split_first,First available
+port_split_round_robin,Round robin
+port_split_even,Even split
+fermenter_label_yeast_slots,Reusable yeast
+winery_yeast_from_slots,From slots
+night_converter_extra,Bottling Lines drew {0} more charge than forecast through a Current Converter: {1} credits.
 sheet_crop_fillerweed,Fillerweed
 sheet_crop_coffee_bean,Coffee Bean
 sheet_crop_dream_cap,Dream Cap

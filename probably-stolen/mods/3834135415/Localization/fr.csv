@@ -38,6 +38,7 @@ vge_cordon_chip_note,"Mise sur le filet plutôt que la puissance de feu, avec un
 vge_hush_chip_note,"Fine et maniable, mais délicate à entretenir."
 vge_boundary_chip_note,Au sommet en puissance de feu comme en précision.
 chip_name_multi,Puce d'imprimante 3D ({1} ×{0})
+printer_batch_product,{1} ×{0}
 printer_title_loaded,{0} · {1}
 gunmod_title_condition,{0} · {1}
 gunmod_repair,Rénover
@@ -66,7 +67,7 @@ upgrade_rev_gunsmith_desc,"Wild vous présentera un Armurier de la Révolution. 
 cfg_ingot_recipes,Recettes d'origine en lingots
 cfg_ingot_recipes_tip,"Les puces d'origine comme le silencieux, le viseur point rouge, le laser, les chargeurs 10 mm et la carcasse d'Ironcraft 10 utilisent des lingots de métal (Module d'impression métallique requis), y compris les puces existantes. Avant de désinstaller ce mod, désactivez cette option, chargez puis sauvegardez une fois, sinon les recettes ne seront pas rétablies."
 cfg_deep_content,Contenu avancé
-cfg_deep_content_tip,"Interrupteur général couvrant combats de rue, réputation, armes célèbres, peintures et autocollants, Armurier des strates supérieures, stand de tir souterrain et puces d'armes d'entreprise. Désactivé, plus aucun nouveau contenu n'apparaît, les cartes d'amélioration sont masquées et le stand de tir ferme, mais vos objets et votre progression restent dans la sauvegarde. Les trois groupes « Avancé » ci-dessous sont aussi désactivés. Redémarrage du jeu requis."
+cfg_deep_content_tip,"Interrupteur général couvrant combats de rue, réputation, armes célèbres, peintures et autocollants, vices cachés, Armurier des strates supérieures et stand de tir souterrain. Désactivé, plus rien de tout cela n'apparaît, les cartes d'amélioration sont masquées et le stand de tir ferme. Armes, mods pour arme, munitions et fabrication ne changent pas, et les puces des armes d'entreprise et de leurs mods restent en vente. Vos objets et votre progression restent dans la sauvegarde. Les autres interrupteurs de cette section et les trois groupes « Avancé » ci-dessous sont aussi désactivés. Redémarrage du jeu requis."
 cfg_deep_clashes,Combats de rue
 cfg_deep_clashes_tip,"Active les combats de rue entre la Révolution et la Sécurité. Désactivé, aucun nouveau combat ne se déclenche ; celui en cours va jusqu'au bout."
 cfg_gun_buyer_rep,Réputation (acheteurs)
@@ -84,6 +85,7 @@ rental_tab_rent,Loyer :
 rental_tab_rate,{0} % de la valeur
 rental_tab_lend,Louer
 rental_handoff_1,Le compte est bon, je vous pose la reconnaissance de dette sur le comptoir.
+rental_note_space,Faites un peu de place sur le comptoir pour la reconnaissance de dette.
 rental_handoff_2,"Le loyer est là, gardez bien la reconnaissance de dette. Je vous rapporte l'arme à la date prévue."
 rental_handoff_3,"Je règle d'avance et j'embarque l'arme. Ne perdez pas la reconnaissance de dette."
 rental_decline,Pas cette fois.
@@ -317,7 +319,7 @@ manual_ammo_title,Faire des munitions
 manual_ammo_body,<color=#9E1F1A>Étape 1 : Imprimer les douilles</color>\n- Montez un Module presse-douilles sur une imprimante 3D pour imprimer des douilles\n\n<color=#9E1F1A>Étape 2 : Préparer la poudre</color>\n- L'Armurier de la Révolution vend de la poudre ; plus vous en achetez, plus il en apporte la fois suivante\n- Les cartouches perforantes exigent de la poudre avancée, parfois apportée par l'Artificier de la Révolution\n- Le Pr Jackson vend le Module d'hydroponie à nitration de koton, qui fait produire de la poudre en vrac au koton\n- La poudre se verse dans la plupart des bouteilles et bidons, ou se vide directement
 manual_ammo_body2,<color=#9E1F1A>Étape 3 : Charger</color>\n- Encadrez des douilles et glissez-les sur un récipient de poudre pour charger à la main\n- Dans une imprimante équipée du Module presse-douilles, cliquez sur charger pour charger en lot\n\n<color=#9E1F1A>Étape 4 : Mettre en boîte</color>\n- Les boîtes de munitions vides s'achètent, s'impriment ou sortent du Distributeur de boîtes (8 lots, 40 cartouches)\n- Les clients vérifient l'étiquette : un manque ou une erreur risque d'être repéré sur-le-champ\n\n<color=#9E1F1A>Munitions prêtes</color>\n- Cartouches .45 AFP : en vente chez l'Armurier de la Révolution ou les mercenaires\n- Calibre 12 : chez l'Armurier de la Révolution ou l'Agent de réquisition (Permis III requis)
 manual_workshop_title,Matériel d'atelier
-manual_workshop_body,<color=#9E1F1A>Imprimante</color>\n- Le panneau de puce intègre un râtelier à puces (agrandi par Kit d'extension) ; changez de puce via les flèches\n- La barre « Stock » sous la sortie fixe un plafond et met l'imprimante en pause une fois atteint\n\n<color=#9E1F1A>Armoire à armes</color>\n- En vente chez l'Armurier retraité et l'Armurier de la Révolution : 4 places au départ, agrandissables avec des lingots\n- Range armes et huile pour arme, et se glisse entière dans le Casier d'armurier\n\n<color=#9E1F1A>Fenêtre de mods pour arme</color>\n- Cliquer un emplacement liste les mods compatibles en boutique : clic pour monter, double-clic pour retirer\n\n<color=#9E1F1A>Armurier des strates supérieures</color>\n- Après avoir rencontré l'Armurier retraité, obtenez sa carte via le Réseau de Wild et appelez-le pour prendre rendez-vous\n- Apporte armes en très bon état, mods haut de gamme, huile pour arme, caisses de peinture et paquets d'autocollants
+manual_workshop_body,<color=#9E1F1A>Imprimante</color>\n- Le panneau de puce intègre un râtelier à puces (agrandi par Kit d'extension) ; changez de puce via les flèches\n- La barre « Stock » sous la sortie fixe un plafond et met l'imprimante en pause une fois atteint\n\n<color=#9E1F1A>Armoire à armes</color>\n- En vente chez l'Armurier retraité et l'Armurier de la Révolution : 4 places au départ, agrandissables avec des lingots\n- Range armes et huile pour arme, et se glisse entière dans le Casier d'armurier\n\n<color=#9E1F1A>Fenêtre de mods pour arme</color>\n- Cliquer un emplacement liste les mods compatibles en boutique : clic pour monter\n- Double-cliquer un mod monté le retire directement\n\n<color=#9E1F1A>Armurier des strates supérieures</color>\n- Après avoir rencontré l'Armurier retraité, obtenez sa carte via le Réseau de Wild et appelez-le pour prendre rendez-vous\n- Apporte armes en très bon état, mods haut de gamme, huile pour arme, caisses de peinture et paquets d'autocollants
 manual_conflict_title,Conflits et réputation
 manual_conflict_body,<color=#9E1F1A>Combats de rue</color>\n- Après quelque temps avec un permis d'armement en vitrine, vous pouvez recevoir des nouvelles de combats de rue\n- Pendant les combats, la Révolution commande via des acheteurs d'armes et la Sécurité envoie un Agent de réquisition\n- Chaque vente conclue donne l'avantage au camp servi\n- Révolution gagnante : -10 % chez son armurier une semaine ; Sécurité gagnante : vente de surplus de cartouches\n- Quelques jours après, une enseigne néon d'armes à feu en vitrine peut attirer des armes abîmées au combat\n\n<color=#9E1F1A>Réputation (acheteurs d'armes)</color>\n- Livrer des armes en très bon état aux stats solides sur commande fait monter votre réputation\n- Refiler des armes abîmées au combat en mauvais état la fait baisser\n- Elle influe sur visites et primes de commande, et retombe peu à peu sans transactions
 manual_famous_title,Armes célèbres et historique
@@ -334,7 +336,7 @@ manual_flaws_title,Vices cachés
 manual_flaws_body,<color=#9E1F1A>Armes concernées</color>\n- Les armes d'occasion en état acceptable ou mauvais état peuvent cacher des vices, surtout celles abîmées au combat\n- Les armes usagées tirées au stand ou rendues après location peuvent en gagner un nouveau\n\n<color=#9E1F1A>Effets</color>\n- Chaque vice réduit une stat et abaisse l'état maximal d'un palier jusqu'à réparation\n- L'estimation ne baisse qu'une fois le vice repéré ; sans le voir, un acheteur averti peut le dénoncer à la vente
 manual_flaws_body2,<color=#9E1F1A>Étape 1 : Inspecter</color>\n- Sélectionnez la Loupe ou la Lampe de poche puis cliquez sur l'arme pour ouvrir l'inspection\n- Loupe : carcasse, poignée/crosse et contacts ; Lampe de poche : rouille, canon et alimentation des armes à poudre\n- Repérez les traces et cochez les défauts correspondants (plusieurs choix possibles)\n- Pour reconnaître les traces : « Guide d'examen des vices cachés », vendu par l'Armurier de la Révolution et le Dr Jackson\n\n<color=#9E1F1A>Étape 2 : Signaler</color>\n- Une seule erreur annule le signalement ; accuser à tort un vendeur retire de la réputation\n- Réussir le signalement fait baisser le prix d'achat\n\n<color=#9E1F1A>Étape 3 : Réparer</color>\n- Seuls les vices repérés se réparent : glissez le matériau correspondant sur l'arme\n- Le bouton « Réparer » dans la fenêtre de mods pour arme fonctionne aussi
 manual_settings_title,Réglages
-manual_settings_body,<color=#9E1F1A>Réglages du mod</color>\n- Activez ou coupez chaque fonction de ce mod à tout moment dans la liste des mods du jeu\n- « Contenu avancé » et « Râtelier à puces » exigent un redémarrage ; tout le reste agit aussitôt\n- Désactiver une option ne supprime aucun objet acquis ; commandes et ligues en cours vont à leur terme
+manual_settings_body,<color=#9E1F1A>Réglages du mod</color>\n- Activez ou coupez chaque fonction de ce mod à tout moment dans la liste des mods du jeu\n- Pas besoin du stand de tir, de la peinture ou des vices cachés ? Coupez-les un par un dans « Contenu avancé »\n- « Contenu avancé » et « Râtelier à puces » exigent un redémarrage ; tout le reste agit aussitôt\n- Désactiver une option ne supprime aucun objet acquis ; les commandes en cours vont à leur terme\n- Couper le stand de tir le ferme, mais tout ce qu'il contient reste en place jusqu'à sa réactivation
 vge_flaw_guide_name,Guide d'examen des vices cachés
 vge_flaw_guide_desc,Vous apprend à utiliser une loupe et une lampe de poche pour déceler les six types de vices cachés sur les armes abîmées.
 flaw_guide_title,Guide d'examen des vices cachés
@@ -381,6 +383,7 @@ toggle_auto_store_tip,Autorise cette imprimante à envoyer les produits finis da
 toggle_state_on,On
 toggle_state_off,Off
 print_keep_label,Stock
+chip_stock,En stock : {0}
 print_keep_tip,"Une fois le seuil atteint en boutique pour cet objet, l'imprimante se met en pause et « Apport auto » la saute. Si vous imprimez une carcasse, les armes assemblées avec comptent aussi. Mettez 0 pour ne pas limiter."
 upgrade_switch_enable,Activer
 upgrade_switch_disable,Couper
@@ -422,7 +425,7 @@ feature_famous_faded,Arme célèbre (négligée)
 feature_war,Abîmée au combat
 order_req_famous,Arme célèbre
 vge_gun_oil_name,Huile pour arme
-vge_gun_oil_desc,Sert à entretenir les armes célèbres pour préserver leur valeur ajoutée. Un huilage suffit à effacer la marque « Abîmée au combat » d'une arme en Bon état ou mieux.
+vge_gun_oil_desc,Sert à entretenir les armes célèbres pour préserver leur valeur ajoutée. Un huilage suffit à effacer la marque « Abîmée au combat » d'une arme en Bon état ou mieux. L'Armurier de la Révolution et l'Armurier des strates supérieures en apportent deux flacons à chaque visite.
 skin_desert,Désert
 skin_urban,Gris urbain
 skin_olive,Olive
@@ -897,6 +900,8 @@ cfg_league_news,Ligue de tir dans le journal
 cfg_league_news_tip,"Après la Ligue de tir souterraine du samedi, le journal du lendemain publie le top 3. Désactivé, aucun article ne paraît."
 cfg_print_quality_price,Qualité d'impression et prix d'arme
 cfg_print_quality_price_tip,"Le prix des armes assemblées sur une carcasse imprimée varie selon la qualité d'impression. Désactivé, le prix des nouvelles armes ne varie plus ; les stats et les armes existantes ne changent pas."
+cfg_print_quality_price_cap,Plafond du bonus de prix d'impression (%)
+cfg_print_quality_price_cap_tip,"Quelle que soit la qualité d'impression, le prix d'une arme n'augmente pas au-delà de ce pourcentage. Chaque tranche de 2 points de qualité ajoute 1 % au prix. 50 par défaut ; seules les armes assemblées ensuite sont concernées."
 cfg_nitration,Pr Jackson vend le module de nitration de koton
 cfg_nitration_tip,"Le Pr Jackson vend parfois le Module d'hydroponie à nitration de koton, qui fait directement produire de la poudre en vrac au koton. Désactivé, il ne le vend plus ; vos modules existants fonctionnent toujours."
 cfg_gun_barcode,Code-barres dans l'infobulle d'arme
@@ -936,6 +941,14 @@ scrape_pick_sticker,Autocollant : {0}
 gunmod_slot_tip,Clic : choisir un mod
 gunmod_role_cylinder,Barillet
 gunmod_pick_title,{0} : choix du mod
+gunmod_stock_main,Réserve
+gunmod_stock_back,Comptoir
+gunmod_stock_away,Sur vous
+gunmod_stock_in,{0} > {1} ({2}, {3})
+gunmod_stock_location,Emplacement : {0}
+gunmod_stock_count,{0} ×{1}
+gunmod_strip,Tout retirer
+gunmod_strip_full,Pas assez de place pour tous les mods
 gunmod_remove,Retirer
 gunmod_remove_tip,Retirer ce mod pour arme.
 gunmod_remove_no_room,Pas de place en boutique.
@@ -1168,8 +1181,12 @@ gunmod_sealed_vge_cordon_rail,Pas de rail
 gunmod_sealed_vge_hush_stock,Crosse d'origine
 gunmod_sealed_vge_boundary_stock,Crosse d'origine
 gunmod_sealed_vge_boundary_underbarrel,Aucun support sous les bobines
-cfg_hidden_damage,Vices cachés
-cfg_hidden_damage_tip,"Les armes d'occasion en état acceptable ou mauvais état peuvent cacher des vices réduisant leurs stats et leur état maximal. Inspectez l'extérieur à la loupe et l'intérieur à la lampe de poche : signalez-les au vendeur pour baisser le prix, ou réparez vos armes avec des matériaux. Mercenaires et acheteurs des strates supérieures inspectent à la livraison. Désactivé, aucun nouveau vice caché."
+cfg_range,Stand de tir souterrain et ligue
+cfg_range_tip,"Exploitation du stand de tir souterrain, entraînement et ligue de tir du samedi. Désactivé, le stand ferme, son entrée et ses cartes d'amélioration sont masquées et aucun loyer n'est prélevé ; une manche déjà commencée va à son terme. Tout ce qu'il contient reste en place et revient quand vous le réactivez."
+cfg_paint,Peintures et autocollants
+cfg_paint_tip,"Bombes de peinture, caisses de peinture et autocollants. Désactivé, marchands, voleurs et caisses fermées n'en fournissent plus, et aucune nouvelle commande collectionneur n'arrive. Les peintures et autocollants déjà posés restent, et vous pouvez toujours utiliser ce qu'il vous reste."
+cfg_hidden_damage,Vices cachés et examen
+cfg_hidden_damage_tip,"Les armes d'occasion en état acceptable ou mauvais état peuvent cacher des vices réduisant leurs stats et leur état maximal. Inspectez l'extérieur à la loupe et l'intérieur à la lampe de poche : signalez-les au vendeur pour baisser le prix, ou réparez vos armes avec des matériaux. Mercenaires et acheteurs des strates supérieures inspectent à la livraison. Désactivé, aucun nouveau vice caché n'apparaît, l'examen n'est plus possible et les vices existants n'affectent plus les stats ni l'état maximal. Réactivé, tout revient."
 hidden_damage_feature_frame,Vice caché : carcasse fissurée
 hidden_damage_feature_grip,Vice caché : poignée/crosse fissurée
 hidden_damage_feature_barrel,Vice caché : canon cabossé
@@ -1252,6 +1269,8 @@ hist_oiled_today,Déjà huilée aujourd'hui
 gunmod_repair_damage,Réparer : {0} ({1} ×1)
 gunmod_repair_missing,Manque {0} ×1
 gunmod_repair_blocked,Réparation impossible maintenant
+gunmod_commission_use,Réparer avec : {0}
+gunmod_commission_material,Choisissez l'outil ou le matériau adapté aux pannes de la commande.
 vge_ammo_box_actual,{0} : {1} cartouches dedans
 vge_ammo_box_fill,Compléter (mêmes mun.)
 op_bribe_goods,Je ferme les yeux sur : {0}

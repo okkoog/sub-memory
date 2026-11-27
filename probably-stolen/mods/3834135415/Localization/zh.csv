@@ -38,6 +38,7 @@ vge_cordon_chip_note,靠撒网制人，不拼火力，外形扎眼。
 vge_hush_chip_note,精巧顺手，但娇气难伺候。
 vge_boundary_chip_note,火力和准头都是顶尖的。
 chip_name_multi,3D打印机芯片（{1}×{0}）
+printer_batch_product,{1}×{0}
 printer_title_loaded,{0}·{1}
 gunmod_title_condition,{0}·{1}
 gunmod_repair,翻新
@@ -66,7 +67,7 @@ upgrade_rev_gunsmith_desc,王尔德会将你引荐给一位革命军枪匠。他
 cfg_ingot_recipes,原版配方改用金属锭
 cfg_ingot_recipes_tip,消音器、红点、激光、10毫米弹匣和“铁铸10”框架等原版芯片改用金属锭打印（需要金属打印模组），已有芯片同步生效。卸载本mod前，务必先关掉此项并读档保存一次，否则存档里的芯片配方不会还原。
 cfg_deep_content,深度内容
-cfg_deep_content_tip,总开关，涵盖街头冲突、口碑、名枪、涂装贴纸、上层区枪匠、地下靶场与公司枪芯片。关闭后不再产出新内容，升级卡隐藏、靶场停业，已有物品与进度仍保留在存档里。下方三组“深度”设置也随之停用。修改后需重启游戏。
+cfg_deep_content_tip,总开关，涵盖街头冲突、口碑、名枪、涂装贴纸、暗伤鉴定、上层区枪匠和地下靶场。关闭后这些都不再产出新内容，升级卡隐藏、靶场停业；枪械、配件、弹药和制造照旧，公司枪和专用配件的芯片也照常有卖。已有物品与进度仍保留在存档里。本节其余开关和下方三组“深度”设置也随之停用。修改后需重启游戏。
 cfg_deep_clashes,街头冲突
 cfg_deep_clashes_tip,控制革命军与治安部的街头冲突。关闭后不再触发新冲突，正在打的照常打完。
 cfg_gun_buyer_rep,买枪客口碑
@@ -84,6 +85,7 @@ rental_tab_rent,租金：
 rental_tab_rate,枪价的{0}%
 rental_tab_lend,借出
 rental_handoff_1,钱点齐了，借条给你压桌上。
+rental_note_space,柜台上腾点地方，我把借条放下。
 rental_handoff_2,租金放这儿，借条收好。到日子我准时把枪带回来。
 rental_handoff_3,钱先结清，枪我提走。借条别弄丢了。
 rental_decline,这次先算了。
@@ -317,7 +319,7 @@ manual_ammo_title,做子弹
 manual_ammo_body,<color=#9E1F1A>第1步：打弹壳</color>\n- 在3D打印机装上弹壳压制模组，即可打印弹壳\n\n<color=#9E1F1A>第2步：备火药</color>\n- 革命军枪匠出售火药，买得越多他下次带得越多\n- 造穿甲弹要高级火药，革命军军械员偶尔会带\n- 杰克逊博士卖的韧棉硝化水培模组，能让韧棉直接产出散装火药\n- 火药可倒入多数瓶罐容器，也能直接倒出
 manual_ammo_body2,<color=#9E1F1A>第3步：填装</color>\n- 框选弹壳拖到火药容器上，即可手动填装\n- 装有弹壳压制模组的打印机里，可直接按填装键成批装弹\n\n<color=#9E1F1A>第4步：装盒</color>\n- 空弹药盒可购买、打印，或用弹药盒分发器产出，满盒装8件共40发\n- 客人会照标签验货，少装或装错都可能被当场拆穿\n\n<color=#9E1F1A>现成弹药</color>\n- .45 AFP弹药可向革命军枪匠或佣兵购买\n- 12号霰弹可向革命军枪匠或治安部征用官（需III级许可证）购买
 manual_workshop_title,工坊设备
-manual_workshop_body,<color=#9E1F1A>打印机</color>\n- 芯片栏自带芯片库，可用芯片库扩建套件扩容，点箭头即可切换芯片\n- 输出栏下的“库存”条可设打印上限，够数即自动停机\n\n<color=#9E1F1A>枪柜</color>\n- 退休枪匠和革命军枪匠有售，初始4个枪位，可用金属锭扩建\n- 能放武器和枪油，整柜还能直接塞进枪械师储藏区\n\n<color=#9E1F1A>改枪窗口</color>\n- 点改装槽会列出店里可用的改装件，单击装上，双击卸下\n\n<color=#9E1F1A>上层区枪匠</color>\n- 认识退休枪匠后，可在王尔德网络拿到他的名片，用电话预约上门\n- 每次带品相上佳的枪械、高档改装件、枪油、涂装箱和贴纸包
+manual_workshop_body,<color=#9E1F1A>打印机</color>\n- 芯片栏自带芯片库，可用芯片库扩建套件扩容，点箭头即可切换芯片\n- 输出栏下的“库存”条可设打印上限，够数即自动停机\n\n<color=#9E1F1A>枪柜</color>\n- 退休枪匠和革命军枪匠有售，初始4个枪位，可用金属锭扩建\n- 能放武器和枪油，整柜还能直接塞进枪械师储藏区\n\n<color=#9E1F1A>改枪窗口</color>\n- 点改装槽会列出店里可用的改装件，单击装上\n- 双击已装上的改装件可直接取下\n\n<color=#9E1F1A>上层区枪匠</color>\n- 认识退休枪匠后，可在王尔德网络拿到他的名片，用电话预约上门\n- 每次带品相上佳的枪械、高档改装件、枪油、涂装箱和贴纸包
 manual_conflict_title,冲突与口碑
 manual_conflict_body,<color=#9E1F1A>街头冲突</color>\n- 展示柜摆着武器许可证一段时间后，便可能收到街头冲突的消息\n- 冲突期间，革命军托买枪客上门订枪，治安部派征用官来采购\n- 每做成一笔交易，那一方就多一分优势\n- 革命军赢了，革命军枪匠一周九折；治安部赢了，一周内会有人来卖战后余弹\n- 冲突平息后几天内，展示柜摆着枪械类霓虹灯牌的店可能收到战损枪\n\n<color=#9E1F1A>买枪客口碑</color>\n- 交枪单交出高品相、属性过硬的枪，口碑上升\n- 拿状态差的战损枪凑数，口碑会掉\n- 口碑影响买枪客来访和订单赏金，久不成交会慢慢回落
 manual_famous_title,名枪与来历
@@ -334,7 +336,7 @@ manual_flaws_title,暗伤
 manual_flaws_body,<color=#9E1F1A>哪些枪会带</color>\n- 品相一般或较差的旧枪进店时可能藏着暗伤，战损枪里最常见\n- 在靶场开过火或租出去还回来的旧枪，也可能添上新暗伤\n\n<color=#9E1F1A>影响</color>\n- 每处暗伤会拉低一项属性，并让品相上限降一档，修好即恢复\n- 查出暗伤后估价才会下降；没查出来就卖掉，行家验货时可能当场拆穿
 manual_flaws_body2,<color=#9E1F1A>第1步：检查</color>\n- 选中放大镜或手电筒再点枪，即可打开检查窗口\n- 放大镜看机身、握把枪托和触点；手电筒照锈蚀，以及火药枪的枪管和供弹\n- 看出痕迹就勾上对应问题，可以多选\n- 痕迹怎么认可翻“暗伤鉴定指南”，革命军枪匠和杰克逊博士有售\n\n<color=#9E1F1A>第2步：对质</color>\n- 只要勾错一项，当次对质便不算数；诬陷卖家还会扣声望\n- 对质成功就能把进价压下来\n\n<color=#9E1F1A>第3步：修理</color>\n- 只有查出来的暗伤才能修，把对应材料拖到枪上即可修复\n- 在改枪窗口点“修理”也能直接处理
 manual_settings_title,设置
-manual_settings_body,<color=#9E1F1A>模组设置</color>\n- 可在游戏模组列表中随时开关本mod的各项功能\n- “深度内容”与“打印机芯片库”改动后需重启游戏，其余即刻生效\n- 关闭某项不会删掉已有物品，未完的订单和联赛也会照常走完
+manual_settings_body,<color=#9E1F1A>模组设置</color>\n- 可在游戏模组列表中随时开关本mod的各项功能\n- 不想要靶场、涂装或暗伤，可以在“深度内容”一节里分别关掉\n- “深度内容”与“打印机芯片库”改动后需重启游戏，其余即刻生效\n- 关闭某项不会删掉已有物品，未完的订单也会照常走完\n- 靶场关掉后停业，场里的东西原样留着，重新打开就能接着用
 vge_flaw_guide_name,暗伤鉴定指南
 vge_flaw_guide_desc,教你如何使用放大镜以及手电筒，来检查出破损枪械上的六类暗伤。
 flaw_guide_title,暗伤鉴定指南
@@ -381,6 +383,7 @@ toggle_auto_store_tip,允许这台打印机将成品送入枪械师储藏区（�
 toggle_state_on,开
 toggle_state_off,关
 print_keep_label,库存
+chip_stock,库存 {0}
 print_keep_tip,店内这种成品达到设定数量后，打印机暂停开工，自动供料也会跳过。打印框架时，用它装成的枪也算在内。设为0即不限制。
 upgrade_switch_enable,开启
 upgrade_switch_disable,关闭
@@ -422,7 +425,7 @@ feature_famous_faded,名枪（疏于保养）
 feature_war,战损
 order_req_famous,名枪
 vge_gun_oil_name,枪油
-vge_gun_oil_desc,用来保养名枪，保住它的附加价值。品相达到良好及以上的战损枪上一次油，就能洗去战损标记。
+vge_gun_oil_desc,用来保养名枪，保住它的附加价值。品相达到良好及以上的战损枪上一次油，就能洗去战损标记。革命军枪匠和上层区枪匠每次来都带两瓶。
 skin_desert,沙漠
 skin_urban,都市灰
 skin_olive,橄榄
@@ -897,6 +900,8 @@ cfg_league_news,联赛登报
 cfg_league_news_tip,每周六地下射击联赛结束后，次日报纸会登出前三名。关闭后不再登报。
 cfg_print_quality_price,打印品质影响成枪价格
 cfg_print_quality_price_tip,用自印框架组装的枪会按打印品质浮动售价。关闭后新组装的枪售价不再浮动，属性和已有的枪都不受影响。
+cfg_print_quality_price_cap,打印品质加价上限（%）
+cfg_print_quality_price_cap_tip,打印品质再高，成枪售价最多也只高出这么多。打印品质每高 2 点，售价高 1%。默认 50，只影响之后新组装的枪。
 cfg_nitration,杰克逊博士卖韧棉硝化水培模组
 cfg_nitration_tip,杰克逊博士会偶尔出售韧棉硝化水培模组，装上后种韧棉将直接收获散装火药。关闭后不再出售，已有模组照常使用。
 cfg_gun_barcode,枪械提示框显示条码
@@ -936,6 +941,14 @@ scrape_pick_sticker,贴纸：{0}
 gunmod_slot_tip,点击选择改装件
 gunmod_role_cylinder,弹巢
 gunmod_pick_title,{0}：选择改装件
+gunmod_stock_main,库存
+gunmod_stock_back,柜台
+gunmod_stock_away,随身
+gunmod_stock_in,{0} › {1}（{2}，{3}）
+gunmod_stock_location,位置：{0}
+gunmod_stock_count,{0} ×{1}
+gunmod_strip,全部卸下
+gunmod_strip_full,无法放下所有改装件
 gunmod_remove,卸下
 gunmod_remove_tip,卸下这件改装件。
 gunmod_remove_no_room,店里没有空间。
@@ -1168,8 +1181,12 @@ gunmod_sealed_vge_cordon_rail,没有导轨
 gunmod_sealed_vge_hush_stock,原厂枪托
 gunmod_sealed_vge_boundary_stock,原厂枪托
 gunmod_sealed_vge_boundary_underbarrel,线圈下方无下挂位
-cfg_hidden_damage,暗伤
-cfg_hidden_damage_tip,品相一般或较差的旧枪可能带着暗伤，拉低属性并限制品相上限。用放大镜查外观、手电筒查内部，卖家的枪可对质压价，自己的枪查出后可用材料修好。佣兵和上层区买家交货时会验枪。关闭后不再出现新暗伤。
+cfg_range,地下靶场与联赛
+cfg_range_tip,地下靶场的经营、练习和每周六的射击联赛。关闭后靶场停业，入口和升级卡都会隐藏，也不再收租；已经开打的一轮照常打完。场里的东西原样留着，重新打开就能接着用。
+cfg_paint,涂装与贴纸
+cfg_paint_tip,喷漆、涂装箱和贴纸。关闭后商人、小偷和上锁箱都不再出这些东西，也不会再有新的收藏家订单。枪上已有的涂装和贴纸照旧，手里剩下的也还能用。
+cfg_hidden_damage,暗伤与鉴定
+cfg_hidden_damage_tip,品相一般或较差的旧枪可能带着暗伤，会拉低属性、限制品相上限。用放大镜查外观、手电筒查内部；卖家的枪查出暗伤可以压价，自己的枪可以用材料修好。佣兵和上层区买家交货时会验枪。关闭后不再出现新暗伤，鉴定也会关掉，已有的暗伤不再影响属性和品相上限；重新打开会恢复。
 hidden_damage_feature_frame,暗伤：机身裂纹
 hidden_damage_feature_grip,暗伤：握把枪托开裂
 hidden_damage_feature_barrel,暗伤：枪管凹痕
@@ -1252,6 +1269,8 @@ hist_oiled_today,今天上过油了
 gunmod_repair_damage,修理{0}（需{1}×1）
 gunmod_repair_missing,缺{0}×1
 gunmod_repair_blocked,现在不能修这把枪
+gunmod_commission_use,用{0}修理
+gunmod_commission_material,按订单上的故障选工具或材料。
 vge_ammo_box_actual,{0}：实际{1}发
 vge_ammo_box_fill,装入同类弹药
 op_bribe_goods,这次放过：{0}

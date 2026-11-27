@@ -11,19 +11,14 @@ winery_yeast_super,Super levure
 winery_yeast_reusable,Levure réutilisable
 winery_yeast_red,Levure rouge (contrebande)
 winery_yeast_quality,Levure de qualité
-winery_yeast_custom,Personnalisée
-winery_label_custom_yeast_a,Levure personnalisée 1
-winery_label_custom_yeast_b,Levure personnalisée 2
-winery_custom_yeast_none,Aucune
 winery_label_crop,Culture
 winery_crop_berry,Bloomberry
 winery_crop_nutrifruit,Nutrifruit
-winery_label_custom_yeast,Levure personnalisée
 winery_check_on,[x] {0}
 winery_check_off,[ ] {0}
 quality_yeast_name,Levure de qualité
 quality_yeast_desc,Une levure à vin sélectionnée pour la qualité plutôt que pour la vitesse.
-quality_yeast_flavor,La route qui mène au Millésime de Maître commence ici.
+quality_yeast_flavor,Une seule suffit pour prendre la route au-delà du Millésime de Maître.
 brewery_name,Brasserie
 brewery_desc,Brasse de la bière dans une ligne d'embouteillage.
 brewery_label_recipe,Recette
@@ -31,12 +26,17 @@ brewery_label_crops,Cultures par bouteille
 fermenter_tip_unhosted,Ne fonctionne que dans une ligne d'embouteillage.
 fermenter_tip_demand,Ingrédients pour {0} bouteilles.
 beer_tip_tier,Grade : {0}
+fruit_tip_condition,État : {0}
+fruit_condition_mold,Partiellement moisie
+fruit_condition_under,Cueillie trop tôt
+fruit_condition_over,Trop mûre
+fruit_condition_small,Petits grains
 beer_tier_0,Grossier
 beer_tier_1,Passable
 beer_tier_2,Bon
 beer_tier_3,Fin
 beer_tier_4,Impeccable
-wine_grandmaster_vintage,Millésime de Maître
+wine_grandmaster_vintage,Millésime de Grand Maître
 wine_nutrifruit_name,Nutricooler
 wine_nutrifruit_desc,Un rafraîchissant à base de nutrifruit. Plus modeste que le vin de Bloomberry et il vieillit plus lentement.
 beer_fillerweed_name,Lager au fillerweed
@@ -145,11 +145,35 @@ fermenter_why_too_few,Inactif : il faut {0} {1} par bouteille ; l'entrée en con
 fermenter_why_other_recipe,L'entrée contient {0} : choisissez {1} comme recette de la brasserie.
 fermenter_why_other_crop,L'entrée contient {0} : choisissez ce fruit comme culture de la cave.
 fermenter_why_recipe_nofit,Inactif : les fruits de la recette et la levure ne tiennent pas dans une bouteille.
+fermenter_why_huge_nutrifruit,Inactif : {0} ne tient pas dans une bouteille de vin.
 fermenter_any_beer_yeast,levure (ni levure rouge ni levure de qualité)
 fermenter_any_wine_yeast,"levure simple, super ou réutilisable"
 fermenter_tip_demand_one,Ingrédients pour 1 bouteille.
 fermenter_why_more,Et {0} de plus : voir l'infobulle.
 fermenter_unknown_item,un objet d'un mod supprimé
+age_well_kit_name,Kit d'extension de casier Millésime
+age_well_kit_desc,À utiliser sur un casier Millésime pour ajouter {0} rangées à sa grille de vin. Jusqu'à {1} kits par casier.
+age_well_port_name,Port à trémie du casier Millésime
+age_well_port_desc,À utiliser sur un casier Millésime pour ajouter un emplacement de trémie de sortie. Ce que la trémie livre va dans la grille de vin sans occuper de case. Un seul par casier.
+age_well_port_label,Trémie
+age_well_tip_kits,Kits : {0}/{1}
+age_well_tip_port_fitted,Port à trémie : installé
+age_well_tip_port_none,Port à trémie : aucun
+age_well_kit_refused_mdu,{0} ne peut pas aller sur {1} : More Device Upgrades fixe la taille du casier Millésime
+quality_yeast_reusable_name,Levure de qualité réutilisable
+quality_yeast_reusable_desc,Une levure de qualité qui ne s'épuise jamais. Laissez-la dans l'entrée d'une ligne d'embouteillage dont la cave à vin est réglée sur Levure de qualité : elle donne le bonus Millésime de Grand Maître à chaque bouteille. Une seule suffit.
+super_yeast_reusable_name,Super levure réutilisable
+super_yeast_reusable_desc,Une super levure qui ne s'épuise jamais. Laissez-la dans une entrée et elle fait fermenter chaque bouteille à la vitesse d'une super levure.
+bottler_label_input_port,Alimentation
+bottler_label_output_port,Expédition
+bottler_label_control,Contrôle
+port_label_splitter,Répartition
+port_split_first,Premier disponible
+port_split_round_robin,Tour de rôle
+port_split_even,Répartition égale
+fermenter_label_yeast_slots,Levure réutilisable
+winery_yeast_from_slots,Depuis les emplacements
+night_converter_extra,Les lignes d'embouteillage ont consommé {0} de charge de plus que prévu via un convertisseur de courant : {1} crédits.
 sheet_crop_fillerweed,Fillerweed
 sheet_crop_coffee_bean,Grain de café
 sheet_crop_dream_cap,Dream Cap
@@ -168,3 +192,5 @@ sheet_grade_homebrew,Cuvée artisanale
 sheet_grade_bucket,Piquette
 sheet_grade_undrinkable,Tord-boyaux imbuvable
 sheet_yeast_red,Levure rouge
+bottler_refuse_input,{0} ne peut pas aller dans {1} : {2}
+bottler_refuse_input_reason,"seuls les ingrédients, la levure et les bouteilles vont dans l'entrée"

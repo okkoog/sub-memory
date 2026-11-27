@@ -1,4 +1,4 @@
-# Starting specialization: Distributor
+﻿# Starting specialization: Distributor
 # 术语按官方英文：Wild's Favor / Red Imp Brewery / Lower Levels Chemist / Upper Level Pharmacist / GP Mining Coop / Showcase Expansion I
 dsp_distributor_name,유통업자
 dsp_distributor_description,"스승 밑에서 수련하던 시절 당신은 이미 공급업자 담당자들을 상대해 왔습니다. 공급망을 쥐고 있으면 한발 앞서 나갈 수 있습니다."
@@ -104,7 +104,7 @@ dsp_distributor_supplies_4,각 업체의 무료 샘플은 창고에 보관되어
 dsp_better_broker_name,성실한 중개인
 dsp_better_broker_description,"시장 주문과 손님이 당신이 이미 가진 부피 큰 물건을 더 자주 찾습니다. 특히 월세 날에 그렇습니다. 시장 주문은 같은 물건을 두 번 요구하지 않습니다."
 dsp_notorious_villain_name,악명 높은 악당
-dsp_notorious_villain_description,고른 중립 또는 부정 특성 하나마다 시작 크레딧이 30 늘어납니다. 이 특성도 부정 특성으로 칩니다.
+dsp_notorious_villain_description,"고른 중립 또는 부정 특성 하나마다 시작 크레딧이 35 늘어납니다. 이 특성도 부정 특성으로 칩니다."
 dsp_cyberpsychosis_name,사이버 사이코시스
 dsp_cyberpsychosis_description,"시작 특성 슬롯 한도가 3 늘어납니다. 시작할 때 이 특성은 무작위 1포인트 부정 특성으로 교체됩니다."
 dsp_no_trash_janitor_1,네가 그 쓰레기통에 뭔가 한 거 다 알아.
@@ -430,14 +430,13 @@ dsp_blood_donor_no_space,혈액팩을 둘 자리가 없습니다.
 dsp_revolutionary_influence_name,혁명군의 영향력
 dsp_revolutionary_influence_description,"혁명군 평판이 20 이상이 되면 오딘은 거래 후 3일 안에 혁명군이 꾸미는 이벤트를 알려줍니다."
 dsp_cracker_name,상자깡꾼
-dsp_cracker_description,스승 밑에서 수련하는 동안 당신은 상자 여는 버릇이 들었습니다. 대개는 이득이 큽니다 — 상자를 열 수단만 있다면요.
+dsp_cracker_description,"스승 밑에서 수련하는 동안 당신은 상자 여는 버릇이 들었습니다. 대개는 이득이 큽니다 — 상자를 열 수단만 있다면요.\n초기 소지품:\n추가 장비(밀수꾼 은닉처, 개량형)\n낡은 코드 해독기\n빈 출입 카드 3장과 지휘 출입 카드 1장\n서로 다른 보급 상자 2개와 각 유형에 맞는 출입 카드 칩\n친구와 다른 판매자들이 보급 상자를 내놓는다\n기본 상점 매력도가 50 감소합니다."
 dsp_cracker_tag,특성 추가: 아마도 괴짜
 dsp_cracker_supplies_1,"추가 장비(밀수꾼 은닉처, 개량형)."
 dsp_cracker_supplies_2,낡은 코드 해독기.
 dsp_cracker_supplies_3,빈 출입 카드 3장과 지휘 출입 카드 1장.
 dsp_cracker_supplies_4,서로 다른 보급 상자 2개와 각 유형에 맞는 출입 카드 칩.
 dsp_cracker_supplies_5,친구와 다른 판매자들이 보급 상자를 내놓는다.
-dsp_cracker_supplies_6,운이 조금 나쁘다
 dsp_revolutionary_influence_slip_title,혁명군의 정보
 dsp_revolutionary_influence_slip_body,오딘은 떠나기 전 목소리를 낮췄습니다. 3일 안에 혁명군이 움직입니다 — “{0}”. 달력에 이미 표시되어 있습니다.
 dsp_service_professional_tooltip,원한이 더 이상 당신을 괴롭히지 않습니다.
@@ -625,7 +624,7 @@ dsp_service_underground_trade_tooltip,매일 밤 쓰레기통 안의 물건으�
 dsp_service_underground_trade_hint,먼저 청소 서비스를 켜야 합니다.
 dsp_service_stable_partnership,안정적인 거래
 dsp_sunday_name,일요일
-dsp_sunday_description,"매일 손님이 한 명 더 오지만, 일요일에는 일반 손님이 오지 않습니다. 일요일에는 와인 한 병을 받고 축복을 받습니다."
+dsp_sunday_description,"매일 손님이 한 명 더 오지만, 일요일에는 일반 손님이 오지 않습니다. 일요일에는 와인 한 병을 받고 일시적으로 행운아 특성을 얻습니다(술 품질은 하층구 평판에 따라 올라갑니다). 또한 식량 은행 공급업자가 방문해 식량을 반값에 사갑니다."
 dsp_career_advice_name,진로 상담 서비스
 dsp_career_advice_description,시작 특성 슬롯 상한이 1개 줄어듭니다. 전문 상담사가 당신의 경력에서 모든 잘못된 갈림길을 없애줬기 때문입니다. 후원사의 광고 덕분에 이 특성은 긍정 특성으로 표시됩니다.
 dsp_millions_event_name,개조체 광풍
@@ -633,7 +632,7 @@ dsp_millions_event_desc,"개조체가 몰려옵니다. 무기·탄약·방어구
 
 dsp_vanessa_1_4,"이건 우리에게 필요 없다, 가져라."
 dsp_hydro_alcohol_smooth_name,알코올 순조
-dsp_hydro_alcohol_smooth_description,파이프 수경 재배의 유행으로 수도 시스템은 갈대·영양과일·발효된 블룸베리로 뒤덮였다. 파이프 물의 불순물 대부분이 전분과 알코올로 대체되었다.
+dsp_hydro_alcohol_smooth_description,"파이프 수경 재배의 유행으로 수도 시스템은 갈대·영양과일·발효된 블룸베리로 뒤덮였다. 전분이 중금속의 90%와 화학 오염의 40%를, 알코올이 화학 오염의 40%와 기타 불순물의 50%를 대체한다."
 dsp_blood_donor_redeem,교환
 dsp_blood_donor_redeem_done,교환 완료: 혈액팩이 40 식량 배급권 잔액이 되었다.
 dsp_around_world_80_name,80일간의 세계 일주

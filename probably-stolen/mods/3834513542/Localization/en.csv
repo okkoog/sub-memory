@@ -8,7 +8,7 @@ faucet_tip_on,Valve: on
 faucet_tip_off,Valve: off
 faucet_tip_line,Line: {0} at {1}
 faucet_tip_no_tap,No water line unlocked
-tip_store_grid_only,Only runs in the store grid
+tip_store_grid_only,Only runs in the store grid or on a Shop Expansion shelf
 pipe_name,Smart Pipe
 pipe_desc,"Moves water from what touches its back end to what touches its arrow end. Set a water grade and it can take or refuse water by grade, and it can wait for a full source or an empty destination."
 pipe_label_valve,Valve
@@ -101,14 +101,14 @@ pure_module_tip,Fits a water purifier only; one per machine. Refuses water below
 faucet_label_grade,Grade
 faucet_grade_line,Line setting
 config_line_grade,Line grade
-config_line_grade_tip,"Needs the Main Line Siphon upgrade. The grade your water line serves, never above what you have bought. The vanilla faucet follows it from the next morning."
+config_line_grade_tip,"Needs the Upper Pipe Siphon. The grade your water line serves, never above what you have. The vanilla faucet follows it from the next morning."
 config_line_grade_best,Best you have bought
 line_ghost_title,Industrial Filter
 line_ghost_desc,"A large industrial filter installed over your existing line. Every faucet serves ghostwater instead of rustwater."
 line_base_title,Main Line Siphon
-line_base_desc,"Siphons the station's main line. The line serves Base water, and the line and each Faucet can serve a lower grade than the best you have bought: set the line in the mod settings and each faucet in its window."
+line_base_desc,"Siphons the station's main line. The line serves Base water."
 line_hq_title,Upper Pipe Siphon
-line_hq_desc,"Siphons the pipes of the upper levels, at a price. The line serves High Quality water."
+line_hq_desc,"Siphons the pipes of the upper levels. The line serves High Quality water, and the line and each Faucet can serve a lower grade than the best you have: set the line in the mod settings and each faucet in its window."
 nutrient_name,Algae Biofilter
 nutrient_desc,"A pipe piece that enriches water for hydroponics. Its intake end draws from a container, a machine or a pipe feeding it; its outlet end fills the hydroponic rack it touches with nutrient water. Runs on a battery, which pays per litre."
 nutrient_tip,Draws at its intake end and fills a touching hydroponic rack at its outlet end with nutrient water
@@ -169,11 +169,11 @@ reason_back_end,back end: {0}
 reason_front_end,front end: {0}
 reason_not_linked,bridge inlet is not linked to an outlet
 reason_outlet_missing,linked bridge outlet is missing
-reason_outlet_not_store,bridge outlet is not in the store grid
+reason_outlet_not_store,bridge outlet is not in the store grid or on a Shop Expansion shelf
 reason_outlet_front,outlet front end: {0}
 reason_not_in_grid,not placed in a grid
 reason_switched_off,switched off
-reason_not_store_grid,not in the store grid
+reason_not_store_grid,not in the store grid or on a Shop Expansion shelf
 reason_same_container,both ends reach the same container
 reason_loop,pipes form a loop
 reason_not_owned,an end is not owned
@@ -193,16 +193,16 @@ debug_role_input,Input only slot
 debug_role_output,Output only slot
 config_offer_line_ghost,Offer Industrial Filter
 config_offer_line_ghost_tip,Off: the Industrial Filter upgrade is not offered in the Wild and its water grade is not applied. Anything you bought is kept and returns when this is turned on.
-config_offer_line_base,Offer Main Line Siphon
-config_offer_line_base_tip,Off: the Main Line Siphon upgrade is not offered in the Wild and its water grade and grade choice are not applied. Anything you bought is kept and returns when this is turned on.
-config_offer_line_hq,Offer Upper Pipe Siphon
-config_offer_line_hq_tip,Off: the Upper Pipe Siphon upgrade is not offered in the Wild and its High Quality water is not applied. Anything you bought is kept and returns when this is turned on.
+config_offer_line_base,Sell Main Line Siphon Kit
+config_offer_line_base_tip,Off: the Main Line Siphon Kit is not sold and its Base water is not applied. One you installed is kept and returns when this is turned on.
+config_offer_line_hq,Sell Upper Pipe Siphon Kit
+config_offer_line_hq_tip,Off: the Upper Pipe Siphon Kit is not sold and its High Quality water and grade choice are not applied. One you installed is kept and returns when this is turned on.
 config_price_line_ghost,Industrial Filter price
 config_price_line_ghost_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
-config_price_line_base,Main Line Siphon price
-config_price_line_base_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
-config_price_line_hq,Upper Pipe Siphon price
-config_price_line_hq_tip,What the upgrade costs in the Wild. A change applies at the next purchase.
+config_price_line_base,Main Line Siphon Kit price
+config_price_line_base_tip,"The kit's value; the shop that sells it adds its usual markup. A change applies to kits stocked after it."
+config_price_line_hq,Upper Pipe Siphon Kit price
+config_price_line_hq_tip,"The kit's value. The Hypertech Smuggler adds his 50% markup, so the default 6700 sells near 10000. A change applies to kits stocked after it."
 config_section_balance,Balance
 config_slider_value,"{0}: {1}"
 config_item_prices,Item prices (%)
@@ -215,3 +215,13 @@ config_shop_stock,Water goods stock (%)
 config_shop_stock_tip,"How many pipes, pipe pieces, tanks and faucets the shops stock, in percent of the usual amount: the Water Shop with Better Merchants, the retired water merchant's pipes without it. Machines and the Pure Module stay one at a time. Applies at once."
 config_cistern_jackson_chance,Cistern chance at Dr. Jackson (%)
 config_cistern_jackson_chance_tip,"The chance that a Dr. Jackson arrival brings a Cistern, once the water line is bought. With Better Merchants running, its Water Shop sells the Cistern instead and this setting does nothing."
+line_base_kit_name,Main Line Siphon Kit
+line_base_kit_desc,"Fittings that siphon the station's main line. Drop it on your store's faucet to install it: the line serves Base water. Needs the Industrial Filter first."
+line_hq_kit_name,Upper Pipe Siphon Kit
+line_hq_kit_desc,"Hypertech fittings that siphon the pipes of the upper levels. Drop it on your store's faucet to install it: the line serves High Quality water, and the line and each Faucet can serve a lower grade than the best you have. Needs the Main Line Siphon first."
+kit_tip_use,"Drop on the store's faucet to install. Used up when installed."
+kit_refuse,"{0} can't go on {1}: {2}"
+kit_refuse_installed,Already installed.
+kit_refuse_setting_off,Turned off in the mod settings.
+kit_refuse_needs,Needs the {0} first.
+kit_refuse_our_faucet,"Goes on the store's own faucet; this Faucet serves the line's grade."

@@ -38,6 +38,7 @@ vge_cordon_chip_note,"Subdues with a net rather than firepower, and turns heads.
 vge_hush_chip_note,"Sleek and handy, but finicky and high-maintenance."
 vge_boundary_chip_note,Top-tier firepower and accuracy.
 chip_name_multi,3D Printer Chip (x{0} {1})
+printer_batch_product,x{0} {1}
 printer_title_loaded,{0} · {1}
 gunmod_title_condition,{0} · {1}
 gunmod_repair,Refurbish
@@ -66,7 +67,7 @@ upgrade_rev_gunsmith_desc,"Wild will refer you to a Revolution Gunsmith. He will
 cfg_ingot_recipes,Vanilla recipes use metal ingots
 cfg_ingot_recipes_tip,"Vanilla chips such as the silencer, red dot sight, laser sight, 10mm magazines, and Ironcraft 10 frame use metal ingots instead (requires the Metal Printing Module). Applies to existing chips too. Before uninstalling this mod, be sure to turn this off and load and save once, or the chip recipes in your save won't revert."
 cfg_deep_content,Deep content
-cfg_deep_content_tip,"Master switch for street clashes, reputation, famous guns, paint and stickers, the Upper-Level Gunsmith, the underground range, and company gun chips. When off, no new content is generated, upgrade cards are hidden, and the range closes, while existing items and progress stay in your save. Also disables the three Deep groups below. Requires a game restart."
+cfg_deep_content_tip,"Master switch for street clashes, reputation, famous guns, paint and stickers, hidden damage, the Upper-Level Gunsmith and the underground range. When off, none of these generate new content, upgrade cards are hidden and the range closes. Guns, gun mods, ammo and crafting are unaffected, and chips for company guns and their gun mods are still on sale. Existing items and progress stay in your save. The other switches in this section and the three Deep groups below are disabled too. Requires a game restart."
 cfg_deep_clashes,Street clashes
 cfg_deep_clashes_tip,"Controls street clashes between the Revolution and Security. When off, no new clashes trigger, while one already underway plays out."
 cfg_gun_buyer_rep,Gun buyer reputation
@@ -84,6 +85,7 @@ rental_tab_rent,Rent:
 rental_tab_rate,{0}% of the gun's value
 rental_tab_lend,Rent Out
 rental_handoff_1,Counted it all out. Left the IOU right here on the counter.
+rental_note_space,Clear some room on the counter so I can leave the IOU.
 rental_handoff_2,"Rent's right here, keep the IOU safe. I'll bring the gun back right on time."
 rental_handoff_3,"All paid up, I'm taking the gun. Don't lose the IOU."
 rental_decline,Not this time.
@@ -317,7 +319,7 @@ manual_ammo_title,Making ammo
 manual_ammo_body,<color=#9E1F1A>Step 1: Print cases</color>\n- Fit a Case Press Module in a 3D printer to print empty cases\n\n<color=#9E1F1A>Step 2: Stock gunpowder</color>\n- The Revolution Gunsmith sells gunpowder; the more you buy, the more he brings next time\n- Armor-piercing rounds take Advanced Gunpowder, sometimes sold by the Revolution Armorer\n- Dr. Jackson's Kotton Nitration Hydroponic Module makes kotton yield loose gunpowder directly\n- Gunpowder pours into most bottles and jars, and can be poured straight out
 manual_ammo_body2,<color=#9E1F1A>Step 3: Load</color>\n- Box-select cases and drag them onto a gunpowder container to load by hand\n- In a printer with a Case Press Module, press the load button to batch-load rounds\n\n<color=#9E1F1A>Step 4: Box up</color>\n- Empty ammo boxes can be bought, printed, or made by a Box Dispenser; a full box holds 8 items (40 rounds)\n- Buyers inspect contents against the label; shorting or mispacking can get you caught\n\n<color=#9E1F1A>Ready-made ammo</color>\n- Buy .45 AFP rounds from the Revolution Gunsmith or mercenaries\n- Buy 12-gauge shells from the Revolution Gunsmith or Security Requisition Officer (Permit III)
 manual_workshop_title,Workshop gear
-manual_workshop_body,<color=#9E1F1A>Printer</color>\n- The chip panel has a chip rack (expandable with Chip Rack Expansion Kits); click the arrows to switch chips\n- The Stock slider under the output sets a print cap; printing pauses automatically once met\n\n<color=#9E1F1A>Gun Cabinet</color>\n- Sold by the Retired and Revolution Gunsmiths; starts with 4 slots and expands with metal ingots\n- Holds weapons and gun oil; the whole cabinet fits inside a Gunsmith Storage Bay\n\n<color=#9E1F1A>Gun-mod window</color>\n- Click a mod slot to list compatible gun mods in the shop; click to fit, double-click to remove\n\n<color=#9E1F1A>Upper-Level Gunsmith</color>\n- After meeting the Retired Gunsmith, get his business card on Wild's Network and call to book visits\n- Brings fine-condition guns, premium gun mods, gun oil, paint crates, and sticker packs
+manual_workshop_body,<color=#9E1F1A>Printer</color>\n- The chip panel has a chip rack (expandable with Chip Rack Expansion Kits); click the arrows to switch chips\n- The Stock slider under the output sets a print cap; printing pauses automatically once met\n\n<color=#9E1F1A>Gun Cabinet</color>\n- Sold by the Retired and Revolution Gunsmiths; starts with 4 slots and expands with metal ingots\n- Holds weapons and gun oil; the whole cabinet fits inside a Gunsmith Storage Bay\n\n<color=#9E1F1A>Gun-mod window</color>\n- Click a mod slot to list compatible gun mods in the shop; click to fit\n- Double-click a fitted gun mod to take it straight off\n\n<color=#9E1F1A>Upper-Level Gunsmith</color>\n- After meeting the Retired Gunsmith, get his business card on Wild's Network and call to book visits\n- Brings fine-condition guns, premium gun mods, gun oil, paint crates, and sticker packs
 manual_conflict_title,Clashes and reputation
 manual_conflict_body,<color=#9E1F1A>Street clashes</color>\n- After keeping a weapon permit in your display case for a while, you may hear news of street clashes\n- During a clash, the Revolution sends gun buyers to order guns, and Security sends a Requisition Officer\n- Every completed deal gives that side an edge\n- Revolution wins: Gunsmith 10% off a week. Security wins: surplus ammo offered within a week\n- For a few days after a clash, shops displaying a firearm neon sign may be offered war-damaged guns\n\n<color=#9E1F1A>Gun buyer reputation</color>\n- Filling gun orders with high-condition, high-stat guns raises reputation\n- Turning in rough war-damaged guns lowers reputation\n- Reputation affects buyer visits and order rewards, and slowly drifts back without deals
 manual_famous_title,Famous guns and history
@@ -334,7 +336,7 @@ manual_flaws_title,Hidden damage
 manual_flaws_body,<color=#9E1F1A>Which guns have it</color>\n- Used guns in Fair or Poor condition may arrive with hidden damage, most often war-damaged ones\n- Used guns fired at the range or returned from rentals may gain new hidden damage\n\n<color=#9E1F1A>Effects</color>\n- Each flaw lowers a stat and drops the condition cap by one grade until repaired\n- Value drops only once found; selling unfound flaws risks getting caught by sharp buyers
 manual_flaws_body2,<color=#9E1F1A>Step 1: Inspect</color>\n- Select a Magnifying Glass or Flashlight and click a gun to inspect it\n- Magnifying Glass: frame, grip/stock, contacts; Flashlight: rust, plus powder guns' barrel and feed\n- Tick each issue you spot; you can pick more than one\n- Check the Hidden Damage Appraisal Guide to spot signs; sold by the Revolution Gunsmith and Dr. Jackson\n\n<color=#9E1F1A>Step 2: Confront</color>\n- Even one wrong tick voids the confront; falsely accusing a seller costs Reputation\n- A valid confront drives down the purchase price\n\n<color=#9E1F1A>Step 3: Repair</color>\n- Only found damage can be repaired; drag the matching material onto the gun to fix it\n- You can also fix it directly via Repair in the gun-mod window
 manual_settings_title,Settings
-manual_settings_body,"<color=#9E1F1A>Mod settings</color>\n- Toggle any of this mod's features anytime from the game's mod list\n- Changing ""Deep content"" or ""Printer chip rack"" requires a game restart; others apply immediately\n- Turning a feature off won't delete existing items, and active orders or leagues finish as usual"
+manual_settings_body,"<color=#9E1F1A>Mod settings</color>\n- Toggle any of this mod's features anytime from the game's mod list\n- Don't want the range, paint or hidden damage? Switch each one off in the ""Deep content"" section\n- Changing ""Deep content"" or ""Printer chip rack"" requires a game restart; others apply immediately\n- Turning a feature off won't delete existing items, and active orders finish as usual\n- Switching the range off closes it; everything inside stays put and is back when you switch it on"
 vge_flaw_guide_name,Hidden Damage Appraisal Guide
 vge_flaw_guide_desc,Teaches you how to use a Magnifying Glass and Flashlight to check battered firearms for six types of hidden damage.
 flaw_guide_title,Hidden Damage Appraisal Guide
@@ -381,6 +383,7 @@ toggle_auto_store_tip,Allow this printer to send finished items to your Gunsmith
 toggle_state_on,On
 toggle_state_off,Off
 print_keep_label,Stock
+chip_stock,In stock: {0}
 print_keep_tip,"Once the shop holds this many of this product, the printer stops starting new jobs and Auto Feed skips it. When printing frames, guns built from them count too. Set to 0 for no limit."
 upgrade_switch_enable,Turn on
 upgrade_switch_disable,Turn off
@@ -422,7 +425,7 @@ feature_famous_faded,Famous gun (neglected)
 feature_war,War-damaged
 order_req_famous,Famous gun
 vge_gun_oil_name,Gun Oil
-vge_gun_oil_desc,Used to maintain famous guns and preserve their bonus value. One coat clears the war-damaged mark from a gun in Good condition or better.
+vge_gun_oil_desc,Used to maintain famous guns and preserve their bonus value. One coat clears the war-damaged mark from a gun in Good condition or better. The Revolution Gunsmith and the Upper-Level Gunsmith bring two bottles every visit.
 skin_desert,Desert
 skin_urban,Urban Grey
 skin_olive,Olive
@@ -897,6 +900,8 @@ cfg_league_news,League in the paper
 cfg_league_news_tip,"After Saturday's Underground Shooting League, the next day's newspaper prints the top three. When off, results aren't printed."
 cfg_print_quality_price,Print quality affects gun price
 cfg_print_quality_price_tip,"Guns built from self-printed frames have their sale price scaled by print quality. When off, newly assembled guns aren't affected; stats and existing guns stay unchanged."
+cfg_print_quality_price_cap,Print quality price cap (%)
+cfg_print_quality_price_cap_tip,"However high the print quality, a gun's sale price rises by at most this much. Every 2 points of quality add 1% to the price. Default 50; only guns assembled from now on are affected."
 cfg_nitration,Dr. Jackson sells the Kotton Nitration Module
 cfg_nitration_tip,"Dr. Jackson occasionally sells the Kotton Nitration Hydroponic Module, which makes growing kotton yield loose gunpowder directly. When off, he stops selling it; existing modules still work."
 cfg_gun_barcode,Show the barcode in gun tooltips
@@ -936,6 +941,14 @@ scrape_pick_sticker,Sticker: {0}
 gunmod_slot_tip,Click to pick a mod
 gunmod_role_cylinder,Cylinder
 gunmod_pick_title,{0}: pick a mod
+gunmod_stock_main,Storage
+gunmod_stock_back,Counter
+gunmod_stock_away,Carried
+gunmod_stock_in,{0} > {1} ({2}, {3})
+gunmod_stock_location,Location: {0}
+gunmod_stock_count,{0} ×{1}
+gunmod_strip,Remove All
+gunmod_strip_full,Not enough room for all the mods
 gunmod_remove,Remove
 gunmod_remove_tip,Remove this gun mod.
 gunmod_remove_no_room,No room in the shop.
@@ -1168,8 +1181,12 @@ gunmod_sealed_vge_cordon_rail,No rail
 gunmod_sealed_vge_hush_stock,Factory stock
 gunmod_sealed_vge_boundary_stock,Factory stock
 gunmod_sealed_vge_boundary_underbarrel,No under-coil mount
-cfg_hidden_damage,Hidden damage
-cfg_hidden_damage_tip,"Used guns in Fair or Poor condition may carry hidden damage, lowering stats and capping condition. Inspect the exterior with a Magnifying Glass and interior with a Flashlight. Confront sellers to lower prices, or repair your own with materials once found. Mercenaries and upper-level buyers inspect guns on delivery. When off, no new hidden damage appears."
+cfg_range,Underground range & league
+cfg_range_tip,"Running the underground range, practice, and the Saturday shooting league. When off, the range closes, its entrance and upgrade cards are hidden, and no rent is charged; a round already under way still plays out. Everything inside stays as it is and is back when you switch it on again."
+cfg_paint,Paint & stickers
+cfg_paint_tip,"Spray cans, Paint Crates and stickers. When off, traders, thieves and locked crates stop supplying them, and no new collector orders appear. Paint and stickers already on guns stay, and whatever you have left can still be used."
+cfg_hidden_damage,Hidden damage & appraisal
+cfg_hidden_damage_tip,"Used guns in Fair or Poor condition may carry hidden damage, lowering stats and capping condition. Inspect the exterior with a Magnifying Glass and interior with a Flashlight. Confront sellers to lower prices, or repair your own with materials once found. Mercenaries and upper-level buyers inspect guns on delivery. When off, no new hidden damage appears, the inspection window no longer opens, and existing damage no longer lowers stats or caps condition. Turning it back on restores everything."
 hidden_damage_feature_frame,Hidden Damage: Cracked Frame
 hidden_damage_feature_grip,Hidden Damage: Cracked Grip/Stock
 hidden_damage_feature_barrel,Hidden Damage: Dented Barrel
@@ -1252,6 +1269,8 @@ hist_oiled_today,Already oiled today
 gunmod_repair_damage,Repair {0} (needs {1} ×1)
 gunmod_repair_missing,Need {0} ×1
 gunmod_repair_blocked,Can't repair this gun now
+gunmod_commission_use,Repair with {0}
+gunmod_commission_material,Pick a tool or material to match the faults on the order.
 vge_ammo_box_actual,{0}: {1} rounds inside
 vge_ammo_box_fill,Fill with matching ammo
 op_bribe_goods,I'll overlook: {0}
