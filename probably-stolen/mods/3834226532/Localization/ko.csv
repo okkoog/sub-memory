@@ -428,15 +428,16 @@ dsp_blood_donor_done,"헌혈 완료: 혈액팩이 하나 늘고, 내일은 손�
 dsp_blood_donor_already,오늘은 이미 헌혈했습니다.
 dsp_blood_donor_no_space,혈액팩을 둘 자리가 없습니다.
 dsp_revolutionary_influence_name,혁명군의 영향력
-dsp_revolutionary_influence_description,"혁명군 평판이 20 이상이 되면 오딘은 거래 후 3일 안에 혁명군이 꾸미는 이벤트를 알려줍니다."
+dsp_revolutionary_influence_description,"혁명군 평판이 20을 넘으면, 오딘은 거래 후 3일 뒤에 일어날 이벤트를 꾸미고 그것을 알려줍니다."
 dsp_cracker_name,상자깡꾼
-dsp_cracker_description,"스승 밑에서 수련하는 동안 당신은 상자 여는 버릇이 들었습니다. 대개는 이득이 큽니다 — 상자를 열 수단만 있다면요.\n초기 소지품:\n추가 장비(밀수꾼 은닉처, 개량형)\n낡은 코드 해독기\n빈 출입 카드 3장과 지휘 출입 카드 1장\n서로 다른 보급 상자 2개와 각 유형에 맞는 출입 카드 칩\n친구와 다른 판매자들이 보급 상자를 내놓는다\n기본 상점 매력도가 50 감소합니다."
+dsp_cracker_description,스승 밑에서 수련하는 동안 당신은 상자 여는 버릇이 들었습니다. 대개는 이득이 큽니다 — 상자를 열 수단만 있다면요.
 dsp_cracker_tag,특성 추가: 아마도 괴짜
 dsp_cracker_supplies_1,"추가 장비(밀수꾼 은닉처, 개량형)."
 dsp_cracker_supplies_2,낡은 코드 해독기.
 dsp_cracker_supplies_3,빈 출입 카드 3장과 지휘 출입 카드 1장.
 dsp_cracker_supplies_4,서로 다른 보급 상자 2개와 각 유형에 맞는 출입 카드 칩.
 dsp_cracker_supplies_5,친구와 다른 판매자들이 보급 상자를 내놓는다.
+dsp_cracker_supplies_6,기본 상점 매력도가 50 감소합니다.
 dsp_revolutionary_influence_slip_title,혁명군의 정보
 dsp_revolutionary_influence_slip_body,오딘은 떠나기 전 목소리를 낮췄습니다. 3일 안에 혁명군이 움직입니다 — “{0}”. 달력에 이미 표시되어 있습니다.
 dsp_service_professional_tooltip,원한이 더 이상 당신을 괴롭히지 않습니다.
@@ -638,7 +639,7 @@ dsp_blood_donor_redeem_done,교환 완료: 혈액팩이 40 식량 배급권 잔�
 dsp_around_world_80_name,80일간의 세계 일주
 dsp_around_world_80_description,80일차부터 게임이 시작된다. 이후 일주일 동안 처음 80일 동안 일어난 모든 이벤트를 겪는다. 시작 시 1000 크레딧과 모든 파벌 평판 15를 얻는다. 경고: 버그가 있을 수 있음.
 dsp_universal_liquid_name,만능 액체
-dsp_universal_liquid_description,"누드카를 드라이버, 플라즈마 커터, 와이어 커터, 모듈 추출기로 쓸 수 있다. 시작 시 누드카 한 병을 갖는다."
+dsp_universal_liquid_description,"누드카를 드라이버, 플라즈마 커터, 와이어 커터, 모듈 추출기로 쓸 수 있다. 시작 시 누드카 두 병을 갖는다."
 dsp_beer_hall_orator_name,비어홀 연설가
 dsp_beer_hall_orator_description,시작 시 Red Imp 맥주 한 상자를 가진다. 맥주를 한 병 팔 때마다 평판 0.1을 얻는다.
 dsp_manifest_destiny_name,명백한 운명
@@ -659,7 +660,7 @@ dsp_vampire_bc_bags,혈액팩 {0}
 dsp_tainted_witness_name,오점 증인
 dsp_tainted_witness_description,"개조체를 처치하거나 유효한 신고를 한 후, 조사 진행도 -10"
 dsp_summon_anytime_name,즉시 호출
-dsp_summon_anytime_description,모든 연락처가 즉시 방문합니다. 연락처의 쿨다운이 1일 줄어듭니다.
+dsp_summon_anytime_description,"모든 연락처가 즉시 방문하며 연락처 쿨다운이 1일 줄어듭니다. 이미 방문 중인 상대에게 다시 전화하면 중복 방문하지 않고 방문이 하루 미뤄지며(계속 걸면 계속 미뤄짐), 통화 쿨다운은 그대로 소모됩니다."
 dsp_summon_anytime_line,비켜.
 dsp_fifth_republic_name,제5공화국
 dsp_fifth_republic_description,"매주 ""치안부 예산 증가"" 이벤트가 발생한다. 그 이벤트가 발생한 날에는 반드시 불시 검사가 있다."
@@ -744,6 +745,14 @@ dsp_corner_market_description,이벤트로 인한 가격 보정은 당신에게 
 dsp_labor_cost_name,인건비
 dsp_labor_cost_description,와일드의 인맥과 야간 서비스 비용이 30% 비싸집니다.
 dsp_renovation_name,인테리어
-dsp_renovation_description,"첫 주에는 손님이 오지 않고, 집주인도 집세를 받지 않습니다. 시작 시 가게 개보수 I를 가진다."
+dsp_renovation_description,"시작 시 가게 개보수 I이 해금됩니다. 첫 주에는 일반 손님이 오지 않고, 집주인도 집세를 받지 않습니다."
 dsp_addict_name,중독자
 dsp_addict_description,특성 포인트가 -3 아래로 내려가지 않으면 게임을 시작할 수 있습니다. 부족한 특성 포인트마다 무작위로 중독 특성을 하나 얻습니다.
+dsp_lagging_market_name,지연 시장
+dsp_lagging_market_description,"시장 이벤트가 하루 더 지속되며, 첫날에는 효과가 절반만 발휘됩니다."
+dsp_keen_nose_name,예민한 후각
+dsp_keen_nose_description,발동 중인 이벤트마다 2% 거래 보너스를 받습니다. 시작 시 SYNC 뉴로액티브 향수를 반쯤 사용한 상태로 소지합니다.
+dsp_money_laundering_name,자금 세탁
+dsp_money_laundering_description,"시작 시 210 크레딧과 2,100의 빚을 얻습니다. 빚을 갚을 때마다 같은 양의 증거가 사라지고 300의 와일드의 호의를 얻습니다."
+dsp_perk_tab_all,전체
+dsp_perk_tab_uncategorized,미분류

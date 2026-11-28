@@ -142,7 +142,6 @@ carrier_flavor,They cannot be bothered to separate right now.
 carrier_name,Mating snake group
 carrier_release_pending,Mating has ended, but the original habitat lacks space to separate the snakes. Free space for an automatic retry.
 carrier_tooltip_cancel,Activate to cancel the whole mating and separate them safely
-carrier_tooltip_fasting,No eating during mating; the finishing night costs double
 carrier_tooltip_member,Participant: {0}
 carrier_tooltip_members,Members: {0}
 carrier_tooltip_pending,No free space in the original habitat yet; release remains pending and is never re-settled
@@ -223,7 +222,7 @@ gift_desc,A common subadult cobra from the Snake Lady; the starter gift is one m
 gift_given,\n(Starter gift: one common male and one common female subadult cobra have both been claimed.)
 gift_name,Cobra (starter gift)
 gift_pending,\n(Starter gift: one common male and one common female subadult cobra. Free space in the main or rear inventory; if only one fits, the other stays pending. Talk to me again after making room.)
-handbook_breeding_body,Breeding needs same-species adult mates and suitable condition; a rat-source shortfall never blocks pairing and is paid by health only on nights gestation truly starves (10% max health per night, at most 3 nights per clutch). After each parent pays double its own nightly cost, at least 50% hunger capacity must remain. Full hunger is optional; clutch nutrition is reserved only as available.\nTwo snakes intertwine; three or more make a mating ball and improve rare-egg odds. One mating night is fasted at double cost; feeding resumes that completion night.\nCommon gestation/recovery: 3/2 nights. Kings: 7/4. Make room if the group is waiting for space.\nCorn snakes can also fund breeding with meat-source nutrition. Breeding purifies the main colour; group mating increases pure-colour chances using only colours already present in the parents.
+handbook_breeding_body,Breeding needs same-species adult mates and suitable condition; a rat-source shortfall never blocks pairing and is paid by health only on nights gestation truly starves (10% max health per night, at most 3 nights per clutch). After feeding as usual on the first night, both parents must be at least half full to start mating. Clutch nutrition is reserved only as available.\nTwo snakes intertwine; three or more make a mating ball and improve rare-egg odds. The mating group stays visible until the next night. Both parents feed as usual that night and each pays one extra night's maintenance.\nCommon gestation/recovery: 3/2 nights. Kings: 7/4. Make room if the group is waiting for space.\nCorn snakes can also fund breeding with meat-source nutrition. Breeding purifies the main colour; group mating increases pure-colour chances using only colours already present in the parents.
 handbook_breeding_title,Pairs and mating balls
 handbook_cage_body,The Snake Lady sells the 600-credit Snake Cage: 10×8 inside, eight expansions to 16×30, and up to +40% growth. Tissue growth still costs nutrition. To expand, drag the game's native metal material (its name follows the game language) onto the cage; each expansion adds 5% growth speed.\nElectronics: +10% incubation speed each, 30 levels for 4× total speed. UV Lamp: +10% natural positive healing per level, up to five; it does not cure severe injury.\nCapacity: 10L water and 2000 cleaning points. Refill from one container of High-Quality Water or Pure Water; bottle and excess stay. Each Bottle of 4 In 1 Wash adds 250 cleaning points. The Snake Lady supplies six bottles every seven days; unsold stock does not accumulate. Water supports temperature, cleaning supports recovery, and both enable growth bonuses. Shortages pause only bonuses, without added harm.
 handbook_cage_title,Cage upgrades and upkeep
@@ -382,13 +381,10 @@ legacy_egg_name_open,Snake egg clutch (
 mating_blocked_health,Health, illness, weaponization or rest blocks breeding.
 mating_blocked_immature,Not all participants are adults yet.
 mating_blocked_no_male,No eligible adult male of the same species in this habitat.
-mating_blocked_not_full,Insufficient mating energy: each parent must retain at least half its hunger capacity after double nightly cost
+mating_blocked_not_full,Both parents must be at least half full to start mating.
 mating_blocked_fertility,Current fertility is below the breeding threshold.
 mating_blocked_nutrition,Mating takes priority: rat-source reserves no longer block a pairing; gestation hunger costs health.
 mating_blocked_recovery,Recovering from the previous clutch.
-mating_blocked_reserve,Insufficient mating energy: hunger after expected costs falls below the safety reserve
-mating_budget_line,Real fullness {0} / {1} · expected mating cost {2} · safe reserve {3}
-mating_fasting,Mating: eating stops, nightly hunger cost ×2
 mating_fullness_ready,Mating energy is sufficient; full hunger is not required
 mating_fullness_waiting,Insufficient mating energy; waiting for normal feeding
 mating_king_pair,King pair: all offspring are king cobras.
@@ -427,7 +423,9 @@ panel_gestation_hungry,Gestation hunger: {1}% max health lost this clutch ({0}/3
 panel_growth,Growth {0}/{1} physiological days; {2} to adulthood
 panel_low_health,Health is below full; maintenance feeding remains available.
 panel_mating,Mating day {0}; {1} participants
-panel_mating_energy,This snake: hunger {0}, double cost {1}, required remainder {2} (both parents must qualify)
+panel_mating_active,Mating
+cfg_inspection_trace_name,Inspection diagnostics
+cfg_inspection_trace_help,Log prompt transitions and inspection settlement. Off by default.
 panel_meal,Rat meal in belly: {0}g; {1} nights left; {2}% of pre-meal weight; appearance: {3}
 panel_meal_settling,Meal absorbed; belly settling · Appearance: {0}
 panel_nightly,Actual nightly cost {0}; the native hunger-rate value {1} is a genetic reference.
@@ -438,6 +436,11 @@ panel_plan,Clutch rat-source cost {0}g; reserved {1}g; fully covered
 panel_plan_gap,Clutch rat-source cost {0}g; reserved {1}g; shortfall {2}g (never blocks pairing; health is lost only if gestation truly starves)
 panel_recovery,Post-clutch recovery: {0} nights left
 panel_reserve,Reserve: rat-source {0}g equivalent; meat-source {1} energy
+panel_feed_meat_last,Meat used last night: {0} kcal
+panel_feed_maintenance_short,Maintenance unmet
+cage_feed_meat_last,Meat used last night: {0} kcal
+cage_feed_meat_short_last,Meat used last night: {0} kcal · {1} snakes below maintenance
+cage_feed_short_last,Last night: {0} snakes below maintenance
 panel_rest,Recovering from weaponization: rest {0}/{1} nights
 panel_sick,Ill: maintenance feeding continues; growth, venom and breeding pause.
 panel_venom,Venom: {0}/{1} qualifying nights{2}
@@ -516,15 +519,15 @@ scavenge_stage_growing,Growing
 scavenge_stage_juvenile,Juvenile
 scavenge_stage_subadult,Subadult
 scavenge_staged_name,{0} ({1})
-shed_desc,Fits water-filter slots that accept {0}; filtering consumes the remaining membrane. Drag onto another shed pack to combine the remaining material; the two packs do not need to be in the same container. Used material is not restored. Cannot be sold directly.
+shed_desc,Fits water-filter slots that accept {0}; filtering consumes the remaining membrane. Drag onto another shed pack to combine the remaining material; the two packs do not need to be in the same container. Used material is not restored. Sells directly as material at 3 credits per remaining gram.
 shed_merge_hint,Save 60g of remaining usable membrane, gather the other materials and talk to the Snake Lady. Choose the {0} commission; its dialogue option lists the full recipe.
 shed_name,Shed membrane
-shed_order_accepted,Got them. I will deliver your {0} when I visit at least seven days from now. Leave some room; there is no extra charge.
-shed_order_choice,Commission {0}
-shed_order_offer,Bring 60g of usable shed membrane, one {0} (depleted durability is fine) and one {1}. Keep them accessible in your owned shop inventory, then choose the {2} commission.
-shed_order_pending,{0} {1} order(s) pending. Delivery is direct when the Snake Lady visits at least seven days after submission. Full storage keeps the order pending; make room and talk again.
-shed_order_recipe,Consumes 60g of remaining usable membrane, one {0} (a depleted frame is fine) and one {1}, producing one {2}. Keep materials accessible in owned shop inventory and select this option to submit. Only the required amounts are used; excess stays. Delivery is free on her first visit at least seven days later. If storage is full, the order stays pending; make room and talk to her again.
-shed_order_unavailable,Materials are missing or the order cannot be placed. Nothing was consumed.
+shed_order_accepted,Materials received. The finished item is already on the counter; collect it now.
+shed_order_choice,Process {0} now
+shed_order_offer,Bring 60g of usable shed membrane, one {0} (depleted durability is fine) and one {1}. Keep them accessible in your owned shop inventory, then choose the {2} order.
+shed_order_pending,"{0} {1} item(s) waiting for collection; the Snake Lady places them on the counter on her visit. If the counter is full, the entitlement stays; make room and talk again."
+shed_order_recipe,"Consumes 60g of remaining usable membrane, one {0} (a depleted frame is fine) and one {1}, producing one {2}. Keep materials accessible in owned shop inventory and select this option to submit. Only the required amounts are used; excess stays. The finished item is placed on the counter immediately. If the counter is full, no materials are taken; clear a space first."
+shed_order_unavailable,Materials are missing, the counter is full, or the order cannot be placed. Nothing was consumed.
 shed_order_reason_shed,Usable shed membrane: {0}/60g; merging packs combines their remaining usable weight automatically.
 shed_order_reason_frame,Missing one {0}; a fully depleted frame is still usable.
 shed_order_reason_chem,Missing one {0}.
@@ -534,6 +537,8 @@ shed_order_reason_receipt,The order record is invalid, so no commission was acce
 shed_remaining,Usable membrane: {0}g
 snake_cage_desc,Snake Lady exclusive. Starts at 10x8, with eight expansions to 16x30: drag {0} onto the cage to expand, +5% growth speed each, up to +40%; temperature, UV and water/cleaning upkeep support extra bonuses. Retains native feeding, butchering and repairs.
 snake_cage_name,Snake Cage
+snake_cage_relic_name,Heirloom Snake Cage
+snake_cage_relic_desc,"A precious treasure brought back from underground by our ancestors. The bronze plaque at the bottom of the cage is worn down to two lines: ""Once affected by 004. Structure stable."""
 species_cobra,Cobra
 species_cobra_name,Cobra
 species_king_cobra,King Cobra
@@ -652,7 +657,6 @@ venom_tip_wine,Fixed wine-container value
 venom_tip_wine_mid, / source premium 
 venom_tip_wine_tail, (added); once the source runs out the value returns to the fixed base.
 weapon_prefix,Starving 
-
 egg_guard_enclosed,An adult snake coils around these eggs. Each cage allows at most one egg-thief challenge per night: the rat has a 95% chance of being killed; a survivor eats the egg and gains the Challenger boost. Snake and eggs can be dragged separately.
 egg_guard_pending,Protected by an adult snake; space or the current pose prevents gathering. Each cage allows at most one egg-thief challenge per night: the rat still has a 95% chance of being killed; a survivor eats the egg and gains the Challenger boost.
 egg_thief_rat_name,Egg Thief Rat
@@ -675,7 +679,6 @@ rat_ascend_log,{0} reached ascension stage {1}; lifespan doubled to x{2}.
 rat_ascend_log_4,A rat completed its third ascension and became a Rat-Serpent - the rat that ascended three challenges, and it has drawn His gaze.
 rat_bite_night_log,A snake was bitten back while swallowing a rat: {0} health lost ({1} remaining).
 rat_bite_tooltip,Bitten by rats: {0} times.
-
 egg_quality_label,Quality: {0}
 egg_quality_fragile,Fragile
 egg_quality_ordinary,Ordinary
@@ -722,10 +725,10 @@ corn_coloration,Coat care: {0}/100
 merchant_dialog_shop,Browse the goods
 merchant_dialog_shop_desc,End this conversation without placing an order or spending materials.
 merchant_gift_brief,Check your main or back storage for the starter snakes. Undelivered snakes wait until space is available.
-merchant_order_brief,"Ready to order: 60g of shed, {0} and {1} for {2}. You can also browse first."
+merchant_order_brief,"Ready: 60g of shed, {0} and {1} for {2}, placed on the counter immediately. You can also browse first."
 ranch_start_title,Snake Rancher
-ranch_start_description,Open shop with the rat rancher's basic supplies and 600 credits. The Snake Lady service is already unlocked.
-ranch_start_rat_gear,"The rat rancher's shabby cage, tools, two-use green serum and six small nutrifruits"
+ranch_start_description,"Open shop with the rat rancher's basic supplies, forty-eight small nutrifruits, one heirloom snake cage and 600 credits. The Snake Lady service is already unlocked."
+ranch_start_rat_gear,"The rat rancher's shabby cage, tools, two-use green serum and forty-eight small nutrifruits"
 ranch_start_rat_stock,"Six native rats: one male and one female aged 1, 3 and 5 days"
 ranch_start_merchant,Rat rancher referral and Snake Lady service unlocked
 corn_yield_progress,Corn-snake digestive yield: {0}/{1}g; {2} dose(s) awaiting space.
@@ -772,7 +775,8 @@ merchant_phone_hint,(Booking 8848 = tomorrow's equipment run: one catching tool,
 merchant_weekly_hint,(I stop by every Wednesday without a call: male and female cobras, gene eggs, king cobra goods and cleaning supplies, plus one cage if you own none. For catching tools or the corn spray gun, book 8848. Walk-ins never burn the phone cooldown.)
 phone_snake_lady_cooldown_suffix, (cooldown {0}d)
 item_corn_spray_gun_name,"Corn Spray Gun"
-item_corn_spray_gun_desc,"Spray pigment onto an adult corn snake; the public label still claims 100% purity."
+item_corn_spray_gun_desc,"Spray pigment: drop pigment into the gun's content grid, then drag the gun onto an adult corn snake. Venom: drop the venom vial directly onto the gun icon to load it."
+item_corn_spray_gun_window_title,"Corn spray gun (drop venom on gun)"
 ui_corn_inspect_title,"Inspect Corn"
 clue_color,"Colour family"
 clue_color_desc,"Compare the base colour with the public label, or look for a local colour mismatch."
@@ -799,7 +803,6 @@ spray_fail_black,"Black pigment needs one fresh reagent at full 200/200 durabili
 spray_fail_consume,"Spray failed; the pigment was not consumed."
 spray_fail_corrupt,"This corn's coating data cannot be identified safely. The original data is preserved and repainting is refused."
 spray_fail_target,"This corn cannot be painted: it must be owned, adult, alive and have no surface coat."
-
 dialog_snake_merchant_phone_1,I brought the catching tools, cages and the corn spray gun. The rest of my stock stays for walk-in customers.
 npc_merchant_phone_stock,The booked equipment run is here: one catching tool, one snake cage and one corn spray gun. No snakes, eggs, king cobra goods or cleaning supplies this trip - those wait for my Wednesday walk-in.
 handbook_corn_id_title,Corn appraisal plate
@@ -817,3 +820,189 @@ rat_snake_egg_lore,One squeak as the shell is peeled; one as it is dipped; one a
 rat_snake_egg_flavor,Three Squeaks - a dish that exists only in rumor.
 rat_snake_egg_laid,{0} laid a Three Squeaks egg.
 rat_snake_egg_tooltip,Luxury food. Cannot hatch. One every 2 days.
+product_bone_cobra_name,"Cobra bone"
+product_bone_cobra_desc,"A cleaned rib from a common cobra. Two bones plus one standard yeast make a bottle of snake-bone wine."
+product_bone_king_name,"King cobra bone"
+product_bone_king_desc,"A thick rib from a king cobra. Two bones plus one standard yeast make a bottle of snake-bone wine."
+product_skin_name,"Snake skin"
+product_skin_desc,Adult snake hide measured by weight. The snake merchant exchanges 200 g plus one genuine 100% pure metal ingot for a storage-bay expansion kit.
+skin_remaining,"Remaining: {0} g"
+skin_exchange_hint,The snake merchant accepts {0} g of snake skin plus one genuine 100% pure {1} for a storage-bay expansion kit.
+wine_snake_bone_t3_name,"Snake-bone wine (T3)"
+wine_snake_bone_t3_desc,"A clean everyday wine made from common cobra bones."
+wine_snake_bone_t4_name,"Snake-bone wine (T4)"
+wine_snake_bone_t4_desc,"A fuller blend of common and king-cobra bones with a mineral finish."
+wine_snake_bone_t5_name,"Snake-bone wine (T5)"
+wine_snake_bone_t5_desc,"A collector-grade wine made from two king-cobra bones, golden and long-finishing."
+wine_snake_bone_tip,"Snake-bone wine {0}; base value {1} credits, aging adds 3 per night."
+bone_wine_reject_count,"Snake-bone wine needs exactly 2 snake bones (common, king, or one of each)."
+bone_wine_reject_recipe,"Use only 2 snake bones, 1 standard yeast and at least 749 mL water; no other ingredients or yeast."
+venom_gun_desc,Cobra venom {0} mL / 20 mL; coats {1} .22 rounds (0.5 mL each) or {2} melee weapon uses (1.0 mL each).
+venom_gun_tip,Cobra venom {0} mL / 20 mL; {1} more .22 rounds or {2} melee weapon uses.
+venom_melee_tip,Coated {0}/{1} mL; 1 hit remaining.
+venom_melee_coated,This melee weapon is coated with 1.00 mL cobra venom (1 hit).
+venom_melee_already,This weapon is already coated and still has 1 hit; no venom was spent.
+venom_melee_reject_venom,The spray gun has less than 1.0 mL cobra venom.
+venom_melee_reject_target,Only an owned weapon usable as a melee weapon can be coated.
+venom_gun_loaded,"Cobra venom loaded into the spray gun."
+venom_gun_processed,"Coated this cell's .22 rounds."
+venom_gun_reject_king,"The spray gun accepts common cobra venom only; separate king venom first."
+venom_gun_reject_capacity,"Not enough venom capacity in the gun; coat some rounds or drain the vial first."
+venom_gun_reject_empty,"This cobra-venom vial is empty."
+venom_gun_reject_ammo_material,"Not enough cobra venom in the gun for this cell."
+venom_gun_reject_create,"Could not create coated rounds; no materials were taken."
+venom_gun_reject_space,"No free space for the coated rounds; no materials were taken."
+venom_ammo_name,"Venom-coated .22 round"
+venom_ammo_desc,A plain .22 round coated with common cobra venom. This version implements the processing and item identity only; no poison-on-hit effect is wired yet.
+exchange_kit_choice,"Exchange a storage-bay expansion kit"
+exchange_kit_recipe,{0} g snake skin + {2} x genuine 100% pure {3} -> 1 x {1}. The kit is placed on the counter for the player to use.
+exchange_kit_ready,Hand over the skin and one genuine 100% pure metal ingot for one storage-bay expansion kit?
+exchange_kit_ok,"It is on the counter. Please collect it."
+exchange_kit_failed,"Exchange not completed; no materials were taken."
+exchange_kit_reason_inputs,Need {0} g snake skin and {1} genuine 100% pure metal ingot(s); gather them first.
+exchange_kit_reason_create,"Could not create the expansion kit; no materials were taken."
+exchange_kit_reason_full,The counter is full. Clear a space first; no materials were taken.
+exchange_kit_reason_changed,"Materials changed during the exchange; nothing was taken. End the dialogue and retry."
+merchant_counter_full,The counter is full. Clear a space first; nothing was taken.
+shed_order_reason_create,"Could not create the advanced water filter; no materials were taken."
+wine_snake_bone_fermenting_name,Snake-bone wine (fermenting)
+wine_snake_bone_fermenting_desc,Two bones and one complete base-wine bottle are steeping; it finishes on the next valid night.
+wine_snake_bone_reject_count,Snake-bone wine requires exactly two bones.
+wine_snake_bone_reject_base,"Snake-bone wine requires one complete, drinkable genuine base-wine bottle."
+wine_snake_bone_reject_recipe,Incomplete recipe: only two bones and one complete base-wine bottle are allowed; no other ingredients or liquids.
+venom_gun_loaded_partial,The spray gun was partially filled; the remainder stays in the original vial.
+shed_order_counter_full_pending,"{0} {1} item(s) are waiting, but the counter is full. The entitlement is retained and delivery will retry after space is cleared."
+shed_order_delivered,Delivered {0} {1} item(s) to the counter; please collect.
+test_side_fixture_name,"2x2 test fixture"
+test_side_fixture_desc,"Test-only container proving coated rounds stay in their original slot; not a production item."
+test_side_master_name,Test master crate (first feed + five function groups)
+test_side_master_desc,"Test save only: the first grant creates the first-feed group, five groups of materials and one-time visitors; the first F9 also grants this box, later presses top up materials only.\nAuto-granted only on a new save with test_start_kit explicitly enabled. Loading, switching saves and refills never rebuild the Snake Lady, the old order, the counter blockers or the four material buyers.\nA rancher save's one-time visitors and counter blockers enter automatically after the Snake Lady's first-visit gift is claimed, with no second F9. An ordinary test save gets visitors and counter blockers on its first full grant."
+test_side_master_note,"Test master crate. First-feed group: two hungry cobras, each with one 275 g live rat; the other five groups: butchering, bone wine, spray gun and coated rounds, Snake Matron counter and exchange, skin/shed sales and shed remainder. Each side crate is stocked independently; do not borrow materials across groups."
+test_side_note_name,"Test note"
+test_side_refill_name,Material refill crate
+test_side_refill_desc,"Standalone material refill. Does not create the first-feed group, the Snake Lady, four material buyers, the native arms dealer, the old filter order or six counter blockers."
+test_side_refill_granted,Standalone material refill granted (no first-feed group/visitors/old order/counter blockers).
+test_side_refill_failed,"Material refill failed. Check bag space and Player.log."
+test_side_refilled_done,Added one F9 material pouch to the master box; the first-feed group and all one-time content were left untouched.
+test_side_granted,"Test kit granted. F9={0}: first press grants the first-feed group and five groups; later presses top up materials only and never rebuild visitors, the old order or counter blockers."
+test_side_granted_wait_gift,"First-feed group and five groups granted. After the Snake Lady's first-visit gift is claimed, one-time visitors, the old order and counter blockers enter automatically; no second F9 is needed."
+test_side_granted_existing,"Existing kit found and one-time content completed. F9={0} tops up materials only from now on."
+test_side_grant_failed,"Test kit grant failed. See Player.log; the per-save seeded flag was not written."
+test_side_missing_master,"This save is marked as granted but the master box cannot be found. Check whether it was moved into another container; use the debug entry 'materials only' for supplies. F9={0}."
+test_side_place_failed,"Not enough bag space to place the test box."
+test_side_counter_blocker,"Counter blocker {0}x{1}"
+test_side_pouch_name,"F9 material pouch"
+test_side_pouch_desc,"F9 top-up only: base wine, bones, a filter and a perfect ingot; does not reset started wine or orders, and never adds the first-feed group, snakes or rats."
+test_side_pouch_note,"T3/T4 base wine, 2 normal bones, 1 king bone, one filter and one perfect ingot; does not touch any in-progress wine or order."
+test_side_t0_name,First-feed starter box (feed both by hand first)
+test_side_note_t0,"First-feed group: a max-level 16x30 cage with one adult male and one adult female common cobra, already hungry; the two 275 g live rats are both male, one for each snake's first feed. Confirm each snake eats one, then move on to the other five groups. The first-feed group is created only on the initial grant; later F9 presses do not add snakes or rats."
+test_side_t0_cage,First-feed max-level cage
+test_side_t0_male,First-feed cobra - male
+test_side_t0_female,First-feed cobra - female
+test_side_t0_rat_a,First-feed rat A - male 275g
+test_side_t0_rat_b,First-feed rat B - male 275g
+test_side_g1_name,Butchering and byproducts
+test_side_note_g1,"Butchering group: the large cage holds 3 dead snakes (common 2000 g / king 4000 g / corn 2000 g); drag the cleaver from the crate onto a dead snake to butcher. Another large cage holds 2 dead snakes and the automatic butcher (dead animals only); open the cage and click 'Butcher now'. The crate also has spare dead common 2400 g / king 1600 g / corn 2000 g.\nExpected bones: 5/10/0, and 10/5 from the automatic butcher; adult common/king snakes also yield skin, corn snakes do not."
+test_side_g1_manual_cage,"Manual butcher cage (3 dead snakes)"
+test_side_g1_manual_cobra,"Manual cage - cobra 2000g (dead)"
+test_side_g1_manual_king,"Manual cage - king 4000g (dead)"
+test_side_g1_manual_corn,"Manual cage - corn 2000g (dead)"
+test_side_g1_cleaver,"Butcher cleaver (drag onto a dead snake)"
+test_side_g1_auto_cage,"Auto butcher cage (2 dead snakes)"
+test_side_g1_auto_cobra,"Auto cage - cobra 4000g (dead)"
+test_side_g1_auto_king,"Auto cage - king 2000g (dead)"
+test_side_g1_auto_butcher,"Auto butcher (dead animals only)"
+test_side_g1_spare_cobra,"Spare - cobra 2400g (dead)"
+test_side_g1_spare_king,"Spare - king 1600g (dead)"
+test_side_g1_spare_corn,"Spare - corn 2000g (dead)"
+test_side_g2_name,Bone wine
+test_side_note_g2,"Bone wine: every bottle is pre-loaded with bones; its base wine sits beside it. A whole base bottle is 1x4, so rotate it to 4x1 before entering the 6x2 content window.\nValid: Sample 1 (T3+2 normal), Sample 2 (T3+1 normal+1 king -> T4), Sample 3 (T4+2 king -> T5), Sample 4 (T3+2 normal order retest), Sample 7 (aged T3+2 normal).\nNegatives: Sample 5 (only 1 normal bone without base), Sample 6 (native finished wine), Sample 8 (fake T3 base+2 normal).\nSample 9 is the native wine flow bottle (750 mL clean water + 2 berries + 2 yeast); Sample 10 is a spare empty bottle. T3 base total 6, T4 base total 2; spare normal bones 2 and king bone 1."
+test_side_g2_1,Sample 1 - T3 empty bottle (2 normal bones)
+test_side_g2_2,Sample 2 - T3 base-wine bottle (1 normal + 1 king bone -> T4)
+test_side_g2_3,Sample 3 - T5 empty bottle (2 king bones)
+test_side_g2_4,"Sample 4 - T3 empty bottle (2 normal bones, order retest)"
+test_side_g2_5,Sample 5 - negative (only 1 normal bone)
+test_side_g2_6_name,Sample 6 - native finished wine
+test_side_g2_6_desc,Native finished wine. Already fermented; it is neither an empty bottle nor a valid base.
+test_side_g2_7,Sample 7 - aged T3 empty bottle (2 normal bones)
+test_side_g2_8,Sample 8 - negative (fake T3 base wine)
+test_side_g2_spare1,Sample 9 - old spare empty bottle (no longer issued)
+test_side_g2_spare2,Sample 10 - spare empty bottle
+test_side_g2_bottle_desc,"Empty bottle pre-loaded with this scene's bones; its base wine is beside it."
+test_side_g2_base_name,"{0} base wine T{1} (genuine)"
+test_side_g2_7_base_name,"{0} aged T{1} base wine (aged 6 times)"
+test_side_g2_8_base_name,Sample 8 - fake T3 base wine (disguised as genuine)
+test_side_g2_8_base_desc,"Real purity is fair while the public display still says perfect; it must be rejected when the bottle starts."
+test_side_g2_base_desc,"T{0} genuine base wine{1}. Whole bottle is 1x4; rotate to 4x1 when dragging into the 6x2 window."
+test_side_g2_aged," (aged 6 times)"
+test_side_g2_spare_normal_bones,"Spare normal bones x2"
+test_side_g2_spare_king_bone,"Spare king bone x1"
+test_side_g3_name,Spray gun and coated rounds
+test_side_note_g3,"Spray-gun group: three empty guns A/B/C. Either drag a venom vial onto the gun icon or drag the gun onto the vial: a 22 mL vial fills A to 20 mL and leaves 2 mL; an 18 mL vial fills B; C has one mixed vial (12 mL active venom + 6 mL water), and an empty gun takes only 12 mL venom, leaving 6 mL water.\nFirst coat single rounds at 1/3/6; the 3x1 box has three 1-round cells, click all three; the 1x1 box holds one round in a full cell and replaces it in place; the 1x1 box with 6 rounds in a full cell must fail for a multi-stack and must not consume rounds or venom; re-clicking an already coated round spends no venom.\nThe 2x2 box is a spare; 3 coated rounds are also supplied. Put the coated rounds on the counter and call the native arms dealer; record the 40-credit base price, then the quote and sale.\nAn adult corn snake + 2 berries / 2 nutrifruit / 2 coffee beans / 1 weak dye is supplied for spray-gun color testing."
+test_side_g3_gun_a,"Spray gun A (empty)"
+test_side_g3_gun_b,"Spray gun B (empty)"
+test_side_g3_gun_c,"Spray gun C (empty)"
+test_side_g3_vial22,Common snake venom vial {0} mL (for gun A)
+test_side_g3_vial18,Common snake venom vial {0} mL (for gun B)
+test_side_g3_vial12,"Mixed vial, old 12 mL entry (merged into the same vial)"
+test_side_g3_vial6,"Mixed vial, old 6 mL water entry (merged into the same vial)"
+test_side_g3_rounds,".22 rounds ({0})"
+test_side_g3_coated,"Coated .22 rounds ({0})"
+test_side_g3_corn_cage,Corn snake color-test cage
+test_side_g3_corn_snake,"Adult corn snake 2000g"
+test_side_g3_berry,"Berry pigment (one of 2)"
+test_side_g3_nutrifruit,"Nutrifruit pigment (one of 2)"
+test_side_g3_coffee,"Coffee-bean pigment (one of 2)"
+test_side_g3_weak,"Weak dye (1)"
+test_side_g3_buyer,Native arms dealer (ammo buyer)
+test_side_g4_name,Snake Matron counter and exchange
+test_side_note_g4,"Snake Matron counter: six 6x2 placeholders fill the 18x4 counter. While full, first submit a valid expansion exchange, then submit the new water-filter order; both must fail and keep the materials.\nAfter freeing space, collect the old order's product first, then complete the new filter order and collect it. With counter space free, try a normal ingot, a disguised perfect ingot and 199 g skin one condition at a time; all three must be rejected.\nFinally exchange 200 g skin + a genuine perfect ingot, place the expander on the counter, drag both storage areas out and choose one to use. Repeat dialogue and reload to confirm the old order delivers only once."
+test_side_g4_filter,"Water filter {0}"
+test_side_g4_chemical,"Filter chemical {0}"
+test_side_g4_shed,"Snake shed {0}g (max {1}g)"
+test_side_g4_storage,"Storage bay {0}"
+test_side_g4_ingot_perfect,"Perfect-purity ingot"
+test_side_g4_ingot_normal,"Fair-purity ingot"
+test_side_g4_ingot_disguised,"Disguised perfect ingot (public perfect/real fair)"
+test_side_g5_name,Sales and shed
+test_side_note_g5,"Sales and shed: B1 buys skin/shed, B2 refuses shed but buys skin, B3 refuses both, B4 refuses skin but buys shed. Each of the four buyers has an independent 200 g skin sample; 60 g/10 g shed, two 20 g merge samples and one consumed sample (20 g used down to 10 g, cap still 200) test value by remainder. A dirty water pitcher (3000 mL, quality in its name) and 2 water test strips are also supplied: put the 60 g shed into the pitcher's filter slot, filter by hand, then check water quality, shed remainder and quote. Call the next buyer after each sale; save/reload the 10 g consumed sample first, confirm it is still present and still 10 g, then quote/sell."
+test_side_g5_skin200,"Snake skin {0}g"
+test_side_g5_skin199,"Snake skin {0}g (low boundary)"
+test_side_g5_shed60,"Snake shed {0}g (max {1}g)"
+test_side_g5_shed10,"Snake shed {0}g (max {1}g)"
+test_side_g5_shed20,"Snake shed {0}g (merge sample)"
+test_side_g5_shed_used,"Used shed {0}g left (max {1}g)"
+test_side_buyer_b1,"Material buyer B1 (accepts both)"
+test_side_buyer_b2,"Material buyer B2 (rejects shed)"
+test_side_buyer_b3,"Material buyer B3 (rejects both)"
+test_side_buyer_b4,"Material buyer B4 (rejects skin)"
+test_side_buyer_greeting,"I am buying snake-farm materials."
+test_side_buyer_desc,"Put skin or shed on the counter for a quote; each buyer has a different blacklist."
+debug_grant_side_kit,"Five-group test kit (per-save seeded)"
+debug_grant_side_refill,"Five-group materials only (no one-time content)"
+debug_grant_legacy_case,"Legacy main test box (20x16)"
+
+test_side_g3_fixture,2x2 supplementary ammo fixture with 3 rounds inside
+
+test_side_g2_9_name,Sample 9 - native wine flow bottle
+test_side_g2_9_desc,"Native wine flow: pour clean water to 750 mL, add 2 berries + 2 yeast, then click 'Start fermentation'. Checks the normal wine flow; not part of the bone-wine tiers."
+test_side_g2_9_berry,Native wine berry {0}/2
+test_side_g2_9_yeast,Native wine yeast {0}/2
+test_side_g2_9_water,Clean water for native wine {0}mL
+test_side_g2_9_water_desc,Pour clean water into Sample 9's empty bottle; it needs at least 749 mL to start; fill to 750 mL.
+test_side_g2_9_note,Sample 9 native flow: empty bottle -> 750 mL clean water -> 2 berries + 2 yeast -> start fermentation.
+test_side_fixture_row_name,3x1 ammo fixture
+test_side_fixture_row_desc,Three adjacent cells, one plain .22 round in each; used for the three-cell consecutive coating test.
+test_side_fixture_cell_name,1x1 ammo fixture
+test_side_fixture_cell_desc,Single-cell container. One holds 1 round and one holds 6 rounds, for in-place single-round replacement and multi-round failure tests.
+test_side_g3_mix,Gun C mixed vial: {0} mL active venom + {1} mL water
+test_side_g3_mix_desc,"After gun C draws 12 mL active venom, only 6 mL water should remain; water is not active venom and cannot coat more rounds."
+test_side_g3_row_fixture,3x1 row: one round per cell (click all three in a row)
+test_side_g3_cell_single,1x1 full single round (in-place replacement)
+test_side_g3_cell_multi,3x2 six-cell box full with 6 rounds (multi-round stays split)
+test_side_g3_adjacent_round,Row cell {0}/{1}
+test_side_g5_dirty_water,"Dirty water pitcher {0} mL (water quality {1}/10000, for filter test)"
+test_side_g5_dirty_water_desc,Put the 60g shed into the pitcher's filter slot; filter by hand, then record water quality, shed remaining grams and quote.
+test_side_g5_strip,Water test strip {0}/{1}
+test_side_g2_bone_king,King snake bone {0}/{1}
+test_side_g2_bone_normal,Normal snake bone {0}/{1}

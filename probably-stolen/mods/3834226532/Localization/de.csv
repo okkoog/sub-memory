@@ -428,15 +428,16 @@ dsp_blood_donor_done,"Blutspende erledigt: eine Blutkonserve mehr, dafür verpas
 dsp_blood_donor_already,Du hast heute schon Blut gespendet.
 dsp_blood_donor_no_space,Kein Platz für eine weitere Blutkonserve.
 dsp_revolutionary_influence_name,Einfluss der Revolution
-dsp_revolutionary_influence_description,"Wenn dein Ruf bei der Revolution 20 oder höher ist, verrät dir Odin nach einem Handel, welches Ereignis die Revolution innerhalb von drei Tagen plant."
+dsp_revolutionary_influence_description,"Wenn dein Ruf bei der Revolution höher als 20 ist, plant Odin nach einem Handel ein Ereignis, das drei Tage später stattfindet, und verrät es dir."
 dsp_cracker_name,Kistenknacker
-dsp_cracker_description,"Während deiner Ausbildung unter dem Mentor hast du dir das Aufbrechen von Kisten angewöhnt. Meistens zahlt es sich aus – solange du die Mittel hast, sie auch zu öffnen.\nDu beginnst mit:\nEin zusätzliches Gerät (Schmugglerbox (modifiziert))\nEin abgenutzter Kryptografischer Desequenzierer\n3 Einweg-Keycards (blanko) und 1 Einweg-Keycard (Kommando)\n2 verschiedene Materialkisten und ein passender Kryptografischer Desequenzierer-Chip\nDein Freund und andere Verkäufer bieten dir Materialkisten an\nDie Grund-Ladenattraktivität sinkt um 50."
+dsp_cracker_description,"Während deiner Ausbildung unter dem Mentor hast du dir das Aufbrechen von Kisten angewöhnt. Meistens zahlt es sich aus – solange du die Mittel hast, sie auch zu öffnen."
 dsp_cracker_tag,Mehr Eigenschaften: wahrscheinlich ein Spinner
 dsp_cracker_supplies_1,"Ein zusätzliches Gerät (Schmugglerversteck, verbessert)."
 dsp_cracker_supplies_2,Ein abgenutzter Code-Sequencer.
 dsp_cracker_supplies_3,3 leere Zugangskarten und 1 Kommando-Zugangskarte.
 dsp_cracker_supplies_4,2 verschiedene Versorgungskisten und je ein passender Zugangskarten-Chip.
 dsp_cracker_supplies_5,Dein Freund und andere Verkäufer bieten dir Versorgungskisten an.
+dsp_cracker_supplies_6,Die Grund-Ladenattraktivität sinkt um 50.
 dsp_revolutionary_influence_slip_title,Information der Revolution
 dsp_revolutionary_influence_slip_body,Odin senkte vor dem Gehen die Stimme: Innerhalb von drei Tagen schlägt die Revolution zu – „{0}“. Im Kalender ist es bereits markiert.
 dsp_service_professional_tooltip,Deine Vendetta stört dich nicht mehr.
@@ -638,7 +639,7 @@ dsp_blood_donor_redeem_done,Eingelöst: Die Blutkonserve wurde zu einem Guthaben
 dsp_around_world_80_name,In 80 Tagen um die Welt
 dsp_around_world_80_description,Du startest an Tag 80. In der folgenden Woche erlebst du alle Ereignisse der ersten 80 Tage. Du beginnst mit 1000 Credits und 15 Ruf bei jeder Fraktion. Warnung: möglicherweise fehlerhaft.
 dsp_universal_liquid_name,Universelle Flüssigkeit
-dsp_universal_liquid_description,"Du kannst Nudka als Schraubenzieher, Plasmaschneider, Seitenschneider oder Modulextraktor verwenden. Du startest mit einer Flasche Nudka."
+dsp_universal_liquid_description,"Du kannst Nudka als Schraubenzieher, Plasmaschneider, Seitenschneider oder Modulextraktor verwenden. Du startest mit zwei Flaschen Nudka."
 dsp_beer_hall_orator_name,Bierkeller-Redner
 dsp_beer_hall_orator_description,"Du beginnst mit einem Kasten Red-Imp-Bier. Jede Flasche Bier, die du verkaufst, bringt 0,1 Ruf."
 dsp_manifest_destiny_name,Manifest Destiny
@@ -659,7 +660,7 @@ dsp_vampire_bc_bags,Blutbeutel {0}
 dsp_tainted_witness_name,Belasteter Zeuge
 dsp_tainted_witness_description,Nach dem Töten eines Augs oder einer gültigen Meldung: Ermittlungsfortschritt -10
 dsp_summon_anytime_name,Stets verfügbar
-dsp_summon_anytime_description,Alle Kontakte kommen sofort vorbei. Die Abklingzeit der Kontakte ist um einen Tag kürzer.
+dsp_summon_anytime_description,"Alle Kontakte kommen sofort vorbei, und die Abklingzeit der Kontakte ist um einen Tag kürzer. Ist ein Kontakt schon unterwegs, führt ein weiterer Anruf nicht zu einem doppelten Besuch - der Besuch verschiebt sich um einen Tag (jeder weitere Anruf verschiebt ihn erneut), die Anruf-Abklingzeit wird trotzdem verbraucht."
 dsp_summon_anytime_line,Platz da.
 dsp_fifth_republic_name,Die 5. Republik
 dsp_fifth_republic_description,"Jede Woche erscheint das Ereignis „Budgeterhöhung der Sicherheitsbehörde“. An dem Tag, an dem es erscheint, gibt es immer eine Überraschungsinspektion."
@@ -744,6 +745,14 @@ dsp_corner_market_description,"Preisanpassungen durch Ereignisse wirken nur, wen
 dsp_labor_cost_name,Arbeitskosten
 dsp_labor_cost_description,Wildes Kontakte und die Nachtdienste kosten 30 % mehr.
 dsp_renovation_name,Renovierung
-dsp_renovation_description,In der ersten Woche kommen keine Kunden und der Vermieter zieht keine Miete ein. Du beginnst mit Ladenrenovierung I.
+dsp_renovation_description,Ladenrenovierung I ist von Beginn an freigeschaltet. In der ersten Woche kommen keine normalen Kunden und der Vermieter zieht keine Miete ein.
 dsp_addict_name,Süchtiger
 dsp_addict_description,"Solange deine Perkpunkte nicht unter -3 liegen, kannst du das Spiel beginnen. Für jeden fehlenden Perkpunkt erhältst du zufällig einen Sucht-Perk."
+dsp_lagging_market_name,Nachlaufender Markt
+dsp_lagging_market_description,Marktereignisse dauern einen Tag länger und wirken am ersten Tag nur zur Hälfte.
+dsp_keen_nose_name,Feine Nase
+dsp_keen_nose_description,Jedes aktive Ereignis gibt 2 % Handelsbonus. Du startest mit einer halb verbrauchten Flasche SYNC-Neuroaktiv-Parfüm.
+dsp_money_laundering_name,Geldwäsche
+dsp_money_laundering_description,Du startest mit 210 Credits und 2.100 Schulden. Jede Schuldenzahlung entfernt entsprechend viele Beweise und gewährt 300 Wilds Gunst.
+dsp_perk_tab_all,Alle
+dsp_perk_tab_uncategorized,Unkategorisiert

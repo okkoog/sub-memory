@@ -142,7 +142,6 @@ carrier_flavor,它们现在懒得分开。
 carrier_name,交配中的蛇群
 carrier_release_pending,交配已结束，原养殖空间不足，暂待分开。腾位后自动重试。
 carrier_tooltip_cancel,激活可整体取消交配并安全分开
-carrier_tooltip_fasting,交配期间停止进食，完成夜消耗双倍
 carrier_tooltip_member,参与者：{0}
 carrier_tooltip_members,成员：{0} 条
 carrier_tooltip_pending,原养殖空间没有空位，仍需等待释放；不会重复结算
@@ -223,7 +222,7 @@ gift_desc,蛇夫人赠送的普通亚成蛇；入门赠礼为一公一母，仍�
 gift_given,\n（入门赠礼：普通亚成蛇一公一母均已领取。）
 gift_name,眼镜蛇（入门赠礼）
 gift_pending,\n（入门赠礼：普通亚成蛇一公一母。主仓或后仓有空位即可领取；若只够放一条，另一条会保留待领，腾出位置后再和我交谈。）
-handbook_breeding_body,同种成年异性、状态合格即可配对；鼠源储备不足不再阻止配对，缺口由孕期健康承担（真饿每夜损10%生命，整窝最多3夜）。双方饥饿扣各自双倍夜耗后须各余至少上限50%，不必吃满；窝产营养按实际储备部分预留。\n两条缠绕，三条及以上形成蛇球，并提高普通蛇产王蛇蛋的机会。交配禁食一晚，总双倍夜耗；结束同夜恢复进食。\n普通孕期3夜、产后恢复2夜；王蛇7夜、4夜。空间不足会延期，腾位后重试。\n玉米蛇也可用肉食营养支付繁育；主色占比靠繁育提纯，群体交配增加纯色机会，颜色只从父母已有颜色继承。
+handbook_breeding_body,同种成年异性、状态合格即可配对；鼠源储备不足不再阻止配对，缺口由孕期健康承担（真饿每夜损10%生命，整窝最多3夜）。首夜照常进食后，双方饱食度均达到50%即可开配；窝产营养按实际储备部分预留。\n两条缠绕，三条及以上形成蛇球，并提高普通蛇产王蛇蛋的机会。交配外观保留到次夜结算；次夜照常进食，每条亲蛇额外消耗一份夜间维持量。\n普通孕期3夜、产后恢复2夜；王蛇7夜、4夜。空间不足会延期，腾位后重试。\n玉米蛇也可用肉食营养支付繁育；主色占比靠繁育提纯，群体交配增加纯色机会，颜色只从父母已有颜色继承。
 handbook_breeding_title,配对与蛇球
 handbook_cage_body,蛇夫人专售蛇笼，600信用点，内部10×8起步，扩建八次到16×30，育成最多加速40%；增重仍花真实营养。扩建方式：把游戏原生金属材料（名字随游戏语言显示）拖到蛇笼上，每次扩建育成速度+5%。\n电子元件：每件孵化速度+10%，30级后总4倍。紫外线灯：每级自然正向回血+10%，最多五级，不代替重伤治疗。\n水箱10L、清洁储备2000。装有「优质水」或「纯水」的单个液体容器可补水，瓶和余液留原处；「一瓶四合一洗涤剂」每瓶补250清洁点，蛇夫人每七天补货六瓶，未售库存不累积。水支撑温控，清洁支撑恢复，两者充足才有育成加成；不足仅停对应加成，不额外伤蛇。
 handbook_cage_title,蛇笼升级与维护
@@ -382,13 +381,10 @@ legacy_egg_name_open,一窝蛇蛋（
 mating_blocked_health,健康、疾病、武器化或静养状态阻止繁殖。
 mating_blocked_immature,参与蛇尚未全部成年。
 mating_blocked_no_male,同一养殖空间没有同种成年雄性。
-mating_blocked_not_full,交配能量不足：双方扣除双倍夜耗后都需保留至少半条饱食
+mating_blocked_not_full,开始交配需要双方至少半饱。
 mating_blocked_fertility,当前生育力不足，尚未进入可繁殖窗口。
 mating_blocked_nutrition,交配优先：配对不再等待鼠源储备，孕期饥饿会损耗健康。
 mating_blocked_recovery,上一窝仍在恢复期。
-mating_blocked_reserve,交配能量不足：预计消耗后的饱食低于安全余量
-mating_budget_line,实际饱食 {0} / {1} · 预计交配消耗 {2} · 安全余量 {3}
-mating_fasting,交配中：停止进食，夜间消耗×2
 mating_fullness_ready,交配能量充足，无需吃满
 mating_fullness_waiting,交配能量不足，等待正常进食补足
 mating_king_pair,王蛇配对：后代全部为眼镜王蛇。
@@ -427,7 +423,9 @@ panel_gestation_hungry,孕期饥饿：本窝已损健康 {1}%（{0}/3 夜）
 panel_growth,成长 {0}/{1} 生理日 · 距成年还差{2}生理日
 panel_low_health,生命未满，仍可维生进食。
 panel_mating,交配第{0}天 · {1}条参与
-panel_mating_energy,本蛇交配预算：当前饱食{0}，预计双耗{1}，耗后需余{2}（双方均须足够）
+panel_mating_active,交配中
+cfg_inspection_trace_name,治安官搜查诊断
+cfg_inspection_trace_help,记录提醒换页和搜查结算。默认关闭。
 panel_meal,腹内鼠餐 {0}克 · 还需{1}夜 · 餐前体重的{2}% · 外观：{3}
 panel_meal_settling,本餐已吸收，腹部正在收拢 · 外观：{0}
 panel_nightly,实际夜耗 {0}；左栏饥饿速度 {1} 是遗传参考值。
@@ -438,6 +436,11 @@ panel_plan,本窝鼠源：费用{0}克 · 已预留{1}克 · 已备齐
 panel_plan_gap,本窝鼠源：费用{0}克 · 已预留{1}克 · 缺口{2}克（不阻止配对；孕期真饿才损健康）
 panel_recovery,产后恢复还需{0}夜
 panel_reserve,储备：鼠源 {0}克鼠当量 · 肉源 {1}能量
+panel_feed_meat_last,昨夜用肉 {0} kcal
+panel_feed_maintenance_short,维持不足
+cage_feed_meat_last,昨夜用肉 {0} kcal
+cage_feed_meat_short_last,昨夜用肉 {0} kcal · {1} 条维持不足
+cage_feed_short_last,昨夜 {0} 条维持不足
 panel_rest,解除武器化中：静养 {0}/{1}夜
 panel_sick,生病：仍可维生进食；成长、产毒和繁殖暂停。
 panel_venom,产毒：{0}/{1}合格夜{2}
@@ -516,15 +519,15 @@ scavenge_stage_growing,成长期
 scavenge_stage_juvenile,幼体
 scavenge_stage_subadult,亚成体
 scavenge_staged_name,{0}（{1}）
-shed_desc,可装入接收「{0}」的水滤槽，过滤会消耗剩余滤材。拖到另一包蛇蜕上即可合并剩余量，不要求放在同一个容器；用过的部分不会恢复，不能直接出售。
+shed_desc,可装入接收「{0}」的水滤槽，过滤会消耗剩余滤材。拖到另一包蛇蜕上即可合并剩余量，不要求放在同一个容器；用过的部分不会恢复。按剩余有效量以 3 信用点/g 直接出售。
 shed_merge_hint,攒够60g剩余有效蛇蜕后，带齐材料与蛇夫人交谈，选择加工「{0}」；配方见该对话选项。
 shed_name,蛇蜕滤材
-shed_order_accepted,收到了。材料我带走，满一周后我再来，把「{0}」直接给你；记得留个空位，不用再付钱。
-shed_order_choice,委托加工「{0}」
+shed_order_accepted,材料已收，成品已经放在柜台，请领取。
+shed_order_choice,当场加工「{0}」
 shed_order_offer,攒够60g剩余有效蛇蜕、1只「{0}」（耐久耗空也能用）和1份「{1}」，放在店内可取用的自有库存，再选加工「{2}」交单。
-shed_order_pending,还有{0}只「{1}」待加工或待交付。交单满7天后蛇夫人到访时直接给你；储存区满位会保留订单，腾位后再交谈领取。
-shed_order_recipe,消耗60g剩余有效蛇蜕、1只「{0}」（耐久耗空也可作框架）及1份「{1}」，制作1只「{2}」。材料放店内可取用的自有库存，点击本选项交单；只扣所需数量，多余保留。满7天后蛇夫人到访时直接交付，不另收费；满位时保留订单，腾位后再交谈领取。
-shed_order_unavailable,材料不足或当前无法交单；材料没有被扣除。
+shed_order_pending,还有{0}只「{1}」待领取，蛇夫人到访时会放到柜台；柜台满位会保留领取资格，腾位后再来。
+shed_order_recipe,消耗60g剩余有效蛇蜕、1只「{0}」（耐久耗空也可作框架）及1份「{1}」，制作1只「{2}」。材料放店内可取用的自有库存，点击本选项交单；只扣所需数量，多余保留。成品当场放在柜台；柜台满位时不扣料，请先腾位置。
+shed_order_unavailable,材料不足、柜台已满或当前无法交单；材料没有被扣除。
 shed_order_reason_shed,有效蛇蜕 {0}/60g；多包合并会自动累计剩余有效量。
 shed_order_reason_frame,缺少1只「{0}」（耐久耗空的框架也可以用）。
 shed_order_reason_chem,缺少1份「{0}」。
@@ -534,6 +537,8 @@ shed_order_reason_receipt,订单记录异常，已拒绝交单；材料没有被
 shed_remaining,剩余有效蛇蜕：{0}g
 snake_cage_desc,蛇夫人专售。内部10×8，可扩建8次至16×30：把{0}拖到蛇笼上即可扩建，每次育成速度+5%，满级+40%；另支持温控、紫外线和水/清洁维护。保留原生喂食、屠宰和维修功能。
 snake_cage_name,蛇笼
+snake_cage_relic_name,祖传遗物·蛇笼
+snake_cage_relic_desc,这是祖辈从地下带回来的珍贵宝物。笼底的铜牌磨得只剩两行字——「曾受 004影响。结构稳定。」
 species_cobra,眼镜蛇
 species_cobra_name,眼镜蛇
 species_king_cobra,眼镜王蛇
@@ -652,7 +657,6 @@ venom_tip_wine,酒容器固定价值
 venom_tip_wine_mid, / 来源溢价 
 venom_tip_wine_tail,（相加）；来源耗尽后回到固定价值。
 weapon_prefix,饿疯了的
-
 egg_guard_enclosed,成年蛇盘绕护蛋。每笼每夜最多一次偷蛋挑战：老鼠有95%概率被咬死；幸存则吃掉蛋，获得「挑战者」强化。蛇与蛋可分别拖动。
 egg_guard_pending,已受成年蛇保护；空间不足或当前姿态不可用，暂未围拢。每笼每夜最多一次偷蛋挑战：老鼠仍有95%概率被咬死；幸存则吃蛋并获得「挑战者」强化。
 egg_thief_rat_name,偷蛋鼠
@@ -675,7 +679,6 @@ rat_ascend_log,{0}登上了第 {1} 阶，寿命翻倍至 ×{2}。
 rat_ascend_log_4,一只老鼠完成了第三次登阶，化为鼠蛇——它是三次挑战登阶之鼠，得到了祂的注视。
 rat_bite_night_log,一条蛇吞鼠时被反咬，损失 {0} 生命（剩余 {1}）。
 rat_bite_tooltip,被鼠咬伤：已累计 {0} 次。
-
 egg_quality_label,品质：{0}
 egg_quality_fragile,脆弱
 egg_quality_ordinary,普通
@@ -722,10 +725,10 @@ corn_coloration,花色养护：{0}/100
 merchant_dialog_shop,先看看商品
 merchant_dialog_shop_desc,结束这次对话，不交单、不扣材料。
 merchant_gift_brief,入门赠蛇请看主仓或后仓；空位不足的会保留，腾位后再来。
-merchant_order_brief,可交单：60g蛇蜕、{0}和{1}，加工{2}。也可先看商品。
+merchant_order_brief,可交单：60g蛇蜕、{0}和{1}，当场加工{2}并放在柜台。也可先看商品。
 ranch_start_title,养蛇人
-ranch_start_description,带着养鼠人的基础物资与600信用点开店，蛇夫人来访服务已解锁。
-ranch_start_rat_gear,养鼠人同款旧笼、工具、2次绿血清与6个小型营养果
+ranch_start_description,带着养鼠人的基础物资、48个小型营养果与一座祖传遗物蛇笼，和600信用点开店，蛇夫人来访服务已解锁。
+ranch_start_rat_gear,养鼠人同款旧笼、工具、2次绿血清与48个小型营养果
 ranch_start_rat_stock,1、3、5日龄普通鼠公母各1只（共6只）
 ranch_start_merchant,已解锁养鼠人引荐与蛇夫人来访
 corn_yield_progress,玉米蛇消化产物：{0}/{1}g；待交付{2}份（满位保留）
@@ -772,7 +775,8 @@ merchant_phone_hint,（打 8848 预约＝明天带设备单：捕蛇夹、蛇笼
 merchant_weekly_hint,（我每周三固定上门，不打电话也会来：公母眼镜蛇、强化蛋、王蛇货、清洁补给；你一个蛇笼都没有时这趟额外带一个蛇笼。要捕蛇夹或玉米喷涂枪请打 8848 预约。日常上门不占电话冷却。）
 phone_snake_lady_cooldown_suffix,（冷却 {0} 天）
 item_corn_spray_gun_name,"玉米喷涂枪"
-item_corn_spray_gun_desc,"把着色剂喷到成年玉米蛇表面；喷涂后公开标签仍宣称 100% 纯色。"
+item_corn_spray_gun_desc,喷涂：把着色剂拖进枪的内容格，再拖到成年玉米蛇身上；毒液：把毒液瓶直接拖到枪身图标上装填。
+item_corn_spray_gun_window_title,"玉米喷涂枪（毒液拖枪身）"
 ui_corn_inspect_title,"检查玉米"
 clue_color,"色系"
 clue_color_desc,"看底色是否与公开标签一致，或是否有局部色差。"
@@ -799,7 +803,6 @@ spray_fail_black,"黑色着色剂需要一份全新的、满耐久 200/200 的�
 spray_fail_consume,"喷涂失败，着色剂未被消耗。"
 spray_fail_corrupt,"这条玉米的涂层数据无法安全识别，已保留原数据并拒绝再次喷涂。"
 spray_fail_target,"这条玉米不能喷涂：必须是自有、成年、存活且尚无表面涂层的玉米。"
-
 dialog_snake_merchant_phone_1,捕蛇夹、蛇笼和玉米喷涂枪我都带来了；其余货留给自然上门的客人。
 npc_merchant_phone_stock,预约的设备单我带来了：捕蛇夹、蛇笼、玉米喷涂枪各一件。这趟不带蛇、蛋、王蛇货和清洁补给，那些留到我每周三日常上门再带。
 handbook_corn_id_title,玉米蛇鉴定图例
@@ -817,3 +820,189 @@ rat_snake_egg_lore,剥开外壳时吱一声，蘸料时吱一声，放嘴里时�
 rat_snake_egg_flavor,三吱儿，一道只存在于传闻里的菜。
 rat_snake_egg_laid,{0} 产下了一枚三吱儿。
 rat_snake_egg_tooltip,奢侈品食物·不能孵化·每 2 天一枚。
+product_bone_cobra_name,"眼镜蛇骨"
+product_bone_cobra_desc,"普通眼镜蛇的肋骨，已清理干净。2根蛇骨加1份标准酵母可酿一瓶蛇骨酒。"
+product_bone_king_name,"眼镜王蛇骨"
+product_bone_king_desc,"眼镜王蛇的肋骨，骨质更厚。2根蛇骨加1份标准酵母可酿一瓶蛇骨酒。"
+product_skin_name,"蛇皮"
+product_skin_desc,成年蛇的整张皮，按实际重量计。蛇夫人按200g蛇皮加1枚真实100%纯度的原版金属锭兑换1件储藏区扩建套件。
+skin_remaining,"剩余：{0} g"
+skin_exchange_hint,可在蛇夫人处用{0} g蛇皮和1枚真实100%纯度的「{1}」兑换储藏区扩建套件。
+wine_snake_bone_t3_name,"蛇骨酒（T3）"
+wine_snake_bone_t3_desc,"普通眼镜蛇骨酿出的基础蛇骨酒，味道干净，适合日常饮用。"
+wine_snake_bone_t4_name,"蛇骨酒（T4）"
+wine_snake_bone_t4_desc,"普通骨与王蛇骨混酿，酒体更厚，带一点王蛇骨特有的矿物感。"
+wine_snake_bone_t5_name,"蛇骨酒（T5）"
+wine_snake_bone_t5_desc,"两根王蛇骨酿成的收藏级蛇骨酒，酒液金黄，余味悠长。"
+wine_snake_bone_tip,"蛇骨酒 {0}；基础价 {1} 信用点，陈年每夜加3。"
+bone_wine_reject_count,"蛇骨酒必须正好放入2根蛇骨（普通骨或王蛇骨均可）。"
+bone_wine_reject_recipe,"蛇骨酒只放2根蛇骨、1份标准酵母和至少749mL水，不能混入其他配料或酵母。"
+venom_gun_desc,眼镜蛇毒 {0} mL / 20 mL · 可加工 {1} 发 .22（0.5 mL/发）或为近战武器淬毒 {2} 次（1.0 mL/次）。
+venom_gun_tip,枪内眼镜蛇毒 {0} mL / 20 mL，可继续加工 {1} 发 .22，或为近战武器淬毒 {2} 次。
+venom_melee_tip,已淬毒 {0}/{1} mL · 剩余 1 次命中。
+venom_melee_coated,已为这件近战武器淬毒 1.00 mL（1 次命中）。
+venom_melee_already,这件武器已经淬毒，剩余 1 次；本次未消耗毒液。
+venom_melee_reject_venom,喷枪里的眼镜蛇毒不足 1.0 mL。
+venom_melee_reject_target,只能给自有、当前可用作近战的武器淬毒。
+venom_gun_loaded,"眼镜蛇毒已装入喷枪。"
+venom_gun_processed,"已加工本格 .22 子弹。"
+venom_gun_reject_king,"喷枪只接受普通眼镜蛇毒，请先把王蛇毒分装出去。"
+venom_gun_reject_capacity,"喷枪毒液容量不足，请先加工一些子弹或分装毒液。"
+venom_gun_reject_empty,"这瓶眼镜蛇毒已经空了。"
+venom_gun_reject_ammo_material,"喷枪里的眼镜蛇毒不够加工这一格。"
+venom_gun_reject_create,"淬毒弹药创建失败，材料未消耗。"
+venom_gun_reject_space,"目标附近没有可放下淬毒弹药的空位，材料未消耗。"
+venom_ammo_name,"淬毒 .22 子弹"
+venom_ammo_desc,普通 .22 弹表面裹了一层眼镜蛇毒。当前版本只实现加工与成品身份，尚未接入命中后的中毒伤害。
+exchange_kit_choice,"兑换储藏区扩建套件"
+exchange_kit_recipe,{0} g蛇皮 + {2}枚真实100%纯度「{3}」→ 1件「{1}」。成品放在柜台，由玩家自行选择储藏区使用。
+exchange_kit_ready,把蛇皮和1枚真实100%纯度的金属锭放到柜台上，换一件储藏区扩建套件？
+exchange_kit_ok,"已放在柜台，请领取。"
+exchange_kit_failed,"兑换未完成，材料没有被扣除。"
+exchange_kit_reason_inputs,需要{0} g蛇皮和{1}枚真实100%纯度的金属锭；请先备齐。
+exchange_kit_reason_create,"扩建套件创建失败，材料没有被扣除。"
+exchange_kit_reason_full,柜台已满，请先腾出位置；材料没有被扣除。
+exchange_kit_reason_changed,"兑换时材料状态发生变化，本次没有扣料；请结束对话后重试。"
+merchant_counter_full,柜台已满，请先腾出位置；本次没有扣料。
+shed_order_reason_create,"高级滤水器创建失败，材料没有被扣除。"
+wine_snake_bone_fermenting_name,蛇骨酒（浸酿中）
+wine_snake_bone_fermenting_desc,已投入两根蛇骨和一整瓶完成基酒，下一个有效夜晚完成。
+wine_snake_bone_reject_count,蛇骨酒需要恰好两根蛇骨。
+wine_snake_bone_reject_base,蛇骨酒需要一整瓶已完成、可饮用的原版正品基酒。
+wine_snake_bone_reject_recipe,配方不完整：只允许两根蛇骨和一整瓶完成基酒，不能加入其他材料或液体。
+venom_gun_loaded_partial,喷枪已部分装填，原瓶保留剩余毒液。
+shed_order_counter_full_pending,还有{0}只「{1}」待领取，但柜台已满；已保留领取资格，腾位后会重试交付。
+shed_order_delivered,已交付{0}只「{1}」到柜台，请领取。
+test_side_fixture_name,2×2 测试容器
+test_side_fixture_desc,仅用于测试弹药淬毒后仍留在原格；不是生产物品。
+test_side_master_name,测试总箱（首餐 + 五组功能）
+test_side_master_desc,测试档专用：首次发放首餐组、五组材料与一次性访客；F9 首次也发此箱，之后只补材料。\n只在显式开启 test_start_kit 的新档自动发放；读档、切档和补料都不会重建蛇夫人、旧订单、柜台占位或四位材料买家。\n养蛇人档的一次性访客与柜台占位会等蛇夫人首访赠蛇领取后自动进场，不用再按 F9；普通测试档首次发放即备齐访客与柜台。
+test_side_master_note,测试总箱。首餐组：两条饥饿眼镜蛇各配一只 275g 活鼠；其余五组：屠宰、蛇骨酒、喷枪与淬毒弹、蛇夫人柜台与兑换、蛇皮/蛇蜕出售与蛇蜕余量。每个分箱独立备料，不跨组借料。
+test_side_note_name,测试说明纸
+test_side_refill_name,材料补发箱
+test_side_refill_desc,独立材料补发：不创建首餐组、蛇夫人、四位材料买家、原版军火商、旧滤水器订单或六个柜台占位物。
+test_side_refill_granted,已发放独立材料补发箱（不创建首餐组/访客/旧单/柜台占位）。
+test_side_refill_failed,材料补发箱发放失败；请检查背包空间与 Player.log。
+test_side_refilled_done,已向总箱追加一份 F9 材料补充箱；未重建首餐组或任何一次性内容。
+test_side_granted,测试总箱已发放。F9={0}：首次发首餐组与五组；之后只补材料，不重建访客/旧单/柜台占位。
+test_side_granted_wait_gift,首餐组与五组素材已发放；蛇夫人首访赠蛇领取后会**自动**安排一次性访客、旧订单与柜台占位，无需再按 F9。
+test_side_granted_existing,已找到现有总箱并补齐一次性内容。F9={0} 之后只补材料。
+test_side_grant_failed,测试总箱发放失败，详见 Player.log；未写入按档防重状态。
+test_side_missing_master,已记录本档发过总箱，但当前找不到总箱。请先确认没有把它放进其他容器；需要材料时用调试面板「五组只补材料」。F9={0}。
+test_side_place_failed,背包空间不足，无法放置测试箱。
+test_side_counter_blocker,柜台占位 {0}×{1}
+test_side_pouch_name,F9 材料补充
+test_side_pouch_desc,F9 只补材料：基酒、蛇骨、滤水器与完美锭；不重置已开始的酿酒或订单；不会补首餐组、蛇或鼠。
+test_side_pouch_note,补充 T3/T4 基酒、普通 2 骨、王 1 骨、滤水器 1 与完美锭 1；不影响任何进行中的酿酒或订单。
+test_side_t0_name,首餐试蛇盒（先亲手喂两条蛇）
+test_side_note_t0,首餐组：满级 16×30 蛇笼，成年普通眼镜蛇公、母各 1 条，饥饿已预置；两只 275g 活鼠同为公鼠，分别拖给两条蛇做首餐。先确认蛇能各吃一只，再进后面五组。首餐组只在首次发放时生成，后按 F9 不会补蛇/鼠。
+test_side_t0_cage,首餐组满级试蛇笼
+test_side_t0_male,首餐组眼镜蛇 · 公
+test_side_t0_female,首餐组眼镜蛇 · 母
+test_side_t0_rat_a,首餐鼠 A · 公 275g
+test_side_t0_rat_b,首餐鼠 B · 公 275g
+test_side_g1_name,屠宰与副产品
+test_side_note_g1,屠宰组：大笼内 3 条死蛇（普通 2000g/王 4000g/玉米 2000g），把箱内的菜刀直接拖到死蛇上触发屠宰；另一大笼放 2 条死蛇和自动屠宰器（只处理死动物），开笼点「立即屠宰」。箱内另备普通 2400g/王 1600g/玉米 2000g 三条死蛇。\n预期骨：5/10/0 与自动 10/5；成年普通/王蛇还会出蛇皮，玉米蛇不出皮。
+test_side_g1_manual_cage,手工屠宰笼（3 条死蛇）
+test_side_g1_manual_cobra,手工笼·普通眼镜蛇 2000g（死）
+test_side_g1_manual_king,手工笼·王蛇 4000g（死）
+test_side_g1_manual_corn,手工笼·玉米蛇 2000g（死）
+test_side_g1_cleaver,屠宰菜刀（拖到死蛇上）
+test_side_g1_auto_cage,自动屠宰笼（2 条死蛇）
+test_side_g1_auto_cobra,自动笼·普通眼镜蛇 4000g（死）
+test_side_g1_auto_king,自动笼·王蛇 2000g（死）
+test_side_g1_auto_butcher,自动屠宰器（只处理死动物）
+test_side_g1_spare_cobra,备用·普通眼镜蛇 2400g（死）
+test_side_g1_spare_king,备用·王蛇 1600g（死）
+test_side_g1_spare_corn,备用·玉米蛇 2000g（死）
+test_side_g2_name,蛇骨酒
+test_side_note_g2,蛇骨酒：每瓶已预装骨，基酒放在瓶旁。整瓶基酒实际为 1×4，进 6×2 内容区前必须旋转成 4×1。\n有效：样品 1（T3+2 普通）、样品 2（T3+1 普通+1 王→T4）、样品 3（T4+2 王→T5）、样品 4（T3+2 普通顺序复测）、样品 7（陈年 T3+2 普通）。\n反例：样品 5（只 1 普通无基酒）、样品 6（原版成品酒）、样品 8（假 T3 基酒+2 普通）。\n样品 9 是原版葡萄酒流程瓶（净水 750mL＋2 浆果＋2 酵母）；样品 10 是空瓶备用；T3 基酒共 6 瓶、T4 基酒共 2 瓶，普通骨 2/王骨 1 备用。
+test_side_g2_1,样品 1 · T3 空瓶（2 普通骨）
+test_side_g2_2,样品 2 · T3 基酒空瓶（1 普通+1 王骨→T4）
+test_side_g2_3,样品 3 · T5 空瓶（2 王骨）
+test_side_g2_4,样品 4 · T3 空瓶（2 普通骨·复测）
+test_side_g2_5,样品 5 · 反例（只 1 普通骨）
+test_side_g2_6_name,样品 6 · 原版成品酒
+test_side_g2_6_desc,原版成品酒，已经完成发酵；不能当空瓶，也不能当基酒。
+test_side_g2_7,样品 7 · 陈年 T3 空瓶（2 普通骨）
+test_side_g2_8,样品 8 · 反例（假 T3 基酒）
+test_side_g2_spare1,样品 9 · 旧备用空瓶（不再发放）
+test_side_g2_spare2,样品 10 · 空瓶备用
+test_side_g2_bottle_desc,空瓶，瓶内已预装本场景蛇骨；旁边是基酒。
+test_side_g2_base_name,{0} 基酒 T{1}（正品）
+test_side_g2_7_base_name,{0} 陈年 T{1} 基酒（已陈年 6 次）
+test_side_g2_8_base_name,样品 8 · 假 T3 基酒（伪装正品）
+test_side_g2_8_base_desc,真实纯度已改为普通但公开显示仍是完美；投入瓶中起酿时应被拒绝。
+test_side_g2_base_desc,T{0} 正品基酒{1}；整瓶 1×4，拖入 6×2 内容区时旋转成 4×1。
+test_side_g2_aged,（陈年 6 次）
+test_side_g2_spare_normal_bones,备用普通蛇骨×2
+test_side_g2_spare_king_bone,备用王蛇骨×1
+test_side_g3_name,喷枪与淬毒弹
+test_side_note_g3,喷枪组：A/B/C 三把空枪。把毒液瓶拖到枪身图标上，或把枪拖到毒液瓶上：22mL 瓶装入 A 后 A 有 20mL、瓶余 2mL；18mL 瓶装入 B；C 只有 1 个混合瓶（12mL 有效毒液＋6mL 水），空枪只吸 12mL 毒液，瓶内剩 6mL 水。\n先对 1/3/6 发各做单发淬毒；3×1 盒三格各 1 发连续点三格；1×1 盒 1 发满格原位替换；1×1 盒 6 发满格做多发应失败且原弹/毒液不扣；重复点已淬毒弹不耗毒。\n2×2 盒为补充；另备 3 发成品。把已淬毒弹放柜台，叫原版军火商，先记基础价 40，再记报价与成交。\n成年玉米蛇+2 浆果/2 营养果/2 咖啡豆/1 弱染料用于喷枪显色。
+test_side_g3_gun_a,喷枪 A（空）
+test_side_g3_gun_b,喷枪 B（空）
+test_side_g3_gun_c,喷枪 C（空）
+test_side_g3_vial22,普通蛇毒瓶 {0}mL（A 枪用）
+test_side_g3_vial18,普通蛇毒瓶 {0}mL（B 枪用）
+test_side_g3_vial12,混合瓶旧 12mL 记录（已并入同一瓶）
+test_side_g3_vial6,混合瓶旧 6mL 水记录（已并入同一瓶）
+test_side_g3_rounds,.22 子弹（{0} 发）
+test_side_g3_coated,已淬毒 .22（{0} 发）
+test_side_g3_corn_cage,玉米蛇显色笼
+test_side_g3_corn_snake,成年玉米蛇 2000g
+test_side_g3_berry,浆果色素（2 个之一）
+test_side_g3_nutrifruit,营养果色素（2 个之一）
+test_side_g3_coffee,咖啡豆色素（2 个之一）
+test_side_g3_weak,弱染料（1 个）
+test_side_g3_buyer,原版军火商（弹药收购）
+test_side_g4_name,蛇夫人柜台与兑换
+test_side_note_g4,蛇夫人柜台：六个 6×2 占位物已铺满 18×4 柜台。满柜时先用合格材料提交扩容兑换，再提交新滤水器订单，二者都应失败且材料保留。\n腾位后先领旧单成品，再完成新滤水器订单并领走成品；确认柜台有空位后，分别试普通锭、伪装完美锭、199g 蛇皮，每次只换一个条件，三者都应被拒。\n最后用 200g 蛇皮+真完美锭成功兑换，扩容器上柜台；把两个储藏区拖出，自己选一个使用。重复对话与读档都确认旧单只交付一次。
+test_side_g4_filter,滤水器 {0}
+test_side_g4_chemical,过滤化学品 {0}
+test_side_g4_shed,蛇蜕 {0}g（上限 {1}g）
+test_side_g4_storage,储藏区 {0}
+test_side_g4_ingot_perfect,完美纯度锭
+test_side_g4_ingot_normal,普通纯度锭
+test_side_g4_ingot_disguised,伪装完美锭（公开完美/真实普通）
+test_side_g5_name,出售与蛇蜕
+test_side_note_g5,出售与蛇蜕：B1 收蛇皮/蛇蜕、B2 拒蛇蜕收蛇皮、B3 全拒、B4 拒蛇皮收蛇蜕。四位买家各有独立 200g 蛇皮样；60g/10g 蛇蜕、2 个 20g 合并样、1 个实耗样（20g 用至剩 10g，上限仍 200）用于按余量估值。另备脏水壶（3000mL，水质见壶名）与 2 条水质测试条：把 60g 蛇蜕放进壶的滤芯槽，亲手过滤后看水质、蛇蜕余量和报价。每笔成交后叫下一位；10g 实耗样先存读档，确认仍在且仍为 10g，再报价/成交。
+test_side_g5_skin200,蛇皮 {0}g
+test_side_g5_skin199,蛇皮 {0}g（低价边界）
+test_side_g5_shed60,蛇蜕 {0}g（上限 {1}g）
+test_side_g5_shed10,蛇蜕 {0}g（上限 {1}g）
+test_side_g5_shed20,蛇蜕 {0}g（合并用）
+test_side_g5_shed_used,实耗蛇蜕 剩{0}g（上限 {1}g）
+test_side_buyer_b1,材料买家 B1（全收）
+test_side_buyer_b2,材料买家 B2（拒蛇蜕）
+test_side_buyer_b3,材料买家 B3（全拒）
+test_side_buyer_b4,材料买家 B4（拒蛇皮）
+test_side_buyer_greeting,我想收些蛇场材料。
+test_side_buyer_desc,把蛇皮/蛇蜕放上柜台即可开价；每位买家的黑名单不同。
+debug_grant_side_kit,五组测试总箱（按档防重）
+debug_grant_side_refill,五组只补材料（不建一次性内容）
+debug_grant_legacy_case,旧主测试箱（20×16）
+
+test_side_g3_fixture,2×2 补充弹药固定盒（内有 3 发）
+
+test_side_g2_9_name,样品 9 · 原版葡萄酒流程瓶
+test_side_g2_9_desc,原生葡萄酒流程：先倒入净水至 750mL，再放 2 个浆果 + 2 个酵母，点「开始发酵」。用于检查普通酿酒流程，不参与蛇骨酒档位。
+test_side_g2_9_berry,原版酒浆果 {0}/2
+test_side_g2_9_yeast,原版酒酵母 {0}/2
+test_side_g2_9_water,原版酒净水 {0}mL
+test_side_g2_9_water_desc,把净水倒入样品 9 空瓶；瓶内需≥749mL 才能起酿，倒满 750mL 即可。
+test_side_g2_9_note,样品 9 原版流程：空瓶→净水 750mL→2 浆果+2 酵母→开始发酵。
+test_side_fixture_row_name,3×1 弹药固定测试盒
+test_side_fixture_row_desc,三格相邻各放 1 发普通 .22；用于连续点三格的淬毒测试。
+test_side_fixture_cell_name,1×1 弹药固定测试盒
+test_side_fixture_cell_desc,单格容器；分别放 1 发与 6 发，用于满格单发原位替换和满格多发失败。
+test_side_g3_mix,C 枪同一混合瓶：{0}mL 有效毒液＋{1}mL 水
+test_side_g3_mix_desc,空枪 C 吸入 12mL 有效毒液后，瓶内应只剩 6mL 水；水不是有效毒液，不能再淬毒。
+test_side_g3_row_fixture,3×1 三连格：每格 1 发（连续点三格）
+test_side_g3_cell_single,1×1 满格单发（原位替换）
+test_side_g3_cell_multi,3×2 六格满格 6 发（多发保持分格）
+test_side_g3_adjacent_round,三连格第 {0}/{1} 发
+test_side_g5_dirty_water,脏水壶 {0}mL（水质 {1}/10000，过滤测试用）
+test_side_g5_dirty_water_desc,把 60g 蛇蜕放进壶的滤芯槽，亲手过滤后记录水质、蛇蜕余量与报价。
+test_side_g5_strip,水质测试条 {0}/{1}
+test_side_g2_bone_king,王蛇骨 {0}/{1}
+test_side_g2_bone_normal,普通蛇骨 {0}/{1}

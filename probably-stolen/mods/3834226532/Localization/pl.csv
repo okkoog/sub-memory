@@ -428,15 +428,16 @@ dsp_blood_donor_done,"Krew oddana: jedna torba na krew więcej, a jutro ominie c
 dsp_blood_donor_already,Dziś już oddałeś krew.
 dsp_blood_donor_no_space,Nie ma miejsca na kolejną torbę na krew.
 dsp_revolutionary_influence_name,Wpływ Rewolucji
-dsp_revolutionary_influence_description,"Jeśli twoja reputacja u Rewolucji wynosi 20 lub więcej, Odin po transakcji powie ci, jakie wydarzenie Rewolucja planuje w ciągu trzech dni."
+dsp_revolutionary_influence_description,"Jeśli twoja reputacja u Rewolucji przekracza 20, Odin po transakcji zaplanuje wydarzenie, które nastąpi trzy dni później, i ci o nim powie."
 dsp_cracker_name,Otwieracz skrzyń
-dsp_cracker_description,Podczas szkolenia u Mentora nabrałeś nawyku otwierania skrzyń. Przeważnie się to opłaca — o ile masz czym je otworzyć.\nZaczynasz z:\nDodatkowe urządzenie (Skrytka na kontrabandę (zmodyfikowana))\nZużyty Desekwencer kryptograficzny\n3 Karty jednorazowe (czysta) i 1 Karta jednorazowa (Dowództwo)\n2 różne Skrzynie zaopatrzeniowe i Czip desekwencera kryptograficznego do każdego typu\nTwój przyjaciel i inni sprzedawcy oferują ci Skrzynie zaopatrzeniowe\nPodstawowa atrakcyjność sklepu spada o 50.
+dsp_cracker_description,Podczas szkolenia u Mentora nabrałeś nawyku otwierania skrzyń. Przeważnie się to opłaca — o ile masz czym je otworzyć.
 dsp_cracker_tag,Więcej cech: prawdopodobnie dziwak
 dsp_cracker_supplies_1,"Dodatkowe urządzenie (skrytka przemytnika, ulepszona)."
 dsp_cracker_supplies_2,Zużyty sekwenser kodów.
 dsp_cracker_supplies_3,3 puste karty dostępu i 1 karta dostępu dowodzenia.
 dsp_cracker_supplies_4,2 różne skrzynie zaopatrzenia i pasujący chip karty dostępu do każdej.
 dsp_cracker_supplies_5,Twój przyjaciel i inni sprzedawcy oferują ci skrzynie zaopatrzenia.
+dsp_cracker_supplies_6,Podstawowa atrakcyjność sklepu spada o 50.
 dsp_revolutionary_influence_slip_title,Informacje Rewolucji
 dsp_revolutionary_influence_slip_body,Odin ściszył głos przed wyjściem: w ciągu trzech dni Rewolucja uderzy — „{0}”. To już jest zaznaczone w kalendarzu.
 dsp_service_professional_tooltip,Wendeta nie będzie ci już przeszkadzać.
@@ -638,7 +639,7 @@ dsp_blood_donor_redeem_done,Wymieniono: torba na krew stała się saldem 40 kart
 dsp_around_world_80_name,W 80 dni dookoła świata
 dsp_around_world_80_description,Zaczynasz w 80. dniu. W kolejnym tygodniu przeżyjesz wszystkie wydarzenia z pierwszych 80 dni. Zaczynasz z 1000 kredytów i 15 reputacji u każdej frakcji. Uwaga: może zawierać błędy.
 dsp_universal_liquid_name,Uniwersalny płyn
-dsp_universal_liquid_description,"Możesz używać Pożywódki jako śrubokręta, przecinaka plazmowego, nożyc do drutu albo ekstraktora modułów. Zaczynasz z jedną butelką Pożywódki."
+dsp_universal_liquid_description,"Możesz używać Pożywódki jako śrubokręta, przecinaka plazmowego, nożyc do drutu albo ekstraktora modułów. Zaczynasz z dwiema butelkami Pożywódki."
 dsp_beer_hall_orator_name,Mówca piwny
 dsp_beer_hall_orator_description,"Zaczynasz z kratką piwa Bordowy Bies. Każda sprzedana butelka piwa daje 0,1 reputacji."
 dsp_manifest_destiny_name,Przeznaczenie
@@ -659,7 +660,7 @@ dsp_vampire_bc_bags,worki z krwią {0}
 dsp_tainted_witness_name,Skorumpowany świadek
 dsp_tainted_witness_description,Po zabiciu augmentowanego lub złożeniu ważnego doniesienia: postęp śledztwa -10
 dsp_summon_anytime_name,Zawsze pod telefonem
-dsp_summon_anytime_description,Wszyscy kontaktowie przychodzą natychmiast. Czas odnowienia kontaktu jest krótszy o jeden dzień.
+dsp_summon_anytime_description,"Wszyscy kontaktowie przychodzą natychmiast, a czas odnowienia kontaktu jest krótszy o jeden dzień. Jeśli kontakt jest już w drodze, kolejny telefon nie sprowadzi go dwa razy — wizyta przesuwa się o jeden dzień (każdy następny telefon przesuwa ją dalej), a czas odnowienia i tak zostaje zużyty."
 dsp_summon_anytime_line,Zejdź z drogi.
 dsp_fifth_republic_name,V Republika
 dsp_fifth_republic_description,"Co tydzień pojawia się wydarzenie „Zwiększenie budżetu ochrony“. W dniu, w którym się pojawia, zawsze odbywa się niezapowiedziana inspekcja."
@@ -744,6 +745,14 @@ dsp_corner_market_description,"Modyfikacje cen z wydarzeń działają tylko wted
 dsp_labor_cost_name,Koszty pracy
 dsp_labor_cost_description,Kontakty Wilda i nocne usługi kosztują o 30% więcej.
 dsp_renovation_name,Remont
-dsp_renovation_description,"W pierwszym tygodniu nie przychodzą klienci, a właściciel nie pobiera czynszu. Zaczynasz z Renowacją sklepu I."
+dsp_renovation_description,"Renowacja sklepu I jest odblokowana od początku. W pierwszym tygodniu nie przychodzą zwykli klienci, a właściciel nie pobiera czynszu."
 dsp_addict_name,Uzależniony
 dsp_addict_description,"Dopóki punkty cech nie spadną poniżej -3, możesz rozpocząć grę. Za każdy brakujący punkt cechy otrzymujesz losową cechę uzależnienia."
+dsp_lagging_market_name,Opóźniony rynek
+dsp_lagging_market_description,"Wydarzenia rynkowe trwają o jeden dzień dłużej, a pierwszego dnia działają tylko w połowie."
+dsp_keen_nose_name,Węch
+dsp_keen_nose_description,Każde aktywne wydarzenie daje 2% bonusu handlowego. Zaczynasz z na wpół zużytym flakonem neuroaktywnych perfum SYNC.
+dsp_money_laundering_name,Pranie pieniędzy
+dsp_money_laundering_description,Zaczynasz z 210 kredytami i długiem 2100. Każda spłata usuwa tyle samo dowodów i daje 300 Przychylności Wilda.
+dsp_perk_tab_all,Wszystkie
+dsp_perk_tab_uncategorized,Bez kategorii

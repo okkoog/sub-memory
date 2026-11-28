@@ -428,15 +428,16 @@ dsp_blood_donor_done,"Don effectué : une poche de sang en plus, et un client en
 dsp_blood_donor_already,Vous avez déjà donné votre sang aujourd'hui.
 dsp_blood_donor_no_space,Plus de place pour une autre poche de sang.
 dsp_revolutionary_influence_name,Influence de la Révolution
-dsp_revolutionary_influence_description,"Si votre réputation auprès de la Révolution atteint 20 ou plus, Odin vous indiquera, après une transaction, l'événement que la Révolution prépare dans les trois jours."
+dsp_revolutionary_influence_description,"Si votre réputation auprès de la Révolution est supérieure à 20, Odin planifie après une transaction un événement qui aura lieu trois jours plus tard et vous en informe."
 dsp_cracker_name,Casseur de caisses
-dsp_cracker_description,"Pendant votre formation auprès du Mentor, vous avez pris goût à ouvrir les caisses. La plupart du temps ça rapporte bien — à condition d'avoir de quoi les ouvrir.\nVous commencez avec :\nUn appareil supplémentaire (Grand casier de contrebandier)\nUn Déséquenceur cryptographique usé\n3 Cartes jetables (vierge) et 1 Carte jetable (direction)\n2 Caisses de ravitaillement différentes et une Puce de déséquenceur correspondant à chaque type\nVotre ami et d'autres vendeurs vous proposent des Caisses de ravitaillement\nL'attractivité de base de la boutique diminue de 50."
+dsp_cracker_description,"Pendant votre formation auprès du Mentor, vous avez pris goût à ouvrir les caisses. La plupart du temps ça rapporte bien — à condition d'avoir de quoi les ouvrir."
 dsp_cracker_tag,Plus de traits : probablement un dingue
 dsp_cracker_supplies_1,"Un appareil supplémentaire (cache de contrebandier, améliorée)."
 dsp_cracker_supplies_2,Un séquenceur de codes usé.
 dsp_cracker_supplies_3,3 cartes d'accès vierges et 1 carte d'accès de commandement.
 dsp_cracker_supplies_4,2 caisses de ravitaillement différentes et une puce de carte d'accès du type correspondant.
 dsp_cracker_supplies_5,Ton ami et les autres vendeurs te proposent des caisses de ravitaillement.
+dsp_cracker_supplies_6,L'attractivité de base de la boutique diminue de 50.
 dsp_revolutionary_influence_slip_title,Renseignements de la Révolution
 dsp_revolutionary_influence_slip_body,"Odin a baissé la voix avant de partir : dans les trois jours, la Révolution passe à l'action — « {0} ». C'est déjà coché sur le calendrier."
 dsp_service_professional_tooltip,Votre Vendetta ne vous dérangera plus.
@@ -638,7 +639,7 @@ dsp_blood_donor_redeem_done,Échangé : la poche de sang est devenue un crédit 
 dsp_around_world_80_name,Le Tour du monde en 80 jours
 dsp_around_world_80_description,"Vous commencez au jour 80. La semaine suivante, vous vivez tous les événements des 80 premiers jours. Vous commencez avec 1000 crédits et 15 de réputation auprès de chaque faction. Avertissement : peut être bogué."
 dsp_universal_liquid_name,Liquide universel
-dsp_universal_liquid_description,"Vous pouvez utiliser le Nudka comme tournevis, torche à plasma, coupe-fil ou extracteur de modules. Vous commencez avec une bouteille de Nudka."
+dsp_universal_liquid_description,"Vous pouvez utiliser le Nudka comme tournevis, torche à plasma, coupe-fil ou extracteur de modules. Vous commencez avec deux bouteilles de Nudka."
 dsp_beer_hall_orator_name,Orateur de brasserie
 dsp_beer_hall_orator_description,"Vous commencez avec un pack de bières du Diable carmin. Chaque bouteille de bière vendue rapporte 0,1 de réputation."
 dsp_manifest_destiny_name,Destinée manifeste
@@ -659,7 +660,7 @@ dsp_vampire_bc_bags,poches de sang {0}
 dsp_tainted_witness_name,Témoin compromis
 dsp_tainted_witness_description,Après avoir tué un augmenté ou fait un signalement valide : progression de l'enquête -10
 dsp_summon_anytime_name,Toujours disponible
-dsp_summon_anytime_description,Tous les contacts viennent immédiatement. Le délai de rappel des contacts est réduit d'un jour.
+dsp_summon_anytime_description,"Tous les contacts viennent immédiatement et le délai de rappel des contacts est réduit d'un jour. Si un contact est déjà en route, un nouvel appel ne le fait pas venir deux fois : la visite est repoussée d'un jour (chaque appel supplémentaire la repousse encore), et le délai d'appel est quand même consommé."
 dsp_summon_anytime_line,Pousse-toi.
 dsp_fifth_republic_name,La 5e République
 dsp_fifth_republic_description,"Chaque semaine, un événement « Augmentation du budget de la sécurité » apparaît. Le jour où il apparaît, il y a toujours une inspection surprise."
@@ -737,6 +738,14 @@ dsp_corner_market_description,Les modifications de prix dues aux événements ne
 dsp_labor_cost_name,Coût de la main-d'œuvre
 dsp_labor_cost_description,Les contacts de Wild et les services nocturnes coûtent 30 % de plus.
 dsp_renovation_name,Rénovation
-dsp_renovation_description,"La première semaine, aucun client ne vient et le propriétaire ne perçoit pas de loyer. Vous commencez avec Rénovations I."
+dsp_renovation_description,"Rénovations I est débloquée dès le départ. La première semaine, aucun client ordinaire ne vient et le propriétaire ne perçoit pas de loyer."
 dsp_addict_name,Accro
 dsp_addict_description,"Tant que vos points de trait ne descendent pas sous -3, vous pouvez commencer la partie. Pour chaque point de trait manquant, vous recevez au hasard un trait d'addiction."
+dsp_lagging_market_name,Marché retardé
+dsp_lagging_market_description,Les événements de marché durent un jour de plus et ne produisent que la moitié de leur effet le premier jour.
+dsp_keen_nose_name,Nez fin
+dsp_keen_nose_description,Chaque événement actif accorde un bonus commercial de 2 %. Vous commencez avec un demi-flacon de parfum neuroactif SYNC.
+dsp_money_laundering_name,Blanchiment d'argent
+dsp_money_laundering_description,Vous commencez avec 210 crédits et 2 100 de dette. Chaque remboursement retire autant de preuves et accorde 300 Faveurs de Wild.
+dsp_perk_tab_all,Tous
+dsp_perk_tab_uncategorized,Non classés

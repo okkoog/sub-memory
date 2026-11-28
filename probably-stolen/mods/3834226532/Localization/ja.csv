@@ -428,15 +428,16 @@ dsp_blood_donor_done,献血完了：血液バッグが1つ増えた。明日は�
 dsp_blood_donor_already,今日はもう献血した。
 dsp_blood_donor_no_space,血液バッグを置く場所がない。
 dsp_revolutionary_influence_name,革命家の影響力
-dsp_revolutionary_influence_description,"革命家からの評判が20以上になると、取引のあと、オーディンが3日以内に革命家が計画しているイベントを教えてくれる。"
+dsp_revolutionary_influence_description,革命家からの評判が20を超えると、取引のあと、オーディンが3日後に起きるイベントを計画し、それを教えてくれる。
 dsp_cracker_name,箱開け
-dsp_cracker_description,導師のもとで修業していた頃、あなたは箱を開ける癖がついた。たいていは割に合う——開ける手段さえあれば。\n初期所持：\n追加装備（密輸者のケース（改良））\n使い古された暗号デシーケンサー\n使い捨てカードキー（空白）3枚と使い捨てカードキー（司令）1枚\n種類の異なる物資箱2つと、それぞれに対応する暗号デシーケンサーチップ\n友達や他の売り手が物資箱を売ってくれる\n店の基本魅力度が50下がる。
+dsp_cracker_description,導師のもとで修業していた頃、あなたは箱を開ける癖がついた。たいていは割に合う——開ける手段さえあれば。
 dsp_cracker_tag,もっと特性：たぶん変人
 dsp_cracker_supplies_1,追加装備（密輸人の隠し場所・改良型）。
 dsp_cracker_supplies_2,使い古されたコード解読器。
 dsp_cracker_supplies_3,空白のアクセスカード3枚と司令アクセスカード1枚。
 dsp_cracker_supplies_4,種類の異なる補給箱2つと、それぞれに対応するアクセスカードチップ。
 dsp_cracker_supplies_5,友達や他の売り手が補給箱を売ってくれる。
+dsp_cracker_supplies_6,店の基本魅力度が50下がる。
 dsp_revolutionary_influence_slip_title,革命家の情報
 dsp_revolutionary_influence_slip_body,オーディンは去り際に声を落とした。3日以内に革命家が動く——「{0}」。カレンダーにはもう印がついている。
 dsp_service_professional_tooltip,仇敵はもうあなたを邪魔しない。
@@ -638,7 +639,7 @@ dsp_blood_donor_redeem_done,交換完了：血液バッグが40フードスタ�
 dsp_around_world_80_name,80日間世界一周
 dsp_around_world_80_description,80日目からゲームが始まる。その後一週間で、最初の80日間に起きたすべてのイベントを経験する。開始時に1000クレジットと全派閥の声望15を得る。警告：バグの可能性あり。
 dsp_universal_liquid_name,万能液体
-dsp_universal_liquid_description,NUDKAをドライバー・プラズマカッター・ワイヤーカッター・モジュール取り出し機として使える。開始時にNUDKAを一瓶所持する。
+dsp_universal_liquid_description,NUDKAをドライバー・プラズマカッター・ワイヤーカッター・モジュール取り出し機として使える。開始時にNUDKAを二瓶所持する。
 dsp_beer_hall_orator_name,ビアホールの演説家
 dsp_beer_hall_orator_description,開始時にレッド・インプのビールケースを1箱所持。ビールを一瓶売るごとに声望0.1を得る。
 dsp_manifest_destiny_name,マニフェスト・デスティニー
@@ -659,7 +660,7 @@ dsp_vampire_bc_bags,血液パック {0}
 dsp_tainted_witness_name,訳あり証人
 dsp_tainted_witness_description,改造体を殺害するか有効な通報をした後、調査進捗-10
 dsp_summon_anytime_name,呼べば即来
-dsp_summon_anytime_description,すべての連絡先がすぐに来店する。連絡先のクールダウンが1日短くなる。
+dsp_summon_anytime_description,すべての連絡先がすぐに来店し、連絡先のクールダウンが1日短くなる。すでに来店途中の相手に電話すると重複して来店させず、来店は1日後ろにずれる（続けて電話するとさらにずれる）。通話クールダウンは通常どおり消費される。
 dsp_summon_anytime_line,どけ。
 dsp_fifth_republic_name,第五共和国
 dsp_fifth_republic_description,毎週「治安部の予算増加」イベントが発生する。そのイベントが発生した日は必ず抜き打ち検査がある。
@@ -744,6 +745,14 @@ dsp_corner_market_description,イベントによる価格補正は、あなた�
 dsp_labor_cost_name,人件費
 dsp_labor_cost_description,ワイルドの人脈と夜間サービスの費用が30%上がる。
 dsp_renovation_name,改装
-dsp_renovation_description,最初の1週間は客が来ず、大家も家賃を取り立てない。開始時に店の改装 I を所持。
+dsp_renovation_description,開始時に店の改装 I が解放される。最初の1週間は通常の客が来ず、大家も家賃を取り立てない。
 dsp_addict_name,中毒者
 dsp_addict_description,特性ポイントが-3を下回らなければゲームを開始できる。不足した特性ポイント1につき、ランダムに依存症の特性を1つ獲得する。
+dsp_lagging_market_name,遅行市場
+dsp_lagging_market_description,市場イベントの持続が1日延び、初日は効果が半分になる。
+dsp_keen_nose_name,鋭い嗅覚
+dsp_keen_nose_description,発動中のイベント1つにつき2%の取引ボーナスを得る。開始時にSYNCニューロアクティブ香水を半分使用した状態で所持する。
+dsp_money_laundering_name,資金洗浄
+dsp_money_laundering_description,開始時に210クレジットと2100の借金を得る。返済するたびに同額の証拠が消え、300のワイルドの恩寵を得る。
+dsp_perk_tab_all,すべて
+dsp_perk_tab_uncategorized,未分類

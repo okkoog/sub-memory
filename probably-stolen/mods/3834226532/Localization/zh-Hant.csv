@@ -427,15 +427,16 @@ dsp_blood_donor_done,獻血完成：多了一個血袋，明天會少一個顧�
 dsp_blood_donor_already,今天已經獻過血了。
 dsp_blood_donor_no_space,血袋沒地方放了。
 dsp_revolutionary_influence_name,革命軍的影響
-dsp_revolutionary_influence_description,"如果革命軍聲望達到20或以上，奧丁會在交易後告知三天內革命軍策劃的一起事件。"
+dsp_revolutionary_influence_description,如果革命軍聲望高於20，奧丁會在交易後策劃一起三天後發生的事件並告知你。
 dsp_cracker_name,開箱者
-dsp_cracker_description,在跟隨導師訓練期間，你染上了開箱的癖好。多數時候，開箱收益頗豐——只要你有把物資箱打開的本事。\n初始擁有：\n額外設備（走私者暗格（改進））\n一台破舊的密碼解序器\n3張一次性鑰匙卡（空白）和1張一次性鑰匙卡（指揮）\n2個不同物資箱和對應類型的密碼解序器晶片\n你的朋友和其他賣家向你出手箱子\n基礎店鋪吸引力降低50。
+dsp_cracker_description,在跟隨導師訓練期間，你染上了開箱的癖好。多數時候，開箱收益頗豐——只要你有把物資箱打開的本事。
 dsp_cracker_tag,更多特質：可能是怪咖
 dsp_cracker_supplies_1,額外設備（走私者暗格（改進））
 dsp_cracker_supplies_2,一台破舊的密碼解序器
 dsp_cracker_supplies_3,3張空白鑰匙卡和1張鑰匙卡（指揮）
 dsp_cracker_supplies_4,2個不同物資箱和對應類型的密碼解序器晶片
 dsp_cracker_supplies_5,你的朋友和其他賣家向你出手箱子
+dsp_cracker_supplies_6,基礎店鋪吸引力降低50
 dsp_revolutionary_influence_slip_title,革命軍的情報
 dsp_revolutionary_influence_slip_body,奧丁臨走前壓低了聲音：三天之內，革命軍會動手——「{0}」。日曆上已經標好了。
 dsp_service_professional_tooltip,讓你的仇家不再打擾你。
@@ -637,7 +638,7 @@ dsp_blood_donor_redeem_done,兌換完成：血袋換成了 40 食品券額度。
 dsp_around_world_80_name,80天環遊地球
 dsp_around_world_80_description,從第 80 天開始遊戲。接下來你會遭遇前 80 天發生的所有事件。開局獲得 1000 信用點和 15 點所有派系聲望。警告：可能有 bug。
 dsp_universal_liquid_name,萬能液體
-dsp_universal_liquid_description,你可以將努特加當做螺絲刀/等離子切割機/剪線鉗/模組提取器使用。初始攜帶一瓶努特加。
+dsp_universal_liquid_description,你可以將努特加當做螺絲刀/等離子切割機/剪線鉗/模組提取器使用。初始攜帶 2 瓶努特加。
 dsp_beer_hall_orator_name,啤酒館演說家
 dsp_beer_hall_orator_description,初始獲得一箱紅魔鬼啤酒。每賣出一瓶啤酒會獲得0.1聲望。
 dsp_manifest_destiny_name,昭昭天命
@@ -658,7 +659,7 @@ dsp_vampire_bc_bags,血袋 {0}
 dsp_tainted_witness_name,污點證人
 dsp_tainted_witness_description,擊殺改造體或有效舉報後，調查進度-10
 dsp_summon_anytime_name,隨叫隨到
-dsp_summon_anytime_description,所有聯絡人會立刻上門。聯絡人的冷卻減少一天。
+dsp_summon_anytime_description,所有聯絡人會立刻上門，聯絡人的冷卻減少一天。若此人已在上門途中，再打電話不會讓他重複上門，而是把這次上門順延一天（連打則繼續順延），電話冷卻照常扣除。
 dsp_summon_anytime_line,別擋道。
 dsp_fifth_republic_name,第五共和國
 dsp_fifth_republic_description,每週都會出現「治安部預算增加」事件。出現「治安部預算增加」事件的當天一定會有突擊檢查。
@@ -736,6 +737,14 @@ dsp_corner_market_description,事件帶來的價格修正只在對你有利時�
 dsp_labor_cost_name,人力成本
 dsp_labor_cost_description,王爾德的人脈網絡和夜間服務加價30%。
 dsp_renovation_name,裝修
-dsp_renovation_description,第一週不會有顧客，房東也不會收租。開局獲得店鋪翻新I。
+dsp_renovation_description,開局解鎖店鋪翻新I。第一週不會有普通顧客，房東也不會收租。
 dsp_addict_name,癮君子
 dsp_addict_description,只要特質點數不低於 -3，你就可以開始遊戲。每缺失一個特質點數，隨機獲得一個成癮特質。
+dsp_lagging_market_name,遲滯市場
+dsp_lagging_market_description,市場事件多持續一天，且在首日只會產生一半效果。
+dsp_keen_nose_name,敏銳嗅覺
+dsp_keen_nose_description,正在生效的每個事件提供2%交易獎勵。開局獲得半瓶「同步」神經活性香水。
+dsp_money_laundering_name,洗錢
+dsp_money_laundering_description,初始獲得210信用點和2100債務。每次還債會消除等額罪證並獲得300點王爾德的恩惠。
+dsp_perk_tab_all,全部
+dsp_perk_tab_uncategorized,未分類
