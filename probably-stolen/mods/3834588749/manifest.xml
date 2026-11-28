@@ -3,8 +3,8 @@
   <ID>eleanor_romance</ID>
   <Name>Eleanor Story Expand / 上层区的富家千金爱上在下层区开当铺的我：埃莉诺剧情扩展</Name>
   <Author>EleanorRomance Team</Author>
-  <ModVersion>1.41</ModVersion>
-  <Description>1.41 fixes the softlock where nighttime, closing, and morning CG window dialogues (such as Lydia's harem night invitation) stopped advancing after the first line and locked sleeping; reveals the closed shutter during no-client window dialogues so scene portraits and expressions remain visible at the counter; blocks leaving the store or reopening the bedroll during window dialogues/CGs; and cleans up portraits and monologue state on abort or leaving the store so sprites cannot leak into after-hours scenes. All 1.40/1.39/1.38 content and compatibility fixes remain. 1.41 修复夜间、闭店与晨间 CG 窗口对白（如后宫线莉迪亚睡前邀请）在弹出第一句后无法继续推进、导致睡眠按钮卡死的问题；无客人窗口对白期间自动移开关闭的卷帘门遮罩以正常显示窗前立绘与 1.40 表情变化；对白与全屏 CG 期间锁定侧门、睡袋与夜游地图，并在异常中断或离店时自动清理立绘与对白状态，避免立绘残留到博士等外出场景。保留 1.40/1.39/1.38 全部内容与兼容修复。简体中文 / English / 日语 / 韩语 (ZH / EN / JA / KO)。</Description>
+  <ModVersion>1.42</ModVersion>
+  <Description>1.42 fixes a cross-mod sleep deadlock where another mod cancelling EndOfDayUIManager.OnEndDayButtonClick (such as a Day-7 intro/background prompt, after-hours story, or room bed confirmation) left Eleanor's sleepStarting flag stuck and blocked all subsequent sleep attempts; hides the early-close confirmation panel when a closing CG window dialogue starts; clears departing closed-shutter customers before bedtime window dialogues so the 4-second shutter timer cannot abort them; and releases window locks on premature EndConversation(). All 1.41/1.40/1.39/1.38 fixes and content remain. 1.42 修复与其他 MOD 共用时，对方在睡前拦截结束当天按钮（如第 7 天剧情背景提示、闭店后剧情或房间床铺确认）导致本 MOD 的睡眠状态锁死、后续无法睡觉与推进天数的问题；闭店前 CG 窗口对白触发时自动隐藏提前闭店确认弹窗；关门后 4 秒内立即睡觉时先清理正在离店的客人，防止延迟定时器打断睡前对白；补充异常提前结束对话时的状态释放与晨间兜底复位。保留 1.41/1.40/1.39/1.38 全部内容与修复。简体中文 / English / 日语 / 韩语 (ZH / EN / JA / KO)。</Description>
   <!-- Empty on purpose: the mod does not gate on the game version string,
        and a listed version that does not cover the running build is shown as
        a red warning in the mod menu. -->
