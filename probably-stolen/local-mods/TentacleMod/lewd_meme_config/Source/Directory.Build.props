@@ -1,8 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <!-- 编译与中间产物放在模组目录外，避免被游戏的模组扫描器拒绝激活。 -->
-    <LewdMemeConfigBuildRoot Condition="'$(TEMP)' != ''">$(TEMP)\ProbablyStolenLewdMemeConfig\$(MSBuildProjectName)</LewdMemeConfigBuildRoot>
-    <BaseIntermediateOutputPath Condition="'$(LewdMemeConfigBuildRoot)' != ''">$(LewdMemeConfigBuildRoot)\obj\</BaseIntermediateOutputPath>
-    <BaseOutputPath Condition="'$(LewdMemeConfigBuildRoot)' != ''">$(LewdMemeConfigBuildRoot)\bin\</BaseOutputPath>
-  </PropertyGroup>
-</Project>
